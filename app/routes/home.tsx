@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 
 import type { Route } from "./+types/home";
+import "./study-shell.css";
 
 export function meta({}: Route.MetaArgs) {
 	return [
@@ -43,6 +44,28 @@ function LegacyRuntime() {
 	return null;
 }
 
+function ReadingSideEntry() {
+	useEffect(() => {
+		const insertEntry = () => {
+			const side = document.querySelector("#side");
+			const footer = side?.querySelector(".side-foot");
+			if (!side || !footer || side.querySelector(".side-reader-link")) return;
+			const link = document.createElement("a");
+			link.href = "/reading/n3";
+			link.className = "side-reader-link";
+			link.innerHTML = "<span>📕</span><span>读解</span><small>N3</small>";
+			footer.before(link);
+		};
+
+		const observer = new MutationObserver(insertEntry);
+		observer.observe(document.body, { childList: true, subtree: true });
+		insertEntry();
+		return () => observer.disconnect();
+	}, []);
+
+	return null;
+}
+
 export default function Home() {
 	return (
 		<>
@@ -75,6 +98,7 @@ export default function Home() {
 						<button data-ty="kanji">
 							📙 <span className="lbl" data-cn="汉字" data-en="Kanji">汉字</span>
 						</button>
+						<a className="reader-mode-link" href="/reading/n3">📕 <span>读解</span></a>
 					</div>
 				</div>
 			</div>
@@ -90,6 +114,7 @@ export default function Home() {
 			<div className="sheet-mask" id="sheetMask" hidden />
 			<div className="sheet" id="sheet" role="dialog" aria-modal="true" hidden />
 			<LegacyRuntime />
+			<ReadingSideEntry />
 		</>
 	);
 }

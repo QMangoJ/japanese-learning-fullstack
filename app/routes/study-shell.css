@@ -1,0 +1,5 @@
+/* The legacy study UI owns the layout; this only adds the React-based reading entry. */
+#typebar .reader-mode-link{flex:1;max-width:170px;display:inline-flex;align-items:center;justify-content:center;gap:4px;border:1px solid var(--line);background:var(--bg);color:var(--sub);border-radius:999px;padding:6px 0;font-size:14px;font-weight:700;text-decoration:none}
+#typebar .reader-mode-link:hover{border-color:var(--accent);color:var(--accent)}
+.side-reader-link{display:flex;align-items:center;gap:8px;width:100%;padding:7px 8px;border-radius:8px;color:var(--ink);font-size:13.5px;text-decoration:none}.side-reader-link:hover{background:var(--bg);color:var(--accent)}.side-reader-link span:first-child{width:17px;text-align:center}.side-reader-link small{margin-left:auto;color:var(--sub);font-size:11px}
+@media (max-width:899px){.side-reader-link{display:none}}
