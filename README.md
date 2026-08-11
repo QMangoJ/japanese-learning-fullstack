@@ -1,5 +1,9 @@
 # 日本語上手 · 日语学习助手
 
+[中文](#中文) · [English](#english)
+
+## 中文
+
 基于 React Router 7 和 Cloudflare Workers 的日语学习应用，覆盖 N4、N3、N2 的语法、词汇与汉字学习内容。
 
 ![日本語上手桌面端首页](docs/home.jpg)
@@ -60,3 +64,64 @@ npm run deploy
 ```
 
 部署前，请在 Cloudflare 中确认 `FAVORITES_KV` 与 `MISTAKES_KV` 已绑定到对应的 KV 命名空间。开发环境默认使用本地 KV 模拟存储。
+
+## English
+
+**Nihongo Jozu** is a Japanese-learning application built with React Router 7 and Cloudflare Workers. It includes N4, N3, and N2 grammar, vocabulary, and kanji study materials.
+
+### Features
+
+- N4 / N3 / N2 grammar, vocabulary, and kanji courses organized by week and day
+- Global search, grammar comparisons, conjugation and connection references, and number-expression references
+- Furigana, Japanese text-to-speech, Chinese / English switching, and dark mode
+- Favorites, vocabulary notebook, mistake notebook, and flashcards
+- Responsive mobile bottom navigation and desktop sidebar
+- Favorites and mistakes sync through Cloudflare KV, with automatic browser `localStorage` fallback
+
+### Architecture
+
+- Frontend: React 19, React Router 7, TypeScript, and Vite
+- Backend: Cloudflare Worker with React Router SSR
+- Data: content-hashed static JSON for course material, plus Cloudflare KV for favorites and mistakes
+
+To preserve the original product's UI and behavior exactly, this release retains the established study-app client runtime while React Router provides the application shell, static assets, and Worker APIs. The runtime can be incrementally split into native React components without changing the current experience.
+
+### Local development
+
+```bash
+npm ci
+CHOKIDAR_USEPOLLING=1 npm run dev -- --host 127.0.0.1 --port 5175
+```
+
+Open [http://127.0.0.1:5175](http://127.0.0.1:5175).
+
+`CHOKIDAR_USEPOLLING=1` works around file-watcher limits on some macOS environments.
+
+### Sync course assets
+
+Course data, styles, and the client runtime are committed under `public/`. If the adjacent legacy project exists at `../日语学习`, sync its latest assets with:
+
+```bash
+npm run sync:study-assets
+```
+
+The command also runs automatically before `npm run dev` and `npm run build`.
+
+### API
+
+| Endpoint | Methods | Purpose |
+| --- | --- | --- |
+| `/api/favorites` | `GET`, `PUT`, `POST` | Read and save favorites |
+| `/api/mistakes` | `GET`, `PUT`, `POST` | Read and save mistake-notebook entries |
+
+Requests are limited to 500 KB and return JSON. The current data model intentionally retains the legacy single-user behavior. Add authentication and per-user storage keys before making the application publicly available to multiple users.
+
+### Build and deploy
+
+```bash
+npm run cf-typegen
+npm run build
+npm run deploy
+```
+
+Before deployment, make sure `FAVORITES_KV` and `MISTAKES_KV` are bound to the appropriate Cloudflare KV namespace. Local development uses KV simulation by default.
