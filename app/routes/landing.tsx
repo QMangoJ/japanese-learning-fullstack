@@ -38,9 +38,9 @@ const steps = [
 	["05", "第二天先刷闪卡", "用收藏快速复习昨天，再开始今天的学习。"],
 ];
 
-function TrialLink({ children, className }: { children: React.ReactNode; className?: string }) {
+function StudyLink({ children, className }: { children: React.ReactNode; className?: string }) {
 	return (
-		<Link className={className} to="/study?trial=1">
+		<Link className={className} to="/study">
 			{children}
 		</Link>
 	);
@@ -58,7 +58,7 @@ export default function Landing() {
 						<a href="#howto">使用指南</a>
 						<a href="#faq">常见问题</a>
 					</nav>
-					<TrialLink className="nav-cta">免费试学</TrialLink>
+					<StudyLink className="nav-cta">进入学习区</StudyLink>
 				</div>
 			</header>
 
@@ -71,7 +71,7 @@ export default function Landing() {
 							<h1>学日语没有捷径，<br />但可以不用自己排计划。</h1>
 							<p>一个日语学习者，把自己每天学的东西做成了一套系统：每天学什么、每个级别学到哪、每道题怎么解，全都写好了。</p>
 							<div className="hero-actions">
-								<TrialLink className="button button-primary">免费试学第一周 <span>→</span></TrialLink>
+								<StudyLink className="button button-primary">进入知识库 <span>→</span></StudyLink>
 								<a className="button button-quiet" href="#howto">先看使用指南</a>
 							</div>
 						<div className="hero-stats"><span>55 周课程</span><span>9 个模块</span><Link to="/reading/n3">N3 读解训练</Link><span>手机 / 电脑都能用</span></div>
@@ -122,9 +122,9 @@ export default function Landing() {
 
 				<section className="landing-wrap howto" id="howto">
 					<div className="section-label"><h2>如何使用</h2><span>HOW TO USE</span></div>
-					<p className="section-lead light">建议每天一次，一次一「天」的量。新用户可免费体验 N3 第一周。</p>
+					<p className="section-lead light">建议每天一次，一次一「天」的量。打开知识库后，从你的当前目标开始即可。</p>
 					<div className="steps">{steps.map(([number, title, description]) => <article key={number}><span>STEP {number}</span><h3>{title}</h3><p>{description}</p></article>)}</div>
-					<div className="howto-cta"><div>每天二十分钟，<br />比周末补三小时管用。</div><TrialLink>现在开始 →</TrialLink></div>
+					<div className="howto-cta"><div>每天二十分钟，<br />比周末补三小时管用。</div><StudyLink>现在开始 →</StudyLink></div>
 				</section>
 
 				<section className="features">
@@ -133,12 +133,12 @@ export default function Landing() {
 
 				<section className="landing-wrap faq" id="faq">
 					<div className="section-label"><h2>常见问题</h2><span>FAQ</span></div>
-					<details open><summary>新用户能学到什么？</summary><p>可以完整体验 N3 的第一周，包含当天课程、例句、练习、答案与收藏功能。其余内容会保留预览，登录与订阅上线后按权限开放。</p></details>
+					<details open><summary>现在可以学到什么？</summary><p>目前知识库中的 N4、N3、N2 课程均可直接使用，包含课程内容、练习、答案、收藏与错题本。</p></details>
 					<details><summary>每天需要花多长时间？</summary><p>一「天」的量大约二十到三十分钟，包含阅读、做题和对答案。</p></details>
 					<details><summary>需要注册吗？</summary><p>目前不用。学习进度和收藏保存在设备中；账户系统上线后，会提供跨设备同步与订阅权限。</p></details>
 				</section>
 			</main>
-			<footer className="landing-footer"><div className="landing-wrap"><span>日本語上手</span><TrialLink>从第一周开始 →</TrialLink></div></footer>
+			<footer className="landing-footer"><div className="landing-wrap"><span>日本語上手</span><StudyLink>开始学习 →</StudyLink></div></footer>
 		</div>
 	);
 }

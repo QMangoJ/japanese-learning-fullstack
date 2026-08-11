@@ -1,3 +1,4 @@
 /* The study UI is intentionally provided by /study-legacy.css.
- * Keeping this file neutral prevents framework defaults from changing the
- * pixel-level behavior of the existing Japanese-learning application. */
+ * Only remove the browser's default outer margin so every route reaches the
+ * viewport edge; the study stylesheet still owns its internal layout. */
+html, body { margin: 0; min-height: 100%; }

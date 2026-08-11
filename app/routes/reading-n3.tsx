@@ -54,11 +54,11 @@ export default function ReadingN3() {
 
 	return (
 		<div className="reader-page">
-			<header className="reader-header"><div className="reader-wrap"><Link to="/" className="reader-brand">日本語上手</Link><nav><Link to="/study">知识库</Link><Link to="/reading/n3" aria-current="page">N3 读解</Link></nav><Link className="reader-try" to="/study?trial=1">免费试学</Link></div></header>
+			<header className="reader-header"><div className="reader-wrap"><Link to="/" className="reader-brand">日本語上手</Link><nav><Link to="/study">知识库</Link><Link to="/reading/n3" aria-current="page">N3 读解</Link></nav><Link className="reader-try" to="/study">进入学习区</Link></div></header>
 			<div className="reader-wrap reader-layout">
 				<aside className="reader-outline" aria-label="N3读解课程目录">
 					<div className="outline-top"><span>N3 READING</span><h2>读解训练</h2><p>读文章、找线索、再验证答案。</p></div>
-					{outline.map((item, index) => <section key={item.week}><div className="outline-week"><b>{item.week}</b><span>{item.cn}</span></div><p className="outline-title">{item.title}</p><ol>{item.days.map((day, dayIndex) => <li className={index === 0 && dayIndex === 0 ? "current" : "locked"} key={day}><span>{dayIndex + 1}</span>{day}{index === 0 && dayIndex === 0 ? <em>学习中</em> : <i>锁定</i>}</li>)}</ol></section>)}
+					{outline.map((item, index) => <section key={item.week}><div className="outline-week"><b>{item.week}</b><span>{item.cn}</span></div><p className="outline-title">{item.title}</p><ol>{item.days.map((day, dayIndex) => <li className={index === 0 && dayIndex === 0 ? "current" : "locked"} key={day}><span>{dayIndex + 1}</span>{day}{index === 0 && dayIndex === 0 ? <em>学习中</em> : <i>准备中</i>}</li>)}</ol></section>)}
 				</aside>
 
 				<main className="reader-main">
