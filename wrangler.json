@@ -1,6 +1,6 @@
 {
 	"$schema": "./node_modules/wrangler/config-schema.json",
-	"name": "fare-fullstack-template",
+	"name": "japanese-learning",
 	"main": "./workers/app.ts",
 	"compatibility_date": "2025-10-08",
 	"compatibility_flags": ["nodejs_compat"],
@@ -10,5 +10,15 @@
 	"upload_source_maps": true,
 	"vars": {
 		"VALUE_FROM_CLOUDFLARE": "Hello from Cloudflare"
-	}
+	},
+	"kv_namespaces": [
+		{
+			"binding": "FAVORITES_KV",
+			"id": "dd867fe5aa004ac8b4b536f508a3530d"
+		},
+		{
+			"binding": "MISTAKES_KV",
+			"id": "dd867fe5aa004ac8b4b536f508a3530d"
+		}
+	]
 }

@@ -39,7 +39,10 @@
 		"check": "tsc && react-router build && wrangler deploy --dry-run",
 		"deploy": "wrangler deploy",
 		"dev": "react-router dev",
+		"prebuild": "node scripts/sync-study-assets.mjs",
+		"predev": "node scripts/sync-study-assets.mjs",
 		"preview": "npm run build && vite preview",
+		"sync:study-assets": "node scripts/sync-study-assets.mjs",
 		"typecheck": "npm run typegen && tsc -b"
 	},
 	"type": "module"
