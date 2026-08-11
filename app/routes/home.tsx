@@ -1,5 +1,6 @@
 import { useEffect } from "react";
-import { Link, useSearchParams } from "react-router";
+import { createRoot, type Root } from "react-dom/client";
+import { BrowserRouter } from "react-router";
 
 import type { Route } from "./+types/home";
 import { ReadingN3Content } from "./reading-n3";
@@ -19,6 +20,7 @@ export const links: Route.LinksFunction = () => [
 function LegacyRuntime() {
 	useEffect(() => {
 		const isTrial = new URLSearchParams(window.location.search).get("trial") === "1";
+		const notifyReady = () => document.dispatchEvent(new Event("study-runtime-ready"));
 		const loadTrialGate = () => {
 			if (!isTrial || window.document.querySelector("script[data-trial-gate]")) return;
 			const trialGate = window.document.createElement("script");
@@ -29,6 +31,7 @@ function LegacyRuntime() {
 
 		if (window.document.querySelector("script[data-study-runtime]")) {
 			loadTrialGate();
+			notifyReady();
 			return;
 		}
 
@@ -39,7 +42,10 @@ function LegacyRuntime() {
 		script.src = "/study-legacy.js";
 		script.dataset.studyRuntime = "true";
 		script.async = false;
-		script.addEventListener("load", loadTrialGate, { once: true });
+		script.addEventListener("load", () => {
+			loadTrialGate();
+			notifyReady();
+		}, { once: true });
 		window.document.body.appendChild(script);
 	}, []);
 
@@ -56,8 +62,9 @@ function ReadingSideEntry() {
 			const contentSection = Array.from(side.querySelectorAll<HTMLElement>(".side-sec"))
 				.find((section) => section.querySelector(".side-h")?.textContent?.includes("内容"));
 			if (!contentSection) return;
-			link.href = "/study?module=reading";
+			link.href = "/study";
 			link.className = "side-reader-link";
+			if (document.body.classList.contains("reader-mode-active")) link.classList.add("on");
 			link.innerHTML = "<span>📕</span><span>读解</span><small>N3</small>";
 			contentSection.append(link);
 		};
@@ -66,6 +73,66 @@ function ReadingSideEntry() {
 		observer.observe(document.body, { childList: true, subtree: true });
 		insertEntry();
 		return () => observer.disconnect();
+	}, []);
+
+	return null;
+}
+
+function ReadingModeBridge() {
+	useEffect(() => {
+		let readerRoot: Root | null = null;
+
+		const syncActiveState = (active: boolean) => {
+			document.body.classList.toggle("reader-mode-active", active);
+			document.querySelectorAll("#typebar button").forEach((button) => button.classList.toggle("on", false));
+			document.querySelectorAll(".reader-mode-link, .side-reader-link").forEach((entry) => entry.classList.toggle("on", active));
+		};
+
+		const leaveReading = () => {
+			if (!readerRoot) return;
+			readerRoot.unmount();
+			readerRoot = null;
+			document.querySelector("#app")?.classList.remove("study-reading-app");
+			syncActiveState(false);
+		};
+
+		const enterReading = () => {
+			const app = document.querySelector<HTMLElement>("#app");
+			if (!app) return;
+			if (!readerRoot) {
+				app.replaceChildren();
+				readerRoot = createRoot(app);
+			}
+			app.classList.add("study-reading-app");
+			readerRoot.render(<BrowserRouter><ReadingN3Content embedded /></BrowserRouter>);
+			syncActiveState(true);
+		};
+
+		const onDocumentClick = (event: MouseEvent) => {
+			const target = event.target instanceof Element ? event.target.closest<HTMLElement>("a, button") : null;
+			if (!target) return;
+			if (target.matches(".reader-mode-link, .side-reader-link")) {
+				event.preventDefault();
+				enterReading();
+				return;
+			}
+			if (readerRoot && target.matches("#typebar button, #side button, nav.bottom button")) leaveReading();
+		};
+
+		const activateLegacyLink = () => {
+			if (new URLSearchParams(window.location.search).get("module") !== "reading") return;
+			window.history.replaceState({}, "", "/study");
+			enterReading();
+		};
+
+		document.addEventListener("click", onDocumentClick, true);
+		document.addEventListener("study-runtime-ready", activateLegacyLink);
+		if (window.document.querySelector("script[data-study-runtime]")) queueMicrotask(activateLegacyLink);
+		return () => {
+			document.removeEventListener("click", onDocumentClick, true);
+			document.removeEventListener("study-runtime-ready", activateLegacyLink);
+			leaveReading();
+		};
 	}, []);
 
 	return null;
@@ -103,7 +170,7 @@ function LegacyStudy() {
 						<button data-ty="kanji">
 							📙 <span className="lbl" data-cn="汉字" data-en="Kanji">汉字</span>
 						</button>
-						<a className="reader-mode-link" href="/study?module=reading">📕 <span>读解</span></a>
+						<a className="reader-mode-link" href="/study">📕 <span>读解</span></a>
 					</div>
 				</div>
 			</div>
@@ -120,43 +187,11 @@ function LegacyStudy() {
 			<div className="sheet" id="sheet" role="dialog" aria-modal="true" hidden />
 			<LegacyRuntime />
 			<ReadingSideEntry />
-		</>
-	);
-}
-
-function StudyReading() {
-	return (
-		<>
-			<div className="topbar study-reader-topbar">
-				<header className="top">
-					<Link className="back study-reader-back" to="/study">‹ 返回</Link>
-					<span className="lvchip">N3</span>
-					<h1>日本語上手</h1>
-					<div className="langbar"><span className="study-reader-lang">中</span></div>
-				</header>
-				<div className="modewrap">
-					<div className="typebar">
-						<Link className="study-module-link" to="/study">📘 <span>语法</span></Link>
-						<Link className="study-module-link" to="/study">📗 <span>词汇</span></Link>
-						<Link className="study-module-link" to="/study">📙 <span>汉字</span></Link>
-						<span className="reader-mode-link on">📕 <span>读解</span></span>
-					</div>
-				</div>
-			</div>
-			<aside className="side study-reading-side" aria-label="N3 内容">
-				<div className="side-brand">日本語上手</div>
-				<div className="side-sec"><div className="side-h">级别</div><div className="side-seg"><span>N4</span><span className="on">N3</span><span>N2</span></div></div>
-				<div className="side-sec"><div className="side-h">N3 内容</div><Link className="side-item" to="/study"><span className="ic">📘</span>语法<span className="ct">6周</span></Link><Link className="side-item" to="/study"><span className="ic">📗</span>词汇<span className="ct">6周</span></Link><Link className="side-item" to="/study"><span className="ic">📙</span>汉字<span className="ct">6周</span></Link><span className="side-item on"><span className="ic">📕</span>读解<span className="ct">N3</span></span></div>
-				<div className="side-sec"><div className="side-h">读解进度</div><span className="study-reading-day"><b>第 1 周第 1 日</b><small>案内 ① · 学習中</small></span></div>
-				<div className="side-foot"><Link className="side-item" to="/study"><span className="ic">‹</span>返回学习区</Link></div>
-			</aside>
-			<main id="app" className="study-reading-app"><ReadingN3Content embedded /></main>
-			<nav className="bottom reader-study-bottom"><Link to="/study"><span className="ic">📚</span><span>学习</span></Link><span className="on"><span className="ic">📕</span><span>读解</span></span><Link to="/study"><span className="ic">⭐</span><span>收藏</span></Link></nav>
+			<ReadingModeBridge />
 		</>
 	);
 }
 
 export default function Home() {
-	const [searchParams] = useSearchParams();
-	return searchParams.get("module") === "reading" ? <StudyReading /> : <LegacyStudy />;
+	return <LegacyStudy />;
 }
