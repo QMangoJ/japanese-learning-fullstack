@@ -27,7 +27,7 @@ const chapters = [
 		number: 1,
 		title: "準備をしましょう",
 		cn: "准备训练",
-		pages: "练习页 8–23",
+		pages: "练习页 12–22",
 		description: "从发音、语法到会话表达，完成基础听辨训练。",
 		focus: ["発音について", "文法", "会話表現"],
 		disc: "cd1" as const,
@@ -104,6 +104,11 @@ function cueLabel(cue: AudioCue) {
 	return `${audioLabel[cue.disc]} · ${String(cue.track).padStart(2, "0")}`;
 }
 
+function CueButton({ cue, active, onPlay }: { cue: AudioCue; active: AudioCue; onPlay: (cue: AudioCue) => void }) {
+	const isActive = active.disc === cue.disc && active.track === cue.track;
+	return <button className={isActive ? "on" : ""} onClick={() => onPlay(cue)} aria-pressed={isActive}>▶ {cueLabel(cue)}</button>;
+}
+
 function ListeningPlayer({ cue, audioRef, onChange }: { cue: AudioCue; audioRef: RefObject<HTMLAudioElement | null>; onChange: (cue: AudioCue) => void }) {
 	const [speed, setSpeed] = useState(1);
 	const [loop, setLoop] = useState(false);
@@ -121,14 +126,67 @@ function ListeningPlayer({ cue, audioRef, onChange }: { cue: AudioCue; audioRef:
 
 function ExerciseCard({ exercise, disc, active, onPlay }: { exercise: ExercisePage; disc: Disc; active: AudioCue; onPlay: (cue: AudioCue) => void }) {
 	return <article className="listening-exercise">
-		<header><div><span>题面 · 练习页 {exercise.page - 3}</span><h3>本页听力练习</h3></div><div className="listening-exercise__tracks">{exercise.tracks.map((track) => {
-			const cue = { disc, track };
-			const isActive = active.disc === disc && active.track === track;
-			return <button className={isActive ? "on" : ""} key={track} onClick={() => onPlay(cue)} aria-pressed={isActive}>▶ {cueLabel(cue)}</button>;
-		})}</div></header>
+		<header><div><span>题面 · 练习页 {exercise.page - 3}</span><h3>本页听力练习</h3></div><div className="listening-exercise__tracks">{exercise.tracks.map((track) => <CueButton key={track} cue={{ disc, track }} active={active} onPlay={onPlay} />)}</div></header>
 		<p>点击对应音轨即可播放；题干、选项、插图和日文注音按练习页原样呈现。</p>
 		<figure><img loading="lazy" src={pageSource(exercise.page)} alt={`N3 听解练习页 ${exercise.page - 3}，对应 ${exercise.tracks.map((track) => cueLabel({ disc, track })).join("、")}`} /></figure>
 	</article>;
+}
+
+const pronunciationTopics = [
+	{
+		title: "「ちょっと」「まって」",
+		note: "★ 注意有没有小「っ（ッ）」！",
+		body: [
+			"小「っ（ッ）」不发音，占一拍。",
+			"「ちょとまてください」是有问题的，正确的是「ちょっとまってください」。",
+			"另外，有没有「っ（ッ）」会变成两个完全不同的单词，例如「まち（城镇）」和「マッチ（match，火柴）」。",
+		],
+	},
+	{
+		title: "「おとうさん」「おかあさん」",
+		note: "★ 注意长音的写法！",
+		body: ["片假名用「ー」：コーヒー・スーパーマーケット", "平假名用「あ」「い」「う」「え」「お」。"],
+	},
+	{
+		title: "「なくなっちゃった」「買わなくちゃ」",
+		note: "★ 注意又快又短的口语表达！",
+		body: [],
+	},
+] as const;
+
+const pronunciationExercises = [
+	{
+		track: 2,
+		title: "1 番　小さい「っ（ッ）」があれば、__ に書いてください。",
+		example: "例題）ま__ち　マ__チ",
+		items: ["① レース__ン", "② ま__す__ぐ", "③ ポ__ケ__ト", "④ ゆ__く__り", "⑤ ス__ト__プ", "⑥ せ__け__ん", "⑦ ち__か__て__つ", "⑧ い__て__ら__しゃ__い"],
+	},
+	{
+		track: 3,
+		title: "2 番　のばす音「あ・い・う・え・お・ー」があれば __ に書いてください。",
+		example: "例題）セ__タ__　しゅ__み　きの__う",
+		items: ["① ゆ__び__ん__きょ__く__", "② バ__ス__デ__パ__ティ__", "③ ちゅ__しゃ__じょ__", "④ お__じ__さ__ん", "⑤ りゅ__が__く__せ__", "⑥ きょ__と__りょ__こ__", "⑦ じゅ__が__つ__と__か__", "⑧ き__れ__な__お__ね__さ__ん"],
+	},
+	{
+		track: 4,
+		title: "3 番　何と言いましたか。__ に一つずつひらがなを書いて、（　）にもとの形を書いてください。",
+		example: "例題）早く早く、バス いっちゃうよ。　（いってしまう）",
+		items: ["① 牛乳全部 ______________。また、買って ________。", "② ______________ だめだよ。危ないよ。", "③ テレビ見る前に宿題 ______________。", "④ あ、あの人、________ 見て ________。"],
+	},
+] as const;
+
+function PronunciationLesson({ active, onPlay }: { active: AudioCue; onPlay: (cue: AudioCue) => void }) {
+	return <section className="reader-section listening-text-lesson" aria-labelledby="pronunciation-lesson-title">
+		<div className="reader-section-head"><span>第 1 节 · 练习页 12–13</span><h2 id="pronunciation-lesson-title">発音について</h2><p>Pronunciation · 发音 · 발음에 대해</p></div>
+		<div className="listening-text-lesson__intro"><b>発音と表記に気をつけましょう！</b><p>Pay close attention to how the words are written and pronounced!</p><p>注意发音和书写！</p><p lang="ko">발음과 표기에 주의합시다!</p></div>
+		<div className="pronunciation-topics">
+			<article className="pronunciation-topic"><h3>{pronunciationTopics[0].title}</h3><b>{pronunciationTopics[0].note}</b>{pronunciationTopics[0].body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</article>
+			<article className="pronunciation-topic"><h3>{pronunciationTopics[1].title}</h3><b>{pronunciationTopics[1].note}</b>{pronunciationTopics[1].body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}<div className="pronunciation-table" role="table" aria-label="长音写法示例"><div role="row"><b>—a：あ</b><span>おかあさん　おばあさん　まあ</span></div><div role="row"><b>—i：い</b><span>おにいさん　ちいさい　いいえ</span></div><div role="row"><b>—u：う</b><span>すうがく　れんしゅう　ちゅうい</span></div><div role="row"><b>—e：い</b><span>とけい　せんせい　がくせい</span></div><div role="row"><b>—o：う</b><span>おとうさん　がっこう　とうきょう　ようか</span></div></div><aside><b>例外</b><span>おねえさん（え）　おおきい（お）　とうきょう（お）</span></aside></article>
+			<article className="pronunciation-topic"><h3>{pronunciationTopics[2].title}</h3><b>{pronunciationTopics[2].note}</b><div className="pronunciation-table pronunciation-table--phrases" role="table" aria-label="口语表达对照"><div role="row"><b>〜ちゃった・〜じゃった</b><span>（=〜てしまった・〜でしまった）　食べちゃった</span></div><div role="row"><b>〜ちゃう・〜じゃう</b><span>（=〜てしまう・〜でしまう）　食べちゃう</span></div><div role="row"><b>〜ちゃおう・〜じゃおう</b><span>（=〜てしまおう・〜でしまおう）　食べちゃおう</span></div><div role="row"><b>〜なくちゃ</b><span>（=〜なくてはいけない）　食べなくちゃ</span></div><div role="row"><b>〜なきゃ</b><span>（=〜なければならない）　食べなきゃ</span></div><div role="row"><b>〜ちゃ〜</b><span>（=〜ては〜）　食べちゃいけない</span></div><div role="row"><b>〜てる</b><span>（=〜ている）　食べてる</span></div></div><p><b>こっち・そっち・あっち・どっち</b>（=こちら・そちら・あちら・どちら）</p><p><b>★ 助词也经常被省略。</b><br />・そろそろ学校（へ）行かなきゃ。</p></article>
+		</div>
+		<div className="listening-text-exercises"><div className="reader-section-head"><span>MP3 を聞いてください · 答えは p.74</span><h3>听力练习</h3><p>先阅读题目，再点击右侧按钮播放；填写空格后，可对照原题版面复查。</p></div>{pronunciationExercises.map((exercise) => <article className="listening-text-exercise" key={exercise.track}><header><h4>{exercise.title}</h4><CueButton cue={{ disc: "cd1", track: exercise.track }} active={active} onPlay={onPlay} /></header><p className="listening-text-exercise__example">{exercise.example}</p><ol>{exercise.items.map((item) => <li key={item}>{item}</li>)}</ol></article>)}</div>
+		<details className="listening-source-check"><summary>查看原页版面核对</summary><div><img loading="lazy" src={pageSource(15)} alt="第 1 章第 1 节发音讲解原页" /><img loading="lazy" src={pageSource(16)} alt="第 1 章第 1 节发音练习原页" /></div></details>
+	</section>;
 }
 
 function ListeningCatalog({ onSelect }: { onSelect: (index: number) => void }) {
@@ -166,7 +224,8 @@ function ChapterDetail({ chapterIndex, onBack }: { chapterIndex: number; onBack:
 		<section className="reader-hero reader-studybar"><div className="reader-breadcrumb"><span>N3 聴解</span><span>/</span><b>第 {chapter.number} 章</b></div><div className="reader-studybar__body"><div><button className="reader-back" onClick={onBack}>‹ 听解目录</button><span>第 {chapter.number} 章</span><h1>{chapter.title}</h1><p>{chapter.cn}</p></div></div></section>
 		<section className="reader-section listening-source"><div className="reader-section-head"><span>训练内容</span><h2>{chapter.cn}</h2><p>{chapter.description}</p></div><div className="listening-source__grid"><div><b>练习范围</b><p>{chapter.pages}</p></div><div><b>本章重点</b><p>{chapter.focus.join(" · ")}</p></div><div><b>学习顺序</b><p>阅读题面，点击就近音轨作答，再用播放器复听。</p></div></div></section>
 		<ListeningPlayer cue={cue} audioRef={audioRef} onChange={nextCue} />
-		<section className="listening-exercises"><div className="reader-section-head"><span>逐题练习</span><h2>题面与音频对应</h2><p>每个播放按钮均按照题面印刷的 CD 与音轨编号校对。</p></div>{chapter.exercises.map((exercise) => <ExerciseCard key={exercise.page} exercise={exercise} disc={chapter.disc} active={cue} onPlay={chooseCue} />)}</section>
+		{chapter.number === 1 && <PronunciationLesson active={cue} onPlay={chooseCue} />}
+		<section className="listening-exercises"><div className="reader-section-head"><span>逐题练习</span><h2>题面与音频对应</h2><p>每个播放按钮均按照题面印刷的 CD 与音轨编号校对。</p></div>{chapter.exercises.filter((exercise) => chapter.number !== 1 || exercise.page !== 16).map((exercise) => <ExerciseCard key={exercise.page} exercise={exercise} disc={chapter.disc} active={cue} onPlay={chooseCue} />)}</section>
 	</main></div></div>;
 }
 

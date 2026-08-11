@@ -90,13 +90,25 @@ function StudyModeBridge() {
 	useEffect(() => {
 		let moduleRoot: Root | null = null;
 		type StudyMode = "reading" | "listening";
+		let activeMode: StudyMode | null = null;
+
+		const keepModeTitle = () => {
+			const title = document.querySelector("#title");
+			if (!activeMode || !title) return;
+			const expected = activeMode === "reading" ? "N3 读解" : "N3 听解";
+			if (title.textContent !== expected) title.textContent = expected;
+		};
+
+		const title = document.querySelector("#title");
+		const titleObserver = title ? new MutationObserver(keepModeTitle) : null;
+		titleObserver?.observe(title, { childList: true, characterData: true, subtree: true });
 
 		const syncActiveState = (mode: StudyMode | null) => {
+			activeMode = mode;
 			const active = mode !== null;
 			document.body.classList.toggle("reader-mode-active", mode === "reading");
 			document.body.classList.toggle("listening-mode-active", mode === "listening");
-			const title = document.querySelector("#title");
-			if (mode && title) title.textContent = mode === "reading" ? "N3 读解" : "N3 听解";
+			keepModeTitle();
 			document.querySelectorAll("#typebar button").forEach((button) => button.classList.toggle("on", false));
 			if (active) document.querySelectorAll("#side .side-item.on").forEach((entry) => entry.classList.remove("on"));
 			document.querySelectorAll(".reader-mode-link, .side-reader-link").forEach((entry) => entry.classList.toggle("on", mode === "reading"));
@@ -166,6 +178,7 @@ function StudyModeBridge() {
 		return () => {
 			document.removeEventListener("click", onDocumentClick, true);
 			document.removeEventListener("study-runtime-ready", activateLegacyLink);
+			titleObserver?.disconnect();
 			leaveModule();
 		};
 	}, []);
