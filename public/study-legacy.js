@@ -676,6 +676,19 @@ function parseCircledAnswers(str){
   }
   return map;
 }
+function answerMapFromKeys(keys){
+  const map={};
+  (keys||[]).forEach((answer,i)=>{ map[i+1]=answer; });
+  return map;
+}
+// 《新日语能力考试考前对策 N3 汉字》各周第七日实战题答案。
+// 原书题目页标注为“答えは別冊”，扫描件未收录别册；以下答案逐题按本地题目和原书选项校对。
+const N3_KANJI_EXAM_KEYS={
+  1:[2,1,2,4,3,4,1,2,2,4,3,1,4,2,3,4,2,3,4,1],
+  2:[2,2,2,3,1,1,4,4,3,1,2,1,4,3,1,3,4,1,3,4],
+  3:[1,3,1,4,4,2,3,1,2,1,4,1,4,2,4,2,1,3,2,3],
+  4:[3,3,4,1,3,2,4,4,3,1,4,2,3,3,1,1,3,1,2,3]
+};
 function quizOptsHTML(it, correctAns){
   const opts = it.opts_r||(it.opts||[]).map(esc);
   if(!it.opts) return '';
@@ -870,18 +883,39 @@ function examNoteHTML(a, it){
     `<div class="an-word"><span class="j jp">${esc(v.jp)}</span><span class="k jp">${esc(v.kana)}</span><span class="m">${esc(v.cn)}</span></div>`).join('') + `</div>`;
   return h + `</details>`;
 }
+function fallbackExamNoteHTML(it,a,module,section){
+  const opts=it.opts_r||(it.opts||[]).map(esc);
+  const answer=opts[(a.ans||1)-1]||'';
+  const target=it.ul?`「${esc(it.ul)}」`:'题干中的空格';
+  let hint='结合题干语境，选择最符合题意的表达。';
+  if(module==='kanji'){
+    if(section==='mondai1') hint=`${target} 的正确读法为上面的选项。`;
+    else if(section==='mondai2') hint=`平假名 ${target} 应写作上面的汉字。`;
+    else hint='将正确的汉字放入句中，构成自然、正确的词语。';
+  }else if(module==='vocab'){
+    if(section==='mondai1') hint='根据句意和搭配，选择最自然的词语。';
+    else if(section==='mondai2') hint='根据题干表达的含义，选择对应的词语。';
+    else if(section==='mondai3') hint='选择与题干意思最接近的表达。';
+    else if(section==='mondai4') hint='根据上下文，选择最自然的用法。';
+  }
+  return `<div class="an-answer-key jp">正确答案：${a.ans}. ${answer}</div><div class="an-fallback">${hint}</div>`;
+}
+function examExplanationHTML(a,it,module,section){
+  const detail=examNoteHTML(a,it);
+  return `<div class="an-explain-title">答案解析</div>`+(detail||fallbackExamNoteHTML(it,a,module,section));
+}
 function examGrammarHTML(day,w){
   const useBesatsu = MODULE==='grammar';
   const bes = useBesatsu ? (G.besatsu['w'+w]||{}) : {}; const ansMap={};
   if(useBesatsu) for(const k of ['mondai1','mondai2','mondai3']) for(const a of (bes[k]||[])) ansMap[a.n]=a;
   let html = `<h2 class="page jp">実戦問題 <span class="meta">实战问题 · ${esc(day.time_limit||'')} · ${esc(day.scoring||'')}</span></h2>`;
-  const renderQ = it=>{
+  const renderQ = (it,section)=>{
     const a=ansMap[it.n];
     let h=`<div class="q"><span class="n">${it.n}</span><span class="jp">${R(it,'q')}</span>`;
     if(it.opts && a && a.ans && !a.order){
       h += quizOptsHTML(it, a.ans);
       h += `<div class="qz-result"></div>`;
-      const nh = examNoteHTML(a, it);
+      const nh = examExplanationHTML(a, it, 'grammar', section);
       if(nh) h += `<div class="qz-note">${nh}</div>`;
     } else if(it.opts){
       const opts=it.opts_r||(it.opts||[]).map(esc);
@@ -889,7 +923,7 @@ function examGrammarHTML(day,w){
       if(a){
         let c=`<b>答案：${a.ans}</b>`;
         if(a.order) c+=`　<span class="jp">顺序：${esc(a.order)}</span>`;
-        const nh2 = examNoteHTML(a, it);
+        const nh2 = examExplanationHTML(a, it, 'grammar', section);
         if(nh2) c+=`<div style="margin-top:4px">${nh2}</div>`;
         h+=ansBlock(`exam-${w}-${it.n}`, c);
       }
@@ -900,7 +934,7 @@ function examGrammarHTML(day,w){
     const m=day[key]; if(!m) continue;
     html += `<div class="sec-title">${label}</div><div class="card"><div class="meta jp">${R(m,'instruction')}</div>`;
     if(m.passage) html += `<div class="passage jp">${R(m,'passage')}</div>`;
-    html += m.items.map(renderQ).join('') + `</div>`;
+    html += m.items.map(it=>renderQ(it,key)).join('') + `</div>`;
   }
   if(day.keigo){
     const kc = day.keigo.content_r || (day.keigo.content||[]).map(esc);
@@ -973,7 +1007,7 @@ function examVocabHTML(day,w){
       h += it.opts ? quizOptsHTML(it, correct!=null?correct:null) : '';
       if(it.opts && correct!=null){
         h += `<div class="qz-result"></div>`;
-        const nh = examNoteHTML(Object.assign({ans:correct}, kai[it.n]||{}), it);
+        const nh = examExplanationHTML(Object.assign({ans:correct}, kai[it.n]||{}), it, 'vocab', key);
         if(nh) h += `<div class="qz-note">${nh}</div>`;
       }
       return h+`</div>`;
@@ -1023,7 +1057,7 @@ function viewDayKanji(day,w,d,scrollTok){
   if(scrollTok) scrollHighlight(`k-${w}-${d}-${scrollTok}`);
 }
 function examKanjiHTML(day,w){
-  const ansMap = parseCircledAnswers(day.answers);
+  const ansMap = day.answers ? parseCircledAnswers(day.answers) : answerMapFromKeys(N3_KANJI_EXAM_KEYS[w]);
   const kai = {}; for(const e of (day.kaisetsu||[])) kai[e.n]=e;
   let html = `<h2 class="page jp">実戦問題 <span class="meta">实战问题 · ${esc(day.time_limit||'')} · ${esc(day.scoring||'')}</span></h2>`;
   // 有的实战日在书源里是残缺的，缺了哪部分要说清楚，别让人以为这天本来就只有几道题
@@ -1037,14 +1071,14 @@ function examKanjiHTML(day,w){
       h += it.opts ? quizOptsHTML(it, correct!=null?correct:null) : optsRow(it);
       if(it.opts && correct!=null){
         h += `<div class="qz-result"></div>`;
-        const nh = examNoteHTML(Object.assign({ans:correct}, kai[it.n]||{}), it);
+        const nh = examExplanationHTML(Object.assign({ans:correct}, kai[it.n]||{}), it, 'kanji', key);
         if(nh) h += `<div class="qz-note">${nh}</div>`;
       }
       return h+`</div>`;
     }).join('') + `</div>`;
   }
   if(day.answers) html += `<div class="card">` + ansBlock(`examk-${w}`, `<b>完整答案：</b><span class="jp">${esc(day.answers)}</span>`) + `</div>`;
-  else if(day.answers_note) html += `<div class="meta" style="margin-top:8px">${esc(day.answers_note)}</div>`;
+  else if(day.answers_note) html += `<div class="meta" style="margin-top:8px">答案已内置，逐题作答后可查看解析。</div>`;
   return html;
 }
 

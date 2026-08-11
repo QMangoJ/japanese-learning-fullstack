@@ -160,6 +160,9 @@ main{max-width:760px;margin:0 auto;padding:14px}
 .qz.answered .opt-btn.wrong{background:var(--red-soft);border-color:var(--red);color:var(--red);font-weight:700}
 .qz-note{display:none;background:var(--amber-soft);color:var(--ink);border-radius:8px;padding:8px 12px;font-size:13.5px;margin-top:6px;line-height:1.6}
 .qz-note.show{display:block}
+.an-explain-title{font-size:11px;font-weight:800;letter-spacing:.06em;color:var(--amber);margin:0 0 3px;text-transform:uppercase}
+.an-answer-key{font-weight:700;color:var(--ink)}
+.an-fallback{font-size:13px;color:var(--muted);margin-top:3px}
 /* 逐题解析：默认只露一行译文，逐项讲解/要点/生单词收在折叠里，
    不然 25 道题全展开，页面会长到没法用 */
 .an-trans{margin-top:3px;color:var(--sub);font-size:13px}
