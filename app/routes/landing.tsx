@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Link, redirect } from "react-router";
 
 import type { Route } from "./+types/landing";
 import "./landing.css";
@@ -11,6 +11,11 @@ export function meta({}: Route.MetaArgs) {
 			content: "N4、N3、N2 日语学习计划：语法、词汇、汉字、练习与详细解析。",
 		},
 	];
+}
+
+// 个人使用阶段直接进入学习区；门户页保留，待登录/公开展示启用后再恢复。
+export function loader() {
+	return redirect("/study");
 }
 
 const levels = [
