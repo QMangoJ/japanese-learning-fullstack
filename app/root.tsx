@@ -12,6 +12,8 @@ import "./app.css";
 
 export const links: Route.LinksFunction = () => [
 	{ rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+	{ rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
+	{ rel: "manifest", href: "/manifest.webmanifest" },
 	{ rel: "preconnect", href: "https://fonts.googleapis.com" },
 	{
 		rel: "preconnect",
@@ -30,6 +32,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
 			<head>
 				<meta charSet="utf-8" />
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
+				<meta name="theme-color" content="#ef6b9a" />
+				<meta name="apple-mobile-web-app-capable" content="yes" />
+				<meta name="apple-mobile-web-app-title" content="日本語上手" />
 				<Meta />
 				<Links />
 			</head>
