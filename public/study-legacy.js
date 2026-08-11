@@ -203,7 +203,7 @@ function star(id, snap){ FAVMETA[id]=snap; return `<button class="starb" data-fa
 /* ---------- 划词收藏 ---------- */
 // 划词条目和普通收藏共用 FAV，因此同样能写入 Cloudflare KV，在其它设备继续复习。
 const SELECTION_FAV_TYPES={newword:'生词',word:'单词',sentence:'句子',q:'错题',grammar:'语法'};
-let selectionFavType='word', selectionText='', selectionPopover=null, selectionPopoverTimer=null;
+let selectionFavType='word', selectionText='', selectionPopover=null, selectionPopoverTimer=null, selectionCheckTimer=null;
 function normalizeSelectionText(t){ return String(t||'').replace(/\s+/g,' ').trim(); }
 function selectionFavId(type, text){
   let h=2166136261;
@@ -212,9 +212,11 @@ function selectionFavId(type, text){
 }
 function selectionBelongsToApp(sel){
   if(!sel||!sel.rangeCount||sel.isCollapsed) return false;
-  const node=sel.getRangeAt(0).commonAncestorContainer;
+  const range=sel.getRangeAt(0), node=range.commonAncestorContainer;
   const el=node&& (node.nodeType===1 ? node : node.parentElement);
-  return !!(el&&app.contains(el));
+  // commonAncestor 在跨 ruby / 文本节点选择时不一定是 #app 的直接后代，
+  // 因此同时用 Range 的交集来判断，避免把真实选区误判成页面外选择。
+  return !!(el&&app.contains(el)) || !!(range.intersectsNode&&range.intersectsNode(app));
 }
 function ensureSelectionPopover(){
   if(selectionPopover) return selectionPopover;
@@ -264,16 +266,27 @@ function saveSelectedText(){
   selectionPopoverTimer=setTimeout(hideSelectionPopover,700);
 }
 function maybeShowSelectionPopover(){
-  setTimeout(()=>{
+  requestAnimationFrame(()=>{
     const sel=document.getSelection();
     const text=normalizeSelectionText(sel&&sel.toString());
     if(!text||!selectionBelongsToApp(sel)){ hideSelectionPopover(); return; }
     const rect=sel.getRangeAt(0).getBoundingClientRect();
     if(rect.width||rect.height) showSelectionPopover(text,rect);
-  },0);
+  });
 }
-document.addEventListener('pointerup', e=>{ if(!e.target.closest('#selectionPopover')) maybeShowSelectionPopover(); },true);
-document.addEventListener('keyup', e=>{ if(e.key==='Escape') hideSelectionPopover(); else if(e.shiftKey||e.key==='ArrowLeft'||e.key==='ArrowRight') maybeShowSelectionPopover(); });
+function queueSelectionPopover(){
+  clearTimeout(selectionCheckTimer);
+  selectionCheckTimer=setTimeout(maybeShowSelectionPopover,48);
+}
+document.addEventListener('selectionchange', ()=>{
+  // 点击浮窗控件时不重新读取（可能已被浏览器清空的）文本选区。
+  if(selectionPopover&&!selectionPopover.hidden&&selectionPopover.contains(document.activeElement)) return;
+  queueSelectionPopover();
+});
+document.addEventListener('pointerup', e=>{ if(!e.target.closest('#selectionPopover')) queueSelectionPopover(); },true);
+document.addEventListener('mouseup', e=>{ if(!e.target.closest('#selectionPopover')) queueSelectionPopover(); },true);
+document.addEventListener('touchend', e=>{ if(!e.target.closest('#selectionPopover')) queueSelectionPopover(); },true);
+document.addEventListener('keyup', e=>{ if(e.key==='Escape') hideSelectionPopover(); else if(e.shiftKey||e.key==='ArrowLeft'||e.key==='ArrowRight') queueSelectionPopover(); });
 document.addEventListener('pointerdown', e=>{ if(selectionPopover&&!e.target.closest('#selectionPopover')) hideSelectionPopover(); },true);
 window.addEventListener('scroll', hideSelectionPopover,{passive:true});
 
