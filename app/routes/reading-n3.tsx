@@ -19,7 +19,10 @@ export function loader() {
 const outline = [
 	{ week: "第1週", title: "お知らせや案内を読もう", days: ["案内①", "案内②", "案内③", "試験要項", "日程募集①", "日程募集②", "実戦問題"] },
 	{ week: "第2週", title: "身のまわりの文章を読もう", days: ["カタログ①", "カタログ②", "お知らせ", "説明書①", "説明書②", "保証書", "実戦問題"] },
-	{ week: "第3週", title: "通信文を読もう", days: ["メール①", "メール②", "手紙・はがき①", "手紙・はがき②", "手紙・はがき③", "FAX", "実戦問題"] },
+	{ week: "第3週", title: "通信文を読もう", days: ["メール①", "メール②", "手紙・はがき①", "手紙・はがき②", "手紙・はがき③", "FAX（ビジネスレター）", "実戦問題"] },
+	{ week: "第4週", title: "新聞を読もう", days: ["見出し", "グラフ①", "グラフ②", "広告①", "広告②", "まんが", "実戦問題"] },
+	{ week: "第5週", title: "日記や小説を読もう", days: ["日記①", "日記②", "家族①", "家族②", "小説①", "小説②", "実戦問題"] },
+	{ week: "第6週", title: "意見文や説明文を読もう", days: ["意見文①", "意見文②", "意見文③", "計算に関する文章", "医学に関する文章", "社会に関する文章", "実戦問題"] },
 ];
 
 const dialogue = [
@@ -29,6 +32,18 @@ const dialogue = [
 	{ jp: "男子学生：ううん、開いてるよ。第３月曜日が祝日の場合は次の日が休みになるんだ。", cn: "男学生：不是，开着呢。第三个星期一如果是节假日，第二天才休馆。", grammar: ["〜場合", "〜ことになる"] },
 	{ jp: "女子学生：あ、そう。知らなかった。じゃ、明日が休みということね。私も調べたいことがあるから、一緒に行こう。", cn: "女学生：啊，原来如此。我不知道。也就是说，明天休馆。我也有想查的东西，一起去吧。", grammar: ["〜ということ", "〜たい", "〜から"] },
 ];
+
+const furigana = new Map([
+	["中央図書館", "ちゅうおうとしょかん"], ["利用案内", "りようあんない"], ["開館時間", "かいかんじかん"], ["休館日", "きゅうかんび"], ["第３月曜日", "だいさんげつようび"], ["第3月曜日", "だいさんげつようび"], ["次の日", "つぎのひ"], ["祝日", "しゅくじつ"], ["場合", "ばあい"], ["平日", "へいじつ"], ["土曜日", "どようび"], ["日曜日", "にちようび"], ["午前", "ごぜん"], ["午後", "ごご"], ["年末年始", "ねんまつねんし"], ["電気工事", "でんきこうじ"], ["臨時", "りんじ"], ["女子学生", "じょしがくせい"], ["男子学生", "だんしがくせい"], ["図書館", "としょかん"], ["月曜日", "げつようび"], ["明日", "あした"], ["一緒", "いっしょ"], ["説明会", "せつめいかい"], ["会場", "かいじょう"], ["地下鉄", "ちかてつ"], ["出口", "でぐち"], ["信号", "しんごう"], ["新聞", "しんぶん"], ["見出し", "みだし"], ["意見文", "いけんぶん"], ["説明文", "せつめいぶん"], ["学生", "がくせい"], ["理由", "りゆう"], ["具体例", "ぐたいれい"], ["公園", "こうえん"], ["開園", "かいえん"], ["徒歩", "とほ"], ["週末", "しゅうまつ"], ["催し", "もよおし"], ["利用者数", "りようしゃすう"], ["去年", "きょねん"], ["夏休み", "なつやすみ"], ["商品", "しょうひん"], ["売り上げ", "うりあげ"], ["水準", "すいじゅん"], ["契約", "けいやく"], ["無料", "むりょう"], ["配達", "はいたつ"], ["申込書", "もうしこみしょ"], ["会員限定", "かいいんげんてい"], ["金曜日", "きんようび"], ["会員証", "かいいんしょう"], ["登場人物", "とうじょうじんぶつ"], ["表情", "ひょうじょう"], ["気持ち", "きもち"], ["数字", "すうじ"], ["本文", "ほんぶん"], ["高校", "こうこう"], ["友達", "ともだち"], ["時間", "じかん"], ["予定", "よてい"], ["散歩", "さんぽ"], ["午後", "ごご"], ["父", "ちち"], ["家族", "かぞく"], ["朝ご飯", "あさごはん"], ["妹", "いもうと"], ["来年", "らいねん"], ["大学", "だいがく"], ["卒業", "そつぎょう"], ["海外", "かいがい"], ["窓", "まど"], ["外", "そと"], ["子ども", "こども"], ["住んでいた町", "すんでいたまち"], ["約束", "やくそく"], ["近く", "ちかく"], ["便利", "べんり"], ["必要", "ひつよう"], ["地域", "ちいき"], ["若い人", "わかいひと"], ["基本料金", "きほんりょうきん"], ["使用", "しよう"], ["電気", "でんき"], ["金額", "きんがく"], ["薬", "くすり"], ["食後", "しょくご"], ["症状", "しょうじょう"], ["医師", "いし"], ["買い物", "かいもの"], ["結論", "けつろん"], ["筆者", "ひっしゃ"],
+]);
+const furiganaPattern = new RegExp(`(${[...furigana.keys()].sort((a, b) => b.length - a.length).join("|")})`, "g");
+
+function FuriganaText({ text }: { text: string }) {
+	return <>{text.split(furiganaPattern).map((part, index) => {
+		const reading = furigana.get(part);
+		return reading ? <ruby key={`${part}-${index}`}>{part}<rt>{reading}</rt></ruby> : part;
+	})}</>;
+}
 
 const grammarNotes: Record<string, string> = {
 	"〜ないといけない": "动词ない形 + といけない，表示“必须……”。书面和口语里也常见 〜なければならない。",
@@ -80,9 +95,35 @@ const lessonSeeds: LessonSeed[] = [
 	{ passage: "通信文では、差出人・宛先・日時・依頼内容を結び付けて読むことが大切です。", translation: "阅读通信文时，把发件人、收件人、日期和请求内容联系起来理解很重要。", grammar: [["〜ことが大切", "表示做某事很重要。"], ["結び付けて", "表示把多个信息关联起来。"]], question: "通信文を読むとき、何を結び付けますか。", options: ["差出人・宛先・日時・依頼", "写真・色・値段", "漢字・音楽・地図"], answer: 0, explanation: "实战题考查把通信文关键信息关联起来的能力。" },
 ];
 
+const laterLessonSeeds: LessonSeed[] = [
+	{ passage: "市は来月、新しい公園を開園します。駅から徒歩五分で、週末には子ども向けの催しも開かれます。", translation: "市政府将于下月开放一座新公园。它距车站步行五分钟，周末还将举办面向儿童的活动。", grammar: [["〜を開園する", "表示设施正式开放。"], ["〜向け", "表示面向某个对象。"]], question: "公園について、正しいものはどれですか。", options: ["駅から歩いて行ける", "毎日休館する", "大人だけが入れる"], answer: 0, explanation: "标题和正文都要先抓地点、时间及对象等事实信息。" },
+	{ passage: "次のグラフは、三年間の図書館利用者数の変化を表しています。去年は夏休みの利用が最も多くなりました。", translation: "下图显示三年来图书馆使用人数的变化。去年暑假期间的使用人数最多。", grammar: [["〜を表す", "表示图表所呈现的内容。"], ["最も〜", "表示在比较中程度最高。"]], question: "去年、利用者が最も多かったのはいつですか。", options: ["夏休み", "春", "年末"], answer: 0, explanation: "先读图表标题，再比对表示最高值的项目。" },
+	{ passage: "商品の売り上げは四月から六月にかけて増え、その後はほぼ同じ水準で推移しています。", translation: "商品销售额从四月到六月持续增加，之后基本维持在相同水平。", grammar: [["〜にかけて", "表示从一个时间范围延续到另一个时间。"], ["推移する", "表示数值或情况逐渐变化。"]], question: "六月の後、売り上げはどうなりましたか。", options: ["ほぼ変わらなかった", "急に下がった", "毎月増えた"], answer: 0, explanation: "“ほぼ同じ水準”就是数值基本没有变化。" },
+	{ passage: "今月末までにご契約いただいた方には、無料で配達します。申込書は店頭またはウェブサイトからご利用ください。", translation: "在本月末前签约的顾客可享受免费配送。申请表可在店内或网站获取。", grammar: [["〜までに", "表示完成动作的截止时间。"], ["〜いただいた方", "礼貌地指完成该动作的人。"]], question: "無料配達を利用できるのは誰ですか。", options: ["今月末までに契約した人", "全ての来店者", "来月に申し込む人"], answer: 0, explanation: "广告中的优惠总要确认期限和适用对象。" },
+	{ passage: "会員限定セールは金曜日から日曜日までです。レジで会員証を見せると、表示価格から二割引きになります。", translation: "会员限定促销从周五至周日。结账时出示会员卡可在标价基础上享受八折。", grammar: [["限定", "表示仅限于某个范围。"], ["〜と", "表示满足前项时会自然产生后项结果。"]], question: "割引を受けるために必要なものは何ですか。", options: ["会員証", "新聞", "予約票"], answer: 0, explanation: "广告条件写在“レジで会員証を見せると”之后。" },
+	{ passage: "このまんがでは、登場人物の表情や短いせりふから、相手の本当の気持ちを考えます。", translation: "这则漫画通过人物表情和简短台词，要求推测对方真正的心情。", grammar: [["〜から", "表示判断的依据。"], ["本当の気持ち", "指没有直接说出的真实想法。"]], question: "まんがを読むとき、何を手がかりにしますか。", options: ["表情とせりふ", "長い説明文", "地図"], answer: 0, explanation: "漫画题的依据常在表情、动作和话语之间。" },
+	{ passage: "新聞を読むときは、見出しだけで判断せず、数字・グラフ・本文の関係を確かめましょう。", translation: "阅读报纸时，不要只凭标题判断，要核对数字、图表和正文之间的关系。", grammar: [["〜ず", "表示不做前项动作而进行后项。"], ["確かめる", "表示核实信息。"]], question: "新聞の内容を正しく理解するには何が必要ですか。", options: ["見出しと本文を合わせて読む", "見出しだけを見る", "写真だけを見る"], answer: 0, explanation: "实战题检验是否能将标题、数据和正文相互验证。" },
+	{ passage: "昨日は久しぶりに高校の友達と会った。話しているうちに、時間がたつのを忘れてしまった。", translation: "昨天久违地见了高中朋友。聊着聊着就忘记了时间。", grammar: [["〜うちに", "表示在某段时间内不知不觉发生变化。"], ["〜てしまう", "表示动作完成，也可含意外或遗憾。"]], question: "書き手は昨日どうしましたか。", options: ["高校の友達と会った", "引っ越した", "試験を受けた"], answer: 0, explanation: "日记题先确认是谁、何时、做了什么。" },
+	{ passage: "朝から雨だったので、予定していた散歩をやめて、家で本を読んだ。午後には空が明るくなった。", translation: "因为从早上开始下雨，取消了原定的散步，在家读书。下午天空放晴了。", grammar: [["〜ので", "表示原因。"], ["予定していた", "表示事先已经安排好的事情。"]], question: "書き手はなぜ散歩をやめましたか。", options: ["雨だったから", "本がなかったから", "午後だったから"], answer: 0, explanation: "日记里的原因通常紧跟在结果之前。" },
+	{ passage: "父は忙しいけれど、毎週日曜日には家族のために朝ご飯を作ってくれる。", translation: "父亲虽然很忙，但每周日都会为家人做早餐。", grammar: [["〜けれど", "表示转折。"], ["〜てくれる", "表示别人为说话人一方做某事。"]], question: "父は日曜日に何をしますか。", options: ["朝ご飯を作る", "会社へ行く", "旅行する"], answer: 0, explanation: "“けれど”之后是需要重点确认的事实。" },
+	{ passage: "妹は来年大学を卒業したら、海外で働きたいと言っている。家族は応援することにした。", translation: "妹妹说明年大学毕业后想去海外工作。家人决定支持她。", grammar: [["〜たら", "表示假定或某动作完成后的条件。"], ["〜ことにした", "表示作出了决定。"]], question: "家族はどうすることにしましたか。", options: ["妹を応援する", "妹を止める", "一緒に留学する"], answer: 0, explanation: "人物关系题要区分谁的愿望和谁的决定。" },
+	{ passage: "彼は窓の外を見ながら、子どものころに住んでいた町のことを思い出していた。", translation: "他望着窗外，想起了小时候住过的城镇。", grammar: [["〜ながら", "表示两个动作同时进行。"], ["〜ていた", "表示过去持续的状态。"]], question: "彼は何を思い出していましたか。", options: ["子どものころの町", "昨日の試験", "新しい仕事"], answer: 0, explanation: "小说题的答案通常来自人物的回忆、心情或行动。" },
+	{ passage: "駅に着いたとき、彼女は約束の時間より十分早いことに気づいた。そこで近くの店でコーヒーを買った。", translation: "到车站时，她发现比约定时间早了十分钟，于是在附近店里买了咖啡。", grammar: [["〜ことに気づく", "表示注意到某个事实。"], ["そこで", "表示基于前项情况采取的后续行动。"]], question: "彼女はなぜコーヒーを買いましたか。", options: ["時間が早かったから", "駅を間違えたから", "約束を忘れたから"], answer: 0, explanation: "“そこで”连接的是原因和由此采取的行动。" },
+	{ passage: "日記や小説では、書かれていない気持ちも、行動や場面の変化から読み取ることが大切です。", translation: "阅读日记和小说时，也要从行为和场景变化中读出没有明说的情绪。", grammar: [["書かれていない", "表示没有直接写出的内容。"], ["読み取る", "表示从线索中理解隐含信息。"]], question: "日記や小説で大切なことは何ですか。", options: ["行動から気持ちを考える", "数字だけを探す", "住所を覚える"], answer: 0, explanation: "实战题会要求根据行为推断人物心情。" },
+	{ passage: "私は学校の図書館をもっと長く開けるべきだと思う。放課後に勉強したい学生が多いからだ。", translation: "我认为学校图书馆应该开放得更久，因为有很多学生想在放学后学习。", grammar: [["〜べきだ", "表示说话人的主张或应该做的事。"], ["〜からだ", "用于说明理由。"]], question: "書き手の意見は何ですか。", options: ["図書館を長く開けるべきだ", "図書館を閉めるべきだ", "学生は勉強しないべきだ"], answer: 0, explanation: "意见文先找结论性的“〜べきだ”“と思う”。" },
+	{ passage: "便利なサービスでも、使いすぎると時間を無駄にすることがある。自分に必要かどうか考えて利用したい。", translation: "即使是方便的服务，使用过度有时也会浪费时间。我想先考虑是否真正需要再使用。", grammar: [["〜ても", "表示即便具备前项条件，后项仍成立。"], ["〜かどうか", "表示是否如此的不确定判断。"]], question: "書き手はサービスをどう使いたいですか。", options: ["必要か考えて使いたい", "できるだけ長く使いたい", "全く使いたくない"], answer: 0, explanation: "作者的主张常出现在段末的“〜たい”。" },
+	{ passage: "地域の祭りを続けるには、若い人にも準備に参加してもらう必要がある。", translation: "要延续地区的节日活动，需要让年轻人也参与筹备。", grammar: [["〜には", "表示为了实现某目标所需的条件。"], ["〜必要がある", "表示有必要做某事。"]], question: "祭りを続けるために必要なことは何ですか。", options: ["若い人の参加", "祭りを減らすこと", "会場を閉めること"], answer: 0, explanation: "说明文会明确提出达成目标所需的条件。" },
+	{ passage: "この料金は、基本料金に使用した電気の量に応じた金額を足して計算します。", translation: "该费用由基本费用加上根据实际用电量计算的金额构成。", grammar: [["〜に応じた", "表示按照某个标准而变化。"], ["足して", "表示把数值相加。"]], question: "料金は何によって変わりますか。", options: ["使った電気の量", "家の色", "曜日だけ"], answer: 0, explanation: "计算类文章的关键是公式、单位和变化条件。" },
+	{ passage: "薬は食後に水と一緒に飲んでください。症状がよくならない場合は、医師に相談しましょう。", translation: "请在饭后用水服药。如果症状没有好转，请咨询医生。", grammar: [["食後", "表示吃饭之后。"], ["〜場合は", "表示条件下的处理方式。"]], question: "症状がよくならないとき、どうしますか。", options: ["医師に相談する", "薬を倍にする", "すぐ運動する"], answer: 0, explanation: "医疗说明题必须按条件对应正确处理方法。" },
+	{ passage: "ごみを減らすためには、買い物のときに必要な物だけを選び、使える物はできるだけ長く使うことが大切です。", translation: "为了减少垃圾，购物时只选择必需品，并尽量长期使用还能用的东西很重要。", grammar: [["〜ためには", "表示目的。"], ["できるだけ", "表示尽可能地。"]], question: "ごみを減らすために、書き手は何を勧めていますか。", options: ["必要な物だけを買う", "毎日新しい物を買う", "使える物を捨てる"], answer: 0, explanation: "社会类文章重在目的、措施和结论之间的因果关系。" },
+	{ passage: "意見文や説明文では、筆者の結論と、それを支える理由・具体例を分けて読む練習をします。", translation: "阅读意见文和说明文时，练习区分作者结论，以及支撑结论的理由和具体例。", grammar: [["〜を支える", "表示为某个观点提供依据。"], ["分けて読む", "表示分类后理解文章结构。"]], question: "意見文を読むとき、何を分けますか。", options: ["結論と理由・例", "名前と住所", "文字と数字"], answer: 0, explanation: "实战题考查能否辨别主张、理由和具体事例。" },
+];
+
+const allLessonSeeds = [...lessonSeeds, ...laterLessonSeeds];
+
 const readingLessons = outline.flatMap((week, weekIndex) => week.days.map((title, dayIndex) => {
 	const index = weekIndex * 7 + dayIndex;
-	const seed = index === 0 ? null : lessonSeeds[index - 1];
+	const seed = index === 0 ? null : allLessonSeeds[index - 1];
 	return { index, week: weekIndex + 1, day: dayIndex + 1, title, subtitle: week.title, seed };
 }));
 
@@ -101,17 +142,17 @@ function LessonNavigator({ index, onSelect }: { index: number; onSelect: (index:
 
 function ReadingCatalog({ embedded, onSelect }: { embedded: boolean; onSelect: (index: number) => void }) {
 	const [openWeeks, setOpenWeeks] = useState(() => new Set([1]));
-	const descriptions = ["阅读各种启事和指南", "阅读身边常见的说明文字", "阅读邮件、书信等通信文"];
+	const descriptions = ["阅读各种启事和指南", "阅读身边常见的说明文字", "阅读邮件、书信等通信文", "阅读新闻与图表", "阅读日记与小说", "阅读意见文与说明文"];
 	const toggleWeek = (week: number) => setOpenWeeks((current) => {
 		const next = new Set(current);
 		next.has(week) ? next.delete(week) : next.add(week);
 		return next;
 	});
 	return <div className={embedded ? "reader-page reader-page--embedded" : "reader-page"}><div className="reader-wrap reader-layout"><main className="reader-main reader-catalog">
-		<div className="home-top"><div className="meta">《新日语能力考试考前对策 N3 读解》· 3 周 · 共 21 天 · 点击进入每日读解</div></div>
+		<div className="reader-catalog-intro"><span>N3 読解</span><h1>《新日语能力考试考前对策》</h1><p>6 周 · 共 42 天 · 点击进入每日读解</p></div>
 		{outline.map((week, weekIndex) => {
 			const isOpen = openWeeks.has(weekIndex + 1);
-			return <section className="card week-card reader-course-week" key={week.week}><button className="wk-head reader-week-toggle" onClick={() => toggleWeek(weekIndex + 1)} aria-expanded={isOpen}><div className="wk-t"><h2>{week.week} <span className="jp">{week.title}</span></h2><div className="sub">{descriptions[weekIndex]}</div></div><span className="cnt">7天</span><span className="cv">{isOpen ? "▾" : "▸"}</span></button>{isOpen && <div className="wk-body"><div className="day-list">{readingLessons.filter((lesson) => lesson.week === weekIndex + 1).map((lesson) => <button className="day-item reader-course-day" key={lesson.index} onClick={() => onSelect(lesson.index)}><div className="d">{lesson.day}日目{lesson.day === 7 ? " · 实战" : ""}</div><div className="t jp">{lesson.title}</div><div className="tc">读解练习 · 翻译 · 语法拆解</div></button>)}</div></div>}</section>;
+			return <section className="reader-week-card reader-course-week" key={week.week}><button className="reader-week-card__toggle reader-week-toggle" onClick={() => toggleWeek(weekIndex + 1)} aria-expanded={isOpen}><div><span>{week.week}</span><h2><FuriganaText text={week.title} /></h2><p>{descriptions[weekIndex]}</p></div><b>7 天　{isOpen ? "▾" : "▸"}</b></button>{isOpen && <div className="reader-day-list">{readingLessons.filter((lesson) => lesson.week === weekIndex + 1).map((lesson) => <button className="reader-course-day" key={lesson.index} onClick={() => onSelect(lesson.index)}><span>{lesson.day}日目{lesson.day === 7 ? " · 实战" : ""}</span><b><FuriganaText text={lesson.title} /></b><small>读解练习 · 翻译 · 语法拆解</small></button>)}</div>}</section>;
 		})}
 	</main></div></div>;
 }
@@ -123,8 +164,8 @@ function GenericLessonDetail({ lesson, embedded, onBack, onSelect }: { lesson: t
 	const [revealed, setRevealed] = useState(false);
 	const seed = lesson.seed!;
 	return <div className={embedded ? "reader-page reader-page--embedded" : "reader-page"}><div className="reader-wrap reader-layout"><main className="reader-main">
-		<section className="reader-hero reader-studybar"><div className="reader-breadcrumb"><span>N3 読解</span><span>/</span><b>第{lesson.week}週 {lesson.day}日目</b></div><div className="reader-studybar__body"><div><button className="reader-back" onClick={onBack}>‹ 读解目录</button><span>第{lesson.week}週 ／ {lesson.day}日目</span><h1>{lesson.title}</h1><p>{lesson.subtitle}</p></div><div className="reader-controls"><button className={showTranslation ? "on" : ""} onClick={() => setShowTranslation((value) => !value)}>翻译 {showTranslation ? "显示中" : "已隐藏"}</button><button className={showGrammar ? "on" : ""} onClick={() => setShowGrammar((value) => !value)}>语法拆解 {showGrammar ? "显示中" : "已隐藏"}</button></div></div></section>
-		<section className="reader-section"><div className="reader-section-head"><span>読解ポイント</span><h2>{lesson.title}を読もう</h2>{showTranslation && <p>先定位关键信息，再用选项回到原文验证。</p>}</div><article className="reading-passage"><p className="jp">{seed.passage}</p>{showTranslation && <p className="translation">{seed.translation}</p>}{showGrammar && <div className="grammar-pills grammar-pills--detail">{seed.grammar.map(([pattern, explanation]) => <details key={pattern} open><summary>{pattern}</summary><p>{explanation}</p></details>)}</div>}</article></section>
+		<section className="reader-hero reader-studybar"><div className="reader-breadcrumb"><span>N3 読解</span><span>/</span><b>第{lesson.week}週 {lesson.day}日目</b></div><div className="reader-studybar__body"><div><button className="reader-back" onClick={onBack}>‹ 读解目录</button><span>第{lesson.week}週 ／ {lesson.day}日目</span><h1><FuriganaText text={lesson.title} /></h1><p><FuriganaText text={lesson.subtitle} /></p></div><div className="reader-controls"><button className={showTranslation ? "on" : ""} onClick={() => setShowTranslation((value) => !value)}>翻译 {showTranslation ? "显示中" : "已隐藏"}</button><button className={showGrammar ? "on" : ""} onClick={() => setShowGrammar((value) => !value)}>语法拆解 {showGrammar ? "显示中" : "已隐藏"}</button></div></div></section>
+		<section className="reader-section"><div className="reader-section-head"><span>読解ポイント</span><h2><FuriganaText text={`${lesson.title}を読もう`} /></h2>{showTranslation && <p>先定位关键信息，再用选项回到原文验证。</p>}</div><article className="reading-passage"><p className="jp"><FuriganaText text={seed.passage} /></p>{showTranslation && <p className="translation">{seed.translation}</p>}{showGrammar && <div className="grammar-pills grammar-pills--detail">{seed.grammar.map(([pattern, explanation]) => <details key={pattern} open><summary>{pattern}</summary><p>{explanation}</p></details>)}</div>}</article></section>
 		<section className="reader-section quiz-section"><div className="reader-section-head"><span>チェック</span><h2>問題</h2>{showTranslation && <p>选择后展开依据与解析。</p>}</div><article className="reading-question"><h3>{seed.question}</h3><div className="question-options">{seed.options.map((option, optionIndex) => <button key={option} className={selected === optionIndex ? "selected" : ""} onClick={() => setSelected(optionIndex)}><span>{optionIndex + 1}</span><span className="question-option-text">{option}</span></button>)}</div><div className="answer-row"><button onClick={() => setRevealed((value) => !value)}>{revealed ? "隐藏解析" : "显示答案与解析"}</button>{revealed && <p><b>正确答案：{seed.answer + 1}</b>{seed.explanation}<br />阅读依据：先找题干对应的时间、对象或条件词，再排除没有被原文支持的选项。</p>}</div></article></section>
 		<LessonNavigator index={lesson.index} onSelect={onSelect} />
 	</main></div></div>;
@@ -152,9 +193,9 @@ export function ReadingN3Content({ embedded = false }: { embedded?: boolean }) {
 				<main className="reader-main">
 					<section className="reader-hero reader-studybar"><div className="reader-breadcrumb"><span>N3 読解</span><span>/</span><b>第1週 1日目</b></div><div className="reader-studybar__body"><div><button className="reader-back" onClick={() => setActiveLesson(null)}>‹ 读解目录</button><span>第1週 ／ 1日目</span><h1><FuriganaTitle /> ①</h1><p>お知らせや案内を読もう</p></div><div className="reader-controls"><button className={showTranslation ? "on" : ""} onClick={() => setShowTranslation((value) => !value)}>翻译 {showTranslation ? "显示中" : "已隐藏"}</button><button className={showGrammar ? "on" : ""} onClick={() => setShowGrammar((value) => !value)}>语法拆解 {showGrammar ? "显示中" : "已隐藏"}</button></div></div></section>
 
-					<section className="reader-section reading-dialogue"><div className="reader-section-head"><span>れんしゅう</span><h2>日時を正しく読もう！</h2>{showTranslation && <p>日期和时间要读准确。</p>}</div><div className="dialogue-list">{dialogue.map((line) => <article key={line.jp}><p className="jp">{line.jp}</p>{showTranslation && <p className="translation">{line.cn}</p>}{showGrammar && line.grammar && <div className="grammar-pills">{line.grammar.map((grammar) => <details key={grammar}><summary>{grammar}</summary><p>{grammarNotes[grammar]}</p></details>)}</div>}</article>)}</div></section>
+					<section className="reader-section reading-dialogue"><div className="reader-section-head"><span>れんしゅう</span><h2>日時を正しく読もう！</h2>{showTranslation && <p>日期和时间要读准确。</p>}</div><div className="dialogue-list">{dialogue.map((line) => <article key={line.jp}><p className="jp"><FuriganaText text={line.jp} /></p>{showTranslation && <p className="translation">{line.cn}</p>}{showGrammar && line.grammar && <div className="grammar-pills">{line.grammar.map((grammar) => <details key={grammar}><summary>{grammar}</summary><p>{grammarNotes[grammar]}</p></details>)}</div>}</article>)}</div></section>
 
-					<section className="reader-section notice-section"><div className="reader-section-head"><span>もんだい</span><h2>次の案内を見て、後の問いに答えなさい。</h2>{showTranslation && <p>阅读下面的使用指南，再回答问题。</p>}</div><div className="notice-card"><h3>たから市　中央図書館 <small>利用案内</small></h3><div className="notice-table"><div><b>開館時間</b><p>平日</p><strong>午前10時から午後8時</strong><p>土曜日・日曜日・祝日</p><strong>午前10時から午後6時</strong></div><div><b>休館日</b><p>第3月曜日</p><strong>ただし祝日と重なった場合は次の日が休館</strong><p>年末年始</p><strong>12月28日から1月4日</strong></div></div><aside>なお、10月1日より10日まで電気工事のために臨時で休館します。</aside></div>{showTranslation && <div className="reader-translation-card"><b>中央图书馆利用指南</b><div><section><span>开放时间</span><p>工作日：上午 10 点至晚上 8 点。<br />周六、周日及节假日：上午 10 点至傍晚 6 点。</p></section><section><span>休馆日</span><p>每月第三个星期一；但若该日为节假日，则次日休馆。<br />年末年初：12 月 28 日至 1 月 4 日。</p></section></div><p className="reader-translation-card__note">注意：10 月 1 日至 10 日因电气工程临时休馆。</p></div>}{showGrammar && <div className="grammar-callout"><b>句子拆解</b><p><mark>祝日と重なった場合</mark> = “与节假日重合的情况下”；<mark>次の日が休館</mark> = “次日休馆”。先抓条件，再读结论。</p></div>}</section>
+					<section className="reader-section notice-section"><div className="reader-section-head"><span>もんだい</span><h2>次の案内を見て、後の問いに答えなさい。</h2>{showTranslation && <p>阅读下面的使用指南，再回答问题。</p>}</div><div className="notice-card"><h3>たから市　<FuriganaText text="中央図書館" /> <small><FuriganaText text="利用案内" /></small></h3><div className="notice-table"><div><b><FuriganaText text="開館時間" /></b><p><FuriganaText text="平日" /></p><strong><FuriganaText text="午前10時から午後8時" /></strong><p><FuriganaText text="土曜日・日曜日・祝日" /></p><strong><FuriganaText text="午前10時から午後6時" /></strong></div><div><b><FuriganaText text="休館日" /></b><p><FuriganaText text="第3月曜日" /></p><strong><FuriganaText text="ただし祝日と重なった場合は次の日が休館" /></strong><p><FuriganaText text="年末年始" /></p><strong>12月28日から1月4日</strong></div></div><aside>なお、10月1日より10日まで<FuriganaText text="電気工事" />のために<FuriganaText text="臨時" />で休館します。</aside></div>{showTranslation && <div className="reader-translation-card"><b>中央图书馆利用指南</b><div><section><span>开放时间</span><p>工作日：上午 10 点至晚上 8 点。<br />周六、周日及节假日：上午 10 点至傍晚 6 点。</p></section><section><span>休馆日</span><p>每月第三个星期一；但若该日为节假日，则次日休馆。<br />年末年初：12 月 28 日至 1 月 4 日。</p></section></div><p className="reader-translation-card__note">注意：10 月 1 日至 10 日因电气工程临时休馆。</p></div>}{showGrammar && <div className="grammar-callout"><b>句子拆解</b><p><mark>祝日と重なった場合</mark> = “与节假日重合的情况下”；<mark>次の日が休館</mark> = “次日休馆”。先抓条件，再读结论。</p></div>}</section>
 
 					<section className="reader-section quiz-section"><div className="reader-section-head"><span>チェック</span><h2>問題</h2>{showTranslation && <p>选择答案后，再展开中文解析。</p>}</div>{questions.map((question, index) => <article className="reading-question" key={question.id}><h3>問 {index + 1}　{question.prompt}</h3>{showTranslation && <p className="question-translation">{question.cnPrompt}</p>}<div className="question-options">{question.options.map((option, optionIndex) => <button className={selected[question.id] === optionIndex ? "selected" : ""} onClick={() => setSelected((value) => ({ ...value, [question.id]: optionIndex }))} key={option.jp}><span>{optionIndex + 1}</span><span className="question-option-text">{option.jp}{showTranslation && <small>{option.cn}</small>}</span></button>)}</div><div className="answer-row"><button onClick={() => setRevealed((value) => ({ ...value, [question.id]: !value[question.id] }))}>{revealed[question.id] ? "隐藏解析" : "显示答案与解析"}</button>{revealed[question.id] && <p><b>正确答案：{question.answer + 1}</b>{question.explanation}</p>}</div></article>)}</section>
 

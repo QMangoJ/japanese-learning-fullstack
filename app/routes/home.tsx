@@ -65,7 +65,7 @@ function ReadingSideEntry() {
 			link.href = "/study";
 			link.className = "side-reader-link";
 			if (document.body.classList.contains("reader-mode-active")) link.classList.add("on");
-			link.innerHTML = "<span>📕</span><span>读解</span><small>3周</small>";
+			link.innerHTML = "<span>📕</span><span>读解</span><small>6周</small>";
 			contentSection.append(link);
 		};
 
@@ -91,21 +91,33 @@ function ReadingModeBridge() {
 			document.querySelectorAll(".reader-mode-link, .side-reader-link").forEach((entry) => entry.classList.toggle("on", active));
 		};
 
+		const legacyApp = () => document.querySelector<HTMLElement>("#app");
+		const readingApp = () => document.querySelector<HTMLElement>("#reading-app");
+
 		const leaveReading = () => {
 			if (!readerRoot) return;
 			readerRoot.unmount();
 			readerRoot = null;
-			document.querySelector("#app")?.classList.remove("study-reading-app");
+			const reader = readingApp();
+			if (reader) {
+				reader.replaceChildren();
+				reader.hidden = true;
+				reader.classList.remove("study-reading-app");
+			}
+			const legacy = legacyApp();
+			if (legacy) legacy.hidden = false;
 			syncActiveState(false);
 		};
 
 		const enterReading = () => {
-			const app = document.querySelector<HTMLElement>("#app");
+			const app = readingApp();
 			if (!app) return;
 			if (!readerRoot) {
-				app.replaceChildren();
 				readerRoot = createRoot(app);
 			}
+			const legacy = legacyApp();
+			if (legacy) legacy.hidden = true;
+			app.hidden = false;
 			app.classList.add("study-reading-app");
 			readerRoot.render(<BrowserRouter><ReadingN3Content embedded /></BrowserRouter>);
 			syncActiveState(true);
@@ -179,6 +191,7 @@ function LegacyStudy() {
 			</div>
 			<aside className="side" id="side" />
 			<main id="app" />
+			<section id="reading-app" hidden aria-label="N3 读解学习区" />
 			<nav className="bottom">
 				<button data-nav="home"><span className="ic">📚</span><span className="lbl" data-cn="知识库" data-en="Library">知识库</span></button>
 				<button data-nav="search"><span className="ic">🔍</span><span className="lbl" data-cn="搜索" data-en="Search">搜索</span></button>
