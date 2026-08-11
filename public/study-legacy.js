@@ -145,6 +145,24 @@ function mistakeItemHTML(m){
 let mistakeFilter='all';
 let mistakeLevelFilter='all';
 let mistakeDraft=''; // 输入框草稿：切到后台再切回来时 resync 会触发 render() 重画整页，草稿要能扛住这次重画
+let mistakeStudyMode=false, favStudyMode=false, studyHideJapanese=false, studyHideTranslation=false;
+function studyDateGroups(rows){
+  const groups={};
+  rows.forEach(row=>{ const day=row.ts ? mistakeDate(row.ts) : '早期记录'; (groups[day]=groups[day]||[]).push(row); });
+  return Object.keys(groups).sort((a,b)=>b.localeCompare(a)).map(day=>({day,rows:groups[day]}));
+}
+function mistakeStudyParts(m){
+  const text=String(m.text||'');
+  const correct=text.match(/(?:^|\n)正确答案：\s*([^\n]+)/);
+  const question=text.replace(/(?:\n|^)你的答案：[\s\S]*$/,'').trim();
+  return {jp:question||text, cn:correct ? correct[1] : ''};
+}
+function studyToolbar(kind,count){
+  return `<div class="study-toolbar"><button class="primary" data-${kind}study="0">‹ 返回列表</button><span>${count} 条</span><div><button class="${studyHideJapanese?'on':''}" data-study-hide="jp">日语</button><button class="${studyHideTranslation?'on':''}" data-study-hide="cn">翻译 / 答案</button></div></div>`;
+}
+function studyRowsHTML(rows,kind){
+  return `<div class="study-columns${studyHideJapanese?' study-hide-jp':''}${studyHideTranslation?' study-hide-cn':''}"><div class="study-columns__head"><b>日本語</b><b>${kind==='mistake'?'答え・メモ':'翻译'}</b></div>${studyDateGroups(rows).map(group=>`<section class="study-date-group"><h3>${group.day}<small>${group.rows.length} 条</small></h3>${group.rows.map(row=>`<article class="study-row"><div class="study-jp">${row.tag||''}${esc(row.jp||'')}</div><div class="study-cn">${row.cn?esc(row.cn):'—'}</div></article>`).join('')}</section>`).join('')}</div>`;
+}
 function viewMistakes(){
   setNav('mistakes'); setHeader(LX('错题 / 生词本','My Mistakes & Notes'), false);
   const src = activeMistakes();
@@ -158,12 +176,17 @@ function viewMistakes(){
     <button class="${mistakeLevelFilter==='all'?'on':''}" data-lfilter="all">熟练度：全部（${byType.length}）</button>
     ${MISTAKE_LEVEL_ORDER.map(k=>`<button class="${mistakeLevelFilter===k?'on':''}" data-lfilter="${k}">${MISTAKE_LEVELS[k]}（${byType.filter(m=>(m.level||'new')===k).length}）</button>`).join('')}
   </div>`;
+  if(mistakeStudyMode){
+    const rows=list.map(m=>Object.assign({ts:m.ts},mistakeStudyParts(m)));
+    app.innerHTML=studyToolbar('m',rows.length)+studyRowsHTML(rows,'mistake');
+    return;
+  }
   const body = list.length ? list.map(mistakeItemHTML).join('') : '<div class="empty">还没有记录，在上面写一条保存试试。</div>';
   app.innerHTML = `<div class="card mistake-widget" style="margin-bottom:14px">
     <div class="mistake-types" id="mistakeTypes">${Object.entries(MISTAKE_TYPES).map(([k,v])=>`<button class="${k===mistakeAddType?'on':''}" data-mtype="${k}">${v}</button>`).join('')}</div>
     <textarea id="mistakeInput" class="mistake-input" rows="2" placeholder="记一下考试错题、老是记不住的单词或语法点……">${esc(mistakeDraft)}</textarea>
     <button class="primary" data-mistake-add>保存</button>
-  </div>${filterBar}${levelFilterBar}${body}`;
+  </div>${filterBar}${levelFilterBar}<div class="study-entry"><button data-mstudy="1">背诵模式（${list.length}）</button></div>${body}`;
 }
 let FAV={}; try{ FAV=JSON.parse(localStorage.getItem('favs')||'{}')||{}; }catch(e){ FAV={}; }
 const FAVMETA={};
@@ -197,7 +220,7 @@ async function pullFavsFromServer(){
   if(_favPendingPush){ _favPendingPush=false; saveFav(); }
 }
 function isFav(id){ return !!FAV[id]; }
-function toggleFav(id){ if(FAV[id]) delete FAV[id]; else if(FAVMETA[id]) FAV[id]=FAVMETA[id]; saveFav(); }
+function toggleFav(id){ if(FAV[id]) delete FAV[id]; else if(FAVMETA[id]) FAV[id]=Object.assign({}, FAVMETA[id], {ts:Date.now()}); saveFav(); }
 function star(id, snap){ FAVMETA[id]=snap; return `<button class="starb" data-fav="${escAttr(id)}" aria-label="收藏">${isFav(id)?'★':'☆'}</button>`; }
 
 /* ---------- 划词收藏 ---------- */
@@ -393,6 +416,9 @@ app.addEventListener('click', e=>{
   const sb=e.target.closest('[data-say]'); if(sb){ say(sb.dataset.say); return; }
   const fv=e.target.closest('[data-fav]'); if(fv){ toggleFav(fv.dataset.fav); fv.textContent=isFav(fv.dataset.fav)?'★':'☆'; if((location.hash||'#/')==='#/favs') viewFavs(); return; }
   if(e.target.closest('[data-favfc]')){ startFavFc(); return; }
+  const fs=e.target.closest('[data-favstudy]'); if(fs){ favStudyMode=fs.dataset.favstudy==='1'; viewFavs(); return; }
+  const ms=e.target.closest('[data-mstudy]'); if(ms){ mistakeStudyMode=ms.dataset.mstudy==='1'; viewMistakes(); return; }
+  const sh=e.target.closest('[data-study-hide]'); if(sh){ if(sh.dataset.studyHide==='jp') studyHideJapanese=!studyHideJapanese; else studyHideTranslation=!studyHideTranslation; const h=location.hash||'#/'; if(h==='#/favs') viewFavs(); else if(h==='#/mistakes') viewMistakes(); return; }
   const ffl=e.target.closest('[data-favfilter]'); if(ffl){ favFilter=ffl.dataset.favfilter; viewFavs(); return; }
   const sff=e.target.closest('[data-selfavfilter]'); if(sff){ favSelectionFilter=sff.dataset.selfavfilter; viewFavs(); return; }
   const cm=e.target.closest('[data-ctmode]'); if(cm){ ctMode=cm.dataset.ctmode; viewContrast(); return; }
@@ -1340,7 +1366,12 @@ function viewFavs(){
     <span>划词类别</span><button class="${favSelectionFilter==='all'?'on':''}" data-selfavfilter="all">全部</button>
     ${presentSelectionTypes.map(k=>`<button class="${favSelectionFilter===k?'on':''}" data-selfavfilter="${k}">${SELECTION_FAV_TYPES[k]}（${selectionIds.filter(id=>(FAV[id]||{}).selectionType===k).length}）</button>`).join('')}
   </div>` : '';
-  let html=`<div class="fav-actions"><button class="primary" data-favfc>▶ 用收藏刷闪卡（${shownIds.length}）</button><button data-favclear>清空收藏</button></div>${filterBar}${typeFilterBar}<div class="card">`;
+  if(favStudyMode){
+    const rows=shownIds.map(id=>{ const s=FAV[id]||{}; const tag=(tagMap[s.module]||'')+(s.selectionType?`<span class="mtag mt-${escAttr(s.selectionType)}">${SELECTION_FAV_TYPES[s.selectionType]}</span>`:''); return {ts:s.ts,jp:s.jp||'',cn:s.cn||'',tag}; });
+    app.innerHTML=studyToolbar('fav',rows.length)+studyRowsHTML(rows,'fav');
+    return;
+  }
+  let html=`<div class="fav-actions"><button class="primary" data-favfc>▶ 用收藏刷闪卡（${shownIds.length}）</button><button data-favstudy="1">背诵模式</button><button data-favclear>清空收藏</button></div>${filterBar}${typeFilterBar}<div class="card">`;
   shownIds.forEach(id=>{
     const s=FAV[id]||{};
     const tag=(tagMap[s.module]||'')+(s.selectionType?`<span class="mtag mt-${escAttr(s.selectionType)}">${SELECTION_FAV_TYPES[s.selectionType]}</span>`:'');
