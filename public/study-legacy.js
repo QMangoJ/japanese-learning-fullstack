@@ -911,6 +911,7 @@ function examNoteHTML(a, it){
 function fallbackExamNoteHTML(it,a,module,section){
   const opts=it.opts_r||(it.opts||[]).map(esc);
   const answer=opts[(a.ans||1)-1]||'';
+  const answerPlain=(it.opts||[])[(a.ans||1)-1]||'';
   const target=it.ul?`「${esc(it.ul)}」`:'题干中的空格';
   let hint='结合题干语境，选择最符合题意的表达。';
   if(module==='kanji'){
@@ -925,8 +926,33 @@ function fallbackExamNoteHTML(it,a,module,section){
   }else if(module==='grammar'){
     hint=a.order?`正确顺序为 ${a.order}，请选择放在 ★ 位置的选项。`:'根据句型含义和接续，选择最符合语境的表达。';
   }
+  const rawQuestion=it.q||'';
+  const marker='__ANSWER__';
+  let restored='';
+  if(a.order){
+    const order=[...a.order.matchAll(/[1-4]/g)].map(m=>+m[0]); let oi=0;
+    const completed=esc(rawQuestion).replace(/＿{2,}|★/g,()=>`<strong>${esc((it.opts||[])[order[oi++]-1]||'')}</strong>`);
+    if(completed!==esc(rawQuestion)) restored=`<div class="an-complete"><b>题干还原：</b><span class="jp">${completed}</span></div>`;
+  }else{
+    const completed=rawQuestion.replace(/（[ 　_]*）|＿{2,}|_{2,}/,marker);
+    if(completed!==rawQuestion) restored=`<div class="an-complete"><b>题干还原：</b><span class="jp">${esc(completed).replace(marker,`<strong>${esc(answerPlain)}</strong>`)}</span></div>`;
+  }
+  let strategy='先观察空格前后的语法形式和句子意思，再代入选项确认搭配是否自然。';
+  let wrongReason='代入后会与本句所需的接续、含义或固定搭配不一致。';
+  if(module==='grammar'){
+    strategy=section==='mondai2'?'先把四个片段排成自然的句子，再看 ★ 所在位置应放哪一项。':(section==='mondai3'?'结合前后句的逻辑关系，判断最能让段落连贯的表达。':'先确认接续形式，再判断句型表达的语气和含义。');
+    wrongReason='该选项的接续、语气或句型意义不能让这句话自然成立。';
+  }else if(module==='vocab'){
+    strategy=section==='mondai3'?'先抓住题干的核心意思，再比较各选项的近义差别。':'把每个候选词放回原句，核对词义、语感和固定搭配。';
+    wrongReason='词义或搭配与本题语境不符，代入后句意不自然。';
+  }else if(module==='kanji'){
+    strategy=section==='mondai1'?`先锁定标线词 ${target}，再按读音逐音节比对。`:(section==='mondai2'?`先根据句意确认 ${target} 的读音和词义，再选择对应汉字。`:'先把汉字放回词语中，确认能组成正确、自然的词。');
+    wrongReason=section==='mondai1'?'读音与标线汉字不一致。':'不能组成题干要求的正确汉字词或固定表达。';
+  }
+  const choices=(it.opts||[]).map((opt,i)=>`<li class="${i+1===a.ans?'ok':''}"><span class="o jp">${i+1}. ${opts[i]||esc(opt)}</span><span class="w">${i+1===a.ans?'能同时满足本题的语法形式、词义和搭配要求。':wrongReason}</span></li>`).join('');
+  const guided=`<details class="an-more"><summary>详细解析</summary>${restored}<div class="an-h">解题思路</div><ol class="an-solve"><li>${strategy}</li><li>正确项为「<span class="jp">${answer}</span>」，${hint}</li></ol><div class="an-h">选项辨析</div><ol class="an-why">${choices}</ol></details>`;
   const order=a.order?`<div class="an-fallback jp">顺序：${esc(a.order)}</div>`:'';
-  return `<div class="an-answer-key jp">正确答案：${a.ans}. ${answer}</div><div class="an-fallback">${hint}</div>${order}`;
+  return `<div class="an-answer-key jp">正确答案：${a.ans}. ${answer}</div><div class="an-fallback">${hint}</div>${order}${guided}`;
 }
 function examExplanationHTML(a,it,module,section){
   const detail=examNoteHTML(a,it);
