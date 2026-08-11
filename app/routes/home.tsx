@@ -4,7 +4,7 @@ import type { Route } from "./+types/home";
 
 export function meta({}: Route.MetaArgs) {
 	return [
-		{ title: "日本語上手" },
+		{ title: "学习区 · 日本語上手" },
 		{ name: "description", content: "日语学习助手：N4/N3/N2 语法、词汇与汉字" },
 	];
 }
@@ -15,12 +15,28 @@ export const links: Route.LinksFunction = () => [
 
 function LegacyRuntime() {
 	useEffect(() => {
-		if (window.document.querySelector("script[data-study-runtime]")) return;
+		const isTrial = new URLSearchParams(window.location.search).get("trial") === "1";
+		const loadTrialGate = () => {
+			if (!isTrial || window.document.querySelector("script[data-trial-gate]")) return;
+			const trialGate = window.document.createElement("script");
+			trialGate.src = "/trial-gate.js";
+			trialGate.dataset.trialGate = "true";
+			window.document.body.appendChild(trialGate);
+		};
+
+		if (window.document.querySelector("script[data-study-runtime]")) {
+			loadTrialGate();
+			return;
+		}
+
+		// 试用从 N3 第一周开始；未来接入账户后，这一行会由服务端权限替代。
+		if (isTrial) window.localStorage.setItem("module", "grammar");
 
 		const script = window.document.createElement("script");
 		script.src = "/study-legacy.js";
 		script.dataset.studyRuntime = "true";
 		script.async = false;
+		script.addEventListener("load", loadTrialGate, { once: true });
 		window.document.body.appendChild(script);
 	}, []);
 
@@ -30,6 +46,9 @@ function LegacyRuntime() {
 export default function Home() {
 	return (
 		<>
+			<div className="trial-context" hidden>
+				<span>免费试学</span><b>N3 第一周已开放</b><a href="/">了解完整课程</a>
+			</div>
 			<div className="topbar" id="topbar">
 				<header className="top">
 					<button className="back" id="backBtn" style={{ display: "none" }}>
