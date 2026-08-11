@@ -200,6 +200,83 @@ function isFav(id){ return !!FAV[id]; }
 function toggleFav(id){ if(FAV[id]) delete FAV[id]; else if(FAVMETA[id]) FAV[id]=FAVMETA[id]; saveFav(); }
 function star(id, snap){ FAVMETA[id]=snap; return `<button class="starb" data-fav="${escAttr(id)}" aria-label="收藏">${isFav(id)?'★':'☆'}</button>`; }
 
+/* ---------- 划词收藏 ---------- */
+// 划词条目和普通收藏共用 FAV，因此同样能写入 Cloudflare KV，在其它设备继续复习。
+const SELECTION_FAV_TYPES={newword:'生词',word:'单词',sentence:'句子',q:'错题',grammar:'语法'};
+let selectionFavType='word', selectionText='', selectionPopover=null, selectionPopoverTimer=null;
+function normalizeSelectionText(t){ return String(t||'').replace(/\s+/g,' ').trim(); }
+function selectionFavId(type, text){
+  let h=2166136261;
+  for(let i=0;i<text.length;i++){ h^=text.charCodeAt(i); h=Math.imul(h,16777619); }
+  return `selection#${type}#${(h>>>0).toString(36)}#${text.length}`;
+}
+function selectionBelongsToApp(sel){
+  if(!sel||!sel.rangeCount||sel.isCollapsed) return false;
+  const node=sel.getRangeAt(0).commonAncestorContainer;
+  const el=node&& (node.nodeType===1 ? node : node.parentElement);
+  return !!(el&&app.contains(el));
+}
+function ensureSelectionPopover(){
+  if(selectionPopover) return selectionPopover;
+  const el=document.createElement('div');
+  el.id='selectionPopover'; el.className='selection-popover'; el.hidden=true;
+  el.setAttribute('role','dialog'); el.setAttribute('aria-label','收藏划词');
+  el.innerHTML=`<div class="selection-popover__title">收藏到生词本</div><div class="selection-popover__text"></div><div class="selection-popover__types"></div><div class="selection-popover__actions"><button type="button" data-selection-cancel>取消</button><button type="button" class="primary" data-selection-save>收藏</button></div>`;
+  el.addEventListener('click', e=>{
+    const type=e.target.closest('[data-selection-type]');
+    if(type){ selectionFavType=type.dataset.selectionType; renderSelectionPopover(); return; }
+    if(e.target.closest('[data-selection-cancel]')){ hideSelectionPopover(); return; }
+    if(e.target.closest('[data-selection-save]')) saveSelectedText();
+  });
+  document.body.appendChild(el); selectionPopover=el;
+  return el;
+}
+function renderSelectionPopover(){
+  const el=ensureSelectionPopover();
+  el.querySelector('.selection-popover__text').textContent=selectionText;
+  el.querySelector('.selection-popover__types').innerHTML=Object.entries(SELECTION_FAV_TYPES).map(([k,v])=>`<button type="button" class="${k===selectionFavType?'on':''}" data-selection-type="${k}">${v}</button>`).join('');
+}
+function hideSelectionPopover(){
+  clearTimeout(selectionPopoverTimer);
+  if(selectionPopover) selectionPopover.hidden=true;
+}
+function showSelectionPopover(text, rect){
+  selectionText=text; selectionFavType='word';
+  const el=ensureSelectionPopover(); renderSelectionPopover(); el.hidden=false;
+  // 先显示以得到真实宽高，再优先放在选区上方；空间不够则放在下方。
+  const pad=12, width=el.offsetWidth, height=el.offsetHeight;
+  const left=Math.max(pad,Math.min(window.innerWidth-width-pad,rect.left+(rect.width-width)/2));
+  const above=rect.top-height-10, top=above>=pad ? above : Math.min(window.innerHeight-height-pad,rect.bottom+10);
+  el.style.left=Math.round(left)+'px'; el.style.top=Math.max(pad,Math.round(top))+'px';
+}
+function saveSelectedText(){
+  const text=normalizeSelectionText(selectionText); if(!text) return;
+  const id=selectionFavId(selectionFavType,text);
+  FAV[id]={
+    module:'selection', selectionType:selectionFavType, hash:location.hash||'#/',
+    w:'', d:'', jp:text, cn:`划词收藏 · ${SELECTION_FAV_TYPES[selectionFavType]}`, ts:Date.now()
+  };
+  saveFav(); renderSide();
+  const btn=selectionPopover&&selectionPopover.querySelector('[data-selection-save]');
+  if(btn){ btn.textContent='已收藏'; btn.disabled=true; }
+  try{ document.getSelection().removeAllRanges(); }catch(e){}
+  clearTimeout(selectionPopoverTimer);
+  selectionPopoverTimer=setTimeout(hideSelectionPopover,700);
+}
+function maybeShowSelectionPopover(){
+  setTimeout(()=>{
+    const sel=document.getSelection();
+    const text=normalizeSelectionText(sel&&sel.toString());
+    if(!text||!selectionBelongsToApp(sel)){ hideSelectionPopover(); return; }
+    const rect=sel.getRangeAt(0).getBoundingClientRect();
+    if(rect.width||rect.height) showSelectionPopover(text,rect);
+  },0);
+}
+document.addEventListener('pointerup', e=>{ if(!e.target.closest('#selectionPopover')) maybeShowSelectionPopover(); },true);
+document.addEventListener('keyup', e=>{ if(e.key==='Escape') hideSelectionPopover(); else if(e.shiftKey||e.key==='ArrowLeft'||e.key==='ArrowRight') maybeShowSelectionPopover(); });
+document.addEventListener('pointerdown', e=>{ if(selectionPopover&&!e.target.closest('#selectionPopover')) hideSelectionPopover(); },true);
+window.addEventListener('scroll', hideSelectionPopover,{passive:true});
+
 /* ---------- module switch ---------- */
 let LEVEL='n3', TYPE='grammar';
 const MOD2LT = {grammar:['n3','grammar'], vocab:['n3','vocab'], kanji:['n3','kanji'], n2grammar:['n2','grammar'], n2vocab:['n2','vocab'], n2kanji:['n2','kanji'], n4grammar:['n4','grammar'], n4vocab:['n4','vocab'], n4kanji:['n4','kanji']};
@@ -304,6 +381,7 @@ app.addEventListener('click', e=>{
   const fv=e.target.closest('[data-fav]'); if(fv){ toggleFav(fv.dataset.fav); fv.textContent=isFav(fv.dataset.fav)?'★':'☆'; if((location.hash||'#/')==='#/favs') viewFavs(); return; }
   if(e.target.closest('[data-favfc]')){ startFavFc(); return; }
   const ffl=e.target.closest('[data-favfilter]'); if(ffl){ favFilter=ffl.dataset.favfilter; viewFavs(); return; }
+  const sff=e.target.closest('[data-selfavfilter]'); if(sff){ favSelectionFilter=sff.dataset.selfavfilter; viewFavs(); return; }
   const cm=e.target.closest('[data-ctmode]'); if(cm){ ctMode=cm.dataset.ctmode; viewContrast(); return; }
   const cw=e.target.closest('[data-ctweek]'); if(cw){ ctWeek=+cw.dataset.ctweek; viewContrast(); return; }
   const mty=e.target.closest('[data-mtype]'); if(mty){ mistakeAddType=mty.dataset.mtype; document.querySelectorAll('#mistakeTypes button').forEach(b=>b.classList.toggle('on', b.dataset.mtype===mistakeAddType)); return; }
@@ -1117,41 +1195,52 @@ window.fcShuffle=()=>{ fc.deck=buildDeck(fc.week); fc.idx=0; fc.flipped=false; v
 
 /* ---------- favorites (收藏 / 生词本) ---------- */
 let favDeck=[], favIdx=0, favFlip=false;
-let favFilter='all';
-const FAV_MOD_ORDER=['grammar','n2grammar','n4grammar','vocab','n2vocab','n4vocab','kanji','n2kanji','n4kanji'];
-const FAV_MOD_LABEL={grammar:'N3语法', n2grammar:'N2语法', n4grammar:'N4语法', vocab:'N3词汇', n2vocab:'N2词汇', n4vocab:'N4词汇', kanji:'N3汉字', n2kanji:'N2汉字', n4kanji:'N4汉字'};
+let favFilter='all', favSelectionFilter='all';
+const FAV_MOD_ORDER=['grammar','n2grammar','n4grammar','vocab','n2vocab','n4vocab','kanji','n2kanji','n4kanji','selection'];
+const FAV_MOD_LABEL={grammar:'N3语法', n2grammar:'N2语法', n4grammar:'N4语法', vocab:'N3词汇', n2vocab:'N2词汇', n4vocab:'N4词汇', kanji:'N3汉字', n2kanji:'N2汉字', n4kanji:'N4汉字', selection:'划词收藏'};
 function favGroups(){
   const groups={};
   for(const id of Object.keys(FAV)){ const m=(FAV[id]||{}).module||'other'; (groups[m]=groups[m]||[]).push(id); }
   return groups;
 }
+function shownFavIds(groups){
+  const source=favFilter==='all' ? Object.keys(FAV) : (groups[favFilter]||[]);
+  return favSelectionFilter==='all' ? source : source.filter(id=>(FAV[id]||{}).selectionType===favSelectionFilter);
+}
 function viewFavs(){
   setNav('favs'); setHeader(LX('收藏 · 生词本','Favorites · Word Book'), false);
   const ids=Object.keys(FAV);
-  if(!ids.length){ app.innerHTML='<div class="empty">还没有收藏。<br>在语法点或单词右侧点 ☆ 即可加入生词本。</div>'; return; }
-  const tagMap={grammar:'<span class="mtag g">N3语法</span>', n2grammar:'<span class="mtag g2">N2语法</span>', vocab:'<span class="mtag v">N3词汇</span>', kanji:'<span class="mtag k">N3汉字</span>', n2vocab:'<span class="mtag v2">N2词汇</span>', n2kanji:'<span class="mtag k2">N2汉字</span>', n4grammar:'<span class="mtag g4">N4语法</span>', n4vocab:'<span class="mtag v4">N4词汇</span>', n4kanji:'<span class="mtag k4">N4汉字</span>'};
+  if(!ids.length){ app.innerHTML='<div class="empty">还没有收藏。<br>选中页面里的文字，即可收藏到生词本。</div>'; return; }
+  const tagMap={grammar:'<span class="mtag g">N3语法</span>', n2grammar:'<span class="mtag g2">N2语法</span>', vocab:'<span class="mtag v">N3词汇</span>', kanji:'<span class="mtag k">N3汉字</span>', n2vocab:'<span class="mtag v2">N2词汇</span>', n2kanji:'<span class="mtag k2">N2汉字</span>', n4grammar:'<span class="mtag g4">N4语法</span>', n4vocab:'<span class="mtag v4">N4词汇</span>', n4kanji:'<span class="mtag k4">N4汉字</span>', selection:'<span class="mtag mt-selection">划词</span>'};
   const groups=favGroups();
   const presentMods=FAV_MOD_ORDER.filter(m=>groups[m]&&groups[m].length);
   if(favFilter!=='all' && !(groups[favFilter]&&groups[favFilter].length)) favFilter='all';
-  const shownIds = favFilter==='all' ? ids : groups[favFilter];
+  const selectionIds=ids.filter(id=>SELECTION_FAV_TYPES[(FAV[id]||{}).selectionType]);
+  const presentSelectionTypes=Object.keys(SELECTION_FAV_TYPES).filter(k=>selectionIds.some(id=>(FAV[id]||{}).selectionType===k));
+  if(favSelectionFilter!=='all' && !presentSelectionTypes.includes(favSelectionFilter)) favSelectionFilter='all';
+  const shownIds = shownFavIds(groups);
   const filterBar = presentMods.length>1 ? `<div class="fc-filter" style="margin-bottom:12px">
     <button class="${favFilter==='all'?'on':''}" data-favfilter="all">全部（${ids.length}）</button>
     ${presentMods.map(m=>`<button class="${favFilter===m?'on':''}" data-favfilter="${m}">${FAV_MOD_LABEL[m]}（${groups[m].length}）</button>`).join('')}
   </div>` : '';
-  let html=`<div class="fav-actions"><button class="primary" data-favfc>▶ 用收藏刷闪卡（${shownIds.length}）</button><button data-favclear>清空收藏</button></div>${filterBar}<div class="card">`;
+  const typeFilterBar = presentSelectionTypes.length ? `<div class="fc-filter fav-type-filter" style="margin-bottom:12px">
+    <span>划词类别</span><button class="${favSelectionFilter==='all'?'on':''}" data-selfavfilter="all">全部</button>
+    ${presentSelectionTypes.map(k=>`<button class="${favSelectionFilter===k?'on':''}" data-selfavfilter="${k}">${SELECTION_FAV_TYPES[k]}（${selectionIds.filter(id=>(FAV[id]||{}).selectionType===k).length}）</button>`).join('')}
+  </div>` : '';
+  let html=`<div class="fav-actions"><button class="primary" data-favfc>▶ 用收藏刷闪卡（${shownIds.length}）</button><button data-favclear>清空收藏</button></div>${filterBar}${typeFilterBar}<div class="card">`;
   shownIds.forEach(id=>{
     const s=FAV[id]||{};
-    const tag=tagMap[s.module]||'';
+    const tag=(tagMap[s.module]||'')+(s.selectionType?`<span class="mtag mt-${escAttr(s.selectionType)}">${SELECTION_FAV_TYPES[s.selectionType]}</span>`:'');
     html+=`<div class="fav-item"><button class="starb" data-fav="${escAttr(id)}" aria-label="取消收藏">★</button>
-      <div class="fj" data-go="${esc(s.hash||'#/')}" data-mod="${esc(s.module||'')}"><div class="t jp">${tag}${esc(s.jp||'')}</div>${s.cn?`<div class="c">${esc(s.cn)}</div>`:''}</div>
-      <span class="fw">第${esc(String(s.w||''))}週${esc(String(s.d||''))}日</span></div>`;
+      <div class="fj" data-go="${esc(s.hash||'#/')}" data-mod="${esc(s.module==='selection'?'':(s.module||''))}"><div class="t jp">${tag}${esc(s.jp||'')}</div>${s.cn?`<div class="c">${esc(s.cn)}</div>`:''}</div>
+      <span class="fw">${s.selectionType?'划词':`第${esc(String(s.w||''))}週${esc(String(s.d||''))}日`}</span></div>`;
   });
   html+='</div>';
   app.innerHTML=html;
 }
 function startFavFc(){
   const groups=favGroups();
-  const ids = favFilter==='all' ? Object.keys(FAV) : (groups[favFilter]||[]);
+  const ids = shownFavIds(groups);
   favDeck=ids.map(id=>FAV[id]).map(s=>({jp:s.jp,cn:s.cn}));
   for(let i=favDeck.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [favDeck[i],favDeck[j]]=[favDeck[j],favDeck[i]]; }
   favIdx=0; favFlip=false; renderFavFc();
