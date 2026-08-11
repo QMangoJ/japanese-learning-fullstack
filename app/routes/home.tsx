@@ -1,6 +1,8 @@
 import { useEffect } from "react";
+import { Link, useSearchParams } from "react-router";
 
 import type { Route } from "./+types/home";
+import { ReadingN3Content } from "./reading-n3";
 import "./study-shell.css";
 
 export function meta({}: Route.MetaArgs) {
@@ -51,10 +53,13 @@ function ReadingSideEntry() {
 			const footer = side?.querySelector(".side-foot");
 			if (!side || !footer || side.querySelector(".side-reader-link")) return;
 			const link = document.createElement("a");
-			link.href = "/reading/n3";
+			const contentSection = Array.from(side.querySelectorAll<HTMLElement>(".side-sec"))
+				.find((section) => section.querySelector(".side-h")?.textContent?.includes("内容"));
+			if (!contentSection) return;
+			link.href = "/study?module=reading";
 			link.className = "side-reader-link";
 			link.innerHTML = "<span>📕</span><span>读解</span><small>N3</small>";
-			footer.before(link);
+			contentSection.append(link);
 		};
 
 		const observer = new MutationObserver(insertEntry);
@@ -66,7 +71,7 @@ function ReadingSideEntry() {
 	return null;
 }
 
-export default function Home() {
+function LegacyStudy() {
 	return (
 		<>
 			<div className="trial-context" hidden>
@@ -98,7 +103,7 @@ export default function Home() {
 						<button data-ty="kanji">
 							📙 <span className="lbl" data-cn="汉字" data-en="Kanji">汉字</span>
 						</button>
-						<a className="reader-mode-link" href="/reading/n3">📕 <span>读解</span></a>
+						<a className="reader-mode-link" href="/study?module=reading">📕 <span>读解</span></a>
 					</div>
 				</div>
 			</div>
@@ -117,4 +122,41 @@ export default function Home() {
 			<ReadingSideEntry />
 		</>
 	);
+}
+
+function StudyReading() {
+	return (
+		<>
+			<div className="topbar study-reader-topbar">
+				<header className="top">
+					<Link className="back study-reader-back" to="/study">‹ 返回</Link>
+					<span className="lvchip">N3</span>
+					<h1>日本語上手</h1>
+					<div className="langbar"><span className="study-reader-lang">中</span></div>
+				</header>
+				<div className="modewrap">
+					<div className="typebar">
+						<Link className="study-module-link" to="/study">📘 <span>语法</span></Link>
+						<Link className="study-module-link" to="/study">📗 <span>词汇</span></Link>
+						<Link className="study-module-link" to="/study">📙 <span>汉字</span></Link>
+						<span className="reader-mode-link on">📕 <span>读解</span></span>
+					</div>
+				</div>
+			</div>
+			<aside className="side study-reading-side" aria-label="N3 内容">
+				<div className="side-brand">日本語上手</div>
+				<div className="side-sec"><div className="side-h">级别</div><div className="side-seg"><span>N4</span><span className="on">N3</span><span>N2</span></div></div>
+				<div className="side-sec"><div className="side-h">N3 内容</div><Link className="side-item" to="/study"><span className="ic">📘</span>语法<span className="ct">6周</span></Link><Link className="side-item" to="/study"><span className="ic">📗</span>词汇<span className="ct">6周</span></Link><Link className="side-item" to="/study"><span className="ic">📙</span>汉字<span className="ct">6周</span></Link><span className="side-item on"><span className="ic">📕</span>读解<span className="ct">N3</span></span></div>
+				<div className="side-sec"><div className="side-h">读解进度</div><span className="study-reading-day"><b>第 1 周第 1 日</b><small>案内 ① · 学習中</small></span></div>
+				<div className="side-foot"><Link className="side-item" to="/study"><span className="ic">‹</span>返回学习区</Link></div>
+			</aside>
+			<main id="app" className="study-reading-app"><ReadingN3Content embedded /></main>
+			<nav className="bottom reader-study-bottom"><Link to="/study"><span className="ic">📚</span><span>学习</span></Link><span className="on"><span className="ic">📕</span><span>读解</span></span><Link to="/study"><span className="ic">⭐</span><span>收藏</span></Link></nav>
+		</>
+	);
+}
+
+export default function Home() {
+	const [searchParams] = useSearchParams();
+	return searchParams.get("module") === "reading" ? <StudyReading /> : <LegacyStudy />;
 }

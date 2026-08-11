@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router";
+import { Link, redirect } from "react-router";
 
 import type { Route } from "./+types/reading-n3";
 import "./reading-n3.css";
@@ -9,6 +9,11 @@ export function meta({}: Route.MetaArgs) {
 		{ title: "N3 读解 · 第 1 周第 1 日 · 日本語上手" },
 		{ name: "description", content: "N3 读解训练：阅读、题目、翻译与逐句语法拆解。" },
 	];
+}
+
+// Keep old direct links working, while the lesson itself lives in the study shell.
+export function loader() {
+	return redirect("/study?module=reading");
 }
 
 const outline = [
@@ -46,14 +51,14 @@ function FuriganaTitle() {
 	return <ruby>案内<rt>あんない</rt></ruby>;
 }
 
-export default function ReadingN3() {
+export function ReadingN3Content({ embedded = false }: { embedded?: boolean }) {
 	const [showTranslation, setShowTranslation] = useState(true);
 	const [showGrammar, setShowGrammar] = useState(false);
 	const [selected, setSelected] = useState<Record<string, number>>({});
 	const [revealed, setRevealed] = useState<Record<string, boolean>>({});
 
 	return (
-		<div className="reader-page">
+		<div className={embedded ? "reader-page reader-page--embedded" : "reader-page"}>
 			<header className="reader-header"><div className="reader-wrap"><Link to="/" className="reader-brand">日本語上手</Link><nav><Link to="/study">知识库</Link><Link to="/reading/n3" aria-current="page">N3 读解</Link></nav><Link className="reader-try" to="/study">进入学习区</Link></div></header>
 			<div className="reader-wrap reader-layout">
 				<aside className="reader-outline" aria-label="N3读解课程目录">
@@ -75,4 +80,8 @@ export default function ReadingN3() {
 			</div>
 		</div>
 	);
+}
+
+export default function ReadingN3() {
+	return <ReadingN3Content />;
 }

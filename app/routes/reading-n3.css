@@ -22,3 +22,13 @@
 .grammar-callout{background:var(--accent-soft);border-left-color:var(--accent);color:var(--ri)}.question-options button{background:var(--rp);border-color:var(--rl);color:var(--ri)}.question-options button:hover,.question-options button.selected{border-color:var(--blue);background:var(--blue-soft)}.answer-row p{background:var(--green-soft);color:var(--ri)}.reader-next{background:var(--rd);color:var(--ri);border:1px solid var(--rl);border-radius:14px;box-shadow:var(--shadow)}.reader-next p{color:var(--rm)}.reader-next button{border-color:var(--rl);color:var(--rm)}
 @media (prefers-color-scheme:dark){.reader-page{--ri:#e6e9ed;--rm:#98a1ab;--rl:#313842;--rp:#14171c;--rr:#e57365;--rd:#1e232a;--rb:#33231f}.reader-translation-card{background:#1e2a38;border-color:#313842}.reader-translation-card>b{color:#6ea8dc}.reader-translation-card section{border-color:#6ea8dc}.notice-card aside{border-color:#67423d}}
 @media (max-width:900px){.reader-layout{grid-template-columns:1fr}.reader-outline{padding-inline:16px}.reader-translation-card>div{grid-template-columns:1fr}}
+
+/* Keep translation controls and grammar chips in the same calm information-blue family. */
+.reader-controls button{background:var(--rd);border-color:var(--rl);color:var(--rm);transition:background-color .16s ease,border-color .16s ease,color .16s ease}
+.reader-controls button.on{background:#316f98;border-color:#3d83b0;color:#fff}
+.reader-controls button:hover{border-color:#7aaed0;color:#316f98}
+.reader-controls button.on:hover{background:#285f86;border-color:#285f86;color:#fff}
+.grammar-pills details{border-color:#bdd6ea;background:#eef6fc}
+.grammar-pills summary{color:#285f86}
+.grammar-pills p{color:#38566f}
+@media (prefers-color-scheme:dark){.reader-controls button{background:#242b33;border-color:#3b4653;color:#aeb8c2}.reader-controls button.on{background:#316f98;border-color:#4c93c1;color:#fff}.reader-controls button:hover{border-color:#699cc0;color:#b9dcf4}.reader-controls button.on:hover{background:#285f86;border-color:#4c93c1;color:#fff}.grammar-pills details{border-color:#3c5267;background:#23303d}.grammar-pills summary{color:#a9d2ef}.grammar-pills p{color:#c1d3e2}}
