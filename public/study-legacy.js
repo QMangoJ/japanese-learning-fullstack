@@ -676,6 +676,31 @@ function parseCircledAnswers(str){
   }
   return map;
 }
+function parseExamAnswerDetails(str){
+  const map={};
+  if(!str) return map;
+  const re=new RegExp('(['+CIRCLED_NUMS+'])([^'+CIRCLED_NUMS+']*)','g');
+  for(const match of str.matchAll(re)){
+    const n=CIRCLED_NUMS.indexOf(match[1])+1, raw=match[2].trim();
+    const star=raw.match(/★\s*([1-4])/), direct=raw.match(/^\s*([1-4])(?:\s|$|→)/);
+    const ans=star?+star[1]:(direct?+direct[1]:null);
+    if(ans!=null) map[n]={ans,order:star?raw:''};
+    else if(raw) map[n]={text:raw};
+  }
+  return map;
+}
+function numericExamAnswers(details){
+  const map={};
+  for(const [n,a] of Object.entries(details||{})) if(a.ans!=null) map[n]=a.ans;
+  return map;
+}
+function rangedAnswerHTML(details, n){
+  const nums=String(n).match(/\d+/g)||[];
+  const list=nums.length===2 && nums[0]!==nums[1]
+    ? Array.from({length:+nums[1]-+nums[0]+1},(_,i)=>+nums[0]+i) : nums.map(Number);
+  const entries=list.map(i=>details[i]&&details[i].text?`${CIRCLED_NUMS[i-1]} ${esc(details[i].text)}`:'').filter(Boolean);
+  return entries.length?entries.join('　'):'';
+}
 function answerMapFromKeys(keys){
   const map={};
   (keys||[]).forEach((answer,i)=>{ map[i+1]=answer; });
@@ -897,8 +922,11 @@ function fallbackExamNoteHTML(it,a,module,section){
     else if(section==='mondai2') hint='根据题干表达的含义，选择对应的词语。';
     else if(section==='mondai3') hint='选择与题干意思最接近的表达。';
     else if(section==='mondai4') hint='根据上下文，选择最自然的用法。';
+  }else if(module==='grammar'){
+    hint=a.order?`正确顺序为 ${a.order}，请选择放在 ★ 位置的选项。`:'根据句型含义和接续，选择最符合语境的表达。';
   }
-  return `<div class="an-answer-key jp">正确答案：${a.ans}. ${answer}</div><div class="an-fallback">${hint}</div>`;
+  const order=a.order?`<div class="an-fallback jp">顺序：${esc(a.order)}</div>`:'';
+  return `<div class="an-answer-key jp">正确答案：${a.ans}. ${answer}</div><div class="an-fallback">${hint}</div>${order}`;
 }
 function examExplanationHTML(a,it,module,section){
   const detail=examNoteHTML(a,it);
@@ -908,11 +936,12 @@ function examGrammarHTML(day,w){
   const useBesatsu = MODULE==='grammar';
   const bes = useBesatsu ? (G.besatsu['w'+w]||{}) : {}; const ansMap={};
   if(useBesatsu) for(const k of ['mondai1','mondai2','mondai3']) for(const a of (bes[k]||[])) ansMap[a.n]=a;
+  const directAnswers=useBesatsu?{}:parseExamAnswerDetails(day.answers);
   let html = `<h2 class="page jp">実戦問題 <span class="meta">实战问题 · ${esc(day.time_limit||'')} · ${esc(day.scoring||'')}</span></h2>`;
   const renderQ = (it,section)=>{
-    const a=ansMap[it.n];
+    const a=ansMap[it.n]||directAnswers[it.n];
     let h=`<div class="q"><span class="n">${it.n}</span><span class="jp">${R(it,'q')}</span>`;
-    if(it.opts && a && a.ans && !a.order){
+    if(it.opts && a && a.ans && !(useBesatsu&&a.order)){
       h += quizOptsHTML(it, a.ans);
       h += `<div class="qz-result"></div>`;
       const nh = examExplanationHTML(a, it, 'grammar', section);
@@ -993,7 +1022,7 @@ function viewDayVocab(day,w,d,scrollTok){
   if(scrollTok) scrollHighlight(`v-${w}-${d}-${scrollTok}`);
 }
 function examVocabHTML(day,w){
-  const ansMap = parseCircledAnswers(day.answers);
+  const ansMap = numericExamAnswers(parseExamAnswerDetails(day.answers));
   const kai = {}; for(const e of (day.kaisetsu||[])) kai[e.n]=e;
   let html = `<h2 class="page jp">実戦問題 <span class="meta">实战问题 · ${esc(day.time_limit||'')} · ${esc(day.scoring||'')}</span></h2>`;
   // 有的实战日在书源里是残缺的，缺了哪部分要说清楚，别让人以为这天本来就只有几道题
@@ -1057,7 +1086,8 @@ function viewDayKanji(day,w,d,scrollTok){
   if(scrollTok) scrollHighlight(`k-${w}-${d}-${scrollTok}`);
 }
 function examKanjiHTML(day,w){
-  const ansMap = day.answers ? parseCircledAnswers(day.answers) : answerMapFromKeys(N3_KANJI_EXAM_KEYS[w]);
+  const answerDetails=parseExamAnswerDetails(day.answers);
+  const ansMap = day.answers ? numericExamAnswers(answerDetails) : answerMapFromKeys(N3_KANJI_EXAM_KEYS[w]);
   const kai = {}; for(const e of (day.kaisetsu||[])) kai[e.n]=e;
   let html = `<h2 class="page jp">実戦問題 <span class="meta">实战问题 · ${esc(day.time_limit||'')} · ${esc(day.scoring||'')}</span></h2>`;
   // 有的实战日在书源里是残缺的，缺了哪部分要说清楚，别让人以为这天本来就只有几道题
@@ -1065,6 +1095,7 @@ function examKanjiHTML(day,w){
   for(const [key,label] of [['mondai1','問題1'],['mondai2','問題2'],['mondai3','問題3'],['mondai4','問題4']]){
     const m=day[key]; if(!m) continue;
     html += `<div class="sec-title">${label}</div><div class="card"><div class="meta jp">${R(m,'instruction')}</div>`;
+    if(m.wordbank) html += `<div class="opts">${m.wordbank.map(x=>`<span class="jp">${esc(x)}</span>`).join('')}</div>`;
     html += m.items.map(it=>{
       const correct=ansMap[it.n];
       let h=`<div class="q"><span class="n">${it.n}</span><span class="jp">${R(it,'q')}</span>`;
@@ -1073,6 +1104,9 @@ function examKanjiHTML(day,w){
         h += `<div class="qz-result"></div>`;
         const nh = examExplanationHTML(Object.assign({ans:correct}, kai[it.n]||{}), it, 'kanji', key);
         if(nh) h += `<div class="qz-note">${nh}</div>`;
+      }else if(!it.opts){
+        const textAnswer=rangedAnswerHTML(answerDetails,it.n);
+        if(textAnswer) h += ansBlock(`examk-${w}-${String(it.n).replace(/[^0-9]/g,'-')}`, `<b>答案：</b><span class="jp">${textAnswer}</span>`);
       }
       return h+`</div>`;
     }).join('') + `</div>`;
