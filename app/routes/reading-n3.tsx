@@ -100,9 +100,19 @@ function LessonNavigator({ index, onSelect }: { index: number; onSelect: (index:
 }
 
 function ReadingCatalog({ embedded, onSelect }: { embedded: boolean; onSelect: (index: number) => void }) {
+	const [openWeeks, setOpenWeeks] = useState(() => new Set([1]));
+	const descriptions = ["阅读各种启事和指南", "阅读身边常见的说明文字", "阅读邮件、书信等通信文"];
+	const toggleWeek = (week: number) => setOpenWeeks((current) => {
+		const next = new Set(current);
+		next.has(week) ? next.delete(week) : next.add(week);
+		return next;
+	});
 	return <div className={embedded ? "reader-page reader-page--embedded" : "reader-page"}><div className="reader-wrap reader-layout"><main className="reader-main reader-catalog">
-		<section className="reader-catalog-intro"><span>N3 読解</span><h1>読解練習</h1><p>新日语能力考试考前对策 · 3 周 · 共 21 日。点击进入每日读解训练。</p></section>
-		{outline.map((week, weekIndex) => <section className="reader-week-card" key={week.week}><header><div><span>{week.week}</span><h2>{week.title}</h2><p>{weekIndex === 0 ? "阅读各种启事和指南" : weekIndex === 1 ? "阅读身边常见的说明文字" : "阅读邮件、书信等通信文"}</p></div><b>7 天</b></header><div className="reader-day-list">{readingLessons.filter((lesson) => lesson.week === weekIndex + 1).map((lesson) => <button key={lesson.index} onClick={() => onSelect(lesson.index)}><span>{lesson.day}日目{lesson.day === 7 ? " · 实战" : ""}</span><b>{lesson.title}</b><small>进入练习　›</small></button>)}</div></section>)}
+		<div className="home-top"><div className="meta">《新日语能力考试考前对策 N3 读解》· 3 周 · 共 21 天 · 点击进入每日读解</div></div>
+		{outline.map((week, weekIndex) => {
+			const isOpen = openWeeks.has(weekIndex + 1);
+			return <section className="card week-card reader-course-week" key={week.week}><button className="wk-head reader-week-toggle" onClick={() => toggleWeek(weekIndex + 1)} aria-expanded={isOpen}><div className="wk-t"><h2>{week.week} <span className="jp">{week.title}</span></h2><div className="sub">{descriptions[weekIndex]}</div></div><span className="cnt">7天</span><span className="cv">{isOpen ? "▾" : "▸"}</span></button>{isOpen && <div className="wk-body"><div className="day-list">{readingLessons.filter((lesson) => lesson.week === weekIndex + 1).map((lesson) => <button className="day-item reader-course-day" key={lesson.index} onClick={() => onSelect(lesson.index)}><div className="d">{lesson.day}日目{lesson.day === 7 ? " · 实战" : ""}</div><div className="t jp">{lesson.title}</div><div className="tc">读解练习 · 翻译 · 语法拆解</div></button>)}</div></div>}</section>;
+		})}
 	</main></div></div>;
 }
 

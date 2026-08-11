@@ -65,7 +65,7 @@ function ReadingSideEntry() {
 			link.href = "/study";
 			link.className = "side-reader-link";
 			if (document.body.classList.contains("reader-mode-active")) link.classList.add("on");
-			link.innerHTML = "<span>📕</span><span>读解</span><small>N3</small>";
+			link.innerHTML = "<span>📕</span><span>读解</span><small>3周</small>";
 			contentSection.append(link);
 		};
 
@@ -87,6 +87,7 @@ function ReadingModeBridge() {
 			const title = document.querySelector("#title");
 			if (active && title) title.textContent = "N3 读解";
 			document.querySelectorAll("#typebar button").forEach((button) => button.classList.toggle("on", false));
+			if (active) document.querySelectorAll("#side .side-item.on").forEach((entry) => entry.classList.remove("on"));
 			document.querySelectorAll(".reader-mode-link, .side-reader-link").forEach((entry) => entry.classList.toggle("on", active));
 		};
 
