@@ -956,7 +956,13 @@ function fallbackExamNoteHTML(it,a,module,section){
 }
 function examExplanationHTML(a,it,module,section){
   const detail=examNoteHTML(a,it);
-  return `<div class="an-explain-title">答案解析</div>`+(detail||fallbackExamNoteHTML(it,a,module,section));
+  if(!detail) return `<div class="an-explain-title">答案解析</div>`+fallbackExamNoteHTML(it,a,module,section);
+  // 第 1–4 周原书给的是简要释义；保留原文释义，再补齐与第 5 周相同的解题步骤和选项辨析。
+  const hasExpandedSource=!!((a.why||[]).length||a.point||(a.words||[]).length||(a.parse||[]).length||(a.build||[]).length);
+  if(hasExpandedSource) return `<div class="an-explain-title">答案解析</div>`+detail;
+  const generated=fallbackExamNoteHTML(it,a,module,section);
+  const detailsAt=generated.indexOf('<details');
+  return `<div class="an-explain-title">答案解析</div>`+detail+(detailsAt>=0?generated.slice(detailsAt):'');
 }
 function examGrammarHTML(day,w){
   const useBesatsu = MODULE==='grammar';
