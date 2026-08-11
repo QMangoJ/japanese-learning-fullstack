@@ -20,12 +20,39 @@ export function loader() {
 type Disc = "cd1" | "cd2";
 type AudioCue = { disc: Disc; track: number };
 type ExercisePage = { readonly page: number; readonly tracks: readonly number[] };
+type OcrSection = { readonly number: number; readonly title: string; readonly subtitle: string; readonly firstTrack: number; readonly pages: readonly [number, number]; readonly answerPages: readonly number[] };
 
-const chapterTextPages: Record<number, readonly [number, number]> = {
-	2: [27, 39],
-	3: [40, 53],
-	4: [54, 65],
-	5: [66, 74],
+const ocrChapterSections: Record<number, readonly OcrSection[]> = {
+	2: [
+		{ number: 1, title: "何と言いますか", subtitle: "発話表現", firstTrack: 19, pages: [27, 28], answerPages: [89] },
+		{ number: 2, title: "どんな返事をしますか", subtitle: "即時応答", firstTrack: 22, pages: [29, 30], answerPages: [91] },
+		{ number: 3, title: "何をしますか", subtitle: "課題理解", firstTrack: 27, pages: [31, 32], answerPages: [93] },
+		{ number: 4, title: "どうしてですか", subtitle: "ポイント理解", firstTrack: 30, pages: [33, 34], answerPages: [95] },
+		{ number: 5, title: "どんな内容ですか", subtitle: "概要理解", firstTrack: 34, pages: [35, 36], answerPages: [97] },
+		{ number: 6, title: "まとめ問題", subtitle: "総合練習", firstTrack: 37, pages: [37, 39], answerPages: [99] },
+	],
+	3: [
+		{ number: 1, title: "町で", subtitle: "駅・店内放送", firstTrack: 50, pages: [41, 42], answerPages: [101] },
+		{ number: 2, title: "天気予報・交通情報", subtitle: "情報を聞く", firstTrack: 53, pages: [43, 44], answerPages: [103] },
+		{ number: 3, title: "学校で", subtitle: "指示・禁止", firstTrack: 56, pages: [45, 46], answerPages: [105] },
+		{ number: 4, title: "職場で", subtitle: "敬語表現", firstTrack: 59, pages: [47, 48], answerPages: [107] },
+		{ number: 5, title: "病院・いろいろな店で", subtitle: "決まった表現", firstTrack: 62, pages: [49, 50], answerPages: [109] },
+		{ number: 6, title: "まとめ問題", subtitle: "総合練習", firstTrack: 65, pages: [51, 53], answerPages: [111] },
+	],
+	4: [
+		{ number: 1, title: "人や物のようす", subtitle: "人物・物の描写", firstTrack: 2, pages: [55, 56], answerPages: [113, 115] },
+		{ number: 2, title: "場所・方向・位置", subtitle: "位置関係", firstTrack: 5, pages: [57, 58], answerPages: [117] },
+		{ number: 3, title: "数・数字・計算", subtitle: "数値情報", firstTrack: 8, pages: [59, 60], answerPages: [119] },
+		{ number: 4, title: "順序・比較", subtitle: "手順と比較", firstTrack: 11, pages: [61, 62], answerPages: [121] },
+		{ number: 5, title: "まとめ問題", subtitle: "総合練習", firstTrack: 14, pages: [63, 65], answerPages: [123, 125, 127] },
+	],
+	5: [
+		{ number: 1, title: "問題 I", subtitle: "質問を聞いて答える", firstTrack: 22, pages: [67, 69], answerPages: [129] },
+		{ number: 2, title: "問題 II", subtitle: "選択肢を読んで答える", firstTrack: 28, pages: [70, 71], answerPages: [131, 133, 135] },
+		{ number: 3, title: "問題 III", subtitle: "内容を聞き取る", firstTrack: 33, pages: [72, 72], answerPages: [137, 139] },
+		{ number: 4, title: "問題 IV", subtitle: "場面に合う発話", firstTrack: 36, pages: [73, 73], answerPages: [141, 143] },
+		{ number: 5, title: "問題 V", subtitle: "即時応答", firstTrack: 39, pages: [74, 74], answerPages: [145, 147, 149, 151] },
+	],
 };
 
 const audioLabel: Record<Disc, string> = { cd1: "CD 1", cd2: "CD 2" };
@@ -184,6 +211,15 @@ function OcrPageCard({ page, tracks, disc, active, playing, onToggle }: { page: 
 	</article>;
 }
 
+function OcrSectionLesson({ chapter, section, active, playing, onToggle }: { chapter: (typeof chapters)[number]; section: OcrSection; active: AudioCue; playing: boolean; onToggle: (cue: AudioCue) => void }) {
+	const pages = Array.from({ length: section.pages[1] - section.pages[0] + 1 }, (_, index) => section.pages[0] + index);
+	return <section className="listening-text-lesson listening-ocr-lesson" aria-labelledby={`ocr-section-${chapter.number}-${section.number}`}>
+		<div className="reader-section-head"><span>第{chapter.number}章　第{section.number}節</span><h2 id={`ocr-section-${chapter.number}-${section.number}`}>{section.title}</h2></div>
+		<div className="listening-text-lesson__intro"><b>{section.subtitle}</b><p>PDF 原页已按本节边界 OCR 为文本；题目对应的音频按钮保留在相应页内。</p></div>
+		<section className="listening-exercises">{pages.map((page) => { const exercise = chapter.exercises.find((item) => item.page === page); return <OcrPageCard key={page} page={page} tracks={exercise?.tracks ?? []} disc={chapter.disc} active={active} playing={playing} onToggle={onToggle} />; })}</section>
+	</section>;
+}
+
 function AnswerSourcePages({ pages }: { pages: readonly number[] }) {
 	return <section className="listening-source-pages" aria-label="答えと聞き取り原文"><div className="reader-section-head"><span>答え・<ruby>聞<rt>き</rt></ruby>き<ruby>取<rt>と</rt></ruby>り<ruby>原文<rt>げんぶん</rt></ruby></span><h2>答えを<ruby>確認<rt>かくにん</rt></ruby>する</h2></div>{pages.map((page, index) => <article key={page}><details><summary><span>答え・<ruby>聞<rt>き</rt></ruby>き<ruby>取<rt>と</rt></ruby>り<ruby>原文<rt>げんぶん</rt></ruby>　{index + 1}</span><b>表示</b></summary><figure><img loading="lazy" src={pageSource(page)} alt={`答えと聞き取り原文 ${index + 1}`} /></figure></details>{page < 151 ? <details><summary><span><ruby>翻訳<rt>ほんやく</rt></ruby>　{index + 1}</span><b>表示</b></summary><figure><img loading="lazy" src={pageSource(page + 1)} alt={`答えと聞き取り原文の翻訳 ${index + 1}`} /></figure></details> : null}</article>)}</section>;
 }
@@ -281,17 +317,25 @@ function ChapterOneOutline({ onBack }: { onBack: () => void }) {
 	return <div className="reader-page reader-page--embedded"><div className="reader-wrap reader-layout"><main className="reader-main listening-detail"><header className="listening-crumb"><button className="listening-crumb__back" onClick={onBack} aria-label="聴解目次へ戻る">‹</button><div className="listening-crumb__path"><span>N3 <ruby>聴解<rt>ちょうかい</rt></ruby></span><i>/</i><b>第 1 章</b></div><h1>準備をしましょう</h1></header><section className="listening-section-catalog"><div className="reader-section-head"><span>第1章</span><h2>5 つの<ruby>節<rt>せつ</rt></ruby></h2></div>{chapterOneSections.map((section, index) => <article key={section.number} className={activeSection === index ? "open" : ""}><button onClick={() => setActiveSection((value) => value === index ? null : index)} aria-expanded={activeSection === index}><span>{section.number}</span><div><b>{section.title}</b><small>{section.subtitle} · CD 1 · {String(section.firstTrack).padStart(2, "0")}〜</small></div><i>{activeSection === index ? "⌃" : "›"}</i></button>{activeSection === index ? <ChapterOneSectionPanel sectionIndex={index} /> : null}</article>)}</section></main></div></div>;
 }
 
-function ListeningCatalog({ onSelect, chapterOneExpanded, onToggleChapterOne }: { onSelect: (index: number, sectionIndex?: number) => void; chapterOneExpanded: boolean; onToggleChapterOne: () => void }) {
+type ListeningSectionMenuItem = { number: number; title: ReactNode; subtitle: string; firstTrack: number };
+
+function menuSectionsFor(chapterIndex: number): readonly ListeningSectionMenuItem[] {
+	if (chapterIndex === 0) return chapterOneSections;
+	return ocrChapterSections[chapterIndex + 1] ?? [];
+}
+
+function ListeningCatalog({ onSelect, expandedChapter, onToggleChapter }: { onSelect: (index: number, sectionIndex: number) => void; expandedChapter: number | null; onToggleChapter: (index: number) => void }) {
 	return <div className="reader-page reader-page--embedded"><div className="reader-wrap reader-layout"><main className="reader-main reader-catalog listening-catalog">
 		<div className="reader-catalog-intro"><span>N3 聴解</span><h1>N3 听解训练</h1><p>5 个训练章节 · 逐题音频 · 点击进入练习</p></div>
-		{chapters.map((chapter, index) => <section className={`reader-week-card listening-chapter-card${index === 0 && chapterOneExpanded ? " expanded" : ""}`} key={chapter.number}><button className="reader-week-card__toggle" onClick={() => index === 0 ? onToggleChapterOne() : onSelect(index)} aria-expanded={index === 0 ? chapterOneExpanded : undefined}><div><span>第 {chapter.number} 章</span><h2>{chapter.title}</h2><p>{chapter.cn} · {chapter.description}</p></div><b>{index === 0 ? (chapterOneExpanded ? "收起　⌃" : "展开　⌄") : "进入练习　›"}</b></button><div className="listening-chapter-card__meta"><span>{chapter.pages}</span><div>{chapter.focus.map((item) => <i key={item}>{item}</i>)}</div></div>{index === 0 && chapterOneExpanded ? <div className="listening-chapter-submenu">{chapterOneSections.map((section, sectionIndex) => <button key={section.number} onClick={() => onSelect(0, sectionIndex)}><span>{section.number}</span><div><b>{section.title}</b><small>{section.subtitle} · CD 1 · {String(section.firstTrack).padStart(2, "0")}〜</small></div><i>›</i></button>)}</div> : null}</section>)}
+		{chapters.map((chapter, index) => { const sections = menuSectionsFor(index); const expanded = expandedChapter === index; return <section className={`reader-week-card listening-chapter-card${expanded ? " expanded" : ""}`} key={chapter.number}><button className="reader-week-card__toggle" onClick={() => onToggleChapter(index)} aria-expanded={expanded}><div><span>第 {chapter.number} 章</span><h2>{chapter.title}</h2><p>{chapter.cn} · {chapter.description}</p></div><b>{expanded ? "收起　⌃" : `展开 ${sections.length} 节　⌄`}</b></button><div className="listening-chapter-card__meta"><span>{chapter.pages}</span><div>{chapter.focus.map((item) => <i key={item}>{item}</i>)}</div></div>{expanded ? <div className="listening-chapter-submenu">{sections.map((section, sectionIndex) => <button key={section.number} onClick={() => onSelect(index, sectionIndex)}><span>{section.number}</span><div><b>{section.title}</b><small>{section.subtitle} · {audioLabel[chapter.disc]} · {String(section.firstTrack).padStart(2, "0")}〜</small></div><i>›</i></button>)}</div> : null}</section>; })}
 	</main></div></div>;
 }
 
 function ChapterDetail({ chapterIndex, sectionIndex, onBack }: { chapterIndex: number; sectionIndex?: number; onBack: () => void }) {
 	const chapter = chapters[chapterIndex];
 	const chapterOneSection = chapter.number === 1 && sectionIndex !== undefined ? chapterOneSections[sectionIndex] : undefined;
-	const initialCue = useMemo<AudioCue>(() => ({ disc: chapter.disc, track: chapterOneSection?.firstTrack ?? chapter.exercises[0].tracks[0] }), [chapter, chapterOneSection]);
+	const ocrSection = chapter.number !== 1 && sectionIndex !== undefined ? ocrChapterSections[chapter.number]?.[sectionIndex] : undefined;
+	const initialCue = useMemo<AudioCue>(() => ({ disc: chapter.disc, track: chapterOneSection?.firstTrack ?? ocrSection?.firstTrack ?? chapter.exercises[0].tracks[0] }), [chapter, chapterOneSection, ocrSection]);
 	const [cue, setCue] = useState(initialCue);
 	const [playRequest, setPlayRequest] = useState(0);
 	const [playing, setPlaying] = useState(false);
@@ -312,22 +356,19 @@ function ChapterDetail({ chapterIndex, sectionIndex, onBack }: { chapterIndex: n
 		setPlayRequest((value) => value + 1);
 	}
 
-	const textRange = chapterTextPages[chapter.number];
-	const textPages = textRange ? Array.from({ length: textRange[1] - textRange[0] + 1 }, (_, index) => textRange[0] + index) : [];
-
 	return <div className="reader-page reader-page--embedded"><div className="reader-wrap reader-layout"><main className="reader-main listening-detail">
-		<header className="listening-crumb"><button className="listening-crumb__back" onClick={onBack} aria-label="聴解目次へ戻る">‹</button><div className="listening-crumb__path"><span>N3 <ruby>聴解<rt>ちょうかい</rt></ruby></span><i>/</i><b>第 {chapter.number} 章{chapterOneSection ? ` / ${chapterOneSection.number}` : ""}</b></div><h1>{chapterOneSection?.title ?? chapter.title}</h1></header>
+		<header className="listening-crumb"><button className="listening-crumb__back" onClick={onBack} aria-label="聴解目次へ戻る">‹</button><div className="listening-crumb__path"><span>N3 <ruby>聴解<rt>ちょうかい</rt></ruby></span><i>/</i><b>第 {chapter.number} 章{sectionIndex !== undefined ? ` / ${sectionIndex + 1}` : ""}</b></div><h1>{chapterOneSection?.title ?? ocrSection?.title ?? chapter.title}</h1></header>
 		<ListeningPlayer cue={cue} audioRef={audioRef} onPlaybackChange={setPlaying} />
-		{chapterOneSection ? <>{chapterOneSection.number === 1 ? <PronunciationLesson active={cue} playing={playing} onToggle={toggleCue} /> : null}{chapterOneSection.number === 2 ? <GrammarOneLesson active={cue} playing={playing} onToggle={toggleCue} /> : null}{chapterOneSection.number === 3 ? <GrammarTwoLesson active={cue} playing={playing} onToggle={toggleCue} /> : null}{chapterOneSection.number === 4 ? <ConversationLesson active={cue} playing={playing} onToggle={toggleCue} /> : null}{chapterOneSection.number === 5 ? <section className="listening-exercises">{chapter.exercises.filter((exercise) => exercise.page >= 23).map((exercise) => <ExerciseCard key={exercise.page} exercise={exercise} disc={chapter.disc} active={cue} playing={playing} onToggle={toggleCue} />)}</section> : null}<AnswerAndScript section={chapterOneSection} /></> : <><section className="listening-exercises">{textPages.map((page) => { const exercise = chapter.exercises.find((item) => item.page === page); return <OcrPageCard key={page} page={page} tracks={exercise?.tracks ?? []} disc={chapter.disc} active={cue} playing={playing} onToggle={toggleCue} />; })}</section><AnswerSourcePages pages={chapter.answerPages} /></>}
+		{chapterOneSection ? <>{chapterOneSection.number === 1 ? <PronunciationLesson active={cue} playing={playing} onToggle={toggleCue} /> : null}{chapterOneSection.number === 2 ? <GrammarOneLesson active={cue} playing={playing} onToggle={toggleCue} /> : null}{chapterOneSection.number === 3 ? <GrammarTwoLesson active={cue} playing={playing} onToggle={toggleCue} /> : null}{chapterOneSection.number === 4 ? <ConversationLesson active={cue} playing={playing} onToggle={toggleCue} /> : null}{chapterOneSection.number === 5 ? <section className="listening-exercises">{chapter.exercises.filter((exercise) => exercise.page >= 23).map((exercise) => <ExerciseCard key={exercise.page} exercise={exercise} disc={chapter.disc} active={cue} playing={playing} onToggle={toggleCue} />)}</section> : null}<AnswerAndScript section={chapterOneSection} /></> : ocrSection ? <><OcrSectionLesson chapter={chapter} section={ocrSection} active={cue} playing={playing} onToggle={toggleCue} /><AnswerSourcePages pages={ocrSection.answerPages} /></> : null}
 	</main></div></div>;
 }
 
 export function ListeningN3Content({ embedded = false }: { embedded?: boolean }) {
 	const [activeChapter, setActiveChapter] = useState<number | null>(null);
 	const [activeSection, setActiveSection] = useState<number | null>(null);
-	const [chapterOneExpanded, setChapterOneExpanded] = useState(false);
-	const selectChapter = (index: number, sectionIndex?: number) => { setActiveChapter(index); setActiveSection(sectionIndex ?? null); if (index === 0) setChapterOneExpanded(true); };
-	const catalog = <ListeningCatalog onSelect={selectChapter} chapterOneExpanded={chapterOneExpanded} onToggleChapterOne={() => setChapterOneExpanded((value) => !value)} />;
+	const [expandedChapter, setExpandedChapter] = useState<number | null>(null);
+	const selectChapter = (index: number, sectionIndex: number) => { setActiveChapter(index); setActiveSection(sectionIndex); setExpandedChapter(index); };
+	const catalog = <ListeningCatalog onSelect={selectChapter} expandedChapter={expandedChapter} onToggleChapter={(index) => setExpandedChapter((value) => value === index ? null : index)} />;
 	if (!embedded || activeChapter === null) return catalog;
 	return <ChapterDetail key={`${activeChapter}-${activeSection ?? "chapter"}`} chapterIndex={activeChapter} sectionIndex={activeSection ?? undefined} onBack={() => setActiveChapter(null)} />;
 }
