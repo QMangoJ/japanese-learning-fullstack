@@ -593,7 +593,7 @@ function render(){
 function viewHome(){
   setNav('home'); setHeader(modLabel(), false);
   const book = LX(
-    {grammar:'考前对策 N3语法', n2grammar:'考前对策 N2语法', vocab:'考前对策 N3词汇', kanji:'考前对策 N3汉字', n2vocab:'考前对策 N2词汇', n2kanji:'考前对策 N2汉字', n4grammar:'考前对策 N4语法', n4vocab:'考前对策 N4词汇', n4kanji:'考前对策 N4汉字'}[MODULE],
+    {grammar:'N3语法训练', n2grammar:'N2语法训练', vocab:'N3词汇训练', kanji:'N3汉字训练', n2vocab:'N2词汇训练', n2kanji:'N2汉字训练', n4grammar:'N4语法训练', n4vocab:'N4词汇训练', n4kanji:'N4汉字训练'}[MODULE],
     {grammar:'JLPT Prep N3 Grammar', n2grammar:'JLPT Prep N2 Grammar', vocab:'JLPT Prep N3 Vocabulary', kanji:'JLPT Prep N3 Kanji', n2vocab:'JLPT Prep N2 Vocabulary', n2kanji:'JLPT Prep N2 Kanji', n4grammar:'JLPT Prep N4 Grammar', n4vocab:'JLPT Prep N4 Vocabulary', n4kanji:'JLPT Prep N4 Kanji'}[MODULE]
   );
   const kind = LX(
@@ -719,7 +719,7 @@ function answerMapFromKeys(keys){
   (keys||[]).forEach((answer,i)=>{ map[i+1]=answer; });
   return map;
 }
-// 《新日语能力考试考前对策 N3 汉字》各周第七日实战题答案。
+// N3 汉字训练：各周第七日实战题答案。
 // 原书题目页标注为“答えは別冊”，扫描件未收录别册；以下答案逐题按本地题目和原书选项校对。
 const N3_KANJI_EXAM_KEYS={
   1:[2,1,2,4,3,4,1,2,2,4,3,1,4,2,3,4,2,3,4,1],

@@ -149,7 +149,7 @@ function ReadingCatalog({ embedded, onSelect }: { embedded: boolean; onSelect: (
 		return next;
 	});
 	return <div className={embedded ? "reader-page reader-page--embedded" : "reader-page"}><div className="reader-wrap reader-layout"><main className="reader-main reader-catalog">
-		<div className="reader-catalog-intro"><span>N3 読解</span><h1>《新日语能力考试考前对策》</h1><p>6 周 · 共 42 天 · 点击进入每日读解</p></div>
+		<div className="reader-catalog-intro"><span>N3 読解</span><h1>N3 读解训练</h1><p>6 周 · 共 42 天 · 点击进入每日读解</p></div>
 		{outline.map((week, weekIndex) => {
 			const isOpen = openWeeks.has(weekIndex + 1);
 			return <section className="reader-week-card reader-course-week" key={week.week}><button className="reader-week-card__toggle reader-week-toggle" onClick={() => toggleWeek(weekIndex + 1)} aria-expanded={isOpen}><div><span>{week.week}</span><h2><FuriganaText text={week.title} /></h2><p>{descriptions[weekIndex]}</p></div><b>7 天　{isOpen ? "▾" : "▸"}</b></button>{isOpen && <div className="reader-day-list">{readingLessons.filter((lesson) => lesson.week === weekIndex + 1).map((lesson) => <button className="reader-course-day" key={lesson.index} onClick={() => onSelect(lesson.index)}><span>{lesson.day}日目{lesson.day === 7 ? " · 实战" : ""}</span><b><FuriganaText text={lesson.title} /></b><small>读解练习 · 翻译 · 语法拆解</small></button>)}</div>}</section>;
