@@ -84,6 +84,8 @@ function ReadingModeBridge() {
 
 		const syncActiveState = (active: boolean) => {
 			document.body.classList.toggle("reader-mode-active", active);
+			const title = document.querySelector("#title");
+			if (active && title) title.textContent = "N3 读解";
 			document.querySelectorAll("#typebar button").forEach((button) => button.classList.toggle("on", false));
 			document.querySelectorAll(".reader-mode-link, .side-reader-link").forEach((entry) => entry.classList.toggle("on", active));
 		};
