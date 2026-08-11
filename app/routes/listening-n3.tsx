@@ -226,7 +226,7 @@ function ChapterDetail({ chapterIndex, onBack }: { chapterIndex: number; onBack:
 	}
 
 	return <div className="reader-page reader-page--embedded"><div className="reader-wrap reader-layout"><main className="reader-main listening-detail">
-		<section className="reader-hero reader-studybar"><div className="reader-breadcrumb"><span>N3 <ruby>聴解<rt>ちょうかい</rt></ruby></span><span>/</span><b>第 {chapter.number} 章</b></div><div className="reader-studybar__body"><div><button className="reader-back" onClick={onBack}>‹ <ruby>聴解<rt>ちょうかい</rt></ruby>目次</button><span>第 {chapter.number} 章</span><h1>{chapter.title}</h1></div></div></section>
+		<header className="listening-crumb"><button className="listening-crumb__back" onClick={onBack} aria-label="聴解目次へ戻る">‹</button><div className="listening-crumb__path"><span>N3 <ruby>聴解<rt>ちょうかい</rt></ruby></span><i>/</i><b>第 {chapter.number} 章</b></div><h1>{chapter.title}</h1></header>
 		<ListeningPlayer cue={cue} audioRef={audioRef} onPlaybackChange={setPlaying} />
 		{chapter.number === 1 ? <PronunciationLesson active={cue} playing={playing} onToggle={toggleCue} /> : <section className="listening-exercises">{chapter.exercises.map((exercise) => <ExerciseCard key={exercise.page} exercise={exercise} disc={chapter.disc} active={cue} playing={playing} onToggle={toggleCue} />)}</section>}
 	</main></div></div>;
