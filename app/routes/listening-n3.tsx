@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState, type ReactNode, type RefObject } 
 import { redirect } from "react-router";
 
 import type { Route } from "./+types/listening-n3";
+import { listeningN3OcrText } from "../data/listening-n3-ocr";
 import "./reading-n3.css";
 import "./listening-n3.css";
 
@@ -19,6 +20,13 @@ export function loader() {
 type Disc = "cd1" | "cd2";
 type AudioCue = { disc: Disc; track: number };
 type ExercisePage = { readonly page: number; readonly tracks: readonly number[] };
+
+const chapterTextPages: Record<number, readonly [number, number]> = {
+	2: [27, 39],
+	3: [40, 53],
+	4: [54, 65],
+	5: [66, 74],
+};
 
 const audioLabel: Record<Disc, string> = { cd1: "CD 1", cd2: "CD 2" };
 
@@ -166,6 +174,16 @@ function ExerciseCard({ exercise, disc, active, playing, onToggle }: { exercise:
 	</article>;
 }
 
+function OcrPageCard({ page, tracks, disc, active, playing, onToggle }: { page: number; tracks: readonly number[]; disc: Disc; active: AudioCue; playing: boolean; onToggle: (cue: AudioCue) => void }) {
+	const text = listeningN3OcrText[page] ?? "";
+	return <article className="listening-exercise listening-ocr-card">
+		<header><div><span>练习页 {page - 3} · OCR 文本</span><h3>本页内容</h3></div>{tracks.length ? <div className="listening-exercise__tracks">{tracks.map((track) => <CueButton key={track} cue={{ disc, track }} active={active} playing={playing} onToggle={onToggle} />)}</div> : null}</header>
+		<p className="listening-ocr-card__notice">OCR 初稿，尚待人工核对；对应音频可从本页按钮播放。</p>
+		<div className="listening-ocr-card__text" lang="ja">{text ? text.split("\n").map((line, index) => <p key={`${page}-${index}`}>{line}</p>) : <p>本页 OCR 未取得可用文本，请通过下方原页对照查看。</p>}</div>
+		<details className="listening-ocr-card__source"><summary><span>原页对照</span><b>展开</b></summary><figure><img loading="lazy" src={pageSource(page)} alt={`第 ${page - 3} 页原始扫描页，用于校对 OCR 文本`} /></figure></details>
+	</article>;
+}
+
 function AnswerSourcePages({ pages }: { pages: readonly number[] }) {
 	return <section className="listening-source-pages" aria-label="答えと聞き取り原文"><div className="reader-section-head"><span>答え・<ruby>聞<rt>き</rt></ruby>き<ruby>取<rt>と</rt></ruby>り<ruby>原文<rt>げんぶん</rt></ruby></span><h2>答えを<ruby>確認<rt>かくにん</rt></ruby>する</h2></div>{pages.map((page, index) => <article key={page}><details><summary><span>答え・<ruby>聞<rt>き</rt></ruby>き<ruby>取<rt>と</rt></ruby>り<ruby>原文<rt>げんぶん</rt></ruby>　{index + 1}</span><b>表示</b></summary><figure><img loading="lazy" src={pageSource(page)} alt={`答えと聞き取り原文 ${index + 1}`} /></figure></details>{page < 151 ? <details><summary><span><ruby>翻訳<rt>ほんやく</rt></ruby>　{index + 1}</span><b>表示</b></summary><figure><img loading="lazy" src={pageSource(page + 1)} alt={`答えと聞き取り原文の翻訳 ${index + 1}`} /></figure></details> : null}</article>)}</section>;
 }
@@ -294,10 +312,13 @@ function ChapterDetail({ chapterIndex, sectionIndex, onBack }: { chapterIndex: n
 		setPlayRequest((value) => value + 1);
 	}
 
+	const textRange = chapterTextPages[chapter.number];
+	const textPages = textRange ? Array.from({ length: textRange[1] - textRange[0] + 1 }, (_, index) => textRange[0] + index) : [];
+
 	return <div className="reader-page reader-page--embedded"><div className="reader-wrap reader-layout"><main className="reader-main listening-detail">
 		<header className="listening-crumb"><button className="listening-crumb__back" onClick={onBack} aria-label="聴解目次へ戻る">‹</button><div className="listening-crumb__path"><span>N3 <ruby>聴解<rt>ちょうかい</rt></ruby></span><i>/</i><b>第 {chapter.number} 章{chapterOneSection ? ` / ${chapterOneSection.number}` : ""}</b></div><h1>{chapterOneSection?.title ?? chapter.title}</h1></header>
 		<ListeningPlayer cue={cue} audioRef={audioRef} onPlaybackChange={setPlaying} />
-		{chapterOneSection ? <>{chapterOneSection.number === 1 ? <PronunciationLesson active={cue} playing={playing} onToggle={toggleCue} /> : null}{chapterOneSection.number === 2 ? <GrammarOneLesson active={cue} playing={playing} onToggle={toggleCue} /> : null}{chapterOneSection.number === 3 ? <GrammarTwoLesson active={cue} playing={playing} onToggle={toggleCue} /> : null}{chapterOneSection.number === 4 ? <ConversationLesson active={cue} playing={playing} onToggle={toggleCue} /> : null}{chapterOneSection.number === 5 ? <section className="listening-exercises">{chapter.exercises.filter((exercise) => exercise.page >= 23).map((exercise) => <ExerciseCard key={exercise.page} exercise={exercise} disc={chapter.disc} active={cue} playing={playing} onToggle={toggleCue} />)}</section> : null}<AnswerAndScript section={chapterOneSection} /></> : <><section className="listening-exercises">{chapter.exercises.map((exercise) => <ExerciseCard key={exercise.page} exercise={exercise} disc={chapter.disc} active={cue} playing={playing} onToggle={toggleCue} />)}</section><AnswerSourcePages pages={chapter.answerPages} /></>}
+		{chapterOneSection ? <>{chapterOneSection.number === 1 ? <PronunciationLesson active={cue} playing={playing} onToggle={toggleCue} /> : null}{chapterOneSection.number === 2 ? <GrammarOneLesson active={cue} playing={playing} onToggle={toggleCue} /> : null}{chapterOneSection.number === 3 ? <GrammarTwoLesson active={cue} playing={playing} onToggle={toggleCue} /> : null}{chapterOneSection.number === 4 ? <ConversationLesson active={cue} playing={playing} onToggle={toggleCue} /> : null}{chapterOneSection.number === 5 ? <section className="listening-exercises">{chapter.exercises.filter((exercise) => exercise.page >= 23).map((exercise) => <ExerciseCard key={exercise.page} exercise={exercise} disc={chapter.disc} active={cue} playing={playing} onToggle={toggleCue} />)}</section> : null}<AnswerAndScript section={chapterOneSection} /></> : <><section className="listening-exercises">{textPages.map((page) => { const exercise = chapter.exercises.find((item) => item.page === page); return <OcrPageCard key={page} page={page} tracks={exercise?.tracks ?? []} disc={chapter.disc} active={cue} playing={playing} onToggle={toggleCue} />; })}</section><AnswerSourcePages pages={chapter.answerPages} /></>}
 	</main></div></div>;
 }
 
