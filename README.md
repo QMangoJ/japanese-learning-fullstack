@@ -1,109 +1,62 @@
-# Welcome to React Router + Cloudflare Workers!
+# 日本語上手 · 日语学习助手
 
-[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/cloudflare/templates/tree/main/react-router-starter-template)
+基于 React Router 7 和 Cloudflare Workers 的日语学习应用，覆盖 N4、N3、N2 的语法、词汇与汉字学习内容。
 
-![React Router Starter Template Preview](https://imagedelivery.net/wSMYJvS3Xw-n339CbDyDIA/bfdc2f85-e5c9-4c92-128b-3a6711249800/public)
+![日本語上手桌面端首页](docs/home.jpg)
 
-<!-- dash-content-start -->
+## 功能
 
-A modern, production-ready template for building full-stack React applications using [React Router](https://reactrouter.com/) and the [Cloudflare Vite plugin](https://developers.cloudflare.com/workers/vite-plugin/).
+- N4 / N3 / N2 的语法、词汇、汉字课程，按周与每日内容组织
+- 全站搜索、语法辨析、接续表、活用表与数字表达参考
+- 假名注音、日语 TTS 朗读、中文 / 英文切换与深色模式
+- 收藏、生词本、错题本与记忆卡
+- 手机底部导航与桌面侧栏的响应式布局
+- 通过 Cloudflare KV 同步收藏和错题数据；KV 不可用时自动回退到浏览器 `localStorage`
 
-## Features
+## 技术架构
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
-- 🔎 Built-in Observability to monitor your Worker
-<!-- dash-content-end -->
+- 前端：React 19、React Router 7、TypeScript、Vite
+- 服务端：Cloudflare Worker（React Router SSR）
+- 数据：课程内容作为带内容哈希的静态 JSON 资源缓存；收藏与错题使用 Cloudflare KV
 
-## Getting Started
+为保证迁移前后的 UI 和交互完全一致，当前版本保留了原学习应用的成熟客户端运行时，并由 React Router 提供页面外壳、静态资源和 Worker API。后续可以逐页拆分为原生 React 组件，而不会改变现有体验。
 
-Outside of this repo, you can start a new project with this template using [C3](https://developers.cloudflare.com/pages/get-started/c3/) (the `create-cloudflare` CLI):
-
-```bash
-npm create cloudflare@latest -- --template=cloudflare/templates/react-router-starter-template
-```
-
-A live public deployment of this template is available at [https://react-router-starter-template.templates.workers.dev](https://react-router-starter-template.templates.workers.dev)
-
-### Installation
-
-Install the dependencies:
+## 本地开发
 
 ```bash
-npm install
+npm ci
+CHOKIDAR_USEPOLLING=1 npm run dev -- --host 127.0.0.1 --port 5175
 ```
 
-### Development
+打开 [http://127.0.0.1:5175](http://127.0.0.1:5175)。
 
-Start the development server with HMR:
+`CHOKIDAR_USEPOLLING=1` 用于规避部分 macOS 环境下的文件监听上限。
+
+## 课程资源同步
+
+课程数据、样式与客户端运行时存放在 `public/`，已随仓库提交。若本机同时存在相邻的旧项目 `../日语学习`，可使用以下命令重新同步其最新课程资源：
 
 ```bash
-npm run dev
+npm run sync:study-assets
 ```
 
-Your application will be available at `http://localhost:5173`.
+`npm run dev` 与 `npm run build` 会自动执行这一步。
 
-## Typegen
+## API
 
-Generate types for your Cloudflare bindings in `wrangler.json`:
+| Endpoint | Methods | 用途 |
+| --- | --- | --- |
+| `/api/favorites` | `GET`、`PUT`、`POST` | 读取和保存收藏数据 |
+| `/api/mistakes` | `GET`、`PUT`、`POST` | 读取和保存错题本数据 |
 
-```sh
-npm run typegen
-```
+接口限制请求体最大为 500 KB，并返回 JSON。当前数据模型保持原项目的单用户行为；如需公开给多位用户使用，应在部署前加入认证与按用户隔离的存储键。
 
-## Building for Production
-
-Create a production build:
+## 构建与部署
 
 ```bash
+npm run cf-typegen
 npm run build
-```
-
-## Previewing the Production Build
-
-Preview the production build locally:
-
-```bash
-npm run preview
-```
-
-## Deployment
-
-If you don't have a Cloudflare account, [create one here](https://dash.cloudflare.com/sign-up)! Go to your [Workers dashboard](https://dash.cloudflare.com/?to=%2F%3Aaccount%2Fworkers-and-pages) to see your [free custom Cloudflare Workers subdomain](https://developers.cloudflare.com/workers/configuration/routing/workers-dev/) on `*.workers.dev`.
-
-Once that's done, you can build your app:
-
-```sh
-npm run build
-```
-
-And deploy it:
-
-```sh
 npm run deploy
 ```
 
-To deploy a preview URL:
-
-```sh
-npx wrangler versions upload
-```
-
-You can then promote a version to production after verification or roll it out progressively.
-
-```sh
-npx wrangler versions deploy
-```
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
-
----
-
-Built with ❤️ using React Router.
+部署前，请在 Cloudflare 中确认 `FAVORITES_KV` 与 `MISTAKES_KV` 已绑定到对应的 KV 命名空间。开发环境默认使用本地 KV 模拟存储。
