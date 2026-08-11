@@ -3,6 +3,7 @@ import { createRoot, type Root } from "react-dom/client";
 import { BrowserRouter } from "react-router";
 
 import type { Route } from "./+types/home";
+import { ListeningN3Content } from "./listening-n3";
 import { ReadingN3Content } from "./reading-n3";
 import "./study-shell.css";
 
@@ -52,21 +53,28 @@ function LegacyRuntime() {
 	return null;
 }
 
-function ReadingSideEntry() {
+function StudySideEntries() {
 	useEffect(() => {
 		const insertEntry = () => {
 			const side = document.querySelector("#side");
 			const footer = side?.querySelector(".side-foot");
-			if (!side || !footer || side.querySelector(".side-reader-link")) return;
-			const link = document.createElement("a");
+			if (!side || !footer) return;
 			const contentSection = Array.from(side.querySelectorAll<HTMLElement>(".side-sec"))
 				.find((section) => section.querySelector(".side-h")?.textContent?.includes("内容"));
 			if (!contentSection) return;
-			link.href = "/study";
-			link.className = "side-reader-link";
-			if (document.body.classList.contains("reader-mode-active")) link.classList.add("on");
-			link.innerHTML = "<span>📕</span><span>读解</span><small>6周</small>";
-			contentSection.append(link);
+			const entries = [
+				{ className: "side-reader-link", activeClass: "reader-mode-active", icon: "📕", label: "读解", note: "6周" },
+				{ className: "side-listening-link", activeClass: "listening-mode-active", icon: "🎧", label: "听解", note: "5章" },
+			];
+			entries.forEach((entry) => {
+				if (contentSection.querySelector(`.${entry.className}`)) return;
+				const link = document.createElement("a");
+				link.href = "/study";
+				link.className = entry.className;
+				if (document.body.classList.contains(entry.activeClass)) link.classList.add("on");
+				link.innerHTML = `<span>${entry.icon}</span><span>${entry.label}</span><small>${entry.note}</small>`;
+				contentSection.append(link);
+			});
 		};
 
 		const observer = new MutationObserver(insertEntry);
@@ -78,26 +86,30 @@ function ReadingSideEntry() {
 	return null;
 }
 
-function ReadingModeBridge() {
+function StudyModeBridge() {
 	useEffect(() => {
-		let readerRoot: Root | null = null;
+		let moduleRoot: Root | null = null;
+		type StudyMode = "reading" | "listening";
 
-		const syncActiveState = (active: boolean) => {
-			document.body.classList.toggle("reader-mode-active", active);
+		const syncActiveState = (mode: StudyMode | null) => {
+			const active = mode !== null;
+			document.body.classList.toggle("reader-mode-active", mode === "reading");
+			document.body.classList.toggle("listening-mode-active", mode === "listening");
 			const title = document.querySelector("#title");
-			if (active && title) title.textContent = "N3 读解";
+			if (mode && title) title.textContent = mode === "reading" ? "N3 读解" : "N3 听解";
 			document.querySelectorAll("#typebar button").forEach((button) => button.classList.toggle("on", false));
 			if (active) document.querySelectorAll("#side .side-item.on").forEach((entry) => entry.classList.remove("on"));
-			document.querySelectorAll(".reader-mode-link, .side-reader-link").forEach((entry) => entry.classList.toggle("on", active));
+			document.querySelectorAll(".reader-mode-link, .side-reader-link").forEach((entry) => entry.classList.toggle("on", mode === "reading"));
+			document.querySelectorAll(".listening-mode-link, .side-listening-link").forEach((entry) => entry.classList.toggle("on", mode === "listening"));
 		};
 
 		const legacyApp = () => document.querySelector<HTMLElement>("#app");
 		const readingApp = () => document.querySelector<HTMLElement>("#reading-app");
 
-		const leaveReading = () => {
-			if (!readerRoot) return;
-			readerRoot.unmount();
-			readerRoot = null;
+		const leaveModule = () => {
+			if (!moduleRoot) return;
+			moduleRoot.unmount();
+			moduleRoot = null;
 			const reader = readingApp();
 			if (reader) {
 				reader.replaceChildren();
@@ -106,21 +118,23 @@ function ReadingModeBridge() {
 			}
 			const legacy = legacyApp();
 			if (legacy) legacy.hidden = false;
-			syncActiveState(false);
+			syncActiveState(null);
 		};
 
-		const enterReading = () => {
+		const enterModule = (mode: StudyMode) => {
 			const app = readingApp();
 			if (!app) return;
-			if (!readerRoot) {
-				readerRoot = createRoot(app);
+			if (moduleRoot) {
+				moduleRoot.unmount();
+				app.replaceChildren();
 			}
+			moduleRoot = createRoot(app);
 			const legacy = legacyApp();
 			if (legacy) legacy.hidden = true;
 			app.hidden = false;
 			app.classList.add("study-reading-app");
-			readerRoot.render(<BrowserRouter><ReadingN3Content embedded /></BrowserRouter>);
-			syncActiveState(true);
+			moduleRoot.render(<BrowserRouter>{mode === "reading" ? <ReadingN3Content embedded /> : <ListeningN3Content embedded />}</BrowserRouter>);
+			syncActiveState(mode);
 		};
 
 		const onDocumentClick = (event: MouseEvent) => {
@@ -128,16 +142,22 @@ function ReadingModeBridge() {
 			if (!target) return;
 			if (target.matches(".reader-mode-link, .side-reader-link")) {
 				event.preventDefault();
-				enterReading();
+				enterModule("reading");
 				return;
 			}
-			if (readerRoot && target.matches("#typebar button, #side button, nav.bottom button")) leaveReading();
+			if (target.matches(".listening-mode-link, .side-listening-link")) {
+				event.preventDefault();
+				enterModule("listening");
+				return;
+			}
+			if (moduleRoot && target.matches("#typebar button, #side button, nav.bottom button")) leaveModule();
 		};
 
 		const activateLegacyLink = () => {
-			if (new URLSearchParams(window.location.search).get("module") !== "reading") return;
+			const mode = new URLSearchParams(window.location.search).get("module");
+			if (mode !== "reading" && mode !== "listening") return;
 			window.history.replaceState({}, "", "/study");
-			enterReading();
+			enterModule(mode);
 		};
 
 		document.addEventListener("click", onDocumentClick, true);
@@ -146,7 +166,7 @@ function ReadingModeBridge() {
 		return () => {
 			document.removeEventListener("click", onDocumentClick, true);
 			document.removeEventListener("study-runtime-ready", activateLegacyLink);
-			leaveReading();
+			leaveModule();
 		};
 	}, []);
 
@@ -186,12 +206,13 @@ function LegacyStudy() {
 							📙 <span className="lbl" data-cn="汉字" data-en="Kanji">汉字</span>
 						</button>
 						<a className="reader-mode-link" href="/study">📕 <span>读解</span></a>
+						<a className="listening-mode-link" href="/study">🎧 <span>听解</span></a>
 					</div>
 				</div>
 			</div>
 			<aside className="side" id="side" />
 			<main id="app" />
-			<section id="reading-app" hidden aria-label="N3 读解学习区" />
+			<section id="reading-app" hidden aria-label="N3 学习模块" />
 			<nav className="bottom">
 				<button data-nav="home"><span className="ic">📚</span><span className="lbl" data-cn="知识库" data-en="Library">知识库</span></button>
 				<button data-nav="search"><span className="ic">🔍</span><span className="lbl" data-cn="搜索" data-en="Search">搜索</span></button>
@@ -202,8 +223,8 @@ function LegacyStudy() {
 			<div className="sheet-mask" id="sheetMask" hidden />
 			<div className="sheet" id="sheet" role="dialog" aria-modal="true" hidden />
 			<LegacyRuntime />
-			<ReadingSideEntry />
-			<ReadingModeBridge />
+			<StudySideEntries />
+			<StudyModeBridge />
 		</>
 	);
 }
