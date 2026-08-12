@@ -2,7 +2,13 @@ import { useEffect, useMemo, useRef, useState, type ReactNode, type RefObject } 
 import { redirect } from "react-router";
 
 import type { Route } from "./+types/listening-n3";
-import { listeningN3OcrText } from "../data/listening-n3-ocr";
+import { chapter2Sections } from "../data/listening-n3-structured-ch2";
+import { chapter3Sections } from "../data/listening-n3-structured-ch3";
+import { chapter4Sections, chapter5Sections } from "../data/listening-n3-structured-ch45";
+import { chapter2AnswerText } from "../data/listening-n3-answers-ch2";
+import { chapter3AnswerText } from "../data/listening-n3-answers-ch3";
+import { chapter4AnswerText, chapter5AnswerText } from "../data/listening-n3-answers-ch45";
+import type { ListeningAnswerText, ListeningStructuredSection, ListeningTextBlock, ListeningTextPage } from "../data/listening-n3-structured-types";
 import "./reading-n3.css";
 import "./listening-n3.css";
 
@@ -20,40 +26,9 @@ export function loader() {
 type Disc = "cd1" | "cd2";
 type AudioCue = { disc: Disc; track: number };
 type ExercisePage = { readonly page: number; readonly tracks: readonly number[] };
-type OcrSection = { readonly number: number; readonly title: string; readonly subtitle: string; readonly firstTrack: number; readonly pages: readonly [number, number]; readonly answerPages: readonly number[] };
 
-const ocrChapterSections: Record<number, readonly OcrSection[]> = {
-	2: [
-		{ number: 1, title: "何と言いますか", subtitle: "発話表現", firstTrack: 19, pages: [27, 28], answerPages: [89] },
-		{ number: 2, title: "どんな返事をしますか", subtitle: "即時応答", firstTrack: 22, pages: [29, 30], answerPages: [91] },
-		{ number: 3, title: "何をしますか", subtitle: "課題理解", firstTrack: 27, pages: [31, 32], answerPages: [93] },
-		{ number: 4, title: "どうしてですか", subtitle: "ポイント理解", firstTrack: 30, pages: [33, 34], answerPages: [95] },
-		{ number: 5, title: "どんな内容ですか", subtitle: "概要理解", firstTrack: 34, pages: [35, 36], answerPages: [97] },
-		{ number: 6, title: "まとめ問題", subtitle: "総合練習", firstTrack: 37, pages: [37, 39], answerPages: [99] },
-	],
-	3: [
-		{ number: 1, title: "町で", subtitle: "駅・店内放送", firstTrack: 50, pages: [41, 42], answerPages: [101] },
-		{ number: 2, title: "天気予報・交通情報", subtitle: "情報を聞く", firstTrack: 53, pages: [43, 44], answerPages: [103] },
-		{ number: 3, title: "学校で", subtitle: "指示・禁止", firstTrack: 56, pages: [45, 46], answerPages: [105] },
-		{ number: 4, title: "職場で", subtitle: "敬語表現", firstTrack: 59, pages: [47, 48], answerPages: [107] },
-		{ number: 5, title: "病院・いろいろな店で", subtitle: "決まった表現", firstTrack: 62, pages: [49, 50], answerPages: [109] },
-		{ number: 6, title: "まとめ問題", subtitle: "総合練習", firstTrack: 65, pages: [51, 53], answerPages: [111] },
-	],
-	4: [
-		{ number: 1, title: "人や物のようす", subtitle: "人物・物の描写", firstTrack: 2, pages: [55, 56], answerPages: [113, 115] },
-		{ number: 2, title: "場所・方向・位置", subtitle: "位置関係", firstTrack: 5, pages: [57, 58], answerPages: [117] },
-		{ number: 3, title: "数・数字・計算", subtitle: "数値情報", firstTrack: 8, pages: [59, 60], answerPages: [119] },
-		{ number: 4, title: "順序・比較", subtitle: "手順と比較", firstTrack: 11, pages: [61, 62], answerPages: [121] },
-		{ number: 5, title: "まとめ問題", subtitle: "総合練習", firstTrack: 14, pages: [63, 65], answerPages: [123, 125, 127] },
-	],
-	5: [
-		{ number: 1, title: "問題 I", subtitle: "質問を聞いて答える", firstTrack: 22, pages: [67, 69], answerPages: [129] },
-		{ number: 2, title: "問題 II", subtitle: "選択肢を読んで答える", firstTrack: 28, pages: [70, 71], answerPages: [131, 133, 135] },
-		{ number: 3, title: "問題 III", subtitle: "内容を聞き取る", firstTrack: 33, pages: [72, 72], answerPages: [137, 139] },
-		{ number: 4, title: "問題 IV", subtitle: "場面に合う発話", firstTrack: 36, pages: [73, 73], answerPages: [141, 143] },
-		{ number: 5, title: "問題 V", subtitle: "即時応答", firstTrack: 39, pages: [74, 74], answerPages: [145, 147, 149, 151] },
-	],
-};
+const structuredSectionsByChapter: Record<number, readonly ListeningStructuredSection[]> = { 2: chapter2Sections, 3: chapter3Sections, 4: chapter4Sections, 5: chapter5Sections };
+const answerTextByChapter: Partial<Record<number, readonly ListeningAnswerText[]>> = { 2: chapter2AnswerText, 3: chapter3AnswerText, 4: chapter4AnswerText, 5: chapter5AnswerText };
 
 const audioLabel: Record<Disc, string> = { cd1: "CD 1", cd2: "CD 2" };
 
@@ -201,27 +176,30 @@ function ExerciseCard({ exercise, disc, active, playing, onToggle }: { exercise:
 	</article>;
 }
 
-function OcrPageCard({ page, tracks, disc, active, playing, onToggle }: { page: number; tracks: readonly number[]; disc: Disc; active: AudioCue; playing: boolean; onToggle: (cue: AudioCue) => void }) {
-	const text = listeningN3OcrText[page] ?? "";
-	return <article className="listening-exercise listening-ocr-card">
-		<header><div><span>练习页 {page - 3} · OCR 文本</span><h3>本页内容</h3></div>{tracks.length ? <div className="listening-exercise__tracks">{tracks.map((track) => <CueButton key={track} cue={{ disc, track }} active={active} playing={playing} onToggle={onToggle} />)}</div> : null}</header>
-		<p className="listening-ocr-card__notice">原书版式与 OCR 文本并列保留；对应音频可从本页按钮播放。</p>
-		<figure className="listening-ocr-card__facsimile"><img loading="lazy" src={pageSource(page)} alt={`第 ${page - 3} 页原书版式，含题号、插图与日文注音`} /></figure>
-		<div className="listening-ocr-card__text" lang="ja"><div className="listening-ocr-card__text-head"><span>OCR テキスト</span><b>可复制 · 待校对</b></div>{text ? text.split("\n").map((line, index) => <p key={`${page}-${index}`}>{line}</p>) : <p>本页 OCR 未取得可用文本。</p>}</div>
-	</article>;
+function StructuredTextBlock({ block, disc, active, playing, onToggle }: { block: ListeningTextBlock; disc: Disc; active: AudioCue; playing: boolean; onToggle: (cue: AudioCue) => void }) {
+	if (block.kind === "heading") return <h3 className="listening-book-block__heading">{block.text}</h3>;
+	if (block.kind === "tip") return <aside className="listening-book-block__tip">{block.text}</aside>;
+	if (block.kind === "note") return <p className="listening-book-block__note">{block.text}</p>;
+	if (block.kind === "example") return <p className="listening-book-block__example">{block.text}</p>;
+	if (block.kind === "paragraph") return <p className="listening-book-block__paragraph">{block.text}</p>;
+	if (block.kind === "list" || block.kind === "options") return <ol className={`listening-book-block__${block.kind}`}>{block.items.map((item, index) => <li key={`${item}-${index}`}>{item}</li>)}</ol>;
+	return <section className="listening-book-question"><header><h4>{block.title}</h4>{block.tracks?.length ? <div className="listening-exercise__tracks">{block.tracks.map((track) => <CueButton key={track} cue={{ disc, track }} active={active} playing={playing} onToggle={onToggle} />)}</div> : null}</header>{block.options?.length ? <ol>{block.options.map((option, index) => <li key={`${option}-${index}`}>{option}</li>)}</ol> : null}</section>;
 }
 
-function OcrSectionLesson({ chapter, section, active, playing, onToggle }: { chapter: (typeof chapters)[number]; section: OcrSection; active: AudioCue; playing: boolean; onToggle: (cue: AudioCue) => void }) {
-	const pages = Array.from({ length: section.pages[1] - section.pages[0] + 1 }, (_, index) => section.pages[0] + index);
-	return <section className="listening-text-lesson listening-ocr-lesson" aria-labelledby={`ocr-section-${chapter.number}-${section.number}`}>
-		<div className="reader-section-head"><span>第{chapter.number}章　第{section.number}節</span><h2 id={`ocr-section-${chapter.number}-${section.number}`}>{section.title}</h2></div>
-		<div className="listening-text-lesson__intro"><b>{section.subtitle}</b><p>PDF 原页已按本节边界 OCR 为文本；题目对应的音频按钮保留在相应页内。</p></div>
-		<section className="listening-exercises">{pages.map((page) => { const exercise = chapter.exercises.find((item) => item.page === page); return <OcrPageCard key={page} page={page} tracks={exercise?.tracks ?? []} disc={chapter.disc} active={active} playing={playing} onToggle={onToggle} />; })}</section>
+function StructuredPageCard({ page, disc, active, playing, onToggle }: { page: ListeningTextPage; disc: Disc; active: AudioCue; playing: boolean; onToggle: (cue: AudioCue) => void }) {
+	return <article className="listening-book-page" lang="ja"><header><span>第 {page.page - 3} ページ</span><b>本文・練習</b></header><div className="listening-book-page__body">{page.blocks.map((block, index) => <StructuredTextBlock key={`${page.page}-${index}`} block={block} disc={disc} active={active} playing={playing} onToggle={onToggle} />)}</div></article>;
+}
+
+function StructuredSectionLesson({ chapter, section, active, playing, onToggle }: { chapter: (typeof chapters)[number]; section: ListeningStructuredSection; active: AudioCue; playing: boolean; onToggle: (cue: AudioCue) => void }) {
+	return <section className="listening-text-lesson listening-structured-lesson" aria-labelledby={`structured-section-${chapter.number}-${section.number}`}>
+		<div className="reader-section-head"><span>第{chapter.number}章　第{section.number}節</span><h2 id={`structured-section-${chapter.number}-${section.number}`}>{section.title}</h2></div>
+		<div className="listening-text-lesson__intro"><b>{section.subtitle}</b><p>本文・説明・練習問題を、原書の構成に沿ってテキストで表示しています。</p></div>
+		<div className="listening-book-pages">{section.pages.map((page) => <StructuredPageCard key={page.page} page={page} disc={chapter.disc} active={active} playing={playing} onToggle={onToggle} />)}</div>
 	</section>;
 }
 
-function AnswerSourcePages({ pages }: { pages: readonly number[] }) {
-	return <section className="listening-source-pages" aria-label="答えと聞き取り原文"><div className="reader-section-head"><span>答え・<ruby>聞<rt>き</rt></ruby>き<ruby>取<rt>と</rt></ruby>り<ruby>原文<rt>げんぶん</rt></ruby></span><h2>答えを<ruby>確認<rt>かくにん</rt></ruby>する</h2></div>{pages.map((page, index) => <article key={page}><details><summary><span>答え・<ruby>聞<rt>き</rt></ruby>き<ruby>取<rt>と</rt></ruby>り<ruby>原文<rt>げんぶん</rt></ruby>　{index + 1}</span><b>表示</b></summary><figure><img loading="lazy" src={pageSource(page)} alt={`答えと聞き取り原文 ${index + 1}`} /></figure></details>{page < 151 ? <details><summary><span><ruby>翻訳<rt>ほんやく</rt></ruby>　{index + 1}</span><b>表示</b></summary><figure><img loading="lazy" src={pageSource(page + 1)} alt={`答えと聞き取り原文の翻訳 ${index + 1}`} /></figure></details> : null}</article>)}</section>;
+function TextAnswerPanels({ section }: { section: ListeningAnswerText }) {
+	return <section className="listening-answer-panels listening-text-answers" aria-label="答えと聞き取り原文"><details><summary><span>答え</span><b>表示</b></summary><div className="listening-text-answers__body">{section.answer}</div></details><details><summary><span><ruby>聞<rt>き</rt></ruby>き<ruby>取<rt>と</rt></ruby>り<ruby>原文<rt>げんぶん</rt></ruby></span><b>表示</b></summary><div className="listening-text-answers__body" lang="ja">{section.transcript}</div></details></section>;
 }
 
 const pronunciationExercises = [
@@ -321,7 +299,7 @@ type ListeningSectionMenuItem = { number: number; title: ReactNode; subtitle: st
 
 function menuSectionsFor(chapterIndex: number): readonly ListeningSectionMenuItem[] {
 	if (chapterIndex === 0) return chapterOneSections;
-	return ocrChapterSections[chapterIndex + 1] ?? [];
+	return structuredSectionsByChapter[chapterIndex + 1] ?? [];
 }
 
 function ListeningCatalog({ onSelect, expandedChapter, onToggleChapter }: { onSelect: (index: number, sectionIndex: number) => void; expandedChapter: number | null; onToggleChapter: (index: number) => void }) {
@@ -334,8 +312,9 @@ function ListeningCatalog({ onSelect, expandedChapter, onToggleChapter }: { onSe
 function ChapterDetail({ chapterIndex, sectionIndex, onBack }: { chapterIndex: number; sectionIndex?: number; onBack: () => void }) {
 	const chapter = chapters[chapterIndex];
 	const chapterOneSection = chapter.number === 1 && sectionIndex !== undefined ? chapterOneSections[sectionIndex] : undefined;
-	const ocrSection = chapter.number !== 1 && sectionIndex !== undefined ? ocrChapterSections[chapter.number]?.[sectionIndex] : undefined;
-	const initialCue = useMemo<AudioCue>(() => ({ disc: chapter.disc, track: chapterOneSection?.firstTrack ?? ocrSection?.firstTrack ?? chapter.exercises[0].tracks[0] }), [chapter, chapterOneSection, ocrSection]);
+	const structuredSection = chapter.number !== 1 && sectionIndex !== undefined ? structuredSectionsByChapter[chapter.number]?.[sectionIndex] : undefined;
+	const answerText = chapter.number !== 1 && sectionIndex !== undefined ? answerTextByChapter[chapter.number]?.[sectionIndex] : undefined;
+	const initialCue = useMemo<AudioCue>(() => ({ disc: chapter.disc, track: chapterOneSection?.firstTrack ?? structuredSection?.firstTrack ?? chapter.exercises[0].tracks[0] }), [chapter, chapterOneSection, structuredSection]);
 	const [cue, setCue] = useState(initialCue);
 	const [playRequest, setPlayRequest] = useState(0);
 	const [playing, setPlaying] = useState(false);
@@ -357,9 +336,9 @@ function ChapterDetail({ chapterIndex, sectionIndex, onBack }: { chapterIndex: n
 	}
 
 	return <div className="reader-page reader-page--embedded"><div className="reader-wrap reader-layout"><main className="reader-main listening-detail">
-		<header className="listening-crumb"><button className="listening-crumb__back" onClick={onBack} aria-label="聴解目次へ戻る">‹</button><div className="listening-crumb__path"><span>N3 <ruby>聴解<rt>ちょうかい</rt></ruby></span><i>/</i><b>第 {chapter.number} 章{sectionIndex !== undefined ? ` / ${sectionIndex + 1}` : ""}</b></div><h1>{chapterOneSection?.title ?? ocrSection?.title ?? chapter.title}</h1></header>
+		<header className="listening-crumb"><button className="listening-crumb__back" onClick={onBack} aria-label="聴解目次へ戻る">‹</button><div className="listening-crumb__path"><span>N3 <ruby>聴解<rt>ちょうかい</rt></ruby></span><i>/</i><b>第 {chapter.number} 章{sectionIndex !== undefined ? ` / ${sectionIndex + 1}` : ""}</b></div><h1>{chapterOneSection?.title ?? structuredSection?.title ?? chapter.title}</h1></header>
 		<ListeningPlayer cue={cue} audioRef={audioRef} onPlaybackChange={setPlaying} />
-		{chapterOneSection ? <>{chapterOneSection.number === 1 ? <PronunciationLesson active={cue} playing={playing} onToggle={toggleCue} /> : null}{chapterOneSection.number === 2 ? <GrammarOneLesson active={cue} playing={playing} onToggle={toggleCue} /> : null}{chapterOneSection.number === 3 ? <GrammarTwoLesson active={cue} playing={playing} onToggle={toggleCue} /> : null}{chapterOneSection.number === 4 ? <ConversationLesson active={cue} playing={playing} onToggle={toggleCue} /> : null}{chapterOneSection.number === 5 ? <section className="listening-exercises">{chapter.exercises.filter((exercise) => exercise.page >= 23).map((exercise) => <ExerciseCard key={exercise.page} exercise={exercise} disc={chapter.disc} active={cue} playing={playing} onToggle={toggleCue} />)}</section> : null}<AnswerAndScript section={chapterOneSection} /></> : ocrSection ? <><OcrSectionLesson chapter={chapter} section={ocrSection} active={cue} playing={playing} onToggle={toggleCue} /><AnswerSourcePages pages={ocrSection.answerPages} /></> : null}
+		{chapterOneSection ? <>{chapterOneSection.number === 1 ? <PronunciationLesson active={cue} playing={playing} onToggle={toggleCue} /> : null}{chapterOneSection.number === 2 ? <GrammarOneLesson active={cue} playing={playing} onToggle={toggleCue} /> : null}{chapterOneSection.number === 3 ? <GrammarTwoLesson active={cue} playing={playing} onToggle={toggleCue} /> : null}{chapterOneSection.number === 4 ? <ConversationLesson active={cue} playing={playing} onToggle={toggleCue} /> : null}{chapterOneSection.number === 5 ? <section className="listening-exercises">{chapter.exercises.filter((exercise) => exercise.page >= 23).map((exercise) => <ExerciseCard key={exercise.page} exercise={exercise} disc={chapter.disc} active={cue} playing={playing} onToggle={toggleCue} />)}</section> : null}<AnswerAndScript section={chapterOneSection} /></> : structuredSection ? <><StructuredSectionLesson chapter={chapter} section={structuredSection} active={cue} playing={playing} onToggle={toggleCue} />{answerText ? <TextAnswerPanels section={answerText} /> : null}</> : null}
 	</main></div></div>;
 }
 
