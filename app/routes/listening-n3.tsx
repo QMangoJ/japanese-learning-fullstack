@@ -205,9 +205,9 @@ function OcrPageCard({ page, tracks, disc, active, playing, onToggle }: { page: 
 	const text = listeningN3OcrText[page] ?? "";
 	return <article className="listening-exercise listening-ocr-card">
 		<header><div><span>练习页 {page - 3} · OCR 文本</span><h3>本页内容</h3></div>{tracks.length ? <div className="listening-exercise__tracks">{tracks.map((track) => <CueButton key={track} cue={{ disc, track }} active={active} playing={playing} onToggle={onToggle} />)}</div> : null}</header>
-		<p className="listening-ocr-card__notice">OCR 初稿，尚待人工核对；对应音频可从本页按钮播放。</p>
-		<div className="listening-ocr-card__text" lang="ja">{text ? text.split("\n").map((line, index) => <p key={`${page}-${index}`}>{line}</p>) : <p>本页 OCR 未取得可用文本，请通过下方原页对照查看。</p>}</div>
-		<details className="listening-ocr-card__source"><summary><span>原页对照</span><b>展开</b></summary><figure><img loading="lazy" src={pageSource(page)} alt={`第 ${page - 3} 页原始扫描页，用于校对 OCR 文本`} /></figure></details>
+		<p className="listening-ocr-card__notice">原书版式与 OCR 文本并列保留；对应音频可从本页按钮播放。</p>
+		<figure className="listening-ocr-card__facsimile"><img loading="lazy" src={pageSource(page)} alt={`第 ${page - 3} 页原书版式，含题号、插图与日文注音`} /></figure>
+		<div className="listening-ocr-card__text" lang="ja"><div className="listening-ocr-card__text-head"><span>OCR テキスト</span><b>可复制 · 待校对</b></div>{text ? text.split("\n").map((line, index) => <p key={`${page}-${index}`}>{line}</p>) : <p>本页 OCR 未取得可用文本。</p>}</div>
 	</article>;
 }
 
