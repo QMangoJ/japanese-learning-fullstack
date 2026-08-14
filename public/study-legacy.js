@@ -358,6 +358,7 @@ function openCommonSheet(){
     <div class="sheet-row">
       <button class="sheet-item" data-go="#/ref"><span class="ic">📖</span>接续表</button>
       <button class="sheet-item" data-go="#/katsuyou"><span class="ic">🔄</span>活用</button>
+      <button class="sheet-item" data-go="#/henkei"><span class="ic">✍️</span>变形</button>
       <button class="sheet-item" data-go="#/numbers"><span class="ic">🔢</span>数字</button>
     </div>
     <div class="sheet-h">本模块<span class="sub">${modLabel()}</span></div>
@@ -520,6 +521,7 @@ function renderSide(){
      <div class="side-sec"><div class="side-h">通用知识 <span class="n">· 不分级别</span></div>` +
        sideRow('#/ref','📖','接续表',null,h==='#/ref') +
        sideRow('#/katsuyou','🔄','活用',null,h==='#/katsuyou') +
+       sideRow('#/henkei','✍️','变形',null,h==='#/henkei') +
        sideRow('#/numbers','🔢','数字',null,h==='#/numbers') + `</div>
      <div class="side-sec"><div class="side-h">本模块</div>` +
        sideRow('#/cards','🗂️','记忆卡',null,h==='#/cards') +
@@ -604,6 +606,7 @@ function render(){
   // 辨析不同：它的内容就是 N3 语法的家族对照，跳转链接也指向 N3 语法的某天，所以仍要切过去。
   else if(h==='#/ref') viewRef();
   else if(h==='#/katsuyou') viewKatsuyou();
+  else if(h==='#/henkei') viewHenkei();
   else if(h==='#/numbers') viewNumbers();
   else if(h==='#/contrast'){ const cm=contrastModule(); if(MODULE!==cm) setModule(cm); viewContrast(); }
   else if(h==='#/mistakes') viewMistakes();
@@ -1585,8 +1588,8 @@ function ptable(cols, rows){
 // 上の普通形/丁寧形/尊敬語の表とは別の軸なので、同じページの後半にまとめる。
 function renderParadigm(P){
   if(!P) return '';
-  let html = `<div class="side-h" style="margin:26px 0 10px">${esc(P.title||'活用形一覧')}`
-    + (P.source?` <span class="n">· ${esc(P.source)}</span>`:'') + `</div>`;
+  // ページ見出しは setHeader が出すので、ここは出典と導入だけ。
+  let html = P.source ? `<div class="meta" style="margin-bottom:6px">出典：${esc(P.source)}</div>` : '';
   if(P.intro) html += `<div class="meta" style="margin-bottom:10px">${esc(P.intro)}</div>`;
   (P.groups||[]).forEach(g=>{
     html += `<div class="card"><h3 class="jp" style="margin-top:0">${esc(g.kind)} <span class="meta">${esc(g.kindEn||'')}</span></h3>`;
@@ -1644,8 +1647,15 @@ function viewKatsuyou(){
     html += `</div>`;
   }
   if(KY.footer) html += `<div class="meta" style="margin-top:10px">${esc(KY.footer)}</div>`;
-  html += renderParadigm(KY.paradigm);
   app.innerHTML = html;
+}
+// 変形（接続の表示方法）は活用ページから独立させた：敬語レベルの表と
+// 一緒に置くと1ページが長すぎて、探している表にたどり着けない。
+function viewHenkei(){
+  setNav('common'); setHeader(LX('動詞変形 · 接続の表示方法','Verb Forms & How Patterns Attach'), true);
+  const HK = (DATA.common||{}).henkei;
+  if(!HK){ app.innerHTML='<div class="empty">通用参考数据加载中，请稍候…</div>'; return; }
+  app.innerHTML = renderParadigm(HK);
 }
 
 const DATA_FILES = {"grammar":"grammar.d15be04258.json","kanji":"kanji.e43232869e.json","vocab":"vocab.856eb48e32.json","n2grammar":"n2grammar.4e6157570a.json","n2vocab":"n2vocab.4e440284d9.json","n2kanji":"n2kanji.d9739ca8d4.json","n4grammar":"n4grammar.40e138ccdb.json","n4vocab":"n4vocab.026f711eb7.json","n4kanji":"n4kanji.655356d8e2.json","common":"common.aa13cae172.json"};
