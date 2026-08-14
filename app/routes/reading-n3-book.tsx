@@ -350,8 +350,17 @@ function RenshuChoices({ choices, answers, showCn }: { choices: Choice[]; answer
  * Catalog
  * ------------------------------------------------------------------ */
 
-function Catalog({ onOpen }: { onOpen: (week: number, day: number) => void }) {
-	const [open, setOpen] = useState<Set<number>>(() => new Set([1]));
+/** `open` lives in the parent so returning from a lesson keeps the week you
+ *  expanded — the catalog unmounts while a lesson is showing. */
+function Catalog({
+	onOpen,
+	open,
+	setOpen,
+}: {
+	onOpen: (week: number, day: number) => void;
+	open: Set<number>;
+	setOpen: (update: (current: Set<number>) => Set<number>) => void;
+}) {
 	const ready = readingDays.length;
 
 	return (
@@ -653,6 +662,7 @@ export function ReadingN3Content({ embedded = false }: { embedded?: boolean }) {
 	const [showCn, setShowCn] = useState(false);
 	const [showGrammar, setShowGrammar] = useState(false);
 	const [furigana, setFurigana] = useState(true);
+	const [openWeeks, setOpenWeeks] = useState<Set<number>>(() => new Set([1]));
 	// The toolbar is sticky; `stuck` only drives the compact "pinned" styling.
 	const [stuck, setStuck] = useState(false);
 	const sentinelRef = useRef<HTMLDivElement | null>(null);
@@ -677,7 +687,9 @@ export function ReadingN3Content({ embedded = false }: { embedded?: boolean }) {
 	}, [embedded]);
 
 	useEffect(() => {
-		if (!embedded) window.scrollTo({ top: 0 });
+		// Also in the study shell — that is where lessons are actually read, and
+		// "next lesson" used to drop you into the middle of the new page.
+		window.scrollTo({ top: 0 });
 	}, [active, embedded]);
 
 	const available = readingDays.map((day) => ({ week: day.week, day: day.day }));
@@ -729,7 +741,10 @@ export function ReadingN3Content({ embedded = false }: { embedded?: boolean }) {
 
 				{data ? (
 					<>
-						<DayView data={data} showCn={showCn} showGrammar={showGrammar} />
+						{/* Keyed by lesson: question cards hold their own picked/revealed
+						    state, and without this React reuses them across lessons, so the
+						    next lesson opens with the previous one's answers showing. */}
+						<DayView key={`${data.week}-${data.day}`} data={data} showCn={showCn} showGrammar={showGrammar} />
 						<nav className="rb-nav" aria-label="课程切换">
 							<button type="button" disabled={!previous} onClick={() => previous && setActive(previous)}>
 								<small>上一课</small>
@@ -754,7 +769,7 @@ export function ReadingN3Content({ embedded = false }: { embedded?: boolean }) {
 						</nav>
 					</>
 				) : (
-					<Catalog onOpen={(week, day) => setActive({ week, day })} />
+					<Catalog open={openWeeks} setOpen={setOpenWeeks} onOpen={(week, day) => setActive({ week, day })} />
 				)}
 			</div>
 		</div>

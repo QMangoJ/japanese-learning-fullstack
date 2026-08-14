@@ -154,12 +154,13 @@ function StudyModeBridge() {
 			if (!target) return;
 			if (target.matches(".reader-mode-link, .side-reader-link")) {
 				event.preventDefault();
-				enterModule("reading");
+				// 已经在这个模块里就别重挂：remount 会丢掉答题状态和滚动位置。
+				if (activeMode !== "reading") enterModule("reading");
 				return;
 			}
 			if (target.matches(".listening-mode-link, .side-listening-link")) {
 				event.preventDefault();
-				enterModule("listening");
+				if (activeMode !== "listening") enterModule("listening");
 				return;
 			}
 			if (moduleRoot && target.matches("#typebar button, #side button, nav.bottom button")) leaveModule();
@@ -172,12 +173,27 @@ function StudyModeBridge() {
 			enterModule(mode);
 		};
 
+		// 进入模块不压历史栈，所以浏览器返回（含 iOS 右滑）落回的是上一个 legacy
+		// hash。以前没人监听，模块就一直挂着不走：legacy 在隐藏的 #app 里重画，
+		// tab 却被重新点亮，于是出现「返回后模块还在、两个 tab 同时选中」。
+		const onHistoryNav = () => {
+			if (!moduleRoot) return;
+			leaveModule();
+			// leaveModule 之后 body 上的 mode class 才消失，legacy 需要再画一次
+			// 才能把正确的 tab 点回来。此时 moduleRoot 已为空，不会递归。
+			window.dispatchEvent(new Event("hashchange"));
+		};
+
 		document.addEventListener("click", onDocumentClick, true);
 		document.addEventListener("study-runtime-ready", activateLegacyLink);
+		window.addEventListener("popstate", onHistoryNav);
+		window.addEventListener("hashchange", onHistoryNav);
 		if (window.document.querySelector("script[data-study-runtime]")) queueMicrotask(activateLegacyLink);
 		return () => {
 			document.removeEventListener("click", onDocumentClick, true);
 			document.removeEventListener("study-runtime-ready", activateLegacyLink);
+			window.removeEventListener("popstate", onHistoryNav);
+			window.removeEventListener("hashchange", onHistoryNav);
 			titleObserver?.disconnect();
 			leaveModule();
 		};

@@ -323,7 +323,12 @@ function moduleFrom(lv,ty){ return LT2MOD[lv+':'+ty] || 'grammar'; }
 function syncModeBar(){
   deriveLT();
   lvChip.firstChild.nodeValue = LEVEL.toUpperCase()+' ';
-  document.querySelectorAll('#typebar button').forEach(b=>b.classList.toggle('on', b.dataset.ty===TYPE));
+  // 读解/听解を開いている間、typebar の選択は React 側（.reader-mode-link /
+  // .listening-mode-link）が持つ。ここで TYPE から点け直すと、hashchange 由来の
+  // 再描画のたびに前の tab が復活し、2つ同時に選択されて見える。
+  const modeActive = document.body.classList.contains('reader-mode-active')
+                  || document.body.classList.contains('listening-mode-active');
+  document.querySelectorAll('#typebar button').forEach(b=>b.classList.toggle('on', !modeActive && b.dataset.ty===TYPE));
   document.querySelectorAll('#langbar button').forEach(b=>b.classList.toggle('on', b.dataset.lang===LANG));
   document.querySelectorAll('.lbl[data-cn]').forEach(el=>{ el.textContent = LX(el.dataset.cn, el.dataset.en); });
 }
@@ -491,7 +496,11 @@ function sideRow(go, ic, label, count, on){
 }
 function renderSide(){
   deriveLT();
-  const h = location.hash || '#/';
+  // typebar と同じ理由：読解／聴解モード中は選択状態を React 側が持つので、
+  // ここで hash から点け直すと注入された読解リンクと二重に光る。
+  const modeActive = document.body.classList.contains('reader-mode-active')
+                  || document.body.classList.contains('listening-mode-active');
+  const h = modeActive ? '' : (location.hash || '#/');
   const LV = LEVEL.toUpperCase();
   const weeksOf = ty => { const w=((DATA[moduleFrom(LEVEL,ty)]||{}).weeks||[]).length; return w?w+'周':''; };
   // 在某个模块的首页或某一天里，才算「正待在这个类型上」
