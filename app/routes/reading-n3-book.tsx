@@ -1,5 +1,4 @@
-import { Fragment, useEffect, useMemo, useState } from "react";
-import { Link } from "react-router";
+import { Fragment, useEffect, useMemo, useRef, useState } from "react";
 
 import {
 	dayOutline,
@@ -654,8 +653,21 @@ export function ReadingN3Content({ embedded = false }: { embedded?: boolean }) {
 	const [showCn, setShowCn] = useState(false);
 	const [showGrammar, setShowGrammar] = useState(false);
 	const [furigana, setFurigana] = useState(true);
+	// The toolbar is sticky; `stuck` only drives the compact "pinned" styling.
+	const [stuck, setStuck] = useState(false);
+	const sentinelRef = useRef<HTMLDivElement | null>(null);
 
 	const data = active ? findDay(active.week, active.day) : undefined;
+
+	useEffect(() => {
+		const sentinel = sentinelRef.current;
+		if (!sentinel || typeof IntersectionObserver === "undefined") return;
+		const observer = new IntersectionObserver(([entry]) => setStuck(!entry.isIntersecting), {
+			threshold: 1,
+		});
+		observer.observe(sentinel);
+		return () => observer.disconnect();
+	}, []);
 
 	useEffect(() => {
 		if (!embedded) window.scrollTo({ top: 0 });
@@ -673,7 +685,8 @@ export function ReadingN3Content({ embedded = false }: { embedded?: boolean }) {
 	return (
 		<div className={`rb${furigana ? "" : " rb--no-furigana"}`}>
 			<div className="rb-wrap">
-				<div className="rb-bar">
+				<div ref={sentinelRef} className="rb-bar-sentinel" aria-hidden="true" />
+				<div className={`rb-bar${stuck ? " is-stuck" : ""}`}>
 					<div className="rb-bar__id">
 						{data ? (
 							<>
@@ -704,9 +717,6 @@ export function ReadingN3Content({ embedded = false }: { embedded?: boolean }) {
 						<button type="button" aria-pressed={showGrammar} onClick={() => setShowGrammar((value) => !value)}>
 							语法讲解
 						</button>
-						<Link className="rb-back" to="/conjugation">
-							活用まとめ
-						</Link>
 					</div>
 				</div>
 

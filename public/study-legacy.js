@@ -1564,8 +1564,48 @@ function ktable(cols, rows){
     ${rows.map(r=>`<tr><th>${esc(r.label)}</th>${r.vals.map((v,i)=>`<td class="jp"${i===cols.length-1?' style="color:var(--accent);font-weight:600"':''}>${esc(v)}</td>`).join('')}</tr>`).join('')}
   </table></div>`;
 }
+/* 活用形一覧用：ktable と同じ骨格だが、最終列を尊敬語扱いで強調しない。
+   こちらの表は「どの列も対等な活用例」なので色を付けると読み違える。 */
+function ptable(cols, rows){
+  return `<div class="table-scroll"><table class="ref">
+    <tr><th></th>${cols.map(c=>`<th>${esc(c)}</th>`).join('')}</tr>
+    ${rows.map(r=>`<tr><th class="jp">${esc(r.label)}</th>${r.vals.map((v,i)=>`<td class="${i===0?'meta':'jp'}">${esc(v)}</td>`).join('')}</tr>`).join('')}
+  </table></div>`;
+}
+// 接続の表示方法（文法書の「V／A／Na／N＋〜」が何形を指すのか）。
+// 上の普通形/丁寧形/尊敬語の表とは別の軸なので、同じページの後半にまとめる。
+function renderParadigm(P){
+  if(!P) return '';
+  let html = `<div class="side-h" style="margin:26px 0 10px">${esc(P.title||'活用形一覧')}`
+    + (P.source?` <span class="n">· ${esc(P.source)}</span>`:'') + `</div>`;
+  if(P.intro) html += `<div class="meta" style="margin-bottom:10px">${esc(P.intro)}</div>`;
+  (P.groups||[]).forEach(g=>{
+    html += `<div class="card"><h3 class="jp" style="margin-top:0">${esc(g.kind)} <span class="meta">${esc(g.kindEn||'')}</span></h3>`;
+    if(g.lead) html += `<div class="meta" style="margin-bottom:6px">${esc(g.lead)}</div>`;
+    html += ptable(g.cols, g.rows);
+    if(g.plain) html += `<div class="note"><span class="jp">${esc(g.plain)}</span></div>`;
+    html += `</div>`;
+  });
+  const A = P.attach;
+  if(A){
+    html += `<div class="card"><h3 class="jp" style="margin-top:0">${esc(A.title||'表示の例')}</h3>`;
+    html += `<div class="jp" style="font-size:17px;line-height:2">${esc(A.rule)}</div>`;
+    if(A.ruleNote) html += `<div class="meta jp" style="margin-bottom:8px">${esc(A.ruleNote)}</div>`;
+    html += `<div class="opts">` + (A.ok||[]).map(s=>`<span class="jp">○ ${esc(s)}</span>`).join('') + `</div>`;
+    if((A.ng||[]).length) html += `<div class="opts" style="margin-top:6px">` + A.ng.map(s=>`<span class="jp" style="color:var(--bad,#c0523a)">× ${esc(s)}</span>`).join('') + `</div>`;
+    if(A.explain) html += `<div class="note" style="margin-top:8px">${esc(A.explain)}</div>`;
+    html += `</div>`;
+  }
+  (P.rules||[]).forEach(r=>{
+    html += `<div class="card"><h3 class="jp" style="margin-top:0">${esc(r.title)} <span class="meta">本站补充</span></h3>`;
+    if(r.note) html += `<div class="meta" style="margin-bottom:6px">${esc(r.note)}</div>`;
+    html += ptable(r.cols, r.rows) + `</div>`;
+  });
+  if(P.footer) html += `<div class="meta" style="margin-top:10px">${esc(P.footer)}</div>`;
+  return html;
+}
 function viewKatsuyou(){
-  setNav('common'); setHeader(LX('活用一覧 · 普通形/丁寧形/尊敬語','Conjugation: Plain/Polite/Honorific'), true);
+  setNav('common'); setHeader(LX('活用一覧 · 敬語レベルと活用形','Conjugation: Politeness Levels & Verb Forms'), true);
   const KY = (DATA.common||{}).katsuyou;   // 变量名避开全局的 K2（N2汉字），别再互相遮蔽
   if(!KY){ app.innerHTML='<div class="empty">通用参考数据加载中，请稍候…</div>'; return; }
   let html = KY.intro ? `<div class="meta" style="margin-bottom:10px">${esc(KY.intro)}</div>` : '';
@@ -1595,6 +1635,7 @@ function viewKatsuyou(){
     html += `</div>`;
   }
   if(KY.footer) html += `<div class="meta" style="margin-top:10px">${esc(KY.footer)}</div>`;
+  html += renderParadigm(KY.paradigm);
   app.innerHTML = html;
 }
 

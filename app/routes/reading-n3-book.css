@@ -75,6 +75,13 @@
 
 /* ---------- top bar ---------- */
 
+/* Zero-height marker just above the toolbar. Once it scrolls out of view the
+   toolbar is pinned, and `.is-stuck` switches it to the compact header look. */
+.rb-bar-sentinel {
+	height: 1px;
+	margin-bottom: -1px;
+}
+
 .rb-bar {
 	display: flex;
 	flex-wrap: wrap;
@@ -87,9 +94,35 @@
 	border: 1px solid var(--rb-rule);
 	border-radius: var(--rb-radius);
 	position: sticky;
-	top: 12px;
+	top: 0;
 	z-index: 30;
 	box-shadow: 0 6px 22px rgba(0, 0, 0, 0.06);
+	transition: padding 0.18s ease, border-radius 0.18s ease, box-shadow 0.18s ease;
+}
+
+/* Pinned: full-bleed to the viewport edges, flatter, tighter, and lifted off
+   the text with a stronger shadow so it reads as a bar rather than a card. */
+.rb-bar.is-stuck {
+	padding: 9px 18px;
+	border-radius: 0;
+	border-left-color: transparent;
+	border-right-color: transparent;
+	box-shadow: 0 10px 26px rgba(0, 0, 0, 0.14);
+	margin-left: -20px;
+	margin-right: -20px;
+	padding-left: 38px;
+	padding-right: 38px;
+	background: color-mix(in srgb, var(--rb-paper) 94%, transparent);
+	backdrop-filter: saturate(180%) blur(10px);
+	-webkit-backdrop-filter: saturate(180%) blur(10px);
+}
+
+.rb-bar.is-stuck .rb-bar__id span {
+	display: none;
+}
+
+.rb-bar.is-stuck .rb-bar__id b {
+	font-size: 15px;
 }
 
 .rb-bar__id {
@@ -998,8 +1031,24 @@
 		padding: 18px 15px;
 	}
 
+	/* Stays pinned on phones too — that is where scrolling back up to reach the
+	   translation toggle costs the most. */
 	.rb-bar {
-		position: static;
+		gap: 8px;
+		padding: 10px 12px;
+	}
+
+	.rb-bar.is-stuck {
+		margin-left: -12px;
+		margin-right: -12px;
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	.rb-toggles button,
+	.rb-back {
+		padding: 6px 11px;
+		font-size: 12px;
 	}
 
 	.rb-nav {
