@@ -1584,32 +1584,14 @@ function ptable(cols, rows){
     ${rows.map(r=>`<tr><th class="jp">${esc(r.label)}</th>${r.vals.map((v,i)=>`<td class="${i===0?'meta':'jp'}">${esc(v)}</td>`).join('')}</tr>`).join('')}
   </table></div>`;
 }
-// 接続の表示方法（文法書の「V／A／Na／N＋〜」が何形を指すのか）。
-// 上の普通形/丁寧形/尊敬語の表とは別の軸なので、同じページの後半にまとめる。
-function renderParadigm(P){
+// 変形ルール。活用形の「表記」（Vる／Vない…）は接续表（#/ref）にあるので、
+// ここは重複させず「実際にどう変形するか」だけを置く。
+function renderHenkei(P){
   if(!P) return '';
-  // ページ見出しは setHeader が出すので、ここは出典と導入だけ。
-  let html = P.source ? `<div class="meta" style="margin-bottom:6px">出典：${esc(P.source)}</div>` : '';
-  if(P.intro) html += `<div class="meta" style="margin-bottom:10px">${esc(P.intro)}</div>`;
-  (P.groups||[]).forEach(g=>{
-    html += `<div class="card"><h3 class="jp" style="margin-top:0">${esc(g.kind)} <span class="meta">${esc(g.kindEn||'')}</span></h3>`;
-    if(g.lead) html += `<div class="meta" style="margin-bottom:6px">${esc(g.lead)}</div>`;
-    html += ptable(g.cols, g.rows);
-    if(g.plain) html += `<div class="note"><span class="jp">${esc(g.plain)}</span></div>`;
-    html += `</div>`;
-  });
-  const A = P.attach;
-  if(A){
-    html += `<div class="card"><h3 class="jp" style="margin-top:0">${esc(A.title||'表示の例')}</h3>`;
-    html += `<div class="jp" style="font-size:17px;line-height:2">${esc(A.rule)}</div>`;
-    if(A.ruleNote) html += `<div class="meta jp" style="margin-bottom:8px">${esc(A.ruleNote)}</div>`;
-    html += `<div class="opts">` + (A.ok||[]).map(s=>`<span class="jp">○ ${esc(s)}</span>`).join('') + `</div>`;
-    if((A.ng||[]).length) html += `<div class="opts" style="margin-top:6px">` + A.ng.map(s=>`<span class="jp" style="color:var(--bad,#c0523a)">× ${esc(s)}</span>`).join('') + `</div>`;
-    if(A.explain) html += `<div class="note" style="margin-top:8px">${esc(A.explain)}</div>`;
-    html += `</div>`;
-  }
+  let html = P.intro ? `<div class="meta" style="margin-bottom:6px">${esc(P.intro)}</div>` : '';
+  if(P.seeAlso) html += `<div class="note" style="margin-bottom:12px"><span class="jp">${esc(P.seeAlso)}</span> <button class="side-item" data-go="#/ref" style="display:inline-flex;width:auto;padding:4px 10px;margin-left:6px">📖 接续表</button></div>`;
   (P.rules||[]).forEach(r=>{
-    html += `<div class="card"><h3 class="jp" style="margin-top:0">${esc(r.title)} <span class="meta">本站补充</span></h3>`;
+    html += `<div class="card"><h3 class="jp" style="margin-top:0">${esc(r.title)}</h3>`;
     if(r.note) html += `<div class="meta" style="margin-bottom:6px">${esc(r.note)}</div>`;
     html += ptable(r.cols, r.rows) + `</div>`;
   });
@@ -1652,10 +1634,10 @@ function viewKatsuyou(){
 // 変形（接続の表示方法）は活用ページから独立させた：敬語レベルの表と
 // 一緒に置くと1ページが長すぎて、探している表にたどり着けない。
 function viewHenkei(){
-  setNav('common'); setHeader(LX('動詞変形 · 接続の表示方法','Verb Forms & How Patterns Attach'), true);
+  setNav('common'); setHeader(LX('動詞の変形ルール · 音便と組み合わせ','Verb Conjugation Rules'), true);
   const HK = (DATA.common||{}).henkei;
   if(!HK){ app.innerHTML='<div class="empty">通用参考数据加载中，请稍候…</div>'; return; }
-  app.innerHTML = renderParadigm(HK);
+  app.innerHTML = renderHenkei(HK);
 }
 
 const DATA_FILES = {"grammar":"grammar.d15be04258.json","kanji":"kanji.e43232869e.json","vocab":"vocab.856eb48e32.json","n2grammar":"n2grammar.4e6157570a.json","n2vocab":"n2vocab.4e440284d9.json","n2kanji":"n2kanji.d9739ca8d4.json","n4grammar":"n4grammar.40e138ccdb.json","n4vocab":"n4vocab.026f711eb7.json","n4kanji":"n4kanji.655356d8e2.json","common":"common.aa13cae172.json"};
