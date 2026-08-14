@@ -662,12 +662,19 @@ export function ReadingN3Content({ embedded = false }: { embedded?: boolean }) {
 	useEffect(() => {
 		const sentinel = sentinelRef.current;
 		if (!sentinel || typeof IntersectionObserver === "undefined") return;
+		// Inside the study shell the toolbar parks under that shell's own sticky
+		// topbar, so the sentinel has to clear the same height or `is-stuck`
+		// would fire a topbar-height too late.
+		const offset = embedded
+			? Number.parseInt(getComputedStyle(document.documentElement).getPropertyValue("--topbarh"), 10) || 88
+			: 0;
 		const observer = new IntersectionObserver(([entry]) => setStuck(!entry.isIntersecting), {
 			threshold: 1,
+			rootMargin: `-${offset}px 0px 0px 0px`,
 		});
 		observer.observe(sentinel);
 		return () => observer.disconnect();
-	}, []);
+	}, [embedded]);
 
 	useEffect(() => {
 		if (!embedded) window.scrollTo({ top: 0 });
@@ -683,7 +690,7 @@ export function ReadingN3Content({ embedded = false }: { embedded?: boolean }) {
 		: "";
 
 	return (
-		<div className={`rb${furigana ? "" : " rb--no-furigana"}`}>
+		<div className={`rb${furigana ? "" : " rb--no-furigana"}${embedded ? " rb--embedded" : ""}`}>
 			<div className="rb-wrap">
 				<div ref={sentinelRef} className="rb-bar-sentinel" aria-hidden="true" />
 				<div className={`rb-bar${stuck ? " is-stuck" : ""}`}>

@@ -125,6 +125,13 @@
 	font-size: 15px;
 }
 
+/* Embedded in the study shell: park under that shell's own sticky topbar
+   (--topbarh is set from its measured height) and stay behind it (z-index 20). */
+.rb--embedded .rb-bar {
+	top: var(--topbarh, 88px);
+	z-index: 15;
+}
+
 .rb-bar__id {
 	display: flex;
 	flex-direction: column;
