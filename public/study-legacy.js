@@ -927,6 +927,7 @@ function srcLabel(link){
 }
 function examNoteHTML(a, it){
   const opts = it.opts_r || (it.opts||[]).map(esc);
+  const optionTranslations = a.option_translations || [];
   let h = a.note ? `<div class="jp">${R(a,'note')}</div>` : '';
   if(a.trans) h += `<div class="an-trans">${esc(a.trans)}</div>`;
   if(a.link) h += `<div class="an-link" data-go="${escAttr(a.link)}">📘 ${srcLabel(a.link)} ›</div>`;
@@ -934,7 +935,7 @@ function examNoteHTML(a, it){
   if(!why.length && !a.point && !words.length) return h;
   h += `<details class="an-more"><summary>详细解析</summary>`;
   if(why.length) h += `<ol class="an-why">` + why.map((t,i)=>
-    `<li class="${(i+1)===a.ans?'ok':''}"><span class="o jp">${opts[i]||''}</span><span class="w">${esc(t)}</span></li>`).join('') + `</ol>`;
+    `<li class="${(i+1)===a.ans?'ok':''}"><span class="o jp">${opts[i]||''}</span>${optionTranslations[i]?`<span class="an-opt-trans">${esc(optionTranslations[i])}</span>`:''}<span class="w">${esc(t)}</span></li>`).join('') + `</ol>`;
   if(a.point) h += `<div class="an-point">要点：${esc(a.point)}</div>`;
   // 逐节拆解：把句子切成一个个成分，说清每一节在句子里干什么
   if((a.parse||[]).length) h += `<div class="an-h">逐节拆解</div><div class="an-words an-parse">` + a.parse.map(v=>
@@ -1602,7 +1603,18 @@ async function bootN3(){
   try{
     // common（接续表/活用表/数字表达）跟级别无关但每个模块都可能点开，体积也小，跟 N3 一起加载
     const names=['grammar','vocab','kanji','common'];
-    const [g,v,k,com]=await Promise.all(names.map(n=>fetch('data/'+DATA_FILES[n]).then(r=>r.json())));
+    const [g,v,k,com,grammarExplanations]=await Promise.all([
+      ...names.map(n=>fetch('data/'+DATA_FILES[n]).then(r=>r.json())),
+      fetch('data/n3-grammar-explanations.json').then(r=>r.ok?r.json():({})).catch(()=>({}))
+    ]);
+    for(const [weekKey, sections] of Object.entries(grammarExplanations||{})){
+      const targetWeek=g.besatsu&&g.besatsu[weekKey]; if(!targetWeek) continue;
+      for(const section of ['mondai1','mondai2','mondai3']){
+        const enriched=sections&&sections[section]; if(!Array.isArray(enriched)||!Array.isArray(targetWeek[section])) continue;
+        const byNumber=new Map(enriched.map(item=>[item.n,item]));
+        targetWeek[section]=targetWeek[section].map(item=>Object.assign({},item,byNumber.get(item.n)||{}));
+      }
+    }
     G=g; V=v; K=k;
     DATA.grammar=G; DATA.vocab=V; DATA.kanji=K; DATA.common=com;
     dataLoaded=true;
