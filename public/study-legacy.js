@@ -278,7 +278,7 @@ function saveSelectedText(){
   const text=normalizeSelectionText(selectionText); if(!text) return;
   const id=selectionFavId(selectionFavType,text);
   FAV[id]={
-    module:'selection', selectionType:selectionFavType, hash:location.hash||'#/',
+    module:'selection', selectionType:selectionFavType, hash:routeKey(),
     w:'', d:'', jp:text, cn:`划词收藏 · ${SELECTION_FAV_TYPES[selectionFavType]}`, ts:Date.now()
   };
   saveFav(); renderSide();
@@ -324,7 +324,7 @@ function syncModeBar(){
   deriveLT();
   lvChip.firstChild.nodeValue = LEVEL.toUpperCase()+' ';
   // 读解/听解を開いている間、typebar の選択は React 側（.reader-mode-link /
-  // .listening-mode-link）が持つ。ここで TYPE から点け直すと、hashchange 由来の
+  // .listening-mode-link）が持つ。ここで TYPE から点け直すと、popstate 由来の
   // 再描画のたびに前の tab が復活し、2つ同時に選択されて見える。
   const modeActive = document.body.classList.contains('reader-mode-active')
                   || document.body.classList.contains('listening-mode-active');
@@ -387,8 +387,34 @@ document.querySelectorAll('#langbar button').forEach(b=>{
 });
 
 /* ---------- routing ---------- */
-function navTo(hash){ if(location.hash===hash) render(); else location.hash=hash; }
-window.addEventListener('hashchange', render);
+/* URL は /study/... の実パス。ただし legacy 全体が '#/favs' のようなキーで
+   書かれているので、内部の識別子はそのまま残し、境界だけで変換する。
+   lastVisit / lastDay に保存済みのキーもこの形なので、移行不要。 */
+const STUDY_BASE = '/study';
+function keyToPath(key){
+  const k = String(key || '#/').replace(/^#/, '');      // '#/favs' -> '/favs'
+  return k === '/' ? STUDY_BASE : STUDY_BASE + k;       //          -> '/study/favs'
+}
+function pathToKey(pathname){
+  if(pathname.indexOf(STUDY_BASE) !== 0) return '#/';
+  const rest = pathname.slice(STUDY_BASE.length).replace(/\/+$/, '');
+  return rest ? '#' + rest : '#/';
+}
+function routeKey(){ return pathToKey(location.pathname); }
+
+/* 旧 hash リンク（/study#/favs）を実パスへ。ブックマークや共有済みリンク、
+   localStorage の lastDay を生かすため、この shim は今後も残す。 */
+if(location.hash.indexOf('#/') === 0){
+  history.replaceState(null, '', keyToPath(location.hash) + location.search);
+}
+
+function navTo(key){
+  const path = keyToPath(key);
+  if(location.pathname === path){ render(); return; }
+  history.pushState(null, '', path);
+  render();
+}
+window.addEventListener('popstate', render);
 backBtn.onclick = ()=>{ history.length>1 ? history.back() : navTo('#/'); };
 document.querySelectorAll('nav.bottom button').forEach(b=>{
   // 「通用」不是一个页面，是个弹层入口，所以不走 navTo
@@ -420,11 +446,11 @@ app.addEventListener('click', e=>{
   }
   const sc=e.target.closest('[data-scroll]'); if(sc){ const el=document.getElementById(sc.dataset.scroll); if(el) el.scrollIntoView({behavior:sc.classList.contains('wk-tocitem')?'auto':'smooth',block:'start'}); return; }
   const sb=e.target.closest('[data-say]'); if(sb){ say(sb.dataset.say); return; }
-  const fv=e.target.closest('[data-fav]'); if(fv){ toggleFav(fv.dataset.fav); fv.textContent=isFav(fv.dataset.fav)?'★':'☆'; if((location.hash||'#/')==='#/favs') viewFavs(); return; }
+  const fv=e.target.closest('[data-fav]'); if(fv){ toggleFav(fv.dataset.fav); fv.textContent=isFav(fv.dataset.fav)?'★':'☆'; if(routeKey()==='#/favs') viewFavs(); return; }
   if(e.target.closest('[data-favfc]')){ startFavFc(); return; }
   const fs=e.target.closest('[data-favstudy]'); if(fs){ favStudyMode=fs.dataset.favstudy==='1'; viewFavs(); return; }
   const ms=e.target.closest('[data-mstudy]'); if(ms){ mistakeStudyMode=ms.dataset.mstudy==='1'; viewMistakes(); return; }
-  const sh=e.target.closest('[data-study-hide]'); if(sh){ if(sh.dataset.studyHide==='jp') studyHideJapanese=!studyHideJapanese; else studyHideTranslation=!studyHideTranslation; const h=location.hash||'#/'; if(h==='#/favs') viewFavs(); else if(h==='#/mistakes') viewMistakes(); return; }
+  const sh=e.target.closest('[data-study-hide]'); if(sh){ if(sh.dataset.studyHide==='jp') studyHideJapanese=!studyHideJapanese; else studyHideTranslation=!studyHideTranslation; const h=routeKey(); if(h==='#/favs') viewFavs(); else if(h==='#/mistakes') viewMistakes(); return; }
   const ffl=e.target.closest('[data-favfilter]'); if(ffl){ favFilter=ffl.dataset.favfilter; viewFavs(); return; }
   const sff=e.target.closest('[data-selfavfilter]'); if(sff){ favSelectionFilter=sff.dataset.selfavfilter; viewFavs(); return; }
   const cm=e.target.closest('[data-ctmode]'); if(cm){ ctMode=cm.dataset.ctmode; viewContrast(); return; }
@@ -501,7 +527,7 @@ function renderSide(){
   // ここで hash から点け直すと注入された読解リンクと二重に光る。
   const modeActive = document.body.classList.contains('reader-mode-active')
                   || document.body.classList.contains('listening-mode-active');
-  const h = modeActive ? '' : (location.hash || '#/');
+  const h = modeActive ? '' : routeKey();
   const LV = LEVEL.toUpperCase();
   const weeksOf = ty => { const w=((DATA[moduleFrom(LEVEL,ty)]||{}).weeks||[]).length; return w?w+'周':''; };
   // 在某个模块的首页或某一天里，才算「正待在这个类型上」
@@ -583,7 +609,7 @@ window.addEventListener('scroll', ()=>{
 }, {passive:true});
 function render(){
   if(!dataLoaded){ app.innerHTML='<div class="empty">加载中…</div>'; return; }
-  const h = location.hash || '#/';
+  const h = routeKey();
   renderSide();
   if((MODULE==='n2grammar'||MODULE==='n2vocab'||MODULE==='n2kanji') && !n2Loaded){ setNav('home'); setHeader(modLabel(), false); app.innerHTML='<div class="empty">N2 数据加载中，请稍候…</div>'; return; }
   if((MODULE==='n4grammar'||MODULE==='n4vocab'||MODULE==='n4kanji') && !n4Loaded){ setNav('home'); setHeader(modLabel(), false); app.innerHTML='<div class="empty">N4 数据加载中，请稍候…</div>'; return; }
@@ -820,7 +846,7 @@ document.addEventListener('keydown', e=>{
   if(e.metaKey||e.ctrlKey||e.altKey) return;
   const t=e.target, tag=t&&t.tagName;
   if(tag==='INPUT'||tag==='TEXTAREA'||(t&&t.isContentEditable)) return;
-  const m=(location.hash||'').match(/^#\/day\/(\d+)-(\d+)/);
+  const m=routeKey().match(/^#\/day\/(\d+)-(\d+)/);
   if(!m) return;
   const n=dayNeighbors(+m[1],+m[2])[e.key==='ArrowLeft'?'prev':'next'];
   if(n){ e.preventDefault(); navTo(`#/day/${n[0]}-${n[1]}`); }
@@ -1646,8 +1672,8 @@ async function bootN3(){
     // common（接续表/活用表/数字表达）跟级别无关但每个模块都可能点开，体积也小，跟 N3 一起加载
     const names=['grammar','vocab','kanji','common'];
     const [g,v,k,com,grammarExplanations]=await Promise.all([
-      ...names.map(n=>fetch('data/'+DATA_FILES[n]).then(r=>r.json())),
-      fetch('data/n3-grammar-explanations.json').then(r=>r.ok?r.json():({})).catch(()=>({}))
+      ...names.map(n=>fetch('/data/'+DATA_FILES[n]).then(r=>r.json())),
+      fetch('/data/n3-grammar-explanations.json').then(r=>r.ok?r.json():({})).catch(()=>({}))
     ]);
     for(const [weekKey, sections] of Object.entries(grammarExplanations||{})){
       const targetWeek=g.besatsu&&g.besatsu[weekKey]; if(!targetWeek) continue;
@@ -1667,12 +1693,12 @@ async function bootN3(){
 async function bootN2(){
   try{
     const names=['n2grammar','n2vocab','n2kanji'];
-    const [g2,v2,k2]=await Promise.all(names.map(n=>fetch('data/'+DATA_FILES[n]).then(r=>r.json())));
+    const [g2,v2,k2]=await Promise.all(names.map(n=>fetch('/data/'+DATA_FILES[n]).then(r=>r.json())));
     G2=g2; V2=v2; K2=k2;
     DATA.n2grammar=G2; DATA.n2vocab=V2; DATA.n2kanji=K2;
     n2Loaded=true;
     searchIndex=null; // N2 数据到位后让搜索索引下次重新构建，纳入N2结果
-    const h=location.hash||'#/';
+    const h=routeKey();
     if(MODULE==='n2grammar'||MODULE==='n2vocab'||MODULE==='n2kanji'||h==='#/search') render();
   }catch(e){ /* N2 加载失败时静默：N3 内容不受影响，用户切到N2或搜索时会看到持续的加载提示 */ }
   bootN4(); // N2 之后最后加载 N4（数据量最小，优先级最低）
@@ -1680,12 +1706,12 @@ async function bootN2(){
 async function bootN4(){
   try{
     const names=['n4grammar','n4vocab','n4kanji'];
-    const [g4,v4,k4]=await Promise.all(names.map(n=>fetch('data/'+DATA_FILES[n]).then(r=>r.json())));
+    const [g4,v4,k4]=await Promise.all(names.map(n=>fetch('/data/'+DATA_FILES[n]).then(r=>r.json())));
     G4=g4; V4=v4; K4=k4;
     DATA.n4grammar=G4; DATA.n4vocab=V4; DATA.n4kanji=K4;
     n4Loaded=true;
     searchIndex=null; // N4 数据到位后让搜索索引下次重新构建，纳入N4结果
-    const h=location.hash||'#/';
+    const h=routeKey();
     if(MODULE==='n4grammar'||MODULE==='n4vocab'||MODULE==='n4kanji'||h==='#/search') render();
   }catch(e){ /* N4 加载失败时静默 */ }
 }

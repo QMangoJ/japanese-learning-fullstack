@@ -169,7 +169,8 @@ function StudyModeBridge() {
 		const activateLegacyLink = () => {
 			const mode = new URLSearchParams(window.location.search).get("module");
 			if (mode !== "reading" && mode !== "listening") return;
-			window.history.replaceState({}, "", "/study");
+			// ?module= だけを落とす。/study/day/3-1 のような実パスは保つ。
+			window.history.replaceState({}, "", window.location.pathname);
 			enterModule(mode);
 		};
 
@@ -181,19 +182,17 @@ function StudyModeBridge() {
 			leaveModule();
 			// leaveModule 之后 body 上的 mode class 才消失，legacy 需要再画一次
 			// 才能把正确的 tab 点回来。此时 moduleRoot 已为空，不会递归。
-			window.dispatchEvent(new Event("hashchange"));
+			window.dispatchEvent(new Event("popstate"));
 		};
 
 		document.addEventListener("click", onDocumentClick, true);
 		document.addEventListener("study-runtime-ready", activateLegacyLink);
 		window.addEventListener("popstate", onHistoryNav);
-		window.addEventListener("hashchange", onHistoryNav);
 		if (window.document.querySelector("script[data-study-runtime]")) queueMicrotask(activateLegacyLink);
 		return () => {
 			document.removeEventListener("click", onDocumentClick, true);
 			document.removeEventListener("study-runtime-ready", activateLegacyLink);
 			window.removeEventListener("popstate", onHistoryNav);
-			window.removeEventListener("hashchange", onHistoryNav);
 			titleObserver?.disconnect();
 			leaveModule();
 		};
