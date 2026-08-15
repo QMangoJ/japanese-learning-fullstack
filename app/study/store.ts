@@ -1331,7 +1331,13 @@ async function bootN2() {
 async function bootN4() {
 	try {
 		const names = ["n4grammar", "n4vocab", "n4kanji"] as const;
-		const [g4, v4, k4] = await Promise.all(names.map((n) => fetch("/data/" + DATA_FILES[n]).then((r) => r.json())));
+		const [g4, v4, k4, n4ExamExplanations]: any[] = await Promise.all([
+			...names.map((n) => fetch("/data/" + DATA_FILES[n]).then((r) => r.json())),
+			fetch("/data/n4-grammar-explanations.json")
+				.then((r) => (r.ok ? r.json() : {}))
+				.catch(() => ({})),
+		]);
+		g4.besatsu = n4ExamExplanations || {};
 		G4 = g4;
 		V4 = v4;
 		K4 = k4;
