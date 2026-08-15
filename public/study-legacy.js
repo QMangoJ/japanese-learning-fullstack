@@ -200,6 +200,18 @@ async function pullFavsFromServer(){
 function isFav(id){ return !!FAV[id]; }
 function toggleFav(id){ if(FAV[id]) delete FAV[id]; else if(FAVMETA[id]) FAV[id]=Object.assign({}, FAVMETA[id], {ts:Date.now()}); saveFav(); }
 function star(id, snap){ FAVMETA[id]=snap; return `<button class="starb" data-fav="${escAttr(id)}" aria-label="收藏">${isFav(id)?'★':'☆'}</button>`; }
+function syncFavButton(button){
+  const active=isFav(button.dataset.fav);
+  if(button.dataset.favStyle==='exam'){
+    button.textContent=active?'★ 已收藏':'☆ 收藏错题';
+    button.classList.toggle('on',active);
+    button.setAttribute('aria-label',active?'取消收藏错题':'收藏错题');
+    button.setAttribute('aria-pressed',active?'true':'false');
+  }else{
+    button.textContent=active?'★':'☆';
+    button.setAttribute('aria-label',active?'取消收藏':'收藏');
+  }
+}
 
 /* ---------- 划词收藏 ---------- */
 // 划词条目和普通收藏共用 FAV，因此同样能写入 Cloudflare KV，在其它设备继续复习。
@@ -418,10 +430,19 @@ app.addEventListener('click', e=>{
   const sc=e.target.closest('[data-scroll]'); if(sc){ const el=document.getElementById(sc.dataset.scroll); if(el) el.scrollIntoView({behavior:sc.classList.contains('wk-tocitem')?'auto':'smooth',block:'start'}); return; }
   const sb=e.target.closest('[data-say]'); if(sb){ say(sb.dataset.say); return; }
   // 星は未移行の毎日ビューが出している。#/favs 側の星は React が自前で処理する。
-  const fv=e.target.closest('[data-fav]'); if(fv){ toggleFav(fv.dataset.fav); fv.textContent=isFav(fv.dataset.fav)?'★':'☆'; return; }
+  const fv=e.target.closest('[data-fav]'); if(fv){ toggleFav(fv.dataset.fav); syncFavButton(fv); return; }
   const cm=e.target.closest('[data-ctmode]'); if(cm){ ctMode=cm.dataset.ctmode; viewContrast(); return; }
   const cw=e.target.closest('[data-ctweek]'); if(cw){ ctWeek=+cw.dataset.ctweek; viewContrast(); return; }
   const go=e.target.closest('[data-go]'); if(go){ if(go.dataset.mod) setModule(go.dataset.mod); navTo(go.dataset.go); return; }
+  const dailyToggle=e.target.closest('[data-daily-panel]'); if(dailyToggle){
+    const panel=document.getElementById(dailyToggle.dataset.dailyPanel);
+    if(panel){
+      const expanded=dailyToggle.getAttribute('aria-expanded')!=='true';
+      dailyToggle.setAttribute('aria-expanded', expanded?'true':'false');
+      panel.hidden=!expanded;
+    }
+    return;
+  }
   const an=e.target.closest('[data-ans]'); if(an){ const a=document.getElementById(an.dataset.ans); if(a){ a.classList.toggle('show'); an.textContent=a.classList.contains('show')?'隐藏答案':'显示答案'; } return; }
 });
 /* 判分与还原共用。log=false 用于 render() 后重放已答过的题——
@@ -569,6 +590,7 @@ function render(){
   if(!sameView) window.scrollTo(0,0);
   // <details> 的展开状态只存在 DOM 里，重画同一个页面时要自己收好再放回去
   const openSnap = sameView ? Array.from(app.querySelectorAll('details')).map(d=>d.open) : null;
+  const dailyPanelSnap = sameView ? Array.from(app.querySelectorAll('[data-daily-panel]')).map(b=>b.getAttribute('aria-expanded')==='true') : null;
   const qzSnap   = sameView ? snapshotQz() : null;
   _lastRenderedHash = viewKey;
   if(h==='#/'){ saveLastVisit('#/'); viewHome(); }
@@ -595,6 +617,15 @@ function render(){
     const ds = app.querySelectorAll('details');
     // 数量对不上说明画的不是同一份内容，硬套会张冠李戴，宁可不还原
     if(ds.length===openSnap.length) ds.forEach((d,i)=>{ d.open = openSnap[i]; });
+  }
+  if(dailyPanelSnap){
+    const toggles=app.querySelectorAll('[data-daily-panel]');
+    if(toggles.length===dailyPanelSnap.length) toggles.forEach((button,index)=>{
+      const expanded=dailyPanelSnap[index];
+      const panel=document.getElementById(button.dataset.dailyPanel);
+      button.setAttribute('aria-expanded', expanded?'true':'false');
+      if(panel) panel.hidden=!expanded;
+    });
   }
   restoreQz(qzSnap);
   updateStickyVars();
@@ -695,6 +726,12 @@ function rangedAnswerHTML(details, n){
     ? Array.from({length:+nums[1]-+nums[0]+1},(_,i)=>+nums[0]+i) : nums.map(Number);
   const entries=list.map(i=>details[i]&&details[i].text?`${CIRCLED_NUMS[i-1]} ${esc(details[i].text)}`:'').filter(Boolean);
   return entries.length?entries.join('　'):'';
+}
+function rangedAnswerText(details, n){
+  const nums=String(n).match(/\d+/g)||[];
+  const list=nums.length===2 && nums[0]!==nums[1]
+    ? Array.from({length:+nums[1]-+nums[0]+1},(_,i)=>+nums[0]+i) : nums.map(Number);
+  return list.map(i=>details[i]&&details[i].text?`${i}. ${details[i].text}`:'').filter(Boolean).join('　');
 }
 function answerMapFromKeys(keys){
   const map={};
@@ -877,19 +914,34 @@ function dailyPointRefsHTML(info,day,w,d){
 function dailyExercisePanelsHTML(info,it,day,w,d){
   if(!info) return '';
   const reason=info.type==='order'?dailyOrderReasonHTML(info,it):dailyChoiceReasonHTML(info);
+  const panelBase=`daily-${w}-${d}-${it.n}`;
   return `<div class="daily-explain">
-    <details class="daily-toggle daily-translation">
-      <summary><span class="fold-show">显示翻译</span><span class="fold-hide">隐藏翻译</span></summary>
-      <div class="daily-toggle-body cn">${esc(info.translation)}</div>
-    </details>
-    <details class="daily-toggle daily-analysis">
-      <summary><span class="fold-show">显示解析</span><span class="fold-hide">隐藏解析</span></summary>
-      <div class="daily-toggle-body">
+    <div class="daily-toggle-controls">
+      <button type="button" class="daily-toggle daily-translation" data-daily-panel="${panelBase}-translation" aria-controls="${panelBase}-translation" aria-expanded="false">
+        <span class="fold-show">显示翻译</span><span class="fold-hide">隐藏翻译</span>
+      </button>
+      <button type="button" class="daily-toggle daily-analysis" data-daily-panel="${panelBase}-analysis" aria-controls="${panelBase}-analysis" aria-expanded="false">
+        <span class="fold-show">显示解析</span><span class="fold-hide">隐藏解析</span>
+      </button>
+    </div>
+    <div id="${panelBase}-translation" class="daily-toggle-body daily-translation-body cn" hidden>${esc(info.translation)}</div>
+    <div id="${panelBase}-analysis" class="daily-toggle-body daily-analysis-body" hidden>
         <div class="an-answer-key">正确答案：<span class="jp">${esc(info.answer)}</span></div>
         <div class="an-complete"><b>完整句：</b><span class="jp">${esc(info.completed)}</span></div>
         ${reason}${dailyPointRefsHTML(info,day,w,d)}
-      </div>
-    </details>
+    </div>
+  </div>`;
+}
+function dailyExerciseTranslationHTML(info,module,w,d,it){
+  if(!info||!info.translation) return '';
+  const panelId=`daily-${module}-${w}-${d}-${it.n}-translation`;
+  return `<div class="daily-explain daily-explain-translation-only">
+    <div class="daily-toggle-controls">
+      <button type="button" class="daily-toggle daily-translation" data-daily-panel="${panelId}" aria-controls="${panelId}" aria-expanded="false">
+        <span class="fold-show">显示翻译</span><span class="fold-hide">隐藏翻译</span>
+      </button>
+    </div>
+    <div id="${panelId}" class="daily-toggle-body daily-translation-body cn" hidden>${esc(info.translation)}</div>
   </div>`;
 }
 function viewDayGrammar(day,w,d,scrollP){
@@ -1017,6 +1069,15 @@ function examExplanationHTML(a,it,module,section){
   const detailsAt=generated.indexOf('<details');
   return `<div class="an-explain-title">答案解析</div>`+detail+(detailsAt>=0?generated.slice(detailsAt):'');
 }
+function examQuestionFavoriteHTML(it,module,w,answer,translation){
+  const id=`${module}#exam#${w}#${String(it.n)}`;
+  const options=(it.opts||it.options||[]).map((option,index)=>`${index+1}. ${option}`);
+  const jp=[`${it.n}. ${it.q||''}`, options.join('　')].filter(Boolean).join('\n');
+  const cn=[translation||'', answer?`正确答案：${answer}`:''].filter(Boolean).join('\n');
+  FAVMETA[id]={module,hash:`#/day/${w}-7`,w,d:7,jp,cn,kind:'exam-question'};
+  const active=isFav(id);
+  return `<button type="button" class="exam-fav-btn${active?' on':''}" data-fav="${escAttr(id)}" data-fav-style="exam" aria-label="${active?'取消收藏错题':'收藏错题'}" aria-pressed="${active?'true':'false'}">${active?'★ 已收藏':'☆ 收藏错题'}</button>`;
+}
 function examGrammarHTML(day,w){
   const useBesatsu = MODULE==='grammar';
   const bes = useBesatsu ? (G.besatsu['w'+w]||{}) : {}; const ansMap={};
@@ -1093,10 +1154,12 @@ function viewDayVocab(day,w,d,scrollTok){
     html += `</div>`;
   });
   if(day.exercises){
+    const dailyItems=MODULE==='vocab'&&V.daily_translations&&V.daily_translations[`w${w}d${d}`];
+    const translationByNumber=new Map(((dailyItems&&dailyItems.items)||[]).map(item=>[item.n,item]));
     html += `<div class="sec-title">れんしゅう（练习）</div><div class="card">`;
     (day.exercises.sections||[]).forEach((sec,si)=>{
       html += `<div class="meta jp" style="margin:4px 0 8px">${romanN(si)}　${R(sec,'instruction')}</div>`;
-      for(const it of (sec.items||[])) html += `<div class="q"><span class="n">${it.n}</span><span class="jp">${R(it,'q')}</span>${optsRow(it)}</div>`;
+      for(const it of (sec.items||[])) html += `<div class="q daily-q"><div class="daily-qline"><span class="n">${it.n}</span><span class="jp">${R(it,'q')}</span></div>${optsRow(it)}${dailyExerciseTranslationHTML(translationByNumber.get(it.n),'vocab',w,d,it)}</div>`;
     });
     if(day.exercises.answers) html += ansBlock(`ans-v-${w}-${d}`, `<b>答案：</b><span class="jp">${esc(day.exercises.answers)}</span>`);
     else if(day.exercises.answers_note) html += `<div class="meta">${esc(day.exercises.answers_note)}</div>`;
@@ -1117,7 +1180,8 @@ function examVocabHTML(day,w){
     html += `<div class="sec-title">${label}</div><div class="card"><div class="meta jp">${R(m,'instruction')}</div>`;
     html += m.items.map(it=>{
       const correct=ansMap[it.n];
-      let h=`<div class="q"><span class="n">${it.n}</span><span class="jp">${R(it,'q')}</span>`;
+      const answer=correct!=null?`${correct}. ${(it.opts||[])[correct-1]||''}`:'';
+      let h=`<div class="q"><div class="exam-qline"><span class="n">${it.n}</span><span class="jp exam-qtext">${R(it,'q')}</span>${examQuestionFavoriteHTML(it,'vocab',w,answer,(kai[it.n]||{}).trans)}</div>`;
       h += it.opts ? quizOptsHTML(it, correct!=null?correct:null) : '';
       if(it.opts && correct!=null){
         h += `<div class="qz-result"></div>`;
@@ -1158,10 +1222,12 @@ function viewDayKanji(day,w,d,scrollTok){
   });
   html += `</div>`;
   if(day.exercises){
+    const dailyItems=MODULE==='kanji'&&K.daily_translations&&K.daily_translations[`w${w}d${d}`];
+    const translationByNumber=new Map(((dailyItems&&dailyItems.items)||[]).map(item=>[item.n,item]));
     html += `<div class="sec-title">れんしゅう（练习）</div><div class="card">`;
     (day.exercises.sections||[]).forEach((sec,si)=>{
       html += `<div class="meta jp" style="margin:4px 0 8px">${romanN(si)}　${R(sec,'instruction')}</div>`;
-      for(const it of (sec.items||[])) html += `<div class="q"><span class="n">${it.n}</span><span class="jp">${R(it,'q')}</span>${optsRow(it)}</div>`;
+      for(const it of (sec.items||[])) html += `<div class="q daily-q"><div class="daily-qline"><span class="n">${it.n}</span><span class="jp">${R(it,'q')}</span></div>${optsRow(it)}${dailyExerciseTranslationHTML(translationByNumber.get(it.n),'kanji',w,d,it)}</div>`;
     });
     if(day.exercises.answers) html += ansBlock(`ans-k-${w}-${d}`, `<b>答案：</b><span class="jp">${esc(day.exercises.answers)}</span>`);
     else if(day.exercises.answers_note) html += `<div class="meta">${esc(day.exercises.answers_note)}</div>`;
@@ -1183,15 +1249,17 @@ function examKanjiHTML(day,w){
     if(m.wordbank) html += `<div class="opts">${m.wordbank.map(x=>`<span class="jp">${esc(x)}</span>`).join('')}</div>`;
     html += m.items.map(it=>{
       const correct=ansMap[it.n];
-      let h=`<div class="q"><span class="n">${it.n}</span><span class="jp">${R(it,'q')}</span>`;
+      const textAnswer=correct==null?rangedAnswerText(answerDetails,it.n):'';
+      const answer=correct!=null?`${correct}. ${(it.opts||[])[correct-1]||''}`:textAnswer;
+      let h=`<div class="q"><div class="exam-qline"><span class="n">${it.n}</span><span class="jp exam-qtext">${R(it,'q')}</span>${examQuestionFavoriteHTML(it,'kanji',w,answer,(kai[it.n]||{}).trans)}</div>`;
       h += it.opts ? quizOptsHTML(it, correct!=null?correct:null) : optsRow(it);
       if(it.opts && correct!=null){
         h += `<div class="qz-result"></div>`;
         const nh = examExplanationHTML(Object.assign({ans:correct}, kai[it.n]||{}), it, 'kanji', key);
         if(nh) h += `<div class="qz-note">${nh}</div>`;
       }else if(!it.opts){
-        const textAnswer=rangedAnswerHTML(answerDetails,it.n);
-        if(textAnswer) h += ansBlock(`examk-${w}-${String(it.n).replace(/[^0-9]/g,'-')}`, `<b>答案：</b><span class="jp">${textAnswer}</span>`);
+        const textAnswerHTML=rangedAnswerHTML(answerDetails,it.n);
+        if(textAnswerHTML) h += ansBlock(`examk-${w}-${String(it.n).replace(/[^0-9]/g,'-')}`, `<b>答案：</b><span class="jp">${textAnswerHTML}</span>`);
       }
       return h+`</div>`;
     }).join('') + `</div>`;
@@ -1516,10 +1584,11 @@ async function bootN3(){
   try{
     // common（接续表/活用表/数字表达）跟级别无关但每个模块都可能点开，体积也小，跟 N3 一起加载
     const names=['grammar','vocab','kanji','common'];
-    const [g,v,k,com,grammarExplanations,dailyGrammarExplanations]=await Promise.all([
+    const [g,v,k,com,grammarExplanations,dailyGrammarExplanations,dailyVocabKanjiTranslations]=await Promise.all([
       ...names.map(n=>fetch('/data/'+DATA_FILES[n]).then(r=>r.json())),
       fetch('/data/n3-grammar-explanations.json').then(r=>r.ok?r.json():({})).catch(()=>({})),
-      fetch('/data/n3-grammar-daily-explanations.json').then(r=>r.ok?r.json():({})).catch(()=>({}))
+      fetch('/data/n3-grammar-daily-explanations.json').then(r=>r.ok?r.json():({})).catch(()=>({})),
+      fetch('/data/n3-vocab-kanji-daily-translations.json').then(r=>r.ok?r.json():({})).catch(()=>({}))
     ]);
     fixN3GrammarExerciseLayout(g);
     for(const [weekKey, sections] of Object.entries(grammarExplanations||{})){
@@ -1531,6 +1600,8 @@ async function bootN3(){
       }
     }
     g.daily_explanations=dailyGrammarExplanations||{};
+    v.daily_translations=dailyVocabKanjiTranslations.vocab||{};
+    k.daily_translations=dailyVocabKanjiTranslations.kanji||{};
     G=g; V=v; K=k;
     DATA.grammar=G; DATA.vocab=V; DATA.kanji=K; DATA.common=com;
     dataLoaded=true;
