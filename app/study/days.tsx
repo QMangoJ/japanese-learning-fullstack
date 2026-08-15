@@ -232,14 +232,14 @@ function MemBar() {
 	const hideCn = typeof document !== "undefined" && document.body.classList.contains("hide-cn");
 	return (
 		<div className="mem-bar">
-			<button data-memtoggle="ruby" className={hideRuby ? "" : "on"} onClick={() => toggleDisplay("ruby")}>
-				{lx("读音", "Readings")}
+			<button type="button" data-memtoggle="ruby" className={hideRuby ? "" : "on"} aria-pressed={!hideRuby} onClick={() => toggleDisplay("ruby")}>
+				{lx("注音", "Readings")}
 			</button>
-			<button data-memtoggle="jp" className={hideJp ? "" : "on"} onClick={() => toggleDisplay("jp")}>
-				{lx("汉字", "Japanese")}
+			<button type="button" data-memtoggle="jp" className={hideJp ? "" : "on"} aria-pressed={!hideJp} onClick={() => toggleDisplay("jp")}>
+				{lx("日语", "Japanese")}
 			</button>
-			<button data-memtoggle="cn" className={hideCn ? "" : "on"} onClick={() => toggleDisplay("cn")}>
-				{lx("翻译", "Translation")}
+			<button type="button" data-memtoggle="cn" className={hideCn ? "" : "on"} aria-pressed={!hideCn} onClick={() => toggleDisplay("cn")}>
+				{lx("翻译", "Meaning")}
 			</button>
 		</div>
 	);

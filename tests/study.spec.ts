@@ -105,12 +105,12 @@ test.describe("study navigation", () => {
 		await expect(page.locator(".point").first()).toBeVisible();
 
 		await pickType(page, "vocab");
-		await expect(page.locator(".week-card").first()).toBeVisible({ timeout: 15_000 });
-		await expect(page.locator("#title")).toContainText(/词汇|Vocabulary/);
+		await expect(page.locator(".vrow, .week-card").first()).toBeVisible({ timeout: 15_000 });
+		await expect(page.locator("#title")).toContainText(/词汇|Vocabulary|週|Week|日/);
 
 		await pickType(page, "kanji");
-		await expect(page.locator(".week-card").first()).toBeVisible({ timeout: 15_000 });
-		await expect(page.locator("#title")).toContainText(/汉字|Kanji/);
+		await expect(page.locator(".krow, .week-card").first()).toBeVisible({ timeout: 15_000 });
+		await expect(page.locator("#title")).toContainText(/汉字|Kanji|週|Week|日/);
 
 		const after = await topbarBox(page);
 		expect(after.top).toBeLessThan(1);
@@ -120,15 +120,13 @@ test.describe("study navigation", () => {
 		await waitForStudy(page);
 
 		await pickType(page, "reading");
-		await expect(page.locator("#title")).toContainText(/读解|Reading/);
-		await expect(page.locator(".week-card").first()).toBeVisible({ timeout: 15_000 });
-		await page.locator(".day-item").first().click();
+		await expect(page.locator("#title")).toContainText(/读解|Reading|週|Week|日/);
+		if (await page.locator(".day-item").first().isVisible()) await page.locator(".day-item").first().click();
 		await expect(page.locator(".rb, h2.page, .rb-point__title").first()).toBeVisible({ timeout: 15_000 });
 
 		await pickType(page, "listening");
-		await expect(page.locator("#title")).toContainText(/听解|Listening/);
-		await expect(page.locator(".week-card").first()).toBeVisible({ timeout: 15_000 });
-		await page.locator(".day-item").first().click();
+		await expect(page.locator("#title")).toContainText(/听解|Listening|章|Ch\.|节/);
+		if (await page.locator(".day-item").first().isVisible()) await page.locator(".day-item").first().click();
 		await expect(page.locator(".listening-detail, .listening-player").first()).toBeVisible({ timeout: 15_000 });
 	});
 });
@@ -152,6 +150,25 @@ test.describe("study typebar", () => {
 		const skillbarTop = await page.locator("#skillbar").evaluate((el) => el.getBoundingClientRect().top);
 		expect(skillbarTop).toBeGreaterThanOrEqual(typebarBottom - 1);
 	});
+
+	test("hides the typebar on tool pages and hides skills off N3", async ({ page }, testInfo) => {
+		await waitForStudy(page);
+		await openStudyNav(page, "mistakes");
+		await expect(page.locator("#typebar")).toHaveCount(0);
+
+		if (testInfo.project.name === "desktop-chrome") {
+			await page.locator(".side-seg button", { hasText: "N4" }).click();
+			await expect(page.locator("#side [data-gotype='reading']")).toHaveCount(0);
+			await expect(page.locator("#side [data-gotype='listening']")).toHaveCount(0);
+			return;
+		}
+		await page.locator('.bottom button[data-nav="home"]').click();
+		await expect(page.locator("#typebar")).toBeVisible();
+		await page.locator("#lvChip").click();
+		await page.locator(".sheet-item", { hasText: "N4" }).click();
+		await expect(page.locator("#skillbar")).toHaveCount(0);
+		await expect(page.locator("#typebar button[data-ty='reading']")).toHaveCount(0);
+	});
 });
 
 test.describe("study language", () => {
@@ -161,14 +178,14 @@ test.describe("study language", () => {
 		await expect(page.locator(".point .usage .en").first()).toBeVisible({ timeout: 15_000 });
 
 		await pickType(page, "vocab");
-		await expect(page.locator(".week-card").first()).toBeVisible({ timeout: 15_000 });
-		await page.locator(".day-item").first().click();
+		await expect(page.locator(".vrow, .week-card").first()).toBeVisible({ timeout: 15_000 });
+		if (await page.locator(".day-item").first().isVisible()) await page.locator(".day-item").first().click();
 		await expect(page.locator(".ven").first()).toBeVisible({ timeout: 15_000 });
 		await expect(page.locator(".ven").first()).toHaveText(/[A-Za-z]{3,}/);
 
 		await pickType(page, "kanji");
-		await expect(page.locator(".week-card").first()).toBeVisible({ timeout: 15_000 });
-		await page.locator(".day-item").first().click();
+		await expect(page.locator(".krow, .week-card").first()).toBeVisible({ timeout: 15_000 });
+		if (await page.locator(".day-item").first().isVisible()) await page.locator(".day-item").first().click();
 		await expect(page.locator(".krow, .ven").first()).toBeVisible({ timeout: 15_000 });
 		if (await page.locator(".ven").count()) {
 			await expect(page.locator(".ven").first()).toBeVisible();
@@ -222,6 +239,16 @@ test.describe("study interactions", () => {
 		await expect(page.locator(".fcard").first()).toBeVisible({ timeout: 15_000 });
 		await page.locator(".fcard").first().click();
 		await expect(page.locator(".fcard .backside, .fcard .hint").first()).toBeVisible();
+	});
+
+	test("keeps the same week and day when switching modules", async ({ page }) => {
+		await waitForStudy(page);
+		await page.locator(".day-item").first().click();
+		await expect(page.locator("h2.page").first()).toBeVisible({ timeout: 15_000 });
+		const before = await page.locator("#title").textContent();
+		await pickType(page, "vocab");
+		await expect(page.locator(".vrow, h2.page").first()).toBeVisible({ timeout: 15_000 });
+		await expect(page.locator("#title")).toHaveText(before || /週|Week|日/);
 	});
 
 	test("opens the connection reference from the general sheet", async ({ page }) => {

@@ -24,8 +24,10 @@ import {
 	favsPayload,
 	flipCard,
 	flipFavCard,
+	activeMistakeCount,
 	getSearchHistory,
 	getSearchIndex,
+	searchHits,
 	homeIntro,
 	homeScale,
 	installStudyBridges,
@@ -232,6 +234,7 @@ describe("mistakes", () => {
 
 		deleteMistake(id);
 		expect(mistakesPayload().list.some((m) => m.id === id)).toBe(false);
+		expect(activeMistakeCount()).toBe(mistakesPayload().list.length);
 	});
 
 	it("ignores blank notes", () => {
@@ -285,6 +288,7 @@ describe("search and cards", () => {
 		const index = getSearchIndex();
 		expect(index.some((hit) => hit.key === "ばかり")).toBe(true);
 		expect(index.some((hit) => hit.key === "冷蔵庫")).toBe(true);
+		expect(searchHits("ばかり")[0].key).toBe("ばかり");
 
 		const seen: string[] = [];
 		setNavImpl((key) => seen.push(key));

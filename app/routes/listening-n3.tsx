@@ -321,7 +321,7 @@ function ListeningCatalog({ onSelect, expandedChapter, onToggleChapter }: { onSe
 	</main></div></div>;
 }
 
-function ChapterDetail({ chapterIndex, sectionIndex, onBack }: { chapterIndex: number; sectionIndex?: number; onBack: () => void }) {
+function ChapterDetail({ chapterIndex, sectionIndex, onBack, hideBack = false }: { chapterIndex: number; sectionIndex?: number; onBack: () => void; hideBack?: boolean }) {
 	const chapter = chapters[chapterIndex];
 	const chapterOneSection = chapter.number === 1 && sectionIndex !== undefined ? chapterOneSections[sectionIndex] : undefined;
 	const structuredSection = chapter.number !== 1 && sectionIndex !== undefined ? structuredSectionsByChapter[chapter.number]?.[sectionIndex] : undefined;
@@ -348,7 +348,7 @@ function ChapterDetail({ chapterIndex, sectionIndex, onBack }: { chapterIndex: n
 	}
 
 	return <div className="reader-page reader-page--embedded"><div className="reader-wrap reader-layout"><main className="reader-main listening-detail">
-		<header className="listening-crumb"><button className="listening-crumb__back" onClick={onBack} aria-label="聴解目次へ戻る">‹</button><div className="listening-crumb__path"><span>N3 <ruby>聴解<rt>ちょうかい</rt></ruby></span><i>/</i><b>第 {chapter.number} 章{sectionIndex !== undefined ? ` / ${sectionIndex + 1}` : ""}</b></div><h1>{chapterOneSection?.title ?? structuredSection?.title ?? chapter.title}</h1></header>
+		<header className="listening-crumb">{hideBack ? null : <button className="listening-crumb__back" onClick={onBack} aria-label="聴解目次へ戻る">‹</button>}<div className="listening-crumb__path"><span>N3 <ruby>聴解<rt>ちょうかい</rt></ruby></span><i>/</i><b>第 {chapter.number} 章{sectionIndex !== undefined ? ` / ${sectionIndex + 1}` : ""}</b></div><h1>{chapterOneSection?.title ?? structuredSection?.title ?? chapter.title}</h1></header>
 		<ListeningPlayer cue={cue} audioRef={audioRef} onPlaybackChange={setPlaying} />
 		{chapterOneSection ? <>{chapterOneSection.number === 1 ? <PronunciationLesson active={cue} playing={playing} onToggle={toggleCue} /> : null}{chapterOneSection.number === 2 ? <GrammarOneLesson active={cue} playing={playing} onToggle={toggleCue} /> : null}{chapterOneSection.number === 3 ? <GrammarTwoLesson active={cue} playing={playing} onToggle={toggleCue} /> : null}{chapterOneSection.number === 4 ? <ConversationLesson active={cue} playing={playing} onToggle={toggleCue} /> : null}{chapterOneSection.number === 5 ? <section className="listening-exercises">{chapter.exercises.filter((exercise) => exercise.page >= 23).map((exercise) => <ExerciseCard key={exercise.page} exercise={exercise} disc={chapter.disc} active={cue} playing={playing} onToggle={toggleCue} />)}</section> : null}<AnswerAndScript section={chapterOneSection} /></> : structuredSection ? <><StructuredSectionLesson chapter={chapter} section={structuredSection} active={cue} playing={playing} onToggle={toggleCue} />{answerText ? <TextAnswerPanels section={answerText} /> : null}</> : null}
 	</main></div></div>;
@@ -363,7 +363,7 @@ export function ListeningN3Content({
 	section: number;
 	embedded?: boolean;
 }) {
-	void embedded;
+
 	const chapterIndex = Math.max(0, chapter - 1);
 	const sectionIndex = Math.max(0, section - 1);
 	const favId = `listening#${chapter}-${section}`;
@@ -390,6 +390,7 @@ export function ListeningN3Content({
 				chapterIndex={chapterIndex}
 				sectionIndex={sectionIndex}
 				onBack={() => navTo("#/")}
+				hideBack={embedded}
 			/>
 		</>
 	);
