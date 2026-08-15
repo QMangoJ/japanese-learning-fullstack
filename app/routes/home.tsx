@@ -5,6 +5,7 @@ import { BrowserRouter } from "react-router";
 import type { Route } from "./+types/home";
 import { ListeningN3Content } from "./listening-n3";
 import { ReadingN3Content } from "./reading-n3";
+import { CommonPageHost } from "./study-common";
 import "./study-shell.css";
 
 export function meta({}: Route.MetaArgs) {
@@ -240,6 +241,8 @@ function LegacyStudy() {
 			</div>
 			<aside className="side" id="side" />
 			<main id="app" />
+			{/* 通用知识の 接续表 / 活用 / 变形。表示中は legacy が #app を hidden にする。 */}
+			<CommonPageHost />
 			<section id="reading-app" hidden aria-label="N3 学习模块" />
 			<nav className="bottom">
 				<button data-nav="home"><span className="ic">📚</span><span className="lbl" data-cn="知识库" data-en="Library">知识库</span></button>

@@ -608,6 +608,7 @@ window.addEventListener('scroll', ()=>{
   requestAnimationFrame(()=>{ _numNavTick = false; updateNumNavActive(); });
 }, {passive:true});
 function render(){
+  hideCommonPage();
   if(!dataLoaded){ app.innerHTML='<div class="empty">加载中…</div>'; return; }
   const h = routeKey();
   renderSide();
@@ -1570,100 +1571,36 @@ function viewNumbers(){
   updateNumNavActive();    // 首屏就把第一个小节点亮，不用等用户滚动
 }
 
-/* ---------- reference (grammar only) ---------- */
-function refTable(cols, rows){
-  return `<div class="table-scroll"><table class="ref">
-    ${cols?`<tr>${cols.map(c=>`<th class="jp">${fmt(c)}</th>`).join('')}</tr>`:''}
-    ${rows.map(r=>`<tr>${r.map(c=>`<td class="jp">${fmt(c)}</td>`).join('')}</tr>`).join('')}
-  </table></div>`;
+/* ---------- 通用知识：本文の描画は React（study-common.tsx）が担当 ---------- */
+/* ヘッダー・ナビ・戻るボタンは従来どおりここが持ち、本文だけ React に渡す。
+   データ未読込のときの表示も移行前と同じ文言のままにしてある。 */
+function showCommonPage(page){
+  if(!DATA.common){ app.innerHTML='<div class="empty">通用参考数据加载中，请稍候…</div>'; return; }
+  app.innerHTML='';
+  app.hidden = true;
+  window.dispatchEvent(new CustomEvent('study:common-page', {detail:{page, data:DATA.common}}));
 }
+function hideCommonPage(){
+  if(!app.hidden) return;
+  app.hidden = false;
+  window.dispatchEvent(new CustomEvent('study:common-page', {detail:null}));
+}
+/* React 側から legacy のルーティングを呼ぶための明示的な橋。
+   #app の委任クリックは React が描いたノードには届かないため。 */
+window.__studyNav = function(key){ navTo(key); };
+
 function viewRef(){
   setNav('common'); setHeader(LX('接续表示法 · 接続の表示方法','Connection Notation'), true);
-  const RF=(DATA.common||{}).reference;
-  if(!RF){ app.innerHTML='<div class="empty">通用参考数据加载中，请稍候…</div>'; return; }
-  let html=`<div class="meta" style="margin-bottom:10px">${esc(RF.note)}</div>`;
-  html+=`<div class="card"><h3 class="jp" style="margin-top:0">${esc(RF.verb.heading)}</h3>
-    ${RF.verb.groups.map(g=>`<div class="meta jp">${esc(g)}</div>`).join('')}
-    ${refTable(RF.verb.columns, RF.verb.rows)}
-    <div class="note"><b class="nt">〔普〕</b><span class="jp">${esc(RF.verb.futsukei)}</span></div>
-    <div class="meta jp">${esc(RF.verb.extra)}</div>
-    <div class="note" style="margin-top:8px"><b class="nt">表示の例</b><span class="jp">${esc(RF.verb.example_box)}</span></div></div>`;
-  html+=`<div class="card"><h3 class="jp" style="margin-top:0">${esc(RF.iadj.heading)}</h3>${refTable(['解説文中の表示','活用形','い形容詞'], RF.iadj.rows)}<div class="note"><b class="nt">〔普〕</b><span class="jp">${esc(RF.iadj.futsukei)}</span></div></div>`;
-  html+=`<div class="card"><h3 class="jp" style="margin-top:0">${esc(RF.naadj.heading)}</h3>${refTable(['解説文中の表示','活用形','な形容詞'], RF.naadj.rows)}<div class="note"><b class="nt">〔普〕</b><span class="jp">${esc(RF.naadj.futsukei)}</span></div></div>`;
-  html+=`<div class="card"><h3 class="jp" style="margin-top:0">${esc(RF.noun.heading)}</h3><div class="meta jp">${esc(RF.noun.note)}</div>${refTable(['解説文中の表示','活用形','名詞'], RF.noun.rows)}<div class="note"><b class="nt">〔普〕</b><span class="jp">${esc(RF.noun.futsukei)}</span></div></div>`;
-  html+=`<div class="card"><h3 style="margin-top:0">本书使用的标记</h3>` + RF.marks.map(m=>`<div class="q"><span class="n" style="min-width:auto;padding:0 8px">${esc(m.mark)}</span><span class="jp">${esc(m.desc)}</span></div>`).join('') + `</div>`;
-  app.innerHTML=html;
+  showCommonPage('ref');
 }
 
-/* ---------- 活用一覧 (普通形/丁寧形/尊敬語, grammar only) ---------- */
-function ktable(cols, rows){
-  return `<div class="table-scroll"><table class="ref">
-    <tr><th></th>${cols.map(c=>`<th>${esc(c)}</th>`).join('')}</tr>
-    ${rows.map(r=>`<tr><th>${esc(r.label)}</th>${r.vals.map((v,i)=>`<td class="jp"${i===cols.length-1?' style="color:var(--accent);font-weight:600"':''}>${esc(v)}</td>`).join('')}</tr>`).join('')}
-  </table></div>`;
-}
-/* 活用形一覧用：ktable と同じ骨格だが、最終列を尊敬語扱いで強調しない。
-   こちらの表は「どの列も対等な活用例」なので色を付けると読み違える。 */
-function ptable(cols, rows){
-  return `<div class="table-scroll"><table class="ref">
-    <tr><th></th>${cols.map(c=>`<th>${esc(c)}</th>`).join('')}</tr>
-    ${rows.map(r=>`<tr><th class="jp">${esc(r.label)}</th>${r.vals.map((v,i)=>`<td class="${i===0?'meta':'jp'}">${esc(v)}</td>`).join('')}</tr>`).join('')}
-  </table></div>`;
-}
-// 変形ルール。活用形の「表記」（Vる／Vない…）は接续表（#/ref）にあるので、
-// ここは重複させず「実際にどう変形するか」だけを置く。
-function renderHenkei(P){
-  if(!P) return '';
-  let html = P.intro ? `<div class="meta" style="margin-bottom:6px">${esc(P.intro)}</div>` : '';
-  if(P.seeAlso) html += `<div class="note" style="margin-bottom:12px"><span class="jp">${esc(P.seeAlso)}</span> <button class="side-item" data-go="#/ref" style="display:inline-flex;width:auto;padding:4px 10px;margin-left:6px">📖 接续表</button></div>`;
-  (P.rules||[]).forEach(r=>{
-    html += `<div class="card"><h3 class="jp" style="margin-top:0">${esc(r.title)}</h3>`;
-    if(r.note) html += `<div class="meta" style="margin-bottom:6px">${esc(r.note)}</div>`;
-    html += ptable(r.cols, r.rows) + `</div>`;
-  });
-  if(P.footer) html += `<div class="meta" style="margin-top:10px">${esc(P.footer)}</div>`;
-  return html;
-}
 function viewKatsuyou(){
   setNav('common'); setHeader(LX('活用一覧 · 敬語レベルと活用形','Conjugation: Politeness Levels & Verb Forms'), true);
-  const KY = (DATA.common||{}).katsuyou;   // 变量名避开全局的 K2（N2汉字），别再互相遮蔽
-  if(!KY){ app.innerHTML='<div class="empty">通用参考数据加载中，请稍候…</div>'; return; }
-  let html = KY.intro ? `<div class="meta" style="margin-bottom:10px">${esc(KY.intro)}</div>` : '';
-  (KY.sections||[]).forEach(s=>{
-    html += `<div class="card"><h3 class="jp" style="margin-top:0">${esc(s.kind)} <span class="meta">${esc(s.kindEn)}</span></h3>`;
-    html += `<div class="meta jp" style="margin-bottom:6px">例：${esc(s.word)}</div>`;
-    html += ktable(s.cols, s.rows);
-    if(s.note) html += `<div class="note"><span class="jp">${esc(s.note)}</span></div>`;
-    html += `</div>`;
-  });
-  const V3 = KY.verb;
-  if(V3){
-    html += `<div class="card"><h3 class="jp" style="margin-top:0">${esc(V3.kind)} <span class="meta">${esc(V3.kindEn)}</span></h3>`;
-    html += `<div class="meta jp" style="margin-bottom:6px">例：${esc(V3.word)}</div>`;
-    (V3.tables||[]).forEach(t=>{
-      html += `<div class="meta jp" style="margin:10px 0 4px;font-weight:700">${esc(t.head)}</div>` + ktable(V3.cols, t.rows);
-    });
-    if(V3.note) html += `<div class="note"><span class="jp">${esc(V3.note)}</span></div>`;
-    if(V3.callout){
-      const c=V3.callout;
-      html += `<div class="ct-tip" style="margin-top:14px">💡 ${esc(c.title)}</div>`;
-      html += (c.chains||[]).map(ch=>`<div class="jp" style="margin:4px 0"><span style="color:var(--sub)">${esc(ch[0])}</span> → <span style="color:var(--sub)">${esc(ch[1])}</span> → <span style="color:var(--accent);font-weight:600">${esc(ch[2])}</span></div>`).join('');
-      if(c.suppletiveNote) html += `<div class="meta" style="margin-top:10px">${esc(c.suppletiveNote)}</div>`;
-      html += `<div class="opts">` + (c.suppletive||[]).map(p=>`<span class="jp">${esc(p[0])} → <b style="color:var(--accent)">${esc(p[1])}</b></span>`).join('') + `</div>`;
-      if(c.tip) html += `<div class="note" style="margin-top:8px"><span class="jp">${esc(c.tip)}</span></div>`;
-    }
-    html += `</div>`;
-  }
-  if(KY.footer) html += `<div class="meta" style="margin-top:10px">${esc(KY.footer)}</div>`;
-  app.innerHTML = html;
+  showCommonPage('katsuyou');
 }
-// 変形（接続の表示方法）は活用ページから独立させた：敬語レベルの表と
-// 一緒に置くと1ページが長すぎて、探している表にたどり着けない。
 function viewHenkei(){
   setNav('common'); setHeader(LX('動詞の変形ルール · 音便と組み合わせ','Verb Conjugation Rules'), true);
-  const HK = (DATA.common||{}).henkei;
-  if(!HK){ app.innerHTML='<div class="empty">通用参考数据加载中，请稍候…</div>'; return; }
-  app.innerHTML = renderHenkei(HK);
+  showCommonPage('henkei');
 }
 
 const DATA_FILES = {"grammar":"grammar.d15be04258.json","kanji":"kanji.e43232869e.json","vocab":"vocab.856eb48e32.json","n2grammar":"n2grammar.4e6157570a.json","n2vocab":"n2vocab.4e440284d9.json","n2kanji":"n2kanji.d9739ca8d4.json","n4grammar":"n4grammar.40e138ccdb.json","n4vocab":"n4vocab.026f711eb7.json","n4kanji":"n4kanji.655356d8e2.json","common":"common.aa13cae172.json"};
