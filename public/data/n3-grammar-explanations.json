@@ -33,7 +33,19 @@
             "cn": "能够得到／能请别人做"
           }
         ],
-        "trans_en": "Could you let me park my car here for just thirty minutes?"
+        "trans_en": "Could you let me park my car here for just thirty minutes?",
+        "option_translations_en": [
+          "Stopped by someone / being stopped",
+          "Let me stop / have someone stop (causative of transitive verb)",
+          "Have someone stop (causative of intransitive verb)",
+          "Suffer someone stopping (adversative passive)"
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 2,
@@ -72,7 +84,19 @@
             "cn": "打算改正、试着改正"
           }
         ],
-        "trans_en": "Why will you not try to correct your faults?"
+        "trans_en": "Why will you not try to correct your faults?",
+        "option_translations_en": [
+          "Incorrect volitional form (should be 「直そう」)",
+          "(Something) is about to return to its original state (volitional of intransitive verb)",
+          "Intend to correct / try to correct",
+          "Incorrect conjugation form"
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 3,
@@ -116,7 +140,19 @@
             "cn": "断开、挂断"
           }
         ],
-        "trans_en": "Just as I was about to talk a little longer, the call was disconnected."
+        "trans_en": "Just as I was about to talk a little longer, the call was disconnected.",
+        "option_translations_en": [
+          "Have someone cut/disconnect",
+          "Cut/disconnected in advance (colloquial contraction of 「切っておいた」)",
+          "Must cut/disconnect",
+          "Got cut off / line went dead (colloquial of 「切れてしまった」)"
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 4,
@@ -160,7 +196,19 @@
             "cn": "减少（促音形）"
           }
         ],
-        "trans_en": "As you can see from this graph, the population is decreasing."
+        "trans_en": "As you can see from this graph, the population is decreasing.",
+        "option_translations_en": [
+          "For the purpose of... / Because of...",
+          "So as to be able to... / Like...",
+          "In a way fitting for... / Characteristic of...",
+          "It seems... / It looks like..."
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 5,
@@ -199,7 +247,19 @@
             "cn": "节省更多资金"
           }
         ],
-        "trans_en": "I am saving money so that I can buy a new car."
+        "trans_en": "I am saving money so that I can buy a new car.",
+        "option_translations_en": [
+          "Cannot buy",
+          "Buy",
+          "Do not buy",
+          "Can buy"
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 6,
@@ -248,7 +308,19 @@
             "cn": "请……"
           }
         ],
-        "trans_en": "Please style my hair like the hairstyle in this photograph."
+        "trans_en": "Please style my hair like the hairstyle in this photograph.",
+        "option_translations_en": [
+          "Like... (attributive form)",
+          "Like... (adverbial form)",
+          "The one that is like... (does not fit grammatically here)",
+          "Like... (colloquial of 「みたいに」)"
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 7,
@@ -292,7 +364,19 @@
             "cn": "死（拨音形）"
           }
         ],
-        "trans_en": "If you do not take proper care of the goldfish, they will die."
+        "trans_en": "If you do not take proper care of the goldfish, they will die.",
+        "option_translations_en": [
+          "Incorrect phonological form",
+          "Incorrect phonological form",
+          "Died (colloquial of 「死んでしまった」)",
+          "Will die (colloquial of 「死んでしまう」)"
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 8,
@@ -336,7 +420,19 @@
             "cn": "准备好了"
           }
         ],
-        "trans_en": "We are going to run out of time. I have to get ready quickly!"
+        "trans_en": "We are going to run out of time. I have to get ready quickly!",
+        "option_translations_en": [
+          "If one is made to...",
+          "If one does... (colloquial of てしまう)",
+          "Must do / have to do",
+          "If prepared in advance..."
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 9,
@@ -380,7 +476,19 @@
             "cn": "日本人"
           }
         ],
-        "trans_en": "Who is a Japanese person who is well known in your country?"
+        "trans_en": "Who is a Japanese person who is well known in your country?",
+        "option_translations_en": [
+          "Is told / is notified",
+          "Is notifying / telling",
+          "Is well known",
+          "Make someone notify (redundant causative, inappropriate form)"
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 10,
@@ -414,7 +522,19 @@
             "cn": "打打"
           }
         ],
-        "trans_en": "I tried to take a shower, but no water came out."
+        "trans_en": "I tried to take a shower, but no water came out.",
+        "option_translations_en": [
+          "Incorrect conjugation form",
+          "Let's take a shower / intend to take a shower (volitional of 「浴びる」)",
+          "Incorrect conjugation form",
+          "Incorrect conjugation form"
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 11,
@@ -448,7 +568,19 @@
             "cn": "折叠（连用形）"
           }
         ],
-        "trans_en": "Fold the origami according to the diagram."
+        "trans_en": "Fold the origami according to the diagram.",
+        "option_translations_en": [
+          "With a feeling of...",
+          "Like... (attributive form)",
+          "In a way fitting for... / Characteristic of...",
+          "Like... (adverbial form)"
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 12,
@@ -492,7 +624,19 @@
             "cn": "使用"
           }
         ],
-        "trans_en": "Try to use the Japanese you have learned right away."
+        "trans_en": "Try to use the Japanese you have learned right away.",
+        "option_translations_en": [
+          "Use (て-form)",
+          "Let's use / intend to use",
+          "Do not use",
+          "Make an effort to use / be required to use"
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 13,
@@ -531,7 +675,19 @@
             "cn": "薄薄地、淡淡地"
           }
         ],
-        "trans_en": "This milk is a little weak and tastes watery."
+        "trans_en": "This milk is a little weak and tastes watery.",
+        "option_translations_en": [
+          "Too watery / diluted like water",
+          "Not too watery / not diluted",
+          "The way water should be",
+          "Not the way water should be"
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 14,
@@ -575,7 +731,19 @@
             "cn": "打开（电视、电灯等）"
           }
         ],
-        "trans_en": "If you are not going to watch television, turn it off and leave it off."
+        "trans_en": "If you are not going to watch television, turn it off and leave it off.",
+        "option_translations_en": [
+          "Left on / in an on state (colloquial contraction of 「ついておいて」, unnatural here)",
+          "Turn off in advance / leave off (colloquial contraction of 「消しておいて」)",
+          "Turn on in advance / keep on (colloquial contraction of 「つけておいて」)",
+          "Go out / be in an off state (colloquial contraction of 「消えておいて」, unnatural here)"
+        ],
+        "why_en": [
+          "「ついといて」is a colloquial contraction of 「ついておいて」. 「つく」is an intransitive verb meaning the TV is in an on state, and cannot express asking someone to turn it off.",
+          "「消しといて」is a colloquial contraction of 「消しておいて」. 「消す」in the context of a TV means 'turn off,' which fits both grammatically and semantically with 'if not watching, turn it off.'",
+          "「つけといて」is a colloquial contraction of 「つけておいて」, meaning 'turn on in advance / keep on,' which is the opposite of what is requested after 'not watching TV.'",
+          "「消えといて」is a colloquial contraction of 「消えておいて」. 「消える」is an intransitive verb meaning the TV turns off by itself or is in an off state; here a transitive verb 「消す」is needed to ask someone to turn off the TV."
+        ]
       },
       {
         "n": 15,
@@ -614,7 +782,19 @@
             "cn": "去（促音形）"
           }
         ],
-        "trans_en": "You are in the way standing there, so go over there."
+        "trans_en": "You are in the way standing there, so go over there.",
+        "option_translations_en": [
+          "If let stay",
+          "If made to stay there (adversative passive nuance)",
+          "If not let stay / must let stay",
+          "If cannot stay"
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       }
     ],
     "mondai2": [
@@ -654,7 +834,19 @@
             "cn": "出口"
           }
         ],
-        "trans_en": "The cars manufactured here are exported to many countries."
+        "trans_en": "The cars manufactured here are exported to many countries.",
+        "option_translations_en": [
+          "In many countries (as topic)",
+          "Cars (as topic)",
+          "Export",
+          "Manufactured"
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 17,
@@ -702,7 +894,19 @@
             "cn": "好像……"
           }
         ],
-        "trans_en": "That student seems to have become cheerful since becoming able to understand Japanese."
+        "trans_en": "That student seems to have become cheerful since becoming able to understand Japanese.",
+        "option_translations_en": [
+          "Became cheerful",
+          "So as to be able to... / Like...",
+          "Since becoming...",
+          "Understand / can understand"
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 18,
@@ -745,7 +949,19 @@
             "cn": "弄丢、失去（连用形）"
           }
         ],
-        "trans_en": "I wrote a note in advance so that I would not forget, but then I lost the note."
+        "trans_en": "I wrote a note in advance so that I would not forget, but then I lost the note.",
+        "option_translations_en": [
+          "Even though... / Although...",
+          "Wrote a note in advance (colloquial contraction of 「メモしておいた」)",
+          "Because it won't work / because of trouble",
+          "That note (as object)"
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 19,
@@ -788,7 +1004,19 @@
             "cn": "孩子"
           }
         ],
-        "trans_en": "This child talks like an adult and does not seem like a child at all."
+        "trans_en": "This child talks like an adult and does not seem like a child at all.",
+        "option_translations_en": [
+          "Adult (as object)",
+          "Child",
+          "Adopt a way of speaking",
+          "Like... (attributive form)"
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 20,
@@ -851,7 +1079,19 @@
             "cn": "做完／不慎做了（连用形）"
           }
         ],
-        "trans_en": "At the sale, the shirt I had intended to buy was bought by someone else."
+        "trans_en": "At the sale, the shirt I had intended to buy was bought by someone else.",
+        "option_translations_en": [
+          "Shirt (as object)",
+          "Was bought",
+          "Had originally intended / had thought",
+          "By someone else / to someone else"
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       }
     ],
     "mondai3": [
@@ -892,7 +1132,19 @@
             "cn": "能去／去（命令形）"
           }
         ],
-        "trans_en": "I tried to move farther inside the train carriage, but I could not get through."
+        "trans_en": "I tried to move farther inside the train carriage, but I could not get through.",
+        "option_translations_en": [
+          "Became able to go / started going",
+          "Tried to go / was about to go",
+          "Had someone go",
+          "Was gone (adversative passive) / went (honorific)"
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 22,
@@ -931,7 +1183,19 @@
             "cn": "移动一下"
           }
         ],
-        "trans_en": "This was because the people standing by the doors would not move."
+        "trans_en": "This was because the people standing by the doors would not move.",
+        "option_translations_en": [
+          "Had someone move / was able to move",
+          "Was moved (adversative passive)",
+          "Became able to move",
+          "Would not move / showed no intention of moving"
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 23,
@@ -980,7 +1244,19 @@
             "cn": "插入到里面"
           }
         ],
-        "trans_en": "After I said, “Please let me through,” I finally managed to squeeze inside."
+        "trans_en": "After I said, “Please let me through,” I finally managed to squeeze inside.",
+        "option_translations_en": [
+          "Do not enter",
+          "Please let me in",
+          "Must enter / if not entering",
+          "Was entered (adversative passive)"
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 24,
@@ -1043,7 +1319,19 @@
             "cn": "站立（促音形）"
           }
         ],
-        "trans_en": "When the train is crowded, it is difficult to get off even if you want to, so that may be why people stand near the doors."
+        "trans_en": "When the train is crowded, it is difficult to get off even if you want to, so that may be why people stand near the doors.",
+        "option_translations_en": [
+          "Got off",
+          "Incorrect volitional form (should be 「降りよう」)",
+          "Intend to get off / want to get off",
+          "Get off (polite form)"
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 25,
@@ -1101,7 +1389,19 @@
             "cn": "想法、感受"
           }
         ],
-        "trans_en": "However, people who are about to board should also be considered, and passengers should move as far inside as possible."
+        "trans_en": "However, people who are about to board should also be considered, and passengers should move as far inside as possible.",
+        "option_translations_en": [
+          "Enter",
+          "Put in / let in",
+          "Do not enter",
+          "Cannot enter / not let in"
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       }
     ]
   },
@@ -1144,7 +1444,19 @@
             "cn": "插入到里面"
           }
         ],
-        "trans_en": "Only adults are allowed to enter this club."
+        "trans_en": "Only adults are allowed to enter this club.",
+        "option_translations_en": [
+          "Or rather... / to be more precise...",
+          "Due to... / through... / according to...",
+          "Always... / nothing but...",
+          "Only... (followed by negative)"
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 2,
@@ -1183,7 +1495,19 @@
             "cn": "弄错（连用形）"
           }
         ],
-        "trans_en": "My grandfather always gets my name wrong."
+        "trans_en": "My grandfather always gets my name wrong.",
+        "option_translations_en": [
+          "Always... / nothing but...",
+          "Even... / as long as...",
+          "It is precisely... (emphatic)",
+          "Only / merely"
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 3,
@@ -1227,7 +1551,19 @@
             "cn": "请、请用"
           }
         ],
-        "trans_en": "Please direct enquiries about products here."
+        "trans_en": "Please direct enquiries about products here.",
+        "option_translations_en": [
+          "Based on... / close to...",
+          "About... (after 「に」) / follow",
+          "Related to...",
+          "Even... / as long as..."
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 4,
@@ -1266,7 +1602,19 @@
             "cn": "令人惊的是"
           }
         ],
-        "trans_en": "I knew it was cold there, but I never imagined it would be forty degrees below zero."
+        "trans_en": "I knew it was cold there, but I never imagined it would be forty degrees below zero.",
+        "option_translations_en": [
+          "Degree of coldness / coldness (noun)",
+          "Incorrect noun form",
+          "Cold (ren'yōkei / continuative form)",
+          "Cold"
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 5,
@@ -1305,7 +1653,19 @@
             "cn": "能、做好（词干）"
           }
         ],
-        "trans_en": "She has never even made tea, so there is no way she can cook."
+        "trans_en": "She has never even made tea, so there is no way she can cook.",
+        "option_translations_en": [
+          "Only / merely",
+          "Always... / nothing but...",
+          "Even... / as long as...",
+          "It is precisely... (emphatic)"
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 6,
@@ -1349,7 +1709,19 @@
             "cn": "喜欢"
           }
         ],
-        "trans_en": "I like watching baseball and soccer."
+        "trans_en": "I like watching baseball and soccer.",
+        "option_translations_en": [
+          "Nominalizes the preceding clause as object",
+          "Nominalizes the preceding clause as subject",
+          "Even though... / although...",
+          "Because..."
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 7,
@@ -1398,7 +1770,19 @@
             "cn": "即使被说（被动+ても）"
           }
         ],
-        "trans_en": "The doctor told me to chew my food slowly and thoroughly."
+        "trans_en": "The doctor told me to chew my food slowly and thoroughly.",
+        "option_translations_en": [
+          "Eat (dictionary form)",
+          "Eat (ren'yōkei / continuative form)",
+          "Eat (て-form)",
+          "Eat! (imperative form)"
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 8,
@@ -1442,7 +1826,19 @@
             "cn": "试试看"
           }
         ],
-        "trans_en": "Do not remain silent; say what you want to say."
+        "trans_en": "Do not remain silent; say what you want to say.",
+        "option_translations_en": [
+          "If not... / must...",
+          "Let someone do / please allow me to do",
+          "Try doing (used for urging)",
+          "Do completely / finish doing (colloquial contraction of 「てしまって」)"
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 9,
@@ -1481,7 +1877,19 @@
             "cn": "安静"
           }
         ],
-        "trans_en": "The advantage of this washing machine is that it is quiet."
+        "trans_en": "The advantage of this washing machine is that it is quiet.",
+        "option_translations_en": [
+          "Degree of quietness (noun form of 「静か」)",
+          "Incorrect noun form",
+          "Seems quiet (word formation is inappropriate here)",
+          "Feels somewhat quiet"
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 10,
@@ -1530,7 +1938,19 @@
             "cn": "请……"
           }
         ],
-        "trans_en": "Manager, please tell the residents upstairs not to make noise late at night."
+        "trans_en": "Manager, please tell the residents upstairs not to make noise late at night.",
+        "option_translations_en": [
+          "Make an effort to... / form a habit of...",
+          "After becoming able to... / because of becoming...",
+          "Tell someone to... / ask someone to...",
+          "Do not try to..."
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 11,
@@ -1569,7 +1989,19 @@
             "cn": "深度、深沉感"
           }
         ],
-        "trans_en": "I like blue. By blue, however, I mean a deep shade of blue."
+        "trans_en": "I like blue. By blue, however, I mean a deep shade of blue.",
+        "option_translations_en": [
+          "Although... / but...",
+          "Rather than... it's more like...",
+          "Speaking of... / when it comes to...",
+          "Speaking of..."
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 12,
@@ -1613,7 +2045,19 @@
             "cn": "困、想睡"
           }
         ],
-        "trans_en": "According to the precautions, this medicine may make you drowsy."
+        "trans_en": "According to the precautions, this medicine may make you drowsy.",
+        "option_translations_en": [
+          "Due to... / through... / according to...",
+          "According to...",
+          "Caused by... / based on...",
+          "About..."
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 13,
@@ -1662,7 +2106,19 @@
             "cn": "延误、迟到"
           }
         ],
-        "trans_en": "As a result of this accident, delays are occurring on all lines."
+        "trans_en": "As a result of this accident, delays are occurring on all lines.",
+        "option_translations_en": [
+          "Due to... / through... / according to...",
+          "According to...",
+          "Due to... / through...",
+          "Caused by... / based on..."
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 14,
@@ -1711,7 +2167,19 @@
             "cn": "可能……"
           }
         ],
-        "trans_en": "We will not know what tomorrow holds until tomorrow comes. Perhaps life is meaningful precisely because we do not know."
+        "trans_en": "We will not know what tomorrow holds until tomorrow comes. Perhaps life is meaningful precisely because we do not know.",
+        "option_translations_en": [
+          "Although I understand",
+          "Because I understand (with explanatory tone)",
+          "Precisely because I don't know",
+          "If only I didn't know (unnatural)"
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 15,
@@ -1775,7 +2243,19 @@
             "cn": "保护和培养"
           }
         ],
-        "trans_en": "This elementary school is open to local residents. In this way, the whole community watches over and raises the children together."
+        "trans_en": "This elementary school is open to local residents. In this way, the whole community watches over and raises the children together.",
+        "option_translations_en": [
+          "Accordingly / based on that",
+          "Regarding this matter",
+          "In this way / by doing so",
+          "On that point however..."
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       }
     ],
     "mondai2": [
@@ -1825,7 +2305,19 @@
             "cn": "一个人"
           }
         ],
-        "trans_en": "Only one of the teachers can speak French."
+        "trans_en": "Only one of the teachers can speak French.",
+        "option_translations_en": [
+          "One person",
+          "Only... (followed by negative)",
+          "Person (as topic)",
+          "Can speak / able to speak"
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 17,
@@ -1858,7 +2350,19 @@
             "cn": "谎话、假话"
           }
         ],
-        "trans_en": "His claim that he had seen a UFO was a lie."
+        "trans_en": "His claim that he had seen a UFO was a lie.",
+        "option_translations_en": [
+          "The so-called... / what is called...",
+          "Tried doing / saw",
+          "...is (topic or contrast marker)",
+          "...'s (nominalizes the preceding clause)"
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 18,
@@ -1911,7 +2415,19 @@
             "cn": "忘记（连用形）"
           }
         ],
-        "trans_en": "I forgot to remind the students to bring dictionaries."
+        "trans_en": "I forgot to remind the students to bring dictionaries.",
+        "option_translations_en": [
+          "Nominalizes the preceding clause as object",
+          "So as to be able to... / like...",
+          "Bring",
+          "Tell / ask"
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 19,
@@ -1959,7 +2475,19 @@
             "cn": "注意、小心"
           }
         ],
-        "trans_en": "I was warned not to turn the television up too loud late at night."
+        "trans_en": "I was warned not to turn the television up too loud late at night.",
+        "option_translations_en": [
+          "Television (as object)",
+          "Do not watch",
+          "Please do... for me / please do... on my behalf",
+          "At... volume / with... sound"
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 20,
@@ -2002,7 +2530,19 @@
             "cn": "担心"
           }
         ],
-        "trans_en": "This earthquake will not cause a tsunami, so there is no need to worry."
+        "trans_en": "This earthquake will not cause a tsunami, so there is no need to worry.",
+        "option_translations_en": [
+          "Worry",
+          "Tsunami's (attributive)",
+          "Caused by... / based on...",
+          "To / at / for (particle)"
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       }
     ],
     "mondai3": [
@@ -2053,7 +2593,19 @@
             "cn": "可能……"
           }
         ],
-        "trans_en": "When people think of dogs, some may feel that keeping one is simply troublesome."
+        "trans_en": "When people think of dogs, some may feel that keeping one is simply troublesome.",
+        "option_translations_en": [
+          "According to...",
+          "The so-called... / what is called...",
+          "Rather than... it's more like...",
+          "Speaking of..."
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 22,
@@ -2102,7 +2654,19 @@
             "cn": "可能……"
           }
         ],
-        "trans_en": "However, that is not the whole story. Dogs can work too."
+        "trans_en": "However, that is not the whole story. Dogs can work too.",
+        "option_translations_en": [
+          "That's not the case",
+          "It seems that is indeed the case",
+          "Think that is probably so",
+          "I hear that is so"
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 23,
@@ -2166,7 +2730,19 @@
             "cn": "玩游戏"
           }
         ],
-        "trans_en": "Although I call it work, it is only something simple such as fetching the newspaper."
+        "trans_en": "Although I call it work, it is only something simple such as fetching the newspaper.",
+        "option_translations_en": [
+          "Although... / but...",
+          "Even... / as long as...",
+          "Only... (followed by negative)",
+          "Due to... / through... / according to..."
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 24,
@@ -2230,7 +2806,19 @@
             "cn": "玩游戏"
           }
         ],
-        "trans_en": "Rather than work, it probably looks more like play."
+        "trans_en": "Rather than work, it probably looks more like play.",
+        "option_translations_en": [
+          "Always... / nothing but...",
+          "Rather than... it's more like...",
+          "It is precisely... (emphatic)",
+          "About..."
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 25,
@@ -2294,7 +2882,19 @@
             "cn": "工作"
           }
         ],
-        "trans_en": "That may be true of ordinary dogs, but there are also excellent working dogs that truly assist people with visual or hearing impairments."
+        "trans_en": "That may be true of ordinary dogs, but there are also excellent working dogs that truly assist people with visual or hearing impairments.",
+        "option_translations_en": [
+          "About the matter of...",
+          "The so-called... / what is called...",
+          "Always... / nothing but...",
+          "Although... / but..."
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       }
     ]
   },
@@ -2337,7 +2937,19 @@
             "cn": "可爱"
           }
         ],
-        "trans_en": "That child’s shoes make a sound with every step. How cute."
+        "trans_en": "That child’s shoes make a sound with every step. How cute.",
+        "option_translations_en": [
+          "Every time...",
+          "While doing... / on the occasion of...",
+          "According to... / as...",
+          "As it is / left as is"
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 2,
@@ -2376,7 +2988,19 @@
             "cn": "得到／请别人做（连用形）"
           }
         ],
-        "trans_en": "I cannot stop what I am doing right now. Could we talk later?"
+        "trans_en": "I cannot stop what I am doing right now. Could we talk later?",
+        "option_translations_en": [
+          "Incorrect form (should be 「もらいたい」)",
+          "Want me to... (unnatural conjugation here)",
+          "Want the other person to do something for me",
+          "Could you do... for me / won't you do... for me"
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 3,
@@ -2420,7 +3044,19 @@
             "cn": "能跳舞／跳舞（命令形）"
           }
         ],
-        "trans_en": "You have never jumped before, yet you jump very well."
+        "trans_en": "You have never jumped before, yet you jump very well.",
+        "option_translations_en": [
+          "For... yet...",
+          "Should...",
+          "Just as... / according to...",
+          "Rather than... it's more like..."
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 4,
@@ -2469,7 +3105,19 @@
             "cn": "储存更多"
           }
         ],
-        "trans_en": "Travelling now is not realistic. If I were to go, it would have to be after I had saved enough money."
+        "trans_en": "Travelling now is not realistic. If I were to go, it would have to be after I had saved enough money.",
+        "option_translations_en": [
+          "When I go... / if I go",
+          "If I go",
+          "After going / if going",
+          "If I were to go"
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 5,
@@ -2508,7 +3156,19 @@
             "cn": "老鼠"
           }
         ],
-        "trans_en": "The moment I opened the box, a mouse ran out."
+        "trans_en": "The moment I opened the box, a mouse ran out.",
+        "option_translations_en": [
+          "Too... / due to being too...",
+          "It makes one... / deciding to...",
+          "The moment... / as soon as...",
+          "In the end... / as a result... (often with undesirable outcome)"
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 6,
@@ -2552,7 +3212,19 @@
             "cn": "说话方式"
           }
         ],
-        "trans_en": "The characters a teacher writes on the board should be neat."
+        "trans_en": "The characters a teacher writes on the board should be neat.",
+        "option_translations_en": [
+          "Should be...",
+          "Nothing more than... / merely...",
+          "...unbearably / intolerably",
+          "Depends on... / the case is..."
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 7,
@@ -2596,7 +3268,19 @@
             "cn": "记住（连用形）"
           }
         ],
-        "trans_en": "No matter how many times I hear that person’s name, I cannot remember it."
+        "trans_en": "No matter how many times I hear that person’s name, I cannot remember it.",
+        "option_translations_en": [
+          "If I hear / after hearing",
+          "Even if I hear",
+          "Every time I hear / if I hear then...",
+          "If I hear / as soon as I hear..."
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 8,
@@ -2645,7 +3329,19 @@
             "cn": "捡（促音形）"
           }
         ],
-        "trans_en": "I used to live by the sea, so I often collected shells and things like that."
+        "trans_en": "I used to live by the sea, so I often collected shells and things like that.",
+        "option_translations_en": [
+          "Really want to do...",
+          "Even to the point of doing...",
+          "No wonder one doesn't / meaning one doesn't",
+          "Used to do... (past habit)"
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 9,
@@ -2679,7 +3375,19 @@
             "cn": "行走的路上"
           }
         ],
-        "trans_en": "He walked through the rain without an umbrella."
+        "trans_en": "He walked through the rain without an umbrella.",
+        "option_translations_en": [
+          "Do... and... (without doing)",
+          "Incorrect form (should be 「ささずに」 for 「傘を差す」)",
+          "Incorrect conjugation form",
+          "Without opening (an umbrella) and..."
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 10,
@@ -2728,7 +3436,19 @@
             "cn": "洗（促音形）"
           }
         ],
-        "trans_en": "While he was taking a shower, he washed his shirt as well."
+        "trans_en": "While he was taking a shower, he washed his shirt as well.",
+        "option_translations_en": [
+          "While doing... / on the occasion of...",
+          "Every time...",
+          "Since... / only...",
+          "According to... / as..."
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 11,
@@ -2762,7 +3482,19 @@
             "cn": "注意、小心"
           }
         ],
-        "trans_en": "As your friend, I would like to warn you."
+        "trans_en": "As your friend, I would like to warn you.",
+        "option_translations_en": [
+          "For... / as for...",
+          "As...",
+          "If... / supposing...",
+          "From the standpoint of..."
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 12,
@@ -2821,7 +3553,19 @@
             "cn": "做完／不慎做了（促音形）"
           }
         ],
-        "trans_en": "I got off the train with my luggage still on the luggage rack."
+        "trans_en": "I got off the train with my luggage still on the luggage rack.",
+        "option_translations_en": [
+          "Leave (ren'yōkei / continuative form)",
+          "Leave (て-form)",
+          "Leave (dictionary form)",
+          "Left"
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 13,
@@ -2865,7 +3609,19 @@
             "cn": "打开、点着（连用形）"
           }
         ],
-        "trans_en": "Oh no, I left the gas burner on in the kitchen."
+        "trans_en": "Oh no, I left the gas burner on in the kitchen.",
+        "option_translations_en": [
+          "Turn on / light (ren'yōkei / continuative form)",
+          "Turned on / lit (for appliances, fire)",
+          "(Fire or appliance) is on / lit (intransitive)",
+          "Turn on / light / install (て-form)"
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 14,
@@ -2909,7 +3665,19 @@
             "cn": "改变（连用形）"
           }
         ],
-        "trans_en": "So your Japanese is good because you have lived in Japan for ten years. Even so, it is indistinguishable from a native Japanese person’s."
+        "trans_en": "So your Japanese is good because you have lived in Japan for ten years. Even so, it is indistinguishable from a native Japanese person’s.",
+        "option_translations_en": [
+          "Every time it's like this",
+          "On that point however...",
+          "If that is the case",
+          "Even so / be that as it may"
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 15,
@@ -2958,7 +3726,19 @@
             "cn": "应该是吧"
           }
         ],
-        "trans_en": "He returned to his country yesterday, so he should no longer be in Japan."
+        "trans_en": "He returned to his country yesterday, so he should no longer be in Japan.",
+        "option_translations_en": [
+          "Should be here",
+          "Should not be here",
+          "Cannot possibly not be here",
+          "Should not be here"
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       }
     ],
     "mondai2": [
@@ -2998,7 +3778,19 @@
             "cn": "摇摇"
           }
         ],
-        "trans_en": "There is no way he does not know; he is only pretending not to know."
+        "trans_en": "There is no way he does not know; he is only pretending not to know.",
+        "option_translations_en": [
+          "Does not know",
+          "Just... / merely...",
+          "Is doing / has been doing",
+          "Pretend for a moment"
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 17,
@@ -3036,7 +3828,19 @@
             "cn": "做完／不慎做了（促音形）"
           }
         ],
-        "trans_en": "Although I intended to stay awake and study until morning, I fell asleep."
+        "trans_en": "Although I intended to stay awake and study until morning, I fell asleep.",
+        "option_translations_en": [
+          "Study",
+          "Intend / plan",
+          "Do not sleep",
+          "Even though it was the case"
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 18,
@@ -3079,7 +3883,19 @@
             "cn": "请……"
           }
         ],
-        "trans_en": "Please do not speak to me while I am counting."
+        "trans_en": "Please do not speak to me while I am counting.",
+        "option_translations_en": [
+          "Be / exist",
+          "Count (て-form)",
+          "Do not talk to me",
+          "While... is being done"
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 19,
@@ -3137,7 +3953,19 @@
             "cn": "能、做好（词干）"
           }
         ],
-        "trans_en": "Although I should have done it exactly as I was taught, I did not do it well."
+        "trans_en": "Although I should have done it exactly as I was taught, I did not do it well.",
+        "option_translations_en": [
+          "Should be",
+          "According to... / as...",
+          "Made",
+          "Had someone do... / received"
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 20,
@@ -3180,7 +4008,19 @@
             "cn": "活下去的"
           }
         ],
-        "trans_en": "Now that the children have grown up and left home, only my spouse and I live together."
+        "trans_en": "Now that the children have grown up and left home, only my spouse and I live together.",
+        "option_translations_en": [
+          "Husband and wife",
+          "Only... / since...",
+          "We",
+          "Two people"
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       }
     ],
     "mondai3": [
@@ -3220,7 +4060,19 @@
             "cn": "渡过的路"
           }
         ],
-        "trans_en": "Recently, my wife has become afraid of crossing intersections."
+        "trans_en": "Recently, my wife has become afraid of crossing intersections.",
+        "option_translations_en": [
+          "Is not afraid (third-person expression)",
+          "Feels afraid (third-person expression)",
+          "Make someone afraid",
+          "Is not afraid / not frightening"
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 22,
@@ -3259,7 +4111,19 @@
             "cn": "许多"
           }
         ],
-        "trans_en": "This is because more and more cars do not stop where they are supposed to."
+        "trans_en": "This is because more and more cars do not stop where they are supposed to.",
+        "option_translations_en": [
+          "Should...",
+          "Intend / plan",
+          "Should be the case",
+          "Just as... / according to..."
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 23,
@@ -3298,7 +4162,19 @@
             "cn": "生气"
           }
         ],
-        "trans_en": "In addition, I get angry every time I drive."
+        "trans_en": "In addition, I get angry every time I drive.",
+        "option_translations_en": [
+          "Every time...",
+          "According to... / as...",
+          "The moment... / as soon as...",
+          "While doing... / on the occasion of..."
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 24,
@@ -3357,7 +4233,19 @@
             "cn": "危险"
           }
         ],
-        "trans_en": "Some cars turn immediately after switching on their indicator; it is dangerous if the car behind is not paying attention."
+        "trans_en": "Some cars turn immediately after switching on their indicator; it is dangerous if the car behind is not paying attention.",
+        "option_translations_en": [
+          "Left unfinished and...",
+          "After doing... and then...",
+          "The moment one does...",
+          "Every time one does..."
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 25,
@@ -3410,7 +4298,19 @@
             "cn": "希望、想要"
           }
         ],
-        "trans_en": "I want drivers to observe rules and manners strictly."
+        "trans_en": "I want drivers to observe rules and manners strictly.",
+        "option_translations_en": [
+          "Want someone to observe / follow",
+          "Want someone not to observe / follow",
+          "Should observe / follow",
+          "Intend to observe / follow"
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       }
     ]
   },
@@ -3478,7 +4378,19 @@
             "cn": "得到／请别人做（促音形）"
           }
         ],
-        "trans_en": "When my friend stayed at my home, I had him sleep on the sofa instead of the bed."
+        "trans_en": "When my friend stayed at my home, I had him sleep on the sofa instead of the bed.",
+        "option_translations_en": [
+          "Instead of...",
+          "Instead of...",
+          "Compared with... but...",
+          "Due to... (negative cause)"
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 2,
@@ -3527,7 +4439,19 @@
             "cn": "及时到达。"
           }
         ],
-        "trans_en": "Thanks to your giving me a ride, I caught the train."
+        "trans_en": "Thanks to your giving me a ride, I caught the train.",
+        "option_translations_en": [
+          "Thanks to...",
+          "Compared with... but... / although... but...",
+          "While doing... / on the occasion of...",
+          "Instead of... / in exchange for..."
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 3,
@@ -3586,7 +4510,19 @@
             "cn": "另一个人"
           }
         ],
-        "trans_en": "Even if it is meant as a joke, the person it is said to may be hurt. Therefore, it is better not to say to others what you would not want to hear yourself."
+        "trans_en": "Even if it is meant as a joke, the person it is said to may be hurt. Therefore, it is better not to say to others what you would not want to hear yourself.",
+        "option_translations_en": [
+          "Should say... / the so-called...",
+          "Had better not say...",
+          "How much one can say! (exclamatory)",
+          "It's not that one doesn't say"
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 4,
@@ -3625,7 +4561,19 @@
             "cn": "好吃、美味"
           }
         ],
-        "trans_en": "Although this cake costs only 100 yen, it tastes quite good."
+        "trans_en": "Although this cake costs only 100 yen, it tastes quite good.",
+        "option_translations_en": [
+          "Even though... but...",
+          "Compared with... but...",
+          "...or something (showing disdain or giving an example)",
+          "Because... (colloquial, explanatory)"
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 5,
@@ -3664,7 +4612,19 @@
             "cn": "从……到……（大致范围）"
           }
         ],
-        "trans_en": "It rained so heavily that the river overflowed and houses were washed away."
+        "trans_en": "It rained so heavily that the river overflowed and houses were washed away.",
+        "option_translations_en": [
+          "As... changes",
+          "As long as... / within the scope of...",
+          "To the extent of... / about",
+          "During... / within..."
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 6,
@@ -3708,7 +4668,19 @@
             "cn": "即使被说（被动+ても）"
           }
         ],
-        "trans_en": "As the saying goes, the weaker a dog is, the more it barks."
+        "trans_en": "As the saying goes, the weaker a dog is, the more it barks.",
+        "option_translations_en": [
+          "To the extent of... / the more... the more...",
+          "To the extent of... / about",
+          "Even... / as long as...",
+          "As long as... / within the scope of..."
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 7,
@@ -3752,7 +4724,19 @@
             "cn": "洗"
           }
         ],
-        "trans_en": "The washing machine broke, so I have no choice but to wash the clothes by hand."
+        "trans_en": "The washing machine broke, so I have no choice but to wash the clothes by hand.",
+        "option_translations_en": [
+          "How...! (exclamatory)",
+          "How could... / absolutely not... (strong negation)",
+          "Have no choice but to...",
+          "No need to... / nothing is more... than..."
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 8,
@@ -3791,7 +4775,19 @@
             "cn": "喜欢"
           }
         ],
-        "trans_en": "Was it coffee or tea that you liked?"
+        "trans_en": "Was it coffee or tea that you liked?",
+        "option_translations_en": [
+          "Thing / used for general statements or exclamations",
+          "It is precisely... (emphatic)",
+          "Was it...? (recalling / confirming)",
+          "How...! (exclamatory)"
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 9,
@@ -3845,7 +4841,19 @@
             "cn": "这就是为什么"
           }
         ],
-        "trans_en": "I heard from the teacher that the examination format will change next year."
+        "trans_en": "I heard from the teacher that the examination format will change next year.",
+        "option_translations_en": [
+          "How could... / absolutely not... (strong negation)",
+          "Have no choice but to...",
+          "Should... / the fact that...",
+          "In other words... / it is said that..."
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 10,
@@ -3889,7 +4897,19 @@
             "cn": "上去吧"
           }
         ],
-        "trans_en": "I wonder how many years it will take to complete that building."
+        "trans_en": "I wonder how many years it will take to complete that building.",
+        "option_translations_en": [
+          "How...! (exclamatory)",
+          "Should... / the fact that...",
+          "How could... / absolutely not... (strong negation)",
+          "Have no choice but to..."
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 11,
@@ -3948,7 +4968,19 @@
             "cn": "高兴的"
           }
         ],
-        "trans_en": "Nothing makes me happier than seeing students steadily remember what I have taught them."
+        "trans_en": "Nothing makes me happier than seeing students steadily remember what I have taught them.",
+        "option_translations_en": [
+          "Should... / the fact that...",
+          "It's not the case that... (colloquial)",
+          "How...! (exclamatory)",
+          "No need to... / nothing is more... than..."
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 12,
@@ -4002,7 +5034,19 @@
             "cn": "……自不用说、当然"
           }
         ],
-        "trans_en": "If you cannot do it, you should not say that you can."
+        "trans_en": "If you cannot do it, you should not say that you can.",
+        "option_translations_en": [
+          "Even though... but...",
+          "To think that... / ...or something (showing surprise or disdain)",
+          "...or something (showing disdain or giving an example)",
+          "Compared with... but... / although... but..."
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 13,
@@ -4046,7 +5090,19 @@
             "cn": "好好地／经常"
           }
         ],
-        "trans_en": "Leaving the body aside, the mind seems to become sharper the more it is used."
+        "trans_en": "Leaving the body aside, the mind seems to become sharper the more it is used.",
+        "option_translations_en": [
+          "To the extent of... / about",
+          "To the extent of... / the more... the more...",
+          "As long as... / within the scope of...",
+          "Even... / as long as..."
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 14,
@@ -4090,7 +5146,19 @@
             "cn": "失望"
           }
         ],
-        "trans_en": "You can try hard again next time. There is no need to be disappointed."
+        "trans_en": "You can try hard again next time. There is no need to be disappointed.",
+        "option_translations_en": [
+          "Should... / the fact that...",
+          "How could... / absolutely not... (strong negation)",
+          "Although... but...",
+          "No need to... / nothing is more... than..."
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 15,
@@ -4129,7 +5197,19 @@
             "cn": "工作"
           }
         ],
-        "trans_en": "The weather is so nice that I do not want to stay home and work."
+        "trans_en": "The weather is so nice that I do not want to stay home and work.",
+        "option_translations_en": [
+          "Because... (colloquial, explanatory)",
+          "How could... / absolutely not... (colloquial, strong negation)",
+          "...or something (showing disdain or giving an example)",
+          "How...! (exclamatory)"
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       }
     ],
     "mondai2": [
@@ -4184,7 +5264,19 @@
             "cn": "成长"
           }
         ],
-        "trans_en": "For a teacher, the greatest joy is the growth of the students."
+        "trans_en": "For a teacher, the greatest joy is the growth of the students.",
+        "option_translations_en": [
+          "Joy (as topic)",
+          "Students' (attributive)",
+          "For... (in relation to)",
+          "Greatest"
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 17,
@@ -4242,7 +5334,19 @@
             "cn": "忍耐"
           }
         ],
-        "trans_en": "Since coming to Japan alone, I cannot say how much loneliness I have endured."
+        "trans_en": "Since coming to Japan alone, I cannot say how much loneliness I have endured.",
+        "option_translations_en": [
+          "Feelings / sentiment (as object)",
+          "Endured",
+          "Lonely (attributive)",
+          "Thing / nominalizes the preceding clause"
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 18,
@@ -4290,7 +5394,19 @@
             "cn": "继续下去"
           }
         ],
-        "trans_en": "I hear that wars are still continuing in many places around the world."
+        "trans_en": "I hear that wars are still continuing in many places around the world.",
+        "option_translations_en": [
+          "War (as subject)",
+          "Be / exist",
+          "It is... (explanatory tone)",
+          "Continuing (て-form)"
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 19,
@@ -4348,7 +5464,19 @@
             "cn": "离开（连用形）"
           }
         ],
-        "trans_en": "Mobile phones and computers allow people to be contacted at any time; as a result, they cannot get away from work."
+        "trans_en": "Mobile phones and computers allow people to be contacted at any time; as a result, they cannot get away from work.",
+        "option_translations_en": [
+          "Able to contact",
+          "Anytime / anywhere",
+          "Because of... (negative cause)",
+          "Become able to... / start..."
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 20,
@@ -4391,7 +5519,19 @@
             "cn": "因为……嘛（口语）"
           }
         ],
-        "trans_en": "“How long are you going to keep playing games?” “But it is so interesting that I cannot stop.”"
+        "trans_en": "“How long are you going to keep playing games?” “But it is so interesting that I cannot stop.”",
+        "option_translations_en": [
+          "It's interesting, so...",
+          "It is... (explanatory tone)",
+          "Cannot stop",
+          "Because... / but..."
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       }
     ],
     "mondai3": [
@@ -4456,7 +5596,19 @@
             "cn": "困扰（促音形）"
           }
         ],
-        "trans_en": "People everywhere are discussing how to protect farmland from wild animals because vegetables and fruit are being eaten by them, causing serious problems."
+        "trans_en": "People everywhere are discussing how to protect farmland from wild animals because vegetables and fruit are being eaten by them, causing serious problems.",
+        "option_translations_en": [
+          "So / therefore (taking action in response to the above)",
+          "As a result / therefore",
+          "Therefore / so",
+          "Because / the reason is..."
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 22,
@@ -4519,7 +5671,19 @@
             "cn": "气候"
           }
         ],
-        "trans_en": "In the past, the mountains had many nuts and berries—in other words, food for wild animals."
+        "trans_en": "In the past, the mountains had many nuts and berries—in other words, food for wild animals.",
+        "option_translations_en": [
+          "Instead of...",
+          "In other words",
+          "Therefore / so",
+          "Compared with that however..."
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 23,
@@ -4582,7 +5746,19 @@
             "cn": "气候"
           }
         ],
-        "trans_en": "Changes in the climate and in how people manage the mountains and forests have reduced that food."
+        "trans_en": "Changes in the climate and in how people manage the mountains and forests have reduced that food.",
+        "option_translations_en": [
+          "Compared with... but...",
+          "Thanks to...",
+          "Due to... / through...",
+          "For... / to..."
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 24,
@@ -4635,7 +5811,19 @@
             "cn": "来了,来了"
           }
         ],
-        "trans_en": "As a result, the animals began to come down from the mountains in search of the food they needed."
+        "trans_en": "As a result, the animals began to come down from the mountains in search of the food they needed.",
+        "option_translations_en": [
+          "Even so",
+          "Therefore / for that reason",
+          "Moreover / in addition",
+          "However / but"
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       },
       {
         "n": 25,
@@ -4683,7 +5871,19 @@
             "cn": "即使被说（被动+ても）"
           }
         ],
-        "trans_en": "Consequently, the amount of abandoned farmland is increasing, making it easier for animals to enter the fields."
+        "trans_en": "Consequently, the amount of abandoned farmland is increasing, making it easier for animals to enter the fields.",
+        "option_translations_en": [
+          "As a result / therefore",
+          "Because / the reason is...",
+          "While doing... / on the occasion of...",
+          "However / but"
+        ],
+        "why_en": [
+          "",
+          "",
+          "",
+          ""
+        ]
       }
     ]
   },
@@ -4751,7 +5951,19 @@
           "代替……（「代わる」的て形）",
           "与……相比"
         ],
-        "trans_en": "This year’s cherry blossoms are said to have opened a week earlier than usual."
+        "trans_en": "This year’s cherry blossoms are said to have opened a week earlier than usual.",
+        "option_translations_en": [
+          "Toward... / relative to...",
+          "About... / related to...",
+          "Instead of... (て-form of 「代わる」)",
+          "Compared with..."
+        ],
+        "why_en": [
+          "「に対して」 means 'toward' (indicating a target), and cannot express comparison",
+          "「について」 means 'about' (indicating a topic), which does not fit here",
+          "「代わって」 means 'instead of,' which does not make sense here",
+          "「くらべて」 means 'compared with.' The pattern 「AにくらべてB」 = 'compared with A, B...' — correct"
+        ]
       },
       {
         "n": 2,
@@ -4805,7 +6017,19 @@
           "就按别人说的那样",
           "如果会被这样说"
         ],
-        "trans_en": "Even if someone offered me money, I would not want to do anything wrong."
+        "trans_en": "Even if someone offered me money, I would not want to do anything wrong.",
+        "option_translations_en": [
+          "Even if told so",
+          "The moment one is told... / as soon as...",
+          "Left in the state of being told",
+          "If told so"
+        ],
+        "why_en": [
+          "「たとえ～ても」 is a fixed pattern meaning 'even if.' 'Even if told so...' — correct",
+          "'The moment one is told...' indicates an instantaneous action, which does not pair with 「たとえ」",
+          "'Left in the state of being told' does not make sense semantically",
+          "'If told so' is a conditional, but it does not pair with 「たとえ」"
+        ]
       },
       {
         "n": 3,
@@ -4849,7 +6073,19 @@
           "不彻底做完；但本题的「数え上げない」不表示“数不清”",
           "无法全部……完"
         ],
-        "trans_en": "There are countless stars in the night sky."
+        "trans_en": "There are countless stars in the night sky.",
+        "option_translations_en": [
+          "Incorrect conjugation (the form 「数えたてない」 does not exist)",
+          "Incorrect conjugation (「数えかけない」 here does not mean 'countless')",
+          "Not done completely; however 「数え上げない」 here does not mean 'countless'",
+          "Cannot count all of... / innumerable"
+        ],
+        "why_en": [
+          "No such fixed collocation exists",
+          "No such fixed collocation exists",
+          "No such fixed collocation exists",
+          "「数え切れない」 = 'countless / too many to count,' a fixed collocation — correct"
+        ]
       },
       {
         "n": 4,
@@ -4898,7 +6134,19 @@
           "即使／哪怕",
           "也许／说不定"
         ],
-        "trans_en": "The shops introduced in magazines are not necessarily all good."
+        "trans_en": "The shops introduced in magazines are not necessarily all good.",
+        "option_translations_en": [
+          "Just like / as if",
+          "Not necessarily / not always",
+          "Even / even if",
+          "Maybe / perhaps"
+        ],
+        "why_en": [
+          "「まるで」 means 'just like / as if,' which does not pair with 「とは限らない」",
+          "「必ずしも～とは限らない」 = 'not necessarily...' — a fixed collocation. Correct",
+          "Requires pairing with 「ても」; does not fit here",
+          "「もしかすると」 means 'maybe,' which does not pair with 「とは限らない」"
+        ]
       },
       {
         "n": 5,
@@ -4952,7 +6200,19 @@
           "不仅……而且……",
           "只有……（后接否定）"
         ],
-        "trans_en": "Recently, not only women but men have also begun wearing make-up."
+        "trans_en": "Recently, not only women but men have also begun wearing make-up.",
+        "option_translations_en": [
+          "Always... / nothing but...",
+          "Of course / needless to say",
+          "Not only... but also...",
+          "Only... (followed by negative)"
+        ],
+        "why_en": [
+          "「ばかり」 means 'only / merely,' which is semantically opposite",
+          "Cannot be used directly after a noun in this way",
+          "「Aばかりか、Bも」 = 'not only A but also B' (additive progression). Correct",
+          "「しか」 means 'only' (followed by negative), which is semantically opposite"
+        ]
       },
       {
         "n": 6,
@@ -4996,7 +6256,19 @@
           "不打算预先做好",
           "一直做着而未收尾"
         ],
-        "trans_en": "I cannot remember. I should have taken notes."
+        "trans_en": "I cannot remember. I should have taken notes.",
+        "option_translations_en": [
+          "Should have done in advance (expressing regret)",
+          "Should have already done (conjecture)",
+          "Do not intend to do in advance",
+          "Left unfinished and continuing"
+        ],
+        "why_en": [
+          "「～ておけばよかった」 = 'I should have done... in advance' (expressing regret). Correct",
+          "'Should have already done' (conjecture), which does not fit the context",
+          "'Do not intend to do in advance' does not make sense",
+          "'Left unfinished and continuing' does not make sense"
+        ]
       },
       {
         "n": 7,
@@ -5040,7 +6312,19 @@
           "由于……／通过……／根据……",
           "对……而言"
         ],
-        "trans_en": "The entrance ceremony will be held in the gymnasium."
+        "trans_en": "The entrance ceremony will be held in the gymnasium.",
+        "option_translations_en": [
+          "In / at... (location / field, written style)",
+          "About...",
+          "Due to... / through... / according to...",
+          "For... / to..."
+        ],
+        "why_en": [
+          "「において」 means 'in / at' (location, formal), equivalent to 「で」. Correct",
+          "「について」 means 'about'",
+          "「によって」 means 'due to / through / according to'",
+          "「に対して」 means 'toward / for'"
+        ]
       },
       {
         "n": 8,
@@ -5094,7 +6378,19 @@
           "直到……／甚至……",
           "做到一半／从……到……（依接续判断）"
         ],
-        "trans_en": "I practised writing kanji until my hand hurt."
+        "trans_en": "I practised writing kanji until my hand hurt.",
+        "option_translations_en": [
+          "Just as... / according to...",
+          "Because of... (negative cause)",
+          "Until... / to the extent of...",
+          "From... to... (requires pairing with 「から」)"
+        ],
+        "why_en": [
+          "「にしたがって」 means 'according to / in accordance with'",
+          "「せいで」 means 'due to' (negative cause)",
+          "「～までに」 means 'until... / to the point of...' (indicating extent). Correct",
+          "「～から～にかけて」 requires pairing with 「から」"
+        ]
       },
       {
         "n": 9,
@@ -5143,7 +6439,19 @@
           "无论多么……／多么……啊",
           "简直就像"
         ],
-        "trans_en": "Someone I did not know spoke to me as though we were friends."
+        "trans_en": "Someone I did not know spoke to me as though we were friends.",
+        "option_translations_en": [
+          "While doing... / on the occasion of...",
+          "Compared with... but... / although... but...",
+          "No matter how... (requires 「ても」)",
+          "Just like... / as if..."
+        ],
+        "why_en": [
+          "「ついでに」 means 'while doing / by the way'",
+          "「に対して」 means 'in contrast to'",
+          "「どれだけ」 requires pairing with 「ても」",
+          "「まるで～ように」 = 'just like... / as if...'. Correct"
+        ]
       },
       {
         "n": 10,
@@ -5187,7 +6495,19 @@
           "完全……完（「切れる」的词干）",
           "保持原样／就那样"
         ],
-        "trans_en": "It says, “Wet paint. Please be careful.”"
+        "trans_en": "It says, “Wet paint. Please be careful.”",
+        "option_translations_en": [
+          "Since... / only...",
+          "Just finished doing...",
+          "Completely... (stem of 「切れる」)",
+          "Left as is / as it is"
+        ],
+        "why_en": [
+          "「～てから」 means 'since... after'",
+          "「動詞ます形＋たて」 = 'just done...' 'ぬりたて' = 'just painted.' Correct",
+          "No such usage exists",
+          "「～たまま」 means 'left in a state of...' which does not work grammatically here"
+        ]
       },
       {
         "n": 11,
@@ -5241,7 +6561,19 @@
           "不成为／不会变成",
           "要是变成……就好了"
         ],
-        "trans_en": "I hope the snow melts soon and spring comes quickly."
+        "trans_en": "I hope the snow melts soon and spring comes quickly.",
+        "option_translations_en": [
+          "Will it become...?",
+          "Want to become...",
+          "Does not become / will not become",
+          "If only it would become..."
+        ],
+        "why_en": [
+          "Interrogative form, which does not match the exclamatory tone of 「なあ」",
+          "'I want to become' — the subject does not make sense ('spring' cannot have volition)",
+          "If it were 「ならないかなあ」 (= hope it becomes) it would work, but 「ならない」 alone does not",
+          "「～ばいい」+「なあ」 = 'if only it would...' (expressing a wish). Correct"
+        ]
       },
       {
         "n": 12,
@@ -5290,7 +6622,19 @@
           "也就是说",
           "也许／说不定"
         ],
-        "trans_en": "Being praised makes you happy even when the praise is not sincere."
+        "trans_en": "Being praised makes you happy even when the praise is not sincere.",
+        "option_translations_en": [
+          "Even / even if",
+          "Not necessarily / not always",
+          "In other words",
+          "Maybe / perhaps"
+        ],
+        "why_en": [
+          "「たとえ～でも」 = 'even if...'. Correct",
+          "Requires pairing with the negative 「とは限らない」; does not fit here",
+          "「つまり」 means 'in other words,' which does not make sense",
+          "「もしかすると」 means 'maybe,' which does not fit the tone"
+        ]
       },
       {
         "n": 13,
@@ -5339,7 +6683,19 @@
           "对于……／与……相对",
           "……自不必说／当然"
         ],
-        "trans_en": "Her manner of speaking is polite; in contrast, her behaviour is not very polite."
+        "trans_en": "Her manner of speaking is polite; in contrast, her behaviour is not very polite.",
+        "option_translations_en": [
+          "Instead of...",
+          "For... / to...",
+          "Whereas... / in contrast to...",
+          "...goes without saying / of course"
+        ],
+        "why_en": [
+          "「かわりに」 means 'instead of'",
+          "「に対して」 means 'toward / for'",
+          "Here it expresses contrast: 「Aなのに対してB」 = 'A, whereas/in contrast B.' Correct",
+          "「はもちろん」 means '...goes without saying / of course'"
+        ]
       },
       {
         "n": 14,
@@ -5472,7 +6828,19 @@
           "曾经很好／本来很好（本句接续不成立）",
           "……就好了／明明……却……"
         ],
-        "trans_en": "Are you leaving already? I wish you would stay a little longer."
+        "trans_en": "Are you leaving already? I wish you would stay a little longer.",
+        "option_translations_en": [
+          "Good thing (nominalization, does not fit grammatically here)",
+          "Maybe not bad",
+          "Was good / originally good (does not fit grammatically here)",
+          "If only... had / it would be nice if..."
+        ],
+        "why_en": [
+          "Grammatically incorrect (improper nominalization)",
+          "'Maybe it would be nice' — the tone does not match the preceding 「ば」",
+          "Grammatically incorrect",
+          "「～ばいいのに」 = 'if only... (expressing regret or a wish).' Correct"
+        ]
       },
       {
         "n": 15,
@@ -5521,7 +6889,19 @@
           "经常／好好地",
           "好处、优点"
         ],
-        "trans_en": "This product is not only high in quality but also reasonably priced."
+        "trans_en": "This product is not only high in quality but also reasonably priced.",
+        "option_translations_en": [
+          "The fact that it is good (nominalization)",
+          "Good; of good quality",
+          "Often / properly",
+          "Goodness / merit"
+        ],
+        "why_en": [
+          "「動詞/形容詞＋の」 nominalizes the clause: 「品質がいいのはもちろん」 = 'the fact that the quality is good goes without saying.' Correct",
+          "Not nominalized; cannot directly precede 「はもちろん」",
+          "Adverbial form; grammatically incompatible",
+          "If it were 「品質のよさはもちろん」 it would work, but here the preceding text is '品質が,' so 'よさ' cannot directly follow"
+        ]
       }
     ],
     "mondai2": [
@@ -5578,7 +6958,19 @@
           "北海道",
           "从……到……（大致范围）"
         ],
-        "trans_en": "Snow is expected on the Sea of Japan side from Hokkaido through Kyushu."
+        "trans_en": "Snow is expected on the Sea of Japan side from Hokkaido through Kyushu.",
+        "option_translations_en": [
+          "Kyushu",
+          "From... / because...",
+          "Hokkaido",
+          "From... to... (approximate range)"
+        ],
+        "why_en": [
+          "The other end of the range, placed between 「から」 and 「にかけて」; also valid if swapped with 「北海道」",
+          "★ position. The first half of 「AからBにかけて」, following the starting point. Correct",
+          "One end of the range, placed at the beginning as the starting point",
+          "Fixed pairing with 「から」, marking the end of the range"
+        ]
       },
       {
         "n": 17,
@@ -5633,7 +7025,19 @@
           "直到……／甚至……",
           "内衣"
         ],
-        "trans_en": "That actress said she likes yellow and even wears yellow underwear."
+        "trans_en": "That actress said she likes yellow and even wears yellow underwear.",
+        "option_translations_en": [
+          "Like, and...",
+          "Yellow (as subject or object)",
+          "Even... / as far as...",
+          "Underwear"
+        ],
+        "why_en": [
+          "Follows 「黄色が」 to form 「黄色が好きで」, connecting with the te-form",
+          "The object of 「好きだ」 takes 「が」, placed at the beginning",
+          "Follows the noun 「下着」, meaning 'even...'",
+          "★ position. 「下着まで」 = 'even underwear,' an extreme example. Correct"
+        ]
       },
       {
         "n": 18,
@@ -5757,7 +7161,19 @@
           "在途中／做到一半时",
           "做到一半／从……到……（依接续判断）"
         ],
-        "trans_en": "I stopped halfway through writing a letter to my family."
+        "trans_en": "I stopped halfway through writing a letter to my family.",
+        "option_translations_en": [
+          "Write (ren'yōkei / continuative form)",
+          "Stop / give up (て-form)",
+          "In the middle of / halfway through",
+          "Halfway through / from... to... (depending on conjugation)"
+        ],
+        "why_en": [
+          "Stem of 「書きかける」, placed at the beginning",
+          "Precedes the sentence-final 「しまいました」 to form 「やめてしまいました」",
+          "★ position. Means 'in the middle / halfway,' modifying the following 「やめて」. Correct",
+          "Follows 「書き」 to form 「書きかけて」 = 'while writing halfway'"
+        ]
       },
       {
         "n": 19,
@@ -5812,7 +7228,19 @@
           "举起／完成（「上げる」的连用形）",
           "调查（连用形）"
         ],
-        "trans_en": "This material is excellent. I am impressed that you investigated it in such detail."
+        "trans_en": "This material is excellent. I am impressed that you investigated it in such detail.",
+        "option_translations_en": [
+          "Until... / even...",
+          "In detail",
+          "Raise up / complete (ren'yōkei of 「上げる」)",
+          "Investigate (ren'yōkei / continuative form)"
+        ],
+        "why_en": [
+          "Follows 「ここ」 to form 「ここまで」 = 'to this point/extent'",
+          "Adverbial form, modifying the following 「調べ」",
+          "Follows 「調べ」 to form 「調べあげる」, then takes 「ましたね」",
+          "★ position. The ren'yōkei stem of 「調べあげる」. Correct"
+        ]
       },
       {
         "n": 20,
@@ -5872,7 +7300,19 @@
           "迟到、晚点",
           "也许、说不定"
         ],
-        "trans_en": "Tanaka-sensei called. He said he might be a little late because of traffic congestion."
+        "trans_en": "Tanaka-sensei called. He said he might be a little late because of traffic congestion.",
+        "option_translations_en": [
+          "A little / slightly",
+          "Maybe / perhaps",
+          "Be late / be delayed",
+          "Maybe / perhaps"
+        ],
+        "why_en": [
+          "Modifies 「遅れる」, meaning 'a little / slightly'",
+          "Pairs with the sentence-initial 「もしかしたら」, preceding 「そうです」",
+          "★ position. The sentence predicate 'be late / be delayed.' Correct",
+          "Placed at the beginning, pairing with the sentence-final 「かもしれない」"
+        ]
       }
     ],
     "mondai3": [
@@ -5928,7 +7368,19 @@
           "但是、不过"
         ],
         "link": "#/day/5-6/p1",
-        "trans_en": "Chibi means “small,” but the neighbour’s dog Chibi is very large. Everyone laughs when he hears his name and comes running, swaying his heavy body."
+        "trans_en": "Chibi means “small,” but the neighbour’s dog Chibi is very large. Everyone laughs when he hears his name and comes running, swaying his heavy body.",
+        "option_translations_en": [
+          "Because / the reason is...",
+          "Moreover / in addition",
+          "So / therefore",
+          "However / but"
+        ],
+        "why_en": [
+          "Means 'because / the reason being...' — used to add a reason afterward, but the second half is not a reason here",
+          "Means 'moreover' — indicating addition, but the two clauses are not additive",
+          "Means 'so / therefore' — the first clause (large body) is the cause of the second (everyone laughs). Correct",
+          "Means 'but' — the two clauses do not form a contrastive relationship"
+        ]
       },
       {
         "n": 22,
@@ -5982,7 +7434,19 @@
           "所以"
         ],
         "link": "#/day/5-6/p2",
-        "trans_en": "He was very small when they found him, so they named him Chibi. However, he was well cared for, ate a lot, slept well, and as a result became fat."
+        "trans_en": "He was very small when they found him, so they named him Chibi. However, he was well cared for, ate a lot, slept well, and as a result became fat.",
+        "option_translations_en": [
+          "However / unexpectedly",
+          "As a result / therefore",
+          "Therefore / for that reason",
+          "So"
+        ],
+        "why_en": [
+          "Means 'however / unexpectedly': small when named ↔ grew fat later — an unexpected turn. Correct",
+          "Means 'as a result' — a forward-result connection, which reverses the direction",
+          "Means 'therefore' — also a forward connection, reversed",
+          "Means 'so' — forward connection, reversed"
+        ]
       },
       {
         "n": 23,
@@ -6026,7 +7490,19 @@
           "但是（口语）"
         ],
         "link": "#/day/5-6/p0",
-        "trans_en": "People now say, “His name is Chibi, but he keeps getting bigger and is practically a bear.”"
+        "trans_en": "People now say, “His name is Chibi, but he keeps getting bigger and is practically a bear.”",
+        "option_translations_en": [
+          "In other words",
+          "So / therefore",
+          "Moreover / in addition",
+          "But (colloquial)"
+        ],
+        "why_en": [
+          "Means 'in other words' — used to rephrase, but this is not a rephrasing",
+          "Means 'so' — forward causal connection, contradicting the second half",
+          "Means 'moreover' — indicating addition, but the two clauses are not additive",
+          "Means 'but': the name means 'small' ↔ keeps getting bigger. Correct"
+        ]
       },
       {
         "n": 24,
@@ -6060,7 +7536,19 @@
           "当然／不用说",
           "也许／说不定"
         ],
-        "trans_en": "He has grown so large that he is practically a bear."
+        "trans_en": "He has grown so large that he is practically a bear.",
+        "option_translations_en": [
+          "Even / even if",
+          "Just like / as if",
+          "Of course / needless to say",
+          "Maybe / perhaps"
+        ],
+        "why_en": [
+          "Pairs with 「ても」 for concession, but there is no 「ても」",
+          "Means 'just like / as if,' pairing with 「クマだ」 for a simile. Correct",
+          "Means 'of course,' which does not make sense",
+          "Pairs with 「かもしれない」 for conjecture, but there is no 「かもしれない」"
+        ]
       },
       {
         "n": 25,
@@ -6109,7 +7597,19 @@
           "话说回来（转换话题）"
         ],
         "link": "#/day/5-6/p3",
-        "trans_en": "By the way, my name is Yukiko, but because I like tennis, I am deeply tanned. People say that names reflect their owners, but apparently that is not always true."
+        "trans_en": "By the way, my name is Yukiko, but because I like tennis, I am deeply tanned. People say that names reflect their owners, but apparently that is not always true.",
+        "option_translations_en": [
+          "In other words",
+          "However / unexpectedly",
+          "However / but",
+          "By the way / that said (shifting topic)"
+        ],
+        "why_en": [
+          "Means 'in other words,' not a summary of the above",
+          "Means 'however' — a contrast; here it's a topic shift, not a contrast",
+          "Means 'but' — also a contrast",
+          "Means 'by the way / that said': shifting from the neighbor's dog to talking about one's own name — a topic change. Correct"
+        ]
       }
     ]
   },
@@ -6167,7 +7667,19 @@
             "cn": "行、可以（活用的一部分）"
           }
         ],
-        "trans_en": "At my daughter’s school, students are not allowed to bring mobile phones to school."
+        "trans_en": "At my daughter’s school, students are not allowed to bring mobile phones to school.",
+        "option_translations_en": [
+          "A rule one sets for oneself and follows",
+          "It is decided/rule that... (by a group or regulation)",
+          "Impossible",
+          "Cannot (out of moral/social obligation)"
+        ],
+        "why_en": [
+          "「ことにしている」 = a rule one sets for oneself; here it's a school regulation",
+          "「ことになっている」 = (a group or rule) has decided thus. Correct",
+          "「わけがない」 = impossible",
+          "「わけにはいかない」 = cannot (out of moral/social obligation)"
+        ]
       },
       {
         "n": 2,
@@ -6216,7 +7728,19 @@
             "cn": "去"
           }
         ],
-        "trans_en": "I almost left home without my boxed lunch."
+        "trans_en": "I almost left home without my boxed lunch.",
+        "option_translations_en": [
+          "Thing / used for general statements or exclamations",
+          "Matter / nominalizes the preceding clause",
+          "About to... / just... / after trying...",
+          "Reason / logic"
+        ],
+        "why_en": [
+          "「もの」 = does not form this pattern",
+          "「こと」 = does not form this pattern",
+          "「ところ」 = 「Vるところだった」 (almost did...). Correct",
+          "「わけ」 = does not form this pattern"
+        ]
       },
       {
         "n": 3,
@@ -6250,7 +7774,19 @@
             "cn": "给、提高（词干）"
           }
         ],
-        "trans_en": "It is not that I cannot help you, but doing so would not be good for you."
+        "trans_en": "It is not that I cannot help you, but doing so would not be good for you.",
+        "option_translations_en": [
+          "It's not that I can't help...",
+          "There's no need to help...",
+          "Not a case of not being able to help (unnatural)",
+          "Decide not to help..."
+        ],
+        "why_en": [
+          "「あげないことはない」 = double negative, 'it's not that I can't help.' Correct",
+          "「あげることはない」 = no need to help",
+          "「あげないことじゃない」 does not work",
+          "「あげないことにする」 = decide not to help, which doesn't connect with the following 「けれど」"
+        ]
       },
       {
         "n": 4,
@@ -6289,7 +7825,19 @@
             "cn": "合格证书"
           }
         ],
-        "trans_en": "I took the examination and, as a result, passed it."
+        "trans_en": "I took the examination and, as a result, passed it.",
+        "option_translations_en": [
+          "And / also",
+          "While... / during...",
+          "About to... / just... / after trying...",
+          "Even if..."
+        ],
+        "why_en": [
+          "「それと」 = addition; cannot connect clauses",
+          "「うちに」 = 'while... / during...'",
+          "「ところ」 = 「Vたところ」 (did... and as a result...). Correct",
+          "「としても」 = even if"
+        ]
       },
       {
         "n": 5,
@@ -6338,7 +7886,19 @@
             "cn": "如何学习"
           }
         ],
-        "trans_en": "Let’s go to bed early tonight and get up early to study tomorrow."
+        "trans_en": "Let’s go to bed early tonight and get up early to study tomorrow.",
+        "option_translations_en": [
+          "Decide to study",
+          "About to study / almost started studying",
+          "No wonder I study / that is to say I'll study",
+          "Should have studied (regret)"
+        ],
+        "why_en": [
+          "「勉強することにしよう」 = decide for oneself to study. Correct",
+          "「勉強するところだった」 = almost studied, which doesn't make sense",
+          "「勉強するわけだ」 = no wonder I study",
+          "「勉強すればよかった」 = should have studied (regret)"
+        ]
       },
       {
         "n": 6,
@@ -6387,7 +7947,19 @@
             "cn": "做完／不慎做了（连用形）"
           }
         ],
-        "trans_en": "I did wake up early, but I went straight back to sleep."
+        "trans_en": "I did wake up early, but I went straight back to sleep.",
+        "option_translations_en": [
+          "Have experienced waking up",
+          "It's not that I don't wake up",
+          "I did wake up (conceding the first clause)",
+          "Have never woken up"
+        ],
+        "why_en": [
+          "「覚めたことはあるのです」 = have experienced waking up",
+          "「覚めないことはないのです」 = it's not that I don't wake up",
+          "「覚めたことは覚めたのです」 = I did wake up (but...). Correct",
+          "「覚めたことはないのです」 = have never woken up"
+        ]
       },
       {
         "n": 7,
@@ -6426,7 +7998,19 @@
             "cn": "妇女和妇女"
           }
         ],
-        "trans_en": "His workplace has absolutely no connection with women."
+        "trans_en": "His workplace has absolutely no connection with women.",
+        "option_translations_en": [
+          "Completely (often paired with negative)",
+          "Rarely (often paired with negative)",
+          "Never (paired with negative, with subjective determination)",
+          "For the first time / not until..."
+        ],
+        "why_en": [
+          "「まったく」 = completely (paired with negative). Correct",
+          "「めったに」 = rarely (frequency)",
+          "「決して」 = never (with subjective determination)",
+          "「はじめて」 = for the first time"
+        ]
       },
       {
         "n": 8,
@@ -6485,7 +8069,19 @@
             "cn": "去（活用的一部分）"
           }
         ],
-        "trans_en": "No matter how much you ask me to forgive him, I cannot forgive him."
+        "trans_en": "No matter how much you ask me to forgive him, I cannot forgive him.",
+        "option_translations_en": [
+          "No wonder I forgive / that is to say I forgive",
+          "Cannot forgive",
+          "Cannot help but forgive (reversed meaning)",
+          "Impossible not to forgive"
+        ],
+        "why_en": [
+          "「許すわけだ」 = no wonder I forgive",
+          "「許すわけにはいかない」 = cannot forgive (out of moral/social obligation). Correct",
+          "「許さないわけにはいかない」 = must forgive (reversed meaning)",
+          "「許さないわけがない」 = impossible not to forgive"
+        ]
       },
       {
         "n": 9,
@@ -6539,7 +8135,19 @@
             "cn": "去（连用形）"
           }
         ],
-        "trans_en": "I want to take my parents on a trip while they are still healthy."
+        "trans_en": "I want to take my parents on a trip while they are still healthy.",
+        "option_translations_en": [
+          "Healthy / energetic (na-adjective stem)",
+          "Is healthy (copula form)",
+          "Healthily / energetically (adverbial)",
+          "Healthy (attributive, modifying a noun)"
+        ],
+        "why_en": [
+          "「元気」 = na-adjective stem; cannot directly precede 「うちに」",
+          "「元気だ」 = terminal form; cannot precede",
+          "「元気に」 = adverbial form; cannot precede",
+          "「元気な」 = attributive form of na-adjective. Correct"
+        ]
       },
       {
         "n": 10,
@@ -6598,7 +8206,19 @@
             "cn": "想法、感受"
           }
         ],
-        "trans_en": "This is old, so even if it is repaired, I think it will break again immediately."
+        "trans_en": "This is old, so even if it is repaired, I think it will break again immediately.",
+        "option_translations_en": [
+          "If repaired (forward condition)",
+          "If repair (forward condition)",
+          "Even if repaired (concessive)",
+          "If going to repair (forward condition)"
+        ],
+        "why_en": [
+          "「修理したら」 = if repaired (forward)",
+          "「修理すれば」 = if repair (forward)",
+          "「修理したとしても」 = even if repaired (concessive). Correct",
+          "「修理するなら」 = if going to repair (forward)"
+        ]
       },
       {
         "n": 11,
@@ -6652,7 +8272,19 @@
             "cn": "缘故、道理"
           }
         ],
-        "trans_en": "Her eyesight is poor, so there is no way she can see letters that small from so far away."
+        "trans_en": "Her eyesight is poor, so there is no way she can see letters that small from so far away.",
+        "option_translations_en": [
+          "Impossible not to see (reversed meaning)",
+          "Cannot see (semantically unnatural)",
+          "Can see, admittedly",
+          "Impossible to see"
+        ],
+        "why_en": [
+          "「見えないわけがない」 = impossible not to see (reversed meaning)",
+          "「見えるわけにはいかない」 does not work",
+          "「見えることは見える」 = I can see, admittedly",
+          "「見えるわけがない」 = impossible to see. Correct"
+        ]
       },
       {
         "n": 12,
@@ -6701,7 +8333,19 @@
             "cn": "能买／买（活用的一部分）"
           }
         ],
-        "trans_en": "When I asked the travel agency, I was able to buy a cheap ticket."
+        "trans_en": "When I asked the travel agency, I was able to buy a cheap ticket.",
+        "option_translations_en": [
+          "Try doing / see (dictionary form)",
+          "Tried doing / saw (た-form)",
+          "Do not try / do not see (negative)",
+          "Did not try / did not see (negative past)"
+        ],
+        "why_en": [
+          "「みる」 = dictionary form; 「ところ」 for results cannot follow the dictionary form",
+          "「みた」 = た-form. Correct",
+          "「みない」 = negative form; cannot follow",
+          "「みなかった」 = negative past form; cannot follow"
+        ]
       },
       {
         "n": 13,
@@ -6745,7 +8389,19 @@
             "cn": "开着（「開く」的连用部分）"
           }
         ],
-        "trans_en": "No wonder it is cold. The window is slightly open."
+        "trans_en": "No wonder it is cold. The window is slightly open.",
+        "option_translations_en": [
+          "It's not that...",
+          "Impossible",
+          "No wonder / that is to say...",
+          "Cannot (out of moral/social obligation)"
+        ],
+        "why_en": [
+          "「わけではない」 = it's not that...",
+          "「わけがない」 = impossible",
+          "「わけだ」 = no wonder / that is to say. Correct",
+          "「わけにはいかない」 = cannot"
+        ]
       },
       {
         "n": 14,
@@ -6784,7 +8440,19 @@
             "cn": "让……睡"
           }
         ],
-        "trans_en": "I am terribly sleepy. Let me sleep for another ten minutes."
+        "trans_en": "I am terribly sleepy. Let me sleep for another ten minutes.",
+        "option_translations_en": [
+          "...remaining / ...more to go",
+          "And / also",
+          "More (cannot directly precede a number)",
+          "Moreover / in addition"
+        ],
+        "why_en": [
+          "「あと」 = more/remaining (with quantities). Correct",
+          "「それと」 = also (additive)",
+          "「もっと」 = more; cannot directly precede a number",
+          "「その上」 = moreover"
+        ]
       },
       {
         "n": 15,
@@ -6823,7 +8491,19 @@
             "cn": "行、可以（活用的一部分）"
           }
         ],
-        "trans_en": "No matter what happens, you must never open this box."
+        "trans_en": "No matter what happens, you must never open this box.",
+        "option_translations_en": [
+          "Completely (often paired with negative)",
+          "Never (paired with negative, with strong determination)",
+          "Rarely (often paired with negative)",
+          "Not at all (paired with negative)"
+        ],
+        "why_en": [
+          "「まったく」 = completely (statement of degree)",
+          "「決して」 = never (with strong prohibition/determination). Correct",
+          "「めったに」 = rarely",
+          "「少しも」 = not at all (paired with negative)"
+        ]
       }
     ],
     "mondai2": [
@@ -6870,7 +8550,19 @@
             "cn": "请……（命令、要求）"
           }
         ],
-        "trans_en": "Would you like your coffee served now, or later?"
+        "trans_en": "Would you like your coffee served now, or later?",
+        "option_translations_en": [
+          "Shall I bring/carry for you (humble)",
+          "Hold / carry (honorific word formation)",
+          "After / later",
+          "Or... (choosing between two)"
+        ],
+        "why_en": [
+          "Follows 「お持ち」 to form the humble expression 「お持ちしましょうか」",
+          "Humble form of 「持つ」, placed first",
+          "Precedes the sentence-final 「なさいますか」, being the other option",
+          "★ position. 「それとも」 = 'or' (choosing between two), connecting two questions. Correct"
+        ]
       },
       {
         "n": 17,
@@ -6920,7 +8612,19 @@
             "cn": "接着、紧随其后"
           }
         ],
-        "trans_en": "I failed every company entrance examination I took and ended up taking over my father’s shop."
+        "trans_en": "I failed every company entrance examination I took and ended up taking over my father’s shop.",
+        "option_translations_en": [
+          "Inherit (「継ぐ」)",
+          "Father's (attributive)",
+          "It makes one... / deciding to...",
+          "Shop (as object)"
+        ],
+        "why_en": [
+          "★ position. 「つぐ」 = 「継ぐ」 (inherit), connecting to the following 「ことに」. Correct",
+          "Modifies 「店」, placed first",
+          "Precedes the sentence-final 「なった」 to form 「ことになった」",
+          "Object of 「つぐ」"
+        ]
       },
       {
         "n": 18,
@@ -6985,7 +8689,19 @@
             "cn": "知道（促音形）"
           }
         ],
-        "trans_en": "It was only after listening to a recording of my own Japanese that I realized my pronunciation was poor."
+        "trans_en": "It was only after listening to a recording of my own Japanese that I realized my pronunciation was poor.",
+        "option_translations_en": [
+          "Listen (て-form)",
+          "One's own (attributive)",
+          "Japanese (as object)",
+          "Recorded"
+        ],
+        "why_en": [
+          "Precedes 「はじめて」 to form 「Vてはじめて」",
+          "Modifies 「日本語」",
+          "★ position. Object of 「聞いて」. Correct",
+          "Modifies 「自分の日本語」, placed first"
+        ]
       },
       {
         "n": 19,
@@ -7035,7 +8751,19 @@
             "cn": "请……"
           }
         ],
-        "trans_en": "Be sure to come and visit while I am still in Japan."
+        "trans_en": "Be sure to come and visit while I am still in Japan.",
+        "option_translations_en": [
+          "Be / exist",
+          "In Japan / to Japan",
+          "I (as subject)",
+          "While... / during..."
+        ],
+        "why_en": [
+          "★ position. 「いる」 = connects with 「うちに」 to form 「いるうちに」. Correct",
+          "Location of 「いる」",
+          "Subject of 「いる」, placed first",
+          "Closing, connecting to the second half"
+        ]
       },
       {
         "n": 20,
@@ -7080,7 +8808,19 @@
             "cn": "了解更多"
           }
         ],
-        "trans_en": "I did review it, but I still do not completely understand it."
+        "trans_en": "I did review it, but I still do not completely understand it.",
+        "option_translations_en": [
+          "Reviewed",
+          "...the fact that... (as topic)",
+          "...is / as subject or contrast",
+          "Did"
+        ],
+        "why_en": [
+          "Placed first, forming 「復習したことは」",
+          "Follows 「復習した」",
+          "Concessive, closing and connecting to the second half",
+          "★ position. Repeats the verb to form 「～したことはしましたが」. Correct"
+        ]
       }
     ],
     "mondai3": [
@@ -7126,7 +8866,19 @@
             "cn": "信任、相信"
           }
         ],
-        "trans_en": "Since then, I have never trusted cars or traffic lights."
+        "trans_en": "Since then, I have never trusted cars or traffic lights.",
+        "option_translations_en": [
+          "Never (paired with negative)",
+          "Even / even if",
+          "Maybe / perhaps",
+          "If / suppose"
+        ],
+        "why_en": [
+          "「決して」 = never (paired with negative), matching the sentence-final 「信用しない」. Correct",
+          "「たとえ」 requires pairing with 「ても」",
+          "「もしかすると」 requires pairing with 「かもしれない」",
+          "「もしも」 requires pairing with 「なら／たら」"
+        ]
       },
       {
         "n": 22,
@@ -7170,7 +8922,19 @@
             "cn": "信任、相信"
           }
         ],
-        "trans_en": "The rule I set for myself is never to trust cars or traffic lights."
+        "trans_en": "The rule I set for myself is never to trust cars or traffic lights.",
+        "option_translations_en": [
+          "Cannot (out of moral/social obligation)",
+          "It is decided/rule that... (by others)",
+          "Impossible",
+          "A rule one sets for oneself and follows"
+        ],
+        "why_en": [
+          "「わけにはいかない」 = cannot (out of moral/social obligation)",
+          "「ことになっている」 = a rule set by others",
+          "「わけがない」 = impossible",
+          "「ことにしている」 = a rule one sets for oneself and follows. Correct"
+        ]
       },
       {
         "n": 23,
@@ -7229,7 +8993,19 @@
             "cn": "拿出、发出"
           }
         ],
-        "trans_en": "A car started moving before the light turned green, saying, “You can go now.”"
+        "trans_en": "A car started moving before the light turned green, saying, “You can go now.”",
+        "option_translations_en": [
+          "Change (non-past)",
+          "Changed (past)",
+          "Does not change",
+          "Did not change (past)"
+        ],
+        "why_en": [
+          "「変わる」 = 「変わるうちに」 does not work",
+          "「変わった」 = 「うちに」 cannot follow た-form",
+          "「変わらない」 = 「Vないうちに」 = while it hasn't changed yet. Correct",
+          "「変わらなかった」 = た-form cannot follow"
+        ]
       },
       {
         "n": 24,
@@ -7268,7 +9044,19 @@
             "cn": "等待（命令或条件形）"
           }
         ],
-        "trans_en": "Why can they not wait just one more minute, or even thirty seconds?"
+        "trans_en": "Why can they not wait just one more minute, or even thirty seconds?",
+        "option_translations_en": [
+          "Moreover / in addition",
+          "Or... (choosing between two)",
+          "Not at all (paired with negative)",
+          "...remaining / ...more to go"
+        ],
+        "why_en": [
+          "「その上」 = moreover (additive)",
+          "「それとも」 = or (choosing between two)",
+          "「少しも」 = not at all (paired with negative)",
+          "「あと」 = more/remaining (with quantities). Correct"
+        ]
       },
       {
         "n": 25,
@@ -7307,7 +9095,19 @@
             "cn": "能、做好（词干）"
           }
         ],
-        "trans_en": "I cannot understand it at all."
+        "trans_en": "I cannot understand it at all.",
+        "option_translations_en": [
+          "Even / even if",
+          "Completely (often paired with negative)",
+          "Maybe / perhaps",
+          "If / suppose"
+        ],
+        "why_en": [
+          "「たとえ」 requires pairing with 「ても」",
+          "「まったく」 = completely (paired with negative). Correct",
+          "「もしかすると」 requires pairing with 「かもしれない」",
+          "「もしも」 requires pairing with 「なら／たら」"
+        ]
       }
     ]
   }
