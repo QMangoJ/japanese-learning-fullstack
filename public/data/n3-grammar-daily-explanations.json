@@ -15,7 +15,8 @@
             "a": "話されて",
             "b": "話られて"
           }
-        ]
+        ],
+        "translation_en": "English is spoken throughout the world."
       },
       {
         "n": 2,
@@ -31,7 +32,8 @@
             "a": "建たれ",
             "b": "建てられ"
           }
-        ]
+        ],
+        "translation_en": "This building was built three hundred years ago."
       },
       {
         "n": 3,
@@ -47,7 +49,8 @@
             "a": "辞まれた",
             "b": "辞められた"
           }
-        ]
+        ],
+        "translation_en": "An employee suddenly quit on me."
       },
       {
         "n": 4,
@@ -63,7 +66,8 @@
             "a": "考えさせて",
             "b": "考えらせて"
           }
-        ]
+        ],
+        "translation_en": "Let me think about that a little longer."
       },
       {
         "n": 5,
@@ -79,7 +83,8 @@
             "a": "休ませて",
             "b": "休まれて"
           }
-        ]
+        ],
+        "translation_en": "I have a fever today, so please let me take the day off."
       },
       {
         "n": 6,
@@ -89,7 +94,8 @@
         "translation": "奥运会每四年举办一次。",
         "pointIndexes": [
           0
-        ]
+        ],
+        "translation_en": "The Olympic Games are held once every four years."
       },
       {
         "n": 7,
@@ -99,7 +105,8 @@
         "translation": "可以让我就您对日本的印象做一次采访吗？",
         "pointIndexes": [
           2
-        ]
+        ],
+        "translation_en": "Would you allow me to interview you about your impression of Japan?"
       }
     ]
   },
@@ -119,7 +126,8 @@
             "a": "行かないと",
             "b": "行っちゃった"
           }
-        ]
+        ],
+        "translation_en": "Oh, the bus has left."
       },
       {
         "n": 2,
@@ -135,7 +143,8 @@
             "a": "消しちゃって",
             "b": "つけといて"
           }
-        ]
+        ],
+        "translation_en": "“Shall I turn off the computer?” “I’m still using it, so leave it on.”"
       },
       {
         "n": 3,
@@ -151,7 +160,8 @@
             "a": "返さないと",
             "b": "返しないと"
           }
-        ]
+        ],
+        "translation_en": "Oh, I have to return the library book."
       },
       {
         "n": 4,
@@ -167,7 +177,8 @@
             "a": "読んじゃった",
             "b": "読んどいて"
           }
-        ]
+        ],
+        "translation_en": "Please read this by next week."
       },
       {
         "n": 5,
@@ -183,7 +194,8 @@
             "a": "降っちゃった",
             "b": "降られちゃった"
           }
-        ]
+        ],
+        "translation_en": "Oh no, I got caught in the rain."
       },
       {
         "n": 6,
@@ -194,7 +206,8 @@
         "pointIndexes": [
           0,
           1
-        ]
+        ],
+        "translation_en": "Even though I thought I had to get up, I fell asleep again."
       },
       {
         "n": 7,
@@ -205,7 +218,8 @@
         "pointIndexes": [
           2,
           1
-        ]
+        ],
+        "translation_en": "I got up early and made a boxed lunch in advance, but I left it at home."
       }
     ]
   },
@@ -225,7 +239,8 @@
             "a": "春らしい",
             "b": "春みたい"
           }
-        ]
+        ],
+        "translation_en": "Although it is winter, it is warm today and feels like spring."
       },
       {
         "n": 2,
@@ -241,7 +256,8 @@
             "a": "子どもらしい",
             "b": "子どもっぽい"
           }
-        ]
+        ],
+        "translation_en": "My mother always wears childish clothes."
       },
       {
         "n": 3,
@@ -257,7 +273,8 @@
             "a": "黒っぽい",
             "b": "黒みたいな"
           }
-        ]
+        ],
+        "translation_en": "The car that fled was blackish."
       },
       {
         "n": 4,
@@ -273,7 +290,8 @@
             "a": "無理みたい",
             "b": "無理っぽい"
           }
-        ]
+        ],
+        "translation_en": "I took the exam, but it looks as though passing will be impossible."
       },
       {
         "n": 5,
@@ -289,7 +307,8 @@
             "a": "子どもみたいに",
             "b": "子どもらしく"
           }
-        ]
+        ],
+        "translation_en": "I want my child to grow up healthy and energetic, like a child should."
       },
       {
         "n": 6,
@@ -299,7 +318,8 @@
         "translation": "我现在要讲的是一个听起来像谎话的真实故事。",
         "pointIndexes": [
           0
-        ]
+        ],
+        "translation_en": "What I am about to tell you is a true story that sounds like a lie."
       },
       {
         "n": 7,
@@ -309,7 +329,8 @@
         "translation": "明天大概会是晴朗而富有秋意的天气吧。",
         "pointIndexes": [
           1
-        ]
+        ],
+        "translation_en": "Tomorrow will probably be sunny, with weather typical of autumn."
       }
     ]
   },
@@ -329,7 +350,8 @@
             "a": "ために",
             "b": "ように"
           }
-        ]
+        ],
+        "translation_en": "Let’s close the window so that the wind does not come in."
       },
       {
         "n": 2,
@@ -345,7 +367,8 @@
             "a": "して",
             "b": "なって"
           }
-        ]
+        ],
+        "translation_en": "For my health, I make a habit of eating vegetables."
       },
       {
         "n": 3,
@@ -361,7 +384,8 @@
             "a": "ように",
             "b": "ために"
           }
-        ]
+        ],
+        "translation_en": "I am studying hard so that I can get into university."
       },
       {
         "n": 4,
@@ -377,7 +401,8 @@
             "a": "話す",
             "b": "話せる"
           }
-        ]
+        ],
+        "translation_en": "I want to become able to speak Japanese like a Japanese person."
       },
       {
         "n": 5,
@@ -393,7 +418,8 @@
             "a": "わかる",
             "b": "わかれる"
           }
-        ]
+        ],
+        "translation_en": "This intercom is designed so that you can find out who came while you were away."
       },
       {
         "n": 6,
@@ -404,7 +430,8 @@
         "pointIndexes": [
           1,
           0
-        ]
+        ],
+        "translation_en": "I make a habit of gargling and washing my hands so that I do not get influenza."
       },
       {
         "n": 7,
@@ -414,7 +441,8 @@
         "translation": "大多数电器都规定，一年内即使坏了也可以免费维修。",
         "pointIndexes": [
           2
-        ]
+        ],
+        "translation_en": "Most electrical appliances are covered so that, if they break within a year, you can have them repaired free of charge."
       }
     ]
   },
@@ -434,7 +462,8 @@
             "a": "連絡する",
             "b": "連絡できる"
           }
-        ]
+        ],
+        "translation_en": "If you are going to be late, make sure to contact us."
       },
       {
         "n": 2,
@@ -450,7 +479,8 @@
             "a": "見つかる",
             "b": "見つかります"
           }
-        ]
+        ],
+        "translation_en": "I hope I can find a good job."
       },
       {
         "n": 3,
@@ -466,7 +496,8 @@
             "a": "ように",
             "b": "のように"
           }
-        ]
+        ],
+        "translation_en": "Please revise it as follows."
       },
       {
         "n": 4,
@@ -482,7 +513,8 @@
             "a": "する",
             "b": "している"
           }
-        ]
+        ],
+        "translation_en": "As is currently being advertised on television and elsewhere, a new model of this product will go on sale soon."
       },
       {
         "n": 5,
@@ -498,7 +530,8 @@
             "a": "転ぶ",
             "b": "転ばない"
           }
-        ]
+        ],
+        "translation_en": "It is snowing, so please be careful not to fall when you go out."
       },
       {
         "n": 6,
@@ -508,7 +541,8 @@
         "translation": "希望大家会喜欢我创作的曲子。",
         "pointIndexes": [
           2
-        ]
+        ],
+        "translation_en": "I hope everyone will enjoy the song I wrote."
       },
       {
         "n": 7,
@@ -519,7 +553,8 @@
         "pointIndexes": [
           0,
           1
-        ]
+        ],
+        "translation_en": "As I always say, do not push yourself too hard."
       }
     ]
   },
@@ -539,7 +574,8 @@
             "a": "入よう",
             "b": "入ろう"
           }
-        ]
+        ],
+        "translation_en": "Just as I was about to take a bath, someone came."
       },
       {
         "n": 2,
@@ -555,7 +591,8 @@
             "a": "話そう",
             "b": "話しよう"
           }
-        ]
+        ],
+        "translation_en": "My father will not say anything about it."
       },
       {
         "n": 3,
@@ -575,7 +612,8 @@
             "a": "開かない",
             "b": "開こうとしない"
           }
-        ]
+        ],
+        "translation_en": "No matter how hard I try to open the lid of this jam jar, it will not open."
       },
       {
         "n": 4,
@@ -591,7 +629,8 @@
             "a": "来るだろう",
             "b": "来よう"
           }
-        ]
+        ],
+        "translation_en": "A: “You did not come to class yesterday.” B: “No. I had intended to come, but I got a fever and took the day off.”"
       },
       {
         "n": 5,
@@ -601,7 +640,8 @@
         "translation": "本来想着要买，事先写了张便条，却忘记把便条带来了。",
         "pointIndexes": [
           0
-        ]
+        ],
+        "translation_en": "I forgot to bring the note I had written because I intended to buy the items on it."
       },
       {
         "n": 6,
@@ -611,7 +651,8 @@
         "translation": "我想在弟弟生日时给他买一张他喜欢的 CD。",
         "pointIndexes": [
           0
-        ]
+        ],
+        "translation_en": "I am thinking of buying my younger brother a CD he likes for his birthday."
       }
     ]
   },
@@ -631,7 +672,8 @@
             "a": "さえ",
             "b": "こそ"
           }
-        ]
+        ],
+        "translation_en": "I am so busy that I do not even have time to eat lunch."
       },
       {
         "n": 2,
@@ -647,7 +689,8 @@
             "a": "寝る",
             "b": "寝て"
           }
-        ]
+        ],
+        "translation_en": "Our cat does nothing but sleep."
       },
       {
         "n": 3,
@@ -663,7 +706,8 @@
             "a": "さえ",
             "b": "だけ"
           }
-        ]
+        ],
+        "translation_en": "In this class, make sure to use only Japanese."
       },
       {
         "n": 4,
@@ -679,7 +723,8 @@
             "a": "さえ",
             "b": "こそ"
           }
-        ]
+        ],
+        "translation_en": "Lin-san can read kanji that even Japanese people cannot read."
       },
       {
         "n": 5,
@@ -695,7 +740,8 @@
             "a": "働く",
             "b": "働いて"
           }
-        ]
+        ],
+        "translation_en": "If you do nothing but work so much, you will damage your health."
       },
       {
         "n": 6,
@@ -705,7 +751,8 @@
         "translation": "朋友说，正因为工作有难度才有意思。",
         "pointIndexes": [
           3
-        ]
+        ],
+        "translation_en": "My friend said that the job is interesting precisely because it is difficult."
       },
       {
         "n": 7,
@@ -715,7 +762,8 @@
         "translation": "有些事情甚至连家人都不能说。",
         "pointIndexes": [
           2
-        ]
+        ],
+        "translation_en": "There are some things that I cannot tell even my family."
       }
     ]
   },
@@ -735,7 +783,8 @@
             "a": "ついて",
             "b": "よって"
           }
-        ]
+        ],
+        "translation_en": "We will resolve the problem through discussion."
       },
       {
         "n": 2,
@@ -751,7 +800,8 @@
             "a": "よると",
             "b": "関して"
           }
-        ]
+        ],
+        "translation_en": "According to this magazine, that shop is apparently good."
       },
       {
         "n": 3,
@@ -767,7 +817,8 @@
             "a": "よれば",
             "b": "ついて"
           }
-        ]
+        ],
+        "translation_en": "I have something I would like to ask about this newspaper article."
       },
       {
         "n": 4,
@@ -783,7 +834,8 @@
             "a": "よると",
             "b": "よって"
           }
-        ]
+        ],
+        "translation_en": "The way the news is reported differs depending on the newspaper."
       },
       {
         "n": 5,
@@ -799,7 +851,8 @@
             "a": "より",
             "b": "よる"
           }
-        ]
+        ],
+        "translation_en": "Through the efforts of the residents, the town became clean."
       },
       {
         "n": 6,
@@ -809,7 +862,8 @@
         "translation": "台风造成的灾情正在进一步扩大。",
         "pointIndexes": [
           3
-        ]
+        ],
+        "translation_en": "The damage caused by the typhoon is spreading further."
       },
       {
         "n": 7,
@@ -819,7 +873,8 @@
         "translation": "我正在找一本与这座小镇历史有关的书。",
         "pointIndexes": [
           0
-        ]
+        ],
+        "translation_en": "I am looking for a book about the history of this town."
       }
     ]
   },
@@ -839,7 +894,8 @@
             "a": "やさしさ",
             "b": "やさしいさ"
           }
-        ]
+        ],
+        "translation_en": "The films he makes are filled with kindness."
       },
       {
         "n": 2,
@@ -855,7 +911,8 @@
             "a": "むりの",
             "b": "むりな"
           }
-        ]
+        ],
+        "translation_en": "Please do not say something so unreasonable."
       },
       {
         "n": 3,
@@ -871,7 +928,8 @@
             "a": "よさ",
             "b": "いいさ"
           }
-        ]
+        ],
+        "translation_en": "Every work has its own merits."
       },
       {
         "n": 4,
@@ -887,7 +945,8 @@
             "a": "の",
             "b": "のこと"
           }
-        ]
+        ],
+        "translation_en": "I like watching sports, but...."
       },
       {
         "n": 5,
@@ -903,7 +962,8 @@
             "a": "み",
             "b": "さ"
           }
-        ]
+        ],
+        "translation_en": "This letter reflects the seriousness of the person who wrote it."
       },
       {
         "n": 6,
@@ -913,7 +973,8 @@
         "translation": "我喜欢略带苦味的咖啡。",
         "pointIndexes": [
           1
-        ]
+        ],
+        "translation_en": "I like coffee with a slight bitterness."
       },
       {
         "n": 7,
@@ -923,7 +984,8 @@
         "translation": "你听说明天考试的事了吗？",
         "pointIndexes": [
           2
-        ]
+        ],
+        "translation_en": "Did you hear about tomorrow’s test?"
       }
     ]
   },
@@ -943,7 +1005,8 @@
             "a": "もの",
             "b": "こと"
           }
-        ]
+        ],
+        "translation_en": "Kinen means that smoking is prohibited."
       },
       {
         "n": 2,
@@ -963,7 +1026,8 @@
             "a": "のこと",
             "b": "という"
           }
-        ]
+        ],
+        "translation_en": "Baito means arubaito, or a part-time job."
       },
       {
         "n": 3,
@@ -979,7 +1043,8 @@
             "a": "もの",
             "b": "こと"
           }
-        ]
+        ],
+        "translation_en": "This is a Japanese heater called a kotatsu."
       },
       {
         "n": 4,
@@ -995,7 +1060,8 @@
             "a": "といった",
             "b": "といって"
           }
-        ]
+        ],
+        "translation_en": "I am interested in traditional Japanese things such as tatami mats and shoji screens."
       },
       {
         "n": 5,
@@ -1005,7 +1071,8 @@
         "translation": "我说要辞职只是开玩笑。",
         "pointIndexes": [
           2
-        ]
+        ],
+        "translation_en": "What I said about leaving the company was a joke."
       },
       {
         "n": 6,
@@ -1015,7 +1082,8 @@
         "translation": "这家店全年无休，也就是说没有休息日。",
         "pointIndexes": [
           2
-        ]
+        ],
+        "translation_en": "This shop is open every day of the year; in other words, it has no days off."
       }
     ]
   },
@@ -1035,7 +1103,8 @@
             "a": "というより",
             "b": "といっても"
           }
-        ]
+        ],
+        "translation_en": "Although I say we have a garden, it is very small."
       },
       {
         "n": 2,
@@ -1051,7 +1120,8 @@
             "a": "というと",
             "b": "というより"
           }
-        ]
+        ],
+        "translation_en": "My son’s room is more like a rubbish bin than a room."
       },
       {
         "n": 3,
@@ -1067,7 +1137,8 @@
             "a": "といっても",
             "b": "というと"
           }
-        ]
+        ],
+        "translation_en": "Speaking of representative Japanese dishes, I suppose sushi and tempura come to mind."
       },
       {
         "n": 4,
@@ -1083,7 +1154,8 @@
             "a": "というより",
             "b": "といっても"
           }
-        ]
+        ],
+        "translation_en": "His rude attitude left me more exasperated than angry."
       },
       {
         "n": 5,
@@ -1099,7 +1171,8 @@
             "a": "といったら",
             "b": "といっても"
           }
-        ]
+        ],
+        "translation_en": "When you think of mountains in Japan, you think of Mt. Fuji."
       },
       {
         "n": 6,
@@ -1109,7 +1182,8 @@
         "translation": "说到孩子喜欢的动物，大概是大象吧。",
         "pointIndexes": [
           1
-        ]
+        ],
+        "translation_en": "Speaking of animals that children like, I suppose elephants come to mind."
       },
       {
         "n": 7,
@@ -1119,7 +1193,8 @@
         "translation": "“头疼吗？”“不，与其说疼，不如说是感觉沉重。”",
         "pointIndexes": [
           0
-        ]
+        ],
+        "translation_en": "“Do you have a headache?” “No, it feels heavy rather than painful.”"
       }
     ]
   },
@@ -1139,7 +1214,8 @@
             "a": "すぎるな",
             "b": "すぎろ"
           }
-        ]
+        ],
+        "translation_en": "The doctor warned me not to smoke too much."
       },
       {
         "n": 2,
@@ -1155,7 +1231,8 @@
             "a": "くろ",
             "b": "こい"
           }
-        ]
+        ],
+        "translation_en": "I was told to come to the office by eight tomorrow."
       },
       {
         "n": 3,
@@ -1171,7 +1248,8 @@
             "a": "しないように",
             "b": "するな"
           }
-        ]
+        ],
+        "translation_en": "Please tell Tanaka-san not to push himself too hard."
       },
       {
         "n": 4,
@@ -1187,7 +1265,8 @@
             "a": "ように",
             "b": "くれと"
           }
-        ]
+        ],
+        "translation_en": "I was asked to make fifty copies of this document."
       },
       {
         "n": 5,
@@ -1203,7 +1282,8 @@
             "a": "くれ",
             "b": "ごらん"
           }
-        ]
+        ],
+        "translation_en": "Whether you can do it or not, just give it a try."
       },
       {
         "n": 6,
@@ -1213,7 +1293,8 @@
         "translation": "有人叮嘱我不要把这件事告诉任何人。",
         "pointIndexes": [
           3
-        ]
+        ],
+        "translation_en": "I was told not to tell anyone about this."
       },
       {
         "n": 7,
@@ -1223,7 +1304,8 @@
         "translation": "意思是：喝了酒就不要开车；如果要开车就不要喝酒。",
         "pointIndexes": [
           2
-        ]
+        ],
+        "translation_en": "“What does that mean?” “It means: if you drink, do not drive; if you are going to drive, do not drink.”"
       }
     ]
   },
@@ -1243,7 +1325,8 @@
             "a": "いつ",
             "b": "いくら"
           }
-        ]
+        ],
+        "translation_en": "Tanaka-san’s room is tidy whenever I visit."
       },
       {
         "n": 2,
@@ -1259,7 +1342,8 @@
             "a": "しずに",
             "b": "せずに"
           }
-        ]
+        ],
+        "translation_en": "I decided to study abroad without consulting my family."
       },
       {
         "n": 3,
@@ -1275,7 +1359,8 @@
             "a": "便利",
             "b": "便利な"
           }
-        ]
+        ],
+        "translation_en": "Even if mobile phones are convenient, I do not use one."
       },
       {
         "n": 4,
@@ -1291,7 +1376,8 @@
             "a": "どうに",
             "b": "どんなに"
           }
-        ]
+        ],
+        "translation_en": "No matter how difficult it became, the runner did not give up. (runner)"
       },
       {
         "n": 5,
@@ -1307,7 +1393,8 @@
             "a": "待たずに",
             "b": "待ちずに"
           }
-        ]
+        ],
+        "translation_en": "If you do not arrive by the appointed time, we will leave without waiting."
       },
       {
         "n": 6,
@@ -1317,7 +1404,8 @@
         "translation": "她说的话无论怎么想都很奇怪。",
         "pointIndexes": [
           1
-        ]
+        ],
+        "translation_en": "No matter how I think about it, what she is saying is strange."
       },
       {
         "n": 7,
@@ -1327,7 +1415,8 @@
         "translation": "为了健康，我坚持不坐车而步行。",
         "pointIndexes": [
           2
-        ]
+        ],
+        "translation_en": "For my health, I make a point of walking instead of travelling by car."
       }
     ]
   },
@@ -1347,7 +1436,8 @@
             "a": "にしては",
             "b": "にしても"
           }
-        ]
+        ],
+        "translation_en": "Considering that he has never been to Japan, he knows Japan very well."
       },
       {
         "n": 2,
@@ -1363,7 +1453,8 @@
             "a": "としたら",
             "b": "として"
           }
-        ]
+        ],
+        "translation_en": "As your friend, there is some advice I would like to give you."
       },
       {
         "n": 3,
@@ -1379,7 +1470,8 @@
             "a": "それにしても",
             "b": "それにしては"
           }
-        ]
+        ],
+        "translation_en": "The train is always crowded at this time, but even so, it is far too crowded today. I wonder if something happened."
       },
       {
         "n": 4,
@@ -1395,7 +1487,8 @@
             "a": "としたら",
             "b": "とする"
           }
-        ]
+        ],
+        "translation_en": "If I had not come to Japan, I think I would have gone to the United States."
       },
       {
         "n": 5,
@@ -1411,7 +1504,8 @@
             "a": "にして",
             "b": "として"
           }
-        ]
+        ],
+        "translation_en": "Sweets are ideal as souvenirs for a company or similar workplace."
       },
       {
         "n": 6,
@@ -1421,7 +1515,8 @@
         "translation": "如果他真的做了那种事，理由到底是什么呢？",
         "pointIndexes": [
           3
-        ]
+        ],
+        "translation_en": "If he really did such a thing, what could his reason have been?"
       },
       {
         "n": 7,
@@ -1431,7 +1526,8 @@
         "translation": "如果要养宠物，希望你能作为饲主负起责任。",
         "pointIndexes": [
           0
-        ]
+        ],
+        "translation_en": "If you keep a pet, I want you to take responsibility as its owner."
       }
     ]
   },
@@ -1451,7 +1547,8 @@
             "a": "行くものだった",
             "b": "行ったものだ"
           }
-        ]
+        ],
+        "translation_en": "I used to go to concerts often."
       },
       {
         "n": 2,
@@ -1467,7 +1564,8 @@
             "a": "すべきではない",
             "b": "しないべきだ"
           }
-        ]
+        ],
+        "translation_en": "You should not do things that cause trouble for other people."
       },
       {
         "n": 3,
@@ -1483,7 +1581,8 @@
             "a": "ましたが",
             "b": "でしたが"
           }
-        ]
+        ],
+        "translation_en": "I intended to put the letter in the postbox, but I forgot."
       },
       {
         "n": 4,
@@ -1499,7 +1598,8 @@
             "a": "きらいの",
             "b": "きらいな"
           }
-        ]
+        ],
+        "translation_en": "Tanaka-san is always eating chocolate, so there is no way he dislikes it."
       },
       {
         "n": 5,
@@ -1515,7 +1615,8 @@
             "a": "好きな",
             "b": "好きである"
           }
-        ]
+        ],
+        "translation_en": "I think an elementary-school teacher should, first of all, like children."
       },
       {
         "n": 6,
@@ -1525,7 +1626,8 @@
         "translation": "以前是我被父亲训斥，如今却反过来了。",
         "pointIndexes": [
           3
-        ]
+        ],
+        "translation_en": "In the past, my father used to scold me, but now it is the other way around."
       },
       {
         "n": 7,
@@ -1535,7 +1637,8 @@
         "translation": "因为本来有事，我原打算不参加聚会，不过后来又能去了。",
         "pointIndexes": [
           0
-        ]
+        ],
+        "translation_en": "I had intended not to go to the party because I had something to do, but I have become able to go."
       }
     ]
   },
@@ -1555,7 +1658,8 @@
             "a": "話す",
             "b": "話している"
           }
-        ]
+        ],
+        "translation_en": "While I was talking on the phone, another phone rang."
       },
       {
         "n": 2,
@@ -1571,7 +1675,8 @@
             "a": "ついでに",
             "b": "たびに"
           }
-        ]
+        ],
+        "translation_en": "Your child gets bigger every time I see them."
       },
       {
         "n": 3,
@@ -1587,7 +1692,8 @@
             "a": "立ち上がった",
             "b": "立ち上がる"
           }
-        ]
+        ],
+        "translation_en": "The moment I stood up, I felt dizzy."
       },
       {
         "n": 4,
@@ -1603,7 +1709,8 @@
             "a": "たびに",
             "b": "ついでに"
           }
-        ]
+        ],
+        "translation_en": "Our neighbour brings us a souvenir every time they travel."
       },
       {
         "n": 5,
@@ -1619,7 +1726,8 @@
             "a": "ついでに",
             "b": "たびに"
           }
-        ]
+        ],
+        "translation_en": "I will be going nearby tomorrow, so I will deliver the item you left behind while I am there."
       },
       {
         "n": 6,
@@ -1629,7 +1737,8 @@
         "translation": "她是在电视节目中唱歌时失声的。",
         "pointIndexes": [
           3
-        ]
+        ],
+        "translation_en": "She lost her voice while she was singing on a television programme."
       },
       {
         "n": 7,
@@ -1639,7 +1748,8 @@
         "translation": "“有时刻表吗？”“没有，不过我去车站时顺便帮你拿一份回来。”",
         "pointIndexes": [
           0
-        ]
+        ],
+        "translation_en": "“Do you have a timetable?” “No, but I will pick one up for you while I am at the station.”"
       }
     ]
   },
@@ -1659,7 +1769,8 @@
             "a": "言うの",
             "b": "言った"
           }
-        ]
+        ],
+        "translation_en": "Please write exactly as I am about to say."
       },
       {
         "n": 2,
@@ -1675,7 +1786,8 @@
             "a": "きり",
             "b": "まま"
           }
-        ]
+        ],
+        "translation_en": "Please come in with your shoes on."
       },
       {
         "n": 3,
@@ -1691,7 +1803,8 @@
             "a": "ぱなし",
             "b": "まま"
           }
-        ]
+        ],
+        "translation_en": "The television has been left on. Please turn it off when you are not watching it."
       },
       {
         "n": 4,
@@ -1707,7 +1820,8 @@
             "a": "きり",
             "b": "とおり"
           }
-        ]
+        ],
+        "translation_en": "Live your one and only life with care."
       },
       {
         "n": 5,
@@ -1723,7 +1837,8 @@
             "a": "つける",
             "b": "つけた"
           }
-        ]
+        ],
+        "translation_en": "My younger sister sleeps with the light on."
       },
       {
         "n": 6,
@@ -1733,7 +1848,8 @@
         "translation": "不要把脱下来的衣服丢着不管，把它收好。",
         "pointIndexes": [
           2
-        ]
+        ],
+        "translation_en": "Do not leave the clothes you took off lying around; put them away."
       },
       {
         "n": 7,
@@ -1743,7 +1859,8 @@
         "translation": "日本和旅游指南上写的一样吗？",
         "pointIndexes": [
           0
-        ]
+        ],
+        "translation_en": "Was Japan just as the guidebook described it?"
       }
     ]
   },
@@ -1763,7 +1880,8 @@
             "a": "残念",
             "b": "残念な"
           }
-        ]
+        ],
+        "translation_en": "My older brother was very disappointed that he could not come."
       },
       {
         "n": 2,
@@ -1779,7 +1897,8 @@
             "a": "病気",
             "b": "病気の"
           }
-        ]
+        ],
+        "translation_en": "A sales call came in, so I pretended to be ill and hung up."
       },
       {
         "n": 3,
@@ -1795,7 +1914,8 @@
             "a": "使い",
             "b": "使って"
           }
-        ]
+        ],
+        "translation_en": "I would like many people to use this book."
       },
       {
         "n": 4,
@@ -1811,7 +1931,8 @@
             "a": "忘れないで",
             "b": "忘れなくて"
           }
-        ]
+        ],
+        "translation_en": "I want you not to forget Japanese even after you return to your country."
       },
       {
         "n": 5,
@@ -1827,7 +1948,8 @@
             "a": "さびし",
             "b": "さびしい"
           }
-        ]
+        ],
+        "translation_en": "My parents are feeling lonely, so I will return home during spring break."
       },
       {
         "n": 6,
@@ -1837,7 +1959,8 @@
         "translation": "我没有信心能不能做到，所以希望你不要期待过高。",
         "pointIndexes": [
           1
-        ]
+        ],
+        "translation_en": "I am not confident that I can do it, so I would like you not to expect too much."
       },
       {
         "n": 7,
@@ -1847,7 +1970,8 @@
         "translation": "有一封来自想见你的人的信。",
         "pointIndexes": [
           0
-        ]
+        ],
+        "translation_en": "A letter has arrived from the person you want to see."
       }
     ]
   },
@@ -1867,7 +1991,8 @@
             "a": "くせ",
             "b": "わり"
           }
-        ]
+        ],
+        "translation_en": "For something this inexpensive, it tastes quite good."
       },
       {
         "n": 2,
@@ -1883,7 +2008,8 @@
             "a": "なんか",
             "b": "にとって"
           }
-        ]
+        ],
+        "translation_en": "I do not want to go anywhere like karaoke."
       },
       {
         "n": 3,
@@ -1899,7 +2025,8 @@
             "a": "くせ",
             "b": "わり"
           }
-        ]
+        ],
+        "translation_en": "Although he is a man, he looks like a woman."
       },
       {
         "n": 4,
@@ -1915,7 +2042,8 @@
             "a": "にとっても",
             "b": "にとっては"
           }
-        ]
+        ],
+        "translation_en": "Cigarette smoke and odour are painful for people who do not smoke."
       },
       {
         "n": 5,
@@ -1931,7 +2059,8 @@
             "a": "わり",
             "b": "など"
           }
-        ]
+        ],
+        "translation_en": "Considering that I did not study for the test, I did quite well."
       },
       {
         "n": 6,
@@ -1941,7 +2070,8 @@
         "translation": "那个学生考试成绩很好，但日语却说不通。",
         "pointIndexes": [
           1
-        ]
+        ],
+        "translation_en": "Although that student gets good marks on tests, his Japanese is not understood."
       },
       {
         "n": 7,
@@ -1951,7 +2081,8 @@
         "translation": "明明其实很喜欢，却说自己讨厌。",
         "pointIndexes": [
           2
-        ]
+        ],
+        "translation_en": "Although he actually likes it, he says he hates it."
       }
     ]
   },
@@ -1971,7 +2102,8 @@
             "a": "せいで",
             "b": "おかげで"
           }
-        ]
+        ],
+        "translation_en": "“It finally rained.” “Yes. Thanks to this rain, the crops will probably recover.”"
       },
       {
         "n": 2,
@@ -1987,7 +2119,8 @@
             "a": "かわりに",
             "b": "かわって"
           }
-        ]
+        ],
+        "translation_en": "Please allow me to say a few words of thanks on behalf of my father."
       },
       {
         "n": 3,
@@ -2003,7 +2136,8 @@
             "a": "のせいで",
             "b": "にかわり"
           }
-        ]
+        ],
+        "translation_en": "I was late for our appointment because of an accident."
       },
       {
         "n": 4,
@@ -2019,7 +2153,8 @@
             "a": "せいで",
             "b": "かわりに"
           }
-        ]
+        ],
+        "translation_en": "Is it true that in your country people drink beer instead of water?"
       },
       {
         "n": 5,
@@ -2035,7 +2170,8 @@
             "a": "にかわり",
             "b": "のおかげで"
           }
-        ]
+        ],
+        "translation_en": "DVDs came to be used in place of videotapes."
       },
       {
         "n": 6,
@@ -2045,7 +2181,8 @@
         "translation": "多亏一位好医生为我诊治，病好了。",
         "pointIndexes": [
           0
-        ]
+        ],
+        "translation_en": "Thanks to being examined by a good doctor, I recovered from my illness."
       },
       {
         "n": 7,
@@ -2055,7 +2192,8 @@
         "translation": "作为朋友帮我搬家的回报，我请他吃了晚饭。",
         "pointIndexes": [
           2
-        ]
+        ],
+        "translation_en": "In return for my friend helping me move, I treated them to dinner."
       }
     ]
   },
@@ -2075,7 +2213,8 @@
             "a": "ほど",
             "b": "くらい"
           }
-        ]
+        ],
+        "translation_en": "The more I read this book, the more interesting it becomes."
       },
       {
         "n": 2,
@@ -2091,7 +2230,8 @@
             "a": "ほど",
             "b": "くらい"
           }
-        ]
+        ],
+        "translation_en": "A baby so big that it is surprising."
       },
       {
         "n": 3,
@@ -2107,7 +2247,8 @@
             "a": "ほど",
             "b": "くらい"
           }
-        ]
+        ],
+        "translation_en": "The fresher vegetables are, the better they taste."
       },
       {
         "n": 4,
@@ -2127,7 +2268,8 @@
             "a": "ほど",
             "b": "くらい"
           }
-        ]
+        ],
+        "translation_en": "A: “How much did you practise?” B: “So much that my hands hurt.”"
       },
       {
         "n": 5,
@@ -2143,7 +2285,8 @@
             "a": "くらい",
             "b": "ほど"
           }
-        ]
+        ],
+        "translation_en": "There is no one as serious as that person."
       },
       {
         "n": 6,
@@ -2153,7 +2296,8 @@
         "translation": "房子和公寓越靠近车站、越方便，价格就越高。",
         "pointIndexes": [
           1
-        ]
+        ],
+        "translation_en": "The closer and more convenient a house or apartment is to a station, the more expensive it is."
       },
       {
         "n": 7,
@@ -2163,7 +2307,8 @@
         "translation": "我认为没有哪种语言像法语那么美。",
         "pointIndexes": [
           3
-        ]
+        ],
+        "translation_en": "I think there is no language as beautiful as French."
       }
     ]
   },
@@ -2183,7 +2328,8 @@
             "a": "ことだ",
             "b": "ことはない"
           }
-        ]
+        ],
+        "translation_en": "There is no need to hurry. Taking your time is fine."
       },
       {
         "n": 2,
@@ -2199,7 +2345,8 @@
             "a": "ことだ",
             "b": "ことはない"
           }
-        ]
+        ],
+        "translation_en": "It is impossible to do everything at once. You should study a little every day."
       },
       {
         "n": 3,
@@ -2215,7 +2362,8 @@
             "a": "ことか",
             "b": "ことはない"
           }
-        ]
+        ],
+        "translation_en": "You were late. You have no idea how worried I was."
       },
       {
         "n": 4,
@@ -2231,7 +2379,8 @@
             "a": "ことだ",
             "b": "ということだ"
           }
-        ]
+        ],
+        "translation_en": "I hear that there was an earthquake in Tokyo yesterday."
       },
       {
         "n": 5,
@@ -2247,7 +2396,8 @@
             "a": "買う",
             "b": "買わない"
           }
-        ]
+        ],
+        "translation_en": "There is no need to buy it. I will lend it to you."
       },
       {
         "n": 6,
@@ -2257,7 +2407,8 @@
         "translation": "所谓禁烟，就是不可以吸烟。",
         "pointIndexes": [
           1
-        ]
+        ],
+        "translation_en": "Kinen means that smoking is prohibited."
       },
       {
         "n": 7,
@@ -2267,7 +2418,8 @@
         "translation": "酒只喝一点对身体并无坏处，但应该注意不要喝得过量。",
         "pointIndexes": [
           2
-        ]
+        ],
+        "translation_en": "A little alcohol is not bad for your health. The important thing is not to drink too much."
       }
     ]
   },
@@ -2287,7 +2439,8 @@
             "a": "さて",
             "b": "だって"
           }
-        ]
+        ],
+        "translation_en": "“I find that shop assistant difficult to deal with. They are frightening, you see.”"
       },
       {
         "n": 2,
@@ -2308,7 +2461,8 @@
             "a": "んだって",
             "b": "っぽいよ"
           }
-        ]
+        ],
+        "translation_en": "A: “Was she always that beautiful?” B: “I heard she got engaged.”"
       },
       {
         "n": 3,
@@ -2324,7 +2478,8 @@
             "a": "歩くしかない",
             "b": "歩こうとしない"
           }
-        ]
+        ],
+        "translation_en": "Both buses and trains have stopped, so we have no choice but to walk."
       },
       {
         "n": 4,
@@ -2340,7 +2495,8 @@
             "a": "静か",
             "b": "静かな"
           }
-        ]
+        ],
+        "translation_en": "A: “It is very lively here.” B: “But I hear it is quiet at night.”"
       },
       {
         "n": 5,
@@ -2356,7 +2512,8 @@
             "a": "あったかかった",
             "b": "あったかいだ"
           }
-        ]
+        ],
+        "translation_en": "Was January always this warm?"
       },
       {
         "n": 6,
@@ -2366,7 +2523,8 @@
         "translation": "父亲只吃母亲做的饭菜。",
         "pointIndexes": [
           1
-        ]
+        ],
+        "translation_en": "My father eats only food made by my mother."
       },
       {
         "n": 7,
@@ -2376,7 +2534,8 @@
         "translation": "“真少见，你居然会生气。”“因为他对我说了太失礼的话嘛。”",
         "pointIndexes": [
           3
-        ]
+        ],
+        "translation_en": "“It is unusual to see you angry.” “Because someone said something extremely rude to me.”"
       }
     ]
   },
@@ -2396,7 +2555,8 @@
             "a": "その結果",
             "b": "なぜかというと"
           }
-        ]
+        ],
+        "translation_en": "I hardly studied. As a result, I failed the entrance examination."
       },
       {
         "n": 2,
@@ -2412,7 +2572,8 @@
             "a": "つまり",
             "b": "なぜなら"
           }
-        ]
+        ],
+        "translation_en": "Next week I have a business trip, this week I have to prepare for it, and today I have meetings all day. In short, I will be busy for a while."
       },
       {
         "n": 3,
@@ -2428,7 +2589,8 @@
             "a": "つまり",
             "b": "そのため"
           }
-        ]
+        ],
+        "translation_en": "His heart had always been weak. For that reason, it seems the shock of hearing that news caused his sudden death."
       },
       {
         "n": 4,
@@ -2444,7 +2606,8 @@
             "a": "なぜなら",
             "b": "そのために"
           }
-        ]
+        ],
+        "translation_en": "Although I want to quit my job, I cannot, because I have a mortgage. (loan)"
       },
       {
         "n": 5,
@@ -2460,7 +2623,8 @@
             "a": "つまり",
             "b": "その結果"
           }
-        ]
+        ],
+        "translation_en": "He is a veterinarian; in other words, a doctor for animals."
       },
       {
         "n": 6,
@@ -2470,7 +2634,8 @@
         "translation": "无论多么痛苦，他都没有放弃。正因为如此，才诞生了这项伟大的发明。",
         "pointIndexes": [
           2
-        ]
+        ],
+        "translation_en": "No matter how hard things became, he did not give up. As a result, a great invention like this was born."
       },
       {
         "n": 7,
@@ -2480,7 +2645,8 @@
         "translation": "她是我姐姐的女儿，也就是说，是我的外甥女。",
         "pointIndexes": [
           0
-        ]
+        ],
+        "translation_en": "She is my older sister’s daughter; in other words, she is my niece."
       }
     ]
   },
@@ -2500,7 +2666,8 @@
             "a": "に比べて",
             "b": "ばかりか"
           }
-        ]
+        ],
+        "translation_en": "Male animals are often more colourful and beautiful than females."
       },
       {
         "n": 2,
@@ -2516,7 +2683,8 @@
             "a": "不便",
             "b": "不便な"
           }
-        ]
+        ],
+        "translation_en": "My hometown is not only inconvenient but also bitterly cold."
       },
       {
         "n": 3,
@@ -2532,7 +2700,8 @@
             "a": "ばかりでなく",
             "b": "に対して"
           }
-        ]
+        ],
+        "translation_en": "That shop is crowded not only on holidays but also on ordinary days."
       },
       {
         "n": 4,
@@ -2548,7 +2717,8 @@
             "a": "に比べて",
             "b": "はもちろん"
           }
-        ]
+        ],
+        "translation_en": "His animated works can be enjoyed not only by children but by adults as well."
       },
       {
         "n": 5,
@@ -2564,7 +2734,8 @@
             "a": "に対して",
             "b": "ばかりか"
           }
-        ]
+        ],
+        "translation_en": "Most people who use this shop during the day are housewives. In contrast, most evening customers are office workers."
       },
       {
         "n": 6,
@@ -2574,7 +2745,8 @@
         "translation": "站务员向乘客说明了电车晚点的原因。",
         "pointIndexes": [
           3
-        ]
+        ],
+        "translation_en": "The station attendant explained to the passengers why the train was delayed."
       },
       {
         "n": 7,
@@ -2584,7 +2756,8 @@
         "translation": "新买的手机外观时尚漂亮，但与以前那部容易使用的手机相比，它很难用。",
         "pointIndexes": [
           2
-        ]
+        ],
+        "translation_en": "My new mobile phone is stylish and attractive, but compared with my old one, which was easy to use, it is difficult to use."
       }
     ]
   },
@@ -2604,7 +2777,8 @@
             "a": "言いかけて",
             "b": "言い上げて"
           }
-        ]
+        ],
+        "translation_en": "He started to say something and then stopped."
       },
       {
         "n": 2,
@@ -2620,7 +2794,8 @@
             "a": "炊きかけ",
             "b": "炊きたて"
           }
-        ]
+        ],
+        "translation_en": "Freshly cooked rice is delicious."
       },
       {
         "n": 3,
@@ -2636,7 +2811,8 @@
             "a": "できあげ",
             "b": "できあがり"
           }
-        ]
+        ],
+        "translation_en": "The work that took a long time to make has finally been completed."
       },
       {
         "n": 4,
@@ -2652,7 +2828,8 @@
             "a": "書き切れない",
             "b": "書き上げない"
           }
-        ]
+        ],
+        "translation_en": "If you cannot fit everything in the space there, please use the back as well."
       },
       {
         "n": 5,
@@ -2668,7 +2845,8 @@
             "a": "編みたてた",
             "b": "編み上げた"
           }
-        ]
+        ],
+        "translation_en": "My older sister finished knitting a scarf for a present in a single night."
       },
       {
         "n": 6,
@@ -2679,7 +2857,8 @@
         "pointIndexes": [
           2,
           1
-        ]
+        ],
+        "translation_en": "My mother told me to use up the one I had already started before buying a new one."
       },
       {
         "n": 7,
@@ -2690,7 +2869,8 @@
         "pointIndexes": [
           3,
           1
-        ]
+        ],
+        "translation_en": "The section chief is exhausted from training employees who have just joined the company."
       }
     ]
   },
@@ -2710,7 +2890,8 @@
             "a": "はける",
             "b": "はけない"
           }
-        ]
+        ],
+        "translation_en": "My younger sister’s shoes are too tight for me to get my feet into. If they were a little bigger, I could wear them."
       },
       {
         "n": 2,
@@ -2726,7 +2907,8 @@
             "a": "勝つ",
             "b": "勝った"
           }
-        ]
+        ],
+        "translation_en": "I wonder which team won yesterday’s game."
       },
       {
         "n": 3,
@@ -2742,7 +2924,8 @@
             "a": "降らない",
             "b": "降らなかった"
           }
-        ]
+        ],
+        "translation_en": "Tomorrow is the fireworks festival, so I hope it does not rain."
       },
       {
         "n": 4,
@@ -2758,7 +2941,8 @@
             "a": "いい",
             "b": "よかった"
           }
-        ]
+        ],
+        "translation_en": "Last night’s programme was interesting. You should have watched it too."
       },
       {
         "n": 5,
@@ -2774,7 +2958,8 @@
             "a": "のに",
             "b": "かなあ"
           }
-        ]
+        ],
+        "translation_en": "Whenever I leave home, I worry afterward about whether I turned off the gas."
       },
       {
         "n": 6,
@@ -2784,7 +2969,8 @@
         "translation": "事情已经做了，再想“当时不做就好了”也没有用。",
         "pointIndexes": [
           1
-        ]
+        ],
+        "translation_en": "There is no point in thinking, after something has already been done, that you should not have done it."
       },
       {
         "n": 7,
@@ -2794,7 +2980,8 @@
         "translation": "朋友对我说：“希望我也能像你一样擅长运动。”",
         "pointIndexes": [
           0
-        ]
+        ],
+        "translation_en": "A friend told me, “I wish I could play sports as well as you.”"
       }
     ]
   },
@@ -2814,7 +3001,8 @@
             "a": "まで",
             "b": "までに"
           }
-        ]
+        ],
+        "translation_en": "I decided that I would never give up until I passed."
       },
       {
         "n": 2,
@@ -2830,7 +3018,8 @@
             "a": "にかけて",
             "b": "において"
           }
-        ]
+        ],
+        "translation_en": "I gave my mother a massage. She was extremely stiff from her neck down to her shoulders."
       },
       {
         "n": 3,
@@ -2846,7 +3035,8 @@
             "a": "まで",
             "b": "までに"
           }
-        ]
+        ],
+        "translation_en": "I want somehow to master Japanese by the time I return to my country."
       },
       {
         "n": 4,
@@ -2862,7 +3052,8 @@
             "a": "まで",
             "b": "までに"
           }
-        ]
+        ],
+        "translation_en": "I understand that you are busy, but are you going to work even through the New Year holiday?"
       },
       {
         "n": 5,
@@ -2878,7 +3069,8 @@
             "a": "において",
             "b": "にかけて"
           }
-        ]
+        ],
+        "translation_en": "An emergency drill will be held at the elementary school. Please participate."
       },
       {
         "n": 6,
@@ -2888,7 +3080,8 @@
         "translation": "因为大雨，连包里面都湿了。",
         "pointIndexes": [
           1
-        ]
+        ],
+        "translation_en": "Because of the heavy rain, even the inside of my bag got wet."
       },
       {
         "n": 7,
@@ -2898,7 +3091,8 @@
         "translation": "听说从二月到四月会有花粉飘散。",
         "pointIndexes": [
           2
-        ]
+        ],
+        "translation_en": "I hear that pollen is in the air from February through April."
       }
     ]
   },
@@ -2918,7 +3112,8 @@
             "a": "まるで",
             "b": "もしかすると"
           }
-        ]
+        ],
+        "translation_en": "The person sitting over there may possibly be famous."
       },
       {
         "n": 2,
@@ -2934,7 +3129,8 @@
             "a": "たとえ",
             "b": "かならずしも"
           }
-        ]
+        ],
+        "translation_en": "Even if the salary is high, I do not want a job like that."
       },
       {
         "n": 3,
@@ -2950,7 +3146,8 @@
             "a": "まるで",
             "b": "もしかしたら"
           }
-        ]
+        ],
+        "translation_en": "What I heard was a true story that sounded just like a lie."
       },
       {
         "n": 4,
@@ -2966,7 +3163,8 @@
             "a": "たとえ",
             "b": "必ずしも"
           }
-        ]
+        ],
+        "translation_en": "The Japanese spoken by Japanese people is not necessarily all correct."
       },
       {
         "n": 5,
@@ -2982,7 +3180,8 @@
             "a": "まるで",
             "b": "たとえ"
           }
-        ]
+        ],
+        "translation_en": "Those two look so alike that they are just like brothers."
       },
       {
         "n": 6,
@@ -2992,7 +3191,8 @@
         "translation": "即使父母反对，我也要和她结婚。",
         "pointIndexes": [
           0
-        ]
+        ],
+        "translation_en": "Even if my parents oppose it, I will marry her."
       },
       {
         "n": 7,
@@ -3002,7 +3202,8 @@
         "translation": "父母和老师说的话未必都是正确的。",
         "pointIndexes": [
           2
-        ]
+        ],
+        "translation_en": "What parents and teachers say is not necessarily correct."
       }
     ]
   },
@@ -3022,7 +3223,8 @@
             "a": "ところが",
             "b": "ところで"
           }
-        ]
+        ],
+        "translation_en": "He is extremely intelligent. However, he was unable to enter university."
       },
       {
         "n": 2,
@@ -3038,7 +3240,8 @@
             "a": "ところで",
             "b": "ですから"
           }
-        ]
+        ],
+        "translation_en": "“You will graduate soon. By the way, what are you going to do about finding a job?”"
       },
       {
         "n": 3,
@@ -3054,7 +3257,8 @@
             "a": "だから",
             "b": "ところが"
           }
-        ]
+        ],
+        "translation_en": "Everyone thought he would win. However, he lost easily."
       },
       {
         "n": 4,
@@ -3070,7 +3274,8 @@
             "a": "ところで",
             "b": "だけど"
           }
-        ]
+        ],
+        "translation_en": "“This semester ends tomorrow. By the way, have you paid next semester’s tuition?”"
       },
       {
         "n": 5,
@@ -3086,7 +3291,8 @@
             "a": "だけど",
             "b": "だから"
           }
-        ]
+        ],
+        "translation_en": "I do not like vegetables, but I eat them because they are good for me."
       },
       {
         "n": 6,
@@ -3096,7 +3302,8 @@
         "translation": "中途不能入场，所以请绝对不要迟到。",
         "pointIndexes": [
           1
-        ]
+        ],
+        "translation_en": "You cannot enter after the event has begun. Therefore, please make absolutely sure not to be late."
       },
       {
         "n": 7,
@@ -3106,7 +3313,8 @@
         "translation": "确实已经用邮寄方式寄出了，然而对方说还没有收到。",
         "pointIndexes": [
           2
-        ]
+        ],
+        "translation_en": "I definitely sent it by post. However, I was told that it had not arrived."
       }
     ]
   },
@@ -3126,7 +3334,8 @@
             "a": "もし",
             "b": "たとえ"
           }
-        ]
+        ],
+        "translation_en": "If I had been on that plane, I would probably be dead."
       },
       {
         "n": 2,
@@ -3142,7 +3351,8 @@
             "a": "としたら",
             "b": "としても"
           }
-        ]
+        ],
+        "translation_en": "Even if I receive a job offer from that company, I do not intend to join it."
       },
       {
         "n": 3,
@@ -3158,7 +3368,8 @@
             "a": "でも",
             "b": "なら"
           }
-        ]
+        ],
+        "translation_en": "Why are you doing such a thing? If I were you, I would never do it."
       },
       {
         "n": 4,
@@ -3174,7 +3385,8 @@
             "a": "なら",
             "b": "としたって"
           }
-        ]
+        ],
+        "translation_en": "If you do not study, you will not pass no matter how many times you take the test."
       },
       {
         "n": 5,
@@ -3190,7 +3402,8 @@
             "a": "もしも",
             "b": "もしかして"
           }
-        ]
+        ],
+        "translation_en": "In an emergency, please open this drawer and read my letter."
       },
       {
         "n": 6,
@@ -3201,7 +3414,8 @@
         "pointIndexes": [
           2,
           1
-        ]
+        ],
+        "translation_en": "What would you do if the Earth were to disappear tomorrow?"
       },
       {
         "n": 7,
@@ -3211,7 +3425,8 @@
         "translation": "所谓保险，就是为防备万一而加入的保障。",
         "pointIndexes": [
           2
-        ]
+        ],
+        "translation_en": "Insurance is something you obtain in preparation for an emergency."
       }
     ]
   },
@@ -3231,7 +3446,8 @@
             "a": "いる",
             "b": "いない"
           }
-        ]
+        ],
+        "translation_en": "I will be at home tomorrow, but I have to work from home."
       },
       {
         "n": 2,
@@ -3247,7 +3463,8 @@
             "a": "なりました",
             "b": "なっています"
           }
-        ]
+        ],
+        "translation_en": "It has suddenly been decided that I will return to my country."
       },
       {
         "n": 3,
@@ -3263,7 +3480,8 @@
             "a": "して",
             "b": "なって"
           }
-        ]
+        ],
+        "translation_en": "To avoid gaining weight, I make it a rule not to eat after nine at night."
       },
       {
         "n": 4,
@@ -3279,7 +3497,8 @@
             "a": "できる",
             "b": "できない"
           }
-        ]
+        ],
+        "translation_en": "It is not that I cannot drive, but I almost never do."
       },
       {
         "n": 5,
@@ -3295,7 +3514,8 @@
             "a": "こと",
             "b": "もの"
           }
-        ]
+        ],
+        "translation_en": "Mobile phones are certainly convenient, but I think I would be fine without one."
       },
       {
         "n": 6,
@@ -3305,7 +3525,8 @@
         "translation": "在日本，规定车辆要靠道路左侧行驶。",
         "pointIndexes": [
           0
-        ]
+        ],
+        "translation_en": "In Japan, vehicles are required to drive on the left side of the road."
       },
       {
         "n": 7,
@@ -3315,7 +3536,8 @@
         "translation": "生活下去倒也不是不可能，不过经济上很困难。",
         "pointIndexes": [
           3
-        ]
+        ],
+        "translation_en": "It is not impossible to live on this income, but it is difficult financially."
       }
     ]
   },
@@ -3335,7 +3557,8 @@
             "a": "元気な",
             "b": "元気だ"
           }
-        ]
+        ],
+        "translation_en": "I would like to return to the countryside once while my grandmother is still well."
       },
       {
         "n": 2,
@@ -3351,7 +3574,8 @@
             "a": "聞く",
             "b": "聞いた"
           }
-        ]
+        ],
+        "translation_en": "When I asked the station attendant, I learned that the lost item had been handed in."
       },
       {
         "n": 3,
@@ -3367,7 +3591,8 @@
             "a": "うちに",
             "b": "ところに"
           }
-        ]
+        ],
+        "translation_en": "I have made tea, so please drink it before it gets cold."
       },
       {
         "n": 4,
@@ -3383,7 +3608,8 @@
             "a": "落ちる",
             "b": "落ちた"
           }
-        ]
+        ],
+        "translation_en": "I nearly fell down the stairs."
       },
       {
         "n": 5,
@@ -3393,7 +3619,8 @@
         "translation": "直到开始跟那位老师学习以后，我才觉得日语学习有意思。",
         "pointIndexes": [
           2
-        ]
+        ],
+        "translation_en": "It was only after I began studying with that teacher that learning Japanese became interesting."
       },
       {
         "n": 6,
@@ -3403,7 +3630,8 @@
         "translation": "明明差一点就能把试题全部做完，却到时间了。",
         "pointIndexes": [
           1
-        ]
+        ],
+        "translation_en": "I had almost finished all the exam questions when time ran out."
       },
       {
         "n": 7,
@@ -3413,7 +3641,8 @@
         "translation": "最好趁还有人教你、提醒你的时候好好学习。",
         "pointIndexes": [
           3
-        ]
+        ],
+        "translation_en": "You should study while there are still people who will teach and correct you."
       }
     ]
   },
@@ -3433,7 +3662,8 @@
             "a": "わけだ",
             "b": "わけがない"
           }
-        ]
+        ],
+        "translation_en": "So construction was taking place here. No wonder there is a traffic jam."
       },
       {
         "n": 2,
@@ -3449,7 +3679,8 @@
             "a": "わけだ",
             "b": "わけではない"
           }
-        ]
+        ],
+        "translation_en": "It is not that I was asleep; I was thinking about something else."
       },
       {
         "n": 3,
@@ -3465,7 +3696,8 @@
             "a": "わけではない",
             "b": "わけにはいかない"
           }
-        ]
+        ],
+        "translation_en": "Because it is a rule, we cannot allow anyone who is more than thirty minutes late to take the exam."
       },
       {
         "n": 4,
@@ -3481,7 +3713,8 @@
             "a": "わけが",
             "b": "わけでは"
           }
-        ]
+        ],
+        "translation_en": "There is no way that someone who lies all the time will be trusted by everyone."
       },
       {
         "n": 5,
@@ -3497,7 +3730,8 @@
             "a": "笑われて",
             "b": "笑って"
           }
-        ]
+        ],
+        "translation_en": "Oh, there was a grain of rice stuck to my face. No wonder everyone was giggling at me."
       },
       {
         "n": 6,
@@ -3507,7 +3741,8 @@
         "translation": "那个不可能落榜的学生竟然没通过考试。",
         "pointIndexes": [
           2
-        ]
+        ],
+        "translation_en": "A student who could not possibly fail ended up failing the exam."
       },
       {
         "n": 7,
@@ -3517,7 +3752,8 @@
         "translation": "可以把窗户稍微打开一点吗？并不是因为热，而是想换换空气。",
         "pointIndexes": [
           1
-        ]
+        ],
+        "translation_en": "May I open the window a little? It is not because it is hot; I want to let in some fresh air."
       }
     ]
   },
@@ -3537,7 +3773,8 @@
             "a": "まったく",
             "b": "めったに"
           }
-        ]
+        ],
+        "translation_en": "Things are so difficult right now that I cannot think about the future at all."
       },
       {
         "n": 2,
@@ -3553,7 +3790,8 @@
             "a": "めったに",
             "b": "ちっとも"
           }
-        ]
+        ],
+        "translation_en": "Even though I am dieting by reducing how much I eat, I have not lost any weight at all."
       },
       {
         "n": 3,
@@ -3569,7 +3807,8 @@
             "a": "全く",
             "b": "決して"
           }
-        ]
+        ],
+        "translation_en": "Thank you for all your help. I will never forget how kindly you treated me."
       },
       {
         "n": 4,
@@ -3585,7 +3824,8 @@
             "a": "少しも",
             "b": "めったに"
           }
-        ]
+        ],
+        "translation_en": "I walked for hours yesterday, but I am not tired at all."
       },
       {
         "n": 5,
@@ -3601,7 +3841,8 @@
             "a": "決して",
             "b": "めったに"
           }
-        ]
+        ],
+        "translation_en": "She is strong and hardly ever gets sick, but apparently she has caught influenza."
       },
       {
         "n": 6,
@@ -3611,7 +3852,8 @@
         "translation": "我完全无法理解他说的话。",
         "pointIndexes": [
           1
-        ]
+        ],
+        "translation_en": "I cannot understand what he says at all."
       },
       {
         "n": 7,
@@ -3621,7 +3863,8 @@
         "translation": "被平时很少夸人的老师表扬了，我很高兴。",
         "pointIndexes": [
           2
-        ]
+        ],
+        "translation_en": "I am happy that a teacher who rarely praises anyone praised me."
       }
     ]
   },
@@ -3641,7 +3884,8 @@
             "a": "それと",
             "b": "その上"
           }
-        ]
+        ],
+        "translation_en": "Have you written your name? Also, please remember to write your ID number."
       },
       {
         "n": 2,
@@ -3657,7 +3901,8 @@
             "a": "それとも",
             "b": "あと"
           }
-        ]
+        ],
+        "translation_en": "Shall we go by subway, or shall we take JR?"
       },
       {
         "n": 3,
@@ -3673,7 +3918,8 @@
             "a": "もう",
             "b": "あと"
           }
-        ]
+        ],
+        "translation_en": "Please clean, do the laundry, go shopping, and then cook."
       },
       {
         "n": 4,
@@ -3689,7 +3935,8 @@
             "a": "その上",
             "b": "それとも"
           }
-        ]
+        ],
+        "translation_en": "I hear that he is handsome, sings well, and is intelligent on top of that."
       },
       {
         "n": 5,
@@ -3705,7 +3952,8 @@
             "a": "あと",
             "b": "それと"
           }
-        ]
+        ],
+        "translation_en": "This is Day 6 of Week 6, so after one more day of study, you will have finished this book."
       },
       {
         "n": 6,
@@ -3715,7 +3963,8 @@
         "translation": "田中来得真晚。是电车晚点了，还是身体不舒服呢？到底怎么了？",
         "pointIndexes": [
           1
-        ]
+        ],
+        "translation_en": "Tanaka-san is late. Is the train delayed, or is he feeling unwell? I wonder what happened."
       },
       {
         "n": 7,
@@ -3725,7 +3974,8 @@
         "translation": "我正在找新的兼职。现在这份工作离得远，而且还不给交通费。",
         "pointIndexes": [
           2
-        ]
+        ],
+        "translation_en": "I am looking for a new part-time job. My current one is far away, and on top of that, they do not pay my travel expenses."
       }
     ]
   }
