@@ -1380,6 +1380,28 @@ const grammar = JSON.parse(fs.readFileSync(grammarPath, "utf8"));
 mergeBookEnglish(grammar);
 fs.writeFileSync(grammarPath, `${JSON.stringify(grammar)}\n`);
 
+const sourceDir = path.resolve(ROOT, "..", "日语学习", "src-data", "n3-grammar");
+if (fs.existsSync(sourceDir)) {
+  for (const week of grammar.weeks) {
+    for (const day of week.days.filter((entry) => entry.day < 7)) {
+      const file = path.join(sourceDir, `w${week.n}d${day.day}.json`);
+      if (!fs.existsSync(file)) continue;
+      const source = JSON.parse(fs.readFileSync(file, "utf8"));
+      if (day.dialog?.en && source.dialog) source.dialog.en = day.dialog.en;
+      (source.points || []).forEach((point, index) => {
+        const merged = day.points[index];
+        if (!merged) return;
+        if (merged.usage_en) point.usage_en = merged.usage_en;
+        (point.examples || []).forEach((example, exampleIndex) => {
+          const mergedExample = merged.examples?.[exampleIndex];
+          if (mergedExample?.en) example.en = mergedExample.en;
+        });
+      });
+      fs.writeFileSync(file, `${JSON.stringify(source, null, 2)}\n`);
+    }
+  }
+}
+
 const dailyPath = path.join(DATA, "n3-grammar-daily-explanations.json");
 const daily = JSON.parse(fs.readFileSync(dailyPath, "utf8"));
 mergeDailyEnglish(daily);
