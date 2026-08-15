@@ -890,8 +890,8 @@ function pointHTML(p, wid, i){
     <h3 class="jp">${R(p,'pattern')}</h3>${star(pid,psnap)}${sayBtn(p.pattern)}
     ${p.reading?`<div class="reading jp">${esc(p.reading)}</div>`:''}
     ${connBlockHTML(p)}
-    ${p.usage_jp?`<div class="usage jp">${R(p,'usage_jp')}</div>`:''}
-    ${puse?`<div class="usage"><span class="cn">${esc(puse)}</span></div>`:''}`;
+    ${p.usage_jp?`<div class="usage ${LANG==='en'?'cn':'jp'}">${esc(LX(p.usage_jp,p.usage_en))}</div>`:''}
+    ${puse?`<div class="usage"><span class="cn">${esc(puse)}</span></div>`:''}`
   for(const ex of (p.examples||[])){ const exTx=LX(ex.cn, ex.en); h += `<div class="ex"><div class="jp">${R(ex,'jp')}${sayBtn(ex.jp)}</div>${ex.eq?`<div class="eq jp">（${R(ex,'eq')}）</div>`:''}${exTx?`<div class="cn">${esc(exTx)}</div>`:''}</div>`; }
   for(const nt of (p.notes||[])) h += `<div class="${noteClass(nt.type)}"><b class="nt">${esc(noteLabel(nt.type))}</b><span class="jp">${R(nt,'text')}</span></div>`;
   return h + `</div>`;
@@ -985,11 +985,12 @@ function viewDayGrammar(day,w,d,scrollP){
     const explanationByNumber=new Map(((dailyItems&&dailyItems.items)||[]).map(item=>[item.n,item]));
     html += `<div class="sec-title">れんしゅう（${LX('练习','Practice')}）</div><div class="card">`;
     for(const sec of (day.exercises.sections||[])){
-      html += `<div class="meta jp" style="margin:4px 0 8px">${sec.type==='choice'?'Ⅰ':'Ⅱ'}　${R(sec,'instruction')}</div>`;
+      const instr = LX(sec.instruction, sec.instruction_en);
+      html += `<div class="meta jp" style="margin:4px 0 8px">${sec.type==='choice'?'Ⅰ':'Ⅱ'}　${instr}</div>`;
       for(const it of (sec.items||[])) html += `<div class="q daily-q"><div class="daily-qline"><span class="n">${it.n}</span><span class="jp">${R(it,'q')}</span></div>${optsRow(it)}${dailyExercisePanelsHTML(explanationByNumber.get(it.n),it,day,w,d)}</div>`;
     }
-    if(day.exercises.answers) html += ansBlock(`ans-${w}-${d}`, `<b>${LX('答案','Answer')}：</b><span class="jp">${esc(day.exercises.answers)}</span>`);
-    else if(day.exercises.answers_note) html += `<div class="meta">${esc(day.exercises.answers_note)}</div>`;
+    if(day.exercises.answers) html += ansBlock(`ans-${w}-${d}`, `<b>${LX('答案','Answer')}：</b><span class="jp">${esc(day.exercises.answers)}</span><br><span class="cn">${esc(LX(day.exercises.answers_note, day.exercises.answers_note_en))}</span>`);
+    else if(day.exercises.answers_note) html += `<div class="meta">${esc(LX(day.exercises.answers_note, day.exercises.answers_note_en))}</div>`;
     html += `</div>`;
   }
   app.innerHTML = html; afterRender(scrollP);
@@ -1198,11 +1199,12 @@ function viewDayVocab(day,w,d,scrollTok){
     const translationByNumber=new Map(((dailyItems&&dailyItems.items)||[]).map(item=>[item.n,item]));
     html += `<div class="sec-title">れんしゅう（练习）</div><div class="card">`;
     (day.exercises.sections||[]).forEach((sec,si)=>{
-      html += `<div class="meta jp" style="margin:4px 0 8px">${romanN(si)}　${R(sec,'instruction')}</div>`;
+      const instr = LX(sec.instruction, sec.instruction_en);
+      html += `<div class="meta jp" style="margin:4px 0 8px">${romanN(si)}　${instr}</div>`;
       for(const it of (sec.items||[])) html += `<div class="q daily-q"><div class="daily-qline"><span class="n">${it.n}</span><span class="jp">${R(it,'q')}</span></div>${optsRow(it)}${dailyExerciseTranslationHTML(translationByNumber.get(it.n),'vocab',w,d,it)}</div>`;
     });
-    if(day.exercises.answers) html += ansBlock(`ans-v-${w}-${d}`, `<b>答案：</b><span class="jp">${esc(day.exercises.answers)}</span>`);
-    else if(day.exercises.answers_note) html += `<div class="meta">${esc(day.exercises.answers_note)}</div>`;
+    if(day.exercises.answers) html += ansBlock(`ans-v-${w}-${d}`, `<b>${LX('答案','Answer')}：</b><span class="jp">${esc(day.exercises.answers)}</span><br><span class="cn">${esc(LX(day.exercises.answers_note, day.exercises.answers_note_en))}</span>`);
+    else if(day.exercises.answers_note) html += `<div class="meta">${esc(LX(day.exercises.answers_note, day.exercises.answers_note_en))}</div>`;
     html += `</div>`;
   }
   if(day.hitokoto) html += `<div class="card hito"><div class="jp">${esc(day.hitokoto)}</div></div>`;
@@ -1266,11 +1268,12 @@ function viewDayKanji(day,w,d,scrollTok){
     const translationByNumber=new Map(((dailyItems&&dailyItems.items)||[]).map(item=>[item.n,item]));
     html += `<div class="sec-title">れんしゅう（练习）</div><div class="card">`;
     (day.exercises.sections||[]).forEach((sec,si)=>{
-      html += `<div class="meta jp" style="margin:4px 0 8px">${romanN(si)}　${R(sec,'instruction')}</div>`;
+      const instr = LX(sec.instruction, sec.instruction_en);
+      html += `<div class="meta jp" style="margin:4px 0 8px">${romanN(si)}　${instr}</div>`;
       for(const it of (sec.items||[])) html += `<div class="q daily-q"><div class="daily-qline"><span class="n">${it.n}</span><span class="jp">${R(it,'q')}</span></div>${optsRow(it)}${dailyExerciseTranslationHTML(translationByNumber.get(it.n),'kanji',w,d,it)}</div>`;
     });
-    if(day.exercises.answers) html += ansBlock(`ans-k-${w}-${d}`, `<b>答案：</b><span class="jp">${esc(day.exercises.answers)}</span>`);
-    else if(day.exercises.answers_note) html += `<div class="meta">${esc(day.exercises.answers_note)}</div>`;
+    if(day.exercises.answers) html += ansBlock(`ans-k-${w}-${d}`, `<b>${LX('答案','Answer')}：</b><span class="jp">${esc(day.exercises.answers)}</span><br><span class="cn">${esc(LX(day.exercises.answers_note, day.exercises.answers_note_en))}</span>`);
+    else if(day.exercises.answers_note) html += `<div class="meta">${esc(LX(day.exercises.answers_note, day.exercises.answers_note_en))}</div>`;
     html += `</div>`;
   }
   app.innerHTML = html;
