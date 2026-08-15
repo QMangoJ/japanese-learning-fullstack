@@ -1523,52 +1523,9 @@ function viewContrast(){
 
 /* ---------- numbers reference (global, level-agnostic) ---------- */
 // 数据里用「★」标出不规则读法，渲染时高亮出来——这是整个页面的重点
-function markStar(s){ return esc(s||'').replace(/★/g,'<span class="num-x">★</span>'); }
-function numTableHTML(t){
-  return `<div class="card">
-    ${t.caption?`<div class="num-cap jp">${markStar(t.caption)}</div>`:''}
-    <div class="table-scroll"><table class="ref">
-      ${t.cols?`<tr>${t.cols.map(c=>`<th class="jp">${markStar(c)}</th>`).join('')}</tr>`:''}
-      ${(t.rows||[]).map(r=>`<tr>${r.map(c=>`<td class="jp">${markStar(c)}</td>`).join('')}</tr>`).join('')}
-    </table></div>
-    ${t.note?`<div class="num-note">${markStar(t.note)}</div>`:''}
-  </div>`;
-}
-function numCounterHTML(c){
-  const irr = c.irr||[];
-  const cells = (c.forms||[]).map((f,i)=>{
-    const n=i+1;
-    return `<div class="cnt-cell${irr.includes(n)?' irr':''}"><span class="n">${n}</span><span class="r jp">${esc(f)}</span></div>`;
-  }).join('');
-  return `<div class="card">
-    <div class="cnt-head"><span class="cnt-suffix jp">${esc(c.suffix)}</span><span class="cnt-read jp">${esc(c.reading)}</span>${c.q?`<span class="cnt-q jp">何〜 ${esc(c.q)}</span>`:''}</div>
-    ${c.use?`<div class="cnt-use">${esc(c.use)}</div>`:''}
-    ${c.eg?`<div class="cnt-eg jp">例：${c.eg_r||esc(c.eg)}${sayBtn(c.eg)}</div>`:''}
-    <div class="cnt-grid">${cells}</div>
-    ${c.note?`<div class="num-note">${markStar(c.note)}</div>`:''}
-  </div>`;
-}
 function viewNumbers(){
   setNav('common'); setHeader(LX('数字表达','Number Expressions'), true);
-  const N = (DATA.common||{}).numbers;
-  if(!N){ app.innerHTML='<div class="empty">通用参考数据加载中，请稍候…</div>'; return; }
-  const secs = N.sections||[];
-  let html = `<div class="num-nav">${secs.map(s=>`<a data-scroll="num-${s.id}">${esc(s.title)}</a>`).join('')}</div>`;
-  if(N.intro) html += `<div class="num-lead">${esc(N.intro)}</div>`;
-  for(const s of secs){
-    html += `<div class="num-sec-h" id="num-${esc(s.id)}">${esc(s.title)}${s.title_jp?`<small class="jp">${esc(s.title_jp)}</small>`:''}</div>`;
-    if(s.lead) html += `<div class="num-lead">${esc(s.lead)}</div>`;
-    if(s.type==='rules'){
-      for(const g of s.groups||[]) html += `<div class="card num-rule"><h4>${markStar(g.h)}</h4>${g.eg?`<div class="eg jp">${markStar(g.eg)}</div>`:''}${g.note?`<div class="num-note">${markStar(g.note)}</div>`:''}</div>`;
-    } else if(s.type==='counters'){
-      for(const c of s.counters||[]) html += numCounterHTML(c);
-    } else {
-      for(const t of s.tables||[]) html += numTableHTML(t);
-    }
-  }
-  app.innerHTML = html;
-  updateStickyVars();      // 先量出目录条高度，锚点的 scroll-margin 才是准的
-  updateNumNavActive();    // 首屏就把第一个小节点亮，不用等用户滚动
+  showCommonPage('numbers');
 }
 
 /* ---------- 通用知识：本文の描画は React（study-common.tsx）が担当 ---------- */
@@ -1588,6 +1545,10 @@ function hideCommonPage(){
 /* React 側から legacy のルーティングを呼ぶための明示的な橋。
    #app の委任クリックは React が描いたノードには届かないため。 */
 window.__studyNav = function(key){ navTo(key); };
+window.__studySay = function(text){ say(text); };
+/* React の commit 後に呼ばれる。legacy が innerHTML 直後に同期でやっていた実測を、
+   同じ順序（目次の高さ → 現在位置のハイライト）で行う。 */
+window.__studyAfterPaint = function(){ updateStickyVars(); updateNumNavActive(); };
 
 function viewRef(){
   setNav('common'); setHeader(LX('接续表示法 · 接続の表示方法','Connection Notation'), true);

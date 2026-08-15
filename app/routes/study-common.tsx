@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, useEffect, useState, type ReactNode } from "react";
 
 /* 通用知识のうち「接续表 / 活用 / 变形」の3ページ。
  *
@@ -7,7 +7,65 @@ import { Fragment, useEffect, useState } from "react";
  * viewHenkei は setNav・setHeader を済ませたあと showCommonPage() を呼ぶ。
  * クラス名と DOM 構造は移行前の文字列組み立てと同じものを再現している。 */
 
-export type CommonPage = "ref" | "katsuyou" | "henkei";
+export type CommonPage = "ref" | "katsuyou" | "henkei" | "numbers";
+
+/* legacy の markStar(): ★ だけを .num-x で包む */
+function Star({ text }: { text: unknown }) {
+	const raw = text == null ? "" : String(text);
+	return (
+		<>
+			{raw.split("★").map((part, index) => (
+				<Fragment key={index}>
+					{index > 0 ? <span className="num-x">★</span> : null}
+					{part}
+				</Fragment>
+			))}
+		</>
+	);
+}
+
+/* 自前データの `_r` フィールドは <ruby>base<rt>reading</rt></ruby> だけで出来ている
+   （numbers の eg_r 22件すべてで確認済み）。dangerouslySetInnerHTML だと包む要素が
+   1つ増えて移行前の DOM と変わってしまうので、要素に組み立て直す。 */
+const RUBY_HTML = /<ruby>([^<]*)<rt>([^<]*)<\/rt><\/ruby>/g;
+function RubyHtml({ html }: { html: string }) {
+	// key は配列位置で統一する。ruby を文字オフセットで振ると、
+	// 素のテキスト側の連番と衝突することがある。
+	const parts: ({ ruby: [string, string] } | string)[] = [];
+	let cursor = 0;
+	for (const m of html.matchAll(RUBY_HTML)) {
+		if (m.index! > cursor) parts.push(html.slice(cursor, m.index));
+		parts.push({ ruby: [m[1], m[2]] });
+		cursor = m.index! + m[0].length;
+	}
+	if (cursor < html.length) parts.push(html.slice(cursor));
+	return (
+		<>
+			{parts.map((part, i) =>
+				typeof part === "string" ? (
+					<Fragment key={i}>{part}</Fragment>
+				) : (
+					<ruby key={i}>
+						{part.ruby[0]}
+						<rt>{part.ruby[1]}</rt>
+					</ruby>
+				),
+			)}
+		</>
+	);
+}
+
+/* legacy の sayBtn()。#app 上の委任クリックは届かないので直接呼ぶ。 */
+function SayButton({ text }: { text?: string }) {
+	if (!text) return null;
+	// data-say は読み上げ対象そのものを表すデータ属性なので移行前と同じく残す。
+	// 実際の発火は #app の委任ではなく onClick。
+	return (
+		<button className="sayb" data-say={text} aria-label="朗读" onClick={() => window.__studySay?.(text)}>
+			🔊
+		</button>
+	);
+}
 
 /* legacy の fmt(): '~text~' を <del> にする。エスケープは React 側が行う。 */
 function Fmt({ text }: { text: unknown }) {
@@ -316,11 +374,143 @@ function HenkeiPage({ data }: { data: any }) {
 	);
 }
 
+/* ---------------- 数字 ---------------- */
+
+function NumTable({ t }: { t: any }) {
+	return (
+		<div className="card">
+			{t.caption ? (
+				<div className="num-cap jp">
+					<Star text={t.caption} />
+				</div>
+			) : null}
+			<div className="table-scroll">
+				<table className="ref">
+					<tbody>
+						{t.cols ? (
+							<tr>
+								{t.cols.map((c: string, i: number) => (
+									<th className="jp" key={i}>
+										<Star text={c} />
+									</th>
+								))}
+							</tr>
+						) : null}
+						{(t.rows || []).map((r: string[], i: number) => (
+							<tr key={i}>
+								{r.map((c, j) => (
+									<td className="jp" key={j}>
+										<Star text={c} />
+									</td>
+								))}
+							</tr>
+						))}
+					</tbody>
+				</table>
+			</div>
+			{t.note ? (
+				<div className="num-note">
+					<Star text={t.note} />
+				</div>
+			) : null}
+		</div>
+	);
+}
+
+function NumCounter({ c }: { c: any }) {
+	const irr: number[] = c.irr || [];
+	return (
+		<div className="card">
+			<div className="cnt-head">
+				<span className="cnt-suffix jp">{c.suffix}</span>
+				<span className="cnt-read jp">{c.reading}</span>
+				{c.q ? <span className="cnt-q jp">何〜 {c.q}</span> : null}
+			</div>
+			{c.use ? <div className="cnt-use">{c.use}</div> : null}
+			{c.eg ? (
+				<div className="cnt-eg jp">
+					例：
+					{c.eg_r ? <RubyHtml html={c.eg_r} /> : c.eg}
+					<SayButton text={c.eg} />
+				</div>
+			) : null}
+			<div className="cnt-grid">
+				{(c.forms || []).map((f: string, i: number) => (
+					<div className={`cnt-cell${irr.includes(i + 1) ? " irr" : ""}`} key={i}>
+						<span className="n">{i + 1}</span>
+						<span className="r jp">{f}</span>
+					</div>
+				))}
+			</div>
+			{c.note ? (
+				<div className="num-note">
+					<Star text={c.note} />
+				</div>
+			) : null}
+		</div>
+	);
+}
+
+function NumbersPage({ data }: { data: any }) {
+	const N = data.numbers;
+	const secs: any[] = N.sections || [];
+
+	// legacy は data-scroll を #app の委任クリックで拾っていた。挙動（smooth/start）はそのまま。
+	const jump = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+
+	return (
+		<>
+			<div className="num-nav">
+				{secs.map((s) => (
+					<a data-scroll={`num-${s.id}`} key={s.id} onClick={() => jump(`num-${s.id}`)}>
+						{s.title}
+					</a>
+				))}
+			</div>
+			{N.intro ? <div className="num-lead">{N.intro}</div> : null}
+			{secs.map((s) => (
+				<Fragment key={s.id}>
+					<div className="num-sec-h" id={`num-${s.id}`}>
+						{s.title}
+						{s.title_jp ? <small className="jp">{s.title_jp}</small> : null}
+					</div>
+					{s.lead ? <div className="num-lead">{s.lead}</div> : null}
+					{s.type === "rules"
+						? (s.groups || []).map((g: any, i: number) => (
+								<div className="card num-rule" key={i}>
+									<h4>
+										<Star text={g.h} />
+									</h4>
+									{g.eg ? (
+										<div className="eg jp">
+											<Star text={g.eg} />
+										</div>
+									) : null}
+									{g.note ? (
+										<div className="num-note">
+											<Star text={g.note} />
+										</div>
+									) : null}
+								</div>
+							))
+						: s.type === "counters"
+							? (s.counters || []).map((c: any, i: number) => <NumCounter c={c} key={i} />)
+							: (s.tables || []).map((t: any, i: number) => <NumTable t={t} key={i} />)}
+				</Fragment>
+			))}
+		</>
+	);
+}
+
 /* ---------------- ホスト ---------------- */
 
 declare global {
 	interface Window {
 		__studyNav?: (key: string) => void;
+		__studySay?: (text: string) => void;
+		/* 数字页の吸顶目录は高さを実測してから位置を決める。legacy は innerHTML の
+		   直後に同期で呼んでいたが、React では commit 後でないと測れない。 */
+		__studyAfterPaint?: () => void;
 	}
 }
 
@@ -335,6 +525,10 @@ export function CommonPageHost() {
 		return () => window.removeEventListener("study:common-page", onShow);
 	}, []);
 
+	useEffect(() => {
+		if (payload) window.__studyAfterPaint?.();
+	}, [payload]);
+
 	if (!payload) return null;
 	const { page, data } = payload;
 	return (
@@ -342,6 +536,7 @@ export function CommonPageHost() {
 			{page === "ref" ? <RefPage data={data} /> : null}
 			{page === "katsuyou" ? <KatsuyouPage data={data} /> : null}
 			{page === "henkei" ? <HenkeiPage data={data} /> : null}
+			{page === "numbers" ? <NumbersPage data={data} /> : null}
 		</main>
 	);
 }
