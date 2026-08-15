@@ -5,6 +5,7 @@ import { BrowserRouter } from "react-router";
 import type { Route } from "./+types/home";
 import { ListeningN3Content } from "./listening-n3";
 import { ReadingN3Content } from "./reading-n3";
+import { CommonPageHost } from "./study-common";
 import "./study-shell.css";
 
 export function meta({}: Route.MetaArgs) {
@@ -73,7 +74,7 @@ function StudySideEntries() {
 				link.className = entry.className;
 				if (document.body.classList.contains(entry.activeClass)) link.classList.add("on");
 				link.innerHTML = `<span>${entry.icon}</span><span>${entry.label}</span><small>${entry.note}</small>`;
-				contentSection.append(link);
+				contentSection.appendChild(link);
 			});
 		};
 
@@ -101,7 +102,9 @@ function StudyModeBridge() {
 
 		const title = document.querySelector("#title");
 		const titleObserver = title ? new MutationObserver(keepModeTitle) : null;
-		titleObserver?.observe(title, { childList: true, characterData: true, subtree: true });
+		if (title && titleObserver) {
+			titleObserver.observe(title, { childList: true, characterData: true, subtree: true });
+		}
 
 		const syncActiveState = (mode: StudyMode | null) => {
 			activeMode = mode;
@@ -136,6 +139,10 @@ function StudyModeBridge() {
 		const enterModule = (mode: StudyMode) => {
 			const app = readingApp();
 			if (!app) return;
+			// 首页・搜索・收藏等は #app ではなく CommonPageHost に描画される。
+			// 旧 #app だけを隠してもその React 页面が前面に残り、読解／聴解を
+			// 押しても「反応がない」ように見えるため、モードを開く前に外す。
+			window.dispatchEvent(new CustomEvent("study:common-page", { detail: null }));
 			if (moduleRoot) {
 				moduleRoot.unmount();
 				app.replaceChildren();
@@ -154,12 +161,13 @@ function StudyModeBridge() {
 			if (!target) return;
 			if (target.matches(".reader-mode-link, .side-reader-link")) {
 				event.preventDefault();
-				enterModule("reading");
+				// 已经在这个模块里就别重挂：remount 会丢掉答题状态和滚动位置。
+				if (activeMode !== "reading") enterModule("reading");
 				return;
 			}
 			if (target.matches(".listening-mode-link, .side-listening-link")) {
 				event.preventDefault();
-				enterModule("listening");
+				if (activeMode !== "listening") enterModule("listening");
 				return;
 			}
 			if (moduleRoot && target.matches("#typebar button, #side button, nav.bottom button")) leaveModule();
@@ -168,16 +176,30 @@ function StudyModeBridge() {
 		const activateLegacyLink = () => {
 			const mode = new URLSearchParams(window.location.search).get("module");
 			if (mode !== "reading" && mode !== "listening") return;
-			window.history.replaceState({}, "", "/study");
+			// ?module= だけを落とす。/study/day/3-1 のような実パスは保つ。
+			window.history.replaceState({}, "", window.location.pathname);
 			enterModule(mode);
+		};
+
+		// 进入模块不压历史栈，所以浏览器返回（含 iOS 右滑）落回的是上一个 legacy
+		// hash。以前没人监听，模块就一直挂着不走：legacy 在隐藏的 #app 里重画，
+		// tab 却被重新点亮，于是出现「返回后模块还在、两个 tab 同时选中」。
+		const onHistoryNav = () => {
+			if (!moduleRoot) return;
+			leaveModule();
+			// leaveModule 之后 body 上的 mode class 才消失，legacy 需要再画一次
+			// 才能把正确的 tab 点回来。此时 moduleRoot 已为空，不会递归。
+			window.dispatchEvent(new Event("popstate"));
 		};
 
 		document.addEventListener("click", onDocumentClick, true);
 		document.addEventListener("study-runtime-ready", activateLegacyLink);
+		window.addEventListener("popstate", onHistoryNav);
 		if (window.document.querySelector("script[data-study-runtime]")) queueMicrotask(activateLegacyLink);
 		return () => {
 			document.removeEventListener("click", onDocumentClick, true);
 			document.removeEventListener("study-runtime-ready", activateLegacyLink);
+			window.removeEventListener("popstate", onHistoryNav);
 			titleObserver?.disconnect();
 			leaveModule();
 		};
@@ -225,6 +247,8 @@ function LegacyStudy() {
 			</div>
 			<aside className="side" id="side" />
 			<main id="app" />
+			{/* 通用知识の 接续表 / 活用 / 变形。表示中は legacy が #app を hidden にする。 */}
+			<CommonPageHost />
 			<section id="reading-app" hidden aria-label="N3 学习模块" />
 			<nav className="bottom">
 				<button data-nav="home"><span className="ic">📚</span><span className="lbl" data-cn="知识库" data-en="Library">知识库</span></button>

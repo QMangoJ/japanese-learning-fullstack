@@ -6,6 +6,7 @@ import {
 	Scripts,
 	ScrollRestoration,
 } from "react-router";
+import { useEffect } from "react";
 
 import type { Route } from "./+types/root";
 import "./app.css";
@@ -31,7 +32,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
 		<html lang="zh-CN">
 			<head>
 				<meta charSet="utf-8" />
-				<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+				<meta
+					name="viewport"
+					content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"
+				/>
 				<meta name="theme-color" content="#ef6b9a" />
 				<meta name="apple-mobile-web-app-capable" content="yes" />
 				<meta name="apple-mobile-web-app-title" content="日本語上手" />
@@ -48,6 +52,20 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
+	useEffect(() => {
+		const preventGesture = (event: Event) => event.preventDefault();
+		const preventMultiTouch = (event: TouchEvent) => {
+			if (event.touches.length > 1) event.preventDefault();
+		};
+		document.addEventListener("gesturestart", preventGesture, { passive: false });
+		document.addEventListener("gesturechange", preventGesture, { passive: false });
+		document.addEventListener("touchmove", preventMultiTouch, { passive: false });
+		return () => {
+			document.removeEventListener("gesturestart", preventGesture);
+			document.removeEventListener("gesturechange", preventGesture);
+			document.removeEventListener("touchmove", preventMultiTouch);
+		};
+	}, []);
 	return <Outlet />;
 }
 

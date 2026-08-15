@@ -39,10 +39,13 @@
 		"check": "tsc && react-router build && wrangler deploy --dry-run",
 		"deploy": "wrangler deploy",
 		"dev": "react-router dev",
+		"generate:grammar-daily": "node scripts/generate-n3-daily-grammar-explanations.mjs",
 		"prebuild": "node scripts/sync-study-assets.mjs",
 		"predev": "node scripts/sync-study-assets.mjs",
 		"preview": "npm run build && vite preview",
 		"sync:study-assets": "node scripts/sync-study-assets.mjs",
+		"test:grammar-daily": "node scripts/check-n3-daily-grammar-explanations.mjs",
+		"typegen": "react-router typegen",
 		"typecheck": "npm run typegen && tsc -b"
 	},
 	"type": "module"

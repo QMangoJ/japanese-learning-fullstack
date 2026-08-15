@@ -201,3 +201,6 @@ dist
 ### React Router ###
 .react-router/
 /build/
+/tmp/
+tmp-page-*.jpg
+__pycache__/

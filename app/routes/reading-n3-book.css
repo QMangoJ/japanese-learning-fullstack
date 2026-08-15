@@ -1,0 +1,1064 @@
+/* N3 読解 — book-faithful reader.
+   Reproduces the printed layout of《N3読解 新日语能力考试考前对策》on screen. */
+
+.rb {
+	--rb-ink: #1c1c1e;
+	--rb-ink-soft: #55555c;
+	--rb-paper: #fffdf8;
+	--rb-page: #f2efe7;
+	--rb-rule: #d8d2c4;
+	--rb-rule-strong: #1c1c1e;
+	--rb-accent: #1f6f4a;
+	--rb-accent-soft: #e6f2ea;
+	--rb-mark: #b8462f;
+	--rb-shade: #efece3;
+	--rb-cn: #2f6ea8;
+	--rb-cn-bg: #eef4fa;
+	--rb-radius: 10px;
+	color: var(--rb-ink);
+	background: var(--rb-page);
+	min-height: 100%;
+	font-family: "Hiragino Mincho ProN", "Yu Mincho", "Songti SC", "Noto Serif JP", serif;
+	line-height: 1.9;
+}
+
+@media (prefers-color-scheme: dark) {
+	.rb {
+		--rb-ink: #ece9e2;
+		--rb-ink-soft: #a9a49a;
+		--rb-paper: #1b1c1e;
+		--rb-page: #131416;
+		--rb-rule: #3a3b3f;
+		--rb-rule-strong: #ece9e2;
+		--rb-accent: #6cc79a;
+		--rb-accent-soft: #1c3229;
+		--rb-mark: #e08b74;
+		--rb-shade: #232427;
+		--rb-cn: #86bdec;
+		--rb-cn-bg: #1a2733;
+	}
+}
+
+.rb *,
+.rb *::before,
+.rb *::after {
+	box-sizing: border-box;
+}
+
+.rb-wrap {
+	max-width: 940px;
+	margin: 0 auto;
+	padding: 28px 20px 96px;
+}
+
+.rb-wrap--wide {
+	max-width: 1100px;
+}
+
+/* ---------- furigana ---------- */
+
+.rb ruby {
+	ruby-align: center;
+}
+
+.rb rt {
+	font-size: 0.52em;
+	font-weight: 400;
+	color: var(--rb-ink-soft);
+	letter-spacing: 0.02em;
+	transform: translateY(0.18em);
+}
+
+.rb--no-furigana rt {
+	display: none;
+}
+
+/* ---------- top bar ---------- */
+
+/* Zero-height marker just above the toolbar. Once it scrolls out of view the
+   toolbar is pinned, and `.is-stuck` switches it to the compact header look. */
+.rb-bar-sentinel {
+	height: 1px;
+	margin-bottom: -1px;
+}
+
+.rb-bar {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 14px;
+	align-items: center;
+	justify-content: space-between;
+	padding: 14px 18px;
+	margin-bottom: 22px;
+	background: var(--rb-paper);
+	border: 1px solid var(--rb-rule);
+	border-radius: var(--rb-radius);
+	position: sticky;
+	top: 0;
+	z-index: 30;
+	box-shadow: 0 6px 22px rgba(0, 0, 0, 0.06);
+	transition: padding 0.18s ease, border-radius 0.18s ease, box-shadow 0.18s ease;
+}
+
+/* Pinned: full-bleed to the viewport edges, flatter, tighter, and lifted off
+   the text with a stronger shadow so it reads as a bar rather than a card. */
+.rb-bar.is-stuck {
+	padding: 9px 18px;
+	border-radius: 0;
+	border-left-color: transparent;
+	border-right-color: transparent;
+	box-shadow: 0 10px 26px rgba(0, 0, 0, 0.14);
+	margin-left: -20px;
+	margin-right: -20px;
+	padding-left: 38px;
+	padding-right: 38px;
+	background: color-mix(in srgb, var(--rb-paper) 94%, transparent);
+	backdrop-filter: saturate(180%) blur(10px);
+	-webkit-backdrop-filter: saturate(180%) blur(10px);
+}
+
+.rb-bar.is-stuck .rb-bar__id span {
+	display: none;
+}
+
+.rb-bar.is-stuck .rb-bar__id b {
+	font-size: 15px;
+}
+
+/* Embedded in the study shell: park under that shell's own sticky topbar
+   (--topbarh is set from its measured height) and stay behind it (z-index 20). */
+.rb--embedded .rb-bar {
+	top: var(--topbarh, 88px);
+	z-index: 15;
+}
+
+.rb-bar__id {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+	min-width: 0;
+}
+
+.rb-bar__id span {
+	font-size: 12px;
+	letter-spacing: 0.16em;
+	color: var(--rb-ink-soft);
+	font-family: system-ui, sans-serif;
+}
+
+.rb-bar__id b {
+	font-size: 17px;
+	font-weight: 600;
+}
+
+.rb-toggles {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+}
+
+.rb-toggles button,
+.rb-back {
+	font-family: system-ui, -apple-system, "PingFang SC", sans-serif;
+	font-size: 13px;
+	padding: 7px 14px;
+	border-radius: 999px;
+	border: 1px solid var(--rb-rule);
+	background: transparent;
+	color: var(--rb-ink-soft);
+	cursor: pointer;
+	transition: 0.15s ease;
+	white-space: nowrap;
+}
+
+.rb-toggles button:hover,
+.rb-back:hover {
+	border-color: var(--rb-accent);
+	color: var(--rb-accent);
+}
+
+.rb-toggles button[aria-pressed="true"] {
+	background: var(--rb-accent);
+	border-color: var(--rb-accent);
+	color: #fff;
+	font-weight: 600;
+}
+
+@media (prefers-color-scheme: dark) {
+	.rb-toggles button[aria-pressed="true"] {
+		color: #10261b;
+	}
+}
+
+/* ---------- catalog ---------- */
+
+.rb-cover {
+	text-align: center;
+	padding: 34px 20px 30px;
+	background: var(--rb-paper);
+	border: 1px solid var(--rb-rule);
+	border-radius: var(--rb-radius);
+	margin-bottom: 26px;
+}
+
+.rb-cover span {
+	font-size: 12px;
+	letter-spacing: 0.34em;
+	color: var(--rb-ink-soft);
+	font-family: system-ui, sans-serif;
+}
+
+.rb-cover h1 {
+	margin: 10px 0 6px;
+	font-size: 30px;
+	font-weight: 700;
+	letter-spacing: 0.06em;
+}
+
+.rb-cover p {
+	margin: 0;
+	color: var(--rb-ink-soft);
+	font-size: 14px;
+}
+
+.rb-cover__meta {
+	margin-top: 16px;
+	font-size: 12px;
+	font-family: system-ui, sans-serif;
+	color: var(--rb-ink-soft);
+}
+
+.rb-week {
+	background: var(--rb-paper);
+	border: 1px solid var(--rb-rule);
+	border-radius: var(--rb-radius);
+	margin-bottom: 16px;
+	overflow: hidden;
+}
+
+.rb-week__head {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	width: 100%;
+	padding: 16px 20px;
+	background: var(--rb-rule-strong);
+	color: var(--rb-paper);
+	border: 0;
+	cursor: pointer;
+	text-align: left;
+	font-family: inherit;
+}
+
+.rb-week__head b {
+	font-size: 18px;
+	letter-spacing: 0.08em;
+	white-space: nowrap;
+}
+
+.rb-week__head p {
+	margin: 0;
+	font-size: 17px;
+	flex: 1;
+	min-width: 0;
+}
+
+.rb-week__head small {
+	display: block;
+	font-size: 11px;
+	opacity: 0.75;
+	font-family: system-ui, sans-serif;
+	letter-spacing: 0.04em;
+}
+
+.rb-week__count {
+	font-size: 12px;
+	font-family: system-ui, sans-serif;
+	opacity: 0.8;
+	white-space: nowrap;
+}
+
+.rb-days {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	gap: 10px;
+	padding: 16px;
+}
+
+.rb-day {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	padding: 12px 14px;
+	border: 1px solid var(--rb-rule);
+	border-radius: 8px;
+	background: transparent;
+	cursor: pointer;
+	text-align: left;
+	font-family: inherit;
+	color: inherit;
+	transition: 0.15s ease;
+}
+
+.rb-day:hover:not(:disabled) {
+	border-color: var(--rb-accent);
+	background: var(--rb-accent-soft);
+}
+
+.rb-day:disabled {
+	opacity: 0.42;
+	cursor: not-allowed;
+}
+
+.rb-day span {
+	font-size: 11px;
+	letter-spacing: 0.12em;
+	color: var(--rb-ink-soft);
+	font-family: system-ui, sans-serif;
+}
+
+.rb-day b {
+	font-size: 15px;
+	font-weight: 600;
+}
+
+.rb-day small {
+	font-size: 11px;
+	color: var(--rb-ink-soft);
+	font-family: system-ui, sans-serif;
+}
+
+/* ---------- day sections ---------- */
+
+.rb-sheet {
+	background: var(--rb-paper);
+	border: 1px solid var(--rb-rule);
+	border-radius: var(--rb-radius);
+	padding: 26px 28px;
+	margin-bottom: 20px;
+}
+
+.rb-sheet__tag {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	background: var(--rb-rule-strong);
+	color: var(--rb-paper);
+	font-size: 13px;
+	font-weight: 600;
+	padding: 4px 16px;
+	border-radius: 999px;
+	margin-bottom: 14px;
+	letter-spacing: 0.08em;
+}
+
+.rb-instruction {
+	font-size: 15px;
+	margin: 0 0 4px;
+	font-weight: 600;
+}
+
+.rb-instruction-cn {
+	font-size: 13px;
+	color: var(--rb-cn);
+	background: var(--rb-cn-bg);
+	padding: 6px 10px;
+	border-radius: 6px;
+	margin: 0 0 18px;
+	font-family: system-ui, "PingFang SC", sans-serif;
+	line-height: 1.7;
+}
+
+.rb-point__title {
+	display: flex;
+	align-items: baseline;
+	gap: 10px;
+	font-size: 20px;
+	font-weight: 700;
+	margin: 0 0 4px;
+	color: var(--rb-accent);
+}
+
+.rb-point__title::before {
+	content: "✿";
+	font-size: 17px;
+}
+
+.rb-point__title-en {
+	font-size: 11px;
+	color: var(--rb-ink-soft);
+	font-family: system-ui, sans-serif;
+	margin: 0 0 14px;
+}
+
+.rb-figure {
+	border: 1px dashed var(--rb-rule);
+	border-radius: 8px;
+	padding: 14px 16px;
+	margin: 0 0 16px;
+	background: var(--rb-shade);
+}
+
+.rb-figure svg {
+	display: block;
+	width: 100%;
+	height: auto;
+	max-width: 620px;
+	margin: 0 auto 10px;
+	color: var(--rb-ink);
+}
+
+.rb-figure figcaption {
+	font-size: 12px;
+	color: var(--rb-ink-soft);
+	font-family: system-ui, "PingFang SC", sans-serif;
+	line-height: 1.7;
+}
+
+.rb-tip {
+	display: flex;
+	gap: 10px;
+	font-size: 14px;
+	margin-bottom: 10px;
+}
+
+.rb-tip::before {
+	content: "★";
+	color: var(--rb-mark);
+	flex: none;
+}
+
+.rb-express {
+	border: 1px solid var(--rb-rule-strong);
+	border-radius: 6px;
+	padding: 14px 16px;
+	margin: 16px 0;
+	background: var(--rb-shade);
+}
+
+.rb-express__label {
+	font-size: 11px;
+	letter-spacing: 0.1em;
+	color: var(--rb-ink-soft);
+	font-family: system-ui, sans-serif;
+	margin: 0 0 10px;
+}
+
+.rb-express__grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+	gap: 4px 22px;
+}
+
+.rb-express__row {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	gap: 4px 8px;
+	padding: 5px 0;
+	border-bottom: 1px dotted var(--rb-rule);
+	font-size: 14px;
+}
+
+.rb-express__row b {
+	font-weight: 600;
+}
+
+.rb-express__row b::before {
+	content: "◆ ";
+	color: var(--rb-mark);
+	font-weight: 400;
+}
+
+.rb-express__row i {
+	font-style: normal;
+	font-size: 12px;
+	color: var(--rb-ink-soft);
+}
+
+.rb-express__row span {
+	font-size: 12.5px;
+	color: var(--rb-cn);
+	font-family: system-ui, "PingFang SC", sans-serif;
+	width: 100%;
+}
+
+.rb-note-star {
+	font-size: 13px;
+	color: var(--rb-ink-soft);
+	border-left: 3px solid var(--rb-mark);
+	padding-left: 12px;
+	margin: 12px 0 0;
+}
+
+/* ---------- the printed material ---------- */
+
+.rb-material {
+	border: 2px solid var(--rb-rule-strong);
+	border-radius: 4px;
+	padding: 24px 26px;
+	margin: 0 0 18px;
+	background: var(--rb-paper);
+}
+
+.rb-material > *:first-child {
+	margin-top: 0;
+}
+
+.rb-material > *:last-child {
+	margin-bottom: 0;
+}
+
+.rb-b-title {
+	text-align: center;
+	margin: 14px 0 12px;
+}
+
+.rb-b-title b {
+	font-size: 22px;
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	display: block;
+}
+
+.rb-b-title em {
+	font-style: normal;
+	font-size: 15px;
+	display: block;
+	margin-top: 4px;
+}
+
+.rb-b-heading {
+	font-size: 16px;
+	font-weight: 700;
+	margin: 16px 0 8px;
+}
+
+.rb-b-para {
+	font-size: 15.5px;
+	margin: 0 0 12px;
+	text-align: justify;
+}
+
+.rb-b-para--indent {
+	text-indent: 1em;
+}
+
+.rb-b-line {
+	font-size: 15.5px;
+	margin: 0 0 8px;
+}
+
+.rb-b-speech {
+	display: flex;
+	gap: 4px;
+	font-size: 15.5px;
+	margin: 0 0 10px;
+	align-items: baseline;
+}
+
+.rb-b-speech__who {
+	flex: none;
+	font-weight: 600;
+}
+
+.rb-b-speech__who::after {
+	content: "：";
+}
+
+.rb-b-list {
+	list-style: none;
+	padding: 0;
+	margin: 0 0 12px;
+}
+
+.rb-b-list li {
+	display: flex;
+	gap: 8px;
+	font-size: 15.5px;
+	margin-bottom: 8px;
+}
+
+.rb-b-list li > span:first-child {
+	flex: none;
+	color: var(--rb-mark);
+}
+
+.rb-b-note {
+	font-size: 14px;
+	margin: 12px 0;
+	padding: 8px 12px;
+	background: var(--rb-shade);
+	border-radius: 4px;
+}
+
+.rb-b-source {
+	text-align: right;
+	font-size: 13px;
+	color: var(--rb-ink-soft);
+	margin: 12px 0 0;
+}
+
+.rb-table {
+	width: 100%;
+	border-collapse: collapse;
+	margin: 0 0 14px;
+	font-size: 14.5px;
+}
+
+.rb-table td {
+	border: 1px solid var(--rb-rule-strong);
+	padding: 8px 12px;
+	vertical-align: middle;
+	white-space: pre-line;
+}
+
+.rb-table td.is-header {
+	background: var(--rb-shade);
+	font-weight: 600;
+	white-space: nowrap;
+}
+
+.rb-scroll {
+	overflow-x: auto;
+	margin: 0 0 14px;
+}
+
+.rb-cn {
+	display: block;
+	font-size: 12.5px;
+	color: var(--rb-cn);
+	font-family: system-ui, "PingFang SC", sans-serif;
+	line-height: 1.7;
+	margin-top: 3px;
+	font-weight: 400;
+}
+
+.rb-cn--block {
+	background: var(--rb-cn-bg);
+	padding: 7px 11px;
+	border-radius: 6px;
+	margin: 4px 0 14px;
+}
+
+.rb-footnotes {
+	margin: 14px 0 0;
+	padding: 12px 0 0;
+	border-top: 1px dotted var(--rb-rule);
+	font-size: 12.5px;
+	color: var(--rb-ink-soft);
+}
+
+.rb-footnotes div {
+	margin-bottom: 5px;
+}
+
+.rb-footnotes b {
+	font-weight: 600;
+	color: var(--rb-ink);
+}
+
+.rb-pagenotes {
+	margin-top: 14px;
+	padding-top: 10px;
+	border-top: 1px dotted var(--rb-rule);
+	font-size: 12px;
+	color: var(--rb-ink-soft);
+	font-family: system-ui, sans-serif;
+}
+
+/* ---------- questions ---------- */
+
+.rb-q {
+	margin: 0 0 22px;
+	padding: 18px 20px;
+	border: 1px solid var(--rb-rule);
+	border-radius: 8px;
+	background: var(--rb-shade);
+}
+
+.rb-q__head {
+	display: flex;
+	gap: 12px;
+	align-items: baseline;
+	font-size: 16px;
+	font-weight: 600;
+	margin-bottom: 4px;
+}
+
+.rb-q__label {
+	flex: none;
+	border: 1.5px solid var(--rb-rule-strong);
+	border-radius: 3px;
+	padding: 1px 9px;
+	font-size: 13px;
+	font-family: system-ui, sans-serif;
+}
+
+.rb-choices {
+	list-style: none;
+	padding: 0;
+	margin: 14px 0 0;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.rb-choice {
+	display: flex;
+	gap: 12px;
+	align-items: flex-start;
+	width: 100%;
+	padding: 10px 14px;
+	border: 1px solid var(--rb-rule);
+	border-radius: 7px;
+	background: var(--rb-paper);
+	cursor: pointer;
+	text-align: left;
+	font-family: inherit;
+	font-size: 15px;
+	color: inherit;
+	transition: 0.15s ease;
+	line-height: 1.8;
+}
+
+.rb-choice:hover {
+	border-color: var(--rb-accent);
+}
+
+.rb-choice__num {
+	flex: none;
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+	border: 1px solid var(--rb-rule-strong);
+	display: grid;
+	place-items: center;
+	font-size: 12px;
+	font-family: system-ui, sans-serif;
+	margin-top: 3px;
+}
+
+.rb-choice.is-picked {
+	border-color: var(--rb-accent);
+	box-shadow: inset 0 0 0 1px var(--rb-accent);
+}
+
+.rb-choice.is-right {
+	border-color: var(--rb-accent);
+	background: var(--rb-accent-soft);
+}
+
+.rb-choice.is-right .rb-choice__num {
+	background: var(--rb-accent);
+	border-color: var(--rb-accent);
+	color: #fff;
+}
+
+.rb-choice.is-wrong {
+	border-color: var(--rb-mark);
+	background: color-mix(in srgb, var(--rb-mark) 10%, transparent);
+}
+
+.rb-choice.is-wrong .rb-choice__num {
+	background: var(--rb-mark);
+	border-color: var(--rb-mark);
+	color: #fff;
+}
+
+.rb-choice__note {
+	display: block;
+	font-size: 12px;
+	color: var(--rb-ink-soft);
+	font-family: system-ui, "PingFang SC", sans-serif;
+	margin-top: 5px;
+	line-height: 1.7;
+}
+
+.rb-q__actions {
+	margin-top: 14px;
+	display: flex;
+	gap: 10px;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.rb-q__actions button {
+	font-family: system-ui, sans-serif;
+	font-size: 13px;
+	padding: 6px 14px;
+	border-radius: 999px;
+	border: 1px solid var(--rb-rule);
+	background: transparent;
+	color: var(--rb-ink-soft);
+	cursor: pointer;
+}
+
+.rb-q__actions button:hover {
+	border-color: var(--rb-accent);
+	color: var(--rb-accent);
+}
+
+.rb-answer {
+	margin-top: 12px;
+	padding: 14px 16px;
+	border-radius: 8px;
+	background: var(--rb-paper);
+	border: 1px solid var(--rb-accent);
+	font-family: system-ui, "PingFang SC", sans-serif;
+	font-size: 13.5px;
+	line-height: 1.85;
+}
+
+.rb-answer b {
+	color: var(--rb-accent);
+}
+
+.rb-answer__src {
+	display: block;
+	margin-top: 8px;
+	font-size: 11.5px;
+	color: var(--rb-ink-soft);
+}
+
+/* ---------- renshu choices (checkbox style) ---------- */
+
+.rb-check {
+	list-style: none;
+	padding: 0;
+	margin: 16px 0 0;
+	display: flex;
+	flex-direction: column;
+	gap: 7px;
+}
+
+.rb-check button {
+	display: flex;
+	gap: 12px;
+	align-items: flex-start;
+	width: 100%;
+	padding: 9px 13px;
+	border: 1px solid var(--rb-rule);
+	border-radius: 7px;
+	background: var(--rb-paper);
+	cursor: pointer;
+	text-align: left;
+	font-family: inherit;
+	font-size: 15px;
+	color: inherit;
+	line-height: 1.8;
+}
+
+.rb-check__box {
+	flex: none;
+	width: 20px;
+	height: 20px;
+	border: 1.5px solid var(--rb-rule-strong);
+	border-radius: 3px;
+	display: grid;
+	place-items: center;
+	font-size: 13px;
+	margin-top: 4px;
+}
+
+.rb-check button.is-right .rb-check__box {
+	background: var(--rb-accent);
+	border-color: var(--rb-accent);
+	color: #fff;
+}
+
+.rb-check button.is-right {
+	border-color: var(--rb-accent);
+	background: var(--rb-accent-soft);
+}
+
+.rb-check button.is-picked {
+	box-shadow: inset 0 0 0 1px var(--rb-accent);
+}
+
+/* ---------- vocab & grammar ---------- */
+
+.rb-vocab {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+	gap: 10px;
+}
+
+.rb-vocab article {
+	border: 1px solid var(--rb-rule);
+	border-radius: 8px;
+	padding: 10px 13px;
+	background: var(--rb-paper);
+}
+
+.rb-vocab b {
+	font-size: 16px;
+	font-weight: 600;
+	display: block;
+}
+
+.rb-vocab .kana {
+	font-size: 12px;
+	color: var(--rb-mark);
+	font-family: system-ui, sans-serif;
+	display: block;
+	margin: 1px 0 4px;
+}
+
+.rb-vocab p {
+	margin: 0;
+	font-size: 13px;
+	color: var(--rb-ink-soft);
+	font-family: system-ui, "PingFang SC", sans-serif;
+	line-height: 1.7;
+}
+
+.rb-vocab .pos {
+	display: inline-block;
+	font-size: 10.5px;
+	border: 1px solid var(--rb-rule);
+	border-radius: 3px;
+	padding: 0 5px;
+	margin-left: 6px;
+	color: var(--rb-ink-soft);
+	font-family: system-ui, sans-serif;
+	vertical-align: middle;
+}
+
+.rb-grammar {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.rb-grammar article {
+	border: 1px solid var(--rb-rule);
+	border-left: 4px solid var(--rb-accent);
+	border-radius: 8px;
+	padding: 13px 16px;
+	background: var(--rb-paper);
+}
+
+.rb-grammar h4 {
+	margin: 0 0 4px;
+	font-size: 16px;
+	font-weight: 700;
+}
+
+.rb-grammar .form {
+	font-size: 12px;
+	color: var(--rb-mark);
+	font-family: system-ui, sans-serif;
+	margin: 0 0 6px;
+}
+
+.rb-grammar .meaning {
+	margin: 0;
+	font-size: 13.5px;
+	font-family: system-ui, "PingFang SC", sans-serif;
+	color: var(--rb-ink-soft);
+	line-height: 1.85;
+}
+
+.rb-grammar .example {
+	margin: 8px 0 0;
+	padding: 8px 11px;
+	background: var(--rb-shade);
+	border-radius: 6px;
+	font-size: 14.5px;
+}
+
+.rb-grammar .note {
+	margin: 7px 0 0;
+	font-size: 12.5px;
+	color: var(--rb-mark);
+	font-family: system-ui, "PingFang SC", sans-serif;
+}
+
+/* ---------- nav ---------- */
+
+.rb-nav {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 12px;
+	margin-top: 8px;
+}
+
+.rb-nav button {
+	display: flex;
+	flex-direction: column;
+	gap: 3px;
+	padding: 14px 18px;
+	border: 1px solid var(--rb-rule);
+	border-radius: var(--rb-radius);
+	background: var(--rb-paper);
+	cursor: pointer;
+	font-family: inherit;
+	color: inherit;
+	text-align: left;
+}
+
+.rb-nav button:last-child {
+	text-align: right;
+}
+
+.rb-nav button:disabled {
+	opacity: 0.4;
+	cursor: not-allowed;
+}
+
+.rb-nav small {
+	font-size: 11px;
+	color: var(--rb-ink-soft);
+	font-family: system-ui, sans-serif;
+	letter-spacing: 0.1em;
+}
+
+.rb-nav b {
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.rb-pageref {
+	text-align: center;
+	font-size: 11px;
+	color: var(--rb-ink-soft);
+	font-family: system-ui, sans-serif;
+	letter-spacing: 0.08em;
+	margin: 18px 0 0;
+}
+
+@media (max-width: 640px) {
+	.rb-wrap {
+		padding: 16px 12px 72px;
+	}
+
+	.rb-sheet,
+	.rb-material {
+		padding: 18px 15px;
+	}
+
+	/* Stays pinned on phones too — that is where scrolling back up to reach the
+	   translation toggle costs the most. */
+	.rb-bar {
+		gap: 8px;
+		padding: 10px 12px;
+	}
+
+	.rb-bar.is-stuck {
+		margin-left: -12px;
+		margin-right: -12px;
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	.rb-toggles button,
+	.rb-back {
+		padding: 6px 11px;
+		font-size: 12px;
+	}
+
+	.rb-nav {
+		grid-template-columns: 1fr;
+	}
+}

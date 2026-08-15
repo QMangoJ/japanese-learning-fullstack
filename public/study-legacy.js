@@ -131,63 +131,41 @@ function cycleMistakeLevel(id){
   saveMistakes();
 }
 function activeMistakes(){ return MISTAKES.filter(m=>!m.deleted); }
-function mistakeDate(ts){
-  const d=new Date(ts), p=n=>String(n).padStart(2,'0');
-  return `${d.getFullYear()}-${p(d.getMonth()+1)}-${p(d.getDate())}`;
-}
-function mistakeItemHTML(m){
-  const lvl = m.level||'new';
-  return `<div class="mistake-item">
-    <div class="mistake-item-head"><span class="mtag mt-${m.type}">${MISTAKE_TYPES[m.type]||m.type}</span><button class="mlvl ml-${lvl}" data-mlevel-cycle="${escAttr(m.id)}" aria-label="切换熟练度">${MISTAKE_LEVELS[lvl]}</button><span class="mistake-date">${mistakeDate(m.ts)}</span><button class="mistake-del" data-mistake-del="${escAttr(m.id)}" aria-label="删除">✕</button></div>
-    <div class="mistake-text">${esc(m.text).replace(/\n/g,'<br>')}</div>
-  </div>`;
-}
 let mistakeFilter='all';
 let mistakeLevelFilter='all';
 let mistakeDraft=''; // 输入框草稿：切到后台再切回来时 resync 会触发 render() 重画整页，草稿要能扛住这次重画
 let mistakeStudyMode=false, favStudyMode=false, studyHideJapanese=false, studyHideTranslation=false;
-function studyDateGroups(rows){
-  const groups={};
-  rows.forEach(row=>{ const day=row.ts ? mistakeDate(row.ts) : '早期记录'; (groups[day]=groups[day]||[]).push(row); });
-  return Object.keys(groups).sort((a,b)=>b.localeCompare(a)).map(day=>({day,rows:groups[day]}));
-}
-function mistakeStudyParts(m){
-  const text=String(m.text||'');
-  const correct=text.match(/(?:^|\n)正确答案：\s*([^\n]+)/);
-  const question=text.replace(/(?:\n|^)你的答案：[\s\S]*$/,'').trim();
-  return {jp:question||text, cn:correct ? correct[1] : ''};
-}
-function studyToolbar(kind,count){
-  return `<div class="study-toolbar"><button class="primary" data-${kind}study="0">‹ 返回列表</button><span>${count} 条</span><div><button class="${studyHideJapanese?'on':''}" data-study-hide="jp">日语</button><button class="${studyHideTranslation?'on':''}" data-study-hide="cn">翻译 / 答案</button></div></div>`;
-}
-function studyRowsHTML(rows,kind){
-  return `<div class="study-columns${studyHideJapanese?' study-hide-jp':''}${studyHideTranslation?' study-hide-cn':''}"><div class="study-columns__head"><b>日本語</b><b>${kind==='mistake'?'答え・メモ':'翻译'}</b></div>${studyDateGroups(rows).map(group=>`<section class="study-date-group"><h3>${group.day}<small>${group.rows.length} 条</small></h3>${group.rows.map(row=>`<article class="study-row"><div class="study-jp">${row.tag||''}${esc(row.jp||'')}</div><div class="study-cn">${row.cn?esc(row.cn):'—'}</div></article>`).join('')}</section>`).join('')}</div>`;
-}
 function viewMistakes(){
   setNav('mistakes'); setHeader(LX('错题 / 生词本','My Mistakes & Notes'), false);
   const src = activeMistakes();
   const byType = mistakeFilter==='all' ? src : src.filter(m=>m.type===mistakeFilter);
   const list = mistakeLevelFilter==='all' ? byType : byType.filter(m=>(m.level||'new')===mistakeLevelFilter);
-  const filterBar = `<div class="fc-filter" style="margin-bottom:8px">
-    <button class="${mistakeFilter==='all'?'on':''}" data-mfilter="all">全部（${src.length}）</button>
-    ${Object.entries(MISTAKE_TYPES).map(([k,v])=>`<button class="${mistakeFilter===k?'on':''}" data-mfilter="${k}">${v}（${src.filter(m=>m.type===k).length}）</button>`).join('')}
-  </div>`;
-  const levelFilterBar = `<div class="fc-filter" style="margin-bottom:14px">
-    <button class="${mistakeLevelFilter==='all'?'on':''}" data-lfilter="all">熟练度：全部（${byType.length}）</button>
-    ${MISTAKE_LEVEL_ORDER.map(k=>`<button class="${mistakeLevelFilter===k?'on':''}" data-lfilter="${k}">${MISTAKE_LEVELS[k]}（${byType.filter(m=>(m.level||'new')===k).length}）</button>`).join('')}
-  </div>`;
-  if(mistakeStudyMode){
-    const rows=list.map(m=>Object.assign({ts:m.ts},mistakeStudyParts(m)));
-    app.innerHTML=studyToolbar('m',rows.length)+studyRowsHTML(rows,'mistake');
-    return;
-  }
-  const body = list.length ? list.map(mistakeItemHTML).join('') : '<div class="empty">还没有记录，在上面写一条保存试试。</div>';
-  app.innerHTML = `<div class="card mistake-widget" style="margin-bottom:14px">
-    <div class="mistake-types" id="mistakeTypes">${Object.entries(MISTAKE_TYPES).map(([k,v])=>`<button class="${k===mistakeAddType?'on':''}" data-mtype="${k}">${v}</button>`).join('')}</div>
-    <textarea id="mistakeInput" class="mistake-input" rows="2" placeholder="记一下考试错题、老是记不住的单词或语法点……">${esc(mistakeDraft)}</textarea>
-    <button class="primary" data-mistake-add>保存</button>
-  </div>${filterBar}${levelFilterBar}<div class="study-entry"><button data-mstudy="1">背诵模式（${list.length}）</button></div>${body}`;
+  const typeCounts = {all: src.length};
+  Object.keys(MISTAKE_TYPES).forEach(k=>{ typeCounts[k] = src.filter(m=>m.type===k).length; });
+  const levelCounts = {all: byType.length};
+  MISTAKE_LEVEL_ORDER.forEach(k=>{ levelCounts[k] = byType.filter(m=>(m.level||'new')===k).length; });
+  showReactPage('mistakes', {
+    list, addType:mistakeAddType, filter:mistakeFilter, levelFilter:mistakeLevelFilter,
+    types:MISTAKE_TYPES, levels:MISTAKE_LEVELS, levelOrder:MISTAKE_LEVEL_ORDER,
+    typeCounts, levelCounts,
+    studyMode:mistakeStudyMode, hideJp:studyHideJapanese, hideCn:studyHideTranslation, draft:mistakeDraft,
+  });
 }
+/* 状態はすべてここに残す。React は描画だけを引き受け、操作はこの窓口を呼んで
+   legacy 側を書き換えてから viewMistakes()／render() で描き直させる——
+   委任ハンドラがやっていたことと同じ順序。 */
+window.__studyMistakes = {
+  setType: t=>{ mistakeAddType=t; viewMistakes(); },
+  setDraft: v=>{ mistakeDraft=v; },
+  add: text=>{ addMistake(mistakeAddType, text); mistakeDraft=''; render(); },
+  remove: id=>{ deleteMistake(id); render(); },
+  cycleLevel: id=>{ cycleMistakeLevel(id); viewMistakes(); },
+  setFilter: f=>{ mistakeFilter=f; viewMistakes(); },
+  setLevelFilter: f=>{ mistakeLevelFilter=f; viewMistakes(); },
+  study: on=>{ mistakeStudyMode=!!on; viewMistakes(); },
+  hide: kind=>{ if(kind==='jp') studyHideJapanese=!studyHideJapanese; else studyHideTranslation=!studyHideTranslation; viewMistakes(); },
+};
+
 let FAV={}; try{ FAV=JSON.parse(localStorage.getItem('favs')||'{}')||{}; }catch(e){ FAV={}; }
 const FAVMETA={};
 let _favSyncing=false, _favPushTimer=null, _favReady=false, _favPendingPush=false;
@@ -278,7 +256,7 @@ function saveSelectedText(){
   const text=normalizeSelectionText(selectionText); if(!text) return;
   const id=selectionFavId(selectionFavType,text);
   FAV[id]={
-    module:'selection', selectionType:selectionFavType, hash:location.hash||'#/',
+    module:'selection', selectionType:selectionFavType, hash:routeKey(),
     w:'', d:'', jp:text, cn:`划词收藏 · ${SELECTION_FAV_TYPES[selectionFavType]}`, ts:Date.now()
   };
   saveFav(); renderSide();
@@ -323,7 +301,12 @@ function moduleFrom(lv,ty){ return LT2MOD[lv+':'+ty] || 'grammar'; }
 function syncModeBar(){
   deriveLT();
   lvChip.firstChild.nodeValue = LEVEL.toUpperCase()+' ';
-  document.querySelectorAll('#typebar button').forEach(b=>b.classList.toggle('on', b.dataset.ty===TYPE));
+  // 读解/听解を開いている間、typebar の選択は React 側（.reader-mode-link /
+  // .listening-mode-link）が持つ。ここで TYPE から点け直すと、popstate 由来の
+  // 再描画のたびに前の tab が復活し、2つ同時に選択されて見える。
+  const modeActive = document.body.classList.contains('reader-mode-active')
+                  || document.body.classList.contains('listening-mode-active');
+  document.querySelectorAll('#typebar button').forEach(b=>b.classList.toggle('on', !modeActive && b.dataset.ty===TYPE));
   document.querySelectorAll('#langbar button').forEach(b=>b.classList.toggle('on', b.dataset.lang===LANG));
   document.querySelectorAll('.lbl[data-cn]').forEach(el=>{ el.textContent = LX(el.dataset.cn, el.dataset.en); });
 }
@@ -353,6 +336,7 @@ function openCommonSheet(){
     <div class="sheet-row">
       <button class="sheet-item" data-go="#/ref"><span class="ic">📖</span>接续表</button>
       <button class="sheet-item" data-go="#/katsuyou"><span class="ic">🔄</span>活用</button>
+      <button class="sheet-item" data-go="#/henkei"><span class="ic">✍️</span>变形</button>
       <button class="sheet-item" data-go="#/numbers"><span class="ic">🔢</span>数字</button>
     </div>
     <div class="sheet-h">本模块<span class="sub">${modLabel()}</span></div>
@@ -381,8 +365,34 @@ document.querySelectorAll('#langbar button').forEach(b=>{
 });
 
 /* ---------- routing ---------- */
-function navTo(hash){ if(location.hash===hash) render(); else location.hash=hash; }
-window.addEventListener('hashchange', render);
+/* URL は /study/... の実パス。ただし legacy 全体が '#/favs' のようなキーで
+   書かれているので、内部の識別子はそのまま残し、境界だけで変換する。
+   lastVisit / lastDay に保存済みのキーもこの形なので、移行不要。 */
+const STUDY_BASE = '/study';
+function keyToPath(key){
+  const k = String(key || '#/').replace(/^#/, '');      // '#/favs' -> '/favs'
+  return k === '/' ? STUDY_BASE : STUDY_BASE + k;       //          -> '/study/favs'
+}
+function pathToKey(pathname){
+  if(pathname.indexOf(STUDY_BASE) !== 0) return '#/';
+  const rest = pathname.slice(STUDY_BASE.length).replace(/\/+$/, '');
+  return rest ? '#' + rest : '#/';
+}
+function routeKey(){ return pathToKey(location.pathname); }
+
+/* 旧 hash リンク（/study#/favs）を実パスへ。ブックマークや共有済みリンク、
+   localStorage の lastDay を生かすため、この shim は今後も残す。 */
+if(location.hash.indexOf('#/') === 0){
+  history.replaceState(null, '', keyToPath(location.hash) + location.search);
+}
+
+function navTo(key){
+  const path = keyToPath(key);
+  if(location.pathname === path){ render(); return; }
+  history.pushState(null, '', path);
+  render();
+}
+window.addEventListener('popstate', render);
 backBtn.onclick = ()=>{ history.length>1 ? history.back() : navTo('#/'); };
 document.querySelectorAll('nav.bottom button').forEach(b=>{
   // 「通用」不是一个页面，是个弹层入口，所以不走 navTo
@@ -405,46 +415,14 @@ app.addEventListener('click', e=>{
     if(wrap && !wrap.classList.contains('answered')) gradeQz(wrap, +ob.dataset.optidx, true);
     return;
   }
-  const wt=e.target.closest('[data-wktoggle]'); if(wt){ toggleWeek(+wt.dataset.wktoggle); viewHome(); updateStickyVars(); return; }
-  // 顶部周条：收起的周点了要先展开再滚过去，否则等于什么都没发生
-  const wj=e.target.closest('[data-wkjump]'); if(wj){
-    const n=+wj.dataset.wkjump; openWeekSet().add(n); viewHome(); updateStickyVars();
-    const el=document.getElementById('wk-'+n); if(el) el.scrollIntoView({behavior:'auto',block:'start'});
-    return;
-  }
   const sc=e.target.closest('[data-scroll]'); if(sc){ const el=document.getElementById(sc.dataset.scroll); if(el) el.scrollIntoView({behavior:sc.classList.contains('wk-tocitem')?'auto':'smooth',block:'start'}); return; }
   const sb=e.target.closest('[data-say]'); if(sb){ say(sb.dataset.say); return; }
-  const fv=e.target.closest('[data-fav]'); if(fv){ toggleFav(fv.dataset.fav); fv.textContent=isFav(fv.dataset.fav)?'★':'☆'; if((location.hash||'#/')==='#/favs') viewFavs(); return; }
-  if(e.target.closest('[data-favfc]')){ startFavFc(); return; }
-  const fs=e.target.closest('[data-favstudy]'); if(fs){ favStudyMode=fs.dataset.favstudy==='1'; viewFavs(); return; }
-  const ms=e.target.closest('[data-mstudy]'); if(ms){ mistakeStudyMode=ms.dataset.mstudy==='1'; viewMistakes(); return; }
-  const sh=e.target.closest('[data-study-hide]'); if(sh){ if(sh.dataset.studyHide==='jp') studyHideJapanese=!studyHideJapanese; else studyHideTranslation=!studyHideTranslation; const h=location.hash||'#/'; if(h==='#/favs') viewFavs(); else if(h==='#/mistakes') viewMistakes(); return; }
-  const ffl=e.target.closest('[data-favfilter]'); if(ffl){ favFilter=ffl.dataset.favfilter; viewFavs(); return; }
-  const sff=e.target.closest('[data-selfavfilter]'); if(sff){ favSelectionFilter=sff.dataset.selfavfilter; viewFavs(); return; }
+  // 星は未移行の毎日ビューが出している。#/favs 側の星は React が自前で処理する。
+  const fv=e.target.closest('[data-fav]'); if(fv){ toggleFav(fv.dataset.fav); fv.textContent=isFav(fv.dataset.fav)?'★':'☆'; return; }
   const cm=e.target.closest('[data-ctmode]'); if(cm){ ctMode=cm.dataset.ctmode; viewContrast(); return; }
   const cw=e.target.closest('[data-ctweek]'); if(cw){ ctWeek=+cw.dataset.ctweek; viewContrast(); return; }
-  const mty=e.target.closest('[data-mtype]'); if(mty){ mistakeAddType=mty.dataset.mtype; document.querySelectorAll('#mistakeTypes button').forEach(b=>b.classList.toggle('on', b.dataset.mtype===mistakeAddType)); return; }
-  if(e.target.closest('[data-mistake-add]')){ const ta=document.getElementById('mistakeInput'); if(ta && ta.value.trim()){ addMistake(mistakeAddType, ta.value); mistakeDraft=''; render(); } return; }
-  const md=e.target.closest('[data-mistake-del]'); if(md){ deleteMistake(md.dataset.mistakeDel); render(); return; }
-  const mlv=e.target.closest('[data-mlevel-cycle]'); if(mlv){ cycleMistakeLevel(mlv.dataset.mlevelCycle); viewMistakes(); return; }
-  const mf=e.target.closest('[data-mfilter]'); if(mf){ mistakeFilter=mf.dataset.mfilter; viewMistakes(); return; }
-  const lf=e.target.closest('[data-lfilter]'); if(lf){ mistakeLevelFilter=lf.dataset.lfilter; viewMistakes(); return; }
-  const fclr=e.target.closest('[data-favclear]'); if(fclr){ if(fclr.dataset.armed){ FAV={}; saveFav(); viewFavs(); } else { fclr.dataset.armed='1'; fclr.textContent='再点一次清空'; } return; }
-  if(e.target.closest('[data-favflip]')){ favFlip=!favFlip; renderFavFc(); return; }
-  if(e.target.closest('[data-favprev]')){ if(favIdx>0){ favIdx--; favFlip=false; renderFavFc(); } return; }
-  if(e.target.closest('[data-favnext]')){ favIdx=(favIdx+1)%favDeck.length; favFlip=false; renderFavFc(); return; }
-  if(e.target.closest('[data-favback]')){ navTo('#/favs'); return; }
   const go=e.target.closest('[data-go]'); if(go){ if(go.dataset.mod) setModule(go.dataset.mod); navTo(go.dataset.go); return; }
   const an=e.target.closest('[data-ans]'); if(an){ const a=document.getElementById(an.dataset.ans); if(a){ a.classList.toggle('show'); an.textContent=a.classList.contains('show')?'隐藏答案':'显示答案'; } return; }
-  const hit=e.target.closest('[data-hit]'); if(hit){ openHit(+hit.dataset.hit); return; }
-  const hq=e.target.closest('[data-histq]'); if(hq){ const qi=$('#q'); if(qi){ qi.value=hq.dataset.histq; qi.oninput(); } return; }
-  const hc=e.target.closest('[data-histclear]'); if(hc){ clearSearchHistory(); const qi=$('#q'); if(qi){ qi.value=''; qi.oninput(); } return; }
-  const fw=e.target.closest('[data-fcweek]'); if(fw){ fcSetWeek(+fw.dataset.fcweek); return; }
-  const fb=e.target.closest('[data-fc]'); if(fb){ ({prev:fcPrev,next:fcNext,shuffle:fcShuffle})[fb.dataset.fc](); return; }
-  if(e.target.closest('[data-fcflip]')){ fcFlip(); return; }
-});
-app.addEventListener('input', e=>{
-  if(e.target.id==='mistakeInput') mistakeDraft=e.target.value;
 });
 /* 判分与还原共用。log=false 用于 render() 后重放已答过的题——
    那时错题早就记过了，再记一次会在错题本里出现重复。 */
@@ -491,7 +469,11 @@ function sideRow(go, ic, label, count, on){
 }
 function renderSide(){
   deriveLT();
-  const h = location.hash || '#/';
+  // typebar と同じ理由：読解／聴解モード中は選択状態を React 側が持つので、
+  // ここで hash から点け直すと注入された読解リンクと二重に光る。
+  const modeActive = document.body.classList.contains('reader-mode-active')
+                  || document.body.classList.contains('listening-mode-active');
+  const h = modeActive ? '' : routeKey();
   const LV = LEVEL.toUpperCase();
   const weeksOf = ty => { const w=((DATA[moduleFrom(LEVEL,ty)]||{}).weeks||[]).length; return w?w+'周':''; };
   // 在某个模块的首页或某一天里，才算「正待在这个类型上」
@@ -511,6 +493,7 @@ function renderSide(){
      <div class="side-sec"><div class="side-h">通用知识 <span class="n">· 不分级别</span></div>` +
        sideRow('#/ref','📖','接续表',null,h==='#/ref') +
        sideRow('#/katsuyou','🔄','活用',null,h==='#/katsuyou') +
+       sideRow('#/henkei','✍️','变形',null,h==='#/henkei') +
        sideRow('#/numbers','🔢','数字',null,h==='#/numbers') + `</div>
      <div class="side-sec"><div class="side-h">本模块</div>` +
        sideRow('#/cards','🗂️','记忆卡',null,h==='#/cards') +
@@ -571,8 +554,9 @@ window.addEventListener('scroll', ()=>{
   requestAnimationFrame(()=>{ _numNavTick = false; updateNumNavActive(); });
 }, {passive:true});
 function render(){
+  hideCommonPage();
   if(!dataLoaded){ app.innerHTML='<div class="empty">加载中…</div>'; return; }
-  const h = location.hash || '#/';
+  const h = routeKey();
   renderSide();
   if((MODULE==='n2grammar'||MODULE==='n2vocab'||MODULE==='n2kanji') && !n2Loaded){ setNav('home'); setHeader(modLabel(), false); app.innerHTML='<div class="empty">N2 数据加载中，请稍候…</div>'; return; }
   if((MODULE==='n4grammar'||MODULE==='n4vocab'||MODULE==='n4kanji') && !n4Loaded){ setNav('home'); setHeader(modLabel(), false); app.innerHTML='<div class="empty">N4 数据加载中，请稍候…</div>'; return; }
@@ -595,6 +579,7 @@ function render(){
   // 辨析不同：它的内容就是 N3 语法的家族对照，跳转链接也指向 N3 语法的某天，所以仍要切过去。
   else if(h==='#/ref') viewRef();
   else if(h==='#/katsuyou') viewKatsuyou();
+  else if(h==='#/henkei') viewHenkei();
   else if(h==='#/numbers') viewNumbers();
   else if(h==='#/contrast'){ const cm=contrastModule(); if(MODULE!==cm) setModule(cm); viewContrast(); }
   else if(h==='#/mistakes') viewMistakes();
@@ -630,37 +615,18 @@ function viewHome(){
   // 不写死「× 7 天」：N2 词汇有两周是缺天的，写死会跟周里实际列出的天数对不上
   const totalDays = weeks.reduce((n,w)=>n+w.days.length, 0);
   const intro = LX(`《${book}》 · ${weeks.length} 周 · 共 ${totalDays} 天 · 点击进入每日${kind}`, `${book} · ${weeks.length} weeks · ${totalDays} days · Tap to open each day's ${kind}`);
-  let html = `<div class="home-top"><div class="meta" style="margin-bottom:10px">${intro}</div>` +
-    (weeks.length>3 ? `<div class="wk-toc">${weeks.map(w=>`<a class="wk-tocitem" data-wkjump="${w.n}">第${w.n}周</a>`).join('')}</div>` : '') +
-    `</div>`;
   // 数字 / 接续表 / 活用 讲的是日语本身，不分级别，所以九个模块的首页都放；
   // 辨析的内容是 N3 语法的家族对照，属于 N3 语法这一层，只在那里出现并标明级别。
   // 工具入口全部收进底部「通用」弹层了，首页只剩内容本身。
-  const open = openWeekSet();
-  for(const w of weeks){
-    const wt = w.title ? ` <span class="jp">${esc(w.title)}</span>` : '';
-    const wsubText = LX(w.title_cn, w.title_en);
-    const wsub = wsubText ? `<div class="sub">${esc(wsubText)}</div>` : '';
-    const isOpen = open.has(w.n);
-    html += `<div class="card week-card" id="wk-${w.n}">
-      <div class="wk-head" data-wktoggle="${w.n}" role="button" aria-expanded="${isOpen}">
-        <div class="wk-t"><h2>第${w.n}週${wt}</h2>${wsub}</div>
-        <span class="cnt">${w.days.length}天</span><span class="cv">${isOpen?'▾':'▸'}</span>
-      </div>`;
-    if(isOpen){
-      html += `<div class="wk-body"><div class="day-list">` +
-        w.days.map(d=>{
-          const isExam = d.day===7;
-          return `<div class="day-item" data-go="#/day/${w.n}-${d.day}">
-            <div class="d">${d.day}日目${isExam?' · 实战':''}</div>
-            <div class="t jp">${R(d,'title')}</div>
-            <div class="tc">${esc(LX(d.title_cn, d.title_en))}</div>${dayPreviewHTML(d)}</div>`;
-        }).join('') + `</div></div>`;
-    }
-    html += `</div>`;
-  }
-  app.innerHTML = html;
+  showReactPage('home', {weeks, intro, lang:LANG});
 }
+/* 開閉は React へ渡さずここで持つ。モジュールごとに覚えておく必要があり、
+   その状態は openWeeks（下）が持っているため。 */
+window.__studyHome = {
+  open: ()=> openWeekSet(),
+  toggle: n=>{ toggleWeek(n); },
+  jump: n=>{ openWeekSet().add(n); },
+};
 /* 周手风琴的展开状态：按模块各记各的，默认展开上次看的那一周。
    render() 会整页重画，所以状态必须存在模块级变量里，不能只存在 DOM 上。 */
 const openWeeks = {};
@@ -675,16 +641,6 @@ function openWeekSet(){
 function toggleWeek(n){
   const s = openWeekSet();
   if(s.has(n)) s.delete(n); else s.add(n);
-}
-// 一眼看出这天讲什么：语法日给语法点，汉字日给汉字，词汇日给头几个词
-function dayPreviewHTML(d){
-  let items = [];
-  if(Array.isArray(d.points)) items = d.points.map(p=>p.pattern);
-  else if(Array.isArray(d.kanji)) items = d.kanji.map(k=>k.char);
-  else if(Array.isArray(d.sections)) items = d.sections.reduce((a,s)=>a.concat((s.items||[]).map(i=>i.jp)), []);
-  items = items.filter(Boolean).slice(0, 6);
-  if(!items.length) return '';
-  return `<div class="day-prev">` + items.map(t=>`<span class="dp jp">${esc(t)}</span>`).join('') + `</div>`;
 }
 
 /* ---------- shared helpers ---------- */
@@ -808,7 +764,7 @@ document.addEventListener('keydown', e=>{
   if(e.metaKey||e.ctrlKey||e.altKey) return;
   const t=e.target, tag=t&&t.tagName;
   if(tag==='INPUT'||tag==='TEXTAREA'||(t&&t.isContentEditable)) return;
-  const m=(location.hash||'').match(/^#\/day\/(\d+)-(\d+)/);
+  const m=routeKey().match(/^#\/day\/(\d+)-(\d+)/);
   if(!m) return;
   const n=dayNeighbors(+m[1],+m[2])[e.key==='ArrowLeft'?'prev':'next'];
   if(n){ e.preventDefault(); navTo(`#/day/${n[0]}-${n[1]}`); }
@@ -881,6 +837,61 @@ function pointHTML(p, wid, i){
   for(const nt of (p.notes||[])) h += `<div class="${noteClass(nt.type)}"><b class="nt">${esc(noteLabel(nt.type))}</b><span class="jp">${R(nt,'text')}</span></div>`;
   return h + `</div>`;
 }
+function dailyChoiceCodes(answer, count){
+  const clean=String(answer||'').replace(/\s/g,'');
+  if(clean.includes('、')) return clean.split('、');
+  if(count>1 && /^[ab]+$/.test(clean) && clean.length===count) return clean.split('');
+  return [clean];
+}
+function dailyChoiceReasonHTML(info){
+  const pairs=info.choices||[], codes=dailyChoiceCodes(info.answer,pairs.length);
+  if(!pairs.length) return '';
+  return `<ol class="daily-choice-reasons">` + pairs.map((pair,index)=>{
+    const code=codes[index]||codes[codes.length-1]||'', both=code==='ab'||code==='ba';
+    const selected=both
+      ? `a「${esc(pair.a)}」和 b「${esc(pair.b)}」在这里都成立`
+      : `${code}「${esc(pair[code]||'')}」`;
+    const reason=both
+      ? '两种表达在本句中都能形成自然、正确的接续，所以答案接受两项。'
+      : `代入后能组成上面的完整句，符合本题句意与语法接续；另一项「${esc(pair[code==='a'?'b':'a'])}」不符合本题所考查的句意或接续。`;
+    return `<li><b>${pairs.length>1?`第${index+1}空：`:''}${selected}</b><span>${reason}</span></li>`;
+  }).join('') + `</ol>`;
+}
+function dailyOrderReasonHTML(info,it){
+  const options=Object.fromEntries((it.options||[]).map((value,index)=>[index+1,String(value).replace(/^\s*[1-4]\s*/, '').trim()]));
+  const ordered=String(info.answer||'').split('→').map(Number).filter(Boolean).map(n=>options[n]).filter(Boolean);
+  return `<div class="daily-order-reason"><b>排列过程：</b>${ordered.map((part,index)=>
+    `<span class="jp"><i>${index+1}</i>${esc(part)}</span>`).join('<em>→</em>')}
+    <p>按这个顺序排列后，助词、修饰关系和句末接续构成自然完整的句子。</p></div>`;
+}
+function dailyPointRefsHTML(info,day,w,d){
+  const indexes=Array.from(new Set(info.pointIndexes||[])).filter(index=>day.points&&day.points[index]);
+  if(!indexes.length) return '';
+  return `<div class="daily-point-refs"><div class="daily-analysis-label">本题对应语法点</div>` + indexes.map(index=>{
+    const p=day.points[index];
+    return `<button type="button" class="daily-point-ref" data-go="#/day/${w}-${d}/p${index}">
+      <span class="jp">${R(p,'pattern')}</span><span>${esc(LX(p.usage_cn,p.usage_en))}</span><i>跳转 ›</i>
+    </button>`;
+  }).join('') + `</div>`;
+}
+function dailyExercisePanelsHTML(info,it,day,w,d){
+  if(!info) return '';
+  const reason=info.type==='order'?dailyOrderReasonHTML(info,it):dailyChoiceReasonHTML(info);
+  return `<div class="daily-explain">
+    <details class="daily-toggle daily-translation">
+      <summary><span class="fold-show">显示翻译</span><span class="fold-hide">隐藏翻译</span></summary>
+      <div class="daily-toggle-body cn">${esc(info.translation)}</div>
+    </details>
+    <details class="daily-toggle daily-analysis">
+      <summary><span class="fold-show">显示解析</span><span class="fold-hide">隐藏解析</span></summary>
+      <div class="daily-toggle-body">
+        <div class="an-answer-key">正确答案：<span class="jp">${esc(info.answer)}</span></div>
+        <div class="an-complete"><b>完整句：</b><span class="jp">${esc(info.completed)}</span></div>
+        ${reason}${dailyPointRefsHTML(info,day,w,d)}
+      </div>
+    </details>
+  </div>`;
+}
 function viewDayGrammar(day,w,d,scrollP){
   const wk=CUR().weeks.find(x=>x.n===w);
   const wt = wk.title?` <span class="jp">${esc(wk.title)}</span>（${esc(LX(wk.title_cn, wk.title_en))}）`:` · ${MODULE==='n2grammar'?'N2 语法':(MODULE==='n4grammar'?'N4 语法':'语法')}`;
@@ -894,10 +905,12 @@ function viewDayGrammar(day,w,d,scrollP){
   }
   html += `<div class="card">` + (day.points||[]).map((p,i)=>pointHTML(p,`${w}-${d}`,i)).join('<hr style="border:none;border-top:1px solid var(--line);margin:16px 0">') + `</div>`;
   if(day.exercises){
+    const dailyItems=MODULE==='grammar'&&G.daily_explanations&&G.daily_explanations[`w${w}d${d}`];
+    const explanationByNumber=new Map(((dailyItems&&dailyItems.items)||[]).map(item=>[item.n,item]));
     html += `<div class="sec-title">れんしゅう（练习）</div><div class="card">`;
     for(const sec of (day.exercises.sections||[])){
       html += `<div class="meta jp" style="margin:4px 0 8px">${sec.type==='choice'?'Ⅰ':'Ⅱ'}　${R(sec,'instruction')}</div>`;
-      for(const it of (sec.items||[])) html += `<div class="q"><span class="n">${it.n}</span><span class="jp">${R(it,'q')}</span>${optsRow(it)}</div>`;
+      for(const it of (sec.items||[])) html += `<div class="q daily-q"><div class="daily-qline"><span class="n">${it.n}</span><span class="jp">${R(it,'q')}</span></div>${optsRow(it)}${dailyExercisePanelsHTML(explanationByNumber.get(it.n),it,day,w,d)}</div>`;
     }
     if(day.exercises.answers) html += ansBlock(`ans-${w}-${d}`, `<b>答案：</b><span class="jp">${esc(day.exercises.answers)}</span>`);
     else if(day.exercises.answers_note) html += `<div class="meta">${esc(day.exercises.answers_note)}</div>`;
@@ -927,6 +940,7 @@ function srcLabel(link){
 }
 function examNoteHTML(a, it){
   const opts = it.opts_r || (it.opts||[]).map(esc);
+  const optionTranslations = a.option_translations || [];
   let h = a.note ? `<div class="jp">${R(a,'note')}</div>` : '';
   if(a.trans) h += `<div class="an-trans">${esc(a.trans)}</div>`;
   if(a.link) h += `<div class="an-link" data-go="${escAttr(a.link)}">📘 ${srcLabel(a.link)} ›</div>`;
@@ -934,7 +948,7 @@ function examNoteHTML(a, it){
   if(!why.length && !a.point && !words.length) return h;
   h += `<details class="an-more"><summary>详细解析</summary>`;
   if(why.length) h += `<ol class="an-why">` + why.map((t,i)=>
-    `<li class="${(i+1)===a.ans?'ok':''}"><span class="o jp">${opts[i]||''}</span><span class="w">${esc(t)}</span></li>`).join('') + `</ol>`;
+    `<li class="${(i+1)===a.ans?'ok':''}"><span class="o jp">${opts[i]||''}</span>${optionTranslations[i]?`<span class="an-opt-trans">${esc(optionTranslations[i])}</span>`:''}<span class="w">${esc(t)}</span></li>`).join('') + `</ol>`;
   if(a.point) h += `<div class="an-point">要点：${esc(a.point)}</div>`;
   // 逐节拆解：把句子切成一个个成分，说清每一节在句子里干什么
   if((a.parse||[]).length) h += `<div class="an-h">逐节拆解</div><div class="an-words an-parse">` + a.parse.map(v=>
@@ -1227,47 +1241,28 @@ function saveSearchHistory(kw){
   }catch(e){}
 }
 function clearSearchHistory(){ try{ localStorage.removeItem(SEARCH_HIST_KEY); }catch(e){} }
-let lastSearchKw='';
 function viewSearch(){
   setNav('search'); setHeader(LX('搜索（语法 + 词汇）','Search (Grammar + Vocabulary)'), false);
-  const total=buildIndex().length;
-  app.innerHTML = `<div class="search-box"><input id="q" type="search" placeholder="日文 / 假名 / 中文 / 英文，如：ばかり · 冰箱 · fridge" autocomplete="off"></div><div id="results"></div>`;
-  const q=$('#q'), res=$('#results'); q.focus();
-  q.oninput = ()=>{
-    const kw=q.value.trim();
-    lastSearchKw=kw;
-    if(!kw){
-      const h=getSearchHistory();
-      const histHTML = h.length ? `<div class="search-hist"><div class="search-hist-h"><span>最近搜索</span><a data-histclear>清空</a></div><div class="search-hist-chips">${h.map(x=>`<span class="hist-chip" data-histq="${esc(x)}">${esc(x)}</span>`).join('')}</div></div>` : '';
-      res.innerHTML = `${histHTML}<div class="empty">共收录 ${total} 条（语法点 + 词汇）<br>结果标注所属模块，点击直达</div>`;
-      return;
-    }
-    const lk=kw.toLowerCase();
-    const hits=buildIndex().filter(e=> e.key.toLowerCase().includes(lk)||e.reading.includes(kw)||e.extra.toLowerCase().includes(lk)).slice(0,60);
-    if(!hits.length){ res.innerHTML='<div class="empty">没有找到，换个关键词试试</div>'; return; }
-    const mark=s=>{ const t=esc(s); if(!kw) return t; try{ return t.split(esc(kw)).join(`<span class="hl">${esc(kw)}</span>`);}catch(e){return t;} };
-    res.innerHTML = hits.map((e,ix)=>{
-      const tag = {grammar:'<span class="mtag g">N3语法</span>', n2grammar:'<span class="mtag g2">N2语法</span>', vocab:'<span class="mtag v">N3词汇</span>', kanji:'<span class="mtag k">N3汉字</span>', n2vocab:'<span class="mtag v2">N2词汇</span>', n2kanji:'<span class="mtag k2">N2汉字</span>', n4grammar:'<span class="mtag g4">N4语法</span>', n4vocab:'<span class="mtag v4">N4词汇</span>', n4kanji:'<span class="mtag k4">N4汉字</span>'}[e.module];
-      window['__hit'+ix]=e;
-      return `<div class="card result" data-hit="${ix}">
-        <div class="jp" style="font-size:16.5px;font-weight:700">${tag}${mark(e.key)}</div>
-        ${e.sub?`<div class="meta">${mark(e.sub)}</div>`:''}
-        <div class="where">第${e.w}週 ${e.d}日目 · <span class="jp">${esc(e.dayTitle)}</span></div>
-      </div>`;
-    }).join('');
-  };
-  q.onkeydown = ev=>{ if(ev.key==='Enter' && q.value.trim()) saveSearchHistory(q.value.trim()); };
-  q.oninput();
+  showReactPage('search', null);
 }
-window.openHit = ix=>{
-  const e=window['__hit'+ix]; if(!e) return;
-  if(lastSearchKw) saveSearchHistory(lastSearchKw);
-  setModule(e.module);
-  let hash=`#/day/${e.w}-${e.d}`;
-  if(e.module==='kanji'||e.module==='n2kanji'||e.module==='n4kanji') hash+=`/k${e.ki}`;
-  else if(e.module==='vocab'||e.module==='n2vocab'||e.module==='n4vocab') hash+=`/v${e.si}-${e.ii}`;
-  else hash+=`/p${e.i}`;
-  navTo(hash);
+/* 検索は毎キーストロークで buildIndex() を呼ぶ。N2/N4 が後から読み込まれると
+   searchIndex は null に戻されるので、都度呼ぶことで新しい結果が入る。
+   payload に配列を焼き込むとこの更新が効かなくなるため、関数で渡す。 */
+window.__studySearch = {
+  index: function(){ return buildIndex(); },
+  history: getSearchHistory,
+  saveHistory: saveSearchHistory,
+  clearHistory: clearSearchHistory,
+  open: function(e, kw){
+    if(!e) return;
+    if(kw) saveSearchHistory(kw);
+    setModule(e.module);
+    let key = '#/day/' + e.w + '-' + e.d;
+    if(e.module==='kanji'||e.module==='n2kanji'||e.module==='n4kanji') key += '/k' + e.ki;
+    else if(e.module==='vocab'||e.module==='n2vocab'||e.module==='n4vocab') key += '/v' + e.si + '-' + e.ii;
+    else key += '/p' + e.i;
+    navTo(key);
+  }
 };
 
 /* ---------- flashcards (per module) ---------- */
@@ -1287,50 +1282,21 @@ function buildDeck(week){
 function viewCards(){
   setNav('common'); setHeader(LX('记忆卡','Flashcards')+' · '+modLabel(), false);
   if(!fc.deck.length){ fc.deck=buildDeck(fc.week); fc.idx=0; fc.flipped=false; }
-  const nWeeks=CUR().weeks.length;
-  const filt=[0].concat(Array.from({length:nWeeks},(_,i)=>i+1)).map(n=>`<button class="${fc.week===n?'on':''}" data-fcweek="${n}">${n===0?'全部':'第'+n+'週'}</button>`).join('');
-  const cur=fc.deck[fc.idx];
-  let cardHTML;
-  if(!cur){ cardHTML=`<div class="fcard"><div class="empty">本组已完成 🎉<br>点「重新洗牌」再来一轮</div></div>`; }
-  else if(isGram()){
-    if(!fc.flipped) cardHTML=`<div class="fcard" data-fcflip="1"><div class="big jp">${esc(cur.p.pattern)}</div><div class="hint">回想接续与意思，点击翻面</div></div>`;
-    else{ const p=cur.p; cardHTML=`<div class="fcard" data-fcflip="1"><div class="backside">
-      <div class="jp" style="font-weight:700;font-size:18px">${R(p,'pattern')}</div>
-      ${p.reading?`<div class="reading jp meta">${esc(p.reading)}</div>`:''}
-      ${connBlockHTML(p)}
-      ${p.usage_jp?`<div class="usage jp">${R(p,'usage_jp')}</div>`:''}
-      ${p.usage_cn?`<div class="usage"><span class="cn">${esc(p.usage_cn)}</span></div>`:''}
-      ${(p.examples&&p.examples[0])?`<div class="ex"><div class="jp">${R(p.examples[0],'jp')}</div>${p.examples[0].cn?`<div class="cn">${esc(p.examples[0].cn)}</div>`:''}</div>`:''}
-      <div class="meta">出处：第${cur.w}週 ${cur.d}日目　<span class="plink" data-go="#/day/${cur.w}-${cur.d}/p${cur.i}" style="cursor:pointer">详情 ›</span></div>
-    </div></div>`; }
-  } else if(MODULE==='kanji'||MODULE==='n2kanji'||MODULE==='n4kanji'){
-    const k=cur.k;
-    if(!fc.flipped) cardHTML=`<div class="fcard" data-fcflip="1"><div class="big jp" style="font-size:64px">${esc(k.char)}</div><div class="hint">回想读音与词语，点击翻面</div></div>`;
-    else cardHTML=`<div class="fcard" data-fcflip="1"><div class="backside" style="text-align:center">
-      <div class="jp" style="font-weight:700;font-size:40px">${esc(k.char)}</div>
-      <div class="meta jp" style="font-size:15px">${(k.readings||[]).map(r=>`<span class="kread">${esc(r)}</span>`).join('')}${k.strokes?`<span class="kread">${esc(k.strokes)}画</span>`:''}</div>
-      ${(k.words||[]).map(wd=>`<div class="ex"><div class="jp">${wd.jp_r||esc(wd.jp)}</div>${wd.cn?`<div class="cn">${esc(wd.cn)}</div>`:''}</div>`).join('')}
-    </div></div>`;
-  } else {
-    const it=cur.v;
-    if(!fc.flipped) cardHTML=`<div class="fcard" data-fcflip="1"><div class="big jp">${it.jp_r||esc(it.jp)}</div><div class="hint">回想中/英文，点击翻面</div></div>`;
-    else cardHTML=`<div class="fcard" data-fcflip="1"><div class="backside" style="text-align:center">
-      <div class="jp" style="font-weight:700;font-size:22px">${it.jp_r||esc(it.jp)}</div>
-      ${it.cn?`<div style="font-size:18px;margin-top:10px">${esc(it.cn)}</div>`:''}
-      ${it.en?`<div class="meta" style="font-size:14px">${esc(it.en)}</div>`:''}
-      ${it.rel?`<div class="vrel jp" style="margin-top:8px">${it.rel_r||esc(it.rel)}</div>`:''}
-    </div></div>`;
-  }
-  app.innerHTML = `<div class="fc-wrap"><div class="fc-filter">${filt}</div>
-    <div class="fc-prog">${fc.deck.length?`${Math.min(fc.idx+1,fc.deck.length)} / ${fc.deck.length}`:''}</div>
-    ${cardHTML}
-    <div class="fc-btns"><button data-fc="prev">‹ 上一张</button><button class="primary" data-fc="next">下一张 ›</button><button data-fc="shuffle">重新洗牌</button></div></div>`;
+  showReactPage('cards', null);
 }
-window.fcSetWeek=n=>{ fc.week=n; fc.deck=buildDeck(n); fc.idx=0; fc.flipped=false; viewCards(); };
-window.fcFlip=()=>{ fc.flipped=!fc.flipped; viewCards(); };
-window.fcNext=()=>{ if(fc.idx<fc.deck.length){ fc.idx++; fc.flipped=false; } viewCards(); };
-window.fcPrev=()=>{ if(fc.idx>0){ fc.idx--; fc.flipped=false; } viewCards(); };
-window.fcShuffle=()=>{ fc.deck=buildDeck(fc.week); fc.idx=0; fc.flipped=false; viewCards(); };
+/* 山の中身（どの週・どの語をどの順で）は DATA と MODULE を見る必要があるのでここに残す。
+   React 側は fc を複製せず、この窓口越しに読み書きする——カードを離れて戻っても
+   同じ山・同じ位置・同じ表裏に戻る挙動は fc がモジュール変数であることに依っている。 */
+window.__studyCards = {
+  state: ()=> fc,
+  kind: ()=> isGram() ? 'gram' : (MODULE==='kanji'||MODULE==='n2kanji'||MODULE==='n4kanji') ? 'kanji' : 'vocab',
+  weeks: ()=> CUR().weeks.length,
+  setWeek: n=>{ fc.week=n; fc.deck=buildDeck(n); fc.idx=0; fc.flipped=false; },
+  flip: ()=>{ fc.flipped=!fc.flipped; },
+  next: ()=>{ if(fc.idx<fc.deck.length){ fc.idx++; fc.flipped=false; } },
+  prev: ()=>{ if(fc.idx>0){ fc.idx--; fc.flipped=false; } },
+  shuffle: ()=>{ fc.deck=buildDeck(fc.week); fc.idx=0; fc.flipped=false; },
+};
 
 /* ---------- favorites (收藏 / 生词本) ---------- */
 let favDeck=[], favIdx=0, favFlip=false;
@@ -1349,39 +1315,39 @@ function shownFavIds(groups){
 function viewFavs(){
   setNav('favs'); setHeader(LX('收藏 · 生词本','Favorites · Word Book'), false);
   const ids=Object.keys(FAV);
-  if(!ids.length){ app.innerHTML='<div class="empty">还没有收藏。<br>选中页面里的文字，即可收藏到生词本。</div>'; return; }
-  const tagMap={grammar:'<span class="mtag g">N3语法</span>', n2grammar:'<span class="mtag g2">N2语法</span>', vocab:'<span class="mtag v">N3词汇</span>', kanji:'<span class="mtag k">N3汉字</span>', n2vocab:'<span class="mtag v2">N2词汇</span>', n2kanji:'<span class="mtag k2">N2汉字</span>', n4grammar:'<span class="mtag g4">N4语法</span>', n4vocab:'<span class="mtag v4">N4词汇</span>', n4kanji:'<span class="mtag k4">N4汉字</span>', selection:'<span class="mtag mt-selection">划词</span>'};
   const groups=favGroups();
   const presentMods=FAV_MOD_ORDER.filter(m=>groups[m]&&groups[m].length);
   if(favFilter!=='all' && !(groups[favFilter]&&groups[favFilter].length)) favFilter='all';
   const selectionIds=ids.filter(id=>SELECTION_FAV_TYPES[(FAV[id]||{}).selectionType]);
   const presentSelectionTypes=Object.keys(SELECTION_FAV_TYPES).filter(k=>selectionIds.some(id=>(FAV[id]||{}).selectionType===k));
   if(favSelectionFilter!=='all' && !presentSelectionTypes.includes(favSelectionFilter)) favSelectionFilter='all';
-  const shownIds = shownFavIds(groups);
-  const filterBar = presentMods.length>1 ? `<div class="fc-filter" style="margin-bottom:12px">
-    <button class="${favFilter==='all'?'on':''}" data-favfilter="all">全部（${ids.length}）</button>
-    ${presentMods.map(m=>`<button class="${favFilter===m?'on':''}" data-favfilter="${m}">${FAV_MOD_LABEL[m]}（${groups[m].length}）</button>`).join('')}
-  </div>` : '';
-  const typeFilterBar = presentSelectionTypes.length ? `<div class="fc-filter fav-type-filter" style="margin-bottom:12px">
-    <span>划词类别</span><button class="${favSelectionFilter==='all'?'on':''}" data-selfavfilter="all">全部</button>
-    ${presentSelectionTypes.map(k=>`<button class="${favSelectionFilter===k?'on':''}" data-selfavfilter="${k}">${SELECTION_FAV_TYPES[k]}（${selectionIds.filter(id=>(FAV[id]||{}).selectionType===k).length}）</button>`).join('')}
-  </div>` : '';
-  if(favStudyMode){
-    const rows=shownIds.map(id=>{ const s=FAV[id]||{}; const tag=(tagMap[s.module]||'')+(s.selectionType?`<span class="mtag mt-${escAttr(s.selectionType)}">${SELECTION_FAV_TYPES[s.selectionType]}</span>`:''); return {ts:s.ts,jp:s.jp||'',cn:s.cn||'',tag}; });
-    app.innerHTML=studyToolbar('fav',rows.length)+studyRowsHTML(rows,'fav');
-    return;
-  }
-  let html=`<div class="fav-actions"><button class="primary" data-favfc>▶ 用收藏刷闪卡（${shownIds.length}）</button><button data-favstudy="1">背诵模式</button><button data-favclear>清空收藏</button></div>${filterBar}${typeFilterBar}<div class="card">`;
-  shownIds.forEach(id=>{
-    const s=FAV[id]||{};
-    const tag=(tagMap[s.module]||'')+(s.selectionType?`<span class="mtag mt-${escAttr(s.selectionType)}">${SELECTION_FAV_TYPES[s.selectionType]}</span>`:'');
-    html+=`<div class="fav-item"><button class="starb" data-fav="${escAttr(id)}" aria-label="取消收藏">★</button>
-      <div class="fj" data-go="${esc(s.hash||'#/')}" data-mod="${esc(s.module==='selection'?'':(s.module||''))}"><div class="t jp">${tag}${esc(s.jp||'')}</div>${s.cn?`<div class="c">${esc(s.cn)}</div>`:''}</div>
-      <span class="fw">${s.selectionType?'划词':`第${esc(String(s.w||''))}週${esc(String(s.d||''))}日`}</span></div>`;
+  // 表示する id は startFavFc() と同じ shownFavIds() で出す。React 側で組み直すと
+  // 一覧と闪卡の中身がずれる余地ができる。
+  showReactPage('favs', {
+    total: ids.length,
+    items: shownFavIds(groups).map(id=>Object.assign({id}, FAV[id]||{})),
+    filter: favFilter, selectionFilter: favSelectionFilter,
+    mods: presentMods.map(m=>({key:m, label:FAV_MOD_LABEL[m], count:groups[m].length})),
+    selTypes: presentSelectionTypes.map(k=>({key:k, label:SELECTION_FAV_TYPES[k], count:selectionIds.filter(id=>(FAV[id]||{}).selectionType===k).length})),
+    selLabels: SELECTION_FAV_TYPES,
+    studyMode: favStudyMode, hideJp: studyHideJapanese, hideCn: studyHideTranslation,
   });
-  html+='</div>';
-  app.innerHTML=html;
 }
+window.__studyFavs = {
+  setFilter: f=>{ favFilter=f; viewFavs(); },
+  setSelectionFilter: t=>{ favSelectionFilter=t; viewFavs(); },
+  toggle: id=>{ toggleFav(id); viewFavs(); },
+  clear: ()=>{ FAV={}; saveFav(); viewFavs(); },
+  study: on=>{ favStudyMode=!!on; viewFavs(); },
+  hide: kind=>{ if(kind==='jp') studyHideJapanese=!studyHideJapanese; else studyHideTranslation=!studyHideTranslation; viewFavs(); },
+  open: (hash, mod)=>{ if(mod) setModule(mod); navTo(hash); },
+  startFc: ()=>{ startFavFc(); },
+  fcFlip: ()=>{ favFlip=!favFlip; renderFavFc(); },
+  fcNext: ()=>{ favIdx=(favIdx+1)%favDeck.length; favFlip=false; renderFavFc(); },
+  fcPrev: ()=>{ if(favIdx>0){ favIdx--; favFlip=false; renderFavFc(); } },
+  fcBack: ()=>{ navTo('#/favs'); },
+};
+
 function startFavFc(){
   const groups=favGroups();
   const ids = shownFavIds(groups);
@@ -1393,13 +1359,8 @@ function renderFavFc(){
   if(!favDeck.length){ viewFavs(); return; }
   setNav('favs'); setHeader(LX('收藏 · 闪卡','Favorites · Flashcards'), false);
   const c=favDeck[favIdx];
-  const card = favFlip
-    ? `<div class="fcard" data-favflip><div class="backside" style="text-align:center"><div class="jp" style="font-weight:700;font-size:24px">${esc(c.jp)} ${sayBtn(c.jp)}</div>${c.cn?`<div style="font-size:18px;margin-top:12px">${esc(c.cn)}</div>`:''}</div></div>`
-    : `<div class="fcard" data-favflip><div class="big jp">${esc(c.jp)}</div><div class="hint">点击翻面看释义</div></div>`;
-  app.innerHTML=`<div class="fc-wrap"><div class="fc-prog">${favIdx+1} / ${favDeck.length}</div>${card}
-    <div class="fc-btns"><button data-favprev>‹ 上一张</button><button class="primary" data-favnext>下一张 ›</button><button data-favback>返回收藏</button></div></div>`;
+  showReactPage('favfc', {jp:c.jp||'', cn:c.cn||'', idx:favIdx, total:favDeck.length, flipped:favFlip});
 }
-
 /* ---------- contrast (语法辨析, N3 grammar only) ---------- */
 let ctMode='family', ctWeek=1;
 // 每个语法家族末尾的辨析练习：选项就是这一族的成员，逼着你在易混形式之间做选择。
@@ -1483,126 +1444,93 @@ function viewContrast(){
 
 /* ---------- numbers reference (global, level-agnostic) ---------- */
 // 数据里用「★」标出不规则读法，渲染时高亮出来——这是整个页面的重点
-function markStar(s){ return esc(s||'').replace(/★/g,'<span class="num-x">★</span>'); }
-function numTableHTML(t){
-  return `<div class="card">
-    ${t.caption?`<div class="num-cap jp">${markStar(t.caption)}</div>`:''}
-    <div class="table-scroll"><table class="ref">
-      ${t.cols?`<tr>${t.cols.map(c=>`<th class="jp">${markStar(c)}</th>`).join('')}</tr>`:''}
-      ${(t.rows||[]).map(r=>`<tr>${r.map(c=>`<td class="jp">${markStar(c)}</td>`).join('')}</tr>`).join('')}
-    </table></div>
-    ${t.note?`<div class="num-note">${markStar(t.note)}</div>`:''}
-  </div>`;
-}
-function numCounterHTML(c){
-  const irr = c.irr||[];
-  const cells = (c.forms||[]).map((f,i)=>{
-    const n=i+1;
-    return `<div class="cnt-cell${irr.includes(n)?' irr':''}"><span class="n">${n}</span><span class="r jp">${esc(f)}</span></div>`;
-  }).join('');
-  return `<div class="card">
-    <div class="cnt-head"><span class="cnt-suffix jp">${esc(c.suffix)}</span><span class="cnt-read jp">${esc(c.reading)}</span>${c.q?`<span class="cnt-q jp">何〜 ${esc(c.q)}</span>`:''}</div>
-    ${c.use?`<div class="cnt-use">${esc(c.use)}</div>`:''}
-    ${c.eg?`<div class="cnt-eg jp">例：${c.eg_r||esc(c.eg)}${sayBtn(c.eg)}</div>`:''}
-    <div class="cnt-grid">${cells}</div>
-    ${c.note?`<div class="num-note">${markStar(c.note)}</div>`:''}
-  </div>`;
-}
 function viewNumbers(){
   setNav('common'); setHeader(LX('数字表达','Number Expressions'), true);
-  const N = (DATA.common||{}).numbers;
-  if(!N){ app.innerHTML='<div class="empty">通用参考数据加载中，请稍候…</div>'; return; }
-  const secs = N.sections||[];
-  let html = `<div class="num-nav">${secs.map(s=>`<a data-scroll="num-${s.id}">${esc(s.title)}</a>`).join('')}</div>`;
-  if(N.intro) html += `<div class="num-lead">${esc(N.intro)}</div>`;
-  for(const s of secs){
-    html += `<div class="num-sec-h" id="num-${esc(s.id)}">${esc(s.title)}${s.title_jp?`<small class="jp">${esc(s.title_jp)}</small>`:''}</div>`;
-    if(s.lead) html += `<div class="num-lead">${esc(s.lead)}</div>`;
-    if(s.type==='rules'){
-      for(const g of s.groups||[]) html += `<div class="card num-rule"><h4>${markStar(g.h)}</h4>${g.eg?`<div class="eg jp">${markStar(g.eg)}</div>`:''}${g.note?`<div class="num-note">${markStar(g.note)}</div>`:''}</div>`;
-    } else if(s.type==='counters'){
-      for(const c of s.counters||[]) html += numCounterHTML(c);
-    } else {
-      for(const t of s.tables||[]) html += numTableHTML(t);
-    }
-  }
-  app.innerHTML = html;
-  updateStickyVars();      // 先量出目录条高度，锚点的 scroll-margin 才是准的
-  updateNumNavActive();    // 首屏就把第一个小节点亮，不用等用户滚动
+  showCommonPage('numbers');
 }
 
-/* ---------- reference (grammar only) ---------- */
-function refTable(cols, rows){
-  return `<div class="table-scroll"><table class="ref">
-    ${cols?`<tr>${cols.map(c=>`<th class="jp">${fmt(c)}</th>`).join('')}</tr>`:''}
-    ${rows.map(r=>`<tr>${r.map(c=>`<td class="jp">${fmt(c)}</td>`).join('')}</tr>`).join('')}
-  </table></div>`;
+/* ---------- 通用知识：本文の描画は React（study-common.tsx）が担当 ---------- */
+/* ヘッダー・ナビ・戻るボタンは従来どおりここが持ち、本文だけ React に渡す。
+   データ未読込のときの表示も移行前と同じ文言のままにしてある。 */
+function showReactPage(page, data){
+  app.innerHTML='';
+  app.hidden = true;
+  window.dispatchEvent(new CustomEvent('study:common-page', {detail:{page, data}}));
 }
+function showCommonPage(page){
+  if(!DATA.common){ app.innerHTML='<div class="empty">通用参考数据加载中，请稍候…</div>'; return; }
+  showReactPage(page, DATA.common);
+}
+function hideCommonPage(){
+  if(!app.hidden) return;
+  app.hidden = false;
+  window.dispatchEvent(new CustomEvent('study:common-page', {detail:null}));
+}
+/* React 側から legacy のルーティングを呼ぶための明示的な橋。
+   #app の委任クリックは React が描いたノードには届かないため。 */
+window.__studyNav = function(key){ navTo(key); };
+window.__studySay = function(text){ say(text); };
+/* React の commit 後に呼ばれる。legacy が innerHTML 直後に同期でやっていた実測を、
+   同じ順序（目次の高さ → 現在位置のハイライト）で行う。 */
+window.__studyAfterPaint = function(){ updateStickyVars(); updateNumNavActive(); };
+
 function viewRef(){
   setNav('common'); setHeader(LX('接续表示法 · 接続の表示方法','Connection Notation'), true);
-  const RF=(DATA.common||{}).reference;
-  if(!RF){ app.innerHTML='<div class="empty">通用参考数据加载中，请稍候…</div>'; return; }
-  let html=`<div class="meta" style="margin-bottom:10px">${esc(RF.note)}</div>`;
-  html+=`<div class="card"><h3 class="jp" style="margin-top:0">${esc(RF.verb.heading)}</h3>
-    ${RF.verb.groups.map(g=>`<div class="meta jp">${esc(g)}</div>`).join('')}
-    ${refTable(RF.verb.columns, RF.verb.rows)}
-    <div class="note"><b class="nt">〔普〕</b><span class="jp">${esc(RF.verb.futsukei)}</span></div>
-    <div class="meta jp">${esc(RF.verb.extra)}</div>
-    <div class="note" style="margin-top:8px"><b class="nt">表示の例</b><span class="jp">${esc(RF.verb.example_box)}</span></div></div>`;
-  html+=`<div class="card"><h3 class="jp" style="margin-top:0">${esc(RF.iadj.heading)}</h3>${refTable(['解説文中の表示','活用形','い形容詞'], RF.iadj.rows)}<div class="note"><b class="nt">〔普〕</b><span class="jp">${esc(RF.iadj.futsukei)}</span></div></div>`;
-  html+=`<div class="card"><h3 class="jp" style="margin-top:0">${esc(RF.naadj.heading)}</h3>${refTable(['解説文中の表示','活用形','な形容詞'], RF.naadj.rows)}<div class="note"><b class="nt">〔普〕</b><span class="jp">${esc(RF.naadj.futsukei)}</span></div></div>`;
-  html+=`<div class="card"><h3 class="jp" style="margin-top:0">${esc(RF.noun.heading)}</h3><div class="meta jp">${esc(RF.noun.note)}</div>${refTable(['解説文中の表示','活用形','名詞'], RF.noun.rows)}<div class="note"><b class="nt">〔普〕</b><span class="jp">${esc(RF.noun.futsukei)}</span></div></div>`;
-  html+=`<div class="card"><h3 style="margin-top:0">本书使用的标记</h3>` + RF.marks.map(m=>`<div class="q"><span class="n" style="min-width:auto;padding:0 8px">${esc(m.mark)}</span><span class="jp">${esc(m.desc)}</span></div>`).join('') + `</div>`;
-  app.innerHTML=html;
+  showCommonPage('ref');
 }
 
-/* ---------- 活用一覧 (普通形/丁寧形/尊敬語, grammar only) ---------- */
-function ktable(cols, rows){
-  return `<div class="table-scroll"><table class="ref">
-    <tr><th></th>${cols.map(c=>`<th>${esc(c)}</th>`).join('')}</tr>
-    ${rows.map(r=>`<tr><th>${esc(r.label)}</th>${r.vals.map((v,i)=>`<td class="jp"${i===cols.length-1?' style="color:var(--accent);font-weight:600"':''}>${esc(v)}</td>`).join('')}</tr>`).join('')}
-  </table></div>`;
-}
 function viewKatsuyou(){
-  setNav('common'); setHeader(LX('活用一覧 · 普通形/丁寧形/尊敬語','Conjugation: Plain/Polite/Honorific'), true);
-  const KY = (DATA.common||{}).katsuyou;   // 变量名避开全局的 K2（N2汉字），别再互相遮蔽
-  if(!KY){ app.innerHTML='<div class="empty">通用参考数据加载中，请稍候…</div>'; return; }
-  let html = KY.intro ? `<div class="meta" style="margin-bottom:10px">${esc(KY.intro)}</div>` : '';
-  (KY.sections||[]).forEach(s=>{
-    html += `<div class="card"><h3 class="jp" style="margin-top:0">${esc(s.kind)} <span class="meta">${esc(s.kindEn)}</span></h3>`;
-    html += `<div class="meta jp" style="margin-bottom:6px">例：${esc(s.word)}</div>`;
-    html += ktable(s.cols, s.rows);
-    if(s.note) html += `<div class="note"><span class="jp">${esc(s.note)}</span></div>`;
-    html += `</div>`;
-  });
-  const V3 = KY.verb;
-  if(V3){
-    html += `<div class="card"><h3 class="jp" style="margin-top:0">${esc(V3.kind)} <span class="meta">${esc(V3.kindEn)}</span></h3>`;
-    html += `<div class="meta jp" style="margin-bottom:6px">例：${esc(V3.word)}</div>`;
-    (V3.tables||[]).forEach(t=>{
-      html += `<div class="meta jp" style="margin:10px 0 4px;font-weight:700">${esc(t.head)}</div>` + ktable(V3.cols, t.rows);
-    });
-    if(V3.note) html += `<div class="note"><span class="jp">${esc(V3.note)}</span></div>`;
-    if(V3.callout){
-      const c=V3.callout;
-      html += `<div class="ct-tip" style="margin-top:14px">💡 ${esc(c.title)}</div>`;
-      html += (c.chains||[]).map(ch=>`<div class="jp" style="margin:4px 0"><span style="color:var(--sub)">${esc(ch[0])}</span> → <span style="color:var(--sub)">${esc(ch[1])}</span> → <span style="color:var(--accent);font-weight:600">${esc(ch[2])}</span></div>`).join('');
-      if(c.suppletiveNote) html += `<div class="meta" style="margin-top:10px">${esc(c.suppletiveNote)}</div>`;
-      html += `<div class="opts">` + (c.suppletive||[]).map(p=>`<span class="jp">${esc(p[0])} → <b style="color:var(--accent)">${esc(p[1])}</b></span>`).join('') + `</div>`;
-      if(c.tip) html += `<div class="note" style="margin-top:8px"><span class="jp">${esc(c.tip)}</span></div>`;
-    }
-    html += `</div>`;
-  }
-  if(KY.footer) html += `<div class="meta" style="margin-top:10px">${esc(KY.footer)}</div>`;
-  app.innerHTML = html;
+  setNav('common'); setHeader(LX('活用一覧 · 敬語レベルと活用形','Conjugation: Politeness Levels & Verb Forms'), true);
+  showCommonPage('katsuyou');
+}
+function viewHenkei(){
+  setNav('common'); setHeader(LX('動詞の変形ルール · 音便と組み合わせ','Verb Conjugation Rules'), true);
+  showCommonPage('henkei');
 }
 
 const DATA_FILES = {"grammar":"grammar.d15be04258.json","kanji":"kanji.e43232869e.json","vocab":"vocab.856eb48e32.json","n2grammar":"n2grammar.4e6157570a.json","n2vocab":"n2vocab.4e440284d9.json","n2kanji":"n2kanji.d9739ca8d4.json","n4grammar":"n4grammar.40e138ccdb.json","n4vocab":"n4vocab.026f711eb7.json","n4kanji":"n4kanji.655356d8e2.json","common":"common.aa13cae172.json"};
+/* 旧版 PDF OCR 数据里少量注音与题干有稳定的识别错误。这里在载入后修正，
+   既让正文与练习显示正确，也避免 predev 同步旧资源时把修正覆盖掉。 */
+function normalizeN3GrammarOcr(node){
+  if(typeof node==='string') return node
+    .replaceAll('<ruby>今日<rt>こんにち</rt></ruby>','<ruby>今日<rt>きょう</rt></ruby>')
+    .replaceAll('<ruby>小<rt>ちー</rt></ruby>','<ruby>小<rt>ちい</rt></ruby>')
+    .replaceAll('<ruby>大<rt>おー</rt></ruby>','<ruby>大<rt>おお</rt></ruby>')
+    .replaceAll('<ruby>一日<rt>ついたち</rt></ruby><ruby>雨','<ruby>一日<rt>いちにち</rt></ruby><ruby>雨')
+    .replaceAll('吸っていはいけない','吸ってはいけない')
+    .replaceAll('っていはいけない','ってはいけない');
+  if(Array.isArray(node)){ for(let i=0;i<node.length;i++) node[i]=normalizeN3GrammarOcr(node[i]); return node; }
+  if(node&&typeof node==='object'){ for(const key of Object.keys(node)) node[key]=normalizeN3GrammarOcr(node[key]); }
+  return node;
+}
+function fixN3GrammarExerciseLayout(g){
+  normalizeN3GrammarOcr(g);
+  const day=g.weeks&&g.weeks.find(w=>w.n===2)?.days?.find(d=>d.day===4);
+  const item=day&&day.exercises&&day.exercises.sections.flatMap(section=>section.items||[]).find(q=>q.n===5);
+  if(item){
+    item.q=String(item.q||'').replace(' ＿＿ は冗談',' ＿＿ 冗談');
+    item.q_r=String(item.q_r||'').replace(' ＿＿ は<ruby>冗談',' ＿＿ <ruby>冗談');
+  }
+}
 async function bootN3(){
   try{
     // common（接续表/活用表/数字表达）跟级别无关但每个模块都可能点开，体积也小，跟 N3 一起加载
     const names=['grammar','vocab','kanji','common'];
-    const [g,v,k,com]=await Promise.all(names.map(n=>fetch('data/'+DATA_FILES[n]).then(r=>r.json())));
+    const [g,v,k,com,grammarExplanations,dailyGrammarExplanations]=await Promise.all([
+      ...names.map(n=>fetch('/data/'+DATA_FILES[n]).then(r=>r.json())),
+      fetch('/data/n3-grammar-explanations.json').then(r=>r.ok?r.json():({})).catch(()=>({})),
+      fetch('/data/n3-grammar-daily-explanations.json').then(r=>r.ok?r.json():({})).catch(()=>({}))
+    ]);
+    fixN3GrammarExerciseLayout(g);
+    for(const [weekKey, sections] of Object.entries(grammarExplanations||{})){
+      const targetWeek=g.besatsu&&g.besatsu[weekKey]; if(!targetWeek) continue;
+      for(const section of ['mondai1','mondai2','mondai3']){
+        const enriched=sections&&sections[section]; if(!Array.isArray(enriched)||!Array.isArray(targetWeek[section])) continue;
+        const byNumber=new Map(enriched.map(item=>[item.n,item]));
+        targetWeek[section]=targetWeek[section].map(item=>Object.assign({},item,byNumber.get(item.n)||{}));
+      }
+    }
+    g.daily_explanations=dailyGrammarExplanations||{};
     G=g; V=v; K=k;
     DATA.grammar=G; DATA.vocab=V; DATA.kanji=K; DATA.common=com;
     dataLoaded=true;
@@ -1613,12 +1541,12 @@ async function bootN3(){
 async function bootN2(){
   try{
     const names=['n2grammar','n2vocab','n2kanji'];
-    const [g2,v2,k2]=await Promise.all(names.map(n=>fetch('data/'+DATA_FILES[n]).then(r=>r.json())));
+    const [g2,v2,k2]=await Promise.all(names.map(n=>fetch('/data/'+DATA_FILES[n]).then(r=>r.json())));
     G2=g2; V2=v2; K2=k2;
     DATA.n2grammar=G2; DATA.n2vocab=V2; DATA.n2kanji=K2;
     n2Loaded=true;
     searchIndex=null; // N2 数据到位后让搜索索引下次重新构建，纳入N2结果
-    const h=location.hash||'#/';
+    const h=routeKey();
     if(MODULE==='n2grammar'||MODULE==='n2vocab'||MODULE==='n2kanji'||h==='#/search') render();
   }catch(e){ /* N2 加载失败时静默：N3 内容不受影响，用户切到N2或搜索时会看到持续的加载提示 */ }
   bootN4(); // N2 之后最后加载 N4（数据量最小，优先级最低）
@@ -1626,12 +1554,12 @@ async function bootN2(){
 async function bootN4(){
   try{
     const names=['n4grammar','n4vocab','n4kanji'];
-    const [g4,v4,k4]=await Promise.all(names.map(n=>fetch('data/'+DATA_FILES[n]).then(r=>r.json())));
+    const [g4,v4,k4]=await Promise.all(names.map(n=>fetch('/data/'+DATA_FILES[n]).then(r=>r.json())));
     G4=g4; V4=v4; K4=k4;
     DATA.n4grammar=G4; DATA.n4vocab=V4; DATA.n4kanji=K4;
     n4Loaded=true;
     searchIndex=null; // N4 数据到位后让搜索索引下次重新构建，纳入N4结果
-    const h=location.hash||'#/';
+    const h=routeKey();
     if(MODULE==='n4grammar'||MODULE==='n4vocab'||MODULE==='n4kanji'||h==='#/search') render();
   }catch(e){ /* N4 加载失败时静默 */ }
 }
