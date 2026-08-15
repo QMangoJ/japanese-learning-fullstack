@@ -468,9 +468,6 @@ app.addEventListener('click', e=>{
   if(e.target.closest('[data-favback]')){ navTo('#/favs'); return; }
   const go=e.target.closest('[data-go]'); if(go){ if(go.dataset.mod) setModule(go.dataset.mod); navTo(go.dataset.go); return; }
   const an=e.target.closest('[data-ans]'); if(an){ const a=document.getElementById(an.dataset.ans); if(a){ a.classList.toggle('show'); an.textContent=a.classList.contains('show')?'隐藏答案':'显示答案'; } return; }
-  const hit=e.target.closest('[data-hit]'); if(hit){ openHit(+hit.dataset.hit); return; }
-  const hq=e.target.closest('[data-histq]'); if(hq){ const qi=$('#q'); if(qi){ qi.value=hq.dataset.histq; qi.oninput(); } return; }
-  const hc=e.target.closest('[data-histclear]'); if(hc){ clearSearchHistory(); const qi=$('#q'); if(qi){ qi.value=''; qi.oninput(); } return; }
   const fw=e.target.closest('[data-fcweek]'); if(fw){ fcSetWeek(+fw.dataset.fcweek); return; }
   const fb=e.target.closest('[data-fc]'); if(fb){ ({prev:fcPrev,next:fcNext,shuffle:fcShuffle})[fb.dataset.fc](); return; }
   if(e.target.closest('[data-fcflip]')){ fcFlip(); return; }
@@ -1267,47 +1264,28 @@ function saveSearchHistory(kw){
   }catch(e){}
 }
 function clearSearchHistory(){ try{ localStorage.removeItem(SEARCH_HIST_KEY); }catch(e){} }
-let lastSearchKw='';
 function viewSearch(){
   setNav('search'); setHeader(LX('搜索（语法 + 词汇）','Search (Grammar + Vocabulary)'), false);
-  const total=buildIndex().length;
-  app.innerHTML = `<div class="search-box"><input id="q" type="search" placeholder="日文 / 假名 / 中文 / 英文，如：ばかり · 冰箱 · fridge" autocomplete="off"></div><div id="results"></div>`;
-  const q=$('#q'), res=$('#results'); q.focus();
-  q.oninput = ()=>{
-    const kw=q.value.trim();
-    lastSearchKw=kw;
-    if(!kw){
-      const h=getSearchHistory();
-      const histHTML = h.length ? `<div class="search-hist"><div class="search-hist-h"><span>最近搜索</span><a data-histclear>清空</a></div><div class="search-hist-chips">${h.map(x=>`<span class="hist-chip" data-histq="${esc(x)}">${esc(x)}</span>`).join('')}</div></div>` : '';
-      res.innerHTML = `${histHTML}<div class="empty">共收录 ${total} 条（语法点 + 词汇）<br>结果标注所属模块，点击直达</div>`;
-      return;
-    }
-    const lk=kw.toLowerCase();
-    const hits=buildIndex().filter(e=> e.key.toLowerCase().includes(lk)||e.reading.includes(kw)||e.extra.toLowerCase().includes(lk)).slice(0,60);
-    if(!hits.length){ res.innerHTML='<div class="empty">没有找到，换个关键词试试</div>'; return; }
-    const mark=s=>{ const t=esc(s); if(!kw) return t; try{ return t.split(esc(kw)).join(`<span class="hl">${esc(kw)}</span>`);}catch(e){return t;} };
-    res.innerHTML = hits.map((e,ix)=>{
-      const tag = {grammar:'<span class="mtag g">N3语法</span>', n2grammar:'<span class="mtag g2">N2语法</span>', vocab:'<span class="mtag v">N3词汇</span>', kanji:'<span class="mtag k">N3汉字</span>', n2vocab:'<span class="mtag v2">N2词汇</span>', n2kanji:'<span class="mtag k2">N2汉字</span>', n4grammar:'<span class="mtag g4">N4语法</span>', n4vocab:'<span class="mtag v4">N4词汇</span>', n4kanji:'<span class="mtag k4">N4汉字</span>'}[e.module];
-      window['__hit'+ix]=e;
-      return `<div class="card result" data-hit="${ix}">
-        <div class="jp" style="font-size:16.5px;font-weight:700">${tag}${mark(e.key)}</div>
-        ${e.sub?`<div class="meta">${mark(e.sub)}</div>`:''}
-        <div class="where">第${e.w}週 ${e.d}日目 · <span class="jp">${esc(e.dayTitle)}</span></div>
-      </div>`;
-    }).join('');
-  };
-  q.onkeydown = ev=>{ if(ev.key==='Enter' && q.value.trim()) saveSearchHistory(q.value.trim()); };
-  q.oninput();
+  showReactPage('search', null);
 }
-window.openHit = ix=>{
-  const e=window['__hit'+ix]; if(!e) return;
-  if(lastSearchKw) saveSearchHistory(lastSearchKw);
-  setModule(e.module);
-  let hash=`#/day/${e.w}-${e.d}`;
-  if(e.module==='kanji'||e.module==='n2kanji'||e.module==='n4kanji') hash+=`/k${e.ki}`;
-  else if(e.module==='vocab'||e.module==='n2vocab'||e.module==='n4vocab') hash+=`/v${e.si}-${e.ii}`;
-  else hash+=`/p${e.i}`;
-  navTo(hash);
+/* 検索は毎キーストロークで buildIndex() を呼ぶ。N2/N4 が後から読み込まれると
+   searchIndex は null に戻されるので、都度呼ぶことで新しい結果が入る。
+   payload に配列を焼き込むとこの更新が効かなくなるため、関数で渡す。 */
+window.__studySearch = {
+  index: function(){ return buildIndex(); },
+  history: getSearchHistory,
+  saveHistory: saveSearchHistory,
+  clearHistory: clearSearchHistory,
+  open: function(e, kw){
+    if(!e) return;
+    if(kw) saveSearchHistory(kw);
+    setModule(e.module);
+    let key = '#/day/' + e.w + '-' + e.d;
+    if(e.module==='kanji'||e.module==='n2kanji'||e.module==='n4kanji') key += '/k' + e.ki;
+    else if(e.module==='vocab'||e.module==='n2vocab'||e.module==='n4vocab') key += '/v' + e.si + '-' + e.ii;
+    else key += '/p' + e.i;
+    navTo(key);
+  }
 };
 
 /* ---------- flashcards (per module) ---------- */
@@ -1531,11 +1509,14 @@ function viewNumbers(){
 /* ---------- 通用知识：本文の描画は React（study-common.tsx）が担当 ---------- */
 /* ヘッダー・ナビ・戻るボタンは従来どおりここが持ち、本文だけ React に渡す。
    データ未読込のときの表示も移行前と同じ文言のままにしてある。 */
-function showCommonPage(page){
-  if(!DATA.common){ app.innerHTML='<div class="empty">通用参考数据加载中，请稍候…</div>'; return; }
+function showReactPage(page, data){
   app.innerHTML='';
   app.hidden = true;
-  window.dispatchEvent(new CustomEvent('study:common-page', {detail:{page, data:DATA.common}}));
+  window.dispatchEvent(new CustomEvent('study:common-page', {detail:{page, data}}));
+}
+function showCommonPage(page){
+  if(!DATA.common){ app.innerHTML='<div class="empty">通用参考数据加载中，请稍候…</div>'; return; }
+  showReactPage(page, DATA.common);
 }
 function hideCommonPage(){
   if(!app.hidden) return;

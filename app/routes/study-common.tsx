@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useState, type ReactNode } from "react";
+import { Fragment, useEffect, useRef, useState, type ReactNode } from "react";
 
 /* 通用知识のうち「接续表 / 活用 / 变形」の3ページ。
  *
@@ -7,7 +7,7 @@ import { Fragment, useEffect, useState, type ReactNode } from "react";
  * viewHenkei は setNav・setHeader を済ませたあと showCommonPage() を呼ぶ。
  * クラス名と DOM 構造は移行前の文字列組み立てと同じものを再現している。 */
 
-export type CommonPage = "ref" | "katsuyou" | "henkei" | "numbers";
+export type CommonPage = "ref" | "katsuyou" | "henkei" | "numbers" | "search";
 
 /* legacy の markStar(): ★ だけを .num-x で包む */
 function Star({ text }: { text: unknown }) {
@@ -502,6 +502,148 @@ function NumbersPage({ data }: { data: any }) {
 	);
 }
 
+/* ---------------- 搜索 ---------------- */
+
+type Hit = {
+	module: string;
+	w: number;
+	d: number;
+	i?: number;
+	si?: number;
+	ii?: number;
+	ki?: number;
+	key: string;
+	reading: string;
+	extra: string;
+	sub: string;
+	dayTitle: string;
+};
+
+const MODULE_TAG: Record<string, [string, string]> = {
+	grammar: ["g", "N3语法"],
+	n2grammar: ["g2", "N2语法"],
+	vocab: ["v", "N3词汇"],
+	kanji: ["k", "N3汉字"],
+	n2vocab: ["v2", "N2词汇"],
+	n2kanji: ["k2", "N2汉字"],
+	n4grammar: ["g4", "N4语法"],
+	n4vocab: ["v4", "N4词汇"],
+	n4kanji: ["k4", "N4汉字"],
+};
+
+/* legacy の mark(): ヒット語を .hl で囲む */
+function Mark({ text, keyword }: { text: string; keyword: string }) {
+	if (!keyword) return <>{text}</>;
+	return (
+		<>
+			{text.split(keyword).map((part, i) => (
+				<Fragment key={i}>
+					{i > 0 ? <span className="hl">{keyword}</span> : null}
+					{part}
+				</Fragment>
+			))}
+		</>
+	);
+}
+
+function SearchPage() {
+	const [keyword, setKeyword] = useState("");
+	const [history, setHistory] = useState<string[]>(() => window.__studySearch?.history() ?? []);
+	const inputRef = useRef<HTMLInputElement>(null);
+
+	// legacy は viewSearch の最後で q.focus() していた
+	useEffect(() => inputRef.current?.focus(), []);
+
+	// 毎回ブリッジを呼ぶ。N2/N4 が後から入ったときに結果へ反映させるため。
+	const total = window.__studySearch?.index().length ?? 0;
+	const kw = keyword.trim();
+	const hits: Hit[] = kw
+		? (window.__studySearch?.index() ?? []).filter((e: Hit) => {
+				const lk = kw.toLowerCase();
+				return e.key.toLowerCase().includes(lk) || e.reading.includes(kw) || e.extra.toLowerCase().includes(lk);
+			}).slice(0, 60)
+		: [];
+
+	const openHit = (hit: Hit) => window.__studySearch?.open(hit, kw);
+
+	return (
+		<>
+			<div className="search-box">
+				<input
+					id="q"
+					ref={inputRef}
+					type="search"
+					placeholder="日文 / 假名 / 中文 / 英文，如：ばかり · 冰箱 · fridge"
+					autoComplete="off"
+					value={keyword}
+					onChange={(event) => setKeyword(event.currentTarget.value)}
+					onKeyDown={(event) => {
+						if (event.key === "Enter" && keyword.trim()) {
+							window.__studySearch?.saveHistory(keyword.trim());
+							setHistory(window.__studySearch?.history() ?? []);
+						}
+					}}
+				/>
+			</div>
+			<div id="results">
+				{!kw ? (
+					<>
+						{history.length ? (
+							<div className="search-hist">
+								<div className="search-hist-h">
+									<span>最近搜索</span>
+									<a
+										onClick={() => {
+											window.__studySearch?.clearHistory();
+											setHistory([]);
+										}}
+									>
+										清空
+									</a>
+								</div>
+								<div className="search-hist-chips">
+									{history.map((x) => (
+										<span className="hist-chip" key={x} onClick={() => setKeyword(x)}>
+											{x}
+										</span>
+									))}
+								</div>
+							</div>
+						) : null}
+						<div className="empty">
+							共收录 {total} 条（语法点 + 词汇）
+							<br />
+							结果标注所属模块，点击直达
+						</div>
+					</>
+				) : !hits.length ? (
+					<div className="empty">没有找到，换个关键词试试</div>
+				) : (
+					hits.map((e, ix) => {
+						const tag = MODULE_TAG[e.module];
+						return (
+							<div className="card result" key={ix} onClick={() => openHit(e)}>
+								<div className="jp" style={{ fontSize: "16.5px", fontWeight: 700 }}>
+									{tag ? <span className={`mtag ${tag[0]}`}>{tag[1]}</span> : null}
+									<Mark text={e.key} keyword={kw} />
+								</div>
+								{e.sub ? (
+									<div className="meta">
+										<Mark text={e.sub} keyword={kw} />
+									</div>
+								) : null}
+								<div className="where">
+									第{e.w}週 {e.d}日目 · <span className="jp">{e.dayTitle}</span>
+								</div>
+							</div>
+						);
+					})
+				)}
+			</div>
+		</>
+	);
+}
+
 /* ---------------- ホスト ---------------- */
 
 declare global {
@@ -511,6 +653,13 @@ declare global {
 		/* 数字页の吸顶目录は高さを実測してから位置を決める。legacy は innerHTML の
 		   直後に同期で呼んでいたが、React では commit 後でないと測れない。 */
 		__studyAfterPaint?: () => void;
+		__studySearch?: {
+			index: () => any[];
+			history: () => string[];
+			saveHistory: (kw: string) => void;
+			clearHistory: () => void;
+			open: (hit: any, keyword: string) => void;
+		};
 	}
 }
 
@@ -537,6 +686,7 @@ export function CommonPageHost() {
 			{page === "katsuyou" ? <KatsuyouPage data={data} /> : null}
 			{page === "henkei" ? <HenkeiPage data={data} /> : null}
 			{page === "numbers" ? <NumbersPage data={data} /> : null}
+			{page === "search" ? <SearchPage /> : null}
 		</main>
 	);
 }
