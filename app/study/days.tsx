@@ -734,7 +734,6 @@ function useScrollHighlight(id?: string | null) {
 
 function GrammarPoint({ p, w, d, i }: { p: any; w: number; d: number; i: number }) {
 	const pid = `${MODULE}#${w}-${d}#${i}`;
-	const puse = lx(p.usage_cn, p.usage_en);
 	return (
 		<div className="point" id={`pt-${w}-${d}-${i}`}>
 			<h3 className="jp">
@@ -744,14 +743,18 @@ function GrammarPoint({ p, w, d, i }: { p: any; w: number; d: number; i: number 
 			<SayButton text={p.pattern} />
 			{p.reading ? <div className="reading jp">{p.reading}</div> : null}
 			<ConnBlock connection={p.connection} lang={LANG} />
-			{p.usage_jp ? <div className={`usage ${LANG === "en" ? "cn" : "jp"}`}>{lx(p.usage_jp, p.usage_en)}</div> : null}
-			{puse ? (
+			{p.usage_jp ? <div className="usage jp">{p.usage_jp}</div> : null}
+			{LANG !== "en" && p.usage_cn ? (
 				<div className="usage">
-					<span className="cn">{puse}</span>
+					<span className="cn">{p.usage_cn}</span>
+				</div>
+			) : null}
+			{p.usage_en ? (
+				<div className="usage">
+					<span className="en">{p.usage_en}</span>
 				</div>
 			) : null}
 			{(p.examples || []).map((ex: any, ei: number) => {
-				const exTx = lx(ex.cn, ex.en);
 				return (
 					<div className="ex" key={ei}>
 						<div className="jp">
@@ -763,7 +766,8 @@ function GrammarPoint({ p, w, d, i }: { p: any; w: number; d: number; i: number 
 								（<Rr o={ex} f="eq" />）
 							</div>
 						) : null}
-						{exTx ? <div className="cn">{exTx}</div> : null}
+						{LANG !== "en" && ex.cn ? <div className="cn">{ex.cn}</div> : null}
+						{ex.en ? <div className="en">{ex.en}</div> : null}
 					</div>
 				);
 			})}
@@ -963,7 +967,8 @@ function DayGrammar({ day, w, d, scrollP }: { day: any; w: number; d: number; sc
 						</span>
 					))}{" "}
 					<SayButton text={(day.dialog.lines || []).join("　")} />
-					{lx(day.dialog.cn, day.dialog.en) ? <div className="cn">{lx(day.dialog.cn, day.dialog.en)}</div> : null}
+					{LANG !== "en" && day.dialog.cn ? <div className="cn">{day.dialog.cn}</div> : null}
+					{day.dialog.en ? <div className="en">{day.dialog.en}</div> : null}
 				</div>
 			) : null}
 			<div className="card">
@@ -1580,11 +1585,11 @@ export function ContrastPage() {
 										</h4>
 										<ul>
 											{(d.points || []).map((p: any, i: number) => {
-												const use = lx(p.usage_cn, p.usage_en);
 												return (
 													<li key={i}>
 														<span className="jp">{p.pattern_r ? <RubyHtml html={p.pattern_r} /> : p.pattern}</span>
-														{use ? <span className="ct-mean"> — {use}</span> : null}
+														{LANG !== "en" && p.usage_cn ? <span className="ct-mean"> — {p.usage_cn}</span> : null}
+														{p.usage_en ? <span className="ct-mean en"> — {p.usage_en}</span> : null}
 													</li>
 												);
 											})}

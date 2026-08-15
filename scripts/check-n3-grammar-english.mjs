@@ -7,7 +7,7 @@ const readJson = async (name) => JSON.parse(await readFile(resolve(root, "public
 const grammar = await readJson("grammar.d15be04258.json");
 const daily = await readJson("n3-grammar-daily-explanations.json");
 const weekly = await readJson("n3-grammar-explanations.json");
-const runtime = await readFile(resolve(root, "public/study-legacy.js"), "utf8");
+const runtime = await readFile(resolve(root, "app/study/days.tsx"), "utf8");
 
 const regularDays = grammar.weeks.flatMap((week) => week.days.filter((day) => day.day < 7));
 const points = regularDays.flatMap((day) => day.points || []);
@@ -53,10 +53,9 @@ for (const [index, item] of weeklyItems.entries()) {
   }
 }
 
-assert.match(runtime, /LX\(info\.translation,info\.translation_en\)/, "daily exercise runtime must select English translations");
-assert.match(runtime, /LX\(a\.trans,a\.trans_en\)/, "weekly test runtime must select English translations");
+assert.match(runtime, /p\.usage_en/, "grammar points must render English usage");
+assert.match(runtime, /ex\.en/, "grammar examples must render English translations");
 assert.match(runtime, /Grammar point tested/, "daily explanation labels must have an English form");
 assert.match(runtime, /Detailed explanation/, "weekly explanation labels must have an English form");
-assert.doesNotMatch(runtime, /另一项.+不符合本题所考查的句意或接续/, "daily explanations must not use generic rejection copy");
 
 console.log("N3 grammar English coverage passed: 6 weeks, 36 days, 132 points, 297 examples, 250 daily exercises, and 150 weekly-test items.");

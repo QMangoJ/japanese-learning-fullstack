@@ -58,6 +58,16 @@ test.describe("study header", () => {
 });
 
 test.describe("study navigation", () => {
+	test("shows English usage and examples on N3 grammar days", async ({ page }) => {
+		await waitForStudy(page);
+		await page.locator(".day-item").first().click();
+		await expect(page.locator(".point").first()).toBeVisible({ timeout: 15_000 });
+		const english = page.locator(".point .usage .en").first();
+		await expect(english).toBeVisible();
+		await expect(english).toHaveText(/[A-Za-z]{4,}/);
+		await expect(page.locator(".ex .en").first()).toBeVisible();
+	});
+
 	test("opens catalog, a day, vocab, and kanji", async ({ page }) => {
 		await waitForStudy(page);
 		await expect(page.locator("#title")).toContainText(/语法|Grammar/);
