@@ -468,9 +468,6 @@ app.addEventListener('click', e=>{
   if(e.target.closest('[data-favback]')){ navTo('#/favs'); return; }
   const go=e.target.closest('[data-go]'); if(go){ if(go.dataset.mod) setModule(go.dataset.mod); navTo(go.dataset.go); return; }
   const an=e.target.closest('[data-ans]'); if(an){ const a=document.getElementById(an.dataset.ans); if(a){ a.classList.toggle('show'); an.textContent=a.classList.contains('show')?'隐藏答案':'显示答案'; } return; }
-  const fw=e.target.closest('[data-fcweek]'); if(fw){ fcSetWeek(+fw.dataset.fcweek); return; }
-  const fb=e.target.closest('[data-fc]'); if(fb){ ({prev:fcPrev,next:fcNext,shuffle:fcShuffle})[fb.dataset.fc](); return; }
-  if(e.target.closest('[data-fcflip]')){ fcFlip(); return; }
 });
 app.addEventListener('input', e=>{
   if(e.target.id==='mistakeInput') mistakeDraft=e.target.value;
@@ -1305,50 +1302,21 @@ function buildDeck(week){
 function viewCards(){
   setNav('common'); setHeader(LX('记忆卡','Flashcards')+' · '+modLabel(), false);
   if(!fc.deck.length){ fc.deck=buildDeck(fc.week); fc.idx=0; fc.flipped=false; }
-  const nWeeks=CUR().weeks.length;
-  const filt=[0].concat(Array.from({length:nWeeks},(_,i)=>i+1)).map(n=>`<button class="${fc.week===n?'on':''}" data-fcweek="${n}">${n===0?'全部':'第'+n+'週'}</button>`).join('');
-  const cur=fc.deck[fc.idx];
-  let cardHTML;
-  if(!cur){ cardHTML=`<div class="fcard"><div class="empty">本组已完成 🎉<br>点「重新洗牌」再来一轮</div></div>`; }
-  else if(isGram()){
-    if(!fc.flipped) cardHTML=`<div class="fcard" data-fcflip="1"><div class="big jp">${esc(cur.p.pattern)}</div><div class="hint">回想接续与意思，点击翻面</div></div>`;
-    else{ const p=cur.p; cardHTML=`<div class="fcard" data-fcflip="1"><div class="backside">
-      <div class="jp" style="font-weight:700;font-size:18px">${R(p,'pattern')}</div>
-      ${p.reading?`<div class="reading jp meta">${esc(p.reading)}</div>`:''}
-      ${connBlockHTML(p)}
-      ${p.usage_jp?`<div class="usage jp">${R(p,'usage_jp')}</div>`:''}
-      ${p.usage_cn?`<div class="usage"><span class="cn">${esc(p.usage_cn)}</span></div>`:''}
-      ${(p.examples&&p.examples[0])?`<div class="ex"><div class="jp">${R(p.examples[0],'jp')}</div>${p.examples[0].cn?`<div class="cn">${esc(p.examples[0].cn)}</div>`:''}</div>`:''}
-      <div class="meta">出处：第${cur.w}週 ${cur.d}日目　<span class="plink" data-go="#/day/${cur.w}-${cur.d}/p${cur.i}" style="cursor:pointer">详情 ›</span></div>
-    </div></div>`; }
-  } else if(MODULE==='kanji'||MODULE==='n2kanji'||MODULE==='n4kanji'){
-    const k=cur.k;
-    if(!fc.flipped) cardHTML=`<div class="fcard" data-fcflip="1"><div class="big jp" style="font-size:64px">${esc(k.char)}</div><div class="hint">回想读音与词语，点击翻面</div></div>`;
-    else cardHTML=`<div class="fcard" data-fcflip="1"><div class="backside" style="text-align:center">
-      <div class="jp" style="font-weight:700;font-size:40px">${esc(k.char)}</div>
-      <div class="meta jp" style="font-size:15px">${(k.readings||[]).map(r=>`<span class="kread">${esc(r)}</span>`).join('')}${k.strokes?`<span class="kread">${esc(k.strokes)}画</span>`:''}</div>
-      ${(k.words||[]).map(wd=>`<div class="ex"><div class="jp">${wd.jp_r||esc(wd.jp)}</div>${wd.cn?`<div class="cn">${esc(wd.cn)}</div>`:''}</div>`).join('')}
-    </div></div>`;
-  } else {
-    const it=cur.v;
-    if(!fc.flipped) cardHTML=`<div class="fcard" data-fcflip="1"><div class="big jp">${it.jp_r||esc(it.jp)}</div><div class="hint">回想中/英文，点击翻面</div></div>`;
-    else cardHTML=`<div class="fcard" data-fcflip="1"><div class="backside" style="text-align:center">
-      <div class="jp" style="font-weight:700;font-size:22px">${it.jp_r||esc(it.jp)}</div>
-      ${it.cn?`<div style="font-size:18px;margin-top:10px">${esc(it.cn)}</div>`:''}
-      ${it.en?`<div class="meta" style="font-size:14px">${esc(it.en)}</div>`:''}
-      ${it.rel?`<div class="vrel jp" style="margin-top:8px">${it.rel_r||esc(it.rel)}</div>`:''}
-    </div></div>`;
-  }
-  app.innerHTML = `<div class="fc-wrap"><div class="fc-filter">${filt}</div>
-    <div class="fc-prog">${fc.deck.length?`${Math.min(fc.idx+1,fc.deck.length)} / ${fc.deck.length}`:''}</div>
-    ${cardHTML}
-    <div class="fc-btns"><button data-fc="prev">‹ 上一张</button><button class="primary" data-fc="next">下一张 ›</button><button data-fc="shuffle">重新洗牌</button></div></div>`;
+  showReactPage('cards', null);
 }
-window.fcSetWeek=n=>{ fc.week=n; fc.deck=buildDeck(n); fc.idx=0; fc.flipped=false; viewCards(); };
-window.fcFlip=()=>{ fc.flipped=!fc.flipped; viewCards(); };
-window.fcNext=()=>{ if(fc.idx<fc.deck.length){ fc.idx++; fc.flipped=false; } viewCards(); };
-window.fcPrev=()=>{ if(fc.idx>0){ fc.idx--; fc.flipped=false; } viewCards(); };
-window.fcShuffle=()=>{ fc.deck=buildDeck(fc.week); fc.idx=0; fc.flipped=false; viewCards(); };
+/* 山の中身（どの週・どの語をどの順で）は DATA と MODULE を見る必要があるのでここに残す。
+   React 側は fc を複製せず、この窓口越しに読み書きする——カードを離れて戻っても
+   同じ山・同じ位置・同じ表裏に戻る挙動は fc がモジュール変数であることに依っている。 */
+window.__studyCards = {
+  state: ()=> fc,
+  kind: ()=> isGram() ? 'gram' : (MODULE==='kanji'||MODULE==='n2kanji'||MODULE==='n4kanji') ? 'kanji' : 'vocab',
+  weeks: ()=> CUR().weeks.length,
+  setWeek: n=>{ fc.week=n; fc.deck=buildDeck(n); fc.idx=0; fc.flipped=false; },
+  flip: ()=>{ fc.flipped=!fc.flipped; },
+  next: ()=>{ if(fc.idx<fc.deck.length){ fc.idx++; fc.flipped=false; } },
+  prev: ()=>{ if(fc.idx>0){ fc.idx--; fc.flipped=false; } },
+  shuffle: ()=>{ fc.deck=buildDeck(fc.week); fc.idx=0; fc.flipped=false; },
+};
 
 /* ---------- favorites (收藏 / 生词本) ---------- */
 let favDeck=[], favIdx=0, favFlip=false;
