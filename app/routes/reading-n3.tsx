@@ -18,5 +18,5 @@ export function loader() {
 export { ReadingN3Content };
 
 export default function ReadingN3() {
-	return <ReadingN3Content />;
+	return null;
 }

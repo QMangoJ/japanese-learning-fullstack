@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useRef, useState, type ReactNode, type RefObject } from "react";
 import { redirect } from "react-router";
 
+import { isFav, navTo, registerFavMeta, toggleFav } from "../study/store";
+
 import type { Route } from "./+types/listening-n3";
 import { chapter2Sections } from "../data/listening-n3-structured-ch2";
 import { chapter3Sections } from "../data/listening-n3-structured-ch3";
@@ -352,16 +354,47 @@ function ChapterDetail({ chapterIndex, sectionIndex, onBack }: { chapterIndex: n
 	</main></div></div>;
 }
 
-export function ListeningN3Content({ embedded = false }: { embedded?: boolean }) {
-	const [activeChapter, setActiveChapter] = useState<number | null>(null);
-	const [activeSection, setActiveSection] = useState<number | null>(null);
-	const [expandedChapter, setExpandedChapter] = useState<number | null>(null);
-	const selectChapter = (index: number, sectionIndex: number) => { setActiveChapter(index); setActiveSection(sectionIndex); setExpandedChapter(index); };
-	const catalog = <ListeningCatalog onSelect={selectChapter} expandedChapter={expandedChapter} onToggleChapter={(index) => setExpandedChapter((value) => value === index ? null : index)} />;
-	if (!embedded || activeChapter === null) return catalog;
-	return <ChapterDetail key={`${activeChapter}-${activeSection ?? "chapter"}`} chapterIndex={activeChapter} sectionIndex={activeSection ?? undefined} onBack={() => setActiveChapter(null)} />;
+export function ListeningN3Content({
+	chapter,
+	section,
+	embedded = false,
+}: {
+	chapter: number;
+	section: number;
+	embedded?: boolean;
+}) {
+	void embedded;
+	const chapterIndex = Math.max(0, chapter - 1);
+	const sectionIndex = Math.max(0, section - 1);
+	const favId = `listening#${chapter}-${section}`;
+	const title = menuSectionsFor(chapterIndex)[sectionIndex]?.title;
+	const subtitle = menuSectionsFor(chapterIndex)[sectionIndex]?.subtitle || "";
+	const titleText = typeof title === "string" ? title : `第${chapter}章 ${section}节`;
+	registerFavMeta(favId, {
+		module: "listening",
+		hash: `#/day/${chapter}-${section}`,
+		w: chapter,
+		d: section,
+		jp: titleText,
+		cn: subtitle,
+	});
+	return (
+		<>
+			<div style={{ display: "flex", justifyContent: "flex-end", maxWidth: 820, margin: "0 auto 8px", padding: "0 14px" }}>
+				<button type="button" className="starb" onClick={() => toggleFav(favId)} aria-label="收藏本节">
+					{isFav(favId) ? "★" : "☆"}
+				</button>
+			</div>
+			<ChapterDetail
+				key={`${chapterIndex}-${sectionIndex}`}
+				chapterIndex={chapterIndex}
+				sectionIndex={sectionIndex}
+				onBack={() => navTo("#/")}
+			/>
+		</>
+	);
 }
 
 export default function ListeningN3() {
-	return <ListeningN3Content />;
+	return null;
 }

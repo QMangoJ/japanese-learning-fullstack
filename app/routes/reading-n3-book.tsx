@@ -12,6 +12,7 @@ import {
 	type ReadingDay,
 	type TableCell,
 } from "../data/reading-n3";
+import { addMistake, isFav, navTo, registerFavMeta, toggleFav } from "../study/store";
 import "./reading-n3-book.css";
 
 /* ------------------------------------------------------------------ *
@@ -216,15 +217,29 @@ function QuestionCard({
 	id,
 	showCn,
 	answerSource,
+	week,
+	day,
 }: {
 	question: Question;
 	id: string;
 	showCn: boolean;
 	answerSource: ReadingDay["answerSource"];
+	week: number;
+	day: number;
 }) {
 	const [picked, setPicked] = useState<number | null>(null);
 	const [revealed, setRevealed] = useState(false);
 	const settled = revealed || picked !== null;
+	const favId = `reading#${week}-${day}#${id}`;
+	registerFavMeta(favId, {
+		module: "reading",
+		hash: `#/day/${week}-${day}`,
+		w: week,
+		d: day,
+		jp: `${question.label} ${question.jp}`,
+		cn: question.cn,
+		kind: "exam-question",
+	});
 
 	return (
 		<article className="rb-q">
@@ -249,7 +264,14 @@ function QuestionCard({
 							<button
 								type="button"
 								className={classes.join(" ")}
-								onClick={() => setPicked(number)}
+								onClick={() => {
+									setPicked(number);
+									if (number !== question.answer) {
+										const pickedText = question.choices[index]?.jp || String(number);
+										const rightText = question.choices[question.answer - 1]?.jp || String(question.answer);
+										addMistake("q", `${question.label} ${question.jp}\n你的答案：${pickedText}\n正确答案：${rightText}`);
+									}
+								}}
 								aria-pressed={picked === number}
 							>
 								<span className="rb-choice__num">{number}</span>
@@ -267,6 +289,14 @@ function QuestionCard({
 			</ul>
 
 			<div className="rb-q__actions">
+				<button
+					type="button"
+					className={isFav(favId) ? "on" : ""}
+					onClick={() => toggleFav(favId)}
+					aria-pressed={isFav(favId)}
+				>
+					{isFav(favId) ? "★ 已收藏" : "☆ 收藏本题"}
+				</button>
 				<button type="button" onClick={() => setRevealed((value) => !value)}>
 					{settled ? "隐藏解析" : "查看答案与解析"}
 				</button>
@@ -548,6 +578,8 @@ function DayView({
 							question={question}
 							showCn={showCn}
 							answerSource={data.answerSource}
+							week={data.week}
+							day={data.day}
 						/>
 					))}
 					{data.mondai.pageNotes && data.mondai.pageNotes.length > 0 && (
@@ -594,6 +626,8 @@ function DayView({
 									question={question}
 									showCn={showCn}
 									answerSource={data.answerSource}
+									week={data.week}
+									day={data.day}
 								/>
 							))}
 						</section>
@@ -606,16 +640,30 @@ function DayView({
 					<span className="rb-sheet__tag">ことば</span>
 					<p className="rb-instruction">生词・读音</p>
 					<div className="rb-vocab">
-						{data.vocab.map((word, index) => (
-							<article key={index}>
-								<b>
-									{word.jp}
-									{word.pos && <span className="pos">{word.pos}</span>}
-								</b>
-								{word.kana && <span className="kana">{word.kana}</span>}
-								<p>{word.cn}</p>
-							</article>
-						))}
+						{data.vocab.map((word, index) => {
+							const favId = `reading#${data.week}-${data.day}#v${index}`;
+							registerFavMeta(favId, {
+								module: "reading",
+								hash: `#/day/${data.week}-${data.day}`,
+								w: data.week,
+								d: data.day,
+								jp: word.jp,
+								cn: word.cn,
+							});
+							return (
+								<article key={index}>
+									<b>
+										{word.jp}
+										{word.pos && <span className="pos">{word.pos}</span>}
+										<button type="button" className="starb" onClick={() => toggleFav(favId)} aria-label="收藏">
+											{isFav(favId) ? "★" : "☆"}
+										</button>
+									</b>
+									{word.kana && <span className="kana">{word.kana}</span>}
+									<p>{word.cn}</p>
+								</article>
+							);
+						})}
 					</div>
 				</section>
 			)}
@@ -656,18 +704,22 @@ function DayView({
  * Shell
  * ------------------------------------------------------------------ */
 
-export function ReadingN3Content({ embedded = false }: { embedded?: boolean }) {
-	const [active, setActive] = useState<{ week: number; day: number } | null>(null);
-	// Requirement: translations and grammar notes stay hidden until asked for.
+export function ReadingN3Content({
+	week,
+	day,
+	embedded = false,
+}: {
+	week: number;
+	day: number;
+	embedded?: boolean;
+}) {
 	const [showCn, setShowCn] = useState(false);
 	const [showGrammar, setShowGrammar] = useState(false);
 	const [furigana, setFurigana] = useState(true);
-	const [openWeeks, setOpenWeeks] = useState<Set<number>>(() => new Set([1]));
-	// The toolbar is sticky; `stuck` only drives the compact "pinned" styling.
 	const [stuck, setStuck] = useState(false);
 	const sentinelRef = useRef<HTMLDivElement | null>(null);
 
-	const data = active ? findDay(active.week, active.day) : undefined;
+	const data = findDay(week, day);
 
 	useEffect(() => {
 		const sentinel = sentinelRef.current;
@@ -687,12 +739,10 @@ export function ReadingN3Content({ embedded = false }: { embedded?: boolean }) {
 	}, [embedded]);
 
 	useEffect(() => {
-		// Also in the study shell — that is where lessons are actually read, and
-		// "next lesson" used to drop you into the middle of the new page.
 		window.scrollTo({ top: 0 });
-	}, [active, embedded]);
+	}, [week, day, embedded]);
 
-	const available = readingDays.map((day) => ({ week: day.week, day: day.day }));
+	const available = readingDays.map((item) => ({ week: item.week, day: item.day }));
 	const position = data ? available.findIndex((item) => item.week === data.week && item.day === data.day) : -1;
 	const previous = position > 0 ? available[position - 1] : undefined;
 	const next = position >= 0 && position < available.length - 1 ? available[position + 1] : undefined;
@@ -717,16 +767,14 @@ export function ReadingN3Content({ embedded = false }: { embedded?: boolean }) {
 						) : (
 							<>
 								<span>N3　読解</span>
-								<b>课程目录</b>
+								<b>未找到这一课</b>
 							</>
 						)}
 					</div>
 					<div className="rb-toggles">
-						{data && (
-							<button type="button" className="rb-back" onClick={() => setActive(null)}>
-								‹ 返回目录
-							</button>
-						)}
+						<button type="button" className="rb-back" onClick={() => navTo("#/")}>
+							‹ 返回目录
+						</button>
 						<button type="button" aria-pressed={furigana} onClick={() => setFurigana((value) => !value)}>
 							振り仮名
 						</button>
@@ -746,7 +794,7 @@ export function ReadingN3Content({ embedded = false }: { embedded?: boolean }) {
 						    next lesson opens with the previous one's answers showing. */}
 						<DayView key={`${data.week}-${data.day}`} data={data} showCn={showCn} showGrammar={showGrammar} />
 						<nav className="rb-nav" aria-label="课程切换">
-							<button type="button" disabled={!previous} onClick={() => previous && setActive(previous)}>
+							<button type="button" disabled={!previous} onClick={() => previous && navTo(`#/day/${previous.week}-${previous.day}`)}>
 								<small>上一课</small>
 								<b>
 									{previous
@@ -756,7 +804,7 @@ export function ReadingN3Content({ embedded = false }: { embedded?: boolean }) {
 										: "已经是第一课"}
 								</b>
 							</button>
-							<button type="button" disabled={!next} onClick={() => next && setActive(next)}>
+							<button type="button" disabled={!next} onClick={() => next && navTo(`#/day/${next.week}-${next.day}`)}>
 								<small>下一课</small>
 								<b>
 									{next
@@ -769,7 +817,7 @@ export function ReadingN3Content({ embedded = false }: { embedded?: boolean }) {
 						</nav>
 					</>
 				) : (
-					<Catalog open={openWeeks} setOpen={setOpenWeeks} onOpen={(week, day) => setActive({ week, day })} />
+					<div className="empty">未找到</div>
 				)}
 			</div>
 		</div>

@@ -8,7 +8,6 @@ declare namespace Cloudflare {
 	interface Env {
 		FAVORITES_KV: KVNamespace;
 		MISTAKES_KV: KVNamespace;
-		VALUE_FROM_CLOUDFLARE: "Hello from Cloudflare";
 	}
 }
 interface Env extends Cloudflare.Env {}
@@ -16,7 +15,7 @@ type StringifyValues<EnvType extends Record<string, unknown>> = {
 	[Binding in keyof EnvType]: EnvType[Binding] extends string ? EnvType[Binding] : string;
 };
 declare namespace NodeJS {
-	interface ProcessEnv extends StringifyValues<Pick<Cloudflare.Env, "VALUE_FROM_CLOUDFLARE">> {}
+	interface ProcessEnv extends StringifyValues<Pick<Cloudflare.Env, never>> {}
 }
 
 // Begin runtime types

@@ -13,3 +13,18 @@
 /* N3 listening shares the same study shell and visual rhythm as the other content types. */
 #typebar .listening-mode-link{flex:1;max-width:170px;display:inline-flex;align-items:center;justify-content:center;gap:4px;border:1px solid var(--line);background:var(--bg);color:var(--sub);border-radius:999px;padding:6px 0;font-size:14px;font-weight:700;text-decoration:none}#typebar .listening-mode-link:hover{border-color:var(--accent);color:var(--accent)}#typebar .listening-mode-link.on{background:var(--accent);border-color:var(--accent);color:#fff}.side-listening-link{display:flex;align-items:center;gap:8px;width:100%;padding:7px 8px;border-radius:8px;color:var(--ink);font-size:13.5px;text-decoration:none}.side-listening-link:hover{background:var(--bg);color:var(--accent)}.side-listening-link span:first-child{width:17px;text-align:center}.side-listening-link small{margin-left:auto;color:var(--sub);font-size:11px}.side-listening-link.on{background:var(--blue-soft);color:var(--blue);font-weight:700}.side-listening-link.on small{color:var(--blue)}
 @media (max-width:899px){.side-listening-link{display:none}}
+
+.trial-context{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:center;gap:9px;padding:7px 14px;background:#1b1e23;color:#f2efe9;font-size:12.5px}
+.trial-context span{padding:2px 7px;border-radius:999px;background:#c0392b;color:#fff;font-size:11px;font-weight:700;letter-spacing:.08em}
+.trial-context b{font-weight:600}
+.trial-context a{color:#f4a59b;text-decoration:underline}
+.trial-context~.topbar{top:35px}
+.trial-lock-card,.trial-week-lock{margin:18px 0;border:1px solid var(--line);border-radius:var(--radius);background:var(--card);box-shadow:var(--shadow);padding:24px}
+.trial-lock-card{text-align:center;padding:44px 24px}
+.trial-lock-card__eyebrow{color:var(--accent);font-size:11px;letter-spacing:.14em;font-weight:800}
+.trial-lock-card h2{margin:9px 0;font-size:21px}
+.trial-lock-card p{margin:0 auto 18px;max-width:440px;color:var(--sub);font-size:14px;line-height:1.8}
+.trial-lock-card a,.trial-week-lock a{display:inline-block;color:#fff;background:var(--accent);padding:8px 14px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none}
+.trial-week-lock{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:0;background:var(--accent-soft)}
+.trial-week-lock span{color:var(--sub);font-size:13px;flex:1}
+.trial-week-lock a{padding:6px 11px}

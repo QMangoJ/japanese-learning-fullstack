@@ -204,3 +204,9 @@ dist
 /tmp/
 tmp-page-*.jpg
 __pycache__/
+
+### Playwright ###
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/

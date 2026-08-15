@@ -1,16 +1,11 @@
 import { Fragment, useEffect, useReducer, useRef, useState, type ReactNode } from "react";
 
-/* 通用知识のうち「接续表 / 活用 / 变形」の3ページ。
- *
- * ルーティング・ヘッダー・ナビの点灯は従来どおり study-legacy が持つ。ここが
- * 引き受けるのは本文の描画だけで、legacy 側の viewRef / viewKatsuyou /
- * viewHenkei は setNav・setHeader を済ませたあと showCommonPage() を呼ぶ。
+/* 学習シェル共通ページ：接续表 / 活用 / 变形 / 数字 / 検索 / 記憶カード /
+ * 週カタログ / 錯題本 / 收藏。ルーティングと日課本文は app/study が持つ。
  * クラス名と DOM 構造は移行前の文字列組み立てと同じものを再現している。 */
 
-export type CommonPage = "ref" | "katsuyou" | "henkei" | "numbers" | "search" | "cards" | "home" | "mistakes" | "favs" | "favfc";
-
 /* legacy の markStar(): ★ だけを .num-x で包む */
-function Star({ text }: { text: unknown }) {
+export function Star({ text }: { text: unknown }) {
 	const raw = text == null ? "" : String(text);
 	return (
 		<>
@@ -69,19 +64,19 @@ function renderRich(nodes: RichNode[]): ReactNode {
 		),
 	);
 }
-function RubyHtml({ html }: { html: string }) {
+export function RubyHtml({ html }: { html: string }) {
 	return <>{renderRich(parseRich(html))}</>;
 }
 
 /* legacy の R(o,f) = o[f+'_r'] があればその HTML、なければ素の o[f] */
-function Rr({ o, f }: { o: any; f: string }) {
+export function Rr({ o, f }: { o: any; f: string }) {
 	const rich = o && o[f + "_r"];
 	if (rich) return <RubyHtml html={String(rich)} />;
 	return <>{o?.[f] ?? ""}</>;
 }
 
 /* legacy の sayBtn()。#app 上の委任クリックは届かないので直接呼ぶ。 */
-function SayButton({ text }: { text?: string }) {
+export function SayButton({ text }: { text?: string }) {
 	if (!text) return null;
 	// data-say は読み上げ対象そのものを表すデータ属性なので移行前と同じく残す。
 	// 実際の発火は #app の委任ではなく onClick。
@@ -103,7 +98,7 @@ function SayButton({ text }: { text?: string }) {
 }
 
 /* legacy の fmt(): '~text~' を <del> にする。エスケープは React 側が行う。 */
-function Fmt({ text }: { text: unknown }) {
+export function Fmt({ text }: { text: unknown }) {
 	const raw = text == null ? "" : String(text);
 	const parts = raw.split(/~([^~]+)~/g);
 	return (
@@ -113,10 +108,7 @@ function Fmt({ text }: { text: unknown }) {
 	);
 }
 
-/* ---------------- 接続表示（legacy の connBlockHTML / connHTML / connRowHTML） ----------------
-   毎日語法の pointHTML でも使うため、legacy 側の3関数はその移行までは残る。
-   二重管理になる間は、データ中の connection 全件を両実装に通して出力一致を
-   確認してある（毎日語法を移すときに legacy 側を消し、この注記も外す）。 */
+/* ---------------- 接続表示（旧 connBlockHTML / connHTML / connRowHTML） ---------------- */
 
 function splitTop(str: string, sep: string) {
 	const out: string[] = [];
@@ -182,12 +174,15 @@ function ConnRow({ row }: { row: string }) {
 
 const CONN_NOTE = /^([\s\S]*?)(（注意：[^）]*）)\s*$/;
 
-function ConnBlock({ connection }: { connection?: string }) {
+export function ConnBlock({ connection, lang = "cn" }: { connection?: string; lang?: string }) {
 	if (!connection) return null;
 	return (
 		<div className="conn jp">
 			<span className="conn-label">
-				接続{/~[^~]+~/.test(connection) ? <span className="conn-hint">（划线部分去掉）</span> : null}
+				{lang === "en" ? "Connection" : "接続"}
+				{/~[^~]+~/.test(connection) ? (
+					<span className="conn-hint">{lang === "en" ? "(omit the underlined part)" : "（划线部分去掉）"}</span>
+				) : null}
 			</span>
 			{trimmed(String(connection).split(/[；　]/)).map((group, i) => {
 				// 「（注意：…）」は接続そのものではない補足なので、下の行に分けて出す。
@@ -300,7 +295,7 @@ function PTable({ cols, rows }: { cols: string[]; rows: { label: string; vals: s
 
 /* ---------------- 接续表 ---------------- */
 
-function RefPage({ data }: { data: any }) {
+export function RefPage({ data }: { data: any }) {
 	const RF = data.reference;
 	const block = (heading: string, cols: string[], rows: unknown[][], futsukei: string, lead?: string) => (
 		<div className="card">
@@ -364,7 +359,7 @@ function RefPage({ data }: { data: any }) {
 
 /* ---------------- 活用（敬語レベル） ---------------- */
 
-function KatsuyouPage({ data }: { data: any }) {
+export function KatsuyouPage({ data }: { data: any }) {
 	const KY = data.katsuyou;
 	const V3 = KY.verb;
 	const c = V3?.callout;
@@ -460,7 +455,7 @@ function KatsuyouPage({ data }: { data: any }) {
 
 /* ---------------- 变形（変形ルール） ---------------- */
 
-function HenkeiPage({ data }: { data: any }) {
+export function HenkeiPage({ data }: { data: any }) {
 	const HK = data.henkei;
 	return (
 		<>
@@ -581,7 +576,7 @@ function NumCounter({ c }: { c: any }) {
 	);
 }
 
-function NumbersPage({ data }: { data: any }) {
+export function NumbersPage({ data }: { data: any }) {
 	const N = data.numbers;
 	const secs: any[] = N.sections || [];
 
@@ -659,6 +654,8 @@ const MODULE_TAG: Record<string, [string, string]> = {
 	n4grammar: ["g4", "N4语法"],
 	n4vocab: ["v4", "N4词汇"],
 	n4kanji: ["k4", "N4汉字"],
+	reading: ["r", "N3读解"],
+	listening: ["l", "N3听解"],
 };
 
 /* legacy の mark(): ヒット語を .hl で囲む */
@@ -676,7 +673,7 @@ function Mark({ text, keyword }: { text: string; keyword: string }) {
 	);
 }
 
-function SearchPage() {
+export function SearchPage() {
 	const [keyword, setKeyword] = useState("");
 	const [history, setHistory] = useState<string[]>(() => window.__studySearch?.history() ?? []);
 	const inputRef = useRef<HTMLInputElement>(null);
@@ -872,7 +869,7 @@ function Lines({ text }: { text: string }) {
 	);
 }
 
-function MistakesPage({ data }: { data: MistakesData }) {
+export function MistakesPage({ data }: { data: MistakesData }) {
 	const bridge = window.__studyMistakes;
 	// 下書きは legacy の mistakeDraft が持つ。非制御にしておくと再描画が挟まっても
 	// 入力中のカーソルまで保たれる（legacy は innerHTML ごと書き直していた）。
@@ -993,11 +990,12 @@ type FavsData = {
 
 const FAV_MOD_TAG: Record<string, string> = {
 	grammar: "g", n2grammar: "g2", vocab: "v", kanji: "k", n2vocab: "v2",
-	n2kanji: "k2", n4grammar: "g4", n4vocab: "v4", n4kanji: "k4", selection: "mt-selection",
+	n2kanji: "k2", n4grammar: "g4", n4vocab: "v4", n4kanji: "k4", reading: "r", listening: "l", selection: "mt-selection",
 };
 const FAV_MOD_TAG_LABEL: Record<string, string> = {
 	grammar: "N3语法", n2grammar: "N2语法", vocab: "N3词汇", kanji: "N3汉字", n2vocab: "N2词汇",
-	n2kanji: "N2汉字", n4grammar: "N4语法", n4vocab: "N4词汇", n4kanji: "N4汉字", selection: "划词",
+	n2kanji: "N2汉字", n4grammar: "N4语法", n4vocab: "N4词汇", n4kanji: "N4汉字",
+	reading: "N3读解", listening: "N3听解", selection: "划词",
 };
 const favTags = (item: FavItem, selLabels: Record<string, string>) => {
 	const tags: { cls: string; label: string }[] = [];
@@ -1006,7 +1004,7 @@ const favTags = (item: FavItem, selLabels: Record<string, string>) => {
 	return tags;
 };
 
-function FavsPage({ data }: { data: FavsData }) {
+export function FavsPage({ data }: { data: FavsData }) {
 	const bridge = window.__studyFavs;
 	// 「清空收藏」は 2 度押し。legacy は data-armed を DOM に置いていたので、
 	// 何かの再描画が挟まれば解除された。payload が変わったら戻すことで揃える。
@@ -1118,7 +1116,7 @@ function FavsPage({ data }: { data: FavsData }) {
 }
 
 /* 收藏から作る闪卡。山は legacy の favDeck が持つ。 */
-function FavFcPage({ data }: { data: { jp: string; cn: string; idx: number; total: number; flipped: boolean } }) {
+export function FavFcPage({ data }: { data: { jp: string; cn: string; idx: number; total: number; flipped: boolean } }) {
 	const bridge = window.__studyFavs;
 	if (!bridge) return null;
 	return (
@@ -1159,6 +1157,8 @@ function dayPreviewItems(day: any): string[] {
 	let items: any[] = [];
 	if (Array.isArray(day.points)) items = day.points.map((p: any) => p.pattern);
 	else if (Array.isArray(day.kanji)) items = day.kanji.map((k: any) => k.char);
+	else if (Array.isArray(day.vocab)) items = day.vocab.map((it: any) => it.jp);
+	else if (Array.isArray(day.grammar)) items = day.grammar.map((p: any) => p.pattern);
 	else if (Array.isArray(day.sections))
 		items = day.sections.reduce((all: any[], sec: any) => all.concat((sec.items || []).map((it: any) => it.jp)), []);
 	return items.filter(Boolean).slice(0, 6);
@@ -1166,7 +1166,7 @@ function dayPreviewItems(day: any): string[] {
 
 /* 週の開閉は legacy の openWeeks（モジュールごとの Set）が持つ。ここへ複製しないのは、
    モジュールを切り替えて戻ったときに開いていた週が保たれる挙動を変えないため。 */
-function HomePage({ data }: { data: { weeks: any[]; intro: string; lang: string } }) {
+export function HomePage({ data }: { data: { weeks: any[]; intro: string; lang: string; scale?: "week" | "chapter" } }) {
 	const [, bump] = useReducer((n: number) => n + 1, 0);
 	const [jumpTo, setJumpTo] = useState<number | null>(null);
 
@@ -1184,6 +1184,16 @@ function HomePage({ data }: { data: { weeks: any[]; intro: string; lang: string 
 	const open = home.open();
 	const lx = (cn?: string, en?: string) => (data.lang === "en" && en ? en : cn || "");
 	const isEnglish = data.lang === "en";
+	const isChapter = data.scale === "chapter";
+	const weekLabel = (n: number) => (isChapter ? (isEnglish ? `Ch. ${n}` : `第${n}章`) : isEnglish ? `Week ${n}` : `第${n}週`);
+	const dayLabel = (d: number, exam: boolean) =>
+		isChapter
+			? isEnglish
+				? `Section ${d}`
+				: `${d}节`
+			: isEnglish
+				? `Day ${d}${exam ? " · Test" : ""}`
+				: `${d}日目${exam ? " · 实战" : ""}`;
 
 	return (
 		<>
@@ -1205,7 +1215,7 @@ function HomePage({ data }: { data: { weeks: any[]; intro: string; lang: string 
 									bump();
 								}}
 							>
-								{isEnglish ? `Week ${w.n}` : `第${w.n}周`}
+								{weekLabel(w.n)}
 							</a>
 						))}
 					</div>
@@ -1228,12 +1238,12 @@ function HomePage({ data }: { data: { weeks: any[]; intro: string; lang: string 
 						>
 							<div className="wk-t">
 								<h2>
-									{isEnglish ? `Week ${w.n}` : `第${w.n}週`}
+									{weekLabel(w.n)}
 									{w.title ? <> <span className="jp">{w.title}</span></> : null}
 								</h2>
 								{sub ? <div className="sub">{sub}</div> : null}
 							</div>
-							<span className="cnt">{isEnglish ? `${w.days.length} days` : `${w.days.length}天`}</span>
+							<span className="cnt">{isEnglish ? `${w.days.length} ${isChapter ? "sections" : "days"}` : `${w.days.length}${isChapter ? "节" : "天"}`}</span>
 							<span className="cv">{isOpen ? "▾" : "▸"}</span>
 						</div>
 						{isOpen ? (
@@ -1249,7 +1259,7 @@ function HomePage({ data }: { data: { weeks: any[]; intro: string; lang: string 
 												onClick={() => window.__studyNav?.(`#/day/${w.n}-${d.day}`)}
 										>
 											<div className="d">
-												{isEnglish ? `Day ${d.day}${d.day === 7 ? " · Test" : ""}` : `${d.day}日目${d.day === 7 ? " · 实战" : ""}`}
+												{dayLabel(d.day, !isChapter && d.day === 7)}
 												</div>
 												<div className="t jp">
 													<Rr o={d} f="title" />
@@ -1283,7 +1293,7 @@ function HomePage({ data }: { data: { weeks: any[]; intro: string; lang: string 
    legacy 側に残し、ここは表示と操作だけを担う。fc をこちらへ複製しないのは、
    カードを離れて戻ったときに同じ山・同じ位置・同じ表裏へ戻る挙動を保つため
    （legacy の fc はモジュール変数なので view を跨いで生き残る）。 */
-function CardsPage() {
+export function CardsPage() {
 	const [, bump] = useReducer((n: number) => n + 1, 0);
 	const cards = window.__studyCards;
 	if (!cards) return null;
@@ -1518,35 +1528,4 @@ declare global {
 	}
 }
 
-type Payload = { page: CommonPage; data: any } | null;
 
-export function CommonPageHost() {
-	const [payload, setPayload] = useState<Payload>(null);
-
-	useEffect(() => {
-		const onShow = (event: Event) => setPayload((event as CustomEvent<Payload>).detail);
-		window.addEventListener("study:common-page", onShow);
-		return () => window.removeEventListener("study:common-page", onShow);
-	}, []);
-
-	useEffect(() => {
-		if (payload) window.__studyAfterPaint?.();
-	}, [payload]);
-
-	if (!payload) return null;
-	const { page, data } = payload;
-	return (
-		<main id="common-page">
-			{page === "ref" ? <RefPage data={data} /> : null}
-			{page === "katsuyou" ? <KatsuyouPage data={data} /> : null}
-			{page === "henkei" ? <HenkeiPage data={data} /> : null}
-			{page === "numbers" ? <NumbersPage data={data} /> : null}
-			{page === "search" ? <SearchPage /> : null}
-			{page === "cards" ? <CardsPage /> : null}
-			{page === "home" ? <HomePage data={data} /> : null}
-			{page === "mistakes" ? <MistakesPage data={data} /> : null}
-			{page === "favs" ? <FavsPage data={data} /> : null}
-			{page === "favfc" ? <FavFcPage data={data} /> : null}
-		</main>
-	);
-}

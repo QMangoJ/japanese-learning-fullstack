@@ -4,13 +4,14 @@
 
 ## 中文
 
-基于 React Router 7 和 Cloudflare Workers 的日语学习应用，覆盖 N4、N3、N2 的语法、词汇与汉字学习内容。
+基于 React Router 7 和 Cloudflare Workers 的日语学习应用，覆盖 N4、N3、N2 的语法、词汇与汉字，以及 N3 读解、听解。
 
 ![日本語上手桌面端首页](docs/home.jpg)
 
 ## 功能
 
 - N4 / N3 / N2 的语法、词汇、汉字课程，按周与每日内容组织
+- N3 读解 6 周、听解 5 章，与语法/汉字同一套目录、搜索和收藏
 - 全站搜索、语法辨析、接续表、活用表与数字表达参考
 - 假名注音、日语 TTS 朗读、中文 / 英文切换与深色模式
 - 收藏、生词本、错题本与记忆卡
@@ -23,22 +24,20 @@
 - 服务端：Cloudflare Worker（React Router SSR）
 - 数据：课程内容作为带内容哈希的静态 JSON 资源缓存；收藏与错题使用 Cloudflare KV
 
-为保证迁移前后的 UI 和交互完全一致，当前版本保留了原学习应用的成熟客户端运行时，并由 React Router 提供页面外壳、静态资源和 Worker API。后续可以逐页拆分为原生 React 组件，而不会改变现有体验。
+学习区是一套 React 应用：语法、词汇、汉字、读解、听解共用同一壳、同一套周/日路由和收藏错题。课程 JSON 仍可由相邻旧项目同步。
 
 ## 本地开发
 
 ```bash
 npm ci
-CHOKIDAR_USEPOLLING=1 npm run dev -- --host 127.0.0.1 --port 5175
+npm run dev
 ```
 
-打开 [http://127.0.0.1:5175](http://127.0.0.1:5175)。
-
-`CHOKIDAR_USEPOLLING=1` 用于规避部分 macOS 环境下的文件监听上限。
+打开 [http://localhost:5173/study](http://localhost:5173/study)。`npm run test:e2e` 用本机 Chrome 跑无头测试。
 
 ## 课程资源同步
 
-课程数据、样式与客户端运行时存放在 `public/`，已随仓库提交。若本机同时存在相邻的旧项目 `../日语学习`，可使用以下命令重新同步其最新课程资源：
+课程 JSON 与静态资源存放在 `public/`，已随仓库提交。若本机同时存在相邻的旧项目 `../日语学习`，可使用以下命令重新同步语法/词汇/汉字课表：
 
 ```bash
 npm run sync:study-assets
@@ -67,11 +66,12 @@ npm run deploy
 
 ## English
 
-**Nihongo Jozu** is a Japanese-learning application built with React Router 7 and Cloudflare Workers. It includes N4, N3, and N2 grammar, vocabulary, and kanji study materials.
+**Nihongo Jozu** is a Japanese-learning application built with React Router 7 and Cloudflare Workers. It includes N4, N3, and N2 grammar, vocabulary, and kanji, plus N3 reading and listening.
 
 ### Features
 
 - N4 / N3 / N2 grammar, vocabulary, and kanji courses organized by week and day
+- N3 reading (6 weeks) and listening (5 chapters) in the same study shell
 - Global search, grammar comparisons, conjugation and connection references, and number-expression references
 - Furigana, Japanese text-to-speech, Chinese / English switching, and dark mode
 - Favorites, vocabulary notebook, mistake notebook, and flashcards
@@ -84,22 +84,20 @@ npm run deploy
 - Backend: Cloudflare Worker with React Router SSR
 - Data: content-hashed static JSON for course material, plus Cloudflare KV for favorites and mistakes
 
-To preserve the original product's UI and behavior exactly, this release retains the established study-app client runtime while React Router provides the application shell, static assets, and Worker APIs. The runtime can be incrementally split into native React components without changing the current experience.
+The study area is a single React app. Grammar, vocabulary, kanji, reading, and listening share one shell, week/day routing, search, and favorites. Course JSON can still be synced from the adjacent legacy project.
 
 ### Local development
 
 ```bash
 npm ci
-CHOKIDAR_USEPOLLING=1 npm run dev -- --host 127.0.0.1 --port 5175
+npm run dev
 ```
 
-Open [http://127.0.0.1:5175](http://127.0.0.1:5175).
-
-`CHOKIDAR_USEPOLLING=1` works around file-watcher limits on some macOS environments.
+Open [http://localhost:5173/study](http://localhost:5173/study). Run `npm run test:e2e` for headless Chrome tests.
 
 ### Sync course assets
 
-Course data, styles, and the client runtime are committed under `public/`. If the adjacent legacy project exists at `../日语学习`, sync its latest assets with:
+Course JSON and static assets are committed under `public/`. If the adjacent legacy project exists at `../日语学习`, sync grammar/vocab/kanji tables with:
 
 ```bash
 npm run sync:study-assets

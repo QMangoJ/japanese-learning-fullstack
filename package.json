@@ -1,6 +1,6 @@
 {
-	"name": "fare-fullstack-template",
-	"description": "Build a full-stack web application with React Router 7.",
+	"name": "japanese-learning",
+	"description": "日本語上手 — JLPT study app on React Router 7 and Cloudflare Workers.",
 	"cloudflare": {
 		"label": "React Router Framework Starter",
 		"products": [
@@ -21,6 +21,7 @@
 	},
 	"devDependencies": {
 		"@cloudflare/vite-plugin": "1.15.3",
+		"@playwright/test": "^1.62.1",
 		"@react-router/dev": "7.9.6",
 		"@tailwindcss/vite": "4.1.17",
 		"@types/node": "24.10.1",
@@ -46,6 +47,7 @@
 		"predev": "node scripts/sync-study-assets.mjs && node scripts/generate-n3-grammar-english.mjs",
 		"preview": "npm run build && vite preview",
 		"sync:study-assets": "node scripts/sync-study-assets.mjs",
+		"test:e2e": "playwright test",
 		"test:grammar-daily": "node scripts/check-n3-daily-grammar-explanations.mjs",
 		"test:grammar-english": "node scripts/check-n3-grammar-english.mjs",
 		"test:vocab-kanji-daily": "node scripts/check-n3-vocab-kanji-daily-translations.mjs",
