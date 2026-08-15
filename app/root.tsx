@@ -36,7 +36,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
 					name="viewport"
 					content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"
 				/>
-				<meta name="theme-color" content="#ef6b9a" />
+				<script
+					dangerouslySetInnerHTML={{
+						__html: `(function(){try{var t=localStorage.getItem("theme");if(t!=="light"&&t!=="dark"){t=window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}var r=document.documentElement;r.classList.add("theme-"+t);r.style.colorScheme=t}catch(e){}})();`,
+					}}
+				/>
+				<meta name="theme-color" content="#f6f7f9" />
 				<meta name="apple-mobile-web-app-capable" content="yes" />
 				<meta name="apple-mobile-web-app-title" content="日本語上手" />
 				<Meta />

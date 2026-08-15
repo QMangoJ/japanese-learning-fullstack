@@ -21,6 +21,7 @@ import {
 	FAV,
 	LANG,
 	LEVEL,
+	THEME,
 	LEVEL_LIST,
 	MODULE,
 	TYPE,
@@ -61,6 +62,7 @@ import {
 	setAfterPaint,
 	setLang,
 	setModule,
+	toggleTheme,
 	setNavImpl,
 	showingFavFc,
 	subscribe,
@@ -139,6 +141,16 @@ function Header({
 						EN
 					</button>
 				</div>
+				<button
+					className={`theme-toggle${THEME === "dark" ? " on" : ""}`}
+					id="themeToggle"
+					title={THEME === "dark" ? lx("浅色模式", "Light mode") : lx("深色护眼", "Dark mode")}
+					aria-label={THEME === "dark" ? lx("浅色模式", "Light mode") : lx("深色护眼", "Dark mode")}
+					aria-pressed={THEME === "dark"}
+					onClick={() => toggleTheme()}
+				>
+					{THEME === "dark" ? "☀" : "☾"}
+				</button>
 				<button
 					className={`toggle-all${noRuby ? "" : " on"}`}
 					id="topAction"

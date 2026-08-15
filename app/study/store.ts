@@ -16,6 +16,7 @@ export type ModuleKey =
 export type LevelKey = "n2" | "n3" | "n4";
 export type TypeKey = "grammar" | "vocab" | "kanji" | "reading" | "listening";
 export type Lang = "cn" | "en";
+export type Theme = "light" | "dark";
 
 export type FavSnap = {
 	module: string;
@@ -202,6 +203,7 @@ function lsJson<T>(key: string, fallback: T): T {
 
 export let MODULE: ModuleKey = "grammar";
 export let LANG: Lang = "cn";
+export let THEME: Theme = "light";
 export let LEVEL: LevelKey = "n3";
 export let TYPE: TypeKey = "grammar";
 export let DATA: Record<string, any> = {};
@@ -387,6 +389,36 @@ export function applyDisplayClasses() {
 	document.body.classList.toggle("no-ruby", noRuby);
 	document.body.classList.toggle("hide-jp", hideJp);
 	document.body.classList.toggle("hide-cn", hideCn);
+}
+
+function systemTheme(): Theme {
+	if (typeof window === "undefined") return "light";
+	try {
+		return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+	} catch {
+		return "light";
+	}
+}
+
+export function applyTheme() {
+	if (typeof document === "undefined") return;
+	const root = document.documentElement;
+	root.classList.toggle("theme-dark", THEME === "dark");
+	root.classList.toggle("theme-light", THEME === "light");
+	root.style.colorScheme = THEME;
+	const meta = document.querySelector('meta[name="theme-color"]');
+	if (meta) meta.setAttribute("content", THEME === "dark" ? "#1c1a16" : "#f6f7f9");
+}
+
+export function setTheme(theme: Theme) {
+	THEME = theme;
+	lsSet("theme", theme);
+	applyTheme();
+	emit();
+}
+
+export function toggleTheme() {
+	setTheme(THEME === "dark" ? "light" : "dark");
 }
 export function toggleDisplay(kind: "ruby" | "jp" | "cn") {
 	if (kind === "ruby") {
@@ -1210,6 +1242,7 @@ export function resetStudyStateForTests() {
 	noRuby = false;
 	hideJp = false;
 	hideCn = false;
+	THEME = "light";
 	studyHideJapanese = false;
 	studyHideTranslation = false;
 	fc = { week: 0, deck: [], idx: 0, flipped: false };
@@ -1244,6 +1277,7 @@ export function resetStudyStateForTests() {
 	for (const key of Object.keys(openWeeks)) delete openWeeks[key];
 	navImpl = () => {};
 	afterPaintImpl = () => {};
+	if (typeof document !== "undefined") applyTheme();
 }
 
 export function hydrateFromStorage() {
@@ -1258,8 +1292,11 @@ export function hydrateFromStorage() {
 	noRuby = lsGet("noruby", "0") === "1";
 	hideJp = lsGet("hidejp", "0") === "1";
 	hideCn = lsGet("hidecn", "0") === "1";
+	const savedTheme = lsGet("theme", "");
+	THEME = savedTheme === "dark" || savedTheme === "light" ? savedTheme : systemTheme();
 	deriveLT();
 	applyDisplayClasses();
+	applyTheme();
 	if (typeof document !== "undefined") document.documentElement.lang = LANG === "en" ? "en" : "zh-CN";
 	if (typeof window !== "undefined" && "speechSynthesis" in window) {
 		pickVoice();

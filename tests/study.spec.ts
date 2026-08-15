@@ -77,6 +77,20 @@ test.describe("study header", () => {
 		await expect(page.locator("#title")).toContainText(/週|Week|日/);
 	});
 
+	test("switches to a persisted dark theme", async ({ page }) => {
+		await waitForStudy(page);
+		await expect(page.locator("#themeToggle")).toBeVisible();
+		await page.locator("#themeToggle").click();
+		await expect(page.locator("html")).toHaveClass(/theme-dark/);
+		const bg = await page.locator("body").evaluate((el) => getComputedStyle(el).backgroundColor);
+		expect(bg).not.toBe("rgb(246, 247, 249)");
+		await page.reload();
+		await expect(page.locator("#topbar")).toBeVisible();
+		await expect(page.locator("html")).toHaveClass(/theme-dark/);
+		await page.locator("#themeToggle").click();
+		await expect(page.locator("html")).toHaveClass(/theme-light/);
+	});
+
 	test("does not leave a trial-bar gap when not in trial mode", async ({ page }) => {
 		await waitForStudy(page);
 		await expect(page.locator(".trial-context")).toHaveCount(0);

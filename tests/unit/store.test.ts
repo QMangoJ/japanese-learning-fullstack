@@ -63,6 +63,9 @@ import {
 	setCardsWeek,
 	setFavFilter,
 	setLang,
+	setTheme,
+	toggleTheme,
+	THEME,
 	setMistakeFilter,
 	setMistakeLevelFilter,
 	setMistakeStudy,
@@ -158,6 +161,18 @@ describe("routing helpers", () => {
 });
 
 describe("language and modules", () => {
+	it("toggles and persists the eye-care theme", () => {
+		setTheme("light");
+		expect(THEME).toBe("light");
+		expect(document.documentElement.classList.contains("theme-light")).toBe(true);
+		toggleTheme();
+		expect(THEME).toBe("dark");
+		expect(document.documentElement.classList.contains("theme-dark")).toBe(true);
+		expect(localStorage.getItem("theme")).toBe("dark");
+		setTheme("light");
+		expect(document.documentElement.classList.contains("theme-dark")).toBe(false);
+	});
+
 	it("picks Chinese or English copy", () => {
 		setLang("cn");
 		expect(lx("语法", "Grammar")).toBe("语法");

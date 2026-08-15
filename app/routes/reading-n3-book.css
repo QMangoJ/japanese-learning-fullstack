@@ -22,8 +22,7 @@
 	line-height: 1.9;
 }
 
-@media (prefers-color-scheme: dark) {
-	.rb {
+html.theme-dark .rb {
 		--rb-ink: #ece9e2;
 		--rb-ink-soft: #a9a49a;
 		--rb-paper: #1b1c1e;
@@ -36,7 +35,6 @@
 		--rb-shade: #232427;
 		--rb-cn: #86bdec;
 		--rb-cn-bg: #1a2733;
-	}
 }
 
 .rb *,
@@ -184,10 +182,8 @@
 	font-weight: 600;
 }
 
-@media (prefers-color-scheme: dark) {
-	.rb-toggles button[aria-pressed="true"] {
-		color: #10261b;
-	}
+html.theme-dark .rb-toggles button[aria-pressed="true"] {
+	color: #10261b;
 }
 
 /* ---------- catalog ---------- */
