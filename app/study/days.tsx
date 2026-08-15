@@ -4,6 +4,7 @@ import { ConnBlock, Fmt, Rr, RubyHtml, SayButton } from "../routes/study-common"
 import {
 	FAVMETA,
 	G,
+	G4,
 	K,
 	LANG,
 	MODULE,
@@ -510,7 +511,7 @@ function ExamNote({ a, item }: { a: any; item: any }) {
 		: (a.why || []).map((text: string) =>
 				/放入本句后，接续、活用形式或语义不符合题意|接续和句意都成立/.test(text) ? "" : text,
 			);
-	const point = LANG === "en" ? linkedGrammarUsage(a.link) : a.point;
+	const point = LANG === "en" ? a.point_en || linkedGrammarUsage(a.link) : a.point;
 	const words = LANG === "en" ? (a.words || []).filter((v: any) => v.en) : a.words || [];
 	const hasOptionDetails = opts.some((_: any, i: number) => why[i] || optionTranslations[i]);
 	return (
@@ -784,8 +785,9 @@ function GrammarPoint({ p, w, d, i }: { p: any; w: number; d: number; i: number 
 }
 
 function ExamGrammar({ day, w }: { day: any; w: number }) {
-	const useBesatsu = MODULE === "grammar";
-	const bes = useBesatsu ? G.besatsu?.["w" + w] || {} : {};
+	const useBesatsu = MODULE === "grammar" || MODULE === "n4grammar";
+	const examBook = MODULE === "n4grammar" ? G4 : G;
+	const bes = useBesatsu ? examBook.besatsu?.["w" + w] || {} : {};
 	const ansMap: Record<number, any> = {};
 	if (useBesatsu) for (const k of ["mondai1", "mondai2", "mondai3"]) for (const a of bes[k] || []) ansMap[a.n] = a;
 	const directAnswers = useBesatsu ? {} : parseExamAnswerDetails(day.answers);

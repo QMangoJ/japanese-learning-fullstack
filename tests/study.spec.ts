@@ -100,6 +100,35 @@ test.describe("study header", () => {
 });
 
 test.describe("study navigation", () => {
+	test("shows English on N4 vocab and N4 weekly-test explanations", async ({ page }, testInfo) => {
+		await waitForStudy(page);
+		if (testInfo.project.name === "desktop-chrome") {
+			await page.locator(".side-seg button", { hasText: "N4" }).click();
+		} else {
+			await page.locator("#lvChip").click();
+			await page.locator(".sheet-item", { hasText: "N4" }).click();
+		}
+		await expect(page.locator("#title")).toContainText(/N4/);
+		await pickType(page, "vocab");
+		if (await page.locator(".day-item").first().isVisible()) await page.locator(".day-item").first().click();
+		await expect(page.locator(".ven").first()).toBeVisible({ timeout: 15_000 });
+
+		await page.goto("/study");
+		await expect(page.locator(".week-card").first()).toBeVisible({ timeout: 20_000 });
+		if (testInfo.project.name === "desktop-chrome") {
+			await page.locator("#side [data-gotype='grammar']").click();
+		} else if (await page.locator("#typebar button[data-ty='grammar']").isVisible()) {
+			await page.locator("#typebar button[data-ty='grammar']").click();
+		}
+		await expect(page.locator(".week-card").first()).toBeVisible({ timeout: 15_000 });
+		const examDay = page.locator(".day-item", { hasText: /7日目|Day 7|实战|Test/ }).first();
+		if (await examDay.isVisible()) await examDay.click();
+		else await page.locator("#wk-1 .day-item").last().click();
+		await expect(page.locator("h2.page").first()).toBeVisible({ timeout: 15_000 });
+		await page.locator(".opt-btn").first().click();
+		await expect(page.locator(".an-trans, .qz-note").first()).toBeVisible();
+	});
+
 	test("shows English usage and examples on N3 grammar days", async ({ page }) => {
 		await waitForStudy(page);
 		await page.locator(".day-item").first().click();
