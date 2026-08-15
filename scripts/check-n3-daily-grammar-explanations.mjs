@@ -5,7 +5,8 @@ import { resolve } from "node:path";
 const root = resolve(import.meta.dirname, "..");
 const grammar = JSON.parse(await readFile(resolve(root, "public/data/grammar.d15be04258.json"), "utf8"));
 const explanations = JSON.parse(await readFile(resolve(root, "public/data/n3-grammar-daily-explanations.json"), "utf8"));
-const legacy = await readFile(resolve(root, "public/study-legacy.js"), "utf8");
+const store = await readFile(resolve(root, "app/study/store.ts"), "utf8");
+const days = await readFile(resolve(root, "app/study/days.tsx"), "utf8");
 
 let dayCount = 0;
 let itemCount = 0;
@@ -48,8 +49,8 @@ assert.equal(dayCount, 36, "expected all 36 N3 daily grammar exercise pages");
 assert.equal(itemCount, 250, "expected all 250 N3 daily grammar questions");
 assert.match(explanations.w2d1.items[3].translation, /^林同学/, "リンさん must not be mistranslated as 小林");
 assert.match(explanations.w6d6.items[0].translation, /ID 编号/, "ID番号 must stay generic");
-assert.match(legacy, /n3-grammar-daily-explanations\.json/, "runtime must load the generated explanations");
-assert.match(legacy, /dailyExercisePanelsHTML/, "runtime must render the daily translation and analysis controls");
-assert.match(legacy, /MODULE==='grammar'&&G\.daily_explanations/, "N3 explanations must not leak into N2 or N4 pages");
+assert.match(store, /n3-grammar-daily-explanations\.json/, "runtime must load the generated explanations");
+assert.match(days, /DailyExercisePanels/, "runtime must render the daily translation and analysis controls");
+assert.match(days, /MODULE === "grammar" && G\.daily_explanations/, "N3 explanations must not leak into N2 or N4 pages");
 
 console.log(`Validated ${dayCount} days and ${itemCount} daily grammar explanations.`);

@@ -5,6 +5,7 @@ const baseURL = process.env.E2E_BASE_URL || `http://localhost:${port}`;
 
 export default defineConfig({
 	testDir: "./tests",
+	testMatch: "**/*.spec.ts",
 	timeout: 45_000,
 	expect: { timeout: 15_000 },
 	fullyParallel: false,

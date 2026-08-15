@@ -805,21 +805,157 @@ function buildIndex() {
 
 const SEARCH_HIST_KEY = "searchHistory";
 const SEARCH_HIST_MAX = 15;
-function getSearchHistory(): string[] {
+export function getSearchHistory(): string[] {
 	return lsJson(SEARCH_HIST_KEY, []);
 }
-function saveSearchHistory(kw: string) {
+export function saveSearchHistory(kw: string) {
 	if (!kw) return;
 	const hist = getSearchHistory().filter((x) => x !== kw);
 	hist.unshift(kw);
 	lsSet(SEARCH_HIST_KEY, JSON.stringify(hist.slice(0, SEARCH_HIST_MAX)));
 }
-function clearSearchHistory() {
+export function clearSearchHistory() {
 	try {
 		localStorage.removeItem(SEARCH_HIST_KEY);
 	} catch {
 		/* ignore */
 	}
+}
+export function getSearchIndex() {
+	return buildIndex();
+}
+export function openSearchHit(hit: any, keyword?: string) {
+	if (!hit) return;
+	if (keyword) saveSearchHistory(keyword);
+	setModule(hit.module as ModuleKey);
+	let key = `#/day/${hit.w}-${hit.d}`;
+	if (isKanji(hit.module)) key += "/k" + hit.ki;
+	else if (isVocab(hit.module)) key += "/v" + hit.si + "-" + hit.ii;
+	else if (isReading(hit.module) || isListening(hit.module)) key = `#/day/${hit.w}-${hit.d}`;
+	else if (hit.i != null) key += "/p" + hit.i;
+	navTo(key);
+}
+
+let afterPaintImpl: () => void = () => {};
+export function setAfterPaint(fn: () => void) {
+	afterPaintImpl = fn;
+}
+export function afterPaint() {
+	afterPaintImpl();
+}
+
+export function cardsState() {
+	return fc;
+}
+export function cardsKind() {
+	return isGram() ? "gram" : isKanji() ? "kanji" : "vocab";
+}
+export function cardsWeeks() {
+	return cur().weeks?.length || 0;
+}
+export function setCardsWeek(week: number) {
+	fc.week = week;
+	fc.deck = buildDeck(week);
+	fc.idx = 0;
+	fc.flipped = false;
+}
+export function flipCard() {
+	fc.flipped = !fc.flipped;
+}
+export function nextCard() {
+	if (fc.idx < fc.deck.length) {
+		fc.idx++;
+		fc.flipped = false;
+	}
+}
+export function prevCard() {
+	if (fc.idx > 0) {
+		fc.idx--;
+		fc.flipped = false;
+	}
+}
+export function shuffleCards() {
+	fc.deck = buildDeck(fc.week);
+	fc.idx = 0;
+	fc.flipped = false;
+}
+
+export function setMistakeType(type: string) {
+	mistakeAddType = type;
+	emit();
+}
+export function setMistakeDraft(value: string) {
+	mistakeDraft = value;
+}
+export function addMistakeNote(text: string) {
+	addMistake(mistakeAddType, text);
+	mistakeDraft = "";
+}
+export function setMistakeFilter(filter: string) {
+	mistakeFilter = filter;
+	emit();
+}
+export function setMistakeLevelFilter(filter: string) {
+	mistakeLevelFilter = filter;
+	emit();
+}
+export function setMistakeStudy(on: boolean) {
+	mistakeStudyMode = !!on;
+	emit();
+}
+export function toggleStudyHide(kind: "jp" | "cn") {
+	if (kind === "jp") studyHideJapanese = !studyHideJapanese;
+	else studyHideTranslation = !studyHideTranslation;
+	emit();
+}
+
+export function setFavFilter(filter: string) {
+	favFilter = filter;
+	showingFavFc = false;
+	emit();
+}
+export function setFavSelectionFilter(type: string) {
+	favSelectionFilter = type;
+	showingFavFc = false;
+	emit();
+}
+export function clearFavs() {
+	FAV = {};
+	saveFav();
+	showingFavFc = false;
+	emit();
+}
+export function setFavStudy(on: boolean) {
+	favStudyMode = !!on;
+	showingFavFc = false;
+	emit();
+}
+export function openFav(hash: string, mod: string) {
+	if (mod) setModule(mod as ModuleKey);
+	navTo(hash);
+}
+export function startFavStudyCards() {
+	startFavFc();
+}
+export function flipFavCard() {
+	favFlip = !favFlip;
+	emit();
+}
+export function nextFavCard() {
+	favIdx = (favIdx + 1) % favDeck.length;
+	favFlip = false;
+	emit();
+}
+export function prevFavCard() {
+	if (favIdx > 0) {
+		favIdx--;
+		favFlip = false;
+		emit();
+	}
+}
+export function closeFavStudyCards() {
+	showingFavFc = false;
+	emit();
 }
 
 function pickVoice() {
@@ -972,7 +1108,9 @@ async function resyncFavs() {
 	_resyncingF = false;
 }
 
+/** Compatibility shim for any leftover window callers. Pages should import store APIs instead. */
 export function installStudyBridges() {
+	if (typeof window === "undefined") return;
 	window.__studySay = say;
 	window.__studyHome = {
 		open: () => openWeekSet(),
@@ -980,139 +1118,108 @@ export function installStudyBridges() {
 		jump: (n) => jumpWeek(n),
 	};
 	window.__studySearch = {
-		index: () => buildIndex(),
+		index: getSearchIndex,
 		history: getSearchHistory,
 		saveHistory: saveSearchHistory,
 		clearHistory: clearSearchHistory,
-		open: (hit, keyword) => {
-			if (!hit) return;
-			if (keyword) saveSearchHistory(keyword);
-			setModule(hit.module as ModuleKey);
-			let key = `#/day/${hit.w}-${hit.d}`;
-			if (isKanji(hit.module)) key += "/k" + hit.ki;
-			else if (isVocab(hit.module)) key += "/v" + hit.si + "-" + hit.ii;
-			else if (isReading(hit.module) || isListening(hit.module)) key = `#/day/${hit.w}-${hit.d}`;
-			else if (hit.i != null) key += "/p" + hit.i;
-			navTo(key);
-		},
+		open: openSearchHit,
 	};
 	window.__studyCards = {
-		state: () => fc,
-		kind: () => (isGram() ? "gram" : isKanji() ? "kanji" : "vocab"),
-		weeks: () => cur().weeks?.length || 0,
-		setWeek: (week) => {
-			fc.week = week;
-			fc.deck = buildDeck(week);
-			fc.idx = 0;
-			fc.flipped = false;
-		},
-		flip: () => {
-			fc.flipped = !fc.flipped;
-		},
-		next: () => {
-			if (fc.idx < fc.deck.length) {
-				fc.idx++;
-				fc.flipped = false;
-			}
-		},
-		prev: () => {
-			if (fc.idx > 0) {
-				fc.idx--;
-				fc.flipped = false;
-			}
-		},
-		shuffle: () => {
-			fc.deck = buildDeck(fc.week);
-			fc.idx = 0;
-			fc.flipped = false;
-		},
+		state: cardsState,
+		kind: cardsKind,
+		weeks: cardsWeeks,
+		setWeek: setCardsWeek,
+		flip: flipCard,
+		next: nextCard,
+		prev: prevCard,
+		shuffle: shuffleCards,
 	};
 	window.__studyMistakes = {
-		setType: (t) => {
-			mistakeAddType = t;
-			emit();
-		},
-		setDraft: (v) => {
-			mistakeDraft = v;
-		},
-		add: (text) => {
-			addMistake(mistakeAddType, text);
-			mistakeDraft = "";
-		},
-		remove: (id) => deleteMistake(id),
-		cycleLevel: (id) => cycleMistakeLevel(id),
-		setFilter: (f) => {
-			mistakeFilter = f;
-			emit();
-		},
-		setLevelFilter: (f) => {
-			mistakeLevelFilter = f;
-			emit();
-		},
-		study: (on) => {
-			mistakeStudyMode = !!on;
-			emit();
-		},
-		hide: (kind) => {
-			if (kind === "jp") studyHideJapanese = !studyHideJapanese;
-			else studyHideTranslation = !studyHideTranslation;
-			emit();
-		},
+		setType: setMistakeType,
+		setDraft: setMistakeDraft,
+		add: addMistakeNote,
+		remove: deleteMistake,
+		cycleLevel: cycleMistakeLevel,
+		setFilter: setMistakeFilter,
+		setLevelFilter: setMistakeLevelFilter,
+		study: setMistakeStudy,
+		hide: toggleStudyHide,
 	};
 	window.__studyFavs = {
-		setFilter: (f) => {
-			favFilter = f;
-			showingFavFc = false;
-			emit();
-		},
-		setSelectionFilter: (t) => {
-			favSelectionFilter = t;
-			showingFavFc = false;
-			emit();
-		},
-		toggle: (id) => toggleFav(id),
-		clear: () => {
-			FAV = {};
-			saveFav();
-			showingFavFc = false;
-			emit();
-		},
-		study: (on) => {
-			favStudyMode = !!on;
-			showingFavFc = false;
-			emit();
-		},
-		hide: (kind) => {
-			if (kind === "jp") studyHideJapanese = !studyHideJapanese;
-			else studyHideTranslation = !studyHideTranslation;
-			emit();
-		},
-		open: (hash, mod) => {
-			if (mod) setModule(mod as ModuleKey);
-			navTo(hash);
-		},
-		startFc: () => startFavFc(),
-		fcFlip: () => {
-			favFlip = !favFlip;
-			emit();
-		},
-		fcNext: () => {
-			favIdx = (favIdx + 1) % favDeck.length;
-			favFlip = false;
-			emit();
-		},
-		fcPrev: () => {
-			if (favIdx > 0) {
-				favIdx--;
-				favFlip = false;
-				emit();
-			}
-		},
-		fcBack: () => {
-			showingFavFc = false;
-			emit();
-		},
+		setFilter: setFavFilter,
+		setSelectionFilter: setFavSelectionFilter,
+		toggle: toggleFav,
+		clear: clearFavs,
+		study: setFavStudy,
+		hide: toggleStudyHide,
+		open: openFav,
+		startFc: startFavStudyCards,
+		fcFlip: flipFavCard,
+		fcNext: nextFavCard,
+		fcPrev: prevFavCard,
+		fcBack: closeFavStudyCards,
 	};
+}
+
+export function resetStudyStateForTests() {
+	MODULE = "grammar";
+	LANG = "cn";
+	LEVEL = "n3";
+	TYPE = "grammar";
+	FAV = {};
+	MISTAKES = [];
+	mistakeAddType = "q";
+	mistakeFilter = "all";
+	mistakeLevelFilter = "all";
+	mistakeDraft = "";
+	mistakeStudyMode = false;
+	favStudyMode = false;
+	favFilter = "all";
+	favSelectionFilter = "all";
+	favDeck = [];
+	favIdx = 0;
+	favFlip = false;
+	showingFavFc = false;
+	searchIndex = null;
+	lastVisit = {};
+	lastDay = {};
+	noRuby = false;
+	hideJp = false;
+	hideCn = false;
+	studyHideJapanese = false;
+	studyHideTranslation = false;
+	fc = { week: 0, deck: [], idx: 0, flipped: false };
+	G = { weeks: [] };
+	V = { weeks: [] };
+	K = { weeks: [] };
+	G2 = { weeks: [] };
+	V2 = { weeks: [] };
+	K2 = { weeks: [] };
+	G4 = { weeks: [] };
+	V4 = { weeks: [] };
+	K4 = { weeks: [] };
+	R = readingBundle();
+	L = listeningBundle();
+	DATA = {
+		grammar: G,
+		vocab: V,
+		kanji: K,
+		n2grammar: G2,
+		n2vocab: V2,
+		n2kanji: K2,
+		n4grammar: G4,
+		n4vocab: V4,
+		n4kanji: K4,
+		reading: R,
+		listening: L,
+	};
+	dataLoaded = false;
+	n2Loaded = false;
+	n4Loaded = false;
+	loadError = "";
+	for (const key of Object.keys(openWeeks)) delete openWeeks[key];
+	navImpl = () => {};
+	afterPaintImpl = () => {};
 }
 
 export function hydrateFromStorage() {
@@ -1291,4 +1398,59 @@ export function favFcPayload() {
 
 export function closeFavFc() {
 	showingFavFc = false;
+}
+
+declare global {
+	interface Window {
+		__studyNav?: (key: string) => void;
+		__studySay?: (text?: string) => void;
+		__studyAfterPaint?: () => void;
+		__studySearch?: {
+			index: () => any[];
+			history: () => string[];
+			saveHistory: (kw: string) => void;
+			clearHistory: () => void;
+			open: (hit: any, keyword?: string) => void;
+		};
+		__studyCards?: {
+			state: () => { week: number; deck: any[]; idx: number; flipped: boolean };
+			kind: () => "gram" | "kanji" | "vocab";
+			weeks: () => number;
+			setWeek: (week: number) => void;
+			flip: () => void;
+			next: () => void;
+			prev: () => void;
+			shuffle: () => void;
+		};
+		__studyMistakes?: {
+			setType: (type: string) => void;
+			setDraft: (value: string) => void;
+			add: (text: string) => void;
+			remove: (id: string) => void;
+			cycleLevel: (id: string) => void;
+			setFilter: (filter: string) => void;
+			setLevelFilter: (filter: string) => void;
+			study: (on: boolean) => void;
+			hide: (kind: "jp" | "cn") => void;
+		};
+		__studyFavs?: {
+			setFilter: (filter: string) => void;
+			setSelectionFilter: (type: string) => void;
+			toggle: (id: string) => void;
+			clear: () => void;
+			study: (on: boolean) => void;
+			hide: (kind: "jp" | "cn") => void;
+			open: (hash: string, module: string) => void;
+			startFc: () => void;
+			fcFlip: () => void;
+			fcNext: () => void;
+			fcPrev: () => void;
+			fcBack: () => void;
+		};
+		__studyHome?: {
+			open: () => Set<number>;
+			toggle: (week: number) => void;
+			jump: (week: number) => void;
+		};
+	}
 }
