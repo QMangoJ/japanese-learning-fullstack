@@ -131,63 +131,41 @@ function cycleMistakeLevel(id){
   saveMistakes();
 }
 function activeMistakes(){ return MISTAKES.filter(m=>!m.deleted); }
-function mistakeDate(ts){
-  const d=new Date(ts), p=n=>String(n).padStart(2,'0');
-  return `${d.getFullYear()}-${p(d.getMonth()+1)}-${p(d.getDate())}`;
-}
-function mistakeItemHTML(m){
-  const lvl = m.level||'new';
-  return `<div class="mistake-item">
-    <div class="mistake-item-head"><span class="mtag mt-${m.type}">${MISTAKE_TYPES[m.type]||m.type}</span><button class="mlvl ml-${lvl}" data-mlevel-cycle="${escAttr(m.id)}" aria-label="切换熟练度">${MISTAKE_LEVELS[lvl]}</button><span class="mistake-date">${mistakeDate(m.ts)}</span><button class="mistake-del" data-mistake-del="${escAttr(m.id)}" aria-label="删除">✕</button></div>
-    <div class="mistake-text">${esc(m.text).replace(/\n/g,'<br>')}</div>
-  </div>`;
-}
 let mistakeFilter='all';
 let mistakeLevelFilter='all';
 let mistakeDraft=''; // 输入框草稿：切到后台再切回来时 resync 会触发 render() 重画整页，草稿要能扛住这次重画
 let mistakeStudyMode=false, favStudyMode=false, studyHideJapanese=false, studyHideTranslation=false;
-function studyDateGroups(rows){
-  const groups={};
-  rows.forEach(row=>{ const day=row.ts ? mistakeDate(row.ts) : '早期记录'; (groups[day]=groups[day]||[]).push(row); });
-  return Object.keys(groups).sort((a,b)=>b.localeCompare(a)).map(day=>({day,rows:groups[day]}));
-}
-function mistakeStudyParts(m){
-  const text=String(m.text||'');
-  const correct=text.match(/(?:^|\n)正确答案：\s*([^\n]+)/);
-  const question=text.replace(/(?:\n|^)你的答案：[\s\S]*$/,'').trim();
-  return {jp:question||text, cn:correct ? correct[1] : ''};
-}
-function studyToolbar(kind,count){
-  return `<div class="study-toolbar"><button class="primary" data-${kind}study="0">‹ 返回列表</button><span>${count} 条</span><div><button class="${studyHideJapanese?'on':''}" data-study-hide="jp">日语</button><button class="${studyHideTranslation?'on':''}" data-study-hide="cn">翻译 / 答案</button></div></div>`;
-}
-function studyRowsHTML(rows,kind){
-  return `<div class="study-columns${studyHideJapanese?' study-hide-jp':''}${studyHideTranslation?' study-hide-cn':''}"><div class="study-columns__head"><b>日本語</b><b>${kind==='mistake'?'答え・メモ':'翻译'}</b></div>${studyDateGroups(rows).map(group=>`<section class="study-date-group"><h3>${group.day}<small>${group.rows.length} 条</small></h3>${group.rows.map(row=>`<article class="study-row"><div class="study-jp">${row.tag||''}${esc(row.jp||'')}</div><div class="study-cn">${row.cn?esc(row.cn):'—'}</div></article>`).join('')}</section>`).join('')}</div>`;
-}
 function viewMistakes(){
   setNav('mistakes'); setHeader(LX('错题 / 生词本','My Mistakes & Notes'), false);
   const src = activeMistakes();
   const byType = mistakeFilter==='all' ? src : src.filter(m=>m.type===mistakeFilter);
   const list = mistakeLevelFilter==='all' ? byType : byType.filter(m=>(m.level||'new')===mistakeLevelFilter);
-  const filterBar = `<div class="fc-filter" style="margin-bottom:8px">
-    <button class="${mistakeFilter==='all'?'on':''}" data-mfilter="all">全部（${src.length}）</button>
-    ${Object.entries(MISTAKE_TYPES).map(([k,v])=>`<button class="${mistakeFilter===k?'on':''}" data-mfilter="${k}">${v}（${src.filter(m=>m.type===k).length}）</button>`).join('')}
-  </div>`;
-  const levelFilterBar = `<div class="fc-filter" style="margin-bottom:14px">
-    <button class="${mistakeLevelFilter==='all'?'on':''}" data-lfilter="all">熟练度：全部（${byType.length}）</button>
-    ${MISTAKE_LEVEL_ORDER.map(k=>`<button class="${mistakeLevelFilter===k?'on':''}" data-lfilter="${k}">${MISTAKE_LEVELS[k]}（${byType.filter(m=>(m.level||'new')===k).length}）</button>`).join('')}
-  </div>`;
-  if(mistakeStudyMode){
-    const rows=list.map(m=>Object.assign({ts:m.ts},mistakeStudyParts(m)));
-    app.innerHTML=studyToolbar('m',rows.length)+studyRowsHTML(rows,'mistake');
-    return;
-  }
-  const body = list.length ? list.map(mistakeItemHTML).join('') : '<div class="empty">还没有记录，在上面写一条保存试试。</div>';
-  app.innerHTML = `<div class="card mistake-widget" style="margin-bottom:14px">
-    <div class="mistake-types" id="mistakeTypes">${Object.entries(MISTAKE_TYPES).map(([k,v])=>`<button class="${k===mistakeAddType?'on':''}" data-mtype="${k}">${v}</button>`).join('')}</div>
-    <textarea id="mistakeInput" class="mistake-input" rows="2" placeholder="记一下考试错题、老是记不住的单词或语法点……">${esc(mistakeDraft)}</textarea>
-    <button class="primary" data-mistake-add>保存</button>
-  </div>${filterBar}${levelFilterBar}<div class="study-entry"><button data-mstudy="1">背诵模式（${list.length}）</button></div>${body}`;
+  const typeCounts = {all: src.length};
+  Object.keys(MISTAKE_TYPES).forEach(k=>{ typeCounts[k] = src.filter(m=>m.type===k).length; });
+  const levelCounts = {all: byType.length};
+  MISTAKE_LEVEL_ORDER.forEach(k=>{ levelCounts[k] = byType.filter(m=>(m.level||'new')===k).length; });
+  showReactPage('mistakes', {
+    list, addType:mistakeAddType, filter:mistakeFilter, levelFilter:mistakeLevelFilter,
+    types:MISTAKE_TYPES, levels:MISTAKE_LEVELS, levelOrder:MISTAKE_LEVEL_ORDER,
+    typeCounts, levelCounts,
+    studyMode:mistakeStudyMode, hideJp:studyHideJapanese, hideCn:studyHideTranslation, draft:mistakeDraft,
+  });
 }
+/* 状態はすべてここに残す。React は描画だけを引き受け、操作はこの窓口を呼んで
+   legacy 側を書き換えてから viewMistakes()／render() で描き直させる——
+   委任ハンドラがやっていたことと同じ順序。 */
+window.__studyMistakes = {
+  setType: t=>{ mistakeAddType=t; viewMistakes(); },
+  setDraft: v=>{ mistakeDraft=v; },
+  add: text=>{ addMistake(mistakeAddType, text); mistakeDraft=''; render(); },
+  remove: id=>{ deleteMistake(id); render(); },
+  cycleLevel: id=>{ cycleMistakeLevel(id); viewMistakes(); },
+  setFilter: f=>{ mistakeFilter=f; viewMistakes(); },
+  setLevelFilter: f=>{ mistakeLevelFilter=f; viewMistakes(); },
+  study: on=>{ mistakeStudyMode=!!on; viewMistakes(); },
+  hide: kind=>{ if(kind==='jp') studyHideJapanese=!studyHideJapanese; else studyHideTranslation=!studyHideTranslation; viewMistakes(); },
+};
+
 let FAV={}; try{ FAV=JSON.parse(localStorage.getItem('favs')||'{}')||{}; }catch(e){ FAV={}; }
 const FAVMETA={};
 let _favSyncing=false, _favPushTimer=null, _favReady=false, _favPendingPush=false;
@@ -439,31 +417,12 @@ app.addEventListener('click', e=>{
   }
   const sc=e.target.closest('[data-scroll]'); if(sc){ const el=document.getElementById(sc.dataset.scroll); if(el) el.scrollIntoView({behavior:sc.classList.contains('wk-tocitem')?'auto':'smooth',block:'start'}); return; }
   const sb=e.target.closest('[data-say]'); if(sb){ say(sb.dataset.say); return; }
-  const fv=e.target.closest('[data-fav]'); if(fv){ toggleFav(fv.dataset.fav); fv.textContent=isFav(fv.dataset.fav)?'★':'☆'; if(routeKey()==='#/favs') viewFavs(); return; }
-  if(e.target.closest('[data-favfc]')){ startFavFc(); return; }
-  const fs=e.target.closest('[data-favstudy]'); if(fs){ favStudyMode=fs.dataset.favstudy==='1'; viewFavs(); return; }
-  const ms=e.target.closest('[data-mstudy]'); if(ms){ mistakeStudyMode=ms.dataset.mstudy==='1'; viewMistakes(); return; }
-  const sh=e.target.closest('[data-study-hide]'); if(sh){ if(sh.dataset.studyHide==='jp') studyHideJapanese=!studyHideJapanese; else studyHideTranslation=!studyHideTranslation; const h=routeKey(); if(h==='#/favs') viewFavs(); else if(h==='#/mistakes') viewMistakes(); return; }
-  const ffl=e.target.closest('[data-favfilter]'); if(ffl){ favFilter=ffl.dataset.favfilter; viewFavs(); return; }
-  const sff=e.target.closest('[data-selfavfilter]'); if(sff){ favSelectionFilter=sff.dataset.selfavfilter; viewFavs(); return; }
+  // 星は未移行の毎日ビューが出している。#/favs 側の星は React が自前で処理する。
+  const fv=e.target.closest('[data-fav]'); if(fv){ toggleFav(fv.dataset.fav); fv.textContent=isFav(fv.dataset.fav)?'★':'☆'; return; }
   const cm=e.target.closest('[data-ctmode]'); if(cm){ ctMode=cm.dataset.ctmode; viewContrast(); return; }
   const cw=e.target.closest('[data-ctweek]'); if(cw){ ctWeek=+cw.dataset.ctweek; viewContrast(); return; }
-  const mty=e.target.closest('[data-mtype]'); if(mty){ mistakeAddType=mty.dataset.mtype; document.querySelectorAll('#mistakeTypes button').forEach(b=>b.classList.toggle('on', b.dataset.mtype===mistakeAddType)); return; }
-  if(e.target.closest('[data-mistake-add]')){ const ta=document.getElementById('mistakeInput'); if(ta && ta.value.trim()){ addMistake(mistakeAddType, ta.value); mistakeDraft=''; render(); } return; }
-  const md=e.target.closest('[data-mistake-del]'); if(md){ deleteMistake(md.dataset.mistakeDel); render(); return; }
-  const mlv=e.target.closest('[data-mlevel-cycle]'); if(mlv){ cycleMistakeLevel(mlv.dataset.mlevelCycle); viewMistakes(); return; }
-  const mf=e.target.closest('[data-mfilter]'); if(mf){ mistakeFilter=mf.dataset.mfilter; viewMistakes(); return; }
-  const lf=e.target.closest('[data-lfilter]'); if(lf){ mistakeLevelFilter=lf.dataset.lfilter; viewMistakes(); return; }
-  const fclr=e.target.closest('[data-favclear]'); if(fclr){ if(fclr.dataset.armed){ FAV={}; saveFav(); viewFavs(); } else { fclr.dataset.armed='1'; fclr.textContent='再点一次清空'; } return; }
-  if(e.target.closest('[data-favflip]')){ favFlip=!favFlip; renderFavFc(); return; }
-  if(e.target.closest('[data-favprev]')){ if(favIdx>0){ favIdx--; favFlip=false; renderFavFc(); } return; }
-  if(e.target.closest('[data-favnext]')){ favIdx=(favIdx+1)%favDeck.length; favFlip=false; renderFavFc(); return; }
-  if(e.target.closest('[data-favback]')){ navTo('#/favs'); return; }
   const go=e.target.closest('[data-go]'); if(go){ if(go.dataset.mod) setModule(go.dataset.mod); navTo(go.dataset.go); return; }
   const an=e.target.closest('[data-ans]'); if(an){ const a=document.getElementById(an.dataset.ans); if(a){ a.classList.toggle('show'); an.textContent=a.classList.contains('show')?'隐藏答案':'显示答案'; } return; }
-});
-app.addEventListener('input', e=>{
-  if(e.target.id==='mistakeInput') mistakeDraft=e.target.value;
 });
 /* 判分与还原共用。log=false 用于 render() 后重放已答过的题——
    那时错题早就记过了，再记一次会在错题本里出现重复。 */
@@ -1299,39 +1258,39 @@ function shownFavIds(groups){
 function viewFavs(){
   setNav('favs'); setHeader(LX('收藏 · 生词本','Favorites · Word Book'), false);
   const ids=Object.keys(FAV);
-  if(!ids.length){ app.innerHTML='<div class="empty">还没有收藏。<br>选中页面里的文字，即可收藏到生词本。</div>'; return; }
-  const tagMap={grammar:'<span class="mtag g">N3语法</span>', n2grammar:'<span class="mtag g2">N2语法</span>', vocab:'<span class="mtag v">N3词汇</span>', kanji:'<span class="mtag k">N3汉字</span>', n2vocab:'<span class="mtag v2">N2词汇</span>', n2kanji:'<span class="mtag k2">N2汉字</span>', n4grammar:'<span class="mtag g4">N4语法</span>', n4vocab:'<span class="mtag v4">N4词汇</span>', n4kanji:'<span class="mtag k4">N4汉字</span>', selection:'<span class="mtag mt-selection">划词</span>'};
   const groups=favGroups();
   const presentMods=FAV_MOD_ORDER.filter(m=>groups[m]&&groups[m].length);
   if(favFilter!=='all' && !(groups[favFilter]&&groups[favFilter].length)) favFilter='all';
   const selectionIds=ids.filter(id=>SELECTION_FAV_TYPES[(FAV[id]||{}).selectionType]);
   const presentSelectionTypes=Object.keys(SELECTION_FAV_TYPES).filter(k=>selectionIds.some(id=>(FAV[id]||{}).selectionType===k));
   if(favSelectionFilter!=='all' && !presentSelectionTypes.includes(favSelectionFilter)) favSelectionFilter='all';
-  const shownIds = shownFavIds(groups);
-  const filterBar = presentMods.length>1 ? `<div class="fc-filter" style="margin-bottom:12px">
-    <button class="${favFilter==='all'?'on':''}" data-favfilter="all">全部（${ids.length}）</button>
-    ${presentMods.map(m=>`<button class="${favFilter===m?'on':''}" data-favfilter="${m}">${FAV_MOD_LABEL[m]}（${groups[m].length}）</button>`).join('')}
-  </div>` : '';
-  const typeFilterBar = presentSelectionTypes.length ? `<div class="fc-filter fav-type-filter" style="margin-bottom:12px">
-    <span>划词类别</span><button class="${favSelectionFilter==='all'?'on':''}" data-selfavfilter="all">全部</button>
-    ${presentSelectionTypes.map(k=>`<button class="${favSelectionFilter===k?'on':''}" data-selfavfilter="${k}">${SELECTION_FAV_TYPES[k]}（${selectionIds.filter(id=>(FAV[id]||{}).selectionType===k).length}）</button>`).join('')}
-  </div>` : '';
-  if(favStudyMode){
-    const rows=shownIds.map(id=>{ const s=FAV[id]||{}; const tag=(tagMap[s.module]||'')+(s.selectionType?`<span class="mtag mt-${escAttr(s.selectionType)}">${SELECTION_FAV_TYPES[s.selectionType]}</span>`:''); return {ts:s.ts,jp:s.jp||'',cn:s.cn||'',tag}; });
-    app.innerHTML=studyToolbar('fav',rows.length)+studyRowsHTML(rows,'fav');
-    return;
-  }
-  let html=`<div class="fav-actions"><button class="primary" data-favfc>▶ 用收藏刷闪卡（${shownIds.length}）</button><button data-favstudy="1">背诵模式</button><button data-favclear>清空收藏</button></div>${filterBar}${typeFilterBar}<div class="card">`;
-  shownIds.forEach(id=>{
-    const s=FAV[id]||{};
-    const tag=(tagMap[s.module]||'')+(s.selectionType?`<span class="mtag mt-${escAttr(s.selectionType)}">${SELECTION_FAV_TYPES[s.selectionType]}</span>`:'');
-    html+=`<div class="fav-item"><button class="starb" data-fav="${escAttr(id)}" aria-label="取消收藏">★</button>
-      <div class="fj" data-go="${esc(s.hash||'#/')}" data-mod="${esc(s.module==='selection'?'':(s.module||''))}"><div class="t jp">${tag}${esc(s.jp||'')}</div>${s.cn?`<div class="c">${esc(s.cn)}</div>`:''}</div>
-      <span class="fw">${s.selectionType?'划词':`第${esc(String(s.w||''))}週${esc(String(s.d||''))}日`}</span></div>`;
+  // 表示する id は startFavFc() と同じ shownFavIds() で出す。React 側で組み直すと
+  // 一覧と闪卡の中身がずれる余地ができる。
+  showReactPage('favs', {
+    total: ids.length,
+    items: shownFavIds(groups).map(id=>Object.assign({id}, FAV[id]||{})),
+    filter: favFilter, selectionFilter: favSelectionFilter,
+    mods: presentMods.map(m=>({key:m, label:FAV_MOD_LABEL[m], count:groups[m].length})),
+    selTypes: presentSelectionTypes.map(k=>({key:k, label:SELECTION_FAV_TYPES[k], count:selectionIds.filter(id=>(FAV[id]||{}).selectionType===k).length})),
+    selLabels: SELECTION_FAV_TYPES,
+    studyMode: favStudyMode, hideJp: studyHideJapanese, hideCn: studyHideTranslation,
   });
-  html+='</div>';
-  app.innerHTML=html;
 }
+window.__studyFavs = {
+  setFilter: f=>{ favFilter=f; viewFavs(); },
+  setSelectionFilter: t=>{ favSelectionFilter=t; viewFavs(); },
+  toggle: id=>{ toggleFav(id); viewFavs(); },
+  clear: ()=>{ FAV={}; saveFav(); viewFavs(); },
+  study: on=>{ favStudyMode=!!on; viewFavs(); },
+  hide: kind=>{ if(kind==='jp') studyHideJapanese=!studyHideJapanese; else studyHideTranslation=!studyHideTranslation; viewFavs(); },
+  open: (hash, mod)=>{ if(mod) setModule(mod); navTo(hash); },
+  startFc: ()=>{ startFavFc(); },
+  fcFlip: ()=>{ favFlip=!favFlip; renderFavFc(); },
+  fcNext: ()=>{ favIdx=(favIdx+1)%favDeck.length; favFlip=false; renderFavFc(); },
+  fcPrev: ()=>{ if(favIdx>0){ favIdx--; favFlip=false; renderFavFc(); } },
+  fcBack: ()=>{ navTo('#/favs'); },
+};
+
 function startFavFc(){
   const groups=favGroups();
   const ids = shownFavIds(groups);
@@ -1343,13 +1302,8 @@ function renderFavFc(){
   if(!favDeck.length){ viewFavs(); return; }
   setNav('favs'); setHeader(LX('收藏 · 闪卡','Favorites · Flashcards'), false);
   const c=favDeck[favIdx];
-  const card = favFlip
-    ? `<div class="fcard" data-favflip><div class="backside" style="text-align:center"><div class="jp" style="font-weight:700;font-size:24px">${esc(c.jp)} ${sayBtn(c.jp)}</div>${c.cn?`<div style="font-size:18px;margin-top:12px">${esc(c.cn)}</div>`:''}</div></div>`
-    : `<div class="fcard" data-favflip><div class="big jp">${esc(c.jp)}</div><div class="hint">点击翻面看释义</div></div>`;
-  app.innerHTML=`<div class="fc-wrap"><div class="fc-prog">${favIdx+1} / ${favDeck.length}</div>${card}
-    <div class="fc-btns"><button data-favprev>‹ 上一张</button><button class="primary" data-favnext>下一张 ›</button><button data-favback>返回收藏</button></div></div>`;
+  showReactPage('favfc', {jp:c.jp||'', cn:c.cn||'', idx:favIdx, total:favDeck.length, flipped:favFlip});
 }
-
 /* ---------- contrast (语法辨析, N3 grammar only) ---------- */
 let ctMode='family', ctWeek=1;
 // 每个语法家族末尾的辨析练习：选项就是这一族的成员，逼着你在易混形式之间做选择。

@@ -177,13 +177,23 @@ function ExerciseCard({ exercise, disc, active, playing, onToggle }: { exercise:
 }
 
 function StructuredTextBlock({ block, disc, active, playing, onToggle }: { block: ListeningTextBlock; disc: Disc; active: AudioCue; playing: boolean; onToggle: (cue: AudioCue) => void }) {
-	if (block.kind === "heading") return <h3 className="listening-book-block__heading">{block.text}</h3>;
-	if (block.kind === "tip") return <aside className="listening-book-block__tip">{block.text}</aside>;
-	if (block.kind === "note") return <p className="listening-book-block__note">{block.text}</p>;
-	if (block.kind === "example") return <p className="listening-book-block__example">{block.text}</p>;
-	if (block.kind === "paragraph") return <p className="listening-book-block__paragraph">{block.text}</p>;
-	if (block.kind === "list" || block.kind === "options") return <ol className={`listening-book-block__${block.kind}`}>{block.items.map((item, index) => <li key={`${item}-${index}`}>{item}</li>)}</ol>;
-	return <section className="listening-book-question"><header><h4>{block.title}</h4>{block.tracks?.length ? <div className="listening-exercise__tracks">{block.tracks.map((track) => <CueButton key={track} cue={{ disc, track }} active={active} playing={playing} onToggle={onToggle} />)}</div> : null}</header>{block.options?.length ? <ol>{block.options.map((option, index) => <li key={`${option}-${index}`}>{option}</li>)}</ol> : null}</section>;
+	switch (block.kind) {
+		case "heading":
+			return <h3 className="listening-book-block__heading">{block.text}</h3>;
+		case "tip":
+			return <aside className="listening-book-block__tip">{block.text}</aside>;
+		case "note":
+			return <p className="listening-book-block__note">{block.text}</p>;
+		case "example":
+			return <p className="listening-book-block__example">{block.text}</p>;
+		case "paragraph":
+			return <p className="listening-book-block__paragraph">{block.text}</p>;
+		case "list":
+		case "options":
+			return <ol className={`listening-book-block__${block.kind}`}>{block.items.map((item, index) => <li key={`${item}-${index}`}>{item}</li>)}</ol>;
+		case "question":
+			return <section className="listening-book-question"><header><h4>{block.title}</h4>{block.tracks?.length ? <div className="listening-exercise__tracks">{block.tracks.map((track) => <CueButton key={track} cue={{ disc, track }} active={active} playing={playing} onToggle={onToggle} />)}</div> : null}</header>{block.options?.length ? <ol>{block.options.map((option, index) => <li key={`${option}-${index}`}>{option}</li>)}</ol> : null}</section>;
+	}
 }
 
 function StructuredPageCard({ page, disc, active, playing, onToggle }: { page: ListeningTextPage; disc: Disc; active: AudioCue; playing: boolean; onToggle: (cue: AudioCue) => void }) {

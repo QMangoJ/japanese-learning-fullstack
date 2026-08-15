@@ -74,7 +74,7 @@ function StudySideEntries() {
 				link.className = entry.className;
 				if (document.body.classList.contains(entry.activeClass)) link.classList.add("on");
 				link.innerHTML = `<span>${entry.icon}</span><span>${entry.label}</span><small>${entry.note}</small>`;
-				contentSection.append(link);
+				contentSection.appendChild(link);
 			});
 		};
 
@@ -102,7 +102,9 @@ function StudyModeBridge() {
 
 		const title = document.querySelector("#title");
 		const titleObserver = title ? new MutationObserver(keepModeTitle) : null;
-		titleObserver?.observe(title, { childList: true, characterData: true, subtree: true });
+		if (title && titleObserver) {
+			titleObserver.observe(title, { childList: true, characterData: true, subtree: true });
+		}
 
 		const syncActiveState = (mode: StudyMode | null) => {
 			activeMode = mode;
@@ -137,6 +139,10 @@ function StudyModeBridge() {
 		const enterModule = (mode: StudyMode) => {
 			const app = readingApp();
 			if (!app) return;
+			// 首页・搜索・收藏等は #app ではなく CommonPageHost に描画される。
+			// 旧 #app だけを隠してもその React 页面が前面に残り、読解／聴解を
+			// 押しても「反応がない」ように見えるため、モードを開く前に外す。
+			window.dispatchEvent(new CustomEvent("study:common-page", { detail: null }));
 			if (moduleRoot) {
 				moduleRoot.unmount();
 				app.replaceChildren();

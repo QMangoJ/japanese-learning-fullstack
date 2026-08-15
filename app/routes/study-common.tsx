@@ -7,7 +7,7 @@ import { Fragment, useEffect, useReducer, useRef, useState, type ReactNode } fro
  * viewHenkei は setNav・setHeader を済ませたあと showCommonPage() を呼ぶ。
  * クラス名と DOM 構造は移行前の文字列組み立てと同じものを再現している。 */
 
-export type CommonPage = "ref" | "katsuyou" | "henkei" | "numbers" | "search" | "cards" | "home";
+export type CommonPage = "ref" | "katsuyou" | "henkei" | "numbers" | "search" | "cards" | "home" | "mistakes" | "favs" | "favfc";
 
 /* legacy の markStar(): ★ だけを .num-x で包む */
 function Star({ text }: { text: unknown }) {
@@ -86,7 +86,17 @@ function SayButton({ text }: { text?: string }) {
 	// data-say は読み上げ対象そのものを表すデータ属性なので移行前と同じく残す。
 	// 実際の発火は #app の委任ではなく onClick。
 	return (
-		<button className="sayb" data-say={text} aria-label="朗读" onClick={() => window.__studySay?.(text)}>
+		<button
+			className="sayb"
+			data-say={text}
+			aria-label="朗读"
+			onClick={(event) => {
+				// legacy の委任ハンドラは朗読を処理した時点で return していた。
+				// 闪卡の中では親の「翻面」まで発火させないことで同じ挙動を保つ。
+				event.stopPropagation();
+				window.__studySay?.(text);
+			}}
+		>
 			🔊
 		</button>
 	);
@@ -763,6 +773,384 @@ function SearchPage() {
 	);
 }
 
+/* ---------------- 背诵模式（错题本と收藏で共用） ---------------- */
+
+type StudyRow = { ts?: number; jp?: string; cn?: string; tags?: { cls: string; label: string }[] };
+
+function mistakeDate(ts: number) {
+	const d = new Date(ts);
+	const pad = (n: number) => String(n).padStart(2, "0");
+	return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+}
+
+function studyDateGroups(rows: StudyRow[]) {
+	const groups: Record<string, StudyRow[]> = {};
+	rows.forEach((row) => {
+		const day = row.ts ? mistakeDate(row.ts) : "早期记录";
+		(groups[day] = groups[day] || []).push(row);
+	});
+	return Object.keys(groups)
+		.sort((a, b) => b.localeCompare(a))
+		.map((day) => ({ day, rows: groups[day] }));
+}
+
+function StudyToolbar({ count, hideJp, hideCn, onBack, onHide }: {
+	count: number; hideJp: boolean; hideCn: boolean; onBack: () => void; onHide: (kind: "jp" | "cn") => void;
+}) {
+	return (
+		<div className="study-toolbar">
+			<button className="primary" onClick={onBack}>‹ 返回列表</button>
+			<span>{count} 条</span>
+			<div>
+				<button className={hideJp ? "on" : ""} data-study-hide="jp" onClick={() => onHide("jp")}>日语</button>
+				<button className={hideCn ? "on" : ""} data-study-hide="cn" onClick={() => onHide("cn")}>翻译 / 答案</button>
+			</div>
+		</div>
+	);
+}
+
+function StudyRows({ rows, kind, hideJp, hideCn }: { rows: StudyRow[]; kind: "mistake" | "fav"; hideJp: boolean; hideCn: boolean }) {
+	return (
+		<div className={"study-columns" + (hideJp ? " study-hide-jp" : "") + (hideCn ? " study-hide-cn" : "")}>
+			<div className="study-columns__head">
+				<b>日本語</b>
+				<b>{kind === "mistake" ? "答え・メモ" : "翻译"}</b>
+			</div>
+			{studyDateGroups(rows).map((group) => (
+				<section className="study-date-group" key={group.day}>
+					<h3>
+						{group.day}
+						<small>{group.rows.length} 条</small>
+					</h3>
+					{group.rows.map((row, i) => (
+						<article className="study-row" key={i}>
+							<div className="study-jp">
+								{(row.tags || []).map((t, j) => (
+									<span className={`mtag ${t.cls}`} key={j}>{t.label}</span>
+								))}
+								{row.jp || ""}
+							</div>
+							<div className="study-cn">{row.cn ? row.cn : "—"}</div>
+						</article>
+					))}
+				</section>
+			))}
+		</div>
+	);
+}
+
+/* ---------------- 错题本 ---------------- */
+
+type MistakesData = {
+	list: any[]; addType: string; filter: string; levelFilter: string;
+	types: Record<string, string>; levels: Record<string, string>; levelOrder: string[];
+	typeCounts: Record<string, number>; levelCounts: Record<string, number>;
+	studyMode: boolean; hideJp: boolean; hideCn: boolean; draft: string;
+};
+
+/* 錯題本の答え合わせ用：「你的答案：」以降を切り、「正确答案：」を訳側に回す */
+function mistakeStudyParts(m: any): { jp: string; cn: string } {
+	const text = String(m.text || "");
+	const correct = text.match(/(?:^|\n)正确答案：\s*([^\n]+)/);
+	const question = text.replace(/(?:\n|^)你的答案：[\s\S]*$/, "").trim();
+	return { jp: question || text, cn: correct ? correct[1] : "" };
+}
+
+/* 改行入りのメモは <br> で折り返していた */
+function Lines({ text }: { text: string }) {
+	const parts = String(text).split("\n");
+	return (
+		<>
+			{parts.map((line, i) => (
+				<Fragment key={i}>
+					{i > 0 ? <br /> : null}
+					{line}
+				</Fragment>
+			))}
+		</>
+	);
+}
+
+function MistakesPage({ data }: { data: MistakesData }) {
+	const bridge = window.__studyMistakes;
+	// 下書きは legacy の mistakeDraft が持つ。非制御にしておくと再描画が挟まっても
+	// 入力中のカーソルまで保たれる（legacy は innerHTML ごと書き直していた）。
+	const input = useRef<HTMLTextAreaElement>(null);
+	if (!bridge) return null;
+
+	if (data.studyMode) {
+		const rows = data.list.map((m) => ({ ts: m.ts, ...mistakeStudyParts(m) }));
+		return (
+			<>
+				<StudyToolbar
+					count={rows.length}
+					hideJp={data.hideJp}
+					hideCn={data.hideCn}
+					onBack={() => bridge.study(false)}
+					onHide={(kind) => bridge.hide(kind)}
+				/>
+				<StudyRows rows={rows} kind="mistake" hideJp={data.hideJp} hideCn={data.hideCn} />
+			</>
+		);
+	}
+
+	return (
+		<>
+			<div className="card mistake-widget" style={{ marginBottom: "14px" }}>
+				<div className="mistake-types" id="mistakeTypes">
+					{Object.entries(data.types).map(([key, label]) => (
+						<button className={key === data.addType ? "on" : ""} data-mtype={key} key={key} onClick={() => bridge.setType(key)}>
+							{label}
+						</button>
+					))}
+				</div>
+				<textarea
+					id="mistakeInput"
+					ref={input}
+					className="mistake-input"
+					rows={2}
+					placeholder="记一下考试错题、老是记不住的单词或语法点……"
+					defaultValue={data.draft}
+					onChange={(event) => bridge.setDraft(event.currentTarget.value)}
+				/>
+				<button
+					className="primary"
+					data-mistake-add=""
+					onClick={() => {
+						const value = input.current?.value ?? "";
+						if (!value.trim()) return;
+						// 保存後は legacy が mistakeDraft を空にする。非制御なので
+						// DOM の値はこちらで消さないと前の文が残る。
+						if (input.current) input.current.value = "";
+						bridge.add(value);
+					}}
+				>
+					保存
+				</button>
+			</div>
+			<div className="fc-filter" style={{ marginBottom: "8px" }}>
+				<button className={data.filter === "all" ? "on" : ""} data-mfilter="all" onClick={() => bridge.setFilter("all")}>
+					全部（{data.typeCounts.all}）
+				</button>
+				{Object.entries(data.types).map(([key, label]) => (
+					<button className={data.filter === key ? "on" : ""} data-mfilter={key} key={key} onClick={() => bridge.setFilter(key)}>
+						{label}（{data.typeCounts[key] ?? 0}）
+					</button>
+				))}
+			</div>
+			<div className="fc-filter" style={{ marginBottom: "14px" }}>
+				<button className={data.levelFilter === "all" ? "on" : ""} data-lfilter="all" onClick={() => bridge.setLevelFilter("all")}>
+					熟练度：全部（{data.levelCounts.all}）
+				</button>
+				{data.levelOrder.map((key) => (
+					<button className={data.levelFilter === key ? "on" : ""} data-lfilter={key} key={key} onClick={() => bridge.setLevelFilter(key)}>
+						{data.levels[key]}（{data.levelCounts[key] ?? 0}）
+					</button>
+				))}
+			</div>
+			<div className="study-entry">
+				<button data-mstudy="1" onClick={() => bridge.study(true)}>背诵模式（{data.list.length}）</button>
+			</div>
+			{data.list.length ? (
+				data.list.map((m) => {
+					const level = m.level || "new";
+					return (
+						<div className="mistake-item" key={m.id}>
+							<div className="mistake-item-head">
+								<span className={`mtag mt-${m.type}`}>{data.types[m.type] || m.type}</span>
+								<button className={`mlvl ml-${level}`} data-mlevel-cycle={m.id} aria-label="切换熟练度" onClick={() => bridge.cycleLevel(m.id)}>
+									{data.levels[level]}
+								</button>
+								<span className="mistake-date">{mistakeDate(m.ts)}</span>
+								<button className="mistake-del" data-mistake-del={m.id} aria-label="删除" onClick={() => bridge.remove(m.id)}>
+									✕
+								</button>
+							</div>
+							<div className="mistake-text">
+								<Lines text={m.text} />
+							</div>
+						</div>
+					);
+				})
+			) : (
+				<div className="empty">还没有记录，在上面写一条保存试试。</div>
+			)}
+		</>
+	);
+}
+
+/* ---------------- 收藏 ---------------- */
+
+type FavItem = { id: string; module?: string; selectionType?: string; jp?: string; cn?: string; hash?: string; w?: any; d?: any; ts?: number };
+type FavsData = {
+	total: number; items: FavItem[]; filter: string; selectionFilter: string;
+	mods: { key: string; label: string; count: number }[];
+	selTypes: { key: string; label: string; count: number }[];
+	selLabels: Record<string, string>;
+	studyMode: boolean; hideJp: boolean; hideCn: boolean;
+};
+
+const FAV_MOD_TAG: Record<string, string> = {
+	grammar: "g", n2grammar: "g2", vocab: "v", kanji: "k", n2vocab: "v2",
+	n2kanji: "k2", n4grammar: "g4", n4vocab: "v4", n4kanji: "k4", selection: "mt-selection",
+};
+const FAV_MOD_TAG_LABEL: Record<string, string> = {
+	grammar: "N3语法", n2grammar: "N2语法", vocab: "N3词汇", kanji: "N3汉字", n2vocab: "N2词汇",
+	n2kanji: "N2汉字", n4grammar: "N4语法", n4vocab: "N4词汇", n4kanji: "N4汉字", selection: "划词",
+};
+const favTags = (item: FavItem, selLabels: Record<string, string>) => {
+	const tags: { cls: string; label: string }[] = [];
+	if (item.module && FAV_MOD_TAG[item.module]) tags.push({ cls: FAV_MOD_TAG[item.module], label: FAV_MOD_TAG_LABEL[item.module] });
+	if (item.selectionType) tags.push({ cls: `mt-${item.selectionType}`, label: selLabels[item.selectionType] });
+	return tags;
+};
+
+function FavsPage({ data }: { data: FavsData }) {
+	const bridge = window.__studyFavs;
+	// 「清空收藏」は 2 度押し。legacy は data-armed を DOM に置いていたので、
+	// 何かの再描画が挟まれば解除された。payload が変わったら戻すことで揃える。
+	const [armed, setArmed] = useState(false);
+	useEffect(() => setArmed(false), [data]);
+	if (!bridge) return null;
+
+	if (!data.total) {
+		return (
+			<div className="empty">
+				还没有收藏。
+				<br />
+				选中页面里的文字，即可收藏到生词本。
+			</div>
+		);
+	}
+
+	if (data.studyMode) {
+		const rows = data.items.map((s) => ({ ts: s.ts, jp: s.jp || "", cn: s.cn || "", tags: favTags(s, data.selLabels) }));
+		return (
+			<>
+				<StudyToolbar
+					count={rows.length}
+					hideJp={data.hideJp}
+					hideCn={data.hideCn}
+					onBack={() => bridge.study(false)}
+					onHide={(kind) => bridge.hide(kind)}
+				/>
+				<StudyRows rows={rows} kind="fav" hideJp={data.hideJp} hideCn={data.hideCn} />
+			</>
+		);
+	}
+
+	return (
+		<>
+			<div className="fav-actions">
+				<button className="primary" data-favfc="" onClick={() => bridge.startFc()}>
+					▶ 用收藏刷闪卡（{data.items.length}）
+				</button>
+				<button data-favstudy="1" onClick={() => bridge.study(true)}>背诵模式</button>
+				<button
+					data-favclear=""
+					{...(armed ? { "data-armed": "1" } : null)}
+					onClick={() => (armed ? bridge.clear() : setArmed(true))}
+				>
+					{armed ? "再点一次清空" : "清空收藏"}
+				</button>
+			</div>
+			{data.mods.length > 1 ? (
+				<div className="fc-filter" style={{ marginBottom: "12px" }}>
+					<button className={data.filter === "all" ? "on" : ""} data-favfilter="all" onClick={() => bridge.setFilter("all")}>
+						全部（{data.total}）
+					</button>
+					{data.mods.map((m) => (
+						<button className={data.filter === m.key ? "on" : ""} data-favfilter={m.key} key={m.key} onClick={() => bridge.setFilter(m.key)}>
+							{m.label}（{m.count}）
+						</button>
+					))}
+				</div>
+			) : null}
+			{data.selTypes.length ? (
+				<div className="fc-filter fav-type-filter" style={{ marginBottom: "12px" }}>
+					<span>划词类别</span>
+					<button
+						className={data.selectionFilter === "all" ? "on" : ""}
+						data-selfavfilter="all"
+						onClick={() => bridge.setSelectionFilter("all")}
+					>
+						全部
+					</button>
+					{data.selTypes.map((t) => (
+						<button
+							className={data.selectionFilter === t.key ? "on" : ""}
+							data-selfavfilter={t.key}
+							key={t.key}
+							onClick={() => bridge.setSelectionFilter(t.key)}
+						>
+							{t.label}（{t.count}）
+						</button>
+					))}
+				</div>
+			) : null}
+			<div className="card">
+				{data.items.map((s) => (
+					<div className="fav-item" key={s.id}>
+						<button className="starb" data-fav={s.id} aria-label="取消收藏" onClick={() => bridge.toggle(s.id)}>
+							★
+						</button>
+						<div
+							className="fj"
+							data-go={s.hash || "#/"}
+							data-mod={s.module === "selection" ? "" : s.module || ""}
+							onClick={() => bridge.open(s.hash || "#/", s.module === "selection" ? "" : s.module || "")}
+						>
+							<div className="t jp">
+								{favTags(s, data.selLabels).map((t, i) => (
+									<span className={`mtag ${t.cls}`} key={i}>{t.label}</span>
+								))}
+								{s.jp || ""}
+							</div>
+							{s.cn ? <div className="c">{s.cn}</div> : null}
+						</div>
+						<span className="fw">{s.selectionType ? "划词" : `第${s.w ?? ""}週${s.d ?? ""}日`}</span>
+					</div>
+				))}
+			</div>
+		</>
+	);
+}
+
+/* 收藏から作る闪卡。山は legacy の favDeck が持つ。 */
+function FavFcPage({ data }: { data: { jp: string; cn: string; idx: number; total: number; flipped: boolean } }) {
+	const bridge = window.__studyFavs;
+	if (!bridge) return null;
+	return (
+		<div className="fc-wrap">
+			<div className="fc-prog">
+				{data.idx + 1} / {data.total}
+			</div>
+			<Fragment key={`${data.idx}-${data.flipped}`}>
+				{data.flipped ? (
+					<div className="fcard" data-favflip="" onClick={() => bridge.fcFlip()}>
+						<div className="backside" style={{ textAlign: "center" }}>
+							<div className="jp" style={{ fontWeight: 700, fontSize: "24px" }}>
+								{data.jp} <SayButton text={data.jp} />
+							</div>
+							{data.cn ? <div style={{ fontSize: "18px", marginTop: "12px" }}>{data.cn}</div> : null}
+						</div>
+					</div>
+				) : (
+					<div className="fcard" data-favflip="" onClick={() => bridge.fcFlip()}>
+						<div className="big jp">{data.jp}</div>
+						<div className="hint">点击翻面看释义</div>
+					</div>
+				)}
+			</Fragment>
+			<div className="fc-btns">
+				<button data-favprev="" onClick={() => bridge.fcPrev()}>‹ 上一张</button>
+				<button className="primary" data-favnext="" onClick={() => bridge.fcNext()}>下一张 ›</button>
+				<button data-favback="" onClick={() => bridge.fcBack()}>返回收藏</button>
+			</div>
+		</div>
+	);
+}
+
 /* ---------------- 首页（週アコーディオン） ---------------- */
 
 /* 一目でその日の内容が分かるように：語法日は文型、漢字日は漢字、語彙日は先頭の語 */
@@ -1089,6 +1477,35 @@ declare global {
 			prev: () => void;
 			shuffle: () => void;
 		};
+		/* 错题本 / 收藏：ユーザーデータそのもの。MISTAKES・FAV とフィルタ状態は
+		   すべて legacy 側に置き、React は描画とこの窓口の呼び出しだけを行う。
+		   星は未移行の毎日ビューにも出ていて、/api の resync も legacy が回すので、
+		   真実を2か所に持たせない。 */
+		__studyMistakes?: {
+			setType: (type: string) => void;
+			setDraft: (value: string) => void;
+			add: (text: string) => void;
+			remove: (id: string) => void;
+			cycleLevel: (id: string) => void;
+			setFilter: (filter: string) => void;
+			setLevelFilter: (filter: string) => void;
+			study: (on: boolean) => void;
+			hide: (kind: "jp" | "cn") => void;
+		};
+		__studyFavs?: {
+			setFilter: (filter: string) => void;
+			setSelectionFilter: (type: string) => void;
+			toggle: (id: string) => void;
+			clear: () => void;
+			study: (on: boolean) => void;
+			hide: (kind: "jp" | "cn") => void;
+			open: (hash: string, module: string) => void;
+			startFc: () => void;
+			fcFlip: () => void;
+			fcNext: () => void;
+			fcPrev: () => void;
+			fcBack: () => void;
+		};
 		/* 首页：週の開閉はモジュールごとに legacy の openWeeks が覚えている */
 		__studyHome?: {
 			open: () => Set<number>;
@@ -1124,6 +1541,9 @@ export function CommonPageHost() {
 			{page === "search" ? <SearchPage /> : null}
 			{page === "cards" ? <CardsPage /> : null}
 			{page === "home" ? <HomePage data={data} /> : null}
+			{page === "mistakes" ? <MistakesPage data={data} /> : null}
+			{page === "favs" ? <FavsPage data={data} /> : null}
+			{page === "favfc" ? <FavFcPage data={data} /> : null}
 		</main>
 	);
 }
