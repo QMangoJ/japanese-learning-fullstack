@@ -209,9 +209,10 @@ function ConnBlock({ connection }: { connection?: string }) {
 
 /* legacy の refTable() */
 function RefTable({ cols, rows }: { cols?: unknown[]; rows: unknown[][] }) {
+	const isWide = (cols?.length ?? 0) > 4;
 	return (
-		<div className="table-scroll">
-			<table className="ref">
+		<div className={`table-scroll${isWide ? " table-scroll--wide-ref" : ""}`}>
+			<table className={`ref${isWide ? " ref--wide" : ""}`}>
 				<tbody>
 					{cols ? (
 						<tr>
@@ -1182,6 +1183,7 @@ function HomePage({ data }: { data: { weeks: any[]; intro: string; lang: string 
 	if (!home) return null;
 	const open = home.open();
 	const lx = (cn?: string, en?: string) => (data.lang === "en" && en ? en : cn || "");
+	const isEnglish = data.lang === "en";
 
 	return (
 		<>
@@ -1203,7 +1205,7 @@ function HomePage({ data }: { data: { weeks: any[]; intro: string; lang: string 
 									bump();
 								}}
 							>
-								第{w.n}周
+								{isEnglish ? `Week ${w.n}` : `第${w.n}周`}
 							</a>
 						))}
 					</div>
@@ -1226,11 +1228,12 @@ function HomePage({ data }: { data: { weeks: any[]; intro: string; lang: string 
 						>
 							<div className="wk-t">
 								<h2>
-									第{w.n}週{w.title ? <> <span className="jp">{w.title}</span></> : null}
+									{isEnglish ? `Week ${w.n}` : `第${w.n}週`}
+									{w.title ? <> <span className="jp">{w.title}</span></> : null}
 								</h2>
 								{sub ? <div className="sub">{sub}</div> : null}
 							</div>
-							<span className="cnt">{w.days.length}天</span>
+							<span className="cnt">{isEnglish ? `${w.days.length} days` : `${w.days.length}天`}</span>
 							<span className="cv">{isOpen ? "▾" : "▸"}</span>
 						</div>
 						{isOpen ? (
@@ -1244,9 +1247,9 @@ function HomePage({ data }: { data: { weeks: any[]; intro: string; lang: string 
 												data-go={`#/day/${w.n}-${d.day}`}
 												key={d.day}
 												onClick={() => window.__studyNav?.(`#/day/${w.n}-${d.day}`)}
-											>
-												<div className="d">
-													{d.day}日目{d.day === 7 ? " · 实战" : ""}
+										>
+											<div className="d">
+												{isEnglish ? `Day ${d.day}${d.day === 7 ? " · Test" : ""}` : `${d.day}日目${d.day === 7 ? " · 实战" : ""}`}
 												</div>
 												<div className="t jp">
 													<Rr o={d} f="title" />

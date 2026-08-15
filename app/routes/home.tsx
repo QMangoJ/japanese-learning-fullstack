@@ -61,20 +61,21 @@ function StudySideEntries() {
 			const footer = side?.querySelector(".side-foot");
 			if (!side || !footer) return;
 			const contentSection = Array.from(side.querySelectorAll<HTMLElement>(".side-sec"))
-				.find((section) => section.querySelector(".side-h")?.textContent?.includes("内容"));
+				.find((section) => section.querySelector("[data-gotype]"));
 			if (!contentSection) return;
+			const isEnglish = window.localStorage.getItem("lang") === "en";
 			const entries = [
-				{ className: "side-reader-link", activeClass: "reader-mode-active", icon: "📕", label: "读解", note: "6周" },
-				{ className: "side-listening-link", activeClass: "listening-mode-active", icon: "🎧", label: "听解", note: "5章" },
+				{ className: "side-reader-link", activeClass: "reader-mode-active", icon: "📕", label: isEnglish ? "Reading" : "读解", note: isEnglish ? "6 weeks" : "6周" },
+				{ className: "side-listening-link", activeClass: "listening-mode-active", icon: "🎧", label: isEnglish ? "Listening" : "听解", note: isEnglish ? "5 chapters" : "5章" },
 			];
 			entries.forEach((entry) => {
-				if (contentSection.querySelector(`.${entry.className}`)) return;
-				const link = document.createElement("a");
+				let link = contentSection.querySelector<HTMLAnchorElement>(`.${entry.className}`);
+				if (!link) link = document.createElement("a");
 				link.href = "/study";
-				link.className = entry.className;
-				if (document.body.classList.contains(entry.activeClass)) link.classList.add("on");
-				link.innerHTML = `<span>${entry.icon}</span><span>${entry.label}</span><small>${entry.note}</small>`;
-				contentSection.appendChild(link);
+				link.className = `${entry.className}${document.body.classList.contains(entry.activeClass) ? " on" : ""}`;
+				const html = `<span>${entry.icon}</span><span>${entry.label}</span><small>${entry.note}</small>`;
+				if (link.innerHTML !== html) link.innerHTML = html;
+				if (!link.isConnected) contentSection.appendChild(link);
 			});
 		};
 
@@ -96,7 +97,8 @@ function StudyModeBridge() {
 		const keepModeTitle = () => {
 			const title = document.querySelector("#title");
 			if (!activeMode || !title) return;
-			const expected = activeMode === "reading" ? "N3 读解" : "N3 听解";
+			const isEnglish = window.localStorage.getItem("lang") === "en";
+			const expected = activeMode === "reading" ? (isEnglish ? "N3 Reading" : "N3 读解") : (isEnglish ? "N3 Listening" : "N3 听解");
 			if (title.textContent !== expected) title.textContent = expected;
 		};
 
@@ -217,15 +219,15 @@ function LegacyStudy() {
 			<div className="topbar" id="topbar">
 				<header className="top">
 					<button className="back" id="backBtn" style={{ display: "none" }}>
-						‹ 返回
+						‹ <span className="lbl" data-cn="返回" data-en="Back">返回</span>
 					</button>
 					<button className="lvchip" id="lvChip" aria-haspopup="dialog">
 						N3 <span className="cv">▾</span>
 					</button>
 					<h1 id="title">日本語上手</h1>
 					<div className="langbar" id="langbar">
-						<button data-lang="cn">中</button>
-						<button data-lang="en">EN</button>
+						<button className="on" data-lang="cn" aria-label="中文" aria-pressed="true">中</button>
+						<button data-lang="en" aria-label="English" aria-pressed="false">English</button>
 					</div>
 					<button className="toggle-all" id="topAction" style={{ display: "none" }} />
 				</header>
@@ -240,8 +242,8 @@ function LegacyStudy() {
 						<button data-ty="kanji">
 							📙 <span className="lbl" data-cn="汉字" data-en="Kanji">汉字</span>
 						</button>
-						<a className="reader-mode-link" href="/study">📕 <span>读解</span></a>
-						<a className="listening-mode-link" href="/study">🎧 <span>听解</span></a>
+						<a className="reader-mode-link" href="/study">📕 <span className="lbl" data-cn="读解" data-en="Reading">读解</span></a>
+						<a className="listening-mode-link" href="/study">🎧 <span className="lbl" data-cn="听解" data-en="Listening">听解</span></a>
 					</div>
 				</div>
 			</div>

@@ -15,7 +15,11 @@ function saveLastVisit(hash){
   try{ localStorage.setItem('lastVisit', JSON.stringify(lastVisit)); }catch(e){}
 }
 let LANG = 'cn';
-try{ const l=localStorage.getItem('lang'); if(l==='en'||l==='cn') LANG=l; }catch(e){}
+try{
+  const l=localStorage.getItem('lang');
+  if(l==='en'||l==='cn') LANG=l;
+  else localStorage.setItem('lang',LANG);
+}catch(e){}
 const LX = (cn,en)=> (LANG==='en' && en) ? en : (cn||'');
 const CUR = ()=> ({vocab:V, n2grammar:G2, kanji:K, n2vocab:V2, n2kanji:K2, n4grammar:G4, n4vocab:V4, n4kanji:K4}[MODULE]) || G;
 const isGram = ()=> MODULE==='grammar'||MODULE==='n2grammar'||MODULE==='n4grammar';
@@ -34,7 +38,7 @@ function syncRubyBtn(){
   const off = document.body.classList.contains('no-ruby');
   topAction.textContent = 'ふ';
   topAction.classList.toggle('on', !off);
-  topAction.title = off ? '注音：关' : '注音：开';
+  topAction.title = off ? LX('注音：关','Readings: off') : LX('注音：开','Readings: on');
   topAction.setAttribute('aria-label', topAction.title);
 }
 topAction.onclick = ()=>{
@@ -46,9 +50,9 @@ topAction.onclick = ()=>{
 function memBarHTML(){
   const on=(cls)=>document.body.classList.contains(cls)?'on':'';
   return `<div class="mem-bar">
-    <button data-memtoggle="ruby" class="${document.body.classList.contains('no-ruby')?'':'on'}">读音</button>
-    <button data-memtoggle="jp" class="${on('hide-jp')?'':'on'}">汉字</button>
-    <button data-memtoggle="cn" class="${on('hide-cn')?'':'on'}">翻译</button>
+    <button data-memtoggle="ruby" class="${document.body.classList.contains('no-ruby')?'':'on'}">${LX('读音','Readings')}</button>
+    <button data-memtoggle="jp" class="${on('hide-jp')?'':'on'}">${LX('汉字','Japanese')}</button>
+    <button data-memtoggle="cn" class="${on('hide-cn')?'':'on'}">${LX('翻译','Translation')}</button>
   </div>`;
 }
 function syncMemBar(){
@@ -67,7 +71,7 @@ let jaVoice=null;
 function pickVoice(){ try{ const vs=speechSynthesis.getVoices()||[]; jaVoice=vs.find(v=>/^ja/i.test(v.lang))||vs.find(v=>/japan/i.test(v.name))||null; }catch(e){} }
 if('speechSynthesis' in window){ pickVoice(); try{ speechSynthesis.onvoiceschanged=pickVoice; }catch(e){} }
 function say(t){ try{ if(!('speechSynthesis' in window)||!t) return; speechSynthesis.cancel(); const u=new SpeechSynthesisUtterance(t); u.lang='ja-JP'; u.rate=.9; if(jaVoice)u.voice=jaVoice; speechSynthesis.speak(u); }catch(e){} }
-function sayBtn(t){ return t?`<button class="sayb" data-say="${escAttr(t)}" aria-label="朗读">🔊</button>`:''; }
+function sayBtn(t){ return t?`<button class="sayb" data-say="${escAttr(t)}" aria-label="${LX('朗读','Play audio')}">🔊</button>`:''; }
 
 /* ---- 收藏 (生词本) ---- 本地 localStorage 即时可用，同时后台与 /api/favorites (Cloudflare KV) 同步实现跨设备 */
 /* ---------- 错题/生词本 (自己录入的错题、忘记的单词/语法，纯本地存储) ---------- */
@@ -199,23 +203,26 @@ async function pullFavsFromServer(){
 }
 function isFav(id){ return !!FAV[id]; }
 function toggleFav(id){ if(FAV[id]) delete FAV[id]; else if(FAVMETA[id]) FAV[id]=Object.assign({}, FAVMETA[id], {ts:Date.now()}); saveFav(); }
-function star(id, snap){ FAVMETA[id]=snap; return `<button class="starb" data-fav="${escAttr(id)}" aria-label="收藏">${isFav(id)?'★':'☆'}</button>`; }
+function star(id, snap){ FAVMETA[id]=snap; return `<button class="starb" data-fav="${escAttr(id)}" aria-label="${LX('收藏','Save to favorites')}">${isFav(id)?'★':'☆'}</button>`; }
 function syncFavButton(button){
   const active=isFav(button.dataset.fav);
   if(button.dataset.favStyle==='exam'){
-    button.textContent=active?'★ 已收藏':'☆ 收藏错题';
+    button.textContent=active?LX('★ 已收藏','★ Saved'):LX('☆ 收藏错题','☆ Save question');
     button.classList.toggle('on',active);
-    button.setAttribute('aria-label',active?'取消收藏错题':'收藏错题');
+    button.setAttribute('aria-label',active?LX('取消收藏错题','Remove from favorites'):LX('收藏错题','Save question'));
     button.setAttribute('aria-pressed',active?'true':'false');
   }else{
     button.textContent=active?'★':'☆';
-    button.setAttribute('aria-label',active?'取消收藏':'收藏');
+    button.setAttribute('aria-label',active?LX('取消收藏','Remove from favorites'):LX('收藏','Save to favorites'));
   }
 }
 
 /* ---------- 划词收藏 ---------- */
 // 划词条目和普通收藏共用 FAV，因此同样能写入 Cloudflare KV，在其它设备继续复习。
-const SELECTION_FAV_TYPES={newword:'生词',word:'单词',sentence:'句子',q:'错题',grammar:'语法'};
+const SELECTION_FAV_TYPES={
+  newword:['生词','New word'], word:['单词','Word'], sentence:['句子','Sentence'],
+  q:['错题','Mistake'], grammar:['语法','Grammar']
+};
 let selectionFavType='word', selectionText='', selectionPopover=null, selectionPopoverTimer=null, selectionCheckTimer=null;
 function normalizeSelectionText(t){ return String(t||'').replace(/\s+/g,' ').trim(); }
 function selectionFavId(type, text){
@@ -235,8 +242,8 @@ function ensureSelectionPopover(){
   if(selectionPopover) return selectionPopover;
   const el=document.createElement('div');
   el.id='selectionPopover'; el.className='selection-popover'; el.hidden=true;
-  el.setAttribute('role','dialog'); el.setAttribute('aria-label','收藏划词');
-  el.innerHTML=`<div class="selection-popover__title">收藏到生词本</div><div class="selection-popover__text"></div><div class="selection-popover__types"></div><div class="selection-popover__actions"><button type="button" data-selection-cancel>取消</button><button type="button" class="primary" data-selection-save>收藏</button></div>`;
+  el.setAttribute('role','dialog');
+  el.innerHTML=`<div class="selection-popover__title"></div><div class="selection-popover__text"></div><div class="selection-popover__types"></div><div class="selection-popover__actions"><button type="button" data-selection-cancel></button><button type="button" class="primary" data-selection-save></button></div>`;
   el.addEventListener('click', e=>{
     const type=e.target.closest('[data-selection-type]');
     if(type){ selectionFavType=type.dataset.selectionType; renderSelectionPopover(); return; }
@@ -248,8 +255,13 @@ function ensureSelectionPopover(){
 }
 function renderSelectionPopover(){
   const el=ensureSelectionPopover();
+  el.setAttribute('aria-label',LX('收藏划词','Save selected text'));
+  el.querySelector('.selection-popover__title').textContent=LX('收藏到生词本','Save to word book');
+  el.querySelector('[data-selection-cancel]').textContent=LX('取消','Cancel');
+  el.querySelector('[data-selection-save]').textContent=LX('收藏','Save');
+  el.querySelector('[data-selection-save]').disabled=false;
   el.querySelector('.selection-popover__text').textContent=selectionText;
-  el.querySelector('.selection-popover__types').innerHTML=Object.entries(SELECTION_FAV_TYPES).map(([k,v])=>`<button type="button" class="${k===selectionFavType?'on':''}" data-selection-type="${k}">${v}</button>`).join('');
+  el.querySelector('.selection-popover__types').innerHTML=Object.entries(SELECTION_FAV_TYPES).map(([k,v])=>`<button type="button" class="${k===selectionFavType?'on':''}" data-selection-type="${k}">${esc(LX(v[0],v[1]))}</button>`).join('');
 }
 function hideSelectionPopover(){
   clearTimeout(selectionPopoverTimer);
@@ -269,11 +281,11 @@ function saveSelectedText(){
   const id=selectionFavId(selectionFavType,text);
   FAV[id]={
     module:'selection', selectionType:selectionFavType, hash:routeKey(),
-    w:'', d:'', jp:text, cn:`划词收藏 · ${SELECTION_FAV_TYPES[selectionFavType]}`, ts:Date.now()
+    w:'', d:'', jp:text, cn:`划词收藏 · ${SELECTION_FAV_TYPES[selectionFavType][0]}`, ts:Date.now()
   };
   saveFav(); renderSide();
   const btn=selectionPopover&&selectionPopover.querySelector('[data-selection-save]');
-  if(btn){ btn.textContent='已收藏'; btn.disabled=true; }
+  if(btn){ btn.textContent=LX('已收藏','Saved'); btn.disabled=true; }
   try{ document.getSelection().removeAllRanges(); }catch(e){}
   clearTimeout(selectionPopoverTimer);
   selectionPopoverTimer=setTimeout(hideSelectionPopover,700);
@@ -312,6 +324,7 @@ deriveLT();
 function moduleFrom(lv,ty){ return LT2MOD[lv+':'+ty] || 'grammar'; }
 function syncModeBar(){
   deriveLT();
+  document.documentElement.lang = LANG==='en' ? 'en' : 'zh-CN';
   lvChip.firstChild.nodeValue = LEVEL.toUpperCase()+' ';
   // 读解/听解を開いている間、typebar の選択は React 側（.reader-mode-link /
   // .listening-mode-link）が持つ。ここで TYPE から点け直すと、popstate 由来の
@@ -319,7 +332,11 @@ function syncModeBar(){
   const modeActive = document.body.classList.contains('reader-mode-active')
                   || document.body.classList.contains('listening-mode-active');
   document.querySelectorAll('#typebar button').forEach(b=>b.classList.toggle('on', !modeActive && b.dataset.ty===TYPE));
-  document.querySelectorAll('#langbar button').forEach(b=>b.classList.toggle('on', b.dataset.lang===LANG));
+  document.querySelectorAll('#langbar button').forEach(b=>{
+    const active=b.dataset.lang===LANG;
+    b.classList.toggle('on',active);
+    b.setAttribute('aria-pressed',active?'true':'false');
+  });
   document.querySelectorAll('.lbl[data-cn]').forEach(el=>{ el.textContent = LX(el.dataset.cn, el.dataset.en); });
 }
 function setModule(m){
@@ -335,26 +352,26 @@ sheetMask.onclick = closeSheet;
 document.addEventListener('keydown', e=>{ if(e.key==='Escape' && !sheetEl.hidden) closeSheet(); });
 const LEVEL_LIST=[['n4','N4','基础'],['n3','N3','进阶'],['n2','N2','高阶']];
 function openLevelSheet(){
-  openSheet(`<div class="sheet-h">选择级别<span class="sub">当前 · ${modLabel()}</span></div>
+  openSheet(`<div class="sheet-h">${LX('选择级别','Choose a level')}<span class="sub">${LX('当前','Current')} · ${modLabel()}</span></div>
     <div class="sheet-row">` + LEVEL_LIST.map(([lv,name,sub])=>
-      `<button class="sheet-item ${lv===LEVEL?'on':''}" data-golevel="${lv}"><span class="ic">${name}</span><span class="sub">${sub}</span></button>`
+      `<button class="sheet-item ${lv===LEVEL?'on':''}" data-golevel="${lv}"><span class="ic">${name}</span><span class="sub">${LX(sub,{基础:'Foundation',进阶:'Intermediate',高阶:'Advanced'}[sub])}</span></button>`
     ).join('') + `</div>`);
 }
 // 接续表 / 活用 / 数字讲的是日语本身，不属于任何级别，所以放在这个全局弹层里，
 // 每个页面都够得着；辨析是某个级别的语法家族对照，只在有数据时才出现，并标级别。
 function openCommonSheet(){
   const ct = isGram() && hasContrast(MODULE);
-  openSheet(`<div class="sheet-h">通用知识<span class="sub">不分级别</span></div>
+  openSheet(`<div class="sheet-h">${LX('通用知识','General reference')}<span class="sub">${LX('不分级别','All levels')}</span></div>
     <div class="sheet-row">
-      <button class="sheet-item" data-go="#/ref"><span class="ic">📖</span>接续表</button>
-      <button class="sheet-item" data-go="#/katsuyou"><span class="ic">🔄</span>活用</button>
-      <button class="sheet-item" data-go="#/henkei"><span class="ic">✍️</span>变形</button>
-      <button class="sheet-item" data-go="#/numbers"><span class="ic">🔢</span>数字</button>
+      <button class="sheet-item" data-go="#/ref"><span class="ic">📖</span>${LX('接续表','Connections')}</button>
+      <button class="sheet-item" data-go="#/katsuyou"><span class="ic">🔄</span>${LX('活用','Conjugation')}</button>
+      <button class="sheet-item" data-go="#/henkei"><span class="ic">✍️</span>${LX('变形','Verb forms')}</button>
+      <button class="sheet-item" data-go="#/numbers"><span class="ic">🔢</span>${LX('数字','Numbers')}</button>
     </div>
-    <div class="sheet-h">本模块<span class="sub">${modLabel()}</span></div>
+    <div class="sheet-h">${LX('本模块','This module')}<span class="sub">${modLabel()}</span></div>
     <div class="sheet-row">
-      <button class="sheet-item scoped" data-go="#/cards"><span class="ic">🗂️</span>记忆卡</button>` +
-      (ct ? `<button class="sheet-item scoped" data-go="#/contrast"><span class="ic">🔀</span>${LEVEL.toUpperCase()}辨析</button>` : '') +
+      <button class="sheet-item scoped" data-go="#/cards"><span class="ic">🗂️</span>${LX('记忆卡','Flashcards')}</button>` +
+      (ct ? `<button class="sheet-item scoped" data-go="#/contrast"><span class="ic">🔀</span>${LEVEL.toUpperCase()} ${LX('辨析','Contrast')}</button>` : '') +
       `<span class="sheet-item" style="visibility:hidden"></span>${ct?'':'<span class="sheet-item" style="visibility:hidden"></span>'}
     </div>`);
 }
@@ -443,7 +460,7 @@ app.addEventListener('click', e=>{
     }
     return;
   }
-  const an=e.target.closest('[data-ans]'); if(an){ const a=document.getElementById(an.dataset.ans); if(a){ a.classList.toggle('show'); an.textContent=a.classList.contains('show')?'隐藏答案':'显示答案'; } return; }
+  const an=e.target.closest('[data-ans]'); if(an){ const a=document.getElementById(an.dataset.ans); if(a){ a.classList.toggle('show'); an.textContent=a.classList.contains('show')?LX('隐藏答案','Hide answer'):LX('显示答案','Show answer'); } return; }
 });
 /* 判分与还原共用。log=false 用于 render() 后重放已答过的题——
    那时错题早就记过了，再记一次会在错题本里出现重复。 */
@@ -457,13 +474,13 @@ function gradeQz(wrap, picked, log){
   });
   const qEl=wrap.closest('.q'); if(!qEl) return;
   const r=qEl.querySelector('.qz-result');
-  if(r){ r.textContent = picked===correct?'✓ 答对了':'✗ 答错了'; r.classList.add(picked===correct?'ok':'ng'); }
+  if(r){ r.textContent = picked===correct?LX('✓ 答对了','✓ Correct'):LX('✗ 答错了','✗ Incorrect'); r.classList.add(picked===correct?'ok':'ng'); }
   const note=qEl.querySelector('.qz-note'); if(note) note.classList.add('show');
   if(log && picked!==correct){
     const qText=(qEl.querySelector('.jp')||{}).textContent||'';
     const pickedBtn=wrap.querySelector(`[data-optidx="${picked}"]`);
     const correctBtn=wrap.querySelector(`[data-optidx="${correct}"]`);
-    addMistake('q', `${qText.trim()}\n你的答案：${((pickedBtn?pickedBtn.textContent:'')||'').trim()}\n正确答案：${((correctBtn?correctBtn.textContent:'')||'').trim()}`);
+    addMistake('q', `${qText.trim()}\n${LX('你的答案','Your answer')}：${((pickedBtn?pickedBtn.textContent:'')||'').trim()}\n${LX('正确答案','Correct answer')}：${((correctBtn?correctBtn.textContent:'')||'').trim()}`);
   }
 }
 /* 答题状态同样只存在 DOM 里。按页面上第几道题来对应，
@@ -496,33 +513,33 @@ function renderSide(){
                   || document.body.classList.contains('listening-mode-active');
   const h = modeActive ? '' : routeKey();
   const LV = LEVEL.toUpperCase();
-  const weeksOf = ty => { const w=((DATA[moduleFrom(LEVEL,ty)]||{}).weeks||[]).length; return w?w+'周':''; };
+  const weeksOf = ty => { const w=((DATA[moduleFrom(LEVEL,ty)]||{}).weeks||[]).length; return w?LX(w+'周',w+' weeks'):''; };
   // 在某个模块的首页或某一天里，才算「正待在这个类型上」
   const inModule = h==='#/' || h.startsWith('#/day/');
-  const types = [['grammar','📘','语法'],['vocab','📗','词汇'],['kanji','📙','汉字']];
+  const types = [['grammar','📘',LX('语法','Grammar')],['vocab','📗',LX('词汇','Vocabulary')],['kanji','📙',LX('汉字','Kanji')]];
   const favCount = Object.keys(FAV).length;
   sideEl.innerHTML =
     `<div class="side-brand">日本語上手</div>
-     <div class="side-sec"><div class="side-h">级别</div>
+     <div class="side-sec"><div class="side-h">${LX('级别','Level')}</div>
        <div class="side-seg">` + LEVEL_LIST.map(([lv,name])=>
          `<button class="${lv===LEVEL?'on':''}" data-golevel="${lv}">${name}</button>`).join('') + `</div>
      </div>
-     <div class="side-sec"><div class="side-h">${LV} 内容</div>` +
+     <div class="side-sec"><div class="side-h">${LV} ${LX('内容','Content')}</div>` +
        types.map(([ty,ic,label])=>
          `<button class="side-item ${(inModule && ty===TYPE)?'on':''}" data-gotype="${ty}"><span class="ic">${ic}</span>${label}<span class="ct">${weeksOf(ty)}</span></button>`
        ).join('') + `</div>
-     <div class="side-sec"><div class="side-h">通用知识 <span class="n">· 不分级别</span></div>` +
-       sideRow('#/ref','📖','接续表',null,h==='#/ref') +
-       sideRow('#/katsuyou','🔄','活用',null,h==='#/katsuyou') +
-       sideRow('#/henkei','✍️','变形',null,h==='#/henkei') +
-       sideRow('#/numbers','🔢','数字',null,h==='#/numbers') + `</div>
-     <div class="side-sec"><div class="side-h">本模块</div>` +
-       sideRow('#/cards','🗂️','记忆卡',null,h==='#/cards') +
-       (isGram() && hasContrast(MODULE) ? sideRow('#/contrast','🔀',LV+'辨析',null,h==='#/contrast') : '') + `</div>
+     <div class="side-sec"><div class="side-h">${LX('通用知识','General reference')} <span class="n">· ${LX('不分级别','All levels')}</span></div>` +
+       sideRow('#/ref','📖',LX('接续表','Connections'),null,h==='#/ref') +
+       sideRow('#/katsuyou','🔄',LX('活用','Conjugation'),null,h==='#/katsuyou') +
+       sideRow('#/henkei','✍️',LX('变形','Verb forms'),null,h==='#/henkei') +
+       sideRow('#/numbers','🔢',LX('数字','Numbers'),null,h==='#/numbers') + `</div>
+     <div class="side-sec"><div class="side-h">${LX('本模块','This module')}</div>` +
+       sideRow('#/cards','🗂️',LX('记忆卡','Flashcards'),null,h==='#/cards') +
+       (isGram() && hasContrast(MODULE) ? sideRow('#/contrast','🔀',LV+' '+LX('辨析','Contrast'),null,h==='#/contrast') : '') + `</div>
      <div class="side-foot">` +
-       sideRow('#/search','🔍','搜索',null,h==='#/search') +
-       sideRow('#/mistakes','📝','错题本',MISTAKES.length||'',h==='#/mistakes') +
-       sideRow('#/favs','⭐','收藏',favCount||'',h==='#/favs') + `</div>`;
+       sideRow('#/search','🔍',LX('搜索','Search'),null,h==='#/search') +
+       sideRow('#/mistakes','📝',LX('错题本','Mistakes'),MISTAKES.length||'',h==='#/mistakes') +
+       sideRow('#/favs','⭐',LX('收藏','Favorites'),favCount||'',h==='#/favs') + `</div>`;
 }
 sideEl.addEventListener('click', e=>{
   const lv=e.target.closest('[data-golevel]');
@@ -677,7 +694,7 @@ function toggleWeek(n){
 /* ---------- shared helpers ---------- */
 function findDay(w,d){ const wk=CUR().weeks.find(x=>x.n===w); return wk?wk.days.find(x=>x.day===d):null; }
 function ansBlock(id, content){
-  return `<button class="ansbtn" data-ans="${id}">显示答案</button>
+  return `<button class="ansbtn" data-ans="${id}">${LX('显示答案','Show answer')}</button>
   <div class="answer" id="${id}">${content}</div>`;
 }
 function afterRender(scrollP){
@@ -857,8 +874,8 @@ function connHTML(str){
 }
 function connBlockHTML(p){
   if(!p.connection) return '';
-  const hint = /~[^~]+~/.test(p.connection) ? `<span class="conn-hint">（划线部分去掉）</span>` : '';
-  return `<div class="conn jp"><span class="conn-label">接続${hint}</span>${connHTML(p.connection)}</div>`;
+  const hint = /~[^~]+~/.test(p.connection) ? `<span class="conn-hint">${LX('（划线部分去掉）','(omit the underlined part)')}</span>` : '';
+  return `<div class="conn jp"><span class="conn-label">${LX('接続','Connection')}${hint}</span>${connHTML(p.connection)}</div>`;
 }
 function pointHTML(p, wid, i){
   const pid = MODULE+'#'+wid+'#'+i, pw=wid.split('-')[0], pd=wid.split('-')[1];
@@ -880,74 +897,76 @@ function dailyChoiceCodes(answer, count){
   if(count>1 && /^[ab]+$/.test(clean) && clean.length===count) return clean.split('');
   return [clean];
 }
-function dailyChoiceReasonHTML(info){
+function dailyChoiceReasonHTML(info,day){
   const pairs=info.choices||[], codes=dailyChoiceCodes(info.answer,pairs.length);
   if(!pairs.length) return '';
   return `<ol class="daily-choice-reasons">` + pairs.map((pair,index)=>{
     const code=codes[index]||codes[codes.length-1]||'', both=code==='ab'||code==='ba';
     const selected=both
-      ? `a「${esc(pair.a)}」和 b「${esc(pair.b)}」在这里都成立`
+      ? LX(`a「${esc(pair.a)}」和 b「${esc(pair.b)}」在这里都成立`,`Both a「${esc(pair.a)}」 and b「${esc(pair.b)}」 work here`)
       : `${code}「${esc(pair[code]||'')}」`;
-    const reason=both
-      ? '两种表达在本句中都能形成自然、正确的接续，所以答案接受两项。'
-      : `代入后能组成上面的完整句，符合本题句意与语法接续；另一项「${esc(pair[code==='a'?'b':'a'])}」不符合本题所考查的句意或接续。`;
-    return `<li><b>${pairs.length>1?`第${index+1}空：`:''}${selected}</b><span>${reason}</span></li>`;
+    const pointIndex=(info.pointIndexes||[])[index] ?? (info.pointIndexes||[])[0];
+    const point=day&&day.points&&day.points[pointIndex];
+    const usage=point&&LX(point.usage_cn,point.usage_en);
+    const connection=point&&point.connection;
+    const detail=(usage||connection) ? `<span>${usage?esc(usage):''}${connection?`<small>${LX('接续：','Connection: ')}<span class="jp">${fmt(connection)}</span></small>`:''}</span>` : '';
+    return `<li><b>${pairs.length>1?LX(`第${index+1}空：`,`Blank ${index+1}: `):''}${selected}</b>${detail}</li>`;
   }).join('') + `</ol>`;
 }
 function dailyOrderReasonHTML(info,it){
   const options=Object.fromEntries((it.options||[]).map((value,index)=>[index+1,String(value).replace(/^\s*[1-4]\s*/, '').trim()]));
   const ordered=String(info.answer||'').split('→').map(Number).filter(Boolean).map(n=>options[n]).filter(Boolean);
-  return `<div class="daily-order-reason"><b>排列过程：</b>${ordered.map((part,index)=>
-    `<span class="jp"><i>${index+1}</i>${esc(part)}</span>`).join('<em>→</em>')}
-    <p>按这个顺序排列后，助词、修饰关系和句末接续构成自然完整的句子。</p></div>`;
+  return `<div class="daily-order-reason"><b>${LX('排列过程：','Order:')}</b>${ordered.map((part,index)=>
+    `<span class="jp"><i>${index+1}</i>${esc(part)}</span>`).join('<em>→</em>')}</div>`;
 }
 function dailyPointRefsHTML(info,day,w,d){
   const indexes=Array.from(new Set(info.pointIndexes||[])).filter(index=>day.points&&day.points[index]);
   if(!indexes.length) return '';
-  return `<div class="daily-point-refs"><div class="daily-analysis-label">本题对应语法点</div>` + indexes.map(index=>{
+  return `<div class="daily-point-refs"><div class="daily-analysis-label">${LX('本题对应语法点','Grammar point tested')}</div>` + indexes.map(index=>{
     const p=day.points[index];
     return `<button type="button" class="daily-point-ref" data-go="#/day/${w}-${d}/p${index}">
-      <span class="jp">${R(p,'pattern')}</span><span>${esc(LX(p.usage_cn,p.usage_en))}</span><i>跳转 ›</i>
+      <span class="jp">${R(p,'pattern')}</span><span>${esc(LX(p.usage_cn,p.usage_en))}</span><i>${LX('跳转','Open')} ›</i>
     </button>`;
   }).join('') + `</div>`;
 }
 function dailyExercisePanelsHTML(info,it,day,w,d){
   if(!info) return '';
-  const reason=info.type==='order'?dailyOrderReasonHTML(info,it):dailyChoiceReasonHTML(info);
+  const reason=info.type==='order'?dailyOrderReasonHTML(info,it):dailyChoiceReasonHTML(info,day);
   const panelBase=`daily-${w}-${d}-${it.n}`;
   return `<div class="daily-explain">
     <div class="daily-toggle-controls">
       <button type="button" class="daily-toggle daily-translation" data-daily-panel="${panelBase}-translation" aria-controls="${panelBase}-translation" aria-expanded="false">
-        <span class="fold-show">显示翻译</span><span class="fold-hide">隐藏翻译</span>
+        <span class="fold-show">${LX('显示原句翻译','Show sentence translation')}</span><span class="fold-hide">${LX('隐藏原句翻译','Hide sentence translation')}</span>
       </button>
       <button type="button" class="daily-toggle daily-analysis" data-daily-panel="${panelBase}-analysis" aria-controls="${panelBase}-analysis" aria-expanded="false">
-        <span class="fold-show">显示解析</span><span class="fold-hide">隐藏解析</span>
+        <span class="fold-show">${LX('显示解析','Show explanation')}</span><span class="fold-hide">${LX('隐藏解析','Hide explanation')}</span>
       </button>
     </div>
-    <div id="${panelBase}-translation" class="daily-toggle-body daily-translation-body cn" hidden>${esc(info.translation)}</div>
+    <div id="${panelBase}-translation" class="daily-toggle-body daily-translation-body cn" hidden><b>${LX('原句翻译：','Sentence translation: ')}</b>${esc(LX(info.translation,info.translation_en))}</div>
     <div id="${panelBase}-analysis" class="daily-toggle-body daily-analysis-body" hidden>
-        <div class="an-answer-key">正确答案：<span class="jp">${esc(info.answer)}</span></div>
-        <div class="an-complete"><b>完整句：</b><span class="jp">${esc(info.completed)}</span></div>
+        <div class="an-answer-key">${LX('正确答案：','Correct answer: ')}<span class="jp">${esc(info.answer)}</span></div>
+        <div class="an-complete"><b>${LX('完整句：','Complete sentence: ')}</b><span class="jp">${esc(info.completed)}</span></div>
         ${reason}${dailyPointRefsHTML(info,day,w,d)}
     </div>
   </div>`;
 }
 function dailyExerciseTranslationHTML(info,module,w,d,it){
-  if(!info||!info.translation) return '';
+  const translation=info&&LX(info.translation,info.translation_en);
+  if(!translation) return '';
   const panelId=`daily-${module}-${w}-${d}-${it.n}-translation`;
   return `<div class="daily-explain daily-explain-translation-only">
     <div class="daily-toggle-controls">
       <button type="button" class="daily-toggle daily-translation" data-daily-panel="${panelId}" aria-controls="${panelId}" aria-expanded="false">
-        <span class="fold-show">显示翻译</span><span class="fold-hide">隐藏翻译</span>
+        <span class="fold-show">${LX('显示原句翻译','Show sentence translation')}</span><span class="fold-hide">${LX('隐藏原句翻译','Hide sentence translation')}</span>
       </button>
     </div>
-    <div id="${panelId}" class="daily-toggle-body daily-translation-body cn" hidden>${esc(info.translation)}</div>
+    <div id="${panelId}" class="daily-toggle-body daily-translation-body cn" hidden><b>${LX('原句翻译：','Sentence translation: ')}</b>${esc(translation)}</div>
   </div>`;
 }
 function viewDayGrammar(day,w,d,scrollP){
   const wk=CUR().weeks.find(x=>x.n===w);
-  const wt = wk.title?` <span class="jp">${esc(wk.title)}</span>（${esc(LX(wk.title_cn, wk.title_en))}）`:` · ${MODULE==='n2grammar'?'N2 语法':(MODULE==='n4grammar'?'N4 语法':'语法')}`;
-  let html = `<div class="crumb">第${w}週${wt}</div>`;
+  const wt = wk.title?` <span class="jp">${esc(wk.title)}</span>（${esc(LX(wk.title_cn, wk.title_en))}）`:` · ${MODULE==='n2grammar'?LX('N2 语法','N2 Grammar'):(MODULE==='n4grammar'?LX('N4 语法','N4 Grammar'):LX('语法','Grammar'))}`;
+  let html = `<div class="crumb">${LX(`第${w}週`,`Week ${w}`)}${wt}</div>`;
   if(d===7){ app.innerHTML = html + examGrammarHTML(day,w); afterRender(scrollP); return; }
   html += `<h2 class="page jp">${R(day,'title')} <span class="meta">${esc(LX(day.title_cn, day.title_en))}</span></h2>`;
   if(day.dialog){
@@ -959,12 +978,12 @@ function viewDayGrammar(day,w,d,scrollP){
   if(day.exercises){
     const dailyItems=MODULE==='grammar'&&G.daily_explanations&&G.daily_explanations[`w${w}d${d}`];
     const explanationByNumber=new Map(((dailyItems&&dailyItems.items)||[]).map(item=>[item.n,item]));
-    html += `<div class="sec-title">れんしゅう（练习）</div><div class="card">`;
+    html += `<div class="sec-title">れんしゅう（${LX('练习','Practice')}）</div><div class="card">`;
     for(const sec of (day.exercises.sections||[])){
       html += `<div class="meta jp" style="margin:4px 0 8px">${sec.type==='choice'?'Ⅰ':'Ⅱ'}　${R(sec,'instruction')}</div>`;
       for(const it of (sec.items||[])) html += `<div class="q daily-q"><div class="daily-qline"><span class="n">${it.n}</span><span class="jp">${R(it,'q')}</span></div>${optsRow(it)}${dailyExercisePanelsHTML(explanationByNumber.get(it.n),it,day,w,d)}</div>`;
     }
-    if(day.exercises.answers) html += ansBlock(`ans-${w}-${d}`, `<b>答案：</b><span class="jp">${esc(day.exercises.answers)}</span>`);
+    if(day.exercises.answers) html += ansBlock(`ans-${w}-${d}`, `<b>${LX('答案','Answer')}：</b><span class="jp">${esc(day.exercises.answers)}</span>`);
     else if(day.exercises.answers_note) html += `<div class="meta">${esc(day.exercises.answers_note)}</div>`;
     html += `</div>`;
   }
@@ -976,7 +995,7 @@ function viewDayGrammar(day,w,d,scrollP){
    三种模块的锚点各不相同：语法 pN、词汇 vSI-II、汉字 kKI。 */
 function srcLabel(link){
   const m = String(link||'').match(/^#\/day\/(\d+)-(\d+)\/(.+)$/);
-  if(!m) return '看出处';
+  if(!m) return LX('看出处','View source');
   const w=+m[1], d=+m[2], tok=m[3], dy=findDay(w,d);
   let name='', mm;
   if(dy){
@@ -988,29 +1007,43 @@ function srcLabel(link){
     }
     else if((mm=tok.match(/^k(\d+)$/))){ const k=(dy.kanji||[])[+mm[1]]; if(k) name=esc(k.char); }
   }
-  return `第${w}週${d}日目` + (name ? ` · <span class="jp">${name}</span>` : '');
+  return LX(`第${w}週${d}日目`,`Week ${w} Day ${d}`) + (name ? ` · <span class="jp">${name}</span>` : '');
+}
+function linkedGrammarUsage(link){
+  const m=String(link||'').match(/^#\/day\/(\d+)-(\d+)\/p(\d+)$/);
+  if(!m) return '';
+  const day=findDay(+m[1],+m[2]), point=day&&(day.points||[])[+m[3]];
+  return point ? LX(point.usage_cn,point.usage_en) : '';
 }
 function examNoteHTML(a, it){
   const opts = it.opts_r || (it.opts||[]).map(esc);
-  const optionTranslations = a.option_translations || [];
+  const optionTranslations = LANG==='en' ? (a.option_translations_en||[]) : (a.option_translations||[]);
   let h = a.note ? `<div class="jp">${R(a,'note')}</div>` : '';
-  if(a.trans) h += `<div class="an-trans">${esc(a.trans)}</div>`;
+  const trans=LX(a.trans,a.trans_en);
+  if(trans) h += `<div class="an-trans">${esc(trans)}</div>`;
   if(a.link) h += `<div class="an-link" data-go="${escAttr(a.link)}">📘 ${srcLabel(a.link)} ›</div>`;
-  const why = a.why||[], words = a.words||[];
-  if(!why.length && !a.point && !words.length) return h;
-  h += `<details class="an-more"><summary>详细解析</summary>`;
-  if(why.length) h += `<ol class="an-why">` + why.map((t,i)=>
-    `<li class="${(i+1)===a.ans?'ok':''}"><span class="o jp">${opts[i]||''}</span>${optionTranslations[i]?`<span class="an-opt-trans">${esc(optionTranslations[i])}</span>`:''}<span class="w">${esc(t)}</span></li>`).join('') + `</ol>`;
-  if(a.point) h += `<div class="an-point">要点：${esc(a.point)}</div>`;
+  // 自动生成的“接续、语义不符合题意”没有解释具体错在哪里，不作为解析展示。
+  // 仅保留人工校对过、能指出固定搭配、活用或语义冲突的选项说明。
+  const why = LANG==='en' ? (a.why_en||[]) : (a.why||[]).map(text=>
+    /放入本句后，接续、活用形式或语义不符合题意|接续和句意都成立/.test(text) ? '' : text
+  );
+  const point = LANG==='en' ? linkedGrammarUsage(a.link) : a.point;
+  const words = LANG==='en' ? (a.words||[]).filter(v=>v.en) : (a.words||[]);
+  const hasOptionDetails=opts.some((_,i)=>why[i]||optionTranslations[i]);
+  if(!hasOptionDetails && !point && !words.length) return h;
+  h += `<details class="an-more"><summary>${LX('详细解析','Detailed explanation')}</summary>`;
+  if(hasOptionDetails) h += `<ol class="an-why">` + opts.map((opt,i)=>
+    `<li class="${(i+1)===a.ans?'ok':''}"><span class="o jp">${opt||''}</span>${optionTranslations[i]?`<span class="an-opt-trans">${esc(optionTranslations[i])}</span>`:''}${why[i]?`<span class="w">${esc(why[i])}</span>`:''}</li>`).join('') + `</ol>`;
+  if(point) h += `<div class="an-point">${LX('要点：','Key point: ')}${esc(point)}</div>`;
   // 逐节拆解：把句子切成一个个成分，说清每一节在句子里干什么
-  if((a.parse||[]).length) h += `<div class="an-h">逐节拆解</div><div class="an-words an-parse">` + a.parse.map(v=>
+  if(LANG!=='en' && (a.parse||[]).length) h += `<div class="an-h">逐节拆解</div><div class="an-words an-parse">` + a.parse.map(v=>
     `<div class="an-word"><span class="j jp">${esc(v.t)}</span>${(v.k&&v.k!=='—')?`<span class="k jp">${esc(v.k)}</span>`:''}<span class="m">${esc(v.r)}</span></div>`).join('') + `</div>`;
   // 层层叠加：从最里层的动词开始，一层层接上去，看清整个句型是怎么长出来的
-  if((a.build||[]).length) h += `<div class="an-h">怎么一层层搭起来的</div><ol class="an-build">` + a.build.map((s,i)=>
+  if(LANG!=='en' && (a.build||[]).length) h += `<div class="an-h">怎么一层层搭起来的</div><ol class="an-build">` + a.build.map((s,i)=>
     `<li><span class="a jp">${i?'＋':''}${esc(s.add)}</span><span class="m">${esc(s.mean)}</span>` +
     (s.res===s.add ? '' : `<div class="r jp">${esc(s.res)}</div>`) + `</li>`).join('') + `</ol>`;
-  if(words.length) h += `<div class="an-words"><div class="h">生词</div>` + words.map(v=>
-    `<div class="an-word"><span class="j jp">${esc(v.jp)}</span><span class="k jp">${esc(v.kana)}</span><span class="m">${esc(v.cn)}</span></div>`).join('') + `</div>`;
+  if(words.length) h += `<div class="an-words"><div class="h">${LX('生词','Vocabulary')}</div>` + words.map(v=>
+    `<div class="an-word"><span class="j jp">${esc(v.jp)}</span><span class="k jp">${esc(v.kana)}</span><span class="m">${esc(LX(v.cn,v.en))}</span></div>`).join('') + `</div>`;
   return h + `</details>`;
 }
 function fallbackExamNoteHTML(it,a,module,section){
@@ -1018,6 +1051,20 @@ function fallbackExamNoteHTML(it,a,module,section){
   const answer=opts[(a.ans||1)-1]||'';
   const answerPlain=(it.opts||[])[(a.ans||1)-1]||'';
   const target=it.ul?`「${esc(it.ul)}」`:'题干中的空格';
+  if(LANG==='en'){
+    const rawQuestion=it.q||'', marker='__ANSWER__';
+    let restored='';
+    if(a.order){
+      const order=[...a.order.matchAll(/[1-4]/g)].map(m=>+m[0]); let oi=0;
+      const completed=esc(rawQuestion).replace(/＿{2,}|★/g,()=>`<strong>${esc((it.opts||[])[order[oi++]-1]||'')}</strong>`);
+      if(completed!==esc(rawQuestion)) restored=`<div class="an-complete"><b>Completed question:</b><span class="jp">${completed}</span></div>`;
+    }else{
+      const completed=rawQuestion.replace(/（[ 　_]*）|＿{2,}|_{2,}/,marker);
+      if(completed!==rawQuestion) restored=`<div class="an-complete"><b>Completed sentence:</b><span class="jp">${esc(completed).replace(marker,`<strong>${esc(answerPlain)}</strong>`)}</span></div>`;
+    }
+    const order=a.order?`<div class="an-fallback jp">Order: ${esc(a.order)}</div>`:'';
+    return `<div class="an-answer-key jp">Correct answer: ${a.ans}. ${answer}</div>${restored}${order}`;
+  }
   let hint='结合题干语境，选择最符合题意的表达。';
   if(module==='kanji'){
     if(section==='mondai1') hint=`${target} 的正确读法为上面的选项。`;
@@ -1042,48 +1089,36 @@ function fallbackExamNoteHTML(it,a,module,section){
     const completed=rawQuestion.replace(/（[ 　_]*）|＿{2,}|_{2,}/,marker);
     if(completed!==rawQuestion) restored=`<div class="an-complete"><b>题干还原：</b><span class="jp">${esc(completed).replace(marker,`<strong>${esc(answerPlain)}</strong>`)}</span></div>`;
   }
-  let strategy='先观察空格前后的语法形式和句子意思，再代入选项确认搭配是否自然。';
-  let wrongReason='代入后会与本句所需的接续、含义或固定搭配不一致。';
-  if(module==='grammar'){
-    strategy=section==='mondai2'?'先把四个片段排成自然的句子，再看 ★ 所在位置应放哪一项。':(section==='mondai3'?'结合前后句的逻辑关系，判断最能让段落连贯的表达。':'先确认接续形式，再判断句型表达的语气和含义。');
-    wrongReason='该选项的接续、语气或句型意义不能让这句话自然成立。';
-  }else if(module==='vocab'){
-    strategy=section==='mondai3'?'先抓住题干的核心意思，再比较各选项的近义差别。':'把每个候选词放回原句，核对词义、语感和固定搭配。';
-    wrongReason='词义或搭配与本题语境不符，代入后句意不自然。';
-  }else if(module==='kanji'){
-    strategy=section==='mondai1'?`先锁定标线词 ${target}，再按读音逐音节比对。`:(section==='mondai2'?`先根据句意确认 ${target} 的读音和词义，再选择对应汉字。`:'先把汉字放回词语中，确认能组成正确、自然的词。');
-    wrongReason=section==='mondai1'?'读音与标线汉字不一致。':'不能组成题干要求的正确汉字词或固定表达。';
-  }
-  const choices=(it.opts||[]).map((opt,i)=>`<li class="${i+1===a.ans?'ok':''}"><span class="o jp">${i+1}. ${opts[i]||esc(opt)}</span><span class="w">${i+1===a.ans?'能同时满足本题的语法形式、词义和搭配要求。':wrongReason}</span></li>`).join('');
-  const guided=`<details class="an-more"><summary>详细解析</summary>${restored}<div class="an-h">解题思路</div><ol class="an-solve"><li>${strategy}</li><li>正确项为「<span class="jp">${answer}</span>」，${hint}</li></ol><div class="an-h">选项辨析</div><ol class="an-why">${choices}</ol></details>`;
   const order=a.order?`<div class="an-fallback jp">顺序：${esc(a.order)}</div>`:'';
-  return `<div class="an-answer-key jp">正确答案：${a.ans}. ${answer}</div><div class="an-fallback">${hint}</div>${order}${guided}`;
+  const concreteHint=(module==='kanji' && (section==='mondai1'||section==='mondai2')) || (module==='grammar' && a.order)
+    ? `<div class="an-fallback">${hint}</div>` : '';
+  return `<div class="an-answer-key jp">正确答案：${a.ans}. ${answer}</div>${concreteHint}${restored}${order}`;
 }
 function examExplanationHTML(a,it,module,section){
   const detail=examNoteHTML(a,it);
-  if(!detail) return `<div class="an-explain-title">答案解析</div>`+fallbackExamNoteHTML(it,a,module,section);
+  if(!detail) return `<div class="an-explain-title">${LX('答案解析','Answer explanation')}</div>`+fallbackExamNoteHTML(it,a,module,section);
   // 第 1–4 周原书给的是简要释义；保留原文释义，再补齐与第 5 周相同的解题步骤和选项辨析。
   const hasExpandedSource=!!((a.why||[]).length||a.point||(a.words||[]).length||(a.parse||[]).length||(a.build||[]).length);
-  if(hasExpandedSource) return `<div class="an-explain-title">答案解析</div>`+detail;
+  if(hasExpandedSource) return `<div class="an-explain-title">${LX('答案解析','Answer explanation')}</div>`+detail;
   const generated=fallbackExamNoteHTML(it,a,module,section);
   const detailsAt=generated.indexOf('<details');
-  return `<div class="an-explain-title">答案解析</div>`+detail+(detailsAt>=0?generated.slice(detailsAt):'');
+  return `<div class="an-explain-title">${LX('答案解析','Answer explanation')}</div>`+detail+(detailsAt>=0?generated.slice(detailsAt):'');
 }
 function examQuestionFavoriteHTML(it,module,w,answer,translation){
   const id=`${module}#exam#${w}#${String(it.n)}`;
   const options=(it.opts||it.options||[]).map((option,index)=>`${index+1}. ${option}`);
   const jp=[`${it.n}. ${it.q||''}`, options.join('　')].filter(Boolean).join('\n');
-  const cn=[translation||'', answer?`正确答案：${answer}`:''].filter(Boolean).join('\n');
+  const cn=[translation||'', answer?`${LX('正确答案','Correct answer')}：${answer}`:''].filter(Boolean).join('\n');
   FAVMETA[id]={module,hash:`#/day/${w}-7`,w,d:7,jp,cn,kind:'exam-question'};
   const active=isFav(id);
-  return `<button type="button" class="exam-fav-btn${active?' on':''}" data-fav="${escAttr(id)}" data-fav-style="exam" aria-label="${active?'取消收藏错题':'收藏错题'}" aria-pressed="${active?'true':'false'}">${active?'★ 已收藏':'☆ 收藏错题'}</button>`;
+  return `<button type="button" class="exam-fav-btn${active?' on':''}" data-fav="${escAttr(id)}" data-fav-style="exam" aria-label="${active?LX('取消收藏错题','Remove from favorites'):LX('收藏错题','Save question')}" aria-pressed="${active?'true':'false'}">${active?LX('★ 已收藏','★ Saved'):LX('☆ 收藏错题','☆ Save question')}</button>`;
 }
 function examGrammarHTML(day,w){
   const useBesatsu = MODULE==='grammar';
   const bes = useBesatsu ? (G.besatsu['w'+w]||{}) : {}; const ansMap={};
   if(useBesatsu) for(const k of ['mondai1','mondai2','mondai3']) for(const a of (bes[k]||[])) ansMap[a.n]=a;
   const directAnswers=useBesatsu?{}:parseExamAnswerDetails(day.answers);
-  let html = `<h2 class="page jp">実戦問題 <span class="meta">实战问题 · ${esc(day.time_limit||'')} · ${esc(day.scoring||'')}</span></h2>`;
+  let html = `<h2 class="page jp">実戦問題 <span class="meta">${LX('实战问题','Weekly test')} · ${esc(day.time_limit||'')} · ${esc(day.scoring||'')}</span></h2>`;
   const renderQ = (it,section)=>{
     const a=ansMap[it.n]||directAnswers[it.n];
     let h=`<div class="q"><span class="n">${it.n}</span><span class="jp">${R(it,'q')}</span>`;
@@ -1096,8 +1131,8 @@ function examGrammarHTML(day,w){
       const opts=it.opts_r||(it.opts||[]).map(esc);
       h += `<div class="opts">${opts.map((o,i)=>`<span class="jp">${i+1} ${o}</span>`).join('')}</div>`;
       if(a){
-        let c=`<b>答案：${a.ans}</b>`;
-        if(a.order) c+=`　<span class="jp">顺序：${esc(a.order)}</span>`;
+        let c=`<b>${LX('答案','Answer')}：${a.ans}</b>`;
+        if(a.order) c+=`　<span class="jp">${LX('顺序','Order')}：${esc(a.order)}</span>`;
         const nh2 = examExplanationHTML(a, it, 'grammar', section);
         if(nh2) c+=`<div style="margin-top:4px">${nh2}</div>`;
         h+=ansBlock(`exam-${w}-${it.n}`, c);
@@ -1117,12 +1152,12 @@ function examGrammarHTML(day,w){
     if(day.keigo.quiz){
       const kq = day.keigo.quiz.items_r || (day.keigo.quiz.items||[]).map(esc);
       html += `<div class="meta jp" style="margin-top:6px">${R(day.keigo.quiz,'instruction')}</div>` + kq.map(q=>`<div class="q jp">${q}</div>`).join('');
-      if(day.keigo.quiz.answers) html += ansBlock(`keigo-${w}`, `<b>答案：</b><span class="jp">${R(day.keigo.quiz,'answers')}</span>`);
+      if(day.keigo.quiz.answers) html += ansBlock(`keigo-${w}`, `<b>${LX('答案','Answer')}：</b><span class="jp">${R(day.keigo.quiz,'answers')}</span>`);
     }
     html += `</div>`;
   }
-  if(!useBesatsu && day.answers) html += `<div class="card">` + ansBlock(`examn2-${w}`, `<b>答案：</b><span class="jp">${esc(day.answers)}</span>`) + `</div>`;
-  if(day.answers_note) html += `<div class="meta" style="margin-top:8px">${esc(day.answers_note)}${useBesatsu?'（答案已内置，点击各题「显示答案」）':''}</div>`;
+  if(!useBesatsu && day.answers) html += `<div class="card">` + ansBlock(`examn2-${w}`, `<b>${LX('答案','Answer')}：</b><span class="jp">${esc(day.answers)}</span>`) + `</div>`;
+  if(day.answers_note) html += `<div class="meta" style="margin-top:8px">${LANG==='en'?'Answers are built in. Answer each question to view its explanation.':esc(day.answers_note)+(useBesatsu?'（答案已内置，点击各题「显示答案」）':'')}</div>`;
   return html;
 }
 
