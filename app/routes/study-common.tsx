@@ -1,5 +1,47 @@
 import { Fragment, useEffect, useReducer, useRef, useState, type ReactNode } from "react";
 
+import {
+	afterPaint,
+	addMistakeNote,
+	cardsKind,
+	cardsState,
+	cardsWeeks,
+	clearFavs,
+	clearSearchHistory,
+	closeFavStudyCards,
+	cycleMistakeLevel,
+	deleteMistake,
+	flipCard,
+	flipFavCard,
+	getSearchHistory,
+	getSearchIndex,
+	jumpWeek,
+	navTo,
+	nextCard,
+	nextFavCard,
+	openFav,
+	openSearchHit,
+	openWeekSet,
+	prevCard,
+	prevFavCard,
+	saveSearchHistory,
+	say,
+	setCardsWeek,
+	setFavFilter,
+	setFavSelectionFilter,
+	setFavStudy,
+	setMistakeDraft,
+	setMistakeFilter,
+	setMistakeLevelFilter,
+	setMistakeStudy,
+	setMistakeType,
+	shuffleCards,
+	startFavStudyCards,
+	toggleFav,
+	toggleStudyHide,
+	toggleWeek,
+} from "../study/store";
+
 /* 学習シェル共通ページ：接续表 / 活用 / 变形 / 数字 / 検索 / 記憶カード /
  * 週カタログ / 錯題本 / 收藏。ルーティングと日課本文は app/study が持つ。
  * クラス名と DOM 構造は移行前の文字列組み立てと同じものを再現している。 */
@@ -89,7 +131,7 @@ export function SayButton({ text }: { text?: string }) {
 				// legacy の委任ハンドラは朗読を処理した時点で return していた。
 				// 闪卡の中では親の「翻面」まで発火させないことで同じ挙動を保つ。
 				event.stopPropagation();
-				window.__studySay?.(text);
+				say(text);
 			}}
 		>
 			🔊
@@ -471,7 +513,7 @@ export function HenkeiPage({ data }: { data: any }) {
 						type="button"
 						className="side-item"
 						style={{ display: "inline-flex", width: "auto", padding: "4px 10px", marginLeft: 6 }}
-						onClick={() => window.__studyNav?.("#/ref")}
+						onClick={() => navTo("#/ref")}
 					>
 						📖 接续表
 					</button>
@@ -675,23 +717,25 @@ function Mark({ text, keyword }: { text: string; keyword: string }) {
 
 export function SearchPage() {
 	const [keyword, setKeyword] = useState("");
-	const [history, setHistory] = useState<string[]>(() => window.__studySearch?.history() ?? []);
+	const [history, setHistory] = useState<string[]>(() => getSearchHistory());
 	const inputRef = useRef<HTMLInputElement>(null);
 
 	// legacy は viewSearch の最後で q.focus() していた
 	useEffect(() => inputRef.current?.focus(), []);
 
-	// 毎回ブリッジを呼ぶ。N2/N4 が後から入ったときに結果へ反映させるため。
-	const total = window.__studySearch?.index().length ?? 0;
+	// 毎回索引を取り直す。N2/N4 が後から入ったときに結果へ反映させるため。
+	const total = getSearchIndex().length;
 	const kw = keyword.trim();
 	const hits: Hit[] = kw
-		? (window.__studySearch?.index() ?? []).filter((e: Hit) => {
-				const lk = kw.toLowerCase();
-				return e.key.toLowerCase().includes(lk) || e.reading.includes(kw) || e.extra.toLowerCase().includes(lk);
-			}).slice(0, 60)
+		? getSearchIndex()
+				.filter((e: Hit) => {
+					const lk = kw.toLowerCase();
+					return e.key.toLowerCase().includes(lk) || e.reading.includes(kw) || e.extra.toLowerCase().includes(lk);
+				})
+				.slice(0, 60)
 		: [];
 
-	const openHit = (hit: Hit) => window.__studySearch?.open(hit, kw);
+	const openHit = (hit: Hit) => openSearchHit(hit, kw);
 
 	return (
 		<>
@@ -706,8 +750,8 @@ export function SearchPage() {
 					onChange={(event) => setKeyword(event.currentTarget.value)}
 					onKeyDown={(event) => {
 						if (event.key === "Enter" && keyword.trim()) {
-							window.__studySearch?.saveHistory(keyword.trim());
-							setHistory(window.__studySearch?.history() ?? []);
+							saveSearchHistory(keyword.trim());
+							setHistory(getSearchHistory());
 						}
 					}}
 				/>
@@ -721,7 +765,7 @@ export function SearchPage() {
 									<span>最近搜索</span>
 									<a
 										onClick={() => {
-											window.__studySearch?.clearHistory();
+											clearSearchHistory();
 											setHistory([]);
 										}}
 									>
@@ -870,11 +914,9 @@ function Lines({ text }: { text: string }) {
 }
 
 export function MistakesPage({ data }: { data: MistakesData }) {
-	const bridge = window.__studyMistakes;
-	// 下書きは legacy の mistakeDraft が持つ。非制御にしておくと再描画が挟まっても
+	// 下書きは store の mistakeDraft が持つ。非制御にしておくと再描画が挟まっても
 	// 入力中のカーソルまで保たれる（legacy は innerHTML ごと書き直していた）。
 	const input = useRef<HTMLTextAreaElement>(null);
-	if (!bridge) return null;
 
 	if (data.studyMode) {
 		const rows = data.list.map((m) => ({ ts: m.ts, ...mistakeStudyParts(m) }));
@@ -884,8 +926,8 @@ export function MistakesPage({ data }: { data: MistakesData }) {
 					count={rows.length}
 					hideJp={data.hideJp}
 					hideCn={data.hideCn}
-					onBack={() => bridge.study(false)}
-					onHide={(kind) => bridge.hide(kind)}
+					onBack={() => setMistakeStudy(false)}
+					onHide={(kind) => toggleStudyHide(kind)}
 				/>
 				<StudyRows rows={rows} kind="mistake" hideJp={data.hideJp} hideCn={data.hideCn} />
 			</>
@@ -897,7 +939,7 @@ export function MistakesPage({ data }: { data: MistakesData }) {
 			<div className="card mistake-widget" style={{ marginBottom: "14px" }}>
 				<div className="mistake-types" id="mistakeTypes">
 					{Object.entries(data.types).map(([key, label]) => (
-						<button className={key === data.addType ? "on" : ""} data-mtype={key} key={key} onClick={() => bridge.setType(key)}>
+						<button className={key === data.addType ? "on" : ""} data-mtype={key} key={key} onClick={() => setMistakeType(key)}>
 							{label}
 						</button>
 					))}
@@ -909,7 +951,7 @@ export function MistakesPage({ data }: { data: MistakesData }) {
 					rows={2}
 					placeholder="记一下考试错题、老是记不住的单词或语法点……"
 					defaultValue={data.draft}
-					onChange={(event) => bridge.setDraft(event.currentTarget.value)}
+					onChange={(event) => setMistakeDraft(event.currentTarget.value)}
 				/>
 				<button
 					className="primary"
@@ -917,37 +959,37 @@ export function MistakesPage({ data }: { data: MistakesData }) {
 					onClick={() => {
 						const value = input.current?.value ?? "";
 						if (!value.trim()) return;
-						// 保存後は legacy が mistakeDraft を空にする。非制御なので
+						// 保存後は store が mistakeDraft を空にする。非制御なので
 						// DOM の値はこちらで消さないと前の文が残る。
 						if (input.current) input.current.value = "";
-						bridge.add(value);
+						addMistakeNote(value);
 					}}
 				>
 					保存
 				</button>
 			</div>
 			<div className="fc-filter" style={{ marginBottom: "8px" }}>
-				<button className={data.filter === "all" ? "on" : ""} data-mfilter="all" onClick={() => bridge.setFilter("all")}>
+				<button className={data.filter === "all" ? "on" : ""} data-mfilter="all" onClick={() => setMistakeFilter("all")}>
 					全部（{data.typeCounts.all}）
 				</button>
 				{Object.entries(data.types).map(([key, label]) => (
-					<button className={data.filter === key ? "on" : ""} data-mfilter={key} key={key} onClick={() => bridge.setFilter(key)}>
+					<button className={data.filter === key ? "on" : ""} data-mfilter={key} key={key} onClick={() => setMistakeFilter(key)}>
 						{label}（{data.typeCounts[key] ?? 0}）
 					</button>
 				))}
 			</div>
 			<div className="fc-filter" style={{ marginBottom: "14px" }}>
-				<button className={data.levelFilter === "all" ? "on" : ""} data-lfilter="all" onClick={() => bridge.setLevelFilter("all")}>
+				<button className={data.levelFilter === "all" ? "on" : ""} data-lfilter="all" onClick={() => setMistakeLevelFilter("all")}>
 					熟练度：全部（{data.levelCounts.all}）
 				</button>
 				{data.levelOrder.map((key) => (
-					<button className={data.levelFilter === key ? "on" : ""} data-lfilter={key} key={key} onClick={() => bridge.setLevelFilter(key)}>
+					<button className={data.levelFilter === key ? "on" : ""} data-lfilter={key} key={key} onClick={() => setMistakeLevelFilter(key)}>
 						{data.levels[key]}（{data.levelCounts[key] ?? 0}）
 					</button>
 				))}
 			</div>
 			<div className="study-entry">
-				<button data-mstudy="1" onClick={() => bridge.study(true)}>背诵模式（{data.list.length}）</button>
+				<button data-mstudy="1" onClick={() => setMistakeStudy(true)}>背诵模式（{data.list.length}）</button>
 			</div>
 			{data.list.length ? (
 				data.list.map((m) => {
@@ -956,11 +998,11 @@ export function MistakesPage({ data }: { data: MistakesData }) {
 						<div className="mistake-item" key={m.id}>
 							<div className="mistake-item-head">
 								<span className={`mtag mt-${m.type}`}>{data.types[m.type] || m.type}</span>
-								<button className={`mlvl ml-${level}`} data-mlevel-cycle={m.id} aria-label="切换熟练度" onClick={() => bridge.cycleLevel(m.id)}>
+								<button className={`mlvl ml-${level}`} data-mlevel-cycle={m.id} aria-label="切换熟练度" onClick={() => cycleMistakeLevel(m.id)}>
 									{data.levels[level]}
 								</button>
 								<span className="mistake-date">{mistakeDate(m.ts)}</span>
-								<button className="mistake-del" data-mistake-del={m.id} aria-label="删除" onClick={() => bridge.remove(m.id)}>
+								<button className="mistake-del" data-mistake-del={m.id} aria-label="删除" onClick={() => deleteMistake(m.id)}>
 									✕
 								</button>
 							</div>
@@ -1005,12 +1047,10 @@ const favTags = (item: FavItem, selLabels: Record<string, string>) => {
 };
 
 export function FavsPage({ data }: { data: FavsData }) {
-	const bridge = window.__studyFavs;
 	// 「清空收藏」は 2 度押し。legacy は data-armed を DOM に置いていたので、
 	// 何かの再描画が挟まれば解除された。payload が変わったら戻すことで揃える。
 	const [armed, setArmed] = useState(false);
 	useEffect(() => setArmed(false), [data]);
-	if (!bridge) return null;
 
 	if (!data.total) {
 		return (
@@ -1030,8 +1070,8 @@ export function FavsPage({ data }: { data: FavsData }) {
 					count={rows.length}
 					hideJp={data.hideJp}
 					hideCn={data.hideCn}
-					onBack={() => bridge.study(false)}
-					onHide={(kind) => bridge.hide(kind)}
+					onBack={() => setFavStudy(false)}
+					onHide={(kind) => toggleStudyHide(kind)}
 				/>
 				<StudyRows rows={rows} kind="fav" hideJp={data.hideJp} hideCn={data.hideCn} />
 			</>
@@ -1041,25 +1081,25 @@ export function FavsPage({ data }: { data: FavsData }) {
 	return (
 		<>
 			<div className="fav-actions">
-				<button className="primary" data-favfc="" onClick={() => bridge.startFc()}>
+				<button className="primary" data-favfc="" onClick={() => startFavStudyCards()}>
 					▶ 用收藏刷闪卡（{data.items.length}）
 				</button>
-				<button data-favstudy="1" onClick={() => bridge.study(true)}>背诵模式</button>
+				<button data-favstudy="1" onClick={() => setFavStudy(true)}>背诵模式</button>
 				<button
 					data-favclear=""
 					{...(armed ? { "data-armed": "1" } : null)}
-					onClick={() => (armed ? bridge.clear() : setArmed(true))}
+					onClick={() => (armed ? clearFavs() : setArmed(true))}
 				>
 					{armed ? "再点一次清空" : "清空收藏"}
 				</button>
 			</div>
 			{data.mods.length > 1 ? (
 				<div className="fc-filter" style={{ marginBottom: "12px" }}>
-					<button className={data.filter === "all" ? "on" : ""} data-favfilter="all" onClick={() => bridge.setFilter("all")}>
+					<button className={data.filter === "all" ? "on" : ""} data-favfilter="all" onClick={() => setFavFilter("all")}>
 						全部（{data.total}）
 					</button>
 					{data.mods.map((m) => (
-						<button className={data.filter === m.key ? "on" : ""} data-favfilter={m.key} key={m.key} onClick={() => bridge.setFilter(m.key)}>
+						<button className={data.filter === m.key ? "on" : ""} data-favfilter={m.key} key={m.key} onClick={() => setFavFilter(m.key)}>
 							{m.label}（{m.count}）
 						</button>
 					))}
@@ -1071,7 +1111,7 @@ export function FavsPage({ data }: { data: FavsData }) {
 					<button
 						className={data.selectionFilter === "all" ? "on" : ""}
 						data-selfavfilter="all"
-						onClick={() => bridge.setSelectionFilter("all")}
+						onClick={() => setFavSelectionFilter("all")}
 					>
 						全部
 					</button>
@@ -1080,7 +1120,7 @@ export function FavsPage({ data }: { data: FavsData }) {
 							className={data.selectionFilter === t.key ? "on" : ""}
 							data-selfavfilter={t.key}
 							key={t.key}
-							onClick={() => bridge.setSelectionFilter(t.key)}
+							onClick={() => setFavSelectionFilter(t.key)}
 						>
 							{t.label}（{t.count}）
 						</button>
@@ -1090,14 +1130,14 @@ export function FavsPage({ data }: { data: FavsData }) {
 			<div className="card">
 				{data.items.map((s) => (
 					<div className="fav-item" key={s.id}>
-						<button className="starb" data-fav={s.id} aria-label="取消收藏" onClick={() => bridge.toggle(s.id)}>
+						<button className="starb" data-fav={s.id} aria-label="取消收藏" onClick={() => toggleFav(s.id)}>
 							★
 						</button>
 						<div
 							className="fj"
 							data-go={s.hash || "#/"}
 							data-mod={s.module === "selection" ? "" : s.module || ""}
-							onClick={() => bridge.open(s.hash || "#/", s.module === "selection" ? "" : s.module || "")}
+							onClick={() => openFav(s.hash || "#/", s.module === "selection" ? "" : s.module || "")}
 						>
 							<div className="t jp">
 								{favTags(s, data.selLabels).map((t, i) => (
@@ -1117,8 +1157,6 @@ export function FavsPage({ data }: { data: FavsData }) {
 
 /* 收藏から作る闪卡。山は legacy の favDeck が持つ。 */
 export function FavFcPage({ data }: { data: { jp: string; cn: string; idx: number; total: number; flipped: boolean } }) {
-	const bridge = window.__studyFavs;
-	if (!bridge) return null;
 	return (
 		<div className="fc-wrap">
 			<div className="fc-prog">
@@ -1126,7 +1164,7 @@ export function FavFcPage({ data }: { data: { jp: string; cn: string; idx: numbe
 			</div>
 			<Fragment key={`${data.idx}-${data.flipped}`}>
 				{data.flipped ? (
-					<div className="fcard" data-favflip="" onClick={() => bridge.fcFlip()}>
+					<div className="fcard" data-favflip="" onClick={() => flipFavCard()}>
 						<div className="backside" style={{ textAlign: "center" }}>
 							<div className="jp" style={{ fontWeight: 700, fontSize: "24px" }}>
 								{data.jp} <SayButton text={data.jp} />
@@ -1135,16 +1173,16 @@ export function FavFcPage({ data }: { data: { jp: string; cn: string; idx: numbe
 						</div>
 					</div>
 				) : (
-					<div className="fcard" data-favflip="" onClick={() => bridge.fcFlip()}>
+					<div className="fcard" data-favflip="" onClick={() => flipFavCard()}>
 						<div className="big jp">{data.jp}</div>
 						<div className="hint">点击翻面看释义</div>
 					</div>
 				)}
 			</Fragment>
 			<div className="fc-btns">
-				<button data-favprev="" onClick={() => bridge.fcPrev()}>‹ 上一张</button>
-				<button className="primary" data-favnext="" onClick={() => bridge.fcNext()}>下一张 ›</button>
-				<button data-favback="" onClick={() => bridge.fcBack()}>返回收藏</button>
+				<button data-favprev="" onClick={() => prevFavCard()}>‹ 上一张</button>
+				<button className="primary" data-favnext="" onClick={() => nextFavCard()}>下一张 ›</button>
+				<button data-favback="" onClick={() => closeFavStudyCards()}>返回收藏</button>
 			</div>
 		</div>
 	);
@@ -1173,15 +1211,13 @@ export function HomePage({ data }: { data: { weeks: any[]; intro: string; lang: 
 	// legacy は render() の最後で必ず updateStickyVars() していた。--hometoph は
 	// .home-top を実測して決まるので、React では commit 後でないと測れない。
 	useEffect(() => {
-		window.__studyAfterPaint?.();
+		afterPaint();
 		if (jumpTo == null) return;
 		document.getElementById("wk-" + jumpTo)?.scrollIntoView({ behavior: "auto", block: "start" });
 		setJumpTo(null);
 	});
 
-	const home = window.__studyHome;
-	if (!home) return null;
-	const open = home.open();
+	const open = openWeekSet();
 	const lx = (cn?: string, en?: string) => (data.lang === "en" && en ? en : cn || "");
 	const isEnglish = data.lang === "en";
 	const isChapter = data.scale === "chapter";
@@ -1210,7 +1246,7 @@ export function HomePage({ data }: { data: { weeks: any[]; intro: string; lang: 
 								key={w.n}
 								onClick={() => {
 									// 畳んである週は先に開かないと、飛んでも何も起きていないように見える
-									home.jump(w.n);
+									jumpWeek(w.n);
 									setJumpTo(w.n);
 									bump();
 								}}
@@ -1232,7 +1268,7 @@ export function HomePage({ data }: { data: { weeks: any[]; intro: string; lang: 
 							role="button"
 							aria-expanded={isOpen}
 							onClick={() => {
-								home.toggle(w.n);
+								toggleWeek(w.n);
 								bump();
 							}}
 						>
@@ -1256,7 +1292,7 @@ export function HomePage({ data }: { data: { weeks: any[]; intro: string; lang: 
 												className="day-item"
 												data-go={`#/day/${w.n}-${d.day}`}
 												key={d.day}
-												onClick={() => window.__studyNav?.(`#/day/${w.n}-${d.day}`)}
+												onClick={() => navTo(`#/day/${w.n}-${d.day}`)}
 										>
 											<div className="d">
 												{dayLabel(d.day, !isChapter && d.day === 7)}
@@ -1295,15 +1331,14 @@ export function HomePage({ data }: { data: { weeks: any[]; intro: string; lang: 
    （legacy の fc はモジュール変数なので view を跨いで生き残る）。 */
 export function CardsPage() {
 	const [, bump] = useReducer((n: number) => n + 1, 0);
-	const cards = window.__studyCards;
-	if (!cards) return null;
 
-	const fc = cards.state();
+	const fc = cardsState();
 	const act = (fn: () => void) => () => {
 		fn();
 		bump();
 	};
-	const flip = act(cards.flip);
+	const flip = act(flipCard);
+	const kind = cardsKind();
 	const cur = fc.deck[fc.idx];
 
 	let card: ReactNode;
@@ -1316,7 +1351,7 @@ export function CardsPage() {
 				</div>
 			</div>
 		);
-	} else if (cards.kind() === "gram") {
+	} else if (kind === "gram") {
 		const p = cur.p;
 		const eg = p.examples && p.examples[0];
 		card = !fc.flipped ? (
@@ -1360,7 +1395,7 @@ export function CardsPage() {
 								// legacy の委任は [data-go] を [data-fcflip] より先に見て return していた。
 								// ここは入れ子なので、止めないと詳細へ飛びつつ裏返ってしまう。
 								event.stopPropagation();
-								window.__studyNav?.(`#/day/${cur.w}-${cur.d}/p${cur.i}`);
+								navTo(`#/day/${cur.w}-${cur.d}/p${cur.i}`);
 							}}
 						>
 							详情 ›
@@ -1369,7 +1404,7 @@ export function CardsPage() {
 				</div>
 			</div>
 		);
-	} else if (cards.kind() === "kanji") {
+	} else if (kind === "kanji") {
 		const k = cur.k;
 		card = !fc.flipped ? (
 			<div className="fcard" data-fcflip="1" onClick={flip}>
@@ -1437,8 +1472,8 @@ export function CardsPage() {
 	return (
 		<div className="fc-wrap">
 			<div className="fc-filter">
-				{[0, ...Array.from({ length: cards.weeks() }, (_, i) => i + 1)].map((n) => (
-					<button key={n} className={fc.week === n ? "on" : ""} data-fcweek={n} onClick={act(() => cards.setWeek(n))}>
+				{[0, ...Array.from({ length: cardsWeeks() }, (_, i) => i + 1)].map((n) => (
+					<button key={n} className={fc.week === n ? "on" : ""} data-fcweek={n} onClick={act(() => setCardsWeek(n))}>
 						{n === 0 ? "全部" : "第" + n + "週"}
 					</button>
 				))}
@@ -1447,15 +1482,15 @@ export function CardsPage() {
 			{/* legacy は innerHTML を書き直すので、カードが変わるたび DOM は必ず作り直しだった。
 			    React に任せると表裏で節点を使い回し、裏面の style を落とした残骸（style=""）が
 			    表面に残る。key を変えて作り直させ、移行前と同じ DOM に揃える。 */}
-			<Fragment key={cur ? `${cards.kind()}-${fc.idx}-${fc.flipped}` : "done"}>{card}</Fragment>
+			<Fragment key={cur ? `${kind}-${fc.idx}-${fc.flipped}` : "done"}>{card}</Fragment>
 			<div className="fc-btns">
-				<button data-fc="prev" onClick={act(cards.prev)}>
+				<button data-fc="prev" onClick={act(prevCard)}>
 					‹ 上一张
 				</button>
-				<button className="primary" data-fc="next" onClick={act(cards.next)}>
+				<button className="primary" data-fc="next" onClick={act(nextCard)}>
 					下一张 ›
 				</button>
-				<button data-fc="shuffle" onClick={act(cards.shuffle)}>
+				<button data-fc="shuffle" onClick={act(shuffleCards)}>
 					重新洗牌
 				</button>
 			</div>
@@ -1463,69 +1498,6 @@ export function CardsPage() {
 	);
 }
 
-/* ---------------- ホスト ---------------- */
 
-declare global {
-	interface Window {
-		__studyNav?: (key: string) => void;
-		__studySay?: (text: string) => void;
-		/* 数字页の吸顶目录は高さを実測してから位置を決める。legacy は innerHTML の
-		   直後に同期で呼んでいたが、React では commit 後でないと測れない。 */
-		__studyAfterPaint?: () => void;
-		__studySearch?: {
-			index: () => any[];
-			history: () => string[];
-			saveHistory: (kw: string) => void;
-			clearHistory: () => void;
-			open: (hit: any, keyword: string) => void;
-		};
-		/* 记忆卡：山の中身と操作は legacy の fc / buildDeck が持ち続ける */
-		__studyCards?: {
-			state: () => { week: number; deck: any[]; idx: number; flipped: boolean };
-			kind: () => "gram" | "kanji" | "vocab";
-			weeks: () => number;
-			setWeek: (week: number) => void;
-			flip: () => void;
-			next: () => void;
-			prev: () => void;
-			shuffle: () => void;
-		};
-		/* 错题本 / 收藏：ユーザーデータそのもの。MISTAKES・FAV とフィルタ状態は
-		   すべて legacy 側に置き、React は描画とこの窓口の呼び出しだけを行う。
-		   星は未移行の毎日ビューにも出ていて、/api の resync も legacy が回すので、
-		   真実を2か所に持たせない。 */
-		__studyMistakes?: {
-			setType: (type: string) => void;
-			setDraft: (value: string) => void;
-			add: (text: string) => void;
-			remove: (id: string) => void;
-			cycleLevel: (id: string) => void;
-			setFilter: (filter: string) => void;
-			setLevelFilter: (filter: string) => void;
-			study: (on: boolean) => void;
-			hide: (kind: "jp" | "cn") => void;
-		};
-		__studyFavs?: {
-			setFilter: (filter: string) => void;
-			setSelectionFilter: (type: string) => void;
-			toggle: (id: string) => void;
-			clear: () => void;
-			study: (on: boolean) => void;
-			hide: (kind: "jp" | "cn") => void;
-			open: (hash: string, module: string) => void;
-			startFc: () => void;
-			fcFlip: () => void;
-			fcNext: () => void;
-			fcPrev: () => void;
-			fcBack: () => void;
-		};
-		/* 首页：週の開閉はモジュールごとに legacy の openWeeks が覚えている */
-		__studyHome?: {
-			open: () => Set<number>;
-			toggle: (week: number) => void;
-			jump: (week: number) => void;
-		};
-	}
-}
 
 

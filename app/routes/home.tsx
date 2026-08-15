@@ -10,7 +10,7 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export const links: Route.LinksFunction = () => [
-	{ rel: "stylesheet", href: "/study-legacy.css" },
+	{ rel: "stylesheet", href: "/study.css" },
 ];
 
 export default function Home() {

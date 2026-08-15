@@ -8,7 +8,8 @@ const kanji = JSON.parse(await readFile(resolve(root, "public/data/kanji.e432328
 const translations = JSON.parse(
 	await readFile(resolve(root, "public/data/n3-vocab-kanji-daily-translations.json"), "utf8"),
 );
-const legacy = await readFile(resolve(root, "public/study-legacy.js"), "utf8");
+const store = await readFile(resolve(root, "app/study/store.ts"), "utf8");
+const days = await readFile(resolve(root, "app/study/days.tsx"), "utf8");
 
 function validateDailyBook(book, generated, label, expectedItems) {
 	let dayCount = 0;
@@ -58,14 +59,14 @@ assert.equal(translations.version, 1, "unexpected translation data version");
 assert.match(translations.vocab.w3d3.items[5].translation, /八折/, "20% off must be translated as 八折");
 assert.match(translations.kanji.w4d4.items[3].translation, /申报税款/, "税金を申告する must mean 申报税款");
 assert.match(translations.kanji.w5d1.items[1].translation, /感谢/, "お礼 must mean thanks, not apology");
-assert.match(legacy, /n3-vocab-kanji-daily-translations\.json/, "runtime must load N3 vocab/kanji translations");
-assert.match(legacy, /MODULE==='vocab'&&V\.daily_translations/, "N3 vocab translations must not leak into N2/N4");
-assert.match(legacy, /MODULE==='kanji'&&K\.daily_translations/, "N3 kanji translations must not leak into N2/N4");
-assert.match(legacy, /dailyExerciseTranslationHTML/, "runtime must render translation-only controls");
-assert.match(legacy, /examQuestionFavoriteHTML\(it,'vocab',w,answer/, "every vocab weekend question must render a favorite button");
-assert.match(legacy, /examQuestionFavoriteHTML\(it,'kanji',w,answer/, "every kanji weekend question must render a favorite button");
-assert.match(legacy, /data-fav-style="exam"/, "weekend favorite buttons must use the labeled toggle state");
-assert.match(legacy, /kind:'exam-question'/, "weekend favorites must be identifiable as full questions");
+assert.match(store, /n3-vocab-kanji-daily-translations\.json/, "runtime must load N3 vocab/kanji translations");
+assert.match(days, /MODULE === "vocab" && V\.daily_translations/, "N3 vocab translations must not leak into N2/N4");
+assert.match(days, /MODULE === "kanji" && K\.daily_translations/, "N3 kanji translations must not leak into N2/N4");
+assert.match(days, /DailyTranslationOnly/, "runtime must render translation-only controls");
+assert.match(days, /kind: "exam-question"/, "weekend favorites must be identifiable as full questions");
+assert.match(days, /data-fav-style="exam"/, "weekend favorite buttons must use the labeled toggle state");
+assert.match(days, /ExamVocab/, "every vocab weekend question page must render favorites");
+assert.match(days, /ExamKanji/, "every kanji weekend question page must render favorites");
 
 console.log(
 	`Validated ${vocabResult.itemCount} N3 vocab and ${kanjiResult.itemCount} N3 kanji daily translations; all 270 weekend questions retain their existing analysis and favorite controls.`,

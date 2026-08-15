@@ -1128,7 +1128,8 @@ function DayVocab({ day, w, d, scrollTok }: { day: any; w: number; d: number; sc
 						</span>
 					))}{" "}
 					<SayButton text={(day.dialog.lines || []).join("　")} />
-					{day.dialog.cn ? <div className="cn">{day.dialog.cn}</div> : null}
+					{LANG !== "en" && day.dialog.cn ? <div className="cn">{day.dialog.cn}</div> : null}
+					{day.dialog.en ? <div className="en">{day.dialog.en}</div> : null}
 				</div>
 			) : null}
 			{(day.sections || []).map((sec: any, si: number) => {
@@ -1153,7 +1154,7 @@ function DayVocab({ day, w, d, scrollTok }: { day: any; w: number; d: number; sc
 											<StarBtn id={vid} snap={{ module: mod, hash: `#/day/${w}-${d}`, w, d, jp: it.jp, cn: it.cn || it.en || "" }} />
 										</div>
 										<div className="vmn">
-											{it.cn ? <span className="vcn">{it.cn}</span> : null}
+											{LANG !== "en" && it.cn ? <span className="vcn">{it.cn}</span> : null}
 											{it.en ? <span className="ven">{it.en}</span> : null}
 											{it.rel ? <span className="vrel jp">{it.rel_r ? <RubyHtml html={it.rel_r} /> : it.rel}</span> : null}
 											{it.note ? <div className="vnote">{it.note}</div> : null}
@@ -1362,7 +1363,8 @@ function DayKanji({ day, w, d, scrollTok }: { day: any; w: number; d: number; sc
 						</span>
 					))}{" "}
 					<SayButton text={(day.dialog.lines || []).join("　")} />
-					{lx(day.dialog.cn, day.dialog.en) ? <div className="cn">{lx(day.dialog.cn, day.dialog.en)}</div> : null}
+					{LANG !== "en" && day.dialog.cn ? <div className="cn">{day.dialog.cn}</div> : null}
+					{day.dialog.en ? <div className="en">{day.dialog.en}</div> : null}
 				</div>
 			) : null}
 			<MemBar />
@@ -1391,7 +1393,7 @@ function DayKanji({ day, w, d, scrollTok }: { day: any; w: number; d: number; sc
 											<StarBtn id={kid} snap={{ module: MODULE, hash: `#/day/${w}-${d}`, w, d, jp: wd.jp, cn: wd.cn || wd.en || "" }} />
 										</div>
 										<div className="vmn">
-											{wd.cn ? <span className="vcn">{wd.cn}</span> : null}
+											{LANG !== "en" && wd.cn ? <span className="vcn">{wd.cn}</span> : null}
 											{wd.en ? <span className="ven">{wd.en}</span> : null}
 										</div>
 									</div>

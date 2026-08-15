@@ -57,7 +57,7 @@ import {
 	noRuby,
 	pathToKey,
 	saveLastVisit,
-	say,
+	setAfterPaint,
 	setLang,
 	setModule,
 	setNavImpl,
@@ -155,6 +155,8 @@ function Header({
 					<button data-ty="kanji" className={TYPE === "kanji" ? "on" : ""} onClick={() => goType("kanji")}>
 						📙 <span className="lbl">{lx("汉字", "Kanji")}</span>
 					</button>
+				</div>
+				<div className="typebar typebar--skills" id="skillbar">
 					<button data-ty="reading" className={TYPE === "reading" ? "on" : ""} onClick={() => goType("reading")}>
 						📕 <span className="lbl">{lx("读解", "Reading")}</span>
 					</button>
@@ -533,11 +535,10 @@ export function StudyApp() {
 			if (window.location.pathname === path) return;
 			navigate(next);
 		});
-		window.__studyAfterPaint = () => {
+		setAfterPaint(() => {
 			updateStickyVars();
 			updateNumNavActive();
-		};
-		window.__studySay = say;
+		});
 		setBooted(true);
 		bootStudyData();
 		return attachResync();
