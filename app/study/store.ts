@@ -824,6 +824,30 @@ export function clearSearchHistory() {
 export function getSearchIndex() {
 	return buildIndex();
 }
+export function searchHits(keyword: string, limit = 60) {
+	const kw = keyword.trim();
+	if (!kw) return [];
+	const lk = kw.toLowerCase();
+	const scored: { hit: any; score: number; len: number }[] = [];
+	for (const hit of getSearchIndex()) {
+		const key = String(hit.key || "").toLowerCase();
+		const reading = String(hit.reading || "");
+		const extra = String(hit.extra || "").toLowerCase();
+		let score = 0;
+		if (key === lk) score = 100;
+		else if (key.startsWith(lk) || key.endsWith(lk)) score = 80;
+		else if (key.includes(lk)) score = 50;
+		else if (reading.includes(kw)) score = 40;
+		else if (extra.includes(lk)) score = 10;
+		else continue;
+		scored.push({ hit, score, len: key.length });
+	}
+	scored.sort((a, b) => b.score - a.score || a.len - b.len);
+	return scored.slice(0, limit).map((row) => row.hit);
+}
+export function activeMistakeCount() {
+	return activeMistakes().length;
+}
 export function openSearchHit(hit: any, keyword?: string) {
 	if (!hit) return;
 	if (keyword) saveSearchHistory(keyword);

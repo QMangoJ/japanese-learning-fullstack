@@ -772,9 +772,11 @@ export function ReadingN3Content({
 						)}
 					</div>
 					<div className="rb-toggles">
-						<button type="button" className="rb-back" onClick={() => navTo("#/")}>
-							‹ 返回目录
-						</button>
+						{embedded ? null : (
+							<button type="button" className="rb-back" onClick={() => navTo("#/")}>
+								‹ 返回目录
+							</button>
+						)}
 						<button type="button" aria-pressed={furigana} onClick={() => setFurigana((value) => !value)}>
 							振り仮名
 						</button>

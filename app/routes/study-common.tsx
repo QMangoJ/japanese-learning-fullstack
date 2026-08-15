@@ -15,7 +15,9 @@ import {
 	flipFavCard,
 	getSearchHistory,
 	getSearchIndex,
+	homeScale,
 	jumpWeek,
+	lx,
 	navTo,
 	nextCard,
 	nextFavCard,
@@ -26,6 +28,7 @@ import {
 	prevFavCard,
 	saveSearchHistory,
 	say,
+	searchHits,
 	setCardsWeek,
 	setFavFilter,
 	setFavSelectionFilter,
@@ -726,14 +729,7 @@ export function SearchPage() {
 	// 毎回索引を取り直す。N2/N4 が後から入ったときに結果へ反映させるため。
 	const total = getSearchIndex().length;
 	const kw = keyword.trim();
-	const hits: Hit[] = kw
-		? getSearchIndex()
-				.filter((e: Hit) => {
-					const lk = kw.toLowerCase();
-					return e.key.toLowerCase().includes(lk) || e.reading.includes(kw) || e.extra.toLowerCase().includes(lk);
-				})
-				.slice(0, 60)
-		: [];
+	const hits: Hit[] = kw ? searchHits(kw) : [];
 
 	const openHit = (hit: Hit) => openSearchHit(hit, kw);
 
@@ -744,7 +740,7 @@ export function SearchPage() {
 					id="q"
 					ref={inputRef}
 					type="search"
-					placeholder="日文 / 假名 / 中文 / 英文，如：ばかり · 冰箱 · fridge"
+					placeholder={lx("日文 / 假名 / 中文 / 英文，如：ばかり · 冰箱 · fridge", "Japanese / kana / Chinese / English, e.g. ばかり · fridge")}
 					autoComplete="off"
 					value={keyword}
 					onChange={(event) => setKeyword(event.currentTarget.value)}
@@ -762,14 +758,14 @@ export function SearchPage() {
 						{history.length ? (
 							<div className="search-hist">
 								<div className="search-hist-h">
-									<span>最近搜索</span>
+									<span>{lx("最近搜索", "Recent")}</span>
 									<a
 										onClick={() => {
 											clearSearchHistory();
 											setHistory([]);
 										}}
 									>
-										清空
+										{lx("清空", "Clear")}
 									</a>
 								</div>
 								<div className="search-hist-chips">
@@ -782,13 +778,13 @@ export function SearchPage() {
 							</div>
 						) : null}
 						<div className="empty">
-							共收录 {total} 条（语法点 + 词汇）
+							{lx(`共收录 ${total} 条（语法、词汇、汉字、读解、听解）`, `${total} entries (grammar, vocab, kanji, reading, listening)`)}
 							<br />
-							结果标注所属模块，点击直达
+							{lx("结果标注所属模块，点击直达", "Results are tagged by module — tap to open")}
 						</div>
 					</>
 				) : !hits.length ? (
-					<div className="empty">没有找到，换个关键词试试</div>
+					<div className="empty">{lx("没有找到，换个关键词试试", "No matches. Try another keyword.")}</div>
 				) : (
 					hits.map((e, ix) => {
 						const tag = MODULE_TAG[e.module];
@@ -804,7 +800,10 @@ export function SearchPage() {
 									</div>
 								) : null}
 								<div className="where">
-									第{e.w}週 {e.d}日目 · <span className="jp">{e.dayTitle}</span>
+									{e.module === "listening"
+										? lx(`第${e.w}章 ${e.d}节`, `Ch. ${e.w} §${e.d}`)
+										: lx(`第${e.w}週 ${e.d}日目`, `Week ${e.w} Day ${e.d}`)}{" "}
+									· <span className="jp">{e.dayTitle}</span>
 								</div>
 							</div>
 						);
@@ -841,11 +840,11 @@ function StudyToolbar({ count, hideJp, hideCn, onBack, onHide }: {
 }) {
 	return (
 		<div className="study-toolbar">
-			<button className="primary" onClick={onBack}>‹ 返回列表</button>
-			<span>{count} 条</span>
+			<button className="primary" onClick={onBack}>‹ {lx("返回列表", "Back to list")}</button>
+			<span>{lx(`${count} 条`, `${count} items`)}</span>
 			<div>
-				<button className={hideJp ? "on" : ""} data-study-hide="jp" onClick={() => onHide("jp")}>日语</button>
-				<button className={hideCn ? "on" : ""} data-study-hide="cn" onClick={() => onHide("cn")}>翻译 / 答案</button>
+				<button className={hideJp ? "on" : ""} data-study-hide="jp" onClick={() => onHide("jp")}>{lx("日语", "Japanese")}</button>
+				<button className={hideCn ? "on" : ""} data-study-hide="cn" onClick={() => onHide("cn")}>{lx("翻译 / 答案", "Translation")}</button>
 			</div>
 		</div>
 	);
@@ -856,13 +855,13 @@ function StudyRows({ rows, kind, hideJp, hideCn }: { rows: StudyRow[]; kind: "mi
 		<div className={"study-columns" + (hideJp ? " study-hide-jp" : "") + (hideCn ? " study-hide-cn" : "")}>
 			<div className="study-columns__head">
 				<b>日本語</b>
-				<b>{kind === "mistake" ? "答え・メモ" : "翻译"}</b>
+				<b>{kind === "mistake" ? lx("答案 / 笔记", "Answer / note") : lx("翻译", "Translation")}</b>
 			</div>
 			{studyDateGroups(rows).map((group) => (
 				<section className="study-date-group" key={group.day}>
 					<h3>
 						{group.day}
-						<small>{group.rows.length} 条</small>
+						<small>{lx(`${group.rows.length} 条`, `${group.rows.length} items`)}</small>
 					</h3>
 					{group.rows.map((row, i) => (
 						<article className="study-row" key={i}>
@@ -913,6 +912,15 @@ function Lines({ text }: { text: string }) {
 	);
 }
 
+const TYPE_LX: Record<string, [string, string]> = { q: ["错题", "Mistake"], word: ["单词", "Word"], grammar: ["语法", "Grammar"] };
+const LEVEL_LX: Record<string, [string, string]> = { new: ["不熟", "New"], mid: ["一般", "Learning"], done: ["已掌握", "Known"] };
+function typeName(key: string, fallback: string) {
+	return TYPE_LX[key] ? lx(...TYPE_LX[key]) : fallback;
+}
+function levelName(key: string, fallback: string) {
+	return LEVEL_LX[key] ? lx(...LEVEL_LX[key]) : fallback;
+}
+
 export function MistakesPage({ data }: { data: MistakesData }) {
 	// 下書きは store の mistakeDraft が持つ。非制御にしておくと再描画が挟まっても
 	// 入力中のカーソルまで保たれる（legacy は innerHTML ごと書き直していた）。
@@ -940,7 +948,7 @@ export function MistakesPage({ data }: { data: MistakesData }) {
 				<div className="mistake-types" id="mistakeTypes">
 					{Object.entries(data.types).map(([key, label]) => (
 						<button className={key === data.addType ? "on" : ""} data-mtype={key} key={key} onClick={() => setMistakeType(key)}>
-							{label}
+							{typeName(key, label)}
 						</button>
 					))}
 				</div>
@@ -949,7 +957,7 @@ export function MistakesPage({ data }: { data: MistakesData }) {
 					ref={input}
 					className="mistake-input"
 					rows={2}
-					placeholder="记一下考试错题、老是记不住的单词或语法点……"
+					placeholder={lx("记一下考试错题、老是记不住的单词或语法点……", "Jot down a missed question, stubborn word, or grammar point…")}
 					defaultValue={data.draft}
 					onChange={(event) => setMistakeDraft(event.currentTarget.value)}
 				/>
@@ -965,31 +973,31 @@ export function MistakesPage({ data }: { data: MistakesData }) {
 						addMistakeNote(value);
 					}}
 				>
-					保存
+					{lx("保存", "Save")}
 				</button>
 			</div>
 			<div className="fc-filter" style={{ marginBottom: "8px" }}>
 				<button className={data.filter === "all" ? "on" : ""} data-mfilter="all" onClick={() => setMistakeFilter("all")}>
-					全部（{data.typeCounts.all}）
+					{lx("全部", "All")}（{data.typeCounts.all}）
 				</button>
 				{Object.entries(data.types).map(([key, label]) => (
 					<button className={data.filter === key ? "on" : ""} data-mfilter={key} key={key} onClick={() => setMistakeFilter(key)}>
-						{label}（{data.typeCounts[key] ?? 0}）
+						{typeName(key, label)}（{data.typeCounts[key] ?? 0}）
 					</button>
 				))}
 			</div>
 			<div className="fc-filter" style={{ marginBottom: "14px" }}>
 				<button className={data.levelFilter === "all" ? "on" : ""} data-lfilter="all" onClick={() => setMistakeLevelFilter("all")}>
-					熟练度：全部（{data.levelCounts.all}）
+					{lx("熟练度：全部", "Level: all")}（{data.levelCounts.all}）
 				</button>
 				{data.levelOrder.map((key) => (
 					<button className={data.levelFilter === key ? "on" : ""} data-lfilter={key} key={key} onClick={() => setMistakeLevelFilter(key)}>
-						{data.levels[key]}（{data.levelCounts[key] ?? 0}）
+						{levelName(key, data.levels[key])}（{data.levelCounts[key] ?? 0}）
 					</button>
 				))}
 			</div>
 			<div className="study-entry">
-				<button data-mstudy="1" onClick={() => setMistakeStudy(true)}>背诵模式（{data.list.length}）</button>
+				<button data-mstudy="1" onClick={() => setMistakeStudy(true)}>{lx("背诵模式", "Study mode")}（{data.list.length}）</button>
 			</div>
 			{data.list.length ? (
 				data.list.map((m) => {
@@ -997,9 +1005,9 @@ export function MistakesPage({ data }: { data: MistakesData }) {
 					return (
 						<div className="mistake-item" key={m.id}>
 							<div className="mistake-item-head">
-								<span className={`mtag mt-${m.type}`}>{data.types[m.type] || m.type}</span>
-								<button className={`mlvl ml-${level}`} data-mlevel-cycle={m.id} aria-label="切换熟练度" onClick={() => cycleMistakeLevel(m.id)}>
-									{data.levels[level]}
+								<span className={`mtag mt-${m.type}`}>{typeName(m.type, data.types[m.type] || m.type)}</span>
+								<button className={`mlvl ml-${level}`} data-mlevel-cycle={m.id} aria-label={lx("切换熟练度", "Change level")} onClick={() => cycleMistakeLevel(m.id)}>
+									{levelName(level, data.levels[level])}
 								</button>
 								<span className="mistake-date">{mistakeDate(m.ts)}</span>
 								<button className="mistake-del" data-mistake-del={m.id} aria-label="删除" onClick={() => deleteMistake(m.id)}>
@@ -1013,7 +1021,7 @@ export function MistakesPage({ data }: { data: MistakesData }) {
 					);
 				})
 			) : (
-				<div className="empty">还没有记录，在上面写一条保存试试。</div>
+				<div className="empty">{lx("还没有记录，在上面写一条保存试试。", "No notes yet. Write one above and save it.")}</div>
 			)}
 		</>
 	);
@@ -1055,9 +1063,9 @@ export function FavsPage({ data }: { data: FavsData }) {
 	if (!data.total) {
 		return (
 			<div className="empty">
-				还没有收藏。
+				{lx("还没有收藏。", "Nothing saved yet.")}
 				<br />
-				选中页面里的文字，即可收藏到生词本。
+				{lx("选中页面里的文字，即可收藏到生词本。", "Select text on a page to save it to your word book.")}
 			</div>
 		);
 	}
@@ -1082,21 +1090,21 @@ export function FavsPage({ data }: { data: FavsData }) {
 		<>
 			<div className="fav-actions">
 				<button className="primary" data-favfc="" onClick={() => startFavStudyCards()}>
-					▶ 用收藏刷闪卡（{data.items.length}）
+					▶ {lx(`用收藏刷闪卡（${data.items.length}）`, `Flashcards from favorites (${data.items.length})`)}
 				</button>
-				<button data-favstudy="1" onClick={() => setFavStudy(true)}>背诵模式</button>
+				<button data-favstudy="1" onClick={() => setFavStudy(true)}>{lx("背诵模式", "Study mode")}</button>
 				<button
 					data-favclear=""
 					{...(armed ? { "data-armed": "1" } : null)}
 					onClick={() => (armed ? clearFavs() : setArmed(true))}
 				>
-					{armed ? "再点一次清空" : "清空收藏"}
+					{armed ? lx("再点一次清空", "Tap again to clear") : lx("清空收藏", "Clear favorites")}
 				</button>
 			</div>
 			{data.mods.length > 1 ? (
 				<div className="fc-filter" style={{ marginBottom: "12px" }}>
 					<button className={data.filter === "all" ? "on" : ""} data-favfilter="all" onClick={() => setFavFilter("all")}>
-						全部（{data.total}）
+						{lx("全部", "All")}（{data.total}）
 					</button>
 					{data.mods.map((m) => (
 						<button className={data.filter === m.key ? "on" : ""} data-favfilter={m.key} key={m.key} onClick={() => setFavFilter(m.key)}>
@@ -1107,13 +1115,13 @@ export function FavsPage({ data }: { data: FavsData }) {
 			) : null}
 			{data.selTypes.length ? (
 				<div className="fc-filter fav-type-filter" style={{ marginBottom: "12px" }}>
-					<span>划词类别</span>
+					<span>{lx("划词类别", "Selection type")}</span>
 					<button
 						className={data.selectionFilter === "all" ? "on" : ""}
 						data-selfavfilter="all"
 						onClick={() => setFavSelectionFilter("all")}
 					>
-						全部
+						{lx("全部", "All")}
 					</button>
 					{data.selTypes.map((t) => (
 						<button
@@ -1175,14 +1183,14 @@ export function FavFcPage({ data }: { data: { jp: string; cn: string; idx: numbe
 				) : (
 					<div className="fcard" data-favflip="" onClick={() => flipFavCard()}>
 						<div className="big jp">{data.jp}</div>
-						<div className="hint">点击翻面看释义</div>
+						<div className="hint">{lx("点击翻面看释义", "Tap to see the meaning")}</div>
 					</div>
 				)}
 			</Fragment>
 			<div className="fc-btns">
-				<button data-favprev="" onClick={() => prevFavCard()}>‹ 上一张</button>
-				<button className="primary" data-favnext="" onClick={() => nextFavCard()}>下一张 ›</button>
-				<button data-favback="" onClick={() => closeFavStudyCards()}>返回收藏</button>
+				<button data-favprev="" onClick={() => prevFavCard()}>‹ {lx("上一张", "Prev")}</button>
+				<button className="primary" data-favnext="" onClick={() => nextFavCard()}>{lx("下一张", "Next")} ›</button>
+				<button data-favback="" onClick={() => closeFavStudyCards()}>{lx("返回收藏", "Back to favorites")}</button>
 			</div>
 		</div>
 	);
@@ -1341,13 +1349,23 @@ export function CardsPage() {
 	const kind = cardsKind();
 	const cur = fc.deck[fc.idx];
 
+	const chapterScale = homeScale() === "chapter";
 	let card: ReactNode;
-	if (!cur) {
+	if (!fc.deck.length) {
 		card = (
 			<div className="fcard">
 				<div className="empty">
-					本组已完成 🎉
-					<br />点「重新洗牌」再来一轮
+					{lx("这个模块还没有可刷的卡片", "No flashcards in this module yet")}
+				</div>
+			</div>
+		);
+	} else if (!cur) {
+		card = (
+			<div className="fcard">
+				<div className="empty">
+					{lx("本组已完成 🎉", "Deck complete 🎉")}
+					<br />
+					{lx("点「重新洗牌」再来一轮", "Shuffle to start another round")}
 				</div>
 			</div>
 		);
@@ -1357,7 +1375,7 @@ export function CardsPage() {
 		card = !fc.flipped ? (
 			<div className="fcard" data-fcflip="1" onClick={flip}>
 				<div className="big jp">{p.pattern}</div>
-				<div className="hint">回想接续与意思，点击翻面</div>
+				<div className="hint">{lx("回想接续与意思，点击翻面", "Recall the pattern, then tap to flip")}</div>
 			</div>
 		) : (
 			<div className="fcard" data-fcflip="1" onClick={flip}>
@@ -1386,7 +1404,8 @@ export function CardsPage() {
 						</div>
 					) : null}
 					<div className="meta">
-						出处：第{cur.w}週 {cur.d}日目{"　"}
+						{lx(`出处：第${cur.w}週 ${cur.d}日目`, `From: Week ${cur.w} Day ${cur.d}`)}
+						{"　"}
 						<span
 							className="plink"
 							data-go={`#/day/${cur.w}-${cur.d}/p${cur.i}`}
@@ -1398,7 +1417,7 @@ export function CardsPage() {
 								navTo(`#/day/${cur.w}-${cur.d}/p${cur.i}`);
 							}}
 						>
-							详情 ›
+							{lx("详情 ›", "Details ›")}
 						</span>
 					</div>
 				</div>
@@ -1411,7 +1430,7 @@ export function CardsPage() {
 				<div className="big jp" style={{ fontSize: "64px" }}>
 					{k.char}
 				</div>
-				<div className="hint">回想读音与词语，点击翻面</div>
+				<div className="hint">{lx("回想读音与词语，点击翻面", "Recall the reading and words, then tap to flip")}</div>
 			</div>
 		) : (
 			<div className="fcard" data-fcflip="1" onClick={flip}>
@@ -1445,7 +1464,7 @@ export function CardsPage() {
 				<div className="big jp">
 					<Rr o={it} f="jp" />
 				</div>
-				<div className="hint">回想中/英文，点击翻面</div>
+				<div className="hint">{lx("回想中/英文，点击翻面", "Recall the meaning, then tap to flip")}</div>
 			</div>
 		) : (
 			<div className="fcard" data-fcflip="1" onClick={flip}>
@@ -1474,7 +1493,11 @@ export function CardsPage() {
 			<div className="fc-filter">
 				{[0, ...Array.from({ length: cardsWeeks() }, (_, i) => i + 1)].map((n) => (
 					<button key={n} className={fc.week === n ? "on" : ""} data-fcweek={n} onClick={act(() => setCardsWeek(n))}>
-						{n === 0 ? "全部" : "第" + n + "週"}
+						{n === 0
+							? lx("全部", "All")
+							: chapterScale
+								? lx(`第${n}章`, `Ch. ${n}`)
+								: lx(`第${n}週`, `Week ${n}`)}
 					</button>
 				))}
 			</div>
@@ -1485,13 +1508,13 @@ export function CardsPage() {
 			<Fragment key={cur ? `${kind}-${fc.idx}-${fc.flipped}` : "done"}>{card}</Fragment>
 			<div className="fc-btns">
 				<button data-fc="prev" onClick={act(prevCard)}>
-					‹ 上一张
+					‹ {lx("上一张", "Prev")}
 				</button>
 				<button className="primary" data-fc="next" onClick={act(nextCard)}>
-					下一张 ›
+					{lx("下一张", "Next")} ›
 				</button>
 				<button data-fc="shuffle" onClick={act(shuffleCards)}>
-					重新洗牌
+					{lx("重新洗牌", "Shuffle")}
 				</button>
 			</div>
 		</div>

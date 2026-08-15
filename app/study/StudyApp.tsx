@@ -22,9 +22,9 @@ import {
 	LANG,
 	LEVEL,
 	LEVEL_LIST,
-	MISTAKES,
 	MODULE,
 	TYPE,
+	activeMistakeCount,
 	attachResync,
 	bootStudyData,
 	closeFavFc,
@@ -36,6 +36,7 @@ import {
 	entryHash,
 	favFcPayload,
 	favsPayload,
+	findDay,
 	hasContrast,
 	homeIntro,
 	homeScale,
@@ -108,11 +109,15 @@ function updateNumNavActive() {
 function Header({
 	title,
 	showBack,
+	showTypebar,
+	showSkills,
 	onBack,
 	onOpenLevel,
 }: {
 	title: string;
 	showBack: boolean;
+	showTypebar: boolean;
+	showSkills: boolean;
 	onBack: () => void;
 	onOpenLevel: () => void;
 }) {
@@ -131,7 +136,7 @@ function Header({
 						中
 					</button>
 					<button className={LANG === "en" ? "on" : ""} data-lang="en" aria-label="English" aria-pressed={LANG === "en"} onClick={() => setLang("en")}>
-						English
+						EN
 					</button>
 				</div>
 				<button
@@ -141,37 +146,48 @@ function Header({
 					aria-label={noRuby ? lx("注音：关", "Readings: off") : lx("注音：开", "Readings: on")}
 					onClick={() => toggleDisplay("ruby")}
 				>
-					ふ
+					かな
 				</button>
 			</header>
-			<div className="modewrap">
-				<div className="typebar" id="typebar">
-					<button data-ty="grammar" className={TYPE === "grammar" ? "on" : ""} onClick={() => goType("grammar")}>
-						📘 <span className="lbl">{lx("语法", "Grammar")}</span>
-					</button>
-					<button data-ty="vocab" className={TYPE === "vocab" ? "on" : ""} onClick={() => goType("vocab")}>
-						📗 <span className="lbl">{lx("词汇", "Vocabulary")}</span>
-					</button>
-					<button data-ty="kanji" className={TYPE === "kanji" ? "on" : ""} onClick={() => goType("kanji")}>
-						📙 <span className="lbl">{lx("汉字", "Kanji")}</span>
-					</button>
+			{showTypebar ? (
+				<div className="modewrap">
+					<div className="typebar" id="typebar">
+						<button data-ty="grammar" className={TYPE === "grammar" ? "on" : ""} onClick={() => goType("grammar")}>
+							📘 <span className="lbl">{lx("语法", "Grammar")}</span>
+						</button>
+						<button data-ty="vocab" className={TYPE === "vocab" ? "on" : ""} onClick={() => goType("vocab")}>
+							📗 <span className="lbl">{lx("词汇", "Vocabulary")}</span>
+						</button>
+						<button data-ty="kanji" className={TYPE === "kanji" ? "on" : ""} onClick={() => goType("kanji")}>
+							📙 <span className="lbl">{lx("汉字", "Kanji")}</span>
+						</button>
+					</div>
+					{showSkills ? (
+						<div className="typebar typebar--skills" id="skillbar">
+							<button data-ty="reading" className={TYPE === "reading" ? "on" : ""} onClick={() => goType("reading")}>
+								📕 <span className="lbl">{lx("读解", "Reading")}</span>
+							</button>
+							<button data-ty="listening" className={TYPE === "listening" ? "on" : ""} onClick={() => goType("listening")}>
+								🎧 <span className="lbl">{lx("听解", "Listening")}</span>
+							</button>
+						</div>
+					) : null}
 				</div>
-				<div className="typebar typebar--skills" id="skillbar">
-					<button data-ty="reading" className={TYPE === "reading" ? "on" : ""} onClick={() => goType("reading")}>
-						📕 <span className="lbl">{lx("读解", "Reading")}</span>
-					</button>
-					<button data-ty="listening" className={TYPE === "listening" ? "on" : ""} onClick={() => goType("listening")}>
-						🎧 <span className="lbl">{lx("听解", "Listening")}</span>
-					</button>
-				</div>
-			</div>
+			) : null}
 		</div>
 	);
 }
 
 function goType(ty: TypeKey) {
-	if (ty === "reading" || ty === "listening") setModule(ty);
-	else setModule(moduleFrom(LEVEL, ty));
+	if ((ty === "reading" || ty === "listening") && LEVEL !== "n3") return;
+	const nextMod = ty === "reading" || ty === "listening" ? ty : moduleFrom(LEVEL, ty);
+	const here = typeof window !== "undefined" ? pathToKey(window.location.pathname) : "#/";
+	const day = parseDayRoute(here);
+	setModule(nextMod);
+	if (day && findDay(day.w, day.d, nextMod)) {
+		navTo(`#/day/${day.w}-${day.d}`);
+		return;
+	}
 	navTo("#/");
 }
 
@@ -191,8 +207,12 @@ function Sidebar({ routeKey, onLevel }: { routeKey: string; onLevel: (lv: LevelK
 		["grammar", "📘", lx("语法", "Grammar")],
 		["vocab", "📗", lx("词汇", "Vocabulary")],
 		["kanji", "📙", lx("汉字", "Kanji")],
-		["reading", "📕", lx("读解", "Reading")],
-		["listening", "🎧", lx("听解", "Listening")],
+		...(LEVEL === "n3"
+			? ([
+					["reading", "📕", lx("读解", "Reading")],
+					["listening", "🎧", lx("听解", "Listening")],
+				] as [TypeKey, string, string][])
+			: []),
 	];
 	const favCount = Object.keys(FAV).length;
 	const row = (go: string, ic: string, label: string, count: string | number | null, on: boolean) => (
@@ -250,7 +270,7 @@ function Sidebar({ routeKey, onLevel }: { routeKey: string; onLevel: (lv: LevelK
 			</div>
 			<div className="side-foot">
 				{row("#/search", "🔍", lx("搜索", "Search"), null, h === "#/search")}
-				{row("#/mistakes", "📝", lx("错题本", "Mistakes"), MISTAKES.length || "", h === "#/mistakes")}
+				{row("#/mistakes", "📝", lx("错题本", "Mistakes"), activeMistakeCount() || "", h === "#/mistakes")}
 				{row("#/favs", "⭐", lx("收藏", "Favorites"), favCount || "", h === "#/favs")}
 			</div>
 		</aside>
@@ -495,7 +515,7 @@ function TrialLock() {
 }
 
 function viewMeta(key: string): { nav: string; title: string; back: boolean } {
-	if (key === "#/search") return { nav: "search", title: lx("搜索（语法 + 词汇 + 读解）", "Search (Grammar + Vocabulary + Reading)"), back: false };
+	if (key === "#/search") return { nav: "search", title: lx("搜索", "Search"), back: false };
 	if (key === "#/cards") return { nav: "common", title: `${lx("记忆卡", "Flashcards")} · ${modLabel()}`, back: false };
 	if (key === "#/favs")
 		return {
@@ -680,7 +700,14 @@ export function StudyApp() {
 					<a href="/">了解完整课程</a>
 				</div>
 			) : null}
-			<Header title={meta.title} showBack={meta.back} onBack={() => (history.length > 1 ? navigate(-1) : navTo("#/"))} onOpenLevel={() => setSheet("level")} />
+			<Header
+				title={meta.title}
+				showBack={meta.back}
+				showTypebar={routeKey === "#/" || Boolean(day)}
+				showSkills={LEVEL === "n3"}
+				onBack={() => (history.length > 1 ? navigate(-1) : navTo("#/"))}
+				onOpenLevel={() => setSheet("level")}
+			/>
 			<Sidebar routeKey={routeKey} onLevel={pickLevel} />
 			<main id="app" className={lessonShell ? "study-reading-app" : undefined} hidden={showCommon}>
 				{showCommon ? null : body}
