@@ -837,6 +837,61 @@ function pointHTML(p, wid, i){
   for(const nt of (p.notes||[])) h += `<div class="${noteClass(nt.type)}"><b class="nt">${esc(noteLabel(nt.type))}</b><span class="jp">${R(nt,'text')}</span></div>`;
   return h + `</div>`;
 }
+function dailyChoiceCodes(answer, count){
+  const clean=String(answer||'').replace(/\s/g,'');
+  if(clean.includes('、')) return clean.split('、');
+  if(count>1 && /^[ab]+$/.test(clean) && clean.length===count) return clean.split('');
+  return [clean];
+}
+function dailyChoiceReasonHTML(info){
+  const pairs=info.choices||[], codes=dailyChoiceCodes(info.answer,pairs.length);
+  if(!pairs.length) return '';
+  return `<ol class="daily-choice-reasons">` + pairs.map((pair,index)=>{
+    const code=codes[index]||codes[codes.length-1]||'', both=code==='ab'||code==='ba';
+    const selected=both
+      ? `a「${esc(pair.a)}」和 b「${esc(pair.b)}」在这里都成立`
+      : `${code}「${esc(pair[code]||'')}」`;
+    const reason=both
+      ? '两种表达在本句中都能形成自然、正确的接续，所以答案接受两项。'
+      : `代入后能组成上面的完整句，符合本题句意与语法接续；另一项「${esc(pair[code==='a'?'b':'a'])}」不符合本题所考查的句意或接续。`;
+    return `<li><b>${pairs.length>1?`第${index+1}空：`:''}${selected}</b><span>${reason}</span></li>`;
+  }).join('') + `</ol>`;
+}
+function dailyOrderReasonHTML(info,it){
+  const options=Object.fromEntries((it.options||[]).map((value,index)=>[index+1,String(value).replace(/^\s*[1-4]\s*/, '').trim()]));
+  const ordered=String(info.answer||'').split('→').map(Number).filter(Boolean).map(n=>options[n]).filter(Boolean);
+  return `<div class="daily-order-reason"><b>排列过程：</b>${ordered.map((part,index)=>
+    `<span class="jp"><i>${index+1}</i>${esc(part)}</span>`).join('<em>→</em>')}
+    <p>按这个顺序排列后，助词、修饰关系和句末接续构成自然完整的句子。</p></div>`;
+}
+function dailyPointRefsHTML(info,day,w,d){
+  const indexes=Array.from(new Set(info.pointIndexes||[])).filter(index=>day.points&&day.points[index]);
+  if(!indexes.length) return '';
+  return `<div class="daily-point-refs"><div class="daily-analysis-label">本题对应语法点</div>` + indexes.map(index=>{
+    const p=day.points[index];
+    return `<button type="button" class="daily-point-ref" data-go="#/day/${w}-${d}/p${index}">
+      <span class="jp">${R(p,'pattern')}</span><span>${esc(LX(p.usage_cn,p.usage_en))}</span><i>跳转 ›</i>
+    </button>`;
+  }).join('') + `</div>`;
+}
+function dailyExercisePanelsHTML(info,it,day,w,d){
+  if(!info) return '';
+  const reason=info.type==='order'?dailyOrderReasonHTML(info,it):dailyChoiceReasonHTML(info);
+  return `<div class="daily-explain">
+    <details class="daily-toggle daily-translation">
+      <summary><span class="fold-show">显示翻译</span><span class="fold-hide">隐藏翻译</span></summary>
+      <div class="daily-toggle-body cn">${esc(info.translation)}</div>
+    </details>
+    <details class="daily-toggle daily-analysis">
+      <summary><span class="fold-show">显示解析</span><span class="fold-hide">隐藏解析</span></summary>
+      <div class="daily-toggle-body">
+        <div class="an-answer-key">正确答案：<span class="jp">${esc(info.answer)}</span></div>
+        <div class="an-complete"><b>完整句：</b><span class="jp">${esc(info.completed)}</span></div>
+        ${reason}${dailyPointRefsHTML(info,day,w,d)}
+      </div>
+    </details>
+  </div>`;
+}
 function viewDayGrammar(day,w,d,scrollP){
   const wk=CUR().weeks.find(x=>x.n===w);
   const wt = wk.title?` <span class="jp">${esc(wk.title)}</span>（${esc(LX(wk.title_cn, wk.title_en))}）`:` · ${MODULE==='n2grammar'?'N2 语法':(MODULE==='n4grammar'?'N4 语法':'语法')}`;
@@ -850,10 +905,12 @@ function viewDayGrammar(day,w,d,scrollP){
   }
   html += `<div class="card">` + (day.points||[]).map((p,i)=>pointHTML(p,`${w}-${d}`,i)).join('<hr style="border:none;border-top:1px solid var(--line);margin:16px 0">') + `</div>`;
   if(day.exercises){
+    const dailyItems=MODULE==='grammar'&&G.daily_explanations&&G.daily_explanations[`w${w}d${d}`];
+    const explanationByNumber=new Map(((dailyItems&&dailyItems.items)||[]).map(item=>[item.n,item]));
     html += `<div class="sec-title">れんしゅう（练习）</div><div class="card">`;
     for(const sec of (day.exercises.sections||[])){
       html += `<div class="meta jp" style="margin:4px 0 8px">${sec.type==='choice'?'Ⅰ':'Ⅱ'}　${R(sec,'instruction')}</div>`;
-      for(const it of (sec.items||[])) html += `<div class="q"><span class="n">${it.n}</span><span class="jp">${R(it,'q')}</span>${optsRow(it)}</div>`;
+      for(const it of (sec.items||[])) html += `<div class="q daily-q"><div class="daily-qline"><span class="n">${it.n}</span><span class="jp">${R(it,'q')}</span></div>${optsRow(it)}${dailyExercisePanelsHTML(explanationByNumber.get(it.n),it,day,w,d)}</div>`;
     }
     if(day.exercises.answers) html += ansBlock(`ans-${w}-${d}`, `<b>答案：</b><span class="jp">${esc(day.exercises.answers)}</span>`);
     else if(day.exercises.answers_note) html += `<div class="meta">${esc(day.exercises.answers_note)}</div>`;
@@ -1432,14 +1489,39 @@ function viewHenkei(){
 }
 
 const DATA_FILES = {"grammar":"grammar.d15be04258.json","kanji":"kanji.e43232869e.json","vocab":"vocab.856eb48e32.json","n2grammar":"n2grammar.4e6157570a.json","n2vocab":"n2vocab.4e440284d9.json","n2kanji":"n2kanji.d9739ca8d4.json","n4grammar":"n4grammar.40e138ccdb.json","n4vocab":"n4vocab.026f711eb7.json","n4kanji":"n4kanji.655356d8e2.json","common":"common.aa13cae172.json"};
+/* 旧版 PDF OCR 数据里少量注音与题干有稳定的识别错误。这里在载入后修正，
+   既让正文与练习显示正确，也避免 predev 同步旧资源时把修正覆盖掉。 */
+function normalizeN3GrammarOcr(node){
+  if(typeof node==='string') return node
+    .replaceAll('<ruby>今日<rt>こんにち</rt></ruby>','<ruby>今日<rt>きょう</rt></ruby>')
+    .replaceAll('<ruby>小<rt>ちー</rt></ruby>','<ruby>小<rt>ちい</rt></ruby>')
+    .replaceAll('<ruby>大<rt>おー</rt></ruby>','<ruby>大<rt>おお</rt></ruby>')
+    .replaceAll('<ruby>一日<rt>ついたち</rt></ruby><ruby>雨','<ruby>一日<rt>いちにち</rt></ruby><ruby>雨')
+    .replaceAll('吸っていはいけない','吸ってはいけない')
+    .replaceAll('っていはいけない','ってはいけない');
+  if(Array.isArray(node)){ for(let i=0;i<node.length;i++) node[i]=normalizeN3GrammarOcr(node[i]); return node; }
+  if(node&&typeof node==='object'){ for(const key of Object.keys(node)) node[key]=normalizeN3GrammarOcr(node[key]); }
+  return node;
+}
+function fixN3GrammarExerciseLayout(g){
+  normalizeN3GrammarOcr(g);
+  const day=g.weeks&&g.weeks.find(w=>w.n===2)?.days?.find(d=>d.day===4);
+  const item=day&&day.exercises&&day.exercises.sections.flatMap(section=>section.items||[]).find(q=>q.n===5);
+  if(item){
+    item.q=String(item.q||'').replace(' ＿＿ は冗談',' ＿＿ 冗談');
+    item.q_r=String(item.q_r||'').replace(' ＿＿ は<ruby>冗談',' ＿＿ <ruby>冗談');
+  }
+}
 async function bootN3(){
   try{
     // common（接续表/活用表/数字表达）跟级别无关但每个模块都可能点开，体积也小，跟 N3 一起加载
     const names=['grammar','vocab','kanji','common'];
-    const [g,v,k,com,grammarExplanations]=await Promise.all([
+    const [g,v,k,com,grammarExplanations,dailyGrammarExplanations]=await Promise.all([
       ...names.map(n=>fetch('/data/'+DATA_FILES[n]).then(r=>r.json())),
-      fetch('/data/n3-grammar-explanations.json').then(r=>r.ok?r.json():({})).catch(()=>({}))
+      fetch('/data/n3-grammar-explanations.json').then(r=>r.ok?r.json():({})).catch(()=>({})),
+      fetch('/data/n3-grammar-daily-explanations.json').then(r=>r.ok?r.json():({})).catch(()=>({}))
     ]);
+    fixN3GrammarExerciseLayout(g);
     for(const [weekKey, sections] of Object.entries(grammarExplanations||{})){
       const targetWeek=g.besatsu&&g.besatsu[weekKey]; if(!targetWeek) continue;
       for(const section of ['mondai1','mondai2','mondai3']){
@@ -1448,6 +1530,7 @@ async function bootN3(){
         targetWeek[section]=targetWeek[section].map(item=>Object.assign({},item,byNumber.get(item.n)||{}));
       }
     }
+    g.daily_explanations=dailyGrammarExplanations||{};
     G=g; V=v; K=k;
     DATA.grammar=G; DATA.vocab=V; DATA.kanji=K; DATA.common=com;
     dataLoaded=true;
