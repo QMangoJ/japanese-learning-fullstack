@@ -437,13 +437,6 @@ app.addEventListener('click', e=>{
     if(wrap && !wrap.classList.contains('answered')) gradeQz(wrap, +ob.dataset.optidx, true);
     return;
   }
-  const wt=e.target.closest('[data-wktoggle]'); if(wt){ toggleWeek(+wt.dataset.wktoggle); viewHome(); updateStickyVars(); return; }
-  // 顶部周条：收起的周点了要先展开再滚过去，否则等于什么都没发生
-  const wj=e.target.closest('[data-wkjump]'); if(wj){
-    const n=+wj.dataset.wkjump; openWeekSet().add(n); viewHome(); updateStickyVars();
-    const el=document.getElementById('wk-'+n); if(el) el.scrollIntoView({behavior:'auto',block:'start'});
-    return;
-  }
   const sc=e.target.closest('[data-scroll]'); if(sc){ const el=document.getElementById(sc.dataset.scroll); if(el) el.scrollIntoView({behavior:sc.classList.contains('wk-tocitem')?'auto':'smooth',block:'start'}); return; }
   const sb=e.target.closest('[data-say]'); if(sb){ say(sb.dataset.say); return; }
   const fv=e.target.closest('[data-fav]'); if(fv){ toggleFav(fv.dataset.fav); fv.textContent=isFav(fv.dataset.fav)?'★':'☆'; if(routeKey()==='#/favs') viewFavs(); return; }
@@ -663,37 +656,18 @@ function viewHome(){
   // 不写死「× 7 天」：N2 词汇有两周是缺天的，写死会跟周里实际列出的天数对不上
   const totalDays = weeks.reduce((n,w)=>n+w.days.length, 0);
   const intro = LX(`《${book}》 · ${weeks.length} 周 · 共 ${totalDays} 天 · 点击进入每日${kind}`, `${book} · ${weeks.length} weeks · ${totalDays} days · Tap to open each day's ${kind}`);
-  let html = `<div class="home-top"><div class="meta" style="margin-bottom:10px">${intro}</div>` +
-    (weeks.length>3 ? `<div class="wk-toc">${weeks.map(w=>`<a class="wk-tocitem" data-wkjump="${w.n}">第${w.n}周</a>`).join('')}</div>` : '') +
-    `</div>`;
   // 数字 / 接续表 / 活用 讲的是日语本身，不分级别，所以九个模块的首页都放；
   // 辨析的内容是 N3 语法的家族对照，属于 N3 语法这一层，只在那里出现并标明级别。
   // 工具入口全部收进底部「通用」弹层了，首页只剩内容本身。
-  const open = openWeekSet();
-  for(const w of weeks){
-    const wt = w.title ? ` <span class="jp">${esc(w.title)}</span>` : '';
-    const wsubText = LX(w.title_cn, w.title_en);
-    const wsub = wsubText ? `<div class="sub">${esc(wsubText)}</div>` : '';
-    const isOpen = open.has(w.n);
-    html += `<div class="card week-card" id="wk-${w.n}">
-      <div class="wk-head" data-wktoggle="${w.n}" role="button" aria-expanded="${isOpen}">
-        <div class="wk-t"><h2>第${w.n}週${wt}</h2>${wsub}</div>
-        <span class="cnt">${w.days.length}天</span><span class="cv">${isOpen?'▾':'▸'}</span>
-      </div>`;
-    if(isOpen){
-      html += `<div class="wk-body"><div class="day-list">` +
-        w.days.map(d=>{
-          const isExam = d.day===7;
-          return `<div class="day-item" data-go="#/day/${w.n}-${d.day}">
-            <div class="d">${d.day}日目${isExam?' · 实战':''}</div>
-            <div class="t jp">${R(d,'title')}</div>
-            <div class="tc">${esc(LX(d.title_cn, d.title_en))}</div>${dayPreviewHTML(d)}</div>`;
-        }).join('') + `</div></div>`;
-    }
-    html += `</div>`;
-  }
-  app.innerHTML = html;
+  showReactPage('home', {weeks, intro, lang:LANG});
 }
+/* 開閉は React へ渡さずここで持つ。モジュールごとに覚えておく必要があり、
+   その状態は openWeeks（下）が持っているため。 */
+window.__studyHome = {
+  open: ()=> openWeekSet(),
+  toggle: n=>{ toggleWeek(n); },
+  jump: n=>{ openWeekSet().add(n); },
+};
 /* 周手风琴的展开状态：按模块各记各的，默认展开上次看的那一周。
    render() 会整页重画，所以状态必须存在模块级变量里，不能只存在 DOM 上。 */
 const openWeeks = {};
@@ -708,16 +682,6 @@ function openWeekSet(){
 function toggleWeek(n){
   const s = openWeekSet();
   if(s.has(n)) s.delete(n); else s.add(n);
-}
-// 一眼看出这天讲什么：语法日给语法点，汉字日给汉字，词汇日给头几个词
-function dayPreviewHTML(d){
-  let items = [];
-  if(Array.isArray(d.points)) items = d.points.map(p=>p.pattern);
-  else if(Array.isArray(d.kanji)) items = d.kanji.map(k=>k.char);
-  else if(Array.isArray(d.sections)) items = d.sections.reduce((a,s)=>a.concat((s.items||[]).map(i=>i.jp)), []);
-  items = items.filter(Boolean).slice(0, 6);
-  if(!items.length) return '';
-  return `<div class="day-prev">` + items.map(t=>`<span class="dp jp">${esc(t)}</span>`).join('') + `</div>`;
 }
 
 /* ---------- shared helpers ---------- */

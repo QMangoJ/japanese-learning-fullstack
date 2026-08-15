@@ -7,7 +7,7 @@ import { Fragment, useEffect, useReducer, useRef, useState, type ReactNode } fro
  * viewHenkei は setNav・setHeader を済ませたあと showCommonPage() を呼ぶ。
  * クラス名と DOM 構造は移行前の文字列組み立てと同じものを再現している。 */
 
-export type CommonPage = "ref" | "katsuyou" | "henkei" | "numbers" | "search" | "cards";
+export type CommonPage = "ref" | "katsuyou" | "henkei" | "numbers" | "search" | "cards" | "home";
 
 /* legacy の markStar(): ★ だけを .num-x で包む */
 function Star({ text }: { text: unknown }) {
@@ -763,6 +763,129 @@ function SearchPage() {
 	);
 }
 
+/* ---------------- 首页（週アコーディオン） ---------------- */
+
+/* 一目でその日の内容が分かるように：語法日は文型、漢字日は漢字、語彙日は先頭の語 */
+function dayPreviewItems(day: any): string[] {
+	let items: any[] = [];
+	if (Array.isArray(day.points)) items = day.points.map((p: any) => p.pattern);
+	else if (Array.isArray(day.kanji)) items = day.kanji.map((k: any) => k.char);
+	else if (Array.isArray(day.sections))
+		items = day.sections.reduce((all: any[], sec: any) => all.concat((sec.items || []).map((it: any) => it.jp)), []);
+	return items.filter(Boolean).slice(0, 6);
+}
+
+/* 週の開閉は legacy の openWeeks（モジュールごとの Set）が持つ。ここへ複製しないのは、
+   モジュールを切り替えて戻ったときに開いていた週が保たれる挙動を変えないため。 */
+function HomePage({ data }: { data: { weeks: any[]; intro: string; lang: string } }) {
+	const [, bump] = useReducer((n: number) => n + 1, 0);
+	const [jumpTo, setJumpTo] = useState<number | null>(null);
+
+	// legacy は render() の最後で必ず updateStickyVars() していた。--hometoph は
+	// .home-top を実測して決まるので、React では commit 後でないと測れない。
+	useEffect(() => {
+		window.__studyAfterPaint?.();
+		if (jumpTo == null) return;
+		document.getElementById("wk-" + jumpTo)?.scrollIntoView({ behavior: "auto", block: "start" });
+		setJumpTo(null);
+	});
+
+	const home = window.__studyHome;
+	if (!home) return null;
+	const open = home.open();
+	const lx = (cn?: string, en?: string) => (data.lang === "en" && en ? en : cn || "");
+
+	return (
+		<>
+			<div className="home-top">
+				<div className="meta" style={{ marginBottom: "10px" }}>
+					{data.intro}
+				</div>
+				{data.weeks.length > 3 ? (
+					<div className="wk-toc">
+						{data.weeks.map((w) => (
+							<a
+								className="wk-tocitem"
+								data-wkjump={w.n}
+								key={w.n}
+								onClick={() => {
+									// 畳んである週は先に開かないと、飛んでも何も起きていないように見える
+									home.jump(w.n);
+									setJumpTo(w.n);
+									bump();
+								}}
+							>
+								第{w.n}周
+							</a>
+						))}
+					</div>
+				) : null}
+			</div>
+			{data.weeks.map((w) => {
+				const isOpen = open.has(w.n);
+				const sub = lx(w.title_cn, w.title_en);
+				return (
+					<div className="card week-card" id={`wk-${w.n}`} key={w.n}>
+						<div
+							className="wk-head"
+							data-wktoggle={w.n}
+							role="button"
+							aria-expanded={isOpen}
+							onClick={() => {
+								home.toggle(w.n);
+								bump();
+							}}
+						>
+							<div className="wk-t">
+								<h2>
+									第{w.n}週{w.title ? <> <span className="jp">{w.title}</span></> : null}
+								</h2>
+								{sub ? <div className="sub">{sub}</div> : null}
+							</div>
+							<span className="cnt">{w.days.length}天</span>
+							<span className="cv">{isOpen ? "▾" : "▸"}</span>
+						</div>
+						{isOpen ? (
+							<div className="wk-body">
+								<div className="day-list">
+									{w.days.map((d: any) => {
+										const preview = dayPreviewItems(d);
+										return (
+											<div
+												className="day-item"
+												data-go={`#/day/${w.n}-${d.day}`}
+												key={d.day}
+												onClick={() => window.__studyNav?.(`#/day/${w.n}-${d.day}`)}
+											>
+												<div className="d">
+													{d.day}日目{d.day === 7 ? " · 实战" : ""}
+												</div>
+												<div className="t jp">
+													<Rr o={d} f="title" />
+												</div>
+												<div className="tc">{lx(d.title_cn, d.title_en)}</div>
+												{preview.length ? (
+													<div className="day-prev">
+														{preview.map((text, i) => (
+															<span className="dp jp" key={i}>
+																{text}
+															</span>
+														))}
+													</div>
+												) : null}
+											</div>
+										);
+									})}
+								</div>
+							</div>
+						) : null}
+					</div>
+				);
+			})}
+		</>
+	);
+}
+
 /* ---------------- 记忆卡 ---------------- */
 
 /* デッキの中身（どの週のどの語彙を出すか・シャッフル）は DATA と MODULE を持つ
@@ -966,6 +1089,12 @@ declare global {
 			prev: () => void;
 			shuffle: () => void;
 		};
+		/* 首页：週の開閉はモジュールごとに legacy の openWeeks が覚えている */
+		__studyHome?: {
+			open: () => Set<number>;
+			toggle: (week: number) => void;
+			jump: (week: number) => void;
+		};
 	}
 }
 
@@ -994,6 +1123,7 @@ export function CommonPageHost() {
 			{page === "numbers" ? <NumbersPage data={data} /> : null}
 			{page === "search" ? <SearchPage /> : null}
 			{page === "cards" ? <CardsPage /> : null}
+			{page === "home" ? <HomePage data={data} /> : null}
 		</main>
 	);
 }
