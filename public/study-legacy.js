@@ -223,7 +223,7 @@ const SELECTION_FAV_TYPES={
   newword:['生词','New word'], word:['单词','Word'], sentence:['句子','Sentence'],
   q:['错题','Mistake'], grammar:['语法','Grammar']
 };
-let selectionFavType='word', selectionText='', selectionPopover=null, selectionPopoverTimer=null, selectionCheckTimer=null;
+let selectionFavType='word', selectionText='', selectionPopover=null, selectionPopoverTimer=null, selectionCheckTimer=null, selectionSaving=false;
 function normalizeSelectionText(t){ return String(t||'').replace(/\s+/g,' ').trim(); }
 function selectionFavId(type, text){
   let h=2166136261;
@@ -266,6 +266,7 @@ function renderSelectionPopover(){
 function hideSelectionPopover(){
   clearTimeout(selectionPopoverTimer);
   if(selectionPopover) selectionPopover.hidden=true;
+  selectionSaving=false;
 }
 function showSelectionPopover(text, rect){
   selectionText=text; selectionFavType='word';
@@ -286,15 +287,19 @@ function saveSelectedText(){
   saveFav(); renderSide();
   const btn=selectionPopover&&selectionPopover.querySelector('[data-selection-save]');
   if(btn){ btn.textContent=LX('已收藏','Saved'); btn.disabled=true; }
+  selectionSaving=true;
   try{ document.getSelection().removeAllRanges(); }catch(e){}
   clearTimeout(selectionPopoverTimer);
-  selectionPopoverTimer=setTimeout(hideSelectionPopover,700);
+  selectionPopoverTimer=setTimeout(()=>{ selectionSaving=false; hideSelectionPopover(); },700);
 }
 function maybeShowSelectionPopover(){
   requestAnimationFrame(()=>{
     const sel=document.getSelection();
     const text=normalizeSelectionText(sel&&sel.toString());
-    if(!text||!selectionBelongsToApp(sel)){ hideSelectionPopover(); return; }
+    if(!text||!selectionBelongsToApp(sel)){ 
+      if(!selectionSaving) hideSelectionPopover(); 
+      return; 
+    }
     const rect=sel.getRangeAt(0).getBoundingClientRect();
     if(rect.width||rect.height) showSelectionPopover(text,rect);
   });
