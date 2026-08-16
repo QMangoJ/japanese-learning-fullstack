@@ -279,25 +279,26 @@ function RefTable({ cols, rows }: { cols?: unknown[]; rows: unknown[][] }) {
 }
 
 /* legacy の ktable(): 最終列だけ尊敬語として強調する */
-function KTable({ cols, rows }: { cols: string[]; rows: { label: string; vals: string[] }[] }) {
+function KTable({ cols, rows }: { cols?: string[]; rows?: { label?: string; vals?: string[] }[] }) {
+	const heads = cols || [];
 	return (
 		<div className="table-scroll">
 			<table className="ref">
 				<tbody>
 					<tr>
 						<th />
-						{cols.map((c, i) => (
+						{heads.map((c, i) => (
 							<th key={i}>{c}</th>
 						))}
 					</tr>
-					{rows.map((r, i) => (
+					{(rows || []).map((r, i) => (
 						<tr key={i}>
 							<th>{r.label}</th>
-							{r.vals.map((v, j) => (
+							{(r.vals || []).map((v, j) => (
 								<td
 									className="jp"
 									key={j}
-									style={j === cols.length - 1 ? { color: "var(--accent)", fontWeight: 600 } : undefined}
+									style={j === heads.length - 1 ? { color: "var(--accent)", fontWeight: 600 } : undefined}
 								>
 									{v}
 								</td>
@@ -311,21 +312,21 @@ function KTable({ cols, rows }: { cols: string[]; rows: { label: string; vals: s
 }
 
 /* legacy の ptable(): 活用形一覧用。どの列も対等なので色を付けない */
-function PTable({ cols, rows }: { cols: string[]; rows: { label: string; vals: string[] }[] }) {
+function PTable({ cols, rows }: { cols?: string[]; rows?: { label?: string; vals?: string[] }[] }) {
 	return (
 		<div className="table-scroll">
 			<table className="ref">
 				<tbody>
 					<tr>
 						<th />
-						{cols.map((c, i) => (
+						{(cols || []).map((c, i) => (
 							<th key={i}>{c}</th>
 						))}
 					</tr>
-					{rows.map((r, i) => (
+					{(rows || []).map((r, i) => (
 						<tr key={i}>
 							<th className="jp">{r.label}</th>
-							{r.vals.map((v, j) => (
+							{(r.vals || []).map((v, j) => (
 								<td className={j === 0 ? "meta" : "jp"} key={j}>
 									{v}
 								</td>
@@ -341,7 +342,8 @@ function PTable({ cols, rows }: { cols: string[]; rows: { label: string; vals: s
 /* ---------------- 接续表 ---------------- */
 
 export function RefPage({ data }: { data: any }) {
-	const RF = data.reference;
+	const RF = data?.reference;
+	if (!RF) return <div className="empty">{lx("接续表还没加载完，请稍后重试。", "Connection table is still loading.")}</div>;
 	const block = (heading: string, cols: string[], rows: unknown[][], futsukei: string, lead?: string) => (
 		<div className="card">
 			<h3 className="jp" style={{ marginTop: "0" }}>
@@ -405,7 +407,8 @@ export function RefPage({ data }: { data: any }) {
 /* ---------------- 活用（敬語レベル） ---------------- */
 
 export function KatsuyouPage({ data }: { data: any }) {
-	const KY = data.katsuyou;
+	const KY = data?.katsuyou;
+	if (!KY) return <div className="empty">{lx("活用数据还没加载完，请稍后重试。", "Conjugation data is still loading.")}</div>;
 	const V3 = KY.verb;
 	const c = V3?.callout;
 
@@ -501,7 +504,8 @@ export function KatsuyouPage({ data }: { data: any }) {
 /* ---------------- 变形（変形ルール） ---------------- */
 
 export function HenkeiPage({ data }: { data: any }) {
-	const HK = data.henkei;
+	const HK = data?.henkei;
+	if (!HK) return <div className="empty">{lx("变形数据还没加载完，请稍后重试。", "Verb-form data is still loading.")}</div>;
 	return (
 		<>
 			{HK.intro ? (
@@ -622,7 +626,8 @@ function NumCounter({ c }: { c: any }) {
 }
 
 export function NumbersPage({ data }: { data: any }) {
-	const N = data.numbers;
+	const N = data?.numbers;
+	if (!N) return <div className="empty">{lx("数字表还没加载完，请稍后重试。", "Number tables are still loading.")}</div>;
 	const secs: any[] = N.sections || [];
 
 	// legacy は data-scroll を #app の委任クリックで拾っていた。挙動（smooth/start）はそのまま。

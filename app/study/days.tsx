@@ -7,10 +7,12 @@ import {
 	G2,
 	G4,
 	K,
+	K2,
 	LANG,
 	MODULE,
 	TYPE,
 	V,
+	V2,
 	addMistake,
 	ctMode,
 	ctWeek,
@@ -22,6 +24,7 @@ import {
 	hideJp,
 	isFav,
 	isGram,
+	isListening,
 	lx,
 	navTo,
 	noRuby,
@@ -1132,7 +1135,8 @@ function DayVocab({ day, w, d, scrollTok }: { day: any; w: number; d: number; sc
 			</>
 		);
 	}
-	const dailyItems = MODULE === "vocab" && V.daily_translations && V.daily_translations[`w${w}d${d}`];
+	const vocabBook = MODULE === "n2vocab" ? V2 : V;
+	const dailyItems = (MODULE === "vocab" || MODULE === "n2vocab") && vocabBook.daily_translations && vocabBook.daily_translations[`w${w}d${d}`];
 	const translationByNumber = new Map(((dailyItems && dailyItems.items) || []).map((item: any) => [item.n, item]));
 	return (
 		<>
@@ -1361,7 +1365,8 @@ function DayKanji({ day, w, d, scrollTok }: { day: any; w: number; d: number; sc
 			</>
 		);
 	}
-	const dailyItems = MODULE === "kanji" && K.daily_translations && K.daily_translations[`w${w}d${d}`];
+	const kanjiBook = MODULE === "n2kanji" ? K2 : K;
+	const dailyItems = (MODULE === "kanji" || MODULE === "n2kanji") && kanjiBook.daily_translations && kanjiBook.daily_translations[`w${w}d${d}`];
 	const translationByNumber = new Map(((dailyItems && dailyItems.items) || []).map((item: any) => [item.n, item]));
 	return (
 		<>
@@ -1466,12 +1471,16 @@ function DayKanji({ day, w, d, scrollTok }: { day: any; w: number; d: number; sc
 	);
 }
 
-function DayNav({ w, d }: { w: number; d: number }) {
-	const { prev, next } = dayNeighbors(w, d);
+export function DayNav({ w, d, mod }: { w: number; d: number; mod?: string }) {
+	const used = mod || MODULE;
+	const { prev, next } = dayNeighbors(w, d, used);
+	const chapterScale = isListening(used);
 	const fab = (t: [number, number, any] | null | undefined, dir: "prev" | "next") => {
 		if (!t) return null;
 		const [cw, cd, day] = t;
-		const label = lx(`第${cw}週 ${cd}日目`, `Week ${cw} Day ${cd}`);
+		const label = chapterScale
+			? lx(`第${cw}章 ${cd}节`, `Ch. ${cw} §${cd}`)
+			: lx(`第${cw}週 ${cd}日目`, `Week ${cw} Day ${cd}`);
 		const txt = (
 			<span className="txt">
 				<span className="lb">{label}</span>

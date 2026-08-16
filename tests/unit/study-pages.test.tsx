@@ -7,6 +7,7 @@ import {
 	CardsPage,
 	FavsPage,
 	Fmt,
+	HenkeiPage,
 	HomePage,
 	MistakesPage,
 	RubyHtml,
@@ -167,6 +168,28 @@ describe("SearchPage", () => {
 		expect(screen.getByText("fridge")).toBeInTheDocument();
 		await user.click(screen.getByText("清空"));
 		expect(screen.queryByText("fridge")).not.toBeInTheDocument();
+	});
+});
+
+describe("HenkeiPage", () => {
+	it("does not crash when verb-form data is missing", () => {
+		expect(() => render(<HenkeiPage data={{}} />)).not.toThrow();
+		expect(screen.getByText(/变形数据还没加载完|Verb-form data/)).toBeInTheDocument();
+	});
+
+	it("renders sound-change rules", () => {
+		render(
+			<HenkeiPage
+				data={{
+					henkei: {
+						intro: "怎么把动词变成那个形",
+						rules: [{ title: "五段動詞のテ形・タ形（音便）", cols: ["変化", "例"], rows: [{ label: "〜く", vals: ["→ いて", "書く→書いて"] }] }],
+					},
+				}}
+			/>,
+		);
+		expect(screen.getByText("五段動詞のテ形・タ形（音便）")).toBeInTheDocument();
+		expect(screen.getByText("書く→書いて")).toBeInTheDocument();
 	});
 });
 

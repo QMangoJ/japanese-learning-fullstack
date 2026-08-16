@@ -1,7 +1,12 @@
 import { expect, test, type Page } from "@playwright/test";
 
+async function dismissViteOverlay(page: Page) {
+	await page.evaluate(() => document.querySelector("vite-error-overlay")?.remove());
+}
+
 async function waitForStudy(page: Page) {
 	await page.goto("/study");
+	await dismissViteOverlay(page);
 	await expect(page.locator("#topbar")).toBeVisible();
 	await expect(page.locator(".week-card, h2.page, .empty").first()).toBeVisible();
 	await expect(page.locator(".week-card").first()).toBeVisible({ timeout: 20_000 });
@@ -139,6 +144,22 @@ test.describe("study navigation", () => {
 		await expect(page.locator(".ex .en").first()).toBeVisible();
 	});
 
+	test("shows sentence translations on N2 vocab daily exercises", async ({ page }) => {
+		await waitForStudy(page);
+		const sideN2 = page.locator("#side .side-seg button", { hasText: /^N2$/ });
+		if (await sideN2.isVisible()) await sideN2.click();
+		else {
+			await page.locator("#lvChip").click();
+			await page.getByRole("button", { name: /^N2/ }).click();
+		}
+		await pickType(page, "vocab");
+		await expect(page.locator(".week-card").first()).toBeVisible({ timeout: 20_000 });
+		if (await page.locator(".day-item").first().isVisible()) await page.locator(".day-item").first().click();
+		await expect(page.locator(".daily-q").first()).toBeVisible({ timeout: 15_000 });
+		await page.getByRole("button", { name: /显示原句翻译|Show sentence translation/ }).first().click();
+		await expect(page.locator(".daily-explain").first()).toContainText(/层|公寓|10/);
+	});
+
 	test("keeps scroll when toggling 注音 / 日语 / 翻译", async ({ page }) => {
 		await waitForStudy(page);
 		await pickType(page, "vocab");
@@ -181,6 +202,22 @@ test.describe("study navigation", () => {
 		await expect(page.locator(".week-card").first()).toBeVisible({ timeout: 15_000 });
 	});
 
+	test("opens the verb-form reference without crashing", async ({ page }) => {
+		await waitForStudy(page);
+		await openStudyNav(page, "ref");
+		await expect(page.locator("#title")).toContainText(/接续|Connection/);
+
+		const henkei = page.locator("#side .side-item", { hasText: /变形|Verb forms/ });
+		if (await henkei.isVisible()) await henkei.click();
+		else {
+			await page.locator('.bottom button[data-nav="common"]').click();
+			await page.getByRole("button", { name: /变形|Verb forms/ }).click();
+		}
+		await expect(page.locator("#title")).toContainText(/変形|Verb Conjugation|变形|音便/);
+		await expect(page.getByRole("heading", { name: "五段動詞のテ形・タ形（音便）" })).toBeVisible();
+		await expect(page.getByText(/Oops|unexpected error/i)).toHaveCount(0);
+	});
+
 	test("opens catalog, a day, vocab, and kanji", async ({ page }) => {
 		await waitForStudy(page);
 		await expect(page.locator("#title")).toContainText(/语法|Grammar/);
@@ -214,6 +251,8 @@ test.describe("study navigation", () => {
 		if (await page.locator(".day-item").first().isVisible()) await page.locator(".day-item").first().click();
 		await expect(page.locator(".listening-detail, .listening-player").first()).toBeVisible({ timeout: 15_000 });
 		await expect(page.locator(".listening-lesson, .listening-player").first()).toBeVisible({ timeout: 15_000 });
+		await expect(page.getByRole("button", { name: /下一节|Next/ })).toBeVisible();
+		await expect(page.locator(".daynav-fab.next")).toBeVisible();
 	});
 });
 

@@ -4,7 +4,7 @@ import { redirect } from "react-router";
 import { findListeningChapter, findListeningSection, type ListeningDisc } from "../data/listening-n3-book";
 import { getListeningLesson } from "../data/listening-n3-lessons";
 import type { ListeningLesson, ListeningLessonBlock } from "../data/listening-n3-lesson-types";
-import { isFav, LANG, navTo, registerFavMeta, toggleFav } from "../study/store";
+import { dayNeighbors, isFav, LANG, lx, navTo, registerFavMeta, toggleFav } from "../study/store";
 import type { Route } from "./+types/listening-n3";
 import "./reading-n3.css";
 import "./listening-n3.css";
@@ -395,6 +395,7 @@ function LessonBlocks({
 }
 
 function AnswerTextPanels({ lesson }: { lesson: ListeningLesson }) {
+	const showCn = LANG !== "en";
 	return (
 		<section className="listening-answer-panels" aria-label="答えと聞き取り原文">
 			<details>
@@ -413,6 +414,24 @@ function AnswerTextPanels({ lesson }: { lesson: ListeningLesson }) {
 					{lesson.transcript}
 				</div>
 			</details>
+			{showCn && lesson.transcript_cn ? (
+				<details>
+					<summary>
+						<span>译文</span>
+						<b>表示</b>
+					</summary>
+					<div className="listening-text-answers__body">{lesson.transcript_cn}</div>
+				</details>
+			) : null}
+			{!showCn && lesson.transcript_en ? (
+				<details>
+					<summary>
+						<span>Translation</span>
+						<b>Show</b>
+					</summary>
+					<div className="listening-text-answers__body">{lesson.transcript_en}</div>
+				</details>
+			) : null}
 		</section>
 	);
 }
@@ -484,6 +503,7 @@ function ChapterDetail({ chapterNumber, sectionNumber, onBack, hideBack = false 
 					<ListeningPlayer cue={cue} audioRef={audioRef} onPlaybackChange={setPlaying} />
 					<LessonBlocks blocks={lesson.blocks} disc={chapter.disc} active={cue} playing={playing} onToggle={toggleCue} />
 					<AnswerTextPanels lesson={lesson} />
+					<ListeningSectionNav chapter={chapterNumber} section={sectionNumber} />
 				</main>
 			</div>
 		</div>
@@ -519,6 +539,24 @@ export function ListeningN3Content({
 			</div>
 			<ChapterDetail key={`${chapter}-${section}`} chapterNumber={chapter} sectionNumber={section} onBack={() => navTo("#/")} hideBack={embedded} />
 		</>
+	);
+}
+
+function ListeningSectionNav({ chapter, section }: { chapter: number; section: number }) {
+	const { prev, next } = dayNeighbors(chapter, section, "listening");
+	const label = (item: [number, number, any]) =>
+		lx(`第${item[0]}章 ${item[1]}节 · ${item[2].title || ""}`, `Ch. ${item[0]} §${item[1]} · ${item[2].title_en || item[2].title || ""}`);
+	return (
+		<nav className="listening-nav" aria-label={lx("章节切换", "Section navigation")}>
+			<button type="button" disabled={!prev} onClick={() => prev && navTo(`#/day/${prev[0]}-${prev[1]}`)}>
+				<small>{lx("上一节", "Previous")}</small>
+				<b>{prev ? label(prev) : lx("已经是第一节", "First section")}</b>
+			</button>
+			<button type="button" disabled={!next} onClick={() => next && navTo(`#/day/${next[0]}-${next[1]}`)}>
+				<small>{lx("下一节", "Next")}</small>
+				<b>{next ? label(next) : lx("已经是最后一节", "Last section")}</b>
+			</button>
+		</nav>
 	);
 }
 

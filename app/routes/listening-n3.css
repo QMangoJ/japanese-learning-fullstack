@@ -83,3 +83,10 @@ html.theme-dark .listening-lesson__figure{background:#fff}
 body.listening-zoom-open .topbar,body.listening-zoom-open nav.bottom,body.listening-zoom-open .side{visibility:hidden}
 html.theme-dark .listening-scan figure,html.theme-dark .listening-answer-panels .listening-translation-pages{background:#1b1f26}
 @media (max-width:650px){.listening-scan header{align-items:flex-start;flex-direction:column;gap:10px}.listening-scan figure{padding:6px}.listening-scan h3{font-size:15px}.listening-scan-lightbox{padding:48px 0 12px}.listening-scan-lightbox img{width:100%;border-radius:0}}
+.listening-nav{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:22px 0 calc(28px + env(safe-area-inset-bottom))}
+.listening-nav button{display:flex;flex-direction:column;gap:3px;padding:14px 16px;border:1px solid var(--rl);border-radius:12px;background:var(--rp);color:var(--ri);cursor:pointer;font:inherit;text-align:left}
+.listening-nav button:last-child{text-align:right}
+.listening-nav button:disabled{opacity:.4;cursor:not-allowed}
+.listening-nav small{color:var(--rm);font-size:11px;font-weight:700;letter-spacing:.08em}
+.listening-nav b{font-size:14px;font-weight:700;line-height:1.45}
+@media (max-width:650px){.listening-nav{grid-template-columns:1fr}}

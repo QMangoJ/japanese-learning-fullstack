@@ -1334,7 +1334,7 @@ export function hydrateFromStorage() {
 async function bootN2() {
 	try {
 		const names = ["n2grammar", "n2vocab", "n2kanji"] as const;
-		const [g2, v2, k2, n2ExamExplanations, n2DailyExplanations] = await Promise.all([
+		const [g2, v2, k2, n2ExamExplanations, n2DailyExplanations, n2VocabKanjiTranslations] = await Promise.all([
 			...names.map((n) => fetch("/data/" + DATA_FILES[n]).then((r) => r.json())),
 			fetch("/data/n2-grammar-explanations.json")
 				.then((r) => (r.ok ? r.json() : {}))
@@ -1342,9 +1342,14 @@ async function bootN2() {
 			fetch("/data/n2-grammar-daily-explanations.json")
 				.then((r) => (r.ok ? r.json() : {}))
 				.catch(() => ({})),
+			fetch("/data/n2-vocab-kanji-daily-translations.json")
+				.then((r) => (r.ok ? r.json() : {}))
+				.catch(() => ({})),
 		]);
 		g2.besatsu = n2ExamExplanations || {};
 		g2.daily_explanations = n2DailyExplanations || {};
+		v2.daily_translations = n2VocabKanjiTranslations.vocab || {};
+		k2.daily_translations = n2VocabKanjiTranslations.kanji || {};
 		G2 = g2;
 		V2 = v2;
 		K2 = k2;
