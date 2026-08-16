@@ -4,13 +4,12 @@ import { chapter3AnswerText } from "./listening-n3-answers-ch3";
 export const chapter3Lessons: readonly ListeningLesson[] = [
 	{
 		blocks: [
-			{ type: "hero", no: 1, title: "町で", kana: "まち", en: "Around Town", cn: "在街上", kr: "일상생활의 거리에서" },
+			{ type: "hero", no: 1, title: "町で", kana: "まち", en: "Around Town", cn: "在街上" },
 			{
 				type: "slogan",
 				jp: "何度も聞くフレーズをきちんと理解しましょう！",
 				en: "Make an effort to understand phrases you often hear in public places!",
 				cn: "应正确理解多次听到的句子！",
-				kr: "자주 듣는 문장을 정확히 이해합시다!",
 			},
 			{
 				type: "figure",
@@ -74,13 +73,12 @@ export const chapter3Lessons: readonly ListeningLesson[] = [
 	},
 	{
 		blocks: [
-			{ type: "hero", no: 2, title: "天気予報・交通情報", kana: "てんきよほう", en: "Weather Forecast & Traffic Report", cn: "天气预报・交通信息", kr: "날씨예보・교통정보" },
+			{ type: "hero", no: 2, title: "天気予報・交通情報", kana: "てんきよほう", en: "Weather Forecast & Traffic Report", cn: "天气预报・交通信息" },
 			{
 				type: "slogan",
 				jp: "用語に慣れて必要な情報を聞き取れるようにしましょう！",
 				en: "Familiarize yourself with commonly used terms and pick out the important information!",
 				cn: "应熟悉专用词汇，听取必要信息！",
-				kr: "용어를 익혀서 필요한 정보를 들을 수 있도록 합시다!",
 			},
 			{
 				type: "figure",
@@ -142,7 +140,7 @@ export const chapter3Lessons: readonly ListeningLesson[] = [
 	},
 	{
 		blocks: [
-			{ type: "hero", no: 3, title: "学校で", kana: "がっこう", en: "At School", cn: "在学校", kr: "학교에서" },
+			{ type: "hero", no: 3, title: "学校で", kana: "がっこう", en: "At School", cn: "在学校" },
 			{
 				type: "slogan",
 				jp: "指示や禁止を表す表現に注意しましょう！",
@@ -206,7 +204,7 @@ export const chapter3Lessons: readonly ListeningLesson[] = [
 	},
 	{
 		blocks: [
-			{ type: "hero", no: 4, title: "職場で", kana: "しょくば", en: "At Work", cn: "在职场", kr: "직장에서" },
+			{ type: "hero", no: 4, title: "職場で", kana: "しょくば", en: "At Work", cn: "在职场" },
 			{ type: "slogan", jp: "職場の敬語を聞き取れるようにしましょう！", en: "Learn to catch workplace keigo!", cn: "应能听懂职场敬语！" },
 			{
 				type: "figure",
@@ -292,7 +290,7 @@ export const chapter3Lessons: readonly ListeningLesson[] = [
 	},
 	{
 		blocks: [
-			{ type: "hero", no: 5, title: "病院・いろいろな店で", kana: "びょういん", en: "Hospital and shops", cn: "医院和各种店", kr: "병원・가게에서" },
+			{ type: "hero", no: 5, title: "病院・いろいろな店で", kana: "びょういん", en: "Hospital and shops", cn: "医院和各种店" },
 			{ type: "slogan", jp: "決まった表現を覚えましょう！", en: "Remember the set phrases used in shops and hospitals!", cn: "记住医院和店里的固定表达！" },
 			{
 				type: "figure",
@@ -354,7 +352,7 @@ export const chapter3Lessons: readonly ListeningLesson[] = [
 	},
 	{
 		blocks: [
-			{ type: "hero", no: 6, title: "まとめ問題", kana: "もんだい", en: "Review", cn: "综合练习", kr: "복습" },
+			{ type: "hero", no: 6, title: "まとめ問題", kana: "もんだい", en: "Review", cn: "综合练习" },
 			{
 				type: "p",
 				jp: "時間：10分　答えは p.114〜118。今まで習った場所別の聞き取りを復習します。",

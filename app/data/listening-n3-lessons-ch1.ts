@@ -3,13 +3,12 @@ import type { ListeningLesson } from "./listening-n3-lesson-types";
 export const chapter1Lessons: readonly ListeningLesson[] = [
 	{
 		blocks: [
-			{ type: "hero", no: 1, title: "発音について", kana: "はつおん", en: "Pronunciation", cn: "发音", kr: "발음에 대해" },
+			{ type: "hero", no: 1, title: "発音について", kana: "はつおん", en: "Pronunciation", cn: "发音" },
 			{
 				type: "slogan",
 				jp: "発音と表記に気をつけましょう！",
 				en: "Pay close attention to how the words are written and pronounced!",
 				cn: "注意发音和书写！",
-				kr: "발음과 표기에 주의합시다!",
 			},
 			{
 				type: "figure",
@@ -116,8 +115,8 @@ export const chapter1Lessons: readonly ListeningLesson[] = [
 	},
 	{
 		blocks: [
-			{ type: "hero", no: 2, title: "文法について①", kana: "ぶんぽう", en: "Grammar ①", cn: "语法①", kr: "문법에 대해①" },
-			{ type: "slogan", jp: "だれがするのかに注意しましょう！", en: "Identify who's doing what!", cn: "注意听是谁在做！", kr: "누가 하는지에 주의합시다!" },
+			{ type: "hero", no: 2, title: "文法について①", kana: "ぶんぽう", en: "Grammar ①", cn: "语法①" },
+			{ type: "slogan", jp: "だれがするのかに注意しましょう！", en: "Identify who's doing what!", cn: "注意听是谁在做！" },
 			{
 				type: "figure",
 				src: "/listening/n3/figures/ch1-s2-example.jpg",
@@ -199,7 +198,7 @@ export const chapter1Lessons: readonly ListeningLesson[] = [
 	},
 	{
 		blocks: [
-			{ type: "hero", no: 3, title: "文法について②", kana: "ぶんぽう", en: "Grammar ②", cn: "语法②", kr: "문법에 대해②" },
+			{ type: "hero", no: 3, title: "文法について②", kana: "ぶんぽう", en: "Grammar ②", cn: "语法②" },
 			{
 				type: "slogan",
 				jp: "自分では使えなくても、敬語の意味が聞き取れるようにしましょう！",
@@ -282,7 +281,7 @@ export const chapter1Lessons: readonly ListeningLesson[] = [
 	},
 	{
 		blocks: [
-			{ type: "hero", no: 4, title: "会話表現", kana: "かいわひょうげん", en: "Conversational Phrases", cn: "会话表达形式", kr: "회화표현" },
+			{ type: "hero", no: 4, title: "会話表現", kana: "かいわひょうげん", en: "Conversational Phrases", cn: "会话表达形式" },
 			{
 				type: "slogan",
 				jp: "会話らしい表現ややりとりに慣れましょう！",
@@ -375,7 +374,7 @@ export const chapter1Lessons: readonly ListeningLesson[] = [
 	},
 	{
 		blocks: [
-			{ type: "hero", no: 5, title: "まとめ問題", kana: "もんだい", en: "Review", cn: "综合练习", kr: "복습" },
+			{ type: "hero", no: 5, title: "まとめ問題", kana: "もんだい", en: "Review", cn: "综合练习" },
 			{
 				type: "p",
 				jp: "時間：5分　（答えは p.82〜84）",
