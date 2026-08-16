@@ -248,6 +248,8 @@ describe("KougoPage", () => {
 				}}
 			/>,
 		);
+		expect(screen.getByRole("columnheader", { name: "口语" })).toBeInTheDocument();
+		expect(screen.getByRole("columnheader", { name: "完整形" })).toBeInTheDocument();
 		expect(screen.getByText("〜ちゃった / 〜じゃった")).toBeInTheDocument();
 		expect(screen.getByText("〜てしまった / 〜でしまった")).toBeInTheDocument();
 		expect(screen.getByText("食べちゃった")).toBeInTheDocument();
