@@ -32,7 +32,15 @@
 				],
 				"point": "「〜がち」表示容易陷入某种不良倾向。",
 				"point_en": "がち marks an undesirable tendency.",
-				"link": "#/day/1-1/p1"
+				"link": "#/day/1-1/p1",
+				"words": [
+					{
+						"jp": "外食する",
+						"kana": "がいしょく",
+						"cn": "在外就餐",
+						"en": "eat out"
+					}
+				]
 			},
 			{
 				"n": 2,
@@ -65,7 +73,27 @@
 				],
 				"point": "「ものの」表示逆接，多用于书面。",
 				"point_en": "ものの is a written-style contrast.",
-				"link": "#/day/1-2/p3"
+				"link": "#/day/1-2/p3",
+				"words": [
+					{
+						"jp": "本",
+						"kana": "ほん",
+						"cn": "书",
+						"en": "book"
+					},
+					{
+						"jp": "内容",
+						"kana": "ないよう",
+						"cn": "内容",
+						"en": "contents/substance"
+					},
+					{
+						"jp": "頭",
+						"kana": "あたま",
+						"cn": "头，脑袋",
+						"en": "head"
+					}
+				]
 			},
 			{
 				"n": 3,
@@ -98,7 +126,15 @@
 				],
 				"point": "「気味」表示略微偏向某种状态。",
 				"point_en": "気味 means slightly / a touch of.",
-				"link": "#/day/1-1/p3"
+				"link": "#/day/1-1/p3",
+				"words": [
+					{
+						"jp": "駅",
+						"kana": "えき",
+						"cn": "车站",
+						"en": "station"
+					}
+				]
 			},
 			{
 				"n": 4,
@@ -131,7 +167,21 @@
 				],
 				"point": "「自信なさげ」是固定说法。",
 				"point_en": "自信なさげ is the set form.",
-				"link": "#/day/1-1/p0"
+				"link": "#/day/1-1/p0",
+				"words": [
+					{
+						"jp": "自信",
+						"kana": "じしん",
+						"cn": "自信",
+						"en": "confidence"
+					},
+					{
+						"jp": "顔",
+						"kana": "かお",
+						"cn": "脸",
+						"en": "face"
+					}
+				]
 			},
 			{
 				"n": 5,
@@ -164,7 +214,15 @@
 				],
 				"point": "可能形＋ものなら表示难以实现的愿望。",
 				"point_en": "Potential + ものなら is a hard-to-realize wish.",
-				"link": "#/day/1-2/p0"
+				"link": "#/day/1-2/p0",
+				"words": [
+					{
+						"jp": "病気",
+						"kana": "びょうき",
+						"cn": "生病",
+						"en": "illness"
+					}
+				]
 			},
 			{
 				"n": 6,
@@ -197,7 +255,21 @@
 				],
 				"point": "「怒りっぽい」用ます形词干。",
 				"point_en": "っぽい attaches to the masu stem.",
-				"link": "#/day/1-1/p2"
+				"link": "#/day/1-1/p2",
+				"words": [
+					{
+						"jp": "部長",
+						"kana": "ぶちょう",
+						"cn": "部长",
+						"en": "manager"
+					},
+					{
+						"jp": "最近",
+						"kana": "さいきん",
+						"cn": "最近",
+						"en": "recently"
+					}
+				]
 			},
 			{
 				"n": 7,
@@ -230,7 +302,8 @@
 				],
 				"point": "な形容词后接「な＋ものだから」。",
 				"point_en": "na-adjectives take な before ものだから.",
-				"link": "#/day/1-2/p1"
+				"link": "#/day/1-2/p1",
+				"words": []
 			},
 			{
 				"n": 8,
@@ -263,7 +336,8 @@
 				],
 				"point": "「まだしも」表示相比之下前者还勉强可以接受。",
 				"point_en": "まだしも: the first thing is still tolerable.",
-				"link": "#/day/1-3/p2"
+				"link": "#/day/1-3/p2",
+				"words": []
 			},
 			{
 				"n": 9,
@@ -296,7 +370,15 @@
 				],
 				"point": "「もとより」表示前者当然成立，后者也成立。",
 				"point_en": "もとより = not to mention the first item.",
-				"link": "#/day/1-3/p0"
+				"link": "#/day/1-3/p0",
+				"words": [
+					{
+						"jp": "国内",
+						"kana": "こくない",
+						"cn": "国内",
+						"en": "domestic"
+					}
+				]
 			},
 			{
 				"n": 10,
@@ -329,7 +411,15 @@
 				],
 				"point": "「ないこともない」表示并非完全不可能。",
 				"point_en": "ないこともない = it's not impossible.",
-				"link": "#/day/1-5/p1"
+				"link": "#/day/1-5/p1",
+				"words": [
+					{
+						"jp": "修理",
+						"kana": "しゅうり",
+						"cn": "修理",
+						"en": "repair"
+					}
+				]
 			},
 			{
 				"n": 11,
@@ -362,7 +452,33 @@
 				],
 				"point": "「〜てばかりもいられない」表示不能只顾着那样。",
 				"point_en": "てばかりもいられない = can't keep doing only that.",
-				"link": "#/day/1-6/p3"
+				"link": "#/day/1-6/p3",
+				"words": [
+					{
+						"jp": "最近",
+						"kana": "さいきん",
+						"cn": "最近",
+						"en": "recently"
+					},
+					{
+						"jp": "体",
+						"kana": "からだ",
+						"cn": "身体",
+						"en": "body"
+					},
+					{
+						"jp": "調子",
+						"kana": "ちょうし",
+						"cn": "状况",
+						"en": "condition"
+					},
+					{
+						"jp": "仕事",
+						"kana": "しごと",
+						"cn": "工作",
+						"en": "work"
+					}
+				]
 			},
 			{
 				"n": 12,
@@ -395,7 +511,15 @@
 				],
 				"point": "「んだもの」用来申明理由，口语。",
 				"point_en": "んだもの gives a casual reason.",
-				"link": "#/day/1-2/p2"
+				"link": "#/day/1-2/p2",
+				"words": [
+					{
+						"jp": "携帯電話",
+						"kana": "けいたいでんわ",
+						"cn": "手机",
+						"en": "a cell phone/mobile phone"
+					}
+				]
 			},
 			{
 				"n": 13,
@@ -428,7 +552,21 @@
 				],
 				"point": "「行きたくないこともない」＝也不是不想去。",
 				"point_en": "行きたくないこともない = it's not that I don't want to.",
-				"link": "#/day/1-5/p0"
+				"link": "#/day/1-5/p0",
+				"words": [
+					{
+						"jp": "映画館",
+						"kana": "えいがかん",
+						"cn": "电影院",
+						"en": "movie theater"
+					},
+					{
+						"jp": "家",
+						"kana": "いえ",
+						"cn": "家",
+						"en": "house"
+					}
+				]
 			},
 			{
 				"n": 14,
@@ -461,7 +599,21 @@
 				],
 				"point": "「〜てたまらない」表示程度高到受不了。",
 				"point_en": "てたまらない = so … I can't stand it.",
-				"link": "#/day/1-4/p0"
+				"link": "#/day/1-4/p0",
+				"words": [
+					{
+						"jp": "今夜",
+						"kana": "こんや",
+						"cn": "今晚",
+						"en": "tonight"
+					},
+					{
+						"jp": "仕事",
+						"kana": "しごと",
+						"cn": "工作",
+						"en": "work"
+					}
+				]
 			},
 			{
 				"n": 15,
@@ -494,7 +646,21 @@
 				],
 				"point": "「抜きにして」表示先抛开某事。",
 				"point_en": "抜きにして = setting that aside.",
-				"link": "#/day/1-3/p3"
+				"link": "#/day/1-3/p3",
+				"words": [
+					{
+						"jp": "今日",
+						"kana": "こんにち",
+						"cn": "今天",
+						"en": "today"
+					},
+					{
+						"jp": "話",
+						"kana": "はなし",
+						"cn": "话／说话",
+						"en": "talk"
+					}
+				]
 			}
 		],
 		"mondai2": [
@@ -530,7 +696,15 @@
 				"point": "「AはともかくB」：A先不论，说B。",
 				"point_en": "Aはともかく B = never mind A, as for B.",
 				"link": "#/day/1-3/p1",
-				"order": "1→3→4→2"
+				"order": "1→3→4→2",
+				"words": [
+					{
+						"jp": "体",
+						"kana": "からだ",
+						"cn": "身体",
+						"en": "body"
+					}
+				]
 			},
 			{
 				"n": 17,
@@ -564,7 +738,15 @@
 				"point": "「かわいくてしかたないという顔」。",
 				"point_en": "てしかたない = so … one can't help it.",
 				"link": "#/day/1-4/p1",
-				"order": "4→2→1→3"
+				"order": "4→2→1→3",
+				"words": [
+					{
+						"jp": "孫",
+						"kana": "まご",
+						"cn": "（外）孙子（女）",
+						"en": "grandchild"
+					}
+				]
 			},
 			{
 				"n": 18,
@@ -598,7 +780,8 @@
 				"point": "「ないこともないけれど」。",
 				"point_en": "ないこともない = not entirely impossible.",
 				"link": "#/day/1-5/p1",
-				"order": "3→2→4→1"
+				"order": "3→2→4→1",
+				"words": []
 			},
 			{
 				"n": 19,
@@ -632,7 +815,15 @@
 				"point": "「ぬきにしては」＝没有…的话。",
 				"point_en": "ぬきにしては = if you leave that out.",
 				"link": "#/day/1-3/p3",
-				"order": "2→3→1→4"
+				"order": "2→3→1→4",
+				"words": [
+					{
+						"jp": "優勝",
+						"kana": "ゆうしょう",
+						"cn": "优胜",
+						"en": "a victory, championship"
+					}
+				]
 			},
 			{
 				"n": 20,
@@ -666,7 +857,8 @@
 				"point": "「ずにはいられない」表示忍不住做。",
 				"point_en": "ずにはいられない = can't help doing.",
 				"link": "#/day/1-5/p3",
-				"order": "4→3→2→1"
+				"order": "4→3→2→1",
+				"words": []
 			}
 		],
 		"mondai3": [
@@ -701,7 +893,8 @@
 				],
 				"point": "前后是转折，用「しかし」。",
 				"point_en": "しかし marks contrast with the previous enjoyment.",
-				"link": "#/day/1-3/p1"
+				"link": "#/day/1-3/p1",
+				"words": []
 			},
 			{
 				"n": 22,
@@ -734,7 +927,8 @@
 				],
 				"point": "「心配でならない」表示感情强烈。",
 				"point_en": "でならない = so … I can't help it.",
-				"link": "#/day/1-4/p3"
+				"link": "#/day/1-4/p3",
+				"words": []
 			},
 			{
 				"n": 23,
@@ -767,7 +961,8 @@
 				],
 				"point": "「疲れ気味」＝有点累。",
 				"point_en": "気味 = slightly.",
-				"link": "#/day/1-1/p3"
+				"link": "#/day/1-1/p3",
+				"words": []
 			},
 			{
 				"n": 24,
@@ -800,7 +995,8 @@
 				],
 				"point": "「まだしも」：前者相对还能接受。",
 				"point_en": "まだしも: the first case is still easier to accept.",
-				"link": "#/day/1-3/p2"
+				"link": "#/day/1-3/p2",
+				"words": []
 			},
 			{
 				"n": 25,
@@ -833,7 +1029,8 @@
 				],
 				"point": "「思わずにはいられない」。",
 				"point_en": "ずにはいられない = can't help doing.",
-				"link": "#/day/1-5/p3"
+				"link": "#/day/1-5/p3",
+				"words": []
 			}
 		]
 	},
@@ -870,7 +1067,15 @@
 				],
 				"point": "「Vかけ」表示做到中途。",
 				"point_en": "Vかけ = start but not finish.",
-				"link": "#/day/2-2/p0"
+				"link": "#/day/2-2/p0",
+				"words": [
+					{
+						"jp": "途中",
+						"kana": "とちゅう",
+						"cn": "途中",
+						"en": "on the way, part way"
+					}
+				]
 			},
 			{
 				"n": 2,
@@ -903,7 +1108,15 @@
 				],
 				"point": "「Nとして」表示资格、立场。",
 				"point_en": "として = as / in the role of.",
-				"link": "#/day/2-5/p3"
+				"link": "#/day/2-5/p3",
+				"words": [
+					{
+						"jp": "目的",
+						"kana": "もくてき",
+						"cn": "目的",
+						"en": "an aim, purpose"
+					}
+				]
 			},
 			{
 				"n": 3,
@@ -936,7 +1149,8 @@
 				],
 				"point": "「Vないうちに」表示趁还没发生。",
 				"point_en": "Vないうちに = while it still hasn't happened.",
-				"link": "#/day/2-3/p0"
+				"link": "#/day/2-3/p0",
+				"words": []
 			},
 			{
 				"n": 4,
@@ -969,7 +1183,21 @@
 				],
 				"point": "「悩みぬく」＝烦恼到极点。",
 				"point_en": "Vぬく = do it all the way / thoroughly.",
-				"link": "#/day/2-2/p3"
+				"link": "#/day/2-2/p3",
+				"words": [
+					{
+						"jp": "結局",
+						"kana": "けっきょく",
+						"cn": "结果",
+						"en": "after all"
+					},
+					{
+						"jp": "話",
+						"kana": "はなし",
+						"cn": "话／说话",
+						"en": "talk"
+					}
+				]
 			},
 			{
 				"n": 5,
@@ -1002,7 +1230,33 @@
 				],
 				"point": "「Vないかぎり」＝只要不…。",
 				"point_en": "Vないかぎり = so long as … not.",
-				"link": "#/day/2-3/p2"
+				"link": "#/day/2-3/p2",
+				"words": [
+					{
+						"jp": "生徒",
+						"kana": "せいと",
+						"cn": "学生",
+						"en": "a student"
+					},
+					{
+						"jp": "先生",
+						"kana": "せんせい",
+						"cn": "老师",
+						"en": "teacher"
+					},
+					{
+						"jp": "一生懸命",
+						"kana": "いっしょうけんめい",
+						"cn": "拼命",
+						"en": "very hard, with utmost effort"
+					},
+					{
+						"jp": "上達",
+						"kana": "じょうたつ",
+						"cn": "进步",
+						"en": "make progress"
+					}
+				]
 			},
 			{
 				"n": 6,
@@ -1035,7 +1289,21 @@
 				],
 				"point": "「にかぎって」表示偏偏是这种情况。",
 				"point_en": "にかぎって = of all times / only then.",
-				"link": "#/day/2-3/p3"
+				"link": "#/day/2-3/p3",
+				"words": [
+					{
+						"jp": "勉強する",
+						"kana": "べんきょうする",
+						"cn": "学习",
+						"en": "study"
+					},
+					{
+						"jp": "試験",
+						"kana": "しけん",
+						"cn": "试验；考试",
+						"en": "test, exam"
+					}
+				]
 			},
 			{
 				"n": 7,
@@ -1068,7 +1336,8 @@
 				],
 				"point": "「使いきる」＝用光。",
 				"point_en": "Vきる = do completely / use up.",
-				"link": "#/day/2-2/p1"
+				"link": "#/day/2-2/p1",
+				"words": []
 			},
 			{
 				"n": 8,
@@ -1101,7 +1370,15 @@
 				],
 				"point": "「VるかVないかのうちに」表示几乎同时。",
 				"point_en": "VるかVないかのうちに = hardly has A happened when B.",
-				"link": "#/day/2-3/p1"
+				"link": "#/day/2-3/p1",
+				"words": [
+					{
+						"jp": "夜",
+						"kana": "よる",
+						"cn": "夜晚",
+						"en": "night"
+					}
+				]
 			},
 			{
 				"n": 9,
@@ -1134,7 +1411,8 @@
 				],
 				"point": "「Nにかぎり」＝仅限于。",
 				"point_en": "にかぎり = limited to.",
-				"link": "#/day/2-3/p3"
+				"link": "#/day/2-3/p3",
+				"words": []
 			},
 			{
 				"n": 10,
@@ -1167,7 +1445,21 @@
 				],
 				"point": "「からこそ」强调原因。",
 				"point_en": "からこそ stresses the reason.",
-				"link": "#/day/2-4/p1"
+				"link": "#/day/2-4/p1",
+				"words": [
+					{
+						"jp": "健康",
+						"kana": "けんこう",
+						"cn": "健康",
+						"en": "health"
+					},
+					{
+						"jp": "酒",
+						"kana": "さけ",
+						"cn": "酒",
+						"en": "rice wine"
+					}
+				]
 			},
 			{
 				"n": 11,
@@ -1200,7 +1492,21 @@
 				],
 				"point": "「Nさえ〜ば」表示最低条件。",
 				"point_en": "さえ〜ば = if only that condition is met.",
-				"link": "#/day/2-4/p0"
+				"link": "#/day/2-4/p0",
+				"words": [
+					{
+						"jp": "体",
+						"kana": "からだ",
+						"cn": "身体",
+						"en": "body"
+					},
+					{
+						"jp": "生活",
+						"kana": "せいかつ",
+						"cn": "生活",
+						"en": "life / livelihood"
+					}
+				]
 			},
 			{
 				"n": 12,
@@ -1233,7 +1539,15 @@
 				],
 				"point": "「1回かぎり」＝只有这一次。",
 				"point_en": "かぎり after a number = only that many.",
-				"link": "#/day/2-3/p3"
+				"link": "#/day/2-3/p3",
+				"words": [
+					{
+						"jp": "無料",
+						"kana": "むりょう",
+						"cn": "免费",
+						"en": "free of charge"
+					}
+				]
 			},
 			{
 				"n": 13,
@@ -1266,7 +1580,15 @@
 				],
 				"point": "「ありえない」＝不可能。",
 				"point_en": "ありえない = cannot be.",
-				"link": "#/day/2-2/p2"
+				"link": "#/day/2-2/p2",
+				"words": [
+					{
+						"jp": "人",
+						"kana": "ひと",
+						"cn": "人",
+						"en": "person"
+					}
+				]
 			},
 			{
 				"n": 14,
@@ -1299,7 +1621,27 @@
 				],
 				"point": "「Nにしたがって」表示按照指示。",
 				"point_en": "にしたがって = following / according to.",
-				"link": "#/day/2-6/p3"
+				"link": "#/day/2-6/p3",
+				"words": [
+					{
+						"jp": "週間",
+						"kana": "しゅうかん",
+						"cn": "收看一周天气预报",
+						"en": "check the weekly weather forecast"
+					},
+					{
+						"jp": "分",
+						"kana": "ふん",
+						"cn": "分钟",
+						"en": "minute"
+					},
+					{
+						"jp": "食事",
+						"kana": "しょくじ",
+						"cn": "饭，餐；吃饭",
+						"en": "meal"
+					}
+				]
 			},
 			{
 				"n": 15,
@@ -1332,7 +1674,51 @@
 				],
 				"point": "「それにともなって」表示随之发生。",
 				"point_en": "にともなって = accompanying that change.",
-				"link": "#/day/2-6/p1"
+				"link": "#/day/2-6/p1",
+				"words": [
+					{
+						"jp": "明日",
+						"kana": "あした",
+						"cn": "明天",
+						"en": "tomorrow"
+					},
+					{
+						"jp": "首相",
+						"kana": "しゅしょう",
+						"cn": "首相",
+						"en": "prime minister"
+					},
+					{
+						"jp": "町",
+						"kana": "まち",
+						"cn": "市镇；街",
+						"en": "town"
+					},
+					{
+						"jp": "訪問",
+						"kana": "ほうもん",
+						"cn": "访问",
+						"en": "a visit"
+					},
+					{
+						"jp": "道路",
+						"kana": "どうろ",
+						"cn": "道路",
+						"en": "a road"
+					},
+					{
+						"jp": "混雑",
+						"kana": "こんざつ",
+						"cn": "混杂",
+						"en": "congestion"
+					},
+					{
+						"jp": "予想",
+						"kana": "よそう",
+						"cn": "预想",
+						"en": "anticipation, forecast"
+					}
+				]
 			}
 		],
 		"mondai2": [
@@ -1368,7 +1754,21 @@
 				"point": "「さえ〜ば」＝只要。",
 				"point_en": "さえ〜ば = if only.",
 				"link": "#/day/2-4/p0",
-				"order": "2→4→1→3"
+				"order": "2→4→1→3",
+				"words": [
+					{
+						"jp": "漢字",
+						"kana": "かんじ",
+						"cn": "汉字",
+						"en": "kanji, Chinese character"
+					},
+					{
+						"jp": "成績",
+						"kana": "せいせき",
+						"cn": "成绩",
+						"en": "results, record"
+					}
+				]
 			},
 			{
 				"n": 17,
@@ -1402,7 +1802,15 @@
 				"point": "「Nにしたら」站在对方立场。",
 				"point_en": "にしたら = from that person's standpoint.",
 				"link": "#/day/2-5/p0",
-				"order": "3→1→2→4"
+				"order": "3→1→2→4",
+				"words": [
+					{
+						"jp": "旅館",
+						"kana": "りょかん",
+						"cn": "（日式）旅馆",
+						"en": "Japanese-style hotel"
+					}
+				]
 			},
 			{
 				"n": 18,
@@ -1436,7 +1844,15 @@
 				"point": "「待つばかり」＝只等着。",
 				"point_en": "Vるばかり = nothing left but to.",
 				"link": "#/day/2-4/p3",
-				"order": "2→4→3→1"
+				"order": "2→4→3→1",
+				"words": [
+					{
+						"jp": "準備",
+						"kana": "じゅんび",
+						"cn": "准备",
+						"en": "preparation"
+					}
+				]
 			},
 			{
 				"n": 19,
@@ -1470,7 +1886,15 @@
 				"point": "「Nにともない」书面，表示伴随。",
 				"point_en": "にともない = along with (formal).",
 				"link": "#/day/2-6/p1",
-				"order": "2→1→4→3"
+				"order": "2→1→4→3",
+				"words": [
+					{
+						"jp": "就職する",
+						"kana": "しゅうしょくりつ",
+						"cn": "就业",
+						"en": "get a job"
+					}
+				]
 			},
 			{
 				"n": 20,
@@ -1504,7 +1928,15 @@
 				"point": "「につれて」表示一边变化一边发生。",
 				"point_en": "につれて = as X changes, Y happens.",
 				"link": "#/day/2-6/p2",
-				"order": "3→2→4→1"
+				"order": "3→2→4→1",
+				"words": [
+					{
+						"jp": "携帯電話",
+						"kana": "けいたいでんわ",
+						"cn": "手机",
+						"en": "a cell phone/mobile phone"
+					}
+				]
 			}
 		],
 		"mondai3": [
@@ -1539,7 +1971,8 @@
 				],
 				"point": "「かいもなく」＝白费。",
 				"point_en": "かいもなく = without the effort paying off.",
-				"link": "#/day/2-1/p1"
+				"link": "#/day/2-1/p1",
+				"words": []
 			},
 			{
 				"n": 22,
@@ -1572,7 +2005,8 @@
 				],
 				"point": "「するばかりだ」＝一个劲儿地变糟。",
 				"point_en": "ばかりだ = keep doing / only getting worse.",
-				"link": "#/day/2-4/p3"
+				"link": "#/day/2-4/p3",
+				"words": []
 			},
 			{
 				"n": 23,
@@ -1605,7 +2039,8 @@
 				],
 				"point": "「ありうる」＝有可能。",
 				"point_en": "ありうる = can happen.",
-				"link": "#/day/2-2/p2"
+				"link": "#/day/2-2/p2",
+				"words": []
 			},
 			{
 				"n": 24,
@@ -1638,7 +2073,8 @@
 				],
 				"point": "「てまで」表示甚至做到那种程度。",
 				"point_en": "てまで = going so far as to.",
-				"link": "#/day/2-1/p3"
+				"link": "#/day/2-1/p3",
+				"words": []
 			},
 			{
 				"n": 25,
@@ -1671,7 +2107,8 @@
 				],
 				"point": "「生きている限り」＝只要活着。",
 				"point_en": "Vている限り = so long as that state continues.",
-				"link": "#/day/2-3/p2"
+				"link": "#/day/2-3/p2",
+				"words": []
 			}
 		]
 	},
@@ -1708,7 +2145,27 @@
 				],
 				"point": "「一度きり」＝仅此一次。",
 				"point_en": "きり = only that and nothing more.",
-				"link": "#/day/3-5/p1"
+				"link": "#/day/3-5/p1",
+				"words": [
+					{
+						"jp": "人",
+						"kana": "ひと",
+						"cn": "人",
+						"en": "person"
+					},
+					{
+						"jp": "授業",
+						"kana": "じゅぎょう",
+						"cn": "课，上课，讲课",
+						"en": "class, lesson"
+					},
+					{
+						"jp": "一度",
+						"kana": "いちど",
+						"cn": "1次；一旦",
+						"en": "once, one time"
+					}
+				]
 			},
 			{
 				"n": 2,
@@ -1741,7 +2198,8 @@
 				],
 				"point": "「Nのあまり」表示过度。",
 				"point_en": "Nのあまり = so much that.",
-				"link": "#/day/3-1/p3"
+				"link": "#/day/3-1/p3",
+				"words": []
 			},
 			{
 				"n": 3,
@@ -1774,7 +2232,8 @@
 				],
 				"point": "「なことに」接な形容词。",
 				"point_en": "なことに follows na-adjectives.",
-				"link": "#/day/3-1/p2"
+				"link": "#/day/3-1/p2",
+				"words": []
 			},
 			{
 				"n": 4,
@@ -1807,7 +2266,15 @@
 				],
 				"point": "「傷だらけ」＝满是伤。",
 				"point_en": "だらけ = covered with (negative).",
-				"link": "#/day/3-5/p0"
+				"link": "#/day/3-5/p0",
+				"words": [
+					{
+						"jp": "家具",
+						"kana": "かぐ",
+						"cn": "家具",
+						"en": "furniture"
+					}
+				]
 			},
 			{
 				"n": 5,
@@ -1840,7 +2307,21 @@
 				],
 				"point": "「言われたとおり」＝按照被告知的。",
 				"point_en": "Vられたとおり = as one was told.",
-				"link": "#/day/3-1/p0"
+				"link": "#/day/3-1/p0",
+				"words": [
+					{
+						"jp": "医者",
+						"kana": "いしゃ",
+						"cn": "医生",
+						"en": "doctor"
+					},
+					{
+						"jp": "病気",
+						"kana": "びょうき",
+						"cn": "生病",
+						"en": "illness"
+					}
+				]
 			},
 			{
 				"n": 6,
@@ -1873,7 +2354,21 @@
 				],
 				"point": "「あげく」表示折腾之后的结果。",
 				"point_en": "あげく = after all that (usually bad).",
-				"link": "#/day/3-3/p1"
+				"link": "#/day/3-3/p1",
+				"words": [
+					{
+						"jp": "時間",
+						"kana": "じかん",
+						"cn": "时间",
+						"en": "time"
+					},
+					{
+						"jp": "今日",
+						"kana": "きょう",
+						"cn": "今天",
+						"en": "today"
+					}
+				]
 			},
 			{
 				"n": 7,
@@ -1906,7 +2401,15 @@
 				],
 				"point": "「Vた末」＝经过之后的结果。",
 				"point_en": "Vた末 = after doing that to the end.",
-				"link": "#/day/3-3/p2"
+				"link": "#/day/3-3/p2",
+				"words": [
+					{
+						"jp": "結論",
+						"kana": "けつろん",
+						"cn": "结论",
+						"en": "a conclusion"
+					}
+				]
 			},
 			{
 				"n": 8,
@@ -1939,7 +2442,15 @@
 				],
 				"point": "「恐怖のあまり」。",
 				"point_en": "Nのあまり = so much that.",
-				"link": "#/day/3-1/p3"
+				"link": "#/day/3-1/p3",
+				"words": [
+					{
+						"jp": "恐怖",
+						"kana": "きょうふ",
+						"cn": "恐怖",
+						"en": "fear"
+					}
+				]
 			},
 			{
 				"n": 9,
@@ -1972,7 +2483,15 @@
 				],
 				"point": "「申し訳ないことに」。",
 				"point_en": "ことに comments on the whole situation.",
-				"link": "#/day/3-1/p2"
+				"link": "#/day/3-1/p2",
+				"words": [
+					{
+						"jp": "本",
+						"kana": "ほん",
+						"cn": "书",
+						"en": "book"
+					}
+				]
 			},
 			{
 				"n": 10,
@@ -2005,7 +2524,21 @@
 				],
 				"point": "「Vたところ」表示做了之后的发现。",
 				"point_en": "Vたところ = when I did, I found.",
-				"link": "#/day/3-4/p1"
+				"link": "#/day/3-4/p1",
+				"words": [
+					{
+						"jp": "体",
+						"kana": "からだ",
+						"cn": "身体",
+						"en": "body"
+					},
+					{
+						"jp": "熱",
+						"kana": "ねつ",
+						"cn": "发烧",
+						"en": "heat, fever"
+					}
+				]
 			},
 			{
 				"n": 11,
@@ -2038,7 +2571,15 @@
 				],
 				"point": "「Vたきり」＝那之后再没…。",
 				"point_en": "Vたきり = since then, nothing more.",
-				"link": "#/day/3-5/p1"
+				"link": "#/day/3-5/p1",
+				"words": [
+					{
+						"jp": "本",
+						"kana": "ほん",
+						"cn": "书",
+						"en": "book"
+					}
+				]
 			},
 			{
 				"n": 12,
@@ -2071,7 +2612,8 @@
 				],
 				"point": "「Nに反して」。",
 				"point_en": "に反して = contrary to.",
-				"link": "#/day/3-6/p0"
+				"link": "#/day/3-6/p0",
+				"words": []
 			},
 			{
 				"n": 13,
@@ -2104,7 +2646,21 @@
 				],
 				"point": "「なくなる一方だ」＝一个劲儿地消失。",
 				"point_en": "一方だ = keep going in that direction.",
-				"link": "#/day/3-6/p3"
+				"link": "#/day/3-6/p3",
+				"words": [
+					{
+						"jp": "森",
+						"kana": "もり",
+						"cn": "森林",
+						"en": "forest"
+					},
+					{
+						"jp": "林",
+						"kana": "はやし",
+						"cn": "树林",
+						"en": "woods"
+					}
+				]
 			},
 			{
 				"n": 14,
@@ -2137,7 +2693,15 @@
 				],
 				"point": "「わけにはいきません」＝情理上不能。",
 				"point_en": "わけにはいかない = can't very well do that.",
-				"link": "#/day/3-2/p3"
+				"link": "#/day/3-2/p3",
+				"words": [
+					{
+						"jp": "品物",
+						"kana": "しなもの",
+						"cn": "物品",
+						"en": "goods"
+					}
+				]
 			},
 			{
 				"n": 15,
@@ -2170,7 +2734,21 @@
 				],
 				"point": "「わけではありません」否定那种理解。",
 				"point_en": "わけではない = it doesn't mean that.",
-				"link": "#/day/3-2/p1"
+				"link": "#/day/3-2/p1",
+				"words": [
+					{
+						"jp": "都合",
+						"kana": "つごう",
+						"cn": "设法安排",
+						"en": "squeeze it into someone's schedule"
+					},
+					{
+						"jp": "仕事",
+						"kana": "しごと",
+						"cn": "工作",
+						"en": "work"
+					}
+				]
 			}
 		],
 		"mondai2": [
@@ -2206,7 +2784,15 @@
 				"point": "「Vたかと思ったら」表示紧接着发生。",
 				"point_en": "Vたかと思ったら = no sooner had A than B.",
 				"link": "#/day/3-3/p3",
-				"order": "2→4→1→3"
+				"order": "2→4→1→3",
+				"words": [
+					{
+						"jp": "学校",
+						"kana": "がっこう",
+						"cn": "学校",
+						"en": "school"
+					}
+				]
 			},
 			{
 				"n": 17,
@@ -2240,7 +2826,21 @@
 				"point": "「わけですね」确认推论。",
 				"point_en": "わけだ = that figures / so that means.",
 				"link": "#/day/3-2/p0",
-				"order": "2→1→4→3"
+				"order": "2→1→4→3",
+				"words": [
+					{
+						"jp": "時",
+						"kana": "とき",
+						"cn": "时候",
+						"en": "time"
+					},
+					{
+						"jp": "夕方",
+						"kana": "ゆうがた",
+						"cn": "傍晚",
+						"en": "evening"
+					}
+				]
 			},
 			{
 				"n": 18,
@@ -2274,7 +2874,15 @@
 				"point": "「どころか」表示岂止如此，情况相反。",
 				"point_en": "どころか = far from it / on the contrary.",
 				"link": "#/day/3-4/p3",
-				"order": "4→2→3→1"
+				"order": "4→2→3→1",
+				"words": [
+					{
+						"jp": "夏",
+						"kana": "なつ",
+						"cn": "夏",
+						"en": "summer"
+					}
+				]
 			},
 			{
 				"n": 19,
@@ -2308,7 +2916,21 @@
 				"point": "「どころではなかった」。",
 				"point_en": "どころではない = in no condition to.",
 				"link": "#/day/3-4/p2",
-				"order": "1→4→3→2"
+				"order": "1→4→3→2",
+				"words": [
+					{
+						"jp": "今朝",
+						"kana": "けさ",
+						"cn": "今天早上",
+						"en": "this morning"
+					},
+					{
+						"jp": "地震",
+						"kana": "じしん",
+						"cn": "地震",
+						"en": "an earthquake"
+					}
+				]
 			},
 			{
 				"n": 20,
@@ -2342,7 +2964,15 @@
 				"point": "「とおりに」＝按照那样。",
 				"point_en": "とおりに = exactly as.",
 				"link": "#/day/3-1/p0",
-				"order": "3→2→1→4"
+				"order": "3→2→1→4",
+				"words": [
+					{
+						"jp": "家",
+						"kana": "いえ",
+						"cn": "家",
+						"en": "house"
+					}
+				]
 			}
 		],
 		"mondai3": [
@@ -2377,7 +3007,8 @@
 				],
 				"point": "「Vたところ」＝做了之后的结果。",
 				"point_en": "Vたところ = when I did, I found.",
-				"link": "#/day/3-4/p1"
+				"link": "#/day/3-4/p1",
+				"words": []
 			},
 			{
 				"n": 22,
@@ -2410,7 +3041,8 @@
 				],
 				"point": "「Vたとたん」＝刚一…马上。",
 				"point_en": "Vたとたん = the moment that happened.",
-				"link": "#/day/3-3/p0"
+				"link": "#/day/3-3/p0",
+				"words": []
 			},
 			{
 				"n": 23,
@@ -2443,7 +3075,8 @@
 				],
 				"point": "「わけがない」＝没道理。",
 				"point_en": "わけがない = there's no reason / no way.",
-				"link": "#/day/3-2/p2"
+				"link": "#/day/3-2/p2",
+				"words": []
 			},
 			{
 				"n": 24,
@@ -2476,7 +3109,8 @@
 				],
 				"point": "「悩んだ末」。",
 				"point_en": "Vた末 = after doing it to the end.",
-				"link": "#/day/3-3/p2"
+				"link": "#/day/3-3/p2",
+				"words": []
 			},
 			{
 				"n": 25,
@@ -2509,7 +3143,8 @@
 				],
 				"point": "文脉是心里一直想着去，用「向かいっぱなし」。",
 				"point_en": "っぱなし = left in that state / keep doing.",
-				"link": "#/day/3-5/p2"
+				"link": "#/day/3-5/p2",
+				"words": []
 			}
 		]
 	},
@@ -2546,7 +3181,33 @@
 				],
 				"point": "「Nにあたり」＝正当那个时候。",
 				"point_en": "にあたり = on the occasion of.",
-				"link": "#/day/4-5/p0"
+				"link": "#/day/4-5/p0",
+				"words": [
+					{
+						"jp": "受験",
+						"kana": "じゅけん",
+						"cn": "应试",
+						"en": "an entrance examination"
+					},
+					{
+						"jp": "次",
+						"kana": "つぎ",
+						"cn": "下一个",
+						"en": "next"
+					},
+					{
+						"jp": "点",
+						"kana": "てん",
+						"cn": "点",
+						"en": "a point"
+					},
+					{
+						"jp": "注意する",
+						"kana": "ちゅういする",
+						"cn": "注意，小心；提醒",
+						"en": "pay attention"
+					}
+				]
 			},
 			{
 				"n": 2,
@@ -2579,7 +3240,33 @@
 				],
 				"point": "「N向け」＝面向该对象。",
 				"point_en": "向け = intended for.",
-				"link": "#/day/4-6/p1"
+				"link": "#/day/4-6/p1",
+				"words": [
+					{
+						"jp": "日本",
+						"kana": "にほん",
+						"cn": "日本",
+						"en": "Japan"
+					},
+					{
+						"jp": "輸出",
+						"kana": "ゆしゅつ",
+						"cn": "出口",
+						"en": "export"
+					},
+					{
+						"jp": "農産物",
+						"kana": "のうさんぶつ",
+						"cn": "农产品",
+						"en": "agricultural produce"
+					},
+					{
+						"jp": "果物",
+						"kana": "くだもの",
+						"cn": "水果",
+						"en": "fruit"
+					}
+				]
 			},
 			{
 				"n": 3,
@@ -2612,7 +3299,21 @@
 				],
 				"point": "「入り次第」＝一进来就。",
 				"point_en": "次第 after a masu stem = as soon as.",
-				"link": "#/day/4-2/p0"
+				"link": "#/day/4-2/p0",
+				"words": [
+					{
+						"jp": "情報",
+						"kana": "じょうほう",
+						"cn": "信息",
+						"en": "information"
+					},
+					{
+						"jp": "次第",
+						"kana": "しだい",
+						"cn": "①~之后即~ ②全凭~",
+						"en": ""
+					}
+				]
 			},
 			{
 				"n": 4,
@@ -2645,7 +3346,21 @@
 				],
 				"point": "「A上にB」＝不但A而且B。",
 				"point_en": "上に = and what's more.",
-				"link": "#/day/4-1/p0"
+				"link": "#/day/4-1/p0",
+				"words": [
+					{
+						"jp": "簡単",
+						"kana": "かんたん",
+						"cn": "简单",
+						"en": "easy"
+					},
+					{
+						"jp": "材料",
+						"kana": "ざいりょう",
+						"cn": "材料",
+						"en": "ingredients, materials"
+					}
+				]
 			},
 			{
 				"n": 5,
@@ -2678,7 +3393,21 @@
 				],
 				"point": "「ながらも」表示逆接。",
 				"point_en": "ながらも = even while / and yet.",
-				"link": "#/day/4-3/p2"
+				"link": "#/day/4-3/p2",
+				"words": [
+					{
+						"jp": "突然",
+						"kana": "とつぜん",
+						"cn": "突然",
+						"en": "suddenly"
+					},
+					{
+						"jp": "結婚",
+						"kana": "けっこん",
+						"cn": "结婚",
+						"en": "a marriage"
+					}
+				]
 			},
 			{
 				"n": 6,
@@ -2711,7 +3440,27 @@
 				],
 				"point": "「に先立ち」＝在那之前。",
 				"point_en": "に先立ち = prior to.",
-				"link": "#/day/4-5/p1"
+				"link": "#/day/4-5/p1",
+				"words": [
+					{
+						"jp": "会議",
+						"kana": "かいぎ",
+						"cn": "会议",
+						"en": "a meeting"
+					},
+					{
+						"jp": "参加",
+						"kana": "さんか",
+						"cn": "参加",
+						"en": "participate"
+					},
+					{
+						"jp": "調査",
+						"kana": "ちょうさ",
+						"cn": "调查",
+						"en": "an investigation/inquiry"
+					}
+				]
 			},
 			{
 				"n": 7,
@@ -2744,7 +3493,27 @@
 				],
 				"point": "「数字の上では」。",
 				"point_en": "Nの上では = on paper / in terms of.",
-				"link": "#/day/4-1/p3"
+				"link": "#/day/4-1/p3",
+				"words": [
+					{
+						"jp": "数字",
+						"kana": "すうじ",
+						"cn": "数字",
+						"en": "number"
+					},
+					{
+						"jp": "景気",
+						"kana": "けいき",
+						"cn": "景气",
+						"en": "business climate/condition"
+					},
+					{
+						"jp": "回復",
+						"kana": "かいふく",
+						"cn": "恢复",
+						"en": "recovery/recuperation"
+					}
+				]
 			},
 			{
 				"n": 8,
@@ -2777,7 +3546,15 @@
 				],
 				"point": "「N次第で」＝视…而定。",
 				"point_en": "次第で = depending on.",
-				"link": "#/day/4-2/p1"
+				"link": "#/day/4-2/p1",
+				"words": [
+					{
+						"jp": "状況",
+						"kana": "じょうきょう",
+						"cn": "状况",
+						"en": "a situation, circumstances"
+					}
+				]
 			},
 			{
 				"n": 9,
@@ -2810,7 +3587,27 @@
 				],
 				"point": "「Nにそって」＝按照。",
 				"point_en": "にそって = along / in accordance with.",
-				"link": "#/day/4-4/p0"
+				"link": "#/day/4-4/p0",
+				"words": [
+					{
+						"jp": "問題",
+						"kana": "もんだい",
+						"cn": "题，问题",
+						"en": "problem, question"
+					},
+					{
+						"jp": "試験",
+						"kana": "しけん",
+						"cn": "试验；考试",
+						"en": "test, exam"
+					},
+					{
+						"jp": "形式",
+						"kana": "けいしき",
+						"cn": "形式",
+						"en": "form/type"
+					}
+				]
 			},
 			{
 				"n": 10,
@@ -2843,7 +3640,15 @@
 				],
 				"point": "「にわたる」修饰名词，表示时间跨度。",
 				"point_en": "にわたる = spanning (prenominal).",
-				"link": "#/day/4-4/p1"
+				"link": "#/day/4-4/p1",
+				"words": [
+					{
+						"jp": "年間",
+						"kana": "ねんかん",
+						"cn": "制定年度计划",
+						"en": ""
+					}
+				]
 			},
 			{
 				"n": 11,
@@ -2876,7 +3681,8 @@
 				],
 				"point": "「Vた上で」＝做完之后再。",
 				"point_en": "Vた上で = after doing that, then.",
-				"link": "#/day/4-1/p1"
+				"link": "#/day/4-1/p1",
+				"words": []
 			},
 			{
 				"n": 12,
@@ -2909,7 +3715,15 @@
 				],
 				"point": "「言いつつ」＝一边说着。",
 				"point_en": "つつ = while (written).",
-				"link": "#/day/4-3/p1"
+				"link": "#/day/4-3/p1",
+				"words": [
+					{
+						"jp": "勉強する",
+						"kana": "べんきょうする",
+						"cn": "学习",
+						"en": "study"
+					}
+				]
 			},
 			{
 				"n": 13,
@@ -2942,7 +3756,21 @@
 				],
 				"point": "「ことになっている」表示规定。",
 				"point_en": "ことになっている = it is the rule.",
-				"link": "#/day/4-6/p2"
+				"link": "#/day/4-6/p2",
+				"words": [
+					{
+						"jp": "習慣",
+						"kana": "しゅうかん",
+						"cn": "习惯",
+						"en": "a custom/habit"
+					},
+					{
+						"jp": "女性",
+						"kana": "じょせい",
+						"cn": "女性",
+						"en": "woman"
+					}
+				]
 			},
 			{
 				"n": 14,
@@ -2975,7 +3803,21 @@
 				],
 				"point": "「つつある」表示正在进行的变化。",
 				"point_en": "つつある = be in the process of.",
-				"link": "#/day/4-3/p0"
+				"link": "#/day/4-3/p0",
+				"words": [
+					{
+						"jp": "日本",
+						"kana": "にほん",
+						"cn": "日本",
+						"en": "Japan"
+					},
+					{
+						"jp": "日本",
+						"kana": "にほん",
+						"cn": "日本",
+						"en": "Japan"
+					}
+				]
 			},
 			{
 				"n": 15,
@@ -3008,7 +3850,27 @@
 				],
 				"point": "「にすぎない」＝只不过。",
 				"point_en": "にすぎない = nothing more than.",
-				"link": "#/day/4-6/p0"
+				"link": "#/day/4-6/p0",
+				"words": [
+					{
+						"jp": "今",
+						"kana": "いま",
+						"cn": "现在",
+						"en": "now"
+					},
+					{
+						"jp": "商品",
+						"kana": "しょうひん",
+						"cn": "商品",
+						"en": "goods"
+					},
+					{
+						"jp": "流行",
+						"kana": "りゅうこう",
+						"cn": "流行",
+						"en": "fashion"
+					}
+				]
 			}
 		],
 		"mondai2": [
@@ -3044,7 +3906,8 @@
 				"point": "「ざるをえない」。",
 				"point_en": "ざるをえない = have no choice but to.",
 				"link": "#/day/4-5/p2",
-				"order": "4→1→3→2"
+				"order": "4→1→3→2",
+				"words": []
 			},
 			{
 				"n": 17,
@@ -3078,7 +3941,8 @@
 				"point": "「こうなった上は」。",
 				"point_en": "Vた上は = now that it has come to this.",
 				"link": "#/day/4-1/p2",
-				"order": "4→3→1→2"
+				"order": "4→3→1→2",
+				"words": []
 			},
 			{
 				"n": 18,
@@ -3112,7 +3976,15 @@
 				"point": "「ておくべきだった」。",
 				"point_en": "ておくべき = should have done it in advance.",
 				"link": "#/day/4-4/p2",
-				"order": "2→1→4→3"
+				"order": "2→1→4→3",
+				"words": [
+					{
+						"jp": "準備",
+						"kana": "じゅんび",
+						"cn": "准备",
+						"en": "preparation"
+					}
+				]
 			},
 			{
 				"n": 19,
@@ -3146,7 +4018,21 @@
 				"point": "「お願いする次第です」郑重说明原委。",
 				"point_en": "次第です = (formal) that is how it stands / I hereby.",
 				"link": "#/day/4-2/p0",
-				"order": "4→3→2→1"
+				"order": "4→3→2→1",
+				"words": [
+					{
+						"jp": "大勢",
+						"kana": "おおぜい",
+						"cn": "许多人",
+						"en": ""
+					},
+					{
+						"jp": "皆",
+						"kana": "みな",
+						"cn": "大家",
+						"en": "everyone"
+					}
+				]
 			},
 			{
 				"n": 20,
@@ -3180,7 +4066,21 @@
 				"point": "「それに対し」。",
 				"point_en": "に対し = in contrast to that.",
 				"link": "#/day/4-6/p3",
-				"order": "1→4→3→2"
+				"order": "1→4→3→2",
+				"words": [
+					{
+						"jp": "町",
+						"kana": "まち",
+						"cn": "市镇；街",
+						"en": "town"
+					},
+					{
+						"jp": "支持",
+						"kana": "しじ",
+						"cn": "支持",
+						"en": "support"
+					}
+				]
 			}
 		],
 		"mondai3": [
@@ -3215,7 +4115,8 @@
 				],
 				"point": "「就職にあたっては」。",
 				"point_en": "にあたって = at the time of.",
-				"link": "#/day/4-5/p0"
+				"link": "#/day/4-5/p0",
+				"words": []
 			},
 			{
 				"n": 22,
@@ -3248,7 +4149,8 @@
 				],
 				"point": "「努力次第では」。",
 				"point_en": "次第では = depending on.",
-				"link": "#/day/4-2/p1"
+				"link": "#/day/4-2/p1",
+				"words": []
 			},
 			{
 				"n": 23,
@@ -3281,7 +4183,8 @@
 				],
 				"point": "「見習いつつ」。",
 				"point_en": "つつ = while.",
-				"link": "#/day/4-3/p1"
+				"link": "#/day/4-3/p1",
+				"words": []
 			},
 			{
 				"n": 24,
@@ -3314,7 +4217,8 @@
 				],
 				"point": "「使わざるをえない」。",
 				"point_en": "ざるをえない = cannot avoid doing.",
-				"link": "#/day/4-5/p2"
+				"link": "#/day/4-5/p2",
+				"words": []
 			},
 			{
 				"n": 25,
@@ -3347,7 +4251,8 @@
 				],
 				"point": "「期待にこたえる」。",
 				"point_en": "にこたえる = live up to (expectations).",
-				"link": "#/day/4-6/p2"
+				"link": "#/day/4-6/p2",
+				"words": []
 			}
 		]
 	},
@@ -3384,7 +4289,15 @@
 				],
 				"point": "「ことから」表示判断的依据。",
 				"point_en": "ことから = on the grounds that.",
-				"link": "#/day/5-1/p0"
+				"link": "#/day/5-1/p0",
+				"words": [
+					{
+						"jp": "寺",
+						"kana": "てら",
+						"cn": "寺庙",
+						"en": "a temple"
+					}
+				]
 			},
 			{
 				"n": 2,
@@ -3417,7 +4330,8 @@
 				],
 				"point": "「ばかりに」表示就因为这个（多带来坏结果）。",
 				"point_en": "ばかりに = just because (unfortunate result).",
-				"link": "#/day/5-2/p2"
+				"link": "#/day/5-2/p2",
+				"words": []
 			},
 			{
 				"n": 3,
@@ -3450,7 +4364,21 @@
 				],
 				"point": "「に応じて」＝视情况相应地。",
 				"point_en": "に応じて = according to / in response to.",
-				"link": "#/day/5-3/p1"
+				"link": "#/day/5-3/p1",
+				"words": [
+					{
+						"jp": "予算",
+						"kana": "よさん",
+						"cn": "预算",
+						"en": "budget/estimate"
+					},
+					{
+						"jp": "食事",
+						"kana": "しょくじ",
+						"cn": "饭，餐；吃饭",
+						"en": "meal"
+					}
+				]
 			},
 			{
 				"n": 4,
@@ -3483,7 +4411,15 @@
 				],
 				"point": "「ないことには」＝如果不那样就。",
 				"point_en": "ないことには = unless that happens.",
-				"link": "#/day/5-1/p3"
+				"link": "#/day/5-1/p3",
+				"words": [
+					{
+						"jp": "理由",
+						"kana": "りゆう",
+						"cn": "理由",
+						"en": "reason"
+					}
+				]
 			},
 			{
 				"n": 5,
@@ -3516,7 +4452,15 @@
 				],
 				"point": "「に際して」＝在那个时候。",
 				"point_en": "に際して = when / at the time of.",
-				"link": "#/day/5-3/p2"
+				"link": "#/day/5-3/p2",
+				"words": [
+					{
+						"jp": "以下",
+						"kana": "いか",
+						"cn": "以下",
+						"en": "not exceeding"
+					}
+				]
 			},
 			{
 				"n": 6,
@@ -3549,7 +4493,15 @@
 				],
 				"point": "「だけあって」＝到底不愧。",
 				"point_en": "だけあって = as you'd expect from.",
-				"link": "#/day/5-4/p0"
+				"link": "#/day/5-4/p0",
+				"words": [
+					{
+						"jp": "自分",
+						"kana": "じぶん",
+						"cn": "自己",
+						"en": "self"
+					}
+				]
 			},
 			{
 				"n": 7,
@@ -3582,7 +4534,27 @@
 				],
 				"point": "「Nに基づいて」。",
 				"point_en": "に基づいて = based on.",
-				"link": "#/day/5-4/p2"
+				"link": "#/day/5-4/p2",
+				"words": [
+					{
+						"jp": "税金",
+						"kana": "ぜいきん",
+						"cn": "税金",
+						"en": "a tax"
+					},
+					{
+						"jp": "表",
+						"kana": "ひょう",
+						"cn": "表",
+						"en": "a table (in written documents)"
+					},
+					{
+						"jp": "計算",
+						"kana": "けいさん",
+						"cn": "计算",
+						"en": "calculation"
+					}
+				]
 			},
 			{
 				"n": 8,
@@ -3615,7 +4587,21 @@
 				],
 				"point": "「ばかりか」＝不但，甚至。",
 				"point_en": "ばかりか = not only, but even.",
-				"link": "#/day/5-2/p1"
+				"link": "#/day/5-2/p1",
+				"words": [
+					{
+						"jp": "運転",
+						"kana": "うんてん",
+						"cn": "驾驶",
+						"en": "driving, operation"
+					},
+					{
+						"jp": "運転",
+						"kana": "うんてん",
+						"cn": "驾驶",
+						"en": "driving, operation"
+					}
+				]
 			},
 			{
 				"n": 9,
@@ -3648,7 +4634,21 @@
 				],
 				"point": "「Nの下で」＝在其指导／影响下。",
 				"point_en": "の下で = under the guidance of.",
-				"link": "#/day/5-6/p0"
+				"link": "#/day/5-6/p0",
+				"words": [
+					{
+						"jp": "信用する",
+						"kana": "しんよう",
+						"cn": "信任",
+						"en": "trust"
+					},
+					{
+						"jp": "教育",
+						"kana": "きょういく",
+						"cn": "教育",
+						"en": "education"
+					}
+				]
 			},
 			{
 				"n": 10,
@@ -3681,7 +4681,27 @@
 				],
 				"point": "「理解しがたい」。",
 				"point_en": "がたい = hard to (often psychological).",
-				"link": "#/day/5-5/p1"
+				"link": "#/day/5-5/p1",
+				"words": [
+					{
+						"jp": "普通",
+						"kana": "ふつう",
+						"cn": "普通",
+						"en": "ordinary"
+					},
+					{
+						"jp": "人",
+						"kana": "ひと",
+						"cn": "人",
+						"en": "person"
+					},
+					{
+						"jp": "理解",
+						"kana": "りかい",
+						"cn": "理解",
+						"en": "understand"
+					}
+				]
 			},
 			{
 				"n": 11,
@@ -3714,7 +4734,21 @@
 				],
 				"point": "「かのようだ」＝宛如。",
 				"point_en": "かのようだ = as if it were.",
-				"link": "#/day/5-5/p3"
+				"link": "#/day/5-5/p3",
+				"words": [
+					{
+						"jp": "黄色",
+						"kana": "きいろ",
+						"cn": "黄色",
+						"en": "yellow"
+					},
+					{
+						"jp": "畑",
+						"kana": "はたけ",
+						"cn": "旱田、田地",
+						"en": "a (vegetable) field"
+					}
+				]
 			},
 			{
 				"n": 12,
@@ -3747,7 +4781,27 @@
 				],
 				"point": "「行こうではないか」表示提议。",
 				"point_en": "Vようではないか = let's.",
-				"link": "#/day/5-6/p1"
+				"link": "#/day/5-6/p1",
+				"words": [
+					{
+						"jp": "明日",
+						"kana": "あした",
+						"cn": "明天",
+						"en": "tomorrow"
+					},
+					{
+						"jp": "皆",
+						"kana": "みな",
+						"cn": "大家",
+						"en": "everyone"
+					},
+					{
+						"jp": "試合",
+						"kana": "しあい",
+						"cn": "比赛",
+						"en": "match"
+					}
+				]
 			},
 			{
 				"n": 13,
@@ -3780,7 +4834,15 @@
 				],
 				"point": "「っこない」＝不可能。",
 				"point_en": "っこない = no chance of.",
-				"link": "#/day/5-5/p2"
+				"link": "#/day/5-5/p2",
+				"words": [
+					{
+						"jp": "約束",
+						"kana": "やくそく",
+						"cn": "约定",
+						"en": "a promise/appointment"
+					}
+				]
 			},
 			{
 				"n": 14,
@@ -3813,7 +4875,8 @@
 				],
 				"point": "「しかねます」委婉拒绝。",
 				"point_en": "かねる = cannot readily (polite refusal).",
-				"link": "#/day/5-5/p0"
+				"link": "#/day/5-5/p0",
+				"words": []
 			},
 			{
 				"n": 15,
@@ -3846,7 +4909,33 @@
 				],
 				"point": "「かねない」＝很有可能（多指坏事）。",
 				"point_en": "かねない = might well (negative outcome).",
-				"link": "#/day/5-5/p0"
+				"link": "#/day/5-5/p0",
+				"words": [
+					{
+						"jp": "姉",
+						"kana": "あね",
+						"cn": "（我的）姐姐",
+						"en": "older sister"
+					},
+					{
+						"jp": "日",
+						"kana": "ひ",
+						"cn": "日",
+						"en": "day"
+					},
+					{
+						"jp": "机",
+						"kana": "つくえ",
+						"cn": "桌子",
+						"en": "a desk"
+					},
+					{
+						"jp": "体",
+						"kana": "からだ",
+						"cn": "身体",
+						"en": "body"
+					}
+				]
 			}
 		],
 		"mondai2": [
@@ -3882,7 +4971,15 @@
 				"point": "「のみか」＝不但。",
 				"point_en": "のみか = not only (written).",
 				"link": "#/day/5-2/p0",
-				"order": "3→4→2→1"
+				"order": "3→4→2→1",
+				"words": [
+					{
+						"jp": "鳥",
+						"kana": "とり",
+						"cn": "鸟",
+						"en": "bird"
+					}
+				]
 			},
 			{
 				"n": 17,
@@ -3916,7 +5013,8 @@
 				"point": "「だけのことはある」。",
 				"point_en": "だけのことはある = it makes sense / as you'd expect.",
 				"link": "#/day/5-4/p1",
-				"order": "2→3→4→1"
+				"order": "2→3→4→1",
+				"words": []
 			},
 			{
 				"n": 18,
@@ -3950,7 +5048,15 @@
 				"point": "「ことだから」＝就因为他是那种人。",
 				"point_en": "ことだから = knowing what he's like.",
 				"link": "#/day/5-1/p2",
-				"order": "3→1→4→2"
+				"order": "3→1→4→2",
+				"words": [
+					{
+						"jp": "時間",
+						"kana": "じかん",
+						"cn": "时间",
+						"en": "time"
+					}
+				]
 			},
 			{
 				"n": 19,
@@ -3984,7 +5090,15 @@
 				"point": "「あきらめることなく」。",
 				"point_en": "ことなく = without doing.",
 				"link": "#/day/5-6/p2",
-				"order": "1→4→3→2"
+				"order": "1→4→3→2",
+				"words": [
+					{
+						"jp": "練習",
+						"kana": "れんしゅう",
+						"cn": "练习",
+						"en": "practice"
+					}
+				]
 			},
 			{
 				"n": 20,
@@ -4018,7 +5132,15 @@
 				"point": "「言っているのも同然だ」。",
 				"point_en": "も同然だ = tantamount to.",
 				"link": "#/day/5-6/p3",
-				"order": "1→3→4→2"
+				"order": "1→3→4→2",
+				"words": [
+					{
+						"jp": "言葉",
+						"kana": "ことば",
+						"cn": "语言",
+						"en": "word/language"
+					}
+				]
 			}
 		],
 		"mondai3": [
@@ -4053,7 +5175,8 @@
 				],
 				"point": "「苦手なばかりに」。",
 				"point_en": "ばかりに = just because (unfortunate).",
-				"link": "#/day/5-2/p2"
+				"link": "#/day/5-2/p2",
+				"words": []
 			},
 			{
 				"n": 22,
@@ -4086,7 +5209,8 @@
 				],
 				"point": "「しかねません」＝很可能。",
 				"point_en": "かねない = might well.",
-				"link": "#/day/5-5/p0"
+				"link": "#/day/5-5/p0",
+				"words": []
 			},
 			{
 				"n": 23,
@@ -4119,7 +5243,8 @@
 				],
 				"point": "「信じがたい」。",
 				"point_en": "がたい = hard to.",
-				"link": "#/day/5-5/p1"
+				"link": "#/day/5-5/p1",
+				"words": []
 			},
 			{
 				"n": 24,
@@ -4152,7 +5277,8 @@
 				],
 				"point": "「かのように」。",
 				"point_en": "かのように = as if.",
-				"link": "#/day/5-5/p3"
+				"link": "#/day/5-5/p3",
+				"words": []
 			},
 			{
 				"n": 25,
@@ -4185,7 +5311,8 @@
 				],
 				"point": "「に際して」。",
 				"point_en": "に際して = when doing.",
-				"link": "#/day/5-3/p2"
+				"link": "#/day/5-3/p2",
+				"words": []
 			}
 		]
 	},
@@ -4222,7 +5349,15 @@
 				],
 				"point": "「からには」＝既然。",
 				"point_en": "からには = now that / as long as.",
-				"link": "#/day/6-1/p0"
+				"link": "#/day/6-1/p0",
+				"words": [
+					{
+						"jp": "招待",
+						"kana": "しょうたい",
+						"cn": "招待",
+						"en": "an invitation"
+					}
+				]
 			},
 			{
 				"n": 2,
@@ -4255,7 +5390,21 @@
 				],
 				"point": "「誘うまい」＝不打算再邀请。",
 				"point_en": "まい = will not (volition / conjecture).",
-				"link": "#/day/6-4/p1"
+				"link": "#/day/6-4/p1",
+				"words": [
+					{
+						"jp": "失礼する",
+						"kana": "しつれいする",
+						"cn": "失礼",
+						"en": "be excused"
+					},
+					{
+						"jp": "人",
+						"kana": "ひと",
+						"cn": "人",
+						"en": "person"
+					}
+				]
 			},
 			{
 				"n": 3,
@@ -4288,7 +5437,27 @@
 				],
 				"point": "「からいえば」＝从该立场说。",
 				"point_en": "からいえば = speaking from that side.",
-				"link": "#/day/6-2/p0"
+				"link": "#/day/6-2/p0",
+				"words": [
+					{
+						"jp": "学校",
+						"kana": "がっこう",
+						"cn": "学校",
+						"en": "school"
+					},
+					{
+						"jp": "家",
+						"kana": "いえ",
+						"cn": "家",
+						"en": "house"
+					},
+					{
+						"jp": "問題",
+						"kana": "もんだい",
+						"cn": "题，问题",
+						"en": "problem, question"
+					}
+				]
 			},
 			{
 				"n": 4,
@@ -4321,7 +5490,27 @@
 				],
 				"point": "「Nにおいて」表示场所（郑重）。",
 				"point_en": "において = at (formal place).",
-				"link": "#/day/6-6/p2"
+				"link": "#/day/6-6/p2",
+				"words": [
+					{
+						"jp": "本日",
+						"kana": "ほんじつ",
+						"cn": "今天休业",
+						"en": ""
+					},
+					{
+						"jp": "時",
+						"kana": "とき",
+						"cn": "时候",
+						"en": "time"
+					},
+					{
+						"jp": "演説",
+						"kana": "えんぜつ",
+						"cn": "演说",
+						"en": "a speech, oration"
+					}
+				]
 			},
 			{
 				"n": 5,
@@ -4354,7 +5543,21 @@
 				],
 				"point": "「から〜にかけて」表示时间跨度。",
 				"point_en": "にかけて = from A through B.",
-				"link": "#/day/6-3/p2"
+				"link": "#/day/6-3/p2",
+				"words": [
+					{
+						"jp": "夏",
+						"kana": "なつ",
+						"cn": "夏",
+						"en": "summer"
+					},
+					{
+						"jp": "日本",
+						"kana": "にほん",
+						"cn": "日本",
+						"en": "Japan"
+					}
+				]
 			},
 			{
 				"n": 6,
@@ -4387,7 +5590,8 @@
 				],
 				"point": "「てからでないと」＝在那之前不行。",
 				"point_en": "てからでないと = not until after.",
-				"link": "#/day/6-3/p1"
+				"link": "#/day/6-3/p1",
+				"words": []
 			},
 			{
 				"n": 7,
@@ -4420,7 +5624,27 @@
 				],
 				"point": "「にかけては」＝在这一方面。",
 				"point_en": "にかけては = when it comes to this point.",
-				"link": "#/day/6-3/p3"
+				"link": "#/day/6-3/p3",
+				"words": [
+					{
+						"jp": "妹",
+						"kana": "いもうと",
+						"cn": "（我的）妹妹",
+						"en": "younger sister"
+					},
+					{
+						"jp": "理解",
+						"kana": "りかい",
+						"cn": "理解",
+						"en": "understand"
+					},
+					{
+						"jp": "一生懸命",
+						"kana": "いっしょうけんめい",
+						"cn": "拼命",
+						"en": "very hard, with utmost effort"
+					}
+				]
 			},
 			{
 				"n": 8,
@@ -4453,7 +5677,8 @@
 				],
 				"point": "「以上」＝既然处于这种情况。",
 				"point_en": "以上 = now that that's the case.",
-				"link": "#/day/6-1/p2"
+				"link": "#/day/6-1/p2",
+				"words": []
 			},
 			{
 				"n": 9,
@@ -4486,7 +5711,15 @@
 				],
 				"point": "「色からして」＝单从颜色就。",
 				"point_en": "からして = even judging from that alone.",
-				"link": "#/day/6-2/p1"
+				"link": "#/day/6-2/p1",
+				"words": [
+					{
+						"jp": "色",
+						"kana": "いろ",
+						"cn": "颜色",
+						"en": "color"
+					}
+				]
 			},
 			{
 				"n": 10,
@@ -4519,7 +5752,21 @@
 				],
 				"point": "「からみると」。",
 				"point_en": "からみると = seen from.",
-				"link": "#/day/6-2/p2"
+				"link": "#/day/6-2/p2",
+				"words": [
+					{
+						"jp": "人",
+						"kana": "ひと",
+						"cn": "人",
+						"en": "person"
+					},
+					{
+						"jp": "習慣",
+						"kana": "しゅうかん",
+						"cn": "习惯",
+						"en": "a custom/habit"
+					}
+				]
 			},
 			{
 				"n": 11,
@@ -4552,7 +5799,27 @@
 				],
 				"point": "「に相違ない」书面，表示断定。",
 				"point_en": "に相違ない = there is no mistake that.",
-				"link": "#/day/6-5/p3"
+				"link": "#/day/6-5/p3",
+				"words": [
+					{
+						"jp": "小説",
+						"kana": "しょうせつ",
+						"cn": "小说",
+						"en": "novel"
+					},
+					{
+						"jp": "主人",
+						"kana": "しゅじん",
+						"cn": "丈夫",
+						"en": "husband"
+					},
+					{
+						"jp": "人",
+						"kana": "ひと",
+						"cn": "人",
+						"en": "person"
+					}
+				]
 			},
 			{
 				"n": 12,
@@ -4585,7 +5852,15 @@
 				],
 				"point": "「における」是「において」的连体形。",
 				"point_en": "における = in (prenominal).",
-				"link": "#/day/6-6/p2"
+				"link": "#/day/6-6/p2",
+				"words": [
+					{
+						"jp": "日本",
+						"kana": "にほん",
+						"cn": "日本",
+						"en": "Japan"
+					}
+				]
 			},
 			{
 				"n": 13,
@@ -4618,7 +5893,21 @@
 				],
 				"point": "「をはじめ」。",
 				"point_en": "をはじめ = starting with / including foremost.",
-				"link": "#/day/6-6/p0"
+				"link": "#/day/6-6/p0",
+				"words": [
+					{
+						"jp": "英語",
+						"kana": "えいご",
+						"cn": "英语",
+						"en": "English"
+					},
+					{
+						"jp": "国語",
+						"kana": "こくご",
+						"cn": "语文",
+						"en": "Japanese language arts"
+					}
+				]
 			},
 			{
 				"n": 14,
@@ -4651,7 +5940,27 @@
 				],
 				"point": "「〜とか」表示不确定的传闻。",
 				"point_en": "とか = I hear (soft hearsay).",
-				"link": "#/day/6-4/p0"
+				"link": "#/day/6-4/p0",
+				"words": [
+					{
+						"jp": "昨夜",
+						"kana": "さくや",
+						"cn": "昨天晚上",
+						"en": "last night"
+					},
+					{
+						"jp": "地震",
+						"kana": "じしん",
+						"cn": "地震",
+						"en": "an earthquake"
+					},
+					{
+						"jp": "震度",
+						"kana": "しんど",
+						"cn": "震级",
+						"en": "seismic intensity"
+					}
+				]
 			},
 			{
 				"n": 15,
@@ -4684,7 +5993,8 @@
 				],
 				"point": "「にほかならない」。",
 				"point_en": "にほかならない = nothing other than.",
-				"link": "#/day/6-5/p3"
+				"link": "#/day/6-5/p3",
+				"words": []
 			}
 		],
 		"mondai2": [
@@ -4720,7 +6030,15 @@
 				"point": "「認めるよりほかない」。",
 				"point_en": "よりほかない = nothing else to do but.",
 				"link": "#/day/6-5/p2",
-				"order": "3→2→1→4"
+				"order": "3→2→1→4",
+				"words": [
+					{
+						"jp": "事実",
+						"kana": "じじつ",
+						"cn": "事实",
+						"en": "a fact"
+					}
+				]
 			},
 			{
 				"n": 17,
@@ -4754,7 +6072,21 @@
 				"point": "「に決まっている」。",
 				"point_en": "に決まっている = it's certain that.",
 				"link": "#/day/6-5/p0",
-				"order": "4→1→2→3"
+				"order": "4→1→2→3",
+				"words": [
+					{
+						"jp": "練習",
+						"kana": "れんしゅう",
+						"cn": "练习",
+						"en": "practice"
+					},
+					{
+						"jp": "漢字",
+						"kana": "かんじ",
+						"cn": "汉字",
+						"en": "kanji, Chinese character"
+					}
+				]
 			},
 			{
 				"n": 18,
@@ -4788,7 +6120,15 @@
 				"point": "「からといって」＝虽说如此也不能。",
 				"point_en": "からといって = just because … it doesn't mean.",
 				"link": "#/day/6-3/p0",
-				"order": "1→4→2→3"
+				"order": "1→4→2→3",
+				"words": [
+					{
+						"jp": "節約",
+						"kana": "せつやく",
+						"cn": "节约",
+						"en": "thrift"
+					}
+				]
 			},
 			{
 				"n": 19,
@@ -4822,7 +6162,21 @@
 				"point": "「しようかすまいか」。",
 				"point_en": "V(よ)うかVまいか = whether to or not.",
 				"link": "#/day/6-4/p3",
-				"order": "4→3→1→2"
+				"order": "4→3→1→2",
+				"words": [
+					{
+						"jp": "参加",
+						"kana": "さんか",
+						"cn": "参加",
+						"en": "participate"
+					},
+					{
+						"jp": "自由",
+						"kana": "じゆう",
+						"cn": "自由",
+						"en": "freedom"
+					}
+				]
 			},
 			{
 				"n": 20,
@@ -4856,7 +6210,33 @@
 				"point": "「て以来」。",
 				"point_en": "て以来 = ever since.",
 				"link": "#/day/6-1/p3",
-				"order": "3→4→2→1"
+				"order": "3→4→2→1",
+				"words": [
+					{
+						"jp": "仲間",
+						"kana": "なかま",
+						"cn": "伙伴、同事、同类",
+						"en": "a friend/circle of friends"
+					},
+					{
+						"jp": "教室",
+						"kana": "きょうしつ",
+						"cn": "教室",
+						"en": "classroom"
+					},
+					{
+						"jp": "自分",
+						"kana": "じぶん",
+						"cn": "自己",
+						"en": "self"
+					},
+					{
+						"jp": "学校",
+						"kana": "がっこう",
+						"cn": "学校",
+						"en": "school"
+					}
+				]
 			}
 		],
 		"mondai3": [
@@ -4891,7 +6271,8 @@
 				],
 				"point": "「にかけて」表示期间。",
 				"point_en": "にかけて = from A through B.",
-				"link": "#/day/6-3/p2"
+				"link": "#/day/6-3/p2",
+				"words": []
 			},
 			{
 				"n": 22,
@@ -4924,7 +6305,8 @@
 				],
 				"point": "「からといって」。",
 				"point_en": "からといって = that doesn't mean.",
-				"link": "#/day/6-3/p0"
+				"link": "#/day/6-3/p0",
+				"words": []
 			},
 			{
 				"n": 23,
@@ -4957,7 +6339,8 @@
 				],
 				"point": "「てからでないと」。",
 				"point_en": "てからでないと = not until after.",
-				"link": "#/day/6-3/p1"
+				"link": "#/day/6-3/p1",
+				"words": []
 			},
 			{
 				"n": 24,
@@ -4990,7 +6373,8 @@
 				],
 				"point": "「をはじめ」。",
 				"point_en": "をはじめ = starting with.",
-				"link": "#/day/6-6/p0"
+				"link": "#/day/6-6/p0",
+				"words": []
 			},
 			{
 				"n": 25,
@@ -5023,7 +6407,8 @@
 				],
 				"point": "「のだとか」传闻。",
 				"point_en": "とか = I hear.",
-				"link": "#/day/6-4/p0"
+				"link": "#/day/6-4/p0",
+				"words": []
 			}
 		]
 	},
@@ -5060,7 +6445,15 @@
 				],
 				"point": "「にしろ〜にしろ」。",
 				"point_en": "にしろ〜にしろ = whether A or B.",
-				"link": "#/day/7-2/p2"
+				"link": "#/day/7-2/p2",
+				"words": [
+					{
+						"jp": "持参",
+						"kana": "じさん",
+						"cn": "带来(去)",
+						"en": "bring"
+					}
+				]
 			},
 			{
 				"n": 2,
@@ -5093,7 +6486,21 @@
 				],
 				"point": "「を契機として」。",
 				"point_en": "を契機として = taking that as a turning point.",
-				"link": "#/day/7-6/p2"
+				"link": "#/day/7-6/p2",
+				"words": [
+					{
+						"jp": "入院する",
+						"kana": "にゅういんする",
+						"cn": "住院",
+						"en": "be hospitalized"
+					},
+					{
+						"jp": "保険",
+						"kana": "ほけん",
+						"cn": "保险",
+						"en": "insurance"
+					}
+				]
 			},
 			{
 				"n": 3,
@@ -5126,7 +6533,21 @@
 				],
 				"point": "「心のこもった」。",
 				"point_en": "こめる = put (feeling) into.",
-				"link": "#/day/7-4/p1"
+				"link": "#/day/7-4/p1",
+				"words": [
+					{
+						"jp": "心",
+						"kana": "こころ",
+						"cn": "内心",
+						"en": "heart, mind"
+					},
+					{
+						"jp": "贈り物",
+						"kana": "おくりもの",
+						"cn": "礼物",
+						"en": "a gift"
+					}
+				]
 			},
 			{
 				"n": 4,
@@ -5159,7 +6580,8 @@
 				],
 				"point": "「も〜ば〜も」并列。",
 				"point_en": "も〜ば〜も = neither … nor / both.",
-				"link": "#/day/7-2/p3"
+				"link": "#/day/7-2/p3",
+				"words": []
 			},
 			{
 				"n": 5,
@@ -5192,7 +6614,21 @@
 				],
 				"point": "「もかまわず」。",
 				"point_en": "もかまわず = without minding.",
-				"link": "#/day/7-1/p0"
+				"link": "#/day/7-1/p0",
+				"words": [
+					{
+						"jp": "服",
+						"kana": "ふく",
+						"cn": "衣服",
+						"en": "clothes"
+					},
+					{
+						"jp": "人",
+						"kana": "ひと",
+						"cn": "人",
+						"en": "person"
+					}
+				]
 			},
 			{
 				"n": 6,
@@ -5225,7 +6661,8 @@
 				],
 				"point": "「内外を問わず」。",
 				"point_en": "を問わず = regardless of.",
-				"link": "#/day/7-1/p3"
+				"link": "#/day/7-1/p3",
+				"words": []
 			},
 			{
 				"n": 7,
@@ -5258,7 +6695,21 @@
 				],
 				"point": "「を通じて」。",
 				"point_en": "を通じて = through.",
-				"link": "#/day/7-4/p2"
+				"link": "#/day/7-4/p2",
+				"words": [
+					{
+						"jp": "活動",
+						"kana": "かつどう",
+						"cn": "活动",
+						"en": "activity"
+					},
+					{
+						"jp": "社会",
+						"kana": "しゃかい",
+						"cn": "社会学科",
+						"en": "social studies"
+					}
+				]
 			},
 			{
 				"n": 8,
@@ -5291,7 +6742,21 @@
 				],
 				"point": "「やら〜やら」列举杂乱事物。",
 				"point_en": "やら〜やら lists mixed items.",
-				"link": "#/day/7-2/p0"
+				"link": "#/day/7-2/p0",
+				"words": [
+					{
+						"jp": "地震",
+						"kana": "じしん",
+						"cn": "地震",
+						"en": "an earthquake"
+					},
+					{
+						"jp": "普通",
+						"kana": "ふつう",
+						"cn": "普通",
+						"en": "ordinary"
+					}
+				]
 			},
 			{
 				"n": 9,
@@ -5324,7 +6789,15 @@
 				],
 				"point": "「ものだ」谈一般倾向。",
 				"point_en": "ものだ states a general truth.",
-				"link": "#/day/7-3/p0"
+				"link": "#/day/7-3/p0",
+				"words": [
+					{
+						"jp": "人",
+						"kana": "ひと",
+						"cn": "人",
+						"en": "person"
+					}
+				]
 			},
 			{
 				"n": 10,
@@ -5357,7 +6830,21 @@
 				],
 				"point": "「Vるにつけ」。",
 				"point_en": "につけ = every time / whenever.",
-				"link": "#/day/7-2/p1"
+				"link": "#/day/7-2/p1",
+				"words": [
+					{
+						"jp": "服",
+						"kana": "ふく",
+						"cn": "衣服",
+						"en": "clothes"
+					},
+					{
+						"jp": "母",
+						"kana": "はは",
+						"cn": "母亲",
+						"en": "mother"
+					}
+				]
 			},
 			{
 				"n": 11,
@@ -5390,7 +6877,21 @@
 				],
 				"point": "「恐れがある」。",
 				"point_en": "恐れがある = there is a risk that.",
-				"link": "#/day/7-5/p0"
+				"link": "#/day/7-5/p0",
+				"words": [
+					{
+						"jp": "病気",
+						"kana": "びょうき",
+						"cn": "生病",
+						"en": "illness"
+					},
+					{
+						"jp": "動物",
+						"kana": "どうぶつ",
+						"cn": "动物",
+						"en": "animal"
+					}
+				]
 			},
 			{
 				"n": 12,
@@ -5423,7 +6924,15 @@
 				],
 				"point": "「というものでもない」。",
 				"point_en": "というものでもない = not necessarily.",
-				"link": "#/day/7-5/p2"
+				"link": "#/day/7-5/p2",
+				"words": [
+					{
+						"jp": "体",
+						"kana": "からだ",
+						"cn": "身体",
+						"en": "body"
+					}
+				]
 			},
 			{
 				"n": 13,
@@ -5456,7 +6965,21 @@
 				],
 				"point": "「ものがある」表示确实能感觉到某种特质。",
 				"point_en": "ものがある = there is something (notable).",
-				"link": "#/day/7-5/p1"
+				"link": "#/day/7-5/p1",
+				"words": [
+					{
+						"jp": "町",
+						"kana": "まち",
+						"cn": "市镇；街",
+						"en": "town"
+					},
+					{
+						"jp": "心",
+						"kana": "こころ",
+						"cn": "内心",
+						"en": "heart, mind"
+					}
+				]
 			},
 			{
 				"n": 14,
@@ -5489,7 +7012,27 @@
 				],
 				"point": "「をもとにして」。",
 				"point_en": "をもとに = based on.",
-				"link": "#/day/7-6/p0"
+				"link": "#/day/7-6/p0",
+				"words": [
+					{
+						"jp": "問題",
+						"kana": "もんだい",
+						"cn": "题，问题",
+						"en": "problem, question"
+					},
+					{
+						"jp": "授業",
+						"kana": "じゅぎょう",
+						"cn": "课，上课，讲课",
+						"en": "class, lesson"
+					},
+					{
+						"jp": "教材",
+						"kana": "きょうざい",
+						"cn": "教材",
+						"en": "teaching material"
+					}
+				]
 			},
 			{
 				"n": 15,
@@ -5522,7 +7065,15 @@
 				],
 				"point": "「Nの際には」。",
 				"point_en": "際 = when / at the time of.",
-				"link": "#/day/7-6/p3"
+				"link": "#/day/7-6/p3",
+				"words": [
+					{
+						"jp": "予約",
+						"kana": "よやく",
+						"cn": "预约",
+						"en": "an appointment/reservation"
+					}
+				]
 			}
 		],
 		"mondai2": [
@@ -5558,7 +7109,15 @@
 				"point": "「というものだ」表示说话人的评价。",
 				"point_en": "というものだ = that's what I'd call.",
 				"link": "#/day/7-3/p2",
-				"order": "3→1→4→2"
+				"order": "3→1→4→2",
+				"words": [
+					{
+						"jp": "理解",
+						"kana": "りかい",
+						"cn": "理解",
+						"en": "understand"
+					}
+				]
 			},
 			{
 				"n": 17,
@@ -5592,7 +7151,15 @@
 				"point": "「ものではない」表示劝戒。",
 				"point_en": "ものではない = that's not what one should do.",
 				"link": "#/day/7-3/p1",
-				"order": "1→3→2→4"
+				"order": "1→3→2→4",
+				"words": [
+					{
+						"jp": "人",
+						"kana": "ひと",
+						"cn": "人",
+						"en": "person"
+					}
+				]
 			},
 			{
 				"n": 18,
@@ -5626,7 +7193,8 @@
 				"point": "「にかかわらず」。",
 				"point_en": "にかかわらず = regardless of.",
 				"link": "#/day/7-1/p2",
-				"order": "3→2→1→4"
+				"order": "3→2→1→4",
+				"words": []
 			},
 			{
 				"n": 19,
@@ -5660,7 +7228,15 @@
 				"point": "「ものか」强烈否定。",
 				"point_en": "ものか = as if I would.",
 				"link": "#/day/7-3/p3",
-				"order": "4→2→3→1"
+				"order": "4→2→3→1",
+				"words": [
+					{
+						"jp": "本",
+						"kana": "ほん",
+						"cn": "书",
+						"en": "book"
+					}
+				]
 			},
 			{
 				"n": 20,
@@ -5694,7 +7270,15 @@
 				"point": "「のをきっかけに」。",
 				"point_en": "をきっかけに = taking that as a chance.",
 				"link": "#/day/7-6/p1",
-				"order": "2→4→1→3"
+				"order": "2→4→1→3",
+				"words": [
+					{
+						"jp": "失敗",
+						"kana": "しっぱい",
+						"cn": "失败",
+						"en": "failure, mistake"
+					}
+				]
 			}
 		],
 		"mondai3": [
@@ -5729,7 +7313,8 @@
 				],
 				"point": "「を中心に」。",
 				"point_en": "を中心に = centered on.",
-				"link": "#/day/7-4/p0"
+				"link": "#/day/7-4/p0",
+				"words": []
 			},
 			{
 				"n": 22,
@@ -5762,7 +7347,8 @@
 				],
 				"point": "「を問わず」。",
 				"point_en": "を問わず = regardless of.",
-				"link": "#/day/7-1/p3"
+				"link": "#/day/7-1/p3",
+				"words": []
 			},
 			{
 				"n": 23,
@@ -5795,7 +7381,8 @@
 				],
 				"point": "「ものでしょうか」表示不满的反问。",
 				"point_en": "ものか／ものでしょうか = (rhetorical) surely not / can't they.",
-				"link": "#/day/7-5/p3"
+				"link": "#/day/7-5/p3",
+				"words": []
 			},
 			{
 				"n": 24,
@@ -5828,7 +7415,8 @@
 				],
 				"point": "「を通じて」。",
 				"point_en": "を通じて = through.",
-				"link": "#/day/7-4/p2"
+				"link": "#/day/7-4/p2",
+				"words": []
 			},
 			{
 				"n": 25,
@@ -5861,7 +7449,8 @@
 				],
 				"point": "「心のこもった」。",
 				"point_en": "こもった = filled with (feeling).",
-				"link": "#/day/7-4/p1"
+				"link": "#/day/7-4/p1",
+				"words": []
 			}
 		]
 	},
@@ -5898,7 +7487,15 @@
 				],
 				"point": "「ただし」补充例外条件。",
 				"point_en": "ただし = provided that / however.",
-				"link": "#/day/8-4/p3"
+				"link": "#/day/8-4/p3",
+				"words": [
+					{
+						"jp": "許可",
+						"kana": "きょか",
+						"cn": "允许",
+						"en": "permission"
+					}
+				]
 			},
 			{
 				"n": 2,
@@ -5931,7 +7528,8 @@
 				],
 				"point": "「それで」催促往下说。",
 				"point_en": "それで = and so? (prompting).",
-				"link": "#/day/8-1/p3"
+				"link": "#/day/8-1/p3",
+				"words": []
 			},
 			{
 				"n": 3,
@@ -5964,7 +7562,33 @@
 				],
 				"point": "「あるいは」表示选择。",
 				"point_en": "あるいは = or.",
-				"link": "#/day/8-3/p1"
+				"link": "#/day/8-3/p1",
+				"words": [
+					{
+						"jp": "運転免許証",
+						"kana": "うんてんめんきょしょう",
+						"cn": "驾驶执照",
+						"en": "driver's license"
+					},
+					{
+						"jp": "健康保険証",
+						"kana": "けんこうほけんしょう",
+						"cn": "健保卡",
+						"en": "a health insurance card"
+					},
+					{
+						"jp": "身分",
+						"kana": "みぶん",
+						"cn": "身份",
+						"en": "social status"
+					},
+					{
+						"jp": "持参",
+						"kana": "じさん",
+						"cn": "带来(去)",
+						"en": "bring"
+					}
+				]
 			},
 			{
 				"n": 4,
@@ -5997,7 +7621,21 @@
 				],
 				"point": "「そこで」表示因此采取行动。",
 				"point_en": "そこで = and so (I did X).",
-				"link": "#/day/8-2/p1"
+				"link": "#/day/8-2/p1",
+				"words": [
+					{
+						"jp": "苦労",
+						"kana": "くろう",
+						"cn": "辛苦、操心",
+						"en": "troubles, hardships"
+					},
+					{
+						"jp": "商品",
+						"kana": "しょうひん",
+						"cn": "商品",
+						"en": "goods"
+					}
+				]
 			},
 			{
 				"n": 5,
@@ -6030,7 +7668,27 @@
 				],
 				"point": "「そういえば」表示突然想起。",
 				"point_en": "そういえば = that reminds me.",
-				"link": "#/day/8-2/p2"
+				"link": "#/day/8-2/p2",
+				"words": [
+					{
+						"jp": "写真",
+						"kana": "しゃしん",
+						"cn": "照片",
+						"en": "photo, picture"
+					},
+					{
+						"jp": "最近",
+						"kana": "さいきん",
+						"cn": "最近",
+						"en": "recently"
+					},
+					{
+						"jp": "猫",
+						"kana": "ねこ",
+						"cn": "猫",
+						"en": "a cat"
+					}
+				]
 			},
 			{
 				"n": 6,
@@ -6063,7 +7721,15 @@
 				],
 				"point": "「すなわち」换一种说法。",
 				"point_en": "すなわち = namely / that is.",
-				"link": "#/day/8-3/p0"
+				"link": "#/day/8-3/p0",
+				"words": [
+					{
+						"jp": "観客",
+						"kana": "かんきゃく",
+						"cn": "观众",
+						"en": "spectator, audience"
+					}
+				]
 			},
 			{
 				"n": 7,
@@ -6096,7 +7762,8 @@
 				],
 				"point": "「それが」引出不如意的结果。",
 				"point_en": "それが = well, as it turns out.",
-				"link": "#/day/8-2/p0"
+				"link": "#/day/8-2/p0",
+				"words": []
 			},
 			{
 				"n": 8,
@@ -6129,7 +7796,8 @@
 				],
 				"point": "「だって」口语申辩。",
 				"point_en": "だって = because (defensive).",
-				"link": "#/day/8-3/p3"
+				"link": "#/day/8-3/p3",
+				"words": []
 			},
 			{
 				"n": 9,
@@ -6162,7 +7830,27 @@
 				],
 				"point": "「ということは」从事实推出结论。",
 				"point_en": "ということは = which means that.",
-				"link": "#/day/8-4/p0"
+				"link": "#/day/8-4/p0",
+				"words": [
+					{
+						"jp": "薬指",
+						"kana": "くすりゆび",
+						"cn": "药指",
+						"en": "ring finger"
+					},
+					{
+						"jp": "指輪",
+						"kana": "ゆびわ",
+						"cn": "戒指",
+						"en": "a ring"
+					},
+					{
+						"jp": "結婚",
+						"kana": "けっこん",
+						"cn": "结婚",
+						"en": "a marriage"
+					}
+				]
 			},
 			{
 				"n": 10,
@@ -6195,7 +7883,27 @@
 				],
 				"point": "「というのは」解释原因。",
 				"point_en": "というのは = the reason is.",
-				"link": "#/day/8-4/p1"
+				"link": "#/day/8-4/p1",
+				"words": [
+					{
+						"jp": "今日",
+						"kana": "きょう",
+						"cn": "今天",
+						"en": "today"
+					},
+					{
+						"jp": "最後",
+						"kana": "さいご",
+						"cn": "最后",
+						"en": "last / end"
+					},
+					{
+						"jp": "転職する",
+						"kana": "てんしょく",
+						"cn": "跳槽、换工作",
+						"en": ""
+					}
+				]
 			},
 			{
 				"n": 11,
@@ -6228,7 +7936,21 @@
 				],
 				"point": "「それなら」承接对方的话给建议。",
 				"point_en": "それなら = in that case.",
-				"link": "#/day/8-1/p2"
+				"link": "#/day/8-1/p2",
+				"words": [
+					{
+						"jp": "日本",
+						"kana": "にほん",
+						"cn": "日本",
+						"en": "Japan"
+					},
+					{
+						"jp": "文化",
+						"kana": "ぶんか",
+						"cn": "文化",
+						"en": "culture"
+					}
+				]
 			},
 			{
 				"n": 12,
@@ -6261,7 +7983,21 @@
 				],
 				"point": "「それはそうと」转换话题。",
 				"point_en": "それはそうと = anyway (new topic).",
-				"link": "#/day/8-2/p3"
+				"link": "#/day/8-2/p3",
+				"words": [
+					{
+						"jp": "昨日",
+						"kana": "さくじつ",
+						"cn": "昨天",
+						"en": "yesterday"
+					},
+					{
+						"jp": "選手",
+						"kana": "せんしゅ",
+						"cn": "选手",
+						"en": "a player, an athlete"
+					}
+				]
 			},
 			{
 				"n": 13,
@@ -6294,7 +8030,27 @@
 				],
 				"point": "「なお」补充说明。",
 				"point_en": "なお = additionally (formal).",
-				"link": "#/day/8-5/p1"
+				"link": "#/day/8-5/p1",
+				"words": [
+					{
+						"jp": "注文する",
+						"kana": "ちゅうもん",
+						"cn": "点菜",
+						"en": "place an order"
+					},
+					{
+						"jp": "自動",
+						"kana": "じどう",
+						"cn": "自动",
+						"en": "automatic"
+					},
+					{
+						"jp": "返信する",
+						"kana": "へんしん",
+						"cn": "回复",
+						"en": "reply"
+					}
+				]
 			},
 			{
 				"n": 14,
@@ -6327,7 +8083,21 @@
 				],
 				"point": "「すると」表示一做就发生。",
 				"point_en": "すると = and then (what happened next).",
-				"link": "#/day/8-5/p3"
+				"link": "#/day/8-5/p3",
+				"words": [
+					{
+						"jp": "本",
+						"kana": "ほん",
+						"cn": "书",
+						"en": "book"
+					},
+					{
+						"jp": "写真",
+						"kana": "しゃしん",
+						"cn": "照片",
+						"en": "photo, picture"
+					}
+				]
 			},
 			{
 				"n": 15,
@@ -6360,7 +8130,27 @@
 				],
 				"point": "「したがって」表示逻辑结论。",
 				"point_en": "したがって = therefore (formal).",
-				"link": "#/day/8-4/p2"
+				"link": "#/day/8-4/p2",
+				"words": [
+					{
+						"jp": "単位",
+						"kana": "たんい",
+						"cn": "（得）学分",
+						"en": "(get) credit(s)"
+					},
+					{
+						"jp": "君",
+						"kana": "きみ",
+						"cn": "你",
+						"en": "you"
+					},
+					{
+						"jp": "卒業",
+						"kana": "そつぎょう",
+						"cn": "毕业",
+						"en": "graduation"
+					}
+				]
 			}
 		],
 		"mondai2": [
@@ -6396,7 +8186,8 @@
 				"point": "「によれば」。",
 				"point_en": "によれば = according to.",
 				"link": "#/day/8-5/p0",
-				"order": "3→4→2→1"
+				"order": "3→4→2→1",
+				"words": []
 			},
 			{
 				"n": 17,
@@ -6430,7 +8221,33 @@
 				"point": "「もっとも」补充修正。",
 				"point_en": "もっとも = although / that said.",
 				"link": "#/day/8-5/p0",
-				"order": "2→3→1→4"
+				"order": "2→3→1→4",
+				"words": [
+					{
+						"jp": "自治会",
+						"kana": "じちかい",
+						"cn": "自治会",
+						"en": "self-governing association"
+					},
+					{
+						"jp": "清掃",
+						"kana": "せいそう",
+						"cn": "打扫",
+						"en": "clean"
+					},
+					{
+						"jp": "参加",
+						"kana": "さんか",
+						"cn": "参加",
+						"en": "participate"
+					},
+					{
+						"jp": "意志",
+						"kana": "いし",
+						"cn": "意志",
+						"en": "will, volition"
+					}
+				]
 			},
 			{
 				"n": 18,
@@ -6464,7 +8281,21 @@
 				"point": "「それなのに」逆接。",
 				"point_en": "それなのに = and yet.",
 				"link": "#/day/8-1/p0",
-				"order": "2→1→3→4"
+				"order": "2→1→3→4",
+				"words": [
+					{
+						"jp": "試験",
+						"kana": "しけん",
+						"cn": "试验；考试",
+						"en": "test, exam"
+					},
+					{
+						"jp": "注意する",
+						"kana": "ちゅういする",
+						"cn": "注意，小心；提醒",
+						"en": "pay attention"
+					}
+				]
 			},
 			{
 				"n": 19,
@@ -6498,7 +8329,8 @@
 				"point": "「あるいは」连接选择。",
 				"point_en": "あるいは = or.",
 				"link": "#/day/8-3/p1",
-				"order": "1→4→2→3"
+				"order": "1→4→2→3",
+				"words": []
 			},
 			{
 				"n": 20,
@@ -6532,7 +8364,8 @@
 				"point": "「すなわち／つまり」。",
 				"point_en": "すなわち = namely.",
 				"link": "#/day/8-3/p0",
-				"order": "2→1→3→4"
+				"order": "2→1→3→4",
+				"words": []
 			}
 		],
 		"mondai3": [
@@ -6567,7 +8400,8 @@
 				],
 				"point": "通知开头用「さて」转入正题。",
 				"point_en": "さて = now then (opening a topic).",
-				"link": "#/day/8-5/p2"
+				"link": "#/day/8-5/p2",
+				"words": []
 			},
 			{
 				"n": 22,
@@ -6600,7 +8434,8 @@
 				],
 				"point": "和「わかりやすく、しかも」并列好评。",
 				"point_en": "しかも adds another plus.",
-				"link": "#/day/8-6/p1"
+				"link": "#/day/8-6/p1",
+				"words": []
 			},
 			{
 				"n": 23,
@@ -6633,7 +8468,8 @@
 				],
 				"point": "「そういえば」想起自己的情况。",
 				"point_en": "そういえば = that reminds me.",
-				"link": "#/day/8-2/p2"
+				"link": "#/day/8-2/p2",
+				"words": []
 			},
 			{
 				"n": 24,
@@ -6666,7 +8502,8 @@
 				],
 				"point": "「あるいは」表示选择。",
 				"point_en": "あるいは = or.",
-				"link": "#/day/8-3/p1"
+				"link": "#/day/8-3/p1",
+				"words": []
 			},
 			{
 				"n": 25,
@@ -6699,7 +8536,8 @@
 				],
 				"point": "「なお」补充注意事项。",
 				"point_en": "なお = additionally.",
-				"link": "#/day/8-5/p1"
+				"link": "#/day/8-5/p1",
+				"words": []
 			}
 		]
 	}

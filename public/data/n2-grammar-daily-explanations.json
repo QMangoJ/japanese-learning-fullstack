@@ -16,6 +16,20 @@
 						"a": "っぽくて",
 						"b": "気味で"
 					}
+				],
+				"words": [
+					{
+						"jp": "牛乳",
+						"kana": "ぎゅうにゅう",
+						"cn": "牛奶",
+						"en": "milk"
+					},
+					{
+						"jp": "気味",
+						"kana": "きみ",
+						"cn": "倾向",
+						"en": "a touch of"
+					}
 				]
 			},
 			{
@@ -33,6 +47,20 @@
 						"a": "っぽい",
 						"b": "がち"
 					}
+				],
+				"words": [
+					{
+						"jp": "時計",
+						"kana": "とけい",
+						"cn": "钟，表",
+						"en": "clock, watch"
+					},
+					{
+						"jp": "年",
+						"kana": "とし",
+						"cn": "年",
+						"en": "year"
+					}
 				]
 			},
 			{
@@ -49,6 +77,14 @@
 					{
 						"a": "げ",
 						"b": "がち"
+					}
+				],
+				"words": [
+					{
+						"jp": "話",
+						"kana": "はなし",
+						"cn": "话／说话",
+						"en": "talk"
 					}
 				]
 			},
@@ -71,6 +107,26 @@
 						"a": "気味だ",
 						"b": "っぽい"
 					}
+				],
+				"words": [
+					{
+						"jp": "風邪",
+						"kana": "かぜ",
+						"cn": "感冒",
+						"en": "cold"
+					},
+					{
+						"jp": "気味",
+						"kana": "きみ",
+						"cn": "倾向",
+						"en": "a touch of"
+					},
+					{
+						"jp": "熱",
+						"kana": "ねつ",
+						"cn": "发烧",
+						"en": "heat, fever"
+					}
 				]
 			},
 			{
@@ -88,6 +144,14 @@
 						"a": "忘れ",
 						"b": "忘れる"
 					}
+				],
+				"words": [
+					{
+						"jp": "母",
+						"kana": "はは",
+						"cn": "母亲",
+						"en": "mother"
+					}
 				]
 			},
 			{
@@ -99,6 +163,14 @@
 				"translation_en": "Since losing his parents he looks sad and often takes time off work.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "両親",
+						"kana": "りょうしん",
+						"cn": "双亲、父母",
+						"en": "parents"
+					}
 				]
 			},
 			{
@@ -110,7 +182,8 @@
 				"translation_en": "The man wore a meaningful smile.",
 				"pointIndexes": [
 					3
-				]
+				],
+				"words": []
 			}
 		]
 	},
@@ -131,7 +204,8 @@
 						"a": "もん",
 						"b": "もんだから"
 					}
-				]
+				],
+				"words": []
 			},
 			{
 				"n": 2,
@@ -148,7 +222,8 @@
 						"a": "ものの",
 						"b": "ものなら"
 					}
-				]
+				],
+				"words": []
 			},
 			{
 				"n": 3,
@@ -165,7 +240,8 @@
 						"a": "ものの",
 						"b": "ものなら"
 					}
-				]
+				],
+				"words": []
 			},
 			{
 				"n": 4,
@@ -182,7 +258,8 @@
 						"a": "ものですから",
 						"b": "からですもの"
 					}
-				]
+				],
+				"words": []
 			},
 			{
 				"n": 5,
@@ -199,7 +276,8 @@
 						"a": "もの",
 						"b": "ものなら"
 					}
-				]
+				],
+				"words": []
 			},
 			{
 				"n": 6,
@@ -210,6 +288,14 @@
 				"translation_en": "I go to school every day, but I can't keep up in class.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "学校",
+						"kana": "がっこう",
+						"cn": "学校",
+						"en": "school"
+					}
 				]
 			},
 			{
@@ -221,6 +307,14 @@
 				"translation_en": "I came home early today because I don't feel well.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "今日",
+						"kana": "こんにち",
+						"cn": "今天",
+						"en": "today"
+					}
 				]
 			}
 		]
@@ -242,6 +336,20 @@
 						"a": "もとより",
 						"b": "ともかく"
 					}
+				],
+				"words": [
+					{
+						"jp": "品物",
+						"kana": "しなもの",
+						"cn": "物品",
+						"en": "goods"
+					},
+					{
+						"jp": "種類",
+						"kana": "しゅるい",
+						"cn": "种类",
+						"en": "type, kind"
+					}
 				]
 			},
 			{
@@ -258,6 +366,20 @@
 					{
 						"a": "もとより",
 						"b": "ともかく"
+					}
+				],
+				"words": [
+					{
+						"jp": "旅行",
+						"kana": "りょこう",
+						"cn": "旅行",
+						"en": "trip"
+					},
+					{
+						"jp": "時間",
+						"kana": "じかん",
+						"cn": "时间",
+						"en": "time"
 					}
 				]
 			},
@@ -276,7 +398,8 @@
 						"a": "ぬきで",
 						"b": "ぬきでは"
 					}
-				]
+				],
+				"words": []
 			},
 			{
 				"n": 4,
@@ -292,6 +415,14 @@
 					{
 						"a": "ぬきで",
 						"b": "ぬきに"
+					}
+				],
+				"words": [
+					{
+						"jp": "計画",
+						"kana": "けいかく",
+						"cn": "计划，规划",
+						"en": "plan"
 					}
 				]
 			},
@@ -310,6 +441,26 @@
 						"a": "まだしも",
 						"b": "ぬきにして"
 					}
+				],
+				"words": [
+					{
+						"jp": "明日",
+						"kana": "あした",
+						"cn": "明天",
+						"en": "tomorrow"
+					},
+					{
+						"jp": "天気",
+						"kana": "てんき",
+						"cn": "天气",
+						"en": "weather"
+					},
+					{
+						"jp": "雪",
+						"kana": "ゆき",
+						"cn": "雪",
+						"en": "snow"
+					}
 				]
 			},
 			{
@@ -321,6 +472,14 @@
 				"translation_en": "The color is good, not to mention the shape.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "家具",
+						"kana": "かぐ",
+						"cn": "家具",
+						"en": "furniture"
+					}
 				]
 			},
 			{
@@ -332,7 +491,8 @@
 				"translation_en": "Losing money is bad enough; being killed is far worse.",
 				"pointIndexes": [
 					3
-				]
+				],
+				"words": []
 			}
 		]
 	},
@@ -353,6 +513,26 @@
 						"a": "心配に",
 						"b": "心配で"
 					}
+				],
+				"words": [
+					{
+						"jp": "試験",
+						"kana": "しけん",
+						"cn": "试验；考试",
+						"en": "test, exam"
+					},
+					{
+						"jp": "結果",
+						"kana": "けっか",
+						"cn": "结果",
+						"en": "a result"
+					},
+					{
+						"jp": "心配",
+						"kana": "しんぱい",
+						"cn": "担心",
+						"en": "anxiety/worry"
+					}
 				]
 			},
 			{
@@ -370,7 +550,8 @@
 						"a": "さびし",
 						"b": "さびしい"
 					}
-				]
+				],
+				"words": []
 			},
 			{
 				"n": 3,
@@ -386,6 +567,14 @@
 					{
 						"a": "気になって",
 						"b": "気になっては"
+					}
+				],
+				"words": [
+					{
+						"jp": "音",
+						"kana": "おと",
+						"cn": "",
+						"en": "sound"
 					}
 				]
 			},
@@ -404,7 +593,8 @@
 						"a": "くやし",
 						"b": "くやしい"
 					}
-				]
+				],
+				"words": []
 			},
 			{
 				"n": 5,
@@ -421,6 +611,14 @@
 						"a": "で",
 						"b": "では"
 					}
+				],
+				"words": [
+					{
+						"jp": "生活",
+						"kana": "せいかつ",
+						"cn": "生活",
+						"en": "life / livelihood"
+					}
 				]
 			},
 			{
@@ -432,7 +630,8 @@
 				"translation_en": "The salesperson keeps coming by — I can't stand how persistent they are.",
 				"pointIndexes": [
 					3
-				]
+				],
+				"words": []
 			},
 			{
 				"n": 7,
@@ -443,6 +642,14 @@
 				"translation_en": "After a good dream I feel as if something nice is going to happen.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "夢",
+						"kana": "ゆめ",
+						"cn": "梦",
+						"en": "a dream"
+					}
 				]
 			}
 		]
@@ -464,6 +671,20 @@
 						"a": "ずには",
 						"b": "ないでは"
 					}
+				],
+				"words": [
+					{
+						"jp": "試験",
+						"kana": "しけん",
+						"cn": "试验；考试",
+						"en": "test, exam"
+					},
+					{
+						"jp": "勉強する",
+						"kana": "べんきょうする",
+						"cn": "学习",
+						"en": "study"
+					}
 				]
 			},
 			{
@@ -480,6 +701,20 @@
 					{
 						"a": "見る",
 						"b": "見ない"
+					}
+				],
+				"words": [
+					{
+						"jp": "日",
+						"kana": "ひ",
+						"cn": "日",
+						"en": "day"
+					},
+					{
+						"jp": "時間",
+						"kana": "じかん",
+						"cn": "时间",
+						"en": "time"
 					}
 				]
 			},
@@ -498,7 +733,8 @@
 						"a": "こともない",
 						"b": "こともある"
 					}
-				]
+				],
+				"words": []
 			},
 			{
 				"n": 4,
@@ -515,7 +751,8 @@
 						"a": "いられる",
 						"b": "いられない"
 					}
-				]
+				],
+				"words": []
 			},
 			{
 				"n": 5,
@@ -532,7 +769,8 @@
 						"a": "行ける",
 						"b": "行けない"
 					}
-				]
+				],
+				"words": []
 			},
 			{
 				"n": 6,
@@ -543,6 +781,14 @@
 				"translation_en": "A lot is impossible, but four a day isn't beyond me.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "日",
+						"kana": "ひ",
+						"cn": "日",
+						"en": "day"
+					}
 				]
 			},
 			{
@@ -554,6 +800,14 @@
 				"translation_en": "I thought it might be rude, but I just had to ask.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "失礼する",
+						"kana": "しつれいする",
+						"cn": "失礼",
+						"en": "be excused"
+					}
 				]
 			}
 		]
@@ -575,6 +829,26 @@
 						"a": "持た",
 						"b": "持ち"
 					}
+				],
+				"words": [
+					{
+						"jp": "国民",
+						"kana": "こくみん",
+						"cn": "国民",
+						"en": "citizen, nation"
+					},
+					{
+						"jp": "政治",
+						"kana": "せいじ",
+						"cn": "政治",
+						"en": "politics, government"
+					},
+					{
+						"jp": "関心",
+						"kana": "かんしん",
+						"cn": "关心",
+						"en": "interest"
+					}
 				]
 			},
 			{
@@ -591,6 +865,20 @@
 					{
 						"a": "聞く",
 						"b": "聞いて"
+					}
+				],
+				"words": [
+					{
+						"jp": "先輩",
+						"kana": "せんぱい",
+						"cn": "前辈",
+						"en": "senior"
+					},
+					{
+						"jp": "自分",
+						"kana": "じぶん",
+						"cn": "自己",
+						"en": "self"
 					}
 				]
 			},
@@ -609,6 +897,14 @@
 						"a": "ならない",
 						"b": "いられない"
 					}
+				],
+				"words": [
+					{
+						"jp": "風",
+						"kana": "かぜ",
+						"cn": "风",
+						"en": "wind"
+					}
 				]
 			},
 			{
@@ -625,6 +921,14 @@
 					{
 						"a": "犯せば",
 						"b": "犯しては"
+					}
+				],
+				"words": [
+					{
+						"jp": "法律",
+						"kana": "ほうりつ",
+						"cn": "法律",
+						"en": "law, legislation"
 					}
 				]
 			},
@@ -643,7 +947,8 @@
 						"a": "してんの",
 						"b": "してらんないの"
 					}
-				]
+				],
+				"words": []
 			},
 			{
 				"n": 6,
@@ -654,6 +959,20 @@
 				"translation_en": "I was raised never to cause others trouble.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "他人",
+						"kana": "たにん",
+						"cn": "别人",
+						"en": "a stranger/other people"
+					},
+					{
+						"jp": "迷惑",
+						"kana": "めいわく",
+						"cn": "麻烦",
+						"en": "a nuisance"
+					}
 				]
 			},
 			{
@@ -665,6 +984,14 @@
 				"translation_en": "I'm too embarrassed to listen, but they're saying it out loud.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "恥",
+						"kana": "はじ",
+						"cn": "丢脸、耻辱",
+						"en": "shame/humiliation"
+					}
 				]
 			}
 		]
@@ -686,7 +1013,8 @@
 						"a": "来る",
 						"b": "来た"
 					}
-				]
+				],
+				"words": []
 			},
 			{
 				"n": 2,
@@ -702,6 +1030,20 @@
 					{
 						"a": "休んで",
 						"b": "休んだ"
+					}
+				],
+				"words": [
+					{
+						"jp": "会社",
+						"kana": "かいしゃ",
+						"cn": "公司",
+						"en": "company"
+					},
+					{
+						"jp": "運動",
+						"kana": "うんどう",
+						"cn": "运动",
+						"en": "exercise"
 					}
 				]
 			},
@@ -720,7 +1062,8 @@
 						"a": "作り",
 						"b": "作った"
 					}
-				]
+				],
+				"words": []
 			},
 			{
 				"n": 4,
@@ -736,6 +1079,20 @@
 					{
 						"a": "かいがあって",
 						"b": "かいもなく"
+					}
+				],
+				"words": [
+					{
+						"jp": "薬",
+						"kana": "くすり",
+						"cn": "药，药品",
+						"en": "medicine, drug"
+					},
+					{
+						"jp": "病気",
+						"kana": "びょうき",
+						"cn": "生病",
+						"en": "illness"
 					}
 				]
 			},
@@ -754,6 +1111,20 @@
 						"a": "まで",
 						"b": "までに"
 					}
+				],
+				"words": [
+					{
+						"jp": "犯人",
+						"kana": "はんにん",
+						"cn": "犯人",
+						"en": "an offender, criminal"
+					},
+					{
+						"jp": "顔",
+						"kana": "かお",
+						"cn": "脸",
+						"en": "face"
+					}
 				]
 			},
 			{
@@ -765,6 +1136,20 @@
 				"translation_en": "I kept studying without giving up, and it paid off when I passed.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "勉強する",
+						"kana": "べんきょうする",
+						"cn": "学习",
+						"en": "study"
+					},
+					{
+						"jp": "合格",
+						"kana": "ごうかく",
+						"cn": "合格",
+						"en": "pass an exam"
+					}
 				]
 			},
 			{
@@ -776,6 +1161,20 @@
 				"translation_en": "Even for work, isn't ruining your health going too far?",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "仕事",
+						"kana": "しごと",
+						"cn": "工作",
+						"en": "work"
+					},
+					{
+						"jp": "体",
+						"kana": "からだ",
+						"cn": "身体",
+						"en": "body"
+					}
 				]
 			}
 		]
@@ -801,6 +1200,14 @@
 						"a": "かけよう",
 						"b": "ぬこう"
 					}
+				],
+				"words": [
+					{
+						"jp": "最後",
+						"kana": "さいご",
+						"cn": "最后",
+						"en": "last / end"
+					}
 				]
 			},
 			{
@@ -817,6 +1224,20 @@
 					{
 						"a": "きって",
 						"b": "かけて"
+					}
+				],
+				"words": [
+					{
+						"jp": "心",
+						"kana": "こころ",
+						"cn": "内心",
+						"en": "heart, mind"
+					},
+					{
+						"jp": "人",
+						"kana": "ひと",
+						"cn": "人",
+						"en": "person"
 					}
 				]
 			},
@@ -835,7 +1256,8 @@
 						"a": "えない",
 						"b": "うない"
 					}
-				]
+				],
+				"words": []
 			},
 			{
 				"n": 4,
@@ -851,6 +1273,14 @@
 					{
 						"a": "える",
 						"b": "うる"
+					}
+				],
+				"words": [
+					{
+						"jp": "問題",
+						"kana": "もんだい",
+						"cn": "题，问题",
+						"en": "problem, question"
 					}
 				]
 			},
@@ -869,7 +1299,8 @@
 						"a": "きった",
 						"b": "かけた"
 					}
-				]
+				],
+				"words": []
 			},
 			{
 				"n": 6,
@@ -880,6 +1311,14 @@
 				"translation_en": "I dreamed I received more money than I could ever spend.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "夢",
+						"kana": "ゆめ",
+						"cn": "梦",
+						"en": "a dream"
+					}
 				]
 			},
 			{
@@ -891,7 +1330,8 @@
 				"translation_en": "I tried every method I could think of, but it was no use.",
 				"pointIndexes": [
 					3
-				]
+				],
+				"words": []
 			}
 		]
 	},
@@ -912,6 +1352,20 @@
 						"a": "なうちに",
 						"b": "かのうちに"
 					}
+				],
+				"words": [
+					{
+						"jp": "両親",
+						"kana": "りょうしん",
+						"cn": "双亲、父母",
+						"en": "parents"
+					},
+					{
+						"jp": "旅行",
+						"kana": "りょこう",
+						"cn": "旅行",
+						"en": "trip"
+					}
 				]
 			},
 			{
@@ -928,6 +1382,14 @@
 					{
 						"a": "かぎり",
 						"b": "にかぎり"
+					}
+				],
+				"words": [
+					{
+						"jp": "女性",
+						"kana": "じょせい",
+						"cn": "女性",
+						"en": "woman"
 					}
 				]
 			},
@@ -946,7 +1408,8 @@
 						"a": "降る",
 						"b": "降らない"
 					}
-				]
+				],
+				"words": []
 			},
 			{
 				"n": 4,
@@ -962,6 +1425,14 @@
 					{
 						"a": "知る",
 						"b": "知らない"
+					}
+				],
+				"words": [
+					{
+						"jp": "人",
+						"kana": "ひと",
+						"cn": "人",
+						"en": "person"
 					}
 				]
 			},
@@ -980,6 +1451,32 @@
 						"a": "限らず",
 						"b": "限って"
 					}
+				],
+				"words": [
+					{
+						"jp": "日本",
+						"kana": "にほん",
+						"cn": "日本",
+						"en": "Japan"
+					},
+					{
+						"jp": "人",
+						"kana": "ひと",
+						"cn": "人",
+						"en": "person"
+					},
+					{
+						"jp": "自分",
+						"kana": "じぶん",
+						"cn": "自己",
+						"en": "self"
+					},
+					{
+						"jp": "政治",
+						"kana": "せいじ",
+						"cn": "政治",
+						"en": "politics, government"
+					}
 				]
 			},
 			{
@@ -991,7 +1488,8 @@
 				"translation_en": "They started eating almost before saying “itadakimasu.”",
 				"pointIndexes": [
 					3
-				]
+				],
+				"words": []
 			},
 			{
 				"n": 7,
@@ -1002,7 +1500,8 @@
 				"translation_en": "As long as you're a student, you have to study.",
 				"pointIndexes": [
 					3
-				]
+				],
+				"words": []
 			}
 		]
 	},
@@ -1023,6 +1522,26 @@
 						"a": "する",
 						"b": "して"
 					}
+				],
+				"words": [
+					{
+						"jp": "出席する",
+						"kana": "しゅっせき",
+						"cn": "出席",
+						"en": "attend"
+					},
+					{
+						"jp": "授業",
+						"kana": "じゅぎょう",
+						"cn": "课，上课，讲课",
+						"en": "class, lesson"
+					},
+					{
+						"jp": "意味",
+						"kana": "いみ",
+						"cn": "意思",
+						"en": "meaning"
+					}
 				]
 			},
 			{
@@ -1039,6 +1558,14 @@
 					{
 						"a": "こそ",
 						"b": "さえ"
+					}
+				],
+				"words": [
+					{
+						"jp": "将来",
+						"kana": "しょうらい",
+						"cn": "将来",
+						"en": "future"
 					}
 				]
 			},
@@ -1057,6 +1584,26 @@
 						"a": "なる",
 						"b": "なった"
 					}
+				],
+				"words": [
+					{
+						"jp": "問題",
+						"kana": "もんだい",
+						"cn": "题，问题",
+						"en": "problem, question"
+					},
+					{
+						"jp": "解決",
+						"kana": "かいけつ",
+						"cn": "解决",
+						"en": "a solution"
+					},
+					{
+						"jp": "財政",
+						"kana": "ざいせい",
+						"cn": "财政",
+						"en": "fiscal and financial affairs"
+					}
 				]
 			},
 			{
@@ -1073,6 +1620,14 @@
 					{
 						"a": "からこそ",
 						"b": "こそから"
+					}
+				],
+				"words": [
+					{
+						"jp": "仕事",
+						"kana": "しごと",
+						"cn": "工作",
+						"en": "work"
 					}
 				]
 			},
@@ -1091,6 +1646,14 @@
 						"a": "にしたら",
 						"b": "すれば"
 					}
+				],
+				"words": [
+					{
+						"jp": "勉強する",
+						"kana": "べんきょうする",
+						"cn": "学习",
+						"en": "study"
+					}
 				]
 			},
 			{
@@ -1102,7 +1665,8 @@
 				"translation_en": "Only by speaking frankly can we understand each other.",
 				"pointIndexes": [
 					3
-				]
+				],
+				"words": []
 			},
 			{
 				"n": 7,
@@ -1113,6 +1677,14 @@
 				"translation_en": "Anyone can do this job if they just have the will.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "仕事",
+						"kana": "しごと",
+						"cn": "工作",
+						"en": "work"
+					}
 				]
 			}
 		]
@@ -1134,6 +1706,14 @@
 						"a": "として",
 						"b": "にしたら"
 					}
+				],
+				"words": [
+					{
+						"jp": "教材",
+						"kana": "きょうざい",
+						"cn": "教材",
+						"en": "teaching material"
+					}
 				]
 			},
 			{
@@ -1150,6 +1730,14 @@
 					{
 						"a": "にしたら",
 						"b": "にしたって"
+					}
+				],
+				"words": [
+					{
+						"jp": "問題",
+						"kana": "もんだい",
+						"cn": "题，问题",
+						"en": "problem, question"
 					}
 				]
 			},
@@ -1168,6 +1756,14 @@
 						"a": "として",
 						"b": "としたら"
 					}
+				],
+				"words": [
+					{
+						"jp": "旅行",
+						"kana": "りょこう",
+						"cn": "旅行",
+						"en": "trip"
+					}
 				]
 			},
 			{
@@ -1184,6 +1780,14 @@
 					{
 						"a": "として",
 						"b": "とした"
+					}
+				],
+				"words": [
+					{
+						"jp": "目的",
+						"kana": "もくてき",
+						"cn": "目的",
+						"en": "an aim, purpose"
 					}
 				]
 			},
@@ -1202,6 +1806,20 @@
 						"a": "としては",
 						"b": "としても"
 					}
+				],
+				"words": [
+					{
+						"jp": "生",
+						"kana": "う",
+						"cn": "新鲜的鱼",
+						"en": "raw fish"
+					},
+					{
+						"jp": "仕事",
+						"kana": "しごと",
+						"cn": "工作",
+						"en": "work"
+					}
 				]
 			},
 			{
@@ -1213,7 +1831,8 @@
 				"translation_en": "Hard to believe, but if it's true it's an amazing discovery.",
 				"pointIndexes": [
 					3
-				]
+				],
+				"words": []
 			},
 			{
 				"n": 7,
@@ -1224,6 +1843,14 @@
 				"translation_en": "This work was created with peace as its theme.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "作品",
+						"kana": "さくひん",
+						"cn": "作品完成了",
+						"en": ""
+					}
 				]
 			}
 		]
@@ -1245,6 +1872,20 @@
 						"a": "とともに",
 						"b": "につれて"
 					}
+				],
+				"words": [
+					{
+						"jp": "温度",
+						"kana": "おんど",
+						"cn": "温度",
+						"en": "temperature"
+					},
+					{
+						"jp": "湿度",
+						"kana": "しつど",
+						"cn": "湿度",
+						"en": "humidity"
+					}
 				]
 			},
 			{
@@ -1262,7 +1903,8 @@
 						"a": "につれて",
 						"b": "にともない"
 					}
-				]
+				],
+				"words": []
 			},
 			{
 				"n": 3,
@@ -1278,6 +1920,14 @@
 					{
 						"a": "とともに",
 						"b": "にしたがって"
+					}
+				],
+				"words": [
+					{
+						"jp": "上達",
+						"kana": "じょうたつ",
+						"cn": "进步",
+						"en": "make progress"
 					}
 				]
 			},
@@ -1296,6 +1946,26 @@
 						"a": "変化",
 						"b": "変化する"
 					}
+				],
+				"words": [
+					{
+						"jp": "社会",
+						"kana": "しゃかい",
+						"cn": "社会学科",
+						"en": "social studies"
+					},
+					{
+						"jp": "変化",
+						"kana": "へんか",
+						"cn": "变化",
+						"en": "a change"
+					},
+					{
+						"jp": "言葉",
+						"kana": "ことば",
+						"cn": "语言",
+						"en": "word/language"
+					}
 				]
 			},
 			{
@@ -1313,6 +1983,14 @@
 						"a": "読む",
 						"b": "読み"
 					}
+				],
+				"words": [
+					{
+						"jp": "小説",
+						"kana": "しょうせつ",
+						"cn": "小说",
+						"en": "novel"
+					}
 				]
 			},
 			{
@@ -1324,6 +2002,14 @@
 				"translation_en": "Teachers should grow together with their students.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "学生",
+						"kana": "がくせい",
+						"cn": "学生",
+						"en": "student"
+					}
 				]
 			},
 			{
@@ -1335,6 +2021,14 @@
 				"translation_en": "Please park according to the staff's instructions.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "係員",
+						"kana": "かかりいん",
+						"cn": "工作人员",
+						"en": "person in charge"
+					}
 				]
 			}
 		]
@@ -1356,6 +2050,14 @@
 						"a": "とおり",
 						"b": "どおり"
 					}
+				],
+				"words": [
+					{
+						"jp": "予定",
+						"kana": "よてい",
+						"cn": "预定的事情",
+						"en": "a plan/schedule"
+					}
 				]
 			},
 			{
@@ -1372,6 +2074,20 @@
 					{
 						"a": "不思議な",
 						"b": "不思議"
+					}
+				],
+				"words": [
+					{
+						"jp": "夢",
+						"kana": "ゆめ",
+						"cn": "梦",
+						"en": "a dream"
+					},
+					{
+						"jp": "毎晩",
+						"kana": "まいばん",
+						"cn": "每晚",
+						"en": "every night"
 					}
 				]
 			},
@@ -1390,7 +2106,8 @@
 						"a": "あまり",
 						"b": "のあまり"
 					}
-				]
+				],
+				"words": []
 			},
 			{
 				"n": 4,
@@ -1406,6 +2123,26 @@
 					{
 						"a": "まま",
 						"b": "どおり"
+					}
+				],
+				"words": [
+					{
+						"jp": "自由",
+						"kana": "じゆう",
+						"cn": "自由",
+						"en": "freedom"
+					},
+					{
+						"jp": "絵",
+						"kana": "え",
+						"cn": "画",
+						"en": "a picture"
+					},
+					{
+						"jp": "評価",
+						"kana": "ひょうか",
+						"cn": "评价",
+						"en": "valuation, estimation"
 					}
 				]
 			},
@@ -1424,7 +2161,8 @@
 						"a": "くやしい",
 						"b": "くやしさの"
 					}
-				]
+				],
+				"words": []
 			},
 			{
 				"n": 6,
@@ -1435,6 +2173,20 @@
 				"translation_en": "I cooked it just as the book said, but it still failed.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "本",
+						"kana": "ほん",
+						"cn": "书",
+						"en": "book"
+					},
+					{
+						"jp": "失敗",
+						"kana": "しっぱい",
+						"cn": "失败",
+						"en": "failure, mistake"
+					}
 				]
 			},
 			{
@@ -1446,6 +2198,14 @@
 				"translation_en": "I was so shocked at the scene I couldn't make a sound.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "事件",
+						"kana": "じけん",
+						"cn": "事件",
+						"en": "an incident"
+					}
 				]
 			}
 		]
@@ -1467,6 +2227,14 @@
 						"a": "だ",
 						"b": "ではない"
 					}
+				],
+				"words": [
+					{
+						"jp": "時",
+						"kana": "とき",
+						"cn": "时候",
+						"en": "time"
+					}
 				]
 			},
 			{
@@ -1483,6 +2251,32 @@
 					{
 						"a": "ではない",
 						"b": "がない"
+					}
+				],
+				"words": [
+					{
+						"jp": "学生",
+						"kana": "がくせい",
+						"cn": "学生",
+						"en": "student"
+					},
+					{
+						"jp": "授業",
+						"kana": "じゅぎょう",
+						"cn": "课，上课，讲课",
+						"en": "class, lesson"
+					},
+					{
+						"jp": "試験",
+						"kana": "しけん",
+						"cn": "试验；考试",
+						"en": "test, exam"
+					},
+					{
+						"jp": "結果",
+						"kana": "けっか",
+						"cn": "结果",
+						"en": "a result"
 					}
 				]
 			},
@@ -1501,6 +2295,20 @@
 						"a": "いかない",
 						"b": "いけない"
 					}
+				],
+				"words": [
+					{
+						"jp": "用事",
+						"kana": "ようじ",
+						"cn": "事，事情",
+						"en": "errand, things to do"
+					},
+					{
+						"jp": "台風",
+						"kana": "たいふう",
+						"cn": "台风",
+						"en": "typhoon"
+					}
 				]
 			},
 			{
@@ -1517,6 +2325,20 @@
 					{
 						"a": "ではない",
 						"b": "がない"
+					}
+				],
+				"words": [
+					{
+						"jp": "牛乳",
+						"kana": "ぎゅうにゅう",
+						"cn": "牛奶",
+						"en": "milk"
+					},
+					{
+						"jp": "体",
+						"kana": "からだ",
+						"cn": "身体",
+						"en": "body"
 					}
 				]
 			},
@@ -1535,6 +2357,14 @@
 						"a": "ではない",
 						"b": "がない"
 					}
+				],
+				"words": [
+					{
+						"jp": "電池",
+						"kana": "でんち",
+						"cn": "电池",
+						"en": "battery"
+					}
 				]
 			},
 			{
@@ -1546,6 +2376,14 @@
 				"translation_en": "With this much work there's no way I'm not busy.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "仕事",
+						"kana": "しごと",
+						"cn": "工作",
+						"en": "work"
+					}
 				]
 			},
 			{
@@ -1557,6 +2395,14 @@
 				"translation_en": "Dad said he forgot to mail it. No wonder it never arrived.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "父",
+						"kana": "ちち",
+						"cn": "父亲",
+						"en": "father"
+					}
 				]
 			}
 		]
@@ -1572,6 +2418,14 @@
 				"translation_en": "Wrong: say “after you eat, drink it right away,” not “the instant you eat.”",
 				"pointIndexes": [
 					0
+				],
+				"words": [
+					{
+						"jp": "薬",
+						"kana": "くすり",
+						"cn": "药，药品",
+						"en": "medicine, drug"
+					}
 				]
 			},
 			{
@@ -1583,6 +2437,14 @@
 				"translation_en": "The moment I used that soap my hands itched.",
 				"pointIndexes": [
 					1
+				],
+				"words": [
+					{
+						"jp": "石",
+						"kana": "いし",
+						"cn": "石头",
+						"en": "a stone"
+					}
 				]
 			},
 			{
@@ -1594,6 +2456,20 @@
 				"translation_en": "After much thought I decided not to have the operation.",
 				"pointIndexes": [
 					2
+				],
+				"words": [
+					{
+						"jp": "末",
+						"kana": "すえ",
+						"cn": "结尾、末端",
+						"en": "the end"
+					},
+					{
+						"jp": "手術",
+						"kana": "しゅじゅつ",
+						"cn": "手术",
+						"en": "surgery, operation"
+					}
 				]
 			},
 			{
@@ -1605,7 +2481,8 @@
 				"translation_en": "After being kept waiting we were served awful food.",
 				"pointIndexes": [
 					3
-				]
+				],
+				"words": []
 			},
 			{
 				"n": 5,
@@ -1616,6 +2493,14 @@
 				"translation_en": "Wrong: あげく needs Vた, so 行ったあげく.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "病院",
+						"kana": "びょういん",
+						"cn": "医院",
+						"en": "hospital"
+					}
 				]
 			},
 			{
@@ -1627,7 +2512,8 @@
 				"translation_en": "They were fighting a moment ago, and now they're friendly again.",
 				"pointIndexes": [
 					3
-				]
+				],
+				"words": []
 			},
 			{
 				"n": 7,
@@ -1638,6 +2524,20 @@
 				"translation_en": "He showed up late and didn't even apologize.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "約束",
+						"kana": "やくそく",
+						"cn": "约定",
+						"en": "a promise/appointment"
+					},
+					{
+						"jp": "時間",
+						"kana": "じかん",
+						"cn": "时间",
+						"en": "time"
+					}
 				]
 			}
 		]
@@ -1653,6 +2553,14 @@
 				"translation_en": "Wrong: use 乗るところです for “about to board.”",
 				"pointIndexes": [
 					0
+				],
+				"words": [
+					{
+						"jp": "電車",
+						"kana": "でんしゃ",
+						"cn": "电车",
+						"en": "train"
+					}
 				]
 			},
 			{
@@ -1664,6 +2572,14 @@
 				"translation_en": "Sorry to interrupt while you're talking.",
 				"pointIndexes": [
 					1
+				],
+				"words": [
+					{
+						"jp": "失礼する",
+						"kana": "しつれいする",
+						"cn": "失礼",
+						"en": "be excused"
+					}
 				]
 			},
 			{
@@ -1675,6 +2591,14 @@
 				"translation_en": "Wrong: どころではなかった, not どころの.",
 				"pointIndexes": [
 					2
+				],
+				"words": [
+					{
+						"jp": "風",
+						"kana": "かぜ",
+						"cn": "风",
+						"en": "wind"
+					}
 				]
 			},
 			{
@@ -1686,6 +2610,20 @@
 				"translation_en": "Wrong: 調べたところ, not 調べるところ.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "辞書",
+						"kana": "じしょ",
+						"cn": "词典",
+						"en": "a dictionary"
+					},
+					{
+						"jp": "漢字",
+						"kana": "かんじ",
+						"cn": "汉字",
+						"en": "kanji, Chinese character"
+					}
 				]
 			},
 			{
@@ -1697,6 +2635,14 @@
 				"translation_en": "If you don't study more, never mind N2 — even N3 is impossible.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "勉強する",
+						"kana": "べんきょうする",
+						"cn": "学习",
+						"en": "study"
+					}
 				]
 			},
 			{
@@ -1708,7 +2654,8 @@
 				"translation_en": "“Hello — I was just about to call you.”",
 				"pointIndexes": [
 					3
-				]
+				],
+				"words": []
 			},
 			{
 				"n": 7,
@@ -1719,6 +2666,14 @@
 				"translation_en": "I've got so much homework I'm in no state to watch TV.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "宿題",
+						"kana": "しゅくだい",
+						"cn": "课外作业",
+						"en": "a homework"
+					}
 				]
 			}
 		]
@@ -1734,7 +2689,8 @@
 				"translation_en": "Wrong: だらけ isn't used with positive 元気.",
 				"pointIndexes": [
 					0
-				]
+				],
+				"words": []
 			},
 			{
 				"n": 2,
@@ -1745,7 +2701,8 @@
 				"translation_en": "I've only been to Hokkaido once.",
 				"pointIndexes": [
 					1
-				]
+				],
+				"words": []
 			},
 			{
 				"n": 3,
@@ -1756,6 +2713,20 @@
 				"translation_en": "Wrong: ゴミだらけ, not ゴミのだらけ.",
 				"pointIndexes": [
 					2
+				],
+				"words": [
+					{
+						"jp": "弟",
+						"kana": "おとうと",
+						"cn": "（我的）弟弟",
+						"en": "younger brother"
+					},
+					{
+						"jp": "部屋",
+						"kana": "へや",
+						"cn": "房间",
+						"en": "a room"
+					}
 				]
 			},
 			{
@@ -1767,6 +2738,20 @@
 				"translation_en": "I was disappointed to find nothing but Japanese people even overseas.",
 				"pointIndexes": [
 					2
+				],
+				"words": [
+					{
+						"jp": "海外旅行",
+						"kana": "かいがいりょこう",
+						"cn": "国外游",
+						"en": "foreign travel"
+					},
+					{
+						"jp": "日本",
+						"kana": "にほん",
+						"cn": "日本",
+						"en": "Japan"
+					}
 				]
 			},
 			{
@@ -1778,6 +2763,20 @@
 				"translation_en": "Wrong: てきり is not the form; use てから / たきり.",
 				"pointIndexes": [
 					2
+				],
+				"words": [
+					{
+						"jp": "学校",
+						"kana": "がっこう",
+						"cn": "学校",
+						"en": "school"
+					},
+					{
+						"jp": "卒業",
+						"kana": "そつぎょう",
+						"cn": "毕业",
+						"en": "graduation"
+					}
 				]
 			},
 			{
@@ -1789,6 +2788,26 @@
 				"translation_en": "Today is the last time. I'll quit drinking as of now.",
 				"pointIndexes": [
 					2
+				],
+				"words": [
+					{
+						"jp": "今日",
+						"kana": "きょう",
+						"cn": "今天",
+						"en": "today"
+					},
+					{
+						"jp": "最後",
+						"kana": "さいご",
+						"cn": "最后",
+						"en": "last / end"
+					},
+					{
+						"jp": "酒",
+						"kana": "さけ",
+						"cn": "酒",
+						"en": "rice wine"
+					}
 				]
 			},
 			{
@@ -1800,6 +2819,20 @@
 				"translation_en": "I left the window open and caught a cold.",
 				"pointIndexes": [
 					2
+				],
+				"words": [
+					{
+						"jp": "窓",
+						"kana": "まど",
+						"cn": "窗户",
+						"en": "a window"
+					},
+					{
+						"jp": "風邪",
+						"kana": "かぜ",
+						"cn": "感冒",
+						"en": "cold"
+					}
 				]
 			}
 		]
@@ -1821,6 +2854,14 @@
 						"a": "反して",
 						"b": "反面"
 					}
+				],
+				"words": [
+					{
+						"jp": "成長",
+						"kana": "せいちょう",
+						"cn": "成长",
+						"en": "growth"
+					}
 				]
 			},
 			{
@@ -1837,6 +2878,20 @@
 					{
 						"a": "一方で",
 						"b": "反して"
+					}
+				],
+				"words": [
+					{
+						"jp": "資源",
+						"kana": "しげん",
+						"cn": "资源",
+						"en": "resource(s)"
+					},
+					{
+						"jp": "節約",
+						"kana": "せつやく",
+						"cn": "节约",
+						"en": "thrift"
 					}
 				]
 			},
@@ -1855,6 +2910,14 @@
 						"a": "反して",
 						"b": "反面"
 					}
+				],
+				"words": [
+					{
+						"jp": "給料",
+						"kana": "きゅうりょう",
+						"cn": "工资",
+						"en": "wage"
+					}
 				]
 			},
 			{
@@ -1872,7 +2935,8 @@
 						"a": "反面",
 						"b": "反して"
 					}
-				]
+				],
+				"words": []
 			},
 			{
 				"n": 5,
@@ -1889,6 +2953,14 @@
 						"a": "一方",
 						"b": "反面"
 					}
+				],
+				"words": [
+					{
+						"jp": "仕事",
+						"kana": "しごと",
+						"cn": "工作",
+						"en": "work"
+					}
 				]
 			},
 			{
@@ -1900,6 +2972,14 @@
 				"translation_en": "Contrary to the shop's expectations, the new product didn't sell.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "商品",
+						"kana": "しょうひん",
+						"cn": "商品",
+						"en": "goods"
+					}
 				]
 			},
 			{
@@ -1911,6 +2991,20 @@
 				"translation_en": "That Japanese person is said to be good at English, yet their Japanese seems a bit odd.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "日本",
+						"kana": "にほん",
+						"cn": "日本",
+						"en": "Japan"
+					},
+					{
+						"jp": "日本語",
+						"kana": "にほんご",
+						"cn": "日语",
+						"en": "Japanese"
+					}
 				]
 			}
 		]
@@ -1932,6 +3026,20 @@
 						"a": "上は",
 						"b": "の上"
 					}
+				],
+				"words": [
+					{
+						"jp": "計算",
+						"kana": "けいさん",
+						"cn": "计算",
+						"en": "calculation"
+					},
+					{
+						"jp": "問題",
+						"kana": "もんだい",
+						"cn": "题，问题",
+						"en": "problem, question"
+					}
 				]
 			},
 			{
@@ -1948,6 +3056,20 @@
 					{
 						"a": "上で",
 						"b": "上に"
+					}
+				],
+				"words": [
+					{
+						"jp": "仕事",
+						"kana": "しごと",
+						"cn": "工作",
+						"en": "work"
+					},
+					{
+						"jp": "友達",
+						"kana": "ともだち",
+						"cn": "朋友",
+						"en": "friend"
 					}
 				]
 			},
@@ -1966,6 +3088,20 @@
 						"a": "上",
 						"b": "の上"
 					}
+				],
+				"words": [
+					{
+						"jp": "金額",
+						"kana": "きんがく",
+						"cn": "金额",
+						"en": "an amount/sum (of money)"
+					},
+					{
+						"jp": "確認",
+						"kana": "かくにん",
+						"cn": "确认",
+						"en": "confirmation"
+					}
 				]
 			},
 			{
@@ -1982,6 +3118,20 @@
 					{
 						"a": "上は",
 						"b": "上では"
+					}
+				],
+				"words": [
+					{
+						"jp": "受験",
+						"kana": "じゅけん",
+						"cn": "应试",
+						"en": "an entrance examination"
+					},
+					{
+						"jp": "完了",
+						"kana": "かんりょう",
+						"cn": "完了",
+						"en": "completion"
 					}
 				]
 			},
@@ -2000,6 +3150,14 @@
 						"a": "上に",
 						"b": "上では"
 					}
+				],
+				"words": [
+					{
+						"jp": "書類",
+						"kana": "しょるい",
+						"cn": "文书",
+						"en": "a document"
+					}
 				]
 			},
 			{
@@ -2011,6 +3169,14 @@
 				"translation_en": "This machine performs well and is cheap as well.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "機械",
+						"kana": "きかい",
+						"cn": "机器",
+						"en": "a machine"
+					}
 				]
 			},
 			{
@@ -2022,6 +3188,20 @@
 				"translation_en": "Now that I've been chosen, I have no choice but to take the job.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "面接",
+						"kana": "めんせつ",
+						"cn": "面试",
+						"en": "interview"
+					},
+					{
+						"jp": "心配",
+						"kana": "しんぱい",
+						"cn": "担心",
+						"en": "anxiety/worry"
+					}
 				]
 			}
 		]
@@ -2043,6 +3223,38 @@
 						"a": "ご報告の",
 						"b": "ご報告する"
 					}
+				],
+				"words": [
+					{
+						"jp": "先日",
+						"kana": "せんじつ",
+						"cn": "前几天",
+						"en": "the other day"
+					},
+					{
+						"jp": "会議",
+						"kana": "かいぎ",
+						"cn": "会议",
+						"en": "a meeting"
+					},
+					{
+						"jp": "内容",
+						"kana": "ないよう",
+						"cn": "内容",
+						"en": "contents/substance"
+					},
+					{
+						"jp": "報告",
+						"kana": "ほうこく",
+						"cn": "报告",
+						"en": "a report"
+					},
+					{
+						"jp": "次第",
+						"kana": "しだい",
+						"cn": "①~之后即~ ②全凭~",
+						"en": ""
+					}
 				]
 			},
 			{
@@ -2059,6 +3271,26 @@
 					{
 						"a": "考え方",
 						"b": "考え方の"
+					}
+				],
+				"words": [
+					{
+						"jp": "問題",
+						"kana": "もんだい",
+						"cn": "题，问题",
+						"en": "problem, question"
+					},
+					{
+						"jp": "次第",
+						"kana": "しだい",
+						"cn": "①~之后即~ ②全凭~",
+						"en": ""
+					},
+					{
+						"jp": "簡単",
+						"kana": "かんたん",
+						"cn": "简单",
+						"en": "easy"
 					}
 				]
 			},
@@ -2077,6 +3309,14 @@
 						"a": "わかり",
 						"b": "わかる"
 					}
+				],
+				"words": [
+					{
+						"jp": "次第",
+						"kana": "しだい",
+						"cn": "①~之后即~ ②全凭~",
+						"en": ""
+					}
 				]
 			},
 			{
@@ -2093,6 +3333,20 @@
 					{
 						"a": "向けに",
 						"b": "の向け"
+					}
+				],
+				"words": [
+					{
+						"jp": "留学する",
+						"kana": "りゅうがくせい",
+						"cn": "留学",
+						"en": "study abroad"
+					},
+					{
+						"jp": "本",
+						"kana": "ほん",
+						"cn": "书",
+						"en": "book"
 					}
 				]
 			},
@@ -2111,6 +3365,32 @@
 						"a": "回復し",
 						"b": "回復する"
 					}
+				],
+				"words": [
+					{
+						"jp": "天気",
+						"kana": "てんき",
+						"cn": "天气",
+						"en": "weather"
+					},
+					{
+						"jp": "回復",
+						"kana": "かいふく",
+						"cn": "恢复",
+						"en": "recovery/recuperation"
+					},
+					{
+						"jp": "次第",
+						"kana": "しだい",
+						"cn": "①~之后即~ ②全凭~",
+						"en": ""
+					},
+					{
+						"jp": "試合",
+						"kana": "しあい",
+						"cn": "比赛",
+						"en": "match"
+					}
 				]
 			},
 			{
@@ -2122,6 +3402,14 @@
 				"translation_en": "Success depends on whether the preparation is thorough.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "次第",
+						"kana": "しだい",
+						"cn": "①~之后即~ ②全凭~",
+						"en": ""
+					}
 				]
 			},
 			{
@@ -2133,6 +3421,20 @@
 				"translation_en": "Please tell me as soon as the guest arrives.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "女性",
+						"kana": "じょせい",
+						"cn": "女性",
+						"en": "woman"
+					},
+					{
+						"jp": "対象",
+						"kana": "たいしょう",
+						"cn": "对象",
+						"en": "object (e.g. of study)"
+					}
 				]
 			}
 		]
@@ -2154,6 +3456,14 @@
 						"a": "による",
 						"b": "により"
 					}
+				],
+				"words": [
+					{
+						"jp": "今朝",
+						"kana": "けさ",
+						"cn": "今天早上",
+						"en": "this morning"
+					}
 				]
 			},
 			{
@@ -2170,6 +3480,26 @@
 					{
 						"a": "に対する",
 						"b": "に応える"
+					}
+				],
+				"words": [
+					{
+						"jp": "国民",
+						"kana": "こくみん",
+						"cn": "国民",
+						"en": "citizen, nation"
+					},
+					{
+						"jp": "政治",
+						"kana": "せいじ",
+						"cn": "政治",
+						"en": "politics, government"
+					},
+					{
+						"jp": "対する",
+						"kana": "たいする",
+						"cn": "对于",
+						"en": "toward/against"
 					}
 				]
 			},
@@ -2188,6 +3518,14 @@
 						"a": "こたえて",
 						"b": "にかかわって"
 					}
+				],
+				"words": [
+					{
+						"jp": "選手",
+						"kana": "せんしゅ",
+						"cn": "选手",
+						"en": "a player, an athlete"
+					}
 				]
 			},
 			{
@@ -2204,6 +3542,20 @@
 					{
 						"a": "対して",
 						"b": "こたえて"
+					}
+				],
+				"words": [
+					{
+						"jp": "対する",
+						"kana": "たいする",
+						"cn": "对于",
+						"en": "toward/against"
+					},
+					{
+						"jp": "老人",
+						"kana": "ろうじん",
+						"cn": "老人",
+						"en": "an old person"
 					}
 				]
 			},
@@ -2222,6 +3574,20 @@
 						"a": "に応える",
 						"b": "に関わる"
 					}
+				],
+				"words": [
+					{
+						"jp": "関する",
+						"kana": "かんする",
+						"cn": "关于……的",
+						"en": "related"
+					},
+					{
+						"jp": "質問する",
+						"kana": "しつもんする",
+						"cn": "质询，提问",
+						"en": "ask questions"
+					}
 				]
 			},
 			{
@@ -2233,6 +3599,26 @@
 				"translation_en": "He complained it was hard, yet finished it.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "何",
+						"kana": "なに",
+						"cn": "什么",
+						"en": "what"
+					},
+					{
+						"jp": "形",
+						"kana": "かたち",
+						"cn": "形状",
+						"en": "shape/form"
+					},
+					{
+						"jp": "事件",
+						"kana": "じけん",
+						"cn": "事件",
+						"en": "an incident"
+					}
 				]
 			},
 			{
@@ -2244,6 +3630,32 @@
 				"translation_en": "The problem is gradually being solved.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "成績",
+						"kana": "せいせき",
+						"cn": "成绩",
+						"en": "results, record"
+					},
+					{
+						"jp": "出席する",
+						"kana": "しゅっせき",
+						"cn": "出席",
+						"en": "attend"
+					},
+					{
+						"jp": "宿題",
+						"kana": "しゅくだい",
+						"cn": "课外作业",
+						"en": "a homework"
+					},
+					{
+						"jp": "試験",
+						"kana": "しけん",
+						"cn": "试验；考试",
+						"en": "test, exam"
+					}
 				]
 			}
 		]
@@ -2259,6 +3671,14 @@
 				"translation_en": "Please cut along this line.",
 				"pointIndexes": [
 					0
+				],
+				"words": [
+					{
+						"jp": "宿題",
+						"kana": "しゅくだい",
+						"cn": "课外作业",
+						"en": "a homework"
+					}
 				]
 			},
 			{
@@ -2270,6 +3690,20 @@
 				"translation_en": "The conference lasted three days.",
 				"pointIndexes": [
 					1
+				],
+				"words": [
+					{
+						"jp": "天気",
+						"kana": "てんき",
+						"cn": "天气",
+						"en": "weather"
+					},
+					{
+						"jp": "回復",
+						"kana": "かいふく",
+						"cn": "恢复",
+						"en": "recovery/recuperation"
+					}
 				]
 			},
 			{
@@ -2281,7 +3715,8 @@
 				"translation_en": "Please operate it according to the manual.",
 				"pointIndexes": [
 					2
-				]
+				],
+				"words": []
 			},
 			{
 				"n": 4,
@@ -2292,6 +3727,20 @@
 				"translation_en": "This research spans several fields.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "日本",
+						"kana": "にほん",
+						"cn": "日本",
+						"en": "Japan"
+					},
+					{
+						"jp": "日本語",
+						"kana": "にほんご",
+						"cn": "日语",
+						"en": "Japanese"
+					}
 				]
 			},
 			{
@@ -2303,6 +3752,14 @@
 				"translation_en": "Please walk along the river.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "相手",
+						"kana": "あいて",
+						"cn": "对方",
+						"en": "an opponent/competitor"
+					}
 				]
 			},
 			{
@@ -2314,6 +3771,26 @@
 				"translation_en": "The survey was carried out over a whole year.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "政治",
+						"kana": "せいじ",
+						"cn": "政治",
+						"en": "politics, government"
+					},
+					{
+						"jp": "情勢",
+						"kana": "じょうせい",
+						"cn": "形势",
+						"en": "condition, situation"
+					},
+					{
+						"jp": "計画",
+						"kana": "けいかく",
+						"cn": "计划，规划",
+						"en": "plan"
+					}
 				]
 			},
 			{
@@ -2325,6 +3802,20 @@
 				"translation_en": "The plan was drawn up in line with the budget.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "今度",
+						"kana": "こんど",
+						"cn": "这次；下次",
+						"en": "this time, next time"
+					},
+					{
+						"jp": "家",
+						"kana": "いえ",
+						"cn": "家",
+						"en": "house"
+					}
 				]
 			}
 		]
@@ -2346,6 +3837,14 @@
 						"a": "守らざるをえない",
 						"b": "守らないべきだ"
 					}
+				],
+				"words": [
+					{
+						"jp": "約束",
+						"kana": "やくそく",
+						"cn": "约定",
+						"en": "a promise/appointment"
+					}
 				]
 			},
 			{
@@ -2362,6 +3861,20 @@
 					{
 						"a": "える",
 						"b": "えない"
+					}
+				],
+				"words": [
+					{
+						"jp": "計画",
+						"kana": "けいかく",
+						"cn": "计划，规划",
+						"en": "plan"
+					},
+					{
+						"jp": "不可",
+						"kana": "ふか",
+						"cn": "不可以",
+						"en": "impossible"
 					}
 				]
 			},
@@ -2380,6 +3893,14 @@
 						"a": "ありえない",
 						"b": "すぎない"
 					}
+				],
+				"words": [
+					{
+						"jp": "理想",
+						"kana": "りそう",
+						"cn": "理想",
+						"en": "ideal"
+					}
 				]
 			},
 			{
@@ -2396,6 +3917,14 @@
 					{
 						"a": "ことになっている",
 						"b": "べきだ"
+					}
+				],
+				"words": [
+					{
+						"jp": "試験",
+						"kana": "しけん",
+						"cn": "试验；考试",
+						"en": "test, exam"
 					}
 				]
 			},
@@ -2414,7 +3943,8 @@
 						"a": "べきではない",
 						"b": "ことになっている"
 					}
-				]
+				],
+				"words": []
 			},
 			{
 				"n": 6,
@@ -2425,6 +3955,20 @@
 				"translation_en": "Now that it's decided, we have to do it.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "明日",
+						"kana": "あした",
+						"cn": "明天",
+						"en": "tomorrow"
+					},
+					{
+						"jp": "会議",
+						"kana": "かいぎ",
+						"cn": "会议",
+						"en": "a meeting"
+					}
 				]
 			},
 			{
@@ -2436,6 +3980,14 @@
 				"translation_en": "A ceremony was held prior to starting construction.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "法律",
+						"kana": "ほうりつ",
+						"cn": "法律",
+						"en": "law, legislation"
+					}
 				]
 			}
 		]
@@ -2457,7 +4009,8 @@
 						"a": "あたって",
 						"b": "わたって"
 					}
-				]
+				],
+				"words": []
 			},
 			{
 				"n": 2,
@@ -2473,6 +4026,26 @@
 					{
 						"a": "そって",
 						"b": "さきだって"
+					}
+				],
+				"words": [
+					{
+						"jp": "会社",
+						"kana": "かいしゃ",
+						"cn": "公司",
+						"en": "company"
+					},
+					{
+						"jp": "方針",
+						"kana": "ほうしん",
+						"cn": "方针",
+						"en": "a principle, policy"
+					},
+					{
+						"jp": "計画",
+						"kana": "けいかく",
+						"cn": "计划，规划",
+						"en": "plan"
 					}
 				]
 			},
@@ -2491,6 +4064,14 @@
 						"a": "さきだち",
 						"b": "わたり"
 					}
+				],
+				"words": [
+					{
+						"jp": "映画",
+						"kana": "えいが",
+						"cn": "电影",
+						"en": "movie"
+					}
 				]
 			},
 			{
@@ -2507,6 +4088,32 @@
 					{
 						"a": "あたり",
 						"b": "そって"
+					}
+				],
+				"words": [
+					{
+						"jp": "書類",
+						"kana": "しょるい",
+						"cn": "文书",
+						"en": "a document"
+					},
+					{
+						"jp": "次",
+						"kana": "つぎ",
+						"cn": "下一个",
+						"en": "next"
+					},
+					{
+						"jp": "点",
+						"kana": "てん",
+						"cn": "点",
+						"en": "a point"
+					},
+					{
+						"jp": "注意する",
+						"kana": "ちゅういする",
+						"cn": "注意，小心；提醒",
+						"en": "pay attention"
 					}
 				]
 			},
@@ -2525,6 +4132,20 @@
 						"a": "あたる",
 						"b": "わたる"
 					}
+				],
+				"words": [
+					{
+						"jp": "年",
+						"kana": "とし",
+						"cn": "年",
+						"en": "year"
+					},
+					{
+						"jp": "交流",
+						"kana": "こうりゅう",
+						"cn": "交流",
+						"en": "an exchange"
+					}
 				]
 			},
 			{
@@ -2536,6 +4157,14 @@
 				"translation_en": "By the rules, smoking is forbidden here.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "論文",
+						"kana": "ろんぶん",
+						"cn": "论文",
+						"en": "a thesis, treatise"
+					}
 				]
 			},
 			{
@@ -2547,6 +4176,14 @@
 				"translation_en": "This clothing is designed for children.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "客",
+						"kana": "きゃく",
+						"cn": "客人",
+						"en": "a customer"
+					}
 				]
 			}
 		]
@@ -2568,6 +4205,14 @@
 						"a": "かねる",
 						"b": "かねない"
 					}
+				],
+				"words": [
+					{
+						"jp": "事故",
+						"kana": "じこ",
+						"cn": "事故",
+						"en": "an accident"
+					}
 				]
 			},
 			{
@@ -2584,6 +4229,14 @@
 					{
 						"a": "っこない",
 						"b": "がたい"
+					}
+				],
+				"words": [
+					{
+						"jp": "要求",
+						"kana": "ようきゅう",
+						"cn": "要求",
+						"en": "a demand, request"
 					}
 				]
 			},
@@ -2602,6 +4255,14 @@
 						"a": "がたかった",
 						"b": "かねなかった"
 					}
+				],
+				"words": [
+					{
+						"jp": "自殺",
+						"kana": "じさつ",
+						"cn": "自杀",
+						"en": "a suicide"
+					}
 				]
 			},
 			{
@@ -2619,7 +4280,8 @@
 						"a": "っこない",
 						"b": "かねない"
 					}
-				]
+				],
+				"words": []
 			},
 			{
 				"n": 5,
@@ -2636,6 +4298,20 @@
 						"a": "かねます",
 						"b": "かねません"
 					}
+				],
+				"words": [
+					{
+						"jp": "予約",
+						"kana": "よやく",
+						"cn": "预约",
+						"en": "an appointment/reservation"
+					},
+					{
+						"jp": "返金",
+						"kana": "へんきん",
+						"cn": "还债、退钱",
+						"en": "a refund"
+					}
 				]
 			},
 			{
@@ -2647,6 +4323,14 @@
 				"translation_en": "The mistake is worse precisely because he's a specialist.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "携帯電話",
+						"kana": "けいたいでんわ",
+						"cn": "手机",
+						"en": "a cell phone/mobile phone"
+					}
 				]
 			},
 			{
@@ -2658,7 +4342,8 @@
 				"translation_en": "You won't know if you can do it unless you try.",
 				"pointIndexes": [
 					3
-				]
+				],
+				"words": []
 			}
 		]
 	},
@@ -2679,6 +4364,14 @@
 						"a": "来る",
 						"b": "来ない"
 					}
+				],
+				"words": [
+					{
+						"jp": "会議",
+						"kana": "かいぎ",
+						"cn": "会议",
+						"en": "a meeting"
+					}
 				]
 			},
 			{
@@ -2696,7 +4389,8 @@
 						"a": "ことから",
 						"b": "ことだから"
 					}
-				]
+				],
+				"words": []
 			},
 			{
 				"n": 3,
@@ -2712,6 +4406,20 @@
 					{
 						"a": "ことだから",
 						"b": "ことから"
+					}
+				],
+				"words": [
+					{
+						"jp": "教室",
+						"kana": "きょうしつ",
+						"cn": "教室",
+						"en": "classroom"
+					},
+					{
+						"jp": "席",
+						"kana": "せき",
+						"cn": "座位",
+						"en": "a seat"
 					}
 				]
 			},
@@ -2730,6 +4438,14 @@
 						"a": "ことには",
 						"b": "ことなく"
 					}
+				],
+				"words": [
+					{
+						"jp": "次",
+						"kana": "つぎ",
+						"cn": "下一个",
+						"en": "next"
+					}
 				]
 			},
 			{
@@ -2747,6 +4463,14 @@
 						"a": "ことには",
 						"b": "ことなく"
 					}
+				],
+				"words": [
+					{
+						"jp": "作品",
+						"kana": "さくひん",
+						"cn": "作品完成了",
+						"en": ""
+					}
 				]
 			},
 			{
@@ -2758,6 +4482,32 @@
 				"translation_en": "She's not only pretty but also nice.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "毛",
+						"kana": "け",
+						"cn": "毛",
+						"en": "fur, hair, wool"
+					},
+					{
+						"jp": "色",
+						"kana": "いろ",
+						"cn": "颜色",
+						"en": "color"
+					},
+					{
+						"jp": "犬",
+						"kana": "いぬ",
+						"cn": "狗",
+						"en": "dog"
+					},
+					{
+						"jp": "猫",
+						"kana": "ねこ",
+						"cn": "猫",
+						"en": "a cat"
+					}
 				]
 			},
 			{
@@ -2769,6 +4519,14 @@
 				"translation_en": "Never mind winning — I didn't even get to play.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "何",
+						"kana": "なに",
+						"cn": "什么",
+						"en": "what"
+					}
 				]
 			}
 		]
@@ -2790,6 +4548,26 @@
 						"a": "当然だ",
 						"b": "ましだ"
 					}
+				],
+				"words": [
+					{
+						"jp": "家",
+						"kana": "いえ",
+						"cn": "家",
+						"en": "house"
+					},
+					{
+						"jp": "庭",
+						"kana": "にわ",
+						"cn": "庭院",
+						"en": "a garden"
+					},
+					{
+						"jp": "当然",
+						"kana": "とうぜん",
+						"cn": "当然",
+						"en": "of course"
+					}
 				]
 			},
 			{
@@ -2806,6 +4584,26 @@
 					{
 						"a": "もっとも",
 						"b": "同然"
+					}
+				],
+				"words": [
+					{
+						"jp": "市民",
+						"kana": "しみん",
+						"cn": "市民；公民",
+						"en": "citizen"
+					},
+					{
+						"jp": "税金",
+						"kana": "ぜいきん",
+						"cn": "税金",
+						"en": "a tax"
+					},
+					{
+						"jp": "声",
+						"kana": "こえ",
+						"cn": "",
+						"en": "voice"
 					}
 				]
 			},
@@ -2824,6 +4622,26 @@
 						"a": "同然",
 						"b": "当然"
 					}
+				],
+				"words": [
+					{
+						"jp": "一家",
+						"kana": "いっか",
+						"cn": "支撑一家",
+						"en": "support the family"
+					},
+					{
+						"jp": "家族",
+						"kana": "かぞく",
+						"cn": "家人",
+						"en": "family"
+					},
+					{
+						"jp": "当然",
+						"kana": "とうぜん",
+						"cn": "当然",
+						"en": "of course"
+					}
 				]
 			},
 			{
@@ -2840,6 +4658,20 @@
 					{
 						"a": "当たり前の",
 						"b": "もっともな"
+					}
+				],
+				"words": [
+					{
+						"jp": "普通",
+						"kana": "ふつう",
+						"cn": "普通",
+						"en": "ordinary"
+					},
+					{
+						"jp": "当たり前",
+						"kana": "あたりまえ",
+						"cn": "当然",
+						"en": "natural, not surprising"
 					}
 				]
 			},
@@ -2858,6 +4690,26 @@
 						"a": "降る",
 						"b": "降らない"
 					}
+				],
+				"words": [
+					{
+						"jp": "雪",
+						"kana": "ゆき",
+						"cn": "雪",
+						"en": "snow"
+					},
+					{
+						"jp": "日",
+						"kana": "ひ",
+						"cn": "日",
+						"en": "day"
+					},
+					{
+						"jp": "今日",
+						"kana": "こんにち",
+						"cn": "今天",
+						"en": "today"
+					}
 				]
 			},
 			{
@@ -2869,6 +4721,14 @@
 				"translation_en": "Bring your seal when the contract is signed.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "今度",
+						"kana": "こんど",
+						"cn": "这次；下次",
+						"en": "this time, next time"
+					}
 				]
 			},
 			{
@@ -2880,7 +4740,8 @@
 				"translation_en": "The menu changes according to the season.",
 				"pointIndexes": [
 					3
-				]
+				],
+				"words": []
 			}
 		]
 	},
@@ -2901,6 +4762,14 @@
 						"a": "だけに",
 						"b": "ばかりか"
 					}
+				],
+				"words": [
+					{
+						"jp": "家具",
+						"kana": "かぐ",
+						"cn": "家具",
+						"en": "furniture"
+					}
 				]
 			},
 			{
@@ -2917,6 +4786,14 @@
 					{
 						"a": "だけあって",
 						"b": "のみならず"
+					}
+				],
+				"words": [
+					{
+						"jp": "先生",
+						"kana": "せんせい",
+						"cn": "老师",
+						"en": "teacher"
 					}
 				]
 			},
@@ -2935,6 +4812,20 @@
 						"a": "ばかりか",
 						"b": "ばかりに"
 					}
+				],
+				"words": [
+					{
+						"jp": "仕事",
+						"kana": "しごと",
+						"cn": "工作",
+						"en": "work"
+					},
+					{
+						"jp": "人",
+						"kana": "ひと",
+						"cn": "人",
+						"en": "person"
+					}
 				]
 			},
 			{
@@ -2951,6 +4842,14 @@
 					{
 						"a": "ばかりでなく",
 						"b": "だけあって"
+					}
+				],
+				"words": [
+					{
+						"jp": "心",
+						"kana": "こころ",
+						"cn": "内心",
+						"en": "heart, mind"
 					}
 				]
 			},
@@ -2969,7 +4868,8 @@
 						"a": "だけの",
 						"b": "だけに"
 					}
-				]
+				],
+				"words": []
 			},
 			{
 				"n": 6,
@@ -2980,6 +4880,14 @@
 				"translation_en": "The plan was made on the basis of last year's data.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "事故",
+						"kana": "じこ",
+						"cn": "事故",
+						"en": "an accident"
+					}
 				]
 			},
 			{
@@ -2991,7 +4899,8 @@
 				"translation_en": "As you'd expect from a local, they know the area well.",
 				"pointIndexes": [
 					3
-				]
+				],
+				"words": []
 			}
 		]
 	},
@@ -3012,6 +4921,20 @@
 						"a": "行きよう",
 						"b": "行こう"
 					}
+				],
+				"words": [
+					{
+						"jp": "交通機関",
+						"kana": "こうつうきかん",
+						"cn": "交通机关",
+						"en": "transport system"
+					},
+					{
+						"jp": "会社",
+						"kana": "かいしゃ",
+						"cn": "公司",
+						"en": "company"
+					}
 				]
 			},
 			{
@@ -3028,6 +4951,26 @@
 					{
 						"a": "合格する",
 						"b": "合格した"
+					}
+				],
+				"words": [
+					{
+						"jp": "友達",
+						"kana": "ともだち",
+						"cn": "朋友",
+						"en": "friend"
+					},
+					{
+						"jp": "自分",
+						"kana": "じぶん",
+						"cn": "自己",
+						"en": "self"
+					},
+					{
+						"jp": "合格",
+						"kana": "ごうかく",
+						"cn": "合格",
+						"en": "pass an exam"
 					}
 				]
 			},
@@ -3046,6 +4989,14 @@
 						"a": "でもないか",
 						"b": "ではないか"
 					}
+				],
+				"words": [
+					{
+						"jp": "一度",
+						"kana": "いちど",
+						"cn": "1次；一旦",
+						"en": "once, one time"
+					}
 				]
 			},
 			{
@@ -3062,6 +5013,20 @@
 					{
 						"a": "終わりそうにない",
 						"b": "終わりそうじゃない"
+					}
+				],
+				"words": [
+					{
+						"jp": "仕事",
+						"kana": "しごと",
+						"cn": "工作",
+						"en": "work"
+					},
+					{
+						"jp": "今日",
+						"kana": "きょうじゅう",
+						"cn": "今天",
+						"en": "today"
 					}
 				]
 			},
@@ -3080,6 +5045,14 @@
 						"a": "知らない",
 						"b": "知っている"
 					}
+				],
+				"words": [
+					{
+						"jp": "話",
+						"kana": "はなし",
+						"cn": "话／说话",
+						"en": "talk"
+					}
 				]
 			},
 			{
@@ -3091,7 +5064,8 @@
 				"translation_en": "This character is hard to read.",
 				"pointIndexes": [
 					3
-				]
+				],
+				"words": []
 			},
 			{
 				"n": 7,
@@ -3102,6 +5076,14 @@
 				"translation_en": "If you leave the window open, a burglar might well get in.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "今",
+						"kana": "いま",
+						"cn": "现在",
+						"en": "now"
+					}
 				]
 			}
 		]
@@ -3123,6 +5105,26 @@
 						"a": "のもとで",
 						"b": "に基づいて"
 					}
+				],
+				"words": [
+					{
+						"jp": "番組",
+						"kana": "ばんぐみ",
+						"cn": "电视节目",
+						"en": "a (TV) program"
+					},
+					{
+						"jp": "意見",
+						"kana": "いけん",
+						"cn": "意见",
+						"en": "opinion"
+					},
+					{
+						"jp": "構成",
+						"kana": "こうせい",
+						"cn": "构成",
+						"en": "a composition"
+					}
 				]
 			},
 			{
@@ -3139,6 +5141,26 @@
 					{
 						"a": "応じ",
 						"b": "際し"
+					}
+				],
+				"words": [
+					{
+						"jp": "注意する",
+						"kana": "ちゅういする",
+						"cn": "注意，小心；提醒",
+						"en": "pay attention"
+					},
+					{
+						"jp": "点",
+						"kana": "てん",
+						"cn": "点",
+						"en": "a point"
+					},
+					{
+						"jp": "説明",
+						"kana": "せつめい",
+						"cn": "说明，解释",
+						"en": "explanation"
 					}
 				]
 			},
@@ -3157,6 +5179,26 @@
 						"a": "応じて",
 						"b": "際して"
 					}
+				],
+				"words": [
+					{
+						"jp": "量",
+						"kana": "りょう",
+						"cn": "量",
+						"en": "quantity"
+					},
+					{
+						"jp": "商品",
+						"kana": "しょうひん",
+						"cn": "商品",
+						"en": "goods"
+					},
+					{
+						"jp": "値段",
+						"kana": "ねだん",
+						"cn": "价格",
+						"en": "a price"
+					}
 				]
 			},
 			{
@@ -3173,6 +5215,26 @@
 					{
 						"a": "際した",
 						"b": "応じた"
+					}
+				],
+				"words": [
+					{
+						"jp": "職場",
+						"kana": "しょくば",
+						"cn": "职场",
+						"en": "a work place"
+					},
+					{
+						"jp": "状況",
+						"kana": "じょうきょう",
+						"cn": "状况",
+						"en": "a situation, circumstances"
+					},
+					{
+						"jp": "判断",
+						"kana": "はんだん",
+						"cn": "判断",
+						"en": "judgment, decision"
 					}
 				]
 			},
@@ -3191,6 +5253,14 @@
 						"a": "応じた",
 						"b": "基づいた"
 					}
+				],
+				"words": [
+					{
+						"jp": "家具",
+						"kana": "かぐ",
+						"cn": "家具",
+						"en": "furniture"
+					}
 				]
 			},
 			{
@@ -3202,6 +5272,38 @@
 				"translation_en": "Let's stay here tonight.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "人",
+						"kana": "ひと",
+						"cn": "人",
+						"en": "person"
+					},
+					{
+						"jp": "犬",
+						"kana": "いぬ",
+						"cn": "狗",
+						"en": "dog"
+					},
+					{
+						"jp": "月",
+						"kana": "つき",
+						"cn": "月",
+						"en": "month / moon"
+					},
+					{
+						"jp": "愛情",
+						"kana": "あいじょう",
+						"cn": "爱情",
+						"en": "love/affection"
+					},
+					{
+						"jp": "訓練",
+						"kana": "くんれん",
+						"cn": "训练",
+						"en": "training/a drill"
+					}
 				]
 			}
 		]
@@ -3217,6 +5319,26 @@
 				"translation_en": "Now that we've come, let's enjoy ourselves.",
 				"pointIndexes": [
 					0
+				],
+				"words": [
+					{
+						"jp": "入学する",
+						"kana": "にゅうがく",
+						"cn": "入学",
+						"en": "enroll"
+					},
+					{
+						"jp": "以上",
+						"kana": "いじょう",
+						"cn": "以上",
+						"en": "not less than"
+					},
+					{
+						"jp": "卒業",
+						"kana": "そつぎょう",
+						"cn": "毕业",
+						"en": "graduation"
+					}
 				]
 			},
 			{
@@ -3228,6 +5350,20 @@
 				"translation_en": "Now that I know, I can't pretend I didn't see it.",
 				"pointIndexes": [
 					1
+				],
+				"words": [
+					{
+						"jp": "卒業",
+						"kana": "そつぎょう",
+						"cn": "毕业",
+						"en": "graduation"
+					},
+					{
+						"jp": "年",
+						"kana": "とし",
+						"cn": "年",
+						"en": "year"
+					}
 				]
 			},
 			{
@@ -3239,6 +5375,14 @@
 				"translation_en": "I've been busy every day ever since I joined this company.",
 				"pointIndexes": [
 					2
+				],
+				"words": [
+					{
+						"jp": "自分",
+						"kana": "じぶん",
+						"cn": "自己",
+						"en": "self"
+					}
 				]
 			},
 			{
@@ -3250,6 +5394,20 @@
 				"translation_en": "If you've decided to take part, you have to see it through.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "会議",
+						"kana": "かいぎ",
+						"cn": "会议",
+						"en": "a meeting"
+					},
+					{
+						"jp": "説明",
+						"kana": "せつめい",
+						"cn": "说明，解释",
+						"en": "explanation"
+					}
 				]
 			},
 			{
@@ -3261,6 +5419,32 @@
 				"translation_en": "I've been more interested in Japan ever since I started Japanese.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "会議",
+						"kana": "かいぎ",
+						"cn": "会议",
+						"en": "a meeting"
+					},
+					{
+						"jp": "出席する",
+						"kana": "しゅっせき",
+						"cn": "出席",
+						"en": "attend"
+					},
+					{
+						"jp": "自分",
+						"kana": "じぶん",
+						"cn": "自己",
+						"en": "self"
+					},
+					{
+						"jp": "意見",
+						"kana": "いけん",
+						"cn": "意见",
+						"en": "opinion"
+					}
 				]
 			},
 			{
@@ -3272,6 +5456,20 @@
 				"translation_en": "If you're a student, you should study.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "犬",
+						"kana": "いぬ",
+						"cn": "狗",
+						"en": "dog"
+					},
+					{
+						"jp": "自分",
+						"kana": "じぶん",
+						"cn": "自己",
+						"en": "self"
+					}
 				]
 			},
 			{
@@ -3283,6 +5481,20 @@
 				"translation_en": "I've driven more carefully ever since I saw that accident.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "外食する",
+						"kana": "がいしょく",
+						"cn": "在外就餐",
+						"en": "eat out"
+					},
+					{
+						"jp": "調子",
+						"kana": "ちょうし",
+						"cn": "状况",
+						"en": "condition"
+					}
 				]
 			},
 			{
@@ -3294,6 +5506,20 @@
 				"translation_en": "Now that you've promised, you must follow through.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "先生",
+						"kana": "せんせい",
+						"cn": "老师",
+						"en": "teacher"
+					},
+					{
+						"jp": "本",
+						"kana": "ほん",
+						"cn": "书",
+						"en": "book"
+					}
 				]
 			}
 		]
@@ -3315,6 +5541,14 @@
 						"a": "からいうと",
 						"b": "からして"
 					}
+				],
+				"words": [
+					{
+						"jp": "笑い",
+						"kana": "わらい",
+						"cn": "笑声",
+						"en": "laughter"
+					}
 				]
 			},
 			{
@@ -3331,6 +5565,26 @@
 					{
 						"a": "からいえば",
 						"b": "からして"
+					}
+				],
+				"words": [
+					{
+						"jp": "作文",
+						"kana": "さくぶん",
+						"cn": "作文",
+						"en": "writing, composition"
+					},
+					{
+						"jp": "日本語",
+						"kana": "にほんご",
+						"cn": "日语",
+						"en": "Japanese"
+					},
+					{
+						"jp": "内容",
+						"kana": "ないよう",
+						"cn": "内容",
+						"en": "contents/substance"
 					}
 				]
 			},
@@ -3349,6 +5603,14 @@
 						"a": "から見ると",
 						"b": "からして"
 					}
+				],
+				"words": [
+					{
+						"jp": "象",
+						"kana": "ぞう",
+						"cn": "象",
+						"en": "an elephant"
+					}
 				]
 			},
 			{
@@ -3365,6 +5627,20 @@
 					{
 						"a": "から見ると",
 						"b": "からして"
+					}
+				],
+				"words": [
+					{
+						"jp": "何",
+						"kana": "なに",
+						"cn": "什么",
+						"en": "what"
+					},
+					{
+						"jp": "理解",
+						"kana": "りかい",
+						"cn": "理解",
+						"en": "understand"
 					}
 				]
 			},
@@ -3383,7 +5659,8 @@
 						"a": "からすると",
 						"b": "からには"
 					}
-				]
+				],
+				"words": []
 			},
 			{
 				"n": 6,
@@ -3399,6 +5676,20 @@
 					{
 						"a": "からして",
 						"b": "からすると"
+					}
+				],
+				"words": [
+					{
+						"jp": "面接",
+						"kana": "めんせつ",
+						"cn": "面试",
+						"en": "interview"
+					},
+					{
+						"jp": "結果",
+						"kana": "けっか",
+						"cn": "结果",
+						"en": "a result"
 					}
 				]
 			},
@@ -3417,6 +5708,20 @@
 						"a": "から見ると",
 						"b": "からして"
 					}
+				],
+				"words": [
+					{
+						"jp": "面接",
+						"kana": "めんせつ",
+						"cn": "面试",
+						"en": "interview"
+					},
+					{
+						"jp": "意志",
+						"kana": "いし",
+						"cn": "意志",
+						"en": "will, volition"
+					}
 				]
 			},
 			{
@@ -3434,6 +5739,20 @@
 						"a": "から見ると",
 						"b": "からして"
 					}
+				],
+				"words": [
+					{
+						"jp": "面接",
+						"kana": "めんせつ",
+						"cn": "面试",
+						"en": "interview"
+					},
+					{
+						"jp": "面接",
+						"kana": "めんせつ",
+						"cn": "面试",
+						"en": "interview"
+					}
 				]
 			},
 			{
@@ -3450,6 +5769,20 @@
 					{
 						"a": "から言えば",
 						"b": "からして"
+					}
+				],
+				"words": [
+					{
+						"jp": "面接",
+						"kana": "めんせつ",
+						"cn": "面试",
+						"en": "interview"
+					},
+					{
+						"jp": "点",
+						"kana": "てん",
+						"cn": "点",
+						"en": "a point"
 					}
 				]
 			}
@@ -3472,6 +5805,20 @@
 						"a": "にかけて",
 						"b": "からといって"
 					}
+				],
+				"words": [
+					{
+						"jp": "春",
+						"kana": "はる",
+						"cn": "春",
+						"en": "spring"
+					},
+					{
+						"jp": "秋",
+						"kana": "あき",
+						"cn": "秋",
+						"en": "fall"
+					}
 				]
 			},
 			{
@@ -3489,7 +5836,8 @@
 						"a": "でないと",
 						"b": "といって"
 					}
-				]
+				],
+				"words": []
 			},
 			{
 				"n": 3,
@@ -3506,7 +5854,8 @@
 						"a": "といって",
 						"b": "でないと"
 					}
-				]
+				],
+				"words": []
 			},
 			{
 				"n": 4,
@@ -3522,6 +5871,14 @@
 					{
 						"a": "にかけて",
 						"b": "にかけては"
+					}
+				],
+				"words": [
+					{
+						"jp": "値段",
+						"kana": "ねだん",
+						"cn": "价格",
+						"en": "a price"
 					}
 				]
 			},
@@ -3540,6 +5897,14 @@
 						"a": "でなければ",
 						"b": "だからといって"
 					}
+				],
+				"words": [
+					{
+						"jp": "車",
+						"kana": "くるま",
+						"cn": "车",
+						"en": "car"
+					}
 				]
 			},
 			{
@@ -3551,6 +5916,14 @@
 				"translation_en": "Just because it's healthy, eating only that is still bad.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "体",
+						"kana": "からだ",
+						"cn": "身体",
+						"en": "body"
+					}
 				]
 			},
 			{
@@ -3562,7 +5935,8 @@
 				"translation_en": "I can't comment on that until the facts are clear.",
 				"pointIndexes": [
 					3
-				]
+				],
+				"words": []
 			}
 		]
 	},
@@ -3577,7 +5951,8 @@
 				"translation_en": "Wrong: use とのことです, not とかのことです.",
 				"pointIndexes": [
 					0
-				]
+				],
+				"words": []
 			},
 			{
 				"n": 2,
@@ -3588,6 +5963,20 @@
 				"translation_en": "She resolved not to put her child through the same hardships.",
 				"pointIndexes": [
 					1
+				],
+				"words": [
+					{
+						"jp": "自分",
+						"kana": "じぶん",
+						"cn": "自己",
+						"en": "self"
+					},
+					{
+						"jp": "苦労",
+						"kana": "くろう",
+						"cn": "辛苦、操心",
+						"en": "troubles, hardships"
+					}
 				]
 			},
 			{
@@ -3599,7 +5988,8 @@
 				"translation_en": "“The rainy season has started, they say.” “Yeah, I heard that.”",
 				"pointIndexes": [
 					2
-				]
+				],
+				"words": []
 			},
 			{
 				"n": 4,
@@ -3610,6 +6000,14 @@
 				"translation_en": "Wrong: inviting someone uses 行こうか, not 行くまいか.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "昼",
+						"kana": "ひる",
+						"cn": "白天；中午",
+						"en": "daytime, noon"
+					}
 				]
 			},
 			{
@@ -3621,7 +6019,8 @@
 				"translation_en": "Wrong: the pair is 行こうか行くまいか.",
 				"pointIndexes": [
 					3
-				]
+				],
+				"words": []
 			},
 			{
 				"n": 6,
@@ -3632,6 +6031,14 @@
 				"translation_en": "I doubt I'll ever meet another teacher as wonderful as that one.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "先生",
+						"kana": "せんせい",
+						"cn": "老师",
+						"en": "teacher"
+					}
 				]
 			},
 			{
@@ -3643,7 +6050,8 @@
 				"translation_en": "I'm torn over whether to go on to higher education.",
 				"pointIndexes": [
 					3
-				]
+				],
+				"words": []
 			}
 		]
 	},
@@ -3664,6 +6072,14 @@
 						"a": "ほかない",
 						"b": "ほかならない"
 					}
+				],
+				"words": [
+					{
+						"jp": "方法",
+						"kana": "ほうほう",
+						"cn": "方法",
+						"en": "a method / way"
+					}
 				]
 			},
 			{
@@ -3681,7 +6097,8 @@
 						"a": "死ぬにきまっていない",
 						"b": "死なないにきまっている"
 					}
-				]
+				],
+				"words": []
 			},
 			{
 				"n": 3,
@@ -3697,6 +6114,20 @@
 					{
 						"a": "やったほかない",
 						"b": "やるほかなかった"
+					}
+				],
+				"words": [
+					{
+						"jp": "仕事",
+						"kana": "しごと",
+						"cn": "工作",
+						"en": "work"
+					},
+					{
+						"jp": "生活",
+						"kana": "せいかつ",
+						"cn": "生活",
+						"en": "life / livelihood"
 					}
 				]
 			},
@@ -3715,6 +6146,20 @@
 						"a": "相違ない",
 						"b": "ほかない"
 					}
+				],
+				"words": [
+					{
+						"jp": "首相",
+						"kana": "しゅしょう",
+						"cn": "首相",
+						"en": "prime minister"
+					},
+					{
+						"jp": "何",
+						"kana": "なに",
+						"cn": "什么",
+						"en": "what"
+					}
 				]
 			},
 			{
@@ -3732,6 +6177,26 @@
 						"a": "ほかない",
 						"b": "ほかならない"
 					}
+				],
+				"words": [
+					{
+						"jp": "試験",
+						"kana": "しけん",
+						"cn": "试验；考试",
+						"en": "test, exam"
+					},
+					{
+						"jp": "自分",
+						"kana": "じぶん",
+						"cn": "自己",
+						"en": "self"
+					},
+					{
+						"jp": "責任",
+						"kana": "せきにん",
+						"cn": "责任",
+						"en": "responsibility"
+					}
 				]
 			},
 			{
@@ -3743,6 +6208,20 @@
 				"translation_en": "Even the unreserved seats are full, so we have no choice but to stand.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "自由席",
+						"kana": "じゆうせき",
+						"cn": "自由席",
+						"en": "a non-reserved seat"
+					},
+					{
+						"jp": "満席",
+						"kana": "まんせき",
+						"cn": "满员",
+						"en": "No seats"
+					}
 				]
 			},
 			{
@@ -3754,6 +6233,20 @@
 				"translation_en": "There must be some reason he isn't coming.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "何",
+						"kana": "なに",
+						"cn": "什么",
+						"en": "what"
+					},
+					{
+						"jp": "事情",
+						"kana": "じじょう",
+						"cn": "情况、缘故",
+						"en": "circumstance"
+					}
 				]
 			}
 		]
@@ -3775,6 +6268,32 @@
 						"a": "において",
 						"b": "をめぐって"
 					}
+				],
+				"words": [
+					{
+						"jp": "本日",
+						"kana": "ほんじつ",
+						"cn": "今天休业",
+						"en": ""
+					},
+					{
+						"jp": "時",
+						"kana": "とき",
+						"cn": "时候",
+						"en": "time"
+					},
+					{
+						"jp": "体育",
+						"kana": "たいいくかん",
+						"cn": "体育",
+						"en": "physical education"
+					},
+					{
+						"jp": "入学式",
+						"kana": "にゅうがくしき",
+						"cn": "入学仪式",
+						"en": "entrance ceremony"
+					}
 				]
 			},
 			{
@@ -3791,6 +6310,26 @@
 					{
 						"a": "をはじめ",
 						"b": "をめぐって"
+					}
+				],
+				"words": [
+					{
+						"jp": "東京",
+						"kana": "とうきょう",
+						"cn": "东京",
+						"en": "Tokyo"
+					},
+					{
+						"jp": "全国",
+						"kana": "ぜんこく",
+						"cn": "全国",
+						"en": "the whole country"
+					},
+					{
+						"jp": "新製品",
+						"kana": "しんせいひん",
+						"cn": "新产品",
+						"en": "a new product"
 					}
 				]
 			},
@@ -3809,6 +6348,14 @@
 						"a": "における",
 						"b": "をめぐる"
 					}
+				],
+				"words": [
+					{
+						"jp": "社会",
+						"kana": "しゃかい",
+						"cn": "社会学科",
+						"en": "social studies"
+					}
 				]
 			},
 			{
@@ -3825,6 +6372,14 @@
 					{
 						"a": "をめぐる",
 						"b": "において"
+					}
+				],
+				"words": [
+					{
+						"jp": "相談",
+						"kana": "そうだん",
+						"cn": "商量",
+						"en": "consultation"
 					}
 				]
 			},
@@ -3843,6 +6398,14 @@
 						"a": "をはじめて",
 						"b": "をはじめとする"
 					}
+				],
+				"words": [
+					{
+						"jp": "研究する",
+						"kana": "けんきゅうする",
+						"cn": "研究",
+						"en": "research"
+					}
 				]
 			},
 			{
@@ -3854,6 +6417,56 @@
 				"translation_en": "At the world conference held in Tokyo yesterday",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "昨日",
+						"kana": "さくじつ",
+						"cn": "昨天",
+						"en": "yesterday"
+					},
+					{
+						"jp": "東京",
+						"kana": "とうきょう",
+						"cn": "东京",
+						"en": "Tokyo"
+					},
+					{
+						"jp": "世界",
+						"kana": "せかい",
+						"cn": "世界",
+						"en": "world"
+					},
+					{
+						"jp": "会議",
+						"kana": "かいぎ",
+						"cn": "会议",
+						"en": "a meeting"
+					},
+					{
+						"jp": "研究者",
+						"kana": "けんきゅうしゃ",
+						"cn": "研究者",
+						"en": "researcher"
+					},
+					{
+						"jp": "技術者",
+						"kana": "ぎじゅつしゃ",
+						"cn": "技术人员",
+						"en": "a technician"
+					},
+					{
+						"jp": "参加",
+						"kana": "さんか",
+						"cn": "参加",
+						"en": "participate"
+					},
+					{
+						"jp": "石油",
+						"kana": "せきゆ",
+						"cn": "石油",
+						"en": "oil (petroleum)"
+					}
 				]
 			},
 			{
@@ -3865,7 +6478,8 @@
 				"translation_en": "starting with researchers and engineers",
 				"pointIndexes": [
 					3
-				]
+				],
+				"words": []
 			},
 			{
 				"n": 8,
@@ -3876,7 +6490,8 @@
 				"translation_en": "they discussed problems concerning resources such as oil.",
 				"pointIndexes": [
 					3
-				]
+				],
+				"words": []
 			}
 		]
 	},
@@ -3897,6 +6512,26 @@
 						"a": "を問わず",
 						"b": "もかまわず"
 					}
+				],
+				"words": [
+					{
+						"jp": "能力",
+						"kana": "のうりょく",
+						"cn": "能力",
+						"en": "ability"
+					},
+					{
+						"jp": "人",
+						"kana": "ひと",
+						"cn": "人",
+						"en": "person"
+					},
+					{
+						"jp": "採用",
+						"kana": "さいよう",
+						"cn": "采用",
+						"en": "use, adopt"
+					}
 				]
 			},
 			{
@@ -3914,7 +6549,8 @@
 						"a": "かまわず",
 						"b": "かかわらず"
 					}
-				]
+				],
+				"words": []
 			},
 			{
 				"n": 3,
@@ -3931,7 +6567,8 @@
 						"a": "かまわず",
 						"b": "かかわらず"
 					}
-				]
+				],
+				"words": []
 			},
 			{
 				"n": 4,
@@ -3947,6 +6584,14 @@
 					{
 						"a": "に",
 						"b": "にも"
+					}
+				],
+				"words": [
+					{
+						"jp": "結果",
+						"kana": "けっか",
+						"cn": "结果",
+						"en": "a result"
 					}
 				]
 			},
@@ -3965,6 +6610,26 @@
 						"a": "を問わず",
 						"b": "にもかかわらず"
 					}
+				],
+				"words": [
+					{
+						"jp": "京都",
+						"kana": "きょうと",
+						"cn": "京都",
+						"en": "Kyoto"
+					},
+					{
+						"jp": "季節",
+						"kana": "きせつ",
+						"cn": "季节",
+						"en": "a season"
+					},
+					{
+						"jp": "景色",
+						"kana": "けしき",
+						"cn": "景色",
+						"en": "a scene, landscape"
+					}
 				]
 			},
 			{
@@ -3976,6 +6641,14 @@
 				"translation_en": "I told the truth, yet I wasn't believed.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "本当",
+						"kana": "ほんとう",
+						"cn": "真的",
+						"en": "the truth"
+					}
 				]
 			},
 			{
@@ -3987,6 +6660,20 @@
 				"translation_en": "They kept singing without caring that people around could hear.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "人",
+						"kana": "ひと",
+						"cn": "人",
+						"en": "person"
+					},
+					{
+						"jp": "歌",
+						"kana": "うた",
+						"cn": "歌",
+						"en": "song"
+					}
 				]
 			}
 		]
@@ -4008,6 +6695,32 @@
 						"a": "やら",
 						"b": "つけ"
 					}
+				],
+				"words": [
+					{
+						"jp": "今日",
+						"kana": "こんにち",
+						"cn": "今天",
+						"en": "today"
+					},
+					{
+						"jp": "銀行",
+						"kana": "ぎんこう",
+						"cn": "银行",
+						"en": "bank"
+					},
+					{
+						"jp": "郵便局",
+						"kana": "ゆうびんきょく",
+						"cn": "邮政局",
+						"en": "a post office"
+					},
+					{
+						"jp": "用事",
+						"kana": "ようじ",
+						"cn": "事，事情",
+						"en": "errand, things to do"
+					}
 				]
 			},
 			{
@@ -4024,6 +6737,20 @@
 					{
 						"a": "も",
 						"b": "やら"
+					}
+				],
+				"words": [
+					{
+						"jp": "町",
+						"kana": "まち",
+						"cn": "市镇；街",
+						"en": "town"
+					},
+					{
+						"jp": "大型",
+						"kana": "おおがた",
+						"cn": "大型",
+						"en": "large, jumbo"
 					}
 				]
 			},
@@ -4042,6 +6769,14 @@
 						"a": "も",
 						"b": "つけ"
 					}
+				],
+				"words": [
+					{
+						"jp": "曲",
+						"kana": "きょく",
+						"cn": "（音）歌曲",
+						"en": "a piece of music"
+					}
 				]
 			},
 			{
@@ -4058,6 +6793,20 @@
 					{
 						"a": "しろ",
 						"b": "つけ"
+					}
+				],
+				"words": [
+					{
+						"jp": "時間",
+						"kana": "じかん",
+						"cn": "时间",
+						"en": "time"
+					},
+					{
+						"jp": "今日",
+						"kana": "きょうじゅう",
+						"cn": "今天",
+						"en": "today"
 					}
 				]
 			},
@@ -4076,6 +6825,14 @@
 						"a": "しろ",
 						"b": "やら"
 					}
+				],
+				"words": [
+					{
+						"jp": "恥",
+						"kana": "はじ",
+						"cn": "丢脸、耻辱",
+						"en": "shame/humiliation"
+					}
 				]
 			},
 			{
@@ -4087,7 +6844,8 @@
 				"translation_en": "Whether it's expensive or cheap, if you need it you have to buy it.",
 				"pointIndexes": [
 					3
-				]
+				],
+				"words": []
 			},
 			{
 				"n": 7,
@@ -4098,6 +6856,14 @@
 				"translation_en": "I'm always being looked after by the landlord, whatever comes up.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "大家",
+						"kana": "おおや",
+						"cn": "公寓的房东",
+						"en": "the apartment's landlord"
+					}
 				]
 			}
 		]
@@ -4119,6 +6885,14 @@
 						"a": "ものだ",
 						"b": "ものではない"
 					}
+				],
+				"words": [
+					{
+						"jp": "砂糖",
+						"kana": "さとう",
+						"cn": "砂糖",
+						"en": "sugar"
+					}
 				]
 			},
 			{
@@ -4135,6 +6909,26 @@
 					{
 						"a": "なものだ",
 						"b": "というものだ"
+					}
+				],
+				"words": [
+					{
+						"jp": "日",
+						"kana": "ひ",
+						"cn": "日",
+						"en": "day"
+					},
+					{
+						"jp": "時間",
+						"kana": "じかん",
+						"cn": "时间",
+						"en": "time"
+					},
+					{
+						"jp": "勉強する",
+						"kana": "べんきょうする",
+						"cn": "学习",
+						"en": "study"
 					}
 				]
 			},
@@ -4153,6 +6947,14 @@
 						"a": "ものではない",
 						"b": "というものだ"
 					}
+				],
+				"words": [
+					{
+						"jp": "本",
+						"kana": "ほん",
+						"cn": "书",
+						"en": "book"
+					}
 				]
 			},
 			{
@@ -4169,6 +6971,20 @@
 					{
 						"a": "ものだ",
 						"b": "ものではない"
+					}
+				],
+				"words": [
+					{
+						"jp": "一度",
+						"kana": "いちど",
+						"cn": "1次；一旦",
+						"en": "once, one time"
+					},
+					{
+						"jp": "生活",
+						"kana": "せいかつ",
+						"cn": "生活",
+						"en": "life / livelihood"
 					}
 				]
 			},
@@ -4187,6 +7003,14 @@
 						"a": "上手",
 						"b": "上手な"
 					}
+				],
+				"words": [
+					{
+						"jp": "日本語",
+						"kana": "にほんご",
+						"cn": "日语",
+						"en": "Japanese"
+					}
 				]
 			},
 			{
@@ -4198,7 +7022,8 @@
 				"translation_en": "You shouldn't drink coffee before bed. You won't sleep.",
 				"pointIndexes": [
 					3
-				]
+				],
+				"words": []
 			},
 			{
 				"n": 7,
@@ -4209,6 +7034,14 @@
 				"translation_en": "Having it delivered the same day you order is just not possible.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "今日",
+						"kana": "きょう",
+						"cn": "今天",
+						"en": "today"
+					}
 				]
 			},
 			{
@@ -4220,6 +7053,20 @@
 				"translation_en": "As if I'd ever speak to such a rude person again.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "失礼する",
+						"kana": "しつれいする",
+						"cn": "失礼",
+						"en": "be excused"
+					},
+					{
+						"jp": "人",
+						"kana": "ひと",
+						"cn": "人",
+						"en": "person"
+					}
 				]
 			}
 		]
@@ -4241,6 +7088,26 @@
 						"a": "通じて",
 						"b": "中心に"
 					}
+				],
+				"words": [
+					{
+						"jp": "中心",
+						"kana": "ちゅうしん",
+						"cn": "圆心",
+						"en": "the center of the circle"
+					},
+					{
+						"jp": "世界中",
+						"kana": "せかいじゅう",
+						"cn": "全世界",
+						"en": "around the world"
+					},
+					{
+						"jp": "友達",
+						"kana": "ともだち",
+						"cn": "朋友",
+						"en": "friend"
+					}
 				]
 			},
 			{
@@ -4257,6 +7124,26 @@
 					{
 						"a": "中心に",
 						"b": "中心とした"
+					}
+				],
+				"words": [
+					{
+						"jp": "文法",
+						"kana": "ぶんぽう",
+						"cn": "文法",
+						"en": "grammar"
+					},
+					{
+						"jp": "中心",
+						"kana": "ちゅうしん",
+						"cn": "圆心",
+						"en": "the center of the circle"
+					},
+					{
+						"jp": "勉強する",
+						"kana": "べんきょうする",
+						"cn": "学习",
+						"en": "study"
 					}
 				]
 			},
@@ -4275,6 +7162,20 @@
 						"a": "こめて",
 						"b": "通じて"
 					}
+				],
+				"words": [
+					{
+						"jp": "平和",
+						"kana": "へいわ",
+						"cn": "和平",
+						"en": "peace"
+					},
+					{
+						"jp": "歌",
+						"kana": "うた",
+						"cn": "歌",
+						"en": "song"
+					}
 				]
 			},
 			{
@@ -4291,6 +7192,14 @@
 					{
 						"a": "通じて",
 						"b": "通して"
+					}
+				],
+				"words": [
+					{
+						"jp": "町",
+						"kana": "まち",
+						"cn": "市镇；街",
+						"en": "town"
 					}
 				]
 			},
@@ -4309,6 +7218,14 @@
 						"a": "中心に",
 						"b": "中心とした"
 					}
+				],
+				"words": [
+					{
+						"jp": "中心",
+						"kana": "ちゅうしん",
+						"cn": "圆心",
+						"en": "the center of the circle"
+					}
 				]
 			},
 			{
@@ -4320,6 +7237,26 @@
 				"translation_en": "While in hospital I studied from the class notes my friend wrote.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "入院する",
+						"kana": "にゅういんする",
+						"cn": "住院",
+						"en": "be hospitalized"
+					},
+					{
+						"jp": "友達",
+						"kana": "ともだち",
+						"cn": "朋友",
+						"en": "friend"
+					},
+					{
+						"jp": "勉強する",
+						"kana": "べんきょうする",
+						"cn": "学习",
+						"en": "study"
+					}
 				]
 			},
 			{
@@ -4331,6 +7268,32 @@
 				"translation_en": "On entrance-exam day I made a bento with the wish that my son would pass.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "日",
+						"kana": "ひ",
+						"cn": "日",
+						"en": "day"
+					},
+					{
+						"jp": "息子",
+						"kana": "むすこ",
+						"cn": "儿子",
+						"en": "a son"
+					},
+					{
+						"jp": "合格",
+						"kana": "ごうかく",
+						"cn": "合格",
+						"en": "pass an exam"
+					},
+					{
+						"jp": "弁当",
+						"kana": "べんとう",
+						"cn": "便当",
+						"en": "a packed lunch"
+					}
 				]
 			}
 		]
@@ -4352,6 +7315,20 @@
 						"a": "ものがある",
 						"b": "ものでもない"
 					}
+				],
+				"words": [
+					{
+						"jp": "日本",
+						"kana": "にほん",
+						"cn": "日本",
+						"en": "Japan"
+					},
+					{
+						"jp": "日本語",
+						"kana": "にほんご",
+						"cn": "日语",
+						"en": "Japanese"
+					}
 				]
 			},
 			{
@@ -4368,6 +7345,20 @@
 					{
 						"a": "ものがある",
 						"b": "おそれがある"
+					}
+				],
+				"words": [
+					{
+						"jp": "作品",
+						"kana": "さくひん",
+						"cn": "作品完成了",
+						"en": ""
+					},
+					{
+						"jp": "人",
+						"kana": "ひと",
+						"cn": "人",
+						"en": "person"
 					}
 				]
 			},
@@ -4386,6 +7377,20 @@
 						"a": "ものだ",
 						"b": "ものでもない"
 					}
+				],
+				"words": [
+					{
+						"jp": "値段",
+						"kana": "ねだん",
+						"cn": "价格",
+						"en": "a price"
+					},
+					{
+						"jp": "品物",
+						"kana": "しなもの",
+						"cn": "物品",
+						"en": "goods"
+					}
 				]
 			},
 			{
@@ -4402,6 +7407,14 @@
 					{
 						"a": "考えられる",
 						"b": "考えさせられる"
+					}
+				],
+				"words": [
+					{
+						"jp": "質問する",
+						"kana": "しつもんする",
+						"cn": "质询，提问",
+						"en": "ask questions"
 					}
 				]
 			},
@@ -4420,6 +7433,20 @@
 						"a": "おそれ",
 						"b": "もの"
 					}
+				],
+				"words": [
+					{
+						"jp": "各地",
+						"kana": "かくち",
+						"cn": "各地",
+						"en": "everywhere/many places"
+					},
+					{
+						"jp": "被害",
+						"kana": "ひがい",
+						"cn": "被害",
+						"en": "damage"
+					}
 				]
 			},
 			{
@@ -4431,6 +7458,56 @@
 				"translation_en": "Language learning isn't easy; there's a real depth to it.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "簡単",
+						"kana": "かんたん",
+						"cn": "简单",
+						"en": "easy"
+					},
+					{
+						"jp": "奥",
+						"kana": "おく",
+						"cn": "内部",
+						"en": "inmost"
+					},
+					{
+						"jp": "文法",
+						"kana": "ぶんぽう",
+						"cn": "文法",
+						"en": "grammar"
+					},
+					{
+						"jp": "文法",
+						"kana": "ぶんぽう",
+						"cn": "文法",
+						"en": "grammar"
+					},
+					{
+						"jp": "文化",
+						"kana": "ぶんか",
+						"cn": "文化",
+						"en": "culture"
+					},
+					{
+						"jp": "表現",
+						"kana": "ひょうげん",
+						"cn": "表达",
+						"en": "expression"
+					},
+					{
+						"jp": "相手",
+						"kana": "あいて",
+						"cn": "对方",
+						"en": "an opponent/competitor"
+					},
+					{
+						"jp": "誤解",
+						"kana": "ごかい",
+						"cn": "误会",
+						"en": "misunderstanding"
+					}
 				]
 			},
 			{
@@ -4442,7 +7519,8 @@
 				"translation_en": "Grammar matters, but grammar alone is not enough.",
 				"pointIndexes": [
 					3
-				]
+				],
+				"words": []
 			},
 			{
 				"n": 8,
@@ -4453,7 +7531,8 @@
 				"translation_en": "An expression that's grammatically fine but culturally off may well be misunderstood.",
 				"pointIndexes": [
 					3
-				]
+				],
+				"words": []
 			}
 		]
 	},
@@ -4474,6 +7553,20 @@
 						"a": "失敗のきっかけに",
 						"b": "失敗をもとに"
 					}
+				],
+				"words": [
+					{
+						"jp": "失敗",
+						"kana": "しっぱい",
+						"cn": "失败",
+						"en": "failure, mistake"
+					},
+					{
+						"jp": "生",
+						"kana": "う",
+						"cn": "新鲜的鱼",
+						"en": "raw fish"
+					}
 				]
 			},
 			{
@@ -4490,6 +7583,32 @@
 					{
 						"a": "の契機に",
 						"b": "をきっかけに"
+					}
+				],
+				"words": [
+					{
+						"jp": "事件",
+						"kana": "じけん",
+						"cn": "事件",
+						"en": "an incident"
+					},
+					{
+						"jp": "商品",
+						"kana": "しょうひん",
+						"cn": "商品",
+						"en": "goods"
+					},
+					{
+						"jp": "検査",
+						"kana": "けんさ",
+						"cn": "检查",
+						"en": "an inspection/test"
+					},
+					{
+						"jp": "体制",
+						"kana": "たいせい",
+						"cn": "体制",
+						"en": "a system, structure"
 					}
 				]
 			},
@@ -4508,7 +7627,8 @@
 						"a": "を契機として",
 						"b": "をもとにして"
 					}
-				]
+				],
+				"words": []
 			},
 			{
 				"n": 4,
@@ -4524,6 +7644,20 @@
 					{
 						"a": "にもとにして",
 						"b": "をもとに"
+					}
+				],
+				"words": [
+					{
+						"jp": "映画",
+						"kana": "えいが",
+						"cn": "电影",
+						"en": "movie"
+					},
+					{
+						"jp": "話",
+						"kana": "はなし",
+						"cn": "话／说话",
+						"en": "talk"
 					}
 				]
 			},
@@ -4542,6 +7676,26 @@
 						"a": "最中",
 						"b": "際"
 					}
+				],
+				"words": [
+					{
+						"jp": "車",
+						"kana": "くるま",
+						"cn": "车",
+						"en": "car"
+					},
+					{
+						"jp": "運転",
+						"kana": "うんてん",
+						"cn": "驾驶",
+						"en": "driving, operation"
+					},
+					{
+						"jp": "免許",
+						"kana": "めんきょ",
+						"cn": "执照、免许",
+						"en": "a permit, license"
+					}
 				]
 			},
 			{
@@ -4553,6 +7707,14 @@
 				"translation_en": "Please be careful not to leave things behind when you leave.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "注意する",
+						"kana": "ちゅういする",
+						"cn": "注意，小心；提醒",
+						"en": "pay attention"
+					}
 				]
 			},
 			{
@@ -4564,6 +7726,14 @@
 				"translation_en": "Due to construction, the road ahead is one-way.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "工事中",
+						"kana": "こうじちゅう",
+						"cn": "正在施工",
+						"en": "under construction"
+					}
 				]
 			}
 		]
@@ -4585,6 +7755,26 @@
 						"a": "それで",
 						"b": "それでも"
 					}
+				],
+				"words": [
+					{
+						"jp": "学校",
+						"kana": "がっこう",
+						"cn": "学校",
+						"en": "school"
+					},
+					{
+						"jp": "電車",
+						"kana": "でんしゃ",
+						"cn": "电车",
+						"en": "train"
+					},
+					{
+						"jp": "具合",
+						"kana": "ぐあい",
+						"cn": "情况、状态",
+						"en": "condition"
+					}
 				]
 			},
 			{
@@ -4601,6 +7791,14 @@
 					{
 						"a": "それで",
 						"b": "それなのに"
+					}
+				],
+				"words": [
+					{
+						"jp": "節約",
+						"kana": "せつやく",
+						"cn": "节约",
+						"en": "thrift"
 					}
 				]
 			},
@@ -4619,7 +7817,8 @@
 						"a": "それでも",
 						"b": "それなら"
 					}
-				]
+				],
+				"words": []
 			},
 			{
 				"n": 4,
@@ -4636,6 +7835,20 @@
 						"a": "それなら",
 						"b": "それでも"
 					}
+				],
+				"words": [
+					{
+						"jp": "本",
+						"kana": "ほん",
+						"cn": "书",
+						"en": "book"
+					},
+					{
+						"jp": "図書館",
+						"kana": "としょかん",
+						"cn": "图书馆",
+						"en": "library"
+					}
 				]
 			},
 			{
@@ -4647,6 +7860,20 @@
 				"translation_en": "That maker keeps causing problems. And yet customers aren't leaving — I don't get it.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "問題",
+						"kana": "もんだい",
+						"cn": "题，问题",
+						"en": "problem, question"
+					},
+					{
+						"jp": "理解",
+						"kana": "りかい",
+						"cn": "理解",
+						"en": "understand"
+					}
 				]
 			},
 			{
@@ -4658,6 +7885,14 @@
 				"translation_en": "He complains at every program. Then he should stop watching — but he doesn't seem about to.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "番組",
+						"kana": "ばんぐみ",
+						"cn": "电视节目",
+						"en": "a (TV) program"
+					}
 				]
 			}
 		]
@@ -4679,6 +7914,20 @@
 						"a": "そこで",
 						"b": "それが"
 					}
+				],
+				"words": [
+					{
+						"jp": "周辺",
+						"kana": "しゅうへん",
+						"cn": "周围、周边",
+						"en": "vicinity"
+					},
+					{
+						"jp": "道路",
+						"kana": "どうろ",
+						"cn": "道路",
+						"en": "a road"
+					}
 				]
 			},
 			{
@@ -4695,6 +7944,26 @@
 					{
 						"a": "そこで",
 						"b": "それが"
+					}
+				],
+				"words": [
+					{
+						"jp": "旅行",
+						"kana": "りょこう",
+						"cn": "旅行",
+						"en": "trip"
+					},
+					{
+						"jp": "家",
+						"kana": "いえ",
+						"cn": "家",
+						"en": "house"
+					},
+					{
+						"jp": "事情",
+						"kana": "じじょう",
+						"cn": "情况、缘故",
+						"en": "circumstance"
 					}
 				]
 			},
@@ -4713,6 +7982,20 @@
 						"a": "そういえば",
 						"b": "それはそうと"
 					}
+				],
+				"words": [
+					{
+						"jp": "売り場",
+						"kana": "うりば",
+						"cn": "出售处，柜台",
+						"en": "sales floor"
+					},
+					{
+						"jp": "明日",
+						"kana": "あした",
+						"cn": "明天",
+						"en": "tomorrow"
+					}
 				]
 			},
 			{
@@ -4729,6 +8012,26 @@
 					{
 						"a": "そういえば",
 						"b": "それはそうと"
+					}
+				],
+				"words": [
+					{
+						"jp": "今日",
+						"kana": "こんにち",
+						"cn": "今天",
+						"en": "today"
+					},
+					{
+						"jp": "天気",
+						"kana": "てんき",
+						"cn": "天气",
+						"en": "weather"
+					},
+					{
+						"jp": "書類",
+						"kana": "しょるい",
+						"cn": "文书",
+						"en": "a document"
 					}
 				]
 			},
@@ -4747,6 +8050,32 @@
 						"a": "そこで",
 						"b": "それなら"
 					}
+				],
+				"words": [
+					{
+						"jp": "電車",
+						"kana": "でんしゃ",
+						"cn": "电车",
+						"en": "train"
+					},
+					{
+						"jp": "忘れ物",
+						"kana": "わすれもの",
+						"cn": "忘了的东西",
+						"en": "thing left behind (lost property)"
+					},
+					{
+						"jp": "駅",
+						"kana": "えき",
+						"cn": "车站",
+						"en": "station"
+					},
+					{
+						"jp": "事務所",
+						"kana": "じむしょ",
+						"cn": "办公室",
+						"en": "an office"
+					}
 				]
 			},
 			{
@@ -4758,6 +8087,26 @@
 				"translation_en": "There was the problem of elderly people living alone and of housing for students. So a plan for them to live together was proposed.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "問題",
+						"kana": "もんだい",
+						"cn": "题，问题",
+						"en": "problem, question"
+					},
+					{
+						"jp": "留学する",
+						"kana": "りゅうがくせい",
+						"cn": "留学",
+						"en": "study abroad"
+					},
+					{
+						"jp": "案",
+						"kana": "あん",
+						"cn": "草案",
+						"en": "a suggestion, proposal, plan"
+					}
 				]
 			},
 			{
@@ -4769,6 +8118,20 @@
 				"translation_en": "Tanaka strongly argued the area needed an airport. But after being elected he said the opposite.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "地区",
+						"kana": "ちく",
+						"cn": "住宅区",
+						"en": "residential area"
+					},
+					{
+						"jp": "空港",
+						"kana": "くうこう",
+						"cn": "机场",
+						"en": "an airport"
+					}
 				]
 			}
 		]
@@ -4790,6 +8153,26 @@
 						"a": "あるいは",
 						"b": "すなわち"
 					}
+				],
+				"words": [
+					{
+						"jp": "希望",
+						"kana": "きぼう",
+						"cn": "希望",
+						"en": "hope"
+					},
+					{
+						"jp": "賞品",
+						"kana": "しょうひん",
+						"cn": "奖品",
+						"en": "a prize"
+					},
+					{
+						"jp": "応募",
+						"kana": "おうぼ",
+						"cn": "应征",
+						"en": "an application"
+					}
 				]
 			},
 			{
@@ -4807,7 +8190,8 @@
 						"a": "眠いもんか",
 						"b": "眠いんだもん"
 					}
-				]
+				],
+				"words": []
 			},
 			{
 				"n": 3,
@@ -4823,6 +8207,20 @@
 					{
 						"a": "すなわち",
 						"b": "あるいは"
+					}
+				],
+				"words": [
+					{
+						"jp": "父",
+						"kana": "ちち",
+						"cn": "父亲",
+						"en": "father"
+					},
+					{
+						"jp": "一緒",
+						"kana": "いっしょ",
+						"cn": "一起",
+						"en": "together"
 					}
 				]
 			},
@@ -4841,6 +8239,14 @@
 						"a": "だって",
 						"b": "だが"
 					}
+				],
+				"words": [
+					{
+						"jp": "気温",
+						"kana": "きおん",
+						"cn": "气温",
+						"en": "temperature"
+					}
 				]
 			},
 			{
@@ -4858,7 +8264,8 @@
 						"a": "つまり",
 						"b": "すなわち"
 					}
-				]
+				],
+				"words": []
 			},
 			{
 				"n": 6,
@@ -4869,6 +8276,14 @@
 				"translation_en": "Lately lots of language materials come with a CD, that is, a compact disc.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "最近",
+						"kana": "さいきん",
+						"cn": "最近",
+						"en": "recently"
+					}
 				]
 			},
 			{
@@ -4880,6 +8295,14 @@
 				"translation_en": "I was fine when the accident happened. But the next day I had a headache.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "事故",
+						"kana": "じこ",
+						"cn": "事故",
+						"en": "an accident"
+					}
 				]
 			}
 		]
@@ -4901,6 +8324,20 @@
 						"a": "ただ",
 						"b": "だって"
 					}
+				],
+				"words": [
+					{
+						"jp": "部屋",
+						"kana": "へや",
+						"cn": "房间",
+						"en": "a room"
+					},
+					{
+						"jp": "駅",
+						"kana": "えき",
+						"cn": "车站",
+						"en": "station"
+					}
 				]
 			},
 			{
@@ -4918,7 +8355,8 @@
 						"a": "というのは",
 						"b": "ということは"
 					}
-				]
+				],
+				"words": []
 			},
 			{
 				"n": 3,
@@ -4934,6 +8372,44 @@
 					{
 						"a": "ただし",
 						"b": "したがって"
+					}
+				],
+				"words": [
+					{
+						"jp": "出席する",
+						"kana": "しゅっせき",
+						"cn": "出席",
+						"en": "attend"
+					},
+					{
+						"jp": "分",
+						"kana": "ふん",
+						"cn": "分钟",
+						"en": "minute"
+					},
+					{
+						"jp": "以上",
+						"kana": "いじょう",
+						"cn": "以上",
+						"en": "not less than"
+					},
+					{
+						"jp": "人",
+						"kana": "ひと",
+						"cn": "人",
+						"en": "person"
+					},
+					{
+						"jp": "試験",
+						"kana": "しけん",
+						"cn": "试验；考试",
+						"en": "test, exam"
+					},
+					{
+						"jp": "受験",
+						"kana": "じゅけん",
+						"cn": "应试",
+						"en": "an entrance examination"
 					}
 				]
 			},
@@ -4952,6 +8428,14 @@
 						"a": "というのは",
 						"b": "ということは"
 					}
+				],
+				"words": [
+					{
+						"jp": "位",
+						"kana": "くらい",
+						"cn": "地位、程度",
+						"en": "rank"
+					}
 				]
 			},
 			{
@@ -4969,6 +8453,14 @@
 						"a": "したがって",
 						"b": "ただし"
 					}
+				],
+				"words": [
+					{
+						"jp": "年末年始",
+						"kana": "ねんまつねんし",
+						"cn": "年底和年初",
+						"en": ""
+					}
 				]
 			},
 			{
@@ -4980,7 +8472,8 @@
 				"translation_en": "I have played golf since I was a child. That said, I never properly learned — it's self-taught.",
 				"pointIndexes": [
 					3
-				]
+				],
+				"words": []
 			},
 			{
 				"n": 7,
@@ -4991,6 +8484,14 @@
 				"translation_en": "I've been exhausted lately. That's because I'm too busy, and I have worries, so I can't sleep even if I try.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "最近",
+						"kana": "さいきん",
+						"cn": "最近",
+						"en": "recently"
+					}
 				]
 			}
 		]
@@ -5012,6 +8513,20 @@
 						"a": "すると",
 						"b": "さて"
 					}
+				],
+				"words": [
+					{
+						"jp": "両親",
+						"kana": "りょうしん",
+						"cn": "双亲、父母",
+						"en": "parents"
+					},
+					{
+						"jp": "妹",
+						"kana": "いもうと",
+						"cn": "（我的）妹妹",
+						"en": "younger sister"
+					}
 				]
 			},
 			{
@@ -5028,6 +8543,14 @@
 					{
 						"a": "すると",
 						"b": "もっとも"
+					}
+				],
+				"words": [
+					{
+						"jp": "話",
+						"kana": "はなし",
+						"cn": "话／说话",
+						"en": "talk"
 					}
 				]
 			},
@@ -5046,6 +8569,26 @@
 						"a": "なお",
 						"b": "さて"
 					}
+				],
+				"words": [
+					{
+						"jp": "市民",
+						"kana": "しみん",
+						"cn": "市民；公民",
+						"en": "citizen"
+					},
+					{
+						"jp": "参加",
+						"kana": "さんか",
+						"cn": "参加",
+						"en": "participate"
+					},
+					{
+						"jp": "希望",
+						"kana": "きぼう",
+						"cn": "希望",
+						"en": "hope"
+					}
 				]
 			},
 			{
@@ -5062,6 +8605,20 @@
 					{
 						"a": "さて",
 						"b": "そこで"
+					}
+				],
+				"words": [
+					{
+						"jp": "質問する",
+						"kana": "しつもんする",
+						"cn": "质询，提问",
+						"en": "ask questions"
+					},
+					{
+						"jp": "次回",
+						"kana": "じかい",
+						"cn": "下次",
+						"en": "the next time"
 					}
 				]
 			},
@@ -5080,6 +8637,14 @@
 						"a": "なお",
 						"b": "すると"
 					}
+				],
+				"words": [
+					{
+						"jp": "曲",
+						"kana": "きょく",
+						"cn": "（音）歌曲",
+						"en": "a piece of music"
+					}
 				]
 			},
 			{
@@ -5091,6 +8656,14 @@
 				"translation_en": "Something felt different; I opened the window, and snow was falling softly.",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "何",
+						"kana": "なに",
+						"cn": "什么",
+						"en": "what"
+					}
 				]
 			},
 			{
@@ -5102,6 +8675,14 @@
 				"translation_en": "Thank you for gathering despite being busy. Now then, today's theme…",
 				"pointIndexes": [
 					3
+				],
+				"words": [
+					{
+						"jp": "今日",
+						"kana": "きょう",
+						"cn": "今天",
+						"en": "today"
+					}
 				]
 			}
 		]
@@ -5127,6 +8708,20 @@
 						"a": "それでも",
 						"b": "要するに"
 					}
+				],
+				"words": [
+					{
+						"jp": "人",
+						"kana": "ひと",
+						"cn": "人",
+						"en": "person"
+					},
+					{
+						"jp": "仕事",
+						"kana": "しごと",
+						"cn": "工作",
+						"en": "work"
+					}
 				]
 			},
 			{
@@ -5148,7 +8743,8 @@
 						"a": "それなら",
 						"b": "それでも"
 					}
-				]
+				],
+				"words": []
 			},
 			{
 				"n": 3,
@@ -5159,6 +8755,14 @@
 				"translation_en": "My friend's job is dangerous, dirty, and tough as well.",
 				"pointIndexes": [
 					2
+				],
+				"words": [
+					{
+						"jp": "仕事",
+						"kana": "しごと",
+						"cn": "工作",
+						"en": "work"
+					}
 				]
 			},
 			{
@@ -5170,7 +8774,8 @@
 				"translation_en": "Incidentally, that kind of work is commonly called “3K.”",
 				"pointIndexes": [
 					3
-				]
+				],
+				"words": []
 			},
 			{
 				"n": 5,
@@ -5181,7 +8786,8 @@
 				"translation_en": "In other words there are three “ki,” that is, three K's.",
 				"pointIndexes": [
 					3
-				]
+				],
+				"words": []
 			}
 		]
 	}

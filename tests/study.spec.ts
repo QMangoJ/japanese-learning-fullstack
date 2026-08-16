@@ -284,7 +284,7 @@ test.describe("study navigation", () => {
 		await expect(page.locator(".listening-detail, .listening-player").first()).toBeVisible({ timeout: 15_000 });
 		await expect(page.locator(".listening-lesson, .listening-player").first()).toBeVisible({ timeout: 15_000 });
 		await expect(page.getByRole("button", { name: /下一节|Next/ })).toBeVisible();
-		await expect(page.locator(".daynav-fab.next")).toBeVisible();
+		await expect(page.locator("button.daynav-fab.next")).toBeVisible();
 	});
 });
 

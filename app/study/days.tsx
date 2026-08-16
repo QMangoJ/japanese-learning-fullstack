@@ -115,12 +115,22 @@ function rangedList(n: string | number) {
 		: nums.map(Number);
 }
 
-function AnsBlock({ id, children }: { id: string; children: ReactNode }) {
+function AnsBlock({
+	id,
+	children,
+	showLabel,
+	hideLabel,
+}: {
+	id: string;
+	children: ReactNode;
+	showLabel?: string;
+	hideLabel?: string;
+}) {
 	const [show, setShow] = useState(false);
 	return (
 		<>
 			<button className="ansbtn" data-ans={id} onClick={() => setShow((v) => !v)}>
-				{show ? lx("隐藏答案", "Hide answer") : lx("显示答案", "Show answer")}
+				{show ? hideLabel || lx("隐藏答案", "Hide answer") : showLabel || lx("显示答案", "Show answer")}
 			</button>
 			<div className={`answer${show ? " show" : ""}`} id={id}>
 				{children}
@@ -134,11 +144,15 @@ function QuizOpts({
 	correct,
 	onWrong,
 	children,
+	foldNote,
+	foldId,
 }: {
 	item: any;
 	correct?: number | null;
 	onWrong?: (picked: number, item: any) => void;
 	children?: ReactNode;
+	foldNote?: boolean;
+	foldId?: string;
 }) {
 	const [picked, setPicked] = useState<number | null>(null);
 	const opts: string[] = item.opts_r || item.opts || [];
@@ -187,7 +201,19 @@ function QuizOpts({
 					{picked === correct ? lx("✓ 答对了", "✓ Correct") : lx("✗ 答错了", "✗ Incorrect")}
 				</div>
 			) : null}
-			{answered && children ? <div className="qz-note show">{children}</div> : null}
+			{answered && children ? (
+				foldNote ? (
+					<AnsBlock
+						id={foldId || `quiz-note-${item.n}`}
+						showLabel={lx("显示答案与解析", "Show answer & explanation")}
+						hideLabel={lx("隐藏答案与解析", "Hide answer & explanation")}
+					>
+						{children}
+					</AnsBlock>
+				) : (
+					<div className="qz-note show">{children}</div>
+				)
+			) : null}
 		</>
 	);
 }
@@ -402,9 +428,25 @@ function DailyPointRefs({ info, day, w, d }: { info: any; day: any; w: number; d
 	);
 }
 
+function WordGloss({ words }: { words?: { jp?: string; kana?: string; cn?: string; en?: string }[] }) {
+	const list = (words || []).filter((word) => word.jp && (LANG === "en" ? word.en || word.cn : word.cn || word.en));
+	if (!list.length) return null;
+	return (
+		<div className="an-words daily-words">
+			<div className="h">{lx("生词", "Vocabulary")}</div>
+			{list.map((word, index) => (
+				<div className="an-word" key={`${word.jp}-${index}`}>
+					<span className="j jp">{word.jp}</span>
+					{word.kana ? <span className="k jp">{word.kana}</span> : null}
+					<span className="m">{lx(word.cn, word.en)}</span>
+				</div>
+			))}
+		</div>
+	);
+}
+
 function DailyExercisePanels({ info, item, day, w, d }: { info: any; item: any; day: any; w: number; d: number }) {
-	const [showTrans, setShowTrans] = useState(false);
-	const [showAnalysis, setShowAnalysis] = useState(false);
+	const [open, setOpen] = useState(false);
 	if (!info) return null;
 	const reason = info.type === "order" ? <DailyOrderReason info={info} item={item} /> : <DailyChoiceReason info={info} day={day} />;
 	const base = `daily-${w}-${d}-${item.n}`;
@@ -412,35 +454,32 @@ function DailyExercisePanels({ info, item, day, w, d }: { info: any; item: any; 
 		<div className="daily-explain">
 			<div className="daily-toggle-controls">
 				<FoldToggle
-					id={`${base}-translation`}
-					kind="translation"
-					show={lx("显示原句翻译", "Show sentence translation")}
-					hide={lx("隐藏原句翻译", "Hide sentence translation")}
-					open={showTrans}
-					onToggle={() => setShowTrans((v) => !v)}
-				/>
-				<FoldToggle
-					id={`${base}-analysis`}
+					id={base}
 					kind="analysis"
-					show={lx("显示解析", "Show explanation")}
-					hide={lx("隐藏解析", "Hide explanation")}
-					open={showAnalysis}
-					onToggle={() => setShowAnalysis((v) => !v)}
+					show={lx("显示答案与解析", "Show answer & explanation")}
+					hide={lx("隐藏答案与解析", "Hide answer & explanation")}
+					open={open}
+					onToggle={() => setOpen((v) => !v)}
 				/>
 			</div>
-			<FoldBody id={`${base}-translation`} kind="translation" open={showTrans}>
-				<b>{lx("原句翻译：", "Sentence translation: ")}</b>
-				{lx(info.translation, info.translation_en)}
-			</FoldBody>
-			<FoldBody id={`${base}-analysis`} kind="analysis" open={showAnalysis}>
+			<FoldBody id={base} kind="analysis" open={open}>
 				<div className="an-answer-key">
 					{lx("正确答案：", "Correct answer: ")}
 					<span className="jp">{info.answer}</span>
 				</div>
-				<div className="an-complete">
-					<b>{lx("完整句：", "Complete sentence: ")}</b>
-					<span className="jp">{info.completed}</span>
-				</div>
+				{info.completed ? (
+					<div className="an-complete">
+						<b>{lx("完整句：", "Complete sentence: ")}</b>
+						<span className="jp">{info.completed}</span>
+					</div>
+				) : null}
+				{lx(info.translation, info.translation_en) ? (
+					<div className="an-trans">
+						<b>{lx("原句翻译：", "Sentence translation: ")}</b>
+						{lx(info.translation, info.translation_en)}
+					</div>
+				) : null}
+				<WordGloss words={info.words} />
 				{reason}
 				<DailyPointRefs info={info} day={day} w={w} d={d} />
 			</FoldBody>
@@ -516,7 +555,7 @@ function linkedGrammarUsage(link?: string) {
 	return point ? lx(point.usage_cn, point.usage_en) : "";
 }
 
-function ExamNote({ a, item }: { a: any; item: any }) {
+function ExamNote({ a, item, flat = false }: { a: any; item: any; flat?: boolean }) {
 	const opts: string[] = item.opts_r || item.opts || [];
 	const optionTranslations = LANG === "en" ? a.option_translations_en || [] : a.option_translations || [];
 	const why = LANG === "en"
@@ -525,8 +564,62 @@ function ExamNote({ a, item }: { a: any; item: any }) {
 				/放入本句后，接续、活用形式或语义不符合题意|接续和句意都成立/.test(text) ? "" : text,
 			);
 	const point = LANG === "en" ? a.point_en || linkedGrammarUsage(a.link) : a.point;
-	const words = LANG === "en" ? (a.words || []).filter((v: any) => v.en) : a.words || [];
 	const hasOptionDetails = opts.some((_: any, i: number) => why[i] || optionTranslations[i]);
+	const extra = hasOptionDetails || !!point || !!(a.parse || []).length || !!(a.build || []).length;
+	const detail = extra ? (
+		<>
+			{hasOptionDetails ? (
+				<ol className="an-why">
+					{opts.map((opt, i) => (
+						<li className={(i + 1) === a.ans ? "ok" : ""} key={i}>
+							<span className="o jp">
+								<Rich html={String(opt || "")} />
+							</span>
+							{optionTranslations[i] ? <span className="an-opt-trans">{optionTranslations[i]}</span> : null}
+							{why[i] ? <span className="w">{why[i]}</span> : null}
+						</li>
+					))}
+				</ol>
+			) : null}
+			{point ? (
+				<div className="an-point">
+					{lx("要点：", "Key point: ")}
+					{point}
+				</div>
+			) : null}
+			{LANG !== "en" && (a.parse || []).length ? (
+				<>
+					<div className="an-h">逐节拆解</div>
+					<div className="an-words an-parse">
+						{a.parse.map((v: any, i: number) => (
+							<div className="an-word" key={i}>
+								<span className="j jp">{v.t}</span>
+								{v.k && v.k !== "—" ? <span className="k jp">{v.k}</span> : null}
+								<span className="m">{v.r}</span>
+							</div>
+						))}
+					</div>
+				</>
+			) : null}
+			{LANG !== "en" && (a.build || []).length ? (
+				<>
+					<div className="an-h">怎么一层层搭起来的</div>
+					<ol className="an-build">
+						{a.build.map((s: any, i: number) => (
+							<li key={i}>
+								<span className="a jp">
+									{i ? "＋" : ""}
+									{s.add}
+								</span>
+								<span className="m">{s.mean}</span>
+								{s.res === s.add ? null : <div className="r jp">{s.res}</div>}
+							</li>
+						))}
+					</ol>
+				</>
+			) : null}
+		</>
+	) : null;
 	return (
 		<>
 			{a.note ? (
@@ -535,77 +628,21 @@ function ExamNote({ a, item }: { a: any; item: any }) {
 				</div>
 			) : null}
 			{lx(a.trans, a.trans_en) ? <div className="an-trans">{lx(a.trans, a.trans_en)}</div> : null}
+			<WordGloss words={a.words} />
 			{a.link ? (
 				<div className="an-link" onClick={() => navTo(a.link)}>
 					📘 <SrcLabel link={a.link} /> ›
 				</div>
 			) : null}
-			{hasOptionDetails || point || words.length ? (
-				<details className="an-more">
-					<summary>{lx("详细解析", "Detailed explanation")}</summary>
-					{hasOptionDetails ? (
-						<ol className="an-why">
-							{opts.map((opt, i) => (
-								<li className={(i + 1) === a.ans ? "ok" : ""} key={i}>
-									<span className="o jp">
-										<Rich html={String(opt || "")} />
-									</span>
-									{optionTranslations[i] ? <span className="an-opt-trans">{optionTranslations[i]}</span> : null}
-									{why[i] ? <span className="w">{why[i]}</span> : null}
-								</li>
-							))}
-						</ol>
-					) : null}
-					{point ? (
-						<div className="an-point">
-							{lx("要点：", "Key point: ")}
-							{point}
-						</div>
-					) : null}
-					{LANG !== "en" && (a.parse || []).length ? (
-						<>
-							<div className="an-h">逐节拆解</div>
-							<div className="an-words an-parse">
-								{a.parse.map((v: any, i: number) => (
-									<div className="an-word" key={i}>
-										<span className="j jp">{v.t}</span>
-										{v.k && v.k !== "—" ? <span className="k jp">{v.k}</span> : null}
-										<span className="m">{v.r}</span>
-									</div>
-								))}
-							</div>
-						</>
-					) : null}
-					{LANG !== "en" && (a.build || []).length ? (
-						<>
-							<div className="an-h">怎么一层层搭起来的</div>
-							<ol className="an-build">
-								{a.build.map((s: any, i: number) => (
-									<li key={i}>
-										<span className="a jp">
-											{i ? "＋" : ""}
-											{s.add}
-										</span>
-										<span className="m">{s.mean}</span>
-										{s.res === s.add ? null : <div className="r jp">{s.res}</div>}
-									</li>
-								))}
-							</ol>
-						</>
-					) : null}
-					{words.length ? (
-						<div className="an-words">
-							<div className="h">{lx("生词", "Vocabulary")}</div>
-							{words.map((v: any, i: number) => (
-								<div className="an-word" key={i}>
-									<span className="j jp">{v.jp}</span>
-									<span className="k jp">{v.kana}</span>
-									<span className="m">{lx(v.cn, v.en)}</span>
-								</div>
-							))}
-						</div>
-					) : null}
-				</details>
+			{detail ? (
+				flat ? (
+					detail
+				) : (
+					<details className="an-more">
+						<summary>{lx("详细解析", "Detailed explanation")}</summary>
+						{detail}
+					</details>
+				)
 			) : null}
 		</>
 	);
@@ -704,10 +741,11 @@ function FallbackExamNote({ item, a, module, section }: { item: any; a: any; mod
 function ExamExplanation({ a, item, module, section }: { a: any; item: any; module: string; section: string }) {
 	const hasExpanded = !!((a.why || []).length || a.point || (a.words || []).length || (a.parse || []).length || (a.build || []).length);
 	const hasNote = !!(a.note || a.trans || a.trans_en || a.link || hasExpanded);
+	const flat = module === "grammar";
 	return (
 		<>
-			<div className="an-explain-title">{lx("答案解析", "Answer explanation")}</div>
-			{hasNote ? <ExamNote a={a} item={item} /> : <FallbackExamNote item={item} a={a} module={module} section={section} />}
+			{flat ? null : <div className="an-explain-title">{lx("答案解析", "Answer explanation")}</div>}
+			{hasNote ? <ExamNote a={a} item={item} flat={flat} /> : <FallbackExamNote item={item} a={a} module={module} section={section} />}
 			{hasNote && !hasExpanded ? <FallbackExamNote item={item} a={a} module={module} section={section} /> : null}
 		</>
 	);
@@ -817,6 +855,8 @@ function ExamGrammar({ day, w }: { day: any; w: number }) {
 					<QuizOpts
 						item={{ ...it, _correct: a.ans }}
 						correct={a.ans}
+						foldNote
+						foldId={`exam-${w}-${it.n}`}
 						onWrong={(picked) => logWrong({ ...it, _correct: a.ans }, picked)}
 					>
 						{a ? <ExamExplanation a={a} item={it} module="grammar" section={section} /> : null}
@@ -831,7 +871,11 @@ function ExamGrammar({ day, w }: { day: any; w: number }) {
 							))}
 						</div>
 						{a ? (
-							<AnsBlock id={`exam-${w}-${it.n}`}>
+							<AnsBlock
+								id={`exam-${w}-${it.n}`}
+								showLabel={lx("显示答案与解析", "Show answer & explanation")}
+								hideLabel={lx("隐藏答案与解析", "Hide answer & explanation")}
+							>
 								<b>
 									{lx("答案", "Answer")}：{a.ans}
 								</b>
@@ -1493,7 +1537,8 @@ export function DayNav({ w, d, mod }: { w: number; d: number; mod?: string }) {
 			</span>
 		);
 		return (
-			<a
+			<button
+				type="button"
 				className={`daynav-fab ${dir}`}
 				title={label}
 				aria-label={label}
@@ -1510,7 +1555,7 @@ export function DayNav({ w, d, mod }: { w: number; d: number; mod?: string }) {
 						<span className="ar">›</span>
 					</>
 				)}
-			</a>
+			</button>
 		);
 	};
 	return (

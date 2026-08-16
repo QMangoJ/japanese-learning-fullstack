@@ -74,13 +74,17 @@ header.top h1{font-size:16px;margin:0;font-weight:700;flex:1;white-space:nowrap;
 /* 翻页钮悬浮在两侧：不占正文高度，滚到哪儿都能翻。
    手机没有边距，只放一个半透明圆钮；桌面正文两侧有留白，展开成带日期的胶囊。 */
 /* 手机上贴在底栏正上方的两个角：竖直居中会盖住正文首字，而这里正好是拇指位 */
-.daynav-fab{position:fixed;bottom:calc(var(--bottom-nav-height) + env(safe-area-inset-bottom));z-index:22;
+.daynav-fab{position:fixed;bottom:calc(var(--bottom-nav-height) + env(safe-area-inset-bottom) + 10px);z-index:35;
   display:flex;align-items:center;gap:7px;justify-content:center;
   min-width:44px;min-height:44px;padding:0 11px;
   background:var(--card);border:1px solid var(--line);border-radius:999px;box-shadow:var(--shadow);
   color:var(--accent);font-size:21px;font-weight:800;line-height:1;cursor:pointer;opacity:.88;
   -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
-.daynav-fab:hover,.daynav-fab:active{opacity:1;border-color:var(--accent)}
+.daynav-fab{touch-action:manipulation;-webkit-tap-highlight-color:transparent;appearance:none;font:inherit}
+.daynav-fab:active{opacity:1;border-color:var(--accent)}
+@media (hover:hover) and (pointer:fine){
+  .daynav-fab:hover{opacity:1;border-color:var(--accent)}
+}
 .daynav-fab.prev{left:calc(10px + env(safe-area-inset-left))}
 .daynav-fab.next{right:calc(10px + env(safe-area-inset-right))}
 .daynav-fab .lb{display:none;font-size:13px;font-weight:600;color:var(--ink);white-space:nowrap}
@@ -170,7 +174,7 @@ main{max-width:760px;margin:0 auto;padding:14px}
 .daily-qline .n{flex:0 0 auto;margin-top:2px}
 .daily-explain{margin:9px 0 0 28px}
 .daily-toggle-controls{display:flex;align-items:center;gap:7px;min-height:32px}
-.daily-toggle{display:inline-flex;align-items:center;justify-content:center;width:112px;min-height:30px;
+.daily-toggle{display:inline-flex;align-items:center;justify-content:center;width:auto;min-width:148px;min-height:30px;
   border:1px solid var(--blue);border-radius:999px;padding:3px 12px;color:var(--blue);
   background:var(--blue-soft);font-family:inherit;font-size:12.5px;font-weight:700;line-height:1.2;
   cursor:pointer;user-select:none;box-sizing:border-box;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
@@ -215,7 +219,7 @@ main{max-width:760px;margin:0 auto;padding:14px}
 @media(max-width:640px){
   .daily-explain{margin-left:0}
   .daily-toggle-controls{min-height:36px}
-  .daily-toggle{width:112px;min-height:34px;padding:5px 12px}
+  .daily-toggle{width:auto;min-width:156px;min-height:34px;padding:5px 12px}
   .daily-translation{width:auto;min-width:132px}
   .daily-toggle-body{padding:10px}
   .daily-point-ref{grid-template-columns:1fr auto}
@@ -258,6 +262,7 @@ main{max-width:760px;margin:0 auto;padding:14px}
 .an-why .w{color:var(--sub);min-width:0}
 @media(max-width:640px){.an-why li{grid-template-columns:15px 1fr}.an-why .o,.an-opt-trans,.an-why .w{grid-column:2;max-width:none}.an-opt-trans{margin-top:-4px}}
 .an-point{margin-top:7px;background:var(--blue-soft);color:var(--blue);border-radius:6px;padding:6px 9px;font-size:13px}
+.daily-words{margin-top:10px}
 .an-words{margin-top:7px;display:flex;flex-direction:column;gap:1px;font-size:12.5px}
 .an-h,.an-words .h{font-size:11px;color:var(--sub);font-weight:700;letter-spacing:.06em;margin-top:8px}
 /* 逐节拆解：说明比生词的释义长得多，挤成一栏会碎成一堆两三字的行，
