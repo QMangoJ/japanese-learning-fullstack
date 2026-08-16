@@ -134,6 +134,25 @@ test.describe("study navigation", () => {
 		await expect(page.locator(".an-trans, .qz-note").first()).toBeVisible();
 	});
 
+	test("shows N4 vocab weekend explanations after answering", async ({ page }, testInfo) => {
+		await waitForStudy(page);
+		if (testInfo.project.name === "desktop-chrome") {
+			await page.locator(".side-seg button", { hasText: "N4" }).click();
+		} else {
+			await page.locator("#lvChip").click();
+			await page.locator(".sheet-item", { hasText: "N4" }).click();
+		}
+		await pickType(page, "vocab");
+		await expect(page.locator(".week-card").first()).toBeVisible({ timeout: 15_000 });
+		const examDay = page.locator(".day-item", { hasText: /7日目|Day 7|实战|Test/ }).first();
+		if (await examDay.isVisible()) await examDay.click();
+		else await page.locator(".day-item").last().click();
+		await expect(page.locator(".opt-btn").first()).toBeVisible({ timeout: 15_000 });
+		await page.locator(".opt-btn").first().click();
+		await expect(page.locator(".an-trans").first()).toBeVisible();
+		await expect(page.locator(".an-trans").first()).toContainText(/高兴|happy/i);
+	});
+
 	test("shows English usage and examples on N3 grammar days", async ({ page }) => {
 		await waitForStudy(page);
 		await page.locator(".day-item").first().click();

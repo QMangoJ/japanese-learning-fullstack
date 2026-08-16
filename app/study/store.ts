@@ -1396,6 +1396,16 @@ async function bootN4() {
 		g4.daily_explanations = n4DailyExplanations || {};
 		v4.daily_translations = n4VocabKanjiTranslations.vocab || {};
 		k4.daily_translations = n4VocabKanjiTranslations.kanji || {};
+		const [n4VocabExam, n4KanjiExam] = await Promise.all([
+			fetch("/data/n4-vocab-exam-explanations.json")
+				.then((r) => (r.ok ? r.json() : {}))
+				.catch(() => ({})),
+			fetch("/data/n4-kanji-exam-explanations.json")
+				.then((r) => (r.ok ? r.json() : {}))
+				.catch(() => ({})),
+		]);
+		attachWeekendKaisetsu(v4, n4VocabExam);
+		attachWeekendKaisetsu(k4, n4KanjiExam);
 		G4 = g4;
 		V4 = v4;
 		K4 = k4;
