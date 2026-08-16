@@ -140,7 +140,7 @@ export default function Landing() {
 					<div className="section-label"><h2>常见问题</h2><span>FAQ</span></div>
 					<details open><summary>现在可以学到什么？</summary><p>目前知识库中的 N4、N3、N2 课程均可直接使用，包含课程内容、练习、答案、收藏与错题本。</p></details>
 					<details><summary>每天需要花多长时间？</summary><p>一「天」的量大约二十到三十分钟，包含阅读、做题和对答案。</p></details>
-					<details><summary>需要注册吗？</summary><p>目前不用。学习进度和收藏保存在设备中；账户系统上线后，会提供跨设备同步与订阅权限。</p></details>
+					<details><summary>需要注册吗？</summary><p>不用也可以学，课程和进度都在这台设备上。想跨设备同步收藏和错题，用 Google 登录即可。</p></details>
 				</section>
 			</main>
 			<footer className="landing-footer"><div className="landing-wrap"><span>日本語上手</span><StudyLink>开始学习 →</StudyLink></div></footer>

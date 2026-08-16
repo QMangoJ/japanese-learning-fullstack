@@ -14,6 +14,23 @@ html.theme-dark{color-scheme:dark;
   --shadow:0 1px 3px rgba(0,0,0,.45);}
 .theme-toggle{flex:none;border:1px solid var(--line);background:var(--card);color:var(--sub);border-radius:999px;width:32px;height:32px;padding:0;font-size:15px;line-height:1;cursor:pointer}
 .theme-toggle.on{background:var(--amber-soft);border-color:var(--amber);color:var(--amber)}
+.account-login{flex:none;display:flex;align-items:center;gap:5px;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:4px 10px 4px 6px;font-size:12px;font-weight:700;text-decoration:none;min-height:32px;line-height:1;cursor:pointer}
+.account-login__g{width:20px;height:20px;border-radius:999px;background:#fff;color:#4285f4;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
+.account-wrap{position:relative;flex:none}
+.account-btn{flex:none;width:32px;height:32px;border-radius:999px;border:1px solid var(--line);padding:0;overflow:hidden;background:var(--blue-soft);color:var(--blue);cursor:pointer;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.account-btn img{width:100%;height:100%;object-fit:cover;display:block}
+.account-mask{position:fixed;inset:0;z-index:29;background:transparent;border:0;padding:0;margin:0}
+.account-pop{position:absolute;right:0;top:calc(100% + 8px);z-index:30;width:228px;background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);padding:12px}
+.account-pop__name{font-size:14px;font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.account-pop__email{font-size:12px;color:var(--sub);margin-top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.account-pop__hint{font-size:12px;color:var(--sub);margin:8px 0 10px;line-height:1.45}
+.account-pop__out{display:block;text-align:center;border:1px solid var(--line);border-radius:999px;padding:6px 10px;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none}
+.auth-banner{display:flex;align-items:center;justify-content:space-between;gap:8px;background:var(--red-soft);color:var(--red);padding:8px 12px;font-size:13px}
+.auth-banner button{border:0;background:transparent;color:inherit;font-size:18px;line-height:1;cursor:pointer}
+@media(max-width:480px){
+  .account-login{padding-left:6px;padding-right:6px}
+  .account-login__lbl{display:none}
+}
 *{box-sizing:border-box; -webkit-tap-highlight-color:transparent}
 html{margin:0;padding:0;max-width:100%;overflow-x:clip;background:var(--bg)}
 body{margin:0;padding:0;max-width:100%;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans","Hiragino Kaku Gothic ProN","Microsoft YaHei","Noto Sans CJK SC",sans-serif;font-size:16px;line-height:1.65;padding-bottom:calc(var(--bottom-nav-height) + env(safe-area-inset-bottom));overflow-wrap:break-word}

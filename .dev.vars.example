@@ -1,0 +1,13 @@
+# Copy to .dev.vars (gitignored) for local Google sign-in.
+# Google Cloud Console → APIs & Services → Credentials → OAuth 2.0 Client ID (Web application)
+# Authorized JavaScript origins:
+#   http://localhost:5173
+#   https://YOUR_WORKER.workers.dev
+# Authorized redirect URIs:
+#   http://localhost:5173/auth/google/callback
+#   https://YOUR_WORKER.workers.dev/auth/google/callback
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+# Long random string used to sign session cookies:
+#   openssl rand -hex 32
+SESSION_SECRET=
