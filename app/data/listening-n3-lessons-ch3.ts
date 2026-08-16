@@ -94,7 +94,7 @@ export const chapter3Lessons: readonly ListeningLesson[] = [
 				items: [
 					{ title: "① JR線／私鉄／地下鉄、各線は順調に動いています。", lines: ["JR：JR line　　私鉄：private line　　地下鉄：subway"] },
 					{ title: "② 〜で事故のため渋滞しています。", lines: ["渋滞：traffic jam　拥堵"] },
-					{ title: "③ ABC航空24便パリ発は1時間10分遅れて11時50分に到着の予定です。" },
+					{ title: "③ ABC航空24便パリ発は1時間10分遅れて11時50分に到着の予定です。", lines: ["便：flight　航班　　定刻：on schedule　正点　　遅れる：be delayed　晚点"] },
 				],
 			},
 			{ type: "h", jp: "れんしゅう", cn: "答案在 p.104" },

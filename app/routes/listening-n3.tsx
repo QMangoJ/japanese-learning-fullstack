@@ -135,10 +135,10 @@ function ListeningPlayer({ cue, audioRef, onPlaybackChange }: { cue: AudioCue; a
 
 const RUBY = /\{([^{}|]+)\|([^{}|]+)\}/g;
 
-function Jp({ text }: { text: string }) {
+function Jp({ text }: { text?: string }) {
 	const parts: (string | { base: string; reading: string })[] = [];
 	let cursor = 0;
-	for (const match of text.matchAll(RUBY)) {
+	for (const match of String(text || "").matchAll(RUBY)) {
 		if (match.index! > cursor) parts.push(text.slice(cursor, match.index));
 		parts.push({ base: match[1], reading: match[2] });
 		cursor = match.index! + match[0].length;
@@ -160,10 +160,10 @@ function Jp({ text }: { text: string }) {
 	);
 }
 
-function Line({ text }: { text: string }) {
+function Line({ text }: { text?: string }) {
 	return (
 		<>
-			{text.split("\n").map((line, index) => (
+			{String(text || "").split("\n").map((line, index) => (
 				<Fragment key={index}>
 					{index ? <br /> : null}
 					<Jp text={line} />
@@ -246,7 +246,7 @@ function LessonBlocks({
 							<div className="listening-lesson__steps" key={index}>
 								<span>{block.label}</span>
 								<ol>
-									{block.items.map((item) => (
+									{(block.items || []).map((item) => (
 										<li key={item}>
 											<Jp text={item} />
 										</li>
@@ -260,7 +260,7 @@ function LessonBlocks({
 								{block.title ? <b>{block.title}</b> : null}
 								<table>
 									<tbody>
-										{block.rows.map((row, rowIndex) => (
+										{(block.rows || []).map((row, rowIndex) => (
 											<tr key={rowIndex}>
 												{row.map((cell, cellIndex) => (
 													<td key={cellIndex}>
@@ -279,7 +279,7 @@ function LessonBlocks({
 								{block.title ? <b>{block.title}</b> : null}
 								<table>
 									<tbody>
-										{block.rows.map((row) => (
+										{(block.rows || []).map((row) => (
 											<tr key={row.k}>
 												<th>
 													<Jp text={row.k} />
@@ -298,12 +298,12 @@ function LessonBlocks({
 						return (
 							<div className="listening-lesson__boxes" key={index}>
 								{block.title ? <h3 className="listening-lesson__h">{block.title}</h3> : null}
-								{block.items.map((item) => (
+								{(block.items || []).map((item) => (
 									<article key={item.title}>
 										<b>
 											<Jp text={item.title} />
 										</b>
-										{item.lines.map((line) => (
+										{(item.lines || []).map((line) => (
 											<p key={line}>
 												<Line text={line} />
 											</p>
@@ -328,7 +328,7 @@ function LessonBlocks({
 										<Jp text={block.title} />
 									</b>
 								) : null}
-								{block.lines.map((line) => (
+								{(block.lines || []).map((line) => (
 									<p key={line}>
 										<Line text={line} />
 									</p>
