@@ -200,7 +200,7 @@ function LessonBlocks({
 									{block.kana ? <small>{block.kana}</small> : null}
 								</h2>
 								<p>
-									{[block.en, showCn ? block.cn : null, block.kr].filter(Boolean).join(" · ")}
+									{[block.en, showCn ? block.cn : null].filter(Boolean).join(" · ")}
 								</p>
 							</header>
 						);
@@ -212,7 +212,6 @@ function LessonBlocks({
 								</b>
 								{block.en ? <p>{block.en}</p> : null}
 								{showCn && block.cn ? <p>{block.cn}</p> : null}
-								{block.kr ? <p>{block.kr}</p> : null}
 							</div>
 						);
 					case "h":
@@ -238,7 +237,6 @@ function LessonBlocks({
 								</b>
 								{block.en ? <p>{block.en}</p> : null}
 								{showCn && block.cn ? <p>{block.cn}</p> : null}
-								{block.kr ? <p>{block.kr}</p> : null}
 							</aside>
 						);
 					case "steps":

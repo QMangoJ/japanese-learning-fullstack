@@ -6,12 +6,11 @@ export type ListeningLessonBlock =
 			readonly kana?: string;
 			readonly en?: string;
 			readonly cn?: string;
-			readonly kr?: string;
 	  }
-	| { readonly type: "slogan"; readonly jp: string; readonly en?: string; readonly cn?: string; readonly kr?: string }
+	| { readonly type: "slogan"; readonly jp: string; readonly en?: string; readonly cn?: string }
 	| { readonly type: "h"; readonly jp: string; readonly cn?: string }
 	| { readonly type: "p"; readonly jp: string; readonly cn?: string; readonly en?: string }
-	| { readonly type: "tip"; readonly jp: string; readonly en?: string; readonly cn?: string; readonly kr?: string }
+	| { readonly type: "tip"; readonly jp: string; readonly en?: string; readonly cn?: string }
 	| { readonly type: "steps"; readonly label: string; readonly items: readonly string[] }
 	| { readonly type: "table"; readonly title?: string; readonly rows: readonly (readonly string[])[] }
 	| {

@@ -5,7 +5,7 @@ import type { ListeningLesson } from "./listening-n3-lesson-types";
 export const chapter4Lessons: readonly ListeningLesson[] = [
 	{
 		blocks: [
-			{ type: "hero", no: 1, title: "人や物のようす", kana: "ひと もの", en: "Describing People and Objects", cn: "人的外貌或物的形状、状态", kr: "사람이나 사물의 모양" },
+			{ type: "hero", no: 1, title: "人や物のようす", kana: "ひと もの", en: "Describing People and Objects", cn: "人的外貌或物的形状、状态" },
 			{
 				type: "slogan",
 				jp: "音声を聞く前に、イラストの中の違いを見つけておきましょう！",
@@ -85,7 +85,7 @@ export const chapter4Lessons: readonly ListeningLesson[] = [
 	},
 	{
 		blocks: [
-			{ type: "hero", no: 2, title: "場所・方向・位置", kana: "ばしょ ほうこう いち", en: "Place, Direction & Location", cn: "场所・方向・位置", kr: "장소・방향・위치" },
+			{ type: "hero", no: 2, title: "場所・方向・位置", kana: "ばしょ ほうこう いち", en: "Place, Direction & Location", cn: "场所・方向・位置" },
 			{
 				type: "slogan",
 				jp: "どこから数えるか、どの方向から見るかに注意しましょう！",
@@ -163,7 +163,7 @@ export const chapter4Lessons: readonly ListeningLesson[] = [
 	},
 	{
 		blocks: [
-			{ type: "hero", no: 3, title: "数・数字・計算", kana: "かず すうじ けいさん", en: "Numbers, Figures & Making Calculations", cn: "数・数字・计算", kr: "수・숫자・계산" },
+			{ type: "hero", no: 3, title: "数・数字・計算", kana: "かず すうじ けいさん", en: "Numbers, Figures & Making Calculations", cn: "数・数字・计算" },
 			{
 				type: "slogan",
 				jp: "計算がある問題でも、簡単な計算なので落ち着いて聞きましょう！",
@@ -238,7 +238,7 @@ export const chapter4Lessons: readonly ListeningLesson[] = [
 	},
 	{
 		blocks: [
-			{ type: "hero", no: 4, title: "順序・比較", kana: "じゅんじょ ひかく", en: "Order & Comparison", cn: "顺序・比较", kr: "순서・비교" },
+			{ type: "hero", no: 4, title: "順序・比較", kana: "じゅんじょ ひかく", en: "Order & Comparison", cn: "顺序・比较" },
 			{
 				type: "slogan",
 				jp: "順序を表すことばや比較を表すパターンに注意しましょう！",
@@ -319,7 +319,7 @@ export const chapter4Lessons: readonly ListeningLesson[] = [
 	},
 	{
 		blocks: [
-			{ type: "hero", no: 5, title: "まとめ問題", kana: "まとめ", en: "Review", cn: "综合练习", kr: "복습" },
+			{ type: "hero", no: 5, title: "まとめ問題", kana: "まとめ", en: "Review", cn: "综合练习" },
 			{ type: "p", jp: "時間：12分　／100　（答えは p.128〜132）", cn: "用本课学过的人物、位置、数字和顺序比较作答。先听，再打开答案和译文。", en: "12 minutes / 100 points. Use what you learned in this chapter." },
 			{ type: "h", jp: "問題I　10点×3問", cn: "先听提问，再听对话，从 1〜4 中选最恰当的一项。" },
 			{ type: "p", jp: "まず質問を聞いてください。それから話を聞いて、1〜4の中から、最もよいものを一つ選んでください。", en: "Listen to the question, then the conversation, and choose the best answer." },

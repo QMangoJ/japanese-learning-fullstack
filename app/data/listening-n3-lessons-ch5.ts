@@ -5,7 +5,7 @@ import type { ListeningLesson } from "./listening-n3-lesson-types";
 export const chapter5Lessons: readonly ListeningLesson[] = [
 	{
 		blocks: [
-			{ type: "hero", no: 1, title: "問題 I", kana: "もんだい いち", en: "Task I — Listen to the question first", cn: "先听提问再作答", kr: "문제 I" },
+			{ type: "hero", no: 1, title: "問題 I", kana: "もんだい いち", en: "Task I — Listen to the question first", cn: "先听提问再作答" },
 			{
 				type: "slogan",
 				jp: "質問をよく聞いてから答えましょう。",
@@ -76,7 +76,7 @@ export const chapter5Lessons: readonly ListeningLesson[] = [
 	},
 	{
 		blocks: [
-			{ type: "hero", no: 2, title: "問題 II", kana: "もんだい に", en: "Task II — Read the choices first", cn: "先读选项再听", kr: "문제 II" },
+			{ type: "hero", no: 2, title: "問題 II", kana: "もんだい に", en: "Task II — Read the choices first", cn: "先读选项再听" },
 			{
 				type: "slogan",
 				jp: "選択肢を先に読んでおきましょう。",
@@ -142,7 +142,7 @@ export const chapter5Lessons: readonly ListeningLesson[] = [
 	},
 	{
 		blocks: [
-			{ type: "hero", no: 3, title: "問題 III", kana: "もんだい さん", en: "Task III — Catch the main point", cn: "听整段，抓主旨", kr: "문제 III" },
+			{ type: "hero", no: 3, title: "問題 III", kana: "もんだい さん", en: "Task III — Catch the main point", cn: "听整段，抓主旨" },
 			{
 				type: "slogan",
 				jp: "話の内容を最後まで聞きましょう。",
@@ -205,7 +205,7 @@ export const chapter5Lessons: readonly ListeningLesson[] = [
 	},
 	{
 		blocks: [
-			{ type: "hero", no: 4, title: "問題 IV", kana: "もんだい よん", en: "Task IV — Choose the line that fits the scene", cn: "看图选符合场面的话", kr: "문제 IV" },
+			{ type: "hero", no: 4, title: "問題 IV", kana: "もんだい よん", en: "Task IV — Choose the line that fits the scene", cn: "看图选符合场面的话" },
 			{
 				type: "slogan",
 				jp: "場面に合う発話を選びましょう。",
@@ -255,7 +255,7 @@ export const chapter5Lessons: readonly ListeningLesson[] = [
 	},
 	{
 		blocks: [
-			{ type: "hero", no: 5, title: "問題 V", kana: "もんだい ご", en: "Task V — Instant replies", cn: "即时应答", kr: "문제 V" },
+			{ type: "hero", no: 5, title: "問題 V", kana: "もんだい ご", en: "Task V — Instant replies", cn: "即时应答" },
 			{
 				type: "slogan",
 				jp: "即時応答に慣れましょう。",

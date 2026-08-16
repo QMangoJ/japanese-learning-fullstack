@@ -3,13 +3,12 @@ import type { ListeningLesson } from "./listening-n3-lesson-types";
 export const chapter2Lessons: readonly ListeningLesson[] = [
 	{
 		blocks: [
-			{ type: "hero", no: 1, title: "何と言いますか ―発話表現―", kana: "はつわひょうげん", en: "What do you say", cn: "这时你该怎么说——提起话题", kr: "발화표현" },
+			{ type: "hero", no: 1, title: "何と言いますか ―発話表現―", kana: "はつわひょうげん", en: "What do you say", cn: "这时你该怎么说——提起话题" },
 			{
 				type: "slogan",
 				jp: "質問の中の説明部分に注意して聞きましょう。",
 				en: "Listen carefully to the explanation given as the question is read!",
 				cn: "要认真听提问中的说明部分！",
-				kr: "질문 안에 있는 설명 부분을 잘 들어야 합니다!",
 			},
 			{ type: "steps", label: "出题结构", items: ["看插图，留意 → 指的那个人，听说明部分和提问", "从听到的三个句子中，选择 → 指的那个人说的话练习"] },
 			{
@@ -17,7 +16,6 @@ export const chapter2Lessons: readonly ListeningLesson[] = [
 				jp: "イラストから場面を想像し、質問の中の説明部分に注意することが重要です。質問の最後の部分はたいてい「何と言いますか。」です。",
 				en: "Carefully examine the picture and imagine the situation as you listen to the explanation given. Most questions will end with “何と言いますか”.",
 				cn: "通过插图想像场景，注意提问中的说明部分非常重要。提问的最后一句大多是“何と言いますか”。",
-				kr: "일러스트를 보고 장면을 상상하고 질문의 설명 부분을 주의해서 듣는 것이 중요합니다.",
 			},
 			{ type: "h", jp: "練習", cn: "例题　CD 1 · 19" },
 			{ type: "p", jp: "① 请看插图，思考一下从插图中可以知道什么。", cn: "场景设在学校，老师和学生在对话。" },
@@ -80,13 +78,12 @@ export const chapter2Lessons: readonly ListeningLesson[] = [
 	},
 	{
 		blocks: [
-			{ type: "hero", no: 2, title: "どんな返事をしますか ―即時応答―", kana: "そくじおうとう", en: "Immediate response", cn: "你该怎么回答——即时回答", kr: "즉시응답" },
+			{ type: "hero", no: 2, title: "どんな返事をしますか ―即時応答―", kana: "そくじおうとう", en: "Immediate response", cn: "你该怎么回答——即时回答" },
 			{
 				type: "slogan",
 				jp: "間接的な返事に注意しましょう！",
 				en: "Pay close attention to indirect responses to questions!",
 				cn: "应注意间接回答！",
-				kr: "간접적인 답변에 주의합시다!",
 			},
 			{
 				type: "example",
@@ -148,7 +145,7 @@ export const chapter2Lessons: readonly ListeningLesson[] = [
 	},
 	{
 		blocks: [
-			{ type: "hero", no: 3, title: "何をしますか ―課題理解―", kana: "かだいりかい", en: "Task comprehension", cn: "要做什么——课题理解", kr: "과제이해" },
+			{ type: "hero", no: 3, title: "何をしますか ―課題理解―", kana: "かだいりかい", en: "Task comprehension", cn: "要做什么——课题理解" },
 			{
 				type: "slogan",
 				jp: "印刷されたイラストや文字をすばやく見ておきましょう！",
@@ -215,13 +212,12 @@ export const chapter2Lessons: readonly ListeningLesson[] = [
 	},
 	{
 		blocks: [
-			{ type: "hero", no: 4, title: "どうしてですか ―ポイント理解―", kana: "ポイントりかい", en: "Point comprehension", cn: "为什么——要点理解", kr: "포인트이해" },
+			{ type: "hero", no: 4, title: "どうしてですか ―ポイント理解―", kana: "ポイントりかい", en: "Point comprehension", cn: "为什么——要点理解" },
 			{
 				type: "slogan",
 				jp: "落ち着いて選択肢を読みましょう！",
 				en: "Relax and carefully read through the answers!",
 				cn: "应仔细阅读答案选项！",
-				kr: "침착하게 선택지를 읽읍시다!",
 			},
 			{ type: "p", jp: "問題用紙に選択肢が印刷されています。", en: "A selection of answers is provided on each question sheet." },
 			{ type: "steps", label: "出题结构", items: ["听说明部分和提问", "录音停顿期间，看一遍选项抓住要点", "听对话内容", "再听一遍提问", "选择答案"] },
@@ -272,7 +268,7 @@ export const chapter2Lessons: readonly ListeningLesson[] = [
 	},
 	{
 		blocks: [
-			{ type: "hero", no: 5, title: "どんな内容ですか ―概要理解―", kana: "がいようりかい", en: "Gist comprehension", cn: "什么内容——概要理解", kr: "개요이해" },
+			{ type: "hero", no: 5, title: "どんな内容ですか ―概要理解―", kana: "がいようりかい", en: "Gist comprehension", cn: "什么内容——概要理解" },
 			{
 				type: "slogan",
 				jp: "最初の説明から話の内容を予測しましょう！",
@@ -316,7 +312,7 @@ export const chapter2Lessons: readonly ListeningLesson[] = [
 	},
 	{
 		blocks: [
-			{ type: "hero", no: 6, title: "まとめ問題", kana: "もんだい", en: "Review", cn: "综合练习", kr: "복습" },
+			{ type: "hero", no: 6, title: "まとめ問題", kana: "もんだい", en: "Review", cn: "综合练习" },
 			{ type: "p", jp: "第2章で習った問題のパターンを全部使います。絵がある問題は、先に絵を見ておきましょう。" },
 			{ type: "q", label: "発話 1番", tracks: [37], options: ["①", "②", "③"], figure: "/listening/n3/figures/ch2-s6-q1.jpg", figureAlt: "发话题插图1" },
 			{ type: "q", label: "発話 2番", tracks: [38], options: ["①", "②", "③"], figure: "/listening/n3/figures/ch2-s6-q2.jpg", figureAlt: "发话题插图2" },
