@@ -438,9 +438,34 @@ export function applyTheme() {
 	if (meta) meta.setAttribute("content", THEME === "dark" ? "#1c1a16" : "#f6f7f9");
 }
 
+const THEME_FADE_MS = 180;
+let themeFadeTimer: ReturnType<typeof setTimeout> | null = null;
+
+function prefersReducedMotion() {
+	if (typeof window === "undefined") return true;
+	try {
+		return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+	} catch {
+		return false;
+	}
+}
+
+function beginThemeTransition() {
+	if (typeof document === "undefined" || prefersReducedMotion()) return;
+	const root = document.documentElement;
+	root.classList.add("theme-switching");
+	if (themeFadeTimer) clearTimeout(themeFadeTimer);
+	themeFadeTimer = setTimeout(() => {
+		root.classList.remove("theme-switching");
+		themeFadeTimer = null;
+	}, THEME_FADE_MS + 40);
+}
+
 export function setTheme(theme: Theme) {
+	const changed = THEME !== theme;
 	THEME = theme;
 	lsSet("theme", theme);
+	if (changed) beginThemeTransition();
 	applyTheme();
 	emit();
 }
@@ -1350,6 +1375,11 @@ export function resetStudyStateForTests() {
 	hideJp = false;
 	hideCn = false;
 	THEME = "light";
+	if (themeFadeTimer) {
+		clearTimeout(themeFadeTimer);
+		themeFadeTimer = null;
+	}
+	if (typeof document !== "undefined") document.documentElement.classList.remove("theme-switching");
 	studyHideJapanese = false;
 	studyHideTranslation = false;
 	fc = { week: 0, deck: [], idx: 0, flipped: false };

@@ -12,6 +12,14 @@ html.theme-dark{color-scheme:dark;
   --green:#8fbf9a; --green-soft:#243028; --amber:#d4b07a; --amber-soft:#322a1c;
   --red:#e08a8a; --red-soft:#3a2727;
   --shadow:0 1px 3px rgba(0,0,0,.45);}
+html.theme-switching,
+html.theme-switching body,
+html.theme-switching *:not(img):not(svg):not(video):not(canvas){
+  transition:background-color .18s ease,color .18s ease,border-color .18s ease,box-shadow .18s ease,fill .18s ease !important;
+}
+@media (prefers-reduced-motion:reduce){
+  html.theme-switching,html.theme-switching body,html.theme-switching *{transition:none !important}
+}
 .theme-toggle{flex:none;border:1px solid var(--line);background:var(--card);color:var(--sub);border-radius:999px;width:32px;height:32px;padding:0;font-size:15px;line-height:1;cursor:pointer}
 .theme-toggle.on{background:var(--amber-soft);border-color:var(--amber);color:var(--amber)}
 .account-login{flex:none;display:flex;align-items:center;gap:5px;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:4px 10px 4px 6px;font-size:12px;font-weight:700;text-decoration:none;min-height:32px;line-height:1;cursor:pointer}
