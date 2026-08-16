@@ -2,6 +2,7 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { beforeEach, describe, expect, it } from "vitest";
 
+import { listeningBookChapters } from "../../app/data/listening-n3-book";
 import { ListeningN3Content } from "../../app/routes/listening-n3";
 import { resetStudyStateForTests } from "../../app/study/store";
 
@@ -38,6 +39,28 @@ describe("ListeningN3Content", () => {
 
 		await user.click(screen.getByText("译文"));
 		expect(screen.getByText(/女士的妈妈是哪一个人/)).toBeInTheDocument();
+	});
+
+	it("renders every catalog section without crashing", () => {
+		for (const chapter of listeningBookChapters) {
+			for (const section of chapter.sections) {
+				let view;
+				try {
+					view = render(<ListeningN3Content chapter={chapter.number} section={section.number} embedded />);
+				} catch (error) {
+					throw new Error(`listening ${chapter.number}-${section.number} crashed: ${(error as Error).message}`);
+				}
+				expect(screen.queryByText(/未找到这一节听解内容/)).not.toBeInTheDocument();
+				expect(screen.getByRole("heading", { level: 1 })).toBeInTheDocument();
+				view.unmount();
+			}
+		}
+	});
+
+	it("renders chapter 3 weather and traffic notes without crashing", () => {
+		render(<ListeningN3Content chapter={3} section={2} embedded />);
+		expect(screen.getByRole("heading", { level: 1, name: /天気|ニュース|交通/ })).toBeInTheDocument();
+		expect(screen.getByText(/ABC航空24便/)).toBeInTheDocument();
 	});
 
 	it("reconstructs chapter 5 with bilingual slogans, figures, and a Chinese transcript", async () => {
