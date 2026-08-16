@@ -316,6 +316,20 @@ test.describe("study navigation", () => {
 		await expect(page.getByRole("button", { name: /下一节|Next/ })).toBeVisible();
 		await expect(page.locator("button.daynav-fab.next")).toBeVisible();
 	});
+
+	test("listening player seeks when the timeline is clicked", async ({ page }) => {
+		await waitForStudy(page);
+		await pickType(page, "listening");
+		if (await page.locator(".day-item").first().isVisible()) await page.locator(".day-item").first().click();
+		const seek = page.locator(".listening-seek");
+		await expect(seek).toBeVisible({ timeout: 15_000 });
+		const durationLabel = page.locator(".listening-player__timeline span").last();
+		await expect(durationLabel).not.toHaveText("0:00", { timeout: 20_000 });
+		const box = await seek.boundingBox();
+		expect(box).toBeTruthy();
+		await page.mouse.click(box!.x + box!.width * 0.7, box!.y + box!.height / 2);
+		await expect.poll(async () => page.locator("audio").evaluate((el: HTMLAudioElement) => el.currentTime)).toBeGreaterThan(1);
+	});
 });
 
 test.describe("study typebar", () => {
