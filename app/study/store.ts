@@ -1,4 +1,5 @@
 import henkeiFallback from "../data/common-henkei.json";
+import kougoFallback from "../data/common-kougo.json";
 import { listeningBundle, readingBundle } from "./catalogs";
 
 export type ModuleKey =
@@ -1598,7 +1599,11 @@ export async function bootStudyData() {
 		DATA.grammar = G;
 		DATA.vocab = V;
 		DATA.kanji = K;
-		DATA.common = { ...(com || {}), henkei: (com && com.henkei) || henkeiFallback };
+		DATA.common = {
+			...(com || {}),
+			henkei: (com && com.henkei) || henkeiFallback,
+			kougo: (com && com.kougo) || kougoFallback,
+		};
 		dataLoaded = true;
 		loadError = "";
 		emit();

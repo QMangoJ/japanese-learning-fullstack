@@ -1,0 +1,125 @@
+{
+	"title": "口語の縮約",
+	"title_cn": "口语缩约",
+	"title_en": "Spoken contractions",
+	"intro": "日常会话里，て形后面常会被缩成更短的音。左边是嘴里说的，右边是课本和考试里的完整形。て→ちゃ，で→じゃ。",
+	"intro_en": "In casual speech, て-forms often shrink. The left side is what people say; the right side is the full form used in writing and exams. て becomes ちゃ; で becomes じゃ.",
+	"seeAlso": "完整て形怎么变，见「变形」。",
+	"seeAlso_en": "How to make the full て-form is on the Verb forms page.",
+	"groups": [
+		{
+			"title": "てしまう：完成、遗憾、不小心",
+			"title_en": "てしまう: done, regrettable, accidental",
+			"note": "てしまった→ちゃった，でしまった→じゃった。同一组的现在形、意向形也照此缩。",
+			"note_en": "てしまった → ちゃった, でしまった → じゃった. The present and volitional forms shrink the same way.",
+			"items": [
+				{
+					"spoken": "〜ちゃった / 〜じゃった",
+					"full": "〜てしまった / 〜でしまった",
+					"cn": "不小心……了 / 已经……了（遗憾或完成）",
+					"en": "ended up … / accidentally … (regret or completion)",
+					"eg": "食べちゃった",
+					"eg_cn": "不小心吃掉了",
+					"eg_en": "I ended up eating it."
+				},
+				{
+					"spoken": "〜ちゃう / 〜じゃう",
+					"full": "〜てしまう / 〜でしまう",
+					"cn": "会……掉 / 要……了",
+					"en": "will end up … / is going to …",
+					"eg": "食べちゃう",
+					"eg_cn": "会吃掉的",
+					"eg_en": "I'll end up eating it."
+				},
+				{
+					"spoken": "〜ちゃおう / 〜じゃおう",
+					"full": "〜てしまおう / 〜でしまおう",
+					"cn": "干脆……吧 / 就……掉吧",
+					"en": "might as well … / let's just …",
+					"eg": "食べちゃおう",
+					"eg_cn": "干脆吃掉吧",
+					"eg_en": "Might as well eat it."
+				}
+			]
+		},
+		{
+			"title": "必须、得……",
+			"title_en": "Must / have to",
+			"note": "なくちゃ来自 なくては（いけない），なきゃ来自 なければ（ならない）。口语里后面的 いけない / ならない 常常省掉。",
+			"note_en": "なくちゃ comes from なくては（いけない）; なきゃ from なければ（ならない）. The いけない / ならない tail is often dropped.",
+			"items": [
+				{
+					"spoken": "〜なくちゃ",
+					"full": "〜なくてはいけない",
+					"cn": "必须…… / 得……",
+					"en": "have to … / must …",
+					"eg": "食べなくちゃ",
+					"eg_cn": "得吃",
+					"eg_en": "I have to eat."
+				},
+				{
+					"spoken": "〜なきゃ",
+					"full": "〜なければならない",
+					"cn": "必须…… / 得……",
+					"en": "have to … / must …",
+					"eg": "食べなきゃ",
+					"eg_cn": "得吃",
+					"eg_en": "I have to eat."
+				}
+			]
+		},
+		{
+			"title": "ては：一……就不行",
+			"title_en": "ては: if you …, that's no good",
+			"note": "ては→ちゃ，では→じゃ。后面常接 いけない / だめ。",
+			"note_en": "ては → ちゃ, では → じゃ. Often followed by いけない / だめ.",
+			"items": [
+				{
+					"spoken": "〜ちゃ〜",
+					"full": "〜ては〜",
+					"cn": "……的话就不行 / 不能……",
+					"en": "mustn't … / it's no good if …",
+					"eg": "食べちゃいけない",
+					"eg_cn": "不能吃",
+					"eg_en": "You mustn't eat that."
+				}
+			]
+		},
+		{
+			"title": "ている：正在……",
+			"title_en": "ている: in progress",
+			"note": "い 经常脱落：ている→てる，でいる→でる。",
+			"note_en": "The い often drops: ている → てる, でいる → でる.",
+			"items": [
+				{
+					"spoken": "〜てる / 〜でる",
+					"full": "〜ている / 〜でいる",
+					"cn": "正在……",
+					"en": "be …-ing",
+					"eg": "食べてる",
+					"eg_cn": "正在吃",
+					"eg_en": "I'm eating."
+				}
+			]
+		},
+		{
+			"title": "指示词：这边那边",
+			"title_en": "Demonstratives: here / there",
+			"note": "こちら系列在口语里几乎都缩成 こっち。",
+			"note_en": "The こちら set almost always shrinks to こっち in speech.",
+			"items": [
+				{
+					"spoken": "こっち・そっち・あっち・どっち",
+					"full": "こちら・そちら・あちら・どちら",
+					"cn": "这边 / 那边 / 那边 / 哪个",
+					"en": "this way / that way / over there / which way",
+					"eg": "こっち来て",
+					"eg_cn": "到这边来",
+					"eg_en": "Come over here."
+				}
+			]
+		}
+	],
+	"footer": "写邮件、考试、对不熟的人说话时，用右边的完整形更稳妥。",
+	"footer_en": "In writing, exams, and with people you don't know well, the full forms on the right are safer."
+}

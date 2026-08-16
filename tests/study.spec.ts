@@ -280,6 +280,20 @@ test.describe("study navigation", () => {
 		await expect(page.getByText(/Oops|unexpected error/i)).toHaveCount(0);
 	});
 
+	test("opens the spoken-contraction reference", async ({ page }) => {
+		await waitForStudy(page);
+		const side = page.locator("#side .side-item", { hasText: /口语|Casual/ });
+		if (await side.isVisible()) await side.click();
+		else {
+			await page.locator('.bottom button[data-nav="common"]').click();
+			await page.getByRole("button", { name: /口语|Casual/ }).click();
+		}
+		await expect(page.locator("#title")).toContainText(/口语|Spoken|縮約|缩约/);
+		await expect(page.getByText("〜ちゃった / 〜じゃった")).toBeVisible();
+		await expect(page.getByText("食べなくちゃ")).toBeVisible();
+		await expect(page.getByText("こっち来て")).toBeVisible();
+	});
+
 	test("opens catalog, a day, vocab, and kanji", async ({ page }) => {
 		await waitForStudy(page);
 		await expect(page.locator("#title")).toContainText(/语法|Grammar/);

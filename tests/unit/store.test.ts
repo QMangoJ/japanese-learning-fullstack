@@ -153,6 +153,8 @@ describe("routing helpers", () => {
 	it("converts hash keys and paths both ways", () => {
 		expect(keyToPath("#/")).toBe("/study");
 		expect(keyToPath("#/day/1-2")).toBe("/study/day/1-2");
+		expect(keyToPath("#/kougo")).toBe("/study/kougo");
+		expect(pathToKey("/study/kougo")).toBe("#/kougo");
 		expect(pathToKey("/study")).toBe("#/");
 		expect(pathToKey("/study/day/1-2")).toBe("#/day/1-2");
 		expect(pathToKey("/other")).toBe("#/");
