@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useState, useSyncExternalStore } from "react";
+import { Component, useEffect, useLayoutEffect, useState, useSyncExternalStore, type ErrorInfo, type ReactNode } from "react";
 import { useLocation, useNavigate } from "react-router";
 
 import { ListeningN3Content } from "../routes/listening-n3";
@@ -15,7 +15,7 @@ import {
 	RefPage,
 	SearchPage,
 } from "../routes/study-common";
-import { ContrastPage, DayPage, parseDayRoute } from "./days";
+import { ContrastPage, DayNav, DayPage, parseDayRoute } from "./days";
 import {
 	DATA,
 	FAV,
@@ -76,6 +76,31 @@ import {
 
 function useStudyTick() {
 	return useSyncExternalStore(subscribe, getVersion, () => 0);
+}
+
+class StudyPageErrorBoundary extends Component<{ resetKey: string; children: ReactNode }, { error: Error | null }> {
+	state: { error: Error | null } = { error: null };
+
+	static getDerivedStateFromError(error: Error) {
+		return { error };
+	}
+
+	componentDidCatch(error: Error, info: ErrorInfo) {
+		console.error("study page crashed", error, info.componentStack);
+	}
+
+	componentDidUpdate(prevProps: { resetKey: string }) {
+		if (prevProps.resetKey !== this.props.resetKey && this.state.error) this.setState({ error: null });
+	}
+
+	render() {
+		if (!this.state.error) return this.props.children;
+		return (
+			<div className="empty">
+				{lx("这一页加载失败，返回目录再试一次。", "This page failed to load. Go back to the catalog and try again.")}
+			</div>
+		);
+	}
 }
 
 function useDisplayTick() {
@@ -683,7 +708,13 @@ export function StudyApp() {
 	else if (waitingSearch) body = <div className="empty">词典数据加载中，马上就好…</div>;
 	else if (weekLocked || homeLocked) body = <TrialLock />;
 	else if (day && isReading()) body = <ReadingN3Content week={day.w} day={day.d} embedded />;
-	else if (day && isListening()) body = <ListeningN3Content chapter={day.w} section={day.d} embedded />;
+	else if (day && isListening())
+		body = (
+			<>
+				<ListeningN3Content chapter={day.w} section={day.d} embedded />
+				<DayNav w={day.w} d={day.d} mod="listening" />
+			</>
+		);
 	else if (day) body = <DayPage w={day.w} d={day.d} token={day.token} />;
 	else if (routeKey === "#/contrast") body = <ContrastPage />;
 	else if (routeKey === "#/")
@@ -703,10 +734,10 @@ export function StudyApp() {
 	else if (routeKey === "#/cards") body = <CardsPage />;
 	else if (routeKey === "#/favs") body = showingFavFc ? <FavFcPage data={favFcPayload()} /> : <FavsPage data={favsPayload()} />;
 	else if (routeKey === "#/mistakes") body = <MistakesPage data={mistakesPayload()} />;
-	else if (routeKey === "#/ref") body = DATA.common ? <RefPage data={DATA.common} /> : <div className="empty">通用参考数据加载中，请稍候…</div>;
-	else if (routeKey === "#/katsuyou") body = DATA.common ? <KatsuyouPage data={DATA.common} /> : <div className="empty">通用参考数据加载中，请稍候…</div>;
-	else if (routeKey === "#/henkei") body = DATA.common ? <HenkeiPage data={DATA.common} /> : <div className="empty">通用参考数据加载中，请稍候…</div>;
-	else if (routeKey === "#/numbers") body = DATA.common ? <NumbersPage data={DATA.common} /> : <div className="empty">通用参考数据加载中，请稍候…</div>;
+	else if (routeKey === "#/ref") body = DATA.common?.reference ? <RefPage data={DATA.common} /> : <div className="empty">通用参考数据加载中，请稍候…</div>;
+	else if (routeKey === "#/katsuyou") body = DATA.common?.katsuyou ? <KatsuyouPage data={DATA.common} /> : <div className="empty">通用参考数据加载中，请稍候…</div>;
+	else if (routeKey === "#/henkei") body = DATA.common?.henkei ? <HenkeiPage data={DATA.common} /> : <div className="empty">通用参考数据加载中，请稍候…</div>;
+	else if (routeKey === "#/numbers") body = DATA.common?.numbers ? <NumbersPage data={DATA.common} /> : <div className="empty">通用参考数据加载中，请稍候…</div>;
 	else body = <HomePage data={homeData} />;
 
 	const showCommon = isCommon && !day && routeKey !== "#/contrast";
@@ -733,9 +764,13 @@ export function StudyApp() {
 			/>
 			<Sidebar routeKey={routeKey} onLevel={pickLevel} />
 			<main id="app" className={lessonShell ? "study-reading-app" : undefined} hidden={showCommon}>
-				{showCommon ? null : body}
+				{showCommon ? null : <StudyPageErrorBoundary resetKey={viewKey}>{body}</StudyPageErrorBoundary>}
 			</main>
-			{showCommon ? <main id="common-page">{body}</main> : null}
+			{showCommon ? (
+				<main id="common-page">
+					<StudyPageErrorBoundary resetKey={viewKey}>{body}</StudyPageErrorBoundary>
+				</main>
+			) : null}
 			<BottomNav active={meta.nav} onCommon={() => setSheet("common")} />
 			<Sheet kind={sheet} onClose={() => setSheet(null)} onLevel={pickLevel} />
 			<SelectionPopover routeKey={routeKey} />

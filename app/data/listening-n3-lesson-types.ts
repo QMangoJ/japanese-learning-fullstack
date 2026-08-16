@@ -44,4 +44,6 @@ export type ListeningLesson = {
 	readonly blocks: readonly ListeningLessonBlock[];
 	readonly answer: string;
 	readonly transcript: string;
+	readonly transcript_cn?: string;
+	readonly transcript_en?: string;
 };
