@@ -553,6 +553,7 @@ export function HenkeiPage({ data }: { data: any }) {
 export function KougoPage({ data }: { data: any }) {
 	const KG = data?.kougo;
 	if (!KG) return <div className="empty">{lx("口语缩约数据还没加载完，请稍后重试。", "Spoken-contraction data is still loading.")}</div>;
+	const heads = [lx("口语", "Spoken"), lx("完整形", "Full form"), lx("意思", "Meaning"), lx("例子", "Example")];
 	return (
 		<>
 			{KG.intro ? <div className="meta" style={{ marginBottom: 6 }}>{lx(KG.intro, KG.intro_en)}</div> : null}
@@ -570,23 +571,37 @@ export function KougoPage({ data }: { data: any }) {
 						{lx(group.title, group.title_en)}
 					</h3>
 					{group.note ? <div className="meta" style={{ marginBottom: 8 }}>{lx(group.note, group.note_en)}</div> : null}
-					{(group.items || []).map((it: any, ii: number) => (
-						<div className="kougo-item" key={ii}>
-							<div className="kougo-item__spoken jp">{it.spoken}</div>
-							<div className="kougo-item__full jp">
-								<span className="kougo-item__arrow">←</span>
-								{it.full}
-							</div>
-							<div className="kougo-item__mean">{lx(it.cn, it.en)}</div>
-							{it.eg ? (
-								<div className="kougo-item__eg jp">
-									{it.eg}
-									<SayButton text={it.eg} />
-									{it.eg_cn || it.eg_en ? <span className="cn">（{lx(it.eg_cn, it.eg_en)}）</span> : null}
-								</div>
-							) : null}
-						</div>
-					))}
+					<div className="table-scroll">
+						<table className="ref kougo-table">
+							<thead>
+								<tr>
+									{heads.map((h) => (
+										<th key={h}>{h}</th>
+									))}
+								</tr>
+							</thead>
+							<tbody>
+								{(group.items || []).map((it: any, ii: number) => (
+									<tr key={ii}>
+										<th className="jp">{it.spoken}</th>
+										<td className="jp">{it.full}</td>
+										<td>{lx(it.cn, it.en)}</td>
+										<td className="jp">
+											{it.eg ? (
+												<>
+													{it.eg}
+													<SayButton text={it.eg} />
+													{it.eg_cn || it.eg_en ? <span className="cn">（{lx(it.eg_cn, it.eg_en)}）</span> : null}
+												</>
+											) : (
+												"—"
+											)}
+										</td>
+									</tr>
+								))}
+							</tbody>
+						</table>
+					</div>
 				</div>
 			))}
 			{KG.footer ? <div className="meta" style={{ marginTop: 10 }}>{lx(KG.footer, KG.footer_en)}</div> : null}

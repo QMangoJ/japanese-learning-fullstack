@@ -290,6 +290,8 @@ test.describe("study navigation", () => {
 		}
 		await expect(page.locator("#title")).toContainText(/口语|Spoken|縮約|缩约/);
 		await expect(page.getByText("〜ちゃった / 〜じゃった")).toBeVisible();
+		await expect(page.getByRole("columnheader", { name: /口语|Spoken/ }).first()).toBeVisible();
+		await expect(page.getByRole("columnheader", { name: /完整形|Full form/ }).first()).toBeVisible();
 		await expect(page.getByText("食べなくちゃ")).toBeVisible();
 		await expect(page.getByText("こっち来て")).toBeVisible();
 	});
