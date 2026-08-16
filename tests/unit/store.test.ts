@@ -184,6 +184,7 @@ describe("language and modules", () => {
 		expect(localStorage.getItem("theme")).toBe("dark");
 		setTheme("light");
 		expect(document.documentElement.classList.contains("theme-dark")).toBe(false);
+		expect(document.documentElement.classList.contains("theme-switching")).toBe(true);
 	});
 
 	it("picks Chinese or English copy", () => {
