@@ -1,2422 +1,2958 @@
 {
-  "w1": {
-    "mondai1": [
-      {
-        "n": 1,
-        "ans": 2,
-        "trans": "我母亲在教外国人日语的学校工作。",
-        "trans_en": "My mother works at a school that teaches Japanese to foreigners.",
-        "option_translations": [
-          "在（方向/对象）",
-          "在（场所/地点）",
-          "往",
-          "直到"
-        ],
-        "option_translations_en": [
-          "at / to (destination)",
-          "at (place of action)",
-          "toward",
-          "until"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "场所用「で」。",
-        "point_en": "Use で for the place where an action happens.",
-        "link": "#/day/1-1/p0"
-      },
-      {
-        "n": 2,
-        "ans": 1,
-        "trans": "写一张报告竟然花了三个小时，太累了。",
-        "trans_en": "It took a whole three hours to write one page of the report. That was tough.",
-        "option_translations": [
-          "居然（数量之多）",
-          "只（后面要否定）",
-          "比",
-          "只"
-        ],
-        "option_translations_en": [
-          "as much as (emphasis)",
-          "only (needs a negative)",
-          "than",
-          "only"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "「3時間も」强调时间之多。",
-        "point_en": "も after an amount stresses how large it is.",
-        "link": "#/day/1-5/p1"
-      },
-      {
-        "n": 3,
-        "ans": 4,
-        "trans": "进这个房间的时候请脱掉拖鞋。",
-        "trans_en": "Please take off your slippers when you enter this room.",
-        "option_translations": [
-          "刚要…的时候",
-          "在…期间",
-          "就那样",
-          "在…的时候"
-        ],
-        "option_translations_en": [
-          "just as",
-          "while / during",
-          "as is",
-          "when"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "表示时间点用「ときには」。",
-        "point_en": "ときには marks the time when something happens.",
-        "link": "#/day/1-2/p0"
-      },
-      {
-        "n": 4,
-        "ans": 3,
-        "trans": "昨天开着窗就睡着了。",
-        "trans_en": "Yesterday I fell asleep with the window left open.",
-        "option_translations": [
-          "一边开一边",
-          "开了又…",
-          "开着的状态",
-          "正在开的时候"
-        ],
-        "option_translations_en": [
-          "while opening",
-          "opening and …",
-          "left open",
-          "while opening"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "「Vたまま」表示保持该状态。",
-        "point_en": "Vたまま means the resulting state is left unchanged.",
-        "link": "#/day/1-4/p2"
-      },
-      {
-        "n": 5,
-        "ans": 2,
-        "trans": "那就每人拿两个吧。",
-        "trans_en": "Then let's take two each.",
-        "option_translations": [
-          "只",
-          "各、每",
-          "即使",
-          "比"
-        ],
-        "option_translations_en": [
-          "only",
-          "each / apiece",
-          "even",
-          "than"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "平均分配用「ずつ」。",
-        "point_en": "ずつ means an equal share each.",
-        "link": "#/day/1-5/p2"
-      },
-      {
-        "n": 6,
-        "ans": 1,
-        "trans": "不过，没有山田家那么大。",
-        "trans_en": "But it isn't as big as Yamada's house.",
-        "option_translations": [
-          "有…那么（后接否定）",
-          "啦…啦",
-          "即使",
-          "更…"
-        ],
-        "option_translations_en": [
-          "as … as (with a negative)",
-          "and so on",
-          "even",
-          "more than"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "「Nほど〜ない」表示达不到那个程度。",
-        "point_en": "Nほど〜ない means not as … as N.",
-        "link": "#/day/1-6/p0"
-      },
-      {
-        "n": 7,
-        "ans": 1,
-        "trans": "下个月要搬家，有点忙…",
-        "trans_en": "I'm moving next month, so I'm a bit busy…",
-        "option_translations": [
-          "已经定下来要…",
-          "有…这件事",
-          "刚…完",
-          "…的时候"
-        ],
-        "option_translations_en": [
-          "it has been decided that",
-          "there is the matter of",
-          "just after",
-          "when"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "「Vることになって」表示既定安排。",
-        "point_en": "Vることになって marks a set arrangement.",
-        "link": "#/day/2-4/p0"
-      },
-      {
-        "n": 8,
-        "ans": 3,
-        "trans": "因为担心母亲的病，最近睡不好。",
-        "trans_en": "I've been sleeping poorly lately because I'm worried about my mother's illness.",
-        "option_translations": [
-          "因为（理由从句）",
-          "又…又",
-          "因为（原因名词）",
-          "光是"
-        ],
-        "option_translations_en": [
-          "because (clause)",
-          "and also",
-          "because of (noun)",
-          "nothing but"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "「心配で」用「で」表示心理原因。",
-        "point_en": "で after 心配 marks the cause of a state.",
-        "link": "#/day/1-1/p1"
-      },
-      {
-        "n": 9,
-        "ans": 4,
-        "trans": "发了邮件也没回，有点担心。",
-        "trans_en": "I emailed him, but he hasn't replied, so I'm a bit worried.",
-        "option_translations": [
-          "一直没来",
-          "不来就",
-          "没来之类",
-          "又不来"
-        ],
-        "option_translations_en": [
-          "still hasn't come",
-          "without coming",
-          "sometimes doesn't come",
-          "and he doesn't reply"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "「来ないし」并列说明没回信。",
-        "point_en": "し adds another reason: he doesn't reply.",
-        "link": "#/day/3-5/p1"
-      },
-      {
-        "n": 10,
-        "ans": 3,
-        "trans": "我和汤姆没说过话，所以不太清楚。",
-        "trans_en": "I've never talked with Tom, so I don't really know.",
-        "option_translations": [
-          "有时不说",
-          "决定要说",
-          "从来没说过",
-          "没安排要说"
-        ],
-        "option_translations_en": [
-          "sometimes don't talk",
-          "make a point of talking",
-          "have never talked",
-          "aren't scheduled to talk"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "「Vたことがない」表示没有过该经历。",
-        "point_en": "Vたことがない means you have never done it.",
-        "link": "#/day/3-2/p0"
-      }
-    ],
-    "mondai2": [
-      {
-        "n": 11,
-        "ans": 1,
-        "trans": "从没下过那么大的雨，吓了一跳。",
-        "trans_en": "It had never rained that hard before, so I was shocked.",
-        "option_translations": [
-          "从没…过",
-          "那么地",
-          "没有",
-          "下"
-        ],
-        "option_translations_en": [
-          "have never",
-          "that much",
-          "did not",
-          "fell (rain)"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "「あんなに降ったことがなかった」。",
-        "point_en": "あんなに + Vたことがない = had never … that much.",
-        "link": "#/day/3-2/p0",
-        "order": "2→4→1→3"
-      },
-      {
-        "n": 12,
-        "ans": 1,
-        "trans": "啊，好像是我在洗澡的时候你来了。",
-        "trans_en": "Ah, it seems you came while I was in the bath.",
-        "option_translations": [
-          "正当…的时候",
-          "来了",
-          "正在进",
-          "洗澡"
-        ],
-        "option_translations_en": [
-          "just when",
-          "came",
-          "is entering",
-          "the bath"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "「おふろに入っているところに来た」。",
-        "point_en": "Vているところに = just when someone is doing something.",
-        "link": "#/day/2-5/p1",
-        "order": "4→3→1→2"
-      },
-      {
-        "n": 13,
-        "ans": 4,
-        "trans": "田中站着的人后面那个高个子是谁？",
-        "trans_en": "Who is the tall person standing behind Tanaka?",
-        "option_translations": [
-          "站着的",
-          "在后面",
-          "人",
-          "个子高的"
-        ],
-        "option_translations_en": [
-          "standing",
-          "behind",
-          "person",
-          "tall"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "「うしろに立っている背の高い人」。",
-        "point_en": "Relative clauses stack before 人.",
-        "link": "#/day/4-1/p0",
-        "order": "2→1→4→3"
-      }
-    ],
-    "mondai3": [
-      {
-        "n": 14,
-        "ans": 3,
-        "trans": "因为父亲工作而定下来要去日本的时候，我并不太高兴。",
-        "trans_en": "When it was decided we would go to Japan because of my father's job, I wasn't very happy.",
-        "option_translations": [
-          "如果有",
-          "有…的时候",
-          "如果变成",
-          "变成…的时候"
-        ],
-        "option_translations_en": [
-          "if there is",
-          "when there was",
-          "if it becomes",
-          "when it became"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "「来ることになったら」表示情况成立之后。",
-        "point_en": "Vることになったら = when it has been decided that.",
-        "link": "#/day/2-4/p0"
-      },
-      {
-        "n": 15,
-        "ans": 1,
-        "trans": "和学校朋友分开既会寂寞，又觉得生活会不方便。",
-        "trans_en": "Being apart from my school friends would be lonely, and I thought life would be inconvenient.",
-        "option_translations": [
-          "会寂寞，而且",
-          "变寂寞了，而且",
-          "不会寂寞，而且",
-          "变得不寂寞了"
-        ],
-        "option_translations_en": [
-          "will be lonely, and",
-          "became lonely, and",
-          "won't be lonely, and",
-          "stopped being lonely"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "对尚未发生的事用「さびしくなるし」。",
-        "point_en": "なる looks ahead; し adds another reason.",
-        "link": "#/day/3-5/p1"
-      },
-      {
-        "n": 16,
-        "ans": 3,
-        "trans": "现在住的房子没有美国的家那么大。",
-        "trans_en": "The house I live in now isn't as big as our house in America.",
-        "option_translations": [
-          "有…那么小",
-          "比…宽",
-          "没有…那么大",
-          "并不比…小"
-        ],
-        "option_translations_en": [
-          "as small as",
-          "wider than",
-          "not as big as",
-          "not smaller than"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "「Nほど大きくない」。",
-        "point_en": "Nほど大きくない = not as big as N.",
-        "link": "#/day/1-6/p0"
-      },
-      {
-        "n": 17,
-        "ans": 4,
-        "trans": "经常一起去买东西、吃饭什么的。",
-        "trans_en": "We often go shopping and out to eat together.",
-        "option_translations": [
-          "正要去的时候",
-          "去过这件事",
-          "去了就一直",
-          "去…什么的"
-        ],
-        "option_translations_en": [
-          "just as we go",
-          "the fact of having gone",
-          "went and stayed",
-          "go and …"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "「買い物や食事に行ったりする」。",
-        "point_en": "Vたりする lists typical activities.",
-        "link": "#/day/1-4/p1"
-      },
-      {
-        "n": 18,
-        "ans": 1,
-        "trans": "明年要回美国，但我很期待在日本的生活。",
-        "trans_en": "I go back to America next year, but I'm looking forward to life in Japan.",
-        "option_translations": [
-          "感到期待",
-          "快乐",
-          "正在享受",
-          "会快乐吧"
-        ],
-        "option_translations_en": [
-          "look forward to",
-          "is fun",
-          "am enjoying",
-          "is probably fun"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "对尚未到来的事用「楽しみです」。",
-        "point_en": "楽しみです looks ahead to something you await.",
-        "link": "#/day/2-6/p2"
-      }
-    ]
-  },
-  "w2": {
-    "mondai1": [
-      {
-        "n": 1,
-        "ans": 2,
-        "trans": "我不坐电梯和扶梯，尽量走楼梯。",
-        "trans_en": "I try not to use elevators or escalators and take the stairs.",
-        "option_translations": [
-          "为了用",
-          "尽量用",
-          "先用着",
-          "试试看用"
-        ],
-        "option_translations_en": [
-          "in order to use",
-          "make a habit of using",
-          "use in advance",
-          "try using"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "「Vるようにしている」表示有意识地保持习惯。",
-        "point_en": "Vるようにしている = make a point of doing it.",
-        "link": "#/day/2-1/p1"
-      },
-      {
-        "n": 2,
-        "ans": 3,
-        "trans": "去那家餐厅的时候必须打领带。",
-        "trans_en": "You have to wear a tie when you go to that restaurant.",
-        "option_translations": [
-          "不可以做",
-          "做了也没关系",
-          "必须做",
-          "不做也可以"
-        ],
-        "option_translations_en": [
-          "must not",
-          "may",
-          "must",
-          "needn't"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "「Vなければならない」表示义务。",
-        "point_en": "Vなければならない expresses obligation.",
-        "link": "#/day/2-2/p0"
-      },
-      {
-        "n": 3,
-        "ans": 1,
-        "trans": "下雨了。得赶快把衣服收进来。",
-        "trans_en": "It's started raining. We have to bring the laundry in.",
-        "option_translations": [
-          "不…不行",
-          "试试看",
-          "不可以",
-          "…的话就好"
-        ],
-        "option_translations_en": [
-          "have to",
-          "try",
-          "must not",
-          "should"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "口语里「入れないと」后面省略了「いけない」。",
-        "point_en": "Vないと is a spoken must.",
-        "link": "#/day/2-2/p1"
-      },
-      {
-        "n": 4,
-        "ans": 4,
-        "trans": "怎么跑也来不及，今天别看电影了。",
-        "trans_en": "No matter how much we run we won't make it, so let's skip the movie.",
-        "option_translations": [
-          "那样的",
-          "那么地",
-          "什么样的",
-          "无论怎么"
-        ],
-        "option_translations_en": [
-          "that kind of",
-          "that much",
-          "what kind of",
-          "no matter how"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "「どんなに〜ても」表示无论程度如何。",
-        "point_en": "どんなに Vても = no matter how much.",
-        "link": "#/day/2-3/p1"
-      },
-      {
-        "n": 5,
-        "ans": 3,
-        "trans": "对不起，我把饼干全吃掉了。",
-        "trans_en": "Sorry — I ate all the cookies.",
-        "option_translations": [
-          "试着吃了",
-          "先吃好了",
-          "吃掉了（遗憾）",
-          "必须吃"
-        ],
-        "option_translations_en": [
-          "tried eating",
-          "ate in advance",
-          "ended up eating",
-          "have to eat"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "「食べちゃった」是「てしまう」的口语。",
-        "point_en": "Vちゃう marks an accidental or complete result.",
-        "link": "#/day/2-5/p0"
-      },
-      {
-        "n": 6,
-        "ans": 2,
-        "trans": "嗯，已经能骑得相当好了。",
-        "trans_en": "Yeah, I've gotten pretty good at riding.",
-        "option_translations": [
-          "为了能骑而做了",
-          "变得会骑了",
-          "能骑就好了",
-          "能骑更好"
-        ],
-        "option_translations_en": [
-          "did it so I could ride",
-          "have become able to ride",
-          "it would be good if I could",
-          "better if I could"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "「Vるようになった」表示能力或状态的变化。",
-        "point_en": "Vるようになった = have become able to.",
-        "link": "#/day/2-1/p0"
-      },
-      {
-        "n": 7,
-        "ans": 4,
-        "trans": "这是两年前田中老师送给我的书。",
-        "trans_en": "This is a book Tanaka-sensei gave me two years ago.",
-        "option_translations": [
-          "给我（现在）",
-          "给我了（尊敬）",
-          "领取（现在）",
-          "领取了（谦让）"
-        ],
-        "option_translations_en": [
-          "give me (nonpast honorific)",
-          "gave me (honorific)",
-          "receive (nonpast humble)",
-          "received (humble)"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "自己收下别人给的东西用「いただいた」。",
-        "point_en": "いただいた is the humble past of receive.",
-        "link": "#/day/2-6/p0"
-      },
-      {
-        "n": 8,
-        "ans": 1,
-        "trans": "那还是带着伞去比较好。",
-        "trans_en": "Then you'd better take an umbrella.",
-        "option_translations": [
-          "最好带去",
-          "不带也可以",
-          "带去也行",
-          "不带才好"
-        ],
-        "option_translations_en": [
-          "you'd better take",
-          "needn't take",
-          "may take",
-          "better not take"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "「Vたほうがいい」表示建议。",
-        "point_en": "Vたほうがいい gives advice.",
-        "link": "#/day/2-7/p0"
-      },
-      {
-        "n": 9,
-        "ans": 3,
-        "trans": "这句话是什么意思？",
-        "trans_en": "What does this sentence mean?",
-        "option_translations": [
-          "什么的",
-          "说什么",
-          "什么样的",
-          "怎么了的"
-        ],
-        "option_translations_en": [
-          "of what",
-          "say what",
-          "what kind of",
-          "what happened"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "问含义用「どういう意味」。",
-        "point_en": "どういう意味 asks for the meaning.",
-        "link": "#/day/2-3/p0"
-      },
-      {
-        "n": 10,
-        "ans": 1,
-        "trans": "山田，会议室你帮我订了吧。",
-        "trans_en": "Yamada, you booked the meeting room for me, right?",
-        "option_translations": [
-          "给我做了",
-          "我给别人做了",
-          "曾经做过",
-          "从没做过"
-        ],
-        "option_translations_en": [
-          "did it for me",
-          "I did it for someone",
-          "have done it",
-          "have never done it"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "「してくれた」表示对方为自己做了。",
-        "point_en": "てくれた = someone did it for the speaker.",
-        "link": "#/day/2-6/p1"
-      }
-    ],
-    "mondai2": [
-      {
-        "n": 11,
-        "ans": 3,
-        "trans": "在公司干得久了，谁都能拿到的东西。",
-        "trans_en": "If you work at the company long enough, anyone can get one.",
-        "option_translations": [
-          "在公司",
-          "长时间",
-          "工作的话",
-          "虽然拿到了"
-        ],
-        "option_translations_en": [
-          "at the company",
-          "for a long time",
-          "if you work",
-          "though I received it"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "「長くつとめているともらいました」。",
-        "point_en": "Vていると marks what follows from a continuing state.",
-        "link": "#/day/2-1/p0",
-        "order": "1→2→3→4"
-      },
-      {
-        "n": 12,
-        "ans": 3,
-        "trans": "我每月去一次牙医检查蛀牙。",
-        "trans_en": "I make a point of going to the dentist once a month to check for cavities.",
-        "option_translations": [
-          "每月一次",
-          "检查",
-          "为了",
-          "蛀牙的"
-        ],
-        "option_translations_en": [
-          "once a month",
-          "check",
-          "for / in order to",
-          "of cavities"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "「虫歯のチェックのために」。",
-        "point_en": "Nのために = for the purpose of N.",
-        "link": "#/day/3-1/p0",
-        "order": "4→2→3→1"
-      },
-      {
-        "n": 13,
-        "ans": 2,
-        "trans": "刚才拜托的事，就算不马上做，也请先做好。",
-        "trans_en": "About what I asked just now — even if you don't do it right away, please have it done.",
-        "option_translations": [
-          "马上",
-          "也行",
-          "因为",
-          "即使不"
-        ],
-        "option_translations_en": [
-          "immediately",
-          "fine",
-          "because",
-          "even if not"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "「すぐじゃなくてもいいから」。",
-        "point_en": "Vなくてもいい = it's all right not to.",
-        "link": "#/day/2-2/p2",
-        "order": "1→4→2→3"
-      }
-    ],
-    "mondai3": [
-      {
-        "n": 14,
-        "ans": 4,
-        "trans": "寄宿家庭去旅行了，所以我得去遛狗。",
-        "trans_en": "My host family went on a trip, so I had to walk the dog.",
-        "option_translations": [
-          "也可以做，因为",
-          "不可以做，所以",
-          "必须做，因为",
-          "必须做，所以"
-        ],
-        "option_translations_en": [
-          "was allowed to, because",
-          "wasn't allowed to, so",
-          "had to, because",
-          "had to, so"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "「散歩をしなければならなかったので」。",
-        "point_en": "Vなければならなかったので = because I had to.",
-        "link": "#/day/2-2/p0"
-      },
-      {
-        "n": 15,
-        "ans": 1,
-        "trans": "妈妈说即使时间短也没关系。",
-        "trans_en": "Mom said it was fine even if the walk was short.",
-        "option_translations": [
-          "即使短也",
-          "如果短的话（否定条件）",
-          "短这件事",
-          "因为短"
-        ],
-        "option_translations_en": [
-          "even if short",
-          "if it is short (negative)",
-          "the fact it is short",
-          "because it is short"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "「みじかくてもいい」。",
-        "point_en": "Vてもいい = it's all right even if.",
-        "link": "#/day/2-3/p1"
-      },
-      {
-        "n": 16,
-        "ans": 3,
-        "trans": "里奥叼着球来，像在说「扔！」",
-        "trans_en": "Leo brought a ball, as if telling me “Throw it!”",
-        "option_translations": [
-          "扔（词典形）",
-          "扔了",
-          "扔！（命令）",
-          "别扔"
-        ],
-        "option_translations_en": [
-          "throw (plain)",
-          "threw",
-          "throw! (command)",
-          "don't throw"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "转述狗的要求用命令形「なげろ」。",
-        "point_en": "The imperative なげろ reports the dog's demand.",
-        "link": "#/day/3-6/p0"
-      },
-      {
-        "n": 17,
-        "ans": 4,
-        "trans": "为了赶上平时那班电车，一路跑到车站。",
-        "trans_en": "I ran all the way to the station so I could catch my usual train.",
-        "option_translations": [
-          "乘坐期间",
-          "乘坐的时候",
-          "以便乘坐",
-          "为了乘坐"
-        ],
-        "option_translations_en": [
-          "while riding",
-          "when riding",
-          "so as to ride",
-          "in order to ride"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "「乗るために」表示目的。",
-        "point_en": "Vるために marks purpose.",
-        "link": "#/day/3-1/p0"
-      },
-      {
-        "n": 18,
-        "ans": 1,
-        "trans": "为了不忘掉学校教的内容，每天复习。",
-        "trans_en": "I review every day so I don't forget what I learned at school.",
-        "option_translations": [
-          "以免忘记",
-          "如果不忘记",
-          "先忘掉",
-          "试着忘掉"
-        ],
-        "option_translations_en": [
-          "so as not to forget",
-          "if I don't forget",
-          "forget in advance",
-          "try forgetting"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "「わすれないように」表示目的。",
-        "point_en": "Vないように = so as not to.",
-        "link": "#/day/2-1/p1"
-      }
-    ]
-  },
-  "w3": {
-    "mondai1": [
-      {
-        "n": 1,
-        "ans": 4,
-        "trans": "这是用来剪花的剪刀。",
-        "trans_en": "These are scissors used for cutting flowers.",
-        "option_translations": [
-          "以便",
-          "为了的",
-          "因为",
-          "用来…"
-        ],
-        "option_translations_en": [
-          "so that",
-          "for the sake of",
-          "because",
-          "for the purpose of"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "「Vるのに使う」表示用途。",
-        "point_en": "Vるのに使う = used for doing.",
-        "link": "#/day/3-1/p1"
-      },
-      {
-        "n": 2,
-        "ans": 1,
-        "trans": "头疼睡不着。吃点药试试看？",
-        "trans_en": "I have a headache and can't sleep. Why not try taking some medicine?",
-        "option_translations": [
-          "吃了看看怎么样",
-          "先吃着",
-          "如果吃掉的话",
-          "如果一直吃"
-        ],
-        "option_translations_en": [
-          "how about trying",
-          "take in advance",
-          "if you end up taking",
-          "if you keep taking"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "「Vてみたらどう」表示建议尝试。",
-        "point_en": "Vてみたらどう suggests trying it.",
-        "link": "#/day/3-3/p0"
-      },
-      {
-        "n": 3,
-        "ans": 2,
-        "trans": "对不起，有件事想请教您…",
-        "trans_en": "Excuse me, there's something I'd like to ask you…",
-        "option_translations": [
-          "能请您（可能）",
-          "想请您",
-          "能让我得到",
-          "想给我"
-        ],
-        "option_translations_en": [
-          "can receive (potential)",
-          "would like you to",
-          "can have someone",
-          "want someone to give me"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "对听话人用「ていただきたい」。",
-        "point_en": "ていただきたい is a polite request.",
-        "link": "#/day/3-4/p0"
-      },
-      {
-        "n": 4,
-        "ans": 2,
-        "trans": "是听谁说的我记不清了，但这件事我也知道。",
-        "trans_en": "I don't remember who I heard it from, but I know that too.",
-        "option_translations": [
-          "听（现在）",
-          "听了",
-          "听见了",
-          "听得到"
-        ],
-        "option_translations_en": [
-          "hear (nonpast)",
-          "heard",
-          "was audible",
-          "could hear"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "已经发生的事用「聞いた」。",
-        "point_en": "The past 聞いた matches かおぼえていない.",
-        "link": "#/day/3-2/p1"
-      },
-      {
-        "n": 5,
-        "ans": 1,
-        "trans": "虽然住在日本，却没什么用日语的机会。",
-        "trans_en": "Even though I live in Japan, I don't get many chances to use Japanese.",
-        "option_translations": [
-          "虽然住着",
-          "因为住着",
-          "刚住着的时候",
-          "住着的地方"
-        ],
-        "option_translations_en": [
-          "even though I live",
-          "because I live",
-          "just when I was living",
-          "the place I live"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "「いるのに」表示逆接。",
-        "point_en": "のに marks an unexpected contrast.",
-        "link": "#/day/3-5/p0"
-      },
-      {
-        "n": 6,
-        "ans": 4,
-        "trans": "弟弟说不打算进公司，光弹吉他…",
-        "trans_en": "My brother says he has no intention of joining a company and just plays guitar…",
-        "option_translations": [
-          "没有过",
-          "不会变成",
-          "不打算（不自然）",
-          "不打算"
-        ],
-        "option_translations_en": [
-          "have never",
-          "won't become",
-          "unnatural form",
-          "have no intention"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "「Vるつもりはない」表示没有该打算。",
-        "point_en": "Vるつもりはない = have no intention of.",
-        "link": "#/day/3-6/p1"
-      },
-      {
-        "n": 7,
-        "ans": 3,
-        "trans": "我也想胖一点，可怎么吃都胖不了。",
-        "trans_en": "I'd like to gain weight too, but I can't no matter how much I eat.",
-        "option_translations": [
-          "吃这件事",
-          "虽然吃",
-          "即使吃",
-          "想吃"
-        ],
-        "option_translations_en": [
-          "the act of eating",
-          "although eating",
-          "even if I eat",
-          "trying to eat"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "「いくらVても」表示无论怎样都不行。",
-        "point_en": "いくら Vても = no matter how much.",
-        "link": "#/day/2-3/p1"
-      },
-      {
-        "n": 8,
-        "ans": 2,
-        "trans": "昨天想早点睡，却怎么也睡不着。",
-        "trans_en": "Yesterday I meant to go to bed early, but I just couldn't sleep.",
-        "option_translations": [
-          "睡！",
-          "想睡",
-          "打算睡",
-          "睡着了"
-        ],
-        "option_translations_en": [
-          "sleep! (command)",
-          "let's / I'll sleep",
-          "plan to sleep",
-          "ended up sleeping"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "自己的意志用「Vようと思う」。",
-        "point_en": "Vようと思う marks the speaker's intention.",
-        "link": "#/day/3-6/p0"
-      },
-      {
-        "n": 9,
-        "ans": 1,
-        "trans": "别老问同样的事了。",
-        "trans_en": "I don't want you to keep asking the same thing.",
-        "option_translations": [
-          "希望你别问",
-          "不希望你别问",
-          "必须问",
-          "不问才好"
-        ],
-        "option_translations_en": [
-          "I don't want you to ask",
-          "I don't want you not to ask",
-          "must ask",
-          "better not ask"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "「Vないでほしい」表示希望对方不要做。",
-        "point_en": "Vないでほしい = I want you not to.",
-        "link": "#/day/3-4/p1"
-      },
-      {
-        "n": 10,
-        "ans": 1,
-        "trans": "约翰说汤姆住院了。所以才没来学校啊。",
-        "trans_en": "John said Tom was in the hospital. So that's why he hasn't been coming to school.",
-        "option_translations": [
-          "所以",
-          "那么就",
-          "可是",
-          "然而"
-        ],
-        "option_translations_en": [
-          "that's why",
-          "in that case",
-          "but",
-          "however"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "「だから」承接已知理由。",
-        "point_en": "だから draws the conclusion from the previous line.",
-        "link": "#/day/3-5/p1"
-      }
-    ],
-    "mondai2": [
-      {
-        "n": 11,
-        "ans": 2,
-        "trans": "本不想说，但觉得还是提醒一下比较好。",
-        "trans_en": "I wasn't going to say anything, but I thought I'd better mention it after all.",
-        "option_translations": [
-          "打算",
-          "来着但是",
-          "不说",
-          "还是"
-        ],
-        "option_translations_en": [
-          "intention",
-          "was going to, but",
-          "not say",
-          "after all"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "「言わないつもりだったんですが」。",
-        "point_en": "Vるつもりだった = I had intended to.",
-        "link": "#/day/3-6/p1",
-        "order": "3→1→2→4"
-      },
-      {
-        "n": 12,
-        "ans": 1,
-        "trans": "那家人的狗平时那么吵，今天却很安静，我觉得奇怪。",
-        "trans_en": "Their dog is usually noisy, so it seemed odd that it was quiet.",
-        "option_translations": [
-          "因为安静",
-          "奇怪",
-          "吵",
-          "却"
-        ],
-        "option_translations_en": [
-          "because it's quiet",
-          "odd",
-          "noisy",
-          "even though"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "「うるさいのにしずかなのでへんだ」。",
-        "point_en": "のに marks the contrast with the usual noise.",
-        "link": "#/day/3-5/p0",
-        "order": "3→4→1→2"
-      },
-      {
-        "n": 13,
-        "ans": 2,
-        "trans": "想赶上电车，一跑就摔倒了。",
-        "trans_en": "I started running to catch the train and ended up falling.",
-        "option_translations": [
-          "想乘电车",
-          "一跑",
-          "摔倒",
-          "想着"
-        ],
-        "option_translations_en": [
-          "trying to board",
-          "when I ran",
-          "fell",
-          "thinking"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "「乗ろうと思って走ったらころんでしまった」。",
-        "point_en": "Vようと思って + Vたら = when I tried, … happened.",
-        "link": "#/day/3-6/p0",
-        "order": "1→4→2→3"
-      }
-    ],
-    "mondai3": [
-      {
-        "n": 14,
-        "ans": 3,
-        "trans": "记汉字对我这个澳大利亚人来说很难。",
-        "trans_en": "Memorizing kanji is hard for me as an Australian.",
-        "option_translations": [
-          "记住这件事（宾语）",
-          "决定记住",
-          "记住这件事（主题）",
-          "要记住的话"
-        ],
-        "option_translations_en": [
-          "memorizing (object)",
-          "deciding to memorize",
-          "memorizing (topic)",
-          "for memorizing"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "「おぼえるのは〜たいへん」。",
-        "point_en": "Vるのは makes the action the topic.",
-        "link": "#/day/3-1/p1"
-      },
-      {
-        "n": 15,
-        "ans": 4,
-        "trans": "不过，汉字读法不懂的话，查起来就费时间。",
-        "trans_en": "But if I don't know the reading, looking it up takes time.",
-        "option_translations": [
-          "然后",
-          "所以",
-          "那么",
-          "不过"
-        ],
-        "option_translations_en": [
-          "and then",
-          "so",
-          "well then",
-          "however"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "前后是转折，用「けれども」。",
-        "point_en": "けれども marks contrast.",
-        "link": "#/day/3-5/p0"
-      },
-      {
-        "n": 16,
-        "ans": 3,
-        "trans": "查那个要花时间。",
-        "trans_en": "It takes time to look that up.",
-        "option_translations": [
-          "查还是",
-          "是否查",
-          "用于查",
-          "把查作为宾语"
-        ],
-        "option_translations_en": [
-          "look up or",
-          "whether to look up",
-          "in order to look up / for looking up",
-          "looking up (object)"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "「しらべるのに時間がかかる」。",
-        "point_en": "Vるのに時間がかかる = it takes time to.",
-        "link": "#/day/3-1/p1"
-      },
-      {
-        "n": 17,
-        "ans": 1,
-        "trans": "我想今后好好学日本文化。",
-        "trans_en": "I intend to study Japanese culture from now on.",
-        "option_translations": [
-          "学吧（意志）",
-          "希望你学",
-          "咱们学吧",
-          "打算学"
-        ],
-        "option_translations_en": [
-          "I'll study",
-          "I want you to study",
-          "let's study",
-          "I plan to study"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "「勉強しようと思っています」。",
-        "point_en": "Vようと思う states the speaker's will.",
-        "link": "#/day/3-6/p0"
-      },
-      {
-        "n": 18,
-        "ans": 3,
-        "trans": "在电视上看到澳大利亚人在日本寄宿，我也想体验日本生活。",
-        "trans_en": "Watching an Australian homestay in Japan on TV made me want to experience life there too.",
-        "option_translations": [
-          "能看见",
-          "能被看见",
-          "看了之后",
-          "能看到"
-        ],
-        "option_translations_en": [
-          "is visible",
-          "can be seen",
-          "watching / having seen",
-          "being able to see"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "「ホームステイしているのを見て」。",
-        "point_en": "のを見て = seeing that…",
-        "link": "#/day/3-2/p1"
-      }
-    ]
-  },
-  "w4": {
-    "mondai1": [
-      {
-        "n": 1,
-        "ans": 2,
-        "trans": "到了春天，池子里的冰开始化了。",
-        "trans_en": "When spring came, the ice on the pond started to melt.",
-        "option_translations": [
-          "融化（他动词）",
-          "融化（自动词）",
-          "被融化",
-          "被化"
-        ],
-        "option_translations_en": [
-          "melt (transitive)",
-          "melt (intransitive)",
-          "be melted",
-          "be dissolved"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "冰自己化用自动词「とける」。",
-        "point_en": "とける is intransitive: the ice melts by itself.",
-        "link": "#/day/4-1/p0"
-      },
-      {
-        "n": 2,
-        "ans": 3,
-        "trans": "这台吸尘器又大又重，不好用。",
-        "trans_en": "This vacuum is big and heavy, so it's hard to use.",
-        "option_translations": [
-          "用得太多",
-          "好用",
-          "不好用",
-          "用掉了"
-        ],
-        "option_translations_en": [
-          "use too much",
-          "easy to use",
-          "hard to use",
-          "end up using"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "「Vにくい」表示难以做。",
-        "point_en": "Vにくい = hard to do.",
-        "link": "#/day/4-2/p1"
-      },
-      {
-        "n": 3,
-        "ans": 1,
-        "trans": "不过一摸马上就知道了。",
-        "trans_en": "But if you touch it, you can tell right away.",
-        "option_translations": [
-          "摸了的话",
-          "要摸的话",
-          "被摸的话",
-          "如果不摸"
-        ],
-        "option_translations_en": [
-          "if you touch it",
-          "if you're going to touch",
-          "if it is touched",
-          "if you don't touch"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "「さわったら」表示一摸就…。",
-        "point_en": "Vたら marks what you find out when you do it.",
-        "link": "#/day/4-3/p0"
-      },
-      {
-        "n": 4,
-        "ans": 3,
-        "trans": "小时候忘带作业，常被罚站走廊。",
-        "trans_en": "As a child I often forgot my homework and was made to stand in the hall.",
-        "option_translations": [
-          "被站",
-          "让站",
-          "被迫站",
-          "站过来了"
-        ],
-        "option_translations_en": [
-          "was stood",
-          "made someone stand",
-          "was made to stand",
-          "came standing"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "「立たされた」是使役被动。",
-        "point_en": "使役被动: someone forced the speaker to stand.",
-        "link": "#/day/4-3/p1"
-      },
-      {
-        "n": 5,
-        "ans": 1,
-        "trans": "你看起来挺高兴的，有什么好事吗？",
-        "trans_en": "You look happy — did something good happen?",
-        "option_translations": [
-          "显得高兴",
-          "听说高兴",
-          "高兴地那样",
-          "快要高兴"
-        ],
-        "option_translations_en": [
-          "looks happy",
-          "I hear it's happy",
-          "happily like that",
-          "about to be happy"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "「Aそう」表示从外表判断。",
-        "point_en": "Aそうだ describes how someone looks.",
-        "link": "#/day/4-5/p0"
-      },
-      {
-        "n": 6,
-        "ans": 1,
-        "trans": "爸爸给猫吃了（香肠被猫吃了）。",
-        "trans_en": "Dad was feeding them to the cat. / The cat ate them.",
-        "option_translations": [
-          "被吃",
-          "让吃",
-          "被迫吃",
-          "让被吃"
-        ],
-        "option_translations_en": [
-          "was eaten",
-          "let eat",
-          "was made to eat",
-          "was allowed to be eaten"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "「ネコに食べられていた」是受害被动。",
-        "point_en": "The sausage was eaten by the cat (adversative passive).",
-        "link": "#/day/4-3/p0"
-      },
-      {
-        "n": 7,
-        "ans": 1,
-        "trans": "好像进小偷了。",
-        "trans_en": "It looks like a burglar got in.",
-        "option_translations": [
-          "好像进了",
-          "好像被进了",
-          "也许进了（时态不对）",
-          "好像让进了"
-        ],
-        "option_translations_en": [
-          "seems it entered",
-          "seems it was entered",
-          "might have entered (awkward tense)",
-          "seems they made it enter"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "「入ったみたいだ」表示推测。",
-        "point_en": "Vたみたいだ = it seems that happened.",
-        "link": "#/day/4-5/p1"
-      },
-      {
-        "n": 8,
-        "ans": 4,
-        "trans": "都十点了店还不开门。今天好像休息。",
-        "trans_en": "It's 10 and the shop still isn't open. It seems they're closed today.",
-        "option_translations": [
-          "看样子要休息",
-          "是休息（解释）",
-          "休息了吧",
-          "好像休息"
-        ],
-        "option_translations_en": [
-          "looks like they'll close",
-          "it's that they're off",
-          "they probably rested",
-          "it appears they're closed"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "「休みのようだ」根据眼前情况推测。",
-        "point_en": "Nのようだ = it appears that.",
-        "link": "#/day/4-5/p1"
-      },
-      {
-        "n": 9,
-        "ans": 3,
-        "trans": "说是拿手，可写完全不行…",
-        "trans_en": "Speaking is my strong point, but I really can't write…",
-        "option_translations": [
-          "吧",
-          "变成",
-          "是…（解释）",
-          "决定"
-        ],
-        "option_translations_en": [
-          "probably",
-          "become",
-          "it is that",
-          "decide"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "「とくいなんです」用「んです」解释说明。",
-        "point_en": "んです offers an explanation.",
-        "link": "#/day/4-6/p1"
-      },
-      {
-        "n": 10,
-        "ans": 3,
-        "trans": "名字没写，所以不知道是谁的。",
-        "trans_en": "The name isn't written, so we don't know whose it is.",
-        "option_translations": [
-          "没被写",
-          "一直不写",
-          "没有写着",
-          "写不出来"
-        ],
-        "option_translations_en": [
-          "isn't written (passive)",
-          "is leaving it unwritten",
-          "hasn't been written on it",
-          "can't write"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "「書いてありません」表示结果状态。",
-        "point_en": "てありません = has not been written (on it).",
-        "link": "#/day/4-4/p1"
-      }
-    ],
-    "mondai2": [
-      {
-        "n": 11,
-        "ans": 1,
-        "trans": "这张图太小看不清，再放大一点。",
-        "trans_en": "This graph is too small and hard to see — make it a bit bigger.",
-        "option_translations": [
-          "所以",
-          "再稍微",
-          "太小",
-          "难看清"
-        ],
-        "option_translations_en": [
-          "so",
-          "a little more",
-          "too small",
-          "hard to see"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "「小さすぎて見にくいから」。",
-        "point_en": "すぎて = too …, so ….",
-        "link": "#/day/4-2/p0",
-        "order": "3→4→1→2"
-      },
-      {
-        "n": 12,
-        "ans": 2,
-        "trans": "刚才还是晴天，天空一下子暗下来，突然下雨了。",
-        "trans_en": "It had been clear, but the sky darkened and suddenly it started to rain.",
-        "option_translations": [
-          "却",
-          "天空变暗",
-          "渐渐变成",
-          "一直晴着"
-        ],
-        "option_translations_en": [
-          "even though",
-          "the sky dark",
-          "coming to be",
-          "had been clear"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "「はれていたのに空がくらくなってきて」。",
-        "point_en": "てきた marks a change coming on.",
-        "link": "#/day/4-4/p0",
-        "order": "4→1→2→3"
-      },
-      {
-        "n": 13,
-        "ans": 3,
-        "trans": "为什么不买正合适大小的呢？",
-        "trans_en": "Why didn't you buy one that was just the right size?",
-        "option_translations": [
-          "的",
-          "把…",
-          "没买",
-          "大小"
-        ],
-        "option_translations_en": [
-          "of",
-          "the one that",
-          "didn't buy",
-          "size"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "「ちょうどいい大きさのを買わなかった」。",
-        "point_en": "の nominalizes 大きさ.",
-        "link": "#/day/4-1/p1",
-        "order": "4→2→3→1"
-      }
-    ],
-    "mondai3": [
-      {
-        "n": 14,
-        "ans": 3,
-        "trans": "有座位也不让我坐。",
-        "trans_en": "Even when there was a seat, she wouldn't let me sit.",
-        "option_translations": [
-          "坐",
-          "被坐",
-          "让坐",
-          "被迫坐"
-        ],
-        "option_translations_en": [
-          "sit",
-          "be sat on",
-          "let sit",
-          "be made to sit"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "「すわらせてくれませんでした」是否定的使役授受。",
-        "point_en": "Vさせてくれない = would not let me.",
-        "link": "#/day/4-3/p1"
-      },
-      {
-        "n": 15,
-        "ans": 2,
-        "trans": "直到妈妈说可以，我被迫返工很多次。",
-        "trans_en": "Until my mother said it was all right, I was made to redo it many times.",
-        "option_translations": [
-          "让做了",
-          "被迫做了",
-          "请对方做了",
-          "对方为我做了"
-        ],
-        "option_translations_en": [
-          "made someone do",
-          "was made to do",
-          "had someone kindly do",
-          "someone did it for me"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "「やりなおしをさせられました」。",
-        "point_en": "使役被动: was forced to redo it.",
-        "link": "#/day/4-3/p1"
-      },
-      {
-        "n": 16,
-        "ans": 1,
-        "trans": "一上大学，就能做不少自己想做的事了。",
-        "trans_en": "Once I became a university student, I could do quite a lot of what I wanted.",
-        "option_translations": [
-          "一到…就",
-          "如果是",
-          "即使到了",
-          "即使"
-        ],
-        "option_translations_en": [
-          "when one becomes",
-          "if it is",
-          "even after becoming",
-          "even"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "「大学生になると」。",
-        "point_en": "Nになると = when you become N.",
-        "link": "#/day/4-4/p0"
-      },
-      {
-        "n": 17,
-        "ans": 1,
-        "trans": "母亲生病以后，好像连发脾气的力气都快没了。",
-        "trans_en": "After my mother fell ill, it seemed she was even losing the energy to get angry.",
-        "option_translations": [
-          "眼看要没了",
-          "听说会没",
-          "好像会没",
-          "好像已经没了"
-        ],
-        "option_translations_en": [
-          "looks about to disappear",
-          "I hear it will disappear",
-          "seems it will disappear",
-          "seems it already disappeared"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "「なくなりそう」是眼前的迹象。",
-        "point_en": "Vそうだ here is a visual guess about the near future.",
-        "link": "#/day/4-5/p0"
-      },
-      {
-        "n": 18,
-        "ans": 3,
-        "trans": "我觉得被母亲严格带大是件好事。",
-        "trans_en": "I think it was good that I was raised strictly by my mother.",
-        "option_translations": [
-          "为我长大",
-          "为我养育",
-          "被养育",
-          "让养育"
-        ],
-        "option_translations_en": [
-          "grew up for me",
-          "raised for me",
-          "was raised",
-          "was made to raise"
-        ],
-        "why": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "why_en": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "point": "「きびしくそだてられた」。",
-        "point_en": "Passive そだてられた = was brought up.",
-        "link": "#/day/4-3/p0"
-      }
-    ]
-  }
+	"w1": {
+		"mondai1": [
+			{
+				"n": 1,
+				"ans": 2,
+				"trans": "我母亲在教外国人日语的学校工作。",
+				"trans_en": "My mother works at a school that teaches Japanese to foreigners.",
+				"option_translations": [
+					"在（方向/对象）",
+					"在（场所/地点）",
+					"往",
+					"直到"
+				],
+				"option_translations_en": [
+					"at / to (destination)",
+					"at (place of action)",
+					"toward",
+					"until"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "场所用「で」。",
+				"point_en": "Use で for the place where an action happens.",
+				"link": "#/day/1-1/p0",
+				"words": [
+					{
+						"jp": "母",
+						"kana": "はは",
+						"cn": "母亲",
+						"en": "mother"
+					},
+					{
+						"jp": "日本語",
+						"kana": "にほんご",
+						"cn": "日语",
+						"en": "Japanese"
+					},
+					{
+						"jp": "学校",
+						"kana": "がっこう",
+						"cn": "学校",
+						"en": "school"
+					}
+				]
+			},
+			{
+				"n": 2,
+				"ans": 1,
+				"trans": "写一张报告竟然花了三个小时，太累了。",
+				"trans_en": "It took a whole three hours to write one page of the report. That was tough.",
+				"option_translations": [
+					"居然（数量之多）",
+					"只（后面要否定）",
+					"比",
+					"只"
+				],
+				"option_translations_en": [
+					"as much as (emphasis)",
+					"only (needs a negative)",
+					"than",
+					"only"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「3時間も」强调时间之多。",
+				"point_en": "も after an amount stresses how large it is.",
+				"link": "#/day/1-5/p1",
+				"words": [
+					{
+						"jp": "時間",
+						"kana": "じかん",
+						"cn": "时间",
+						"en": "time"
+					}
+				]
+			},
+			{
+				"n": 3,
+				"ans": 4,
+				"trans": "进这个房间的时候请脱掉拖鞋。",
+				"trans_en": "Please take off your slippers when you enter this room.",
+				"option_translations": [
+					"刚要…的时候",
+					"在…期间",
+					"就那样",
+					"在…的时候"
+				],
+				"option_translations_en": [
+					"just as",
+					"while / during",
+					"as is",
+					"when"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "表示时间点用「ときには」。",
+				"point_en": "ときには marks the time when something happens.",
+				"link": "#/day/1-2/p0",
+				"words": [
+					{
+						"jp": "部屋",
+						"kana": "へや",
+						"cn": "房间",
+						"en": "a room"
+					}
+				]
+			},
+			{
+				"n": 4,
+				"ans": 3,
+				"trans": "昨天开着窗就睡着了。",
+				"trans_en": "Yesterday I fell asleep with the window left open.",
+				"option_translations": [
+					"一边开一边",
+					"开了又…",
+					"开着的状态",
+					"正在开的时候"
+				],
+				"option_translations_en": [
+					"while opening",
+					"opening and …",
+					"left open",
+					"while opening"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「Vたまま」表示保持该状态。",
+				"point_en": "Vたまま means the resulting state is left unchanged.",
+				"link": "#/day/1-4/p2",
+				"words": []
+			},
+			{
+				"n": 5,
+				"ans": 2,
+				"trans": "那就每人拿两个吧。",
+				"trans_en": "Then let's take two each.",
+				"option_translations": [
+					"只",
+					"各、每",
+					"即使",
+					"比"
+				],
+				"option_translations_en": [
+					"only",
+					"each / apiece",
+					"even",
+					"than"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "平均分配用「ずつ」。",
+				"point_en": "ずつ means an equal share each.",
+				"link": "#/day/1-5/p2",
+				"words": []
+			},
+			{
+				"n": 6,
+				"ans": 1,
+				"trans": "不过，没有山田家那么大。",
+				"trans_en": "But it isn't as big as Yamada's house.",
+				"option_translations": [
+					"有…那么（后接否定）",
+					"啦…啦",
+					"即使",
+					"更…"
+				],
+				"option_translations_en": [
+					"as … as (with a negative)",
+					"and so on",
+					"even",
+					"more than"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「Nほど〜ない」表示达不到那个程度。",
+				"point_en": "Nほど〜ない means not as … as N.",
+				"link": "#/day/1-6/p0",
+				"words": [
+					{
+						"jp": "家",
+						"kana": "いえ",
+						"cn": "家",
+						"en": "house"
+					}
+				]
+			},
+			{
+				"n": 7,
+				"ans": 1,
+				"trans": "下个月要搬家，有点忙…",
+				"trans_en": "I'm moving next month, so I'm a bit busy…",
+				"option_translations": [
+					"已经定下来要…",
+					"有…这件事",
+					"刚…完",
+					"…的时候"
+				],
+				"option_translations_en": [
+					"it has been decided that",
+					"there is the matter of",
+					"just after",
+					"when"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「Vることになって」表示既定安排。",
+				"point_en": "Vることになって marks a set arrangement.",
+				"link": "#/day/2-4/p0",
+				"words": [
+					{
+						"jp": "今度",
+						"kana": "こんど",
+						"cn": "这次；下次",
+						"en": "this time, next time"
+					},
+					{
+						"jp": "映画",
+						"kana": "えいが",
+						"cn": "电影",
+						"en": "movie"
+					}
+				]
+			},
+			{
+				"n": 8,
+				"ans": 3,
+				"trans": "因为担心母亲的病，最近睡不好。",
+				"trans_en": "I've been sleeping poorly lately because I'm worried about my mother's illness.",
+				"option_translations": [
+					"因为（理由从句）",
+					"又…又",
+					"因为（原因名词）",
+					"光是"
+				],
+				"option_translations_en": [
+					"because (clause)",
+					"and also",
+					"because of (noun)",
+					"nothing but"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「心配で」用「で」表示心理原因。",
+				"point_en": "で after 心配 marks the cause of a state.",
+				"link": "#/day/1-1/p1",
+				"words": [
+					{
+						"jp": "母",
+						"kana": "はは",
+						"cn": "母亲",
+						"en": "mother"
+					},
+					{
+						"jp": "病気",
+						"kana": "びょうき",
+						"cn": "生病",
+						"en": "illness"
+					},
+					{
+						"jp": "心配",
+						"kana": "しんぱい",
+						"cn": "担心",
+						"en": "anxiety/worry"
+					}
+				]
+			},
+			{
+				"n": 9,
+				"ans": 4,
+				"trans": "发了邮件也没回，有点担心。",
+				"trans_en": "I emailed him, but he hasn't replied, so I'm a bit worried.",
+				"option_translations": [
+					"一直没来",
+					"不来就",
+					"没来之类",
+					"又不来"
+				],
+				"option_translations_en": [
+					"still hasn't come",
+					"without coming",
+					"sometimes doesn't come",
+					"and he doesn't reply"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「来ないし」并列说明没回信。",
+				"point_en": "し adds another reason: he doesn't reply.",
+				"link": "#/day/3-5/p1",
+				"words": [
+					{
+						"jp": "学校",
+						"kana": "がっこう",
+						"cn": "学校",
+						"en": "school"
+					},
+					{
+						"jp": "返事",
+						"kana": "へんじ",
+						"cn": "回答",
+						"en": "a reply"
+					},
+					{
+						"jp": "心配",
+						"kana": "しんぱい",
+						"cn": "担心",
+						"en": "anxiety/worry"
+					}
+				]
+			},
+			{
+				"n": 10,
+				"ans": 3,
+				"trans": "我和汤姆没说过话，所以不太清楚。",
+				"trans_en": "I've never talked with Tom, so I don't really know.",
+				"option_translations": [
+					"有时不说",
+					"决定要说",
+					"从来没说过",
+					"没安排要说"
+				],
+				"option_translations_en": [
+					"sometimes don't talk",
+					"make a point of talking",
+					"have never talked",
+					"aren't scheduled to talk"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「Vたことがない」表示没有过该经历。",
+				"point_en": "Vたことがない means you have never done it.",
+				"link": "#/day/3-2/p0",
+				"words": [
+					{
+						"jp": "人",
+						"kana": "ひと",
+						"cn": "人",
+						"en": "person"
+					}
+				]
+			}
+		],
+		"mondai2": [
+			{
+				"n": 11,
+				"ans": 1,
+				"trans": "从没下过那么大的雨，吓了一跳。",
+				"trans_en": "It had never rained that hard before, so I was shocked.",
+				"option_translations": [
+					"从没…过",
+					"那么地",
+					"没有",
+					"下"
+				],
+				"option_translations_en": [
+					"have never",
+					"that much",
+					"did not",
+					"fell (rain)"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「あんなに降ったことがなかった」。",
+				"point_en": "あんなに + Vたことがない = had never … that much.",
+				"link": "#/day/3-2/p0",
+				"order": "2→4→1→3",
+				"words": [
+					{
+						"jp": "今",
+						"kana": "いま",
+						"cn": "现在",
+						"en": "now"
+					}
+				]
+			},
+			{
+				"n": 12,
+				"ans": 1,
+				"trans": "啊，好像是我在洗澡的时候你来了。",
+				"trans_en": "Ah, it seems you came while I was in the bath.",
+				"option_translations": [
+					"正当…的时候",
+					"来了",
+					"正在进",
+					"洗澡"
+				],
+				"option_translations_en": [
+					"just when",
+					"came",
+					"is entering",
+					"the bath"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「おふろに入っているところに来た」。",
+				"point_en": "Vているところに = just when someone is doing something.",
+				"link": "#/day/2-5/p1",
+				"order": "4→3→1→2",
+				"words": [
+					{
+						"jp": "時",
+						"kana": "とき",
+						"cn": "时候",
+						"en": "time"
+					},
+					{
+						"jp": "家",
+						"kana": "いえ",
+						"cn": "家",
+						"en": "house"
+					}
+				]
+			},
+			{
+				"n": 13,
+				"ans": 4,
+				"trans": "田中站着的人后面那个高个子是谁？",
+				"trans_en": "Who is the tall person standing behind Tanaka?",
+				"option_translations": [
+					"站着的",
+					"在后面",
+					"人",
+					"个子高的"
+				],
+				"option_translations_en": [
+					"standing",
+					"behind",
+					"person",
+					"tall"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「うしろに立っている背の高い人」。",
+				"point_en": "Relative clauses stack before 人.",
+				"link": "#/day/4-1/p0",
+				"order": "2→1→4→3",
+				"words": [
+					{
+						"jp": "家族",
+						"kana": "かぞく",
+						"cn": "家人",
+						"en": "family"
+					},
+					{
+						"jp": "写真",
+						"kana": "しゃしん",
+						"cn": "照片",
+						"en": "photo, picture"
+					},
+					{
+						"jp": "兄",
+						"kana": "あに",
+						"cn": "（我的）哥哥",
+						"en": "older brother"
+					}
+				]
+			}
+		],
+		"mondai3": [
+			{
+				"n": 14,
+				"ans": 3,
+				"trans": "因为父亲工作而定下来要去日本的时候，我并不太高兴。",
+				"trans_en": "When it was decided we would go to Japan because of my father's job, I wasn't very happy.",
+				"option_translations": [
+					"如果有",
+					"有…的时候",
+					"如果变成",
+					"变成…的时候"
+				],
+				"option_translations_en": [
+					"if there is",
+					"when there was",
+					"if it becomes",
+					"when it became"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「来ることになったら」表示情况成立之后。",
+				"point_en": "Vることになったら = when it has been decided that.",
+				"link": "#/day/2-4/p0",
+				"words": []
+			},
+			{
+				"n": 15,
+				"ans": 1,
+				"trans": "和学校朋友分开既会寂寞，又觉得生活会不方便。",
+				"trans_en": "Being apart from my school friends would be lonely, and I thought life would be inconvenient.",
+				"option_translations": [
+					"会寂寞，而且",
+					"变寂寞了，而且",
+					"不会寂寞，而且",
+					"变得不寂寞了"
+				],
+				"option_translations_en": [
+					"will be lonely, and",
+					"became lonely, and",
+					"won't be lonely, and",
+					"stopped being lonely"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "对尚未发生的事用「さびしくなるし」。",
+				"point_en": "なる looks ahead; し adds another reason.",
+				"link": "#/day/3-5/p1",
+				"words": []
+			},
+			{
+				"n": 16,
+				"ans": 3,
+				"trans": "现在住的房子没有美国的家那么大。",
+				"trans_en": "The house I live in now isn't as big as our house in America.",
+				"option_translations": [
+					"有…那么小",
+					"比…宽",
+					"没有…那么大",
+					"并不比…小"
+				],
+				"option_translations_en": [
+					"as small as",
+					"wider than",
+					"not as big as",
+					"not smaller than"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「Nほど大きくない」。",
+				"point_en": "Nほど大きくない = not as big as N.",
+				"link": "#/day/1-6/p0",
+				"words": []
+			},
+			{
+				"n": 17,
+				"ans": 4,
+				"trans": "经常一起去买东西、吃饭什么的。",
+				"trans_en": "We often go shopping and out to eat together.",
+				"option_translations": [
+					"正要去的时候",
+					"去过这件事",
+					"去了就一直",
+					"去…什么的"
+				],
+				"option_translations_en": [
+					"just as we go",
+					"the fact of having gone",
+					"went and stayed",
+					"go and …"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「買い物や食事に行ったりする」。",
+				"point_en": "Vたりする lists typical activities.",
+				"link": "#/day/1-4/p1",
+				"words": []
+			},
+			{
+				"n": 18,
+				"ans": 1,
+				"trans": "明年要回美国，但我很期待在日本的生活。",
+				"trans_en": "I go back to America next year, but I'm looking forward to life in Japan.",
+				"option_translations": [
+					"感到期待",
+					"快乐",
+					"正在享受",
+					"会快乐吧"
+				],
+				"option_translations_en": [
+					"look forward to",
+					"is fun",
+					"am enjoying",
+					"is probably fun"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "对尚未到来的事用「楽しみです」。",
+				"point_en": "楽しみです looks ahead to something you await.",
+				"link": "#/day/2-6/p2",
+				"words": []
+			}
+		]
+	},
+	"w2": {
+		"mondai1": [
+			{
+				"n": 1,
+				"ans": 2,
+				"trans": "我不坐电梯和扶梯，尽量走楼梯。",
+				"trans_en": "I try not to use elevators or escalators and take the stairs.",
+				"option_translations": [
+					"为了用",
+					"尽量用",
+					"先用着",
+					"试试看用"
+				],
+				"option_translations_en": [
+					"in order to use",
+					"make a habit of using",
+					"use in advance",
+					"try using"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「Vるようにしている」表示有意识地保持习惯。",
+				"point_en": "Vるようにしている = make a point of doing it.",
+				"link": "#/day/2-1/p1",
+				"words": []
+			},
+			{
+				"n": 2,
+				"ans": 3,
+				"trans": "去那家餐厅的时候必须打领带。",
+				"trans_en": "You have to wear a tie when you go to that restaurant.",
+				"option_translations": [
+					"不可以做",
+					"做了也没关系",
+					"必须做",
+					"不做也可以"
+				],
+				"option_translations_en": [
+					"must not",
+					"may",
+					"must",
+					"needn't"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「Vなければならない」表示义务。",
+				"point_en": "Vなければならない expresses obligation.",
+				"link": "#/day/2-2/p0",
+				"words": []
+			},
+			{
+				"n": 3,
+				"ans": 1,
+				"trans": "下雨了。得赶快把衣服收进来。",
+				"trans_en": "It's started raining. We have to bring the laundry in.",
+				"option_translations": [
+					"不…不行",
+					"试试看",
+					"不可以",
+					"…的话就好"
+				],
+				"option_translations_en": [
+					"have to",
+					"try",
+					"must not",
+					"should"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "口语里「入れないと」后面省略了「いけない」。",
+				"point_en": "Vないと is a spoken must.",
+				"link": "#/day/2-2/p1",
+				"words": [
+					{
+						"jp": "洗濯",
+						"kana": "せんたく",
+						"cn": "洗衣服",
+						"en": "washing"
+					}
+				]
+			},
+			{
+				"n": 4,
+				"ans": 4,
+				"trans": "怎么跑也来不及，今天别看电影了。",
+				"trans_en": "No matter how much we run we won't make it, so let's skip the movie.",
+				"option_translations": [
+					"那样的",
+					"那么地",
+					"什么样的",
+					"无论怎么"
+				],
+				"option_translations_en": [
+					"that kind of",
+					"that much",
+					"what kind of",
+					"no matter how"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「どんなに〜ても」表示无论程度如何。",
+				"point_en": "どんなに Vても = no matter how much.",
+				"link": "#/day/2-3/p1",
+				"words": [
+					{
+						"jp": "映画",
+						"kana": "えいが",
+						"cn": "电影",
+						"en": "movie"
+					},
+					{
+						"jp": "今日",
+						"kana": "こんにち",
+						"cn": "今天",
+						"en": "today"
+					}
+				]
+			},
+			{
+				"n": 5,
+				"ans": 3,
+				"trans": "对不起，我把饼干全吃掉了。",
+				"trans_en": "Sorry — I ate all the cookies.",
+				"option_translations": [
+					"试着吃了",
+					"先吃好了",
+					"吃掉了（遗憾）",
+					"必须吃"
+				],
+				"option_translations_en": [
+					"tried eating",
+					"ate in advance",
+					"ended up eating",
+					"have to eat"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「食べちゃった」是「てしまう」的口语。",
+				"point_en": "Vちゃう marks an accidental or complete result.",
+				"link": "#/day/2-5/p0",
+				"words": [
+					{
+						"jp": "全部",
+						"kana": "ぜんぶ",
+						"cn": "全部",
+						"en": "all/whole"
+					}
+				]
+			},
+			{
+				"n": 6,
+				"ans": 2,
+				"trans": "嗯，已经能骑得相当好了。",
+				"trans_en": "Yeah, I've gotten pretty good at riding.",
+				"option_translations": [
+					"为了能骑而做了",
+					"变得会骑了",
+					"能骑就好了",
+					"能骑更好"
+				],
+				"option_translations_en": [
+					"did it so I could ride",
+					"have become able to ride",
+					"it would be good if I could",
+					"better if I could"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「Vるようになった」表示能力或状态的变化。",
+				"point_en": "Vるようになった = have become able to.",
+				"link": "#/day/2-1/p0",
+				"words": [
+					{
+						"jp": "自転車",
+						"kana": "じてんしゃ",
+						"cn": "自行车",
+						"en": "bicycle"
+					},
+					{
+						"jp": "練習",
+						"kana": "れんしゅう",
+						"cn": "练习",
+						"en": "practice"
+					}
+				]
+			},
+			{
+				"n": 7,
+				"ans": 4,
+				"trans": "这是两年前田中老师送给我的书。",
+				"trans_en": "This is a book Tanaka-sensei gave me two years ago.",
+				"option_translations": [
+					"给我（现在）",
+					"给我了（尊敬）",
+					"领取（现在）",
+					"领取了（谦让）"
+				],
+				"option_translations_en": [
+					"give me (nonpast honorific)",
+					"gave me (honorific)",
+					"receive (nonpast humble)",
+					"received (humble)"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "自己收下别人给的东西用「いただいた」。",
+				"point_en": "いただいた is the humble past of receive.",
+				"link": "#/day/2-6/p0",
+				"words": [
+					{
+						"jp": "先生",
+						"kana": "せんせい",
+						"cn": "老师",
+						"en": "teacher"
+					},
+					{
+						"jp": "本",
+						"kana": "ほん",
+						"cn": "书",
+						"en": "book"
+					}
+				]
+			},
+			{
+				"n": 8,
+				"ans": 1,
+				"trans": "那还是带着伞去比较好。",
+				"trans_en": "Then you'd better take an umbrella.",
+				"option_translations": [
+					"最好带去",
+					"不带也可以",
+					"带去也行",
+					"不带才好"
+				],
+				"option_translations_en": [
+					"you'd better take",
+					"needn't take",
+					"may take",
+					"better not take"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「Vたほうがいい」表示建议。",
+				"point_en": "Vたほうがいい gives advice.",
+				"link": "#/day/2-7/p0",
+				"words": [
+					{
+						"jp": "今日",
+						"kana": "こんにち",
+						"cn": "今天",
+						"en": "today"
+					},
+					{
+						"jp": "夕方",
+						"kana": "ゆうがた",
+						"cn": "傍晚",
+						"en": "evening"
+					}
+				]
+			},
+			{
+				"n": 9,
+				"ans": 3,
+				"trans": "这句话是什么意思？",
+				"trans_en": "What does this sentence mean?",
+				"option_translations": [
+					"什么的",
+					"说什么",
+					"什么样的",
+					"怎么了的"
+				],
+				"option_translations_en": [
+					"of what",
+					"say what",
+					"what kind of",
+					"what happened"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "问含义用「どういう意味」。",
+				"point_en": "どういう意味 asks for the meaning.",
+				"link": "#/day/2-3/p0",
+				"words": [
+					{
+						"jp": "文",
+						"kana": "ぶん",
+						"cn": "句子；文章",
+						"en": "sentence, text"
+					},
+					{
+						"jp": "意味",
+						"kana": "いみ",
+						"cn": "意思",
+						"en": "meaning"
+					}
+				]
+			},
+			{
+				"n": 10,
+				"ans": 1,
+				"trans": "山田，会议室你帮我订了吧。",
+				"trans_en": "Yamada, you booked the meeting room for me, right?",
+				"option_translations": [
+					"给我做了",
+					"我给别人做了",
+					"曾经做过",
+					"从没做过"
+				],
+				"option_translations_en": [
+					"did it for me",
+					"I did it for someone",
+					"have done it",
+					"have never done it"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「してくれた」表示对方为自己做了。",
+				"point_en": "てくれた = someone did it for the speaker.",
+				"link": "#/day/2-6/p1",
+				"words": [
+					{
+						"jp": "会議室",
+						"kana": "かいぎしつ",
+						"cn": "会议室",
+						"en": "a meeting room"
+					},
+					{
+						"jp": "予約",
+						"kana": "よやく",
+						"cn": "预约",
+						"en": "an appointment/reservation"
+					}
+				]
+			}
+		],
+		"mondai2": [
+			{
+				"n": 11,
+				"ans": 3,
+				"trans": "在公司干得久了，谁都能拿到的东西。",
+				"trans_en": "If you work at the company long enough, anyone can get one.",
+				"option_translations": [
+					"在公司",
+					"长时间",
+					"工作的话",
+					"虽然拿到了"
+				],
+				"option_translations_en": [
+					"at the company",
+					"for a long time",
+					"if you work",
+					"though I received it"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「長くつとめているともらいました」。",
+				"point_en": "Vていると marks what follows from a continuing state.",
+				"link": "#/day/2-1/p0",
+				"order": "1→2→3→4",
+				"words": [
+					{
+						"jp": "時計",
+						"kana": "とけい",
+						"cn": "钟，表",
+						"en": "clock, watch"
+					}
+				]
+			},
+			{
+				"n": 12,
+				"ans": 3,
+				"trans": "我每月去一次牙医检查蛀牙。",
+				"trans_en": "I make a point of going to the dentist once a month to check for cavities.",
+				"option_translations": [
+					"每月一次",
+					"检查",
+					"为了",
+					"蛀牙的"
+				],
+				"option_translations_en": [
+					"once a month",
+					"check",
+					"for / in order to",
+					"of cavities"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「虫歯のチェックのために」。",
+				"point_en": "Nのために = for the purpose of N.",
+				"link": "#/day/3-1/p0",
+				"order": "4→2→3→1",
+				"words": [
+					{
+						"jp": "歯医者",
+						"kana": "はいしゃ",
+						"cn": "牙医",
+						"en": "a dentist"
+					}
+				]
+			},
+			{
+				"n": 13,
+				"ans": 2,
+				"trans": "刚才拜托的事，就算不马上做，也请先做好。",
+				"trans_en": "About what I asked just now — even if you don't do it right away, please have it done.",
+				"option_translations": [
+					"马上",
+					"也行",
+					"因为",
+					"即使不"
+				],
+				"option_translations_en": [
+					"immediately",
+					"fine",
+					"because",
+					"even if not"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「すぐじゃなくてもいいから」。",
+				"point_en": "Vなくてもいい = it's all right not to.",
+				"link": "#/day/2-2/p2",
+				"order": "1→4→2→3",
+				"words": []
+			}
+		],
+		"mondai3": [
+			{
+				"n": 14,
+				"ans": 4,
+				"trans": "寄宿家庭去旅行了，所以我得去遛狗。",
+				"trans_en": "My host family went on a trip, so I had to walk the dog.",
+				"option_translations": [
+					"也可以做，因为",
+					"不可以做，所以",
+					"必须做，因为",
+					"必须做，所以"
+				],
+				"option_translations_en": [
+					"was allowed to, because",
+					"wasn't allowed to, so",
+					"had to, because",
+					"had to, so"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「散歩をしなければならなかったので」。",
+				"point_en": "Vなければならなかったので = because I had to.",
+				"link": "#/day/2-2/p0",
+				"words": []
+			},
+			{
+				"n": 15,
+				"ans": 1,
+				"trans": "妈妈说即使时间短也没关系。",
+				"trans_en": "Mom said it was fine even if the walk was short.",
+				"option_translations": [
+					"即使短也",
+					"如果短的话（否定条件）",
+					"短这件事",
+					"因为短"
+				],
+				"option_translations_en": [
+					"even if short",
+					"if it is short (negative)",
+					"the fact it is short",
+					"because it is short"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「みじかくてもいい」。",
+				"point_en": "Vてもいい = it's all right even if.",
+				"link": "#/day/2-3/p1",
+				"words": []
+			},
+			{
+				"n": 16,
+				"ans": 3,
+				"trans": "里奥叼着球来，像在说「扔！」",
+				"trans_en": "Leo brought a ball, as if telling me “Throw it!”",
+				"option_translations": [
+					"扔（词典形）",
+					"扔了",
+					"扔！（命令）",
+					"别扔"
+				],
+				"option_translations_en": [
+					"throw (plain)",
+					"threw",
+					"throw! (command)",
+					"don't throw"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "转述狗的要求用命令形「なげろ」。",
+				"point_en": "The imperative なげろ reports the dog's demand.",
+				"link": "#/day/3-6/p0",
+				"words": []
+			},
+			{
+				"n": 17,
+				"ans": 4,
+				"trans": "为了赶上平时那班电车，一路跑到车站。",
+				"trans_en": "I ran all the way to the station so I could catch my usual train.",
+				"option_translations": [
+					"乘坐期间",
+					"乘坐的时候",
+					"以便乘坐",
+					"为了乘坐"
+				],
+				"option_translations_en": [
+					"while riding",
+					"when riding",
+					"so as to ride",
+					"in order to ride"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「乗るために」表示目的。",
+				"point_en": "Vるために marks purpose.",
+				"link": "#/day/3-1/p0",
+				"words": []
+			},
+			{
+				"n": 18,
+				"ans": 1,
+				"trans": "为了不忘掉学校教的内容，每天复习。",
+				"trans_en": "I review every day so I don't forget what I learned at school.",
+				"option_translations": [
+					"以免忘记",
+					"如果不忘记",
+					"先忘掉",
+					"试着忘掉"
+				],
+				"option_translations_en": [
+					"so as not to forget",
+					"if I don't forget",
+					"forget in advance",
+					"try forgetting"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「わすれないように」表示目的。",
+				"point_en": "Vないように = so as not to.",
+				"link": "#/day/2-1/p1",
+				"words": []
+			}
+		]
+	},
+	"w3": {
+		"mondai1": [
+			{
+				"n": 1,
+				"ans": 4,
+				"trans": "这是用来剪花的剪刀。",
+				"trans_en": "These are scissors used for cutting flowers.",
+				"option_translations": [
+					"以便",
+					"为了的",
+					"因为",
+					"用来…"
+				],
+				"option_translations_en": [
+					"so that",
+					"for the sake of",
+					"because",
+					"for the purpose of"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「Vるのに使う」表示用途。",
+				"point_en": "Vるのに使う = used for doing.",
+				"link": "#/day/3-1/p1",
+				"words": []
+			},
+			{
+				"n": 2,
+				"ans": 1,
+				"trans": "头疼睡不着。吃点药试试看？",
+				"trans_en": "I have a headache and can't sleep. Why not try taking some medicine?",
+				"option_translations": [
+					"吃了看看怎么样",
+					"先吃着",
+					"如果吃掉的话",
+					"如果一直吃"
+				],
+				"option_translations_en": [
+					"how about trying",
+					"take in advance",
+					"if you end up taking",
+					"if you keep taking"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「Vてみたらどう」表示建议尝试。",
+				"point_en": "Vてみたらどう suggests trying it.",
+				"link": "#/day/3-3/p0",
+				"words": [
+					{
+						"jp": "頭",
+						"kana": "あたま",
+						"cn": "头，脑袋",
+						"en": "head"
+					},
+					{
+						"jp": "薬",
+						"kana": "くすり",
+						"cn": "药，药品",
+						"en": "medicine, drug"
+					}
+				]
+			},
+			{
+				"n": 3,
+				"ans": 2,
+				"trans": "对不起，有件事想请教您…",
+				"trans_en": "Excuse me, there's something I'd like to ask you…",
+				"option_translations": [
+					"能请您（可能）",
+					"想请您",
+					"能让我得到",
+					"想给我"
+				],
+				"option_translations_en": [
+					"can receive (potential)",
+					"would like you to",
+					"can have someone",
+					"want someone to give me"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "对听话人用「ていただきたい」。",
+				"point_en": "ていただきたい is a polite request.",
+				"link": "#/day/3-4/p0",
+				"words": []
+			},
+			{
+				"n": 4,
+				"ans": 2,
+				"trans": "是听谁说的我记不清了，但这件事我也知道。",
+				"trans_en": "I don't remember who I heard it from, but I know that too.",
+				"option_translations": [
+					"听（现在）",
+					"听了",
+					"听见了",
+					"听得到"
+				],
+				"option_translations_en": [
+					"hear (nonpast)",
+					"heard",
+					"was audible",
+					"could hear"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "已经发生的事用「聞いた」。",
+				"point_en": "The past 聞いた matches かおぼえていない.",
+				"link": "#/day/3-2/p1",
+				"words": []
+			},
+			{
+				"n": 5,
+				"ans": 1,
+				"trans": "虽然住在日本，却没什么用日语的机会。",
+				"trans_en": "Even though I live in Japan, I don't get many chances to use Japanese.",
+				"option_translations": [
+					"虽然住着",
+					"因为住着",
+					"刚住着的时候",
+					"住着的地方"
+				],
+				"option_translations_en": [
+					"even though I live",
+					"because I live",
+					"just when I was living",
+					"the place I live"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「いるのに」表示逆接。",
+				"point_en": "のに marks an unexpected contrast.",
+				"link": "#/day/3-5/p0",
+				"words": [
+					{
+						"jp": "日本",
+						"kana": "にほん",
+						"cn": "日本",
+						"en": "Japan"
+					},
+					{
+						"jp": "日本語",
+						"kana": "にほんご",
+						"cn": "日语",
+						"en": "Japanese"
+					}
+				]
+			},
+			{
+				"n": 6,
+				"ans": 4,
+				"trans": "弟弟说不打算进公司，光弹吉他…",
+				"trans_en": "My brother says he has no intention of joining a company and just plays guitar…",
+				"option_translations": [
+					"没有过",
+					"不会变成",
+					"不打算（不自然）",
+					"不打算"
+				],
+				"option_translations_en": [
+					"have never",
+					"won't become",
+					"unnatural form",
+					"have no intention"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「Vるつもりはない」表示没有该打算。",
+				"point_en": "Vるつもりはない = have no intention of.",
+				"link": "#/day/3-6/p1",
+				"words": [
+					{
+						"jp": "弟",
+						"kana": "おとうと",
+						"cn": "（我的）弟弟",
+						"en": "younger brother"
+					},
+					{
+						"jp": "卒業",
+						"kana": "そつぎょう",
+						"cn": "毕业",
+						"en": "graduation"
+					},
+					{
+						"jp": "会社",
+						"kana": "かいしゃ",
+						"cn": "公司",
+						"en": "company"
+					}
+				]
+			},
+			{
+				"n": 7,
+				"ans": 3,
+				"trans": "我也想胖一点，可怎么吃都胖不了。",
+				"trans_en": "I'd like to gain weight too, but I can't no matter how much I eat.",
+				"option_translations": [
+					"吃这件事",
+					"虽然吃",
+					"即使吃",
+					"想吃"
+				],
+				"option_translations_en": [
+					"the act of eating",
+					"although eating",
+					"even if I eat",
+					"trying to eat"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「いくらVても」表示无论怎样都不行。",
+				"point_en": "いくら Vても = no matter how much.",
+				"link": "#/day/2-3/p1",
+				"words": []
+			},
+			{
+				"n": 8,
+				"ans": 2,
+				"trans": "昨天想早点睡，却怎么也睡不着。",
+				"trans_en": "Yesterday I meant to go to bed early, but I just couldn't sleep.",
+				"option_translations": [
+					"睡！",
+					"想睡",
+					"打算睡",
+					"睡着了"
+				],
+				"option_translations_en": [
+					"sleep! (command)",
+					"let's / I'll sleep",
+					"plan to sleep",
+					"ended up sleeping"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "自己的意志用「Vようと思う」。",
+				"point_en": "Vようと思う marks the speaker's intention.",
+				"link": "#/day/3-6/p0",
+				"words": []
+			},
+			{
+				"n": 9,
+				"ans": 1,
+				"trans": "别老问同样的事了。",
+				"trans_en": "I don't want you to keep asking the same thing.",
+				"option_translations": [
+					"希望你别问",
+					"不希望你别问",
+					"必须问",
+					"不问才好"
+				],
+				"option_translations_en": [
+					"I don't want you to ask",
+					"I don't want you not to ask",
+					"must ask",
+					"better not ask"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「Vないでほしい」表示希望对方不要做。",
+				"point_en": "Vないでほしい = I want you not to.",
+				"link": "#/day/3-4/p1",
+				"words": [
+					{
+						"jp": "学校",
+						"kana": "がっこう",
+						"cn": "学校",
+						"en": "school"
+					},
+					{
+						"jp": "息子",
+						"kana": "むすこ",
+						"cn": "儿子",
+						"en": "a son"
+					}
+				]
+			},
+			{
+				"n": 10,
+				"ans": 1,
+				"trans": "约翰说汤姆住院了。所以才没来学校啊。",
+				"trans_en": "John said Tom was in the hospital. So that's why he hasn't been coming to school.",
+				"option_translations": [
+					"所以",
+					"那么就",
+					"可是",
+					"然而"
+				],
+				"option_translations_en": [
+					"that's why",
+					"in that case",
+					"but",
+					"however"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「だから」承接已知理由。",
+				"point_en": "だから draws the conclusion from the previous line.",
+				"link": "#/day/3-5/p1",
+				"words": [
+					{
+						"jp": "入院する",
+						"kana": "にゅういんする",
+						"cn": "住院",
+						"en": "be hospitalized"
+					},
+					{
+						"jp": "学校",
+						"kana": "がっこう",
+						"cn": "学校",
+						"en": "school"
+					}
+				]
+			}
+		],
+		"mondai2": [
+			{
+				"n": 11,
+				"ans": 2,
+				"trans": "本不想说，但觉得还是提醒一下比较好。",
+				"trans_en": "I wasn't going to say anything, but I thought I'd better mention it after all.",
+				"option_translations": [
+					"打算",
+					"来着但是",
+					"不说",
+					"还是"
+				],
+				"option_translations_en": [
+					"intention",
+					"was going to, but",
+					"not say",
+					"after all"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「言わないつもりだったんですが」。",
+				"point_en": "Vるつもりだった = I had intended to.",
+				"link": "#/day/3-6/p1",
+				"order": "3→1→2→4",
+				"words": [
+					{
+						"jp": "注意する",
+						"kana": "ちゅういする",
+						"cn": "注意，小心；提醒",
+						"en": "pay attention"
+					},
+					{
+						"jp": "本当",
+						"kana": "ほんとう",
+						"cn": "真的",
+						"en": "the truth"
+					}
+				]
+			},
+			{
+				"n": 12,
+				"ans": 1,
+				"trans": "那家人的狗平时那么吵，今天却很安静，我觉得奇怪。",
+				"trans_en": "Their dog is usually noisy, so it seemed odd that it was quiet.",
+				"option_translations": [
+					"因为安静",
+					"奇怪",
+					"吵",
+					"却"
+				],
+				"option_translations_en": [
+					"because it's quiet",
+					"odd",
+					"noisy",
+					"even though"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「うるさいのにしずかなのでへんだ」。",
+				"point_en": "のに marks the contrast with the usual noise.",
+				"link": "#/day/3-5/p0",
+				"order": "3→4→1→2",
+				"words": [
+					{
+						"jp": "家族",
+						"kana": "かぞく",
+						"cn": "家人",
+						"en": "family"
+					},
+					{
+						"jp": "犬",
+						"kana": "いぬ",
+						"cn": "狗",
+						"en": "dog"
+					},
+					{
+						"jp": "旅行",
+						"kana": "りょこう",
+						"cn": "旅行",
+						"en": "trip"
+					}
+				]
+			},
+			{
+				"n": 13,
+				"ans": 2,
+				"trans": "想赶上电车，一跑就摔倒了。",
+				"trans_en": "I started running to catch the train and ended up falling.",
+				"option_translations": [
+					"想乘电车",
+					"一跑",
+					"摔倒",
+					"想着"
+				],
+				"option_translations_en": [
+					"trying to board",
+					"when I ran",
+					"fell",
+					"thinking"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「乗ろうと思って走ったらころんでしまった」。",
+				"point_en": "Vようと思って + Vたら = when I tried, … happened.",
+				"link": "#/day/3-6/p0",
+				"order": "1→4→2→3",
+				"words": []
+			}
+		],
+		"mondai3": [
+			{
+				"n": 14,
+				"ans": 3,
+				"trans": "记汉字对我这个澳大利亚人来说很难。",
+				"trans_en": "Memorizing kanji is hard for me as an Australian.",
+				"option_translations": [
+					"记住这件事（宾语）",
+					"决定记住",
+					"记住这件事（主题）",
+					"要记住的话"
+				],
+				"option_translations_en": [
+					"memorizing (object)",
+					"deciding to memorize",
+					"memorizing (topic)",
+					"for memorizing"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「おぼえるのは〜たいへん」。",
+				"point_en": "Vるのは makes the action the topic.",
+				"link": "#/day/3-1/p1",
+				"words": []
+			},
+			{
+				"n": 15,
+				"ans": 4,
+				"trans": "不过，汉字读法不懂的话，查起来就费时间。",
+				"trans_en": "But if I don't know the reading, looking it up takes time.",
+				"option_translations": [
+					"然后",
+					"所以",
+					"那么",
+					"不过"
+				],
+				"option_translations_en": [
+					"and then",
+					"so",
+					"well then",
+					"however"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "前后是转折，用「けれども」。",
+				"point_en": "けれども marks contrast.",
+				"link": "#/day/3-5/p0",
+				"words": []
+			},
+			{
+				"n": 16,
+				"ans": 3,
+				"trans": "查那个要花时间。",
+				"trans_en": "It takes time to look that up.",
+				"option_translations": [
+					"查还是",
+					"是否查",
+					"用于查",
+					"把查作为宾语"
+				],
+				"option_translations_en": [
+					"look up or",
+					"whether to look up",
+					"in order to look up / for looking up",
+					"looking up (object)"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「しらべるのに時間がかかる」。",
+				"point_en": "Vるのに時間がかかる = it takes time to.",
+				"link": "#/day/3-1/p1",
+				"words": []
+			},
+			{
+				"n": 17,
+				"ans": 1,
+				"trans": "我想今后好好学日本文化。",
+				"trans_en": "I intend to study Japanese culture from now on.",
+				"option_translations": [
+					"学吧（意志）",
+					"希望你学",
+					"咱们学吧",
+					"打算学"
+				],
+				"option_translations_en": [
+					"I'll study",
+					"I want you to study",
+					"let's study",
+					"I plan to study"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「勉強しようと思っています」。",
+				"point_en": "Vようと思う states the speaker's will.",
+				"link": "#/day/3-6/p0",
+				"words": []
+			},
+			{
+				"n": 18,
+				"ans": 3,
+				"trans": "在电视上看到澳大利亚人在日本寄宿，我也想体验日本生活。",
+				"trans_en": "Watching an Australian homestay in Japan on TV made me want to experience life there too.",
+				"option_translations": [
+					"能看见",
+					"能被看见",
+					"看了之后",
+					"能看到"
+				],
+				"option_translations_en": [
+					"is visible",
+					"can be seen",
+					"watching / having seen",
+					"being able to see"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「ホームステイしているのを見て」。",
+				"point_en": "のを見て = seeing that…",
+				"link": "#/day/3-2/p1",
+				"words": []
+			}
+		]
+	},
+	"w4": {
+		"mondai1": [
+			{
+				"n": 1,
+				"ans": 2,
+				"trans": "到了春天，池子里的冰开始化了。",
+				"trans_en": "When spring came, the ice on the pond started to melt.",
+				"option_translations": [
+					"融化（他动词）",
+					"融化（自动词）",
+					"被融化",
+					"被化"
+				],
+				"option_translations_en": [
+					"melt (transitive)",
+					"melt (intransitive)",
+					"be melted",
+					"be dissolved"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "冰自己化用自动词「とける」。",
+				"point_en": "とける is intransitive: the ice melts by itself.",
+				"link": "#/day/4-1/p0",
+				"words": [
+					{
+						"jp": "春",
+						"kana": "はる",
+						"cn": "春",
+						"en": "spring"
+					},
+					{
+						"jp": "池",
+						"kana": "いけ",
+						"cn": "池，池塘",
+						"en": "pond"
+					},
+					{
+						"jp": "氷",
+						"kana": "こおり",
+						"cn": "冰",
+						"en": "ice"
+					}
+				]
+			},
+			{
+				"n": 2,
+				"ans": 3,
+				"trans": "这台吸尘器又大又重，不好用。",
+				"trans_en": "This vacuum is big and heavy, so it's hard to use.",
+				"option_translations": [
+					"用得太多",
+					"好用",
+					"不好用",
+					"用掉了"
+				],
+				"option_translations_en": [
+					"use too much",
+					"easy to use",
+					"hard to use",
+					"end up using"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「Vにくい」表示难以做。",
+				"point_en": "Vにくい = hard to do.",
+				"link": "#/day/4-2/p1",
+				"words": []
+			},
+			{
+				"n": 3,
+				"ans": 1,
+				"trans": "不过一摸马上就知道了。",
+				"trans_en": "But if you touch it, you can tell right away.",
+				"option_translations": [
+					"摸了的话",
+					"要摸的话",
+					"被摸的话",
+					"如果不摸"
+				],
+				"option_translations_en": [
+					"if you touch it",
+					"if you're going to touch",
+					"if it is touched",
+					"if you don't touch"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「さわったら」表示一摸就…。",
+				"point_en": "Vたら marks what you find out when you do it.",
+				"link": "#/day/4-3/p0",
+				"words": [
+					{
+						"jp": "本当",
+						"kana": "ほんとう",
+						"cn": "真的",
+						"en": "the truth"
+					}
+				]
+			},
+			{
+				"n": 4,
+				"ans": 3,
+				"trans": "小时候忘带作业，常被罚站走廊。",
+				"trans_en": "As a child I often forgot my homework and was made to stand in the hall.",
+				"option_translations": [
+					"被站",
+					"让站",
+					"被迫站",
+					"站过来了"
+				],
+				"option_translations_en": [
+					"was stood",
+					"made someone stand",
+					"was made to stand",
+					"came standing"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「立たされた」是使役被动。",
+				"point_en": "使役被动: someone forced the speaker to stand.",
+				"link": "#/day/4-3/p1",
+				"words": [
+					{
+						"jp": "宿題",
+						"kana": "しゅくだい",
+						"cn": "课外作业",
+						"en": "a homework"
+					}
+				]
+			},
+			{
+				"n": 5,
+				"ans": 1,
+				"trans": "你看起来挺高兴的，有什么好事吗？",
+				"trans_en": "You look happy — did something good happen?",
+				"option_translations": [
+					"显得高兴",
+					"听说高兴",
+					"高兴地那样",
+					"快要高兴"
+				],
+				"option_translations_en": [
+					"looks happy",
+					"I hear it's happy",
+					"happily like that",
+					"about to be happy"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「Aそう」表示从外表判断。",
+				"point_en": "Aそうだ describes how someone looks.",
+				"link": "#/day/4-5/p0",
+				"words": [
+					{
+						"jp": "何",
+						"kana": "なに",
+						"cn": "什么",
+						"en": "what"
+					}
+				]
+			},
+			{
+				"n": 6,
+				"ans": 1,
+				"trans": "爸爸给猫吃了（香肠被猫吃了）。",
+				"trans_en": "Dad was feeding them to the cat. / The cat ate them.",
+				"option_translations": [
+					"被吃",
+					"让吃",
+					"被迫吃",
+					"让被吃"
+				],
+				"option_translations_en": [
+					"was eaten",
+					"let eat",
+					"was made to eat",
+					"was allowed to be eaten"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「ネコに食べられていた」是受害被动。",
+				"point_en": "The sausage was eaten by the cat (adversative passive).",
+				"link": "#/day/4-3/p0",
+				"words": [
+					{
+						"jp": "父",
+						"kana": "ちち",
+						"cn": "父亲",
+						"en": "father"
+					}
+				]
+			},
+			{
+				"n": 7,
+				"ans": 1,
+				"trans": "好像进小偷了。",
+				"trans_en": "It looks like a burglar got in.",
+				"option_translations": [
+					"好像进了",
+					"好像被进了",
+					"也许进了（时态不对）",
+					"好像让进了"
+				],
+				"option_translations_en": [
+					"seems it entered",
+					"seems it was entered",
+					"might have entered (awkward tense)",
+					"seems they made it enter"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「入ったみたいだ」表示推测。",
+				"point_en": "Vたみたいだ = it seems that happened.",
+				"link": "#/day/4-5/p1",
+				"words": [
+					{
+						"jp": "家",
+						"kana": "いえ",
+						"cn": "家",
+						"en": "house"
+					},
+					{
+						"jp": "何",
+						"kana": "なに",
+						"cn": "什么",
+						"en": "what"
+					}
+				]
+			},
+			{
+				"n": 8,
+				"ans": 4,
+				"trans": "都十点了店还不开门。今天好像休息。",
+				"trans_en": "It's 10 and the shop still isn't open. It seems they're closed today.",
+				"option_translations": [
+					"看样子要休息",
+					"是休息（解释）",
+					"休息了吧",
+					"好像休息"
+				],
+				"option_translations_en": [
+					"looks like they'll close",
+					"it's that they're off",
+					"they probably rested",
+					"it appears they're closed"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「休みのようだ」根据眼前情况推测。",
+				"point_en": "Nのようだ = it appears that.",
+				"link": "#/day/4-5/p1",
+				"words": [
+					{
+						"jp": "時",
+						"kana": "とき",
+						"cn": "时候",
+						"en": "time"
+					},
+					{
+						"jp": "今日",
+						"kana": "こんにち",
+						"cn": "今天",
+						"en": "today"
+					}
+				]
+			},
+			{
+				"n": 9,
+				"ans": 3,
+				"trans": "说是拿手，可写完全不行…",
+				"trans_en": "Speaking is my strong point, but I really can't write…",
+				"option_translations": [
+					"吧",
+					"变成",
+					"是…（解释）",
+					"决定"
+				],
+				"option_translations_en": [
+					"probably",
+					"become",
+					"it is that",
+					"decide"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「とくいなんです」用「んです」解释说明。",
+				"point_en": "んです offers an explanation.",
+				"link": "#/day/4-6/p1",
+				"words": [
+					{
+						"jp": "日本語",
+						"kana": "にほんご",
+						"cn": "日语",
+						"en": "Japanese"
+					},
+					{
+						"jp": "話",
+						"kana": "はなし",
+						"cn": "话／说话",
+						"en": "talk"
+					},
+					{
+						"jp": "本当",
+						"kana": "ほんとう",
+						"cn": "真的",
+						"en": "the truth"
+					}
+				]
+			},
+			{
+				"n": 10,
+				"ans": 3,
+				"trans": "名字没写，所以不知道是谁的。",
+				"trans_en": "The name isn't written, so we don't know whose it is.",
+				"option_translations": [
+					"没被写",
+					"一直不写",
+					"没有写着",
+					"写不出来"
+				],
+				"option_translations_en": [
+					"isn't written (passive)",
+					"is leaving it unwritten",
+					"hasn't been written on it",
+					"can't write"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「書いてありません」表示结果状态。",
+				"point_en": "てありません = has not been written (on it).",
+				"link": "#/day/4-4/p1",
+				"words": [
+					{
+						"jp": "先生",
+						"kana": "せんせい",
+						"cn": "老师",
+						"en": "teacher"
+					}
+				]
+			}
+		],
+		"mondai2": [
+			{
+				"n": 11,
+				"ans": 1,
+				"trans": "这张图太小看不清，再放大一点。",
+				"trans_en": "This graph is too small and hard to see — make it a bit bigger.",
+				"option_translations": [
+					"所以",
+					"再稍微",
+					"太小",
+					"难看清"
+				],
+				"option_translations_en": [
+					"so",
+					"a little more",
+					"too small",
+					"hard to see"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「小さすぎて見にくいから」。",
+				"point_en": "すぎて = too …, so ….",
+				"link": "#/day/4-2/p0",
+				"order": "3→4→1→2",
+				"words": [
+					{
+						"jp": "会社",
+						"kana": "かいしゃ",
+						"cn": "公司",
+						"en": "company"
+					},
+					{
+						"jp": "部長",
+						"kana": "ぶちょう",
+						"cn": "部长",
+						"en": "manager"
+					},
+					{
+						"jp": "資料",
+						"kana": "しりょう",
+						"cn": "资料",
+						"en": "material(s)/data"
+					}
+				]
+			},
+			{
+				"n": 12,
+				"ans": 2,
+				"trans": "刚才还是晴天，天空一下子暗下来，突然下雨了。",
+				"trans_en": "It had been clear, but the sky darkened and suddenly it started to rain.",
+				"option_translations": [
+					"却",
+					"天空变暗",
+					"渐渐变成",
+					"一直晴着"
+				],
+				"option_translations_en": [
+					"even though",
+					"the sky dark",
+					"coming to be",
+					"had been clear"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「はれていたのに空がくらくなってきて」。",
+				"point_en": "てきた marks a change coming on.",
+				"link": "#/day/4-4/p0",
+				"order": "4→1→2→3",
+				"words": []
+			},
+			{
+				"n": 13,
+				"ans": 3,
+				"trans": "为什么不买正合适大小的呢？",
+				"trans_en": "Why didn't you buy one that was just the right size?",
+				"option_translations": [
+					"的",
+					"把…",
+					"没买",
+					"大小"
+				],
+				"option_translations_en": [
+					"of",
+					"the one that",
+					"didn't buy",
+					"size"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「ちょうどいい大きさのを買わなかった」。",
+				"point_en": "の nominalizes 大きさ.",
+				"link": "#/day/4-1/p1",
+				"order": "4→2→3→1",
+				"words": []
+			}
+		],
+		"mondai3": [
+			{
+				"n": 14,
+				"ans": 3,
+				"trans": "有座位也不让我坐。",
+				"trans_en": "Even when there was a seat, she wouldn't let me sit.",
+				"option_translations": [
+					"坐",
+					"被坐",
+					"让坐",
+					"被迫坐"
+				],
+				"option_translations_en": [
+					"sit",
+					"be sat on",
+					"let sit",
+					"be made to sit"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「すわらせてくれませんでした」是否定的使役授受。",
+				"point_en": "Vさせてくれない = would not let me.",
+				"link": "#/day/4-3/p1",
+				"words": []
+			},
+			{
+				"n": 15,
+				"ans": 2,
+				"trans": "直到妈妈说可以，我被迫返工很多次。",
+				"trans_en": "Until my mother said it was all right, I was made to redo it many times.",
+				"option_translations": [
+					"让做了",
+					"被迫做了",
+					"请对方做了",
+					"对方为我做了"
+				],
+				"option_translations_en": [
+					"made someone do",
+					"was made to do",
+					"had someone kindly do",
+					"someone did it for me"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「やりなおしをさせられました」。",
+				"point_en": "使役被动: was forced to redo it.",
+				"link": "#/day/4-3/p1",
+				"words": []
+			},
+			{
+				"n": 16,
+				"ans": 1,
+				"trans": "一上大学，就能做不少自己想做的事了。",
+				"trans_en": "Once I became a university student, I could do quite a lot of what I wanted.",
+				"option_translations": [
+					"一到…就",
+					"如果是",
+					"即使到了",
+					"即使"
+				],
+				"option_translations_en": [
+					"when one becomes",
+					"if it is",
+					"even after becoming",
+					"even"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「大学生になると」。",
+				"point_en": "Nになると = when you become N.",
+				"link": "#/day/4-4/p0",
+				"words": []
+			},
+			{
+				"n": 17,
+				"ans": 1,
+				"trans": "母亲生病以后，好像连发脾气的力气都快没了。",
+				"trans_en": "After my mother fell ill, it seemed she was even losing the energy to get angry.",
+				"option_translations": [
+					"眼看要没了",
+					"听说会没",
+					"好像会没",
+					"好像已经没了"
+				],
+				"option_translations_en": [
+					"looks about to disappear",
+					"I hear it will disappear",
+					"seems it will disappear",
+					"seems it already disappeared"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「なくなりそう」是眼前的迹象。",
+				"point_en": "Vそうだ here is a visual guess about the near future.",
+				"link": "#/day/4-5/p0",
+				"words": []
+			},
+			{
+				"n": 18,
+				"ans": 3,
+				"trans": "我觉得被母亲严格带大是件好事。",
+				"trans_en": "I think it was good that I was raised strictly by my mother.",
+				"option_translations": [
+					"为我长大",
+					"为我养育",
+					"被养育",
+					"让养育"
+				],
+				"option_translations_en": [
+					"grew up for me",
+					"raised for me",
+					"was raised",
+					"was made to raise"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「きびしくそだてられた」。",
+				"point_en": "Passive そだてられた = was brought up.",
+				"link": "#/day/4-3/p0",
+				"words": []
+			}
+		]
+	}
 }
