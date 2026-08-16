@@ -1,0 +1,1928 @@
+{
+	"w4": [
+		{
+			"n": 1,
+			"ans": 4,
+			"trans": "见到想见的人，很高兴。",
+			"trans_en": "I'm happy I got to see the person I wanted to see.",
+			"option_translations": [
+				"温柔",
+				"凉快",
+				"悲伤",
+				"高兴"
+			],
+			"option_translations_en": [
+				"kind",
+				"cool",
+				"sad",
+				"happy"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 2,
+			"ans": 2,
+			"trans": "要吃饭了，请把桌子擦一下。",
+			"trans_en": "We're going to eat, so please wipe the table.",
+			"option_translations": [
+				"扫",
+				"擦",
+				"拉/弹",
+				"吸"
+			],
+			"option_translations_en": [
+				"sweep",
+				"wipe",
+				"pull/play",
+				"suck"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 3,
+			"ans": 3,
+			"trans": "请脱掉鞋，换上拖鞋。",
+			"trans_en": "Please take off your shoes and change into slippers.",
+			"option_translations": [
+				"换衣服",
+				"换乘",
+				"换鞋",
+				"更换（放入）"
+			],
+			"option_translations_en": [
+				"change clothes",
+				"transfer",
+				"change footwear",
+				"replace"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 4,
+			"ans": 1,
+			"trans": "到得早，所以先买点东西再去。",
+			"trans_en": "I arrived early, so I'll do a little shopping first.",
+			"option_translations": [
+				"到了",
+				"沾上",
+				"听了",
+				"穿了（下装）"
+			],
+			"option_translations_en": [
+				"arrived",
+				"got on",
+				"heard",
+				"put on"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 5,
+			"ans": 3,
+			"trans": "如果生病了，请不要勉强。",
+			"trans_en": "If you're sick, please don't overdo it.",
+			"option_translations": [
+				"受伤",
+				"感冒",
+				"勉强/过度",
+				"变成"
+			],
+			"option_translations_en": [
+				"injury",
+				"cold",
+				"overdoing it",
+				"become"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 6,
+			"ans": 2,
+			"trans": "早上起来后冲个澡。",
+			"trans_en": "I take a shower after I get up.",
+			"option_translations": [
+				"浇",
+				"淋/冲",
+				"取",
+				"擦"
+			],
+			"option_translations_en": [
+				"pour on",
+				"take (a shower)",
+				"take",
+				"wipe"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 7,
+			"ans": 1,
+			"trans": "这项训练很严，但很有用。",
+			"trans_en": "This training is tough, but it's useful.",
+			"option_translations": [
+				"严格",
+				"寂寞",
+				"凉快",
+				"正确"
+			],
+			"option_translations_en": [
+				"strict",
+				"lonely",
+				"cool",
+				"correct"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 8,
+			"ans": 4,
+			"trans": "已经习惯日本了。",
+			"trans_en": "I've gotten used to Japan.",
+			"option_translations": [
+				"变成了",
+				"学了",
+				"排队了",
+				"习惯了"
+			],
+			"option_translations_en": [
+				"became",
+				"learned",
+				"lined up",
+				"got used to"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 9,
+			"ans": 3,
+			"trans": "忘了锁门。",
+			"trans_en": "I forgot to lock up.",
+			"option_translations": [
+				"藏",
+				"锁着（自动）",
+				"锁上",
+				"停止"
+			],
+			"option_translations_en": [
+				"hide",
+				"be locked",
+				"lock",
+				"stop"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 10,
+			"ans": 1,
+			"trans": "家人要来日本，所以去机场接。",
+			"trans_en": "My family is coming to Japan, so I'll go to the airport to meet them.",
+			"option_translations": [
+				"去接",
+				"去送",
+				"带着",
+				"拿着"
+			],
+			"option_translations_en": [
+				"pick up",
+				"see off",
+				"take along",
+				"carry"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 11,
+			"ans": 1,
+			"trans": "不懂的词就查词典。",
+			"trans_en": "I look up words I don't know in the dictionary.",
+			"option_translations": [
+				"用词典查不懂的词",
+				"给不懂的词划线",
+				"把不懂的词写进词典",
+				"给不懂的词打勾"
+			],
+			"option_translations_en": [
+				"look them up in a dictionary",
+				"underline them",
+				"write them in a dictionary",
+				"check them"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 12,
+			"ans": 2,
+			"trans": "擦窗玻璃。",
+			"trans_en": "I polish the window glass.",
+			"option_translations": [
+				"把玻璃弄碎",
+				"把玻璃弄干净",
+				"把玻璃洗干净",
+				"把玻璃扫干净"
+			],
+			"option_translations_en": [
+				"break it clean",
+				"make it clean",
+				"wash it clean",
+				"sweep it clean"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 13,
+			"ans": 3,
+			"trans": "这个名字很少见。",
+			"trans_en": "This name is unusual.",
+			"option_translations": [
+				"这个名字很多",
+				"这个名字很受欢迎",
+				"这个名字很少",
+				"这个名字让人害羞"
+			],
+			"option_translations_en": [
+				"there are many",
+				"it's popular",
+				"there are few",
+				"it's embarrassing"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 14,
+			"ans": 3,
+			"trans": "虽然下雨，没办法，还是出门。",
+			"trans_en": "It's raining, but there's nothing for it, so I'll go out.",
+			"option_translations": [
+				"不想出门但还是去",
+				"没伞所以晚一点去",
+				"必须出门",
+				"雨马上停所以出门"
+			],
+			"option_translations_en": [
+				"don't want to but will go",
+				"no umbrella so later",
+				"have to go out",
+				"it'll stop soon"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 15,
+			"ans": 2,
+			"trans": "那部漫画有点让人不舒服。",
+			"trans_en": "That manga is a bit creepy.",
+			"option_translations": [
+				"不太有趣",
+				"看起来让人恶心",
+				"看了也不太懂",
+				"不太受欢迎"
+			],
+			"option_translations_en": [
+				"not very funny",
+				"makes you feel uneasy",
+				"hard to follow",
+				"not popular"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 16,
+			"ans": 1,
+			"trans": "每天记新单词。",
+			"trans_en": "I memorize new words every day.",
+			"option_translations": [
+				"每天记新词",
+				"总是记着家里人",
+				"觉得日本菜好吃叫おぼえる",
+				"想起来叫おぼえる"
+			],
+			"option_translations_en": [
+				"memorize new words",
+				"remember family",
+				"think food is tasty",
+				"recall something forgotten"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 17,
+			"ans": 1,
+			"trans": "舞者在转圈。",
+			"trans_en": "The dancer is spinning around.",
+			"option_translations": [
+				"舞者转圈",
+				"下一个拐角往左转（应为まがる）",
+				"把音量旋钮往右转",
+				"过了桥一直走"
+			],
+			"option_translations_en": [
+				"spinning",
+				"turn left at the corner",
+				"turn it to the right",
+				"cross the bridge"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 18,
+			"ans": 3,
+			"trans": "把抽屉里收拾整齐。",
+			"trans_en": "I tidy the inside of the desk drawer.",
+			"option_translations": [
+				"用冰箱收拾啤酒",
+				"洗脸后收拾牙",
+				"收拾抽屉",
+				"用洗衣机收拾衬衫"
+			],
+			"option_translations_en": [
+				"put beer away in the fridge",
+				"tidy teeth",
+				"tidy the drawer",
+				"tidy a shirt in the washer"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 19,
+			"ans": 2,
+			"trans": "勉强过度，结果生病了。",
+			"trans_en": "I overdid it and got sick.",
+			"option_translations": [
+				"家里有还再买是むり",
+				"勉强过度生病了",
+				"我对猪肉むり",
+				"むり所以别担心"
+			],
+			"option_translations_en": [
+				"buying extras is むり",
+				"overdid it and got sick",
+				"pork is むり",
+				"it's むり so don't worry"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 20,
+			"ans": 1,
+			"trans": "困的时候喝浓茶。",
+			"trans_en": "When I'm sleepy I drink strong tea.",
+			"option_translations": [
+				"困了喝浓茶",
+				"这本浓书有多少页",
+				"因为浓所以开灯",
+				"那条河很浓很危险"
+			],
+			"option_translations_en": [
+				"drink strong tea",
+				"a thick book",
+				"it's dark so turn on the light",
+				"the river is deep"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		}
+	],
+	"w5": [
+		{
+			"n": 1,
+			"ans": 2,
+			"trans": "往洗衣机里放洗涤剂。",
+			"trans_en": "I put detergent in the washing machine.",
+			"option_translations": [
+				"进入",
+				"放入",
+				"出来",
+				"拿出"
+			],
+			"option_translations_en": [
+				"go in",
+				"put in",
+				"come out",
+				"take out"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 2,
+			"ans": 1,
+			"trans": "车站前开了一家超市。",
+			"trans_en": "A supermarket was built in front of the station.",
+			"option_translations": [
+				"建成了/开业了",
+				"盖了（他动词）",
+				"出生了",
+				"做了"
+			],
+			"option_translations_en": [
+				"was built / opened",
+				"built (transitive)",
+				"was born",
+				"made"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 3,
+			"ans": 2,
+			"trans": "往面包上涂黄油再吃。",
+			"trans_en": "I spread butter on the bread and eat it.",
+			"option_translations": [
+				"浇",
+				"涂",
+				"用",
+				"揉"
+			],
+			"option_translations_en": [
+				"pour",
+				"spread",
+				"use",
+				"knead"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 4,
+			"ans": 1,
+			"trans": "工作还没做完，请先回去吧。",
+			"trans_en": "Work is still left, so please go home first.",
+			"option_translations": [
+				"还剩着",
+				"结束了",
+				"多余了",
+				"做着"
+			],
+			"option_translations_en": [
+				"is left",
+				"finished",
+				"left over",
+				"doing"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 5,
+			"ans": 4,
+			"trans": "跑的话就能赶上下一班公交。",
+			"trans_en": "If you run, you can catch the next bus.",
+			"option_translations": [
+				"上去的话",
+				"跳舞的话",
+				"能做的话",
+				"跑的话"
+			],
+			"option_translations_en": [
+				"if you go up",
+				"if you dance",
+				"if you can",
+				"if you run"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 6,
+			"ans": 3,
+			"trans": "好好学习了，今年一定能合格。",
+			"trans_en": "I studied hard, so I'll surely pass this year.",
+			"option_translations": [
+				"一直",
+				"终于",
+				"一定",
+				"更加"
+			],
+			"option_translations_en": [
+				"all along",
+				"finally",
+				"surely",
+				"more"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 7,
+			"ans": 4,
+			"trans": "“啊，橡皮掉了。给你。”“谢谢。”",
+			"trans_en": "“Oh, your eraser fell. Here.” “Thanks.”",
+			"option_translations": [
+				"消失了",
+				"弄坏了",
+				"弄掉了",
+				"掉了"
+			],
+			"option_translations_en": [
+				"disappeared",
+				"broke it",
+				"dropped it",
+				"fell"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 8,
+			"ans": 1,
+			"trans": "系好安全带，安全驾驶吧。",
+			"trans_en": "Fasten your seatbelt and drive safely.",
+			"option_translations": [
+				"安全的",
+				"危险的",
+				"遗憾的",
+				"结实的"
+			],
+			"option_translations_en": [
+				"safe",
+				"dangerous",
+				"regrettable",
+				"sturdy"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 9,
+			"ans": 2,
+			"trans": "往墙上贴海报。",
+			"trans_en": "I put a poster on the wall.",
+			"option_translations": [
+				"涂",
+				"贴",
+				"复印/印",
+				"按"
+			],
+			"option_translations_en": [
+				"paint",
+				"stick",
+				"copy",
+				"press"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 10,
+			"ans": 3,
+			"trans": "最近写信的人变少了。",
+			"trans_en": "Lately fewer people write letters.",
+			"option_translations": [
+				"贴了",
+				"下了",
+				"减少了",
+				"涂了"
+			],
+			"option_translations_en": [
+				"stuck",
+				"fell (rain)",
+				"decreased",
+				"painted"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 11,
+			"ans": 1,
+			"trans": "过了马路那边有医院。",
+			"trans_en": "There's a hospital just after you cross the road.",
+			"option_translations": [
+				"马路对面有医院",
+				"马路这边有医院",
+				"拐弯就有医院",
+				"马路尽头有医院"
+			],
+			"option_translations_en": [
+				"across the road",
+				"on this side",
+				"if you turn",
+				"where the road ends"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 12,
+			"ans": 3,
+			"trans": "不知道票掉在哪儿了。",
+			"trans_en": "I don't know where I dropped the ticket.",
+			"option_translations": [
+				"不知道谁给的票",
+				"不知道找票的地方",
+				"不知道把票弄丢在哪儿",
+				"不知道票掉没掉"
+			],
+			"option_translations_en": [
+				"who gave it",
+				"where I looked",
+				"where I lost it",
+				"whether it fell"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 13,
+			"ans": 2,
+			"trans": "这里的灯是自动的。",
+			"trans_en": "The lights here are automatic.",
+			"option_translations": [
+				"开开关关都没关系",
+				"不用自己开关",
+				"不许开关",
+				"不能开关"
+			],
+			"option_translations_en": [
+				"okay to switch",
+				"no need to switch",
+				"must not switch",
+				"can't switch"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 14,
+			"ans": 1,
+			"trans": "我在找兼职。",
+			"trans_en": "I'm looking for a part-time job.",
+			"option_translations": [
+				"想做兼职",
+				"弄丢了兼职",
+				"找不到兼职",
+				"不能兼职"
+			],
+			"option_translations_en": [
+				"I want a job",
+				"I dropped a job",
+				"I don't find one",
+				"I mustn't work"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 15,
+			"ans": 4,
+			"trans": "走错路了。",
+			"trans_en": "I took the wrong road.",
+			"option_translations": [
+				"正确的路做成了",
+				"查了正确的路",
+				"问了正确的路",
+				"没有走正确的路"
+			],
+			"option_translations_en": [
+				"the right road was made",
+				"I looked up the road",
+				"I asked the road",
+				"I didn't take the right road"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 16,
+			"ans": 3,
+			"trans": "冷，所以戴上毛线帽。",
+			"trans_en": "It's cold, so I put on a knit hat.",
+			"option_translations": [
+				"苹果整个かぶる",
+				"雨天穿这双鞋叫かぶる",
+				"冷了戴毛线帽",
+				"一跑杯子里的水かぶる"
+			],
+			"option_translations_en": [
+				"eat an apple whole",
+				"wear these shoes",
+				"put on a knit hat",
+				"water spills"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 17,
+			"ans": 4,
+			"trans": "昨天工作做到很晚。",
+			"trans_en": "I worked quite late yesterday.",
+			"option_translations": [
+				"准备这么多就ずいぶん了",
+				"ずいぶん六点起床",
+				"明天ずいぶん下雨",
+				"昨天工作到很晚"
+			],
+			"option_translations_en": [
+				"that's ずいぶん enough",
+				"I ずいぶん get up at 6",
+				"it'll ずいぶん rain",
+				"worked quite late"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 18,
+			"ans": 3,
+			"trans": "不认识的人帮我捡起了钱包。",
+			"trans_en": "A stranger picked up my wallet for me.",
+			"option_translations": [
+				"忙得ひろう了",
+				"钥匙在那儿ひろう着",
+				"陌生人帮我捡了钱包",
+				"房间又亮又ひろう"
+			],
+			"option_translations_en": [
+				"got very ひろう",
+				"the key is ひろう",
+				"picked up my wallet",
+				"the room is ひろう"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 19,
+			"ans": 1,
+			"trans": "想拍照可这孩子动来动去，真没办法。",
+			"trans_en": "I want to take a photo but this child keeps moving.",
+			"option_translations": [
+				"孩子动来动去不好拍",
+				"下周搬到隔壁镇叫うごく",
+				"笔记本可以うごく",
+				"开会请把椅子うごく"
+			],
+			"option_translations_en": [
+				"the child is moving",
+				"move to the next town",
+				"you may うごく my notebook",
+				"うごく the chairs"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 20,
+			"ans": 1,
+			"trans": "时间有多，再检查一遍吧。",
+			"trans_en": "If we have time left, let's check again.",
+			"option_translations": [
+				"时间有多再检查",
+				"饮料あまったら去买",
+				"工作あまったら通宵做",
+				"别勉强吃、あまったらいい"
+			],
+			"option_translations_en": [
+				"if time is left",
+				"if drinks あまる, buy more",
+				"if work あまる, stay up",
+				"don't force yourself to eat"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		}
+	],
+	"w6": [
+		{
+			"n": 1,
+			"ans": 1,
+			"trans": "“肚子饿了呢。”“啊，已经过 12 点了。”",
+			"trans_en": "“I'm hungry.” “Oh, it's already past 12.”",
+			"option_translations": [
+				"过了",
+				"饿了",
+				"到了",
+				"穿过了"
+			],
+			"option_translations_en": [
+				"passed",
+				"got hungry",
+				"became",
+				"went through"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 2,
+			"ans": 2,
+			"trans": "在院子里种树。",
+			"trans_en": "I'll plant a tree in the garden.",
+			"option_translations": [
+				"立/盖",
+				"种",
+				"养大",
+				"爬"
+			],
+			"option_translations_en": [
+				"stand/build",
+				"plant",
+				"raise",
+				"climb"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 3,
+			"ans": 2,
+			"trans": "“明天去看电影吗？”“明天不方便。”",
+			"trans_en": "“Want to see a movie tomorrow?” “Tomorrow is inconvenient.”",
+			"option_translations": [
+				"场合",
+				"方便/安排",
+				"心情",
+				"计划"
+			],
+			"option_translations_en": [
+				"case",
+				"convenience",
+				"mood",
+				"plan"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 4,
+			"ans": 3,
+			"trans": "“怎么了，大家都在吵闹。”“着火了。”",
+			"trans_en": "“What's going on? Everyone's making a racket.” “There's a fire.”",
+			"option_translations": [
+				"坐着",
+				"摸着",
+				"吵闹",
+				"欺负"
+			],
+			"option_translations_en": [
+				"sitting",
+				"touching",
+				"making a fuss",
+				"bullying"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 5,
+			"ans": 1,
+			"trans": "考上大学，作为祝贺收到了一个包。",
+			"trans_en": "I got a bag as a congratulations present for getting into university.",
+			"option_translations": [
+				"祝贺",
+				"感谢",
+				"探望",
+				"关系"
+			],
+			"option_translations_en": [
+				"celebration",
+				"thanks",
+				"visit a sick person",
+				"relation"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 6,
+			"ans": 2,
+			"trans": "那把伞折了，不能用。",
+			"trans_en": "That umbrella is broken, so I can't use it.",
+			"option_translations": [
+				"碎了",
+				"折了",
+				"湿了",
+				"习惯了"
+			],
+			"option_translations_en": [
+				"shattered",
+				"snapped",
+				"got wet",
+				"got used to"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 7,
+			"ans": 1,
+			"trans": "水开了以后，请把这些菜放进去。",
+			"trans_en": "When the water boils, please put these vegetables in.",
+			"option_translations": [
+				"开了的话",
+				"浇了的话",
+				"碎了的话",
+				"煮了的话"
+			],
+			"option_translations_en": [
+				"if it boils",
+				"if you pour",
+				"if it breaks",
+				"if you cook rice"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 8,
+			"ans": 4,
+			"trans": "“感冒怎么样了？”“托您的福，好多了。”",
+			"trans_en": "“How's your cold?” “Thanks to you, much better.”",
+			"option_translations": [
+				"好久不见",
+				"高兴地",
+				"真可怜",
+				"托您的福"
+			],
+			"option_translations_en": [
+				"it's been a while",
+				"gladly",
+				"that's too bad",
+				"thanks to you"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 9,
+			"ans": 3,
+			"trans": "重要的笔记本丢了，正发愁。",
+			"trans_en": "I lost an important notebook and I'm in trouble.",
+			"option_translations": [
+				"相信",
+				"被抓住",
+				"为难",
+				"享受"
+			],
+			"option_translations_en": [
+				"believe",
+				"be caught",
+				"be in trouble",
+				"enjoy"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 10,
+			"ans": 1,
+			"trans": "以前常喝酒，现在不太喝了。",
+			"trans_en": "I used to drink a lot; now I don't drink much.",
+			"option_translations": [
+				"从前",
+				"点心",
+				"刚才",
+				"最近"
+			],
+			"option_translations_en": [
+				"in the past",
+				"sweets",
+				"just now",
+				"lately"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 11,
+			"ans": 3,
+			"trans": "我在大学工作。",
+			"trans_en": "I work at a university.",
+			"option_translations": [
+				"在大学学习",
+				"在大学找工作",
+				"在大学上班",
+				"住在大学"
+			],
+			"option_translations_en": [
+				"studying there",
+				"looking for work",
+				"working there",
+				"living there"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 12,
+			"ans": 1,
+			"trans": "我听老师说的。（うかがう＝听，敬语）",
+			"trans_en": "I heard it from the teacher.",
+			"option_translations": [
+				"从老师那儿听说",
+				"向老师提问",
+				"老师来见我",
+				"老师有话"
+			],
+			"option_translations_en": [
+				"heard from the teacher",
+				"asked the teacher",
+				"the teacher came",
+				"there was a talk"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 13,
+			"ans": 4,
+			"trans": "洗完衣服会响铃。",
+			"trans_en": "When the laundry finishes, a chime sounds.",
+			"option_translations": [
+				"声音听不见了",
+				"铃在调查",
+				"洗衣机关了",
+				"用铃声通知"
+			],
+			"option_translations_en": [
+				"the sound stops",
+				"the chime investigates",
+				"the machine stops",
+				"it notifies you with a chime"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 14,
+			"ans": 1,
+			"trans": "那个人偷了车。",
+			"trans_en": "That person stole a car.",
+			"option_translations": [
+				"拿走了别人的车",
+				"向别人借了车",
+				"把车借给别人",
+				"别人给了车"
+			],
+			"option_translations_en": [
+				"took someone's car",
+				"borrowed a car",
+				"lent a car",
+				"was given a car"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 15,
+			"ans": 4,
+			"trans": "比较一下价格。",
+			"trans_en": "I'll compare the prices.",
+			"option_translations": [
+				"排一排看哪个好",
+				"问问多少钱",
+				"检查大小颜色",
+				"查哪个贵哪个便宜"
+			],
+			"option_translations_en": [
+				"line them up",
+				"ask the price",
+				"check size and color",
+				"see which is cheaper"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 16,
+			"ans": 3,
+			"trans": "在车站前的咖啡店会合。",
+			"trans_en": "We'll meet at the coffee shop in front of the station.",
+			"option_translations": [
+				"让家人和朋友まちあわせ",
+				"在下一站和地铁まちあわせ",
+				"在站前咖啡店会合",
+				"向车站的人まちあわせ时间"
+			],
+			"option_translations_en": [
+				"have family meet a friend",
+				"meet the subway",
+				"meet at the cafe",
+				"ask the station staff"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 17,
+			"ans": 2,
+			"trans": "一到冬天这里就会积雪。",
+			"trans_en": "Snow piles up here in winter.",
+			"option_translations": [
+				"今年打算考 N4",
+				"冬天这里会积雪",
+				"每天攒一百日元叫つもる",
+				"这部电影很つもる"
+			],
+			"option_translations_en": [
+				"I intend to take N4",
+				"snow piles up",
+				"save 100 yen",
+				"the movie is つもる"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 18,
+			"ans": 4,
+			"trans": "妈妈在院子里养花。",
+			"trans_en": "My mother grows flowers in the garden.",
+			"option_translations": [
+				"种的树在そだてている",
+				"把鸡蛋そだてて加糖和黄油",
+				"给猫そだてる什么吃的",
+				"妈妈在院子里养花"
+			],
+			"option_translations_en": [
+				"the tree is そだてている",
+				"そだてる an egg",
+				"そだてる food for the cat",
+				"grows flowers"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 19,
+			"ans": 1,
+			"trans": "昨天父母的信寄到了。",
+			"trans_en": "A letter from my parents arrived yesterday.",
+			"option_translations": [
+				"昨天信到了",
+				"把行李とどきました",
+				"3 号线电车とどきました",
+				"被陌生人叫名字很とどく"
+			],
+			"option_translations_en": [
+				"the letter arrived",
+				"I とどく the luggage",
+				"the train とどく",
+				"I was very とどく"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 20,
+			"ans": 4,
+			"trans": "请别客气，吃吧。（めしあがる＝吃，尊敬语）",
+			"trans_en": "Please help yourself.",
+			"option_translations": [
+				"请到里面めしあがる",
+				"穿着漂亮外套めしあがっている",
+				"我国也めしあがる生鱼",
+				"别客气请用"
+			],
+			"option_translations_en": [
+				"please めしあがる inside",
+				"you're めしあがる a coat",
+				"we also めしあがる raw fish",
+				"please eat, don't hold back"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		}
+	]
+}
