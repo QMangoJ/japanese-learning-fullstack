@@ -1,0 +1,1418 @@
+{
+	"w1d1": {
+		"items": [
+			{
+				"n": 1,
+				"type": "choice",
+				"answer": "1",
+				"completed": "日本酒は米から作られます。",
+				"translation": "日本酒是用米酿的。",
+				"translation_en": "Sake is made from rice.",
+				"pointIndexes": [
+					0
+				]
+			},
+			{
+				"n": 2,
+				"type": "choice",
+				"answer": "3",
+				"completed": "スーパーで、りんごとみかんを一つずつ買いました。",
+				"translation": "在超市各买了一个苹果和一个橘子。",
+				"translation_en": "I bought one apple and one mandarin each at the supermarket.",
+				"pointIndexes": [
+					1
+				]
+			},
+			{
+				"n": 3,
+				"type": "choice",
+				"answer": "4",
+				"completed": "わたしは1週間に3回、ジムに通っています。",
+				"translation": "我一周去三次健身房。",
+				"translation_en": "I go to the gym three times a week.",
+				"pointIndexes": [
+					2
+				]
+			},
+			{
+				"n": 4,
+				"type": "order",
+				"answer": "4→3→★1→2",
+				"completed": "山田「田中さん、そのバッグ、すてきですね。どこで買いましたか。」田中「日本で作られたものですが、ハワイに行ったときに、買いました。」",
+				"translation": "山田：“田中，那个包真好看。在哪儿买的？”田中：“是日本做的，不过是我去夏威夷时买的。”",
+				"translation_en": "Yamada: “Tanaka, that bag is lovely. Where did you buy it?” Tanaka: “It was made in Japan, but I bought it when I went to Hawaii.”",
+				"pointIndexes": [
+					3
+				]
+			},
+			{
+				"n": 5,
+				"type": "order",
+				"answer": "4→3→★2→1",
+				"completed": "A「今日も寒いですね。」B「そうですね。でも、きのうほどではないですよ。」",
+				"translation": "A：“今天也很冷啊。”B：“是啊。不过没有昨天那么冷。”",
+				"translation_en": "A: “It's cold today too.” B: “Yes. But it's not as cold as yesterday.”",
+				"pointIndexes": [
+					4
+				]
+			}
+		]
+	},
+	"w1d2": {
+		"items": [
+			{
+				"n": 1,
+				"type": "choice",
+				"answer": "1",
+				"completed": "あしたの宿題のレポートがまだ1枚もできていません。",
+				"translation": "明天要交的报告作业一页都还没写完。",
+				"translation_en": "I haven't even finished one page of tomorrow's report.",
+				"pointIndexes": [
+					0
+				]
+			},
+			{
+				"n": 2,
+				"type": "choice",
+				"answer": "4",
+				"completed": "山田「これ、おいしいですね。田中さんが作りましたか。」田中「はい、わたしでも作れるのでかんたんでしたよ。」",
+				"translation": "山田：“这个真好吃。是田中做的吗？”田中：“对，连我都会做，所以很简单。”",
+				"translation_en": "Yamada: “This is delicious. Did you make it, Tanaka?” Tanaka: “Yes — even I can make it, so it was easy.”",
+				"pointIndexes": [
+					1
+				]
+			},
+			{
+				"n": 3,
+				"type": "choice",
+				"answer": "4",
+				"completed": "A「あしたは休みですね。何をしますか。」B「そうじとかせんたくとかをするつもりです。」",
+				"translation": "A：“明天休息呢。打算做什么？”B：“打算做打扫卫生、洗衣服之类的。”",
+				"translation_en": "A: “Tomorrow's a day off. What will you do?” B: “I plan to do things like cleaning and laundry.”",
+				"pointIndexes": [
+					2
+				]
+			},
+			{
+				"n": 4,
+				"type": "order",
+				"answer": "2→4→★1→3",
+				"completed": "子ども「お母さん、今日は、すきやきが食べたい。」母親「お肉はあるけれど、たまごがひとつしかないから、あしたね。」",
+				"translation": "孩子：“妈妈，今天想吃寿喜烧。”母亲：“肉有，可是鸡蛋只剩一个了，明天再吃吧。”",
+				"translation_en": "Child: “Mom, I want sukiyaki today.” Mother: “We have meat, but there's only one egg, so tomorrow.”",
+				"pointIndexes": [
+					3
+				]
+			},
+			{
+				"n": 5,
+				"type": "order",
+				"answer": "3→4→★2→1",
+				"completed": "今年の夏休みはどこかへ旅行でもしようと思っています。",
+				"translation": "今年暑假我想去哪儿旅行一下。",
+				"translation_en": "I'm thinking of taking a trip somewhere this summer.",
+				"pointIndexes": [
+					4
+				]
+			}
+		]
+	},
+	"w1d3": {
+		"items": [
+			{
+				"n": 1,
+				"type": "choice",
+				"answer": "2",
+				"completed": "わたしのアパートは駅から遠いし、へやもせまいです。",
+				"translation": "我的公寓离车站远，房间也小。",
+				"translation_en": "My apartment is far from the station, and the room is small too.",
+				"pointIndexes": [
+					0
+				]
+			},
+			{
+				"n": 2,
+				"type": "choice",
+				"answer": "1",
+				"completed": "A「また太っちゃった…。」B「あまいものばかり食べているからだよ。」",
+				"translation": "A：“又胖了……”B：“因为你净吃甜的啊。”",
+				"translation_en": "A: “I've put on weight again…” B: “That's because you keep eating nothing but sweets.”",
+				"pointIndexes": [
+					1
+				]
+			},
+			{
+				"n": 3,
+				"type": "choice",
+				"answer": "2",
+				"completed": "今日は8時までにうちに帰りたいです。",
+				"translation": "今天我想在 8 点之前回到家。",
+				"translation_en": "I want to get home by 8 today.",
+				"pointIndexes": [
+					2
+				]
+			},
+			{
+				"n": 4,
+				"type": "order",
+				"answer": "3→1→★4→2",
+				"completed": "母親「さあ、もう寝なさい。」子ども「このゲームが終わるまでもうちょっとまって。」",
+				"translation": "母亲：“好了，快睡觉。”孩子：“等这个游戏结束，再等一下。”",
+				"translation_en": "Mother: “Come on, go to bed.” Child: “Wait a bit until this game finishes.”",
+				"pointIndexes": [
+					3
+				]
+			},
+			{
+				"n": 5,
+				"type": "order",
+				"answer": "3→4→★2→1",
+				"completed": "A「新しい先生はどうですか。」B「きれいだしやさしいし大好きです。」",
+				"translation": "A：“新老师怎么样？”B：“又漂亮又温柔，我超喜欢。”",
+				"translation_en": "A: “How's the new teacher?” B: “She's pretty and kind — I love her.”",
+				"pointIndexes": [
+					4
+				]
+			}
+		]
+	},
+	"w1d4": {
+		"items": [
+			{
+				"n": 1,
+				"type": "choice",
+				"answer": "2",
+				"completed": "トイレに行っているあいだに、電車が行ってしまった。",
+				"translation": "上厕所的工夫，电车开走了。",
+				"translation_en": "While I was in the restroom, the train left.",
+				"pointIndexes": [
+					0
+				]
+			},
+			{
+				"n": 2,
+				"type": "choice",
+				"answer": "4",
+				"completed": "A「すみません、おそくなって。ずいぶん待ちましたか。」B「いいえ、わたしも今来たところです。」",
+				"translation": "A：“对不起来晚了。等很久了吗？”B：“没有，我也刚到。”",
+				"translation_en": "A: “Sorry I'm late. Did you wait long?” B: “No, I just got here too.”",
+				"pointIndexes": [
+					1
+				]
+			},
+			{
+				"n": 3,
+				"type": "choice",
+				"answer": "2",
+				"completed": "山田「もしもし、こちら、山田ですが、スミスさん、おねがいします。」田中「すみません。スミスは今、会議ちゅうです。」",
+				"translation": "山田：“喂，我是山田，请找史密斯。”田中：“不好意思，史密斯现在正在开会。”",
+				"translation_en": "Yamada: “Hello, this is Yamada. May I speak to Smith?” Tanaka: “Sorry — Smith is in a meeting now.”",
+				"pointIndexes": [
+					2
+				]
+			},
+			{
+				"n": 4,
+				"type": "order",
+				"answer": "4→3→★2→1",
+				"completed": "A「ケーキ、食べる？」B「今、ご飯を食べたところでおなかがいっぱいだから、あとで食べるよ。」",
+				"translation": "A：“吃蛋糕吗？”B：“刚吃完饭，肚子饱了，所以等会儿再吃。”",
+				"translation_en": "A: “Want some cake?” B: “I just ate, so I'm full. I'll have it later.”",
+				"pointIndexes": [
+					3
+				]
+			},
+			{
+				"n": 5,
+				"type": "order",
+				"answer": "1→3→★4→2",
+				"completed": "A「それは、どこで買いましたか。」B「きょねん、イタリアに行ったときに買ったものです。」",
+				"translation": "A：“那个是在哪儿买的？”B：“去年去意大利的时候买的。”",
+				"translation_en": "A: “Where did you buy that?” B: “I bought it when I went to Italy last year.”",
+				"pointIndexes": [
+					4
+				]
+			}
+		]
+	},
+	"w1d5": {
+		"items": [
+			{
+				"n": 1,
+				"type": "choice",
+				"answer": "2",
+				"completed": "足がいたくて、もう歩けません。",
+				"translation": "脚疼，已经走不动了。",
+				"translation_en": "My feet hurt so much I can't walk anymore.",
+				"pointIndexes": [
+					0
+				]
+			},
+			{
+				"n": 2,
+				"type": "choice",
+				"answer": "1",
+				"completed": "A「あ、メールが来た。」B「ダメだよ。運転しながら、スマホを見るのは。」",
+				"translation": "A：“啊，来邮件了。”B：“不行。不能一边开车一边看手机。”",
+				"translation_en": "A: “Oh, I got an email.” B: “Don't. You can't look at your phone while driving.”",
+				"pointIndexes": [
+					1
+				]
+			},
+			{
+				"n": 3,
+				"type": "choice",
+				"answer": "4",
+				"completed": "A「試験、できた？」B「ううん、きのう寝ないで勉強したのにできなかったよ。」",
+				"translation": "A：“考试考得怎么样？”B：“不好，明明昨晚通宵复习了还是没考好。”",
+				"translation_en": "A: “How was the exam?” B: “Not good. I studied all night and still couldn't do it.”",
+				"pointIndexes": [
+					2
+				]
+			},
+			{
+				"n": 4,
+				"type": "order",
+				"answer": "3→2→★4→1",
+				"completed": "A「タクシーで行けば、間に合うでしょうか。」B「このへんはタクシーも少ないから走って行きましょう。」",
+				"translation": "A：“打车的话赶得上吗？”B：“这一带出租车也少，还是跑着去吧。”",
+				"translation_en": "A: “If we take a taxi, will we make it?” B: “There aren't many taxis around here, so let's run.”",
+				"pointIndexes": [
+					3
+				]
+			},
+			{
+				"n": 5,
+				"type": "order",
+				"answer": "3→1→★2→4",
+				"completed": "Tシャツなどの服を着たままプールに入らないでください。",
+				"translation": "请不要穿着 T 恤之类的衣服进泳池。",
+				"translation_en": "Please don't go in the pool still wearing a T-shirt or other clothes.",
+				"pointIndexes": [
+					3
+				]
+			}
+		]
+	},
+	"w1d6": {
+		"items": [
+			{
+				"n": 1,
+				"type": "choice",
+				"answer": "2",
+				"completed": "このパソコンはときどきフリーズすることがあります。",
+				"translation": "这台电脑有时会死机。",
+				"translation_en": "This computer freezes from time to time.",
+				"pointIndexes": [
+					4
+				]
+			},
+			{
+				"n": 2,
+				"type": "choice",
+				"answer": "4",
+				"completed": "わたしは、夜はコーヒーやお茶を飲まないことにしています。",
+				"translation": "我晚上不喝咖啡和茶。",
+				"translation_en": "I make it a rule not to drink coffee or tea at night.",
+				"pointIndexes": [
+					1
+				]
+			},
+			{
+				"n": 3,
+				"type": "choice",
+				"answer": "2",
+				"completed": "A「ここのランチ、どれでもおいしいですよ。」B「そうですか。じゃ、わたしはハンバーグランチにします。」",
+				"translation": "A：“这里的午餐哪一种都好吃。”B：“是吗。那我要汉堡午餐。”",
+				"translation_en": "A: “Any of the lunches here are good.” B: “Really? Then I'll have the hamburger lunch.”",
+				"pointIndexes": [
+					2
+				]
+			},
+			{
+				"n": 4,
+				"type": "order",
+				"answer": "2→4→★3→1",
+				"completed": "A「お母さま、お元気ですか。」B「それが、1年くらい前からあまり元気ではなくなりました。」",
+				"translation": "A：“令堂身体好吗？”B：“说起来，大概一年前开始就不太好了。”",
+				"translation_en": "A: “How is your mother?” B: “Well, she hasn't been very well for about a year.”",
+				"pointIndexes": [
+					3
+				]
+			},
+			{
+				"n": 5,
+				"type": "order",
+				"answer": "2→3→★1→4",
+				"completed": "母親「おべんとう、急いで作るから、待ってて。」子ども「ちこくしちゃうから早くして。」",
+				"translation": "母亲：“便当我抓紧做，等一下。”孩子：“要迟到了，快点。”",
+				"translation_en": "Mother: “I'll make the bento quickly, wait.” Child: “We'll be late — hurry up.”",
+				"pointIndexes": [
+					4
+				]
+			}
+		]
+	},
+	"w2d1": {
+		"items": [
+			{
+				"n": 1,
+				"type": "choice",
+				"answer": "4",
+				"completed": "来週中に授業料をはらわないといけない。",
+				"translation": "下周之内必须把学费交了。",
+				"translation_en": "I have to pay the tuition within next week.",
+				"pointIndexes": [
+					0
+				]
+			},
+			{
+				"n": 2,
+				"type": "choice",
+				"answer": "1",
+				"completed": "その本だなにあるまんがを読んでもいいですか。",
+				"translation": "可以看那个书架上的漫画吗？",
+				"translation_en": "May I read the manga on that bookshelf?",
+				"pointIndexes": [
+					1
+				]
+			},
+			{
+				"n": 3,
+				"type": "choice",
+				"answer": "3",
+				"completed": "A「あしたは、試験の結果の発表の日ですね。」B「そうですね。受かっていればいいんですが…。」",
+				"translation": "A：“明天是公布考试结果的日子呢。”B：“是啊。要是考上就好了……”",
+				"translation_en": "A: “Tomorrow they announce the exam results.” B: “Yes. I hope I passed…”",
+				"pointIndexes": [
+					2
+				]
+			},
+			{
+				"n": 4,
+				"type": "order",
+				"answer": "3→1→★4→2",
+				"completed": "学生「すみません。レポートを家に忘れてきました。あした、持ってきます。」先生「あしたじゃなくてもいいですが10日までに出してください。」",
+				"translation": "学生：“对不起，报告忘在家里了。明天带来。”老师：“明天也行，但请在 10 号之前交上来。”",
+				"translation_en": "Student: “Sorry, I left the report at home. I'll bring it tomorrow.” Teacher: “Tomorrow is fine, but please turn it in by the 10th.”",
+				"pointIndexes": [
+					3
+				]
+			},
+			{
+				"n": 5,
+				"type": "order",
+				"answer": "4→3→★2→1",
+				"completed": "A「このはさみ、切れないね。」B「新しいのを買わないといけないね。」",
+				"translation": "A：“这把剪刀不锋利啊。”B：“得买把新的了。”",
+				"translation_en": "A: “These scissors don't cut.” B: “We'll have to buy a new pair.”",
+				"pointIndexes": [
+					4
+				]
+			}
+		]
+	},
+	"w2d2": {
+		"items": [
+			{
+				"n": 1,
+				"type": "choice",
+				"answer": "1",
+				"completed": "パーティーのためにビールを買っておいてください。",
+				"translation": "请提前买好派对用的啤酒。",
+				"translation_en": "Please buy beer ahead of time for the party.",
+				"pointIndexes": [
+					0
+				]
+			},
+			{
+				"n": 2,
+				"type": "choice",
+				"answer": "1",
+				"completed": "れいぞうこに入っていたビールを全部飲んでしまいました。",
+				"translation": "冰箱里的啤酒全喝光了。",
+				"translation_en": "I drank all the beer that was in the fridge.",
+				"pointIndexes": [
+					1
+				]
+			},
+			{
+				"n": 3,
+				"type": "choice",
+				"answer": "4",
+				"completed": "A「駅からどうやって行きますか。」B「あ〜、今、バスが行っちゃったから、タクシーで行きましょう。」",
+				"translation": "A：“从车站怎么去？”B：“啊，公交车刚走，打车去吧。”",
+				"translation_en": "A: “How do we get there from the station?” B: “Ah, the bus just left, so let's take a taxi.”",
+				"pointIndexes": [
+					2
+				]
+			},
+			{
+				"n": 4,
+				"type": "order",
+				"answer": "1→2→★4→3",
+				"completed": "山田「もしもし、すみません。車のじこで、1時間くらいおくれますので、わたしを待たないではじめておいてください。」田中「わかりました。」",
+				"translation": "山田：“喂，对不起。出了车祸，大概晚一小时，请别等我，先开始吧。”田中：“好的。”",
+				"translation_en": "Yamada: “Sorry — I had a car accident and I'll be about an hour late. Please start without waiting for me.” Tanaka: “Understood.”",
+				"pointIndexes": [
+					2
+				]
+			},
+			{
+				"n": 5,
+				"type": "order",
+				"answer": "3→1→★2→4",
+				"completed": "A「あそこの新しいレストラン、行きましたか。」B「ええ、行ってみましたがおいしくなかったのでもう行きません。」",
+				"translation": "A：“那边新开的餐厅去过了吗？”B：“去过了，不好吃，所以再也不去了。”",
+				"translation_en": "A: “Have you been to that new restaurant?” B: “Yes, I tried it, but it wasn't good, so I won't go again.”",
+				"pointIndexes": [
+					2
+				]
+			}
+		]
+	},
+	"w2d3": {
+		"items": [
+			{
+				"n": 1,
+				"type": "choice",
+				"answer": "3",
+				"completed": "ぼくが小学生のとき、姉がよく宿題を手伝ってくれました。",
+				"translation": "我上小学的时候，姐姐经常帮我做作业。",
+				"translation_en": "When I was in elementary school, my sister often helped me with homework.",
+				"pointIndexes": [
+					0
+				]
+			},
+			{
+				"n": 2,
+				"type": "choice",
+				"answer": "2",
+				"completed": "小さいころ、わたしは父によくあそんでもらいました。",
+				"translation": "小时候父亲经常陪我玩。",
+				"translation_en": "When I was little, my father often played with me.",
+				"pointIndexes": [
+					1
+				]
+			},
+			{
+				"n": 3,
+				"type": "choice",
+				"answer": "3",
+				"completed": "A「来週の日曜日、映画に行かない？」B「さそってくれてありがとう。でも、その日は、別の約束があって…。」",
+				"translation": "A：“下周日要不要去看电影？”B：“谢谢你邀请我。不过那天另有约……”",
+				"translation_en": "A: “Want to see a movie next Sunday?” B: “Thanks for asking. But I have another plan that day…”",
+				"pointIndexes": [
+					2
+				]
+			},
+			{
+				"n": 4,
+				"type": "order",
+				"answer": "3→2→★1→4",
+				"completed": "中村先生はやさしいしていねいに教えてくださるので、人気があります。",
+				"translation": "中村老师又温柔，教得又仔细，所以很受欢迎。",
+				"translation_en": "Ms. Nakamura is kind and teaches carefully, so she's popular.",
+				"pointIndexes": [
+					3
+				]
+			},
+			{
+				"n": 5,
+				"type": "order",
+				"answer": "2→1→★3→4",
+				"completed": "A「いっしょに行ってあげましょうか。」B「田中さんに地図をかいていただきましたからひとりでだいじょうぶです。」",
+				"translation": "A：“要不要我陪你去？”B：“田中已经给我画了地图，我一个人没问题。”",
+				"translation_en": "A: “Shall I go with you?” B: “Tanaka drew me a map, so I'll be fine on my own.”",
+				"pointIndexes": [
+					4
+				]
+			}
+		]
+	},
+	"w2d4": {
+		"items": [
+			{
+				"n": 1,
+				"type": "choice",
+				"answer": "2",
+				"completed": "あまいものは食べないようにしています。",
+				"translation": "我尽量不吃甜食。",
+				"translation_en": "I try not to eat sweet things.",
+				"pointIndexes": [
+					0
+				]
+			},
+			{
+				"n": 2,
+				"type": "choice",
+				"answer": "2",
+				"completed": "これは外国人が日本語を勉強するための本です。",
+				"translation": "这是外国人学日语用的书。",
+				"translation_en": "This is a book for foreigners to study Japanese.",
+				"pointIndexes": [
+					1
+				]
+			},
+			{
+				"n": 3,
+				"type": "choice",
+				"answer": "2",
+				"completed": "A「家から駅まで近いですか。」B「ちょっと遠いですが、バスを使わないで歩いて行くようにしています。」",
+				"translation": "A：“从家到车站近吗？”B：“有点远，但我尽量不坐公交，走着去。”",
+				"translation_en": "A: “Is it close from home to the station?” B: “A bit far, but I make a point of walking instead of taking the bus.”",
+				"pointIndexes": [
+					2
+				]
+			},
+			{
+				"n": 4,
+				"type": "order",
+				"answer": "1→4→★3→2",
+				"completed": "A「日本での生活はどうですか。」B「日本語が話せるようになってから楽しくなりました。」",
+				"translation": "A：“在日本的生活怎么样？”B：“能说日语之后就变有趣了。”",
+				"translation_en": "A: “How is life in Japan?” B: “It became fun after I got able to speak Japanese.”",
+				"pointIndexes": [
+					3
+				]
+			},
+			{
+				"n": 5,
+				"type": "order",
+				"answer": "3→1→★4→2",
+				"completed": "医者に、この薬を1日に3回、食事のあとで飲むように言われている。",
+				"translation": "医生让我一天吃三次这个药，饭后吃。",
+				"translation_en": "The doctor told me to take this medicine three times a day, after meals.",
+				"pointIndexes": [
+					4
+				]
+			}
+		]
+	},
+	"w2d5": {
+		"items": [
+			{
+				"n": 1,
+				"type": "choice",
+				"answer": "4",
+				"completed": "これは、日本語でどう言いますか。",
+				"translation": "这个用日语怎么说？",
+				"translation_en": "How do you say this in Japanese?",
+				"pointIndexes": [
+					0
+				]
+			},
+			{
+				"n": 2,
+				"type": "choice",
+				"answer": "4",
+				"completed": "A「もう、あなたと話したくありません。」B「あんなこと、言わないでください。」",
+				"translation": "A：“我不想再和你说话了。”B：“请不要说那种话。”",
+				"translation_en": "A: “I don't want to talk to you anymore.” B: “Please don't say things like that.”",
+				"pointIndexes": [
+					1
+				]
+			},
+			{
+				"n": 3,
+				"type": "choice",
+				"answer": "3",
+				"completed": "ジョンさん、あんなにがんばっていたのに、試験に落ちたそうですよ。",
+				"translation": "约翰那么努力，听说还是落榜了。",
+				"translation_en": "John tried so hard, but I hear he still failed the exam.",
+				"pointIndexes": [
+					2
+				]
+			},
+			{
+				"n": 4,
+				"type": "order",
+				"answer": "2→1→★4→3",
+				"completed": "A「食事、どこへ行きましょうか。」B「駅のすぐ近くの『いろり』っていう居酒屋はどうですか。」",
+				"translation": "A：“去哪儿吃饭？”B：“车站附近那家叫『いろり』的居酒屋怎么样？”",
+				"translation_en": "A: “Where shall we eat?” B: “How about the izakaya called Irori right near the station?”",
+				"pointIndexes": [
+					3
+				]
+			},
+			{
+				"n": 5,
+				"type": "order",
+				"answer": "2→4→★1→3",
+				"completed": "子ども「ぼく、プールのある家に住みたい。」父親「お父さんがどんなに働いてもそんな家は買えないよ。」",
+				"translation": "孩子：“我想住有泳池的房子。”父亲：“爸爸再怎么工作也买不起那样的房子。”",
+				"translation_en": "Child: “I want to live in a house with a pool.” Father: “No matter how hard I work, I can't buy a house like that.”",
+				"pointIndexes": [
+					4
+				]
+			}
+		]
+	},
+	"w2d6": {
+		"items": [
+			{
+				"n": 1,
+				"type": "choice",
+				"answer": "3",
+				"completed": "そこはあぶないから、夜は行かないほうがいいですよ。",
+				"translation": "那儿危险，晚上最好别去。",
+				"translation_en": "It's dangerous there, so you'd better not go at night.",
+				"pointIndexes": [
+					0
+				]
+			},
+			{
+				"n": 2,
+				"type": "choice",
+				"answer": "2",
+				"completed": "田中さんには、今日のことは言わないほうがいいと思います。",
+				"translation": "今天的事最好别跟田中说。",
+				"translation_en": "I think it's better not to tell Tanaka about today.",
+				"pointIndexes": [
+					1
+				]
+			},
+			{
+				"n": 3,
+				"type": "choice",
+				"answer": "3",
+				"completed": "母親「いつまでゲームをしているの。早く寝なさい。」子ども「はーい。」",
+				"translation": "母亲：“还要玩到什么时候？快点睡觉。”孩子：“好——。”",
+				"translation_en": "Mother: “How long are you going to play games? Go to bed.” Child: “Okaaay.”",
+				"pointIndexes": [
+					2
+				]
+			},
+			{
+				"n": 4,
+				"type": "order",
+				"answer": "2→4→★1→3",
+				"completed": "A「もう帰るんですか。」B「はい、父に9時までには帰れと言われているので。」",
+				"translation": "A：“这就要回去了？”B：“对，爸爸说必须 9 点之前到家。”",
+				"translation_en": "A: “You're leaving already?” B: “Yes — Dad told me to be home by 9.”",
+				"pointIndexes": [
+					3
+				]
+			},
+			{
+				"n": 5,
+				"type": "order",
+				"answer": "2→4→★1→3",
+				"completed": "A「たばこ、やめられましたか。」B「いいえ、妻にも毎日やめろって言われているけれどやめられなくて…。」",
+				"translation": "A：“烟戒掉了吗？”B：“没有，妻子每天也说‘戒掉’，可还是戒不了……”",
+				"translation_en": "A: “Did you quit smoking?” B: “No. My wife tells me every day to quit, but I can't…”",
+				"pointIndexes": [
+					3
+				]
+			}
+		]
+	},
+	"w3d1": {
+		"items": [
+			{
+				"n": 1,
+				"type": "choice",
+				"answer": "4",
+				"completed": "今日は日曜日なので、その店が開いているかどうかわかりません。",
+				"translation": "今天是星期天，不知道那家店开不开。",
+				"translation_en": "It's Sunday, so I don't know whether that shop is open.",
+				"pointIndexes": [
+					0
+				]
+			},
+			{
+				"n": 2,
+				"type": "choice",
+				"answer": "2",
+				"completed": "お酒もたばこもやめるのはたいへんです。",
+				"translation": "酒和烟都戒掉是很难的。",
+				"translation_en": "Giving up both alcohol and cigarettes is hard.",
+				"pointIndexes": [
+					1
+				]
+			},
+			{
+				"n": 3,
+				"type": "choice",
+				"answer": "1",
+				"completed": "A「何をさがしていますか。」B「スマホですが、どこに置いたかわからなくて…。」",
+				"translation": "A：“在找什么？”B：“手机，不知道放哪儿了……”",
+				"translation_en": "A: “What are you looking for?” B: “My phone — I don't know where I put it…”",
+				"pointIndexes": [
+					1
+				]
+			},
+			{
+				"n": 4,
+				"type": "order",
+				"answer": "2→1→★3→4",
+				"completed": "A「ギター、上手になりましたね。」B「はい、でもこのきょくをひけるようになるのに3か月もかかりました。」",
+				"translation": "A：“吉他变厉害了啊。”B：“谢谢。不过要弹出这首曲子花了三个月。”",
+				"translation_en": "A: “You've gotten good at guitar.” B: “Thanks. But it took three months to get able to play this piece.”",
+				"pointIndexes": [
+					3
+				]
+			},
+			{
+				"n": 5,
+				"type": "order",
+				"answer": "3→2→★1→4",
+				"completed": "妻「駅前のスーパーでトマト、買ってきて。」夫「え？あのスーパーのつぶれちゃった知らないの？」",
+				"translation": "妻子：“去站前超市买番茄回来。”丈夫：“诶？那家超市倒了你不知道吗？”",
+				"translation_en": "Wife: “Buy tomatoes at the supermarket by the station.” Husband: “What? You don't know that supermarket closed down?”",
+				"pointIndexes": [
+					3
+				]
+			}
+		]
+	},
+	"w3d2": {
+		"items": [
+			{
+				"n": 1,
+				"type": "choice",
+				"answer": "1",
+				"completed": "このカードはだれでも作ることができますよ。",
+				"translation": "这张卡谁都能做。",
+				"translation_en": "Anyone can make this card.",
+				"pointIndexes": [
+					0
+				]
+			},
+			{
+				"n": 2,
+				"type": "choice",
+				"answer": "4",
+				"completed": "子どもは、大人より高い音が聞こえます。",
+				"translation": "小孩比大人更能听见高音。",
+				"translation_en": "Children can hear higher sounds than adults.",
+				"pointIndexes": [
+					1
+				]
+			},
+			{
+				"n": 3,
+				"type": "choice",
+				"answer": "2",
+				"completed": "A「あれは、富士山ですか。」B「いいえ、ここからは見えませんよ。」",
+				"translation": "A：“那是富士山吗？”B：“不是，从这儿看不见。”",
+				"translation_en": "A: “Is that Mt. Fuji?” B: “No, you can't see it from here.”",
+				"pointIndexes": [
+					2
+				]
+			},
+			{
+				"n": 4,
+				"type": "order",
+				"answer": "4→1→★3→2",
+				"completed": "魚がおよいでいるのを見るのは楽しいです。",
+				"translation": "看鱼游泳很开心。",
+				"translation_en": "It's fun to watch the fish swimming.",
+				"pointIndexes": [
+					3
+				]
+			},
+			{
+				"n": 5,
+				"type": "order",
+				"answer": "3→4→★2→1",
+				"completed": "A「ネコか何かがないているのが聞こえますね。」B「ああ、あれはとなりの赤ちゃんですよ。」",
+				"translation": "A：“好像能听见猫还是什么在哭。”B：“啊，那是隔壁的宝宝。”",
+				"translation_en": "A: “I can hear a cat or something crying.” B: “Oh, that's the neighbor's baby.”",
+				"pointIndexes": [
+					4
+				]
+			}
+		]
+	},
+	"w3d3": {
+		"items": [
+			{
+				"n": 1,
+				"type": "choice",
+				"answer": "2",
+				"completed": "あんなに勉強したのに、試験に受かりませんでした。",
+				"translation": "那么用功，考试却没考上。",
+				"translation_en": "I studied so hard, but I still didn't pass the exam.",
+				"pointIndexes": [
+					0
+				]
+			},
+			{
+				"n": 2,
+				"type": "choice",
+				"answer": "3",
+				"completed": "妹はどんなに食べても太りません。",
+				"translation": "妹妹怎么吃都不胖。",
+				"translation_en": "No matter how much my sister eats, she doesn't gain weight.",
+				"pointIndexes": [
+					1
+				]
+			},
+			{
+				"n": 3,
+				"type": "choice",
+				"answer": "1",
+				"completed": "A「どうして引っこしますか。」B「広くて安いところが見つかったからです。」",
+				"translation": "A：“为什么搬家？”B：“因为找到了又大又便宜的地方。”",
+				"translation_en": "A: “Why are you moving?” B: “Because we found a place that's bigger and cheaper.”",
+				"pointIndexes": [
+					2
+				]
+			},
+			{
+				"n": 4,
+				"type": "order",
+				"answer": "3→1→★4→2",
+				"completed": "A「あした、3時には行けないと思います。」B「そうですか。おそくなってもいいので、待っています。」",
+				"translation": "A：“明天 3 点我大概赶不到。”B：“没关系，晚到也行，我等着。”",
+				"translation_en": "A: “I don't think I can make it by 3 tomorrow.” B: “That's fine — even if you're late, I'll wait.”",
+				"pointIndexes": [
+					3
+				]
+			},
+			{
+				"n": 5,
+				"type": "order",
+				"answer": "4→3→★1→2",
+				"completed": "A「田中さんに、ちゃんとあやまりましたか。」B「はい、でもいくらあやまってもゆるしてくれないので、こまっています。」",
+				"translation": "A：“好好向田中道歉了吗？”B：“道了，可怎么道歉他都不原谅，真愁人。”",
+				"translation_en": "A: “Did you properly apologize to Tanaka?” B: “Yes, but no matter how much I apologize he won't forgive me.”",
+				"pointIndexes": [
+					3
+				]
+			}
+		]
+	},
+	"w3d4": {
+		"items": [
+			{
+				"n": 1,
+				"type": "choice",
+				"answer": "4",
+				"completed": "ここから東京駅への行きかたはたくさんあります。",
+				"translation": "从这儿去东京站有很多走法。",
+				"translation_en": "There are many ways to get from here to Tokyo Station.",
+				"pointIndexes": [
+					0
+				]
+			},
+			{
+				"n": 2,
+				"type": "choice",
+				"answer": "3",
+				"completed": "朝ははれていた。ところが、昼から急に雨が降ってきた。",
+				"translation": "早上是晴天。可是中午突然下起雨来。",
+				"translation_en": "It was sunny in the morning. But then it suddenly started raining at noon.",
+				"pointIndexes": [
+					1
+				]
+			},
+			{
+				"n": 3,
+				"type": "choice",
+				"answer": "4",
+				"completed": "A「この店、いつもこんでいますね。安くておいしいからでしょう。」B「ええ、そのうえ、量も多いですから、男の人にも人気があります。」",
+				"translation": "A：“这家店总是很挤。因为又便宜又好吃吧。”B：“对，而且份量也大，男的也很爱来。”",
+				"translation_en": "A: “This place is always packed. Cheap and tasty, right?” B: “Yes, and on top of that the portions are big, so it's popular with men too.”",
+				"pointIndexes": [
+					2
+				]
+			},
+			{
+				"n": 4,
+				"type": "order",
+				"answer": "3→2→★1→4",
+				"completed": "客「これも千円ですか。」店員「はい、大きさはちがいますがねだんは同じです。」",
+				"translation": "客人：“这个也是一千日元吗？”店员：“对，大小不同，价钱一样。”",
+				"translation_en": "Customer: “Is this a thousand yen too?” Clerk: “Yes — the size is different, but the price is the same.”",
+				"pointIndexes": [
+					2
+				]
+			},
+			{
+				"n": 5,
+				"type": "order",
+				"answer": "3→1→★4→2",
+				"completed": "A「スミスさんは今、国に帰っています。」B「そうですか。だから電話しても出ないしメールしても返事が来ないんですね。」",
+				"translation": "A：“史密斯现在回国了。”B：“这样啊。所以打电话也不接、发邮件也不回。”",
+				"translation_en": "A: “Smith is back in his country now.” B: “Ah. That's why he doesn't pick up or reply to email.”",
+				"pointIndexes": [
+					2
+				]
+			}
+		]
+	},
+	"w3d5": {
+		"items": [
+			{
+				"n": 1,
+				"type": "choice",
+				"answer": "4",
+				"completed": "早く夏休みになってほしい。",
+				"translation": "真希望暑假快点来。",
+				"translation_en": "I want summer vacation to come soon.",
+				"pointIndexes": [
+					0
+				]
+			},
+			{
+				"n": 2,
+				"type": "choice",
+				"answer": "2",
+				"completed": "すみません、もう少しゆっくり言っていただけませんか。",
+				"translation": "不好意思，能再说慢一点吗？",
+				"translation_en": "Sorry, could you say that a little more slowly?",
+				"pointIndexes": [
+					1
+				]
+			},
+			{
+				"n": 3,
+				"type": "choice",
+				"answer": "3",
+				"completed": "A「あしたの日曜日、何もすることがありません。」B「動物園にでも行ったらどうですか。一人でも楽しいですよ。」",
+				"translation": "A：“明天星期天，没什么事做。”B：“去动物园怎么样？一个人去也开心。”",
+				"translation_en": "A: “It's Sunday tomorrow and I have nothing to do.” B: “How about the zoo? It's fun even alone.”",
+				"pointIndexes": [
+					2
+				]
+			},
+			{
+				"n": 4,
+				"type": "order",
+				"answer": "4→3→★1→2",
+				"completed": "A「田中先生って、何さいくらいかな。」B「年は聞かないでほしいと言っていたからわかくないと思うよ。」",
+				"translation": "A：“田中老师大概多少岁？”B：“他说别问年龄，所以我觉得不年轻了。”",
+				"translation_en": "A: “About how old is Tanaka-sensei?” B: “He said he doesn't want people asking his age, so I don't think he's young.”",
+				"pointIndexes": [
+					3
+				]
+			},
+			{
+				"n": 5,
+				"type": "order",
+				"answer": "1→3→★4→2",
+				"completed": "母親「ケンちゃん、今日、どこへ行きたい？」ケン「買ってほしい本があるから本屋へ行きたい。」",
+				"translation": "母亲：“小健，今天想去哪儿？”健：“有想买的书，所以想去书店。”",
+				"translation_en": "Mother: “Ken, where do you want to go today?” Ken: “There's a book I want you to buy me, so I want to go to the bookstore.”",
+				"pointIndexes": [
+					3
+				]
+			}
+		]
+	},
+	"w3d6": {
+		"items": [
+			{
+				"n": 1,
+				"type": "choice",
+				"answer": "4",
+				"completed": "太ってきたので、ダイエットをしようと思っています。",
+				"translation": "胖了，所以打算减肥。",
+				"translation_en": "I've gained weight, so I'm thinking of going on a diet.",
+				"pointIndexes": [
+					0
+				]
+			},
+			{
+				"n": 2,
+				"type": "choice",
+				"answer": "1",
+				"completed": "天気予報で、あしたは午後からはれると言っていました。",
+				"translation": "天气预报说明天下午会晴。",
+				"translation_en": "The forecast said it will clear up tomorrow afternoon.",
+				"pointIndexes": [
+					1
+				]
+			},
+			{
+				"n": 3,
+				"type": "choice",
+				"answer": "1",
+				"completed": "A「どうする？タクシーで行く？」B「時間があるから、歩いて行こうよ。」",
+				"translation": "A：“怎么办？打车去？”B：“有时间，走着去吧。”",
+				"translation_en": "A: “What should we do? Take a taxi?” B: “We have time, so let's walk.”",
+				"pointIndexes": [
+					2
+				]
+			},
+			{
+				"n": 4,
+				"type": "order",
+				"answer": "1→3→★4→2",
+				"completed": "A「それ、新しいバッグですね。」B「ええ、買わないつもりでしたがほしくなって買ってしまいました。」",
+				"translation": "A：“那是新包吧。”B：“嗯，本来不打算买的，可是想要就买了。”",
+				"translation_en": "A: “That's a new bag, right?” B: “Yes. I wasn't going to buy one, but I wanted it and ended up buying it.”",
+				"pointIndexes": [
+					3
+				]
+			},
+			{
+				"n": 5,
+				"type": "order",
+				"answer": "4→2→★3→1",
+				"completed": "A「山田君、よく休みますね。」B「そうですね。もう休むなって言おうと思っていますが。」",
+				"translation": "A：“山田君经常请假呢。”B：“是啊。我正想跟他说别再请假了。”",
+				"translation_en": "A: “Yamada takes a lot of days off.” B: “Yes. I'm thinking of telling him to stop taking time off.”",
+				"pointIndexes": [
+					4
+				]
+			}
+		]
+	},
+	"w4d1": {
+		"items": [
+			{
+				"n": 1,
+				"type": "choice",
+				"answer": "3",
+				"completed": "もし暑ければ、まどを開けてください。",
+				"translation": "如果热的话，请把窗户打开。",
+				"translation_en": "If it's hot, please open the window.",
+				"pointIndexes": [
+					0
+				]
+			},
+			{
+				"n": 2,
+				"type": "choice",
+				"answer": "3",
+				"completed": "中国に行くなら、お茶を買ってきてください。",
+				"translation": "要是去中国，请帮我买茶回来。",
+				"translation_en": "If you're going to China, please buy some tea.",
+				"pointIndexes": [
+					1
+				]
+			},
+			{
+				"n": 3,
+				"type": "choice",
+				"answer": "1",
+				"completed": "A「すみません、このへんにコンビニはありませんか。」B「そのかどを右にまがって少し行くと、右にありますよ。」",
+				"translation": "A：“请问这附近有便利店吗？”B：“那个拐角往右走一点，右边就有。”",
+				"translation_en": "A: “Is there a convenience store around here?” B: “Turn right at that corner and go a little — it's on the right.”",
+				"pointIndexes": [
+					2
+				]
+			},
+			{
+				"n": 4,
+				"type": "order",
+				"answer": "4→1→★3→2",
+				"completed": "A「もうすぐ、試験の結果がわかりますね。」B「はい。もし受からなかったら来年も受けるつもりです。」",
+				"translation": "A：“考试结果马上就出来了。”B：“对。要是没考上，明年还打算再考。”",
+				"translation_en": "A: “We'll know the exam results soon.” B: “Yes. If I don't pass, I plan to take it again next year.”",
+				"pointIndexes": [
+					3
+				]
+			},
+			{
+				"n": 5,
+				"type": "order",
+				"answer": "2→3→★1→4",
+				"completed": "夫「ちょっと、本屋に行ってくるよ。」妻「あ、そう。出かけるなら帰りにたまごを買ってきてくれない？」",
+				"translation": "丈夫：“我去一下书店。”妻子：“哦。既然出门，回来时能不能买鸡蛋？”",
+				"translation_en": "Husband: “I'm just going to the bookstore.” Wife: “Oh. If you're going out, could you buy eggs on the way back?”",
+				"pointIndexes": [
+					4
+				]
+			}
+		]
+	},
+	"w4d2": {
+		"items": [
+			{
+				"n": 1,
+				"type": "choice",
+				"answer": "3",
+				"completed": "このライオン、まだ赤ちゃんのようですね。",
+				"translation": "这头狮子还像个宝宝呢。",
+				"translation_en": "This lion still looks like a baby.",
+				"pointIndexes": [
+					0
+				]
+			},
+			{
+				"n": 2,
+				"type": "choice",
+				"answer": "4",
+				"completed": "このパソコン、何か変だ。こわれているかもしれない。",
+				"translation": "这台电脑有点不对劲。说不定坏了。",
+				"translation_en": "This computer feels off. It might be broken.",
+				"pointIndexes": [
+					1
+				]
+			},
+			{
+				"n": 3,
+				"type": "choice",
+				"answer": "4",
+				"completed": "A「リンさん、中国に帰ったそうですね。」B「ええ、1週間ぐらい前に。さびしくなりましたね。」",
+				"translation": "A：“听说小林回国了。”B：“嗯，大概一周前。真寂寞。”",
+				"translation_en": "A: “I hear Lin went back to China.” B: “Yes, about a week ago. It's lonely now.”",
+				"pointIndexes": [
+					2
+				]
+			},
+			{
+				"n": 4,
+				"type": "order",
+				"answer": "3→1→★4→2",
+				"completed": "ニュースで、ベトナムからの留学生はこれからもっとふえるだろうと言っていました。",
+				"translation": "新闻说，来自越南的留学生今后还会增加。",
+				"translation_en": "The news said the number of students from Vietnam will probably keep growing.",
+				"pointIndexes": [
+					3
+				]
+			},
+			{
+				"n": 5,
+				"type": "order",
+				"answer": "1→4→★3→2",
+				"completed": "妻「今日、洗濯、どうしようかな。」夫「あしたは天気が悪いみたいだから今日しておいたほうがいいよ。」",
+				"translation": "妻子：“今天洗衣服怎么办？”丈夫：“明天好像天气不好，今天先洗了比较好。”",
+				"translation_en": "Wife: “What about laundry today?” Husband: “It looks like bad weather tomorrow, so you'd better do it today.”",
+				"pointIndexes": [
+					3
+				]
+			}
+		]
+	},
+	"w4d3": {
+		"items": [
+			{
+				"n": 1,
+				"type": "choice",
+				"answer": "1",
+				"completed": "きのう、歩きすぎて、足がいたいです。",
+				"translation": "昨天走太多，脚疼。",
+				"translation_en": "I walked too much yesterday and my feet hurt.",
+				"pointIndexes": [
+					0
+				]
+			},
+			{
+				"n": 2,
+				"type": "choice",
+				"answer": "3",
+				"completed": "安いパソコンはこわれやすいって聞きましたが、だいじょうぶでしょうか。",
+				"translation": "听说便宜电脑容易坏，不知道行不行。",
+				"translation_en": "I heard cheap computers break easily — will it be okay?",
+				"pointIndexes": [
+					1
+				]
+			},
+			{
+				"n": 3,
+				"type": "choice",
+				"answer": "2",
+				"completed": "A「このカニ、おいしいですね。」B「そうですか。食べにくいし、わたしはあんまり好きじゃありません。」",
+				"translation": "A：“这螃蟹真好吃。”B：“是吗。难剥又难吃干净，我不太喜欢。”",
+				"translation_en": "A: “This crab is delicious.” B: “Is it? It's hard to eat, so I don't like it much.”",
+				"pointIndexes": [
+					2
+				]
+			},
+			{
+				"n": 4,
+				"type": "order",
+				"answer": "3→4→★1→2",
+				"completed": "医者「足はどうですか。まだいたいですか。」患者「そうですね、歩きつづけるとずっといたくなるけれど、今はだいじょうぶです。」",
+				"translation": "医生：“脚怎么样？还疼吗？”病人：“一直走的话还会疼，不过现在没事了。”",
+				"translation_en": "Doctor: “How's the foot? Still hurt?” Patient: “If I keep walking it starts to hurt, but it's fine now.”",
+				"pointIndexes": [
+					3
+				]
+			},
+			{
+				"n": 5,
+				"type": "order",
+				"answer": "4→2→★3→1",
+				"completed": "歌を習いはじめてから毎日が楽しくなりました。",
+				"translation": "开始学唱歌之后，每天都变有趣了。",
+				"translation_en": "Every day has been more fun since I started learning to sing.",
+				"pointIndexes": [
+					4
+				]
+			}
+		]
+	},
+	"w4d4": {
+		"items": [
+			{
+				"n": 1,
+				"type": "choice",
+				"answer": "2",
+				"completed": "おもしろそうなゲームね。わたしにもやらせて。",
+				"translation": "这游戏看起来很好玩。也让我玩吧。",
+				"translation_en": "That game looks fun. Let me play too.",
+				"pointIndexes": [
+					0
+				]
+			},
+			{
+				"n": 2,
+				"type": "choice",
+				"answer": "3",
+				"completed": "子どものとき、犬にかまれたことがあります。",
+				"translation": "小时候被狗咬过。",
+				"translation_en": "When I was a child I was bitten by a dog.",
+				"pointIndexes": [
+					1
+				]
+			},
+			{
+				"n": 3,
+				"type": "choice",
+				"answer": "4",
+				"completed": "A「元気そうなお子さんですね。」B「ええ、でも赤ちゃんのときは病気ばかりして、よく心配させられました。」",
+				"translation": "A：“孩子看起来很健康。”B：“是啊，不过婴儿时期老生病，让我担心坏了。”",
+				"translation_en": "A: “Your child looks so healthy.” B: “Yes, but as a baby they were always sick and I was made to worry a lot.”",
+				"pointIndexes": [
+					2
+				]
+			},
+			{
+				"n": 4,
+				"type": "order",
+				"answer": "3→1→★2→4",
+				"completed": "A「このいすは、すわりやすいですね。」B「これは、ヨーロッパの学校で使われているものだそうですよ。」",
+				"translation": "A：“这椅子真好坐。”B：“听说这是欧洲学校在用的。”",
+				"translation_en": "A: “This chair is comfortable.” B: “I hear this is the kind used in schools in Europe.”",
+				"pointIndexes": [
+					3
+				]
+			},
+			{
+				"n": 5,
+				"type": "order",
+				"answer": "1→2→★4→3",
+				"completed": "A「山田さん、店をやめたんですか。」B「ちこくが多かったのでやめさせられたと聞いていますよ。」",
+				"translation": "A：“山田从店里辞职了？”B：“听说因为迟到太多被辞退了。”",
+				"translation_en": "A: “Did Yamada leave the shop?” B: “I hear he was made to quit because he was late so often.”",
+				"pointIndexes": [
+					3
+				]
+			}
+		]
+	},
+	"w4d5": {
+		"items": [
+			{
+				"n": 1,
+				"type": "choice",
+				"answer": "2",
+				"completed": "ここに車をとめておいても、だいじょうぶですか。",
+				"translation": "车停在这儿没关系吗？",
+				"translation_en": "Is it okay to leave the car parked here?",
+				"pointIndexes": [
+					0
+				]
+			},
+			{
+				"n": 2,
+				"type": "choice",
+				"answer": "2",
+				"completed": "この間の地しんで家がこわれてしまった人がたくさんいます。",
+				"translation": "上次地震里房子塌了的人很多。",
+				"translation_en": "A lot of people had their houses collapse in the recent earthquake.",
+				"pointIndexes": [
+					1
+				]
+			},
+			{
+				"n": 3,
+				"type": "choice",
+				"answer": "3",
+				"completed": "家のかぎをかけてくるのをわすれてしまいました。",
+				"translation": "出门时忘了锁门。",
+				"translation_en": "I forgot to lock the house when I left.",
+				"pointIndexes": [
+					2
+				]
+			},
+			{
+				"n": 4,
+				"type": "order",
+				"answer": "1→4→★3→2",
+				"completed": "A「今日は、いい天気で気持ちがいいですね。」B「そうですね。でもこれから夏になるからどんどん暑くなっていくでしょう。」",
+				"translation": "A：“今天天气真好。”B：“是啊。不过入夏以后会越来越热吧。”",
+				"translation_en": "A: “Nice weather today.” B: “Yes. But it'll keep getting hotter as summer comes.”",
+				"pointIndexes": [
+					3
+				]
+			},
+			{
+				"n": 5,
+				"type": "order",
+				"answer": "3→1→★2→4",
+				"completed": "A「ジョンさんのメールアドレス、わかる？」B「もらっためいしに書いてあったと思うよ。」",
+				"translation": "A：“知道约翰的邮箱吗？”B：“给我的名片上好像写着。”",
+				"translation_en": "A: “Do you know John's email?” B: “I think it was written on the card he gave me.”",
+				"pointIndexes": [
+					3
+				]
+			}
+		]
+	},
+	"w4d6": {
+		"items": [
+			{
+				"n": 1,
+				"type": "choice",
+				"answer": "3",
+				"completed": "ジョンさん、どうして学校を休んだのかしら。",
+				"translation": "约翰为什么没来上学呢？",
+				"translation_en": "I wonder why John was absent from school.",
+				"pointIndexes": [
+					0
+				]
+			},
+			{
+				"n": 2,
+				"type": "choice",
+				"answer": "4",
+				"completed": "早く誕生日が来ないかなあ。",
+				"translation": "生日怎么还不来啊。",
+				"translation_en": "I wish my birthday would come soon.",
+				"pointIndexes": [
+					1
+				]
+			},
+			{
+				"n": 3,
+				"type": "choice",
+				"answer": "3",
+				"completed": "A「きのうのステーキ、おいしかったなあ。」B「どこで食べたの？」",
+				"translation": "A：“昨天的牛排真好吃啊。”B：“在哪儿吃的？”",
+				"translation_en": "A: “That steak yesterday was so good.” B: “Where did you eat it?”",
+				"pointIndexes": [
+					2
+				]
+			},
+			{
+				"n": 4,
+				"type": "order",
+				"answer": "3→1→★4→2",
+				"completed": "A「おそかったですね。どうしましたか。」B「朝、おなかのぐあいが悪かったんですがもうだいじょうぶです。」",
+				"translation": "A：“来晚了。怎么了？”B：“早上肚子不舒服，不过现在没事了。”",
+				"translation_en": "A: “You're late. What happened?” B: “My stomach was bad this morning, but I'm fine now.”",
+				"pointIndexes": [
+					3
+				]
+			},
+			{
+				"n": 5,
+				"type": "order",
+				"answer": "3→2→★1→4",
+				"completed": "A「あれ？ケーキ、食べないの？」B「うん、食べたいけれど今、ダイエット中なんですよ。」",
+				"translation": "A：“咦？不吃蛋糕吗？”B：“想吃，可是现在在减肥。”",
+				"translation_en": "A: “Huh? You're not having cake?” B: “I want to, but I'm on a diet right now.”",
+				"pointIndexes": [
+					4
+				]
+			}
+		]
+	}
+}

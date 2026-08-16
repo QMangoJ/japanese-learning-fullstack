@@ -684,8 +684,9 @@ export function StudyApp() {
 	const isCommon = commonPages.includes(routeKey) || routeKey === "#/";
 	if (routeKey === "#/cards") ensureCardsDeck();
 
-	const waitingN2 = isN2() && !n2Loaded;
-	const waitingN4 = isN4() && !n4Loaded;
+	const commonRefPage = ["#/ref", "#/katsuyou", "#/henkei", "#/numbers"].includes(routeKey);
+	const waitingN2 = isN2() && !n2Loaded && !commonRefPage;
+	const waitingN4 = isN4() && !n4Loaded && !commonRefPage;
 	const waitingSearch = routeKey === "#/search" && !n2Loaded;
 	const weekLocked = isTrial && day && (LEVEL !== "n3" || day.w !== 1);
 	const homeLocked = isTrial && LEVEL !== "n3";

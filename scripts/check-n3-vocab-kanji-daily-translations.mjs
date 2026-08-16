@@ -60,8 +60,8 @@ assert.match(translations.vocab.w3d3.items[5].translation, /八折/, "20% off mu
 assert.match(translations.kanji.w4d4.items[3].translation, /申报税款/, "税金を申告する must mean 申报税款");
 assert.match(translations.kanji.w5d1.items[1].translation, /感谢/, "お礼 must mean thanks, not apology");
 assert.match(store, /n3-vocab-kanji-daily-translations\.json/, "runtime must load N3 vocab/kanji translations");
-assert.match(days, /MODULE === "vocab" && V\.daily_translations/, "N3 vocab translations must not leak into N2/N4");
-assert.match(days, /MODULE === "kanji" && K\.daily_translations/, "N3 kanji translations must not leak into N2/N4");
+assert.match(days, /MODULE === "n2vocab" \? V2 : MODULE === "n4vocab" \? V4 : V/, "each vocab level must read its own daily_translations book");
+assert.match(days, /MODULE === "n2kanji" \? K2 : MODULE === "n4kanji" \? K4 : K/, "each kanji level must read its own daily_translations book");
 assert.match(days, /DailyTranslationOnly/, "runtime must render translation-only controls");
 assert.match(days, /kind: "exam-question"/, "weekend favorites must be identifiable as full questions");
 assert.match(days, /data-fav-style="exam"/, "weekend favorite buttons must use the labeled toggle state");

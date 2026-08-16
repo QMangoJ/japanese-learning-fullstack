@@ -1,0 +1,1231 @@
+{
+  "version": 1,
+  "vocab": {
+    "w4d1": {
+      "items": [
+        {
+          "n": 1,
+          "translation": "下雨了，穿上长筒靴再走吧。",
+          "translation_en": "It's raining, so let's put on rain boots and go."
+        },
+        {
+          "n": 2,
+          "translation": "洗完手，用毛巾或手帕擦一下吧。",
+          "translation_en": "After you wash your hands, wipe them with a towel or handkerchief."
+        },
+        {
+          "n": 3,
+          "translation": "树上掉了很多叶子，所以扫一扫。",
+          "translation_en": "Lots of leaves have fallen, so I'll sweep them."
+        },
+        {
+          "n": 4,
+          "translation": "我总是大概 12 点肚子饿。",
+          "translation_en": "I always get hungry around 12."
+        }
+      ]
+    },
+    "w4d2": {
+      "items": [
+        {
+          "n": 1,
+          "translation": "朋友要回国了，我很寂寞。",
+          "translation_en": "My friend is going back to their country, so I feel lonely."
+        },
+        {
+          "n": 2,
+          "translation": "照片让人害羞，请不要拍。",
+          "translation_en": "Photos are embarrassing, so please don't take any."
+        },
+        {
+          "n": 3,
+          "translation": "看了新闻吃了一惊。",
+          "translation_en": "I was surprised when I saw the news."
+        },
+        {
+          "n": 4,
+          "translation": "出事故车过不去。没办法，走着去。",
+          "translation_en": "There's an accident and cars can't get through. There's nothing for it, so I'll walk."
+        }
+      ]
+    },
+    "w4d3": {
+      "items": [
+        {
+          "n": 1,
+          "translation": "踢足球把脚弄伤了。",
+          "translation_en": "I hurt my foot playing soccer."
+        },
+        {
+          "n": 2,
+          "translation": "把钟表的电池换一下。",
+          "translation_en": "I'll replace the clock battery."
+        },
+        {
+          "n": 3,
+          "translation": "戒烟是不可能的。",
+          "translation_en": "It's impossible for me to quit smoking."
+        },
+        {
+          "n": 4,
+          "translation": "到了车站请打电话，我去接你。",
+          "translation_en": "Call me when you get to the station and I'll come pick you up."
+        }
+      ]
+    },
+    "w4d4": {
+      "items": [
+        {
+          "n": 1,
+          "translation": "早上 7 点叫醒家人。",
+          "translation_en": "I wake my family at 7 in the morning."
+        },
+        {
+          "n": 2,
+          "translation": "把垃圾收起来扔掉。",
+          "translation_en": "I collect the trash and throw it away."
+        },
+        {
+          "n": 3,
+          "translation": "做出门的准备。",
+          "translation_en": "I'm getting ready to go out."
+        },
+        {
+          "n": 4,
+          "translation": "把桌上和抽屉里收拾整齐。",
+          "translation_en": "I tidy the top of the desk and the drawers."
+        }
+      ]
+    },
+    "w4d5": {
+      "items": [
+        {
+          "n": 1,
+          "translation": "请在那个红绿灯往左拐。",
+          "translation_en": "Please turn left at that traffic light."
+        },
+        {
+          "n": 2,
+          "translation": "危险，请不要碰那个。",
+          "translation_en": "That's dangerous, so please don't touch it."
+        },
+        {
+          "n": 3,
+          "translation": "日本的食物我还没习惯。",
+          "translation_en": "I still haven't gotten used to Japanese food."
+        },
+        {
+          "n": 4,
+          "translation": "昨天第一次吃了生鱼片。",
+          "translation_en": "Yesterday I ate sashimi for the first time."
+        }
+      ]
+    },
+    "w4d6": {
+      "items": [
+        {
+          "n": 1,
+          "translation": "隔壁的人太吵，睡不着。",
+          "translation_en": "The neighbors are so noisy I can't sleep."
+        },
+        {
+          "n": 2,
+          "translation": "那儿水太深，在这边游吧。",
+          "translation_en": "It's deep there, so let's swim over here."
+        },
+        {
+          "n": 3,
+          "translation": "弟弟身体很结实。",
+          "translation_en": "My little brother is strong and healthy."
+        },
+        {
+          "n": 4,
+          "translation": "这肉又硬又难吃。",
+          "translation_en": "This meat is tough and tastes bad."
+        }
+      ]
+    },
+    "w5d1": {
+      "items": [
+        {
+          "n": 1,
+          "translation": "下了这个楼梯往左走就有便利店。",
+          "translation_en": "Go down these stairs and turn left — there's a convenience store."
+        },
+        {
+          "n": 2,
+          "translation": "危险，把手从口袋里拿出来再走。",
+          "translation_en": "It's dangerous, so take your hands out of your pockets when you walk."
+        },
+        {
+          "n": 3,
+          "translation": "钱包里放进了钱。",
+          "translation_en": "I put money in my wallet."
+        },
+        {
+          "n": 4,
+          "translation": "就算不跑也赶得上那班电车。",
+          "translation_en": "Even if we don't run, we'll make that train."
+        }
+      ]
+    },
+    "w5d2": {
+      "items": [
+        {
+          "n": 1,
+          "translation": "那边跳舞的长头发是谁？",
+          "translation_en": "Who's the long-haired person dancing over there?"
+        },
+        {
+          "n": 2,
+          "translation": "那个人一边弹钢琴一边唱歌。",
+          "translation_en": "That person is singing while playing the piano."
+        },
+        {
+          "n": 3,
+          "translation": "那个学生非常认真。",
+          "translation_en": "That student is very serious about studying."
+        },
+        {
+          "n": 4,
+          "translation": "我长得像爸爸。",
+          "translation_en": "I look like my father."
+        }
+      ]
+    },
+    "w5d3": {
+      "items": [
+        {
+          "n": 1,
+          "translation": "过了桥一直走，左边就是小学。",
+          "translation_en": "Cross the bridge and go straight — the elementary school is on the left."
+        },
+        {
+          "n": 2,
+          "translation": "投币再按按钮，饮料就会出来。",
+          "translation_en": "Put in money and press the button, and a drink comes out."
+        },
+        {
+          "n": 3,
+          "translation": "邮件发来的文件打不开。",
+          "translation_en": "I can't open the file they sent me by email."
+        },
+        {
+          "n": 4,
+          "translation": "用这块橡皮就能擦干净。",
+          "translation_en": "If you use this eraser, it comes off cleanly."
+        }
+      ]
+    },
+    "w5d4": {
+      "items": [
+        {
+          "n": 1,
+          "translation": "剩下的沙拉放进冰箱。",
+          "translation_en": "I'll put the leftover salad in the fridge."
+        },
+        {
+          "n": 2,
+          "translation": "孩子们喜欢贴纸，往各种东西上贴。",
+          "translation_en": "Kids love stickers and stick them on all kinds of things."
+        },
+        {
+          "n": 3,
+          "translation": "用一千日元买东西，剩下一百日元。",
+          "translation_en": "I bought something with 1,000 yen and had 100 yen left."
+        },
+        {
+          "n": 4,
+          "translation": "往面包上涂果酱。",
+          "translation_en": "I spread jam on the bread."
+        }
+      ]
+    },
+    "w5d5": {
+      "items": [
+        {
+          "n": 1,
+          "translation": "最近小林同学不来学校。",
+          "translation_en": "Lately Li hasn't been coming to school."
+        },
+        {
+          "n": 2,
+          "translation": "太郎长这么大了啊。",
+          "translation_en": "Taro, you've grown so much."
+        },
+        {
+          "n": 3,
+          "translation": "爸爸早上起来一定慢跑。",
+          "translation_en": "Dad always goes jogging when he gets up in the morning."
+        },
+        {
+          "n": 4,
+          "translation": "没学习，果然考试没考好。",
+          "translation_en": "I didn't study, so of course I couldn't do the test."
+        }
+      ]
+    },
+    "w5d6": {
+      "items": [
+        {
+          "n": 1,
+          "translation": "走丢的孩子找到了，放心了。",
+          "translation_en": "The missing child was found, so I felt relieved."
+        },
+        {
+          "n": 2,
+          "translation": "游戏借给你，可别弄坏了。",
+          "translation_en": "I'll lend you the game, but please don't break it."
+        },
+        {
+          "n": 3,
+          "translation": "有人把票给我看，说“你掉了”。",
+          "translation_en": "Someone showed me a ticket and said, “You dropped this.”"
+        },
+        {
+          "n": 4,
+          "translation": "朋友帮我找到了兼职。",
+          "translation_en": "A friend found a part-time job for me."
+        }
+      ]
+    },
+    "w6d1": {
+      "items": [
+        {
+          "n": 1,
+          "translation": "周末有什么安排吗？",
+          "translation_en": "Do you have any plans for the weekend?"
+        },
+        {
+          "n": 2,
+          "translation": "明天下雨的话比赛取消。",
+          "translation_en": "If it rains tomorrow, there's no game."
+        },
+        {
+          "n": 3,
+          "translation": "大家一起唱卡拉 OK 玩得很开心。",
+          "translation_en": "We all enjoyed karaoke together."
+        },
+        {
+          "n": 4,
+          "translation": "明天我有点不方便。",
+          "translation_en": "Tomorrow is a bit inconvenient for me."
+        }
+      ]
+    },
+    "w6d2": {
+      "items": [
+        {
+          "n": 1,
+          "translation": "水大概几分钟开？",
+          "translation_en": "About how many minutes until the water boils?"
+        },
+        {
+          "n": 2,
+          "translation": "这套西装干洗要一周。",
+          "translation_en": "Dry-cleaning this suit takes a week."
+        },
+        {
+          "n": 3,
+          "translation": "我报电话号码，请记下来。",
+          "translation_en": "I'll say the phone number, so please write it down."
+        },
+        {
+          "n": 4,
+          "translation": "这房子是爸爸年轻时盖的。",
+          "translation_en": "My father built this house when he was young."
+        }
+      ]
+    },
+    "w6d3": {
+      "items": [
+        {
+          "n": 1,
+          "translation": "重要的盘子碎了。",
+          "translation_en": "An important plate broke."
+        },
+        {
+          "n": 2,
+          "translation": "偷了钻石逃走的人已经被抓住了。",
+          "translation_en": "The person who stole the diamond and ran has already been caught."
+        },
+        {
+          "n": 3,
+          "translation": "谁都不相信我说的话。",
+          "translation_en": "Nobody believed what I said."
+        },
+        {
+          "n": 4,
+          "translation": "外面有人在吵闹。",
+          "translation_en": "Someone is making a racket outside."
+        }
+      ]
+    },
+    "w6d4": {
+      "items": [
+        {
+          "n": 1,
+          "translation": "这个游戏是把黑白圆形棋子摆开来玩。",
+          "translation_en": "This game is played by lining up round black and white pieces."
+        },
+        {
+          "n": 2,
+          "translation": "我正在做出门准备，再等一下。",
+          "translation_en": "I'm getting ready to go out, so wait a little longer."
+        },
+        {
+          "n": 3,
+          "translation": "和上周比，这周更忙。",
+          "translation_en": "Compared with last week, this week is busy."
+        },
+        {
+          "n": 4,
+          "translation": "架子上摆着人偶。",
+          "translation_en": "There are dolls displayed on the shelf."
+        }
+      ]
+    },
+    "w6d5": {
+      "items": [
+        {
+          "n": 1,
+          "translation": "哥哥在计算机相关的公司上班。",
+          "translation_en": "My older brother works at a computer-related company."
+        },
+        {
+          "n": 2,
+          "translation": "下周计划搬到学校附近。",
+          "translation_en": "I plan to move near the school next week."
+        },
+        {
+          "n": 3,
+          "translation": "发出了感谢祝贺的明信片。",
+          "translation_en": "I sent a postcard to thank them for the congratulations."
+        },
+        {
+          "n": 4,
+          "translation": "买花去探望。",
+          "translation_en": "I'll buy flowers and go visit them in the hospital."
+        }
+      ]
+    },
+    "w6d6": {
+      "items": [
+        {
+          "n": 1,
+          "translation": "初次见面，我叫山田。",
+          "translation_en": "How do you do? My name is Yamada."
+        },
+        {
+          "n": 2,
+          "translation": "“打扰一下，我看一下票。……谢谢。”",
+          "translation_en": "“Excuse me, I'll just check the ticket. … Thank you.”"
+        },
+        {
+          "n": 3,
+          "translation": "社长，田中先生到了。",
+          "translation_en": "President, Mr. Tanaka has arrived."
+        },
+        {
+          "n": 4,
+          "translation": "我客气了一下，点心没怎么吃。",
+          "translation_en": "I held back and didn't take many sweets."
+        }
+      ]
+    }
+  },
+  "kanji": {
+    "w1d1": {
+      "items": [
+        {
+          "n": 1,
+          "translation": "想试试穿和服。",
+          "translation_en": "I want to try wearing a kimono."
+        },
+        {
+          "n": 2,
+          "translation": "感冒了。",
+          "translation_en": "I caught a cold."
+        },
+        {
+          "n": 3,
+          "translation": "公司在那栋楼里面。",
+          "translation_en": "The company is inside that building."
+        },
+        {
+          "n": 4,
+          "translation": "妈妈在厨房。",
+          "translation_en": "Mom is in the kitchen."
+        },
+        {
+          "n": 5,
+          "translation": "这家店的东西很贵。",
+          "translation_en": "The goods at this shop are expensive."
+        },
+        {
+          "n": 6,
+          "translation": "到了车站请打电话。",
+          "translation_en": "Please call when you arrive at the station."
+        },
+        {
+          "n": 7,
+          "translation": "下车之前付钱。",
+          "translation_en": "I pay before I get off."
+        },
+        {
+          "n": 8,
+          "translation": "这里是动物医院。",
+          "translation_en": "This is an animal hospital."
+        }
+      ]
+    },
+    "w1d2": {
+      "items": [
+        {
+          "n": 1,
+          "translation": "请 8 点在学校门前集合。",
+          "translation_en": "Please gather in front of the school at 8."
+        },
+        {
+          "n": 2,
+          "translation": "智能手机很方便。",
+          "translation_en": "Smartphones are convenient."
+        },
+        {
+          "n": 3,
+          "translation": "我们上同一所学校。",
+          "translation_en": "We go to the same school."
+        },
+        {
+          "n": 4,
+          "translation": "每天晚上都做到很晚作业。",
+          "translation_en": "I do homework late every night."
+        },
+        {
+          "n": 5,
+          "translation": "这一页做完就进入下一页吧。",
+          "translation_en": "When this page is done, let's go on to the next."
+        },
+        {
+          "n": 6,
+          "translation": "记住日语就马上用。",
+          "translation_en": "Once I learn Japanese, I use it right away."
+        },
+        {
+          "n": 7,
+          "translation": "写短文章。",
+          "translation_en": "I write a short sentence."
+        },
+        {
+          "n": 8,
+          "translation": "和日本朋友一起做了寿司。",
+          "translation_en": "I made sushi with a Japanese friend."
+        }
+      ]
+    },
+    "w1d3": {
+      "items": [
+        {
+          "n": 1,
+          "translation": "最近经常下雨啊。",
+          "translation_en": "It's been raining a lot lately."
+        },
+        {
+          "n": 2,
+          "translation": "明天晚上和朋友见面。",
+          "translation_en": "I'm meeting a friend tomorrow evening."
+        },
+        {
+          "n": 3,
+          "translation": "孩子们去远足了。",
+          "translation_en": "The children went on a field trip."
+        },
+        {
+          "n": 4,
+          "translation": "这里写着说明，请读一下。",
+          "translation_en": "The explanation is written here, so please read it."
+        },
+        {
+          "n": 5,
+          "translation": "这条裤子有点短。",
+          "translation_en": "These pants are a little short."
+        },
+        {
+          "n": 6,
+          "translation": "搬到附近了，请多关照。",
+          "translation_en": "I just moved to the neighborhood. Nice to meet you."
+        },
+        {
+          "n": 7,
+          "translation": "这孩子身体很弱。",
+          "translation_en": "This child has a weak constitution."
+        },
+        {
+          "n": 8,
+          "translation": "这里离车站远，不方便。",
+          "translation_en": "This place is far from the station and inconvenient."
+        }
+      ]
+    },
+    "w1d4": {
+      "items": [
+        {
+          "n": 1,
+          "translation": "那栋建筑很有名。",
+          "translation_en": "That building is famous."
+        },
+        {
+          "n": 2,
+          "translation": "晚饭吃什么好呢？",
+          "translation_en": "What shall we have for dinner?"
+        },
+        {
+          "n": 3,
+          "translation": "去车站接丈夫。",
+          "translation_en": "I'm going to the station to meet my husband."
+        },
+        {
+          "n": 4,
+          "translation": "在日本住了旅馆。",
+          "translation_en": "I stayed at a Japanese inn."
+        },
+        {
+          "n": 5,
+          "translation": "傍晚开始风会变大。",
+          "translation_en": "The wind will get stronger from evening."
+        },
+        {
+          "n": 6,
+          "translation": "请假没上课，所以抄了朋友的笔记。",
+          "translation_en": "I missed class, so I copied a friend's notes."
+        },
+        {
+          "n": 7,
+          "translation": "桌子正中间放着花。",
+          "translation_en": "There are flowers in the middle of the table."
+        },
+        {
+          "n": 8,
+          "translation": "想去外国旅行。",
+          "translation_en": "I want to travel abroad."
+        }
+      ]
+    },
+    "w1d5": {
+      "items": [
+        {
+          "n": 1,
+          "translation": "不喜欢学习，但喜欢运动。",
+          "translation_en": "I hate studying, but I like sports."
+        },
+        {
+          "n": 2,
+          "translation": "骑自行车去车站。",
+          "translation_en": "I go to the station by bicycle."
+        },
+        {
+          "n": 3,
+          "translation": "想建立一个温暖的家庭。",
+          "translation_en": "I want to make a warm family."
+        },
+        {
+          "n": 4,
+          "translation": "在市民泳池游泳。",
+          "translation_en": "I swim at the municipal pool."
+        },
+        {
+          "n": 5,
+          "translation": "大家一起去唱了卡拉 OK。",
+          "translation_en": "We all went to karaoke and sang."
+        },
+        {
+          "n": 6,
+          "translation": "有钱的话想盖房子。",
+          "translation_en": "If I had the money, I'd like to build a house."
+        },
+        {
+          "n": 7,
+          "translation": "这是家人的照片。",
+          "translation_en": "This is a family photo."
+        },
+        {
+          "n": 8,
+          "translation": "那个店员开朗又好人。",
+          "translation_en": "That clerk is cheerful and nice."
+        }
+      ]
+    },
+    "w1d6": {
+      "items": [
+        {
+          "n": 1,
+          "translation": "明天有点不方便。",
+          "translation_en": "Tomorrow is a bit inconvenient."
+        },
+        {
+          "n": 2,
+          "translation": "白天不在家。",
+          "translation_en": "I'm not home during the day."
+        },
+        {
+          "n": 3,
+          "translation": "都道府县一共 47 个。",
+          "translation_en": "There are 47 prefectures in all."
+        },
+        {
+          "n": 4,
+          "translation": "暑假去旅行。",
+          "translation_en": "I'll travel during summer vacation."
+        },
+        {
+          "n": 5,
+          "translation": "到了春天就去赏花。",
+          "translation_en": "When spring comes, we'll go flower-viewing."
+        },
+        {
+          "n": 6,
+          "translation": "冬天在山里滑雪。",
+          "translation_en": "In winter I ski in the mountains."
+        },
+        {
+          "n": 7,
+          "translation": "秋天水果很好吃。",
+          "translation_en": "Fruit is delicious in autumn."
+        },
+        {
+          "n": 8,
+          "translation": "东京都人很多。",
+          "translation_en": "There are a lot of people in Tokyo."
+        }
+      ]
+    },
+    "w2d1": {
+      "items": [
+        {
+          "n": 1,
+          "translation": "暑假去图书馆。",
+          "translation_en": "I go to the library during summer vacation."
+        },
+        {
+          "n": 2,
+          "translation": "有事，明天来不了。",
+          "translation_en": "I have something to do, so I can't come tomorrow."
+        },
+        {
+          "n": 3,
+          "translation": "那只表有点慢。",
+          "translation_en": "That clock is a little slow."
+        },
+        {
+          "n": 4,
+          "translation": "妈妈在准备饭。",
+          "translation_en": "Mom is getting the meal ready."
+        },
+        {
+          "n": 5,
+          "translation": "我总是坐地铁。",
+          "translation_en": "I always use the subway."
+        },
+        {
+          "n": 6,
+          "translation": "发烧了，所以请假不工作。",
+          "translation_en": "I have a fever, so I'm taking off work."
+        },
+        {
+          "n": 7,
+          "translation": "在网上看电影。",
+          "translation_en": "I watch movies on the internet."
+        },
+        {
+          "n": 8,
+          "translation": "不看地图就找不到路。",
+          "translation_en": "I can't find the way unless I look at a map."
+        }
+      ]
+    },
+    "w2d2": {
+      "items": [
+        {
+          "n": 1,
+          "translation": "全家人一起去旅行。",
+          "translation_en": "The family is going on a trip."
+        },
+        {
+          "n": 2,
+          "translation": "不要写在笔记本上，写在别的纸上。",
+          "translation_en": "Don't write in the notebook — write on another sheet."
+        },
+        {
+          "n": 3,
+          "translation": "那棵粗的树是什么树？",
+          "translation_en": "What kind of tree is that thick one?"
+        },
+        {
+          "n": 4,
+          "translation": "要不要在和室喝茶？",
+          "translation_en": "Shall we have tea in the Japanese-style room?"
+        },
+        {
+          "n": 5,
+          "translation": "有不认识的人打电话来。",
+          "translation_en": "I got a call from someone I don't know."
+        },
+        {
+          "n": 6,
+          "translation": "我去一趟区公所。",
+          "translation_en": "I'm going to the ward office."
+        },
+        {
+          "n": 7,
+          "translation": "看得见那边的蓝光吗？",
+          "translation_en": "Can you see that blue light over there?"
+        },
+        {
+          "n": 8,
+          "translation": "回国后想做用日语的工作。",
+          "translation_en": "When I go home I want to do a job that uses Japanese."
+        }
+      ]
+    },
+    "w2d3": {
+      "items": [
+        {
+          "n": 1,
+          "translation": "因为生病请假没上学。",
+          "translation_en": "I missed school because I was sick."
+        },
+        {
+          "n": 2,
+          "translation": "这台笔记本电脑真轻。",
+          "translation_en": "This laptop is light, isn't it?"
+        },
+        {
+          "n": 3,
+          "translation": "要搬到更宽敞的公寓。",
+          "translation_en": "We're moving to a bigger apartment."
+        },
+        {
+          "n": 4,
+          "translation": "明天要早起，先睡了。",
+          "translation_en": "Tomorrow is early, so I'm going to bed."
+        },
+        {
+          "n": 5,
+          "translation": "好，开始学习吧。",
+          "translation_en": "All right, let's start studying."
+        },
+        {
+          "n": 6,
+          "translation": "好热，请开空调。",
+          "translation_en": "It's hot, so please turn on the air conditioner."
+        },
+        {
+          "n": 7,
+          "translation": "公司几点结束？",
+          "translation_en": "What time does the company finish?"
+        },
+        {
+          "n": 8,
+          "translation": "家人都很健康。",
+          "translation_en": "The whole family is well."
+        }
+      ]
+    },
+    "w2d4": {
+      "items": [
+        {
+          "n": 1,
+          "translation": "明天有日语课。",
+          "translation_en": "There's a Japanese class tomorrow."
+        },
+        {
+          "n": 2,
+          "translation": "8 点从这里出发。",
+          "translation_en": "We leave here at 8."
+        },
+        {
+          "n": 3,
+          "translation": "那位是日语研究者。",
+          "translation_en": "That person is a Japanese-language researcher."
+        },
+        {
+          "n": 4,
+          "translation": "请告诉我地址。",
+          "translation_en": "Please tell me your address."
+        },
+        {
+          "n": 5,
+          "translation": "那条路在施工。",
+          "translation_en": "That road is under construction."
+        },
+        {
+          "n": 6,
+          "translation": "查一下词的意思。",
+          "translation_en": "I'll look up the meaning of the word."
+        },
+        {
+          "n": 7,
+          "translation": "听得见雨声。",
+          "translation_en": "I can hear the sound of the rain."
+        },
+        {
+          "n": 8,
+          "translation": "住在便利店附近。",
+          "translation_en": "I live near a convenience store."
+        }
+      ]
+    },
+    "w2d5": {
+      "items": [
+        {
+          "n": 1,
+          "translation": "房间号码是 102。",
+          "translation_en": "The room number is 102."
+        },
+        {
+          "n": 2,
+          "translation": "我妻子完全不懂日语。",
+          "translation_en": "My wife doesn't understand Japanese at all."
+        },
+        {
+          "n": 3,
+          "translation": "我妻子代我去。",
+          "translation_en": "My wife will go in my place."
+        },
+        {
+          "n": 4,
+          "translation": "派对穿什么样的西式衣服去？",
+          "translation_en": "What kind of Western clothes will you wear to the party?"
+        },
+        {
+          "n": 5,
+          "translation": "出租车费多少？",
+          "translation_en": "How much was the taxi fare?"
+        },
+        {
+          "n": 6,
+          "translation": "下一班电车进 3 号线。",
+          "translation_en": "The next train will arrive at track 3."
+        },
+        {
+          "n": 7,
+          "translation": "除了周六日以外我不在家。",
+          "translation_en": "Except for Saturday and Sunday, I'm not home."
+        },
+        {
+          "n": 8,
+          "translation": "去安全的地方吧。",
+          "translation_en": "Let's go somewhere safe."
+        }
+      ]
+    },
+    "w2d6": {
+      "items": [
+        {
+          "n": 1,
+          "translation": "请用黑色笔写。",
+          "translation_en": "Please write with a black pen."
+        },
+        {
+          "n": 2,
+          "translation": "兄弟姐妹有几个人？",
+          "translation_en": "How many brothers and sisters do you have?"
+        },
+        {
+          "n": 3,
+          "translation": "我有两个弟弟。",
+          "translation_en": "I have two younger brothers."
+        },
+        {
+          "n": 4,
+          "translation": "令妹身体好吗？",
+          "translation_en": "How is your younger sister?"
+        },
+        {
+          "n": 5,
+          "translation": "从早上开始头就一直疼。",
+          "translation_en": "I've had a headache since morning."
+        },
+        {
+          "n": 6,
+          "translation": "那种动物脖子很长。",
+          "translation_en": "That animal has a long neck."
+        },
+        {
+          "n": 7,
+          "translation": "那件毛衣颜色真好看。",
+          "translation_en": "That sweater is a pretty color."
+        },
+        {
+          "n": 8,
+          "translation": "宝宝最喜欢妈妈。",
+          "translation_en": "The baby loves Mom the most."
+        }
+      ]
+    },
+    "w3d1": {
+      "items": [
+        {
+          "n": 1,
+          "translation": "隔壁家的姐姐总是照顾妹妹。",
+          "translation_en": "The older sister next door always looks after her little sister."
+        },
+        {
+          "n": 2,
+          "translation": "从屋顶上看烟花吧。",
+          "translation_en": "Let's watch the fireworks from the rooftop."
+        },
+        {
+          "n": 3,
+          "translation": "哥哥在世界各地旅行。",
+          "translation_en": "My older brother is traveling all over the world."
+        },
+        {
+          "n": 4,
+          "translation": "在这儿买特产吧。",
+          "translation_en": "Let's buy souvenirs here."
+        },
+        {
+          "n": 5,
+          "translation": "那两个人是兄妹。",
+          "translation_en": "Those two are brother and sister."
+        },
+        {
+          "n": 6,
+          "translation": "这本书已经全部读完了。",
+          "translation_en": "I've already read this whole book."
+        },
+        {
+          "n": 7,
+          "translation": "接下来讲讲我们镇上的产业。",
+          "translation_en": "Next I'll talk about industry in our town."
+        },
+        {
+          "n": 8,
+          "translation": "在书店买了杂志。",
+          "translation_en": "I bought a magazine at the bookstore."
+        }
+      ]
+    },
+    "w3d2": {
+      "items": [
+        {
+          "n": 1,
+          "translation": "做完作业再看电视。",
+          "translation_en": "I watch TV after I do my homework."
+        },
+        {
+          "n": 2,
+          "translation": "休息日打扫卫生、洗衣服。",
+          "translation_en": "On days off I clean and do laundry."
+        },
+        {
+          "n": 3,
+          "translation": "今天天气好，心情很好。",
+          "translation_en": "It's nice weather today, and I feel good."
+        },
+        {
+          "n": 4,
+          "translation": "不好意思，可以提问吗？",
+          "translation_en": "Excuse me, may I ask a question?"
+        },
+        {
+          "n": 5,
+          "translation": "去看村里的庙会吧。",
+          "translation_en": "Let's go see the village festival."
+        },
+        {
+          "n": 6,
+          "translation": "今天星期几？",
+          "translation_en": "What day of the week is it today?"
+        },
+        {
+          "n": 7,
+          "translation": "那个人很有钱。",
+          "translation_en": "That person is rich."
+        },
+        {
+          "n": 8,
+          "translation": "特快这站不停。",
+          "translation_en": "The limited express doesn't stop at this station."
+        }
+      ]
+    },
+    "w3d3": {
+      "items": [
+        {
+          "n": 1,
+          "translation": "请随便坐喜欢的地方。",
+          "translation_en": "Please sit wherever you like."
+        },
+        {
+          "n": 2,
+          "translation": "我现在在学花道。",
+          "translation_en": "I'm learning ikebana now."
+        },
+        {
+          "n": 3,
+          "translation": "那样的衣服在哪儿卖？",
+          "translation_en": "Where do they sell clothes like that?"
+        },
+        {
+          "n": 4,
+          "translation": "学了就要好好练习。",
+          "translation_en": "After you learn it, practice well."
+        },
+        {
+          "n": 5,
+          "translation": "坐特快去吧。",
+          "translation_en": "Let's take the limited express."
+        },
+        {
+          "n": 6,
+          "translation": "这本书是在图书馆借的。",
+          "translation_en": "I borrowed this book from the library."
+        },
+        {
+          "n": 7,
+          "translation": "养着的狗死了。",
+          "translation_en": "The dog I was keeping died."
+        },
+        {
+          "n": 8,
+          "translation": "能借我一支笔吗？",
+          "translation_en": "Could you lend me a pen?"
+        }
+      ]
+    },
+    "w3d4": {
+      "items": [
+        {
+          "n": 1,
+          "translation": "没时间了，赶紧走。",
+          "translation_en": "There's no time, so let's hurry."
+        },
+        {
+          "n": 2,
+          "translation": "那个人块头大，心很善良。",
+          "translation_en": "That person is big, and kind-hearted."
+        },
+        {
+          "n": 3,
+          "translation": "明天考试，所以今天学习。",
+          "translation_en": "There's a test tomorrow, so I'll study today."
+        },
+        {
+          "n": 4,
+          "translation": "想好了再写作文。",
+          "translation_en": "I'll think, then write the composition."
+        },
+        {
+          "n": 5,
+          "translation": "太太身体好吗？",
+          "translation_en": "How is your wife?"
+        },
+        {
+          "n": 6,
+          "translation": "在日本过年吃年糕。",
+          "translation_en": "In Japan we eat rice cakes at New Year."
+        },
+        {
+          "n": 7,
+          "translation": "明天去看篮球比赛。",
+          "translation_en": "I'm going to watch a basketball game tomorrow."
+        },
+        {
+          "n": 8,
+          "translation": "妈妈在药店工作。",
+          "translation_en": "My mother works at a pharmacy."
+        }
+      ]
+    },
+    "w3d5": {
+      "items": [
+        {
+          "n": 1,
+          "translation": "N4 考试合格了。",
+          "translation_en": "I passed the N4 exam."
+        },
+        {
+          "n": 2,
+          "translation": "字太小，请再放大一点。",
+          "translation_en": "The letters are small, so please make them a bit bigger."
+        },
+        {
+          "n": 3,
+          "translation": "定一下派对的时间和地点吧。",
+          "translation_en": "Let's decide the time and place of the party."
+        },
+        {
+          "n": 4,
+          "translation": "那个人是我重要的朋友。",
+          "translation_en": "That person is an important friend of mine."
+        },
+        {
+          "n": 5,
+          "translation": "今天非常开心。",
+          "translation_en": "Today was a lot of fun."
+        },
+        {
+          "n": 6,
+          "translation": "请在信上贴邮票。",
+          "translation_en": "Please put a stamp on the letter."
+        },
+        {
+          "n": 7,
+          "translation": "几点出门才能赶上课？",
+          "translation_en": "What time should I leave home to make it to class?"
+        },
+        {
+          "n": 8,
+          "translation": "午饭自己做。",
+          "translation_en": "I make lunch myself."
+        }
+      ]
+    },
+    "w3d6": {
+      "items": [
+        {
+          "n": 1,
+          "translation": "妈妈在医院工作。",
+          "translation_en": "My mother works at a hospital."
+        },
+        {
+          "n": 2,
+          "translation": "每天在公司食堂吃午饭。",
+          "translation_en": "I eat lunch in the company cafeteria every day."
+        },
+        {
+          "n": 3,
+          "translation": "去海岸散步吧。",
+          "translation_en": "Let's take a walk along the coast."
+        },
+        {
+          "n": 4,
+          "translation": "海和山你更喜欢哪个？",
+          "translation_en": "Which do you like better, the sea or the mountains?"
+        },
+        {
+          "n": 5,
+          "translation": "就算跑也赶不上公交了吧。",
+          "translation_en": "Even if we run, we probably won't make the bus."
+        },
+        {
+          "n": 6,
+          "translation": "寒假回国。",
+          "translation_en": "I'll go back to my country for winter vacation."
+        },
+        {
+          "n": 7,
+          "translation": "那棵树上聚了很多小鸟。",
+          "translation_en": "Lots of little birds gather in that tree."
+        },
+        {
+          "n": 8,
+          "translation": "在银行汇款。",
+          "translation_en": "I send money at the bank."
+        }
+      ]
+    }
+  }
+}

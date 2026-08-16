@@ -51,6 +51,7 @@ assert.match(explanations.w2d1.items[3].translation, /^林同学/, "リンさん
 assert.match(explanations.w6d6.items[0].translation, /ID 编号/, "ID番号 must stay generic");
 assert.match(store, /n3-grammar-daily-explanations\.json/, "runtime must load the generated explanations");
 assert.match(days, /DailyExercisePanels/, "runtime must render the daily translation and analysis controls");
-assert.match(days, /MODULE === "grammar" && G\.daily_explanations/, "N3 explanations must not leak into N2 or N4 pages");
+assert.match(days, /MODULE === "n2grammar" \? G2 : MODULE === "n4grammar" \? G4 : G/, "each level must read its own daily_explanations book");
+assert.match(days, /MODULE === "grammar" \|\| MODULE === "n2grammar" \|\| MODULE === "n4grammar"/, "daily grammar panels must be gated to grammar modules");
 
 console.log(`Validated ${dayCount} days and ${itemCount} daily grammar explanations.`);

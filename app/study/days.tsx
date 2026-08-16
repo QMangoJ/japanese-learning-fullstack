@@ -8,11 +8,13 @@ import {
 	G4,
 	K,
 	K2,
+	K4,
 	LANG,
 	MODULE,
 	TYPE,
 	V,
 	V2,
+	V4,
 	addMistake,
 	ctMode,
 	ctWeek,
@@ -972,8 +974,8 @@ function DayGrammar({ day, w, d, scrollP }: { day: any; w: number; d: number; sc
 			</>
 		);
 	}
-	const dailyBook = MODULE === "n2grammar" ? G2 : G;
-	const dailyItems = (MODULE === "grammar" || MODULE === "n2grammar") && dailyBook.daily_explanations && dailyBook.daily_explanations[`w${w}d${d}`];
+	const dailyBook = MODULE === "n2grammar" ? G2 : MODULE === "n4grammar" ? G4 : G;
+	const dailyItems = (MODULE === "grammar" || MODULE === "n2grammar" || MODULE === "n4grammar") && dailyBook.daily_explanations && dailyBook.daily_explanations[`w${w}d${d}`];
 	const explanationByNumber = new Map(((dailyItems && dailyItems.items) || []).map((item: any) => [item.n, item]));
 	return (
 		<>
@@ -1135,8 +1137,8 @@ function DayVocab({ day, w, d, scrollTok }: { day: any; w: number; d: number; sc
 			</>
 		);
 	}
-	const vocabBook = MODULE === "n2vocab" ? V2 : V;
-	const dailyItems = (MODULE === "vocab" || MODULE === "n2vocab") && vocabBook.daily_translations && vocabBook.daily_translations[`w${w}d${d}`];
+	const vocabBook = MODULE === "n2vocab" ? V2 : MODULE === "n4vocab" ? V4 : V;
+	const dailyItems = (MODULE === "vocab" || MODULE === "n2vocab" || MODULE === "n4vocab") && vocabBook.daily_translations && vocabBook.daily_translations[`w${w}d${d}`];
 	const translationByNumber = new Map(((dailyItems && dailyItems.items) || []).map((item: any) => [item.n, item]));
 	return (
 		<>
@@ -1311,7 +1313,7 @@ function ExamKanji({ day, w }: { day: any; w: number }) {
 												correct={correct ?? null}
 												onWrong={(picked) => logWrong({ ...it, _correct: correct }, picked)}
 											>
-												{correct != null ? (
+												{correct != null || kai[it.n] ? (
 													<ExamExplanation a={Object.assign({ ans: correct }, kai[it.n] || {})} item={it} module="kanji" section={key} />
 												) : null}
 											</QuizOpts>
@@ -1323,6 +1325,9 @@ function ExamKanji({ day, w }: { day: any; w: number }) {
 												<b>答案：</b>
 												<span className="jp">{textAnswerHTML}</span>
 											</AnsBlock>
+										) : null}
+										{!it.opts && kai[it.n] ? (
+											<ExamExplanation a={Object.assign({ ans: correct }, kai[it.n])} item={it} module="kanji" section={key} />
 										) : null}
 									</div>
 								);
@@ -1365,8 +1370,8 @@ function DayKanji({ day, w, d, scrollTok }: { day: any; w: number; d: number; sc
 			</>
 		);
 	}
-	const kanjiBook = MODULE === "n2kanji" ? K2 : K;
-	const dailyItems = (MODULE === "kanji" || MODULE === "n2kanji") && kanjiBook.daily_translations && kanjiBook.daily_translations[`w${w}d${d}`];
+	const kanjiBook = MODULE === "n2kanji" ? K2 : MODULE === "n4kanji" ? K4 : K;
+	const dailyItems = (MODULE === "kanji" || MODULE === "n2kanji" || MODULE === "n4kanji") && kanjiBook.daily_translations && kanjiBook.daily_translations[`w${w}d${d}`];
 	const translationByNumber = new Map(((dailyItems && dailyItems.items) || []).map((item: any) => [item.n, item]));
 	return (
 		<>
