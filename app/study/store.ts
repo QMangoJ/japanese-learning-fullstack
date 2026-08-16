@@ -1425,7 +1425,9 @@ function attachWeekendKaisetsu(book: any, pack: Record<string, any[]>) {
 	for (const week of book.weeks) {
 		const day = (week.days || []).find((entry: any) => entry.day === 7);
 		const items = pack[`w${week.n}`];
-		if (day && Array.isArray(items) && items.length) day.kaisetsu = items;
+		if (day && Array.isArray(items) && items.length && !(Array.isArray(day.kaisetsu) && day.kaisetsu.length)) {
+			day.kaisetsu = items;
+		}
 	}
 }
 
@@ -1458,6 +1460,16 @@ export async function bootStudyData() {
 		g.daily_explanations = dailyGrammarExplanations || {};
 		v.daily_translations = dailyVocabKanjiTranslations.vocab || {};
 		k.daily_translations = dailyVocabKanjiTranslations.kanji || {};
+		const [n3VocabExam, n3KanjiExam] = await Promise.all([
+			fetch("/data/n3-vocab-exam-explanations.json")
+				.then((r) => (r.ok ? r.json() : {}))
+				.catch(() => ({})),
+			fetch("/data/n3-kanji-exam-explanations.json")
+				.then((r) => (r.ok ? r.json() : {}))
+				.catch(() => ({})),
+		]);
+		attachWeekendKaisetsu(v, n3VocabExam);
+		attachWeekendKaisetsu(k, n3KanjiExam);
 		G = g;
 		V = v;
 		K = k;
