@@ -12,7 +12,7 @@ import {
 	type ReadingDay,
 	type TableCell,
 } from "../data/reading-n3";
-import { addMistake, isFav, navTo, registerFavMeta, toggleFav } from "../study/store";
+import { addMistake, isFav, LANG, lx, navTo, registerFavMeta, toggleFav } from "../study/store";
 import "./reading-n3-book.css";
 
 /* ------------------------------------------------------------------ *
@@ -65,6 +65,13 @@ function Cn({ text, block = false, show }: { text?: string; block?: boolean; sho
 	return <span className={block ? "rb-cn rb-cn--block" : "rb-cn"}>{text}</span>;
 }
 
+function Gloss({ cn, en, block = false, show }: { cn?: string; en?: string; block?: boolean; show: boolean }) {
+	if (!show) return null;
+	const text = LANG === "en" ? en || cn : cn;
+	if (!text) return null;
+	return <span className={block ? "rb-cn rb-cn--block" : "rb-cn"}>{text}</span>;
+}
+
 function Footnotes({ notes }: { notes?: Footnote[] }) {
 	if (!notes?.length) return null;
 	return (
@@ -74,7 +81,7 @@ function Footnotes({ notes }: { notes?: Footnote[] }) {
 					<b>
 						（{note.marker}）{note.term}
 					</b>
-					：<Jp text={note.jp} />　<span style={{ opacity: 0.85 }}>{note.cn}</span>
+					：<Jp text={note.jp} />　<span style={{ opacity: 0.85 }}>{LANG === "en" ? note.en || note.cn : note.cn}</span>
 				</div>
 			))}
 		</div>
@@ -97,7 +104,7 @@ function MaterialTable({ rows, showCn }: { rows: TableCell[][]; showCn: boolean 
 									style={{ textAlign: cell.align ?? "left" }}
 								>
 									<Jp text={cell.jp} />
-									<Cn text={cell.cn} show={showCn} />
+									<Gloss cn={cell.cn} en={cell.en} show={showCn} />
 								</td>
 							))}
 						</tr>
@@ -124,29 +131,29 @@ function Blocks({ blocks, showCn }: { blocks: Block[]; showCn: boolean }) {
 										<Jp text={block.sub.jp} />
 									</em>
 								)}
-								<Cn text={block.cn} show={showCn} />
-								{block.sub && <Cn text={block.sub.cn} show={showCn} />}
+								<Gloss cn={block.cn} en={block.en} show={showCn} />
+								{block.sub && <Gloss cn={block.sub.cn} en={block.sub.en} show={showCn} />}
 							</div>
 						);
 					case "heading":
 						return (
 							<h4 className="rb-b-heading" key={index}>
 								<Jp text={block.jp} />
-								<Cn text={block.cn} show={showCn} />
+								<Gloss cn={block.cn} en={block.en} show={showCn} />
 							</h4>
 						);
 					case "paragraph":
 						return (
 							<p className={block.indent ? "rb-b-para rb-b-para--indent" : "rb-b-para"} key={index}>
 								<Jp text={block.jp} />
-								<Cn text={block.cn} show={showCn} block />
+								<Gloss cn={block.cn} en={block.en} show={showCn} block />
 							</p>
 						);
 					case "line":
 						return (
 							<p className="rb-b-line" style={{ textAlign: block.align ?? "left" }} key={index}>
 								<Jp text={block.jp} />
-								<Cn text={block.cn} show={showCn} />
+								<Gloss cn={block.cn} en={block.en} show={showCn} />
 							</p>
 						);
 					case "speech":
@@ -157,7 +164,11 @@ function Blocks({ blocks, showCn }: { blocks: Block[]; showCn: boolean }) {
 								</span>
 								<span>
 									<Jp text={block.jp} />
-									<Cn text={`${block.speakerCn}：${block.cn}`} show={showCn} />
+									<Gloss
+										cn={`${block.speakerCn}：${block.cn}`}
+										en={`${block.speakerEn || block.speakerCn}: ${block.en || block.cn}`}
+										show={showCn}
+									/>
 								</span>
 							</p>
 						);
@@ -169,7 +180,7 @@ function Blocks({ blocks, showCn }: { blocks: Block[]; showCn: boolean }) {
 										<span>{block.ordered ? `${itemIndex + 1}.` : (block.marker ?? "・")}</span>
 										<span>
 											<Jp text={item.jp} />
-											<Cn text={item.cn} show={showCn} />
+											<Gloss cn={item.cn} en={item.en} show={showCn} />
 										</span>
 									</li>
 								))}
@@ -181,14 +192,14 @@ function Blocks({ blocks, showCn }: { blocks: Block[]; showCn: boolean }) {
 						return (
 							<p className="rb-b-note" key={index}>
 								<Jp text={block.jp} />
-								<Cn text={block.cn} show={showCn} />
+								<Gloss cn={block.cn} en={block.en} show={showCn} />
 							</p>
 						);
 					case "source":
 						return (
 							<p className="rb-b-source" key={index}>
 								<Jp text={block.jp} />
-								<Cn text={block.cn} show={showCn} />
+								<Gloss cn={block.cn} en={block.en} show={showCn} />
 							</p>
 						);
 					case "figure":
@@ -197,7 +208,7 @@ function Blocks({ blocks, showCn }: { blocks: Block[]; showCn: boolean }) {
 								{block.svg ? (
 									<div dangerouslySetInnerHTML={{ __html: block.svg }} />
 								) : null}
-								<figcaption>{showCn ? block.cn : block.alt}</figcaption>
+								<figcaption>{showCn ? (LANG === "en" ? block.en || block.cn : block.cn) : block.alt}</figcaption>
 							</figure>
 						);
 					default:
@@ -249,7 +260,7 @@ function QuestionCard({
 					<Jp text={question.jp} />
 				</span>
 			</div>
-			<Cn text={question.cn} show={showCn} block />
+			<Gloss cn={question.cn} en={question.en} show={showCn} block />
 
 			<ul className="rb-choices">
 				{question.choices.map((choice, index) => {
@@ -277,9 +288,11 @@ function QuestionCard({
 								<span className="rb-choice__num">{number}</span>
 								<span>
 									<Jp text={choice.jp} />
-									<Cn text={choice.cn} show={showCn} />
-									{settled && question.choiceNotes?.[index] && (
-										<span className="rb-choice__note">{question.choiceNotes[index]}</span>
+									<Gloss cn={choice.cn} en={choice.en} show={showCn} />
+									{settled && (LANG === "en" ? question.choiceNotesEn?.[index] : question.choiceNotes?.[index]) && (
+										<span className="rb-choice__note">
+											{(LANG === "en" ? question.choiceNotesEn?.[index] : question.choiceNotes?.[index]) || ""}
+										</span>
 									)}
 								</span>
 							</button>
@@ -315,12 +328,12 @@ function QuestionCard({
 
 			{settled && (
 				<div className="rb-answer" id={id}>
-					<b>正确答案：{question.answer}</b>
-					<p style={{ margin: "6px 0 0" }}>{question.explanation}</p>
+					<b>{lx("正确答案：", "Correct answer: ")}{question.answer}</b>
+					<p style={{ margin: "6px 0 0" }}>{LANG === "en" ? question.explanationEn || question.explanation : question.explanation}</p>
 					<span className="rb-answer__src">
 						{answerSource === "book"
-							? "答案出自原书别册《解答・解说》；解析为本站补充。"
-							: "原书别册第 5〜6 週答案页不在扫描件中，此答案与解析由本站依据原文推导。"}
+							? lx("答案出自原书别册《解答・解说》；解析为本站补充。", "Answers are from the book's answer booklet; the notes are added here.")
+							: lx("原书别册第 5〜6 週答案页不在扫描件中，此答案与解析由本站依据原文推导。", "The printed answers for weeks 5–6 were missing from the scan; this answer was worked out from the text.")}
 					</span>
 				</div>
 			)}
@@ -355,7 +368,7 @@ function RenshuChoices({ choices, answers, showCn }: { choices: Choice[]; answer
 								<span className="rb-check__box">{picked.has(number) ? "✓" : ""}</span>
 								<span>
 									<Jp text={choice.jp} />
-									<Cn text={choice.cn} show={showCn} />
+									<Gloss cn={choice.cn} en={choice.en} show={showCn} />
 								</span>
 							</button>
 						</li>
@@ -487,11 +500,11 @@ function DayView({
 						<Jp text={data.point.title} />
 					</h2>
 					{data.point.titleEn && <p className="rb-point__title-en">{data.point.titleEn}</p>}
-					<Cn text={data.point.titleCn} show={showCn} block />
+					<Gloss cn={data.point.titleCn} en={data.point.titleEn} show={showCn} block />
 
 					{data.point.figure && (
 						<figure className="rb-figure">
-							<figcaption>{showCn ? data.point.figure.cn : data.point.figure.alt}</figcaption>
+							<figcaption>{showCn ? (LANG === "en" ? data.point.figure.en || data.point.figure.cn : data.point.figure.cn) : data.point.figure.alt}</figcaption>
 						</figure>
 					)}
 
@@ -499,7 +512,7 @@ function DayView({
 						<p className="rb-tip" key={index}>
 							<span>
 								<Jp text={tip.jp} />
-								<Cn text={tip.cn} show={showCn} />
+								<Gloss cn={tip.cn} en={tip.en} show={showCn} />
 							</span>
 						</p>
 					))}
@@ -512,8 +525,14 @@ function DayView({
 									<div className="rb-express__row" key={index}>
 										<b>{entry.jp}</b>
 										{entry.kana && <i>（{entry.kana}）</i>}
-										{entry.en && <i>{entry.en}</i>}
-										<span>{entry.cn}</span>
+										{LANG === "en" ? (
+											<i>{entry.en || entry.cn}</i>
+										) : (
+											<>
+												{entry.en && <i>{entry.en}</i>}
+												<span>{entry.cn}</span>
+											</>
+										)}
 									</div>
 								))}
 							</div>
@@ -523,7 +542,7 @@ function DayView({
 					{data.point.notes?.map((note, index) => (
 						<p className="rb-note-star" key={index}>
 							<Jp text={note.jp} />
-							<Cn text={note.cn} show={showCn} />
+							<Gloss cn={note.cn} en={note.en} show={showCn} />
 						</p>
 					))}
 				</section>
@@ -535,7 +554,7 @@ function DayView({
 					<p className="rb-instruction">
 						<Jp text={data.renshu.instruction} />
 					</p>
-					<Cn text={data.renshu.instructionCn} show={showCn} block />
+					<Gloss cn={data.renshu.instructionCn} en={data.renshu.instructionEn} show={showCn} block />
 					<div className="rb-material">
 						<Blocks blocks={data.renshu.blocks} showCn={showCn} />
 						<Footnotes notes={data.renshu.footnotes} />
@@ -544,7 +563,7 @@ function DayView({
 					{data.renshu.hint && (
 						<p className="rb-note-star" style={{ marginTop: 16 }}>
 							<Jp text={data.renshu.hint.jp} />
-							<Cn text={data.renshu.hint.cn} show={showCn} />
+							<Gloss cn={data.renshu.hint.cn} en={data.renshu.hint.en} show={showCn} />
 						</p>
 					)}
 					{data.renshu.pageNotes && data.renshu.pageNotes.length > 0 && (
@@ -552,7 +571,7 @@ function DayView({
 							{data.renshu.pageNotes.map((note, index) => (
 								<p key={index} style={{ margin: "0 0 4px" }}>
 									{note.jp}
-									<Cn text={note.cn} show={showCn} />
+									<Gloss cn={note.cn} en={note.en} show={showCn} />
 								</p>
 							))}
 						</div>
@@ -566,7 +585,7 @@ function DayView({
 					<p className="rb-instruction">
 						<Jp text={data.mondai.instruction} />
 					</p>
-					<Cn text={data.mondai.instructionCn} show={showCn} block />
+					<Gloss cn={data.mondai.instructionCn} en={data.mondai.instructionEn} show={showCn} block />
 					<div className="rb-material">
 						<Blocks blocks={data.mondai.blocks} showCn={showCn} />
 					</div>
@@ -587,7 +606,7 @@ function DayView({
 							{data.mondai.pageNotes.map((note, index) => (
 								<p key={index} style={{ margin: "0 0 4px" }}>
 									{note.jp}
-									<Cn text={note.cn} show={showCn} />
+									<Gloss cn={note.cn} en={note.en} show={showCn} />
 								</p>
 							))}
 						</div>
@@ -602,8 +621,9 @@ function DayView({
 						<p className="rb-instruction">
 							制限時間：{data.practice.timeLimitMinutes}分　／　{data.practice.scoring}
 						</p>
-						<Cn
-							text={`限时 ${data.practice.timeLimitMinutes} 分钟，${data.practice.scoring}。请按能力考试的形式作答。`}
+						<Gloss
+							cn={`限时 ${data.practice.timeLimitMinutes} 分钟，${data.practice.scoring}。请按能力考试的形式作答。`}
+							en={`${data.practice.timeLimitMinutes} minutes / ${data.practice.scoring}. Answer as you would on the exam.`}
 							show={showCn}
 							block
 						/>
@@ -614,7 +634,7 @@ function DayView({
 							<p className="rb-instruction">
 								<Jp text={group.instruction} />
 							</p>
-							<Cn text={group.instructionCn} show={showCn} block />
+							<Gloss cn={group.instructionCn} en={group.instructionEn} show={showCn} block />
 							<div className="rb-material">
 								<Blocks blocks={group.blocks} showCn={showCn} />
 							</div>
@@ -660,7 +680,7 @@ function DayView({
 										</button>
 									</b>
 									{word.kana && <span className="kana">{word.kana}</span>}
-									<p>{word.cn}</p>
+									<p>{LANG === "en" ? word.en || word.cn : word.cn}</p>
 								</article>
 							);
 						})}
@@ -679,14 +699,14 @@ function DayView({
 									<Jp text={item.pattern} />
 								</h4>
 								{item.formation && <p className="form">接续：{item.formation}</p>}
-								<p className="meaning">{item.meaning}</p>
+								<p className="meaning">{LANG === "en" ? item.meaningEn || item.meaning : item.meaning}</p>
 								{item.example && (
 									<p className="example">
 										<Jp text={item.example.jp} />
-										<Cn text={item.example.cn} show={showCn} />
+										<Gloss cn={item.example.cn} en={item.example.en} show={showCn} />
 									</p>
 								)}
-								{item.note && <p className="note">※ {item.note}</p>}
+								{item.note && <p className="note">※ {LANG === "en" ? item.noteEn || item.note : item.note}</p>}
 							</article>
 						))}
 					</div>
@@ -781,7 +801,7 @@ export function ReadingN3Content({
 							振り仮名
 						</button>
 						<button type="button" aria-pressed={showCn} onClick={() => setShowCn((value) => !value)}>
-							翻译
+							{lx("翻译", "Translation")}
 						</button>
 						<button type="button" aria-pressed={showGrammar} onClick={() => setShowGrammar((value) => !value)}>
 							语法讲解

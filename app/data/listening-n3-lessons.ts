@@ -5,6 +5,7 @@ import { chapter4Lessons } from "./listening-n3-lessons-ch4";
 import { chapter5Lessons } from "./listening-n3-lessons-ch5";
 import type { ListeningLesson } from "./listening-n3-lesson-types";
 import { findListeningSection } from "./listening-n3-book";
+import { listeningTranscriptEn } from "./listening-n3-transcripts-en";
 
 const byChapter: Record<number, readonly ListeningLesson[]> = {
 	1: chapter1Lessons,
@@ -18,6 +19,9 @@ export function getListeningLesson(chapter: number, section: number): ListeningL
 	const found = findListeningSection(chapter, section);
 	const lesson = byChapter[chapter]?.[section - 1];
 	if (!lesson || !found) return lesson;
-	if (lesson.blocks[0]?.type === "hero") return lesson;
+	const transcript_en = lesson.transcript_en || listeningTranscriptEn[`${chapter}-${section}`];
+	if (transcript_en && transcript_en !== lesson.transcript_en) {
+		return { ...lesson, transcript_en };
+	}
 	return lesson;
 }

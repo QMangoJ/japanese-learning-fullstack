@@ -124,6 +124,41 @@ describe("listening-n3-lessons", () => {
 		}
 	});
 
+	it("gives every lesson an English transcript", () => {
+		for (const { chapter, section } of catalog) {
+			const lesson = getListeningLesson(chapter, section);
+			expect(lesson?.transcript_en, at(chapter, section, "needs transcript_en")).toBeTruthy();
+			expect(lesson!.transcript_en!.trim().length, at(chapter, section, "transcript_en too short")).toBeGreaterThan(20);
+			expect(lesson!.transcript_en, at(chapter, section, "transcript_en should be English, not a JP copy")).not.toBe(lesson!.transcript);
+		}
+	});
+
+	it("gives chapters 1 and 3 teaching and practice figures like chapters 2, 4, and 5", () => {
+		const needed = [
+			[1, 1, "/listening/n3/figures/ch1-s1-example.jpg"],
+			[1, 2, "/listening/n3/figures/ch1-s2-example.jpg"],
+			[1, 3, "/listening/n3/figures/ch1-s3-example.jpg"],
+			[1, 4, "/listening/n3/figures/ch1-s4-example.jpg"],
+			[3, 1, "/listening/n3/figures/ch3-s1-example.jpg"],
+			[3, 1, "/listening/n3/figures/ch3-s1-q1.jpg"],
+			[3, 2, "/listening/n3/figures/ch3-s2-q1.jpg"],
+			[3, 3, "/listening/n3/figures/ch3-s3-q1.jpg"],
+			[3, 4, "/listening/n3/figures/ch3-s4-q1.jpg"],
+			[3, 5, "/listening/n3/figures/ch3-s5-example.jpg"],
+			[3, 6, "/listening/n3/figures/ch3-s6-q1.jpg"],
+		] as const;
+		for (const [chapter, section, src] of needed) {
+			const lesson = getListeningLesson(chapter, section);
+			const hits = lesson!.blocks.filter((block) => {
+				if (block.type === "figure") return block.src === src;
+				if (block.type === "q") return block.figure === src;
+				return false;
+			});
+			expect(hits.length, at(chapter, section, `missing figure ${src}`)).toBeGreaterThan(0);
+			expect(existsSync(resolve(figuresDir, figureName(src))), `missing file ${src}`).toBe(true);
+		}
+	});
+
 	it("requires boxed notes to include a lines array, including the traffic-info item that used to crash", () => {
 		const lesson = getListeningLesson(3, 2);
 		expect(lesson).toBeTruthy();

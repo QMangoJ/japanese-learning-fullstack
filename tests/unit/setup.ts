@@ -17,6 +17,16 @@ if (!globalThis.fetch) {
 	};
 }
 
+if (typeof window !== "undefined" && !window.scrollTo) {
+	window.scrollTo = () => {};
+} else if (typeof window !== "undefined") {
+	try {
+		window.scrollTo = () => {};
+	} catch {
+		// jsdom may already have a non-writable stub
+	}
+}
+
 if (!("speechSynthesis" in globalThis)) {
 	Object.defineProperty(globalThis, "speechSynthesis", {
 		value: {

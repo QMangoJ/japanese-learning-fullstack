@@ -4,7 +4,7 @@ import { beforeEach, describe, expect, it } from "vitest";
 
 import { listeningBookChapters } from "../../app/data/listening-n3-book";
 import { ListeningN3Content } from "../../app/routes/listening-n3";
-import { resetStudyStateForTests } from "../../app/study/store";
+import { resetStudyStateForTests, setLang } from "../../app/study/store";
 
 beforeEach(() => {
 	localStorage.clear();
@@ -65,6 +65,23 @@ describe("ListeningN3Content", () => {
 		render(<ListeningN3Content chapter={3} section={2} embedded />);
 		expect(screen.getByRole("heading", { level: 1, name: /天気|ニュース|交通/ })).toBeInTheDocument();
 		expect(screen.getByText(/ABC航空24便/)).toBeInTheDocument();
+	});
+
+	it("shows chapter 1 and 3 figures and an English transcript when LANG is en", async () => {
+		const user = userEvent.setup();
+		setLang("en");
+		const ch3 = render(<ListeningN3Content chapter={3} section={1} embedded />);
+		expect(screen.getByAltText(/マルタケスーパー/)).toBeInTheDocument();
+		expect(screen.getByAltText(/黄线/)).toBeInTheDocument();
+		await user.click(screen.getByText("Translation"));
+		expect(screen.getByText(/Fish Day/)).toBeInTheDocument();
+		ch3.unmount();
+
+		render(<ListeningN3Content chapter={1} section={1} embedded />);
+		expect(screen.getByAltText(/ちょっとまって/)).toBeInTheDocument();
+		await user.click(screen.getByText("Translation"));
+		expect(screen.getByText(/drank all the milk/i)).toBeInTheDocument();
+		setLang("cn");
 	});
 
 	it("reconstructs chapter 5 with bilingual slogans, figures, and a Chinese transcript", async () => {

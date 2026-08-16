@@ -11,14 +11,34 @@ export const chapter1Lessons: readonly ListeningLesson[] = [
 				cn: "注意发音和书写！",
 				kr: "발음과 표기에 주의합시다!",
 			},
+			{
+				type: "figure",
+				src: "/listening/n3/figures/ch1-s1-example.jpg",
+				alt: "两只小鸟对比「ちょっとまって」和「ちょっとまってください」",
+				caption: "ちょっとまってください　≠　ちょとまてください",
+			},
 			{ type: "h", jp: "「ちょっと」「まって」", cn: "注意有没有小「っ（ッ）」" },
 			{
 				type: "p",
-				jp: "小「っ（ッ）」不发音，占一拍。正确的是「ちょっとまってください」，不是「ちょとまてください」。没有「っ」会变成完全不同的词，比如「まち（城镇）」和「マッチ（match，火柴）」。",
+				jp: "小さい「っ（ッ）」は発音しませんが、1拍分の長さがあります。正しいのは「ちょっとまってください」で、「ちょとまてください」ではありません。",
+				cn: "小「っ（ッ）」不发音，但占一拍。正确的是「ちょっとまってください」，不是「ちょとまてください」。",
+				en: "The small っ/ッ is not a consonant sound, but it takes one mora. The correct form is chotto matte kudasai, not choto mate kudasai.",
+			},
+			{
+				type: "p",
+				jp: "「っ」がないと、まったく別の語になります。例：まち（町）／マッチ（match）。",
+				cn: "没有「っ」会变成完全不同的词，比如「まち（城镇）」和「マッチ（match，火柴）」。",
+				en: "Without っ the word can change completely: まち (town) vs マッチ (match).",
 			},
 			{ type: "h", jp: "「おとうさん」「おかあさん」", cn: "注意长音的写法" },
-			{ type: "p", jp: "カタカナ →「ー」　コーヒー・スーパーマーケット" },
-			{ type: "p", jp: "ひらがな →「あ」「い」「う」「え」「お」" },
+			{
+				type: "p",
+				jp: "カタカナの長音は「ー」、ひらがなは「あ・い・う・え・お」で書きます。",
+				cn: "片假名长音写「ー」，平假名写「あ・い・う・え・お」。",
+				en: "Long vowels: katakana uses ー (コーヒー, スーパーマーケット). Hiragana uses あ / い / う / え / お.",
+			},
+			{ type: "p", jp: "カタカナ →「ー」　コーヒー・スーパーマーケット", en: "katakana long vowel: ー" },
+			{ type: "p", jp: "ひらがな →「あ」「い」「う」「え」「お」", en: "hiragana long vowel letters" },
 			{
 				type: "table",
 				rows: [
@@ -30,6 +50,12 @@ export const chapter1Lessons: readonly ListeningLesson[] = [
 				],
 			},
 			{ type: "aside", title: "例外", text: "おねえさん（え）　おおきい（お）　とうきょう（お）" },
+			{
+				type: "tip",
+				jp: "例外：おねえさん（え）、おおきい（お）、とうきょう（お）。",
+				en: "Exceptions: おねえさん uses え; おおきい and とうきょう use お.",
+				cn: "例外：おねえさん（え）、おおきい（お）、とうきょう（お）。",
+			},
 			{ type: "h", jp: "「なくなっちゃった」「買わなくちゃ」", cn: "注意又快又短的口语表达" },
 			{
 				type: "table",
@@ -44,7 +70,16 @@ export const chapter1Lessons: readonly ListeningLesson[] = [
 					["こっち・そっち・あっち・どっち", "（=こちら・そちら・あちら・どちら）"],
 				],
 			},
-			{ type: "note", text: "助词也经常被省略。　そろそろ学校（へ）行かなきゃ。" },
+			{
+				type: "note",
+				text: "助词也经常被省略。　そろそろ学校（へ）行かなきゃ。Particles are often dropped in speech: そろそろ学校行かなきゃ。",
+			},
+			{
+				type: "p",
+				jp: "れんしゅうでは、小さい「っ」、長音、縮約形を聞き取って書きましょう。",
+				cn: "练习时把听到的促音、长音和口语缩约写下来。",
+				en: "In the drills, listen for the small っ, long vowels, and contracted spoken forms, then write them in.",
+			},
 			{ type: "h", jp: "れんしゅう", cn: "答案在 p.74　请听 MP3" },
 			{
 				type: "q",
@@ -83,6 +118,18 @@ export const chapter1Lessons: readonly ListeningLesson[] = [
 		blocks: [
 			{ type: "hero", no: 2, title: "文法について①", kana: "ぶんぽう", en: "Grammar ①", cn: "语法①", kr: "문법에 대해①" },
 			{ type: "slogan", jp: "だれがするのかに注意しましょう！", en: "Identify who's doing what!", cn: "注意听是谁在做！", kr: "누가 하는지에 주의합시다!" },
+			{
+				type: "figure",
+				src: "/listening/n3/figures/ch1-s2-example.jpg",
+				alt: "一只小鸟说「その本、読ませて」，另一只看书搞不清是谁读",
+				caption: "その本、読ませて　→　え？ぼくが読むの？きみが読むの？どっち？",
+			},
+			{
+				type: "p",
+				jp: "あげる・くれる・もらう、受身、使役は、だれが動作をするかを取り違えやすいです。",
+				cn: "给予、被动、使役最容易搞错是谁在做这个动作。",
+				en: "With giving verbs, the passive, and the causative, the usual trap is mixing up who actually does the action.",
+			},
 			{ type: "h", jp: "もらう・くれる", cn: "だれがする？" },
 			{
 				type: "table",
@@ -159,7 +206,18 @@ export const chapter1Lessons: readonly ListeningLesson[] = [
 				en: "Make an effort to understand keigo, even if you find these expressions difficult to use!",
 				cn: "即使自己不用，也应能听懂敬语的含义！",
 			},
-			{ type: "p", jp: "「します」の尊敬語は「なさいます」、謙譲語は「いたします」です。" },
+			{
+				type: "figure",
+				src: "/listening/n3/figures/ch1-s3-example.jpg",
+				alt: "戴学士帽的小鸟和戴眼镜的小鸟讲尊敬语与谦让语",
+				caption: "「します」の尊敬語は「なさいます」、謙譲語は「いたします」",
+			},
+			{
+				type: "p",
+				jp: "「します」の尊敬語は「なさいます」、謙譲語は「いたします」です。",
+				cn: "「します」的尊敬语是「なさいます」，谦让语是「いたします」。",
+				en: "The honorific for します is なさいます; the humble form is いたします.",
+			},
 			{ type: "aside", title: "尊敬語 / 謙譲語", text: "尊敬語 honorific expressions　谦让语 humble expressions（对上级或顾客）" },
 			{ type: "h", jp: "一个单词有多种含义的敬语表达" },
 			{
@@ -230,6 +288,12 @@ export const chapter1Lessons: readonly ListeningLesson[] = [
 				jp: "会話らしい表現ややりとりに慣れましょう！",
 				en: "Master basic phrases and patterns used in conversation!",
 				cn: "应掌握会话特有的表达方式！",
+			},
+			{
+				type: "figure",
+				src: "/listening/n3/figures/ch1-s4-example.jpg",
+				alt: "三只小鸟讨论「よくない？」到底是好还是不好",
+				caption: "ねえねえ、これってよくなくない？　いい？よくない？どっち？",
 			},
 			{ type: "h", jp: "使用「ない・わけ・こと」的表达方式" },
 			{
@@ -312,7 +376,12 @@ export const chapter1Lessons: readonly ListeningLesson[] = [
 	{
 		blocks: [
 			{ type: "hero", no: 5, title: "まとめ問題", kana: "もんだい", en: "Review", cn: "综合练习", kr: "복습" },
-			{ type: "p", jp: "時間：5分　（答えは p.82〜84）", cn: "用本课学过的发音、语法和会话表达作答。" },
+			{
+				type: "p",
+				jp: "時間：5分　（答えは p.82〜84）",
+				cn: "用本课学过的发音、语法和会话表达作答。",
+				en: "5 minutes. Use the pronunciation, grammar, and conversational phrases from this chapter.",
+			},
 			{
 				type: "q",
 				label: "問題Ⅰ",
