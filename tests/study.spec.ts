@@ -153,6 +153,19 @@ test.describe("study navigation", () => {
 		await expect(page.locator(".an-trans").first()).toContainText(/高兴|happy/i);
 	});
 
+	test("shows N3 vocab weekend explanations after answering", async ({ page }) => {
+		await waitForStudy(page);
+		await pickType(page, "vocab");
+		await expect(page.locator(".week-card").first()).toBeVisible({ timeout: 15_000 });
+		const examDay = page.locator(".day-item", { hasText: /7日目|Day 7|实战|Test/ }).first();
+		if (await examDay.isVisible()) await examDay.click();
+		else await page.locator(".day-item").last().click();
+		await expect(page.locator(".opt-btn").first()).toBeVisible({ timeout: 15_000 });
+		await page.locator(".opt-btn").first().click();
+		await expect(page.locator(".an-trans").first()).toBeVisible();
+		await expect(page.locator(".an-trans").first()).toContainText(/煮饭|cooked rice/i);
+	});
+
 	test("shows English usage and examples on N3 grammar days", async ({ page }) => {
 		await waitForStudy(page);
 		await page.locator(".day-item").first().click();
