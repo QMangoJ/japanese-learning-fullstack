@@ -415,3 +415,38 @@ test.describe("study interactions", () => {
 		await expect(page.locator(".card, table, .conn").first()).toBeVisible();
 	});
 });
+
+test.describe("accounts", () => {
+	test("exposes a guest /api/me payload and keeps cloud notebooks private", async ({ request }) => {
+		const me = await request.get("/api/me");
+		expect(me.ok()).toBeTruthy();
+		const body = await me.json();
+		expect(body.user).toBeNull();
+		expect(typeof body.configured).toBe("boolean");
+
+		const favs = await request.get("/api/favorites");
+		const mistakes = await request.get("/api/mistakes");
+		expect(favs.status()).toBe(401);
+		expect(mistakes.status()).toBe(401);
+	});
+
+	test("study stays usable without signing in", async ({ page }) => {
+		await waitForStudy(page);
+		await expect(page.locator("#topbar")).toBeVisible();
+		await expect(page.locator(".week-card").first()).toBeVisible();
+		const login = page.locator("#accountLogin");
+		if (await login.count()) {
+			await expect(login).toHaveAttribute("href", "/auth/google");
+		}
+	});
+
+	test("google start route is reachable", async ({ request }) => {
+		const res = await request.get("/auth/google", { maxRedirects: 0 });
+		expect([302, 503]).toContain(res.status());
+		if (res.status() === 302) {
+			expect(res.headers()["location"] || "").toContain("accounts.google.com");
+		} else {
+			expect(await res.text()).toMatch(/尚未配置|not configured/i);
+		}
+	});
+});

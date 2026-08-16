@@ -228,9 +228,19 @@ export let n4Loaded = false;
 export let loadError = "";
 export let lastVisit: Record<string, string> = {};
 export let lastDay: Record<string, string> = {};
+export type PublicUser = {
+	id: string;
+	email: string;
+	name: string;
+	picture: string;
+};
+
 export let FAV: Record<string, FavSnap> = {};
 export const FAVMETA: Record<string, FavSnap> = {};
 export let MISTAKES: Mistake[] = [];
+export let ACCOUNT: PublicUser | null = null;
+export let accountReady = false;
+export let authConfigured = false;
 export let noRuby = false;
 export let hideJp = false;
 export let hideCn = false;
@@ -497,9 +507,11 @@ function activeMistakes() {
 	return MISTAKES.filter((m) => !m.deleted);
 }
 function pushMistakesNow() {
+	if (!ACCOUNT) return;
 	fetch("/api/mistakes", {
 		method: "PUT",
 		headers: { "content-type": "application/json" },
+		credentials: "same-origin",
 		body: JSON.stringify(MISTAKES),
 	}).catch(() => {});
 }
@@ -550,9 +562,11 @@ export function cycleMistakeLevel(id: string) {
 }
 
 function pushFavsNow() {
+	if (!ACCOUNT) return;
 	fetch("/api/favorites", {
 		method: "PUT",
 		headers: { "content-type": "application/json" },
+		credentials: "same-origin",
 		body: JSON.stringify(FAV),
 	}).catch(() => {});
 }
@@ -1086,15 +1100,28 @@ function fixN3GrammarExerciseLayout(g: any) {
 	}
 }
 
+function sameAccountDevice(accountId: string) {
+	const last = lsGet("accountId", "");
+	return last === "" || last === accountId;
+}
+
 async function pullMistakesFromServer() {
+	if (!ACCOUNT) {
+		_mistakesReady = true;
+		return;
+	}
 	try {
-		const res = await fetch("/api/mistakes", { cache: "no-store" });
+		const res = await fetch("/api/mistakes", { cache: "no-store", credentials: "same-origin" });
 		if (res.ok) {
 			const data = await res.json();
 			if (Array.isArray(data)) {
 				_mistakeSyncing = true;
-				const merged = cleanMistakes(data);
-				for (const m of MISTAKES) if (!data.some((d: any) => d.id === m.id)) merged.push(m);
+				const server = cleanMistakes(data);
+				const mergeLocal = sameAccountDevice(ACCOUNT.id);
+				const merged = mergeLocal ? server.slice() : server;
+				if (mergeLocal) {
+					for (const m of MISTAKES) if (!server.some((d) => d.id === m.id)) merged.push(m);
+				}
 				merged.sort((a, b) => b.ts - a.ts);
 				MISTAKES = merged;
 				lsSet("mistakes", JSON.stringify(MISTAKES));
@@ -1112,13 +1139,18 @@ async function pullMistakesFromServer() {
 	}
 }
 async function pullFavsFromServer() {
+	if (!ACCOUNT) {
+		_favReady = true;
+		return;
+	}
 	try {
-		const res = await fetch("/api/favorites", { cache: "no-store" });
+		const res = await fetch("/api/favorites", { cache: "no-store", credentials: "same-origin" });
 		if (res.ok) {
 			const data = await res.json();
 			if (data && typeof data === "object" && !Array.isArray(data)) {
 				_favSyncing = true;
-				FAV = Object.assign({}, data, FAV);
+				const server = data as Record<string, FavSnap>;
+				FAV = sameAccountDevice(ACCOUNT.id) ? Object.assign({}, server, FAV) : server;
 				lsSet("favs", JSON.stringify(FAV));
 				_favSyncing = false;
 				emit();
@@ -1141,10 +1173,10 @@ function favsSig(o: Record<string, FavSnap>) {
 	return JSON.stringify(Object.keys(o).sort().map((k) => [k, o[k]]));
 }
 async function resyncMistakes() {
-	if (!_mistakesReady || _mistakePushTimer || _resyncingM) return;
+	if (!ACCOUNT || !_mistakesReady || _mistakePushTimer || _resyncingM) return;
 	_resyncingM = true;
 	try {
-		const res = await fetch("/api/mistakes", { cache: "no-store" });
+		const res = await fetch("/api/mistakes", { cache: "no-store", credentials: "same-origin" });
 		if (res.ok) {
 			const data = await res.json();
 			if (Array.isArray(data)) {
@@ -1165,10 +1197,10 @@ async function resyncMistakes() {
 	_resyncingM = false;
 }
 async function resyncFavs() {
-	if (!_favReady || _favPushTimer || _resyncingF) return;
+	if (!ACCOUNT || !_favReady || _favPushTimer || _resyncingF) return;
 	_resyncingF = true;
 	try {
-		const res = await fetch("/api/favorites", { cache: "no-store" });
+		const res = await fetch("/api/favorites", { cache: "no-store", credentials: "same-origin" });
 		if (res.ok) {
 			const data = await res.json();
 			if (data && typeof data === "object" && !Array.isArray(data)) {
@@ -1246,6 +1278,21 @@ export function resetStudyStateForTests() {
 	TYPE = "grammar";
 	FAV = {};
 	MISTAKES = [];
+	ACCOUNT = null;
+	accountReady = false;
+	authConfigured = false;
+	_favSyncing = false;
+	_favPendingPush = false;
+	_favReady = false;
+	if (_favPushTimer) clearTimeout(_favPushTimer);
+	_favPushTimer = null;
+	_mistakeSyncing = false;
+	_mistakesPendingPush = false;
+	_mistakesReady = false;
+	if (_mistakePushTimer) clearTimeout(_mistakePushTimer);
+	_mistakePushTimer = null;
+	_resyncingM = false;
+	_resyncingF = false;
 	mistakeAddType = "q";
 	mistakeFilter = "all";
 	mistakeLevelFilter = "all";
@@ -1486,8 +1533,44 @@ export async function bootStudyData() {
 		return;
 	}
 	bootN2();
-	pullFavsFromServer();
-	pullMistakesFromServer();
+	void bootAccount();
+}
+
+export async function bootAccount() {
+	try {
+		const res = await fetch("/api/me", { cache: "no-store", credentials: "same-origin" });
+		if (res.ok) {
+			const data = (await res.json()) as { user?: PublicUser | null; configured?: boolean };
+			authConfigured = data.configured !== false;
+			ACCOUNT = data.user && typeof data.user.id === "string" ? data.user : null;
+		} else {
+			authConfigured = false;
+			ACCOUNT = null;
+		}
+	} catch {
+		authConfigured = false;
+		ACCOUNT = null;
+	}
+	accountReady = true;
+	emit();
+	if (!ACCOUNT) {
+		_favReady = true;
+		_mistakesReady = true;
+		if (_favPendingPush) {
+			_favPendingPush = false;
+			saveFav();
+		}
+		if (_mistakesPendingPush) {
+			_mistakesPendingPush = false;
+			saveMistakes();
+		}
+		return;
+	}
+	await pullFavsFromServer();
+	await pullMistakesFromServer();
+	lsSet("accountId", ACCOUNT.id);
+	pushFavsNow();
+	pushMistakesNow();
 }
 
 export function attachResync() {

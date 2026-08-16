@@ -1,25 +1,30 @@
-import type { Route } from "./+types/api.favorites";
+import type { AppLoadContext } from "react-router";
 
-const KEY = "favorites";
+import { getSessionUser, json } from "../auth/http";
+import { favsKey } from "../auth/users";
+
 const MAX_BYTES = 500_000;
 const headers = {
 	"content-type": "application/json; charset=utf-8",
 	"cache-control": "no-store",
 };
 
-function json(body: unknown, init?: ResponseInit) {
-	return new Response(JSON.stringify(body), { ...init, headers });
-}
+type Args = { request: Request; context: AppLoadContext };
 
-export async function loader({ context }: Route.LoaderArgs) {
-	const raw = await context.cloudflare.env.FAVORITES_KV.get(KEY);
+export async function loader({ request, context }: Args) {
+	const user = await getSessionUser(request, context.cloudflare.env);
+	if (!user) return json({ error: "unauthorized" }, { status: 401 });
+	const raw = await context.cloudflare.env.FAVORITES_KV.get(favsKey(user.id));
 	return new Response(raw || "{}", { headers });
 }
 
-export async function action({ request, context }: Route.ActionArgs) {
+export async function action({ request, context }: Args) {
 	if (request.method !== "PUT" && request.method !== "POST") {
 		return json({ error: "method not allowed" }, { status: 405 });
 	}
+
+	const user = await getSessionUser(request, context.cloudflare.env);
+	if (!user) return json({ error: "unauthorized" }, { status: 401 });
 
 	const body = await request.text();
 	if (body.length > MAX_BYTES) {
@@ -35,6 +40,6 @@ export async function action({ request, context }: Route.ActionArgs) {
 		return json({ error: "invalid json" }, { status: 400 });
 	}
 
-	await context.cloudflare.env.FAVORITES_KV.put(KEY, body);
+	await context.cloudflare.env.FAVORITES_KV.put(favsKey(user.id), body);
 	return json({ ok: true });
 }

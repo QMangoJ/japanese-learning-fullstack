@@ -17,6 +17,9 @@ import {
 } from "../routes/study-common";
 import { ContrastPage, DayNav, DayPage, parseDayRoute } from "./days";
 import {
+	ACCOUNT,
+	accountReady,
+	authConfigured,
 	DATA,
 	FAV,
 	LANG,
@@ -199,6 +202,7 @@ function Header({
 				>
 					かな
 				</button>
+				<AccountChip />
 			</header>
 			{showTypebar ? (
 				<div className="modewrap">
@@ -225,6 +229,82 @@ function Header({
 					) : null}
 				</div>
 			) : null}
+		</div>
+	);
+}
+
+function AccountChip() {
+	useStudyTick();
+	const [open, setOpen] = useState(false);
+	useEffect(() => {
+		if (!open) return;
+		const onKey = (e: KeyboardEvent) => {
+			if (e.key === "Escape") setOpen(false);
+		};
+		document.addEventListener("keydown", onKey);
+		return () => document.removeEventListener("keydown", onKey);
+	}, [open]);
+	if (!accountReady || !authConfigured) return null;
+	if (!ACCOUNT) {
+		return (
+			<a className="account-login" id="accountLogin" href="/auth/google">
+				<span className="account-login__g" aria-hidden="true">
+					G
+				</span>
+				<span className="account-login__lbl">{lx("登录", "Sign in")}</span>
+			</a>
+		);
+	}
+	const initial = (ACCOUNT.name || ACCOUNT.email || "?").slice(0, 1).toUpperCase();
+	return (
+		<div className="account-wrap" id="accountMenu">
+			<button
+				type="button"
+				className="account-btn"
+				id="accountBtn"
+				aria-haspopup="menu"
+				aria-expanded={open}
+				aria-label={ACCOUNT.name || ACCOUNT.email || lx("账号", "Account")}
+				onClick={() => setOpen((v) => !v)}
+			>
+				{ACCOUNT.picture ? <img src={ACCOUNT.picture} alt="" referrerPolicy="no-referrer" /> : <span>{initial}</span>}
+			</button>
+			{open ? (
+				<>
+					<button type="button" className="account-mask" aria-label={lx("关闭", "Close")} onClick={() => setOpen(false)} />
+					<div className="account-pop" role="menu">
+						<div className="account-pop__name">{ACCOUNT.name || ACCOUNT.email}</div>
+						{ACCOUNT.email ? <div className="account-pop__email">{ACCOUNT.email}</div> : null}
+						<div className="account-pop__hint">
+							{lx("收藏和错题已同步到此账号。", "Favorites and notes sync to this account.")}
+						</div>
+						<a className="account-pop__out" href="/auth/logout" role="menuitem">
+							{lx("退出登录", "Sign out")}
+						</a>
+					</div>
+				</>
+			) : null}
+		</div>
+	);
+}
+
+function AuthBanner() {
+	const [show, setShow] = useState(false);
+	useEffect(() => {
+		const q = new URLSearchParams(window.location.search);
+		if (q.get("auth") !== "error") return;
+		setShow(true);
+		q.delete("auth");
+		const next = window.location.pathname + (q.toString() ? `?${q}` : "") + window.location.hash;
+		window.history.replaceState({}, "", next);
+	}, []);
+	if (!show) return null;
+	return (
+		<div className="auth-banner" role="alert">
+			<span>{lx("Google 登录失败，请再试一次。", "Google sign-in failed. Please try again.")}</span>
+			<button type="button" onClick={() => setShow(false)} aria-label={lx("关闭", "Close")}>
+				×
+			</button>
 		</div>
 	);
 }
@@ -754,6 +834,7 @@ export function StudyApp() {
 					<a href="/">了解完整课程</a>
 				</div>
 			) : null}
+			<AuthBanner />
 			<Header
 				title={meta.title}
 				showBack={meta.back}

@@ -8,8 +8,12 @@ import {
 	MODULE,
 	TYPE,
 	V,
+	ACCOUNT,
+	accountReady,
+	authConfigured,
 	addMistake,
 	addMistakeNote,
+	bootAccount,
 	afterPaint,
 	applyDisplayClasses,
 	cardsKind,
@@ -287,6 +291,82 @@ describe("favorites", () => {
 		expect(favsPayload().filter).toBe("selection");
 		clearFavs();
 		expect(favsPayload().total).toBe(0);
+	});
+
+	it("keeps guest favorites local and does not push", async () => {
+		const fetchMock = vi.fn(async (input: RequestInfo | URL) => {
+			const url = String(input);
+			if (url.includes("/api/me")) return Response.json({ user: null, configured: true });
+			return new Response("no", { status: 500 });
+		});
+		vi.stubGlobal("fetch", fetchMock);
+		saveSelectionFav("word", "冷蔵庫", "#/");
+		await bootAccount();
+		expect(ACCOUNT).toBeNull();
+		expect(accountReady).toBe(true);
+		expect(authConfigured).toBe(true);
+		expect(favsPayload().total).toBe(1);
+		expect(fetchMock.mock.calls.some((call) => String(call[0]).includes("/api/favorites"))).toBe(false);
+	});
+
+	it("merges local favorites into an empty account on first login", async () => {
+		saveSelectionFav("word", "冷蔵庫", "#/");
+		const puts: string[] = [];
+		vi.stubGlobal(
+			"fetch",
+			vi.fn(async (input: RequestInfo | URL, init?: RequestInit) => {
+				const url = String(input);
+				if (url.includes("/api/me")) {
+					return Response.json({
+						user: { id: "g_1", email: "a@b.c", name: "Ada", picture: "" },
+						configured: true,
+					});
+				}
+				if (url.includes("/api/favorites") && init?.method === "PUT") {
+					puts.push(String(init.body));
+					return Response.json({ ok: true });
+				}
+				if (url.includes("/api/favorites")) return Response.json({});
+				if (url.includes("/api/mistakes")) return Response.json([]);
+				return new Response("no", { status: 404 });
+			}),
+		);
+		await bootAccount();
+		expect(ACCOUNT?.id).toBe("g_1");
+		expect(favsPayload().total).toBe(1);
+		expect(puts.some((body) => body.includes("冷蔵庫"))).toBe(true);
+		expect(localStorage.getItem("accountId")).toBe("g_1");
+	});
+
+	it("does not leak the previous account's local favorites into a different user", async () => {
+		localStorage.setItem("accountId", "g_old");
+		saveSelectionFav("word", "旧账号的词", "#/");
+		vi.stubGlobal(
+			"fetch",
+			vi.fn(async (input: RequestInfo | URL) => {
+				const url = String(input);
+				if (url.includes("/api/me")) {
+					return Response.json({
+						user: { id: "g_new", email: "n@b.c", name: "New", picture: "" },
+						configured: true,
+					});
+				}
+				if (url.includes("/api/favorites")) {
+					return Response.json({
+						cloud: { module: "selection", hash: "#/", w: "", d: "", jp: "サーバ", cn: "云端", ts: 1 },
+					});
+				}
+				if (url.includes("/api/mistakes")) return Response.json([]);
+				return new Response("no", { status: 404 });
+			}),
+		);
+		await bootAccount();
+		expect(ACCOUNT?.id).toBe("g_new");
+		expect(Object.keys(favsPayload().items.reduce((acc: Record<string, true>, item) => {
+			acc[item.jp] = true;
+			return acc;
+		}, {}))).toContain("サーバ");
+		expect(favsPayload().items.some((item) => item.jp === "旧账号的词")).toBe(false);
 	});
 
 	it("builds a favorites flashcard deck", () => {

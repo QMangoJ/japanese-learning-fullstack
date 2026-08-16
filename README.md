@@ -16,7 +16,7 @@
 - 假名注音、日语 TTS 朗读、中文 / 英文切换与深色模式
 - 收藏、生词本、错题本与记忆卡
 - 手机底部导航与桌面侧栏的响应式布局
-- 通过 Cloudflare KV 同步收藏和错题数据；KV 不可用时自动回退到浏览器 `localStorage`
+- 可选 Google 登录：收藏和错题按账号写入 Cloudflare KV，未登录时只保存在本机 `localStorage`
 
 ## 技术架构
 
@@ -35,6 +35,16 @@ npm run dev
 
 打开 [http://localhost:5173/study](http://localhost:5173/study)。`npm run test:e2e` 用本机 Chrome 跑无头测试。
 
+## Google 登录
+
+不配置也能用，只是没有跨设备同步。要启用账号：
+
+1. 在 Google Cloud Console 创建 Web 应用 OAuth 客户端，回调地址登记 `http://localhost:5173/auth/google/callback` 以及线上源的 `/auth/google/callback`。
+2. 本地复制 `.dev.vars.example` 为 `.dev.vars`，填入 `GOOGLE_CLIENT_ID`、`GOOGLE_CLIENT_SECRET`、`SESSION_SECRET`（`openssl rand -hex 32`）。
+3. 线上分别执行 `npx wrangler secret put GOOGLE_CLIENT_ID`、`GOOGLE_CLIENT_SECRET`、`SESSION_SECRET`。
+
+学习区右上角会出现 Google 登录。未登录仍可学习；登录后收藏和错题按账号隔离，首次登录会把本机已有数据合并进空账号。
+
 ## 课程资源同步
 
 课程 JSON 与静态资源存放在 `public/`，已随仓库提交。若本机同时存在相邻的旧项目 `../日语学习`，可使用以下命令重新同步语法/词汇/汉字课表：
@@ -49,10 +59,14 @@ npm run sync:study-assets
 
 | Endpoint | Methods | 用途 |
 | --- | --- | --- |
-| `/api/favorites` | `GET`、`PUT`、`POST` | 读取和保存收藏数据 |
-| `/api/mistakes` | `GET`、`PUT`、`POST` | 读取和保存错题本数据 |
+| `/api/me` | `GET` | 当前登录用户；未登录返回 `{ user: null }` |
+| `/api/favorites` | `GET`、`PUT`、`POST` | 当前账号的收藏；未登录 401 |
+| `/api/mistakes` | `GET`、`PUT`、`POST` | 当前账号的错题本；未登录 401 |
+| `/auth/google` | `GET` | 开始 Google 登录 |
+| `/auth/google/callback` | `GET` | OAuth 回调 |
+| `/auth/logout` | `GET`、`POST` | 退出登录 |
 
-接口限制请求体最大为 500 KB，并返回 JSON。当前数据模型保持原项目的单用户行为；如需公开给多位用户使用，应在部署前加入认证与按用户隔离的存储键。
+接口限制请求体最大为 500 KB，并返回 JSON。收藏与错题按用户写入 KV；游客只使用浏览器本地存储。
 
 ## 构建与部署
 
@@ -76,7 +90,7 @@ npm run deploy
 - Furigana, Japanese text-to-speech, Chinese / English switching, and dark mode
 - Favorites, vocabulary notebook, mistake notebook, and flashcards
 - Responsive mobile bottom navigation and desktop sidebar
-- Favorites and mistakes sync through Cloudflare KV, with automatic browser `localStorage` fallback
+- Optional Google sign-in: favorites and mistakes sync per account through Cloudflare KV; guests stay on `localStorage`
 
 ### Architecture
 
@@ -95,6 +109,16 @@ npm run dev
 
 Open [http://localhost:5173/study](http://localhost:5173/study). Run `npm run test:e2e` for headless Chrome tests.
 
+### Google sign-in
+
+The app works without credentials; only cross-device sync is missing. To enable accounts:
+
+1. Create a Web application OAuth client in Google Cloud Console. Register `http://localhost:5173/auth/google/callback` and your production `/auth/google/callback`.
+2. Copy `.dev.vars.example` to `.dev.vars` and set `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, and `SESSION_SECRET` (`openssl rand -hex 32`).
+3. In production, `npx wrangler secret put` the same three names.
+
+A Google button appears in the study top bar. Study stays open to guests. After sign-in, favorites and notes are stored under that user; the first login merges any existing local data into an empty account.
+
 ### Sync course assets
 
 Course JSON and static assets are committed under `public/`. If the adjacent legacy project exists at `../日语学习`, sync grammar/vocab/kanji tables with:
@@ -109,10 +133,14 @@ The command also runs automatically before `npm run dev` and `npm run build`.
 
 | Endpoint | Methods | Purpose |
 | --- | --- | --- |
-| `/api/favorites` | `GET`, `PUT`, `POST` | Read and save favorites |
-| `/api/mistakes` | `GET`, `PUT`, `POST` | Read and save mistake-notebook entries |
+| `/api/me` | `GET` | Current user; guests get `{ user: null }` |
+| `/api/favorites` | `GET`, `PUT`, `POST` | Per-account favorites; 401 when signed out |
+| `/api/mistakes` | `GET`, `PUT`, `POST` | Per-account mistakes; 401 when signed out |
+| `/auth/google` | `GET` | Start Google sign-in |
+| `/auth/google/callback` | `GET` | OAuth callback |
+| `/auth/logout` | `GET`, `POST` | Sign out |
 
-Requests are limited to 500 KB and return JSON. The current data model intentionally retains the legacy single-user behavior. Add authentication and per-user storage keys before making the application publicly available to multiple users.
+Requests are limited to 500 KB and return JSON. Favorites and mistakes are namespaced by user in KV. Guests stay on browser storage.
 
 ### Build and deploy
 
