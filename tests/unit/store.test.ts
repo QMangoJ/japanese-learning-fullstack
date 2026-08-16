@@ -11,9 +11,16 @@ import {
 	ACCOUNT,
 	accountReady,
 	authConfigured,
+	LOGIN_PROMPT,
 	addMistake,
 	addMistakeNote,
 	bootAccount,
+	closeLoginPrompt,
+	goAccountPage,
+	googleLoginHref,
+	needsAccount,
+	requestAccount,
+	setAccountStateForTests,
 	afterPaint,
 	applyDisplayClasses,
 	cardsKind,
@@ -266,6 +273,17 @@ describe("mistakes", () => {
 		addMistake("q", "   ");
 		expect(mistakesPayload().list).toHaveLength(0);
 	});
+
+	it("asks guests to sign in before writing a notebook when accounts are on", () => {
+		setAccountStateForTests(null, true);
+		addMistake("q", "不能写");
+		expect(mistakesPayload().list).toHaveLength(0);
+		expect(LOGIN_PROMPT?.reason).toBe("mistakes");
+		expect(googleLoginHref()).toContain("/auth/google?next=");
+		expect(googleLoginHref()).toContain(encodeURIComponent("/study/mistakes"));
+		closeLoginPrompt();
+		expect(LOGIN_PROMPT).toBeNull();
+	});
 });
 
 describe("favorites", () => {
@@ -291,6 +309,35 @@ describe("favorites", () => {
 		expect(favsPayload().filter).toBe("selection");
 		clearFavs();
 		expect(favsPayload().total).toBe(0);
+	});
+
+	it("blocks guest favorite writes and notebook navigation when accounts are on", () => {
+		setAccountStateForTests(null, true);
+		const seen: string[] = [];
+		setNavImpl((key) => seen.push(key));
+		registerFavMeta("grammar#1-1#0", {
+			module: "grammar",
+			hash: "#/day/1-1",
+			w: 1,
+			d: 1,
+			jp: "ばかり",
+			cn: "刚做完",
+		});
+		toggleFav("grammar#1-1#0");
+		expect(favsPayload().total).toBe(0);
+		expect(LOGIN_PROMPT?.reason).toBe("favs");
+		expect(needsAccount()).toBe(true);
+
+		closeLoginPrompt();
+		goAccountPage("#/mistakes");
+		expect(seen).toEqual([]);
+		expect(LOGIN_PROMPT?.reason).toBe("mistakes");
+		expect(LOGIN_PROMPT?.next).toBe("/study/mistakes");
+
+		setAccountStateForTests({ id: "g_1", email: "a@b.c", name: "Ada", picture: "" }, true);
+		expect(requestAccount("favs")).toBe(true);
+		goAccountPage("#/favs");
+		expect(seen).toEqual(["#/favs"]);
 	});
 
 	it("keeps guest favorites local and does not push", async () => {
