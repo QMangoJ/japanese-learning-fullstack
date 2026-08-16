@@ -154,6 +154,14 @@ describe("MistakesPage", () => {
 
 		await user.click(screen.getByRole("button", { name: /背诵模式/ }));
 		expect(screen.getByText("‹ 返回列表")).toBeInTheDocument();
+		const columns = document.querySelector(".study-columns") as HTMLElement;
+		await user.click(screen.getByRole("button", { name: "翻译 / 答案" }));
+		expect(columns.classList.contains("study-hide-cn")).toBe(true);
+		expect(document.querySelector(".study-cn")).not.toBeNull();
+		expect(document.querySelector(".study-jp")).not.toBeNull();
+		await user.click(screen.getByRole("button", { name: "日语" }));
+		expect(columns.classList.contains("study-hide-jp")).toBe(true);
+		expect(document.querySelector(".study-jp")).not.toBeNull();
 		await user.click(screen.getByRole("button", { name: "‹ 返回列表" }));
 
 		await user.click(screen.getByRole("button", { name: "删除" }));

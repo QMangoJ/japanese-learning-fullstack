@@ -410,6 +410,54 @@ test.describe("study interactions", () => {
 		await expect(page.locator(".mistake-item", { hasText: note })).toHaveCount(0);
 	});
 
+	test("study-mode hide toggles keep the Japanese and translation columns", async ({ page }) => {
+		await waitForStudy(page);
+		await openStudyNav(page, "mistakes");
+		const note = `e2e-study-col-${Date.now()}`;
+		await page.locator("[data-mtype='q']").click();
+		await page.locator("#mistakeInput").fill(note);
+		await page.locator("[data-mistake-add]").click();
+		await page.locator("[data-mstudy='1']").click();
+		await expect(page.locator(".study-row").first()).toBeVisible();
+
+		const before = await page.locator(".study-jp, .study-cn").evaluateAll((els) =>
+			els.map((el) => {
+				const box = el.getBoundingClientRect();
+				return { w: box.width, h: box.height, x: box.x };
+			}),
+		);
+		expect(before).toHaveLength(2);
+		expect(before[0].w).toBeGreaterThan(40);
+		expect(before[1].w).toBeGreaterThan(40);
+
+		await page.locator('[data-study-hide="cn"]').click();
+		const afterCn = await page.locator(".study-jp, .study-cn").evaluateAll((els) =>
+			els.map((el) => {
+				const box = el.getBoundingClientRect();
+				const style = getComputedStyle(el);
+				return { w: box.width, h: box.height, x: box.x, visibility: style.visibility, display: style.display };
+			}),
+		);
+		expect(afterCn[1].visibility).toBe("hidden");
+		expect(afterCn[1].display).not.toBe("none");
+		expect(Math.abs(afterCn[0].w - before[0].w)).toBeLessThan(4);
+		expect(Math.abs(afterCn[1].w - before[1].w)).toBeLessThan(4);
+		expect(Math.abs(afterCn[0].x - before[0].x)).toBeLessThan(4);
+		expect(Math.abs(afterCn[1].x - before[1].x)).toBeLessThan(4);
+
+		await page.locator('[data-study-hide="jp"]').click();
+		const afterBoth = await page.locator(".study-jp, .study-cn").evaluateAll((els) =>
+			els.map((el) => {
+				const box = el.getBoundingClientRect();
+				return { w: box.width, visibility: getComputedStyle(el).visibility };
+			}),
+		);
+		expect(afterBoth[0].visibility).toBe("hidden");
+		expect(afterBoth[1].visibility).toBe("hidden");
+		expect(Math.abs(afterBoth[0].w - before[0].w)).toBeLessThan(4);
+		expect(Math.abs(afterBoth[1].w - before[1].w)).toBeLessThan(4);
+	});
+
 	test("searches grammar and opens a hit", async ({ page }) => {
 		await waitForStudy(page);
 		await openStudyNav(page, "search");
