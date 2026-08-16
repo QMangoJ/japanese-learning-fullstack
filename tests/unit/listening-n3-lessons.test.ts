@@ -133,6 +133,31 @@ describe("listening-n3-lessons", () => {
 		}
 	});
 
+	it("includes every chapter-1 section-2 drill in Japanese, Chinese, and English", () => {
+		const lesson = getListeningLesson(1, 2);
+		expect(lesson).toBeTruthy();
+		for (const [label, text] of [
+			["transcript", lesson!.transcript],
+			["transcript_cn", lesson!.transcript_cn],
+			["transcript_en", lesson!.transcript_en],
+		] as const) {
+			expect(text, `1-2 ${label} missing`).toBeTruthy();
+			expect(text, `1-2 ${label} needs the worked example`).toMatch(/例題|例题/);
+			for (const mark of ["①", "②", "③", "④", "⑤"]) {
+				expect(text, `1-2 ${label} missing ${mark}`).toContain(mark);
+			}
+		}
+		expect(lesson!.transcript).toContain("書いてもらってください");
+		expect(lesson!.transcript).toContain("手伝わされた");
+		expect(lesson!.transcript).toContain("ぼくにも使わせて");
+		expect(lesson!.transcript).toContain("病院へ行ってきて");
+		expect(lesson!.transcript).toContain("飲め飲め");
+		expect(lesson!.transcript_cn).toContain("让他写");
+		expect(lesson!.transcript_cn).toContain("医院");
+		expect(lesson!.transcript_en).toContain("hospital");
+		expect(lesson!.transcript_en).toContain("drink");
+	});
+
 	it("gives every lesson a Chinese transcript", () => {
 		for (const { chapter, section } of catalog) {
 			const lesson = getListeningLesson(chapter, section);

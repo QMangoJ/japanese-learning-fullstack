@@ -7,21 +7,23 @@ export const listeningTranscriptEn: Record<string, string> = {
 ④ Oh, that person is looking this way and laughing. (こっち見てわらってる)`,
 
 	"1-2": `1番
-① Man: Oh, you brought it for me?
-Woman: Yes.
-② Man: Would you mind if I took a photograph?
-Woman: Oh, that's fine.
-③ Man: Shall we have 森さん go?
-Woman: Yes, that sounds good.
+例題: Man: Please have Mori write it. Woman: All right, I will.
+① Man: Oh, you brought it for me? Woman: Yes.
+② Man: Would you mind if I took a photograph? Woman: Oh, that's fine.
+③ Man: Shall we have Mori go? Woman: Yes, that sounds good.
+④ Man: I heard Mori made you help him with the work? Woman: That's right.
+⑤ Man: Let me use that too. Woman: Sure.
 
 2番
-① Man: Can I borrow this pen?
-Woman: Sure.
-② Man: I heard 森さん praised you?
-Woman: Yes, that's right.
-③ Man: I was thinking of having 森さん make the documents, but…
-Woman: Well then, shall I do it?
-Man: Would you? That would be a big help.`,
+① Man: Can I borrow this pen? Woman: Sure.
+② Man: I heard Mori praised you? Woman: Yes, that's right.
+③ Man: I was thinking of having Mori make the documents, but he looks busy…
+Woman: Well then, shall I do it? Man: Would you? That would be a big help.
+④ Man: You look pale. What's wrong?
+Woman: Yes, I feel a bit unwell. May I go to the hospital tomorrow morning?
+Man: Yes, that's fine.
+⑤ Woman: I heard you have a headache? You drank too much again, didn't you?
+Man: Yeah. Yesterday Mori kept telling me to drink.`,
 
 	"1-3": `1番
 例題: Do you know? (ご存じですか)
