@@ -225,6 +225,21 @@ test.describe("study navigation", () => {
 		}
 	});
 
+	test("can favorite an N3 grammar weekly-test question", async ({ page }) => {
+		await waitForStudy(page);
+		await page.goto("/study/day/1-7");
+		const star = page.locator(".exam-fav-btn").first();
+		await expect(star).toBeVisible({ timeout: 15_000 });
+		await star.click();
+		const dialog = page.locator("#loginDialog");
+		if (await dialog.count()) {
+			await expect(dialog).toBeVisible();
+			return;
+		}
+		await expect(star).toHaveClass(/on/);
+		await expect(star).toContainText(/已收藏|Saved/);
+	});
+
 	test("keeps scroll when answering N3 vocab weekly-test options", async ({ page }) => {
 		await waitForStudy(page);
 		await pickType(page, "vocab");
