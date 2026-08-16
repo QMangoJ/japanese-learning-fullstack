@@ -1,9 +1,10 @@
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, useState, useSyncExternalStore, type ReactNode } from "react";
 
 import { ConnBlock, Fmt, Rr, RubyHtml, SayButton } from "../routes/study-common";
 import {
 	FAVMETA,
 	G,
+	G2,
 	G4,
 	K,
 	LANG,
@@ -16,13 +17,18 @@ import {
 	cur,
 	dayNeighbors,
 	findDay,
+	getDisplayVersion,
+	hideCn,
+	hideJp,
 	isFav,
 	isGram,
 	lx,
 	navTo,
+	noRuby,
 	registerFavMeta,
 	setCtMode,
 	setCtWeek,
+	subscribeDisplay,
 	toggleDisplay,
 	toggleFav,
 } from "./store";
@@ -227,19 +233,21 @@ function StarBtn({ id, snap, exam }: { id: string; snap: any; exam?: boolean }) 
 	);
 }
 
+function preventToggleScroll(event: { preventDefault(): void }) {
+	event.preventDefault();
+}
+
 function MemBar() {
-	const hideRuby = typeof document !== "undefined" && document.body.classList.contains("no-ruby");
-	const hideJp = typeof document !== "undefined" && document.body.classList.contains("hide-jp");
-	const hideCn = typeof document !== "undefined" && document.body.classList.contains("hide-cn");
+	useSyncExternalStore(subscribeDisplay, getDisplayVersion, () => 0);
 	return (
 		<div className="mem-bar">
-			<button type="button" data-memtoggle="ruby" className={hideRuby ? "" : "on"} aria-pressed={!hideRuby} onClick={() => toggleDisplay("ruby")}>
+			<button type="button" data-memtoggle="ruby" className={noRuby ? "" : "on"} aria-pressed={!noRuby} onMouseDown={preventToggleScroll} onClick={() => toggleDisplay("ruby")}>
 				{lx("注音", "Readings")}
 			</button>
-			<button type="button" data-memtoggle="jp" className={hideJp ? "" : "on"} aria-pressed={!hideJp} onClick={() => toggleDisplay("jp")}>
+			<button type="button" data-memtoggle="jp" className={hideJp ? "" : "on"} aria-pressed={!hideJp} onMouseDown={preventToggleScroll} onClick={() => toggleDisplay("jp")}>
 				{lx("日语", "Japanese")}
 			</button>
-			<button type="button" data-memtoggle="cn" className={hideCn ? "" : "on"} aria-pressed={!hideCn} onClick={() => toggleDisplay("cn")}>
+			<button type="button" data-memtoggle="cn" className={hideCn ? "" : "on"} aria-pressed={!hideCn} onMouseDown={preventToggleScroll} onClick={() => toggleDisplay("cn")}>
 				{lx("翻译", "Meaning")}
 			</button>
 		</div>
@@ -785,8 +793,8 @@ function GrammarPoint({ p, w, d, i }: { p: any; w: number; d: number; i: number 
 }
 
 function ExamGrammar({ day, w }: { day: any; w: number }) {
-	const useBesatsu = MODULE === "grammar" || MODULE === "n4grammar";
-	const examBook = MODULE === "n4grammar" ? G4 : G;
+	const useBesatsu = MODULE === "grammar" || MODULE === "n4grammar" || MODULE === "n2grammar";
+	const examBook = MODULE === "n4grammar" ? G4 : MODULE === "n2grammar" ? G2 : G;
 	const bes = useBesatsu ? examBook.besatsu?.["w" + w] || {} : {};
 	const ansMap: Record<number, any> = {};
 	if (useBesatsu) for (const k of ["mondai1", "mondai2", "mondai3"]) for (const a of bes[k] || []) ansMap[a.n] = a;
@@ -927,6 +935,18 @@ function ExamGrammar({ day, w }: { day: any; w: number }) {
 	);
 }
 
+function CatalogCrumb({ children }: { children: ReactNode }) {
+	return (
+		<div className="crumb">
+			<button type="button" className="crumb-home" onClick={() => navTo("#/")}>
+				{lx("目录", "Catalog")}
+			</button>
+			<span className="crumb-sep">/</span>
+			{children}
+		</div>
+	);
+}
+
 function DayGrammar({ day, w, d, scrollP }: { day: any; w: number; d: number; scrollP: number | null }) {
 	const wk = cur().weeks.find((x: any) => x.n === w);
 	const wt = wk?.title ? (
@@ -941,22 +961,23 @@ function DayGrammar({ day, w, d, scrollP }: { day: any; w: number; d: number; sc
 	if (d === 7) {
 		return (
 			<>
-				<div className="crumb">
+				<CatalogCrumb>
 					{lx(`第${w}週`, `Week ${w}`)}
 					{wt}
-				</div>
+				</CatalogCrumb>
 				<ExamGrammar day={day} w={w} />
 			</>
 		);
 	}
-	const dailyItems = MODULE === "grammar" && G.daily_explanations && G.daily_explanations[`w${w}d${d}`];
+	const dailyBook = MODULE === "n2grammar" ? G2 : G;
+	const dailyItems = (MODULE === "grammar" || MODULE === "n2grammar") && dailyBook.daily_explanations && dailyBook.daily_explanations[`w${w}d${d}`];
 	const explanationByNumber = new Map(((dailyItems && dailyItems.items) || []).map((item: any) => [item.n, item]));
 	return (
 		<>
-			<div className="crumb">
+			<CatalogCrumb>
 				{lx(`第${w}週`, `Week ${w}`)}
 				{wt}
-			</div>
+			</CatalogCrumb>
 			<h2 className="page jp">
 				<Rr o={day} f="title" /> <span className="meta">{lx(day.title_cn, day.title_en)}</span>
 			</h2>
@@ -1104,9 +1125,9 @@ function DayVocab({ day, w, d, scrollTok }: { day: any; w: number; d: number; sc
 	if (d === 7) {
 		return (
 			<>
-				<div className="crumb">
+				<CatalogCrumb>
 					第{w}週 · {modLbl}
-				</div>
+				</CatalogCrumb>
 				<ExamVocab day={day} w={w} />
 			</>
 		);
@@ -1115,9 +1136,9 @@ function DayVocab({ day, w, d, scrollTok }: { day: any; w: number; d: number; sc
 	const translationByNumber = new Map(((dailyItems && dailyItems.items) || []).map((item: any) => [item.n, item]));
 	return (
 		<>
-			<div className="crumb">
+			<CatalogCrumb>
 				第{w}週 · {modLbl}
-			</div>
+			</CatalogCrumb>
 			<h2 className="page jp">
 				<Rr o={day} f="title" /> <span className="meta">{lx(day.title_cn, day.title_en)}</span>
 			</h2>
@@ -1327,7 +1348,7 @@ function DayKanji({ day, w, d, scrollTok }: { day: any; w: number; d: number; sc
 	if (d === 7) {
 		return (
 			<>
-				<div className="crumb">
+				<CatalogCrumb>
 					第{w}週 · 汉字
 					{day.theme ? (
 						<>
@@ -1335,7 +1356,7 @@ function DayKanji({ day, w, d, scrollTok }: { day: any; w: number; d: number; sc
 							<span className="jp">{day.theme}</span>（{day.theme_cn || ""}）
 						</>
 					) : null}
-				</div>
+				</CatalogCrumb>
 				<ExamKanji day={day} w={w} />
 			</>
 		);
@@ -1344,7 +1365,7 @@ function DayKanji({ day, w, d, scrollTok }: { day: any; w: number; d: number; sc
 	const translationByNumber = new Map(((dailyItems && dailyItems.items) || []).map((item: any) => [item.n, item]));
 	return (
 		<>
-			<div className="crumb">
+			<CatalogCrumb>
 				第{w}週 · 汉字
 				{day.theme ? (
 					<>
@@ -1352,7 +1373,7 @@ function DayKanji({ day, w, d, scrollTok }: { day: any; w: number; d: number; sc
 						<span className="jp">{day.theme}</span>（{day.theme_cn || ""}）
 					</>
 				) : null}
-			</div>
+			</CatalogCrumb>
 			<h2 className="page jp">
 				<Rr o={day} f="title" /> <span className="meta">{lx(day.title_cn, day.title_en)}</span>
 			</h2>

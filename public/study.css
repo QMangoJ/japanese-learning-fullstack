@@ -371,13 +371,15 @@ table.ref th{background:var(--bg)}
 .toggle-all.on{background:var(--accent);border-color:var(--accent);color:#fff}
 h2.page{font-size:19px;margin:4px 0 12px}
 .empty{color:var(--sub);text-align:center;padding:40px 0}
-.crumb{color:var(--sub);font-size:13px;margin-bottom:8px}
+.crumb{display:flex;align-items:center;flex-wrap:wrap;gap:6px;color:var(--sub);font-size:13px;margin-bottom:8px}
+.crumb-home{border:0;background:none;padding:0;color:var(--blue);font:inherit;font-weight:700;cursor:pointer}
+.crumb-sep{opacity:.45}
 a.plink{color:var(--blue);text-decoration:none}
 del{text-decoration:line-through;color:var(--sub)}
 ruby rt{font-size:.55em;color:var(--sub);letter-spacing:0;user-select:none}
 body.no-ruby rt{visibility:hidden}
 .mem-bar{display:flex;gap:8px;margin-bottom:12px;position:sticky;top:var(--topbarh,88px);z-index:15;background:var(--bg);padding:8px 0 4px}
-.mem-bar button{flex:1;border:1px solid var(--line);background:var(--card);color:var(--sub);border-radius:999px;padding:6px 0;font-size:13px;font-weight:700;cursor:pointer}
+.mem-bar button{flex:1;border:1px solid var(--line);background:var(--card);color:var(--sub);border-radius:999px;padding:6px 0;font-size:13px;font-weight:700;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
 .mem-bar button.on{background:var(--accent-soft);border-color:var(--accent);color:var(--accent)}
 body.hide-jp .vjp-text{visibility:hidden}
 body.hide-cn .vcn,body.hide-cn .cn{visibility:hidden}

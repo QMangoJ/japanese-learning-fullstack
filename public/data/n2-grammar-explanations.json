@@ -1,0 +1,6706 @@
+{
+	"w1": {
+		"mondai1": [
+			{
+				"n": 1,
+				"ans": 2,
+				"trans": "在外吃饭容易蔬菜不足。",
+				"trans_en": "Eating out tends to leave you short on vegetables.",
+				"option_translations": [
+					"显得…的样子",
+					"容易／常常…",
+					"因为…嘛",
+					"有…的倾向（性质）"
+				],
+				"option_translations_en": [
+					"looks ~",
+					"tends to ~",
+					"because (explanatory)",
+					"has a ~ quality"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「〜がち」表示容易陷入某种不良倾向。",
+				"point_en": "がち marks an undesirable tendency.",
+				"link": "#/day/1-1/p1"
+			},
+			{
+				"n": 2,
+				"ans": 1,
+				"trans": "虽然在读，内容却一点也进不了脑子。",
+				"trans_en": "I am reading, but none of it is sinking in.",
+				"option_translations": [
+					"虽然…但是",
+					"要是能…的话",
+					"就因为…",
+					"因为…嘛"
+				],
+				"option_translations_en": [
+					"although",
+					"if only one could",
+					"precisely because",
+					"because (casual)"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「ものの」表示逆接，多用于书面。",
+				"point_en": "ものの is a written-style contrast.",
+				"link": "#/day/1-2/p3"
+			},
+			{
+				"n": 3,
+				"ans": 2,
+				"trans": "最近有点发胖，所以决定走到车站，不坐公交。",
+				"trans_en": "I've been putting on a bit of weight, so I decided to walk to the station.",
+				"option_translations": [
+					"显得…",
+					"略微有点…",
+					"带有…色彩",
+					"去掉…"
+				],
+				"option_translations_en": [
+					"looks ~",
+					"a little ~",
+					"has a ~ tinge",
+					"without ~"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「気味」表示略微偏向某种状态。",
+				"point_en": "気味 means slightly / a touch of.",
+				"link": "#/day/1-1/p3"
+			},
+			{
+				"n": 4,
+				"ans": 4,
+				"trans": "一向自信满满的他，今天却一脸没自信。",
+				"trans_en": "He is usually full of confidence, but today he looks unsure.",
+				"option_translations": [
+					"な（接续不对）",
+					"ない（接续不对）",
+					"なし（接续不对）",
+					"なさ（自信なさげ）"
+				],
+				"option_translations_en": [
+					"wrong connective",
+					"wrong connective",
+					"wrong connective",
+					"なさげ = looking unsure"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「自信なさげ」是固定说法。",
+				"point_en": "自信なさげ is the set form.",
+				"link": "#/day/1-1/p0"
+			},
+			{
+				"n": 5,
+				"ans": 3,
+				"trans": "看着生病的孩子，真希望能替他生病。",
+				"trans_en": "Watching a sick child, I wish I could take their place if I could.",
+				"option_translations": [
+					"哪会…",
+					"虽然…",
+					"如果能…的话",
+					"就因为…"
+				],
+				"option_translations_en": [
+					"as if I would",
+					"although",
+					"if only I could",
+					"because"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "可能形＋ものなら表示难以实现的愿望。",
+				"point_en": "Potential + ものなら is a hard-to-realize wish.",
+				"link": "#/day/1-2/p0"
+			},
+			{
+				"n": 6,
+				"ans": 3,
+				"trans": "总觉得部长最近爱发脾气了。",
+				"trans_en": "I feel the manager has gotten rather short-tempered lately.",
+				"option_translations": [
+					"辞書形（接续不对）",
+					"て形（接续不对）",
+					"ます語幹＋っぽい",
+					"た形（接续不对）"
+				],
+				"option_translations_en": [
+					"dictionary form (wrong)",
+					"te-form (wrong)",
+					"masu-stem + っぽい",
+					"ta-form (wrong)"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「怒りっぽい」用ます形词干。",
+				"point_en": "っぽい attaches to the masu stem.",
+				"link": "#/day/1-1/p2"
+			},
+			{
+				"n": 7,
+				"ans": 2,
+				"trans": "因为太安静了，我还以为没人在。",
+				"trans_en": "It was so quiet I thought nobody was there.",
+				"option_translations": [
+					"静か（缺な）",
+					"静かな＋もんだから",
+					"静かだ（接续不对）",
+					"静かの（不对）"
+				],
+				"option_translations_en": [
+					"missing な",
+					"na-adjective + もんだから",
+					"wrong form",
+					"wrong form"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "な形容词后接「な＋ものだから」。",
+				"point_en": "na-adjectives take な before ものだから.",
+				"link": "#/day/1-2/p1"
+			},
+			{
+				"n": 8,
+				"ans": 3,
+				"trans": "忘把伞带来也就罢了，连重要的包都忘了。",
+				"trans_en": "Forgetting an umbrella is one thing, but leaving your important bag behind?",
+				"option_translations": [
+					"去掉…",
+					"不用说…",
+					"…还算可以",
+					"如果能…"
+				],
+				"option_translations_en": [
+					"leaving out",
+					"needless to say",
+					"X is still acceptable",
+					"if only"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「まだしも」表示相比之下前者还勉强可以接受。",
+				"point_en": "まだしも: the first thing is still tolerable.",
+				"link": "#/day/1-3/p2"
+			},
+			{
+				"n": 9,
+				"ans": 3,
+				"trans": "村上这个名字在国内自不必说，在国外也广为人知。",
+				"trans_en": "Murakami's name is known overseas, let alone at home.",
+				"option_translations": [
+					"暂且不论",
+					"虽然",
+					"自不必说",
+					"去掉"
+				],
+				"option_translations_en": [
+					"leaving aside",
+					"although",
+					"let alone / not to mention",
+					"without"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「もとより」表示前者当然成立，后者也成立。",
+				"point_en": "もとより = not to mention the first item.",
+				"link": "#/day/1-3/p0"
+			},
+			{
+				"n": 10,
+				"ans": 4,
+				"trans": "修一修也不是不能用，但太旧了，还是扔了吧。",
+				"trans_en": "It's not that it couldn't be used if repaired, but it's old, so let's throw it out.",
+				"option_translations": [
+					"不该用",
+					"不准用",
+					"必须用",
+					"也不是不能用"
+				],
+				"option_translations_en": [
+					"must not use",
+					"must not",
+					"must",
+					"it's not that one cannot"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「ないこともない」表示并非完全不可能。",
+				"point_en": "ないこともない = it's not impossible.",
+				"link": "#/day/1-5/p1"
+			},
+			{
+				"n": 11,
+				"ans": 1,
+				"trans": "最近身体不好，但不能老请假。",
+				"trans_en": "I've been unwell, but I can't keep taking time off.",
+				"option_translations": [
+					"也不能光是…",
+					"受不了请假",
+					"也不是不请假",
+					"不能不请假"
+				],
+				"option_translations_en": [
+					"can't just keep doing",
+					"can't stand taking off",
+					"it's not that I don't",
+					"can't help taking off"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「〜てばかりもいられない」表示不能只顾着那样。",
+				"point_en": "てばかりもいられない = can't keep doing only that.",
+				"link": "#/day/1-6/p3"
+			},
+			{
+				"n": 12,
+				"ans": 2,
+				"trans": "“为什么不带手机？”“因为用不着嘛。”",
+				"trans_en": "“Why don't you have a cell phone?” “Because I don't need one.”",
+				"option_translations": [
+					"因为有嘛",
+					"因为不需要嘛",
+					"也不是不需要",
+					"不能不带"
+				],
+				"option_translations_en": [
+					"because I have one",
+					"because I don't need one",
+					"not that I don't need it",
+					"can't help carrying one"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「んだもの」用来申明理由，口语。",
+				"point_en": "んだもの gives a casual reason.",
+				"link": "#/day/1-2/p2"
+			},
+			{
+				"n": 13,
+				"ans": 3,
+				"trans": "十多年没去电影院了。也不是不想去，只是在家看录像更轻松。",
+				"trans_en": "I haven't been to a cinema in over ten years. It's not that I don't want to; watching at home is easier.",
+				"option_translations": [
+					"去（缺たくない）",
+					"想去（意思反了）",
+					"不想去＋こともない",
+					"去过"
+				],
+				"option_translations_en": [
+					"go (incomplete)",
+					"want to go (wrong sense)",
+					"it's not that I don't want to",
+					"went"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「行きたくないこともない」＝也不是不想去。",
+				"point_en": "行きたくないこともない = it's not that I don't want to.",
+				"link": "#/day/1-5/p0"
+			},
+			{
+				"n": 14,
+				"ans": 2,
+				"trans": "今晚得熬夜干活，可喝了浓茶咖啡还是困得受不了。",
+				"trans_en": "I have to work through the night, yet I'm unbearably sleepy even after strong tea and coffee.",
+				"option_translations": [
+					"睡不着",
+					"困得受不了",
+					"也不是不睡",
+					"不困得受不了"
+				],
+				"option_translations_en": [
+					"can't sleep",
+					"so sleepy I can't stand it",
+					"it's not that I don't sleep",
+					"not unbearably sleepy"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「〜てたまらない」表示程度高到受不了。",
+				"point_en": "てたまらない = so … I can't stand it.",
+				"link": "#/day/1-4/p0"
+			},
+			{
+				"n": 15,
+				"ans": 1,
+				"trans": "这游戏规矩很多，但今天是第一次，先不谈难的，总之先试试吧。",
+				"trans_en": "The game has lots of little rules, but since it's your first time, never mind the hard part — let's just try.",
+				"option_translations": [
+					"先试试看",
+					"不能做",
+					"不能不做",
+					"也不是不做"
+				],
+				"option_translations_en": [
+					"let's try it",
+					"cannot do it",
+					"can't help doing it",
+					"not that we won't"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「抜きにして」表示先抛开某事。",
+				"point_en": "抜きにして = setting that aside.",
+				"link": "#/day/1-3/p3"
+			}
+		],
+		"mondai2": [
+			{
+				"n": 16,
+				"ans": 4,
+				"trans": "身体好不好另说，总不能说精神不好。",
+				"trans_en": "Leaving how I feel aside, I can hardly say my body is fine.",
+				"option_translations": [
+					"心情",
+					"称作／作为",
+					"暂且不论",
+					"健康"
+				],
+				"option_translations_en": [
+					"feelings",
+					"as / called",
+					"leaving aside",
+					"healthy"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「AはともかくB」：A先不论，说B。",
+				"point_en": "Aはともかく B = never mind A, as for B.",
+				"link": "#/day/1-3/p1",
+				"order": "1→3→4→2"
+			},
+			{
+				"n": 17,
+				"ans": 1,
+				"trans": "她用一副可爱得没办法的表情盯着孙子。",
+				"trans_en": "She gazes at her grandchild with a face that says she can't help finding them adorable.",
+				"option_translations": [
+					"叫做／所谓",
+					"没办法",
+					"表情",
+					"可爱得…"
+				],
+				"option_translations_en": [
+					"called",
+					"can't help it",
+					"with a face",
+					"so cute that"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「かわいくてしかたないという顔」。",
+				"point_en": "てしかたない = so … one can't help it.",
+				"link": "#/day/1-4/p1",
+				"order": "4→2→1→3"
+			},
+			{
+				"n": 18,
+				"ans": 4,
+				"trans": "想买的话也不是买不到，只是不想买。",
+				"trans_en": "It's not that I couldn't buy it if I wanted to; I just don't feel like it.",
+				"option_translations": [
+					"但是",
+					"也（不）…",
+					"买不到",
+					"没有"
+				],
+				"option_translations_en": [
+					"but",
+					"also / even",
+					"cannot buy",
+					"not"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「ないこともないけれど」。",
+				"point_en": "ないこともない = not entirely impossible.",
+				"link": "#/day/1-5/p1",
+				"order": "3→2→4→1"
+			},
+			{
+				"n": 19,
+				"ans": 1,
+				"trans": "没有他的活跃，我们队根本不可能夺冠。",
+				"trans_en": "Without his contribution our team could never have won.",
+				"option_translations": [
+					"去掉／没有",
+					"他的",
+					"活跃",
+					"要是做了"
+				],
+				"option_translations_en": [
+					"without",
+					"his",
+					"performance",
+					"if one does"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「ぬきにしては」＝没有…的话。",
+				"point_en": "ぬきにしては = if you leave that out.",
+				"link": "#/day/1-3/p3",
+				"order": "2→3→1→4"
+			},
+			{
+				"n": 20,
+				"ans": 2,
+				"trans": "对那些不抽烟就受不了的人，也不能不提醒香烟的危害。",
+				"trans_en": "You can't help warning people who can't go without smoking about the dangers.",
+				"option_translations": [
+					"不能不提醒",
+					"香烟的危害",
+					"对那样的人",
+					"不能忍受"
+				],
+				"option_translations_en": [
+					"can't help warning",
+					"the danger of tobacco",
+					"to such people",
+					"can't endure"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「ずにはいられない」表示忍不住做。",
+				"point_en": "ずにはいられない = can't help doing.",
+				"link": "#/day/1-5/p3",
+				"order": "4→3→2→1"
+			}
+		],
+		"mondai3": [
+			{
+				"n": 21,
+				"ans": 4,
+				"trans": "可是我与其说在享受，不如说更担心选手的心情和身体。",
+				"trans_en": "But rather than enjoying it, I can't help worrying about the athletes.",
+				"option_translations": [
+					"因此",
+					"于是",
+					"而且",
+					"可是"
+				],
+				"option_translations_en": [
+					"therefore",
+					"so / then",
+					"besides",
+					"however"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "前后是转折，用「しかし」。",
+				"point_en": "しかし marks contrast with the previous enjoyment.",
+				"link": "#/day/1-3/p1"
+			},
+			{
+				"n": 22,
+				"ans": 3,
+				"trans": "担心得不得了。",
+				"trans_en": "I can't help being worried.",
+				"option_translations": [
+					"不必担心",
+					"担心也待不住",
+					"担心得不得了",
+					"不该担心"
+				],
+				"option_translations_en": [
+					"needn't worry",
+					"can't stay worried",
+					"so worried I can't help it",
+					"must not worry"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「心配でならない」表示感情强烈。",
+				"point_en": "でならない = so … I can't help it.",
+				"link": "#/day/1-4/p3"
+			},
+			{
+				"n": 23,
+				"ans": 1,
+				"trans": "也有人看上去有些疲倦。",
+				"trans_en": "Some people look a little worn out.",
+				"option_translations": [
+					"略微…",
+					"带有…色彩",
+					"动辄…",
+					"显得…的样子"
+				],
+				"option_translations_en": [
+					"a touch of",
+					"tinged with",
+					"tends to",
+					"looks"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「疲れ気味」＝有点累。",
+				"point_en": "気味 = slightly.",
+				"link": "#/day/1-1/p3"
+			},
+			{
+				"n": 24,
+				"ans": 3,
+				"trans": "年轻新选手尚且如此，被期待夺牌的选手就更不用说了。",
+				"trans_en": "If that's true even of young newcomers, how much more for medal favorites.",
+				"option_translations": [
+					"去掉",
+					"受不了但是",
+					"…还算可以",
+					"没办法但是"
+				],
+				"option_translations_en": [
+					"without",
+					"unbearable but",
+					"X is still better",
+					"can't be helped but"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「まだしも」：前者相对还能接受。",
+				"point_en": "まだしも: the first case is still easier to accept.",
+				"link": "#/day/1-3/p2"
+			},
+			{
+				"n": 25,
+				"ans": 4,
+				"trans": "我忍不住这样想。",
+				"trans_en": "I can't help thinking that way.",
+				"option_translations": [
+					"不能光是想",
+					"必须想",
+					"不该想",
+					"不能不想"
+				],
+				"option_translations_en": [
+					"can't just think",
+					"must think",
+					"must not think",
+					"can't help thinking"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「思わずにはいられない」。",
+				"point_en": "ずにはいられない = can't help doing.",
+				"link": "#/day/1-5/p3"
+			}
+		]
+	},
+	"w2": {
+		"mondai1": [
+			{
+				"n": 1,
+				"ans": 2,
+				"trans": "围巾织到一半就停下了。",
+				"trans_en": "I started knitting a muffler but gave up halfway.",
+				"option_translations": [
+					"完全织完",
+					"做到一半",
+					"彻底织完",
+					"坚持织完"
+				],
+				"option_translations_en": [
+					"finish knitting",
+					"do halfway",
+					"knit through",
+					"knit to the end"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「Vかけ」表示做到中途。",
+				"point_en": "Vかけ = start but not finish.",
+				"link": "#/day/2-2/p0"
+			},
+			{
+				"n": 2,
+				"ans": 4,
+				"trans": "那项运动原本是作为护身而想出来的。",
+				"trans_en": "The sport was originally devised for self-defense.",
+				"option_translations": [
+					"和…一起",
+					"随着",
+					"对…来说",
+					"作为"
+				],
+				"option_translations_en": [
+					"together with",
+					"as … changes",
+					"for / to",
+					"as / in the capacity of"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「Nとして」表示资格、立场。",
+				"point_en": "として = as / in the role of.",
+				"link": "#/day/2-5/p3"
+			},
+			{
+				"n": 3,
+				"ans": 4,
+				"trans": "请趁汤还没凉赶紧用。",
+				"trans_en": "Please eat the soup while it is still hot.",
+				"option_translations": [
+					"凉（词干）",
+					"凉（词典形）",
+					"凉了之后",
+					"还没凉"
+				],
+				"option_translations_en": [
+					"cool (stem)",
+					"cool (dict.)",
+					"after it has cooled",
+					"before it cools"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「Vないうちに」表示趁还没发生。",
+				"point_en": "Vないうちに = while it still hasn't happened.",
+				"link": "#/day/2-3/p0"
+			},
+			{
+				"n": 4,
+				"ans": 3,
+				"trans": "他烦恼到极点，最终还是说出了真相。",
+				"trans_en": "After worrying himself sick, he finally told the truth.",
+				"option_translations": [
+					"做到一半",
+					"坚持到底",
+					"…到极点／非常",
+					"偏偏"
+				],
+				"option_translations_en": [
+					"halfway",
+					"to the end",
+					"to the utmost",
+					"of all times"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「悩みぬく」＝烦恼到极点。",
+				"point_en": "Vぬく = do it all the way / thoroughly.",
+				"link": "#/day/2-2/p3"
+			},
+			{
+				"n": 5,
+				"ans": 1,
+				"trans": "只要学生没有干劲，老师再努力也进步不了。",
+				"trans_en": "As long as the students aren't motivated, no amount of teaching will help.",
+				"option_translations": [
+					"只要…就",
+					"越…越",
+					"大约",
+					"和…一起"
+				],
+				"option_translations_en": [
+					"as long as",
+					"the more",
+					"about",
+					"together with"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「Vないかぎり」＝只要不…。",
+				"point_en": "Vないかぎり = so long as … not.",
+				"link": "#/day/2-3/p2"
+			},
+			{
+				"n": 6,
+				"ans": 3,
+				"trans": "偏偏没复习的地方会考到。",
+				"trans_en": "Of all things, the parts I didn't study come up on the test.",
+				"option_translations": [
+					"对…来说",
+					"从…立场看",
+					"偏偏／只有这时",
+					"伴随着"
+				],
+				"option_translations_en": [
+					"for",
+					"from the viewpoint of",
+					"of all times / only then",
+					"along with"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「にかぎって」表示偏偏是这种情况。",
+				"point_en": "にかぎって = of all times / only then.",
+				"link": "#/day/2-3/p3"
+			},
+			{
+				"n": 7,
+				"ans": 3,
+				"trans": "旧的还没用完，先用完再开新的吧。",
+				"trans_en": "There's still some of the old one left, so let's finish it before opening a new one.",
+				"option_translations": [
+					"用到一半",
+					"用到极点",
+					"用完",
+					"坚持用"
+				],
+				"option_translations_en": [
+					"use halfway",
+					"use thoroughly",
+					"use up",
+					"use to the end"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「使いきる」＝用光。",
+				"point_en": "Vきる = do completely / use up.",
+				"link": "#/day/2-2/p1"
+			},
+			{
+				"n": 8,
+				"ans": 4,
+				"trans": "天刚亮他们就开始干活。",
+				"trans_en": "They start work at the very moment day breaks.",
+				"option_translations": [
+					"只要",
+					"和…同时",
+					"随着",
+					"在…前后"
+				],
+				"option_translations_en": [
+					"as long as",
+					"together with",
+					"as … changes",
+					"just as / around the time"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「VるかVないかのうちに」表示几乎同时。",
+				"point_en": "VるかVないかのうちに = hardly has A happened when B.",
+				"link": "#/day/2-3/p1"
+			},
+			{
+				"n": 9,
+				"ans": 2,
+				"trans": "仅限小学生及以下儿童赠送礼物。",
+				"trans_en": "A present is given only to children in elementary school or younger.",
+				"option_translations": [
+					"只要",
+					"仅限于",
+					"作为",
+					"对…来说"
+				],
+				"option_translations_en": [
+					"as long as",
+					"limited to",
+					"as",
+					"for"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「Nにかぎり」＝仅限于。",
+				"point_en": "にかぎり = limited to.",
+				"link": "#/day/2-3/p3"
+			},
+			{
+				"n": 10,
+				"ans": 3,
+				"trans": "正是因为考虑你的健康，才不让你喝酒。",
+				"trans_en": "It's precisely because I care about your health that I won't let you drink.",
+				"option_translations": [
+					"越…越",
+					"大约",
+					"正是因为",
+					"偏偏"
+				],
+				"option_translations_en": [
+					"the more",
+					"about",
+					"precisely because",
+					"of all times"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「からこそ」强调原因。",
+				"point_en": "からこそ stresses the reason.",
+				"link": "#/day/2-4/p1"
+			},
+			{
+				"n": 11,
+				"ans": 3,
+				"trans": "只要身体好，生活总能过下去。",
+				"trans_en": "As long as I'm healthy I can get by somehow.",
+				"option_translations": [
+					"越…越",
+					"只要",
+					"只要…就（さえ）",
+					"作为"
+				],
+				"option_translations_en": [
+					"the more",
+					"as long as",
+					"if only",
+					"as"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「Nさえ〜ば」表示最低条件。",
+				"point_en": "さえ〜ば = if only that condition is met.",
+				"link": "#/day/2-4/p0"
+			},
+			{
+				"n": 12,
+				"ans": 1,
+				"trans": "免费体验课仅限一次。",
+				"trans_en": "The free trial lesson is limited to one session.",
+				"option_translations": [
+					"仅限",
+					"大约",
+					"甚至",
+					"作为"
+				],
+				"option_translations_en": [
+					"limited to",
+					"about",
+					"even",
+					"as"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「1回かぎり」＝只有这一次。",
+				"point_en": "かぎり after a number = only that many.",
+				"link": "#/day/2-3/p3"
+			},
+			{
+				"n": 13,
+				"ans": 3,
+				"trans": "那么好的人居然做坏事，不可能。",
+				"trans_en": "There's no way such a good person would do something bad.",
+				"option_translations": [
+					"可能",
+					"可能（书面）",
+					"不可能",
+					"非词"
+				],
+				"option_translations_en": [
+					"possible",
+					"possible (formal)",
+					"impossible",
+					"not a word"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「ありえない」＝不可能。",
+				"point_en": "ありえない = cannot be.",
+				"link": "#/day/2-2/p2"
+			},
+			{
+				"n": 14,
+				"ans": 2,
+				"trans": "请按照这份一周菜单做菜。",
+				"trans_en": "Please cook according to this week's menu.",
+				"option_translations": [
+					"随着",
+					"按照",
+					"伴随着",
+					"和…一起"
+				],
+				"option_translations_en": [
+					"as … changes",
+					"in accordance with",
+					"along with",
+					"together with"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「Nにしたがって」表示按照指示。",
+				"point_en": "にしたがって = following / according to.",
+				"link": "#/day/2-6/p3"
+			},
+			{
+				"n": 15,
+				"ans": 1,
+				"trans": "明天首相访问本市，随之这条路预计会堵。",
+				"trans_en": "The prime minister visits tomorrow, so this road is expected to be congested.",
+				"option_translations": [
+					"伴随着",
+					"随着（渐变）",
+					"按照",
+					"一起"
+				],
+				"option_translations_en": [
+					"accompanying",
+					"as it gradually changes",
+					"according to",
+					"together"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「それにともなって」表示随之发生。",
+				"point_en": "にともなって = accompanying that change.",
+				"link": "#/day/2-6/p1"
+			}
+		],
+		"mondai2": [
+			{
+				"n": 16,
+				"ans": 1,
+				"trans": "汉字、听解、读解都还行，语法只要肯做应该就没问题。",
+				"trans_en": "Kanji, listening and reading are OK, so grammar should be fine if you just do it.",
+				"option_translations": [
+					"如果做",
+					"语法",
+					"就好",
+					"只要"
+				],
+				"option_translations_en": [
+					"if you do it",
+					"grammar",
+					"will be fine",
+					"if only"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「さえ〜ば」＝只要。",
+				"point_en": "さえ〜ば = if only.",
+				"link": "#/day/2-4/p0",
+				"order": "2→4→1→3"
+			},
+			{
+				"n": 17,
+				"ans": 2,
+				"trans": "对只能在休息日旅行的人来说，这套收费很残酷。",
+				"trans_en": "For people who can only travel on holidays, this pricing is harsh.",
+				"option_translations": [
+					"不能旅行",
+					"对那个人来说",
+					"只有休息日",
+					"痛苦。"
+				],
+				"option_translations_en": [
+					"cannot travel",
+					"from that person's view",
+					"only on holidays",
+					"painful"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「Nにしたら」站在对方立场。",
+				"point_en": "にしたら = from that person's standpoint.",
+				"link": "#/day/2-5/p0",
+				"order": "3→1→2→4"
+			},
+			{
+				"n": 18,
+				"ans": 3,
+				"trans": "派对准备都好了，就只等客人了。",
+				"trans_en": "Party prep is done; all that's left is to wait for the guests.",
+				"option_translations": [
+					"只差",
+					"剩下的是",
+					"等待",
+					"客人"
+				],
+				"option_translations_en": [
+					"just about to / only left",
+					"the rest is",
+					"wait",
+					"the guests"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「待つばかり」＝只等着。",
+				"point_en": "Vるばかり = nothing left but to.",
+				"link": "#/day/2-4/p3",
+				"order": "2→4→3→1"
+			},
+			{
+				"n": 19,
+				"ans": 4,
+				"trans": "这几年随着景气恶化，就业率大幅下降。",
+				"trans_en": "Employment has fallen sharply along with the worsening economy in recent years.",
+				"option_translations": [
+					"景气的",
+					"几年的",
+					"伴随着",
+					"恶化"
+				],
+				"option_translations_en": [
+					"of the economy",
+					"of recent years",
+					"along with",
+					"worsening"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「Nにともない」书面，表示伴随。",
+				"point_en": "にともない = along with (formal).",
+				"link": "#/day/2-6/p1",
+				"order": "2→1→4→3"
+			},
+			{
+				"n": 20,
+				"ans": 4,
+				"trans": "随着手机普及，公用电话不再被使用。",
+				"trans_en": "As cell phones spread, public phones stopped being used.",
+				"option_translations": [
+					"公用电话",
+					"做",
+					"普及",
+					"随着"
+				],
+				"option_translations_en": [
+					"public phones",
+					"do",
+					"spread",
+					"as"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「につれて」表示一边变化一边发生。",
+				"point_en": "につれて = as X changes, Y happens.",
+				"link": "#/day/2-6/p2",
+				"order": "3→2→4→1"
+			}
+		],
+		"mondai3": [
+			{
+				"n": 21,
+				"ans": 4,
+				"trans": "尽管各国努力，情况却毫无改善。",
+				"trans_en": "Despite various countries' efforts, the situation hasn't improved at all.",
+				"option_translations": [
+					"只要有就",
+					"有成效",
+					"只要",
+					"毫无成效"
+				],
+				"option_translations_en": [
+					"if only there is",
+					"worth the effort",
+					"as long as",
+					"to no avail"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「かいもなく」＝白费。",
+				"point_en": "かいもなく = without the effort paying off.",
+				"link": "#/day/2-1/p1"
+			},
+			{
+				"n": 22,
+				"ans": 1,
+				"trans": "状况一个劲儿地恶化。",
+				"trans_en": "The situation just keeps getting worse.",
+				"option_translations": [
+					"一个劲儿地…",
+					"也不是不…",
+					"不该…",
+					"不能（光）…"
+				],
+				"option_translations_en": [
+					"only / increasingly",
+					"not that it doesn't",
+					"must not",
+					"can't afford to"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「するばかりだ」＝一个劲儿地变糟。",
+				"point_en": "ばかりだ = keep doing / only getting worse.",
+				"link": "#/day/2-4/p3"
+			},
+			{
+				"n": 23,
+				"ans": 4,
+				"trans": "据说南极冰全部融化也是有可能的。",
+				"trans_en": "They say it is possible all the Antarctic ice will melt.",
+				"option_translations": [
+					"毫无意义",
+					"不可能",
+					"只限于有",
+					"有可能"
+				],
+				"option_translations_en": [
+					"pointless",
+					"impossible",
+					"limited to existing",
+					"possible"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「ありうる」＝有可能。",
+				"point_en": "ありうる = can happen.",
+				"link": "#/day/2-2/p2"
+			},
+			{
+				"n": 24,
+				"ans": 2,
+				"trans": "甚至用混凝土保护海岸来阻止海面上升。",
+				"trans_en": "Some places even protect the coast with concrete to hold it back.",
+				"option_translations": [
+					"只要保护",
+					"甚至保护到这个地步",
+					"正因保护了",
+					"保护有成效"
+				],
+				"option_translations_en": [
+					"if only we protect",
+					"go so far as to protect",
+					"precisely because we protected",
+					"worth protecting"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「てまで」表示甚至做到那种程度。",
+				"point_en": "てまで = going so far as to.",
+				"link": "#/day/2-1/p3"
+			},
+			{
+				"n": 25,
+				"ans": 1,
+				"trans": "只要我们活着，就必须保护环境。",
+				"trans_en": "For as long as we live we must protect the environment.",
+				"option_translations": [
+					"只要…期间",
+					"只是",
+					"即使作为",
+					"趁…的时候"
+				],
+				"option_translations_en": [
+					"as long as",
+					"just",
+					"even as",
+					"while"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「生きている限り」＝只要活着。",
+				"point_en": "Vている限り = so long as that state continues.",
+				"link": "#/day/2-3/p2"
+			}
+		]
+	},
+	"w3": {
+		"mondai1": [
+			{
+				"n": 1,
+				"ans": 2,
+				"trans": "那人来上课只有一次。",
+				"trans_en": "That person came to class only once.",
+				"option_translations": [
+					"哪里谈得上",
+					"仅那一次",
+					"满是",
+					"按照"
+				],
+				"option_translations_en": [
+					"far from",
+					"only that once",
+					"full of",
+					"as"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「一度きり」＝仅此一次。",
+				"point_en": "きり = only that and nothing more.",
+				"link": "#/day/3-5/p1"
+			},
+			{
+				"n": 2,
+				"ans": 4,
+				"trans": "因为太高兴，忍不住叫了出来。",
+				"trans_en": "I was so happy I couldn't help crying out.",
+				"option_translations": [
+					"うれしい词干",
+					"い形容词原形",
+					"て形",
+					"うれしさ＋のあまり"
+				],
+				"option_translations_en": [
+					"stem",
+					"plain i-adj",
+					"te-form",
+					"noun + のあまり"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「Nのあまり」表示过度。",
+				"point_en": "Nのあまり = so much that.",
+				"link": "#/day/3-1/p3"
+			},
+			{
+				"n": 3,
+				"ans": 3,
+				"trans": "遗憾的是，养的兔子死了。",
+				"trans_en": "To my regret, the rabbit I was keeping died.",
+				"option_translations": [
+					"悲しみ（接续不对）",
+					"かわいそう（接续不对）",
+					"残念なことに",
+					"さびしさ（接续不对）"
+				],
+				"option_translations_en": [
+					"wrong form",
+					"wrong form",
+					"it's regrettable that",
+					"wrong form"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「なことに」接な形容词。",
+				"point_en": "なことに follows na-adjectives.",
+				"link": "#/day/3-1/p2"
+			},
+			{
+				"n": 4,
+				"ans": 4,
+				"trans": "搬了很多次家，家具已经伤痕累累。",
+				"trans_en": "We've moved so often the furniture is covered in scratches.",
+				"option_translations": [
+					"仅那次",
+					"哪里谈得上",
+					"过度",
+					"满是"
+				],
+				"option_translations_en": [
+					"only that",
+					"far from",
+					"so much that",
+					"covered in"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「傷だらけ」＝满是伤。",
+				"point_en": "だらけ = covered with (negative).",
+				"link": "#/day/3-5/p0"
+			},
+			{
+				"n": 5,
+				"ans": 3,
+				"trans": "虽然按医生说的做，病却总不好。",
+				"trans_en": "I'm doing as the doctor told me, but the illness just won't go away.",
+				"option_translations": [
+					"说（主动）",
+					"指示了（缺に）",
+					"被吩咐的那样",
+					"指示（名词）"
+				],
+				"option_translations_en": [
+					"say (active)",
+					"instructed (needs に)",
+					"as I was told",
+					"instruction (noun)"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「言われたとおり」＝按照被告知的。",
+				"point_en": "Vられたとおり = as one was told.",
+				"link": "#/day/3-1/p0"
+			},
+			{
+				"n": 6,
+				"ans": 4,
+				"trans": "他让我们干等一个小时，到头来又说今天的商量要取消。",
+				"trans_en": "After making us wait an hour, he ended up saying today's meeting was off.",
+				"option_translations": [
+					"就那样",
+					"一方面",
+					"另一方面",
+					"结果／到头来"
+				],
+				"option_translations_en": [
+					"since then",
+					"on one hand",
+					"on the other",
+					"in the end (after trouble)"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「あげく」表示折腾之后的结果。",
+				"point_en": "あげく = after all that (usually bad).",
+				"link": "#/day/3-3/p1"
+			},
+			{
+				"n": 7,
+				"ans": 2,
+				"trans": "停业是考虑再三之后的结论。",
+				"trans_en": "Closing the shop is the conclusion we reached after much thought.",
+				"option_translations": [
+					"按照的",
+					"…之后的",
+					"相反",
+					"过度的"
+				],
+				"option_translations_en": [
+					"as per",
+					"after / in the end",
+					"contrary",
+					"excessive"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「Vた末」＝经过之后的结果。",
+				"point_en": "Vた末 = after doing that to the end.",
+				"link": "#/day/3-3/p2"
+			},
+			{
+				"n": 8,
+				"ans": 3,
+				"trans": "她吓得连动都不能动。",
+				"trans_en": "She was so terrified she couldn't even move.",
+				"option_translations": [
+					"令人…的是",
+					"与…相反",
+					"过度以至于",
+					"…的结果"
+				],
+				"option_translations_en": [
+					"it's … that",
+					"contrary to",
+					"so much that",
+					"after"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「恐怖のあまり」。",
+				"point_en": "Nのあまり = so much that.",
+				"link": "#/day/3-1/p3"
+			},
+			{
+				"n": 9,
+				"ans": 1,
+				"trans": "非常抱歉，把借来的书弄脏了。",
+				"trans_en": "I'm terribly sorry — I soiled the book I borrowed.",
+				"option_translations": [
+					"令人…的是",
+					"时候",
+					"哪里谈得上",
+					"最后"
+				],
+				"option_translations_en": [
+					"it's … that",
+					"occasion",
+					"far from",
+					"in the end"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「申し訳ないことに」。",
+				"point_en": "ことに comments on the whole situation.",
+				"link": "#/day/3-1/p2"
+			},
+			{
+				"n": 10,
+				"ans": 1,
+				"trans": "身子发飘，量了体温一看，居然39度。",
+				"trans_en": "I felt unsteady, and when I took my temperature it was 39°.",
+				"option_translations": [
+					"一看／结果发现",
+					"刚一…就",
+					"到头来",
+					"哪里谈得上"
+				],
+				"option_translations_en": [
+					"when I did, I found",
+					"the moment",
+					"after all that",
+					"far from"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「Vたところ」表示做了之后的发现。",
+				"point_en": "Vたところ = when I did, I found.",
+				"link": "#/day/3-4/p1"
+			},
+			{
+				"n": 11,
+				"ans": 1,
+				"trans": "书借给谁以后就一直没还回来。",
+				"trans_en": "I lent the book to someone and haven't gotten it back since.",
+				"option_translations": [
+					"就那样以后",
+					"刚一…",
+					"令人…的是",
+					"一方面"
+				],
+				"option_translations_en": [
+					"ever since then",
+					"the moment",
+					"it's … that",
+					"on one hand"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「Vたきり」＝那之后再没…。",
+				"point_en": "Vたきり = since then, nothing more.",
+				"link": "#/day/3-5/p1"
+			},
+			{
+				"n": 12,
+				"ans": 1,
+				"trans": "与居民意愿相反，公寓还是建起来了。",
+				"trans_en": "The condominium was built against the residents' wishes.",
+				"option_translations": [
+					"与…相反",
+					"另一方面",
+					"另一方面",
+					"别说"
+				],
+				"option_translations_en": [
+					"contrary to",
+					"on the other hand",
+					"meanwhile",
+					"far from"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「Nに反して」。",
+				"point_en": "に反して = contrary to.",
+				"link": "#/day/3-6/p0"
+			},
+			{
+				"n": 13,
+				"ans": 4,
+				"trans": "这几年城市开发，这一带的树林一个劲儿地减少。",
+				"trans_en": "Urban development in recent years has only made the woods around here disappear.",
+				"option_translations": [
+					"不可能",
+					"不能那样做",
+					"到头来",
+					"一个劲儿地"
+				],
+				"option_translations_en": [
+					"no way",
+					"cannot very well",
+					"after all that",
+					"keep / only becoming more"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「なくなる一方だ」＝一个劲儿地消失。",
+				"point_en": "一方だ = keep going in that direction.",
+				"link": "#/day/3-6/p3"
+			},
+			{
+				"n": 14,
+				"ans": 2,
+				"trans": "这么贵重的东西我不能收。",
+				"trans_en": "I really can't accept such an expensive gift.",
+				"option_translations": [
+					"いけない（禁止）",
+					"いきません（不能那样）",
+					"ありません",
+					"できません"
+				],
+				"option_translations_en": [
+					"must not",
+					"cannot very well",
+					"is not",
+					"cannot"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「わけにはいきません」＝情理上不能。",
+				"point_en": "わけにはいかない = can't very well do that.",
+				"link": "#/day/3-2/p3"
+			},
+			{
+				"n": 15,
+				"ans": 4,
+				"trans": "因故暂时请假，但并不是要辞职。",
+				"trans_en": "I'll take some time off, but that doesn't mean I'm quitting.",
+				"option_translations": [
+					"一个劲儿",
+					"就是这么回事",
+					"哪里谈得上辞职",
+					"并不是辞职"
+				],
+				"option_translations_en": [
+					"keep doing",
+					"it follows that",
+					"far from quitting",
+					"it doesn't mean I quit"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「わけではありません」否定那种理解。",
+				"point_en": "わけではない = it doesn't mean that.",
+				"link": "#/day/3-2/p1"
+			}
+		],
+		"mondai2": [
+			{
+				"n": 16,
+				"ans": 1,
+				"trans": "我家孩子刚从学校回来，转眼又去玩了。",
+				"trans_en": "My kid had no sooner come home from school than they ran off to play.",
+				"option_translations": [
+					"一…就觉得",
+					"回来",
+					"一想",
+					"来了吗"
+				],
+				"option_translations_en": [
+					"thought",
+					"returned",
+					"when I thought",
+					"had come?"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「Vたかと思ったら」表示紧接着发生。",
+				"point_en": "Vたかと思ったら = no sooner had A than B.",
+				"link": "#/day/3-3/p3",
+				"order": "2→4→1→3"
+			},
+			{
+				"n": 17,
+				"ans": 4,
+				"trans": "那边是早上9点？这边是傍晚4点，所以时差是7小时吧。",
+				"trans_en": "It's 9 a.m. there and 4 p.m. here, so that means a seven-hour time difference.",
+				"option_translations": [
+					"7小时",
+					"时差是",
+					"道理／也就是",
+					"变成"
+				],
+				"option_translations_en": [
+					"7 hours",
+					"the time difference is",
+					"it follows that",
+					"become"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「わけですね」确认推论。",
+				"point_en": "わけだ = that figures / so that means.",
+				"link": "#/day/3-2/p0",
+				"order": "2→1→4→3"
+			},
+			{
+				"n": 18,
+				"ans": 3,
+				"trans": "明明是夏天，别说热了，冷得还穿着毛衣。",
+				"trans_en": "It's summer, but far from being hot I'm wearing a sweater because it's cold.",
+				"option_translations": [
+					"穿着",
+					"冷得",
+					"毛衣",
+					"别说"
+				],
+				"option_translations_en": [
+					"wearing",
+					"so cold that",
+					"a sweater",
+					"far from"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「どころか」表示岂止如此，情况相反。",
+				"point_en": "どころか = far from it / on the contrary.",
+				"link": "#/day/3-4/p3",
+				"order": "4→2→3→1"
+			},
+			{
+				"n": 19,
+				"ans": 2,
+				"trans": "今早地震弄得盘子都碎了，哪里还顾得上吃饭。",
+				"trans_en": "The earthquake smashed dishes this morning — I was in no state to eat.",
+				"option_translations": [
+					"盘子碎了什么的",
+					"吃饭",
+					"哪里谈得上",
+					"做了"
+				],
+				"option_translations_en": [
+					"plates breaking and so on",
+					"a meal",
+					"in no state to",
+					"doing"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「どころではなかった」。",
+				"point_en": "どころではない = in no condition to.",
+				"link": "#/day/3-4/p2",
+				"order": "1→4→3→2"
+			},
+			{
+				"n": 20,
+				"ans": 1,
+				"trans": "虽然按人家告诉的路去了，要找的房子却没找到。",
+				"trans_en": "I went the way I was told, but still couldn't find the house.",
+				"option_translations": [
+					"按照",
+					"得到",
+					"告诉",
+					"去了"
+				],
+				"option_translations_en": [
+					"as",
+					"received",
+					"was told",
+					"went"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「とおりに」＝按照那样。",
+				"point_en": "とおりに = exactly as.",
+				"link": "#/day/3-1/p0",
+				"order": "3→2→1→4"
+			}
+		],
+		"mondai3": [
+			{
+				"n": 21,
+				"ans": 2,
+				"trans": "检查了一下，说是没什么异常。",
+				"trans_en": "When I had it checked, they said there was nothing unusual.",
+				"option_translations": [
+					"一边检查",
+					"检查之后发现",
+					"检查到头来",
+					"别说检查"
+				],
+				"option_translations_en": [
+					"while examining",
+					"when I had it checked",
+					"after endless tests",
+					"far from examining"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「Vたところ」＝做了之后的结果。",
+				"point_en": "Vたところ = when I did, I found.",
+				"link": "#/day/3-4/p1"
+			},
+			{
+				"n": 22,
+				"ans": 1,
+				"trans": "刚说没异常，反而更担心了。",
+				"trans_en": "The moment they said nothing was wrong I started worrying even more.",
+				"option_translations": [
+					"刚一…就",
+					"就那样以后",
+					"到头来",
+					"另一方面"
+				],
+				"option_translations_en": [
+					"the instant",
+					"ever since",
+					"after all that",
+					"on the other hand"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「Vたとたん」＝刚一…马上。",
+				"point_en": "Vたとたん = the moment that happened.",
+				"link": "#/day/3-3/p0"
+			},
+			{
+				"n": 23,
+				"ans": 2,
+				"trans": "这么疼却说哪儿都没病，不可能。",
+				"trans_en": "There's no way nothing is wrong when it hurts this much.",
+				"option_translations": [
+					"并不是",
+					"不可能",
+					"不能那样做",
+					"也就是说"
+				],
+				"option_translations_en": [
+					"it isn't that",
+					"there's no way",
+					"cannot very well",
+					"it follows that"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「わけがない」＝没道理。",
+				"point_en": "わけがない = there's no reason / no way.",
+				"link": "#/day/3-2/p2"
+			},
+			{
+				"n": 24,
+				"ans": 3,
+				"trans": "苦恼到最后，决定去大医院的神经科。",
+				"trans_en": "After much anguish I decided to go to the neurology department of a big hospital.",
+				"option_translations": [
+					"过度以至于",
+					"因为是…",
+					"…的结果",
+					"按照"
+				],
+				"option_translations_en": [
+					"so much that",
+					"because it is",
+					"in the end after",
+					"as"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「悩んだ末」。",
+				"point_en": "Vた末 = after doing it to the end.",
+				"link": "#/day/3-3/p2"
+			},
+			{
+				"n": 25,
+				"ans": 4,
+				"trans": "脑子里一直想着去大医院。",
+				"trans_en": "I just kept thinking of heading to a big hospital.",
+				"option_translations": [
+					"顾不上前去",
+					"一个劲儿前去",
+					"并不是前去",
+					"一直想着前往"
+				],
+				"option_translations_en": [
+					"in no state to go",
+					"keep going",
+					"doesn't mean I go",
+					"keep heading there in my mind"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "文脉是心里一直想着去，用「向かいっぱなし」。",
+				"point_en": "っぱなし = left in that state / keep doing.",
+				"link": "#/day/3-5/p2"
+			}
+		]
+	},
+	"w4": {
+		"mondai1": [
+			{
+				"n": 1,
+				"ans": 4,
+				"trans": "值此应试之际，请注意以下几点。",
+				"trans_en": "Please note the following points as you sit the exam.",
+				"option_translations": [
+					"取决于",
+					"沿着",
+					"持续整个",
+					"正当…的时候"
+				],
+				"option_translations_en": [
+					"depending on",
+					"along",
+					"over the whole",
+					"on the occasion of"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「Nにあたり」＝正当那个时候。",
+				"point_en": "にあたり = on the occasion of.",
+				"link": "#/day/4-5/p0"
+			},
+			{
+				"n": 2,
+				"ans": 2,
+				"trans": "从B国出口到日本的农产品有八成是水果。",
+				"trans_en": "80% of farm products exported from country B to Japan are fruit.",
+				"option_translations": [
+					"适合…的",
+					"以…为对象的",
+					"朝着",
+					"对面"
+				],
+				"option_translations_en": [
+					"suited to",
+					"aimed at",
+					"facing",
+					"over there"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「N向け」＝面向该对象。",
+				"point_en": "向け = intended for.",
+				"link": "#/day/4-6/p1"
+			},
+			{
+				"n": 3,
+				"ans": 1,
+				"trans": "一有新消息就通知您。",
+				"trans_en": "We'll let you know as soon as new information comes in.",
+				"option_translations": [
+					"ます形＋次第",
+					"词典形（不对）",
+					"て形（不对）",
+					"た形（不对）"
+				],
+				"option_translations_en": [
+					"masu-stem + 次第",
+					"dict. form (wrong)",
+					"te-form (wrong)",
+					"ta-form (wrong)"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「入り次第」＝一进来就。",
+				"point_en": "次第 after a masu stem = as soon as.",
+				"link": "#/day/4-2/p0"
+			},
+			{
+				"n": 4,
+				"ans": 1,
+				"trans": "这道菜做法简单，而且材料也便宜。",
+				"trans_en": "This dish is easy to make, and on top of that the ingredients are cheap.",
+				"option_translations": [
+					"而且",
+					"在…之后／之上",
+					"既然",
+					"在…方面"
+				],
+				"option_translations_en": [
+					"on top of that",
+					"after / on the basis of",
+					"now that",
+					"in terms of"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「A上にB」＝不但A而且B。",
+				"point_en": "上に = and what's more.",
+				"link": "#/day/4-1/p0"
+			},
+			{
+				"n": 5,
+				"ans": 3,
+				"trans": "她对他突然求婚既吃惊，却又显得高兴。",
+				"trans_en": "She was surprised at his sudden proposal, yet she looked happy.",
+				"option_translations": [
+					"虽然",
+					"没有理由",
+					"虽然…却",
+					"持续整个"
+				],
+				"option_translations_en": [
+					"although",
+					"no reason to",
+					"even while",
+					"over the whole"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「ながらも」表示逆接。",
+				"point_en": "ながらも = even while / and yet.",
+				"link": "#/day/4-3/p2"
+			},
+			{
+				"n": 6,
+				"ans": 1,
+				"trans": "在会议开始之前，对与会者做了问卷调查。",
+				"trans_en": "A questionnaire was given to participants before the meeting.",
+				"option_translations": [
+					"在…之前",
+					"持续整个",
+					"沿着",
+					"相反"
+				],
+				"option_translations_en": [
+					"prior to",
+					"over the whole of",
+					"along",
+					"contrary to"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「に先立ち」＝在那之前。",
+				"point_en": "に先立ち = prior to.",
+				"link": "#/day/4-5/p1"
+			},
+			{
+				"n": 7,
+				"ans": 2,
+				"trans": "从数字上看景气在恢复，我们却感觉不到。",
+				"trans_en": "On paper the economy is recovering, but we don't feel it.",
+				"option_translations": [
+					"去掉",
+					"在…之上／从数据上看",
+					"比较起来",
+					"面向"
+				],
+				"option_translations_en": [
+					"without",
+					"on the surface / on paper",
+					"considering",
+					"aimed at"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「数字の上では」。",
+				"point_en": "Nの上では = on paper / in terms of.",
+				"link": "#/day/4-1/p3"
+			},
+			{
+				"n": 8,
+				"ans": 3,
+				"trans": "即便情况相同，幸福与否也取决于想法。",
+				"trans_en": "Even in the same situation, happiness depends on how you think.",
+				"option_translations": [
+					"适合地",
+					"沿着",
+					"取决于",
+					"正当…"
+				],
+				"option_translations_en": [
+					"suited",
+					"along",
+					"depending on",
+					"on the occasion of"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「N次第で」＝视…而定。",
+				"point_en": "次第で = depending on.",
+				"link": "#/day/4-2/p1"
+			},
+			{
+				"n": 9,
+				"ans": 2,
+				"trans": "这本习题集是按照实际考试形式编写的。",
+				"trans_en": "This workbook is written along the lines of the real exam.",
+				"option_translations": [
+					"正当…之际",
+					"沿着／按照",
+					"持续整个",
+					"在…之前"
+				],
+				"option_translations_en": [
+					"on the occasion of",
+					"along / in line with",
+					"over the whole",
+					"prior to"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「Nにそって」＝按照。",
+				"point_en": "にそって = along / in accordance with.",
+				"link": "#/day/4-4/p0"
+			},
+			{
+				"n": 10,
+				"ans": 4,
+				"trans": "这是汇总了长达六年观测数据的资料。",
+				"trans_en": "This summarizes observational data spanning six years.",
+				"option_translations": [
+					"在…之前的",
+					"有关",
+					"沿着",
+					"持续整个期间的"
+				],
+				"option_translations_en": [
+					"prior",
+					"concerning",
+					"along",
+					"spanning"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「にわたる」修饰名词，表示时间跨度。",
+				"point_en": "にわたる = spanning (prenominal).",
+				"link": "#/day/4-4/p1"
+			},
+			{
+				"n": 11,
+				"ans": 3,
+				"trans": "看过实物之后再决定买不买。",
+				"trans_en": "I'll decide whether to buy it after I've seen the real thing.",
+				"option_translations": [
+					"看（词典形）",
+					"看（て形）",
+					"看了之后",
+					"不看"
+				],
+				"option_translations_en": [
+					"see (dict.)",
+					"see (te)",
+					"after seeing",
+					"not see"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「Vた上で」＝做完之后再。",
+				"point_en": "Vた上で = after doing that, then.",
+				"link": "#/day/4-1/p1"
+			},
+			{
+				"n": 12,
+				"ans": 2,
+				"trans": "一边对孩子说要学习，大人自己却不学，我觉得不好。",
+				"trans_en": "It's wrong for adults to tell children to study while not studying themselves.",
+				"option_translations": [
+					"言う",
+					"言い＋つつ",
+					"言って",
+					"言った"
+				],
+				"option_translations_en": [
+					"say",
+					"masu-stem + つつ",
+					"te-form",
+					"ta-form"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「言いつつ」＝一边说着。",
+				"point_en": "つつ = while (written).",
+				"link": "#/day/4-3/p1"
+			},
+			{
+				"n": 13,
+				"ans": 3,
+				"trans": "按老规矩，女性不得进入这里面。",
+				"trans_en": "By long-standing custom, women are not allowed inside.",
+				"option_translations": [
+					"正在逐渐",
+					"应该",
+					"规定是…",
+					"不能那样做"
+				],
+				"option_translations_en": [
+					"gradually -ing",
+					"should",
+					"it is a rule that",
+					"cannot very well"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「ことになっている」表示规定。",
+				"point_en": "ことになっている = it is the rule.",
+				"link": "#/day/4-6/p2"
+			},
+			{
+				"n": 14,
+				"ans": 2,
+				"trans": "日本美丽的传统正在被日本人遗忘。",
+				"trans_en": "Japan's beautiful traditions are gradually being forgotten by the Japanese.",
+				"option_translations": [
+					"不得不忘",
+					"正在被遗忘",
+					"规定要忘",
+					"只不过忘"
+				],
+				"option_translations_en": [
+					"have no choice but to forget",
+					"are in the process of being forgotten",
+					"it is arranged we forget",
+					"merely forget"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「つつある」表示正在进行的变化。",
+				"point_en": "つつある = be in the process of.",
+				"link": "#/day/4-3/p0"
+			},
+			{
+				"n": 15,
+				"ans": 2,
+				"trans": "这商品现在确实受欢迎，但不过是一时的流行。",
+				"trans_en": "The product is popular now, but it's only a passing fad.",
+				"option_translations": [
+					"取决于",
+					"只不过是",
+					"不得不",
+					"并不是"
+				],
+				"option_translations_en": [
+					"depends on",
+					"is nothing more than",
+					"have no choice",
+					"it isn't that"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「にすぎない」＝只不过。",
+				"point_en": "にすぎない = nothing more than.",
+				"link": "#/day/4-6/p0"
+			}
+		],
+		"mondai2": [
+			{
+				"n": 16,
+				"ans": 3,
+				"trans": "我不想撒谎，所以被问到就不得不说真话。",
+				"trans_en": "I don't want to lie, so if I'm asked I have no choice but to tell the truth.",
+				"option_translations": [
+					"如果…的话",
+					"不得不",
+					"说真话",
+					"被问"
+				],
+				"option_translations_en": [
+					"if",
+					"have no choice but to",
+					"tell the truth",
+					"if asked"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「ざるをえない」。",
+				"point_en": "ざるをえない = have no choice but to.",
+				"link": "#/day/4-5/p2",
+				"order": "4→1→3→2"
+			},
+			{
+				"n": 17,
+				"ans": 1,
+				"trans": "既然已经这样，就再找个别的爱好吧。",
+				"trans_en": "Now that it's come to this, let's look for some other hobby.",
+				"option_translations": [
+					"什么",
+					"别的",
+					"既然",
+					"已经这样了"
+				],
+				"option_translations_en": [
+					"something",
+					"other",
+					"now that",
+					"it's come to this"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「こうなった上は」。",
+				"point_en": "Vた上は = now that it has come to this.",
+				"link": "#/day/4-1/p2",
+				"order": "4→3→1→2"
+			},
+			{
+				"n": 18,
+				"ans": 4,
+				"trans": "总是拖到最后才准备。这次本该更早准备好的。",
+				"trans_en": "I always leave prep to the last minute. I should have started earlier this time too.",
+				"option_translations": [
+					"准备",
+					"更早",
+					"应该",
+					"事先"
+				],
+				"option_translations_en": [
+					"prepare",
+					"earlier",
+					"should",
+					"in advance"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「ておくべきだった」。",
+				"point_en": "ておくべき = should have done it in advance.",
+				"link": "#/day/4-4/p2",
+				"order": "2→1→4→3"
+			},
+			{
+				"n": 19,
+				"ans": 2,
+				"trans": "因此想请大家给予协助。",
+				"trans_en": "So I would like to ask for everyone's cooperation.",
+				"option_translations": [
+					"情况是",
+					"做",
+					"请求",
+					"协助"
+				],
+				"option_translations_en": [
+					"the situation is that",
+					"do",
+					"request",
+					"your cooperation"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「お願いする次第です」郑重说明原委。",
+				"point_en": "次第です = (formal) that is how it stands / I hereby.",
+				"link": "#/day/4-2/p0",
+				"order": "4→3→2→1"
+			},
+			{
+				"n": 20,
+				"ans": 3,
+				"trans": "与此相对，四五十岁的人并不支持他。",
+				"trans_en": "By contrast, people in their 40s and 50s don't support him.",
+				"option_translations": [
+					"与此",
+					"人们",
+					"四五十岁的",
+					"相对"
+				],
+				"option_translations_en": [
+					"in contrast",
+					"people",
+					"those in their 40s–50s",
+					"versus"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「それに対し」。",
+				"point_en": "に対し = in contrast to that.",
+				"link": "#/day/4-6/p3",
+				"order": "1→4→3→2"
+			}
+		],
+		"mondai3": [
+			{
+				"n": 21,
+				"ans": 1,
+				"trans": "值此就业之际，承蒙您多方照顾。",
+				"trans_en": "Thank you for all your help as I started my job.",
+				"option_translations": [
+					"正当…之际",
+					"沿着",
+					"持续整个",
+					"响应"
+				],
+				"option_translations_en": [
+					"on the occasion of",
+					"along",
+					"over the whole",
+					"in response to"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「就職にあたっては」。",
+				"point_en": "にあたって = at the time of.",
+				"link": "#/day/4-5/p0"
+			},
+			{
+				"n": 22,
+				"ans": 3,
+				"trans": "视努力情况，也有可能调到一直希望的营业部。",
+				"trans_en": "Depending on my efforts I may be able to move to sales, which I wanted.",
+				"option_translations": [
+					"面向方面",
+					"在那之前",
+					"视…而定",
+					"对于"
+				],
+				"option_translations_en": [
+					"for the purpose of",
+					"prior to",
+					"depending on",
+					"toward"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「努力次第では」。",
+				"point_en": "次第では = depending on.",
+				"link": "#/day/4-2/p1"
+			},
+			{
+				"n": 23,
+				"ans": 4,
+				"trans": "一边学习前辈的做法，一边一件件记工作。",
+				"trans_en": "I'm learning the job piece by piece while following my seniors.",
+				"option_translations": [
+					"一学习就",
+					"却学习",
+					"在学习方面",
+					"一边学习一边"
+				],
+				"option_translations_en": [
+					"as soon as I copy",
+					"even though I copy",
+					"for copying",
+					"while copying"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「見習いつつ」。",
+				"point_en": "つつ = while.",
+				"link": "#/day/4-3/p1"
+			},
+			{
+				"n": 24,
+				"ans": 2,
+				"trans": "夏天也不得不用空调。",
+				"trans_en": "In summer we have no choice but to use the air conditioner.",
+				"option_translations": [
+					"只不过用",
+					"不得不使用",
+					"不该用",
+					"正在被用"
+				],
+				"option_translations_en": [
+					"merely use",
+					"have no choice but to use",
+					"should not use",
+					"is being used"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「使わざるをえない」。",
+				"point_en": "ざるをえない = cannot avoid doing.",
+				"link": "#/day/4-5/p2"
+			},
+			{
+				"n": 25,
+				"ans": 4,
+				"trans": "想努力达到前辈的期待。",
+				"trans_en": "I want to work hard to live up to my seniors' expectations.",
+				"option_translations": [
+					"相当于",
+					"与…有关",
+					"对于",
+					"响应／不辜负"
+				],
+				"option_translations_en": [
+					"amount to",
+					"be involved in",
+					"toward",
+					"respond to / live up to"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「期待にこたえる」。",
+				"point_en": "にこたえる = live up to (expectations).",
+				"link": "#/day/4-6/p2"
+			}
+		]
+	},
+	"w5": {
+		"mondai1": [
+			{
+				"n": 1,
+				"ans": 2,
+				"trans": "这座寺因绣球花出名，所以被称为绣球花寺。",
+				"trans_en": "The temple is famous for hydrangeas, which is why it's called Hydrangea Temple.",
+				"option_translations": [
+					"令人…的是",
+					"由于这个原因",
+					"就因为是…",
+					"如果能…"
+				],
+				"option_translations_en": [
+					"it's … that",
+					"from that fact",
+					"precisely because",
+					"if only"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「ことから」表示判断的依据。",
+				"point_en": "ことから = on the grounds that.",
+				"link": "#/day/5-1/p0"
+			},
+			{
+				"n": 2,
+				"ans": 3,
+				"trans": "就因为个子高，我在哪儿都很显眼。",
+				"trans_en": "Just because I'm tall I stand out wherever I am.",
+				"option_translations": [
+					"比较起来",
+					"作为交换",
+					"就因为",
+					"别说"
+				],
+				"option_translations_en": [
+					"considering",
+					"in exchange",
+					"precisely because (often unwelcome)",
+					"far from"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「ばかりに」表示就因为这个（多带来坏结果）。",
+				"point_en": "ばかりに = just because (unfortunate result).",
+				"link": "#/day/5-2/p2"
+			},
+			{
+				"n": 3,
+				"ans": 4,
+				"trans": "可以根据预算享受用餐。",
+				"trans_en": "You can enjoy a meal according to your budget.",
+				"option_translations": [
+					"对于",
+					"正当…之际",
+					"和…相比",
+					"根据／按照"
+				],
+				"option_translations_en": [
+					"toward",
+					"on the occasion of",
+					"compared with",
+					"in accordance with"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「に応じて」＝视情况相应地。",
+				"point_en": "に応じて = according to / in response to.",
+				"link": "#/day/5-3/p1"
+			},
+			{
+				"n": 4,
+				"ans": 1,
+				"trans": "不亲自问问本人，就不知道为什么那样做。",
+				"trans_en": "Unless I ask the person themselves I won't know why they did it.",
+				"option_translations": [
+					"如果不…的话",
+					"由于这个原因",
+					"就因为是…",
+					"如果能…"
+				],
+				"option_translations_en": [
+					"unless",
+					"from that fact",
+					"precisely because",
+					"if only"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「ないことには」＝如果不那样就。",
+				"point_en": "ないことには = unless that happens.",
+				"link": "#/day/5-1/p3"
+			},
+			{
+				"n": 5,
+				"ans": 3,
+				"trans": "入住本宿舍时，请先读好以下规定。",
+				"trans_en": "When you move into this dorm, please read the following rules first.",
+				"option_translations": [
+					"根据",
+					"按照",
+					"正当…的时候",
+					"相反"
+				],
+				"option_translations_en": [
+					"based on",
+					"according to",
+					"at the time of",
+					"contrary to"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「に際して」＝在那个时候。",
+				"point_en": "に際して = when / at the time of.",
+				"link": "#/day/5-3/p2"
+			},
+			{
+				"n": 6,
+				"ans": 1,
+				"trans": "正如他自己也承认的，他确实没长性。",
+				"trans_en": "As even he admits, he really does get bored easily.",
+				"option_translations": [
+					"到底不愧是",
+					"不但…",
+					"由于这个原因",
+					"与其说"
+				],
+				"option_translations_en": [
+					"as one would expect",
+					"not only",
+					"from that fact",
+					"rather than"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「だけあって」＝到底不愧。",
+				"point_en": "だけあって = as you'd expect from.",
+				"link": "#/day/5-4/p0"
+			},
+			{
+				"n": 7,
+				"ans": 4,
+				"trans": "税金是按照这张表计算的。",
+				"trans_en": "Tax is calculated on the basis of this table.",
+				"option_translations": [
+					"随着",
+					"根据（对应）",
+					"和…相比",
+					"以…为依据"
+				],
+				"option_translations_en": [
+					"as",
+					"in proportion to",
+					"compared with",
+					"based on"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「Nに基づいて」。",
+				"point_en": "に基づいて = based on.",
+				"link": "#/day/5-4/p2"
+			},
+			{
+				"n": 8,
+				"ans": 3,
+				"trans": "酒驾不但危害驾驶者，也危害其他人。",
+				"trans_en": "Drunk driving endangers not only the driver but other people too.",
+				"option_translations": [
+					"到底是",
+					"比较起来",
+					"不但…也",
+					"一说起"
+				],
+				"option_translations_en": [
+					"precisely because",
+					"considering",
+					"not only … but",
+					"when it comes to"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「ばかりか」＝不但，甚至。",
+				"point_en": "ばかりか = not only, but even.",
+				"link": "#/day/5-2/p1"
+			},
+			{
+				"n": 9,
+				"ans": 1,
+				"trans": "希望孩子能在可信赖的教育者指导下学习。",
+				"trans_en": "I want my child to study under a trustworthy educator.",
+				"option_translations": [
+					"在…之下",
+					"根据",
+					"正当…之际",
+					"根据"
+				],
+				"option_translations_en": [
+					"under",
+					"according to",
+					"at the time of",
+					"based on"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「Nの下で」＝在其指导／影响下。",
+				"point_en": "の下で = under the guidance of.",
+				"link": "#/day/5-6/p0"
+			},
+			{
+				"n": 10,
+				"ans": 2,
+				"trans": "她的想法和行动普通人很难理解。",
+				"trans_en": "Ordinary people find her thinking and behavior hard to understand.",
+				"option_translations": [
+					"能够",
+					"难以",
+					"很可能会",
+					"只好"
+				],
+				"option_translations_en": [
+					"can",
+					"hard to",
+					"might well",
+					"have no choice but to"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「理解しがたい」。",
+				"point_en": "がたい = hard to (often psychological).",
+				"link": "#/day/5-5/p1"
+			},
+			{
+				"n": 11,
+				"ans": 4,
+				"trans": "黄花开满田野，简直像铺了黄色地毯。",
+				"trans_en": "Yellow flowers cover the fields, just as if a yellow carpet had been laid.",
+				"option_translations": [
+					"多么…啊",
+					"都怪",
+					"到底不愧",
+					"仿佛…似的"
+				],
+				"option_translations_en": [
+					"how …!",
+					"it's because",
+					"as expected",
+					"as if"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「かのようだ」＝宛如。",
+				"point_en": "かのようだ = as if it were.",
+				"link": "#/day/5-5/p3"
+			},
+			{
+				"n": 12,
+				"ans": 2,
+				"trans": "明天大家一起去给本校足球队加油吧！",
+				"trans_en": "Tomorrow let's all go and cheer on our school's soccer team!",
+				"option_translations": [
+					"哪会去",
+					"去吧（劝诱）",
+					"去才是",
+					"去来着"
+				],
+				"option_translations_en": [
+					"as if I'd go",
+					"let's go",
+					"going is what",
+					"was going, wasn't I"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「行こうではないか」表示提议。",
+				"point_en": "Vようではないか = let's.",
+				"link": "#/day/5-6/p1"
+			},
+			{
+				"n": 13,
+				"ans": 2,
+				"trans": "就算许下做不到的诺言，也绝不可能遵守。",
+				"trans_en": "There's no way you can keep a promise you can't actually fulfill.",
+				"option_translations": [
+					"难以遵守",
+					"绝不可能遵守",
+					"当然遵守",
+					"很可能遵守"
+				],
+				"option_translations_en": [
+					"hard to keep",
+					"no chance of keeping",
+					"of course keep",
+					"might well keep"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「っこない」＝不可能。",
+				"point_en": "っこない = no chance of.",
+				"link": "#/day/5-5/p2"
+			},
+			{
+				"n": 14,
+				"ans": 3,
+				"trans": "会员的个人信息恕难告知。",
+				"trans_en": "I'm afraid we cannot give out members' personal information.",
+				"option_translations": [
+					"就是要告诉",
+					"告诉得不得了",
+					"难以告知",
+					"很可能会告诉"
+				],
+				"option_translations_en": [
+					"it follows we tell",
+					"can't help telling",
+					"cannot readily tell",
+					"might well tell"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「しかねます」委婉拒绝。",
+				"point_en": "かねる = cannot readily (polite refusal).",
+				"link": "#/day/5-5/p0"
+			},
+			{
+				"n": 15,
+				"ans": 4,
+				"trans": "那样下去很可能会搞坏身体。",
+				"trans_en": "At that rate she's liable to ruin her health.",
+				"option_translations": [
+					"没法搞坏",
+					"绝不会搞坏",
+					"难以搞坏",
+					"很可能会搞坏"
+				],
+				"option_translations_en": [
+					"no way to break",
+					"no chance of breaking",
+					"hard to break",
+					"might well break"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「かねない」＝很有可能（多指坏事）。",
+				"point_en": "かねない = might well (negative outcome).",
+				"link": "#/day/5-5/p0"
+			}
+		],
+		"mondai2": [
+			{
+				"n": 16,
+				"ans": 2,
+				"trans": "那只鸟不但叫声美，姿态也美。",
+				"trans_en": "That bird is beautiful not only in song but in form.",
+				"option_translations": [
+					"美丽",
+					"姿态也",
+					"叫声",
+					"不但"
+				],
+				"option_translations_en": [
+					"beautiful",
+					"the figure too",
+					"the cry",
+					"not only"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「のみか」＝不但。",
+				"point_en": "のみか = not only (written).",
+				"link": "#/day/5-2/p0",
+				"order": "3→4→2→1"
+			},
+			{
+				"n": 17,
+				"ans": 3,
+				"trans": "他很懂意大利，也难怪他一直想去。",
+				"trans_en": "He knows Italy well — no wonder he's been wanting to go.",
+				"option_translations": [
+					"这件事",
+					"一直",
+					"不愧想去的",
+					"有"
+				],
+				"option_translations_en": [
+					"the fact",
+					"all along",
+					"enough that he wants to go",
+					"there is"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「だけのことはある」。",
+				"point_en": "だけのことはある = it makes sense / as you'd expect.",
+				"link": "#/day/5-4/p1",
+				"order": "2→3→4→1"
+			},
+			{
+				"n": 18,
+				"ans": 3,
+				"trans": "以他那么在意时间的脾气，迟到了准会生气。",
+				"trans_en": "Knowing how fussy he is about time, he's sure to be angry if we're late.",
+				"option_translations": [
+					"啰嗦",
+					"就因为他是…",
+					"他的",
+					"对时间"
+				],
+				"option_translations_en": [
+					"fussy",
+					"knowing he is the sort who",
+					"his",
+					"about time"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「ことだから」＝就因为他是那种人。",
+				"point_en": "ことだから = knowing what he's like.",
+				"link": "#/day/5-1/p2",
+				"order": "3→1→4→2"
+			},
+			{
+				"n": 19,
+				"ans": 3,
+				"trans": "无论怎么练都不见进步，但她仍不放弃地继续练。",
+				"trans_en": "Practice brought no progress, but she kept at it without giving up.",
+				"option_translations": [
+					"放弃",
+					"练习",
+					"没有",
+					"这件事"
+				],
+				"option_translations_en": [
+					"give up",
+					"practice",
+					"without",
+					"the act of"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「あきらめることなく」。",
+				"point_en": "ことなく = without doing.",
+				"link": "#/day/5-6/p2",
+				"order": "1→4→3→2"
+			},
+			{
+				"n": 20,
+				"ans": 4,
+				"trans": "即便没说出口，那种态度也等于在说讨厌。",
+				"trans_en": "Even if it isn't said aloud, that attitude is the same as saying you dislike it.",
+				"option_translations": [
+					"态度是",
+					"等于",
+					"讨厌",
+					"也是在说"
+				],
+				"option_translations_en": [
+					"the attitude is",
+					"tantamount to",
+					"dislike",
+					"is also saying"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「言っているのも同然だ」。",
+				"point_en": "も同然だ = tantamount to.",
+				"link": "#/day/5-6/p3",
+				"order": "1→3→4→2"
+			}
+		],
+		"mondai3": [
+			{
+				"n": 21,
+				"ans": 2,
+				"trans": "就因为英语不好，在海外没法沟通。",
+				"trans_en": "Just because my English is weak I couldn't communicate abroad.",
+				"option_translations": [
+					"就因为是…",
+					"就因为",
+					"没有…地",
+					"如果不…"
+				],
+				"option_translations_en": [
+					"knowing one is",
+					"precisely because (bad result)",
+					"without",
+					"unless"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「苦手なばかりに」。",
+				"point_en": "ばかりに = just because (unfortunate).",
+				"link": "#/day/5-2/p2"
+			},
+			{
+				"n": 22,
+				"ans": 3,
+				"trans": "那样一来旅行的乐趣也很可能会减半。",
+				"trans_en": "Then the fun of the trip might well be cut in half.",
+				"option_translations": [
+					"难以减半",
+					"难以减半（礼貌）",
+					"很可能会减半",
+					"不像要减半"
+				],
+				"option_translations_en": [
+					"hard to halve",
+					"cannot readily halve",
+					"might well be halved",
+					"doesn't look like it will"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「しかねません」＝很可能。",
+				"point_en": "かねない = might well.",
+				"link": "#/day/5-5/p0"
+			},
+			{
+				"n": 23,
+				"ans": 3,
+				"trans": "说一周就能说流利英语，一时难以相信。",
+				"trans_en": "It's hard to believe English would become fluent in just a week.",
+				"option_translations": [
+					"相信是应该的",
+					"很可能会信",
+					"难以相信",
+					"不愧会信"
+				],
+				"option_translations_en": [
+					"of course believe",
+					"might well believe",
+					"hard to believe",
+					"as expected believe"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「信じがたい」。",
+				"point_en": "がたい = hard to.",
+				"link": "#/day/5-5/p1"
+			},
+			{
+				"n": 24,
+				"ans": 1,
+				"trans": "教材仿佛魔法一般好用。",
+				"trans_en": "The materials work as if by magic.",
+				"option_translations": [
+					"仿佛",
+					"到底不愧",
+					"不但",
+					"就因为"
+				],
+				"option_translations_en": [
+					"as if",
+					"as you'd expect",
+					"not only",
+					"just because"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「かのように」。",
+				"point_en": "かのように = as if.",
+				"link": "#/day/5-5/p3"
+			},
+			{
+				"n": 25,
+				"ans": 4,
+				"trans": "报名参加课程时请确认费用。",
+				"trans_en": "Please check the fee when you sign up for the course.",
+				"option_translations": [
+					"在…之下",
+					"根据",
+					"根据",
+					"正当…之际"
+				],
+				"option_translations_en": [
+					"under",
+					"according to",
+					"based on",
+					"at the time of"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「に際して」。",
+				"point_en": "に際して = when doing.",
+				"link": "#/day/5-3/p2"
+			}
+		]
+	},
+	"w6": {
+		"mondai1": [
+			{
+				"n": 1,
+				"ans": 4,
+				"trans": "既然要招待，就打算办成愉快的聚会。",
+				"trans_en": "Since we're inviting people, we intend to make it an enjoyable party.",
+				"option_translations": [
+					"以来",
+					"从…来看",
+					"据说",
+					"既然…就"
+				],
+				"option_translations_en": [
+					"since (time)",
+					"judging from",
+					"I hear",
+					"now that / as long as"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「からには」＝既然。",
+				"point_en": "からには = now that / as long as.",
+				"link": "#/day/6-1/p0"
+			},
+			{
+				"n": 2,
+				"ans": 2,
+				"trans": "那么失礼的人，我再也不会邀请。",
+				"trans_en": "I'll never invite such a rude person again.",
+				"option_translations": [
+					"因为嘛",
+					"不会…的",
+					"正是",
+					"多么…啊"
+				],
+				"option_translations_en": [
+					"because",
+					"will not (speaker's will)",
+					"precisely",
+					"how …!"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「誘うまい」＝不打算再邀请。",
+				"point_en": "まい = will not (volition / conjecture).",
+				"link": "#/day/6-4/p1"
+			},
+			{
+				"n": 3,
+				"ans": 1,
+				"trans": "从学校方面来说，家里的问题很难管到。",
+				"trans_en": "From the school's standpoint, they can hardly deal with problems at home.",
+				"option_translations": [
+					"从…来说",
+					"单从…就",
+					"虽说…也不",
+					"既然"
+				],
+				"option_translations_en": [
+					"from the point of view of",
+					"even from",
+					"even if",
+					"now that"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「からいえば」＝从该立场说。",
+				"point_en": "からいえば = speaking from that side.",
+				"link": "#/day/6-2/p0"
+			},
+			{
+				"n": 4,
+				"ans": 3,
+				"trans": "今日下午两点起在站前广场举行候选人演说。",
+				"trans_en": "From 2 p.m. today there will be a candidate's speech in the plaza in front of the station.",
+				"option_translations": [
+					"正当…之际",
+					"在那之前",
+					"在…地点",
+					"到…为止"
+				],
+				"option_translations_en": [
+					"on the occasion of",
+					"prior to",
+					"at (place, formal)",
+					"through / until"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「Nにおいて」表示场所（郑重）。",
+				"point_en": "において = at (formal place).",
+				"link": "#/day/6-6/p2"
+			},
+			{
+				"n": 5,
+				"ans": 3,
+				"trans": "从梅雨到夏天，日本又热又难受。",
+				"trans_en": "From the rainy season through summer, Japan is uncomfortably hot.",
+				"option_translations": [
+					"以来",
+					"以…为首",
+					"从…到…",
+					"围绕"
+				],
+				"option_translations_en": [
+					"since",
+					"starting with",
+					"from … through",
+					"over / concerning"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「から〜にかけて」表示时间跨度。",
+				"point_en": "にかけて = from A through B.",
+				"link": "#/day/6-3/p2"
+			},
+			{
+				"n": 6,
+				"ans": 2,
+				"trans": "不做准备活动就不能游泳。",
+				"trans_en": "You must not swim until you've done a warm-up.",
+				"option_translations": [
+					"既然做了",
+					"做了之后才行",
+					"既然做了就",
+					"虽说没做也不"
+				],
+				"option_translations_en": [
+					"now that I did",
+					"not until after doing",
+					"now that",
+					"not that I didn't"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「てからでないと」＝在那之前不行。",
+				"point_en": "てからでないと = not until after.",
+				"link": "#/day/6-3/p1"
+			},
+			{
+				"n": 7,
+				"ans": 4,
+				"trans": "妹妹理解得慢，但论起认真谁也比不过。",
+				"trans_en": "My sister is slow to understand, but when it comes to effort nobody beats her.",
+				"option_translations": [
+					"既然",
+					"按…来说还算",
+					"虽说也不",
+					"论到这方面"
+				],
+				"option_translations_en": [
+					"now that",
+					"considering",
+					"even if",
+					"when it comes to"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「にかけては」＝在这一方面。",
+				"point_en": "にかけては = when it comes to this point.",
+				"link": "#/day/6-3/p3"
+			},
+			{
+				"n": 8,
+				"ans": 1,
+				"trans": "既然过集体生活，就必须守规则和礼节。",
+				"trans_en": "If you're going to live together, you have to keep the rules and manners.",
+				"option_translations": [
+					"既然",
+					"虽说也不",
+					"持续整个",
+					"从…来看"
+				],
+				"option_translations_en": [
+					"now that / since",
+					"even if",
+					"over the whole",
+					"from the viewpoint of"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「以上」＝既然处于这种情况。",
+				"point_en": "以上 = now that that's the case.",
+				"link": "#/day/6-1/p2"
+			},
+			{
+				"n": 9,
+				"ans": 1,
+				"trans": "这汤单看颜色就显得很辣。",
+				"trans_en": "This soup looks spicy just from the color.",
+				"option_translations": [
+					"单从…就",
+					"以…为首",
+					"既然",
+					"代替"
+				],
+				"option_translations_en": [
+					"even from",
+					"starting with",
+					"now that",
+					"in place of"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「色からして」＝单从颜色就。",
+				"point_en": "からして = even judging from that alone.",
+				"link": "#/day/6-2/p1"
+			},
+			{
+				"n": 10,
+				"ans": 3,
+				"trans": "从外来人的角度看，这里的习惯也许很难接受。",
+				"trans_en": "From an outsider's point of view these customs may be hard to accept.",
+				"option_translations": [
+					"既然",
+					"单从…就",
+					"从…来看",
+					"如果不…"
+				],
+				"option_translations_en": [
+					"now that",
+					"even from",
+					"seen from",
+					"if not"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「からみると」。",
+				"point_en": "からみると = seen from.",
+				"link": "#/day/6-2/p2"
+			},
+			{
+				"n": 11,
+				"ans": 4,
+				"trans": "这本小说主人公的原型肯定是那个人。",
+				"trans_en": "The model for this novel's hero is undoubtedly that person.",
+				"option_translations": [
+					"有点像",
+					"只不过",
+					"仿佛",
+					"一定是"
+				],
+				"option_translations_en": [
+					"-ish",
+					"nothing more than",
+					"as if",
+					"no doubt"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「に相違ない」书面，表示断定。",
+				"point_en": "に相違ない = there is no mistake that.",
+				"link": "#/day/6-5/p3"
+			},
+			{
+				"n": 12,
+				"ans": 3,
+				"trans": "必须思考日本在亚洲的角色。",
+				"trans_en": "We have to think about Japan's role in Asia.",
+				"option_translations": [
+					"围绕的",
+					"到…为止",
+					"在…之中的",
+					"对于"
+				],
+				"option_translations_en": [
+					"concerning",
+					"through",
+					"in (a field)",
+					"toward"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「における」是「において」的连体形。",
+				"point_en": "における = in (prenominal).",
+				"link": "#/day/6-6/p2"
+			},
+			{
+				"n": 13,
+				"ans": 3,
+				"trans": "本校可以学习以英语为首的七种语言。",
+				"trans_en": "Our school offers seven languages, starting with English.",
+				"option_translations": [
+					"单从…就",
+					"围绕",
+					"以…为首",
+					"在"
+				],
+				"option_translations_en": [
+					"even from",
+					"over",
+					"starting with",
+					"at"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「をはじめ」。",
+				"point_en": "をはじめ = starting with / including foremost.",
+				"link": "#/day/6-6/p0"
+			},
+			{
+				"n": 14,
+				"ans": 2,
+				"trans": "听说昨晚的地震是震度3。",
+				"trans_en": "They say last night's quake was intensity 3.",
+				"option_translations": [
+					"这件事",
+					"据说",
+					"多么…啊",
+					"就是…的"
+				],
+				"option_translations_en": [
+					"the fact",
+					"I hear / they say",
+					"how …!",
+					"the kind of thing"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「〜とか」表示不确定的传闻。",
+				"point_en": "とか = I hear (soft hearsay).",
+				"link": "#/day/6-4/p0"
+			},
+			{
+				"n": 15,
+				"ans": 1,
+				"trans": "教也就是被教。",
+				"trans_en": "Teaching is nothing other than being taught.",
+				"option_translations": [
+					"正是／不外乎",
+					"只好",
+					"规定是",
+					"到底不愧"
+				],
+				"option_translations_en": [
+					"nothing other than",
+					"have no choice",
+					"it is arranged",
+					"as you'd expect"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「にほかならない」。",
+				"point_en": "にほかならない = nothing other than.",
+				"link": "#/day/6-5/p3"
+			}
+		],
+		"mondai2": [
+			{
+				"n": 16,
+				"ans": 1,
+				"trans": "我输了是事实，只好承认。",
+				"trans_en": "It's a fact that I lost, so I have no choice but to admit it.",
+				"option_translations": [
+					"其他",
+					"比起",
+					"承认",
+					"没有"
+				],
+				"option_translations_en": [
+					"other",
+					"than",
+					"admit",
+					"there is not"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「認めるよりほかない」。",
+				"point_en": "よりほかない = nothing else to do but.",
+				"link": "#/day/6-5/p2",
+				"order": "3→2→1→4"
+			},
+			{
+				"n": 17,
+				"ans": 3,
+				"trans": "他连写都不练，光盯着汉字看，那样肯定记不住。",
+				"trans_en": "He doesn't even practice writing, just stares at the kanji — that way he certainly won't remember them.",
+				"option_translations": [
+					"对／于",
+					"被记住",
+					"不",
+					"那样的话"
+				],
+				"option_translations_en": [
+					"in / by",
+					"be remembered",
+					"not",
+					"with that"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「に決まっている」。",
+				"point_en": "に決まっている = it's certain that.",
+				"link": "#/day/6-5/p0",
+				"order": "4→1→2→3"
+			},
+			{
+				"n": 18,
+				"ans": 4,
+				"trans": "节约虽好，但不能因为可惜就不开灯学习，那样眼睛会坏。",
+				"trans_en": "Saving is good, but you shouldn't study with the light off just because it's a waste.",
+				"option_translations": [
+					"虽说也不",
+					"可惜",
+					"如果学习",
+					"不开灯"
+				],
+				"option_translations_en": [
+					"even if",
+					"wasteful",
+					"if you study",
+					"without turning on the light"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「からといって」＝虽说如此也不能。",
+				"point_en": "からといって = just because … it doesn't mean.",
+				"link": "#/day/6-3/p0",
+				"order": "1→4→2→3"
+			},
+			{
+				"n": 19,
+				"ans": 3,
+				"trans": "参加自由。不必为参加不参加而烦恼。",
+				"trans_en": "Attendance is optional. There's no need to agonize over whether to go.",
+				"option_translations": [
+					"不会为难吧",
+					"烦恼是没有的",
+					"什么的",
+					"要不要参加"
+				],
+				"option_translations_en": [
+					"probably won't settle",
+					"no need to worry",
+					"or something",
+					"whether to"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「しようかすまいか」。",
+				"point_en": "V(よ)うかVまいか = whether to or not.",
+				"link": "#/day/6-4/p3",
+				"order": "4→3→1→2"
+			},
+			{
+				"n": 20,
+				"ans": 1,
+				"trans": "自从听到同学在教室说自己坏话，他就没再来学校。",
+				"trans_en": "Ever since he overheard classmates badmouthing him, he has stopped coming to school.",
+				"option_translations": [
+					"以来",
+					"他",
+					"听到",
+					"完了"
+				],
+				"option_translations_en": [
+					"since",
+					"he",
+					"hearing",
+					"ended up"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「て以来」。",
+				"point_en": "て以来 = ever since.",
+				"link": "#/day/6-1/p3",
+				"order": "3→4→2→1"
+			}
+		],
+		"mondai3": [
+			{
+				"n": 21,
+				"ans": 2,
+				"trans": "从四月上旬到中旬举办郁金香节。",
+				"trans_en": "A tulip festival is held from early to mid-April.",
+				"option_translations": [
+					"持续整个",
+					"从…到…",
+					"正当…之际",
+					"随着"
+				],
+				"option_translations_en": [
+					"over the whole period",
+					"from … through",
+					"on the occasion of",
+					"as"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「にかけて」表示期间。",
+				"point_en": "にかけて = from A through B.",
+				"link": "#/day/6-3/p2"
+			},
+			{
+				"n": 22,
+				"ans": 4,
+				"trans": "虽说有节日，并不等于很多人在种郁金香。",
+				"trans_en": "Just because there's a festival doesn't mean many people grow tulips.",
+				"option_translations": [
+					"从…来看",
+					"既然",
+					"单从…就",
+					"虽说也不"
+				],
+				"option_translations_en": [
+					"judging from",
+					"now that",
+					"even from",
+					"just because … not"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「からといって」。",
+				"point_en": "からといって = that doesn't mean.",
+				"link": "#/day/6-3/p0"
+			},
+			{
+				"n": 23,
+				"ans": 3,
+				"trans": "不先把花种上，节日就办不成。",
+				"trans_en": "You can't hold the festival until the flowers have been planted.",
+				"option_translations": [
+					"种了的时候",
+					"种了以来",
+					"种了之后才行",
+					"既然要种"
+				],
+				"option_translations_en": [
+					"when planted",
+					"since planting",
+					"not until after planting",
+					"now that we plant"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「てからでないと」。",
+				"point_en": "てからでないと = not until after.",
+				"link": "#/day/6-3/p1"
+			},
+			{
+				"n": 24,
+				"ans": 4,
+				"trans": "以日本产量第一的富山为首，各地的花都汇集过来。",
+				"trans_en": "Flowers gather from tulip-growing areas nationwide, starting with Toyama, Japan's top producer.",
+				"option_translations": [
+					"在（口语）",
+					"围绕",
+					"在",
+					"以…为首"
+				],
+				"option_translations_en": [
+					"at (casual)",
+					"over",
+					"at",
+					"starting with"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「をはじめ」。",
+				"point_en": "をはじめ = starting with.",
+				"link": "#/day/6-6/p0"
+			},
+			{
+				"n": 25,
+				"ans": 1,
+				"trans": "听说数量之多全国数一数二。",
+				"trans_en": "I hear it's one of the top one or two in the country for volume.",
+				"option_translations": [
+					"据说有",
+					"不会有吧",
+					"就是有的",
+					"正是有才"
+				],
+				"option_translations_en": [
+					"they say there is",
+					"probably isn't",
+					"it is that there is",
+					"only because there is"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「のだとか」传闻。",
+				"point_en": "とか = I hear.",
+				"link": "#/day/6-4/p0"
+			}
+		]
+	},
+	"w7": {
+		"mondai1": [
+			{
+				"n": 1,
+				"ans": 1,
+				"trans": "无论是买还是借，课本都必须带来。",
+				"trans_en": "Whether you buy it or borrow it, you must bring the textbook.",
+				"option_translations": [
+					"无论是…还是",
+					"又是…又是",
+					"也…也",
+					"又…又"
+				],
+				"option_translations_en": [
+					"whether … or",
+					"X and Y and",
+					"also / also",
+					"and / and"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「にしろ〜にしろ」。",
+				"point_en": "にしろ〜にしろ = whether A or B.",
+				"link": "#/day/7-2/p2"
+			},
+			{
+				"n": 2,
+				"ans": 1,
+				"trans": "以住院为契机买了保险。",
+				"trans_en": "Hospitalization was the trigger for taking out insurance.",
+				"option_translations": [
+					"以…为契机",
+					"以…为基础",
+					"不顾",
+					"尽管"
+				],
+				"option_translations_en": [
+					"taking … as a turning point",
+					"based on",
+					"without caring about",
+					"despite"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「を契機として」。",
+				"point_en": "を契機として = taking that as a turning point.",
+				"link": "#/day/7-6/p2"
+			},
+			{
+				"n": 3,
+				"ans": 2,
+				"trans": "收到带着心意的礼物会很高兴。",
+				"trans_en": "It's nice to receive a gift that has feeling put into it.",
+				"option_translations": [
+					"转了一圈的",
+					"倾注了（心意）",
+					"通过了",
+					"贯穿了"
+				],
+				"option_translations_en": [
+					"went around",
+					"filled with (feeling)",
+					"went through",
+					"ran through"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「心のこもった」。",
+				"point_en": "こめる = put (feeling) into.",
+				"link": "#/day/7-4/p1"
+			},
+			{
+				"n": 4,
+				"ans": 2,
+				"trans": "她既听不见也看不见。",
+				"trans_en": "She could neither hear nor see.",
+				"option_translations": [
+					"听不见就",
+					"既听不见也",
+					"如果不听见",
+					"即使听见"
+				],
+				"option_translations_en": [
+					"if she can't hear",
+					"can't hear, and also",
+					"if she doesn't hear",
+					"even if she hears"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「も〜ば〜も」并列。",
+				"point_en": "も〜ば〜も = neither … nor / both.",
+				"link": "#/day/7-2/p3"
+			},
+			{
+				"n": 5,
+				"ans": 3,
+				"trans": "他顾不上衣服弄脏，抱起了受伤的人。",
+				"trans_en": "He scooped up the injured person without caring that his clothes would get dirty.",
+				"option_translations": [
+					"不问",
+					"每当",
+					"不顾",
+					"即使"
+				],
+				"option_translations_en": [
+					"regardless of",
+					"every time",
+					"without caring about",
+					"even if"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「もかまわず」。",
+				"point_en": "もかまわず = without minding.",
+				"link": "#/day/7-1/p0"
+			},
+			{
+				"n": 6,
+				"ans": 1,
+				"trans": "那位钢琴家在国内外都很活跃。",
+				"trans_en": "That pianist is active both at home and abroad.",
+				"option_translations": [
+					"不问",
+					"以…为中心",
+					"通过",
+					"以…为契机"
+				],
+				"option_translations_en": [
+					"regardless of",
+					"centered on",
+					"through",
+					"taking as a chance"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「内外を問わず」。",
+				"point_en": "を問わず = regardless of.",
+				"link": "#/day/7-1/p3"
+			},
+			{
+				"n": 7,
+				"ans": 2,
+				"trans": "通过志愿者活动为社会做贡献。",
+				"trans_en": "Contribute to society through volunteer work.",
+				"option_translations": [
+					"关于",
+					"通过",
+					"根据",
+					"在那之前"
+				],
+				"option_translations_en": [
+					"concerning",
+					"through",
+					"according to",
+					"prior to"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「を通じて」。",
+				"point_en": "を通じて = through.",
+				"link": "#/day/7-4/p2"
+			},
+			{
+				"n": 8,
+				"ans": 3,
+				"trans": "今天又是打雷又是地震，总觉得不平常。",
+				"trans_en": "What with thunder and then an earthquake, today feels anything but normal.",
+				"option_translations": [
+					"无论是…还是",
+					"每当…每当",
+					"又是…又是",
+					"也…也"
+				],
+				"option_translations_en": [
+					"whether",
+					"every time",
+					"X and Y and (messy list)",
+					"also"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「やら〜やら」列举杂乱事物。",
+				"point_en": "やら〜やら lists mixed items.",
+				"link": "#/day/7-2/p0"
+			},
+			{
+				"n": 9,
+				"ans": 2,
+				"trans": "人就是会想要自己没有的东西。",
+				"trans_en": "People naturally want what they don't have.",
+				"option_translations": [
+					"多么…啊",
+					"就是会…的（本质）",
+					"不必",
+					"有…之处"
+				],
+				"option_translations_en": [
+					"how …!",
+					"that's what people do",
+					"no need",
+					"there is something"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「ものだ」谈一般倾向。",
+				"point_en": "ものだ states a general truth.",
+				"link": "#/day/7-3/p0"
+			},
+			{
+				"n": 10,
+				"ans": 3,
+				"trans": "每当穿上这件衣服，就会想起母亲。",
+				"trans_en": "Whenever I wear this dress I think of my mother.",
+				"option_translations": [
+					"又是",
+					"每（公文）",
+					"每当",
+					"沿着"
+				],
+				"option_translations_en": [
+					"and",
+					"per (formal)",
+					"every time",
+					"along"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「Vるにつけ」。",
+				"point_en": "につけ = every time / whenever.",
+				"link": "#/day/7-2/p1"
+			},
+			{
+				"n": 11,
+				"ans": 2,
+				"trans": "那种病有从动物传到人的危险。",
+				"trans_en": "That disease may spread from animals to humans.",
+				"option_translations": [
+					"契机",
+					"危险／恐怕",
+					"略微",
+					"倾向"
+				],
+				"option_translations_en": [
+					"turning point",
+					"risk / fear that",
+					"a touch of",
+					"a leaning"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「恐れがある」。",
+				"point_en": "恐れがある = there is a risk that.",
+				"link": "#/day/7-5/p0"
+			},
+			{
+				"n": 12,
+				"ans": 4,
+				"trans": "虽说对身体好，也不是吃得越多越好。",
+				"trans_en": "Just because it's healthy doesn't mean the more you eat the better.",
+				"option_translations": [
+					"有道理",
+					"也就是说",
+					"取决于",
+					"也并非如此"
+				],
+				"option_translations_en": [
+					"there is reason",
+					"it follows that",
+					"depends",
+					"not necessarily"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「というものでもない」。",
+				"point_en": "というものでもない = not necessarily.",
+				"link": "#/day/7-5/p2"
+			},
+			{
+				"n": 13,
+				"ans": 3,
+				"trans": "这座小镇有让人心情平静下来的东西。",
+				"trans_en": "This town has something that soothes the heart.",
+				"option_translations": [
+					"就是会…",
+					"哪会",
+					"有…之处",
+					"不该"
+				],
+				"option_translations_en": [
+					"that's what one does",
+					"as if I would",
+					"there is something that",
+					"one shouldn't"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「ものがある」表示确实能感觉到某种特质。",
+				"point_en": "ものがある = there is something (notable).",
+				"link": "#/day/7-5/p1"
+			},
+			{
+				"n": 14,
+				"ans": 1,
+				"trans": "这本习题集是以实际课堂教材为基础编写的。",
+				"trans_en": "This workbook is based on materials actually used in class.",
+				"option_translations": [
+					"以…为基础",
+					"不问",
+					"倾注",
+					"以…为契机"
+				],
+				"option_translations_en": [
+					"based on",
+					"regardless of",
+					"putting into",
+					"taking as a chance"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「をもとにして」。",
+				"point_en": "をもとに = based on.",
+				"link": "#/day/7-6/p0"
+			},
+			{
+				"n": 15,
+				"ans": 2,
+				"trans": "网上预约时需要密码。",
+				"trans_en": "A password is required when you reserve online.",
+				"option_translations": [
+					"正在…之中",
+					"在…的时候",
+					"每次",
+					"作为交换"
+				],
+				"option_translations_en": [
+					"in the middle of",
+					"when / on the occasion of",
+					"every time",
+					"in place of"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「Nの際には」。",
+				"point_en": "際 = when / at the time of.",
+				"link": "#/day/7-6/p3"
+			}
+		],
+		"mondai2": [
+			{
+				"n": 16,
+				"ans": 4,
+				"trans": "他们不可能理解。那纯粹是浪费时间。",
+				"trans_en": "There's no way they'll understand. It would just be a waste of time.",
+				"option_translations": [
+					"浪费",
+					"东西／就是",
+					"时间的",
+					"所谓"
+				],
+				"option_translations_en": [
+					"waste",
+					"thing / the very",
+					"of time",
+					"what you call"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「というものだ」表示说话人的评价。",
+				"point_en": "というものだ = that's what I'd call.",
+				"link": "#/day/7-3/p2",
+				"order": "3→1→4→2"
+			},
+			{
+				"n": 17,
+				"ans": 2,
+				"trans": "别人讨厌的事自己不该做。",
+				"trans_en": "You shouldn't do to others what they hate.",
+				"option_translations": [
+					"讨厌",
+					"做",
+					"事情",
+					"不该"
+				],
+				"option_translations_en": [
+					"hate",
+					"do",
+					"the thing",
+					"one shouldn't"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「ものではない」表示劝戒。",
+				"point_en": "ものではない = that's not what one should do.",
+				"link": "#/day/7-3/p1",
+				"order": "1→3→2→4"
+			},
+			{
+				"n": 18,
+				"ans": 1,
+				"trans": "邮购目录常送来。不管希望不希望都会寄来。",
+				"trans_en": "Mail-order catalogs often arrive, whether you asked for them or not.",
+				"option_translations": [
+					"不管",
+					"不做",
+					"希望",
+					"被寄来"
+				],
+				"option_translations_en": [
+					"regardless of",
+					"not do",
+					"wish",
+					"are sent"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「にかかわらず」。",
+				"point_en": "にかかわらず = regardless of.",
+				"link": "#/day/7-1/p2",
+				"order": "3→2→1→4"
+			},
+			{
+				"n": 19,
+				"ans": 3,
+				"trans": "书借给他以后被弄脏还回来了。再也不借了。",
+				"trans_en": "I lent him a book and it came back dirty. Never again.",
+				"option_translations": [
+					"绝不再借",
+					"还回来了",
+					"绝对再",
+					"弄脏了之后"
+				],
+				"option_translations_en": [
+					"as if I'd lend again",
+					"came back",
+					"absolutely again",
+					"having gotten dirty"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「ものか」强烈否定。",
+				"point_en": "ものか = as if I would.",
+				"link": "#/day/7-3/p3",
+				"order": "4→2→3→1"
+			},
+			{
+				"n": 20,
+				"ans": 1,
+				"trans": "以香烟涨价为契机想戒烟，但失败了。",
+				"trans_en": "I tried to quit smoking when the price went up, but failed.",
+				"option_translations": [
+					"以…为契机",
+					"涨价了",
+					"想戒",
+					"把那件事"
+				],
+				"option_translations_en": [
+					"taking as a chance",
+					"went up",
+					"tried to quit",
+					"that (nominalizer)"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「のをきっかけに」。",
+				"point_en": "をきっかけに = taking that as a chance.",
+				"link": "#/day/7-6/p1",
+				"order": "2→4→1→3"
+			}
+		],
+		"mondai3": [
+			{
+				"n": 21,
+				"ans": 3,
+				"trans": "以父母的友人为中心开始了募捐。",
+				"trans_en": "A fund-raising drive began, centered on the parents' friends.",
+				"option_translations": [
+					"以…为契机",
+					"以…为基础",
+					"以…为中心",
+					"围绕"
+				],
+				"option_translations_en": [
+					"taking as a chance",
+					"based on",
+					"centered on",
+					"over"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「を中心に」。",
+				"point_en": "を中心に = centered on.",
+				"link": "#/day/7-4/p0"
+			},
+			{
+				"n": 22,
+				"ans": 1,
+				"trans": "在海外也有不问年龄就能做手术的国家。",
+				"trans_en": "Overseas there are countries where you can have the operation regardless of age.",
+				"option_translations": [
+					"不问年龄",
+					"尽管年龄",
+					"靠年龄",
+					"倾注年龄"
+				],
+				"option_translations_en": [
+					"regardless of age",
+					"despite age",
+					"relying on age",
+					"putting age into"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「を問わず」。",
+				"point_en": "を問わず = regardless of.",
+				"link": "#/day/7-1/p3"
+			},
+			{
+				"n": 23,
+				"ans": 4,
+				"trans": "国家就不能想想办法吗？",
+				"trans_en": "Can't the government do something about this situation?",
+				"option_translations": [
+					"就是那样吧",
+					"有…之处",
+					"也并非如此",
+					"就不能…吗"
+				],
+				"option_translations_en": [
+					"that's what it is, right",
+					"there is something",
+					"not necessarily",
+					"can't they …?"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「ものでしょうか」表示不满的反问。",
+				"point_en": "ものか／ものでしょうか = (rhetorical) surely not / can't they.",
+				"link": "#/day/7-5/p3"
+			},
+			{
+				"n": 24,
+				"ans": 3,
+				"trans": "通过媒体报道，捐款从全国汇来。",
+				"trans_en": "Donations came in from all over the country through media coverage.",
+				"option_translations": [
+					"每",
+					"不问",
+					"通过",
+					"在…的时候"
+				],
+				"option_translations_en": [
+					"per",
+					"regardless of",
+					"through",
+					"when"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「を通じて」。",
+				"point_en": "を通じて = through.",
+				"link": "#/day/7-4/p2"
+			},
+			{
+				"n": 25,
+				"ans": 1,
+				"trans": "收到了许多充满心意的信件。",
+				"trans_en": "Many heartfelt letters arrived.",
+				"option_translations": [
+					"充满了（心意）的",
+					"不顾",
+					"又是",
+					"即使"
+				],
+				"option_translations_en": [
+					"filled with feeling",
+					"without caring",
+					"and",
+					"even if"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「心のこもった」。",
+				"point_en": "こもった = filled with (feeling).",
+				"link": "#/day/7-4/p1"
+			}
+		]
+	},
+	"w8": {
+		"mondai1": [
+			{
+				"n": 1,
+				"ans": 3,
+				"trans": "未成年也能入会。不过需要监护人许可。",
+				"trans_en": "Minors can join. However, a guardian's permission is required.",
+				"option_translations": [
+					"于是",
+					"总之",
+					"不过",
+					"因此"
+				],
+				"option_translations_en": [
+					"then",
+					"in short",
+					"however / provided that",
+					"therefore"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「ただし」补充例外条件。",
+				"point_en": "ただし = provided that / however.",
+				"link": "#/day/8-4/p3"
+			},
+			{
+				"n": 2,
+				"ans": 4,
+				"trans": "“第一次看歌舞伎。”“那感觉怎么样？”",
+				"trans_en": "“I saw kabuki for the first time.” “So how was it?”",
+				"option_translations": [
+					"另外",
+					"于是（解决问题）",
+					"且说",
+					"那么／所以呢"
+				],
+				"option_translations_en": [
+					"incidentally",
+					"so (to deal with it)",
+					"now then",
+					"and so / well?"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「それで」催促往下说。",
+				"point_en": "それで = and so? (prompting).",
+				"link": "#/day/8-1/p3"
+			},
+			{
+				"n": 3,
+				"ans": 1,
+				"trans": "请带驾照或健康保险证等身份证明。",
+				"trans_en": "Please bring a driver's license or health-insurance card to prove your identity.",
+				"option_translations": [
+					"或者",
+					"也就是说",
+					"不过",
+					"话虽如此"
+				],
+				"option_translations_en": [
+					"or",
+					"namely",
+					"however",
+					"admittedly"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「あるいは」表示选择。",
+				"point_en": "あるいは = or.",
+				"link": "#/day/8-3/p1"
+			},
+			{
+				"n": 4,
+				"ans": 3,
+				"trans": "开瓶盖总是很费劲。于是就开发了这个商品。",
+				"trans_en": "I always struggled with jar lids. So I developed this product.",
+				"option_translations": [
+					"于是（一…就）",
+					"且说",
+					"于是（为此）",
+					"另外"
+				],
+				"option_translations_en": [
+					"thereupon",
+					"now then",
+					"and so (that's why I acted)",
+					"incidentally"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「そこで」表示因此采取行动。",
+				"point_en": "そこで = and so (I did X).",
+				"link": "#/day/8-2/p1"
+			},
+			{
+				"n": 5,
+				"ans": 4,
+				"trans": "“这张小猫照片真可爱。”“是啊。对了，最近没看见邻居家的猫呢。”",
+				"trans_en": "“This kitten photo is cute.” “Yeah. Come to think of it, I haven't seen the neighbor's cat lately.”",
+				"option_translations": [
+					"之所以",
+					"也就是说",
+					"不过",
+					"说起来"
+				],
+				"option_translations_en": [
+					"the reason is",
+					"which means",
+					"admittedly",
+					"come to think of it"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「そういえば」表示突然想起。",
+				"point_en": "そういえば = that reminds me.",
+				"link": "#/day/8-2/p2"
+			},
+			{
+				"n": 6,
+				"ans": 1,
+				"trans": "人气职业高尔夫选手后面跟着一大群也就是观众的人。",
+				"trans_en": "A popular pro golfer has a crowd of spectators — that is, a gallery — trailing after him.",
+				"option_translations": [
+					"也就是说",
+					"或者",
+					"而且（加码）",
+					"顺便一提"
+				],
+				"option_translations_en": [
+					"namely",
+					"or",
+					"what's more",
+					"by the way"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「すなわち」换一种说法。",
+				"point_en": "すなわち = namely / that is.",
+				"link": "#/day/8-3/p0"
+			},
+			{
+				"n": 7,
+				"ans": 2,
+				"trans": "“信帮我寄了吗？”“那个啊，我忘了，还在包里。”",
+				"trans_en": "“Did you mail the letter?” “Well, I forgot — it's still in my bag.”",
+				"option_translations": [
+					"说起来",
+					"可是（结果不如意）",
+					"对了换话题",
+					"于是"
+				],
+				"option_translations_en": [
+					"come to think of it",
+					"well actually (unexpected)",
+					"anyway, changing topic",
+					"and so"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「それが」引出不如意的结果。",
+				"point_en": "それが = well, as it turns out.",
+				"link": "#/day/8-2/p0"
+			},
+			{
+				"n": 8,
+				"ans": 3,
+				"trans": "“为什么不要收据？”“因为用不着嘛。”",
+				"trans_en": "“Why don't you take the receipt?” “Because I don't need it.”",
+				"option_translations": [
+					"且说",
+					"可是",
+					"因为（辩解）",
+					"另外"
+				],
+				"option_translations_en": [
+					"now then",
+					"but",
+					"because (justifying)",
+					"incidentally"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「だって」口语申辩。",
+				"point_en": "だって = because (defensive).",
+				"link": "#/day/8-3/p3"
+			},
+			{
+				"n": 9,
+				"ans": 1,
+				"trans": "啊，左手无名指有戒指…也就是说已经结婚了吧。",
+				"trans_en": "Ah, a ring on the left ring finger… so that means they're married?",
+				"option_translations": [
+					"也就是说",
+					"之所以",
+					"因此",
+					"对了换话题"
+				],
+				"option_translations_en": [
+					"which means",
+					"the reason is",
+					"therefore",
+					"anyway"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「ということは」从事实推出结论。",
+				"point_en": "ということは = which means that.",
+				"link": "#/day/8-4/p0"
+			},
+			{
+				"n": 10,
+				"ans": 2,
+				"trans": "我能来这儿今天是最后一次。因为我要换工作了。",
+				"trans_en": "Today is the last time I can come here. That's because I'm changing jobs.",
+				"option_translations": [
+					"不过",
+					"之所以／因为",
+					"于是",
+					"尽管如此"
+				],
+				"option_translations_en": [
+					"admittedly",
+					"the reason is",
+					"and so",
+					"even so"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「というのは」解释原因。",
+				"point_en": "というのは = the reason is.",
+				"link": "#/day/8-4/p1"
+			},
+			{
+				"n": 11,
+				"ans": 2,
+				"trans": "“想了解日本传统文化。”“那就选这个课程吧。”",
+				"trans_en": "“I want to learn about traditional Japanese culture.” “In that case this course is good.”",
+				"option_translations": [
+					"所以",
+					"如果是那样的话",
+					"尽管如此",
+					"尽管那样"
+				],
+				"option_translations_en": [
+					"so",
+					"in that case",
+					"even so",
+					"and yet"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「それなら」承接对方的话给建议。",
+				"point_en": "それなら = in that case.",
+				"link": "#/day/8-1/p2"
+			},
+			{
+				"n": 12,
+				"ans": 4,
+				"trans": "“昨天真不容易。”“是啊，好累。对了，高桥选手拿奖牌了呢！”",
+				"trans_en": "“Yesterday was rough.” “Yeah, I was exhausted. Anyway — Takahashi won a medal!”",
+				"option_translations": [
+					"总之",
+					"也就是说",
+					"尽管那样",
+					"对了换话题"
+				],
+				"option_translations_en": [
+					"in short",
+					"which means",
+					"and yet",
+					"anyway / changing topic"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「それはそうと」转换话题。",
+				"point_en": "それはそうと = anyway (new topic).",
+				"link": "#/day/8-2/p3"
+			},
+			{
+				"n": 13,
+				"ans": 2,
+				"trans": "感谢您的订购。另外，这封邮件是系统自动回复的。",
+				"trans_en": "Thank you for your order. Also, this email is an automatic reply.",
+				"option_translations": [
+					"且说",
+					"另外补充",
+					"可是",
+					"只是"
+				],
+				"option_translations_en": [
+					"now then",
+					"additionally / please note",
+					"but",
+					"only"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「なお」补充说明。",
+				"point_en": "なお = additionally (formal).",
+				"link": "#/day/8-5/p1"
+			},
+			{
+				"n": 14,
+				"ans": 1,
+				"trans": "从书架取下一本书打开。于是里面夹着一张旧照片。",
+				"trans_en": "I took a book from the shelf and opened it. Then I found an old photo inside.",
+				"option_translations": [
+					"于是（一…就发现）",
+					"也就是说",
+					"于是（为此行动）",
+					"如果那样"
+				],
+				"option_translations_en": [
+					"thereupon / when I did",
+					"namely",
+					"and so I acted",
+					"if so"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「すると」表示一做就发生。",
+				"point_en": "すると = and then (what happened next).",
+				"link": "#/day/8-5/p3"
+			},
+			{
+				"n": 15,
+				"ans": 3,
+				"trans": "学分不够。因此你就不能毕业。",
+				"trans_en": "You don't have enough credits. Therefore you cannot graduate.",
+				"option_translations": [
+					"不过",
+					"于是（一…就）",
+					"因此",
+					"可是（不如意）"
+				],
+				"option_translations_en": [
+					"admittedly",
+					"thereupon",
+					"therefore",
+					"well actually"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「したがって」表示逻辑结论。",
+				"point_en": "したがって = therefore (formal).",
+				"link": "#/day/8-4/p2"
+			}
+		],
+		"mondai2": [
+			{
+				"n": 16,
+				"ans": 4,
+				"trans": "全球变暖被大肆炒作。可据某位知识人说，也有人认为没那回事。",
+				"trans_en": "Global warming is much talked about. But according to one intellectual, some say it isn't so.",
+				"option_translations": [
+					"可是",
+					"也有人说没那回事",
+					"某位知识人",
+					"根据"
+				],
+				"option_translations_en": [
+					"but",
+					"some say it isn't so",
+					"a certain intellectual",
+					"according to"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「によれば」。",
+				"point_en": "によれば = according to.",
+				"link": "#/day/8-5/p0",
+				"order": "3→4→2→1"
+			},
+			{
+				"n": 17,
+				"ans": 1,
+				"trans": "请参加自治会清扫。不过这不是义务，而是自愿。",
+				"trans_en": "Please join the neighborhood cleanup. This is not an obligation, however, but voluntary.",
+				"option_translations": [
+					"不是义务",
+					"这是",
+					"不过",
+					"出于自主的"
+				],
+				"option_translations_en": [
+					"not a duty",
+					"this is",
+					"admittedly / however",
+					"of one's own will"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「もっとも」补充修正。",
+				"point_en": "もっとも = although / that said.",
+				"link": "#/day/8-5/p0",
+				"order": "2→3→1→4"
+			},
+			{
+				"n": 18,
+				"ans": 1,
+				"trans": "多次提醒这会考到别弄错。尽管如此还是有很多学生错了，真遗憾。",
+				"trans_en": "I warned them again and again this would be on the test. Even so, many students got it wrong.",
+				"option_translations": [
+					"学生",
+					"尽管如此",
+					"弄错了",
+					"有很多是遗憾的"
+				],
+				"option_translations_en": [
+					"students",
+					"even so",
+					"got it wrong",
+					"it was a pity many did"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「それなのに」逆接。",
+				"point_en": "それなのに = and yet.",
+				"link": "#/day/8-1/p0",
+				"order": "2→1→3→4"
+			},
+			{
+				"n": 19,
+				"ans": 2,
+				"trans": "可以使用信用卡，或者便利店后付也可以。",
+				"trans_en": "You can use a credit card, or pay later at a convenience store.",
+				"option_translations": [
+					"或者",
+					"在便利店的",
+					"后付也可以",
+					"可以使用"
+				],
+				"option_translations_en": [
+					"or",
+					"at a convenience store",
+					"later payment is also possible",
+					"can be used"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「あるいは」连接选择。",
+				"point_en": "あるいは = or.",
+				"link": "#/day/8-3/p1",
+				"order": "1→4→2→3"
+			},
+			{
+				"n": 20,
+				"ans": 3,
+				"trans": "这个项目的主题是“生态”，也就是考虑环境。",
+				"trans_en": "The theme of this project is “eco,” that is, thinking about the environment.",
+				"option_translations": [
+					"也就是生态",
+					"主题是生态",
+					"换句话说",
+					"考虑环境"
+				],
+				"option_translations_en": [
+					"namely ecology",
+					"the theme is eco",
+					"in other words",
+					"think about the environment"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「すなわち／つまり」。",
+				"point_en": "すなわち = namely.",
+				"link": "#/day/8-3/p0",
+				"order": "2→1→3→4"
+			}
+		],
+		"mondai3": [
+			{
+				"n": 21,
+				"ans": 3,
+				"trans": "且说，绿山市将为从未用过电脑的人开办电脑班。",
+				"trans_en": "Now then, Midoriyama City will offer a computer class for people who have never used a PC.",
+				"option_translations": [
+					"可是",
+					"另外",
+					"且说（转入正题）",
+					"于是"
+				],
+				"option_translations_en": [
+					"but",
+					"additionally",
+					"now then (starting the topic)",
+					"thereupon"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "通知开头用「さて」转入正题。",
+				"point_en": "さて = now then (opening a topic).",
+				"link": "#/day/8-5/p2"
+			},
+			{
+				"n": 22,
+				"ans": 1,
+				"trans": "去年的参加者说“很实用，而且免费真好”。",
+				"trans_en": "Last year's participants said it was practical and, what's more, free.",
+				"option_translations": [
+					"免费真帮了大忙",
+					"没意思",
+					"学费贵",
+					"明年还想参加"
+				],
+				"option_translations_en": [
+					"being free was a help",
+					"was boring",
+					"the fee was high",
+					"I want to join next year"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "和「わかりやすく、しかも」并列好评。",
+				"point_en": "しかも adds another plus.",
+				"link": "#/day/8-6/p1"
+			},
+			{
+				"n": 23,
+				"ans": 2,
+				"trans": "“说起来，我还没用过电脑呢。”",
+				"trans_en": "“Come to think of it, I've never used a computer.”",
+				"option_translations": [
+					"之所以",
+					"说起来",
+					"也就是说",
+					"尽管那样"
+				],
+				"option_translations_en": [
+					"the reason is",
+					"come to think of it",
+					"which means",
+					"and yet"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「そういえば」想起自己的情况。",
+				"point_en": "そういえば = that reminds me.",
+				"link": "#/day/8-2/p2"
+			},
+			{
+				"n": 24,
+				"ans": 1,
+				"trans": "可以来教室，或者使用网上教材。",
+				"trans_en": "You can come to the classroom, or use the online materials.",
+				"option_translations": [
+					"或者",
+					"也就是说",
+					"而且",
+					"所以"
+				],
+				"option_translations_en": [
+					"or",
+					"namely",
+					"what's more",
+					"so"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「あるいは」表示选择。",
+				"point_en": "あるいは = or.",
+				"link": "#/day/8-3/p1"
+			},
+			{
+				"n": 25,
+				"ans": 3,
+				"trans": "另外，教材费另计。",
+				"trans_en": "Also, the cost of materials is extra.",
+				"option_translations": [
+					"尽管如此",
+					"因此",
+					"另外",
+					"可是（不如意）"
+				],
+				"option_translations_en": [
+					"even so",
+					"therefore",
+					"additionally",
+					"well actually"
+				],
+				"why": [
+					"",
+					"",
+					"",
+					""
+				],
+				"why_en": [
+					"",
+					"",
+					"",
+					""
+				],
+				"point": "「なお」补充注意事项。",
+				"point_en": "なお = additionally.",
+				"link": "#/day/8-5/p1"
+			}
+		]
+	}
+}

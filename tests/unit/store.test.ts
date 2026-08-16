@@ -23,6 +23,8 @@ import {
 	entryHash,
 	favsPayload,
 	flipCard,
+	getDisplayVersion,
+	getVersion,
 	flipFavCard,
 	activeMistakeCount,
 	getSearchHistory,
@@ -199,9 +201,13 @@ describe("language and modules", () => {
 	});
 
 	it("toggles display flags and contrast week mode", () => {
+		const storeVersion = getVersion();
+		const displayVersion = getDisplayVersion();
 		toggleDisplay("ruby");
 		toggleDisplay("jp");
 		toggleDisplay("cn");
+		expect(getVersion()).toBe(storeVersion);
+		expect(getDisplayVersion()).toBe(displayVersion + 3);
 		applyDisplayClasses();
 		setCtMode("week");
 		setCtWeek(3);

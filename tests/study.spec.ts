@@ -139,6 +139,48 @@ test.describe("study navigation", () => {
 		await expect(page.locator(".ex .en").first()).toBeVisible();
 	});
 
+	test("keeps scroll when toggling 注音 / 日语 / 翻译", async ({ page }) => {
+		await waitForStudy(page);
+		await pickType(page, "vocab");
+		await page.goto("/study/day/1-1");
+		await expect(page.locator(".mem-bar").first()).toBeVisible({ timeout: 15_000 });
+
+		await page.evaluate(() => window.scrollTo(0, 900));
+		const before = await page.evaluate(() => window.scrollY);
+		expect(before).toBeGreaterThan(200);
+
+		for (const label of [/注音|Readings/, /日语|Japanese/, /翻译|Meaning/]) {
+			await page.locator(".mem-bar").getByRole("button", { name: label }).click();
+			const after = await page.evaluate(() => window.scrollY);
+			expect(after).toBeGreaterThan(200);
+			expect(Math.abs(after - before)).toBeLessThan(40);
+		}
+	});
+
+	test("keeps scroll when answering N3 vocab weekly-test options", async ({ page }) => {
+		await waitForStudy(page);
+		await pickType(page, "vocab");
+		await page.goto("/study/day/1-7");
+		await expect(page.locator(".opt-btn").first()).toBeVisible({ timeout: 15_000 });
+
+		const target = page.locator(".q").nth(12).locator(".opt-btn").first();
+		await target.scrollIntoViewIfNeeded();
+		const before = await page.evaluate(() => window.scrollY);
+		expect(before).toBeGreaterThan(80);
+		await target.click();
+		await expect(page.locator(".qz-result").first()).toBeVisible();
+		const after = await page.evaluate(() => window.scrollY);
+		expect(after).toBeGreaterThan(80);
+	});
+
+	test("returns from a grammar day to the catalog in one tap", async ({ page }) => {
+		await waitForStudy(page);
+		await page.locator(".day-item").first().click();
+		await expect(page.locator("h2.page").first()).toBeVisible({ timeout: 15_000 });
+		await page.getByRole("button", { name: /目录|Catalog/ }).first().click();
+		await expect(page.locator(".week-card").first()).toBeVisible({ timeout: 15_000 });
+	});
+
 	test("opens catalog, a day, vocab, and kanji", async ({ page }) => {
 		await waitForStudy(page);
 		await expect(page.locator("#title")).toContainText(/语法|Grammar/);
@@ -171,6 +213,7 @@ test.describe("study navigation", () => {
 		await expect(page.locator("#title")).toContainText(/听解|Listening|章|Ch\.|节/);
 		if (await page.locator(".day-item").first().isVisible()) await page.locator(".day-item").first().click();
 		await expect(page.locator(".listening-detail, .listening-player").first()).toBeVisible({ timeout: 15_000 });
+		await expect(page.locator(".listening-lesson, .listening-player").first()).toBeVisible({ timeout: 15_000 });
 	});
 });
 
