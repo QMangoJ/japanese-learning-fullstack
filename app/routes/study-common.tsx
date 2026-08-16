@@ -548,6 +548,52 @@ export function HenkeiPage({ data }: { data: any }) {
 	);
 }
 
+/* ---------------- 口语缩约（口語の縮約） ---------------- */
+
+export function KougoPage({ data }: { data: any }) {
+	const KG = data?.kougo;
+	if (!KG) return <div className="empty">{lx("口语缩约数据还没加载完，请稍后重试。", "Spoken-contraction data is still loading.")}</div>;
+	return (
+		<>
+			{KG.intro ? <div className="meta" style={{ marginBottom: 6 }}>{lx(KG.intro, KG.intro_en)}</div> : null}
+			{KG.seeAlso ? (
+				<div className="note" style={{ marginBottom: 12 }}>
+					<span>{lx(KG.seeAlso, KG.seeAlso_en)}</span>{" "}
+					<button type="button" className="side-item" style={{ display: "inline-flex", width: "auto", padding: "4px 10px", marginLeft: 6 }} onClick={() => navTo("#/henkei")}>
+						✍️ {lx("变形", "Verb forms")}
+					</button>
+				</div>
+			) : null}
+			{(KG.groups || []).map((group: any, gi: number) => (
+				<div className="card kougo-group" key={gi}>
+					<h3 className="jp" style={{ marginTop: 0 }}>
+						{lx(group.title, group.title_en)}
+					</h3>
+					{group.note ? <div className="meta" style={{ marginBottom: 8 }}>{lx(group.note, group.note_en)}</div> : null}
+					{(group.items || []).map((it: any, ii: number) => (
+						<div className="kougo-item" key={ii}>
+							<div className="kougo-item__spoken jp">{it.spoken}</div>
+							<div className="kougo-item__full jp">
+								<span className="kougo-item__arrow">←</span>
+								{it.full}
+							</div>
+							<div className="kougo-item__mean">{lx(it.cn, it.en)}</div>
+							{it.eg ? (
+								<div className="kougo-item__eg jp">
+									{it.eg}
+									<SayButton text={it.eg} />
+									{it.eg_cn || it.eg_en ? <span className="cn">（{lx(it.eg_cn, it.eg_en)}）</span> : null}
+								</div>
+							) : null}
+						</div>
+					))}
+				</div>
+			))}
+			{KG.footer ? <div className="meta" style={{ marginTop: 10 }}>{lx(KG.footer, KG.footer_en)}</div> : null}
+		</>
+	);
+}
+
 /* ---------------- 数字 ---------------- */
 
 function NumTable({ t }: { t: any }) {

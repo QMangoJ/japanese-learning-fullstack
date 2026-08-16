@@ -8,6 +8,7 @@ import {
 	FavsPage,
 	Fmt,
 	HenkeiPage,
+	KougoPage,
 	HomePage,
 	MistakesPage,
 	RubyHtml,
@@ -214,6 +215,42 @@ describe("HenkeiPage", () => {
 		);
 		expect(screen.getByText("五段動詞のテ形・タ形（音便）")).toBeInTheDocument();
 		expect(screen.getByText("書く→書いて")).toBeInTheDocument();
+	});
+});
+
+describe("KougoPage", () => {
+	it("does not crash when contraction data is missing", () => {
+		expect(() => render(<KougoPage data={{}} />)).not.toThrow();
+		expect(screen.getByText(/口语缩约数据还没加载完|Spoken-contraction data/)).toBeInTheDocument();
+	});
+
+	it("renders spoken contractions and examples", () => {
+		render(
+			<KougoPage
+				data={{
+					kougo: {
+						intro: "日常会话里会缩",
+						groups: [
+							{
+								title: "てしまう：完成、遗憾、不小心",
+								items: [
+									{
+										spoken: "〜ちゃった / 〜じゃった",
+										full: "〜てしまった / 〜でしまった",
+										cn: "不小心……了",
+										eg: "食べちゃった",
+										eg_cn: "不小心吃掉了",
+									},
+								],
+							},
+						],
+					},
+				}}
+			/>,
+		);
+		expect(screen.getByText("〜ちゃった / 〜じゃった")).toBeInTheDocument();
+		expect(screen.getByText("〜てしまった / 〜でしまった")).toBeInTheDocument();
+		expect(screen.getByText("食べちゃった")).toBeInTheDocument();
 	});
 });
 
