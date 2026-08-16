@@ -164,7 +164,9 @@ const LT2MOD: Record<string, ModuleKey> = {
 };
 
 const listeners = new Set<() => void>();
+const displayListeners = new Set<() => void>();
 let version = 0;
+let displayVersion = 0;
 export function subscribe(listener: () => void) {
 	listeners.add(listener);
 	return () => listeners.delete(listener);
@@ -172,9 +174,21 @@ export function subscribe(listener: () => void) {
 export function getVersion() {
 	return version;
 }
+export function subscribeDisplay(listener: () => void) {
+	displayListeners.add(listener);
+	return () => displayListeners.delete(listener);
+}
+export function getDisplayVersion() {
+	return displayVersion;
+}
+function emitDisplay() {
+	displayVersion += 1;
+	displayListeners.forEach((fn) => fn());
+}
 export function emit() {
 	version += 1;
 	listeners.forEach((fn) => fn());
+	emitDisplay();
 }
 
 function lsGet(key: string, fallback: string) {
@@ -421,6 +435,7 @@ export function toggleTheme() {
 	setTheme(THEME === "dark" ? "light" : "dark");
 }
 export function toggleDisplay(kind: "ruby" | "jp" | "cn") {
+	const y = typeof window !== "undefined" ? window.scrollY : 0;
 	if (kind === "ruby") {
 		noRuby = !noRuby;
 		lsSet("noruby", noRuby ? "1" : "0");
@@ -432,7 +447,13 @@ export function toggleDisplay(kind: "ruby" | "jp" | "cn") {
 		lsSet("hidecn", hideCn ? "1" : "0");
 	}
 	applyDisplayClasses();
-	emit();
+	// Display flags are CSS-only. Re-rendering the whole study tree (emit)
+	// remounts the day page and jumps scroll, so only the toggle buttons listen.
+	emitDisplay();
+	if (typeof window !== "undefined") {
+		window.scrollTo(0, y);
+		requestAnimationFrame(() => window.scrollTo(0, y));
+	}
 }
 
 export function openWeekSet() {
@@ -1313,7 +1334,17 @@ export function hydrateFromStorage() {
 async function bootN2() {
 	try {
 		const names = ["n2grammar", "n2vocab", "n2kanji"] as const;
-		const [g2, v2, k2] = await Promise.all(names.map((n) => fetch("/data/" + DATA_FILES[n]).then((r) => r.json())));
+		const [g2, v2, k2, n2ExamExplanations, n2DailyExplanations] = await Promise.all([
+			...names.map((n) => fetch("/data/" + DATA_FILES[n]).then((r) => r.json())),
+			fetch("/data/n2-grammar-explanations.json")
+				.then((r) => (r.ok ? r.json() : {}))
+				.catch(() => ({})),
+			fetch("/data/n2-grammar-daily-explanations.json")
+				.then((r) => (r.ok ? r.json() : {}))
+				.catch(() => ({})),
+		]);
+		g2.besatsu = n2ExamExplanations || {};
+		g2.daily_explanations = n2DailyExplanations || {};
 		G2 = g2;
 		V2 = v2;
 		K2 = k2;

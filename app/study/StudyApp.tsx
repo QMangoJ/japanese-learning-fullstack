@@ -66,7 +66,9 @@ import {
 	setNavImpl,
 	showingFavFc,
 	subscribe,
+	subscribeDisplay,
 	getVersion,
+	getDisplayVersion,
 	toggleDisplay,
 	type LevelKey,
 	type TypeKey,
@@ -74,6 +76,14 @@ import {
 
 function useStudyTick() {
 	return useSyncExternalStore(subscribe, getVersion, () => 0);
+}
+
+function useDisplayTick() {
+	return useSyncExternalStore(subscribeDisplay, getDisplayVersion, () => 0);
+}
+
+function preventToggleScroll(event: { preventDefault(): void }) {
+	event.preventDefault();
 }
 
 function updateStickyVars() {
@@ -111,6 +121,7 @@ function updateNumNavActive() {
 function Header({
 	title,
 	showBack,
+	backLabel,
 	showTypebar,
 	showSkills,
 	onBack,
@@ -118,16 +129,18 @@ function Header({
 }: {
 	title: string;
 	showBack: boolean;
+	backLabel: string;
 	showTypebar: boolean;
 	showSkills: boolean;
 	onBack: () => void;
 	onOpenLevel: () => void;
 }) {
+	useDisplayTick();
 	return (
 		<div className="topbar" id="topbar">
 			<header className="top">
 				<button className="back" id="backBtn" style={{ display: showBack ? "" : "none" }} onClick={onBack}>
-					‹ <span className="lbl">{lx("返回", "Back")}</span>
+					‹ <span className="lbl">{backLabel}</span>
 				</button>
 				<button className="lvchip" id="lvChip" aria-haspopup="dialog" onClick={onOpenLevel}>
 					{LEVEL.toUpperCase()} <span className="cv">▾</span>
@@ -156,6 +169,7 @@ function Header({
 					id="topAction"
 					title={noRuby ? lx("注音：关", "Readings: off") : lx("注音：开", "Readings: on")}
 					aria-label={noRuby ? lx("注音：关", "Readings: off") : lx("注音：开", "Readings: on")}
+					onMouseDown={preventToggleScroll}
 					onClick={() => toggleDisplay("ruby")}
 				>
 					かな
@@ -550,12 +564,11 @@ function viewMeta(key: string): { nav: string; title: string; back: boolean } {
 }
 
 export function StudyApp() {
-	const tick = useStudyTick();
+	useStudyTick();
 	const location = useLocation();
 	const navigate = useNavigate();
 	const [booted, setBooted] = useState(false);
 	const [sheet, setSheet] = useState<"level" | "common" | null>(null);
-	const [lastView, setLastView] = useState("");
 	const isTrial = typeof window !== "undefined" && new URLSearchParams(location.search).get("trial") === "1";
 
 	useEffect(() => {
@@ -616,12 +629,9 @@ export function StudyApp() {
 
 	const routeKey = pathToKey(location.pathname);
 	if (routeKey !== "#/favs") closeFavFc();
-	const viewKey = MODULE + "|" + routeKey + "|" + tick;
+	const viewKey = MODULE + "|" + routeKey;
 	useLayoutEffect(() => {
-		if (viewKey !== lastView) {
-			window.scrollTo(0, 0);
-			setLastView(viewKey);
-		}
+		window.scrollTo(0, 0);
 		if (routeKey === "#/") saveLastVisit("#/");
 		const day = parseDayRoute(routeKey);
 		if (day) saveLastVisit(`#/day/${day.w}-${day.d}`);
@@ -629,7 +639,7 @@ export function StudyApp() {
 		if (routeKey === "#/contrast" && MODULE !== contrastModule()) setModule(contrastModule());
 		updateStickyVars();
 		updateNumNavActive();
-	});
+	}, [viewKey]);
 
 	useEffect(() => {
 		const onScroll = () => {
@@ -715,9 +725,10 @@ export function StudyApp() {
 			<Header
 				title={meta.title}
 				showBack={meta.back}
+				backLabel={day ? lx("目录", "Catalog") : lx("返回", "Back")}
 				showTypebar={routeKey === "#/" || Boolean(day)}
 				showSkills={LEVEL === "n3"}
-				onBack={() => (history.length > 1 ? navigate(-1) : navTo("#/"))}
+				onBack={() => (day ? navTo("#/") : history.length > 1 ? navigate(-1) : navTo("#/"))}
 				onOpenLevel={() => setSheet("level")}
 			/>
 			<Sidebar routeKey={routeKey} onLevel={pickLevel} />
