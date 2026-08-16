@@ -41,7 +41,8 @@ describe("ListeningN3Content", () => {
 		expect(screen.getByText(/女士的妈妈是哪一个人/)).toBeInTheDocument();
 	});
 
-	it("renders every catalog section without crashing", () => {
+	it("renders every catalog section without crashing", async () => {
+		const user = userEvent.setup();
 		for (const chapter of listeningBookChapters) {
 			for (const section of chapter.sections) {
 				let view;
@@ -52,6 +53,9 @@ describe("ListeningN3Content", () => {
 				}
 				expect(screen.queryByText(/未找到这一节听解内容/)).not.toBeInTheDocument();
 				expect(screen.getByRole("heading", { level: 1 })).toBeInTheDocument();
+				expect(screen.getByText("答え")).toBeInTheDocument();
+				await user.click(screen.getByText("答え"));
+				expect(screen.getByText("聞き取り原文")).toBeInTheDocument();
 				view.unmount();
 			}
 		}
