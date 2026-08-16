@@ -241,6 +241,9 @@ export let MISTAKES: Mistake[] = [];
 export let ACCOUNT: PublicUser | null = null;
 export let accountReady = false;
 export let authConfigured = false;
+export type AccountFeature = "favs" | "mistakes";
+export type LoginPrompt = { reason: AccountFeature; next: string } | null;
+export let LOGIN_PROMPT: LoginPrompt = null;
 export let noRuby = false;
 export let hideJp = false;
 export let hideCn = false;
@@ -528,9 +531,41 @@ export function saveMistakes() {
 		pushMistakesNow();
 	}, 400);
 }
+export function needsAccount() {
+	return accountReady && authConfigured && !ACCOUNT;
+}
+
+export function closeLoginPrompt() {
+	if (!LOGIN_PROMPT) return;
+	LOGIN_PROMPT = null;
+	emit();
+}
+
+export function googleLoginHref(next?: string) {
+	const path = next || LOGIN_PROMPT?.next || "/study";
+	return `/auth/google?next=${encodeURIComponent(path)}`;
+}
+
+export function requestAccount(reason: AccountFeature, next?: string) {
+	if (!needsAccount()) return true;
+	LOGIN_PROMPT = {
+		reason,
+		next: next || (reason === "favs" ? "/study/favs" : "/study/mistakes"),
+	};
+	emit();
+	return false;
+}
+
+export function goAccountPage(key: "#/favs" | "#/mistakes") {
+	const reason: AccountFeature = key === "#/favs" ? "favs" : "mistakes";
+	if (!requestAccount(reason, keyToPath(key))) return;
+	navTo(key);
+}
+
 export function addMistake(type: string, text: string) {
 	const value = (text || "").trim();
 	if (!value) return;
+	if (!requestAccount("mistakes", "/study/mistakes")) return;
 	MISTAKES.unshift({
 		id: Date.now() + "-" + Math.random().toString(36).slice(2, 7),
 		type,
@@ -590,12 +625,14 @@ export function registerFavMeta(id: string, snap: FavSnap) {
 	FAVMETA[id] = snap;
 }
 export function toggleFav(id: string) {
+	if (!requestAccount("favs", "/study/favs")) return;
 	if (FAV[id]) delete FAV[id];
 	else if (FAVMETA[id]) FAV[id] = { ...FAVMETA[id], ts: Date.now() };
 	saveFav();
 	emit();
 }
 export function saveSelectionFav(type: string, text: string, hash: string) {
+	if (!requestAccount("favs", "/study/favs")) return "";
 	const id = selectionFavId(type, text);
 	FAV[id] = {
 		module: "selection",
@@ -1281,6 +1318,7 @@ export function resetStudyStateForTests() {
 	ACCOUNT = null;
 	accountReady = false;
 	authConfigured = false;
+	LOGIN_PROMPT = null;
 	_favSyncing = false;
 	_favPendingPush = false;
 	_favReady = false;
@@ -1347,6 +1385,13 @@ export function resetStudyStateForTests() {
 	navImpl = () => {};
 	afterPaintImpl = () => {};
 	if (typeof document !== "undefined") applyTheme();
+}
+
+export function setAccountStateForTests(user: PublicUser | null, configured: boolean, ready = true) {
+	ACCOUNT = user;
+	authConfigured = configured;
+	accountReady = ready;
+	LOGIN_PROMPT = null;
 }
 
 export function hydrateFromStorage() {

@@ -20,6 +20,12 @@ import {
 	ACCOUNT,
 	accountReady,
 	authConfigured,
+	LOGIN_PROMPT,
+	closeLoginPrompt,
+	goAccountPage,
+	googleLoginHref,
+	needsAccount,
+	requestAccount,
 	DATA,
 	FAV,
 	LANG,
@@ -288,6 +294,36 @@ function AccountChip() {
 	);
 }
 
+function LoginPromptDialog() {
+	useStudyTick();
+	if (!LOGIN_PROMPT) return null;
+	const forFavs = LOGIN_PROMPT.reason === "favs";
+	return (
+		<>
+			<div className="login-mask" onClick={closeLoginPrompt} />
+			<div className="login-dialog" id="loginDialog" role="dialog" aria-modal="true" aria-labelledby="loginDialogTitle">
+				<h2 id="loginDialogTitle">
+					{forFavs ? lx("收藏需要登录", "Sign in to save favorites") : lx("错题本需要登录", "Sign in to use your notebook")}
+				</h2>
+				<p>
+					{lx(
+						"这类内容按账号分开保存。登录后即可使用，并在多台设备之间同步。",
+						"This is stored per account. Sign in to use it and sync across devices.",
+					)}
+				</p>
+				<div className="login-dialog__actions">
+					<button type="button" onClick={closeLoginPrompt}>
+						{lx("取消", "Cancel")}
+					</button>
+					<a className="login-dialog__go" id="loginDialogGo" href={googleLoginHref()}>
+						{lx("使用 Google 登录", "Sign in with Google")}
+					</a>
+				</div>
+			</div>
+		</>
+	);
+}
+
 function AuthBanner() {
 	const [show, setShow] = useState(false);
 	useEffect(() => {
@@ -347,7 +383,10 @@ function Sidebar({ routeKey, onLevel }: { routeKey: string; onLevel: (lv: LevelK
 	];
 	const favCount = Object.keys(FAV).length;
 	const row = (go: string, ic: string, label: string, count: string | number | null, on: boolean) => (
-		<button className={`side-item ${on ? "on" : ""}`} onClick={() => navTo(go)}>
+		<button
+			className={`side-item ${on ? "on" : ""}`}
+			onClick={() => (go === "#/favs" || go === "#/mistakes" ? goAccountPage(go) : navTo(go))}
+		>
 			<span className="ic">{ic}</span>
 			{label}
 			{count != null && count !== "" ? <span className="ct">{count}</span> : null}
@@ -498,7 +537,8 @@ function BottomNav({ active, onCommon }: { active: string; onCommon: () => void 
 			className={active === nav ? "on" : ""}
 			onClick={() => {
 				if (nav === "common") onCommon();
-				else navTo({ home: "#/", search: "#/search", favs: "#/favs", mistakes: "#/mistakes" }[nav] || "#/");
+				else if (nav === "favs" || nav === "mistakes") goAccountPage(nav === "favs" ? "#/favs" : "#/mistakes");
+				else navTo({ home: "#/", search: "#/search" }[nav] || "#/");
 			}}
 		>
 			<span className="ic">{ic}</span>
@@ -617,7 +657,11 @@ function SelectionPopover({ routeKey }: { routeKey: string }) {
 					disabled={state.saved}
 					onClick={async () => {
 						const { saveSelectionFav } = await import("./store");
-						saveSelectionFav(state.type, state.text, routeKey);
+						const id = saveSelectionFav(state.type, state.text, routeKey);
+						if (!id) {
+							setState(null);
+							return;
+						}
 						setState({ ...state, saved: true });
 						try {
 							document.getSelection()?.removeAllRanges();
@@ -710,7 +754,19 @@ export function StudyApp() {
 	}, [location.search]);
 
 	useEffect(() => {
+		if (!needsAccount()) return;
+		const here = pathToKey(location.pathname);
+		if (here !== "#/favs" && here !== "#/mistakes") return;
+		requestAccount(here === "#/favs" ? "favs" : "mistakes", keyToPath(here));
+		navTo("#/");
+	}, [location.pathname, accountReady, authConfigured, ACCOUNT]);
+
+	useEffect(() => {
 		const onKey = (e: KeyboardEvent) => {
+			if (e.key === "Escape" && LOGIN_PROMPT) {
+				closeLoginPrompt();
+				return;
+			}
 			if (e.key === "Escape" && sheet) {
 				setSheet(null);
 				return;
@@ -856,6 +912,7 @@ export function StudyApp() {
 			<BottomNav active={meta.nav} onCommon={() => setSheet("common")} />
 			<Sheet kind={sheet} onClose={() => setSheet(null)} onLevel={pickLevel} />
 			<SelectionPopover routeKey={routeKey} />
+			<LoginPromptDialog />
 		</>
 	);
 }

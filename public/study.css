@@ -27,6 +27,13 @@ html.theme-dark{color-scheme:dark;
 .account-pop__out{display:block;text-align:center;border:1px solid var(--line);border-radius:999px;padding:6px 10px;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none}
 .auth-banner{display:flex;align-items:center;justify-content:space-between;gap:8px;background:var(--red-soft);color:var(--red);padding:8px 12px;font-size:13px}
 .auth-banner button{border:0;background:transparent;color:inherit;font-size:18px;line-height:1;cursor:pointer}
+.login-mask{position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.42)}
+.login-dialog{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);z-index:51;width:min(360px,calc(100vw - 32px));background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:20px 18px 16px}
+.login-dialog h2{margin:0 0 8px;font-size:17px;font-weight:800}
+.login-dialog p{margin:0 0 16px;font-size:14px;color:var(--sub);line-height:1.55}
+.login-dialog__actions{display:flex;gap:8px;justify-content:flex-end;align-items:center}
+.login-dialog__actions button{border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:999px;padding:8px 14px;font-size:13px;font-weight:700;cursor:pointer}
+.login-dialog__go{border:0;background:var(--accent);color:#fff;border-radius:999px;padding:8px 14px;font-size:13px;font-weight:700;text-decoration:none}
 @media(max-width:480px){
   .account-login{padding-left:6px;padding-right:6px}
   .account-login__lbl{display:none}

@@ -4,7 +4,22 @@ async function dismissViteOverlay(page: Page) {
 	await page.evaluate(() => document.querySelector("vite-error-overlay")?.remove());
 }
 
-async function waitForStudy(page: Page) {
+async function stubGuestAccount(page: Page, configured: boolean) {
+	await page.route("**/api/me", async (route) => {
+		if (route.request().method() !== "GET") {
+			await route.continue();
+			return;
+		}
+		await route.fulfill({
+			status: 200,
+			contentType: "application/json",
+			body: JSON.stringify({ user: null, configured }),
+		});
+	});
+}
+
+async function waitForStudy(page: Page, opts: { configured?: boolean } = {}) {
+	await stubGuestAccount(page, opts.configured === true);
 	await page.goto("/study");
 	await dismissViteOverlay(page);
 	await expect(page.locator("#topbar")).toBeVisible();
@@ -438,6 +453,23 @@ test.describe("accounts", () => {
 		if (await login.count()) {
 			await expect(login).toHaveAttribute("href", "/auth/google");
 		}
+	});
+
+	test("guest opening favorites or mistakes is asked to sign in", async ({ page }) => {
+		await waitForStudy(page, { configured: true });
+		await openStudyNav(page, "mistakes");
+		const dialog = page.locator("#loginDialog");
+		await expect(dialog).toBeVisible();
+		await expect(dialog.locator("h2")).toContainText(/错题本需要登录|Sign in to use your notebook/);
+		await expect(page.locator("#loginDialogGo")).toHaveAttribute("href", /\/auth\/google\?next=/);
+		await expect(page.locator("#loginDialogGo")).toHaveAttribute("href", /study%2Fmistakes|study\/mistakes/);
+		await dialog.getByRole("button", { name: /取消|Cancel/ }).click();
+		await expect(dialog).toHaveCount(0);
+
+		await openStudyNav(page, "favs");
+		await expect(page.locator("#loginDialog")).toBeVisible();
+		await expect(page.locator("#loginDialog h2")).toContainText(/收藏需要登录|Sign in to save favorites/);
+		await expect(page.locator("#loginDialogGo")).toHaveAttribute("href", /study%2Ffavs|study\/favs/);
 	});
 
 	test("google start route is reachable", async ({ request }) => {
