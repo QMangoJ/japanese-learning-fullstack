@@ -1,0 +1,5560 @@
+{
+	"w1": [
+		{
+			"n": 1,
+			"ans": 3,
+			"trans": "此处禁止停车。",
+			"trans_en": "No parking here.",
+			"option_translations": [
+				"住车",
+				"调车",
+				"停车",
+				"乘车"
+			],
+			"option_translations_en": [
+				"live-car",
+				"adjust-car",
+				"parking",
+				"boarding"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 2,
+			"ans": 2,
+			"trans": "口香糖请包在纸里再扔掉。",
+			"trans_en": "Wrap chewing gum in paper before throwing it away.",
+			"option_translations": [
+				"夹着",
+				"包着",
+				"叠着",
+				"主动"
+			],
+			"option_translations_en": [
+				"sandwich",
+				"wrap",
+				"fold",
+				"willingly"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 3,
+			"ans": 3,
+			"trans": "外汇窗口在2楼。",
+			"trans_en": "The foreign-exchange counter is on the second floor.",
+			"option_translations": [
+				"换衣",
+				"试",
+				"外汇",
+				"兑换"
+			],
+			"option_translations_en": [
+				"change clothes",
+				"try",
+				"exchange",
+				"change money"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 4,
+			"ans": 4,
+			"trans": "吸烟席在那边。",
+			"trans_en": "The smoking seats are over there.",
+			"option_translations": [
+				"禁年席",
+				"禁烟席",
+				"吸烟席",
+				"吃烟席"
+			],
+			"option_translations_en": [
+				"year-ban",
+				"no-smoking",
+				"smoking seats",
+				"eat-smoke"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 5,
+			"ans": 4,
+			"trans": "食堂还在准备中。",
+			"trans_en": "The cafeteria is still getting ready.",
+			"option_translations": [
+				"整备",
+				"营业",
+				"停业",
+				"准备"
+			],
+			"option_translations_en": [
+				"maintenance",
+				"open",
+				"closed",
+				"preparing"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 6,
+			"ans": 1,
+			"trans": "去百货店的关门甩卖。",
+			"trans_en": "I'm going to the department store's closing sale.",
+			"option_translations": [
+				"关门",
+				"开店",
+				"祭典",
+				"晴天"
+			],
+			"option_translations_en": [
+				"closing",
+				"opening",
+				"festival",
+				"fine weather"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 7,
+			"ans": 2,
+			"trans": "做医疗相关的工作。",
+			"trans_en": "I do medical-related work.",
+			"option_translations": [
+				"治疗",
+				"医疗",
+				"肥料",
+				"诊疗"
+			],
+			"option_translations_en": [
+				"treatment",
+				"medical care",
+				"fertilizer",
+				"consultation"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 8,
+			"ans": 1,
+			"trans": "叫救护车请打119。",
+			"trans_en": "Call 119 for an ambulance.",
+			"option_translations": [
+				"救急",
+				"供给",
+				"究京",
+				"京京"
+			],
+			"option_translations_en": [
+				"emergency",
+				"supply",
+				"wrong reading",
+				"wrong reading"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 9,
+			"ans": 2,
+			"trans": "富士山下了初雪。",
+			"trans_en": "The first snow fell on Mt. Fuji.",
+			"option_translations": [
+				"始雪",
+				"初雪",
+				"初雪（音错）",
+				"初雪（音错）"
+			],
+			"option_translations_en": [
+				"first-start snow",
+				"first snow",
+				"wrong reading",
+				"wrong reading"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 10,
+			"ans": 3,
+			"trans": "用机器也能精算。",
+			"trans_en": "You can also settle the fare by machine.",
+			"option_translations": [
+				"销算",
+				"解散",
+				"精算",
+				"计算"
+			],
+			"option_translations_en": [
+				"sales calc",
+				"dissolve",
+				"fare adjustment",
+				"calculate"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 11,
+			"ans": 4,
+			"trans": "这部电梯限乘9人。",
+			"trans_en": "This elevator's capacity is nine people.",
+			"option_translations": [
+				"办事员",
+				"乘员",
+				"店员",
+				"定员"
+			],
+			"option_translations_en": [
+				"clerk",
+				"crew",
+				"clerk",
+				"capacity"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 12,
+			"ans": 2,
+			"trans": "洗手间正在清扫。",
+			"trans_en": "The restroom is being cleaned.",
+			"option_translations": [
+				"清归",
+				"清扫",
+				"精扫",
+				"精归"
+			],
+			"option_translations_en": [
+				"wrong kanji",
+				"cleaning",
+				"wrong kanji",
+				"wrong kanji"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 13,
+			"ans": 3,
+			"trans": "地面数字广播是什么？",
+			"trans_en": "What is terrestrial digital broadcasting?",
+			"option_translations": [
+				"邮送",
+				"包送",
+				"放送",
+				"发送"
+			],
+			"option_translations_en": [
+				"mail",
+				"pack-send",
+				"broadcast",
+				"dispatch"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 14,
+			"ans": 1,
+			"trans": "这封信请用快递。",
+			"trans_en": "Please send this letter by express.",
+			"option_translations": [
+				"快递",
+				"投递",
+				"发达",
+				"朋友"
+			],
+			"option_translations_en": [
+				"express mail",
+				"delivery",
+				"development",
+				"friend"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 15,
+			"ans": 1,
+			"trans": "坐机场大巴去了机场。",
+			"trans_en": "I took the limousine bus to the airport.",
+			"option_translations": [
+				"机场",
+				"航空",
+				"港口",
+				"高中"
+			],
+			"option_translations_en": [
+				"airport",
+				"aviation",
+				"port",
+				"high school"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 16,
+			"ans": 2,
+			"trans": "能帮我换开一万日元纸币吗？",
+			"trans_en": "Could you break a 10,000-yen bill?",
+			"option_translations": [
+				"符",
+				"纸币",
+				"附",
+				"段"
+			],
+			"option_translations_en": [
+				"token",
+				"bill",
+				"attach",
+				"step"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 17,
+			"ans": 2,
+			"trans": "从日本出国旅行1964年自由化了。",
+			"trans_en": "Overseas travel from Japan was liberalized in 1964.",
+			"option_translations": [
+				"科",
+				"化",
+				"案",
+				"席"
+			],
+			"option_translations_en": [
+				"department",
+				"-ize",
+				"plan",
+				"seat"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 18,
+			"ans": 4,
+			"trans": "再次办理入境手续。",
+			"trans_en": "Go through entry procedures again.",
+			"option_translations": [
+				"改",
+				"际",
+				"御",
+				"再"
+			],
+			"option_translations_en": [
+				"revise",
+				"occasion",
+				"honorific",
+				"again"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 19,
+			"ans": 3,
+			"trans": "这路公交车先付车费。",
+			"trans_en": "On this bus you pay the fare first.",
+			"option_translations": [
+				"代",
+				"料",
+				"费",
+				"贷"
+			],
+			"option_translations_en": [
+				"substitute",
+				"fee",
+				"fare",
+				"lend"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 20,
+			"ans": 1,
+			"trans": "1号车厢是禁烟车厢。",
+			"trans_en": "Car 1 is a no-smoking car.",
+			"option_translations": [
+				"号",
+				"两",
+				"番",
+				"层"
+			],
+			"option_translations_en": [
+				"number",
+				"both",
+				"number",
+				"floor"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": "21-25",
+			"ans": null,
+			"trans": "看完的报纸会再生为包装纸、卫生纸。不当垃圾扔掉、总是注意回收的人在增加。",
+			"trans_en": "Finished newspapers are recycled into wrapping paper and tissue. More people always take care not to throw them away as trash.",
+			"option_translations": [],
+			"option_translations_en": [],
+			"point": "",
+			"point_en": "",
+			"why": [
+				""
+			],
+			"why_en": [
+				""
+			],
+			"note": "包み　再生　捨てない　常に　増えて"
+		}
+	],
+	"w2": [
+		{
+			"n": 1,
+			"ans": 4,
+			"trans": "这种天气登山可行吗？",
+			"trans_en": "Is climbing possible in this weather?",
+			"option_translations": [
+				"彼の",
+				"苦能",
+				"昨日",
+				"可能"
+			],
+			"option_translations_en": [
+				"his",
+				"wrong",
+				"yesterday",
+				"possible"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 2,
+			"ans": 1,
+			"trans": "办理退票。",
+			"trans_en": "Get a refund on a ticket.",
+			"option_translations": [
+				"退还",
+				"换回",
+				"卸下",
+				"剩下"
+			],
+			"option_translations_en": [
+				"refund",
+				"exchange back",
+				"unload",
+				"leave"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 3,
+			"ans": 2,
+			"trans": "这个记号表示取消。",
+			"trans_en": "This mark means cancellation.",
+			"option_translations": [
+				"印章",
+				"记号",
+				"表面",
+				"印刷"
+			],
+			"option_translations_en": [
+				"seal",
+				"mark",
+				"front",
+				"printing"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 4,
+			"ans": 1,
+			"trans": "房间中央有桌子。",
+			"trans_en": "There's a table in the center of the room.",
+			"option_translations": [
+				"中央",
+				"中心",
+				"中影",
+				"正中间"
+			],
+			"option_translations_en": [
+				"center",
+				"core",
+				"wrong",
+				"middle"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 5,
+			"ans": 3,
+			"trans": "最近年幼孩子的事故在增加。",
+			"trans_en": "Accidents involving small children are increasing.",
+			"option_translations": [
+				"痛切",
+				"直截",
+				"年幼",
+				"幼小（音错）"
+			],
+			"option_translations_en": [
+				"painful",
+				"frank",
+				"young",
+				"wrong reading"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 6,
+			"ans": 1,
+			"trans": "请打印并放大复印。",
+			"trans_en": "Please print and enlarge the copy.",
+			"option_translations": [
+				"放大",
+				"广大",
+				"特大",
+				"增大"
+			],
+			"option_translations_en": [
+				"enlarge",
+				"vast",
+				"extra large",
+				"increase"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 7,
+			"ans": 4,
+			"trans": "选定文字再转换。",
+			"trans_en": "Select the text and convert it.",
+			"option_translations": [
+				"编辑",
+				"变更",
+				"偿还",
+				"转换"
+			],
+			"option_translations_en": [
+				"edit",
+				"change",
+				"repay",
+				"convert"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 8,
+			"ans": 2,
+			"trans": "这个时期湿度很高。",
+			"trans_en": "Humidity is high at this time of year.",
+			"option_translations": [
+				"秩序",
+				"湿度",
+				"必度",
+				"一度"
+			],
+			"option_translations_en": [
+				"order",
+				"humidity",
+				"wrong",
+				"wrong"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 9,
+			"ans": 3,
+			"trans": "小区阳台上晒着被子。",
+			"trans_en": "Futons are airing on the danchi balcony.",
+			"option_translations": [
+				"毯子",
+				"地毯",
+				"被子",
+				"枕头"
+			],
+			"option_translations_en": [
+				"blanket",
+				"carpet",
+				"futon",
+				"pillow"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 10,
+			"ans": 4,
+			"trans": "数复印纸的张数。",
+			"trans_en": "Count the sheets of copy paper.",
+			"option_translations": [
+				"凑齐",
+				"数（音错）",
+				"空着",
+				"数"
+			],
+			"option_translations_en": [
+				"arrange",
+				"wrong reading",
+				"empty",
+				"count"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 11,
+			"ans": 1,
+			"trans": "本日营业结束了。",
+			"trans_en": "We are closed for the day.",
+			"option_translations": [
+				"终了",
+				"修了",
+				"完了",
+				"未了"
+			],
+			"option_translations_en": [
+				"ended",
+				"completed a course",
+				"finished",
+				"unfinished"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 12,
+			"ans": 1,
+			"trans": "那件事还没谈完，先保留。",
+			"trans_en": "That matter isn't settled, so it's on hold.",
+			"option_translations": [
+				"保留",
+				"保存",
+				"保湿",
+				"保温"
+			],
+			"option_translations_en": [
+				"pending",
+				"save",
+				"moisturize",
+				"keep warm"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 13,
+			"ans": 3,
+			"trans": "日本年末会大扫除。",
+			"trans_en": "In Japan we do a big year-end cleaning.",
+			"option_translations": [
+				"清扫",
+				"除湿",
+				"扫除",
+				"洗濯"
+			],
+			"option_translations_en": [
+				"cleaning",
+				"dehumidify",
+				"housecleaning",
+				"laundry"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 14,
+			"ans": 4,
+			"trans": "这一带道路也整备得不错了。",
+			"trans_en": "The roads around here have been improved a lot.",
+			"option_translations": [
+				"常备",
+				"设备",
+				"准备",
+				"整备"
+			],
+			"option_translations_en": [
+				"standing stock",
+				"equipment",
+				"prepare",
+				"maintain/improve"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 15,
+			"ans": 1,
+			"trans": "订立今年的目标。",
+			"trans_en": "Set this year's goals.",
+			"option_translations": [
+				"目标",
+				"目表",
+				"木标",
+				"木表"
+			],
+			"option_translations_en": [
+				"goal",
+				"wrong",
+				"wrong",
+				"wrong"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 16,
+			"ans": 2,
+			"trans": "这本书由上中下三卷构成。",
+			"trans_en": "This book consists of three volumes.",
+			"option_translations": [
+				"券",
+				"卷",
+				"件",
+				"张"
+			],
+			"option_translations_en": [
+				"ticket",
+				"volume",
+				"matter",
+				"sheet"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 17,
+			"ans": 4,
+			"trans": "用量杯量米。",
+			"trans_en": "Measure the rice with a cup.",
+			"option_translations": [
+				"能",
+				"计",
+				"类",
+				"量"
+			],
+			"option_translations_en": [
+				"ability",
+				"meter",
+				"kind",
+				"quantity"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 18,
+			"ans": 4,
+			"trans": "记住日本式的寒暄和礼仪。",
+			"trans_en": "Learn Japanese-style greetings and manners.",
+			"option_translations": [
+				"修",
+				"带",
+				"玉",
+				"式"
+			],
+			"option_translations_en": [
+				"study",
+				"belt",
+				"jewel",
+				"style"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 19,
+			"ans": 3,
+			"trans": "和邮件一起发送画像。",
+			"trans_en": "Send an image with the email.",
+			"option_translations": [
+				"历",
+				"机",
+				"像",
+				"表"
+			],
+			"option_translations_en": [
+				"history",
+				"machine",
+				"image",
+				"chart"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 20,
+			"ans": 1,
+			"trans": "读短篇小说。",
+			"trans_en": "Read a short story.",
+			"option_translations": [
+				"编",
+				"片",
+				"期",
+				"数"
+			],
+			"option_translations_en": [
+				"compile",
+				"piece",
+				"period",
+				"number"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 21,
+			"ans": 2,
+			"trans": "今早因地震停电了。",
+			"trans_en": "There was a power cut this morning because of the quake.",
+			"option_translations": [
+				"止",
+				"停",
+				"不",
+				"满"
+			],
+			"option_translations_en": [
+				"stop",
+				"cut/stop",
+				"un-",
+				"full"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": "22-25",
+			"ans": null,
+			"trans": "日本到处都有自动售货机。外国人常说，不满20岁禁止的东西也能自由买到，真不可思议。",
+			"trans_en": "Japan has vending machines everywhere. Foreigners often say it's strange you can freely buy things banned for under-20s.",
+			"option_translations": [],
+			"option_translations_en": [],
+			"point": "",
+			"point_en": "",
+			"why": [
+				""
+			],
+			"why_en": [
+				""
+			],
+			"note": "販売　未満　自由　不思議"
+		}
+	],
+	"w3": [
+		{
+			"n": 1,
+			"ans": 4,
+			"trans": "收据。",
+			"trans_en": "A receipt.",
+			"option_translations": [
+				"领主",
+				"领收（音错）",
+				"料主",
+				"领收"
+			],
+			"option_translations_en": [
+				"wrong",
+				"wrong reading",
+				"wrong",
+				"receipt"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 2,
+			"ans": 2,
+			"trans": "写给某某殿。",
+			"trans_en": "The honorific 殿 after a name.",
+			"option_translations": [
+				"さま",
+				"殿",
+				"君",
+				"电"
+			],
+			"option_translations_en": [
+				"sama",
+				"dono",
+				"kun",
+				"electricity"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 3,
+			"ans": 4,
+			"trans": "号码。",
+			"trans_en": "A number.",
+			"option_translations": [
+				"番号（音错）",
+				"番号（音错）",
+				"番号（音错）",
+				"番号"
+			],
+			"option_translations_en": [
+				"wrong",
+				"wrong",
+				"wrong",
+				"number"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 4,
+			"ans": 2,
+			"trans": "金额。",
+			"trans_en": "An amount of money.",
+			"option_translations": [
+				"价钱",
+				"金额",
+				"价格",
+				"费用"
+			],
+			"option_translations_en": [
+				"price",
+				"amount",
+				"price",
+				"fee"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 5,
+			"ans": 4,
+			"trans": "从千叶来的田畑先生，您的同伴在等您。",
+			"trans_en": "Mr. Tabata from Chiba, your companion is waiting.",
+			"option_translations": [
+				"出",
+				"奇",
+				"年",
+				"光临"
+			],
+			"option_translations_en": [
+				"put out",
+				"strange",
+				"year",
+				"coming (honorific)"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 6,
+			"ans": 3,
+			"trans": "填海建造机场。",
+			"trans_en": "Reclaim the sea and build an airport.",
+			"option_translations": [
+				"埋（音错）",
+				"梦填",
+				"填埋",
+				"滑填"
+			],
+			"option_translations_en": [
+				"wrong",
+				"wrong",
+				"reclaim/fill",
+				"wrong"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 7,
+			"ans": 2,
+			"trans": "这份资料请务必带来。",
+			"trans_en": "Be sure to bring this material.",
+			"option_translations": [
+				"必（音错）",
+				"务必",
+				"音错",
+				"音错"
+			],
+			"option_translations_en": [
+				"wrong",
+				"without fail",
+				"wrong",
+				"wrong"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 8,
+			"ans": 3,
+			"trans": "照片和实物稍有不同。",
+			"trans_en": "The photo is a little different from the real thing.",
+			"option_translations": [
+				"重叠",
+				"伴随",
+				"不同",
+				"说"
+			],
+			"option_translations_en": [
+				"overlap",
+				"accompany",
+				"differ",
+				"say"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 9,
+			"ans": 1,
+			"trans": "男女平等地给予工作机会。",
+			"trans_en": "Give men and women equal job opportunities.",
+			"option_translations": [
+				"平等",
+				"平等（音错）",
+				"音错",
+				"音错"
+			],
+			"option_translations_en": [
+				"equality",
+				"wrong",
+				"wrong",
+				"wrong"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 10,
+			"ans": 3,
+			"trans": "播报寻人启事。",
+			"trans_en": "We will make a lost-child announcement.",
+			"option_translations": [
+				"名片",
+				"名子",
+				"走失儿童",
+				"音错"
+			],
+			"option_translations_en": [
+				"business card",
+				"wrong",
+				"lost child",
+				"wrong"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 11,
+			"ans": 2,
+			"trans": "各位有关人员：服务器将停止。",
+			"trans_en": "To all concerned: the server will be down.",
+			"option_translations": [
+				"客位",
+				"各位",
+				"名位",
+				"角位"
+			],
+			"option_translations_en": [
+				"guest rank",
+				"everyone",
+				"name rank",
+				"corner rank"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 12,
+			"ans": 3,
+			"trans": "请协助填写问卷。",
+			"trans_en": "Please cooperate with the questionnaire.",
+			"option_translations": [
+				"共力",
+				"强力",
+				"协力",
+				"助力"
+			],
+			"option_translations_en": [
+				"joint force",
+				"powerful",
+				"cooperation",
+				"help"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 13,
+			"ans": 1,
+			"trans": "正月很多人去寺庙神社参拜。",
+			"trans_en": "At New Year many people visit temples and shrines.",
+			"option_translations": [
+				"参拜",
+				"迷路",
+				"谢绝",
+				"周围"
+			],
+			"option_translations_en": [
+				"visit to pray",
+				"get lost",
+				"refuse",
+				"around"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 14,
+			"ans": 4,
+			"trans": "这张卡的有效期限是一年。",
+			"trans_en": "This card is valid for one year.",
+			"option_translations": [
+				"发行",
+				"流行",
+				"用效",
+				"有效"
+			],
+			"option_translations_en": [
+				"issue",
+				"popular",
+				"wrong",
+				"valid"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 15,
+			"ans": 1,
+			"trans": "训练因雨推迟到下周。",
+			"trans_en": "Training was postponed to next week because of rain.",
+			"option_translations": [
+				"延期",
+				"震",
+				"平",
+				"系"
+			],
+			"option_translations_en": [
+				"extended/postponed",
+				"quake",
+				"flat",
+				"tie"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 16,
+			"ans": 3,
+			"trans": "把信拆开。",
+			"trans_en": "Open the letter.",
+			"option_translations": [
+				"记",
+				"顶",
+				"封",
+				"叶"
+			],
+			"option_translations_en": [
+				"write",
+				"receive",
+				"seal",
+				"leaf"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 17,
+			"ans": 1,
+			"trans": "考试当天车站很挤，回程票最好也买好。",
+			"trans_en": "Stations are crowded on exam day, so buy the return ticket too.",
+			"option_translations": [
+				"当",
+				"平",
+				"本",
+				"现"
+			],
+			"option_translations_en": [
+				"that very",
+				"ordinary",
+				"this",
+				"current"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 18,
+			"ans": 3,
+			"trans": "今早冷得水管结冰了。",
+			"trans_en": "The pipes froze in this morning's cold.",
+			"option_translations": [
+				"断",
+				"枝",
+				"管",
+				"藏"
+			],
+			"option_translations_en": [
+				"cut",
+				"branch",
+				"pipe",
+				"store"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 19,
+			"ans": 4,
+			"trans": "这是瑞士制造的表。",
+			"trans_en": "This watch is Swiss-made.",
+			"option_translations": [
+				"个",
+				"作",
+				"整",
+				"制"
+			],
+			"option_translations_en": [
+				"piece",
+				"make",
+				"arrange",
+				"manufactured"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 20,
+			"ans": 2,
+			"trans": "便利店问“要装袋吗”，我说不用。",
+			"trans_en": "The clerk asked if I wanted a bag; I said no.",
+			"option_translations": [
+				"容",
+				"袋",
+				"装",
+				"衣"
+			],
+			"option_translations_en": [
+				"container",
+				"bag",
+				"pack",
+				"clothes"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 21,
+			"ans": 2,
+			"trans": "拿起电话听筒。",
+			"trans_en": "Pick up the receiver.",
+			"option_translations": [
+				"机",
+				"器",
+				"记",
+				"气"
+			],
+			"option_translations_en": [
+				"machine",
+				"device",
+				"record",
+				"spirit"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 22,
+			"ans": 1,
+			"trans": "您的信用卡额度是80万日元。",
+			"trans_en": "Your credit limit is 800,000 yen.",
+			"option_translations": [
+				"额",
+				"料",
+				"代",
+				"金"
+			],
+			"option_translations_en": [
+				"amount",
+				"fee",
+				"charge",
+				"money"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		}
+	],
+	"w4": [
+		{
+			"n": 1,
+			"ans": 4,
+			"trans": "他主张自己没有错。",
+			"trans_en": "He insisted he wasn't wrong.",
+			"option_translations": [
+				"抽象",
+				"出差",
+				"受听",
+				"主张"
+			],
+			"option_translations_en": [
+				"abstract",
+				"business trip",
+				"wrong",
+				"insist"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 2,
+			"ans": 2,
+			"trans": "百货店挤满买岁暮礼的人。",
+			"trans_en": "The department store was packed with year-end gift shoppers.",
+			"option_translations": [
+				"岁暮",
+				"岁暮（音错）",
+				"年暮",
+				"压岁钱"
+			],
+			"option_translations_en": [
+				"year-end gift",
+				"wrong reading",
+				"year-end",
+				"New Year money"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 3,
+			"ans": 2,
+			"trans": "今天承蒙招待，非常感谢。",
+			"trans_en": "Thank you for inviting me today.",
+			"option_translations": [
+				"音错",
+				"招待",
+				"音错",
+				"音错"
+			],
+			"option_translations_en": [
+				"wrong",
+				"invite",
+				"wrong",
+				"wrong"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 4,
+			"ans": 1,
+			"trans": "失去信用就做不成生意。",
+			"trans_en": "You can't do business once you lose trust.",
+			"option_translations": [
+				"失去",
+				"养",
+				"应付",
+				"补充"
+			],
+			"option_translations_en": [
+				"lose",
+				"raise",
+				"treat",
+				"supplement"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 5,
+			"ans": 3,
+			"trans": "想住在被花和绿环绕的家里。",
+			"trans_en": "I want to live in a house surrounded by flowers and greenery.",
+			"option_translations": [
+				"被眷顾",
+				"被包着",
+				"被环绕",
+				"被经营"
+			],
+			"option_translations_en": [
+				"blessed",
+				"wrapped",
+				"surrounded",
+				"run"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 6,
+			"ans": 2,
+			"trans": "互相注意身体，一起加油。",
+			"trans_en": "Let's take care of ourselves and do our best.",
+			"option_translations": [
+				"课题",
+				"互相",
+				"颚",
+				"高"
+			],
+			"option_translations_en": [
+				"topic",
+				"each other",
+				"chin",
+				"high"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 7,
+			"ans": 4,
+			"trans": "希望孩子天真率直地成长。",
+			"trans_en": "I want the child to grow up straightforward.",
+			"option_translations": [
+				"正直",
+				"素直（音错）",
+				"率直",
+				"素直"
+			],
+			"option_translations_en": [
+				"honest",
+				"wrong",
+				"frank",
+				"ingenuous"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 8,
+			"ans": 3,
+			"trans": "这首歌里包含着停止争斗的信息。",
+			"trans_en": "The song carries a message to stop fighting.",
+			"option_translations": [
+				"战斗",
+				"竞争",
+				"争执",
+				"口角"
+			],
+			"option_translations_en": [
+				"battle",
+				"compete",
+				"quarrel",
+				"row"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 9,
+			"ans": 4,
+			"trans": "结婚以来我完全靠妻子。",
+			"trans_en": "Since marrying I've come to rely entirely on my wife.",
+			"option_translations": [
+				"沉迷",
+				"保持",
+				"沉浸",
+				"依靠"
+			],
+			"option_translations_en": [
+				"be hooked",
+				"keep",
+				"immerse",
+				"depend"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 10,
+			"ans": 3,
+			"trans": "演讲读错汉字，丢了脸。",
+			"trans_en": "I misread a kanji in the speech and was embarrassed.",
+			"option_translations": [
+				"汗",
+				"鼾",
+				"耻",
+				"盘腿"
+			],
+			"option_translations_en": [
+				"sweat",
+				"snore",
+				"shame",
+				"sit cross-legged"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 11,
+			"ans": 2,
+			"trans": "文化习惯因国家而异。",
+			"trans_en": "Culture and customs differ by country.",
+			"option_translations": [
+				"周刊",
+				"习惯",
+				"主观",
+				"周刊杂志"
+			],
+			"option_translations_en": [
+				"weekly",
+				"custom",
+				"subjective",
+				"weekly magazine"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 12,
+			"ans": 1,
+			"trans": "碰头会从两点开始。",
+			"trans_en": "The meeting starts at two.",
+			"option_translations": [
+				"商量碰头",
+				"等候会合",
+				"手头有",
+				"掉下来会合"
+			],
+			"option_translations_en": [
+				"planning meeting",
+				"rendezvous",
+				"happen to have",
+				"wrong"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 13,
+			"ans": 4,
+			"trans": "明天是节日，休息。",
+			"trans_en": "Tomorrow is a holiday, so we're off.",
+			"option_translations": [
+				"节日",
+				"察日",
+				"际日",
+				"祭日"
+			],
+			"option_translations_en": [
+				"celebration day",
+				"wrong",
+				"wrong",
+				"festival day"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 14,
+			"ans": 3,
+			"trans": "请在这里写下工作单位和部门名。",
+			"trans_en": "Write your workplace and department here.",
+			"option_translations": [
+				"部暑",
+				"部所",
+				"部署",
+				"部诸"
+			],
+			"option_translations_en": [
+				"wrong",
+				"wrong",
+				"section",
+				"wrong"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 15,
+			"ans": 4,
+			"trans": "小孩子规规矩矩打招呼，让我很佩服。",
+			"trans_en": "I was impressed that such a small child greeted me properly.",
+			"option_translations": [
+				"喜心",
+				"关心",
+				"寒心",
+				"佩服"
+			],
+			"option_translations_en": [
+				"joy",
+				"interest",
+				"chilled",
+				"admiration"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 16,
+			"ans": 2,
+			"trans": "通过这场考试的人可以参加二次考试。",
+			"trans_en": "Those who pass can take the second exam.",
+			"option_translations": [
+				"期",
+				"次",
+				"部",
+				"助"
+			],
+			"option_translations_en": [
+				"term",
+				"second/next",
+				"section",
+				"help"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 17,
+			"ans": 2,
+			"trans": "因家里的情况决定休学。",
+			"trans_en": "I decided to take a leave from school for family reasons.",
+			"option_translations": [
+				"无",
+				"退",
+				"误",
+				"中"
+			],
+			"option_translations_en": [
+				"none",
+				"withdraw",
+				"error",
+				"mid / suspend"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 18,
+			"ans": 4,
+			"trans": "哥哥在消防署工作。",
+			"trans_en": "My brother works at the fire station.",
+			"option_translations": [
+				"著",
+				"所",
+				"暑",
+				"署"
+			],
+			"option_translations_en": [
+				"work",
+				"place",
+				"hot",
+				"government office"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 19,
+			"ans": 3,
+			"trans": "朋友石田君来玩了。",
+			"trans_en": "My friend Ishida-kun came over.",
+			"option_translations": [
+				"殿",
+				"様",
+				"君",
+				"奥"
+			],
+			"option_translations_en": [
+				"dono",
+				"sama",
+				"kun",
+				"interior"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 20,
+			"ans": 1,
+			"trans": "印刷年贺状。",
+			"trans_en": "Print New Year's cards.",
+			"option_translations": [
+				"状",
+				"札",
+				"礼",
+				"纸"
+			],
+			"option_translations_en": [
+				"card/letter",
+				"bill",
+				"thanks",
+				"paper"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 21,
+			"ans": 2,
+			"trans": "托您的福，父母都健在。",
+			"trans_en": "Thankfully both my parents are still living.",
+			"option_translations": [
+				"存",
+				"健",
+				"现",
+				"保"
+			],
+			"option_translations_en": [
+				"exist",
+				"healthy/alive",
+				"current",
+				"keep"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 22,
+			"ans": 1,
+			"trans": "听关于现代社会诸问题的演讲。",
+			"trans_en": "Listen to a talk on various problems of modern society.",
+			"option_translations": [
+				"诸",
+				"第",
+				"总",
+				"要"
+			],
+			"option_translations_en": [
+				"various",
+				"ordinal",
+				"total",
+				"essential"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": "23-25",
+			"ans": null,
+			"trans": "哥哥老捉弄我，有时觉得可恨。但他有困难总会帮我，是个可靠的人。半年没见，很想念哥哥。",
+			"trans_en": "My brother teases me and I sometimes find him hateful. But he always helps — he's reliable. I haven't seen him in half a year and I miss him.",
+			"option_translations": [],
+			"option_translations_en": [],
+			"point": "",
+			"point_en": "",
+			"why": [
+				""
+			],
+			"why_en": [
+				""
+			],
+			"note": "憎らしい　頼もしい　恋しい"
+		}
+	],
+	"w5": [
+		{
+			"n": 1,
+			"ans": 4,
+			"trans": "都说一辛苦白头发就变多。",
+			"trans_en": "They say hardship brings more gray hair.",
+			"option_translations": [
+				"假发",
+				"白毛",
+				"白发（音错）",
+				"白发"
+			],
+			"option_translations_en": [
+				"wig",
+				"white hair",
+				"wrong reading",
+				"gray hair"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 2,
+			"ans": 4,
+			"trans": "把书放进布制包里。",
+			"trans_en": "Put the books in a cloth bag.",
+			"option_translations": [
+				"无的",
+				"菜的",
+				"布的",
+				"布（音错）"
+			],
+			"option_translations_en": [
+				"wrong",
+				"wrong",
+				"cloth",
+				"wrong"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 3,
+			"ans": 3,
+			"trans": "地震把房子震歪了。",
+			"trans_en": "The quake left the house leaning.",
+			"option_translations": [
+				"裂纹",
+				"受伤",
+				"倾斜",
+				"吃惊"
+			],
+			"option_translations_en": [
+				"crack",
+				"get hurt",
+				"tilt",
+				"be surprised"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 4,
+			"ans": 1,
+			"trans": "日本伴手礼送浴衣怎么样？",
+			"trans_en": "How about a yukata as a souvenir from Japan?",
+			"option_translations": [
+				"浴衣",
+				"扇子",
+				"团扇",
+				"茶杯"
+			],
+			"option_translations_en": [
+				"yukata",
+				"folding fan",
+				"uchiwa",
+				"teacup"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 5,
+			"ans": 3,
+			"trans": "这种虫子用手指一碰就会把身体缩成一团。",
+			"trans_en": "This insect curls up when you touch it.",
+			"option_translations": [
+				"摆弄",
+				"接触（自动）",
+				"触摸",
+				"碰到"
+			],
+			"option_translations_en": [
+				"fiddle",
+				"come in contact",
+				"touch",
+				"hit"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 6,
+			"ans": 4,
+			"trans": "回收堆在储物间里的闲置物品。",
+			"trans_en": "We'll collect unused items sitting in the storeroom.",
+			"option_translations": [
+				"仓库",
+				"物置（音错）",
+				"物置（音错）",
+				"储物间"
+			],
+			"option_translations_en": [
+				"warehouse",
+				"wrong",
+				"wrong",
+				"storeroom"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 7,
+			"ans": 2,
+			"trans": "我是五兄妹中最小的。",
+			"trans_en": "I'm the youngest of five siblings.",
+			"option_translations": [
+				"末子（音错）",
+				"老小",
+				"三子",
+				"独生"
+			],
+			"option_translations_en": [
+				"wrong",
+				"youngest",
+				"third",
+				"only child"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 8,
+			"ans": 1,
+			"trans": "捡拾树上的果实。",
+			"trans_en": "Gather nuts/fruit from the tree.",
+			"option_translations": [
+				"果实",
+				"叶",
+				"子",
+				"根"
+			],
+			"option_translations_en": [
+				"fruit",
+				"leaf",
+				"child",
+				"root"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 9,
+			"ans": 3,
+			"trans": "水开了。",
+			"trans_en": "The water has boiled.",
+			"option_translations": [
+				"降",
+				"播",
+				"沸",
+				"鸣"
+			],
+			"option_translations_en": [
+				"fall",
+				"sow",
+				"boil",
+				"cry"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 10,
+			"ans": 1,
+			"trans": "没有可以商量烦恼的人。",
+			"trans_en": "I have no one to talk over my worries with.",
+			"option_translations": [
+				"烦恼",
+				"胡乱",
+				"愿望",
+				"嫉妒"
+			],
+			"option_translations_en": [
+				"worry",
+				"rashly",
+				"hope",
+				"envy"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 11,
+			"ans": 2,
+			"trans": "台风正在接近日本。",
+			"trans_en": "The typhoon is approaching Japan.",
+			"option_translations": [
+				"最近",
+				"接近",
+				"近在眼前",
+				"远近"
+			],
+			"option_translations_en": [
+				"recently",
+				"approach",
+				"close by",
+				"distance"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 12,
+			"ans": 4,
+			"trans": "她是北海道出身。",
+			"trans_en": "She's from Hokkaido.",
+			"option_translations": [
+				"里面",
+				"自身",
+				"蛋白",
+				"出身"
+			],
+			"option_translations_en": [
+				"inside",
+				"oneself",
+				"white meat",
+				"birthplace"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 13,
+			"ans": 1,
+			"trans": "不买家具，改成租赁。",
+			"trans_en": "Instead of buying furniture, I'll rent it.",
+			"option_translations": [
+				"家具",
+				"家贝",
+				"家见",
+				"家旦"
+			],
+			"option_translations_en": [
+				"furniture",
+				"wrong",
+				"wrong",
+				"wrong"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 14,
+			"ans": 2,
+			"trans": "墙上贴着海报。",
+			"trans_en": "There's a poster on the wall.",
+			"option_translations": [
+				"柱",
+				"壁",
+				"地板",
+				"布"
+			],
+			"option_translations_en": [
+				"pillar",
+				"wall",
+				"floor",
+				"cloth"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 15,
+			"ans": 2,
+			"trans": "请给我满满一杯水。",
+			"trans_en": "A full glass of water, please.",
+			"option_translations": [
+				"一张",
+				"一杯",
+				"一技",
+				"一牧"
+			],
+			"option_translations_en": [
+				"one sheet",
+				"one cupful",
+				"one skill",
+				"one flock"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 16,
+			"ans": 1,
+			"trans": "受不了浓味，所以选无香料的。",
+			"trans_en": "I can't stand strong smells, so I choose unscented ones.",
+			"option_translations": [
+				"无",
+				"非",
+				"不",
+				"全"
+			],
+			"option_translations_en": [
+				"without",
+				"non-",
+				"un-",
+				"all"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 17,
+			"ans": 3,
+			"trans": "一个月伙食费大概多少？",
+			"trans_en": "About how much is a month's food cost?",
+			"option_translations": [
+				"租",
+				"代",
+				"费",
+				"料"
+			],
+			"option_translations_en": [
+				"fare",
+				"charge",
+				"expense",
+				"fee"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 18,
+			"ans": 4,
+			"trans": "这里是禁止超车路段。",
+			"trans_en": "This is a no-passing zone.",
+			"option_translations": [
+				"跟随",
+				"挤入",
+				"赶出",
+				"超车"
+			],
+			"option_translations_en": [
+				"follow",
+				"cut in",
+				"drive out",
+				"overtake"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 19,
+			"ans": 3,
+			"trans": "1分钟是60秒。",
+			"trans_en": "One minute is 60 seconds.",
+			"option_translations": [
+				"沙",
+				"科",
+				"秒",
+				"料"
+			],
+			"option_translations_en": [
+				"sand",
+				"subject",
+				"second",
+				"fee"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 20,
+			"ans": 2,
+			"trans": "参加日本有代表性的节日。",
+			"trans_en": "Take part in a representative Japanese festival.",
+			"option_translations": [
+				"式",
+				"的",
+				"色",
+				"化"
+			],
+			"option_translations_en": [
+				"ceremony",
+				"-like",
+				"color",
+				"-ize"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 21,
+			"ans": null,
+			"trans": "有低温烫伤的危险。",
+			"trans_en": "Risk of low-temperature burns.",
+			"option_translations": [],
+			"option_translations_en": [],
+			"point": "",
+			"point_en": "",
+			"why": [
+				""
+			],
+			"why_en": [
+				""
+			]
+		},
+		{
+			"n": 23,
+			"ans": null,
+			"trans": "不要叠着使用。",
+			"trans_en": "Do not use it folded.",
+			"option_translations": [],
+			"option_translations_en": [],
+			"point": "",
+			"point_en": "",
+			"why": [
+				""
+			],
+			"why_en": [
+				""
+			]
+		},
+		{
+			"n": 24,
+			"ans": null,
+			"trans": "上面不要放重物。",
+			"trans_en": "Do not put heavy things on it.",
+			"option_translations": [],
+			"option_translations_en": [],
+			"point": "",
+			"point_en": "",
+			"why": [
+				""
+			],
+			"why_en": [
+				""
+			]
+		},
+		{
+			"n": 25,
+			"ans": null,
+			"trans": "毯子请手洗。",
+			"trans_en": "Hand-wash the blanket.",
+			"option_translations": [],
+			"option_translations_en": [],
+			"point": "",
+			"point_en": "",
+			"why": [
+				""
+			],
+			"why_en": [
+				""
+			]
+		}
+	],
+	"w6": [
+		{
+			"n": 1,
+			"ans": 3,
+			"trans": "不问有无经验。",
+			"trans_en": "Experience not required.",
+			"option_translations": [
+				"有无（音错）",
+				"有无（音错）",
+				"有无",
+				"有无（音错）"
+			],
+			"option_translations_en": [
+				"wrong",
+				"wrong",
+				"whether or not",
+				"wrong"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 2,
+			"ans": 2,
+			"trans": "为省做饭手续用微波炉。",
+			"trans_en": "I use the microwave to save cooking effort.",
+			"option_translations": [
+				"排除",
+				"省去",
+				"怀抱",
+				"解开"
+			],
+			"option_translations_en": [
+				"exclude",
+				"omit/save",
+				"embrace",
+				"untie"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 3,
+			"ans": 4,
+			"trans": "正在招募住户。",
+			"trans_en": "Seeking tenants.",
+			"option_translations": [
+				"入居（音错）",
+				"入居（音错）",
+				"入居（音错）",
+				"入居"
+			],
+			"option_translations_en": [
+				"wrong",
+				"wrong",
+				"wrong",
+				"move in"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 4,
+			"ans": 3,
+			"trans": "住在从车站步行3分钟的地方。",
+			"trans_en": "I live a three-minute walk from the station.",
+			"option_translations": [
+				"徒步（音错）",
+				"音错",
+				"徒步",
+				"音错"
+			],
+			"option_translations_en": [
+				"wrong",
+				"wrong",
+				"on foot",
+				"wrong"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 5,
+			"ans": 3,
+			"trans": "得到财富未必幸福。",
+			"trans_en": "Gaining wealth doesn't always mean happiness.",
+			"option_translations": [
+				"有",
+				"需要",
+				"得到",
+				"在"
+			],
+			"option_translations_en": [
+				"have",
+				"need",
+				"obtain",
+				"be"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 6,
+			"ans": 4,
+			"trans": "这一带没看到钱包吗？",
+			"trans_en": "Has anyone seen a wallet around here?",
+			"option_translations": [
+				"街道",
+				"便利",
+				"周围",
+				"这一带"
+			],
+			"option_translations_en": [
+				"street",
+				"convenient",
+				"around",
+				"this area"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 7,
+			"ans": 3,
+			"trans": "穿棉衬衫。",
+			"trans_en": "Wear a cotton shirt.",
+			"option_translations": [
+				"米棉",
+				"黄棉",
+				"木棉/棉",
+				"小棉"
+			],
+			"option_translations_en": [
+				"wrong",
+				"wrong",
+				"cotton",
+				"wrong"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 8,
+			"ans": 1,
+			"trans": "长头发请用皮筋扎起来。",
+			"trans_en": "Please tie long hair back with a band.",
+			"option_translations": [
+				"扎起",
+				"音错",
+				"损害",
+				"束（音错）"
+			],
+			"option_translations_en": [
+				"tie up",
+				"wrong",
+				"harm",
+				"wrong"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 9,
+			"ans": 2,
+			"trans": "乱停的自行车由市里处理。",
+			"trans_en": "Abandoned bicycles are disposed of by the city.",
+			"option_translations": [
+				"古文",
+				"处分",
+				"居文",
+				"贮文"
+			],
+			"option_translations_en": [
+				"old text",
+				"disposal",
+				"wrong",
+				"wrong"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 10,
+			"ans": 4,
+			"trans": "着火房子里的孩子被平安救了出来。",
+			"trans_en": "The child in the burning house was rescued unharmed.",
+			"option_translations": [
+				"无事（音错）",
+				"无事（音错）",
+				"精彩",
+				"平安"
+			],
+			"option_translations_en": [
+				"wrong",
+				"wrong",
+				"splendid",
+				"safe"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 11,
+			"ans": 2,
+			"trans": "我的故乡自然很丰富。",
+			"trans_en": "My hometown is rich in nature.",
+			"option_translations": [
+				"富",
+				"丰",
+				"财",
+				"泉"
+			],
+			"option_translations_en": [
+				"wealth",
+				"abundant",
+				"money",
+				"spring"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 12,
+			"ans": 2,
+			"trans": "手一滑把盘子打破了。",
+			"trans_en": "My hand slipped and I broke the plate.",
+			"option_translations": [
+				"器",
+				"盘",
+				"甜",
+				"宝"
+			],
+			"option_translations_en": [
+				"vessel",
+				"plate",
+				"sweet",
+				"treasure"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 13,
+			"ans": 3,
+			"trans": "今天牛肉很划算。",
+			"trans_en": "Beef is a bargain today.",
+			"option_translations": [
+				"说",
+				"特",
+				"得/划算",
+				"读"
+			],
+			"option_translations_en": [
+				"theory",
+				"special",
+				"a good deal",
+				"read"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 14,
+			"ans": 1,
+			"trans": "日本最大的湖在哪里？",
+			"trans_en": "Where is Japan's largest lake?",
+			"option_translations": [
+				"湖",
+				"谷",
+				"湾",
+				"岸"
+			],
+			"option_translations_en": [
+				"lake",
+				"valley",
+				"bay",
+				"shore"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 15,
+			"ans": 4,
+			"trans": "第一名选手会获赠奖金。",
+			"trans_en": "The first-place athlete is given prize money.",
+			"option_translations": [
+				"招募",
+				"迟到",
+				"层",
+				"赠送"
+			],
+			"option_translations_en": [
+				"recruit",
+				"late",
+				"layer",
+				"present"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 16,
+			"ans": 4,
+			"trans": "干电池正负极一接，电就通了。",
+			"trans_en": "Connect the battery's plus and minus poles and current flows.",
+			"option_translations": [
+				"角",
+				"局",
+				"曲",
+				"极"
+			],
+			"option_translations_en": [
+				"corner",
+				"bureau",
+				"tune",
+				"pole"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 17,
+			"ans": 2,
+			"trans": "在找六叠一间带浴厕的房子。",
+			"trans_en": "Looking for a 6-tatami room with bath and toilet.",
+			"option_translations": [
+				"粒",
+				"叠",
+				"部",
+				"屋"
+			],
+			"option_translations_en": [
+				"grain",
+				"tatami mats",
+				"section",
+				"house"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 18,
+			"ans": 1,
+			"trans": "买了24色的颜料。",
+			"trans_en": "I bought 24-color paints.",
+			"option_translations": [
+				"具",
+				"材",
+				"笔",
+				"画"
+			],
+			"option_translations_en": [
+				"tools/paints",
+				"material",
+				"brush",
+				"picture"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 19,
+			"ans": 2,
+			"trans": "去美术馆看了国宝展，非常棒。",
+			"trans_en": "I saw the national-treasure exhibition; it was wonderful.",
+			"option_translations": [
+				"园",
+				"展",
+				"艺",
+				"财"
+			],
+			"option_translations_en": [
+				"garden",
+				"exhibition",
+				"art",
+				"asset"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 20,
+			"ans": 2,
+			"trans": "读早报。",
+			"trans_en": "Read the morning edition.",
+			"option_translations": [
+				"版",
+				"刊",
+				"组",
+				"编"
+			],
+			"option_translations_en": [
+				"edition",
+				"publication",
+				"set",
+				"compile"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 21,
+			"ans": 4,
+			"trans": "这本书在分馆。",
+			"trans_en": "This book is in the branch library.",
+			"option_translations": [
+				"次",
+				"古",
+				"支",
+				"旧"
+			],
+			"option_translations_en": [
+				"next",
+				"old",
+				"branch",
+				"former"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 22,
+			"ans": 3,
+			"trans": "为了节能，不用的插座都拔了。",
+			"trans_en": "To save energy I unplug unused outlets.",
+			"option_translations": [
+				"节",
+				"略",
+				"省",
+				"消"
+			],
+			"option_translations_en": [
+				"cut down",
+				"omit",
+				"save/reduce",
+				"erase"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": "23-25",
+			"ans": null,
+			"trans": "“超好吃”“超漂亮”是俗语。新干线叫超特急、特别便宜叫超特价、特别挤叫超满员，才是正确用法。",
+			"trans_en": "'Super tasty' is slang. Calling the shinkansen a super limited express, a bargain a super special price, or a crush super full is the proper use of 超.",
+			"option_translations": [],
+			"option_translations_en": [],
+			"point": "",
+			"point_en": "",
+			"why": [
+				""
+			],
+			"why_en": [
+				""
+			],
+			"note": "特急　特価　満員"
+		}
+	],
+	"w7": [
+		{
+			"n": 1,
+			"ans": 3,
+			"trans": "给对方思考的时间。",
+			"trans_en": "Give the other person time to think.",
+			"option_translations": [
+				"锻炼",
+				"回答",
+				"给予",
+				"传达"
+			],
+			"option_translations_en": [
+				"train",
+				"respond",
+				"give",
+				"convey"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 2,
+			"ans": 3,
+			"trans": "喜欢味道浓一点的咖啡。",
+			"trans_en": "I like my coffee on the strong side.",
+			"option_translations": [
+				"拔目",
+				"之目",
+				"浓一点",
+				"吸目"
+			],
+			"option_translations_en": [
+				"wrong",
+				"wrong",
+				"on the strong side",
+				"wrong"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 3,
+			"ans": 2,
+			"trans": "把人们引向幸福的未来。",
+			"trans_en": "Lead people toward a happy future.",
+			"option_translations": [
+				"飘",
+				"引导",
+				"拖长",
+				"低语"
+			],
+			"option_translations_en": [
+				"trail",
+				"guide",
+				"drag on",
+				"whisper"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 4,
+			"ans": 1,
+			"trans": "清楚地陈述自己的主张。",
+			"trans_en": "State your position clearly.",
+			"option_translations": [
+				"陈述",
+				"滑动",
+				"锅",
+				"烧"
+			],
+			"option_translations_en": [
+				"state",
+				"slip",
+				"pot",
+				"burn"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 5,
+			"ans": 1,
+			"trans": "字迹潦草，请见谅。",
+			"trans_en": "Please forgive my messy handwriting.",
+			"option_translations": [
+				"原谅",
+				"尝试",
+				"度过",
+				"体谅"
+			],
+			"option_translations_en": [
+				"forgive",
+				"try",
+				"spend",
+				"infer"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 6,
+			"ans": 4,
+			"trans": "宇宙旅行已不再是梦想。",
+			"trans_en": "Space travel is no longer just a dream.",
+			"option_translations": [
+				"愉调",
+				"宇调",
+				"府中",
+				"宇宙"
+			],
+			"option_translations_en": [
+				"wrong",
+				"wrong",
+				"wrong",
+				"outer space"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 7,
+			"ans": 4,
+			"trans": "希望听到率直的意见。",
+			"trans_en": "I'd like to hear frank opinions.",
+			"option_translations": [
+				"坦率",
+				"实直",
+				"利直",
+				"率直"
+			],
+			"option_translations_en": [
+				"honest",
+				"wrong",
+				"wrong",
+				"straightforward"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 8,
+			"ans": 1,
+			"trans": "把材料充分搅拌。",
+			"trans_en": "Mix the ingredients well.",
+			"option_translations": [
+				"搅拌",
+				"音错",
+				"音错",
+				"音错"
+			],
+			"option_translations_en": [
+				"mix",
+				"wrong",
+				"wrong",
+				"wrong"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 9,
+			"ans": 2,
+			"trans": "报考许可下来了。",
+			"trans_en": "Permission to sit the exam came through.",
+			"option_translations": [
+				"结果",
+				"许可",
+				"豪华",
+				"市厅"
+			],
+			"option_translations_en": [
+				"result",
+				"permission",
+				"luxury",
+				"city hall"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 10,
+			"ans": 1,
+			"trans": "今晚好像会暴风雪。",
+			"trans_en": "It looks like a blizzard tonight.",
+			"option_translations": [
+				"暴风雪",
+				"水花",
+				"初雪",
+				"雪崩"
+			],
+			"option_translations_en": [
+				"blizzard",
+				"spray",
+				"first snow",
+				"avalanche"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 11,
+			"ans": 1,
+			"trans": "手术有时需要输血。",
+			"trans_en": "Surgery sometimes requires a transfusion.",
+			"option_translations": [
+				"输血",
+				"输盘",
+				"轮血",
+				"轮盘"
+			],
+			"option_translations_en": [
+				"transfusion",
+				"wrong",
+				"wrong",
+				"wrong"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 12,
+			"ans": 4,
+			"trans": "有时过程比结果更重要。",
+			"trans_en": "Sometimes the process matters more than the result.",
+			"option_translations": [
+				"假定",
+				"家庭",
+				"课程",
+				"过程"
+			],
+			"option_translations_en": [
+				"assumption",
+				"family",
+				"curriculum",
+				"process"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 13,
+			"ans": 2,
+			"trans": "考上第一志愿的大学很高兴。",
+			"trans_en": "I'm happy I got into my first-choice university.",
+			"option_translations": [
+				"脂肪",
+				"志愿",
+				"死亡",
+				"预防"
+			],
+			"option_translations_en": [
+				"fat",
+				"aspiration",
+				"death",
+				"prevention"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 14,
+			"ans": 4,
+			"trans": "播下花种。",
+			"trans_en": "Sow flower seeds.",
+			"option_translations": [
+				"竹",
+				"根",
+				"灰",
+				"种"
+			],
+			"option_translations_en": [
+				"bamboo",
+				"root",
+				"ash",
+				"seed"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 15,
+			"ans": 3,
+			"trans": "海鸥丸因恶劣天气停航。",
+			"trans_en": "The Kamome-maru was canceled due to bad weather.",
+			"option_translations": [
+				"决行",
+				"不错",
+				"停航",
+				"血行"
+			],
+			"option_translations_en": [
+				"go ahead",
+				"fine",
+				"flight/ship canceled",
+				"circulation"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 16,
+			"ans": 2,
+			"trans": "帮我买一本杂志来好吗？",
+			"trans_en": "Could you buy a magazine?",
+			"option_translations": [
+				"刊",
+				"册",
+				"杯",
+				"张"
+			],
+			"option_translations_en": [
+				"issue",
+				"bound volume",
+				"cup",
+				"sheet"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 17,
+			"ans": 4,
+			"trans": "现在开始口试。",
+			"trans_en": "The oral exam starts now.",
+			"option_translations": [
+				"面",
+				"笔",
+				"记",
+				"述"
+			],
+			"option_translations_en": [
+				"face/interview",
+				"written",
+				"record",
+				"describe"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 18,
+			"ans": 1,
+			"trans": "不是要一直住，只是临时住所。",
+			"trans_en": "I'm not staying forever — it's temporary housing.",
+			"option_translations": [
+				"临时",
+				"公",
+				"单",
+				"应"
+			],
+			"option_translations_en": [
+				"temporary",
+				"public",
+				"single",
+				"respond"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 19,
+			"ans": 3,
+			"trans": "工作业绩上去，工资也会涨吧。",
+			"trans_en": "If job performance rises, so should pay.",
+			"option_translations": [
+				"责",
+				"积",
+				"绩",
+				"渍"
+			],
+			"option_translations_en": [
+				"duty",
+				"pile",
+				"achievements",
+				"pickle"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 20,
+			"ans": 2,
+			"trans": "把茶装进水筒带着。",
+			"trans_en": "Put tea in a flask and take it along.",
+			"option_translations": [
+				"竹",
+				"筒",
+				"封",
+				"包"
+			],
+			"option_translations_en": [
+				"bamboo",
+				"cylinder/flask",
+				"seal",
+				"wrap"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": "21-25",
+			"ans": null,
+			"trans": "狗和猫等小动物用“匹”数，牛和马等大型动物用“头”。房子店铺用“轩”，房子也可以用“户”。",
+			"trans_en": "Small animals like dogs and cats are counted with 匹; large ones like cows and horses with 頭. Houses and shops take 軒; houses can also take 戸.",
+			"option_translations": [],
+			"option_translations_en": [],
+			"point": "",
+			"point_en": "",
+			"why": [
+				""
+			],
+			"why_en": [
+				""
+			],
+			"note": "猫　匹　馬　軒　戸"
+		}
+	],
+	"w8": [
+		{
+			"n": 1,
+			"ans": 4,
+			"trans": "演唱会场挤满了粉丝，超满员。",
+			"trans_en": "The concert hall was packed beyond capacity.",
+			"option_translations": [
+				"大成",
+				"大势（音错）",
+				"体制",
+				"大势"
+			],
+			"option_translations_en": [
+				"success",
+				"wrong reading",
+				"system",
+				"a crowd"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 2,
+			"ans": 4,
+			"trans": "妈妈是典型的旧式日本女性。",
+			"trans_en": "Mom is a typical old-fashioned Japanese woman.",
+			"option_translations": [
+				"模范",
+				"理想",
+				"传统",
+				"典型"
+			],
+			"option_translations_en": [
+				"model",
+				"ideal",
+				"traditional",
+				"typical"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 3,
+			"ans": 4,
+			"trans": "孩子的意愿也应尊重。",
+			"trans_en": "A child's will should also be respected.",
+			"option_translations": [
+				"敬重",
+				"尊重",
+				"敬听",
+				"尊重"
+			],
+			"option_translations_en": [
+				"wrong",
+				"wrong",
+				"wrong",
+				"respect"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 4,
+			"ans": 2,
+			"trans": "现代人是不是缺少尊敬他人的心？",
+			"trans_en": "Have people today lost the feeling of respecting others?",
+			"option_translations": [
+				"违抗",
+				"尊敬",
+				"应付",
+				"跟随"
+			],
+			"option_translations_en": [
+				"defy",
+				"revere",
+				"treat",
+				"follow"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 5,
+			"ans": 2,
+			"trans": "请允许我补充说明。",
+			"trans_en": "Allow me to add a supplementary explanation.",
+			"option_translations": [
+				"不足",
+				"补充",
+				"附属",
+				"补足（音错）"
+			],
+			"option_translations_en": [
+				"shortage",
+				"supplement",
+				"affiliated",
+				"wrong"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 6,
+			"ans": 1,
+			"trans": "哥哥在县厅当职员。",
+			"trans_en": "My brother works as a staffer at the prefectural office.",
+			"option_translations": [
+				"县厅",
+				"县定",
+				"县章",
+				"县所"
+			],
+			"option_translations_en": [
+				"prefectural office",
+				"wrong",
+				"wrong",
+				"wrong"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 7,
+			"ans": 2,
+			"trans": "被告主张无罪。",
+			"trans_en": "The defendant claims innocence.",
+			"option_translations": [
+				"破告",
+				"被告",
+				"布告",
+				"闭告"
+			],
+			"option_translations_en": [
+				"wrong",
+				"the accused",
+				"notice",
+				"wrong"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 8,
+			"ans": 4,
+			"trans": "希望他弥补所犯的罪。",
+			"trans_en": "I want him to atone for the crime he committed.",
+			"option_translations": [
+				"本",
+				"发生",
+				"版",
+				"犯"
+			],
+			"option_translations_en": [
+				"main",
+				"cause",
+				"edition",
+				"commit (a crime)"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 9,
+			"ans": 2,
+			"trans": "思考环境问题。",
+			"trans_en": "Think about environmental problems.",
+			"option_translations": [
+				"研京",
+				"环境",
+				"换球",
+				"研究"
+			],
+			"option_translations_en": [
+				"wrong",
+				"environment",
+				"wrong",
+				"research"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 10,
+			"ans": 1,
+			"trans": "各国选手较量技艺。",
+			"trans_en": "Athletes from each country competed in skill.",
+			"option_translations": [
+				"较量",
+				"争执",
+				"夺取",
+				"尊敬"
+			],
+			"option_translations_en": [
+				"compete",
+				"quarrel",
+				"seize",
+				"revere"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 11,
+			"ans": 3,
+			"trans": "努力恢复公司的信赖。",
+			"trans_en": "Work to restore the company's trust.",
+			"option_translations": [
+				"担任",
+				"上班",
+				"努力",
+				"勤勉"
+			],
+			"option_translations_en": [
+				"serve as",
+				"work at",
+				"strive",
+				"study hard"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 12,
+			"ans": 1,
+			"trans": "日本队在决赛中落败。",
+			"trans_en": "Japan lost in the final.",
+			"option_translations": [
+				"败",
+				"破",
+				"折",
+				"倒"
+			],
+			"option_translations_en": [
+				"be defeated",
+				"tear",
+				"break",
+				"fall"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 13,
+			"ans": 2,
+			"trans": "热水温度怎么样？",
+			"trans_en": "How's the water temperature?",
+			"option_translations": [
+				"增减",
+				"加减",
+				"削减",
+				"过减"
+			],
+			"option_translations_en": [
+				"increase/decrease",
+				"adjustment",
+				"cut",
+				"wrong"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 14,
+			"ans": 3,
+			"trans": "因不景气半数员工被解雇。",
+			"trans_en": "Half the staff were laid off in the slump.",
+			"option_translations": [
+				"解子",
+				"解放",
+				"解雇",
+				"解户"
+			],
+			"option_translations_en": [
+				"wrong",
+				"release",
+				"dismiss",
+				"wrong"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 15,
+			"ans": 4,
+			"trans": "太太的厨艺真棒。",
+			"trans_en": "Your wife's cooking skill is amazing.",
+			"option_translations": [
+				"腕每",
+				"腕力",
+				"腕米",
+				"腕前"
+			],
+			"option_translations_en": [
+				"wrong",
+				"physical strength",
+				"wrong",
+				"skill"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 16,
+			"ans": 2,
+			"trans": "新型流感正在流行。",
+			"trans_en": "A new strain of flu is going around.",
+			"option_translations": [
+				"米",
+				"型",
+				"兵",
+				"星"
+			],
+			"option_translations_en": [
+				"rice",
+				"type/strain",
+				"soldier",
+				"star"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 17,
+			"ans": 4,
+			"trans": "外国人有选举权吗？",
+			"trans_en": "Do foreigners have voting rights?",
+			"option_translations": [
+				"件",
+				"令",
+				"条",
+				"权"
+			],
+			"option_translations_en": [
+				"matter",
+				"order",
+				"article",
+				"right"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 18,
+			"ans": 1,
+			"trans": "大雨导致各地发生水灾。",
+			"trans_en": "Heavy rain has caused flooding in many places.",
+			"option_translations": [
+				"害",
+				"绝",
+				"爆",
+				"暴"
+			],
+			"option_translations_en": [
+				"damage",
+				"cut off",
+				"explode",
+				"violent"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 19,
+			"ans": 3,
+			"trans": "我从美国加利福尼亚州来。",
+			"trans_en": "I'm from the state of California.",
+			"option_translations": [
+				"周",
+				"集",
+				"州",
+				"宗"
+			],
+			"option_translations_en": [
+				"week",
+				"gather",
+				"state",
+				"sect"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 20,
+			"ans": 1,
+			"trans": "在野党批评首相的发言。",
+			"trans_en": "The opposition criticized the prime minister's remarks.",
+			"option_translations": [
+				"党",
+				"军",
+				"童",
+				"觉"
+			],
+			"option_translations_en": [
+				"party",
+				"army",
+				"child",
+				"sense"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": 21,
+			"ans": 3,
+			"trans": "国家有巨额债务。",
+			"trans_en": "The country has a huge debt.",
+			"option_translations": [
+				"亡",
+				"总",
+				"巨",
+				"满"
+			],
+			"option_translations_en": [
+				"perish",
+				"total",
+				"huge",
+				"full"
+			],
+			"point": "",
+			"point_en": "",
+			"why": [
+				"",
+				"",
+				"",
+				""
+			],
+			"why_en": [
+				"",
+				"",
+				"",
+				""
+			]
+		},
+		{
+			"n": "22-25",
+			"ans": null,
+			"trans": "公司之长是社长，学校是校长，大学是学長，政府之长是总理大臣。厚生劳动省等各省之长也是大臣，气象厅、警察厅等厅则称长官。",
+			"trans_en": "A company's head is the president; a school's the principal; a university's the president; the government's is the prime minister. Ministry heads are also ministers; agency heads are called 長官.",
+			"option_translations": [],
+			"option_translations_en": [],
+			"point": "",
+			"point_en": "",
+			"why": [
+				""
+			],
+			"why_en": [
+				""
+			],
+			"note": "政府　大臣　大臣　長官"
+		}
+	]
+}

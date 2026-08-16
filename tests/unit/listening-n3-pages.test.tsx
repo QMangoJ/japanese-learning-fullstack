@@ -39,4 +39,16 @@ describe("ListeningN3Content", () => {
 		await user.click(screen.getByText("译文"));
 		expect(screen.getByText(/女士的妈妈是哪一个人/)).toBeInTheDocument();
 	});
+
+	it("reconstructs chapter 5 with bilingual slogans, figures, and a Chinese transcript", async () => {
+		const user = userEvent.setup();
+		render(<ListeningN3Content chapter={5} section={1} embedded />);
+
+		expect(screen.getByText(/先听清提问再作答/)).toBeInTheDocument();
+		expect(screen.getByAltText(/月台上四个孩子/)).toBeInTheDocument();
+		expect(screen.getByText(/抢包/)).toBeInTheDocument();
+
+		await user.click(screen.getByText("译文"));
+		expect(screen.getByText(/洋子的弟弟是哪个孩子/)).toBeInTheDocument();
+	});
 });

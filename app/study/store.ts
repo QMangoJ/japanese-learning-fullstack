@@ -1,3 +1,4 @@
+import henkeiFallback from "../data/common-henkei.json";
 import { listeningBundle, readingBundle } from "./catalogs";
 
 export type ModuleKey =
@@ -1350,6 +1351,16 @@ async function bootN2() {
 		g2.daily_explanations = n2DailyExplanations || {};
 		v2.daily_translations = n2VocabKanjiTranslations.vocab || {};
 		k2.daily_translations = n2VocabKanjiTranslations.kanji || {};
+		const [n2VocabExam, n2KanjiExam] = await Promise.all([
+			fetch("/data/n2-vocab-exam-explanations.json")
+				.then((r) => (r.ok ? r.json() : {}))
+				.catch(() => ({})),
+			fetch("/data/n2-kanji-exam-explanations.json")
+				.then((r) => (r.ok ? r.json() : {}))
+				.catch(() => ({})),
+		]);
+		attachWeekendKaisetsu(v2, n2VocabExam);
+		attachWeekendKaisetsu(k2, n2KanjiExam);
 		G2 = g2;
 		V2 = v2;
 		K2 = k2;
@@ -1374,6 +1385,17 @@ async function bootN4() {
 				.catch(() => ({})),
 		]);
 		g4.besatsu = n4ExamExplanations || {};
+		const [n4DailyExplanations, n4VocabKanjiTranslations] = await Promise.all([
+			fetch("/data/n4-grammar-daily-explanations.json")
+				.then((r) => (r.ok ? r.json() : {}))
+				.catch(() => ({})),
+			fetch("/data/n4-vocab-kanji-daily-translations.json")
+				.then((r) => (r.ok ? r.json() : {}))
+				.catch(() => ({})),
+		]);
+		g4.daily_explanations = n4DailyExplanations || {};
+		v4.daily_translations = n4VocabKanjiTranslations.vocab || {};
+		k4.daily_translations = n4VocabKanjiTranslations.kanji || {};
 		G4 = g4;
 		V4 = v4;
 		K4 = k4;
@@ -1385,6 +1407,15 @@ async function bootN4() {
 		emit();
 	} catch {
 		/* ignore */
+	}
+}
+
+function attachWeekendKaisetsu(book: any, pack: Record<string, any[]>) {
+	if (!book?.weeks || !pack) return;
+	for (const week of book.weeks) {
+		const day = (week.days || []).find((entry: any) => entry.day === 7);
+		const items = pack[`w${week.n}`];
+		if (day && Array.isArray(items) && items.length) day.kaisetsu = items;
 	}
 }
 
@@ -1423,7 +1454,7 @@ export async function bootStudyData() {
 		DATA.grammar = G;
 		DATA.vocab = V;
 		DATA.kanji = K;
-		DATA.common = com;
+		DATA.common = { ...(com || {}), henkei: (com && com.henkei) || henkeiFallback };
 		dataLoaded = true;
 		loadError = "";
 		emit();
