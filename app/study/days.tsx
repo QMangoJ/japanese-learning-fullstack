@@ -845,12 +845,19 @@ function ExamGrammar({ day, w }: { day: any; w: number }) {
 	const renderQ = (it: any, section: string) => {
 		const a = ansMap[it.n] || directAnswers[it.n];
 		const interactive = it.opts && a && a.ans && !(useBesatsu && a.order);
+		const answer = a
+			? [a.ans != null ? String(a.ans) : "", a.order ? `${lx("顺序", "Order")} ${a.order}` : ""].filter(Boolean).join(" · ")
+			: "";
+		const translation = LANG === "en" ? a?.trans_en || a?.trans : a?.trans || a?.trans_en;
 		return (
 			<div className="q" key={it.n}>
-				<span className="n">{it.n}</span>
-				<span className="jp">
-					<Rr o={it} f="q" />
-				</span>
+				<div className="exam-qline">
+					<span className="n">{it.n}</span>
+					<span className="jp exam-qtext">
+						<Rr o={it} f="q" />
+					</span>
+					<ExamFav item={it} module={MODULE} w={w} answer={answer} translation={translation} />
+				</div>
 				{interactive ? (
 					<QuizOpts
 						item={{ ...it, _correct: a.ans }}

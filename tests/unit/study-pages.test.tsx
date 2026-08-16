@@ -24,10 +24,12 @@ import {
 	registerFavMeta,
 	resetStudyStateForTests,
 	setCardsWeek,
+	setModule,
 	setNavImpl,
 	subscribe,
 	toggleFav,
 } from "../../app/study/store";
+import { DayPage } from "../../app/study/days";
 
 function LiveMistakes() {
 	useSyncExternalStore(subscribe, getVersion, () => 0);
@@ -39,6 +41,11 @@ function LiveFavs() {
 	return <FavsPage data={favsPayload()} />;
 }
 
+function LiveDay({ w, d }: { w: number; d: number }) {
+	useSyncExternalStore(subscribe, getVersion, () => 0);
+	return <DayPage w={w} d={d} token={null} />;
+}
+
 function seedCatalog() {
 	G.weeks = [
 		{
@@ -46,6 +53,15 @@ function seedCatalog() {
 			title: "導入",
 			title_cn: "导入",
 			days: [
+				{
+					day: 7,
+					title: "実戦問題",
+					title_cn: "实战问题",
+					mondai1: {
+						instruction: "次の文の＿＿に入るものはどれか。",
+						items: [{ n: 1, q: "もう＿＿ました。", opts: ["食べ", "食べて", "食べた", "食べる"] }],
+					},
+				},
 				{
 					day: 1,
 					title: "一日目",
@@ -211,6 +227,20 @@ describe("HomePage and CardsPage", () => {
 		expect(screen.getByText("回想接续与意思，点击翻面")).toBeInTheDocument();
 		await user.click(screen.getByText("回想接续与意思，点击翻面"));
 		expect(screen.getByText("表示刚做完")).toBeInTheDocument();
+	});
+});
+
+describe("N3 day 7 exam favorites", () => {
+	it("lets a question be saved from the weekly grammar test", async () => {
+		const user = userEvent.setup();
+		setModule("grammar");
+		render(<LiveDay w={1} d={7} />);
+		const star = screen.getByRole("button", { name: /收藏错题|Save question/ });
+		expect(star).toBeInTheDocument();
+		await user.click(star);
+		expect(favsPayload().total).toBe(1);
+		expect(favsPayload().items[0].jp).toContain("もう＿＿ました。");
+		expect(screen.getByRole("button", { name: /取消收藏错题|Remove from favorites/ })).toBeInTheDocument();
 	});
 });
 
