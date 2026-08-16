@@ -775,7 +775,7 @@ export function StudyApp() {
 			if (e.metaKey || e.ctrlKey || e.altKey) return;
 			const t = e.target as HTMLElement | null;
 			const tag = t && t.tagName;
-			if (tag === "INPUT" || tag === "TEXTAREA" || t?.isContentEditable) return;
+			if (tag === "INPUT" || tag === "TEXTAREA" || t?.isContentEditable || t?.getAttribute("role") === "slider") return;
 			const day = parseDayRoute(pathToKey(location.pathname));
 			if (!day) return;
 			const n = dayNeighbors(day.w, day.d)[e.key === "ArrowLeft" ? "prev" : "next"];

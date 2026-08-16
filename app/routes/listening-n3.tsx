@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useMemo, useRef, useState, type RefObject } from "react";
+import { Fragment, useEffect, useMemo, useRef, useState, type PointerEvent, type RefObject } from "react";
 import { redirect } from "react-router";
 
 import { findListeningChapter, findListeningSection, type ListeningDisc } from "../data/listening-n3-book";
@@ -40,6 +40,20 @@ function formatTime(seconds: number) {
 	return `${minutes}:${String(remainder).padStart(2, "0")}`;
 }
 
+export function audioDurationOf(audio: { duration: number; seekable: TimeRanges }) {
+	if (Number.isFinite(audio.duration) && audio.duration > 0) return audio.duration;
+	if (audio.seekable.length > 0) {
+		const end = audio.seekable.end(audio.seekable.length - 1);
+		if (Number.isFinite(end) && end > 0) return end;
+	}
+	return 0;
+}
+
+export function seekRatioFromClientX(clientX: number, rect: { left: number; width: number }) {
+	if (rect.width <= 0) return 0;
+	return Math.min(1, Math.max(0, (clientX - rect.left) / rect.width));
+}
+
 function CueButton({ cue, active, playing, onToggle }: { cue: AudioCue; active: AudioCue; playing: boolean; onToggle: (cue: AudioCue) => void }) {
 	const isActive = active.disc === cue.disc && active.track === cue.track;
 	const isPlaying = isActive && playing;
@@ -47,6 +61,63 @@ function CueButton({ cue, active, playing, onToggle }: { cue: AudioCue; active: 
 		<button className={`${isActive ? "on" : ""}${isPlaying ? " playing" : ""}`} onClick={() => onToggle(cue)} aria-label={`${cueLabel(cue)} ${isPlaying ? "暂停" : "播放"}`} aria-pressed={isPlaying}>
 			{isPlaying ? "❚❚" : "▶"} {cueLabel(cue)}
 		</button>
+	);
+}
+
+function ListeningSeekBar({ currentTime, duration, onSeek }: { currentTime: number; duration: number; onSeek: (time: number) => void }) {
+	const trackRef = useRef<HTMLDivElement>(null);
+	const ready = duration > 0;
+	const ratio = ready ? Math.min(1, Math.max(0, currentTime / duration)) : 0;
+
+	function seekFromPointer(event: PointerEvent<HTMLDivElement>) {
+		const el = trackRef.current;
+		if (!el || !ready) return;
+		const time = seekRatioFromClientX(event.clientX, el.getBoundingClientRect()) * duration;
+		onSeek(time);
+	}
+
+	return (
+		<div
+			ref={trackRef}
+			className={`listening-seek${ready ? "" : " is-disabled"}`}
+			role="slider"
+			aria-label="再生位置"
+			aria-valuemin={0}
+			aria-valuemax={ready ? Math.round(duration) : 0}
+			aria-valuenow={ready ? Math.round(currentTime) : 0}
+			aria-disabled={!ready}
+			tabIndex={ready ? 0 : -1}
+			onPointerDown={(event) => {
+				if (!ready) return;
+				event.preventDefault();
+				event.currentTarget.setPointerCapture(event.pointerId);
+				seekFromPointer(event);
+			}}
+			onPointerMove={(event) => {
+				if (!event.currentTarget.hasPointerCapture(event.pointerId)) return;
+				seekFromPointer(event);
+			}}
+			onKeyDown={(event) => {
+				if (!ready) return;
+				if (event.key === "ArrowRight" || event.key === "ArrowUp") {
+					event.preventDefault();
+					onSeek(Math.min(duration, currentTime + 5));
+				} else if (event.key === "ArrowLeft" || event.key === "ArrowDown") {
+					event.preventDefault();
+					onSeek(Math.max(0, currentTime - 5));
+				} else if (event.key === "Home") {
+					event.preventDefault();
+					onSeek(0);
+				} else if (event.key === "End") {
+					event.preventDefault();
+					onSeek(duration);
+				}
+			}}
+		>
+			<div className="listening-seek__rail" />
+			<div className="listening-seek__fill" style={{ width: `${ratio * 100}%` }} />
+			<div className="listening-seek__thumb" style={{ left: `${ratio * 100}%` }} />
+		</div>
 	);
 }
 
@@ -74,9 +145,18 @@ function ListeningPlayer({ cue, audioRef, onPlaybackChange }: { cue: AudioCue; a
 		else audio.pause();
 	}
 
-	function seek(nextTime: number) {
-		if (audioRef.current) audioRef.current.currentTime = nextTime;
-		setCurrentTime(nextTime);
+	function seek(nextTime: number, play = false) {
+		const audio = audioRef.current;
+		const limit = duration || (audio ? audioDurationOf(audio) : 0);
+		const clamped = Math.min(Math.max(nextTime, 0), limit || nextTime);
+		if (audio) audio.currentTime = clamped;
+		setCurrentTime(clamped);
+		if (play && audio?.paused) void audio.play().catch(() => undefined);
+	}
+
+	function syncDuration(audio: HTMLAudioElement) {
+		const next = audioDurationOf(audio);
+		if (next > 0) setDuration(next);
 	}
 
 	return (
@@ -102,7 +182,7 @@ function ListeningPlayer({ cue, audioRef, onPlaybackChange }: { cue: AudioCue; a
 			</div>
 			<div className="listening-player__timeline">
 				<span>{formatTime(currentTime)}</span>
-				<input aria-label="再生位置" type="range" min="0" max={duration || 0} step="0.1" value={Math.min(currentTime, duration || 0)} disabled={!duration} onChange={(event) => seek(Number(event.currentTarget.value))} />
+				<ListeningSeekBar currentTime={currentTime} duration={duration} onSeek={(time) => seek(time, true)} />
 				<span>{formatTime(duration)}</span>
 			</div>
 			<audio
@@ -112,10 +192,14 @@ function ListeningPlayer({ cue, audioRef, onPlaybackChange }: { cue: AudioCue; a
 				src={trackSource(cue)}
 				onLoadedMetadata={(event) => {
 					event.currentTarget.playbackRate = speed;
-					setDuration(event.currentTarget.duration);
+					syncDuration(event.currentTarget);
 				}}
-				onDurationChange={(event) => setDuration(event.currentTarget.duration)}
-				onTimeUpdate={(event) => setCurrentTime(event.currentTarget.currentTime)}
+				onDurationChange={(event) => syncDuration(event.currentTarget)}
+				onCanPlay={(event) => syncDuration(event.currentTarget)}
+				onTimeUpdate={(event) => {
+					syncDuration(event.currentTarget);
+					setCurrentTime(event.currentTarget.currentTime);
+				}}
 				onPlay={() => {
 					setIsPlaying(true);
 					onPlaybackChange(true);
