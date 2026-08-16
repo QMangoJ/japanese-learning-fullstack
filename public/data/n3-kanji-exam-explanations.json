@@ -17,19 +17,19 @@
 				"wrong",
 				"wrong"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "「飛び出す」训读とびだす，「注意」音读ちゅうい。别把「飛」读成「呼（よ）」，也别把「注」读成じゅう。",
+			"point_en": "飛び出す is とびだす; 注意 is ちゅうい. Don’t read 飛 as よ (呼) or 注 as じゅう.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"よびだし＝「呼び出し」，是呼叫、传呼，不是突然冲出。",
+				"とびだしちゅうい＝「飛び出し注意」，交通标志固定读法，正确。",
+				"じゅうい＝「獣医」等，不是「注意（ちゅうい）」。",
+				"既把「飛」读成「呼」，又把「注意」读错。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"よびだし is 呼び出し (a call/page), not darting out.",
+				"とびだしちゅうい is the set reading of 飛び出し注意. Correct.",
+				"じゅうい is 獣医 etc., not 注意 (ちゅうい).",
+				"Misreads both 飛 as 呼 and 注意 as じゅうい."
 			]
 		},
 		{
@@ -49,19 +49,19 @@
 				"wrong",
 				"wrong"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "「正確」音读せいかく。近音陷阱是せっかく（折角）以及しょうがく（小学）。",
+			"point_en": "正確 is せいかく. Near-homophones: せっかく (せっかく) and しょうがく (小学).",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"せいかく＝「正確」，钟表走得准，正确。",
+				"せっかく＝「折角」，是“好不容易”，意思完全不同。",
+				"しょうかく 不是「正確」的读法；「正」这里读せい不是しょう。",
+				"しょうがく＝「小学」，汉字和意思都不同。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"せいかく is 正確 (accurate). Correct for a clock.",
+				"せっかく is 折角 (“with much trouble”), a different word.",
+				"しょうかく is not how 正確 is read; 正 here is せい, not しょう.",
+				"しょうがく is 小学 (elementary school)."
 			]
 		},
 		{
@@ -81,19 +81,19 @@
 				"kindan",
 				"sōdan"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "「横断」音读おうだん。「横」音读オウ，不要读成コウ。近音有こうだん（講談）・そうだん（相談）。",
+			"point_en": "横断 is おうだん. 横 is オウ, not コウ. Traps: こうだん (講談) and そうだん (相談).",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"こうだん＝「講談」「公団」等，不是「横断」。",
+				"おうだん＝「横断」，走人行横道过马路，正确。",
+				"きんだん＝「禁断」，禁止、禁断。",
+				"そうだん＝「相談」，商量。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"こうだん is 講談 / 公団, not 横断.",
+				"おうだん is 横断 (crossing). Correct.",
+				"きんだん is 禁断 (forbidden).",
+				"そうだん is 相談 (consult)."
 			]
 		},
 		{
@@ -113,19 +113,19 @@
 				"retsu",
 				"tetsu"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "「鉄」音读テツ。偏旁「失」的字不要跟しつ（質）・ねつ（熱）・れつ（列）混读。",
+			"point_en": "鉄 is テツ. Don’t mix it with しつ (質), ねつ (熱), or れつ (列).",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"しつ＝「質」「室」，不是「鉄」。",
+				"ねつ＝「熱」，字形和意思都不同。",
+				"れつ＝「列」，一列、列车。",
+				"てつ＝「鉄」，铁锅的材料，正确。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"しつ is 質 / 室, not 鉄.",
+				"ねつ is 熱 (heat).",
+				"れつ is 列 (row / train).",
+				"てつ is 鉄 (iron). Correct."
 			]
 		},
 		{
@@ -145,19 +145,19 @@
 				"yūsen",
 				"yoyaku"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "「優先」音读ゆうせん。「優」音读ユウ，开头不能丢掉ゆ。不要和予約（よやく）搞混。",
+			"point_en": "優先 is ゆうせん. Keep the ゆ of 優; don’t confuse it with 予約 (よやく).",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"うせん 漏掉了「優」的ゆ，不是实际读法。",
+				"にゅうせん＝「入選」，当选，意思不同。",
+				"ゆうせん＝「優先」，优先席，正确。",
+				"よやく＝「予約」，预约，不是优先。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"うせん drops the ゆ of 優; not a real reading.",
+				"にゅうせん is 入選 (selected), a different word.",
+				"ゆうせん is 優先 (priority). Correct.",
+				"よやく is 予約 (reservation), not priority."
 			]
 		},
 		{
@@ -177,19 +177,19 @@
 				"wrong",
 				"oriru"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "「降りる」训读おりる，下车、下楼。上车是「乗る（のる）」，下雨的「降る」读ふる，不要串。",
+			"point_en": "降りる is おりる (get off). 乗る is のる; rain 降る is ふる.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"のりる 把「降りる」和「乗る（のる）」混在一起了。",
+				"ふりる 是把下雨的「降る（ふる）」硬加成一段动词。",
+				"こりる＝「懲りる」（吃亏学乖），汉字不同。",
+				"おりる＝「降りる」，下车时付钱，正确。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"のりる mixes 降りる with 乗る (のる).",
+				"ふりる wrongly treats rain 降る (ふる) as an ichidan verb.",
+				"こりる is 懲りる (learn one’s lesson).",
+				"おりる is 降りる (get off). Correct."
 			]
 		},
 		{
@@ -209,19 +209,19 @@
 				"experienced person",
 				"environment person"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "「関係者」读かんけいしゃ。近形近义干扰：関連者・経験者・環境，都差一个字。",
+			"point_en": "関係者 is かんけいしゃ. Traps: 関連者, 経験者, 環境 — each differs by one kanji.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"かんけいしゃ＝「関係者」，有关人员，正确。",
+				"かんれんしゃ＝「関連者」，相关的人，告示固定写「関係者」。",
+				"けいけんしゃ＝「経験者」，有经验的人。",
+				"かんきょうしゃ 像「環境＋者」，不是告示用语。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"かんけいしゃ is 関係者 (authorized personnel). Correct.",
+				"かんれんしゃ is 関連者; signs say 関係者.",
+				"けいけんしゃ is 経験者 (experienced person).",
+				"かんきょうしゃ looks like 環境＋者, not this notice."
 			]
 		},
 		{
@@ -241,19 +241,19 @@
 				"approval",
 				"public official"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "「確認」音读かくにん。「確」カク、「認」ニン。近音：責任（せきにん）・承認（しょうにん）・公認（こうにん）。",
+			"point_en": "確認 is かくにん (確カク + 認ニン). Traps: 責任, 承認, 公認.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"せきにん＝「責任」，责任，不是确认。",
+				"かくにん＝「確認」，确认按钮，正确。",
+				"しょうにん＝「承認」「商人」，批准或商人。",
+				"こうにん＝「公認」「後任」，公认或后任。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"せきにん is 責任 (responsibility).",
+				"かくにん is 確認 (confirm). Correct.",
+				"しょうにん is 承認 / 商人 (approval / merchant).",
+				"こうにん is 公認 / 後任 (official recognition / successor)."
 			]
 		},
 		{
@@ -273,19 +273,19 @@
 				"vertical",
 				"next door"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "「横」训读よこ，门的旁边、横向。そば是「側」，たて是「縦」，となり是「隣」，意思接近但汉字不同。",
+			"point_en": "横 is よこ (beside / sideways). そば is 側, たて is 縦, となり is 隣.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"そば＝「側／傍」，附近，汉字不是「横」。",
+				"よこ＝「横」，门旁边，正确。",
+				"たて＝「縦」，竖着，和横相对。",
+				"となり＝「隣」，隔壁，不是紧贴门边的「横」。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"そば is 側／傍 (nearby), not the kanji 横.",
+				"よこ is 横 (beside). Correct.",
+				"たて is 縦 (vertical), the opposite of 横.",
+				"となり is 隣 (next door), not “right beside the door.”"
 			]
 		},
 		{
@@ -305,19 +305,19 @@
 				"kūkō",
 				"hikōjō"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "「飛行場」读ひこうじょう。「場」这里读じょう不读ば。空港（くうこう）是另一个词，航空（こうくう）只是“航空”。",
+			"point_en": "飛行場 is ひこうじょう — 場 is じょう, not ば. 空港 and 航空 are different words.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"こうくう＝「航空」，航空本身，不是飞行场。",
+				"ひこうば 把「場」读成ば（如市場いちば），这里应读じょう。",
+				"くうこう＝「空港」，机场的另一个词，汉字不是「飛行場」。",
+				"ひこうじょう＝「飛行場」，正确。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"こうくう is 航空 (aviation), not an airfield.",
+				"ひこうば reads 場 as ば (as in 市場); here it is じょう.",
+				"くうこう is 空港, a different word from 飛行場.",
+				"ひこうじょう is 飛行場. Correct."
 			]
 		},
 		{
@@ -337,19 +337,19 @@
 				"nanban",
 				"wrong"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "「なんばん」写「何番」。座位、号码用「番」；「号」多用于房间号、列车号。「向」读むかう，不能当「なん」。",
+			"point_en": "なんばん is 何番. Seats use 番; 号 is for room/train numbers. 向 is むかう, not なん.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"何号读なんごう，多用于号室、列车号，不是「なんばん」。",
+				"「向」读む・こう，不能表疑问的「なん」。",
+				"何番＝なんばん，问座位号码，正确。",
+				"「向号」两个字都不对。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"何号 is なんごう (room/train numbers), not なんばん.",
+				"向 is む・こう, not the question word なん.",
+				"何番 is なんばん (what number). Correct.",
+				"向号 has the wrong kanji for both parts."
 			]
 		},
 		{
@@ -369,19 +369,19 @@
 				"step",
 				"side"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "「せん」在「黄色い線」里是「線」。信（しん）・段（だん）・側（がわ）字形或意思都近，但读音和站台黄线都不对。",
+			"point_en": "せん in 黄色い線 is 線. 信, 段, and 側 look or feel close, but none is the yellow line.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"線＝せん，黄线，正确。",
+				"信＝しん，信件、信用，读音也不是せん。",
+				"段＝だん，台阶、阶段。",
+				"側＝がわ／そく，一侧，不是“线”。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"線 is せん (line). Correct for the yellow line.",
+				"信 is しん (letter / trust), not せん.",
+				"段 is だん (step / level).",
+				"側 is がわ／そく (side), not a line."
 			]
 		},
 		{
@@ -401,19 +401,19 @@
 				"wrong",
 				"hyōgen"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "「ひょうげん」写「表現」。「現」是出现、表现，不要写成信・見・言。",
+			"point_en": "ひょうげん is 表現. The second character is 現, not 信, 見, or 言.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"「表信」不是词，「信」不能表“表现”。",
+				"「表見」不是「表現」的写法。",
+				"「表言」不是词。",
+				"表現＝ひょうげん，表现力，正确。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"表信 is not a word; 信 does not mean “express.”",
+				"表見 is not how 表現 is written.",
+				"表言 is not a word.",
+				"表現 is ひょうげん (expression). Correct."
 			]
 		},
 		{
@@ -433,19 +433,19 @@
 				"window",
 				"face"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "「みとめる」写「認める」，承认错误。「定めた」是さだめた；「窓・面」只是字形相近。",
+			"point_en": "みとめる is 認める (admit). 定めた is さだめた; 窓 and 面 only look similar.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"定めた＝さだめた，决定，不是承认。",
+				"認めた＝みとめた，承认错误，正确。",
+				"「窓めた」不成词，「窓」是窗户。",
+				"「面めた」不成词，「面」是脸、方面。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"定めた is さだめた (decided), not “admitted.”",
+				"認めた is みとめた (admitted). Correct.",
+				"窓めた is not a word; 窓 is “window.”",
+				"面めた is not a word; 面 is “face / aspect.”"
 			]
 		},
 		{
@@ -465,19 +465,19 @@
 				"each",
 				"both"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "「各駅に止まる」＝各站停车，固定搭配用「各」。毎駅说法不自然；次・両意思对不上。",
+			"point_en": "各駅に止まる is the set phrase for an all-stop train. 毎駅 is unnatural; 次 and 両 don’t fit.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"毎駅 不说，习惯用「各駅」。",
+				"次駅＝下一站，不是每站都停。",
+				"各駅＝每一站，各站停车，正确。",
+				"両駅＝两站，数量对不上。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"毎駅 is not the usual wording; say 各駅.",
+				"次駅 is the next station, not every stop.",
+				"各駅 is each station (local train). Correct.",
+				"両駅 means two stations, the wrong quantity."
 			]
 		},
 		{
@@ -497,19 +497,19 @@
 				"toward",
 				"style/-shiki"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "「押しボタン式」＝按钮式，「式」表种类、方式。箱・席・向不能接在「押しボタン」后表类型。",
+			"point_en": "押しボタン式 means push-button type; 式 marks a style. 箱, 席, and 向 don’t form that compound.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"箱＝箱子，没有「押しボタン箱」这种类型说法。",
+				"席＝座位，接不上。",
+				"向＝朝向，接不上。",
+				"式＝样式，押しボタン式，正确。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"箱 is a box; there is no type called 押しボタン箱.",
+				"席 is a seat; it doesn’t attach here.",
+				"向 means “toward”; it doesn’t attach here.",
+				"式 means type/style: 押しボタン式. Correct."
 			]
 		},
 		{
@@ -529,19 +529,19 @@
 				"ban",
 				"non-"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "停车场满了说「満車」。「両」是车辆量词，「禁・非」是禁止、否定前缀，不能单独构成「○車」。",
+			"point_en": "A full lot is 満車. 両 is a counter; 禁 and 非 are prefixes and don’t make ○車 here.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"両車 不是“已满”；「両」是量词。",
+				"満車＝车位已满，正确。",
+				"禁車 不是词；禁止停车是「駐車禁止」。",
+				"非車 不是词。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"両車 isn’t “full”; 両 is a counter.",
+				"満車 means the lot is full. Correct.",
+				"禁車 isn’t a word; no-parking is 駐車禁止.",
+				"非車 isn’t a word."
 			]
 		},
 		{
@@ -561,19 +561,19 @@
 				"without",
 				"ban"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "免运费是「送料無料」。「無」＋料＝没有费用。非・不・禁也能表否定，但不说「送料非料／不料／禁料」。",
+			"point_en": "Free shipping is 送料無料. 非, 不, and 禁 also negate, but not in 送料○料.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"非料 不成词；「非」不这样接「料」。",
+				"不料 不成词。",
+				"無料＝免费，送料無料，正确。",
+				"禁料 不成词；「禁」是禁止。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"非料 isn’t a word; 非 doesn’t attach to 料 this way.",
+				"不料 isn’t a word.",
+				"無料 means free of charge: 送料無料. Correct.",
+				"禁料 isn’t a word; 禁 means “ban.”"
 			]
 		},
 		{
@@ -593,19 +593,19 @@
 				"road",
 				"ticket"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "排队用的号码纸是「整理券」。「券」＝票、券。停・箱・路接在「整理」后都不是这个东西。",
+			"point_en": "A take-a-number slip is 整理券. 券 means ticket; 停, 箱, and 路 don’t make that word.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"整理停 不是词。",
+				"整理箱＝整理箱，是收纳箱，不是取号纸。",
+				"整理路 不是词。",
+				"整理券＝取号排队的券，正确。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"整理停 isn’t a word.",
+				"整理箱 is a storage box, not a number ticket.",
+				"整理路 isn’t a word.",
+				"整理券 is a numbered waiting ticket. Correct."
 			]
 		},
 		{
@@ -625,19 +625,19 @@
 				"side",
 				"ticket"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "投币、交车费的箱子是「料金箱」。「箱」＝箱子。式・側・券会变成别的词。",
+			"point_en": "The fare box is 料金箱. 式, 側, and 券 make different words.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"料金箱＝收费箱，把钱投进去，正确。",
+				"料金式＝收费方式，不是放钱的容器。",
+				"料金側 不成这个意思。",
+				"料金券＝票券，是拿在手里的，不是投钱的箱子。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"料金箱 is the fare box. Correct.",
+				"料金式 is a fare system, not a container.",
+				"料金側 doesn’t mean a fare box.",
+				"料金券 is a ticket you hold, not a box you put money in."
 			]
 		}
 	],
@@ -659,19 +659,19 @@
 				"kōryoku",
 				"wrong"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "「協力」音读きょうりょく。「協」キョウ不要读コウ。近音：効力（こうりょく）・攻略（こうりゃく）。",
+			"point_en": "協力 is きょうりょく. 協 is キョウ, not コウ. Traps: 効力 and 攻略.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"きゅうりょく 不是「協力」的读法。",
+				"きょうりょく＝「協力」，协助，正确。",
+				"こうりょく＝「効力」，效力、效果。",
+				"こうりゃく＝「攻略」，攻略、攻克。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"きゅうりょく is not how 協力 is read.",
+				"きょうりょく is 協力 (cooperation). Correct.",
+				"こうりょく is 効力 (effect / efficacy).",
+				"こうりゃく is 攻略 (strategy / capture)."
 			]
 		},
 		{
@@ -691,19 +691,19 @@
 				"weakened",
 				"beaten"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "「困る」训读こまる。近音て形：弱って（よわって）・参って（まいって），意思都是“为难”附近，但汉字不同。",
+			"point_en": "困る is こまる. Nearby て-forms: 弱って and 参って — similar “in trouble” feel, different kanji.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"くまって 不是「困って」的读法。",
+				"こまって＝「困って」，发愁、没办法，正确。",
+				"よわって＝「弱って」，身体变弱。",
+				"まいって＝「参って」，认输、撑不住。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"くまって is not the reading of 困って.",
+				"こまって is 困って (stuck / in trouble). Correct.",
+				"よわって is 弱って (weakened).",
+				"まいって is 参って (beaten / at a loss)."
 			]
 		},
 		{
@@ -723,19 +723,19 @@
 				"wrong",
 				"wrong"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "「手伝う」读てつだう。帮助别人做事。「助ける」是たすける，て形是たすけて，不能多一个促音。",
+			"point_en": "手伝う is てつだう (lend a hand). 助ける is たすける; its て-form is たすけて, not たすけって.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"たすけって 想写「助けて」却多了促音，而且汉字是「手伝って」。",
+				"てつだって＝「手伝って」，帮把手，正确。",
+				"ことづかって 不是这个动词的读法。",
+				"つたえって 像「伝えて」却多了促音，意思是转告。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"たすけって over-geminates 助けて, and the kanji here is 手伝って.",
+				"てつだって is 手伝って (help). Correct.",
+				"ことづかって is not this verb’s reading.",
+				"つたえって looks like 伝えて (tell) with an extra っ."
 			]
 		},
 		{
@@ -755,19 +755,19 @@
 				"bijutsukan",
 				"wrong"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "「美術館」读びじゅつかん。「美」音读ビ。近音：技術（ぎじゅつ）・武術（ぶじゅつ）・手術（しゅじゅつ）。",
+			"point_en": "美術館 is びじゅつかん (美＝ビ). Traps: 技術, 武術, 手術.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"ぶじゅつかん 像「武術館」，不是美术馆。",
+				"ぎじゅつかん 像「技術館」，「美」不读ぎ。",
+				"びじゅつかん＝「美術館」，看画的地方，正确。",
+				"しゅじゅつかん 像「手術」加馆，不是美术馆。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"ぶじゅつかん sounds like 武術館, not an art museum.",
+				"ぎじゅつかん sounds like 技術; 美 is not ぎ.",
+				"びじゅつかん is 美術館. Correct.",
+				"しゅじゅつかん looks like 手術＋館, not an art museum."
 			]
 		},
 		{
@@ -787,19 +787,19 @@
 				"wrong",
 				"high school"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "「空港」＝空＋港，读くうこう。题干已提示“空中的港口”。不要读成高校（こうこう）或公共（こうきょう）。",
+			"point_en": "空港 is 空＋港＝くうこう (a harbor in the sky). Don’t read it as 高校 or 公共.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"くうこう＝「空港」，空中的港口，正确。",
+				"くうきょう 不是「空港」的读法。",
+				"こうきょう＝「公共」「好況」，不是机场。",
+				"こうこう＝「高校」「航行」，不是空港。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"くうこう is 空港 (airport). Correct.",
+				"くうきょう is not how 空港 is read.",
+				"こうきょう is 公共 / 好況, not an airport.",
+				"こうこう is 高校 / 航行, not 空港."
 			]
 		},
 		{
@@ -819,19 +819,19 @@
 				"ni",
 				"chi"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "寺名「金閣寺」的「寺」音读ジ。训读是てら（お寺）。ぎ・に・ち都不是这个字的音读。",
+			"point_en": "In temple names like 金閣寺, 寺 is ジ. The kun-reading is てら. ぎ, に, and ち are not its on-reading.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"じ＝寺名的音读，金閣寺，正确。",
+				"ぎ 不是「寺」的读法。",
+				"に 不是「寺」的读法。",
+				"ち 不是「寺」的读法（「地」才常读ち）。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"じ is the on-reading in temple names. Correct.",
+				"ぎ is not a reading of 寺.",
+				"に is not a reading of 寺.",
+				"ち is not a reading of 寺 (地 is often ち)."
 			]
 		},
 		{
@@ -851,19 +851,19 @@
 				"hold down",
 				"prepare for"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "「備える」训读そなえる，为灾害提前准备。近音て形：迎えて・揃えて・押さえて，节奏一样只差词义。",
+			"point_en": "備える is そなえる (prepare for). Nearby て-forms: 迎えて, 揃えて, 押さえて.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"むかえて＝「迎えて」，迎接。",
+				"そろえて＝「揃えて」，凑齐、备齐物品。",
+				"おさえて＝「押さえて／抑えて」，按住、控制。",
+				"そなえて＝「備えて」，防灾准备，正确。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"むかえて is 迎えて (go to meet).",
+				"そろえて is 揃えて (gather / arrange).",
+				"おさえて is 押さえて／抑えて (hold down).",
+				"そなえて is 備えて (prepare for). Correct."
 			]
 		},
 		{
@@ -883,19 +883,19 @@
 				"wrong",
 				"yobō"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "「予防」音读よぼう。「予」ヨ，「防」ボウ。有望（ゆうぼう）・要望（ようぼう）是近音陷阱。",
+			"point_en": "予防 is よぼう (予ヨ + 防ボウ). Traps: 有望 (ゆうぼう) and 要望 (ようぼう).",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"ゆうぼう＝「有望」，有前途，多了一个う。",
+				"ようぼう＝「要望」「容貌」，要求或容貌。",
+				"ゆぼう 不是「予防」的读法。",
+				"よぼう＝「予防」，预防流感，正确。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"ゆうぼう is 有望 (promising) and has an extra う.",
+				"ようぼう is 要望 / 容貌 (request / looks).",
+				"ゆぼう is not how 予防 is read.",
+				"よぼう is 予防 (prevention). Correct."
 			]
 		},
 		{
@@ -915,19 +915,19 @@
 				"kashite",
 				"sashite"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "「貸す」训读かす，て形かして。题里有橡皮擦，别看成「消して（けして）」。さして是指して／刺して。",
+			"point_en": "貸す is かす; て-form かして. Don’t read it as 消して (けして) just because of the eraser. さして is 指して／刺して.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"きして 不是「貸して」的读法。",
+				"けして＝「消して」，擦掉；橡皮擦会诱导向这个读音。",
+				"かして＝「貸して」，借给我，正确。",
+				"さして＝「指して／刺して」，指或刺。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"きして is not the reading of 貸して.",
+				"けして is 消して (erase) — a trap from 消しゴム.",
+				"かして is 貸して (lend). Correct.",
+				"さして is 指して／刺して (point / stab)."
 			]
 		},
 		{
@@ -947,19 +947,19 @@
 				"sotogawa",
 				"ushigawa"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "「内側」训读うちがわ。用训读叠训读，不要读成ないがわ（音训混读）。反义是外側（そとがわ）。",
+			"point_en": "内側 is うちがわ (kun+kun). Don’t mix on/kun as ないがわ. Opposite: 外側 (そとがわ).",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"うちがわ＝「内側」，黄线内侧，正确。",
+				"ないがわ 是「内」音读ナイ＋「側」训读，实际不这么读。",
+				"そとがわ＝「外側」，要退到线内，不是外侧。",
+				"うしがわ＝「後側」，后侧。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"うちがわ is 内側 (inside). Correct.",
+				"ないがわ mixes on-reading ナイ with kun がわ; not used.",
+				"そとがわ is 外側 (outside), the wrong side of the line.",
+				"うしがわ is 後側 (the back side)."
 			]
 		},
 		{
@@ -979,19 +979,19 @@
 				"full",
 				"face"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "「あたりまえ」写「当たり前」，理所当然。「当」不要换成光・満・面。",
+			"point_en": "あたりまえ is 当たり前. Don’t swap 当 for 光, 満, or 面.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"「光たり前」不成词，「光」是光。",
+				"当たり前＝あたりまえ，理所当然，正确。",
+				"「満たり前」不成词，「満」是满。",
+				"「面たり前」不成词，「面」是脸、方面。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"光たり前 isn’t a word; 光 is “light.”",
+				"当たり前 is あたりまえ (only natural). Correct.",
+				"満たり前 isn’t a word; 満 is “full.”",
+				"面たり前 isn’t a word; 面 is “face / aspect.”"
 			]
 		},
 		{
@@ -1011,19 +1011,19 @@
 				"manner",
 				"smoke"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "「かたち」写「形」。骨（ほね）・様（さま／よう）・煙（けむり）字形或意思都远，只有「形」读かたち。",
+			"point_en": "かたち is 形. 骨, 様, and 煙 are different words; only 形 is かたち.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"形＝かたち，形状，正确。",
+				"骨＝ほね，骨头。",
+				"様＝さま／よう，样子、方式，不读かたち。",
+				"煙＝けむり／けむ，烟。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"形 is かたち (shape). Correct.",
+				"骨 is ほね (bone).",
+				"様 is さま／よう (manner), not かたち.",
+				"煙 is けむり／けむ (smoke)."
 			]
 		},
 		{
@@ -1043,19 +1043,19 @@
 				"closed",
 				"preparing"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "「じゅんびちゅう」写「準備中」。店门口常见：準備中・営業中・閉店中・予約，靠意思选。",
+			"point_en": "じゅんびちゅう is 準備中. Shop signs: 準備中, 営業中, 閉店中, 予約 — pick by meaning.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"予約中＝已预约，读よやくちゅう，不是じゅんび。",
+				"営業中＝正在营业。",
+				"閉店中＝已打烊。",
+				"準備中＝じゅんびちゅう，正在准备，正确。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"予約中 is reserved (よやくちゅう), not じゅんび.",
+				"営業中 means open for business.",
+				"閉店中 means closed.",
+				"準備中 is じゅんびちゅう (preparing). Correct."
 			]
 		},
 		{
@@ -1075,19 +1075,19 @@
 				"police",
 				"tourism"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "「けいさつ」写「警察」。交番（こうばん）是派出所，消防（しょうぼう）是消防，観光（かんこう）是观光。",
+			"point_en": "けいさつ is 警察. 交番 is a police box, 消防 firefighting, 観光 tourism.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"交番＝こうばん，派出所，读音不是けいさつ。",
+				"消防＝しょうぼう，消防。",
+				"警察＝けいさつ，捡到钱包要送交的机关，正确。",
+				"観光＝かんこう，观光。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"交番 is こうばん (police box), not けいさつ.",
+				"消防 is しょうぼう (firefighting).",
+				"警察 is けいさつ (police). Correct.",
+				"観光 is かんこう (tourism)."
 			]
 		},
 		{
@@ -1107,19 +1107,19 @@
 				"honorific",
 				"this (tō)"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "站内广播用「本駅」指本站。「当駅」也能说，但本题选项里「本」才对。今・御不能这样接「駅」。",
+			"point_en": "Station announcements use 本駅 for “this station.” 当駅 also exists, but here 本 is the answer. 今 and 御 don’t attach this way.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"本駅＝本站，车站告示用语，正确。",
+				"今駅 不成词。",
+				"御駅 不成这种说法。",
+				"当駅 也有“本站”之意，但本题答案是「本」。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"本駅 is “this station” on notices. Correct.",
+				"今駅 isn’t a word.",
+				"御駅 isn’t used this way.",
+				"当駅 can also mean “this station,” but the key is 本."
 			]
 		},
 		{
@@ -1139,19 +1139,19 @@
 				"all",
 				"next"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "「全席指定」＝全部对号入座。満席是坐满，空席是空位，次席是次席／副职。",
+			"point_en": "全席指定 means all seats reserved. 満席 is full, 空席 vacant, 次席 vice-/next seat.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"満席＝坐满了，和“指定”搭配不成「満席指定」这种车种说明。",
+				"空席＝空位，意思相反。",
+				"全席＝全部座位，全席指定，正确。",
+				"次席＝下一个座位或副职。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"満席 means full; it doesn’t make the train type 満席指定.",
+				"空席 means vacant seats, the opposite idea.",
+				"全席 is all seats: 全席指定. Correct.",
+				"次席 is the next seat or a deputy post."
 			]
 		},
 		{
@@ -1171,19 +1171,19 @@
 				"line",
 				"inside"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "路口里面不许停车：交差点内。「内」＝范围之内。向・側・線接在交差点后意思都不对。",
+			"point_en": "Don’t stop inside an intersection: 交差点内. 向, 側, and 線 don’t make that rule.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"交差点向 不成“路口内”的说法。",
+				"交差点側＝路口一侧，禁止范围不这么写。",
+				"交差点線 不成词。",
+				"交差点内＝路口之内，正确。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"交差点向 isn’t how you say “in the intersection.”",
+				"交差点側 is the side of the intersection, not the banned zone.",
+				"交差点線 isn’t a word.",
+				"交差点内 is inside the intersection. Correct."
 			]
 		},
 		{
@@ -1203,19 +1203,19 @@
 				"section",
 				"bureau"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "医院分科用「科」：産婦人科。化是变化后缀，係是窗口职务，局是局。",
+			"point_en": "Hospital departments use 科: 産婦人科. 化 is “-ize,” 係 a desk role, 局 a bureau.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"産婦人科＝妇产科，正确。",
+				"産婦人化：「化」是变成……，不是科室。",
+				"産婦人係：係是担当，不是科室名。",
+				"産婦人局：局是机关部门，医院不用。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"産婦人科 is obstetrics and gynecology. Correct.",
+				"産婦人化: 化 means “-ize,” not a department.",
+				"産婦人係: 係 is a clerk’s post, not the ward name.",
+				"産婦人局: 局 is a bureau; hospitals use 科."
 			]
 		},
 		{
@@ -1235,19 +1235,19 @@
 				"proposal",
 				"step"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "赞成某个方案说「A案に賛成」。「案」＝方案。番是号码，券是票，段是阶段。",
+			"point_en": "Agreeing with a proposal is A案に賛成. 案 is a plan; 番, 券, and 段 are other words.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"A番＝A号，是号码不是方案。",
+				"A券＝A券，是票。",
+				"A案＝A方案，正确。",
+				"A段＝A段，阶段、楼梯。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"A番 is number A, not a proposal.",
+				"A券 is ticket A.",
+				"A案 is plan A. Correct.",
+				"A段 is step/level A."
 			]
 		},
 		{
@@ -1267,19 +1267,19 @@
 				"excess",
 				"about"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "大约用「約」：約20万人。各是各自，現要说現在，過是经过／过分，都不表约数。",
+			"point_en": "“About” is 約: 約20万人. 各 is each, 現 needs 現在, 過 is pass/excess.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"各20万人＝各二十万，是“各自”，不是大约。",
+				"現20万人 缺「在」，不说「現20万」。",
+				"過20万人 不是“大约”；超过要说「20万人を超える」。",
+				"約20万人＝大约二十万，正确。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"各20万人 means 200,000 each, not “about.”",
+				"現20万人 is incomplete; say 現在 if you mean “currently.”",
+				"過20万人 isn’t “about”; “over” is 20万人を超える.",
+				"約20万人 is about 200,000. Correct."
 			]
 		}
 	],
@@ -1301,19 +1301,19 @@
 				"wrong",
 				"wrong"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "「販売」音读はんばい。「売」音读バイ，浊化成ばい，不要读まい。へん是「変」的音。",
+			"point_en": "販売 is はんばい. 売 is バイ → ばい, not まい. へん is the on-reading of 変.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"はんばい＝「販売」，自动售货机，正确。",
+				"へんばい 把「販」读成へん了。",
+				"はんまい 把「売」错读成まい。",
+				"へんまい 两个字都读错。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"はんばい is 販売 (sales). Correct.",
+				"へんばい misreads 販 as へん.",
+				"はんまい misreads 売 as まい.",
+				"へんまい misreads both characters."
 			]
 		},
 		{
@@ -1333,19 +1333,19 @@
 				"omeshiagari",
 				"wrong"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "「召し上がる」是「食べる／飲む」的尊敬语，召读めす。おみし・おねし・おむし都不是这个词。",
+			"point_en": "召し上がる is the honorific of 食べる／飲む; 召 is めす. おみし, おねし, and おむし are not this word.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"おみしあがり 把「召」错读成み。",
+				"おねしあがり 把「召」错读成ね。",
+				"おめしあがり＝「召し上がり」，请享用，正确。",
+				"おむしあがり 把「召」错读成む。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"おみしあがり misreads 召 as み.",
+				"おねしあがり misreads 召 as ね.",
+				"おめしあがり is 召し上がり. Correct.",
+				"おむしあがり misreads 召 as む."
 			]
 		},
 		{
@@ -1365,19 +1365,19 @@
 				"wrong",
 				"wrong"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "「教材」音读きょうざい。「教」キョウ，「材」ザイ（不要读ゼイ）。きゅう是「急・休」等的音。",
+			"point_en": "教材 is きょうざい (教キョウ + 材ザイ, not ゼイ). きゅう is 急／休 etc.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"きょうざい＝「教材」，教学材料，正确。",
+				"きゅうざい 把「教」读成きゅう了。",
+				"きょうぜい 把「材」错读成ぜい。",
+				"きゅうぜい 两个字都读错。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"きょうざい is 教材 (teaching materials). Correct.",
+				"きゅうざい misreads 教 as きゅう.",
+				"きょうぜい misreads 材 as ぜい.",
+				"きゅうぜい misreads both characters."
 			]
 		},
 		{
@@ -1397,19 +1397,19 @@
 				"wheat",
 				"kona (powder)"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "「粉」训读こな。砂（すな）・米（こめ）・麦（むぎ）都是易混的食材／颗粒汉字。",
+			"point_en": "粉 is こな (powder). Easy mix-ups: 砂 (すな), 米 (こめ), 麦 (むぎ).",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"すな＝「砂」，沙子，不能拿来搅拌进料理。",
+				"こめ＝「米」，米。",
+				"むぎ＝「麦」，麦子。",
+				"こな＝「粉」，粉末，正确。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"すな is 砂 (sand), not something you stir into food.",
+				"こめ is 米 (rice).",
+				"むぎ is 麦 (wheat / barley).",
+				"こな is 粉 (powder). Correct."
 			]
 		},
 		{
@@ -1429,19 +1429,19 @@
 				"wrong",
 				"tamagoyaki"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "「卵焼き」读たまごやき。「卵」たまご，「焼」やき。たなご是错读；まき是「巻き」，汉字是「焼き」。",
+			"point_en": "卵焼き is たまごやき (卵たまご + 焼やき). たなご is wrong; まき would be 巻き, not 焼き.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"たなごやき 把「卵」错读成たなご。",
+				"たまごまき 把「焼き」读成まき（巻き）。",
+				"たなごまき 两个部分都读错。",
+				"たまごやき＝「卵焼き」，正确。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"たなごやき misreads 卵 as たなご.",
+				"たまごまき reads 焼き as まき (巻き).",
+				"たなごまき misreads both parts.",
+				"たまごやき is 卵焼き. Correct."
 			]
 		},
 		{
@@ -1461,19 +1461,19 @@
 				"wrong",
 				"wrong"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "「守る」训读まもる。四个选项只是ま・も・な的顺序打乱，靠词确认是「まもり」。",
+			"point_en": "守る is まもる. The distractors just scramble ま・も・な; the verb is まもり.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"なもりましょう 假名顺序不对。",
+				"まもりましょう＝「守りましょう」，遵守规则，正确。",
+				"もまりましょう 假名顺序不对。",
+				"もなりましょう 假名顺序不对。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"なもりましょう has the kana in the wrong order.",
+				"まもりましょう is 守りましょう (let’s obey). Correct.",
+				"もまりましょう has the kana in the wrong order.",
+				"もなりましょう has the kana in the wrong order."
 			]
 		},
 		{
@@ -1493,19 +1493,19 @@
 				"kazu (number)",
 				"shū"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "「数を数える」里作宾语的「数」训读かず；动词是数える（かぞえる）。しゅう是「数」较少用的音读。",
+			"point_en": "As a noun object, 数 is かず; the verb is 数える (かぞえる). しゅう is a rarer on-reading.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"かぞ 是动词「数える」的词干，后面不能直接接「を」。",
+				"くず＝「屑」，碎屑。",
+				"かず＝「数」，数目，正确。",
+				"しゅう＝「数」的音读之一，如「複数」，这里要用训读。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"かぞ is the verb stem of 数える; it can’t take を.",
+				"くず is 屑 (scraps).",
+				"かず is 数 (the number). Correct.",
+				"しゅう is an on-reading (複数); here you need kun かず."
 			]
 		},
 		{
@@ -1525,19 +1525,19 @@
 				"ya",
 				"i"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "「湯」训读ゆ，热水。水是みず。よ・や・い都不是这个字的训读。",
+			"point_en": "湯 is ゆ (hot water). Cold water is みず. よ, や, and い are not its kun-reading.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"ゆ＝「湯」，热水，正确。",
+				"よ 不是「湯」的读法。",
+				"や 不是「湯」的读法（「屋・矢」等才读や）。",
+				"い 不是「湯」的读法。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"ゆ is 湯 (hot water). Correct.",
+				"よ is not a reading of 湯.",
+				"や is not a reading of 湯 (屋 / 矢 are や).",
+				"い is not a reading of 湯."
 			]
 		},
 		{
@@ -1557,19 +1557,19 @@
 				"wrong",
 				"wrong"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "「再生」音读さいせい，播放、再生。「再」サイ，「生」セイ。せいしょう・せいせい・さいしょう都是近音拼错。",
+			"point_en": "再生 is さいせい (play back). 再＝サイ, 生＝セイ. The others scramble those on-readings.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"せいしょう 不是「再生」；「再」不读せい。",
+				"さいせい＝「再生」，播放录音，正确。",
+				"せいせい＝「精製」「清々」，不是播放。",
+				"さいしょう＝「最小」「宰相」，不是再生。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"せいしょう isn’t 再生; 再 is not せい.",
+				"さいせい is 再生 (play back). Correct.",
+				"せいせい is 精製 / 清々, not playback.",
+				"さいしょう is 最小 / 宰相, not 再生."
 			]
 		},
 		{
@@ -1589,19 +1589,19 @@
 				"reitō (frozen)",
 				"wrong"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "「冷房」读れいぼう，冷气。近音一组：冷蔵（れいぞう）・冷凍（れいとう），都带「冷」但后一字不同。",
+			"point_en": "冷房 is れいぼう (A/C). Same 冷 family: 冷蔵 (れいぞう), 冷凍 (れいとう).",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"れいぼう＝「冷房」，空调制冷，正确。",
+				"れいぞう＝「冷蔵」，冷藏。",
+				"れいとう＝「冷凍」，冷冻。",
+				"れいどう 不是常用词；「房」不读どう。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"れいぼう is 冷房 (air conditioning). Correct.",
+				"れいぞう is 冷蔵 (refrigeration).",
+				"れいとう is 冷凍 (freezing).",
+				"れいどう isn’t the usual word; 房 is not どう."
 			]
 		},
 		{
@@ -1621,19 +1621,19 @@
 				"replace",
 				"return"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "把书还给图书馆用「返す（かえす）」。帰す也读かえす，但是“让人回去”。替是かえる（更换），辺是あたり。",
+			"point_en": "Return a book with 返す (かえす). 帰す is also かえす but “send someone home.” 替 is replace; 辺 is vicinity.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"辺す 不成词，「辺」是一带。",
+				"帰す＝让人回去，对象是人不是书。",
+				"替す 不是「替える」的写法。",
+				"返す＝把物品还给原主／图书馆，正确。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"辺す isn’t a word; 辺 means “area.”",
+				"帰す means send a person home, not return a book.",
+				"替す is not how 替える is written.",
+				"返す is return an object. Correct."
 			]
 		},
 		{
@@ -1653,19 +1653,19 @@
 				"gain weight",
 				"limited"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "赛前减体重是「減量（げんりょう）」。増量意思相反；消量不成词；限量是限定数量。",
+			"point_en": "Cutting weight is 減量 (げんりょう). 増量 is the opposite; 消量 isn’t a word; 限量 is a limited quantity.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"減量＝げんりょう，减体重，正确。",
+				"消量 不成词。",
+				"増量＝ぞうりょう，增重，意思相反。",
+				"限量＝限定数量，不是减肥。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"減量 is げんりょう (cut weight). Correct.",
+				"消量 isn’t a word.",
+				"増量 is ぞうりょう (gain weight), the opposite.",
+				"限量 means a limited quantity, not dieting."
 			]
 		},
 		{
@@ -1685,19 +1685,19 @@
 				"keep",
 				"put back"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "放回原处用「戻す（もどす）」。返す是还给别人；直す是修理；存じる是知道（谦让）。",
+			"point_en": "Put something back with 戻す (もどす). 返す is return to a person; 直す is fix; 存じる is “know” (humble).",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"直して＝なおして，修理、改正。",
+				"返して＝かえして，还给人，不是放回原地。",
+				"存して＝ぞんじて，知道（谦让语），接续也不对。",
+				"戻して＝もどして，放回原处，正确。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"直して is なおして (fix / correct).",
+				"返して is かえして (give back to someone), not “put back.”",
+				"存して is ぞんじて (know, humble) and doesn’t conjugate this way.",
+				"戻して is もどして (put back). Correct."
 			]
 		},
 		{
@@ -1717,19 +1717,19 @@
 				"face",
 				"next"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "「つづき」写「続き」，下文、下回。付き是つき，向き是むき，次き不成字。",
+			"point_en": "つづき is 続き (the rest / next part). 付き is つき, 向き is むき, 次き isn’t a word.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"付き＝つき，附带、附着，不读つづき。",
+				"続き＝つづき，后续部分，正确。",
+				"向き＝むき，朝向、适合。",
+				"次き 不成词；“下次”是「次」。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"付き is つき (attached), not つづき.",
+				"続き is つづき (the continuation). Correct.",
+				"向き is むき (direction / suited to).",
+				"次き isn’t a word; “next” is 次."
 			]
 		},
 		{
@@ -1749,19 +1749,19 @@
 				"fee",
 				"expense"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "通勤、出行花的钱是「交通費」。「費」＝费用。料多用于入場料・授業料，代用于部屋代，金不能直接接。",
+			"point_en": "Travel cost is 交通費. 費 is an expense. 料 is 入場料／授業料; 代 is 部屋代; 金 doesn’t attach here.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"交通金 不成词。",
+				"交通代 口语偶见，标准书面是「交通費」。",
+				"交通料 不这么说；「料」多用于使用费、学费。",
+				"交通費＝交通费用，正确。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"交通金 isn’t a word.",
+				"交通代 appears in speech, but the standard word is 交通費.",
+				"交通料 isn’t used; 料 is for usage/tuition fees.",
+				"交通費 is transportation cost. Correct."
 			]
 		},
 		{
@@ -1781,19 +1781,19 @@
 				"set",
 				"point"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "印刷品、资料的份数用「部」：30部。束是捆，组是套，点是件／分。",
+			"point_en": "Copies of a handout are counted with 部: 30部. 束 is a bundle, 組 a set, 点 an item/point.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"30束＝三十捆，太粗的量词。",
+				"30部＝三十份复印件，正确。",
+				"30組＝三十套。",
+				"30点＝三十件／三十分。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"30束 is thirty bundles, the wrong counter.",
+				"30部 is thirty copies. Correct.",
+				"30組 is thirty sets.",
+				"30点 is thirty items or 30 points."
 			]
 		},
 		{
@@ -1813,19 +1813,19 @@
 				"material",
 				"made of"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "纸袋是「紙袋」。「袋」＝袋子。庫是仓库，材是材料，製是“制成的”（紙製の）。",
+			"point_en": "A paper bag is 紙袋. 庫 is a storehouse, 材 material, 製 “made of” (紙製の).",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"紙袋＝纸袋，装进去，正确。",
+				"紙庫 不成“纸袋”；庫是库房。",
+				"紙材＝纸质材料，不是容器。",
+				"紙製＝纸做的，后面要接名词，不能「紙製に入れる」。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"紙袋 is a paper bag. Correct.",
+				"紙庫 isn’t a bag; 庫 is a storehouse.",
+				"紙材 is paper material, not a container.",
+				"紙製 means made of paper and needs a noun after it."
 			]
 		},
 		{
@@ -1845,19 +1845,19 @@
 				"need",
 				"keep"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "包装上的「要冷凍」＝需要冷冻。要＋动词性名词。必冷冻不这么写；保是保冷／保管；限是期限。",
+			"point_en": "Labels say 要冷凍 (keep frozen). 必 isn’t used this way; 保 is 保冷／保管; 限 is a limit.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"必冷凍 不是固定标签用语。",
+				"限冷凍 不成词。",
+				"要冷凍＝需要冷冻，正确。",
+				"保冷凍 不成词；相近的是「保冷」。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"必冷凍 isn’t the set label wording.",
+				"限冷凍 isn’t a word.",
+				"要冷凍 means “keep frozen.” Correct.",
+				"保冷凍 isn’t a word; the cousin is 保冷."
 			]
 		},
 		{
@@ -1877,19 +1877,19 @@
 				"thin",
 				"transmit"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "电话「再ダイヤル」＝重拨。「再」＝再一次。濃・薄是味道浓淡，伝是伝言。",
+			"point_en": "再ダイヤル is redial. 再 means again. 濃／薄 are thick/thin; 伝 is 伝言.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"濃ダイヤル：濃是浓，跟拨号无关。",
+				"再ダイヤル＝再拨一次，正确。",
+				"薄ダイヤル：薄是淡，跟拨号无关。",
+				"伝ダイヤル：伝言是留言，不是这个按钮名。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"濃ダイヤル: 濃 means thick; not a dial function.",
+				"再ダイヤル is redial. Correct.",
+				"薄ダイヤル: 薄 means thin; not a dial function.",
+				"伝ダイヤル: 伝言 is a message, not this button."
 			]
 		},
 		{
@@ -1909,19 +1909,19 @@
 				"period",
 				"style"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "「短期留学」＝短期留学。「期」表期间。短気是急性子，機是机器／机会，式是样式。",
+			"point_en": "短期留学 is a short-term stay. 期 is a period. 短気 is a short temper; 機 is machine/chance; 式 is style.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"短機 不成“短期”；機是机器或机会。",
+				"短気＝急性子，完全另一个词。",
+				"短期＝短期间，正确。",
+				"短式 不成这个词。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"短機 isn’t “short term”; 機 is machine or chance.",
+				"短気 means a short temper, another word entirely.",
+				"短期 is a short period. Correct.",
+				"短式 isn’t this compound."
 			]
 		}
 	],
@@ -1943,19 +1943,19 @@
 				"gōkaku",
 				"wrong"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "「合格」音读ごうかく。「合」ゴウ带长音，不要读ごかく或こうかく（降格・広角）。",
+			"point_en": "合格 is ごうかく. 合 is ゴウ with a long vowel — not ごかく or こうかく (降格 / 広角).",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"ごかく 少了长音う，不是「合格」。",
+				"あいきゃく 不是「合格」的读法。",
+				"ごうかく＝「合格」，考上、及格，正确。",
+				"こうかく＝「広角」「降格」等，不是合格。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"ごかく drops the long う; not 合格.",
+				"あいきゃく is not a reading of 合格.",
+				"ごうかく is 合格 (pass). Correct.",
+				"こうかく is 広角 / 降格 etc., not 合格."
 			]
 		},
 		{
@@ -1975,19 +1975,19 @@
 				"furikomi",
 				"wrong"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "银行汇款是「振り込み（ふりこみ）」。近音：張り込み（はりこみ）・折り込み（おりこみ）。",
+			"point_en": "A bank transfer is 振り込み (ふりこみ). Nearby: 張り込み (はりこみ), 折り込み (おりこみ).",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"はりこみ＝「張り込み」，蹲守、监视。",
+				"おりこみ＝「折り込み」，夹页广告、折进去。",
+				"ふりこみ＝「振り込み」，汇款，正确。",
+				"ほりこみ 不是这个词的读法。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"はりこみ is 張り込み (a stakeout).",
+				"おりこみ is 折り込み (an insert / folding in).",
+				"ふりこみ is 振り込み (bank transfer). Correct.",
+				"ほりこみ is not this word’s reading."
 			]
 		},
 		{
@@ -2007,19 +2007,19 @@
 				"wrong",
 				"mōshimasu"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "「申します」是「言います」的谦让语，申读もうす。催します（もよおします）是举办。不要丢掉长音う。",
+			"point_en": "申します is humble “I am called”; 申 is もうす. 催します (もよおします) is “hold (an event).” Keep the long う.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"もよおします＝「催します」，举办活动。",
+				"もおします 少了长音，不是「申します」。",
+				"まうします 假名不对。",
+				"もうします＝「申します」，我叫……，正确。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"もよおします is 催します (hold an event).",
+				"もおします drops the long vowel of 申します.",
+				"まうします has the wrong kana.",
+				"もうします is 申します (my name is…). Correct."
 			]
 		},
 		{
@@ -2039,19 +2039,19 @@
 				"jōkyū (advanced)",
 				"shōkyū (beginner)"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "「中級」读ちゅうきゅう。三级对照：初級しょうきゅう・中級ちゅうきゅう・上級じょうきゅう。ちょう是「長・超」。",
+			"point_en": "中級 is ちゅうきゅう. The set is 初級・中級・上級. ちょう is 長／超.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"ちゅうきゅう＝「中級」，中级，正确。",
+				"ちょうきゅう 把「中」读成ちょう了。",
+				"じょうきゅう＝「上級」，高级。",
+				"しょうきゅう＝「初級」，初级。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"ちゅうきゅう is 中級 (intermediate). Correct.",
+				"ちょうきゅう misreads 中 as ちょう.",
+				"じょうきゅう is 上級 (advanced).",
+				"しょうきゅう is 初級 (beginner)."
 			]
 		},
 		{
@@ -2071,19 +2071,19 @@
 				"beikoku",
 				"wrong"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "「米国」读べいこく，美国。「米」作美国时音读ベイ，不作マイ（米の音の一つ）。",
+			"point_en": "米国 is べいこく (the U.S.). As “America,” 米 is ベイ, not マイ.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"まいこく 是「米」的另一个音マイ，不用于「米国」。",
+				"めいこく 不是「米国」的读法。",
+				"べいこく＝「米国」，美国，正确。",
+				"みいこく 不是实际读法。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"まいこく uses 米’s other on-reading マイ; not used in 米国.",
+				"めいこく is not how 米国 is read.",
+				"べいこく is 米国 (the United States). Correct.",
+				"みいこく is not a real reading."
 			]
 		},
 		{
@@ -2103,19 +2103,19 @@
 				"wrong",
 				"wrong"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "「便利」音读べんり。「便」ベン，「利」リ。びん是「瓶・便（邮便的ビン）」，不要读ばん或べんに。",
+			"point_en": "便利 is べんり (便ベン + 利リ). びん is 瓶 / postal 便; not ばん or べんに.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"びんり 把「便」读成びん了（瓶・郵便のビン）。",
+				"べんり＝「便利」，方便，正确。",
+				"ばんり 不是「便利」的读法。",
+				"べんに 把「利」错读成に。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"びんり reads 便 as びん (瓶 / postal ビン).",
+				"べんり is 便利 (convenient). Correct.",
+				"ばんり is not how 便利 is read.",
+				"べんに misreads 利 as に."
 			]
 		},
 		{
@@ -2135,19 +2135,19 @@
 				"stock in",
 				"nyūka (arrival of goods)"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "货到了是「入荷（にゅうか）」。「荷」カ。入庫（にゅうこ）是入仓库，意思近但汉字是「庫」不是「荷」。",
+			"point_en": "Goods arriving is 入荷 (にゅうか). 荷 is カ. 入庫 (にゅうこ) is warehousing — close meaning, different kanji.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"にゅうこ＝「入庫」，入仓库，汉字不是「荷」。",
+				"にゅうに 把「荷」错读成に。",
+				"にゅうこ＝「入庫」，与选项1相同，仍不是「入荷」。",
+				"にゅうか＝「入荷」，到货，正确。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"にゅうこ is 入庫 (put into stock), not 荷.",
+				"にゅうに misreads 荷 as に.",
+				"にゅうこ is again 入庫, still not 入荷.",
+				"にゅうか is 入荷 (goods come in). Correct."
 			]
 		},
 		{
@@ -2167,19 +2167,19 @@
 				"seed",
 				"suna (sand)"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "「砂」训读すな。塩（しお）・石（いし）・種（たね）都是地上常见物，字形或场景易混。",
+			"point_en": "砂 is すな (sand). Easy scene mix-ups: 塩 (しお), 石 (いし), 種 (たね).",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"しお＝「塩」，盐。",
+				"いし＝「石」，石头。",
+				"たね＝「種」，种子。",
+				"すな＝「砂」，沙子，正确。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"しお is 塩 (salt).",
+				"いし is 石 (stone).",
+				"たね is 種 (seed).",
+				"すな is 砂 (sand). Correct."
 			]
 		},
 		{
@@ -2199,19 +2199,19 @@
 				"kōcha",
 				"kissa"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "「紅茶」读こうちゃ。「紅」コウ，「茶」チャ。こうさ把茶读成さ；きっさ是喫茶；ほんちゃ像本茶。",
+			"point_en": "紅茶 is こうちゃ (紅コウ + 茶チャ). こうさ reads 茶 as さ; きっさ is 喫茶; ほんちゃ looks like 本茶.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"こうさ 把「茶」错读成さ。",
+				"ほんちゃ 不是「紅茶」；像「本茶」。",
+				"こうちゃ＝「紅茶」，红茶，正确。",
+				"きっさ＝「喫茶」，喫茶店的喫茶。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"こうさ misreads 茶 as さ.",
+				"ほんちゃ isn’t 紅茶; it looks like 本茶.",
+				"こうちゃ is 紅茶 (black tea). Correct.",
+				"きっさ is 喫茶 (as in 喫茶店)."
 			]
 		},
 		{
@@ -2231,19 +2231,19 @@
 				"jisha",
 				"gisha"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "「支社」音读ししゃ，分公司。自社（じしゃ）是本公司；技者／汽車的ぎしゃ是近音。",
+			"point_en": "支社 is ししゃ (a branch). 自社 (じしゃ) is one’s own company; ぎしゃ is 技者／汽車.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"ししゃ＝「支社」，分公司，正确。",
+				"ちしゃ 把「支」错读成ち。",
+				"じしゃ＝「自社」，自己公司。",
+				"ぎしゃ＝「技者」「汽車」等，不是支社。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"ししゃ is 支社 (branch office). Correct.",
+				"ちしゃ misreads 支 as ち.",
+				"じしゃ is 自社 (one’s own company).",
+				"ぎしゃ is 技者 / 汽車 etc., not 支社."
 			]
 		},
 		{
@@ -2263,19 +2263,19 @@
 				"Buddha",
 				"pay"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "「はらう」写「払う」，付钱。去・私・仏右半边或整体都像「払」，是典型字形陷阱。",
+			"point_en": "はらう is 払う (pay). 去, 私, and 仏 look like 払 — a classic shape trap.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"去う 不成这个动词；「去」是离开。",
+				"私う 不成词；「私」是我。",
+				"仏う 不成词；「仏」是佛。",
+				"払う＝はらう，付钱，正确。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"去う isn’t this verb; 去 means “leave.”",
+				"私う isn’t a word; 私 is “I.”",
+				"仏う isn’t a word; 仏 is “Buddha.”",
+				"払う is はらう (pay). Correct."
 			]
 		},
 		{
@@ -2295,19 +2295,19 @@
 				"worry",
 				"express mail"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "「たくはい」写「宅配」，送货上门。配達是はいたつ，速達是そくたつ，心配是しんぱい。",
+			"point_en": "たくはい is 宅配 (home delivery). 配達 is はいたつ, 速達 そくたつ, 心配 しんぱい.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"配達＝はいたつ，投递，读音不是たくはい。",
+				"宅配＝たくはい，宅配便，正确。",
+				"心配＝しんぱい，担心。",
+				"速達＝そくたつ，快件。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"配達 is はいたつ (delivery), not たくはい.",
+				"宅配 is たくはい (home delivery). Correct.",
+				"心配 is しんぱい (worry).",
+				"速達 is そくたつ (express mail)."
 			]
 		},
 		{
@@ -2327,19 +2327,19 @@
 				"entrust",
 				"continue"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "把孩子托给别人用「預ける（あずける）」。届ける是送到，受ける是接受，続ける是继续。",
+			"point_en": "Leave a child in someone’s care with 預ける (あずける). 届ける is deliver, 受ける receive, 続ける continue.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"届ける＝とどける，送到、上交。",
+				"受ける＝うける，接受，方向相反。",
+				"預ける＝あずける，托付、寄存，正确。",
+				"続ける＝つづける，继续。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"届ける is とどける (deliver / submit).",
+				"受ける is うける (receive), the opposite direction.",
+				"預ける is あずける (entrust). Correct.",
+				"続ける is つづける (continue)."
 			]
 		},
 		{
@@ -2359,19 +2359,19 @@
 				"green",
 				"line"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "「みどり」写「緑」。糸旁一组：縁（えん）・録（ろく）・線（せん），字形极像，靠右半边区分。",
+			"point_en": "みどり is 緑. The 糸 group 縁・録・線 looks almost the same — tell them apart by the right side.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"縁＝えん／ふち，缘分、边缘。",
+				"録＝ろく，记录。",
+				"緑＝みどり，绿色、绿化，正确。",
+				"線＝せん，线。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"縁 is えん／ふち (tie / edge).",
+				"録 is ろく (record).",
+				"緑 is みどり (green). Correct.",
+				"線 is せん (line)."
 			]
 		},
 		{
@@ -2391,19 +2391,19 @@
 				"coming",
 				"remaining"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "连着休息是「連休」。「連」＝连续。次・来・残接「休」不成这个词（残休有时指剩余假期，但不说「残休は旅行」）。",
+			"point_en": "A long weekend is 連休. 連 means consecutive. 次／来／残＋休 isn’t this word.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"連休＝连休，正确。",
+				"次休 不成词。",
+				"来休 不成词。",
+				"残休 有时指剩下的假，但本题是出门旅行的连休。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"連休 is a stretch of holidays. Correct.",
+				"次休 isn’t a word.",
+				"来休 isn’t a word.",
+				"残休 can mean leftover leave, but here it’s a travel 連休."
 			]
 		},
 		{
@@ -2423,19 +2423,19 @@
 				"write",
 				"include"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "从广告得知是「広告」。「告」＝告知。例・記・込接在「広」后都不是广告。",
+			"point_en": "An advertisement is 広告. 告 is “announce.” 例, 記, and 込 don’t make “ad” after 広.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"広告＝广告，正确。",
+				"広例 不成词。",
+				"広記 不成“广告”。",
+				"広込 不成词。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"広告 is an advertisement. Correct.",
+				"広例 isn’t a word.",
+				"広記 isn’t “advertisement.”",
+				"広込 isn’t a word."
 			]
 		},
 		{
@@ -2455,19 +2455,19 @@
 				"price (ka)",
 				"reach"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "标价是「定価」。「価」音读カ。定値不常用；割引是打折；達是到达。半额以下对照的是定价。",
+			"point_en": "List price is 定価 (価＝カ). 定値 is uncommon; 割引 is a discount; 達 is reach. “Half off” is measured against 定価.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"定割 不成“定价”；割是折扣。",
+				"定値 不是常用词，定价写「定価」。",
+				"定価＝定价、标价，正确。",
+				"定達 不成词。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"定割 isn’t list price; 割 is a discount.",
+				"定値 isn’t the usual word; write 定価.",
+				"定価 is the list price. Correct.",
+				"定達 isn’t a word."
 			]
 		},
 		{
@@ -2487,19 +2487,19 @@
 				"years old",
 				"amount"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "「消費税」＝消费税，问百分之几就是税率。性・歳字形像税；額是金额（消費額）。",
+			"point_en": "消費税 is consumption tax — “what percent” asks the rate. 性 and 歳 look like 税; 額 is an amount (消費額).",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"消費税＝消费税，正确。",
+				"消費性：性是性质，不是税。",
+				"消費歳：「歳」是岁，字形像「税」。",
+				"消費額＝消费金额，不问“百分之几”。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"消費税 is consumption tax. Correct.",
+				"消費性: 性 is “nature,” not a tax.",
+				"消費歳: 歳 is “years old” and looks like 税.",
+				"消費額 is the amount spent, not a percent."
 			]
 		},
 		{
@@ -2519,19 +2519,19 @@
 				"long things",
 				"copies"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "CD、光盘用「枚」（扁平物）。冊是书，本是细长物，部是文件份数。",
+			"point_en": "CDs take 枚 (flat objects). 冊 is books, 本 long thin things, 部 copies of documents.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"何冊：冊用于书本，不用于CD。",
+				"何枚：枚用于扁平物，CD用枚，正确。",
+				"何本：本用于瓶、伞等细长物。",
+				"何部：部用于印刷品份数。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"何冊: 冊 is for books, not CDs.",
+				"何枚: 枚 is for flat things like CDs. Correct.",
+				"何本: 本 is for bottles, umbrellas, etc.",
+				"何部: 部 is for copies of printed matter."
 			]
 		},
 		{
@@ -2551,19 +2551,19 @@
 				"model/type",
 				"class"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "车辆大小用「大型トラック」。型＝型号、类型。形是形状，级是等级，倍是倍数。",
+			"point_en": "Vehicle size is 大型トラック. 型 is model/type. 形 is shape, 級 class, 倍 times.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"大形 有时可见，但卡车固定说「大型」。",
+				"大倍 不成词。",
+				"大型＝大型车辆，正确。",
+				"大級 不成这个车种名。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"大形 appears sometimes, but trucks are 大型.",
+				"大倍 isn’t a word.",
+				"大型 is a large-size vehicle. Correct.",
+				"大級 isn’t this vehicle class."
 			]
 		}
 	]

@@ -1,0 +1,446 @@
+{
+	"w5": [
+		{
+			"n": 1,
+			"trans_en": "I’m sorry I can’t come to the wedding.",
+			"point_en": "残 is ザン on-yomi (残業・残念) and のこ-る kun. 念 is ネン.",
+			"why_en": [
+				"だんねん is 断念 (give up) — different kanji.",
+				"きねん is 記念.",
+				"ざんねん. Correct.",
+				"むねん is 無念."
+			]
+		},
+		{
+			"n": 2,
+			"trans_en": "I’m going to take a picture — smile.",
+			"point_en": "笑 is わら-う. The distractors are て-forms of 洗・祝・払, same rhythm, only the first mora differs.",
+			"why_en": [
+				"あらって = 洗って (wash).",
+				"いわって = 祝って (celebrate).",
+				"はらって = 払って (pay).",
+				"わらって = laugh. Correct."
+			]
+		},
+		{
+			"n": 3,
+			"trans_en": "Please move the car over there.",
+			"point_en": "移 is イ (移動) and うつ-る／うつ-す.",
+			"why_en": [
+				"じどう = 自動／児童 (automatic / child).",
+				"ほどう = 歩道 (sidewalk).",
+				"いどう = move. Correct.",
+				"たどう = 他動 (transitive)."
+			]
+		},
+		{
+			"n": 4,
+			"trans_en": "Sorry my reply is late.",
+			"point_en": "遅 has two kun with different meanings: おそ-い (slow) and おく-れる (later than planned).",
+			"why_en": [
+				"おくれて = late. Correct.",
+				"おそれて = 恐れて (fear).",
+				"あきれて = 呆れて (be appalled).",
+				"つかれて = 疲れて (tired)."
+			]
+		},
+		{
+			"n": 5,
+			"trans_en": "I hear Yamada quit the company.",
+			"point_en": "辞める is resigning or leaving (会社を辞める). Just stopping an action is やめる／止める.",
+			"why_en": [
+				"なめた = licked / looked down on.",
+				"とめた = 止めた (stopped).",
+				"ほめた = 褒めた (praised).",
+				"やめた = quit. Correct."
+			]
+		},
+		{
+			"n": 6,
+			"trans_en": "Tie your shoelaces.",
+			"point_en": "結 is ケツ (結局・結構) and むす-ぶ — tying a cord or a relationship.",
+			"why_en": [
+				"むすぶ. Correct.",
+				"もすぶ is not a real reading.",
+				"みすぶ is not a real reading.",
+				"ゆすぶ is 揺すぶる — different kanji."
+			]
+		},
+		{
+			"n": 7,
+			"trans_en": "Grandfather lives deep in the mountains.",
+			"point_en": "奥 is おく, the inner / deep part. 奥さん uses the same character.",
+			"why_en": [
+				"そく is not a reading of 奥.",
+				"ろく is not a reading of 奥.",
+				"おく. Correct.",
+				"まく is not a reading of 奥."
+			]
+		},
+		{
+			"n": 8,
+			"trans_en": "Politics is a hard topic.",
+			"point_en": "治 has ジ and チ: 政治 (せいじ), 治療 (ちりょう). Here it’s ジ.",
+			"why_en": [
+				"せいじ = politics. Correct.",
+				"せいち = 治 misread as チ.",
+				"しょうち = 承知 (acknowledgment).",
+				"しょうじ = 障子 (sliding paper door)."
+			]
+		},
+		{
+			"n": 9,
+			"trans_en": "A letter came from our son.",
+			"point_en": "息子（むすこ） is a jukujikun; you can’t split it as 息（いき）. Daughter is 娘（むすめ）.",
+			"why_en": [
+				"むつこ is not this word.",
+				"もすこ is not this word.",
+				"むすこ. Correct.",
+				"もつこ is not this word."
+			]
+		},
+		{
+			"n": 10,
+			"trans_en": "Japanese sake is made from rice.",
+			"point_en": "酒 is シュ (日本酒) and さけ (お酒); in compounds it becomes さか (酒屋・酒場).",
+			"why_en": [
+				"ちょ is not an on-yomi of 酒.",
+				"ちゅ is not an on-yomi of 酒.",
+				"じゅ is not an on-yomi of 酒.",
+				"しゅ. Correct."
+			]
+		},
+		{
+			"n": 11,
+			"trans_en": "I wrote a thank-you postcard.",
+			"point_en": "礼 is レイ, thanks: お礼を言う. The shape is close to 札 — only the right side differs.",
+			"why_en": [
+				"お礼. Correct.",
+				"お札 = banknote / charm.",
+				"机 = desk.",
+				"杯 = cup / counter for cups."
+			]
+		},
+		{
+			"n": 12,
+			"trans_en": "When would be convenient for me to visit?",
+			"point_en": "伺う is the humble form of 聞く・行く・訪ねる. The four options share a left side; look at the right.",
+			"why_en": [
+				"司 = つかさど-る (司会, preside).",
+				"伺えば = visit / ask (humble). Correct.",
+				"何 = なに (what).",
+				"向 = む-く (face toward)."
+			]
+		},
+		{
+			"n": 13,
+			"trans_en": "Look up the meaning of the word.",
+			"point_en": "調 is チョウ (調子・強調) and しら-べる. All four end in 〜べる; only the kanji tells them apart.",
+			"why_en": [
+				"呼べる = can call.",
+				"並べる = line up.",
+				"選べる = can choose.",
+				"調べる. Correct."
+			]
+		},
+		{
+			"n": 14,
+			"trans_en": "Wipe the sweat with a towel.",
+			"point_en": "Sweat, juice, and tears (汗・汁・涙) all have the water radical. 汗をかく is a set phrase.",
+			"why_en": [
+				"息 = breath.",
+				"汗. Correct.",
+				"涙 = tears.",
+				"汁 = juice / soup."
+			]
+		},
+		{
+			"n": 15,
+			"trans_en": "First chop the ingredients finely.",
+			"point_en": "最 means “most”: 最初・最後・最近. 再 and 際 also read サイ — split them by meaning.",
+			"why_en": [
+				"再 = once more (再度).",
+				"先 = ahead.",
+				"際 = when / at the time of.",
+				"最初. Correct."
+			]
+		},
+		{
+			"n": 16,
+			"trans_en": "The weather is getting better.",
+			"point_en": "All four read フク; only radical and meaning split 回復・服・幸福・空腹.",
+			"why_en": [
+				"服 = clothes / take (medicine).",
+				"回復. Correct.",
+				"福 = happiness.",
+				"腹 = belly."
+			]
+		},
+		{
+			"n": 17,
+			"trans_en": "Thank you for your kindness last year.",
+			"point_en": "昨年 is the formal 去年, common at year-end. Same family as 昨日・昨夜.",
+			"why_en": [
+				"次年 = the following year — wrong for this greeting.",
+				"毎年 = every year.",
+				"各年 is not a usual word.",
+				"昨年 = last year. Correct."
+			]
+		},
+		{
+			"n": 18,
+			"trans_en": "I won’t go back to the office; I’ll go straight home.",
+			"point_en": "直接 = with no stop in between. “Not going back to the office” is the hint.",
+			"why_en": [
+				"直接 = directly. Correct.",
+				"間接 = indirect — opposite.",
+				"真 = 真剣・真っ黒 (serious / pitch-black).",
+				"正 = 正確・正しい (correct)."
+			]
+		},
+		{
+			"n": 19,
+			"trans_en": "Buy headache medicine.",
+			"point_en": "The noun is 頭痛（ずつう）; the adjective phrase is 頭が痛い. 通 also reads ツウ.",
+			"why_en": [
+				"通 = traffic / pass.",
+				"頭痛薬. Correct.",
+				"病 = illness.",
+				"療 = treatment."
+			]
+		},
+		{
+			"n": 20,
+			"trans_en": "I have no appetite.",
+			"point_en": "欲 is ヨク (食欲・意欲) and ほ-しい.",
+			"why_en": [
+				"色 = color; 食色 is not a Japanese word.",
+				"浴 = bathe.",
+				"気 — 食気 is not a common word.",
+				"食欲. Correct."
+			]
+		}
+	],
+	"w6": [
+		{
+			"n": 1,
+			"trans_en": "It should be sunny across the country this weekend.",
+			"point_en": "晴 is セイ (晴天) and は-れる. The four options differ only in the first mora.",
+			"why_en": [
+				"ばれる = be found out — different kanji.",
+				"てれる = 照れる (be shy).",
+				"はれる = clear up. Correct.",
+				"なれる = 慣れる (get used to)."
+			]
+		},
+		{
+			"n": 2,
+			"trans_en": "This is a food sold widely in Japan.",
+			"point_en": "般 is ハン; after 一 it becomes いっ**ぱん** by sokuon + half-voicing. Same pattern as 一方（いっぽう）.",
+			"why_en": [
+				"いっせん = 一線 (a line).",
+				"いっそう = 一層 (even more).",
+				"いっせい = 一斉 (all at once).",
+				"いっぱん = general. Correct."
+			]
+		},
+		{
+			"n": 3,
+			"trans_en": "What fruit is this?",
+			"point_en": "果物（くだもの） is jukujikun, not 果 split as カ. Don’t mix with 獣（けだもの） — one mora off.",
+			"why_en": [
+				"けだもの = 獣 (beast).",
+				"くだもの. Correct.",
+				"こだもの is not a reading.",
+				"こなもの = 粉物 (flour dishes)."
+			]
+		},
+		{
+			"n": 4,
+			"trans_en": "Our team played a strong team and won.",
+			"point_en": "戦 is セン (戦争・作戦) and たたか-う. The distractors scramble the same kana.",
+			"why_en": [
+				"かたかって — kana order wrong.",
+				"たかたって — kana order wrong.",
+				"かかたって — kana order wrong.",
+				"たたかって. Correct."
+			]
+		},
+		{
+			"n": 5,
+			"trans_en": "Attend an international conference.",
+			"point_en": "Two traps: 際 is サイ (not セイ); 議 is ギ (会議・議論).",
+			"why_en": [
+				"こくせいかいに — both 際 and 議 wrong.",
+				"こくさいかいぎ. Correct.",
+				"こくさいかいに — 議 misread.",
+				"こくせいかいぎ — 際 misread as せい."
+			]
+		},
+		{
+			"n": 6,
+			"trans_en": "I study politics and economics at university.",
+			"point_en": "治 in 政治 is ジ (治療 is チ). 済 in 経済 is ザイ, not サイ. Q10 tests the kun す-む.",
+			"why_en": [
+				"せいちけいざい — 治 as チ.",
+				"せいじけいざい. Correct.",
+				"せいちけいさい — both wrong.",
+				"せいじけいさい — 済 as さい."
+			]
+		},
+		{
+			"n": 7,
+			"trans_en": "Don’t lose to the cold — keep going.",
+			"point_en": "負 is フ (負担) and ま-ける / お-う. Option 3 怠ける also makes sense, but it is not 負.",
+			"why_en": [
+				"なさけないで = 情けない (pathetic).",
+				"もけないで is not a reading.",
+				"なまけないで = 怠けないで (don’t slack off).",
+				"まけないで = don’t lose. Correct."
+			]
+		},
+		{
+			"n": 8,
+			"trans_en": "Import raw materials.",
+			"point_en": "All four are 〜料. 原 is ゲン: 原料・原因.",
+			"why_en": [
+				"ひりょう = 肥料 (fertilizer).",
+				"ねんりょう = 燃料 (fuel).",
+				"げんりょう = raw materials. Correct.",
+				"こうりょう = 香料 (spice / perfume)."
+			]
+		},
+		{
+			"n": 9,
+			"trans_en": "Please don’t throw trash out the car window.",
+			"point_en": "Compound of 投げる + 捨てる. 投 also has トウ (投票).",
+			"why_en": [
+				"なげすて. Correct.",
+				"まげすて = 曲げ — different kanji.",
+				"なげつて — okurigana wrong.",
+				"まげつて — both wrong."
+			]
+		},
+		{
+			"n": 10,
+			"trans_en": "Finish your homework before you watch TV.",
+			"point_en": "済 is サイ (経済) and す-む／す-ませる. Q6 is the on-yomi of the same character.",
+			"why_en": [
+				"からませて = 絡ませて (entangle).",
+				"さませて = 冷ませて／覚ませて (cool / wake).",
+				"おわませて is not a word.",
+				"すませて = finish. Correct."
+			]
+		},
+		{
+			"n": 11,
+			"trans_en": "Report the experiment results.",
+			"point_en": "Close readings: 実験 has a sokuon; 事件（じけん） does not.",
+			"why_en": [
+				"事件 = じけん — missing the sokuon, different meaning.",
+				"実験. Correct.",
+				"試験 = exam.",
+				"条件 = condition."
+			]
+		},
+		{
+			"n": 12,
+			"trans_en": "Ask a specialist for an opinion.",
+			"point_en": "専門 uses 門 (gate), not 問 (ask) — a famous mix-up.",
+			"why_en": [
+				"専門家. Correct.",
+				"専問家 = 門 written as 問.",
+				"千聞家 is not a word.",
+				"千文家 is not a word."
+			]
+		},
+		{
+			"n": 13,
+			"trans_en": "Discuss global warming.",
+			"point_en": "温 and 暖 share あたた-かい. Weather uses 暖; water and feeling use 温. 温暖化 needs both.",
+			"why_en": [
+				"温段化 = 暖 written as 段.",
+				"音暖化 = 温 written as 音.",
+				"温暖化. Correct.",
+				"音断化 — both wrong."
+			]
+		},
+		{
+			"n": 14,
+			"trans_en": "A north wind will blow tomorrow, so it will get cold.",
+			"point_en": "吹 is ふ-く for wind and instruments. Same reading as 拭く (wipe).",
+			"why_en": [
+				"吸いて = suck.",
+				"吹いて. Correct.",
+				"欠いて = lack.",
+				"比いて is not a word."
+			]
+		},
+		{
+			"n": 15,
+			"trans_en": "The next test covers up through Lesson 10.",
+			"point_en": "Textbook lessons use 課: 第1課. Don’t mix with 部, 問, or 科.",
+			"why_en": [
+				"部 = counter for copies.",
+				"課. Correct.",
+				"問 = question number.",
+				"科 = academic field."
+			]
+		},
+		{
+			"n": 16,
+			"trans_en": "The factory was mechanized.",
+			"point_en": "Suffix 〜化 means “turn into”: 機械化・温暖化・国際化. Same as Q13.",
+			"why_en": [
+				"比 = compare — not a suffix here.",
+				"的 makes a na-adjective (個人的), not “become.”",
+				"性 = a quality (可能性).",
+				"化. Correct."
+			]
+		},
+		{
+			"n": 17,
+			"trans_en": "I quit for personal reasons.",
+			"point_en": "Suffix 〜的 makes a na-adjective: 個人的な. Pair it with Q16’s 〜化.",
+			"why_en": [
+				"上 = from the standpoint of (仕事上).",
+				"因 = cause, not a suffix here.",
+				"的. Correct.",
+				"内 = inside (社内)."
+			]
+		},
+		{
+			"n": 18,
+			"trans_en": "Listen to the weather forecast on the radio.",
+			"point_en": "All four are 予〜. Weather takes 予報. 予想 is your own guess; 予報 is issued.",
+			"why_en": [
+				"予想 = guess — not the set phrase for weather.",
+				"予報. Correct.",
+				"予定 = plan.",
+				"予防 = prevention."
+			]
+		},
+		{
+			"n": 19,
+			"trans_en": "The prime minister denied the news report.",
+			"point_en": "否 (ヒ) is negation: 否定・拒否. Opposite is 肯定.",
+			"why_en": [
+				"否. Correct.",
+				"内定 = unofficial job offer.",
+				"無定 is not a word.",
+				"正定 is not a word."
+			]
+		},
+		{
+			"n": 20,
+			"trans_en": "The person on the phone seems to be somewhere with no signal.",
+			"point_en": "電波が届く／届かない is the set phrase for mobile signal. 波 is ハ, voiced after 電 as でん**ぱ**.",
+			"why_en": [
+				"電池 = battery.",
+				"電車 = train.",
+				"電信 = telegraph.",
+				"波. Correct."
+			]
+		}
+	]
+}
