@@ -26,11 +26,30 @@ function check(book, pack, label, expectedWeeks, expectedCount) {
 				assert.equal(item.n, source[index].n, `${label} w${week.n}: n`);
 				assert.match(String(item.trans || ""), /[\u3400-\u9fff]/, `${label} w${week.n} #${item.n}: cn`);
 				assert.match(String(item.trans_en || ""), /[A-Za-z]/, `${label} w${week.n} #${item.n}: en`);
+				assert.match(String(item.point || ""), /[\u3400-\u9fff]/, `${label} w${week.n} #${item.n}: point`);
+				assert.match(String(item.point_en || ""), /[A-Za-z]/, `${label} w${week.n} #${item.n}: point_en`);
+				const opts = source[index].opts || source[index].options || [];
+				assert.equal((item.why || []).length, opts.length, `${label} w${week.n} #${item.n}: why length`);
+				assert.equal((item.why_en || []).length, opts.length, `${label} w${week.n} #${item.n}: why_en length`);
+				(item.why || []).forEach((text, whyIndex) => {
+					assert.match(String(text || ""), /[\u3400-\u9fff]/, `${label} w${week.n} #${item.n}: why[${whyIndex}]`);
+				});
+				(item.why_en || []).forEach((text, whyIndex) => {
+					assert.match(String(text || ""), /[A-Za-z]/, `${label} w${week.n} #${item.n}: why_en[${whyIndex}]`);
+				});
 			});
 			count += generated.length;
 		} else {
 			assert.ok((day?.kaisetsu || []).length, `${label} w${week.n}: existing kaisetsu must stay`);
 			assert.equal(pack[`w${week.n}`], undefined, `${label} w${week.n}: sidecar must not overwrite`);
+			for (const item of day.kaisetsu || []) {
+				assert.match(String(item.trans_en || ""), /[A-Za-z]/, `${label} w${week.n} #${item.n}: trans_en`);
+				assert.match(String(item.point_en || ""), /[A-Za-z]/, `${label} w${week.n} #${item.n}: point_en`);
+				assert.equal((item.why_en || []).length, (item.why || []).length, `${label} w${week.n} #${item.n}: why_en length`);
+				(item.why_en || []).forEach((text, whyIndex) => {
+					assert.match(String(text || ""), /[A-Za-z]/, `${label} w${week.n} #${item.n}: why_en[${whyIndex}]`);
+				});
+			}
 		}
 	}
 	assert.equal(count, expectedCount, `${label}: unexpected count`);

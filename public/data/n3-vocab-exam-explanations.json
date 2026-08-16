@@ -17,19 +17,19 @@
 				"cook rice",
 				"deep-fry"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "ごはんを炊く是煮饭的固定说法。煮る是加水慢炖，蒸す是蒸，揚げる是油炸。",
+			"point_en": "炊く is the set verb for cooking rice. 煮る is simmering, 蒸す steaming, 揚げる deep-frying.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"煮る＝加水慢慢炖煮，不说「ごはんを煮る」。",
+				"蒸す＝蒸，米饭一般不说むす。",
+				"炊く＝专门指煮饭，没有电饭煲就用锅炊く，正确。",
+				"揚げる＝用油炸，不是煮饭。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"煮る means simmer in water, not used for rice.",
+				"蒸す means steam; rice is not usually むす here.",
+				"炊く is the verb for cooking rice — correct.",
+				"揚げる means deep-fry, not cook rice."
 			]
 		},
 		{
@@ -49,19 +49,19 @@
 				"hit",
 				"beat"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "「かんだりほえたり」把狗伤人的典型动作并列。なでる是人摸狗，不是狗的行为。",
+			"point_en": "かんだりほえたり pairs a dog's bite and bark. なでる is a person stroking the dog.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"なでる＝抚摸，是人的动作，不能和「咬」并列说狗不伤人。",
+				"ほえる＝吠叫，和「かむ」并列表示这狗不咬也不叫，正确。",
+				"たたく＝打，是人打狗，不是狗的危险行为。",
+				"ぶつ＝揍，同样是人打狗。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"なでる is stroking — a person's action, not the dog's.",
+				"ほえる means bark; with かむ it means the dog is safe — correct.",
+				"たたく means hit (a person hitting the dog).",
+				"ぶつ means beat (also a person hitting the dog)."
 			]
 		},
 		{
@@ -81,19 +81,19 @@
 				"wear",
 				"dry"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "靴をみがく＝把鞋擦亮。しぼる是拧干，はく是穿，ほす是晾。",
+			"point_en": "靴をみがく means polish shoes. しぼる is wring, はく wear, ほす dry.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"しぼる＝拧干（毛巾等），不能用来擦鞋。",
+				"みがく＝擦亮，出门前把鞋擦干净，正确。",
+				"はく＝穿鞋，不是「弄干净」。",
+				"ほす＝晾晒，湿鞋才晾，这里是擦干净。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"しぼる means wring out, not polish shoes.",
+				"みがく means polish — clean the shoes before going out.",
+				"はく means put shoes on, not clean them.",
+				"ほす means hang out to dry, not polish."
 			]
 		},
 		{
@@ -113,19 +113,19 @@
 				"finish",
 				"store"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "お金を与える＝给人钱。「～てはいけません」表示禁止。そろえる是备齐，仕上げる是做完。",
+			"point_en": "お金を与える = give money. そろえる is gather/arrange; 仕上げる is finish.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"与える＝给，不能给孩子太多钱，正确。",
+				"そろえる＝凑齐、对齐，不是「给钱」。",
+				"仕上げる＝做完、收尾，不能接お金。",
+				"保存する＝保存食物等，不能说把钱保存给孩子。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"与える means give — you mustn't give children too much money.",
+				"そろえる means line up or gather, not give money.",
+				"仕上げる means finish off, not used with money here.",
+				"保存する means store (food, data), not give money to a child."
 			]
 		},
 		{
@@ -145,19 +145,19 @@
 				"groan",
 				"stroke"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "頭をなでる是安慰时轻轻摸头。こする是用力搓，ぶつ是打。",
+			"point_en": "頭をなでる is a gentle stroke of the head. こする is rubbing hard; ぶつ is hitting.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"こする＝用力搓、摩擦，和「やさしく」不配。",
+				"ぶつ＝打，妈妈安慰孩子不会打头。",
+				"うなる＝呻吟、低吼，不能接「头を」。",
+				"なでる＝轻轻抚摸，哭的时候摸头安慰，正确。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"こする is rub hard — not やさしく.",
+				"ぶつ means hit — not comforting.",
+				"うなる means groan or growl — can't take 頭を.",
+				"なでる is a gentle stroke — Mom comforts the child."
 			]
 		},
 		{
@@ -177,19 +177,19 @@
 				"peel",
 				"mince"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "細かくきざむ＝切碎后再炒。むく是削皮，かぶせる是盖上，くるむ是包起来。",
+			"point_en": "細かくきざむ = chop fine, then stir-fry. むく is peel; かぶせる cover; くるむ wrap.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"かぶせる＝盖上，不是把菜切细。",
+				"くるむ＝包起来，不是切。",
+				"むく＝削皮，只去皮，不是細かく切。",
+				"きざむ＝切细碎，再いためる，正确。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"かぶせる means cover, not chop.",
+				"くるむ means wrap, not chop.",
+				"むく means peel, not mince finely.",
+				"きざむ means chop/mince — then stir-fry."
 			]
 		},
 		{
@@ -209,19 +209,19 @@
 				"is cold",
 				"tidies easily"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "南向大窗的结果是日当たりがいい。クーラーが効く跟窗户朝向无关。",
+			"point_en": "A big south window means 日当たりがいい. クーラーが効く is unrelated to window direction.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"クーラーが効いている＝空调很足，和朝南大窗没有因果关系。",
+				"日当たりがいい＝采光好，南边有大窗所以很亮堂，正确。",
+				"冷えている＝变冷了，南窗反而容易暖和。",
+				"片づく＝收拾好，和窗户朝向无关。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"Strong AC is not caused by a south window.",
+				"日当たりがいい = gets good sun — matches a big south window.",
+				"冷えている = is cold — a south window usually warms the room.",
+				"片づく = gets tidy — unrelated to the window."
 			]
 		},
 		{
@@ -241,19 +241,19 @@
 				"calories",
 				"taste"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "减肥要避开カロリーが高い食品。不说バランスが高い（应说栄養バランスがいい）。",
+			"point_en": "To lose weight, avoid カロリーが高い food. Don't say バランスが高い.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"バランス＝均衡，不说「バランスが高い」。",
+				"さとう＝糖，减肥不只是不吃糖。",
+				"カロリー＝热量，想瘦就不吃高热量的，正确。",
+				"味が高い不说，味道和减肥没有直接关系。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"You don't say バランスが高い.",
+				"さとう is sugar — dieting is about calories, not only sugar.",
+				"カロリーが高い = high-calorie — what you avoid to lose weight.",
+				"味 is taste; 味が高い is not used this way."
 			]
 		},
 		{
@@ -273,19 +273,19 @@
 				"is simmering",
 				"is boiling"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "こげる＝烧糊。忘了火才会喊大変；煮る／ゆでる是正常加热。",
+			"point_en": "こげる = burn/scorch. 煮る and ゆでる are normal cooking, not an emergency.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"こげる＝糊了、烧焦，忘了火才会这样，正确。",
+				"かぶる＝盖上，锅盖着并不紧急。",
+				"煮る＝正在炖，是正常状态。",
+				"ゆでる＝正在焯／煮，也不是坏事。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"こげる means the pot is burning — matches 忘れてた.",
+				"かぶる means be covered — not an emergency.",
+				"煮る is simmering, a normal state.",
+				"ゆでる is boiling, also normal cooking."
 			]
 		},
 		{
@@ -305,19 +305,19 @@
 				"brush",
 				"bucket"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "コンセントにほこり＝插座积灰，有短路起火的危险。",
+			"point_en": "Dust on a コンセント (outlet) can short and cause a fire.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"クリーニング＝干洗，不是积灰的地方。",
+				"コンセント＝插座，积灰会短路，很危险，正确。",
+				"ブラシ＝刷子，刷子上有灰不至于「危险」。",
+				"バケツ＝水桶，积灰也不构成触电危险。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"クリーニング is dry-cleaning, not a place dust collects dangerously.",
+				"コンセント is an outlet — dust there is a fire hazard.",
+				"ブラシ is a brush; dusty bristles aren't this kind of danger.",
+				"バケツ is a bucket; dust on it isn't an electric hazard."
 			]
 		},
 		{
@@ -337,19 +337,19 @@
 				"rub",
 				"line up"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "ひっくり返す＝把上下或表里反过来。混ぜる是搅匀，そろえる是对齐。",
+			"point_en": "ひっくり返す = flip top/bottom or front/back. 混ぜる is mix; そろえる is align.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"混ぜる＝搅拌均匀，不是翻转。",
+				"ひっくり返す＝上下或正反反过来，正合定义。",
+				"こする＝摩擦，不是翻面。",
+				"そろえる＝对齐、备齐，不是反过来。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"混ぜる means mix, not turn over.",
+				"ひっくり返す matches turning something over.",
+				"こする means rub, not flip.",
+				"そろえる means line up, not reverse."
 			]
 		},
 		{
@@ -369,19 +369,19 @@
 				"tablespoon",
 				"knife"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "はかり测重量。カップ／大さじ量容积，包丁是刀。",
+			"point_en": "はかり measures weight. カップ/大さじ measure volume; 包丁 is a knife.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"はかり＝秤，专门用来称重量，正确。",
+				"カップ＝量杯，量的是体积，不是重量。",
+				"大さじ＝大勺，也是量容积。",
+				"包丁＝菜刀，用来切，不称重。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"はかり is a scale for weight — correct.",
+				"カップ is a measuring cup (volume).",
+				"大さじ is a tablespoon (volume).",
+				"包丁 is a kitchen knife, not a scale."
 			]
 		},
 		{
@@ -401,19 +401,19 @@
 				"fold",
 				"dry in the sun"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "干す＝晒干。つるす只是挂起来，ぬらす是弄湿。",
+			"point_en": "干す = dry in the sun. つるす is only hang; ぬらす is wet.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"ぬらす＝弄湿，和「日に当てて乾かす」相反。",
+				"つるす＝挂起来，不一定是为了晒干。",
+				"たたむ＝叠起来，是干了以后的动作。",
+				"ほす＝日に当てて乾かす，正合定义。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"ぬらす means wet — the opposite.",
+				"つるす means hang, not necessarily to dry.",
+				"たたむ means fold, done after things are dry.",
+				"ほす means dry in the sun — exact match."
 			]
 		},
 		{
@@ -433,19 +433,19 @@
 				"hold hands",
 				"stroke"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "だっこする＝抱在胸前。おんぶする是背在背上。",
+			"point_en": "だっこする = hold in the arms. おんぶする is piggyback.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"だっこする＝用胳膊抱在身前，正合定义。",
+				"おんぶする＝背在背上，不是怀里。",
+				"手をつなぐ＝牵手，不是抱。",
+				"なでる＝抚摸，不是抱起来。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"だっこする is holding in the arms — correct.",
+				"おんぶする is carrying on the back.",
+				"手をつなぐ is holding hands.",
+				"なでる is stroking, not holding."
 			]
 		},
 		{
@@ -465,19 +465,19 @@
 				"deep-fry",
 				"parboil"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "揚げる＝放进大量热油里炸。煮る是汤煮，蒸す是蒸，ゆでる是焯。",
+			"point_en": "揚げる = deep-fry in lots of hot oil. 煮る/ゆでる use water; 蒸す uses steam.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"煮る＝加水炖煮，不是油炸。",
+				"むす＝蒸，用蒸汽。",
+				"あげる＝油炸，正合「热油里放入」。",
+				"ゆでる＝用开水焯／煮。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"煮る is simmer in water.",
+				"むす is steam.",
+				"あげる is deep-fry — matches hot oil.",
+				"ゆでる is boil/parboil in water."
 			]
 		},
 		{
@@ -497,19 +497,19 @@
 				"push",
 				"take out"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "蛇口をひねる＝把龙头转开或关上，近义まわす。按是押す。",
+			"point_en": "蛇口をひねる = twist the tap, same idea as まわす. 押す is push.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"さげる＝放下、降低，不是拧龙头。",
+				"まわす＝转，拧水龙头就是转，正确。",
+				"押す＝按，按钮才用押す。",
+				"出す＝拿出，不能替换「ひねる」。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"さげる means lower, not turn a tap.",
+				"まわす means turn — what ひねる does to a tap.",
+				"押す means push, for buttons.",
+				"出す means take out, not twist."
 			]
 		},
 		{
@@ -529,19 +529,19 @@
 				"put",
 				"tidy"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "どける＝挪到一边好干活。かたづける是收拾归位，そろえる是对齐。",
+			"point_en": "どける = move aside to make space. かたづける is tidy away; そろえる is align.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"移動する＝挪开，打扫前把椅子移开，正确。",
+				"そろえる＝对齐、摆整齐，不是挪开。",
+				"置く＝放上去，方向相反。",
+				"かたづける＝收拾好，重点是归位而不是临时挪开。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"移動する = move — chairs aside to clean.",
+				"そろえる means line up, not move aside.",
+				"置く means put down, the opposite direction.",
+				"かたづける means put away, not temporarily shift."
 			]
 		},
 		{
@@ -561,19 +561,19 @@
 				"mix",
 				"heat"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "こしょうをふる＝往上撒，近义かける。しく是铺开，まぜる是拌进去。",
+			"point_en": "こしょうをふる = sprinkle on, like かける. しく is spread; まぜる is mix in.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"かける＝撒／浇在上面，和「ふる」最接近。",
+				"しく＝铺开（床单、垫子），不是撒调料。",
+				"まぜる＝拌匀，是撒了之后才做的。",
+				"ねっする＝加热，和撒胡椒无关。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"かける means sprinkle/pour on — closest to ふる.",
+				"しく means spread a sheet, not spices.",
+				"まぜる means mix in, a later step.",
+				"ねっする means heat, unrelated."
 			]
 		},
 		{
@@ -593,19 +593,19 @@
 				"dried well",
 				"got smaller"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "縮む＝缩水变小。のびる是变长，意思相反。",
+			"point_en": "縮む = shrink smaller. のびる is the opposite (stretch).",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"のびた＝变长了，和缩水相反。",
+				"古くなった＝变旧，不是尺寸变小。",
+				"よく乾いた＝干透了，不是缩水。",
+				"小さくなった＝变小了，羊毛衫缩水正是如此。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"のびた means stretched — opposite of shrink.",
+				"古くなった means got old, not smaller.",
+				"よく乾いた means dried well, not shrank.",
+				"小さくなった = got smaller — what 縮む means."
 			]
 		},
 		{
@@ -625,19 +625,19 @@
 				"stroke",
 				"get angry"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "ほえる是狗叫，近义なく。なでる是人摸狗，おこる是人发脾气。",
+			"point_en": "ほえる is a dog barking, close to なく. なでる is stroking; おこる is getting angry.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"なく＝（动物）叫，和ほえる同义，正确。",
+				"なれる＝习惯，意思完全不同。",
+				"なでる＝抚摸，是人的动作。",
+				"おこる＝生气，不是狗叫。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"なく means cry/bark — closest to ほえる.",
+				"なれる means get used to.",
+				"なでる means stroke (a person doing it).",
+				"おこる means get angry, not bark."
 			]
 		},
 		{
@@ -657,19 +657,19 @@
 				"turn the tap",
 				"spread a futon"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "敷く用于把布団、地毯等铺在平面上。盘子是並べる，沙发是置く。",
+			"point_en": "敷く is spread a futon/carpet on a surface. Plates are 並べる; sofas are 置く.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"盘子是「並べる」，不说お皿を敷く。",
+				"沙发是「置く」，不说ソファーを敷く。",
+				"水龙头是「ひねる／回す」，不说敷く。",
+				"畳の上に布団を敷く是铺被睡觉，正确用法。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"Plates are 並べる, not 敷く.",
+				"A sofa is 置く, not 敷く.",
+				"A tap is ひねる, not 敷く.",
+				"布団を敷く on tatami is the standard use."
 			]
 		},
 		{
@@ -689,19 +689,19 @@
 				"think about nutrition balance",
 				"high-balance food"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "バランス＝均衡，常说栄養のバランス。効く用于空调，高い常接カロリー。",
+			"point_en": "バランス is balance, as in 栄養のバランス. 効く is for AC; 高い often goes with カロリー.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"「効いていて涼しい」说的是空调，不是バランス。",
+				"用秤称的是重さ，不说称バランス。",
+				"栄養のバランスを考えて食事を取る，正确。",
+				"会胖的是カロリーが高い食品，不说バランスが高い。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"効いて涼しい is about air-conditioning, not バランス.",
+				"A scale measures weight, not バランス.",
+				"栄養のバランスを考える is the set phrase — correct.",
+				"You get fat from カロリーが高い food, not バランスが高い."
 			]
 		},
 		{
@@ -721,19 +721,19 @@
 				"store a pet",
 				"store leftovers in a microwave"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "保存＝存放使食物等不变质。脏衣服是ためる，宠物是飼う，微波炉是温める。",
+			"point_en": "保存 is store so food won't spoil. Laundry is ためる; pets 飼う; microwaves 温める.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"待洗衣物多应说「ためる」，不是保存。",
+				"梅雨季食物易坏，放冰箱保存，正确。",
+				"宠物是「飼う」，不能保存。",
+				"微波炉是「温める」，不能用来保存。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"Piled-up laundry is ためる, not 保存.",
+				"Store food in the fridge in tsuyu — correct.",
+				"Pets are 飼う, not 保存.",
+				"A microwave 温める leftovers, it doesn't 保存 them."
 			]
 		},
 		{
@@ -753,19 +753,19 @@
 				"dirty a rag",
 				"stained the skirt"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "汚す是他动词「弄脏」。状态用汚れている；弄湿抹布用ぬらす。",
+			"point_en": "汚す is the transitive 'make dirty'. A state is 汚れている; wet a rag with ぬらす.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"用了十年应是「汚れています」（自动词），不是汚している。",
+				"雨后没干应是「乾いていない」，不是汚していない。",
+				"用脏抹布擦地应是「ぞうきんをぬらす」，不是汚す。",
+				"洒了果汁把裙子弄脏，正是汚す，正确。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"After 10 years it 汚れています (state), not 汚している.",
+				"Rain-damp clothes 乾いていない, not 汚していない.",
+				"You ぬらす a rag to wipe the floor, not 汚す it.",
+				"Spilling juice スカートを汚す — correct."
 			]
 		},
 		{
@@ -785,19 +785,19 @@
 				"who was わがまま",
 				"friendly dog is わがまま"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "わがまま＝任性、只顾自己。不是表扬，门打不开是いたずら，亲热是人なつっこい。",
+			"point_en": "わがまま is selfish. Praise is えらい; a jammed door is いたずら; a friendly dog is 人なつっこい.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"任性不值得夸「えらい」，应是礼儀正しい／がんばって。",
+				"わがままを言って难为妈妈，是正确用法。",
+				"门打不开是有人「いたずらした」，不是わがまま。",
+				"对谁都摇尾巴是「人なつっこい」，不是わがまま。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"Selfishness isn't えらい; use 礼儀正しい etc.",
+				"わがままを言う and trouble Mom — correct.",
+				"A stuck door is いたずら, not わがまま.",
+				"A tail-wagging dog is 人なつっこい, not わがまま."
 			]
 		}
 	],
@@ -819,19 +819,19 @@
 				"overseas",
 				"outside"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "海外旅行⇔国内旅行。外出只是出门，外側是物体外侧，外見是外表。",
+			"point_en": "海外旅行 contrasts with 国内旅行. 外出 is just going out; 外側 is the outer side.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"外出＝出门，不是出国旅行。",
+				"外見＝外表、长相，和旅行无关。",
+				"海外＝国外，和后半的国内旅行对照，正确。",
+				"外側＝外侧，不是出国。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"外出 means go out, not travel abroad.",
+				"外見 means appearance, not travel.",
+				"海外 means overseas — opposite of 国内旅行.",
+				"外側 means the outside of something."
 			]
 		},
 		{
@@ -851,19 +851,19 @@
 				"wrong word",
 				"month after next"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "来月的下一个月是再来月。先々月是上上个月。不说来々月。",
+			"point_en": "The month after next is 再来月. 先々月 is two months ago. 来々月 is not used.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"先月＝上个月，是过去。",
+				"先々月＝上上个月，也是过去。",
+				"来々月不是标准说法。",
+				"再来月＝下下个月，即来月的下一个月，正确。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"先月 is last month (past).",
+				"先々月 is the month before last.",
+				"来々月 is not a standard word.",
+				"再来月 is the month after next — correct."
 			]
 		},
 		{
@@ -883,19 +883,19 @@
 				"inside",
 				"outside"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "飞机座位说窓側／通路側。窓口側是银行等柜台一侧。",
+			"point_en": "Plane seats are 窓側 or 通路側. 窓口側 is a service-counter side.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"窓口側＝柜台一侧，飞机靠窗要说窓側。",
+				"通路側＝靠过道，正确。",
+				"内側＝内侧，不是订座位的说法。",
+				"外側＝外侧，同样不是机位用语。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"窓口側 is a counter window; a plane window is 窓側.",
+				"通路側 is the aisle side — correct.",
+				"内側 just means inside, not a seat type.",
+				"外側 just means outside, not a seat type."
 			]
 		},
 		{
@@ -915,19 +915,19 @@
 				"depart",
 				"stop"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "電車が駅を発車する＝列车从站开出。乗車／下車的主语是人。",
+			"point_en": "発車 is the train departing. 乗車/下車 have a person as subject.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"乗車＝人上车，主语不能是电车。",
+				"下車＝人下车，同样主语是人。",
+				"発車＝发车，电车按时刻表从东京站开出，正确。",
+				"停車＝停车，和「どおりに开出」不符。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"乗車 is a person boarding, not the train.",
+				"下車 is a person getting off.",
+				"発車 is the train departing on schedule.",
+				"停車 is stopping, not leaving as scheduled."
 			]
 		},
 		{
@@ -947,19 +947,19 @@
 				"join",
 				"have ride"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "人を乗せる；荷物を積む。握る是握住，つなぐ是连上。",
+			"point_en": "乗せる is have a person ride; 積む is load cargo. 握る is grip; つなぐ is join.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"握る＝握住，不能说把孩子握在车上。",
+				"積む＝装货，对象是行李不是孩子。",
+				"つなぐ＝连上、牵着，不是让人坐进车里。",
+				"乗せる＝让人坐上车，正确。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"握る means grip, not put a child in a car.",
+				"積む is for cargo, not children.",
+				"つなぐ means join or hold hands, not seat someone.",
+				"乗せる means have someone ride — correct."
 			]
 		},
 		{
@@ -979,19 +979,19 @@
 				"filled in",
 				"withdrew"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "指定口座に振り込む＝把钱汇进那个账户。預金する是自己存钱，おろす是取出。",
+			"point_en": "振り込む = transfer into a designated account. 預金する is deposit; おろす is withdraw.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"預金した＝存了款，不说把学费預金到指定账户。",
+				"振り込んだ＝汇入指定账户，付学费的标准说法。",
+				"記入した＝填写，没有把钱转过去。",
+				"おろした＝取出来，方向相反。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"預金する is depositing your own money, not paying tuition in.",
+				"振り込む is transfer into the specified account — correct.",
+				"記入する is fill in a form, not send money.",
+				"おろす is withdraw — the opposite direction."
 			]
 		},
 		{
@@ -1011,19 +1011,19 @@
 				"held out",
 				"hit a dead end"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "キーを差し込む＝把钥匙插进锁孔。引き出す是抽出，差し出す是递出。",
+			"point_en": "キーを差し込む = leave the key in the ignition. 引き出す is pull out; 差し出す is hold out.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"差し込んだまま＝钥匙还插着就停车，会被偷，正确。",
+				"引き出した＝已经拔出来，反而比较安全。",
+				"差し出した＝递出去，不是插进锁孔。",
+				"突き当たった＝走到头／撞上，和钥匙无关。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"差し込んだまま = key still in — the car may be stolen.",
+				"引き出した means pulled out — safer, not the warning.",
+				"差し出した means held out, not inserted.",
+				"突き当たった means hit a dead end, unrelated to a key."
 			]
 		},
 		{
@@ -1043,19 +1043,19 @@
 				"got on",
 				"was caught"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "事故に遭う是固定搭配。ひく是车撞人，つかまえる是抓住。",
+			"point_en": "事故に遭う is the set phrase. ひく is run someone over; つかまる is be caught.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"事故に遭う＝遇上事故，住院了，正确。",
+				"ひく＝车把人轧了，主语一般是司机或车。",
+				"のる＝坐上，不能说事故に乗る。",
+				"つかまる＝被抓住，不是出事故。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"事故に遭う means meet with an accident — correct.",
+				"ひく means run over (driver/car as subject).",
+				"乗る is get on, not used with 事故に.",
+				"つかまる means be caught, not have an accident."
 			]
 		},
 		{
@@ -1075,19 +1075,19 @@
 				"seal",
 				"coins"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "开户后银行发给通帳和キャッシュカード。印鑑多是自己带去的。",
+			"point_en": "After opening an account you get a 通帳 and cash card. You usually bring your own 印鑑.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"紙幣＝纸币，开户不会当场发一叠钞票。",
+				"通帳＝存折，和卡一起给，正确。",
+				"印鑑＝印章，一般是自己带去盖的。",
+				"硬貨＝硬币，不是开户发给的。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"紙幣 are bills — not issued at account opening.",
+				"通帳 is the passbook given with the card.",
+				"印鑑 is a seal you typically bring yourself.",
+				"硬貨 are coins, not issued here."
 			]
 		},
 		{
@@ -1107,19 +1107,19 @@
 				"change",
 				"cancel"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "キャンセル＝取消预约，才可能钱一分不退。変更只是改期，申し込み是申请。",
+			"point_en": "キャンセル is cancel (no refund). 変更 is only change; 申し込み is apply.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"申し込み＝申请，刚申请不会「一分不退」。",
+				"調整＝调整，程度太轻。",
+				"変更＝改期，不一定完全不退钱。",
+				"キャンセル＝取消，前一天取消常不退款，正确。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"申し込み is applying — not why money isn't returned.",
+				"調整 is adjust, too weak.",
+				"変更 is change the booking, not necessarily zero refund.",
+				"キャンセル is cancel — matches getting no money back."
 			]
 		},
 		{
@@ -1139,19 +1139,19 @@
 				"last train",
 				"terminus"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "終点是线路最后一站。終電是当天最后一班车，始発是首班／起点站。",
+			"point_en": "終点 is the last stop. 終電 is the last train of the day; 始発 is the first train.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"始発＝首班车或起点站，不是最后到达的站。",
+				"停車駅＝中途停靠站，不是终点。",
+				"終電＝末班车，指班次不是车站。",
+				"終点＝电车公交车最后到达的站，正确。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"始発 is the first train or starting station.",
+				"停車駅 is any stop along the way.",
+				"終電 is the last train, not a station.",
+				"終点 is the terminus — the last stop."
 			]
 		},
 		{
@@ -1171,19 +1171,19 @@
 				"multi-ride ticket",
 				"ride ticket"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "定期券＝期间内指定两站间无限次乘坐。回数券有次数，特急券是加价票。",
+			"point_en": "定期券 is unlimited rides between set stations. 回数券 has a ride count; 特急券 is a surcharge.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"定期券＝期限内区间无限次，正合定义。",
+				"特急券＝坐特急的加价票，不是无限次普通乘车。",
+				"回数券＝多次票，但有次数限制。",
+				"乗車券＝普通车票，一般一次有效。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"定期券 matches unlimited rides in a period.",
+				"特急券 is a limited-express surcharge.",
+				"回数券 is a multi-ride ticket with a set count.",
+				"乗車券 is a regular ride ticket, usually one trip."
 			]
 		},
 		{
@@ -1203,19 +1203,19 @@
 				"pack in",
 				"take down"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "ゆずる＝把自己的东西让给别人，或让座。ずらす是错开，つめる是塞紧。",
+			"point_en": "ゆずる is give/yield what you have. ずらす is shift; つめる is pack in.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"ゆずる＝让给别人，正合定义。",
+				"ずらす＝错开位置或时间，不是送给人。",
+				"つめる＝塞紧、往里坐，不是给别人。",
+				"おろす＝取下或取钱，不是让给。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"ゆずる means give or yield to someone else.",
+				"ずらす means shift, not give away.",
+				"つめる means pack in or move over, not give.",
+				"おろす means take down or withdraw, not give."
 			]
 		},
 		{
@@ -1235,19 +1235,19 @@
 				"drive",
 				"steering wheel"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "开车时手里握的是ハンドル。アクセル是脚踩的油门。",
+			"point_en": "The part you hold is the ハンドル. アクセル is the pedal you step on.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"アクセル＝油门，用脚踩，不是手里握。",
+				"エンジン＝发动机，不是手握的部分。",
+				"ドライブ＝兜风，是开车这件事，不是零件。",
+				"ハンドル＝方向盘，手でにぎる部分，正确。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"アクセル is the accelerator pedal, not held in the hand.",
+				"エンジン is the engine, not a grip.",
+				"ドライブ is going for a drive, not a part.",
+				"ハンドル is the steering wheel you hold."
 			]
 		},
 		{
@@ -1267,19 +1267,19 @@
 				"day trip",
 				"one-day trip"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "日帰り＝当天出发当天回。片道是单程，遠回り是绕远。",
+			"point_en": "日帰り is go and return the same day. 片道 is one-way; 遠回り is a detour.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"片道＝单程，不表示当天回来。",
+				"遠回り＝绕远路，和当天回无关。",
+				"日帰り＝当天来回，正合定义。",
+				"1日旅行不是固定词，也不一定当天回来。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"片道 is one way, not same-day return.",
+				"遠回り is taking a long way around.",
+				"日帰り is a day trip there and back.",
+				"1日旅行 is not the set word and may include a stay."
 			]
 		},
 		{
@@ -1299,19 +1299,19 @@
 				"very late",
 				"very fast"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "がらがら＝空荡荡，反义こんんでいる。和快慢无关。",
+			"point_en": "がらがら means nearly empty, opposite of こんでいる. Not about speed.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"とてもこんでいた＝非常挤，和がらがら相反。",
+				"とてもすいていた＝非常空，和がらがら同义。",
+				"とても遅れた＝非常晚，说的是时间。",
+				"とても速かった＝非常快，说的是速度。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"こんでいた is crowded — the opposite.",
+				"すいていた is empty — same as がらがら.",
+				"遅れた is late, not how full the train is.",
+				"速かった is fast, unrelated to crowding."
 			]
 		},
 		{
@@ -1331,19 +1331,19 @@
 				"entrust",
 				"pay"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "預金＝存进银行的钱，接近ためる。おろす／引き出す是把钱取出来。",
+			"point_en": "預金 is money saved in the bank, close to ためる. おろす/引き出す is take it out.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"ためる＝积攒，預金就是存下来的钱，意思最近。",
+				"おろす＝取出，对应句中的引き出す，不是預金本身。",
+				"あずける＝寄放，过程接近預金する，但本题问的是「存款」这层意思。",
+				"はらう＝支付，方向相反。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"ためる is save up — closest to what 預金 is.",
+				"おろす is withdraw, the 引き出す action, not 預金.",
+				"あずける is leave in someone's care — a process, not the savings themselves.",
+				"はらう means pay, the opposite idea."
 			]
 		},
 		{
@@ -1363,19 +1363,19 @@
 				"canceled",
 				"applied"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "日程を変更する≈ずらす。取り消す是整趟取消，ひかえる是克制。",
+			"point_en": "変更する ≈ ずらす (shift the dates). 取り消す is cancel; ひかえる is refrain.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"ずらした＝把日期错开，和変更した同义。",
+				"ひかえた＝克制、少做，不是改期。",
+				"取り消した＝取消整趟旅行，程度更重。",
+				"申し込んだ＝申请，方向相反。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"ずらした means shifted the schedule — same as 変更.",
+				"ひかえた means held back, not changed dates.",
+				"取り消した means canceled the trip entirely.",
+				"申し込んだ means applied, the opposite direction."
 			]
 		},
 		{
@@ -1395,19 +1395,19 @@
 				"stopped",
 				"crossed"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "横断する＝从马路一边过到另一边，近义渡る。不表示走或跑的方式。",
+			"point_en": "横断する is cross to the other side, like 渡る. It is not about walking vs running.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"走った＝跑了，只是方式，不等于过马路。",
+				"歩いた＝走了，同样不是「穿过」。",
+				"止まった＝停了，意思相反。",
+				"渡った＝过了，和横断した同义。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"走った is ran — manner, not crossing.",
+				"歩いた is walked — also not 横断.",
+				"止まった is stopped — opposite.",
+				"渡った is crossed — closest to 横断した."
 			]
 		},
 		{
@@ -1427,19 +1427,19 @@
 				"try not to",
 				"do for the first time"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "ひかえる＝有意识地少做或避免，近义しないようにする。不是「不想」。",
+			"point_en": "ひかえる is deliberately hold back, like しないようにする — not merely 'don't want to'.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"したくない＝主观不想，不是克制。",
+				"くり返しする＝反复做，意思相反。",
+				"しないようにする＝尽量不做，和ひかえる同义。",
+				"初めてする＝第一次做，无关。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"したくない is not wanting to, not restraining yourself.",
+				"くり返しする is repeat — the opposite.",
+				"しないようにする is try not to — same as ひかえる.",
+				"初めてする is do for the first time."
 			]
 		},
 		{
@@ -1459,19 +1459,19 @@
 				"transfer 送料 got expensive",
 				"no shipping over 10,000"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "送料＝寄送商品的运费。银行换钱、汇款收的是手数料。",
+			"point_en": "送料 is shipping. Bank exchange or transfer fees are 手数料.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"换钱收的是「手数料」，不是送料。",
+				"从银行取出的是預金／給料，不是送料。",
+				"汇款变贵的是「振込手数料」，不是送料。",
+				"买满一万免运费，是送料的正确用法。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"Bill-changing costs 手数料, not 送料.",
+				"You withdraw 預金/給料, not 送料.",
+				"A transfer fee is 振込手数料, not 送料.",
+				"No 送料 over 10,000 yen — correct shipping use."
 			]
 		},
 		{
@@ -1491,19 +1491,19 @@
 				"pay savings",
 				"break a 10,000-yen bill"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "支払う＝付该付的钱（货款、账单）。攒钱是預ける，取存款是引き出す，换钱是両替。",
+			"point_en": "支払う is pay what you owe. Saving is 預ける; withdrawing 引き出す; changing bills 両替.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"商品の代金を現金で支払う，付货款，正确。",
+				"为了攒钱应是「銀行に預ける」，不是支払う。",
+				"生活费不够应是「貯金を引き出す／おろす」。",
+				"大钞换成小钞是「両替する」，不是支払う。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"Pay the price in cash — the core use of 支払う.",
+				"To save you 預ける money, not 支払う it.",
+				"If living costs run short you 引き出す savings.",
+				"Breaking a bill is 両替する, not 支払う."
 			]
 		},
 		{
@@ -1523,19 +1523,19 @@
 				"seat 方面",
 				"watch 方面 to the hotel"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "方面＝大致方向或一带，如東京方面に行く。发车站、座位、地图都不能用方面。",
+			"point_en": "方面 is a general direction/area (東京方面). Not used for departure stations, seats, or maps.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"发车不说「東京方面発」，应是東京発。",
+				"東京方面に旅行に行く＝去东京一带，正确。",
+				"座位不说「席の方面」，应是席を決める。",
+				"看着找到酒店应是「地図を見ながら」。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"Trains 東京発, not 東京方面発.",
+				"東京方面に旅行 is travel toward the Tokyo area.",
+				"Seats aren't 方面; you 席を決める.",
+				"You look at a 地図, not 方面, to find the hotel."
 			]
 		},
 		{
@@ -1555,19 +1555,19 @@
 				"the express rode past",
 				"changed trains"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "乗り過ごす＝坐过了该下的站。没赶上车是乗り遅れる，列车过站是通過する，换乘是乗り換える。",
+			"point_en": "乗り過ごす is ride past your stop. Missing the train is 乗り遅れる; passing a station is 通過; changing is 乗り換える.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"末班车上坐过了该下的站，只好打车，本题作正确用法。",
+				"打盹坐过下车站也是「乗り過ごす」的典型说法，但本题选①。",
+				"特急过站不停车要说「通過する」，主语不是乘客坐过站。",
+				"从特急换成各站停车是「乗り換える」，不是乗り過ごす。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"Staying on the last train past your stop, then taking a taxi — the keyed answer.",
+				"Dozing and riding past the stop is also 乗り過ごす, but the key is ①.",
+				"An express skipping a station is 通過する, not a passenger 乗り過ごす.",
+				"Changing trains is 乗り換える, not 乗り過ごす."
 			]
 		},
 		{
@@ -1587,19 +1587,19 @@
 				"hit the brakes",
 				"don't put out too much brake"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "ブレーキを踏む＝踩刹车。开车灯是ライトをつける，握的是ハンドル，超速是スピードの出し過ぎ。",
+			"point_en": "ブレーキを踏む is hit the brakes. Lights are ライトをつける; you grip the ハンドル; speeding is スピードの出し過ぎ.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"天黑应「ライトをつける」，不是开刹车。",
+				"周日开车是「ハンドルをにぎる」，不是握刹车。",
+				"差点撞上赶紧踩刹车，正确。",
+				"出得太多的是「スピード」，不是ブレーキ。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"When it gets dark you ライトをつける, not the brakes.",
+				"On Sunday you ハンドルをにぎる, not the brakes.",
+				"Almost hitting something, you ブレーキを踏む — correct.",
+				"出し過ぎ is for スピード, not ブレーキ."
 			]
 		}
 	],
@@ -1621,19 +1621,19 @@
 				"like/be pleased with",
 				"be in fashion"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "気に入る＝对某物中意。好む多接爱好活动，似合う是相配，はやる是流行。",
+			"point_en": "気に入る is be pleased with something. 好む is hobbies; 似合う is suit; はやる is be in fashion.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"好む多接「读书、运动」这类活动，不常直接说这块表を好んでいる。",
+				"似合う＝衣服等和人相配，不是「我喜欢这块表」。",
+				"気に入っている＝虽旧但很中意，正确。",
+				"はやっている＝正在流行，和「我喜欢」无关。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"好む usually takes activities, not 'this watch'.",
+				"似合う means it suits someone, not that you like it.",
+				"気に入っている is be fond of this watch — correct.",
+				"はやっている means it's trendy, not that you like it."
 			]
 		},
 		{
@@ -1653,19 +1653,19 @@
 				"pattern",
 				"solid color"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "天冷穿長そで。しま／柄／無地说的是花纹，和冷暖无关。",
+			"point_en": "When it's cold, wear 長そで. しま/柄/無地 are patterns, not warmth.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"長そで＝长袖，天冷该穿，正确。",
+				"しま＝条纹，跟冷不冷无关。",
+				"柄＝花纹，同样不是保暖。",
+				"無地＝素色，也和冷无关。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"長そで is long sleeves — right for a cold day.",
+				"しま is stripes, not about warmth.",
+				"柄 is a pattern, not warmth.",
+				"無地 is a solid color, not warmth."
 			]
 		},
 		{
@@ -1685,19 +1685,19 @@
 				"cash",
 				"the bill"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "レストランの代金＝该付的餐费。現金是付钱的方式，預金是存款。",
+			"point_en": "代金 is the bill to pay. 現金 is how you pay; 預金 is a bank deposit.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"預金＝银行存款，不是餐费。",
+				"生活費＝一个月的生活开销，不是这顿饭的账。",
+				"現金＝现金，是支付手段，不是「我来付的那笔账」。",
+				"代金＝价款／餐费，我来付，正确。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"預金 is a bank deposit, not the restaurant bill.",
+				"生活費 is monthly living costs, not this meal.",
+				"現金 is cash, the means of payment, not the bill itself.",
+				"代金 is the charge — I'll pay it."
 			]
 		},
 		{
@@ -1717,19 +1717,19 @@
 				"treat",
 				"expense"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "割り勘＝大家平摊。割り算是除法，おごり是一个人请客。",
+			"point_en": "割り勘 is split the bill. 割り算 is division; おごり is one person treating.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"割り算＝算术里的除法，不是付账方式。",
+				"割り勘＝AA制，大家平摊，正确。",
+				"おごり＝请客，和「みんなで」相反。",
+				"費用＝费用本身，不说「费用にしよう」。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"割り算 is the math operation, not paying.",
+				"割り勘 is splitting the bill — correct.",
+				"おごり is treating everyone, the opposite.",
+				"費用 is 'cost'; you don't say 費用にしよう."
 			]
 		},
 		{
@@ -1749,19 +1749,19 @@
 				"beard",
 				"cheek"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "そる的对象是ひげ。まぶた、ひたい、ほほ都不能そる。",
+			"point_en": "そる (shave) takes ひげ. You don't shave eyelids, forehead, or cheeks in this sense.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"まぶた＝眼皮，不能そる。",
+				"ひたい＝额头，不能そる。",
+				"ひげ＝胡子，长了要刮，正确。",
+				"ほほ＝脸颊，不说ほほをそる。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"まぶた is eyelid — not shaved.",
+				"ひたい is forehead — not shaved.",
+				"ひげ is a beard/mustache you そる.",
+				"ほほ is cheek — not the object of そる."
 			]
 		},
 		{
@@ -1781,19 +1781,19 @@
 				"fasten",
 				"put in"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "指輪をはめる；靴・裤子をはく；ネクタイを締める。",
+			"point_en": "はめる is wear a ring; はく is shoes/pants; 締める is a tie or belt.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"はめる＝戴戒指，正确。",
+				"はく＝穿鞋或裤子，不能戴戒指。",
+				"しめる＝系领带、腰带，不是戒指。",
+				"いれる＝放进去，不是戴着。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"はめる is the verb for wearing a ring.",
+				"はく is for shoes or pants.",
+				"しめる is fasten a tie or belt.",
+				"いれる is put in, not wear."
 			]
 		},
 		{
@@ -1813,19 +1813,19 @@
 				"schedule",
 				"expiration date"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "カードの有効期限が切れる＝到期。費用、代金、日程都不能「切れる」。",
+			"point_en": "有効期限が切れる is expire. 費用, 代金, and 日程 don't 切れる this way.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"費用＝费用，不说费用が切れる。",
+				"代金＝价款，同样不说切れる。",
+				"日程＝日程，不说日程が切れる。",
+				"有効期限が切れそう＝快到期，正确。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"費用 is cost — it doesn't 切れる.",
+				"代金 is the price — it doesn't 切れる.",
+				"日程 is a schedule — it doesn't 切れる.",
+				"有効期限が切れる means the card is about to expire."
 			]
 		},
 		{
@@ -1845,19 +1845,19 @@
 				"recommend",
 				"decide"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "注文を追加＝再点别的菜。おかわり是同样的再来一份，おすすめ是我向你推荐。",
+			"point_en": "注文を追加 is add dishes. おかわり is another serving of the same; おすすめ is recommend.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"追加したい＝再点一些，对服务员说，正确。",
+				"おかわり＝同样的再来一份（饭、汤），不是泛指加菜。",
+				"おすすめしたい＝我想推荐，主客反了。",
+				"決めたい＝想决定，太笼统。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"追加したい is add to the order — correct to a waiter.",
+				"おかわり is another bowl of the same thing.",
+				"おすすめしたい is 'I want to recommend' — the staff's line.",
+				"決めたい is just 'want to decide', too vague."
 			]
 		},
 		{
@@ -1877,19 +1877,19 @@
 				"won't open",
 				"doesn't take"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "都合がつかない是固定说法，表示没时间、不方便。不说都合ができない。",
+			"point_en": "都合がつかない is the set phrase for 'I can't make it'. Not 都合ができない.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"都合ができない不说。",
+				"都合がつかない＝安排不开、不方便，正确。",
+				"あかない＝店空不出来等，不接都合。",
+				"かからない＝不花（时间、钱），不接都合。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"都合ができない is not used.",
+				"都合がつかない means the schedule doesn't work.",
+				"あかない is for shops etc., not 都合.",
+				"かからない is 'doesn't take/cost', not 都合."
 			]
 		},
 		{
@@ -1909,19 +1909,19 @@
 				"poor",
 				"luxury"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "ぜいたく＝超过必要的奢侈。一台够还买新车正是奢侈，不是迷惑或貧乏。",
+			"point_en": "ぜいたく is extravagance beyond need. Not 迷惑 (a nuisance) or 貧乏 (poor).",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"迷惑＝给别人添麻烦，买车不一定打扰谁。",
+				"不足＝不够，和「一台就够还再买」相反。",
+				"貧乏＝穷，再买新车不是穷。",
+				"ぜいたく＝奢侈，一台够还买新的，正确。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"迷惑 is bothering others — buying a car isn't that.",
+				"不足 is not enough — opposite of already having one.",
+				"貧乏 is being poor — not buying another car.",
+				"ぜいたく is luxury/extravagance — correct."
 			]
 		},
 		{
@@ -1941,19 +1941,19 @@
 				"be dumped",
 				"be invited"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "ふられる＝求爱被拒或被提出分手。もてない是不受欢迎，さそう是邀请。",
+			"point_en": "ふられる is be turned down or dumped. もてない is be unpopular; さそう is invite.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"もてない＝不受欢迎，是状态，不是被甩这一下。",
+				"別々になる＝分开，不一定是被对方甩掉。",
+				"ふられる＝被拒绝或被甩，正合定义。",
+				"さそわれる＝被邀请，意思相反。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"もてない is being unpopular, not getting dumped.",
+				"別々になる is become separate, not necessarily dumped.",
+				"ふられる matches being rejected or dumped.",
+				"さそわれる is be invited — the opposite."
 			]
 		},
 		{
@@ -1973,19 +1973,19 @@
 				"nuisance",
 				"empty"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "やかましい＝声音大得烦人。にぎやか是热闹（正面），めいわく是名词「麻烦」。",
+			"point_en": "やかましい is too loud. にぎやか is lively (positive); めいわく is a noun, 'nuisance'.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"やかましい＝太吵，正合「声や音が大きすぎてうるさい」。",
+				"にぎやか＝热闹，带正面色彩，不等于烦人。",
+				"めいわく＝麻烦，是名词，不是「吵」的样子。",
+				"がらがら＝空荡荡，和吵相反。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"やかましい is noisily loud — exact match.",
+				"にぎやか is lively, not 'too loud'.",
+				"めいわく is 'a nuisance', not an adjective for sound.",
+				"がらがら is empty, the opposite of noisy."
 			]
 		},
 		{
@@ -2005,19 +2005,19 @@
 				"expense",
 				"deposit"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "費用＝做某事所需的钱。現金是现钞，勘定是结账，預金是存款。",
+			"point_en": "費用 is the cost of doing something. 現金 is cash; 勘定 is the check; 預金 is a deposit.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"現金＝手里的现钞，不是办事的开销。",
+				"勘定＝账单／结账，不是费用本身。",
+				"費用＝为做某事花的钱，正合定义。",
+				"預金＝存在银行的钱。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"現金 is cash on hand, not the cost of doing X.",
+				"勘定 is the bill/settling up, not the expense itself.",
+				"費用 is money it costs to do something.",
+				"預金 is money in the bank."
 			]
 		},
 		{
@@ -2037,19 +2037,19 @@
 				"divide",
 				"fix"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "お金をくずす＝把大钞换成零钱。はぶく是省掉，わる是除。",
+			"point_en": "お金をくずす is break a bill. はぶく is omit; わる is divide.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"はぶく＝省掉、省略，不是换钱。",
+				"くずす＝换成零钱，正合「お金を細かくする」。",
+				"わる＝除，是算术，不是换钱。",
+				"なおす＝修好，无关。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"はぶく means leave out, not break a bill.",
+				"くずす means change into smaller money — correct.",
+				"わる is divide in math, not make change.",
+				"なおす means fix, unrelated."
 			]
 		},
 		{
@@ -2069,19 +2069,19 @@
 				"treat",
 				"make up"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "誘う＝提议一起去或一起做。付き合う是交往或作陪，おごる是请客。",
+			"point_en": "誘う is ask someone to go/do something together. 付き合う is date or accompany; おごる is treat.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"付き合う＝恋爱交往或陪同，不是「邀请」。",
+				"さそう＝约别人一起，正合定义。",
+				"おごる＝请客买单，不是邀请一起做。",
+				"仲直りする＝和好，无关。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"付き合う is date or go along, not 'invite'.",
+				"さそう is invite someone to do something together.",
+				"おごる is treat someone, not invite.",
+				"仲直りする is make up after a fight."
 			]
 		},
 		{
@@ -2101,19 +2101,19 @@
 				"reconcile",
 				"marry"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "交際する≈付き合う（男女交往）。似合う是相称，結婚是更进一步。",
+			"point_en": "交際する ≈ 付き合う (be dating). 似合う is suit; 結婚 is marry.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"似合う＝相称，不是交往。",
+				"付き合って＝在交往，和交際している同义。",
+				"仲直りして＝刚和好，不等于在交往。",
+				"結婚して＝已经结婚，比交际更进一步。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"似合う means suit, not date.",
+				"付き合って is go out with — same as 交際.",
+				"仲直りして is make up, not be dating.",
+				"結婚して is marry, a further step."
 			]
 		},
 		{
@@ -2133,19 +2133,19 @@
 				"not borrow",
 				"profit"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "むだを省く＝去掉浪费，近义節約する。貧乏是穷的状态，得をする是占便宜。",
+			"point_en": "むだを省く is cut waste, like 節約する. 貧乏 is being poor; 得をする is profit.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"貧乏して＝受穷，不是主动省。",
+				"節約して＝节约，和むだを省く同义。",
+				"借金をしないで＝不借钱，只是其中一面。",
+				"得をして＝赚到／占便宜，不是省。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"貧乏して is being poor, not cutting waste.",
+				"節約して is economize — same as むだを省く.",
+				"借金をしないで is only 'don't borrow'.",
+				"得をして is come out ahead, not save."
 			]
 		},
 		{
@@ -2165,19 +2165,19 @@
 				"being noisy",
 				"enjoying"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "そうぞうしい＝喧闹嘈杂，近义うるさい。さけぶ是喊，迷惑をかける是添麻烦。",
+			"point_en": "そうぞうしい is noisy, like うるさい. さけぶ is shout; 迷惑をかける is cause trouble.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"さけんでいる＝在喊，只是大声的一种方式。",
+				"迷惑をかけている＝在添麻烦，是结果不是「吵」。",
+				"うるさくしている＝很吵，和そうぞうしい同义。",
+				"楽しんでいる＝在享受，不是吵。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"さけんでいる is shouting — one kind of loudness.",
+				"迷惑をかけている is causing trouble, not 'noisy'.",
+				"うるさくしている is being noisy — same as そうぞうしい.",
+				"楽しんでいる is enjoying oneself."
 			]
 		},
 		{
@@ -2197,19 +2197,19 @@
 				"likes",
 				"admires"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "はやる＝流行。似合う是合适，気に入る是中意，あこがれる是向往。",
+			"point_en": "はやる is be in fashion. 似合う is suit; 気に入る is like; あこがれる is admire.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"流行している＝正在流行，和はやっている同义。",
+				"似合っている＝合适，不是流行。",
+				"気に入っている＝中意，是个人喜好。",
+				"あこがれている＝向往，不是「正在流行」。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"流行している is in fashion — same as はやっている.",
+				"似合っている means it suits someone.",
+				"気に入っている is a personal liking.",
+				"あこがれている is admire/long for, not be trendy."
 			]
 		},
 		{
@@ -2229,19 +2229,19 @@
 				"disliked",
 				"liked"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "もてる＝很受异性欢迎，近义すかれる。ふられる是被甩，いやがられる是被讨厌。",
+			"point_en": "もてる is popular with the opposite sex, like すかれる. ふられる is dumped; いやがられる is disliked.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"ふられる＝被甩，和もてる相反。",
+				"申し込まれる＝被申请，不是受欢迎。",
+				"いやがられる＝被讨厌，相反。",
+				"すかれる＝被喜欢，和もてる同义。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"ふられる is be dumped — opposite of もてる.",
+				"申し込まれる is have someone apply/propose, not 'be popular'.",
+				"いやがられる is be disliked.",
+				"すかれる is be liked — closest to もてる."
 			]
 		},
 		{
@@ -2261,19 +2261,19 @@
 				"answered 必ず行きます vaguely",
 				"answered vaguely"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "あいまい＝含糊不清。不要和あまり（不太）混淆；明确回答不是あいまい。",
+			"point_en": "あいまい is vague. Don't mix it up with あまり (not very); a clear answer is not あいまい.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"购物过度应是「あまり／あんまりした」，不是あいまい。",
+				"关系不太好应是「あまり仲がよくない」。",
+				"「必ず行きます」是明确回答，不能叫あいまい。",
+				"定不下来就含糊回答，是あいまい的正确用法。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"Overspending is あまりした, not あいまい.",
+				"Not getting along well is あまり仲がよくない.",
+				"必ず行きます is a clear yes, not vague.",
+				"Giving a vague answer when undecided — correct あいまい."
 			]
 		},
 		{
@@ -2293,19 +2293,19 @@
 				"untie the belt",
 				"untie your hands from the wheel"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "ほどく＝解开打结的绳带。胡子是そる，皮带是ゆるめる／外す，手是はなす。",
+			"point_en": "ほどく is untie a knot. A beard is そる; a belt ゆるめる; hands はなす.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"绳子系太紧解不开，是ほどく的正确用法。",
+				"出门前刮的是胡子，应说「そる」，不是ほどく。",
+				"皮带吃撑了是「ゆるめる／外す」，不是ほどく。",
+				"开车放手应是「ハンドルから手をはなす」。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"Can't undo a tightly tied cord — correct ほどく.",
+				"A beard is そる, not ほどく.",
+				"Loosen a belt with ゆるめる, not ほどく.",
+				"Take your hands off the wheel: はなす, not ほどく."
 			]
 		},
 		{
@@ -2325,19 +2325,19 @@
 				"pay separately",
 				"no need to split 別々"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "別々に払う＝各付各的。拒绝交往是断る，逐个查词是ひとつひとつ。",
+			"point_en": "別々に払う is pay separately. Turning someone down is 断る; looking up words is ひとつひとつ.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"不喜欢就拒绝应是「断った」，不是別々にした。",
+				"生词要「ひとつひとつ」查，不是別々に。",
+				"「別々に払います」＝分开结账，正确。",
+				"部长请客就不必割り勘，后半自相矛盾。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"Refuse a date with 断る, not 別々にした.",
+				"Look up words ひとつひとつ, not 別々に.",
+				"別々に払う is pay separately — correct.",
+				"If the boss treats, you need not 割り勘 — the sentence contradicts itself."
 			]
 		},
 		{
@@ -2357,19 +2357,19 @@
 				"a wasteful-atmosphere restaurant",
 				"asking for a recommendation is wasteful"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "もったいない＝浪费可惜。后口袋放钱包是危ない，氛围是すてき，嫌麻烦是めんどう。",
+			"point_en": "もったいない is 'what a waste'. A back-pocket wallet is 危ない; ambience is すてき; bother is めんどう.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"后口袋放钱包走路是「危ない」，不是もったいない。",
+				"能用的扔掉太可惜，让给别人，正确。",
+				"餐厅氛围应说「すてきな」，不说もったいない雰囲気。",
+				"懒得问推荐是「めんどう」，不是もったいない。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"A wallet in a back pocket is 危ない, not もったいない.",
+				"Throwing away something usable is もったいない — correct.",
+				"A nice restaurant has すてきな雰囲気, not もったいない.",
+				"Not asking for a recommendation is めんどう, not もったいない."
 			]
 		},
 		{
@@ -2389,19 +2389,19 @@
 				"Lin likes the teacher's words",
 				"worried about being on time"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "気に入る＝对某物中意。和好き重复就别扭；担心用気になる，在意用気にする。",
+			"point_en": "気に入る is take a liking to something. Don't pair it with 好き; worry is 気になる; mind is 気にする.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"店小但味道好所以気に入っている，正确。",
+				"気に入っている和好き意思重复，这句话别扭。",
+				"在意老师的话应是「気にしている」，助词也应用を。",
+				"担心能不能准时应是「気になっている」。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"Liking the shop for its taste is correct 気に入る.",
+				"気に入る and 好き mean the same — the sentence is redundant.",
+				"Minding the teacher's words is 気にしている (with を).",
+				"Worrying about being on time is 気になっている."
 			]
 		}
 	],
@@ -2423,19 +2423,19 @@
 				"multiplication",
 				"division"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "一人あたり用割り算。足し算是加，引き算是减，かけ算是乘。",
+			"point_en": "Split per person with 割り算. 足し算 is add; 引き算 subtract; かけ算 multiply.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"足し算＝加法，6+6000不会变成每人1000。",
+				"引き算＝减法，也得不出每人1000。",
+				"かけ算＝乘法，会越乘越大。",
+				"割り算＝除法，6000÷6＝1000，正确。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"足し算 is addition — won't give 1,000 each.",
+				"引き算 is subtraction — not 1,000 each.",
+				"かけ算 is multiplication — the number would grow.",
+				"割り算 is division: 6,000÷6=1,000."
 			]
 		},
 		{
@@ -2455,19 +2455,19 @@
 				"divided by",
 				"minus"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "×读作かける，＋是たす，÷是わる，－是ひく。",
+			"point_en": "× is かける, ＋ is たす, ÷ is わる, － is ひく.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"8たす3＝8＋3，不是×。",
+				"8かける3＝8×3，正确。",
+				"8わる3＝8÷3，不是×。",
+				"8ひく3＝8－3，不是×。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"たす is plus, not times.",
+				"かける is times — how 8×3 is read.",
+				"わる is divided by.",
+				"ひく is minus."
 			]
 		},
 		{
@@ -2487,19 +2487,19 @@
 				"not sit the exam",
 				"not major"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "単位を取る是固定搭配。受ける接课或考试，受験する是报考，専攻する是专攻。",
+			"point_en": "単位を取る is the set phrase. 受ける is take a class/exam; 受験する sit an exam; 専攻する major.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"受ける＝上课或应考，不说単位を受ける。",
+				"取る＝修满／拿到学分，正确。",
+				"受験する＝报考，对象是考试不是学分。",
+				"専攻する＝专攻某学科，不是拿学分。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"受ける is take a class or exam, not credits.",
+				"取る is earn credits — 単位を取る.",
+				"受験する is sit an entrance exam.",
+				"専攻する is major in a field, not earn credits."
 			]
 		},
 		{
@@ -2519,19 +2519,19 @@
 				"creating",
 				"filled in"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "試験で問われている問題＝题目在问什么。書き取る是听写，作成是出题，記入是填空。",
+			"point_en": "問われている問題 is what the question asks. 書き取る is dictate; 作成 is write; 記入 is fill in.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"問われている＝被问到的，没看懂题意，正确。",
+				"書き取っている＝正在听写，不是「题在问」。",
+				"作成している＝正在出题／制作，主语不对。",
+				"記入されている＝已被填上，不是题意。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"問われている is what the exam is asking — correct.",
+				"書き取る is take dictation, not 'the question means'.",
+				"作成する is create (the test), wrong subject.",
+				"記入されている is already filled in, not the meaning."
 			]
 		},
 		{
@@ -2551,19 +2551,19 @@
 				"attach",
 				"organize"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "ファイルを添付する＝把文件附在邮件上。転送是整封转给别人，返信是回复。",
+			"point_en": "添付する is attach a file. 転送 is forward the whole mail; 返信 is reply.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"転送＝把整封邮件转给别人，不是附简历。",
+				"返信＝回复来信，不是加附件。",
+				"添付＝把简历附在邮件里寄出，正确。",
+				"整理＝整理，没有「寄出」的意思。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"転送 is forward the message, not attach a file.",
+				"返信 is reply, not attach.",
+				"添付 is attach the resume to the email.",
+				"整理 is organize, not send as an attachment."
 			]
 		},
 		{
@@ -2583,19 +2583,19 @@
 				"become",
 				"do"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "合計を出す＝把总数算出来。得る是得到，なる不能接「合計を」。",
+			"point_en": "合計を出す is work out the total. 得る is obtain; なる can't take 合計を.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"出す＝算出合计，正确。",
+				"得る＝得到，不说合計を得る。",
+				"なる＝变成，应是「合計が2万円になる」，助词不对。",
+				"やる＝做，太笼统。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"出す is work out the total — 合計を出す.",
+				"得る is obtain; not used as 合計を得る.",
+				"なる would need 合計が…になる, not を.",
+				"やる is just 'do', too vague."
 			]
 		},
 		{
@@ -2615,19 +2615,19 @@
 				"weigh",
 				"sharpen"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "鉛筆をけずる＝削尖。丸くなった＝笔尖钝了。まとめる是汇总，はかる是称。",
+			"point_en": "鉛筆をけずる is sharpen. 丸くなった means the point is dull. まとめる is summarize; はかる is weigh.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"まとめる＝汇总，不能削铅笔。",
+				"つなぐ＝接上，不是削。",
+				"はかる＝称重量，无关。",
+				"けずる＝削，笔尖圆了就削尖，正确。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"まとめる means put together, not sharpen.",
+				"つなぐ means connect, not sharpen.",
+				"はかる means weigh, unrelated.",
+				"けずる means sharpen a dull pencil."
 			]
 		},
 		{
@@ -2647,19 +2647,19 @@
 				"create",
 				"convert"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "入力した假名を漢字に変換する。変更是一般改变，送信是发送。",
+			"point_en": "変換する is convert kana to kanji. 変更 is a general change; 送信 is send.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"送信＝发送邮件，不是把假名变成汉字。",
+				"変更＝变更，太宽，输入法要说変換。",
+				"作成＝做成，不是转换文字。",
+				"変換＝假名转换成汉字，正确。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"送信 is send, not convert text.",
+				"変更 is change in general; IME use is 変換.",
+				"作成 is create, not convert characters.",
+				"変換 is convert はな into 花."
 			]
 		},
 		{
@@ -2679,19 +2679,19 @@
 				"check",
 				"repeat"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "メールのやりとり＝互发邮件。受信只是接收，チェック是检查。",
+			"point_en": "やりとり is an exchange of mail. 受信 is receive only; チェック is check.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"受信＝只是接收，没有来往。",
+				"やりとり＝来回交换，正确。",
+				"チェック＝检查，不是通信。",
+				"くりかえし＝重复，不是互发。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"受信 is receive only, not an exchange.",
+				"やりとり is exchanging mail — correct.",
+				"チェック is check, not communicate.",
+				"くりかえし is repeat, not exchange."
 			]
 		},
 		{
@@ -2711,19 +2711,19 @@
 				"slack",
 				"skip"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "居眠り＝人在场却睡着。サボる是逃课人不在，休学是办手续长期不上学。",
+			"point_en": "居眠り is doze while present. サボる is skip class; 休学 is take leave from school.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"居眠りして＝上课打瞌睡，正确。",
+				"休学して＝办休学，不是一节课睡着。",
+				"なまけて＝偷懒，不一定睡着。",
+				"サボって＝逃课，人就不在教室，不能「授業中に」。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"居眠りして is doze off in class — correct.",
+				"休学して is leave school for a term, not nod off.",
+				"なまけて is slack off, not necessarily sleep.",
+				"サボって is skip class, so you aren't 授業中."
 			]
 		},
 		{
@@ -2743,19 +2743,19 @@
 				"review",
 				"finish"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "暗記する＝记到不看也能写、能说。聞き取る是听写，見直す是再看，済ませる是办完。",
+			"point_en": "暗記する is memorize until you can produce it blind. 聞き取る is catch by ear; 見直す review; 済ませる finish.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"暗記する＝背下来，正合定义。",
+				"聞き取る＝听写下来，还要靠耳朵，不是「何も見ない」。",
+				"見直す＝再看一遍，还在看。",
+				"済ませる＝办完，不是记住。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"暗記する is memorize so you need nothing to look at.",
+				"聞き取る is catch by listening, not memorize.",
+				"見直す is look over again — you still look.",
+				"済ませる is finish a task, not memorize."
 			]
 		},
 		{
@@ -2775,19 +2775,19 @@
 				"living",
 				"in luck"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "ついている＝走运。つながる是连着，まもる是守，すむ是住。",
+			"point_en": "ついている means be in luck. つながる is be connected; まもる protect; すむ live.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"つながっている＝连着，不是幸运。",
+				"まもっている＝守着，不是幸运。",
+				"すんでいる＝住着，不是幸运。",
+				"ついている＝走运，正合「幸運であること」。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"つながっている is be connected, not lucky.",
+				"まもっている is protect, not lucky.",
+				"すんでいる is live, not lucky.",
+				"ついている is be in luck — exact match."
 			]
 		},
 		{
@@ -2807,19 +2807,19 @@
 				"repeat",
 				"touch"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "慣れる＝经历多次后习以为常。くり返す是重复（原因），まとめる是汇总。",
+			"point_en": "慣れる is get used to it after many times. くり返す is the repeating; まとめる is summarize.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"まとめる＝汇总，不是「不再觉得特别」。",
+				"なれる＝习惯了就不觉得特别，正确。",
+				"くり返す＝重复，是习惯的原因，不是结果。",
+				"さわる＝碰，无关。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"まとめる is put together, not get used to.",
+				"なれる is get used to — it no longer feels special.",
+				"くり返す is repeat, the cause, not the result.",
+				"さわる is touch, unrelated."
 			]
 		},
 		{
@@ -2839,19 +2839,19 @@
 				"makeup class",
 				"credit"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "単位是毕业所需学分。講義是课，専攻是专业，補習是补课。",
+			"point_en": "単位 are credits required to graduate. 講義 is a lecture; 専攻 a major; 補習 makeup class.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"講義＝课／讲座，不是毕业基准。",
+				"専攻＝专业方向，不是学分。",
+				"補習＝补课，不是毕业标准。",
+				"単位＝高中大学毕业所需的学分，正确。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"講義 is a lecture, not the graduation unit.",
+				"専攻 is your major, not the credit.",
+				"補習 is extra class, not the requirement.",
+				"単位 are the credits you need to graduate."
 			]
 		},
 		{
@@ -2871,19 +2871,19 @@
 				"forward",
 				"receive"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "転送＝把收到的邮件再发给别人。送信是自己发，返信是回给发件人，受信是收。",
+			"point_en": "転送 is forward mail on. 送信 is send; 返信 is reply; 受信 is receive.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"送信＝自己发出去，不是「再转到别处」。",
+				"返信＝回给原来的发件人。",
+				"転送＝把收到的邮件再发到别处，正确。",
+				"受信＝接收，方向相反。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"送信 is send your own mail, not pass it on.",
+				"返信 is reply to the sender.",
+				"転送 is forward received mail somewhere else.",
+				"受信 is receive, the opposite direction."
 			]
 		},
 		{
@@ -2903,19 +2903,19 @@
 				"mouse",
 				"scissors"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "定規≈ものさし，量长度。はかり量重量，マウス是鼠标，はさみ是剪刀。",
+			"point_en": "定規 ≈ ものさし, a ruler. はかり is a scale; マウス a mouse; はさみ scissors.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"はかり＝秤，量的是重量不是纸的尺寸。",
+				"ものさし＝尺子，和定規同义，正确。",
+				"マウス＝鼠标，不能量尺寸。",
+				"はさみ＝剪刀，是剪不是量。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"はかり measures weight, not paper size.",
+				"ものさし is a ruler — same as 定規.",
+				"マウス is a computer mouse.",
+				"はさみ are scissors, for cutting."
 			]
 		},
 		{
@@ -2935,19 +2935,19 @@
 				"salary",
 				"exam fee"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "学費≈授業料。奨学金是发给学生的钱，給料是工资，受験料是报考费。",
+			"point_en": "学費 ≈ 授業料 (tuition). 奨学金 is a scholarship; 給料 pay; 受験料 an exam fee.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"授業料＝学费，和学費同义。",
+				"奨学金＝奖学金，是领到的钱，不会「越来越贵」。",
+				"給料＝工资，不是交给学校的。",
+				"受験料＝报考费，一次性考试费。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"授業料 is tuition — same as 学費.",
+				"奨学金 is a scholarship you receive, not a rising cost.",
+				"給料 is a salary, not paid to the university.",
+				"受験料 is a one-time exam fee."
 			]
 		},
 		{
@@ -2967,19 +2967,19 @@
 				"organized",
 				"forwarded"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "メールを消す≈取り除く。チェック是检查，整理不一定删，転送是转发。",
+			"point_en": "消す ≈ 取り除く (delete). チェック is check; 整理 may not delete; 転送 is forward.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"チェックした＝检查了，没有删掉。",
+				"とりのぞいた＝去掉了，和消した同义。",
+				"整理した＝整理了，不一定删除。",
+				"転送した＝转发了，不是删。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"チェックした is checked, not deleted.",
+				"とりのぞいた is removed — same as 消した.",
+				"整理した is organized, not necessarily deleted.",
+				"転送した is forwarded, not deleted."
 			]
 		},
 		{
@@ -2999,19 +2999,19 @@
 				"unlucky",
 				"unused to"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "仕事がきつい≈つらい。遅い是慢，ついてない是不走运，慣れない是不习惯。",
+			"point_en": "きつい work is つらい. 遅い is slow; ついてない unlucky; 慣れない unused to.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"つらい＝辛苦，和きつい同义。",
+				"遅い＝慢，不是累。",
+				"ついてない＝不走运，不是工作强度。",
+				"慣れない＝不习惯，不等于客观上辛苦。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"つらい is hard/tough — same as きつい.",
+				"遅い is slow, not hard.",
+				"ついてない is unlucky, not physically hard.",
+				"慣れない is unused to it, not 'the job is tough'."
 			]
 		},
 		{
@@ -3031,19 +3031,19 @@
 				"put together",
 				"sharpen"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "サボる≈なまける（该上课却偷懒）。そろえる是凑齐，まとめる是汇总，けずる是削。",
+			"point_en": "サボる ≈ なまける (slack on class). そろえる is arrange; まとめる summarize; けずる sharpen.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"そろえて＝凑齐，不是逃课。",
+				"なまけて＝偷懒，和サボる同义。",
+				"まとめて＝汇总，无关。",
+				"けずって＝削，无关。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"そろえて is arrange/gather, not skip class.",
+				"なまけて is slack off — closest to サボる.",
+				"まとめて is put together, unrelated.",
+				"けずって is sharpen, unrelated."
 			]
 		},
 		{
@@ -3063,19 +3063,19 @@
 				"late for the 専攻",
 				"専攻 a report"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "専攻＝专业方向，问「専攻は何ですか」。学部是所属学院，不能「理工学部を専攻」。",
+			"point_en": "専攻 is your field. Ask 専攻は何ですか. A 学部 is the faculty — you don't 専攻 a 学部.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"専攻的是学问／专业，不说「理工学部を専攻」（学部是所属）。",
+				"文学部里再问専攻是什么，正确。",
+				"迟到的是授業／講義，不说専攻に遅刻。",
+				"报告是「作成／提出する」，不能専攻。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"You 専攻 a field of study, not a 学部.",
+				"What's your 専攻 in the literature faculty? — correct.",
+				"You're late for a 授業, not a 専攻.",
+				"You 作成/提出 a report, you don't 専攻 it."
 			]
 		},
 		{
@@ -3095,19 +3095,19 @@
 				"paying in a lump is 得意",
 				"made it 得意 to everyone"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "得意既可说人擅长，也可说学校的强项。合算是得だ，炫耀是自慢する。",
+			"point_en": "得意 is be good at, also a school's strength. A bargain is 得だ; bragging is 自慢する.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"「水泳が得意」是个人擅长的说法，本题选学校强项这一用法。",
+				"スポーツが得意な高校＝体育很强的高中，正确。",
+				"一次交齐更合算应说「得だ」，不是得意。",
+				"向大家炫耀应是「自慢した」或「得意になった」。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"水泳が得意 is personal skill; the key is the school's strength.",
+				"スポーツが得意な高校 is a school strong at sports.",
+				"Paying in a lump is 得だ (advantageous), not 得意.",
+				"Bragging is 自慢した / 得意になった, not 得意にした."
 			]
 		},
 		{
@@ -3127,19 +3127,19 @@
 				"finish a resume",
 				"finish medical school"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "済ませる＝把该做的事做完。简历是書く／提出する，学部是卒業する。",
+			"point_en": "済ませる is get a task done. A resume is 書く/提出する; a faculty is 卒業する.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"「提出を済ませる」也能说，但更自然的是把一件工作做完。",
+				"この仕事を済ませてから＝做完这事再吃饭，正确。",
+				"简历应「書いて／提出してから」，不说履歴書を済ませる。",
+				"医学部应「出て／卒業してから」，不能済ませる。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"提出を済ませる is possible, but the set answer is finishing a job.",
+				"仕事を済ませてからご飯 — finish the work, then eat.",
+				"A resume is 書く/提出する, not 済ませる.",
+				"You 卒業する from medical school, not 済ませる it."
 			]
 		},
 		{
@@ -3159,19 +3159,19 @@
 				"exchange New Year cards",
 				"やり取り living costs at a job"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "やり取り＝互相交换（贺卡、邮件等）。用电脑是使う，复习是復習，筹生活费是やりくり。",
+			"point_en": "やり取り is exchange (cards, mail). A PC is 使う; review is 復習; managing money is やりくり.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"用新电脑写报告应是「パソコンを使って」。",
+				"把今天的课再过一遍是「復習した」。",
+				"每年只互寄贺年片，是やり取り的正确用法。",
+				"打工筹生活费是「やりくりする」，不是やり取り。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"You パソコンを使って write a report, not やり取り.",
+				"Going over class again is 復習した.",
+				"年賀状のやり取り is exchanging New Year cards — correct.",
+				"Making living costs stretch is やりくり, not やり取り."
 			]
 		},
 		{
@@ -3191,19 +3191,19 @@
 				"living costs profited",
 				"the shop made a big profit"
 			],
-			"point": "",
-			"point_en": "",
+			"point": "もうかる＝赚钱、有利润。客人少是もうからない，开销大是かかる，赚多不必节约。",
+			"point_en": "もうかる is turn a profit. Few customers is もうからない; heavy costs かかる; big profit isn't a reason to save.",
 			"why": [
-				"",
-				"",
-				"",
-				""
+				"赚很多反而必须节约，逻辑反了。",
+				"客人少应是「もうからない」，不是もうかった。",
+				"开销大应是「生活費がかかった」。",
+				"新产品好卖，店大赚，是もうかる的正确用法。"
 			],
 			"why_en": [
-				"",
-				"",
-				"",
-				""
+				"Making lots of money is not why you must save — logic is backwards.",
+				"Few customers means もうからない, not もうかった.",
+				"Heavy spending means 生活費がかかった.",
+				"Goods sold well, so the shop もうかった — correct."
 			]
 		}
 	]

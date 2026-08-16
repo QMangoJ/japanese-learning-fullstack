@@ -67,6 +67,14 @@ describe("ListeningN3Content", () => {
 		expect(screen.getByText(/ABC航空24便/)).toBeInTheDocument();
 	});
 
+	it("shows a Chinese transcript on chapter 3 after 译文", async () => {
+		const user = userEvent.setup();
+		setLang("cn");
+		render(<ListeningN3Content chapter={3} section={1} embedded />);
+		await user.click(screen.getByText("译文"));
+		expect(screen.getByText(/鲜鱼日/)).toBeInTheDocument();
+	});
+
 	it("shows chapter 1 and 3 figures and an English transcript when LANG is en", async () => {
 		const user = userEvent.setup();
 		setLang("en");

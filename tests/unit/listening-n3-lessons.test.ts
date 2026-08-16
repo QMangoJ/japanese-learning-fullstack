@@ -133,6 +133,15 @@ describe("listening-n3-lessons", () => {
 		}
 	});
 
+	it("gives every lesson a Chinese transcript", () => {
+		for (const { chapter, section } of catalog) {
+			const lesson = getListeningLesson(chapter, section);
+			expect(lesson?.transcript_cn, at(chapter, section, "needs transcript_cn")).toBeTruthy();
+			expect(lesson!.transcript_cn!.trim().length, at(chapter, section, "transcript_cn too short")).toBeGreaterThan(20);
+			expect(lesson!.transcript_cn, at(chapter, section, "transcript_cn should be Chinese, not a JP copy")).not.toBe(lesson!.transcript);
+		}
+	});
+
 	it("gives chapters 1 and 3 teaching and practice figures like chapters 2, 4, and 5", () => {
 		const needed = [
 			[1, 1, "/listening/n3/figures/ch1-s1-example.jpg"],
