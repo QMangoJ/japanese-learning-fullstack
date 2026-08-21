@@ -158,6 +158,23 @@ describe("listening-n3-lessons", () => {
 		expect(lesson!.transcript_en).toContain("drink");
 	});
 
+	it("keeps the final drills in every formerly truncated transcript", () => {
+		const checks = [
+			[1, 1, "バースデーパーティー", "生日聚会"],
+			[1, 3, "こちらのボタンでお知らせください", "按这个按钮"],
+			[1, 4, "11時を過ぎますと", "超过 11 点"],
+			[1, 5, "問題Ⅱ 5番", "問題Ⅱ 5番"],
+			[2, 6, "問題V", "問題V"],
+			[4, 5, "問題III・2番", "問題III・2番"],
+			[5, 5, "【7番】", "【7番】"],
+		] as const;
+		for (const [chapter, section, japanese, chinese] of checks) {
+			const lesson = getListeningLesson(chapter, section)!;
+			expect(lesson.transcript, at(chapter, section, `missing final Japanese drill ${japanese}`)).toContain(japanese);
+			expect(lesson.transcript_cn, at(chapter, section, `missing final Chinese drill ${chinese}`)).toContain(chinese);
+		}
+	});
+
 	it("gives every lesson a Chinese transcript", () => {
 		for (const { chapter, section } of catalog) {
 			const lesson = getListeningLesson(chapter, section);

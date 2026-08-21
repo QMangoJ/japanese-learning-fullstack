@@ -1,4 +1,4 @@
-import { Component, useEffect, useLayoutEffect, useState, useSyncExternalStore, type ErrorInfo, type ReactNode } from "react";
+import { Component, useEffect, useLayoutEffect, useRef, useState, useSyncExternalStore, type ErrorInfo, type ReactNode } from "react";
 import { useLocation, useNavigate } from "react-router";
 
 import { ListeningN3Content } from "../routes/listening-n3";
@@ -564,6 +564,7 @@ function BottomNav({ active, onCommon }: { active: string; onCommon: () => void 
 
 function SelectionPopover({ routeKey }: { routeKey: string }) {
 	const [state, setState] = useState<{ text: string; type: string; left: number; top: number; saved: boolean } | null>(null);
+	const interactingRef = useRef(false);
 
 	useEffect(() => {
 		let timer: ReturnType<typeof setTimeout> | null = null;
@@ -582,7 +583,7 @@ function SelectionPopover({ routeKey }: { routeKey: string }) {
 				const sel = document.getSelection();
 				const text = normalize(sel ? sel.toString() : "");
 				if (!text || !inApp(sel)) {
-					setState((cur) => (cur?.saved ? cur : null));
+					setState((cur) => (interactingRef.current || cur?.saved ? cur : null));
 					return;
 				}
 				const rect = sel!.getRangeAt(0).getBoundingClientRect();
@@ -593,10 +594,15 @@ function SelectionPopover({ routeKey }: { routeKey: string }) {
 				const left = Math.max(pad, Math.min(window.innerWidth - width - pad, rect.left + (rect.width - width) / 2));
 				const above = rect.top - height - 10;
 				const top = above >= pad ? above : Math.min(window.innerHeight - height - pad, rect.bottom + 10);
-				setState({ text, type: "word", left: Math.round(left), top: Math.max(pad, Math.round(top)), saved: false });
+				setState((cur) =>
+					cur?.text === text
+						? { ...cur, left: Math.round(left), top: Math.max(pad, Math.round(top)) }
+						: { text, type: "word", left: Math.round(left), top: Math.max(pad, Math.round(top)), saved: false },
+				);
 			});
 		};
-		const queue = () => {
+		const queue = (event?: Event) => {
+			if ((event?.target as Element | null)?.closest?.("#selectionPopover")) return;
 			if (timer) clearTimeout(timer);
 			timer = setTimeout(maybeShow, 48);
 		};
@@ -643,12 +649,26 @@ function SelectionPopover({ routeKey }: { routeKey: string }) {
 			role="dialog"
 			aria-label={lx("收藏划词", "Save selected text")}
 			style={{ left: state.left, top: state.top, position: "fixed" }}
+			onPointerDown={() => {
+				interactingRef.current = true;
+			}}
+			onPointerUp={() => {
+				window.setTimeout(() => {
+					interactingRef.current = false;
+				}, 0);
+			}}
 		>
 			<div className="selection-popover__title">{lx("收藏到生词本", "Save to word book")}</div>
 			<div className="selection-popover__text">{state.text}</div>
 			<div className="selection-popover__types">
 				{types.map(([k, label]) => (
-					<button key={k} type="button" className={k === state.type ? "on" : ""} onClick={() => setState({ ...state, type: k })}>
+					<button
+						key={k}
+						type="button"
+						className={k === state.type ? "on" : ""}
+						onPointerDown={(event) => event.preventDefault()}
+						onClick={() => setState((cur) => (cur ? { ...cur, type: k } : cur))}
+					>
 						{label}
 					</button>
 				))}

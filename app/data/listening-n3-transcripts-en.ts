@@ -1,6 +1,28 @@
 /** English translations of every N3 listening lesson transcript. Keys are `${chapter}-${section}`. */
 export const listeningTranscriptEn: Record<string, string> = {
-	"1-1": `3番
+	"1-1": `1番
+Example: まち (town) / マッチ (match)
+① レッスン (lesson)
+② まっすぐ (straight ahead)
+③ ポケット (pocket)
+④ ゆっくり (slowly)
+⑤ ストップ (stop)
+⑥ せっけん (soap)
+⑦ ちかてつ (subway)
+⑧ いってらっしゃい (Have a safe trip.)
+
+2番
+Example: セーター (sweater) / しゅみ (hobby) / きのう (yesterday)
+① ゆうびんきょく (post office)
+② バースデーパーティー (birthday party)
+③ ちゅうしゃじょう (parking lot)
+④ おじさん (uncle)
+⑤ りゅうがくせい (international student)
+⑥ きょうとりょこう (trip to Kyoto)
+⑦ じゅうがつとおか (October 10)
+⑧ きれいなおねえさん (a pretty young woman)
+
+3番
 ① I drank all the milk. I have to go buy some more. (のんじゃった / こなきゃ)
 ② Don't go that way. It's dangerous. (そっちいっちゃだめだよ)
 ③ Let's get the homework done before we watch TV. (やっちゃおう)
@@ -39,7 +61,9 @@ Woman: Yes, what is it?
 ② Woman: Then please come here by 10 o'clock tomorrow.
 Man: Understood.
 ③ Woman: Are you looking for something?
-Man: No, I'm just looking.`,
+Man: No, I'm just looking.
+④ Man: Customer holding number two, please come forward.
+⑤ Woman: This is today's lunch menu. There are choices A and B. Please choose your drink from this list. Once you have decided, press this button to let us know.`,
 
 	"1-4": `1番
 ① Man: How about this shirt?
@@ -50,6 +74,10 @@ Woman: So that's why it's crowded.
 Woman: It's not that, but…
 ④ Man: Ten more minutes until the show starts.
 Woman: I wish it would start soon.
+⑤ Man: I'll tell you what to do, so just do it that way. How did it turn out…?
+Woman: Honestly, could you stop talking to me?
+⑥ Man: We'll still make it if we're a little late, right?
+Woman: We are very sorry, but you cannot enter after 11 p.m.
 
 2番
 ① Man: I've been repairing this bicycle and using it for years, but at last…
@@ -75,10 +103,33 @@ Woman: I'd love to!`,
 ④ I wish you wouldn't look. (見ないでくれないかなあ)
 ⑤ You cannot board. (ご乗車にはなれません)
 
+問題Ⅱ 2番
+① Woman: Excuse me, would you take a photo for me? Man: Sure.
+② Woman: You always treat me, so let me pay today. Man: Oh, all right then.
+③ Woman: Could you lend me that for a moment? Man: Here you are.
+④ Woman: Shall I teach you? Man: Yes.
+⑤ Woman: Your handwriting is beautiful. Man: Is it?
+
 問題Ⅱ 3番
 ① If they still haven't come after you wait 30 minutes, you're allowed to go home.
 ② It's not that the pay is good, but I like this job.
-③ Next week won't be as busy as this week, I don't think.`,
+③ Next week won't be as busy as this week, I don't think.
+④ You have been in Japan for ten years? No wonder your Japanese is so good.
+⑤ I have no plans in the afternoon, but the morning is a little difficult…
+
+問題Ⅱ 4番
+① Woman: Explain it to everyone. Man: What?
+② Man: How would you like it cut today? Woman: Please cut it short.
+③ Man: Come again tomorrow. Woman: All right.
+④ Man: What is this picture? It's terrible! Ha ha ha. Woman: How rude.
+⑤ Man: Go ahead and have lunch first. Woman: Then I'll go ahead.
+
+問題Ⅱ 5番
+① Are you Mr. Tanaka?
+② I have heard your name.
+③ Please write your name and wait a moment.
+④ How may I help you?
+⑤ I will write a certificate, so please take it with you.`,
 
 	"2-1": `1番　I'm reading a book, but the TV is too loud. What do you say?
 1　Hey, the TV volume is a bit low…
