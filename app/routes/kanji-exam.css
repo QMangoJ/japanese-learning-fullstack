@@ -1,0 +1,175 @@
+#common-page:has(.kanji-exam-page){max-width:1040px;padding:18px 20px 40px}
+
+.kanji-exam-page{--exam-ink:#243047;--exam-accent:#b93a30;--exam-gold:#aa7319;width:100%;max-width:960px;margin:0 auto;color:var(--ink)}
+.kanji-exam-page button,.kanji-exam-page input{font:inherit}
+.kanji-exam-hero{position:relative;overflow:hidden;display:flex;align-items:center;min-height:132px;padding:26px 34px;border-radius:18px;color:#fff;background:linear-gradient(130deg,#182539 0%,#253c59 62%,#315678 100%);box-shadow:0 12px 28px rgba(23,38,58,.16)}
+.kanji-exam-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% 20%,rgba(255,255,255,.13),transparent 34%),repeating-linear-gradient(115deg,transparent 0 34px,rgba(255,255,255,.025) 35px 36px)}
+.kanji-exam-hero>div{position:relative;z-index:1}
+.kanji-exam-eyebrow{display:inline-block;margin-bottom:8px;color:#f1c66f;font-size:11px;font-weight:900;letter-spacing:.22em}
+.kanji-exam-hero h1{margin:0;font-size:25px;line-height:1.25;letter-spacing:.03em}
+
+.kanji-exam-panel,.kanji-exam-library,.kanji-exam-history{margin-top:18px;padding:24px;border:1px solid var(--line);border-radius:18px;background:var(--card);box-shadow:var(--shadow)}
+.kanji-exam-section-title{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:18px}
+.kanji-exam-section-title>div{display:flex;align-items:center;gap:10px}
+.kanji-exam-section-title>div>span{display:grid;place-items:center;width:30px;height:30px;border-radius:8px;background:var(--accent-soft);color:var(--accent);font-size:11px;font-weight:900}
+.kanji-exam-section-title h2{margin:0;font-size:17px;line-height:1.3}
+.kanji-exam-section-title>small{color:var(--sub);font-size:12px}
+.kanji-exam-batches{display:grid;gap:10px}
+.kanji-exam-batches button{position:relative;display:grid;grid-template-columns:32px minmax(0,1fr) auto;grid-template-areas:"check title date" "check sub date";align-items:center;gap:1px 12px;width:100%;padding:16px;text-align:left;border:1px solid var(--line);border-radius:13px;background:var(--bg);color:var(--ink);cursor:pointer}
+.kanji-exam-batches button.on{border-color:var(--blue);background:var(--blue-soft);box-shadow:0 0 0 1px color-mix(in srgb,var(--blue) 25%,transparent)}
+.kanji-exam-batch-check{grid-area:check;display:grid;place-items:center;width:28px;height:28px;border:1px solid var(--line);border-radius:50%;color:#fff;font-weight:900}
+.kanji-exam-batches button.on .kanji-exam-batch-check{border-color:var(--blue);background:var(--blue)}
+.kanji-exam-batches strong{grid-area:title;font-size:15px}
+.kanji-exam-batches>button>span:not(.kanji-exam-batch-check){grid-area:sub;color:var(--sub);font-size:13px}
+.kanji-exam-batches small{grid-area:date;color:var(--sub);font-size:11px;text-align:right}
+.kanji-exam-modes{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.kanji-exam-modes button{position:relative;display:flex;min-height:168px;flex-direction:column;align-items:flex-start;padding:16px;border:1px solid var(--line);border-radius:14px;background:var(--bg);color:var(--ink);text-align:left;cursor:pointer}
+.kanji-exam-modes button.on{border-color:var(--accent);background:var(--accent-soft);box-shadow:0 0 0 1px color-mix(in srgb,var(--accent) 25%,transparent)}
+.kanji-exam-modes i{display:grid;place-items:center;width:40px;height:40px;margin-bottom:14px;border-radius:11px;background:var(--card);color:var(--accent);font-size:21px;font-style:normal;font-weight:900;box-shadow:var(--shadow)}
+.kanji-exam-modes strong{font-size:15px}
+.kanji-exam-modes span{margin-top:5px;color:var(--sub);font-size:12px;line-height:1.55}
+.kanji-exam-modes small{margin-top:auto;padding-top:9px;color:var(--accent);font-size:11px;font-weight:800}
+.kanji-exam-start{display:flex;align-items:center;justify-content:center;gap:12px;width:100%;margin-top:16px;padding:13px 18px;border:0;border-radius:12px;background:var(--accent);color:#fff;font-size:15px;font-weight:800;cursor:pointer;box-shadow:0 8px 18px color-mix(in srgb,var(--accent) 22%,transparent)}
+.kanji-exam-start span{font-size:20px;line-height:1}
+.kanji-exam-count-picker{display:grid;grid-template-columns:150px 1fr;align-items:center;gap:8px 14px;margin-top:16px;padding:14px;border:1px solid var(--line);border-radius:13px;background:var(--bg)}
+.kanji-exam-count-picker>strong{font-size:13px}
+.kanji-exam-count-picker>div{display:flex;flex-wrap:wrap;gap:7px}
+.kanji-exam-count-picker button{padding:7px 12px;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--ink);font-size:12px;font-weight:700;cursor:pointer}
+.kanji-exam-count-picker button.on{border-color:var(--accent);background:var(--accent);color:#fff}
+.kanji-exam-count-picker>small{grid-column:2;color:var(--sub);font-size:11px}
+
+.kanji-exam-library__row{display:grid;grid-template-columns:180px 1fr;align-items:center;gap:16px;padding:14px 0;border-top:1px dashed var(--line)}
+.kanji-exam-library__row:first-of-type{border-top:0}
+.kanji-exam-library__row>div{display:flex;flex-direction:column}
+.kanji-exam-library__row strong{font-size:14px}
+.kanji-exam-library__row small{color:var(--sub);font-size:11px}
+.kanji-exam-library__row p{display:flex;flex-wrap:wrap;gap:7px;margin:0}
+.kanji-exam-library__row p span{display:grid;place-items:center;width:38px;height:38px;border:1px solid var(--line);border-radius:8px;background:var(--bg);font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:20px}
+.kanji-exam-history h2{margin:0 0 12px;font-size:17px}
+.kanji-exam-history>details{border-top:1px solid var(--line)}
+.kanji-exam-history>details>summary{display:grid;grid-template-columns:54px 1fr auto;align-items:center;gap:12px;padding:11px 22px 11px 0;list-style:none;cursor:pointer;position:relative}
+.kanji-exam-history>details>summary::-webkit-details-marker{display:none}
+.kanji-exam-history>details>summary::after{content:"⌄";position:absolute;right:2px;color:var(--sub);transition:transform .2s}
+.kanji-exam-history>details[open]>summary::after{transform:rotate(180deg)}
+.kanji-exam-history summary>span{color:var(--accent)}
+.kanji-exam-history summary>span strong{font-size:24px}
+.kanji-exam-history summary p{display:flex;min-width:0;flex-direction:column;margin:0}
+.kanji-exam-history summary b{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:13px}
+.kanji-exam-history summary small{color:var(--sub);font-size:11px}
+.kanji-exam-history summary em{color:var(--sub);font-size:12px;font-style:normal}
+.kanji-exam-history__wrong{padding:2px 0 12px 66px}
+.kanji-exam-history__wrong>h3{margin:0 0 7px;font-size:12px}
+.kanji-exam-history__wrong>p{margin:5px 0;color:var(--sub);font-size:12px}
+.kanji-exam-history__wrong>div{padding:10px 0;border-top:1px dashed var(--line)}
+.kanji-exam-history__wrong>div>small{color:var(--sub);font-size:10px}
+.kanji-exam-history__wrong>div>p{margin:4px 0;font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:14px}
+.kanji-exam-history__wrong mark{padding:0 2px;background:var(--red-soft);color:inherit}
+.kanji-exam-history__wrong>div>span{color:var(--sub);font-size:11px}
+.kanji-exam-history__wrong del{color:var(--red)}
+.kanji-exam-history__wrong b{color:var(--green);font-size:13px}
+.kanji-exam-import-note{margin:16px 2px 0;padding:13px 16px;border:1px dashed var(--line);border-radius:12px;background:var(--card);color:var(--sub);font-size:13px}
+.kanji-exam-import-note summary{color:var(--ink);font-weight:700;cursor:pointer}
+.kanji-exam-import-note p{margin:9px 0 0;line-height:1.7}
+
+.kanji-exam-toolbar{position:sticky;top:var(--topbarh,50px);z-index:17;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:12px;margin:-18px -20px 18px;padding:9px 20px;border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--bg) 90%,transparent);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+.kanji-exam-toolbar button{padding:6px 10px;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--blue);font-size:12px;font-weight:700;cursor:pointer}
+.kanji-exam-toolbar>div{display:flex;min-width:0;flex-direction:column;align-items:center;line-height:1.35}
+.kanji-exam-toolbar strong{max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:13px}
+.kanji-exam-toolbar span{color:var(--sub);font-size:10px}
+.kanji-exam-toolbar em{min-width:48px;color:var(--accent);font-size:12px;font-style:normal;font-weight:800;text-align:right}
+.kanji-exam-paper__head{position:relative;overflow:hidden;margin-bottom:18px;padding:26px 28px;border:1px solid #d8d2c3;border-radius:12px;background:linear-gradient(90deg,#fffefb,#f7f3ea);color:var(--exam-ink)}
+.kanji-exam-paper__head>span{color:var(--exam-accent);font-size:10px;font-weight:900;letter-spacing:.2em}
+.kanji-exam-paper__head h1{margin:3px 0;font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:26px;letter-spacing:.04em}
+.kanji-exam-paper__head p{margin:0;color:#717988;font-size:12px}
+.kanji-exam-result{scroll-margin-top:120px;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:18px;margin-bottom:18px;padding:18px 22px;border:1px solid var(--blue);border-radius:14px;background:var(--blue-soft)}
+.kanji-exam-result>div{color:var(--blue);line-height:1}
+.kanji-exam-result>div strong{font-size:42px}
+.kanji-exam-result>div span{font-size:12px}
+.kanji-exam-result p{display:flex;flex-direction:column;margin:0}
+.kanji-exam-result p b{font-size:15px}
+.kanji-exam-result p span{color:var(--sub);font-size:12px}
+.kanji-exam-result button{padding:8px 13px;border:0;border-radius:999px;background:var(--blue);color:#fff;font-size:12px;font-weight:800;cursor:pointer}
+.kanji-exam-perfect{color:var(--green);font-size:13px;font-weight:800}
+
+.kanji-exam-question-group{overflow:hidden;margin-bottom:18px;border:1px solid #d8d2c3;border-radius:14px;background:var(--card);box-shadow:var(--shadow)}
+.kanji-exam-question-group__head{display:flex;align-items:center;gap:12px;padding:12px 20px;background:#253c59;color:#fff}
+.kanji-exam-question-group__head h2{margin:0;font-size:15px}
+.kanji-exam-question-section{padding:20px}
+.kanji-exam-question-section+.kanji-exam-question-section{border-top:6px solid var(--bg)}
+.kanji-exam-question-section>h3{margin:0 0 8px;padding-bottom:10px;border-bottom:1px solid var(--line);color:var(--sub);font-size:12px;font-weight:600}
+.kanji-exam-question{display:grid;grid-template-columns:32px 1fr;gap:10px;padding:15px 0;border-bottom:1px dashed var(--line)}
+.kanji-exam-question:last-child{border-bottom:0}
+.kanji-exam-question__number{display:grid;place-items:center;width:27px;height:27px;margin-top:2px;border-radius:7px;background:var(--blue-soft);color:var(--blue);font-size:12px;font-weight:900}
+.kanji-exam-question__body{min-width:0}
+.kanji-exam-question__meta{display:block;margin-bottom:3px;color:var(--sub);font-size:10px}
+.kanji-exam-question__body>p{margin:0 0 10px;color:var(--ink);font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:17px;line-height:1.9;letter-spacing:.01em}
+.kanji-exam-question mark{padding:1px 3px;border-bottom:2px solid var(--exam-accent);background:color-mix(in srgb,var(--red-soft) 65%,transparent);color:inherit;font-weight:800}
+.kanji-exam-question label{position:relative;display:grid;grid-template-columns:58px minmax(160px,320px) 24px;align-items:center;gap:8px;width:max-content;max-width:100%}
+.kanji-exam-question label>span{color:var(--sub);font-size:11px;font-weight:700}
+.kanji-exam-question input{width:100%;min-height:40px;padding:7px 11px;border:1px solid var(--line);border-radius:8px;outline:none;background:var(--bg);color:var(--ink);font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:16px}
+.kanji-exam-question input:focus{border-color:var(--blue);box-shadow:0 0 0 3px color-mix(in srgb,var(--blue) 12%,transparent)}
+.kanji-exam-question label i{font-size:18px;font-style:normal;font-weight:900}
+.kanji-exam-question.correct input{border-color:var(--green);background:var(--green-soft);color:var(--green)}
+.kanji-exam-question.correct label i{color:var(--green)}
+.kanji-exam-question.wrong input{border-color:var(--red);background:var(--red-soft)}
+.kanji-exam-question.wrong label i{color:var(--red)}
+.kanji-exam-correction{display:flex;align-items:center;gap:9px;margin-top:8px;margin-left:66px;color:var(--red);font-size:13px}
+.kanji-exam-correction span{font-size:10px;font-weight:700}
+.kanji-exam-correction strong{font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:16px}
+.kanji-exam-submitbar{position:sticky;bottom:calc(var(--bottom-nav-height) + env(safe-area-inset-bottom) + 8px);z-index:16;display:flex;align-items:center;justify-content:flex-end;gap:14px;margin-top:18px;padding:11px 14px;border:1px solid var(--line);border-radius:14px;background:color-mix(in srgb,var(--card) 92%,transparent);box-shadow:0 8px 28px rgba(0,0,0,.14);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+.kanji-exam-submitbar span{color:var(--sub);font-size:12px}
+.kanji-exam-submitbar button{padding:10px 16px;border:0;border-radius:10px;background:var(--accent);color:#fff;font-size:13px;font-weight:800;cursor:pointer}
+.kanji-exam-submitbar button:disabled{cursor:not-allowed;opacity:.45;box-shadow:none}
+
+html.theme-dark .kanji-exam-paper__head{border-color:var(--line);background:linear-gradient(100deg,#292720,#22231f);color:var(--ink)}
+html.theme-dark .kanji-exam-question-group{border-color:var(--line)}
+
+@media(min-width:900px){
+	.kanji-exam-submitbar{bottom:14px}
+}
+
+@media(max-width:680px){
+	#common-page:has(.kanji-exam-page){padding:12px 10px 30px}
+	.kanji-exam-hero{min-height:112px;padding:20px 22px;border-radius:15px}
+	.kanji-exam-hero h1{font-size:23px}
+	.kanji-exam-panel,.kanji-exam-library,.kanji-exam-history{margin-top:12px;padding:17px 14px;border-radius:15px}
+	.kanji-exam-section-title{align-items:flex-start;margin-bottom:14px}
+	.kanji-exam-section-title>small{max-width:120px;text-align:right;line-height:1.45}
+	.kanji-exam-batches button{grid-template-columns:28px 1fr;grid-template-areas:"check title" "check sub" "check date";padding:13px}
+	.kanji-exam-batches small{text-align:left}
+	.kanji-exam-modes{grid-template-columns:1fr}
+	.kanji-exam-modes button{display:grid;grid-template-columns:44px 1fr auto;grid-template-areas:"icon title count" "icon desc desc";align-items:center;min-height:0;padding:13px}
+	.kanji-exam-modes i{grid-area:icon;margin:0}
+	.kanji-exam-modes strong{grid-area:title}
+	.kanji-exam-modes span{grid-area:desc;margin-top:2px}
+	.kanji-exam-modes small{grid-area:count;margin:0;padding:0 0 0 10px}
+	.kanji-exam-count-picker{grid-template-columns:1fr;padding:12px}
+	.kanji-exam-count-picker>small{grid-column:1}
+	.kanji-exam-library__row{grid-template-columns:1fr;gap:8px}
+	.kanji-exam-library__row>div{flex-direction:row;align-items:baseline;justify-content:space-between}
+	.kanji-exam-toolbar{top:var(--topbarh,50px);margin:-12px -10px 12px;padding:8px 10px}
+	.kanji-exam-toolbar button{padding:5px 8px;font-size:11px}
+	.kanji-exam-toolbar em{min-width:38px}
+	.kanji-exam-paper__head{padding:21px 18px}
+	.kanji-exam-paper__head h1{font-size:21px}
+	.kanji-exam-result{grid-template-columns:auto 1fr;gap:12px;padding:15px}
+	.kanji-exam-result>div strong{font-size:34px}
+	.kanji-exam-result button,.kanji-exam-perfect{grid-column:1/-1;width:100%;text-align:center}
+	.kanji-exam-question-group__head{padding:11px 14px}
+	.kanji-exam-question-section{padding:15px 13px}
+	.kanji-exam-question{grid-template-columns:28px minmax(0,1fr);gap:8px;padding:14px 0}
+	.kanji-exam-question__number{width:25px;height:25px}
+	.kanji-exam-question__body>p{font-size:16px;line-height:1.85}
+	.kanji-exam-question label{grid-template-columns:46px minmax(0,1fr) 20px;width:100%}
+	.kanji-exam-question input{min-width:0;font-size:16px}
+	.kanji-exam-correction{margin-left:54px}
+	.kanji-exam-submitbar{justify-content:space-between;margin-inline:2px;padding:9px 10px}
+	.kanji-exam-submitbar button{padding:9px 12px;font-size:12px}
+}
+
+@media(max-width:420px){
+	.kanji-exam-section-title>small{display:none}
+	.kanji-exam-history>details>summary{grid-template-columns:48px 1fr}
+	.kanji-exam-history summary em{display:none}
+	.kanji-exam-history__wrong{padding-left:0}
+}
