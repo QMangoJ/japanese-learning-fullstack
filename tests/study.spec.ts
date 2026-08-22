@@ -352,6 +352,21 @@ test.describe("study navigation", () => {
 		await page.mouse.click(box!.x + box!.width * 0.7, box!.y + box!.height / 2);
 		await expect.poll(async () => page.locator("audio").evaluate((el: HTMLAudioElement) => el.currentTime)).toBeGreaterThan(1);
 	});
+
+	test("shows each listening answer, transcript, and translation under its own question", async ({ page }) => {
+		await waitForStudy(page);
+		await pickType(page, "listening");
+		await page.goto("/study/day/1-5");
+		await dismissViteOverlay(page);
+
+		const questions = page.locator(".listening-lesson__q");
+		await expect(questions).toHaveCount(6);
+		const photoQuestion = questions.filter({ has: page.getByRole("heading", { name: "問題Ⅱ 2番", exact: true }) });
+		await expect(photoQuestion.locator(".listening-question-support details")).toHaveCount(3);
+		await photoQuestion.getByText(/译文|Translation/, { exact: true }).click();
+		await expect(photoQuestion).toContainText(/拍张照片|take a photo/i);
+		await expect(photoQuestion).not.toContainText(/30分钟|30 minutes/i);
+	});
 });
 
 test.describe("study typebar", () => {

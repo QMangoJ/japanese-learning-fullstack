@@ -63,9 +63,18 @@
 .listening-lesson__q>p{margin:8px 0 0;color:var(--ri);font-size:14px;line-height:1.75}
 .listening-lesson__example-line{color:var(--blue)!important;font-weight:700}
 .listening-lesson__q ol{display:grid;gap:6px;margin:10px 0 0;padding-left:1.2em;color:var(--ri);font-size:14px;line-height:1.75}
+.listening-question-support{display:grid;gap:8px;margin-top:14px;padding-top:12px;border-top:1px dashed var(--rl)}
+.listening-question-support details{overflow:hidden;border:1px solid var(--rl);border-radius:10px;background:var(--rd)}
+.listening-question-support summary{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:42px;padding:9px 12px;color:var(--ri);cursor:pointer;font-size:13px;font-weight:800;list-style:none}
+.listening-question-support summary::-webkit-details-marker{display:none}
+.listening-question-support summary b{flex:0 0 auto;padding:3px 8px;border-radius:999px;background:var(--blue-soft);color:var(--blue);font-size:11px}
+.listening-question-support details[open]{background:var(--rp)}
+.listening-question-support details[open] summary{border-bottom:1px solid var(--rl)}
+.listening-question-support details[open] summary b{background:var(--blue);color:#fff}
+.listening-question-support details>div{padding:11px 13px;color:var(--ri);font-size:14px;line-height:1.85}
 html.theme-dark .listening-lesson__example{background:#2a2620;border-color:var(--rl);color:var(--ri)}
 html.theme-dark .listening-lesson__figure{background:#fff}
-@media (max-width:650px){.listening-lesson__hero h2{font-size:19px}.listening-lesson__q header{flex-direction:column}.listening-lesson__table th,.listening-lesson__table td{display:block;width:auto}}
+@media (max-width:650px){.listening-lesson__hero h2{font-size:19px}.listening-lesson__q{padding:13px}.listening-lesson__q header{flex-direction:column}.listening-lesson__table th,.listening-lesson__table td{display:block;width:auto}.listening-question-support{margin-top:12px;padding-top:10px}.listening-question-support summary{padding:9px 10px}.listening-question-support details>div{padding:10px 11px;font-size:13px;line-height:1.8}}
 
 .listening-scan-note{margin:0 2px 12px;color:var(--rm);font-size:13px;line-height:1.7}
 .listening-scans{display:grid;gap:16px;margin:0 0 8px}
