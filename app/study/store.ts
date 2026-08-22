@@ -955,12 +955,46 @@ export function clearSearchHistory() {
 export function getSearchIndex() {
 	return buildIndex();
 }
-export function searchHits(keyword: string, limit = 60) {
+export type SearchCategory = "all" | "grammar" | "kanji" | "vocab" | "mistakes";
+
+export function searchCategoryForModule(module: string): Exclude<SearchCategory, "all"> | "other" {
+	if (module === "grammar" || module === "n2grammar" || module === "n4grammar") return "grammar";
+	if (module === "kanji" || module === "n2kanji" || module === "n4kanji") return "kanji";
+	if (module === "vocab" || module === "n2vocab" || module === "n4vocab") return "vocab";
+	if (module === "mistakes") return "mistakes";
+	return "other";
+}
+
+function searchableMistakes() {
+	return activeMistakes().map((mistake) => ({
+		module: "mistakes",
+		w: 0,
+		d: 0,
+		key: mistake.text.split("\n").find((line) => line.trim())?.trim() || mistake.text,
+		reading: "",
+		extra: mistake.text,
+		sub: "",
+		dayTitle: "",
+		mistakeId: mistake.id,
+		mistakeType: mistake.type,
+		mistakeLevel: mistake.level || "new",
+		ts: mistake.ts,
+	}));
+}
+
+export function searchEntryCount(category: SearchCategory = "all") {
+	const indexed = getSearchIndex().filter((hit) => category === "all" || searchCategoryForModule(hit.module) === category).length;
+	return indexed + (category === "all" || category === "mistakes" ? searchableMistakes().length : 0);
+}
+
+export function searchHits(keyword: string, limit = 60, category: SearchCategory = "all") {
 	const kw = keyword.trim();
 	if (!kw) return [];
 	const lk = kw.toLowerCase();
 	const scored: { hit: any; score: number; len: number }[] = [];
-	for (const hit of getSearchIndex()) {
+	const source = category === "all" || category === "mistakes" ? [...getSearchIndex(), ...searchableMistakes()] : getSearchIndex();
+	for (const hit of source) {
+		if (category !== "all" && searchCategoryForModule(hit.module) !== category) continue;
 		const key = String(hit.key || "").toLowerCase();
 		const reading = String(hit.reading || "");
 		const extra = String(hit.extra || "").toLowerCase();
@@ -982,6 +1016,12 @@ export function activeMistakeCount() {
 export function openSearchHit(hit: any, keyword?: string) {
 	if (!hit) return;
 	if (keyword) saveSearchHistory(keyword);
+	if (hit.module === "mistakes") {
+		setMistakeFilter(hit.mistakeType || "all");
+		setMistakeLevelFilter("all");
+		navTo("#/mistakes");
+		return;
+	}
 	setModule(hit.module as ModuleKey);
 	let key = `#/day/${hit.w}-${hit.d}`;
 	if (isKanji(hit.module)) key += "/k" + hit.ki;

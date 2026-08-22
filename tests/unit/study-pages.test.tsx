@@ -19,6 +19,7 @@ import {
 import {
 	G,
 	V,
+	addMistake,
 	favsPayload,
 	getVersion,
 	mistakesPayload,
@@ -182,6 +183,32 @@ describe("SearchPage", () => {
 		expect(hit).toBeTruthy();
 		await user.click(hit!);
 		expect(seen[0]).toMatch(/#\/day\/\d+-\d+/);
+	});
+
+	it("filters search results by grammar, kanji, and vocabulary", async () => {
+		const user = userEvent.setup();
+		render(<SearchPage />);
+		await user.type(screen.getByPlaceholderText(/日文/), "冷蔵庫");
+		expect(screen.getAllByText("冷蔵庫").length).toBeGreaterThan(0);
+
+		await user.click(screen.getByRole("button", { name: /语法/ }));
+		expect(screen.getByText(/没有找到/)).toBeInTheDocument();
+
+		await user.click(screen.getByRole("button", { name: /词汇/ }));
+		expect(screen.getAllByText("冷蔵庫").length).toBeGreaterThan(0);
+		expect(screen.getByRole("button", { name: /词汇/ })).toHaveAttribute("aria-pressed", "true");
+	});
+
+	it("includes mistake notes in all results and in the mistake filter", async () => {
+		addMistake("q", "商品券の読み方\n正确答案：しょうひんけん");
+		const user = userEvent.setup();
+		render(<SearchPage />);
+		await user.type(screen.getByPlaceholderText(/日文/), "商品券");
+		expect(document.querySelector(".result")?.textContent).toContain("商品券の読み方");
+
+		await user.click(screen.getByRole("button", { name: /错题本/ }));
+		expect(screen.getAllByText("错题本").length).toBeGreaterThan(0);
+		expect(document.querySelector(".result")?.textContent).toContain("商品券の読み方");
 	});
 
 	it("saves and clears search history", async () => {
