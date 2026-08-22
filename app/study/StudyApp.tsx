@@ -17,6 +17,7 @@ import {
 	SearchPage,
 } from "../routes/study-common";
 import { ContrastPage, DayNav, DayPage, parseDayRoute } from "./days";
+import { KanjiExamPage } from "./KanjiExamPage";
 import {
 	ACCOUNT,
 	accountReady,
@@ -157,6 +158,7 @@ function Header({
 	title,
 	showBack,
 	backLabel,
+	showLevel,
 	showTypebar,
 	showSkills,
 	onBack,
@@ -165,6 +167,7 @@ function Header({
 	title: string;
 	showBack: boolean;
 	backLabel: string;
+	showLevel: boolean;
 	showTypebar: boolean;
 	showSkills: boolean;
 	onBack: () => void;
@@ -177,9 +180,11 @@ function Header({
 				<button className="back" id="backBtn" style={{ display: showBack ? "" : "none" }} onClick={onBack}>
 					‹ <span className="lbl">{backLabel}</span>
 				</button>
-				<button className="lvchip" id="lvChip" aria-haspopup="dialog" onClick={onOpenLevel}>
-					{LEVEL.toUpperCase()} <span className="cv">▾</span>
-				</button>
+				{showLevel ? (
+					<button className="lvchip" id="lvChip" aria-haspopup="dialog" onClick={onOpenLevel}>
+						{LEVEL.toUpperCase()} <span className="cv">▾</span>
+					</button>
+				) : null}
 				<h1 id="title">{title}</h1>
 				<div className="langbar" id="langbar">
 					<button className={LANG === "cn" ? "on" : ""} data-lang="cn" aria-label="中文" aria-pressed={LANG === "cn"} onClick={() => setLang("cn")}>
@@ -432,6 +437,7 @@ function Sidebar({ routeKey, onLevel }: { routeKey: string; onLevel: (lv: LevelK
 				{row("#/henkei", "✍️", lx("变形", "Verb forms"), null, h === "#/henkei")}
 				{row("#/kougo", "💬", lx("口语", "Casual"), null, h === "#/kougo")}
 				{row("#/numbers", "🔢", lx("数字", "Numbers"), null, h === "#/numbers")}
+				{row("#/kanji-exam", "🈶", lx("汉字自测", "Kanji Self-test"), null, h === "#/kanji-exam")}
 			</div>
 			<div className="side-sec">
 				<div className="side-h">{lx("本模块", "This module")}</div>
@@ -509,6 +515,14 @@ function Sheet({
 								<span className="ic">🔢</span>
 								{lx("数字", "Numbers")}
 							</button>
+						</div>
+						<div className="sheet-row">
+							<button className="sheet-item" onClick={() => { onClose(); navTo("#/kanji-exam"); }}>
+								<span className="ic">🈶</span>
+								{lx("汉字自测", "Kanji Self-test")}
+							</button>
+							<span className="sheet-item" style={{ visibility: "hidden" }} />
+							<span className="sheet-item" style={{ visibility: "hidden" }} />
 						</div>
 						<div className="sheet-h">
 							{lx("本模块", "This module")}
@@ -718,6 +732,7 @@ function TrialLock() {
 function viewMeta(key: string): { nav: string; title: string; back: boolean } {
 	if (key === "#/search") return { nav: "search", title: lx("搜索", "Search"), back: false };
 	if (key === "#/cards") return { nav: "common", title: `${lx("记忆卡", "Flashcards")} · ${modLabel()}`, back: false };
+	if (key === "#/kanji-exam") return { nav: "common", title: lx("汉字自测", "Kanji Self-test"), back: false };
 	if (key === "#/favs")
 		return {
 			nav: "favs",
@@ -843,7 +858,7 @@ export function StudyApp() {
 
 	const meta = viewMeta(routeKey);
 	const day = parseDayRoute(routeKey);
-	const commonPages = ["#/search", "#/cards", "#/favs", "#/mistakes", "#/ref", "#/katsuyou", "#/henkei", "#/kougo", "#/numbers"];
+	const commonPages = ["#/search", "#/cards", "#/kanji-exam", "#/favs", "#/mistakes", "#/ref", "#/katsuyou", "#/henkei", "#/kougo", "#/numbers"];
 	const isCommon = commonPages.includes(routeKey) || routeKey === "#/";
 	if (routeKey === "#/cards") ensureCardsDeck();
 
@@ -896,6 +911,7 @@ export function StudyApp() {
 		);
 	else if (routeKey === "#/search") body = <SearchPage />;
 	else if (routeKey === "#/cards") body = <CardsPage />;
+	else if (routeKey === "#/kanji-exam") body = <KanjiExamPage />;
 	else if (routeKey === "#/favs") body = showingFavFc ? <FavFcPage data={favFcPayload()} /> : <FavsPage data={favsPayload()} />;
 	else if (routeKey === "#/mistakes") body = <MistakesPage data={mistakesPayload()} />;
 	else if (routeKey === "#/ref") body = DATA.common?.reference ? <RefPage data={DATA.common} /> : <div className="empty">通用参考数据加载中，请稍候…</div>;
@@ -923,6 +939,7 @@ export function StudyApp() {
 				title={meta.title}
 				showBack={meta.back}
 				backLabel={day ? lx("目录", "Catalog") : lx("返回", "Back")}
+				showLevel={!commonPages.includes(routeKey)}
 				showTypebar={routeKey === "#/" || Boolean(day)}
 				showSkills={LEVEL === "n3"}
 				onBack={() => (day ? navTo("#/") : history.length > 1 ? navigate(-1) : navTo("#/"))}

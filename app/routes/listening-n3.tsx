@@ -220,14 +220,15 @@ function ListeningPlayer({ cue, audioRef, onPlaybackChange }: { cue: AudioCue; a
 const RUBY = /\{([^{}|]+)\|([^{}|]+)\}/g;
 
 function Jp({ text }: { text?: string }) {
+	const value = String(text || "");
 	const parts: (string | { base: string; reading: string })[] = [];
 	let cursor = 0;
-	for (const match of String(text || "").matchAll(RUBY)) {
-		if (match.index! > cursor) parts.push(text.slice(cursor, match.index));
+	for (const match of value.matchAll(RUBY)) {
+		if (match.index! > cursor) parts.push(value.slice(cursor, match.index));
 		parts.push({ base: match[1], reading: match[2] });
 		cursor = match.index! + match[0].length;
 	}
-	if (cursor < text.length) parts.push(text.slice(cursor));
+	if (cursor < value.length) parts.push(value.slice(cursor));
 	return (
 		<>
 			{parts.map((part, index) =>
