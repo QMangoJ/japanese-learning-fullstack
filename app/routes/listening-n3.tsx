@@ -3,7 +3,8 @@ import { redirect } from "react-router";
 
 import { findListeningChapter, findListeningSection, type ListeningDisc } from "../data/listening-n3-book";
 import { getListeningLesson } from "../data/listening-n3-lessons";
-import type { ListeningLesson, ListeningLessonBlock } from "../data/listening-n3-lesson-types";
+import type { ListeningLessonBlock } from "../data/listening-n3-lesson-types";
+import { listeningQuestionSupport, type ListeningQuestionSupport } from "../data/listening-n3-question-support";
 import { dayNeighbors, isFav, LANG, lx, navTo, registerFavMeta, toggleFav } from "../study/store";
 import type { Route } from "./+types/listening-n3";
 import "./reading-n3.css";
@@ -220,14 +221,15 @@ function ListeningPlayer({ cue, audioRef, onPlaybackChange }: { cue: AudioCue; a
 const RUBY = /\{([^{}|]+)\|([^{}|]+)\}/g;
 
 function Jp({ text }: { text?: string }) {
+	const value = String(text || "");
 	const parts: (string | { base: string; reading: string })[] = [];
 	let cursor = 0;
-	for (const match of String(text || "").matchAll(RUBY)) {
-		if (match.index! > cursor) parts.push(text.slice(cursor, match.index));
+	for (const match of value.matchAll(RUBY)) {
+		if (match.index! > cursor) parts.push(value.slice(cursor, match.index));
 		parts.push({ base: match[1], reading: match[2] });
 		cursor = match.index! + match[0].length;
 	}
-	if (cursor < text.length) parts.push(text.slice(cursor));
+	if (cursor < value.length) parts.push(value.slice(cursor));
 	return (
 		<>
 			{parts.map((part, index) =>
@@ -259,12 +261,14 @@ function Line({ text }: { text?: string }) {
 
 function LessonBlocks({
 	blocks,
+	questionSupport,
 	disc,
 	active,
 	playing,
 	onToggle,
 }: {
 	blocks: readonly ListeningLessonBlock[];
+	questionSupport: ReadonlyMap<number, ListeningQuestionSupport>;
 	disc: ListeningDisc;
 	active: AudioCue;
 	playing: boolean;
@@ -433,6 +437,7 @@ function LessonBlocks({
 							</p>
 						);
 					case "q":
+						const support = questionSupport.get(index);
 						return (
 							<article className="listening-lesson__q" key={index}>
 								<header>
@@ -468,6 +473,7 @@ function LessonBlocks({
 									</ol>
 								) : null}
 								{block.note ? <p className="listening-lesson__note">{block.note}</p> : null}
+								{support ? <QuestionSupportPanels support={support} /> : null}
 							</article>
 						);
 				}
@@ -476,42 +482,38 @@ function LessonBlocks({
 	);
 }
 
-function AnswerTextPanels({ lesson }: { lesson: ListeningLesson }) {
+function QuestionSupportPanels({ support }: { support: ListeningQuestionSupport }) {
 	const showCn = LANG !== "en";
+	const translation = showCn ? support.transcript_cn : support.transcript_en;
 	return (
-		<section className="listening-answer-panels" aria-label="答えと聞き取り原文">
-			<details>
-				<summary>
-					<span>答え</span>
-					<b>表示</b>
-				</summary>
-				<div className="listening-text-answers__body">{lesson.answer}</div>
-			</details>
-			<details>
-				<summary>
-					<span>聞き取り原文</span>
-					<b>表示</b>
-				</summary>
-				<div className="listening-text-answers__body" lang="ja">
-					{lesson.transcript}
-				</div>
-			</details>
-			{showCn && lesson.transcript_cn ? (
+		<section className="listening-question-support" aria-label={showCn ? "本题答案、听力原文和译文" : "Answer, transcript and translation"}>
+			{support.answer ? (
 				<details>
 					<summary>
-						<span>译文</span>
-						<b>表示</b>
+						<span>{showCn ? "答案" : "Answer"}</span>
+						<b>{showCn ? "显示" : "Show"}</b>
 					</summary>
-					<div className="listening-text-answers__body">{lesson.transcript_cn}</div>
+					<div className="listening-text-answers__body">{support.answer}</div>
 				</details>
 			) : null}
-			{!showCn && lesson.transcript_en ? (
+			{support.transcript ? (
 				<details>
 					<summary>
-						<span>Translation</span>
-						<b>Show</b>
+						<span>{showCn ? "听力原文" : "Transcript"}</span>
+						<b>{showCn ? "显示" : "Show"}</b>
 					</summary>
-					<div className="listening-text-answers__body">{lesson.transcript_en}</div>
+					<div className="listening-text-answers__body" lang="ja">
+						{support.transcript}
+					</div>
+				</details>
+			) : null}
+			{translation ? (
+				<details>
+					<summary>
+						<span>{showCn ? "译文" : "Translation"}</span>
+						<b>{showCn ? "显示" : "Show"}</b>
+					</summary>
+					<div className="listening-text-answers__body">{translation}</div>
 				</details>
 			) : null}
 		</section>
@@ -533,6 +535,10 @@ function ChapterDetail({ chapterNumber, sectionNumber, onBack, hideBack = false 
 	const [playRequest, setPlayRequest] = useState(0);
 	const [playing, setPlaying] = useState(false);
 	const audioRef = useRef<HTMLAudioElement>(null);
+	const questionSupport = useMemo<ReadonlyMap<number, ListeningQuestionSupport>>(
+		() => (lesson ? listeningQuestionSupport(lesson) : new Map()),
+		[lesson],
+	);
 
 	useEffect(() => {
 		if (!playRequest) return;
@@ -583,8 +589,7 @@ function ChapterDetail({ chapterNumber, sectionNumber, onBack, hideBack = false 
 						<h1>{section.title}</h1>
 					</header>
 					<ListeningPlayer cue={cue} audioRef={audioRef} onPlaybackChange={setPlaying} />
-					<LessonBlocks blocks={lesson.blocks} disc={chapter.disc} active={cue} playing={playing} onToggle={toggleCue} />
-					<AnswerTextPanels lesson={lesson} />
+					<LessonBlocks blocks={lesson.blocks} questionSupport={questionSupport} disc={chapter.disc} active={cue} playing={playing} onToggle={toggleCue} />
 					<ListeningSectionNav chapter={chapterNumber} section={sectionNumber} />
 				</main>
 			</div>

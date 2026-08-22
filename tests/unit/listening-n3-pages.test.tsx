@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { beforeEach, describe, expect, it } from "vitest";
 
@@ -23,8 +23,10 @@ describe("ListeningN3Content", () => {
 		expect(screen.getByRole("button", { name: /CD 1 · 19/ })).toBeInTheDocument();
 		expect(screen.queryByAltText(/原书第 24 页/)).not.toBeInTheDocument();
 
-		await user.click(screen.getByText("答え"));
-		expect(screen.getByText(/1番：2/)).toBeInTheDocument();
+		const firstQuestion = screen.getByRole("heading", { level: 4, name: /^1番/ }).closest("article");
+		expect(firstQuestion).toBeTruthy();
+		await user.click(within(firstQuestion!).getByText("答案"));
+		expect(within(firstQuestion!).getByText("1番：2")).toBeInTheDocument();
 		expect(screen.getByRole("button", { name: /上一节|Previous/ })).toBeEnabled();
 		expect(screen.getByRole("button", { name: /下一节|Next/ })).toBeEnabled();
 	});
@@ -37,7 +39,8 @@ describe("ListeningN3Content", () => {
 		expect(screen.getByText(/facial hair/)).toBeInTheDocument();
 		expect(screen.getByText(/one-size-fits-all/)).toBeInTheDocument();
 
-		await user.click(screen.getByText("译文"));
+		const firstQuestion = screen.getByRole("heading", { level: 4, name: /^1番/ }).closest("article");
+		await user.click(within(firstQuestion!).getByText("译文"));
 		expect(screen.getByText(/女士的妈妈是哪一个人/)).toBeInTheDocument();
 	});
 
@@ -53,9 +56,9 @@ describe("ListeningN3Content", () => {
 				}
 				expect(screen.queryByText(/未找到这一节听解内容/)).not.toBeInTheDocument();
 				expect(screen.getByRole("heading", { level: 1 })).toBeInTheDocument();
-				expect(screen.getByText("答え")).toBeInTheDocument();
-				await user.click(screen.getByText("答え"));
-				expect(screen.getByText("聞き取り原文")).toBeInTheDocument();
+				expect(screen.getAllByText("答案").length).toBeGreaterThan(0);
+				expect(screen.getAllByText("听力原文").length).toBeGreaterThan(0);
+				expect(screen.getAllByText("译文").length).toBeGreaterThan(0);
 				view.unmount();
 			}
 		}
@@ -71,7 +74,8 @@ describe("ListeningN3Content", () => {
 		const user = userEvent.setup();
 		setLang("cn");
 		render(<ListeningN3Content chapter={3} section={1} embedded />);
-		await user.click(screen.getByText("译文"));
+		const firstQuestion = screen.getByRole("heading", { level: 4, name: /^1番/ }).closest("article");
+		await user.click(within(firstQuestion!).getByText("译文"));
 		expect(screen.getByText(/鲜鱼日/)).toBeInTheDocument();
 	});
 
@@ -81,13 +85,15 @@ describe("ListeningN3Content", () => {
 		const ch3 = render(<ListeningN3Content chapter={3} section={1} embedded />);
 		expect(screen.getByAltText(/マルタケスーパー/)).toBeInTheDocument();
 		expect(screen.getByAltText(/黄线/)).toBeInTheDocument();
-		await user.click(screen.getByText("Translation"));
+		const ch3FirstQuestion = screen.getByRole("heading", { level: 4, name: /^1番/ }).closest("article");
+		await user.click(within(ch3FirstQuestion!).getByText("Translation"));
 		expect(screen.getByText(/Fish Day/)).toBeInTheDocument();
 		ch3.unmount();
 
 		render(<ListeningN3Content chapter={1} section={1} embedded />);
 		expect(screen.getByAltText(/ちょっとまって/)).toBeInTheDocument();
-		await user.click(screen.getByText("Translation"));
+		const ch1ThirdQuestion = screen.getByRole("heading", { level: 4, name: /^3番/ }).closest("article");
+		await user.click(within(ch1ThirdQuestion!).getByText("Translation"));
 		expect(screen.getByText(/drank all the milk/i)).toBeInTheDocument();
 		setLang("cn");
 	});
@@ -100,7 +106,8 @@ describe("ListeningN3Content", () => {
 		expect(screen.getByAltText(/月台上四个孩子/)).toBeInTheDocument();
 		expect(screen.getByText(/抢包/)).toBeInTheDocument();
 
-		await user.click(screen.getByText("译文"));
+		const firstQuestion = screen.getByRole("heading", { level: 4, name: /^1番/ }).closest("article");
+		await user.click(within(firstQuestion!).getByText("译文"));
 		expect(screen.getByText(/洋子的弟弟是哪个孩子/)).toBeInTheDocument();
 	});
 });

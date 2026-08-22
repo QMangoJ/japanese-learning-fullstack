@@ -40,6 +40,8 @@ import {
 	activeMistakeCount,
 	getSearchHistory,
 	getSearchIndex,
+	searchCategoryForModule,
+	searchEntryCount,
 	searchHits,
 	homeIntro,
 	homeScale,
@@ -440,6 +442,10 @@ describe("search and cards", () => {
 		expect(index.some((hit) => hit.key === "ばかり")).toBe(true);
 		expect(index.some((hit) => hit.key === "冷蔵庫")).toBe(true);
 		expect(searchHits("ばかり")[0].key).toBe("ばかり");
+		expect(searchHits("ばかり", 60, "grammar")[0].key).toBe("ばかり");
+		expect(searchHits("ばかり", 60, "vocab")).toEqual([]);
+		expect(searchHits("冷蔵庫", 60, "vocab")[0].key).toBe("冷蔵庫");
+		expect(searchCategoryForModule("n4kanji")).toBe("kanji");
 
 		const seen: string[] = [];
 		setNavImpl((key) => seen.push(key));
@@ -456,6 +462,19 @@ describe("search and cards", () => {
 		saveSearchHistory("冰箱");
 		saveSearchHistory("fridge");
 		expect(getSearchHistory()).toEqual(["fridge", "冰箱"]);
+	});
+
+	it("searches active mistake notes and opens the matching mistake type", () => {
+		addMistake("q", "商品券の読み方\n正确答案：しょうひんけん");
+		const hits = searchHits("商品券", 60, "mistakes");
+		expect(hits).toHaveLength(1);
+		expect(hits[0]).toMatchObject({ module: "mistakes", mistakeType: "q" });
+		expect(searchEntryCount("mistakes")).toBe(1);
+
+		const seen: string[] = [];
+		setNavImpl((key) => seen.push(key));
+		openSearchHit(hits[0], "商品券");
+		expect(seen).toEqual(["#/mistakes"]);
 	});
 
 	it("builds and walks a grammar card deck", () => {

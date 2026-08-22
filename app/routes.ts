@@ -8,6 +8,7 @@ export default [
 	route("reading/n3", "routes/reading-n3.tsx"),
 	route("api/favorites", "routes/api.favorites.ts"),
 	route("api/mistakes", "routes/api.mistakes.ts"),
+	route("api/kanji-exam/parse", "routes/api.kanji-exam-parse.ts"),
 	route("api/me", "routes/api.me.ts"),
 	route("auth/google", "routes/auth.google.ts"),
 	route("auth/google/callback", "routes/auth.google.callback.ts"),

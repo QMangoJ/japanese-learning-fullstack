@@ -3,6 +3,7 @@ import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
 
 import { listeningBookChapters, listeningPageSrc, printedPage } from "../../app/data/listening-n3-book";
+import { isAudioAssetRequest } from "../../workers/audio-range";
 
 const pagesDir = resolve(import.meta.dirname, "../../public/listening/n3/pages");
 
@@ -50,5 +51,23 @@ describe("listening-n3-book", () => {
 				}
 			}
 		}
+	});
+
+	it("maps every referenced track to an existing MP3 covered by the range handler", () => {
+		const missing: string[] = [];
+		for (const chapter of listeningBookChapters) {
+			const prefix = chapter.disc === "cd1" ? "CD01" : "CD02";
+			for (const section of chapter.sections) {
+				for (const page of section.pages) {
+					for (const track of page.tracks) {
+						const fileName = `${prefix}_${String(track).padStart(2, "0")}.mp3`;
+						const file = resolve(import.meta.dirname, `../../public/audio/n3/${chapter.disc}/${fileName}`);
+						if (!existsSync(file)) missing.push(`${chapter.number}-${section.number}:${fileName}`);
+						expect(isAudioAssetRequest(new Request(`https://example.test/audio/n3/${chapter.disc}/${fileName}`))).toBe(true);
+					}
+				}
+			}
+		}
+		expect(missing).toEqual([]);
 	});
 });

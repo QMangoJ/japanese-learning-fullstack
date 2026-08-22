@@ -1,5 +1,7 @@
 import { createRequestHandler } from "react-router";
 
+import { isAudioAssetRequest, serveAudioAsset } from "./audio-range";
+
 declare module "react-router" {
 	export interface AppLoadContext {
 		cloudflare: {
@@ -16,6 +18,7 @@ const requestHandler = createRequestHandler(
 
 export default {
 	fetch(request, env, ctx) {
+		if (isAudioAssetRequest(request)) return serveAudioAsset(request, env.ASSETS);
 		return requestHandler(request, {
 			cloudflare: { env, ctx },
 		});

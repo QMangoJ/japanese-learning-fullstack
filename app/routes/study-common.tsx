@@ -14,7 +14,6 @@ import {
 	flipCard,
 	flipFavCard,
 	getSearchHistory,
-	getSearchIndex,
 	homeScale,
 	jumpWeek,
 	lx,
@@ -28,6 +27,7 @@ import {
 	prevFavCard,
 	saveSearchHistory,
 	say,
+	searchEntryCount,
 	searchHits,
 	setCardsWeek,
 	setFavFilter,
@@ -43,6 +43,7 @@ import {
 	toggleFav,
 	toggleStudyHide,
 	toggleWeek,
+	type SearchCategory,
 } from "../study/store";
 
 /* 学習シェル共通ページ：接续表 / 活用 / 变形 / 数字 / 検索 / 記憶カード /
@@ -753,6 +754,10 @@ type Hit = {
 	extra: string;
 	sub: string;
 	dayTitle: string;
+	mistakeId?: string;
+	mistakeType?: string;
+	mistakeLevel?: string;
+	ts?: number;
 };
 
 const MODULE_TAG: Record<string, [string, string]> = {
@@ -767,7 +772,11 @@ const MODULE_TAG: Record<string, [string, string]> = {
 	n4kanji: ["k4", "N4汉字"],
 	reading: ["r", "N3读解"],
 	listening: ["l", "N3听解"],
+	mistakes: ["m", "错题本"],
 };
+
+const SEARCH_MISTAKE_TYPE: Record<string, [string, string]> = { q: ["错题", "Mistake"], word: ["单词", "Word"], grammar: ["语法", "Grammar"] };
+const SEARCH_MISTAKE_LEVEL: Record<string, [string, string]> = { new: ["不熟", "New"], mid: ["一般", "Learning"], done: ["已掌握", "Known"] };
 
 /* legacy の mark(): ヒット語を .hl で囲む */
 function Mark({ text, keyword }: { text: string; keyword: string }) {
@@ -786,6 +795,7 @@ function Mark({ text, keyword }: { text: string; keyword: string }) {
 
 export function SearchPage() {
 	const [keyword, setKeyword] = useState("");
+	const [category, setCategory] = useState<SearchCategory>("all");
 	const [history, setHistory] = useState<string[]>(() => getSearchHistory());
 	const inputRef = useRef<HTMLInputElement>(null);
 
@@ -793,9 +803,16 @@ export function SearchPage() {
 	useEffect(() => inputRef.current?.focus(), []);
 
 	// 毎回索引を取り直す。N2/N4 が後から入ったときに結果へ反映させるため。
-	const total = getSearchIndex().length;
+	const total = searchEntryCount(category);
 	const kw = keyword.trim();
-	const hits: Hit[] = kw ? searchHits(kw) : [];
+	const hits: Hit[] = kw ? searchHits(kw, 60, category) : [];
+	const categories: { key: SearchCategory; cn: string; en: string; icon: string }[] = [
+		{ key: "all", cn: "全部", en: "All", icon: "⌕" },
+		{ key: "grammar", cn: "语法", en: "Grammar", icon: "📘" },
+		{ key: "kanji", cn: "汉字", en: "Kanji", icon: "📙" },
+		{ key: "vocab", cn: "词汇", en: "Vocabulary", icon: "📗" },
+		{ key: "mistakes", cn: "错题本", en: "Mistakes", icon: "📝" },
+	];
 
 	const openHit = (hit: Hit) => openSearchHit(hit, kw);
 
@@ -817,6 +834,19 @@ export function SearchPage() {
 						}
 					}}
 				/>
+			</div>
+			<div className="search-category" role="group" aria-label={lx("搜索分类", "Search category")}>
+				{categories.map((item) => (
+					<button
+						type="button"
+						key={item.key}
+						className={category === item.key ? "on" : ""}
+						aria-pressed={category === item.key}
+						onClick={() => setCategory(item.key)}
+					>
+						<span>{item.icon}</span>{lx(item.cn, item.en)}
+					</button>
+				))}
 			</div>
 			<div id="results">
 				{!kw ? (
@@ -844,7 +874,9 @@ export function SearchPage() {
 							</div>
 						) : null}
 						<div className="empty">
-							{lx(`共收录 ${total} 条（语法、词汇、汉字、读解、听解）`, `${total} entries (grammar, vocab, kanji, reading, listening)`)}
+							{category === "all"
+								? lx(`共收录 ${total} 条（语法、词汇、汉字、读解、听解、错题本）`, `${total} entries (grammar, vocab, kanji, reading, listening, mistakes)`)
+								: lx(`当前分类共收录 ${total} 条`, `${total} entries in this category`)}
 							<br />
 							{lx("结果标注所属模块，点击直达", "Results are tagged by module — tap to open")}
 						</div>
@@ -866,10 +898,12 @@ export function SearchPage() {
 									</div>
 								) : null}
 								<div className="where">
-									{e.module === "listening"
+									{e.module === "mistakes"
+										? <>{lx(...(SEARCH_MISTAKE_TYPE[e.mistakeType || "q"] || ["错题", "Mistake"]))} · {lx(...(SEARCH_MISTAKE_LEVEL[e.mistakeLevel || "new"] || ["不熟", "New"]))}{e.ts ? ` · ${new Date(e.ts).toLocaleDateString()}` : ""}</>
+										: e.module === "listening"
 										? lx(`第${e.w}章 ${e.d}节`, `Ch. ${e.w} §${e.d}`)
 										: lx(`第${e.w}週 ${e.d}日目`, `Week ${e.w} Day ${e.d}`)}{" "}
-									· <span className="jp">{e.dayTitle}</span>
+									{e.module === "mistakes" ? null : <> · <span className="jp">{e.dayTitle}</span></>}
 								</div>
 							</div>
 						);
@@ -1586,7 +1620,3 @@ export function CardsPage() {
 		</div>
 	);
 }
-
-
-
-
