@@ -49,8 +49,34 @@ describe("listeningQuestionSupport", () => {
 		expect(support).toHaveLength(6);
 		expect(support[0].transcript).toContain("ふうとう");
 		expect(support[2].answer).toMatch(/2番：①1/);
-		expect(support[2].transcript).toContain("写真を撮っていただけませんか");
+		expect(support[2].transcript).toContain("写真を撮ってもらえませんか");
+		expect(support[2].transcript).toContain("いつもごちそうになってるから");
 		expect(support[2].transcript_cn).toContain("拍张照片");
+		expect(support[3].transcript).toContain("午後なら空いているんですが、午前はちょっと");
+		expect(support[3].transcript).not.toContain("予定がない");
+		expect(support[3].transcript_cn).toContain("下午的话我没有安排，上午就有点");
+		expect(support[3].transcript_en).toContain("I'm free in the afternoon");
 		expect(support[5].transcript).toContain("証明書をお書きします");
+	});
+
+	it("keeps audited listening scripts aligned with the source pages", () => {
+		const chapter1Section4 = getListeningLesson(1, 4)!;
+		expect(chapter1Section4.transcript).toContain("ねえねえ、それでさあ、結果ね");
+		expect(chapter1Section4.transcript).toContain("受付は11時までとなっております");
+		expect(chapter1Section4.transcript).not.toContain("ぼくが言うから");
+
+		const chapter1Section5 = getListeningLesson(1, 5)!;
+		expect(chapter1Section5.transcript).toContain("みんなの前で発表してもらいます");
+		expect(chapter1Section5.transcript).toContain("先に食事に行っていいよ");
+		expect(chapter1Section5.transcript).toContain("どうされましたか");
+
+		const chapter2Section2 = getListeningLesson(2, 2)!;
+		expect(chapter2Section2.transcript).toContain("へえー、そうなるのー");
+		expect(chapter2Section2.transcript).not.toContain("へえー、そうするのー");
+
+		const chapter5Section2 = getListeningLesson(5, 2)!;
+		expect(chapter5Section2.transcript).toContain("遊ばれたあとじゃ、弱って");
+		expect(chapter5Section2.transcript).toContain("来月の給料日には必ず");
+		expect(chapter5Section2.transcript).not.toContain("遊ばれたおもちゃ");
 	});
 });
