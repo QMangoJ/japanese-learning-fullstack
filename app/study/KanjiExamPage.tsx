@@ -9,10 +9,16 @@ import {
 	type KanjiExamMode,
 	type KanjiExamQuestion,
 } from "../data/kanji-exam";
+import {
+	englishBatchLabel,
+	englishLessonLabel,
+	englishSupportForQuestion,
+} from "../data/kanji-exam-english";
 import { lx } from "./store";
 import "../routes/kanji-exam.css";
 
 const HISTORY_KEY = "jp-kanji-exam-history-v1";
+const ENGLISH_SUPPORT_KEY = "jp-kanji-exam-english-support-v1";
 
 type AttemptHistory = {
 	id: string;
@@ -56,6 +62,16 @@ function storeHistory(history: AttemptHistory[]) {
 	localStorage.setItem(HISTORY_KEY, JSON.stringify(history.slice(0, 20)));
 }
 
+function readEnglishSupport(): boolean | null {
+	if (typeof window === "undefined") return null;
+	const value = localStorage.getItem(ENGLISH_SUPPORT_KEY);
+	return value === "1" ? true : value === "0" ? false : null;
+}
+
+function storeEnglishSupport(value: boolean) {
+	if (typeof window !== "undefined") localStorage.setItem(ENGLISH_SUPPORT_KEY, value ? "1" : "0");
+}
+
 function MarkedPrompt({ question }: { question: KanjiExamQuestion }) {
 	const index = question.prompt.indexOf(question.target);
 	if (index < 0) return <>{question.prompt}</>;
@@ -77,6 +93,7 @@ function modeLabel(mode: KanjiExamMode) {
 }
 
 export function KanjiExamPage() {
+	const interfaceEnglish = lx("cn", "en") === "en";
 	const [batchId, setBatchId] = useState(KANJI_EXAM_BATCHES[0]?.id || "");
 	const [mode, setMode] = useState<KanjiExamMode>("mixed");
 	const [started, setStarted] = useState(false);
@@ -86,11 +103,18 @@ export function KanjiExamPage() {
 	const [questionCount, setQuestionCount] = useState<number | "all">("all");
 	const [activeQuestions, setActiveQuestions] = useState<KanjiExamQuestion[]>([]);
 	const [retrying, setRetrying] = useState(false);
+	const [englishSupport, setEnglishSupport] = useState(() => readEnglishSupport() ?? interfaceEnglish);
 	const resultRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => setHistory(readHistory()), []);
+	useEffect(() => {
+		if (readEnglishSupport() === null) setEnglishSupport(interfaceEnglish);
+	}, [interfaceEnglish]);
 
 	const batch = KANJI_EXAM_BATCHES.find((item) => item.id === batchId) || KANJI_EXAM_BATCHES[0];
+	const batchEnglish = englishBatchLabel(batch);
+	const batchTitle = interfaceEnglish ? batchEnglish.title : batch.title;
+	const batchSubtitle = interfaceEnglish ? batchEnglish.subtitle : batch.subtitle;
 	const baseQuestions = useMemo(() => (batch ? questionsForMode(batch, mode) : []), [batch, mode]);
 	const questions = started ? activeQuestions : baseQuestions;
 	const correctIds = useMemo(
@@ -102,9 +126,15 @@ export function KanjiExamPage() {
 	const answeredCount = questions.filter((question) => (answers[question.id] || "").trim()).length;
 	const remainingCount = questions.length - answeredCount;
 	const lessonTitleById = useMemo(
-		() => new Map(batch?.lessons.map((lesson) => [lesson.id, lesson.title]) || []),
-		[batch],
+		() => new Map(batch?.lessons.map((lesson) => [lesson.id, interfaceEnglish ? englishLessonLabel(lesson.id, lesson.title) : lesson.title]) || []),
+		[batch, interfaceEnglish],
 	);
+	const toggleEnglishSupport = () => {
+		setEnglishSupport((current) => {
+			storeEnglishSupport(!current);
+			return !current;
+		});
+	};
 
 	const start = () => {
 		const shuffled = shuffleKanjiExamQuestions(baseQuestions);
@@ -134,7 +164,7 @@ export function KanjiExamPage() {
 		const entry: AttemptHistory = {
 			id: `${Date.now()}-${Math.random().toString(36).slice(2, 7)}`,
 			batchId: batch.id,
-			batchTitle: batch.title,
+			batchTitle,
 			mode,
 			correct,
 			total: questions.length,
@@ -179,8 +209,8 @@ export function KanjiExamPage() {
 							return (
 								<button key={item.id} className={item.id === batchId ? "on" : ""} onClick={() => { setBatchId(item.id); setQuestionCount("all"); }}>
 									<span className="kanji-exam-batch-check">{item.id === batchId ? "✓" : ""}</span>
-									<strong>{item.title}</strong>
-									<span>{item.subtitle}</span>
+									<strong>{interfaceEnglish ? englishBatchLabel(item).title : item.title}</strong>
+									<span>{interfaceEnglish ? englishBatchLabel(item).subtitle : item.subtitle}</span>
 									<small>{item.lessons.length}{lx("个单元", " units")} · {count}{lx("题", " questions")} · {item.importedAt}</small>
 								</button>
 							);
@@ -210,13 +240,17 @@ export function KanjiExamPage() {
 						<strong>{lx("随机抽题数量", "Random question count")}</strong>
 						<div>
 							{[10, 20, 30, 50].filter((count) => count <= baseQuestions.length).map((count) => (
-								<button key={count} className={questionCount === count ? "on" : ""} onClick={() => setQuestionCount(count)}>{count}{lx("题", "")}</button>
+								<button key={count} className={questionCount === count ? "on" : ""} onClick={() => setQuestionCount(count)}>{count}{lx("题", " questions")}</button>
 							))}
 							<button className={questionCount === "all" ? "on" : ""} onClick={() => setQuestionCount("all")}>
 								{lx(`整章全部（${baseQuestions.length}题）`, `Entire chapter (${baseQuestions.length})`)}
 							</button>
 						</div>
 						<small>{lx("每次开始都会重新随机排序", "Questions are reshuffled for every attempt")}</small>
+					</div>
+					<div className={`kanji-exam-english-toggle${englishSupport ? " on" : ""}`}>
+						<div><b>EN</b><span><strong>English Support</strong><small>{lx("显示英文词义，交卷后继续对照读音和含义", "Show English meanings while you practise and review")}</small></span></div>
+						<button type="button" role="switch" aria-checked={englishSupport} onClick={toggleEnglishSupport}>{englishSupport ? lx("已开启", "On") : lx("已关闭", "Off")}</button>
 					</div>
 					<button className="kanji-exam-start" onClick={start}>
 						{lx(
@@ -232,7 +266,7 @@ export function KanjiExamPage() {
 					</div>
 					{batch.lessons.map((lesson) => (
 						<div className="kanji-exam-library__row" key={lesson.id}>
-							<div><strong>{lesson.title}</strong><small>p.{lesson.pages.join(" / ")}</small></div>
+							<div><strong>{interfaceEnglish ? englishLessonLabel(lesson.id, lesson.title) : lesson.title}</strong><small>p.{lesson.pages.join(" / ")}</small></div>
 							<p>{lesson.kanji.map((kanji) => <span key={kanji}>{kanji}</span>)}</p>
 						</div>
 					))}
@@ -244,8 +278,8 @@ export function KanjiExamPage() {
 						{history.slice(0, 5).map((item) => (
 							<details key={item.id}>
 								<summary>
-									<span><strong>{scoreLabel(item.correct, item.total)}</strong>{lx("分", "")}</span>
-									<p><b>{item.batchTitle}</b><small>{modeLabel(item.mode)} · {new Date(item.completedAt).toLocaleString()}</small></p>
+									<span><strong>{scoreLabel(item.correct, item.total)}</strong>{lx("分", " pts")}</span>
+									<p><b>{interfaceEnglish ? englishBatchLabel(KANJI_EXAM_BATCHES.find((batchItem) => batchItem.id === item.batchId) || batch).title : item.batchTitle}</b><small>{modeLabel(item.mode)} · {new Date(item.completedAt).toLocaleString()}</small></p>
 									<em>{item.correct}/{item.total}</em>
 								</summary>
 								<div className="kanji-exam-history__wrong">
@@ -279,14 +313,17 @@ export function KanjiExamPage() {
 		<div className="kanji-exam-page kanji-exam-paper">
 			<div className="kanji-exam-toolbar">
 				<button onClick={() => { setStarted(false); setSubmitted(false); setRetrying(false); setActiveQuestions([]); }}>{lx("‹ 返回题库", "‹ Back to sets")}</button>
-				<div><strong>{batch.title}</strong><span>{retrying ? lx("错题重练", "Retry incorrect") : modeLabel(mode)} · {questions.length}{lx("题", " questions")}</span></div>
+				<div><strong>{batchTitle}</strong><span>{retrying ? lx("错题重练", "Retry incorrect") : modeLabel(mode)} · {questions.length}{lx("题", " questions")}</span></div>
 				<em>{answeredCount}/{questions.length}</em>
 			</div>
 
 			<header className="kanji-exam-paper__head">
 				<span>漢字テスト</span>
-				<h1>{batch.title}</h1>
-				<p>{batch.subtitle}</p>
+				<h1>{batchTitle}</h1>
+				<p>{batchSubtitle}</p>
+				<button className={`kanji-exam-paper__support${englishSupport ? " on" : ""}`} type="button" role="switch" aria-checked={englishSupport} onClick={toggleEnglishSupport}>
+					EN · English Support {englishSupport ? "On" : "Off"}
+				</button>
 			</header>
 
 			{submitted ? (
@@ -305,12 +342,14 @@ export function KanjiExamPage() {
 						const number = index + 1;
 						const value = answers[question.id] || "";
 						const correct = submitted && correctSet.has(question.id);
+						const support = englishSupportForQuestion(question);
 						return (
 							<div className={`kanji-exam-question ${submitted ? correct ? "correct" : "wrong" : ""}`} key={question.id}>
 								<span className="kanji-exam-question__number">{number}</span>
 								<div className="kanji-exam-question__body">
 									<small className="kanji-exam-question__meta">{lessonTitleById.get(question.lessonId)} · {question.kind === "reading" ? lx("读音", "Reading") : lx("汉字", "Kanji")}</small>
 									<p><MarkedPrompt question={question} /></p>
+									{englishSupport ? <div className="kanji-exam-english-support"><b>{support.label}</b><span>{support.meaning}</span></div> : null}
 									<label>
 										<span>{question.kind === "reading" ? lx("读音", "Reading") : lx("汉字", "Kanji")}</span>
 										<input

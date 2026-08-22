@@ -37,6 +37,15 @@
 .kanji-exam-count-picker button{padding:7px 12px;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--ink);font-size:12px;font-weight:700;cursor:pointer}
 .kanji-exam-count-picker button.on{border-color:var(--accent);background:var(--accent);color:#fff}
 .kanji-exam-count-picker>small{grid-column:2;color:var(--sub);font-size:11px}
+.kanji-exam-english-toggle{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:12px;padding:13px 14px;border:1px solid var(--line);border-radius:13px;background:var(--bg)}
+.kanji-exam-english-toggle.on{border-color:#4a7cae;background:color-mix(in srgb,#eaf4ff 72%,var(--card))}
+.kanji-exam-english-toggle>div{display:flex;align-items:center;gap:11px;min-width:0}
+.kanji-exam-english-toggle>div>b{display:grid;place-items:center;flex:none;width:36px;height:36px;border-radius:10px;background:#263f5f;color:#fff;font-size:12px;letter-spacing:.08em}
+.kanji-exam-english-toggle>div>span{display:flex;min-width:0;flex-direction:column}
+.kanji-exam-english-toggle strong{font-size:13px}
+.kanji-exam-english-toggle small{color:var(--sub);font-size:11px;line-height:1.45}
+.kanji-exam-english-toggle>button{flex:none;min-width:62px;padding:7px 12px;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--sub);font-size:11px;font-weight:800;cursor:pointer}
+.kanji-exam-english-toggle.on>button{border-color:#376f9f;background:#376f9f;color:#fff}
 
 .kanji-exam-library__row{display:grid;grid-template-columns:180px 1fr;align-items:center;gap:16px;padding:14px 0;border-top:1px dashed var(--line)}
 .kanji-exam-library__row:first-of-type{border-top:0}
@@ -81,6 +90,8 @@
 .kanji-exam-paper__head>span{color:var(--exam-accent);font-size:10px;font-weight:900;letter-spacing:.2em}
 .kanji-exam-paper__head h1{margin:3px 0;font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:26px;letter-spacing:.04em}
 .kanji-exam-paper__head p{margin:0;color:#717988;font-size:12px}
+.kanji-exam-paper__support{position:absolute;right:18px;top:18px;padding:6px 10px;border:1px solid #bfc9d4;border-radius:999px;background:#fff;color:#5e6874;font-size:10px;font-weight:800;cursor:pointer}
+.kanji-exam-paper__support.on{border-color:#376f9f;background:#376f9f;color:#fff}
 .kanji-exam-result{scroll-margin-top:120px;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:18px;margin-bottom:18px;padding:18px 22px;border:1px solid var(--blue);border-radius:14px;background:var(--blue-soft)}
 .kanji-exam-result>div{color:var(--blue);line-height:1}
 .kanji-exam-result>div strong{font-size:42px}
@@ -103,6 +114,9 @@
 .kanji-exam-question__body{min-width:0}
 .kanji-exam-question__meta{display:block;margin-bottom:3px;color:var(--sub);font-size:10px}
 .kanji-exam-question__body>p{margin:0 0 10px;color:var(--ink);font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:17px;line-height:1.9;letter-spacing:.01em}
+.kanji-exam-english-support{display:flex;align-items:baseline;gap:8px;margin:-2px 0 10px;padding:7px 10px;border-left:3px solid #4a7cae;border-radius:0 7px 7px 0;background:color-mix(in srgb,#eaf4ff 70%,var(--card));color:var(--ink);font-size:12px}
+.kanji-exam-english-support b{flex:none;color:#376f9f;font-size:10px;text-transform:uppercase;letter-spacing:.04em}
+.kanji-exam-english-support span{line-height:1.55}
 .kanji-exam-question mark{padding:1px 3px;border-bottom:2px solid var(--exam-accent);background:color-mix(in srgb,var(--red-soft) 65%,transparent);color:inherit;font-weight:800}
 .kanji-exam-question label{position:relative;display:grid;grid-template-columns:58px minmax(160px,320px) 24px;align-items:center;gap:8px;width:max-content;max-width:100%}
 .kanji-exam-question label>span{color:var(--sub);font-size:11px;font-weight:700}
@@ -123,6 +137,7 @@
 
 html.theme-dark .kanji-exam-paper__head{border-color:var(--line);background:linear-gradient(100deg,#292720,#22231f);color:var(--ink)}
 html.theme-dark .kanji-exam-question-group{border-color:var(--line)}
+html.theme-dark .kanji-exam-english-toggle.on,html.theme-dark .kanji-exam-english-support{background:color-mix(in srgb,#26445f 55%,var(--card))}
 
 @media(min-width:900px){
 	.kanji-exam-submitbar{bottom:14px}
@@ -145,6 +160,8 @@ html.theme-dark .kanji-exam-question-group{border-color:var(--line)}
 	.kanji-exam-modes small{grid-area:count;margin:0;padding:0 0 0 10px}
 	.kanji-exam-count-picker{grid-template-columns:1fr;padding:12px}
 	.kanji-exam-count-picker>small{grid-column:1}
+	.kanji-exam-english-toggle{align-items:flex-start;padding:12px}
+	.kanji-exam-english-toggle small{max-width:210px}
 	.kanji-exam-library__row{grid-template-columns:1fr;gap:8px}
 	.kanji-exam-library__row>div{flex-direction:row;align-items:baseline;justify-content:space-between}
 	.kanji-exam-toolbar{top:var(--topbarh,50px);margin:-12px -10px 12px;padding:8px 10px}
@@ -152,6 +169,8 @@ html.theme-dark .kanji-exam-question-group{border-color:var(--line)}
 	.kanji-exam-toolbar em{min-width:38px}
 	.kanji-exam-paper__head{padding:21px 18px}
 	.kanji-exam-paper__head h1{font-size:21px}
+	.kanji-exam-paper__head{padding-right:18px;padding-top:54px}
+	.kanji-exam-paper__support{left:18px;right:auto;top:16px}
 	.kanji-exam-result{grid-template-columns:auto 1fr;gap:12px;padding:15px}
 	.kanji-exam-result>div strong{font-size:34px}
 	.kanji-exam-result button,.kanji-exam-perfect{grid-column:1/-1;width:100%;text-align:center}
@@ -160,6 +179,7 @@ html.theme-dark .kanji-exam-question-group{border-color:var(--line)}
 	.kanji-exam-question{grid-template-columns:28px minmax(0,1fr);gap:8px;padding:14px 0}
 	.kanji-exam-question__number{width:25px;height:25px}
 	.kanji-exam-question__body>p{font-size:16px;line-height:1.85}
+	.kanji-exam-english-support{align-items:flex-start;flex-direction:column;gap:1px}
 	.kanji-exam-question label{grid-template-columns:46px minmax(0,1fr) 20px;width:100%}
 	.kanji-exam-question input{min-width:0;font-size:16px}
 	.kanji-exam-correction{margin-left:54px}
@@ -172,4 +192,5 @@ html.theme-dark .kanji-exam-question-group{border-color:var(--line)}
 	.kanji-exam-history>details>summary{grid-template-columns:48px 1fr}
 	.kanji-exam-history summary em{display:none}
 	.kanji-exam-history__wrong{padding-left:0}
+	.kanji-exam-english-toggle small{max-width:180px}
 }

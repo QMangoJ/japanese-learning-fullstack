@@ -7,6 +7,12 @@ import {
 	questionsForMode,
 	shuffleKanjiExamQuestions,
 } from "../../app/data/kanji-exam";
+import {
+	englishBatchLabel,
+	englishLessonLabel,
+	englishSupportForQuestion,
+	missingEnglishSupport,
+} from "../../app/data/kanji-exam-english";
 import { validateKanjiExamParseRequest } from "../../app/kanji-exam/parser";
 import { action as parseAction, loader as parseLoader } from "../../app/routes/api.kanji-exam-parse";
 import { memoryKv, routeContext, testEnv } from "./auth-test-utils";
@@ -79,6 +85,15 @@ describe("kanji exam question bank", () => {
 				}
 			}
 		}
+	});
+
+	it("provides reviewed English support for every imported question", () => {
+		const questions = KANJI_EXAM_BATCHES.flatMap((batch) => questionsForMode(batch, "mixed"));
+		expect(missingEnglishSupport(questions)).toEqual([]);
+		expect(englishBatchLabel(KANJI_EXAM_BATCHES[1])).toMatchObject({ title: "School Kanji · Chapter 3" });
+		expect(englishLessonLabel("ch4-2-anniversary", "fallback")).toBe("Chapter 4-2 · Wedding anniversary");
+		const giftCertificate = questions.find((question) => question.target === "商品券");
+		expect(giftCertificate && englishSupportForQuestion(giftCertificate).meaning).toBe("gift certificate");
 	});
 });
 

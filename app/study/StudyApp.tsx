@@ -158,6 +158,7 @@ function Header({
 	title,
 	showBack,
 	backLabel,
+	showLevel,
 	showTypebar,
 	showSkills,
 	onBack,
@@ -166,6 +167,7 @@ function Header({
 	title: string;
 	showBack: boolean;
 	backLabel: string;
+	showLevel: boolean;
 	showTypebar: boolean;
 	showSkills: boolean;
 	onBack: () => void;
@@ -178,9 +180,11 @@ function Header({
 				<button className="back" id="backBtn" style={{ display: showBack ? "" : "none" }} onClick={onBack}>
 					‹ <span className="lbl">{backLabel}</span>
 				</button>
-				<button className="lvchip" id="lvChip" aria-haspopup="dialog" onClick={onOpenLevel}>
-					{LEVEL.toUpperCase()} <span className="cv">▾</span>
-				</button>
+				{showLevel ? (
+					<button className="lvchip" id="lvChip" aria-haspopup="dialog" onClick={onOpenLevel}>
+						{LEVEL.toUpperCase()} <span className="cv">▾</span>
+					</button>
+				) : null}
 				<h1 id="title">{title}</h1>
 				<div className="langbar" id="langbar">
 					<button className={LANG === "cn" ? "on" : ""} data-lang="cn" aria-label="中文" aria-pressed={LANG === "cn"} onClick={() => setLang("cn")}>
@@ -935,6 +939,7 @@ export function StudyApp() {
 				title={meta.title}
 				showBack={meta.back}
 				backLabel={day ? lx("目录", "Catalog") : lx("返回", "Back")}
+				showLevel={!commonPages.includes(routeKey)}
 				showTypebar={routeKey === "#/" || Boolean(day)}
 				showSkills={LEVEL === "n3"}
 				onBack={() => (day ? navTo("#/") : history.length > 1 ? navigate(-1) : navTo("#/"))}
