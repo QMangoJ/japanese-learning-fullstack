@@ -333,10 +333,16 @@ test.describe("study navigation", () => {
 		await expect(page.locator("button.daynav-fab.next")).toBeVisible();
 	});
 
-	test("listening player seeks when the timeline is clicked", async ({ page }) => {
+	test("listening player seeks on chapter 1 section 5 track 14", async ({ page }) => {
 		await waitForStudy(page);
 		await pickType(page, "listening");
-		if (await page.locator(".day-item").first().isVisible()) await page.locator(".day-item").first().click();
+		await page.goto("/study/day/1-5");
+		await dismissViteOverlay(page);
+		await expect(page.locator("#topbar")).toBeVisible();
+		const cue = page.locator('button[aria-label^="CD 1 · 14"]');
+		await expect(cue).toBeVisible({ timeout: 15_000 });
+		await cue.evaluate((button: HTMLButtonElement) => button.click());
+		await expect(page.locator("audio")).toHaveAttribute("src", /CD01_14\.mp3$/);
 		const seek = page.locator(".listening-seek");
 		await expect(seek).toBeVisible({ timeout: 15_000 });
 		const durationLabel = page.locator(".listening-player__timeline span").last();
