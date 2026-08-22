@@ -74,10 +74,10 @@ Woman: So that's why it's crowded.
 Woman: It's not that, but…
 ④ Man: Ten more minutes until the show starts.
 Woman: I wish it would start soon.
-⑤ Man: I'll tell you what to do, so just do it that way. How did it turn out…?
-Woman: Honestly, could you stop talking to me?
-⑥ Man: We'll still make it if we're a little late, right?
-Woman: We are very sorry, but you cannot enter after 11 p.m.
+⑤ Man: Hey, hey—so then, the result was…
+Woman: Ah, could you please stop talking to me?
+⑥ Man: I ended up arriving a little late… That's all right, isn't it?
+Woman: We are very sorry, but reception closes at 11, so…
 
 2番
 ① Man: I've been repairing this bicycle and using it for years, but at last…
@@ -105,8 +105,8 @@ Woman: I'd love to!`,
 
 問題Ⅱ 2番
 ① Woman: Excuse me, would you take a photo for me? Man: Sure.
-② Woman: You always treat me, so let me pay today. Man: Oh, all right then.
-③ Woman: Could you lend me that for a moment? Man: Here you are.
+② Woman: You always treat me, so let me pay today. Man: Okay, I understand.
+③ Woman: Could you lend me that for a moment? Man: Sure.
 ④ Woman: Shall I teach you? Man: Yes.
 ⑤ Woman: Your handwriting is beautiful. Man: Is it?
 
@@ -115,20 +115,20 @@ Woman: I'd love to!`,
 ② It's not that the pay is good, but I like this job.
 ③ Next week won't be as busy as this week, I don't think.
 ④ You have been in Japan for ten years? No wonder your Japanese is so good.
-⑤ I have no plans in the afternoon, but the morning is a little difficult…
+⑤ I'm free in the afternoon, but the morning is a little difficult…
 
 問題Ⅱ 4番
-① Woman: Explain it to everyone. Man: What?
-② Man: How would you like it cut today? Woman: Please cut it short.
-③ Man: Come again tomorrow. Woman: All right.
-④ Man: What is this picture? It's terrible! Ha ha ha. Woman: How rude.
-⑤ Man: Go ahead and have lunch first. Woman: Then I'll go ahead.
+① Woman: You will give a presentation in front of everyone. Man: What—?
+② Man: What would you like done today? Woman: A haircut, please.
+③ Man: Please come again tomorrow. Woman: Understood.
+④ Man: What's that picture? It's terrible! Ha ha ha. Woman: How rude.
+⑤ Man: You may go to lunch first. Woman: Then I will take you up on that.
 
 問題Ⅱ 5番
 ① Are you Mr. Tanaka?
 ② I have heard your name.
-③ Please write your name and wait a moment.
-④ How may I help you?
+③ Please write your name and wait.
+④ What seems to be the matter?
 ⑤ I will write a certificate, so please take it with you.`,
 
 	"2-1": `1番　I'm reading a book, but the TV is too loud. What do you say?
@@ -158,7 +158,7 @@ Woman: I'd love to!`,
 
 4番　Hey, did you know? I heard 田中さん broke up with her boyfriend.
 1　Oh, really?
-2　Oh, so that's what you're going to do?
+2　Oh, so that's how it turns out?
 3　Oh, so that's what you did?`,
 
 	"2-3": `1番　A man and a woman are talking while looking at a car brochure. Which type of car will the two of them buy?
@@ -689,7 +689,7 @@ What do the man and the woman disagree about?
 ① The size of the printer　② Where to put the TV　③ How the phone is used　④ The shape of the TV stand`,
 
 	"5-1": `【1番】On a train platform, a man and a woman are talking. Which child is 洋子さん's younger brother?
-Woman: Those kids are fooling around. It's dangerous. Ah, that one is 洋子's little brother.
+Woman: Those kids are fooling around. It's dangerous, isn't it? Ah, that one is 洋子's little brother.
 Man: What? Which one?
 Woman: Look, that kid in the yellow short-sleeved shirt.
 Man: Ah, the one holding an umbrella? Ah, that's dangerous.
@@ -749,7 +749,7 @@ Woman: I hear you've gotten into fishing lately?
 Man: Yeah, I caught a lot yesterday too. It was fun.
 Woman: Then was last night's dinner sashimi?
 Man: No, I just catch them. I don't eat them. It would be pitiful.
-Woman: What! What are you saying! Who's the pitiful one? You should say thank you and eat them. Even if you let them go, they're like a toy that's been played with — they get weak and die right away. The idea that it's fine to let them go is wrong. It may be play to you, but to the fish it's a fight of life or death. That's awful!
+Woman: What! What are you saying! Who's the pitiful one? You should say thank you and eat them. Even if you let them go, after being played with they are weak and die right away. The idea that it's fine to let them go is wrong. It may be play to you, but to the fish it's a fight of life or death. That's awful!
 Why is the woman angry?
 
 【3番】A man and a woman are talking. How will the man pay the money back?
@@ -758,7 +758,7 @@ Man: Sorry. I was thinking of paying it back a little at a time starting next mo
 Woman: What? You got a bonus, didn't you?
 Man: Ah, well, I bought various things on bonus installment, so… I could manage half.
 Woman: What! That won't do. Pay it all at once!
-Man: I'm sorry. I'll pay the rest on next month's payday.
+Man: I'm sorry. I'll definitely pay the rest on next month's payday.
 Woman: Honestly! I guess it can't be helped. Then next month for sure. Even if you have to borrow from someone, pay it back.
 How will the man pay the money back?
 

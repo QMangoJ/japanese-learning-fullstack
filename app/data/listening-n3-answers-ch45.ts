@@ -27,7 +27,7 @@ export const chapter4AnswerText = [
 	},
 ] as const;
 
-export const chapter5AnswerText = [
+const rawChapter5AnswerText = [
 	{
 		number: 1,
 		answer: "1番：④　2番：①　3番：②　4番：③　5番：②　6番：③",
@@ -54,3 +54,29 @@ export const chapter5AnswerText = [
 		transcript: `【1番】早くしないと、遅れちゃうよ。\n① ほんとだ、急がないと。　② 遅いと困るんだー。　③ 急いでも良くならないよ。\n\n【2番】ご連絡先、お伺いしてもよろしいですか。\n① はい、電話でお願いいたします。　② あ、名刺をお渡ししておきます。　③ 住所も電話番号も知らされてないんです。\n\n【3番】お母さん、お元気？\n① うん、けっこうだよ。　② うん、こちらこそ。　③ うん、おかげさまで。\n\n【4番】雨、降ってきたから、タクシーで行こうよ。\n① そうだね、傘さそうか。　② そこだから、歩いて行こうよ。　③ でも、バスは遅れてるよ。\n\n【5番】ごはん、できましたよー。\n① 今、行きまーす。　② まだ、いただきます。　③ ごちそうさまー。\n\n【6番】この書類、明日までに仕上げないといけませんか。\n① 今日の、午後にしようか。　② ああ、間に合わなかったね。　③ 明日の会議に使うからね。\n\n【7番】遅くなってすみません。途中、事故にあって…。\n① よかったよー、間に合って。　② 大変なことをしましたね。　③ 大したものじゃありませんよ。`,
 	},
 ] as const;
+
+const chapter5TranscriptCorrections = new Map<number, ReadonlyArray<readonly [string, string]>>([
+	[1, [["危ないね。あ、あの子", "危ないよね。あ、あの子"]]],
+	[
+		2,
+		[
+			["遊ばれたおもちゃ、弱って", "遊ばれたあとじゃ、弱って"],
+			["残りは来月の給料日に返す。", "残りは来月の給料日には必ず。"],
+			["和室のほうがいいんですが", "和室のほうがいいんですけど"],
+		],
+	],
+	[
+		3,
+		[
+			["楽しむものです。そういうものじゃ", "楽しむんです。そういうもんじゃ"],
+		],
+	],
+]);
+
+export const chapter5AnswerText = rawChapter5AnswerText.map((lesson) => ({
+	...lesson,
+	transcript: (chapter5TranscriptCorrections.get(lesson.number) ?? []).reduce<string>(
+		(text, [source, corrected]) => text.replace(source, corrected),
+		lesson.transcript as string,
+	),
+}));
