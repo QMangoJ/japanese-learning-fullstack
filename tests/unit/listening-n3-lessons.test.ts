@@ -124,6 +124,14 @@ describe("listening-n3-lessons", () => {
 		}
 	});
 
+	it("keeps both audio tracks for the chapter 2 section 4 worked example", () => {
+		const lesson = getListeningLesson(2, 4);
+		const example = lesson?.blocks.find(
+			(block): block is Extract<ListeningLessonBlock, { type: "q" }> => block.type === "q" && block.label === "男の人は、どうして謝っていますか。",
+		);
+		expect(example?.tracks).toEqual([30, 31]);
+	});
+
 	it("gives every lesson an English transcript", () => {
 		for (const { chapter, section } of catalog) {
 			const lesson = getListeningLesson(chapter, section);

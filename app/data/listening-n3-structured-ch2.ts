@@ -153,7 +153,7 @@ export const chapter2Sections: readonly ListeningStructuredSection[] = [
 					{
 						kind: "question",
 						title: "男の人は、どうして謝っていますか。",
-						tracks: [30],
+						tracks: [30, 31],
 						options: ["出かけることができなかったから", "電話をかけなかったから", "荷物を受け取らなかったから", "待ち合わせに遅れたから"],
 					},
 					{ kind: "example", text: "女：どーしたの。\n男：ごめん、ごめん。待たせちゃって。ちょうど出かけようとしたとき、電話がかかってくるし、荷物が届くしで…。" },
