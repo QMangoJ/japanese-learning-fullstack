@@ -2,6 +2,7 @@ import { Fragment, useEffect, useMemo, useRef, useState, type PointerEvent, type
 import { redirect } from "react-router";
 
 import { findListeningChapter, findListeningSection, type ListeningDisc } from "../data/listening-n3-book";
+import { listeningBodySupport } from "../data/listening-n3-body-support";
 import { getListeningLesson } from "../data/listening-n3-lessons";
 import type { ListeningLessonBlock } from "../data/listening-n3-lesson-types";
 import { listeningQuestionSupport, type ListeningQuestionSupport } from "../data/listening-n3-question-support";
@@ -260,6 +261,16 @@ function Line({ text }: { text?: string }) {
 	);
 }
 
+function LearningLine({ text, translation = false }: { text?: string; translation?: boolean }) {
+	const support = listeningBodySupport(String(text || ""));
+	return (
+		<>
+			<Line text={support?.jp || text} />
+			{translation && LANG !== "en" && support?.cn ? <span className="listening-lesson__line-cn">{support.cn}</span> : null}
+		</>
+	);
+}
+
 function LessonBlocks({
 	blocks,
 	questionSupport,
@@ -313,7 +324,7 @@ function LessonBlocks({
 					case "p":
 						return (
 							<p className="listening-lesson__p" key={index}>
-								<Line text={block.jp} />
+								<LearningLine text={block.jp} translation />
 								{showCn && block.cn ? <span className="listening-lesson__cn">{block.cn}</span> : null}
 								{block.en ? <span className="listening-lesson__en">{block.en}</span> : null}
 							</p>
@@ -417,7 +428,7 @@ function LessonBlocks({
 								) : null}
 								{(block.lines || []).map((line) => (
 									<p key={line}>
-										<Line text={line} />
+										<LearningLine text={line} translation />
 									</p>
 								))}
 							</div>

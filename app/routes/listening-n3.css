@@ -54,6 +54,7 @@
 .listening-lesson__example{padding:12px 14px;border:1px solid #d8d2c8;border-radius:10px;background:#fbfaf7;color:#20242a}
 .listening-lesson__example b{display:block;margin-bottom:8px;font-size:15px}
 .listening-lesson__example p{margin:4px 0 0;font:14px/1.8 "Noto Serif JP",serif}
+.listening-lesson__line-cn{display:block;margin-top:3px;color:var(--rm);font:13px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif}
 .listening-lesson__aside{padding:11px 13px;border:1px dashed var(--rl);border-radius:10px;background:var(--rd)}
 .listening-lesson__aside b{color:var(--blue);font-size:13px}
 .listening-lesson__aside p{margin:4px 0 0;color:var(--ri);font-size:13px;line-height:1.7}

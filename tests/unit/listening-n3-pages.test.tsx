@@ -82,6 +82,18 @@ describe("ListeningN3Content", () => {
 		expect(screen.getByText(/鲜鱼日/)).toBeInTheDocument();
 	});
 
+	it("shows furigana and Chinese translations on chapter 3-4 teaching examples", () => {
+		const chapter3 = render(<ListeningN3Content chapter={3} section={1} embedded />);
+		const translation = screen.getByText("很危险，请退到黄线内侧等候。");
+		expect(translation.parentElement?.querySelector("ruby")).toBeInTheDocument();
+		chapter3.unmount();
+
+		render(<ListeningN3Content chapter={4} section={4} embedded />);
+		const comparisonTranslation = screen.getByText("A最……。对我来说，片假名最难。");
+		expect(comparisonTranslation).toBeInTheDocument();
+		expect(comparisonTranslation.parentElement?.querySelector("ruby")).toBeInTheDocument();
+	});
+
 	it("shows chapter 1 and 3 figures and an English transcript when LANG is en", async () => {
 		const user = userEvent.setup();
 		setLang("en");
