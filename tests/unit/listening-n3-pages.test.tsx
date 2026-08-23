@@ -27,6 +27,9 @@ describe("ListeningN3Content", () => {
 		expect(firstQuestion).toBeTruthy();
 		await user.click(within(firstQuestion!).getByText("答案"));
 		expect(within(firstQuestion!).getByText("1番：2")).toBeInTheDocument();
+		await user.click(within(firstQuestion!).getByText("听力原文"));
+		expect(firstQuestion!.querySelector("ruby")).toBeInTheDocument();
+		expect(firstQuestion!.querySelector("rt")?.textContent).toBeTruthy();
 		expect(screen.getByRole("button", { name: /上一节|Previous/ })).toBeEnabled();
 		expect(screen.getByRole("button", { name: /下一节|Next/ })).toBeEnabled();
 	});
