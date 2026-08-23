@@ -848,9 +848,13 @@ export function StudyApp() {
 		const onScroll = () => {
 			window.requestAnimationFrame(updateNumNavActive);
 		};
+		const topbar = document.getElementById("topbar");
+		const topbarObserver = typeof ResizeObserver === "undefined" ? null : new ResizeObserver(updateStickyVars);
+		if (topbar) topbarObserver?.observe(topbar);
 		window.addEventListener("scroll", onScroll, { passive: true });
 		window.addEventListener("resize", updateStickyVars);
 		return () => {
+			topbarObserver?.disconnect();
 			window.removeEventListener("scroll", onScroll);
 			window.removeEventListener("resize", updateStickyVars);
 		};
