@@ -5,6 +5,7 @@ import { findListeningChapter, findListeningSection, type ListeningDisc } from "
 import { getListeningLesson } from "../data/listening-n3-lessons";
 import type { ListeningLessonBlock } from "../data/listening-n3-lesson-types";
 import { listeningQuestionSupport, type ListeningQuestionSupport } from "../data/listening-n3-question-support";
+import { listeningTranscriptWithFurigana } from "../data/listening-n3-furigana";
 import { dayNeighbors, isFav, LANG, lx, navTo, registerFavMeta, toggleFav } from "../study/store";
 import type { Route } from "./+types/listening-n3";
 import "./reading-n3.css";
@@ -503,7 +504,7 @@ function QuestionSupportPanels({ support }: { support: ListeningQuestionSupport 
 						<b>{showCn ? "显示" : "Show"}</b>
 					</summary>
 					<div className="listening-text-answers__body" lang="ja">
-						{support.transcript}
+						<Line text={listeningTranscriptWithFurigana(support.transcript)} />
 					</div>
 				</details>
 			) : null}
