@@ -57,6 +57,10 @@ export function seekRatioFromClientX(clientX: number, rect: { left: number; widt
 	return Math.min(1, Math.max(0, (clientX - rect.left) / rect.width));
 }
 
+export function rewindTime(currentTime: number, seconds = 3) {
+	return Math.max(0, currentTime - seconds);
+}
+
 function CueButton({ cue, active, playing, onToggle }: { cue: AudioCue; active: AudioCue; playing: boolean; onToggle: (cue: AudioCue) => void }) {
 	const isActive = active.disc === cue.disc && active.track === cue.track;
 	const isPlaying = isActive && playing;
@@ -148,6 +152,11 @@ function ListeningPlayer({ cue, audioRef, onPlaybackChange }: { cue: AudioCue; a
 		else audio.pause();
 	}
 
+	function rewind() {
+		const audio = audioRef.current;
+		seek(rewindTime(audio?.currentTime ?? currentTime));
+	}
+
 	function seek(nextTime: number, play = false) {
 		const audio = audioRef.current;
 		const limit = duration || (audio ? audioDurationOf(audio) : 0);
@@ -167,6 +176,10 @@ function ListeningPlayer({ cue, audioRef, onPlaybackChange }: { cue: AudioCue; a
 			<div className="listening-player__top">
 				<button className={`listening-player__toggle${isPlaying ? " playing" : ""}`} onClick={togglePlayback} aria-label="再生または一時停止">
 					{isPlaying ? "❚❚" : "▶"}
+				</button>
+				<button className="listening-player__rewind" onClick={rewind} aria-label="往前 3 秒">
+					<span aria-hidden="true">↶</span>
+					<small aria-hidden="true">3</small>
 				</button>
 				<div>
 					<span>音声</span>
