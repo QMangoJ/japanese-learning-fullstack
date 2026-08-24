@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { audioDurationOf, seekRatioFromClientX } from "../../app/routes/listening-n3";
+import { audioDurationOf, rewindTime, seekRatioFromClientX } from "../../app/routes/listening-n3";
 
 function fakeSeekable(end: number): TimeRanges {
 	return {
@@ -22,5 +22,11 @@ describe("listening seek helpers", () => {
 		expect(audioDurationOf({ duration: 32.5, seekable: fakeSeekable(0) })).toBe(32.5);
 		expect(audioDurationOf({ duration: Number.POSITIVE_INFINITY, seekable: fakeSeekable(18) })).toBe(18);
 		expect(audioDurationOf({ duration: Number.NaN, seekable: fakeSeekable(0) })).toBe(0);
+	});
+
+	it("rewinds three seconds without passing the beginning", () => {
+		expect(rewindTime(18)).toBe(15);
+		expect(rewindTime(2)).toBe(0);
+		expect(rewindTime(10, 5)).toBe(5);
 	});
 });

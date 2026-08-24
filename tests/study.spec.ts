@@ -351,6 +351,12 @@ test.describe("study navigation", () => {
 		expect(box).toBeTruthy();
 		await page.mouse.click(box!.x + box!.width * 0.7, box!.y + box!.height / 2);
 		await expect.poll(async () => page.locator("audio").evaluate((el: HTMLAudioElement) => el.currentTime)).toBeGreaterThan(1);
+		await page.locator("audio").evaluate((el: HTMLAudioElement) => {
+			el.pause();
+			el.currentTime = 8;
+		});
+		await page.getByRole("button", { name: "往前 3 秒" }).click();
+		await expect.poll(async () => page.locator("audio").evaluate((el: HTMLAudioElement) => el.currentTime)).toBeCloseTo(5, 1);
 	});
 
 	test("shows each listening answer, transcript, and translation under its own question", async ({ page }) => {
