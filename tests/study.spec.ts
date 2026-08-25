@@ -359,6 +359,34 @@ test.describe("study navigation", () => {
 		await expect.poll(async () => page.locator("audio").evaluate((el: HTMLAudioElement) => el.currentTime)).toBeCloseTo(5, 1);
 	});
 
+	test("listening keyboard controls playback and seeks without changing sections", async ({ page }) => {
+		await waitForStudy(page);
+		await pickType(page, "listening");
+		await page.goto("/study/day/2-1");
+		await dismissViteOverlay(page);
+		await expect(page.locator("#title")).toContainText(/第2章 1节|Ch\. 2/);
+		const audio = page.locator("audio");
+		await expect(audio).toHaveAttribute("src", /CD01_19\.mp3$/);
+
+		await page.keyboard.press("Space");
+		await expect.poll(async () => audio.evaluate((el: HTMLAudioElement) => el.paused)).toBe(false);
+		await page.keyboard.press("Enter");
+		await expect.poll(async () => audio.evaluate((el: HTMLAudioElement) => el.paused)).toBe(true);
+
+		await audio.evaluate((el: HTMLAudioElement) => {
+			el.currentTime = 10;
+		});
+		await page.keyboard.press("ArrowLeft");
+		await expect.poll(async () => audio.evaluate((el: HTMLAudioElement) => el.currentTime)).toBeCloseTo(7, 1);
+		await page.keyboard.press("ArrowRight");
+		await expect.poll(async () => audio.evaluate((el: HTMLAudioElement) => el.currentTime)).toBeCloseTo(10, 1);
+		await expect(page).toHaveURL(/\/study\/day\/2-1$/);
+		await page.getByRole("button", { name: /下一节|Next/ }).focus();
+		await page.keyboard.press("ArrowRight");
+		await expect(page).toHaveURL(/\/study\/day\/2-1$/);
+		await expect(page.locator("#title")).toContainText(/第2章 1节|Ch\. 2/);
+	});
+
 	test("shows each listening answer, transcript, and translation under its own question", async ({ page }) => {
 		await waitForStudy(page);
 		await pickType(page, "listening");

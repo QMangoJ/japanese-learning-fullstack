@@ -814,6 +814,7 @@ export function StudyApp() {
 				return;
 			}
 			if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
+			if (MODULE === "listening") return;
 			if (e.metaKey || e.ctrlKey || e.altKey) return;
 			const t = e.target as HTMLElement | null;
 			const tag = t && t.tagName;
@@ -828,7 +829,7 @@ export function StudyApp() {
 		};
 		document.addEventListener("keydown", onKey);
 		return () => document.removeEventListener("keydown", onKey);
-	}, [location.pathname, sheet]);
+	}, [location.pathname, sheet, MODULE]);
 
 	const routeKey = pathToKey(location.pathname);
 	if (routeKey !== "#/favs") closeFavFc();
