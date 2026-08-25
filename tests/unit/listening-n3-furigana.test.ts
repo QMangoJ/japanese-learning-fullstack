@@ -56,4 +56,31 @@ describe("N3 listening transcript furigana", () => {
 		const voicemail = listeningTranscriptWithFurigana(transcriptLine(5, 1, "今日中にだって"));
 		expect(voicemail).toContain("{今日中|きょうじゅう}");
 	});
+
+	it("matches the reviewed textbook readings in chapters 3 through 5", () => {
+		const estimate = listeningTranscriptWithFurigana(transcriptLine(3, 4, "ヒガシ印刷さんからの見積書"));
+		expect(estimate).toContain("{見積|みつもり}{書|しょ}");
+
+		const oyama = listeningTranscriptWithFurigana(transcriptLine(3, 4, "日本通信の小川"));
+		expect(oyama).toContain("{大山|おおやま}{様|さま}");
+		expect(oyama).not.toContain("{大山|だいせん}");
+
+		expect(listeningTranscriptWithFurigana(transcriptLine(3, 6, "来週の火曜日"))).toContain("{火曜日|かようび}");
+		expect(listeningTranscriptWithFurigana(transcriptLine(4, 1, "白髪も染めて"))).toContain("{白髪|しらが}");
+		expect(listeningTranscriptWithFurigana(transcriptLine(4, 2, "今駅に着きました"))).toContain("{今|いま}{駅|えき}");
+		expect(listeningTranscriptWithFurigana(transcriptLine(4, 4, "この間、学校"))).toContain("この{間|あいだ}");
+		expect(listeningTranscriptWithFurigana(transcriptLine(4, 5, "日本人の友達"))).toContain("{日本人|にほんじん}");
+
+		expect(listeningTranscriptWithFurigana(transcriptLine(5, 2, "給料日には"))).toContain("{給料日|きゅうりょうび}");
+		expect(listeningTranscriptWithFurigana(transcriptLine(5, 2, "同じ階に1つ"))).toContain("{階|かい}");
+		expect(listeningTranscriptWithFurigana(transcriptLine(5, 3, "今度の土曜日、ゴルフ"))).toContain("{土曜日|どようび}");
+		expect(listeningTranscriptWithFurigana(transcriptLine(5, 3, "体を大切に"))).toContain("{体|からだ}");
+		expect(listeningTranscriptWithFurigana(transcriptLine(5, 3, "人と知り合う"))).toContain("{人|ひと}");
+	});
+
+	it("uses weekday readings when the transcript names days of the week", () => {
+		expect(listeningTranscriptWithFurigana(transcriptLine(3, 3, "月・水・金は"))).toContain("{月|げつ}・{水|すい}・{金|きん}");
+		expect(listeningTranscriptWithFurigana(transcriptLine(2, 5, "今度の日曜日"))).toContain("{日曜日|にちようび}");
+		expect(listeningTranscriptWithFurigana(transcriptLine(3, 2, "20日月曜日"))).toContain("{月曜日|げつようび}");
+	});
 });
