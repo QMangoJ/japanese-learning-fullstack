@@ -61,6 +61,11 @@ export function rewindTime(currentTime: number, seconds = 3) {
 	return Math.max(0, currentTime - seconds);
 }
 
+export function forwardTime(currentTime: number, duration: number, seconds = 3) {
+	const nextTime = Math.max(0, currentTime + seconds);
+	return duration > 0 ? Math.min(duration, nextTime) : nextTime;
+}
+
 function CueButton({ cue, active, playing, onToggle }: { cue: AudioCue; active: AudioCue; playing: boolean; onToggle: (cue: AudioCue) => void }) {
 	const isActive = active.disc === cue.disc && active.track === cue.track;
 	const isPlaying = isActive && playing;
@@ -579,6 +584,48 @@ function ChapterDetail({ chapterNumber, sectionNumber, onBack, hideBack = false 
 		setCue(next);
 		setPlayRequest((value) => value + 1);
 	}
+
+	useEffect(() => {
+		const onKeyDown = (event: KeyboardEvent) => {
+			if (event.metaKey || event.ctrlKey || event.altKey || event.shiftKey) return;
+			if (document.querySelector('[role="dialog"][aria-modal="true"]')) return;
+			const target = event.target as HTMLElement | null;
+			const tag = target?.tagName;
+			if (
+				tag === "INPUT" ||
+				tag === "TEXTAREA" ||
+				tag === "SELECT" ||
+				tag === "BUTTON" ||
+				tag === "A" ||
+				target?.isContentEditable ||
+				target?.getAttribute("role") === "slider"
+			)
+				return;
+
+			const audio = audioRef.current;
+			if (!audio) return;
+			const isToggleKey = event.key === "Enter" || event.code === "Space" || event.key === " ";
+			const isSeekKey = event.key === "ArrowLeft" || event.key === "ArrowRight";
+			if (!isToggleKey && !isSeekKey) return;
+
+			event.preventDefault();
+			event.stopImmediatePropagation();
+			if (isToggleKey) {
+				if (event.repeat) return;
+				if (audio.paused) void audio.play().catch(() => undefined);
+				else audio.pause();
+				return;
+			}
+
+			const duration = audioDurationOf(audio);
+			audio.currentTime =
+				event.key === "ArrowLeft"
+					? rewindTime(audio.currentTime)
+					: forwardTime(audio.currentTime, duration);
+		};
+		document.addEventListener("keydown", onKeyDown, true);
+		return () => document.removeEventListener("keydown", onKeyDown, true);
+	}, []);
 
 	if (!chapter || !section || !lesson) {
 		return (
