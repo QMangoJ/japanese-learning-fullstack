@@ -481,6 +481,22 @@ body.hide-cn .vcn,body.hide-cn .cn{visibility:hidden}
 .kougo-table{min-width:560px}
 .kougo-table th:first-child{white-space:nowrap}
 .kougo-table td .cn{display:inline;margin-left:4px;color:var(--sub);font-size:12.5px}@media(max-width:560px){.study-toolbar{align-items:flex-start}.study-toolbar>div{width:100%;margin-left:0}.study-toolbar>div button{flex:1}.study-columns__head b,.study-row>div{padding:10px 9px}.study-row>div{font-size:13px}.study-date-group h3{padding:8px 9px}}
+.jita-pair{padding:12px 0;border-top:1px dashed var(--line)}
+.jita-pair:first-of-type{border-top:0;padding-top:2px}
+.jita-meaning{font-size:12.5px;font-weight:700;color:var(--sub);margin-bottom:8px}
+.jita-sides{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.jita-col{min-width:0;border:1px solid var(--line);border-radius:10px;padding:10px 11px;background:var(--bg)}
+.jita-kind{font-size:11px;font-weight:800;letter-spacing:.04em;margin-bottom:4px}
+.jita-kind.ta{color:var(--blue)}
+.jita-kind.ji{color:var(--green)}
+.jita-word{font-size:16.5px;font-weight:800;line-height:1.9}
+.jita-kana{font-size:12.5px;font-weight:600;color:var(--sub);margin-left:2px}
+.jita-masu{color:var(--sub);font-size:13px;font-weight:600;line-height:1.8}
+.jita-eg{margin-top:7px;font-size:14.5px;line-height:1.9}
+.jita-eg .cn{display:block;color:var(--sub);font-size:12.5px;font-weight:400;margin-top:2px}
+@media(max-width:560px){
+  .jita-sides{grid-template-columns:1fr}
+}
 .mt-q{background:var(--accent-soft);color:var(--accent)}
 .mt-word{background:var(--blue-soft);color:var(--blue)}
 .mt-grammar{background:var(--green-soft);color:var(--green)}

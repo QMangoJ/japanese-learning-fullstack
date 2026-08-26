@@ -1,0 +1,681 @@
+{
+  "title": "自動詞と他動詞",
+  "title_cn": "自动词和他动词",
+  "title_en": "Intransitive and transitive verbs",
+  "intro": "他动词是人对事物做的动作，对象用「を」。自动词是事物自己变化或处于某种状态，主语用「が」。说结果、现状时，常用自动词＋ています。",
+  "intro_en": "Transitive verbs are actions a person does to something, marked with を. Intransitive verbs describe a thing changing or already being in a state, marked with が. For a resulting state, use intransitive ＋ ています.",
+  "footer": "记的时候抓住一点：他动词＝人的动作，自动词＝物的变化或状态。",
+  "footer_en": "A useful split: transitive = a person's action; intransitive = a thing's change or state.",
+  "groups": [
+    {
+      "title": "开闭・开关",
+      "title_en": "Open, close, on, off",
+      "pairs": [
+        {
+          "cn": "打开",
+          "en": "open",
+          "ta": {
+            "dict": "開ける",
+            "dict_r": "<ruby>開<rt>あ</rt></ruby>ける",
+            "masu": "開けます",
+            "masu_r": "<ruby>開<rt>あ</rt></ruby>けます",
+            "kana": "あける",
+            "eg": "ドアを開けます。",
+            "eg_r": "ドアを<ruby>開<rt>あ</rt></ruby>けます。",
+            "eg_cn": "打开门。",
+            "eg_en": "I open the door."
+          },
+          "ji": {
+            "dict": "開く",
+            "dict_r": "<ruby>開<rt>あ</rt></ruby>く",
+            "masu": "開きます",
+            "masu_r": "<ruby>開<rt>あ</rt></ruby>きます",
+            "kana": "あく",
+            "eg": "ドアが開いています。",
+            "eg_r": "ドアが<ruby>開<rt>あ</rt></ruby>いています。",
+            "eg_cn": "门开着。",
+            "eg_en": "The door is open."
+          }
+        },
+        {
+          "cn": "关上",
+          "en": "close",
+          "ta": {
+            "dict": "閉める",
+            "dict_r": "<ruby>閉<rt>し</rt></ruby>める",
+            "masu": "閉めます",
+            "masu_r": "<ruby>閉<rt>し</rt></ruby>めます",
+            "kana": "しめる",
+            "eg": "窓を閉めます。",
+            "eg_r": "<ruby>窓<rt>まど</rt></ruby>を<ruby>閉<rt>し</rt></ruby>めます。",
+            "eg_cn": "关窗。",
+            "eg_en": "I close the window."
+          },
+          "ji": {
+            "dict": "閉まる",
+            "dict_r": "<ruby>閉<rt>しま</rt></ruby>る",
+            "masu": "閉まります",
+            "masu_r": "<ruby>閉<rt>しま</rt></ruby>ります",
+            "kana": "しまる",
+            "eg": "窓が閉まっています。",
+            "eg_r": "<ruby>窓<rt>まど</rt></ruby>が<ruby>閉<rt>しま</rt></ruby>っています。",
+            "eg_cn": "窗关着。",
+            "eg_en": "The window is closed."
+          }
+        },
+        {
+          "cn": "打开（电灯等）",
+          "en": "turn on",
+          "ta": {
+            "dict": "つける",
+            "masu": "つけます",
+            "kana": "つける",
+            "eg": "電気をつけます。",
+            "eg_r": "<ruby>電気<rt>でんき</rt></ruby>をつけます。",
+            "eg_cn": "开灯。",
+            "eg_en": "I turn on the light."
+          },
+          "ji": {
+            "dict": "つく",
+            "masu": "つきます",
+            "kana": "つく",
+            "eg": "電気がついています。",
+            "eg_r": "<ruby>電気<rt>でんき</rt></ruby>がついています。",
+            "eg_cn": "灯亮着。",
+            "eg_en": "The light is on."
+          }
+        },
+        {
+          "cn": "关掉 / 消失",
+          "en": "turn off / go out",
+          "ta": {
+            "dict": "消す",
+            "dict_r": "<ruby>消<rt>け</rt></ruby>す",
+            "masu": "消します",
+            "masu_r": "<ruby>消<rt>け</rt></ruby>します",
+            "kana": "けす",
+            "eg": "電気を消します。",
+            "eg_r": "<ruby>電気<rt>でんき</rt></ruby>を<ruby>消<rt>け</rt></ruby>します。",
+            "eg_cn": "关灯。",
+            "eg_en": "I turn off the light."
+          },
+          "ji": {
+            "dict": "消える",
+            "dict_r": "<ruby>消<rt>き</rt></ruby>える",
+            "masu": "消えます",
+            "masu_r": "<ruby>消<rt>き</rt></ruby>えます",
+            "kana": "きえる",
+            "eg": "電気が消えています。",
+            "eg_r": "<ruby>電気<rt>でんき</rt></ruby>が<ruby>消<rt>き</rt></ruby>えています。",
+            "eg_cn": "灯灭着。",
+            "eg_en": "The light is off."
+          }
+        }
+      ]
+    },
+    {
+      "title": "破坏・变形",
+      "title_en": "Break, tear, drop",
+      "pairs": [
+        {
+          "cn": "弄坏",
+          "en": "break",
+          "ta": {
+            "dict": "壊す",
+            "dict_r": "<ruby>壊<rt>こわ</rt></ruby>す",
+            "masu": "壊します",
+            "masu_r": "<ruby>壊<rt>こわ</rt></ruby>します",
+            "kana": "こわす",
+            "eg": "テレビを壊します。",
+            "eg_r": "テレビを<ruby>壊<rt>こわ</rt></ruby>します。",
+            "eg_cn": "弄坏电视。",
+            "eg_en": "I break the TV."
+          },
+          "ji": {
+            "dict": "壊れる",
+            "dict_r": "<ruby>壊<rt>こわ</rt></ruby>れる",
+            "masu": "壊れます",
+            "masu_r": "<ruby>壊<rt>こわ</rt></ruby>れます",
+            "kana": "こわれる",
+            "eg": "テレビが壊れています。",
+            "eg_r": "テレビが<ruby>壊<rt>こわ</rt></ruby>れています。",
+            "eg_cn": "电视坏了。",
+            "eg_en": "The TV is broken."
+          }
+        },
+        {
+          "cn": "打破",
+          "en": "crack / smash",
+          "ta": {
+            "dict": "割る",
+            "dict_r": "<ruby>割<rt>わ</rt></ruby>る",
+            "masu": "割ります",
+            "masu_r": "<ruby>割<rt>わ</rt></ruby>ります",
+            "kana": "わる",
+            "eg": "コップを割ります。",
+            "eg_r": "コップを<ruby>割<rt>わ</rt></ruby>ります。",
+            "eg_cn": "打破杯子。",
+            "eg_en": "I break the glass."
+          },
+          "ji": {
+            "dict": "割れる",
+            "dict_r": "<ruby>割<rt>わ</rt></ruby>れる",
+            "masu": "割れます",
+            "masu_r": "<ruby>割<rt>わ</rt></ruby>れます",
+            "kana": "われる",
+            "eg": "コップが割れています。",
+            "eg_r": "コップが<ruby>割<rt>わ</rt></ruby>れています。",
+            "eg_cn": "杯子碎了。",
+            "eg_en": "The glass is cracked."
+          }
+        },
+        {
+          "cn": "折断",
+          "en": "snap / fold",
+          "ta": {
+            "dict": "折る",
+            "dict_r": "<ruby>折<rt>お</rt></ruby>る",
+            "masu": "折ります",
+            "masu_r": "<ruby>折<rt>お</rt></ruby>ります",
+            "kana": "おる",
+            "eg": "木の枝を折ります。",
+            "eg_r": "<ruby>木<rt>き</rt></ruby>の<ruby>枝<rt>えだ</rt></ruby>を<ruby>折<rt>お</rt></ruby>ります。",
+            "eg_cn": "折断树枝。",
+            "eg_en": "I snap the branch."
+          },
+          "ji": {
+            "dict": "折れる",
+            "dict_r": "<ruby>折<rt>お</rt></ruby>れる",
+            "masu": "折れます",
+            "masu_r": "<ruby>折<rt>お</rt></ruby>れます",
+            "kana": "おれる",
+            "eg": "木の枝が折れています。",
+            "eg_r": "<ruby>木<rt>き</rt></ruby>の<ruby>枝<rt>えだ</rt></ruby>が<ruby>折<rt>お</rt></ruby>れています。",
+            "eg_cn": "树枝折了。",
+            "eg_en": "The branch is snapped."
+          }
+        },
+        {
+          "cn": "撕破",
+          "en": "tear",
+          "ta": {
+            "dict": "破る",
+            "dict_r": "<ruby>破<rt>やぶ</rt></ruby>る",
+            "masu": "破ります",
+            "masu_r": "<ruby>破<rt>やぶ</rt></ruby>ります",
+            "kana": "やぶる",
+            "eg": "紙を破ります。",
+            "eg_r": "<ruby>紙<rt>かみ</rt></ruby>を<ruby>破<rt>やぶ</rt></ruby>ります。",
+            "eg_cn": "把纸撕破。",
+            "eg_en": "I tear the paper."
+          },
+          "ji": {
+            "dict": "破れる",
+            "dict_r": "<ruby>破<rt>やぶ</rt></ruby>れる",
+            "masu": "破れます",
+            "masu_r": "<ruby>破<rt>やぶ</rt></ruby>れます",
+            "kana": "やぶれる",
+            "eg": "紙が破れています。",
+            "eg_r": "<ruby>紙<rt>かみ</rt></ruby>が<ruby>破<rt>やぶ</rt></ruby>れています。",
+            "eg_cn": "纸破了。",
+            "eg_en": "The paper is torn."
+          }
+        },
+        {
+          "cn": "弄掉 / 掉落",
+          "en": "drop / fall",
+          "ta": {
+            "dict": "落とす",
+            "dict_r": "<ruby>落<rt>お</rt></ruby>とす",
+            "masu": "落とします",
+            "masu_r": "<ruby>落<rt>お</rt></ruby>とします",
+            "kana": "おとす",
+            "eg": "お金を落とします。",
+            "eg_r": "お<ruby>金<rt>かね</rt></ruby>を<ruby>落<rt>お</rt></ruby>とします。",
+            "eg_cn": "把钱弄掉。",
+            "eg_en": "I drop the money."
+          },
+          "ji": {
+            "dict": "落ちる",
+            "dict_r": "<ruby>落<rt>お</rt></ruby>ちる",
+            "masu": "落ちます",
+            "masu_r": "<ruby>落<rt>お</rt></ruby>ちます",
+            "kana": "おちる",
+            "eg": "お金が落ちています。",
+            "eg_r": "お<ruby>金<rt>かね</rt></ruby>が<ruby>落<rt>お</rt></ruby>ちています。",
+            "eg_cn": "钱掉在地上。",
+            "eg_en": "The money has fallen."
+          }
+        }
+      ]
+    },
+    {
+      "title": "出入・移动",
+      "title_en": "Put in, take out, move",
+      "pairs": [
+        {
+          "cn": "放进去 / 进去",
+          "en": "put in / go in",
+          "ta": {
+            "dict": "入れる",
+            "dict_r": "<ruby>入<rt>い</rt></ruby>れる",
+            "masu": "入れます",
+            "masu_r": "<ruby>入<rt>い</rt></ruby>れます",
+            "kana": "いれる",
+            "eg": "カバンに本を入れます。",
+            "eg_r": "カバンに<ruby>本<rt>ほん</rt></ruby>を<ruby>入<rt>い</rt></ruby>れます。",
+            "eg_cn": "把书放进包里。",
+            "eg_en": "I put the book in the bag."
+          },
+          "ji": {
+            "dict": "入る",
+            "dict_r": "<ruby>入<rt>はい</rt></ruby>る",
+            "masu": "入ります",
+            "masu_r": "<ruby>入<rt>はい</rt></ruby>ります",
+            "kana": "はいる",
+            "eg": "カバンに本が入っています。",
+            "eg_r": "カバンに<ruby>本<rt>ほん</rt></ruby>が<ruby>入<rt>はい</rt></ruby>っています。",
+            "eg_cn": "书在包里。",
+            "eg_en": "The book is in the bag."
+          }
+        },
+        {
+          "cn": "拿出来 / 出来",
+          "en": "take out / come out",
+          "ta": {
+            "dict": "出す",
+            "dict_r": "<ruby>出<rt>だ</rt></ruby>す",
+            "masu": "出します",
+            "masu_r": "<ruby>出<rt>だ</rt></ruby>します",
+            "kana": "だす",
+            "eg": "荷物を出します。",
+            "eg_r": "<ruby>荷物<rt>にもつ</rt></ruby>を<ruby>出<rt>だ</rt></ruby>します。",
+            "eg_cn": "把行李拿出来。",
+            "eg_en": "I take out the luggage."
+          },
+          "ji": {
+            "dict": "出る",
+            "dict_r": "<ruby>出<rt>で</rt></ruby>る",
+            "masu": "出ます",
+            "masu_r": "<ruby>出<rt>で</rt></ruby>ます",
+            "kana": "でる",
+            "eg": "荷物が出ています。",
+            "eg_r": "<ruby>荷物<rt>にもつ</rt></ruby>が<ruby>出<rt>で</rt></ruby>ています。",
+            "eg_cn": "行李拿出来了。",
+            "eg_en": "The luggage is out."
+          }
+        },
+        {
+          "cn": "停下",
+          "en": "stop",
+          "ta": {
+            "dict": "止める",
+            "dict_r": "<ruby>止<rt>と</rt></ruby>める",
+            "masu": "止めます",
+            "masu_r": "<ruby>止<rt>と</rt></ruby>めます",
+            "kana": "とめる",
+            "eg": "車を止めます。",
+            "eg_r": "<ruby>車<rt>くるま</rt></ruby>を<ruby>止<rt>と</rt></ruby>めます。",
+            "eg_cn": "停车。",
+            "eg_en": "I stop the car."
+          },
+          "ji": {
+            "dict": "止まる",
+            "dict_r": "<ruby>止<rt>と</rt></ruby>まる",
+            "masu": "止まります",
+            "masu_r": "<ruby>止<rt>と</rt></ruby>まります",
+            "kana": "とまる",
+            "eg": "電車が止まっています。",
+            "eg_r": "<ruby>電車<rt>でんしゃ</rt></ruby>が<ruby>止<rt>と</rt></ruby>まっています。",
+            "eg_cn": "电车停着。",
+            "eg_en": "The train is stopped."
+          }
+        },
+        {
+          "cn": "挂上 / 打（电话）",
+          "en": "hang / make a call",
+          "ta": {
+            "dict": "掛ける",
+            "dict_r": "<ruby>掛<rt>か</rt></ruby>ける",
+            "masu": "掛けます",
+            "masu_r": "<ruby>掛<rt>か</rt></ruby>けます",
+            "kana": "かける",
+            "eg": "電話を掛けます。",
+            "eg_r": "<ruby>電話<rt>でんわ</rt></ruby>を<ruby>掛<rt>か</rt></ruby>けます。",
+            "eg_cn": "打电话。",
+            "eg_en": "I make a phone call."
+          },
+          "ji": {
+            "dict": "掛かる",
+            "dict_r": "<ruby>掛<rt>か</rt></ruby>かる",
+            "masu": "掛かります",
+            "masu_r": "<ruby>掛<rt>か</rt></ruby>かります",
+            "kana": "かかる",
+            "eg": "電話が掛かっています。",
+            "eg_r": "<ruby>電話<rt>でんわ</rt></ruby>が<ruby>掛<rt>か</rt></ruby>かっています。",
+            "eg_cn": "电话打进来了。",
+            "eg_en": "The phone is ringing."
+          }
+        },
+        {
+          "cn": "装上 / 坐上",
+          "en": "put on / ride",
+          "ta": {
+            "dict": "乗せる",
+            "dict_r": "<ruby>乗<rt>の</rt></ruby>せる",
+            "masu": "乗せます",
+            "masu_r": "<ruby>乗<rt>の</rt></ruby>せます",
+            "kana": "のせる",
+            "eg": "荷物を車に乗せます。",
+            "eg_r": "<ruby>荷物<rt>にもつ</rt></ruby>を<ruby>車<rt>くるま</rt></ruby>に<ruby>乗<rt>の</rt></ruby>せます。",
+            "eg_cn": "把行李放到车上。",
+            "eg_en": "I put the luggage in the car."
+          },
+          "ji": {
+            "dict": "乗る",
+            "dict_r": "<ruby>乗<rt>の</rt></ruby>る",
+            "masu": "乗ります",
+            "masu_r": "<ruby>乗<rt>の</rt></ruby>ります",
+            "kana": "のる",
+            "eg": "荷物が車に乗っています。",
+            "eg_r": "<ruby>荷物<rt>にもつ</rt></ruby>が<ruby>車<rt>くるま</rt></ruby>に<ruby>乗<rt>の</rt></ruby>っています。",
+            "eg_cn": "行李在车上。",
+            "eg_en": "The luggage is in the car."
+          }
+        },
+        {
+          "cn": "送达 / 到达",
+          "en": "deliver / arrive",
+          "ta": {
+            "dict": "届ける",
+            "dict_r": "<ruby>届<rt>とど</rt></ruby>ける",
+            "masu": "届けます",
+            "masu_r": "<ruby>届<rt>とど</rt></ruby>けます",
+            "kana": "とどける",
+            "eg": "荷物を届けます。",
+            "eg_r": "<ruby>荷物<rt>にもつ</rt></ruby>を<ruby>届<rt>とど</rt></ruby>けます。",
+            "eg_cn": "把行李送去。",
+            "eg_en": "I deliver the package."
+          },
+          "ji": {
+            "dict": "届く",
+            "dict_r": "<ruby>届<rt>とど</rt></ruby>く",
+            "masu": "届きます",
+            "masu_r": "<ruby>届<rt>とど</rt></ruby>きます",
+            "kana": "とどく",
+            "eg": "荷物が届いています。",
+            "eg_r": "<ruby>荷物<rt>にもつ</rt></ruby>が<ruby>届<rt>とど</rt></ruby>いています。",
+            "eg_cn": "行李送到了。",
+            "eg_en": "The package has arrived."
+          }
+        }
+      ]
+    },
+    {
+      "title": "开始・决定・其他",
+      "title_en": "Start, decide, and other pairs",
+      "pairs": [
+        {
+          "cn": "开始",
+          "en": "start",
+          "ta": {
+            "dict": "始める",
+            "dict_r": "<ruby>始<rt>はじ</rt></ruby>める",
+            "masu": "始めます",
+            "masu_r": "<ruby>始<rt>はじ</rt></ruby>めます",
+            "kana": "はじめる",
+            "eg": "授業を始めます。",
+            "eg_r": "<ruby>授業<rt>じゅぎょう</rt></ruby>を<ruby>始<rt>はじ</rt></ruby>めます。",
+            "eg_cn": "开始上课。",
+            "eg_en": "I start the class."
+          },
+          "ji": {
+            "dict": "始まる",
+            "dict_r": "<ruby>始<rt>はじ</rt></ruby>まる",
+            "masu": "始まります",
+            "masu_r": "<ruby>始<rt>はじ</rt></ruby>まります",
+            "kana": "はじまる",
+            "eg": "授業が始まっています。",
+            "eg_r": "<ruby>授業<rt>じゅぎょう</rt></ruby>が<ruby>始<rt>はじ</rt></ruby>まっています。",
+            "eg_cn": "课已经开始了。",
+            "eg_en": "Class has started."
+          }
+        },
+        {
+          "cn": "结束",
+          "en": "finish",
+          "ta": {
+            "dict": "終える",
+            "dict_r": "<ruby>終<rt>お</rt></ruby>える",
+            "masu": "終えます",
+            "masu_r": "<ruby>終<rt>お</rt></ruby>えます",
+            "kana": "おえる",
+            "eg": "仕事を終えます。",
+            "eg_r": "<ruby>仕事<rt>しごと</rt></ruby>を<ruby>終<rt>お</rt></ruby>えます。",
+            "eg_cn": "把工作做完。",
+            "eg_en": "I finish the work."
+          },
+          "ji": {
+            "dict": "終わる",
+            "dict_r": "<ruby>終<rt>お</rt></ruby>わる",
+            "masu": "終わります",
+            "masu_r": "<ruby>終<rt>お</rt></ruby>わります",
+            "kana": "おわる",
+            "eg": "仕事が終わっています。",
+            "eg_r": "<ruby>仕事<rt>しごと</rt></ruby>が<ruby>終<rt>お</rt></ruby>わっています。",
+            "eg_cn": "工作已经结束了。",
+            "eg_en": "The work is finished."
+          }
+        },
+        {
+          "cn": "找到",
+          "en": "find",
+          "ta": {
+            "dict": "見つける",
+            "dict_r": "<ruby>見<rt>み</rt></ruby>つける",
+            "masu": "見つけます",
+            "masu_r": "<ruby>見<rt>み</rt></ruby>つけます",
+            "kana": "みつける",
+            "eg": "鍵を見つけます。",
+            "eg_r": "<ruby>鍵<rt>かぎ</rt></ruby>を<ruby>見<rt>み</rt></ruby>つけます。",
+            "eg_cn": "找到钥匙。",
+            "eg_en": "I find the key."
+          },
+          "ji": {
+            "dict": "見つかる",
+            "dict_r": "<ruby>見<rt>み</rt></ruby>つかる",
+            "masu": "見つかります",
+            "masu_r": "<ruby>見<rt>み</rt></ruby>つかります",
+            "kana": "みつかる",
+            "eg": "鍵が見つかっています。",
+            "eg_r": "<ruby>鍵<rt>かぎ</rt></ruby>が<ruby>見<rt>み</rt></ruby>つかっています。",
+            "eg_cn": "钥匙找到了。",
+            "eg_en": "The key has been found."
+          }
+        },
+        {
+          "cn": "决定",
+          "en": "decide",
+          "ta": {
+            "dict": "決める",
+            "dict_r": "<ruby>決<rt>き</rt></ruby>める",
+            "masu": "決めます",
+            "masu_r": "<ruby>決<rt>き</rt></ruby>めます",
+            "kana": "きめる",
+            "eg": "約束を決めます。",
+            "eg_r": "<ruby>約束<rt>やくそく</rt></ruby>を<ruby>決<rt>き</rt></ruby>めます。",
+            "eg_cn": "定下约定。",
+            "eg_en": "I make an appointment."
+          },
+          "ji": {
+            "dict": "決まる",
+            "dict_r": "<ruby>決<rt>き</rt></ruby>まる",
+            "masu": "決まります",
+            "masu_r": "<ruby>決<rt>き</rt></ruby>まります",
+            "kana": "きまる",
+            "eg": "約束が決まっています。",
+            "eg_r": "<ruby>約束<rt>やくそく</rt></ruby>が<ruby>決<rt>き</rt></ruby>まっています。",
+            "eg_cn": "约定已经定好了。",
+            "eg_en": "The appointment is set."
+          }
+        },
+        {
+          "cn": "修理 / 恢复",
+          "en": "fix",
+          "ta": {
+            "dict": "直す",
+            "dict_r": "<ruby>直<rt>なお</rt></ruby>す",
+            "masu": "直します",
+            "masu_r": "<ruby>直<rt>なお</rt></ruby>します",
+            "kana": "なおす",
+            "eg": "時計を直します。",
+            "eg_r": "<ruby>時計<rt>とけい</rt></ruby>を<ruby>直<rt>なお</rt></ruby>します。",
+            "eg_cn": "修表。",
+            "eg_en": "I fix the watch."
+          },
+          "ji": {
+            "dict": "直る",
+            "dict_r": "<ruby>直<rt>なお</rt></ruby>る",
+            "masu": "直ります",
+            "masu_r": "<ruby>直<rt>なお</rt></ruby>ります",
+            "kana": "なおる",
+            "eg": "時計が直っています。",
+            "eg_r": "<ruby>時計<rt>とけい</rt></ruby>が<ruby>直<rt>なお</rt></ruby>っています。",
+            "eg_cn": "表修好了。",
+            "eg_en": "The watch is fixed."
+          }
+        },
+        {
+          "cn": "改变",
+          "en": "change",
+          "ta": {
+            "dict": "変える",
+            "dict_r": "<ruby>変<rt>か</rt></ruby>える",
+            "masu": "変えます",
+            "masu_r": "<ruby>変<rt>か</rt></ruby>えます",
+            "kana": "かえる",
+            "eg": "予定を変えます。",
+            "eg_r": "<ruby>予定<rt>よてい</rt></ruby>を<ruby>変<rt>か</rt></ruby>えます。",
+            "eg_cn": "改预定。",
+            "eg_en": "I change the plan."
+          },
+          "ji": {
+            "dict": "変わる",
+            "dict_r": "<ruby>変<rt>か</rt></ruby>わる",
+            "masu": "変わります",
+            "masu_r": "<ruby>変<rt>か</rt></ruby>わります",
+            "kana": "かわる",
+            "eg": "予定が変わっています。",
+            "eg_r": "<ruby>予定<rt>よてい</rt></ruby>が<ruby>変<rt>か</rt></ruby>わっています。",
+            "eg_cn": "予定改了。",
+            "eg_en": "The plan has changed."
+          }
+        },
+        {
+          "cn": "叫醒 / 醒来",
+          "en": "wake (someone) / wake up",
+          "ta": {
+            "dict": "起こす",
+            "dict_r": "<ruby>起<rt>お</rt></ruby>こす",
+            "masu": "起こします",
+            "masu_r": "<ruby>起<rt>お</rt></ruby>こします",
+            "kana": "おこす",
+            "eg": "子どもを起こします。",
+            "eg_r": "<ruby>子<rt>こ</rt></ruby>どもを<ruby>起<rt>お</rt></ruby>こします。",
+            "eg_cn": "叫醒孩子。",
+            "eg_en": "I wake the child."
+          },
+          "ji": {
+            "dict": "起きる",
+            "dict_r": "<ruby>起<rt>お</rt></ruby>きる",
+            "masu": "起きます",
+            "masu_r": "<ruby>起<rt>お</rt></ruby>きます",
+            "kana": "おきる",
+            "eg": "子どもが起きています。",
+            "eg_r": "<ruby>子<rt>こ</rt></ruby>どもが<ruby>起<rt>お</rt></ruby>きています。",
+            "eg_cn": "孩子已经起来了。",
+            "eg_en": "The child is awake."
+          }
+        },
+        {
+          "cn": "剩下",
+          "en": "leave / remain",
+          "ta": {
+            "dict": "残す",
+            "dict_r": "<ruby>残<rt>のこ</rt></ruby>す",
+            "masu": "残します",
+            "masu_r": "<ruby>残<rt>のこ</rt></ruby>します",
+            "kana": "のこす",
+            "eg": "宿題を残します。",
+            "eg_r": "<ruby>宿題<rt>しゅくだい</rt></ruby>を<ruby>残<rt>のこ</rt></ruby>します。",
+            "eg_cn": "把作业留着。",
+            "eg_en": "I leave the homework."
+          },
+          "ji": {
+            "dict": "残る",
+            "dict_r": "<ruby>残<rt>のこ</rt></ruby>る",
+            "masu": "残ります",
+            "masu_r": "<ruby>残<rt>のこ</rt></ruby>ります",
+            "kana": "のこる",
+            "eg": "宿題が残っています。",
+            "eg_r": "<ruby>宿題<rt>しゅくだい</rt></ruby>が<ruby>残<rt>のこ</rt></ruby>っています。",
+            "eg_cn": "作业还剩着。",
+            "eg_en": "The homework is still left."
+          }
+        },
+        {
+          "cn": "排列",
+          "en": "line up",
+          "ta": {
+            "dict": "並べる",
+            "dict_r": "<ruby>並<rt>なら</rt></ruby>べる",
+            "masu": "並べます",
+            "masu_r": "<ruby>並<rt>なら</rt></ruby>べます",
+            "kana": "ならべる",
+            "eg": "本を並べます。",
+            "eg_r": "<ruby>本<rt>ほん</rt></ruby>を<ruby>並<rt>なら</rt></ruby>べます。",
+            "eg_cn": "把书排好。",
+            "eg_en": "I line up the books."
+          },
+          "ji": {
+            "dict": "並ぶ",
+            "dict_r": "<ruby>並<rt>なら</rt></ruby>ぶ",
+            "masu": "並びます",
+            "masu_r": "<ruby>並<rt>なら</rt></ruby>びます",
+            "kana": "ならぶ",
+            "eg": "本が並んでいます。",
+            "eg_r": "<ruby>本<rt>ほん</rt></ruby>が<ruby>並<rt>なら</rt></ruby>んでいます。",
+            "eg_cn": "书排着。",
+            "eg_en": "The books are lined up."
+          }
+        },
+        {
+          "cn": "收集 / 聚集",
+          "en": "gather",
+          "ta": {
+            "dict": "集める",
+            "dict_r": "<ruby>集<rt>あつ</rt></ruby>める",
+            "masu": "集めます",
+            "masu_r": "<ruby>集<rt>あつ</rt></ruby>めます",
+            "kana": "あつめる",
+            "eg": "写真を集めます。",
+            "eg_r": "<ruby>写真<rt>しゃしん</rt></ruby>を<ruby>集<rt>あつ</rt></ruby>めます。",
+            "eg_cn": "收集照片。",
+            "eg_en": "I collect photos."
+          },
+          "ji": {
+            "dict": "集まる",
+            "dict_r": "<ruby>集<rt>あつ</rt></ruby>まる",
+            "masu": "集まります",
+            "masu_r": "<ruby>集<rt>あつ</rt></ruby>まります",
+            "kana": "あつまる",
+            "eg": "人が集まっています。",
+            "eg_r": "<ruby>人<rt>ひと</rt></ruby>が<ruby>集<rt>あつ</rt></ruby>まっています。",
+            "eg_cn": "人聚在一起。",
+            "eg_en": "People have gathered."
+          }
+        }
+      ]
+    }
+  ]
+}
