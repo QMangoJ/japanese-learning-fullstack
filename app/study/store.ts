@@ -1,4 +1,5 @@
 import henkeiFallback from "../data/common-henkei.json";
+import jitaFallback from "../data/common-jita.json";
 import kougoFallback from "../data/common-kougo.json";
 import { listeningBundle, readingBundle } from "./catalogs";
 
@@ -1643,6 +1644,7 @@ export async function bootStudyData() {
 			...(com || {}),
 			henkei: (com && com.henkei) || henkeiFallback,
 			kougo: (com && com.kougo) || kougoFallback,
+			jita: (com && com.jita) || jitaFallback,
 		};
 		dataLoaded = true;
 		loadError = "";

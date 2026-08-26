@@ -280,6 +280,25 @@ test.describe("study navigation", () => {
 		await expect(page.getByText(/Oops|unexpected error/i)).toHaveCount(0);
 	});
 
+	test("opens the transitive/intransitive verb pairs", async ({ page }) => {
+		await waitForStudy(page);
+		const side = page.locator("#side .side-item", { hasText: /自他动词|Verb pairs/ });
+		if (await side.isVisible()) await side.click();
+		else {
+			await page.locator('.bottom button[data-nav="common"]').click();
+			await page.getByRole("button", { name: /自他动词|Verb pairs/ }).click();
+		}
+		await expect(page.locator("#title")).toContainText(/自动词|他动词|自動詞|Transitive/);
+		await expect(page.getByText("他动词 · を").first()).toBeVisible();
+		await expect(page.getByText("自动词 · が").first()).toBeVisible();
+		await expect(page.locator(".jita-eg").first()).toContainText("ドアを");
+		await expect(page.locator(".jita-eg").nth(1)).toContainText("ドアが");
+		await expect(page.getByText("打开门。")).toBeVisible();
+		await expect(page.getByText("门开着。")).toBeVisible();
+		await expect(page.locator(".jita-masu").first()).toContainText("けます");
+		await expect(page.locator(".jita-word ruby rt").first()).toHaveText("あ");
+	});
+
 	test("opens the spoken-contraction reference", async ({ page }) => {
 		await waitForStudy(page);
 		const side = page.locator("#side .side-item", { hasText: /口语|Casual/ });

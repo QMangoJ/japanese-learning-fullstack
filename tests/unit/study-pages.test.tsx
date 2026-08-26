@@ -8,6 +8,7 @@ import {
 	FavsPage,
 	Fmt,
 	HenkeiPage,
+	JitaPage,
 	KougoPage,
 	HomePage,
 	MistakesPage,
@@ -280,6 +281,64 @@ describe("KougoPage", () => {
 		expect(screen.getByText("〜ちゃった / 〜じゃった")).toBeInTheDocument();
 		expect(screen.getByText("〜てしまった / 〜でしまった")).toBeInTheDocument();
 		expect(screen.getByText("食べちゃった")).toBeInTheDocument();
+	});
+});
+
+describe("JitaPage", () => {
+	it("does not crash when pair data is missing", () => {
+		expect(() => render(<JitaPage data={{}} />)).not.toThrow();
+		expect(screen.getByText(/自动词和他动词数据还没加载完|Transitive\/intransitive data/)).toBeInTheDocument();
+	});
+
+	it("renders transitive and intransitive pairs with readings and examples", () => {
+		render(
+			<JitaPage
+				data={{
+					jita: {
+						intro: "他动词用を，自动词用が。",
+						groups: [
+							{
+								title: "开闭・开关",
+								pairs: [
+									{
+										cn: "打开",
+										ta: {
+											dict: "開ける",
+											dict_r: "<ruby>開<rt>あ</rt></ruby>ける",
+											masu: "開けます",
+											masu_r: "<ruby>開<rt>あ</rt></ruby>けます",
+											kana: "あける",
+											eg: "ドアを開けます。",
+											eg_cn: "打开门。",
+										},
+										ji: {
+											dict: "開く",
+											dict_r: "<ruby>開<rt>あ</rt></ruby>く",
+											masu: "開きます",
+											kana: "あく",
+											eg: "ドアが開いています。",
+											eg_cn: "门开着。",
+										},
+									},
+								],
+							},
+						],
+					},
+				}}
+			/>,
+		);
+		expect(screen.getByText("开闭・开关")).toBeInTheDocument();
+		expect(screen.getByText("打开")).toBeInTheDocument();
+		expect(screen.getByText("他动词 · を")).toBeInTheDocument();
+		expect(screen.getByText("自动词 · が")).toBeInTheDocument();
+		expect(screen.getByText(/（あける）/)).toBeInTheDocument();
+		expect(screen.getByText(/ドアを開けます/)).toBeInTheDocument();
+		expect(screen.getByText("门开着。")).toBeInTheDocument();
+		expect(document.querySelector(".jita-word ruby")?.childNodes[0]?.textContent).toBe("開");
+		expect(document.querySelector(".jita-word")?.textContent).toContain("ける");
+		expect(document.querySelector(".jita-masu")?.textContent).toContain("けます");
+		expect(document.querySelector("ruby")?.textContent).toContain("開");
+		expect(document.querySelector("rt")?.textContent).toBe("あ");
 	});
 });
 

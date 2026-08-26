@@ -119,7 +119,7 @@ export default function Landing() {
 						<div className="common-preview">
 							<h3 className="subsection-heading">通用知识 <small>GENERAL REFERENCE</small></h3>
 							<div className="reference-grid">
-								{[["活用一覧", "普通形・丁寧形・尊敬語", "学生だ ／ 学生です ／ 学生でいらっしゃいます"], ["数の表現", "数字表达速查", "は行量词：1・6・8・10 → ぱ行"], ["接続の表示方法", "接续符号对照表", "Vる ＝ 基本形〈辞书形〉"]].map(([label, title, example]) => <div className="reference-card" key={label}><span>{label}</span><h4>{title}</h4><p>把学习时最常用、又不属于某一周的知识整理成随时可查的参考页。</p><code>{example}</code></div>)}
+								{[["活用一覧", "普通形・丁寧形・尊敬語", "学生だ ／ 学生です ／ 学生でいらっしゃいます"], ["数の表現", "数字表达速查", "は行量词：1・6・8・10 → ぱ行"], ["接続の表示方法", "接续符号对照表", "Vる ＝ 基本形〈辞书形〉"], ["自動詞と他動詞", "自动词和他动词对照", "ドアを開けます ／ ドアが開いています"]].map(([label, title, example]) => <div className="reference-card" key={label}><span>{label}</span><h4>{title}</h4><p>把学习时最常用、又不属于某一周的知识整理成随时可查的参考页。</p><code>{example}</code></div>)}
 							</div>
 						</div>
 					</div>

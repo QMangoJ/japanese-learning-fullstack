@@ -46,7 +46,7 @@ import {
 	type SearchCategory,
 } from "../study/store";
 
-/* 学習シェル共通ページ：接续表 / 活用 / 变形 / 数字 / 検索 / 記憶カード /
+/* 学習シェル共通ページ：接续表 / 活用 / 变形 / 口语 / 自他动词 / 数字 / 検索 / 記憶カード /
  * 週カタログ / 錯題本 / 收藏。ルーティングと日課本文は app/study が持つ。
  * クラス名と DOM 構造は移行前の文字列組み立てと同じものを再現している。 */
 
@@ -606,6 +606,57 @@ export function KougoPage({ data }: { data: any }) {
 				</div>
 			))}
 			{KG.footer ? <div className="meta" style={{ marginTop: 10 }}>{lx(KG.footer, KG.footer_en)}</div> : null}
+		</>
+	);
+}
+
+/* ---------------- 自動詞 / 他動詞 ---------------- */
+
+function JitaSide({ side, kind }: { side: any; kind: "ta" | "ji" }) {
+	if (!side) return null;
+	const label = kind === "ta" ? lx("他动词 · を", "Transitive · を") : lx("自动词 · が", "Intransitive · が");
+	return (
+		<div className={`jita-col jita-col--${kind}`}>
+			<div className={`jita-kind ${kind}`}>{label}</div>
+			<div className="jita-word jp">
+				<Rr o={side} f="dict" />
+				<span className="jita-kana">（{side.kana}）</span>
+			</div>
+			<div className="jita-masu jp">
+				ます形　<Rr o={side} f="masu" />
+			</div>
+			<div className="jita-eg jp">
+				<Rr o={side} f="eg" />
+				<SayButton text={side.eg} />
+				{side.eg_cn || side.eg_en ? <span className="cn">{lx(side.eg_cn, side.eg_en)}</span> : null}
+			</div>
+		</div>
+	);
+}
+
+export function JitaPage({ data }: { data: any }) {
+	const JT = data?.jita;
+	if (!JT) return <div className="empty">{lx("自动词和他动词数据还没加载完，请稍后重试。", "Transitive/intransitive data is still loading.")}</div>;
+	return (
+		<>
+			{JT.intro ? <div className="meta" style={{ marginBottom: 12 }}>{lx(JT.intro, JT.intro_en)}</div> : null}
+			{(JT.groups || []).map((group: any, gi: number) => (
+				<div className="card jita-group" key={gi}>
+					<h3 className="jp" style={{ marginTop: 0 }}>
+						{lx(group.title, group.title_en)}
+					</h3>
+					{(group.pairs || []).map((pair: any, pi: number) => (
+						<div className="jita-pair" key={pi}>
+							<div className="jita-meaning">{lx(pair.cn, pair.en)}</div>
+							<div className="jita-sides">
+								<JitaSide side={pair.ta} kind="ta" />
+								<JitaSide side={pair.ji} kind="ji" />
+							</div>
+						</div>
+					))}
+				</div>
+			))}
+			{JT.footer ? <div className="meta" style={{ marginTop: 10 }}>{lx(JT.footer, JT.footer_en)}</div> : null}
 		</>
 	);
 }
