@@ -85,6 +85,7 @@ import {
 	type LevelKey,
 	type TypeKey,
 } from "./store";
+import { selectionPopoverPosition } from "./selection-popover-position";
 
 function useStudyTick() {
 	return useSyncExternalStore(subscribe, getVersion, () => 0);
@@ -610,16 +611,17 @@ function SelectionPopover({ routeKey }: { routeKey: string }) {
 				}
 				const rect = sel!.getRangeAt(0).getBoundingClientRect();
 				if (!(rect.width || rect.height)) return;
-				const width = 260;
-				const height = 160;
-				const pad = 12;
-				const left = Math.max(pad, Math.min(window.innerWidth - width - pad, rect.left + (rect.width - width) / 2));
-				const above = rect.top - height - 10;
-				const top = above >= pad ? above : Math.min(window.innerHeight - height - pad, rect.bottom + 10);
+				const mobile = window.innerWidth <= 720 || window.matchMedia("(pointer: coarse)").matches;
+				const { left, top } = selectionPopoverPosition({
+					rect,
+					viewportWidth: window.innerWidth,
+					viewportHeight: window.innerHeight,
+					mobile,
+				});
 				setState((cur) =>
 					cur?.text === text
-						? { ...cur, left: Math.round(left), top: Math.max(pad, Math.round(top)) }
-						: { text, type: "word", left: Math.round(left), top: Math.max(pad, Math.round(top)), saved: false },
+						? { ...cur, left, top }
+						: { text, type: "word", left, top, saved: false },
 				);
 			});
 		};
