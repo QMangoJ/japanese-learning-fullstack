@@ -37,7 +37,7 @@ describe("N3 listening transcript furigana", () => {
 		}
 
 		expect(lessonCount).toBe(27);
-		expect(annotatedLines.size).toBe(639);
+		expect(annotatedLines.size).toBe(640);
 	});
 
 	it("uses the contextual readings from the listening scripts", () => {

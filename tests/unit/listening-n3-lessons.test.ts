@@ -169,7 +169,7 @@ describe("listening-n3-lessons", () => {
 	it("keeps the final drills in every formerly truncated transcript", () => {
 		const checks = [
 			[1, 1, "バースデーパーティー", "生日聚会"],
-			[1, 3, "こちらのボタンでお知らせください", "按这个按钮"],
+			[1, 3, "こちらのボタンを押して、お知らせください", "按这个按钮"],
 			[1, 4, "受付は11時まで", "接待截止时间是 11 点"],
 			[1, 5, "問題Ⅱ 5番", "問題Ⅱ 5番"],
 			[2, 6, "問題V", "問題V"],

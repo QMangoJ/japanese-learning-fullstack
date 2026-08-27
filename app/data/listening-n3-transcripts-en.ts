@@ -23,6 +23,7 @@ Example: セーター (sweater) / しゅみ (hobby) / きのう (yesterday)
 ⑧ きれいなおねえさん (a pretty young woman)
 
 3番
+Example: Hurry, hurry—the bus is leaving. (いっちゃうよ)
 ① I drank all the milk. I have to go buy some more. (のんじゃった / こなきゃ)
 ② Don't go that way. It's dangerous. (そっちいっちゃだめだよ)
 ③ Let's get the homework done before we watch TV. (やっちゃおう)
@@ -48,7 +49,7 @@ Man: Yes, that's fine.
 Man: Yeah. Yesterday Mori kept telling me to drink.`,
 
 	"1-3": `1番
-例題: Do you know? (ご存じですか)
+例題: Do you know? (ご存知ですか)
 ① Where do you live? (どちらにお住まいですか)
 ② What would you like? (何になさいますか)
 ③ I'll take your luggage. (お荷物、お預かりいたします)
@@ -62,8 +63,8 @@ Woman: Yes, what is it?
 Man: Understood.
 ③ Woman: Are you looking for something?
 Man: No, I'm just looking.
-④ Man: Customer holding number two, please come forward.
-⑤ Woman: This is today's lunch menu. There are choices A and B. Please choose your drink from this list. Once you have decided, press this button to let us know.`,
+④ Man: The second customer waiting, please come this way.
+⑤ Woman: Today's lunch is A and B. Please choose your drink from here. Once you have decided, press this button to let us know.`,
 
 	"1-4": `1番
 ① Man: How about this shirt?
@@ -74,7 +75,7 @@ Woman: So that's why it's crowded.
 Woman: It's not that, but…
 ④ Man: Ten more minutes until the show starts.
 Woman: I wish it would start soon.
-⑤ Man: Hey, hey—so then, the result was…
+⑤ Man: Hey, hey—so then, anyway…
 Woman: Ah, could you please stop talking to me?
 ⑥ Man: I ended up arriving a little late… That's all right, isn't it?
 Woman: We are very sorry, but reception closes at 11, so…
@@ -165,7 +166,7 @@ Woman: I'd love to!`,
 Man: This one's so cool.
 Woman: No, no. One that only two people can ride in is no good. We sometimes give your father and mother a ride, and we might have a baby too.
 Man: I know. It's just that riding in a car like this was my dream. Um, we sometimes need to put long things in, so how about this one? It's big, but…
-Woman: Yeah, maybe. But our garage is small — will it fit?
+Woman: Yeah, maybe. But our garage is low — will it fit?
 Man: Ah, no way. Then it really has to be this type, doesn't it.
 Woman: Yeah, this is the one. The price isn't cheap, though. What color would be good?
 
@@ -199,7 +200,7 @@ Man: We both need a bit of a long break, don't we.
 What are the man and the woman talking about?
 
 2番　A woman is calling a restaurant.
-Woman: This is 青木. I have a reservation this Sunday at 6, and there's something I'd like to do about making the time a bit earlier.
+Woman: This is 青木. I have a reservation this Sunday at 6, and there's something I'd like to ask.
 Restaurant staff: Yes, what would that be?
 Woman: We've reserved for 6 people now, but 2 more will be joining. Is that all right?
 Restaurant staff: Ah, that's fine. Everyone will have the same 4,000-yen course, correct?
