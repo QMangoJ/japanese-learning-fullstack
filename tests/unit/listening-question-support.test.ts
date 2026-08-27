@@ -61,7 +61,8 @@ describe("listeningQuestionSupport", () => {
 
 	it("keeps audited listening scripts aligned with the source pages", () => {
 		const chapter1Section4 = getListeningLesson(1, 4)!;
-		expect(chapter1Section4.transcript).toContain("ねえねえ、それでさあ、結果ね");
+		expect(chapter1Section4.transcript).toContain("ねえねえ、それでさあ、結局ね");
+		expect(chapter1Section4.transcript).not.toContain("結果ね");
 		expect(chapter1Section4.transcript).toContain("受付は11時までとなっております");
 		expect(chapter1Section4.transcript).not.toContain("ぼくが言うから");
 
@@ -74,9 +75,33 @@ describe("listeningQuestionSupport", () => {
 		expect(chapter2Section2.transcript).toContain("へえー、そうなるのー");
 		expect(chapter2Section2.transcript).not.toContain("へえー、そうするのー");
 
+		const chapter1Section3 = getListeningLesson(1, 3)!;
+		expect(chapter1Section3.transcript).toContain("2番目にお待ちのお客様、こちらにどうぞ");
+		expect(chapter1Section3.transcript).toContain("本日のランチです。AとBがございます");
+
+		const chapter2Section3 = getListeningLesson(2, 3)!;
+		expect(chapter2Section3.transcript).toContain("ガレージ低いのに");
+		expect(chapter2Section3.transcript).not.toContain("ガレージ狭いのに");
+
+		const chapter2Section5 = getListeningLesson(2, 5)!;
+		expect(chapter2Section5.transcript).toContain("お聞きしたいことがありまして");
+		expect(chapter2Section5.transcript).not.toContain("お時間を早めたい");
+
+		const chapter4Section5 = getListeningLesson(4, 5)!;
+		expect(chapter4Section5.transcript).toContain("右側5階建てのマンションよ");
+		expect(chapter4Section5.transcript).not.toContain("左側5階建て");
+
 		const chapter5Section2 = getListeningLesson(5, 2)!;
 		expect(chapter5Section2.transcript).toContain("遊ばれたあとじゃ、弱って");
 		expect(chapter5Section2.transcript).toContain("来月の給料日には必ず");
 		expect(chapter5Section2.transcript).not.toContain("遊ばれたおもちゃ");
+
+		const chapter5Section3 = getListeningLesson(5, 3)!;
+		expect(chapter5Section3.transcript).toContain("一緒にセールに行ってほしい");
+		expect(chapter5Section3.transcript).not.toContain("一緒にゴルフに行ってほしい");
+
+		const chapter5Section5 = getListeningLesson(5, 5)!;
+		expect(chapter5Section5.transcript).toContain("バスは混んでるよ");
+		expect(chapter5Section5.transcript).not.toContain("バスは遅れてるよ");
 	});
 });
