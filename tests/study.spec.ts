@@ -412,6 +412,28 @@ test.describe("study navigation", () => {
 		expect(layout.controlGap).toBeGreaterThanOrEqual(20);
 	});
 
+	test("bottom navigation remains at the viewport edge after scrolling a long listening lesson", async ({ page }) => {
+		await waitForStudy(page);
+		await pickType(page, "listening");
+		await page.goto("/study/day/5-1");
+		await dismissViteOverlay(page);
+		await expect(page.locator("nav.bottom")).toBeVisible({ timeout: 15_000 });
+		await page.evaluate(() => window.scrollTo(0, Math.min(1800, document.documentElement.scrollHeight)));
+		await page.waitForTimeout(250);
+
+		const position = await page.evaluate(() => {
+			const nav = document.querySelector("nav.bottom")!.getBoundingClientRect();
+			return {
+				bottom: nav.bottom,
+				viewportHeight: window.innerHeight,
+				offset: Number.parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--fixed-viewport-y")) || 0,
+			};
+		});
+
+		expect(Math.abs(position.bottom - position.viewportHeight)).toBeLessThanOrEqual(1);
+		expect(position.offset).toBeGreaterThanOrEqual(0);
+	});
+
 	test("listening keyboard controls playback and seeks without changing sections", async ({ page }) => {
 		await waitForStudy(page);
 		await pickType(page, "listening");

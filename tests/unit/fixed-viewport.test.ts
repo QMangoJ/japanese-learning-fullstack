@@ -11,8 +11,12 @@ describe("fixed visual viewport positioning", () => {
 		expect(fixedViewportOffset(844, 0, 664)).toBe(180);
 	});
 
-	it("accounts for a visual viewport offset and rejects invalid layout measurements", () => {
-		expect(fixedViewportOffset(500, 40, 800)).toBe(-260);
+	it("never lifts fixed controls when the visual viewport contracts during scrolling", () => {
+		expect(fixedViewportOffset(500, 40, 800)).toBe(0);
+		expect(fixedViewportOffset(720, 0, 844)).toBe(0);
+	});
+
+	it("rejects invalid layout measurements", () => {
 		expect(fixedViewportOffset(500, 0, 0)).toBe(0);
 		expect(fixedViewportOffset(Number.NaN, 0, 800)).toBe(0);
 	});
