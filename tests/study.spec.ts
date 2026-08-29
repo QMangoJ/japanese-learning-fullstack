@@ -714,6 +714,8 @@ test.describe("accounts", () => {
 
 	test("guest opening favorites or mistakes is asked to sign in", async ({ page }) => {
 		await waitForStudy(page, { configured: true });
+		const guest = page.locator("#guestLoginDialog");
+		if (await guest.isVisible()) await guest.getByRole("button", { name: /稍后再说|Not now/ }).click();
 		await openStudyNav(page, "mistakes");
 		const dialog = page.locator("#loginDialog");
 		await expect(dialog).toBeVisible();
@@ -727,6 +729,21 @@ test.describe("accounts", () => {
 		await expect(page.locator("#loginDialog")).toBeVisible();
 		await expect(page.locator("#loginDialog h2")).toContainText(/收藏需要登录|Sign in to save favorites/);
 		await expect(page.locator("#loginDialogGo")).toHaveAttribute("href", /study%2Ffavs|study\/favs/);
+	});
+
+	test("suggests Google sign-in when a guest enters study", async ({ page }) => {
+		await waitForStudy(page, { configured: true });
+		const dialog = page.locator("#guestLoginDialog");
+		await expect(dialog).toBeVisible();
+		await expect(dialog.locator("h2")).toContainText(/建议登录|Sign in recommended/);
+		await expect(page.locator("#guestLoginGo")).toHaveAttribute("href", /\/auth\/google\?next=/);
+		await dialog.getByRole("button", { name: /稍后再说|Not now/ }).click();
+		await expect(dialog).toHaveCount(0);
+		await expect(page.locator(".week-card").first()).toBeVisible();
+		await page.reload();
+		await dismissViteOverlay(page);
+		await expect(page.locator("#accountLogin")).toBeVisible({ timeout: 15_000 });
+		await expect(page.locator("#guestLoginDialog")).toHaveCount(0);
 	});
 
 	test("google start route is reachable", async ({ request }) => {

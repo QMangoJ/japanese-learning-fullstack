@@ -26,10 +26,12 @@ import {
 	authConfigured,
 	LOGIN_PROMPT,
 	closeLoginPrompt,
+	dismissLoginSuggest,
 	goAccountPage,
 	googleLoginHref,
 	needsAccount,
 	requestAccount,
+	shouldSuggestLogin,
 	DATA,
 	FAV,
 	LANG,
@@ -383,6 +385,33 @@ function LoginPromptDialog() {
 						{lx("取消", "Cancel")}
 					</button>
 					<a className="login-dialog__go" id="loginDialogGo" href={googleLoginHref()}>
+						{lx("使用 Google 登录", "Sign in with Google")}
+					</a>
+				</div>
+			</div>
+		</>
+	);
+}
+
+function GuestLoginSuggest() {
+	useStudyTick();
+	if (!shouldSuggestLogin()) return null;
+	return (
+		<>
+			<div className="login-mask" onClick={dismissLoginSuggest} />
+			<div className="login-dialog" id="guestLoginDialog" role="dialog" aria-modal="true" aria-labelledby="guestLoginTitle">
+				<h2 id="guestLoginTitle">{lx("建议登录", "Sign in recommended")}</h2>
+				<p>
+					{lx(
+						"现在是游客模式。登录后，收藏和错题会同步到 Google 账号，换设备也能继续。不登录也可以先学。",
+						"You're browsing as a guest. Sign in so favorites and notes sync across devices. You can keep studying without an account.",
+					)}
+				</p>
+				<div className="login-dialog__actions">
+					<button type="button" onClick={dismissLoginSuggest}>
+						{lx("稍后再说", "Not now")}
+					</button>
+					<a className="login-dialog__go" id="guestLoginGo" href={googleLoginHref("/study")}>
 						{lx("使用 Google 登录", "Sign in with Google")}
 					</a>
 				</div>
@@ -876,6 +905,10 @@ export function StudyApp() {
 				closeLoginPrompt();
 				return;
 			}
+			if (e.key === "Escape" && shouldSuggestLogin()) {
+				dismissLoginSuggest();
+				return;
+			}
 			if (e.key === "Escape" && sheet) {
 				setSheet(null);
 				return;
@@ -1037,6 +1070,7 @@ export function StudyApp() {
 			<Sheet kind={sheet} onClose={() => setSheet(null)} onLevel={pickLevel} />
 			<SelectionPopover routeKey={routeKey} />
 			<LoginPromptDialog />
+			<GuestLoginSuggest />
 		</>
 	);
 }

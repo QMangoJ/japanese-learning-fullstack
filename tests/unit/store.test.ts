@@ -16,10 +16,13 @@ import {
 	addMistakeNote,
 	bootAccount,
 	closeLoginPrompt,
+	dismissLoginSuggest,
 	goAccountPage,
 	googleLoginHref,
+	hydrateFromStorage,
 	needsAccount,
 	requestAccount,
+	shouldSuggestLogin,
 	setAccountStateForTests,
 	afterPaint,
 	applyDisplayClasses,
@@ -349,6 +352,22 @@ describe("favorites", () => {
 		expect(requestAccount("favs")).toBe(true);
 		goAccountPage("#/favs");
 		expect(seen).toEqual(["#/favs"]);
+	});
+
+	it("suggests sign-in for guests until they dismiss it", () => {
+		setAccountStateForTests(null, true);
+		expect(shouldSuggestLogin()).toBe(true);
+		dismissLoginSuggest();
+		expect(shouldSuggestLogin()).toBe(false);
+		expect(localStorage.getItem("loginSuggestDismissed")).toBe("1");
+
+		resetStudyStateForTests();
+		hydrateFromStorage();
+		setAccountStateForTests(null, true);
+		expect(shouldSuggestLogin()).toBe(false);
+
+		setAccountStateForTests({ id: "g_1", email: "a@b.c", name: "Ada", picture: "" }, true);
+		expect(shouldSuggestLogin()).toBe(false);
 	});
 
 	it("keeps guest favorites local and does not push", async () => {
