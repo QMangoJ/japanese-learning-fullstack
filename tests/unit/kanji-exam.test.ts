@@ -94,6 +94,19 @@ describe("kanji exam question bank", () => {
 		expect(englishLessonLabel("ch4-2-anniversary", "fallback")).toBe("Chapter 4-2 · Wedding anniversary");
 		const giftCertificate = questions.find((question) => question.target === "商品券");
 		expect(giftCertificate && englishSupportForQuestion(giftCertificate).meaning).toBe("gift certificate");
+
+		const meaningFor = (target: string) => {
+			const question = questions.find((candidate) => candidate.kind === "reading" && candidate.target === target);
+			expect(question, `missing reading question for ${target}`).toBeTruthy();
+			return englishSupportForQuestion(question!).meaning;
+		};
+		expect(meaningFor("折り紙")).toBe("origami paper; colored folding paper");
+		expect(meaningFor("便")).toBe("flight; transport service");
+		expect(meaningFor("送りました")).toBe("took; accompanied (someone)");
+		expect(meaningFor("重ねて")).toBe("in layers; layer one over another");
+		expect(meaningFor("軽く")).toBe("lighter; less sluggish");
+		expect(meaningFor("有力")).toBe("valuable; promising (information or a lead)");
+		expect(meaningFor("本場")).toBe("home; place of origin");
 	});
 });
 
