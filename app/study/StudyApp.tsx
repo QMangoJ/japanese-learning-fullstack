@@ -1,6 +1,7 @@
 import { Component, useEffect, useLayoutEffect, useRef, useState, useSyncExternalStore, type ErrorInfo, type ReactNode } from "react";
 import { useLocation, useNavigate } from "react-router";
 
+import { ListeningN2Content } from "../routes/listening-n2";
 import { ListeningN3Content } from "../routes/listening-n3";
 import { ReadingN3Content } from "../routes/reading-n3";
 import {
@@ -76,6 +77,7 @@ import {
 	setModule,
 	toggleTheme,
 	setNavImpl,
+	typeForLevel,
 	showingFavFc,
 	subscribe,
 	subscribeDisplay,
@@ -213,7 +215,8 @@ function Header({
 	backLabel,
 	showLevel,
 	showTypebar,
-	showSkills,
+	showReading,
+	showListening,
 	onBack,
 	onOpenLevel,
 }: {
@@ -222,7 +225,8 @@ function Header({
 	backLabel: string;
 	showLevel: boolean;
 	showTypebar: boolean;
-	showSkills: boolean;
+	showReading: boolean;
+	showListening: boolean;
 	onBack: () => void;
 	onOpenLevel: () => void;
 }) {
@@ -282,14 +286,18 @@ function Header({
 							📙 <span className="lbl">{lx("汉字", "Kanji")}</span>
 						</button>
 					</div>
-					{showSkills ? (
+					{showReading || showListening ? (
 						<div className="typebar typebar--skills" id="skillbar">
-							<button data-ty="reading" className={TYPE === "reading" ? "on" : ""} onClick={() => goType("reading")}>
-								📕 <span className="lbl">{lx("读解", "Reading")}</span>
-							</button>
-							<button data-ty="listening" className={TYPE === "listening" ? "on" : ""} onClick={() => goType("listening")}>
-								🎧 <span className="lbl">{lx("听解", "Listening")}</span>
-							</button>
+							{showReading ? (
+								<button data-ty="reading" className={TYPE === "reading" ? "on" : ""} onClick={() => goType("reading")}>
+									📕 <span className="lbl">{lx("读解", "Reading")}</span>
+								</button>
+							) : null}
+							{showListening ? (
+								<button data-ty="listening" className={TYPE === "listening" ? "on" : ""} onClick={() => goType("listening")}>
+									🎧 <span className="lbl">{lx("听解", "Listening")}</span>
+								</button>
+							) : null}
 						</div>
 					) : null}
 				</div>
@@ -405,8 +413,9 @@ function AuthBanner() {
 }
 
 function goType(ty: TypeKey) {
-	if ((ty === "reading" || ty === "listening") && LEVEL !== "n3") return;
-	const nextMod = ty === "reading" || ty === "listening" ? ty : moduleFrom(LEVEL, ty);
+	if (ty === "reading" && LEVEL !== "n3") return;
+	if (ty === "listening" && LEVEL !== "n3" && LEVEL !== "n2") return;
+	const nextMod = moduleFrom(LEVEL, ty);
 	const here = typeof window !== "undefined" ? pathToKey(window.location.pathname) : "#/";
 	const day = parseDayRoute(here);
 	setModule(nextMod);
@@ -418,7 +427,7 @@ function goType(ty: TypeKey) {
 }
 
 function weeksOf(ty: TypeKey) {
-	const mod = ty === "reading" || ty === "listening" ? ty : moduleFrom(LEVEL, ty);
+	const mod = moduleFrom(LEVEL, ty);
 	const w = (DATA[mod] || cur(mod)).weeks?.length || 0;
 	if (!w) return "";
 	if (ty === "listening") return lx(w + "章", w + " ch.");
@@ -433,12 +442,8 @@ function Sidebar({ routeKey, onLevel }: { routeKey: string; onLevel: (lv: LevelK
 		["grammar", "📘", lx("语法", "Grammar")],
 		["vocab", "📗", lx("词汇", "Vocabulary")],
 		["kanji", "📙", lx("汉字", "Kanji")],
-		...(LEVEL === "n3"
-			? ([
-					["reading", "📕", lx("读解", "Reading")],
-					["listening", "🎧", lx("听解", "Listening")],
-				] as [TypeKey, string, string][])
-			: []),
+		...(LEVEL === "n3" ? ([["reading", "📕", lx("读解", "Reading")]] as [TypeKey, string, string][]) : []),
+		...(LEVEL === "n3" || LEVEL === "n2" ? ([["listening", "🎧", lx("听解", "Listening")]] as [TypeKey, string, string][]) : []),
 	];
 	const favCount = Object.keys(FAV).length;
 	const row = (go: string, ic: string, label: string, count: string | number | null, on: boolean) => (
@@ -850,7 +855,7 @@ export function StudyApp() {
 
 	useEffect(() => {
 		const mode = new URLSearchParams(location.search).get("module");
-		if (mode === "reading" || mode === "listening") {
+		if (mode === "reading" || mode === "listening" || mode === "n2listening") {
 			setModule(mode);
 			window.history.replaceState({}, "", location.pathname + (isTrial ? "?trial=1" : ""));
 			navTo(entryHash(mode));
@@ -876,7 +881,7 @@ export function StudyApp() {
 				return;
 			}
 			if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
-			if (MODULE === "listening") return;
+			if (isListening()) return;
 			if (e.metaKey || e.ctrlKey || e.altKey) return;
 			const t = e.target as HTMLElement | null;
 			const tag = t && t.tagName;
@@ -930,7 +935,7 @@ export function StudyApp() {
 	if (routeKey === "#/cards") ensureCardsDeck();
 
 	const commonRefPage = ["#/ref", "#/katsuyou", "#/henkei", "#/kougo", "#/jita", "#/numbers"].includes(routeKey);
-	const waitingN2 = isN2() && !n2Loaded && !commonRefPage;
+	const waitingN2 = isN2() && MODULE !== "n2listening" && !n2Loaded && !commonRefPage;
 	const waitingN4 = isN4() && !n4Loaded && !commonRefPage;
 	const waitingSearch = routeKey === "#/search" && !n2Loaded;
 	const weekLocked = isTrial && day && (LEVEL !== "n3" || day.w !== 1);
@@ -939,7 +944,7 @@ export function StudyApp() {
 	const pickLevel = (lv: LevelKey) => {
 		setSheet(null);
 		if (isTrial && lv !== "n3") return;
-		const ty = TYPE === "reading" || TYPE === "listening" ? (lv === "n3" ? TYPE : "grammar") : TYPE;
+		const ty = typeForLevel(lv, TYPE);
 		const mod = moduleFrom(lv, ty);
 		setModule(mod);
 		navTo(entryHash(mod));
@@ -957,8 +962,12 @@ export function StudyApp() {
 	else if (day && isListening())
 		body = (
 			<>
-				<ListeningN3Content chapter={day.w} section={day.d} embedded />
-				<DayNav w={day.w} d={day.d} mod="listening" />
+				{MODULE === "n2listening" ? (
+					<ListeningN2Content chapter={day.w} section={day.d} embedded />
+				) : (
+					<ListeningN3Content chapter={day.w} section={day.d} embedded />
+				)}
+				<DayNav w={day.w} d={day.d} mod={MODULE} />
 			</>
 		);
 	else if (day) body = <DayPage w={day.w} d={day.d} token={day.token} />;
@@ -1010,7 +1019,8 @@ export function StudyApp() {
 				backLabel={day ? lx("目录", "Catalog") : lx("返回", "Back")}
 				showLevel={!commonPages.includes(routeKey)}
 				showTypebar={routeKey === "#/" || Boolean(day)}
-				showSkills={LEVEL === "n3"}
+				showReading={LEVEL === "n3"}
+				showListening={LEVEL === "n3" || LEVEL === "n2"}
 				onBack={() => (day ? navTo("#/") : history.length > 1 ? navigate(-1) : navTo("#/"))}
 				onOpenLevel={() => setSheet("level")}
 			/>

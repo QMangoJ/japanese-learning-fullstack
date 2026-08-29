@@ -15,6 +15,7 @@ import {
 	flipFavCard,
 	getSearchHistory,
 	homeScale,
+	isListening,
 	jumpWeek,
 	lx,
 	navTo,
@@ -823,6 +824,7 @@ const MODULE_TAG: Record<string, [string, string]> = {
 	n4kanji: ["k4", "N4汉字"],
 	reading: ["r", "N3读解"],
 	listening: ["l", "N3听解"],
+	n2listening: ["l2", "N2听解"],
 	mistakes: ["m", "错题本"],
 };
 
@@ -951,7 +953,7 @@ export function SearchPage() {
 								<div className="where">
 									{e.module === "mistakes"
 										? <>{lx(...(SEARCH_MISTAKE_TYPE[e.mistakeType || "q"] || ["错题", "Mistake"]))} · {lx(...(SEARCH_MISTAKE_LEVEL[e.mistakeLevel || "new"] || ["不熟", "New"]))}{e.ts ? ` · ${new Date(e.ts).toLocaleDateString()}` : ""}</>
-										: e.module === "listening"
+										: isListening(e.module)
 										? lx(`第${e.w}章 ${e.d}节`, `Ch. ${e.w} §${e.d}`)
 										: lx(`第${e.w}週 ${e.d}日目`, `Week ${e.w} Day ${e.d}`)}{" "}
 									{e.module === "mistakes" ? null : <> · <span className="jp">{e.dayTitle}</span></>}
@@ -1191,12 +1193,12 @@ type FavsData = {
 
 const FAV_MOD_TAG: Record<string, string> = {
 	grammar: "g", n2grammar: "g2", vocab: "v", kanji: "k", n2vocab: "v2",
-	n2kanji: "k2", n4grammar: "g4", n4vocab: "v4", n4kanji: "k4", reading: "r", listening: "l", selection: "mt-selection",
+	n2kanji: "k2", n4grammar: "g4", n4vocab: "v4", n4kanji: "k4", reading: "r", listening: "l", n2listening: "l2", selection: "mt-selection",
 };
 const FAV_MOD_TAG_LABEL: Record<string, string> = {
 	grammar: "N3语法", n2grammar: "N2语法", vocab: "N3词汇", kanji: "N3汉字", n2vocab: "N2词汇",
 	n2kanji: "N2汉字", n4grammar: "N4语法", n4vocab: "N4词汇", n4kanji: "N4汉字",
-	reading: "N3读解", listening: "N3听解", selection: "划词",
+	reading: "N3读解", listening: "N3听解", n2listening: "N2听解", selection: "划词",
 };
 const favTags = (item: FavItem, selLabels: Record<string, string>) => {
 	const tags: { cls: string; label: string }[] = [];

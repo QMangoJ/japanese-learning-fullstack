@@ -387,6 +387,7 @@ nav.bottom button.on{color:var(--accent);font-weight:700}
 .mtag.k4{background:var(--green-soft);color:var(--green)}
 .mtag.r{background:var(--amber-soft);color:var(--amber)}
 .mtag.l{background:var(--blue-soft);color:var(--blue)}
+.mtag.l2{background:var(--amber-soft);color:var(--amber)}
 .mtag.m{background:var(--red-soft);color:var(--red)}
 .hl{background:var(--amber-soft);color:var(--amber);font-weight:700;padding:0 1px;border-radius:3px}
 .fc-wrap{display:flex;flex-direction:column;align-items:center;gap:14px}
