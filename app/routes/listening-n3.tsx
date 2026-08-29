@@ -23,7 +23,7 @@ export function loader() {
 	return redirect("/study?module=listening");
 }
 
-type AudioCue = { disc: ListeningDisc; track: number };
+export type AudioCue = { disc: ListeningDisc; track: number };
 
 const audioLabel: Record<ListeningDisc, string> = { cd1: "CD 1", cd2: "CD 2" };
 
@@ -289,7 +289,7 @@ function LearningLine({ text, translation = false }: { text?: string; translatio
 	);
 }
 
-function LessonBlocks({
+export function LessonBlocks({
 	blocks,
 	questionSupport,
 	disc,

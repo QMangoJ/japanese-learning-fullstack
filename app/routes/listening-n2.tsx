@@ -1,24 +1,25 @@
 import { useEffect, useMemo, useRef, useState, type PointerEvent, type RefObject } from "react";
 import { redirect } from "react-router";
 
+import { getListeningN2Lesson } from "../data/listening-n2-lessons";
 import {
 	findListeningN2Chapter,
 	findListeningN2Section,
-	listeningN2PageSrc,
 	listeningN2SectionDisc,
 	listeningN2TrackSrc,
 	type ListeningDisc,
 } from "../data/listening-n2-book";
+import { listeningQuestionSupport } from "../data/listening-n3-question-support";
 import { dayNeighbors, isFav, LANG, lx, navTo, registerFavMeta, toggleFav } from "../study/store";
 import type { Route } from "./+types/listening-n2";
-import { audioDurationOf, forwardTime, rewindTime, seekRatioFromClientX } from "./listening-n3";
+import { audioDurationOf, forwardTime, LessonBlocks, rewindTime, seekRatioFromClientX } from "./listening-n3";
 import "./reading-n3.css";
 import "./listening-n3.css";
 
 export function meta({}: Route.MetaArgs) {
 	return [
 		{ title: "N2 听解 · 日本語上手" },
-		{ name: "description", content: "N2 听解训练：按原书扫描页还原练习、答案与听力原文，并配对应音频。" },
+		{ name: "description", content: "N2 听解训练：按原书结构还原说明、练习、答案、听力原文和译文，并配对应音频。" },
 	];
 }
 
@@ -39,17 +40,6 @@ function formatTime(seconds: number) {
 	const minutes = Math.floor(seconds / 60);
 	const remainder = Math.floor(seconds % 60);
 	return `${minutes}:${String(remainder).padStart(2, "0")}`;
-}
-
-function CueButton({ cue, active, playing, onToggle, label }: { cue: AudioCue; active: AudioCue; playing: boolean; onToggle: (cue: AudioCue) => void; label: string }) {
-	const isActive = active.disc === cue.disc && active.track === cue.track;
-	const isPlaying = isActive && playing;
-	return (
-		<button className={`${isActive ? "on" : ""}${isPlaying ? " playing" : ""}`} onClick={() => onToggle(cue)} aria-label={`${label} ${cueLabel(cue)} ${isPlaying ? "暂停" : "播放"}`} aria-pressed={isPlaying}>
-			{isPlaying ? "❚❚" : "▶"} {label}
-			<small> {cueLabel(cue)}</small>
-		</button>
-	);
 }
 
 function ListeningSeekBar({ currentTime, duration, onSeek }: { currentTime: number; duration: number; onSeek: (time: number) => void }) {
@@ -212,71 +202,20 @@ function ListeningPlayer({ cue, audioRef, onPlaybackChange }: { cue: AudioCue; a
 	);
 }
 
-function PageScan({ pages, heading, sub }: { pages: readonly number[]; heading: string; sub: string }) {
-	const [open, setOpen] = useState<number | null>(null);
-	useEffect(() => {
-		if (open == null) return;
-		const onKey = (event: KeyboardEvent) => {
-			if (event.key === "Escape") setOpen(null);
-		};
-		document.addEventListener("keydown", onKey);
-		return () => document.removeEventListener("keydown", onKey);
-	}, [open]);
-	if (!pages.length) return null;
-	return (
-		<section className="listening-scans">
-			<p className="listening-scan-note">{sub}</p>
-			{pages.map((page) => (
-				<article className="listening-scan" key={page}>
-					<header>
-						<div>
-							<span>原书 p.{page}</span>
-							<h3>{heading}</h3>
-						</div>
-					</header>
-					<figure>
-						<button type="button" className="listening-scan__open" onClick={() => setOpen(page)} aria-label={`放大第 ${page} 页`}>
-							<img src={listeningN2PageSrc(page)} alt={`N2 听解 p.${page}`} />
-						</button>
-					</figure>
-				</article>
-			))}
-			{open != null ? (
-				<div
-					className="listening-scan-lightbox"
-					role="dialog"
-					aria-modal="true"
-					aria-label="原书放大"
-					onClick={(event) => {
-						if (event.target === event.currentTarget) setOpen(null);
-					}}
-				>
-					<button type="button" className="listening-scan-lightbox__close" onClick={() => setOpen(null)}>
-						关闭放大页
-					</button>
-					{pages.map((page) => (
-						<img key={page} src={listeningN2PageSrc(page)} alt={`N2 听解 p.${page}`} />
-					))}
-				</div>
-			) : null}
-		</section>
-	);
-}
-
 function ChapterDetail({ chapterNumber, sectionNumber, hideBack = false }: { chapterNumber: number; sectionNumber: number; hideBack?: boolean }) {
 	const chapter = findListeningN2Chapter(chapterNumber);
 	const section = findListeningN2Section(chapterNumber, sectionNumber);
+	const lesson = getListeningN2Lesson(chapterNumber, sectionNumber);
 	const disc = listeningN2SectionDisc(chapterNumber, sectionNumber);
 	const initialCue = useMemo<AudioCue>(() => ({ disc, track: section?.firstTrack ?? 1 }), [disc, section]);
 	const [cue, setCue] = useState(initialCue);
 	const [playRequest, setPlayRequest] = useState(0);
 	const [playing, setPlaying] = useState(false);
-	const [panel, setPanel] = useState<"lesson" | "script" | "translation">("lesson");
 	const audioRef = useRef<HTMLAudioElement>(null);
+	const questionSupport = useMemo(() => (lesson ? listeningQuestionSupport(lesson) : new Map()), [lesson]);
 
 	useEffect(() => {
 		setCue(initialCue);
-		setPanel("lesson");
 	}, [initialCue, chapterNumber, sectionNumber]);
 
 	useEffect(() => {
@@ -321,7 +260,7 @@ function ChapterDetail({ chapterNumber, sectionNumber, hideBack = false }: { cha
 		return () => document.removeEventListener("keydown", onKeyDown, true);
 	}, []);
 
-	if (!chapter || !section) {
+	if (!chapter || !section || !lesson) {
 		return (
 			<div className="reader-page reader-page--embedded">
 				<div className="reader-wrap reader-layout">
@@ -332,9 +271,6 @@ function ChapterDetail({ chapterNumber, sectionNumber, hideBack = false }: { cha
 			</div>
 		);
 	}
-
-	const lessonPages = section.pages.map((item) => item.page);
-	const scriptNote = lx("练习、答案和听力原文都直接用原书页，避免转写出错。", "Exercises, answers and scripts are the original book pages.");
 
 	return (
 		<div className="reader-page reader-page--embedded">
@@ -358,40 +294,7 @@ function ChapterDetail({ chapterNumber, sectionNumber, hideBack = false }: { cha
 						<h1>{section.title}</h1>
 					</header>
 					<ListeningPlayer cue={cue} audioRef={audioRef} onPlaybackChange={setPlaying} />
-					<div className="listening-exercise__tracks" style={{ margin: "0 0 14px" }}>
-						{section.questions.map((question) =>
-							question.tracks.map((track) => (
-								<CueButton
-									key={`${question.label}-${track}`}
-									cue={{ disc, track }}
-									active={cue}
-									playing={playing}
-									onToggle={toggleCue}
-									label={question.label}
-								/>
-							)),
-						)}
-					</div>
-					<div className="typebar" style={{ justifyContent: "flex-start", padding: "0 0 12px" }}>
-						<button className={panel === "lesson" ? "on" : ""} onClick={() => setPanel("lesson")}>
-							{lx("练习页", "Exercises")}
-						</button>
-						<button className={panel === "script" ? "on" : ""} onClick={() => setPanel("script")}>
-							{lx("答案・原文", "Answers & script")}
-						</button>
-						<button className={panel === "translation" ? "on" : ""} onClick={() => setPanel("translation")}>
-							{lx("译文", "Translation")}
-						</button>
-					</div>
-					{panel === "lesson" ? <PageScan pages={lessonPages} heading={lx("练习 / 讲解", "Exercises")} sub={scriptNote} /> : null}
-					{panel === "script" ? <PageScan pages={section.answerPages} heading={lx("答え・スクリプト", "Answers & script")} sub={lx("日文答案和听力原文，按原书扫描。", "Japanese answers and transcripts from the book.")} /> : null}
-					{panel === "translation" ? (
-						<PageScan
-							pages={section.translationPages}
-							heading={lx("译文", "Translation")}
-							sub={lx("原书中文译文页。", "Chinese translation pages from the book.")}
-						/>
-					) : null}
+					<LessonBlocks blocks={lesson.blocks} questionSupport={questionSupport} disc={disc} active={cue} playing={playing} onToggle={toggleCue} />
 					<ListeningSectionNav chapter={chapterNumber} section={sectionNumber} />
 				</main>
 			</div>

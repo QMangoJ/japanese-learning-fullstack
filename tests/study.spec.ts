@@ -524,7 +524,7 @@ test.describe("study typebar", () => {
 		await expect(page.locator("#typebar button[data-ty='reading']")).toHaveCount(0);
 	});
 
-	test("opens N2 listening from original book scans", async ({ page }, testInfo) => {
+	test("opens N2 listening as reconstructed text with answers and transcripts", async ({ page }, testInfo) => {
 		await waitForStudy(page);
 		if (testInfo.project.name === "desktop-chrome") {
 			await page.locator(".side-seg button", { hasText: "N2" }).click();
@@ -539,11 +539,16 @@ test.describe("study typebar", () => {
 		if (await page.locator(".day-item").first().isVisible()) await page.locator(".day-item").first().click();
 		else await page.goto("/study/day/1-1");
 		await dismissViteOverlay(page);
-		await expect(page.locator(".listening-scan img").first()).toBeVisible({ timeout: 15_000 });
-		await expect(page.locator(".listening-scan img").first()).toHaveAttribute("src", /\/listening\/n2\/pages\/012\.jpg$/);
+		await expect(page.locator(".listening-lesson").first()).toBeVisible({ timeout: 15_000 });
 		await expect(page.locator("audio")).toHaveAttribute("src", /\/audio\/n2\/cd1\/CD01_02\.mp3$/);
-		await page.getByRole("button", { name: "答案・原文" }).click();
-		await expect(page.locator(".listening-scan img").first()).toHaveAttribute("src", /\/listening\/n2\/pages\/072\.jpg$/);
+		const firstQuestion = page.locator(".listening-lesson__q").first();
+		await expect(firstQuestion.getByText("答案")).toBeVisible();
+		await firstQuestion.getByText("答案").click();
+		await expect(firstQuestion).toContainText(/マッチ/);
+		await firstQuestion.getByText("听力原文").click();
+		await expect(firstQuestion).toContainText(/トラック/);
+		await firstQuestion.getByText("译文").click();
+		await expect(firstQuestion).toContainText(/搬家的卡车/);
 	});
 });
 
