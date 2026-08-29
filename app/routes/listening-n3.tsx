@@ -398,7 +398,7 @@ function LessonBlocks({
 										{(block.rows || []).map((row) => (
 											<tr key={row.k}>
 												<th>
-													<Jp text={row.k} />
+													<LearningLine text={row.k} />
 												</th>
 												<td>
 													<Line text={row.v} />

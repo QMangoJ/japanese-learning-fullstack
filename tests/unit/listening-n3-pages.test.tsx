@@ -41,6 +41,9 @@ describe("ListeningN3Content", () => {
 		expect(screen.getByText(/人的外貌或物的形状、状态/)).toBeInTheDocument();
 		expect(screen.getByText(/facial hair/)).toBeInTheDocument();
 		expect(screen.getByText(/one-size-fits-all/)).toBeInTheDocument();
+		const sleeveRow = screen.getByText(/long \/ short sleeves/).closest("tr");
+		expect(sleeveRow).toBeTruthy();
+		expect(Array.from(sleeveRow!.querySelectorAll("rt"), (reading) => reading.textContent)).toEqual(["なが", "はん"]);
 
 		const firstQuestion = screen.getByRole("heading", { level: 4, name: /^1番/ }).closest("article");
 		await user.click(within(firstQuestion!).getByText("译文"));

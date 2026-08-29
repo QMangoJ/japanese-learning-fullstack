@@ -34,6 +34,7 @@ describe("N3 listening teaching-page support", () => {
 	});
 
 	it("uses the irregular readings shown on the teaching pages", () => {
+		expect(listeningBodySupport("長そで ↔ 半そで")?.jp).toBe("{長|なが}そで ↔ {半|はん}そで");
 		expect(listeningBodySupport("③ 台風が近づいています。")?.jp).toContain("{台風|たいふう}");
 		expect(listeningBodySupport("ぼくの好きな子の家は、角から3軒目だよ。／自分の家を入れて数えるんだよ。")?.jp).toContain("{3軒目|さんげんめ}");
 		expect(listeningBodySupport("1日・2日・3日・4日・5日・6日・7日・8日・9日・10日")?.jp).toContain("{1日|ついたち}");
