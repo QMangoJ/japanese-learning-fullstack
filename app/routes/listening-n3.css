@@ -100,3 +100,6 @@ html.theme-dark .listening-scan figure,html.theme-dark .listening-answer-panels 
 .listening-nav small{color:var(--rm);font-size:11px;font-weight:700;letter-spacing:.08em}
 .listening-nav b{font-size:14px;font-weight:700;line-height:1.45}
 @media (max-width:650px){.listening-nav{grid-template-columns:1fr}}
+
+/* Keep the two primary playback controls visually distinct on compact players. */
+.listening-player__rewind{margin-left:6px}
