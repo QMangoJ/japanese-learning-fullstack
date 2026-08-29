@@ -254,6 +254,7 @@ export let authConfigured = false;
 export type AccountFeature = "favs" | "mistakes";
 export type LoginPrompt = { reason: AccountFeature; next: string } | null;
 export let LOGIN_PROMPT: LoginPrompt = null;
+export let loginSuggestDismissed = false;
 export let noRuby = false;
 export let hideJp = false;
 export let hideCn = false;
@@ -575,6 +576,17 @@ export function needsAccount() {
 	return accountReady && authConfigured && !ACCOUNT;
 }
 
+export function shouldSuggestLogin() {
+	return needsAccount() && !loginSuggestDismissed && !LOGIN_PROMPT;
+}
+
+export function dismissLoginSuggest() {
+	if (loginSuggestDismissed) return;
+	loginSuggestDismissed = true;
+	lsSet("loginSuggestDismissed", "1");
+	emit();
+}
+
 export function closeLoginPrompt() {
 	if (!LOGIN_PROMPT) return;
 	LOGIN_PROMPT = null;
@@ -588,6 +600,10 @@ export function googleLoginHref(next?: string) {
 
 export function requestAccount(reason: AccountFeature, next?: string) {
 	if (!needsAccount()) return true;
+	if (!loginSuggestDismissed) {
+		loginSuggestDismissed = true;
+		lsSet("loginSuggestDismissed", "1");
+	}
 	LOGIN_PROMPT = {
 		reason,
 		next: next || (reason === "favs" ? "/study/favs" : "/study/mistakes"),
@@ -1413,6 +1429,7 @@ export function resetStudyStateForTests() {
 	accountReady = false;
 	authConfigured = false;
 	LOGIN_PROMPT = null;
+	loginSuggestDismissed = false;
 	_favSyncing = false;
 	_favPendingPush = false;
 	_favReady = false;
@@ -1502,6 +1519,7 @@ export function hydrateFromStorage() {
 	if (l === "en" || l === "cn") LANG = l;
 	lastVisit = lsJson("lastVisit", {});
 	lastDay = lsJson("lastDay", {});
+	loginSuggestDismissed = lsGet("loginSuggestDismissed", "0") === "1";
 	FAV = lsJson("favs", {});
 	MISTAKES = cleanMistakes(lsJson("mistakes", []));
 	noRuby = lsGet("noruby", "0") === "1";
