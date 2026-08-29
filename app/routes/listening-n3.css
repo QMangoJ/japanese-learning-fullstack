@@ -102,4 +102,5 @@ html.theme-dark .listening-scan figure,html.theme-dark .listening-answer-panels 
 @media (max-width:650px){.listening-nav{grid-template-columns:1fr}}
 
 /* Keep the two primary playback controls visually distinct on compact players. */
-.listening-player__rewind{margin-left:6px}
+.listening-player__rewind{margin-left:10px}
+@media (max-width:650px){.listening-player__rewind{margin-left:14px}}
