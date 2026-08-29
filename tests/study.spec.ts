@@ -280,6 +280,28 @@ test.describe("study navigation", () => {
 		await expect(page.getByText(/Oops|unexpected error/i)).toHaveCount(0);
 	});
 
+	test("keeps mistake filters aligned at desktop and mobile widths", async ({ page }, testInfo) => {
+		await waitForStudy(page);
+		await openStudyNav(page, "mistakes");
+		await expect(page.locator(".mistake-filter-panel")).toBeVisible();
+
+		const grids = page.locator(".mistake-filter-grid");
+		await expect(grids).toHaveCount(2);
+		const expectedColumns = testInfo.project.name === "mobile-chrome" ? 2 : 4;
+		for (const grid of await grids.all()) {
+			const columns = await grid.evaluate((element) => getComputedStyle(element).gridTemplateColumns.split(" ").length);
+			expect(columns).toBe(expectedColumns);
+			await expect(grid.locator("button")).toHaveCount(4);
+		}
+
+		const widths = await page.locator(".mistake-study-entry").evaluate((entry) => ({
+			entry: entry.getBoundingClientRect().width,
+			button: (entry.querySelector("button") as HTMLElement).getBoundingClientRect().width,
+		}));
+		expect(Math.abs(widths.entry - widths.button)).toBeLessThan(1);
+		expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(await page.evaluate(() => document.documentElement.clientWidth));
+	});
+
 	test("opens the transitive/intransitive verb pairs", async ({ page }) => {
 		await waitForStudy(page);
 		const side = page.locator("#side .side-item", { hasText: /自他动词|Verb pairs/ });

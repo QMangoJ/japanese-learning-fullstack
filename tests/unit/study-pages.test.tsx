@@ -170,6 +170,16 @@ describe("MistakesPage", () => {
 		await user.click(screen.getByRole("button", { name: "删除" }));
 		expect(screen.getByText(/还没有记录/)).toBeInTheDocument();
 	});
+
+	it("keeps type and mastery filters in separate four-option groups", () => {
+		render(<LiveMistakes />);
+
+		const typeGroup = screen.getByRole("group", { name: "内容类型" });
+		const levelGroup = screen.getByRole("group", { name: "熟练度" });
+		expect(typeGroup.querySelectorAll(".mistake-filter-grid button")).toHaveLength(4);
+		expect(levelGroup.querySelectorAll(".mistake-filter-grid button")).toHaveLength(4);
+		expect(screen.getByRole("button", { name: "背诵模式（0）" })).toBeInTheDocument();
+	});
 });
 
 describe("SearchPage", () => {

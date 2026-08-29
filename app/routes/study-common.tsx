@@ -1129,28 +1129,36 @@ export function MistakesPage({ data }: { data: MistakesData }) {
 					{lx("保存", "Save")}
 				</button>
 			</div>
-			<div className="fc-filter" style={{ marginBottom: "8px" }}>
-				<button className={data.filter === "all" ? "on" : ""} data-mfilter="all" onClick={() => setMistakeFilter("all")}>
-					{lx("全部", "All")}（{data.typeCounts.all}）
-				</button>
-				{Object.entries(data.types).map(([key, label]) => (
-					<button className={data.filter === key ? "on" : ""} data-mfilter={key} key={key} onClick={() => setMistakeFilter(key)}>
-						{typeName(key, label)}（{data.typeCounts[key] ?? 0}）
-					</button>
-				))}
-			</div>
-			<div className="fc-filter" style={{ marginBottom: "14px" }}>
-				<button className={data.levelFilter === "all" ? "on" : ""} data-lfilter="all" onClick={() => setMistakeLevelFilter("all")}>
-					{lx("熟练度：全部", "Level: all")}（{data.levelCounts.all}）
-				</button>
-				{data.levelOrder.map((key) => (
-					<button className={data.levelFilter === key ? "on" : ""} data-lfilter={key} key={key} onClick={() => setMistakeLevelFilter(key)}>
-						{levelName(key, data.levels[key])}（{data.levelCounts[key] ?? 0}）
-					</button>
-				))}
-			</div>
-			<div className="study-entry">
-				<button data-mstudy="1" onClick={() => setMistakeStudy(true)}>{lx("背诵模式", "Study mode")}（{data.list.length}）</button>
+			<div className="mistake-filter-panel">
+				<div className="mistake-filter-group" role="group" aria-label={lx("内容类型", "Content type")}>
+					<div className="mistake-filter-label">{lx("内容类型", "Content type")}</div>
+					<div className="fc-filter mistake-filter-grid">
+						<button className={data.filter === "all" ? "on" : ""} data-mfilter="all" onClick={() => setMistakeFilter("all")}>
+							{lx("全部", "All")}（{data.typeCounts.all}）
+						</button>
+						{Object.entries(data.types).map(([key, label]) => (
+							<button className={data.filter === key ? "on" : ""} data-mfilter={key} key={key} onClick={() => setMistakeFilter(key)}>
+								{typeName(key, label)}（{data.typeCounts[key] ?? 0}）
+							</button>
+						))}
+					</div>
+				</div>
+				<div className="mistake-filter-group" role="group" aria-label={lx("熟练度", "Mastery")}>
+					<div className="mistake-filter-label">{lx("熟练度", "Mastery")}</div>
+					<div className="fc-filter mistake-filter-grid">
+						<button className={data.levelFilter === "all" ? "on" : ""} data-lfilter="all" onClick={() => setMistakeLevelFilter("all")}>
+							{lx("全部", "All")}（{data.levelCounts.all}）
+						</button>
+						{data.levelOrder.map((key) => (
+							<button className={data.levelFilter === key ? "on" : ""} data-lfilter={key} key={key} onClick={() => setMistakeLevelFilter(key)}>
+								{levelName(key, data.levels[key])}（{data.levelCounts[key] ?? 0}）
+							</button>
+						))}
+					</div>
+				</div>
+				<div className="study-entry mistake-study-entry">
+					<button data-mstudy="1" onClick={() => setMistakeStudy(true)}>{lx("背诵模式", "Study mode")}（{data.list.length}）</button>
+				</div>
 			</div>
 			{data.list.length ? (
 				data.list.map((m) => {
