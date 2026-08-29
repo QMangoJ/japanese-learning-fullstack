@@ -15,7 +15,8 @@
 .listening-book-pages{display:grid;gap:18px;margin:18px 0 calc(28px + env(safe-area-inset-bottom))}.listening-book-page{overflow:hidden;border:1px solid var(--rl);border-radius:12px;background:#fff;color:#20242a;box-shadow:0 5px 16px rgba(20,28,38,.05)}.listening-book-page>header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 15px;border-bottom:2px solid #20242a;background:#f1eee7;color:#20242a;font-size:12px;font-weight:800}.listening-book-page>header span{color:#1b5e95}.listening-book-page__body{padding:20px 22px}.listening-book-block__heading{margin:0 0 14px;padding-bottom:8px;border-bottom:1px solid #d8d2c8;color:#20242a;font:700 21px/1.4 "Noto Serif JP",sans-serif}.listening-book-block__tip{margin:0 0 15px;padding:11px 13px;border-left:4px solid #2477b8;background:#eaf4fc;color:#20242a;font-size:14px;font-weight:800;line-height:1.8}.listening-book-block__paragraph,.listening-book-block__example,.listening-book-block__note{margin:0 0 12px;color:#20242a;font:15px/1.95 "Noto Serif JP",sans-serif}.listening-book-block__example{padding:10px 13px;border:1px solid #d8d2c8;background:#fbfaf7}.listening-book-block__note{color:#626b75;font-size:13px}.listening-book-block__list,.listening-book-block__options,.listening-book-question>ol{display:grid;gap:7px;margin:0 0 15px;padding:0;list-style:none}.listening-book-block__list li,.listening-book-block__options li,.listening-book-question>ol li{padding:8px 10px;border:1px solid #d8d2c8;border-radius:7px;color:#20242a;font:14px/1.75 "Noto Serif JP",sans-serif}.listening-book-block__options li,.listening-book-question>ol li{background:#fbfaf7}.listening-book-question{margin:16px 0;padding:13px;border:1px solid #9cc5e5;border-radius:10px;background:#f7fbfe}.listening-book-question header{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:10px}.listening-book-question h4{margin:0;color:#20242a;font:700 16px/1.7 "Noto Serif JP",sans-serif}@media (max-width:650px){.listening-book-page__body{padding:15px 13px}.listening-book-block__heading{font-size:19px}.listening-book-block__paragraph,.listening-book-block__example{font-size:14px;line-height:1.88}.listening-book-question{padding:11px}.listening-book-question header{flex-direction:column}.listening-book-question .listening-exercise__tracks{justify-content:flex-start}}
 .listening-text-answers__body{white-space:pre-wrap;font-family:"Noto Serif JP",sans-serif;line-height:1.9}
 
-.listening-lesson{display:grid;gap:14px;margin:16px 0 8px}
+.listening-lesson{display:grid;grid-template-columns:minmax(0,1fr);gap:14px;min-width:0;max-width:100%;margin:16px 0 8px}
+.listening-lesson>*{min-width:0;max-width:100%;overflow-wrap:anywhere}
 .listening-lesson__hero{padding:14px 16px;border:1px solid color-mix(in srgb,var(--blue) 34%,var(--rl));border-radius:12px;background:linear-gradient(135deg,var(--blue-soft),var(--rp))}
 .listening-lesson__hero>span{color:var(--blue);font-size:12px;font-weight:800}
 .listening-lesson__hero h2{margin:4px 0 0;color:var(--ri);font:700 22px/1.35 "Noto Serif JP",serif}
@@ -104,3 +105,13 @@ html.theme-dark .listening-scan figure,html.theme-dark .listening-answer-panels 
 /* Keep the two primary playback controls visually distinct on compact players. */
 .listening-player__rewind{margin-left:10px}
 @media (max-width:650px){.listening-player__rewind{margin-left:14px}}
+
+/* On phones, keep the generous tap gap while moving speed controls to their own row. */
+@media (max-width:430px){
+  .listening-player,.listening-player__top{min-width:0;max-width:100%}
+  .listening-player__top{display:grid;grid-template-columns:38px 54px minmax(0,1fr);grid-template-areas:"play rewind meta" "speed speed speed";column-gap:8px;row-gap:10px}
+  .listening-player__toggle{grid-area:play}
+  .listening-player__rewind{grid-area:rewind}
+  .listening-player__top>div:nth-of-type(1){grid-area:meta}
+  .listening-speed{grid-area:speed;min-width:0;margin-left:0;justify-content:flex-end;flex-wrap:nowrap}
+}

@@ -378,6 +378,40 @@ test.describe("study navigation", () => {
 		await expect.poll(async () => page.locator("audio").evaluate((el: HTMLAudioElement) => el.currentTime)).toBeCloseTo(5, 1);
 	});
 
+	test("listening player keeps its touch-safe controls inside the mobile viewport", async ({ page }) => {
+		await waitForStudy(page);
+		await pickType(page, "listening");
+		await page.goto("/study/day/4-3");
+		await dismissViteOverlay(page);
+		await expect(page.locator(".listening-player")).toBeVisible({ timeout: 15_000 });
+
+		const layout = await page.evaluate(() => {
+			const viewportWidth = document.documentElement.clientWidth;
+			const play = document.querySelector(".listening-player__toggle")!.getBoundingClientRect();
+			const rewind = document.querySelector(".listening-player__rewind")!.getBoundingClientRect();
+			const player = document.querySelector(".listening-player")!.getBoundingClientRect();
+			return {
+				viewportWidth,
+				documentWidth: document.documentElement.scrollWidth,
+				playerLeft: player.left,
+				playerRight: player.right,
+				controlGap: rewind.left - play.right,
+				overflowing: Array.from(document.querySelectorAll<HTMLElement>("body *"))
+					.map((element) => {
+						const rect = element.getBoundingClientRect();
+						return { tag: element.tagName, className: element.className, left: rect.left, right: rect.right, width: rect.width };
+					})
+					.filter((rect) => rect.left < -1 || rect.right > viewportWidth + 1 || rect.width > viewportWidth + 1)
+					.slice(0, 12),
+			};
+		});
+
+		expect(layout.documentWidth, JSON.stringify(layout.overflowing)).toBeLessThanOrEqual(layout.viewportWidth);
+		expect(layout.playerLeft).toBeGreaterThanOrEqual(0);
+		expect(layout.playerRight).toBeLessThanOrEqual(layout.viewportWidth);
+		expect(layout.controlGap).toBeGreaterThanOrEqual(20);
+	});
+
 	test("listening keyboard controls playback and seeks without changing sections", async ({ page }) => {
 		await waitForStudy(page);
 		await pickType(page, "listening");
