@@ -86,6 +86,7 @@ import {
 	type TypeKey,
 } from "./store";
 import { selectionPopoverPosition } from "./selection-popover-position";
+import { fixedViewportOffset } from "./fixed-viewport";
 
 function useStudyTick() {
 	return useSyncExternalStore(subscribe, getVersion, () => 0);
@@ -118,6 +119,56 @@ class StudyPageErrorBoundary extends Component<{ resetKey: string; children: Rea
 
 function useDisplayTick() {
 	return useSyncExternalStore(subscribeDisplay, getDisplayVersion, () => 0);
+}
+
+function FixedViewportProbe() {
+	useEffect(() => {
+		const viewport = window.visualViewport;
+		const root = document.documentElement;
+		const probe = document.getElementById("fixedViewportProbe");
+		if (!viewport || !probe) return;
+
+		let frame = 0;
+		let settleTimer = 0;
+		const update = () => {
+			window.cancelAnimationFrame(frame);
+			frame = window.requestAnimationFrame(() => {
+				const offset = fixedViewportOffset(viewport.height, viewport.offsetTop, probe.getBoundingClientRect().height);
+				root.style.setProperty("--fixed-viewport-y", `${Math.round(offset * 100) / 100}px`);
+			});
+		};
+		const settle = () => {
+			update();
+			window.clearTimeout(settleTimer);
+			settleTimer = window.setTimeout(update, 180);
+		};
+
+		update();
+		viewport.addEventListener("resize", update);
+		viewport.addEventListener("scroll", update);
+		viewport.addEventListener("scrollend", settle);
+		window.addEventListener("resize", update);
+		window.addEventListener("orientationchange", settle);
+		window.addEventListener("pageshow", settle);
+		document.addEventListener("touchend", settle, { passive: true });
+		document.addEventListener("focusout", settle);
+
+		return () => {
+			window.cancelAnimationFrame(frame);
+			window.clearTimeout(settleTimer);
+			viewport.removeEventListener("resize", update);
+			viewport.removeEventListener("scroll", update);
+			viewport.removeEventListener("scrollend", settle);
+			window.removeEventListener("resize", update);
+			window.removeEventListener("orientationchange", settle);
+			window.removeEventListener("pageshow", settle);
+			document.removeEventListener("touchend", settle);
+			document.removeEventListener("focusout", settle);
+			root.style.removeProperty("--fixed-viewport-y");
+		};
+	}, []);
+
+	return <div className="fixed-viewport-probe" id="fixedViewportProbe" aria-hidden="true" />;
 }
 
 function preventToggleScroll(event: { preventDefault(): void }) {
@@ -944,6 +995,7 @@ export function StudyApp() {
 
 	return (
 		<>
+			<FixedViewportProbe />
 			{isTrial ? (
 				<div className="trial-context">
 					<span>免费试学</span>
