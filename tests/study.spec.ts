@@ -498,12 +498,15 @@ test.describe("study typebar", () => {
 		expect(skillbarTop).toBeGreaterThanOrEqual(typebarBottom - 1);
 	});
 
-	test("hides the typebar on tool pages and hides skills off N3", async ({ page }, testInfo) => {
+	test("hides the typebar on tool pages, shows N2 listening, and hides skills off N4", async ({ page }, testInfo) => {
 		await waitForStudy(page);
 		await openStudyNav(page, "mistakes");
 		await expect(page.locator("#typebar")).toHaveCount(0);
 
 		if (testInfo.project.name === "desktop-chrome") {
+			await page.locator(".side-seg button", { hasText: "N2" }).click();
+			await expect(page.locator("#side [data-gotype='reading']")).toHaveCount(0);
+			await expect(page.locator("#side [data-gotype='listening']")).toBeVisible();
 			await page.locator(".side-seg button", { hasText: "N4" }).click();
 			await expect(page.locator("#side [data-gotype='reading']")).toHaveCount(0);
 			await expect(page.locator("#side [data-gotype='listening']")).toHaveCount(0);
@@ -512,9 +515,35 @@ test.describe("study typebar", () => {
 		await page.locator('.bottom button[data-nav="home"]').click();
 		await expect(page.locator("#typebar")).toBeVisible();
 		await page.locator("#lvChip").click();
+		await page.locator(".sheet-item", { hasText: "N2" }).click();
+		await expect(page.locator("#skillbar button[data-ty='listening']")).toBeVisible();
+		await expect(page.locator("#skillbar button[data-ty='reading']")).toHaveCount(0);
+		await page.locator("#lvChip").click();
 		await page.locator(".sheet-item", { hasText: "N4" }).click();
 		await expect(page.locator("#skillbar")).toHaveCount(0);
 		await expect(page.locator("#typebar button[data-ty='reading']")).toHaveCount(0);
+	});
+
+	test("opens N2 listening from original book scans", async ({ page }, testInfo) => {
+		await waitForStudy(page);
+		if (testInfo.project.name === "desktop-chrome") {
+			await page.locator(".side-seg button", { hasText: "N2" }).click();
+			await page.locator("#side [data-gotype='listening']").click();
+		} else {
+			await page.locator("#lvChip").click();
+			await page.locator(".sheet-item", { hasText: "N2" }).click();
+			await pickType(page, "listening");
+		}
+		await expect(page.locator("#title")).toContainText(/听解|Listening|章|Ch\.|节/);
+		await expect(page.locator(".week-card").first()).toBeVisible({ timeout: 20_000 });
+		if (await page.locator(".day-item").first().isVisible()) await page.locator(".day-item").first().click();
+		else await page.goto("/study/day/1-1");
+		await dismissViteOverlay(page);
+		await expect(page.locator(".listening-scan img").first()).toBeVisible({ timeout: 15_000 });
+		await expect(page.locator(".listening-scan img").first()).toHaveAttribute("src", /\/listening\/n2\/pages\/012\.jpg$/);
+		await expect(page.locator("audio")).toHaveAttribute("src", /\/audio\/n2\/cd1\/CD01_02\.mp3$/);
+		await page.getByRole("button", { name: "答案・原文" }).click();
+		await expect(page.locator(".listening-scan img").first()).toHaveAttribute("src", /\/listening\/n2\/pages\/072\.jpg$/);
 	});
 });
 

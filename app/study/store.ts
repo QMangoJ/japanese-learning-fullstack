@@ -1,7 +1,7 @@
 import henkeiFallback from "../data/common-henkei.json";
 import jitaFallback from "../data/common-jita.json";
 import kougoFallback from "../data/common-kougo.json";
-import { listeningBundle, readingBundle } from "./catalogs";
+import { listeningBundle, listeningN2Bundle, readingBundle } from "./catalogs";
 
 export type ModuleKey =
 	| "grammar"
@@ -12,6 +12,7 @@ export type ModuleKey =
 	| "n2grammar"
 	| "n2vocab"
 	| "n2kanji"
+	| "n2listening"
 	| "n4grammar"
 	| "n4vocab"
 	| "n4kanji";
@@ -57,6 +58,7 @@ export const MODLABELS: Record<ModuleKey, [string, string]> = {
 	listening: ["N3 听解", "N3 Listening"],
 	n2vocab: ["N2 词汇", "N2 Vocabulary"],
 	n2kanji: ["N2 汉字", "N2 Kanji"],
+	n2listening: ["N2 听解", "N2 Listening"],
 	n4grammar: ["N4 语法", "N4 Grammar"],
 	n4vocab: ["N4 词汇", "N4 Vocabulary"],
 	n4kanji: ["N4 汉字", "N4 Kanji"],
@@ -70,6 +72,7 @@ export const BOOK_TITLE: Record<ModuleKey, [string, string]> = {
 	listening: ["N3听解训练", "JLPT Prep N3 Listening"],
 	n2vocab: ["N2词汇训练", "JLPT Prep N2 Vocabulary"],
 	n2kanji: ["N2汉字训练", "JLPT Prep N2 Kanji"],
+	n2listening: ["N2听解训练", "JLPT Prep N2 Listening"],
 	n4grammar: ["N4语法训练", "JLPT Prep N4 Grammar"],
 	n4vocab: ["N4词汇训练", "JLPT Prep N4 Vocabulary"],
 	n4kanji: ["N4汉字训练", "JLPT Prep N4 Kanji"],
@@ -83,6 +86,7 @@ export const MODULES: ModuleKey[] = [
 	"n2grammar",
 	"n2vocab",
 	"n2kanji",
+	"n2listening",
 	"n4grammar",
 	"n4vocab",
 	"n4kanji",
@@ -109,6 +113,7 @@ export const FAV_MOD_ORDER = [
 	"n4kanji",
 	"reading",
 	"listening",
+	"n2listening",
 	"selection",
 ];
 export const FAV_MOD_LABEL: Record<string, string> = {
@@ -123,6 +128,7 @@ export const FAV_MOD_LABEL: Record<string, string> = {
 	n4kanji: "N4汉字",
 	reading: "N3读解",
 	listening: "N3听解",
+	n2listening: "N2听解",
 	selection: "划词收藏",
 };
 
@@ -148,6 +154,7 @@ const MOD2LT: Record<ModuleKey, [LevelKey, TypeKey]> = {
 	n2grammar: ["n2", "grammar"],
 	n2vocab: ["n2", "vocab"],
 	n2kanji: ["n2", "kanji"],
+	n2listening: ["n2", "listening"],
 	n4grammar: ["n4", "grammar"],
 	n4vocab: ["n4", "vocab"],
 	n4kanji: ["n4", "kanji"],
@@ -161,6 +168,7 @@ const LT2MOD: Record<string, ModuleKey> = {
 	"n2:grammar": "n2grammar",
 	"n2:vocab": "n2vocab",
 	"n2:kanji": "n2kanji",
+	"n2:listening": "n2listening",
 	"n4:grammar": "n4grammar",
 	"n4:vocab": "n4vocab",
 	"n4:kanji": "n4kanji",
@@ -279,8 +287,10 @@ export let V4: any = emptyBundle;
 export let K4: any = emptyBundle;
 export let R: any = readingBundle();
 export let L: any = listeningBundle();
+export let L2: any = listeningN2Bundle();
 DATA.reading = R;
 DATA.listening = L;
+DATA.n2listening = L2;
 
 export let fc: { week: number; deck: any[]; idx: number; flipped: boolean } = {
 	week: 0,
@@ -343,10 +353,11 @@ export function isReading(mod: string = MODULE) {
 	return mod === "reading";
 }
 export function isListening(mod: string = MODULE) {
-	return mod === "listening";
+	return mod === "listening" || mod === "n2listening";
 }
 export function moduleFrom(lv: string, ty: string): ModuleKey {
-	if (ty === "reading" || ty === "listening") return lv === "n3" ? ty : LT2MOD[`${lv}:grammar`] || "grammar";
+	if (ty === "reading") return lv === "n3" ? "reading" : LT2MOD[`${lv}:grammar`] || "grammar";
+	if (ty === "listening") return LT2MOD[`${lv}:listening`] || "listening";
 	return LT2MOD[`${lv}:${ty}`] || "grammar";
 }
 export function deriveLT() {
@@ -362,6 +373,7 @@ export function cur(mod: string = MODULE) {
 			kanji: K,
 			n2vocab: V2,
 			n2kanji: K2,
+			n2listening: L2,
 			n4grammar: G4,
 			n4vocab: V4,
 			n4kanji: K4,
@@ -411,7 +423,8 @@ export function setLang(lang: Lang) {
 	emit();
 }
 export function typeForLevel(lv: LevelKey, ty: TypeKey): TypeKey {
-	if ((ty === "reading" || ty === "listening") && lv !== "n3") return "grammar";
+	if (ty === "reading" && lv !== "n3") return "grammar";
+	if (ty === "listening" && lv !== "n3" && lv !== "n2") return "grammar";
 	return ty;
 }
 export function applyDisplayClasses() {
@@ -932,6 +945,20 @@ function buildIndex() {
 				dayTitle: w.title,
 			});
 		}
+	for (const w of L2.weeks || [])
+		for (const d of w.days) {
+			searchIndex!.push({
+				module: "n2listening",
+				w: w.n,
+				d: d.day,
+				i: 0,
+				key: d.title || "",
+				reading: "",
+				extra: (d.title_cn || "") + " " + (d.title_en || "") + " " + (w.title || ""),
+				sub: d.title_cn || "",
+				dayTitle: w.title,
+			});
+		}
 	return searchIndex;
 }
 
@@ -1436,6 +1463,7 @@ export function resetStudyStateForTests() {
 	K4 = { weeks: [] };
 	R = readingBundle();
 	L = listeningBundle();
+	L2 = listeningN2Bundle();
 	DATA = {
 		grammar: G,
 		vocab: V,
@@ -1443,6 +1471,7 @@ export function resetStudyStateForTests() {
 		n2grammar: G2,
 		n2vocab: V2,
 		n2kanji: K2,
+		n2listening: L2,
 		n4grammar: G4,
 		n4vocab: V4,
 		n4kanji: K4,
