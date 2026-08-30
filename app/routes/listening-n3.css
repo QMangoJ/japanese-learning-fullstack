@@ -115,3 +115,32 @@ html.theme-dark .listening-scan figure,html.theme-dark .listening-answer-panels 
   .listening-player__top>div:nth-of-type(1){grid-area:meta}
   .listening-speed{grid-area:speed;min-width:0;margin-left:0;justify-content:flex-end;flex-wrap:nowrap}
 }
+
+/* Mobile: keep playback controls in the thumb zone, immediately above the
+   fixed bottom navigation. The viewport offset mirrors nav.bottom so iOS's
+   expanding address bar cannot separate the two fixed surfaces. */
+@media (max-width:899px){
+  body:has(.reader-page--embedded .listening-player){--listening-player-clearance:120px}
+  .reader-page--embedded .listening-player{
+    position:fixed;
+    inset:auto calc(10px + env(safe-area-inset-right)) calc(var(--bottom-nav-height) + env(safe-area-inset-bottom) + 8px) calc(10px + env(safe-area-inset-left));
+    z-index:29;
+    box-sizing:border-box;
+    width:auto;
+    max-width:none;
+    margin:0;
+    border-radius:14px;
+    box-shadow:0 -8px 28px rgba(6,16,29,.18);
+    transform:translate3d(0,var(--fixed-viewport-y,0px),0);
+    transform-origin:left bottom;
+    will-change:transform;
+  }
+  .reader-page--embedded .reader-main:has(.listening-player){padding-bottom:180px}
+  body:has(.reader-page--embedded .listening-player) .daynav-fab{
+    bottom:calc(var(--bottom-nav-height) + env(safe-area-inset-bottom) + var(--listening-player-clearance));
+  }
+}
+
+@media (max-width:430px){
+  body:has(.reader-page--embedded .listening-player){--listening-player-clearance:176px}
+}
