@@ -302,6 +302,24 @@ test.describe("study navigation", () => {
 		expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(await page.evaluate(() => document.documentElement.clientWidth));
 	});
 
+	test("reveals all Kanji self-test answers without completing the questions", async ({ page }) => {
+		await waitForStudy(page);
+		const side = page.locator("#side .side-item", { hasText: /汉字自测|Kanji Self-test/ });
+		if (await side.isVisible()) await side.click();
+		else {
+			await page.locator('.bottom button[data-nav="common"]').click();
+			await page.getByRole("button", { name: /汉字自测|Kanji Self-test/ }).click();
+		}
+
+		await page.getByRole("button", { name: /10题|10 questions/ }).click();
+		await page.getByRole("button", { name: /开始随机练习|Start randomized practice/ }).click();
+		await page.getByRole("button", { name: /显示全部答案|Show all answers/ }).click();
+		await expect(page.locator(".kanji-exam-correction.answer-key")).toHaveCount(10);
+		await expect(page.getByText(/还需完成 10 题|10 remaining/)).toBeVisible();
+		await expect(page.getByRole("button", { name: /隐藏全部答案|Hide all answers/ })).toBeVisible();
+		expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(await page.evaluate(() => document.documentElement.clientWidth));
+	});
+
 	test("opens the transitive/intransitive verb pairs", async ({ page }) => {
 		await waitForStudy(page);
 		const side = page.locator("#side .side-item", { hasText: /自他动词|Verb pairs/ });
