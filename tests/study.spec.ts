@@ -452,7 +452,44 @@ test.describe("study navigation", () => {
 		expect(layout.controlGap).toBeGreaterThanOrEqual(20);
 	});
 
-	test("bottom navigation remains at the viewport edge after scrolling a long listening lesson", async ({ page }) => {
+	test("places the mobile listening player above the bottom navigation", async ({ page }, testInfo) => {
+		test.skip(testInfo.project.name !== "mobile-chrome", "mobile placement only");
+		await waitForStudy(page);
+		await pickType(page, "listening");
+		await page.goto("/study/day/4-3");
+		await dismissViteOverlay(page);
+		await expect(page.locator(".listening-player")).toBeVisible({ timeout: 15_000 });
+		await page.evaluate(() => window.scrollTo(0, 900));
+		await page.waitForTimeout(250);
+
+		const layout = await page.evaluate(() => {
+			const player = document.querySelector<HTMLElement>(".listening-player")!;
+			const nav = document.querySelector<HTMLElement>("nav.bottom")!;
+			const dayNav = document.querySelector<HTMLElement>("button.daynav-fab.next")!;
+			const readerMain = document.querySelector<HTMLElement>(".reader-main")!;
+			const playerRect = player.getBoundingClientRect();
+			const navRect = nav.getBoundingClientRect();
+			const dayNavRect = dayNav.getBoundingClientRect();
+			return {
+				position: getComputedStyle(player).position,
+				gapAboveBottomNav: navRect.top - playerRect.bottom,
+				dayNavGap: playerRect.top - dayNavRect.bottom,
+				playerBottom: playerRect.bottom,
+				viewportHeight: window.innerHeight,
+				readerPaddingBottom: Number.parseFloat(getComputedStyle(readerMain).paddingBottom),
+			};
+		});
+
+		expect(layout.position).toBe("fixed");
+		expect(layout.gapAboveBottomNav).toBeGreaterThanOrEqual(7);
+		expect(layout.gapAboveBottomNav).toBeLessThanOrEqual(9);
+		expect(layout.dayNavGap).toBeGreaterThanOrEqual(6);
+		expect(layout.playerBottom).toBeLessThan(layout.viewportHeight);
+		expect(layout.readerPaddingBottom).toBeGreaterThanOrEqual(180);
+	});
+
+	test("bottom navigation remains at the viewport edge after scrolling a long listening lesson", async ({ page }, testInfo) => {
+		test.skip(testInfo.project.name !== "mobile-chrome", "mobile bottom navigation only");
 		await waitForStudy(page);
 		await pickType(page, "listening");
 		await page.goto("/study/day/5-1");
