@@ -103,8 +103,10 @@
 .kanji-exam-perfect{color:var(--green);font-size:13px;font-weight:800}
 
 .kanji-exam-question-group{overflow:hidden;margin-bottom:18px;border:1px solid #d8d2c3;border-radius:14px;background:var(--card);box-shadow:var(--shadow)}
-.kanji-exam-question-group__head{display:flex;align-items:center;gap:12px;padding:12px 20px;background:#253c59;color:#fff}
+.kanji-exam-question-group__head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 20px;background:#253c59;color:#fff}
 .kanji-exam-question-group__head h2{margin:0;font-size:15px}
+.kanji-exam-question-group__head button{flex:none;padding:6px 11px;border:1px solid rgba(255,255,255,.42);border-radius:999px;background:rgba(255,255,255,.08);color:#fff;font-size:11px;font-weight:800;cursor:pointer}
+.kanji-exam-question-group__head button.on{border-color:#fff;background:#fff;color:#253c59}
 .kanji-exam-question-section{padding:20px}
 .kanji-exam-question-section+.kanji-exam-question-section{border-top:6px solid var(--bg)}
 .kanji-exam-question-section>h3{margin:0 0 8px;padding-bottom:10px;border-bottom:1px solid var(--line);color:var(--sub);font-size:12px;font-weight:600}
@@ -130,6 +132,7 @@
 .kanji-exam-correction{display:flex;align-items:center;gap:9px;margin-top:8px;margin-left:66px;color:var(--red);font-size:13px}
 .kanji-exam-correction span{font-size:10px;font-weight:700}
 .kanji-exam-correction strong{font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:16px}
+.kanji-exam-correction.answer-key{color:var(--green)}
 .kanji-exam-submitbar{position:sticky;bottom:calc(var(--bottom-nav-height) + env(safe-area-inset-bottom) + 8px);z-index:16;display:flex;align-items:center;justify-content:flex-end;gap:14px;margin-top:18px;padding:11px 14px;border:1px solid var(--line);border-radius:14px;background:color-mix(in srgb,var(--card) 92%,transparent);box-shadow:0 8px 28px rgba(0,0,0,.14);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
 .kanji-exam-submitbar span{color:var(--sub);font-size:12px}
 .kanji-exam-submitbar button{padding:10px 16px;border:0;border-radius:10px;background:var(--accent);color:#fff;font-size:13px;font-weight:800;cursor:pointer}

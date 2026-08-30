@@ -103,6 +103,7 @@ export function KanjiExamPage() {
 	const [questionCount, setQuestionCount] = useState<number | "all">("all");
 	const [activeQuestions, setActiveQuestions] = useState<KanjiExamQuestion[]>([]);
 	const [retrying, setRetrying] = useState(false);
+	const [showAllAnswers, setShowAllAnswers] = useState(false);
 	const [englishSupport, setEnglishSupport] = useState(() => readEnglishSupport() ?? interfaceEnglish);
 	const resultRef = useRef<HTMLDivElement>(null);
 
@@ -143,6 +144,7 @@ export function KanjiExamPage() {
 		setActiveQuestions(selected);
 		setRetrying(false);
 		setSubmitted(false);
+		setShowAllAnswers(false);
 		setStarted(true);
 		window.scrollTo({ top: 0, behavior: "smooth" });
 	};
@@ -175,6 +177,7 @@ export function KanjiExamPage() {
 		setHistory(next);
 		storeHistory(next);
 		setSubmitted(true);
+		setShowAllAnswers(true);
 		requestAnimationFrame(() => resultRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }));
 	};
 
@@ -183,6 +186,7 @@ export function KanjiExamPage() {
 		setRetrying(true);
 		setAnswers({});
 		setSubmitted(false);
+		setShowAllAnswers(false);
 		window.scrollTo({ top: 0, behavior: "smooth" });
 	};
 
@@ -312,7 +316,7 @@ export function KanjiExamPage() {
 	return (
 		<div className="kanji-exam-page kanji-exam-paper">
 			<div className="kanji-exam-toolbar">
-				<button onClick={() => { setStarted(false); setSubmitted(false); setRetrying(false); setActiveQuestions([]); }}>{lx("‹ 返回题库", "‹ Back to sets")}</button>
+				<button onClick={() => { setStarted(false); setSubmitted(false); setRetrying(false); setShowAllAnswers(false); setActiveQuestions([]); }}>{lx("‹ 返回题库", "‹ Back to sets")}</button>
 				<div><strong>{batchTitle}</strong><span>{retrying ? lx("错题重练", "Retry incorrect") : modeLabel(mode)} · {questions.length}{lx("题", " questions")}</span></div>
 				<em>{answeredCount}/{questions.length}</em>
 			</div>
@@ -335,7 +339,17 @@ export function KanjiExamPage() {
 			) : null}
 
 			<section className="kanji-exam-question-group">
-				<div className="kanji-exam-question-group__head"><h2>{lx("随机试题", "Randomized questions")}</h2></div>
+				<div className="kanji-exam-question-group__head">
+					<h2>{lx("随机试题", "Randomized questions")}</h2>
+					<button
+						type="button"
+						className={showAllAnswers ? "on" : ""}
+						aria-pressed={showAllAnswers}
+						onClick={() => setShowAllAnswers((current) => !current)}
+					>
+						{showAllAnswers ? lx("隐藏全部答案", "Hide all answers") : lx("显示全部答案", "Show all answers")}
+					</button>
+				</div>
 				<div className="kanji-exam-question-section">
 					<h3>{lx("请完成全部题目后交卷。读音题填写平假名，汉字题只填写标记假名对应的汉字。", "Answer every question before submitting. Use hiragana for readings and only the marked kanji for writing questions.")}</h3>
 					{questions.map((question, index) => {
@@ -363,7 +377,11 @@ export function KanjiExamPage() {
 										/>
 										{submitted ? <i>{correct ? "✓" : "×"}</i> : null}
 									</label>
-									{submitted && !correct ? <div className="kanji-exam-correction"><span>{lx("正确答案", "Answer")}</span><strong>{question.answer}</strong></div> : null}
+									{showAllAnswers || (submitted && !correct) ? (
+										<div className={`kanji-exam-correction${!submitted || correct ? " answer-key" : ""}`}>
+											<span>{lx("正确答案", "Answer")}</span><strong>{question.answer}</strong>
+										</div>
+									) : null}
 								</div>
 							</div>
 						);
@@ -373,7 +391,7 @@ export function KanjiExamPage() {
 
 			<div className="kanji-exam-submitbar">
 				{submitted ? (
-					<button onClick={() => { setStarted(false); setSubmitted(false); setRetrying(false); setActiveQuestions([]); }}>{lx("完成并返回题库", "Finish and return")}</button>
+					<button onClick={() => { setStarted(false); setSubmitted(false); setRetrying(false); setShowAllAnswers(false); setActiveQuestions([]); }}>{lx("完成并返回题库", "Finish and return")}</button>
 				) : (
 					<>
 						<span>{remainingCount > 0 ? lx(`还需完成 ${remainingCount} 题`, `${remainingCount} remaining`) : lx("已完成全部题目，可以交卷", "All questions answered")}</span>
