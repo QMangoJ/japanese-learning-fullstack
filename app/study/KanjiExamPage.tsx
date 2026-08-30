@@ -136,6 +136,19 @@ export function KanjiExamPage() {
 			return !current;
 		});
 	};
+	const removeWrongQuestion = (attemptId: string, wrongIndex: number) => {
+		setHistory((current) => {
+			const next = current.map((attempt) => {
+				if (attempt.id !== attemptId || !attempt.wrongQuestions) return attempt;
+				return {
+					...attempt,
+					wrongQuestions: attempt.wrongQuestions.filter((_, index) => index !== wrongIndex),
+				};
+			});
+			storeHistory(next);
+			return next;
+		});
+	};
 
 	const start = () => {
 		const shuffled = shuffleKanjiExamQuestions(baseQuestions);
@@ -291,14 +304,31 @@ export function KanjiExamPage() {
 										<>
 											<h3>{lx(`错题（${item.wrongQuestions.length}）`, `Incorrect (${item.wrongQuestions.length})`)}</h3>
 											{item.wrongQuestions.map((wrong, index) => (
-												<div key={`${wrong.questionId}-${index}`}>
-													<small>{wrong.lessonTitle} · {wrong.kind === "reading" ? lx("读音", "Reading") : lx("汉字", "Kanji")}</small>
+												<div className="kanji-exam-history__wrong-item" key={`${wrong.questionId}-${index}`}>
+													<div className="kanji-exam-history__wrong-head">
+														<small>{wrong.lessonTitle} · {wrong.kind === "reading" ? lx("读音", "Reading") : lx("汉字", "Kanji")}</small>
+														<button
+															type="button"
+															aria-label={lx(`删除错题：${wrong.prompt}`, `Remove incorrect item: ${wrong.prompt}`)}
+															onClick={() => removeWrongQuestion(item.id, index)}
+														>
+															{lx("删除", "Remove")}
+														</button>
+													</div>
 													<p><MarkedPrompt question={{ ...wrong, id: wrong.questionId, lessonId: "", page: 0 }} /></p>
 													<span>{lx("你的答案", "Your answer")}: <del>{wrong.userAnswer || "—"}</del>　{lx("正确答案", "Answer")}: <b>{wrong.answer}</b></span>
 												</div>
 											))}
 										</>
-									) : <p>{item.correct === item.total ? lx("这次全部答对了。", "Everything was correct.") : lx("旧记录没有保存错题详情。", "Question details were not stored for this older attempt.")}</p>}
+									) : (
+										<p>
+											{item.wrongQuestions
+												? lx("本次错题已全部清理。", "All incorrect items from this attempt have been removed.")
+												: item.correct === item.total
+													? lx("这次全部答对了。", "Everything was correct.")
+													: lx("旧记录没有保存错题详情。", "Question details were not stored for this older attempt.")}
+										</p>
+									)}
 								</div>
 							</details>
 						))}

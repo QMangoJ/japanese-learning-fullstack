@@ -320,6 +320,44 @@ test.describe("study navigation", () => {
 		expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(await page.evaluate(() => document.documentElement.clientWidth));
 	});
 
+	test("removes individual Kanji incorrect-history items", async ({ page }) => {
+		await page.addInitScript(() => {
+			localStorage.setItem("jp-kanji-exam-history-v1", JSON.stringify([
+				{
+					id: "browser-attempt",
+					batchId: "school-ch2",
+					batchTitle: "学校汉字 · 第2章",
+					mode: "mixed",
+					correct: 8,
+					total: 10,
+					completedAt: "2026-08-30T08:00:00.000Z",
+					wrongQuestions: [
+						{ questionId: "wrong-1", lessonTitle: "2章-1 レジ", kind: "reading", prompt: "あの店です。", target: "店", answer: "みせ", userAnswer: "てん" },
+						{ questionId: "wrong-2", lessonTitle: "2章-1 レジ", kind: "writing", prompt: "きっさてん", target: "てん", answer: "店", userAnswer: "点" },
+					],
+				},
+			]));
+		});
+		await waitForStudy(page);
+		const side = page.locator("#side .side-item", { hasText: /汉字自测|Kanji Self-test/ });
+		if (await side.isVisible()) await side.click();
+		else {
+			await page.locator('.bottom button[data-nav="common"]').click();
+			await page.getByRole("button", { name: /汉字自测|Kanji Self-test/ }).click();
+		}
+
+		const attempt = page.locator(".kanji-exam-history details").first();
+		await attempt.locator("summary").click();
+		await expect(attempt.getByText(/错题（2）|Incorrect \(2\)/)).toBeVisible();
+		await attempt.getByRole("button", { name: /删除错题：あの店です。|Remove incorrect item: あの店です。/ }).click();
+		await expect(attempt.getByText(/错题（1）|Incorrect \(1\)/)).toBeVisible();
+		await expect(attempt.locator("summary>span strong")).toHaveText("80");
+		const savedAttempt = await page.evaluate(() => JSON.parse(localStorage.getItem("jp-kanji-exam-history-v1") || "[]")[0]);
+		expect(savedAttempt).toMatchObject({ correct: 8, total: 10 });
+		expect(savedAttempt.wrongQuestions).toHaveLength(1);
+		expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(await page.evaluate(() => document.documentElement.clientWidth));
+	});
+
 	test("opens the transitive/intransitive verb pairs", async ({ page }) => {
 		await waitForStudy(page);
 		const side = page.locator("#side .side-item", { hasText: /自他动词|Verb pairs/ });
