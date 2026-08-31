@@ -1,0 +1,388 @@
+import type { ReadingDay } from "../reading-n3/types";
+
+// 第2週 4日目 通知① — printed pages 34–35
+export const w2d4: ReadingDay = {
+	week: 2,
+	day: 4,
+	label: "通知①",
+	labelKana: "つうち",
+	labelEn: "Notices ①",
+	printedPages: [34, 35],
+	answerSource: "book",
+
+	point: {
+		title: "メールの{形式|けいしき}に{慣|な}れよう！",
+		titleCn: "熟悉电子邮件的格式！",
+		titleEn: "Let’s get used to the proper e-mail format!",
+		figure: {
+			alt: "メールの構成図：冒頭に「ABCのスミスです。」、本文にご注文内容、末尾に（株）ABC 山田太郎とメールアドレス。横に「拝啓　時下ますます〜」が省略されることを示す",
+			cn: "电子邮件结构图：开头是「我是 ABC 的史密斯。」，正文是订货内容，末尾是公司名、山田太郎和邮箱。旁边标出「拜启　时下日益……」这类套话常被省略。",
+			en: "Diagram of an e-mail: it opens with “This is Smith of ABC,” the body is the order, and it ends with ABC, Yamada Tarō, and an address. A formal “Dear Sir, I hope this finds you well…” greeting is shown as often omitted.",
+		},
+		tips: [
+			{
+				jp: "★メールでは{形式的|けいしきてき}な{挨拶|あいさつ}などは{省略|しょうりゃく}されることが{多|おお}いです。",
+				cn: "★电子邮件里，形式上的寒暄等常常被省略。",
+				en: "Formal greetings are often left out in e-mail messages.",
+			},
+			{
+				jp: "★{普通|ふつう}の{手紙|てがみ}では{最後|さいご}に{来|く}る{所属|しょぞく}や{名前|なまえ}が、メールの{場合|ばあい}は{最初|さいしょ}に{来|き}ます。",
+				cn: "★一般书信里放在末尾的单位和姓名，电子邮件则放在开头。",
+				en: "In a letter your position and name come last; in e-mail they come first.",
+			},
+			{
+				jp: "★★{連絡先|れんらくさき}や{取引|とりひき}の{詳細|しょうさい}などの{情報|じょうほう}は{普通|ふつう}{後|うし}ろにまとめてあります。",
+				cn: "★★联系方式和交易详情等信息，一般汇总写在后面。",
+				en: "Information such as contact details and transaction particulars is usually gathered at the end.",
+			},
+			{
+				jp: "{例えば|たとえば}{商品|しょうひん}の{納品|のうひん}に{関|かん}するメールならこんな{言葉|ことば}が{出|で}てきます。",
+				cn: "比如有关商品交货的邮件里会出现下面这些词。",
+				en: "An e-mail about delivery of goods, for example, will use words like these.",
+			},
+		],
+		expressions: [
+			{ jp: "納品", kana: "のうひん", cn: "交货", en: "delivery of goods" },
+			{ jp: "遅延", kana: "ちえん", cn: "延迟", en: "delay" },
+			{ jp: "入荷", kana: "にゅうか", cn: "进货", en: "arrival of goods" },
+			{ jp: "手配", kana: "てはい", cn: "安排、办理", en: "arrangements" },
+			{ jp: "発送", kana: "はっそう", cn: "寄出、发货", en: "dispatch of goods" },
+			{ jp: "納期", kana: "のうき", cn: "交货期", en: "deadline (for delivery)" },
+			{ jp: "配送", kana: "はいそう", cn: "配送", en: "delivery" },
+		],
+	},
+
+	renshu: {
+		instruction: "{次|つぎ}の{会話文|かいわぶん}を{読|よ}んで、{後|あと}の{文|ぶん}から{正|ただ}しいものを{選|えら}ぼう。",
+		instructionCn: "阅读下面的对话，从后面的句子中选出正确的。（答案在下一页）",
+		instructionEn: "Read the conversation below and choose the correct statements from the sentences that follow. (Answers are on the next page.)",
+		blocks: [
+			{
+				type: "speech",
+				speaker: "A",
+				speakerCn: "A",
+				speakerEn: "A",
+				jp: "プリンター{来|く}るの、{金曜日|きんようび}だったよね？",
+				cn: "打印机是星期五到，对吧？",
+				en: "The printer was coming on Friday, right?",
+			},
+			{
+				type: "speech",
+				speaker: "B",
+				speakerCn: "B",
+				speakerEn: "B",
+				jp: "あ、それが、1{週間|しゅうかん}{遅|おく}れるんだそうです。18{日|にち}の{午前中|ごぜんちゅう}……。",
+				cn: "啊，那个啊，说是要晚一个星期。18 号上午……",
+				en: "Ah, about that—they say it will be a week late. The morning of the 18th…",
+			},
+			{
+				type: "speech",
+				speaker: "A",
+				speakerCn: "A",
+				speakerEn: "A",
+				jp: "え？　1{週間|しゅうかん}も？　だったら{秋葉原|あきはばら}に{行|い}けばよかったなあ。あれ、18{日|にち}って、{健康診断|けんこうしんだん}で{会社|かいしゃ}にだれもいないんじゃない？",
+				cn: "诶？晚整整一个星期？早知道去秋叶原买就好了。咦，18 号体检，公司里不是谁都不在吗？",
+				en: "What? A whole week? We should have just gone to Akihabara. Wait, on the 18th isn’t everyone out of the office for the health check?",
+			},
+			{
+				type: "speech",
+				speaker: "B",
+				speakerCn: "B",
+				speakerEn: "B",
+				jp: "あ、そうでしたね。えっと、{午後|ごご}には{戻|もど}ってこられると{思|おも}いますけど、ちょっと{時間|じかん}わからないですよね。19{日|にち}にしてもらいましょうか。",
+				cn: "啊，对哦。那个，下午应该能回来，但时间有点说不准。要不要改成 19 号？",
+				en: "Oh, that’s right. Um, I think we can be back in the afternoon, but the time is a bit uncertain. Shall we ask them to make it the 19th?",
+			},
+			{
+				type: "speech",
+				speaker: "A",
+				speakerCn: "A",
+				speakerEn: "A",
+				jp: "いや、{早|はや}いほうがいいから、{夕方|ゆうがた}とかにしてもらえないの？",
+				cn: "不，还是早一点好，能不能改成傍晚什么的？",
+				en: "No, sooner is better—couldn’t they make it evening or something?",
+			},
+			{
+				type: "speech",
+				speaker: "B",
+				speakerCn: "B",
+				speakerEn: "B",
+				jp: "じゃ、いちばん{遅|おそ}い{時間|じかん}にしてもらいます。",
+				cn: "那我让他们改到当天最晚的时间。",
+				en: "All right, I’ll ask them to make it the latest time.",
+			},
+		],
+		choices: [
+			{ jp: "プリンターは{最初|さいしょ}の{予定|よてい}では{今日|きょう}{届|とど}くはずだった。", cn: "按最初的预定，打印机今天就该送到。", en: "The printer was originally supposed to arrive today." },
+			{ jp: "プリンターは19{日|にち}の{遅|おそ}い{時間|じかん}に{届|とど}けてもらうことにした。", cn: "决定让打印机在 19 号较晚的时间送达。", en: "They decided to have the printer delivered late on the 19th." },
+			{ jp: "AさんもBさんも18{日|にち}の{午前中|ごぜんちゅう}は{会社|かいしゃ}にいない。", cn: "A 和 B 18 号上午都不在公司。", en: "Neither A nor B will be at the office on the morning of the 18th." },
+			{ jp: "AさんもBさんも19{日|にち}は{午後|ごご}にしか{会社|かいしゃ}にいない。", cn: "A 和 B 19 号只有下午才在公司。", en: "On the 19th, A and B will only be at the office in the afternoon." },
+			{ jp: "プリンターは{最初|さいしょ}の{予定|よてい}より1{週間|しゅうかん}{遅|おく}れて{届|とど}くことになる。", cn: "打印机将比最初预定晚一个星期送到。", en: "The printer will arrive one week later than originally planned." },
+		],
+		answers: [3, 5],
+	},
+
+	mondai: {
+		instruction: "{次|つぎ}のeメールを{読|よ}んで、{後|あと}の{問|と}いに{答|こた}えなさい。",
+		instructionCn: "阅读下面的电子邮件，回答后面的问题。（答案在别册 p.3）",
+		instructionEn: "Read the following e-mail and answer the questions that follow. (Answers are in the separate booklet, p. 3.)",
+		blocks: [
+			{
+				type: "title",
+				jp: "{納品遅延|のうひんちえん}のお{詫|わ}び",
+				cn: "交货延迟的道歉",
+				en: "Apology for delayed delivery",
+			},
+			{
+				type: "paragraph",
+				jp: "【PCショップ・スマイル】の{川田|かわだ}と{申|もう}します。",
+				cn: "我是【PC Shop Smile】的川田。",
+				en: "This is Kawada of PC Shop Smile.",
+			},
+			{
+				type: "paragraph",
+				jp: "この{度|たび}は{当店|とうてん}をご{利用|りよう}いただきまして、ありがとうございます。",
+				cn: "此次承蒙惠顾本店，非常感谢。",
+				en: "Thank you for shopping with us.",
+			},
+			{
+				type: "paragraph",
+				jp: "ご{注文|ちゅうもん}{頂|いただ}きました{商品|しょうひん}ですが、メーカーの{都合|つごう}で{入荷|にゅうか}が{遅|おく}れ、{予定|よてい}{通|どお}り{発送|はっそう}できなくなってしまいましたので、お{知|し}らせいたします。",
+				cn: "您订购的商品，因厂家方面的原因进货延迟，已无法按预定发货，特此通知。",
+				en: "The goods you ordered will not ship as scheduled, because arrival from the manufacturer has been delayed due to the maker’s circumstances. We are writing to let you know.",
+			},
+			{
+				type: "paragraph",
+				jp: "{納期|のうき}より1{週間|しゅうかん}{遅|おく}れてメーカーから{直接配送|ちょくせつはいそう}させていただく{予定|よてい}です。",
+				cn: "预定比交货期晚一个星期，由厂家直接配送。",
+				en: "The manufacturer will deliver it directly, one week later than the original deadline.",
+			},
+			{
+				type: "paragraph",
+				jp: "ご{不便|ふべん}・ご{迷惑|めいわく}おかけいたしまして、{大変|たいへん}{申|もう}し{訳|わけ}ございません。",
+				cn: "给您带来不便和麻烦，深表歉意。",
+				en: "We are very sorry for the inconvenience.",
+			},
+			{
+				type: "paragraph",
+				jp: "{下記|かき}のとおり、{配送予定|はいそうよてい}を{変更|へんこう}{手配|てはい}させていただきましたので、ご{確認|かくにん}いただきますようお{願|ねが}い{申|もう}し{上|あ}げます。",
+				cn: "已按如下安排变更配送预定，敬请确认。",
+				en: "We have arranged a change to the delivery schedule as below, and would be grateful if you would confirm it.",
+			},
+			{
+				type: "line",
+				jp: "■{発送日|はっそうび}　5{月|がつ}17{日|にち}",
+				cn: "■发货日　5 月 17 日",
+				en: "■ Dispatch date: May 17",
+			},
+			{
+				type: "line",
+				jp: "■お{届|とど}け{日|び}　5{月|がつ}18{日|にち}　{午前中|ごぜんちゅう}",
+				cn: "■送达日　5 月 18 日　上午",
+				en: "■ Delivery date: May 18, morning",
+			},
+			{
+				type: "paragraph",
+				jp: "もし5{月|がつ}18{日|にち}{以降|いこう}で{他|ほか}にお{受|う}け{取|と}りのご{都合|つごう}のよろしい{日時|にちじ}がございましたら、お{手数|てすう}ですが、このメールに{返信|へんしん}でご{連絡|れんらく}をお{願|ねが}いします。",
+				cn: "如果 5 月 18 日以后另有方便签收的日期时间，麻烦您回复本邮件告知。",
+				en: "If another date and time on or after May 18 would be more convenient for taking delivery, please reply to this e-mail (we are sorry for the trouble).",
+			},
+			{
+				type: "paragraph",
+				jp: "ご{連絡|れんらく}がない{場合|ばあい}は、{予定|よてい}{通|どお}りの{発送|はっそう}となります。",
+				cn: "如无联系，将按预定发货。",
+				en: "If we do not hear from you, it will be dispatched as scheduled.",
+			},
+			{
+				type: "heading",
+				jp: "{有限会社|ゆうげんがいしゃ}クラウド　{御中|おんちゅう}",
+				cn: "云有限公司　公启",
+				en: "Cloud Co., Ltd.  (for the attention of)",
+			},
+			{
+				type: "line",
+				jp: "〒XXX-XXXX　{台東区|たいとうく}○○1−5−2　SKビル4F",
+				cn: "邮编 XXX-XXXX　台东区○○1−5−2　SK 大厦 4 层",
+				en: "〒XXX-XXXX  1-5-2 ○○, Taitō-ku  SK Building 4F",
+			},
+			{
+				type: "line",
+				jp: "［お{届|とど}け{日|び}］2010/05/18",
+				cn: "［送达日］2010/05/18",
+				en: "[Delivery date] 2010/05/18",
+			},
+			{
+				type: "line",
+				jp: "［お{届|とど}け{時間|じかん}］{午前中|ごぜんちゅう}",
+				cn: "［送达时间］上午",
+				en: "[Delivery time] morning",
+			},
+			{
+				type: "line",
+				jp: "［{商品|しょうひん}］EXSON プリンタ NC2000PS",
+				cn: "［商品］EXSON 打印机 NC2000PS",
+				en: "[Item] EXSON Printer NC2000PS",
+			},
+			{
+				type: "line",
+				jp: "{価格|かかく}　58,000（{円|えん}）× 1 ＝ 58,000（{円|えん}）",
+				cn: "价格　58,000（日元）× 1 ＝ 58,000（日元）",
+				en: "Price  ¥58,000 × 1 = ¥58,000",
+			},
+			{
+				type: "table",
+				rows: [
+					[
+						{ jp: "{小計|しょうけい}", cn: "小计", en: "Subtotal", header: true },
+						{ jp: "58,000（{円|えん}）", cn: "58,000（日元）", en: "¥58,000" },
+					],
+					[
+						{ jp: "{送料|そうりょう}", cn: "运费", en: "Shipping", header: true },
+						{ jp: "（{無料|むりょう}）", cn: "（免费）", en: "(free)" },
+					],
+					[
+						{ jp: "{合計|ごうけい}", cn: "合计", en: "Total", header: true },
+						{ jp: "58,000（{円|えん}）", cn: "58,000（日元）", en: "¥58,000" },
+					],
+				],
+			},
+			{
+				type: "line",
+				jp: "PCショップ・すまいる　（^^♪",
+				cn: "PC Shop Smile　（^^♪",
+				en: "PC Shop Smile  (^^♪",
+			},
+			{
+				type: "paragraph",
+				jp: "ご{注文内容変更|ちゅうもんないようへんこう}や{配送|はいそう}に{関|かん}するお{問|と}い{合|あ}わせ（{配送|はいそう}センター）XXX-XXXX-XXX",
+				cn: "订单内容变更及配送咨询（配送中心）XXX-XXXX-XXX",
+				en: "Inquiries about order changes or delivery (Dispatch Center) XXX-XXXX-XXX",
+			},
+			{
+				type: "line",
+				jp: "{受付|うけつけ}：AM9:00〜PM6:00（{水曜日定休|すいようびていきゅう}）",
+				cn: "受理：上午 9:00〜下午 6:00（周三休息）",
+				en: "Hours: 9:00 a.m.–6:00 p.m. (closed Wednesdays)",
+			},
+			{
+				type: "note",
+				jp: "※お{電話|でんわ}でのお{問|と}い{合|あ}わせは{営業時間内|えいぎょうじかんない}にお{願|ねが}い{致|いた}します。",
+				cn: "※电话咨询请在营业时间内联系。",
+				en: "※ Please telephone only during business hours.",
+			},
+		],
+		questions: [
+			{
+				label: "問1",
+				jp: "{商品|しょうひん}の{受|う}け{取|と}りの{希望|きぼう}について、{正|ただ}しくないものはどれか。",
+				cn: "关于希望签收商品，哪一项是不正确的？",
+				en: "Which of the following is not correct regarding requests for taking delivery?",
+				choices: [
+					{ jp: "5{月|がつ}17{日|にち}{以前|いぜん}に{希望|きぼう}することはできない。", cn: "不能希望在 5 月 17 日以前签收。", en: "You cannot request a date before May 17." },
+					{ jp: "5{月|がつ}17{日|にち}に{希望|きぼう}する{場合|ばあい}、{夜遅|よるおそ}くしかできない。", cn: "如果希望 5 月 17 日签收，只能很晚。", en: "If you request May 17, it can only be late at night." },
+					{ jp: "5{月|がつ}18{日|にち}の{午前中|ごぜんちゅう}に{希望|きぼう}する{場合|ばあい}、{連絡|れんらく}しなくてもよい。", cn: "如果希望 5 月 18 日上午签收，可以不联系。", en: "If you want the morning of May 18, you do not need to contact them." },
+					{ jp: "5{月|がつ}18{日|にち}の{午後|ごご}に{希望|きぼう}する{場合|ばあい}、{連絡|れんらく}しなければならない。", cn: "如果希望 5 月 18 日下午签收，必须联系。", en: "If you want the afternoon of May 18, you must contact them." },
+				],
+				answer: 2,
+				explanation:
+					"邮件写明：发货日 5 月 17 日、送达日 5 月 18 日上午；若要改期，只能是「5月18日以降」的其他方便时间，并回复本邮件。5 月 17 日是发货日不是送达日，也没有「夜遅く」这种安排，所以 2 不正确。1：18 日以前不能改到更早，17 日以前当然不行。3：不联系就按预定 18 日上午发。4：下午与「午前中」不同，必须联系。",
+				explanationEn:
+					"The e-mail sets dispatch on May 17 and delivery on the morning of May 18; other times must be “on or after May 18” and requested by reply. May 17 is the dispatch date, not a delivery slot, and nothing says “late at night,” so 2 is not correct. 1: you cannot bring it earlier than the 18th, so not before the 17th. 3: no contact means it ships as scheduled, morning of the 18th. 4: afternoon is not “morning,” so you must get in touch.",
+				choiceNotes: [
+					"改期只能「5月18日以降」，17 日以前不能希望。这项是对的。",
+					"正确（这是错的那一项）。17 日是发货日，并不能指定当天夜里送达。",
+					"不联系就按预定 18 日上午，这项是对的。",
+					"下午不是预定的上午，必须回复邮件，这项是对的。",
+				],
+				choiceNotesEn: [
+					"Other dates must be on or after May 18, so you cannot ask for before the 17th. This statement is true.",
+					"Correct as the false one. The 17th is the dispatch date; you cannot book a late-night delivery that day.",
+					"No contact means the scheduled morning of the 18th. This statement is true.",
+					"Afternoon is not the scheduled morning, so you must reply. This statement is true.",
+				],
+			},
+			{
+				label: "問2",
+				jp: "このメールの{内容|ないよう}と{合|あ}わないものはどれか。",
+				cn: "哪一项与这封邮件的内容不符？",
+				en: "Which of the following does not match the content of this e-mail?",
+				choices: [
+					{ jp: "{今回|こんかい}の{商品|しょうひん}に{送料|そうりょう}はかかっていない。", cn: "这次的商品没有运费。", en: "There is no shipping charge on this order." },
+					{ jp: "{商品|しょうひん}の{受|う}け{取|と}り{日時|にちじ}の{変更|へんこう}はこのメールに{返信|へんしん}する。", cn: "变更签收日期时间要回复这封邮件。", en: "To change the delivery date and time, you reply to this e-mail." },
+					{ jp: "この{店|みせ}は{水曜日以外|すいようびいがい}は{営業|えいぎょう}している。", cn: "这家店除了星期三都营业。", en: "This shop is open every day except Wednesday." },
+					{ jp: "{商品|しょうひん}が1{週間|しゅうかん}{遅|おく}れるのは、このPCショップの{都合|つごう}である。", cn: "商品晚一个星期是这家电脑店自己的原因。", en: "The one-week delay is due to this PC shop’s circumstances." },
+				],
+				answer: 4,
+				explanation:
+					"正文写的是「メーカーの都合で入荷が遅れ」，晚一周是厂家的原因，不是这家 PC 店的都合。所以 4 与邮件不符。1 送料（無料）。2 「このメールに返信でご連絡」。3 「水曜日定休」＝除周三外营业。别册也点出「メーカーの都合」とある；メールは手紙より形式が簡単。",
+				explanationEn:
+					"The body says arrival was delayed “due to the manufacturer’s circumstances,” so the extra week is not the PC shop’s doing. 4 does not match. 1: shipping is free. 2: “please reply to this e-mail.” 3: “closed Wednesdays” means open on other days. The answer booklet also flags “the manufacturer’s circumstances,” and notes that e-mail is more simplified than a letter.",
+				choiceNotes: [
+					"明细写着送料（無料），相符。",
+					"改期要「このメールに返信でご連絡」，相符。",
+					"「水曜日定休」，除周三外营业，相符。",
+					"正确（这是不符的一项）。延迟原因是メーカーの都合，不是这家店。",
+				],
+				choiceNotesEn: [
+					"The invoice says shipping is free, so this matches.",
+					"Changes are by reply to this e-mail, so this matches.",
+					"Closed Wednesdays means open on other days, so this matches.",
+					"Correct as the mismatch. The delay is the manufacturer’s, not the shop’s.",
+				],
+			},
+		],
+	},
+
+	vocab: [
+		{ jp: "納品", kana: "のうひん", cn: "交货", en: "delivery of goods", pos: "名詞・動詞" },
+		{ jp: "遅延", kana: "ちえん", cn: "延迟", en: "delay", pos: "名詞" },
+		{ jp: "入荷", kana: "にゅうか", cn: "进货", en: "arrival of goods (into stock)", pos: "名詞・動詞" },
+		{ jp: "発送", kana: "はっそう", cn: "发货、寄出", en: "dispatch; shipping out", pos: "名詞・動詞" },
+		{ jp: "納期", kana: "のうき", cn: "交货期", en: "delivery deadline", pos: "名詞" },
+		{ jp: "配送", kana: "はいそう", cn: "配送", en: "delivery (to the customer)", pos: "名詞・動詞" },
+		{ jp: "手配", kana: "てはい", cn: "安排", en: "arrangements", pos: "名詞・動詞" },
+		{ jp: "都合", kana: "つごう", cn: "情况、方便与否", en: "circumstances; convenience", pos: "名詞" },
+		{ jp: "お詫び", kana: "おわび", cn: "道歉", en: "an apology", pos: "名詞" },
+		{ jp: "送料", kana: "そうりょう", cn: "运费", en: "shipping charge", pos: "名詞" },
+		{ jp: "返信", kana: "へんしん", cn: "回复", en: "a reply", pos: "名詞・動詞" },
+		{ jp: "定休", kana: "ていきゅう", cn: "定期休息", en: "a regular day off", pos: "名詞" },
+		{ jp: "午前中", kana: "ごぜんちゅう", cn: "上午", en: "during the morning", pos: "名詞" },
+		{ jp: "手数", kana: "てすう", cn: "麻烦、费事", en: "trouble (to someone)", pos: "名詞" },
+		{ jp: "健康診断", kana: "けんこうしんだん", cn: "健康检查", en: "a health checkup", pos: "名詞" },
+	],
+
+	grammar: [
+		{
+			pattern: "〜都合で",
+			formation: "名詞＋の都合で",
+			meaning: "因为……方面的情况。通知延迟时用来说明原因。",
+			meaningEn: "due to …’s circumstances. Used on notices to explain a delay.",
+			example: {
+				jp: "メーカーの{都合|つごう}で{入荷|にゅうか}が{遅|おく}れ、{予定|よてい}{通|どお}り{発送|はっそう}できなくなってしまいました。",
+				cn: "因厂家方面的原因进货延迟，已无法按预定发货。",
+				en: "Arrival from the manufacturer was delayed due to the maker’s circumstances, so we can no longer ship as scheduled.",
+			},
+		},
+		{
+			pattern: "〜させていただく",
+			formation: "動詞ます形＋させていただく",
+			meaning: "请允许我做……。自谦，服务业邮件里极常见。",
+			meaningEn: "to take the liberty of doing… / allow us to…. Humble; very common in business e-mail.",
+			example: {
+				jp: "メーカーから{直接配送|ちょくせつはいそう}させていただく{予定|よてい}です。",
+				cn: "预定由厂家直接配送。",
+				en: "The manufacturer will (be allowed to) deliver it directly.",
+			},
+		},
+		{
+			pattern: "お手数ですが",
+			meaning: "麻烦您了，但是……。请对方做事时的礼貌缓冲。",
+			meaningEn: "I am sorry to trouble you, but…. A polite buffer when asking the other person to do something.",
+			example: {
+				jp: "お{手数|てすう}ですが、このメールに{返信|へんしん}でご{連絡|れんらく}をお{願|ねが}いします。",
+				cn: "麻烦您回复本邮件告知。",
+				en: "Sorry to trouble you, but please reply to this e-mail.",
+			},
+		},
+	],
+};

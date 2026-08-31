@@ -1624,6 +1624,63 @@ function ContrastQuiz({ group }: { group: any }) {
 	);
 }
 
+function ContrastUsageBlock({
+	form,
+	formRuby,
+	usage,
+	usageEn,
+	example,
+	exampleRuby,
+	exampleCn,
+	exampleEn,
+	loc,
+	locHash,
+}: {
+	form?: string;
+	formRuby?: string;
+	usage?: string;
+	usageEn?: string;
+	example?: string;
+	exampleRuby?: string;
+	exampleCn?: string;
+	exampleEn?: string;
+	loc?: string;
+	locHash?: string;
+}) {
+	const usageText = lx(usage, usageEn) || usage || usageEn;
+	const exampleText = LANG === "en" ? exampleEn || exampleCn : exampleCn;
+	return (
+		<div className="ct-usage">
+			<div className="ct-usage__row">
+				<span className="ct-usage__k">{lx("语法句型", "Pattern")}</span>
+				<div className="ct-usage__v">
+					<span className="jp ct-form">{formRuby ? <RubyHtml html={formRuby} /> : form}</span>
+					{loc ? (
+						<span className="ct-loc" onClick={() => navTo(locHash || `#/day/${loc}`)}>
+							{loc} ›
+						</span>
+					) : null}
+				</div>
+			</div>
+			{usageText ? (
+				<div className="ct-usage__row">
+					<span className="ct-usage__k">{lx("用法说明", "Usage")}</span>
+					<div className="ct-usage__v ct-mean">{usageText}</div>
+				</div>
+			) : null}
+			{example ? (
+				<div className="ct-usage__row">
+					<span className="ct-usage__k">{lx("典型例句", "Example")}</span>
+					<div className="ct-usage__v">
+						<div className="ct-eg jp">{exampleRuby ? <RubyHtml html={exampleRuby} /> : example}</div>
+						{exampleText ? <div className="ct-egcn">{exampleText}</div> : null}
+					</div>
+				</div>
+			) : null}
+		</div>
+	);
+}
+
 export function ContrastPage() {
 	const C = cur().contrast || { groups: [] };
 	const groups = C.groups || [];
@@ -1674,17 +1731,24 @@ export function ContrastPage() {
 												详情 ›
 											</a>
 										</h4>
-										<ul>
-											{(d.points || []).map((p: any, i: number) => {
-												return (
-													<li key={i}>
-														<span className="jp">{p.pattern_r ? <RubyHtml html={p.pattern_r} /> : p.pattern}</span>
-														{LANG !== "en" && p.usage_cn ? <span className="ct-mean"> — {p.usage_cn}</span> : null}
-														{p.usage_en ? <span className="ct-mean en"> — {p.usage_en}</span> : null}
-													</li>
-												);
-											})}
-										</ul>
+										{(d.points || []).map((p: any, i: number) => {
+											const ex = (p.examples || [])[0];
+											return (
+												<ContrastUsageBlock
+													key={i}
+													form={p.connection || p.pattern}
+													formRuby={p.connection ? undefined : p.pattern_r}
+													usage={p.usage_cn}
+													usageEn={p.usage_en}
+													example={ex?.jp}
+													exampleRuby={ex?.jp_r}
+													exampleCn={ex?.cn}
+													exampleEn={ex?.en}
+													loc={`${week.n}-${d.day}`}
+													locHash={`#/day/${week.n}-${d.day}/p${i}`}
+												/>
+											);
+										})}
 									</div>
 								);
 							})}
@@ -1712,17 +1776,16 @@ export function ContrastPage() {
 								<h3 className="ct-h jp">{g.title}</h3>
 								{g.tip ? <div className="ct-tip">💡 {g.tip}</div> : null}
 								{(g.rows || []).map((r: any, ri: number) => (
-									<div className="ct-row" key={ri}>
-										<div className="ct-form jp">
-											{r.form_r ? <RubyHtml html={r.form_r} /> : r.form}
-											<span className="ct-loc" onClick={() => navTo(`#/day/${r.loc}`)}>
-												{r.loc} ›
-											</span>
-										</div>
-										{r.eg ? <div className="ct-eg jp">例：{r.eg_r ? <RubyHtml html={r.eg_r} /> : r.eg}</div> : null}
-										{r.eg_cn ? <div className="ct-egcn">译：{r.eg_cn}</div> : null}
-										<div className="ct-mean">{r.mean}</div>
-									</div>
+									<ContrastUsageBlock
+										key={ri}
+										form={r.form}
+										formRuby={r.form_r}
+										usage={r.mean}
+										example={r.eg}
+										exampleRuby={r.eg_r}
+										exampleCn={r.eg_cn}
+										loc={r.loc}
+									/>
 								))}
 								<ContrastQuiz group={g} />
 							</div>

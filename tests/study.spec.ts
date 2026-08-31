@@ -820,7 +820,7 @@ test.describe("study typebar", () => {
 
 		if (testInfo.project.name === "desktop-chrome") {
 			await page.locator(".side-seg button", { hasText: "N2" }).click();
-			await expect(page.locator("#side [data-gotype='reading']")).toHaveCount(0);
+			await expect(page.locator("#side [data-gotype='reading']")).toBeVisible();
 			await expect(page.locator("#side [data-gotype='listening']")).toBeVisible();
 			await page.locator(".side-seg button", { hasText: "N4" }).click();
 			await expect(page.locator("#side [data-gotype='reading']")).toHaveCount(0);
@@ -832,7 +832,7 @@ test.describe("study typebar", () => {
 		await page.locator("#lvChip").click();
 		await page.locator(".sheet-item", { hasText: "N2" }).click();
 		await expect(page.locator("#skillbar button[data-ty='listening']")).toBeVisible();
-		await expect(page.locator("#skillbar button[data-ty='reading']")).toHaveCount(0);
+		await expect(page.locator("#skillbar button[data-ty='reading']")).toBeVisible();
 		await page.locator("#lvChip").click();
 		await page.locator(".sheet-item", { hasText: "N4" }).click();
 		await expect(page.locator("#skillbar")).toHaveCount(0);

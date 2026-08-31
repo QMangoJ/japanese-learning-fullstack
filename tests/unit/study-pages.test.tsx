@@ -29,10 +29,11 @@ import {
 	setCardsWeek,
 	setModule,
 	setNavImpl,
+	setCtMode,
 	subscribe,
 	toggleFav,
 } from "../../app/study/store";
-import { DayPage } from "../../app/study/days";
+import { ContrastPage, DayPage } from "../../app/study/days";
 
 function LiveMistakes() {
 	useSyncExternalStore(subscribe, getVersion, () => 0);
@@ -384,6 +385,48 @@ describe("N3 day 7 exam favorites", () => {
 		expect(favsPayload().total).toBe(1);
 		expect(favsPayload().items[0].jp).toContain("もう＿＿ました。");
 		expect(screen.getByRole("button", { name: /取消收藏错题|Remove from favorites/ })).toBeInTheDocument();
+	});
+});
+
+describe("ContrastPage usage notes", () => {
+	beforeEach(() => {
+		setModule("grammar");
+		setCtMode("family");
+		G.contrast = {
+			intro: "按家族归类",
+			groups: [
+				{
+					title: "①「よう」大家族",
+					tip: "接辞书形还是意志形",
+					rows: [
+						{
+							loc: "1-4",
+							form: "Vる/Vない＋ようにする",
+							mean: "表示主观上将某种行为作为习惯，或努力做到某种状态",
+							eg: "忘れ物をしないようにする",
+							eg_cn: "尽量别丢三落四",
+						},
+					],
+				},
+			],
+		};
+	});
+
+	it("shows pattern, usage, and example labels in the family summary", () => {
+		render(<ContrastPage />);
+		expect(screen.getAllByText("语法句型").length).toBeGreaterThan(0);
+		expect(screen.getByText("用法说明")).toBeInTheDocument();
+		expect(screen.getByText("典型例句")).toBeInTheDocument();
+		expect(screen.getByText("表示主观上将某种行为作为习惯，或努力做到某种状态")).toBeInTheDocument();
+		expect(screen.getByText("忘れ物をしないようにする")).toBeInTheDocument();
+	});
+
+	it("shows usage and a sample sentence in the weekly summary", () => {
+		setCtMode("week");
+		render(<ContrastPage />);
+		expect(screen.getByText("用法说明")).toBeInTheDocument();
+		expect(screen.getByText("表示刚做完")).toBeInTheDocument();
+		expect(screen.getByText("食べたばかりです。")).toBeInTheDocument();
 	});
 });
 

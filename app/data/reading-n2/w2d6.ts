@@ -1,0 +1,366 @@
+import type { ReadingDay } from "../reading-n3/types";
+
+// 第2週 6日目 通知③ — printed pages 38–39
+export const w2d6: ReadingDay = {
+	week: 2,
+	day: 6,
+	label: "通知③",
+	labelKana: "つうち",
+	labelEn: "Notices ③",
+	printedPages: [38, 39],
+	answerSource: "book",
+
+	point: {
+		title: "{遠回|とおまわ}しな{表現|ひょうげん}に{慣|な}れよう！",
+		titleCn: "熟悉委婉含蓄的表达！",
+		titleEn: "Let’s become familiar with indirect (euphemistic) expressions!",
+		figure: {
+			alt: "本を持ったキャラクターが「言いにくいことは遠回しに言うんです。」と説明しているイラスト",
+			cn: "拿着书的角色在说明：「很难说出口的话要用委婉的说法。」",
+			en: "A character with a book explaining, “Things that are hard to say are put indirectly.”",
+		},
+		tips: [
+			{
+				jp: "「{入金|にゅうきん}の{確認|かくにん}がとれません」　→　{入金|にゅうきん}の{確認|かくにん}がとれない　→　{入金|にゅうきん}されていない",
+				cn: "「无法确认到账」　→　确认不到入金　→　其实是还没付款",
+				en: "“We cannot confirm receipt of payment” → payment cannot be confirmed → it has not been paid.",
+			},
+			{
+				jp: "「○○していただければ{幸|さいわ}いです」　→　○○してもらえるとうれしいです　→　○○してください",
+				cn: "「若能请您做○○，则幸甚」　→　您要是能做○○我会很高兴　→　请做○○",
+				en: "“We would be grateful if you would…” → we would be happy if you did… → please do…",
+			},
+			{
+				jp: "{言|い}いにくいことは{遠回|とおまわ}しに{言|い}うんです。",
+				cn: "很难说出口的事情要用委婉的说法。",
+				en: "Things that are hard to say are put indirectly.",
+			},
+			{
+				jp: "{支払|しはら}いを{催促|さいそく}する{手紙|てがみ}にはこんな{表現|ひょうげん}が{出|で}てきます。",
+				cn: "催促付款的信里会出现下面这些表达。",
+				en: "Letters pressing for payment use expressions like these.",
+			},
+		],
+		expressions: [
+			{ jp: "入金の確認がとれません", kana: "にゅうきんのかくにんがとれません", cn: "无法确认到账（＝还没付）", en: "we cannot confirm receipt of payment (= it has not been paid)" },
+			{ jp: "〜ていただければ幸いです", kana: "さいわい", cn: "若能……则幸甚（＝请……）", en: "we would be grateful if you would… (= please…)" },
+			{ jp: "法的手段", kana: "ほうてきしゅだん", cn: "法律手段", en: "legal action" },
+			{ jp: "法的措置", kana: "ほうてきそち", cn: "法律措施", en: "a legal measure" },
+			{ jp: "行き違い", kana: "いきちがい", cn: "交错、两岔（信与汇款错过）", en: "a crossed situation (e.g. letter and payment crossing in the mail)" },
+			{ jp: "督促状", kana: "とくそくじょう", cn: "催款通知", en: "a dunning letter; a reminder to pay" },
+			{ jp: "請求書", kana: "せいきゅうしょ", cn: "账单、付款通知", en: "an invoice / a bill" },
+		],
+	},
+
+	renshu: {
+		instruction: "{次|つぎ}の{会話文|かいわぶん}を{読|よ}んで、{後|あと}の{文|ぶん}から{正|ただ}しいものを{選|えら}ぼう。",
+		instructionCn: "阅读下面的对话，从后面的句子中选出正确的。（答案在下一页）",
+		instructionEn: "Read the conversation below and choose the correct statements from the sentences that follow. (Answers are on the next page.)",
+		blocks: [
+			{
+				type: "speech",
+				speaker: "A",
+				speakerCn: "A",
+				speakerEn: "A",
+				jp: "あのさあ、ちょっと{聞|き}きたいんだけど、これ、{何|なに}？",
+				cn: "那个，我想问一下，这是什么？",
+				en: "Hey, I just wanted to ask—what is this?",
+			},
+			{
+				type: "speech",
+				speaker: "B",
+				speakerCn: "B",
+				speakerEn: "B",
+				jp: "え？　どれどれ、……あ、これ、{督促状|とくそくじょう}じゃない！",
+				cn: "诶？我看看……啊，这不是催款通知吗！",
+				en: "Huh? Let’s see… oh, this is a dunning letter!",
+			},
+			{
+				type: "speech",
+				speaker: "A",
+				speakerCn: "A",
+				speakerEn: "A",
+				jp: "え？　とくそくじょう？　{何|なに}、それ？",
+				cn: "诶？催款通知？那是什么？",
+				en: "A dunning letter? What’s that?",
+			},
+			{
+				type: "speech",
+				speaker: "B",
+				speakerCn: "B",
+				speakerEn: "B",
+				jp: "{代金|だいきん}がまだだから、{早|はや}く{払|はら}えって。",
+				cn: "就是钱还没付，叫你快点付。",
+				en: "It means you haven’t paid yet, so pay up quickly.",
+			},
+			{
+				type: "speech",
+				speaker: "A",
+				speakerCn: "A",
+				speakerEn: "A",
+				jp: "え？　あれ？　インターネットで……クレジットカードで{払|はら}ったよ。",
+				cn: "诶？咦？我在网上……用信用卡付过了啊。",
+				en: "What? Huh? I paid on the internet… with a credit card.",
+			},
+			{
+				type: "speech",
+				speaker: "B",
+				speakerCn: "B",
+				speakerEn: "B",
+				jp: "そのときのメールをもう{一度|いちど}{確認|かくにん}したほうがいいよ。{僕|ぼく}も{前|まえ}にカードで{払|はら}ったと{思|おも}ってたのに、{実|じつ}はコンビニの{後払|あとばら}いを{選択|せんたく}して、{商品|しょうひん}が{来|き}たときにその{払|はら}い{込|こ}み{用紙|ようし}をうっかり{捨|す}ててしまったことがあるから。とにかく、ここに{早|はや}く{連絡|れんらく}したほうがいいね。",
+				cn: "那次的邮件最好再确认一遍。我也有过，以为用卡付了，其实选的是便利店后付，货到的时候一不小心把缴费单扔了。总之，最好赶快跟这边联系。",
+				en: "You’d better check the e-mail from that time again. I once thought I’d paid by card, but I’d actually chosen pay-later at a convenience store, and when the goods came I accidentally threw away the payment slip. Anyway, you’d better contact them here soon.",
+			},
+		],
+		choices: [
+			{ jp: "Aさんはインターネットで{買|か}い{物|もの}をした。", cn: "A 在网上买了东西。", en: "A shopped on the internet." },
+			{ jp: "BさんはAさんに{貸|か}したお{金|かね}を{早|はや}く{返|かえ}してもらいたい。", cn: "B 想让 A 快点还自己借出去的钱。", en: "B wants A to pay back money B lent." },
+			{ jp: "Aさんはクレジットカードで{代金|だいきん}を{支払|しはら}ったと{思|おも}っている。", cn: "A 以为已经用信用卡付了款。", en: "A thinks the bill was paid by credit card." },
+			{ jp: "BさんはAさんの{払|はら}い{込|こ}み{用紙|ようし}を{間違|まちが}って{捨|す}ててしまった。", cn: "B 误把 A 的缴费单扔掉了。", en: "B accidentally threw away A’s payment slip." },
+			{ jp: "Aさんには、よく{督促状|とくそくじょう}が{届|とど}く。", cn: "A 经常收到催款通知。", en: "A often receives dunning letters." },
+		],
+		answers: [1, 3],
+	},
+
+	mondai: {
+		instruction: "{次|つぎ}の{文書|ぶんしょ}を{読|よ}んで、{後|あと}の{問|と}いに{答|こた}えなさい。",
+		instructionCn: "阅读下面的文书，回答后面的问题。（答案在别册 p.3）",
+		instructionEn: "Read the following document and answer the questions that follow. (Answers are in the separate booklet, p. 3.)",
+		blocks: [
+			{
+				type: "line",
+				jp: "20XX{年|ねん}3{月|がつ}7{日|か}",
+				cn: "20XX 年 3 月 7 日",
+				en: "March 7, 20XX",
+				align: "right",
+			},
+			{
+				type: "line",
+				jp: "ミシェル・イナムラ{様|さま}",
+				cn: "米歇尔・伊纳姆拉 先生/女士",
+				en: "Ms./Mr. Michelle Inamura",
+			},
+			{
+				type: "line",
+				jp: "○○{県|けん}みどり{市|し}{南山町|みなみやまちょう}1{丁目|ちょうめ}10",
+				cn: "○○县绿市南山町一丁目 10",
+				en: "1-chōme 10, Minamiyama-chō, Midori City, ○○ Prefecture",
+			},
+			{
+				type: "line",
+				jp: "{大阪府|おおさかふ}{大阪市|おおさかし}○○{町|ちょう}4−5",
+				cn: "大阪府大阪市○○町 4−5",
+				en: "4-5 ○○-chō, Osaka City, Osaka Prefecture",
+				align: "right",
+			},
+			{
+				type: "line",
+				jp: "（{株|かぶ}）エクセレントコーヒー",
+				cn: "优秀咖啡股份有限公司",
+				en: "Excellent Coffee Co., Ltd.",
+				align: "right",
+			},
+			{
+				type: "line",
+				jp: "{代表取締役|だいひょうとりしまりやく}　{山口正男|やまぐちまさお}",
+				cn: "代表董事　山口正男",
+				en: "President  Yamaguchi Masao",
+				align: "right",
+			},
+			{
+				type: "line",
+				jp: "ネット{販売担当|はんばいたんとう}　{竹下|たけした}　{進|すすむ}（{印|いん}）",
+				cn: "网络销售负责人　竹下 进（印）",
+				en: "Online sales  Takeshita Susumu (seal)",
+				align: "right",
+			},
+			{
+				type: "line",
+				jp: "Tel. 0xx-223-4455",
+				cn: "电话 0xx-223-4455",
+				en: "Tel. 0xx-223-4455",
+				align: "right",
+			},
+			{
+				type: "line",
+				jp: "{拝啓|はいけい}",
+				cn: "拜启",
+				en: "Dear Sir or Madam",
+			},
+			{
+				type: "paragraph",
+				jp: "{時下|じか}、ますます{御清栄|ごせいえい}のこととお{喜|よろこ}び{申|もう}し{上|あ}げます。いつもご{利用|りよう}ありがとうございます。",
+				cn: "时下您日益清泰，可喜可贺。承蒙一直惠顾，非常感谢。",
+				en: "I hope this letter finds you ever more prosperous. Thank you as always for your custom.",
+			},
+			{
+				type: "paragraph",
+				jp: "さて、{下記|かき}のとおり{御請求|ごせいきゅう}{致|いた}しました{商品|しょうひん}の{代金|だいきん}につきましてご{入金|にゅうきん}の{確認|かくにん}がとれません。{改|あらた}めて{請求書|せいきゅうしょ}をお{送|おく}りいたしますので、お{確|たし}かめの{上|うえ}、お{支払|しはら}いいただきますようお{願|ねが}い{申|もう}し{上|あ}げます。",
+				cn: "关于如下已请您付款的商品价款，无法确认到账。现再次寄上账单，请核实后予以支付。",
+				en: "Regarding the goods billed as below, we cannot confirm receipt of payment. We are sending the invoice again, and would be grateful if you would check it and make payment.",
+			},
+			{
+				type: "paragraph",
+				jp: "なお、{本状|ほんじょう}と{行|い}き{違|ちが}いにお{支払|しはら}い{済|ず}みの{場合|ばあい}はお{許|ゆる}しください＊。",
+				cn: "另外，若此信与您的付款交错、其实已经付过，敬请原谅＊。",
+				en: "If this letter has crossed with a payment already made, please forgive us＊.",
+			},
+			{
+				type: "line",
+				jp: "{敬具|けいぐ}",
+				cn: "敬具",
+				en: "Yours sincerely",
+				align: "right",
+			},
+			{
+				type: "heading",
+				jp: "{記|き}",
+				cn: "记",
+				en: "Particulars",
+			},
+			{
+				type: "table",
+				rows: [
+					[
+						{ jp: "{納品年月日|のうひんねんがっぴ}", cn: "交货年月日", en: "Date of delivery", header: true, align: "center" },
+						{ jp: "{商品名|しょうひんめい}", cn: "商品名", en: "Item", header: true, align: "center" },
+						{ jp: "{金額|きんがく}", cn: "金额", en: "Amount", header: true, align: "center" },
+					],
+					[
+						{ jp: "20XX{年|ねん}2{月|がつ}7{日|か}", cn: "20XX 年 2 月 7 日", en: "February 7, 20XX", rowSpan: 3 },
+						{ jp: "コーヒー{豆|まめ}セット", cn: "咖啡豆套装", en: "coffee-bean set" },
+						{ jp: "3,150{円|えん}（{税込|ぜいこみ}）", cn: "3,150 日元（含税）", en: "¥3,150 (tax incl.)" },
+					],
+					[
+						{ jp: "{送料|そうりょう}", cn: "运费", en: "shipping" },
+						{ jp: "0{円|えん}", cn: "0 日元", en: "¥0" },
+					],
+					[
+						{ jp: "ご{請求金額|せいきゅうきんがく}", cn: "请款金额", en: "amount billed" },
+						{ jp: "3,150{円|えん}", cn: "3,150 日元", en: "¥3,150" },
+					],
+				],
+			},
+		],
+		pageNotes: [
+			{
+				jp: "＊ Please kindly ignore this notice if payment has been completed.",
+				cn: "＊此信若在您已付款之后寄到，敬请原谅。",
+				en: "Please kindly ignore this notice if payment has been completed.",
+			},
+		],
+		questions: [
+			{
+				label: "問1",
+				jp: "この{文書|ぶんしょ}からわからないことはどれか。",
+				cn: "从这份文书里看不出来的是哪一项？",
+				en: "Which of the following cannot be known from this document?",
+				choices: [
+					{ jp: "{代金|だいきん}の{支払|しはら}い{方法|ほうほう}", cn: "价款的支付方法", en: "how to pay the bill" },
+					{ jp: "{支払|しはら}わなければならない{金額|きんがく}", cn: "必须支付的金额", en: "the amount that must be paid" },
+					{ jp: "{商品|しょうひん}の{内容|ないよう}", cn: "商品的内容", en: "what the goods are" },
+					{ jp: "{商品|しょうひん}が{届|とど}いた{日|ひ}", cn: "商品送到的日期", en: "the day the goods arrived" },
+				],
+				answer: 1,
+				explanation:
+					"表里有金额 3,150 円、商品名「コーヒー豆セット」、纳品年月日 2 月 7 日，所以 2、3、4 都写着。但没有银行账户、便利店缴费、信用卡等任何支付方法。委婉地说「入金の確認がとれません」「お支払いいただきますよう」，却不说明怎么付。选 1。",
+				explanationEn:
+					"The table gives the amount ¥3,150, the item “coffee-bean set,” and the delivery date February 7, so 2, 3, and 4 are in the letter. There is no bank account, convenience-store slip, or credit-card instruction—no method of payment. It only says, indirectly, that payment cannot be confirmed and asks you to pay. 1 is the answer.",
+				choiceNotes: [
+					"正确。全文没有写汇款账户、便利店或信用卡等支付方式。",
+					"ご請求金額 3,150 円写得很清楚。",
+					"商品名是コーヒー豆セット。",
+					"纳品年月日是 20XX 年 2 月 7 日。",
+				],
+				choiceNotesEn: [
+					"Correct. The letter never says how to pay (bank, convenience store, card, etc.).",
+					"The amount billed is clearly ¥3,150.",
+					"The item is a coffee-bean set.",
+					"The delivery date is February 7, 20XX.",
+				],
+			},
+			{
+				label: "問2",
+				jp: "この{文書|ぶんしょ}といっしょに{送|おく}られている{文書|ぶんしょ}は{何|なに}か。",
+				cn: "和这份文书一起寄出的文书是什么？",
+				en: "What document is being sent together with this letter?",
+				choices: [
+					{ jp: "{督促状|とくそくじょう}", cn: "催款通知", en: "a dunning letter" },
+					{ jp: "{請求書|せいきゅうしょ}", cn: "账单", en: "an invoice" },
+					{ jp: "{送信状|そうしんじょう}", cn: "传真发送单", en: "a fax cover sheet" },
+					{ jp: "{納品書|のうひんしょ}", cn: "送货单", en: "a delivery note" },
+				],
+				answer: 2,
+				explanation:
+					"正文写着「改めて請求書をお送りいたします」——这封信本身是催款（入金が確認できない），一起寄出的附件是請求書。1 是对本信性质的概括，不是「一起寄的另一份」。3 送信状是发传真时写收件人、发件人、内容和页数的封面，别册专门说明了。4 纳品已经在 2 月 7 日完成，没有说再寄纳品书。",
+				explanationEn:
+					"The body says “we are sending the invoice again”—this letter is the reminder that payment cannot be confirmed, and the enclosure is a seikyūsho (invoice). 1 names the function of this letter itself, not a separate enclosure. 3: a sōshinjō is a fax cover sheet with recipient, sender, subject, and page count; the booklet spells that out. 4: delivery already happened on February 7; nothing says a delivery note is attached.",
+				choiceNotes: [
+					"这封信本身近于催款，但问的是「一起寄的」另一份，正文写的是請求書。",
+					"正确。改めて請求書をお送りいたします。",
+					"送信状是发传真用的封面，与这封信无关。",
+					"没有写要再寄纳品书。",
+				],
+				choiceNotesEn: [
+					"This letter itself is a reminder to pay, but the question asks what is sent with it; the body names a seikyūsho.",
+					"Correct. “We are sending the invoice again.”",
+					"A sōshinjō is a fax cover sheet; it is not involved here.",
+					"Nothing says a delivery note is enclosed.",
+				],
+			},
+		],
+	},
+
+	vocab: [
+		{ jp: "遠回し", kana: "とおまわし", cn: "委婉、拐弯抹角", en: "indirect; roundabout", pos: "な形" },
+		{ jp: "入金", kana: "にゅうきん", cn: "入账、到款", en: "receipt of payment", pos: "名詞・動詞" },
+		{ jp: "確認", kana: "かくにん", cn: "确认", en: "confirmation", pos: "名詞・動詞" },
+		{ jp: "催促", kana: "さいそく", cn: "催促", en: "pressing (someone to do something)", pos: "名詞・動詞" },
+		{ jp: "督促状", kana: "とくそくじょう", cn: "催款通知", en: "a dunning letter", pos: "名詞" },
+		{ jp: "請求書", kana: "せいきゅうしょ", cn: "账单", en: "an invoice", pos: "名詞" },
+		{ jp: "行き違い", kana: "いきちがい", cn: "交错、两岔", en: "crossing (of a letter and a payment, etc.)", pos: "名詞" },
+		{ jp: "法的手段", kana: "ほうてきしゅだん", cn: "法律手段", en: "legal action", pos: "名詞" },
+		{ jp: "法的措置", kana: "ほうてきそち", cn: "法律措施", en: "a legal measure", pos: "名詞" },
+		{ jp: "納品", kana: "のうひん", cn: "交货", en: "delivery of goods", pos: "名詞・動詞" },
+		{ jp: "税込", kana: "ぜいこみ", cn: "含税", en: "tax included", pos: "名詞" },
+		{ jp: "後払い", kana: "あとばらい", cn: "后付", en: "payment later", pos: "名詞" },
+		{ jp: "払い込み用紙", kana: "はらいこみようし", cn: "缴费单", en: "a payment slip", pos: "名詞" },
+		{ jp: "送信状", kana: "そうしんじょう", cn: "传真发送单", en: "a fax cover sheet", pos: "名詞" },
+		{ jp: "納品書", kana: "のうひんしょ", cn: "送货单", en: "a delivery note", pos: "名詞" },
+		{ jp: "代表取締役", kana: "だいひょうとりしまりやく", cn: "代表董事", en: "president / representative director", pos: "名詞" },
+	],
+
+	grammar: [
+		{
+			pattern: "〜の確認がとれない",
+			meaning: "无法确认……。催款信里的委婉说法，实际意思是「还没有入账／还没付」。",
+			meaningEn: "… cannot be confirmed. A roundabout phrase in payment reminders; it really means “it has not been paid.”",
+			example: {
+				jp: "ご{入金|にゅうきん}の{確認|かくにん}がとれません。",
+				cn: "无法确认到账。",
+				en: "We cannot confirm receipt of payment.",
+			},
+		},
+		{
+			pattern: "〜ていただければ幸いです",
+			formation: "て形＋いただければ幸いです",
+			meaning: "若能请您……则幸甚。实际就是「请您……」，语气更软。",
+			meaningEn: "We would be grateful if you would…. Softens a request to “please….”",
+			example: {
+				jp: "お{支払|しはら}いいただきますようお{願|ねが}い{申|もう}し{上|あ}げます。",
+				cn: "敬请予以支付。",
+				en: "We would be grateful if you would make payment.",
+			},
+		},
+		{
+			pattern: "行き違い",
+			meaning: "双方行动交错（信寄出时对方其实已经付了）。催款信末尾的礼貌免责。",
+			meaningEn: "Actions crossing (the letter going out just as payment is made). A polite disclaimer at the end of a reminder.",
+			example: {
+				jp: "{本状|ほんじょう}と{行|い}き{違|ちが}いにお{支払|しはら}い{済|ず}みの{場合|ばあい}はお{許|ゆる}しください。",
+				cn: "若此信与您的付款交错、其实已经付过，敬请原谅。",
+				en: "If this letter has crossed with a payment already made, please forgive us.",
+			},
+		},
+	],
+};

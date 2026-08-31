@@ -391,7 +391,7 @@ function AuthBanner() {
 }
 
 function goType(ty: TypeKey) {
-	if (ty === "reading" && LEVEL !== "n3") return;
+	if (ty === "reading" && LEVEL !== "n3" && LEVEL !== "n2") return;
 	if (ty === "listening" && LEVEL !== "n3" && LEVEL !== "n2") return;
 	const nextMod = moduleFrom(LEVEL, ty);
 	const here = typeof window !== "undefined" ? pathToKey(window.location.pathname) : "#/";
@@ -420,7 +420,7 @@ function Sidebar({ routeKey, onLevel }: { routeKey: string; onLevel: (lv: LevelK
 		["grammar", "📘", lx("语法", "Grammar")],
 		["vocab", "📗", lx("词汇", "Vocabulary")],
 		["kanji", "📙", lx("汉字", "Kanji")],
-		...(LEVEL === "n3" ? ([["reading", "📕", lx("读解", "Reading")]] as [TypeKey, string, string][]) : []),
+		...(LEVEL === "n3" || LEVEL === "n2" ? ([["reading", "📕", lx("读解", "Reading")]] as [TypeKey, string, string][]) : []),
 		...(LEVEL === "n3" || LEVEL === "n2" ? ([["listening", "🎧", lx("听解", "Listening")]] as [TypeKey, string, string][]) : []),
 	];
 	const favCount = Object.keys(FAV).length;
@@ -833,7 +833,7 @@ export function StudyApp() {
 
 	useEffect(() => {
 		const mode = new URLSearchParams(location.search).get("module");
-		if (mode === "reading" || mode === "listening" || mode === "n2listening") {
+		if (mode === "reading" || mode === "n2reading" || mode === "listening" || mode === "n2listening") {
 			setModule(mode);
 			window.history.replaceState({}, "", location.pathname + (isTrial ? "?trial=1" : ""));
 			navTo(entryHash(mode));
@@ -917,7 +917,7 @@ export function StudyApp() {
 	if (routeKey === "#/cards") ensureCardsDeck();
 
 	const commonRefPage = ["#/ref", "#/katsuyou", "#/henkei", "#/kougo", "#/jita", "#/numbers"].includes(routeKey);
-	const waitingN2 = isN2() && MODULE !== "n2listening" && !n2Loaded && !commonRefPage;
+	const waitingN2 = isN2() && MODULE !== "n2listening" && MODULE !== "n2reading" && !n2Loaded && !commonRefPage;
 	const waitingN4 = isN4() && !n4Loaded && !commonRefPage;
 	const waitingSearch = routeKey === "#/search" && !n2Loaded;
 	const weekLocked = isTrial && day && (LEVEL !== "n3" || day.w !== 1);
@@ -940,7 +940,7 @@ export function StudyApp() {
 	else if (waitingN4) body = <div className="empty">N4 数据加载中，请稍候…</div>;
 	else if (waitingSearch) body = <div className="empty">词典数据加载中，马上就好…</div>;
 	else if (weekLocked || homeLocked) body = <TrialLock />;
-	else if (day && isReading()) body = <ReadingN3Content week={day.w} day={day.d} embedded />;
+	else if (day && isReading()) body = <ReadingN3Content week={day.w} day={day.d} embedded book={MODULE === "n2reading" ? "n2" : "n3"} />;
 	else if (day && isListening())
 		body = (
 			<>
@@ -1000,7 +1000,7 @@ export function StudyApp() {
 				backLabel={day ? lx("目录", "Catalog") : lx("返回", "Back")}
 				showLevel={!commonPages.includes(routeKey)}
 				showTypebar={routeKey === "#/" || Boolean(day)}
-				showReading={LEVEL === "n3"}
+				showReading={LEVEL === "n3" || LEVEL === "n2"}
 				showListening={LEVEL === "n3" || LEVEL === "n2"}
 				onBack={() => (day ? navTo("#/") : history.length > 1 ? navigate(-1) : navTo("#/"))}
 				onOpenLevel={() => setSheet("level")}

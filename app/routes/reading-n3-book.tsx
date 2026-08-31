@@ -1,10 +1,8 @@
 import { Fragment, useEffect, useMemo, useRef, useState } from "react";
 
+import * as readingN2 from "../data/reading-n2";
+import * as readingN3 from "../data/reading-n3";
 import {
-	dayOutline,
-	findDay,
-	readingDays,
-	weekOutline,
 	type Block,
 	type Choice,
 	type Footnote,
@@ -12,6 +10,9 @@ import {
 	type ReadingDay,
 	type TableCell,
 } from "../data/reading-n3";
+
+const readingBooks = { n3: readingN3, n2: readingN2 } as const;
+type ReadingBookKey = keyof typeof readingBooks;
 import { addMistake, isFav, LANG, lx, navTo, registerFavMeta, toggleFav } from "../study/store";
 import "./reading-n3-book.css";
 
@@ -230,6 +231,7 @@ function QuestionCard({
 	answerSource,
 	week,
 	day,
+	module = "reading",
 }: {
 	question: Question;
 	id: string;
@@ -237,13 +239,14 @@ function QuestionCard({
 	answerSource: ReadingDay["answerSource"];
 	week: number;
 	day: number;
+	module?: "reading" | "n2reading";
 }) {
 	const [picked, setPicked] = useState<number | null>(null);
 	const [revealed, setRevealed] = useState(false);
 	const settled = revealed || picked !== null;
-	const favId = `reading#${week}-${day}#${id}`;
+	const favId = `${module}#${week}-${day}#${id}`;
 	registerFavMeta(favId, {
-		module: "reading",
+		module,
 		hash: `#/day/${week}-${day}`,
 		w: week,
 		d: day,
@@ -404,7 +407,7 @@ function Catalog({
 	open: Set<number>;
 	setOpen: (update: (current: Set<number>) => Set<number>) => void;
 }) {
-	const ready = readingDays.length;
+	const ready = readingN3.readingDays.length;
 
 	return (
 		<>
@@ -417,10 +420,10 @@ function Catalog({
 				</p>
 			</div>
 
-			{weekOutline.map((week) => {
-				const days = dayOutline.filter((day) => day.week === week.week);
+			{readingN3.weekOutline.map((week) => {
+				const days = readingN3.dayOutline.filter((day) => day.week === week.week);
 				const isOpen = open.has(week.week);
-				const done = days.filter((day) => findDay(day.week, day.day)).length;
+				const done = days.filter((day) => readingN3.findDay(day.week, day.day)).length;
 				return (
 					<section className="rb-week" key={week.week}>
 						<button
@@ -450,7 +453,7 @@ function Catalog({
 						{isOpen && (
 							<div className="rb-days">
 								{days.map((day) => {
-									const data = findDay(day.week, day.day);
+									const data = readingN3.findDay(day.week, day.day);
 									return (
 										<button
 											type="button"
@@ -486,10 +489,12 @@ function DayView({
 	data,
 	showCn,
 	showGrammar,
+	module = "reading",
 }: {
 	data: ReadingDay;
 	showCn: boolean;
 	showGrammar: boolean;
+	module?: "reading" | "n2reading";
 }) {
 	return (
 		<>
@@ -599,6 +604,7 @@ function DayView({
 							answerSource={data.answerSource}
 							week={data.week}
 							day={data.day}
+							module={module}
 						/>
 					))}
 					{data.mondai.pageNotes && data.mondai.pageNotes.length > 0 && (
@@ -648,6 +654,7 @@ function DayView({
 									answerSource={data.answerSource}
 									week={data.week}
 									day={data.day}
+									module={module}
 								/>
 							))}
 						</section>
@@ -661,9 +668,9 @@ function DayView({
 					<p className="rb-instruction">生词・读音</p>
 					<div className="rb-vocab">
 						{data.vocab.map((word, index) => {
-							const favId = `reading#${data.week}-${data.day}#v${index}`;
+							const favId = `${module}#${data.week}-${data.day}#v${index}`;
 							registerFavMeta(favId, {
-								module: "reading",
+								module,
 								hash: `#/day/${data.week}-${data.day}`,
 								w: data.week,
 								d: data.day,
@@ -728,10 +735,12 @@ export function ReadingN3Content({
 	week,
 	day,
 	embedded = false,
+	book = "n3",
 }: {
 	week: number;
 	day: number;
 	embedded?: boolean;
+	book?: ReadingBookKey;
 }) {
 	const [showCn, setShowCn] = useState(false);
 	const [showGrammar, setShowGrammar] = useState(false);
@@ -739,7 +748,9 @@ export function ReadingN3Content({
 	const [stuck, setStuck] = useState(false);
 	const sentinelRef = useRef<HTMLDivElement | null>(null);
 
-	const data = findDay(week, day);
+	const pack = readingBooks[book];
+	const module = book === "n2" ? "n2reading" : "reading";
+	const data = pack.findDay(week, day);
 
 	useEffect(() => {
 		const sentinel = sentinelRef.current;
@@ -762,13 +773,13 @@ export function ReadingN3Content({
 		window.scrollTo({ top: 0 });
 	}, [week, day, embedded]);
 
-	const available = readingDays.map((item) => ({ week: item.week, day: item.day }));
+	const available = pack.readingDays.map((item) => ({ week: item.week, day: item.day }));
 	const position = data ? available.findIndex((item) => item.week === data.week && item.day === data.day) : -1;
 	const previous = position > 0 ? available[position - 1] : undefined;
 	const next = position >= 0 && position < available.length - 1 ? available[position + 1] : undefined;
 
 	const outlineLabel = data
-		? (dayOutline.find((item) => item.week === data.week && item.day === data.day)?.label ?? data.label)
+		? (pack.dayOutline.find((item) => item.week === data.week && item.day === data.day)?.label ?? data.label)
 		: "";
 
 	return (
@@ -786,7 +797,7 @@ export function ReadingN3Content({
 							</>
 						) : (
 							<>
-								<span>N3　読解</span>
+								<span>{book === "n2" ? "N2　読解" : "N3　読解"}</span>
 								<b>未找到这一课</b>
 							</>
 						)}
@@ -814,14 +825,14 @@ export function ReadingN3Content({
 						{/* Keyed by lesson: question cards hold their own picked/revealed
 						    state, and without this React reuses them across lessons, so the
 						    next lesson opens with the previous one's answers showing. */}
-						<DayView key={`${data.week}-${data.day}`} data={data} showCn={showCn} showGrammar={showGrammar} />
+						<DayView key={`${data.week}-${data.day}`} data={data} showCn={showCn} showGrammar={showGrammar} module={module} />
 						<nav className="rb-nav" aria-label="课程切换">
 							<button type="button" disabled={!previous} onClick={() => previous && navTo(`#/day/${previous.week}-${previous.day}`)}>
 								<small>上一课</small>
 								<b>
 									{previous
 										? `第${previous.week}週 ${previous.day}日目 · ${
-												dayOutline.find((item) => item.week === previous.week && item.day === previous.day)?.label
+												pack.dayOutline.find((item) => item.week === previous.week && item.day === previous.day)?.label
 											}`
 										: "已经是第一课"}
 								</b>
@@ -831,7 +842,7 @@ export function ReadingN3Content({
 								<b>
 									{next
 										? `第${next.week}週 ${next.day}日目 · ${
-												dayOutline.find((item) => item.week === next.week && item.day === next.day)?.label
+												pack.dayOutline.find((item) => item.week === next.week && item.day === next.day)?.label
 											}`
 										: "已经是最后一课"}
 								</b>

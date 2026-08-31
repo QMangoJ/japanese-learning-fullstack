@@ -204,13 +204,14 @@ describe("language and modules", () => {
 		expect(LANG).toBe("en");
 	});
 
-	it("maps levels and types, including N2 listening and N3-only reading", () => {
+	it("maps levels and types, including N2 listening and reading", () => {
 		expect(moduleFrom("n3", "grammar")).toBe("grammar");
 		expect(moduleFrom("n2", "vocab")).toBe("n2vocab");
 		expect(moduleFrom("n4", "reading")).toBe("n4grammar");
 		expect(moduleFrom("n3", "listening")).toBe("listening");
 		expect(moduleFrom("n2", "listening")).toBe("n2listening");
-		expect(typeForLevel("n2", "reading")).toBe("grammar");
+		expect(moduleFrom("n2", "reading")).toBe("n2reading");
+		expect(typeForLevel("n2", "reading")).toBe("reading");
 		expect(typeForLevel("n2", "listening")).toBe("listening");
 		expect(typeForLevel("n3", "listening")).toBe("listening");
 		expect(typeForLevel("n4", "listening")).toBe("grammar");
@@ -218,6 +219,7 @@ describe("language and modules", () => {
 		expect(isVocab("n2vocab")).toBe(true);
 		expect(isKanji("kanji")).toBe(true);
 		expect(isReading("reading")).toBe(true);
+		expect(isReading("n2reading")).toBe(true);
 		expect(isListening("listening")).toBe(true);
 		expect(isListening("n2listening")).toBe(true);
 		expect(isN2("n2grammar")).toBe(true);

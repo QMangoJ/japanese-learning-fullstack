@@ -1,7 +1,7 @@
 import henkeiFallback from "../data/common-henkei.json";
 import jitaFallback from "../data/common-jita.json";
 import kougoFallback from "../data/common-kougo.json";
-import { listeningBundle, listeningN2Bundle, readingBundle } from "./catalogs";
+import { listeningBundle, listeningN2Bundle, readingBundle, readingN2Bundle } from "./catalogs";
 
 export type ModuleKey =
 	| "grammar"
@@ -12,6 +12,7 @@ export type ModuleKey =
 	| "n2grammar"
 	| "n2vocab"
 	| "n2kanji"
+	| "n2reading"
 	| "n2listening"
 	| "n4grammar"
 	| "n4vocab"
@@ -58,6 +59,7 @@ export const MODLABELS: Record<ModuleKey, [string, string]> = {
 	listening: ["N3 听解", "N3 Listening"],
 	n2vocab: ["N2 词汇", "N2 Vocabulary"],
 	n2kanji: ["N2 汉字", "N2 Kanji"],
+	n2reading: ["N2 读解", "N2 Reading"],
 	n2listening: ["N2 听解", "N2 Listening"],
 	n4grammar: ["N4 语法", "N4 Grammar"],
 	n4vocab: ["N4 词汇", "N4 Vocabulary"],
@@ -72,6 +74,7 @@ export const BOOK_TITLE: Record<ModuleKey, [string, string]> = {
 	listening: ["N3听解训练", "JLPT Prep N3 Listening"],
 	n2vocab: ["N2词汇训练", "JLPT Prep N2 Vocabulary"],
 	n2kanji: ["N2汉字训练", "JLPT Prep N2 Kanji"],
+	n2reading: ["N2读解训练", "JLPT Prep N2 Reading"],
 	n2listening: ["N2听解训练", "JLPT Prep N2 Listening"],
 	n4grammar: ["N4语法训练", "JLPT Prep N4 Grammar"],
 	n4vocab: ["N4词汇训练", "JLPT Prep N4 Vocabulary"],
@@ -86,6 +89,7 @@ export const MODULES: ModuleKey[] = [
 	"n2grammar",
 	"n2vocab",
 	"n2kanji",
+	"n2reading",
 	"n2listening",
 	"n4grammar",
 	"n4vocab",
@@ -112,6 +116,7 @@ export const FAV_MOD_ORDER = [
 	"n2kanji",
 	"n4kanji",
 	"reading",
+	"n2reading",
 	"listening",
 	"n2listening",
 	"selection",
@@ -127,6 +132,7 @@ export const FAV_MOD_LABEL: Record<string, string> = {
 	n2kanji: "N2汉字",
 	n4kanji: "N4汉字",
 	reading: "N3读解",
+	n2reading: "N2读解",
 	listening: "N3听解",
 	n2listening: "N2听解",
 	selection: "划词收藏",
@@ -154,6 +160,7 @@ const MOD2LT: Record<ModuleKey, [LevelKey, TypeKey]> = {
 	n2grammar: ["n2", "grammar"],
 	n2vocab: ["n2", "vocab"],
 	n2kanji: ["n2", "kanji"],
+	n2reading: ["n2", "reading"],
 	n2listening: ["n2", "listening"],
 	n4grammar: ["n4", "grammar"],
 	n4vocab: ["n4", "vocab"],
@@ -168,6 +175,7 @@ const LT2MOD: Record<string, ModuleKey> = {
 	"n2:grammar": "n2grammar",
 	"n2:vocab": "n2vocab",
 	"n2:kanji": "n2kanji",
+	"n2:reading": "n2reading",
 	"n2:listening": "n2listening",
 	"n4:grammar": "n4grammar",
 	"n4:vocab": "n4vocab",
@@ -287,9 +295,11 @@ export let G4: any = emptyBundle;
 export let V4: any = emptyBundle;
 export let K4: any = emptyBundle;
 export let R: any = readingBundle();
+export let R2: any = readingN2Bundle();
 export let L: any = listeningBundle();
 export let L2: any = listeningN2Bundle();
 DATA.reading = R;
+DATA.n2reading = R2;
 DATA.listening = L;
 DATA.n2listening = L2;
 
@@ -351,13 +361,13 @@ export function isN4(mod: string = MODULE) {
 	return mod.startsWith("n4");
 }
 export function isReading(mod: string = MODULE) {
-	return mod === "reading";
+	return mod === "reading" || mod === "n2reading";
 }
 export function isListening(mod: string = MODULE) {
 	return mod === "listening" || mod === "n2listening";
 }
 export function moduleFrom(lv: string, ty: string): ModuleKey {
-	if (ty === "reading") return lv === "n3" ? "reading" : LT2MOD[`${lv}:grammar`] || "grammar";
+	if (ty === "reading") return LT2MOD[`${lv}:reading`] || LT2MOD[`${lv}:grammar`] || "grammar";
 	if (ty === "listening") return LT2MOD[`${lv}:listening`] || "listening";
 	return LT2MOD[`${lv}:${ty}`] || "grammar";
 }
@@ -374,6 +384,7 @@ export function cur(mod: string = MODULE) {
 			kanji: K,
 			n2vocab: V2,
 			n2kanji: K2,
+			n2reading: R2,
 			n2listening: L2,
 			n4grammar: G4,
 			n4vocab: V4,
@@ -424,7 +435,7 @@ export function setLang(lang: Lang) {
 	emit();
 }
 export function typeForLevel(lv: LevelKey, ty: TypeKey): TypeKey {
-	if (ty === "reading" && lv !== "n3") return "grammar";
+	if (ty === "reading" && lv !== "n3" && lv !== "n2") return "grammar";
 	if (ty === "listening" && lv !== "n3" && lv !== "n2") return "grammar";
 	return ty;
 }
@@ -917,36 +928,40 @@ function buildIndex() {
 	pushK("kanji", K.weeks);
 	pushK("n2kanji", K2.weeks);
 	pushK("n4kanji", K4.weeks);
-	for (const w of R.weeks || [])
-		for (const d of w.days) {
-			(d.vocab || []).forEach((it: any, ii: number) => {
-				searchIndex!.push({
-					module: "reading",
-					w: w.n,
-					d: d.day,
-					si: 0,
-					ii,
-					key: it.jp || "",
-					reading: it.kana || "",
-					extra: (it.cn || "") + " " + (it.pos || ""),
-					sub: it.cn || "",
-					dayTitle: d.title,
+	const pushReading = (mod: string, weeks: any[]) => {
+		for (const w of weeks || [])
+			for (const d of w.days) {
+				(d.vocab || []).forEach((it: any, ii: number) => {
+					searchIndex!.push({
+						module: mod,
+						w: w.n,
+						d: d.day,
+						si: 0,
+						ii,
+						key: it.jp || "",
+						reading: it.kana || "",
+						extra: (it.cn || "") + " " + (it.pos || ""),
+						sub: it.cn || "",
+						dayTitle: d.title,
+					});
 				});
-			});
-			(d.grammar || []).forEach((p: any, i: number) => {
-				searchIndex!.push({
-					module: "reading",
-					w: w.n,
-					d: d.day,
-					i,
-					key: p.pattern || "",
-					reading: "",
-					extra: (p.formation || "") + " " + (p.meaning || ""),
-					sub: p.meaning || "",
-					dayTitle: d.title,
+				(d.grammar || []).forEach((p: any, i: number) => {
+					searchIndex!.push({
+						module: mod,
+						w: w.n,
+						d: d.day,
+						i,
+						key: p.pattern || "",
+						reading: "",
+						extra: (p.formation || "") + " " + (p.meaning || ""),
+						sub: p.meaning || "",
+						dayTitle: d.title,
+					});
 				});
-			});
-		}
+			}
+	};
+	pushReading("reading", R.weeks);
+	pushReading("n2reading", R2.weeks);
 	for (const w of L.weeks || [])
 		for (const d of w.days) {
 			searchIndex!.push({
@@ -1479,6 +1494,7 @@ export function resetStudyStateForTests() {
 	V4 = { weeks: [] };
 	K4 = { weeks: [] };
 	R = readingBundle();
+	R2 = readingN2Bundle();
 	L = listeningBundle();
 	L2 = listeningN2Bundle();
 	DATA = {
@@ -1488,6 +1504,7 @@ export function resetStudyStateForTests() {
 		n2grammar: G2,
 		n2vocab: V2,
 		n2kanji: K2,
+		n2reading: R2,
 		n2listening: L2,
 		n4grammar: G4,
 		n4vocab: V4,

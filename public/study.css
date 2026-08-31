@@ -566,11 +566,19 @@ body.hide-cn .vcn,body.hide-cn .cn{visibility:hidden}
 .ct-h{font-size:16px;margin:0 0 8px;color:var(--accent)}
 .ct-tip{background:var(--amber-soft);color:var(--amber);border-radius:8px;padding:6px 10px;font-size:13px;margin-bottom:10px;line-height:1.5}
 .ct-row{padding:9px 0;border-top:1px dashed var(--line)}
+.ct-usage{padding:10px 0;border-top:1px dashed var(--line)}
+.ct-h + .ct-usage,
+.ct-tip + .ct-usage,
+.ct-daysum h4 + .ct-usage{border-top:none;padding-top:0}
+.ct-usage__row{display:grid;grid-template-columns:4.8em minmax(0,1fr);gap:4px 10px;align-items:start;margin-top:6px}
+.ct-usage__row:first-child{margin-top:0}
+.ct-usage__k{font-size:11px;font-weight:700;color:var(--sub);letter-spacing:.02em;line-height:1.4;padding-top:3px}
+.ct-usage__v{min-width:0}
 .ct-form{font-weight:600;font-size:15px}
 .ct-loc{color:var(--blue);font-size:12px;margin-left:8px;cursor:pointer;white-space:nowrap}
-.ct-eg{font-size:14px;margin:2px 0 0}
-.ct-egcn{color:var(--sub);font-size:13px;margin:0 0 2px}
-.ct-mean{font-size:14px}
+.ct-eg{font-size:14px;margin:0}
+.ct-egcn{color:var(--sub);font-size:13px;margin:2px 0 0}
+.ct-mean{font-size:14px;line-height:1.55}
 .ct-daysum{margin-bottom:10px}
 .ct-daysum h4{margin:0 0 8px;font-size:15px;display:flex;align-items:baseline;gap:6px;flex-wrap:wrap}
 .ct-daysum h4 .meta{font-weight:400}
@@ -626,6 +634,7 @@ body.hide-cn .vcn,body.hide-cn .cn{visibility:hidden}
   .kmeta{font-size:12.5px}
   table.ref{font-size:14.5px}
   .ct-form{font-size:16.5px}
+  .ct-usage__k{font-size:12px}
   .ct-eg,.ct-mean{font-size:15.5px}
   .ct-egcn{font-size:14.5px}
   .keigo li{font-size:15.5px}

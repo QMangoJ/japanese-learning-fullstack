@@ -1,0 +1,312 @@
+import type { ReadingDay } from "../reading-n3/types";
+
+// 第2週 1日目 お知らせ① — printed pages 28–29
+export const w2d1: ReadingDay = {
+	week: 2,
+	day: 1,
+	label: "お知らせ①",
+	labelKana: "おしらせ",
+	labelEn: "Notice ①",
+	printedPages: [28, 29],
+	answerSource: "book",
+
+	point: {
+		title: "{決|き}まったパターンに{慣|な}れよう！①",
+		titleCn: "熟悉固定句式吧！①",
+		titleEn: "Try to get used to the sentence patterns! ①",
+		figure: {
+			alt: "ギターを持って怒ったような顔の人と、ギターを弾きながら「ぼく、ギタリストになりたい！」と言っている人のイラスト",
+			cn: "一个人拿着吉他一脸不服，另一个人边弹吉他边说「我想当吉他手！」",
+			en: "One person clutching a guitar with a fierce look, and another playing guitar and saying “I want to be a guitarist!”",
+		},
+		tips: [
+			{
+				jp: "コンサートやリサイタルのお{知|し}らせではこんな{言葉|ことば}がよく{使|つか}われます。",
+				cn: "音乐会、独奏会的启事里经常出现下面这些词。",
+				en: "Notices for concerts and recitals often use words like these.",
+			},
+		],
+		expressions: [
+			{ jp: "リサイタル", cn: "独奏会", en: "a recital" },
+			{ jp: "開場", kana: "かいじょう", cn: "开场、开门入场", en: "opening of the hall" },
+			{ jp: "開演", kana: "かいえん", cn: "开演", en: "starting time" },
+			{ jp: "全席自由", kana: "ぜんせきじゆう", cn: "全场自由入座", en: "free seating" },
+			{ jp: "前売（券）", kana: "まえうり（けん）", cn: "预售（票）", en: "a ticket sold in advance" },
+			{ jp: "当日（券）", kana: "とうじつ（けん）", cn: "当天（票）", en: "a ticket sold on the day of the performance" },
+			{ jp: "入賞", kana: "にゅうしょう", cn: "获奖", en: "prize-winning" },
+			{ jp: "デビュー", cn: "初次登台", en: "a debut" },
+			{ jp: "共演", kana: "きょうえん", cn: "合演、同台演出", en: "a co-star; performing together" },
+			{ jp: "クラシック", cn: "古典音乐", en: "classical music" },
+			{ jp: "公演", kana: "こうえん", cn: "公演、演出", en: "a performance" },
+			{ jp: "ジャズ", cn: "爵士乐", en: "jazz" },
+			{ jp: "ギタリスト", cn: "吉他手", en: "a guitarist" },
+			{ jp: "ピアニスト", cn: "钢琴师", en: "a pianist" },
+		],
+	},
+
+	renshu: {
+		instruction: "{次|つぎ}の{会話文|かいわぶん}を{読|よ}んで、{後|あと}の{文|ぶん}から{正|ただ}しいものを{選|えら}ぼう。",
+		instructionCn: "阅读下面的对话，从后面的句子中选出正确的。（答案在下一页）",
+		instructionEn: "Read the conversation below and choose the correct statements from the sentences that follow. (Answers are on the next page.)",
+		blocks: [
+			{
+				type: "speech",
+				speaker: "A",
+				speakerCn: "A",
+				speakerEn: "A",
+				jp: "{今度|こんど}、{大谷美和|おおたにみわ}のコンサート{行|い}かない？　ギタリスト2{人|にん}とピアニストの4{人|にん}でやるんだって。",
+				cn: "这次要不要去大谷美和的音乐会？听说是两个吉他手加钢琴，一共四个人演。",
+				en: "Want to go to Otani Miwa’s concert? They say it’s four people: two guitarists and a pianist.",
+			},
+			{
+				type: "speech",
+				speaker: "B",
+				speakerCn: "B",
+				speakerEn: "B",
+				jp: "{行|い}く、{行|い}く。{日本|にほん}でのコンサートは{久|ひさ}しぶりだよね。",
+				cn: "去，去。她在日本开音乐会都好久了吧。",
+				en: "Yes, yes. It’s been a while since her last concert in Japan.",
+			},
+			{
+				type: "speech",
+				speaker: "A",
+				speakerCn: "A",
+				speakerEn: "A",
+				jp: "うん、パリに{住|す}んでいるし、{海外|かいがい}での{活動|かつどう}のほうがずっと{多|おお}いらしいよ。",
+				cn: "嗯，她住在巴黎，据说在海外的活动要多得多。",
+				en: "Yeah, she lives in Paris, and apparently she performs overseas a lot more.",
+			},
+			{
+				type: "speech",
+				speaker: "B",
+				speakerCn: "B",
+				speakerEn: "B",
+				jp: "ふーん。もっと{日本|にほん}でやってくれればいいのに。",
+				cn: "哦——要是能多在日本演就好了。",
+				en: "Hmm. I wish she’d perform more in Japan.",
+			},
+			{
+				type: "speech",
+				speaker: "A",
+				speakerCn: "A",
+				speakerEn: "A",
+				jp: "そうだよね。あ、{今度|こんど}はクラシックだけじゃなくて、{映画音楽|えいがおんがく}や{日本|にほん}の{歌|うた}もやるんだって。",
+				cn: "就是啊。啊，听说这次不光演古典，还演电影音乐和日本歌曲。",
+				en: "I know. Oh, and this time it won’t be only classical—they’ll also do film music and Japanese songs.",
+			},
+		],
+		choices: [
+			{ jp: "AさんはBさんをコンサートに{誘|さそ}っている。", cn: "A 在邀请 B 去音乐会。", en: "A is inviting B to the concert." },
+			{ jp: "{大谷美和|おおたにみわ}は{今度|こんど}{日本|にほん}で{初|はじ}めてコンサートを{開|ひら}く。", cn: "大谷美和这次是第一次在日本开音乐会。", en: "This will be Otani Miwa’s first concert in Japan." },
+			{ jp: "{大谷美和|おおたにみわ}は{日本国内|にほんこくない}での{活動|かつどう}が{少|すく}ない。", cn: "大谷美和在日本国内的活动很少。", en: "Otani Miwa does not perform much inside Japan." },
+			{ jp: "{大谷美和|おおたにみわ}は{今度|こんど}のコンサートでクラシックを{演奏|えんそう}しない。", cn: "大谷美和这次音乐会上不演奏古典音乐。", en: "Otani Miwa will not play classical music at this concert." },
+			{ jp: "Bさんは、{大谷美和|おおたにみわ}のコンサートに{行|い}きたがっている。", cn: "B 很想去大谷美和的音乐会。", en: "B wants to go to Otani Miwa’s concert." },
+		],
+		answers: [1, 3, 5],
+	},
+
+	mondai: {
+		instruction: "{次|つぎ}の{文書|ぶんしょ}を{読|よ}んで、{後|あと}の{問|と}いに{答|こた}えなさい。",
+		instructionCn: "阅读下面的文书，回答后面的问题。（答案在别册 p.3）",
+		instructionEn: "Read the following document and answer the questions that follow. (Answers are in the separate booklet, p. 3.)",
+		blocks: [
+			{
+				type: "title",
+				jp: "{大谷美和|おおたにみわ}　バイオリンリサイタル",
+				cn: "大谷美和　小提琴独奏会",
+				en: "Otani Miwa  Violin Recital",
+			},
+			{
+				type: "figure",
+				alt: "バイオリンを弾いている大谷美和のイラスト",
+				cn: "大谷美和拉小提琴的插图",
+				en: "Illustration of Otani Miwa playing the violin",
+			},
+			{
+				type: "list",
+				marker: "・",
+				items: [
+					{ jp: "{曲|きょく}：シャコンヌ　Take Five　{五木|いつき}の{子守歌|こもりうた}　{他|ほか}", cn: "曲目：恰空、Take Five、五木摇篮曲 等", en: "Program: Chaconne; Take Five; Itsuki Lullaby; and others" },
+					{ jp: "20XX{年|ねん}7{月|がつ}3{日|にち}（{土|ど}）", cn: "20XX 年 7 月 3 日（周六）", en: "Saturday, July 3, 20XX" },
+					{ jp: "ヤマセホール", cn: "雅马塞音乐厅", en: "Yamase Hall" },
+					{ jp: "（{開場|かいじょう}：14:30　{開演|かいえん} 15:00）", cn: "（开门入场：14:30　开演 15:00）", en: "(Doors open: 14:30; performance starts 15:00)" },
+					{ jp: "{全席自由|ぜんせきじゆう}　{前売|まえうり}2,500{円|えん}　{当日|とうじつ}3,000{円|えん}", cn: "全场自由入座　预售 2,500 日元　当天 3,000 日元", en: "Free seating; advance tickets ¥2,500; door tickets ¥3,000" },
+					{
+						jp: "チケット・{問|と}い{合|あ}わせ：{大谷音楽事務所|おおたにおんがくじむしょ}（03-XXXX-XXX）／ヤマセホール（03-XXXX-XXX）",
+						cn: "门票・咨询：大谷音乐事务所（03-XXXX-XXX）／雅马塞音乐厅（03-XXXX-XXX）",
+						en: "Tickets / inquiries: Otani Music Office (03-XXXX-XXX) / Yamase Hall (03-XXXX-XXX)",
+					},
+				],
+			},
+			{
+				type: "heading",
+				jp: "{大谷美和|おおたにみわ}　プロフィール：",
+				cn: "大谷美和　简介：",
+				en: "Otani Miwa  Profile:",
+			},
+			{
+				type: "paragraph",
+				jp: "1970{年|ねん}{東京|とうきょう}{生|う}まれ。22{歳|さい}の{時|とき}、プレオベール{国際音楽|こくさいおんがく}コンクール　バイオリン{部門|ぶもん}にて3{位入賞|いにゅうしょう}し、{国際舞台|こくさいぶたい}にデビュー。{現在|げんざい}パリ{在住|ざいじゅう}（{注|ちゅう}1）で、{演奏活動|えんそうかつどう}で{世界中|せかいじゅう}を{回|まわ}っている。",
+				cn: "1970 年出生于东京。22 岁时在普雷奥贝尔国际音乐比赛小提琴组获第 3 名，登上国际舞台。现在住在巴黎（注1），在世界各地巡回演出。",
+				en: "Born in Tokyo in 1970. At age 22 she took third prize in the violin division of the Préaubert International Music Competition and made her international debut. She currently lives in Paris (note 1) and tours the world as a performer.",
+			},
+			{
+				type: "heading",
+				jp: "{推薦|すいせん}（{注|ちゅう}2）の{言葉|ことば}：{高山幸一|たかやまこういち}（{音楽評論家|おんがくひょうろんか}）",
+				cn: "推荐（注2）的话：高山幸一（音乐评论家）",
+				en: "Words of recommendation (note 2): Takayama Kōichi (music critic)",
+			},
+			{
+				type: "paragraph",
+				jp: "{大谷美和|おおたにみわ}さんと{僕|ぼく}との{出会|であ}いは{彼女|かのじょ}がまだパリの{音楽院|おんがくいん}の{学生|がくせい}だった{頃|ころ}、オーケストラでの{共演|きょうえん}がきっかけでした。{若|わか}さに{似合|にあ}わない{高度|こうど}な{技術|ぎじゅつ}＊と{美|うつく}しいバイオリンの{響|ひび}きに{驚|おどろ}かされたものです。",
+				cn: "我和大谷美和的相识，是在她还是巴黎音乐学院学生的时候，因为一次管弦乐合演。她那与年纪不相称的高超技艺＊和美丽的小提琴音色，让我吃了一惊。",
+				en: "I first met Otani Miwa when she was still a student at the Paris conservatory; we performed together in an orchestra. I was astonished by technique far beyond her years＊ and by the beauty of her violin tone.",
+			},
+			{
+				type: "paragraph",
+				jp: "{日本|にほん}の{音楽|おんがく}ファンの{方|かた}は{大谷美和|おおたにみわ}といえばクラシックというイメージをお{持|も}ちかと{思|おも}いますが、{久|ひさ}しぶりの{日本公演|にほんこうえん}となる{今回|こんかい}は、ジャズや{日本|にほん}の{歌|うた}なども{弾|ひ}くとのこと。ギタリスト2{人|にん}とピアニストと{一緒|いっしょ}ににぎやかに、ということで{彼女|かのじょ}のまた{違|ちが}った{一面|いちめん}が{見|み}られそうです＊＊。{先日|せんじつ}{久|ひさ}しぶりに{会|あ}った{彼女|かのじょ}は「{今|いま}から{緊張|きんちょう}しています」と{笑顔|えがお}で{語|かた}ってくれました。{僕|ぼく}も{非常|ひじょう}に{楽|たの}しみにしています。",
+				cn: "日本的乐迷一提起大谷美和，大概都会想到古典音乐；但阔别已久的这次日本公演，据说也会演奏爵士和日本歌曲。将与两名吉他手和钢琴师一起热闹演出，想必能看到她另一面＊＊。前几天久别重逢时，她带着笑容说「从现在起就开始紧张了」。我也非常期待。",
+				en: "Japanese music fans probably picture Otani Miwa as classical, but this long-awaited Japan performance will also include jazz and Japanese songs. With two guitarists and a pianist it should be lively, and we may see a different side of her＊＊. When I saw her the other day after a long time, she smiled and said, “I’m already getting nervous.” I am very much looking forward to it as well.",
+			},
+			{
+				type: "figure",
+				alt: "大谷美和の顔のイラスト",
+				cn: "大谷美和的头像插图",
+				en: "Portrait illustration of Otani Miwa",
+			},
+		],
+		footnotes: [
+			{ marker: "（注1）", term: "〜在住", jp: "ざいじゅう", cn: "居住在〜", en: "lives in…" },
+			{ marker: "（注2）", term: "推薦", jp: "すいせん", cn: "推荐", en: "recommendation" },
+		],
+		pageNotes: [
+			{
+				jp: "＊ very good technique for her young age",
+				cn: "＊年纪轻却技艺精湛",
+				en: "very good technique for her young age",
+			},
+			{
+				jp: "＊＊ We might see a different side of her as the performance will be quite lively with two guitarists and a pianist.",
+				cn: "＊＊她和钢琴师及两名吉他手热闹地配合演奏，也许能看到她的另一面。",
+				en: "We might see a different side of her as the performance will be quite lively with two guitarists and a pianist.",
+			},
+		],
+		questions: [
+			{
+				label: "問1",
+				jp: "{非常|ひじょう}に{楽|たの}しみにしていますとあるが、{何|なに}が{楽|たの}しみなのか。",
+				cn: "文中说「非常期待」，期待的是什么？",
+				en: "The text says “I am very much looking forward to it.” What is being looked forward to?",
+				choices: [
+					{ jp: "{大谷美和|おおたにみわ}が{語|かた}ること", cn: "大谷美和讲述的内容", en: "What Otani Miwa talks about" },
+					{ jp: "{大谷美和|おおたにみわ}の{笑顔|えがお}を{見|み}ること", cn: "看到大谷美和的笑容", en: "Seeing Otani Miwa’s smile" },
+					{ jp: "{大谷美和|おおたにみわ}が{緊張|きんちょう}すること", cn: "大谷美和紧张这件事", en: "Otani Miwa being nervous" },
+					{ jp: "{大谷美和|おおたにみわ}のコンサート", cn: "大谷美和的音乐会", en: "Otani Miwa’s concert" },
+				],
+				answer: 4,
+				explanation:
+					"「僕も非常に楽しみにしています」紧接在介绍即将举行的日本公演之后。前一句她说「今から緊張しています」，评论家的「も」是接着这场音乐会说的：她紧张地盼着演出，他也一样期待这场音乐会。1、2、3 都只是见面时的细节，不是「楽しみ」的对象。",
+				explanationEn:
+					"“I am very much looking forward to it as well” comes right after the critic describes the upcoming Japan concert. She said she is already nervous; his mo picks up that looking-ahead-to-the-concert feeling. 1, 2, and 3 are only details of their recent meeting, not what he is looking forward to.",
+				choiceNotes: [
+					"「語ってくれました」只是前几天见面时的事，不是期待的对象。",
+					"「笑顔で」只是说话时的样子，不是「楽しみ」的内容。",
+					"紧张的是她，评论家期待的不是「她紧张」。",
+					"正确。整段推荐写的都是即将举行的公演，期待的是这场音乐会。",
+				],
+				choiceNotesEn: [
+					"Her talking to him was only at their recent meeting, not what he is looking forward to.",
+					"The smile is just how she spoke; it is not the object of tanoshimi.",
+					"She is the one who is nervous; that is not what the critic is looking forward to.",
+					"Correct. The whole recommendation is about the coming concert, which is what he is looking forward to.",
+				],
+			},
+			{
+				label: "問2",
+				jp: "どのようなことが{書|か}かれているか。",
+				cn: "文中写的是哪一类内容？",
+				en: "What kind of content is written here?",
+				choices: [
+					{ jp: "コンサートの{感想|かんそう}", cn: "对音乐会的感想", en: "impressions of the concert" },
+					{ jp: "コンサートの{紹介|しょうかい}", cn: "对音乐会的介绍", en: "an introduction to the concert" },
+					{ jp: "コンサートの{批評|ひひょう}", cn: "对音乐会的评论", en: "a critique of the concert" },
+					{ jp: "コンサートの{批判|ひはん}", cn: "对音乐会的批判", en: "criticism of the concert" },
+				],
+				answer: 2,
+				explanation:
+					"这是音乐会前的「推薦の言葉」：介绍演奏者履历、曲目风格（爵士、日本歌曲、吉他和钢琴同台），并说「楽しみにしています」。演出还没举行，所以不是看完后的感想、批评或批判，而是介绍。选 2。",
+				explanationEn:
+					"These are words of recommendation before the concert: they introduce her background and the program (jazz, Japanese songs, guitarists and a pianist) and say the writer is looking forward to it. The concert has not happened yet, so this is not a review, critique, or attack—it is an introduction. 2 is correct.",
+				choiceNotes: [
+					"感想是听过之后的感受。文中还在说「見られそうです」「楽しみにしています」，演出尚未举行。",
+					"正确。推荐栏在介绍这场即将举行的公演。",
+					"批评是对已完成演出的评价。这里没有评这场演奏的好坏。",
+					"批判是指出缺点、责难。推荐文是称赞和预告，不是批判。",
+				],
+				choiceNotesEn: [
+					"Impressions come after you have heard the concert. The text still says “we may see” and “I am looking forward to it.”",
+					"Correct. The recommendation column is introducing the coming performance.",
+					"A critique evaluates a performance that has already taken place. Nothing here judges this concert.",
+					"Criticism would point out faults. This is praise and a preview, not an attack.",
+				],
+			},
+		],
+	},
+
+	vocab: [
+		{ jp: "お知らせ", kana: "おしらせ", cn: "通知、启事", en: "a notice", pos: "名詞" },
+		{ jp: "リサイタル", cn: "独奏会", en: "a recital", pos: "名詞" },
+		{ jp: "開場", kana: "かいじょう", cn: "开门入场", en: "doors opening", pos: "名詞" },
+		{ jp: "開演", kana: "かいえん", cn: "开演", en: "the start of a performance", pos: "名詞" },
+		{ jp: "全席自由", kana: "ぜんせきじゆう", cn: "全场自由入座", en: "free seating", pos: "名詞" },
+		{ jp: "前売", kana: "まえうり", cn: "预售", en: "advance sale", pos: "名詞" },
+		{ jp: "当日", kana: "とうじつ", cn: "当天", en: "on the day", pos: "名詞" },
+		{ jp: "入賞", kana: "にゅうしょう", cn: "获奖", en: "winning a prize", pos: "名詞・動詞" },
+		{ jp: "デビュー", cn: "初次登台", en: "a debut", pos: "名詞・動詞" },
+		{ jp: "共演", kana: "きょうえん", cn: "合演", en: "performing together", pos: "名詞・動詞" },
+		{ jp: "公演", kana: "こうえん", cn: "公演、演出", en: "a public performance", pos: "名詞・動詞" },
+		{ jp: "在住", kana: "ざいじゅう", cn: "居住", en: "residence; living in", pos: "名詞・動詞" },
+		{ jp: "推薦", kana: "すいせん", cn: "推荐", en: "recommendation", pos: "名詞・動詞" },
+		{ jp: "評論家", kana: "ひょうろんか", cn: "评论家", en: "a critic", pos: "名詞" },
+		{ jp: "響き", kana: "ひびき", cn: "音色、回响", en: "tone; resonance", pos: "名詞" },
+		{ jp: "緊張", kana: "きんちょう", cn: "紧张", en: "nervousness", pos: "名詞・動詞" },
+		{ jp: "一面", kana: "いちめん", cn: "一面、另一面", en: "a side (of a person)", pos: "名詞" },
+		{ jp: "誘う", kana: "さそう", cn: "邀请", en: "to invite", pos: "動詞" },
+	],
+
+	grammar: [
+		{
+			pattern: "〜にて",
+			formation: "名詞＋にて",
+			meaning: "在……（「で」的书面语）。告示、评语里常见。",
+			meaningEn: "at / in…. Written-style equivalent of de; common on notices and in formal prose.",
+			example: {
+				jp: "バイオリン{部門|ぶもん}にて3{位入賞|いにゅうしょう}し、{国際舞台|こくさいぶたい}にデビュー。",
+				cn: "在小提琴组获第 3 名，登上国际舞台。",
+				en: "She took third prize in the violin division and made her international debut.",
+			},
+		},
+		{
+			pattern: "〜とのこと",
+			formation: "普通形＋とのこと",
+			meaning: "据说……。转述听到的内容，比「〜そうだ」更书面。",
+			meaningEn: "I hear that… / they say that…. Reports what one has been told; more written than sō da.",
+			example: {
+				jp: "ジャズや{日本|にほん}の{歌|うた}なども{弾|ひ}くとのこと。",
+				cn: "据说也会演奏爵士和日本歌曲。",
+				en: "They say she will also play jazz and Japanese songs.",
+			},
+		},
+		{
+			pattern: "〜ものです",
+			formation: "た形＋ものです",
+			meaning: "回忆当时的强烈感受。「驚かされたものです」带感叹语气。",
+			meaningEn: "Recalls a strong impression from the past. Odoro kasareta mono desu has an exclamatory tone.",
+			example: {
+				jp: "{美|うつく}しいバイオリンの{響|ひび}きに{驚|おどろ}かされたものです。",
+				cn: "那美丽的小提琴音色真是让我吃了一惊。",
+				en: "I was truly astonished by the beauty of her violin tone.",
+			},
+		},
+	],
+};
