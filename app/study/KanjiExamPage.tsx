@@ -88,6 +88,18 @@ function scoreLabel(correct: number, total: number) {
 	return total ? Math.round((correct / total) * 100) : 0;
 }
 
+function QuestionMeaning({ question, review = false }: {
+	question: Pick<KanjiExamQuestion, "kind" | "target" | "answer">;
+	review?: boolean;
+}) {
+	const support = englishSupportForQuestion(question);
+	return (
+		<div className={`kanji-exam-english-support${review ? " kanji-exam-review-meaning" : ""}`}>
+			<b>{support.label}</b><span>{support.meaning}</span>
+		</div>
+	);
+}
+
 function modeLabel(mode: KanjiExamMode) {
 	return lx(modeMeta[mode].cn, modeMeta[mode].en);
 }
@@ -317,6 +329,7 @@ export function KanjiExamPage() {
 													</div>
 													<p><MarkedPrompt question={{ ...wrong, id: wrong.questionId, lessonId: "", page: 0 }} /></p>
 													<span>{lx("你的答案", "Your answer")}: <del>{wrong.userAnswer || "—"}</del>　{lx("正确答案", "Answer")}: <b>{wrong.answer}</b></span>
+													<QuestionMeaning question={wrong} review />
 												</div>
 											))}
 										</>
@@ -355,9 +368,9 @@ export function KanjiExamPage() {
 				<span>漢字テスト</span>
 				<h1>{batchTitle}</h1>
 				<p>{batchSubtitle}</p>
-				<button className={`kanji-exam-paper__support${englishSupport ? " on" : ""}`} type="button" role="switch" aria-checked={englishSupport} onClick={toggleEnglishSupport}>
+				{!submitted ? <button className={`kanji-exam-paper__support${englishSupport ? " on" : ""}`} type="button" role="switch" aria-checked={englishSupport} onClick={toggleEnglishSupport}>
 					EN · English Support {englishSupport ? "On" : "Off"}
-				</button>
+				</button> : null}
 			</header>
 
 			{submitted ? (
@@ -386,14 +399,13 @@ export function KanjiExamPage() {
 						const number = index + 1;
 						const value = answers[question.id] || "";
 						const correct = submitted && correctSet.has(question.id);
-						const support = englishSupportForQuestion(question);
 						return (
 							<div className={`kanji-exam-question ${submitted ? correct ? "correct" : "wrong" : ""}`} key={question.id}>
 								<span className="kanji-exam-question__number">{number}</span>
 								<div className="kanji-exam-question__body">
 									<small className="kanji-exam-question__meta">{lessonTitleById.get(question.lessonId)} · {question.kind === "reading" ? lx("读音", "Reading") : lx("汉字", "Kanji")}</small>
 									<p><MarkedPrompt question={question} /></p>
-									{englishSupport ? <div className="kanji-exam-english-support"><b>{support.label}</b><span>{support.meaning}</span></div> : null}
+									{englishSupport && !submitted ? <QuestionMeaning question={question} /> : null}
 									<label>
 										<span>{question.kind === "reading" ? lx("读音", "Reading") : lx("汉字", "Kanji")}</span>
 										<input
@@ -412,6 +424,7 @@ export function KanjiExamPage() {
 											<span>{lx("正确答案", "Answer")}</span><strong>{question.answer}</strong>
 										</div>
 									) : null}
+									{submitted ? <QuestionMeaning question={question} review /> : null}
 								</div>
 							</div>
 						);

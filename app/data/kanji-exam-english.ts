@@ -63,7 +63,7 @@ export function englishLessonLabel(lessonId: string, fallback: string) {
 	return lessonEnglish[lessonId] || fallback;
 }
 
-export function englishSupportForQuestion(question: KanjiExamQuestion) {
+export function englishSupportForQuestion(question: Pick<KanjiExamQuestion, "kind" | "target" | "answer">) {
 	if (question.kind === "reading") {
 		return { label: "Word meaning", meaning: wordMeaning[question.target] || "Meaning not yet reviewed" };
 	}
