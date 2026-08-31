@@ -396,7 +396,7 @@ describe("ContrastPage usage notes", () => {
 			intro: "按家族归类",
 			groups: [
 				{
-					title: "①「よう」大家族",
+					title: "①「ように」系列",
 					tip: "接辞书形还是意志形",
 					rows: [
 						{
