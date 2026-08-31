@@ -78,7 +78,7 @@
 .kanji-exam-history__wrong mark{padding:0 2px;background:var(--red-soft);color:inherit}
 .kanji-exam-history__wrong-item>span{color:var(--sub);font-size:11px}
 .kanji-exam-history__wrong del{color:var(--red)}
-.kanji-exam-history__wrong b{color:var(--green);font-size:13px}
+.kanji-exam-history__wrong-item>span>b{color:var(--green);font-size:13px}
 .kanji-exam-import-note{margin:16px 2px 0;padding:13px 16px;border:1px dashed var(--line);border-radius:12px;background:var(--card);color:var(--sub);font-size:13px}
 .kanji-exam-import-note summary{color:var(--ink);font-weight:700;cursor:pointer}
 .kanji-exam-import-note p{margin:9px 0 0;line-height:1.7}
@@ -122,6 +122,7 @@
 .kanji-exam-english-support{display:flex;align-items:baseline;gap:8px;margin:-2px 0 10px;padding:7px 10px;border-left:3px solid #4a7cae;border-radius:0 7px 7px 0;background:color-mix(in srgb,#eaf4ff 70%,var(--card));color:var(--ink);font-size:12px}
 .kanji-exam-english-support b{flex:none;color:#376f9f;font-size:10px;text-transform:uppercase;letter-spacing:.04em}
 .kanji-exam-english-support span{line-height:1.55}
+.kanji-exam-review-meaning{margin:10px 0 0;overflow-wrap:anywhere}
 .kanji-exam-question mark{padding:1px 3px;border-bottom:2px solid var(--exam-accent);background:color-mix(in srgb,var(--red-soft) 65%,transparent);color:inherit;font-weight:800}
 .kanji-exam-question label{position:relative;display:grid;grid-template-columns:58px minmax(160px,320px) 24px;align-items:center;gap:8px;width:max-content;max-width:100%}
 .kanji-exam-question label>span{color:var(--sub);font-size:11px;font-weight:700}

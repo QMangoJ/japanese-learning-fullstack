@@ -322,6 +322,7 @@ test.describe("study navigation", () => {
 
 	test("removes individual Kanji incorrect-history items", async ({ page }) => {
 		await page.addInitScript(() => {
+			localStorage.setItem("jp-kanji-exam-english-support-v1", "0");
 			localStorage.setItem("jp-kanji-exam-history-v1", JSON.stringify([
 				{
 					id: "browser-attempt",
@@ -349,12 +350,44 @@ test.describe("study navigation", () => {
 		const attempt = page.locator(".kanji-exam-history details").first();
 		await attempt.locator("summary").click();
 		await expect(attempt.getByText(/错题（2）|Incorrect \(2\)/)).toBeVisible();
+		await expect(attempt.locator(".kanji-exam-review-meaning")).toHaveCount(2);
+		await expect(attempt.locator(".kanji-exam-review-meaning").first()).toContainText("shop; store");
+		await expect(attempt.locator(".kanji-exam-review-meaning").last()).toContainText("Kanji meaning");
 		await attempt.getByRole("button", { name: /删除错题：あの店です。|Remove incorrect item: あの店です。/ }).click();
 		await expect(attempt.getByText(/错题（1）|Incorrect \(1\)/)).toBeVisible();
 		await expect(attempt.locator("summary>span strong")).toHaveText("80");
 		const savedAttempt = await page.evaluate(() => JSON.parse(localStorage.getItem("jp-kanji-exam-history-v1") || "[]")[0]);
 		expect(savedAttempt).toMatchObject({ correct: 8, total: 10 });
 		expect(savedAttempt.wrongQuestions).toHaveLength(1);
+		await expect(attempt.locator(".kanji-exam-review-meaning")).toHaveCount(1);
+		expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(await page.evaluate(() => document.documentElement.clientWidth));
+	});
+
+	test("shows Kanji result meanings and keeps them in recent incorrect items", async ({ page }) => {
+		await page.addInitScript(() => localStorage.setItem("jp-kanji-exam-english-support-v1", "0"));
+		await waitForStudy(page);
+		const side = page.locator("#side .side-item", { hasText: /汉字自测|Kanji Self-test/ });
+		if (await side.isVisible()) await side.click();
+		else {
+			await page.locator('.bottom button[data-nav="common"]').click();
+			await page.getByRole("button", { name: /汉字自测|Kanji Self-test/ }).click();
+		}
+		await page.getByRole("button", { name: /10题|10 questions/ }).click();
+		await page.getByRole("button", { name: /开始随机练习|Start randomized practice/ }).click();
+		await expect(page.locator(".kanji-exam-english-support")).toHaveCount(0);
+		for (const input of await page.locator(".kanji-exam-question input").all()) await input.fill("wrong");
+		await page.getByRole("button", { name: /交卷并查看答案|Submit and see answers/ }).click();
+		await expect(page.locator(".kanji-exam-result")).toContainText(/答对 0 题，答错 10 题|0 correct, 10 incorrect/);
+		await expect(page.locator(".kanji-exam-review-meaning")).toHaveCount(10);
+		await expect(page.locator(".kanji-exam-review-meaning").first()).toBeVisible();
+		const meanings = await page.locator(".kanji-exam-review-meaning span").allTextContents();
+		expect(meanings.every((meaning) => meaning && meaning !== "Meaning not yet reviewed")).toBe(true);
+		expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(await page.evaluate(() => document.documentElement.clientWidth));
+		await page.getByRole("button", { name: /完成并返回题库|Finish and return/ }).click();
+		await page.locator(".kanji-exam-history summary").first().click();
+		await expect(page.locator(".kanji-exam-history .kanji-exam-review-meaning")).toHaveCount(10);
+		expect(await page.locator(".kanji-exam-history .kanji-exam-review-meaning span").allTextContents()).toEqual(meanings);
+		expect(await page.evaluate(() => localStorage.getItem("jp-kanji-exam-english-support-v1"))).toBe("0");
 		expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(await page.evaluate(() => document.documentElement.clientWidth));
 	});
 
