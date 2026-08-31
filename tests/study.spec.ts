@@ -415,6 +415,22 @@ test.describe("study navigation", () => {
 		await expect(page.getByText("门开着。")).toBeVisible();
 		await expect(page.locator(".jita-masu").first()).toContainText("けます");
 		await expect(page.locator(".jita-word ruby rt").first()).toHaveText("あ");
+		const pair = page.locator(".jita-pair").first();
+		const left = await pair.locator(".jita-col--ta").boundingBox();
+		const right = await pair.locator(".jita-col--ji").boundingBox();
+		expect(left).not.toBeNull();
+		expect(right).not.toBeNull();
+		expect(Math.abs(left!.y - right!.y)).toBeLessThan(1);
+		expect(right!.x).toBeGreaterThan(left!.x + left!.width);
+		expect(right!.x - left!.x - left!.width).toBeLessThanOrEqual(8);
+		expect((await pair.boundingBox())!.height).toBeLessThan(300);
+		await expect(pair.getByRole("button", { name: /朗读|Read aloud/ })).toHaveCount(2);
+		expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(await page.evaluate(() => document.documentElement.clientWidth));
+
+		await page.getByRole("button", { name: "English", exact: true }).click();
+		await expect(page.locator(".jita-kind").first()).toContainText("Transitive");
+		await expect(page.locator(".jita-eg .cn").first()).not.toBeEmpty();
+		expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(await page.evaluate(() => document.documentElement.clientWidth));
 	});
 
 	test("opens the spoken-contraction reference", async ({ page }) => {
