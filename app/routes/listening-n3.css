@@ -116,9 +116,8 @@ html.theme-dark .listening-scan figure,html.theme-dark .listening-answer-panels 
   .listening-speed{grid-area:speed;min-width:0;margin-left:0;justify-content:flex-end;flex-wrap:nowrap}
 }
 
-/* Mobile: keep playback controls in the thumb zone, immediately above the
-   fixed bottom navigation. The viewport offset mirrors nav.bottom so iOS's
-   expanding address bar cannot separate the two fixed surfaces. */
+/* Mobile: share native bottom anchoring with navigation and day controls.
+   No JS scroll compensation: stale measurements can push controls offscreen. */
 @media (max-width:899px){
   body:has(.reader-page--embedded .listening-player){--listening-player-clearance:120px}
   .reader-page--embedded .listening-player{
@@ -131,9 +130,6 @@ html.theme-dark .listening-scan figure,html.theme-dark .listening-answer-panels 
     margin:0;
     border-radius:14px;
     box-shadow:0 -8px 28px rgba(6,16,29,.18);
-    transform:translate3d(0,var(--fixed-viewport-y,0px),0);
-    transform-origin:left bottom;
-    will-change:transform;
   }
   .reader-page--embedded .reader-main:has(.listening-player){padding-bottom:180px}
   body:has(.reader-page--embedded .listening-player) .daynav-fab{
