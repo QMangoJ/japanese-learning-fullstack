@@ -2,10 +2,10 @@
   "title": "自動詞と他動詞",
   "title_cn": "自动词和他动词",
   "title_en": "Intransitive and transitive verbs",
-  "intro": "他动词是人对事物做的动作，对象用「を」。自动词是事物自己变化或处于某种状态，主语用「が」。说结果、现状时，常用自动词＋ています。",
-  "intro_en": "Transitive verbs are actions a person does to something, marked with を. Intransitive verbs describe a thing changing or already being in a state, marked with が. For a resulting state, use intransitive ＋ ています.",
-  "footer": "记的时候抓住一点：他动词＝人的动作，自动词＝物的变化或状态。",
-  "footer_en": "A useful split: transitive = a person's action; intransitive = a thing's change or state.",
+  "intro": "他动词带有直接作用的对象，对象通常用「を」；自动词描述主体的动作、变化或状态，不带这种直接宾语。下面把常用的自他动词成对比较，并列出读音、ます形和例句。",
+  "intro_en": "Transitive verbs take a direct object, usually marked with を. Intransitive verbs describe an action, change, or state without a direct object. Compare these common pairs with readings, polite forms, and examples.",
+  "footer": "注意：自动词也能描述人的动作。「電車を降りる」「道を通る」中的「を」表示离开的场所或经过的路线，不是他动词的直接宾语。",
+  "footer_en": "Intransitive verbs can also describe people's actions. In 電車を降りる (get off a train) and 道を通る (pass along a road), を marks a place of departure or a route, not a direct object.",
   "groups": [
     {
       "title": "开闭・开关",
@@ -53,12 +53,12 @@
           },
           "ji": {
             "dict": "閉まる",
-            "dict_r": "<ruby>閉<rt>しま</rt></ruby>る",
+            "dict_r": "<ruby>閉<rt>し</rt></ruby>まる",
             "masu": "閉まります",
-            "masu_r": "<ruby>閉<rt>しま</rt></ruby>ります",
+            "masu_r": "<ruby>閉<rt>し</rt></ruby>まります",
             "kana": "しまる",
             "eg": "窓が閉まっています。",
-            "eg_r": "<ruby>窓<rt>まど</rt></ruby>が<ruby>閉<rt>しま</rt></ruby>っています。",
+            "eg_r": "<ruby>窓<rt>まど</rt></ruby>が<ruby>閉<rt>し</rt></ruby>まっています。",
             "eg_cn": "窗关着。",
             "eg_en": "The window is closed."
           }
@@ -442,6 +442,32 @@
           }
         },
         {
+          "cn": "继续 / 持续",
+          "en": "continue / last",
+          "ta": {
+            "dict": "続ける",
+            "dict_r": "<ruby>続<rt>つづ</rt></ruby>ける",
+            "masu": "続けます",
+            "masu_r": "<ruby>続<rt>つづ</rt></ruby>けます",
+            "kana": "つづける",
+            "eg": "日本語の勉強を続けます。",
+            "eg_r": "<ruby>日本語<rt>にほんご</rt></ruby>の<ruby>勉強<rt>べんきょう</rt></ruby>を<ruby>続<rt>つづ</rt></ruby>けます。",
+            "eg_cn": "我会继续学习日语。",
+            "eg_en": "I will continue studying Japanese."
+          },
+          "ji": {
+            "dict": "続く",
+            "dict_r": "<ruby>続<rt>つづ</rt></ruby>く",
+            "masu": "続きます",
+            "masu_r": "<ruby>続<rt>つづ</rt></ruby>きます",
+            "kana": "つづく",
+            "eg": "雨が三日間続いています。",
+            "eg_r": "<ruby>雨<rt>あめ</rt></ruby>が<ruby>三日間<rt>みっかかん</rt></ruby><ruby>続<rt>つづ</rt></ruby>いています。",
+            "eg_cn": "雨已经连续下了三天。",
+            "eg_en": "It has been raining for three days."
+          }
+        },
+        {
           "cn": "结束",
           "en": "finish",
           "ta": {
@@ -567,7 +593,7 @@
             "kana": "かわる",
             "eg": "予定が変わっています。",
             "eg_r": "<ruby>予定<rt>よてい</rt></ruby>が<ruby>変<rt>か</rt></ruby>わっています。",
-            "eg_cn": "予定改了。",
+            "eg_cn": "计划已经变了。",
             "eg_en": "The plan has changed."
           }
         },
@@ -673,6 +699,660 @@
             "eg_r": "<ruby>人<rt>ひと</rt></ruby>が<ruby>集<rt>あつ</rt></ruby>まっています。",
             "eg_cn": "人聚在一起。",
             "eg_en": "People have gathered."
+          }
+        }
+      ]
+    },
+    {
+      "title": "增减・升降・进展",
+      "title_en": "Quantity, levels, and progress",
+      "pairs": [
+        {
+          "cn": "增加",
+          "en": "increase",
+          "ta": {
+            "dict": "増やす",
+            "dict_r": "<ruby>増<rt>ふ</rt></ruby>やす",
+            "masu": "増やします",
+            "masu_r": "<ruby>増<rt>ふ</rt></ruby>やします",
+            "kana": "ふやす",
+            "eg": "練習の時間を増やします。",
+            "eg_r": "<ruby>練習<rt>れんしゅう</rt></ruby>の<ruby>時間<rt>じかん</rt></ruby>を<ruby>増<rt>ふ</rt></ruby>やします。",
+            "eg_cn": "增加练习时间。",
+            "eg_en": "I will spend more time practicing."
+          },
+          "ji": {
+            "dict": "増える",
+            "dict_r": "<ruby>増<rt>ふ</rt></ruby>える",
+            "masu": "増えます",
+            "masu_r": "<ruby>増<rt>ふ</rt></ruby>えます",
+            "kana": "ふえる",
+            "eg": "仕事が増えました。",
+            "eg_r": "<ruby>仕事<rt>しごと</rt></ruby>が<ruby>増<rt>ふ</rt></ruby>えました。",
+            "eg_cn": "工作量增加了。",
+            "eg_en": "My workload has increased."
+          }
+        },
+        {
+          "cn": "减少",
+          "en": "reduce / decrease",
+          "ta": {
+            "dict": "減らす",
+            "dict_r": "<ruby>減<rt>へ</rt></ruby>らす",
+            "masu": "減らします",
+            "masu_r": "<ruby>減<rt>へ</rt></ruby>らします",
+            "kana": "へらす",
+            "eg": "ごみを減らします。",
+            "eg_r": "ごみを<ruby>減<rt>へ</rt></ruby>らします。",
+            "eg_cn": "减少垃圾。",
+            "eg_en": "I will reduce the amount of waste I produce."
+          },
+          "ji": {
+            "dict": "減る",
+            "dict_r": "<ruby>減<rt>へ</rt></ruby>る",
+            "masu": "減ります",
+            "masu_r": "<ruby>減<rt>へ</rt></ruby>ります",
+            "kana": "へる",
+            "eg": "ごみが減りました。",
+            "eg_r": "ごみが<ruby>減<rt>へ</rt></ruby>りました。",
+            "eg_cn": "垃圾减少了。",
+            "eg_en": "The amount of waste has decreased."
+          }
+        },
+        {
+          "cn": "提高 / 上升",
+          "en": "raise / rise",
+          "ta": {
+            "dict": "上げる",
+            "dict_r": "<ruby>上<rt>あ</rt></ruby>げる",
+            "masu": "上げます",
+            "masu_r": "<ruby>上<rt>あ</rt></ruby>げます",
+            "kana": "あげる",
+            "eg": "店が値段を上げました。",
+            "eg_r": "<ruby>店<rt>みせ</rt></ruby>が<ruby>値段<rt>ねだん</rt></ruby>を<ruby>上<rt>あ</rt></ruby>げました。",
+            "eg_cn": "商店提高了价格。",
+            "eg_en": "The store raised its prices."
+          },
+          "ji": {
+            "dict": "上がる",
+            "dict_r": "<ruby>上<rt>あ</rt></ruby>がる",
+            "masu": "上がります",
+            "masu_r": "<ruby>上<rt>あ</rt></ruby>がります",
+            "kana": "あがる",
+            "eg": "値段が上がりました。",
+            "eg_r": "<ruby>値段<rt>ねだん</rt></ruby>が<ruby>上<rt>あ</rt></ruby>がりました。",
+            "eg_cn": "价格上涨了。",
+            "eg_en": "Prices have risen."
+          }
+        },
+        {
+          "cn": "降低 / 下降",
+          "en": "lower / fall",
+          "ta": {
+            "dict": "下げる",
+            "dict_r": "<ruby>下<rt>さ</rt></ruby>げる",
+            "masu": "下げます",
+            "masu_r": "<ruby>下<rt>さ</rt></ruby>げます",
+            "kana": "さげる",
+            "eg": "店が値段を下げました。",
+            "eg_r": "<ruby>店<rt>みせ</rt></ruby>が<ruby>値段<rt>ねだん</rt></ruby>を<ruby>下<rt>さ</rt></ruby>げました。",
+            "eg_cn": "商店降低了价格。",
+            "eg_en": "The store lowered its prices."
+          },
+          "ji": {
+            "dict": "下がる",
+            "dict_r": "<ruby>下<rt>さ</rt></ruby>がる",
+            "masu": "下がります",
+            "masu_r": "<ruby>下<rt>さ</rt></ruby>がります",
+            "kana": "さがる",
+            "eg": "値段が下がりました。",
+            "eg_r": "<ruby>値段<rt>ねだん</rt></ruby>が<ruby>下<rt>さ</rt></ruby>がりました。",
+            "eg_cn": "价格下降了。",
+            "eg_en": "Prices have fallen."
+          }
+        },
+        {
+          "cn": "推进 / 进展",
+          "en": "move forward / progress",
+          "ta": {
+            "dict": "進める",
+            "dict_r": "<ruby>進<rt>すす</rt></ruby>める",
+            "masu": "進めます",
+            "masu_r": "<ruby>進<rt>すす</rt></ruby>めます",
+            "kana": "すすめる",
+            "eg": "計画を進めます。",
+            "eg_r": "<ruby>計画<rt>けいかく</rt></ruby>を<ruby>進<rt>すす</rt></ruby>めます。",
+            "eg_cn": "推进计划。",
+            "eg_en": "We will move forward with the plan."
+          },
+          "ji": {
+            "dict": "進む",
+            "dict_r": "<ruby>進<rt>すす</rt></ruby>む",
+            "masu": "進みます",
+            "masu_r": "<ruby>進<rt>すす</rt></ruby>みます",
+            "kana": "すすむ",
+            "eg": "計画が順調に進んでいます。",
+            "eg_r": "<ruby>計画<rt>けいかく</rt></ruby>が<ruby>順調<rt>じゅんちょう</rt></ruby>に<ruby>進<rt>すす</rt></ruby>んでいます。",
+            "eg_cn": "计划正在顺利推进。",
+            "eg_en": "The plan is progressing smoothly."
+          }
+        }
+      ]
+    },
+    {
+      "title": "移动・返回・通过",
+      "title_en": "Movement, return, and passage",
+      "pairs": [
+        {
+          "cn": "移动 / 运转",
+          "en": "move / operate",
+          "ta": {
+            "dict": "動かす",
+            "dict_r": "<ruby>動<rt>うご</rt></ruby>かす",
+            "masu": "動かします",
+            "masu_r": "<ruby>動<rt>うご</rt></ruby>かします",
+            "kana": "うごかす",
+            "eg": "机を動かします。",
+            "eg_r": "<ruby>机<rt>つくえ</rt></ruby>を<ruby>動<rt>うご</rt></ruby>かします。",
+            "eg_cn": "移动桌子。",
+            "eg_en": "I will move the desk."
+          },
+          "ji": {
+            "dict": "動く",
+            "dict_r": "<ruby>動<rt>うご</rt></ruby>く",
+            "masu": "動きます",
+            "masu_r": "<ruby>動<rt>うご</rt></ruby>きます",
+            "kana": "うごく",
+            "eg": "この時計はまだ動いています。",
+            "eg_r": "この<ruby>時計<rt>とけい</rt></ruby>はまだ<ruby>動<rt>うご</rt></ruby>いています。",
+            "eg_cn": "这块表还在走。",
+            "eg_en": "This watch is still running."
+          }
+        },
+        {
+          "cn": "放回 / 回去",
+          "en": "put back / return",
+          "ta": {
+            "dict": "戻す",
+            "dict_r": "<ruby>戻<rt>もど</rt></ruby>す",
+            "masu": "戻します",
+            "masu_r": "<ruby>戻<rt>もど</rt></ruby>します",
+            "kana": "もどす",
+            "eg": "本を棚に戻します。",
+            "eg_r": "<ruby>本<rt>ほん</rt></ruby>を<ruby>棚<rt>たな</rt></ruby>に<ruby>戻<rt>もど</rt></ruby>します。",
+            "eg_cn": "把书放回书架。",
+            "eg_en": "I will put the book back on the shelf."
+          },
+          "ji": {
+            "dict": "戻る",
+            "dict_r": "<ruby>戻<rt>もど</rt></ruby>る",
+            "masu": "戻ります",
+            "masu_r": "<ruby>戻<rt>もど</rt></ruby>ります",
+            "kana": "もどる",
+            "eg": "父が家に戻りました。",
+            "eg_r": "<ruby>父<rt>ちち</rt></ruby>が<ruby>家<rt>いえ</rt></ruby>に<ruby>戻<rt>もど</rt></ruby>りました。",
+            "eg_cn": "爸爸回家了。",
+            "eg_en": "My father has returned home."
+          }
+        },
+        {
+          "cn": "卸下 / 下车",
+          "en": "unload / get off",
+          "ta": {
+            "dict": "降ろす",
+            "dict_r": "<ruby>降<rt>お</rt></ruby>ろす",
+            "masu": "降ろします",
+            "masu_r": "<ruby>降<rt>お</rt></ruby>ろします",
+            "kana": "おろす",
+            "eg": "車から荷物を降ろします。",
+            "eg_r": "<ruby>車<rt>くるま</rt></ruby>から<ruby>荷物<rt>にもつ</rt></ruby>を<ruby>降<rt>お</rt></ruby>ろします。",
+            "eg_cn": "把行李从车上卸下来。",
+            "eg_en": "I will unload the luggage from the car."
+          },
+          "ji": {
+            "dict": "降りる",
+            "dict_r": "<ruby>降<rt>お</rt></ruby>りる",
+            "masu": "降ります",
+            "masu_r": "<ruby>降<rt>お</rt></ruby>ります",
+            "kana": "おりる",
+            "eg": "次の駅で電車を降ります。",
+            "eg_r": "<ruby>次<rt>つぎ</rt></ruby>の<ruby>駅<rt>えき</rt></ruby>で<ruby>電車<rt>でんしゃ</rt></ruby>を<ruby>降<rt>お</rt></ruby>ります。",
+            "eg_cn": "在下一站下电车。",
+            "eg_en": "I will get off the train at the next station."
+          }
+        },
+        {
+          "cn": "让……通过 / 通过",
+          "en": "let through / pass through",
+          "ta": {
+            "dict": "通す",
+            "dict_r": "<ruby>通<rt>とお</rt></ruby>す",
+            "masu": "通します",
+            "masu_r": "<ruby>通<rt>とお</rt></ruby>します",
+            "kana": "とおす",
+            "eg": "車を通してください。",
+            "eg_r": "<ruby>車<rt>くるま</rt></ruby>を<ruby>通<rt>とお</rt></ruby>してください。",
+            "eg_cn": "请让车通过。",
+            "eg_en": "Please let the car through."
+          },
+          "ji": {
+            "dict": "通る",
+            "dict_r": "<ruby>通<rt>とお</rt></ruby>る",
+            "masu": "通ります",
+            "masu_r": "<ruby>通<rt>とお</rt></ruby>ります",
+            "kana": "とおる",
+            "eg": "車がここを通ります。",
+            "eg_r": "<ruby>車<rt>くるま</rt></ruby>がここを<ruby>通<rt>とお</rt></ruby>ります。",
+            "eg_cn": "车从这里经过。",
+            "eg_en": "Cars pass through here."
+          }
+        }
+      ]
+    },
+    {
+      "title": "形状・附着・清洁",
+      "title_en": "Shape, attachment, and cleanliness",
+      "pairs": [
+        {
+          "cn": "弄倒 / 倒下",
+          "en": "knock over / fall over",
+          "ta": {
+            "dict": "倒す",
+            "dict_r": "<ruby>倒<rt>たお</rt></ruby>す",
+            "masu": "倒します",
+            "masu_r": "<ruby>倒<rt>たお</rt></ruby>します",
+            "kana": "たおす",
+            "eg": "花瓶を倒してしまいました。",
+            "eg_r": "<ruby>花瓶<rt>かびん</rt></ruby>を<ruby>倒<rt>たお</rt></ruby>してしまいました。",
+            "eg_cn": "不小心把花瓶碰倒了。",
+            "eg_en": "I accidentally knocked over the vase."
+          },
+          "ji": {
+            "dict": "倒れる",
+            "dict_r": "<ruby>倒<rt>たお</rt></ruby>れる",
+            "masu": "倒れます",
+            "masu_r": "<ruby>倒<rt>たお</rt></ruby>れます",
+            "kana": "たおれる",
+            "eg": "花瓶が倒れました。",
+            "eg_r": "<ruby>花瓶<rt>かびん</rt></ruby>が<ruby>倒<rt>たお</rt></ruby>れました。",
+            "eg_cn": "花瓶倒了。",
+            "eg_en": "The vase fell over."
+          }
+        },
+        {
+          "cn": "展开 / 扩大",
+          "en": "spread out / spread",
+          "ta": {
+            "dict": "広げる",
+            "dict_r": "<ruby>広<rt>ひろ</rt></ruby>げる",
+            "masu": "広げます",
+            "masu_r": "<ruby>広<rt>ひろ</rt></ruby>げます",
+            "kana": "ひろげる",
+            "eg": "地図を広げます。",
+            "eg_r": "<ruby>地図<rt>ちず</rt></ruby>を<ruby>広<rt>ひろ</rt></ruby>げます。",
+            "eg_cn": "展开地图。",
+            "eg_en": "I will spread out the map."
+          },
+          "ji": {
+            "dict": "広がる",
+            "dict_r": "<ruby>広<rt>ひろ</rt></ruby>がる",
+            "masu": "広がります",
+            "masu_r": "<ruby>広<rt>ひろ</rt></ruby>がります",
+            "kana": "ひろがる",
+            "eg": "うわさが広がっています。",
+            "eg_r": "うわさが<ruby>広<rt>ひろ</rt></ruby>がっています。",
+            "eg_cn": "传言正在扩散。",
+            "eg_en": "The rumor is spreading."
+          }
+        },
+        {
+          "cn": "留长 / 长长",
+          "en": "grow (something) longer / grow longer",
+          "ta": {
+            "dict": "伸ばす",
+            "dict_r": "<ruby>伸<rt>の</rt></ruby>ばす",
+            "masu": "伸ばします",
+            "masu_r": "<ruby>伸<rt>の</rt></ruby>ばします",
+            "kana": "のばす",
+            "eg": "髪を伸ばしています。",
+            "eg_r": "<ruby>髪<rt>かみ</rt></ruby>を<ruby>伸<rt>の</rt></ruby>ばしています。",
+            "eg_cn": "我正在留长发。",
+            "eg_en": "I am growing my hair out."
+          },
+          "ji": {
+            "dict": "伸びる",
+            "dict_r": "<ruby>伸<rt>の</rt></ruby>びる",
+            "masu": "伸びます",
+            "masu_r": "<ruby>伸<rt>の</rt></ruby>びます",
+            "kana": "のびる",
+            "eg": "髪が伸びました。",
+            "eg_r": "<ruby>髪<rt>かみ</rt></ruby>が<ruby>伸<rt>の</rt></ruby>びました。",
+            "eg_cn": "头发长长了。",
+            "eg_en": "My hair has grown longer."
+          }
+        },
+        {
+          "cn": "弄脏 / 变脏",
+          "en": "make dirty / get dirty",
+          "ta": {
+            "dict": "汚す",
+            "dict_r": "<ruby>汚<rt>よご</rt></ruby>す",
+            "masu": "汚します",
+            "masu_r": "<ruby>汚<rt>よご</rt></ruby>します",
+            "kana": "よごす",
+            "eg": "服を汚してしまいました。",
+            "eg_r": "<ruby>服<rt>ふく</rt></ruby>を<ruby>汚<rt>よご</rt></ruby>してしまいました。",
+            "eg_cn": "不小心把衣服弄脏了。",
+            "eg_en": "I accidentally got my clothes dirty."
+          },
+          "ji": {
+            "dict": "汚れる",
+            "dict_r": "<ruby>汚<rt>よご</rt></ruby>れる",
+            "masu": "汚れます",
+            "masu_r": "<ruby>汚<rt>よご</rt></ruby>れます",
+            "kana": "よごれる",
+            "eg": "服が汚れています。",
+            "eg_r": "<ruby>服<rt>ふく</rt></ruby>が<ruby>汚<rt>よご</rt></ruby>れています。",
+            "eg_cn": "衣服脏了。",
+            "eg_en": "My clothes are dirty."
+          }
+        },
+        {
+          "cn": "取下 / 脱落",
+          "en": "remove / come off",
+          "ta": {
+            "dict": "外す",
+            "dict_r": "<ruby>外<rt>はず</rt></ruby>す",
+            "masu": "外します",
+            "masu_r": "<ruby>外<rt>はず</rt></ruby>します",
+            "kana": "はずす",
+            "eg": "名札を外します。",
+            "eg_r": "<ruby>名札<rt>なふだ</rt></ruby>を<ruby>外<rt>はず</rt></ruby>します。",
+            "eg_cn": "取下姓名牌。",
+            "eg_en": "I will take off my name tag."
+          },
+          "ji": {
+            "dict": "外れる",
+            "dict_r": "<ruby>外<rt>はず</rt></ruby>れる",
+            "masu": "外れます",
+            "masu_r": "<ruby>外<rt>はず</rt></ruby>れます",
+            "kana": "はずれる",
+            "eg": "名札が外れました。",
+            "eg_r": "<ruby>名札<rt>なふだ</rt></ruby>が<ruby>外<rt>はず</rt></ruby>れました。",
+            "eg_cn": "姓名牌掉了。",
+            "eg_en": "My name tag came off."
+          }
+        }
+      ]
+    },
+    {
+      "title": "温度・干湿・燃烧",
+      "title_en": "Temperature, drying, and burning",
+      "pairs": [
+        {
+          "cn": "加热 / 变暖",
+          "en": "warm up / get warm",
+          "ta": {
+            "dict": "温める",
+            "dict_r": "<ruby>温<rt>あたた</rt></ruby>める",
+            "masu": "温めます",
+            "masu_r": "<ruby>温<rt>あたた</rt></ruby>めます",
+            "kana": "あたためる",
+            "eg": "スープを温めます。",
+            "eg_r": "スープを<ruby>温<rt>あたた</rt></ruby>めます。",
+            "eg_cn": "把汤加热。",
+            "eg_en": "I will warm up the soup."
+          },
+          "ji": {
+            "dict": "温まる",
+            "dict_r": "<ruby>温<rt>あたた</rt></ruby>まる",
+            "masu": "温まります",
+            "masu_r": "<ruby>温<rt>あたた</rt></ruby>まります",
+            "kana": "あたたまる",
+            "eg": "スープが温まりました。",
+            "eg_r": "スープが<ruby>温<rt>あたた</rt></ruby>まりました。",
+            "eg_cn": "汤热了。",
+            "eg_en": "The soup has warmed up."
+          }
+        },
+        {
+          "cn": "冷却 / 变凉",
+          "en": "chill / get cold",
+          "ta": {
+            "dict": "冷やす",
+            "dict_r": "<ruby>冷<rt>ひ</rt></ruby>やす",
+            "masu": "冷やします",
+            "masu_r": "<ruby>冷<rt>ひ</rt></ruby>やします",
+            "kana": "ひやす",
+            "eg": "冷蔵庫でジュースを冷やします。",
+            "eg_r": "<ruby>冷蔵庫<rt>れいぞうこ</rt></ruby>でジュースを<ruby>冷<rt>ひ</rt></ruby>やします。",
+            "eg_cn": "把果汁放在冰箱里冰镇。",
+            "eg_en": "I will chill the juice in the refrigerator."
+          },
+          "ji": {
+            "dict": "冷える",
+            "dict_r": "<ruby>冷<rt>ひ</rt></ruby>える",
+            "masu": "冷えます",
+            "masu_r": "<ruby>冷<rt>ひ</rt></ruby>えます",
+            "kana": "ひえる",
+            "eg": "ジュースがよく冷えています。",
+            "eg_r": "ジュースがよく<ruby>冷<rt>ひ</rt></ruby>えています。",
+            "eg_cn": "果汁冰得很凉。",
+            "eg_en": "The juice is well chilled."
+          }
+        },
+        {
+          "cn": "烧开 / 沸腾",
+          "en": "boil (water) / come to a boil",
+          "ta": {
+            "dict": "沸かす",
+            "dict_r": "<ruby>沸<rt>わ</rt></ruby>かす",
+            "masu": "沸かします",
+            "masu_r": "<ruby>沸<rt>わ</rt></ruby>かします",
+            "kana": "わかす",
+            "eg": "お湯を沸かします。",
+            "eg_r": "お<ruby>湯<rt>ゆ</rt></ruby>を<ruby>沸<rt>わ</rt></ruby>かします。",
+            "eg_cn": "烧开水。",
+            "eg_en": "I will boil some water."
+          },
+          "ji": {
+            "dict": "沸く",
+            "dict_r": "<ruby>沸<rt>わ</rt></ruby>く",
+            "masu": "沸きます",
+            "masu_r": "<ruby>沸<rt>わ</rt></ruby>きます",
+            "kana": "わく",
+            "eg": "お湯が沸きました。",
+            "eg_r": "お<ruby>湯<rt>ゆ</rt></ruby>が<ruby>沸<rt>わ</rt></ruby>きました。",
+            "eg_cn": "水烧开了。",
+            "eg_en": "The water has come to a boil."
+          }
+        },
+        {
+          "cn": "弄干 / 变干",
+          "en": "dry (something) / become dry",
+          "ta": {
+            "dict": "乾かす",
+            "dict_r": "<ruby>乾<rt>かわ</rt></ruby>かす",
+            "masu": "乾かします",
+            "masu_r": "<ruby>乾<rt>かわ</rt></ruby>かします",
+            "kana": "かわかす",
+            "eg": "ドライヤーで髪を乾かします。",
+            "eg_r": "ドライヤーで<ruby>髪<rt>かみ</rt></ruby>を<ruby>乾<rt>かわ</rt></ruby>かします。",
+            "eg_cn": "用吹风机把头发吹干。",
+            "eg_en": "I will dry my hair with a hair dryer."
+          },
+          "ji": {
+            "dict": "乾く",
+            "dict_r": "<ruby>乾<rt>かわ</rt></ruby>く",
+            "masu": "乾きます",
+            "masu_r": "<ruby>乾<rt>かわ</rt></ruby>きます",
+            "kana": "かわく",
+            "eg": "髪が乾きました。",
+            "eg_r": "<ruby>髪<rt>かみ</rt></ruby>が<ruby>乾<rt>かわ</rt></ruby>きました。",
+            "eg_cn": "头发干了。",
+            "eg_en": "My hair is dry now."
+          }
+        },
+        {
+          "cn": "使融化 / 融化",
+          "en": "melt (something) / melt",
+          "ta": {
+            "dict": "溶かす",
+            "dict_r": "<ruby>溶<rt>と</rt></ruby>かす",
+            "masu": "溶かします",
+            "masu_r": "<ruby>溶<rt>と</rt></ruby>かします",
+            "kana": "とかす",
+            "eg": "チョコレートを溶かします。",
+            "eg_r": "チョコレートを<ruby>溶<rt>と</rt></ruby>かします。",
+            "eg_cn": "把巧克力融化。",
+            "eg_en": "I will melt the chocolate."
+          },
+          "ji": {
+            "dict": "溶ける",
+            "dict_r": "<ruby>溶<rt>と</rt></ruby>ける",
+            "masu": "溶けます",
+            "masu_r": "<ruby>溶<rt>と</rt></ruby>けます",
+            "kana": "とける",
+            "eg": "チョコレートが溶けました。",
+            "eg_r": "チョコレートが<ruby>溶<rt>と</rt></ruby>けました。",
+            "eg_cn": "巧克力融化了。",
+            "eg_en": "The chocolate has melted."
+          }
+        },
+        {
+          "cn": "烧掉 / 燃烧",
+          "en": "burn (something) / burn",
+          "ta": {
+            "dict": "燃やす",
+            "dict_r": "<ruby>燃<rt>も</rt></ruby>やす",
+            "masu": "燃やします",
+            "masu_r": "<ruby>燃<rt>も</rt></ruby>やします",
+            "kana": "もやす",
+            "eg": "暖炉で薪を燃やします。",
+            "eg_r": "<ruby>暖炉<rt>だんろ</rt></ruby>で<ruby>薪<rt>まき</rt></ruby>を<ruby>燃<rt>も</rt></ruby>やします。",
+            "eg_cn": "在壁炉里烧柴。",
+            "eg_en": "I will burn firewood in the fireplace."
+          },
+          "ji": {
+            "dict": "燃える",
+            "dict_r": "<ruby>燃<rt>も</rt></ruby>える",
+            "masu": "燃えます",
+            "masu_r": "<ruby>燃<rt>も</rt></ruby>えます",
+            "kana": "もえる",
+            "eg": "薪が燃えています。",
+            "eg_r": "<ruby>薪<rt>まき</rt></ruby>が<ruby>燃<rt>も</rt></ruby>えています。",
+            "eg_cn": "柴正在燃烧。",
+            "eg_en": "The firewood is burning."
+          }
+        }
+      ]
+    },
+    {
+      "title": "成长・传达・失去・康复",
+      "title_en": "Growth, communication, loss, and recovery",
+      "pairs": [
+        {
+          "cn": "养育 / 成长",
+          "en": "raise / grow",
+          "ta": {
+            "dict": "育てる",
+            "dict_r": "<ruby>育<rt>そだ</rt></ruby>てる",
+            "masu": "育てます",
+            "masu_r": "<ruby>育<rt>そだ</rt></ruby>てます",
+            "kana": "そだてる",
+            "eg": "庭で野菜を育てています。",
+            "eg_r": "<ruby>庭<rt>にわ</rt></ruby>で<ruby>野菜<rt>やさい</rt></ruby>を<ruby>育<rt>そだ</rt></ruby>てています。",
+            "eg_cn": "在院子里种菜。",
+            "eg_en": "I am growing vegetables in the garden."
+          },
+          "ji": {
+            "dict": "育つ",
+            "dict_r": "<ruby>育<rt>そだ</rt></ruby>つ",
+            "masu": "育ちます",
+            "masu_r": "<ruby>育<rt>そだ</rt></ruby>ちます",
+            "kana": "そだつ",
+            "eg": "野菜がよく育っています。",
+            "eg_r": "<ruby>野菜<rt>やさい</rt></ruby>がよく<ruby>育<rt>そだ</rt></ruby>っています。",
+            "eg_cn": "蔬菜长得很好。",
+            "eg_en": "The vegetables are growing well."
+          }
+        },
+        {
+          "cn": "传达 / 传达到",
+          "en": "convey / get across",
+          "ta": {
+            "dict": "伝える",
+            "dict_r": "<ruby>伝<rt>つた</rt></ruby>える",
+            "masu": "伝えます",
+            "masu_r": "<ruby>伝<rt>つた</rt></ruby>えます",
+            "kana": "つたえる",
+            "eg": "相手に気持ちを伝えます。",
+            "eg_r": "<ruby>相手<rt>あいて</rt></ruby>に<ruby>気持<rt>きも</rt></ruby>ちを<ruby>伝<rt>つた</rt></ruby>えます。",
+            "eg_cn": "向对方表达心意。",
+            "eg_en": "I will tell the other person how I feel."
+          },
+          "ji": {
+            "dict": "伝わる",
+            "dict_r": "<ruby>伝<rt>つた</rt></ruby>わる",
+            "masu": "伝わります",
+            "masu_r": "<ruby>伝<rt>つた</rt></ruby>わります",
+            "kana": "つたわる",
+            "eg": "相手に気持ちが伝わりました。",
+            "eg_r": "<ruby>相手<rt>あいて</rt></ruby>に<ruby>気持<rt>きも</rt></ruby>ちが<ruby>伝<rt>つた</rt></ruby>わりました。",
+            "eg_cn": "对方明白了我的心意。",
+            "eg_en": "The other person understood how I felt."
+          }
+        },
+        {
+          "cn": "弄丢 / 不见",
+          "en": "lose / go missing",
+          "ta": {
+            "dict": "なくす",
+            "dict_r": "なくす",
+            "masu": "なくします",
+            "masu_r": "なくします",
+            "kana": "なくす",
+            "eg": "鍵をなくしました。",
+            "eg_r": "<ruby>鍵<rt>かぎ</rt></ruby>をなくしました。",
+            "eg_cn": "我把钥匙弄丢了。",
+            "eg_en": "I lost my key."
+          },
+          "ji": {
+            "dict": "なくなる",
+            "dict_r": "なくなる",
+            "masu": "なくなります",
+            "masu_r": "なくなります",
+            "kana": "なくなる",
+            "eg": "鍵がなくなりました。",
+            "eg_r": "<ruby>鍵<rt>かぎ</rt></ruby>がなくなりました。",
+            "eg_cn": "钥匙不见了。",
+            "eg_en": "My key has gone missing."
+          }
+        },
+        {
+          "cn": "治好 / 痊愈（疾病）",
+          "en": "cure / recover (illness)",
+          "ta": {
+            "dict": "治す",
+            "dict_r": "<ruby>治<rt>なお</rt></ruby>す",
+            "masu": "治します",
+            "masu_r": "<ruby>治<rt>なお</rt></ruby>します",
+            "kana": "なおす",
+            "eg": "風邪を治すために、ゆっくり休みます。",
+            "eg_r": "<ruby>風邪<rt>かぜ</rt></ruby>を<ruby>治<rt>なお</rt></ruby>すために、ゆっくり<ruby>休<rt>やす</rt></ruby>みます。",
+            "eg_cn": "为了治好感冒，我会好好休息。",
+            "eg_en": "I will get plenty of rest to recover from my cold."
+          },
+          "ji": {
+            "dict": "治る",
+            "dict_r": "<ruby>治<rt>なお</rt></ruby>る",
+            "masu": "治ります",
+            "masu_r": "<ruby>治<rt>なお</rt></ruby>ります",
+            "kana": "なおる",
+            "eg": "風邪が治りました。",
+            "eg_r": "<ruby>風邪<rt>かぜ</rt></ruby>が<ruby>治<rt>なお</rt></ruby>りました。",
+            "eg_cn": "感冒好了。",
+            "eg_en": "I have recovered from my cold."
           }
         }
       ]

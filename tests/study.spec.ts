@@ -426,10 +426,26 @@ test.describe("study navigation", () => {
 		expect((await pair.boundingBox())!.height).toBeLessThan(300);
 		await expect(pair.getByRole("button", { name: /朗读|Read aloud/ })).toHaveCount(2);
 		expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(await page.evaluate(() => document.documentElement.clientWidth));
+		await expect(page.locator(".jita-pair")).toHaveCount(50);
+		const continued = page.locator(".jita-pair").filter({ has: page.locator(".jita-kana", { hasText: "（つづける）" }) });
+		await continued.scrollIntoViewIfNeeded();
+		await expect(continued.locator(".jita-kana").nth(1)).toHaveText("（つづく）");
+		await expect(continued.locator(".jita-word ruby rt")).toHaveText(["つづ", "つづ"]);
+		await expect(continued.locator(".jita-masu").nth(0)).toContainText("けます");
+		await expect(continued.locator(".jita-masu").nth(1)).toContainText("きます");
+		await expect(continued.getByText("我会继续学习日语。")).toBeVisible();
+		await expect(continued.getByText("雨已经连续下了三天。")).toBeVisible();
+		await expect(continued.getByRole("button", { name: /朗读|Read aloud/ })).toHaveCount(2);
 
 		await page.getByRole("button", { name: "English", exact: true }).click();
 		await expect(page.locator(".jita-kind").first()).toContainText("Transitive");
 		await expect(page.locator(".jita-eg .cn").first()).not.toBeEmpty();
+		await expect(continued.getByText("I will continue studying Japanese.")).toBeVisible();
+		await expect(continued.getByText("It has been raining for three days.")).toBeVisible();
+		const continuedLeft = (await continued.locator(".jita-col--ta").boundingBox())!;
+		const continuedRight = (await continued.locator(".jita-col--ji").boundingBox())!;
+		expect(Math.abs(continuedLeft.y - continuedRight.y)).toBeLessThan(1);
+		expect(continuedRight.x).toBeGreaterThan(continuedLeft.x + continuedLeft.width);
 		expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(await page.evaluate(() => document.documentElement.clientWidth));
 	});
 
