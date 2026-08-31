@@ -14,6 +14,7 @@ import {
 	missingEnglishSupport,
 } from "../../app/data/kanji-exam-english";
 import { validateKanjiExamParseRequest } from "../../app/kanji-exam/parser";
+import { chineseMeaningForQuestion } from "../../app/data/kanji-exam-chinese";
 import { action as parseAction, loader as parseLoader } from "../../app/routes/api.kanji-exam-parse";
 import { memoryKv, routeContext, testEnv } from "./auth-test-utils";
 
@@ -107,6 +108,24 @@ describe("kanji exam question bank", () => {
 		expect(meaningFor("軽く")).toBe("lighter; less sluggish");
 		expect(meaningFor("有力")).toBe("valuable; promising (information or a lead)");
 		expect(meaningFor("本場")).toBe("home; place of origin");
+	});
+
+	it("provides Chinese meanings for every chapter and preserves contextual senses", () => {
+		const questions = KANJI_EXAM_BATCHES.flatMap((batch) => questionsForMode(batch, "mixed"));
+		for (const question of questions) {
+			const meaning = chineseMeaningForQuestion(question);
+			expect(meaning, question.id).not.toBe("词义待补充");
+			expect(meaning, question.id).toMatch(/\p{Script=Han}/u);
+		}
+		const readingMeaning = (target: string) => chineseMeaningForQuestion(questions.find((question) => question.kind === "reading" && question.target === target)!);
+		expect(readingMeaning("折り紙")).toBe("折纸用的彩纸");
+		expect(readingMeaning("送りました")).toBe("送了（某人到某处）");
+		expect(readingMeaning("便")).toBe("航班；交通班次");
+		expect(readingMeaning("軽く")).toBe("轻松；轻快（身体的感觉）");
+		expect(readingMeaning("当てました")).toBe("抽中了（奖品）");
+		expect(readingMeaning("本場")).toBe("发源地；正宗产地");
+		expect(chineseMeaningForQuestion({ kind: "writing", target: "てん", answer: "店" })).toBe("店铺；商店");
+		expect(chineseMeaningForQuestion({ kind: "reading", target: "未収録", answer: "みしゅうろく" })).toBe("词义待补充");
 	});
 });
 

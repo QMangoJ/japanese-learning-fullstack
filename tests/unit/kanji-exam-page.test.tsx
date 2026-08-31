@@ -4,6 +4,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import { KANJI_EXAM_BATCHES, questionsForMode } from "../../app/data/kanji-exam";
 import { englishSupportForQuestion } from "../../app/data/kanji-exam-english";
+import { chineseMeaningForQuestion } from "../../app/data/kanji-exam-chinese";
 import { KanjiExamPage } from "../../app/study/KanjiExamPage";
 
 describe("KanjiExamPage answers", () => {
@@ -22,7 +23,8 @@ describe("KanjiExamPage answers", () => {
 		const bank = questionsForMode(KANJI_EXAM_BATCHES[0], "mixed");
 		const testedQuestions = screen.getAllByRole("textbox").map((input, index) => {
 			const prompt = input.getAttribute("aria-label")!.replace(/^\d+\. /, "");
-			const question = bank.find((candidate) => candidate.prompt === prompt)!;
+			const target = input.closest(".kanji-exam-question")!.querySelector("mark")!.textContent;
+			const question = bank.find((candidate) => candidate.prompt === prompt && candidate.target === target)!;
 			fireEvent.change(input, { target: { value: index === 0 ? question.answer : "wrong" } });
 			return question;
 		});
@@ -32,6 +34,8 @@ describe("KanjiExamPage answers", () => {
 		expect(container.querySelectorAll(".kanji-exam-review-meaning")).toHaveLength(10);
 		container.querySelectorAll(".kanji-exam-question").forEach((item, index) => {
 			expect(within(item as HTMLElement).getByText(englishSupportForQuestion(testedQuestions[index]).meaning)).toBeInTheDocument();
+			expect(item.querySelector('[lang="zh-Hans"]')).toHaveTextContent(chineseMeaningForQuestion(testedQuestions[index]));
+			expect(item.querySelectorAll('[lang="en"]')).toHaveLength(1);
 		});
 		expect(localStorage.getItem("jp-kanji-exam-english-support-v1")).toBe(preference);
 		await user.click(screen.getByRole("button", { name: /只重练错题（9）|Retry incorrect \(9\)/ }));
@@ -80,8 +84,12 @@ describe("KanjiExamPage answers", () => {
 		await user.click(container.querySelector(".kanji-exam-history summary")!);
 		const meanings = container.querySelectorAll(".kanji-exam-history .kanji-exam-review-meaning");
 		expect(meanings).toHaveLength(2);
-		expect(meanings[0]).toHaveTextContent("Word meaningshop; store");
-		expect(meanings[1]).toHaveTextContent("Kanji meaningshop; store");
+		expect(meanings[0].querySelector("b")).toHaveTextContent("词义 · Word meaning");
+		expect(meanings[1].querySelector("b")).toHaveTextContent("汉字释义 · Kanji meaning");
+		for (const meaning of meanings) {
+			expect(meaning.querySelector('[lang="zh-Hans"]')).toHaveTextContent("店铺；商店");
+			expect(meaning.querySelector('[lang="en"]')).toHaveTextContent("shop; store");
+		}
 
 		await user.click(screen.getByRole("button", { name: /删除错题：あの店です。|Remove incorrect item: あの店です。/ }));
 		expect(screen.getByText(/错题（1）|Incorrect \(1\)/)).toBeInTheDocument();
