@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from "react-router";
 
 import { ListeningN2Content } from "../routes/listening-n2";
 import { ListeningN3Content } from "../routes/listening-n3";
-import { ReadingN3Content } from "../routes/reading-n3";
+import { ReadingN3Content } from "../routes/reading-n3-book";
 import {
 	CardsPage,
 	FavFcPage,

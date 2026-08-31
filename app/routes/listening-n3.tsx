@@ -1,5 +1,4 @@
 import { Fragment, useEffect, useMemo, useRef, useState, type PointerEvent, type RefObject } from "react";
-import { redirect } from "react-router";
 
 import { findListeningChapter, findListeningSection, type ListeningDisc } from "../data/listening-n3-book";
 import { listeningBodySupport } from "../data/listening-n3-body-support";
@@ -8,20 +7,8 @@ import type { ListeningLessonBlock } from "../data/listening-n3-lesson-types";
 import { listeningQuestionSupport, type ListeningQuestionSupport } from "../data/listening-n3-question-support";
 import { listeningTranscriptWithFurigana } from "../data/listening-n3-furigana";
 import { dayNeighbors, isFav, LANG, lx, navTo, registerFavMeta, toggleFav } from "../study/store";
-import type { Route } from "./+types/listening-n3";
 import "./reading-n3.css";
 import "./listening-n3.css";
-
-export function meta({}: Route.MetaArgs) {
-	return [
-		{ title: "N3 听解 · 日本語上手" },
-		{ name: "description", content: "N3 听解训练：按原书结构还原说明、插图与练习，并配对应音频。" },
-	];
-}
-
-export function loader() {
-	return redirect("/study?module=listening");
-}
 
 export type AudioCue = { disc: ListeningDisc; track: number };
 
@@ -717,8 +704,4 @@ function ListeningSectionNav({ chapter, section }: { chapter: number; section: n
 			</button>
 		</nav>
 	);
-}
-
-export default function ListeningN3() {
-	return null;
 }

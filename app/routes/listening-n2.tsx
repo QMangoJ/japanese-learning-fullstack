@@ -1,5 +1,4 @@
 import { useEffect, useMemo, useRef, useState, type PointerEvent, type RefObject } from "react";
-import { redirect } from "react-router";
 
 import { getListeningN2Lesson } from "../data/listening-n2-lessons";
 import {
@@ -11,21 +10,9 @@ import {
 } from "../data/listening-n2-book";
 import { listeningQuestionSupport } from "../data/listening-n3-question-support";
 import { dayNeighbors, isFav, LANG, lx, navTo, registerFavMeta, toggleFav } from "../study/store";
-import type { Route } from "./+types/listening-n2";
 import { audioDurationOf, forwardTime, LessonBlocks, rewindTime, seekRatioFromClientX } from "./listening-n3";
 import "./reading-n3.css";
 import "./listening-n3.css";
-
-export function meta({}: Route.MetaArgs) {
-	return [
-		{ title: "N2 听解 · 日本語上手" },
-		{ name: "description", content: "N2 听解训练：按原书结构还原说明、练习、答案、听力原文和译文，并配对应音频。" },
-	];
-}
-
-export function loader() {
-	return redirect("/study?module=n2listening");
-}
 
 type AudioCue = { disc: ListeningDisc; track: number };
 
@@ -350,10 +337,6 @@ function ListeningSectionNav({ chapter, section }: { chapter: number; section: n
 			</button>
 		</nav>
 	);
-}
-
-export default function ListeningN2() {
-	return null;
 }
 
 void LANG;

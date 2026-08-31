@@ -4,9 +4,6 @@ export default [
 	index("routes/landing.tsx"),
 	// /study、/study/favs、/study/day/3-1 は StudyApp が同じシェルで切る。
 	route("study/*", "routes/home.tsx"),
-	route("listening/n3", "routes/listening-n3.tsx"),
-	route("listening/n2", "routes/listening-n2.tsx"),
-	route("reading/n3", "routes/reading-n3.tsx"),
 	route("api/favorites", "routes/api.favorites.ts"),
 	route("api/mistakes", "routes/api.mistakes.ts"),
 	route("api/kanji-exam/parse", "routes/api.kanji-exam-parse.ts"),

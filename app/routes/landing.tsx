@@ -79,7 +79,7 @@ export default function Landing() {
 								<StudyLink className="button button-primary">进入知识库 <span>→</span></StudyLink>
 								<a className="button button-quiet" href="#howto">先看使用指南</a>
 							</div>
-						<div className="hero-stats"><span>55 周课程</span><span>9 个模块</span><Link to="/reading/n3">N3 读解训练</Link><span>手机 / 电脑都能用</span></div>
+						<div className="hero-stats"><span>55 周课程</span><span>9 个模块</span><Link to="/study?module=reading">N3 读解训练</Link><span>手机 / 电脑都能用</span></div>
 						</div>
 						<div className="hero-japanese" aria-label="継続は力なり">
 							<span>坚持，就是力量</span><strong>継続は力なり</strong>
