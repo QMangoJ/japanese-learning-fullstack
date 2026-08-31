@@ -14,6 +14,7 @@ import {
 	englishLessonLabel,
 	englishSupportForQuestion,
 } from "../data/kanji-exam-english";
+import { chineseMeaningForQuestion } from "../data/kanji-exam-chinese";
 import { lx } from "./store";
 import "../routes/kanji-exam.css";
 
@@ -95,7 +96,9 @@ function QuestionMeaning({ question, review = false }: {
 	const support = englishSupportForQuestion(question);
 	return (
 		<div className={`kanji-exam-english-support${review ? " kanji-exam-review-meaning" : ""}`}>
-			<b>{support.label}</b><span>{support.meaning}</span>
+			<b>{review ? `${question.kind === "reading" ? "词义" : "汉字释义"} · ${support.label}` : support.label}</b>
+			{review ? <span lang="zh-Hans">{chineseMeaningForQuestion(question)}</span> : null}
+			<span lang="en">{support.meaning}</span>
 		</div>
 	);
 }
