@@ -137,7 +137,7 @@ function FixedViewportProbe() {
 		const update = () => {
 			window.cancelAnimationFrame(frame);
 			frame = window.requestAnimationFrame(() => {
-				const offset = fixedViewportOffset(viewport.height, viewport.offsetTop, probe.getBoundingClientRect().height);
+				const offset = fixedViewportOffset(viewport.height, viewport.offsetTop, probe.getBoundingClientRect().bottom, window.innerHeight);
 				root.style.setProperty("--fixed-viewport-y", `${Math.round(offset * 100) / 100}px`);
 			});
 		};
@@ -151,6 +151,8 @@ function FixedViewportProbe() {
 		viewport.addEventListener("resize", update);
 		viewport.addEventListener("scroll", update);
 		viewport.addEventListener("scrollend", settle);
+		window.addEventListener("scroll", update, { passive: true });
+		window.addEventListener("scrollend", settle);
 		window.addEventListener("resize", update);
 		window.addEventListener("orientationchange", settle);
 		window.addEventListener("pageshow", settle);
@@ -163,6 +165,8 @@ function FixedViewportProbe() {
 			viewport.removeEventListener("resize", update);
 			viewport.removeEventListener("scroll", update);
 			viewport.removeEventListener("scrollend", settle);
+			window.removeEventListener("scroll", update);
+			window.removeEventListener("scrollend", settle);
 			window.removeEventListener("resize", update);
 			window.removeEventListener("orientationchange", settle);
 			window.removeEventListener("pageshow", settle);

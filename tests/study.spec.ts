@@ -605,6 +605,77 @@ test.describe("study navigation", () => {
 		expect(position.offset).toBeGreaterThanOrEqual(0);
 	});
 
+	for (const module of ["verb pairs", "grammar", "listening"] as const) {
+		test(`bottom controls stay visible during reverse scroll and viewport bounce: ${module}`, async ({ page }, testInfo) => {
+			test.skip(testInfo.project.name !== "mobile-chrome", "mobile fixed controls only");
+			await waitForStudy(page);
+			if (module === "verb pairs") {
+				await page.locator('.bottom button[data-nav="common"]').click();
+				await page.getByRole("button", { name: /自他动词|Verb pairs/ }).click();
+				await expect(page.locator(".jita-pair").first()).toBeVisible();
+			} else {
+				if (module === "listening") await pickType(page, "listening");
+				await page.goto(module === "listening" ? "/study/day/4-3" : "/study/day/1-1");
+				await dismissViteOverlay(page);
+				await expect(page.locator(module === "listening" ? ".listening-player" : ".point").first()).toBeVisible();
+			}
+
+			await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight));
+			// iOS can report transient visualViewport offsets/height growth while
+			// native bottom:0 is already following the screen edge. Do not add it twice.
+			for (const metrics of [{ top: 80, extraHeight: 0 }, { top: 0, extraHeight: 48 }, { top: -40, extraHeight: 0 }, { top: 0, extraHeight: -100 }, { top: 0, extraHeight: 0 }]) {
+				await page.evaluate(async ({ top, extraHeight }) => {
+					window.scrollBy(0, -150);
+					const viewport = window.visualViewport!;
+					Object.defineProperties(viewport, {
+						offsetTop: { configurable: true, value: top },
+						height: { configurable: true, value: window.innerHeight + extraHeight },
+					});
+					viewport.dispatchEvent(new Event("resize"));
+					viewport.dispatchEvent(new Event("scroll"));
+					await new Promise<void>((resolve) => requestAnimationFrame(() => requestAnimationFrame(() => resolve())));
+				}, metrics);
+				const layout = await page.evaluate(() => {
+					const nav = document.querySelector("nav.bottom")!.getBoundingClientRect();
+					const player = document.querySelector(".listening-player")?.getBoundingClientRect();
+					return { bottom: nav.bottom, height: window.innerHeight, playerGap: player ? nav.top - player.bottom : null };
+				});
+				expect(Math.abs(layout.bottom - layout.height), JSON.stringify(metrics)).toBeLessThanOrEqual(1);
+				// The nav's 1px top border is included in its bounding rectangle.
+				if (layout.playerGap !== null) {
+					expect(layout.playerGap).toBeGreaterThanOrEqual(7);
+					expect(layout.playerGap).toBeLessThanOrEqual(9);
+				}
+			}
+			await page.evaluate(() => {
+				Reflect.deleteProperty(window.visualViewport!, "offsetTop");
+				Reflect.deleteProperty(window.visualViewport!, "height");
+			});
+			for (const size of [{ width: 390, height: 640 }, { width: 844, height: 390 }, { width: 390, height: 844 }]) {
+				await page.setViewportSize(size);
+				await expect.poll(() => page.locator("nav.bottom").evaluate((nav) => Math.abs(nav.getBoundingClientRect().bottom - window.innerHeight))).toBeLessThanOrEqual(1);
+			}
+			if (module === "verb pairs") {
+				// Emulate a browser whose native fixed edge genuinely lags behind:
+				// the fallback must still correct a real gap, then clear on scroll.
+				await page.evaluate(() => {
+					document.getElementById("fixedViewportProbe")!.style.bottom = "48px";
+					document.querySelector<HTMLElement>("nav.bottom")!.style.bottom = "48px";
+					window.dispatchEvent(new Event("resize"));
+				});
+				await expect.poll(() => page.locator("nav.bottom").evaluate((nav) => Math.abs(nav.getBoundingClientRect().bottom - window.innerHeight))).toBeLessThanOrEqual(1);
+				await expect.poll(() => page.evaluate(() => document.documentElement.style.getPropertyValue("--fixed-viewport-y"))).toBe("48px");
+				await page.evaluate(() => {
+					document.getElementById("fixedViewportProbe")!.style.removeProperty("bottom");
+					document.querySelector<HTMLElement>("nav.bottom")!.style.removeProperty("bottom");
+					window.dispatchEvent(new Event("scroll"));
+				});
+				await expect.poll(() => page.evaluate(() => document.documentElement.style.getPropertyValue("--fixed-viewport-y"))).toBe("0px");
+			}
+			await page.screenshot({ path: testInfo.outputPath("stable-bottom-after-reverse-scroll.png") });
+		});
+	}
+
 	test("listening keyboard controls playback and seeks without changing sections", async ({ page }) => {
 		await waitForStudy(page);
 		await pickType(page, "listening");
