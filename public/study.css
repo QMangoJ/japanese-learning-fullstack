@@ -575,6 +575,14 @@ body.hide-cn .vcn,body.hide-cn .cn{visibility:hidden}
 .ct-usage__row:first-child{margin-top:0}
 .ct-usage__k{font-size:11px;font-weight:700;color:var(--sub);letter-spacing:.02em;line-height:1.4;padding-top:3px}
 .ct-usage__v{min-width:0}
+@media (min-width:900px){
+  .ct-usage{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px 0;align-items:start}
+  .ct-usage__row{display:flex;flex-direction:column;gap:5px;margin-top:0;padding:0 16px;min-width:0}
+  .ct-usage__row + .ct-usage__row{border-left:1px dashed var(--line)}
+  .ct-usage__row:first-child{padding-left:0}
+  .ct-usage__row:last-child{padding-right:0}
+  .ct-usage__k{padding-top:0}
+}
 .ct-form{font-weight:600;font-size:15px}
 .ct-loc{color:var(--blue);font-size:12px;margin-left:8px;cursor:pointer;white-space:nowrap}
 .ct-eg{font-size:14px;margin:0}
