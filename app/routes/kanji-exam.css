@@ -1,6 +1,6 @@
-#common-page:has(.kanji-exam-page){max-width:1040px;padding:18px 20px 40px}
+#common-page:has(.kanji-exam-page){max-width:var(--study-col);padding:18px 20px 40px}
 
-.kanji-exam-page{--exam-ink:#243047;--exam-accent:#b93a30;--exam-gold:#aa7319;width:100%;max-width:960px;margin:0 auto;color:var(--ink)}
+.kanji-exam-page{--exam-ink:#243047;--exam-accent:#b93a30;--exam-gold:#aa7319;width:100%;max-width:none;margin:0 auto;color:var(--ink)}
 .kanji-exam-page button,.kanji-exam-page input{font:inherit}
 .kanji-exam-hero{position:relative;overflow:hidden;display:flex;align-items:center;min-height:132px;padding:26px 34px;border-radius:18px;color:#fff;background:linear-gradient(130deg,#182539 0%,#253c59 62%,#315678 100%);box-shadow:0 12px 28px rgba(23,38,58,.16)}
 .kanji-exam-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% 20%,rgba(255,255,255,.13),transparent 34%),repeating-linear-gradient(115deg,transparent 0 34px,rgba(255,255,255,.025) 35px 36px)}
