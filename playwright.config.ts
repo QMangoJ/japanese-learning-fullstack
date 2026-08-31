@@ -13,7 +13,6 @@ export default defineConfig({
 	reporter: "list",
 	use: {
 		baseURL,
-		channel: "chrome",
 		headless: true,
 		trace: "retain-on-failure",
 		screenshot: "only-on-failure",
@@ -38,5 +37,15 @@ export default defineConfig({
 			name: "desktop-chrome",
 			use: { viewport: { width: 1280, height: 800 }, channel: "chrome" },
 		},
+		// Opt-in Safari-engine regressions without requiring WebKit for every run.
+		...(process.env.E2E_WEBKIT === "1" ? [{
+			name: "mobile-webkit",
+			use: {
+				browserName: "webkit" as const,
+				viewport: { width: 390, height: 844 },
+				isMobile: true,
+				hasTouch: true,
+			},
+		}] : []),
 	],
 });

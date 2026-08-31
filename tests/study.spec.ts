@@ -563,7 +563,7 @@ test.describe("study navigation", () => {
 	});
 
 	test("places the mobile listening player above the bottom navigation", async ({ page }, testInfo) => {
-		test.skip(testInfo.project.name !== "mobile-chrome", "mobile placement only");
+		test.skip(!testInfo.project.name.startsWith("mobile-"), "mobile placement only");
 		await waitForStudy(page);
 		await pickType(page, "listening");
 		await page.goto("/study/day/4-3");
@@ -599,7 +599,7 @@ test.describe("study navigation", () => {
 	});
 
 	test("bottom navigation remains at the viewport edge after scrolling a long listening lesson", async ({ page }, testInfo) => {
-		test.skip(testInfo.project.name !== "mobile-chrome", "mobile bottom navigation only");
+		test.skip(!testInfo.project.name.startsWith("mobile-"), "mobile bottom navigation only");
 		await waitForStudy(page);
 		await pickType(page, "listening");
 		await page.goto("/study/day/5-1");
@@ -613,27 +613,71 @@ test.describe("study navigation", () => {
 			return {
 				bottom: nav.bottom,
 				viewportHeight: window.innerHeight,
-				offset: Number.parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--fixed-viewport-y")) || 0,
+				transform: getComputedStyle(document.querySelector("nav.bottom")!).transform,
 			};
 		});
 
 		expect(Math.abs(position.bottom - position.viewportHeight)).toBeLessThanOrEqual(1);
-		expect(position.offset).toBeGreaterThanOrEqual(0);
+		expect(position.transform).toBe("none");
 	});
 
-	for (const module of ["verb pairs", "grammar", "listening"] as const) {
+	test("bottom navigation ignores a stale measurement instead of being pushed off screen", async ({ page }, testInfo) => {
+		test.skip(!testInfo.project.name.startsWith("mobile-"), "mobile bottom navigation only");
+		await waitForStudy(page);
+		await page.goto("/study/jita");
+		await expect(page.locator(".jita-pair").last()).toBeAttached();
+		await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight));
+		await expect.poll(() => page.locator("nav.bottom").evaluate((nav) => nav.getBoundingClientRect().bottom - window.innerHeight)).toBe(0);
+
+		// The old invisible probe could disagree with the painted native fixed
+		// layer during asynchronous scrolling. The nav itself has not moved.
+		await page.evaluate(() => {
+			const probe = document.getElementById("fixedViewportProbe");
+			if (probe) probe.getBoundingClientRect = () => new DOMRect(0, window.innerHeight - 180, 1, 0);
+			window.dispatchEvent(new Event("scroll"));
+			window.visualViewport?.dispatchEvent(new Event("resize"));
+		});
+		await page.waitForTimeout(250);
+		const bottom = await page.locator("nav.bottom").evaluate((nav) => nav.getBoundingClientRect().bottom - window.innerHeight);
+		expect(Math.abs(bottom)).toBeLessThanOrEqual(1);
+	});
+
+	test("bottom navigation remains usable after search focus and viewport resizing", async ({ page }, testInfo) => {
+		test.skip(!testInfo.project.name.startsWith("mobile-"), "mobile input and bottom navigation only");
+		await waitForStudy(page);
+		await page.locator('.bottom button[data-nav="search"]').click();
+		await page.locator("#q").fill("続ける");
+		await expect(page.locator("#q")).toBeFocused();
+		// A resized viewport checks layout after keyboard-sized contraction;
+		// browser emulation does not reproduce an actual iPhone keyboard.
+		await page.setViewportSize({ width: 390, height: 480 });
+		await expect.poll(() => page.locator("nav.bottom").evaluate((nav) => Math.abs(nav.getBoundingClientRect().bottom - window.innerHeight))).toBeLessThanOrEqual(1);
+		await page.locator('.bottom button[data-nav="common"]').click();
+		await expect(page.locator(".sheet")).toBeVisible();
+		await page.keyboard.press("Escape");
+		await page.setViewportSize({ width: 390, height: 844 });
+		await page.locator('.bottom button[data-nav="home"]').click();
+		await expect(page.locator(".week-card").first()).toBeVisible();
+		await expect.poll(() => page.locator("nav.bottom").evaluate((nav) => Math.abs(nav.getBoundingClientRect().bottom - window.innerHeight))).toBeLessThanOrEqual(1);
+	});
+
+	for (const module of ["verb pairs", "grammar", "listening", "N2 listening"] as const) {
 		test(`bottom controls stay visible during reverse scroll and viewport bounce: ${module}`, async ({ page }, testInfo) => {
-			test.skip(testInfo.project.name !== "mobile-chrome", "mobile fixed controls only");
+			test.skip(!testInfo.project.name.startsWith("mobile-"), "mobile fixed controls only");
 			await waitForStudy(page);
 			if (module === "verb pairs") {
 				await page.locator('.bottom button[data-nav="common"]').click();
 				await page.getByRole("button", { name: /自他动词|Verb pairs/ }).click();
 				await expect(page.locator(".jita-pair").first()).toBeVisible();
 			} else {
-				if (module === "listening") await pickType(page, "listening");
+				if (module === "N2 listening") {
+					await page.locator("#lvChip").click();
+					await page.locator(".sheet-item", { hasText: "N2" }).click();
+				}
+				if (module.includes("listening")) await pickType(page, "listening");
 				await page.goto(module === "listening" ? "/study/day/4-3" : "/study/day/1-1");
 				await dismissViteOverlay(page);
-				await expect(page.locator(module === "listening" ? ".listening-player" : ".point").first()).toBeVisible();
+				await expect(page.locator(module.includes("listening") ? ".listening-player" : ".point").first()).toBeVisible();
 			}
 
 			await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight));
@@ -671,24 +715,37 @@ test.describe("study navigation", () => {
 				await page.setViewportSize(size);
 				await expect.poll(() => page.locator("nav.bottom").evaluate((nav) => Math.abs(nav.getBoundingClientRect().bottom - window.innerHeight))).toBeLessThanOrEqual(1);
 			}
+			// An old correction left behind by a hot update must no longer move
+			// any of the native bottom-anchored controls.
+			await page.evaluate(() => document.documentElement.style.setProperty("--fixed-viewport-y", "180px"));
+			await expect(page.locator("#fixedViewportProbe")).toHaveCount(0);
+			await expect(page.locator("nav.bottom")).toHaveCSS("transform", "none");
+			await expect(page.locator("html")).toHaveCSS("overscroll-behavior-y", "none");
+			for (const control of await page.locator("nav.bottom, .daynav-fab, .reader-page--embedded .listening-player").all()) {
+				await expect(control).toHaveCSS("transform", "none");
+				const bounds = (await control.boundingBox())!;
+				expect(bounds.y).toBeGreaterThanOrEqual(0);
+				expect(bounds.y + bounds.height).toBeLessThanOrEqual(845);
+			}
+			await page.evaluate(() => {
+				document.documentElement.style.removeProperty("--fixed-viewport-y");
+				window.scrollTo(0, document.documentElement.scrollHeight);
+			});
+			await expect.poll(() => page.locator("nav.bottom").evaluate((nav) => Math.abs(nav.getBoundingClientRect().bottom - window.innerHeight))).toBeLessThanOrEqual(1);
+			for (const button of await page.locator("nav.bottom button").all()) {
+				const box = (await button.boundingBox())!;
+				expect(box.y + box.height).toBeLessThanOrEqual(845);
+			}
 			if (module === "verb pairs") {
-				// Emulate a browser whose native fixed edge genuinely lags behind:
-				// the fallback must still correct a real gap, then clear on scroll.
-				await page.evaluate(() => {
-					document.getElementById("fixedViewportProbe")!.style.bottom = "48px";
-					document.querySelector<HTMLElement>("nav.bottom")!.style.bottom = "48px";
-					window.dispatchEvent(new Event("resize"));
-				});
-				await expect.poll(() => page.locator("nav.bottom").evaluate((nav) => Math.abs(nav.getBoundingClientRect().bottom - window.innerHeight))).toBeLessThanOrEqual(1);
-				await expect.poll(() => page.evaluate(() => document.documentElement.style.getPropertyValue("--fixed-viewport-y"))).toBe("48px");
-				await page.evaluate(() => {
-					document.getElementById("fixedViewportProbe")!.style.removeProperty("bottom");
-					document.querySelector<HTMLElement>("nav.bottom")!.style.removeProperty("bottom");
-					window.dispatchEvent(new Event("scroll"));
-				});
-				await expect.poll(() => page.evaluate(() => document.documentElement.style.getPropertyValue("--fixed-viewport-y"))).toBe("0px");
+				const lastLine = (await page.locator("#common-page > .meta").last().boundingBox())!;
+				expect(lastLine.y + lastLine.height).toBeLessThanOrEqual((await page.locator("nav.bottom").boundingBox())!.y);
 			}
 			await page.screenshot({ path: testInfo.outputPath("stable-bottom-after-reverse-scroll.png") });
+			await page.locator('.bottom button[data-nav="common"]').click();
+			await expect(page.locator(".sheet")).toBeVisible();
+			await page.keyboard.press("Escape");
+			await page.locator('.bottom button[data-nav="home"]').click();
+			await expect(page.locator(".week-card").first()).toBeVisible();
 		});
 	}
 
