@@ -62,27 +62,10 @@ describe("common transitive/intransitive reference data", () => {
 
 	it("includes the transitive 切る and intransitive 切れる pair", () => {
 		const cut = pairs.find((pair) => pair.ta.dict === "切る")!;
-		expect(cut.ta).toMatchObject({ kana: "きる", masu: "切ります", eg: "はさみで紙を切ります。" });
+		expect(cut.ta).toMatchObject({ kana: "きる", masu: "切ります", eg: "紙が切ってあります。" });
 		expect(cut.ji).toMatchObject({ kana: "きれる", masu: "切れます", eg: "糸が切れています。" });
-		expect(cut.ta.eg_cn).toBe("用剪刀剪纸。");
+		expect(cut.ta.eg_cn).toBe("纸已经有人提前剪好了。");
+		expect(cut.ta.eg_en).toBe("The paper has been cut in advance.");
 		expect(cut.ji.eg_en).toBe("The thread is broken.");
-	});
-
-	it("explains transitive てあります with bilingual state comparisons", () => {
-		expect(jita.tearu.formula).toBe("他動詞て形＋あります");
-		expect(jita.tearu.examples).toHaveLength(4);
-		for (const example of jita.tearu.examples) {
-			expect(example.ji).toMatch(/ています。$/);
-			expect(example.ta).toMatch(/てあります。$/);
-			expect(example.ji_cn).toBeTruthy();
-			expect(example.ji_en).toBeTruthy();
-			expect(example.ta_cn).toBeTruthy();
-			expect(example.ta_en).toBeTruthy();
-			expect(plainRuby(example.ji_r)).toBe(example.ji);
-			expect(plainRuby(example.ta_r)).toBe(example.ta);
-		}
-		const cutInAdvance = jita.tearu.examples.find((example) => example.ta === "紙が切ってあります。")!;
-		expect(cutInAdvance.ta_cn).toContain("剪好了");
-		expect(cutInAdvance.ta_en).toContain("in advance");
 	});
 });

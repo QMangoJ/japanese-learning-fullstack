@@ -635,53 +635,12 @@ function JitaSide({ side, kind }: { side: any; kind: "ta" | "ji" }) {
 	);
 }
 
-function JitaTearu({ block }: { block: any }) {
-	if (!block) return null;
-	return (
-		<section className="card jita-tearu">
-			<div className="jita-tearu__head">
-				<div>
-					<div className="jita-tearu__formula jp">
-						{block.formula_r ? <RubyHtml html={block.formula_r} /> : block.formula}
-					</div>
-					<h3>{lx(block.title_cn, block.title_en)}</h3>
-				</div>
-				<span>Vてあります</span>
-			</div>
-			<p className="jita-tearu__intro">{lx(block.intro_cn, block.intro_en)}</p>
-			<div className="jita-tearu__examples">
-				{(block.examples || []).map((example: any) => (
-					<article key={example.ta}>
-						<div className="jita-tearu__meaning">{lx(example.meaning_cn, example.meaning_en)}</div>
-						<div className="jita-tearu__compare">
-							<div className="jita-tearu__state ji">
-								<small>{lx("自动词＋ています", "Intransitive + ています")}</small>
-								<strong className="jp">{example.ji_r ? <RubyHtml html={example.ji_r} /> : example.ji}</strong>
-								<SayButton text={example.ji} />
-								<span>{lx(example.ji_cn, example.ji_en)}</span>
-							</div>
-							<div className="jita-tearu__state ta">
-								<small>{lx("他动词＋てあります", "Transitive + てあります")}</small>
-								<strong className="jp">{example.ta_r ? <RubyHtml html={example.ta_r} /> : example.ta}</strong>
-								<SayButton text={example.ta} />
-								<span>{lx(example.ta_cn, example.ta_en)}</span>
-							</div>
-						</div>
-					</article>
-				))}
-			</div>
-			<div className="jita-tearu__particle">{lx(block.particle_cn, block.particle_en)}</div>
-		</section>
-	);
-}
-
 export function JitaPage({ data }: { data: any }) {
 	const JT = data?.jita;
 	if (!JT) return <div className="empty">{lx("自动词和他动词数据还没加载完，请稍后重试。", "Transitive/intransitive data is still loading.")}</div>;
 	return (
 		<>
 			{JT.intro ? <div className="meta" style={{ marginBottom: 12 }}>{lx(JT.intro, JT.intro_en)}</div> : null}
-			<JitaTearu block={JT.tearu} />
 			{(JT.groups || []).map((group: any, gi: number) => (
 				<div className="card jita-group" key={gi}>
 					<h3 className="jp" style={{ marginTop: 0 }}>

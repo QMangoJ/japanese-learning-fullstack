@@ -4,66 +4,6 @@
   "title_en": "Intransitive and transitive verbs",
   "intro": "他动词带有直接作用的对象，对象通常用「を」；自动词描述主体的动作、变化或状态，不带这种直接宾语。下面把常用的自他动词成对比较，并列出读音、ます形和例句。",
   "intro_en": "Transitive verbs take a direct object, usually marked with を. Intransitive verbs describe an action, change, or state without a direct object. Compare these common pairs with readings, polite forms, and examples.",
-  "tearu": {
-    "title_cn": "他动词＋てあります：人为留下的状态",
-    "title_en": "Transitive verb + てあります: an intentionally created state",
-    "formula": "他動詞て形＋あります",
-    "formula_r": "<ruby>他動詞<rt>たどうし</rt></ruby>て<ruby>形<rt>けい</rt></ruby>＋あります",
-    "intro_cn": "表示某人出于目的做了一个动作，而动作完成后的结果仍保持着。与单纯描述状态的「自动词＋ています」相比，「他动词＋てあります」含有“有人事先这样做了”的意思。",
-    "intro_en": "This pattern says that someone intentionally performed an action and its result remains. Intransitive + ています simply describes the current state; transitive + てあります implies that someone created that state for a purpose.",
-    "particle_cn": "注意：虽然原动词是他动词，但在「Vてあります」中，处于该状态的物品通常用「が」或「は」标记。",
-    "particle_en": "Although the verb is transitive, the item left in that state is usually marked by が or は in the Vてあります construction.",
-    "examples": [
-      {
-        "meaning_cn": "门开着",
-        "meaning_en": "the door is open",
-        "ji": "ドアが開いています。",
-        "ji_r": "ドアが<ruby>開<rt>あ</rt></ruby>いています。",
-        "ji_cn": "门开着。（只描述当前状态）",
-        "ji_en": "The door is open. (A description of its current state.)",
-        "ta": "ドアが開けてあります。",
-        "ta_r": "ドアが<ruby>開<rt>あ</rt></ruby>けてあります。",
-        "ta_cn": "门有人特意开着。（例如为了通风）",
-        "ta_en": "The door has been intentionally left open (for example, for ventilation)."
-      },
-      {
-        "meaning_cn": "窗户关着",
-        "meaning_en": "the window is closed",
-        "ji": "窓が閉まっています。",
-        "ji_r": "<ruby>窓<rt>まど</rt></ruby>が<ruby>閉<rt>し</rt></ruby>まっています。",
-        "ji_cn": "窗户关着。（只描述当前状态）",
-        "ji_en": "The window is closed. (A description of its current state.)",
-        "ta": "窓が閉めてあります。",
-        "ta_r": "<ruby>窓<rt>まど</rt></ruby>が<ruby>閉<rt>し</rt></ruby>めてあります。",
-        "ta_cn": "窗户有人特意关好了。",
-        "ta_en": "The window has been intentionally closed."
-      },
-      {
-        "meaning_cn": "灯开着",
-        "meaning_en": "the light is on",
-        "ji": "電気がついています。",
-        "ji_r": "<ruby>電気<rt>でんき</rt></ruby>がついています。",
-        "ji_cn": "灯亮着。（只描述当前状态）",
-        "ji_en": "The light is on. (A description of its current state.)",
-        "ta": "電気がつけてあります。",
-        "ta_r": "<ruby>電気<rt>でんき</rt></ruby>がつけてあります。",
-        "ta_cn": "灯有人特意开着。（例如为了等人）",
-        "ta_en": "The light has been intentionally left on (for example, for someone arriving later)."
-      },
-      {
-        "meaning_cn": "纸已经剪好",
-        "meaning_en": "the paper has been cut",
-        "ji": "紙が切れています。",
-        "ji_r": "<ruby>紙<rt>かみ</rt></ruby>が<ruby>切<rt>き</rt></ruby>れています。",
-        "ji_cn": "纸断了／破了。（描述纸变成这种状态）",
-        "ji_en": "The paper is torn or cut. (A description of its state.)",
-        "ta": "紙が切ってあります。",
-        "ta_r": "<ruby>紙<rt>かみ</rt></ruby>が<ruby>切<rt>き</rt></ruby>ってあります。",
-        "ta_cn": "纸已经有人按需要剪好了。",
-        "ta_en": "The paper has been cut in advance as needed."
-      }
-    ]
-  },
   "footer": "注意：自动词也能描述人的动作。「電車を降りる」「道を通る」中的「を」表示离开的场所或经过的路线，不是他动词的直接宾语。",
   "footer_en": "Intransitive verbs can also describe people's actions. In 電車を降りる (get off a train) and 道を通る (pass along a road), を marks a place of departure or a route, not a direct object.",
   "groups": [
@@ -212,10 +152,10 @@
             "masu": "切ります",
             "masu_r": "<ruby>切<rt>き</rt></ruby>ります",
             "kana": "きる",
-            "eg": "はさみで紙を切ります。",
-            "eg_r": "はさみで<ruby>紙<rt>かみ</rt></ruby>を<ruby>切<rt>き</rt></ruby>ります。",
-            "eg_cn": "用剪刀剪纸。",
-            "eg_en": "I cut the paper with scissors."
+            "eg": "紙が切ってあります。",
+            "eg_r": "<ruby>紙<rt>かみ</rt></ruby>が<ruby>切<rt>き</rt></ruby>ってあります。",
+            "eg_cn": "纸已经有人提前剪好了。",
+            "eg_en": "The paper has been cut in advance."
           },
           "ji": {
             "dict": "切れる",
