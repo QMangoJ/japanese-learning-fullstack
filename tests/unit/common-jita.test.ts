@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import jita from "../../app/data/common-jita.json";
+import { JITA_TEARU_EXAMPLES } from "../../app/data/common-jita-tearu";
 
 const pairs = jita.groups.flatMap((group) => group.pairs);
 const plainRuby = (html: string) => html.replace(/<rt>.*?<\/rt>/g, "").replace(/<[^>]+>/g, "");
@@ -67,5 +68,19 @@ describe("common transitive/intransitive reference data", () => {
 		expect(cut.ta.eg_cn).toBe("纸已经有人提前剪好了。");
 		expect(cut.ta.eg_en).toBe("The paper has been cut in advance.");
 		expect(cut.ji.eg_en).toBe("The thread is broken.");
+	});
+
+	it("replaces every transitive action example with a reviewed てあります example", () => {
+		const transitiveVerbs = pairs.map((pair) => pair.ta.dict).sort();
+		expect(Object.keys(JITA_TEARU_EXAMPLES).sort()).toEqual(transitiveVerbs);
+		for (const verb of transitiveVerbs) {
+			const example = JITA_TEARU_EXAMPLES[verb];
+			expect(example.jp, verb).toMatch(/てあります。$/);
+			expect(example.cn, verb).toBeTruthy();
+			expect(example.en, verb).toBeTruthy();
+			expect(plainRuby(example.jp_r), verb).toBe(example.jp);
+			expect(rubyReading(example.jp_r), `${verb}: readings`).not.toMatch(/\p{Script=Han}/u);
+		}
+		expect(JITA_TEARU_EXAMPLES["切る"].jp).toBe("紙が必要な大きさに切ってあります。");
 	});
 });

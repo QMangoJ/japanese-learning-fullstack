@@ -1,5 +1,6 @@
 import { Fragment, useEffect, useReducer, useRef, useState, type ReactNode } from "react";
 
+import { JITA_TEARU_EXAMPLES } from "../data/common-jita-tearu";
 import {
 	afterPaint,
 	addMistakeNote,
@@ -615,7 +616,11 @@ export function KougoPage({ data }: { data: any }) {
 
 function JitaSide({ side, kind }: { side: any; kind: "ta" | "ji" }) {
 	if (!side) return null;
-	const label = kind === "ta" ? lx("他动词 · を", "Transitive · を") : lx("自动词 · が", "Intransitive · が");
+	const tearu = kind === "ta" ? JITA_TEARU_EXAMPLES[side.dict] : null;
+	const example = tearu ? { eg: tearu.jp, eg_r: tearu.jp_r, eg_cn: tearu.cn, eg_en: tearu.en } : side;
+	const label = kind === "ta"
+		? lx("他动词 · てあります", "Transitive · てあります")
+		: lx("自动词 · ています", "Intransitive · ています");
 	return (
 		<div className={`jita-col jita-col--${kind}`}>
 			<div className={`jita-kind ${kind}`}>{label}</div>
@@ -627,9 +632,9 @@ function JitaSide({ side, kind }: { side: any; kind: "ta" | "ji" }) {
 				ます形　<Rr o={side} f="masu" />
 			</div>
 			<div className="jita-eg jp">
-				<Rr o={side} f="eg" />
-				<SayButton text={side.eg} />
-				{side.eg_cn || side.eg_en ? <span className="cn">{lx(side.eg_cn, side.eg_en)}</span> : null}
+				<Rr o={example} f="eg" />
+				<SayButton text={example.eg} />
+				{example.eg_cn || example.eg_en ? <span className="cn">{lx(example.eg_cn, example.eg_en)}</span> : null}
 			</div>
 		</div>
 	);

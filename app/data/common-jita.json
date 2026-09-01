@@ -2,8 +2,8 @@
   "title": "自動詞と他動詞",
   "title_cn": "自动词和他动词",
   "title_en": "Intransitive and transitive verbs",
-  "intro": "他动词带有直接作用的对象，对象通常用「を」；自动词描述主体的动作、变化或状态，不带这种直接宾语。下面把常用的自他动词成对比较，并列出读音、ます形和例句。",
-  "intro_en": "Transitive verbs take a direct object, usually marked with を. Intransitive verbs describe an action, change, or state without a direct object. Compare these common pairs with readings, polite forms, and examples.",
+  "intro": "他动词带有直接作用的对象，对象通常用「を」；自动词描述主体的动作、变化或状态。下表的他动词例句使用「Vてあります」，表示有人有意完成动作后留下的状态；自动词例句使用「Vています」，描述事物当前的状态。在「Vてあります」中，处于该状态的物品通常用「が」或「は」标记。",
+  "intro_en": "Transitive verbs take a direct object, usually marked with を, while intransitive verbs describe an action, change, or state. In the comparisons below, transitive examples use Vてあります for a state intentionally created by someone; intransitive examples use Vています to describe the current state. In the Vてあります construction, the item left in that state is usually marked by が or は.",
   "footer": "注意：自动词也能描述人的动作。「電車を降りる」「道を通る」中的「を」表示离开的场所或经过的路线，不是他动词的直接宾语。",
   "footer_en": "Intransitive verbs can also describe people's actions. In 電車を降りる (get off a train) and 道を通る (pass along a road), を marks a place of departure or a route, not a direct object.",
   "groups": [
