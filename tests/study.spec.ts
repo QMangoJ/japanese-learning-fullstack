@@ -865,6 +865,29 @@ test.describe("study typebar", () => {
 		await firstQuestion.getByText("译文").click();
 		await expect(firstQuestion).toContainText(/搬家的卡车/);
 	});
+
+	test("opens N2 reading in the shared study flow with translation, analysis, and day navigation", async ({ page }, testInfo) => {
+		await waitForStudy(page);
+		if (testInfo.project.name === "desktop-chrome") {
+			await page.locator(".side-seg button", { hasText: "N2" }).click();
+			await page.locator("#side [data-gotype='reading']").click();
+		} else {
+			await page.locator("#lvChip").click();
+			await page.locator(".sheet-item", { hasText: "N2" }).click();
+			await pickType(page, "reading");
+		}
+
+		await expect(page.locator(".week-card")).toHaveCount(6);
+		await page.locator(".day-item").first().click();
+		await expect(page.locator(".rb")).toBeVisible({ timeout: 15_000 });
+		await expect(page.locator(".rb-bar__id")).toContainText(/第1週\s*1日目/);
+
+		await page.getByRole("button", { name: /翻译|Translation/ }).click();
+		await expect(page.getByText("注意有效期限！")).toBeVisible();
+		await page.getByRole("button", { name: "语法讲解" }).click();
+		await expect(page.locator(".rb-grammar")).toBeVisible();
+		await expect(page.locator(".rb-nav button").last()).toBeEnabled();
+	});
 });
 
 test.describe("study language", () => {
