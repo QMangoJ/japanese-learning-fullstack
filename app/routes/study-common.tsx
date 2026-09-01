@@ -823,6 +823,7 @@ const MODULE_TAG: Record<string, [string, string]> = {
 	n4vocab: ["v4", "N4词汇"],
 	n4kanji: ["k4", "N4汉字"],
 	reading: ["r", "N3读解"],
+	n2reading: ["r2", "N2读解"],
 	listening: ["l", "N3听解"],
 	n2listening: ["l2", "N2听解"],
 	mistakes: ["m", "错题本"],
@@ -1201,12 +1202,12 @@ type FavsData = {
 
 const FAV_MOD_TAG: Record<string, string> = {
 	grammar: "g", n2grammar: "g2", vocab: "v", kanji: "k", n2vocab: "v2",
-	n2kanji: "k2", n4grammar: "g4", n4vocab: "v4", n4kanji: "k4", reading: "r", listening: "l", n2listening: "l2", selection: "mt-selection",
+	n2kanji: "k2", n4grammar: "g4", n4vocab: "v4", n4kanji: "k4", reading: "r", n2reading: "r2", listening: "l", n2listening: "l2", selection: "mt-selection",
 };
 const FAV_MOD_TAG_LABEL: Record<string, string> = {
 	grammar: "N3语法", n2grammar: "N2语法", vocab: "N3词汇", kanji: "N3汉字", n2vocab: "N2词汇",
 	n2kanji: "N2汉字", n4grammar: "N4语法", n4vocab: "N4词汇", n4kanji: "N4汉字",
-	reading: "N3读解", listening: "N3听解", n2listening: "N2听解", selection: "划词",
+	reading: "N3读解", n2reading: "N2读解", listening: "N3听解", n2listening: "N2听解", selection: "划词",
 };
 const favTags = (item: FavItem, selLabels: Record<string, string>) => {
 	const tags: { cls: string; label: string }[] = [];

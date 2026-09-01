@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { useSyncExternalStore } from "react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
@@ -233,6 +233,21 @@ describe("SearchPage", () => {
 		await user.click(screen.getByText("清空"));
 		expect(screen.queryByText("fridge")).not.toBeInTheDocument();
 	});
+
+	it("labels N2 reading results and opens them in the N2 reading module", async () => {
+		const user = userEvent.setup();
+		const seen: string[] = [];
+		setNavImpl((key) => seen.push(key));
+		render(<SearchPage />);
+
+		await user.type(screen.getByPlaceholderText(/日文/), "有効期限");
+		const result = screen.getByText("有効期限").closest(".result");
+		expect(result).toBeTruthy();
+		expect(within(result!).getByText("N2读解")).toHaveClass("r2");
+
+		await user.click(result!);
+		expect(seen[0]).toBe("#/day/1-1");
+	});
 });
 
 describe("HenkeiPage", () => {
@@ -446,5 +461,21 @@ describe("FavsPage", () => {
 		expect(screen.getByText("刚做完")).toBeInTheDocument();
 		await user.click(screen.getByRole("button", { name: "背诵模式" }));
 		expect(screen.getByText("‹ 返回列表")).toBeInTheDocument();
+	});
+
+	it("shows the N2 reading source on saved reading items", () => {
+		registerFavMeta("n2reading#1-1#v0", {
+			module: "n2reading",
+			hash: "#/day/1-1",
+			w: 1,
+			d: 1,
+			jp: "有効期限",
+			cn: "有效期限",
+		});
+		toggleFav("n2reading#1-1#v0");
+		render(<LiveFavs />);
+
+		expect(screen.getByText("N2读解")).toHaveClass("r2");
+		expect(screen.getByText("有效期限")).toBeInTheDocument();
 	});
 });
