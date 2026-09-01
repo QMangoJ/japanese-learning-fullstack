@@ -152,10 +152,10 @@
             "masu": "切ります",
             "masu_r": "<ruby>切<rt>き</rt></ruby>ります",
             "kana": "きる",
-            "eg": "はさみで紙を切ります。",
-            "eg_r": "はさみで<ruby>紙<rt>かみ</rt></ruby>を<ruby>切<rt>き</rt></ruby>ります。",
-            "eg_cn": "用剪刀剪纸。",
-            "eg_en": "I cut the paper with scissors."
+            "eg": "紙が切ってあります。",
+            "eg_r": "<ruby>紙<rt>かみ</rt></ruby>が<ruby>切<rt>き</rt></ruby>ってあります。",
+            "eg_cn": "纸已经有人提前剪好了。",
+            "eg_en": "The paper has been cut in advance."
           },
           "ji": {
             "dict": "切れる",

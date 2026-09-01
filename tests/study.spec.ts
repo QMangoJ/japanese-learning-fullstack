@@ -429,7 +429,8 @@ test.describe("study navigation", () => {
 		await expect(page.locator(".jita-pair")).toHaveCount(51);
 		const cut = page.locator(".jita-pair").filter({ has: page.locator(".jita-kana", { hasText: "（きる）" }) });
 		await expect(cut.locator(".jita-kana")).toHaveText(["（きる）", "（きれる）"]);
-		await expect(cut.getByText("用剪刀剪纸。")).toBeVisible();
+		await expect(cut.getByText("纸已经有人提前剪好了。")).toBeVisible();
+		await expect(cut.locator(".jita-col--ta .jita-eg")).toContainText("ってあります");
 		await expect(cut.getByText("线断了。")).toBeVisible();
 		const continued = page.locator(".jita-pair").filter({ has: page.locator(".jita-kana", { hasText: "（つづける）" }) });
 		await continued.scrollIntoViewIfNeeded();

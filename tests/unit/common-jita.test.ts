@@ -62,9 +62,10 @@ describe("common transitive/intransitive reference data", () => {
 
 	it("includes the transitive 切る and intransitive 切れる pair", () => {
 		const cut = pairs.find((pair) => pair.ta.dict === "切る")!;
-		expect(cut.ta).toMatchObject({ kana: "きる", masu: "切ります", eg: "はさみで紙を切ります。" });
+		expect(cut.ta).toMatchObject({ kana: "きる", masu: "切ります", eg: "紙が切ってあります。" });
 		expect(cut.ji).toMatchObject({ kana: "きれる", masu: "切れます", eg: "糸が切れています。" });
-		expect(cut.ta.eg_cn).toBe("用剪刀剪纸。");
+		expect(cut.ta.eg_cn).toBe("纸已经有人提前剪好了。");
+		expect(cut.ta.eg_en).toBe("The paper has been cut in advance.");
 		expect(cut.ji.eg_en).toBe("The thread is broken.");
 	});
 });
