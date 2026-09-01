@@ -355,10 +355,12 @@ describe("JitaPage", () => {
 		);
 		expect(screen.getByText("开闭・开关")).toBeInTheDocument();
 		expect(screen.getByText("打开")).toBeInTheDocument();
-		expect(screen.getByText("他动词 · を")).toBeInTheDocument();
-		expect(screen.getByText("自动词 · が")).toBeInTheDocument();
+		expect(screen.getByText("他动词 · てあります")).toBeInTheDocument();
+		expect(screen.getByText("自动词 · ています")).toBeInTheDocument();
 		expect(screen.getByText(/（あける）/)).toBeInTheDocument();
-		expect(screen.getByText(/ドアを開けます/)).toBeInTheDocument();
+		expect(document.querySelector(".jita-col--ta .jita-eg")?.textContent).toContain("ドアが");
+		expect(document.querySelector(".jita-col--ta .jita-eg")?.textContent).toContain("けてあります");
+		expect(screen.getByText("门有人特意开着。")).toBeInTheDocument();
 		expect(screen.getByText("门开着。")).toBeInTheDocument();
 		expect(document.querySelector(".jita-word ruby")?.childNodes[0]?.textContent).toBe("開");
 		expect(document.querySelector(".jita-word")?.textContent).toContain("ける");

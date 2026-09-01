@@ -407,12 +407,12 @@ test.describe("study navigation", () => {
 			await page.getByRole("button", { name: /自他动词|Verb pairs/ }).click();
 		}
 		await expect(page.locator("#title")).toContainText(/自动词|他动词|自動詞|Transitive/);
-		await expect(page.getByText("他动词 · を").first()).toBeVisible();
-		await expect(page.getByText("自动词 · が").first()).toBeVisible();
-		await expect(page.locator(".jita-eg").first()).toContainText("ドアを");
+		await expect(page.getByText("他动词 · てあります").first()).toBeVisible();
+		await expect(page.getByText("自动词 · ています").first()).toBeVisible();
+		await expect(page.locator(".jita-eg").first()).toContainText("ドアが");
 		await expect(page.locator(".jita-eg").nth(1)).toContainText("ドアが");
-		await expect(page.getByText("打开门。")).toBeVisible();
-		await expect(page.getByText("门开着。")).toBeVisible();
+		await expect(page.getByText("门有人特意开着。")).toBeVisible();
+		await expect(page.getByText("门开着。", { exact: true })).toBeVisible();
 		await expect(page.locator(".jita-masu").first()).toContainText("けます");
 		await expect(page.locator(".jita-word ruby rt").first()).toHaveText("あ");
 		const pair = page.locator(".jita-pair").first();
@@ -429,7 +429,7 @@ test.describe("study navigation", () => {
 		await expect(page.locator(".jita-pair")).toHaveCount(51);
 		const cut = page.locator(".jita-pair").filter({ has: page.locator(".jita-kana", { hasText: "（きる）" }) });
 		await expect(cut.locator(".jita-kana")).toHaveText(["（きる）", "（きれる）"]);
-		await expect(cut.getByText("纸已经有人提前剪好了。")).toBeVisible();
+		await expect(cut.getByText("纸已经按需要的尺寸剪好了。")).toBeVisible();
 		await expect(cut.locator(".jita-col--ta .jita-eg")).toContainText("ってあります");
 		await expect(cut.getByText("线断了。")).toBeVisible();
 		const continued = page.locator(".jita-pair").filter({ has: page.locator(".jita-kana", { hasText: "（つづける）" }) });
@@ -438,14 +438,14 @@ test.describe("study navigation", () => {
 		await expect(continued.locator(".jita-word ruby rt")).toHaveText(["つづ", "つづ"]);
 		await expect(continued.locator(".jita-masu").nth(0)).toContainText("けます");
 		await expect(continued.locator(".jita-masu").nth(1)).toContainText("きます");
-		await expect(continued.getByText("我会继续学习日语。")).toBeVisible();
+		await expect(continued.getByText("编号接着上一页排下来了。")).toBeVisible();
 		await expect(continued.getByText("雨已经连续下了三天。")).toBeVisible();
 		await expect(continued.getByRole("button", { name: /朗读|Read aloud/ })).toHaveCount(2);
 
 		await page.getByRole("button", { name: "English", exact: true }).click();
 		await expect(page.locator(".jita-kind").first()).toContainText("Transitive");
 		await expect(page.locator(".jita-eg .cn").first()).not.toBeEmpty();
-		await expect(continued.getByText("I will continue studying Japanese.")).toBeVisible();
+		await expect(continued.getByText("The numbering has been continued from the previous page.")).toBeVisible();
 		await expect(continued.getByText("It has been raining for three days.")).toBeVisible();
 		const continuedLeft = (await continued.locator(".jita-col--ta").boundingBox())!;
 		const continuedRight = (await continued.locator(".jita-col--ji").boundingBox())!;
