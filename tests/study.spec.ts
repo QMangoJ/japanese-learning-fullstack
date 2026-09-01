@@ -449,6 +449,27 @@ test.describe("study navigation", () => {
 		expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(await page.evaluate(() => document.documentElement.clientWidth));
 	});
 
+	test("opens the bilingual clothing and accessory verb reference", async ({ page }) => {
+		await waitForStudy(page);
+		const side = page.locator("#side .side-item", { hasText: /穿衣穿戴|Wearing/ });
+		if (await side.isVisible()) await side.click();
+		else {
+			await page.locator('.bottom button[data-nav="common"]').click();
+			await page.getByRole("button", { name: /穿衣穿戴|Wearing/ }).click();
+		}
+		await expect(page.locator("#title")).toContainText(/穿衣穿戴|Clothes & Accessories/);
+		await expect(page.locator(".wearing-card")).toHaveCount(9);
+		await expect(page.locator(".wearing-state strong").first()).toContainText("ている");
+		await expect(page.getByText("今天穿着白色衬衫。")).toBeVisible();
+		await expect(page.getByText("脱下和摘下怎么说")).toBeVisible();
+		await expect(page.locator(".wearing-removal-verb")).toHaveCount(3);
+		await expect(page.locator(".wearing-card ruby rt").first()).toHaveText("き");
+		await page.getByRole("button", { name: "English" }).click();
+		await expect(page.getByText("Verbs for wearing clothes and accessories")).toBeVisible();
+		await expect(page.getByText("I am wearing a white shirt today.")).toBeVisible();
+		expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(await page.evaluate(() => document.documentElement.clientWidth));
+	});
+
 	test("opens the spoken-contraction reference", async ({ page }) => {
 		await waitForStudy(page);
 		const side = page.locator("#side .side-item", { hasText: /口语|Casual/ });

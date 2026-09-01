@@ -17,6 +17,7 @@ import {
 	NumbersPage,
 	RefPage,
 	SearchPage,
+	WearingPage,
 } from "../routes/study-common";
 import { ContrastPage, DayNav, DayPage, parseDayRoute } from "./days";
 import { KanjiExamPage } from "./KanjiExamPage";
@@ -473,6 +474,7 @@ function Sidebar({ routeKey, onLevel }: { routeKey: string; onLevel: (lv: LevelK
 				{row("#/henkei", "✍️", lx("变形", "Verb forms"), null, h === "#/henkei")}
 				{row("#/kougo", "💬", lx("口语", "Casual"), null, h === "#/kougo")}
 				{row("#/jita", "↔️", lx("自他动词", "Verb pairs"), null, h === "#/jita")}
+				{row("#/wearing", "👕", lx("穿衣穿戴", "Wearing"), null, h === "#/wearing")}
 				{row("#/numbers", "🔢", lx("数字", "Numbers"), null, h === "#/numbers")}
 				{row("#/kanji-exam", "🈶", lx("汉字自测", "Kanji Self-test"), null, h === "#/kanji-exam")}
 			</div>
@@ -564,7 +566,10 @@ function Sheet({
 								<span className="ic">🈶</span>
 								{lx("汉字自测", "Kanji Self-test")}
 							</button>
-							<span className="sheet-item" style={{ visibility: "hidden" }} />
+							<button className="sheet-item" onClick={() => { onClose(); navTo("#/wearing"); }}>
+								<span className="ic">👕</span>
+								{lx("穿衣穿戴", "Wearing")}
+							</button>
 							<span className="sheet-item" style={{ visibility: "hidden" }} />
 						</div>
 						<div className="sheet-h">
@@ -789,6 +794,7 @@ function viewMeta(key: string): { nav: string; title: string; back: boolean } {
 	if (key === "#/henkei") return { nav: "common", title: lx("動詞の変形ルール · 音便と組み合わせ", "Verb Conjugation Rules"), back: true };
 	if (key === "#/kougo") return { nav: "common", title: lx("口语缩约 · 口語の縮約", "Spoken Contractions"), back: true };
 	if (key === "#/jita") return { nav: "common", title: lx("自动词和他动词 · 自動詞と他動詞", "Transitive & Intransitive Verbs"), back: true };
+	if (key === "#/wearing") return { nav: "common", title: lx("穿衣穿戴 · 衣服と身につける物", "Clothes & Accessories"), back: true };
 	if (key === "#/numbers") return { nav: "common", title: lx("数字表达", "Number Expressions"), back: true };
 	if (key === "#/contrast") return { nav: "common", title: lx("语法辨析 · " + LEVEL.toUpperCase(), "Grammar Contrast · " + LEVEL.toUpperCase()), back: true };
 	const day = parseDayRoute(key);
@@ -912,11 +918,11 @@ export function StudyApp() {
 
 	const meta = viewMeta(routeKey);
 	const day = parseDayRoute(routeKey);
-	const commonPages = ["#/search", "#/cards", "#/kanji-exam", "#/favs", "#/mistakes", "#/ref", "#/katsuyou", "#/henkei", "#/kougo", "#/jita", "#/numbers"];
+	const commonPages = ["#/search", "#/cards", "#/kanji-exam", "#/favs", "#/mistakes", "#/ref", "#/katsuyou", "#/henkei", "#/kougo", "#/jita", "#/wearing", "#/numbers"];
 	const isCommon = commonPages.includes(routeKey) || routeKey === "#/";
 	if (routeKey === "#/cards") ensureCardsDeck();
 
-	const commonRefPage = ["#/ref", "#/katsuyou", "#/henkei", "#/kougo", "#/jita", "#/numbers"].includes(routeKey);
+	const commonRefPage = ["#/ref", "#/katsuyou", "#/henkei", "#/kougo", "#/jita", "#/wearing", "#/numbers"].includes(routeKey);
 	const waitingN2 = isN2() && MODULE !== "n2listening" && MODULE !== "n2reading" && !n2Loaded && !commonRefPage;
 	const waitingN4 = isN4() && !n4Loaded && !commonRefPage;
 	const waitingSearch = routeKey === "#/search" && !n2Loaded;
@@ -977,6 +983,7 @@ export function StudyApp() {
 	else if (routeKey === "#/henkei") body = DATA.common?.henkei ? <HenkeiPage data={DATA.common} /> : <div className="empty">通用参考数据加载中，请稍候…</div>;
 	else if (routeKey === "#/kougo") body = DATA.common?.kougo ? <KougoPage data={DATA.common} /> : <div className="empty">通用参考数据加载中，请稍候…</div>;
 	else if (routeKey === "#/jita") body = DATA.common?.jita ? <JitaPage data={DATA.common} /> : <div className="empty">通用参考数据加载中，请稍候…</div>;
+	else if (routeKey === "#/wearing") body = DATA.common?.wearing ? <WearingPage data={DATA.common} /> : <div className="empty">通用参考数据加载中，请稍候…</div>;
 	else if (routeKey === "#/numbers") body = DATA.common?.numbers ? <NumbersPage data={DATA.common} /> : <div className="empty">通用参考数据加载中，请稍候…</div>;
 	else body = <HomePage data={homeData} />;
 

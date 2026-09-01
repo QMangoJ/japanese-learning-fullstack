@@ -162,6 +162,8 @@ describe("routing helpers", () => {
 		expect(pathToKey("/study/kougo")).toBe("#/kougo");
 		expect(keyToPath("#/jita")).toBe("/study/jita");
 		expect(pathToKey("/study/jita")).toBe("#/jita");
+		expect(keyToPath("#/wearing")).toBe("/study/wearing");
+		expect(pathToKey("/study/wearing")).toBe("#/wearing");
 		expect(pathToKey("/study")).toBe("#/");
 		expect(pathToKey("/study/day/1-2")).toBe("#/day/1-2");
 		expect(pathToKey("/other")).toBe("#/");

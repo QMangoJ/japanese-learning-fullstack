@@ -47,7 +47,7 @@ import {
 	type SearchCategory,
 } from "../study/store";
 
-/* 学習シェル共通ページ：接续表 / 活用 / 变形 / 口语 / 自他动词 / 数字 / 検索 / 記憶カード /
+/* 学習シェル共通ページ：接续表 / 活用 / 变形 / 口语 / 自他动词 / 穿衣穿戴 / 数字 / 検索 / 記憶カード /
  * 週カタログ / 錯題本 / 收藏。ルーティングと日課本文は app/study が持つ。
  * クラス名と DOM 構造は移行前の文字列組み立てと同じものを再現している。 */
 
@@ -658,6 +658,85 @@ export function JitaPage({ data }: { data: any }) {
 				</div>
 			))}
 			{JT.footer ? <div className="meta" style={{ marginTop: 10 }}>{lx(JT.footer, JT.footer_en)}</div> : null}
+		</>
+	);
+}
+
+/* ---------------- 衣服・身につける物 ---------------- */
+
+function WearingText({ item, field }: { item: any; field: string }) {
+	const rich = item?.[`${field}_r`];
+	return rich ? <RubyHtml html={rich} /> : item?.[field] || "";
+}
+
+export function WearingPage({ data }: { data: any }) {
+	const W = data?.wearing;
+	if (!W) return <div className="empty">{lx("穿衣与穿戴动词数据还没加载完，请稍后重试。", "Wearing-verb data is still loading.")}</div>;
+	return (
+		<>
+			<div className="wearing-lead">
+				<h2 className="jp">{lx(W.title_cn, W.title_en)}</h2>
+				<div className="wearing-jp-title jp">{W.title}</div>
+				<p>{lx(W.intro, W.intro_en)}</p>
+			</div>
+			<div className="wearing-state-note">
+				<span className="wearing-state-note__label">Vている</span>
+				<span>{lx(W.state_note, W.state_note_en)}</span>
+			</div>
+			<div className="wearing-grid">
+				{(W.items || []).map((item: any) => (
+					<article className="card wearing-card" key={item.verb}>
+						<header className="wearing-card__head">
+							<div>
+								<div className="wearing-action">{lx(item.action_cn, item.action_en)}</div>
+								<div className="wearing-verb jp">
+									<WearingText item={item} field="verb" />
+									<span>（{item.kana}）</span>
+								</div>
+							</div>
+							<div className="wearing-state">
+								<small>{lx("穿戴状态", "Wearing state")}</small>
+								<strong className="jp"><WearingText item={item} field="state" /></strong>
+							</div>
+						</header>
+						<div className="wearing-objects">
+							<span>{lx("适用对象", "Used with")}</span>
+							<strong className="jp"><WearingText item={item} field="objects_jp" /></strong>
+							<p>{lx(item.objects_cn, item.objects_en)}</p>
+						</div>
+						<div className="wearing-example jp">
+							<WearingText item={item} field="example" />
+							<SayButton text={item.example} />
+							<span className="cn">{lx(item.example_cn, item.example_en)}</span>
+						</div>
+						<div className="wearing-remove">
+							<span>{lx("脱下／摘下", "Take off")}</span>
+							<strong className="jp"><WearingText item={item} field="remove" /></strong>
+						</div>
+						{item.note_cn || item.note_en ? <p className="wearing-note">{lx(item.note_cn, item.note_en)}</p> : null}
+					</article>
+				))}
+			</div>
+			<section className="card wearing-removal">
+				<h3>{lx(W.removal?.title_cn, W.removal?.title_en)}</h3>
+				<div className="wearing-removal-grid">
+					{(W.removal?.items || []).map((item: any) => (
+						<article key={item.verb}>
+							<div className="wearing-removal-verb jp">
+								<WearingText item={item} field="verb" />
+								<span>（{item.kana}）</span>
+							</div>
+							<p>{lx(item.use_cn, item.use_en)}</p>
+							<div className="wearing-removal-example jp">
+								<WearingText item={item} field="example" />
+								<SayButton text={item.example} />
+								<span className="cn">{lx(item.example_cn, item.example_en)}</span>
+							</div>
+						</article>
+					))}
+				</div>
+			</section>
+			{W.footer ? <div className="meta wearing-footer">{lx(W.footer, W.footer_en)}</div> : null}
 		</>
 	);
 }
