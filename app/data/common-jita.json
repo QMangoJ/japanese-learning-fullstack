@@ -114,8 +114,8 @@
       ]
     },
     {
-      "title": "破坏・变形",
-      "title_en": "Break, tear, drop",
+      "title": "破坏・切断・变形",
+      "title_en": "Break, cut, tear, drop",
       "pairs": [
         {
           "cn": "弄坏",
@@ -141,6 +141,32 @@
             "eg_r": "テレビが<ruby>壊<rt>こわ</rt></ruby>れています。",
             "eg_cn": "电视坏了。",
             "eg_en": "The TV is broken."
+          }
+        },
+        {
+          "cn": "切断 / 断开",
+          "en": "cut / snap",
+          "ta": {
+            "dict": "切る",
+            "dict_r": "<ruby>切<rt>き</rt></ruby>る",
+            "masu": "切ります",
+            "masu_r": "<ruby>切<rt>き</rt></ruby>ります",
+            "kana": "きる",
+            "eg": "はさみで紙を切ります。",
+            "eg_r": "はさみで<ruby>紙<rt>かみ</rt></ruby>を<ruby>切<rt>き</rt></ruby>ります。",
+            "eg_cn": "用剪刀剪纸。",
+            "eg_en": "I cut the paper with scissors."
+          },
+          "ji": {
+            "dict": "切れる",
+            "dict_r": "<ruby>切<rt>き</rt></ruby>れる",
+            "masu": "切れます",
+            "masu_r": "<ruby>切<rt>き</rt></ruby>れます",
+            "kana": "きれる",
+            "eg": "糸が切れています。",
+            "eg_r": "<ruby>糸<rt>いと</rt></ruby>が<ruby>切<rt>き</rt></ruby>れています。",
+            "eg_cn": "线断了。",
+            "eg_en": "The thread is broken."
           }
         },
         {

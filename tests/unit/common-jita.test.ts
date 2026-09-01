@@ -6,10 +6,11 @@ const plainRuby = (html: string) => html.replace(/<rt>.*?<\/rt>/g, "").replace(/
 const rubyReading = (html: string) => html.replace(/<ruby>.*?<rt>(.*?)<\/rt><\/ruby>/g, "$1");
 
 describe("common transitive/intransitive reference data", () => {
-	it("retains the original pairs and expands the reference to 50 unique pairs", () => {
-		expect(pairs).toHaveLength(50);
-		expect(new Set(pairs.map((pair) => `${pair.ta.dict}/${pair.ji.dict}`)).size).toBe(50);
+	it("retains the original pairs and expands the reference to 51 unique pairs", () => {
+		expect(pairs).toHaveLength(51);
+		expect(new Set(pairs.map((pair) => `${pair.ta.dict}/${pair.ji.dict}`)).size).toBe(51);
 		for (const [ta, ji] of [
+			["切る", "切れる"],
 			["続ける", "続く"], ["増やす", "増える"], ["減らす", "減る"],
 			["上げる", "上がる"], ["下げる", "下がる"], ["進める", "進む"],
 			["動かす", "動く"], ["戻す", "戻る"], ["降ろす", "降りる"], ["通す", "通る"],
@@ -57,5 +58,13 @@ describe("common transitive/intransitive reference data", () => {
 		const closed = pairs.find((pair) => pair.ji.dict === "閉まる")!.ji;
 		expect(closed.dict_r).toBe("<ruby>閉<rt>し</rt></ruby>まる");
 		expect(plainRuby(closed.eg_r)).toBe("窓が閉まっています。");
+	});
+
+	it("includes the transitive 切る and intransitive 切れる pair", () => {
+		const cut = pairs.find((pair) => pair.ta.dict === "切る")!;
+		expect(cut.ta).toMatchObject({ kana: "きる", masu: "切ります", eg: "はさみで紙を切ります。" });
+		expect(cut.ji).toMatchObject({ kana: "きれる", masu: "切れます", eg: "糸が切れています。" });
+		expect(cut.ta.eg_cn).toBe("用剪刀剪纸。");
+		expect(cut.ji.eg_en).toBe("The thread is broken.");
 	});
 });
