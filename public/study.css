@@ -520,6 +520,54 @@ body.hide-cn .vcn,body.hide-cn .cn{visibility:hidden}
   .jita-word{font-size:16px}
   .jita-kana{display:block;margin-left:0;font-size:12px;line-height:1.4}
 }
+/* ---- 穿衣・穿戴动词 ---- */
+.wearing-lead{margin:0 0 12px;padding:16px;border:1px solid var(--line);border-radius:14px;background:var(--card);box-shadow:var(--shadow)}
+.wearing-lead h2{margin:0;font-size:20px;line-height:1.45}
+.wearing-jp-title{margin-top:2px;color:var(--accent);font-size:13px;font-weight:700}
+.wearing-lead p{margin:10px 0 0;color:var(--sub);font-size:13.5px;line-height:1.75}
+.wearing-state-note{display:flex;align-items:center;gap:10px;margin-bottom:12px;padding:10px 12px;border-left:3px solid var(--blue);border-radius:0 10px 10px 0;background:var(--blue-soft);color:var(--sub);font-size:13px;line-height:1.6}
+.wearing-state-note__label{flex:none;border-radius:999px;background:var(--blue);color:#fff;padding:3px 9px;font-size:12px;font-weight:800}
+.wearing-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-bottom:12px}
+.card.wearing-card{min-width:0;margin:0;padding:13px;overflow:hidden}
+.wearing-card__head{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:start;gap:8px;padding-bottom:10px;border-bottom:1px dashed var(--line)}
+.wearing-action{color:var(--sub);font-size:11.5px;font-weight:800;line-height:1.4}
+.wearing-verb{font-size:21px;font-weight:800;line-height:1.55}
+.wearing-verb>span{margin-left:3px;color:var(--sub);font-size:12px;font-weight:600}
+.wearing-state{display:flex;flex-direction:column;align-items:flex-end;min-width:88px;border-radius:9px;padding:5px 8px;background:var(--green-soft)}
+.wearing-state small{color:var(--green);font-size:9.5px;font-weight:800}
+.wearing-state strong{font-size:14px;line-height:1.5;white-space:nowrap}
+.wearing-objects{padding:9px 0 8px}
+.wearing-objects>span{display:block;margin-bottom:2px;color:var(--sub);font-size:10.5px;font-weight:800}
+.wearing-objects>strong{display:block;font-size:13.5px;line-height:1.6}
+.wearing-objects>p{margin:2px 0 0;color:var(--sub);font-size:12px;line-height:1.5}
+.wearing-example{border-radius:9px;padding:8px 9px;background:var(--bg);font-size:14.5px;line-height:1.75}
+.wearing-example .cn{display:block;color:var(--sub);font-size:12px;line-height:1.5}
+.wearing-remove{display:flex;align-items:center;gap:8px;margin-top:8px;font-size:11.5px;color:var(--sub)}
+.wearing-remove strong{border:1px solid var(--line);border-radius:999px;padding:2px 8px;color:var(--ink);font-size:12.5px}
+.wearing-note{margin:8px 0 0;padding-top:8px;border-top:1px dashed var(--line);color:var(--sub);font-size:11.5px;line-height:1.55}
+.card.wearing-removal{padding:14px}
+.wearing-removal>h3{margin:0 0 10px;font-size:16px}
+.wearing-removal-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.wearing-removal-grid>article{min-width:0;border:1px solid var(--line);border-radius:10px;padding:10px;background:var(--bg)}
+.wearing-removal-verb{font-size:17px;font-weight:800}
+.wearing-removal-verb>span{margin-left:2px;color:var(--sub);font-size:11px}
+.wearing-removal-grid p{min-height:3em;margin:4px 0 8px;color:var(--sub);font-size:11.5px;line-height:1.5}
+.wearing-removal-example{font-size:13.5px;line-height:1.7}
+.wearing-removal-example .cn{display:block;color:var(--sub);font-size:11.5px;line-height:1.45}
+.wearing-footer{margin-top:10px}
+@media(max-width:680px){
+  .wearing-grid{grid-template-columns:1fr}
+  .wearing-removal-grid{grid-template-columns:1fr}
+  .wearing-removal-grid p{min-height:0}
+}
+@media(max-width:420px){
+  .wearing-lead{padding:13px}
+  .wearing-lead h2{font-size:18px}
+  .wearing-state-note{align-items:flex-start}
+  .card.wearing-card{padding:11px}
+  .wearing-state{min-width:82px;padding-inline:6px}
+  .wearing-state strong{font-size:13px}
+}
 .mt-q{background:var(--accent-soft);color:var(--accent)}
 .mt-word{background:var(--blue-soft);color:var(--blue)}
 .mt-grammar{background:var(--green-soft);color:var(--green)}

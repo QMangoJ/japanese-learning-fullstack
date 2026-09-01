@@ -1,6 +1,7 @@
 import henkeiFallback from "../data/common-henkei.json";
 import jitaFallback from "../data/common-jita.json";
 import kougoFallback from "../data/common-kougo.json";
+import wearingFallback from "../data/common-wearing.json";
 import { listeningBundle, listeningN2Bundle, readingBundle, readingN2Bundle } from "./catalogs";
 
 export type ModuleKey =
@@ -1709,6 +1710,7 @@ export async function bootStudyData() {
 			henkei: (com && com.henkei) || henkeiFallback,
 			kougo: (com && com.kougo) || kougoFallback,
 			jita: (com && com.jita) || jitaFallback,
+			wearing: (com && com.wearing) || wearingFallback,
 		};
 		dataLoaded = true;
 		loadError = "";
