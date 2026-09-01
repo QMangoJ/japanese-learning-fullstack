@@ -426,7 +426,11 @@ test.describe("study navigation", () => {
 		expect((await pair.boundingBox())!.height).toBeLessThan(300);
 		await expect(pair.getByRole("button", { name: /朗读|Read aloud/ })).toHaveCount(2);
 		expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(await page.evaluate(() => document.documentElement.clientWidth));
-		await expect(page.locator(".jita-pair")).toHaveCount(50);
+		await expect(page.locator(".jita-pair")).toHaveCount(51);
+		const cut = page.locator(".jita-pair").filter({ has: page.locator(".jita-kana", { hasText: "（きる）" }) });
+		await expect(cut.locator(".jita-kana")).toHaveText(["（きる）", "（きれる）"]);
+		await expect(cut.getByText("用剪刀剪纸。")).toBeVisible();
+		await expect(cut.getByText("线断了。")).toBeVisible();
 		const continued = page.locator(".jita-pair").filter({ has: page.locator(".jita-kana", { hasText: "（つづける）" }) });
 		await continued.scrollIntoViewIfNeeded();
 		await expect(continued.locator(".jita-kana").nth(1)).toHaveText("（つづく）");
