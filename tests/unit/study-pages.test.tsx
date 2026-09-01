@@ -415,8 +415,8 @@ describe("ContrastPage usage notes", () => {
 	it("shows pattern, usage, and example labels in the family summary", () => {
 		render(<ContrastPage />);
 		expect(screen.getAllByText("语法句型").length).toBeGreaterThan(0);
-		expect(screen.getByText("用法说明")).toBeInTheDocument();
-		expect(screen.getByText("典型例句")).toBeInTheDocument();
+		expect(screen.getAllByText("用法说明").length).toBeGreaterThan(0);
+		expect(screen.getAllByText("典型例句").length).toBeGreaterThan(0);
 		expect(screen.getByText("表示主观上将某种行为作为习惯，或努力做到某种状态")).toBeInTheDocument();
 		expect(screen.getByText("忘れ物をしないようにする")).toBeInTheDocument();
 	});
@@ -424,7 +424,7 @@ describe("ContrastPage usage notes", () => {
 	it("shows usage and a sample sentence in the weekly summary", () => {
 		setCtMode("week");
 		render(<ContrastPage />);
-		expect(screen.getByText("用法说明")).toBeInTheDocument();
+		expect(screen.getAllByText("用法说明").length).toBeGreaterThan(0);
 		expect(screen.getByText("表示刚做完")).toBeInTheDocument();
 		expect(screen.getByText("食べたばかりです。")).toBeInTheDocument();
 	});

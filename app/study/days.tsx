@@ -1681,6 +1681,19 @@ function ContrastUsageBlock({
 	);
 }
 
+function ContrastUsageTable({ children }: { children: ReactNode }) {
+	return (
+		<div className="ct-usage-table">
+			<div className="ct-usage-table__head">
+				<span>{lx("语法句型", "Pattern")}</span>
+				<span>{lx("用法说明", "Usage")}</span>
+				<span>{lx("典型例句", "Example")}</span>
+			</div>
+			{children}
+		</div>
+	);
+}
+
 export function ContrastPage() {
 	const C = cur().contrast || { groups: [] };
 	const groups = C.groups || [];
@@ -1731,24 +1744,26 @@ export function ContrastPage() {
 												详情 ›
 											</a>
 										</h4>
-										{(d.points || []).map((p: any, i: number) => {
-											const ex = (p.examples || [])[0];
-											return (
-												<ContrastUsageBlock
-													key={i}
-													form={p.connection || p.pattern}
-													formRuby={p.connection ? undefined : p.pattern_r}
-													usage={p.usage_cn}
-													usageEn={p.usage_en}
-													example={ex?.jp}
-													exampleRuby={ex?.jp_r}
-													exampleCn={ex?.cn}
-													exampleEn={ex?.en}
-													loc={`${week.n}-${d.day}`}
-													locHash={`#/day/${week.n}-${d.day}/p${i}`}
-												/>
-											);
-										})}
+										<ContrastUsageTable>
+											{(d.points || []).map((p: any, i: number) => {
+												const ex = (p.examples || [])[0];
+												return (
+													<ContrastUsageBlock
+														key={i}
+														form={p.connection || p.pattern}
+														formRuby={p.connection ? undefined : p.pattern_r}
+														usage={p.usage_cn}
+														usageEn={p.usage_en}
+														example={ex?.jp}
+														exampleRuby={ex?.jp_r}
+														exampleCn={ex?.cn}
+														exampleEn={ex?.en}
+														loc={`${week.n}-${d.day}`}
+														locHash={`#/day/${week.n}-${d.day}/p${i}`}
+													/>
+												);
+											})}
+										</ContrastUsageTable>
 									</div>
 								);
 							})}
@@ -1775,18 +1790,20 @@ export function ContrastPage() {
 							<div className="card ct-card" id={`ct-g-${i}`} key={i}>
 								<h3 className="ct-h jp">{g.title}</h3>
 								{g.tip ? <div className="ct-tip">💡 {g.tip}</div> : null}
-								{(g.rows || []).map((r: any, ri: number) => (
-									<ContrastUsageBlock
-										key={ri}
-										form={r.form}
-										formRuby={r.form_r}
-										usage={r.mean}
-										example={r.eg}
-										exampleRuby={r.eg_r}
-										exampleCn={r.eg_cn}
-										loc={r.loc}
-									/>
-								))}
+								<ContrastUsageTable>
+									{(g.rows || []).map((r: any, ri: number) => (
+										<ContrastUsageBlock
+											key={ri}
+											form={r.form}
+											formRuby={r.form_r}
+											usage={r.mean}
+											example={r.eg}
+											exampleRuby={r.eg_r}
+											exampleCn={r.eg_cn}
+											loc={r.loc}
+										/>
+									))}
+								</ContrastUsageTable>
 								<ContrastQuiz group={g} />
 							</div>
 						))}
