@@ -496,6 +496,16 @@ describe("ContrastPage usage notes", () => {
 		expect(screen.getByText("表示刚做完")).toBeInTheDocument();
 		expect(screen.getByText("食べたばかりです。")).toBeInTheDocument();
 	});
+
+	it("opens the exact grammar point when a family row provides a point link", async () => {
+		const user = userEvent.setup();
+		const seen: string[] = [];
+		setNavImpl((key) => seen.push(key));
+		G.contrast.groups[0].rows[0].locHash = "#/day/1-4/p0";
+		render(<ContrastPage />);
+		await user.click(screen.getByText("1-4 ›"));
+		expect(seen).toContain("#/day/1-4/p0");
+	});
 });
 
 describe("FavsPage", () => {

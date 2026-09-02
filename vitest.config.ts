@@ -6,6 +6,7 @@ export default defineConfig({
 	esbuild: { jsx: "automatic" },
 	test: {
 		environment: "jsdom",
+		maxWorkers: 2,
 		include: ["tests/unit/**/*.test.{ts,tsx}"],
 		setupFiles: ["tests/unit/setup.ts"],
 		coverage: {

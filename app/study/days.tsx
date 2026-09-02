@@ -1824,6 +1824,7 @@ export function ContrastPage() {
 											exampleRuby={r.eg_r}
 											exampleCn={r.eg_cn}
 											loc={r.loc}
+											locHash={r.locHash}
 										/>
 									))}
 								</ContrastUsageTable>
