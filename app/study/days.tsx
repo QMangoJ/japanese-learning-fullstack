@@ -1483,9 +1483,10 @@ function DayKanji({ day, w, d, scrollTok }: { day: any; w: number; d: number; sc
 										<div className="vmn">
 											{LANG !== "en" && wd.cn ? <span className="vcn">{wd.cn}</span> : null}
 											{wd.en ? <span className="ven">{wd.en}</span> : null}
-											{usage ? (
-												<div className="kanji-word-usage">
-													<span className="kanji-word-pos">{lx(usage.posCn, usage.posEn)}</span>
+										{usage ? (
+											<div className="kanji-word-usage">
+												<span className="kanji-word-pos">{lx(usage.posCn, usage.posEn)}</span>
+												<span className="kanji-word-usage-copy">
 													<span className="kanji-word-example jp">
 														{usage.before}
 														<ruby>
@@ -1494,8 +1495,12 @@ function DayKanji({ day, w, d, scrollTok }: { day: any; w: number; d: number; sc
 														</ruby>
 														{usage.after}
 													</span>
-													<SayButton text={`${usage.before}${usageWord}${usage.after}`} />
-												</div>
+													<span className="kanji-word-example-translation">
+														{LANG === "en" ? usage.exampleEn : usage.exampleCn}
+													</span>
+												</span>
+												<SayButton text={`${usage.before}${usageWord}${usage.after}`} />
+											</div>
 											) : null}
 										</div>
 									</div>
