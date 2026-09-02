@@ -1,6 +1,7 @@
 import { useEffect, useState, useSyncExternalStore, type ReactNode } from "react";
 
 import { ConnBlock, Fmt, Rr, RubyHtml, SayButton } from "../routes/study-common";
+import { getKanjiWordUsage, kanjiWordSurface } from "./kanji-word-usage";
 import {
 	FAVMETA,
 	G,
@@ -1469,6 +1470,9 @@ function DayKanji({ day, w, d, scrollTok }: { day: any; w: number; d: number; sc
 						<div className="kwords">
 							{(k.words || []).map((wd: any, wi: number) => {
 								const kid = `${MODULE}#${w}-${d}#${ki}#${wi}`;
+								const usage = MODULE === "kanji" ? getKanjiWordUsage(wd) : null;
+								const usageWord = usage?.focus || (usage ? kanjiWordSurface(wd) : "");
+								const usageReading = usage?.focusReading || wd.reading;
 								return (
 									<div className="vrow" key={wi}>
 										<div className="vjp jp">
@@ -1479,6 +1483,20 @@ function DayKanji({ day, w, d, scrollTok }: { day: any; w: number; d: number; sc
 										<div className="vmn">
 											{LANG !== "en" && wd.cn ? <span className="vcn">{wd.cn}</span> : null}
 											{wd.en ? <span className="ven">{wd.en}</span> : null}
+											{usage ? (
+												<div className="kanji-word-usage">
+													<span className="kanji-word-pos">{lx(usage.posCn, usage.posEn)}</span>
+													<span className="kanji-word-example jp">
+														{usage.before}
+														<ruby>
+															{usageWord}
+															{usageReading ? <rt>{usageReading}</rt> : null}
+														</ruby>
+														{usage.after}
+													</span>
+													<SayButton text={`${usage.before}${usageWord}${usage.after}`} />
+												</div>
+											) : null}
 										</div>
 									</div>
 								);
