@@ -1,8 +1,86 @@
 {
   "title": "動詞の変形ルール",
   "intro": "「Vて」「Vば」这些标记分别指什么形，见 通用知识 → 接续表。这一页讲的是另一件事：**怎么把动词真的变成那个形**。",
+  "intro_en": "For what labels such as Vて and Vば mean, see General Reference → Connection Notation. This page shows how to form each verb conjugation.",
   "seeAlso": "活用形の表記（Vる／Vない／Vて…）は「接续表」にあります。",
+  "seeAlso_en": "See Connection Notation for labels such as Vる, Vない, and Vて.",
   "rules": [
+    {
+      "title": "一类・二类・三类：辞書形（原形）→ ます形",
+      "title_en": "Groups I, II & III: Dictionary Form → ます Form",
+      "note": "先判断动词类别，再替换词尾。这里的“原形”就是辞书形；「ます形」是礼貌体的现在／将来肯定形式。",
+      "note_en": "First identify the verb group, then change the ending. The dictionary form is the base form; the ます form is the polite non-past affirmative.",
+      "cols": [
+        "变形规律",
+        "例"
+      ],
+      "cols_en": [
+        "Rule",
+        "Examples"
+      ],
+      "rows": [
+        {
+          "label": "一类（五段動詞／Group I）",
+          "label_en": "Group I (五段動詞)",
+          "vals": [
+            "把最后一个う段假名改成同行的い段，再加「ます」",
+            "買う→買います　書く→書きます　泳ぐ→泳ぎます　話す→話します　待つ→待ちます　死ぬ→死にます　遊ぶ→遊びます　読む→読みます　帰る→帰ります"
+          ],
+          "vals_en": [
+            "Change the final u-row kana to the matching i-row kana, then add ます.",
+            "買う→買います　書く→書きます　泳ぐ→泳ぎます　話す→話します　待つ→待ちます　死ぬ→死にます　遊ぶ→遊びます　読む→読みます　帰る→帰ります"
+          ]
+        },
+        {
+          "label": "二类（一段動詞／Group II）",
+          "label_en": "Group II (一段動詞)",
+          "vals": [
+            "去掉词尾「る」，再加「ます」",
+            "食べる→食べます　見る→見ます　起きる→起きます　寝る→寝ます"
+          ],
+          "vals_en": [
+            "Remove the final る, then add ます.",
+            "食べる→食べます　見る→見ます　起きる→起きます　寝る→寝ます"
+          ]
+        },
+        {
+          "label": "三类（不規則動詞／Group III）",
+          "label_en": "Group III (irregular verbs)",
+          "vals": [
+            "不按上述规律，单独记忆",
+            "する→します　来る（くる）→来ます（きます）　勉強する→勉強します"
+          ],
+          "vals_en": [
+            "Memorize these irregular forms separately.",
+            "する→します　来る（くる）→来ます（きます）　勉強する→勉強します"
+          ]
+        },
+        {
+          "label": "「る」结尾的判断",
+          "label_en": "How to classify verbs ending in る",
+          "vals": [
+            "「る」前是い段／え段时通常是二类，但有一类例外，不能只看外形",
+            "二类：見る→見ます・食べる→食べます　／　一类例外：入る→入ります・走る→走ります・帰る→帰ります・切る→切ります・知る→知ります・要る→要ります"
+          ],
+          "vals_en": [
+            "A verb with an i- or e-row sound before る is usually Group II, but some common exceptions are Group I.",
+            "Group II: 見る→見ます・食べる→食べます　／　Group I exceptions: 入る→入ります・走る→走ります・帰る→帰ります・切る→切ります・知る→知ります・要る→要ります"
+          ]
+        },
+        {
+          "label": "易混对比",
+          "label_en": "Commonly confused pair",
+          "vals": [
+            "读音相同也可能属于不同类别，要结合汉字和词义记",
+            "切る（きる／切）→切ります【一类】　／　着る（きる／穿）→着ます【二类】"
+          ],
+          "vals_en": [
+            "Verbs with the same reading may belong to different groups; learn the kanji and meaning together.",
+            "切る（きる / cut）→切ります【Group I】　／　着る（きる / wear）→着ます【Group II】"
+          ]
+        }
+      ]
+    },
     {
       "title": "五段動詞のテ形・タ形（音便）",
       "note": "会了テ形，把「て」换成「た」就是タ形。",
@@ -170,5 +248,6 @@
       ]
     }
   ],
-  "footer": "本页为本站补充：原书的接续表默认读者已掌握这些变形规则，并未展开。"
+  "footer": "本页为本站补充：原书的接续表默认读者已掌握这些变形规则，并未展开。",
+  "footer_en": "This supplementary page explains conjugation rules that the connection table assumes the learner already knows."
 }

@@ -270,6 +270,29 @@ describe("HenkeiPage", () => {
 		expect(screen.getByText("五段動詞のテ形・タ形（音便）")).toBeInTheDocument();
 		expect(screen.getByText("書く→書いて")).toBeInTheDocument();
 	});
+
+	it("summarizes dictionary-to-masu rules for all three verb groups", () => {
+		render(
+			<HenkeiPage
+				data={{
+					henkei: {
+						rules: [{
+							title: "一类・二类・三类：辞書形（原形）→ ます形",
+							cols: ["变形规律", "例"],
+							rows: [
+								{ label: "一类（五段動詞／Group I）", vals: ["う段改成い段，再加ます", "書く→書きます"] },
+								{ label: "二类（一段動詞／Group II）", vals: ["去掉る，再加ます", "食べる→食べます"] },
+								{ label: "三类（不規則動詞／Group III）", vals: ["单独记忆", "する→します　来る→来ます"] },
+							],
+						}],
+					},
+				}}
+			/>,
+		);
+		expect(screen.getByText("書く→書きます")).toBeInTheDocument();
+		expect(screen.getByText("食べる→食べます")).toBeInTheDocument();
+		expect(screen.getByText(/する→します/)).toBeInTheDocument();
+	});
 });
 
 describe("KougoPage", () => {
