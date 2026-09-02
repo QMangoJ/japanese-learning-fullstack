@@ -294,23 +294,29 @@ describe("HenkeiPage", () => {
 		expect(screen.getByText(/する→します/)).toBeInTheDocument();
 	});
 
-	it("explains when dictionary and masu forms can identify a verb group", () => {
+	it("shows separate identification paths for dictionary and masu forms", () => {
 		render(
 			<HenkeiPage
 				data={{
 					henkei: {
-						rules: [{
-							title: "如何快速判断一类・二类・三类动词",
-							cols: ["判断方法", "例与注意点"],
-							rows: [
-								{ label: "辞书形：不以る结尾", vals: ["是一类", "書く【一类】"] },
-								{ label: "ます形：ます前是い段", vals: ["不能只看ます形判断", "帰ります【一类】／借ります【二类】"] },
-							],
-						}],
+						rules: [
+							{
+								title: "拿到的是原形（辞书形）时",
+								cols: ["判断方法", "例与注意点"],
+								rows: [{ label: "不以る结尾", vals: ["是一类", "書く【一类】"] }],
+							},
+							{
+								title: "拿到的是「ます形」时",
+								cols: ["判断方法", "例与注意点"],
+								rows: [{ label: "ます前是い段", vals: ["不能只看ます形判断", "帰ります【一类】／借ります【二类】"] }],
+							},
+						],
 					},
 				}}
 			/>,
 		);
+		expect(screen.getByText("拿到的是原形（辞书形）时")).toBeInTheDocument();
+		expect(screen.getByText("拿到的是「ます形」时")).toBeInTheDocument();
 		expect(screen.getByText("書く【一类】")).toBeInTheDocument();
 		expect(screen.getByText("不能只看ます形判断")).toBeInTheDocument();
 		expect(screen.getByText(/帰ります【一类】/)).toBeInTheDocument();
