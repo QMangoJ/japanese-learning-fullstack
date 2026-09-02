@@ -1,10 +1,122 @@
 {
-  "title": "動詞の変形ルール",
-  "intro": "「Vて」「Vば」这些标记分别指什么形，见 通用知识 → 接续表。这一页讲的是另一件事：**怎么把动词真的变成那个形**。",
-  "intro_en": "For what labels such as Vて and Vば mean, see General Reference → Connection Notation. This page shows how to form each verb conjugation.",
+  "title": "動詞の分類・変形ルール",
+  "intro": "先根据辞书形（原形）或「ます形」判断动词是一类、二类还是三类，再学习各类动词的变形。只看「ます形」有时不能唯一判断，遇到这种情况要回到辞书形确认。",
+  "intro_en": "First use the dictionary form or ます form to identify the verb group, then learn how that group conjugates. The ます form alone is sometimes ambiguous, so check the dictionary form when necessary.",
   "seeAlso": "活用形の表記（Vる／Vない／Vて…）は「接续表」にあります。",
   "seeAlso_en": "See Connection Notation for labels such as Vる, Vない, and Vて.",
   "rules": [
+    {
+      "title": "如何快速判断一类・二类・三类动词",
+      "title_en": "How to identify Group I, II, and III verbs quickly",
+      "note": "推荐顺序：先找三类，再看辞书形是否以「る」结尾。辞书形最可靠；仅凭「ます形」中的い段词干，有时无法唯一判断。",
+      "note_en": "Recommended order: check for Group III first, then see whether the dictionary form ends in る. The dictionary form is the most reliable; an i-row stem before ます can be ambiguous.",
+      "cols": [
+        "判断方法",
+        "例与注意点"
+      ],
+      "cols_en": [
+        "How to identify it",
+        "Examples and cautions"
+      ],
+      "rows": [
+        {
+          "label": "辞书形①：先找三类",
+          "label_en": "Dictionary form 1: Check Group III first",
+          "vals": [
+            "「する」「来る（くる）」以及“名词等＋する”构成的サ变复合动词是三类",
+            "する・来る・勉強する・予約する【三类】"
+          ],
+          "vals_en": [
+            "する, 来る（くる）, and する compounds formed with a noun or similar element are Group III.",
+            "する・来る・勉強する・予約する【Group III】"
+          ]
+        },
+        {
+          "label": "辞书形②：不以「る」结尾",
+          "label_en": "Dictionary form 2: Does not end in る",
+          "vals": [
+            "排除三类后，只要辞书形不以「る」结尾，就是一类",
+            "買う・書く・泳ぐ・話す・待つ・死ぬ・遊ぶ・読む【一类】"
+          ],
+          "vals_en": [
+            "After excluding Group III, a dictionary form that does not end in る is Group I.",
+            "買う・書く・泳ぐ・話す・待つ・死ぬ・遊ぶ・読む【Group I】"
+          ]
+        },
+        {
+          "label": "辞书形③：「る」前是あ／う／お段",
+          "label_en": "Dictionary form 3: a-, u-, or o-row before る",
+          "vals": [
+            "通常是一类",
+            "分かる・売る・乗る・取る【一类】"
+          ],
+          "vals_en": [
+            "These are normally Group I.",
+            "分かる・売る・乗る・取る【Group I】"
+          ]
+        },
+        {
+          "label": "辞书形④：「る」前是い／え段",
+          "label_en": "Dictionary form 4: i- or e-row before る",
+          "vals": [
+            "通常是二类，但存在必须记忆的一类例外",
+            "二类：見る・起きる・食べる・寝る　／　一类例外：入る・走る・帰る・切る・知る・要る・滑る・喋る・減る・焦る"
+          ],
+          "vals_en": [
+            "These are usually Group II, but some Group I exceptions must be memorized.",
+            "Group II: 見る・起きる・食べる・寝る　/　Group I exceptions: 入る・走る・帰る・切る・知る・要る・滑る・喋る・減る・焦る"
+          ]
+        },
+        {
+          "label": "ます形①：ます前是え段",
+          "label_en": "ます form 1: e-row before ます",
+          "vals": [
+            "可以直接判断为二类；去掉「ます」再加「る」可还原辞书形",
+            "食べます→食べる　寝ます→寝る【二类】"
+          ],
+          "vals_en": [
+            "This identifies Group II directly. Remove ます and add る to recover the dictionary form.",
+            "食べます→食べる　寝ます→寝る【Group II】"
+          ]
+        },
+        {
+          "label": "ます形②：ます前是い段",
+          "label_en": "ます form 2: i-row before ます",
+          "vals": [
+            "可能是一类，也可能是二类；只看ます形不能可靠判断，必须确认辞书形",
+            "書きます→書く【一类】・帰ります→帰る【一类】　／　見ます→見る【二类】・起きます→起きる【二类】"
+          ],
+          "vals_en": [
+            "This may be Group I or Group II. The ます form alone is not enough; check the dictionary form.",
+            "書きます→書く【Group I】・帰ります→帰る【Group I】　/　見ます→見る【Group II】・起きます→起きる【Group II】"
+          ]
+        },
+        {
+          "label": "ます形③：三类与「します」陷阱",
+          "label_en": "ます form 3: Group III and the します trap",
+          "vals": [
+            "する→します、来る→来ます是三类；但不能看到词尾「します」就一律判为三类",
+            "勉強します→勉強する【三类】　／　話します→話す・返します→返す【一类】"
+          ],
+          "vals_en": [
+            "する→します and 来る→来ます are Group III, but not every verb ending in します is Group III.",
+            "勉強します→勉強する【Group III】　/　話します→話す・返します→返す【Group I】"
+          ]
+        },
+        {
+          "label": "最容易混淆",
+          "label_en": "Easy-to-confuse examples",
+          "vals": [
+            "相同读音或相似的ます形也可能属于不同类别，要连同辞书形、汉字和词义一起记",
+            "切る（きる／切）→切ります【一类】　／　着る（きる／穿）→着ます【二类】　／　帰ります【一类】≠ 借ります【二类】"
+          ],
+          "vals_en": [
+            "The same reading or a similar ます form can belong to different groups. Learn the dictionary form, kanji, and meaning together.",
+            "切る（きる / cut）→切ります【Group I】　/　着る（きる / wear）→着ます【Group II】　/　帰ります【Group I】≠ 借ります【Group II】"
+          ]
+        }
+      ]
+    },
     {
       "title": "一类・二类・三类：辞書形（原形）→ ます形",
       "title_en": "Groups I, II & III: Dictionary Form → ます Form",
