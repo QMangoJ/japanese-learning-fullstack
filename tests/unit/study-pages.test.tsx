@@ -293,6 +293,28 @@ describe("HenkeiPage", () => {
 		expect(screen.getByText("食べる→食べます")).toBeInTheDocument();
 		expect(screen.getByText(/する→します/)).toBeInTheDocument();
 	});
+
+	it("explains when dictionary and masu forms can identify a verb group", () => {
+		render(
+			<HenkeiPage
+				data={{
+					henkei: {
+						rules: [{
+							title: "如何快速判断一类・二类・三类动词",
+							cols: ["判断方法", "例与注意点"],
+							rows: [
+								{ label: "辞书形：不以る结尾", vals: ["是一类", "書く【一类】"] },
+								{ label: "ます形：ます前是い段", vals: ["不能只看ます形判断", "帰ります【一类】／借ります【二类】"] },
+							],
+						}],
+					},
+				}}
+			/>,
+		);
+		expect(screen.getByText("書く【一类】")).toBeInTheDocument();
+		expect(screen.getByText("不能只看ます形判断")).toBeInTheDocument();
+		expect(screen.getByText(/帰ります【一类】/)).toBeInTheDocument();
+	});
 });
 
 describe("KougoPage", () => {
