@@ -1,15 +1,15 @@
 {
   "title": "動詞の分類・変形ルール",
-  "intro": "先根据辞书形（原形）或「ます形」判断动词是一类、二类还是三类，再学习各类动词的变形。只看「ます形」有时不能唯一判断，遇到这种情况要回到辞书形确认。",
-  "intro_en": "First use the dictionary form or ます form to identify the verb group, then learn how that group conjugates. The ます form alone is sometimes ambiguous, so check the dictionary form when necessary.",
+  "intro": "先看拿到的动词是哪种形式：如果给的是原形（辞书形），使用第一套判断流程；如果给的是「ます形」，直接使用第二套判断流程。两种情况不需要同时知道。",
+  "intro_en": "First check which form you have. Use the first decision path when the verb is in dictionary form, or the second path when it is already in the ます form. You do not need both forms at the start.",
   "seeAlso": "活用形の表記（Vる／Vない／Vて…）は「接续表」にあります。",
   "seeAlso_en": "See Connection Notation for labels such as Vる, Vない, and Vて.",
   "rules": [
     {
-      "title": "如何快速判断一类・二类・三类动词",
-      "title_en": "How to identify Group I, II, and III verbs quickly",
-      "note": "推荐顺序：先找三类，再看辞书形是否以「る」结尾。辞书形最可靠；仅凭「ます形」中的い段词干，有时无法唯一判断。",
-      "note_en": "Recommended order: check for Group III first, then see whether the dictionary form ends in る. The dictionary form is the most reliable; an i-row stem before ます can be ambiguous.",
+      "title": "拿到的是原形（辞书形）时",
+      "title_en": "When the given verb is in dictionary form",
+      "note": "按①→④依次判断。这里的输入就是题目或单词表中看到的原形，例如「書く」「食べる」「勉強する」。",
+      "note_en": "Follow steps 1 through 4. The input is the dictionary form shown in a question or vocabulary list, such as 書く, 食べる, or 勉強する.",
       "cols": [
         "判断方法",
         "例与注意点"
@@ -20,8 +20,8 @@
       ],
       "rows": [
         {
-          "label": "辞书形①：先找三类",
-          "label_en": "Dictionary form 1: Check Group III first",
+          "label": "① 先找三类",
+          "label_en": "1. Check Group III first",
           "vals": [
             "「する」「来る（くる）」以及“名词等＋する”构成的サ变复合动词是三类",
             "する・来る・勉強する・予約する【三类】"
@@ -32,8 +32,8 @@
           ]
         },
         {
-          "label": "辞书形②：不以「る」结尾",
-          "label_en": "Dictionary form 2: Does not end in る",
+          "label": "② 不以「る」结尾",
+          "label_en": "2. Does not end in る",
           "vals": [
             "排除三类后，只要辞书形不以「る」结尾，就是一类",
             "買う・書く・泳ぐ・話す・待つ・死ぬ・遊ぶ・読む【一类】"
@@ -44,8 +44,8 @@
           ]
         },
         {
-          "label": "辞书形③：「る」前是あ／う／お段",
-          "label_en": "Dictionary form 3: a-, u-, or o-row before る",
+          "label": "③「る」前是あ／う／お段",
+          "label_en": "3. a-, u-, or o-row before る",
           "vals": [
             "通常是一类",
             "分かる・売る・乗る・取る【一类】"
@@ -56,8 +56,8 @@
           ]
         },
         {
-          "label": "辞书形④：「る」前是い／え段",
-          "label_en": "Dictionary form 4: i- or e-row before る",
+          "label": "④「る」前是い／え段",
+          "label_en": "4. i- or e-row before る",
           "vals": [
             "通常是二类，但存在必须记忆的一类例外",
             "二类：見る・起きる・食べる・寝る　／　一类例外：入る・走る・帰る・切る・知る・要る・滑る・喋る・減る・焦る"
@@ -66,10 +66,26 @@
             "These are usually Group II, but some Group I exceptions must be memorized.",
             "Group II: 見る・起きる・食べる・寝る　/　Group I exceptions: 入る・走る・帰る・切る・知る・要る・滑る・喋る・減る・焦る"
           ]
-        },
+        }
+      ]
+    },
+    {
+      "title": "拿到的是「ます形」时",
+      "title_en": "When the given verb is already in the ます form",
+      "note": "先去掉词尾「ます」，观察紧挨在「ます」前面的假名。え段可以直接判断；い段可能属于两类，不能只凭外形硬猜。",
+      "note_en": "First remove ます and inspect the kana immediately before it. An e-row kana gives a direct answer, while an i-row kana can belong to two groups and cannot be classified by appearance alone.",
+      "cols": [
+        "判断方法",
+        "例与注意点"
+      ],
+      "cols_en": [
+        "How to identify it",
+        "Examples and cautions"
+      ],
+      "rows": [
         {
-          "label": "ます形①：ます前是え段",
-          "label_en": "ます form 1: e-row before ます",
+          "label": "① ます前是え段",
+          "label_en": "1. e-row before ます",
           "vals": [
             "可以直接判断为二类；去掉「ます」再加「る」可还原辞书形",
             "食べます→食べる　寝ます→寝る【二类】"
@@ -80,8 +96,8 @@
           ]
         },
         {
-          "label": "ます形②：ます前是い段",
-          "label_en": "ます form 2: i-row before ます",
+          "label": "② ます前是い段",
+          "label_en": "2. i-row before ます",
           "vals": [
             "可能是一类，也可能是二类；只看ます形不能可靠判断，必须确认辞书形",
             "書きます→書く【一类】・帰ります→帰る【一类】　／　見ます→見る【二类】・起きます→起きる【二类】"
@@ -92,8 +108,8 @@
           ]
         },
         {
-          "label": "ます形③：三类与「します」陷阱",
-          "label_en": "ます form 3: Group III and the します trap",
+          "label": "③ 三类与「します」陷阱",
+          "label_en": "3. Group III and the します trap",
           "vals": [
             "する→します、来る→来ます是三类；但不能看到词尾「します」就一律判为三类",
             "勉強します→勉強する【三类】　／　話します→話す・返します→返す【一类】"
