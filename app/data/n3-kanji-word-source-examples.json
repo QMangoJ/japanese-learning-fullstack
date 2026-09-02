@@ -1,0 +1,1358 @@
+{
+  "駐車": {
+    "jp": "会場のななめ向かいに有料駐車場があります。",
+    "cn": "会场的斜对面有收费停车场。",
+    "en": "There is a pay parking lot diagonally across from the venue.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "駐車場": {
+    "jp": "会場のななめ向かいに有料駐車場があります。",
+    "cn": "会场的斜对面有收费停车场。",
+    "en": "There is a pay parking lot diagonally across from the venue.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "無理(な)": {
+    "jp": "楽には違いないけど、高いのよ、そのコースは。うちは無理ね。",
+    "cn": "轻松是肯定轻松，可那个套餐很贵啊。我们家负担不起。",
+    "en": "It would certainly be easy, but that course is expensive. We can’t afford it.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "無料": {
+    "jp": "万が一故障しても無料で修理します。",
+    "cn": "万一发生故障也免费修理。",
+    "en": "Even if it should break down, we will repair it free of charge.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "方向": {
+    "jp": "どこから数えるか、どの方向から見るかに注意しましょう！",
+    "cn": "应注意从哪里开始数，从哪个方向看！",
+    "en": "Listen carefully to which position objects are being counted from and the direction from which the speaker is looking!",
+    "source": "app/data/listening-n3-lessons-ch4.ts"
+  },
+  "向こう": {
+    "jp": "ドラッグストアの向こうって書いてある。",
+    "cn": "上面写着在药店的那一边。",
+    "en": "It says it’s beyond the drugstore.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "禁止": {
+    "jp": "指示や禁止を表す表現に注意しましょう！",
+    "cn": "应注意表示指示或禁止的表达！",
+    "en": "Pay attention to expressions that convey instructions or describe prohibited actions!",
+    "source": "app/data/listening-n3-lessons-ch3.ts"
+  },
+  "関する": {
+    "jp": "農業に関する論文を読む。",
+    "cn": "读有关农业方面的论文。",
+    "en": "I read a research paper on the topic of agriculture.",
+    "source": "public/data/grammar.d15be04258.json"
+  },
+  "関係": {
+    "jp": "学校関係者は事件について深刻な心の傷を訴えている。",
+    "cn": "学校相关人员诉说着关于事件的深重心理创伤。",
+    "en": "School staff are reporting serious emotional wounds from the incident.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "無断": {
+    "jp": "まじめな田中さんが、無断で休むはずがない。",
+    "cn": "认真的田中，不可能无故不来。",
+    "en": "Tanaka-san is a very honest person, so he would not take leave without informing us.",
+    "source": "public/data/grammar.d15be04258.json"
+  },
+  "押す": {
+    "jp": "このボタンを押すと、ドアが開きます。",
+    "cn": "按这个按钮，门就会开。",
+    "en": "If you press this button, the door opens.",
+    "source": "public/data/n4grammar.40e138ccdb.json"
+  },
+  "入学式": {
+    "jp": "入学式は、このホールで行われます。",
+    "cn": "入学典礼将在这个大厅举行。",
+    "en": "The entrance ceremony will take place in this hall.",
+    "source": "public/data/grammar.d15be04258.json"
+  },
+  "自信": {
+    "jp": "辞書を使わずに書いたので、自信がありません。",
+    "cn": "因为写时没用词典，所以没有自信。",
+    "en": "I do not have much confidence since I wrote it without using a dictionary.",
+    "source": "public/data/grammar.d15be04258.json"
+  },
+  "信号": {
+    "jp": "地下鉄の出口を出たところの信号も入れて4つ。",
+    "cn": "把出地铁口那个红绿灯也算进去，一共 4 个。",
+    "en": "Four, counting the traffic light right outside the subway exit as well.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "確かめる": {
+    "jp": "有効期限にも注意しよう。いつまでのサービスかを必ず確かめること。",
+    "cn": "还要注意有效期限——一定要确认这项优惠到什么时候为止。",
+    "en": "Also watch the expiration date. Always check how long the offer lasts.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "非常に": {
+    "jp": "生活は非常に便利になった。しかし、子どもの教育という点で見るとどうだろう。",
+    "cn": "生活变得非常方便。然而，从孩子教育这一点来看又如何呢？",
+    "en": "Life has become extremely convenient. But how does it look from the point of view of children’s education?",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "階段": {
+    "jp": "この掃除機は小さいので、階段を掃除するのに便利です。",
+    "cn": "这个吸尘器很小，用来打扫楼梯很方便。",
+    "en": "This vacuum cleaner is small, so it's convenient for cleaning stairs.",
+    "source": "public/data/n4grammar.40e138ccdb.json"
+  },
+  "危険(な)": {
+    "jp": "危険なものに囲まれた状況の中で生活している。",
+    "cn": "生活在被危险事物包围的状况之中。",
+    "en": "Living in a situation surrounded by dangerous things.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "危ない": {
+    "jp": "今度、スイッチを入れているのに動かなかった場合は、危ないですからすぐに電源プラグを抜いてください。",
+    "cn": "下次如果打开开关却不动，很危险，请立刻拔掉电源插头。",
+    "en": "Next time, if it doesn’t move even though the switch is on, that’s dangerous, so please unplug the power cord  right away.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "捨てる": {
+    "jp": "月に2回しか捨てることができません。",
+    "cn": "一个月只能扔 2 次。",
+    "en": "You can only throw it away twice a month.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "〇〇方面": {
+    "jp": "タワービル方面に向かって歩く。",
+    "cn": "朝塔楼大厦的方向走。",
+    "en": "Walk toward the tower building.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "画面": {
+    "jp": "電子辞書の画面が暗かったことを伝えるため。",
+    "cn": "为了告知电子辞典屏幕曾经很暗。",
+    "en": "To inform the customer that the dictionary screen was dark.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "過去": {
+    "jp": "「まったく過去の話になっている」とあるが、どういう意味か。",
+    "cn": "文中说「已经完全成了过去」，这是什么意思？",
+    "en": "The text says it “has become completely a thing of the past.” What does that mean?",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "地下鉄": {
+    "jp": "地下鉄の出口を出たところの信号も入れて4つ。",
+    "cn": "把出地铁口那个红绿灯也算进去，一共 4 个。",
+    "en": "Four, counting the traffic light right outside the subway exit as well.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "指定": {
+    "jp": "指定の口座にお振り込みいただきますようお願い申し上げます。",
+    "cn": "恳请您汇款至指定账户。",
+    "en": "We kindly ask that you transfer the money to the designated account.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "安定": {
+    "jp": "不安定な場所には置かないでください。",
+    "cn": "请不要放置在不稳定的地方。",
+    "en": "Do not place it on an unstable surface.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "不安定": {
+    "jp": "不安定な場所には置かないでください。",
+    "cn": "请不要放置在不稳定的地方。",
+    "en": "Do not place it on an unstable surface.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "出席": {
+    "jp": "山本先生は同窓会に出席した。",
+    "cn": "山本老师出席了同学会。",
+    "en": "Mr. Yamamoto attended the reunion.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "自由(な)": {
+    "jp": "コーヒーはお代わり自由です！",
+    "cn": "咖啡免费续杯！",
+    "en": "Free coffee refills!",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "理由": {
+    "jp": "fの場合は簡単に理由をお書きください。",
+    "cn": "选择 f 时请简单写明理由。",
+    "en": "For f, please briefly write the reason.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "番号": {
+    "jp": "本は番号順に並べてあります。",
+    "cn": "书已经按编号顺序摆好了。",
+    "en": "The books have been arranged in numerical order.",
+    "source": "app/data/common-jita-tearu.ts"
+  },
+  "道路": {
+    "jp": "※ビルに面した道路は一方通行になっています。お車の場合は、ご注意ください。",
+    "cn": "※大楼所临的道路是单向通行。开车前来时请注意。",
+    "en": "※The street facing the building is one-way. Please be careful if you are coming by car.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "整理": {
+    "jp": "お年寄りや子どもも手が届く低めサイズ。整理しやすく使い勝手がよい真ん中冷凍室。",
+    "cn": "老人和孩子也够得着的低矮尺寸。位于正中的冷冻室，便于整理、使用方便。",
+    "en": "A lower size that older people and children can reach. A mid-height freezer that is easy to organize and use.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "回数券": {
+    "jp": "回数券の合計金額を比べる。",
+    "cn": "比较回数券的总金额。",
+    "en": "Compare the total prices of the coupon books.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "表現": {
+    "jp": "日本語の表現によく出てくるやりもらいや受け身、使役に注意しましょう。",
+    "cn": "日语中经常出现的授受表达、被动、使役形式一定要注意——它们决定了「谁对谁做了什么」。",
+    "en": "Pay close attention to giving-and-receiving expressions, the passive, and the causative — they tell you who did what to whom.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "両親": {
+    "jp": "健は両親が離婚してもいいと思っている。",
+    "cn": "健认为父母离婚也没关系。",
+    "en": "Ken thinks it would be all right if his parents got divorced.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "優しい": {
+    "jp": "そういうわけにはいかないわよ。あれで、優しいところもあるのよ。",
+    "cn": "那可不行。他那个人啊，其实也有温柔的一面呢。",
+    "en": "I can’t do that. He has a gentle side too, you know.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "女優": {
+    "jp": "彼女は女性としても女優としても最高だが、妻としてはどうだろう。",
+    "cn": "她作为一位女性和演员都很棒，作为妻子怎么样呢？",
+    "en": "As a woman and as an actress, she is the best, but as a wife, I wonder.",
+    "source": "public/data/grammar.d15be04258.json"
+  },
+  "降る": {
+    "jp": "明日、雨が降るかしら。",
+    "cn": "明天会下雨吗。",
+    "en": "I wonder if it'll rain tomorrow.",
+    "source": "public/data/n4grammar.40e138ccdb.json"
+  },
+  "準備": {
+    "jp": "会議の準備は途中まで進めてあります。",
+    "cn": "会议准备已经提前进行了一部分。",
+    "en": "The meeting preparations have already been partly completed.",
+    "source": "app/data/common-jita-tearu.ts"
+  },
+  "案内": {
+    "jp": "この案内の内容と合っているものはどれか。",
+    "cn": "下列哪一项与这份指南的内容相符？",
+    "en": "Which of the following matches the content of this notice?",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "内側": {
+    "jp": "軽いのは「質のいい羊の革」だから。「革だから軽い」わけではない。ポケットは「内側に2つ」。",
+    "cn": "轻是因为用了「品质好的羊皮」，不是「因为是皮所以轻」。口袋是在「内侧」两个，不是外侧。",
+    "en": "It is light because of high-quality sheep leather—not “because it is leather.” The two pockets are inside, not outside.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "以内": {
+    "jp": "7日以内にご返送いただければ、交換・返品をお受けいたします。",
+    "cn": "如果在 7 天以内寄回，我们就受理换货・退货。",
+    "en": "If you send it back within 7 days, we will accept an exchange or return.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "国内": {
+    "jp": "本製品は、日本国内専用です。",
+    "cn": "本产品仅限日本国内使用。",
+    "en": "This product  is for use in Japan only.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "予定": {
+    "jp": "女の人は、旅行に行く予定である。",
+    "cn": "女子打算去旅行。",
+    "en": "The woman is planning to go on a trip.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "予約": {
+    "jp": "予約時間は三時に変えてあります。",
+    "cn": "预约时间已经改成三点了。",
+    "en": "The reservation time has been changed to three o'clock.",
+    "source": "app/data/common-jita-tearu.ts"
+  },
+  "本当": {
+    "jp": "幼稚園の先生は、本当はやせている。",
+    "cn": "幼儿园老师其实很瘦。",
+    "en": "The kindergarten teacher is actually thin.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "全部": {
+    "jp": "この会社は、通勤にかかった費用を全部払ってくれる。",
+    "cn": "这家公司会全额支付上下班所需的费用。",
+    "en": "This company will pay all commuting costs.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "安全(な)": {
+    "jp": "落ち葉は安全な場所で燃やしてあります。",
+    "cn": "落叶已经在安全的地方烧掉了。",
+    "en": "The fallen leaves have been burned in a safe place.",
+    "source": "app/data/common-jita-tearu.ts"
+  },
+  "お客様": {
+    "jp": "お食事をご注文のお客様に限ります。",
+    "cn": "仅限点用餐食的顾客。",
+    "en": "Limited to guests who order a meal.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "理解": {
+    "jp": "何度も聞くフレーズをきちんと理解しましょう！",
+    "cn": "应正确理解多次听到的句子！",
+    "en": "Make an effort to understand phrases you often hear in public places!",
+    "source": "app/data/listening-n3-lessons-ch3.ts"
+  },
+  "動物園": {
+    "jp": "明日雨でも、動物園に行きます。",
+    "cn": "明天即使下雨，也去动物园。",
+    "en": "Even if it rains tomorrow, I'll go to the zoo.",
+    "source": "public/data/n4grammar.40e138ccdb.json"
+  },
+  "遊ぶ": {
+    "jp": "外で遊びたくても遊ぶ場所がない。",
+    "cn": "就算想在外面玩也没有地方。",
+    "en": "Even if they want to play outside, there is nowhere to play.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "美術館": {
+    "jp": "この美術館では、ピカソの絵が見られます。",
+    "cn": "在这家美术馆能看到毕加索的画。",
+    "en": "You can see Picasso's paintings at this museum.",
+    "source": "public/data/n4grammar.40e138ccdb.json"
+  },
+  "美術": {
+    "jp": "この美術館では、ピカソの絵が見られます。",
+    "cn": "在这家美术馆能看到毕加索的画。",
+    "en": "You can see Picasso's paintings at this museum.",
+    "source": "public/data/n4grammar.40e138ccdb.json"
+  },
+  "技術": {
+    "jp": "日本の専門家が特別な技術で作ったものだ。",
+    "cn": "是日本专家用特殊技术制造的。",
+    "en": "It was made by Japanese specialists using special technology.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "お寺": {
+    "jp": "京都というと、お寺をイメージします。",
+    "cn": "说到京都，就会想到寺庙。",
+    "en": "When you say “Kyoto,” you imagine temples.",
+    "source": "public/data/grammar.d15be04258.json"
+  },
+  "市役所": {
+    "jp": "ごぶさたしております。たから市役所市民生活課の武田です。",
+    "cn": "好久不见。我是宝市市政府市民生活科的武田。",
+    "en": "It has been a long time. This is Takeda of the Takara City Hall Civic Life Division.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "郵便": {
+    "jp": "郵便局へ行ったついでに、はがきを買ってきた。",
+    "cn": "去邮局时，顺便买了明信片回来。",
+    "en": "Since I was at the post office, I bought a postcard.",
+    "source": "public/data/grammar.d15be04258.json"
+  },
+  "郵便局": {
+    "jp": "郵便局へ行ったついでに、はがきを買ってきた。",
+    "cn": "去邮局时，顺便买了明信片回来。",
+    "en": "Since I was at the post office, I bought a postcard.",
+    "source": "public/data/grammar.d15be04258.json"
+  },
+  "交換": {
+    "jp": "女の人は違う色のセーターと交換したい。",
+    "cn": "女子想换成别的颜色的毛衣。",
+    "en": "The woman wants to exchange it for a different color.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "交通": {
+    "jp": "学生Aは、電話で交通費のことを聞くつもりである。",
+    "cn": "学生 A 打算打电话询问交通费的事。",
+    "en": "Student A intends to ask about travel costs on the phone.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "公園": {
+    "jp": "野川公園を一緒に散歩したいから。",
+    "cn": "因为想一起在野川公园散步。",
+    "en": "Because he wants to walk together in Nogawa Park.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "受ける": {
+    "jp": "男子学生と女子学生は同じ試験を受ける。",
+    "cn": "男学生和女学生要参加同一场考试。",
+    "en": "The male student and the female student are taking the same exam.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "受験": {
+    "jp": "「受験についての注意」を読む。",
+    "cn": "读“考场须知”。",
+    "en": "To read the “Examination Instructions.”",
+    "source": "public/data/grammar.d15be04258.json"
+  },
+  "受付": {
+    "jp": "荷物は受付に届けてあります。",
+    "cn": "行李已经送到前台了。",
+    "en": "The luggage has been delivered to reception.",
+    "source": "app/data/common-jita-tearu.ts"
+  },
+  "教科書": {
+    "jp": "試験範囲は、教科書の5課〜9課です。",
+    "cn": "考试范围是教科书第 5 课到第 9 课。",
+    "en": "The exam covers Lessons 5 through 9 of the textbook.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "消す": {
+    "jp": "ストレスを解消することを考えなきゃ。",
+    "cn": "得想想怎么消除压力才行。",
+    "en": "We have to think about reducing the stress.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "事故": {
+    "jp": "隣の駅で事故があったらしい。そのために電車が遅れている。",
+    "cn": "听说旁边的车站出事故了。因此电车晚点了。",
+    "en": "It looks like there was an accident at the next station. The train is delayed because of that.",
+    "source": "public/data/grammar.d15be04258.json"
+  },
+  "故障": {
+    "jp": "万が一故障しても無料で修理します。",
+    "cn": "万一发生故障也免费修理。",
+    "en": "Even if it should break down, we will repair it free of charge.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "伝える": {
+    "jp": "この手紙は何を伝えるために書かれたか。",
+    "cn": "这封信是为了传达什么而写的？",
+    "en": "What was this letter written to convey?",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "必要(な)": {
+    "jp": "子どもたちにも便利で必要なものであると思っている。",
+    "cn": "认为对孩子来说也是方便而必要的东西。",
+    "en": "Thinks it is convenient and necessary for children as well.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "冷蔵庫": {
+    "jp": "ほかの冷蔵庫と比べて厚い。",
+    "cn": "和其他冰箱相比更厚。",
+    "en": "It is thicker than the other refrigerators.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "冷凍庫": {
+    "jp": "冷凍庫に入る量が最も多い。",
+    "cn": "冷冻室的容量最大。",
+    "en": "It has the largest freezer capacity.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "必ず": {
+    "jp": "必ず室内でご使用ください。",
+    "cn": "请务必在室内使用。",
+    "en": "Be sure to use it indoors .",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "費用": {
+    "jp": "この会社は、通勤にかかった費用を全部払ってくれる。",
+    "cn": "这家公司会全额支付上下班所需的费用。",
+    "en": "This company will pay all commuting costs.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "期間": {
+    "jp": "たとえ保証期間内でも有料修理になります。",
+    "cn": "即使在保修期内也要收费修理。",
+    "en": "Even within the warranty period, the repair will be charged.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "期限": {
+    "jp": "提出期限は、7月31日です。",
+    "cn": "提交期限为 7 月 31 日。",
+    "en": "The deadline is July 31.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "製品": {
+    "jp": "本製品は、日本国内専用です。",
+    "cn": "本产品仅限日本国内使用。",
+    "en": "This product  is for use in Japan only.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "方法": {
+    "jp": "旅行代金の支払方法は決まっていない。",
+    "cn": "旅费的支付方式还没定。",
+    "en": "The method of paying the travel fee has not been decided.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "温度": {
+    "jp": "暖房の温度は二十二度に上げてあります。",
+    "cn": "暖气温度已经调高到二十二度了。",
+    "en": "The heating has been turned up to twenty-two degrees.",
+    "source": "app/data/common-jita-tearu.ts"
+  },
+  "気温": {
+    "jp": "暑いわけだ。気温が36度もある。",
+    "cn": "怪不得热。气温竟然有36度。",
+    "en": "No wonder it feels hot. It is 36°C.",
+    "source": "public/data/grammar.d15be04258.json"
+  },
+  "販売": {
+    "jp": "販売を6月30日限りで中止いたします。",
+    "cn": "销售到 6 月 30 日为止停止。",
+    "en": "Sales will be discontinued as of June 30.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "飛行機": {
+    "jp": "飛行機で行くとしたら、いくらぐらいかかりますか。",
+    "cn": "如果坐飞机去，大约要花多少钱？",
+    "en": "If we go by airplane, how much would it cost?",
+    "source": "public/data/grammar.d15be04258.json"
+  },
+  "機会": {
+    "jp": "そのほか、特別メニューもご用意しております。この機会にぜひご利用ください。",
+    "cn": "此外还准备了特别菜单。敬请把握此次机会光临本店。",
+    "en": "We also have a special menu. Please take this opportunity to visit us.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "機械": {
+    "jp": "ビデオの機械に問題が起きた。",
+    "cn": "录像机出了问题。",
+    "en": "Something went wrong with the VCR.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "増加": {
+    "jp": "フリーターが増加していくと日本の将来は大変だ。",
+    "cn": "自由打工者不断增加的话，日本的未来会很艰难。",
+    "en": "If freeters keep increasing, Japan’s future will be hard.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "増える": {
+    "jp": "女の人は、ストレスがあると体重が増える。",
+    "cn": "女子一有压力体重就会增加。",
+    "en": "When the woman is stressed, her weight increases.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "減少": {
+    "jp": "それをピークに減少すると予想される。",
+    "cn": "预计将以此为顶点开始减少。",
+    "en": "It is expected to decrease after that peak.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "返事": {
+    "jp": "間接的な返事に注意しましょう！",
+    "cn": "应注意间接回答！",
+    "en": "Pay close attention to indirect responses to questions!",
+    "source": "app/data/listening-n3-lessons-ch2.ts"
+  },
+  "牛乳": {
+    "jp": "毎日、牛乳を飲むことにしています。",
+    "cn": "我习惯每天喝牛奶。",
+    "en": "I make it a rule to drink milk every day.",
+    "source": "public/data/n4grammar.40e138ccdb.json"
+  },
+  "発表": {
+    "jp": "結果はホームページにおいて発表されます。",
+    "cn": "结果将在主页上发表。",
+    "en": "The result will be announced on the homepage.",
+    "source": "public/data/grammar.d15be04258.json"
+  },
+  "代表": {
+    "jp": "彼は外国人だが、日本代表として試合に出る。",
+    "cn": "他虽然是外国人，但却代表日本参赛。",
+    "en": "He is a foreigner, but he participates in games as a representative of Japan.",
+    "source": "public/data/grammar.d15be04258.json"
+  },
+  "表す": {
+    "jp": "時間や場所を表す言葉と一緒によく使われます。",
+    "cn": "这些表示范围的词经常和表示时间、地点的词一起使用。",
+    "en": "These words that mark a range are often used together with words for time or place.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "留学": {
+    "jp": "たとえ反対されても留学します。",
+    "cn": "即使遭到反对，我也要去留学。",
+    "en": "Even if I am opposed, I will study abroad.",
+    "source": "public/data/grammar.d15be04258.json"
+  },
+  "守る": {
+    "jp": "約束は守るべきだ。",
+    "cn": "约定是要遵守的。",
+    "en": "Promises should be kept.",
+    "source": "public/data/grammar.d15be04258.json"
+  },
+  "部分": {
+    "jp": "質問の中の説明部分に注意して聞きましょう。",
+    "cn": "要认真听提问中的说明部分！",
+    "en": "Listen carefully to the explanation given as the question is read!",
+    "source": "app/data/listening-n3-lessons-ch2.ts"
+  },
+  "部長": {
+    "jp": "出張中の部長にかわって、私がごあいさつさせていただきます。",
+    "cn": "请允许我代出差的部长，讲几句话。",
+    "en": "Please allow me to say a few words on behalf of my division manager, who is currently on a business trip.",
+    "source": "public/data/grammar.d15be04258.json"
+  },
+  "部屋": {
+    "jp": "この部屋が何階にあるか。",
+    "cn": "这个房间在几层。",
+    "en": "Which floor this room is on.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "数字": {
+    "jp": "「以上・以下・以内・以前・以後」＝その数字を含む／「未満」＝その数字を含まない。",
+    "cn": "「以上・以下・以内・以前・以后」＝包含该数字；「未满」＝不包含该数字。这是读广告、招聘、优惠条件时最常见的陷阱。",
+    "en": "ijō / ika / inai / izen / igo include that number; miman does not. This is the most common trap in ads, job postings, and special offers.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "数える": {
+    "jp": "どこから数えるか、どの方向から見るかに注意しましょう！",
+    "cn": "应注意从哪里开始数，从哪个方向看！",
+    "en": "Listen carefully to which position objects are being counted from and the direction from which the speaker is looking!",
+    "source": "app/data/listening-n3-lessons-ch4.ts"
+  },
+  "件名": {
+    "jp": "件名：ありがとうございました。",
+    "cn": "主题：谢谢您。",
+    "en": "Subject: Thank you.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "事件": {
+    "jp": "いつ事件が起こったか。",
+    "cn": "事件是什么时候发生的。",
+    "en": "when the incident happened",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "面接": {
+    "jp": "学生Aは、アルバイトの面接に行くつもりである。",
+    "cn": "学生 A 打算去参加兼职面试。",
+    "en": "Student A intends to go to the part-time job interview.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "続ける": {
+    "jp": "これからもフリーターは増え続けるだろう。",
+    "cn": "今后自由打工者还会继续增加吧。",
+    "en": "Freeters will probably keep increasing from now on.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "指示": {
+    "jp": "指示語を見つけたら、そこに候補を入れて読み直し、意味が通るか確かめよう。",
+    "cn": "找到指示词后，把候选内容代进去重读一遍，看意思是否通顺——这是最可靠的验算方法。",
+    "en": "When you find a demonstrative, plug each candidate into the sentence and reread it to see whether it makes sense — that is the most reliable check.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "完全(な)": {
+    "jp": "咳止めを飲んでも、完全には咳がなくならない。",
+    "cn": "即使吃了止咳药，咳嗽也不会完全消失。",
+    "en": "Even if you take cough medicine, the cough does not go away completely.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "砂糖": {
+    "jp": "砂糖はいつもの半分に減らしてあります。",
+    "cn": "糖已经减到平时的一半了。",
+    "en": "The sugar has been reduced to half the usual amount.",
+    "source": "app/data/common-jita-tearu.ts"
+  },
+  "紅茶": {
+    "jp": "コーヒーにしますか。それとも紅茶にしますか。",
+    "cn": "是要咖啡？还是要红茶？",
+    "en": "Would you like coffee or tea?",
+    "source": "public/data/grammar.d15be04258.json"
+  },
+  "口紅": {
+    "jp": "ええ、今は小学生だってお化粧するらしいですよ。姉の子なんてまだ2年生なのに自分の口紅とか持ってますし。",
+    "cn": "是啊，听说现在连小学生都化妆呢。我姐姐的孩子才二年级，就有自己的口红了。",
+    "en": "Yes — I hear even elementary-school children wear makeup now. My sister’s child is only in second grade and already has her own lipstick.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "広告": {
+    "jp": "この広告でわからないのはどれか。",
+    "cn": "从这则广告中无法得知的是哪一项？",
+    "en": "Which of the following can you not tell from this advertisement?",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "便利(な)": {
+    "jp": "本当に便利です。それに、いい色ですし。",
+    "cn": "真的很方便。而且颜色也好看。",
+    "en": "It’s really convenient. And the color is nice, too.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "利用": {
+    "jp": "その1　ご利用金額より 1,000円割引！",
+    "cn": "其一　消费金额立减 1,000 日元！",
+    "en": "Offer 1: 1,000 yen off your bill!",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "割引": {
+    "jp": "商品割引券を同封させていただきました。",
+    "cn": "随信附上了商品折扣券。",
+    "en": "We have enclosed a product discount coupon.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "値段": {
+    "jp": "券1枚あたりの値段を計算して比べる。",
+    "cn": "计算并比较每张票的价格。",
+    "en": "Calculate and compare the price per ticket.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "商品": {
+    "jp": "d．注文と違う商品が届いた。",
+    "cn": "d．送来的商品与订购的不符。",
+    "en": "d. A different item from the one I ordered arrived.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "払う": {
+    "jp": "毎月払うのは96,000円である。",
+    "cn": "每月要付的是 96,000 日元。",
+    "en": "The monthly payment is 96,000 yen.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "支払い": {
+    "jp": "仕事での支払いの催促などについては、遠回しでていねいな表現を使います。",
+    "cn": "工作中催款之类的事情，要使用委婉而礼貌的表达方式——不会直接说「早く払ってください」。",
+    "en": "For things like asking for payment at work, use roundabout, polite wording — you do not say “Please pay soon” directly.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "残り": {
+    "jp": "残りの人生がまだ50年ある。",
+    "cn": "剩下的人生还有 50 年。",
+    "en": "There are still 50 years of life left.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "込む": {
+    "jp": "7月になってから申し込むね。",
+    "cn": "等到 7 月再申请吧。",
+    "en": "I’ll apply after July starts.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "振り込む": {
+    "jp": "12月8日に旅行代金を振り込む。",
+    "cn": "在 12 月 8 日当天汇旅费。",
+    "en": "Transfer the travel fee on December 8.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "合格": {
+    "jp": "合格しますように。",
+    "cn": "希望能合格。",
+    "en": "I hope I will pass the exam.",
+    "source": "public/data/grammar.d15be04258.json"
+  },
+  "申し込む": {
+    "jp": "7月になってから申し込むね。",
+    "cn": "等到 7 月再申请吧。",
+    "en": "I’ll apply after July starts.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "記入": {
+    "jp": "★はお買い上げいただいた販売店が記入する欄です。",
+    "cn": "★是由您购买产品的销售店填写的栏目。",
+    "en": "★ is the section to be filled in by the store where you purchased the product.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "記事": {
+    "jp": "この記事からわかることはどれか。",
+    "cn": "从这则报道可以得知的是哪一项？",
+    "en": "Which of the following can we tell from this article?",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "二十歳": {
+    "jp": "娘はまだ二十歳になっていない。",
+    "cn": "女儿还没满 20 岁。",
+    "en": "The daughter is not yet 20.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "女性": {
+    "jp": "そう、男性は79歳、女性は86歳になったのよ。",
+    "cn": "是啊，男性到了 79 岁，女性到了 86 岁呢。",
+    "en": "Yes — 79 for men and 86 for women now.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "男性": {
+    "jp": "そう、男性は79歳、女性は86歳になったのよ。",
+    "cn": "是啊，男性到了 79 岁，女性到了 86 岁呢。",
+    "en": "Yes — 79 for men and 86 for women now.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "連絡": {
+    "jp": "またお願いいたしたく、ご連絡申し上げました。",
+    "cn": "想再次拜托您，特此联系。",
+    "en": "I am writing because I would like to ask you again.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "届く": {
+    "jp": "お年寄りや子どもも手が届く低めサイズ。整理しやすく使い勝手がよい真ん中冷凍室。",
+    "cn": "老人和孩子也够得着的低矮尺寸。位于正中的冷冻室，便于整理、使用方便。",
+    "en": "A lower size that older people and children can reach. A mid-height freezer that is easy to organize and use.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "自宅": {
+    "jp": "AさんとBさんは今自宅にいない。",
+    "cn": "A 和 B 现在不在自己家里。",
+    "en": "A and B are not at home right now.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "宅配": {
+    "jp": "お久しぶりです。先ほど、宅配便を受け取りました。りんごをたくさん送ってくださってありがとうございました。",
+    "cn": "好久不见。刚才收到了快递。谢谢您寄来这么多苹果。",
+    "en": "It’s been a long time. I just received the courier delivery. Thank you for sending so many apples.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "心配": {
+    "jp": "フリーターをしている若い人の将来が心配だ。",
+    "cn": "担心做自由打工者的年轻人的未来。",
+    "en": "The writer is worried about the future of young people who are freeters.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "荷物": {
+    "jp": "手荷物をフロントにてお預かりいたします。",
+    "cn": "我们会在前台为您保管随身行李。",
+    "en": "We will look after your hand luggage at the front desk.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "手荷物": {
+    "jp": "手荷物をフロントにてお預かりいたします。",
+    "cn": "我们会在前台为您保管随身行李。",
+    "en": "We will look after your hand luggage at the front desk.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "金額": {
+    "jp": "回数券の合計金額を比べる。",
+    "cn": "比较回数券的总金额。",
+    "en": "Compare the total prices of the coupon books.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "現在": {
+    "jp": "筆者によると、現在、子どもたちの教育に大きな影響を与えているのは何か。",
+    "cn": "根据笔者的说法，现在对孩子们的教育产生巨大影响的是什么？",
+    "en": "According to the writer, what is now having a large influence on children’s education?",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "参加": {
+    "jp": "老人たちによる講演会に参加する人を募集している。",
+    "cn": "招募参加由老人们举办的演讲会的人。",
+    "en": "They are looking for people to attend a lecture given by the older residents.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "友達": {
+    "jp": "和子の友達は青森に住んでいる。",
+    "cn": "和子的朋友住在青森。",
+    "en": "Kazuko’s friend lives in Aomori.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "通勤": {
+    "jp": "この会社は、通勤にかかった費用を全部払ってくれる。",
+    "cn": "这家公司会全额支付上下班所需的费用。",
+    "en": "This company will pay all commuting costs.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "携帯(電話)": {
+    "jp": "この男の子のクラスの子の半数が携帯電話を使用している。",
+    "cn": "这个男孩班上有一半的孩子在用手机。",
+    "en": "Half the children in this boy’s class use cell phones.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "お礼": {
+    "jp": "いつかお礼をしたいと思っていたそうだ。",
+    "cn": "听说她一直想着什么时候要报答我。",
+    "en": "I hear she had been wanting to thank me someday.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "遅刻": {
+    "jp": "中村君は山田君のおかげで遅刻しないで済んだことがある。",
+    "cn": "中村曾多亏山田才没有迟到。",
+    "en": "Nakamura has gotten by without being late thanks to Yamada.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "遅い": {
+    "jp": "遅れるとは聞いていたけど、それにしても田中さん、遅いね。",
+    "cn": "听说了田中要晚到些，即便如此，也未免太迟了呀。",
+    "en": "I’ve heard that Tanaka-san would be late, but he is really late.",
+    "source": "public/data/grammar.d15be04258.json"
+  },
+  "遅れる": {
+    "jp": "田中さんから電話があって、少し遅れるということです。",
+    "cn": "田中刚才来电话说要晚到一会。",
+    "en": "Tanaka-san called and said he would be a little late.",
+    "source": "public/data/grammar.d15be04258.json"
+  },
+  "失敗": {
+    "jp": "私は大きい失敗をして、会社をやめさせられました。",
+    "cn": "我犯了大错，被公司辞退了。",
+    "en": "I made a big mistake and was forced to quit the company.",
+    "source": "public/data/n4grammar.40e138ccdb.json"
+  },
+  "残念(な)": {
+    "jp": "誕生日が過ぎてしまって残念だ。",
+    "cn": "生日过去了，觉得遗憾。",
+    "en": "Disappointed that her birthday has already passed.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "難しい": {
+    "jp": "純子ちゃん、里いもの皮をむくのは難しいでしょう。",
+    "cn": "纯子，削芋头皮很难吧。",
+    "en": "Junko, peeling taro is hard, isn’t it?",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "簡単(な)": {
+    "jp": "fの場合は簡単に理由をお書きください。",
+    "cn": "选择 f 时请简单写明理由。",
+    "en": "For f, please briefly write the reason.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "単位": {
+    "jp": "レポートの期限に遅れた場合は、単位がもらえない。",
+    "cn": "报告超过期限的话就拿不到学分。",
+    "en": "If the report is late, you will not get the credit.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "感じる": {
+    "jp": "恐怖を感じるのは私だけだろうか。",
+    "cn": "感到恐惧的难道只有我一个人吗？",
+    "en": "Am I the only one who feels a little fear?",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "予想": {
+    "jp": "それをピークに減少すると予想される。",
+    "cn": "预计将以此为顶点开始减少。",
+    "en": "It is expected to decrease after that peak.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "練習": {
+    "jp": "ギターを習い始めたが、どんなに練習しても全然うまくならない。",
+    "cn": "开始学吉他了，但不论怎么练习，一点儿都没长进。",
+    "en": "I’ve started taking guitar lessons, but I’m not getting any better no matter how much I practice.",
+    "source": "public/data/grammar.d15be04258.json"
+  },
+  "最近": {
+    "jp": "私はこの話を最近聞かされた。",
+    "cn": "这些事我最近才被告知。",
+    "en": "I was only told this recently.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "最初": {
+    "jp": "今学期の最初の週に、紙に印刷したものを渡した。",
+    "cn": "本学期第一周发放了印刷好的纸质材料。",
+    "en": "Printed paper was handed out in the first week of this term.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "最後": {
+    "jp": "妻はいつも誕生日を忘れる夫を、最後まで許さなかった。",
+    "cn": "妻子对总是忘记生日的丈夫，直到最后都没有原谅。",
+    "en": "The wife never forgave her husband, who always forgets her birthday, right to the end.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "最も": {
+    "jp": "Aが最も大きい。",
+    "cn": "A 最大。",
+    "en": "A is the biggest.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "適当(な)": {
+    "jp": "に入る言葉として最も適当なものはどれか。",
+    "cn": "填入（　②　）中最恰当的词语是哪一个？",
+    "en": "Which word is the most appropriate to fill in (　②　)?",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "選手": {
+    "jp": "「ゴルフ　全英オープン　米無名選手優勝」＝ゴルフの全英オープンでアメリカの有名ではない選手が優勝した。",
+    "cn": "「ゴルフ　全英オープン　米無名選手優勝」＝高尔夫英国公开赛上，一位并不出名的美国选手夺冠。",
+    "en": "“Golf: The Open — unknown U.S. player wins” = at golf’s Open Championship, an American player who is not well known won.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "違う": {
+    "jp": "d．注文と違う商品が届いた。",
+    "cn": "d．送来的商品与订购的不符。",
+    "en": "d. A different item from the one I ordered arrived.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "間違い": {
+    "jp": "先生に注意されてはじめて、漢字の間違いに気が付いた。",
+    "cn": "被老师提醒后才注意到汉字的错误。",
+    "en": "I didn’t notice the mistake in kanji until the teacher pointed it out.",
+    "source": "public/data/grammar.d15be04258.json"
+  },
+  "復習": {
+    "jp": "時間：10分　答えは p.114〜118。今まで習った場所別の聞き取りを復習します。",
+    "cn": "10分钟。复习前面各场景的听解。",
+    "en": "10 minutes. Review the place-based listening from this chapter.",
+    "source": "app/data/listening-n3-lessons-ch3.ts"
+  },
+  "辞書": {
+    "jp": "電子辞書の画面が暗かったことを伝えるため。",
+    "cn": "为了告知电子辞典屏幕曾经很暗。",
+    "en": "To inform the customer that the dictionary screen was dark.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "宿題": {
+    "jp": "宿題はまだ終わっていません。",
+    "cn": "作业还没做完。",
+    "en": "I haven't finished my homework yet.",
+    "source": "public/data/n4grammar.40e138ccdb.json"
+  },
+  "昨日": {
+    "jp": "昨日は中村を乗せてきた。やっぱり帰りにコンビニに寄って、いろいろ買わせたらしい。あいつはいつもそうだ。",
+    "cn": "昨天他载的是中村。回去时果然又顺路去了便利店，让人家买了一堆东西。那家伙总是这样。",
+    "en": "Yesterday he gave Nakamura a ride. And of course on the way home they stopped at a convenience store and he made him buy a bunch of stuff. That guy is always like that.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "昨夜": {
+    "jp": "昨夜、歯をみがかずに寝てしまった。",
+    "cn": "昨晚没刷牙就睡了。",
+    "en": "I went to bed without brushing my teeth last night.",
+    "source": "public/data/grammar.d15be04258.json"
+  },
+  "昨年": {
+    "jp": "試験問題は昨年に比べて易しくなった。",
+    "cn": "考试题与去年相比，变容易了。",
+    "en": "Compared to last year, the questions this year are easier.",
+    "source": "public/data/grammar.d15be04258.json"
+  },
+  "結局": {
+    "jp": "結局、この温泉旅行が妻への誕生日プレゼントになった。",
+    "cn": "结果，这次温泉旅行成了送给妻子的生日礼物。",
+    "en": "In the end, this hot-spring trip became a birthday present for his wife.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "結婚": {
+    "jp": "幸の母は前の結婚のときにできた子どもとときどき会っている。",
+    "cn": "幸的母亲偶尔会和前一段婚姻中生的孩子见面。",
+    "en": "Sachi’s mother sometimes sees the child from her previous marriage.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "祝日": {
+    "jp": "今日は祝日である。",
+    "cn": "今天是节假日。",
+    "en": "Today is a national holiday.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "お祝い": {
+    "jp": "夫は、妻の誕生日のお祝いのために温泉旅行を計画していた。",
+    "cn": "丈夫是为了给妻子庆祝生日才计划这次温泉旅行的。",
+    "en": "The husband had planned the hot-spring trip to celebrate his wife’s birthday.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "曲がる": {
+    "jp": "曲がるところを間違えたようだ。",
+    "cn": "好像是拐弯的地方弄错了。",
+    "en": "It seems they turned at the wrong place.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "寝る": {
+    "jp": "避難していた住民は、体育館で寝ることができて安心した。",
+    "cn": "避难的居民能在体育馆睡觉，所以放心了。",
+    "en": "The evacuated residents were relieved because they could sleep in the gym.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "寝坊": {
+    "jp": "明日は寝坊しないぞ！",
+    "cn": "明天绝对不睡过头了！",
+    "en": "Tomorrow I am not oversleeping!",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "痛い": {
+    "jp": "疲れたせいか、頭が痛い。",
+    "cn": "可能是因为太累了，头有些痛。",
+    "en": "Perhaps it’s because I am tired, but my head hurts.",
+    "source": "public/data/grammar.d15be04258.json"
+  },
+  "歯医者": {
+    "jp": "歯が痛いので歯医者さんに行ったところ、ひどい虫歯になっていると言われた。",
+    "cn": "因为牙疼，所以去看医生，结果说我有严重的虫牙。",
+    "en": "I went to see a dentist because I had a toothache, and I was told I had a bad cavity.",
+    "source": "public/data/grammar.d15be04258.json"
+  },
+  "虫歯": {
+    "jp": "虫歯は全部治してあります。",
+    "cn": "蛀牙已经全部治好了。",
+    "en": "All of the cavities have been treated.",
+    "source": "app/data/common-jita-tearu.ts"
+  },
+  "治す": {
+    "jp": "風邪を治すためには、薬を飲まないほうがいい。",
+    "cn": "为了治好感冒，最好不要吃药。",
+    "en": "To get over a cold, it is better not to take medicine.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "独身": {
+    "jp": "田中さんは独身のふりをしているが、結婚していて3人も子どもがいる。",
+    "cn": "田中装作单身的样子，实际上已经结婚，都有3个孩子了。",
+    "en": "Tanaka-san looks like a single guy, but in fact he is married with three children.",
+    "source": "public/data/grammar.d15be04258.json"
+  },
+  "お酒": {
+    "jp": "そんなにがまんをしないで一緒にお酒を飲めばいいのに。",
+    "cn": "不必忍成那样，一起喝酒不就好了。",
+    "en": "She shouldn’t put up with so much — she should just drink with him.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "食欲": {
+    "jp": "女の人は、ストレスがあっても食欲は減らない。",
+    "cn": "女子即使有压力食欲也不会减少。",
+    "en": "Even when the woman is stressed, her appetite does not decrease.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "睡眠": {
+    "jp": "レム睡眠が長くなるそうです。",
+    "cn": "据说 REM 睡眠会变长。",
+    "en": "REM sleep is said to get longer.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "眠る": {
+    "jp": "眠る時間が長ければレム睡眠の長さも延びます。",
+    "cn": "睡眠时间越长，REM 睡眠也会延长。",
+    "en": "If you sleep longer, REM sleep also lengthens.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "息子": {
+    "jp": "息子は仕事もしないで遊んでばかりいる。",
+    "cn": "儿子不工作，光玩。",
+    "en": "My son just plays around and doesn’t work.",
+    "source": "public/data/grammar.d15be04258.json"
+  },
+  "予報": {
+    "jp": "雪が降ってきた。予報どおりだ。",
+    "cn": "下雪了。和天气预报说的一样。",
+    "en": "It started to snow. It was just as the forecast said.",
+    "source": "public/data/grammar.d15be04258.json"
+  },
+  "晴れる": {
+    "jp": "天気予報によれば、明日は晴れるらしい。",
+    "cn": "据天气预报报道，明天好像是晴天。",
+    "en": "According to the weather forecast, it looks like tomorrow will be sunny.",
+    "source": "public/data/grammar.d15be04258.json"
+  },
+  "晴れ": {
+    "jp": "天気予報によれば、明日は晴れるらしい。",
+    "cn": "据天气预报报道，明天好像是晴天。",
+    "en": "According to the weather forecast, it looks like tomorrow will be sunny.",
+    "source": "public/data/grammar.d15be04258.json"
+  },
+  "暖房": {
+    "jp": "暖房の温度は二十二度に上げてあります。",
+    "cn": "暖气温度已经调高到二十二度了。",
+    "en": "The heating has been turned up to twenty-two degrees.",
+    "source": "app/data/common-jita-tearu.ts"
+  },
+  "暖かい": {
+    "jp": "拝啓　このところ、毎日暖かい日が続いていますが、皆様、いかがお過ごしでしょうか。",
+    "cn": "敬启者　近来每天都是暖和的日子，各位过得怎么样呢？",
+    "en": "Dear friends, these warm days have continued lately — I hope you are all well.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "地震": {
+    "jp": "さっきの地震はテレビの速報によると震度3だそうだ。",
+    "cn": "刚才的地震，据电视速报报道震级是3级。",
+    "en": "According to the news flash on TV, the earthquake just now had a strength of 3.",
+    "source": "public/data/grammar.d15be04258.json"
+  },
+  "震度": {
+    "jp": "さっきの地震はテレビの速報によると震度3だそうだ。",
+    "cn": "刚才的地震，据电视速报报道震级是3级。",
+    "en": "According to the news flash on TV, the earthquake just now had a strength of 3.",
+    "source": "public/data/grammar.d15be04258.json"
+  },
+  "請求書": {
+    "jp": "請求書の控えを田中さんにFAXする。",
+    "cn": "把账单副本传真给田中。",
+    "en": "Fax a copy of the invoice to Tanaka.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "求人": {
+    "jp": "この求人案内の内容と合っているものはどれか。",
+    "cn": "下列哪一项与这则招聘启事的内容相符？",
+    "en": "Which of the following matches the content of this job notice?",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "求める": {
+    "jp": "会社はフリーターに労働力を求めるべきではない。",
+    "cn": "公司不应该向自由打工者索取劳动力。",
+    "en": "Companies should not look to freeters for labor.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "募集": {
+    "jp": "この募集に応募できないのはどの場合か。",
+    "cn": "哪种情况的人不能应聘这份工作？",
+    "en": "In which case can a person not apply for this job?",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "職場": {
+    "jp": "職場の敬語を聞き取れるようにしましょう！",
+    "cn": "应能听懂职场敬语！",
+    "en": "Learn to catch workplace keigo!",
+    "source": "app/data/listening-n3-lessons-ch3.ts"
+  },
+  "内容": {
+    "jp": "今回の講演の内容は、前回と同じである。",
+    "cn": "这次演讲的内容和上次相同。",
+    "en": "The topic of this lecture is the same as last time.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "野球": {
+    "jp": "野球にかわり、サッカーがさかんになってきた。",
+    "cn": "足球取代棒球兴盛起来。",
+    "en": "Soccer has become popular in place of baseball.",
+    "source": "public/data/grammar.d15be04258.json"
+  },
+  "決して": {
+    "jp": "50から始めても決して遅くはありません。",
+    "cn": "从 50 岁开始也绝不算晚。",
+    "en": "Starting at 50 is by no means too late.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "決める": {
+    "jp": "曜日や時間は、決まった範囲内で相談して決めることができる。",
+    "cn": "星期几和时间可以在规定范围内商量决定。",
+    "en": "The day of the week and the hours can be decided by discussion within a set range.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "優勝": {
+    "jp": "「ゴルフ　全英オープン　米無名選手優勝」＝ゴルフの全英オープンでアメリカの有名ではない選手が優勝した。",
+    "cn": "「ゴルフ　全英オープン　米無名選手優勝」＝高尔夫英国公开赛上，一位并不出名的美国选手夺冠。",
+    "en": "“Golf: The Open — unknown U.S. player wins” = at golf’s Open Championship, an American player who is not well known won.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "決勝": {
+    "jp": "もし決勝戦に残ったとしたって、優勝は難しいでしょう。",
+    "cn": "就算是能进决赛，获胜还是很难的。",
+    "en": "Even though they made it to the final, it will be difficult to win the championship.",
+    "source": "public/data/grammar.d15be04258.json"
+  },
+  "反対": {
+    "jp": "この学生たちは、反対に曲がってしまったようだ。",
+    "cn": "这些学生好像拐错了方向（拐反了）。",
+    "en": "These students seem to have turned the wrong way (the opposite direction).",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "結果": {
+    "jp": "つまり、企業が安い労働力を求めた結果、フリーターが増加したと言える。",
+    "cn": "也就是说，可以说是企业追求廉价劳动力的结果导致了自由打工者的增加。",
+    "en": "In other words, you can say that freeters increased as a result of firms looking for cheap labor.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "果物": {
+    "jp": "夏の果物といったら、やっぱりスイカだね。",
+    "cn": "说到夏天的水果，那还要数西瓜。",
+    "en": "When you talk about summer fruits, watermelon comes to mind.",
+    "source": "public/data/grammar.d15be04258.json"
+  },
+  "戦争": {
+    "jp": "戦争が終わった今でも、この国の苦しみはまだ続いている。",
+    "cn": "即便是战争结束的今天，这个国家的痛苦依然在继续。",
+    "en": "Even though the war is over, the suffering of this country still continues.",
+    "source": "public/data/grammar.d15be04258.json"
+  },
+  "経験": {
+    "jp": "経験不問・やる気のある方歓迎！",
+    "cn": "经验不限・欢迎有干劲的人！",
+    "en": "No experience necessary — motivated people  welcome!",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "完成": {
+    "jp": "もうすぐ家が完成するということを知らせたいから。",
+    "cn": "因为想通知大家房子快要完工了。",
+    "en": "Because he wants to announce that the house is about to be finished.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "輸出": {
+    "jp": "日本の中国への輸出額は輸入額より多い。",
+    "cn": "日本对中国的出口额比进口额多。",
+    "en": "Japan’s exports to China are larger than its imports from China.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "輸入": {
+    "jp": "輸入額は11.4兆円に達しています。",
+    "cn": "进口额达到 11.4 万亿日元。",
+    "en": "Imports reach 11.4 trillion yen.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "相談": {
+    "jp": "曜日や時間は、決まった範囲内で相談して決めることができる。",
+    "cn": "星期几和时间可以在规定范围内商量决定。",
+    "en": "The day of the week and the hours can be decided by discussion within a set range.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "相手": {
+    "jp": "あの強い相手に勝てるわけがない。",
+    "cn": "不可能胜过那么强的对手。",
+    "en": "It’s impossible for me to beat such a strong opponent.",
+    "source": "public/data/grammar.d15be04258.json"
+  },
+  "文化": {
+    "jp": "日本文化について勉強する。",
+    "cn": "学习日本文化。",
+    "en": "To study Japanese culture.",
+    "source": "public/data/grammar.d15be04258.json"
+  },
+  "化粧": {
+    "jp": "Aさんの姪は化粧品を持っている。",
+    "cn": "A 的侄女／外甥女有化妆品。",
+    "en": "A’s niece has cosmetics.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "比べる": {
+    "jp": "回数券の合計金額を比べる。",
+    "cn": "比较回数券的总金额。",
+    "en": "Compare the total prices of the coupon books.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "原因": {
+    "jp": "フリーターの数が増えたいちばんの原因は何か。",
+    "cn": "自由打工者人数增加的最主要原因是什么？",
+    "en": "What is the main reason the number of freeters increased?",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "会議": {
+    "jp": "会議の準備は途中まで進めてあります。",
+    "cn": "会议准备已经提前进行了一部分。",
+    "en": "The meeting preparations have already been partly completed.",
+    "source": "app/data/common-jita-tearu.ts"
+  },
+  "生活": {
+    "jp": "姉がどういう生活をしているのか気になる。",
+    "cn": "很在意姐姐过着什么样的生活。",
+    "en": "She wonders what kind of life her sister is living.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "大変(な)": {
+    "jp": "フリーターが増加していくと日本の将来は大変だ。",
+    "cn": "自由打工者不断增加的话，日本的未来会很艰难。",
+    "en": "If freeters keep increasing, Japan’s future will be hard.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "変わる": {
+    "jp": "生まれ変わることになりました。",
+    "cn": "决定以全新面貌推出。",
+    "en": "It has been decided that it will be reborn.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "否定": {
+    "jp": "「AほどBではない」は否定形なので、A>Bの関係になる。読み間違えやすいので注意。",
+    "cn": "「AほどBではない」是否定形式，意思是「没有 A 那么……」，即 A 更大。这个句型最容易读反，务必注意。",
+    "en": "A hodo B de wa nai is negative, so A is greater than B. This pattern is easy to reverse—watch it.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "実験": {
+    "jp": "この実験、うまくいくかな。",
+    "cn": "这个实验会进展顺利吗。",
+    "en": "I wonder if the lab experiment will go well.",
+    "source": "public/data/grammar.d15be04258.json"
+  },
+  "実は": {
+    "jp": "しかし、実は、10枚で900円の回数券のほうが得なのです。",
+    "cn": "然而其实，10 张 900 日元的回数券更划算。",
+    "en": "But actually, the book of 10 for 900 yen is the better deal.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "欠点": {
+    "jp": "店で買うのに比べ、通信販売は便利だが、欠点もある。",
+    "cn": "与商店购物相比，邮购虽然方便但也有缺点。",
+    "en": "Ordering from a catalogue is more convenient than shopping in a store, but there are drawbacks.",
+    "source": "public/data/grammar.d15be04258.json"
+  },
+  "専門": {
+    "jp": "日本の専門家が特別な技術で作ったものだ。",
+    "cn": "是日本专家用特殊技术制造的。",
+    "en": "It was made by Japanese specialists using special technology.",
+    "source": "app/data/reading-n3/index.ts"
+  },
+  "専門家": {
+    "jp": "日本の専門家が特別な技術で作ったものだ。",
+    "cn": "是日本专家用特殊技术制造的。",
+    "en": "It was made by Japanese specialists using special technology.",
+    "source": "app/data/reading-n3/index.ts"
+  }
+}
