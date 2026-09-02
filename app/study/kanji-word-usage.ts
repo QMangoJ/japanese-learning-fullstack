@@ -286,6 +286,7 @@ const EXPRESSION_FOCUS: Record<string, readonly [focus: string, reading?: string
 
 const NOUN_FRAMES: Record<string, Frame> = {
 	駐車: ["ここは", "きんしです。"],
+	停車: ["このでんしゃはつぎのえきに", "します。"],
 	駐車場: ["これから", "へいきます。"],
 	無休: ["このみせはねんじゅう", "です。"],
 	無料: ["このサービスは", "です。"],
@@ -409,6 +410,7 @@ const CUSTOM_TRANSLATIONS: Record<string, Translation> = {
 	危ない: ["这条路很危险。", "This road is dangerous."],
 	必ず: ["一定会遵守约定。", "I will always keep my promise."],
 	駐車: ["这里禁止停车。", "Parking is prohibited here."],
+	停車: ["这趟电车会在下一站停车。", "This train stops at the next station."],
 	込む: ["早上的电车很拥挤。", "The morning train is crowded."],
 	安定: ["生活稳定下来了。", "Life has become stable."],
 	美術: ["在学校学习美术。", "I study art at school."],

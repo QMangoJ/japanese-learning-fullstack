@@ -39,6 +39,7 @@ describe("N3 kanji word usage examples", () => {
 		expect(examples.get("比べる")).toBe("回数券の合計金額を比べる。");
 		expect(examples.get("無理(な)")).toBe("無理なおねがいはしないでください。");
 		expect(examples.get("確か(な)")).toBe("確かなじょうほうかどうかかくにんします。");
+		expect(examples.get("停車")).toBe("このでんしゃはつぎのえきに停車します。");
 		expect(new Set(examples.values()).size).toBeGreaterThan(650);
 	});
 
@@ -49,6 +50,7 @@ describe("N3 kanji word usage examples", () => {
 			["危ない", "い形容词", "このみちは危ない。", "这条路很危险。", "This road is dangerous."],
 			["必ず", "副词", "やくそくは必ずまもります。", "一定会遵守约定。", "I will always keep my promise."],
 			["駐車場", "名词", "会場のななめ向かいに有料駐車場があります。", "会场的斜对面有收费停车场。", "There is a pay parking lot diagonally across from the venue."],
+			["停車", "名词", "このでんしゃはつぎのえきに停車します。", "这趟电车会在下一站停车。", "This train stops at the next station."],
 			["〜冊", "表达", "ほんをさん冊かりました。", "借了三本书。", "I borrowed three books."],
 		] as const) {
 			const item = byWord.get(word)!;
