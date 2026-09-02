@@ -1707,7 +1707,7 @@ export async function bootStudyData() {
 		DATA.kanji = K;
 		DATA.common = {
 			...(com || {}),
-			henkei: (com && com.henkei) || henkeiFallback,
+			henkei: henkeiFallback,
 			kougo: (com && com.kougo) || kougoFallback,
 			jita: (com && com.jita) || jitaFallback,
 			wearing: (com && com.wearing) || wearingFallback,

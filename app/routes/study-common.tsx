@@ -513,38 +513,44 @@ export function HenkeiPage({ data }: { data: any }) {
 		<>
 			{HK.intro ? (
 				<div className="meta" style={{ marginBottom: 6 }}>
-					{HK.intro}
+					{lx(HK.intro, HK.intro_en)}
 				</div>
 			) : null}
 			{HK.seeAlso ? (
 				<div className="note" style={{ marginBottom: 12 }}>
-					<span className="jp">{HK.seeAlso}</span>{" "}
+					<span className="jp">{lx(HK.seeAlso, HK.seeAlso_en)}</span>{" "}
 					<button
 						type="button"
 						className="side-item"
 						style={{ display: "inline-flex", width: "auto", padding: "4px 10px", marginLeft: 6 }}
 						onClick={() => navTo("#/ref")}
 					>
-						📖 接续表
+						📖 {lx("接续表", "Connection notation")}
 					</button>
 				</div>
 			) : null}
 			{(HK.rules || []).map((r: any, i: number) => (
 				<div className="card" key={i}>
 					<h3 className="jp" style={{ marginTop: "0" }}>
-						{r.title}
+						{lx(r.title, r.title_en)}
 					</h3>
 					{r.note ? (
 						<div className="meta" style={{ marginBottom: 6 }}>
-							{r.note}
+							{lx(r.note, r.note_en)}
 						</div>
 					) : null}
-					<PTable cols={r.cols} rows={r.rows} />
+					<PTable
+						cols={(r.cols || []).map((col: string, ci: number) => lx(col, r.cols_en?.[ci]))}
+						rows={(r.rows || []).map((row: any) => ({
+							label: lx(row.label, row.label_en),
+							vals: (row.vals || []).map((val: string, vi: number) => lx(val, row.vals_en?.[vi])),
+						}))}
+					/>
 				</div>
 			))}
 			{HK.footer ? (
 				<div className="meta" style={{ marginTop: 10 }}>
-					{HK.footer}
+					{lx(HK.footer, HK.footer_en)}
 				</div>
 			) : null}
 		</>
