@@ -70,6 +70,17 @@ describe("common transitive/intransitive reference data", () => {
 		expect(cut.ji.eg_en).toBe("The thread is broken.");
 	});
 
+	it("contrasts deliberate removal with the detached state for 外す / 外れる", () => {
+		const removed = pairs.filter((pair) => pair.ji.dict === "外れる");
+		expect(removed).toHaveLength(1);
+		const { ta, ji } = removed[0];
+		expect(ta).toMatchObject({ dict: "外す", kana: "はずす", masu: "外します", eg: "名札は外してあります。" });
+		expect(ji).toMatchObject({ kana: "はずれる", masu: "外れます", eg: "名札が外れています。" });
+		expect(JITA_TEARU_EXAMPLES[ta.dict]).toEqual({ jp: ta.eg, jp_r: ta.eg_r, cn: ta.eg_cn, en: ta.eg_en });
+		expect(ji.eg_cn).toBe("姓名牌脱落了。");
+		expect(ji.eg_en).toBe("The name tag has come off.");
+	});
+
 	it("replaces every transitive action example with a reviewed てあります example", () => {
 		const transitiveVerbs = pairs.map((pair) => pair.ta.dict).sort();
 		expect(Object.keys(JITA_TEARU_EXAMPLES).sort()).toEqual(transitiveVerbs);

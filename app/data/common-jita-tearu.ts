@@ -252,8 +252,8 @@ export const JITA_TEARU_EXAMPLES: Record<string, JitaTearuExample> = {
 	"外す": {
 		jp: "名札は外してあります。",
 		jp_r: "<ruby>名札<rt>なふだ</rt></ruby>は<ruby>外<rt>はず</rt></ruby>してあります。",
-		cn: "名牌已经取下来了。",
-		en: "The name tag has been removed.",
+		cn: "姓名牌已经特意取下来了。",
+		en: "The name tag has been deliberately removed.",
 	},
 	"温める": {
 		jp: "スープはもう温めてあります。",

@@ -1092,10 +1092,10 @@
             "masu": "外します",
             "masu_r": "<ruby>外<rt>はず</rt></ruby>します",
             "kana": "はずす",
-            "eg": "名札を外します。",
-            "eg_r": "<ruby>名札<rt>なふだ</rt></ruby>を<ruby>外<rt>はず</rt></ruby>します。",
-            "eg_cn": "取下姓名牌。",
-            "eg_en": "I will take off my name tag."
+            "eg": "名札は外してあります。",
+            "eg_r": "<ruby>名札<rt>なふだ</rt></ruby>は<ruby>外<rt>はず</rt></ruby>してあります。",
+            "eg_cn": "姓名牌已经特意取下来了。",
+            "eg_en": "The name tag has been deliberately removed."
           },
           "ji": {
             "dict": "外れる",
@@ -1103,10 +1103,10 @@
             "masu": "外れます",
             "masu_r": "<ruby>外<rt>はず</rt></ruby>れます",
             "kana": "はずれる",
-            "eg": "名札が外れました。",
-            "eg_r": "<ruby>名札<rt>なふだ</rt></ruby>が<ruby>外<rt>はず</rt></ruby>れました。",
-            "eg_cn": "姓名牌掉了。",
-            "eg_en": "My name tag came off."
+            "eg": "名札が外れています。",
+            "eg_r": "<ruby>名札<rt>なふだ</rt></ruby>が<ruby>外<rt>はず</rt></ruby>れています。",
+            "eg_cn": "姓名牌脱落了。",
+            "eg_en": "The name tag has come off."
           }
         }
       ]

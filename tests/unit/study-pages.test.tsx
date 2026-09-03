@@ -34,6 +34,7 @@ import {
 	toggleFav,
 } from "../../app/study/store";
 import { ContrastPage, DayPage } from "../../app/study/days";
+import jitaData from "../../app/data/common-jita.json";
 
 function LiveMistakes() {
 	useSyncExternalStore(subscribe, getVersion, () => 0);
@@ -362,6 +363,18 @@ describe("KougoPage", () => {
 });
 
 describe("JitaPage", () => {
+	it("shows 外す / 外れる in the existing comparison with readings and state translations", () => {
+		render(<JitaPage data={{ jita: jitaData }} />);
+		const pair = screen.getByText("取下 / 脱落").closest(".jita-pair")!;
+		expect(within(pair as HTMLElement).getByText("（はずす）")).toBeInTheDocument();
+		expect(within(pair as HTMLElement).getByText("（はずれる）")).toBeInTheDocument();
+		expect(pair.querySelector(".jita-col--ta .jita-eg")).toHaveTextContent("してあります");
+		expect(pair.querySelector(".jita-col--ji .jita-eg")).toHaveTextContent("れています");
+		expect(within(pair as HTMLElement).getByText("姓名牌已经特意取下来了。")).toBeInTheDocument();
+		expect(within(pair as HTMLElement).getByText("姓名牌脱落了。")).toBeInTheDocument();
+		expect(pair.querySelector(".jita-col--ji .jita-word rt")).toHaveTextContent("はず");
+	});
+
 	it("does not crash when pair data is missing", () => {
 		expect(() => render(<JitaPage data={{}} />)).not.toThrow();
 		expect(screen.getByText(/自动词和他动词数据还没加载完|Transitive\/intransitive data/)).toBeInTheDocument();
