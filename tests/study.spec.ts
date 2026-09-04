@@ -894,6 +894,9 @@ test.describe("study typebar", () => {
 		await expect(firstQuestion).toContainText(/トラック/);
 		await firstQuestion.getByText("译文").click();
 		await expect(firstQuestion).toContainText(/搬家的卡车/);
+		await page.locator("[data-lang='en']").click();
+		await expect(page.locator("[data-lang='en']")).toHaveAttribute("aria-pressed", "true");
+		await expect(firstQuestion).toContainText(/moving truck/);
 	});
 
 	test("opens N2 reading in the shared study flow with translation, analysis, and day navigation", async ({ page }, testInfo) => {

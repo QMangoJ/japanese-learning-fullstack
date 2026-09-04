@@ -5,6 +5,7 @@ import { chapter2Lessons } from "./listening-n2-lessons-ch2";
 import { chapter3Lessons } from "./listening-n2-lessons-ch3";
 import { chapter4Lessons } from "./listening-n2-lessons-ch4";
 import { chapter5Lessons } from "./listening-n2-lessons-ch5";
+import { listeningN2TranscriptEn } from "./listening-n2-transcript-en";
 
 const byChapter: Record<number, readonly ListeningLesson[]> = {
 	1: chapter1Lessons,
@@ -16,5 +17,10 @@ const byChapter: Record<number, readonly ListeningLesson[]> = {
 
 export function getListeningN2Lesson(chapter: number, section: number): ListeningLesson | undefined {
 	if (!findListeningN2Section(chapter, section)) return undefined;
-	return byChapter[chapter]?.[section - 1];
+	const lesson = byChapter[chapter]?.[section - 1];
+	if (!lesson) return undefined;
+	return {
+		...lesson,
+		transcript_en: listeningN2TranscriptEn[`${chapter}-${section}`],
+	};
 }

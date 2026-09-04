@@ -72,4 +72,32 @@ describe("ListeningN2Content", () => {
 		}
 		expect(missing).toEqual([]);
 	});
+
+	it("assigns a complete English translation to every scored question", () => {
+		const missing: string[] = [];
+		for (const chapter of listeningN2BookChapters()) {
+			for (const section of chapter.sections) {
+				const lesson = getListeningN2Lesson(chapter.number, section.number);
+				expect(lesson?.transcript_en, `${chapter.number}-${section.number} English transcript`).toBeTruthy();
+				const support = listeningQuestionSupport(lesson!);
+				const scored = lesson!.blocks
+					.map((block, index) => ({ block, index }))
+					.filter((entry) => entry.block.type === "q");
+				for (const { block, index } of scored) {
+					if (!/番|問題/.test(block.label)) continue;
+					if (!support.get(index)?.transcript_en) missing.push(`${chapter.number}-${section.number} ${block.label}`);
+				}
+			}
+		}
+		expect(missing).toEqual([]);
+	});
+
+	it("shows the English transcript translation in English mode", async () => {
+		const user = userEvent.setup();
+		setLang("en");
+		render(<ListeningN2Content chapter={2} section={2} embedded />);
+		const firstQuestion = screen.getByRole("heading", { level: 4, name: /^1番/ }).closest("article");
+		await user.click(within(firstQuestion!).getByText("Translation"));
+		expect(within(firstQuestion!).getByText(/ticket window of a zoo/)).toBeInTheDocument();
+	});
 });
