@@ -1,7 +1,7 @@
 import { defineConfig } from "@playwright/test";
 
 const port = Number(process.env.E2E_PORT || 5173);
-const baseURL = process.env.E2E_BASE_URL || `http://localhost:${port}`;
+const baseURL = process.env.E2E_BASE_URL || `http://127.0.0.1:${port}`;
 
 export default defineConfig({
 	testDir: "./tests",
@@ -18,7 +18,7 @@ export default defineConfig({
 		screenshot: "only-on-failure",
 	},
 	webServer: {
-		command: "npm run dev",
+		command: `CHOKIDAR_USEPOLLING=1 E2E=1 npm run dev -- --host 127.0.0.1 --port ${port}`,
 		url: baseURL,
 		reuseExistingServer: true,
 		timeout: 120_000,
@@ -27,7 +27,7 @@ export default defineConfig({
 		{
 			name: "mobile-chrome",
 			use: {
-				channel: "chrome",
+				browserName: "chromium",
 				viewport: { width: 390, height: 844 },
 				isMobile: true,
 				hasTouch: true,
@@ -35,17 +35,16 @@ export default defineConfig({
 		},
 		{
 			name: "desktop-chrome",
-			use: { viewport: { width: 1280, height: 800 }, channel: "chrome" },
+			use: { viewport: { width: 1280, height: 800 }, browserName: "chromium" },
 		},
-		// Opt-in Safari-engine regressions without requiring WebKit for every run.
-		...(process.env.E2E_WEBKIT === "1" ? [{
+		{
 			name: "mobile-webkit",
 			use: {
-				browserName: "webkit" as const,
+				browserName: "webkit",
 				viewport: { width: 390, height: 844 },
 				isMobile: true,
 				hasTouch: true,
 			},
-		}] : []),
+		},
 	],
 });

@@ -3,7 +3,13 @@ import { constants } from "node:fs";
 import { dirname, resolve } from "node:path";
 
 const projectRoot = resolve(import.meta.dirname, "..");
-const sourcePublic = resolve(projectRoot, "..", "日语学习", "public");
+const sourceArgument = process.argv[2];
+if (!sourceArgument) {
+	console.error("Usage: node scripts/sync-study-assets.mjs <source-public-directory>");
+	process.exit(1);
+}
+
+const sourcePublic = resolve(projectRoot, sourceArgument);
 const targetPublic = resolve(projectRoot, "public");
 const targetData = resolve(targetPublic, "data");
 
@@ -18,8 +24,8 @@ async function exists(path) {
 
 const sourceData = resolve(sourcePublic, "data");
 if (!(await exists(sourceData))) {
-	console.log("Legacy source data is unavailable; using committed study data.");
-	process.exit(0);
+	console.error(`Study data source is unavailable: ${sourceData}`);
+	process.exit(1);
 }
 
 await mkdir(dirname(targetData), { recursive: true });
