@@ -1,0 +1,58 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Unit tests and coverage
+        run: npm test
+
+      - name: Content integrity checks
+        run: |
+          npm run test:grammar-daily
+          npm run test:grammar-english
+          npm run test:vocab-kanji-daily
+          npm run test:vocab-english
+          npm run test:n3-vk-exam
+          npm run test:n4-exam
+          npm run test:n4-daily
+          npm run test:n4-vk-exam
+          npm run test:n2-exam
+          npm run test:n2-vk-exam
+          npm run test:n2-vocab-kanji-daily
+          npm run test:n2-grammar-english
+
+      - name: Production build
+        run: npx react-router build
+
+      - name: Check Worker bindings
+        run: npx wrangler types --check
+
+      - name: Validate Worker deployment bundle
+        run: npx wrangler deploy --dry-run --outdir .wrangler-dry-run
