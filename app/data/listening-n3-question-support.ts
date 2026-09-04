@@ -35,6 +35,12 @@ function transcriptParts(text?: string): readonly string[] {
 	for (let index = 0; index < lines.length; index += 1) {
 		const line = lines[index].trim();
 		if (!line) continue;
+		const englishLabel = line.normalize("NFKC");
+		if (/^Question (?:\d+|[IVX]+(?:, (?:Part )?\d+)?)(?: —.*)?$/u.test(englishLabel)) {
+			starts.push(offsets[index]);
+			pendingGroupStart = undefined;
+			continue;
+		}
 		const bracketed = line.match(/^【([^】]+)】/u)?.[1]?.normalize("NFKC") || "";
 		if (NUMBERED_LABEL.test(bracketed)) {
 			starts.push(offsets[index]);
