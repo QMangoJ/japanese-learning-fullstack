@@ -27,6 +27,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Prepare deterministic Worker bindings
+        run: cp .dev.vars.example .dev.vars
+
       - name: Typecheck
         run: npm run typecheck
 
