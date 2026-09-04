@@ -67,6 +67,7 @@
 		"refresh:study-data": "npm run sync:study-assets && npm run generate:grammar-english && npm run generate:n4-exam && npm run generate:n2-grammar-english && npm run generate:n2-exam && npm run generate:n2-daily && npm run generate:n2-vocab-kanji-daily",
 		"sync:study-assets": "node scripts/sync-study-assets.mjs ../日语学习/public",
 		"test": "vitest run --coverage",
+		"test:bundle": "node scripts/check-client-bundle-size.mjs",
 		"test:unit": "vitest run",
 		"test:e2e": "playwright test",
 		"test:grammar-daily": "node scripts/check-n3-daily-grammar-explanations.mjs",

@@ -1,9 +1,6 @@
-import { Component, useEffect, useLayoutEffect, useRef, useState, useSyncExternalStore, type ErrorInfo, type ReactNode } from "react";
+import { Component, lazy, Suspense, useEffect, useLayoutEffect, useRef, useState, useSyncExternalStore, type ErrorInfo, type ReactNode } from "react";
 import { useLocation, useNavigate } from "react-router";
 
-import { ListeningN2Content } from "../routes/listening-n2";
-import { ListeningN3Content } from "../routes/listening-n3";
-import { ReadingN3Content } from "../routes/reading-n3-book";
 import {
 	CardsPage,
 	FavFcPage,
@@ -20,7 +17,6 @@ import {
 	WearingPage,
 } from "../routes/study-common";
 import { ContrastPage, DayNav, DayPage, parseDayRoute } from "./days";
-import { KanjiExamPage } from "./KanjiExamPage";
 import {
 	ACCOUNT,
 	accountReady,
@@ -43,6 +39,7 @@ import {
 	TYPE,
 	activeMistakeCount,
 	attachResync,
+	bootReadingSearch,
 	bootStudyData,
 	closeFavFc,
 	contrastModule,
@@ -74,6 +71,9 @@ import {
 	navTo,
 	noRuby,
 	pathToKey,
+	readingSearchError,
+	readingSearchLoaded,
+	saveSelectionFav,
 	saveLastVisit,
 	setAfterPaint,
 	setLang,
@@ -91,6 +91,29 @@ import {
 	type TypeKey,
 } from "./store";
 import { selectionPopoverPosition } from "./selection-popover-position";
+// Keep the styles for lazy study modules in the shell so WebKit never paints
+// their content before the asynchronously discovered CSS has applied.
+import "../routes/kanji-exam.css";
+import "../routes/listening-n3.css";
+import "../routes/reading-n3.css";
+import "../routes/reading-n3-book.css";
+
+const LazyListeningN2Content = lazy(() =>
+	import("../routes/listening-n2").then((module) => ({ default: module.ListeningN2Content })),
+);
+const LazyListeningN3Content = lazy(() =>
+	import("../routes/listening-n3").then((module) => ({ default: module.ListeningN3Content })),
+);
+const LazyReadingN3Content = lazy(() =>
+	import("../routes/reading-n3-book").then((module) => ({ default: module.ReadingN3Content })),
+);
+const LazyKanjiExamPage = lazy(() =>
+	import("./KanjiExamPage").then((module) => ({ default: module.KanjiExamPage })),
+);
+
+function StudyLoading() {
+	return <div className="empty">{lx("内容加载中…", "Loading content…")}</div>;
+}
 
 function useStudyTick() {
 	return useSyncExternalStore(subscribe, getVersion, () => 0);
@@ -744,8 +767,7 @@ function SelectionPopover({ routeKey }: { routeKey: string }) {
 					type="button"
 					className="primary"
 					disabled={state.saved}
-					onClick={async () => {
-						const { saveSelectionFav } = await import("./store");
+					onClick={() => {
 						const id = saveSelectionFav(state.type, state.text, routeKey);
 						if (!id) {
 							setState(null);
@@ -901,6 +923,14 @@ export function StudyApp() {
 	}, [viewKey]);
 
 	useEffect(() => {
+		if (routeKey === "#/search" && !readingSearchLoaded && !readingSearchError) {
+			void bootReadingSearch().catch(() => {
+				/* The rendered search state reports the loading error. */
+			});
+		}
+	}, [routeKey]);
+
+	useEffect(() => {
 		const onScroll = () => {
 			window.requestAnimationFrame(updateNumNavActive);
 		};
@@ -925,7 +955,7 @@ export function StudyApp() {
 	const commonRefPage = ["#/ref", "#/katsuyou", "#/henkei", "#/kougo", "#/jita", "#/wearing", "#/numbers"].includes(routeKey);
 	const waitingN2 = isN2() && MODULE !== "n2listening" && MODULE !== "n2reading" && !n2Loaded && !commonRefPage;
 	const waitingN4 = isN4() && !n4Loaded && !commonRefPage;
-	const waitingSearch = routeKey === "#/search" && !n2Loaded;
+	const waitingSearch = routeKey === "#/search" && (!n2Loaded || !readingSearchLoaded) && !readingSearchError;
 	const weekLocked = isTrial && day && (LEVEL !== "n3" || day.w !== 1);
 	const homeLocked = isTrial && LEVEL !== "n3";
 
@@ -945,15 +975,17 @@ export function StudyApp() {
 	else if (waitingN2) body = <div className="empty">N2 数据加载中，请稍候…</div>;
 	else if (waitingN4) body = <div className="empty">N4 数据加载中，请稍候…</div>;
 	else if (waitingSearch) body = <div className="empty">词典数据加载中，马上就好…</div>;
+	else if (routeKey === "#/search" && readingSearchError)
+		body = <div className="empty">{lx("读解词典加载失败，请返回后重试。", "Reading search data failed to load. Please go back and try again.")}</div>;
 	else if (weekLocked || homeLocked) body = <TrialLock />;
-	else if (day && isReading()) body = <ReadingN3Content week={day.w} day={day.d} embedded book={MODULE === "n2reading" ? "n2" : "n3"} />;
+	else if (day && isReading()) body = <LazyReadingN3Content week={day.w} day={day.d} embedded book={MODULE === "n2reading" ? "n2" : "n3"} />;
 	else if (day && isListening())
 		body = (
 			<>
 				{MODULE === "n2listening" ? (
-					<ListeningN2Content chapter={day.w} section={day.d} embedded />
+					<LazyListeningN2Content chapter={day.w} section={day.d} embedded />
 				) : (
-					<ListeningN3Content chapter={day.w} section={day.d} embedded />
+					<LazyListeningN3Content chapter={day.w} section={day.d} embedded />
 				)}
 				<DayNav w={day.w} d={day.d} mod={MODULE} />
 			</>
@@ -975,7 +1007,7 @@ export function StudyApp() {
 		);
 	else if (routeKey === "#/search") body = <SearchPage />;
 	else if (routeKey === "#/cards") body = <CardsPage />;
-	else if (routeKey === "#/kanji-exam") body = <KanjiExamPage />;
+	else if (routeKey === "#/kanji-exam") body = <LazyKanjiExamPage />;
 	else if (routeKey === "#/favs") body = showingFavFc ? <FavFcPage data={favFcPayload()} /> : <FavsPage data={favsPayload()} />;
 	else if (routeKey === "#/mistakes") body = <MistakesPage data={mistakesPayload()} />;
 	else if (routeKey === "#/ref") body = DATA.common?.reference ? <RefPage data={DATA.common} /> : <div className="empty">通用参考数据加载中，请稍候…</div>;
@@ -1014,11 +1046,17 @@ export function StudyApp() {
 			/>
 			<Sidebar routeKey={routeKey} onLevel={pickLevel} />
 			<main id="app" className={lessonShell ? "study-reading-app" : undefined} hidden={showCommon}>
-				{showCommon ? null : <StudyPageErrorBoundary resetKey={viewKey}>{body}</StudyPageErrorBoundary>}
+				{showCommon ? null : (
+					<StudyPageErrorBoundary resetKey={viewKey}>
+						<Suspense fallback={<StudyLoading />}>{body}</Suspense>
+					</StudyPageErrorBoundary>
+				)}
 			</main>
 			{showCommon ? (
 				<main id="common-page">
-					<StudyPageErrorBoundary resetKey={viewKey}>{body}</StudyPageErrorBoundary>
+					<StudyPageErrorBoundary resetKey={viewKey}>
+						<Suspense fallback={<StudyLoading />}>{body}</Suspense>
+					</StudyPageErrorBoundary>
 				</main>
 			) : null}
 			<BottomNav active={meta.nav} onCommon={() => setSheet("common")} />

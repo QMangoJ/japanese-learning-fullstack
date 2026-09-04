@@ -3,20 +3,24 @@
   "short_name": "日本語上手",
   "description": "日语学习与 JLPT 备考工具",
   "lang": "zh-CN",
-  "start_url": "/",
+  "id": "/study",
+  "start_url": "/study",
+  "scope": "/",
   "display": "standalone",
-  "background_color": "#fff4f8",
-  "theme_color": "#ef6b9a",
+  "background_color": "#f6f7f9",
+  "theme_color": "#c0392b",
   "icons": [
     {
       "src": "/icon-192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
       "src": "/icon-512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }

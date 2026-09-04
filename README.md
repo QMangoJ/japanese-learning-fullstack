@@ -4,19 +4,20 @@
 
 ## 中文
 
-基于 React Router 7 和 Cloudflare Workers 的日语学习应用，覆盖 N4、N3、N2 的语法、词汇与汉字，以及 N3 读解、听解。
+基于 React Router 7 和 Cloudflare Workers 的日语学习应用，覆盖 N4、N3、N2 的语法、词汇与汉字，以及 N3 / N2 读解、听解。
 
 ![日本語上手桌面端首页](docs/home.jpg)
 
 ## 功能
 
 - N4 / N3 / N2 的语法、词汇、汉字课程，按周与每日内容组织
-- N3 读解 6 周、听解 5 章，与语法/汉字同一套目录、搜索和收藏
+- N3 / N2 读解与听解，与语法/汉字同一套目录、搜索和收藏
 - 全站搜索、语法辨析、接续表、活用表与数字表达参考
 - 假名注音、日语 TTS 朗读、中文 / 英文切换与深色模式
 - 收藏、生词本、错题本与记忆卡
 - 手机底部导航与桌面侧栏的响应式布局
 - 可选 Google 登录：收藏和错题按账号写入 Cloudflare KV，未登录时只保存在本机 `localStorage`
+- 可安装为 PWA；访问过的课程与播放过的音频可离线复习，重新联网后自动补交收藏和错题变化
 
 ## 技术架构
 
@@ -53,7 +54,11 @@ npm run dev
 npm run sync:study-assets
 ```
 
-`npm run dev` 与 `npm run build` 会自动执行这一步。
+该同步命令需要显式执行；普通开发和生产构建不会改写已提交的课程数据。
+
+## 离线使用
+
+把网站添加到手机桌面后会直接打开 `/study`。应用缓存已经访问过的学习页面、课程数据和最近播放过的音频（最多 24 条），不会缓存登录、收藏或错题 API 响应，也不会预先下载整套音频。离线时的新收藏和错题先保存在本机，网络恢复后自动重试同步。
 
 ## API
 
@@ -80,17 +85,18 @@ npm run deploy
 
 ## English
 
-**Nihongo Jozu** is a Japanese-learning application built with React Router 7 and Cloudflare Workers. It includes N4, N3, and N2 grammar, vocabulary, and kanji, plus N3 reading and listening.
+**Nihongo Jozu** is a Japanese-learning application built with React Router 7 and Cloudflare Workers. It includes N4, N3, and N2 grammar, vocabulary, and kanji, plus N3 / N2 reading and listening.
 
 ### Features
 
 - N4 / N3 / N2 grammar, vocabulary, and kanji courses organized by week and day
-- N3 reading (6 weeks) and listening (5 chapters) in the same study shell
+- N3 / N2 reading and listening in the same study shell
 - Global search, grammar comparisons, conjugation and connection references, and number-expression references
 - Furigana, Japanese text-to-speech, Chinese / English switching, and dark mode
 - Favorites, vocabulary notebook, mistake notebook, and flashcards
 - Responsive mobile bottom navigation and desktop sidebar
 - Optional Google sign-in: favorites and mistakes sync per account through Cloudflare KV; guests stay on `localStorage`
+- Installable PWA support: visited lessons and played audio remain available offline, and pending notebook changes retry after reconnection
 
 ### Architecture
 
@@ -127,7 +133,11 @@ Course JSON and static assets are committed under `public/`. If the adjacent leg
 npm run sync:study-assets
 ```
 
-The command also runs automatically before `npm run dev` and `npm run build`.
+Run this command explicitly when the legacy source changes. Normal development and production builds never rewrite committed course data.
+
+### Offline use
+
+An installed PWA opens directly at `/study`. It caches visited learning pages, their course data, and up to 24 recently played audio tracks. Authentication and notebook API responses are never cached, and the app does not download the entire audio library up front. Favorites and mistakes created offline stay local first and retry automatically when the connection returns.
 
 ### API
 

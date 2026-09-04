@@ -54,6 +54,9 @@ jobs:
       - name: Production build
         run: npx react-router build
 
+      - name: Enforce initial study bundle budget
+        run: npm run test:bundle
+
       - name: Check Worker bindings
         run: npx wrangler types --check
 

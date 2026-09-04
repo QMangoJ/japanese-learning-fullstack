@@ -299,6 +299,8 @@ export let R: any = readingBundle();
 export let R2: any = readingN2Bundle();
 export let L: any = listeningBundle();
 export let L2: any = listeningN2Bundle();
+export let readingSearchLoaded = false;
+export let readingSearchError = "";
 DATA.reading = R;
 DATA.n2reading = R2;
 DATA.listening = L;
@@ -312,13 +314,18 @@ export let fc: { week: number; deck: any[]; idx: number; flipped: boolean } = {
 };
 
 let searchIndex: any[] | null = null;
+let readingSearchPromise: Promise<void> | null = null;
 let jaVoice: SpeechSynthesisVoice | null = null;
 let _favSyncing = false;
 let _favPushTimer: ReturnType<typeof setTimeout> | null = null;
+let _favPushing = false;
+let _favRetryAttempt = 0;
 let _favReady = false;
 let _favPendingPush = false;
 let _mistakeSyncing = false;
 let _mistakePushTimer: ReturnType<typeof setTimeout> | null = null;
+let _mistakePushing = false;
+let _mistakeRetryAttempt = 0;
 let _mistakesReady = false;
 let _mistakesPendingPush = false;
 let _resyncingM = false;
@@ -556,33 +563,103 @@ function cleanMistakes(arr: any): Mistake[] {
 	return Array.isArray(arr)
 		? arr
 				.filter((m) => m && typeof m.id === "string" && m.id)
-				.map((m) => (MISTAKE_LEVELS[m.level] ? m : { ...m, level: "new" }))
+				.map((m) => ({
+					id: m.id,
+					type: typeof m.type === "string" && m.type ? m.type : "q",
+					text: typeof m.text === "string" ? m.text : "",
+					ts: typeof m.ts === "number" && Number.isFinite(m.ts) ? m.ts : 0,
+					level: MISTAKE_LEVELS[m.level] ? m.level : "new",
+					...(m.deleted === true ? { deleted: true } : {}),
+				}))
 		: [];
 }
 function activeMistakes() {
 	return MISTAKES.filter((m) => !m.deleted);
 }
-function pushMistakesNow() {
-	if (!ACCOUNT) return;
-	fetch("/api/mistakes", {
-		method: "PUT",
-		headers: { "content-type": "application/json" },
-		credentials: "same-origin",
-		body: JSON.stringify(MISTAKES),
-	}).catch(() => {});
+
+function cleanFavs(value: unknown): Record<string, FavSnap> {
+	if (!value || typeof value !== "object" || Array.isArray(value)) return {};
+	const clean: Record<string, FavSnap> = {};
+	for (const [id, raw] of Object.entries(value)) {
+		if (!id || id === "__proto__" || id === "prototype" || id === "constructor" || !raw || typeof raw !== "object" || Array.isArray(raw)) continue;
+		const item = raw as Record<string, unknown>;
+		const w = typeof item.w === "string" || (typeof item.w === "number" && Number.isFinite(item.w)) ? item.w : "";
+		const d = typeof item.d === "string" || (typeof item.d === "number" && Number.isFinite(item.d)) ? item.d : "";
+		clean[id] = {
+			module: typeof item.module === "string" && item.module ? item.module : "selection",
+			hash: typeof item.hash === "string" ? item.hash : "#/",
+			w,
+			d,
+			jp: typeof item.jp === "string" ? item.jp : "",
+			cn: typeof item.cn === "string" ? item.cn : "",
+			...(typeof item.kind === "string" ? { kind: item.kind } : {}),
+			...(typeof item.selectionType === "string" ? { selectionType: item.selectionType } : {}),
+			...(typeof item.ts === "number" && Number.isFinite(item.ts) ? { ts: item.ts } : {}),
+		};
+	}
+	return clean;
+}
+
+const SYNC_RETRY_BASE_MS = 1_500;
+const SYNC_RETRY_MAX_MS = 30_000;
+
+function retryDelay(attempt: number) {
+	return Math.min(SYNC_RETRY_MAX_MS, SYNC_RETRY_BASE_MS * 2 ** Math.max(0, attempt - 1));
+}
+
+function scheduleMistakesPush(delay = 400) {
+	if (_mistakePushTimer) clearTimeout(_mistakePushTimer);
+	_mistakePushTimer = setTimeout(() => {
+		_mistakePushTimer = null;
+		void pushMistakesNow();
+	}, delay);
+}
+
+async function pushMistakesNow() {
+	if (!ACCOUNT || !_mistakesReady) return false;
+	if (_mistakePushTimer) {
+		clearTimeout(_mistakePushTimer);
+		_mistakePushTimer = null;
+	}
+	if (_mistakePushing) {
+		_mistakesPendingPush = true;
+		return false;
+	}
+	_mistakePushing = true;
+	_mistakesPendingPush = false;
+	const snapshot = JSON.stringify(MISTAKES);
+	try {
+		const response = await fetch("/api/mistakes", {
+			method: "PUT",
+			headers: { "content-type": "application/json" },
+			credentials: "same-origin",
+			body: snapshot,
+		});
+		if (!response.ok) throw new Error(`mistakes sync failed: ${response.status}`);
+		_mistakeRetryAttempt = 0;
+		if (JSON.stringify(MISTAKES) !== snapshot) _mistakesPendingPush = true;
+		return true;
+	} catch {
+		_mistakesPendingPush = true;
+		_mistakeRetryAttempt += 1;
+		return false;
+	} finally {
+		_mistakePushing = false;
+		if (_mistakesPendingPush) scheduleMistakesPush(retryDelay(_mistakeRetryAttempt || 1));
+	}
 }
 export function saveMistakes() {
 	lsSet("mistakes", JSON.stringify(MISTAKES));
 	if (_mistakeSyncing) return;
+	_mistakesPendingPush = true;
 	if (!_mistakesReady) {
-		_mistakesPendingPush = true;
 		return;
 	}
-	if (_mistakePushTimer) clearTimeout(_mistakePushTimer);
-	_mistakePushTimer = setTimeout(() => {
-		_mistakePushTimer = null;
-		pushMistakesNow();
-	}, 400);
+	if (!ACCOUNT) {
+		_mistakesPendingPush = false;
+		return;
+	}
+	scheduleMistakesPush();
 }
 export function needsAccount() {
 	return accountReady && authConfigured && !ACCOUNT;
@@ -664,27 +741,59 @@ export function cycleMistakeLevel(id: string) {
 	emit();
 }
 
-function pushFavsNow() {
-	if (!ACCOUNT) return;
-	fetch("/api/favorites", {
-		method: "PUT",
-		headers: { "content-type": "application/json" },
-		credentials: "same-origin",
-		body: JSON.stringify(FAV),
-	}).catch(() => {});
+function scheduleFavsPush(delay = 400) {
+	if (_favPushTimer) clearTimeout(_favPushTimer);
+	_favPushTimer = setTimeout(() => {
+		_favPushTimer = null;
+		void pushFavsNow();
+	}, delay);
+}
+
+async function pushFavsNow() {
+	if (!ACCOUNT || !_favReady) return false;
+	if (_favPushTimer) {
+		clearTimeout(_favPushTimer);
+		_favPushTimer = null;
+	}
+	if (_favPushing) {
+		_favPendingPush = true;
+		return false;
+	}
+	_favPushing = true;
+	_favPendingPush = false;
+	const snapshot = JSON.stringify(FAV);
+	try {
+		const response = await fetch("/api/favorites", {
+			method: "PUT",
+			headers: { "content-type": "application/json" },
+			credentials: "same-origin",
+			body: snapshot,
+		});
+		if (!response.ok) throw new Error(`favorites sync failed: ${response.status}`);
+		_favRetryAttempt = 0;
+		if (JSON.stringify(FAV) !== snapshot) _favPendingPush = true;
+		return true;
+	} catch {
+		_favPendingPush = true;
+		_favRetryAttempt += 1;
+		return false;
+	} finally {
+		_favPushing = false;
+		if (_favPendingPush) scheduleFavsPush(retryDelay(_favRetryAttempt || 1));
+	}
 }
 export function saveFav() {
 	lsSet("favs", JSON.stringify(FAV));
 	if (_favSyncing) return;
+	_favPendingPush = true;
 	if (!_favReady) {
-		_favPendingPush = true;
 		return;
 	}
-	if (_favPushTimer) clearTimeout(_favPushTimer);
-	_favPushTimer = setTimeout(() => {
-		_favPushTimer = null;
-		pushFavsNow();
-	}, 400);
+	if (!ACCOUNT) {
+		_favPendingPush = false;
+		return;
+	}
+	scheduleFavsPush();
 }
 export function isFav(id: string) {
 	return !!FAV[id];
@@ -1015,6 +1124,53 @@ export function clearSearchHistory() {
 export function getSearchIndex() {
 	return buildIndex();
 }
+
+function fullReadingBundle(readingWeeks: any[]) {
+	return {
+		scale: "week" as const,
+		weeks: readingWeeks.map((week) => ({
+			n: week.week,
+			title: week.title,
+			title_cn: week.titleCn,
+			title_en: week.titleEn,
+			days: week.days.map((day: any) => ({
+				day: day.day,
+				title: day.label,
+				title_cn: day.label,
+				title_en: day.labelEn || day.label,
+				vocab: day.vocab,
+				grammar: day.grammar,
+			})),
+		})),
+	};
+}
+
+/** Load the large reading annotations only when cross-module search needs them. */
+export function bootReadingSearch() {
+	if (readingSearchLoaded) return Promise.resolve();
+	if (readingSearchPromise) return readingSearchPromise;
+	readingSearchError = "";
+	readingSearchPromise = Promise.all([import("../data/reading-n3"), import("../data/reading-n2")])
+		.then(([n3, n2]) => {
+			R = fullReadingBundle(n3.readingWeeks);
+			R2 = fullReadingBundle(n2.readingWeeks);
+			DATA.reading = R;
+			DATA.n2reading = R2;
+			searchIndex = null;
+			readingSearchLoaded = true;
+			readingSearchError = "";
+			emit();
+		})
+		.catch((error) => {
+			readingSearchError = error instanceof Error ? error.message : "reading search data failed to load";
+			emit();
+			throw error;
+		})
+		.finally(() => {
+			readingSearchPromise = null;
+		});
+	return readingSearchPromise;
+}
 export type SearchCategory = "all" | "grammar" | "kanji" | "vocab" | "mistakes";
 
 export function searchCategoryForModule(module: string): Exclude<SearchCategory, "all"> | "other" {
@@ -1297,8 +1453,7 @@ async function pullMistakesFromServer() {
 	}
 	_mistakesReady = true;
 	if (_mistakesPendingPush) {
-		_mistakesPendingPush = false;
-		saveMistakes();
+		scheduleMistakesPush(0);
 	}
 }
 async function pullFavsFromServer() {
@@ -1312,7 +1467,7 @@ async function pullFavsFromServer() {
 			const data = await res.json();
 			if (data && typeof data === "object" && !Array.isArray(data)) {
 				_favSyncing = true;
-				const server = data as Record<string, FavSnap>;
+				const server = cleanFavs(data);
 				FAV = sameAccountDevice(ACCOUNT.id) ? Object.assign({}, server, FAV) : server;
 				lsSet("favs", JSON.stringify(FAV));
 				_favSyncing = false;
@@ -1324,19 +1479,18 @@ async function pullFavsFromServer() {
 	}
 	_favReady = true;
 	if (_favPendingPush) {
-		_favPendingPush = false;
-		saveFav();
+		scheduleFavsPush(0);
 	}
 }
 
 function mistakesSig(arr: Mistake[]) {
-	return JSON.stringify(arr.map((m) => [m.id, m.type, m.text, m.level, m.ts]).sort((a, b) => (a[0] < b[0] ? -1 : 1)));
+	return JSON.stringify(arr.map((m) => [m.id, m.type, m.text, m.level, m.ts, m.deleted === true]).sort((a, b) => (a[0] < b[0] ? -1 : 1)));
 }
 function favsSig(o: Record<string, FavSnap>) {
 	return JSON.stringify(Object.keys(o).sort().map((k) => [k, o[k]]));
 }
 async function resyncMistakes() {
-	if (!ACCOUNT || !_mistakesReady || _mistakePushTimer || _resyncingM) return;
+	if (!ACCOUNT || !_mistakesReady || _mistakePushTimer || _mistakePushing || _mistakesPendingPush || _resyncingM) return;
 	_resyncingM = true;
 	try {
 		const res = await fetch("/api/mistakes", { cache: "no-store", credentials: "same-origin" });
@@ -1360,7 +1514,7 @@ async function resyncMistakes() {
 	_resyncingM = false;
 }
 async function resyncFavs() {
-	if (!ACCOUNT || !_favReady || _favPushTimer || _resyncingF) return;
+	if (!ACCOUNT || !_favReady || _favPushTimer || _favPushing || _favPendingPush || _resyncingF) return;
 	_resyncingF = true;
 	try {
 		const res = await fetch("/api/favorites", { cache: "no-store", credentials: "same-origin" });
@@ -1369,7 +1523,7 @@ async function resyncFavs() {
 			if (data && typeof data === "object" && !Array.isArray(data)) {
 				const before = favsSig(FAV);
 				_favSyncing = true;
-				FAV = Object.assign({}, data, FAV);
+				FAV = Object.assign({}, cleanFavs(data), FAV);
 				lsSet("favs", JSON.stringify(FAV));
 				_favSyncing = false;
 				if (favsSig(FAV) !== before) emit();
@@ -1449,11 +1603,15 @@ export function resetStudyStateForTests() {
 	_favSyncing = false;
 	_favPendingPush = false;
 	_favReady = false;
+	_favPushing = false;
+	_favRetryAttempt = 0;
 	if (_favPushTimer) clearTimeout(_favPushTimer);
 	_favPushTimer = null;
 	_mistakeSyncing = false;
 	_mistakesPendingPush = false;
 	_mistakesReady = false;
+	_mistakePushing = false;
+	_mistakeRetryAttempt = 0;
 	if (_mistakePushTimer) clearTimeout(_mistakePushTimer);
 	_mistakePushTimer = null;
 	_resyncingM = false;
@@ -1471,6 +1629,9 @@ export function resetStudyStateForTests() {
 	favFlip = false;
 	showingFavFc = false;
 	searchIndex = null;
+	readingSearchLoaded = false;
+	readingSearchError = "";
+	readingSearchPromise = null;
 	lastVisit = {};
 	lastDay = {};
 	noRuby = false;
@@ -1538,7 +1699,7 @@ export function hydrateFromStorage() {
 	lastVisit = lsJson("lastVisit", {});
 	lastDay = lsJson("lastDay", {});
 	loginSuggestDismissed = lsGet("loginSuggestDismissed", "0") === "1";
-	FAV = lsJson("favs", {});
+	FAV = cleanFavs(lsJson("favs", {}));
 	MISTAKES = cleanMistakes(lsJson("mistakes", []));
 	noRuby = lsGet("noruby", "0") === "1";
 	hideJp = lsGet("hidejp", "0") === "1";
@@ -1746,36 +1907,33 @@ export async function bootAccount() {
 	if (!ACCOUNT) {
 		_favReady = true;
 		_mistakesReady = true;
-		if (_favPendingPush) {
-			_favPendingPush = false;
-			saveFav();
-		}
-		if (_mistakesPendingPush) {
-			_mistakesPendingPush = false;
-			saveMistakes();
-		}
+		_favPendingPush = false;
+		_mistakesPendingPush = false;
 		return;
 	}
 	await pullFavsFromServer();
 	await pullMistakesFromServer();
 	lsSet("accountId", ACCOUNT.id);
-	pushFavsNow();
-	pushMistakesNow();
+	await Promise.all([pushFavsNow(), pushMistakesNow()]);
 }
 
 export function attachResync() {
 	const resyncAll = () => {
-		resyncFavs();
-		resyncMistakes();
+		if (_favPendingPush) scheduleFavsPush(0);
+		else void resyncFavs();
+		if (_mistakesPendingPush) scheduleMistakesPush(0);
+		else void resyncMistakes();
 	};
 	const onVis = () => {
 		if (document.visibilityState === "visible") resyncAll();
 	};
 	document.addEventListener("visibilitychange", onVis);
 	window.addEventListener("focus", resyncAll);
+	window.addEventListener("online", resyncAll);
 	return () => {
 		document.removeEventListener("visibilitychange", onVis);
 		window.removeEventListener("focus", resyncAll);
+		window.removeEventListener("online", resyncAll);
 	};
 }
 

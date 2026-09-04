@@ -90,6 +90,53 @@ describe("per-user favorites and mistakes", () => {
 		});
 		expect(badFav.status).toBe(400);
 		expect(badMis.status).toBe(400);
+		const unsafeKey = await favAction({
+			request: await authedRequest("http://localhost/api/favorites", "g_1", {
+				method: "PUT",
+				body: '{"__proto__":{"module":"selection","hash":"#/","w":"","d":"","jp":"x","cn":"x"}}',
+			}),
+			context: ctx,
+		});
+		expect(unsafeKey.status).toBe(400);
+	});
+
+	it("validates entry fields instead of accepting arbitrary containers", async () => {
+		const kv = memoryKv();
+		seedUser(kv, { id: "g_1" });
+		const ctx = routeContext(testEnv(kv));
+		const badFav = await favAction({
+			request: await authedRequest("http://localhost/api/favorites", "g_1", {
+				method: "PUT",
+				body: JSON.stringify({ unsafe: { module: ["grammar"] } }),
+			}),
+			context: ctx,
+		});
+		const badMis = await mistakeAction({
+			request: await authedRequest("http://localhost/api/mistakes", "g_1", {
+				method: "PUT",
+				body: JSON.stringify([{ id: "m1", type: "q", text: "題", ts: "now", level: "new" }]),
+			}),
+			context: ctx,
+		});
+		expect(badFav.status).toBe(400);
+		expect(badMis.status).toBe(400);
+	});
+
+	it("applies the request limit to UTF-8 bytes, not JavaScript characters", async () => {
+		const kv = memoryKv();
+		seedUser(kv, { id: "g_1" });
+		const payload = {
+			large: { module: "selection", hash: "#/", w: "", d: "", jp: "あ".repeat(170_000), cn: "" },
+		};
+		const res = await favAction({
+			request: await authedRequest("http://localhost/api/favorites", "g_1", {
+				method: "PUT",
+				body: JSON.stringify(payload),
+			}),
+			context: routeContext(testEnv(kv)),
+		});
+		expect(res.status).toBe(413);
+		expect(kv.map.has(favsKey("g_1"))).toBe(false);
 	});
 });
 
