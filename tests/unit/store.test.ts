@@ -41,6 +41,7 @@ import {
 	getVersion,
 	flipFavCard,
 	activeMistakeCount,
+	attachResync,
 	getSearchHistory,
 	getSearchIndex,
 	searchCategoryForModule,
@@ -417,6 +418,43 @@ describe("favorites", () => {
 		expect(favsPayload().total).toBe(1);
 		expect(puts.some((body) => body.includes("冷蔵庫"))).toBe(true);
 		expect(localStorage.getItem("accountId")).toBe("g_1");
+	});
+
+	it("retries an unsaved favorite as soon as the browser comes back online", async () => {
+		vi.useFakeTimers();
+		try {
+			saveSelectionFav("word", "冷蔵庫", "#/");
+			let favPuts = 0;
+			vi.stubGlobal(
+				"fetch",
+				vi.fn(async (input: RequestInfo | URL, init?: RequestInit) => {
+					const url = String(input);
+					if (url.includes("/api/me")) {
+						return Response.json({
+							user: { id: "g_1", email: "a@b.c", name: "Ada", picture: "" },
+							configured: true,
+						});
+					}
+					if (url.includes("/api/favorites") && init?.method === "PUT") {
+						favPuts += 1;
+						return favPuts === 1 ? new Response("offline", { status: 503 }) : Response.json({ ok: true });
+					}
+					if (url.includes("/api/favorites")) return Response.json({});
+					if (url.includes("/api/mistakes")) return Response.json([]);
+					return new Response("no", { status: 404 });
+				}),
+			);
+
+			await bootAccount();
+			expect(favPuts).toBe(1);
+			const detach = attachResync();
+			window.dispatchEvent(new Event("online"));
+			await vi.advanceTimersByTimeAsync(0);
+			expect(favPuts).toBe(2);
+			detach();
+		} finally {
+			vi.useRealTimers();
+		}
 	});
 
 	it("does not leak the previous account's local favorites into a different user", async () => {

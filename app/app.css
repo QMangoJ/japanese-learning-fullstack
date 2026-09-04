@@ -2,3 +2,30 @@
  * Only remove the browser's default outer margin so every route reaches the
  * viewport edge; the study stylesheet still owns its internal layout. */
 html, body { margin: 0; min-height: 100%; touch-action: manipulation; }
+
+.offline-status {
+	position: fixed;
+	top: max(10px, env(safe-area-inset-top));
+	left: 50%;
+	z-index: 10000;
+	display: inline-flex;
+	align-items: center;
+	gap: 7px;
+	max-width: calc(100vw - 24px);
+	padding: 7px 12px;
+	transform: translateX(-50%);
+	border: 1px solid color-mix(in srgb, #c0392b 35%, transparent);
+	border-radius: 999px;
+	background: color-mix(in srgb, #fff 94%, transparent);
+	box-shadow: 0 6px 20px rgb(0 0 0 / 16%);
+	color: #8f2d22;
+	font: 700 12px/1.2 system-ui, sans-serif;
+	white-space: nowrap;
+	backdrop-filter: blur(12px);
+}
+
+.theme-dark .offline-status {
+	border-color: rgb(239 139 125 / 38%);
+	background: rgb(35 31 27 / 94%);
+	color: #f2a397;
+}

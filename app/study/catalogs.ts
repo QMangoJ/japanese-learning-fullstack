@@ -1,26 +1,37 @@
 import { listeningN2BookChapters } from "../data/listening-n2-book";
 import { listeningBookChapters } from "../data/listening-n3-book";
-import { readingWeeks as readingN2Weeks } from "../data/reading-n2";
-import { readingWeeks } from "../data/reading-n3";
+import {
+	readingN2CatalogDays,
+	readingN2CatalogWeeks,
+	readingN3CatalogDays,
+	readingN3CatalogWeeks,
+} from "../data/reading-catalogs";
 
-export function readingBundle() {
+function readingCatalogBundle(
+	weeks: typeof readingN3CatalogWeeks,
+	days: typeof readingN3CatalogDays,
+) {
 	return {
 		scale: "week" as const,
-		weeks: readingWeeks.map((week) => ({
+		weeks: weeks.map((week) => ({
 			n: week.week,
 			title: week.title,
 			title_cn: week.titleCn,
 			title_en: week.titleEn,
-			days: week.days.map((day) => ({
-				day: day.day,
-				title: day.label,
-				title_cn: day.label,
-				title_en: day.labelEn || day.label,
-				vocab: day.vocab,
-				grammar: day.grammar,
-			})),
+			days: days
+				.filter((day) => day.week === week.week)
+				.map((day) => ({
+					day: day.day,
+					title: day.label,
+					title_cn: day.label,
+					title_en: day.label,
+				})),
 		})),
 	};
+}
+
+export function readingBundle() {
+	return readingCatalogBundle(readingN3CatalogWeeks, readingN3CatalogDays);
 }
 
 export function listeningBundle() {
@@ -42,23 +53,7 @@ export function listeningBundle() {
 }
 
 export function readingN2Bundle() {
-	return {
-		scale: "week" as const,
-		weeks: readingN2Weeks.map((week) => ({
-			n: week.week,
-			title: week.title,
-			title_cn: week.titleCn,
-			title_en: week.titleEn,
-			days: week.days.map((day) => ({
-				day: day.day,
-				title: day.label,
-				title_cn: day.label,
-				title_en: day.labelEn || day.label,
-				vocab: day.vocab,
-				grammar: day.grammar,
-			})),
-		})),
-	};
+	return readingCatalogBundle(readingN2CatalogWeeks, readingN2CatalogDays);
 }
 
 export function listeningN2Bundle() {

@@ -6,7 +6,7 @@ import {
 	Scripts,
 	ScrollRestoration,
 } from "react-router";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import type { Route } from "./+types/root";
 import "./app.css";
@@ -57,6 +57,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
+	const [online, setOnline] = useState(true);
+
 	useEffect(() => {
 		const preventGesture = (event: Event) => event.preventDefault();
 		const preventMultiTouch = (event: TouchEvent) => {
@@ -71,7 +73,67 @@ export default function App() {
 			document.removeEventListener("touchmove", preventMultiTouch);
 		};
 	}, []);
-	return <Outlet />;
+
+	useEffect(() => {
+		setOnline(navigator.onLine);
+		const onOnline = () => setOnline(true);
+		const onOffline = () => setOnline(false);
+		window.addEventListener("online", onOnline);
+		window.addEventListener("offline", onOffline);
+		return () => {
+			window.removeEventListener("online", onOnline);
+			window.removeEventListener("offline", onOffline);
+		};
+	}, []);
+
+	useEffect(() => {
+		if (!import.meta.env.PROD || !("serviceWorker" in navigator)) return;
+		let cancelled = false;
+		let cacheTimer: number | undefined;
+		void navigator.serviceWorker.register("/sw.js", { scope: "/" }).then(async () => {
+			const registration = await navigator.serviceWorker.ready;
+			if (cancelled) return;
+			cacheTimer = window.setTimeout(() => {
+				const allowed = (raw: string) => {
+					const url = new URL(raw, window.location.href);
+					return url.origin === window.location.origin &&
+						!url.pathname.startsWith("/api/") &&
+						!url.pathname.startsWith("/auth/") &&
+						(url.pathname.startsWith("/assets/") ||
+							url.pathname.startsWith("/data/") ||
+							url.pathname === "/study.css" ||
+							url.pathname === "/manifest.webmanifest" ||
+							url.pathname === "/favicon.svg" ||
+							url.pathname.startsWith("/icon-") ||
+							url.pathname.startsWith("/apple-touch-icon") ||
+							url.pathname === window.location.pathname);
+				};
+				const urls = new Set<string>([window.location.href]);
+				for (const entry of performance.getEntriesByType("resource")) {
+					if (allowed(entry.name)) urls.add(entry.name);
+				}
+				registration.active?.postMessage({ type: "CACHE_URLS", urls: [...urls] });
+			}, 0);
+		}).catch(() => {
+			/* The app remains fully usable when service workers are unavailable. */
+		});
+		return () => {
+			cancelled = true;
+			if (cacheTimer !== undefined) window.clearTimeout(cacheTimer);
+		};
+	}, []);
+
+	return (
+		<>
+			<Outlet />
+			{online ? null : (
+				<div className="offline-status" role="status" aria-live="polite">
+					<span aria-hidden="true">↓</span>
+					离线模式 · Offline
+				</div>
+			)}
+		</>
+	);
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {

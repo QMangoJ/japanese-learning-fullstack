@@ -1,6 +1,7 @@
 import type { AppLoadContext } from "react-router";
 
 import { getSessionUser, json } from "../auth/http";
+import { isFavoritesPayload } from "../auth/study-payloads";
 import { favsKey } from "../auth/users";
 
 const MAX_BYTES = 500_000;
@@ -26,15 +27,16 @@ export async function action({ request, context }: Args) {
 	const user = await getSessionUser(request, context.cloudflare.env);
 	if (!user) return json({ error: "unauthorized" }, { status: 401 });
 
-	const body = await request.text();
-	if (body.length > MAX_BYTES) {
+	const bytes = await request.arrayBuffer();
+	if (bytes.byteLength > MAX_BYTES) {
 		return json({ error: "payload too large" }, { status: 413 });
 	}
+	const body = new TextDecoder().decode(bytes);
 
 	try {
 		const parsed: unknown = JSON.parse(body);
-		if (typeof parsed !== "object" || parsed === null || Array.isArray(parsed)) {
-			return json({ error: "expected a JSON object" }, { status: 400 });
+		if (!isFavoritesPayload(parsed)) {
+			return json({ error: "invalid favorites payload" }, { status: 400 });
 		}
 	} catch {
 		return json({ error: "invalid json" }, { status: 400 });

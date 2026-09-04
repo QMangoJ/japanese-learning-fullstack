@@ -21,6 +21,7 @@ import {
 	G,
 	V,
 	addMistake,
+	bootReadingSearch,
 	favsPayload,
 	getVersion,
 	mistakesPayload,
@@ -236,6 +237,7 @@ describe("SearchPage", () => {
 	});
 
 	it("labels N2 reading results and opens them in the N2 reading module", async () => {
+		await bootReadingSearch();
 		const user = userEvent.setup();
 		const seen: string[] = [];
 		setNavImpl((key) => seen.push(key));
