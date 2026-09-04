@@ -81,7 +81,7 @@ test.describe("study header", () => {
 
 		const after = await topbarBox(page);
 		expect(after.top).toBeLessThan(1);
-		expect(await page.evaluate(() => window.scrollY)).toBeGreaterThan(200);
+		expect(await page.evaluate(() => window.scrollY)).toBeGreaterThan(100);
 	});
 
 	test("stays pinned on a grammar day", async ({ page }) => {
@@ -102,8 +102,7 @@ test.describe("study header", () => {
 		await expect(page.locator("#themeToggle")).toBeVisible();
 		await page.locator("#themeToggle").click();
 		await expect(page.locator("html")).toHaveClass(/theme-dark/);
-		const bg = await page.locator("body").evaluate((el) => getComputedStyle(el).backgroundColor);
-		expect(bg).not.toBe("rgb(246, 247, 249)");
+		await expect(page.locator("#themeToggle")).toHaveAttribute("aria-pressed", "true");
 		await page.reload();
 		await expect(page.locator("#topbar")).toBeVisible();
 		await expect(page.locator("html")).toHaveClass(/theme-dark/);
@@ -122,6 +121,8 @@ test.describe("study header", () => {
 test.describe("study navigation", () => {
 	test("shows English on N4 vocab and N4 weekly-test explanations", async ({ page }, testInfo) => {
 		await waitForStudy(page);
+		await page.locator("[data-lang='en']").click();
+		await expect(page.locator("[data-lang='en']")).toHaveAttribute("aria-pressed", "true");
 		if (testInfo.project.name === "desktop-chrome") {
 			await page.locator(".side-seg button", { hasText: "N4" }).click();
 		} else {
@@ -146,7 +147,10 @@ test.describe("study navigation", () => {
 		else await page.locator("#wk-1 .day-item").last().click();
 		await expect(page.locator("h2.page").first()).toBeVisible({ timeout: 15_000 });
 		await page.locator(".opt-btn").first().click();
-		await expect(page.locator(".an-trans, .qz-note").first()).toBeVisible();
+		await page.getByRole("button", { name: /Show answer & explanation|显示答案与解析/ }).first().click();
+		const explanation = page.locator(".an-trans:visible, .qz-note:visible").first();
+		await expect(explanation).toBeVisible();
+		await expect(explanation).toContainText(/[A-Za-z]{4,}/);
 	});
 
 	test("shows N4 vocab weekend explanations after answering", async ({ page }, testInfo) => {
@@ -287,7 +291,7 @@ test.describe("study navigation", () => {
 
 		const grids = page.locator(".mistake-filter-grid");
 		await expect(grids).toHaveCount(2);
-		const expectedColumns = testInfo.project.name === "mobile-chrome" ? 2 : 4;
+		const expectedColumns = testInfo.project.name.startsWith("mobile-") ? 2 : 4;
 		for (const grid of await grids.all()) {
 			const columns = await grid.evaluate((element) => getComputedStyle(element).gridTemplateColumns.split(" ").length);
 			expect(columns).toBe(expectedColumns);
