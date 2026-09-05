@@ -1,6 +1,7 @@
 import { createRequestHandler } from "react-router";
 
 import { isAudioAssetRequest, serveAudioAsset } from "./audio-range";
+import { applySecurityHeaders } from "./security-headers";
 
 declare module "react-router" {
 	export interface AppLoadContext {
@@ -17,10 +18,13 @@ const requestHandler = createRequestHandler(
 );
 
 export default {
-	fetch(request, env, ctx) {
-		if (isAudioAssetRequest(request)) return serveAudioAsset(request, env.ASSETS);
-		return requestHandler(request, {
-			cloudflare: { env, ctx },
-		});
+	async fetch(request, env, ctx) {
+		const response = isAudioAssetRequest(request)
+			? await serveAudioAsset(request, env.ASSETS)
+			: await requestHandler(request, {
+					cloudflare: { env, ctx },
+				});
+
+		return applySecurityHeaders(response);
 	},
 } satisfies ExportedHandler<Env>;
