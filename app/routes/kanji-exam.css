@@ -79,9 +79,6 @@
 .kanji-exam-history__wrong-item>span{color:var(--sub);font-size:11px}
 .kanji-exam-history__wrong del{color:var(--red)}
 .kanji-exam-history__wrong-item>span>b{color:var(--green);font-size:13px}
-.kanji-exam-import-note{margin:16px 2px 0;padding:13px 16px;border:1px dashed var(--line);border-radius:12px;background:var(--card);color:var(--sub);font-size:13px}
-.kanji-exam-import-note summary{color:var(--ink);font-weight:700;cursor:pointer}
-.kanji-exam-import-note p{margin:9px 0 0;line-height:1.7}
 
 .kanji-exam-toolbar{position:sticky;top:var(--topbarh,50px);z-index:17;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:12px;margin:-18px -20px 18px;padding:9px 20px;border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--bg) 90%,transparent);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
 .kanji-exam-toolbar button{padding:6px 10px;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--blue);font-size:12px;font-weight:700;cursor:pointer}

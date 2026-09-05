@@ -49,6 +49,8 @@ assert.equal(dayCount, 36, "expected all 36 N3 daily grammar exercise pages");
 assert.equal(itemCount, 250, "expected all 250 N3 daily grammar questions");
 assert.match(explanations.w2d1.items[3].translation, /^林同学/, "リンさん must not be mistranslated as 小林");
 assert.match(explanations.w6d6.items[0].translation, /ID 编号/, "ID番号 must stay generic");
+assert.deepEqual(explanations.w4d2.items[4].pointIndexes, [3], "w4d2 #5 must link to Nに＋かわって／かわり");
+assert.match(grammar.weeks[3].days[1].points[3].connection, /かわって／かわり/, "w4d2 p3 must expose the tested にかわり form");
 assert.match(store, /n3-grammar-daily-explanations\.json/, "runtime must load the generated explanations");
 assert.match(days, /DailyExercisePanels/, "runtime must render the daily translation and analysis controls");
 assert.match(days, /MODULE === "n2grammar" \? G2 : MODULE === "n4grammar" \? G4 : G/, "each level must read its own daily_explanations book");

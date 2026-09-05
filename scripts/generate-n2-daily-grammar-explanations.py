@@ -59,6 +59,18 @@ def complete_choice(q: str, answer: str) -> str:
     return result
 
 
+def complete_numbered_choice(q: str, answer: str, options: list[str]) -> str:
+    """Fill ordinary 1-4 choice blanks so the explanation shows a complete sentence."""
+    match = re.search(r"[1-4]", answer)
+    if not match:
+        return q
+    index = int(match.group(0)) - 1
+    if index >= len(options):
+        return q
+    selected = re.sub(r"^\s*[1-4]\s*", "", str(options[index])).strip()
+    return CHOICE4_RE.sub(selected, q)
+
+
 def guess_point_indexes(day: dict, n: int, q: str, answer: str) -> list[int]:
     points = day.get("points") or []
     if not points:
@@ -118,7 +130,11 @@ def build_day(path: Path) -> dict | None:
                 )
             else:
                 pairs = pairs_in(qtext)
-                completed = complete_choice(qtext, ans) if pairs else qtext
+                completed = (
+                    complete_choice(qtext, ans)
+                    if pairs
+                    else complete_numbered_choice(qtext, ans, it.get("options") or [])
+                )
                 entry = {
                     "n": n,
                     "type": "choice",

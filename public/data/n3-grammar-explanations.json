@@ -241,7 +241,7 @@
 				"option_translations_en": [
 					"Like... (attributive form)",
 					"Like... (adverbial form)",
-					"The one that is like... (does not fit grammatically here)",
+					"A nominalized 'one that looks like ...'; it cannot directly modify the following noun",
 					"Like... (colloquial of 「みたいに」)"
 				],
 				"why_en": [
@@ -4167,8 +4167,8 @@
 				],
 				"why_en": [
 					"「に対して」 means 'toward' (indicating a target), and cannot express comparison",
-					"「について」 means 'about' (indicating a topic), which does not fit here",
-					"「代わって」 means 'instead of,' which does not make sense here",
+					"「について」 introduces a topic ('about'), but this sentence compares two groups",
+					"「代わって」 means 'in place of,' but no person or thing is being replaced in this comparison",
 					"「くらべて」 means 'compared with.' The pattern 「AにくらべてB」 = 'compared with A, B...' — correct"
 				]
 			},
@@ -4299,7 +4299,7 @@
 				"why_en": [
 					"「まるで」 means 'just like / as if,' which does not pair with 「とは限らない」",
 					"「必ずしも～とは限らない」 = 'not necessarily...' — a fixed collocation. Correct",
-					"Requires pairing with 「ても」; does not fit here",
+					"「たとえ」 requires a concessive ending such as 「ても」, not 「とは限らない」",
 					"「もしかすると」 means 'maybe,' which does not pair with 「とは限らない」"
 				]
 			},
@@ -4668,9 +4668,9 @@
 				],
 				"why_en": [
 					"「たとえ～でも」 = 'even if...'. Correct",
-					"Requires pairing with the negative 「とは限らない」; does not fit here",
-					"「つまり」 means 'in other words,' which does not make sense",
-					"「もしかすると」 means 'maybe,' which does not fit the tone"
+					"「必ずしも」 requires a partial negative such as 「とは限らない」, not the following 「ても」 clause",
+					"「つまり」 restates a conclusion, whereas the sentence introduces a hypothetical concession",
+					"「もしかすると」 marks an uncertain guess, whereas the sentence uses the concessive pattern 「たとえ～ても」"
 				]
 			},
 			{
@@ -4805,15 +4805,15 @@
 				],
 				"trans_en": "Are you leaving already? I wish you would stay a little longer.",
 				"option_translations_en": [
-					"Good thing (nominalization, does not fit grammatically here)",
+					"A good thing (noun phrase)",
 					"Maybe not bad",
-					"Was good / originally good (does not fit grammatically here)",
+					"Was good / would have been good",
 					"If only... had / it would be nice if..."
 				],
 				"why_en": [
-					"Grammatically incorrect (improper nominalization)",
-					"'Maybe it would be nice' — the tone does not match the preceding 「ば」",
-					"Grammatically incorrect",
+					"「いいこと」 is a noun phrase and cannot complete the fixed wish pattern after 「～ば」",
+					"'Maybe it would be nice' does not form the fixed 「～ばいいのに」 expression",
+					"The past form 「よかった」 cannot follow 「～ば」 to form this wish expression",
 					"「～ばいいのに」 = 'if only... (expressing regret or a wish).' Correct"
 				]
 			},

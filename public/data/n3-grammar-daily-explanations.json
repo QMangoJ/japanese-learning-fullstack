@@ -125,7 +125,7 @@
 				"words": [
 					{
 						"jp": "今日",
-						"kana": "こんにち",
+						"kana": "きょう",
 						"cn": "今天",
 						"en": "today"
 					},
@@ -330,7 +330,7 @@
 					},
 					{
 						"jp": "今日",
-						"kana": "こんにち",
+						"kana": "きょう",
 						"cn": "今天",
 						"en": "today"
 					},
@@ -3306,7 +3306,7 @@
 				"type": "choice",
 				"answer": "a",
 				"completed": "ビデオにかわりDVDが使われるようになった。",
-				"translation": "DVD 逐渐取代录像带，变得普遍使用。",
+				"translation": "DVD 取代录像带，开始得到使用。",
 				"pointIndexes": [
 					3
 				],
@@ -3929,7 +3929,7 @@
 					},
 					{
 						"jp": "今日",
-						"kana": "こんにち",
+						"kana": "きょう",
 						"cn": "今天",
 						"en": "today"
 					},
@@ -3975,20 +3975,7 @@
 					}
 				],
 				"translation_en": "Although I want to quit my job, I cannot, because I have a mortgage. (loan)",
-				"words": [
-					{
-						"jp": "仕事",
-						"kana": "しごと",
-						"cn": "工作",
-						"en": "work"
-					},
-					{
-						"jp": "家",
-						"kana": "いえ",
-						"cn": "家",
-						"en": "house"
-					}
-				]
+				"words": []
 			},
 			{
 				"n": 5,

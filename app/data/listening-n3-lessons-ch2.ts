@@ -152,7 +152,7 @@ export const chapter2Lessons: readonly ListeningLesson[] = [
 				en: "Quickly skim over the illustration and words printed on the sheet!",
 				cn: "应迅速看清试卷上的插图及文字！",
 			},
-			{ type: "p", jp: "問題用紙に選択肢がイラストか文字で印刷されています。", cn: "黑板是短的，所以马上就能读完。" },
+			{ type: "p", jp: "問題用紙に選択肢がイラストか文字で印刷されています。", cn: "试卷上印有答案选项的插图或文字。" },
 			{ type: "steps", label: "出题结构", items: ["听说明部分和提问", "听对话内容", "再听一遍提问", "选择答案"] },
 			{ type: "h", jp: "練習", cn: "例题　CD 1 · 27" },
 			{ type: "p", jp: "① 听之前看一遍选项。" },
