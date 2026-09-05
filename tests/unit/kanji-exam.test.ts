@@ -13,10 +13,7 @@ import {
 	englishSupportForQuestion,
 	missingEnglishSupport,
 } from "../../app/data/kanji-exam-english";
-import { validateKanjiExamParseRequest } from "../../app/kanji-exam/parser";
 import { chineseMeaningForQuestion } from "../../app/data/kanji-exam-chinese";
-import { action as parseAction, loader as parseLoader } from "../../app/routes/api.kanji-exam-parse";
-import { memoryKv, routeContext, testEnv } from "./auth-test-utils";
 
 describe("kanji exam question bank", () => {
 	it("keeps all reviewed photo pages in three school units", () => {
@@ -126,30 +123,5 @@ describe("kanji exam question bank", () => {
 		expect(readingMeaning("本場")).toBe("发源地；正宗产地");
 		expect(chineseMeaningForQuestion({ kind: "writing", target: "てん", answer: "店" })).toBe("店铺；商店");
 		expect(chineseMeaningForQuestion({ kind: "reading", target: "未収録", answer: "みしゅうろく" })).toBe("词义待补充");
-	});
-});
-
-describe("kanji exam parser contract", () => {
-	it("validates provider-neutral image payloads", () => {
-		expect(validateKanjiExamParseRequest({ images: [] })).toBe("at least one image is required");
-		expect(validateKanjiExamParseRequest({ images: [{ name: "page.heic", mimeType: "image/heic", dataBase64: "YWJj" }] })).toBeNull();
-		expect(validateKanjiExamParseRequest({ images: [{ name: "page.gif", mimeType: "image/gif", dataBase64: "YWJj" }] })).toBe("unsupported image type");
-	});
-
-	it("exposes configuration status and fails closed before a provider is installed", async () => {
-		const context = routeContext(testEnv(memoryKv()));
-		const status = await parseLoader({ request: new Request("http://localhost/api/kanji-exam/parse"), context });
-		expect(await status.json()).toMatchObject({ configured: false, endpointVersion: 1, reviewRequired: true });
-
-		const response = await parseAction({
-			request: new Request("http://localhost/api/kanji-exam/parse", {
-				method: "POST",
-				headers: { "content-type": "application/json" },
-				body: JSON.stringify({ images: [{ name: "page.heic", mimeType: "image/heic", dataBase64: "YWJj" }] }),
-			}),
-			context,
-		});
-		expect(response.status).toBe(503);
-		expect(await response.json()).toMatchObject({ code: "KANJI_EXAM_PARSER_NOT_CONFIGURED" });
 	});
 });

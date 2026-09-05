@@ -252,15 +252,11 @@ def main():
     translations = {**translation_cache, **LocalTranslator().translate_many(pending)}
     output = {f"w{week}": {"mondai1": [], "mondai2": [], "mondai3": []} for week in range(1, 7)}
     for week, section, source_answer, item, completed, option_values, source, words in records:
-        correct = source_answer.get("ans", 1)
         option_translations = [OPTION_TRANSLATION_OVERRIDES.get(value, translations.get(value, "")) for value in option_values]
-        why = []
-        for index, translated in enumerate(option_translations, 1):
-            option = option_values[index - 1]
-            if index == correct:
-                why.append(f"「{option}」意为“{translated}”，代入后符合「{source['label']}」的接续与本句语境。")
-            else:
-                why.append(f"「{option}」意为“{translated}”，但此处考查「{source['label']}」，代入后的接续或语义不成立。")
+        # Do not manufacture generic “does not fit the context” explanations.
+        # Curated, question-specific reasons are kept when present; otherwise
+        # the UI should show no reason rather than an unhelpful stock sentence.
+        why = [""] * len(option_translations)
         entry = dict(source_answer)
         entry.update({
             "trans": source_answer.get("trans") or translations.get(completed, ""),

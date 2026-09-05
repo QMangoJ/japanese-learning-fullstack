@@ -76,6 +76,7 @@
 		"test:n4-daily": "node scripts/check-n4-daily-explanations.mjs",
 		"test:n4-vk-exam": "node scripts/check-n4-vk-exam-explanations.mjs",
 		"test:n3-vk-exam": "node scripts/check-n3-vk-exam-explanations.mjs",
+		"test:semantic-content": "node scripts/check-semantic-content.mjs",
 		"test:n2-grammar-english": "node scripts/check-n2-grammar-english.mjs",
 		"test:vocab-kanji-daily": "node scripts/check-n3-vocab-kanji-daily-translations.mjs",
 		"test:vocab-english": "node scripts/check-n3-n4-vocab-english.mjs",

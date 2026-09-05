@@ -195,6 +195,19 @@ test.describe("study navigation", () => {
 		await expect(page.locator(".ex .en").first()).toBeVisible();
 	});
 
+	test("links N3 week 4 day 2 question 5 to Nにかわって／かわり", async ({ page }) => {
+		await waitForStudy(page);
+		await page.goto("/study/day/4-2");
+		const question = page.locator(".daily-q").filter({ hasText: "ビデオ" });
+		await expect(question).toContainText("DVD", { timeout: 15_000 });
+		await question.getByRole("button", { name: /显示答案与解析|Show answer & explanation/ }).click();
+		const grammarPoint = question.locator(".daily-point-ref");
+		await expect(grammarPoint).toContainText(/部長にかわって|代替.*取代/);
+		await grammarPoint.click();
+		await expect(page).toHaveURL(/\/study\/day\/4-2\/p3$/);
+		await expect(page.locator("#pt-4-2-3")).toBeVisible();
+	});
+
 	test("shows sentence translations on N2 vocab daily exercises", async ({ page }) => {
 		await waitForStudy(page);
 		const sideN2 = page.locator("#side .side-seg button", { hasText: /^N2$/ });

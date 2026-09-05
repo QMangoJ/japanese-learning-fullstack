@@ -351,10 +351,6 @@ export function KanjiExamPage() {
 					</section>
 				) : null}
 
-				<details className="kanji-exam-import-note">
-					<summary>{lx("以后如何加入新照片？", "How will new photos be added?")}</summary>
-					<p>{lx("图片解析接口已经按服务商无关的格式预留。以后可以接 Gemini 等视觉 API 自动生成待校对题库，也可以继续把照片发给我，由我识别、校对后随版本发布。", "A provider-neutral image parsing endpoint is reserved. It can later connect to Gemini or another vision API, or the photos can be reviewed manually and published with the site.")}</p>
-				</details>
 			</div>
 		);
 	}

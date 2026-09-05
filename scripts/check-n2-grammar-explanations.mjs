@@ -37,14 +37,18 @@ let dailyCount = 0;
 for (const week of grammar.weeks || []) {
 	for (const day of week.days || []) {
 		if (day.day === 7) continue;
-		const expected = (day.exercises?.sections || []).reduce((sum, section) => sum + (section.items || []).length, 0);
+		const sourceItems = (day.exercises?.sections || []).flatMap((section) => section.items || []);
+		const expected = sourceItems.length;
 		const pack = daily[`w${week.n}d${day.day}`];
 		assert.ok(pack, `missing daily pack w${week.n}d${day.day}`);
 		assert.equal(pack.items.length, expected, `w${week.n}d${day.day}: count mismatch`);
-		for (const item of pack.items) {
+		for (const [index, item] of pack.items.entries()) {
 			assert.ok(item.answer, `w${week.n}d${day.day} #${item.n}: missing answer`);
 			assert.ok(item.translation, `w${week.n}d${day.day} #${item.n}: missing Chinese`);
 			assert.ok(item.translation_en, `w${week.n}d${day.day} #${item.n}: missing English`);
+			if (sourceItems[index]?.options?.length) {
+				assert.ok(!/[（(]\s*[　 ]*\s*[）)]/.test(item.completed), `w${week.n}d${day.day} #${item.n}: unresolved numbered-choice blank`);
+			}
 		}
 		dailyCount += pack.items.length;
 	}
@@ -52,6 +56,19 @@ for (const week of grammar.weeks || []) {
 
 assert.equal(examCount, 200, "expected 25 questions × 8 weeks");
 assert.equal(dailyCount, 338, "expected 338 daily items");
+assert.match(daily.w4d2.items[0].translation, /会议.*书面/, "w4d2 #1 translation must match the meeting report sentence");
+assert.match(daily.w4d3.items[0].translation, /人身事故/, "w4d3 #1 translation must match the train disruption sentence");
+assert.match(daily.w4d4.items[0].translation, /作业/, "w4d4 #1 translation must match the homework sentence");
+assert.match(daily.w4d5.items[0].translation, /承诺/, "w4d5 #1 translation must match the promise sentence");
+assert.match(daily.w4d6.items[2].translation, /电影.*试映/, "w4d6 #3 translation must match the film preview sentence");
+assert.match(daily.w5d1.items[0].translation, /驾驶.*事故/, "w5d1 #1 translation must match the driving sentence");
+assert.match(daily.w5d2.items[0].translation, /会议/, "w5d2 #1 translation must match the meeting sentence");
+assert.match(daily.w5d3.items[0].translation, /小偷/, "w5d3 #1 translation must match the burglar sentence");
+assert.match(daily.w5d4.items[0].translation, /家具/, "w5d4 #1 translation must match the furniture sentence");
+assert.match(daily.w5d5.items[0].translation, /交通.*公司/, "w5d5 #1 translation must match the transportation sentence");
+assert.match(daily.w5d6.items[0].translation, /节目.*意见/, "w5d6 #1 translation must match the program sentence");
+assert.match(daily.w6d1.items[0].translation, /入学.*毕业/, "w6d1 #1 translation must match the enrollment sentence");
+assert.match(daily.w6d2.items[0].translation, /笑.*母亲/, "w6d2 #1 translation must match the resemblance sentence");
 assert.match(store, /n2-grammar-explanations\.json/, "runtime must load N2 exam explanations");
 assert.match(store, /n2-grammar-daily-explanations\.json/, "runtime must load N2 daily explanations");
 assert.match(days, /MODULE === "n2grammar"/, "N2 pages must use the explanation overlay");

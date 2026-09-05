@@ -50,6 +50,7 @@ jobs:
           npm run test:n2-vk-exam
           npm run test:n2-vocab-kanji-daily
           npm run test:n2-grammar-english
+          npm run test:semantic-content
 
       - name: Production build
         run: npx react-router build

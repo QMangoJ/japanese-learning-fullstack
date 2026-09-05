@@ -311,7 +311,7 @@
 				"words": [
 					{
 						"jp": "今日",
-						"kana": "こんにち",
+						"kana": "きょう",
 						"cn": "今天",
 						"en": "today"
 					}
@@ -3213,8 +3213,8 @@
 				"type": "choice",
 				"answer": "b",
 				"completed": "先日の会議の内容は、のちほど書面にてご報告する次第です。",
-				"translation": "一到家请马上联系。",
-				"translation_en": "Please contact me as soon as you get home.",
+				"translation": "关于前几天会议的内容，稍后将以书面形式报告。",
+				"translation_en": "I will report the contents of the recent meeting in writing later.",
 				"pointIndexes": [
 					0
 				],
@@ -3262,8 +3262,8 @@
 				"type": "choice",
 				"answer": "a",
 				"completed": "難しい問題も、考え方次第で簡単になる。",
-				"translation": "幸福与否取决于想法。",
-				"translation_en": "Happiness depends on how you think.",
+				"translation": "再难的问题，也会因思考方式不同而变得简单。",
+				"translation_en": "Even a difficult problem can become easy depending on how you approach it.",
 				"pointIndexes": [
 					1
 				],
@@ -3299,8 +3299,8 @@
 				"type": "choice",
 				"answer": "a",
 				"completed": "わかり次第、お知らせします。",
-				"translation": "请一准备好就出发。",
-				"translation_en": "Please leave as soon as you're ready.",
+				"translation": "一旦弄清楚，就通知您。",
+				"translation_en": "I will let you know as soon as I find out.",
 				"pointIndexes": [
 					2
 				],
@@ -3324,8 +3324,8 @@
 				"type": "choice",
 				"answer": "a",
 				"completed": "これは留学生向けに書かれた本です。",
-				"translation": "成绩好不好全看平时努不努力。",
-				"translation_en": "Whether your grades are good depends on everyday effort.",
+				"translation": "这是一本面向留学生编写的书。",
+				"translation_en": "This book was written for international students.",
 				"pointIndexes": [
 					3
 				],
@@ -3355,8 +3355,8 @@
 				"type": "choice",
 				"answer": "a",
 				"completed": "天気が回復し次第、試合を再開する。",
-				"translation": "资料一到手就交给你。",
-				"translation_en": "I'll give you the materials as soon as I get them.",
+				"translation": "天气一恢复，就重新开始比赛。",
+				"translation_en": "The match will resume as soon as the weather improves.",
 				"pointIndexes": [
 					3
 				],
@@ -3398,8 +3398,8 @@
 				"type": "order",
 				"answer": "1→3→4→2",
 				"completed": "このような 事情から 利用規則を 改正 する 次第です。",
-				"translation": "成功与否取决于准备是否充分。",
-				"translation_en": "Success depends on whether the preparation is thorough.",
+				"translation": "鉴于上述情况，我们决定修改使用规则。",
+				"translation_en": "For these reasons, we are revising the rules of use.",
 				"pointIndexes": [
 					3
 				],
@@ -3417,8 +3417,8 @@
 				"type": "order",
 				"answer": "2→1→4→3",
 				"completed": "このアパートは女性対象というわけではないが、どちらか といえば 女性 向き だ。",
-				"translation": "请客人一到就通知我。",
-				"translation_en": "Please tell me as soon as the guest arrives.",
+				"translation": "这套公寓并非只面向女性，不过总体来说更适合女性。",
+				"translation_en": "This apartment building is not exclusively for women, but it is better suited to women, if anything.",
 				"pointIndexes": [
 					3
 				],
@@ -3446,8 +3446,8 @@
 				"type": "choice",
 				"answer": "b",
 				"completed": "今朝の人身事故によりダイヤが乱れております。",
-				"translation": "他一边工作一边上夜校。",
-				"translation_en": "He goes to night school while working.",
+				"translation": "由于今早发生人身事故，列车运行时刻出现了混乱。",
+				"translation_en": "Train services have been disrupted due to a personal-injury accident this morning.",
 				"pointIndexes": [
 					0
 				],
@@ -3471,8 +3471,8 @@
 				"type": "choice",
 				"answer": "a",
 				"completed": "国民の政治に対する不満は年々高まっている。",
-				"translation": "虽说便宜，质量却不好。",
-				"translation_en": "It's cheap, but the quality isn't good.",
+				"translation": "国民对政治的不满逐年加深。",
+				"translation_en": "Public dissatisfaction with politics is increasing year by year.",
 				"pointIndexes": [
 					1
 				],
@@ -3508,8 +3508,8 @@
 				"type": "choice",
 				"answer": "a",
 				"completed": "人々の期待にこたえて、その選手は金メダルをとった。",
-				"translation": "请注意不要忘东西。",
-				"translation_en": "Please be careful not to leave things behind.",
+				"translation": "不负众望，那名选手获得了金牌。",
+				"translation_en": "The athlete lived up to people's expectations and won a gold medal.",
 				"pointIndexes": [
 					2
 				],
@@ -3533,8 +3533,8 @@
 				"type": "choice",
 				"answer": "a",
 				"completed": "子どもが減っているのに対して、老人が増えている。",
-				"translation": "日本的传统正在逐渐消失。",
-				"translation_en": "Japan's traditions are gradually disappearing.",
+				"translation": "与儿童人数减少相对，老年人数正在增加。",
+				"translation_en": "While the number of children is decreasing, the number of elderly people is increasing.",
 				"pointIndexes": [
 					3
 				],
@@ -3564,8 +3564,8 @@
 				"type": "choice",
 				"answer": "b",
 				"completed": "患者さんのプライバシーに関わる質問にはお答えできません。",
-				"translation": "他说着“知道了”，却没做。",
-				"translation_en": "He said “I understand,” yet didn't do it.",
+				"translation": "对于涉及患者隐私的问题，我们无法回答。",
+				"translation_en": "We cannot answer questions concerning a patient's privacy.",
 				"pointIndexes": [
 					3
 				],
@@ -3595,8 +3595,8 @@
 				"type": "order",
 				"answer": "2→4→3→1",
 				"completed": "彼が何らかの形でその事件と 関わって いるのでは ないか という 疑いが持たれている。",
-				"translation": "一边说难，一边还是做完了。",
-				"translation_en": "He complained it was hard, yet finished it.",
+				"translation": "有人怀疑他可能以某种形式牵涉了那起事件。",
+				"translation_en": "It is suspected that he may have been involved in the incident in some way.",
 				"pointIndexes": [
 					3
 				],
@@ -3626,8 +3626,8 @@
 				"type": "order",
 				"answer": "2→3→1→4",
 				"completed": "このコースの成績は出席、宿題、各課の試験と 最終試験 によって 総合的に 評価 されます。",
-				"translation": "问题正在一点点解决。",
-				"translation_en": "The problem is gradually being solved.",
+				"translation": "本课程的成绩将根据出勤、作业、各课考试和期末考试进行综合评定。",
+				"translation_en": "Grades for this course are assessed comprehensively based on attendance, homework, unit tests, and the final exam.",
 				"pointIndexes": [
 					3
 				],
@@ -3667,8 +3667,8 @@
 				"type": "choice",
 				"answer": "〇",
 				"completed": "宿題をしようと思いながら、まだしていない。（　）",
-				"translation": "请沿着这条线剪。",
-				"translation_en": "Please cut along this line.",
+				"translation": "虽然一直想着要做作业，但到现在还没做。",
+				"translation_en": "Although I keep meaning to do my homework, I still have not done it.",
 				"pointIndexes": [
 					0
 				],
@@ -3686,8 +3686,8 @@
 				"type": "choice",
 				"answer": "〇",
 				"completed": "天気は回復に向かいつつある。（　）",
-				"translation": "会议持续了三天。",
-				"translation_en": "The conference lasted three days.",
+				"translation": "天气正在逐渐好转。",
+				"translation_en": "The weather is gradually improving.",
 				"pointIndexes": [
 					1
 				],
@@ -3711,8 +3711,8 @@
 				"type": "choice",
 				"answer": "×（行ったながら→行きながら／行ったけれど（も）／行ったが",
 				"completed": "買い物に行ったながら、高くて買えなかった。（　）",
-				"translation": "请按照说明书操作。",
-				"translation_en": "Please operate it according to the manual.",
+				"translation": "虽然去买东西了，但因为太贵而没能买。",
+				"translation_en": "Although I went shopping, I could not buy it because it was too expensive.",
 				"pointIndexes": [
 					2
 				],
@@ -3723,8 +3723,8 @@
 				"type": "choice",
 				"answer": "×（日本人くせして→日本人のくせして）",
 				"completed": "日本人くせして、日本語を間違えちゃだめだよ。（　）",
-				"translation": "这项研究跨越了好几个领域。",
-				"translation_en": "This research spans several fields.",
+				"translation": "身为日本人，可不能弄错日语啊。",
+				"translation_en": "You are Japanese, so you should not make mistakes in Japanese.",
 				"pointIndexes": [
 					3
 				],
@@ -3748,8 +3748,8 @@
 				"type": "choice",
 				"answer": "〇",
 				"completed": "相手チームのプレーは、敵ながらすばらしい。（　）",
-				"translation": "请顺着河边走。",
-				"translation_en": "Please walk along the river.",
+				"translation": "对方队伍的表现，虽是对手也不得不说很精彩。",
+				"translation_en": "The opposing team's play was excellent, even though they were our opponents.",
 				"pointIndexes": [
 					3
 				],
@@ -3767,8 +3767,8 @@
 				"type": "order",
 				"answer": "3→1→2→4",
 				"completed": "政治の情勢を 見守り つつ 事業の 拡大を 計画しよう。",
-				"translation": "调查进行了长达一年。",
-				"translation_en": "The survey was carried out over a whole year.",
+				"translation": "我们一边关注政治形势，一边规划扩大业务吧。",
+				"translation_en": "Let us plan the expansion of the business while monitoring the political situation.",
 				"pointIndexes": [
 					3
 				],
@@ -3798,8 +3798,8 @@
 				"type": "order",
 				"answer": "2→4→3→1",
 				"completed": "今度引っ越す家には 小さい ながらも 庭と 呼べる ものがあります。",
-				"translation": "计划是按照预算制定的。",
-				"translation_en": "The plan was drawn up in line with the budget.",
+				"translation": "这次要搬去的房子虽然小，却也有一块称得上院子的地方。",
+				"translation_en": "The house we are moving to is small, but it has what could be called a garden.",
 				"pointIndexes": [
 					3
 				],
@@ -3827,8 +3827,8 @@
 				"type": "choice",
 				"answer": "a",
 				"completed": "約束は守らざるをえない。",
-				"translation": "值此开学之际，请确认注意事项。",
-				"translation_en": "Please check the notes as the term begins.",
+				"translation": "承诺必须遵守。",
+				"translation_en": "A promise must be kept.",
 				"pointIndexes": [
 					0
 				],
@@ -3852,8 +3852,8 @@
 				"type": "choice",
 				"answer": "b",
 				"completed": "その計画は不可能だと言わざるをえない。",
-				"translation": "开会前先发了资料。",
-				"translation_en": "Materials were handed out before the meeting.",
+				"translation": "不得不说那个计划无法实现。",
+				"translation_en": "I have to say that the plan is impossible.",
 				"pointIndexes": [
 					1
 				],
@@ -3883,8 +3883,8 @@
 				"type": "choice",
 				"answer": "b",
 				"completed": "彼の言うことは理想にすぎない。",
-				"translation": "在考试的时候请关掉手机。",
-				"translation_en": "Please turn off your phone during the exam.",
+				"translation": "他说的不过是理想罢了。",
+				"translation_en": "What he says is nothing more than an ideal.",
 				"pointIndexes": [
 					2
 				],
@@ -3908,8 +3908,8 @@
 				"type": "choice",
 				"answer": "a",
 				"completed": "試験用紙は持ち帰ってはいけないことになっている。",
-				"translation": "出发前请再检查一遍行李。",
-				"translation_en": "Please check your bags again before you leave.",
+				"translation": "规定考试卷不得带走。",
+				"translation_en": "The rules state that exam papers must not be taken home.",
 				"pointIndexes": [
 					3
 				],
@@ -3933,8 +3933,8 @@
 				"type": "choice",
 				"answer": "a",
 				"completed": "子どもの安全を考えれば、夜遅くまで外で遊ばせるべきではない。",
-				"translation": "不得不接受这个条件。",
-				"translation_en": "I have no choice but to accept this condition.",
+				"translation": "考虑到孩子的安全，不应该让孩子在外面玩到深夜。",
+				"translation_en": "Considering the child's safety, you should not let them play outside late at night.",
 				"pointIndexes": [
 					3
 				],
@@ -3951,8 +3951,8 @@
 				"type": "order",
 				"answer": "2→3→1→4",
 				"completed": "明日の会議は、第一会議室 で 行われる こと に なっています。",
-				"translation": "既然决定了，就只好去做。",
-				"translation_en": "Now that it's decided, we have to do it.",
+				"translation": "明天的会议安排在第一会议室举行。",
+				"translation_en": "Tomorrow's meeting is scheduled to be held in Conference Room 1.",
 				"pointIndexes": [
 					3
 				],
@@ -3976,8 +3976,8 @@
 				"type": "order",
 				"answer": "2→1→4→3",
 				"completed": "法律は 正しく ある べき だ と思います。",
-				"translation": "在开工之前举行了仪式。",
-				"translation_en": "A ceremony was held prior to starting construction.",
+				"translation": "我认为法律应当公正。",
+				"translation_en": "I believe laws should be just.",
 				"pointIndexes": [
 					3
 				],
@@ -3999,8 +3999,8 @@
 				"type": "choice",
 				"answer": "b",
 				"completed": "祭りは3日間にわたって続いた。",
-				"translation": "这是面向初学者的课本。",
-				"translation_en": "This is a textbook aimed at beginners.",
+				"translation": "祭典持续了三天。",
+				"translation_en": "The festival continued for three days.",
 				"pointIndexes": [
 					0
 				],
@@ -4017,8 +4017,8 @@
 				"type": "choice",
 				"answer": "a",
 				"completed": "会社の方針にそって、計画を立てます。",
-				"translation": "这不过是我的个人意见。",
-				"translation_en": "This is nothing more than my personal opinion.",
+				"translation": "我们按照公司的方针制订计划。",
+				"translation_en": "We make plans in accordance with company policy.",
 				"pointIndexes": [
 					1
 				],
@@ -4054,8 +4054,8 @@
 				"type": "choice",
 				"answer": "a",
 				"completed": "映画の公開にさきだち、試写会が行われた。※試写会＝preview",
-				"translation": "规定上课必须说日语。",
-				"translation_en": "The rule is that we must speak Japanese in class.",
+				"translation": "在电影公映之前，举行了试映会。",
+				"translation_en": "A preview screening was held before the film's release.",
 				"pointIndexes": [
 					2
 				],
@@ -4065,22 +4065,15 @@
 						"b": "わたり"
 					}
 				],
-				"words": [
-					{
-						"jp": "映画",
-						"kana": "えいが",
-						"cn": "电影",
-						"en": "movie"
-					}
-				]
+				"words": []
 			},
 			{
 				"n": 4,
 				"type": "choice",
 				"answer": "a",
 				"completed": "書類を書くにあたり、次の点に注意してください。",
-				"translation": "这个产品面向海外市场。",
-				"translation_en": "This product is aimed at overseas markets.",
+				"translation": "填写文件时，请注意以下几点。",
+				"translation_en": "When filling out the document, please note the following points.",
 				"pointIndexes": [
 					3
 				],
@@ -4122,8 +4115,8 @@
 				"type": "choice",
 				"answer": "b",
 				"completed": "その国との400年にわたる交流について調べる。",
-				"translation": "他不过是个孩子。",
-				"translation_en": "He's nothing more than a child.",
+				"translation": "调查与该国长达四百年的交流。",
+				"translation_en": "We are researching four hundred years of exchange with that country.",
 				"pointIndexes": [
 					3
 				],
@@ -4153,8 +4146,8 @@
 				"type": "order",
 				"answer": "3→2→4→1",
 				"completed": "論文を 書く にあたって 守る べき ルールがある。",
-				"translation": "按照规定，这里禁止吸烟。",
-				"translation_en": "By the rules, smoking is forbidden here.",
+				"translation": "撰写论文时，有一些必须遵守的规则。",
+				"translation_en": "There are rules that must be followed when writing a thesis.",
 				"pointIndexes": [
 					3
 				],
@@ -4172,8 +4165,8 @@
 				"type": "order",
 				"answer": "1→4→2→3",
 				"completed": "客の 希望 にそった 商品の 開発が 望まれる。",
-				"translation": "这件衣服是为儿童设计的。",
-				"translation_en": "This clothing is designed for children.",
+				"translation": "人们期待开发出符合顾客需求的商品。",
+				"translation_en": "The development of products that meet customers' wishes is desired.",
 				"pointIndexes": [
 					3
 				],
@@ -4195,8 +4188,8 @@
 				"type": "choice",
 				"answer": "b",
 				"completed": "休まずに長時間運転したら、事故を起こしかねない。",
-				"translation": "正因为是第一次，才更紧张。",
-				"translation_en": "I'm nervous precisely because it's the first time.",
+				"translation": "如果长时间连续驾驶而不休息，可能会引发事故。",
+				"translation_en": "Driving for a long time without a break could cause an accident.",
 				"pointIndexes": [
 					0
 				],
@@ -4220,8 +4213,8 @@
 				"type": "choice",
 				"answer": "b",
 				"completed": "その要求は、受け入れがたいものであった。",
-				"translation": "不亲眼看就不知道好不好。",
-				"translation_en": "You won't know if it's good unless you see it yourself.",
+				"translation": "那项要求令人难以接受。",
+				"translation_en": "That demand was difficult to accept.",
 				"pointIndexes": [
 					1
 				],
@@ -4245,8 +4238,8 @@
 				"type": "choice",
 				"answer": "b",
 				"completed": "放っておいたら、彼は自殺しかねなかった。",
-				"translation": "就因为他平时很认真，大家才相信他。",
-				"translation_en": "People trust him because they know how serious he usually is.",
+				"translation": "要是放任不管，他当时甚至可能会自杀。",
+				"translation_en": "If he had been left alone, he might even have taken his own life.",
 				"pointIndexes": [
 					2
 				],
@@ -4270,8 +4263,8 @@
 				"type": "choice",
 				"answer": "a",
 				"completed": "3歳の子どもにそんな難しいことを言っても、わかりっこないよ。",
-				"translation": "由于迟到了，没看成开头。",
-				"translation_en": "I missed the beginning because I was late.",
+				"translation": "就算对三岁的孩子说那么难的事，他也绝不可能明白。",
+				"translation_en": "A three-year-old could not possibly understand something that difficult.",
 				"pointIndexes": [
 					3
 				],
@@ -4288,8 +4281,8 @@
 				"type": "choice",
 				"answer": "a",
 				"completed": "ご予約金の返金はできかねます。",
-				"translation": "如果不下雨，比赛就举行。",
-				"translation_en": "The match will be held unless it rains.",
+				"translation": "预约金恕不退还。",
+				"translation_en": "We regret that we are unable to refund the reservation deposit.",
 				"pointIndexes": [
 					3
 				],
@@ -4319,8 +4312,8 @@
 				"type": "order",
 				"answer": "2→1→4→3",
 				"completed": "車内での携帯電話の使用は 乗客同士の トラブルの 原因とも なりかねない 。",
-				"translation": "就因为他是专家，这个失误才更严重。",
-				"translation_en": "The mistake is worse precisely because he's a specialist.",
+				"translation": "在车内使用手机也可能引发乘客之间的纠纷。",
+				"translation_en": "Using a mobile phone on the train could cause trouble between passengers.",
 				"pointIndexes": [
 					3
 				],
@@ -4338,8 +4331,8 @@
 				"type": "order",
 				"answer": "3→2→1→4",
 				"completed": "いつも うそばかり 言っている 君の話 なんか 信じられっこない。",
-				"translation": "不试一试就不知道能不能做。",
-				"translation_en": "You won't know if you can do it unless you try.",
+				"translation": "你总是满口谎话，我怎么可能相信你说的呢。",
+				"translation_en": "You are always telling lies, so there is no way I can believe you.",
 				"pointIndexes": [
 					3
 				],
@@ -4354,8 +4347,8 @@
 				"type": "choice",
 				"answer": "b",
 				"completed": "彼が来ないことには、会議を始められない。",
-				"translation": "就因为马虎，才出了这么大的错。",
-				"translation_en": "Such a big mistake happened just because I was careless.",
+				"translation": "他不来，会议就无法开始。",
+				"translation_en": "Unless he comes, we cannot start the meeting.",
 				"pointIndexes": [
 					0
 				],
@@ -4379,8 +4372,8 @@
 				"type": "choice",
 				"answer": "b",
 				"completed": "彼女のことだから、30分前には来ているはずだよ。",
-				"translation": "他不但会英语，法语也会。",
-				"translation_en": "He speaks not only English but French too.",
+				"translation": "以她的性格，应该会提前三十分钟到。",
+				"translation_en": "Knowing her, she should have arrived thirty minutes early.",
 				"pointIndexes": [
 					1
 				],
@@ -4397,8 +4390,8 @@
 				"type": "choice",
 				"answer": "b",
 				"completed": "教室で席がとなりだったことから、友人になった。",
-				"translation": "就因为说了实话，才被讨厌了。",
-				"translation_en": "I was disliked just because I told the truth.",
+				"translation": "因为在教室里的座位相邻，我们成了朋友。",
+				"translation_en": "We became friends because our seats in the classroom were next to each other.",
 				"pointIndexes": [
 					2
 				],
@@ -4428,8 +4421,8 @@
 				"type": "choice",
 				"answer": "a",
 				"completed": "この作業が終わらないことには、次の作業ができない。",
-				"translation": "别说道歉，连电话都没有。",
-				"translation_en": "Never mind an apology — there wasn't even a call.",
+				"translation": "这项工作不完成，就无法进行下一项工作。",
+				"translation_en": "Unless this task is finished, we cannot move on to the next one.",
 				"pointIndexes": [
 					3
 				],
@@ -4453,8 +4446,8 @@
 				"type": "choice",
 				"answer": "b",
 				"completed": "作品が認められるのを知ることなく、彼は死んだ。",
-				"translation": "就因为便宜，才买多了。",
-				"translation_en": "I bought too many just because they were cheap.",
+				"translation": "他没能得知自己的作品获得认可便去世了。",
+				"translation_en": "He died without ever knowing that his work had been recognized.",
 				"pointIndexes": [
 					3
 				],
@@ -4478,8 +4471,8 @@
 				"type": "order",
 				"answer": "4→1→2→3",
 				"completed": "毛の色が白い ことから シロという 名前が つけられる 犬や猫は多い。",
-				"translation": "她不但漂亮，性格也好。",
-				"translation_en": "She's not only pretty but also nice.",
+				"translation": "很多猫狗因为毛色是白的而被取名为“小白”。",
+				"translation_en": "Many dogs and cats are named Shiro because their fur is white.",
 				"pointIndexes": [
 					3
 				],
@@ -4515,8 +4508,8 @@
 				"type": "order",
 				"answer": "2→4→3→1",
 				"completed": "あなたが何を悩んでいるのか 言って くれない ことには 助け られない。",
-				"translation": "别说赢，连上场都没有。",
-				"translation_en": "Never mind winning — I didn't even get to play.",
+				"translation": "你不告诉我在烦恼什么，我就无法帮助你。",
+				"translation_en": "Unless you tell me what is troubling you, I cannot help you.",
 				"pointIndexes": [
 					3
 				],
@@ -4538,8 +4531,8 @@
 				"type": "choice",
 				"answer": "a",
 				"completed": "よその家の庭に勝手に入ってうろうろしていたら、どろぼうと間違われて当然だ。",
-				"translation": "根据能力安排工作。",
-				"translation_en": "Work is assigned according to ability.",
+				"translation": "擅自进入别人家的院子四处徘徊，被误认为小偷也是理所当然的。",
+				"translation_en": "If you wander around someone else's garden without permission, it is only natural to be mistaken for a burglar.",
 				"pointIndexes": [
 					0
 				],
@@ -4575,8 +4568,8 @@
 				"type": "choice",
 				"answer": "a",
 				"completed": "市民にとって役に立つことに税金を使ってほしいという声はもっともだ。",
-				"translation": "入学时请提交这份文件。",
-				"translation_en": "Please submit this form when you enroll.",
+				"translation": "希望税金用于对市民有益之事的意见，是很合理的。",
+				"translation_en": "It is perfectly reasonable to want tax money spent on things that benefit citizens.",
 				"pointIndexes": [
 					1
 				],
@@ -4612,8 +4605,8 @@
 				"type": "choice",
 				"answer": "a",
 				"completed": "田中さん一家とは親しくて、家族も同然のおつきあいをしています。",
-				"translation": "按预算选择旅行计划。",
-				"translation_en": "Choose a travel plan according to your budget.",
+				"translation": "我们和田中一家关系亲密，来往得就像一家人一样。",
+				"translation_en": "We are close to the Tanaka family and associate with them as though we were family.",
 				"pointIndexes": [
 					2
 				],
@@ -4649,8 +4642,8 @@
 				"type": "choice",
 				"answer": "a",
 				"completed": "ケガをしてから、普通はできて当たり前のことができない。",
-				"translation": "出发时请再确认一次时间。",
-				"translation_en": "Please check the time again when you leave.",
+				"translation": "受伤以后，连平时理所当然能做的事也做不了了。",
+				"translation_en": "Since being injured, I have been unable to do things I normally took for granted.",
 				"pointIndexes": [
 					3
 				],
@@ -4680,8 +4673,8 @@
 				"type": "choice",
 				"answer": "b",
 				"completed": "大学入試のころは雪の日が多い。今日は寒いけれど、雪が降らないだけましだ。",
-				"translation": "按需要增减分量。",
-				"translation_en": "Increase or decrease the amount according to need.",
+				"translation": "大学入学考试前后常常下雪。今天虽然冷，但至少没有下雪。",
+				"translation_en": "It often snows around the university entrance-exam season. Today is cold, but at least it is not snowing.",
 				"pointIndexes": [
 					3
 				],
@@ -4706,7 +4699,7 @@
 					},
 					{
 						"jp": "今日",
-						"kana": "こんにち",
+						"kana": "きょう",
 						"cn": "今天",
 						"en": "today"
 					}
@@ -4717,8 +4710,8 @@
 				"type": "order",
 				"answer": "4→2→3→1",
 				"completed": "今度のアルバイト、時給は安い けど 交通費が出る だけまし です。",
-				"translation": "合同签订时要带印章。",
-				"translation_en": "Bring your seal when the contract is signed.",
+				"translation": "这份兼职的时薪虽低，但至少会报销交通费。",
+				"translation_en": "This part-time job pays a low hourly wage, but at least it covers transportation expenses.",
 				"pointIndexes": [
 					3
 				],
@@ -4736,8 +4729,8 @@
 				"type": "order",
 				"answer": "2→4→3→1",
 				"completed": "A社の株価が暴落して、私の 持っていた 株券は 紙くず 同然に なってしまった。",
-				"translation": "根据季节改变菜单。",
-				"translation_en": "The menu changes according to the season.",
+				"translation": "A公司的股价暴跌，我持有的股票变得跟废纸没两样了。",
+				"translation_en": "Company A's share price collapsed, and the stock certificates I held became little more than scraps of paper.",
 				"pointIndexes": [
 					3
 				],
@@ -4752,8 +4745,8 @@
 				"type": "choice",
 				"answer": "b",
 				"completed": "この家具はデザインがいいばかりか丈夫だ。",
-				"translation": "到底是专家，解释得很清楚。",
-				"translation_en": "As you'd expect from a specialist, the explanation was clear.",
+				"translation": "这件家具不仅设计好，而且很结实。",
+				"translation_en": "This piece of furniture is not only well designed but also sturdy.",
 				"pointIndexes": [
 					0
 				],
@@ -4777,8 +4770,8 @@
 				"type": "choice",
 				"answer": "b",
 				"completed": "あの先生は教え方がうまいのみならず親切だ。",
-				"translation": "这份报告是根据调查结果写的。",
-				"translation_en": "This report is based on the survey results.",
+				"translation": "那位老师不仅教得好，而且很亲切。",
+				"translation_en": "That teacher is not only good at teaching but also kind.",
 				"pointIndexes": [
 					1
 				],
@@ -4802,8 +4795,8 @@
 				"type": "choice",
 				"answer": "b",
 				"completed": "仕事ができるばかりに、人の何倍も仕事を頼まれて困る。",
-				"translation": "不愧练了那么久，演奏很稳。",
-				"translation_en": "As you'd expect after so much practice, the performance was solid.",
+				"translation": "正因为工作能力强，别人把几倍于常人的工作都交给我，让我很为难。",
+				"translation_en": "Precisely because I am capable, I am asked to do several times as much work as others, which puts me in a difficult position.",
 				"pointIndexes": [
 					2
 				],
@@ -4833,8 +4826,8 @@
 				"type": "choice",
 				"answer": "a",
 				"completed": "彼は強いばかりでなく、心も優しい。",
-				"translation": "判断要依据事实。",
-				"translation_en": "Judgments should be based on facts.",
+				"translation": "他不仅强壮，内心也很温柔。",
+				"translation_en": "He is not only strong but also kind-hearted.",
 				"pointIndexes": [
 					3
 				],
@@ -4858,8 +4851,8 @@
 				"type": "choice",
 				"answer": "a",
 				"completed": "これはおいしい。並んで買っただけのことはある。",
-				"translation": "到底是名校毕业生，知识很广。",
-				"translation_en": "As you'd expect from a top-school graduate, their knowledge is broad.",
+				"translation": "这个真好吃，不枉排队买来。",
+				"translation_en": "This is delicious; it was worth waiting in line to buy it.",
 				"pointIndexes": [
 					3
 				],
@@ -4876,8 +4869,8 @@
 				"type": "order",
 				"answer": "2→4→1→3",
 				"completed": "たまたま そこを 通り かかった ばかりに 事故にあってしまった。",
-				"translation": "计划是以去年的数据为依据制定的。",
-				"translation_en": "The plan was made on the basis of last year's data.",
+				"translation": "只因偶然从那里经过，就遭遇了事故。",
+				"translation_en": "I happened to pass by there and got caught in an accident solely because of that.",
 				"pointIndexes": [
 					3
 				],
@@ -4895,8 +4888,8 @@
 				"type": "order",
 				"answer": "1→4→3→2",
 				"completed": "彼は文章表現が上手だ。新聞記者 だけ のことは ある 。",
-				"translation": "不愧是本地人，对这一带很熟。",
-				"translation_en": "As you'd expect from a local, they know the area well.",
+				"translation": "他很擅长文字表达，不愧是新闻记者。",
+				"translation_en": "He is skilled at written expression, as one would expect of a newspaper reporter.",
 				"pointIndexes": [
 					3
 				],
@@ -4911,8 +4904,8 @@
 				"type": "choice",
 				"answer": "a",
 				"completed": "交通機関がストップすると、会社へは行きようがない。",
-				"translation": "他的态度让人难以原谅。",
-				"translation_en": "His attitude is hard to forgive.",
+				"translation": "交通停运的话，就没有办法去公司。",
+				"translation_en": "If public transportation stops, there is no way to get to the office.",
 				"pointIndexes": [
 					0
 				],
@@ -4942,8 +4935,8 @@
 				"type": "choice",
 				"answer": "b",
 				"completed": "友達は自分が合格したかのように喜んでくれた。",
-				"translation": "绝不可能明天之前做完。",
-				"translation_en": "There's no way it will be done by tomorrow.",
+				"translation": "朋友高兴得仿佛是他自己考上了一样。",
+				"translation_en": "My friend was as pleased as if he had passed the exam himself.",
 				"pointIndexes": [
 					1
 				],
@@ -4979,8 +4972,8 @@
 				"type": "choice",
 				"answer": "b",
 				"completed": "もう一度話し合おうではないか。",
-				"translation": "那种要求我们难以接受。",
-				"translation_en": "We cannot readily accept that kind of request.",
+				"translation": "我们再商量一次吧。",
+				"translation_en": "Why don't we discuss it once more?",
 				"pointIndexes": [
 					2
 				],
@@ -5004,8 +4997,8 @@
 				"type": "choice",
 				"answer": "a",
 				"completed": "この仕事、まだ半分もできていないから、今日中には終わりそうにない。",
-				"translation": "那样下去很可能会失败。",
-				"translation_en": "At that rate it might well fail.",
+				"translation": "这项工作连一半都没完成，看来今天之内做不完。",
+				"translation_en": "This job is not even half finished, so it seems unlikely to be completed today.",
 				"pointIndexes": [
 					3
 				],
@@ -5035,8 +5028,8 @@
 				"type": "choice",
 				"answer": "b",
 				"completed": "彼は知らないことも、知っているかのように話す。",
-				"translation": "他说得像真的去过一样。",
-				"translation_en": "He talks as if he had really been there.",
+				"translation": "他连不知道的事也说得好像自己知道一样。",
+				"translation_en": "He talks even about things he does not know as though he knew them.",
 				"pointIndexes": [
 					3
 				],
@@ -5060,8 +5053,8 @@
 				"type": "order",
 				"answer": "2→4→1→3",
 				"completed": "雨の中を走ってきた彼女は 全身ずぶぬれで まるで 川で泳いできた かのよう だった。",
-				"translation": "这个字很难读。",
-				"translation_en": "This character is hard to read.",
+				"translation": "冒雨跑来的她全身湿透了，仿佛刚从河里游过来一样。",
+				"translation_en": "She ran through the rain and was soaked all over, as though she had just swum through a river.",
 				"pointIndexes": [
 					3
 				],
@@ -5072,8 +5065,8 @@
 				"type": "order",
 				"answer": "4→2→1→3",
 				"completed": "今の私の 気持ちは 言葉では 言い表し ようが ない。",
-				"translation": "把窗户开着就出门，很可能会进小偷。",
-				"translation_en": "If you leave the window open, a burglar might well get in.",
+				"translation": "我现在的心情无法用语言表达。",
+				"translation_en": "There is no way to express how I feel now in words.",
 				"pointIndexes": [
 					3
 				],
@@ -5095,8 +5088,8 @@
 				"type": "choice",
 				"answer": "b",
 				"completed": "この番組は、皆様からのご意見に基づいて構成されています。",
-				"translation": "希望孩子能在好老师指导下成长。",
-				"translation_en": "I want my child to grow under a good teacher.",
+				"translation": "这个节目是根据各位观众的意见编排的。",
+				"translation_en": "This program is produced based on comments from viewers.",
 				"pointIndexes": [
 					0
 				],
@@ -5132,8 +5125,8 @@
 				"type": "choice",
 				"answer": "b",
 				"completed": "契約に際し、注意すべき点について説明します。",
-				"translation": "我们一起努力吧。",
-				"translation_en": "Let's work hard together.",
+				"translation": "签订合同时，我来说明需要注意的事项。",
+				"translation_en": "When concluding the contract, I will explain the points that require attention.",
 				"pointIndexes": [
 					1
 				],
@@ -5169,8 +5162,8 @@
 				"type": "choice",
 				"answer": "a",
 				"completed": "この店では、買った量に応じて商品の値段が安くなります。",
-				"translation": "他不放弃地继续挑战。",
-				"translation_en": "He kept challenging himself without giving up.",
+				"translation": "在这家店，商品价格会根据购买量而降低。",
+				"translation_en": "At this store, the price falls according to the quantity purchased.",
 				"pointIndexes": [
 					2
 				],
@@ -5206,8 +5199,8 @@
 				"type": "choice",
 				"answer": "b",
 				"completed": "職場では、状況に応じた判断が必要です。",
-				"translation": "那种态度等于拒绝。",
-				"translation_en": "That attitude is tantamount to a refusal.",
+				"translation": "在职场中，需要根据情况作出判断。",
+				"translation_en": "In the workplace, decisions appropriate to the situation are necessary.",
 				"pointIndexes": [
 					3
 				],
@@ -5243,8 +5236,8 @@
 				"type": "choice",
 				"answer": "b",
 				"completed": "人間工学に基づいた家具を作っている。",
-				"translation": "在父母的保护下生活。",
-				"translation_en": "They live under their parents' protection.",
+				"translation": "我们正在制作基于人体工程学的家具。",
+				"translation_en": "We make furniture based on ergonomics.",
 				"pointIndexes": [
 					3
 				],
@@ -5267,9 +5260,9 @@
 				"n": 6,
 				"type": "choice",
 				"answer": "1",
-				"completed": "目が不自由な人のために働く犬は、子犬のとき8ヵ月くらいまでは一般家庭の愛情（　）育てられる。その後、プロのトレーナー（　）きびしい訓練を受ける。",
-				"translation": "今晚就在这里住下吧。",
-				"translation_en": "Let's stay here tonight.",
+				"completed": "目が不自由な人のために働く犬は、子犬のとき8ヵ月くらいまでは一般家庭の愛情の下で育てられる。その後、プロのトレーナーの下できびしい訓練を受ける。",
+				"translation": "为视障人士工作的犬，在幼犬时期到约八个月大为止，会在普通家庭的关爱下成长；之后接受专业训练师的严格训练。",
+				"translation_en": "Dogs that assist visually impaired people are raised with affection in an ordinary home until about eight months old, then undergo rigorous training by a professional trainer.",
 				"pointIndexes": [
 					3
 				],
@@ -5315,8 +5308,8 @@
 				"type": "choice",
 				"answer": "×（入学以上→入学する以上／入学した以上）",
 				"completed": "入学以上は、もちろん卒業したい。",
-				"translation": "既然来了，就好好玩吧。",
-				"translation_en": "Now that we've come, let's enjoy ourselves.",
+				"translation": "“既然入学了，当然希望能毕业。”原句缺少「する／した」，应改为「入学する以上は」或「入学した以上は」。",
+				"translation_en": "“Now that I have enrolled, of course I want to graduate.” The original needs する or した: 入学する以上は or 入学した以上は.",
 				"pointIndexes": [
 					0
 				],
@@ -5346,8 +5339,8 @@
 				"type": "choice",
 				"answer": "〇",
 				"completed": "卒業して以来ですから、10年ぶりですね。",
-				"translation": "既然知道了，就不能装作没看见。",
-				"translation_en": "Now that I know, I can't pretend I didn't see it.",
+				"translation": "自毕业以来还是第一次见，已经十年没见了呢。",
+				"translation_en": "This is the first time since graduation, so it has been ten years, hasn't it?",
 				"pointIndexes": [
 					1
 				],
@@ -5371,8 +5364,8 @@
 				"type": "choice",
 				"answer": "×（決めたことからには→決めたからには）",
 				"completed": "自分で決めたことからには、大変でもがんばろう。",
-				"translation": "自从进了这家公司，每天都很忙。",
-				"translation_en": "I've been busy every day ever since I joined this company.",
+				"translation": "“既然是自己决定的，即使辛苦也要努力。”原句的「決めたことからには」应改为「決めたからには」。",
+				"translation_en": "“Since I decided it myself, I will persevere even if it is hard.” 決めたことからには should be 決めたからには.",
 				"pointIndexes": [
 					2
 				],
@@ -5390,8 +5383,8 @@
 				"type": "choice",
 				"answer": "×（会議折に→会議の折に）",
 				"completed": "この件は後ほど会議折にくわしくご説明申し上げます。",
-				"translation": "既然决定参加，就要负责到最后。",
-				"translation_en": "If you've decided to take part, you have to see it through.",
+				"translation": "“关于这件事，稍后将在会议时详细说明。”原句应为「会議の折に」。",
+				"translation_en": "“I will explain this matter in detail at the meeting later.” The correct form is 会議の折に.",
 				"pointIndexes": [
 					3
 				],
@@ -5415,8 +5408,8 @@
 				"type": "choice",
 				"answer": "〇",
 				"completed": "会議に出席するからには、自分の意見を言うべきだ。",
-				"translation": "自从开始学日语，对日本更感兴趣了。",
-				"translation_en": "I've been more interested in Japan ever since I started Japanese.",
+				"translation": "既然出席会议，就应该说出自己的意见。",
+				"translation_en": "If you attend the meeting, you should express your own opinion.",
 				"pointIndexes": [
 					3
 				],
@@ -5451,9 +5444,9 @@
 				"n": 6,
 				"type": "choice",
 				"answer": "1",
-				"completed": "「犬を飼ってもいいけど、（　）は自分で世話をするんですよ。」",
-				"translation": "既然是学生，就应该学习。",
-				"translation_en": "If you're a student, you should study.",
+				"completed": "「犬を飼ってもいいけど、飼う以上は自分で世話をするんですよ。」",
+				"translation": "“可以养狗，不过既然养了，就要自己照顾。”",
+				"translation_en": "“You may keep a dog, but once you do, you must look after it yourself.”",
 				"pointIndexes": [
 					3
 				],
@@ -5476,9 +5469,9 @@
 				"n": 7,
 				"type": "choice",
 				"answer": "2",
-				"completed": "「週末に外食を（　）、おなかの調子が悪いんです。」",
-				"translation": "自从见过那次事故，开车变得小心了。",
-				"translation_en": "I've driven more carefully ever since I saw that accident.",
+				"completed": "「週末に外食をして以来、おなかの調子が悪いんです。」",
+				"translation": "“自从周末外出吃饭以后，肚子一直不舒服。”",
+				"translation_en": "“My stomach has been upset since I ate out over the weekend.”",
 				"pointIndexes": [
 					3
 				],
@@ -5501,9 +5494,9 @@
 				"n": 8,
 				"type": "choice",
 				"answer": "3",
-				"completed": "「先生の大切な本を（　）、難しくても読まなければと思います。」",
-				"translation": "既然承诺了，就一定要做到。",
-				"translation_en": "Now that you've promised, you must follow through.",
+				"completed": "「先生の大切な本を貸していただいた以上、難しくても読まなければと思います。」",
+				"translation": "“既然承蒙老师借给我这本珍贵的书，即使很难，我也觉得必须读完。”",
+				"translation_en": "“Since my teacher has kindly lent me this valuable book, I feel I must read it even if it is difficult.”",
 				"pointIndexes": [
 					3
 				],
@@ -5531,8 +5524,8 @@
 				"type": "choice",
 				"answer": "b",
 				"completed": "この子は、笑い方からして母親にそっくりだ。",
-				"translation": "从脸色来看，他好像没睡觉。",
-				"translation_en": "Judging from his face, he doesn't seem to have slept.",
+				"translation": "这个孩子单从笑的方式看就和母亲一模一样。",
+				"translation_en": "This child resembles their mother even in the way they laugh.",
 				"pointIndexes": [
 					0
 				],
@@ -5556,8 +5549,8 @@
 				"type": "choice",
 				"answer": "a",
 				"completed": "この作文は、日本語力からいえばまだまだだが、内容はいい。",
-				"translation": "虽说便宜，也不是什么都买。",
-				"translation_en": "Just because it's cheap doesn't mean I buy everything.",
+				"translation": "这篇作文从日语能力方面来说还差得远，不过内容不错。",
+				"translation_en": "In terms of Japanese ability, this essay still has a long way to go, but its content is good.",
 				"pointIndexes": [
 					1
 				],
@@ -5593,8 +5586,8 @@
 				"type": "choice",
 				"answer": "b",
 				"completed": "象は足あとからして大きい。",
-				"translation": "从他的态度来看，似乎不同意。",
-				"translation_en": "From his attitude he doesn't seem to agree.",
+				"translation": "大象单从脚印看就很大。",
+				"translation_en": "You can tell that an elephant is large just from its footprints.",
 				"pointIndexes": [
 					2
 				],
@@ -5618,8 +5611,8 @@
 				"type": "choice",
 				"answer": "a",
 				"completed": "ゴルフをしない者から見ると、何が面白いのか理解できない。",
-				"translation": "单从服装就能看出她很有品位。",
-				"translation_en": "You can tell she has taste just from her clothes.",
+				"translation": "在不打高尔夫的人看来，很难理解它有什么有趣的。",
+				"translation_en": "From the perspective of someone who does not play golf, it is hard to understand what is interesting about it.",
 				"pointIndexes": [
 					3
 				],
@@ -5649,8 +5642,8 @@
 				"type": "choice",
 				"answer": "a",
 				"completed": "おいしいなんて言わなくても、あの食べっぷりからするとよほどおいしいのでしょう。",
-				"translation": "虽说有经验，这次也不能大意。",
-				"translation_en": "Even with experience, we can't be careless this time.",
+				"translation": "即使不说好吃，从他那副吃相来看，想必非常好吃吧。",
+				"translation_en": "Even without being told, judging from the way he eats it must be extremely tasty.",
 				"pointIndexes": [
 					3
 				],
@@ -6026,7 +6019,7 @@
 				"n": 6,
 				"type": "choice",
 				"answer": "3",
-				"completed": "あの先生のようにすばらしい先生には二度と（　）まい。",
+				"completed": "あの先生のようにすばらしい先生には二度と出会えまい。",
 				"translation": "像那位老师那样出色的老师，恐怕再也遇不到了。",
 				"translation_en": "I doubt I'll ever meet another teacher as wonderful as that one.",
 				"pointIndexes": [
@@ -6045,7 +6038,7 @@
 				"n": 7,
 				"type": "choice",
 				"answer": "2",
-				"completed": "進学（　）ようか（　）まいか迷っている。",
+				"completed": "進学し／すようかし／すまいか迷っている。",
 				"translation": "正犹豫要不要升学。",
 				"translation_en": "I'm torn over whether to go on to higher education.",
 				"pointIndexes": [
@@ -6203,7 +6196,7 @@
 				"n": 6,
 				"type": "choice",
 				"answer": "3",
-				"completed": "自由席も満席だから、立っていく（　）。",
+				"completed": "自由席も満席だから、立っていくよりほかない。",
 				"translation": "自由席也满了，只好站着去。",
 				"translation_en": "Even the unreserved seats are full, so we have no choice but to stand.",
 				"pointIndexes": [
@@ -6228,7 +6221,7 @@
 				"n": 7,
 				"type": "choice",
 				"answer": "3",
-				"completed": "彼が来ないのには、何か事情が（　）に相違（　）。",
+				"completed": "彼が来ないのには、何か事情がある／ないに相違ある／ない。",
 				"translation": "他不来，一定是有什么情况。",
 				"translation_en": "There must be some reason he isn't coming.",
 				"pointIndexes": [
@@ -6412,7 +6405,7 @@
 				"n": 6,
 				"type": "choice",
 				"answer": "4",
-				"completed": "昨日東京⑥（　）開かれた世界会議には、研究者や技術者⑦（　）、多くの人々が参加し、石油などの資源⑧（　）問題について話し合った。〔⑥に入るもの〕",
+				"completed": "昨日東京⑥において開かれた世界会議には、研究者や技術者⑦において、多くの人々が参加し、石油などの資源⑧において問題について話し合った。〔⑥に入るもの〕",
 				"translation": "昨天在东京召开的世界会议上",
 				"translation_en": "At the world conference held in Tokyo yesterday",
 				"pointIndexes": [
@@ -6699,7 +6692,7 @@
 				"words": [
 					{
 						"jp": "今日",
-						"kana": "こんにち",
+						"kana": "きょう",
 						"cn": "今天",
 						"en": "today"
 					},
@@ -7017,7 +7010,7 @@
 				"n": 6,
 				"type": "choice",
 				"answer": "1",
-				"completed": "「寝る前にお茶やコーヒーを（　）ものではないよ。眠れなくなるよ。」",
+				"completed": "「寝る前にお茶やコーヒーを飲むものではないよ。眠れなくなるよ。」",
 				"translation": "睡前不该喝咖啡。会睡不着的。",
 				"translation_en": "You shouldn't drink coffee before bed. You won't sleep.",
 				"pointIndexes": [
@@ -7029,7 +7022,7 @@
 				"n": 7,
 				"type": "choice",
 				"answer": "2",
-				"completed": "「今日頼んで、今日届けさせるのは（　）ものです。」「いえ、それができるんです。」",
+				"completed": "「今日頼んで、今日届けさせるのは不可能というものです。」「いえ、それができるんです。」",
 				"translation": "今天拜托、今天就送到，那也太不可能了。",
 				"translation_en": "Having it delivered the same day you order is just not possible.",
 				"pointIndexes": [
@@ -7048,7 +7041,7 @@
 				"n": 8,
 				"type": "choice",
 				"answer": "1",
-				"completed": "あんな失礼な人とは二度と（　）ものですか。",
+				"completed": "あんな失礼な人とは二度と話すものですか。",
 				"translation": "那么失礼的人，我再也不会跟他说话。",
 				"translation_en": "As if I'd ever speak to such a rude person again.",
 				"pointIndexes": [
@@ -7453,7 +7446,7 @@
 				"n": 6,
 				"type": "choice",
 				"answer": "2",
-				"completed": "外国語学習は簡単ではなく、奥が深い⑥（　）。文法は重要だが、文法ができればよいという⑦（　）。文法的には正しくても文化的に正しくない表現を使えば、相手に誤解されてしまう⑧（　）。〔⑥に入るもの〕",
+				"completed": "外国語学習は簡単ではなく、奥が深い⑥ものがある。文法は重要だが、文法ができればよいという⑦ものがある。文法的には正しくても文化的に正しくない表現を使えば、相手に誤解されてしまう⑧ものがある。〔⑥に入るもの〕",
 				"translation": "外语学习并不简单，有很深的东西。",
 				"translation_en": "Language learning isn't easy; there's a real depth to it.",
 				"pointIndexes": [
@@ -8017,7 +8010,7 @@
 				"words": [
 					{
 						"jp": "今日",
-						"kana": "こんにち",
+						"kana": "きょう",
 						"cn": "今天",
 						"en": "today"
 					},
@@ -8709,20 +8702,7 @@
 						"b": "要するに"
 					}
 				],
-				"words": [
-					{
-						"jp": "人",
-						"kana": "ひと",
-						"cn": "人",
-						"en": "person"
-					},
-					{
-						"jp": "仕事",
-						"kana": "しごと",
-						"cn": "工作",
-						"en": "work"
-					}
-				]
+				"words": []
 			},
 			{
 				"n": 2,
@@ -8750,7 +8730,7 @@
 				"n": 3,
 				"type": "choice",
 				"answer": "1",
-				"completed": "友人の仕事は危険で、汚くて、③（　）きついらしい。④（　）そういう仕事は俗に「3K」と呼ばれている。⑤（　）「き」、すなわち「K」が3つつくというわけだ。〔③に入るもの〕",
+				"completed": "友人の仕事は危険で、汚くて、③おまけにきついらしい。④おまけにそういう仕事は俗に「3K」と呼ばれている。⑤おまけに「き」、すなわち「K」が3つつくというわけだ。〔③に入るもの〕",
 				"translation": "朋友的工作又危险又脏，而且还累。",
 				"translation_en": "My friend's job is dangerous, dirty, and tough as well.",
 				"pointIndexes": [

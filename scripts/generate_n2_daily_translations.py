@@ -341,8 +341,103 @@ w8d6-4|顺便说一下，那种工作俗称“3K”。|Incidentally, that kind o
 w8d6-5|也就是说有三个“き”，即三个K。|In other words there are three “ki,” that is, three K's.
 """
 
+# These rows were rechecked against the actual completed exercise sentences.
+# They replace an older generated block whose translations were shifted to
+# unrelated example sentences from week 4 day 2 through week 6 day 2.
+REVIEWED_CORRECTIONS = r"""
+w4d2-1|关于前几天会议的内容，稍后将以书面形式报告。|I will report the contents of the recent meeting in writing later.
+w4d2-2|再难的问题，也会因思考方式不同而变得简单。|Even a difficult problem can become easy depending on how you approach it.
+w4d2-3|一旦弄清楚，就通知您。|I will let you know as soon as I find out.
+w4d2-4|这是一本面向留学生编写的书。|This book was written for international students.
+w4d2-5|天气一恢复，就重新开始比赛。|The match will resume as soon as the weather improves.
+w4d2-6|鉴于上述情况，我们决定修改使用规则。|For these reasons, we are revising the rules of use.
+w4d2-7|这套公寓并非只面向女性，不过总体来说更适合女性。|This apartment building is not exclusively for women, but it is better suited to women, if anything.
+w4d3-1|由于今早发生人身事故，列车运行时刻出现了混乱。|Train services have been disrupted due to a personal-injury accident this morning.
+w4d3-2|国民对政治的不满逐年加深。|Public dissatisfaction with politics is increasing year by year.
+w4d3-3|不负众望，那名选手获得了金牌。|The athlete lived up to people's expectations and won a gold medal.
+w4d3-4|与儿童人数减少相对，老年人数正在增加。|While the number of children is decreasing, the number of elderly people is increasing.
+w4d3-5|对于涉及患者隐私的问题，我们无法回答。|We cannot answer questions concerning a patient's privacy.
+w4d3-6|有人怀疑他可能以某种形式牵涉了那起事件。|It is suspected that he may have been involved in the incident in some way.
+w4d3-7|本课程的成绩将根据出勤、作业、各课考试和期末考试进行综合评定。|Grades for this course are assessed comprehensively based on attendance, homework, unit tests, and the final exam.
+w4d4-1|虽然一直想着要做作业，但到现在还没做。|Although I keep meaning to do my homework, I still have not done it.
+w4d4-2|天气正在逐渐好转。|The weather is gradually improving.
+w4d4-3|虽然去买东西了，但因为太贵而没能买。|Although I went shopping, I could not buy it because it was too expensive.
+w4d4-4|身为日本人，可不能弄错日语啊。|You are Japanese, so you should not make mistakes in Japanese.
+w4d4-5|对方队伍的表现，虽是对手也不得不说很精彩。|The opposing team's play was excellent, even though they were our opponents.
+w4d4-6|我们一边关注政治形势，一边规划扩大业务吧。|Let us plan the expansion of the business while monitoring the political situation.
+w4d4-7|这次要搬去的房子虽然小，却也有一块称得上院子的地方。|The house we are moving to is small, but it has what could be called a garden.
+w4d5-1|承诺必须遵守。|A promise must be kept.
+w4d5-2|不得不说那个计划无法实现。|I have to say that the plan is impossible.
+w4d5-3|他说的不过是理想罢了。|What he says is nothing more than an ideal.
+w4d5-4|规定考试卷不得带走。|The rules state that exam papers must not be taken home.
+w4d5-5|考虑到孩子的安全，不应该让孩子在外面玩到深夜。|Considering the child's safety, you should not let them play outside late at night.
+w4d5-6|明天的会议安排在第一会议室举行。|Tomorrow's meeting is scheduled to be held in Conference Room 1.
+w4d5-7|我认为法律应当公正。|I believe laws should be just.
+w4d6-1|祭典持续了三天。|The festival continued for three days.
+w4d6-2|我们按照公司的方针制订计划。|We make plans in accordance with company policy.
+w4d6-3|在电影公映之前，举行了试映会。|A preview screening was held before the film's release.
+w4d6-4|填写文件时，请注意以下几点。|When filling out the document, please note the following points.
+w4d6-5|调查与该国长达四百年的交流。|We are researching four hundred years of exchange with that country.
+w4d6-6|撰写论文时，有一些必须遵守的规则。|There are rules that must be followed when writing a thesis.
+w4d6-7|人们期待开发出符合顾客需求的商品。|The development of products that meet customers' wishes is desired.
+w5d1-1|如果长时间连续驾驶而不休息，可能会引发事故。|Driving for a long time without a break could cause an accident.
+w5d1-2|那项要求令人难以接受。|That demand was difficult to accept.
+w5d1-3|要是放任不管，他当时甚至可能会自杀。|If he had been left alone, he might even have taken his own life.
+w5d1-4|就算对三岁的孩子说那么难的事，他也绝不可能明白。|A three-year-old could not possibly understand something that difficult.
+w5d1-5|预约金恕不退还。|We regret that we are unable to refund the reservation deposit.
+w5d1-6|在车内使用手机也可能引发乘客之间的纠纷。|Using a mobile phone on the train could cause trouble between passengers.
+w5d1-7|你总是满口谎话，我怎么可能相信你说的呢。|You are always telling lies, so there is no way I can believe you.
+w5d2-1|他不来，会议就无法开始。|Unless he comes, we cannot start the meeting.
+w5d2-2|以她的性格，应该会提前三十分钟到。|Knowing her, she should have arrived thirty minutes early.
+w5d2-3|因为在教室里的座位相邻，我们成了朋友。|We became friends because our seats in the classroom were next to each other.
+w5d2-4|这项工作不完成，就无法进行下一项工作。|Unless this task is finished, we cannot move on to the next one.
+w5d2-5|他没能得知自己的作品获得认可便去世了。|He died without ever knowing that his work had been recognized.
+w5d2-6|很多猫狗因为毛色是白的而被取名为“小白”。|Many dogs and cats are named Shiro because their fur is white.
+w5d2-7|你不告诉我在烦恼什么，我就无法帮助你。|Unless you tell me what is troubling you, I cannot help you.
+w5d3-1|擅自进入别人家的院子四处徘徊，被误认为小偷也是理所当然的。|If you wander around someone else's garden without permission, it is only natural to be mistaken for a burglar.
+w5d3-2|希望税金用于对市民有益之事的意见，是很合理的。|It is perfectly reasonable to want tax money spent on things that benefit citizens.
+w5d3-3|我们和田中一家关系亲密，来往得就像一家人一样。|We are close to the Tanaka family and associate with them as though we were family.
+w5d3-4|受伤以后，连平时理所当然能做的事也做不了了。|Since being injured, I have been unable to do things I normally took for granted.
+w5d3-5|大学入学考试前后常常下雪。今天虽然冷，但至少没有下雪。|It often snows around the university entrance-exam season. Today is cold, but at least it is not snowing.
+w5d3-6|这份兼职的时薪虽低，但至少会报销交通费。|This part-time job pays a low hourly wage, but at least it covers transportation expenses.
+w5d3-7|A公司的股价暴跌，我持有的股票变得跟废纸没两样了。|Company A's share price collapsed, and the stock certificates I held became little more than scraps of paper.
+w5d4-1|这件家具不仅设计好，而且很结实。|This piece of furniture is not only well designed but also sturdy.
+w5d4-2|那位老师不仅教得好，而且很亲切。|That teacher is not only good at teaching but also kind.
+w5d4-3|正因为工作能力强，别人把几倍于常人的工作都交给我，让我很为难。|Precisely because I am capable, I am asked to do several times as much work as others, which puts me in a difficult position.
+w5d4-4|他不仅强壮，内心也很温柔。|He is not only strong but also kind-hearted.
+w5d4-5|这个真好吃，不枉排队买来。|This is delicious; it was worth waiting in line to buy it.
+w5d4-6|只因偶然从那里经过，就遭遇了事故。|I happened to pass by there and got caught in an accident solely because of that.
+w5d4-7|他很擅长文字表达，不愧是新闻记者。|He is skilled at written expression, as one would expect of a newspaper reporter.
+w5d5-1|交通停运的话，就没有办法去公司。|If public transportation stops, there is no way to get to the office.
+w5d5-2|朋友高兴得仿佛是他自己考上了一样。|My friend was as pleased as if he had passed the exam himself.
+w5d5-3|我们再商量一次吧。|Why don't we discuss it once more?
+w5d5-4|这项工作连一半都没完成，看来今天之内做不完。|This job is not even half finished, so it seems unlikely to be completed today.
+w5d5-5|他连不知道的事也说得好像自己知道一样。|He talks even about things he does not know as though he knew them.
+w5d5-6|冒雨跑来的她全身湿透了，仿佛刚从河里游过来一样。|She ran through the rain and was soaked all over, as though she had just swum through a river.
+w5d5-7|我现在的心情无法用语言表达。|There is no way to express how I feel now in words.
+w5d6-1|这个节目是根据各位观众的意见编排的。|This program is produced based on comments from viewers.
+w5d6-2|签订合同时，我来说明需要注意的事项。|When concluding the contract, I will explain the points that require attention.
+w5d6-3|在这家店，商品价格会根据购买量而降低。|At this store, the price falls according to the quantity purchased.
+w5d6-4|在职场中，需要根据情况作出判断。|In the workplace, decisions appropriate to the situation are necessary.
+w5d6-5|我们正在制作基于人体工程学的家具。|We make furniture based on ergonomics.
+w5d6-6|为视障人士工作的犬，在幼犬时期到约八个月大为止，会在普通家庭的关爱下成长；之后接受专业训练师的严格训练。|Dogs that assist visually impaired people are raised with affection in an ordinary home until about eight months old, then undergo rigorous training by a professional trainer.
+w6d1-1|“既然入学了，当然希望能毕业。”原句缺少「する／した」，应改为「入学する以上は」或「入学した以上は」。|“Now that I have enrolled, of course I want to graduate.” The original needs する or した: 入学する以上は or 入学した以上は.
+w6d1-2|自毕业以来还是第一次见，已经十年没见了呢。|This is the first time since graduation, so it has been ten years, hasn't it?
+w6d1-3|“既然是自己决定的，即使辛苦也要努力。”原句的「決めたことからには」应改为「決めたからには」。|“Since I decided it myself, I will persevere even if it is hard.” 決めたことからには should be 決めたからには.
+w6d1-4|“关于这件事，稍后将在会议时详细说明。”原句应为「会議の折に」。|“I will explain this matter in detail at the meeting later.” The correct form is 会議の折に.
+w6d1-5|既然出席会议，就应该说出自己的意见。|If you attend the meeting, you should express your own opinion.
+w6d1-6|“可以养狗，不过既然养了，就要自己照顾。”|“You may keep a dog, but once you do, you must look after it yourself.”
+w6d1-7|“自从周末外出吃饭以后，肚子一直不舒服。”|“My stomach has been upset since I ate out over the weekend.”
+w6d1-8|“既然承蒙老师借给我这本珍贵的书，即使很难，我也觉得必须读完。”|“Since my teacher has kindly lent me this valuable book, I feel I must read it even if it is difficult.”
+w6d2-1|这个孩子单从笑的方式看就和母亲一模一样。|This child resembles their mother even in the way they laugh.
+w6d2-2|这篇作文从日语能力方面来说还差得远，不过内容不错。|In terms of Japanese ability, this essay still has a long way to go, but its content is good.
+w6d2-3|大象单从脚印看就很大。|You can tell that an elephant is large just from its footprints.
+w6d2-4|在不打高尔夫的人看来，很难理解它有什么有趣的。|From the perspective of someone who does not play golf, it is hard to understand what is interesting about it.
+w6d2-5|即使不说好吃，从他那副吃相来看，想必非常好吃吧。|Even without being told, judging from the way he eats it must be extremely tasty.
+"""
+
 DAILY: dict[str, list[str]] = {}
-for line in RAW.splitlines():
+for line in (RAW + REVIEWED_CORRECTIONS).splitlines():
     line = line.strip()
     if not line or line.startswith("#"):
         continue
