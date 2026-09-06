@@ -101,6 +101,7 @@ function seedCatalog() {
 
 beforeEach(() => {
 	localStorage.clear();
+	window.sessionStorage.clear();
 	resetStudyStateForTests();
 	seedCatalog();
 });

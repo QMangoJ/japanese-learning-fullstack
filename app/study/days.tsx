@@ -2,6 +2,7 @@ import { useEffect, useState, useSyncExternalStore, type ReactNode } from "react
 
 import { ConnBlock, Fmt, Rr, RubyHtml, SayButton } from "../routes/study-common";
 import { getKanjiWordUsage, kanjiWordSurface } from "./kanji-word-usage";
+import { ExerciseReset, ExerciseSession, useQuestionProgress } from "./exercise-progress";
 import {
 	FAVMETA,
 	G,
@@ -127,10 +128,11 @@ function AnsBlock({
 	showLabel?: string;
 	hideLabel?: string;
 }) {
-	const [show, setShow] = useState(false);
+	const [progress, updateProgress] = useQuestionProgress(`explanation:${id}`);
+	const show = progress.expanded === true;
 	return (
 		<>
-			<button className="ansbtn" data-ans={id} onClick={() => setShow((v) => !v)}>
+			<button className="ansbtn" data-ans={id} onClick={() => updateProgress({ expanded: !show })}>
 				{show ? hideLabel || lx("隐藏答案", "Hide answer") : showLabel || lx("显示答案", "Show answer")}
 			</button>
 			<div className={`answer${show ? " show" : ""}`} id={id}>
@@ -147,6 +149,7 @@ function QuizOpts({
 	children,
 	foldNote,
 	foldId,
+	questionId,
 }: {
 	item: any;
 	correct?: number | null;
@@ -154,9 +157,14 @@ function QuizOpts({
 	children?: ReactNode;
 	foldNote?: boolean;
 	foldId?: string;
+	questionId?: string;
 }) {
-	const [picked, setPicked] = useState<number | null>(null);
+	// Include the source question and answer key so revised content starts fresh.
+	const [progress, updateProgress] = useQuestionProgress(JSON.stringify([
+		questionId, item.n, item.q, item.opts, correct,
+	]));
 	const opts: string[] = item.opts_r || item.opts || [];
+	const picked = progress.picked != null && progress.picked <= opts.length ? progress.picked : null;
 	if (!item.opts) return null;
 	if (correct == null) {
 		return (
@@ -185,10 +193,11 @@ function QuizOpts({
 							type="button"
 							className={cls}
 							data-optidx={idx}
+							aria-pressed={picked === idx}
 							key={idx}
 							onClick={() => {
 								if (answered) return;
-								setPicked(idx);
+								updateProgress({ picked: idx });
 								if (idx !== correct) onWrong?.(idx, item);
 							}}
 						>
@@ -861,6 +870,7 @@ function ExamGrammar({ day, w }: { day: any; w: number }) {
 				</div>
 				{interactive ? (
 					<QuizOpts
+						questionId={`${section}:${it.n}`}
 						item={{ ...it, _correct: a.ans }}
 						correct={a.ans}
 						foldNote
@@ -1147,6 +1157,7 @@ function ExamVocab({ day, w }: { day: any; w: number }) {
 										</div>
 										{it.opts ? (
 											<QuizOpts
+												questionId={`${key}:${it.n}`}
 												item={{ ...it, _correct: correct }}
 												correct={correct ?? null}
 												onWrong={(picked) => logWrong({ ...it, _correct: correct }, picked)}
@@ -1361,6 +1372,7 @@ function ExamKanji({ day, w }: { day: any; w: number }) {
 										</div>
 										{it.opts ? (
 											<QuizOpts
+												questionId={`${key}:${it.n}`}
 												item={{ ...it, _correct: correct }}
 												correct={correct ?? null}
 												onWrong={(picked) => logWrong({ ...it, _correct: correct }, picked)}
@@ -1602,8 +1614,10 @@ export function DayPage({ w, d, token }: { w: number; d: number; token: string |
 	const scrollP = token && token[0] === "p" ? +token.slice(1) : null;
 	const vocabTok = token && token[0] === "v" ? token.slice(1) : null;
 	const kanjiTok = token && token[0] === "k" ? token.slice(1) : null;
+	const scope = `${MODULE}:${w}:${d}`;
 	return (
-		<>
+		<ExerciseSession key={scope} scope={scope}>
+			{d === 7 ? <ExerciseReset label={lx("重新作答", "Start over")} /> : null}
 			{isGram() ? (
 				<DayGrammar day={day} w={w} d={d} scrollP={Number.isFinite(scrollP as number) ? scrollP : null} />
 			) : TYPE === "kanji" ? (
@@ -1612,7 +1626,7 @@ export function DayPage({ w, d, token }: { w: number; d: number; token: string |
 				<DayVocab day={day} w={w} d={d} scrollTok={vocabTok} />
 			)}
 			<DayNav w={w} d={d} />
-		</>
+		</ExerciseSession>
 	);
 }
 
