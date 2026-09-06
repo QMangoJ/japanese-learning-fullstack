@@ -1,8 +1,7 @@
-import { readdir, readFile, writeFile } from "node:fs/promises";
+import { readFile, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 
 const root = resolve(import.meta.dirname, "..");
-const sibling = resolve(root, "..", "日语学习");
 
 const BOOK_EN = {
 	w1d1: {
@@ -939,31 +938,6 @@ async function applyBook(path, pretty) {
 	return { u, e };
 }
 
-const targets = [
-	[resolve(root, "public/data/n2grammar.4e6157570a.json"), false],
-	[resolve(sibling, "public/data/n2grammar.4e6157570a.json"), false],
-];
-for (const [file, pretty] of targets) {
-	try {
-		const { u, e } = await applyBook(file, pretty);
-		console.log(`${file}: +${u} usage_en, +${e} example en`);
-	} catch (error) {
-		console.log(`skip ${file}: ${error.message}`);
-	}
-}
-
-try {
-	const dir = resolve(sibling, "src-data/n2-grammar");
-	for (const name of await readdir(dir)) {
-		if (!/^w\d+d\d+\.json$/.test(name)) continue;
-		const path = resolve(dir, name);
-		const day = JSON.parse(await readFile(path, "utf8"));
-		const added = applyPack(day, BOOK_EN[name.replace(".json", "")]);
-		if (added.u || added.e) {
-			await writeFile(path, JSON.stringify(day, null, 2) + "\n");
-			console.log(`${name}: +${added.u} usage_en, +${added.e} example en`);
-		}
-	}
-} catch (error) {
-	console.log(`skip src-data: ${error.message}`);
-}
+const bookPath = resolve(root, "public/data/n2grammar.4e6157570a.json");
+const { u, e } = await applyBook(bookPath, false);
+console.log(`${bookPath}: +${u} usage_en, +${e} example en`);

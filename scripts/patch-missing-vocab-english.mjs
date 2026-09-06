@@ -1,8 +1,7 @@
-import { readdir, readFile, writeFile } from "node:fs/promises";
+import { readFile, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 
 const root = resolve(import.meta.dirname, "..");
-const sibling = resolve(root, "..", "日语学习");
 
 const BY_JP = new Map([
 	["1カップ＝200cc", "1 cup = 200 cc"],
@@ -94,8 +93,7 @@ async function patchFile(path) {
 	const data = JSON.parse(await readFile(path, "utf8"));
 	const changed = patchItems(data);
 	if (changed) {
-		const pretty = path.includes("src-data");
-		await writeFile(path, JSON.stringify(data, null, pretty ? 2 : 0) + "\n");
+		await writeFile(path, JSON.stringify(data) + "\n");
 	}
 	return changed;
 }
@@ -103,32 +101,13 @@ async function patchFile(path) {
 const files = [
 	resolve(root, "public/data/vocab.856eb48e32.json"),
 	resolve(root, "public/data/n4vocab.026f711eb7.json"),
-	resolve(sibling, "public/data/vocab.856eb48e32.json"),
-	resolve(sibling, "public/data/n4vocab.026f711eb7.json"),
 ];
 
 let total = 0;
 for (const file of files) {
-	try {
-		const n = await patchFile(file);
-		total += n;
-		console.log(`${n} ${file}`);
-	} catch (error) {
-		console.log(`skip ${file}: ${error.message}`);
-	}
-}
-
-for (const dir of [resolve(sibling, "src-data/n3-vocab"), resolve(sibling, "src-data/n4-vocab")]) {
-	try {
-		for (const name of await readdir(dir)) {
-			if (!name.endsWith(".json")) continue;
-			const n = await patchFile(resolve(dir, name));
-			if (n) console.log(`${n} ${dir}/${name}`);
-			total += n;
-		}
-	} catch (error) {
-		console.log(`skip ${dir}: ${error.message}`);
-	}
+	const n = await patchFile(file);
+	total += n;
+	console.log(`${n} ${file}`);
 }
 
 console.log(`Patched ${total} vocab English fields.`);
