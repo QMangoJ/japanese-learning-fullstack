@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build N2 daily-exercise explanations from src-data + hand translations."""
+"""Build N2 daily-exercise explanations from the committed N2 grammar book."""
 from __future__ import annotations
 
 import json
@@ -7,7 +7,7 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-SRC = Path("/Users/daniel/Desktop/claude project/日语学习/src-data/n2-grammar")
+BOOK = ROOT / "public/data/n2grammar.4e6157570a.json"
 OUT = ROOT / "public/data/n2-grammar-daily-explanations.json"
 
 CIRCLED = "①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳"
@@ -91,8 +91,7 @@ def guess_point_indexes(day: dict, n: int, q: str, answer: str) -> list[int]:
     return [min(n - 1, len(points) - 1)]
 
 
-def build_day(path: Path) -> dict | None:
-    day = json.loads(path.read_text(encoding="utf-8"))
+def build_day(day: dict, key: str) -> dict | None:
     if day.get("day") == 7:
         return None
     ex = day.get("exercises") or {}
@@ -123,8 +122,8 @@ def build_day(path: Path) -> dict | None:
                         "type": "order",
                         "answer": ans,
                         "completed": completed or qtext,
-                        "translation": TRANSLATIONS.get(f"{path.stem}-{n}", ["", ""])[0],
-                        "translation_en": TRANSLATIONS.get(f"{path.stem}-{n}", ["", ""])[1],
+                        "translation": TRANSLATIONS.get(f"{key}-{n}", ["", ""])[0],
+                        "translation_en": TRANSLATIONS.get(f"{key}-{n}", ["", ""])[1],
                         "pointIndexes": guess_point_indexes(day, n, qtext, ans),
                     }
                 )
@@ -140,8 +139,8 @@ def build_day(path: Path) -> dict | None:
                     "type": "choice",
                     "answer": ans or "",
                     "completed": completed,
-                    "translation": TRANSLATIONS.get(f"{path.stem}-{n}", ["", ""])[0],
-                    "translation_en": TRANSLATIONS.get(f"{path.stem}-{n}", ["", ""])[1],
+                    "translation": TRANSLATIONS.get(f"{key}-{n}", ["", ""])[0],
+                    "translation_en": TRANSLATIONS.get(f"{key}-{n}", ["", ""])[1],
                     "pointIndexes": guess_point_indexes(day, n, qtext, ans),
                 }
                 if pairs:
@@ -163,17 +162,19 @@ def load_translations():
 
 if __name__ == "__main__":
     load_translations()
+    book = json.loads(BOOK.read_text(encoding="utf-8"))
     out = {}
     missing = []
-    for path in sorted(SRC.glob("w*d*.json")):
-        pack = build_day(path)
-        if not pack:
-            continue
-        key = path.stem
-        out[key] = pack
-        for item in pack["items"]:
-            if not item["translation"] or not item["translation_en"]:
-                missing.append(f"{key}-{item['n']}")
+    for week in book.get("weeks") or []:
+        for day in week.get("days") or []:
+            key = f"w{week['n']}d{day['day']}"
+            pack = build_day(day, key)
+            if not pack:
+                continue
+            out[key] = pack
+            for item in pack["items"]:
+                if not item["translation"] or not item["translation_en"]:
+                    missing.append(f"{key}-{item['n']}")
     OUT.write_text(json.dumps(out, ensure_ascii=False, indent="\t") + "\n", encoding="utf-8")
     print(f"Wrote {OUT.name}: {sum(len(v['items']) for v in out.values())} items, missing translations: {len(missing)}")
     if missing[:20]:

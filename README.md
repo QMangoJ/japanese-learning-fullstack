@@ -25,7 +25,7 @@
 - 服务端：Cloudflare Worker（React Router SSR）
 - 数据：课程内容作为带内容哈希的静态 JSON 资源缓存；收藏与错题使用 Cloudflare KV
 
-学习区是一套 React 应用：语法、词汇、汉字、读解、听解共用同一壳、同一套周/日路由和收藏错题。课程 JSON 仍可由相邻旧项目同步。
+学习区是一套 React 应用：语法、词汇、汉字、读解、听解共用同一壳、同一套周/日路由和收藏错题。课程 JSON 提交在 `public/data/`。
 
 ## 本地开发
 
@@ -46,15 +46,9 @@ npm run dev
 
 学习区右上角会出现 Google 登录。未登录仍可学习；登录后收藏和错题按账号隔离，首次登录会把本机已有数据合并进空账号。
 
-## 课程资源同步
+## 课程数据
 
-课程 JSON 与静态资源存放在 `public/`，已随仓库提交。若本机同时存在相邻的旧项目 `../日语学习`，可使用以下命令重新同步语法/词汇/汉字课表：
-
-```bash
-npm run sync:study-assets
-```
-
-该同步命令需要显式执行；普通开发和生产构建不会改写已提交的课程数据。
+课程 JSON 与静态资源存放在 `public/`，已随仓库提交。语法英文、每日讲解等生成脚本只读写本仓库的 `public/data/`。普通开发和生产构建不会改写已提交的课程数据。
 
 ## 离线使用
 
@@ -104,7 +98,7 @@ npm run deploy
 - Backend: Cloudflare Worker with React Router SSR
 - Data: content-hashed static JSON for course material, plus Cloudflare KV for favorites and mistakes
 
-The study area is a single React app. Grammar, vocabulary, kanji, reading, and listening share one shell, week/day routing, search, and favorites. Course JSON can still be synced from the adjacent legacy project.
+The study area is a single React app. Grammar, vocabulary, kanji, reading, and listening share one shell, week/day routing, search, and favorites. Course JSON lives in `public/data/`.
 
 ### Local development
 
@@ -125,15 +119,9 @@ The app works without credentials; only cross-device sync is missing. To enable 
 
 A Google button appears in the study top bar. Study stays open to guests. After sign-in, favorites and notes are stored under that user; the first login merges any existing local data into an empty account.
 
-### Sync course assets
+### Course data
 
-Course JSON and static assets are committed under `public/`. If the adjacent legacy project exists at `../日语学习`, sync grammar/vocab/kanji tables with:
-
-```bash
-npm run sync:study-assets
-```
-
-Run this command explicitly when the legacy source changes. Normal development and production builds never rewrite committed course data.
+Course JSON and static assets are committed under `public/`. Generators for English glosses and daily explanations read and write only this repository's `public/data/`. Normal development and production builds never rewrite committed course data.
 
 ### Offline use
 
