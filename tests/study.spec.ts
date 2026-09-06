@@ -257,6 +257,42 @@ test.describe("study navigation", () => {
 		await expect(star).toContainText(/已收藏|Saved/);
 	});
 
+	for (const module of ["grammar", "vocab", "kanji"] as const) {
+		test(`preserves ${module} weekly answers through search, reload and a new attempt`, async ({ page }) => {
+			await waitForStudy(page);
+			await pickType(page, module);
+			await page.goto("/study/day/1-7");
+			const quiz = page.locator(".qz").first();
+			await expect(quiz).toBeVisible();
+			const correct = Number(await quiz.getAttribute("data-qcorrect"));
+			const wrong = correct === 1 ? 2 : 1;
+			await quiz.locator(`[data-optidx="${wrong}"]`).click();
+			await expect(quiz.locator(".wrong")).toHaveAttribute("aria-pressed", "true");
+			const fold = page.locator('button[data-ans="exam-1-1"]');
+			if (module === "grammar") await fold.click();
+			await page.evaluate(() => window.scrollTo(0, 700));
+			await expect.poll(() => page.evaluate(() => window.scrollY)).toBeGreaterThan(600);
+			const quizNode = await quiz.elementHandle();
+			await openStudyNav(page, "search");
+			await expect(page).toHaveURL(/\/study\/search$/);
+			await expect(page.getByPlaceholder(/日文/)).toBeVisible();
+			// Activity keeps the actual DOM node connected, not just saved answer data.
+			expect(await quizNode!.evaluate((node) => node.isConnected)).toBe(true);
+			await expect(quiz).toBeHidden();
+			await page.goBack();
+			await expect(quiz.locator(".wrong")).toHaveAttribute("aria-pressed", "true");
+			expect(await quizNode!.evaluate((node) => node === document.querySelector(".qz"))).toBe(true);
+			await expect.poll(() => page.evaluate(() => window.scrollY)).toBeGreaterThan(600);
+			if (module === "grammar") await expect(page.locator('[id="exam-1-1"]')).toHaveClass(/show/);
+			await page.reload();
+			await expect(quiz.locator(".wrong")).toHaveAttribute("aria-pressed", "true");
+			await page.getByRole("button", { name: "重新作答", exact: true }).click();
+			await expect(page.locator(".qz.answered")).toHaveCount(0);
+			await quiz.locator(`[data-optidx="${correct}"]`).click();
+			await expect(page.locator(".qz-result").first()).toContainText("答对了");
+		});
+	}
+
 	test("keeps scroll when answering N3 vocab weekly-test options", async ({ page }) => {
 		await waitForStudy(page);
 		await pickType(page, "vocab");

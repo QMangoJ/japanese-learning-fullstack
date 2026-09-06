@@ -1,4 +1,4 @@
-import { Component, lazy, Suspense, useEffect, useLayoutEffect, useRef, useState, useSyncExternalStore, type ErrorInfo, type ReactNode } from "react";
+import { Activity, Component, lazy, Suspense, useEffect, useLayoutEffect, useRef, useState, useSyncExternalStore, type ErrorInfo, type ReactNode } from "react";
 import { useLocation, useNavigate } from "react-router";
 
 import {
@@ -827,12 +827,26 @@ function viewMeta(key: string): { nav: string; title: string; back: boolean } {
 	return { nav: "home", title: modLabel(), back: false };
 }
 
+// Retain one lesson within the current module. Keeping many full textbook pages
+// mounted is expensive on phones; older attempts remain in session storage.
+function RetainedDay({ day }: { day: ReturnType<typeof parseDayRoute> }) {
+	const [lastDay, setLastDay] = useState(day);
+	if (day && (day.w !== lastDay?.w || day.d !== lastDay?.d || day.token !== lastDay?.token)) setLastDay(day);
+	const shownDay = day || lastDay;
+	return shownDay ? (
+		<Activity mode={day ? "visible" : "hidden"}>
+			<DayPage key={`${shownDay.w}:${shownDay.d}`} w={shownDay.w} d={shownDay.d} token={shownDay.token} />
+		</Activity>
+	) : null;
+}
+
 export function StudyApp() {
 	useStudyTick();
 	const location = useLocation();
 	const navigate = useNavigate();
 	const [booted, setBooted] = useState(false);
 	const [sheet, setSheet] = useState<"level" | "common" | null>(null);
+	const scrollPositions = useRef(new Map<string, number>());
 	const isTrial = typeof window !== "undefined" && new URLSearchParams(location.search).get("trial") === "1";
 
 	useEffect(() => {
@@ -912,7 +926,16 @@ export function StudyApp() {
 	if (routeKey !== "#/favs") closeFavFc();
 	const viewKey = MODULE + "|" + routeKey;
 	useLayoutEffect(() => {
-		window.scrollTo(0, 0);
+		const targetY = scrollPositions.current.get(viewKey) || 0;
+		let lastY = targetY;
+		window.scrollTo(0, targetY);
+		const rememberScroll = () => { lastY = window.scrollY; };
+		const frame = requestAnimationFrame(() => {
+			// Let explicit search-result anchors take precedence over saved scrolling.
+			if (!parseDayRoute(routeKey)?.token) window.scrollTo(0, targetY);
+			lastY = window.scrollY;
+			window.addEventListener("scroll", rememberScroll, { passive: true });
+		});
 		if (routeKey === "#/") saveLastVisit("#/");
 		const day = parseDayRoute(routeKey);
 		if (day) saveLastVisit(`#/day/${day.w}-${day.d}`);
@@ -920,6 +943,11 @@ export function StudyApp() {
 		if (routeKey === "#/contrast" && MODULE !== contrastModule()) setModule(contrastModule());
 		updateStickyVars();
 		updateNumNavActive();
+		return () => {
+			cancelAnimationFrame(frame);
+			window.removeEventListener("scroll", rememberScroll);
+			scrollPositions.current.set(viewKey, lastY);
+		};
 	}, [viewKey]);
 
 	useEffect(() => {
@@ -1021,6 +1049,7 @@ export function StudyApp() {
 
 	const showCommon = isCommon && !day && routeKey !== "#/contrast";
 	const lessonShell = Boolean(day && (isReading() || isListening()));
+	const retainedDay = day && !lessonShell && dataLoaded && !waitingN2 && !waitingN4 && !weekLocked ? day : null;
 	void booted;
 
 	return (
@@ -1046,11 +1075,12 @@ export function StudyApp() {
 			/>
 			<Sidebar routeKey={routeKey} onLevel={pickLevel} />
 			<main id="app" className={lessonShell ? "study-reading-app" : undefined} hidden={showCommon}>
-				{showCommon ? null : (
-					<StudyPageErrorBoundary resetKey={viewKey}>
-						<Suspense fallback={<StudyLoading />}>{body}</Suspense>
-					</StudyPageErrorBoundary>
-				)}
+				<StudyPageErrorBoundary resetKey={viewKey}>
+					<Suspense fallback={<StudyLoading />}>
+						<RetainedDay key={MODULE} day={retainedDay} />
+						{showCommon || retainedDay ? null : body}
+					</Suspense>
+				</StudyPageErrorBoundary>
 			</main>
 			{showCommon ? (
 				<main id="common-page">
