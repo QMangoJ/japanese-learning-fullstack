@@ -120,7 +120,7 @@ export const N3_RELATED_GRAMMAR: Record<string, RelatedGroup> = {
 		tip: ["ても可设假设；のに通常谈已经成立的事实；ずに表示伴随方式，不是转折。", "ても can be hypothetical; のに normally presents an established fact; ずに describes an accompanying absence, not a contrast."],
 		rows: [
 			["～のに", "N4", "everyday", "普通形／Nな／ナ形な＋のに", "常对已知事实后的反常结果表达意外或不满；ても不一定承认前项已发生。", "Often conveys surprise or dissatisfaction at an unexpected result of an established fact; ても need not assert that the first event occurred.", "何度も説明したのに、伝わらなかった。", "明明解释了好多遍，却没能让对方明白。", "Even though I explained it many times, I couldn't get the point across."],
-			["～ものの", "N2", "formal", "普通形／ナ形な＋ものの", "承认前项事实但后项未如预期，较书面、克制；可近似のに，但没有那么强的抱怨口气。", "Acknowledges a fact before an unmet expectation, in a restrained written style; often less openly complaining than のに.", "申し込んだものの、まだ返事がない。", "虽然已经报名，但还没有收到回复。", "Although I've applied, I haven't received a reply yet."],
+			["～ものの", "N2", "formal", "V普通形／イ形／ナ形な／Nである＋ものの", "承认前项事实但后项未如预期，较书面、克制；可近似のに，但没有那么强的抱怨口气。", "Acknowledges a fact before an unmet expectation, in a restrained written style; often less openly complaining than のに.", "申し込んだものの、まだ返事がない。", "虽然已经报名，但还没有收到回复。", "Although I've applied, I haven't received a reply yet."],
 			["～ないで", "N4", "everyday", "Vない＋で", "表示不做A而做B时，与ずに接近且更口语；请求‘请不要’用ないでください，不能直接换成ずにください。", "Close to ずに when doing B without A, but more conversational. Requests use ないでください, not ずにください.", "朝ご飯を食べないで出かけた。", "没吃早饭就出门了。", "I went out without eating breakfast."],
 		],
 	},
@@ -173,7 +173,7 @@ export const N3_RELATED_GRAMMAR: Record<string, RelatedGroup> = {
 		tip: ["にとって不是动作对象；わりに可褒可贬，くせに通常带指责。", "にとって is not an action's target; わりに allows praise or criticism, while くせに usually blames."],
 		rows: [
 			["～に対して", "N3", "common", "N＋に対して", "标明态度或行为针对谁；にとって标明谁来评价。先生に対して失礼是对老师失礼，不是从老师的立场比较价值。", "Marks the target of an action or attitude, not the evaluator's viewpoint as にとって does.", "店員は客に対して丁寧に話す。", "店员对顾客说话很有礼貌。", "The staff speak politely to customers."],
-			["～だけあって", "N2", "common", "普通形（N・ナ形不加だ）＋だけあって", "结果符合身份、经验等带来的期待，常用于称赞；わりに、にしては则突出和预期不一致。", "Often praises an outcome that lives up to status or experience, unlike the expectation mismatch in わりに or にしては.", "長年教えているだけあって、説明が分かりやすい。", "不愧是教了多年书，讲解很易懂。", "As you'd expect from years of teaching, the explanations are clear."],
+			["～だけあって", "N2", "common", "V普通形／イ形／ナ形な／N＋だけあって", "结果符合身份、经验等带来的期待，常用于称赞；わりに、にしては则突出和预期不一致。", "Often praises an outcome that lives up to status or experience, unlike the expectation mismatch in わりに or にしては.", "長年教えているだけあって、説明が分かりやすい。", "不愧是教了多年书，讲解很易懂。", "As you'd expect from years of teaching, the explanations are clear."],
 			["～のに", "N4", "everyday", "普通形／Nな／ナ形な＋のに", "也能表达不满，但不必像くせに那样贬责某人。雨なのに出かけた可中性说意外，不能机械换くせに。", "Can express dissatisfaction without the personal reproach typical of くせに. Neutral surprise about rain does not call for くせに.", "よく練習したのに、緊張してしまった。", "明明认真练习了，还是紧张了。", "Even though I practiced well, I got nervous."],
 		],
 	},
@@ -225,8 +225,8 @@ export const N3_RELATED_GRAMMAR: Record<string, RelatedGroup> = {
 		title: ["递进、比较与对照", "Addition, comparison and contrast"],
 		tip: ["不仅A还B可中性追加，也可强调出乎意料的递进；比較与对照不完全相同。", "Not only A but B can be neutral addition or surprising escalation; comparison differs from contrast."],
 		rows: [
-			["～だけでなく", "N3", "everyday", "普通形（N・ナ形不加だ）＋だけでなく", "中性追加信息；ばかりか常强调进一步、甚至意外的程度，はもちろん把前项当作理所当然。", "Adds information neutrally. ばかりか often escalates, sometimes surprisingly; はもちろん takes the first item for granted.", "この店は安いだけでなく、おいしい。", "这家店不仅便宜，而且好吃。", "This restaurant is not only inexpensive but also good."],
-			["～のみならず", "N2", "formal", "普通形／N＋のみならず", "‘不仅……而且……’的书面形式；口语通常用だけでなく，不必为了显得高级而替换。", "A written not only…but also construction. だけでなく is generally more natural in conversation.", "この問題は国内のみならず、海外でも注目されている。", "这个问题不仅在国内，在海外也受到关注。", "This issue is attracting attention abroad as well as at home."],
+			["～だけでなく", "N3", "everyday", "V普通形／イ形／ナ形な／N＋だけでなく", "中性追加信息；ばかりか常强调进一步、甚至意外的程度，はもちろん把前项当作理所当然。", "Adds information neutrally. ばかりか often escalates, sometimes surprisingly; はもちろん takes the first item for granted.", "この店は安いだけでなく、おいしい。", "这家店不仅便宜，而且好吃。", "This restaurant is not only inexpensive but also good."],
+			["～のみならず", "N2", "formal", "V普通形／イ形／ナ形である／N＋のみならず", "‘不仅……而且……’的书面形式；口语通常用だけでなく，不必为了显得高级而替换。", "A written not only…but also construction. だけでなく is generally more natural in conversation.", "この問題は国内のみならず、海外でも注目されている。", "这个问题不仅在国内，在海外也受到关注。", "This issue is attracting attention abroad as well as at home."],
 			["～一方で", "N3", "common", "普通形／Nである／ナ形な＋一方で", "并列不同方面或不同主体的对照；に比べて通常按同一维度比较大小、多少、程度。", "Contrasts different aspects or subjects; に比べて normally compares along a shared scale such as size or amount.", "兄は静かな一方で、弟はよく話す。", "哥哥很安静，而弟弟很健谈。", "The older brother is quiet, whereas the younger one is talkative."],
 		],
 	},
@@ -266,7 +266,7 @@ export const N3_RELATED_GRAMMAR: Record<string, RelatedGroup> = {
 		rows: [
 			["～たところで", "N2", "situational", "Vた＋ところで", "即使做了也未必有好结果，常带徒劳感；たとえ～ても可以表达积极坚持，没有这种限制。", "Often suggests that even doing something will not help. たとえ～ても can instead express positive determination.", "今から急いだところで、間に合わない。", "现在再怎么赶，也来不及了。", "Even if we hurry now, we won't make it in time."],
 			["～わけではない", "N3", "common", "普通形／Nな／ナ形な＋わけではない", "否定对方可能推导出的判断；とは限らない强调不能一概断定，总有例外。二者有重叠，但否定焦点不同。", "Rejects a possible inference; とは限らない says a generalization is not guaranteed. They overlap but target different claims.", "嫌いなわけではないが、今日は食べたくない。", "并不是讨厌，只是今天不想吃。", "It's not that I dislike it; I just don't want to eat it today."],
-			["～かのようだ", "N2", "formal", "普通形／Nである＋かのようだ", "表示仿佛如此，常暗示实际并非如此；まるで是加强比喻感的副词，可以和它同用。", "Presents an as-if impression, often unlike reality. まるで is an adverb that can intensify this comparison.", "まるで時間が止まったかのようだった。", "仿佛时间停止了一样。", "It was as if time had stopped."],
+			["～かのようだ", "N2", "formal", "V普通形／イ形／N・ナ形である＋かのようだ", "表示仿佛如此，常暗示实际并非如此；まるで是加强比喻感的副词，可以和它同用。", "Presents an as-if impression, often unlike reality. まるで is an adverb that can intensify this comparison.", "まるで時間が止まったかのようだった。", "仿佛时间停止了一样。", "It was as if time had stopped."],
 		],
 	},
 	"5-6": {
