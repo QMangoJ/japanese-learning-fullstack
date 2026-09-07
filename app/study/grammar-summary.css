@@ -16,6 +16,9 @@
 .grammar-summary__example-body p{margin:0;font-size:.82rem;line-height:1.8}
 .grammar-summary__example-body .cn,.grammar-summary__example-body .en{margin-top:4px;color:var(--sub)}
 .grammar-summary__related{margin-top:16px}
+.grammar-summary__cross-level{margin-top:18px;padding-top:12px;border-top:2px solid var(--line);min-width:0}
+.grammar-summary__group-title{margin:7px 0 0;font-size:.85rem;font-weight:600;color:var(--accent);line-height:1.5}
+.grammar-summary__connection{margin:6px 0 0;color:var(--sub);font-size:.7rem;line-height:1.6;overflow-wrap:anywhere}
 .grammar-summary__related>.grammar-summary__row{grid-template-columns:minmax(0,.85fr) minmax(0,2.2fr)}
 .grammar-summary__sources{margin-top:10px;font-size:.7rem;color:var(--sub)}
 .grammar-summary__sources ul{display:flex;flex-wrap:wrap;gap:2px 12px;list-style:none;margin:4px 0 0;padding:0}
