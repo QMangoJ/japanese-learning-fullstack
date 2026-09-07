@@ -5,6 +5,25 @@ test.describe("daily grammar summary", () => {
 		await page.route("**/api/me", route => route.fulfill({ json: { user: null, configured: false } }));
 	});
 
+	test("shows cross-level comparisons outside the textbook with examples and responsive columns", async ({ page }, testInfo) => {
+		await page.goto("/study/day/5-4");
+		const related = page.getByTestId("grammar-related");
+		await expect(related.locator("article")).toHaveCount(6);
+		await related.evaluate(el => el.scrollIntoView({ block: "start" }));
+		await expect(related.getByText("～にわたって", { exact: true })).toBeVisible();
+		await expect(related.getByText("N2 · 参考", { exact: true })).toBeVisible();
+		await expect(related.getByText("请最迟在星期五提交。", { exact: true })).toBeVisible();
+		await expect(related.locator("details")).toHaveCount(0);
+		expect(await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)).toBeLessThanOrEqual(1);
+		await page.screenshot({ path: testInfo.outputPath("related-zh.png") });
+		await page.locator('[data-lang="en"]').click();
+		await related.evaluate(el => el.scrollIntoView({ block: "start" }));
+		await expect(related).toContainText("Please submit it by Friday.");
+		await expect(related).not.toContainText("请最迟");
+		expect(await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)).toBeLessThanOrEqual(1);
+		await page.screenshot({ path: testInfo.outputPath("related-en.png") });
+	});
+
 	test("stays at the bottom with all content visible, reviews the right point and switches language", async ({ page }, testInfo) => {
 		await page.goto("/study/day/5-2");
 		const summary = page.getByTestId("grammar-summary");

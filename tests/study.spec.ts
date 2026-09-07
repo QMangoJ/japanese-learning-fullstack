@@ -589,7 +589,9 @@ test.describe("study navigation", () => {
 		await expect(page.locator("#topbar")).toBeVisible();
 		const cue = page.locator('button[aria-label^="CD 1 · 14"]');
 		await expect(cue).toBeVisible({ timeout: 15_000 });
-		await cue.evaluate((button: HTMLButtonElement) => button.click());
+		// Audio playback requires a real user gesture in WebKit; a DOM-injected
+		// click does not exercise the user's interaction or grant that activation.
+		await cue.click();
 		await expect(page.locator("audio")).toHaveAttribute("src", /CD01_14\.mp3$/);
 		const seek = page.locator(".listening-seek");
 		await expect(seek).toBeVisible({ timeout: 15_000 });

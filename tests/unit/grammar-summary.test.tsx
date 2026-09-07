@@ -3,6 +3,7 @@ import { resolve } from "node:path";
 import { fireEvent, render, screen } from "@testing-library/react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { COMPLETION_COMPARISON, N3_DAILY_SUMMARIES } from "../../app/data/n3-daily-summaries";
+import { N3_RELATED_GRAMMAR } from "../../app/data/n3-related-grammar";
 import { GrammarSummary } from "../../app/study/grammar-summary";
 import { DayPage } from "../../app/study/days";
 import { G, G2, G4, resetStudyStateForTests, setModule } from "../../app/study/store";
@@ -12,6 +13,42 @@ const lesson = (w: number, d: number) => grammar.weeks.find((week: any) => week.
 
 describe("N3 daily grammar summaries", () => {
 	beforeEach(() => resetStudyStateForTests());
+	it("adds bilingual, graded comparisons with examples to every daily lesson only", () => {
+		expect(Object.keys(N3_RELATED_GRAMMAR).sort()).toEqual(Object.keys(N3_DAILY_SUMMARIES).sort());
+		const levels = new Set<string>();
+		for (const group of Object.values(N3_RELATED_GRAMMAR)) {
+			expect(group.title.every(Boolean)).toBe(true);
+			expect(group.tip.every(Boolean)).toBe(true);
+			expect(group.rows.length).toBeGreaterThanOrEqual(2);
+			expect(new Set(group.rows.map(row => row[0])).size).toBe(group.rows.length);
+			for (const row of group.rows) {
+				expect(row).toHaveLength(9);
+				expect(row.every(Boolean)).toBe(true);
+				expect(row[1]).toMatch(/^N[1-5]$/);
+				expect(row[4].length).toBeLessThan(125);
+				expect(row[5]).toMatch(/[a-zA-Z]/);
+				expect(row[6]).toMatch(/[ぁ-んァ-ヶ]/);
+				expect(row[8]).toMatch(/[a-zA-Z]/);
+				levels.add(row[1]);
+			}
+		}
+		expect([...levels].sort()).toEqual(["N1", "N2", "N3", "N4", "N5"]);
+	});
+	it("shows non-textbook scope, deadline and location comparisons fully expanded in both languages", () => {
+		const props = { week: 5, day: 4, points: lesson(5, 4).points, onReview: vi.fn() };
+		const { rerender } = render(<GrammarSummary {...props} language="zh" />);
+		const related = screen.getByTestId("grammar-related");
+		expect(related.querySelectorAll("article")).toHaveLength(6);
+		expect(related.querySelector("details")).toBeNull();
+		expect(related).toHaveTextContent("～にわたって");
+		expect(related).toHaveTextContent("N2 · 参考");
+		expect(related).toHaveTextContent("请最迟在星期五提交。");
+		rerender(<GrammarSummary {...props} language="en" />);
+		expect(related).toHaveTextContent("Please submit it by Friday.");
+		expect(related).not.toHaveTextContent("请最迟在星期五提交。");
+		expect(related).not.toHaveTextContent("时间");
+		expect(related).not.toHaveTextContent("普通形");
+	});
 	it("covers all 36 daily lessons and each source point, without week-end summaries", () => {
 		expect(Object.keys(N3_DAILY_SUMMARIES)).toHaveLength(36);
 		for (let w = 1; w <= 6; w++) {
