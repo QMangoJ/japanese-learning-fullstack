@@ -5,7 +5,7 @@ test.describe("daily grammar summary", () => {
 		await page.route("**/api/me", route => route.fulfill({ json: { user: null, configured: false } }));
 	});
 
-	test("stays at the bottom, expands source examples, reviews the right point and switches language", async ({ page }, testInfo) => {
+	test("stays at the bottom with all content visible, reviews the right point and switches language", async ({ page }, testInfo) => {
 		await page.goto("/study/day/5-2");
 		const summary = page.getByTestId("grammar-summary");
 		await expect(summary).toBeVisible();
@@ -13,13 +13,12 @@ test.describe("daily grammar summary", () => {
 		await summary.evaluate(el => el.scrollIntoView({ block: "start" }));
 		await expect(summary.locator(".grammar-summary__rows > article")).toHaveCount(4);
 		expect(await page.locator(".daily-q").last().evaluate((el) => !!(el.compareDocumentPosition(document.querySelector('[data-testid="grammar-summary"]')!) & Node.DOCUMENT_POSITION_FOLLOWING))).toBe(true);
-		await summary.getByText("本课例句", { exact: true }).first().click();
+		await expect(summary.locator("details")).toHaveCount(0);
 		await expect(summary.locator(".grammar-summary__example-body").first()).toBeVisible();
-		await summary.getByText("横向对比：其他“完成”表达").click();
 		await expect(summary.locator(".grammar-summary__related > article")).toHaveCount(6);
 		await expect(summary.getByText("～てしまう", { exact: true })).toBeVisible();
 		expect(await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)).toBeLessThanOrEqual(1);
-		await summary.scrollIntoViewIfNeeded();
+		await summary.evaluate(el => el.scrollIntoView({ block: "start" }));
 		await page.screenshot({ path: testInfo.outputPath("summary-zh.png") });
 		await summary.getByRole("button", { name: "回看语法: ～かける／～かけの／～かけだ" }).click();
 		await expect(page).toHaveURL(/\/study\/day\/5-2\/p2$/);
@@ -27,7 +26,7 @@ test.describe("daily grammar summary", () => {
 		await page.locator('[data-lang="en"]').click();
 		await expect(summary.getByRole("heading", { name: "Grammar summary" })).toBeVisible();
 		await expect(summary).not.toContainText("口语 · 很常用");
-		await summary.scrollIntoViewIfNeeded();
+		await summary.evaluate(el => el.scrollIntoView({ block: "start" }));
 		expect(await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)).toBeLessThanOrEqual(1);
 		await page.screenshot({ path: testInfo.outputPath("summary-en.png") });
 	});
@@ -38,7 +37,7 @@ test.describe("daily grammar summary", () => {
 		const summary = page.getByTestId("grammar-summary");
 		await expect(summary).toBeVisible();
 		await page.evaluate(() => document.documentElement.classList.replace("theme-light", "theme-dark"));
-		await summary.getByText("本课例句", { exact: true }).first().click();
+		await expect(summary.locator(".grammar-summary__example-body").first()).toBeVisible();
 		await summary.evaluate(el => el.scrollIntoView({ block: "start" }));
 		expect(await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)).toBeLessThanOrEqual(1);
 		await page.screenshot({ path: testInfo.outputPath("summary-dark-narrow.png") });
