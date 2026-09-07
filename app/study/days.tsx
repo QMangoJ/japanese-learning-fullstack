@@ -3,6 +3,7 @@ import { useEffect, useState, useSyncExternalStore, type ReactNode } from "react
 import { ConnBlock, Fmt, Rr, RubyHtml, SayButton } from "../routes/study-common";
 import { getKanjiWordUsage, kanjiWordSurface } from "./kanji-word-usage";
 import { ExerciseReset, ExerciseSession, useQuestionProgress } from "./exercise-progress";
+import { GrammarSummary } from "./grammar-summary";
 import {
 	FAVMETA,
 	G,
@@ -1625,6 +1626,10 @@ export function DayPage({ w, d, token }: { w: number; d: number; token: string |
 			) : (
 				<DayVocab day={day} w={w} d={d} scrollTok={vocabTok} />
 			)}
+			{MODULE === "grammar" && d !== 7 ? <GrammarSummary
+				week={w} day={d} points={day.points || []} language={LANG}
+				onReview={(index) => navTo(`#/day/${w}-${d}/p${index}`)}
+			/> : null}
 			<DayNav w={w} d={d} />
 		</ExerciseSession>
 	);
