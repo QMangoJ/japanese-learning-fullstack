@@ -1,6 +1,6 @@
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
-import { fireEvent, render, screen, within } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { COMPLETION_COMPARISON, N3_DAILY_SUMMARIES } from "../../app/data/n3-daily-summaries";
 import { GrammarSummary } from "../../app/study/grammar-summary";
@@ -38,10 +38,9 @@ describe("N3 daily grammar summaries", () => {
 		render(<GrammarSummary week={5} day={2} points={lesson(5, 2).points} language="zh" onReview={onReview} />);
 		expect(screen.getByRole("heading", { name: "语法总结" })).toBeInTheDocument();
 		expect(screen.getAllByText("N3 · 本课")).toHaveLength(4);
-		const example = screen.getAllByText("本课例句")[0].closest("details")!;
-		expect(example).not.toHaveAttribute("open");
-		fireEvent.click(within(example).getByText("本课例句"));
-		expect(example).toHaveAttribute("open");
+		const example = screen.getByTestId("grammar-summary").querySelector(".grammar-summary__example-body")!;
+		expect(example).toBeVisible();
+		expect(screen.getByTestId("grammar-summary").querySelector("details")).toBeNull();
 		expect(example.querySelector("ruby")).not.toBeNull();
 		expect(example).toHaveTextContent(lesson(5, 2).points[0].examples[0].cn);
 		fireEvent.click(screen.getAllByRole("button", { name: /回看语法/ })[2]);
