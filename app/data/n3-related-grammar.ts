@@ -217,7 +217,7 @@ export const N3_RELATED_GRAMMAR: Record<string, RelatedGroup> = {
 		title: ["换句话说与因果方向", "Reformulation and the direction of causality"],
 		tip: ["つまり把内容归纳；そのため从原因走到结果；なぜなら回头解释理由。", "つまり summarizes; そのため moves from cause to effect; なぜなら looks back to give the reason."],
 		rows: [
-			["要するに", "N3", "common", "要するに＋句子", "与つまり都能概括，但更有‘省掉细节，重点是’的语感；不负责表达因果。", "Like つまり, summarizes, but more explicitly sets details aside to state the main point; it does not itself mark causation.", "要するに、準備が足りなかった。", "总之，就是准备不够。", "In short, we weren't prepared enough."],
+			["要するに", "N2", "common", "要するに＋句子", "与つまり都能概括，但更有‘省掉细节，重点是’的语感；不负责表达因果。", "Like つまり, summarizes, but more explicitly sets details aside to state the main point; it does not itself mark causation.", "要するに、準備が足りなかった。", "总之，就是准备不够。", "In short, we weren't prepared enough."],
 			["したがって", "N2", "formal", "句子。したがって、句子", "从前提推出结论，常见于论证；その結果侧重实际发生的结果，不一定是逻辑推导。", "Introduces a conclusion drawn from a premise, common in reasoning. その結果 focuses on what actually resulted.", "全員が賛成した。したがって、この案を採用する。", "全员赞成，因此采用这个方案。", "Everyone agreed. Therefore, we will adopt this plan."],
 		],
 	},
@@ -340,4 +340,7 @@ export const RELATED_LEVEL_SOURCES = [
 	["ために・N4 / ために · N4", "https://nihongokyoshi-net.com/2019/03/05/jlptn4-grammar-tameni/"],
 	["一方で・N3 / 一方で · N3", "https://bunpro.jp/grammar_points/292"],
 	["には及ばない・N1 / には及ばない · N1", "https://nihongokyoshi-net.com/2019/07/07/jlptn1-grammar-niwaoyobanai/"],
+	["要するに・N2 / 要するに · N2", "https://bunpro.jp/grammar_points/要するに"],
+	["としても・N3 / としても · N3", "https://www.benri.jp/jlpt/n3/grammar/toshite-mo"],
+	["二度と～ない・N3 / 二度と～ない · N3", "https://mainichi-nonbiri.com/grammar/n3-nidotonai/"],
 ] as const;
