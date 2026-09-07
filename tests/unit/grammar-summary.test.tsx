@@ -1,0 +1,76 @@
+import { readFileSync } from "node:fs";
+import { resolve } from "node:path";
+import { fireEvent, render, screen, within } from "@testing-library/react";
+import { beforeEach, describe, expect, it, vi } from "vitest";
+import { COMPLETION_COMPARISON, N3_DAILY_SUMMARIES } from "../../app/data/n3-daily-summaries";
+import { GrammarSummary } from "../../app/study/grammar-summary";
+import { DayPage } from "../../app/study/days";
+import { G, G2, G4, resetStudyStateForTests, setModule } from "../../app/study/store";
+
+const grammar = JSON.parse(readFileSync(resolve("public/data/grammar.d15be04258.json"), "utf8"));
+const lesson = (w: number, d: number) => grammar.weeks.find((week: any) => week.n === w).days.find((day: any) => day.day === d);
+
+describe("N3 daily grammar summaries", () => {
+	beforeEach(() => resetStudyStateForTests());
+	it("covers all 36 daily lessons and each source point, without week-end summaries", () => {
+		expect(Object.keys(N3_DAILY_SUMMARIES)).toHaveLength(36);
+		for (let w = 1; w <= 6; w++) {
+			for (let d = 1; d <= 6; d++) {
+				const summary = N3_DAILY_SUMMARIES[`${w}-${d}`];
+				expect(summary.title.every(Boolean)).toBe(true);
+				expect(summary.tip.every(Boolean)).toBe(true);
+				expect(summary.rows).toHaveLength(lesson(w, d).points.length);
+				for (const [index, row] of summary.rows.entries()) {
+					expect(row.every(Boolean)).toBe(true);
+					expect(row[2].length).toBeLessThan(125);
+					expect(row[3]).toMatch(/[a-zA-Z]/);
+					const ex = lesson(w, d).points[index].examples[0];
+					expect(ex.jp).toBeTruthy();
+					expect(ex.cn).toBeTruthy();
+					expect(ex.en).toBeTruthy();
+				}
+			}
+			expect(N3_DAILY_SUMMARIES[`${w}-7`]).toBeUndefined();
+		}
+	});
+	it("renders concise comparisons, source examples and exact review targets", () => {
+		const onReview = vi.fn();
+		render(<GrammarSummary week={5} day={2} points={lesson(5, 2).points} language="zh" onReview={onReview} />);
+		expect(screen.getByRole("heading", { name: "语法总结" })).toBeInTheDocument();
+		expect(screen.getAllByText("N3 · 本课")).toHaveLength(4);
+		const example = screen.getAllByText("本课例句")[0].closest("details")!;
+		expect(example).not.toHaveAttribute("open");
+		fireEvent.click(within(example).getByText("本课例句"));
+		expect(example).toHaveAttribute("open");
+		expect(example.querySelector("ruby")).not.toBeNull();
+		expect(example).toHaveTextContent(lesson(5, 2).points[0].examples[0].cn);
+		fireEvent.click(screen.getAllByRole("button", { name: /回看语法/ })[2]);
+		expect(onReview).toHaveBeenCalledWith(2);
+		expect(COMPLETION_COMPARISON).toHaveLength(6);
+		expect(screen.getByText("横向对比：其他“完成”表达")).toBeInTheDocument();
+	});
+	it("switches summary prose and examples to English without duplicating Chinese", () => {
+		const props = { week: 2, day: 5, points: lesson(2, 5).points, onReview: vi.fn() };
+		const { rerender } = render(<GrammarSummary {...props} language="zh" />);
+		rerender(<GrammarSummary {...props} language="en" />);
+		expect(screen.getByRole("heading", { name: "Grammar summary" })).toBeInTheDocument();
+		expect(screen.queryByText(N3_DAILY_SUMMARIES["2-5"].tip[0])).not.toBeInTheDocument();
+		expect(screen.getByText(N3_DAILY_SUMMARIES["2-5"].tip[1])).toBeInTheDocument();
+		expect(screen.getByText(lesson(2, 5).points[0].examples[0].en)).toBeInTheDocument();
+		expect(screen.queryByText("横向对比：其他“完成”表达")).not.toBeInTheDocument();
+	});
+	it("renders nothing on test days or unknown lessons", () => {
+		const { container, rerender } = render(<GrammarSummary week={1} day={7} points={[]} language="en" onReview={vi.fn()} />);
+		expect(container).toBeEmptyDOMElement();
+		rerender(<GrammarSummary week={99} day={1} points={[]} language="en" onReview={vi.fn()} />);
+		expect(container).toBeEmptyDOMElement();
+	});
+	it.each(["grammar", "n2grammar", "n4grammar"] as const)("restricts the day-page integration correctly for %s", (module) => {
+		G.weeks = grammar.weeks;
+		G2.weeks = grammar.weeks;
+		G4.weeks = grammar.weeks;
+		setModule(module);
+		render(<DayPage w={5} d={2} token={null} />);
+		expect(screen.queryAllByTestId("grammar-summary")).toHaveLength(module === "grammar" ? 1 : 0);
+	});
+});
