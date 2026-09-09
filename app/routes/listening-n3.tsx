@@ -565,7 +565,7 @@ function ChapterDetail({ chapterNumber, sectionNumber, onBack, hideBack = false 
 		}
 		// Commit the new source before playing, while the trusted click still
 		// grants user activation (required by WebKit when changing tracks).
-		flushSync(() => setCue(next));
+		if (!sameCue) flushSync(() => setCue(next));
 		void audioRef.current?.play().catch(() => undefined);
 	}
 

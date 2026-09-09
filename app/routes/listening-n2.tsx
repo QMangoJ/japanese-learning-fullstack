@@ -212,7 +212,7 @@ function ChapterDetail({ chapterNumber, sectionNumber, hideBack = false }: { cha
 			return;
 		}
 		// Keep playback in the trusted user gesture after committing the source.
-		flushSync(() => setCue(next));
+		if (!sameCue) flushSync(() => setCue(next));
 		void audioRef.current?.play().catch(() => undefined);
 	}
 
