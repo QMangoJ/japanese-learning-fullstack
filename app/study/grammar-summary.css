@@ -32,3 +32,10 @@
 	.grammar-summary__row button{position:absolute;right:0;top:0;max-width:80px}
 	.grammar-summary__example-body{margin-top:2px}
 }
+.grammar-summary[data-level="N2"] .grammar-summary__meaning {
+	margin: 4px 0 0;
+	font-size: .8rem;
+	line-height: 1.6;
+	color: var(--ink);
+	overflow-wrap: anywhere;
+}
