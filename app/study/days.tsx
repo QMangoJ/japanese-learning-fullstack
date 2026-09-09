@@ -5,6 +5,7 @@ import { getKanjiWordUsage, kanjiWordSurface } from "./kanji-word-usage";
 import { getN2KanjiWordUsage } from "./n2-kanji-word-usage";
 import { ExerciseReset, ExerciseSession, useQuestionProgress } from "./exercise-progress";
 import { GrammarSummary } from "./grammar-summary";
+import { N2GrammarSummary } from "./n2-grammar-summary";
 import {
 	FAVMETA,
 	G,
@@ -1628,6 +1629,10 @@ export function DayPage({ w, d, token }: { w: number; d: number; token: string |
 				<DayVocab day={day} w={w} d={d} scrollTok={vocabTok} />
 			)}
 			{MODULE === "grammar" && d !== 7 ? <GrammarSummary
+				week={w} day={d} points={day.points || []} language={LANG}
+				onReview={(index) => navTo(`#/day/${w}-${d}/p${index}`)}
+			/> : null}
+			{MODULE === "n2grammar" && d !== 7 ? <N2GrammarSummary
 				week={w} day={d} points={day.points || []} language={LANG}
 				onReview={(index) => navTo(`#/day/${w}-${d}/p${index}`)}
 			/> : null}
