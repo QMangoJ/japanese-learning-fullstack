@@ -124,10 +124,10 @@ describe("N3 daily grammar summaries", () => {
 	});
 	it.each(["grammar", "n2grammar", "n4grammar"] as const)("restricts the day-page integration correctly for %s", (module) => {
 		G.weeks = grammar.weeks;
-		G2.weeks = grammar.weeks;
+		G2.weeks = JSON.parse(readFileSync(resolve("public/data/n2grammar.4e6157570a.json"), "utf8")).weeks;
 		G4.weeks = grammar.weeks;
 		setModule(module);
 		render(<DayPage w={5} d={2} token={null} />);
-		expect(screen.queryAllByTestId("grammar-summary")).toHaveLength(module === "grammar" ? 1 : 0);
+		expect(screen.queryAllByTestId("grammar-summary")).toHaveLength(module === "n4grammar" ? 0 : 1);
 	});
 });
