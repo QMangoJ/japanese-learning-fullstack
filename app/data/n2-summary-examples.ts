@@ -1,0 +1,82 @@
+// Exact-Japanese keys prevent the legacy positional English translations from
+// being attached to a different sentence in the new summary.
+export const N2_SUMMARY_EXAMPLE_EN: Record<string, string> = {
+	"車の免許は持っているものの、ほとんど運転したことがない。": "Although I have a driver's license, I have hardly ever driven.",
+	"博士でも間違うことはありえる。": "Even someone with a doctorate can make a mistake.",
+	"70歳以上の方に限り、入場無料。": "Admission is free only for people aged 70 or over.",
+	"大きすぎる親の期待は、子どもにしたら苦痛だ。": "Excessive parental expectations are painful from a child's perspective.",
+	"もし、それが本当だとしたら、夢のようです。": "If that were true, it would be like a dream.",
+	"行くとしても、旅行者としてしか行けない。": "Even if I go, I can only go as a tourist.",
+	"この祭りは、住民の社会参加を目的として始められた。": "This festival was started to encourage residents to participate in the community.",
+	"家族とともに来日した。": "I came to Japan with my family.",
+	"人口の増加にともない、資源の消費量も増える。": "As the population grows, resource consumption also increases.",
+	"年を取るにつれて、体のいろいろな機能が低下する。": "As we age, various bodily functions decline.",
+	"北へ行くにしたがって、紅葉は早くなる。": "The farther north you go, the earlier the leaves change color.",
+	"友達が言ったとおり、日本の物価は高い。": "As my friend said, prices in Japan are high.",
+	"セールスマンに言われるまま、契約書にサインをしてしまった。": "I ended up signing the contract just as the salesperson told me to.",
+	"驚いたことに、彼女は同じ相手と2回も離婚して再婚しているんです。": "Surprisingly, she has divorced and remarried the same person twice.",
+	"緊張のあまり、体が震えた。": "I was so nervous that my body trembled.",
+	"寒いわけだ。雪が降っている。": "No wonder it's cold. It's snowing.",
+	"ほしくないわけではないけれど、お金がないから買えないんです。": "It's not that I don't want it, but I can't buy it because I have no money.",
+	"うちの子がそんなことをするわけがない。": "There is no way my child would do such a thing.",
+	"重要な会議があるので、病気でも会社を休むわけにはいかない。": "I have an important meeting, so I can't take time off work even if I'm ill.",
+	"窓を開けたとたん、強い風が入ってきた。": "The moment I opened the window, a strong gust of wind came in.",
+	"彼は酔っ払って騒いだあげく、寝てしまった。": "After getting drunk and making a scene, he ended up falling asleep.",
+	"悩んだ末、進学ではなく就職することにした。": "After much deliberation, I decided to get a job rather than continue my education.",
+	"あの人は忙しい人で、来たかと思ったら、もう帰ってしまった。": "That person is so busy: no sooner had they arrived than they left again.",
+	"病院で検査したところ、異常はなかった。": "Tests at the hospital revealed no abnormalities.",
+	"工場で火事があり、仕事どころではなかった。": "There was a fire at the factory, so work was the last thing we could think about.",
+	"忙しくて夏休みどころか日曜日も休めないよ。": "I'm so busy I can't even take Sundays off, let alone a summer holiday.",
+	"この手紙の日本語は間違いだらけだ。": "The Japanese in this letter is full of mistakes.",
+	"うちの子は遊びに行ったきり帰ってこない。": "My child went out to play and still hasn't come back.",
+	"電車が混んでいて、東京まで立ちっぱなしだった。": "The train was crowded, so I had to stand all the way to Tokyo.",
+	"専門家の予想に反して、景気は回復し始めた。": "Contrary to experts' predictions, the economy began to recover.",
+	"パソコンは便利な反面、トラブルも多い。": "Computers are convenient, but they also have many problems.",
+	"この布は水に強い一方、熱に弱い。": "This fabric resists water but is vulnerable to heat.",
+	"大気中のCO₂濃度の上昇とともに、地球の温暖化は進む一方だ。": "As atmospheric CO₂ levels rise, global warming continues to advance.",
+	"彼は仕事ができる上に優しい。": "He is good at his job and kind as well.",
+	"よく考えた上で決めます。": "I'll decide after thinking it through carefully.",
+	"キャプテンに選ばれた上は、がんばるしかない。": "Now that I've been chosen as captain, I have to give it my best.",
+	"天気図の上では春なのに、実際はまだ寒い。": "The weather chart suggests spring, but in reality it is still cold.",
+	"花火大会は天気次第で中止になる場合もあります。": "The fireworks display may be canceled depending on the weather.",
+	"では、田中が戻り次第、お電話させます。": "Then I'll have Tanaka call you as soon as he returns.",
+	"このたび担当が替わりましたので、あいさつに伺った次第です。": "There has been a change in the person in charge, so I have come to introduce myself.",
+	"客の意見にこたえて、営業時間を延長する。": "We will extend our opening hours in response to customers' feedback.",
+	"目上の人に対して、そういう言い方は失礼ですよ。": "It is rude to speak that way to someone senior to you.",
+	"未成年者の飲酒は、法律により禁じられている。": "Underage drinking is prohibited by law.",
+	"彼は汚職事件にかかわって逮捕された。": "He was arrested for involvement in a corruption case.",
+	"悪いことと知りながら、盗みを繰り返した。": "Despite knowing it was wrong, he repeatedly stole things.",
+	"彼女は忙しいと言いつつ、長電話をしている。": "Although she says she is busy, she is having a long phone conversation.",
+	"医療はますます進歩しつつある。": "Medical care is continuing to advance.",
+	"知らないくせして、知っているようなことを言うな。": "Don't talk as if you know when you don't.",
+	"開店に先立ち、関係者だけのパーティーが行われた。": "Before the opening, a party was held exclusively for those involved.",
+	"申し訳ありませんが、私にはわかりかねます。": "I'm sorry, but I'm afraid I cannot tell you.",
+	"大学入学をきっかけに引っ越す。": "I'm moving as I start university.",
+	"会議には中国をはじめ、アジアの国々が参加した。": "Asian countries, including China, took part in the conference.",
+	"現地にて解散となります。": "The group will disperse at the venue.",
+	"「この件の説明は以上です。なお、詳細についてはプリントをご覧ください。」": "That concludes the explanation of this matter. For further details, please see the handout.",
+};
+
+export const N2_SUMMARY_EXAMPLE_ZH: Record<string, string> = {
+	"車の免許は持っているものの、ほとんど運転したことがない。": "虽然有驾照，但几乎没有开过车。",
+	"態度の悪い店員に、一言文句を言わないではいられなかった。": "面对态度恶劣的店员，我忍不住抱怨了一句。",
+	"70歳以上の方に限り、入場無料。": "仅限年满70岁的人士免费入场。",
+	"この祭りは、住民の社会参加を目的として始められた。": "这个节庆活动是为了鼓励居民参与社会活动而创办的。",
+	"客の意見にこたえて、営業時間を延長する。": "为回应顾客的意见，将延长营业时间。",
+	"図書館の利用にあたり、図書カードが必要です。": "使用图书馆时需要借书证。",
+	"申し訳ありませんが、私にはわかりかねます。": "很抱歉，这个问题我恐怕无法回答。",
+	"会議には中国をはじめ、アジアの国々が参加した。": "包括中国在内的亚洲各国参加了会议。",
+	"現地にて解散となります。": "将在活动现场解散。",
+};
+
+export type N2Example = { jp: string; jp_r?: string; cn?: string; en?: string };
+export function n2SummaryExample(example: N2Example): N2Example {
+	return {
+		...example,
+		cn: N2_SUMMARY_EXAMPLE_ZH[example.jp] ?? example.cn,
+		en: N2_SUMMARY_EXAMPLE_EN[example.jp] ?? example.en,
+		jp_r: example.jp_r
+			?.replace("気味<rt>きみ</rt>", "気味<rt>ぎみ</rt>")
+			.replace("1<ruby>日<rt>か</rt></ruby>", "<ruby>1日<rt>いちにち</rt></ruby>"),
+	};
+}
