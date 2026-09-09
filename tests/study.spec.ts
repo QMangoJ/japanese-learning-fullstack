@@ -841,12 +841,21 @@ test.describe("study navigation", () => {
 
 		await page.keyboard.press("Space");
 		await expect.poll(async () => audio.evaluate((el: HTMLAudioElement) => el.paused)).toBe(false);
+		// paused=false only means playback was requested. WebKit can still be
+		// loading metadata; seeking at that point does not establish the 10s
+		// starting position required by the keyboard assertions below.
+		await expect.poll(async () => audio.evaluate((el: HTMLAudioElement) =>
+			el.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA && Number.isFinite(el.duration) && el.duration > 10,
+		)).toBe(true);
 		await page.keyboard.press("Enter");
 		await expect.poll(async () => audio.evaluate((el: HTMLAudioElement) => el.paused)).toBe(true);
 
 		await audio.evaluate((el: HTMLAudioElement) => {
 			el.currentTime = 10;
 		});
+		await expect.poll(async () => audio.evaluate((el: HTMLAudioElement) =>
+			!el.seeking && Math.abs(el.currentTime - 10) < 0.05,
+		)).toBe(true);
 		await page.keyboard.press("ArrowLeft");
 		await expect.poll(async () => audio.evaluate((el: HTMLAudioElement) => el.currentTime)).toBeCloseTo(7, 1);
 		await page.keyboard.press("ArrowRight");
