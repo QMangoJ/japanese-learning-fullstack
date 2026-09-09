@@ -122,12 +122,13 @@ describe("N3 daily grammar summaries", () => {
 		rerender(<GrammarSummary week={99} day={1} points={[]} language="en" onReview={vi.fn()} />);
 		expect(container).toBeEmptyDOMElement();
 	});
-	it.each(["grammar", "n2grammar", "n4grammar"] as const)("restricts the day-page integration correctly for %s", (module) => {
+	it.each(["grammar", "n2grammar", "n4grammar"] as const)("restricts the day-page integration correctly for %s", async (module) => {
 		G.weeks = grammar.weeks;
 		G2.weeks = JSON.parse(readFileSync(resolve("public/data/n2grammar.4e6157570a.json"), "utf8")).weeks;
 		G4.weeks = grammar.weeks;
 		setModule(module);
 		render(<DayPage w={5} d={2} token={null} />);
-		expect(screen.queryAllByTestId("grammar-summary")).toHaveLength(module === "n4grammar" ? 0 : 1);
+		if (module === "n4grammar") expect(screen.queryAllByTestId("grammar-summary")).toHaveLength(0);
+		else expect(await screen.findAllByTestId("grammar-summary")).toHaveLength(1);
 	});
 });
