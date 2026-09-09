@@ -745,3 +745,13 @@ export function getKanjiWordUsage(word: KanjiWord): KanjiWordUsage {
 export function kanjiWordSurface(word: KanjiWord) {
 	return cleanSurface(word.jp);
 }
+
+/** Reuse only explicit frames or source-matched examples, never noun fallbacks. */
+export function getReviewedKanjiWordUsage(word: KanjiWord): KanjiWordUsage | null {
+	const surface = cleanSurface(word.jp);
+	if (!(VERB_FRAMES[surface] || I_ADJECTIVE_FRAMES[surface] || NA_ADJECTIVE_FRAMES[surface]
+		|| ADVERB_FRAMES[word.jp] || EXPRESSIONS[word.jp] || NOUN_FRAMES[surface] || SOURCE_EXAMPLES[word.jp])) return null;
+	const usage = getKanjiWordUsage(word);
+	if (usage.exampleCn.includes("例句中使用了") || usage.exampleEn.includes("The example uses")) return null;
+	return usage;
+}

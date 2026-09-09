@@ -2,6 +2,7 @@ import { useEffect, useState, useSyncExternalStore, type ReactNode } from "react
 
 import { ConnBlock, Fmt, Rr, RubyHtml, SayButton } from "../routes/study-common";
 import { getKanjiWordUsage, kanjiWordSurface } from "./kanji-word-usage";
+import { getN2KanjiWordUsage } from "./n2-kanji-word-usage";
 import { ExerciseReset, ExerciseSession, useQuestionProgress } from "./exercise-progress";
 import { GrammarSummary } from "./grammar-summary";
 import {
@@ -1483,7 +1484,7 @@ function DayKanji({ day, w, d, scrollTok }: { day: any; w: number; d: number; sc
 						<div className="kwords">
 							{(k.words || []).map((wd: any, wi: number) => {
 								const kid = `${MODULE}#${w}-${d}#${ki}#${wi}`;
-								const usage = MODULE === "kanji" ? getKanjiWordUsage(wd) : null;
+								const usage = MODULE === "kanji" ? getKanjiWordUsage(wd) : MODULE === "n2kanji" ? getN2KanjiWordUsage(wd) : null;
 								const usageWord = usage?.focus || (usage ? kanjiWordSurface(wd) : "");
 								const usageReading = usage?.focusReading || wd.reading;
 								return (
