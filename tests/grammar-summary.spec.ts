@@ -9,6 +9,8 @@ test.describe("daily grammar summary", () => {
 		await page.goto("/study/day/5-4");
 		const related = page.getByTestId("grammar-related");
 		await expect(related.locator("article")).toHaveCount(6);
+		await expect(related.locator(".grammar-summary__meaning")).toHaveCount(6);
+		await expect(related.getByText("意思：历时……／遍及……", { exact: true })).toBeVisible();
 		await related.evaluate(el => el.scrollIntoView({ block: "start" }));
 		await expect(related.getByText("～にわたって", { exact: true })).toBeVisible();
 		await expect(related.getByText("N2 · 参考", { exact: true })).toBeVisible();
@@ -20,6 +22,7 @@ test.describe("daily grammar summary", () => {
 		await related.evaluate(el => el.scrollIntoView({ block: "start" }));
 		await expect(related).toContainText("Please submit it by Friday.");
 		await expect(related).not.toContainText("请最迟");
+		await expect(related.locator(".grammar-summary__meaning")).toHaveCount(0);
 		expect(await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)).toBeLessThanOrEqual(1);
 		await page.screenshot({ path: testInfo.outputPath("related-en.png") });
 	});

@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState, type PointerEvent, type RefObject } from "react";
+import { flushSync } from "react-dom";
 
 import { getListeningN2Lesson } from "../data/listening-n2-lessons";
 import {
@@ -196,7 +197,6 @@ function ChapterDetail({ chapterNumber, sectionNumber, hideBack = false }: { cha
 	const disc = listeningN2SectionDisc(chapterNumber, sectionNumber);
 	const initialCue = useMemo<AudioCue>(() => ({ disc, track: section?.firstTrack ?? 1 }), [disc, section]);
 	const [cue, setCue] = useState(initialCue);
-	const [playRequest, setPlayRequest] = useState(0);
 	const [playing, setPlaying] = useState(false);
 	const audioRef = useRef<HTMLAudioElement>(null);
 	const questionSupport = useMemo(() => (lesson ? listeningQuestionSupport(lesson) : new Map()), [lesson]);
@@ -205,19 +205,15 @@ function ChapterDetail({ chapterNumber, sectionNumber, hideBack = false }: { cha
 		setCue(initialCue);
 	}, [initialCue, chapterNumber, sectionNumber]);
 
-	useEffect(() => {
-		if (!playRequest) return;
-		void audioRef.current?.play().catch(() => undefined);
-	}, [cue, playRequest]);
-
 	function toggleCue(next: AudioCue) {
 		const sameCue = cue.disc === next.disc && cue.track === next.track;
 		if (sameCue && audioRef.current && !audioRef.current.paused) {
 			audioRef.current.pause();
 			return;
 		}
-		setCue(next);
-		setPlayRequest((value) => value + 1);
+		// Keep playback in the trusted user gesture after committing the source.
+		if (!sameCue) flushSync(() => setCue(next));
+		void audioRef.current?.play().catch(() => undefined);
 	}
 
 	useEffect(() => {

@@ -1,5 +1,6 @@
 import { COMPLETION_COMPARISON, N3_DAILY_SUMMARIES, SUMMARY_SOURCES, type Usage } from "../data/n3-daily-summaries";
 import { N3_RELATED_GRAMMAR, RELATED_LEVEL_SOURCES } from "../data/n3-related-grammar";
+import { DAILY_MEANINGS, RELATED_MEANINGS } from "../data/n3-summary-meanings";
 import { RubyHtml } from "../routes/study-common";
 import "./grammar-summary.css";
 
@@ -63,6 +64,7 @@ export function GrammarSummary({ week, day, points, language, onReview }: {
 							<article className="grammar-summary__row" key={form}>
 								<header>
 									<h4 lang="ja">{form}</h4>
+									{!lang && <p className="grammar-summary__meaning">意思：{DAILY_MEANINGS[`${week}-${day}`]?.[index]}</p>}
 									<div className="grammar-summary__badges">
 										<span>{label("N3 · 本课", "N3 · this course")}</span>
 										<span>{USAGE_LABELS[usage][lang]}</span>
@@ -87,6 +89,7 @@ export function GrammarSummary({ week, day, points, language, onReview }: {
 					<div className="grammar-summary__columns" aria-hidden="true"><span>{label("表达 · 参考等级 · 接续", "Pattern · reference level · form")}</span><span>{label("与本课怎么区分", "How it differs from this lesson")}</span><span>{label("对比例句", "Comparison example")}</span></div>
 					{related.rows.map(([form, level, usage, connection, zh, en, jp, translationZh, translationEn]) => <article className="grammar-summary__row" key={form}>
 						<header><h4 lang="ja">{formLabel(form, !!lang)}</h4>
+							{!lang && <p className="grammar-summary__meaning">意思：{RELATED_MEANINGS[form]}</p>}
 							<div className="grammar-summary__badges"><span>{level} · {label("参考", "reference")}</span><span>{USAGE_LABELS[usage][lang]}</span></div>
 							<p className="grammar-summary__connection">{connectionLabel(connection, !!lang)}</p>
 						</header>
@@ -98,7 +101,7 @@ export function GrammarSummary({ week, day, points, language, onReview }: {
 					<h3>{label("横向对比：其他“完成”表达", "Compare other completion expressions")}</h3>
 					<p className="grammar-summary__tip">{label("这些表达侧重点不同，并非互斥：食べ切ってしまった同时强调全部吃完，以及事情已发生的语气。", "The emphases can combine: 食べ切ってしまった marks both entirety and the speaker's stance toward the completed event.")}</p>
 					{COMPLETION_COMPARISON.map(([form, level, usage, cn, en]) => <article className="grammar-summary__row" key={form}>
-						<header><h4 lang="ja">{form}</h4><div className="grammar-summary__badges"><span>{lang && level.includes("／") ? "Around N3" : level.split("／")[0]} · {label("参考", "reference")}</span><span>{USAGE_LABELS[usage][lang]}</span></div></header>
+						<header><h4 lang="ja">{form}</h4>{!lang && <p className="grammar-summary__meaning">意思：{RELATED_MEANINGS[form]}</p>}<div className="grammar-summary__badges"><span>{lang && level.includes("／") ? "Around N3" : level.split("／")[0]} · {label("参考", "reference")}</span><span>{USAGE_LABELS[usage][lang]}</span></div></header>
 						<p>{lang ? en : cn}</p>
 					</article>)}
 					<div className="grammar-summary__sources"><span>{label("等级参考来源", "Level references")}</span>

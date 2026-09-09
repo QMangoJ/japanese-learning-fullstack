@@ -4,6 +4,7 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { COMPLETION_COMPARISON, N3_DAILY_SUMMARIES } from "../../app/data/n3-daily-summaries";
 import { N3_RELATED_GRAMMAR } from "../../app/data/n3-related-grammar";
+import { DAILY_MEANINGS, RELATED_MEANINGS } from "../../app/data/n3-summary-meanings";
 import { GrammarSummary } from "../../app/study/grammar-summary";
 import { DayPage } from "../../app/study/days";
 import { G, G2, G4, resetStudyStateForTests, setModule } from "../../app/study/store";
@@ -13,6 +14,26 @@ const lesson = (w: number, d: number) => grammar.weeks.find((week: any) => week.
 
 describe("N3 daily grammar summaries", () => {
 	beforeEach(() => resetStudyStateForTests());
+	it("provides concise meanings for every daily, related and completion expression", () => {
+		expect(Object.keys(DAILY_MEANINGS).sort()).toEqual(Object.keys(N3_DAILY_SUMMARIES).sort());
+		for (const [key, summary] of Object.entries(N3_DAILY_SUMMARIES)) {
+			expect(DAILY_MEANINGS[key]).toHaveLength(summary.rows.length);
+			for (const meaning of DAILY_MEANINGS[key]) expect(meaning.length).toBeGreaterThan(2);
+		}
+		for (const group of Object.values(N3_RELATED_GRAMMAR)) {
+			for (const [form] of group.rows) expect(RELATED_MEANINGS[form], form).toBeTruthy();
+		}
+		for (const [form] of COMPLETION_COMPARISON) expect(RELATED_MEANINGS[form], form).toBeTruthy();
+	});
+	it("keeps Chinese meanings beside each pattern and out of English mode", () => {
+		const props = { week: 5, day: 4, points: lesson(5, 4).points, onReview: vi.fn() };
+		const { container, rerender } = render(<GrammarSummary {...props} language="zh" />);
+		expect(container.querySelectorAll(".grammar-summary__meaning")).toHaveLength(10);
+		expect(screen.getByText("意思：直到……／最迟在……之前")).toBeVisible();
+		expect(screen.getByText("意思：连……也……")).toBeVisible();
+		rerender(<GrammarSummary {...props} language="en" />);
+		expect(container.querySelector(".grammar-summary__meaning")).toBeNull();
+	});
 	it("adds bilingual, graded comparisons with examples to every daily lesson only", () => {
 		expect(Object.keys(N3_RELATED_GRAMMAR).sort()).toEqual(Object.keys(N3_DAILY_SUMMARIES).sort());
 		const levels = new Set<string>();
@@ -101,12 +122,13 @@ describe("N3 daily grammar summaries", () => {
 		rerender(<GrammarSummary week={99} day={1} points={[]} language="en" onReview={vi.fn()} />);
 		expect(container).toBeEmptyDOMElement();
 	});
-	it.each(["grammar", "n2grammar", "n4grammar"] as const)("restricts the day-page integration correctly for %s", (module) => {
+	it.each(["grammar", "n2grammar", "n4grammar"] as const)("restricts the day-page integration correctly for %s", async (module) => {
 		G.weeks = grammar.weeks;
 		G2.weeks = JSON.parse(readFileSync(resolve("public/data/n2grammar.4e6157570a.json"), "utf8")).weeks;
 		G4.weeks = grammar.weeks;
 		setModule(module);
 		render(<DayPage w={5} d={2} token={null} />);
-		expect(screen.queryAllByTestId("grammar-summary")).toHaveLength(module === "n4grammar" ? 0 : 1);
+		if (module === "n4grammar") expect(screen.queryAllByTestId("grammar-summary")).toHaveLength(0);
+		else expect(await screen.findAllByTestId("grammar-summary")).toHaveLength(1);
 	});
 });

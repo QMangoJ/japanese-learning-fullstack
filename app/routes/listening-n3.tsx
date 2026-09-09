@@ -1,4 +1,5 @@
 import { Fragment, useEffect, useMemo, useRef, useState, type PointerEvent, type RefObject } from "react";
+import { flushSync } from "react-dom";
 
 import { findListeningChapter, findListeningSection, type ListeningDisc } from "../data/listening-n3-book";
 import { listeningBodySupport } from "../data/listening-n3-body-support";
@@ -549,7 +550,6 @@ function ChapterDetail({ chapterNumber, sectionNumber, onBack, hideBack = false 
 	}, [chapter, section]);
 
 	const [cue, setCue] = useState(initialCue);
-	const [playRequest, setPlayRequest] = useState(0);
 	const [playing, setPlaying] = useState(false);
 	const audioRef = useRef<HTMLAudioElement>(null);
 	const questionSupport = useMemo<ReadonlyMap<number, ListeningQuestionSupport>>(
@@ -557,19 +557,16 @@ function ChapterDetail({ chapterNumber, sectionNumber, onBack, hideBack = false 
 		[lesson],
 	);
 
-	useEffect(() => {
-		if (!playRequest) return;
-		void audioRef.current?.play().catch(() => undefined);
-	}, [cue, playRequest]);
-
 	function toggleCue(next: AudioCue) {
 		const sameCue = cue.disc === next.disc && cue.track === next.track;
 		if (sameCue && audioRef.current && !audioRef.current.paused) {
 			audioRef.current.pause();
 			return;
 		}
-		setCue(next);
-		setPlayRequest((value) => value + 1);
+		// Commit the new source before playing, while the trusted click still
+		// grants user activation (required by WebKit when changing tracks).
+		if (!sameCue) flushSync(() => setCue(next));
+		void audioRef.current?.play().catch(() => undefined);
 	}
 
 	useEffect(() => {

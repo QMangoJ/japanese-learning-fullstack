@@ -1,11 +1,11 @@
-import { useEffect, useState, useSyncExternalStore, type ReactNode } from "react";
+import { lazy, Suspense, useEffect, useState, useSyncExternalStore, type ReactNode } from "react";
 
 import { ConnBlock, Fmt, Rr, RubyHtml, SayButton } from "../routes/study-common";
 import { getKanjiWordUsage, kanjiWordSurface } from "./kanji-word-usage";
 import { getN2KanjiWordUsage } from "./n2-kanji-word-usage";
 import { ExerciseReset, ExerciseSession, useQuestionProgress } from "./exercise-progress";
 import { GrammarSummary } from "./grammar-summary";
-import { N2GrammarSummary } from "./n2-grammar-summary";
+const N2GrammarSummary = lazy(() => import("./n2-grammar-summary").then(module => ({ default: module.N2GrammarSummary })));
 import {
 	FAVMETA,
 	G,
@@ -1632,10 +1632,10 @@ export function DayPage({ w, d, token }: { w: number; d: number; token: string |
 				week={w} day={d} points={day.points || []} language={LANG}
 				onReview={(index) => navTo(`#/day/${w}-${d}/p${index}`)}
 			/> : null}
-			{MODULE === "n2grammar" && d !== 7 ? <N2GrammarSummary
+			{MODULE === "n2grammar" && d !== 7 ? <Suspense fallback={<p role="status">{lx("语法总结加载中…", "Loading grammar summary…")}</p>}><N2GrammarSummary
 				week={w} day={d} points={day.points || []} language={LANG}
 				onReview={(index) => navTo(`#/day/${w}-${d}/p${index}`)}
-			/> : null}
+			/></Suspense> : null}
 			<DayNav w={w} d={d} />
 		</ExerciseSession>
 	);
