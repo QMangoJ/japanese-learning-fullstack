@@ -1,5 +1,7 @@
 /* 日本語上手: conservative offline cache for visited study content. */
-const CACHE_VERSION = "2026-09-05-v2";
+// Bump this whenever the application shell changes. A new worker then removes
+// the previous HTML/runtime cache before a standalone PWA can reuse it.
+const CACHE_VERSION = "2026-09-10-v3";
 const SHELL_CACHE = `jl-shell-${CACHE_VERSION}`;
 const RUNTIME_CACHE = `jl-runtime-${CACHE_VERSION}`;
 const MEDIA_CACHE = `jl-media-${CACHE_VERSION}`;
@@ -64,20 +66,17 @@ async function networkFirst(event, fallback) {
 	const cached = (await caches.match(request)) || (fallback ? await caches.match(fallback) : undefined);
 	if (cached && self.navigator?.onLine === false) return cached;
 
-	const network = fetch(request).then(async (response) => {
+	try {
+		// A navigation must not fall back to an old HTML shell merely because the
+		// network takes longer than a fixed timeout. That can combine an earlier
+		// route manifest with a later script bundle and crash an installed iOS app.
+		const response = await fetch(request);
 		await put(RUNTIME_CACHE, request, response);
 		return response;
-	});
-	if (!cached) return network;
-
-	// Browsers can leave a Service Worker fetch pending for a long time after
-	// connectivity disappears. Prefer a recent cache after a short grace period,
-	// while allowing the network update to finish in the background when online.
-	event.waitUntil(network.catch(() => undefined));
-	return Promise.race([
-		network.catch(() => cached),
-		new Promise((resolve) => setTimeout(() => resolve(cached), 600)),
-	]);
+	} catch {
+		if (cached) return cached;
+		throw new Error(`Network unavailable for ${request.url}`);
+	}
 }
 
 async function cacheFirst(request) {

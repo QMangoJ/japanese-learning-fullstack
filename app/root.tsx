@@ -11,6 +11,8 @@ import { useEffect, useState } from "react";
 import type { Route } from "./+types/root";
 import "./app.css";
 
+let reloadedForServiceWorkerUpdate = false;
+
 export const links: Route.LinksFunction = () => [
 	{ rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
 	{ rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
@@ -90,8 +92,17 @@ export default function App() {
 		if (!import.meta.env.PROD || !("serviceWorker" in navigator)) return;
 		let cancelled = false;
 		let cacheTimer: number | undefined;
-		void navigator.serviceWorker.register("/sw.js", { scope: "/" }).then(async () => {
-			const registration = await navigator.serviceWorker.ready;
+		const onControllerChange = () => {
+			if (reloadedForServiceWorkerUpdate) return;
+			reloadedForServiceWorkerUpdate = true;
+			window.location.reload();
+		};
+		navigator.serviceWorker.addEventListener("controllerchange", onControllerChange);
+		void navigator.serviceWorker.register("/sw.js", { scope: "/" }).then(async (registration) => {
+			// iOS standalone apps can keep a worker alive between launches. Check
+			// explicitly on every launch instead of waiting for the browser's interval.
+			void registration.update().catch(() => undefined);
+			const activeRegistration = await navigator.serviceWorker.ready;
 			if (cancelled) return;
 			cacheTimer = window.setTimeout(() => {
 				const allowed = (raw: string) => {
@@ -112,13 +123,14 @@ export default function App() {
 				for (const entry of performance.getEntriesByType("resource")) {
 					if (allowed(entry.name)) urls.add(entry.name);
 				}
-				registration.active?.postMessage({ type: "CACHE_URLS", urls: [...urls] });
+				activeRegistration.active?.postMessage({ type: "CACHE_URLS", urls: [...urls] });
 			}, 0);
 		}).catch(() => {
 			/* The app remains fully usable when service workers are unavailable. */
 		});
 		return () => {
 			cancelled = true;
+			navigator.serviceWorker.removeEventListener("controllerchange", onControllerChange);
 			if (cacheTimer !== undefined) window.clearTimeout(cacheTimer);
 		};
 	}, []);

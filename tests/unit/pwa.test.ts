@@ -92,6 +92,30 @@ describe("PWA offline policy", () => {
 		expect(match).toHaveBeenCalled();
 	});
 
+	it("waits for the network on an online navigation instead of serving stale HTML", async () => {
+		const cached = new Response("old study page");
+		const match = vi.fn(async () => cached.clone());
+		const fetch = vi.fn(async () => new Response("new study page"));
+		const put = vi.fn();
+		const context = vm.createContext({
+			URL, Request, Response, Headers, Promise, setTimeout,
+			caches: { open: vi.fn(async () => ({ put })), keys: vi.fn(), delete: vi.fn(), match },
+			fetch,
+			self: { location: { origin: "https://study.example" }, navigator: { onLine: true }, addEventListener: vi.fn(), skipWaiting: vi.fn(), clients: { claim: vi.fn() } },
+		});
+		vm.runInContext(source, context);
+		const networkFirst = vm.runInContext("networkFirst", context) as (
+			event: { request: Request }, fallback?: string,
+		) => Promise<Response>;
+		const response = await networkFirst({ request: new Request("https://study.example/study") }, "/study");
+		expect(await response.text()).toBe("new study page");
+		expect(fetch).toHaveBeenCalledOnce();
+	});
+
+	it("uses a new cache namespace for this release", () => {
+		expect(source).toContain('const CACHE_VERSION = "2026-09-10-v3"');
+	});
+
 	it("matches pre-cached static assets regardless of browser-added Vary headers", async () => {
 		const cached = new Response("cached script");
 		const match = vi.fn(async () => cached.clone());
