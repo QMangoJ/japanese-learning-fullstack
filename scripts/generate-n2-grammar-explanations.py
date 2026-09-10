@@ -68,6 +68,25 @@ from generate_n2_exam_weeks import WEEK_DATA  # noqa: E402
 
 data.update(WEEK_DATA)
 
+WHY = ROOT / "scripts/n2-exam-why.json"
+
+
+def apply_why(payload: dict) -> None:
+    if not WHY.exists():
+        return
+    overlay = json.loads(WHY.read_text(encoding="utf-8"))
+    for week, pack in payload.items():
+        for items in pack.values():
+            for item in items:
+                rec = overlay.get(f"{week}-{item['n']}")
+                if not rec:
+                    continue
+                item["why"] = rec["why"]
+                item["why_en"] = rec["why_en"]
+
+
+apply_why(data)
+
 if __name__ == "__main__":
     OUT.write_text(json.dumps(data, ensure_ascii=False, indent="\t") + "\n", encoding="utf-8")
     total = sum(len(sec) for week in data.values() for sec in week.values())
