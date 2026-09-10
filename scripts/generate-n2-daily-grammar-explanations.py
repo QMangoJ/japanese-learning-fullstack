@@ -9,6 +9,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 BOOK = ROOT / "public/data/n2grammar.4e6157570a.json"
 OUT = ROOT / "public/data/n2-grammar-daily-explanations.json"
+REVIEWED = json.loads((ROOT / "scripts/n2-daily-reviewed.json").read_text(encoding="utf-8"))
 
 CIRCLED = "①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳"
 
@@ -87,8 +88,8 @@ def guess_point_indexes(day: dict, n: int, q: str, answer: str) -> list[int]:
             hits.append(i)
     if hits:
         return hits
-    # fall back: cycle through day's points
-    return [min(n - 1, len(points) - 1)]
+    # Question order does not identify the grammar point. Leave uncertain links unset.
+    return []
 
 
 def build_day(day: dict, key: str) -> dict | None:
@@ -146,6 +147,8 @@ def build_day(day: dict, key: str) -> dict | None:
                 if pairs:
                     entry["choices"] = pairs
                 items.append(entry)
+    for item in items:
+        item.update(REVIEWED.get(f"{key}-{item['n']}", {}))
     return {"items": items}
 
 

@@ -1,5 +1,6 @@
 // 【…】 identifies the word actually read aloud and highlighted in the sentence.
 // Each record is authored, not produced by a noun/verb sentence template.
+// Weeks 3–8 live in n2-kanji-usage-later.ts and load with the N2 kanji pages.
 export type UsageSpec = readonly [jp: string, cn: string, en: string, pos?: "v" | "i" | "na" | "adv" | "expr" | "suru", reading?: string];
 export const N2_KANJI_USAGE: Record<string, UsageSpec> = {
 	"額|がく": ["絵を【額】に入れて壁に飾った。", "把画装进画框，挂在了墙上。", "I put the picture in a frame and hung it on the wall."],

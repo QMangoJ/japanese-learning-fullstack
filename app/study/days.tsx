@@ -2,7 +2,7 @@ import { lazy, Suspense, useEffect, useState, useSyncExternalStore, type ReactNo
 
 import { ConnBlock, Fmt, Rr, RubyHtml, SayButton } from "../routes/study-common";
 import { getKanjiWordUsage, kanjiWordSurface } from "./kanji-word-usage";
-import { getN2KanjiWordUsage } from "./n2-kanji-word-usage";
+import { getN2KanjiWordUsage, loadN2KanjiUsageLater, n2KanjiLaterLoaded, subscribeN2KanjiLater } from "./n2-kanji-word-usage";
 import { ExerciseReset, ExerciseSession, useQuestionProgress } from "./exercise-progress";
 import { GrammarSummary } from "./grammar-summary";
 const N2GrammarSummary = lazy(() => import("./n2-grammar-summary").then(module => ({ default: module.N2GrammarSummary })));
@@ -1421,6 +1421,10 @@ function ExamKanji({ day, w }: { day: any; w: number }) {
 
 function DayKanji({ day, w, d, scrollTok }: { day: any; w: number; d: number; scrollTok: string | null }) {
 	useScrollHighlight(scrollTok ? `k-${w}-${d}-${scrollTok}` : null);
+	useSyncExternalStore(subscribeN2KanjiLater, n2KanjiLaterLoaded, () => false);
+	useEffect(() => {
+		if (MODULE === "n2kanji") void loadN2KanjiUsageLater();
+	}, []);
 	if (d === 7) {
 		return (
 			<>

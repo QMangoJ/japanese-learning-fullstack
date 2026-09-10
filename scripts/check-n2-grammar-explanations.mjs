@@ -28,6 +28,16 @@ for (const week of grammar.weeks || []) {
 			assert.match(String(item.trans_en), /[A-Za-z]{3,}/, `w${week.n} #${item.n}: English gloss is too short`);
 			assert.ok(item.point, `w${week.n} #${item.n}: missing point`);
 			assert.ok(item.point_en, `w${week.n} #${item.n}: missing English point`);
+			assert.equal(item.why?.length, source[index].opts.length, `w${week.n} #${item.n}: why count`);
+			assert.equal(item.why_en?.length, source[index].opts.length, `w${week.n} #${item.n}: why_en count`);
+			item.why.forEach((text, option) => {
+				assert.match(String(text), /[\u3400-\u9fff]/, `w${week.n} #${item.n} why ${option + 1}: missing Chinese`);
+				assert.doesNotMatch(String(text), /放入本句后，接续、活用形式或语义不符合题意|接续和句意都成立/, `w${week.n} #${item.n} why ${option + 1}: generic filler`);
+			});
+			item.why_en.forEach((text, option) => {
+				assert.match(String(text), /[A-Za-z]{3,}/, `w${week.n} #${item.n} why_en ${option + 1}: missing English`);
+				assert.doesNotMatch(String(text), /does not fit the sentence/i, `w${week.n} #${item.n} why_en ${option + 1}: generic filler`);
+			});
 		});
 		examCount += extra.length;
 	}
@@ -54,7 +64,28 @@ for (const week of grammar.weeks || []) {
 	}
 }
 
+const circled = "①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳㉑㉒㉓㉔㉕";
+for (const week of grammar.weeks || []) {
+	const day = (week.days || []).find((entry) => entry.day === 7);
+	const book = {};
+	for (const match of String(day.answers || "").matchAll(/([①-㉕])\s*([1-4])/g)) {
+		book[circled.indexOf(match[1]) + 1] = Number(match[2]);
+	}
+	const pack = explanations[`w${week.n}`];
+	for (const section of ["mondai1", "mondai2", "mondai3"]) {
+		for (const item of pack[section] || []) {
+			if (book[item.n]) assert.equal(item.ans, book[item.n], `w${week.n} #${item.n}: explanation answer must match the book key`);
+		}
+	}
+}
+
 assert.equal(examCount, 200, "expected 25 questions × 8 weeks");
+assert.equal(explanations.w2.mondai1[3].ans, 2, "w2 #4 悩みぬく is ぬいて");
+assert.match(explanations.w2.mondai1[3].why[1], /ぬいて|极点|彻底/, "w2 #4 correct option explains ぬく");
+assert.equal(explanations.w5.mondai3[3].ans, 3, "w5 #24 日本のみならず海外でも");
+assert.match(explanations.w5.mondai3[3].why[2], /のみならず/, "w5 #24 correct option explains のみならず");
+assert.equal(explanations.w7.mondai1[3].ans, 3, "w7 #4 も〜ば〜も is 聞こえなければ");
+assert.match(explanations.w7.mondai1[3].why[2], /ば/, "w7 #4 correct option explains ば");
 assert.equal(dailyCount, 338, "expected 338 daily items");
 assert.match(daily.w4d2.items[0].translation, /会议.*书面/, "w4d2 #1 translation must match the meeting report sentence");
 assert.match(daily.w4d3.items[0].translation, /人身事故/, "w4d3 #1 translation must match the train disruption sentence");

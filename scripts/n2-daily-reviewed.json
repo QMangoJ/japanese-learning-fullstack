@@ -1,0 +1,346 @@
+{
+  "w1d1-1": {
+    "pointIndexes": [
+      2
+    ],
+    "translation": "这牛奶味道很淡，像水一样，不好喝。",
+    "words": [
+      {
+        "jp": "牛乳",
+        "kana": "ぎゅうにゅう",
+        "cn": "牛奶",
+        "en": "milk"
+      },
+      {
+        "jp": "気味",
+        "kana": "ぎみ",
+        "cn": "倾向",
+        "en": "a touch of"
+      }
+    ]
+  },
+  "w1d1-2": {
+    "pointIndexes": [
+      1
+    ],
+    "translation": "这块表用了20年，最近经常走慢。",
+    "translation_en": "I've used this watch for twenty years, but lately it often runs slow.",
+    "words": [
+      {
+        "jp": "時計",
+        "kana": "とけい",
+        "cn": "钟，表",
+        "en": "clock, watch"
+      },
+      {
+        "jp": "年",
+        "kana": "ねん",
+        "cn": "年",
+        "en": "year"
+      }
+    ]
+  },
+  "w1d1-3": {
+    "pointIndexes": [
+      0
+    ],
+    "translation": "那两个人看起来很熟络地聊着天。",
+    "words": [
+      {
+        "jp": "話す",
+        "kana": "はなす",
+        "cn": "说话；交谈",
+        "en": "to speak; to talk"
+      }
+    ]
+  },
+  "w1d1-4": {
+    "pointIndexes": [
+      3,
+      2
+    ],
+    "translation": "有点感冒，感觉有些发热。",
+    "translation_en": "I have a slight cold and feel feverish.",
+    "words": [
+      {
+        "jp": "風邪",
+        "kana": "かぜ",
+        "cn": "感冒",
+        "en": "cold"
+      },
+      {
+        "jp": "気味",
+        "kana": "ぎみ",
+        "cn": "倾向",
+        "en": "a touch of"
+      },
+      {
+        "jp": "熱",
+        "kana": "ねつ",
+        "cn": "发烧",
+        "en": "heat, fever"
+      }
+    ]
+  },
+  "w1d1-5": {
+    "pointIndexes": [
+      2
+    ]
+  },
+  "w1d1-6": {
+    "pointIndexes": [
+      0,
+      1
+    ]
+  },
+  "w1d1-7": {
+    "pointIndexes": [
+      0
+    ]
+  },
+  "w1d2-1": {
+    "pointIndexes": [
+      2
+    ]
+  },
+  "w1d2-2": {
+    "pointIndexes": [
+      0
+    ]
+  },
+  "w1d2-3": {
+    "pointIndexes": [
+      3
+    ]
+  },
+  "w1d2-4": {
+    "pointIndexes": [
+      1
+    ],
+    "translation": "不好意思，我还穿着外套，因为实在有些冷。",
+    "translation_en": "I'm sorry for keeping my jacket on; it's cold."
+  },
+  "w1d2-5": {
+    "pointIndexes": [
+      2
+    ]
+  },
+  "w1d2-6": {
+    "pointIndexes": [
+      3
+    ]
+  },
+  "w1d2-7": {
+    "pointIndexes": [
+      1
+    ]
+  },
+  "w1d3-1": {
+    "pointIndexes": [
+      1
+    ]
+  },
+  "w1d3-2": {
+    "pointIndexes": [
+      0
+    ],
+    "translation": "旅行的时间自不必说，连钱也没有。",
+    "translation_en": "I have neither the time nor the money to travel."
+  },
+  "w1d3-3": {
+    "pointIndexes": [
+      3
+    ]
+  },
+  "w1d3-4": {
+    "pointIndexes": [
+      3
+    ]
+  },
+  "w1d3-5": {
+    "pointIndexes": [
+      2
+    ],
+    "translation": "不知道明天天气怎么样。下雨倒还好，下雪就麻烦了。",
+    "translation_en": "I wonder what the weather will be like tomorrow. Rain would be manageable, but snow would be a problem."
+  },
+  "w1d3-6": {
+    "pointIndexes": [
+      0
+    ]
+  },
+  "w1d3-7": {
+    "pointIndexes": [
+      2
+    ],
+    "translation": "如果只是钱被抢走，倒还罢了，竟然还被杀害，实在太惨了。",
+    "translation_en": "Having one's money stolen would be bad enough, but being killed as well is terrible."
+  },
+  "w1d4-1": {
+    "pointIndexes": [
+      0
+    ]
+  },
+  "w1d4-2": {
+    "pointIndexes": [
+      1
+    ]
+  },
+  "w1d4-3": {
+    "pointIndexes": [
+      3
+    ],
+    "translation": "外面的声音让我怎么也无法不在意。",
+    "translation_en": "I can't stop noticing the noise outside.",
+    "words": [
+      {
+        "jp": "音",
+        "kana": "おと",
+        "cn": "声音",
+        "en": "sound"
+      }
+    ]
+  },
+  "w1d4-4": {
+    "pointIndexes": [
+      0
+    ],
+    "translation": "游戏输了，实在太不甘心了。",
+    "translation_en": "I'm terribly frustrated about losing the game."
+  },
+  "w1d4-5": {
+    "pointIndexes": [
+      3
+    ]
+  },
+  "w1d4-6": {
+    "pointIndexes": [
+      2
+    ]
+  },
+  "w1d4-7": {
+    "pointIndexes": [
+      3
+    ],
+    "translation": "一做了好梦，就总觉得会有什么好事发生。",
+    "translation_en": "Whenever I have a good dream, I can't shake the feeling that something good is going to happen."
+  },
+  "w1d5-1": {
+    "pointIndexes": [
+      2
+    ],
+    "translation": "快考试了，实在没法不学习。",
+    "translation_en": "With the exam coming up, I just can't leave my studying undone."
+  },
+  "w1d5-2": {
+    "pointIndexes": [
+      0
+    ],
+    "words": [
+      {
+        "jp": "1日",
+        "kana": "いちにち",
+        "cn": "一天",
+        "en": "one day"
+      },
+      {
+        "jp": "時間",
+        "kana": "じかん",
+        "cn": "时间",
+        "en": "time"
+      }
+    ]
+  },
+  "w1d5-3": {
+    "pointIndexes": [
+      1
+    ]
+  },
+  "w1d5-4": {
+    "pointIndexes": [
+      3
+    ]
+  },
+  "w1d5-5": {
+    "pointIndexes": [
+      1
+    ]
+  },
+  "w1d5-6": {
+    "pointIndexes": [
+      1
+    ],
+    "words": [
+      {
+        "jp": "1日",
+        "kana": "いちにち",
+        "cn": "一天",
+        "en": "one day"
+      }
+    ]
+  },
+  "w1d5-7": {
+    "pointIndexes": [
+      3
+    ],
+    "translation": "我也觉得问那种事可能不太礼貌，但无论如何还是忍不住问了。",
+    "translation_en": "I thought it might be rude to ask about that, but I simply couldn't help asking.",
+    "words": [
+      {
+        "jp": "失礼",
+        "kana": "しつれい",
+        "cn": "失礼；不礼貌",
+        "en": "rude; impolite"
+      }
+    ]
+  },
+  "w1d6-1": {
+    "pointIndexes": [
+      0
+    ]
+  },
+  "w1d6-2": {
+    "pointIndexes": [
+      3
+    ],
+    "translation": "不能总是问前辈，得学会自己做才行。",
+    "translation_en": "I can't keep asking more experienced people for help. I need to learn to do it myself."
+  },
+  "w1d6-3": {
+    "pointIndexes": [
+      2
+    ]
+  },
+  "w1d6-4": {
+    "pointIndexes": [
+      1
+    ]
+  },
+  "w1d6-5": {
+    "pointIndexes": [
+      2
+    ]
+  },
+  "w1d6-6": {
+    "pointIndexes": [
+      1
+    ],
+    "translation": "我从小就被教导，不可以给别人添麻烦。",
+    "translation_en": "I grew up being told not to cause trouble for other people."
+  },
+  "w1d6-7": {
+    "pointIndexes": [
+      2
+    ],
+    "translation": "他们正大声聊着让人难为情得听不下去的话题。",
+    "translation_en": "They're talking loudly about things that are too embarrassing to listen to.",
+    "words": [
+      {
+        "jp": "恥ずかしい",
+        "kana": "はずかしい",
+        "cn": "难为情的；令人尴尬的",
+        "en": "embarrassing; embarrassed"
+      }
+    ]
+  }
+}

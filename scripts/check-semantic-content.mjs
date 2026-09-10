@@ -55,6 +55,10 @@ const forbiddenText = [
 	[/\*\*|__/g, "Markdown emphasis leaked into study text"],
 	[/。。/g, "duplicated punctuation"],
 	[/不符合本题(?:语境|句意)|代入后(?:的接续或语义)?不成立/g, "non-specific answer explanation"],
+	[/棉、面纱/, "綿 (めん) means cotton, not a veil"],
+	[/"cn":"找还"/, "払い戻し is a refund, not leftover change"],
+	[/已接来电记录/, "着信履歴 is incoming-call history, not answered calls only"],
+	[/"jp":"首輪".*"cn":"项链"/, "首輪 is a collar, not a necklace"],
 ];
 const forbiddenRuby = [
 	[/<ruby>見<rt>けん<\/rt><\/ruby><ruby>違/g, "見違える must begin with み"],
