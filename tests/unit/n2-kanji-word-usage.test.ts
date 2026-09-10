@@ -1,17 +1,21 @@
-import { describe, expect, it } from "vitest";
+import { beforeAll, describe, expect, it } from "vitest";
 import kanji from "../../public/data/n2kanji.d9739ca8d4.json";
 import { N2_KANJI_USAGE } from "../../app/data/n2-kanji-usage";
-import { getN2KanjiWordUsage } from "../../app/study/n2-kanji-word-usage";
+import { getN2KanjiWordUsage, loadN2KanjiUsageLater } from "../../app/study/n2-kanji-word-usage";
 import { kanjiWordSurface } from "../../app/study/kanji-word-usage";
 const words = kanji.weeks.flatMap(w => w.days.flatMap(d => (d.kanji || []).flatMap(k => k.words || [])));
 describe("N2 kanji usage", () => {
+	let later: Record<string, (typeof N2_KANJI_USAGE)[string]> = {};
+	beforeAll(async () => {
+		later = await loadN2KanjiUsageLater();
+	});
 	it("covers every word in the first two weeks, including prefixes, suffixes and annotated headwords", () => {
 		const firstWeek = kanji.weeks.slice(0, 2).flatMap(w => w.days.flatMap(d => (d.kanji || []).flatMap(k => k.words || [])));
 		expect(firstWeek.filter(w => !getN2KanjiWordUsage(w)).map(w => w.jp)).toEqual([]);
 	});
 	it("all authored entries belong to the N2 word list and have complete sentence translations", () => {
 		const names = new Set(words.flatMap(w => [w.jp, `${w.jp}|${w.reading}`]));
-		for (const [key, spec] of Object.entries(N2_KANJI_USAGE)) {
+		for (const [key, spec] of [...Object.entries(N2_KANJI_USAGE), ...Object.entries(later)]) {
 			expect(names.has(key), key).toBe(true);
 			expect(spec[0], key).toMatch(/^[^【】]*【[^【】]+】[^【】]*[。？！]$/);
 			expect(spec[1]).toBeTruthy(); expect(spec[2]).toBeTruthy();
