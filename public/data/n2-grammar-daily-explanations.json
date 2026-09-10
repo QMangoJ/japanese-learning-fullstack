@@ -6,10 +6,10 @@
 				"type": "choice",
 				"answer": "a",
 				"completed": "この牛乳は水っぽくて、おいしくない。",
-				"translation": "这种牛奶掺了水，不好喝。",
+				"translation": "这牛奶味道很淡，像水一样，不好喝。",
 				"translation_en": "This milk is watery and doesn't taste good.",
 				"pointIndexes": [
-					0
+					2
 				],
 				"choices": [
 					{
@@ -26,7 +26,7 @@
 					},
 					{
 						"jp": "気味",
-						"kana": "きみ",
+						"kana": "ぎみ",
 						"cn": "倾向",
 						"en": "a touch of"
 					}
@@ -37,8 +37,8 @@
 				"type": "choice",
 				"answer": "b",
 				"completed": "この時計は20年使っているが、このごろ遅れがちだ。",
-				"translation": "这块表用了20年，最近老爱慢。",
-				"translation_en": "This watch is 20 years old and has been running slow lately.",
+				"translation": "这块表用了20年，最近经常走慢。",
+				"translation_en": "I've used this watch for twenty years, but lately it often runs slow.",
 				"pointIndexes": [
 					1
 				],
@@ -57,7 +57,7 @@
 					},
 					{
 						"jp": "年",
-						"kana": "とし",
+						"kana": "ねん",
 						"cn": "年",
 						"en": "year"
 					}
@@ -68,10 +68,10 @@
 				"type": "choice",
 				"answer": "a",
 				"completed": "二人は親しげに話している。",
-				"translation": "两人亲密地交谈着。",
+				"translation": "那两个人看起来很熟络地聊着天。",
 				"translation_en": "The two of them are talking in a friendly way.",
 				"pointIndexes": [
-					2
+					0
 				],
 				"choices": [
 					{
@@ -81,10 +81,10 @@
 				],
 				"words": [
 					{
-						"jp": "話",
-						"kana": "はなし",
-						"cn": "话／说话",
-						"en": "talk"
+						"jp": "話す",
+						"kana": "はなす",
+						"cn": "说话；交谈",
+						"en": "to speak; to talk"
 					}
 				]
 			},
@@ -93,10 +93,11 @@
 				"type": "choice",
 				"answer": "a・b",
 				"completed": "風邪気味で、熱っぽい。",
-				"translation": "有点感冒，还发着热。",
-				"translation_en": "I've got a slight cold and a bit of a fever.",
+				"translation": "有点感冒，感觉有些发热。",
+				"translation_en": "I have a slight cold and feel feverish.",
 				"pointIndexes": [
-					3
+					3,
+					2
 				],
 				"choices": [
 					{
@@ -117,7 +118,7 @@
 					},
 					{
 						"jp": "気味",
-						"kana": "きみ",
+						"kana": "ぎみ",
 						"cn": "倾向",
 						"en": "a touch of"
 					},
@@ -137,7 +138,7 @@
 				"translation": "妈妈变得爱忘事了。",
 				"translation_en": "Mother has become forgetful.",
 				"pointIndexes": [
-					3
+					2
 				],
 				"choices": [
 					{
@@ -162,7 +163,8 @@
 				"translation": "他自从失去双亲后神情悲伤，工作也常请假。",
 				"translation_en": "Since losing his parents he looks sad and often takes time off work.",
 				"pointIndexes": [
-					3
+					0,
+					1
 				],
 				"words": [
 					{
@@ -181,7 +183,7 @@
 				"translation": "那男人露出意味深长的笑容。",
 				"translation_en": "The man wore a meaningful smile.",
 				"pointIndexes": [
-					3
+					0
 				],
 				"words": []
 			}
@@ -197,7 +199,7 @@
 				"translation": "“又在看同一盘录像？”“可是很好看嘛。”",
 				"translation_en": "“Watching the same video again?” “Well, it's interesting.”",
 				"pointIndexes": [
-					0
+					2
 				],
 				"choices": [
 					{
@@ -215,7 +217,7 @@
 				"translation": "要是能重来，真想重来一次。",
 				"translation_en": "If I could do it over, I would.",
 				"pointIndexes": [
-					1
+					0
 				],
 				"choices": [
 					{
@@ -233,7 +235,7 @@
 				"translation": "虽然买了，却不会用。",
 				"translation_en": "I bought it, but I don't know how to use it.",
 				"pointIndexes": [
-					2
+					3
 				],
 				"choices": [
 					{
@@ -248,10 +250,10 @@
 				"type": "choice",
 				"answer": "a",
 				"completed": "上着を着たまますみません。寒いものですから。",
-				"translation": "穿着外套真不好意思，因为有点冷。",
-				"translation_en": "Sorry for keeping my jacket on — it's cold.",
+				"translation": "不好意思，我还穿着外套，因为实在有些冷。",
+				"translation_en": "I'm sorry for keeping my jacket on; it's cold.",
 				"pointIndexes": [
-					3
+					1
 				],
 				"choices": [
 					{
@@ -269,7 +271,7 @@
 				"translation": "因为贵嘛，买不起。",
 				"translation_en": "It's expensive, so I can't buy it.",
 				"pointIndexes": [
-					3
+					2
 				],
 				"choices": [
 					{
@@ -306,7 +308,7 @@
 				"translation": "今天早回来了，因为身体不太舒服。",
 				"translation_en": "I came home early today because I don't feel well.",
 				"pointIndexes": [
-					3
+					1
 				],
 				"words": [
 					{
@@ -329,7 +331,7 @@
 				"translation": "这家店的货，质量暂且不论，种类是多。",
 				"translation_en": "Quality aside, this shop has a wide range.",
 				"pointIndexes": [
-					0
+					1
 				],
 				"choices": [
 					{
@@ -358,9 +360,9 @@
 				"answer": "a",
 				"completed": "旅行する時間はもとよりお金もない。",
 				"translation": "旅行的时间自不必说，连钱也没有。",
-				"translation_en": "I don't have the money, let alone the time to travel.",
+				"translation_en": "I have neither the time nor the money to travel.",
 				"pointIndexes": [
-					1
+					0
 				],
 				"choices": [
 					{
@@ -391,7 +393,7 @@
 				"translation": "汉堡请不要番茄。",
 				"translation_en": "A hamburger without tomato, please.",
 				"pointIndexes": [
-					2
+					3
 				],
 				"choices": [
 					{
@@ -431,10 +433,10 @@
 				"type": "choice",
 				"answer": "a",
 				"completed": "明日の天気はどうだろう。雨はまだしも雪は困る。",
-				"translation": "明天天气怎样？下雨还算好，下雪就糟了。",
-				"translation_en": "Rain would be one thing, but snow would be a problem.",
+				"translation": "不知道明天天气怎么样。下雨倒还好，下雪就麻烦了。",
+				"translation_en": "I wonder what the weather will be like tomorrow. Rain would be manageable, but snow would be a problem.",
 				"pointIndexes": [
-					3
+					2
 				],
 				"choices": [
 					{
@@ -471,7 +473,7 @@
 				"translation": "这件家具，形状自不必说，颜色也好。",
 				"translation_en": "The color is good, not to mention the shape.",
 				"pointIndexes": [
-					3
+					0
 				],
 				"words": [
 					{
@@ -487,10 +489,10 @@
 				"type": "order",
 				"answer": "4→1→3→2",
 				"completed": "お金をとられるだけ なら まだしも 殺される なんて ひどい。",
-				"translation": "只被抢钱还算好，被杀就太惨了。",
-				"translation_en": "Losing money is bad enough; being killed is far worse.",
+				"translation": "如果只是钱被抢走，倒还罢了，竟然还被杀害，实在太惨了。",
+				"translation_en": "Having one's money stolen would be bad enough, but being killed as well is terrible.",
 				"pointIndexes": [
-					3
+					2
 				],
 				"words": []
 			}
@@ -558,10 +560,10 @@
 				"type": "choice",
 				"answer": "a",
 				"completed": "外の音が気になってならない。",
-				"translation": "外面的声音让我在意得不行。",
-				"translation_en": "I can't help being bothered by the noise outside.",
+				"translation": "外面的声音让我怎么也无法不在意。",
+				"translation_en": "I can't stop noticing the noise outside.",
 				"pointIndexes": [
-					2
+					3
 				],
 				"choices": [
 					{
@@ -573,7 +575,7 @@
 					{
 						"jp": "音",
 						"kana": "おと",
-						"cn": "",
+						"cn": "声音",
 						"en": "sound"
 					}
 				]
@@ -583,10 +585,10 @@
 				"type": "choice",
 				"answer": "a",
 				"completed": "ゲームで負けて、くやしくてたまらない。",
-				"translation": "游戏输了，懊悔得不得了。",
-				"translation_en": "I'm so frustrated I can hardly stand it after losing the game.",
+				"translation": "游戏输了，实在太不甘心了。",
+				"translation_en": "I'm terribly frustrated about losing the game.",
 				"pointIndexes": [
-					3
+					0
 				],
 				"choices": [
 					{
@@ -629,7 +631,7 @@
 				"translation": "推销的人一次次跑来，纠缠得受不了。",
 				"translation_en": "The salesperson keeps coming by — I can't stand how persistent they are.",
 				"pointIndexes": [
-					3
+					2
 				],
 				"words": []
 			},
@@ -638,8 +640,8 @@
 				"type": "order",
 				"answer": "4→1→3→2",
 				"completed": "いい夢を見ると、何か いいことが 起こりそうな 気がして ならない。",
-				"translation": "做了好梦就觉得好像有什么好事要发生。",
-				"translation_en": "After a good dream I feel as if something nice is going to happen.",
+				"translation": "一做了好梦，就总觉得会有什么好事发生。",
+				"translation_en": "Whenever I have a good dream, I can't shake the feeling that something good is going to happen.",
 				"pointIndexes": [
 					3
 				],
@@ -661,10 +663,10 @@
 				"type": "choice",
 				"answer": "b",
 				"completed": "試験の前だから、勉強しないではいられません。",
-				"translation": "因为快考试了，不能不学习。",
-				"translation_en": "With the exam coming I can't help studying.",
+				"translation": "快考试了，实在没法不学习。",
+				"translation_en": "With the exam coming up, I just can't leave my studying undone.",
 				"pointIndexes": [
-					0
+					2
 				],
 				"choices": [
 					{
@@ -695,7 +697,7 @@
 				"translation": "电视也不是不看，一天大概一小时。",
 				"translation_en": "It's not that I don't watch TV; about an hour a day.",
 				"pointIndexes": [
-					1
+					0
 				],
 				"choices": [
 					{
@@ -705,10 +707,10 @@
 				],
 				"words": [
 					{
-						"jp": "日",
-						"kana": "ひ",
-						"cn": "日",
-						"en": "day"
+						"jp": "1日",
+						"kana": "いちにち",
+						"cn": "一天",
+						"en": "one day"
 					},
 					{
 						"jp": "時間",
@@ -726,7 +728,7 @@
 				"translation": "肉不太喜欢，但也不是不吃。",
 				"translation_en": "I don't like meat much, but it's not that I never eat it.",
 				"pointIndexes": [
-					2
+					1
 				],
 				"choices": [
 					{
@@ -762,7 +764,7 @@
 				"translation": "不太想去，但想去的话也不是去不了。",
 				"translation_en": "I don't really want to go, but it's not that I couldn't if I decided to.",
 				"pointIndexes": [
-					3
+					1
 				],
 				"choices": [
 					{
@@ -780,14 +782,14 @@
 				"translation": "多了不行，一天四个的话也不是记不住。",
 				"translation_en": "A lot is impossible, but four a day isn't beyond me.",
 				"pointIndexes": [
-					3
+					1
 				],
 				"words": [
 					{
-						"jp": "日",
-						"kana": "ひ",
-						"cn": "日",
-						"en": "day"
+						"jp": "1日",
+						"kana": "いちにち",
+						"cn": "一天",
+						"en": "one day"
 					}
 				]
 			},
@@ -796,17 +798,17 @@
 				"type": "order",
 				"answer": "2→1→4→3",
 				"completed": "そんなことを聞いては失礼かとも思ったが、どうしても 聞かず には いられなかった 。",
-				"translation": "虽然怕失礼，但还是忍不住问了。",
-				"translation_en": "I thought it might be rude, but I just had to ask.",
+				"translation": "我也觉得问那种事可能不太礼貌，但无论如何还是忍不住问了。",
+				"translation_en": "I thought it might be rude to ask about that, but I simply couldn't help asking.",
 				"pointIndexes": [
 					3
 				],
 				"words": [
 					{
-						"jp": "失礼する",
-						"kana": "しつれいする",
-						"cn": "失礼",
-						"en": "be excused"
+						"jp": "失礼",
+						"kana": "しつれい",
+						"cn": "失礼；不礼貌",
+						"en": "rude; impolite"
 					}
 				]
 			}
@@ -856,10 +858,10 @@
 				"type": "choice",
 				"answer": "b",
 				"completed": "先輩に聞いてばかりはいられない。自分でできるようにならないと。",
-				"translation": "不能老问前辈。得自己会做。",
-				"translation_en": "I can't keep asking seniors; I have to become able to do it myself.",
+				"translation": "不能总是问前辈，得学会自己做才行。",
+				"translation_en": "I can't keep asking more experienced people for help. I need to learn to do it myself.",
 				"pointIndexes": [
-					1
+					3
 				],
 				"choices": [
 					{
@@ -915,7 +917,7 @@
 				"translation": "不可以犯法。",
 				"translation_en": "You must not break the law.",
 				"pointIndexes": [
-					3
+					1
 				],
 				"choices": [
 					{
@@ -940,7 +942,7 @@
 				"translation": "别往那边去。别动。你怎么静不下来？",
 				"translation_en": "Don't go that way. Stay still. Why can't you keep still?",
 				"pointIndexes": [
-					3
+					2
 				],
 				"choices": [
 					{
@@ -955,10 +957,10 @@
 				"type": "order",
 				"answer": "2→1→4→3",
 				"completed": "僕は、他人に迷惑を かけては ならないと 言われて 育ちました 。",
-				"translation": "我被教育成绝不能给人添麻烦。",
-				"translation_en": "I was raised never to cause others trouble.",
+				"translation": "我从小就被教导，不可以给别人添麻烦。",
+				"translation_en": "I grew up being told not to cause trouble for other people.",
 				"pointIndexes": [
-					3
+					1
 				],
 				"words": [
 					{
@@ -980,17 +982,17 @@
 				"type": "order",
 				"answer": "4→2→3→1",
 				"completed": "恥ずかしくて 聞いて いられない ような 話を 彼らは大声でしている。",
-				"translation": "羞得听不下去那样的话，他们却在大声说。",
-				"translation_en": "I'm too embarrassed to listen, but they're saying it out loud.",
+				"translation": "他们正大声聊着让人难为情得听不下去的话题。",
+				"translation_en": "They're talking loudly about things that are too embarrassing to listen to.",
 				"pointIndexes": [
-					3
+					2
 				],
 				"words": [
 					{
-						"jp": "恥",
-						"kana": "はじ",
-						"cn": "丢脸、耻辱",
-						"en": "shame/humiliation"
+						"jp": "恥ずかしい",
+						"kana": "はずかしい",
+						"cn": "难为情的；令人尴尬的",
+						"en": "embarrassing; embarrassed"
 					}
 				]
 			}

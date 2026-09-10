@@ -1,5 +1,12 @@
 // 【…】 identifies the word actually read aloud and highlighted in the sentence.
 // Each record is authored, not produced by a noun/verb sentence template.
+import { N2_KANJI_USAGE_W3 } from "./n2-kanji-usage-w3";
+import { N2_KANJI_USAGE_W4 } from "./n2-kanji-usage-w4";
+import { N2_KANJI_USAGE_W5 } from "./n2-kanji-usage-w5";
+import { N2_KANJI_USAGE_W6 } from "./n2-kanji-usage-w6";
+import { N2_KANJI_USAGE_W7 } from "./n2-kanji-usage-w7";
+import { N2_KANJI_USAGE_W8 } from "./n2-kanji-usage-w8";
+
 export type UsageSpec = readonly [jp: string, cn: string, en: string, pos?: "v" | "i" | "na" | "adv" | "expr" | "suru", reading?: string];
 export const N2_KANJI_USAGE: Record<string, UsageSpec> = {
 	"額|がく": ["絵を【額】に入れて壁に飾った。", "把画装进画框，挂在了墙上。", "I put the picture in a frame and hung it on the wall."],
@@ -356,4 +363,10 @@ export const N2_KANJI_USAGE: Record<string, UsageSpec> = {
 	皮: ["りんごの【皮】をむいた。", "削了苹果皮。", "I peeled the apple."],
 	皮膚: ["乾燥すると、【皮膚】がかゆくなる。", "天气干燥时，皮肤就会发痒。", "My skin gets itchy when it is dry."],
 	救急: ["夜中に熱が上がり、【救急】外来を受診した。", "半夜发起高烧，去了急诊就诊。", "My fever rose during the night, so I went to the emergency department."],
+	...N2_KANJI_USAGE_W3,
+	...N2_KANJI_USAGE_W4,
+	...N2_KANJI_USAGE_W5,
+	...N2_KANJI_USAGE_W6,
+	...N2_KANJI_USAGE_W7,
+	...N2_KANJI_USAGE_W8,
 };

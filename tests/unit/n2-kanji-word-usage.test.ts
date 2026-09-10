@@ -35,4 +35,16 @@ describe("N2 kanji usage", () => {
 		expect(getN2KanjiWordUsage({ jp: "両〜", reading: "りょう" })?.focusReading).toBe("りょうて");
 		expect(getN2KanjiWordUsage({ jp: "1万円札", reading: "まんえんさつ" })?.focusReading).toBe("いちまんえんさつ");
 	});
+	it("keeps the audited N2 kanji glosses accurate", () => {
+		const by = (jp: string, reading: string) => words.find(w => w.jp === jp && w.reading === reading);
+		expect(by("払い戻し", "はらいもどし")?.cn).toBe("退款／退票退款");
+		expect(by("着信履歴", "ちゃくしんりれき")?.cn).toBe("来电记录");
+		expect(by("綿", "めん")?.cn).toBe("棉");
+		expect(by("綿", "めん")?.cn).not.toContain("面纱");
+		expect(by("首輪", "くびわ")?.cn).toBe("项圈");
+	});
+	it("covers every weekday word in weeks 3-8 with an authored example", () => {
+		const later = kanji.weeks.slice(2).flatMap(w => w.days.filter(d => d.day < 7).flatMap(d => (d.kanji || []).flatMap(k => k.words || [])));
+		expect(later.filter(w => !getN2KanjiWordUsage(w)).map(w => w.jp)).toEqual([]);
+	});
 });

@@ -46,6 +46,9 @@ test("N2 kanji examples preserve N3 layout, translations and pronunciation actio
 		await expect(page.locator(".kanji-word-usage")).toHaveCount(await words.count());
 		expect(await page.evaluate(() => document.documentElement.scrollWidth - innerWidth)).toBeLessThanOrEqual(1);
 	}
+	await page.goto("/study/day/3-1");
+	await expect(page.locator(".kanji-word-usage").first()).toBeVisible();
+	await expect(page.locator(".kanji-word-usage")).toHaveCount(await words.count());
 	await page.goto("/study/day/1-7");
 	await expect(page.locator(".q").first()).toBeVisible();
 	await expect(page.locator(".kanji-word-usage")).toHaveCount(0);
