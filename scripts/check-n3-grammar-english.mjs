@@ -44,13 +44,20 @@ for (const [index, item] of dailyItems.entries()) {
 }
 for (const [index, item] of weeklyItems.entries()) {
   assert.ok(hasEnglish(item.trans_en), `Weekly test item ${index + 1} is missing English translation`);
-  for (const reason of item.why || []) {
+  assert.ok(Array.isArray(item.why) && item.why.length, `Weekly test item ${index + 1} is missing why notes`);
+  assert.equal((item.why_en || []).length, item.why.length, `Weekly test item ${index + 1} why_en length`);
+  item.why.forEach((reason, option) => {
+    assert.match(String(reason), /[\u3400-\u9fff]/, `Weekly test item ${index + 1} why ${option + 1} is missing Chinese`);
     assert.doesNotMatch(
       reason,
       /放入本句后，接续、活用形式或语义不符合题意|接续和句意都成立/,
       `Weekly test item ${index + 1} still contains a generic option explanation`,
     );
-  }
+  });
+  (item.why_en || []).forEach((reason, option) => {
+    assert.ok(hasEnglish(reason), `Weekly test item ${index + 1} why_en ${option + 1} is missing English`);
+    assert.doesNotMatch(String(reason), /does not fit the sentence/i, `Weekly test item ${index + 1} why_en ${option + 1} is generic filler`);
+  });
 }
 
 assert.match(runtime, /p\.usage_en/, "grammar points must render English usage");

@@ -274,6 +274,20 @@ def main():
 
     OUTPUT.write_text(json.dumps(output, ensure_ascii=False, indent=2) + "\n")
     subprocess.run(["node", str(ROOT / "scripts/curate-n3-grammar-explanations.mjs")], check=True)
+    why_path = ROOT / "scripts/n3-exam-why.json"
+    if why_path.exists():
+        curated = json.loads(OUTPUT.read_text(encoding="utf-8"))
+        overlay = json.loads(why_path.read_text(encoding="utf-8"))
+        for week, pack in curated.items():
+            for items in pack.values():
+                if not isinstance(items, list):
+                    continue
+                for item in items:
+                    rec = overlay.get(f"{week}-{item['n']}")
+                    if rec:
+                        item["why"] = rec["why"]
+                        item["why_en"] = rec["why_en"]
+        OUTPUT.write_text(json.dumps(curated, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"wrote and curated {OUTPUT}")
 
 

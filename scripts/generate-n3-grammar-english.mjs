@@ -1363,7 +1363,7 @@ function mergeWeeklyEnglish(weekly) {
         const detailKey = `${weekKey}-${secName}-${sectionIndex[secName]}`;
         const detail = WEEKLY_DETAIL_EN[detailKey];
         if (detail) {
-          if (detail.why_en) item.why_en = detail.why_en;
+          if (detail.why_en?.some((text) => String(text).trim())) item.why_en = detail.why_en;
           if (detail.option_translations_en) item.option_translations_en = detail.option_translations_en;
         }
         sectionIndex[secName]++;

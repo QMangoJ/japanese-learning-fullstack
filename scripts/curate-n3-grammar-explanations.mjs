@@ -580,19 +580,8 @@ for (let week = 1; week <= 6; week += 1) {
         (option, index) => optionTranslations[option] || entry.option_translations?.[index] || "",
       );
 
-      // Week 1 question 14 has a sentence-specific contrast between transitive
-      // and intransitive verbs. Its hand-written explanation is more precise.
-      if (!(week === 1 && section === "mondai1" && entry.n === 14) && week <= 4) {
-        const correct = sourceAnswer.ans || 1;
-        entry.why = (item.opts || []).map((option, index) => {
-          const gloss = entry.option_translations[index];
-          if (index + 1 === correct) {
-            const answerNote = sourceAnswer.note ? `完整答案是「${sourceAnswer.note}」。` : "";
-            return `「${option}」表示“${gloss}”。${answerNote}接续和句意都成立。`;
-          }
-          return `「${option}」表示“${gloss}”。放入本句后，接续、活用形式或语义不符合题意。`;
-        });
-      }
+      // Weeks 1–4 use authored, sentence-specific why notes. Do not replace
+      // them with generic “does not fit” filler.
 
       entry.words = (entry.words || []).map((word) => ({
         ...word,

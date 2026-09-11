@@ -1,0 +1,1402 @@
+{
+	"w1-1": {
+		"why": [
+			"「止める」的被动，车被停／人被制止，不能用来请求“让我停车”。",
+			"他动词「止める」的使役，「止めさせてもらえませんか」＝请允许我停车，正确。",
+			"自动词「止まる」的使役，是“让车自己停下”，停车许可应用他动词「止める」。",
+			"「止まる」的受害被动，表示因停下而受影响，不是请求许可。"
+		],
+		"why_en": [
+			"Passive of transitive 「止める」: the car is stopped / someone is prevented. It cannot request permission to park.",
+			"Causative of transitive 「止める」. 「止めさせてもらえませんか」 = please let me park. Correct.",
+			"Causative of intransitive 「止まる」 means “make the car stop.” Permission to park uses transitive 「止める」.",
+			"Adversative passive of 「止まる」: being affected by something stopping, not a request for permission."
+		]
+	},
+	"w1-2": {
+		"why": [
+			"「直す」是五段动词，意志形是「直そう」，不能说「直しよう」。",
+			"自动词「直る」的意志形，表示缺点自己好起来，不是“去改正”。",
+			"「直そうとしない」＝不肯改正，「V意志形＋としない」表示没有行动的意志，正确。",
+			"被动意志形，本句不是“被别人改正”。"
+		],
+		"why_en": [
+			"「直す」 is godan; its volitional is 「直そう」, not 「直しよう」.",
+			"Volitional of intransitive 「直る」: the fault would fix itself, not “go and correct it.”",
+			"「直そうとしない」 = will not try to correct it. Volitional + 「としない」 marks no will to act. Correct.",
+			"Passive volitional: the sentence is not about being corrected by someone else."
+		]
+	},
+	"w1-3": {
+		"why": [
+			"「切らせた」是使役过去，让人挂断；主语是「電話が」，不是人让别人挂。",
+			"「切っといた」＝事先挂断，且他动词「切る」应接「を」，不能接「電話が」。",
+			"「切らないと」＝必须挂断／不挂不行，与“正想再聊却……”的意外不符。",
+			"「切れちゃった」＝「切れてしまった」，电话自己断了，口语「Vてしまう」，正确。"
+		],
+		"why_en": [
+			"「切らせた」 is causative past: have someone hang up. The subject is 「電話が」, not a person making someone hang up.",
+			"「切っといた」 = hung up in advance. Transitive 「切る」 takes 「を」, not 「電話が」.",
+			"「切らないと」 = must hang up. That is not the unexpected cutoff after “just as I was about to talk more.”",
+			"「切れちゃった」 = 「切れてしまった」: the line went dead by itself. Colloquial 「Vてしまう」. Correct."
+		]
+	},
+	"w1-4": {
+		"why": [
+			"「ために」表目的或原因，“从图表看出”不是人口减少的目的或原因。",
+			"「わかるように」＝正如所看到的那样，说明的开场，正确。",
+			"「らしく」表示符合某典型特征，「わかるらしく」不能表示“正如看出的那样”。",
+			"「みたい」是句尾推测，不能夹在「わかる」和「人口は」之间当连用修饰。"
+		],
+		"why_en": [
+			"「ために」 marks purpose or cause. “As the graph shows” is neither the purpose nor the cause of the population decline.",
+			"「わかるように」 = as can be seen, a typical lead-in to an explanation. Correct.",
+			"「らしく」 means “in a way typical of….” 「わかるらしく」 does not mean “as you can see.”",
+			"「みたい」 is sentence-final conjecture; it cannot sit between 「わかる」 and 「人口は」 as a linker."
+		]
+	},
+	"w1-5": {
+		"why": [
+			"「買えないように」＝为了买不成，与存钱买车的目的相反。",
+			"「買う」是他动词，应说「車を買う」；目的句也常用可能形，不能说「車が買うように」。",
+			"「買わないように」＝为了不买，与存钱目的相反。",
+			"「買えるように」＝为了能够买成，「可能形＋ように」表目的，正确。"
+		],
+		"why_en": [
+			"「買えないように」 = so as not to be able to buy, the opposite of saving for a car.",
+			"「買う」 is transitive (車を買う). Purpose 「ように」 also usually takes a potential; 「車が買うように」 is ungrammatical.",
+			"「買わないように」 = so as not to buy, the opposite of the saving goal.",
+			"「買えるように」 = so that one can buy it. Potential + 「ように」 marks purpose. Correct."
+		]
+	},
+	"w1-6": {
+		"why": [
+			"「みたいな」修饰名词，构成「像这张照片一样的发型」，正确。",
+			"「みたいに」修饰动词，不能直接修饰名词「ヘアースタイル」。",
+			"「みたいの」是“像……的那个”，后面不能再直接接名词。",
+			"「みたく」是「みたいに」的口语，同样修饰动作，不能修饰名词。"
+		],
+		"why_en": [
+			"「みたいな」 modifies a noun: a hairstyle like the one in this photo. Correct.",
+			"「みたいに」 is adverbial; it cannot directly modify the noun 「ヘアースタイル」.",
+			"「みたいの」 means “one that looks like….” It cannot be followed directly by another noun.",
+			"「みたく」 is colloquial 「みたいに」, also adverbial, so it cannot modify a noun."
+		]
+	},
+	"w1-7": {
+		"why": [
+			"「ちゃう」来自「てしまう」；「死ぬ」是「死んでしまう」，应变「じゃう」，不能说「死んちゃった」。",
+			"同样误用「ちゃう」；「死んでしまう」应变为「死んじゃう」，不能说「死んちゃう」。",
+			"「死んじゃった」＝已经死掉了，不能接在「しないと」后警告尚未发生的事。",
+			"「死んじゃう」＝「死んでしまう」，表示不好的结果将会发生，正确。"
+		],
+		"why_en": [
+			"「ちゃう」 comes from 「てしまう」. 「死ぬ」 is 「死んでしまう」, so it must become 「じゃう」, not 「死んちゃった」.",
+			"Same wrong contraction 「ちゃう」. 「死んでしまう」 becomes 「死んじゃう」, not 「死んちゃう」.",
+			"「死んじゃった」 = already died. It cannot follow 「しないと」 as a warning about something that has not happened.",
+			"「死んじゃう」 = 「死んでしまう」, an unwanted result that will happen. Correct."
+		]
+	},
+	"w1-8": {
+		"why": [
+			"「準備されると」是被动条件“如果被准备”，不是催促自己赶快准备。",
+			"「しちゃうと」＝一做就完了／做了的话，表示完成或后悔，不是“必须做”。",
+			"「しないと」句尾省略「いけない」，＝必须赶快准备，正确。",
+			"「しとくと」＝如果事先准备好的话，是条件句，不是命令式的催促。"
+		],
+		"why_en": [
+			"「準備されると」 is a passive conditional, “if it is prepared,” not an urge to get ready yourself.",
+			"「しちゃうと」 = if you end up doing it. That marks completion or regret, not obligation.",
+			"Sentence-final 「しないと」 omits 「いけない」: you have to get ready now. Correct.",
+			"「しとくと」 = if you prepare in advance, a conditional, not an urgent “must.”"
+		]
+	},
+	"w1-9": {
+		"why": [
+			"「知らされている」是「知らせる」的被动，表示被人通知，不是“广为人知”。",
+			"「知らせている」是主动“正在告知”，变成那个日本人在通知别人。",
+			"「知られている」是「知る」的被动，＝被很多人知道、广为人知，正确。",
+			"「知らさせている」使役重叠，形式不成立，也不能表示“出名”。"
+		],
+		"why_en": [
+			"「知らされている」 is the passive of 「知らせる」: being notified, not “well known.”",
+			"「知らせている」 is active “is informing,” as if that Japanese person were notifying others.",
+			"「知られている」 is the passive of 「知る」: known by many people. Correct.",
+			"「知らさせている」 stacks causatives ungrammatically and cannot mean “famous.”"
+		]
+	},
+	"w1-10": {
+		"why": [
+			"「浴びる」是一段动词，不能按五段把词干改成「あば」再说「あばよう」。",
+			"「浴びようとした」＝正要冲澡，「V意志形＋とする」表示正要开始，正确。",
+			"一段动词的意志形是「よう」，不能接「ろう」。",
+			"词干「あば」和词尾「ろう」都不符合「浴びる」的活用。"
+		],
+		"why_en": [
+			"「浴びる」 is ichidan; you cannot treat it as godan 「あぶ」 and say 「あばよう」.",
+			"「浴びようとした」 = was about to take a shower. Volitional + 「とする」 marks the moment of starting. Correct.",
+			"Ichidan volitional takes 「よう」, not 「ろう」.",
+			"Neither the stem 「あば」 nor the ending 「ろう」 belongs to 「浴びる」."
+		]
+	},
+	"w1-11": {
+		"why": [
+			"「っぽく」表示带某种感觉，如「子供っぽく」，不能表示“按照图示”。",
+			"「みたいな」修饰名词，后面没有可修饰的名词，不能接「折ります」。",
+			"「らしく」表示符合典型样子，「図らしく折る」不是“照着图折”。",
+			"「図のように」＝按照图那样，修饰「折ります」，正确。"
+		],
+		"why_en": [
+			"「っぽく」 means “-ish,” as in 「子供っぽく」. It does not mean “according to the diagram.”",
+			"「みたいな」 modifies a noun, but no noun follows; it cannot precede 「折ります」.",
+			"「らしく」 means “in a way typical of….” Folding “diagram-like” is not “fold as shown.”",
+			"「図のように」 = as in the diagram, modifying 「折ります」. Correct."
+		]
+	},
+	"w1-12": {
+		"why": [
+			"「使ってしましょう」不是固定句型，て形后不能直接接「しましょう」表示努力使用。",
+			"「使おうしましょう」重叠了意志形和「しましょう」，不能表示“尽量用”。",
+			"「使わないしましょう」否定形后不能接「しましょう」。",
+			"「使うようにしましょう」＝努力养成马上使用的习惯，正确。"
+		],
+		"why_en": [
+			"「使ってしましょう」 is not a pattern: て-form cannot take 「しましょう」 to mean “make an effort to use.”",
+			"「使おうしましょう」 stacks a volitional on 「しましょう」 and does not mean “try to use.”",
+			"A negative stem cannot take 「しましょう」 as 「使わないしましょう」.",
+			"「使うようにしましょう」 = let’s make a habit of using it right away. Correct."
+		]
+	},
+	"w1-13": {
+		"why": [
+			"「水っぽい」＝水分过多、淡得像水，常带消极评价，与「うすくて」一致，正确。",
+			"「水っぽくない」＝并不淡得像水，与“有点淡”矛盾。",
+			"「水らしい」＝像水应有的样子，是中性典型特征，不是“牛奶淡得像水”。",
+			"「水らしくない」＝不像水，与“淡得像水”相反。"
+		],
+		"why_en": [
+			"「水っぽい」 = too watery, often slightly negative, matching 「うすくて」. Correct.",
+			"「水っぽくない」 = not watery, which contradicts “a little weak.”",
+			"「水らしい」 = typical of water, a neutral prototype, not “the milk tastes diluted.”",
+			"「水らしくない」 = not like water, the opposite of tasting watery."
+		]
+	},
+	"w1-14": {
+		"why": [
+			"「ついといて」是「ついておいて」的口语。「つく」是不及物动词，表示电视自己开着，不能请对方关掉。",
+			"「消しといて」是「消しておいて」的口语。「消す」表示把电视关掉，符合“不看就先关着”，正确。",
+			"「つけといて」是「つけておいて」的口语，表示“先打开／保持开着”，与“不看就关掉”相反。",
+			"「消えといて」是「消えておいて」的口语。「消える」是不及物动词，电视自己灭掉；请对方关要用他动词「消す」。"
+		],
+		"why_en": [
+			"「ついといて」 is colloquial 「ついておいて」. Intransitive 「つく」 means the TV is on; it cannot ask someone to turn it off.",
+			"「消しといて」 is colloquial 「消しておいて」. 「消す」 means turn the TV off, matching “if you’re not watching, leave it off.” Correct.",
+			"「つけといて」 is colloquial 「つけておいて」: turn it on / leave it on, the opposite of “not watching, so turn it off.”",
+			"「消えといて」 is colloquial 「消えておいて」. Intransitive 「消える」 is the TV going off by itself; asking someone to switch it off needs transitive 「消す」."
+		]
+	},
+	"w1-15": {
+		"why": [
+			"「いさせると」是使役，“如果让人待着”，本句是嫌对方自己待在那里碍事。",
+			"「いられると」是「いる」的受害被动，＝你待在那儿（让我为难），正确。",
+			"「いさせないと」＝如果不让待着／必须让待着，意思反了。",
+			"「いられないと」＝如果待不住，不是“你待在那儿碍事”。"
+		],
+		"why_en": [
+			"「いさせると」 is causative: “if you let someone stay.” Here the complaint is that the listener is standing there.",
+			"「いられると」 is the adversative passive of 「いる」: your being there bothers me. Correct.",
+			"「いさせないと」 = if you don’t let them stay / you must let them stay, the opposite meaning.",
+			"「いられないと」 = if one cannot stay, not “you’re in the way standing there.”"
+		]
+	},
+	"w1-16": {
+		"why": [
+			"★所在。出口的去向，接在「車は」后构成「多くの国に輸出」，正确。",
+			"主题，接在「作られた」后构成「作られた車は」。",
+			"接在「多くの国に」后，再接「されています」。",
+			"修饰「車」的定语，放在最前面。"
+		],
+		"why_en": [
+			"★ slot. The export destination after 「車は」, forming 「多くの国に輸出」. Correct.",
+			"Topic, following 「作られた」 to make 「作られた車は」.",
+			"Follows 「多くの国に」, then takes 「されています」.",
+			"Attributive modifier of 「車」, placed first."
+		]
+	},
+	"w1-17": {
+		"why": [
+			"放在「なってから」后，是听懂日语之后发生的变化，再接「みたい」。",
+			"接在「わかる」后，构成「わかるようになる」。",
+			"★所在。「～ようになってから」＝自从变成那样以后，正确。",
+			"放在最前面，构成「日本語がわかるように」。"
+		],
+		"why_en": [
+			"Follows 「なってから」 as the change after understanding Japanese, then takes 「みたい」.",
+			"Follows 「わかる」 to form 「わかるようになる」.",
+			"★ slot. 「～ようになってから」 = since becoming that way. Correct.",
+			"Placed first, forming 「日本語がわかるように」."
+		]
+	},
+	"w1-18": {
+		"why": [
+			"★所在。逆接，“明明先记下了却还是弄丢了”，正确。",
+			"「メモしておく」的口语，接在理由后，构成「メモしといたのに」。",
+			"接在「忘れちゃうと」后，说明必须记笔记的理由。",
+			"「なくしちゃった」的宾语，放在★后面。"
+		],
+		"why_en": [
+			"★ slot. Contrast: “I had noted it down, and yet I lost it.” Correct.",
+			"Colloquial 「メモしておく」, after the reason, forming 「メモしといたのに」.",
+			"Follows 「忘れちゃうと」, giving the reason a note was needed.",
+			"Object of 「なくしちゃった」, placed after ★."
+		]
+	},
+	"w1-19": {
+		"why": [
+			"放在最前面，构成「大人みたいな」。",
+			"接在句尾「らしくない」前，构成「子どもらしくない」。",
+			"★所在。接在「みたいな」后，用て形连接后半的「子どもらしくない」，正确。",
+			"接在「大人」后修饰「話し方」。"
+		],
+		"why_en": [
+			"Placed first, forming 「大人みたいな」.",
+			"Before sentence-final 「らしくない」, forming 「子どもらしくない」.",
+			"★ slot. Follows 「みたいな」 and links with て-form to 「子どもらしくない」. Correct.",
+			"Follows 「大人」 and modifies 「話し方」."
+		]
+	},
+	"w1-20": {
+		"why": [
+			"被「買おうと思っていた」修饰的宾语。",
+			"受害被动，接「しまいました」，表示衬衫被买走了。",
+			"接在「買おうと」后，构成「買おうと思っていた」。",
+			"★所在。受害被动的执行者「被别人」，正确。"
+		],
+		"why_en": [
+			"The object modified by 「買おうと思っていた」.",
+			"Adversative passive, then 「しまいました」: the shirt was bought (away).",
+			"Follows 「買おうと」, forming 「買おうと思っていた」.",
+			"★ slot. Agent of the adversative passive: by someone else. Correct."
+		]
+	},
+	"w1-21": {
+		"why": [
+			"「行くようになりました」＝变得会去／开始去，与后项「行けませんでした」矛盾。",
+			"「行こうとしましたが」＝正想往车厢里面走，却过不去，「V意志形＋とする」表尝试，正确。",
+			"「行かせました」＝让别人去了，这里是自己想往里走。",
+			"「行かれました」是敬语或受害被动，不能表示“自己试图进去”。"
+		],
+		"why_en": [
+			"「行くようになりました」 = came to go / started going, which contradicts 「行けませんでした」.",
+			"「行こうとしましたが」 = tried to move farther inside but could not. Volitional + 「とする」 marks an attempt. Correct.",
+			"「行かせました」 = made someone else go. Here the speaker is the one trying to move inside.",
+			"「行かれました」 is honorific or adversative passive, not “I tried to get through.”"
+		]
+	},
+	"w1-22": {
+		"why": [
+			"「動かせた」＝让人移动了／能动了，过不去的原因不可能是“已经让他们动了”。",
+			"「動かれた」是被动，站在门口的人不是“被移动”。",
+			"「動くようになった」＝变得会动了，不能解释进不去。",
+			"「動こうとしない」＝不肯挪，「V意志形＋としない」表示没有要动的意思，正确。"
+		],
+		"why_en": [
+			"「動かせた」 = made them move / could move. That cannot be why the speaker could not get through.",
+			"「動かれた」 is passive; the people at the door were not “moved.”",
+			"「動くようになった」 = became able to move, which does not explain being blocked.",
+			"「動こうとしない」 = would not move. Volitional + 「としない」 marks no intention to act. Correct."
+		]
+	},
+	"w1-23": {
+		"why": [
+			"「入らないでください」＝请不要进去，与想挤进去相反。",
+			"「入らせてください」＝请让我进去，使役请求许可，正确。",
+			"「入らないと」＝必须进去／如果不进去，后面不能接「ください」当请求。",
+			"「入られてください」被动加上「ください」，不能用来请求让自己进。"
+		],
+		"why_en": [
+			"「入らないでください」 = please don’t go in, the opposite of trying to squeeze through.",
+			"「入らせてください」 = please let me in, a causative request for permission. Correct.",
+			"「入らないと」 = must go in / if one doesn’t go in; it cannot take 「ください」 as a request.",
+			"Passive 「入られて」 plus 「ください」 cannot ask to be allowed in."
+		]
+	},
+	"w1-24": {
+		"why": [
+			"「降りたとしても」＝即使已经下车了，与拥挤时“很难下去”的尝试义不符。",
+			"「降りる」是一段动词，意志形是「降りよう」，不能说「降りろう」。",
+			"「降りようとしても」＝即使想下车，「V意志形＋とする」表尝试，正确。",
+			"「降りますとしても」礼貌体不能接在「としても」前构成“即使想下”。"
+		],
+		"why_en": [
+			"「降りたとしても」 = even if one already got off, not “even if you try to get off” when the train is crowded.",
+			"「降りる」 is ichidan; the volitional is 「降りよう」, not 「降りろう」.",
+			"「降りようとしても」 = even if you try to get off. Volitional + 「とする」 marks an attempt. Correct.",
+			"Polite 「降ります」 cannot precede 「としても」 to mean “even if you try to get off.”"
+		]
+	},
+	"w1-25": {
+		"why": [
+			"「入るようにする」＝尽量往里走，为上车的人让出空间，正确。",
+			"「入れる」是“放进去／让进”或可能形“能进”；这里是乘客自己往里走，应用「入る」。",
+			"「入らないように」＝尽量不要进去，与“考虑上车的人、往里走”相反。",
+			"「入れないように」＝尽量不让进／不能进，意思相反。"
+		],
+		"why_en": [
+			"「入るようにする」 = make an effort to move inside, leaving room for boarding passengers. Correct.",
+			"「入れる」 is “put in / let in,” or potential “can enter.” Passengers themselves moving in takes 「入る」.",
+			"「入らないように」 = try not to go in, the opposite of “think of boarding passengers and move inside.”",
+			"「入れないように」 = try not to let people in / so as not to be able to enter, the opposite meaning."
+		]
+	},
+	"w2-1": {
+		"why": [
+			"「というか」用来改口更正说法，不能把入场资格限定为“只有大人”。",
+			"「によって」表示原因、手段或因人而异，不是“仅限大人进入”。",
+			"「ばかり」表示净是某类或总是做某事，也不必配否定，不能表示“只有大人能进”。",
+			"「だけしか」与否定呼应，限定范围：大人だけしか入れません＝只有成年人能进。"
+		],
+		"why_en": [
+			"というか rephrases (“or rather”); it does not restrict club entry to adults only.",
+			"によって marks cause, means, or variation by agent, not “adults only may enter.”",
+			"ばかり means “nothing but / always” and needs no negative, so it cannot mean “only adults can go in.”",
+			"だけしか pairs with a negative to tighten the limit: 大人だけしか入れません = only adults may enter."
+		]
+	},
+	"w2-2": {
+		"why": [
+			"「Vてばかりいる」表示总是反复做同一事，常带不满：祖父总把名字叫错。",
+			"「さえ」表示“连……都”，「間違えてさえいます」变成“甚至在叫错”，不是“总是叫错”。",
+			"「てこそ」表示“正因为做了才……”，不能接在「間違えて」后表示反复叫错。",
+			"「だけ」表示仅仅；「間違えてだけいます」不是“总是叫错”的说法。"
+		],
+		"why_en": [
+			"Vてばかりいる means repeatedly doing the same thing, often with disapproval: Grandfather always gets the name wrong.",
+			"さえ is “even”; 間違えてさえいます would be “even getting it wrong,” not “always getting it wrong.”",
+			"てこそ is “precisely because one does it”; it cannot follow 間違えて to mean habitual mistakes.",
+			"だけ means “only”; 間違えてだけいます is not how you say he keeps getting the name wrong."
+		]
+	},
+	"w2-3": {
+		"why": [
+			"「によれば」引出消息来源，商品不是转述出处，也不能修饰后面的名词「お問い合わせ」。",
+			"「について」表示关于，但修饰名词时要加「の」（についてのお問い合わせ）。",
+			"「に関する」可直接修饰名词：商品に関するお問い合わせ＝有关商品的咨询。",
+			"「さえ」表示“连……都”，「商品にさえ」不能表示“关于商品”。"
+		],
+		"why_en": [
+			"によれば cites an information source; a product is not a source, and it cannot modify the noun お問い合わせ.",
+			"について means “about,” but before a noun it needs の: についてのお問い合わせ.",
+			"に関する modifies a noun directly: 商品に関するお問い合わせ = enquiries about products.",
+			"さえ is “even”; 商品にさえ cannot mean “concerning the products.”"
+		]
+	},
+	"w2-4": {
+		"why": [
+			"「寒さ」已是名词，不能再接「こと」；要说寒冷程度应是「寒さは知っていた」。",
+			"「寒み」不是「寒い」的惯用名词形，「み」多用于痛み、悲しみ等。",
+			"「寒く」是连用形，后面不能接「こと」来表示“冷这件事”。",
+			"「寒いこと」把“那里很冷”这一事实名词化，与后项“没想到零下40度”对比。"
+		],
+		"why_en": [
+			"寒さ is already a noun, so 寒さこと is ungrammatical; the degree would be 寒さは知っていた.",
+			"寒み is not the usual noun of 寒い; み is for words like 痛み and 悲しみ.",
+			"寒く is the continuative form and cannot take こと to mean “the fact that it is cold.”",
+			"寒いこと nominalizes the fact that it is cold, set against the shock of −40℃."
+		]
+	},
+	"w2-5": {
+		"why": [
+			"「だけ」表示仅仅：お茶だけ入れたことがない＝从没只泡过茶，不是“连茶都没泡过”。",
+			"「ばかり」表示净是、总是，不能举出“连茶都不会”这种极端例子。",
+			"「さえ」举极端例子：连茶都没泡过，更不可能会做饭。",
+			"「こそ」强调“正是这个”，不能表示“连茶都”。"
+		],
+		"why_en": [
+			"だけ is “only”: お茶だけ入れたことがない would mean she has never made tea alone, not that she has never even made tea.",
+			"ばかり is “nothing but / always,” not the extreme “she cannot even make tea.”",
+			"さえ marks an extreme case: she has never even made tea, so cooking is out of the question.",
+			"こそ emphasizes “this very thing”; it cannot mean “even tea.”"
+		]
+	},
+	"w2-6": {
+		"why": [
+			"「のを」把动作当宾语，但「好き」要用「が」标出喜欢的对象。",
+			"「のが」把“看球”名词化作主语：見るのが好きです。",
+			"「のに」表示明明却或用途，不能说「見るのに好きです」。",
+			"「ので」表示原因，变成“因为看所以喜欢”，不是“喜欢看”。"
+		],
+		"why_en": [
+			"のを makes the action an object, but 好き marks what you like with が.",
+			"のが nominalizes “watching” as the subject: 見るのが好きです.",
+			"のに is “although” or “for the purpose of”; 見るのに好きです does not mean you like watching.",
+			"ので gives a reason, yielding “I like it because I watch,” not “I like watching.”"
+		]
+	},
+	"w2-7": {
+		"why": [
+			"「ように言う」转述要求时，动作用辞书形：食べるように言われた。",
+			"「食べ」是连用形，不能直接接「ように」。",
+			"「食べて」是て形，后面不能接「ように」。",
+			"「食べろ」是命令形，转述应说「食べろと」，不能说「食べろように」。"
+		],
+		"why_en": [
+			"ように言う reports a request with the dictionary form: 食べるように言われた.",
+			"食べ is the continuative stem and cannot connect directly to ように.",
+			"食べて is the te-form and cannot be followed by ように.",
+			"食べろ is imperative; quoted commands take 食べろと, not 食べろように."
+		]
+	},
+	"w2-8": {
+		"why": [
+			"「言ってないと」是“若不说／还没说”，句末不完整，也不是劝对方开口。",
+			"「てさせる」接续不成立；要让人说应是「言わせて」，且这里不是请求许可。",
+			"「てごらん」温和地劝对方试试看：把想说的话说出来吧。",
+			"「ちゃって」是「てしまって」的口语，表示做完或后悔，不是劝人开口。"
+		],
+		"why_en": [
+			"言ってないと is “if you don’t / haven’t said,” incomplete at sentence end and not an invitation to speak.",
+			"てさせる cannot attach; “let someone speak” would be 言わせて, and this is not asking permission.",
+			"てごらん gently urges someone to try: go on, say what you want to say.",
+			"ちゃって is colloquial てしまって (completion or regret), not a prompt to speak up."
+		]
+	},
+	"w2-9": {
+		"why": [
+			"「静かさ」是「静か」加「さ」构成的名词，表示安静的程度：音の静かさだ。",
+			"「静かみ」不是惯用说法，「み」不能任意接在「静か」后。",
+			"「静からしい」构词不成立，「らしい」不能这样接在「静か」上。",
+			"「静かっぽい」是“有点安静”的形容词，不能作「いい点は音の～」的名词谓语。"
+		],
+		"why_en": [
+			"静かさ is the noun in さ from 静か, naming the degree of quiet: 音の静かさだ.",
+			"静かみ is not a standard noun; み does not freely attach to 静か.",
+			"静からしい is not a real formation; らしい does not attach to 静か this way.",
+			"静かっぽい is an adjective meaning “rather quiet,” not a noun predicate after いい点は音の."
+		]
+	},
+	"w2-10": {
+		"why": [
+			"「ようにして」是请对方自己设法做到；这里要管理员去转告楼上，不是让管理员自己别吵。",
+			"「ようになって」表示变成某种状态，不能用来请管理员转告。",
+			"「ように言ってください」请管理员转告楼上的人不要深夜喧哗。",
+			"「ようとしないで」表示“不要试图……”，且「騒がないようとする」接续也不对。"
+		],
+		"why_en": [
+			"ようにして asks the listener to manage it themselves; the manager should tell the upstairs residents, not keep quiet himself.",
+			"ようになって marks a change of state, not a request to pass on a warning.",
+			"ように言ってください asks the manager to tell the people upstairs not to make noise late at night.",
+			"ようとしないで is “don’t try to…,” and 騒がないようとする is the wrong connection anyway."
+		]
+	},
+	"w2-11": {
+		"why": [
+			"「といっても」承认“蓝”这个说法再加以限定：虽说是蓝，指的是有深度的蓝。",
+			"「というより」会改换成更贴切的说法，等于把前面的“喜欢蓝色”否定掉。",
+			"「といえば」表示说到蓝就会联想到某物，不是在限定自己说的蓝。",
+			"「というと」同样是引出联想，不是“虽说是蓝，其实是……”。"
+		],
+		"why_en": [
+			"といっても accepts the label “blue” and then narrows it: a deep blue, not just any blue.",
+			"というより recasts the description, which would cancel the previous “I like blue.”",
+			"といえば is “speaking of blue,” bringing an association, not qualifying the speaker’s blue.",
+			"というと likewise introduces an association, not “though I say blue, I mean…”"
+		]
+	},
+	"w2-12": {
+		"why": [
+			"「によって」多表示原因或手段，注意事项不是导致犯困的原因。",
+			"「によれば」引出信息来源，后面常接「らしい」：据注意事项说会犯困。",
+			"「による」是修饰名词的形式，后面没有可修饰的名词。",
+			"「について」只提示话题“关于注意事项”，不能表示“据注意事项所说”。"
+		],
+		"why_en": [
+			"によって often marks cause or means; the precautions are not what makes you sleepy.",
+			"によれば cites a source, often with らしい: according to the warning, the medicine may cause drowsiness.",
+			"による is the noun-modifying form, but no noun follows it here.",
+			"について only sets the topic “about the precautions,” not “according to the precautions.”"
+		]
+	},
+	"w2-13": {
+		"why": [
+			"「によって」是副词性用法，不能直接修饰名词「影響」，再说「によって影響で」原因重复。",
+			"「によれば」表示“据……说”，事故不是消息来源。",
+			"「により」也是副词性“由于”，同样不能修饰「影響」。",
+			"「による」修饰名词：事故による影響＝由这起事故造成的影响。"
+		],
+		"why_en": [
+			"によって is adverbial, so it cannot modify the noun 影響, and によって影響で stacks two cause markers.",
+			"によれば is “according to”; an accident is not an information source.",
+			"により is also adverbial “due to” and likewise cannot modify 影響.",
+			"による modifies a noun: 事故による影響 = the effects caused by this accident."
+		]
+	},
+	"w2-14": {
+		"why": [
+			"「わかるものの」表示虽然明白，与上文“不到明天就不知道”矛盾。",
+			"「わかるものだから」表示因为明白，也与“不知道”相反。",
+			"「わからないからこそ」强调正因不知道，活着才可能有意义。",
+			"「ものなら」多接可能形表示“要是能……”，不能表示“正因为不知道”。"
+		],
+		"why_en": [
+			"わかるものの is “although I understand,” which contradicts “you cannot know until tomorrow.”",
+			"わかるものだから is “because I understand,” also the opposite of not knowing.",
+			"わからないからこそ stresses that life may be meaningful precisely because we do not know.",
+			"ものなら usually follows a potential (“if only one could”), not “precisely because we do not know.”"
+		]
+	},
+	"w2-15": {
+		"why": [
+			"「それによれば」表示“据此所说”，前句是开放学校的事实，不是转述来源。",
+			"「それについて」只是“关于那件事”，不能表示开放学校这一手段。",
+			"「それによって」表示凭借前项：通过向居民开放，社区共同养育孩子。",
+			"「それにしては」表示按那标准却出乎意料，这里后项正是开放的目的，没有意外反差。"
+		],
+		"why_en": [
+			"それによれば is “according to that”; the previous sentence is a fact (the school is open), not a source of hearsay.",
+			"それについて is only “regarding that,” not the means of opening the school.",
+			"それによって marks the means: by opening the school, the community raises the children together.",
+			"それにしては is “considering that, unexpectedly”; the sequel is the intended result, not a surprise."
+		]
+	},
+	"w2-16": {
+		"why": [
+			"★处。整句是「話せる人はひとりしかいません」，「ひとり」接在「人は」后、「しか」前。",
+			"接在「ひとり」后，与句末「いません」呼应，表示“只有”。",
+			"接在「話せる」后作主语，用「は」提示会说法语的人。",
+			"放在「フランス語が」后，修饰后面的「人は」。"
+		],
+		"why_en": [
+			"★ slot. The line is 話せる人はひとりしかいません; ひとり sits after 人は and before しか.",
+			"Follows ひとり and pairs with final いません to mean “only.”",
+			"Follows 話せる as the subject, with は marking people who can speak French.",
+			"Comes after フランス語が and modifies the following 人は."
+		]
+	},
+	"w2-17": {
+		"why": [
+			"接在「見た」后，把看见UFO这件事作为引述内容。",
+			"放在「UFOを」后，表示他声称看见过。",
+			"接在「の」后构成「というのは」，提示主语“这件事”。",
+			"★处。整句是「見たというのはうそだった」，「の」把「見たという」名词化，后接「は」。"
+		],
+		"why_en": [
+			"Follows 見た to present seeing a UFO as reported content.",
+			"Comes after UFOを: he claimed he had seen one.",
+			"Follows の to form というのは, marking “that matter” as the topic.",
+			"★ slot. The line is 見たというのはうそだった; の nominalizes 見たという before は."
+		]
+	},
+	"w2-18": {
+		"why": [
+			"接在「言う」后把“提醒”这件事名词化，作「忘れました」的宾语。",
+			"接在「持ってくる」后，转述“请带来”的要求。",
+			"放在「辞書を」后，是要求学生做的动作。",
+			"★处。整句是「持ってくるように言うのを忘れました」，「言う」接在「ように」后，再接「のを」。"
+		],
+		"why_en": [
+			"Follows 言う, nominalizing the reminder as the object of 忘れました.",
+			"Follows 持ってくる to paraphrase the request “please bring it.”",
+			"Comes after 辞書を as the action the students were told to do.",
+			"★ slot. The line is 持ってくるように言うのを忘れました; 言う follows ように and then takes のを."
+		]
+	},
+	"w2-19": {
+		"why": [
+			"接在「音で」后，作「見ないで」的宾语。",
+			"★处。整句是「音でテレビを見ないでくれ」，「見ないで」禁止去看，后接「くれ」。",
+			"接在「見ないで」后，引用“请别看”的请求，再接「と注意された」。",
+			"放在「大きい」后，表示把音量开得很大。"
+		],
+		"why_en": [
+			"Follows 音で as the object of 見ないで.",
+			"★ slot. The line is 音でテレビを見ないでくれ; 見ないで is the prohibition, then くれ.",
+			"Follows 見ないで to quote “please don’t,” then と注意された.",
+			"Comes after 大きい, meaning at a high volume."
+		]
+	},
+	"w2-20": {
+		"why": [
+			"接在「つなみの」后作主语，与句末「はありません」呼应。",
+			"★处。整句是「によるつなみの心配はありません」，「つなみの」修饰「心配」。",
+			"接在「に」后构成「による」，表示由地震引起的。",
+			"接在「地震」后，与「よる」组成「による」。"
+		],
+		"why_en": [
+			"Follows つなみの as the subject, pairing with final はありません.",
+			"★ slot. The line is によるつなみの心配はありません; つなみの modifies 心配.",
+			"Follows に to form による, “caused by” the earthquake.",
+			"Follows 地震 and combines with よる as による."
+		]
+	},
+	"w2-21": {
+		"why": [
+			"「によれば」表示根据……说，犬不是消息来源。",
+			"「という」用来介绍名称（犬というN），后面直接接「世話が」接不上。",
+			"「というより」表示与其说是狗不如说……，下文不是在改称。",
+			"「というと」表示一说到狗，有人就觉得养狗只是很麻烦。"
+		],
+		"why_en": [
+			"によれば is “according to”; dogs are not an information source.",
+			"という names something (犬というN) and cannot connect straight into 世話が.",
+			"というより recasts “dog” as something else; the next clause is not a relabeling.",
+			"というと is “speaking of dogs”: some people then think keeping one is simply a hassle."
+		]
+	},
+	"w2-22": {
+		"why": [
+			"「そんなことはない」否定前句“只是很麻烦”，引出后文“狗也能工作”。",
+			"「そのとおりらしい」表示似乎确实如此，等于同意“只是麻烦”，与后文相反。",
+			"「そうだろうと思う」也是赞同前句看法，无法接到“狗也能工作”。",
+			"「そのように聞いた」表示听说如此，仍在附和“只是麻烦”。"
+		],
+		"why_en": [
+			"そんなことはない rejects “they’re only a hassle,” leading into “dogs can work too.”",
+			"そのとおりらしい agrees that it seems so, accepting the hassle view against the next sentence.",
+			"そうだろうと思う also endorses that view and cannot lead into “dogs can work.”",
+			"そのように聞いた is “I heard that,” still siding with “they’re only trouble.”"
+		]
+	},
+	"w2-23": {
+		"why": [
+			"「といっても」承认“工作”再降温：虽说是工作，也不过是拿报纸之类的简单事。",
+			"「さえ」表示连……都，「仕事さえ新聞を持ってくる」不能表示“虽说是工作”。",
+			"「だけしか」必须配否定，后面「持ってくるとか」不是否定句。",
+			"「によって」表示因……而不同或凭借，不能给“工作”这个称呼打折扣。"
+		],
+		"why_en": [
+			"といっても accepts the word “work” and then scales it down: just fetching the newspaper, nothing more.",
+			"さえ is “even”; 仕事さえ新聞を持ってくる cannot mean “although you call it work.”",
+			"だけしか must take a negative; 持ってくるとか is not negative.",
+			"によって is “depending on / by means of,” not a way to qualify the label “work.”"
+		]
+	},
+	"w2-24": {
+		"why": [
+			"「ばかり」表示净是、总是，「仕事ばかり遊びのように」不是“与其说工作不如说玩耍”。",
+			"「というより」改换成更贴切的说法：与其说是工作，看起来更像玩耍。",
+			"「こそ」强调正是工作，不能表示“比起工作更像玩”。",
+			"「について」表示关于工作，后面接不成“与其说是工作，不如说像玩”。"
+		],
+		"why_en": [
+			"ばかり is “nothing but / always”; 仕事ばかり遊びのように is not “rather play than work.”",
+			"というより recasts it more accurately: rather than work, it looks like play.",
+			"こそ emphasizes “this very work,” not “more like play than work.”",
+			"について is “about work” and cannot yield “rather than work, it seems like play.”"
+		]
+	},
+	"w2-25": {
+		"why": [
+			"「のこと」要接在名词后（テストのこと），不能接在动词「助ける」后。",
+			"「という」给后面的名词定性：助けるという本当の仕事＝帮助残障人士这种真正的工作。",
+			"「ばかり」表示总是帮助，不能用来说明「本当の仕事」是什么。",
+			"「といっても」会把“帮助”往小了说，但下文是在强调这才是真正的工作。"
+		],
+		"why_en": [
+			"のこと follows a noun (テストのこと), not the verb 助ける.",
+			"という defines the following noun: 助けるという本当の仕事 = real work of helping people with impairments.",
+			"ばかり would mean constantly helping; it does not explain what 本当の仕事 is.",
+			"といっても would downplay “helping,” but the passage stresses that this is genuine work."
+		]
+	},
+	"w3-1": {
+		"why": [
+			"「たびに」表示每次都发生：每走一步鞋子就响，听着可爱。",
+			"「ついでに」是做正事时顺便做另一件事，走路发出声音不是顺便办的差事。",
+			"「とおりに」表示按照、原样照做，不能表示每走一步都响。",
+			"「まま」表示保持原状，「歩くまま」成不了“每走一步就响”。"
+		],
+		"why_en": [
+			"たびに means every time: the shoes sound with each step, which is cute.",
+			"ついでに is a side errand while doing something else; the sound is not a favor done on the way.",
+			"とおりに means “as / according to,” not a sound on every step.",
+			"まま means leaving something as it is; 歩くまま cannot mean the shoes clack with each step."
+		]
+	},
+	"w3-2": {
+		"why": [
+			"「もらえたい」是可能形「もらえる」再加「たい」，变成“想能够请你稍后”，本句只需「してもらいたい」。",
+			"「くれたい」把「たい」接到「くれる」上，主语像是想给别人，不能用来请对方稍后处理。",
+			"「もらいたい」表示希望对方为自己做：现在腾不出手，想请对方稍后再说。",
+			"「くれない」多用于「～てくれない？」这类直接请求，和「んですが」搭配不像「もらいたいんです」。"
+		],
+		"why_en": [
+			"もらえたい is potential もらえる plus たい (“want to be able to have you…”); the sentence only needs してもらいたい.",
+			"くれたい puts たい on くれる, as if the subject wants to give; it cannot ask the other person to wait.",
+			"もらいたい is wanting someone to do it for you: I cannot stop now, so I would like to talk later.",
+			"くれない belongs in a direct ～てくれない？ request and sits awkwardly with んですが, unlike もらいたいんです."
+		]
+	},
+	"w3-3": {
+		"why": [
+			"「にしては」表示就这一标准而言却出乎意料：一次也没跳过，居然跳得这么好。",
+			"「はずで」表示按理会如此；从没跳过却按理该跳得好，前后矛盾。",
+			"「とおり」表示按照、正如，「やったことがないとおり」成不了“没跳过却跳得好”。",
+			"「というより」表示与其说A不如说B，不能接在「一度もやったことがない」后夸对方跳得好。"
+		],
+		"why_en": [
+			"にしては is “considering X, unexpectedly Y”: never having danced, you still dance very well.",
+			"はずで means “as one would expect”; never having danced yet dancing well is the opposite of that expectation.",
+			"とおり means “as / according to”; やったことがないとおり cannot mean dancing well despite no experience.",
+			"というより is “rather than A, B”; it cannot follow “never done it even once” to praise the dancing."
+		]
+	},
+	"w3-4": {
+		"why": [
+			"「行くと」表示一去就出现的必然结果，后项却是“得先存钱”，不是去了以后发生的事。",
+			"「行けば」是“如果去，就会…”的条件结果，存钱是出发前的前提，不是去了才出现的结果。",
+			"「行ったら」带“去了之后”的完成意味，和「お金を貯めてから」先存钱再走的时间顺序相反。",
+			"「行くとしたら」表示假定要去的话：现在去不了，真要去也得等存够钱以后。"
+		],
+		"why_en": [
+			"行くと marks an automatic result of going; saving money first is a precondition, not what happens once you go.",
+			"行けば is “if I go, then…”; saving money is required before departure, not a result of going.",
+			"行ったら suggests after going, which reverses お金を貯めてから (save first, then go).",
+			"行くとしたら hypothesizes going: travel is impossible now, and if I were to go it would be after saving."
+		]
+	},
+	"w3-5": {
+		"why": [
+			"「あまり」表示程度过度才导致后项，「開けたあまり」不是“刚打开箱子”。",
+			"「ことに」多接在形容词后先点出心情，不能接在「開けた」后表示瞬间变化。",
+			"「とたん」表示刚一发生后项立刻出现：箱子一打开，老鼠就跑了出来。",
+			"「あげく」是折腾一番后的坏结果，打开箱子是一瞬间，不是漫长过程的收场。"
+		],
+		"why_en": [
+			"あまり is excess causing a result; 開けたあまり is not “the instant I opened the box.”",
+			"ことに usually follows an adjective to preface a feeling, not 開けた for a sudden change.",
+			"とたん is an immediate sequel: the moment the box opened, a mouse ran out.",
+			"あげく is a bad ending after a long ordeal; opening a box is a single instant, not a drawn-out process."
+		]
+	},
+	"w3-6": {
+		"why": [
+			"「であるべきだ」表示应当如此：老师写在黑板上的字应该工整。",
+			"「にすぎない」表示只不过如此，「丁寧にすぎない」是“只不过工整”，不是对板书的要求。",
+			"「でたまらない」表示感情上受不了，「丁寧でたまらない」是“工整得受不了”，不是“应当工整”。",
+			"「次第である」表示取决于某事，板书工整不是“取决于是否丁寧”。"
+		],
+		"why_en": [
+			"であるべきだ is what ought to be: a teacher’s writing on the board should be neat.",
+			"にすぎない is “nothing more than”; 丁寧にすぎない would mean merely neat, not a requirement.",
+			"でたまらない is an unbearable feeling; 丁寧でたまらない is “so neat I can’t stand it,” not “should be neat.”",
+			"次第である means “depends on”; neat board writing is not “depending on being polite.”"
+		]
+	},
+	"w3-7": {
+		"why": [
+			"「聞いたら」用于“听了之后／如果听了”，「何度聞いたら覚えられない」缺少“要听几次才记得”那种疑问，也不是陈述“怎么听也记不住”。",
+			"「聞いても」与「何度」搭配，表示无论听多少次也记不住那个名字。",
+			"「聞いては」是“一听就（常接不好的结果）”，前面不能再加「何度」。",
+			"「聞けば」是“如果听／一听就”，「何度聞けば」要接“才能记住”的问句，不能接「覚えられない」。"
+		],
+		"why_en": [
+			"聞いたら is “if / after hearing”; 何度聞いたら覚えられない is not the statement “I still cannot remember.”",
+			"聞いても with 何度 is “no matter how many times I hear it,” I still cannot remember the name.",
+			"聞いては is “whenever I hear, (often a bad result)”; 何度 cannot sit in front of it.",
+			"聞けば is “if I hear”; 何度聞けば belongs in “how many times until I remember?,” not before 覚えられない."
+		]
+	},
+	"w3-8": {
+		"why": [
+			"「したいものだ」表示现在很想做，但本句在回忆从前住在海边时常常捡贝壳。",
+			"「したほどだ」表示甚至到了那种程度，这里没有要夸张的前项程度。",
+			"「しないわけだ」表示难怪不做／也就是不做，和「よく拾ったり」相反。",
+			"「したものだ」用于回忆过去的习惯：以前住海边，所以常常捡贝壳什么的。"
+		],
+		"why_en": [
+			"したいものだ is a strong present wish; the sentence recalls often collecting shells when living by the sea.",
+			"したほどだ is “to the point of doing”; nothing earlier is being measured to that degree.",
+			"しないわけだ means “no wonder one doesn’t,” the opposite of よく拾ったり.",
+			"したものだ recalls a past habit: living by the sea, I often used to collect shells."
+		]
+	},
+	"w3-9": {
+		"why": [
+			"「せずに」是「する」的否定，撑伞的动词是「差す」不是「する」，不能说「傘をせずに」。",
+			"「さしずに」误把ます形「差し」接到「ずに」上；「ずに」要接未然形「差さ」。",
+			"「しずに」既不是「差す」也不是「する」的否定，「する」的ずに是「せずに」。",
+			"「ささずに」是「差す」的未然形加「ずに」：冒雨走着，却不撑伞。"
+		],
+		"why_en": [
+			"せずに is the negative of する; the verb with 傘 is 差す, so 傘をせずに is the wrong verb.",
+			"さしずに wrongly attaches ずに to the masu-stem 差し; ずに needs the nai-stem 差さ.",
+			"しずに is neither 差す nor する; the ずに form of する is せずに.",
+			"ささずに is 差す’s nai-stem plus ずに: walking in the rain without putting up an umbrella."
+		]
+	},
+	"w3-10": {
+		"why": [
+			"「ついでに」表示做某事时顺便做另一件：冲澡时顺手把衬衫也洗了。",
+			"「たびに」表示每次冲澡都洗衬衫，本句像是说这一回顺便洗，不是每次必做。",
+			"「きり」表示那以后再没下文，「浴びたきりシャツも洗った」接不出“还洗了衬衫”。",
+			"「とおりに」表示按照冲澡的方式，不能表示顺便洗衣。"
+		],
+		"why_en": [
+			"ついでに is a side action on the same occasion: while showering, he washed the shirt too.",
+			"たびに would mean he washes a shirt every time he showers; this sounds like one extra task, not a rule.",
+			"きり means nothing further after that; 浴びたきりシャツも洗った cannot add “and washed a shirt.”",
+			"とおりに means “as / according to”; it does not mean washing the shirt as a side task."
+		]
+	},
+	"w3-11": {
+		"why": [
+			"「にとって」表示对某人而言（受影响的一方），不能表示说话人以朋友身份提醒你。",
+			"「として」表示以某种立场：作为朋友，我想提醒你。",
+			"「としたら」表示假如是朋友／如果当作朋友，本句不是假设身份。",
+			"「にしたら」表示从某人的角度看问题，不是说话人自己以朋友身份开口。"
+		],
+		"why_en": [
+			"にとって marks the party affected (“for a friend”); it does not mean speaking in the role of a friend.",
+			"として is “in the position of”: as a friend, I want to warn you.",
+			"としたら is “if it were a friend / supposing”; the speaker is not hypothesizing the role.",
+			"にしたら is “from that person’s viewpoint,” not the speaker taking the role of friend."
+		]
+	},
+	"w3-12": {
+		"why": [
+			"「まま」不能接动词ます形，「置きまま」不成句。",
+			"「て形」也不能直接接「まま」，「置いてまま」接续不成立。",
+			"辞书形「置くまま」是课本标明不能用的接法，「まま」要接た形。",
+			"「置いたまま」表示保持放着的状态：行李还在架上就下了车。"
+		],
+		"why_en": [
+			"まま does not follow a masu-stem, so 置きまま is impossible.",
+			"The te-form cannot take まま either; 置いてまま does not attach.",
+			"Dictionary-form 置くまま is the banned connection; まま needs the ta-form.",
+			"置いたまま is leaving it that way: I got off with the bags still on the rack."
+		]
+	},
+	"w3-13": {
+		"why": [
+			"「っぱなし」接动词ます形：「つけっぱなし」就是火一直开着没关。",
+			"た形「つけた」不能接「っぱなし」，「つけたっぱなし」不成句。",
+			"「ついた」是自动词「つく」的た形，既不能接「っぱなし」，也不是“把火点着不管”。",
+			"て形「つけて」同样不能接「っぱなし」。"
+		],
+		"why_en": [
+			"っぱなし follows the masu-stem: つけっぱなし is the burner left on.",
+			"The ta-form つけた cannot take っぱなし, so つけたっぱなし is impossible.",
+			"ついた is the ta-form of intransitive つく; it neither takes っぱなし nor means leaving the fire on.",
+			"The te-form つけて cannot take っぱなし either."
+		]
+	},
+	"w3-14": {
+		"why": [
+			"「そのたびに」表示每次都那样，前面“住了十年”不是反复发生的触发事件。",
+			"「それにしては」表示按这个标准却出乎意料；住了十年还像日本人，并不意外，对不上。",
+			"「だとしたら」表示如果那是真的，前句已经用「なんですね」确认了原因，不必再假设。",
+			"「それにしても」表示这一点知道了，即便如此仍觉得：就算住了十年，也简直和日本人没两样。"
+		],
+		"why_en": [
+			"そのたびに is “every time that happens”; ten years in Japan is not a repeating trigger.",
+			"それにしては is “considering that, unexpectedly”; native-like Japanese after ten years is not a mismatch.",
+			"だとしたら is “if that is so”; なんですね already confirms the reason, so no new hypothesis is needed.",
+			"それにしても is “even so”: granted ten years, it is still indistinguishable from a native speaker."
+		]
+	},
+	"w3-15": {
+		"why": [
+			"「いるはずだ」表示按理应该还在日本，和“昨天回国了”相反。",
+			"「いるはずじゃない」是在否定“应该在”这一说法，像反驳别人，不是根据回国事实自己推出“应该不在”。",
+			"「いないはずがない」是强烈肯定“不可能不在”，等于一定还在，与回国事实相反。",
+			"「いないはずだ」表示按理一定不在：昨天回国了，所以现在应该不在日本。"
+		],
+		"why_en": [
+			"いるはずだ means he should still be in Japan, the opposite of having gone home yesterday.",
+			"いるはずじゃない denies “he should be here,” like contradicting someone, not concluding from yesterday’s return.",
+			"いないはずがない is a strong “no way he is absent,” i.e. he must still be here, against the facts.",
+			"いないはずだ is a reasoned “should not be here”: he went home yesterday, so he should not be in Japan now."
+		]
+	},
+	"w3-16": {
+		"why": [
+			"「知らない」放在「ふりを」前，作为假装的内容。",
+			"「だけだ」收在句末，表示他只不过在装不知道。",
+			"整句是「知らないふりをしているだけだ」。★处正是「している」，接在「ふりを」后表示正在装作。",
+			"「ふりを」接在「知らない」后组成「知らないふり」，再接「している」。"
+		],
+		"why_en": [
+			"知らない stands before ふりを as the content of the pretense.",
+			"だけだ closes the sentence: he is merely pretending not to know.",
+			"The line is 知らないふりをしているだけだ. ★ is している, the progressive after ふりを.",
+			"ふりを follows 知らない to make 知らないふり, then takes している."
+		]
+	},
+	"w3-17": {
+		"why": [
+			"「勉強する」接在「寝ずに」后，作为本来打算做的事。",
+			"整句是「寝ずに勉強するつもりだったのに」。★处正是「つもり」，表示本打算学到早上。",
+			"「寝ずに」放在开头，表示不睡觉一直学到早上。",
+			"「だったのに」接在「つもり」后，表示计划落空、还是睡着了。"
+		],
+		"why_en": [
+			"勉強する follows 寝ずに as the action that was planned.",
+			"The line is 寝ずに勉強するつもりだったのに. ★ is つもり: I had intended to study until morning.",
+			"寝ずに comes first: stay awake and study until morning.",
+			"だったのに follows つもり: the plan failed, and I fell asleep anyway."
+		]
+	},
+	"w3-18": {
+		"why": [
+			"「いる」接在「数えて」后，组成进行中的「数えている」。",
+			"「数えて」紧接「数を」，表示正在数数。",
+			"「話しかけないで」放在「最中に」后，再接「ください」，请人别搭话。",
+			"整句是「数えている最中に話しかけないで」。★处正是「最中に」，表示正在数的当口。"
+		],
+		"why_en": [
+			"いる follows 数えて to make progressive 数えている.",
+			"数えて comes right after 数を: counting the numbers.",
+			"話しかけないで follows 最中に and leads into ください: please don’t talk to me.",
+			"The line is 数えている最中に話しかけないで. ★ is 最中に, “right in the middle of counting.”"
+		]
+	},
+	"w3-19": {
+		"why": [
+			"「はず」接在「作った」后组成「作ったはずなのに」，表示按理该做成了。",
+			"「とおりに」接在「もらった」后，表示完全照着别人教的方法。",
+			"整句是「教えてもらったとおりに作ったはず」。★处正是「作った」，表示照着做了。",
+			"「もらった」接在「教えて」后，表示别人教给了自己。"
+		],
+		"why_en": [
+			"はず follows 作った to make 作ったはずなのに: it should have turned out right.",
+			"とおりに follows もらった: exactly as I was taught.",
+			"The line is 教えてもらったとおりに作ったはず. ★ is 作った, making it that way.",
+			"もらった follows 教えて: someone taught it to me."
+		]
+	},
+	"w3-20": {
+		"why": [
+			"「夫婦」接在「私たち」后，说明过日子的是夫妻。",
+			"「きりで」接在「二人」后，表示只剩下这两个人一起过。",
+			"「私たち」放在开头，指现在过日子的是我们。",
+			"整句是「私たち夫婦二人きりで」。★处正是「二人」，与「きりで」组成“就我们两个”。"
+		],
+		"why_en": [
+			"夫婦 follows 私たち: the people living there are the couple.",
+			"きりで follows 二人: only those two live together now.",
+			"私たち opens the line as the people who live there now.",
+			"The line is 私たち夫婦二人きりで. ★ is 二人, completing 二人きりで “just the two of us.”"
+		]
+	},
+	"w3-21": {
+		"why": [
+			"「怖がらない」是不害怕，与妻子开始怕过马路的叙述相反。",
+			"「怖がる」从外部说第三者的感情：妻子变得害怕过十字路口。",
+			"「怖がらせる」是使别人害怕，妻子不是在吓唬别人去过马路。",
+			"「怖くない」是“不可怕／不害怕”，不能接在「渡るのを」后表示她开始怕。"
+		],
+		"why_en": [
+			"怖がらない is “not be afraid,” the opposite of the wife starting to fear crossings.",
+			"怖がる reports a third person’s feeling from outside: she has become afraid of crossing.",
+			"怖がらせる is “make someone afraid”; she is not frightening others into crossing.",
+			"怖くない is “not scary / not afraid” and cannot follow 渡るのを for her new fear."
+		]
+	},
+	"w3-22": {
+		"why": [
+			"「べき」表示按规定应当停：该停的地方却不停的车多了。",
+			"「つもり」表示意图，不能说「止まるつもりところで」，也不是“打算停的地方”。",
+			"「はず」是按理会停的推断，作定语还要说「はずのところ」，不是交通规则上的“应该停”。",
+			"「とおり」表示按照、原样，不能说「止まるとおりところで」。"
+		],
+		"why_en": [
+			"べき is where cars ought to stop by the rules: more of them now fail to stop there.",
+			"つもり is intention; 止まるつもりところで is ungrammatical and is not “places meant for stopping.”",
+			"はず is an inference they will stop, and as a noun it would need はずのところ, not a traffic obligation.",
+			"とおり means “as / according to”; 止まるとおりところで does not attach."
+		]
+	},
+	"w3-23": {
+		"why": [
+			"「たびに」表示每次开车都会因转向灯慢而生气。",
+			"「とおりに」表示按照开车的方式去做，不能表示每次开车都发火。",
+			"「とたんに」表示刚一发生就立刻出现变化，通常接た形，不是每次开车都发火。",
+			"「ついでに」表示顺便做另一件事，生气不是开车时顺便办的事。"
+		],
+		"why_en": [
+			"たびに is every time I drive I get angry, because more cars signal late.",
+			"とおりに is “as / according to driving,” not getting angry on every drive.",
+			"とたんに is an instant change, usually after a ta-form, not anger every time one drives.",
+			"ついでに is a side errand; getting angry is not something done while driving as a favor."
+		]
+	},
+	"w3-24": {
+		"why": [
+			"「しっぱなしで」表示灯一直打着不管，问题不是没关灯，而是刚打灯立刻转弯。",
+			"「したきり」表示打灯之后再无下文，后面应是不再转弯，不是马上就转。",
+			"「したとたんに」表示刚一打转向灯就立刻转弯，后面的车来不及反应。",
+			"「するたびに」表示每次打灯都转弯，那是正常操作，不是“打完立刻转”的危险。"
+		],
+		"why_en": [
+			"しっぱなしで is leaving the signal on; the danger is turning the instant they signal, not failing to switch it off.",
+			"したきり means nothing further after signaling, so they would not then turn at once.",
+			"したとたんに is turning the moment they signal, so the car behind has no time to react.",
+			"するたびに is turning every time they signal, which is normal, not the danger of turning immediately."
+		]
+	},
+	"w3-25": {
+		"why": [
+			"「守ってほしい」表示希望开车的人好好遵守规则和礼仪。",
+			"「守らないでほしい」是希望他们不要遵守，与全文批评违章相反。",
+			"「守るはずだ」表示按理他们会遵守，但全文说的正是他们并不遵守。",
+			"「守るつもりだ」是开车人自己打算遵守，不是作者在文末提出的要求。"
+		],
+		"why_en": [
+			"守ってほしい is wanting drivers to observe rules and manners properly.",
+			"守らないでほしい is wanting them not to follow the rules, against the whole complaint.",
+			"守るはずだ means they can be expected to follow the rules, but the passage says they do not.",
+			"守るつもりだ is the drivers’ own intention, not the writer’s closing request."
+		]
+	},
+	"w4-1": {
+		"why": [
+			"「Nのかわりに」表示用后者代替前者：不用床而让朋友睡沙发，正确。",
+			"「にかわって」多用于人代替别人做事，不能接在「ベッド」后表示改用沙发。",
+			"「のわりに」表示“按…来说却出乎意料”，这里不是拿床来比较沙发好不好。",
+			"「のせいで」表示导致坏结果的原因，床不是让人改睡沙发的负面原因。"
+		],
+		"why_en": [
+			"Nのかわりに means using the latter instead of the former: having the friend sleep on the sofa instead of the bed. Correct.",
+			"にかわって is used when a person acts on someone else's behalf; it cannot follow ベッド to mean switching to the sofa.",
+			"のわりに is “considering X, unexpectedly Y”; the sentence is not judging the sofa against the bed.",
+			"のせいで marks a negative cause; the bed is not a bad reason for sleeping on the sofa."
+		]
+	},
+	"w4-2": {
+		"why": [
+			"「おかげで」表示多亏前项才有好结果：搭了车才赶上电车，正确。",
+			"「わりに」表示“按…来说却出乎意料”，赶上电车是搭车的自然结果，没有反差。",
+			"「ついでに」表示顺便做另一件事，赶上电车不是搭车时顺便做的动作。",
+			"「かわりに」表示代替或交换，不能说明赶上电车的原因。"
+		],
+		"why_en": [
+			"おかげで marks a welcome cause: thanks to the ride, the speaker caught the train. Correct.",
+			"わりに is “considering X, unexpectedly Y”; catching the train is the natural result of the ride, not a contrast.",
+			"ついでに means doing something else while at it; catching the train is not a side errand of getting a ride.",
+			"かわりに means instead or in exchange, not the reason the speaker caught the train."
+		]
+	},
+	"w4-3": {
+		"why": [
+			"「言うことだ」是“应该说”的建议，与“自己不愿听的话不要对别人说”相反。",
+			"「言わないことだ」表示“最好不要说”，承接上文的劝告，正确。",
+			"「言うことか」是感叹“会说多少啊”，不能用来提出建议。",
+			"「言わないことはない」表示“也不是不说／有时也会说”，与劝人别说相反。"
+		],
+		"why_en": [
+			"言うことだ is advice to speak up, the opposite of “don’t say to others what you would hate to hear.”",
+			"言わないことだ means “you had better not say it,” matching the advice in the first sentence. Correct.",
+			"言うことか is an exclamation (“how much one says!”), not advice.",
+			"言わないことはない means “it’s not that one never says it,” which undercuts the warning not to say it."
+		]
+	},
+	"w4-4": {
+		"why": [
+			"「くせに」带责怪语气，且名词后要用「のくせに」；这里是称赞蛋糕便宜却好吃。",
+			"「のわりに」表示“就100日元来说却出乎意料地好吃”，正确。",
+			"「なんか」表示轻视或举例，「100円なんかおいしい」不能表示“虽便宜却好吃”。",
+			"「だもん」是句尾说明理由的口语，不能插在「100円」和「おいしい」之间。"
+		],
+		"why_en": [
+			"くせに is accusatory, and a noun needs のくせに; here the speaker is praising a cheap cake, not blaming it.",
+			"のわりに is “considering it costs 100 yen, it tastes surprisingly good.” Correct.",
+			"なんか shows disdain or gives an example; 100円なんかおいしい does not mean “cheap yet tasty.”",
+			"だもん is a sentence-final “because,” and cannot sit between 100円 and おいしい."
+		]
+	},
+	"w4-5": {
+		"why": [
+			"「につれて」表示随着一方变化另一方也变，雨不是随着房屋被冲走而变化。",
+			"「かぎり」表示“只要…／在…范围内”，不能表示雨大到房屋被冲走的程度。",
+			"「くらい」表示程度：雨下到河水泛滥、房屋被冲走的地步，正确。",
+			"「うちに」表示“趁…期间”，不是“下到那种程度”。"
+		],
+		"why_en": [
+			"につれて means “as X changes, Y changes”; the rain is not changing along with houses being washed away.",
+			"かぎり is “as long as / within the scope of,” not the degree of the rainfall.",
+			"くらい marks extent: it rained so hard that the river overflowed and houses were washed away. Correct.",
+			"うちに means “while / before it ends,” not “to that extent.”"
+		]
+	},
+	"w4-6": {
+		"why": [
+			"「ほど」表示“越是…越…”：越弱的狗越爱叫，正确。",
+			"「くらい」可表大致程度，但不能构成“越弱越爱叫”这种比例关系。",
+			"「さえ」表示“连…都／只要…”，不是“越弱越叫”的谚语说法。",
+			"「かぎり」表示“只要是弱犬就爱叫”，没有“越…越…”的比较。"
+		],
+		"why_en": [
+			"ほど means “the more… the more…”: the weaker the dog, the more it barks. Correct.",
+			"くらい can mark approximate degree, but it does not form the “the weaker, the more it barks” proportion.",
+			"さえ is “even / as long as,” not the proverb “the weaker, the more it barks.”",
+			"かぎり is “as long as it is a weak dog,” with no “the more… the more…” comparison."
+		]
+	},
+	"w4-7": {
+		"why": [
+			"「ことか」是感叹“多么…啊”，不能表示洗衣机坏了以后只好手洗。",
+			"「ものか」是强烈否定“才不会手洗”，与别无选择相反。",
+			"「しかない」表示“只能、只好”：洗衣机坏了，只好用手洗，正确。",
+			"「ことはない」表示“没必要手洗”，与必须手洗相反。"
+		],
+		"why_en": [
+			"ことか is an exclamation (“how…!”), not “have no choice but to wash by hand.”",
+			"ものか is a strong refusal (“I would never wash by hand”), the opposite of having no alternative.",
+			"しかない means “have no choice but to”: the machine broke, so the clothes must be washed by hand. Correct.",
+			"ことはない means “there is no need to wash by hand,” the opposite of this necessity."
+		]
+	},
+	"w4-8": {
+		"why": [
+			"「もの」用于说明理由或讲道理，「でしたもの」不能用来追问对方喜欢哪一种。",
+			"「こそ」强调“正是…”，「でしたこそ」不能构成回忆确认的问句。",
+			"「っけ」用于回忆确认：“你喜欢咖啡还是红茶来着？”，正确。",
+			"「ことか」是感叹“多么…啊”，不能用来确认记不清的选择。"
+		],
+		"why_en": [
+			"もの gives a reason or a general truth; でしたもの cannot ask which drink the listener preferred.",
+			"こそ emphasizes “precisely”; でしたこそ does not form a recall question.",
+			"っけ is used to check something half-remembered: “Was it coffee or tea you liked?” Correct.",
+			"ことか is an exclamation (“how…!”), not a check of a forgotten choice."
+		]
+	},
+	"w4-9": {
+		"why": [
+			"「ものか」是强烈否定“怎么会变”，与转述老师的话相反。",
+			"「しかない」表示“只能改变”，不是“听老师说会变”。",
+			"「ことだ」表示“应该改变”的建议，不是传闻。",
+			"「ということだ」表示传闻：听老师说考试形式会变，正确。"
+		],
+		"why_en": [
+			"ものか is a strong denial (“it would never change”), the opposite of reporting the teacher’s words.",
+			"しかない means “have no choice but to change,” not “I hear it will change.”",
+			"ことだ is advice (“you should change it”), not hearsay.",
+			"ということだ marks hearsay: according to the teacher, the exam format will change. Correct."
+		]
+	},
+	"w4-10": {
+		"why": [
+			"「ことか」与「いったい何年」呼应，感叹要花多么多年，正确。",
+			"「ことだ」表示“应该…／…这件事”，不能与「いったい何年」构成感叹。",
+			"「ものか」是强烈否定“才不会花那么多年”，与感叹相反。",
+			"「しかない」表示“只能花那么多年”，不能接在「何年かかる」后表感叹。"
+		],
+		"why_en": [
+			"ことか pairs with いったい何年 to exclaim how many years it will take. Correct.",
+			"ことだ is “should / the fact that,” and cannot make an exclamation with いったい何年.",
+			"ものか is a strong denial (“it couldn’t take that many years”), the opposite of this exclamation.",
+			"しかない means “have no choice but to take years,” and cannot follow 何年かかる as an exclamation."
+		]
+	},
+	"w4-11": {
+		"why": [
+			"「ことだ」表示“应该高兴／高兴这件事”，不能构成“没有比这更高兴”的最高级。",
+			"「ことじゃない」表示“并不是高兴”，与句意相反。",
+			"「ことか」多与「どんなに」呼应表感叹，不能接在「～ほどうれしい」后表示“没有比这更…”。",
+			"「ことはない」构成「～ほどうれしいことはない」：没有比这更令人高兴的了，正确。"
+		],
+		"why_en": [
+			"ことだ is “you should be glad / it is a glad thing,” not the superlative “nothing is more joyful.”",
+			"ことじゃない means “it isn’t that it’s joyful,” which reverses the meaning.",
+			"ことか usually pairs with どんなに for an exclamation, and cannot follow ～ほどうれしい to mean “nothing is more….”",
+			"ことはない forms ～ほどうれしいことはない: nothing is more delightful than seeing that. Correct."
+		]
+	},
+	"w4-12": {
+		"why": [
+			"「くせに」表示“明明不会却…”，带责怪，劝对方别说自己会，正确。",
+			"「なんて」表示轻视或惊讶，不能接在「できない」后构成“明明不会却说会”。",
+			"「なんか」表示轻视或举例，「できないなんか」不是“明明不会却…”。",
+			"「わりに」表示“按…来看却出乎意料”，是客观反差，不是责怪“明明不会还说会”。"
+		],
+		"why_en": [
+			"くせに is “even though you can’t,” with blame: don’t claim you can. Correct.",
+			"なんて shows disdain or surprise; after できない it does not mean “even though you can’t, you say you can.”",
+			"なんか is disdain or an example; できないなんか is not “even though you can’t.”",
+			"わりに is an objective “considering X, unexpectedly Y,” not a rebuke for claiming ability you lack."
+		]
+	},
+	"w4-13": {
+		"why": [
+			"「くらい」可表程度，但不能构成「使えば使うくらい」这种“越用越好”的句式。",
+			"「ほど」与前面的「使えば使う」呼应，表示“越用头脑越灵活”，正确。",
+			"「かぎり」表示“只要还在用”，不是“越用越…”。",
+			"「さえ」表示“连…都”，不能接在「使えば使う」后表示递进程度。"
+		],
+		"why_en": [
+			"くらい can mark degree, but 使えば使うくらい is not the “the more you use it, the better” pattern.",
+			"ほど pairs with 使えば使う: the mind gets sharper the more it is used. Correct.",
+			"かぎり is “as long as you keep using it,” not “the more… the more….”",
+			"さえ is “even”; it cannot follow 使えば使う to mark increasing degree."
+		]
+	},
+	"w4-14": {
+		"why": [
+			"「ことだ」表示“应该失望”，与劝对方别灰心相反。",
+			"「ものか」是说话人强烈否定“我才不失望”，不是劝对方不必灰心。",
+			"「ものの」表示“虽然…但是…”，后面还要接转折内容，不能以「よ」收尾劝慰。",
+			"「ことはない」表示“不必、用不着”：没必要失望，正确。"
+		],
+		"why_en": [
+			"ことだ would mean “you should be disappointed,” the opposite of this consolation.",
+			"ものか is the speaker’s strong refusal (“I would never be disappointed”), not “you needn’t feel down.”",
+			"ものの is “although…,” and needs a following contrast; it cannot close with よ as comfort.",
+			"ことはない means “there is no need”: no need to be disappointed. Correct."
+		]
+	},
+	"w4-15": {
+		"why": [
+			"「だもん」是句尾说明理由的口语，不能插在「仕事」和「したくない」之间。",
+			"「もんか」是句尾强烈否定，同样不能放在「仕事」后面。",
+			"「なんか」接在名词后表示轻视：这么好的天气才不想干什么工作，正确。",
+			"「ことか」是句尾感叹，不能放在「仕事」和「したくない」之间。"
+		],
+		"why_en": [
+			"だもん is a sentence-final “because,” and cannot sit between 仕事 and したくない.",
+			"もんか is a sentence-final strong denial, and likewise cannot follow 仕事 here.",
+			"なんか after a noun shows disdain: on such a nice day, who wants to work? Correct.",
+			"ことか is a sentence-final exclamation, and cannot sit between 仕事 and したくない."
+		]
+	},
+	"w4-16": {
+		"why": [
+			"★所在。作主题，后面接「学生の成長です」，正确。",
+			"修饰「成長」，构成「学生の成長」，放在句尾。",
+			"接在「教師に」后构成「教師にとっての」，表示“对教师而言的”。",
+			"修饰「喜び」，构成「最大の喜びは」。"
+		],
+		"why_en": [
+			"★ slot. Marks the topic, followed by 学生の成長です. Correct.",
+			"Modifies 成長 to form 学生の成長 at the end of the sentence.",
+			"Follows 教師に to form 教師にとっての, “for a teacher.”",
+			"Modifies 喜び to form 最大の喜びは."
+		]
+	},
+	"w4-17": {
+		"why": [
+			"作宾语，接在「さびしい」后构成「さびしい気持ちを」。",
+			"★所在。谓语“忍受了”，后接「ことか」，正确。",
+			"修饰「気持ち」，放在「どんなに」后面。",
+			"接在「がまんした」后构成「がまんしたことか」，感叹“多么…啊”。"
+		],
+		"why_en": [
+			"Object marker: follows さびしい to form さびしい気持ちを.",
+			"★ slot. The predicate “endured,” followed by ことか. Correct.",
+			"Modifies 気持ち, placed after どんなに.",
+			"Follows がまんした to form がまんしたことか, the exclamation “how much…!”"
+		]
+	},
+	"w4-18": {
+		"why": [
+			"作主语，放在最前面构成「戦争が」。",
+			"★所在。接在「続いて」后构成「続いている」，表示持续，正确。",
+			"说明语气，接在「いる」后、传闻的「って」前，构成「んだって」。",
+			"「続く」的て形，后接「いる」表示战争仍在持续。"
+		],
+		"why_en": [
+			"Subject, placed first to form 戦争が.",
+			"★ slot. Follows 続いて to form 続いている, the ongoing state. Correct.",
+			"Explanatory tone: follows いる and precedes hearsay って, forming んだって.",
+			"Te-form of 続く, followed by いる to mean the war is still going on."
+		]
+	},
+	"w4-19": {
+		"why": [
+			"接在「いつでも」后，表示随时都能联系。",
+			"放在最前面，修饰「連絡できる」，表示“无论何时”。",
+			"接在「ようになった」后，表示导致无法摆脱工作的负面原因。",
+			"★所在。「变得能够…」，后接「せいで」引出坏结果，正确。"
+		],
+		"why_en": [
+			"Follows いつでも: people can be contacted at any time.",
+			"Placed first, modifying 連絡できる: “whenever.”",
+			"Follows ようになった to mark the unwelcome cause of no longer being able to leave work.",
+			"★ slot. “Became able to…,” followed by せいで to introduce the bad result. Correct."
+		]
+	},
+	"w4-20": {
+		"why": [
+			"接在「だって」后，用て形说明停不下来的原因。",
+			"说明语气，接在「やめられない」后、句尾「もん」前。",
+			"★所在。谓语“无法停止”，正确。",
+			"放在最前面，口语申辩“可是／因为”。"
+		],
+		"why_en": [
+			"Follows だって; the te-form gives the reason the speaker cannot stop.",
+			"Explanatory tone: follows やめられない and precedes sentence-final もん.",
+			"★ slot. The predicate “cannot stop.” Correct.",
+			"Placed first: colloquial protest “but / because.”"
+		]
+	},
+	"w4-21": {
+		"why": [
+			"「そこで」表示针对前述情况采取下一步行动，后面应是对策，不是「からです」的理由。",
+			"「その結果」表示由此产生的结果，但后句以「からです」收尾，是在说明原因。",
+			"「それで」表示“因此”，同样是顺接结果，不能带出「からです」。",
+			"「なぜならば」表示“之所以如此是因为…”：各地讨论如何护田，是因为作物被野生动物吃掉，正确。"
+		],
+		"why_en": [
+			"そこで introduces an action taken in response; the following clause is a からです reason, not a next step.",
+			"その結果 marks a resulting outcome, but the clause ends in からです and is giving a reason.",
+			"それで means “therefore,” also a result link, and cannot lead into からです.",
+			"なぜならば is “the reason is…”: people are discussing how to protect fields because crops are being eaten. Correct."
+		]
+	},
+	"w4-22": {
+		"why": [
+			"「にかわって」表示代替，不能把「木の実」换成另一种说法。",
+			"「つまり」用来换个说法：树上的果实也就是野生动物的食物，正确。",
+			"「それで」表示“因此”，「木の実」和「野生の動物の食べ物」是同一事物，不是因果关系。",
+			"「そのわりに」表示“尽管如此却…”，前后不是反差。"
+		],
+		"why_en": [
+			"にかわって means “instead of,” and cannot rephrase 木の実 as another name for the same thing.",
+			"つまり restates: nuts and berries, in other words, food for wild animals. Correct.",
+			"それで means “therefore”; 木の実 and 野生の動物の食べ物 are the same thing, not cause and effect.",
+			"そのわりに is “despite that, however”; there is no contrast here."
+		]
+	},
+	"w4-23": {
+		"why": [
+			"「のわりに」表示“按…来看却出乎意料”，食物变少正是环境变化的结果，没有反差。",
+			"「のおかげで」表示带来好结果的原因，食物变少是坏事，不能用“多亏”。",
+			"「により」表示“由于…”：因气候和人类与山关系等环境变化，食物变少了，正确。",
+			"「にとって」表示“对…而言”，对象应是人或立场，不能接在「環境の変化」后表原因。"
+		],
+		"why_en": [
+			"のわりに is “considering X, unexpectedly Y”; less food is the expected result of the environmental change, not a contrast.",
+			"のおかげで marks a welcome cause; the food decreasing is a bad result, so “thanks to” is wrong.",
+			"により means “due to”: because of climate and how people treat the mountains, that food became scarce. Correct.",
+			"にとって is “for / to” a person or standpoint, and cannot follow 環境の変化 as a cause."
+		]
+	},
+	"w4-24": {
+		"why": [
+			"「それでも」表示“即便如此”，山里食物变少后动物下山是顺理成章的结果，不是让步。",
+			"「そのために」表示“因此、为此”：山里食物少了，所以动物下山觅食，正确。",
+			"「そのうえ」表示“而且、再加上”，这里不是再追加一层，而是前因后果。",
+			"「しかし」表示转折，下山觅食不是与食物减少相反的情况。"
+		],
+		"why_en": [
+			"それでも is “even so”; animals coming down after mountain food ran short is the expected result, not a concession.",
+			"そのために means “for that reason”: food in the mountains decreased, so the animals came down to feed. Correct.",
+			"そのうえ means “moreover”; this is cause then result, not an added point.",
+			"しかし marks contrast; coming down to feed is not the opposite of the food running short."
+		]
+	},
+	"w4-25": {
+		"why": [
+			"「その結果」表示“其结果是…”：荒废农地增加，结果动物更容易进田，这也是原因之一，正确。",
+			"「なぜなら」后面应陈述理由并以「からだ」收尾，这里是荒地增加带来的结果，不是原因。",
+			"「ついでに」表示顺便做另一件事，不能连接“荒地增加”和“动物更容易进田”。",
+			"「けれども」表示转折，动物更容易进田是荒地增加的自然结果，不是对立。"
+		],
+		"why_en": [
+			"その結果 is “as a result”: abandoned farmland keeps growing, so animals can enter the fields more easily, which is also cited as a cause. Correct.",
+			"なぜなら should introduce a reason ending in からだ; easier entry is a result of the abandoned land, not its reason.",
+			"ついでに means doing something else while at it, and cannot link more abandoned land to easier animal entry.",
+			"けれども marks contrast; easier entry is the natural result of abandoned land, not an opposing point."
+		]
+	}
+}
