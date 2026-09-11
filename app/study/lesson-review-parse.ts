@@ -1,4 +1,6 @@
+import glosses from "../data/lesson-review-glosses.json";
 import {
+	buildReviewRuby,
 	LESSON_REVIEW_SOURCE,
 	type LessonReviewPayload,
 	type ReviewDay,
@@ -100,8 +102,27 @@ export function buildLessonReviewPayload(
 	return {
 		source: opts?.source || LESSON_REVIEW_SOURCE,
 		fetchedAt: opts?.fetchedAt || new Date().toISOString(),
-		days: parseLessonReview(markdown),
+		days: enrichReviewDays(parseLessonReview(markdown)),
 	};
+}
+
+export function enrichReviewDays(days: ReviewDay[]): ReviewDay[] {
+	return days.map((day) => ({
+		...day,
+		items: day.items.map((item) => enrichReviewItem(item)),
+	}));
+}
+
+function enrichReviewItem(item: ReviewItem): ReviewItem {
+	const gloss = (glosses as Record<string, { cn?: string; en?: string }>)[item.jp];
+	const next: ReviewItem = { ...item };
+	if (gloss) {
+		if (!next.cn && gloss.cn) next.cn = gloss.cn;
+		if (!next.en && gloss.en) next.en = gloss.en;
+	}
+	const ruby = buildReviewRuby(next.jp, next.reading);
+	if (ruby) next.jp_r = ruby;
+	return compactItem(next);
 }
 
 function matchDateHeading(line: string): string | null {
@@ -310,6 +331,7 @@ function pushItem(items: ReviewItem[], item: ReviewItem) {
 
 function compactItem(item: ReviewItem): ReviewItem {
 	const out: ReviewItem = { jp: item.jp, kind: item.kind };
+	if (item.jp_r) out.jp_r = item.jp_r;
 	if (item.reading) out.reading = item.reading;
 	if (item.cn) out.cn = item.cn;
 	if (item.en) out.en = item.en;

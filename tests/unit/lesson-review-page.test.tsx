@@ -29,6 +29,7 @@ const payload: LessonReviewPayload = {
 
 beforeEach(() => {
 	resetStudyStateForTests();
+	localStorage.clear();
 	vi.stubGlobal(
 		"fetch",
 		vi.fn(async () => new Response(JSON.stringify(payload), { status: 200, headers: { "content-type": "application/json" } })),
@@ -47,6 +48,7 @@ describe("ReviewPage", () => {
 		render(<ReviewPage dateId={null} />);
 		expect(await screen.findByText("2026年9月11日")).toBeInTheDocument();
 		expect(screen.getByText("職場で文")).toBeInTheDocument();
+		expect(document.querySelector(".review-day__date")).toBeTruthy();
 		await user.click(screen.getByText("2026年9月11日"));
 		expect(seen).toContain("#/review/2026-09-11");
 	});
@@ -64,5 +66,18 @@ describe("ReviewPage", () => {
 		await user.click(screen.getByRole("button", { name: /^句子$|^Sentences$/ }));
 		expect(screen.getByText("練習すれば練習するほど、日本語が上手になる")).toBeInTheDocument();
 		expect(screen.queryByText("朝型")).not.toBeInTheDocument();
+	});
+
+	it("marks a card as mastered and hides it from the to-review deck", async () => {
+		const user = userEvent.setup();
+		setNavImpl(() => {});
+		localStorage.clear();
+		render(<ReviewPage dateId="2026-09-11" />);
+		expect(await screen.findByText("朝型")).toBeInTheDocument();
+		await user.click(screen.getByRole("button", { name: /已经记住|Got it/ }));
+		expect(screen.queryByText("朝型")).not.toBeInTheDocument();
+		expect(screen.getByText("練習すれば練習するほど、日本語が上手になる")).toBeInTheDocument();
+		await user.click(screen.getByRole("button", { name: /已掌握|Mastered/ }));
+		expect(screen.getByText("朝型")).toBeInTheDocument();
 	});
 });

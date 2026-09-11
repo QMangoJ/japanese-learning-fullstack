@@ -1,12 +1,15 @@
 import { describe, expect, it, vi } from "vitest";
 
 import {
+	buildReviewRuby,
 	formatReviewDate,
+	formatReviewWeekday,
 	isLessonReviewPayload,
 	jstToday,
 	LESSON_REVIEW_KV_KEY,
 	parseReviewRoute,
 	reviewDayCounts,
+	toKatakana,
 } from "../../app/study/lesson-review";
 import { buildLessonReviewPayload, parseLessonReview } from "../../app/study/lesson-review-parse";
 import { fetchGoogleDocText, syncLessonReview } from "../../app/study/lesson-review-sync";
@@ -111,6 +114,10 @@ describe("lesson review helpers", () => {
 		expect(parseReviewRoute("#/cards")).toBeNull();
 		expect(formatReviewDate("2026-09-11", "cn")).toBe("2026年9月11日");
 		expect(formatReviewDate("2026-09-11", "en")).toBe("Sep 11, 2026");
+		expect(formatReviewWeekday("2026-09-11", "cn")).toBe("星期五");
+		expect(toKatakana("せんしんこく")).toBe("センシンコク");
+		expect(buildReviewRuby("先進国（せんしんこく）")).toBe("<ruby>先進国<rt>センシンコク</rt></ruby>");
+		expect(buildReviewRuby("字幕", "じまく")).toBe("<ruby>字幕<rt>ジマク</rt></ruby>");
 		expect(jstToday(Date.parse("2026-09-10T16:00:00Z"))).toBe("2026-09-11");
 		expect(reviewDayCounts({ id: "x", title: "x", items: [{ jp: "a", kind: "word" }, { jp: "b", kind: "sentence" }] })).toEqual({
 			words: 1,
@@ -121,6 +128,9 @@ describe("lesson review helpers", () => {
 	it("accepts a valid payload and rejects junk", () => {
 		const payload = buildLessonReviewPayload(SAMPLE, { fetchedAt: "2026-09-12T00:00:00.000Z" });
 		expect(isLessonReviewPayload(payload)).toBe(true);
+		const advanced = payload.days.find((day) => day.id === "2026-09-11")!.items.find((item) => item.jp.startsWith("先進国"));
+		expect(advanced?.cn).toBe("发达国家");
+		expect(advanced?.jp_r).toContain("<ruby>先進国");
 		expect(isLessonReviewPayload({ fetchedAt: "x", days: [{ id: "1", title: "1", items: [{ jp: "", kind: "word" }] }] })).toBe(false);
 		expect(isLessonReviewPayload(null)).toBe(false);
 	});
