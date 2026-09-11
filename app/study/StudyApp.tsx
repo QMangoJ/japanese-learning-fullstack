@@ -17,6 +17,7 @@ import {
 	WearingPage,
 } from "../routes/study-common";
 import { ContrastPage, DayNav, DayPage, parseDayRoute } from "./days";
+import { formatReviewDate, parseReviewRoute } from "./lesson-review";
 import {
 	ACCOUNT,
 	accountReady,
@@ -109,6 +110,9 @@ const LazyReadingN3Content = lazy(() =>
 );
 const LazyKanjiExamPage = lazy(() =>
 	import("./KanjiExamPage").then((module) => ({ default: module.KanjiExamPage })),
+);
+const LazyReviewPage = lazy(() =>
+	import("./ReviewPage").then((module) => ({ default: module.ReviewPage })),
 );
 
 function StudyLoading() {
@@ -492,6 +496,7 @@ function Sidebar({ routeKey, onLevel }: { routeKey: string; onLevel: (lv: LevelK
 				<div className="side-h">
 					{lx("通用知识", "General reference")} <span className="n">· {lx("不分级别", "All levels")}</span>
 				</div>
+				{row("#/review", "🗓️", lx("课堂复习", "Lesson review"), null, h.startsWith("#/review"))}
 				{row("#/ref", "📖", lx("接续表", "Connections"), null, h === "#/ref")}
 				{row("#/katsuyou", "🔄", lx("活用", "Conjugation"), null, h === "#/katsuyou")}
 				{row("#/henkei", "✍️", lx("变形", "Verb forms"), null, h === "#/henkei")}
@@ -557,6 +562,10 @@ function Sheet({
 							<span className="sub">{lx("不分级别", "All levels")}</span>
 						</div>
 						<div className="sheet-row">
+							<button className="sheet-item" onClick={() => { onClose(); navTo("#/review"); }}>
+								<span className="ic">🗓️</span>
+								{lx("课堂复习", "Lesson review")}
+							</button>
 							<button className="sheet-item" onClick={() => { onClose(); navTo("#/ref"); }}>
 								<span className="ic">📖</span>
 								{lx("接续表", "Connections")}
@@ -565,12 +574,12 @@ function Sheet({
 								<span className="ic">🔄</span>
 								{lx("活用", "Conjugation")}
 							</button>
+						</div>
+						<div className="sheet-row">
 							<button className="sheet-item" onClick={() => { onClose(); navTo("#/henkei"); }}>
 								<span className="ic">✍️</span>
 								{lx("变形", "Verb forms")}
 							</button>
-						</div>
-						<div className="sheet-row">
 							<button className="sheet-item" onClick={() => { onClose(); navTo("#/kougo"); }}>
 								<span className="ic">💬</span>
 								{lx("口语", "Casual")}
@@ -579,12 +588,12 @@ function Sheet({
 								<span className="ic">↔️</span>
 								{lx("自他动词", "Verb pairs")}
 							</button>
+						</div>
+						<div className="sheet-row">
 							<button className="sheet-item" onClick={() => { onClose(); navTo("#/numbers"); }}>
 								<span className="ic">🔢</span>
 								{lx("数字", "Numbers")}
 							</button>
-						</div>
-						<div className="sheet-row">
 							<button className="sheet-item" onClick={() => { onClose(); navTo("#/kanji-exam"); }}>
 								<span className="ic">🈶</span>
 								{lx("汉字自测", "Kanji Self-test")}
@@ -593,7 +602,6 @@ function Sheet({
 								<span className="ic">👕</span>
 								{lx("穿衣穿戴", "Wearing")}
 							</button>
-							<span className="sheet-item" style={{ visibility: "hidden" }} />
 						</div>
 						<div className="sheet-h">
 							{lx("本模块", "This module")}
@@ -803,6 +811,16 @@ function TrialLock() {
 function viewMeta(key: string): { nav: string; title: string; back: boolean } {
 	if (key === "#/search") return { nav: "search", title: lx("搜索", "Search"), back: false };
 	if (key === "#/cards") return { nav: "common", title: `${lx("记忆卡", "Flashcards")} · ${modLabel()}`, back: false };
+	const review = parseReviewRoute(key);
+	if (review) {
+		if (!review.id) return { nav: "common", title: lx("课堂复习", "Lesson review"), back: true };
+		const dated = review.id && /^\d{4}-\d{2}-\d{2}$/.test(review.id);
+		return {
+			nav: "common",
+			title: dated ? formatReviewDate(review.id, LANG === "en" ? "en" : "cn") : lx("课堂复习", "Lesson review"),
+			back: true,
+		};
+	}
 	if (key === "#/kanji-exam") return { nav: "common", title: lx("汉字自测", "Kanji Self-test"), back: false };
 	if (key === "#/favs")
 		return {
@@ -976,11 +994,12 @@ export function StudyApp() {
 
 	const meta = viewMeta(routeKey);
 	const day = parseDayRoute(routeKey);
-	const commonPages = ["#/search", "#/cards", "#/kanji-exam", "#/favs", "#/mistakes", "#/ref", "#/katsuyou", "#/henkei", "#/kougo", "#/jita", "#/wearing", "#/numbers"];
-	const isCommon = commonPages.includes(routeKey) || routeKey === "#/";
+	const reviewRoute = parseReviewRoute(routeKey);
+	const commonPages = ["#/search", "#/cards", "#/kanji-exam", "#/favs", "#/mistakes", "#/ref", "#/katsuyou", "#/henkei", "#/kougo", "#/jita", "#/wearing", "#/numbers", "#/review"];
+	const isCommon = commonPages.includes(routeKey) || routeKey === "#/" || Boolean(reviewRoute);
 	if (routeKey === "#/cards") ensureCardsDeck();
 
-	const commonRefPage = ["#/ref", "#/katsuyou", "#/henkei", "#/kougo", "#/jita", "#/wearing", "#/numbers"].includes(routeKey);
+	const commonRefPage = ["#/ref", "#/katsuyou", "#/henkei", "#/kougo", "#/jita", "#/wearing", "#/numbers", "#/review"].includes(routeKey) || Boolean(reviewRoute);
 	const waitingN2 = isN2() && MODULE !== "n2listening" && MODULE !== "n2reading" && !n2Loaded && !commonRefPage;
 	const waitingN4 = isN4() && !n4Loaded && !commonRefPage;
 	const waitingSearch = routeKey === "#/search" && (!n2Loaded || !readingSearchLoaded) && !readingSearchError;
@@ -1045,6 +1064,7 @@ export function StudyApp() {
 	else if (routeKey === "#/jita") body = DATA.common?.jita ? <JitaPage data={DATA.common} /> : <div className="empty">通用参考数据加载中，请稍候…</div>;
 	else if (routeKey === "#/wearing") body = DATA.common?.wearing ? <WearingPage data={DATA.common} /> : <div className="empty">通用参考数据加载中，请稍候…</div>;
 	else if (routeKey === "#/numbers") body = DATA.common?.numbers ? <NumbersPage data={DATA.common} /> : <div className="empty">通用参考数据加载中，请稍候…</div>;
+	else if (reviewRoute) body = <LazyReviewPage dateId={reviewRoute.id} />;
 	else body = <HomePage data={homeData} />;
 
 	const showCommon = isCommon && !day && routeKey !== "#/contrast";
@@ -1065,12 +1085,12 @@ export function StudyApp() {
 			<Header
 				title={meta.title}
 				showBack={meta.back}
-				backLabel={day ? lx("目录", "Catalog") : lx("返回", "Back")}
-				showLevel={!commonPages.includes(routeKey)}
+				backLabel={day ? lx("目录", "Catalog") : reviewRoute?.id ? lx("日期", "Dates") : lx("返回", "Back")}
+				showLevel={!commonPages.includes(routeKey) && !reviewRoute}
 				showTypebar={routeKey === "#/" || Boolean(day)}
 				showReading={LEVEL === "n3" || LEVEL === "n2"}
 				showListening={LEVEL === "n3" || LEVEL === "n2"}
-				onBack={() => (day ? navTo("#/") : history.length > 1 ? navigate(-1) : navTo("#/"))}
+				onBack={() => (day ? navTo("#/") : reviewRoute?.id ? navTo("#/review") : history.length > 1 ? navigate(-1) : navTo("#/"))}
 				onOpenLevel={() => setSheet("level")}
 			/>
 			<Sidebar routeKey={routeKey} onLevel={pickLevel} />

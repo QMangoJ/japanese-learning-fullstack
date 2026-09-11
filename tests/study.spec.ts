@@ -34,20 +34,21 @@ async function pickType(page: Page, ty: "grammar" | "vocab" | "kanji" | "reading
 	else await side.click();
 }
 
-async function openStudyNav(page: Page, nav: "search" | "mistakes" | "favs" | "cards" | "ref") {
+async function openStudyNav(page: Page, nav: "search" | "mistakes" | "favs" | "cards" | "ref" | "review") {
 	const sideLabels: Record<typeof nav, RegExp> = {
 		search: /搜索|Search/,
 		mistakes: /错题|Mistakes/,
 		favs: /收藏|Favorites/,
 		cards: /记忆卡|Flashcards/,
 		ref: /接续表|Connections/,
+		review: /课堂复习|Lesson review/,
 	};
 	const side = page.locator("#side .side-item", { hasText: sideLabels[nav] });
 	if (await side.isVisible()) {
 		await side.click();
 		return;
 	}
-	if (nav === "cards" || nav === "ref") {
+	if (nav === "cards" || nav === "ref" || nav === "review") {
 		await page.locator('.bottom button[data-nav="common"]').click();
 		await page.getByRole("button", { name: sideLabels[nav] }).click();
 		return;
@@ -1117,6 +1118,17 @@ test.describe("study interactions", () => {
 		await expect(page.locator("#title")).toContainText(/接续|Connection/);
 		await expect(page.locator(".card, table, .conn").first()).toBeVisible();
 	});
+
+	test("opens lesson review flashcards by date", async ({ page }) => {
+		await waitForStudy(page);
+		await openStudyNav(page, "review");
+		await expect(page.locator("#title")).toContainText(/课堂复习|Lesson review/);
+		await expect(page.locator(".review-day").first()).toBeVisible({ timeout: 15_000 });
+		await page.locator(".review-day").first().click();
+		await expect(page.locator(".fcard").first()).toBeVisible({ timeout: 15_000 });
+		await page.locator(".fcard").first().click();
+		await expect(page.locator(".fcard .backside, .fcard .hint").first()).toBeVisible();
+	});
 });
 
 test.describe("accounts", () => {
@@ -1129,8 +1141,13 @@ test.describe("accounts", () => {
 
 		const favs = await request.get("/api/favorites");
 		const mistakes = await request.get("/api/mistakes");
+		const review = await request.get("/api/review");
 		expect(favs.status()).toBe(401);
 		expect(mistakes.status()).toBe(401);
+		expect(review.ok()).toBeTruthy();
+		const reviewBody = await review.json();
+		expect(Array.isArray(reviewBody.days)).toBeTruthy();
+		expect(reviewBody.days.length).toBeGreaterThan(0);
 	});
 
 	test("study stays usable without signing in", async ({ page }) => {
