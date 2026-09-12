@@ -55,6 +55,18 @@ export function formatReviewDate(iso: string, lang: "cn" | "en"): string {
 	return `${year}年${month}月${day}日`;
 }
 
+export function formatReviewMonthDay(iso: string, lang: "cn" | "en"): string {
+	const parts = iso.split("-").map(Number);
+	const month = parts[1];
+	const day = parts[2];
+	if (!month || !day) return iso;
+	if (lang === "en") {
+		const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+		return `${months[month - 1]} ${day}`;
+	}
+	return `${month}月${day}日`;
+}
+
 export function reviewDayCounts(day: ReviewDay): { words: number; sentences: number } {
 	let words = 0;
 	let sentences = 0;

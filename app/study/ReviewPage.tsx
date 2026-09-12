@@ -13,6 +13,7 @@ import {
 import {
 	buildReviewRuby,
 	formatReviewDate,
+	formatReviewMonthDay,
 	formatReviewWeekday,
 	isLessonReviewPayload,
 	jstToday,
@@ -154,7 +155,8 @@ function DayButton({ day, today = false, mastery }: { day: ReviewDay; today?: bo
 	const counts = reviewDayCounts(day);
 	const unknown = reviewUnknownCount(mastery, day.id, day.items);
 	const lang = LANG === "en" ? "en" : "cn";
-	const title = day.date ? formatReviewDate(day.date, lang) : day.title;
+	const title = day.date ? formatReviewMonthDay(day.date, lang) : day.title;
+	const year = day.date ? day.date.slice(0, 4) : "";
 	const weekday = day.date ? formatReviewWeekday(day.date, lang) : "";
 	const preview = day.items
 		.slice(0, 3)
@@ -167,7 +169,13 @@ function DayButton({ day, today = false, mastery }: { day: ReviewDay; today?: bo
 				<span className="review-day__date">{title}</span>
 				{today ? <span className="today-mark">{lx("今天", "Today")}</span> : null}
 			</span>
-			{weekday ? <span className="review-day__dow">{weekday}</span> : null}
+			{(year || weekday) ? (
+				<span className="review-day__dow">
+					{year}
+					{year && weekday ? " · " : ""}
+					{weekday}
+				</span>
+			) : null}
 			<span className="review-day__stats">
 				<span className="review-day__chip">{lx(`单词 ${counts.words}`, `${counts.words} words`)}</span>
 				<span className="review-day__chip">{lx(`句子 ${counts.sentences}`, `${counts.sentences} sentences`)}</span>

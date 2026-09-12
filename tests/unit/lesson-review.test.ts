@@ -3,6 +3,7 @@ import { describe, expect, it, vi } from "vitest";
 import {
 	buildReviewRuby,
 	formatReviewDate,
+	formatReviewMonthDay,
 	formatReviewWeekday,
 	isLessonReviewPayload,
 	jstToday,
@@ -114,6 +115,7 @@ describe("lesson review helpers", () => {
 		expect(parseReviewRoute("#/cards")).toBeNull();
 		expect(formatReviewDate("2026-09-11", "cn")).toBe("2026年9月11日");
 		expect(formatReviewDate("2026-09-11", "en")).toBe("Sep 11, 2026");
+		expect(formatReviewMonthDay("2026-09-11", "cn")).toBe("9月11日");
 		expect(formatReviewWeekday("2026-09-11", "cn")).toBe("星期五");
 		expect(toKatakana("せんしんこく")).toBe("センシンコク");
 		expect(buildReviewRuby("先進国（せんしんこく）")).toBe("<ruby>先進国<rt>センシンコク</rt></ruby>");

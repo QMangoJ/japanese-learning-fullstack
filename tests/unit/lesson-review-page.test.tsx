@@ -46,10 +46,10 @@ describe("ReviewPage", () => {
 		const seen: string[] = [];
 		setNavImpl((key) => seen.push(key));
 		render(<ReviewPage dateId={null} />);
-		expect(await screen.findByText("2026年9月11日")).toBeInTheDocument();
+		expect(await screen.findByText("9月11日")).toBeInTheDocument();
 		expect(screen.getByText("職場で文")).toBeInTheDocument();
 		expect(document.querySelector(".review-day__date")).toBeTruthy();
-		await user.click(screen.getByText("2026年9月11日"));
+		await user.click(screen.getByText("9月11日"));
 		expect(seen).toContain("#/review/2026-09-11");
 	});
 
