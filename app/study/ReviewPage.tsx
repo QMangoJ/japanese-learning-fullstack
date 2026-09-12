@@ -13,6 +13,8 @@ import {
 import {
 	buildReviewRuby,
 	formatReviewDate,
+	formatReviewDayNum,
+	formatReviewMonth,
 	formatReviewMonthDay,
 	formatReviewWeekday,
 	isLessonReviewPayload,
@@ -158,32 +160,42 @@ function DayButton({ day, today = false, mastery }: { day: ReviewDay; today?: bo
 	const title = day.date ? formatReviewMonthDay(day.date, lang) : day.title;
 	const year = day.date ? day.date.slice(0, 4) : "";
 	const weekday = day.date ? formatReviewWeekday(day.date, lang) : "";
+	const month = day.date ? formatReviewMonth(day.date, lang) : "";
+	const dayNum = day.date ? formatReviewDayNum(day.date) : "";
 	const preview = day.items
 		.slice(0, 3)
 		.map((item) => item.jp.replace(/[（(][^）)]*[）)]?/g, "").trim())
 		.filter(Boolean)
 		.join(" · ");
 	return (
-		<button type="button" className={`review-day${today ? " today" : ""}`} onClick={() => navTo(`#/review/${day.id}`)}>
-			<span className="review-day__top">
-				<span className="review-day__date">{title}</span>
-				{today ? <span className="today-mark">{lx("今天", "Today")}</span> : null}
-			</span>
-			{(year || weekday) ? (
-				<span className="review-day__dow">
-					{year}
-					{year && weekday ? " · " : ""}
-					{weekday}
+		<button type="button" className={`review-day${today ? " today" : ""}${day.date ? " has-cal" : ""}`} onClick={() => navTo(`#/review/${day.id}`)}>
+			{day.date ? (
+				<span className="review-day__cal" aria-hidden="true">
+					<span className="review-day__month">{month}</span>
+					<span className="review-day__num">{dayNum}</span>
 				</span>
 			) : null}
-			<span className="review-day__stats">
-				<span className="review-day__chip">{lx(`单词 ${counts.words}`, `${counts.words} words`)}</span>
-				<span className="review-day__chip">{lx(`句子 ${counts.sentences}`, `${counts.sentences} sentences`)}</span>
-				<span className={`review-day__chip${unknown ? " todo" : ""}`}>
-					{lx(`未掌握 ${unknown}`, `${unknown} to review`)}
+			<span className="review-day__body">
+				<span className="review-day__top">
+					<span className="review-day__date">{title}</span>
+					{today ? <span className="today-mark">{lx("今天", "Today")}</span> : null}
 				</span>
+				{(year || weekday) ? (
+					<span className="review-day__dow">
+						{weekday}
+						{weekday && year ? " · " : ""}
+						{year}
+					</span>
+				) : null}
+				<span className="review-day__stats">
+					<span className="review-day__chip">{lx(`单词 ${counts.words}`, `${counts.words} words`)}</span>
+					<span className="review-day__chip">{lx(`句子 ${counts.sentences}`, `${counts.sentences} sentences`)}</span>
+					<span className={`review-day__chip${unknown ? " todo" : ""}`}>
+						{lx(`未掌握 ${unknown}`, `${unknown} to review`)}
+					</span>
+				</span>
+				{preview ? <span className="review-day__preview">{preview}</span> : null}
 			</span>
-			{preview ? <span className="review-day__preview">{preview}</span> : null}
 		</button>
 	);
 }

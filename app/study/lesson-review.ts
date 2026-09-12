@@ -67,6 +67,22 @@ export function formatReviewMonthDay(iso: string, lang: "cn" | "en"): string {
 	return `${month}月${day}日`;
 }
 
+export function formatReviewMonth(iso: string, lang: "cn" | "en"): string {
+	const month = Number(iso.split("-")[1]);
+	if (!month) return "";
+	if (lang === "en") {
+		const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+		return months[month - 1] ?? "";
+	}
+	return `${month}月`;
+}
+
+export function formatReviewDayNum(iso: string): string {
+	const day = Number(iso.split("-")[2]);
+	if (!day) return "";
+	return String(day);
+}
+
 export function reviewDayCounts(day: ReviewDay): { words: number; sentences: number } {
 	let words = 0;
 	let sentences = 0;
