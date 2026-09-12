@@ -163,6 +163,39 @@ export function buildReviewRuby(jp: string, reading?: string): string | undefine
 	return undefined;
 }
 
+export function applyKanjiReadings(jp: string, readings: Record<string, string>): string | undefined {
+	if (!jp || !/[一-龯]/.test(jp)) return undefined;
+	let html = "";
+	let used = false;
+	for (let i = 0; i < jp.length; ) {
+		const ch = jp[i] || "";
+		if (!/[一-龯々〆ヵヶ]/.test(ch)) {
+			html += escapeXml(ch);
+			i += 1;
+			continue;
+		}
+		let found: { word: string; reading: string } | null = null;
+		const max = Math.min(12, jp.length - i);
+		for (let len = max; len >= 2; len -= 1) {
+			const word = jp.slice(i, i + len);
+			const reading = readings[word];
+			if (reading) {
+				found = { word, reading };
+				break;
+			}
+		}
+		if (found) {
+			used = true;
+			html += `<ruby>${escapeXml(found.word)}<rt>${escapeXml(toKatakana(found.reading))}</rt></ruby>`;
+			i += found.word.length;
+		} else {
+			html += escapeXml(ch);
+			i += 1;
+		}
+	}
+	return used ? html : undefined;
+}
+
 function escapeXml(text: string): string {
 	return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }

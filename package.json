@@ -62,6 +62,7 @@
 		"test:n2-vk-exam": "node scripts/check-n2-vk-exam-explanations.mjs",
 		"test:n2-vocab-kanji-daily": "node scripts/check-n2-vocab-kanji-daily-translations.mjs",
 		"generate:lesson-review": "vite-node scripts/build-lesson-review.mjs",
+		"generate:lesson-review-readings": "node scripts/build-lesson-review-readings.mjs && vite-node scripts/rebuild-lesson-review-payload.mjs",
 		"generate:vocab-english": "node scripts/patch-missing-vocab-english.mjs",
 		"generate:vocab-kanji-daily": "node scripts/generate-n3-vocab-kanji-daily-translations.mjs",
 		"preview": "npm run build && vite preview",

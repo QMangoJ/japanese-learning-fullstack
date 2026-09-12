@@ -452,9 +452,9 @@ function Sidebar({ routeKey, onLevel }: { routeKey: string; onLevel: (lv: LevelK
 		...(LEVEL === "n3" || LEVEL === "n2" ? ([["listening", "🎧", lx("听解", "Listening")]] as [TypeKey, string, string][]) : []),
 	];
 	const favCount = Object.keys(FAV).length;
-	const row = (go: string, ic: string, label: string, count: string | number | null, on: boolean, featured = false) => (
+	const row = (go: string, ic: string, label: string, count: string | number | null, on: boolean) => (
 		<button
-			className={`side-item ${on ? "on" : ""}${featured ? " feature" : ""}`}
+			className={`side-item ${on ? "on" : ""}`}
 			onClick={() => (go === "#/favs" || go === "#/mistakes" ? goAccountPage(go) : navTo(go))}
 		>
 			<span className="ic">{ic}</span>
@@ -496,7 +496,7 @@ function Sidebar({ routeKey, onLevel }: { routeKey: string; onLevel: (lv: LevelK
 				<div className="side-h">
 					{lx("通用知识", "General reference")} <span className="n">· {lx("不分级别", "All levels")}</span>
 				</div>
-				{row("#/review", "🗓️", lx("课堂复习", "Lesson review"), null, h.startsWith("#/review"), true)}
+				{row("#/review", "🗓️", lx("课堂复习", "Lesson review"), null, h.startsWith("#/review"))}
 				{row("#/ref", "📖", lx("接续表", "Connections"), null, h === "#/ref")}
 				{row("#/katsuyou", "🔄", lx("活用", "Conjugation"), null, h === "#/katsuyou")}
 				{row("#/henkei", "✍️", lx("变形", "Verb forms"), null, h === "#/henkei")}

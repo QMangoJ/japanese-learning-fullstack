@@ -1,7 +1,7 @@
 /* 日本語上手: conservative offline cache for visited study content. */
 // Bump this whenever the application shell changes. A new worker then removes
 // the previous HTML/runtime cache before a standalone PWA can reuse it.
-const CACHE_VERSION = "2026-09-10-v3";
+const CACHE_VERSION = "2026-09-12-v1";
 const SHELL_CACHE = `jl-shell-${CACHE_VERSION}`;
 const RUNTIME_CACHE = `jl-runtime-${CACHE_VERSION}`;
 const MEDIA_CACHE = `jl-media-${CACHE_VERSION}`;
@@ -157,7 +157,7 @@ self.addEventListener("fetch", (event) => {
 		event.respondWith(audioResponse(event));
 		return;
 	}
-	if (url.pathname.startsWith("/data/")) {
+	if (url.pathname.startsWith("/data/") || url.pathname === "/study.css" || url.pathname === "/sw.js") {
 		event.respondWith(networkFirst(event));
 		return;
 	}

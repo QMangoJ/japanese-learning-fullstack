@@ -1,5 +1,7 @@
 import glosses from "../data/lesson-review-glosses.json";
+import kanjiReadings from "../data/lesson-review-kanji-readings.json";
 import {
+	applyKanjiReadings,
 	buildReviewRuby,
 	LESSON_REVIEW_SOURCE,
 	type LessonReviewPayload,
@@ -120,7 +122,7 @@ function enrichReviewItem(item: ReviewItem): ReviewItem {
 		if (!next.cn && gloss.cn) next.cn = gloss.cn;
 		if (!next.en && gloss.en) next.en = gloss.en;
 	}
-	const ruby = buildReviewRuby(next.jp, next.reading);
+	const ruby = buildReviewRuby(next.jp, next.reading) || applyKanjiReadings(next.jp, kanjiReadings);
 	if (ruby) next.jp_r = ruby;
 	return compactItem(next);
 }

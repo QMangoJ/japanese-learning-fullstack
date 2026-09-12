@@ -22,6 +22,7 @@
 				{
 					"jp": "テストは成績に影響する",
 					"kind": "word",
+					"jp_r": "テストは<ruby>成績<rt>セイセキ</rt></ruby>に<ruby>影響<rt>エイキョウ</rt></ruby>する",
 					"cn": "考试会影响成绩",
 					"en": "The test affects your grade"
 				},
@@ -34,6 +35,7 @@
 				{
 					"jp": "あまり大切じゃない",
 					"kind": "word",
+					"jp_r": "あまり<ruby>大切<rt>タイセツ</rt></ruby>じゃない",
 					"cn": "不太重要",
 					"en": "not that important"
 				},
@@ -52,18 +54,21 @@
 				{
 					"jp": "朝型",
 					"kind": "word",
+					"jp_r": "<ruby>朝型<rt>アサガタ</rt></ruby>",
 					"cn": "早起型、早睡早起的人",
 					"en": "morning person"
 				},
 				{
 					"jp": "夜型",
 					"kind": "word",
+					"jp_r": "<ruby>夜型<rt>ヨルガタ</rt></ruby>",
 					"cn": "夜猫子",
 					"en": "night person"
 				},
 				{
 					"jp": "他の生徒",
 					"kind": "word",
+					"jp_r": "<ruby>他の<rt>タノ</rt></ruby><ruby>生徒<rt>セイト</rt></ruby>",
 					"cn": "其他学生",
 					"en": "other students"
 				},
@@ -81,18 +86,21 @@
 				{
 					"jp": "名前を呼ぶのが一番良いです！👍",
 					"kind": "sentence",
+					"jp_r": "<ruby>名前<rt>ナマエ</rt></ruby>を<ruby>呼ぶ<rt>ヨブ</rt></ruby>のが<ruby>一番<rt>イチバン</rt></ruby><ruby>良い<rt>ヨイ</rt></ruby>です！👍",
 					"cn": "直接叫名字最好！",
 					"en": "Calling someone by name is best"
 				},
 				{
 					"jp": "呼び方",
 					"kind": "word",
+					"jp_r": "<ruby>呼び方<rt>ヨビカタ</rt></ruby>",
 					"cn": "称呼方式",
 					"en": "how to address someone"
 				},
 				{
 					"jp": "どんな呼び方が良いですか？",
 					"kind": "sentence",
+					"jp_r": "どんな<ruby>呼び方<rt>ヨビカタ</rt></ruby>が<ruby>良い<rt>ヨイ</rt></ruby>ですか？",
 					"cn": "怎样称呼比较好？",
 					"en": "What should I call you?"
 				},
@@ -111,6 +119,7 @@
 				{
 					"jp": "交番に連れて行きたかった",
 					"kind": "sentence",
+					"jp_r": "<ruby>交番<rt>コウバン</rt></ruby>に<ruby>連れて行<rt>ツレテイ</rt></ruby>きたかった",
 					"cn": "想带去派出所",
 					"en": "I wanted to take them to the police box"
 				},
@@ -129,18 +138,21 @@
 				{
 					"jp": "返す",
 					"kind": "word",
+					"jp_r": "<ruby>返す<rt>カエス</rt></ruby>",
 					"cn": "归还",
 					"en": "to return (something)"
 				},
 				{
 					"jp": "tax 税金",
 					"kind": "word",
+					"jp_r": "tax <ruby>税金<rt>ゼイキン</rt></ruby>",
 					"cn": "税",
 					"en": "tax"
 				},
 				{
 					"jp": "市民税",
 					"kind": "word",
+					"jp_r": "<ruby>市民<rt>シミン</rt></ruby>税",
 					"cn": "3万５千円くらい"
 				},
 				{
@@ -176,6 +188,7 @@
 				{
 					"jp": "国民",
 					"kind": "word",
+					"jp_r": "<ruby>国民<rt>コクミン</rt></ruby>",
 					"cn": "国民",
 					"en": "citizen / the people"
 				},
@@ -194,6 +207,7 @@
 				{
 					"jp": "兄弟",
 					"kind": "word",
+					"jp_r": "<ruby>兄弟<rt>キョウダイ</rt></ruby>",
 					"cn": "兄弟",
 					"en": "siblings / brothers"
 				}
@@ -207,12 +221,14 @@
 				{
 					"jp": "ドラえもんの暗記パンがほしい🍞🥐🥪😅",
 					"kind": "sentence",
+					"jp_r": "ドラえもんの<ruby>暗記<rt>アンキ</rt></ruby>パンがほしい🍞🥐🥪😅",
 					"cn": "好想要哆啦A梦的记忆面包",
 					"en": "I want Doraemon's memory bread"
 				},
 				{
 					"jp": "練習すれば練習するほど、日本語が上手になる",
 					"kind": "sentence",
+					"jp_r": "<ruby>練習<rt>レンシュウ</rt></ruby>すれば<ruby>練習する<rt>レンシュウスル</rt></ruby>ほど、<ruby>日本語<rt>ニホンゴ</rt></ruby>が<ruby>上手<rt>ジョウズ</rt></ruby>になる",
 					"cn": "越练习，日语就越好",
 					"en": "The more you practice, the better your Japanese gets"
 				},
@@ -237,24 +253,28 @@
 				{
 					"jp": "アメリカは規制されていること以外は出来るんでね",
 					"kind": "sentence",
+					"jp_r": "アメリカは規制されていること<ruby>以外<rt>イガイ</rt></ruby>は出来るんでね",
 					"cn": "在美国，除了被限制的事情以外都能做",
 					"en": "In America you can do anything except what's restricted"
 				},
 				{
 					"jp": "あとは州次第",
 					"kind": "word",
+					"jp_r": "あとは州<ruby>次第<rt>シダイ</rt></ruby>",
 					"cn": "剩下的就看各州了",
 					"en": "The rest depends on the state"
 				},
 				{
 					"jp": "日本は法律に書いてあることしか出来ない",
 					"kind": "sentence",
+					"jp_r": "<ruby>日本<rt>ニッポン</rt></ruby>は<ruby>法律<rt>ホウリツ</rt></ruby>に書いてあることしか出来ない",
 					"cn": "在日本，法律没写的就不能做",
 					"en": "In Japan you can only do what's written in the law"
 				},
 				{
 					"jp": "この違いでしょうね",
 					"kind": "word",
+					"jp_r": "この<ruby>違い<rt>チガイ</rt></ruby>でしょうね",
 					"cn": "大概就是这个差别吧",
 					"en": "That's probably the difference"
 				},
@@ -267,6 +287,7 @@
 				{
 					"jp": "本当に？",
 					"kind": "sentence",
+					"jp_r": "<ruby>本当<rt>ホントウ</rt></ruby>に？",
 					"cn": "真的吗？",
 					"en": "Really?"
 				},
@@ -278,24 +299,28 @@
 				{
 					"jp": "素晴らしい，ストーリー、マジでドロドロでやばい",
 					"kind": "sentence",
+					"jp_r": "<ruby>素晴らしい<rt>スバラシイ</rt></ruby>，ストーリー、マジでドロドロでやばい",
 					"cn": "太精彩了，剧情真的又狗血又刺激",
 					"en": "Amazing story — it's messy and wild"
 				},
 				{
 					"jp": "主人公は生まれ育った家庭の影響で、よく現実から逃げてしまう。例えば一人で今の環境を離れ、誰にも連絡がつかないようにする。結婚して 10 年経った今、1 年間姿を消した。",
 					"kind": "sentence",
+					"jp_r": "<ruby>主人<rt>シュジン</rt></ruby>公は生まれ育った<ruby>家庭<rt>カテイ</rt></ruby>の<ruby>影響<rt>エイキョウ</rt></ruby>で、よく現実から逃げてしまう。<ruby>例えば<rt>タトエバ</rt></ruby><ruby>一人<rt>ヒトリ</rt></ruby>で今の<ruby>環境<rt>カンキョウ</rt></ruby>を離れ、誰にも<ruby>連絡<rt>レンラク</rt></ruby>がつかないようにする。<ruby>結婚<rt>ケッコン</rt></ruby>して 10 年経った今、1 <ruby>年間<rt>ネンカン</rt></ruby>姿を消した。",
 					"cn": "主角受原生家庭影响，常常逃避现实。比如一个人离开现在的环境，让谁都联系不上。结婚十年了，却消失了一整年。",
 					"en": "The protagonist often runs from reality because of their family. They disappear for a whole year after ten years of marriage."
 				},
 				{
 					"jp": "このドラマのヒロインは 31 歳の時に 4 回結婚した。そして 5 人目の夫は彼女が過去に結婚していたことを知らない。",
 					"kind": "sentence",
+					"jp_r": "このドラマのヒロインは 31 歳の時に 4 回<ruby>結婚<rt>ケッコン</rt></ruby>した。そして 5 <ruby>人目<rt>ヒトメ</rt></ruby>の夫は<ruby>彼女<rt>カノジョ</rt></ruby>が<ruby>過去<rt>カコ</rt></ruby>に<ruby>結婚<rt>ケッコン</rt></ruby>していたことを知らない。",
 					"cn": "这部剧的女主 31 岁结过 4 次婚。第五任丈夫不知道她结过婚。",
 					"en": "The heroine married four times by 31. Her fifth husband doesn't know."
 				},
 				{
 					"jp": "4 人目は起業家で、バーでナンパされて結婚した。結婚翌日に会社が潰れちゃった。",
 					"kind": "sentence",
+					"jp_r": "4 <ruby>人目<rt>ヒトメ</rt></ruby>は起業家で、バーでナンパされて<ruby>結婚<rt>ケッコン</rt></ruby>した。<ruby>結婚<rt>ケッコン</rt></ruby>翌日に<ruby>会社<rt>カイシャ</rt></ruby>が潰れちゃった。",
 					"cn": "第四任是创业者，在酒吧被搭讪后结婚。结婚第二天公司就倒了。",
 					"en": "The fourth husband was an entrepreneur she met at a bar. His company collapsed the next day."
 				},
@@ -328,6 +353,7 @@
 				{
 					"jp": "Bのうちで掃除した時",
 					"kind": "word",
+					"jp_r": "Bのうちで<ruby>掃除<rt>ソウジ</rt></ruby>した時",
 					"cn": "在 B 家里打扫的时候",
 					"en": "when cleaning at B's house"
 				},
@@ -352,6 +378,7 @@
 				{
 					"jp": "病院に行くように言われた",
 					"kind": "sentence",
+					"jp_r": "<ruby>病院<rt>ビョウイン</rt></ruby>に行くように言われた",
 					"cn": "被要求去医院",
 					"en": "I was told to go to the hospital"
 				},
@@ -375,6 +402,7 @@
 				{
 					"jp": "感情的",
 					"kind": "word",
+					"jp_r": "<ruby>感情<rt>カンジョウ</rt></ruby>的",
 					"cn": "悲",
 					"en": "sad"
 				},
@@ -403,6 +431,7 @@
 				{
 					"jp": "奥さん",
 					"kind": "word",
+					"jp_r": "<ruby>奥さん<rt>オクサン</rt></ruby>",
 					"cn": "太太、妻子（敬称）",
 					"en": "wife (polite)"
 				},
@@ -415,6 +444,7 @@
 				{
 					"jp": "免許証",
 					"kind": "word",
+					"jp_r": "<ruby>免許<rt>メンキョ</rt></ruby>証",
 					"cn": "驾照 / 执照",
 					"en": "license"
 				},
@@ -434,6 +464,7 @@
 				{
 					"jp": "大野さんがたくさん荷物を送るって言ってたから、それを一緒にやってもらっていい？",
 					"kind": "sentence",
+					"jp_r": "大野さんがたくさん<ruby>荷物<rt>ニモツ</rt></ruby>を送るって言ってたから、それを<ruby>一緒<rt>イッショ</rt></ruby>にやってもらっていい？",
 					"cn": "大野说要寄很多行李，那个能一起帮忙弄吗？",
 					"en": "Ono said they'd send lots of luggage — can we do that together?"
 				},
@@ -458,12 +489,14 @@
 				{
 					"jp": "よく世話されている",
 					"kind": "word",
+					"jp_r": "よく<ruby>世話<rt>セワ</rt></ruby>されている",
 					"cn": "被照顾得很好",
 					"en": "well taken care of"
 				},
 				{
 					"jp": "urus 首輪",
 					"kind": "word",
+					"jp_r": "urus <ruby>首輪<rt>クビワ</rt></ruby>",
 					"cn": "名札なふだ"
 				},
 				{
@@ -483,12 +516,14 @@
 				{
 					"jp": "突然",
 					"kind": "word",
+					"jp_r": "<ruby>突然<rt>トツゼン</rt></ruby>",
 					"cn": "突然",
 					"en": "suddenly"
 				},
 				{
 					"jp": "旅の途中で",
 					"kind": "word",
+					"jp_r": "旅の<ruby>途中<rt>トチュウ</rt></ruby>で",
 					"cn": "在旅行途中",
 					"en": "during the trip"
 				},
@@ -501,6 +536,7 @@
 				{
 					"jp": "召し上がる",
 					"kind": "word",
+					"jp_r": "<ruby>召し上がる<rt>メシアガル</rt></ruby>",
 					"cn": "吃、喝（尊敬语）",
 					"en": "to eat / drink (honorific)"
 				},
@@ -589,11 +625,13 @@
 				{
 					"jp": "勉強中なんで",
 					"kind": "word",
+					"jp_r": "<ruby>勉強中<rt>ベンキョウチュウ</rt></ruby>なんで",
 					"cn": "勉強中なので"
 				},
 				{
 					"jp": "どっちを使うかいつも考える",
 					"kind": "sentence",
+					"jp_r": "どっちを<ruby>使う<rt>ツカウ</rt></ruby>かいつも<ruby>考える<rt>カンガエル</rt></ruby>",
 					"cn": "总是在想该用哪一个",
 					"en": "I always think about which one to use"
 				},
@@ -624,12 +662,14 @@
 				{
 					"jp": "画面",
 					"kind": "word",
+					"jp_r": "<ruby>画面<rt>ガメン</rt></ruby>",
 					"cn": "屏幕、画面",
 					"en": "screen"
 				},
 				{
 					"jp": "同じ時間でいろんなことする",
 					"kind": "sentence",
+					"jp_r": "<ruby>同じ<rt>オナジ</rt></ruby><ruby>時間<rt>ジカン</rt></ruby>でいろんなことする",
 					"cn": "同一时间做很多事",
 					"en": "do many things at the same time"
 				},
@@ -642,11 +682,13 @@
 				{
 					"jp": "工場の人から",
 					"kind": "word",
+					"jp_r": "<ruby>工場<rt>コウジョウ</rt></ruby>の人から",
 					"cn": "お話を聞きます"
 				},
 				{
 					"jp": "工場の人のお話を聞きます",
 					"kind": "sentence",
+					"jp_r": "<ruby>工場<rt>コウジョウ</rt></ruby>の人のお話を聞きます",
 					"cn": "听工厂的人讲话",
 					"en": "listen to the factory worker"
 				},
@@ -679,12 +721,14 @@
 				{
 					"jp": "他の荷物でいっぱいで",
 					"kind": "word",
+					"jp_r": "<ruby>他の<rt>タノ</rt></ruby><ruby>荷物<rt>ニモツ</rt></ruby>でいっぱいで",
 					"cn": "被别的行李占满了",
 					"en": "it's full of other bags"
 				},
 				{
 					"jp": "どこにも置く場所がないですね",
 					"kind": "sentence",
+					"jp_r": "どこにも<ruby>置く<rt>オク</rt></ruby><ruby>場所<rt>バショ</rt></ruby>がないですね",
 					"cn": "到处都没地方放呢",
 					"en": "there's nowhere to put it"
 				},
@@ -761,6 +805,7 @@
 				{
 					"jp": "めっちゃ楽しみ！（期待",
 					"kind": "sentence",
+					"jp_r": "めっちゃ楽しみ！（<ruby>期待<rt>キタイ</rt></ruby>",
 					"cn": "超期待！",
 					"en": "I can't wait!"
 				},
@@ -781,18 +826,21 @@
 				{
 					"jp": "仲悪い",
 					"kind": "word",
+					"jp_r": "仲<ruby>悪い<rt>ワルイ</rt></ruby>",
 					"cn": "关系不好",
 					"en": "don’t get along with （なかわるい"
 				},
 				{
 					"jp": "仕事して、お金貯めて、日本に来たのかな？",
 					"kind": "sentence",
+					"jp_r": "<ruby>仕事<rt>シゴト</rt></ruby>して、お金貯めて、<ruby>日本<rt>ニッポン</rt></ruby>に来たのかな？",
 					"cn": "是工作存钱才来日本的吧？",
 					"en": "Did they work, save money, and come to Japan?"
 				},
 				{
 					"jp": "尊敬する！",
 					"kind": "sentence",
+					"jp_r": "<ruby>尊敬<rt>ソンケイ</rt></ruby>する！",
 					"cn": "好尊敬！",
 					"en": "I respect そんけい"
 				},
@@ -813,24 +861,28 @@
 				{
 					"jp": "間に合わないかもしれない",
 					"kind": "sentence",
+					"jp_r": "<ruby>間に合<rt>マニア</rt></ruby>わないかもしれない",
 					"cn": "可能来不及",
 					"en": "might not make it in time"
 				},
 				{
 					"jp": "メキシコ人の友達がいて、彼女のおじいさんは日本人です。そのおかげで彼女は、35歳まで日本にいれるのですが、35歳を過ぎたらビザが切れてしまいます。なので、他のビザを取るために急がないといけません。ビザを取るのが難しくなる。",
 					"kind": "sentence",
+					"jp_r": "メキシコ人の<ruby>友達<rt>トモダチ</rt></ruby>がいて、<ruby>彼女<rt>カノジョ</rt></ruby>のおじいさんは<ruby>日本人<rt>ニホンジン</rt></ruby>です。そのおかげで<ruby>彼女<rt>カノジョ</rt></ruby>は、35歳まで<ruby>日本<rt>ニッポン</rt></ruby>にいれるのですが、35歳を過ぎたらビザが切れてしまいます。なので、<ruby>他の<rt>タノ</rt></ruby>ビザを<ruby>取る<rt>トル</rt></ruby>ために急がないといけません。ビザを<ruby>取る<rt>トル</rt></ruby>のが難しくなる。",
 					"cn": "我有个墨西哥朋友，她爷爷是日本人。所以她能待到 35 岁，一过 35 岁签证就到期。必须赶紧换别的签证，否则会更难拿。",
 					"en": "A Mexican friend can stay until 35 thanks to her Japanese grandfather. After that the visa expires, so she has to rush another one."
 				},
 				{
 					"jp": "遊ぶのが楽しい",
 					"kind": "word",
+					"jp_r": "<ruby>遊ぶ<rt>アソブ</rt></ruby>のが<ruby>楽しい<rt>タノシイ</rt></ruby>",
 					"cn": "玩很开心",
 					"en": "playing is fun"
 				},
 				{
 					"jp": "働くのが大変",
 					"kind": "word",
+					"jp_r": "<ruby>働く<rt>ハタラク</rt></ruby>のが<ruby>大変<rt>タイヘン</rt></ruby>",
 					"cn": "工作很辛苦",
 					"en": "working is hard"
 				},
@@ -964,12 +1016,14 @@
 				{
 					"jp": "ナルトのアニメは感情が揺(yu)さぶられる。",
 					"kind": "sentence",
+					"jp_r": "ナルトのアニメは<ruby>感情<rt>カンジョウ</rt></ruby>が揺(yu)さぶられる。",
 					"cn": "《火影忍者》会把人的感情搅动起来。",
 					"en": "Naruto really stirs your emotions."
 				},
 				{
 					"jp": "見てる途中でキャラクターの感情を感じます。",
 					"kind": "sentence",
+					"jp_r": "見てる<ruby>途中<rt>トチュウ</rt></ruby>でキャラクターの<ruby>感情<rt>カンジョウ</rt></ruby>を感じます。",
 					"cn": "看着看着就能感受到角色的感情。",
 					"en": "While watching I feel the characters' emotions."
 				},
@@ -1000,6 +1054,7 @@
 				{
 					"jp": "中国のこと、聞いてもいい？",
 					"kind": "sentence",
+					"jp_r": "<ruby>中国<rt>チュウゴク</rt></ruby>のこと、聞いてもいい？",
 					"cn": "可以问你中国的事情吗？",
 					"en": "Can I ask you about China?"
 				},
@@ -1012,18 +1067,21 @@
 				{
 					"jp": "遅い",
 					"kind": "word",
+					"jp_r": "<ruby>遅い<rt>オソイ</rt></ruby>",
 					"cn": "慢、晚",
 					"en": "adict"
 				},
 				{
 					"jp": "日本はもっと前から速い新幹線がありました",
 					"kind": "sentence",
+					"jp_r": "<ruby>日本<rt>ニッポン</rt></ruby>はもっと前から<ruby>速い<rt>ハヤイ</rt></ruby><ruby>新幹線<rt>シンカンセン</rt></ruby>がありました",
 					"cn": "日本更早以前就有很快的新干线了",
 					"en": "Japan had fast shinkansen much earlier"
 				},
 				{
 					"jp": "点数",
 					"kind": "word",
+					"jp_r": "<ruby>点数<rt>テンスウ</rt></ruby>",
 					"cn": "分数",
 					"en": "score / points"
 				},
@@ -1036,6 +1094,7 @@
 				{
 					"jp": "上手く話せないのが、もどかしい",
 					"kind": "sentence",
+					"jp_r": "<ruby>上手<rt>ジョウズ</rt></ruby>く話せないのが、もどかしい",
 					"cn": "难受",
 					"en": "n sh"
 				},
@@ -1048,6 +1107,7 @@
 				{
 					"jp": "早くこの時期を乗り越えたい",
 					"kind": "sentence",
+					"jp_r": "早くこの時期を<ruby>乗り越<rt>ノリコ</rt></ruby>えたい",
 					"cn": "想快点度过这段时期",
 					"en": "I want to get through this period soon"
 				},
@@ -1092,6 +1152,7 @@
 				{
 					"jp": "良い経験！",
 					"kind": "sentence",
+					"jp_r": "<ruby>良い<rt>ヨイ</rt></ruby><ruby>経験<rt>ケイケン</rt></ruby>！",
 					"cn": "很棒的经历！",
 					"en": "a great experience!"
 				},
@@ -1123,6 +1184,7 @@
 				{
 					"jp": "良い思い出",
 					"kind": "word",
+					"jp_r": "<ruby>良い<rt>ヨイ</rt></ruby><ruby>思い出<rt>オモイダ</rt></ruby>",
 					"cn": "美好的回忆",
 					"en": "a good memory"
 				},
@@ -1158,12 +1220,14 @@
 				{
 					"jp": "直す",
 					"kind": "word",
+					"jp_r": "<ruby>直す<rt>ナオス</rt></ruby>",
 					"cn": "修理、改正",
 					"en": "fixed"
 				},
 				{
 					"jp": "治す",
 					"kind": "word",
+					"jp_r": "<ruby>治す<rt>ナオス</rt></ruby>",
 					"cn": "治好（病、伤）",
 					"en": "recovered"
 				},
@@ -1199,6 +1263,7 @@
 				{
 					"jp": "国の歴史を知れる",
 					"kind": "word",
+					"jp_r": "国の<ruby>歴史<rt>レキシ</rt></ruby>を知れる",
 					"cn": "能了解这个国家的历史",
 					"en": "I am able to know the history of the country"
 				},
@@ -1211,6 +1276,7 @@
 				{
 					"jp": "見るものが多すぎたので、全部見れませんでした。",
 					"kind": "sentence",
+					"jp_r": "見るものが多すぎたので、<ruby>全部<rt>ゼンブ</rt></ruby>見れませんでした。",
 					"cn": "要看的东西太多，没能全看完。",
 					"en": "There was too much to see, so I couldn't see it all."
 				},
@@ -1231,6 +1297,7 @@
 				{
 					"jp": "兵士",
 					"kind": "word",
+					"jp_r": "<ruby>兵士<rt>ヘイシ</rt></ruby>",
 					"cn": "士兵",
 					"en": "soldier"
 				},
@@ -1243,6 +1310,7 @@
 				{
 					"jp": "戦争",
 					"kind": "word",
+					"jp_r": "<ruby>戦争<rt>センソウ</rt></ruby>",
 					"cn": "战争",
 					"en": "war"
 				},
@@ -1267,6 +1335,7 @@
 				{
 					"jp": "このネックレスをみて、欲しいって言ってたんだ",
 					"kind": "sentence",
+					"jp_r": "このネックレスをみて、<ruby>欲しい<rt>ホシイ</rt></ruby>って言ってたんだ",
 					"cn": "看到这条项链，说想要",
 					"en": "Saw this necklace and said they wanted it"
 				},
@@ -1312,12 +1381,14 @@
 				{
 					"jp": "ご遠慮下さい",
 					"kind": "word",
+					"jp_r": "ご<ruby>遠慮<rt>エンリョ</rt></ruby>下さい",
 					"cn": "请不要这样做",
 					"en": "ごえんりょください Please not do this"
 				},
 				{
 					"jp": "彼女は結婚したがっています",
 					"kind": "sentence",
+					"jp_r": "<ruby>彼女<rt>カノジョ</rt></ruby>は<ruby>結婚<rt>ケッコン</rt></ruby>したがっています",
 					"cn": "她看起来很想结婚",
 					"en": "she wants to get marry"
 				},
@@ -1360,36 +1431,42 @@
 				{
 					"jp": "荷物をお持ちします",
 					"kind": "sentence",
+					"jp_r": "<ruby>荷物<rt>ニモツ</rt></ruby>をお持ちします",
 					"cn": "我来帮您拿行李（谦让）",
 					"en": "I'll carry your bags (humble)"
 				},
 				{
 					"jp": "荷物をお持ちになります",
 					"kind": "sentence",
+					"jp_r": "<ruby>荷物<rt>ニモツ</rt></ruby>をお持ちになります",
 					"cn": "您拿行李（尊敬）",
 					"en": "you carry the bags (honorific)"
 				},
 				{
 					"jp": "荷物をお持ちになりませんか？",
 					"kind": "sentence",
+					"jp_r": "<ruby>荷物<rt>ニモツ</rt></ruby>をお持ちになりませんか？",
 					"cn": "您要拿行李吗？（尊敬）",
 					"en": "Would you like to take the bags? (honorific)"
 				},
 				{
 					"jp": "荷物をお持ちしましょうか。",
 					"kind": "sentence",
+					"jp_r": "<ruby>荷物<rt>ニモツ</rt></ruby>をお持ちしましょうか。",
 					"cn": "我来帮您拿行李吧？",
 					"en": "Shall I carry your bags?"
 				},
 				{
 					"jp": "落ちる、落ちた",
 					"kind": "word",
+					"jp_r": "<ruby>落ちる<rt>オチル</rt></ruby>、落ちた",
 					"cn": "掉下去、掉了",
 					"en": "fall"
 				},
 				{
 					"jp": "いつか静かになるでしょう",
 					"kind": "sentence",
+					"jp_r": "いつか<ruby>静か<rt>シズカ</rt></ruby>になるでしょう",
 					"cn": "总有一天会安静下来吧",
 					"en": "It'll be quiet someday"
 				},
@@ -1416,12 +1493,14 @@
 				{
 					"jp": "子供の時、親に何をさせられましたか？",
 					"kind": "sentence",
+					"jp_r": "<ruby>子供<rt>コドモ</rt></ruby>の時、親に何をさせられましたか？",
 					"cn": "小时候被父母逼着做过什么？",
 					"en": "What did your parents make you do as a child?"
 				},
 				{
 					"jp": "野菜を食べさせられました",
 					"kind": "sentence",
+					"jp_r": "<ruby>野菜<rt>ヤサイ</rt></ruby>を食べさせられました",
 					"cn": "被逼着吃蔬菜",
 					"en": "I was made to eat vegetables"
 				},
@@ -1457,6 +1536,7 @@
 				{
 					"jp": "強い力を使うとき",
 					"kind": "word",
+					"jp_r": "<ruby>強い<rt>ツヨイ</rt></ruby>力を<ruby>使う<rt>ツカウ</rt></ruby>とき",
 					"cn": "使很大力气的时候",
 					"en": "when you use a lot of force"
 				},
@@ -1617,12 +1697,14 @@
 				{
 					"jp": "今一人",
 					"kind": "word",
+					"jp_r": "今<ruby>一人<rt>ヒトリ</rt></ruby>",
 					"cn": "现在一个人",
 					"en": "I'm alone now"
 				},
 				{
 					"jp": "こんな美しい（うつくしい）女性を放って（ほう）おくなんて",
 					"kind": "sentence",
+					"jp_r": "こんな<ruby>美しい<rt>ウツクシイ</rt></ruby>（うつくしい）<ruby>女性<rt>ジョセイ</rt></ruby>を放って（ほう）おくなんて",
 					"reading": "うつくしい・ほう",
 					"cn": "把这么漂亮的女性丢在一边",
 					"en": "leaving such a beautiful woman alone"
@@ -1660,6 +1742,7 @@
 				{
 					"jp": "限定げんてい",
 					"kind": "word",
+					"jp_r": "<ruby>限定<rt>ゲンテイ</rt></ruby>げんてい",
 					"cn": "限定",
 					"en": "limited"
 				},
@@ -1680,6 +1763,7 @@
 				{
 					"jp": "電気ポットが冷蔵庫の上から落ちそうになって、危ないので床においた。",
 					"kind": "sentence",
+					"jp_r": "<ruby>電気<rt>デンキ</rt></ruby>ポットが<ruby>冷蔵庫<rt>レイゾウコ</rt></ruby>の上から落ちそうになって、<ruby>危ない<rt>アブナイ</rt></ruby>ので床においた。",
 					"cn": "电热水壶快从冰箱上掉下来，太危险了所以放到地上。",
 					"en": "The kettle was about to fall off the fridge, so I put it on the floor."
 				},
@@ -1693,6 +1777,7 @@
 				{
 					"jp": "無事で良かった",
 					"kind": "word",
+					"jp_r": "<ruby>無事<rt>ブジ</rt></ruby>で良かった",
 					"cn": "没事就好",
 					"en": "I’m glad you are okay"
 				},
@@ -1713,6 +1798,7 @@
 				{
 					"jp": "良い休日を（お過ごし下さい）",
 					"kind": "word",
+					"jp_r": "<ruby>良い<rt>ヨイ</rt></ruby>休日を（お過ごし下さい）",
 					"reading": "お過ごし下さい",
 					"cn": "祝你假期愉快",
 					"en": "Have a nice holiday"
@@ -1776,6 +1862,7 @@
 				{
 					"jp": "冷たい",
 					"kind": "word",
+					"jp_r": "<ruby>冷たい<rt>ツメタイ</rt></ruby>",
 					"cn": "凉的、冷淡的",
 					"en": "cold"
 				}
@@ -1835,6 +1922,7 @@
 				{
 					"jp": "接続",
 					"kind": "word",
+					"jp_r": "<ruby>接続<rt>セツゾク</rt></ruby>",
 					"cn": "接续",
 					"en": "connection / conjugation"
 				},
@@ -1867,12 +1955,14 @@
 				{
 					"jp": "田中くん→若い男の人、男の子「くん」",
 					"kind": "sentence",
+					"jp_r": "<ruby>田中<rt>タナカ</rt></ruby>くん→若い男の人、男の子「くん」",
 					"cn": "田中くん：对年轻男性、男孩子用「くん」",
 					"en": "Tanaka-kun: kun is for young men / boys"
 				},
 				{
 					"jp": "もっと漢字",
 					"kind": "word",
+					"jp_r": "もっと<ruby>漢字<rt>カンジ</rt></ruby>",
 					"cn": "再多一些汉字",
 					"en": "more kanji"
 				},
@@ -1899,6 +1989,7 @@
 				{
 					"jp": "遠い",
 					"kind": "word",
+					"jp_r": "<ruby>遠い<rt>トオイ</rt></ruby>",
 					"cn": "远",
 					"en": "far"
 				},
@@ -1931,6 +2022,7 @@
 				{
 					"jp": "彼女いなかった時に、",
 					"kind": "sentence",
+					"jp_r": "<ruby>彼女<rt>カノジョ</rt></ruby>いなかった時に、",
 					"cn": "没有女朋友的时候",
 					"en": "when I didn't have a girlfriend"
 				},
@@ -1951,6 +2043,7 @@
 				{
 					"jp": "着物",
 					"kind": "word",
+					"jp_r": "<ruby>着物<rt>キモノ</rt></ruby>",
 					"cn": "和服",
 					"en": "kimono"
 				},
@@ -1963,6 +2056,7 @@
 				{
 					"jp": "これだけだと、寒いと思ういよ",
 					"kind": "sentence",
+					"jp_r": "これだけだと、<ruby>寒い<rt>サムイ</rt></ruby>と<ruby>思う<rt>オモウ</rt></ruby>いよ",
 					"cn": "只穿这个会冷的哦",
 					"en": "just this will be cold"
 				},
@@ -2038,6 +2132,7 @@
 				{
 					"jp": "旅行したことがない",
 					"kind": "word",
+					"jp_r": "<ruby>旅行<rt>リョコウ</rt></ruby>したことがない",
 					"cn": "从没旅行过",
 					"en": "I have never traveled"
 				},
@@ -2076,12 +2171,14 @@
 				{
 					"jp": "ご近所",
 					"kind": "word",
+					"jp_r": "ご<ruby>近所<rt>キンジョ</rt></ruby>",
 					"cn": "附近、街坊",
 					"en": "near"
 				},
 				{
 					"jp": "ご近所の方",
 					"kind": "word",
+					"jp_r": "ご<ruby>近所<rt>キンジョ</rt></ruby>の方",
 					"cn": "邻居",
 					"en": "neighbors"
 				},
@@ -2121,6 +2218,7 @@
 				{
 					"jp": "時間がたつ",
 					"kind": "word",
+					"jp_r": "<ruby>時間<rt>ジカン</rt></ruby>がたつ",
 					"cn": "时间流逝",
 					"en": "time passes"
 				},
@@ -2133,17 +2231,20 @@
 				{
 					"jp": "もし彼女に出会わなかったら",
 					"kind": "sentence",
+					"jp_r": "もし<ruby>彼女<rt>カノジョ</rt></ruby>に<ruby>出会<rt>デア</rt></ruby>わなかったら",
 					"cn": "普通"
 				},
 				{
 					"jp": "もし彼女に出会っていなかったら",
 					"kind": "sentence",
+					"jp_r": "もし<ruby>彼女<rt>カノジョ</rt></ruby>に<ruby>出会<rt>デア</rt></ruby>っていなかったら",
 					"cn": "今",
 					"en": "drama"
 				},
 				{
 					"jp": "手伝って（",
 					"kind": "word",
+					"jp_r": "<ruby>手伝<rt>テツダ</rt></ruby>って（",
 					"cn": "）けれど、それでは君のためにならない。"
 				},
 				{
@@ -2191,12 +2292,14 @@
 				{
 					"jp": "あのー、先生。先生が「この本は面白いから読んだ方がいい」と仰っていた本を貸していただけないでしょうか。",
 					"kind": "sentence",
+					"jp_r": "あのー、<ruby>先生<rt>センセイ</rt></ruby>。<ruby>先生<rt>センセイ</rt></ruby>が「この本は面白いから読んだ方がいい」と仰っていた本を貸していただけないでしょうか。",
 					"cn": "那个，老师。您说过「这本书很有趣，最好读一读」的那本，能借我吗？",
 					"en": "Um, teacher, could I borrow the book you said was worth reading?"
 				},
 				{
 					"jp": "＝先生が「この本は面白いから読んだ方がいい」と言った本を貸して下さい。",
 					"kind": "sentence",
+					"jp_r": "＝<ruby>先生<rt>センセイ</rt></ruby>が「この本は面白いから読んだ方がいい」と言った本を貸して下さい。",
 					"cn": "请把老师说「这本书有趣，最好读」的那本借给我。（普通说法）",
 					"en": "Please lend me the book the teacher said was interesting."
 				},
@@ -2209,6 +2312,7 @@
 				{
 					"jp": "渡すように",
 					"kind": "word",
+					"jp_r": "<ruby>渡す<rt>ワタス</rt></ruby>ように",
 					"cn": "转交给……",
 					"en": "so that it gets handed over"
 				},
@@ -2235,12 +2339,14 @@
 				{
 					"jp": "おばあさんにとって難しい。",
 					"kind": "sentence",
+					"jp_r": "おばあさんにとって<ruby>難しい<rt>ムズカシイ</rt></ruby>。",
 					"cn": "对奶奶来说很难。",
 					"en": "It's hard for grandma."
 				},
 				{
 					"jp": "並ぶ",
 					"kind": "word",
+					"jp_r": "<ruby>並ぶ<rt>ナラブ</rt></ruby>",
 					"cn": "排队",
 					"en": "to line up"
 				},
@@ -2290,6 +2396,7 @@
 				{
 					"jp": "日本に住んでるだけで楽しい",
 					"kind": "sentence",
+					"jp_r": "<ruby>日本<rt>ニッポン</rt></ruby>に住んでるだけで<ruby>楽しい<rt>タノシイ</rt></ruby>",
 					"cn": "光是住在日本就很开心",
 					"en": "just living in Japan is fun"
 				},
@@ -2326,18 +2433,21 @@
 				{
 					"jp": "彼女はすぐに私がどこ出身か分かりました",
 					"kind": "sentence",
+					"jp_r": "<ruby>彼女<rt>カノジョ</rt></ruby>はすぐに私がどこ<ruby>出身<rt>シュッシン</rt></ruby>か分かりました",
 					"cn": "她马上就知道我是哪里人",
 					"en": "She immediately knew where I was from"
 				},
 				{
 					"jp": "旅行に行こうとしている",
 					"kind": "sentence",
+					"jp_r": "<ruby>旅行<rt>リョコウ</rt></ruby>に行こうとしている",
 					"cn": "正打算去旅行",
 					"en": "about to go on a trip"
 				},
 				{
 					"jp": "今週末に旅行に行くと言っていました",
 					"kind": "sentence",
+					"jp_r": "<ruby>今週<rt>コンシュウ</rt></ruby>末に<ruby>旅行<rt>リョコウ</rt></ruby>に行くと言っていました",
 					"cn": "说了这周末要去旅行",
 					"en": "they said they're traveling this weekend"
 				},
@@ -2350,6 +2460,7 @@
 				{
 					"jp": "いつか彼女とか将来の奥さんと一緒に行きたい！",
 					"kind": "sentence",
+					"jp_r": "いつか<ruby>彼女<rt>カノジョ</rt></ruby>とか<ruby>将来<rt>ショウライ</rt></ruby>の<ruby>奥さん<rt>オクサン</rt></ruby>と<ruby>一緒<rt>イッショ</rt></ruby>に行きたい！",
 					"cn": "以后想和女朋友或未来的妻子一起去！",
 					"en": "Someday I want to go with a girlfriend or future wife"
 				},
@@ -2367,6 +2478,7 @@
 				{
 					"jp": "高校の修学旅行",
 					"kind": "word",
+					"jp_r": "高校の修学<ruby>旅行<rt>リョコウ</rt></ruby>",
 					"cn": "高中的修学旅行",
 					"en": "high-school trip"
 				},
@@ -2420,6 +2532,7 @@
 				{
 					"jp": "いい一日",
 					"kind": "word",
+					"jp_r": "いい<ruby>一日<rt>ツイタチ</rt></ruby>",
 					"cn": "美好的一天",
 					"en": "a good day"
 				},
@@ -2444,6 +2557,7 @@
 				{
 					"jp": "先生に習いはじめて",
 					"kind": "word",
+					"jp_r": "<ruby>先生<rt>センセイ</rt></ruby>に習いはじめて",
 					"cn": "开始跟老师学之后",
 					"en": "since I started learning from the teacher"
 				},
@@ -2461,6 +2575,7 @@
 				{
 					"jp": "→優勝のあと言います",
 					"kind": "sentence",
+					"jp_r": "→<ruby>優勝<rt>ユウショウ</rt></ruby>のあと言います",
 					"cn": "比赛赢了之后会说",
 					"en": "said after winning"
 				},
@@ -2481,12 +2596,14 @@
 				{
 					"jp": "30分から1時間ぐらい",
 					"kind": "word",
+					"jp_r": "30分から1<ruby>時間<rt>ジカン</rt></ruby>ぐらい",
 					"cn": "大概三十分钟到一小时",
 					"en": "about 30 minutes to an hour"
 				},
 				{
 					"jp": "どのぐらい運動しますか？",
 					"kind": "sentence",
+					"jp_r": "どのぐらい<ruby>運動<rt>ウンドウ</rt></ruby>しますか？",
 					"cn": "你运动多久？",
 					"en": "How long do you exercise?"
 				},
@@ -2499,6 +2616,7 @@
 				{
 					"jp": "使うことができます",
 					"kind": "sentence",
+					"jp_r": "<ruby>使う<rt>ツカウ</rt></ruby>ことができます",
 					"cn": "使えます"
 				},
 				{
@@ -2516,18 +2634,21 @@
 				{
 					"jp": "し　ようと思う",
 					"kind": "word",
+					"jp_r": "し　ようと<ruby>思う<rt>オモウ</rt></ruby>",
 					"cn": "打算做……",
 					"en": "I'm thinking to do"
 				},
 				{
 					"jp": "ジムに行こうと思う",
 					"kind": "word",
+					"jp_r": "ジムに行こうと<ruby>思う<rt>オモウ</rt></ruby>",
 					"cn": "打算去健身房",
 					"en": "I'm thinking of going to the gym"
 				},
 				{
 					"jp": "おすしを食べようと思う",
 					"kind": "word",
+					"jp_r": "おすしを食べようと<ruby>思う<rt>オモウ</rt></ruby>",
 					"cn": "打算吃寿司",
 					"en": "I'm thinking of eating sushi"
 				},
@@ -2608,6 +2729,7 @@
 				{
 					"jp": "そして、銀座のくまもとのお店にも行って、きふをしたかったけど、たくさん人が並んでたので、他のところに行きました。",
 					"kind": "sentence",
+					"jp_r": "そして、銀座のくまもとのお店にも行って、きふをしたかったけど、たくさん人が並んでたので、<ruby>他の<rt>タノ</rt></ruby>ところに行きました。",
 					"cn": "后来也去了银座的熊本店想捐款，人太多就去别的地方了。",
 					"en": "I went to the Kumamoto shop in Ginza to donate, but the line was long so I left."
 				},
@@ -2637,6 +2759,7 @@
 				{
 					"jp": "アプリやルールはいつもかしこい（賢い）ひとがつくるので、かしこくないひとはそのシステムに使われてしまいます。",
 					"kind": "sentence",
+					"jp_r": "アプリやルールはいつもかしこい（<ruby>賢い<rt>カシコイ</rt></ruby>）ひとがつくるので、かしこくないひとはそのシステムに使われてしまいます。",
 					"reading": "賢い",
 					"cn": "App 和规则总是聪明人做的，不聪明的人就会被系统牵着走。",
 					"en": "Apps and rules are made by smart people, so less smart people get used by the system."
@@ -2713,6 +2836,7 @@
 				{
 					"jp": "中国人の男の人は気にしない。 [ちゅうごくじんのおとこのひとはきにしない]",
 					"kind": "sentence",
+					"jp_r": "<ruby>中国<rt>チュウゴク</rt></ruby>人の男の人は気にしない。 [ちゅうごくじんのおとこのひとはきにしない]",
 					"cn": "中国男生不太在意。",
 					"en": "Chinese men don't really care."
 				},
@@ -2735,18 +2859,21 @@
 				{
 					"jp": "同じ気持ち [おなじきもち]",
 					"kind": "word",
+					"jp_r": "<ruby>同じ<rt>オナジ</rt></ruby><ruby>気持ち<rt>キモチ</rt></ruby> [おなじきもち]",
 					"cn": "同样的心情",
 					"en": "the same feeling"
 				},
 				{
 					"jp": "同じ思い [おなじおもい]",
 					"kind": "word",
+					"jp_r": "<ruby>同じ<rt>オナジ</rt></ruby>思い [おなじおもい]",
 					"cn": "同样的想法",
 					"en": "the same thought"
 				},
 				{
 					"jp": "状況 [じょうきょう]",
 					"kind": "word",
+					"jp_r": "<ruby>状況<rt>ジョウキョウ</rt></ruby> [じょうきょう]",
 					"cn": "状况",
 					"en": "situation"
 				},
@@ -2773,6 +2900,7 @@
 				{
 					"jp": "親切 [しんせつ]",
 					"kind": "word",
+					"jp_r": "<ruby>親切<rt>シンセツ</rt></ruby> [しんせつ]",
 					"cn": "亲切、热心",
 					"en": "kind"
 				},
@@ -2797,6 +2925,7 @@
 				{
 					"jp": "私のクラスメイトは、若いので私と話が合いません。私は、テクノロジーとか政治的な話をしたいのですが、私のクラスメイトとはそういう話ができません。",
 					"kind": "sentence",
+					"jp_r": "私のクラスメイトは、若いので私と話が合いません。私は、テクノロジーとか<ruby>政治<rt>セイジ</rt></ruby>的な話をしたいのですが、私のクラスメイトとはそういう話ができません。",
 					"cn": "我的同学比较年轻，聊不到一起。我想聊科技或政治，但跟同学聊不了这些。",
 					"en": "My classmates are young so we don't click. I want to talk tech or politics, but I can't with them."
 				},
@@ -2848,6 +2977,7 @@
 				{
 					"jp": "２、ねえ、知ってる？ 田中さん、彼と別れたんだって。",
 					"kind": "sentence",
+					"jp_r": "２、ねえ、知ってる？ <ruby>田中<rt>タナカ</rt></ruby>さん、彼と別れたんだって。",
 					"cn": "喂，你知道吗？听说田中和他分手了。",
 					"en": "Hey, did you know? Tanaka broke up with him."
 				},
@@ -2896,6 +3026,7 @@
 				{
 					"jp": "いつ使う？",
 					"kind": "sentence",
+					"jp_r": "いつ<ruby>使う<rt>ツカウ</rt></ruby>？",
 					"cn": "什么时候用？",
 					"en": "When do you use it?"
 				}
@@ -2945,12 +3076,14 @@
 				{
 					"jp": "よく保存している",
 					"kind": "word",
+					"jp_r": "よく<ruby>保存<rt>ホゾン</rt></ruby>している",
 					"cn": "保存得很好",
 					"en": "well preserved"
 				},
 				{
 					"jp": "マリアさんを病院へ連れていってあげました",
 					"kind": "sentence",
+					"jp_r": "マリアさんを<ruby>病院<rt>ビョウイン</rt></ruby>へ連れていってあげました",
 					"cn": "我带玛丽亚去了医院",
 					"en": "I took Maria to the hospital"
 				},
@@ -3118,6 +3251,7 @@
 				{
 					"jp": "ちゃんと相手の名前が書いてあるか、確認して",
 					"kind": "sentence",
+					"jp_r": "ちゃんと<ruby>相手<rt>アイテ</rt></ruby>の<ruby>名前<rt>ナマエ</rt></ruby>が書いてあるか、<ruby>確認<rt>カクニン</rt></ruby>して",
 					"cn": "确认一下对方的名字有没有写对",
 					"en": "check that the other person's name is written correctly"
 				},
@@ -3141,6 +3275,7 @@
 				{
 					"jp": "この場所はめっちゃばえる",
 					"kind": "sentence",
+					"jp_r": "この<ruby>場所<rt>バショ</rt></ruby>はめっちゃばえる",
 					"cn": "这里超上镜",
 					"en": "perfect for photo"
 				}
@@ -3172,12 +3307,14 @@
 				{
 					"jp": "つうがく（通学）",
 					"kind": "word",
+					"jp_r": "つうがく（<ruby>通学<rt>ツウガク</rt></ruby>）",
 					"cn": "上学往返",
 					"en": "commuting to school"
 				},
 				{
 					"jp": "つうきん（通勤）",
 					"kind": "word",
+					"jp_r": "つうきん（<ruby>通勤<rt>ツウキン</rt></ruby>）",
 					"cn": "上班往返",
 					"en": "commuting to work"
 				},
@@ -3191,6 +3328,7 @@
 				{
 					"jp": "へや（部屋）",
 					"kind": "word",
+					"jp_r": "へや（<ruby>部屋<rt>ヘヤ</rt></ruby>）",
 					"cn": "房间",
 					"en": "room"
 				},
@@ -3234,6 +3372,7 @@
 				{
 					"jp": "雨が降ってきて、もっとはげしく踊りました。",
 					"kind": "sentence",
+					"jp_r": "雨が降ってきて、もっとはげしく<ruby>踊り<rt>オドリ</rt></ruby>ました。",
 					"cn": "雨下起来了，我们跳得更起劲。",
 					"en": "It started raining and we danced even harder."
 				},
@@ -3248,24 +3387,28 @@
 				{
 					"jp": "北京よりも東京の方がもっと暑い。",
 					"kind": "sentence",
+					"jp_r": "北京よりも<ruby>東京<rt>トウキョウ</rt></ruby>の方がもっと<ruby>暑い<rt>アツイ</rt></ruby>。",
 					"cn": "东京比北京更热。",
 					"en": "Tokyo is hotter than Beijing."
 				},
 				{
 					"jp": "そう思う。",
 					"kind": "sentence",
+					"jp_r": "そう<ruby>思う<rt>オモウ</rt></ruby>。",
 					"cn": "我也这么想。",
 					"en": "I think so."
 				},
 				{
 					"jp": "地理",
 					"kind": "word",
+					"jp_r": "<ruby>地理<rt>チリ</rt></ruby>",
 					"cn": "地理",
 					"en": "geography"
 				},
 				{
 					"jp": "何度",
 					"kind": "word",
+					"jp_r": "<ruby>何度<rt>ナンド</rt></ruby>",
 					"cn": "30度ごえ"
 				},
 				{
@@ -3277,18 +3420,21 @@
 				{
 					"jp": "北京の方が乾燥してる",
 					"kind": "sentence",
+					"jp_r": "北京の方が<ruby>乾燥<rt>カンソウ</rt></ruby>してる",
 					"cn": "北京更干燥",
 					"en": "Beijing is drier"
 				},
 				{
 					"jp": "東京の方が好き",
 					"kind": "word",
+					"jp_r": "<ruby>東京<rt>トウキョウ</rt></ruby>の方が好き",
 					"cn": "更喜欢东京",
 					"en": "I like Tokyo more"
 				},
 				{
 					"jp": "３ヶ月だけ暑い",
 					"kind": "word",
+					"jp_r": "３ヶ月だけ<ruby>暑い<rt>アツイ</rt></ruby>",
 					"cn": "只热三个月",
 					"en": "it's only hot for three months"
 				},
@@ -3327,12 +3473,14 @@
 				{
 					"jp": "れんしゅう 練習",
 					"kind": "word",
+					"jp_r": "れんしゅう <ruby>練習<rt>レンシュウ</rt></ruby>",
 					"cn": "练习",
 					"en": "practice"
 				},
 				{
 					"jp": "先生が私の文を直してくれた",
 					"kind": "sentence",
+					"jp_r": "<ruby>先生<rt>センセイ</rt></ruby>が私の文を直してくれた",
 					"cn": "老师帮我改了句子",
 					"en": "the teacher corrected my sentence"
 				},
@@ -3345,6 +3493,7 @@
 				{
 					"jp": "今日は、このような単語や文を勉強できて、嬉しいです。",
 					"kind": "sentence",
+					"jp_r": "<ruby>今日<rt>キョウ</rt></ruby>は、このような<ruby>単語<rt>タンゴ</rt></ruby>や文を<ruby>勉強<rt>ベンキョウ</rt></ruby>できて、嬉しいです。",
 					"cn": "今天能学到这些单词和句子，好开心。",
 					"en": "I'm glad I could study these words and sentences today."
 				}
@@ -3363,6 +3512,7 @@
 				{
 					"jp": "お世話になっております",
 					"kind": "sentence",
+					"jp_r": "お<ruby>世話<rt>セワ</rt></ruby>になっております",
 					"cn": "一直承蒙您关照",
 					"en": "thank you for your continued support"
 				},
@@ -3400,17 +3550,20 @@
 				{
 					"jp": "依頼の",
 					"kind": "word",
+					"jp_r": "<ruby>依頼<rt>イライ</rt></ruby>の",
 					"cn": "拜托、请求时用的说法",
 					"en": "used when making a request"
 				},
 				{
 					"jp": "お電話",
 					"kind": "word",
+					"jp_r": "お<ruby>電話<rt>デンワ</rt></ruby>",
 					"cn": "いたしました、また後ほど、お電話させていただきます"
 				},
 				{
 					"jp": "お電話がかかるのを待つ",
 					"kind": "word",
+					"jp_r": "お<ruby>電話<rt>デンワ</rt></ruby>がかかるのを<ruby>待つ<rt>マツ</rt></ruby>",
 					"cn": "等电话打进来",
 					"en": "wait for the phone to ring"
 				},
@@ -3423,6 +3576,7 @@
 				{
 					"jp": "普通礼貌形：しました",
 					"kind": "sentence",
+					"jp_r": "<ruby>普通<rt>フツウ</rt></ruby>礼貌形：しました",
 					"cn": "普通礼貌形：しました",
 					"en": "polite form: shimashita"
 				},
@@ -3487,6 +3641,7 @@
 				{
 					"jp": "通帳記入･通帳繰越 有通帳口座への切替",
 					"kind": "word",
+					"jp_r": "<ruby>通帳<rt>ツウチョウ</rt></ruby><ruby>記入<rt>キニュウ</rt></ruby>･<ruby>通帳<rt>ツウチョウ</rt></ruby>繰越 有<ruby>通帳<rt>ツウチョウ</rt></ruby><ruby>口座<rt>コウザ</rt></ruby>への切替",
 					"reading": "つうちょうきにゅう・つうちょうくりこし ゆうつうちょうこうざへのきりかえ",
 					"cn": "补登存折・存折换本 切换为存折账户"
 				},
@@ -3535,6 +3690,7 @@
 				{
 					"jp": "クレジットカード プリペイドカード･生命保険",
 					"kind": "word",
+					"jp_r": "クレジットカード プリペイドカード･<ruby>生命<rt>セイメイ</rt></ruby><ruby>保険<rt>ホケン</rt></ruby>",
 					"reading": "クレジットカード プリペイドカード・せいめいほけん",
 					"cn": "信用卡、预付卡、人寿保险业务"
 				}
