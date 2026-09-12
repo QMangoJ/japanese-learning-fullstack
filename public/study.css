@@ -92,6 +92,8 @@ header.top h1{font-size:16px;margin:0;font-weight:700;flex:1;white-space:nowrap;
 .sheet-item .sub{font-size:11px;color:var(--sub)}
 .sheet-item.on{border-color:var(--blue);background:var(--blue-soft);color:var(--blue);font-weight:700}
 .sheet-item.scoped{border-style:dashed}
+.sheet-item--feature{min-height:96px;font-size:20px;font-weight:800;padding:18px 12px;gap:8px;border-radius:16px}
+.sheet-item--feature .ic{font-size:32px}
 /* 侧栏只在桌面出现：手机上这些入口在底栏和「通用」弹层里，
    桌面有横向空间，就按 UI 稿把它们摊平成一列常驻目录，不用再点开弹层。 */
 .side{display:none}
@@ -109,6 +111,9 @@ header.top h1{font-size:16px;margin:0;font-weight:700;flex:1;white-space:nowrap;
 .side-item:hover{background:var(--bg)}
 .side-item.on{background:var(--blue-soft);color:var(--blue);font-weight:700}
 .side-item.on .ct{color:var(--blue)}
+.side-item.feature{font-size:16px;font-weight:800;min-height:48px;padding:12px 10px;background:var(--accent-soft);color:var(--accent);border-radius:12px}
+.side-item.feature .ic{width:22px;font-size:18px}
+.side-item.feature.on{background:var(--accent);color:#fff}
 .side-foot{margin-top:auto;display:flex;flex-direction:column;gap:2px;padding-top:12px;border-top:1px solid var(--line)}
 /* 翻页钮悬浮在两侧：不占正文高度，滚到哪儿都能翻。
    手机没有边距，只放一个半透明圆钮；桌面正文两侧有留白，展开成带日期的胶囊。 */
@@ -418,6 +423,41 @@ nav.bottom button.on{color:var(--accent);font-weight:700}
 .fc-btns button{flex:1 1 auto;min-width:92px;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:8px 16px;font-size:15px;cursor:pointer;white-space:nowrap}
 .fc-btns button.primary{background:var(--accent);border-color:var(--accent);color:#fff}
 .fc-prog{color:var(--sub);font-size:13px}
+.review-wrap{display:flex;flex-direction:column;gap:20px;padding-bottom:12px}
+.review-lead{margin:0;color:var(--sub);font-size:17px;line-height:1.55}
+.review-sync{color:var(--sub);font-size:14px}
+.review-sec{display:flex;flex-direction:column;gap:14px}
+.review-list{display:flex;flex-direction:column;gap:16px}
+.review-day{display:flex;flex-direction:row;align-items:flex-start;gap:16px;width:100%;min-height:176px;text-align:left;border:1px solid var(--line);border-radius:24px;padding:18px;background:var(--card);color:inherit;cursor:pointer;box-shadow:var(--shadow)}
+.review-day:active{transform:scale(.98)}
+.review-day.today{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent)}
+.review-day__cal{flex:none;display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:118px;min-height:118px;padding:14px 16px 16px;border-radius:18px;background:var(--bg)}
+.review-day.today .review-day__cal{background:var(--accent-soft)}
+.review-day__month{font-size:18px;font-weight:800;color:var(--accent);letter-spacing:.04em;line-height:1}
+.review-day__num{font-size:64px;font-weight:800;line-height:.95;letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+.review-day__body{flex:1;min-width:0;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:10px}
+.review-day__top{display:flex;align-items:center;flex-wrap:wrap;gap:10px}
+.review-day__date{font-weight:800;font-size:28px;line-height:1.15;letter-spacing:.02em}
+.review-day:not(.has-cal) .review-day__date{font-size:36px}
+.review-day__dow{font-size:18px;color:var(--sub);font-weight:600}
+.review-day .today-mark{display:inline-block;font-size:15px;font-weight:700;color:#fff;background:var(--accent);border-radius:999px;padding:5px 12px}
+.review-day__stats{display:flex;flex-wrap:wrap;gap:8px}
+.review-day__chip{font-size:16px;padding:8px 14px;border-radius:999px;background:var(--bg);color:var(--sub)}
+.review-day__chip.todo{background:var(--accent-soft);color:var(--accent);font-weight:700}
+.review-day__preview{font-size:17px;color:var(--sub);line-height:1.5;max-width:100%}
+@media(max-width:380px){
+  .review-day{gap:12px;padding:14px;min-height:160px}
+  .review-day__cal{min-width:96px;padding:10px 8px 12px}
+  .review-day__num{font-size:56px}
+  .review-day__date{font-size:24px}
+}
+.review-k{display:inline-block;font-size:11px;padding:1px 8px;border-radius:999px;background:var(--bg);color:var(--sub);margin-bottom:10px}
+.review-skill{display:flex;gap:8px;width:100%;max-width:520px}
+.review-skill button{flex:1;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:12px;padding:10px 12px;font-size:15px;font-weight:700;cursor:pointer}
+.review-skill button.on{background:var(--amber-soft);border-color:var(--amber);color:var(--amber)}
+.review-skill button.on.known{background:var(--green-soft);border-color:var(--green);color:var(--green)}
+.fcard ruby{ruby-position:over}
+.fcard ruby rt{font-size:.42em;font-weight:700;color:var(--accent);letter-spacing:0}
 table.ref{border-collapse:collapse;width:100%;font-size:13px;margin:8px 0}
 table.ref th,table.ref td{border:1px solid var(--line);padding:5px 7px;text-align:left;vertical-align:top}
 table.ref th{background:var(--bg)}

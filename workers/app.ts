@@ -1,5 +1,6 @@
 import { createRequestHandler } from "react-router";
 
+import { syncLessonReview } from "../app/study/lesson-review-sync";
 import { isAudioAssetRequest, serveAudioAsset } from "./audio-range";
 import { applySecurityHeaders } from "./security-headers";
 
@@ -26,5 +27,8 @@ export default {
 				});
 
 		return applySecurityHeaders(response);
+	},
+	async scheduled(_controller, env, ctx) {
+		ctx.waitUntil(syncLessonReview(env));
 	},
 } satisfies ExportedHandler<Env>;
