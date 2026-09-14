@@ -159,7 +159,7 @@ function DayButton({ day, today = false, mastery }: { day: ReviewDay; today?: bo
 	const weekday = day.date ? formatReviewWeekday(day.date, lang) : lx("笔记", "Notes");
 	const preview = day.items
 		.slice(0, 3)
-		.map((item) => item.jp.replace(/[（(][^）)]*[）)]?/g, "").trim())
+		.map((item) => reviewPreviewText(item.jp))
 		.filter(Boolean);
 	return (
 		<button type="button" className={`review-day${today ? " today" : ""}`} onClick={() => navTo(`#/review/${day.id}`)}>
@@ -381,6 +381,12 @@ function ReviewCards({
 			</div>
 		</div>
 	);
+}
+
+function reviewPreviewText(jp: string): string {
+	const text = jp.replace(/[（(][^）)]*[）)]?/g, "").trim();
+	if (text.length <= 18) return text;
+	return `${text.slice(0, 18)}…`;
 }
 
 function ReviewRuby({ item }: { item: ReviewItem }) {

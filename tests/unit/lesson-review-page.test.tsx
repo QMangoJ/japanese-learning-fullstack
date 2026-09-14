@@ -49,6 +49,11 @@ describe("ReviewPage", () => {
 		expect(await screen.findByText("9月11日")).toBeInTheDocument();
 		expect(screen.getByText("職場で文")).toBeInTheDocument();
 		expect(document.querySelector(".review-day .t")?.textContent).toBe("9月11日");
+		expect([...document.querySelectorAll(".review-day .dp")].map((node) => node.textContent)).toEqual([
+			"朝型",
+			"練習すれば練習するほど、日本語が上手…",
+			"お世話になっております",
+		]);
 		await user.click(screen.getByText("9月11日"));
 		expect(seen).toContain("#/review/2026-09-11");
 	});
