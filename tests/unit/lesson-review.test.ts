@@ -4,6 +4,7 @@ import {
 	applyKanjiReadings,
 	buildReviewRuby,
 	formatReviewDate,
+	reviewKanaLine,
 	formatReviewDayNum,
 	formatReviewMonth,
 	formatReviewMonthDay,
@@ -135,6 +136,13 @@ describe("lesson review helpers", () => {
 		expect(
 			applyKanjiReadings("テストは成績に影響する", { 成績: "せいせき", 影響: "えいきょう" }),
 		).toBe("テストは<ruby>成績<rt>セイセキ</rt></ruby>に<ruby>影響<rt>エイキョウ</rt></ruby>する");
+		expect(
+			reviewKanaLine({
+				jp: "テストは成績に影響する",
+				kind: "word",
+				jp_r: "テストは<ruby>成績<rt>セイセキ</rt></ruby>に<ruby>影響<rt>エイキョウ</rt></ruby>する",
+			}),
+		).toBe("テストはセイセキにエイキョウする");
 		expect(enrichReviewDays([{ id: "x", title: "x", items: [{ jp: "テストは成績に影響する", kind: "word" }] }])[0].items[0].jp_r).toBe(
 			"テストは<ruby>成績<rt>セイセキ</rt></ruby>に<ruby>影響<rt>エイキョウ</rt></ruby>する",
 		);

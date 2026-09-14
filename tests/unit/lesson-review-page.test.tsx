@@ -15,7 +15,7 @@ const payload: LessonReviewPayload = {
 			date: "2026-09-11",
 			title: "2026-09-11",
 			items: [
-				{ jp: "朝型", en: "morning person", kind: "word" },
+				{ jp: "朝型", jp_r: "<ruby>朝型<rt>アサガタ</rt></ruby>", en: "morning person", kind: "word" },
 				{ jp: "練習すれば練習するほど、日本語が上手になる", cn: "越练越好", kind: "sentence" },
 			],
 		},
@@ -66,6 +66,8 @@ describe("ReviewPage", () => {
 		expect(screen.getByText("回想中/英文，点击翻面")).toBeInTheDocument();
 		await user.click(screen.getByText("回想中/英文，点击翻面"));
 		expect(screen.getByText("morning person")).toBeInTheDocument();
+		expect(document.querySelector(".review-reading")?.textContent).toBe("アサガタ");
+		expect(document.querySelector(".review-flip-ruby rt")?.textContent).toBe("アサガタ");
 		await user.click(screen.getByRole("button", { name: /下一张|Next/ }));
 		expect(screen.getByText("練習すれば練習するほど、日本語が上手になる")).toBeInTheDocument();
 		await user.click(screen.getByRole("button", { name: /^句子$|^Sentences$/ }));

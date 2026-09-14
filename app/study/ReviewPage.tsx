@@ -16,6 +16,7 @@ import {
 	formatReviewMonthDay,
 	formatReviewWeekday,
 	isLessonReviewPayload,
+	reviewKanaLine,
 	jstToday,
 	reviewDayCounts,
 	type LessonReviewPayload,
@@ -271,14 +272,15 @@ function ReviewCards({
 			</div>
 		);
 	} else {
+		const kana = reviewKanaLine(cur);
 		card = (
 			<div className="fcard" data-fcflip="1" onClick={() => setFlipped(false)}>
-				<div className="backside" style={{ textAlign: "center" }}>
+				<div className="backside review-flip" style={{ textAlign: "center" }}>
 					<div className="review-k">{cur.kind === "sentence" ? lx("句子", "Sentence") : lx("单词", "Word")}</div>
-					<div className="jp" style={{ fontWeight: 700, fontSize: "22px" }}>
+					<div className="jp review-flip-ruby" style={{ fontWeight: 700, fontSize: "22px" }}>
 						<ReviewRuby item={cur} /> <SayButton text={cur.jp} />
 					</div>
-					{cur.reading ? <div className="reading jp meta">{cur.reading}</div> : null}
+					{kana ? <div className="review-reading jp">{kana}</div> : null}
 					{cur.cn ? <div style={{ fontSize: "18px", marginTop: "10px" }}>{cur.cn}</div> : null}
 					{cur.en ? (
 						<div className="meta" style={{ fontSize: "14px" }}>
