@@ -198,6 +198,22 @@ export function applyKanjiReadings(jp: string, readings: Record<string, string>)
 	return used ? html : undefined;
 }
 
+export function reviewKanaLine(item: ReviewItem): string | undefined {
+	if (item.reading && /^[\u3040-\u30ffー\s・]+$/.test(item.reading)) {
+		return toKatakana(item.reading.replace(/[\s・]+/g, ""));
+	}
+	const html = item.jp_r || buildReviewRuby(item.jp, item.reading);
+	if (!html) return undefined;
+	const kana = html
+		.replace(/<ruby>[^<]*<rt>([^<]*)<\/rt><\/ruby>/g, "$1")
+		.replace(/<[^>]+>/g, "")
+		.replace(/[（(][^）)]*[）)]?/g, "")
+		.trim();
+	const surface = item.jp.replace(/[（(][^）)]*[）)]?/g, "").trim();
+	if (!kana || kana === surface || !/[\u3040-\u30ff]/.test(kana)) return undefined;
+	return kana;
+}
+
 function escapeXml(text: string): string {
 	return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }

@@ -438,6 +438,8 @@ nav.bottom button.on{color:var(--accent);font-weight:700}
 .review-day .day-prev{display:flex;flex-wrap:wrap;gap:4px;margin-top:4px;width:100%;min-width:0;overflow:hidden}
 .review-day .dp{max-width:100%;min-width:0}
 .review-k{display:inline-block;font-size:11px;padding:1px 8px;border-radius:999px;background:var(--bg);color:var(--sub);margin-bottom:10px}
+.review-reading{margin-top:6px;color:var(--sub);font-size:16px;letter-spacing:.04em;line-height:1.4}
+.review-flip-ruby rt,body.no-ruby .review-flip-ruby rt{visibility:visible}
 .review-skill{display:flex;gap:8px;width:100%;max-width:520px}
 .review-skill button{flex:1;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:12px;padding:10px 12px;font-size:15px;font-weight:700;cursor:pointer}
 .review-skill button.on{background:var(--amber-soft);border-color:var(--amber);color:var(--amber)}
