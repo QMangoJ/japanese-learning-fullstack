@@ -24,6 +24,10 @@ const SAMPLE = `
 
 # 2026.09.14
 
+# 2026.09.13 模擬試験N3
+原料 材料 賃料
+渋滞
+
 # 2026.09.11
 
 朝型　morning person
@@ -62,8 +66,11 @@ https://example.com/skip-me
 describe("lesson review parser", () => {
 	it("groups words and sentences by date and keeps note sections", () => {
 		const days = parseLessonReview(SAMPLE);
-		expect(days.map((day) => day.id)).toEqual(["2026-09-11", "2026-08-05", "note-workplace", "note-bank"]);
+		expect(days.map((day) => day.id)).toEqual(["2026-09-13", "2026-09-11", "2026-08-05", "note-workplace", "note-bank"]);
 		expect(days.find((day) => day.id === "2026-09-14")).toBeUndefined();
+		const examN3 = days.find((day) => day.id === "2026-09-13")!;
+		expect(examN3.label).toBe("模擬試験N3");
+		expect(examN3.items.map((item) => item.jp)).toEqual(["原料", "材料", "賃料", "渋滞"]);
 
 		const sept11 = days.find((day) => day.id === "2026-09-11")!;
 		expect(sept11.items).toEqual(
@@ -155,9 +162,10 @@ describe("weekly google doc sync", () => {
 		const fetcher = vi.fn(async () => new Response(SAMPLE, { status: 200 }));
 		const result = await syncLessonReview({ FAVORITES_KV: kv as unknown as KVNamespace }, fetcher as unknown as typeof fetch);
 		expect(result.ok).toBe(true);
-		expect(result.days).toBe(4);
+		expect(result.days).toBe(5);
 		const stored = JSON.parse(kv.map.get(LESSON_REVIEW_KV_KEY) || "{}");
-		expect(stored.days[0].id).toBe("2026-09-11");
+		expect(stored.days[0].id).toBe("2026-09-13");
+		expect(stored.days[0].label).toBe("模擬試験N3");
 	});
 
 	it("keeps the previous snapshot when export is blocked", async () => {

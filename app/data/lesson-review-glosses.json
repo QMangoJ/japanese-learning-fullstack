@@ -1,4 +1,252 @@
 {
+	"原料": {
+		"cn": "原料",
+		"en": "raw materials"
+	},
+	"材料": {
+		"cn": "材料",
+		"en": "materials / ingredients"
+	},
+	"賃料": {
+		"cn": "租金",
+		"en": "rent / rental fee"
+	},
+	"認め": {
+		"cn": "承认、认可",
+		"en": "recognition / to acknowledge"
+	},
+	"確かめる": {
+		"cn": "确认",
+		"en": "to make sure / confirm"
+	},
+	"求める": {
+		"cn": "寻求、要求",
+		"en": "to seek / request"
+	},
+	"渋滞": {
+		"cn": "堵车、拥堵",
+		"en": "traffic jam"
+	},
+	"重体": {
+		"cn": "重伤、病危",
+		"en": "critical condition"
+	},
+	"重大": {
+		"cn": "重大的",
+		"en": "serious / major"
+	},
+	"十代": {
+		"cn": "十几岁、青少年",
+		"en": "teens"
+	},
+	"休養": {
+		"cn": "休养",
+		"en": "rest / recuperation"
+	},
+	"睡眠": {
+		"cn": "睡眠",
+		"en": "sleep"
+	},
+	"貯金": {
+		"cn": "存钱、存款",
+		"en": "savings"
+	},
+	"税金": {
+		"cn": "税",
+		"en": "tax"
+	},
+	"代金": {
+		"cn": "货款、费用",
+		"en": "payment / charge"
+	},
+	"現金": {
+		"cn": "现金",
+		"en": "cash"
+	},
+	"すっかり元気": {
+		"cn": "完全恢复了",
+		"en": "completely recovered / all better"
+	},
+	"ぐっすり寝る": {
+		"cn": "睡得很熟",
+		"en": "to sleep soundly"
+	},
+	"はっかり話す": {
+		"cn": "说得很清楚（はっきり）",
+		"en": "to speak clearly"
+	},
+	"ぴったり合う": {
+		"cn": "正合适、完全吻合",
+		"en": "to fit perfectly"
+	},
+	"トラブルが多い": {
+		"cn": "麻烦很多",
+		"en": "there are a lot of problems"
+	},
+	"サイクル": {
+		"cn": "循环、周期",
+		"en": "cycle"
+	},
+	"サポート": {
+		"cn": "支持、协助",
+		"en": "support"
+	},
+	"ひねるらしく、足が痛い": {
+		"cn": "像扭到了一样，脚很痛",
+		"en": "my foot hurts as if I twisted it"
+	},
+	"文句ばかり言う": {
+		"cn": "净发牢骚",
+		"en": "to do nothing but complain"
+	},
+	"悔しい": {
+		"cn": "不甘心、懊悔",
+		"en": "frustrating / mortifying"
+	},
+	"怪しい": {
+		"cn": "可疑的",
+		"en": "suspicious"
+	},
+	"激しい": {
+		"cn": "激烈的",
+		"en": "intense / violent"
+	},
+	"難しい": {
+		"cn": "难的",
+		"en": "difficult"
+	},
+	"原因": {
+		"cn": "原因",
+		"en": "cause"
+	},
+	"理解": {
+		"cn": "理解",
+		"en": "understanding"
+	},
+	"説明": {
+		"cn": "说明",
+		"en": "explanation"
+	},
+	"様子": {
+		"cn": "样子、情况",
+		"en": "state / appearance"
+	},
+	"ますます": {
+		"cn": "越来越",
+		"en": "more and more"
+	},
+	"さらに": {
+		"cn": "更加、而且",
+		"en": "even more / furthermore"
+	},
+	"腐りやすい": {
+		"cn": "容易坏、易腐烂",
+		"en": "spoils easily"
+	},
+	"だめになりやすい": {
+		"cn": "容易坏掉",
+		"en": "tends to go bad"
+	},
+	"正直な": {
+		"cn": "诚实的",
+		"en": "honest"
+	},
+	"率直な": {
+		"cn": "直率的",
+		"en": "frank / straightforward"
+	},
+	"生意気な": {
+		"cn": "狂妄的、没大没小",
+		"en": "cheeky / conceited"
+	},
+	"喧しい": {
+		"cn": "吵闹的、啰嗦的",
+		"en": "noisy / fussy"
+	},
+	"煩い": {
+		"cn": "吵、烦人",
+		"en": "noisy / annoying"
+	},
+	"決してない": {
+		"cn": "绝不……",
+		"en": "never (emphatic)"
+	},
+	"して見てべきだ": {
+		"cn": "应该试试看（してみるべきだ）",
+		"en": "you should try doing it"
+	},
+	"にとって": {
+		"cn": "对……来说",
+		"en": "for / to (someone)"
+	},
+	"にたいして": {
+		"cn": "对于、针对",
+		"en": "toward / in contrast to"
+	},
+	"にしては": {
+		"cn": "就……而言（出乎意料）",
+		"en": "for (being) …"
+	},
+	"にかわって": {
+		"cn": "代替",
+		"en": "in place of / instead of"
+	},
+	"ようだたら/ようでしたら": {
+		"cn": "如果可以的话（ようだったら）",
+		"en": "if it's all right / if you'd like"
+	},
+	"時間をすごす": {
+		"cn": "度过时间",
+		"en": "to spend time"
+	},
+	"せっかく": {
+		"cn": "好不容易、特意",
+		"en": "with effort / specially"
+	},
+	"めったに": {
+		"cn": "很少",
+		"en": "rarely"
+	},
+	"まったく": {
+		"cn": "完全、实在",
+		"en": "completely / indeed"
+	},
+	"ぜったい": {
+		"cn": "绝对",
+		"en": "absolutely"
+	},
+	"休むことだ": {
+		"cn": "应该休息（…ことだ）",
+		"en": "you should rest"
+	},
+	"と言うものだ": {
+		"cn": "就是……（评价）",
+		"en": "that's what you'd call …"
+	},
+	"ものだ": {
+		"cn": "（感慨、常理）就是会……",
+		"en": "it's only natural that …"
+	},
+	"Vますしだい": {
+		"cn": "一……就……（次第）",
+		"en": "as soon as …"
+	},
+	"しかない": {
+		"cn": "只好、只能",
+		"en": "have no choice but to"
+	},
+	"はずがない": {
+		"cn": "不可能",
+		"en": "there's no way"
+	},
+	"このあいだ": {
+		"cn": "前几天",
+		"en": "the other day"
+	},
+	"こないだ": {
+		"cn": "前几天（口语）",
+		"en": "the other day (casual)"
+	},
 	"エドマルがいっぱい🐶": {
 		"cn": "Edmaru 的狗好多",
 		"en": "There are so many dogs at Edmaru"

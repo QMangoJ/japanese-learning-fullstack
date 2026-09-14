@@ -12,7 +12,7 @@ import {
 
 const HAS_JP = /[\u3040-\u30ff\u4e00-\u9fff]/;
 const KANA_ONLY = /^[\u3040-\u309f\u30a0-\u30ffー\s]+$/;
-const DATE_HEADING = /^(?:#{1,6}\s*)?(\d{4})[./年-](\d{1,2})[./月-](\d{1,2})日?\s*$/;
+const DATE_HEADING = /^(?:#{1,6}\s*)?(\d{4})[./年-](\d{1,2})[./月-](\d{1,2})日?(?:\s+(.+))?\s*$/;
 const MD_HEADING = /^(#{1,6})\s+(.+?)\s*$/;
 const SKIP_HEADINGS = new Set(["先生から", "自分のノート"]);
 const NOTE_SLUGS: Record<string, string> = {
@@ -27,6 +27,7 @@ type OpenGroup =
 
 export function parseLessonReview(markdown: string): ReviewDay[] {
 	const dated = new Map<string, ReviewItem[]>();
+	const dateLabels = new Map<string, string>();
 	const notes = new Map<string, { title: string; items: ReviewItem[] }>();
 	let current: OpenGroup | null = null;
 
@@ -45,8 +46,9 @@ export function parseLessonReview(markdown: string): ReviewDay[] {
 		const trimmed = raw.trim();
 		const date = matchDateHeading(trimmed);
 		if (date) {
-			current = { kind: "date", id: date };
-			if (!dated.has(date)) dated.set(date, []);
+			current = { kind: "date", id: date.id };
+			if (!dated.has(date.id)) dated.set(date.id, []);
+			if (date.label) dateLabels.set(date.id, date.label);
 			continue;
 		}
 
@@ -81,14 +83,19 @@ export function parseLessonReview(markdown: string): ReviewDay[] {
 			continue;
 		}
 
-		const item = parseItem(cleaned);
-		if (item) pushItem(itemsOf(current), item);
+		for (const item of parseItems(cleaned)) pushItem(itemsOf(current), item);
 	}
 
 	const days: ReviewDay[] = [...dated.entries()]
 		.filter(([, items]) => items.length > 0)
 		.sort((a, b) => b[0].localeCompare(a[0]))
-		.map(([date, items]) => ({ id: date, date, title: date, items }));
+		.map(([date, items]) => ({
+			id: date,
+			date,
+			title: date,
+			label: dateLabels.get(date),
+			items,
+		}));
 
 	for (const [id, note] of notes) {
 		if (!note.items.length) continue;
@@ -127,10 +134,14 @@ function enrichReviewItem(item: ReviewItem): ReviewItem {
 	return compactItem(next);
 }
 
-function matchDateHeading(line: string): string | null {
+function matchDateHeading(line: string): { id: string; label?: string } | null {
 	const match = line.match(DATE_HEADING);
 	if (!match) return null;
-	return `${match[1]}-${pad(+match[2])}-${pad(+match[3])}`;
+	const label = match[4]?.trim();
+	return {
+		id: `${match[1]}-${pad(+match[2])}-${pad(+match[3])}`,
+		label: label || undefined,
+	};
 }
 
 function matchHeading(line: string): { level: number; title: string } | null {
@@ -218,6 +229,28 @@ function parseTableRow(line: string): ReviewItem | null {
 	const reading = second && KANA_ONLY.test(second) ? second : undefined;
 	const cn = (third || (!reading ? second : "")).trim() || undefined;
 	return compactItem({ jp, reading, cn, kind: "word" });
+}
+
+function parseItems(line: string): ReviewItem[] {
+	const tokens = line.split(/\s+/).filter(Boolean);
+	if (
+		tokens.length >= 2 &&
+		tokens.every(
+			(token) =>
+				HAS_JP.test(token) &&
+				/[一-龯]/.test(token) &&
+				token.length <= 8 &&
+				!/[。！？!?]/.test(token) &&
+				!/=|＝/.test(token),
+		)
+	) {
+		return tokens.flatMap((token) => {
+			const item = parseItem(token);
+			return item ? [item] : [];
+		});
+	}
+	const item = parseItem(line);
+	return item ? [item] : [];
 }
 
 function parseItem(line: string): ReviewItem | null {
