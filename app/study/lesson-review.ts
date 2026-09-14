@@ -13,6 +13,7 @@ export type ReviewDay = {
 	id: string;
 	date?: string;
 	title: string;
+	label?: string;
 	items: ReviewItem[];
 };
 
@@ -105,6 +106,7 @@ function isReviewDay(value: unknown): value is ReviewDay {
 	const day = value as ReviewDay;
 	if (typeof day.id !== "string" || typeof day.title !== "string" || !Array.isArray(day.items)) return false;
 	if (day.date != null && typeof day.date !== "string") return false;
+	if (day.label != null && typeof day.label !== "string") return false;
 	return day.items.every(isReviewItem);
 }
 

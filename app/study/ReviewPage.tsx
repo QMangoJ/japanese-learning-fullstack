@@ -117,7 +117,7 @@ function ReviewCatalog({
 			</p>
 			{fetchedAt ? (
 				<div className="review-sync">
-					{lx("内容每周自动更新", "Updated once a week")}
+					{lx("内容每周一自动更新", "Updated every Monday")}
 					{fetchedAt.slice(0, 10) ? ` · ${fetchedAt.slice(0, 10)}` : ""}
 				</div>
 			) : null}
@@ -168,6 +168,7 @@ function DayButton({ day, today = false, mastery }: { day: ReviewDay; today?: bo
 				{today ? <span className="today-mark">{lx("今天", "Today")}</span> : null}
 			</span>
 			<span className="t">{title}</span>
+			{day.label ? <span className="tc">{day.label}</span> : null}
 			<span className="review-day__stats">
 				<span className="review-day__chip">{lx(`单词 ${counts.words}`, `${counts.words} words`)}</span>
 				<span className="review-day__chip">{lx(`句子 ${counts.sentences}`, `${counts.sentences} sentences`)}</span>
