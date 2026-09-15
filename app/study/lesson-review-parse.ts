@@ -1,9 +1,9 @@
 import glosses from "../data/lesson-review-glosses.json";
 import kanjiReadings from "../data/lesson-review-kanji-readings.json";
 import {
-	applyKanjiReadings,
 	buildReviewRuby,
 	LESSON_REVIEW_SOURCE,
+	shouldKeepReviewRuby,
 	type LessonReviewPayload,
 	type ReviewDay,
 	type ReviewItem,
@@ -129,9 +129,20 @@ function enrichReviewItem(item: ReviewItem): ReviewItem {
 		if (!next.cn && gloss.cn) next.cn = gloss.cn;
 		if (!next.en && gloss.en) next.en = gloss.en;
 	}
-	const ruby = buildReviewRuby(next.jp, next.reading) || applyKanjiReadings(next.jp, kanjiReadings);
-	if (ruby) next.jp_r = ruby;
+	const inline = splitInlineReading(next.jp);
+	const reading = next.reading || inline.reading;
+	const surface = inline.jp.replace(/\([A-Za-züÜ]+\d*\)/g, "");
+	delete next.jp_r;
+	const ruby = buildReviewRuby(surface, reading, kanjiReadings);
+	if (ruby && shouldKeepReviewRuby(surface, ruby)) next.jp_r = ruby;
+	if (reading && !next.reading) next.reading = reading;
 	return compactItem(next);
+}
+
+function splitInlineReading(jp: string): { jp: string; reading?: string } {
+	const match = jp.match(/^(.*?[一-龯々〆ヵヶ][^\s]*)\s+([ぁ-んァ-ンー]{2,24})$/);
+	if (!match) return { jp };
+	return { jp: match[1].trim(), reading: match[2] };
 }
 
 function matchDateHeading(line: string): { id: string; label?: string } | null {
