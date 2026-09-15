@@ -14,6 +14,7 @@ import {
 	LESSON_REVIEW_KV_KEY,
 	parseReviewRoute,
 	reviewDayCounts,
+	toHiragana,
 	toKatakana,
 } from "../../app/study/lesson-review";
 import { buildLessonReviewPayload, enrichReviewDays, parseLessonReview } from "../../app/study/lesson-review-parse";
@@ -131,24 +132,54 @@ describe("lesson review helpers", () => {
 		expect(formatReviewDayNum("2026-09-11")).toBe("11");
 		expect(formatReviewWeekday("2026-09-11", "cn")).toBe("星期五");
 		expect(toKatakana("せんしんこく")).toBe("センシンコク");
-		expect(buildReviewRuby("先進国（せんしんこく）")).toBe("<ruby>先進国<rt>センシンコク</rt></ruby>");
-		expect(buildReviewRuby("字幕", "じまく")).toBe("<ruby>字幕<rt>ジマク</rt></ruby>");
+		expect(toHiragana("センシンコク")).toBe("せんしんこく");
+		expect(buildReviewRuby("先進国（せんしんこく）")).toBe("<ruby>先進国<rt>せんしんこく</rt></ruby>");
+		expect(buildReviewRuby("つうがく（通学）")).toBe("<ruby>通学<rt>つうがく</rt></ruby>");
+		expect(buildReviewRuby("字幕", "じまく")).toBe("<ruby>字幕<rt>じまく</rt></ruby>");
 		expect(
 			applyKanjiReadings("テストは成績に影響する", { 成績: "せいせき", 影響: "えいきょう" }),
-		).toBe("テストは<ruby>成績<rt>セイセキ</rt></ruby>に<ruby>影響<rt>エイキョウ</rt></ruby>する");
+		).toBe("テストは<ruby>成績<rt>せいせき</rt></ruby>に<ruby>影響<rt>えいきょう</rt></ruby>する");
 		expect(
 			reviewKanaLine({
 				jp: "テストは成績に影響する",
 				kind: "word",
-				jp_r: "テストは<ruby>成績<rt>セイセキ</rt></ruby>に<ruby>影響<rt>エイキョウ</rt></ruby>する",
+				jp_r: "テストは<ruby>成績<rt>せいせき</rt></ruby>に<ruby>影響<rt>えいきょう</rt></ruby>する",
 			}),
-		).toBe("テストはセイセキにエイキョウする");
+		).toBe("テストはせいせきにえいきょうする");
 		expect(enrichReviewDays([{ id: "x", title: "x", items: [{ jp: "テストは成績に影響する", kind: "word" }] }])[0].items[0].jp_r).toBe(
-			"テストは<ruby>成績<rt>セイセキ</rt></ruby>に<ruby>影響<rt>エイキョウ</rt></ruby>する",
+			"テストは<ruby>成績<rt>せいせき</rt></ruby>に<ruby>影響<rt>えいきょう</rt></ruby>する",
 		);
 		expect(enrichReviewDays([{ id: "x", title: "x", items: [{ jp: "認め", kind: "word" }] }])[0].items[0]).toMatchObject({
-			jp_r: "<ruby>認め<rt>ミトメ</rt></ruby>",
+			jp_r: "<ruby>認め<rt>みとめ</rt></ruby>",
 		});
+		expect(buildReviewRuby("日本の男の人は髪（かみ）とか外見（がいけん）に気を遣うけど")).toBe(
+			"日本の男の人は<ruby>髪<rt>かみ</rt></ruby>とか<ruby>外見<rt>がいけん</rt></ruby>に気を遣うけど",
+		);
+		const drama = enrichReviewDays([
+			{ id: "x", title: "x", items: [{ jp: "主人公は生まれ育った家庭の影響で、よく現実から逃げてしまう。", kind: "sentence" }] },
+		])[0].items[0].jp_r;
+		expect(drama).toContain("<ruby>主人公<rt>しゅじんこう</rt></ruby>");
+		expect(drama).toContain("<ruby>生まれ育った<rt>うまれそだった</rt></ruby>");
+		expect(drama).toContain("<ruby>現実<rt>げんじつ</rt></ruby>");
+		expect(drama).not.toContain("<rt>なま</rt>");
+		expect(enrichReviewDays([{ id: "x", title: "x", items: [{ jp: "何回も行っている", kind: "sentence" }] }])[0].items[0].jp_r).toContain(
+			"<ruby>行っている<rt>いっている</rt></ruby>",
+		);
+		expect(enrichReviewDays([{ id: "x", title: "x", items: [{ jp: "日本に来たのかな？", kind: "sentence" }] }])[0].items[0].jp_r).toContain(
+			"<ruby>来た<rt>きた</rt></ruby>",
+		);
+		expect(enrichReviewDays([{ id: "x", title: "x", items: [{ jp: "市民税", kind: "word" }] }])[0].items[0].jp_r).toBe(
+			"<ruby>市民税<rt>しみんぜい</rt></ruby>",
+		);
+		expect(enrichReviewDays([{ id: "x", title: "x", items: [{ jp: "公积金", kind: "word" }] }])[0].items[0].jp_r).toBeUndefined();
+		expect(
+			enrichReviewDays([
+				{ id: "x", title: "x", items: [{ jp: "公积金", jp_r: "公积<ruby>金<rt>かね</rt></ruby>", kind: "word" }] },
+			])[0].items[0].jp_r,
+		).toBeUndefined();
+		expect(
+			enrichReviewDays([{ id: "x", title: "x", items: [{ jp: "伝統的（でんとうてき）な漢字", kind: "word" }] }])[0].items[0].jp_r,
+		).toBe("<ruby>伝統的<rt>でんとうてき</rt></ruby>な<ruby>漢字<rt>かんじ</rt></ruby>");
 		expect(jstToday(Date.parse("2026-09-10T16:00:00Z"))).toBe("2026-09-11");
 		expect(reviewDayCounts({ id: "x", title: "x", items: [{ jp: "a", kind: "word" }, { jp: "b", kind: "sentence" }] })).toEqual({
 			words: 1,
