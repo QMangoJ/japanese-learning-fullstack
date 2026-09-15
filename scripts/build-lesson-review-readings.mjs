@@ -22,6 +22,7 @@ const FORCED = {
 	激しい: "はげしい",
 	喧しい: "やかましい",
 	煩い: "うるさい",
+	認め: "みとめ",
 };
 
 const dict = new Map(Object.entries(FORCED));

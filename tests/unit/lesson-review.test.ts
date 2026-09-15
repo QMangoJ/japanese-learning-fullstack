@@ -146,6 +146,9 @@ describe("lesson review helpers", () => {
 		expect(enrichReviewDays([{ id: "x", title: "x", items: [{ jp: "テストは成績に影響する", kind: "word" }] }])[0].items[0].jp_r).toBe(
 			"テストは<ruby>成績<rt>セイセキ</rt></ruby>に<ruby>影響<rt>エイキョウ</rt></ruby>する",
 		);
+		expect(enrichReviewDays([{ id: "x", title: "x", items: [{ jp: "認め", kind: "word" }] }])[0].items[0]).toMatchObject({
+			jp_r: "<ruby>認め<rt>ミトメ</rt></ruby>",
+		});
 		expect(jstToday(Date.parse("2026-09-10T16:00:00Z"))).toBe("2026-09-11");
 		expect(reviewDayCounts({ id: "x", title: "x", items: [{ jp: "a", kind: "word" }, { jp: "b", kind: "sentence" }] })).toEqual({
 			words: 1,
