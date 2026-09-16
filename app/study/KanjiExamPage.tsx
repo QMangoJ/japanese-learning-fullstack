@@ -382,7 +382,7 @@ export function KanjiExamPage() {
 															{lx("删除", "Remove")}
 														</button>
 													</div>
-													<p><MarkedPrompt question={{ ...wrong, id: wrong.questionId, lessonId: "", page: 0 }} /></p>
+													<p><MarkedPrompt question={wrong} /></p>
 													<span>
 														{lx("你的答案", "Your answer")}: <del>{wrong.userAnswer || "—"}</del>
 														{"　"}

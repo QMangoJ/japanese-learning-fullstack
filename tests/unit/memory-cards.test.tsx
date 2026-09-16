@@ -5,6 +5,7 @@ import { beforeEach, describe, expect, it } from "vitest";
 import { MemoryCards, type MemoryCardItem } from "../../app/study/memory-cards";
 import { ModuleCardsPage } from "../../app/study/ModuleCardsPage";
 import {
+	annotateText,
 	cardsFromListeningLesson,
 	cardsFromReadingWeeks,
 	cardsFromVocabWeeks,
@@ -69,6 +70,13 @@ describe("memory deck builders", () => {
 		expect(splitListeningGloss("to take a course　听课")).toEqual({ en: "to take a course", cn: "听课" });
 	});
 
+	it("annotates kanji with ruby readings", () => {
+		const html = annotateText("健康診断", { reading: "けんこうしんだん" });
+		expect(html).toContain("<ruby>");
+		expect(html).toContain("けんこうしんだん");
+		expect(annotateText("有効期限：XX年○月×日まで", { reading: "ゆうこうきげん" })).toContain("<rt>ゆうこうきげん</rt>");
+	});
+
 	it("builds listening cards from kv rows and nearby example sentences", () => {
 		const items = cardsFromListeningLesson(
 			{
@@ -95,6 +103,8 @@ describe("memory deck builders", () => {
 			kind: "word",
 			week: 4,
 		});
+		expect(items[1].jpHtml).toContain("<rt>けんこうしんだん</rt>");
+		expect(items[1].reading).toBe("けんこうしんだん");
 		expect(items[1].exampleJp).toBeUndefined();
 	});
 
@@ -134,6 +144,9 @@ describe("memory deck builders", () => {
 		expect(items.map((item) => item.kind)).toEqual(["word", "expression"]);
 		expect(items[0].exampleJp).toContain("注文");
 		expect(items[0].reading).toBe("ちゅうもん");
+		expect(items[0].jpHtml).toContain("<rt>ちゅうもん</rt>");
+		expect(items[0].exampleJpHtml).toContain("<ruby>");
+		expect(items[1].jpHtml).toContain("注文");
 	});
 });
 
@@ -171,7 +184,8 @@ describe("ModuleCardsPage", () => {
 		await user.click(screen.getByText("回想读音和意思，点击翻面"));
 		expect(document.querySelector(".review-reading")?.textContent).toBe("たて");
 		expect(screen.getByText("建成…层")).toBeInTheDocument();
-		expect(screen.getByText("私は10階建てのマンションに住んでいます。")).toBeInTheDocument();
+		expect(document.querySelector(".fcard-ex ruby rt")).toBeTruthy();
+		expect(document.querySelector(".fcard-ex .jp")?.textContent).toContain("マンション");
 	});
 
 	it("opens N2 kanji word cards with a usage example", async () => {
@@ -198,6 +212,7 @@ describe("ModuleCardsPage", () => {
 		await user.click(screen.getByText("回想读音和意思，点击翻面"));
 		expect(document.querySelector(".review-reading")?.textContent).toBe("せってい");
 		expect(screen.getByText("setting")).toBeInTheDocument();
-		expect(screen.getByText("スマートフォンの言語を日本語に設定した。")).toBeInTheDocument();
+		expect(document.querySelector(".fcard-ex ruby rt")?.textContent).toBeTruthy();
+		expect(document.querySelector(".fcard-ex .jp")?.textContent).toContain("設定");
 	});
 });
