@@ -89,6 +89,7 @@ describe("memory deck builders", () => {
 							{ k: "健康診断", v: "health check　体检" },
 						],
 					},
+					{ type: "p", jp: "健康診断は午前中に行います。", cn: "体检在上午进行。", en: "The health check is in the morning." },
 				],
 			},
 			4,
@@ -105,7 +106,8 @@ describe("memory deck builders", () => {
 		});
 		expect(items[1].jpHtml).toContain("<rt>けんこうしんだん</rt>");
 		expect(items[1].reading).toBe("けんこうしんだん");
-		expect(items[1].exampleJp).toBeUndefined();
+		expect(items[1].exampleJp).toBe("健康診断は午前中に行います。");
+		expect(items[1].exampleCn).toBe("体检在上午进行。");
 	});
 
 	it("pulls a vocab example from the day's quiz sentence", () => {
@@ -113,7 +115,31 @@ describe("memory deck builders", () => {
 			exampleFromVocabDay("建て", {
 				exercises: { sections: [{ items: [{ q: "私は10階（a. 建て　b. 建ち）のマンションに住んでいます。" }] }] },
 			}),
-		).toEqual({ jp: "私は10階建てのマンションに住んでいます。" });
+		).toMatchObject({ jp: "私は10階建てのマンションに住んでいます。" });
+	});
+
+	it("finds a vocab example in another day's quiz, not only the same day", () => {
+		const items = cardsFromVocabWeeks(
+			[
+				{
+					n: 1,
+					days: [
+						{
+							day: 1,
+							sections: [{ items: [{ jp: "家賃", jp_r: "<ruby>家賃<rt>やちん</rt></ruby>", cn: "房租", en: "rent" }] }],
+						},
+						{
+							day: 6,
+							sections: [{ items: [{ jp: "支払い", cn: "支付", en: "payment" }] }],
+							exercises: { sections: [{ items: [{ q: "今月分の家賃の（a. 支払い　b. 支出）を済ませた。" }] }] },
+						},
+					],
+				},
+			],
+			"n2vocab",
+		);
+		expect(items[0].exampleJp).toBe("今月分の家賃の支払いを済ませた。");
+		expect(items[0].exampleCn).toBeUndefined();
 	});
 
 	it("builds reading cards from vocab and expressions", () => {
@@ -124,8 +150,18 @@ describe("memory deck builders", () => {
 					days: [
 						{
 							day: 1,
-							vocab: [{ jp: "注文", kana: "ちゅうもん", cn: "点餐", en: "order" }],
+							vocab: [
+								{ jp: "注文", kana: "ちゅうもん", cn: "点餐", en: "order" },
+								{ jp: "割引券", kana: "わりびきけん", cn: "折扣券", en: "coupon" },
+							],
 							expressions: [{ jp: "ご注文の際", kana: "ちゅうもん", cn: "点餐时", en: "when ordering" }],
+							snippets: [
+								{
+									jp: "チーズケーキといえば、{割引券|わりびきけん}があったの。",
+									cn: "说到芝士蛋糕，我有张折扣券。",
+									en: "Speaking of cheesecake, I had a coupon.",
+								},
+							],
 							grammar: [
 								{
 									example: {
@@ -141,12 +177,14 @@ describe("memory deck builders", () => {
 			],
 			"n2reading",
 		);
-		expect(items.map((item) => item.kind)).toEqual(["word", "expression"]);
+		expect(items.map((item) => item.kind)).toEqual(["word", "word", "expression"]);
 		expect(items[0].exampleJp).toContain("注文");
 		expect(items[0].reading).toBe("ちゅうもん");
 		expect(items[0].jpHtml).toContain("<rt>ちゅうもん</rt>");
 		expect(items[0].exampleJpHtml).toContain("<ruby>");
-		expect(items[1].jpHtml).toContain("注文");
+		expect(items[1].exampleJp).toContain("割引券");
+		expect(items[1].exampleCn).toContain("折扣券");
+		expect(items[2].jpHtml).toContain("注文");
 	});
 });
 

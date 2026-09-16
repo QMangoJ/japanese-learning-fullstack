@@ -85,6 +85,7 @@ export function collectReadingsFromReadingWeeks(weeks: any[]): Record<string, st
 			for (const g of day.grammar || []) {
 				if (g.example?.jp) harvestBraceReadings(String(g.example.jp), into);
 			}
+			for (const snippet of day.snippets || []) harvestBraceReadings(String(snippet.jp || ""), into);
 		}
 	}
 	return into;
@@ -148,23 +149,121 @@ export function vocabNeedles(jp: string): string[] {
 		.filter((part) => part.length >= 2);
 }
 
-export function exampleFromVocabDay(jp: string, day: { exercises?: { sections?: { items?: { q?: string }[] }[] } }): { jp: string } | undefined {
+export type ExampleHit = { jp: string; jpHtml?: string; cn?: string; en?: string };
+
+export function cleanQuizSentence(q: string, needles: string[]): string {
+	return q
+		.replace(/（[a-dA-Dａ-ｄ]\.\s*[^）]*）/g, (chunk) => {
+			const hit = needles.find((n) => chunk.includes(n));
+			if (hit) return hit;
+			const first = chunk.match(/[a-dA-Dａ-ｄ]\.\s*([^\s　）]+)/);
+			return first?.[1] || "";
+		})
+		.replace(/（\s*）|\(\s*\)/g, needles[0] || "")
+		.replace(/＿+/g, needles[0] || "")
+		.replace(/\s+/g, "");
+}
+
+export function exampleFromCorpus(jp: string, corpus: ExampleHit[]): ExampleHit | undefined {
 	const needles = vocabNeedles(jp);
-	if (!needles.length) return undefined;
-	for (const sec of day.exercises?.sections || []) {
-		for (const it of sec.items || []) {
-			const q = String(it.q || "");
-			if (!needles.some((n) => q.includes(n))) continue;
-			const sentence = q
-				.replace(/（[a-dA-Dａ-ｄ]\.\s*[^）]*）/g, (chunk) => needles.find((n) => chunk.includes(n)) || "")
-				.replace(/（\s*）|\(\s*\)/g, needles[0] || "")
-				.replace(/＿+/g, needles[0] || "")
-				.replace(/\s+/g, "");
-			if (sentence.length < 6 || sentence === jp) continue;
-			return { jp: sentence };
-		}
+	const core = stripParens(jp).split(/[／/]/)[0].trim();
+	if (core.length >= 2 && !needles.includes(core)) needles.unshift(core);
+	const sorted = [...needles].filter((n) => n.length >= 2).sort((a, b) => b.length - a.length);
+	if (!sorted.length) return undefined;
+	for (const item of corpus) {
+		const plain = stripBraceRuby(item.jp);
+		if (!sorted.some((n) => plain.includes(n))) continue;
+		let sentence = plain;
+		if (/（[a-dA-Dａ-ｄ]/.test(sentence) || /＿/.test(sentence)) sentence = cleanQuizSentence(sentence, sorted);
+		if (sentence.length < 6 || sentence === jp) continue;
+		const html = item.jp.includes("{")
+			? braceToRubyHtml(item.jp)
+			: item.jpHtml?.includes("<ruby") && !/（[a-dA-Dａ-ｄ]/.test(item.jp)
+				? item.jpHtml
+				: undefined;
+		return { jp: sentence, jpHtml: html, cn: item.cn, en: item.en };
 	}
 	return undefined;
+}
+
+export function exampleFromVocabDay(jp: string, day: { exercises?: { sections?: { items?: { q?: string; q_r?: string }[] }[] } }): ExampleHit | undefined {
+	const corpus: ExampleHit[] = [];
+	for (const sec of day.exercises?.sections || []) {
+		for (const it of sec.items || []) {
+			if (it.q) corpus.push({ jp: String(it.q), jpHtml: it.q_r });
+		}
+	}
+	return exampleFromCorpus(jp, corpus);
+}
+
+function collectVocabQuizCorpus(weeks: any[]): ExampleHit[] {
+	const out: ExampleHit[] = [];
+	for (const w of weeks || []) {
+		for (const day of w.days || []) {
+			for (const sec of day.exercises?.sections || []) {
+				for (const it of sec.items || []) {
+					if (it.q) out.push({ jp: String(it.q), jpHtml: it.q_r });
+				}
+			}
+			for (const key of ["mondai1", "mondai2", "mondai3", "mondai4"] as const) {
+				for (const it of day[key]?.items || []) {
+					if (it.q) out.push({ jp: String(it.q), jpHtml: it.q_r });
+				}
+			}
+		}
+	}
+	return out;
+}
+
+function fallbackVocabExample(jp: string, cn?: string, en?: string): ExampleHit {
+	const word = vocabNeedles(jp)[0] || stripParens(jp).split(/[／/]/)[0] || jp;
+	if (/する$/.test(word)) {
+		return {
+			jp: `来週${word}予定です。`,
+			cn: cn ? `打算下周${cn}。` : undefined,
+			en: en ? `I plan to ${en} next week.` : undefined,
+		};
+	}
+	if (/\(な\)|（な）/.test(jp)) {
+		const base = word.replace(/な$/, "");
+		return {
+			jp: `とても${base}な場所です。`,
+			cn: cn ? `那是个很${cn}的地方。` : undefined,
+			en: en ? `It's a very ${en} place.` : undefined,
+		};
+	}
+	if (/い$/.test(word) && /[一-龯]/.test(word) && word.length <= 5) {
+		return {
+			jp: `今日は${word}です。`,
+			cn: cn ? `今天很${cn}。` : undefined,
+			en: en ? `It's ${en} today.` : undefined,
+		};
+	}
+	return {
+		jp: `今、${word}の話をしています。`,
+		cn: cn ? `现在正在说「${cn}」。` : undefined,
+		en: en ? `We're talking about "${en}" right now.` : undefined,
+	};
+}
+
+function collectListeningSnippets(lesson: Pick<ListeningLesson, "blocks">): ExampleHit[] {
+	const out: ExampleHit[] = [];
+	const add = (jp?: string, cn?: string, en?: string) => {
+		if (jp && jp.replace(/\s/g, "").length >= 4) out.push({ jp, cn, en });
+	};
+	for (const block of lesson.blocks || []) {
+		if (block.type === "p" || block.type === "tip" || block.type === "h" || block.type === "slogan") {
+			add(block.jp, "cn" in block ? block.cn : undefined, "en" in block ? block.en : undefined);
+		} else if (block.type === "example") {
+			for (const line of block.lines || []) add(line);
+		} else if (block.type === "q") {
+			add(block.prompt);
+			for (const opt of block.options || []) add(opt);
+		} else if (block.type === "aside") {
+			add(block.text);
+		}
+	}
+	return out;
 }
 
 export function stripBraceRuby(text: string): string {
@@ -178,20 +277,16 @@ export function braceToRubyHtml(text: string): string {
 
 export function exampleFromReadingDay(
 	jp: string,
-	day: { grammar?: { example?: { jp?: string; cn?: string; en?: string } }[] },
-): { jp: string; jpHtml?: string; cn?: string; en?: string } | undefined {
+	day: {
+		grammar?: { example?: { jp?: string; cn?: string; en?: string } }[];
+		snippets?: ExampleHit[];
+	},
+): ExampleHit | undefined {
+	const corpus: ExampleHit[] = [...(day.snippets || [])];
 	for (const g of day.grammar || []) {
-		const ex = g.example;
-		if (!ex?.jp) continue;
-		if (!stripBraceRuby(ex.jp).includes(jp)) continue;
-		return {
-			jp: stripBraceRuby(ex.jp),
-			jpHtml: braceToRubyHtml(ex.jp),
-			cn: ex.cn,
-			en: ex.en,
-		};
+		if (g.example?.jp) corpus.push({ jp: g.example.jp, cn: g.example.cn, en: g.example.en });
 	}
-	return undefined;
+	return exampleFromCorpus(jp, corpus);
 }
 
 function kanjiExample(word: KanjiWord, module: string, readings: Record<string, string>) {
@@ -213,8 +308,19 @@ function kanjiExample(word: KanjiWord, module: string, readings: Record<string, 
 	};
 }
 
+function attachExample(ex: ExampleHit | undefined, readings: Record<string, string>) {
+	if (!ex?.jp) return {};
+	return {
+		exampleJp: ex.jp,
+		exampleJpHtml: annotateText(ex.jp, { html: ex.jpHtml, readings }),
+		exampleCn: ex.cn,
+		exampleEn: ex.en,
+	};
+}
+
 export function cardsFromVocabWeeks(weeks: any[], module: string): MemoryCardItem[] {
 	const readings = mergedReadings(collectReadingsFromVocabWeeks(weeks));
+	const bookCorpus = collectVocabQuizCorpus(weeks);
 	const items: MemoryCardItem[] = [];
 	for (const w of weeks || []) {
 		for (const day of w.days || []) {
@@ -222,7 +328,8 @@ export function cardsFromVocabWeeks(weeks: any[], module: string): MemoryCardIte
 				(sec.items || []).forEach((it: any, ii: number) => {
 					if (!it?.jp || !(it.cn || it.en)) return;
 					const jpHtml = annotateText(it.jp, { html: it.jp_r, reading: it.reading, readings });
-					const ex = exampleFromVocabDay(it.jp, day);
+					const ex =
+						exampleFromVocabDay(it.jp, day) || exampleFromCorpus(it.jp, bookCorpus) || fallbackVocabExample(it.jp, it.cn, it.en);
 					items.push({
 						id: `${module}:${w.n}-${day.day}:${si}-${ii}:${it.jp}`,
 						jp: it.jp,
@@ -233,8 +340,7 @@ export function cardsFromVocabWeeks(weeks: any[], module: string): MemoryCardIte
 						kind: "word",
 						week: w.n,
 						day: day.day,
-						exampleJp: ex?.jp,
-						exampleJpHtml: ex?.jp ? annotateText(ex.jp, { readings }) : undefined,
+						...attachExample(ex, readings),
 					});
 				});
 			});
@@ -244,7 +350,12 @@ export function cardsFromVocabWeeks(weeks: any[], module: string): MemoryCardIte
 }
 
 export function cardsFromKanjiWeeks(weeks: any[], module: string): MemoryCardItem[] {
-	const readings = mergedReadings(collectReadingsFromKanjiWeeks(weeks));
+	const readings = mergedReadings(
+		collectReadingsFromKanjiWeeks(weeks),
+		collectReadingsFromVocabWeeks(V2.weeks),
+		collectReadingsFromVocabWeeks(V.weeks),
+	);
+	const quizCorpus = collectVocabQuizCorpus(weeks).concat(collectVocabQuizCorpus(V2.weeks), collectVocabQuizCorpus(V.weeks));
 	const items: MemoryCardItem[] = [];
 	for (const w of weeks || []) {
 		for (const day of w.days || []) {
@@ -252,6 +363,10 @@ export function cardsFromKanjiWeeks(weeks: any[], module: string): MemoryCardIte
 				(k.words || []).forEach((wd: any, wi: number) => {
 					if (!wd?.jp || !(wd.cn || wd.en)) return;
 					const jpHtml = annotateText(wd.jp, { html: wd.jp_r, reading: wd.reading, readings });
+					const authored = kanjiExample(wd, module, readings);
+					const mined = authored.exampleJp
+						? null
+						: exampleFromCorpus(kanjiWordSurface(wd), quizCorpus) || exampleFromCorpus(wd.jp, quizCorpus);
 					items.push({
 						id: `${module}:${w.n}-${day.day}:${ki}-${wi}:${wd.jp}`,
 						jp: wd.jp,
@@ -262,13 +377,36 @@ export function cardsFromKanjiWeeks(weeks: any[], module: string): MemoryCardIte
 						kind: "word",
 						week: w.n,
 						day: day.day,
-						...kanjiExample(wd, module, readings),
+						...(authored.exampleJp
+							? authored
+							: mined
+								? attachExample(mined, readings)
+								: kanjiExampleFromUsage(getKanjiWordUsage(wd), readings)),
 					});
 				});
 			});
 		}
 	}
 	return items;
+}
+
+function kanjiExampleFromUsage(
+	usage: NonNullable<ReturnType<typeof getKanjiWordUsage>>,
+	readings: Record<string, string>,
+) {
+	const focus = usage.focus || "";
+	const sentence = `${usage.before}${focus}${usage.after}`;
+	const beforeHtml = annotateText(usage.before, { readings }) || escapeXml(usage.before);
+	const afterHtml = annotateText(usage.after, { readings }) || escapeXml(usage.after);
+	const focusHtml = usage.focusReading
+		? `<ruby>${escapeXml(focus)}<rt>${toHiragana(usage.focusReading)}</rt></ruby>`
+		: annotateText(focus, { readings }) || escapeXml(focus);
+	return {
+		exampleJp: sentence,
+		exampleJpHtml: `${beforeHtml}${focusHtml}${afterHtml}`,
+		exampleCn: usage.exampleCn,
+		exampleEn: usage.exampleEn,
+	};
 }
 
 export function cardsFromReadingWeeks(weeks: any[], module: string): MemoryCardItem[] {
@@ -278,7 +416,7 @@ export function cardsFromReadingWeeks(weeks: any[], module: string): MemoryCardI
 		for (const day of w.days || []) {
 			(day.vocab || []).forEach((it: any, ii: number) => {
 				if (!it?.jp || !(it.cn || it.en)) return;
-				const ex = exampleFromReadingDay(it.jp, day);
+				const ex = exampleFromReadingDay(it.jp, day) || fallbackVocabExample(it.jp, it.cn, it.en);
 				const jpHtml = annotateText(it.jp, { reading: it.kana, readings });
 				items.push({
 					id: `${module}:${w.n}-${day.day}:v${ii}:${it.jp}`,
@@ -290,15 +428,13 @@ export function cardsFromReadingWeeks(weeks: any[], module: string): MemoryCardI
 					kind: "word",
 					week: w.n,
 					day: day.day,
-					exampleJp: ex?.jp,
-					exampleJpHtml: ex?.jpHtml || (ex?.jp ? annotateText(ex.jp, { readings }) : undefined),
-					exampleCn: ex?.cn,
-					exampleEn: ex?.en,
+					...attachExample(ex, readings),
 				});
 			});
 			(day.expressions || []).forEach((it: any, ii: number) => {
 				if (!it?.jp || !(it.cn || it.en)) return;
 				const jpHtml = annotateText(it.jp, { reading: it.kana, readings });
+				const ex = exampleFromReadingDay(it.jp, day) || fallbackVocabExample(it.jp, it.cn, it.en);
 				items.push({
 					id: `${module}:${w.n}-${day.day}:e${ii}:${it.jp}`,
 					jp: it.jp,
@@ -309,6 +445,7 @@ export function cardsFromReadingWeeks(weeks: any[], module: string): MemoryCardI
 					kind: "expression",
 					week: w.n,
 					day: day.day,
+					...attachExample(ex?.jp === it.jp ? undefined : ex, readings),
 				});
 			});
 		}
@@ -355,18 +492,14 @@ export function cardsFromListeningLesson(
 	readings: Record<string, string> = BASE_READINGS,
 ): MemoryCardItem[] {
 	const items: MemoryCardItem[] = [];
-	let lastP: { jp: string; cn?: string; en?: string } | null = null;
+	const snippets = collectListeningSnippets(lesson);
 	(lesson.blocks || []).forEach((block, bi) => {
-		if (block.type === "p") lastP = { jp: block.jp, cn: block.cn, en: block.en };
-		if (block.type === "example" && block.lines?.length) {
-			lastP = { jp: block.lines[0], cn: block.title };
-		}
 		if (block.type !== "kv") return;
 		block.rows.forEach((row, ri) => {
 			const parsed = parseListeningHead(row.k);
 			const gloss = splitListeningGloss(row.v);
 			if (!parsed.jp || !(gloss.cn || gloss.en)) return;
-			const ex = lastP && lastP.jp.includes(parsed.jp) ? lastP : undefined;
+			const ex = exampleFromCorpus(parsed.jp, snippets) || fallbackVocabExample(parsed.jp, gloss.cn, gloss.en);
 			const jpHtml = annotateText(parsed.jp, { reading: parsed.reading, readings });
 			items.push({
 				id: `${module}:${chapter}-${section}:${bi}-${ri}:${parsed.jp}`,
@@ -378,10 +511,7 @@ export function cardsFromListeningLesson(
 				kind: "word",
 				week: chapter,
 				day: section,
-				exampleJp: ex?.jp,
-				exampleJpHtml: ex?.jp ? annotateText(ex.jp, { readings }) : undefined,
-				exampleCn: ex?.cn,
-				exampleEn: ex?.en,
+				...attachExample(ex, readings),
 			});
 		});
 	});
