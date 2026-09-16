@@ -9,6 +9,7 @@ import {
 	cardsFromListeningLesson,
 	cardsFromReadingWeeks,
 	cardsFromVocabWeeks,
+	cleanQuizHtml,
 	exampleFromVocabDay,
 	parseListeningHead,
 	splitListeningGloss,
@@ -110,6 +111,17 @@ describe("memory deck builders", () => {
 		expect(items[1].exampleCn).toBe("体检在上午进行。");
 	});
 
+	it("keeps furigana when filling a quiz example", () => {
+		expect(
+			cleanQuizHtml(
+				"<ruby>私<rt>わたし</rt></ruby>は10<ruby>階<rt>かい</rt></ruby>（a. <ruby>建<rt>た</rt></ruby>て　b. <ruby>建<rt>た</rt></ruby>ち）のマンションに<ruby>住<rt>す</rt></ruby>んでいます。",
+				["建て"],
+			),
+		).toBe(
+			"<ruby>私<rt>わたし</rt></ruby>は10<ruby>階<rt>かい</rt></ruby><ruby>建<rt>た</rt></ruby>てのマンションに<ruby>住<rt>す</rt></ruby>んでいます。",
+		);
+	});
+
 	it("pulls a vocab example from the day's quiz sentence", () => {
 		expect(
 			exampleFromVocabDay("建て", {
@@ -119,6 +131,7 @@ describe("memory deck builders", () => {
 	});
 
 	it("finds a vocab example in another day's quiz, not only the same day", () => {
+		V2.daily_translations = { w1d6: { items: [{ n: 1, translation: "这个月的房租已经付完了。" }] } };
 		const items = cardsFromVocabWeeks(
 			[
 				{
@@ -131,7 +144,19 @@ describe("memory deck builders", () => {
 						{
 							day: 6,
 							sections: [{ items: [{ jp: "支払い", cn: "支付", en: "payment" }] }],
-							exercises: { sections: [{ items: [{ q: "今月分の家賃の（a. 支払い　b. 支出）を済ませた。" }] }] },
+							exercises: {
+								sections: [
+									{
+										items: [
+											{
+												n: 1,
+												q: "今月分の家賃の（a. 支払い　b. 支出）を済ませた。",
+												q_r: "今月<ruby>分<rt>ぶん</rt></ruby>の<ruby>家賃<rt>やちん</rt></ruby>の（a. <ruby>支払<rt>しはら</rt></ruby>い　b. <ruby>支出<rt>ししゅつ</rt></ruby>）を<ruby>済<rt>す</rt></ruby>ませた。",
+											},
+										],
+									},
+								],
+							},
 						},
 					],
 				},
@@ -139,7 +164,9 @@ describe("memory deck builders", () => {
 			"n2vocab",
 		);
 		expect(items[0].exampleJp).toBe("今月分の家賃の支払いを済ませた。");
-		expect(items[0].exampleCn).toBeUndefined();
+		expect(items[0].exampleJpHtml).toContain("<rt>やちん</rt>");
+		expect(items[0].exampleReading).toContain("やちん");
+		expect(items[0].exampleCn).toBe("这个月的房租已经付完了。");
 	});
 
 	it("builds reading cards from vocab and expressions", () => {
@@ -211,7 +238,17 @@ describe("ModuleCardsPage", () => {
 							},
 						],
 						exercises: {
-							sections: [{ items: [{ q: "私は10階（a. 建て　b. 建ち）のマンションに住んでいます。" }] }],
+							sections: [
+								{
+									items: [
+										{
+											n: 1,
+											q: "私は10階（a. 建て　b. 建ち）のマンションに住んでいます。",
+											q_r: "<ruby>私<rt>わたし</rt></ruby>は10<ruby>階<rt>かい</rt></ruby>（a. <ruby>建<rt>た</rt></ruby>て　b. <ruby>建<rt>た</rt></ruby>ち）のマンションに<ruby>住<rt>す</rt></ruby>んでいます。",
+										},
+									],
+								},
+							],
 						},
 					},
 				],
@@ -222,7 +259,9 @@ describe("ModuleCardsPage", () => {
 		await user.click(screen.getByText("回想读音和意思，点击翻面"));
 		expect(document.querySelector(".review-reading")?.textContent).toBe("たて");
 		expect(screen.getByText("建成…层")).toBeInTheDocument();
-		expect(document.querySelector(".fcard-ex ruby rt")).toBeTruthy();
+		expect(document.querySelector(".fcard-ex ruby rt")?.textContent).toBe("わたし");
+		expect(document.querySelector(".fcard-ex .review-reading")?.textContent).toContain("わたし");
+		expect(document.querySelector(".fcard-ex .cn")?.textContent).toBe("（建成…层）");
 		expect(document.querySelector(".fcard-ex .jp")?.textContent).toContain("マンション");
 	});
 

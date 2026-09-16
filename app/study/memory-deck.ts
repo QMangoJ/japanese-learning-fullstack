@@ -4,7 +4,7 @@ import { applyKanjiReadings, buildReviewRuby, toHiragana } from "./lesson-review
 import { getKanjiWordUsage, getReviewedKanjiWordUsage, kanjiWordSurface, type KanjiWord } from "./kanji-word-usage";
 import type { MemoryCardItem } from "./memory-cards";
 import { getN2KanjiWordUsage } from "./n2-kanji-word-usage";
-import { K, K2, V, V2 } from "./store";
+import { K, K2, V, V2, V4 } from "./store";
 
 const BASE_READINGS = kanjiReadings as Record<string, string>;
 
@@ -50,6 +50,11 @@ export function collectReadingsFromVocabWeeks(weeks: any[]): Record<string, stri
 				for (const it of sec.items || []) {
 					if (it.jp_r) harvestRubyReadings(String(it.jp_r), into);
 					addHeadwordReading(into, String(it.jp || ""), it.reading || kanaFromRuby(it.jp_r, it.reading, it.jp));
+				}
+			}
+			for (const sec of day.exercises?.sections || []) {
+				for (const it of sec.items || []) {
+					if (it.q_r) harvestRubyReadings(String(it.q_r), into);
 				}
 			}
 		}
@@ -164,6 +169,30 @@ export function cleanQuizSentence(q: string, needles: string[]): string {
 		.replace(/\s+/g, "");
 }
 
+export function cleanQuizHtml(html: string, needles: string[]): string | undefined {
+	if (!html || !html.includes("<ruby")) return undefined;
+	const optionInner = (chunk: string, letter: string) => {
+		const match = chunk.match(new RegExp(`${letter}\\.\\s*([\\s\\S]*?)(?=[a-dA-Dａ-ｄ]\\. |）|$)`));
+		return match?.[1]?.replace(/[）)]/g, "").trim() || "";
+	};
+	const cleaned = html
+		.replace(/（[a-dA-Dａ-ｄ]\.[\s\S]*?）/g, (chunk) => {
+			const plain = chunk.replace(/<[^>]+>/g, "");
+			const hit = needles.find((n) => plain.includes(n));
+			if (hit) {
+				for (const letter of ["a", "b", "c", "d", "A", "B", "C", "D", "ａ", "ｂ"]) {
+					const inner = optionInner(chunk, letter);
+					const innerPlain = inner.replace(/<[^>]+>/g, "");
+					if (inner && (innerPlain.includes(hit) || hit.includes(innerPlain))) return inner;
+				}
+				return hit;
+			}
+			return optionInner(chunk, "a") || optionInner(chunk, "ａ");
+		})
+		.replace(/\s+/g, "");
+	return cleaned.includes("<ruby") ? cleaned : undefined;
+}
+
 export function exampleFromCorpus(jp: string, corpus: ExampleHit[]): ExampleHit | undefined {
 	const needles = vocabNeedles(jp);
 	const core = stripParens(jp).split(/[／/]/)[0].trim();
@@ -178,41 +207,66 @@ export function exampleFromCorpus(jp: string, corpus: ExampleHit[]): ExampleHit 
 		if (sentence.length < 6 || sentence === jp) continue;
 		const html = item.jp.includes("{")
 			? braceToRubyHtml(item.jp)
-			: item.jpHtml?.includes("<ruby") && !/（[a-dA-Dａ-ｄ]/.test(item.jp)
-				? item.jpHtml
-				: undefined;
+			: /（[a-dA-Dａ-ｄ]/.test(item.jp) && item.jpHtml
+				? cleanQuizHtml(item.jpHtml, sorted)
+				: item.jpHtml?.includes("<ruby")
+					? item.jpHtml
+					: undefined;
 		return { jp: sentence, jpHtml: html, cn: item.cn, en: item.en };
 	}
 	return undefined;
 }
 
-export function exampleFromVocabDay(jp: string, day: { exercises?: { sections?: { items?: { q?: string; q_r?: string }[] }[] } }): ExampleHit | undefined {
+function translationByNumber(items: { n?: number; translation?: string }[] | undefined) {
+	const map = new Map<number, string>();
+	for (const item of items || []) {
+		if (item.n != null && item.translation) map.set(item.n, item.translation);
+	}
+	return map;
+}
+
+export function exampleFromVocabDay(
+	jp: string,
+	day: { week?: number; day?: number; exercises?: { sections?: { items?: { n?: number; q?: string; q_r?: string }[] }[] } },
+	daily?: { items?: { n?: number; translation?: string }[] },
+): ExampleHit | undefined {
+	const byN = translationByNumber(daily?.items);
 	const corpus: ExampleHit[] = [];
 	for (const sec of day.exercises?.sections || []) {
 		for (const it of sec.items || []) {
-			if (it.q) corpus.push({ jp: String(it.q), jpHtml: it.q_r });
+			if (it.q) corpus.push({ jp: String(it.q), jpHtml: it.q_r, cn: byN.get(it.n!) });
 		}
 	}
 	return exampleFromCorpus(jp, corpus);
 }
 
-function collectVocabQuizCorpus(weeks: any[]): ExampleHit[] {
+function collectVocabQuizCorpus(
+	weeks: any[],
+	daily?: Record<string, { items?: { n?: number; translation?: string }[] }>,
+): ExampleHit[] {
 	const out: ExampleHit[] = [];
 	for (const w of weeks || []) {
 		for (const day of w.days || []) {
+			const byN = translationByNumber(daily?.[`w${w.n}d${day.day}`]?.items);
 			for (const sec of day.exercises?.sections || []) {
 				for (const it of sec.items || []) {
-					if (it.q) out.push({ jp: String(it.q), jpHtml: it.q_r });
+					if (it.q) out.push({ jp: String(it.q), jpHtml: it.q_r, cn: byN.get(it.n) });
 				}
 			}
 			for (const key of ["mondai1", "mondai2", "mondai3", "mondai4"] as const) {
 				for (const it of day[key]?.items || []) {
-					if (it.q) out.push({ jp: String(it.q), jpHtml: it.q_r });
+					if (it.q) out.push({ jp: String(it.q), jpHtml: it.q_r, cn: byN.get(it.n) });
 				}
 			}
 		}
 	}
 	return out;
+}
+
+function vocabBook(module: string) {
+	if (module === "n2vocab") return V2;
+	if (module === "n4vocab") return V4;
+	return V;
 }
 
 function fallbackVocabExample(jp: string, cn?: string, en?: string): ExampleHit {
@@ -308,19 +362,22 @@ function kanjiExample(word: KanjiWord, module: string, readings: Record<string, 
 	};
 }
 
-function attachExample(ex: ExampleHit | undefined, readings: Record<string, string>) {
+function attachExample(ex: ExampleHit | undefined, readings: Record<string, string>, wordCn?: string) {
 	if (!ex?.jp) return {};
+	const jpHtml = annotateText(ex.jp, { html: ex.jpHtml, readings }) || ex.jpHtml;
 	return {
 		exampleJp: ex.jp,
-		exampleJpHtml: annotateText(ex.jp, { html: ex.jpHtml, readings }),
-		exampleCn: ex.cn,
+		exampleJpHtml: jpHtml,
+		exampleReading: kanaFromRuby(jpHtml, undefined, ex.jp),
+		exampleCn: ex.cn || (wordCn ? `（${wordCn}）` : undefined),
 		exampleEn: ex.en,
 	};
 }
 
 export function cardsFromVocabWeeks(weeks: any[], module: string): MemoryCardItem[] {
 	const readings = mergedReadings(collectReadingsFromVocabWeeks(weeks));
-	const bookCorpus = collectVocabQuizCorpus(weeks);
+	const daily = vocabBook(module).daily_translations;
+	const bookCorpus = collectVocabQuizCorpus(weeks, daily);
 	const items: MemoryCardItem[] = [];
 	for (const w of weeks || []) {
 		for (const day of w.days || []) {
@@ -329,7 +386,9 @@ export function cardsFromVocabWeeks(weeks: any[], module: string): MemoryCardIte
 					if (!it?.jp || !(it.cn || it.en)) return;
 					const jpHtml = annotateText(it.jp, { html: it.jp_r, reading: it.reading, readings });
 					const ex =
-						exampleFromVocabDay(it.jp, day) || exampleFromCorpus(it.jp, bookCorpus) || fallbackVocabExample(it.jp, it.cn, it.en);
+						exampleFromVocabDay(it.jp, day, daily?.[`w${w.n}d${day.day}`]) ||
+						exampleFromCorpus(it.jp, bookCorpus) ||
+						fallbackVocabExample(it.jp, it.cn, it.en);
 					items.push({
 						id: `${module}:${w.n}-${day.day}:${si}-${ii}:${it.jp}`,
 						jp: it.jp,
@@ -340,7 +399,7 @@ export function cardsFromVocabWeeks(weeks: any[], module: string): MemoryCardIte
 						kind: "word",
 						week: w.n,
 						day: day.day,
-						...attachExample(ex, readings),
+						...attachExample(ex, readings, it.cn),
 					});
 				});
 			});
@@ -365,8 +424,15 @@ export function cardsFromKanjiWeeks(weeks: any[], module: string): MemoryCardIte
 					const jpHtml = annotateText(wd.jp, { html: wd.jp_r, reading: wd.reading, readings });
 					const authored = kanjiExample(wd, module, readings);
 					const mined = authored.exampleJp
-						? null
+						? undefined
 						: exampleFromCorpus(kanjiWordSurface(wd), quizCorpus) || exampleFromCorpus(wd.jp, quizCorpus);
+					const fallback = !authored.exampleJp && !mined ? kanjiExampleFromUsage(getKanjiWordUsage(wd), readings) : undefined;
+					const example = authored.exampleJp
+						? { jp: authored.exampleJp, jpHtml: authored.exampleJpHtml, cn: authored.exampleCn, en: authored.exampleEn }
+						: mined ||
+							(fallback
+								? { jp: fallback.exampleJp, jpHtml: fallback.exampleJpHtml, cn: fallback.exampleCn, en: fallback.exampleEn }
+								: undefined);
 					items.push({
 						id: `${module}:${w.n}-${day.day}:${ki}-${wi}:${wd.jp}`,
 						jp: wd.jp,
@@ -377,11 +443,7 @@ export function cardsFromKanjiWeeks(weeks: any[], module: string): MemoryCardIte
 						kind: "word",
 						week: w.n,
 						day: day.day,
-						...(authored.exampleJp
-							? authored
-							: mined
-								? attachExample(mined, readings)
-								: kanjiExampleFromUsage(getKanjiWordUsage(wd), readings)),
+						...attachExample(example, readings, wd.cn),
 					});
 				});
 			});
@@ -428,7 +490,7 @@ export function cardsFromReadingWeeks(weeks: any[], module: string): MemoryCardI
 					kind: "word",
 					week: w.n,
 					day: day.day,
-					...attachExample(ex, readings),
+					...attachExample(ex, readings, it.cn),
 				});
 			});
 			(day.expressions || []).forEach((it: any, ii: number) => {
@@ -445,7 +507,7 @@ export function cardsFromReadingWeeks(weeks: any[], module: string): MemoryCardI
 					kind: "expression",
 					week: w.n,
 					day: day.day,
-					...attachExample(ex?.jp === it.jp ? undefined : ex, readings),
+					...attachExample(ex?.jp === it.jp ? undefined : ex, readings, it.cn),
 				});
 			});
 		}
@@ -511,7 +573,7 @@ export function cardsFromListeningLesson(
 				kind: "word",
 				week: chapter,
 				day: section,
-				...attachExample(ex, readings),
+				...attachExample(ex, readings, gloss.cn),
 			});
 		});
 	});

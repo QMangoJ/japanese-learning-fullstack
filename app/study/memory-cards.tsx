@@ -18,6 +18,7 @@ export type MemoryCardItem = {
 	en?: string;
 	exampleJp?: string;
 	exampleJpHtml?: string;
+	exampleReading?: string;
 	exampleCn?: string;
 	exampleEn?: string;
 	kind?: MemoryCardKind | string;
@@ -180,6 +181,7 @@ export function MemoryCards({
 								{cur.exampleJpHtml ? <RubyHtml html={cur.exampleJpHtml} /> : cur.exampleJp}{" "}
 								<SayButton text={cur.exampleJp} />
 							</div>
+							{cur.exampleReading ? <div className="review-reading jp">{cur.exampleReading}</div> : null}
 							{cur.exampleCn ? <div className="cn">{cur.exampleCn}</div> : null}
 							{cur.exampleEn ? <div className="en">{cur.exampleEn}</div> : null}
 						</div>
