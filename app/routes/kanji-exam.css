@@ -131,10 +131,13 @@
 .kanji-exam-question.correct label i{color:var(--green)}
 .kanji-exam-question.wrong input{border-color:var(--red);background:var(--red-soft)}
 .kanji-exam-question.wrong label i{color:var(--red)}
-.kanji-exam-correction{display:flex;align-items:center;gap:9px;margin-top:8px;margin-left:66px;color:var(--red);font-size:13px}
+.kanji-exam-correction{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin-top:8px;margin-left:66px;color:var(--red);font-size:13px}
 .kanji-exam-correction span{font-size:10px;font-weight:700}
 .kanji-exam-correction strong{font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:16px}
 .kanji-exam-correction.answer-key{color:var(--green)}
+.kanji-exam-full-kanji{display:inline-flex;align-items:baseline;margin-left:2px;padding:1px 8px;border-radius:8px;background:color-mix(in srgb,var(--ink) 6%,transparent);color:var(--ink);font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:18px;font-style:normal;font-weight:700;line-height:1.35}
+.kanji-exam-full-kanji mark{padding:0 1px;background:var(--green-soft);color:inherit}
+.kanji-exam-history__wrong-item .kanji-exam-full-kanji{margin-left:8px;font-size:16px}
 .kanji-exam-submitbar{position:sticky;bottom:calc(var(--bottom-nav-height) + env(safe-area-inset-bottom) + 8px);z-index:16;display:flex;align-items:center;justify-content:flex-end;gap:14px;margin-top:18px;padding:11px 14px;border:1px solid var(--line);border-radius:14px;background:color-mix(in srgb,var(--card) 92%,transparent);box-shadow:0 8px 28px rgba(0,0,0,.14);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
 .kanji-exam-submitbar span{color:var(--sub);font-size:12px}
 .kanji-exam-submitbar button{padding:10px 16px;border:0;border-radius:10px;background:var(--accent);color:#fff;font-size:13px;font-weight:800;cursor:pointer}

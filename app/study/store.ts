@@ -1140,6 +1140,7 @@ function fullReadingBundle(readingWeeks: any[]) {
 				title_en: day.labelEn || day.label,
 				vocab: day.vocab,
 				grammar: day.grammar,
+				expressions: day.point?.expressions,
 			})),
 		})),
 	};

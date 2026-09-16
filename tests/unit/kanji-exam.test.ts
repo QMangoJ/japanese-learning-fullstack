@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 
 import {
 	KANJI_EXAM_BATCHES,
+	filledKanjiExamForm,
 	isKanjiExamAnswerCorrect,
 	normalizeKanjiExamAnswer,
 	questionsForMode,
@@ -73,6 +74,9 @@ describe("kanji exam question bank", () => {
 		const cafe = questionsForMode(batch, "writing").find((question) => question.prompt === "きっさてん");
 		expect(cafe).toMatchObject({ target: "てん", answer: "店" });
 		expect(cafe && isKanjiExamAnswerCorrect(cafe, "喫茶店")).toBe(false);
+		expect(cafe && filledKanjiExamForm(cafe)).toBe("きっさ店");
+		const shop = questionsForMode(batch, "reading").find((question) => question.target === "店員");
+		expect(shop && filledKanjiExamForm(shop)).toBe("店員");
 
 		for (const item of KANJI_EXAM_BATCHES) {
 			for (const lesson of item.lessons) {

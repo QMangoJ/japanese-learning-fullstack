@@ -44,6 +44,22 @@ describe("KanjiExamPage answers", () => {
 		expect(container.querySelectorAll(".kanji-exam-english-support")).toHaveLength(preference === "1" ? 9 : 0);
 	});
 
+	it("shows the complete kanji form next to writing answers", async () => {
+		const user = userEvent.setup();
+		const { container } = render(<KanjiExamPage />);
+		await user.click(screen.getByRole("button", { name: /只练汉字|Kanji only/ }));
+		await user.click(screen.getByRole("button", { name: /整章全部|Entire chapter/ }));
+		await user.click(screen.getByRole("button", { name: /开始随机练习|Start randomized practice/ }));
+		await user.click(screen.getByRole("button", { name: /显示全部答案|Show all answers/ }));
+		const cafe = [...container.querySelectorAll(".kanji-exam-question")].find((item) =>
+			item.querySelector("p")?.textContent?.includes("きっさてん"),
+		);
+		expect(cafe).toBeTruthy();
+		expect(cafe!.querySelector(".kanji-exam-correction strong")?.textContent).toBe("店");
+		expect(cafe!.querySelector(".kanji-exam-full-kanji")?.textContent).toBe("きっさ店");
+		expect(cafe!.querySelector(".kanji-exam-full-kanji mark")?.textContent).toBe("店");
+	});
+
 	it("reveals and hides every answer without filling the response inputs", async () => {
 		const user = userEvent.setup();
 		const { container } = render(<KanjiExamPage />);

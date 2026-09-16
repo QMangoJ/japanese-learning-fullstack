@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 
 import {
 	KANJI_EXAM_BATCHES,
+	filledKanjiExamForm,
 	isKanjiExamAnswerCorrect,
 	questionsForMode,
 	shuffleKanjiExamQuestions,
@@ -73,7 +74,7 @@ function storeEnglishSupport(value: boolean) {
 	if (typeof window !== "undefined") localStorage.setItem(ENGLISH_SUPPORT_KEY, value ? "1" : "0");
 }
 
-function MarkedPrompt({ question }: { question: KanjiExamQuestion }) {
+function MarkedPrompt({ question }: { question: Pick<KanjiExamQuestion, "prompt" | "target"> }) {
 	const index = question.prompt.indexOf(question.target);
 	if (index < 0) return <>{question.prompt}</>;
 	return (
@@ -82,6 +83,39 @@ function MarkedPrompt({ question }: { question: KanjiExamQuestion }) {
 			<mark>{question.target}</mark>
 			{question.prompt.slice(index + question.target.length)}
 		</>
+	);
+}
+
+function FilledKanji({ question }: { question: Pick<KanjiExamQuestion, "kind" | "prompt" | "target" | "answer"> }) {
+	const filled = filledKanjiExamForm(question);
+	if (!filled || filled === question.answer) return null;
+	if (question.kind === "writing") {
+		const index = question.prompt.indexOf(question.target);
+		if (index < 0) return <b className="kanji-exam-full-kanji">{filled}</b>;
+		return (
+			<b className="kanji-exam-full-kanji">
+				{question.prompt.slice(0, index)}
+				<mark>{question.answer}</mark>
+				{question.prompt.slice(index + question.target.length)}
+			</b>
+		);
+	}
+	return <b className="kanji-exam-full-kanji">{filled}</b>;
+}
+
+function AnswerReveal({
+	question,
+	answerKey = false,
+}: {
+	question: Pick<KanjiExamQuestion, "kind" | "prompt" | "target" | "answer">;
+	answerKey?: boolean;
+}) {
+	return (
+		<div className={`kanji-exam-correction${answerKey ? " answer-key" : ""}`}>
+			<span>{lx("正确答案", "Answer")}</span>
+			<strong>{question.answer}</strong>
+			<FilledKanji question={question} />
+		</div>
 	);
 }
 
@@ -331,7 +365,12 @@ export function KanjiExamPage() {
 														</button>
 													</div>
 													<p><MarkedPrompt question={{ ...wrong, id: wrong.questionId, lessonId: "", page: 0 }} /></p>
-													<span>{lx("你的答案", "Your answer")}: <del>{wrong.userAnswer || "—"}</del>　{lx("正确答案", "Answer")}: <b>{wrong.answer}</b></span>
+													<span>
+														{lx("你的答案", "Your answer")}: <del>{wrong.userAnswer || "—"}</del>
+														{"　"}
+														{lx("正确答案", "Answer")}: <b>{wrong.answer}</b>
+														<FilledKanji question={wrong} />
+													</span>
 													<QuestionMeaning question={wrong} review />
 												</div>
 											))}
@@ -419,9 +458,7 @@ export function KanjiExamPage() {
 										{submitted ? <i>{correct ? "✓" : "×"}</i> : null}
 									</label>
 									{showAllAnswers || (submitted && !correct) ? (
-										<div className={`kanji-exam-correction${!submitted || correct ? " answer-key" : ""}`}>
-											<span>{lx("正确答案", "Answer")}</span><strong>{question.answer}</strong>
-										</div>
+										<AnswerReveal question={question} answerKey={!submitted || correct} />
 									) : null}
 									{submitted ? <QuestionMeaning question={question} review /> : null}
 								</div>

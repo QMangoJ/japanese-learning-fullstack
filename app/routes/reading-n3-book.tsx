@@ -14,6 +14,7 @@ import {
 const readingBooks = { n3: readingN3, n2: readingN2 } as const;
 type ReadingBookKey = keyof typeof readingBooks;
 import { addMistake, isFav, LANG, lx, navTo, registerFavMeta, toggleFav } from "../study/store";
+import { CardsLaunch } from "../study/memory-cards";
 import "./reading-n3-book.css";
 
 /* ------------------------------------------------------------------ *
@@ -665,7 +666,9 @@ function DayView({
 			{data.vocab.length > 0 && (
 				<section className="rb-sheet">
 					<span className="rb-sheet__tag">ことば</span>
-					<p className="rb-instruction">生词・读音</p>
+					<p className="rb-instruction rb-instruction--row">
+						生词・读音 <CardsLaunch label={lx("用记忆卡背这些词 ›", "Study these as flashcards ›")} />
+					</p>
 					<div className="rb-vocab">
 						{data.vocab.map((word, index) => {
 							const favId = `${module}#${data.week}-${data.day}#v${index}`;
