@@ -16,7 +16,7 @@ import {
 	englishSupportForQuestion,
 } from "../data/kanji-exam-english";
 import { chineseMeaningForQuestion } from "../data/kanji-exam-chinese";
-import { lx } from "./store";
+import { LANG, lx } from "./store";
 import "../routes/kanji-exam.css";
 
 const HISTORY_KEY = "jp-kanji-exam-history-v1";
@@ -110,11 +110,27 @@ function AnswerReveal({
 	question: Pick<KanjiExamQuestion, "kind" | "prompt" | "target" | "answer">;
 	answerKey?: boolean;
 }) {
+	const filled = filledKanjiExamForm(question);
+	const cn = chineseMeaningForQuestion(question, filled);
+	const en = englishSupportForQuestion(question, filled).meaning;
 	return (
 		<div className={`kanji-exam-correction${answerKey ? " answer-key" : ""}`}>
 			<span>{lx("正确答案", "Answer")}</span>
 			<strong>{question.answer}</strong>
 			<FilledKanji question={question} />
+			<span className="kanji-exam-answer-gloss">
+				{LANG === "en" ? (
+					<>
+						<i lang="en">{en}</i>
+						{cn ? <i lang="zh-Hans">{cn}</i> : null}
+					</>
+				) : (
+					<>
+						{cn ? <i lang="zh-Hans">{cn}</i> : null}
+						<i lang="en">{en}</i>
+					</>
+				)}
+			</span>
 		</div>
 	);
 }
@@ -124,14 +140,16 @@ function scoreLabel(correct: number, total: number) {
 }
 
 function QuestionMeaning({ question, review = false }: {
-	question: Pick<KanjiExamQuestion, "kind" | "target" | "answer">;
+	question: Pick<KanjiExamQuestion, "kind" | "target" | "answer"> & { prompt?: string };
 	review?: boolean;
 }) {
-	const support = englishSupportForQuestion(question);
+	const filled = question.prompt ? filledKanjiExamForm({ ...question, prompt: question.prompt }) : undefined;
+	const support = englishSupportForQuestion(question, filled);
+	const cn = chineseMeaningForQuestion(question, filled);
 	return (
 		<div className={`kanji-exam-english-support${review ? " kanji-exam-review-meaning" : ""}`}>
 			<b>{review ? `${question.kind === "reading" ? "词义" : "汉字释义"} · ${support.label}` : support.label}</b>
-			{review ? <span lang="zh-Hans">{chineseMeaningForQuestion(question)}</span> : null}
+			{review ? <span lang="zh-Hans">{cn}</span> : null}
 			<span lang="en">{support.meaning}</span>
 		</div>
 	);
@@ -460,7 +478,7 @@ export function KanjiExamPage() {
 									{showAllAnswers || (submitted && !correct) ? (
 										<AnswerReveal question={question} answerKey={!submitted || correct} />
 									) : null}
-									{submitted ? <QuestionMeaning question={question} review /> : null}
+									{submitted && !showAllAnswers && correct ? <QuestionMeaning question={question} review /> : null}
 								</div>
 							</div>
 						);

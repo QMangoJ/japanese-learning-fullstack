@@ -75,8 +75,11 @@ describe("kanji exam question bank", () => {
 		expect(cafe).toMatchObject({ target: "てん", answer: "店" });
 		expect(cafe && isKanjiExamAnswerCorrect(cafe, "喫茶店")).toBe(false);
 		expect(cafe && filledKanjiExamForm(cafe)).toBe("きっさ店");
+		expect(cafe && chineseMeaningForQuestion(cafe, filledKanjiExamForm(cafe))).toBe("店铺；商店");
+		expect(cafe && englishSupportForQuestion(cafe, filledKanjiExamForm(cafe)).meaning).toBe("shop; store");
 		const shop = questionsForMode(batch, "reading").find((question) => question.target === "店員");
 		expect(shop && filledKanjiExamForm(shop)).toBe("店員");
+		expect(shop && chineseMeaningForQuestion(shop, filledKanjiExamForm(shop))).toBe("店员");
 
 		for (const item of KANJI_EXAM_BATCHES) {
 			for (const lesson of item.lessons) {

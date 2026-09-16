@@ -1,8 +1,8 @@
-import { fireEvent, render, screen, within } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
-import { KANJI_EXAM_BATCHES, questionsForMode } from "../../app/data/kanji-exam";
+import { KANJI_EXAM_BATCHES, filledKanjiExamForm, questionsForMode } from "../../app/data/kanji-exam";
 import { englishSupportForQuestion } from "../../app/data/kanji-exam-english";
 import { chineseMeaningForQuestion } from "../../app/data/kanji-exam-chinese";
 import { KanjiExamPage } from "../../app/study/KanjiExamPage";
@@ -30,12 +30,12 @@ describe("KanjiExamPage answers", () => {
 		});
 		await user.click(screen.getByRole("button", { name: /交卷并查看答案|Submit and see answers/ }));
 		expect(screen.getByText(/答对 1 题，答错 9 题|1 correct, 9 incorrect/)).toBeInTheDocument();
-		expect(container.querySelectorAll(".kanji-exam-english-support")).toHaveLength(10);
-		expect(container.querySelectorAll(".kanji-exam-review-meaning")).toHaveLength(10);
+		expect(container.querySelectorAll(".kanji-exam-answer-gloss")).toHaveLength(10);
 		container.querySelectorAll(".kanji-exam-question").forEach((item, index) => {
-			expect(within(item as HTMLElement).getByText(englishSupportForQuestion(testedQuestions[index]).meaning)).toBeInTheDocument();
-			expect(item.querySelector('[lang="zh-Hans"]')).toHaveTextContent(chineseMeaningForQuestion(testedQuestions[index]));
-			expect(item.querySelectorAll('[lang="en"]')).toHaveLength(1);
+			const question = testedQuestions[index];
+			const form = filledKanjiExamForm(question);
+			expect(item.querySelector(".kanji-exam-answer-gloss [lang='en']")).toHaveTextContent(englishSupportForQuestion(question, form).meaning);
+			expect(item.querySelector(".kanji-exam-answer-gloss [lang='zh-Hans']")).toHaveTextContent(chineseMeaningForQuestion(question, form));
 		});
 		expect(localStorage.getItem("jp-kanji-exam-english-support-v1")).toBe(preference);
 		await user.click(screen.getByRole("button", { name: /只重练错题（9）|Retry incorrect \(9\)/ }));
@@ -58,6 +58,8 @@ describe("KanjiExamPage answers", () => {
 		expect(cafe!.querySelector(".kanji-exam-correction strong")?.textContent).toBe("店");
 		expect(cafe!.querySelector(".kanji-exam-full-kanji")?.textContent).toBe("きっさ店");
 		expect(cafe!.querySelector(".kanji-exam-full-kanji mark")?.textContent).toBe("店");
+		expect(cafe!.querySelector(".kanji-exam-answer-gloss [lang='zh-Hans']")?.textContent).toBe("店铺；商店");
+		expect(cafe!.querySelector(".kanji-exam-answer-gloss [lang='en']")?.textContent).toBe("shop; store");
 	});
 
 	it("reveals and hides every answer without filling the response inputs", async () => {
