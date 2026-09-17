@@ -3,7 +3,7 @@ import { readFile } from "node:fs/promises";
 import { resolve } from "node:path";
 
 const root = resolve(import.meta.dirname, "..");
-const vocab = JSON.parse(await readFile(resolve(root, "public/data/n2vocab.4e440284d9.json"), "utf8"));
+const vocab = JSON.parse(await readFile(resolve(root, "public/data/n2vocab.90123e4b43.json"), "utf8"));
 const kanji = JSON.parse(await readFile(resolve(root, "public/data/n2kanji.d9739ca8d4.json"), "utf8"));
 const translations = JSON.parse(
 	await readFile(resolve(root, "public/data/n2-vocab-kanji-daily-translations.json"), "utf8"),
@@ -35,7 +35,7 @@ function validateDailyBook(book, generated, label) {
 
 const vocabResult = validateDailyBook(vocab, translations.vocab, "n2vocab");
 const kanjiResult = validateDailyBook(kanji, translations.kanji, "n2kanji");
-assert.equal(vocabResult.itemCount, 357, "n2vocab: unexpected daily question count");
+assert.equal(vocabResult.itemCount, 381, "n2vocab: unexpected daily question count");
 assert.equal(kanjiResult.itemCount, 378, "n2kanji: unexpected daily question count");
 assert.equal(translations.version, 1, "unexpected translation data version");
 assert.match(translations.vocab.w1d1.items[0].translation, /10层|10 层/, "10階建て must mention floors");

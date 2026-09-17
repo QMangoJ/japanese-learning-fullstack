@@ -35,7 +35,7 @@ DATA_FILES = (
 	"public/data/n4vocab.026f711eb7.json",
 	"public/data/n4kanji.655356d8e2.json",
 	"public/data/n2grammar.4e6157570a.json",
-	"public/data/n2vocab.4e440284d9.json",
+	"public/data/n2vocab.90123e4b43.json",
 	"public/data/n2kanji.d9739ca8d4.json",
 	"public/data/common.aa13cae172.json",
 )

@@ -144,7 +144,7 @@ const DATA_FILES: Record<string, string> = {
 	kanji: "kanji.e43232869e.json",
 	vocab: "vocab.856eb48e32.json",
 	n2grammar: "n2grammar.4e6157570a.json",
-	n2vocab: "n2vocab.4e440284d9.json",
+	n2vocab: "n2vocab.90123e4b43.json",
 	n2kanji: "n2kanji.d9739ca8d4.json",
 	n4grammar: "n4grammar.40e138ccdb.json",
 	n4vocab: "n4vocab.026f711eb7.json",
