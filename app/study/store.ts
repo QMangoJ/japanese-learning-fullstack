@@ -144,7 +144,7 @@ const DATA_FILES: Record<string, string> = {
 	kanji: "kanji.e43232869e.json",
 	vocab: "vocab.856eb48e32.json",
 	n2grammar: "n2grammar.4e6157570a.json",
-	n2vocab: "n2vocab.4e440284d9.json",
+	n2vocab: "n2vocab.90123e4b43.json",
 	n2kanji: "n2kanji.d9739ca8d4.json",
 	n4grammar: "n4grammar.40e138ccdb.json",
 	n4vocab: "n4vocab.026f711eb7.json",
@@ -1125,6 +1125,46 @@ export function getSearchIndex() {
 	return buildIndex();
 }
 
+function collectReadingSnippets(day: any): { jp: string; cn?: string; en?: string }[] {
+	const out: { jp: string; cn?: string; en?: string }[] = [];
+	const add = (jp?: string, cn?: string, en?: string) => {
+		if (jp && jp.replace(/\s/g, "").length >= 4) out.push({ jp, cn, en });
+	};
+	const walkBlocks = (blocks: any[] | undefined) => {
+		for (const block of blocks || []) {
+			if (typeof block.jp === "string") add(block.jp, block.cn, block.en);
+			if (block.sub) add(block.sub.jp, block.sub.cn, block.sub.en);
+			if (Array.isArray(block.items)) {
+				for (const item of block.items) add(item.jp, item.cn, item.en);
+			}
+			if (Array.isArray(block.rows)) {
+				for (const row of block.rows) {
+					if (Array.isArray(row)) for (const cell of row) add(cell.jp, cell.cn, cell.en);
+				}
+			}
+		}
+	};
+	for (const tip of day.point?.tips || []) add(tip.jp, tip.cn, tip.en);
+	for (const note of day.point?.notes || []) add(note.jp, note.cn, note.en);
+	walkBlocks(day.renshu?.blocks);
+	walkBlocks(day.mondai?.blocks);
+	for (const question of day.mondai?.questions || []) {
+		add(question.jp, question.cn, question.en);
+		for (const choice of question.choices || []) add(choice.jp, choice.cn, choice.en);
+	}
+	for (const group of day.practice?.groups || []) {
+		walkBlocks(group.blocks);
+		for (const question of group.questions || []) {
+			add(question.jp, question.cn, question.en);
+			for (const choice of question.choices || []) add(choice.jp, choice.cn, choice.en);
+		}
+	}
+	for (const g of day.grammar || []) if (g.example) add(g.example.jp, g.example.cn, g.example.en);
+	for (const note of day.renshu?.pageNotes || []) add(note.jp, note.cn, note.en);
+	for (const note of day.mondai?.pageNotes || []) add(note.jp, note.cn, note.en);
+	return out;
+}
+
 function fullReadingBundle(readingWeeks: any[]) {
 	return {
 		scale: "week" as const,
@@ -1140,6 +1180,8 @@ function fullReadingBundle(readingWeeks: any[]) {
 				title_en: day.labelEn || day.label,
 				vocab: day.vocab,
 				grammar: day.grammar,
+				expressions: day.point?.expressions,
+				snippets: collectReadingSnippets(day),
 			})),
 		})),
 	};

@@ -63,11 +63,17 @@ export function englishLessonLabel(lessonId: string, fallback: string) {
 	return lessonEnglish[lessonId] || fallback;
 }
 
-export function englishSupportForQuestion(question: Pick<KanjiExamQuestion, "kind" | "target" | "answer">) {
+export function englishSupportForQuestion(
+	question: Pick<KanjiExamQuestion, "kind" | "target" | "answer">,
+	form?: string,
+) {
+	if (form && wordMeaning[form]) {
+		return { label: "Word meaning", meaning: wordMeaning[form] };
+	}
 	if (question.kind === "reading") {
 		return { label: "Word meaning", meaning: wordMeaning[question.target] || "Meaning not yet reviewed" };
 	}
-	return { label: "Kanji meaning", meaning: kanjiMeaning[question.answer] || "Meaning not yet reviewed" };
+	return { label: "Kanji meaning", meaning: kanjiMeaning[question.answer] || wordMeaning[question.answer] || "Meaning not yet reviewed" };
 }
 
 export function missingEnglishSupport(questions: KanjiExamQuestion[]) {

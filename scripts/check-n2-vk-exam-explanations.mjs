@@ -3,7 +3,7 @@ import { readFile } from "node:fs/promises";
 import { resolve } from "node:path";
 
 const root = resolve(import.meta.dirname, "..");
-const vocabBook = JSON.parse(await readFile(resolve(root, "public/data/n2vocab.4e440284d9.json"), "utf8"));
+const vocabBook = JSON.parse(await readFile(resolve(root, "public/data/n2vocab.90123e4b43.json"), "utf8"));
 const kanjiBook = JSON.parse(await readFile(resolve(root, "public/data/n2kanji.d9739ca8d4.json"), "utf8"));
 const vocabExam = JSON.parse(await readFile(resolve(root, "public/data/n2-vocab-exam-explanations.json"), "utf8"));
 const kanjiExam = JSON.parse(await readFile(resolve(root, "public/data/n2-kanji-exam-explanations.json"), "utf8"));

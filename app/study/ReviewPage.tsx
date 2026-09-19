@@ -1,15 +1,6 @@
-import { Fragment, useEffect, useMemo, useState, useSyncExternalStore } from "react";
+import { useEffect, useState } from "react";
 
-import { RubyHtml, SayButton } from "../routes/study-common";
-import {
-	LANG,
-	getDisplayVersion,
-	lx,
-	navTo,
-	noRuby,
-	subscribeDisplay,
-	toggleDisplay,
-} from "./store";
+import { lx, navTo, LANG } from "./store";
 import {
 	buildReviewRuby,
 	formatReviewDate,
@@ -17,23 +8,18 @@ import {
 	formatReviewWeekday,
 	isLessonReviewPayload,
 	reviewKanaLine,
+	reviewSurfaceText,
 	jstToday,
 	reviewDayCounts,
 	type LessonReviewPayload,
 	type ReviewDay,
-	type ReviewItem,
-	type ReviewKind,
 } from "./lesson-review";
 import {
-	isReviewKnown,
 	loadReviewMastery,
 	reviewUnknownCount,
-	setReviewKnown,
 	type ReviewMasteryMap,
 } from "./lesson-review-mastery";
-
-type KindFilter = "all" | ReviewKind;
-type SkillFilter = "all" | "unknown" | "known";
+import { MemoryCards, REVIEW_MASTERY_KEY, type MemoryCardItem } from "./memory-cards";
 
 export function ReviewPage({ dateId }: { dateId: string | null }) {
 	const [payload, setPayload] = useState<LessonReviewPayload | null>(null);
@@ -42,6 +28,9 @@ export function ReviewPage({ dateId }: { dateId: string | null }) {
 
 	useEffect(() => {
 		setMastery(loadReviewMastery());
+	}, [dateId]);
+
+	useEffect(() => {
 		let cancelled = false;
 		(async () => {
 			try {
@@ -74,7 +63,7 @@ export function ReviewPage({ dateId }: { dateId: string | null }) {
 	}
 
 	return day ? (
-		<ReviewCards day={day} mastery={mastery} setMastery={setMastery} />
+		<ReviewCards day={day} />
 	) : (
 		<ReviewCatalog days={payload.days} fetchedAt={payload.fetchedAt} mastery={mastery} />
 	);
@@ -190,218 +179,47 @@ function DayButton({ day, today = false, mastery }: { day: ReviewDay; today?: bo
 	);
 }
 
-function ReviewCards({
-	day,
-	mastery,
-	setMastery,
-}: {
-	day: ReviewDay;
-	mastery: ReviewMasteryMap;
-	setMastery: (map: ReviewMasteryMap) => void;
-}) {
-	useSyncExternalStore(subscribeDisplay, getDisplayVersion, () => 0);
-	const [kind, setKind] = useState<KindFilter>("all");
-	const [skill, setSkill] = useState<SkillFilter>("unknown");
-	const [idx, setIdx] = useState(0);
-	const [flipped, setFlipped] = useState(false);
-	const [order, setOrder] = useState<number[] | null>(null);
-
-	const filtered = useMemo(() => {
-		return day.items.filter((item) => {
-			if (kind !== "all" && item.kind !== kind) return false;
-			const known = isReviewKnown(mastery, day.id, item.jp);
-			if (skill === "known") return known;
-			if (skill === "unknown") return !known;
-			return true;
-		});
-	}, [day.id, day.items, kind, skill, mastery]);
-	const deck = useMemo(() => {
-		if (!order) return filtered;
-		return order.map((i) => filtered[i]).filter(Boolean);
-	}, [filtered, order]);
-	const safeIdx = Math.min(idx, Math.max(0, deck.length));
-	const cur: ReviewItem | undefined = deck[safeIdx];
+function ReviewCards({ day }: { day: ReviewDay }) {
 	const title = day.date ? formatReviewDate(day.date, LANG === "en" ? "en" : "cn") : day.title;
-	const known = cur ? isReviewKnown(mastery, day.id, cur.jp) : false;
-
-	const resetDeck = (nextKind: KindFilter, nextSkill: SkillFilter) => {
-		setKind(nextKind);
-		setSkill(nextSkill);
-		setIdx(0);
-		setFlipped(false);
-		setOrder(null);
-	};
-
-	const mark = (nextKnown: boolean) => {
-		if (!cur) return;
-		setMastery(setReviewKnown(mastery, day.id, cur.jp, nextKnown));
-		setFlipped(false);
-		if (nextKnown && skill === "unknown") setIdx((n) => n);
-		else if (!nextKnown && skill === "known") setIdx((n) => n);
-	};
-
-	let card;
-	if (!deck.length) {
-		card = (
-			<div className="fcard">
-				<div className="empty">
-					{skill === "unknown"
-						? lx("这一天的卡片都记住了 🎉", "You've mastered this day's cards 🎉")
-						: lx("这一天还没有可刷的卡片", "No flashcards for this day")}
-				</div>
-			</div>
-		);
-	} else if (!cur) {
-		card = (
-			<div className="fcard">
-				<div className="empty">
-					{lx("本组已完成 🎉", "Deck complete 🎉")}
-					<br />
-					{lx("点「重新洗牌」再来一轮", "Shuffle to start another round")}
-				</div>
-			</div>
-		);
-	} else if (!flipped) {
-		card = (
-			<div className="fcard" data-fcflip="1" onClick={() => setFlipped(true)}>
-				<div className="review-k">{cur.kind === "sentence" ? lx("句子", "Sentence") : lx("单词", "Word")}</div>
-				<div className="big jp">
-					<ReviewRuby item={cur} />
-				</div>
-				<div className="hint">{lx("回想中/英文，点击翻面", "Recall the meaning, then tap to flip")}</div>
-			</div>
-		);
-	} else {
-		const kana = reviewKanaLine(cur);
-		card = (
-			<div className="fcard" data-fcflip="1" onClick={() => setFlipped(false)}>
-				<div className="backside review-flip" style={{ textAlign: "center" }}>
-					<div className="review-k">{cur.kind === "sentence" ? lx("句子", "Sentence") : lx("单词", "Word")}</div>
-					<div className="jp review-flip-ruby" style={{ fontWeight: 700, fontSize: "22px" }}>
-						<ReviewRuby item={cur} /> <SayButton text={cur.jp} />
-					</div>
-					{kana ? <div className="review-reading jp">{kana}</div> : null}
-					{cur.cn ? <div style={{ fontSize: "18px", marginTop: "10px" }}>{cur.cn}</div> : null}
-					{cur.en ? (
-						<div className="meta" style={{ fontSize: "14px" }}>
-							{cur.en}
-						</div>
-					) : null}
-				</div>
-			</div>
-		);
-	}
-
+	const items: MemoryCardItem[] = day.items.map((item) => ({
+		id: item.jp,
+		jp: reviewSurfaceText(item.jp),
+		jpHtml: item.jp_r || buildReviewRuby(item.jp, item.reading),
+		reading: reviewKanaLine(item),
+		cn: item.cn,
+		en: item.en,
+		kind: item.kind,
+	}));
 	return (
-		<div className="fc-wrap">
-			<div className="crumb">
-				<button type="button" className="crumb-home" onClick={() => navTo("#/review")}>
-					{lx("课堂复习", "Lesson review")}
-				</button>
-				<span className="crumb-sep">›</span>
-				<span>{title}</span>
-			</div>
-			<div className="fc-filter">
-				{(
-					[
-						["all", lx("全部", "All")],
-						["word", lx("单词", "Words")],
-						["sentence", lx("句子", "Sentences")],
-					] as const
-				).map(([value, label]) => (
-					<button key={value} type="button" className={kind === value ? "on" : ""} onClick={() => resetDeck(value, skill)}>
-						{label}
+		<MemoryCards
+			deckId={day.id}
+			storageKey={REVIEW_MASTERY_KEY}
+			items={items}
+			crumb={
+				<div className="crumb">
+					<button type="button" className="crumb-home" onClick={() => navTo("#/review")}>
+						{lx("课堂复习", "Lesson review")}
 					</button>
-				))}
-			</div>
-			<div className="fc-filter">
-				{(
-					[
-						["unknown", lx("未掌握", "To review")],
-						["known", lx("已掌握", "Mastered")],
-						["all", lx("全部熟练度", "All progress")],
-					] as const
-				).map(([value, label]) => (
-					<button key={value} type="button" className={skill === value ? "on" : ""} onClick={() => resetDeck(kind, value)}>
-						{label}
-					</button>
-				))}
-				<button
-					type="button"
-					className={!noRuby ? "on" : ""}
-					aria-pressed={!noRuby}
-					onClick={() => toggleDisplay("ruby")}
-				>
-					{lx("注音", "Readings")}
-				</button>
-			</div>
-			<div className="fc-prog">{deck.length ? `${Math.min(safeIdx + 1, deck.length)} / ${deck.length}` : ""}</div>
-			<Fragment key={cur ? `${day.id}-${kind}-${skill}-${safeIdx}-${flipped}` : `${day.id}-done`}>{card}</Fragment>
-			{cur ? (
-				<div className="review-skill">
-					<button type="button" className={!known ? "on" : ""} onClick={() => mark(false)}>
-						{lx("还没记住", "Still learning")}
-					</button>
-					<button type="button" className={known ? "on known" : ""} onClick={() => mark(true)}>
-						{lx("已经记住", "Got it")}
-					</button>
+					<span className="crumb-sep">›</span>
+					<span>{title}</span>
 				</div>
-			) : null}
-			<div className="fc-btns">
-				<button
-					type="button"
-					data-fc="prev"
-					onClick={() => {
-						setIdx((n) => Math.max(0, n - 1));
-						setFlipped(false);
-					}}
-				>
-					‹ {lx("上一张", "Prev")}
-				</button>
-				<button
-					type="button"
-					className="primary"
-					data-fc="next"
-					onClick={() => {
-						setIdx((n) => n + 1);
-						setFlipped(false);
-					}}
-				>
-					{lx("下一张", "Next")} ›
-				</button>
-				<button
-					type="button"
-					data-fc="shuffle"
-					onClick={() => {
-						setOrder(shuffleOrder(filtered.length));
-						setIdx(0);
-						setFlipped(false);
-					}}
-				>
-					{lx("重新洗牌", "Shuffle")}
-				</button>
-			</div>
-		</div>
+			}
+			kindOptions={[
+				{ value: "all", label: lx("全部", "All") },
+				{ value: "word", label: lx("单词", "Words") },
+				{ value: "sentence", label: lx("句子", "Sentences") },
+			]}
+			hint={lx("回想中/英文，点击翻面", "Recall the meaning, then tap to flip")}
+			emptyUnknown={lx("这一天的卡片都记住了 🎉", "You've mastered this day's cards 🎉")}
+			emptyAll={lx("这一天还没有可刷的卡片", "No flashcards for this day")}
+		/>
 	);
 }
 
 function reviewPreviewText(jp: string): string {
-	const text = jp.replace(/[（(][^）)]*[）)]?/g, "").trim();
+	const text = reviewSurfaceText(jp);
 	if (text.length <= 18) return text;
 	return `${text.slice(0, 18)}…`;
 }
 
-function ReviewRuby({ item }: { item: ReviewItem }) {
-	const html = item.jp_r || buildReviewRuby(item.jp, item.reading);
-	if (html) return <RubyHtml html={html} />;
-	return <>{item.jp}</>;
-}
 
-function shuffleOrder(length: number): number[] {
-	const order = Array.from({ length }, (_, i) => i);
-	for (let i = order.length - 1; i > 0; i--) {
-		const j = Math.floor(Math.random() * (i + 1));
-		[order[i], order[j]] = [order[j], order[i]];
-	}
-	return order;
-}

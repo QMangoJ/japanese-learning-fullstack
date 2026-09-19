@@ -282,3 +282,12 @@ export function isKanjiExamAnswerCorrect(question: KanjiExamQuestion, value: str
 		(candidate) => normalizeKanjiExamAnswer(candidate, question.kind) === answer,
 	);
 }
+
+export function filledKanjiExamForm(
+	question: Pick<KanjiExamQuestion, "kind" | "prompt" | "target" | "answer">,
+): string {
+	if (question.kind === "reading") return question.target;
+	const index = question.prompt.indexOf(question.target);
+	if (index < 0) return question.answer;
+	return question.prompt.slice(0, index) + question.answer + question.prompt.slice(index + question.target.length);
+}

@@ -1,6 +1,7 @@
 import { lazy, Suspense, useEffect, useState, useSyncExternalStore, type ReactNode } from "react";
 
 import { ConnBlock, Fmt, Rr, RubyHtml, SayButton } from "../routes/study-common";
+import { CardsLaunch } from "./memory-cards";
 import { getKanjiWordUsage, kanjiWordSurface } from "./kanji-word-usage";
 import { getN2KanjiWordUsage, loadN2KanjiUsageLater, n2KanjiLaterLoaded, subscribeN2KanjiLater } from "./n2-kanji-word-usage";
 import { ExerciseReset, ExerciseSession, useQuestionProgress } from "./exercise-progress";
@@ -1215,6 +1216,7 @@ function DayVocab({ day, w, d, scrollTok }: { day: any; w: number; d: number; sc
 				<Rr o={day} f="title" /> <span className="meta">{lx(day.title_cn, day.title_en)}</span>
 			</h2>
 			<MemBar />
+			<CardsLaunch />
 			{day.dialog ? (
 				<div className="dialog jp">
 					{(day.dialog.lines_r || day.dialog.lines || []).map((line: string, i: number) => (
@@ -1472,6 +1474,7 @@ function DayKanji({ day, w, d, scrollTok }: { day: any; w: number; d: number; sc
 				</div>
 			) : null}
 			<MemBar />
+			<CardsLaunch />
 			<div className="card kanji-card">
 				{(day.kanji || []).map((k: any, ki: number) => (
 					<div className="krow" id={`k-${w}-${d}-${ki}`} key={ki}>

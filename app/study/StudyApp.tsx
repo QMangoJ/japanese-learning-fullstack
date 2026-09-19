@@ -114,6 +114,9 @@ const LazyKanjiExamPage = lazy(() =>
 const LazyReviewPage = lazy(() =>
 	import("./ReviewPage").then((module) => ({ default: module.ReviewPage })),
 );
+const LazyModuleCardsPage = lazy(() =>
+	import("./ModuleCardsPage").then((module) => ({ default: module.ModuleCardsPage })),
+);
 
 function StudyLoading() {
 	return <div className="empty">{lx("内容加载中…", "Loading content…")}</div>;
@@ -1056,7 +1059,7 @@ export function StudyApp() {
 			<HomePage data={homeData} />
 		);
 	else if (routeKey === "#/search") body = <SearchPage />;
-	else if (routeKey === "#/cards") body = <CardsPage />;
+	else if (routeKey === "#/cards") body = isGram() ? <CardsPage /> : <LazyModuleCardsPage />;
 	else if (routeKey === "#/kanji-exam") body = <LazyKanjiExamPage />;
 	else if (routeKey === "#/favs") body = showingFavFc ? <FavFcPage data={favFcPayload()} /> : <FavsPage data={favsPayload()} />;
 	else if (routeKey === "#/mistakes") body = <MistakesPage data={mistakesPayload()} />;

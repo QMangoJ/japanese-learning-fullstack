@@ -354,6 +354,13 @@ html.theme-dark .rb-toggles button[aria-pressed="true"] {
 	font-weight: 600;
 }
 
+.rb-instruction--row {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 8px;
+}
+
 .rb-instruction-cn {
 	font-size: 13px;
 	color: var(--rb-cn);
