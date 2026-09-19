@@ -8,6 +8,7 @@ import {
 	formatReviewWeekday,
 	isLessonReviewPayload,
 	reviewKanaLine,
+	reviewSurfaceText,
 	jstToday,
 	reviewDayCounts,
 	type LessonReviewPayload,
@@ -182,7 +183,7 @@ function ReviewCards({ day }: { day: ReviewDay }) {
 	const title = day.date ? formatReviewDate(day.date, LANG === "en" ? "en" : "cn") : day.title;
 	const items: MemoryCardItem[] = day.items.map((item) => ({
 		id: item.jp,
-		jp: item.jp,
+		jp: reviewSurfaceText(item.jp),
 		jpHtml: item.jp_r || buildReviewRuby(item.jp, item.reading),
 		reading: reviewKanaLine(item),
 		cn: item.cn,
@@ -216,7 +217,7 @@ function ReviewCards({ day }: { day: ReviewDay }) {
 }
 
 function reviewPreviewText(jp: string): string {
-	const text = jp.replace(/[（(][^）)]*[）)]?/g, "").trim();
+	const text = reviewSurfaceText(jp);
 	if (text.length <= 18) return text;
 	return `${text.slice(0, 18)}…`;
 }

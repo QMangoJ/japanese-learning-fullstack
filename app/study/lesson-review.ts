@@ -301,6 +301,28 @@ export function shouldKeepReviewRuby(jp: string, html: string): boolean {
 	return !rubyHasUncoveredKanji(html);
 }
 
+const KANA_READING = /^[\u3040-\u30ffー\s]+$/;
+const ROMAJI_READING = /^[A-Za-züÜ]+$/;
+
+/** Hide document-annotated pronunciations so the card front is just the word. */
+export function reviewSurfaceText(jp: string): string {
+	if (!jp) return jp;
+	let text = jp;
+	text = text.replace(/[（(]([^）)]*)[）)]?/g, (full, inner: string, offset: number) => {
+		const reading = inner.trim();
+		if (!reading) return full;
+		const isKana = KANA_READING.test(reading) && /[\u3040-\u30ff]/.test(reading);
+		const prev = text.slice(0, offset).trimEnd().slice(-1);
+		const afterKanji = /[一-龯々〆ヵヶ]/.test(prev);
+		const isRomaji = afterKanji && ROMAJI_READING.test(reading) && reading.length <= 12;
+		if (!isKana && !isRomaji) return full;
+		if (offset === 0 && !text.slice(offset + full.length).trim()) return reading.replace(/\s+/g, "");
+		return "";
+	});
+	text = text.replace(/^(.*?[一-龯々〆ヵヶ][^\s]*)\s+([\u3040-\u30ffー]{2,24})$/u, "$1");
+	return text.replace(/[^\S\u3000]+/g, " ").replace(/[ \u3000]+([。、！？!?])/g, "$1").trim();
+}
+
 export function reviewKanaLine(item: ReviewItem): string | undefined {
 	if (item.reading && /^[\u3040-\u30ffー\s・]+$/.test(item.reading)) {
 		return toHiragana(item.reading.replace(/[\s・]+/g, ""));

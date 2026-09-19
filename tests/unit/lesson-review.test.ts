@@ -5,6 +5,7 @@ import {
 	buildReviewRuby,
 	formatReviewDate,
 	reviewKanaLine,
+	reviewSurfaceText,
 	formatReviewDayNum,
 	formatReviewMonth,
 	formatReviewMonthDay,
@@ -133,6 +134,19 @@ describe("lesson review helpers", () => {
 		expect(formatReviewWeekday("2026-09-11", "cn")).toBe("星期五");
 		expect(toKatakana("せんしんこく")).toBe("センシンコク");
 		expect(toHiragana("センシンコク")).toBe("せんしんこく");
+		expect(reviewSurfaceText("先進国（せんしんこく）")).toBe("先進国");
+		expect(reviewSurfaceText("完璧（かんぺき）じゃない")).toBe("完璧じゃない");
+		expect(reviewSurfaceText("汗(あせ)をかく")).toBe("汗をかく");
+		expect(reviewSurfaceText("停（と）める")).toBe("停める");
+		expect(reviewSurfaceText("十話 （じゅうわ")).toBe("十話");
+		expect(reviewSurfaceText("第二次世界大戦（だいにじ せかいたいせん）")).toBe("第二次世界大戦");
+		expect(reviewSurfaceText("もっと楽(らく)になった")).toBe("もっと楽になった");
+		expect(reviewSurfaceText("（ならぶ）")).toBe("ならぶ");
+		expect(reviewSurfaceText("手伝って（ ）けれど、それでは君のためにならない。")).toBe(
+			"手伝って（ ）けれど、それでは君のためにならない。",
+		);
+		expect(reviewSurfaceText("良い休日を（お過ごし下さい）")).toBe("良い休日を（お過ごし下さい）");
+		expect(reviewSurfaceText("朝型 あさがた")).toBe("朝型");
 		expect(buildReviewRuby("先進国（せんしんこく）")).toBe("<ruby>先進国<rt>せんしんこく</rt></ruby>");
 		expect(buildReviewRuby("つうがく（通学）")).toBe("<ruby>通学<rt>つうがく</rt></ruby>");
 		expect(buildReviewRuby("字幕", "じまく")).toBe("<ruby>字幕<rt>じまく</rt></ruby>");
