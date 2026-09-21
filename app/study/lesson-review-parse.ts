@@ -4,6 +4,7 @@ import {
 	buildReviewRuby,
 	LESSON_REVIEW_SOURCE,
 	shouldKeepReviewRuby,
+	toHiragana,
 	type LessonReviewDoc,
 	type LessonReviewPayload,
 	type ReviewDay,
@@ -226,26 +227,65 @@ function applySource(days: ReviewDay[], opts?: { sourceName?: string; sourceSlug
 }
 
 function attachFollowUp(last: ReviewItem, cleaned: string): boolean {
-	if (KANA_ONLY.test(cleaned) && /[一-龯]/.test(last.jp)) {
+	if (KANA_ONLY.test(cleaned)) {
 		const kana = cleaned.replace(/\s+/g, "");
-		if (!last.reading) {
-			last.reading = kana;
-			return true;
+		if (looksLikeReading(kana, last.jp)) {
+			const prev = last.reading?.replace(/[・\s]/g, "") || "";
+			if (!prev) {
+				last.reading = kana;
+				return true;
+			}
+			if (toHiragana(prev) === toHiragana(kana)) return true;
+			if (kana.includes(prev) && kana.length > prev.length) {
+				last.reading = kana;
+				return true;
+			}
 		}
-		if (last.reading.replace(/[・\s]/g, "") === kana) return true;
 	}
 	if (!last.cn && isChineseFollowUp(cleaned, last)) {
+		Object.assign(last, classifyGloss(cleaned));
+		return true;
+	}
+	const lastHead = last.jp.replace(/[（(][\s\S]*/, "").trim();
+	if (lastHead && cleaned.startsWith(lastHead) && cleaned !== last.jp && !/[\u3040-\u30ff]/.test(cleaned.replace(/[（(][^）)]*[）)]?/g, ""))) {
 		Object.assign(last, classifyGloss(cleaned));
 		return true;
 	}
 	return false;
 }
 
-function isChineseFollowUp(text: string, last: ReviewItem): boolean {
-	if (/[\u3040-\u30ff]/.test(text) || !/[\u4e00-\u9fff]/.test(text)) return false;
-	if (last.reading) return true;
-	if (/[，。；]/.test(text)) return true;
-	return /的|了|是|很|会|在|到|把|这|个/.test(text);
+function looksLikeReading(kana: string, jp: string): boolean {
+	const hira = (kana.match(/[\u3041-\u3096]/g) || []).length;
+	const kata = (kana.match(/[\u30a1-\u30f6]/g) || []).length;
+	if (kata > hira) return false;
+	if (kana.length > 24 || kana.includes("／") || kana.includes("/")) return false;
+	const core = jp.replace(/[（(][^）)]*[）)]?/g, "").replace(/\s+/g, "");
+	if (/^[\u30a0-\u30ffー]+$/.test(core) && /^[\u3040-\u309fー]+$/.test(kana)) {
+		return Math.abs(kana.length - core.length) <= 3;
+	}
+	if (!/[一-龯]/.test(jp)) return false;
+	const jpHasCopula = /です|ます|でしょう|あります/.test(jp);
+	if (!jpHasCopula && /です|でしょう/.test(kana)) return false;
+	if (!jpHasCopula && /ます/.test(kana) && kana !== "ますます") return false;
+	const shortWord = core.length <= 8 && !/[。！？!?]/.test(jp);
+	if (shortWord) {
+		if (kana.length > 12) return false;
+		if (/^(きっと|それは|それなら|そうしよう|だって|でも|じゃあ|やっぱり|さらに|ますます)/.test(kana)) return false;
+		if (/(?:よ|ね|かな)$/.test(kana) && kana.length >= 5) return false;
+	} else if (kana.length < Math.min(8, Math.max(3, core.length - 2))) {
+		return false;
+	}
+	return true;
+}
+
+function isChineseFollowUp(text: string, last?: ReviewItem): boolean {
+	const stripped = text.replace(/[（(][^）)]*[）)]?/g, "");
+	if (/[\u3040-\u30ff]/.test(stripped) || !/[\u4e00-\u9fff]/.test(stripped)) return false;
+	if (/[，。；／]/.test(text)) return true;
+	if (/^(自己|这个|那种|表示|用于)/.test(stripped)) return true;
+	const lastCore = last?.jp.replace(/[（(][^）)]*[）)]?/g, "").trim() || "";
+	if (last && /^[\u30a0-\u30ffー]+$/.test(lastCore)) return true;
+	return /[时这从为对来过经现开关还没钱东车语门问间见贝页马齐气爱乐听读写买卖干后里汉儿吗吧您请谢们个很把让给跟头脑馆视剧电满条长发]|的|了/.test(stripped);
 }
 
 function isChineseProse(text: string): boolean {
@@ -349,6 +389,16 @@ function parseItems(line: string): ReviewItem[] {
 		const item = parseItem(line);
 		return item ? [item] : [];
 	}
+	const fw = line.split("　").map((part) => part.trim()).filter(Boolean);
+	if (
+		fw.length >= 2 &&
+		fw.every((part) => HAS_JP.test(part) && !isChineseFollowUp(part) && !isGlossOnly(part))
+	) {
+		return fw.flatMap((part) => {
+			const item = parseItem(part);
+			return item ? [item] : [];
+		});
+	}
 	const tokens = line.split(/\s+/).filter(Boolean);
 	if (
 		tokens.length >= 2 &&
@@ -356,6 +406,7 @@ function parseItems(line: string): ReviewItem[] {
 			(token) =>
 				HAS_JP.test(token) &&
 				/[一-龯]/.test(token) &&
+				!/[ァ-ヶ]/.test(token) &&
 				token.length <= 8 &&
 				!/[。！？!?]/.test(token) &&
 				!/=|＝/.test(token),
@@ -416,7 +467,12 @@ function splitJpGloss(line: string): { jp: string; cn?: string; en?: string } {
 	if (eq) return { jp: eq[0], ...classifyGloss(eq[1]) };
 
 	const fw = line.split("　").map((part) => part.trim()).filter(Boolean);
-	if (fw.length >= 2) return { jp: fw[0], ...classifyGloss(fw.slice(1).join(" ")) };
+	if (fw.length >= 2) {
+		const rest = fw.slice(1).join(" ");
+		if (isGlossOnly(rest) || isChineseFollowUp(rest) || !HAS_JP.test(rest)) {
+			return { jp: fw[0], ...classifyGloss(rest) };
+		}
+	}
 
 	const spaced = line.match(/^(.+?)\s{2,}(.+)$/);
 	if (spaced) return { jp: spaced[1].trim(), ...classifyGloss(spaced[2].trim()) };

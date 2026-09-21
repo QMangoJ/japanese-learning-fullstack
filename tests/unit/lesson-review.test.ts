@@ -126,6 +126,38 @@ describe("lesson review parser", () => {
 		]);
 	});
 
+	it("keeps consecutive class-note lines as separate cards", () => {
+		const [day] = parseLessonReview(`# 2026.09.20 模擬試験N3
+見舞い
+きっとよろこぶよ
+精算機
+制限
+番号を入力する
+レシートのバーコード
+気に入ってる
+それなら
+様子
+ますます
+会場
+`);
+		expect(day.items.map((item) => item.jp)).toEqual([
+			"見舞い",
+			"きっとよろこぶよ",
+			"精算機",
+			"制限",
+			"番号を入力する",
+			"レシートのバーコード",
+			"気に入ってる",
+			"それなら",
+			"様子",
+			"ますます",
+			"会場",
+		]);
+		expect(day.items.every((item) => !item.reading || item.jp.includes("（"))).toBe(true);
+		expect(day.items.find((item) => item.jp === "見舞い")?.cn).toBeUndefined();
+		expect(day.items.find((item) => item.jp === "精算機")?.cn).toBeUndefined();
+	});
+
 	it("parses short month-day headings and Preply reading/translation follow-ups", () => {
 		const days = parseLessonReview(
 			`# 2026.08.14
@@ -147,6 +179,20 @@ describe("lesson review parser", () => {
 			expect.arrayContaining([
 				expect.objectContaining({ jp: "四日ぶり", reading: "よっかぶり", cn: "时隔四天" }),
 				expect.objectContaining({ jp: "先々週に", cn: "在上上周" }),
+			]),
+		);
+		const drama = parseLessonReview(`# 2026.09.08
+ドラマ
+どらま
+电视剧／连续剧
+似てる
+にてる
+像；相似（口语，原形「似ている」）
+`).find((day) => day.date === "2026-09-08")!;
+		expect(drama.items).toEqual(
+			expect.arrayContaining([
+				expect.objectContaining({ jp: "ドラマ", reading: "どらま", cn: "电视剧／连续剧" }),
+				expect.objectContaining({ jp: "似てる", reading: "にてる", cn: "像；相似（口语，原形「似ている」）" }),
 			]),
 		);
 	});
