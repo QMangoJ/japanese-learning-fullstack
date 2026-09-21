@@ -2,7 +2,7 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
-import { KANJI_EXAM_BATCHES, filledKanjiExamForm, questionsForMode } from "../../app/data/kanji-exam";
+import { KANJI_EXAM_BATCHES, completeKanjiWord, questionsForMode } from "../../app/data/kanji-exam";
 import { englishSupportForQuestion } from "../../app/data/kanji-exam-english";
 import { chineseMeaningForQuestion } from "../../app/data/kanji-exam-chinese";
 import { KanjiExamPage } from "../../app/study/KanjiExamPage";
@@ -33,9 +33,9 @@ describe("KanjiExamPage answers", () => {
 		expect(container.querySelectorAll(".kanji-exam-answer-gloss")).toHaveLength(10);
 		container.querySelectorAll(".kanji-exam-question").forEach((item, index) => {
 			const question = testedQuestions[index];
-			const form = filledKanjiExamForm(question);
-			expect(item.querySelector(".kanji-exam-answer-gloss [lang='en']")).toHaveTextContent(englishSupportForQuestion(question, form).meaning);
-			expect(item.querySelector(".kanji-exam-answer-gloss [lang='zh-Hans']")).toHaveTextContent(chineseMeaningForQuestion(question, form));
+			const word = completeKanjiWord(question);
+			expect(item.querySelector(".kanji-exam-answer-gloss [lang='en']")).toHaveTextContent(englishSupportForQuestion(question, word).meaning);
+			expect(item.querySelector(".kanji-exam-answer-gloss [lang='zh-Hans']")).toHaveTextContent(chineseMeaningForQuestion(question, word));
 		});
 		expect(localStorage.getItem("jp-kanji-exam-english-support-v1")).toBe(preference);
 		await user.click(screen.getByRole("button", { name: /只重练错题（9）|Retry incorrect \(9\)/ }));
@@ -56,10 +56,10 @@ describe("KanjiExamPage answers", () => {
 		);
 		expect(cafe).toBeTruthy();
 		expect(cafe!.querySelector(".kanji-exam-correction strong")?.textContent).toBe("店");
-		expect(cafe!.querySelector(".kanji-exam-full-kanji")?.textContent).toBe("きっさ店");
+		expect(cafe!.querySelector(".kanji-exam-full-kanji")?.textContent).toBe("喫茶店");
 		expect(cafe!.querySelector(".kanji-exam-full-kanji mark")?.textContent).toBe("店");
-		expect(cafe!.querySelector(".kanji-exam-answer-gloss [lang='zh-Hans']")?.textContent).toBe("店铺；商店");
-		expect(cafe!.querySelector(".kanji-exam-answer-gloss [lang='en']")?.textContent).toBe("shop; store");
+		expect(cafe!.querySelector(".kanji-exam-answer-gloss [lang='zh-Hans']")?.textContent).toBe("咖啡店；茶馆");
+		expect(cafe!.querySelector(".kanji-exam-answer-gloss [lang='en']")?.textContent).toBe("coffee shop; tea house");
 	});
 
 	it("reveals and hides every answer without filling the response inputs", async () => {
@@ -103,11 +103,15 @@ describe("KanjiExamPage answers", () => {
 		const meanings = container.querySelectorAll(".kanji-exam-history .kanji-exam-review-meaning");
 		expect(meanings).toHaveLength(2);
 		expect(meanings[0].querySelector("b")).toHaveTextContent("词义 · Word meaning");
-		expect(meanings[1].querySelector("b")).toHaveTextContent("汉字释义 · Kanji meaning");
-		for (const meaning of meanings) {
-			expect(meaning.querySelector('[lang="zh-Hans"]')).toHaveTextContent("店铺；商店");
-			expect(meaning.querySelector('[lang="en"]')).toHaveTextContent("shop; store");
-		}
+		expect(meanings[1].querySelector("b")).toHaveTextContent("汉字释义 · Word meaning");
+		expect(meanings[0].querySelector('[lang="zh-Hans"]')).toHaveTextContent("店铺；商店");
+		expect(meanings[0].querySelector('[lang="en"]')).toHaveTextContent("shop; store");
+		expect(meanings[1].querySelector('[lang="zh-Hans"]')).toHaveTextContent("咖啡店；茶馆");
+		expect(meanings[1].querySelector('[lang="en"]')).toHaveTextContent("coffee shop; tea house");
+		const cafeWrong = [...container.querySelectorAll(".kanji-exam-history__wrong-item")].find((item) =>
+			item.textContent?.includes("きっさてん"),
+		);
+		expect(cafeWrong?.querySelector(".kanji-exam-full-kanji")?.textContent).toBe("喫茶店");
 
 		await user.click(screen.getByRole("button", { name: /删除错题：あの店です。|Remove incorrect item: あの店です。/ }));
 		expect(screen.getByText(/错题（1）|Incorrect \(1\)/)).toBeInTheDocument();

@@ -1,4 +1,5 @@
 import { KANJI_EXAM_CHAPTER_3, KANJI_EXAM_CHAPTER_4 } from "./kanji-exam-ch34";
+import { writingCompleteWord, writingWordKey } from "./kanji-exam-words";
 
 export type KanjiExamMode = "reading" | "writing" | "mixed";
 
@@ -290,4 +291,17 @@ export function filledKanjiExamForm(
 	const index = question.prompt.indexOf(question.target);
 	if (index < 0) return question.answer;
 	return question.prompt.slice(0, index) + question.answer + question.prompt.slice(index + question.target.length);
+}
+
+export function completeKanjiWord(
+	question: Pick<KanjiExamQuestion, "kind" | "prompt" | "target" | "answer">,
+): string {
+	if (question.kind === "reading") return question.target;
+	return writingCompleteWord[writingWordKey(question.prompt, question.answer)] || filledKanjiExamForm(question);
+}
+
+export function missingCompleteKanjiWords(questions: readonly KanjiExamQuestion[]): string[] {
+	return questions
+		.filter((question) => question.kind === "writing" && !writingCompleteWord[writingWordKey(question.prompt, question.answer)])
+		.map((question) => question.id);
 }

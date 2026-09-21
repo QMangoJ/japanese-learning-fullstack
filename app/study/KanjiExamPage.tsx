@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 
 import {
 	KANJI_EXAM_BATCHES,
-	filledKanjiExamForm,
+	completeKanjiWord,
 	isKanjiExamAnswerCorrect,
 	questionsForMode,
 	shuffleKanjiExamQuestions,
@@ -87,20 +87,17 @@ function MarkedPrompt({ question }: { question: Pick<KanjiExamQuestion, "prompt"
 }
 
 function FilledKanji({ question }: { question: Pick<KanjiExamQuestion, "kind" | "prompt" | "target" | "answer"> }) {
-	const filled = filledKanjiExamForm(question);
-	if (!filled || filled === question.answer) return null;
-	if (question.kind === "writing") {
-		const index = question.prompt.indexOf(question.target);
-		if (index < 0) return <b className="kanji-exam-full-kanji">{filled}</b>;
-		return (
-			<b className="kanji-exam-full-kanji">
-				{question.prompt.slice(0, index)}
-				<mark>{question.answer}</mark>
-				{question.prompt.slice(index + question.target.length)}
-			</b>
-		);
-	}
-	return <b className="kanji-exam-full-kanji">{filled}</b>;
+	const word = completeKanjiWord(question);
+	if (!word || word === question.answer) return null;
+	const index = word.indexOf(question.answer);
+	if (index < 0) return <b className="kanji-exam-full-kanji">{word}</b>;
+	return (
+		<b className="kanji-exam-full-kanji">
+			{word.slice(0, index)}
+			<mark>{question.answer}</mark>
+			{word.slice(index + question.answer.length)}
+		</b>
+	);
 }
 
 function AnswerReveal({
@@ -110,9 +107,9 @@ function AnswerReveal({
 	question: Pick<KanjiExamQuestion, "kind" | "prompt" | "target" | "answer">;
 	answerKey?: boolean;
 }) {
-	const filled = filledKanjiExamForm(question);
-	const cn = chineseMeaningForQuestion(question, filled);
-	const en = englishSupportForQuestion(question, filled).meaning;
+	const word = completeKanjiWord(question);
+	const cn = chineseMeaningForQuestion(question, word);
+	const en = englishSupportForQuestion(question, word).meaning;
 	return (
 		<div className={`kanji-exam-correction${answerKey ? " answer-key" : ""}`}>
 			<span>{lx("正确答案", "Answer")}</span>
@@ -143,9 +140,9 @@ function QuestionMeaning({ question, review = false }: {
 	question: Pick<KanjiExamQuestion, "kind" | "target" | "answer"> & { prompt?: string };
 	review?: boolean;
 }) {
-	const filled = question.prompt ? filledKanjiExamForm({ ...question, prompt: question.prompt }) : undefined;
-	const support = englishSupportForQuestion(question, filled);
-	const cn = chineseMeaningForQuestion(question, filled);
+	const word = question.prompt ? completeKanjiWord({ ...question, prompt: question.prompt }) : undefined;
+	const support = englishSupportForQuestion(question, word);
+	const cn = chineseMeaningForQuestion(question, word);
 	return (
 		<div className={`kanji-exam-english-support${review ? " kanji-exam-review-meaning" : ""}`}>
 			<b>{review ? `${question.kind === "reading" ? "词义" : "汉字释义"} · ${support.label}` : support.label}</b>

@@ -406,9 +406,10 @@ test.describe("study navigation", () => {
 		await expect(attempt.getByText(/错题（2）|Incorrect \(2\)/)).toBeVisible();
 		await expect(attempt.locator(".kanji-exam-review-meaning")).toHaveCount(2);
 		await expect(attempt.locator(".kanji-exam-review-meaning").first()).toContainText("shop; store");
-		await expect(attempt.locator(".kanji-exam-review-meaning").last()).toContainText("Kanji meaning");
-		await expect(attempt.locator('.kanji-exam-review-meaning [lang="zh-Hans"]')).toHaveText(["店铺；商店", "店铺；商店"]);
-		await expect(attempt.locator('.kanji-exam-review-meaning [lang="en"]')).toHaveText(["shop; store", "shop; store"]);
+		await expect(attempt.locator(".kanji-exam-review-meaning").last()).toContainText("coffee shop; tea house");
+		await expect(attempt.locator('.kanji-exam-review-meaning [lang="zh-Hans"]')).toHaveText(["店铺；商店", "咖啡店；茶馆"]);
+		await expect(attempt.locator('.kanji-exam-review-meaning [lang="en"]')).toHaveText(["shop; store", "coffee shop; tea house"]);
+		await expect(attempt.locator(".kanji-exam-history__wrong-item", { hasText: "きっさてん" }).locator(".kanji-exam-full-kanji")).toHaveText("喫茶店");
 		await attempt.getByRole("button", { name: /删除错题：あの店です。|Remove incorrect item: あの店です。/ }).click();
 		await expect(attempt.getByText(/错题（1）|Incorrect \(1\)/)).toBeVisible();
 		await expect(attempt.locator("summary>span strong")).toHaveText("80");
@@ -434,10 +435,10 @@ test.describe("study navigation", () => {
 		for (const input of await page.locator(".kanji-exam-question input").all()) await input.fill("wrong");
 		await page.getByRole("button", { name: /交卷并查看答案|Submit and see answers/ }).click();
 		await expect(page.locator(".kanji-exam-result")).toContainText(/答对 0 题，答错 10 题|0 correct, 10 incorrect/);
-		await expect(page.locator(".kanji-exam-review-meaning")).toHaveCount(10);
-		await expect(page.locator(".kanji-exam-review-meaning").first()).toBeVisible();
-		const meanings = await page.locator('.kanji-exam-review-meaning [lang="en"]').allTextContents();
-		const chineseMeanings = await page.locator('.kanji-exam-review-meaning [lang="zh-Hans"]').allTextContents();
+		await expect(page.locator(".kanji-exam-answer-gloss")).toHaveCount(10);
+		await expect(page.locator(".kanji-exam-answer-gloss").first()).toBeVisible();
+		const meanings = await page.locator('.kanji-exam-answer-gloss [lang="en"]').allTextContents();
+		const chineseMeanings = await page.locator('.kanji-exam-answer-gloss [lang="zh-Hans"]').allTextContents();
 		expect(meanings).toHaveLength(10);
 		expect(chineseMeanings).toHaveLength(10);
 		expect(meanings.every((meaning) => meaning && meaning !== "Meaning not yet reviewed")).toBe(true);

@@ -1,4 +1,5 @@
 import type { KanjiExamQuestion } from "./kanji-exam";
+import { writingWordGloss } from "./kanji-exam-words";
 
 // Writing questions test the marked kanji, not every character in the prompt.
 // Keep character meanings separate from the contextual vocabulary in reading questions.
@@ -45,6 +46,7 @@ export function chineseMeaningForQuestion(
 	question: Pick<KanjiExamQuestion, "kind" | "target" | "answer">,
 	form?: string,
 ) {
+	if (form && writingWordGloss[form]) return writingWordGloss[form].cn;
 	if (form && wordMeaning[form]) return wordMeaning[form];
-	return (question.kind === "reading" ? wordMeaning[question.target] : kanjiMeaning[question.answer] || wordMeaning[question.answer]) || "词义待补充";
+	return (question.kind === "reading" ? wordMeaning[question.target] : writingWordGloss[question.answer]?.cn || kanjiMeaning[question.answer] || wordMeaning[question.answer]) || "词义待补充";
 }
