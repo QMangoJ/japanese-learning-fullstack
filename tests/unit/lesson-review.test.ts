@@ -12,13 +12,20 @@ import {
 	formatReviewWeekday,
 	isLessonReviewPayload,
 	jstToday,
+	LESSON_REVIEW_DOCS,
 	LESSON_REVIEW_KV_KEY,
 	parseReviewRoute,
+	reviewDateFromId,
 	reviewDayCounts,
 	toHiragana,
 	toKatakana,
 } from "../../app/study/lesson-review";
-import { buildLessonReviewPayload, enrichReviewDays, parseLessonReview } from "../../app/study/lesson-review-parse";
+import {
+	buildLessonReviewPayload,
+	buildLessonReviewPayloadFromDocs,
+	enrichReviewDays,
+	parseLessonReview,
+} from "../../app/study/lesson-review-parse";
 import { fetchGoogleDocText, syncLessonReview } from "../../app/study/lesson-review-sync";
 import { memoryKv } from "./auth-test-utils";
 
@@ -118,6 +125,46 @@ describe("lesson review parser", () => {
 			}),
 		]);
 	});
+
+	it("parses short month-day headings and Preply reading/translation follow-ups", () => {
+		const days = parseLessonReview(
+			`# 2026.08.14
+かしこまりました
+# 8.12
+四日ぶり
+よっかぶり
+时隔四天
+先々週に　｜在上上周
+# 8.5
+話題
+`,
+			{ sourceName: "Preply すみれ先生", sourceSlug: "preply" },
+		);
+		expect(days.map((day) => day.id)).toEqual(["2026-08-14:preply", "2026-08-12:preply", "2026-08-05:preply"]);
+		expect(days.every((day) => day.source === "Preply すみれ先生")).toBe(true);
+		const aug12 = days.find((day) => day.date === "2026-08-12")!;
+		expect(aug12.items).toEqual(
+			expect.arrayContaining([
+				expect.objectContaining({ jp: "四日ぶり", reading: "よっかぶり", cn: "时隔四天" }),
+				expect.objectContaining({ jp: "先々週に", cn: "在上上周" }),
+			]),
+		);
+	});
+
+	it("keeps the same calendar date from two documents as separate decks", () => {
+		const payload = buildLessonReviewPayloadFromDocs(
+			[
+				{ id: "class-doc", name: "Danielさん", slug: "class", markdown: "# 2026.09.02\nわさび　もらえますか？\n" },
+				{ id: "preply-doc", name: "Preply すみれ先生", slug: "preply", markdown: "# 2026.09.02\n人気があります　｜很受欢迎\n" },
+			],
+			{ fetchedAt: "2026-09-21T00:00:00.000Z" },
+		);
+		const days = payload.days.filter((day) => day.date === "2026-09-02");
+		expect(days.map((day) => day.id)).toEqual(["2026-09-02", "2026-09-02:preply"]);
+		expect(days.map((day) => day.source)).toEqual(["Danielさん", "Preply すみれ先生"]);
+		expect(days[0].items[0].jp).toContain("わさび");
+		expect(days[1].items[0]).toMatchObject({ jp: "人気があります", cn: "很受欢迎" });
+	});
 });
 
 describe("lesson review helpers", () => {
@@ -125,6 +172,10 @@ describe("lesson review helpers", () => {
 		expect(parseReviewRoute("#/review")).toEqual({ id: null });
 		expect(parseReviewRoute("#/review/2026-09-11")).toEqual({ id: "2026-09-11" });
 		expect(parseReviewRoute("#/review/note-workplace")).toEqual({ id: "note-workplace" });
+		expect(parseReviewRoute("#/review/2026-09-02:preply")).toEqual({ id: "2026-09-02:preply" });
+		expect(reviewDateFromId("2026-09-02")).toBe("2026-09-02");
+		expect(reviewDateFromId("2026-09-02:preply")).toBe("2026-09-02");
+		expect(reviewDateFromId("note-workplace")).toBeNull();
 		expect(parseReviewRoute("#/cards")).toBeNull();
 		expect(formatReviewDate("2026-09-11", "cn")).toBe("2026年9月11日");
 		expect(formatReviewDate("2026-09-11", "en")).toBe("Sep 11, 2026");
@@ -215,13 +266,20 @@ describe("lesson review helpers", () => {
 describe("weekly google doc sync", () => {
 	it("parses an export and stores it in KV", async () => {
 		const kv = memoryKv();
-		const fetcher = vi.fn(async () => new Response(SAMPLE, { status: 200 }));
+		const fetcher = vi.fn(async (url: string) => {
+			const body = String(url).includes(LESSON_REVIEW_DOCS[1].id)
+				? "# 2026.09.02\n人気があります　｜很受欢迎\n"
+				: SAMPLE;
+			return new Response(body, { status: 200 });
+		});
 		const result = await syncLessonReview({ FAVORITES_KV: kv as unknown as KVNamespace }, fetcher as unknown as typeof fetch);
 		expect(result.ok).toBe(true);
-		expect(result.days).toBe(5);
+		expect(result.days).toBe(6);
 		const stored = JSON.parse(kv.map.get(LESSON_REVIEW_KV_KEY) || "{}");
 		expect(stored.days[0].id).toBe("2026-09-13");
 		expect(stored.days[0].label).toBe("模擬試験N3");
+		expect(stored.days[0].source).toBe("Danielさん");
+		expect(stored.days.find((day: { id: string }) => day.id === "2026-09-02:preply")?.source).toBe("Preply すみれ先生");
 	});
 
 	it("keeps the previous snapshot when export is blocked", async () => {

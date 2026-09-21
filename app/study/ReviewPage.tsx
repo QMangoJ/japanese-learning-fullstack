@@ -98,7 +98,8 @@ function ReviewCatalog({
 	const today = jstToday();
 	const dated = days.filter((day) => day.date);
 	const notes = days.filter((day) => !day.date);
-	const todayDay = dated.find((day) => day.date === today);
+	const todayDays = dated.filter((day) => day.date === today);
+	const todayIds = new Set(todayDays.map((day) => day.id));
 
 	return (
 		<div className="review-wrap">
@@ -111,17 +112,21 @@ function ReviewCatalog({
 					{fetchedAt.slice(0, 10) ? ` · ${fetchedAt.slice(0, 10)}` : ""}
 				</div>
 			) : null}
-			{todayDay ? (
+			{todayDays.length ? (
 				<section className="review-sec">
 					<div className="side-h">{lx("今天", "Today")}</div>
-					<DayButton day={todayDay} today mastery={mastery} />
+					<div className="review-list">
+						{todayDays.map((day) => (
+							<DayButton key={day.id} day={day} today mastery={mastery} />
+						))}
+					</div>
 				</section>
 			) : null}
 			<section className="review-sec">
 				<div className="side-h">{lx("按日期", "By date")}</div>
 				<div className="review-list">
 					{dated
-						.filter((day) => day !== todayDay)
+						.filter((day) => !todayIds.has(day.id))
 						.map((day) => (
 							<DayButton key={day.id} day={day} today={day.date === today} mastery={mastery} />
 						))}
@@ -147,6 +152,7 @@ function DayButton({ day, today = false, mastery }: { day: ReviewDay; today?: bo
 	const lang = LANG === "en" ? "en" : "cn";
 	const title = day.date ? formatReviewMonthDay(day.date, lang) : day.title;
 	const weekday = day.date ? formatReviewWeekday(day.date, lang) : lx("笔记", "Notes");
+	const caption = [day.source, day.label].filter(Boolean).join(" · ");
 	const preview = day.items
 		.slice(0, 3)
 		.map((item) => reviewPreviewText(item.jp))
@@ -158,7 +164,7 @@ function DayButton({ day, today = false, mastery }: { day: ReviewDay; today?: bo
 				{today ? <span className="today-mark">{lx("今天", "Today")}</span> : null}
 			</span>
 			<span className="t">{title}</span>
-			{day.label ? <span className="tc">{day.label}</span> : null}
+			{caption ? <span className="tc">{caption}</span> : null}
 			<span className="review-day__stats">
 				<span className="review-day__chip">{lx(`单词 ${counts.words}`, `${counts.words} words`)}</span>
 				<span className="review-day__chip">{lx(`句子 ${counts.sentences}`, `${counts.sentences} sentences`)}</span>
@@ -180,7 +186,12 @@ function DayButton({ day, today = false, mastery }: { day: ReviewDay; today?: bo
 }
 
 function ReviewCards({ day }: { day: ReviewDay }) {
-	const title = day.date ? formatReviewDate(day.date, LANG === "en" ? "en" : "cn") : day.title;
+	const title = [
+		day.date ? formatReviewDate(day.date, LANG === "en" ? "en" : "cn") : day.title,
+		day.source,
+	]
+		.filter(Boolean)
+		.join(" · ");
 	const items: MemoryCardItem[] = day.items.map((item) => ({
 		id: item.jp,
 		jp: reviewSurfaceText(item.jp),

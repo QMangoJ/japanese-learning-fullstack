@@ -14,6 +14,7 @@ const payload: LessonReviewPayload = {
 			id: "2026-09-11",
 			date: "2026-09-11",
 			title: "2026-09-11",
+			source: "Danielさん",
 			items: [
 				{
 					jp: "先進国（せんしんこく）",
@@ -25,6 +26,13 @@ const payload: LessonReviewPayload = {
 				{ jp: "朝型", jp_r: "<ruby>朝型<rt>あさがた</rt></ruby>", en: "morning person", kind: "word" },
 				{ jp: "練習すれば練習するほど、日本語が上手になる", cn: "越练越好", kind: "sentence" },
 			],
+		},
+		{
+			id: "2026-09-11:preply",
+			date: "2026-09-11",
+			title: "2026-09-11",
+			source: "Preply すみれ先生",
+			items: [{ jp: "四日ぶり", reading: "よっかぶり", cn: "时隔四天", kind: "word" }],
 		},
 		{
 			id: "note-workplace",
@@ -53,16 +61,19 @@ describe("ReviewPage", () => {
 		const seen: string[] = [];
 		setNavImpl((key) => seen.push(key));
 		render(<ReviewPage dateId={null} />);
-		expect(await screen.findByText("9月11日")).toBeInTheDocument();
+		expect(await screen.findAllByText("9月11日")).toHaveLength(2);
+		expect(screen.getByText("Danielさん")).toBeInTheDocument();
+		expect(screen.getByText("Preply すみれ先生")).toBeInTheDocument();
 		expect(screen.getByText("職場で文")).toBeInTheDocument();
 		expect(document.querySelector(".review-day .t")?.textContent).toBe("9月11日");
 		expect([...document.querySelectorAll(".review-day .dp")].map((node) => node.textContent)).toEqual([
 			"先進国",
 			"朝型",
 			"練習すれば練習するほど、日本語が上手…",
+			"四日ぶり",
 			"お世話になっております",
 		]);
-		await user.click(screen.getByText("9月11日"));
+		await user.click(screen.getAllByText("9月11日")[0]);
 		expect(seen).toContain("#/review/2026-09-11");
 	});
 

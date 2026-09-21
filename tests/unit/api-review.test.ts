@@ -12,6 +12,10 @@ describe("/api/review", () => {
 		const body = await res.json();
 		expect(body.days.length).toBe(seed.days.length);
 		expect(body.days[0].items.length).toBeGreaterThan(0);
+		expect(new Set(body.days.map((day: { source?: string }) => day.source))).toEqual(
+			new Set(["Danielさん", "Preply すみれ先生"]),
+		);
+		expect(body.days.filter((day: { date?: string }) => day.date === "2026-09-02")).toHaveLength(2);
 	});
 
 	it("prefers the weekly KV snapshot when it is valid", async () => {

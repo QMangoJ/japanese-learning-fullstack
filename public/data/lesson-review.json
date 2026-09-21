@@ -1,7 +1,294 @@
 {
-	"source": "https://docs.google.com/document/d/12NwKtAV_HFUeOheYvXGMsJl5G2xIcdb4WG_axC23xrU/edit",
-	"fetchedAt": "2026-09-14T13:19:46.032Z",
+	"source": "https://docs.google.com/document/d/12NwKtAV_HFUeOheYvXGMsJl5G2xIcdb4WG_axC23xrU/edit\nhttps://docs.google.com/document/d/1oEZYQYz3Kb3q5bRqNJgdD0TNxUHVEX2PGvLoCju_Cdc/edit",
+	"fetchedAt": "2026-09-21T05:19:47.628Z",
 	"days": [
+		{
+			"id": "2026-09-20",
+			"date": "2026-09-20",
+			"title": "2026-09-20",
+			"label": "模擬試験N3",
+			"items": [
+				{
+					"jp": "見舞い",
+					"kind": "word",
+					"jp_r": "<ruby>見舞<rt>みま</rt></ruby>い",
+					"reading": "きっとよろこぶよ",
+					"cn": "精算機"
+				},
+				{
+					"jp": "制限",
+					"kind": "word",
+					"jp_r": "<ruby>制限<rt>せいげん</rt></ruby>"
+				},
+				{
+					"jp": "機械の画面",
+					"kind": "word",
+					"jp_r": "<ruby>機械<rt>きかい</rt></ruby>の<ruby>画面<rt>がめん</rt></ruby>"
+				},
+				{
+					"jp": "番号を入力する",
+					"kind": "word",
+					"jp_r": "<ruby>番号<rt>ばんごう</rt></ruby>を<ruby>入力<rt>にゅうりょく</rt></ruby>する",
+					"reading": "レシートのバーコード"
+				},
+				{
+					"jp": "あ、しまった",
+					"kind": "word"
+				},
+				{
+					"jp": "しょうがないよ",
+					"kind": "word"
+				},
+				{
+					"jp": "見つけちゃった",
+					"kind": "word"
+				},
+				{
+					"jp": "今年流行ってるでサイン",
+					"kind": "word",
+					"jp_r": "<ruby>今年<rt>ことし</rt></ruby><ruby>流行<rt>りゅうこう</rt></ruby>ってるでサイン"
+				},
+				{
+					"jp": "気に入ってる",
+					"kind": "word",
+					"jp_r": "<ruby>気に入<rt>きにい</rt></ruby>ってる",
+					"reading": "それなら"
+				},
+				{
+					"jp": "セールって書いてあったから",
+					"kind": "sentence",
+					"jp_r": "セールって<ruby>書いて<rt>かいて</rt></ruby>あったから"
+				},
+				{
+					"jp": "安心して",
+					"kind": "word",
+					"jp_r": "<ruby>安心<rt>あんしん</rt></ruby>して",
+					"reading": "そうしようかな"
+				},
+				{
+					"jp": "繰り越す",
+					"kind": "word"
+				},
+				{
+					"jp": "金曜日に変更になりました",
+					"kind": "sentence",
+					"jp_r": "<ruby>金曜日<rt>きんようび</rt></ruby>に<ruby>変更<rt>へんこう</rt></ruby>になりました"
+				},
+				{
+					"jp": "駅で友達に会ったっていうところ",
+					"kind": "sentence",
+					"jp_r": "<ruby>駅<rt>えき</rt></ruby>で<ruby>友達<rt>ともだち</rt></ruby>に<ruby>会った<rt>あった</rt></ruby>っていうところ",
+					"reading": "くるはずです"
+				},
+				{
+					"jp": "チラシ",
+					"kind": "word"
+				},
+				{
+					"jp": "そんなに好きなんだ",
+					"kind": "word",
+					"jp_r": "そんなに<ruby>好きな<rt>すきな</rt></ruby>んだ",
+					"reading": "ストーリー"
+				},
+				{
+					"jp": "試す",
+					"kind": "word"
+				},
+				{
+					"jp": "繋がる",
+					"kind": "word"
+				},
+				{
+					"jp": "レシートに表示されます",
+					"kind": "sentence",
+					"jp_r": "レシートに<ruby>表示<rt>ひょうじ</rt></ruby>されます"
+				},
+				{
+					"jp": "見つからなかったら",
+					"kind": "word"
+				},
+				{
+					"jp": "返却",
+					"kind": "word",
+					"jp_r": "<ruby>返却<rt>へんきゃく</rt></ruby>"
+				},
+				{
+					"jp": "お預かりします",
+					"kind": "sentence",
+					"jp_r": "お<ruby>預かり<rt>あずかり</rt></ruby>します"
+				},
+				{
+					"jp": "予約が入る",
+					"kind": "word",
+					"jp_r": "<ruby>予約<rt>よやく</rt></ruby>が<ruby>入る<rt>はいる</rt></ruby>"
+				},
+				{
+					"jp": "今後",
+					"kind": "word",
+					"jp_r": "<ruby>今<rt>いま</rt></ruby><ruby>後<rt>あと</rt></ruby>"
+				},
+				{
+					"jp": "利用者カード",
+					"kind": "word",
+					"jp_r": "<ruby>利用<rt>りよう</rt></ruby>者カード"
+				},
+				{
+					"jp": "記録を確認します",
+					"kind": "sentence",
+					"jp_r": "<ruby>記録<rt>きろく</rt></ruby>を<ruby>確認<rt>かくにん</rt></ruby>します"
+				},
+				{
+					"jp": "来られる",
+					"kind": "word",
+					"jp_r": "<ruby>来られる<rt>こられる</rt></ruby>"
+				},
+				{
+					"jp": "受けられますか",
+					"kind": "word",
+					"jp_r": "<ruby>受け<rt>うけ</rt></ruby>られますか"
+				},
+				{
+					"jp": "それでもやっぱりほしいと思ったらまた買いに来れば？",
+					"kind": "sentence",
+					"jp_r": "それでもやっぱりほしいと<ruby>思った<rt>おもった</rt></ruby>らまた<ruby>買い<rt>かい</rt></ruby>に来れば？",
+					"reading": "だって"
+				},
+				{
+					"jp": "きっとすぐペラペラになるね！ めっちゃ応援してる！！👍",
+					"kind": "sentence",
+					"cn": "会場"
+				}
+			],
+			"source": "Danielさん"
+		},
+		{
+			"id": "2026-09-17:preply",
+			"date": "2026-09-17",
+			"title": "2026-09-17",
+			"items": [
+				{
+					"jp": "牛乳を温める",
+					"kind": "word",
+					"jp_r": "<ruby>牛乳<rt>ぎゅうにゅう</rt></ruby>を温める"
+				},
+				{
+					"jp": "日本人が演じている",
+					"kind": "word",
+					"jp_r": "<ruby>日本人<rt>にほんじん</rt></ruby>が演じている"
+				},
+				{
+					"jp": "ゆで卵",
+					"kind": "word"
+				},
+				{
+					"jp": "生卵",
+					"kind": "word"
+				},
+				{
+					"jp": "新鮮（しんせん）",
+					"kind": "word",
+					"jp_r": "<ruby>新鮮<rt>しんせん</rt></ruby>",
+					"reading": "しんせん"
+				},
+				{
+					"jp": "チャーハン",
+					"kind": "word"
+				},
+				{
+					"jp": "たまに",
+					"kind": "word"
+				},
+				{
+					"jp": "シンプル",
+					"kind": "word"
+				},
+				{
+					"jp": "四川料理",
+					"kind": "word"
+				},
+				{
+					"jp": "食べることができる",
+					"kind": "word",
+					"jp_r": "<ruby>食べる<rt>たべる</rt></ruby>ことができる"
+				},
+				{
+					"jp": "長蛇の列（ちょうだのれつ）",
+					"kind": "word",
+					"jp_r": "長蛇の<ruby>列<rt>ちょうだのれつ</rt></ruby>",
+					"reading": "ちょうだのれつ"
+				},
+				{
+					"jp": "加工食品(かこうしょくひん",
+					"kind": "word",
+					"jp_r": "<ruby>加工食品<rt>かこうしょくひん</rt></ruby>",
+					"reading": "かこうしょくひん"
+				},
+				{
+					"jp": "セブンイレブン（セブン）",
+					"kind": "word",
+					"reading": "セブン"
+				},
+				{
+					"jp": "そんなにありません",
+					"kind": "sentence"
+				},
+				{
+					"jp": "ほとんど",
+					"kind": "word",
+					"cn": "几乎、大部分",
+					"en": "almost / most"
+				},
+				{
+					"jp": "火鍋",
+					"kind": "word"
+				},
+				{
+					"jp": "拒んだ",
+					"kind": "word"
+				},
+				{
+					"jp": "精神が未熟（せいしんがみじゅく）",
+					"kind": "word",
+					"jp_r": "<ruby>精神<rt>せいしん</rt></ruby>が<ruby>未熟<rt>せいしんがみじゅく</rt></ruby>",
+					"reading": "せいしんがみじゅく"
+				},
+				{
+					"jp": "ギターを演奏してる人",
+					"kind": "sentence",
+					"jp_r": "ギターを演奏してる<ruby>人<rt>ひと</rt></ruby>"
+				},
+				{
+					"jp": "出演（しゅつえん）",
+					"kind": "word",
+					"jp_r": "<ruby>出演<rt>しゅつえん</rt></ruby>",
+					"reading": "しゅつえん"
+				},
+				{
+					"jp": "見るのをやめました",
+					"kind": "sentence",
+					"jp_r": "<ruby>見る<rt>みる</rt></ruby>のをやめました"
+				},
+				{
+					"jp": "若い人向けのドラマ",
+					"kind": "word",
+					"jp_r": "<ruby>若い<rt>わかい</rt></ruby><ruby>人<rt>ひと</rt></ruby>向けのドラマ"
+				}
+			],
+			"source": "Preply すみれ先生"
+		},
+		{
+			"id": "2026-09-14",
+			"date": "2026-09-14",
+			"title": "2026-09-14",
+			"items": [
+				{
+					"jp": "すると",
+					"kind": "word",
+					"cn": "于是"
+				}
+			],
+			"source": "Danielさん"
+		},
 		{
 			"id": "2026-09-13",
 			"date": "2026-09-13",
@@ -135,11 +422,9 @@
 					"en": "to sleep soundly"
 				},
 				{
-					"jp": "はっかり話す",
+					"jp": "はっきり話す",
 					"kind": "word",
-					"jp_r": "はっかり<ruby>話す<rt>はなす</rt></ruby>",
-					"cn": "说得很清楚（はっきり）",
-					"en": "to speak clearly"
+					"jp_r": "はっきり<ruby>話す<rt>はなす</rt></ruby>"
 				},
 				{
 					"jp": "ぴったり合う",
@@ -152,14 +437,9 @@
 					"jp": "トラブルが多い",
 					"kind": "word",
 					"jp_r": "トラブルが<ruby>多い<rt>おおい</rt></ruby>",
+					"reading": "サイクル",
 					"cn": "麻烦很多",
 					"en": "there are a lot of problems"
-				},
-				{
-					"jp": "サイクル",
-					"kind": "word",
-					"cn": "循环、周期",
-					"en": "cycle"
 				},
 				{
 					"jp": "サポート",
@@ -234,14 +514,9 @@
 					"jp": "様子",
 					"kind": "word",
 					"jp_r": "<ruby>様子<rt>ようす</rt></ruby>",
+					"reading": "ますます",
 					"cn": "样子、情况",
 					"en": "state / appearance"
-				},
-				{
-					"jp": "ますます",
-					"kind": "sentence",
-					"cn": "越来越",
-					"en": "more and more"
 				},
 				{
 					"jp": "さらに",
@@ -253,14 +528,9 @@
 					"jp": "腐りやすい",
 					"kind": "word",
 					"jp_r": "<ruby>腐り<rt>くさり</rt></ruby>やすい",
+					"reading": "だめになりやすい",
 					"cn": "容易坏、易腐烂",
 					"en": "spoils easily"
-				},
-				{
-					"jp": "だめになりやすい",
-					"kind": "word",
-					"cn": "容易坏掉",
-					"en": "tends to go bad"
 				},
 				{
 					"jp": "正直な",
@@ -308,14 +578,9 @@
 					"jp": "して見てべきだ",
 					"kind": "word",
 					"jp_r": "して<ruby>見て<rt>みて</rt></ruby>べきだ",
+					"reading": "にとって",
 					"cn": "应该试试看（してみるべきだ）",
 					"en": "you should try doing it"
-				},
-				{
-					"jp": "にとって",
-					"kind": "word",
-					"cn": "对……来说",
-					"en": "for / to (someone)"
 				},
 				{
 					"jp": "にたいして",
@@ -345,14 +610,9 @@
 					"jp": "時間をすごす",
 					"kind": "word",
 					"jp_r": "<ruby>時間<rt>じかん</rt></ruby>をすごす",
+					"reading": "せっかく",
 					"cn": "度过时间",
 					"en": "to spend time"
-				},
-				{
-					"jp": "せっかく",
-					"kind": "word",
-					"cn": "好不容易、特意",
-					"en": "with effort / specially"
 				},
 				{
 					"jp": "めったに",
@@ -383,14 +643,9 @@
 					"jp": "と言うものだ",
 					"kind": "word",
 					"jp_r": "と<ruby>言う<rt>いう</rt></ruby>ものだ",
+					"reading": "ものだ",
 					"cn": "就是……（评价）",
 					"en": "that's what you'd call …"
-				},
-				{
-					"jp": "ものだ",
-					"kind": "word",
-					"cn": "（感慨、常理）就是会……",
-					"en": "it's only natural that …"
 				},
 				{
 					"jp": "Vますしだい",
@@ -422,7 +677,8 @@
 					"cn": "前几天（口语）",
 					"en": "the other day (casual)"
 				}
-			]
+			],
+			"source": "Danielさん"
 		},
 		{
 			"id": "2026-09-11",
@@ -465,20 +721,8 @@
 					"jp": "やっと終わったね",
 					"kind": "word",
 					"jp_r": "やっと<ruby>終わった<rt>おわった</rt></ruby>ね",
-					"cn": "终于结束了呢",
-					"en": "It's finally over"
-				},
-				{
-					"jp": "なんでだろう",
-					"kind": "word",
-					"cn": "为什么呢",
-					"en": "I wonder why"
-				},
-				{
-					"jp": "朝型",
-					"kind": "word",
-					"jp_r": "<ruby>朝型<rt>あさがた</rt></ruby>",
-					"cn": "早起型、早睡早起的人",
+					"reading": "なんでだろう",
+					"cn": "朝型",
 					"en": "morning person"
 				},
 				{
@@ -530,27 +774,17 @@
 					"jp": "お金を送ってもらうように言った",
 					"kind": "sentence",
 					"jp_r": "<ruby>お金<rt>おかね</rt></ruby>を<ruby>送って<rt>おくって</rt></ruby>もらうように<ruby>言った<rt>いった</rt></ruby>",
+					"reading": "スピーカーにした",
 					"cn": "让对方把钱寄过来",
 					"en": "I told them to send me the money"
-				},
-				{
-					"jp": "スピーカーにした",
-					"kind": "word",
-					"cn": "开了免提 / 开了扬声器",
-					"en": "I put it on speaker"
 				},
 				{
 					"jp": "交番に連れて行きたかった",
 					"kind": "sentence",
 					"jp_r": "<ruby>交番<rt>こうばん</rt></ruby>に<ruby>連れて行き<rt>つれていき</rt></ruby>たかった",
+					"reading": "こわい",
 					"cn": "想带去派出所",
 					"en": "I wanted to take them to the police box"
-				},
-				{
-					"jp": "こわい",
-					"kind": "word",
-					"cn": "可怕、害怕",
-					"en": "scary / I'm scared"
 				},
 				{
 					"jp": "ベトナム",
@@ -609,15 +843,8 @@
 					"kind": "word",
 					"jp_r": "<ruby>収入<rt>しゅうにゅう</rt></ruby>",
 					"reading": "しゅうにゅう",
-					"cn": "收入",
-					"en": "income"
-				},
-				{
-					"jp": "国民",
-					"kind": "word",
-					"jp_r": "<ruby>国民<rt>こくみん</rt></ruby>",
 					"cn": "国民",
-					"en": "citizen / the people"
+					"en": "income"
 				},
 				{
 					"jp": "公积金",
@@ -639,7 +866,188 @@
 					"cn": "兄弟",
 					"en": "siblings / brothers"
 				}
-			]
+			],
+			"source": "Danielさん"
+		},
+		{
+			"id": "2026-09-08:preply",
+			"date": "2026-09-08",
+			"title": "2026-09-08",
+			"items": [
+				{
+					"jp": "四日ぶり",
+					"kind": "word",
+					"jp_r": "<ruby>四日ぶり<rt>よっかぶり</rt></ruby>",
+					"reading": "よっかぶり",
+					"cn": "时隔四天"
+				},
+				{
+					"jp": "ドラマ",
+					"kind": "word"
+				},
+				{
+					"jp": "どらま",
+					"kind": "word"
+				},
+				{
+					"jp": "电视剧／连续剧",
+					"kind": "word"
+				},
+				{
+					"jp": "二ペア（ふたペア）",
+					"kind": "word",
+					"jp_r": "<ruby>二ペア<rt>ふたぺあ</rt></ruby>",
+					"reading": "ふたペア"
+				},
+				{
+					"jp": "ふたぺあ",
+					"kind": "word",
+					"cn": "两对（扑克等的两对牌）"
+				},
+				{
+					"jp": "事故に会いました",
+					"kind": "sentence",
+					"jp_r": "<ruby>事故<rt>じこ</rt></ruby>に<ruby>会いました<rt>あいました</rt></ruby>",
+					"reading": "じこにあいました",
+					"cn": "遇到事故了"
+				},
+				{
+					"jp": "昔に旦那が四人いました",
+					"kind": "sentence",
+					"jp_r": "昔に<ruby>旦那<rt>だんな</rt></ruby>が四<ruby>人<rt>ひと</rt></ruby>いました",
+					"reading": "むかしにだんながよにんいました",
+					"cn": "以前有过四个丈夫"
+				},
+				{
+					"jp": "詳しい（くわしい）",
+					"kind": "word",
+					"jp_r": "<ruby>詳しい<rt>くわしい</rt></ruby>",
+					"reading": "くわしい",
+					"cn": "详细的；精通的"
+				},
+				{
+					"jp": "戦国時代（せんごくじだい）",
+					"kind": "word",
+					"jp_r": "<ruby>戦国時代<rt>せんごくじだい</rt></ruby>",
+					"reading": "せんごくじだい",
+					"cn": "战国时代"
+				},
+				{
+					"jp": "違うスタイル",
+					"kind": "word",
+					"jp_r": "<ruby>違う<rt>ちがう</rt></ruby>スタイル",
+					"reading": "ちがうすたいる",
+					"cn": "不同的风格"
+				},
+				{
+					"jp": "形",
+					"kind": "word",
+					"jp_r": "<ruby>形<rt>けい</rt></ruby>",
+					"reading": "かたち",
+					"cn": "形状；形式"
+				},
+				{
+					"jp": "石切神社（いしきりじんじゃ）",
+					"kind": "word",
+					"jp_r": "<ruby>石切神社<rt>いしきりじんじゃ</rt></ruby>",
+					"reading": "いしきりじんじゃ",
+					"cn": "石切神社（大阪东大阪市）"
+				},
+				{
+					"jp": "似てる",
+					"kind": "word",
+					"jp_r": "<ruby>似て<rt>にて</rt></ruby>る",
+					"reading": "にてる"
+				},
+				{
+					"jp": "像；相似（口语，原形「似ている」）",
+					"kind": "word",
+					"jp_r": "像；相似（口语，<ruby>原形<rt>げんけい</rt></ruby>「<ruby>似て<rt>にて</rt></ruby>いる」）",
+					"reading": "口语，原形「似ている」"
+				},
+				{
+					"jp": "ご利益（ごりやく）があります",
+					"kind": "sentence",
+					"jp_r": "ご<ruby>利益<rt>ごりやく</rt></ruby>があります",
+					"reading": "ごりやく"
+				},
+				{
+					"jp": "ごりやくがあります",
+					"kind": "sentence"
+				},
+				{
+					"jp": "有神佑／有灵验",
+					"kind": "word"
+				},
+				{
+					"jp": "自分にいいことがあります",
+					"kind": "sentence",
+					"jp_r": "<ruby>自分<rt>じぶん</rt></ruby>にいいことがあります",
+					"reading": "じぶんにいいことがあります",
+					"cn": "自己会有好事发生"
+				},
+				{
+					"jp": "感謝をします",
+					"kind": "sentence",
+					"jp_r": "<ruby>感謝<rt>かんしゃ</rt></ruby>をします",
+					"reading": "かんしゃをします",
+					"cn": "表示感谢"
+				},
+				{
+					"jp": "長生き",
+					"kind": "word",
+					"jp_r": "長<ruby>生き<rt>いき</rt></ruby>",
+					"reading": "ながいき",
+					"cn": "长寿"
+				},
+				{
+					"jp": "喫茶スワン",
+					"kind": "word"
+				},
+				{
+					"jp": "喫茶大使館",
+					"kind": "word"
+				},
+				{
+					"jp": "喫茶マヅラ",
+					"kind": "word"
+				},
+				{
+					"jp": "きっさすわん／きっさたいしかん／きっさまづら",
+					"kind": "sentence"
+				},
+				{
+					"jp": "咖啡店名：Swan、大使馆、Mazura",
+					"kind": "sentence"
+				},
+				{
+					"jp": "頭がスッキリ",
+					"kind": "word",
+					"jp_r": "<ruby>頭<rt>あたま</rt></ruby>がスッキリ",
+					"reading": "あたまがすっきり",
+					"cn": "头脑清爽"
+				},
+				{
+					"jp": "ミントティー",
+					"kind": "word"
+				},
+				{
+					"jp": "みんとてぃー",
+					"kind": "word"
+				},
+				{
+					"jp": "薄荷茶",
+					"kind": "word"
+				},
+				{
+					"jp": "自分で淹れます",
+					"kind": "sentence",
+					"jp_r": "<ruby>自分<rt>じぶん</rt></ruby>で淹れます",
+					"reading": "じぶんでいれます",
+					"cn": "自己泡（茶）"
+				}
+			],
+			"source": "Preply すみれ先生"
 		},
 		{
 			"id": "2026-09-07",
@@ -657,14 +1065,9 @@
 					"jp": "練習すれば練習するほど、日本語が上手になる",
 					"kind": "sentence",
 					"jp_r": "<ruby>練習すれば<rt>れんしゅうすれば</rt></ruby><ruby>練習する<rt>れんしゅうする</rt></ruby>ほど、<ruby>日本語<rt>にほんご</rt></ruby>が<ruby>上手<rt>じょうず</rt></ruby>になる",
+					"reading": "あまりにも",
 					"cn": "越练习，日语就越好",
 					"en": "The more you practice, the better your Japanese gets"
-				},
-				{
-					"jp": "あまりにも",
-					"kind": "word",
-					"cn": "过于、太",
-					"en": "too much / excessively"
 				},
 				{
 					"jp": "あまり、、、ない",
@@ -812,14 +1215,9 @@
 					"jp": "DさんはAさんを殴るほぼ",
 					"kind": "sentence",
 					"jp_r": "DさんはAさんを<ruby>殴る<rt>なぐる</rt></ruby>ほぼ",
+					"reading": "サイコパス",
 					"cn": "D 差点打了 A",
 					"en": "D almost hit A"
-				},
-				{
-					"jp": "サイコパス",
-					"kind": "word",
-					"cn": "精神病态 / 反社会人格",
-					"en": "psychopath"
 				},
 				{
 					"jp": "病院に行くように言われた",
@@ -924,14 +1322,9 @@
 					"jp": "犬にチューされた",
 					"kind": "word",
 					"jp_r": "<ruby>犬<rt>いぬ</rt></ruby>にチューされた",
+					"reading": "ふわふわだった",
 					"cn": "被狗亲了一口",
 					"en": "the dog kissed me"
-				},
-				{
-					"jp": "ふわふわだった",
-					"kind": "word",
-					"cn": "软软的、毛茸茸的",
-					"en": "it was fluffy"
 				},
 				{
 					"jp": "もふもふ",
@@ -976,14 +1369,9 @@
 					"jp": "旅の途中で",
 					"kind": "word",
 					"jp_r": "<ruby>旅<rt>たび</rt></ruby>の<ruby>途中<rt>とちゅう</rt></ruby>で",
+					"reading": "ほぼ",
 					"cn": "在旅行途中",
 					"en": "during the trip"
-				},
-				{
-					"jp": "ほぼ",
-					"kind": "word",
-					"cn": "几乎、差不多",
-					"en": "almost / nearly"
 				},
 				{
 					"jp": "召し上がる",
@@ -999,7 +1387,8 @@
 					"cn": "如果是那之后的话",
 					"en": "if it's after that"
 				}
-			]
+			],
+			"source": "Danielさん"
 		},
 		{
 			"id": "2026-09-04",
@@ -1029,14 +1418,9 @@
 					"jp": "分からなかった",
 					"kind": "word",
 					"jp_r": "<ruby>分からなかった<rt>わからなかった</rt></ruby>",
+					"reading": "それでわかった",
 					"cn": "当时没明白",
 					"en": "I didn't understand"
-				},
-				{
-					"jp": "それでわかった",
-					"kind": "word",
-					"cn": "这样才明白了",
-					"en": "that's how I understood"
 				},
 				{
 					"jp": "うちかえるって言った",
@@ -1137,13 +1521,8 @@
 					"jp": "同じ時間でいろんなことする",
 					"kind": "sentence",
 					"jp_r": "<ruby>同じ<rt>おなじ</rt></ruby><ruby>時間<rt>じかん</rt></ruby>でいろんなことする",
+					"reading": "かしこい",
 					"cn": "同一时间做很多事",
-					"en": "do many things at the same time"
-				},
-				{
-					"jp": "かしこい",
-					"kind": "word",
-					"cn": "聪明",
 					"en": "logistic"
 				},
 				{
@@ -1223,7 +1602,8 @@
 					"cn": "复活、恢复",
 					"en": "revival / come back"
 				}
-			]
+			],
+			"source": "Danielさん"
 		},
 		{
 			"id": "2026-09-02",
@@ -1286,14 +1666,9 @@
 					"jp": "めっちゃ楽しみ！（期待",
 					"kind": "sentence",
 					"jp_r": "めっちゃ<ruby>楽しみ<rt>たのしみ</rt></ruby>！（期待",
+					"reading": "くまのほんぐうたいしゃ",
 					"cn": "超期待！",
 					"en": "I can't wait!"
-				},
-				{
-					"jp": "くまのほんぐうたいしゃ",
-					"kind": "word",
-					"cn": "熊野本宫大社",
-					"en": "Kumano Hongu Taisha shrine"
 				},
 				{
 					"jp": "熊野古道（くまのこどう）",
@@ -1321,14 +1696,9 @@
 					"jp": "尊敬する！",
 					"kind": "sentence",
 					"jp_r": "<ruby>尊敬<rt>そんけい</rt></ruby>する！",
+					"reading": "みんなができることじゃない",
 					"cn": "好尊敬！",
 					"en": "I respect そんけい"
-				},
-				{
-					"jp": "みんなができることじゃない",
-					"kind": "sentence",
-					"cn": "不是谁都能做到的",
-					"en": "not everyone can do that"
 				},
 				{
 					"jp": "間に合う ギリギリ",
@@ -1453,7 +1823,177 @@
 					"reading": "freshbread.お昼はlunch",
 					"en": "lunch"
 				}
-			]
+			],
+			"source": "Danielさん"
+		},
+		{
+			"id": "2026-09-02:preply",
+			"date": "2026-09-02",
+			"title": "2026-09-02",
+			"items": [
+				{
+					"jp": "先々週に",
+					"kind": "word",
+					"jp_r": "<ruby>先々週<rt>せんせんしゅう</rt></ruby>に",
+					"cn": "在上上周"
+				},
+				{
+					"jp": "再来週",
+					"kind": "word",
+					"jp_r": "<ruby>再来週<rt>さらいしゅう</rt></ruby>",
+					"cn": "下下周"
+				},
+				{
+					"jp": "人気があります",
+					"kind": "sentence",
+					"jp_r": "<ruby>人気<rt>にんき</rt></ruby>があります",
+					"cn": "很受欢迎；有人气"
+				},
+				{
+					"jp": "三年前ぐらい　できた",
+					"kind": "word",
+					"jp_r": "三<ruby>年<rt>ねん</rt></ruby><ruby>前<rt>まえ</rt></ruby>ぐらい",
+					"reading": "できた",
+					"cn": "大约三年前建成／开业了（依上下文）"
+				},
+				{
+					"jp": "好きなネタは",
+					"kind": "word",
+					"jp_r": "<ruby>好きな<rt>すきな</rt></ruby>ネタは",
+					"cn": "喜欢的寿司配料是……（此处按寿司话题理解）"
+				},
+				{
+					"jp": "えびてんの天ぷら",
+					"kind": "word",
+					"cn": "炸虾天妇罗"
+				},
+				{
+					"jp": "いかてん",
+					"kind": "word",
+					"cn": "鱿鱼天妇罗"
+				},
+				{
+					"jp": "何でかというと",
+					"kind": "word",
+					"jp_r": "<ruby>何<rt>なに</rt></ruby>でかというと",
+					"cn": "要说为什么的话……；这是因为……"
+				},
+				{
+					"jp": "ヌメヌメ",
+					"kind": "word",
+					"cn": "黏滑；滑溜溜的"
+				},
+				{
+					"jp": "復習",
+					"kind": "word",
+					"jp_r": "<ruby>復習<rt>ふくしゅう</rt></ruby>",
+					"cn": "复习"
+				},
+				{
+					"jp": "日本語力が必要です",
+					"kind": "sentence",
+					"jp_r": "<ruby>日本語<rt>にほんご</rt></ruby><ruby>力<rt>ちから</rt></ruby>が<ruby>必要<rt>ひつよう</rt></ruby>です",
+					"cn": "需要日语能力"
+				},
+				{
+					"jp": "ぐるぐるしました",
+					"kind": "sentence",
+					"cn": "转来转去；绕来绕去"
+				},
+				{
+					"jp": "いっこだて",
+					"kind": "word",
+					"cn": "独栋住宅（一戸建て）",
+					"en": "detached house"
+				},
+				{
+					"jp": "助詞",
+					"kind": "word",
+					"jp_r": "<ruby>助詞<rt>じょし</rt></ruby>",
+					"cn": "助词"
+				},
+				{
+					"jp": "よくできました",
+					"kind": "sentence",
+					"cn": "做得很好"
+				},
+				{
+					"jp": "往復",
+					"kind": "word",
+					"jp_r": "<ruby>往復<rt>おうふく</rt></ruby>",
+					"cn": "往返；来回"
+				},
+				{
+					"jp": "価格",
+					"kind": "word",
+					"jp_r": "<ruby>価格<rt>かかく</rt></ruby>",
+					"cn": "价格"
+				},
+				{
+					"jp": "飛行機の価格はお得です",
+					"kind": "sentence",
+					"jp_r": "<ruby>飛行機<rt>ひこうき</rt></ruby>の<ruby>価格<rt>かかく</rt></ruby>はお得です",
+					"cn": "机票价格很划算"
+				},
+				{
+					"jp": "柿の葉寿司",
+					"kind": "word",
+					"cn": "柿叶寿司（用柿叶包裹的寿司）"
+				},
+				{
+					"jp": "スペイン",
+					"kind": "word",
+					"cn": "西班牙"
+				},
+				{
+					"jp": "世界遺産",
+					"kind": "word",
+					"cn": "世界遗产"
+				},
+				{
+					"jp": "世界に二つだけ",
+					"kind": "word",
+					"jp_r": "<ruby>世界<rt>せかい</rt></ruby>に二つだけ",
+					"cn": "全世界只有两个"
+				},
+				{
+					"jp": "万里の長城",
+					"kind": "word",
+					"jp_r": "<ruby>万<rt>まん</rt></ruby>里の長城",
+					"cn": "万里长城"
+				},
+				{
+					"jp": "計画が",
+					"kind": "word",
+					"jp_r": "<ruby>計画<rt>けいかく</rt></ruby>が",
+					"cn": "计划……（后接谓语，原文未完）"
+				},
+				{
+					"jp": "今年の目標は日本語が上手になることです。",
+					"kind": "sentence",
+					"jp_r": "<ruby>今年<rt>ことし</rt></ruby>の<ruby>目標<rt>もくひょう</rt></ruby>は<ruby>日本語<rt>にほんご</rt></ruby>が<ruby>上手<rt>じょうず</rt></ruby>になることです。",
+					"cn": "今年的目标是提高日语水平"
+				},
+				{
+					"jp": "体の調子がいい",
+					"kind": "word",
+					"jp_r": "体の<ruby>調子<rt>ちょうし</rt></ruby>がいい",
+					"cn": "身体状态很好"
+				},
+				{
+					"jp": "そろそろ時間になりました。",
+					"kind": "sentence",
+					"jp_r": "そろそろ<ruby>時間<rt>じかん</rt></ruby>になりました。",
+					"cn": "差不多到时间了"
+				},
+				{
+					"jp": "そろそろ終わりです",
+					"kind": "sentence",
+					"jp_r": "そろそろ<ruby>終わり<rt>おわり</rt></ruby>です",
+					"cn": "差不多要结束了"
+				}
+			],
+			"source": "Preply すみれ先生"
 		},
 		{
 			"id": "2026-08-31",
@@ -1520,14 +2060,8 @@
 					"jp": "鬼滅の刃",
 					"kind": "word",
 					"jp_r": "<ruby>鬼滅<rt>きめつ</rt></ruby>の<ruby>刃<rt>やいば</rt></ruby>",
-					"cn": "鬼灭之刃",
-					"en": "Demon Slayer"
-				},
-				{
-					"jp": "妖精的尾巴",
-					"kind": "word",
 					"cn": "妖精的尾巴",
-					"en": "Fairy Tail"
+					"en": "Demon Slayer"
 				},
 				{
 					"jp": "日语：FAIRY TAIL／フェアリーテイル",
@@ -1738,7 +2272,31 @@
 					"cn": "和平时一样",
 					"en": "as ususal"
 				}
-			]
+			],
+			"source": "Danielさん"
+		},
+		{
+			"id": "2026-08-31:preply",
+			"date": "2026-08-31",
+			"title": "2026-08-31",
+			"items": [
+				{
+					"jp": "だらだら",
+					"kind": "word",
+					"cn": "悠哉悠哉"
+				},
+				{
+					"jp": "へん",
+					"kind": "word",
+					"en": "strange"
+				},
+				{
+					"jp": "怪我",
+					"kind": "word",
+					"jp_r": "<ruby>怪我<rt>けが</rt></ruby>"
+				}
+			],
+			"source": "Preply すみれ先生"
 		},
 		{
 			"id": "2026-08-28",
@@ -1793,15 +2351,8 @@
 					"kind": "word",
 					"jp_r": "<ruby>第二次世界大戦<rt>だいにじせかいたいせん</rt></ruby>",
 					"reading": "だいにじせかいたいせん",
-					"cn": "第二次世界大战",
+					"cn": "兵士",
 					"en": "World War II"
-				},
-				{
-					"jp": "兵士",
-					"kind": "word",
-					"jp_r": "<ruby>兵士<rt>へいし</rt></ruby>",
-					"cn": "士兵",
-					"en": "soldier"
 				},
 				{
 					"jp": "壁にあった",
@@ -1862,12 +2413,9 @@
 					"jp": "欲しがっているもの",
 					"kind": "word",
 					"jp_r": "<ruby>欲しがって<rt>ほしがって</rt></ruby>いるもの",
+					"reading": "あげようよあげるあげよう",
 					"cn": "对方想要的东西",
 					"en": "the thing she wants"
-				},
-				{
-					"jp": "あげようよ あげる あげよう",
-					"kind": "word"
 				},
 				{
 					"jp": "喜ぶ（よろこぶ）",
@@ -2019,7 +2567,35 @@
 					"cn": "我的伞跑哪儿去了？",
 					"en": "Where did my umbrella go?"
 				}
-			]
+			],
+			"source": "Danielさん"
+		},
+		{
+			"id": "2026-08-28:preply",
+			"date": "2026-08-28",
+			"title": "2026-08-28",
+			"items": [
+				{
+					"jp": "これにする",
+					"kind": "word",
+					"cn": "就选这个",
+					"en": "choose"
+				},
+				{
+					"jp": "親",
+					"kind": "word",
+					"jp_r": "<ruby>親<rt>おや</rt></ruby>",
+					"reading": "どこにいちゃたんだろ",
+					"cn": "父母",
+					"en": "parent(s)"
+				},
+				{
+					"jp": "聞かせていただけ",
+					"kind": "word",
+					"jp_r": "<ruby>聞か<rt>きか</rt></ruby>せていただけ"
+				}
+			],
+			"source": "Preply すみれ先生"
 		},
 		{
 			"id": "2026-08-26",
@@ -2120,14 +2696,9 @@
 					"jp": "始めたらしいじゃん",
 					"kind": "word",
 					"jp_r": "<ruby>始めた<rt>はじめた</rt></ruby>らしいじゃん",
+					"reading": "やめちゃったんだ",
 					"cn": "好像开始了嘛",
 					"en": "Sounds like you started"
-				},
-				{
-					"jp": "やめちゃったんだ",
-					"kind": "word",
-					"cn": "结果放弃了",
-					"en": "I ended up quitting"
 				},
 				{
 					"jp": "やめちゃった",
@@ -2189,21 +2760,35 @@
 					"jp": "言ってた",
 					"kind": "word",
 					"jp_r": "<ruby>言って<rt>いって</rt></ruby>た",
+					"reading": "ハンカチ",
 					"cn": "说过",
 					"en": "was saying"
-				},
-				{
-					"jp": "ハンカチ",
-					"kind": "word",
-					"cn": "手帕",
-					"en": "handkerchief"
 				},
 				{
 					"jp": "せなか",
 					"kind": "word",
 					"cn": "背"
 				}
-			]
+			],
+			"source": "Danielさん"
+		},
+		{
+			"id": "2026-08-26:preply",
+			"date": "2026-08-26",
+			"title": "2026-08-26",
+			"items": [
+				{
+					"jp": "向こうで貸してくれるから、いらないよ",
+					"kind": "sentence",
+					"jp_r": "<ruby>向こう<rt>むこう</rt></ruby>で<ruby>貸して<rt>かして</rt></ruby>くれるから、いらないよ"
+				},
+				{
+					"jp": "始めたんだて・の・でしょう",
+					"kind": "sentence",
+					"jp_r": "<ruby>始めた<rt>はじめた</rt></ruby>んだて・の・でしょう"
+				}
+			],
+			"source": "Preply すみれ先生"
 		},
 		{
 			"id": "2026-08-24",
@@ -2298,14 +2883,9 @@
 					"jp": "無事で良かった",
 					"kind": "word",
 					"jp_r": "<ruby>無事<rt>ぶじ</rt></ruby>で<ruby>良かった<rt>よかった</rt></ruby>",
+					"reading": "たしか",
 					"cn": "没事就好",
 					"en": "I’m glad you are okay"
-				},
-				{
-					"jp": "たしか",
-					"kind": "word",
-					"cn": "我记得 / 大概",
-					"en": "if I remember / probably"
 				},
 				{
 					"jp": "良い（よい）休日（きゅうじつ)を",
@@ -2388,7 +2968,151 @@
 					"cn": "凉的、冷淡的",
 					"en": "cold"
 				}
-			]
+			],
+			"source": "Danielさん"
+		},
+		{
+			"id": "2026-08-24:preply",
+			"date": "2026-08-24",
+			"title": "2026-08-24",
+			"items": [
+				{
+					"jp": "いつもどり",
+					"kind": "word"
+				},
+				{
+					"jp": "人がいっぱいました",
+					"kind": "sentence",
+					"jp_r": "<ruby>人<rt>ひと</rt></ruby>がいっぱいました"
+				},
+				{
+					"jp": "一番大きい店",
+					"kind": "word",
+					"jp_r": "<ruby>一番<rt>いちばん</rt></ruby>大きい<ruby>店<rt>みせ</rt></ruby>"
+				},
+				{
+					"jp": "限定",
+					"kind": "word",
+					"jp_r": "<ruby>限定<rt>げんてい</rt></ruby>",
+					"reading": "ナンパ",
+					"cn": "専攻"
+				},
+				{
+					"jp": "書いておく",
+					"kind": "word",
+					"jp_r": "<ruby>書いて<rt>かいて</rt></ruby>おく",
+					"reading": "ほとんど"
+				},
+				{
+					"jp": "なんか年前",
+					"kind": "word",
+					"jp_r": "なんか<ruby>年<rt>ねん</rt></ruby><ruby>前<rt>まえ</rt></ruby>"
+				},
+				{
+					"jp": "真面目て",
+					"kind": "word",
+					"jp_r": "<ruby>真面目<rt>まじめ</rt></ruby>て",
+					"reading": "なるほどね"
+				},
+				{
+					"jp": "数年前（すうねんまえ）",
+					"kind": "word",
+					"jp_r": "<ruby>数年前<rt>すうねんまえ</rt></ruby>",
+					"reading": "すうねんまえ"
+				},
+				{
+					"jp": "撃つ",
+					"kind": "word",
+					"jp_r": "<ruby>撃つ<rt>いらくす</rt></ruby>",
+					"reading": "いらくす"
+				},
+				{
+					"jp": "歴史的な街（れきしてきなまち）",
+					"kind": "word",
+					"jp_r": "<ruby>歴史的な街<rt>れきしてきなまち</rt></ruby>",
+					"reading": "れきしてきなまち"
+				},
+				{
+					"jp": "しろ",
+					"kind": "word"
+				},
+				{
+					"jp": "万里の長城",
+					"kind": "word",
+					"jp_r": "<ruby>万<rt>まん</rt></ruby>里の長城"
+				},
+				{
+					"jp": "お預入れ",
+					"kind": "word",
+					"jp_r": "<ruby>お預入れ<rt>おあずけいれ</rt></ruby>",
+					"reading": "おあずけいれ",
+					"cn": "存款"
+				},
+				{
+					"jp": "お引出し",
+					"kind": "word",
+					"jp_r": "<ruby>お引出し<rt>おひきだし</rt></ruby>",
+					"reading": "おひきだし",
+					"cn": "取款"
+				},
+				{
+					"jp": "通帳記入･通帳繰越 有通帳口座への切替",
+					"kind": "word",
+					"jp_r": "<ruby>通帳<rt>つうちょう</rt></ruby><ruby>記入<rt>きにゅう</rt></ruby>･<ruby>通帳繰越<rt>つうちょうくりこし</rt></ruby> <ruby>有通帳<rt>ゆうつうちょう</rt></ruby><ruby>口座<rt>こうざ</rt></ruby>への<ruby>切替<rt>きりかえ</rt></ruby>",
+					"reading": "つうちょうきにゅう・つうちょうくりこし ゆうつうちょうこうざへのきりかえ",
+					"cn": "补登存折・存折换本 切换为存折账户"
+				},
+				{
+					"jp": "残高照会",
+					"kind": "word",
+					"jp_r": "<ruby>残高照会<rt>ざんだかしょうかい</rt></ruby>",
+					"reading": "ざんだかしょうかい",
+					"cn": "查询余额"
+				},
+				{
+					"jp": "ご送金",
+					"kind": "word",
+					"jp_r": "ご<ruby>送金<rt>そうきん</rt></ruby>",
+					"reading": "ごそうきん",
+					"cn": "转账"
+				},
+				{
+					"jp": "定額･定期",
+					"kind": "word",
+					"jp_r": "<ruby>定額<rt>ていがく</rt></ruby>･<ruby>定期<rt>ていき</rt></ruby>",
+					"reading": "ていがく・ていき",
+					"cn": "零存整取・定期存款"
+				},
+				{
+					"jp": "その他お取り引き",
+					"kind": "word",
+					"jp_r": "<ruby>その他<rt>そのた</rt></ruby><ruby>お取り引き<rt>おとりひき</rt></ruby>",
+					"reading": "そのたおとりひき",
+					"cn": "其他业务"
+				},
+				{
+					"jp": "口座貸越 ご返済･照会",
+					"kind": "word",
+					"jp_r": "<ruby>口座貸越<rt>こうざかしこし</rt></ruby> ご<ruby>返済<rt>へんさい</rt></ruby>･<ruby>照会<rt>しょうかい</rt></ruby>",
+					"reading": "こうざかしこし ごへんさい・しょうかい",
+					"cn": "透支还款、查询"
+				},
+				{
+					"jp": "QRコード支払 ペイジー",
+					"kind": "word",
+					"jp_r": "QRコード<ruby>支払<rt>しはら</rt></ruby>",
+					"reading": "キューアールコードしはらい ペイジー",
+					"cn": "Pay‑e‑easy二维码缴费"
+				},
+				{
+					"jp": "クレジットカード プリペイドカード･生命保険",
+					"kind": "word",
+					"jp_r": "クレジットカード プリペイドカード･<ruby>生命<rt>せいめい</rt></ruby><ruby>保険<rt>ほけん</rt></ruby>",
+					"reading": "クレジットカード プリペイドカード・せいめいほけん",
+					"cn": "信用卡、预付卡、人寿保险业务"
+				}
+			],
+			"source": "Preply すみれ先生"
 		},
 		{
 			"id": "2026-08-21",
@@ -2416,14 +3140,9 @@
 					"jp": "短すぎない？",
 					"kind": "sentence",
 					"jp_r": "<ruby>短すぎない<rt>みじかすぎない</rt></ruby>？",
+					"reading": "すぎる",
 					"cn": "会不会太短了？",
 					"en": "isn't it too short?"
-				},
-				{
-					"jp": "すぎる",
-					"kind": "word",
-					"cn": "过于……",
-					"en": "too..."
 				},
 				{
 					"jp": "でしょ？",
@@ -2505,28 +3224,16 @@
 					"kind": "word",
 					"jp_r": "<ruby>逃げられない<rt>にげる</rt></ruby>",
 					"reading": "にげる",
-					"cn": "逃不掉",
+					"cn": "町中",
 					"en": "can't run away"
-				},
-				{
-					"jp": "町中",
-					"kind": "word",
-					"jp_r": "<ruby>町中<rt>まちなか</rt></ruby>",
-					"cn": "城里、镇上",
-					"en": "in town"
 				},
 				{
 					"jp": "遠い",
 					"kind": "word",
 					"jp_r": "<ruby>遠い<rt>とおい</rt></ruby>",
+					"reading": "いっこだて",
 					"cn": "远",
 					"en": "far"
-				},
-				{
-					"jp": "いっこだて",
-					"kind": "word",
-					"cn": "独栋住宅",
-					"en": "detached house"
 				},
 				{
 					"jp": "気になる",
@@ -2588,14 +3295,9 @@
 					"jp": "これだけだと、寒いと思ういよ",
 					"kind": "sentence",
 					"jp_r": "これだけだと、<ruby>寒い<rt>さむい</rt></ruby>と<ruby>思う<rt>おもう</rt></ruby>いよ",
+					"reading": "ドレス",
 					"cn": "只穿这个会冷的哦",
 					"en": "just this will be cold"
-				},
-				{
-					"jp": "ドレス",
-					"kind": "word",
-					"cn": "连衣裙",
-					"en": "dress"
 				},
 				{
 					"jp": "ね",
@@ -2607,16 +3309,141 @@
 					"jp": "決めた",
 					"kind": "word",
 					"jp_r": "<ruby>決めた<rt>きめた</rt></ruby>",
+					"reading": "これにする",
 					"cn": "决定了",
 					"en": "I've decided"
+				}
+			],
+			"source": "Danielさん"
+		},
+		{
+			"id": "2026-08-21:preply",
+			"date": "2026-08-21",
+			"title": "2026-08-21",
+			"items": [
+				{
+					"jp": "もっと漢字",
+					"kind": "word",
+					"jp_r": "もっと<ruby>漢字<rt>かんじ</rt></ruby>",
+					"cn": "再多一些汉字",
+					"en": "more kanji"
 				},
 				{
-					"jp": "これにする",
+					"jp": "半分",
 					"kind": "word",
-					"cn": "就选这个",
-					"en": "I'll go with this"
+					"jp_r": "<ruby>半分<rt>はんぶん</rt></ruby>",
+					"cn": "一半",
+					"en": "half"
+				},
+				{
+					"jp": "逃げられない",
+					"kind": "word",
+					"jp_r": "<ruby>逃げ<rt>にげ</rt></ruby>られない"
+				},
+				{
+					"jp": "５０うかい",
+					"kind": "word"
+				},
+				{
+					"jp": "町中",
+					"kind": "word",
+					"jp_r": "<ruby>町中<rt>まちなか</rt></ruby>",
+					"cn": "城里、镇上",
+					"en": "in town"
+				},
+				{
+					"jp": "遠い",
+					"kind": "word",
+					"jp_r": "<ruby>遠い<rt>とおい</rt></ruby>",
+					"reading": "いっこだて",
+					"cn": "远",
+					"en": "far"
+				},
+				{
+					"jp": "気になる",
+					"kind": "word",
+					"jp_r": "<ruby>気になる<rt>きになる</rt></ruby>",
+					"cn": "在意、好奇",
+					"en": "to be curious / bothered"
+				},
+				{
+					"jp": "地元",
+					"kind": "word",
+					"jp_r": "<ruby>地元<rt>じもと</rt></ruby>",
+					"reading": "じもと",
+					"cn": "老家、当地",
+					"en": "hometown / local"
+				},
+				{
+					"jp": "どくしんの時",
+					"kind": "word",
+					"jp_r": "どくしんの<ruby>時<rt>とき</rt></ruby>",
+					"cn": "单身的时候",
+					"en": "when I was single"
+				},
+				{
+					"jp": "彼女いなかった時に、",
+					"kind": "sentence",
+					"jp_r": "<ruby>彼女<rt>かのじょ</rt></ruby>いなかった<ruby>時<rt>とき</rt></ruby>に、",
+					"cn": "没有女朋友的时候",
+					"en": "when I didn't have a girlfriend"
+				},
+				{
+					"jp": "草むら",
+					"kind": "word"
+				},
+				{
+					"jp": "合わない",
+					"kind": "word",
+					"jp_r": "<ruby>合わない<rt>あわない</rt></ruby>",
+					"cn": "合不来 / 不适合",
+					"en": "doesn't suit / doesn't get along"
+				},
+				{
+					"jp": "着物",
+					"kind": "word",
+					"jp_r": "<ruby>着物<rt>きもの</rt></ruby>",
+					"cn": "和服",
+					"en": "kimono"
+				},
+				{
+					"jp": "動きにくい",
+					"kind": "word",
+					"jp_r": "<ruby>動きにくい<rt>うごきにくい</rt></ruby>",
+					"cn": "不好活动",
+					"en": "hard to move in"
+				},
+				{
+					"jp": "これだけだと、寒いと思ういよ",
+					"kind": "sentence",
+					"jp_r": "これだけだと、<ruby>寒い<rt>さむい</rt></ruby>と<ruby>思う<rt>おもう</rt></ruby>いよ",
+					"reading": "ドレス",
+					"cn": "只穿这个会冷的哦",
+					"en": "just this will be cold"
+				},
+				{
+					"jp": "ね",
+					"kind": "word",
+					"cn": "呢 / 对吧",
+					"en": "right? / you know"
+				},
+				{
+					"jp": "短すぎない？",
+					"kind": "sentence",
+					"jp_r": "<ruby>短すぎない<rt>みじかすぎない</rt></ruby>？",
+					"cn": "会不会太短了？",
+					"en": "isn't it too short?"
+				},
+				{
+					"jp": "決めた",
+					"kind": "word",
+					"jp_r": "<ruby>決めた<rt>きめた</rt></ruby>",
+					"reading": "これにする",
+					"cn": "决定了",
+					"en": "I've decided"
 				}
-			]
+			],
+			"source": "Preply すみれ先生"
 		},
 		{
 			"id": "2026-08-19",
@@ -2744,7 +3571,8 @@
 					"cn": "不好活动",
 					"en": "hard to move"
 				}
-			]
+			],
+			"source": "Danielさん"
 		},
 		{
 			"id": "2026-08-17",
@@ -2755,14 +3583,9 @@
 					"jp": "時間がたつ",
 					"kind": "word",
 					"jp_r": "<ruby>時間<rt>じかん</rt></ruby>がたつ",
+					"reading": "なんとなく",
 					"cn": "时间流逝",
 					"en": "time passes"
-				},
-				{
-					"jp": "なんとなく",
-					"kind": "word",
-					"cn": "总觉得、莫名地",
-					"en": "somehow / vaguely"
 				},
 				{
 					"jp": "もし彼女に出会わなかったら",
@@ -2896,7 +3719,47 @@
 					"cn": "像那样",
 					"en": "like that"
 				}
-			]
+			],
+			"source": "Danielさん"
+		},
+		{
+			"id": "2026-08-17:preply",
+			"date": "2026-08-17",
+			"title": "2026-08-17",
+			"items": [
+				{
+					"jp": "カフェ店の向かいの歯医者。",
+					"kind": "sentence",
+					"jp_r": "カフェ<ruby>店<rt>みせ</rt></ruby>の<ruby>向かい<rt>むかい</rt></ruby>の<ruby>歯医者<rt>はいしゃ</rt></ruby>。"
+				},
+				{
+					"jp": "電車にじさつする人がいるのは本当ですか",
+					"kind": "sentence",
+					"jp_r": "<ruby>電車<rt>でんしゃ</rt></ruby>にじさつする<ruby>人<rt>ひと</rt></ruby>がいるのは<ruby>本当<rt>ほんとう</rt></ruby>ですか",
+					"reading": "ラインをこうかん",
+					"cn": "白人"
+				},
+				{
+					"jp": "おばあさんにとて難しい。",
+					"kind": "sentence",
+					"jp_r": "おばあさんにとて<ruby>難しい<rt>むずかしい</rt></ruby>。"
+				},
+				{
+					"jp": "並ぶ",
+					"kind": "word",
+					"jp_r": "<ruby>並ぶ<rt>ならぶ</rt></ruby>",
+					"cn": "排队",
+					"en": "to line up"
+				},
+				{
+					"jp": "その様に",
+					"kind": "word",
+					"jp_r": "その<ruby>様<rt>よう</rt></ruby>に",
+					"cn": "像那样",
+					"en": "like that"
+				}
+			],
+			"source": "Preply すみれ先生"
 		},
 		{
 			"id": "2026-08-14",
@@ -2921,14 +3784,9 @@
 					"jp": "お気をつけください",
 					"kind": "sentence",
 					"jp_r": "<ruby>お気をつけください<rt>おきをつけください</rt></ruby>",
+					"reading": "マジでやべぇな",
 					"cn": "请小心",
 					"en": "please take care"
-				},
-				{
-					"jp": "マジでやべぇな",
-					"kind": "word",
-					"cn": "真的太糟了",
-					"en": "this is seriously bad"
 				},
 				{
 					"jp": "蘇我駅ヤバすぎ",
@@ -3060,7 +3918,22 @@
 					"cn": "您说过的那本书能借给我吗？",
 					"en": "Could I borrow the book you mentioned?"
 				}
-			]
+			],
+			"source": "Danielさん"
+		},
+		{
+			"id": "2026-08-14:preply",
+			"date": "2026-08-14",
+			"title": "2026-08-14",
+			"items": [
+				{
+					"jp": "かしこまりました",
+					"kind": "sentence",
+					"cn": "好的，明白了（非常礼貌）",
+					"en": "certainly"
+				}
+			],
+			"source": "Preply すみれ先生"
 		},
 		{
 			"id": "2026-08-12",
@@ -3273,7 +4146,84 @@
 					"cn": "可爱过头了",
 					"en": "too cute"
 				}
-			]
+			],
+			"source": "Danielさん"
+		},
+		{
+			"id": "2026-08-12:preply",
+			"date": "2026-08-12",
+			"title": "2026-08-12",
+			"items": [
+				{
+					"jp": "先生に習うようになって初めて、日本語の勉強が面白くなった。",
+					"kind": "sentence",
+					"jp_r": "<ruby>先生<rt>せんせい</rt></ruby>に<ruby>習う<rt>ならう</rt></ruby>ようになって<ruby>初めて<rt>はじめて</rt></ruby>、<ruby>日本語<rt>にほんご</rt></ruby>の<ruby>勉強<rt>べんきょう</rt></ruby>が<ruby>面白く<rt>おもしろく</rt></ruby>なった。"
+				},
+				{
+					"jp": "日本語がだんだん上手になりました。",
+					"kind": "sentence",
+					"jp_r": "<ruby>日本語<rt>にほんご</rt></ruby>がだんだん<ruby>上手<rt>じょうず</rt></ruby>になりました。"
+				},
+				{
+					"jp": "今日の朝は7時くらいに起きました。",
+					"kind": "sentence",
+					"jp_r": "<ruby>今日<rt>きょう</rt></ruby>の朝は7<ruby>時<rt>とき</rt></ruby>くらいに<ruby>起きました<rt>おきました</rt></ruby>。"
+				},
+				{
+					"jp": "卵を食べたり、アプリを作ったりしました。でも、AIのトークンがありません。",
+					"kind": "sentence",
+					"jp_r": "卵を<ruby>食べた<rt>たべた</rt></ruby>り、アプリを<ruby>作った<rt>つくった</rt></ruby>りしました。でも、AIのトークンがありません。"
+				},
+				{
+					"jp": "そして、聴解の練習をYouTubeで復習しました。",
+					"kind": "sentence",
+					"jp_r": "そして、聴解の<ruby>練習<rt>れんしゅう</rt></ruby>をYouTubeで<ruby>復習<rt>ふくしゅう</rt></ruby>しました。"
+				},
+				{
+					"jp": "後でジムに行きたいとしたときに、大雨がきた、何分かあと、雨がなかった。",
+					"kind": "sentence",
+					"jp_r": "<ruby>後<rt>あと</rt></ruby>でジムに<ruby>行きたい<rt>いきたい</rt></ruby>としたときに、<ruby>大雨<rt>おおあめ</rt></ruby>がきた、<ruby>何<rt>なに</rt></ruby>分かあと、<ruby>雨<rt>あめ</rt></ruby>がなかった。"
+				},
+				{
+					"jp": "そしてジムへ行った、あとでカフェレストランでトキミクを食べた。カフェでお楽しみください。",
+					"kind": "sentence",
+					"jp_r": "そしてジムへ<ruby>行った<rt>いった</rt></ruby>、あとでカフェレストランでトキミクを<ruby>食べた<rt>たべた</rt></ruby>。カフェでお<ruby>楽しみ<rt>たのしみ</rt></ruby>ください。"
+				},
+				{
+					"jp": "前よりも成長しました。",
+					"kind": "sentence",
+					"jp_r": "<ruby>前<rt>まえ</rt></ruby>よりも<ruby>成長<rt>せいちょう</rt></ruby>しました。"
+				},
+				{
+					"jp": "雨がふった",
+					"kind": "word",
+					"jp_r": "<ruby>雨<rt>あめ</rt></ruby>がふった"
+				},
+				{
+					"jp": "雨が止んだ",
+					"kind": "word",
+					"jp_r": "<ruby>雨<rt>あめ</rt></ruby>が止んだ",
+					"reading": "やった"
+				},
+				{
+					"jp": "ばあいによる",
+					"kind": "word"
+				},
+				{
+					"jp": "おしゃれ",
+					"kind": "word",
+					"cn": "时髦、讲究穿搭",
+					"en": "stylish"
+				},
+				{
+					"jp": "細い",
+					"kind": "word",
+					"jp_r": "<ruby>細い<rt>ほそい</rt></ruby>",
+					"reading": "ハンカチ",
+					"cn": "人気"
+				}
+			],
+			"source": "Preply すみれ先生"
 		},
 		{
 			"id": "2026-08-11",
@@ -3373,7 +4323,44 @@
 					"jp_r": "かも<ruby>知れない<rt>かも</rt></ruby>",
 					"reading": "かも"
 				}
-			]
+			],
+			"source": "Danielさん"
+		},
+		{
+			"id": "2026-08-11:preply",
+			"date": "2026-08-11",
+			"title": "2026-08-11",
+			"items": [
+				{
+					"jp": "おわたかな",
+					"kind": "word",
+					"cn": "结束了吧（我在想）",
+					"en": "I wonder"
+				},
+				{
+					"jp": "いいんじゃない",
+					"kind": "word",
+					"cn": "挺好的吧",
+					"en": "I THINK"
+				},
+				{
+					"jp": "山の上に",
+					"kind": "word",
+					"jp_r": "<ruby>山<rt>やま</rt></ruby>の<ruby>上<rt>うえ</rt></ruby>に"
+				},
+				{
+					"jp": "行くんだから",
+					"kind": "word",
+					"jp_r": "<ruby>行く<rt>いく</rt></ruby>んだから"
+				},
+				{
+					"jp": "かも知れない",
+					"kind": "word",
+					"jp_r": "かも<ruby>知れない<rt>しれない</rt></ruby>",
+					"cn": "（かも）"
+				}
+			],
+			"source": "Preply すみれ先生"
 		},
 		{
 			"id": "2026-08-07",
@@ -3507,11 +4494,8 @@
 					"jp": "嵇 登浩 - 系図から",
 					"kind": "word",
 					"jp_r": "嵇 登浩 - <ruby>系図<rt>けいず</rt></ruby>から",
+					"reading": "ケイトウコウ",
 					"en": "JI DENGHAO"
-				},
-				{
-					"jp": "ケイ トウコウ",
-					"kind": "word"
 				},
 				{
 					"jp": "私のクラスメイトは、若いので私と話が合いません。私は、テクノロジーとか政治的な話をしたいのですが、私のクラスメイトとはそういう話ができません。",
@@ -3555,7 +4539,35 @@
 					"cn": "终于能休息了",
 					"en": "I can finally rest"
 				}
-			]
+			],
+			"source": "Danielさん"
+		},
+		{
+			"id": "2026-08-07:preply",
+			"date": "2026-08-07",
+			"title": "2026-08-07",
+			"items": [
+				{
+					"jp": "まだ食べてない",
+					"kind": "word",
+					"jp_r": "まだ<ruby>食べて<rt>たべて</rt></ruby>ない",
+					"cn": "还没吃",
+					"en": "haven't eaten yet"
+				},
+				{
+					"jp": "見てない",
+					"kind": "word",
+					"jp_r": "<ruby>見てない<rt>みてない</rt></ruby>",
+					"cn": "没看",
+					"en": "haven't watched / seen"
+				},
+				{
+					"jp": "美容師",
+					"kind": "word",
+					"jp_r": "<ruby>美容<rt>びよう</rt></ruby><ruby>師<rt>し</rt></ruby>"
+				}
+			],
+			"source": "Preply すみれ先生"
 		},
 		{
 			"id": "2026-08-05",
@@ -3633,7 +4645,30 @@
 					"cn": "什么时候用？",
 					"en": "When do you use it?"
 				}
-			]
+			],
+			"source": "Danielさん"
+		},
+		{
+			"id": "2026-08-05:preply",
+			"date": "2026-08-05",
+			"title": "2026-08-05",
+			"items": [
+				{
+					"jp": "話題",
+					"kind": "word",
+					"jp_r": "<ruby>話題<rt>わだい</rt></ruby>",
+					"cn": "话题",
+					"en": "topic"
+				},
+				{
+					"jp": "喋れる",
+					"kind": "word",
+					"jp_r": "<ruby>喋れる<rt>しゃべれる</rt></ruby>",
+					"cn": "能聊、能说",
+					"en": "can talk / chat"
+				}
+			],
+			"source": "Preply すみれ先生"
 		},
 		{
 			"id": "2026-08-03",
@@ -3747,7 +4782,90 @@
 					"cn": "放松一下（chill）",
 					"en": "chillする"
 				}
-			]
+			],
+			"source": "Danielさん"
+		},
+		{
+			"id": "2026-08-03:preply",
+			"date": "2026-08-03",
+			"title": "2026-08-03",
+			"items": [
+				{
+					"jp": "室内",
+					"kind": "word",
+					"jp_r": "<ruby>室内<rt>しつない</rt></ruby>",
+					"reading": "しつない",
+					"cn": "室内",
+					"en": "indoors"
+				},
+				{
+					"jp": "あまり高くない",
+					"kind": "word",
+					"jp_r": "あまり<ruby>高くない<rt>たかくない</rt></ruby>",
+					"en": "not too expensive"
+				},
+				{
+					"jp": "言いたかった",
+					"kind": "word",
+					"jp_r": "<ruby>言いたかった<rt>いいたかった</rt></ruby>"
+				},
+				{
+					"jp": "知識",
+					"kind": "word"
+				},
+				{
+					"jp": "忘れる",
+					"kind": "word",
+					"jp_r": "<ruby>忘れる<rt>わすれる</rt></ruby>"
+				},
+				{
+					"jp": "忘れた",
+					"kind": "word",
+					"jp_r": "<ruby>忘れた<rt>わすれた</rt></ruby>"
+				},
+				{
+					"jp": "北海道まで",
+					"kind": "word",
+					"jp_r": "<ruby>北海道まで<rt>かしこまりました</rt></ruby>",
+					"reading": "かしこまりました",
+					"cn": "敬語"
+				},
+				{
+					"jp": "届く",
+					"kind": "word",
+					"jp_r": "<ruby>届く<rt>とどく</rt></ruby>"
+				},
+				{
+					"jp": "今日おくから",
+					"kind": "word",
+					"jp_r": "<ruby>今日<rt>きょう</rt></ruby>おくから"
+				},
+				{
+					"jp": "たら",
+					"kind": "word",
+					"en": "in that case"
+				},
+				{
+					"jp": "から",
+					"kind": "word"
+				},
+				{
+					"jp": "なら",
+					"kind": "word"
+				},
+				{
+					"jp": "でければ",
+					"kind": "word",
+					"en": "if else"
+				},
+				{
+					"jp": "早く届けんたいんですが",
+					"kind": "word",
+					"jp_r": "<ruby>早く<rt>はやく</rt></ruby><ruby>届け<rt>とどけ</rt></ruby>んたいんですが",
+					"en": "I wish"
+				}
+			],
+			"source": "Preply すみれ先生"
 		},
 		{
 			"id": "2026-07-31",
@@ -3889,7 +5007,81 @@
 					"cn": "这里超上镜",
 					"en": "perfect for photo"
 				}
-			]
+			],
+			"source": "Danielさん"
+		},
+		{
+			"id": "2026-07-31:preply",
+			"date": "2026-07-31",
+			"title": "2026-07-31",
+			"items": [
+				{
+					"jp": "仲良い",
+					"kind": "word",
+					"jp_r": "<ruby>仲良<rt>なかよ</rt></ruby>い"
+				},
+				{
+					"jp": "たぶん",
+					"kind": "word",
+					"cn": "大概",
+					"en": "maybe"
+				},
+				{
+					"jp": "タバコをやめた",
+					"kind": "word"
+				},
+				{
+					"jp": "えらい！",
+					"kind": "sentence",
+					"cn": "真了不起！辛苦了",
+					"en": "great job"
+				},
+				{
+					"jp": "がっこいい",
+					"kind": "word",
+					"en": "cool"
+				},
+				{
+					"jp": "お手伝い",
+					"kind": "word",
+					"jp_r": "お<ruby>手伝い<rt>てつだい</rt></ruby>",
+					"reading": "おてつだい"
+				},
+				{
+					"jp": "頼むよ",
+					"kind": "word",
+					"jp_r": "<ruby>頼む<rt>たのむ</rt></ruby>よ",
+					"reading": "たのむ"
+				},
+				{
+					"jp": "しょるい",
+					"kind": "word",
+					"cn": "文件",
+					"en": "document"
+				},
+				{
+					"jp": "1枚ずつ",
+					"kind": "word"
+				},
+				{
+					"jp": "封筒",
+					"kind": "word",
+					"jp_r": "<ruby>封筒<rt>ふうとう</rt></ruby>",
+					"reading": "ふうとう"
+				},
+				{
+					"jp": "てからだと",
+					"kind": "word",
+					"en": "after"
+				},
+				{
+					"jp": "やりにくい",
+					"kind": "word",
+					"cn": "不好做、难下手",
+					"en": "hard to do"
+				}
+			],
+			"source": "Preply すみれ先生"
 		},
 		{
 			"id": "2026-07-29",
@@ -3975,7 +5167,102 @@
 					"cn": "你可是会迟到的啊！",
 					"en": "you're going to be late!"
 				}
-			]
+			],
+			"source": "Danielさん"
+		},
+		{
+			"id": "2026-07-29:preply",
+			"date": "2026-07-29",
+			"title": "2026-07-29",
+			"items": [
+				{
+					"jp": "お惣菜",
+					"kind": "word"
+				},
+				{
+					"jp": "つうがく通学",
+					"kind": "word",
+					"jp_r": "つうがく<ruby>通学<rt>つうがく</rt></ruby>"
+				},
+				{
+					"jp": "つうきん通勤",
+					"kind": "word",
+					"jp_r": "つうきん<ruby>通勤<rt>つうきん</rt></ruby>"
+				},
+				{
+					"jp": "お店",
+					"kind": "word",
+					"jp_r": "<ruby>お店<rt>おみせ</rt></ruby>",
+					"en": "store"
+				},
+				{
+					"jp": "おしゃれな",
+					"kind": "word",
+					"en": "fancy"
+				},
+				{
+					"jp": "めっちゃ（boy）",
+					"kind": "word",
+					"en": "ちょう（youngl）　= very casual"
+				},
+				{
+					"jp": "ちょう",
+					"kind": "word",
+					"cn": "いい 、 ちょう かわいい"
+				},
+				{
+					"jp": "わんちゃん",
+					"kind": "word",
+					"cn": "小狗狗",
+					"en": "doggy"
+				},
+				{
+					"jp": "むすめ",
+					"kind": "word",
+					"cn": "むすこ 息子"
+				},
+				{
+					"jp": "ところ",
+					"kind": "word",
+					"en": "about to"
+				},
+				{
+					"jp": "間に合う",
+					"kind": "word",
+					"jp_r": "<ruby>間に合う<rt>まにあう</rt></ruby>",
+					"cn": "間に合ってよかった",
+					"en": "to make it in time"
+				},
+				{
+					"jp": "机の上に手紙が置いてあるだけど",
+					"kind": "sentence",
+					"jp_r": "机の<ruby>上<rt>うえ</rt></ruby>に<ruby>手紙<rt>てがみ</rt></ruby>が<ruby>置いて<rt>おいて</rt></ruby>あるだけど",
+					"cn": "郵便局にいて手紙を出してくれない"
+				},
+				{
+					"jp": "手紙だね",
+					"kind": "word",
+					"jp_r": "<ruby>手紙<rt>てがみ</rt></ruby>だね"
+				},
+				{
+					"jp": "消しておいてね",
+					"kind": "word",
+					"jp_r": "<ruby>消して<rt>けして</rt></ruby>おいてね",
+					"en": "make sure to do"
+				},
+				{
+					"jp": "ちゃんと",
+					"kind": "word",
+					"cn": "好好地（正式可说きちんと）",
+					"en": "properly"
+				},
+				{
+					"jp": "ついたまま",
+					"kind": "word",
+					"reading": "なんだから"
+				}
+			],
+			"source": "Preply すみれ先生"
 		},
 		{
 			"id": "2026-07-27",
@@ -4026,13 +5313,8 @@
 				{
 					"jp": "30度ごえ",
 					"kind": "word",
-					"jp_r": "30<ruby>度<rt>ど</rt></ruby>ごえ"
-				},
-				{
-					"jp": "かんそうしてる",
-					"kind": "word",
-					"cn": "很干燥",
-					"en": "it's dry"
+					"jp_r": "30<ruby>度<rt>ど</rt></ruby>ごえ",
+					"reading": "かんそうしてる"
 				},
 				{
 					"jp": "北京の方が乾燥してる",
@@ -4115,7 +5397,105 @@
 					"cn": "今天能学到这些单词和句子，好开心。",
 					"en": "I'm glad I could study these words and sentences today."
 				}
-			]
+			],
+			"source": "Danielさん"
+		},
+		{
+			"id": "2026-07-27:preply",
+			"date": "2026-07-27",
+			"title": "2026-07-27",
+			"items": [
+				{
+					"jp": "雨が降ってきて、もっとはげしく踊りました",
+					"kind": "sentence",
+					"jp_r": "<ruby>雨<rt>あめ</rt></ruby>が<ruby>降って<rt>ふって</rt></ruby>きて、もっとはげしく<ruby>踊りました<rt>おどりました</rt></ruby>",
+					"reading": "ほか"
+				},
+				{
+					"jp": "他の人が傘をさしてくれました。優しかったです。",
+					"kind": "sentence",
+					"jp_r": "<ruby>他の<rt>ほかの</rt></ruby><ruby>人<rt>ひと</rt></ruby>が<ruby>傘<rt>かさ</rt></ruby>をさしてくれました。<ruby>優しかった<rt>やさしかった</rt></ruby>です。"
+				},
+				{
+					"jp": "北京よりも東京の方がもっとあつい",
+					"kind": "sentence",
+					"jp_r": "<ruby>北京<rt>ぺきん</rt></ruby>よりも<ruby>東京<rt>とうきょう</rt></ruby>の<ruby>方<rt>ほう</rt></ruby>がもっとあつい"
+				},
+				{
+					"jp": "そう思う。",
+					"kind": "sentence",
+					"jp_r": "そう<ruby>思う<rt>おもう</rt></ruby>。",
+					"cn": "我也这么想。",
+					"en": "I think so."
+				},
+				{
+					"jp": "何度",
+					"kind": "word",
+					"jp_r": "<ruby>何度<rt>なんど</rt></ruby>"
+				},
+				{
+					"jp": "三十度ごえ",
+					"kind": "word",
+					"jp_r": "三<ruby>十<rt>じゅう</rt></ruby><ruby>度<rt>ど</rt></ruby>ごえ"
+				},
+				{
+					"jp": "乾燥してる",
+					"kind": "word",
+					"jp_r": "<ruby>乾燥<rt>かんそう</rt></ruby>してる"
+				},
+				{
+					"jp": "東京の方が湿気がある / ジメジメしてる",
+					"kind": "sentence",
+					"jp_r": "<ruby>東京<rt>とうきょう</rt></ruby>の<ruby>方<rt>ほう</rt></ruby>が<ruby>湿気<rt>しっけ</rt></ruby>がある / ジメジメしてる"
+				},
+				{
+					"jp": "確かに",
+					"kind": "word",
+					"jp_r": "<ruby>確か<rt>たしか</rt></ruby>に",
+					"reading": "たしかに"
+				},
+				{
+					"jp": "直しました",
+					"kind": "sentence",
+					"jp_r": "<ruby>直しました<rt>なおしました</rt></ruby>",
+					"reading": "なをしてくれた",
+					"cn": "練習"
+				},
+				{
+					"jp": "嬉しい",
+					"kind": "word",
+					"jp_r": "<ruby>嬉しい<rt>うれしい</rt></ruby>"
+				},
+				{
+					"jp": "このような単語や文を勉強できて、嬉しいです",
+					"kind": "sentence",
+					"jp_r": "このような<ruby>単語<rt>たんご</rt></ruby>や<ruby>文<rt>ぶん</rt></ruby>を<ruby>勉強<rt>べんきょう</rt></ruby>できて、<ruby>嬉しい<rt>うれしい</rt></ruby>です",
+					"reading": "いるんだけど"
+				},
+				{
+					"jp": "行けばいいかな",
+					"kind": "word",
+					"jp_r": "<ruby>行けば<rt>いけば</rt></ruby>いいかな",
+					"en": "I wonder I can go"
+				},
+				{
+					"jp": "方",
+					"kind": "word",
+					"jp_r": "<ruby>方<rt>ほう</rt></ruby>"
+				},
+				{
+					"jp": "歩くと",
+					"kind": "word",
+					"jp_r": "<ruby>歩く<rt>あるく</rt></ruby>と"
+				},
+				{
+					"jp": "迎えにいく",
+					"kind": "word",
+					"jp_r": "<ruby>迎え<rt>むかえ</rt></ruby>にいく",
+					"en": "I will pick up you"
+				}
+			],
+			"source": "Preply すみれ先生"
 		},
 		{
 			"id": "note-workplace",
@@ -4151,12 +5531,9 @@
 					"jp": "トウコウと申しうます",
 					"kind": "sentence",
 					"jp_r": "トウコウと<ruby>申し<rt>もうし</rt></ruby>うます",
+					"reading": "ゆみさんはいらしゃいますでしょうか",
 					"cn": "我叫登浩（自我介绍）",
 					"en": "My name is Toukou"
-				},
-				{
-					"jp": "ゆみさんは いらしゃい ます でしょうか",
-					"kind": "sentence"
 				},
 				{
 					"jp": "いただい とだけ お伝えください",
@@ -4211,12 +5588,8 @@
 					"kind": "word",
 					"jp_r": "<ruby>会社<rt>かいしゃ</rt></ruby>には<ruby>戻らず<rt>もどらず</rt></ruby>",
 					"reading": "もどらず",
-					"cn": "不回公司",
+					"cn": "表示转达",
 					"en": "without going back to the office"
-				},
-				{
-					"jp": "表示转达",
-					"kind": "word"
 				},
 				{
 					"jp": "とのことです",
@@ -4230,7 +5603,8 @@
 					"cn": "是这样 / 听说是这样",
 					"en": "that's right / I hear that's so"
 				}
-			]
+			],
+			"source": "Danielさん"
 		},
 		{
 			"id": "note-restaurant",
@@ -4243,7 +5617,8 @@
 					"cn": "要帮您倒上吗？",
 					"en": "Shall I pour it for you?"
 				}
-			]
+			],
+			"source": "Danielさん"
 		},
 		{
 			"id": "note-bank",
@@ -4264,28 +5639,16 @@
 				{
 					"jp": "お預入れ",
 					"kind": "word",
-					"jp_r": "<ruby>お預入れ<rt>おあずけいれ</rt></ruby>"
-				},
-				{
-					"jp": "おあずけいれ",
-					"kind": "word"
-				},
-				{
-					"jp": "存款",
-					"kind": "word"
+					"jp_r": "<ruby>お預入れ<rt>おあずけいれ</rt></ruby>",
+					"reading": "おあずけいれ",
+					"cn": "存款"
 				},
 				{
 					"jp": "お引出し",
 					"kind": "word",
-					"jp_r": "<ruby>お引出し<rt>おひきだし</rt></ruby>"
-				},
-				{
-					"jp": "おひきだし",
-					"kind": "word"
-				},
-				{
-					"jp": "取款",
-					"kind": "word"
+					"jp_r": "<ruby>お引出し<rt>おひきだし</rt></ruby>",
+					"reading": "おひきだし",
+					"cn": "取款"
 				},
 				{
 					"jp": "通帳記入･通帳繰越",
@@ -4295,11 +5658,8 @@
 				{
 					"jp": "有通帳口座への切替",
 					"kind": "word",
-					"jp_r": "<ruby>有通帳<rt>ゆうつうちょう</rt></ruby><ruby>口座<rt>こうざ</rt></ruby>への<ruby>切替<rt>きりかえ</rt></ruby>"
-				},
-				{
-					"jp": "つうちょうきにゅう・つうちょうくりこし",
-					"kind": "sentence"
+					"jp_r": "<ruby>有通帳<rt>ゆうつうちょう</rt></ruby><ruby>口座<rt>こうざ</rt></ruby>への<ruby>切替<rt>きりかえ</rt></ruby>",
+					"reading": "つうちょうきにゅう・つうちょうくりこし"
 				},
 				{
 					"jp": "ゆうつうちょうこうざへのきりかえ",
@@ -4311,16 +5671,10 @@
 				},
 				{
 					"jp": "切换为存折账户",
-					"kind": "word"
-				},
-				{
-					"jp": "残高照会",
 					"kind": "word",
-					"jp_r": "<ruby>残高照会<rt>ざんだかしょうかい</rt></ruby>"
-				},
-				{
-					"jp": "ざんだかしょうかい",
-					"kind": "word"
+					"jp_r": "<ruby>切换为存折账户<rt>ざんだかしょうかい</rt></ruby>",
+					"reading": "ざんだかしょうかい",
+					"cn": "残高照会"
 				},
 				{
 					"jp": "查询余额",
@@ -4329,24 +5683,15 @@
 				{
 					"jp": "ご送金",
 					"kind": "word",
-					"jp_r": "ご<ruby>送金<rt>そうきん</rt></ruby>"
-				},
-				{
-					"jp": "ごそうきん",
-					"kind": "word"
-				},
-				{
-					"jp": "转账",
-					"kind": "word"
+					"jp_r": "ご<ruby>送金<rt>そうきん</rt></ruby>",
+					"reading": "ごそうきん",
+					"cn": "转账"
 				},
 				{
 					"jp": "定額･定期",
 					"kind": "word",
-					"jp_r": "<ruby>定額<rt>ていがく</rt></ruby>･<ruby>定期<rt>ていき</rt></ruby>"
-				},
-				{
-					"jp": "ていがく・ていき",
-					"kind": "word"
+					"jp_r": "<ruby>定額<rt>ていがく</rt></ruby>･<ruby>定期<rt>ていき</rt></ruby>",
+					"reading": "ていがく・ていき"
 				},
 				{
 					"jp": "零存整取・定期存款",
@@ -4355,15 +5700,9 @@
 				{
 					"jp": "その他お取り引き",
 					"kind": "word",
-					"jp_r": "<ruby>その他<rt>そのた</rt></ruby><ruby>お取り引き<rt>おとりひき</rt></ruby>"
-				},
-				{
-					"jp": "そのたおとりひき",
-					"kind": "word"
-				},
-				{
-					"jp": "其他业务",
-					"kind": "word"
+					"jp_r": "<ruby>その他<rt>そのた</rt></ruby><ruby>お取り引き<rt>おとりひき</rt></ruby>",
+					"reading": "そのたおとりひき",
+					"cn": "其他业务"
 				},
 				{
 					"jp": "口座貸越",
@@ -4373,29 +5712,17 @@
 				{
 					"jp": "ご返済･照会",
 					"kind": "word",
-					"jp_r": "ご<ruby>返済<rt>へんさい</rt></ruby>･<ruby>照会<rt>しょうかい</rt></ruby>"
-				},
-				{
-					"jp": "こうざかしこし ごへんさい・しょうかい",
-					"kind": "word"
-				},
-				{
-					"jp": "透支还款、查询",
-					"kind": "word"
+					"jp_r": "ご<ruby>返済<rt>へんさい</rt></ruby>･<ruby>照会<rt>しょうかい</rt></ruby>",
+					"reading": "こうざかしこしごへんさい・しょうかい",
+					"cn": "透支还款、查询"
 				},
 				{
 					"jp": "QRコード支払 ペイジー",
 					"kind": "word",
 					"jp_r": "QRコード<ruby>支払<rt>しはら</rt></ruby>",
-					"reading": "ペイジー"
-				},
-				{
-					"jp": "キューアールコードしはらい ペイジー",
-					"kind": "sentence"
-				},
-				{
-					"jp": "Pay‑e‑easy二维码缴费",
-					"kind": "word"
+					"reading": "キューアールコードしはらいペイジー",
+					"cn": "二维码缴费",
+					"en": "Pay"
 				},
 				{
 					"jp": "クレジットカード",
@@ -4404,7 +5731,8 @@
 				{
 					"jp": "プリペイドカード･生命保険",
 					"kind": "word",
-					"jp_r": "プリペイドカード･<ruby>生命<rt>せいめい</rt></ruby><ruby>保険<rt>ほけん</rt></ruby>"
+					"jp_r": "プリペイドカード･<ruby>生命<rt>せいめい</rt></ruby><ruby>保険<rt>ほけん</rt></ruby>",
+					"reading": "クレジットカード"
 				},
 				{
 					"jp": "プリペイドカード・せいめいほけん",
@@ -4413,17 +5741,12 @@
 				{
 					"jp": "信用卡、预付卡、人寿保险业务",
 					"kind": "sentence",
+					"reading": "イングリッシュガイド",
+					"cn": "英文向导",
 					"en": "English Guide"
-				},
-				{
-					"jp": "イングリッシュガイド",
-					"kind": "word"
-				},
-				{
-					"jp": "英文向导",
-					"kind": "word"
 				}
-			]
+			],
+			"source": "Danielさん"
 		}
 	]
 }

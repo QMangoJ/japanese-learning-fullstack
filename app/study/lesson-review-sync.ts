@@ -1,5 +1,5 @@
-import { LESSON_REVIEW_DOC_ID, LESSON_REVIEW_KV_KEY, LESSON_REVIEW_SOURCE } from "./lesson-review";
-import { buildLessonReviewPayload } from "./lesson-review-parse";
+import { LESSON_REVIEW_DOCS, LESSON_REVIEW_DOC_ID, LESSON_REVIEW_KV_KEY } from "./lesson-review";
+import { buildLessonReviewPayloadFromDocs } from "./lesson-review-parse";
 
 type ReviewEnv = {
 	FAVORITES_KV: KVNamespace;
@@ -35,13 +35,18 @@ export async function fetchGoogleDocText(docId: string, fetcher: typeof fetch = 
 
 export async function syncLessonReview(env: ReviewEnv, fetcher: typeof fetch = fetch): Promise<LessonReviewSyncResult> {
 	const fetchedAt = new Date().toISOString();
-	const docId = env.LESSON_REVIEW_DOC_ID || LESSON_REVIEW_DOC_ID;
+	const docs = LESSON_REVIEW_DOCS.map((doc, index) => ({
+		...doc,
+		id: index === 0 ? env.LESSON_REVIEW_DOC_ID || LESSON_REVIEW_DOC_ID : doc.id,
+	}));
 	try {
-		const markdown = await fetchGoogleDocText(docId, fetcher);
-		const payload = buildLessonReviewPayload(markdown, {
-			source: LESSON_REVIEW_SOURCE,
-			fetchedAt,
-		});
+		const fetched = await Promise.all(
+			docs.map(async (doc) => ({
+				...doc,
+				markdown: await fetchGoogleDocText(doc.id, fetcher),
+			})),
+		);
+		const payload = buildLessonReviewPayloadFromDocs(fetched, { fetchedAt });
 		const items = payload.days.reduce((sum, day) => sum + day.items.length, 0);
 		if (!payload.days.length || items === 0) throw new Error("parsed zero review items");
 		await env.FAVORITES_KV.put(LESSON_REVIEW_KV_KEY, JSON.stringify(payload));

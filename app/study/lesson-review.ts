@@ -14,7 +14,14 @@ export type ReviewDay = {
 	date?: string;
 	title: string;
 	label?: string;
+	source?: string;
 	items: ReviewItem[];
+};
+
+export type LessonReviewDoc = {
+	id: string;
+	name: string;
+	slug: string;
 };
 
 export type LessonReviewPayload = {
@@ -23,9 +30,20 @@ export type LessonReviewPayload = {
 	days: ReviewDay[];
 };
 
-export const LESSON_REVIEW_KV_KEY = "lesson-review:v1";
+export const LESSON_REVIEW_KV_KEY = "lesson-review:v2";
 export const LESSON_REVIEW_DOC_ID = "12NwKtAV_HFUeOheYvXGMsJl5G2xIcdb4WG_axC23xrU";
-export const LESSON_REVIEW_SOURCE = `https://docs.google.com/document/d/${LESSON_REVIEW_DOC_ID}/edit`;
+export const LESSON_REVIEW_DOCS: LessonReviewDoc[] = [
+	{ id: LESSON_REVIEW_DOC_ID, name: "Danielさん", slug: "class" },
+	{ id: "1oEZYQYz3Kb3q5bRqNJgdD0TNxUHVEX2PGvLoCju_Cdc", name: "Preply すみれ先生", slug: "preply" },
+];
+export const LESSON_REVIEW_SOURCE = LESSON_REVIEW_DOCS.map(
+	(doc) => `https://docs.google.com/document/d/${doc.id}/edit`,
+).join("\n");
+
+export function reviewDateFromId(id: string): string | null {
+	const match = id.match(/^(\d{4}-\d{2}-\d{2})(?::|$)/);
+	return match ? match[1] : null;
+}
 
 export function parseReviewRoute(key: string): { id: string | null } | null {
 	if (key === "#/review") return { id: null };
@@ -107,6 +125,7 @@ function isReviewDay(value: unknown): value is ReviewDay {
 	if (typeof day.id !== "string" || typeof day.title !== "string" || !Array.isArray(day.items)) return false;
 	if (day.date != null && typeof day.date !== "string") return false;
 	if (day.label != null && typeof day.label !== "string") return false;
+	if (day.source != null && typeof day.source !== "string") return false;
 	return day.items.every(isReviewItem);
 }
 

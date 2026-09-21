@@ -17,7 +17,7 @@ import {
 	WearingPage,
 } from "../routes/study-common";
 import { ContrastPage, DayNav, DayPage, parseDayRoute } from "./days";
-import { formatReviewDate, parseReviewRoute } from "./lesson-review";
+import { formatReviewDate, parseReviewRoute, reviewDateFromId } from "./lesson-review";
 import {
 	ACCOUNT,
 	accountReady,
@@ -820,10 +820,10 @@ function viewMeta(key: string): { nav: string; title: string; back: boolean } {
 	const review = parseReviewRoute(key);
 	if (review) {
 		if (!review.id) return { nav: "common", title: lx("课堂复习", "Lesson review"), back: true };
-		const dated = review.id && /^\d{4}-\d{2}-\d{2}$/.test(review.id);
+		const dated = reviewDateFromId(review.id);
 		return {
 			nav: "common",
-			title: dated ? formatReviewDate(review.id, LANG === "en" ? "en" : "cn") : lx("课堂复习", "Lesson review"),
+			title: dated ? formatReviewDate(dated, LANG === "en" ? "en" : "cn") : lx("课堂复习", "Lesson review"),
 			back: true,
 		};
 	}
