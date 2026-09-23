@@ -186,9 +186,12 @@ function enrichReviewItem(item: ReviewItem): ReviewItem {
 		if (!source) continue;
 		if (!next.cn && source.cn) next.cn = source.cn;
 		if (!next.en && source.en) next.en = source.en;
-		if (!next.example && source.example) next.example = source.example;
-		if (!next.exampleCn && source.exampleCn) next.exampleCn = source.exampleCn;
-		if (!next.exampleEn && source.exampleEn) next.exampleEn = source.exampleEn;
+	}
+	// Authored examples are the source of truth, so a reading fix replaces the stored sentence.
+	if (extra?.example) {
+		next.example = extra.example;
+		if (extra.exampleCn) next.exampleCn = extra.exampleCn;
+		if (extra.exampleEn) next.exampleEn = extra.exampleEn;
 	}
 	const inline = splitInlineReading(next.jp);
 	const reading = next.reading || inline.reading;

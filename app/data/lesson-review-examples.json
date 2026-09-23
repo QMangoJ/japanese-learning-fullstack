@@ -93,9 +93,9 @@
 	"ルールを破る": {
 		"cn": "违反规则",
 		"en": "break a rule",
-		"example": "ゲーム中にルールを破ってはいけません。",
-		"exampleCn": "比赛中不能违反规则。",
-		"exampleEn": "You must not break the rules during the game."
+		"example": "約束したルールを破ってはいけません。",
+		"exampleCn": "不能违反说好的规则。",
+		"exampleEn": "You must not break the rules you agreed to."
 	},
 	"作業": {
 		"cn": "作业、工作",

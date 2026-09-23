@@ -286,6 +286,8 @@ describe("lesson review helpers", () => {
 		expect(machine.jp_r).toBe("<ruby>精算機<rt>せいさんき</rt></ruby>");
 		expect(machine.example).toContain("精算機");
 		expect(machine.exampleCn).toBeTruthy();
+		const rule = enrichReviewDays([{ id: "x", title: "x", items: [{ jp: "ルールを破る", kind: "word" }] }])[0].items[0];
+		expect(rule.example_r?.replace(/<ruby>[\s\S]*?<\/ruby>/g, "")).not.toMatch(/[一-龯]/);
 		expect(enrichReviewDays([{ id: "x", title: "x", items: [{ jp: "心に残る", kind: "word" }] }])[0].items[0].jp_r).toContain(
 			"<ruby>心<rt>こころ</rt></ruby>",
 		);

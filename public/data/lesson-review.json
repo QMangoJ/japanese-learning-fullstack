@@ -17,7 +17,7 @@
 					"example": "新しい作品を展示します。",
 					"exampleCn": "展出新的作品。",
 					"exampleEn": "They are exhibiting new works.",
-					"example_r": "新しい<ruby>作品<rt>さくひん</rt></ruby>を<ruby>展示<rt>てんじ</rt></ruby>します。"
+					"example_r": "<ruby>新しい<rt>あたらしい</rt></ruby><ruby>作品<rt>さくひん</rt></ruby>を<ruby>展示<rt>てんじ</rt></ruby>します。"
 				},
 				{
 					"jp": "ノートを広げる",
@@ -39,7 +39,7 @@
 					"example": "お客さんの質問に対応します。",
 					"exampleCn": "处理客人的问题。",
 					"exampleEn": "I handle the customer's questions.",
-					"example_r": "お客さんの<ruby>質問<rt>しつもん</rt></ruby>に<ruby>対応<rt>たいおう</rt></ruby>します。"
+					"example_r": "<ruby>お客さん<rt>おきゃくさん</rt></ruby>の<ruby>質問<rt>しつもん</rt></ruby>に<ruby>対応<rt>たいおう</rt></ruby>します。"
 				},
 				{
 					"jp": "マニュアル",
@@ -136,7 +136,7 @@
 					"example": "包丁で指に切り傷を作りました。",
 					"exampleCn": "用菜刀把手指割伤了。",
 					"exampleEn": "I cut my finger with a kitchen knife.",
-					"example_r": "<ruby>包丁<rt>ほうちょう</rt></ruby>で指に<ruby>切り傷<rt>きりきず</rt></ruby>を<ruby>作りました<rt>つくりました</rt></ruby>。"
+					"example_r": "<ruby>包丁<rt>ほうちょう</rt></ruby>で<ruby>指<rt>ゆび</rt></ruby>に<ruby>切り傷<rt>きりきず</rt></ruby>を<ruby>作りました<rt>つくりました</rt></ruby>。"
 				},
 				{
 					"jp": "予約を破る",
@@ -155,10 +155,10 @@
 					"jp_r": "ルールを<ruby>破る<rt>やぶる</rt></ruby>",
 					"cn": "违反规则",
 					"en": "break a rule",
-					"example": "ゲーム中にルールを破ってはいけません。",
-					"exampleCn": "比赛中不能违反规则。",
-					"exampleEn": "You must not break the rules during the game.",
-					"example_r": "ゲーム中にルールを<ruby>破って<rt>やぶって</rt></ruby>はいけません。"
+					"example": "約束したルールを破ってはいけません。",
+					"exampleCn": "不能违反说好的规则。",
+					"exampleEn": "You must not break the rules you agreed to.",
+					"example_r": "<ruby>約束<rt>やくそく</rt></ruby>したルールを<ruby>破って<rt>やぶって</rt></ruby>はいけません。"
 				},
 				{
 					"jp": "作業",
@@ -195,7 +195,7 @@
 					"example": "椅子を作るとしたら、木がいいです。",
 					"exampleCn": "如果要做椅子，木头比较好。",
 					"exampleEn": "If I were to make a chair, wood would be better.",
-					"example_r": "<ruby>椅子<rt>いす</rt></ruby>を<ruby>作るとしたら<rt>つくるとしたら</rt></ruby>、木がいいです。"
+					"example_r": "<ruby>椅子<rt>いす</rt></ruby>を<ruby>作るとしたら<rt>つくるとしたら</rt></ruby>、<ruby>木<rt>き</rt></ruby>がいいです。"
 				},
 				{
 					"jp": "一度に",
@@ -227,7 +227,7 @@
 					"example": "週末は家でリラックスします。",
 					"exampleCn": "周末在家放松。",
 					"exampleEn": "I relax at home on the weekend.",
-					"example_r": "<ruby>週末<rt>しゅうまつ</rt></ruby>は家でリラックスします。"
+					"example_r": "<ruby>週末<rt>しゅうまつ</rt></ruby>は<ruby>家<rt>いえ</rt></ruby>でリラックスします。"
 				},
 				{
 					"jp": "侍が刀を左側にさす",
@@ -238,7 +238,7 @@
 					"example": "侍が刀を左側にさしている絵を見ました。",
 					"exampleCn": "我看到一幅武士把刀佩在左侧的画。",
 					"exampleEn": "I saw a picture of a samurai wearing his sword on the left.",
-					"example_r": "<ruby>侍<rt>さむらい</rt></ruby>が<ruby>刀<rt>かたな</rt></ruby>を<ruby>左側に<rt>ひだりがわに</rt></ruby>さしている絵を<ruby>見ました<rt>みました</rt></ruby>。"
+					"example_r": "<ruby>侍<rt>さむらい</rt></ruby>が<ruby>刀<rt>かたな</rt></ruby>を<ruby>左側に<rt>ひだりがわに</rt></ruby>さしている<ruby>絵<rt>え</rt></ruby>を<ruby>見ました<rt>みました</rt></ruby>。"
 				},
 				{
 					"jp": "興味を持ちました",
@@ -270,14 +270,14 @@
 				{
 					"jp": "タメ口",
 					"kind": "word",
-					"jp_r": "<ruby>タメ口<rt>それぞれ</rt></ruby>",
+					"jp_r": "<ruby>タメ口<rt>ためぐち</rt></ruby>",
 					"reading": "それぞれ",
 					"cn": "随便的说法、平辈口气",
 					"en": "casual speech",
 					"example": "友達とはタメ口で話します。",
 					"exampleCn": "和朋友用随便的口气说话。",
 					"exampleEn": "I talk casually with my friends.",
-					"example_r": "<ruby>友達<rt>ともだち</rt></ruby>とはタメ口で<ruby>話します<rt>はなします</rt></ruby>。"
+					"example_r": "<ruby>友達<rt>ともだち</rt></ruby>とは<ruby>タメ口<rt>ためぐち</rt></ruby>で<ruby>話します<rt>はなします</rt></ruby>。"
 				},
 				{
 					"jp": "与える",
@@ -293,7 +293,7 @@
 				{
 					"jp": "冬にインフルエンザのウイルスと戦うには",
 					"kind": "sentence",
-					"jp_r": "冬にインフルエンザのウイルスと<ruby>戦う<rt>たたかう</rt></ruby>には"
+					"jp_r": "<ruby>冬<rt>ふゆ</rt></ruby>にインフルエンザのウイルスと<ruby>戦う<rt>たたかう</rt></ruby>には"
 				},
 				{
 					"jp": "インフルエンザが流行る",
@@ -304,7 +304,7 @@
 					"example": "冬になるとインフルエンザが流行ります。",
 					"exampleCn": "一到冬天流感就会流行。",
 					"exampleEn": "The flu spreads when winter comes.",
-					"example_r": "冬になるとインフルエンザが<ruby>流行ります<rt>はやります</rt></ruby>。"
+					"example_r": "<ruby>冬<rt>ふゆ</rt></ruby>になるとインフルエンザが<ruby>流行ります<rt>はやります</rt></ruby>。"
 				},
 				{
 					"jp": "だって寒いからでしょう、夏と違って",
@@ -407,7 +407,7 @@
 					"example": "姉は病院で看護師をしています。",
 					"exampleCn": "姐姐在医院当护士。",
 					"exampleEn": "My older sister works as a nurse at a hospital.",
-					"example_r": "姉は<ruby>病院<rt>びょういん</rt></ruby>で<ruby>看護師<rt>かんごし</rt></ruby>をしています。"
+					"example_r": "<ruby>姉<rt>あね</rt></ruby>は<ruby>病院<rt>びょういん</rt></ruby>で<ruby>看護師<rt>かんごし</rt></ruby>をしています。"
 				},
 				{
 					"jp": "ケアマネジャー",
@@ -606,7 +606,7 @@
 					"example": "新しい方法を一度試します。",
 					"exampleCn": "试一次新方法。",
 					"exampleEn": "I'll try the new method once.",
-					"example_r": "新しい<ruby>方法<rt>ほうほう</rt></ruby>を<ruby>一度<rt>いちど</rt></ruby><ruby>試します<rt>ためします</rt></ruby>。"
+					"example_r": "<ruby>新しい<rt>あたらしい</rt></ruby><ruby>方法<rt>ほうほう</rt></ruby>を<ruby>一度<rt>いちど</rt></ruby><ruby>試します<rt>ためします</rt></ruby>。"
 				},
 				{
 					"jp": "繋がる",
@@ -617,7 +617,7 @@
 					"example": "この道は駅に繋がります。",
 					"exampleCn": "这条路通到车站。",
 					"exampleEn": "This road connects to the station.",
-					"example_r": "この道は<ruby>駅<rt>えき</rt></ruby>に<ruby>繋がります<rt>つながります</rt></ruby>。"
+					"example_r": "この<ruby>道<rt>みち</rt></ruby>は<ruby>駅<rt>えき</rt></ruby>に<ruby>繋がります<rt>つながります</rt></ruby>。"
 				},
 				{
 					"jp": "レシートに表示されます",
@@ -635,7 +635,7 @@
 					"example": "鍵が見つからなかったら、教えてください。",
 					"exampleCn": "如果找不到钥匙，请告诉我。",
 					"exampleEn": "If you can't find the key, please tell me.",
-					"example_r": "鍵が<ruby>見つからなかったら<rt>みつからなかったら</rt></ruby>、<ruby>教えて<rt>おしえて</rt></ruby>ください。"
+					"example_r": "<ruby>鍵<rt>かぎ</rt></ruby>が<ruby>見つからなかったら<rt>みつからなかったら</rt></ruby>、<ruby>教えて<rt>おしえて</rt></ruby>ください。"
 				},
 				{
 					"jp": "返却",
@@ -751,7 +751,7 @@
 					"example": "夜、牛乳を温めて飲みます。",
 					"exampleCn": "晚上把牛奶热了喝。",
 					"exampleEn": "At night I warm up some milk and drink it.",
-					"example_r": "夜、<ruby>牛乳<rt>ぎゅうにゅう</rt></ruby>を<ruby>温めて<rt>あたためて</rt></ruby>飲みます。"
+					"example_r": "<ruby>夜<rt>よる</rt></ruby>、<ruby>牛乳<rt>ぎゅうにゅう</rt></ruby>を<ruby>温めて<rt>あたためて</rt></ruby><ruby>飲みます<rt>のみます</rt></ruby>。"
 				},
 				{
 					"jp": "日本人が演じている",
@@ -773,7 +773,7 @@
 					"example": "朝ごはんにゆで卵を食べました。",
 					"exampleCn": "早饭吃了煮鸡蛋。",
 					"exampleEn": "I ate a boiled egg for breakfast.",
-					"example_r": "朝ごはんに<ruby>ゆで卵<rt>ゆでたまご</rt></ruby>を<ruby>食べました<rt>たべました</rt></ruby>。"
+					"example_r": "<ruby>朝ごはん<rt>あさごはん</rt></ruby>に<ruby>ゆで卵<rt>ゆでたまご</rt></ruby>を<ruby>食べました<rt>たべました</rt></ruby>。"
 				},
 				{
 					"jp": "生卵",
@@ -877,7 +877,7 @@
 					"example": "その提案を拒んだ。",
 					"exampleCn": "拒绝了那个提议。",
 					"exampleEn": "I refused that suggestion.",
-					"example_r": "その提案を<ruby>拒んだ<rt>こばんだ</rt></ruby>。"
+					"example_r": "その<ruby>提案<rt>ていあん</rt></ruby>を<ruby>拒んだ<rt>こばんだ</rt></ruby>。"
 				},
 				{
 					"jp": "精神が未熟（せいしんがみじゅく）",
@@ -1663,7 +1663,7 @@
 					"example": "喫茶スワンでコーヒーを飲みました。",
 					"exampleCn": "在 Swan 咖啡店喝了咖啡。",
 					"exampleEn": "I had coffee at Cafe Swan.",
-					"example_r": "<ruby>喫茶<rt>きっさ</rt></ruby>スワンでコーヒーを飲みました。"
+					"example_r": "<ruby>喫茶<rt>きっさ</rt></ruby>スワンでコーヒーを<ruby>飲みました<rt>のみました</rt></ruby>。"
 				},
 				{
 					"jp": "喫茶大使館",
@@ -2610,7 +2610,7 @@
 					"example": "奈良で柿の葉寿司を食べました。",
 					"exampleCn": "在奈良吃了柿叶寿司。",
 					"exampleEn": "I ate persimmon-leaf sushi in Nara.",
-					"example_r": "奈良で<ruby>柿の葉寿司<rt>かきのはずし</rt></ruby>を<ruby>食べました<rt>たべました</rt></ruby>。"
+					"example_r": "<ruby>奈良<rt>なら</rt></ruby>で<ruby>柿の葉寿司<rt>かきのはずし</rt></ruby>を<ruby>食べました<rt>たべました</rt></ruby>。"
 				},
 				{
 					"jp": "スペイン",
@@ -4202,7 +4202,7 @@
 					"example": "猫が草むらに隠れました。",
 					"exampleCn": "猫藏进了草丛。",
 					"exampleEn": "The cat hid in the grass.",
-					"example_r": "猫が<ruby>草むら<rt>くさむら</rt></ruby>に隠れました。"
+					"example_r": "<ruby>猫<rt>ねこ</rt></ruby>が<ruby>草むら<rt>くさむら</rt></ruby>に<ruby>隠れました<rt>かくれました</rt></ruby>。"
 				},
 				{
 					"jp": "合わない",
@@ -4980,7 +4980,7 @@
 				{
 					"jp": "今日の朝は7時くらいに起きました。",
 					"kind": "sentence",
-					"jp_r": "<ruby>今日<rt>きょう</rt></ruby>の朝は7<ruby>時<rt>とき</rt></ruby>くらいに<ruby>起きました<rt>おきました</rt></ruby>。"
+					"jp_r": "<ruby>今日<rt>きょう</rt></ruby>の<ruby>朝<rt>あさ</rt></ruby>は7<ruby>時<rt>とき</rt></ruby>くらいに<ruby>起きました<rt>おきました</rt></ruby>。"
 				},
 				{
 					"jp": "卵を食べたり、アプリを作ったりしました。",
@@ -5017,7 +5017,7 @@
 					"example": "雨が止んだので、外に出ました。",
 					"exampleCn": "雨停了，所以出门了。",
 					"exampleEn": "The rain stopped, so I went outside.",
-					"example_r": "<ruby>雨<rt>あめ</rt></ruby>が<ruby>止んだ<rt>やんだ</rt></ruby>ので、外に出ました。"
+					"example_r": "<ruby>雨<rt>あめ</rt></ruby>が<ruby>止んだ<rt>やんだ</rt></ruby>ので、<ruby>外に<rt>そとに</rt></ruby><ruby>出ました<rt>でました</rt></ruby>。"
 				},
 				{
 					"jp": "おしゃれ",
@@ -5670,7 +5670,7 @@
 				{
 					"jp": "北海道まで",
 					"kind": "word",
-					"jp_r": "<ruby>北海道まで<rt>かしこまりました</rt></ruby>",
+					"jp_r": "北海<ruby>道<rt>みち</rt></ruby>まで",
 					"reading": "かしこまりました"
 				},
 				{
@@ -5954,7 +5954,7 @@
 					"example": "紙を1枚ずつ数えます。",
 					"exampleCn": "把纸一张一张地数。",
 					"exampleEn": "I count the sheets one by one.",
-					"example_r": "紙を1<ruby>枚<rt>まい</rt></ruby>ずつ<ruby>数えます<rt>かぞえます</rt></ruby>。"
+					"example_r": "<ruby>紙<rt>かみ</rt></ruby>を1<ruby>枚<rt>まい</rt></ruby>ずつ<ruby>数えます<rt>かぞえます</rt></ruby>。"
 				},
 				{
 					"jp": "てからだと",
