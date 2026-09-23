@@ -485,5 +485,865 @@
 		"example": "実際にやってみると難しかったです。",
 		"exampleCn": "实际做起来很难。",
 		"exampleEn": "It was hard when I actually tried it."
+	},
+	"興味を持ちました": {
+		"cn": "产生了兴趣",
+		"en": "I became interested"
+	},
+	"冬にインフルエンザのウイルスと戦うには": {
+		"cn": "要在冬天对抗流感病毒的话",
+		"en": "if you want to fight the flu virus in winter"
+	},
+	"だって寒いからでしょう、夏と違って": {
+		"cn": "因为冷嘛，跟夏天不一样",
+		"en": "it's because it's cold, unlike summer"
+	},
+	"たくさん稼ぐことも可能です": {
+		"cn": "多赚钱也是可能的",
+		"en": "it's also possible to earn a lot"
+	},
+	"自分で自分をアピールして": {
+		"cn": "自己推销自己",
+		"en": "promote yourself"
+	},
+	"お年寄りがいたら咳を譲りましょう": {
+		"cn": "如果有老人，就把咳嗽让给对方吧（谐音「席を譲る」让座）",
+		"en": "if there are elderly people, let's give them our cough (a pun on giving up your seat)"
+	},
+	"自分がわからないと思ったこと": {
+		"cn": "自己觉得不懂的事情",
+		"en": "things I thought I didn't understand"
+	},
+	"たくさんの人をまとめる役": {
+		"cn": "把很多人组织起来的角色",
+		"en": "the role of coordinating many people"
+	},
+	"事故に会いました": {
+		"cn": "遇到事故了",
+		"en": "I was in an accident"
+	},
+	"昔に旦那が四人いました": {
+		"cn": "以前有过四个丈夫",
+		"en": "she used to have four husbands"
+	},
+	"ご利益（ごりやく）があります": {
+		"cn": "有灵验、有神佑",
+		"en": "it brings divine favor"
+	},
+	"自分にいいことがあります": {
+		"cn": "自己会有好事发生",
+		"en": "something good will happen to me"
+	},
+	"感謝をします": {
+		"cn": "表示感谢",
+		"en": "to express thanks"
+	},
+	"自分で淹れます": {
+		"cn": "自己冲（咖啡、茶）",
+		"en": "I brew it myself"
+	},
+	"お話を聞きます": {
+		"cn": "听对方说话",
+		"en": "I'll hear you out"
+	},
+	"わさび もらえますか？": {
+		"cn": "可以给我芥末吗？",
+		"en": "could I have some wasabi?"
+	},
+	"お願いします": {
+		"cn": "拜托了",
+		"en": "please"
+	},
+	"日本語力が必要です": {
+		"cn": "需要日语能力",
+		"en": "Japanese ability is necessary"
+	},
+	"飛行機の価格はお得です": {
+		"cn": "机票价格很划算",
+		"en": "the airfare is a good deal"
+	},
+	"今年の目標は日本語が上手になることです。": {
+		"cn": "今年的目标是把日语学好。",
+		"en": "My goal this year is to get better at Japanese."
+	},
+	"そろそろ時間になりました。": {
+		"cn": "差不多到时间了。",
+		"en": "It's about time."
+	},
+	"そろそろ終わりです": {
+		"cn": "差不多该结束了",
+		"en": "it's about to end"
+	},
+	"ご遠慮下さい ごえんりょください": {
+		"cn": "请不要这样做、请回避",
+		"en": "please refrain"
+	},
+	"向こうで貸してくれるから、いらないよ": {
+		"cn": "那边会借给我，所以不用了",
+		"en": "they'll lend me one over there, so I don't need it"
+	},
+	"始めたんだて・の・でしょう": {
+		"cn": "是已经开始了吧",
+		"en": "it has started, right?"
+	},
+	"人がいっぱいました": {
+		"cn": "人挤满了",
+		"en": "it was full of people"
+	},
+	"おお きてる？": {
+		"cn": "哇，穿上了？",
+		"en": "oh, you're wearing it?"
+	},
+	"食べない 食べない？": {
+		"cn": "不吃吗？不吃吗？",
+		"en": "you're not going to eat it?"
+	},
+	"もし彼女に出会っていなかったら 今の僕はない": {
+		"cn": "如果当初没遇见她，就没有现在的我",
+		"en": "if I hadn't met her, I wouldn't be who I am now"
+	},
+	"手伝って（ ）けれど、それでは君のためにならない。": {
+		"cn": "不是不帮你，可那样对你并没有好处。",
+		"en": "It's not that I won't help, but that wouldn't be good for you."
+	},
+	"カフェ店の向かいの歯医者。": {
+		"cn": "咖啡馆对面的牙科诊所。",
+		"en": "The dentist across from the cafe."
+	},
+	"電車にじさつする人がいるのは本当ですか": {
+		"cn": "真的有人在电车里自杀吗",
+		"en": "is it true that people die by suicide on the trains?"
+	},
+	"おばあさんにとて難しい。": {
+		"cn": "对奶奶来说很难。",
+		"en": "it's difficult for grandma"
+	},
+	"面白くなりました": {
+		"cn": "变得有趣了",
+		"en": "it got interesting"
+	},
+	"先生に習うようになって初めて、日本語の勉強が面白くなった。": {
+		"cn": "开始跟老师学之后，日语学习才变得有趣。",
+		"en": "Only after I started learning from a teacher did studying Japanese become interesting."
+	},
+	"日本語がだんだん上手になりました。": {
+		"cn": "日语渐渐变好了。",
+		"en": "My Japanese has gradually improved."
+	},
+	"今日の朝は7時くらいに起きました。": {
+		"cn": "今天早上大概7点起的床。",
+		"en": "I got up around 7 this morning."
+	},
+	"卵を食べたり、アプリを作ったりしました。": {
+		"cn": "吃了鸡蛋，也做了应用程序。",
+		"en": "I ate eggs and also made an app."
+	},
+	"後でジムに行きたいとしたときに、大雨がきた。": {
+		"cn": "后来正想去健身房的时候，下起了大雨。",
+		"en": "Later, just when I wanted to go to the gym, it poured."
+	},
+	"前よりも成長しました。": {
+		"cn": "比以前有进步了。",
+		"en": "I've grown compared with before."
+	},
+	"卵を食べたり、アプリを作ったりしました。でも、AIのトークンがありません。": {
+		"cn": "吃了鸡蛋，也做了应用。可是没有 AI 的额度了。",
+		"en": "I ate eggs and made an app, but I have no AI tokens left."
+	},
+	"後でジムに行きたいとしたときに、大雨がきた、何分かあと、雨がなかった。": {
+		"cn": "后来想去健身房时下了大雨，过了几分钟雨就停了。",
+		"en": "When I wanted to go to the gym it poured, and a few minutes later the rain was gone."
+	},
+	"そしてジムへ行った、あとでカフェレストランでトキミクを食べた。カフェでお楽しみください。": {
+		"cn": "然后去了健身房，后来在咖啡餐厅吃了吐司牛奶。请在咖啡馆享用。",
+		"en": "Then I went to the gym, and later ate toast and milk at a cafe. Please enjoy it at the cafe."
+	},
+	"ちょう　いい　、　ちょう　かわいい": {
+		"cn": "超好，超可爱",
+		"en": "so good, so cute"
+	},
+	"机の上に手紙が置いてあるだけど": {
+		"cn": "虽然桌子上放着信",
+		"en": "there's a letter on the desk, but"
+	},
+	"郵便局にいて手紙を出してくれない": {
+		"cn": "人在邮局，却不帮我寄信",
+		"en": "you're at the post office but won't mail the letter for me"
+	},
+	"雨が降ってきて、もっとはげしく踊りました": {
+		"cn": "下起雨来，跳得更起劲了",
+		"en": "it started raining, and we danced even harder"
+	},
+	"他の人が傘をさしてくれました。優しかったです。": {
+		"cn": "别人给我打了伞。人很好。",
+		"en": "Someone else held an umbrella for me. They were kind."
+	},
+	"北京よりも東京の方がもっとあつい": {
+		"cn": "东京比北京更热",
+		"en": "Tokyo is even hotter than Beijing"
+	},
+	"直しました": {
+		"cn": "修好了、改正了",
+		"en": "I fixed it"
+	},
+	"このような単語や文を勉強できて、嬉しいです": {
+		"cn": "能学到这样的单词和句子，我很高兴",
+		"en": "I'm glad I can study words and sentences like these"
+	},
+	"東京の方が湿気がある / ジメジメしてる": {
+		"cn": "东京更潮湿、黏糊糊的",
+		"en": "Tokyo is more humid and muggy"
+	},
+	"いただい とだけ お伝えください": {
+		"cn": "请只转告说我来过电话",
+		"en": "please just say that I called"
+	},
+	"お電話 いたしました、また後ほど、お電話させていただきます": {
+		"cn": "我打过电话了，过会儿再打给您",
+		"en": "I called; I'll call you again later"
+	},
+	"キューアールコードしはらい ペイジー": {
+		"cn": "二维码支付 Pay-easy",
+		"en": "QR code payment, Pay-easy"
+	},
+	"3万５千円くらい": {
+		"cn": "大约三万五千日元",
+		"en": "about 35,000 yen"
+	},
+	"ドラマ": {
+		"cn": "电视剧",
+		"en": "TV drama"
+	},
+	"二ペア（ふたペア）": {
+		"cn": "两对（扑克）",
+		"en": "two pair"
+	},
+	"詳しい（くわしい）": {
+		"cn": "详细的；熟悉",
+		"en": "detailed; knowledgeable"
+	},
+	"戦国時代（せんごくじだい）": {
+		"cn": "战国时代",
+		"en": "the Warring States period"
+	},
+	"違うスタイル": {
+		"cn": "不同的风格",
+		"en": "a different style"
+	},
+	"形": {
+		"cn": "形状",
+		"en": "shape"
+	},
+	"似てる": {
+		"cn": "很像",
+		"en": "it looks alike"
+	},
+	"頭がスッキリ": {
+		"cn": "头脑清爽",
+		"en": "my head feels clear"
+	},
+	"ミントティー": {
+		"cn": "薄荷茶",
+		"en": "mint tea"
+	},
+	"Cは死んだ": {
+		"cn": "C死了",
+		"en": "C died"
+	},
+	"Aは長野いく": {
+		"cn": "A去长野",
+		"en": "A is going to Nagano"
+	},
+	"BとD 一緒にすみたい": {
+		"cn": "B和D想住在一起",
+		"en": "B and D want to live together"
+	},
+	"消えた": {
+		"cn": "消失了",
+		"en": "it disappeared"
+	},
+	"感情的 悲しい (かなしい)": {
+		"cn": "感情用事；悲伤",
+		"en": "emotional; sad"
+	},
+	"仲直り なかなおり": {
+		"cn": "和解、和好",
+		"en": "to make up"
+	},
+	"最初の さいしょの": {
+		"cn": "最初的",
+		"en": "the first"
+	},
+	"十話 （じゅうわ": {
+		"cn": "第十话",
+		"en": "episode 10"
+	},
+	"urus 首輪 名札なふだ": {
+		"cn": "项圈、名牌",
+		"en": "collar; name tag"
+	},
+	"字幕 じまく": {
+		"cn": "字幕",
+		"en": "subtitles"
+	},
+	"工場の人から": {
+		"cn": "从工厂的人那里",
+		"en": "from someone at the factory"
+	},
+	"氷少なめで": {
+		"cn": "冰少一点",
+		"en": "with less ice"
+	},
+	"間に合う ギリギリ": {
+		"cn": "勉强赶上",
+		"en": "just barely in time"
+	},
+	"入ってない": {
+		"cn": "没进去、没有包含",
+		"en": "it's not in / not included"
+	},
+	"入る": {
+		"cn": "进入",
+		"en": "to enter"
+	},
+	"できた": {
+		"cn": "做成了、开业了",
+		"en": "it was completed / opened"
+	},
+	"好きなネタは": {
+		"cn": "喜欢的配料是",
+		"en": "the toppings I like are"
+	},
+	"えびてんの天ぷら": {
+		"cn": "虾天妇罗",
+		"en": "shrimp tempura"
+	},
+	"何でかというと": {
+		"cn": "之所以这样，是因为",
+		"en": "the reason is"
+	},
+	"計画が": {
+		"cn": "计划",
+		"en": "the plan"
+	},
+	"それと比べて": {
+		"cn": "与此相比",
+		"en": "compared with that"
+	},
+	"だらだら": {
+		"cn": "拖拖拉拉、慢悠悠",
+		"en": "idly; dragging on"
+	},
+	"へん": {
+		"cn": "奇怪",
+		"en": "strange"
+	},
+	"親 おや": {
+		"cn": "父母、亲人",
+		"en": "parent"
+	},
+	"聞かせていただけ": {
+		"cn": "能让我听一下吗（没说完）",
+		"en": "could I hear it (unfinished)"
+	},
+	"形 全体的に使える（服の時": {
+		"cn": "整体上都能用（说衣服的时候）",
+		"en": "usable overall (when talking about clothes)"
+	},
+	"始めたんだて": {
+		"cn": "是已经开始了吧",
+		"en": "it started, didn't it"
+	},
+	"いつもどり": {
+		"cn": "和平时一样",
+		"en": "as usual"
+	},
+	"一番大きい店": {
+		"cn": "最大的店",
+		"en": "the biggest shop"
+	},
+	"書いておく": {
+		"cn": "先写下来",
+		"en": "write it down in advance"
+	},
+	"数年前（すうねんまえ）": {
+		"cn": "几年前",
+		"en": "several years ago"
+	},
+	"歴史的な街（れきしてきなまち）": {
+		"cn": "有历史的城镇",
+		"en": "a historic town"
+	},
+	"お預入れ": {
+		"cn": "存款",
+		"en": "deposit"
+	},
+	"おあずけいれ": {
+		"cn": "存款（读音）",
+		"en": "deposit (reading)"
+	},
+	"お引出し": {
+		"cn": "取款",
+		"en": "withdrawal"
+	},
+	"おひきだし": {
+		"cn": "取款（读音）",
+		"en": "withdrawal (reading)"
+	},
+	"ざんだかしょうかい": {
+		"cn": "余额查询（读音）",
+		"en": "balance inquiry (reading)"
+	},
+	"ご送金": {
+		"cn": "汇款",
+		"en": "money transfer"
+	},
+	"ごそうきん": {
+		"cn": "汇款（读音）",
+		"en": "money transfer (reading)"
+	},
+	"その他お取り引き": {
+		"cn": "其他业务",
+		"en": "other transactions"
+	},
+	"ご返済": {
+		"cn": "还款",
+		"en": "repayment"
+	},
+	"QRコード支払": {
+		"cn": "二维码支付",
+		"en": "QR code payment"
+	},
+	"なんか年前": {
+		"cn": "几年前吧",
+		"en": "some years ago"
+	},
+	"真面目て": {
+		"cn": "很认真啊",
+		"en": "so serious"
+	},
+	"なるほどね": {
+		"cn": "原来如此",
+		"en": "I see"
+	},
+	"しろ": {
+		"cn": "白色",
+		"en": "white"
+	},
+	"地元 じもと": {
+		"cn": "本地、家乡",
+		"en": "one's hometown"
+	},
+	"逃げられない": {
+		"cn": "逃不掉",
+		"en": "can't escape"
+	},
+	"じもと": {
+		"cn": "本地、家乡",
+		"en": "hometown"
+	},
+	"５０うかい": {
+		"cn": "50层",
+		"en": "the 50th floor"
+	},
+	"V + ことがない": {
+		"cn": "从来没有做过……",
+		"en": "have never done"
+	},
+	"伝えておきますね つたえておく": {
+		"cn": "我先转告一声",
+		"en": "I'll pass that on"
+	},
+	"雨がやんだ やむ": {
+		"cn": "雨停了；停",
+		"en": "the rain stopped; to stop"
+	},
+	"面白くなった": {
+		"cn": "变得有趣了",
+		"en": "it became interesting"
+	},
+	"し ようと思う": {
+		"cn": "打算做……",
+		"en": "I think I'll do"
+	},
+	"雨がふった": {
+		"cn": "下雨了",
+		"en": "it rained"
+	},
+	"細い": {
+		"cn": "细的",
+		"en": "thin"
+	},
+	"ばあいによる": {
+		"cn": "看情况",
+		"en": "it depends"
+	},
+	"山の上に": {
+		"cn": "到山上",
+		"en": "up on the mountain"
+	},
+	"行くんだから": {
+		"cn": "因为要去",
+		"en": "because I'm going"
+	},
+	"かも知れない （かも）": {
+		"cn": "也许",
+		"en": "maybe"
+	},
+	"かも知れない": {
+		"cn": "也许",
+		"en": "maybe"
+	},
+	"（かも）": {
+		"cn": "也许（口语省略）",
+		"en": "maybe (casual)"
+	},
+	"嵇 登浩 - 系図から": {
+		"cn": "嵇登浩，出自系谱",
+		"en": "Ji Denghao, from the family register"
+	},
+	"ケイ トウコウ": {
+		"cn": "嵇登浩的读音",
+		"en": "reading of the name Ji Denghao"
+	},
+	"室内 しつない": {
+		"cn": "室内",
+		"en": "indoors"
+	},
+	"しつない": {
+		"cn": "室内",
+		"en": "indoors"
+	},
+	"あまり高くない": {
+		"cn": "不太贵",
+		"en": "not very expensive"
+	},
+	"言いたかった": {
+		"cn": "本想说",
+		"en": "I wanted to say"
+	},
+	"忘れる": {
+		"cn": "忘记",
+		"en": "to forget"
+	},
+	"北海道まで": {
+		"cn": "直到北海道",
+		"en": "as far as Hokkaido"
+	},
+	"届く": {
+		"cn": "送到、到达",
+		"en": "to arrive / be delivered"
+	},
+	"忘れた": {
+		"cn": "忘了",
+		"en": "I forgot"
+	},
+	"今日おくから": {
+		"cn": "今天寄出的话",
+		"en": "if I send it today"
+	},
+	"たら": {
+		"cn": "如果……的话",
+		"en": "if / when"
+	},
+	"から": {
+		"cn": "因为",
+		"en": "because"
+	},
+	"なら": {
+		"cn": "要是……的话",
+		"en": "if it is the case that"
+	},
+	"でければ": {
+		"cn": "如果不是的话（でなければ）",
+		"en": "if not (でなければ)"
+	},
+	"早く届けんたいんですが": {
+		"cn": "我想早点送到",
+		"en": "I wish it could be delivered soon"
+	},
+	"仲良い": {
+		"cn": "关系好",
+		"en": "on good terms"
+	},
+	"お手伝い": {
+		"cn": "帮忙",
+		"en": "help"
+	},
+	"頼むよ": {
+		"cn": "拜托啦",
+		"en": "I'm counting on you"
+	},
+	"タバコをやめた": {
+		"cn": "戒烟了",
+		"en": "I quit smoking"
+	},
+	"がっこいい": {
+		"cn": "很酷（かっこいい）",
+		"en": "cool"
+	},
+	"たのむ": {
+		"cn": "拜托、请求",
+		"en": "to ask a favor"
+	},
+	"てからだと": {
+		"cn": "做完……之后的话",
+		"en": "once you've done it"
+	},
+	"間に合ってよかった": {
+		"cn": "幸好赶上了",
+		"en": "I'm glad I made it in time"
+	},
+	"手紙だね": {
+		"cn": "是信吧",
+		"en": "it's a letter, right"
+	},
+	"消しておいてね": {
+		"cn": "请先关掉",
+		"en": "please turn it off"
+	},
+	"つうがく通学": {
+		"cn": "上学",
+		"en": "commuting to school"
+	},
+	"つうきん通勤": {
+		"cn": "上班",
+		"en": "commuting to work"
+	},
+	"お店": {
+		"cn": "商店",
+		"en": "shop"
+	},
+	"おしゃれな": {
+		"cn": "时髦的",
+		"en": "stylish"
+	},
+	"めっちゃ（boy）": {
+		"cn": "非常（男生说法）",
+		"en": "very (casual, often male)"
+	},
+	"むすめ": {
+		"cn": "女儿",
+		"en": "daughter"
+	},
+	"むすこ": {
+		"cn": "儿子",
+		"en": "son"
+	},
+	"ところ": {
+		"cn": "正要、刚刚",
+		"en": "about to / just"
+	},
+	"ついたまま": {
+		"cn": "一直开着",
+		"en": "left on"
+	},
+	"なんだから": {
+		"cn": "因为就是……",
+		"en": "because it is"
+	},
+	"30度ごえ": {
+		"cn": "超过30度",
+		"en": "over 30 degrees"
+	},
+	"乾燥してる": {
+		"cn": "很干燥",
+		"en": "it's dry"
+	},
+	"確かに": {
+		"cn": "确实",
+		"en": "certainly"
+	},
+	"嬉しい": {
+		"cn": "高兴",
+		"en": "happy"
+	},
+	"行けばいいかな": {
+		"cn": "去的话就可以吧",
+		"en": "I wonder if I should go"
+	},
+	"迎えにいく": {
+		"cn": "去接",
+		"en": "to go pick someone up"
+	},
+	"ほか": {
+		"cn": "其他",
+		"en": "other"
+	},
+	"たしかに": {
+		"cn": "确实",
+		"en": "certainly"
+	},
+	"いるんだけど": {
+		"cn": "虽然有，但是",
+		"en": "there is one, but"
+	},
+	"歩くと": {
+		"cn": "一走路就",
+		"en": "when I walk"
+	},
+	"ただいま 接客中で": {
+		"cn": "现在正在接待客人",
+		"en": "I'm with a customer right now"
+	},
+	"有通帳口座への切替": {
+		"cn": "切换为有存折的账户",
+		"en": "switch to an account with a passbook"
+	},
+	"ゆうつうちょうこうざへのきりかえ": {
+		"cn": "切换为有存折的账户",
+		"en": "switch to an account with a passbook"
+	},
+	"ご返済･照会": {
+		"cn": "还款、查询",
+		"en": "repayment and inquiry"
+	},
+	"QRコード支払 ペイジー": {
+		"cn": "二维码支付 Pay-easy",
+		"en": "QR payment, Pay-easy"
+	},
+	"クレジットカード": {
+		"cn": "信用卡",
+		"en": "credit card"
+	},
+	"プリペイドカード･生命保険": {
+		"cn": "预付卡、人寿保险",
+		"en": "prepaid card and life insurance"
+	},
+	"市民税": {
+		"cn": "市民税、居民税",
+		"en": "municipal tax"
+	},
+	"女性": {
+		"cn": "女性",
+		"en": "woman"
+	},
+	"男性": {
+		"cn": "男性",
+		"en": "man"
+	},
+	"消失": {
+		"cn": "消失",
+		"en": "disappearance"
+	},
+	"助詞": {
+		"cn": "助词",
+		"en": "particle"
+	},
+	"往復": {
+		"cn": "往返",
+		"en": "round trip"
+	},
+	"価格": {
+		"cn": "价格",
+		"en": "price"
+	},
+	"怪我": {
+		"cn": "受伤",
+		"en": "injury"
+	},
+	"悠哉悠哉": {
+		"cn": "悠闲、慢悠悠",
+		"en": "at a leisurely pace"
+	},
+	"限定": {
+		"cn": "限定",
+		"en": "limited"
+	},
+	"通帳記入": {
+		"cn": "补登存折",
+		"en": "update the passbook"
+	},
+	"通帳繰越": {
+		"cn": "存折换本、结转",
+		"en": "carry the passbook over"
+	},
+	"残高照会": {
+		"cn": "查询余额",
+		"en": "balance inquiry"
+	},
+	"定額": {
+		"cn": "定额",
+		"en": "fixed amount"
+	},
+	"定期": {
+		"cn": "定期存款",
+		"en": "time deposit"
+	},
+	"口座貸越": {
+		"cn": "账户透支",
+		"en": "account overdraft"
+	},
+	"美容師": {
+		"cn": "美容师",
+		"en": "hairdresser"
+	},
+	"問題": {
+		"cn": "问题",
+		"en": "problem"
+	},
+	"敬語": {
+		"cn": "敬语",
+		"en": "honorific language"
+	},
+	"紹興酒": {
+		"cn": "绍兴酒",
+		"en": "Shaoxing wine"
+	},
+	"白酒": {
+		"cn": "白酒",
+		"en": "baijiu"
+	},
+	"封筒": {
+		"cn": "信封",
+		"en": "envelope"
+	},
+	"通学": {
+		"cn": "上学",
+		"en": "commuting to school"
+	},
+	"通勤": {
+		"cn": "上班通勤",
+		"en": "commuting to work"
+	},
+	"息子": {
+		"cn": "儿子",
+		"en": "son"
+	},
+	"何度": {
+		"cn": "多少度；几次",
+		"en": "how many degrees; how many times"
+	},
+	"練習": {
+		"cn": "练习",
+		"en": "practice"
+	},
+	"おじさん 🙆‍♀️ 50~ →おにいさん（polite）": {
+		"cn": "大叔（50岁左右）；礼貌说法要说「おにいさん」",
+		"en": "uncle, around 50; politely say oniisan"
+	},
+	"忘れずに（ don’t forget": {
+		"cn": "别忘了",
+		"en": "don't forget"
+	},
+	"How to say I want more わさび": {
+		"cn": "芥末再来一点怎么说",
+		"en": "how to say I want more wasabi"
+	},
+	"🙆‍♀️わさび もう少し もらえますか？": {
+		"cn": "芥末可以再给我一点吗？",
+		"en": "could I have a little more wasabi?"
+	},
+	"そしてお昼は、できたばかりのパンを食べさせて下さるそうです。（fresh bread. お昼は": {
+		"cn": "听说午饭会请我们吃刚出炉的面包",
+		"en": "I hear they'll let us eat freshly baked bread for lunch"
+	},
+	"そして、聴解の練習をYouTubeで復習しました。": {
+		"cn": "然后在 YouTube 上复习了听力练习",
+		"en": "Then I reviewed listening practice on YouTube"
+	},
+	"方": {
+		"cn": "方法；……的人",
+		"en": "way; person who…"
 	}
 }
