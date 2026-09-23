@@ -36,6 +36,8 @@ const KIND_LABELS: Record<string, [string, string]> = {
 	expression: ["表达", "Phrase"],
 	phrase: ["短语", "Phrase"],
 	sentence: ["句子", "Sentence"],
+	grammar: ["语法", "Grammar"],
+	q: ["错题", "Mistake"],
 };
 
 export function memoryKindLabel(kind?: string): string {
