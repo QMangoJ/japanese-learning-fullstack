@@ -291,6 +291,20 @@ describe("lesson review helpers", () => {
 		expect(limit.example).toContain("制限");
 		expect(limit.exampleCn).toBeTruthy();
 		expect(limit.exampleEn).toBeTruthy();
+		const returnCard = enrichReviewDays([{ id: "x", title: "x", items: [{ jp: "返却", kind: "word" }] }])[0].items[0];
+		expect(returnCard.example).toContain("返却");
+		expect(returnCard.exampleCn).toBeTruthy();
+		expect(returnCard.exampleEn).toBeTruthy();
+		const balance = enrichReviewDays([{ id: "x", title: "x", items: [{ jp: "残高照会", kind: "word" }] }])[0].items[0];
+		expect(balance.example).toContain("残高照会");
+		expect(balance.exampleCn).toBeTruthy();
+		expect(balance.exampleEn).toBeTruthy();
+		const visit = enrichReviewDays([{ id: "x", title: "x", items: [{ jp: "見舞い", kind: "word" }] }])[0].items[0];
+		expect(visit.example).toContain("見舞い");
+		expect(visit.exampleCn).toBeTruthy();
+		const commute = enrichReviewDays([{ id: "x", title: "x", items: [{ jp: "通勤", kind: "word" }] }])[0].items[0];
+		expect(commute.example).toContain("通勤");
+		expect(commute.exampleEn).toBeTruthy();
 		expect(
 			enrichReviewDays([{ id: "x", title: "x", items: [{ jp: "冬にインフルエンザのウイルスと戦うには", kind: "sentence" }] }])[0].items[0].cn,
 		).toBe("要在冬天对抗流感病毒的话");

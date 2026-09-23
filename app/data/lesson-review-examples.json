@@ -713,615 +713,1074 @@
 	},
 	"3万５千円くらい": {
 		"cn": "大约三万五千日元",
-		"en": "about 35,000 yen"
+		"en": "about 35,000 yen",
+		"example": "ホテル代は3万５千円くらいです。",
+		"exampleCn": "酒店费大概三万五千日元。",
+		"exampleEn": "The hotel costs about 35,000 yen."
 	},
 	"ドラマ": {
 		"cn": "电视剧",
-		"en": "TV drama"
+		"en": "TV drama",
+		"example": "夜に日本のドラマを見ます。",
+		"exampleCn": "晚上看日本电视剧。",
+		"exampleEn": "I watch Japanese dramas at night."
 	},
 	"二ペア（ふたペア）": {
 		"cn": "两对（扑克）",
-		"en": "two pair"
+		"en": "two pair",
+		"example": "ポーカーで二ペアが出ました。",
+		"exampleCn": "扑克出了两对。",
+		"exampleEn": "I got two pair in poker."
 	},
 	"詳しい（くわしい）": {
 		"cn": "详细的；熟悉",
-		"en": "detailed; knowledgeable"
+		"en": "detailed; knowledgeable",
+		"example": "この辺りに詳しい人に聞きました。",
+		"exampleCn": "问了熟悉这一带的人。",
+		"exampleEn": "I asked someone who knows this area well."
 	},
 	"戦国時代（せんごくじだい）": {
 		"cn": "战国时代",
-		"en": "the Warring States period"
+		"en": "the Warring States period",
+		"example": "戦国時代の城を見学しました。",
+		"exampleCn": "参观了战国时代的城。",
+		"exampleEn": "I toured a castle from the Warring States period."
 	},
 	"違うスタイル": {
 		"cn": "不同的风格",
-		"en": "a different style"
+		"en": "a different style",
+		"example": "前より違うスタイルですね。",
+		"exampleCn": "和以前是不同的风格呢。",
+		"exampleEn": "It's a different style from before."
 	},
 	"形": {
 		"cn": "形状",
-		"en": "shape"
+		"en": "shape",
+		"example": "この椅子は形がシンプルです。",
+		"exampleCn": "这把椅子形状很简洁。",
+		"exampleEn": "This chair has a simple shape."
 	},
 	"似てる": {
 		"cn": "很像",
-		"en": "it looks alike"
+		"en": "it looks alike",
+		"example": "その二人は顔が似てる。",
+		"exampleCn": "那两个人长得很像。",
+		"exampleEn": "Those two look alike."
 	},
 	"頭がスッキリ": {
 		"cn": "头脑清爽",
-		"en": "my head feels clear"
+		"en": "my head feels clear",
+		"example": "散歩したら頭がスッキリした。",
+		"exampleCn": "散步后头脑清爽了。",
+		"exampleEn": "My head felt clear after a walk."
 	},
 	"ミントティー": {
 		"cn": "薄荷茶",
-		"en": "mint tea"
+		"en": "mint tea",
+		"example": "食後にミントティーを飲みます。",
+		"exampleCn": "饭后喝薄荷茶。",
+		"exampleEn": "I drink mint tea after meals."
 	},
 	"Cは死んだ": {
 		"cn": "C死了",
-		"en": "C died"
+		"en": "C died",
+		"example": "物語の途中でCは死んだ。",
+		"exampleCn": "故事中途C死了。",
+		"exampleEn": "C died in the middle of the story."
 	},
 	"Aは長野いく": {
 		"cn": "A去长野",
-		"en": "A is going to Nagano"
+		"en": "A is going to Nagano",
+		"example": "Aは長野いく予定です。",
+		"exampleCn": "A打算去长野。",
+		"exampleEn": "A is planning to go to Nagano."
 	},
 	"BとD 一緒にすみたい": {
 		"cn": "B和D想住在一起",
-		"en": "B and D want to live together"
+		"en": "B and D want to live together",
+		"example": "BとDは一緒にすみたいそうです。",
+		"exampleCn": "听说B和D想住在一起。",
+		"exampleEn": "B and D apparently want to live together."
 	},
 	"消えた": {
 		"cn": "消失了",
-		"en": "it disappeared"
+		"en": "it disappeared",
+		"example": "画面から文字が消えた。",
+		"exampleCn": "屏幕上的字消失了。",
+		"exampleEn": "The text disappeared from the screen."
 	},
 	"感情的 悲しい (かなしい)": {
 		"cn": "感情用事；悲伤",
-		"en": "emotional; sad"
+		"en": "emotional; sad",
+		"example": "悲しい話で感情的になった。",
+		"exampleCn": "听了悲伤的故事变得情绪化。",
+		"exampleEn": "I got emotional from the sad story."
 	},
 	"仲直り なかなおり": {
 		"cn": "和解、和好",
-		"en": "to make up"
+		"en": "to make up",
+		"example": "けんかのあと仲直りしました。",
+		"exampleCn": "吵架之后和好了。",
+		"exampleEn": "We made up after the argument."
 	},
 	"最初の さいしょの": {
 		"cn": "最初的",
-		"en": "the first"
+		"en": "the first",
+		"example": "最初の一歩が大切です。",
+		"exampleCn": "第一步很重要。",
+		"exampleEn": "The first step is important."
 	},
 	"十話 （じゅうわ": {
 		"cn": "第十话",
-		"en": "episode 10"
+		"en": "episode 10",
+		"example": "アニメの十話が面白かったです。",
+		"exampleCn": "动画第十话很有趣。",
+		"exampleEn": "Episode 10 of the anime was interesting."
 	},
 	"urus 首輪 名札なふだ": {
 		"cn": "项圈、名牌",
-		"en": "collar; name tag"
+		"en": "collar; name tag",
+		"example": "犬の首輪に名札を付ける。",
+		"exampleCn": "给狗的项圈挂上名牌。",
+		"exampleEn": "I put a name tag on the dog's collar."
 	},
 	"字幕 じまく": {
 		"cn": "字幕",
-		"en": "subtitles"
+		"en": "subtitles",
+		"example": "映画は字幕で見ることが多いです。",
+		"exampleCn": "电影多数时候看字幕版。",
+		"exampleEn": "I often watch movies with subtitles."
 	},
 	"工場の人から": {
 		"cn": "从工厂的人那里",
-		"en": "from someone at the factory"
+		"en": "from someone at the factory",
+		"example": "工場の人から説明を受けた。",
+		"exampleCn": "从工厂的人那里听取了说明。",
+		"exampleEn": "I got an explanation from someone at the factory."
 	},
 	"氷少なめで": {
 		"cn": "冰少一点",
-		"en": "with less ice"
+		"en": "with less ice",
+		"example": "コーヒーを氷少なめでください。",
+		"exampleCn": "咖啡请冰少一点。",
+		"exampleEn": "Coffee with less ice, please."
 	},
 	"間に合う ギリギリ": {
 		"cn": "勉强赶上",
-		"en": "just barely in time"
+		"en": "just barely in time",
+		"example": "試験に間に合うギリギリでした。",
+		"exampleCn": "勉强赶上考试。",
+		"exampleEn": "I made it to the exam just barely."
 	},
 	"入ってない": {
 		"cn": "没进去、没有包含",
-		"en": "it's not in / not included"
+		"en": "it's not in / not included",
+		"example": "写真に私が入ってない。",
+		"exampleCn": "照片里没有我。",
+		"exampleEn": "I'm not in the photo."
 	},
 	"入る": {
 		"cn": "进入",
-		"en": "to enter"
+		"en": "to enter",
+		"example": "このドアから教室に入ります。",
+		"exampleCn": "从这扇门进教室。",
+		"exampleEn": "You enter the classroom through this door."
 	},
 	"できた": {
 		"cn": "做成了、开业了",
-		"en": "it was completed / opened"
+		"en": "it was completed / opened",
+		"example": "新しい店ができた。",
+		"exampleCn": "新店开业了。",
+		"exampleEn": "A new shop opened."
 	},
 	"好きなネタは": {
 		"cn": "喜欢的配料是",
-		"en": "the toppings I like are"
+		"en": "the toppings I like are",
+		"example": "好きなネタはねぎです。",
+		"exampleCn": "喜欢的配料是葱。",
+		"exampleEn": "The topping I like is green onion."
 	},
 	"えびてんの天ぷら": {
 		"cn": "虾天妇罗",
-		"en": "shrimp tempura"
+		"en": "shrimp tempura",
+		"example": "えびてんの天ぷら定食を注文しました。",
+		"exampleCn": "点了虾天妇罗套餐。",
+		"exampleEn": "I ordered a shrimp-tempura set meal."
 	},
 	"何でかというと": {
 		"cn": "之所以这样，是因为",
-		"en": "the reason is"
+		"en": "the reason is",
+		"example": "何でかというと、経験があるからです。",
+		"exampleCn": "之所以这样，是因为有经验。",
+		"exampleEn": "The reason is that I have experience."
 	},
 	"計画が": {
 		"cn": "计划",
-		"en": "the plan"
+		"en": "the plan",
+		"example": "計画がうまく進んでいます。",
+		"exampleCn": "计划进展顺利。",
+		"exampleEn": "The plan is going well."
 	},
 	"それと比べて": {
 		"cn": "与此相比",
-		"en": "compared with that"
+		"en": "compared with that",
+		"example": "それと比べて今年は暑いです。",
+		"exampleCn": "与此相比今年更热。",
+		"exampleEn": "Compared with that, this year is hotter."
 	},
 	"だらだら": {
 		"cn": "拖拖拉拉、慢悠悠",
-		"en": "idly; dragging on"
+		"en": "idly; dragging on",
+		"example": "だらだらしないで勉強しよう。",
+		"exampleCn": "别拖拖拉拉了，学习吧。",
+		"exampleEn": "Let's study instead of dragging things out."
 	},
 	"へん": {
 		"cn": "奇怪",
-		"en": "strange"
+		"en": "strange",
+		"example": "今日の天気はへんですね。",
+		"exampleCn": "今天的天气很奇怪呢。",
+		"exampleEn": "The weather is strange today."
 	},
 	"親 おや": {
 		"cn": "父母、亲人",
-		"en": "parent"
+		"en": "parent",
+		"example": "親に毎日連絡します。",
+		"exampleCn": "每天跟父母联系。",
+		"exampleEn": "I contact my parents every day."
 	},
 	"聞かせていただけ": {
 		"cn": "能让我听一下吗（没说完）",
-		"en": "could I hear it (unfinished)"
+		"en": "could I hear it (unfinished)",
+		"example": "もう一度聞かせていただけますか。",
+		"exampleCn": "能再让我听一下吗？",
+		"exampleEn": "Could you let me hear it once more?"
 	},
 	"形 全体的に使える（服の時": {
 		"cn": "整体上都能用（说衣服的时候）",
-		"en": "usable overall (when talking about clothes)"
+		"en": "usable overall (when talking about clothes)",
+		"example": "この形は全体的に使える。",
+		"exampleCn": "这个形状整体上都能用。",
+		"exampleEn": "This shape is usable overall."
 	},
 	"始めたんだて": {
 		"cn": "是已经开始了吧",
-		"en": "it started, didn't it"
+		"en": "it started, didn't it",
+		"example": "新しい仕事を始めたんだて。",
+		"exampleCn": "是已经开始新工作了吧。",
+		"exampleEn": "So you started a new job, huh."
 	},
 	"いつもどり": {
 		"cn": "和平时一样",
-		"en": "as usual"
+		"en": "as usual",
+		"example": "仕事はいつもどり進んでいます。",
+		"exampleCn": "工作和平时一样在推进。",
+		"exampleEn": "Work is progressing as usual."
 	},
 	"一番大きい店": {
 		"cn": "最大的店",
-		"en": "the biggest shop"
+		"en": "the biggest shop",
+		"example": "このモールで一番大きい店です。",
+		"exampleCn": "是这个商场里最大的店。",
+		"exampleEn": "It's the biggest shop in this mall."
 	},
 	"書いておく": {
 		"cn": "先写下来",
-		"en": "write it down in advance"
+		"en": "write it down in advance",
+		"example": "大事なことはメモに書いておく。",
+		"exampleCn": "重要的事先写在便条上。",
+		"exampleEn": "I write important things down in a memo."
 	},
 	"数年前（すうねんまえ）": {
 		"cn": "几年前",
-		"en": "several years ago"
+		"en": "several years ago",
+		"example": "数年前に東京へ引っ越しました。",
+		"exampleCn": "几年前搬到了东京。",
+		"exampleEn": "I moved to Tokyo several years ago."
 	},
 	"歴史的な街（れきしてきなまち）": {
 		"cn": "有历史的城镇",
-		"en": "a historic town"
+		"en": "a historic town",
+		"example": "歴史的な街を散歩しました。",
+		"exampleCn": "在有历史的城镇散步。",
+		"exampleEn": "I took a walk through a historic town."
 	},
 	"お預入れ": {
 		"cn": "存款",
-		"en": "deposit"
+		"en": "deposit",
+		"example": "ATMでお預入れができます。",
+		"exampleCn": "可以在ATM存款。",
+		"exampleEn": "You can make a deposit at the ATM."
 	},
 	"おあずけいれ": {
 		"cn": "存款（读音）",
-		"en": "deposit (reading)"
+		"en": "deposit (reading)",
+		"example": "画面のおあずけいれを押します。",
+		"exampleCn": "按下屏幕上的存款按钮。",
+		"exampleEn": "I press deposit on the screen."
 	},
 	"お引出し": {
 		"cn": "取款",
-		"en": "withdrawal"
+		"en": "withdrawal",
+		"example": "急いで現金のお引出しをしました。",
+		"exampleCn": "急着取了现金。",
+		"exampleEn": "I hurriedly withdrew some cash."
 	},
 	"おひきだし": {
 		"cn": "取款（读音）",
-		"en": "withdrawal (reading)"
+		"en": "withdrawal (reading)",
+		"example": "おひきだしの限度額を確認します。",
+		"exampleCn": "确认取款限额。",
+		"exampleEn": "I check the withdrawal limit."
 	},
 	"ざんだかしょうかい": {
 		"cn": "余额查询（读音）",
-		"en": "balance inquiry (reading)"
+		"en": "balance inquiry (reading)",
+		"example": "ざんだかしょうかいボタンを押します。",
+		"exampleCn": "按下余额查询按钮。",
+		"exampleEn": "I press the balance-inquiry button."
 	},
 	"ご送金": {
 		"cn": "汇款",
-		"en": "money transfer"
+		"en": "money transfer",
+		"example": "家族に毎月ご送金しています。",
+		"exampleCn": "每月给家人汇款。",
+		"exampleEn": "I send money to my family every month."
 	},
 	"ごそうきん": {
 		"cn": "汇款（读音）",
-		"en": "money transfer (reading)"
+		"en": "money transfer (reading)",
+		"example": "ごそうきんの手数料はいくらですか。",
+		"exampleCn": "汇款手续费是多少？",
+		"exampleEn": "How much is the money-transfer fee?"
 	},
 	"その他お取り引き": {
 		"cn": "其他业务",
-		"en": "other transactions"
+		"en": "other transactions",
+		"example": "その他お取り引きは窓口でお願いします。",
+		"exampleCn": "其他业务请到柜台办理。",
+		"exampleEn": "Please use the counter for other transactions."
 	},
 	"ご返済": {
 		"cn": "还款",
-		"en": "repayment"
+		"en": "repayment",
+		"example": "ローンのご返済は来月からです。",
+		"exampleCn": "贷款还款从下个月开始。",
+		"exampleEn": "Loan repayment starts next month."
 	},
 	"QRコード支払": {
 		"cn": "二维码支付",
-		"en": "QR code payment"
+		"en": "QR code payment",
+		"example": "コンビニでQRコード支払を使います。",
+		"exampleCn": "在便利店用二维码支付。",
+		"exampleEn": "I use QR code payment at the convenience store."
 	},
 	"なんか年前": {
 		"cn": "几年前吧",
-		"en": "some years ago"
+		"en": "some years ago",
+		"example": "なんか年前に会った気がします。",
+		"exampleCn": "感觉几年前见过。",
+		"exampleEn": "I feel like I met them some years ago."
 	},
 	"真面目て": {
 		"cn": "很认真啊",
-		"en": "so serious"
+		"en": "so serious",
+		"example": "そんなに真面目て言わなくても。",
+		"exampleCn": "不必说得那么认真啊。",
+		"exampleEn": "You don't have to say it so seriously."
 	},
 	"なるほどね": {
 		"cn": "原来如此",
-		"en": "I see"
+		"en": "I see",
+		"example": "なるほどね、そういうことか。",
+		"exampleCn": "原来如此，是这么回事啊。",
+		"exampleEn": "I see, so that's what it is."
 	},
 	"しろ": {
 		"cn": "白色",
-		"en": "white"
+		"en": "white",
+		"example": "壁をしろく塗りました。",
+		"exampleCn": "把墙刷成了白色。",
+		"exampleEn": "I painted the wall white."
 	},
 	"地元 じもと": {
 		"cn": "本地、家乡",
-		"en": "one's hometown"
+		"en": "one's hometown",
+		"example": "地元の料理が一番好きです。",
+		"exampleCn": "最喜欢本地菜。",
+		"exampleEn": "I like local food the best."
 	},
 	"逃げられない": {
 		"cn": "逃不掉",
-		"en": "can't escape"
+		"en": "can't escape",
+		"example": "責任からは逃げられない。",
+		"exampleCn": "责任逃不掉。",
+		"exampleEn": "You can't escape responsibility."
 	},
 	"じもと": {
 		"cn": "本地、家乡",
-		"en": "hometown"
+		"en": "hometown",
+		"example": "じもとのお祭りに参加しました。",
+		"exampleCn": "参加了本地的祭典。",
+		"exampleEn": "I joined the local festival."
 	},
 	"５０うかい": {
 		"cn": "50层",
-		"en": "the 50th floor"
+		"en": "the 50th floor",
+		"example": "展望台は５０うかいにあります。",
+		"exampleCn": "观景台在50层。",
+		"exampleEn": "The observation deck is on the 50th floor."
 	},
 	"V + ことがない": {
 		"cn": "从来没有做过……",
-		"en": "have never done"
+		"en": "have never done",
+		"example": "日本へ行ったことがない。",
+		"exampleCn": "从没去过日本。",
+		"exampleEn": "I've never been to Japan."
 	},
 	"伝えておきますね つたえておく": {
 		"cn": "我先转告一声",
-		"en": "I'll pass that on"
+		"en": "I'll pass that on",
+		"example": "伝言を伝えておきますね。",
+		"exampleCn": "我先转告一声。",
+		"exampleEn": "I'll pass the message on."
 	},
 	"雨がやんだ やむ": {
 		"cn": "雨停了；停",
-		"en": "the rain stopped; to stop"
+		"en": "the rain stopped; to stop",
+		"example": "雨がやんだので外に出た。",
+		"exampleCn": "雨停了所以出去了。",
+		"exampleEn": "The rain stopped, so I went outside."
 	},
 	"面白くなった": {
 		"cn": "变得有趣了",
-		"en": "it became interesting"
+		"en": "it became interesting",
+		"example": "後半から面白くなった。",
+		"exampleCn": "后半开始变得有趣了。",
+		"exampleEn": "It became interesting from the second half."
 	},
 	"し ようと思う": {
 		"cn": "打算做……",
-		"en": "I think I'll do"
+		"en": "I think I'll do",
+		"example": "来週から運動し ようと思う。",
+		"exampleCn": "打算下周开始运动。",
+		"exampleEn": "I think I'll start exercising next week."
 	},
 	"雨がふった": {
 		"cn": "下雨了",
-		"en": "it rained"
+		"en": "it rained",
+		"example": "昨日の午後に雨がふった。",
+		"exampleCn": "昨天下午下雨了。",
+		"exampleEn": "It rained yesterday afternoon."
 	},
 	"細い": {
 		"cn": "细的",
-		"en": "thin"
+		"en": "thin",
+		"example": "この道はとても細いです。",
+		"exampleCn": "这条路非常窄。",
+		"exampleEn": "This road is very narrow."
 	},
 	"ばあいによる": {
 		"cn": "看情况",
-		"en": "it depends"
+		"en": "it depends",
+		"example": "答えはばあいによる。",
+		"exampleCn": "答案看情况。",
+		"exampleEn": "The answer depends on the case."
 	},
 	"山の上に": {
 		"cn": "到山上",
-		"en": "up on the mountain"
+		"en": "up on the mountain",
+		"example": "山の上に小さな神社があります。",
+		"exampleCn": "山上有一座小神社。",
+		"exampleEn": "There is a small shrine up on the mountain."
 	},
 	"行くんだから": {
 		"cn": "因为要去",
-		"en": "because I'm going"
+		"en": "because I'm going",
+		"example": "早く行くんだから準備して。",
+		"exampleCn": "因为要早去，做好准备。",
+		"exampleEn": "We're going early, so get ready."
 	},
 	"かも知れない （かも）": {
 		"cn": "也许",
-		"en": "maybe"
+		"en": "maybe",
+		"example": "彼も来るかもしれない。",
+		"exampleCn": "他也许也会来。",
+		"exampleEn": "He might come too."
 	},
 	"かも知れない": {
 		"cn": "也许",
-		"en": "maybe"
+		"en": "maybe",
+		"example": "明日は雨かも知れない。",
+		"exampleCn": "明天也许会下雨。",
+		"exampleEn": "It might rain tomorrow."
 	},
 	"（かも）": {
 		"cn": "也许（口语省略）",
-		"en": "maybe (casual)"
+		"en": "maybe (casual)",
+		"example": "今日中に終わるかも。",
+		"exampleCn": "也许今天能做完。",
+		"exampleEn": "It might be finished today."
 	},
 	"嵇 登浩 - 系図から": {
 		"cn": "嵇登浩，出自系谱",
-		"en": "Ji Denghao, from the family register"
+		"en": "Ji Denghao, from the family register",
+		"example": "系図から嵇 登浩の名を見つけた。",
+		"exampleCn": "从系谱中找到了嵇登浩的名字。",
+		"exampleEn": "I found the name Ji Denghao in the family register."
 	},
 	"ケイ トウコウ": {
 		"cn": "嵇登浩的读音",
-		"en": "reading of the name Ji Denghao"
+		"en": "reading of the name Ji Denghao",
+		"example": "名前の読みはケイ トウコウです。",
+		"exampleCn": "名字的读音是ケイ トウコウ。",
+		"exampleEn": "The name is read as Kei Toukou."
 	},
 	"室内 しつない": {
 		"cn": "室内",
-		"en": "indoors"
+		"en": "indoors",
+		"example": "室内でもマスクをします。",
+		"exampleCn": "在室内也戴口罩。",
+		"exampleEn": "I wear a mask even indoors."
 	},
 	"しつない": {
 		"cn": "室内",
-		"en": "indoors"
+		"en": "indoors",
+		"example": "しつないの温度を調整します。",
+		"exampleCn": "调节室内温度。",
+		"exampleEn": "I adjust the indoor temperature."
 	},
 	"あまり高くない": {
 		"cn": "不太贵",
-		"en": "not very expensive"
+		"en": "not very expensive",
+		"example": "このホテルはあまり高くない。",
+		"exampleCn": "这家酒店不太贵。",
+		"exampleEn": "This hotel isn't very expensive."
 	},
 	"言いたかった": {
 		"cn": "本想说",
-		"en": "I wanted to say"
+		"en": "I wanted to say",
+		"example": "本当はありがとうと言いたかった。",
+		"exampleCn": "其实本想说谢谢。",
+		"exampleEn": "I actually wanted to say thank you."
 	},
 	"忘れる": {
 		"cn": "忘记",
-		"en": "to forget"
+		"en": "to forget",
+		"example": "宿題を忘れないでください。",
+		"exampleCn": "请别忘了作业。",
+		"exampleEn": "Please don't forget your homework."
 	},
 	"北海道まで": {
 		"cn": "直到北海道",
-		"en": "as far as Hokkaido"
+		"en": "as far as Hokkaido",
+		"example": "新幹線で北海道まで行きました。",
+		"exampleCn": "坐新干线一直到了北海道。",
+		"exampleEn": "I went as far as Hokkaido by shinkansen."
 	},
 	"届く": {
 		"cn": "送到、到达",
-		"en": "to arrive / be delivered"
+		"en": "to arrive / be delivered",
+		"example": "荷物は明日届く予定です。",
+		"exampleCn": "包裹预计明天送到。",
+		"exampleEn": "The package is scheduled to arrive tomorrow."
 	},
 	"忘れた": {
 		"cn": "忘了",
-		"en": "I forgot"
+		"en": "I forgot",
+		"example": "傘を電車に忘れた。",
+		"exampleCn": "把伞忘在电车上了。",
+		"exampleEn": "I left my umbrella on the train."
 	},
 	"今日おくから": {
 		"cn": "今天寄出的话",
-		"en": "if I send it today"
+		"en": "if I send it today",
+		"example": "今日おくから明日着きます。",
+		"exampleCn": "今天寄出的话明天到。",
+		"exampleEn": "If I send it today, it arrives tomorrow."
 	},
 	"たら": {
 		"cn": "如果……的话",
-		"en": "if / when"
+		"en": "if / when",
+		"example": "着いたら連絡してください。",
+		"exampleCn": "到了的话请联系我。",
+		"exampleEn": "Please contact me when you arrive."
 	},
 	"から": {
 		"cn": "因为",
-		"en": "because"
+		"en": "because",
+		"example": "寒いから窓を閉めます。",
+		"exampleCn": "因为冷，把窗户关上。",
+		"exampleEn": "I'll close the window because it's cold."
 	},
 	"なら": {
 		"cn": "要是……的话",
-		"en": "if it is the case that"
+		"en": "if it is the case that",
+		"example": "時間があるなら手伝います。",
+		"exampleCn": "要是有时间的话我帮你。",
+		"exampleEn": "If I have time, I'll help."
 	},
 	"でければ": {
 		"cn": "如果不是的话（でなければ）",
-		"en": "if not (でなければ)"
+		"en": "if not (でなければ)",
+		"example": "雨でければ外で遊びます。",
+		"exampleCn": "如果不下雨就在外面玩。",
+		"exampleEn": "If it isn't raining, we'll play outside."
 	},
 	"早く届けんたいんですが": {
 		"cn": "我想早点送到",
-		"en": "I wish it could be delivered soon"
+		"en": "I wish it could be delivered soon",
+		"example": "書類を早く届けんたいんですが。",
+		"exampleCn": "我想早点把文件送到。",
+		"exampleEn": "I wish the documents could be delivered soon."
 	},
 	"仲良い": {
 		"cn": "关系好",
-		"en": "on good terms"
+		"en": "on good terms",
+		"example": "クラスで一番仲良い友達です。",
+		"exampleCn": "是班上关系最好的朋友。",
+		"exampleEn": "They're my best friend in the class."
 	},
 	"お手伝い": {
 		"cn": "帮忙",
-		"en": "help"
+		"en": "help",
+		"example": "母の料理をお手伝いします。",
+		"exampleCn": "帮忙妈妈做饭。",
+		"exampleEn": "I help my mother with cooking."
 	},
 	"頼むよ": {
 		"cn": "拜托啦",
-		"en": "I'm counting on you"
+		"en": "I'm counting on you",
+		"example": "明日の用事、頼むよ。",
+		"exampleCn": "明天的事拜托啦。",
+		"exampleEn": "I'm counting on you for tomorrow's errand."
 	},
 	"タバコをやめた": {
 		"cn": "戒烟了",
-		"en": "I quit smoking"
+		"en": "I quit smoking",
+		"example": "去年タバコをやめた。",
+		"exampleCn": "去年戒烟了。",
+		"exampleEn": "I quit smoking last year."
 	},
 	"がっこいい": {
 		"cn": "很酷（かっこいい）",
-		"en": "cool"
+		"en": "cool",
+		"example": "その髪型、がっこいいね。",
+		"exampleCn": "那个发型好酷。",
+		"exampleEn": "That hairstyle is cool."
 	},
 	"たのむ": {
 		"cn": "拜托、请求",
-		"en": "to ask a favor"
+		"en": "to ask a favor",
+		"example": "ちょっとたのんでもいい？",
+		"exampleCn": "能拜托你一点事吗？",
+		"exampleEn": "Can I ask you a favor?"
 	},
 	"てからだと": {
 		"cn": "做完……之后的话",
-		"en": "once you've done it"
+		"en": "once you've done it",
+		"example": "説明を聞いてからだと分かりやすい。",
+		"exampleCn": "听完说明之后就容易懂。",
+		"exampleEn": "It's easier once you've heard the explanation."
 	},
 	"間に合ってよかった": {
 		"cn": "幸好赶上了",
-		"en": "I'm glad I made it in time"
+		"en": "I'm glad I made it in time",
+		"example": "電車に間に合ってよかった。",
+		"exampleCn": "幸好赶上了电车。",
+		"exampleEn": "I'm glad I made the train."
 	},
 	"手紙だね": {
 		"cn": "是信吧",
-		"en": "it's a letter, right"
+		"en": "it's a letter, right",
+		"example": "これは手紙だね。",
+		"exampleCn": "这是信吧。",
+		"exampleEn": "This is a letter, right?"
 	},
 	"消しておいてね": {
 		"cn": "请先关掉",
-		"en": "please turn it off"
+		"en": "please turn it off",
+		"example": "電気を消しておいてね。",
+		"exampleCn": "请先把灯关掉。",
+		"exampleEn": "Please turn off the lights."
 	},
 	"つうがく通学": {
 		"cn": "上学",
-		"en": "commuting to school"
+		"en": "commuting to school",
+		"example": "つうがくにはバスを使います。",
+		"exampleCn": "上学用巴士。",
+		"exampleEn": "I use the bus to commute to school."
 	},
 	"つうきん通勤": {
 		"cn": "上班",
-		"en": "commuting to work"
+		"en": "commuting to work",
+		"example": "つうきん時間は一時間です。",
+		"exampleCn": "通勤时间是一小时。",
+		"exampleEn": "My commute to work takes an hour."
 	},
 	"お店": {
 		"cn": "商店",
-		"en": "shop"
+		"en": "shop",
+		"example": "新しいお店が駅前にできました。",
+		"exampleCn": "车站前开了一家新店。",
+		"exampleEn": "A new shop opened in front of the station."
 	},
 	"おしゃれな": {
 		"cn": "时髦的",
-		"en": "stylish"
+		"en": "stylish",
+		"example": "おしゃれなカフェを見つけました。",
+		"exampleCn": "发现了一家时髦的咖啡馆。",
+		"exampleEn": "I found a stylish cafe."
 	},
 	"めっちゃ（boy）": {
 		"cn": "非常（男生说法）",
-		"en": "very (casual, often male)"
+		"en": "very (casual, often male)",
+		"example": "今日はめっちゃ疲れた。",
+		"exampleCn": "今天非常累。",
+		"exampleEn": "I'm really tired today."
 	},
 	"むすめ": {
 		"cn": "女儿",
-		"en": "daughter"
+		"en": "daughter",
+		"example": "むすめが幼稚園に通っています。",
+		"exampleCn": "女儿在上幼儿园。",
+		"exampleEn": "My daughter goes to kindergarten."
 	},
 	"むすこ": {
 		"cn": "儿子",
-		"en": "son"
+		"en": "son",
+		"example": "むすこの誕生日を祝いました。",
+		"exampleCn": "庆祝了儿子的生日。",
+		"exampleEn": "We celebrated my son's birthday."
 	},
 	"ところ": {
 		"cn": "正要、刚刚",
-		"en": "about to / just"
+		"en": "about to / just",
+		"example": "ちょうど出かけるところです。",
+		"exampleCn": "正好要出门。",
+		"exampleEn": "I'm just about to leave."
 	},
 	"ついたまま": {
 		"cn": "一直开着",
-		"en": "left on"
+		"en": "left on",
+		"example": "電気がついたまま寝てしまった。",
+		"exampleCn": "灯一直开着就睡着了。",
+		"exampleEn": "I fell asleep with the lights left on."
 	},
 	"なんだから": {
 		"cn": "因为就是……",
-		"en": "because it is"
+		"en": "because it is",
+		"example": "大事なんだから忘れないで。",
+		"exampleCn": "因为很重要，别忘了。",
+		"exampleEn": "It's important, so don't forget."
 	},
 	"30度ごえ": {
 		"cn": "超过30度",
-		"en": "over 30 degrees"
+		"en": "over 30 degrees",
+		"example": "今日は30度ごえの暑さです。",
+		"exampleCn": "今天热度超过30度。",
+		"exampleEn": "It's over 30 degrees today."
 	},
 	"乾燥してる": {
 		"cn": "很干燥",
-		"en": "it's dry"
+		"en": "it's dry",
+		"example": "冬の空気は乾燥してる。",
+		"exampleCn": "冬天的空气很干燥。",
+		"exampleEn": "The winter air is dry."
 	},
 	"確かに": {
 		"cn": "确实",
-		"en": "certainly"
+		"en": "certainly",
+		"example": "確かにその通りだと思います。",
+		"exampleCn": "确实觉得是那样。",
+		"exampleEn": "I certainly think that's right."
 	},
 	"嬉しい": {
 		"cn": "高兴",
-		"en": "happy"
+		"en": "happy",
+		"example": "合格の知らせが嬉しかったです。",
+		"exampleCn": "合格的消息让人高兴。",
+		"exampleEn": "I was happy about the pass notice."
 	},
 	"行けばいいかな": {
 		"cn": "去的话就可以吧",
-		"en": "I wonder if I should go"
+		"en": "I wonder if I should go",
+		"example": "今日行けばいいかな。",
+		"exampleCn": "今天去的话就可以吧。",
+		"exampleEn": "I wonder if I should go today."
 	},
 	"迎えにいく": {
 		"cn": "去接",
-		"en": "to go pick someone up"
+		"en": "to go pick someone up",
+		"example": "駅まで友達を迎えにいく。",
+		"exampleCn": "去车站接朋友。",
+		"exampleEn": "I'm going to the station to pick up a friend."
 	},
 	"ほか": {
 		"cn": "其他",
-		"en": "other"
+		"en": "other",
+		"example": "ほかに質問はありますか。",
+		"exampleCn": "还有其他问题吗？",
+		"exampleEn": "Do you have any other questions?"
 	},
 	"たしかに": {
 		"cn": "确实",
-		"en": "certainly"
+		"en": "certainly",
+		"example": "たしかに安いですね。",
+		"exampleCn": "确实很便宜呢。",
+		"exampleEn": "It certainly is cheap."
 	},
 	"いるんだけど": {
 		"cn": "虽然有，但是",
-		"en": "there is one, but"
+		"en": "there is one, but",
+		"example": "時間はあるんだけど、今日は無理。",
+		"exampleCn": "虽然有时间，但今天不行。",
+		"exampleEn": "I do have time, but I can't today."
 	},
 	"歩くと": {
 		"cn": "一走路就",
-		"en": "when I walk"
+		"en": "when I walk",
+		"example": "歩くと気分がよくなります。",
+		"exampleCn": "一走路心情就变好。",
+		"exampleEn": "When I walk, I feel better."
 	},
 	"ただいま 接客中で": {
 		"cn": "现在正在接待客人",
-		"en": "I'm with a customer right now"
+		"en": "I'm with a customer right now",
+		"example": "ただいま接客中で少々お待ちください。",
+		"exampleCn": "现在正在接待客人，请稍等。",
+		"exampleEn": "I'm with a customer right now; please wait a moment."
 	},
 	"有通帳口座への切替": {
 		"cn": "切换为有存折的账户",
-		"en": "switch to an account with a passbook"
+		"en": "switch to an account with a passbook",
+		"example": "有通帳口座への切替を申し込みました。",
+		"exampleCn": "申请切换为有存折的账户。",
+		"exampleEn": "I applied to switch to an account with a passbook."
 	},
 	"ゆうつうちょうこうざへのきりかえ": {
 		"cn": "切换为有存折的账户",
-		"en": "switch to an account with a passbook"
+		"en": "switch to an account with a passbook",
+		"example": "ゆうつうちょうこうざへのきりかえは窓口です。",
+		"exampleCn": "切换为有存折账户请到柜台。",
+		"exampleEn": "Switching to a passbook account is done at the counter."
 	},
 	"ご返済･照会": {
 		"cn": "还款、查询",
-		"en": "repayment and inquiry"
+		"en": "repayment and inquiry",
+		"example": "画面でご返済･照会ができます。",
+		"exampleCn": "可以在屏幕上进行还款和查询。",
+		"exampleEn": "You can make repayments and inquiries on the screen."
 	},
 	"QRコード支払 ペイジー": {
 		"cn": "二维码支付 Pay-easy",
-		"en": "QR payment, Pay-easy"
+		"en": "QR payment, Pay-easy",
+		"example": "税金はQRコード支払 ペイジーで払えます。",
+		"exampleCn": "税款可用二维码支付 Pay-easy 缴纳。",
+		"exampleEn": "You can pay taxes with QR payment Pay-easy."
 	},
 	"クレジットカード": {
 		"cn": "信用卡",
-		"en": "credit card"
+		"en": "credit card",
+		"example": "ホテル代はクレジットカードで払います。",
+		"exampleCn": "酒店费用用信用卡支付。",
+		"exampleEn": "I'll pay the hotel bill by credit card."
 	},
 	"プリペイドカード･生命保険": {
 		"cn": "预付卡、人寿保险",
-		"en": "prepaid card and life insurance"
+		"en": "prepaid card and life insurance",
+		"example": "窓口でプリペイドカード･生命保険の手続きができます。",
+		"exampleCn": "柜台可办理预付卡和人寿保险手续。",
+		"exampleEn": "You can handle prepaid cards and life insurance at the counter."
 	},
 	"市民税": {
 		"cn": "市民税、居民税",
-		"en": "municipal tax"
+		"en": "municipal tax",
+		"example": "給料から市民税が引かれます。",
+		"exampleCn": "工资里会扣除市民税。",
+		"exampleEn": "Municipal tax is deducted from my salary."
 	},
 	"女性": {
 		"cn": "女性",
-		"en": "woman"
+		"en": "woman",
+		"example": "この映画の主人公は女性です。",
+		"exampleCn": "这部电影的主角是女性。",
+		"exampleEn": "The main character of this movie is a woman."
 	},
 	"男性": {
 		"cn": "男性",
-		"en": "man"
+		"en": "man",
+		"example": "男性用のサイズを探しています。",
+		"exampleCn": "在找男款尺码。",
+		"exampleEn": "I'm looking for a men's size."
 	},
 	"消失": {
 		"cn": "消失",
-		"en": "disappearance"
+		"en": "disappearance",
+		"example": "データが突然消失しました。",
+		"exampleCn": "数据突然消失了。",
+		"exampleEn": "The data suddenly disappeared."
 	},
 	"助詞": {
 		"cn": "助词",
-		"en": "particle"
+		"en": "particle",
+		"example": "日本語の助詞は難しいです。",
+		"exampleCn": "日语的助词很难。",
+		"exampleEn": "Japanese particles are difficult."
 	},
 	"往復": {
 		"cn": "往返",
-		"en": "round trip"
+		"en": "round trip",
+		"example": "東京までの往復切符を買いました。",
+		"exampleCn": "买了到东京的往返票。",
+		"exampleEn": "I bought a round-trip ticket to Tokyo."
 	},
 	"価格": {
 		"cn": "价格",
-		"en": "price"
+		"en": "price",
+		"example": "同じ商品でも店によって価格が違います。",
+		"exampleCn": "同样的商品，不同店价格不一样。",
+		"exampleEn": "Even the same product has different prices depending on the shop."
 	},
 	"怪我": {
 		"cn": "受伤",
-		"en": "injury"
+		"en": "injury",
+		"example": "転んで足に怪我をしました。",
+		"exampleCn": "摔倒把脚弄伤了。",
+		"exampleEn": "I fell and injured my leg."
 	},
 	"悠哉悠哉": {
 		"cn": "悠闲、慢悠悠",
-		"en": "at a leisurely pace"
+		"en": "at a leisurely pace",
+		"example": "週末は悠哉悠哉過ごしました。",
+		"exampleCn": "周末过得很悠闲。",
+		"exampleEn": "I spent the weekend at a leisurely pace."
 	},
 	"限定": {
 		"cn": "限定",
-		"en": "limited"
+		"en": "limited",
+		"example": "このお菓子は期間限定です。",
+		"exampleCn": "这种点心是期间限定。",
+		"exampleEn": "This snack is available for a limited time."
 	},
 	"通帳記入": {
 		"cn": "补登存折",
-		"en": "update the passbook"
+		"en": "update the passbook",
+		"example": "銀行で通帳記入をしてもらいました。",
+		"exampleCn": "在银行请人补登了存折。",
+		"exampleEn": "I had my passbook updated at the bank."
 	},
 	"通帳繰越": {
 		"cn": "存折换本、结转",
-		"en": "carry the passbook over"
+		"en": "carry the passbook over",
+		"example": "古い通帳の通帳繰越をしました。",
+		"exampleCn": "办理了旧存折的换本。",
+		"exampleEn": "I carried my old passbook over to a new one."
 	},
 	"残高照会": {
 		"cn": "查询余额",
-		"en": "balance inquiry"
+		"en": "balance inquiry",
+		"example": "ATMで残高照会をしました。",
+		"exampleCn": "在ATM上查询了余额。",
+		"exampleEn": "I checked my balance on the ATM."
 	},
 	"定額": {
 		"cn": "定额",
-		"en": "fixed amount"
+		"en": "fixed amount",
+		"example": "毎月定額で貯金しています。",
+		"exampleCn": "每个月定额存钱。",
+		"exampleEn": "I save a fixed amount every month."
 	},
 	"定期": {
 		"cn": "定期存款",
-		"en": "time deposit"
+		"en": "time deposit",
+		"example": "ボーナスを定期に入れました。",
+		"exampleCn": "把奖金存进了定期存款。",
+		"exampleEn": "I put my bonus into a time deposit."
 	},
 	"口座貸越": {
 		"cn": "账户透支",
-		"en": "account overdraft"
+		"en": "account overdraft",
+		"example": "口座貸越の手数料を確認します。",
+		"exampleCn": "确认账户透支的手续费。",
+		"exampleEn": "I check the fee for the account overdraft."
 	},
 	"美容師": {
 		"cn": "美容师",
-		"en": "hairdresser"
+		"en": "hairdresser",
+		"example": "姉は美容師として働いています。",
+		"exampleCn": "姐姐当美容师。",
+		"exampleEn": "My older sister works as a hairdresser."
 	},
 	"問題": {
 		"cn": "问题",
-		"en": "problem"
+		"en": "problem",
+		"example": "テストの問題が難しかったです。",
+		"exampleCn": "考试的问题很难。",
+		"exampleEn": "The test questions were difficult."
 	},
 	"敬語": {
 		"cn": "敬语",
-		"en": "honorific language"
+		"en": "honorific language",
+		"example": "面接では敬語を使います。",
+		"exampleCn": "面试时使用敬语。",
+		"exampleEn": "I use honorific language in interviews."
 	},
 	"紹興酒": {
 		"cn": "绍兴酒",
-		"en": "Shaoxing wine"
+		"en": "Shaoxing wine",
+		"example": "夕食に紹興酒を少し飲みました。",
+		"exampleCn": "晚饭时喝了一点绍兴酒。",
+		"exampleEn": "I had a little Shaoxing wine with dinner."
 	},
 	"白酒": {
 		"cn": "白酒",
-		"en": "baijiu"
+		"en": "baijiu",
+		"example": "中国では白酒を飲むことがあります。",
+		"exampleCn": "在中国有时会喝白酒。",
+		"exampleEn": "In China people sometimes drink baijiu."
 	},
 	"封筒": {
 		"cn": "信封",
-		"en": "envelope"
+		"en": "envelope",
+		"example": "手紙を封筒に入れて送ります。",
+		"exampleCn": "把信放进信封寄出。",
+		"exampleEn": "I put the letter in an envelope and send it."
 	},
 	"通学": {
 		"cn": "上学",
-		"en": "commuting to school"
+		"en": "commuting to school",
+		"example": "自転車で通学しています。",
+		"exampleCn": "骑自行车上学。",
+		"exampleEn": "I commute to school by bicycle."
 	},
 	"通勤": {
 		"cn": "上班通勤",
-		"en": "commuting to work"
+		"en": "commuting to work",
+		"example": "電車で通勤しています。",
+		"exampleCn": "坐电车上班。",
+		"exampleEn": "I commute to work by train."
 	},
 	"息子": {
 		"cn": "儿子",
-		"en": "son"
+		"en": "son",
+		"example": "息子は来年小学生になります。",
+		"exampleCn": "儿子明年上小学。",
+		"exampleEn": "My son will start elementary school next year."
 	},
 	"何度": {
 		"cn": "多少度；几次",
-		"en": "how many degrees; how many times"
+		"en": "how many degrees; how many times",
+		"example": "今日の最高気温は何度ですか。",
+		"exampleCn": "今天的最高气温是多少度？",
+		"exampleEn": "What's the high temperature today?"
 	},
 	"練習": {
 		"cn": "练习",
-		"en": "practice"
+		"en": "practice",
+		"example": "毎日ピアノの練習をします。",
+		"exampleCn": "每天练习钢琴。",
+		"exampleEn": "I practice the piano every day."
 	},
 	"おじさん 🙆‍♀️ 50~ →おにいさん（polite）": {
 		"cn": "大叔（50岁左右）；礼貌说法要说「おにいさん」",
@@ -1329,11 +1788,17 @@
 	},
 	"忘れずに（ don’t forget": {
 		"cn": "别忘了",
-		"en": "don't forget"
+		"en": "don't forget",
+		"example": "傘を忘れずに持っていって。",
+		"exampleCn": "别忘了带伞。",
+		"exampleEn": "Don't forget to take your umbrella."
 	},
 	"How to say I want more わさび": {
 		"cn": "芥末再来一点怎么说",
-		"en": "how to say I want more wasabi"
+		"en": "how to say I want more wasabi",
+		"example": "わさびをもっとください、と言います。",
+		"exampleCn": "芥末再来一点可以说「わさびをもっとください」。",
+		"exampleEn": "You say 'wasabi o motto kudasai' for more wasabi."
 	},
 	"🙆‍♀️わさび もう少し もらえますか？": {
 		"cn": "芥末可以再给我一点吗？",
@@ -1349,6 +1814,1994 @@
 	},
 	"方": {
 		"cn": "方法；……的人",
-		"en": "way; person who…"
+		"en": "way; person who…",
+		"example": "もっと簡単な方法があります。",
+		"exampleCn": "有更简单的方法。",
+		"exampleEn": "There's an easier way."
+	},
+	"現金": {
+		"example": "この店は現金しか使えません。",
+		"exampleCn": "这家店只能用现金。",
+		"exampleEn": "This shop only accepts cash."
+	},
+	"貯金": {
+		"example": "旅行のために貯金をしています。",
+		"exampleCn": "为了旅行在存钱。",
+		"exampleEn": "I'm saving money for a trip."
+	},
+	"税金": {
+		"example": "来月、税金を払わなければなりません。",
+		"exampleCn": "下个月必须交税。",
+		"exampleEn": "I have to pay taxes next month."
+	},
+	"年金": {
+		"example": "将来の年金が心配です。",
+		"exampleCn": "担心将来的养老金。",
+		"exampleEn": "I'm worried about my future pension."
+	},
+	"賃料": {
+		"example": "この部屋の賃料は高いです。",
+		"exampleCn": "这间房的租金很贵。",
+		"exampleEn": "The rent for this room is high."
+	},
+	"代金": {
+		"example": "食事の代金は私が払います。",
+		"exampleCn": "餐费我来付。",
+		"exampleEn": "I'll pay for the meal."
+	},
+	"返却": {
+		"example": "図書館に本を返却しました。",
+		"exampleCn": "把书还给了图书馆。",
+		"exampleEn": "I returned the book to the library."
+	},
+	"返す": {
+		"example": "借りたお金を来週返します。",
+		"exampleCn": "下周把借的钱还回去。",
+		"exampleEn": "I'll return the money I borrowed next week."
+	},
+	"見舞い": {
+		"example": "友達のお見舞いに病院へ行きました。",
+		"exampleCn": "去医院探望了朋友。",
+		"exampleEn": "I went to the hospital to visit my friend."
+	},
+	"会場": {
+		"example": "コンサートの会場は駅の近くです。",
+		"exampleCn": "演唱会会场在车站附近。",
+		"exampleEn": "The concert venue is near the station."
+	},
+	"今後": {
+		"example": "今後はもっと早く連絡します。",
+		"exampleCn": "今后会更早联系。",
+		"exampleEn": "From now on I'll contact you earlier."
+	},
+	"チラシ": {
+		"example": "郵便受けにチラシが入っていました。",
+		"exampleCn": "信箱里有传单。",
+		"exampleEn": "There was a flyer in the mailbox."
+	},
+	"ストーリー": {
+		"example": "この映画のストーリーが面白いです。",
+		"exampleCn": "这部电影的剧情很有趣。",
+		"exampleEn": "This movie's story is interesting."
+	},
+	"おみせ（お店）": {
+		"example": "このおみせのパンが好きです。",
+		"exampleCn": "我喜欢这家店的面包。",
+		"exampleEn": "I like the bread at this shop."
+	},
+	"並ぶ": {
+		"example": "人気店の前に長く並びます。",
+		"exampleCn": "在人气店前排很长的队。",
+		"exampleEn": "I wait in a long line in front of popular shops."
+	},
+	"人気（にんき）": {
+		"example": "このカフェは今とても人気です。",
+		"exampleCn": "这家咖啡馆现在很受欢迎。",
+		"exampleEn": "This cafe is very popular right now."
+	},
+	"休養": {
+		"example": "週末は家で休養します。",
+		"exampleCn": "周末在家休养。",
+		"exampleEn": "I'll rest at home over the weekend."
+	},
+	"伝統（でんとう）": {
+		"example": "この町には古い伝統が残っています。",
+		"exampleCn": "这座城镇还保留着古老的传统。",
+		"exampleEn": "Old traditions remain in this town."
+	},
+	"例文(れいぶん）": {
+		"example": "教科書の例文をノートに写します。",
+		"exampleCn": "把教科书的例句抄到笔记本上。",
+		"exampleEn": "I copy the example sentences from the textbook into my notebook."
+	},
+	"健康（けんこう）": {
+		"example": "毎日歩いて健康を保ちます。",
+		"exampleCn": "每天走路保持健康。",
+		"exampleEn": "I walk every day to stay healthy."
+	},
+	"兄弟": {
+		"example": "私には兄弟が二人います。",
+		"exampleCn": "我有两个兄弟。",
+		"exampleEn": "I have two brothers."
+	},
+	"兵士": {
+		"example": "昔の兵士は剣を持っていました。",
+		"exampleCn": "以前的士兵拿着剑。",
+		"exampleEn": "Soldiers in the past carried swords."
+	},
+	"出演（しゅつえん）": {
+		"example": "有名な俳優が出演しています。",
+		"exampleCn": "有著名演员出演。",
+		"exampleEn": "A famous actor is appearing in it."
+	},
+	"利点": {
+		"example": "この方法にはいくつかの利点があります。",
+		"exampleCn": "这个方法有几个优点。",
+		"exampleEn": "This method has several advantages."
+	},
+	"十代": {
+		"example": "十代のころよく漫画を読みました。",
+		"exampleCn": "十几岁的时候经常看漫画。",
+		"exampleEn": "I often read manga in my teens."
+	},
+	"半分": {
+		"example": "ケーキを半分に切りました。",
+		"exampleCn": "把蛋糕切成了两半。",
+		"exampleEn": "I cut the cake in half."
+	},
+	"原因": {
+		"example": "事故の原因を調べています。",
+		"exampleCn": "正在调查事故原因。",
+		"exampleEn": "They're looking into the cause of the accident."
+	},
+	"原料": {
+		"example": "このパンの原料は小麦です。",
+		"exampleCn": "这种面包的原料是小麦。",
+		"exampleEn": "The main ingredient of this bread is wheat."
+	},
+	"収入（しゅうにゅう）": {
+		"example": "去年より収入が増えました。",
+		"exampleCn": "收入比去年增加了。",
+		"exampleEn": "My income increased compared with last year."
+	},
+	"喜ぶ（よろこぶ）": {
+		"example": "プレゼントをもらって喜びました。",
+		"exampleCn": "收到礼物很高兴。",
+		"exampleEn": "I was happy to receive the present."
+	},
+	"国民": {
+		"example": "国民の意見を大切にします。",
+		"exampleCn": "重视国民的意见。",
+		"exampleEn": "We value the opinions of the people."
+	},
+	"地元": {
+		"example": "地元の友達に会いに帰ります。",
+		"exampleCn": "回老家见当地的朋友。",
+		"exampleEn": "I'm going back to see my local friends."
+	},
+	"地理": {
+		"example": "日本の地理を勉強しています。",
+		"exampleCn": "正在学日本地理。",
+		"exampleEn": "I'm studying the geography of Japan."
+	},
+	"夜型": {
+		"example": "私は夜型なので朝が苦手です。",
+		"exampleCn": "我是夜猫子，所以不擅长早上。",
+		"exampleEn": "I'm a night person, so mornings are hard for me."
+	},
+	"朝型": {
+		"example": "朝型に変えてから調子がいいです。",
+		"exampleCn": "改成早起型以后状态很好。",
+		"exampleEn": "I've felt better since becoming a morning person."
+	},
+	"室内": {
+		"example": "雨の日は室内で遊びます。",
+		"exampleCn": "下雨天在室内玩。",
+		"exampleEn": "On rainy days we play indoors."
+	},
+	"ふうとう": {
+		"example": "切手をふうとうに貼ります。",
+		"exampleCn": "把邮票贴在信封上。",
+		"exampleEn": "I stick a stamp on the envelope."
+	},
+	"復活": {
+		"example": "人気アニメが復活します。",
+		"exampleCn": "人气动画要复活了。",
+		"exampleEn": "The popular anime is coming back."
+	},
+	"情報（じょうほう）": {
+		"example": "旅行の情報をインターネットで調べます。",
+		"exampleCn": "在网上查旅行信息。",
+		"exampleEn": "I look up travel information online."
+	},
+	"戦争": {
+		"example": "戦争のない世界になってほしいです。",
+		"exampleCn": "希望成为没有战争的世界。",
+		"exampleEn": "I hope for a world without war."
+	},
+	"終戦": {
+		"example": "終戦の日に平和について考えます。",
+		"exampleCn": "在终战纪念日思考和平。",
+		"exampleEn": "On the anniversary of the war's end, I think about peace."
+	},
+	"接続": {
+		"example": "この文法の接続を覚えましょう。",
+		"exampleCn": "来记住这个语法的接续吧。",
+		"exampleEn": "Let's memorize the conjugation for this grammar point."
+	},
+	"敬語（けいご": {
+		"example": "店員さんに敬語で話します。",
+		"exampleCn": "对店员用敬语说话。",
+		"exampleEn": "I speak to shop staff in honorific language."
+	},
+	"新鮮（しんせん）": {
+		"example": "この魚はとても新鮮です。",
+		"exampleCn": "这条鱼非常新鲜。",
+		"exampleEn": "This fish is very fresh."
+	},
+	"旦那": {
+		"example": "旦那は今日残業です。",
+		"exampleCn": "丈夫今天加班。",
+		"exampleEn": "My husband is working overtime today."
+	},
+	"旦那だんな": {
+		"example": "だんなと一緒に買い物に行きました。",
+		"exampleCn": "和丈夫一起去购物了。",
+		"exampleEn": "I went shopping with my husband."
+	},
+	"材料": {
+		"example": "料理の材料をスーパーで買います。",
+		"exampleCn": "在超市买做菜的材料。",
+		"exampleEn": "I buy cooking ingredients at the supermarket."
+	},
+	"様子": {
+		"example": "子どもの様子を見てください。",
+		"exampleCn": "请看一下孩子的情况。",
+		"exampleEn": "Please check on how the child is doing."
+	},
+	"治す": {
+		"example": "風邪を早く治したいです。",
+		"exampleCn": "想快点治好感冒。",
+		"exampleEn": "I want to get over this cold quickly."
+	},
+	"直す": {
+		"example": "壊れた椅子を直しました。",
+		"exampleCn": "修好了坏掉的椅子。",
+		"exampleEn": "I fixed the broken chair."
+	},
+	"なおす": {
+		"example": "間違えた答案をなおします。",
+		"exampleCn": "改正答错的答案。",
+		"exampleEn": "I'll correct the answers I got wrong."
+	},
+	"海外（かいがい）": {
+		"example": "来年海外旅行に行きたいです。",
+		"exampleCn": "明年想去海外旅行。",
+		"exampleEn": "I want to travel overseas next year."
+	},
+	"渋滞": {
+		"example": "朝は道路が渋滞しています。",
+		"exampleCn": "早上道路很堵。",
+		"exampleEn": "The roads are congested in the morning."
+	},
+	"点数": {
+		"example": "テストの点数が上がりました。",
+		"exampleCn": "考试分数提高了。",
+		"exampleEn": "My test score went up."
+	},
+	"状況 [じょうきょう]": {
+		"example": "今の状況を説明してください。",
+		"exampleCn": "请说明一下现在的状况。",
+		"exampleEn": "Please explain the current situation."
+	},
+	"理解": {
+		"example": "先生の説明でやっと理解できました。",
+		"exampleCn": "听了老师的说明终于理解了。",
+		"exampleEn": "I finally understood thanks to the teacher's explanation."
+	},
+	"町中": {
+		"example": "祭りで町中が賑やかです。",
+		"exampleCn": "因为祭典，整个镇上都很热闹。",
+		"exampleEn": "The whole town is lively because of the festival."
+	},
+	"画面": {
+		"example": "スマホの画面が割れました。",
+		"exampleCn": "手机屏幕碎了。",
+		"exampleEn": "My phone screen cracked."
+	},
+	"白人": {
+		"example": "白人の観光客が増えています。",
+		"exampleCn": "白人游客在增加。",
+		"exampleEn": "The number of white tourists is increasing."
+	},
+	"着物": {
+		"example": "成人式で着物を着ました。",
+		"exampleCn": "成人礼时穿了和服。",
+		"exampleEn": "I wore a kimono at my coming-of-age ceremony."
+	},
+	"睡眠": {
+		"example": "十分な睡眠が大切です。",
+		"exampleCn": "充足的睡眠很重要。",
+		"exampleEn": "Getting enough sleep is important."
+	},
+	"知識(ちしき)": {
+		"example": "読書で知識が広がります。",
+		"exampleCn": "通过读书拓宽知识。",
+		"exampleEn": "Reading broadens your knowledge."
+	},
+	"知識（ちしき）": {
+		"example": "専門的な知識が必要です。",
+		"exampleCn": "需要专业知识。",
+		"exampleEn": "Specialized knowledge is needed."
+	},
+	"突然": {
+		"example": "突然雨が降ってきました。",
+		"exampleCn": "突然下起雨来。",
+		"exampleEn": "It suddenly started raining."
+	},
+	"ほそい": {
+		"example": "ほそいペンで字を書きます。",
+		"exampleCn": "用细笔写字。",
+		"exampleEn": "I write with a thin pen."
+	},
+	"れんしゅう 練習": {
+		"example": "発音のれんしゅうをしています。",
+		"exampleCn": "正在做发音练习。",
+		"exampleEn": "I'm doing pronunciation practice."
+	},
+	"苗字（みょうじ）": {
+		"example": "苗字の読み方を教えてください。",
+		"exampleCn": "请告诉我姓的读法。",
+		"exampleEn": "Please tell me how to read your family name."
+	},
+	"親切 [しんせつ]": {
+		"example": "駅員さんがとても親切でした。",
+		"exampleCn": "车站职员非常亲切。",
+		"exampleEn": "The station staff were very kind."
+	},
+	"話題": {
+		"example": "最近の話題は天気です。",
+		"exampleCn": "最近的话题是天气。",
+		"exampleEn": "The recent topic of conversation is the weather."
+	},
+	"認め": {
+		"example": "会社から認めをもらいました。",
+		"exampleCn": "得到了公司的认可。",
+		"exampleEn": "I received recognition from the company."
+	},
+	"説明": {
+		"example": "使い方の説明を読みました。",
+		"exampleCn": "读了用法说明。",
+		"exampleEn": "I read the explanation of how to use it."
+	},
+	"迷惑（めいわく）": {
+		"example": "大きな声は周りの人に迷惑です。",
+		"exampleCn": "大声会给周围的人添麻烦。",
+		"exampleEn": "Speaking loudly bothers people around you."
+	},
+	"つうがく（通学）": {
+		"example": "つうがくの途中で友達に会いました。",
+		"exampleCn": "上学途中遇到了朋友。",
+		"exampleEn": "I ran into a friend on the way to school."
+	},
+	"つうきん（通勤）": {
+		"example": "つうきんラッシュは大変です。",
+		"exampleCn": "上班高峰很辛苦。",
+		"exampleEn": "The morning commute rush is tough."
+	},
+	"通知（つうち）": {
+		"example": "学校から通知が届きました。",
+		"exampleCn": "收到了学校的通知。",
+		"exampleEn": "A notice arrived from school."
+	},
+	"遅い": {
+		"example": "今日は帰りの電車が遅かったです。",
+		"exampleCn": "今天回去的电车很晚。",
+		"exampleEn": "The train home was late today."
+	},
+	"遠い": {
+		"example": "実家はここから遠いです。",
+		"exampleCn": "老家离这里很远。",
+		"exampleEn": "My parents' house is far from here."
+	},
+	"重体": {
+		"example": "事故で重体の人が出ました。",
+		"exampleCn": "事故造成有人重伤。",
+		"exampleEn": "Someone was left in critical condition after the accident."
+	},
+	"重大": {
+		"example": "これは重大な問題です。",
+		"exampleCn": "这是重大问题。",
+		"exampleEn": "This is a serious problem."
+	},
+	"ご近所": {
+		"example": "ご近所の人とよく話します。",
+		"exampleCn": "经常和街坊聊天。",
+		"exampleEn": "I often talk with people in the neighborhood."
+	},
+	"ご近所の方": {
+		"example": "ご近所の方が野菜をくれました。",
+		"exampleCn": "邻居给了蔬菜。",
+		"exampleEn": "A neighbor gave me some vegetables."
+	},
+	"ドレス": {
+		"example": "パーティー用のドレスを買いました。",
+		"exampleCn": "买了派对用的连衣裙。",
+		"exampleEn": "I bought a dress for the party."
+	},
+	"リボン": {
+		"example": "プレゼントにリボンを付けます。",
+		"exampleCn": "给礼物系上蝴蝶结。",
+		"exampleEn": "I put a ribbon on the present."
+	},
+	"仲悪い": {
+		"example": "二人は最近仲悪いみたいです。",
+		"exampleCn": "两人最近好像关系不好。",
+		"exampleEn": "Those two don't seem to get along lately."
+	},
+	"仲良い(なかいい)": {
+		"example": "幼いころから仲良いです。",
+		"exampleCn": "从小就关系很好。",
+		"exampleEn": "We've gotten along well since childhood."
+	},
+	"仲良くない（なかよくない）": {
+		"example": "彼とはあまり仲良くないです。",
+		"exampleCn": "和他关系不太好。",
+		"exampleEn": "I'm not very close with him."
+	},
+	"停（と）める": {
+		"example": "車を駐車場に停める。",
+		"exampleCn": "把车停在停车场。",
+		"exampleEn": "I park the car in the parking lot."
+	},
+	"先進国（せんしんこく）": {
+		"example": "日本は先進国の一つです。",
+		"exampleCn": "日本是发达国家之一。",
+		"exampleEn": "Japan is one of the developed countries."
+	},
+	"発展途上国（はってんとじょうこく）": {
+		"example": "発展途上国の経済が成長しています。",
+		"exampleCn": "发展中国家的经济在增长。",
+		"exampleEn": "Developing countries' economies are growing."
+	},
+	"免許証": {
+		"example": "免許証を見せてください。",
+		"exampleCn": "请出示驾照。",
+		"exampleEn": "Please show me your license."
+	},
+	"冷たい": {
+		"example": "冷たい水を一杯ください。",
+		"exampleCn": "请给我一杯冰水。",
+		"exampleEn": "One glass of cold water, please."
+	},
+	"冷蔵庫（れいぞうこ）": {
+		"example": "牛乳は冷蔵庫に入れてください。",
+		"exampleCn": "请把牛奶放进冰箱。",
+		"exampleEn": "Please put the milk in the refrigerator."
+	},
+	"初心者": {
+		"example": "このクラスは初心者向けです。",
+		"exampleCn": "这个班面向初学者。",
+		"exampleEn": "This class is for beginners."
+	},
+	"呼び方": {
+		"example": "先生の呼び方に気を付けます。",
+		"exampleCn": "注意对老师的称呼方式。",
+		"exampleEn": "I'm careful about how I address the teacher."
+	},
+	"喋れる": {
+		"example": "日本語が少し喋れるようになりました。",
+		"exampleCn": "日语已经能说一点了。",
+		"exampleEn": "I've become able to speak a little Japanese."
+	},
+	"奥さん": {
+		"example": "田中さんの奥さんは優しいです。",
+		"exampleCn": "田中先生的太太很温柔。",
+		"exampleEn": "Mr. Tanaka's wife is kind."
+	},
+	"わすれる": {
+		"example": "鍵をわすれて困りました。",
+		"exampleCn": "忘了钥匙，很为难。",
+		"exampleEn": "I forgot my keys and got stuck."
+	},
+	"怪しい": {
+		"example": "その話は少し怪しいです。",
+		"exampleCn": "那件事有点可疑。",
+		"exampleEn": "That story sounds a bit suspicious."
+	},
+	"悔しい": {
+		"example": "試合に負けて悔しいです。",
+		"exampleCn": "比赛输了很不甘心。",
+		"exampleEn": "I'm frustrated that we lost the match."
+	},
+	"教科書（きょうかしょ）": {
+		"example": "教科書を忘れずに持ってきてください。",
+		"exampleCn": "请别忘了带教科书。",
+		"exampleEn": "Please bring your textbook."
+	},
+	"求める": {
+		"example": "より良い方法を求めています。",
+		"exampleCn": "在寻求更好的方法。",
+		"exampleEn": "We're looking for a better method."
+	},
+	"確かめる": {
+		"example": "出発時間を手帳で確かめます。",
+		"exampleCn": "用记事本确认出发时间。",
+		"exampleEn": "I check the departure time in my planner."
+	},
+	"激しい": {
+		"example": "昨日は激しい雨が降りました。",
+		"exampleCn": "昨天下了大雨。",
+		"exampleEn": "It rained heavily yesterday."
+	},
+	"知れる": {
+		"example": "本を読めば歴史が知れます。",
+		"exampleCn": "读书就能了解历史。",
+		"exampleEn": "You can learn about history by reading books."
+	},
+	"美容師（びようし）": {
+		"example": "近所の美容師に髪を切ってもらいます。",
+		"exampleCn": "请附近的美容师剪头发。",
+		"exampleEn": "I get my hair cut by a neighborhood hairdresser."
+	},
+	"草むら（くさむら）": {
+		"example": "猫が草むらに隠れていました。",
+		"exampleCn": "猫藏在草丛里。",
+		"exampleEn": "The cat was hiding in the grass."
+	},
+	"難しい": {
+		"example": "この問題はとても難しいです。",
+		"exampleCn": "这道题非常难。",
+		"exampleEn": "This problem is very difficult."
+	},
+	"むずかしい": {
+		"example": "発音がむずかしいです。",
+		"exampleCn": "发音很难。",
+		"exampleEn": "The pronunciation is difficult."
+	},
+	"塾（じゅく）": {
+		"example": "弟は英語の塾に通っています。",
+		"exampleCn": "弟弟在上英语补习班。",
+		"exampleEn": "My younger brother goes to an English cram school."
+	},
+	"おてつだい": {
+		"example": "掃除のおてつだいをしました。",
+		"exampleCn": "帮忙打扫了。",
+		"exampleEn": "I helped with the cleaning."
+	},
+	"もふもふ": {
+		"example": "この猫はもふもふでかわいいです。",
+		"exampleCn": "这只猫毛茸茸的很可爱。",
+		"exampleEn": "This cat is fluffy and cute."
+	},
+	"サイクル": {
+		"example": "睡眠のサイクルが乱れています。",
+		"exampleCn": "睡眠周期乱了。",
+		"exampleEn": "My sleep cycle is off."
+	},
+	"サポート": {
+		"example": "困ったときはサポートに連絡します。",
+		"exampleCn": "有困难时联系客服支持。",
+		"exampleEn": "When I'm stuck, I contact support."
+	},
+	"シンプル": {
+		"example": "デザインがシンプルで好きです。",
+		"exampleCn": "喜欢简洁的设计。",
+		"exampleEn": "I like the simple design."
+	},
+	"ハンカチ": {
+		"example": "ポケットにハンカチを入れています。",
+		"exampleCn": "口袋里放着手帕。",
+		"exampleEn": "I keep a handkerchief in my pocket."
+	},
+	"ベトナム": {
+		"example": "ベトナム料理が好きです。",
+		"exampleCn": "喜欢越南菜。",
+		"exampleEn": "I like Vietnamese food."
+	},
+	"ペラペラ": {
+		"example": "彼女は英語がペラペラです。",
+		"exampleCn": "她英语说得很流利。",
+		"exampleEn": "She speaks English fluently."
+	},
+	"インプット": {
+		"example": "単語のインプットが大切です。",
+		"exampleCn": "单词输入很重要。",
+		"exampleEn": "Vocabulary input is important."
+	},
+	"アウトプット": {
+		"example": "話してアウトプットします。",
+		"exampleCn": "通过说出来输出。",
+		"exampleEn": "I output by speaking."
+	},
+	"チャーハン": {
+		"example": "夜ごはんにチャーハンを作りました。",
+		"exampleCn": "晚饭做了炒饭。",
+		"exampleEn": "I made fried rice for dinner."
+	},
+	"サイコパス": {
+		"example": "映画の犯人はサイコパスです。",
+		"exampleCn": "电影里的犯人是精神病态者。",
+		"exampleEn": "The villain in the movie is a psychopath."
+	},
+	"シルバーウィーク": {
+		"example": "シルバーウィークに旅行します。",
+		"exampleCn": "银色周去旅行。",
+		"exampleEn": "I'm traveling during Silver Week."
+	},
+	"セブンイレブン（セブン）": {
+		"example": "セブンイレブンで弁当を買います。",
+		"exampleCn": "在7-Eleven买便当。",
+		"exampleEn": "I buy a bento at 7-Eleven."
+	},
+	"サンスクリーン": {
+		"example": "夏はサンスクリーンを塗ります。",
+		"exampleCn": "夏天涂防晒霜。",
+		"exampleEn": "I put on sunscreen in summer."
+	},
+	"マッチングアプリ": {
+		"example": "友達はマッチングアプリを使っています。",
+		"exampleCn": "朋友在用交友软件。",
+		"exampleEn": "My friend uses a dating app."
+	},
+	"一枚(いちまい)ずつ": {
+		"example": "紙を一枚ずつ配ってください。",
+		"exampleCn": "请一张一张地发纸。",
+		"exampleEn": "Please hand out the papers one by one."
+	},
+	"気になる": {
+		"example": "噂の店が気になります。",
+		"exampleCn": "对传说中的那家店很好奇。",
+		"exampleEn": "I'm curious about that rumored shop."
+	},
+	"間に合う": {
+		"example": "走れば電車に間に合います。",
+		"exampleCn": "跑的话能赶上电车。",
+		"exampleEn": "If I run, I'll make the train."
+	},
+	"召し上がる": {
+		"example": "どうぞケーキを召し上がってください。",
+		"exampleCn": "请用蛋糕。",
+		"exampleEn": "Please have some cake."
+	},
+	"決してない": {
+		"example": "約束を破ることは決してない。",
+		"exampleCn": "绝不会违背约定。",
+		"exampleEn": "I will never break a promise."
+	},
+	"腐りやすい": {
+		"example": "夏は食べ物が腐りやすいです。",
+		"exampleCn": "夏天食物容易坏。",
+		"exampleEn": "Food spoils easily in summer."
+	},
+	"お得（おとく": {
+		"example": "このセットはとてもお得です。",
+		"exampleCn": "这个套餐非常划算。",
+		"exampleEn": "This set is a really good deal."
+	},
+	"熊野古道（くまのこどう）": {
+		"example": "熊野古道を歩いてみたいです。",
+		"exampleCn": "想走走熊野古道。",
+		"exampleEn": "I'd like to walk the Kumano Kodo."
+	},
+	"石切神社（いしきりじんじゃ）": {
+		"example": "石切神社にお参りしました。",
+		"exampleCn": "去石切神社参拜了。",
+		"exampleEn": "I paid a visit to Ishikiri Shrine."
+	},
+	"鬼滅の刃": {
+		"example": "鬼滅の刃の映画を見ました。",
+		"exampleCn": "看了《鬼灭之刃》的电影。",
+		"exampleEn": "I watched the Demon Slayer movie."
+	},
+	"いつも通り（どおり）": {
+		"example": "今日もいつも通り朝ごはんを食べました。",
+		"exampleCn": "今天也和平时一样吃了早饭。",
+		"exampleEn": "I had breakfast as usual today."
+	},
+	"汗(あせ)をかく": {
+		"example": "夏は少し歩くだけで汗をかきます。",
+		"exampleCn": "夏天稍微走一走就会出汗。",
+		"exampleEn": "In summer I sweat even from a short walk."
+	},
+	"電車代 （ でんしゃだい": {
+		"example": "今月の電車代が高くなりました。",
+		"exampleCn": "这个月电车费变贵了。",
+		"exampleEn": "My train fare went up this month."
+	},
+	"君くん": {
+		"example": "田中君と呼ぶのが普通です。",
+		"exampleCn": "一般叫田中君。",
+		"exampleEn": "It's normal to call him Tanaka-kun."
+	},
+	"ナンパ師": {
+		"example": "彼は有名なナンパ師だそうです。",
+		"exampleCn": "听说他是有名的搭讪高手。",
+		"exampleEn": "Apparently he's a famous pickup artist."
+	},
+	"ジム帰り": {
+		"example": "ジム帰りにスーパーへ寄ります。",
+		"exampleCn": "从健身房回来顺路去超市。",
+		"exampleEn": "I stop by the supermarket on the way home from the gym."
+	},
+	"パン工場 （こうじょう": {
+		"example": "パン工場のにおいがします。",
+		"exampleCn": "能闻到面包工厂的香味。",
+		"exampleEn": "It smells like a bread factory."
+	},
+	"後楽園連": {
+		"example": "後楽園連の駅で降りました。",
+		"exampleCn": "在后乐园一带的车站下了车。",
+		"exampleEn": "I got off at a station around Korakuen."
+	},
+	"めまい": {
+		"example": "朝起きるとめまいがしました。",
+		"exampleCn": "早上起来感到头晕。",
+		"exampleEn": "I felt dizzy when I got up in the morning."
+	},
+	"たからくじ": {
+		"example": "たまにしたらくじを買います。",
+		"exampleCn": "偶尔会买彩票。",
+		"exampleEn": "I buy a lottery ticket once in a while."
+	},
+	"しょるい": {
+		"example": "大事なしょるいを机に置きました。",
+		"exampleCn": "把重要文件放在桌上。",
+		"exampleEn": "I put the important documents on the desk."
+	},
+	"おしょうがつ": {
+		"example": "おしょうがつに実家へ帰ります。",
+		"exampleCn": "过年回老家。",
+		"exampleEn": "I go back to my parents' home for New Year."
+	},
+	"きゅうしょうがつ": {
+		"example": "きゅうしょうがつは中国で祝います。",
+		"exampleCn": "旧正月在中国庆祝。",
+		"exampleEn": "Lunar New Year is celebrated in China."
+	},
+	"いっこだて": {
+		"example": "郊外にいっこだてを借りました。",
+		"exampleCn": "在郊外租了独栋住宅。",
+		"exampleEn": "I rented a detached house in the suburbs."
+	},
+	"黒龍江": {
+		"example": "黒龍江は中国の北東にあります。",
+		"exampleCn": "黑龙江在中国东北。",
+		"exampleEn": "Heilongjiang is in northeast China."
+	},
+	"同じ思い [おなじおもい]": {
+		"example": "みんな同じ思いを持っています。",
+		"exampleCn": "大家都有同样的想法。",
+		"exampleEn": "Everyone shares the same thought."
+	},
+	"同じ気持ち [おなじきもち]": {
+		"example": "私も同じ気持ちです。",
+		"exampleCn": "我也是同样的心情。",
+		"exampleEn": "I feel the same way."
+	},
+	"決められる": {
+		"example": "自分で日程を決められます。",
+		"exampleCn": "可以自己决定日程。",
+		"exampleEn": "You can decide the schedule yourself."
+	},
+	"決められる [きめられる]": {
+		"example": "候補日なら決められます。",
+		"exampleCn": "如果是候选日期就能决定。",
+		"exampleEn": "I can decide if those are the candidate dates."
+	},
+	"話(はなし)": {
+		"example": "この漫画の最終話が公開されました。",
+		"exampleCn": "这部漫画的最终话公开了。",
+		"exampleEn": "The final episode of this manga was released."
+	},
+	"やく（訳": {
+		"example": "この文のやくを教えてください。",
+		"exampleCn": "请告诉我这句话的意思。",
+		"exampleEn": "Please tell me the translation of this sentence."
+	},
+	"さんずい（三点水）": {
+		"example": "「海」という漢字にはさんずいがあります。",
+		"exampleCn": "“海”这个汉字有三点水旁。",
+		"exampleEn": "The kanji for sea has the water radical."
+	},
+	"衝撃的 しょうげきてき": {
+		"example": "そのニュースは衝撃的でした。",
+		"exampleCn": "那则新闻令人震惊。",
+		"exampleEn": "That news was shocking."
+	},
+	"へや（部屋）": {
+		"example": "広いへやに引っ越しました。",
+		"exampleCn": "搬到了宽敞的房间。",
+		"exampleEn": "I moved into a spacious room."
+	},
+	"親": {
+		"example": "親の仕事を手伝います。",
+		"exampleCn": "帮忙父母的工作。",
+		"exampleEn": "I help with my parents' work."
+	},
+	"型": {
+		"example": "新しい型のスマホが出ました。",
+		"exampleCn": "出了新型手机。",
+		"exampleEn": "A new model of smartphone came out."
+	},
+	"おしゃれ": {
+		"example": "彼女はいつもおしゃれです。",
+		"exampleCn": "她总是很时髦。",
+		"exampleEn": "She is always stylish."
+	},
+	"おしゃれ な": {
+		"example": "おしゃれ な服を着ています。",
+		"exampleCn": "穿着时髦的衣服。",
+		"exampleEn": "She's wearing stylish clothes."
+	},
+	"こわい": {
+		"example": "夜道は少しこわいです。",
+		"exampleCn": "夜路有点可怕。",
+		"exampleEn": "Walking at night is a bit scary."
+	},
+	"かしこい": {
+		"example": "うちの犬はかしこいです。",
+		"exampleCn": "我家的狗很聪明。",
+		"exampleEn": "Our dog is smart."
+	},
+	"かわいー": {
+		"example": "この子犬、かわいー！",
+		"exampleCn": "这只小狗好可爱！",
+		"exampleEn": "This puppy is so cute!"
+	},
+	"かわいいね": {
+		"example": "その服、かわいいね。",
+		"exampleCn": "那件衣服好可爱呢。",
+		"exampleEn": "That outfit is cute, isn't it?"
+	},
+	"かわいいよ": {
+		"example": "この猫、かわいいよ。",
+		"exampleCn": "这只猫很可爱哦。",
+		"exampleEn": "This cat is cute, you know."
+	},
+	"かわいすぎる": {
+		"example": "赤ちゃんがかわいすぎる。",
+		"exampleCn": "宝宝可爱过头了。",
+		"exampleEn": "The baby is too cute."
+	},
+	"正直な": {
+		"example": "正直な話をします。",
+		"exampleCn": "说句实话。",
+		"exampleEn": "I'll be honest with you."
+	},
+	"率直な": {
+		"example": "率直な意見を聞かせてください。",
+		"exampleCn": "请告诉我直率的意见。",
+		"exampleEn": "Please give me your frank opinion."
+	},
+	"生意気な": {
+		"example": "生意気なことを言ってはいけません。",
+		"exampleCn": "不能说狂妄的话。",
+		"exampleEn": "You mustn't say cheeky things."
+	},
+	"喧しい": {
+		"example": "工事の音が喧しいです。",
+		"exampleCn": "工地的声音很吵。",
+		"exampleEn": "The construction noise is loud."
+	},
+	"煩い": {
+		"example": "隣のテレビが煩いです。",
+		"exampleCn": "隔壁的电视很吵。",
+		"exampleEn": "The neighbor's TV is noisy."
+	},
+	"わんちゃん": {
+		"example": "公園でわんちゃんと遊びました。",
+		"exampleCn": "在公园和小狗玩了。",
+		"exampleEn": "I played with a doggy in the park."
+	},
+	"めっちゃ": {
+		"example": "このラーメンめっちゃおいしい。",
+		"exampleCn": "这拉面非常好吃。",
+		"exampleEn": "This ramen is really delicious."
+	},
+	"ぜったい": {
+		"example": "ぜったいに間に合います。",
+		"exampleCn": "绝对来得及。",
+		"exampleEn": "We'll absolutely make it."
+	},
+	"きっと": {
+		"example": "きっと明日は晴れます。",
+		"exampleCn": "明天一定是晴天。",
+		"exampleEn": "It will surely be sunny tomorrow."
+	},
+	"たぶん": {
+		"example": "たぶん彼は来ないと思います。",
+		"exampleCn": "大概他不会来。",
+		"exampleEn": "I think he probably won't come."
+	},
+	"ちゃんと": {
+		"example": "約束はちゃんと守ります。",
+		"exampleCn": "约定一定会好好遵守。",
+		"exampleEn": "I'll keep my promises properly."
+	},
+	"さらに": {
+		"example": "さらに練習が必要です。",
+		"exampleCn": "还需要更多练习。",
+		"exampleEn": "Even more practice is needed."
+	},
+	"ほとんど": {
+		"example": "宿題はほとんど終わりました。",
+		"exampleCn": "作业几乎做完了。",
+		"exampleEn": "I've finished almost all of the homework."
+	},
+	"まったく": {
+		"example": "まったく分かりません。",
+		"exampleCn": "完全不懂。",
+		"exampleEn": "I don't understand at all."
+	},
+	"めったに": {
+		"example": "めったに外食しません。",
+		"exampleCn": "很少在外面吃饭。",
+		"exampleEn": "I rarely eat out."
+	},
+	"いっぱい": {
+		"example": "箱に本がいっぱい入っています。",
+		"exampleCn": "箱子里装满了书。",
+		"exampleEn": "The box is full of books."
+	},
+	"いつまで": {
+		"example": "このセールはいつまでですか。",
+		"exampleCn": "这个促销到什么时候？",
+		"exampleEn": "Until when does this sale run?"
+	},
+	"こないだ": {
+		"example": "こないだ会った人です。",
+		"exampleCn": "是前几天见过的人。",
+		"exampleEn": "It's someone I met the other day."
+	},
+	"このあいだ": {
+		"example": "このあいだ映画を見ました。",
+		"exampleCn": "前几天看了电影。",
+		"exampleEn": "I watched a movie the other day."
+	},
+	"おたがい": {
+		"example": "おたがい様です。",
+		"exampleCn": "彼此彼此。",
+		"exampleEn": "The feeling is mutual."
+	},
+	"そっち": {
+		"example": "そっちの案のほうがいいです。",
+		"exampleCn": "那边的方案更好。",
+		"exampleEn": "That plan is better."
+	},
+	"ちるする": {
+		"example": "週末は家でちるする。",
+		"exampleCn": "周末在家放松一下。",
+		"exampleEn": "I'll chill at home this weekend."
+	},
+	"マジで": {
+		"example": "マジでそれが本音です。",
+		"exampleCn": "那真的是心里话。",
+		"exampleEn": "That's seriously how I feel."
+	},
+	"ツイてる": {
+		"example": "今日はツイてる一日でした。",
+		"exampleCn": "今天是走运的一天。",
+		"exampleEn": "Today was a lucky day."
+	},
+	"ビビった": {
+		"example": "突然の音にビビった。",
+		"exampleCn": "被突然的声音吓到了。",
+		"exampleEn": "I got startled by the sudden noise."
+	},
+	"やめた": {
+		"example": "甘いものをやめた。",
+		"exampleCn": "戒掉了甜食。",
+		"exampleEn": "I quit sweets."
+	},
+	"やめちゃった": {
+		"example": "途中でやめちゃった。",
+		"exampleCn": "中途放弃了。",
+		"exampleEn": "I ended up quitting halfway."
+	},
+	"やる": {
+		"example": "今日やることをリストにします。",
+		"exampleCn": "把今天要做的事列成清单。",
+		"exampleEn": "I'll list what I'll do today."
+	},
+	"決めた": {
+		"example": "進路を決めた。",
+		"exampleCn": "决定了出路。",
+		"exampleEn": "I've decided on my path."
+	},
+	"合わない": {
+		"example": "この靴はサイズが合わない。",
+		"exampleCn": "这双鞋尺寸不合。",
+		"exampleEn": "These shoes don't fit."
+	},
+	"見てない": {
+		"example": "まだそのドラマを見てない。",
+		"exampleCn": "还没看那部电视剧。",
+		"exampleEn": "I haven't watched that drama yet."
+	},
+	"言ってた": {
+		"example": "彼は明日来ると言ってた。",
+		"exampleCn": "他说过明天来。",
+		"exampleEn": "He was saying he'd come tomorrow."
+	},
+	"ならんでた": {
+		"example": "店の前に長くならんでた。",
+		"exampleCn": "在店前排了很久。",
+		"exampleEn": "I was waiting in a long line in front of the shop."
+	},
+	"（ならぶ）": {
+		"example": "改札の前でならぶ。",
+		"exampleCn": "在检票口前排队。",
+		"exampleEn": "I line up in front of the ticket gate."
+	},
+	"起こる（おこる": {
+		"example": "同じ問題がまた起こるかもしれない。",
+		"exampleCn": "同样的问题可能再次发生。",
+		"exampleEn": "The same problem might happen again."
+	},
+	"逃げられない（にげる）": {
+		"example": "現実からは逃げられない。",
+		"exampleCn": "现实逃不掉。",
+		"exampleEn": "You can't run away from reality."
+	},
+	"やりにくい": {
+		"example": "この作業はやりにくいです。",
+		"exampleCn": "这项作业不好做。",
+		"exampleEn": "This task is hard to do."
+	},
+	"うごきにくい": {
+		"example": "厚着だとうごきにくい。",
+		"exampleCn": "穿得厚就不好活动。",
+		"exampleEn": "It's hard to move when you wear thick clothes."
+	},
+	"動きにくい": {
+		"example": "この服は動きにくいです。",
+		"exampleCn": "这件衣服不好活动。",
+		"exampleEn": "These clothes are hard to move in."
+	},
+	"すわない": {
+		"example": "私はたばこをすわない。",
+		"exampleCn": "我不抽烟。",
+		"exampleEn": "I don't smoke."
+	},
+	"あたらない": {
+		"example": "宝くじはなかなかあたらない。",
+		"exampleCn": "彩票很难中。",
+		"exampleEn": "Lottery tickets rarely win."
+	},
+	"食べたい": {
+		"example": "今日は寿司が食べたい。",
+		"exampleCn": "今天想吃寿司。",
+		"exampleEn": "I want to eat sushi today."
+	},
+	"食べかけ": {
+		"example": "食べかけのパンを冷蔵庫へ入れた。",
+		"exampleCn": "把吃到一半的面包放进冰箱。",
+		"exampleEn": "I put the half-eaten bread in the fridge."
+	},
+	"食べたがる": {
+		"example": "子どもが甘いものを食べたがる。",
+		"exampleCn": "孩子显得想吃甜食。",
+		"exampleEn": "The child shows that they want sweets."
+	},
+	"食べたがっている": {
+		"example": "犬がご飯を食べたがっている。",
+		"exampleCn": "狗看起来想吃饭。",
+		"exampleEn": "The dog looks like it wants to eat."
+	},
+	"したがる": {
+		"example": "妹は一人で行きたがる。",
+		"exampleCn": "妹妹显得想自己去。",
+		"exampleEn": "My little sister seems to want to go alone."
+	},
+	"したがっている": {
+		"example": "彼は話したがっている。",
+		"exampleCn": "他显得想说话。",
+		"exampleEn": "He looks like he wants to talk."
+	},
+	"雨が降った": {
+		"example": "今朝は雨が降った。",
+		"exampleCn": "今早下雨了。",
+		"exampleEn": "It rained this morning."
+	},
+	"雨が降ってきた": {
+		"example": "帰りに雨が降ってきた。",
+		"exampleCn": "回来时雨下起来了。",
+		"exampleEn": "It started raining on the way home."
+	},
+	"いい感じ": {
+		"example": "新しい髪型、いい感じだね。",
+		"exampleCn": "新发型感觉不错呢。",
+		"exampleEn": "Your new hairstyle looks good."
+	},
+	"いやな感じ": {
+		"example": "その話はいやな感じがする。",
+		"exampleCn": "那件事给人讨厌的感觉。",
+		"exampleEn": "That talk gives me a bad vibe."
+	},
+	"いい一日": {
+		"example": "いい一日を過ごしてください。",
+		"exampleCn": "祝你度过美好的一天。",
+		"exampleEn": "Have a good day."
+	},
+	"そんな感じ": {
+		"example": "雰囲気はそんな感じです。",
+		"exampleCn": "气氛差不多是那种感觉。",
+		"exampleEn": "The vibe is something like that."
+	},
+	"そんな感じ(かんじ)": {
+		"example": "説明はそんな感じで大丈夫です。",
+		"exampleCn": "说明那种感觉就可以。",
+		"exampleEn": "An explanation along those lines is fine."
+	},
+	"こうゆうの": {
+		"example": "こうゆうのが欲しかったんです。",
+		"exampleCn": "想要的就是这样的。",
+		"exampleEn": "This is the kind of thing I wanted."
+	},
+	"それなら": {
+		"example": "それなら一緒に行きましょう。",
+		"exampleCn": "那样的话一起去吧。",
+		"exampleEn": "In that case, let's go together."
+	},
+	"それでも": {
+		"example": "それでも挑戦したいです。",
+		"exampleCn": "即便如此还是想挑战。",
+		"exampleEn": "Even so, I still want to try."
+	},
+	"その様に": {
+		"example": "その様に考えていませんでした。",
+		"exampleCn": "没那样想过。",
+		"exampleEn": "I hadn't thought of it like that."
+	},
+	"その後なら": {
+		"example": "会議のその後なら空いています。",
+		"exampleCn": "会议之后的话有空。",
+		"exampleEn": "I'm free after the meeting."
+	},
+	"じゃないか": {
+		"example": "やっとできたじゃないか。",
+		"exampleCn": "不是终于做到了吗。",
+		"exampleEn": "We did it, didn't we?"
+	},
+	"しょうがないよ": {
+		"example": "遅れてもしょうがないよ。",
+		"exampleCn": "迟到也没办法呀。",
+		"exampleEn": "It can't be helped if we're late."
+	},
+	"いいんじゃない": {
+		"example": "その案でいいんじゃない。",
+		"exampleCn": "那个方案挺好的吧。",
+		"exampleEn": "That plan is fine, I think."
+	},
+	"安心して": {
+		"example": "任せて、安心して。",
+		"exampleCn": "交给我，放心。",
+		"exampleEn": "Leave it to me—don't worry."
+	},
+	"気に入ってる": {
+		"example": "この曲を気に入ってる。",
+		"exampleCn": "很喜欢这首歌。",
+		"exampleEn": "I'm into this song."
+	},
+	"来られる": {
+		"example": "来週なら来られます。",
+		"exampleCn": "下周的话能来。",
+		"exampleEn": "I can come next week."
+	},
+	"受けられますか": {
+		"example": "カードはここで受けられますか。",
+		"exampleCn": "卡可以在这里办理吗？",
+		"exampleEn": "Can I receive the card here?"
+	},
+	"予約が入る": {
+		"example": "午後に予約が入る予定です。",
+		"exampleCn": "下午预计有预约进来。",
+		"exampleEn": "A reservation is expected in the afternoon."
+	},
+	"番号を入力する": {
+		"example": "暗証番号を入力する。",
+		"exampleCn": "输入密码。",
+		"exampleEn": "Enter the PIN."
+	},
+	"機械の画面": {
+		"example": "機械の画面に従って操作します。",
+		"exampleCn": "按照机器屏幕操作。",
+		"exampleEn": "I follow the machine's screen to operate it."
+	},
+	"レシートのバーコード": {
+		"example": "レシートのバーコードをスキャンします。",
+		"exampleCn": "扫描收据上的条码。",
+		"exampleEn": "I scan the barcode on the receipt."
+	},
+	"限定げんてい": {
+		"example": "これは限定げんてい商品です。",
+		"exampleCn": "这是限定商品。",
+		"exampleEn": "This is a limited-edition product."
+	},
+	"良い思い出": {
+		"example": "旅行は良い思い出になりました。",
+		"exampleCn": "旅行成了美好的回忆。",
+		"exampleEn": "The trip became a good memory."
+	},
+	"今一人": {
+		"example": "今一人で勉強しています。",
+		"exampleCn": "现在一个人在学习。",
+		"exampleEn": "I'm studying alone right now."
+	},
+	"他の生徒": {
+		"example": "他の生徒にも教えてあげてください。",
+		"exampleCn": "也请教给其他学生。",
+		"exampleEn": "Please teach the other students too."
+	},
+	"旅の途中で": {
+		"example": "旅の途中で友人に会いました。",
+		"exampleCn": "在旅行途中遇见了朋友。",
+		"exampleEn": "I met a friend during the trip."
+	},
+	"もっと漢字": {
+		"example": "作文にもっと漢字を使います。",
+		"exampleCn": "作文里用更多汉字。",
+		"exampleEn": "I'll use more kanji in my writing."
+	},
+	"いろんな文": {
+		"example": "いろんな文を作って練習します。",
+		"exampleCn": "造各种句子来练习。",
+		"exampleEn": "I practice by making all kinds of sentences."
+	},
+	"ぴったり合う": {
+		"example": "この帽子はぴったり合う。",
+		"exampleCn": "这顶帽子正合适。",
+		"exampleEn": "This hat fits perfectly."
+	},
+	"はっきり話す": {
+		"example": "もっとはっきり話してください。",
+		"exampleCn": "请说得更清楚一点。",
+		"exampleEn": "Please speak more clearly."
+	},
+	"思いっきり": {
+		"example": "思いっきり歌いました。",
+		"exampleCn": "尽情地唱了。",
+		"exampleEn": "I sang with all my might."
+	},
+	"時間がたつ": {
+		"example": "楽しいと時間がたつのが早い。",
+		"exampleCn": "开心的时候时间过得很快。",
+		"exampleEn": "Time passes quickly when you're having fun."
+	},
+	"時間をすごす": {
+		"example": "家族と時間をすごしたいです。",
+		"exampleCn": "想和家人一起度过时间。",
+		"exampleEn": "I want to spend time with my family."
+	},
+	"置いといて": {
+		"example": "荷物はそこに置いといて。",
+		"exampleCn": "行李先放那里吧。",
+		"exampleEn": "Just leave the bags there."
+	},
+	"渡すように": {
+		"example": "書類は受付に渡すようにしてください。",
+		"exampleCn": "请把文件转交给前台。",
+		"exampleEn": "Please make sure the documents get handed to reception."
+	},
+	"場合(ばあい)による": {
+		"example": "参加できるかは場合による。",
+		"exampleCn": "能不能参加看情况。",
+		"exampleEn": "Whether I can join depends."
+	},
+	"すぎる": {
+		"example": "食べすぎるのは体に悪いです。",
+		"exampleCn": "吃太多对身体不好。",
+		"exampleEn": "Eating too much is bad for you."
+	},
+	"しかない": {
+		"example": "歩くしかない。",
+		"exampleCn": "只好走路。",
+		"exampleEn": "I have no choice but to walk."
+	},
+	"だって": {
+		"example": "だって約束したから。",
+		"exampleCn": "因为约好了嘛。",
+		"exampleEn": "Because I promised, that's why."
+	},
+	"ね": {
+		"example": "今日は暑いね。",
+		"exampleCn": "今天好热呢。",
+		"exampleEn": "It's hot today, isn't it?"
+	},
+	"できれば": {
+		"example": "できれば明日までに仕上げます。",
+		"exampleCn": "如果可以的话明天之前做完。",
+		"exampleEn": "I'll finish it by tomorrow if possible."
+	},
+	"あまりにも": {
+		"example": "あまりにも静かで驚いた。",
+		"exampleCn": "过于安静，吃了一惊。",
+		"exampleEn": "It was so quiet that I was surprised."
+	},
+	"にたいして": {
+		"example": "質問にたいして答えます。",
+		"exampleCn": "针对问题回答。",
+		"exampleEn": "I answer in response to the question."
+	},
+	"にかわって": {
+		"example": "部長にかわって挨拶します。",
+		"exampleCn": "代替部长致辞。",
+		"exampleEn": "I'll greet you in place of the manager."
+	},
+	"にしては": {
+		"example": "初心者にしては上手です。",
+		"exampleCn": "就初学者而言很厉害。",
+		"exampleEn": "You're good for a beginner."
+	},
+	"はずがない": {
+		"example": "彼が嘘をつくはずがない。",
+		"exampleCn": "他不可能说谎。",
+		"exampleEn": "There's no way he would lie."
+	},
+	"と言うものだ": {
+		"example": "努力こそ成功への道と言うものだ。",
+		"exampleCn": "努力才是通往成功之路。",
+		"exampleEn": "Hard work is what you'd call the path to success."
+	},
+	"ぐっすり寝る": {
+		"example": "昨夜はぐっすり寝た。",
+		"exampleCn": "昨晚睡得很熟。",
+		"exampleEn": "I slept soundly last night."
+	},
+	"すっかり元気": {
+		"example": "風邪が治ってすっかり元気です。",
+		"exampleCn": "感冒好了，完全恢复了。",
+		"exampleEn": "I've fully recovered from the cold."
+	},
+	"無事で良かった": {
+		"example": "みんなが無事で良かった。",
+		"exampleCn": "大家都没事就好。",
+		"exampleEn": "I'm glad everyone is okay."
+	},
+	"これにする": {
+		"example": "ランチはこれにする。",
+		"exampleCn": "午餐就选这个。",
+		"exampleEn": "I'll go with this for lunch."
+	},
+	"聞いてもいい": {
+		"example": "一つ聞いてもいいですか。",
+		"exampleCn": "可以问一个问题吗？",
+		"exampleEn": "Is it OK if I ask one thing?"
+	},
+	"行けば": {
+		"example": "駅へ行けば地図がもらえます。",
+		"exampleCn": "去车站的话能拿到地图。",
+		"exampleEn": "If you go to the station, you can get a map."
+	},
+	"まだ食べてない": {
+		"example": "昼ごはんをまだ食べてない。",
+		"exampleCn": "午饭还没吃。",
+		"exampleEn": "I haven't eaten lunch yet."
+	},
+	"ちゃんと覚えた": {
+		"example": "単語をちゃんと覚えた。",
+		"exampleCn": "单词好好记住了。",
+		"exampleEn": "I memorized the words properly."
+	},
+	"いっぱいできる": {
+		"example": "休日ならいっぱいできる。",
+		"exampleCn": "休息日的话能做很多。",
+		"exampleEn": "On a day off I can get a lot done."
+	},
+	"ダラダラする": {
+		"example": "休日は家でダラダラする。",
+		"exampleCn": "休息日在家懒散地耗着。",
+		"exampleEn": "On days off I laze around at home."
+	},
+	"スマホをいじった": {
+		"example": "寝る前にスマホをいじった。",
+		"exampleCn": "睡前玩了手机。",
+		"exampleEn": "I used my phone before bed."
+	},
+	"二度寝（にどね）した": {
+		"example": "アラームのあと二度寝した。",
+		"exampleCn": "闹钟响后又睡回笼觉了。",
+		"exampleEn": "I fell back asleep after the alarm."
+	},
+	"帰ってきた": {
+		"example": "留学から帰ってきた。",
+		"exampleCn": "留学回来了。",
+		"exampleEn": "I came back from studying abroad."
+	},
+	"壁にあった": {
+		"example": "時計は壁にあった。",
+		"exampleCn": "钟在墙上。",
+		"exampleEn": "The clock was on the wall."
+	},
+	"助け合った": {
+		"example": "災害のとき近所で助け合った。",
+		"exampleCn": "灾害时街坊互相帮助了。",
+		"exampleEn": "Neighbors helped each other during the disaster."
+	},
+	"話しかけてきた": {
+		"example": "知らない人が話しかけてきた。",
+		"exampleCn": "陌生人过来搭话了。",
+		"exampleEn": "A stranger came up and talked to me."
+	},
+	"話すのが好き": {
+		"example": "彼は話すのが好きです。",
+		"exampleCn": "他喜欢说话。",
+		"exampleEn": "He likes talking."
+	},
+	"彼に会いに行く": {
+		"example": "週末に彼に会いに行く。",
+		"exampleCn": "周末去见他。",
+		"exampleEn": "I'm going to see him on the weekend."
+	},
+	"ジムに行こうと思う": {
+		"example": "明日ジムに行こうと思う。",
+		"exampleCn": "明天打算去健身房。",
+		"exampleEn": "I think I'll go to the gym tomorrow."
+	},
+	"分からなかった": {
+		"example": "最初は意味が分からなかった。",
+		"exampleCn": "一开始没明白意思。",
+		"exampleEn": "At first I didn't understand the meaning."
+	},
+	"買ったことがない": {
+		"example": "高級時計は買ったことがない。",
+		"exampleCn": "从没买过高级手表。",
+		"exampleEn": "I've never bought a luxury watch."
+	},
+	"受けたことがある": {
+		"example": "その試験を受けたことがある。",
+		"exampleCn": "曾经考过那个考试。",
+		"exampleEn": "I've taken that exam before."
+	},
+	"何回も行っている": {
+		"example": "京都へは何回も行っている。",
+		"exampleCn": "京都去过很多次。",
+		"exampleEn": "I've been to Kyoto many times."
+	},
+	"旅行したことがない": {
+		"example": "一人で旅行したことがない。",
+		"exampleCn": "从没一个人旅行过。",
+		"exampleEn": "I've never traveled alone."
+	},
+	"食べることができる": {
+		"example": "ここで温かいご飯を食べることができる。",
+		"exampleCn": "在这里可以吃到热饭。",
+		"exampleEn": "You can eat a hot meal here."
+	},
+	"とても揺れた": {
+		"example": "昨夜の地震はとても揺れた。",
+		"exampleCn": "昨晚的地震晃得很厉害。",
+		"exampleEn": "Last night's earthquake shook a lot."
+	},
+	"すごく揺れた": {
+		"example": "電車がすごく揺れた。",
+		"exampleCn": "电车晃得非常厉害。",
+		"exampleEn": "The train shook hugely."
+	},
+	"やっと休める": {
+		"example": "プロジェクトが終わってやっと休める。",
+		"exampleCn": "项目结束后终于能休息了。",
+		"exampleEn": "Now that the project is over, I can finally rest."
+	},
+	"やっと終わったね": {
+		"example": "長い会議がやっと終わったね。",
+		"exampleCn": "漫长的会议终于结束了呢。",
+		"exampleEn": "The long meeting is finally over."
+	},
+	"もったいないなあ": {
+		"example": "残すなんてもったいないなあ。",
+		"exampleCn": "剩下来太可惜了啊。",
+		"exampleEn": "What a waste to leave it unfinished."
+	},
+	"もっと楽(らく)になった": {
+		"example": "生活がもっと楽になった。",
+		"exampleCn": "生活变得更轻松了。",
+		"exampleEn": "Life got easier."
+	},
+	"トラブルが多い": {
+		"example": "最近この機械はトラブルが多い。",
+		"exampleCn": "最近这台机器麻烦很多。",
+		"exampleEn": "This machine has had a lot of problems lately."
+	},
+	"働くのが大変": {
+		"example": "真夏は働くのが大変です。",
+		"exampleCn": "盛夏工作很辛苦。",
+		"exampleEn": "Working in midsummer is hard."
+	},
+	"遊ぶのが楽しい": {
+		"example": "子どもと遊ぶのが楽しい。",
+		"exampleCn": "和孩子玩很开心。",
+		"exampleEn": "Playing with kids is fun."
+	},
+	"東京の方が好き": {
+		"example": "大阪より東京の方が好きです。",
+		"exampleCn": "比起大阪更喜欢东京。",
+		"exampleEn": "I like Tokyo more than Osaka."
+	},
+	"忘れないために": {
+		"example": "忘れないためにメモを取る。",
+		"exampleCn": "为了不忘记而记笔记。",
+		"exampleEn": "I take notes so I don't forget."
+	},
+	"文句ばかり言う": {
+		"example": "文句ばかり言うのはやめよう。",
+		"exampleCn": "别净发牢骚了。",
+		"exampleEn": "Let's stop doing nothing but complain."
+	},
+	"ダイレクトな表現（ひょうげん）": {
+		"example": "日本語ではダイレクトな表現を避けることがある。",
+		"exampleCn": "日语里有时会避免直接的表达。",
+		"exampleEn": "In Japanese people sometimes avoid direct expressions."
+	},
+	"伝統的（でんとうてき）な漢字": {
+		"example": "伝統的な漢字の形を習います。",
+		"exampleCn": "学习传统的汉字字形。",
+		"exampleEn": "We learn traditional kanji forms."
+	},
+	"精神が未熟（せいしんがみじゅく）": {
+		"example": "まだ精神が未熟だと言われた。",
+		"exampleCn": "被说精神还不成熟。",
+		"exampleEn": "I was told I'm still mentally immature."
+	},
+	"国の歴史を知れる": {
+		"example": "博物館で国の歴史を知れる。",
+		"exampleCn": "在博物馆能了解国家的历史。",
+		"exampleEn": "You can learn the country's history at the museum."
+	},
+	"本物（ほんもの）みたいだった": {
+		"example": "模型が本物みたいだった。",
+		"exampleCn": "模型看起来像真的一样。",
+		"exampleEn": "The model looked like the real thing."
+	},
+	"やさいのおそうざい": {
+		"example": "夕飯にやさいのおそうざいを作った。",
+		"exampleCn": "晚饭做了蔬菜小菜。",
+		"exampleEn": "I made vegetable side dishes for dinner."
+	},
+	"よく保存している": {
+		"example": "古い写真をよく保存している。",
+		"exampleCn": "把老照片保存得很好。",
+		"exampleEn": "They preserve old photos well."
+	},
+	"よく世話されている": {
+		"example": "この猫はよく世話されている。",
+		"exampleCn": "这只猫被照顾得很好。",
+		"exampleEn": "This cat is well taken care of."
+	},
+	"おっしゃっていた": {
+		"example": "先生がおっしゃっていた通りです。",
+		"exampleCn": "正如老师说过的那样。",
+		"exampleEn": "It's just as the teacher said."
+	},
+	"お入れしますか": {
+		"example": "お水をお入れしますか。",
+		"exampleCn": "要帮您倒水吗？",
+		"exampleEn": "Shall I pour some water for you?"
+	},
+	"またのちほど": {
+		"example": "詳細はまたのちほどご連絡します。",
+		"exampleCn": "详情稍后再联系。",
+		"exampleEn": "I'll get back to you later with the details."
+	},
+	"休むことだ": {
+		"example": "疲れたときは休むことだ。",
+		"exampleCn": "累的时候应该休息。",
+		"exampleEn": "When you're tired, you should rest."
+	},
+	"用意（ようい）して下さい": {
+		"example": "書類を用意して下さい。",
+		"exampleCn": "请准备好文件。",
+		"exampleEn": "Please prepare the documents."
+	},
+	"良い休日を（お過ごし下さい）": {
+		"example": "良い休日をお過ごし下さい。",
+		"exampleCn": "祝你假期愉快。",
+		"exampleEn": "Have a nice holiday."
+	},
+	"良い（よい）休日（きゅうじつ)を": {
+		"example": "良い休日を。",
+		"exampleCn": "祝你假期愉快。",
+		"exampleEn": "Have a nice holiday."
+	},
+	"終わり次第（しだい": {
+		"example": "会議が終わり次第連絡します。",
+		"exampleCn": "会议一结束就联系。",
+		"exampleEn": "I'll contact you as soon as the meeting ends."
+	},
+	"高校の修学旅行": {
+		"example": "高校の修学旅行で京都へ行った。",
+		"exampleCn": "高中修学旅行去了京都。",
+		"exampleEn": "I went to Kyoto on a high-school trip."
+	},
+	"３ヶ月だけ暑い": {
+		"example": "この町は３ヶ月だけ暑い。",
+		"exampleCn": "这座城镇只热三个月。",
+		"exampleEn": "This town is only hot for three months."
+	},
+	"5ヶ月目": {
+		"example": "日本語の勉強は5ヶ月目です。",
+		"exampleCn": "学日语进入第五个月了。",
+		"exampleEn": "I'm in my fifth month of studying Japanese."
+	},
+	"なんにちか前": {
+		"example": "なんにちか前にメールを送りました。",
+		"exampleCn": "几天前发了邮件。",
+		"exampleEn": "I sent an email several days ago."
+	},
+	"どくしんの時": {
+		"example": "どくしんの時は自由だった。",
+		"exampleCn": "单身的时候很自由。",
+		"exampleEn": "I was freer when I was single."
+	},
+	"多すぎた": {
+		"example": "注文が多すぎた。",
+		"exampleCn": "点得太多了。",
+		"exampleEn": "I ordered too much."
+	},
+	"完璧（かんぺき）じゃない": {
+		"example": "計画は完璧じゃない。",
+		"exampleCn": "计划并不完美。",
+		"exampleEn": "The plan isn't perfect."
+	},
+	"面白いと思わない": {
+		"example": "その番組は面白いと思わない。",
+		"exampleCn": "不觉得那个节目有趣。",
+		"exampleEn": "I don't find that show interesting."
+	},
+	"面白いと思えない": {
+		"example": "まだ面白いと思えない。",
+		"exampleCn": "还觉得没那么有趣。",
+		"exampleEn": "I still can't find it that interesting."
+	},
+	"あ、しまった": {
+		"example": "あ、しまった、鍵を忘れた。",
+		"exampleCn": "啊，糟了，忘了钥匙。",
+		"exampleEn": "Oh no, I forgot my keys."
+	},
+	"きっとよろこぶよ": {
+		"example": "このプレゼント、きっとよろこぶよ。",
+		"exampleCn": "这个礼物，一定会高兴的。",
+		"exampleEn": "They'll surely be happy with this present."
+	},
+	"そうしようかな": {
+		"example": "映画にするか、そうしようかな。",
+		"exampleCn": "看电影吧，那就这么办吧。",
+		"exampleEn": "Maybe I'll go with the movie."
+	},
+	"そんなに好きなんだ": {
+		"example": "コーヒーをそんなに好きなんだね。",
+		"exampleCn": "原来这么喜欢咖啡啊。",
+		"exampleEn": "You like coffee that much, huh."
+	},
+	"早く届けたいんですが": {
+		"example": "荷物を早く届けたいんですが。",
+		"exampleCn": "想早点把行李送到。",
+		"exampleEn": "I'd like the package delivered soon."
+	},
+	"あとは州次第": {
+		"example": "法律はあとは州次第です。",
+		"exampleCn": "法律剩下的就看各州了。",
+		"exampleEn": "The rest of the law depends on the state."
+	},
+	"テストは成績に影響する": {
+		"example": "このテストは成績に影響する。",
+		"exampleCn": "这次考试会影响成绩。",
+		"exampleEn": "This test affects your grades."
+	},
+	"ストレス解放（かいほう）できる": {
+		"example": "運動するとストレス解放できる。",
+		"exampleCn": "运动就能释放压力。",
+		"exampleEn": "Exercise helps you release stress."
+	},
+	"⭐️ストレス発散（はっさん）できる": {
+		"example": "カラオケでストレス発散できる。",
+		"exampleCn": "唱卡拉OK能发泄压力。",
+		"exampleEn": "Karaoke lets you let off steam."
+	},
+	"加工食品(かこうしょくひん": {
+		"example": "加工食品ばかり食べない方がいい。",
+		"exampleCn": "最好不要净吃加工食品。",
+		"exampleEn": "It's better not to eat mostly processed food."
+	},
+	"第二次世界大戦（だいにじ せかいたいせん）": {
+		"example": "第二次世界大戦について学びました。",
+		"exampleCn": "学习了关于第二次世界大战的内容。",
+		"exampleEn": "I studied World War II."
+	},
+	"立ち話（たちばなし）(站着闲谈": {
+		"example": "駅前で立ち話をした。",
+		"exampleCn": "在车站前站着聊天。",
+		"exampleEn": "We had a standing chat in front of the station."
+	},
+	"相反する（あいはん": {
+		"example": "二つの意見が相反する。",
+		"exampleCn": "两种意见相反。",
+		"exampleEn": "The two opinions conflict."
+	},
+	"落ちる、落ちた": {
+		"example": "スマホが落ちた。",
+		"exampleCn": "手机掉了。",
+		"exampleEn": "My phone fell."
+	},
+	"怪我が治っていない": {
+		"example": "足の怪我が治っていない。",
+		"exampleCn": "脚伤还没好。",
+		"exampleEn": "The injury on my leg hasn't healed yet."
+	},
+	"欲しがっているもの": {
+		"example": "子どもが欲しがっているものを買った。",
+		"exampleCn": "买了孩子想要的东西。",
+		"exampleEn": "I bought what the child wanted."
+	},
+	"犬にチューされた": {
+		"example": "公園で犬にチューされた。",
+		"exampleCn": "在公园被狗亲了一口。",
+		"exampleEn": "A dog kissed me in the park."
+	},
+	"始めたらしいじゃん": {
+		"example": "彼も習い事を始めたらしいじゃん。",
+		"exampleCn": "听说他也开始学兴趣班了。",
+		"exampleEn": "Looks like he started lessons too."
+	},
+	"持ってこなくてもいい": {
+		"example": "教科書は持ってこなくてもいい。",
+		"exampleCn": "教科书不用带过来也行。",
+		"exampleEn": "You don't have to bring the textbook."
+	},
+	"早くうまくなりたい": {
+		"example": "ピアノを早くうまくなりたい。",
+		"exampleCn": "想快点把钢琴练好。",
+		"exampleEn": "I want to get good at piano soon."
+	},
+	"強い力を使うとき": {
+		"example": "強い力を使うときは気を付けて。",
+		"exampleCn": "使很大力气的时候要小心。",
+		"exampleEn": "Be careful when you use a lot of force."
+	},
+	"他の荷物でいっぱいで": {
+		"example": "ロッカーが他の荷物でいっぱいで入れない。",
+		"exampleCn": "储物柜被别的行李占满了放不进去。",
+		"exampleEn": "The locker is full of other bags so I can't put mine in."
+	},
+	"会社には戻らず（もどらず": {
+		"example": "午後は会社には戻らず直帰します。",
+		"exampleCn": "下午不回公司直接回家。",
+		"exampleEn": "In the afternoon I won't return to the office; I'll go straight home."
+	},
+	"先生に習いはじめて": {
+		"example": "先生に習いはじめて上達した。",
+		"exampleCn": "开始跟老师学之后进步了。",
+		"exampleEn": "I've improved since I started learning from the teacher."
+	},
+	"お電話がかかるのを待つ": {
+		"example": "お電話がかかるのを待つ。",
+		"exampleCn": "等电话打进来。",
+		"exampleEn": "I wait for the phone to ring."
+	},
+	"だよね": {
+		"example": "そうだよね。",
+		"exampleCn": "是吧。",
+		"exampleEn": "That's right, yeah."
+	},
+	"なんでだよ": {
+		"example": "なんでだよ、説明して。",
+		"exampleCn": "为什么啊，解释一下。",
+		"exampleEn": "Why? Explain it."
+	},
+	"おわたかな": {
+		"example": "会議はもうおわたかな。",
+		"exampleCn": "会议已经结束了吧。",
+		"exampleEn": "I wonder if the meeting is already over."
+	},
+	"おすしを食べようと思う": {
+		"example": "今夜おすしを食べようと思う。",
+		"exampleCn": "今晚打算吃寿司。",
+		"exampleEn": "I think I'll eat sushi tonight."
+	},
+	"いつも面白い話があるね": {
+		"example": "君はいつも面白い話があるね。",
+		"exampleCn": "你总是有有趣的故事呢。",
+		"exampleEn": "You always have interesting stories."
+	},
+	"そっちのほうがいいよね": {
+		"example": "やっぱりそっちのほうがいいよね。",
+		"exampleCn": "果然那边更好吧。",
+		"exampleEn": "That way is better, right?"
+	},
+	"この違いでしょうね": {
+		"example": "成功の秘訣はこの違いでしょうね。",
+		"exampleCn": "成功的秘诀大概就是这个差别吧。",
+		"exampleEn": "That difference is probably the key."
+	},
+	"あまり大切じゃない": {
+		"example": "細部はあまり大切じゃない。",
+		"exampleCn": "细节不太重要。",
+		"exampleEn": "The details aren't that important."
+	},
+	"あまり、、、ない": {
+		"example": "あまり好きではない。",
+		"exampleCn": "不太喜欢。",
+		"exampleEn": "I don't like it very much."
+	},
+	"30分から1時間ぐらい": {
+		"example": "待ち時間は30分から1時間ぐらいです。",
+		"exampleCn": "等待时间大概三十分钟到一小时。",
+		"exampleEn": "The wait is about 30 minutes to an hour."
+	},
+	"して見てべきだ": {
+		"example": "一度して見てべきだと思う。",
+		"exampleCn": "我觉得应该试一次。",
+		"exampleEn": "I think you should try doing it once."
+	},
+	"したい＋がる": {
+		"example": "「たい」に「がる」を付けると「したがる」になる。",
+		"exampleCn": "「たい」加上「がる」就变成「したがる」。",
+		"exampleEn": "Adding garu to tai makes tagaru."
+	},
+	"てくださる：てくれる": {
+		"example": "「てくださる」は「てくれる」の尊敬語です。",
+		"exampleCn": "「てくださる」是「てくれる」的尊敬语。",
+		"exampleEn": "Tekudasaru is the honorific form of tekureru."
+	},
+	"ない系": {
+		"example": "動詞のない系を覚えましょう。",
+		"exampleCn": "来记住动词的否定形式吧。",
+		"exampleEn": "Let's memorize the negative form of verbs."
+	},
+	"Vますしだい": {
+		"example": "着きしだい連絡します。",
+		"exampleCn": "一到就联系。",
+		"exampleEn": "I'll contact you as soon as I arrive."
+	},
+	"AかBか": {
+		"example": "電車かバスかで迷っています。",
+		"exampleCn": "在犹豫坐电车还是巴士。",
+		"exampleEn": "I'm unsure whether to take the train or the bus."
+	},
+	"1 あげないことはない": {
+		"example": "あげないことはないが、今は無理だ。",
+		"exampleCn": "不是不给，但现在不行。",
+		"exampleEn": "It's not that I wouldn't give it, but I can't now."
+	},
+	"2 あげることはない": {
+		"example": "わざわざあげることはない。",
+		"exampleCn": "没必要特意给。",
+		"exampleEn": "There's no need to go out of your way to give it."
+	},
+	"3 あげないことじゃない": {
+		"example": "あげないことじゃないよ。",
+		"exampleCn": "并不是不给哦。",
+		"exampleEn": "It's not that I won't give it."
+	},
+	"4 あげないことにする": {
+		"example": "今回はあげないことにする。",
+		"exampleCn": "这次决定不给。",
+		"exampleEn": "I've decided not to give it this time."
+	},
+	"なんて など": {
+		"example": "映画なんてなど好きです。",
+		"exampleCn": "电影之类的喜欢。",
+		"exampleEn": "I like things like movies."
+	},
+	"へ→に": {
+		"example": "「へ」を「に」に言い換えることもある。",
+		"exampleCn": "有时会把「へ」换成「に」。",
+		"exampleEn": "Sometimes へ is rephrased as に."
+	},
+	"依頼の": {
+		"example": "依頼の電話をかけます。",
+		"exampleCn": "打委托电话。",
+		"exampleEn": "I'll make a request call."
+	},
+	"原形：する": {
+		"example": "動詞の原形：するを確認します。",
+		"exampleCn": "确认动词原形：する。",
+		"exampleEn": "I check the dictionary form: suru."
+	},
+	"tax 税金": {
+		"example": "tax 税金の計算が難しいです。",
+		"exampleCn": "税的计算很难。",
+		"exampleEn": "Calculating tax is difficult."
+	},
+	"Bのうちで掃除した時": {
+		"example": "Bのうちで掃除した時に見つけた。",
+		"exampleCn": "在B家里打扫的时候发现的。",
+		"exampleEn": "I found it when cleaning at B's house."
+	},
+	"BBQ場で買おうよ": {
+		"example": "肉はBBQ場で買おうよ。",
+		"exampleCn": "肉在烧烤场买吧。",
+		"exampleEn": "Let's buy the meat at the BBQ spot."
+	},
+	"めちゃくちゃ降っとる": {
+		"example": "外はめちゃくちゃ降っとる。",
+		"exampleCn": "外面雨下得离谱。",
+		"exampleEn": "It's pouring outside."
+	},
+	"ツイてないな〜": {
+		"example": "今日はツイてないな〜。",
+		"exampleCn": "今天好倒霉啊。",
+		"exampleEn": "I'm so unlucky today."
+	},
+	"ヘえー、そうなのー": {
+		"example": "ヘえー、そうなのー、知らなかった。",
+		"exampleCn": "哎，是这样啊，我不知道。",
+		"exampleEn": "Oh, I see—I didn't know that."
+	},
+	"今年流行ってるでサイン": {
+		"example": "この柄は今年流行ってるでサインだよ。",
+		"exampleCn": "这个图案是今年很流行的设计。",
+		"exampleEn": "This pattern is a trendy design this year."
+	},
+	"やるなって（言われた）": {
+		"example": "親にやるなって言われた。",
+		"exampleCn": "被父母说别做。",
+		"exampleEn": "My parents told me not to do it."
+	},
+	"やっといてよかった（ 还好事先做了、幸亏做了": {
+		"example": "予習をやっといてよかった。",
+		"exampleCn": "还好事先预习了。",
+		"exampleEn": "I'm glad I prepared ahead."
+	},
+	"日動火災・熊本県共同ビル": {
+		"example": "日動火災・熊本県共同ビルの前で待ちます。",
+		"exampleCn": "在日动火灾・熊本县共同大楼前等。",
+		"exampleEn": "I'll wait in front of the Nichido Fire & Kumamoto Prefecture building."
+	},
+	"真岛浩": {
+		"example": "真岛浩の漫画が好きです。",
+		"exampleCn": "喜欢真岛浩的漫画。",
+		"exampleEn": "I like Hiro Mashima's manga."
+	},
+	"日语：FAIRY TAIL／フェアリーテイル": {
+		"example": "FAIRY TAIL／フェアリーテイルを見ています。",
+		"exampleCn": "在看妖精的尾巴。",
+		"exampleEn": "I'm watching Fairy Tail."
+	},
+	"エドマルがいっぱい🐶": {
+		"example": "公園にエドマルがいっぱいいる。",
+		"exampleCn": "公园里有很多小狗。",
+		"exampleEn": "There are lots of dogs in the park."
+	},
+	"テスト、⭕️すぎる": {
+		"example": "今日のテスト、⭕️すぎる！",
+		"exampleCn": "今天的考试太顺利了！",
+		"exampleEn": "Today's test went way too well!"
+	},
+	"マジでウケる（really funny": {
+		"example": "その話マジでウケる。",
+		"exampleCn": "那件事真的太好笑了。",
+		"exampleEn": "That story is really funny."
+	},
+	"おばさん（middle age woman）🙅‍♀️→おねえさん（polite）": {
+		"example": "知らない女性にはおねえさんと呼びます。",
+		"exampleCn": "对不认识的女性礼貌地叫姐姐。",
+		"exampleEn": "Call an unfamiliar woman oneesan politely."
+	},
+	"千葉やばいよね": {
+		"example": "最近の千葉やばいよね。",
+		"exampleCn": "最近千叶也太离谱了吧。",
+		"exampleEn": "Chiba's been crazy lately, right?"
+	},
+	"蘇我駅ヤバすぎ": {
+		"example": "蘇我駅ヤバすぎて迷った。",
+		"exampleCn": "苏我站也太离谱了，迷路了。",
+		"exampleEn": "Soga Station was too much—I got lost."
+	},
+	"暑くてどこも行きたくないから": {
+		"example": "暑くてどこも行きたくないから家にいます。",
+		"exampleCn": "热得哪都不想去所以待在家。",
+		"exampleEn": "It's so hot I don't want to go anywhere, so I'm staying home."
+	},
+	"高铁": {
+		"example": "中国では高铁で旅行できます。",
+		"exampleCn": "在中国可以坐高铁旅行。",
+		"exampleEn": "In China you can travel by high-speed rail."
+	},
+	"公积金": {
+		"example": "給料から公积金が天引きされます。",
+		"exampleCn": "工资里会扣除公积金。",
+		"exampleEn": "Housing fund contributions are deducted from salary."
 	}
 }
