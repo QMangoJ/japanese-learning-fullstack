@@ -263,6 +263,11 @@
 		"exampleCn": "在车站的精算机上付票款。",
 		"exampleEn": "I pay for the ticket at the station payment machine."
 	},
+	"制限": {
+		"example": "この駐車場には時間制限があります。",
+		"exampleCn": "这个停车场有时间限制。",
+		"exampleEn": "There is a time limit in this parking lot."
+	},
 	"見つけちゃった": {
 		"cn": "不小心发现了",
 		"en": "ended up finding it",

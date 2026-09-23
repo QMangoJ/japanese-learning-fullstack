@@ -286,6 +286,11 @@ describe("lesson review helpers", () => {
 		expect(machine.jp_r).toBe("<ruby>精算機<rt>せいさんき</rt></ruby>");
 		expect(machine.example).toContain("精算機");
 		expect(machine.exampleCn).toBeTruthy();
+		const limit = enrichReviewDays([{ id: "x", title: "x", items: [{ jp: "制限", kind: "word" }] }])[0].items[0];
+		expect(limit.jp_r).toBe("<ruby>制限<rt>せいげん</rt></ruby>");
+		expect(limit.example).toContain("制限");
+		expect(limit.exampleCn).toBeTruthy();
+		expect(limit.exampleEn).toBeTruthy();
 		expect(
 			enrichReviewDays([{ id: "x", title: "x", items: [{ jp: "冬にインフルエンザのウイルスと戦うには", kind: "sentence" }] }])[0].items[0].cn,
 		).toBe("要在冬天对抗流感病毒的话");

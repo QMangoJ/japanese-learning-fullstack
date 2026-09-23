@@ -493,7 +493,11 @@
 					"kind": "word",
 					"jp_r": "<ruby>制限<rt>せいげん</rt></ruby>",
 					"cn": "限制",
-					"en": "limit / restriction"
+					"en": "limit / restriction",
+					"example": "この駐車場には時間制限があります。",
+					"exampleCn": "这个停车场有时间限制。",
+					"exampleEn": "There is a time limit in this parking lot.",
+					"example_r": "この<ruby>駐車場<rt>ちゅうしゃじょう</rt></ruby>には<ruby>時間<rt>じかん</rt></ruby><ruby>制限<rt>せいげん</rt></ruby>があります。"
 				},
 				{
 					"jp": "機械の画面",
