@@ -6,6 +6,10 @@ export type ReviewItem = {
 	reading?: string;
 	cn?: string;
 	en?: string;
+	example?: string;
+	exampleCn?: string;
+	exampleEn?: string;
+	example_r?: string;
 	kind: ReviewKind;
 };
 
@@ -138,6 +142,10 @@ function isReviewItem(value: unknown): value is ReviewItem {
 	if (item.jp_r != null && typeof item.jp_r !== "string") return false;
 	if (item.cn != null && typeof item.cn !== "string") return false;
 	if (item.en != null && typeof item.en !== "string") return false;
+	if (item.example != null && typeof item.example !== "string") return false;
+	if (item.exampleCn != null && typeof item.exampleCn !== "string") return false;
+	if (item.exampleEn != null && typeof item.exampleEn !== "string") return false;
+	if (item.example_r != null && typeof item.example_r !== "string") return false;
 	return true;
 }
 

@@ -1,4 +1,5 @@
 import glosses from "../data/lesson-review-glosses.json";
+import examples from "../data/lesson-review-examples.json";
 import kanjiReadings from "../data/lesson-review-kanji-readings.json";
 import {
 	buildReviewRuby,
@@ -169,20 +170,38 @@ export function enrichReviewDays(days: ReviewDay[]): ReviewDay[] {
 	}));
 }
 
+type ReviewExtra = {
+	cn?: string;
+	en?: string;
+	example?: string;
+	exampleCn?: string;
+	exampleEn?: string;
+};
+
 function enrichReviewItem(item: ReviewItem): ReviewItem {
-	const gloss = (glosses as Record<string, { cn?: string; en?: string }>)[item.jp];
+	const gloss = (glosses as Record<string, ReviewExtra>)[item.jp];
+	const extra = (examples as Record<string, ReviewExtra>)[item.jp];
 	const next: ReviewItem = { ...item };
-	if (gloss) {
-		if (!next.cn && gloss.cn) next.cn = gloss.cn;
-		if (!next.en && gloss.en) next.en = gloss.en;
+	for (const source of [gloss, extra]) {
+		if (!source) continue;
+		if (!next.cn && source.cn) next.cn = source.cn;
+		if (!next.en && source.en) next.en = source.en;
+		if (!next.example && source.example) next.example = source.example;
+		if (!next.exampleCn && source.exampleCn) next.exampleCn = source.exampleCn;
+		if (!next.exampleEn && source.exampleEn) next.exampleEn = source.exampleEn;
 	}
 	const inline = splitInlineReading(next.jp);
 	const reading = next.reading || inline.reading;
 	const surface = inline.jp.replace(/\([A-Za-züÜ]+\d*\)/g, "");
 	delete next.jp_r;
+	delete next.example_r;
 	const ruby = buildReviewRuby(surface, reading, kanjiReadings);
 	if (ruby && shouldKeepReviewRuby(surface, ruby)) next.jp_r = ruby;
 	if (reading && !next.reading) next.reading = reading;
+	if (next.example && next.kind === "word") {
+		const exampleRuby = buildReviewRuby(next.example, undefined, kanjiReadings);
+		if (exampleRuby && shouldKeepReviewRuby(next.example, exampleRuby)) next.example_r = exampleRuby;
+	}
 	return compactItem(next);
 }
 
@@ -546,6 +565,10 @@ function compactItem(item: ReviewItem): ReviewItem {
 	if (item.reading) out.reading = item.reading;
 	if (item.cn) out.cn = item.cn;
 	if (item.en) out.en = item.en;
+	if (item.example) out.example = item.example;
+	if (item.exampleCn) out.exampleCn = item.exampleCn;
+	if (item.exampleEn) out.exampleEn = item.exampleEn;
+	if (item.example_r) out.example_r = item.example_r;
 	return out;
 }
 

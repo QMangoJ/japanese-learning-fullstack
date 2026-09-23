@@ -199,6 +199,10 @@ function ReviewCards({ day }: { day: ReviewDay }) {
 		reading: reviewKanaLine(item),
 		cn: item.cn,
 		en: item.en,
+		exampleJp: item.kind === "word" ? item.example : undefined,
+		exampleJpHtml: item.kind === "word" ? item.example_r : undefined,
+		exampleCn: item.kind === "word" ? item.exampleCn : undefined,
+		exampleEn: item.kind === "word" ? item.exampleEn : undefined,
 		kind: item.kind,
 	}));
 	return (

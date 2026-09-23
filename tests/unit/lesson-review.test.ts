@@ -282,6 +282,13 @@ describe("lesson review helpers", () => {
 		expect(enrichReviewDays([{ id: "x", title: "x", items: [{ jp: "市民税", kind: "word" }] }])[0].items[0].jp_r).toBe(
 			"<ruby>市民税<rt>しみんぜい</rt></ruby>",
 		);
+		const machine = enrichReviewDays([{ id: "x", title: "x", items: [{ jp: "精算機", kind: "word" }] }])[0].items[0];
+		expect(machine.jp_r).toBe("<ruby>精算機<rt>せいさんき</rt></ruby>");
+		expect(machine.example).toContain("精算機");
+		expect(machine.exampleCn).toBeTruthy();
+		expect(enrichReviewDays([{ id: "x", title: "x", items: [{ jp: "心に残る", kind: "word" }] }])[0].items[0].jp_r).toContain(
+			"<ruby>心<rt>こころ</rt></ruby>",
+		);
 		expect(enrichReviewDays([{ id: "x", title: "x", items: [{ jp: "公积金", kind: "word" }] }])[0].items[0].jp_r).toBeUndefined();
 		expect(
 			enrichReviewDays([
