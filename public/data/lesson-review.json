@@ -1,11 +1,11 @@
 {
 	"source": "https://docs.google.com/document/d/12NwKtAV_HFUeOheYvXGMsJl5G2xIcdb4WG_axC23xrU/edit\nhttps://docs.google.com/document/d/1oEZYQYz3Kb3q5bRqNJgdD0TNxUHVEX2PGvLoCju_Cdc/edit",
-	"fetchedAt": "2026-09-23T00:48:50.519Z",
+	"fetchedAt": "2026-09-23T02:20:56.112Z",
 	"days": [
 		{
-			"id": "2026-09-21",
-			"date": "2026-09-21",
-			"title": "2026-09-21",
+			"id": "2026-09-22",
+			"date": "2026-09-22",
+			"title": "2026-09-22",
 			"label": "模擬試験N3",
 			"items": [
 				{
@@ -173,7 +173,13 @@
 				},
 				{
 					"jp": "~うえで",
-					"kind": "word"
+					"kind": "word",
+					"cn": "在……之后；在……方面",
+					"en": "after doing; when it comes to",
+					"example": "説明を聞いたうえで、決めます。",
+					"exampleCn": "听完说明之后再决定。",
+					"exampleEn": "I'll decide after hearing the explanation.",
+					"example_r": "<ruby>説明<rt>せつめい</rt></ruby>を<ruby>聞いた<rt>きいた</rt></ruby>うえで、<ruby>決めます<rt>きめます</rt></ruby>。"
 				},
 				{
 					"jp": "市民講座",
@@ -289,7 +295,16 @@
 					"exampleCn": "给孩子一个机会。",
 					"exampleEn": "We give children a chance.",
 					"example_r": "<ruby>子供<rt>こども</rt></ruby>にチャンスを<ruby>与えます<rt>あたえます</rt></ruby>。"
-				},
+				}
+			],
+			"source": "Danielさん"
+		},
+		{
+			"id": "2026-09-21",
+			"date": "2026-09-21",
+			"title": "2026-09-21",
+			"label": "模擬試験N3",
+			"items": [
 				{
 					"jp": "冬にインフルエンザのウイルスと戦うには",
 					"kind": "sentence",

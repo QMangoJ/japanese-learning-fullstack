@@ -1,4 +1,11 @@
 {
+	"~うえで": {
+		"cn": "在……之后；在……方面",
+		"en": "after doing; when it comes to",
+		"example": "説明を聞いたうえで、決めます。",
+		"exampleCn": "听完说明之后再决定。",
+		"exampleEn": "I'll decide after hearing the explanation."
+	},
 	"すると": {
 		"cn": "于是、然后",
 		"en": "and then / thereupon",
