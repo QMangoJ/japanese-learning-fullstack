@@ -1,4 +1,5 @@
 import type { KanjiExamQuestion } from "./kanji-exam";
+import { writingWordGloss } from "./kanji-exam-words";
 
 // Writing questions test the marked kanji, not every character in the prompt.
 // Keep character meanings separate from the contextual vocabulary in reading questions.
@@ -41,6 +42,11 @@ const wordMeaning: Record<string, string> = {
 	工学部: "工学部；工程学院", スキー場: "滑雪场", 人工: "人工；人造", 工場: "工厂", 場: "场所；场合", 本場: "发源地；正宗产地", 始まります: "开始", 年始: "年初；新年伊始", 始業式: "开学典礼", 終わって: "结束；完成", 終電: "末班电车",
 };
 
-export function chineseMeaningForQuestion(question: Pick<KanjiExamQuestion, "kind" | "target" | "answer">) {
-	return (question.kind === "reading" ? wordMeaning[question.target] : kanjiMeaning[question.answer]) || "词义待补充";
+export function chineseMeaningForQuestion(
+	question: Pick<KanjiExamQuestion, "kind" | "target" | "answer">,
+	form?: string,
+) {
+	if (form && writingWordGloss[form]) return writingWordGloss[form].cn;
+	if (form && wordMeaning[form]) return wordMeaning[form];
+	return (question.kind === "reading" ? wordMeaning[question.target] : writingWordGloss[question.answer]?.cn || kanjiMeaning[question.answer] || wordMeaning[question.answer]) || "词义待补充";
 }

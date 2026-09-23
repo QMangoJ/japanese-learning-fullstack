@@ -71,9 +71,265 @@
 		"cn": "睡得很熟",
 		"en": "to sleep soundly"
 	},
-	"はっかり話す": {
-		"cn": "说得很清楚（はっきり）",
+	"はっきり話す": {
+		"cn": "说得很清楚",
 		"en": "to speak clearly"
+	},
+	"見舞い": {
+		"cn": "探望、慰问",
+		"en": "visit someone (who is sick / in need)"
+	},
+	"きっとよろこぶよ": {
+		"cn": "一定会高兴的",
+		"en": "I'm sure they'll be happy"
+	},
+	"精算機": {
+		"cn": "精算机、结算机",
+		"en": "ticket / payment machine"
+	},
+	"制限": {
+		"cn": "限制",
+		"en": "limit / restriction"
+	},
+	"機械の画面": {
+		"cn": "机器的屏幕",
+		"en": "the machine's screen"
+	},
+	"番号を入力する": {
+		"cn": "输入号码",
+		"en": "enter a number"
+	},
+	"レシートのバーコード": {
+		"cn": "收据上的条码",
+		"en": "the barcode on the receipt"
+	},
+	"あ、しまった": {
+		"cn": "啊，糟了",
+		"en": "oh no / I messed up"
+	},
+	"しょうがないよ": {
+		"cn": "没办法呀",
+		"en": "it can't be helped"
+	},
+	"見つけちゃった": {
+		"cn": "给发现了",
+		"en": "I found it (unintentionally)"
+	},
+	"今年流行ってるでサイン": {
+		"cn": "是今年很流行的设计",
+		"en": "it's a popular design this year"
+	},
+	"気に入ってる": {
+		"cn": "很喜欢",
+		"en": "I like it / I'm into it"
+	},
+	"それなら": {
+		"cn": "那样的话",
+		"en": "in that case"
+	},
+	"セールって書いてあったから": {
+		"cn": "因为上面写着特价",
+		"en": "because it said it was on sale"
+	},
+	"安心して": {
+		"cn": "放心",
+		"en": "don't worry"
+	},
+	"そうしようかな": {
+		"cn": "那就这么办吧",
+		"en": "maybe I'll do that"
+	},
+	"繰り越す": {
+		"cn": "结转、延期",
+		"en": "carry over"
+	},
+	"金曜日に変更になりました": {
+		"cn": "改到星期五了",
+		"en": "it was changed to Friday"
+	},
+	"駅で友達に会ったっていうところ": {
+		"cn": "在车站碰到朋友的那段",
+		"en": "the part where I ran into a friend at the station"
+	},
+	"くるはずです": {
+		"cn": "应该会来",
+		"en": "they should come / it should arrive"
+	},
+	"チラシ": {
+		"cn": "传单",
+		"en": "flyer / leaflet"
+	},
+	"そんなに好きなんだ": {
+		"cn": "原来这么喜欢啊",
+		"en": "you like it that much"
+	},
+	"ストーリー": {
+		"cn": "故事、剧情",
+		"en": "story"
+	},
+	"試す": {
+		"cn": "尝试、试验",
+		"en": "to try out"
+	},
+	"繋がる": {
+		"cn": "连上、有联系",
+		"en": "to be connected"
+	},
+	"レシートに表示されます": {
+		"cn": "会显示在收据上",
+		"en": "it will appear on the receipt"
+	},
+	"見つからなかったら": {
+		"cn": "要是找不到的话",
+		"en": "if it isn't found"
+	},
+	"返却": {
+		"cn": "归还",
+		"en": "return (an item)"
+	},
+	"お預かりします": {
+		"cn": "我来帮您保管",
+		"en": "I'll take that for you"
+	},
+	"予約が入る": {
+		"cn": "有预约进来",
+		"en": "a reservation comes in"
+	},
+	"今後": {
+		"cn": "今后",
+		"en": "from now on"
+	},
+	"利用者カード": {
+		"cn": "使用者卡、借阅卡",
+		"en": "user / library card"
+	},
+	"記録を確認します": {
+		"cn": "确认记录",
+		"en": "I'll check the record"
+	},
+	"来られる": {
+		"cn": "能来",
+		"en": "can come"
+	},
+	"受けられますか": {
+		"cn": "可以办理／接受吗",
+		"en": "can I receive / take this?"
+	},
+	"それでもやっぱりほしいと思ったらまた買いに来れば？": {
+		"cn": "要是还是想要的话，再来买就好了呀",
+		"en": "if you still want it, you can just come buy it again"
+	},
+	"だって": {
+		"cn": "因为……嘛",
+		"en": "because (explanatory)"
+	},
+	"きっとすぐペラペラになるね！ めっちゃ応援してる！！👍": {
+		"cn": "一定很快就能说得很流利！超给你加油！！",
+		"en": "you'll be fluent in no time! cheering you on!"
+	},
+	"会場": {
+		"cn": "会场",
+		"en": "venue / hall"
+	},
+	"牛乳を温める": {
+		"cn": "热牛奶",
+		"en": "to warm milk"
+	},
+	"日本人が演じている": {
+		"cn": "由日本人演的",
+		"en": "played by Japanese actors"
+	},
+	"ゆで卵": {
+		"cn": "水煮蛋",
+		"en": "boiled egg"
+	},
+	"生卵": {
+		"cn": "生鸡蛋",
+		"en": "raw egg"
+	},
+	"新鮮（しんせん）": {
+		"cn": "新鲜",
+		"en": "fresh"
+	},
+	"チャーハン": {
+		"cn": "炒饭",
+		"en": "fried rice"
+	},
+	"たまに": {
+		"cn": "偶尔",
+		"en": "occasionally"
+	},
+	"シンプル": {
+		"cn": "简单的",
+		"en": "simple"
+	},
+	"四川料理": {
+		"cn": "四川菜",
+		"en": "Sichuan food"
+	},
+	"食べることができる": {
+		"cn": "能吃、可以吃",
+		"en": "can eat"
+	},
+	"長蛇の列（ちょうだのれつ）": {
+		"cn": "长队",
+		"en": "a very long line"
+	},
+	"加工食品(かこうしょくひん": {
+		"cn": "加工食品",
+		"en": "processed food"
+	},
+	"セブンイレブン（セブン）": {
+		"cn": "7-Eleven",
+		"en": "7-Eleven"
+	},
+	"そんなにありません": {
+		"cn": "没有那么多",
+		"en": "there aren't that many"
+	},
+	"火鍋": {
+		"cn": "火锅",
+		"en": "hot pot"
+	},
+	"拒んだ": {
+		"cn": "拒绝了",
+		"en": "refused"
+	},
+	"精神が未熟（せいしんがみじゅく）": {
+		"cn": "精神还不成熟",
+		"en": "mentally immature"
+	},
+	"ギターを演奏してる人": {
+		"cn": "在弹吉他的人",
+		"en": "a person playing guitar"
+	},
+	"出演（しゅつえん）": {
+		"cn": "出演",
+		"en": "appear (on stage / on screen)"
+	},
+	"見るのをやめました": {
+		"cn": "不看了",
+		"en": "I stopped watching"
+	},
+	"若い人向けのドラマ": {
+		"cn": "面向年轻人的电视剧",
+		"en": "a drama aimed at young people"
+	},
+	"石切神社（いしきりじんじゃ）": {
+		"cn": "石切神社（大阪东大阪市）",
+		"en": "Ishikiri Shrine (Higashiosaka, Osaka)"
+	},
+	"喫茶スワン": {
+		"cn": "咖啡店 Swan",
+		"en": "coffee shop Swan"
+	},
+	"喫茶大使館": {
+		"cn": "咖啡店 大使馆",
+		"en": "coffee shop Embassy"
+	},
+	"喫茶マヅラ": {
+		"cn": "咖啡店 Mazura",
+		"en": "coffee shop Mazura"
 	},
 	"ぴったり合う": {
 		"cn": "正合适、完全吻合",

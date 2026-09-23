@@ -80,7 +80,7 @@ def pack(rows: list[dict], table: dict[str, dict]) -> dict[str, list]:
 def main() -> None:
 	from n2_vk_exam_cn import KANJI_EXAM, VOCAB_EXAM
 
-	vocab_rows = collect(ROOT / "public/data/n2vocab.4e440284d9.json")
+	vocab_rows = collect(ROOT / "public/data/n2vocab.90123e4b43.json")
 	kanji_rows = collect(ROOT / "public/data/n2kanji.d9739ca8d4.json")
 	(ROOT / "public/data/n2-vocab-exam-explanations.json").write_text(
 		json.dumps(pack(vocab_rows, VOCAB_EXAM), ensure_ascii=False, indent="\t") + "\n",

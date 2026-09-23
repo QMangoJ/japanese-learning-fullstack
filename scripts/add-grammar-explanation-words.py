@@ -24,7 +24,7 @@ JOBS = [
 ]
 VOCAB_BOOKS = [
 	DATA / "vocab.856eb48e32.json",
-	DATA / "n2vocab.4e440284d9.json",
+	DATA / "n2vocab.90123e4b43.json",
 	DATA / "n4vocab.026f711eb7.json",
 	DATA / "kanji.e43232869e.json",
 	DATA / "n2kanji.d9739ca8d4.json",

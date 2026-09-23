@@ -8,6 +8,7 @@ import type { ListeningLessonBlock } from "../data/listening-n3-lesson-types";
 import { listeningQuestionSupport, type ListeningQuestionSupport } from "../data/listening-n3-question-support";
 import { listeningTranscriptWithFurigana } from "../data/listening-n3-furigana";
 import { dayNeighbors, isFav, LANG, lx, navTo, registerFavMeta, toggleFav } from "../study/store";
+import { CardsLaunch } from "../study/memory-cards";
 import "./reading-n3.css";
 import "./listening-n3.css";
 
@@ -675,7 +676,8 @@ export function ListeningN3Content({
 	});
 	return (
 		<>
-			<div style={{ display: "flex", justifyContent: "flex-end", maxWidth: 820, margin: "0 auto 8px", padding: "0 14px" }}>
+			<div style={{ display: "flex", justifyContent: "flex-end", alignItems: "center", gap: 10, maxWidth: 820, margin: "0 auto 8px", padding: "0 14px" }}>
+				<CardsLaunch />
 				<button type="button" className="starb" onClick={() => toggleFav(favId)} aria-label="收藏本节">
 					{isFav(favId) ? "★" : "☆"}
 				</button>

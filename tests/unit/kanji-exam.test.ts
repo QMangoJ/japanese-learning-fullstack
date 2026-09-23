@@ -2,7 +2,10 @@ import { describe, expect, it } from "vitest";
 
 import {
 	KANJI_EXAM_BATCHES,
+	completeKanjiWord,
+	filledKanjiExamForm,
 	isKanjiExamAnswerCorrect,
+	missingCompleteKanjiWords,
 	normalizeKanjiExamAnswer,
 	questionsForMode,
 	shuffleKanjiExamQuestions,
@@ -73,6 +76,13 @@ describe("kanji exam question bank", () => {
 		const cafe = questionsForMode(batch, "writing").find((question) => question.prompt === "きっさてん");
 		expect(cafe).toMatchObject({ target: "てん", answer: "店" });
 		expect(cafe && isKanjiExamAnswerCorrect(cafe, "喫茶店")).toBe(false);
+		expect(cafe && filledKanjiExamForm(cafe)).toBe("きっさ店");
+		expect(cafe && completeKanjiWord(cafe)).toBe("喫茶店");
+		expect(cafe && chineseMeaningForQuestion(cafe, completeKanjiWord(cafe))).toBe("咖啡店；茶馆");
+		expect(cafe && englishSupportForQuestion(cafe, completeKanjiWord(cafe)).meaning).toBe("coffee shop; tea house");
+		const shop = questionsForMode(batch, "reading").find((question) => question.target === "店員");
+		expect(shop && filledKanjiExamForm(shop)).toBe("店員");
+		expect(shop && chineseMeaningForQuestion(shop, filledKanjiExamForm(shop))).toBe("店员");
 
 		for (const item of KANJI_EXAM_BATCHES) {
 			for (const lesson of item.lessons) {
@@ -105,6 +115,19 @@ describe("kanji exam question bank", () => {
 		expect(meaningFor("軽く")).toBe("lighter; less sluggish");
 		expect(meaningFor("有力")).toBe("valuable; promising (information or a lead)");
 		expect(meaningFor("本場")).toBe("home; place of origin");
+	});
+
+	it("gives every writing question a complete kanji word that includes the tested character", () => {
+		const questions = KANJI_EXAM_BATCHES.flatMap((batch) => questionsForMode(batch, "writing"));
+		expect(missingCompleteKanjiWords(questions)).toEqual([]);
+		for (const question of questions) {
+			const word = completeKanjiWord(question);
+			expect(word, question.id).toContain(question.answer);
+			const meaning = chineseMeaningForQuestion(question, word);
+			expect(meaning, question.id).not.toBe("词义待补充");
+			expect(meaning, question.id).toMatch(/\p{Script=Han}/u);
+			expect(englishSupportForQuestion(question, word).meaning, question.id).not.toBe("Meaning not yet reviewed");
+		}
 	});
 
 	it("provides Chinese meanings for every chapter and preserves contextual senses", () => {

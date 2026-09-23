@@ -1,9 +1,12 @@
 import glosses from "../data/lesson-review-glosses.json";
+import examples from "../data/lesson-review-examples.json";
 import kanjiReadings from "../data/lesson-review-kanji-readings.json";
 import {
 	buildReviewRuby,
 	LESSON_REVIEW_SOURCE,
 	shouldKeepReviewRuby,
+	toHiragana,
+	type LessonReviewDoc,
 	type LessonReviewPayload,
 	type ReviewDay,
 	type ReviewItem,
@@ -13,6 +16,7 @@ import {
 const HAS_JP = /[\u3040-\u30ff\u4e00-\u9fff]/;
 const KANA_ONLY = /^[\u3040-\u309f\u30a0-\u30ffー\s]+$/;
 const DATE_HEADING = /^(?:#{1,6}\s*)?(\d{4})[./年-](\d{1,2})[./月-](\d{1,2})日?(?:\s+(.+))?\s*$/;
+const SHORT_DATE_HEADING = /^(?:#{1,6}\s*)?(\d{1,2})[./月-](\d{1,2})日?\s*$/;
 const MD_HEADING = /^(#{1,6})\s+(.+?)\s*$/;
 const SKIP_HEADINGS = new Set(["先生から", "自分のノート"]);
 const NOTE_SLUGS: Record<string, string> = {
@@ -25,11 +29,15 @@ type OpenGroup =
 	| { kind: "date"; id: string }
 	| { kind: "note"; id: string; title: string };
 
-export function parseLessonReview(markdown: string): ReviewDay[] {
+export function parseLessonReview(
+	markdown: string,
+	opts?: { sourceName?: string; sourceSlug?: string },
+): ReviewDay[] {
 	const dated = new Map<string, ReviewItem[]>();
 	const dateLabels = new Map<string, string>();
 	const notes = new Map<string, { title: string; items: ReviewItem[] }>();
 	let current: OpenGroup | null = null;
+	let lastYear = new Date().getFullYear();
 
 	const itemsOf = (group: OpenGroup): ReviewItem[] => {
 		if (group.kind === "date") {
@@ -44,9 +52,10 @@ export function parseLessonReview(markdown: string): ReviewDay[] {
 
 	for (const raw of markdown.replace(/^\uFEFF/, "").replace(/\r\n/g, "\n").split("\n")) {
 		const trimmed = raw.trim();
-		const date = matchDateHeading(trimmed);
+		const date = matchDateHeading(trimmed, lastYear);
 		if (date) {
 			current = { kind: "date", id: date.id };
+			lastYear = date.year;
 			if (!dated.has(date.id)) dated.set(date.id, []);
 			if (date.label) dateLabels.set(date.id, date.label);
 			continue;
@@ -59,6 +68,7 @@ export function parseLessonReview(markdown: string): ReviewDay[] {
 				current = null;
 				continue;
 			}
+			if (!HAS_JP.test(heading.title) && !NOTE_SLUGS[heading.title]) continue;
 			const id = "note-" + slugNote(heading.title);
 			current = { kind: "note", id, title: heading.title };
 			if (!notes.has(id)) notes.set(id, { title: heading.title, items: [] });
@@ -75,15 +85,18 @@ export function parseLessonReview(markdown: string): ReviewDay[] {
 
 		const cleaned = cleanLine(trimmed);
 		if (shouldSkipLine(cleaned, trimmed)) continue;
+		if (isChineseProse(cleaned)) continue;
+
+		const items = itemsOf(current);
+		const last = items[items.length - 1];
+		if (last && attachFollowUp(last, cleaned)) continue;
 
 		if (isGlossOnly(cleaned)) {
-			const items = itemsOf(current);
-			const last = items[items.length - 1];
 			if (last && !last.cn && !last.en) Object.assign(last, classifyGloss(cleaned));
 			continue;
 		}
 
-		for (const item of parseItems(cleaned)) pushItem(itemsOf(current), item);
+		for (const item of parseItems(cleaned)) pushItem(items, item);
 	}
 
 	const days: ReviewDay[] = [...dated.entries()]
@@ -101,17 +114,52 @@ export function parseLessonReview(markdown: string): ReviewDay[] {
 		if (!note.items.length) continue;
 		days.push({ id, title: note.title, items: note.items });
 	}
-	return days;
+	return applySource(days, opts);
+}
+
+export function mergeLessonReviewDays(groups: ReviewDay[][]): ReviewDay[] {
+	const dated: ReviewDay[] = [];
+	const notes: ReviewDay[] = [];
+	const seen = new Set<string>();
+	for (const group of groups) {
+		for (const day of group) {
+			let id = day.id;
+			if (seen.has(id)) id = `${day.id}:${slugNote(day.source || "dup")}`;
+			seen.add(id);
+			const next = id === day.id ? day : { ...day, id };
+			(next.date ? dated : notes).push(next);
+		}
+	}
+	dated.sort((a, b) => {
+		const byDate = (b.date || "").localeCompare(a.date || "");
+		if (byDate) return byDate;
+		return (a.source || "").localeCompare(b.source || "", "ja");
+	});
+	return [...dated, ...notes];
 }
 
 export function buildLessonReviewPayload(
 	markdown: string,
-	opts?: { source?: string; fetchedAt?: string },
+	opts?: { source?: string; fetchedAt?: string; sourceName?: string; sourceSlug?: string },
 ): LessonReviewPayload {
 	return {
 		source: opts?.source || LESSON_REVIEW_SOURCE,
 		fetchedAt: opts?.fetchedAt || new Date().toISOString(),
-		days: enrichReviewDays(parseLessonReview(markdown)),
+		days: enrichReviewDays(parseLessonReview(markdown, opts)),
+	};
+}
+
+export function buildLessonReviewPayloadFromDocs(
+	docs: Array<Pick<LessonReviewDoc, "id" | "name" | "slug"> & { markdown: string }>,
+	opts?: { fetchedAt?: string; source?: string },
+): LessonReviewPayload {
+	const groups = docs.map((doc) =>
+		parseLessonReview(doc.markdown, { sourceName: doc.name, sourceSlug: doc.slug }),
+	);
+	return {
+		source: opts?.source || docs.map((doc) => `https://docs.google.com/document/d/${doc.id}/edit`).join("\n"),
+		fetchedAt: opts?.fetchedAt || new Date().toISOString(),
+		days: enrichReviewDays(mergeLessonReviewDays(groups)),
 	};
 }
 
@@ -122,20 +170,38 @@ export function enrichReviewDays(days: ReviewDay[]): ReviewDay[] {
 	}));
 }
 
+type ReviewExtra = {
+	cn?: string;
+	en?: string;
+	example?: string;
+	exampleCn?: string;
+	exampleEn?: string;
+};
+
 function enrichReviewItem(item: ReviewItem): ReviewItem {
-	const gloss = (glosses as Record<string, { cn?: string; en?: string }>)[item.jp];
+	const gloss = (glosses as Record<string, ReviewExtra>)[item.jp];
+	const extra = (examples as Record<string, ReviewExtra>)[item.jp];
 	const next: ReviewItem = { ...item };
-	if (gloss) {
-		if (!next.cn && gloss.cn) next.cn = gloss.cn;
-		if (!next.en && gloss.en) next.en = gloss.en;
+	for (const source of [gloss, extra]) {
+		if (!source) continue;
+		if (!next.cn && source.cn) next.cn = source.cn;
+		if (!next.en && source.en) next.en = source.en;
+		if (!next.example && source.example) next.example = source.example;
+		if (!next.exampleCn && source.exampleCn) next.exampleCn = source.exampleCn;
+		if (!next.exampleEn && source.exampleEn) next.exampleEn = source.exampleEn;
 	}
 	const inline = splitInlineReading(next.jp);
 	const reading = next.reading || inline.reading;
 	const surface = inline.jp.replace(/\([A-Za-züÜ]+\d*\)/g, "");
 	delete next.jp_r;
+	delete next.example_r;
 	const ruby = buildReviewRuby(surface, reading, kanjiReadings);
 	if (ruby && shouldKeepReviewRuby(surface, ruby)) next.jp_r = ruby;
 	if (reading && !next.reading) next.reading = reading;
+	if (next.example && next.kind === "word") {
+		const exampleRuby = buildReviewRuby(next.example, undefined, kanjiReadings);
+		if (exampleRuby && shouldKeepReviewRuby(next.example, exampleRuby)) next.example_r = exampleRuby;
+	}
 	return compactItem(next);
 }
 
@@ -145,14 +211,107 @@ function splitInlineReading(jp: string): { jp: string; reading?: string } {
 	return { jp: match[1].trim(), reading: match[2] };
 }
 
-function matchDateHeading(line: string): { id: string; label?: string } | null {
-	const match = line.match(DATE_HEADING);
-	if (!match) return null;
-	const label = match[4]?.trim();
-	return {
-		id: `${match[1]}-${pad(+match[2])}-${pad(+match[3])}`,
-		label: label || undefined,
-	};
+function matchDateHeading(line: string, lastYear: number): { id: string; label?: string; year: number } | null {
+	const full = line.match(DATE_HEADING);
+	if (full) {
+		const year = +full[1];
+		const month = +full[2];
+		const day = +full[3];
+		if (!validDate(year, month, day)) return null;
+		const label = full[4]?.trim();
+		return { id: `${year}-${pad(month)}-${pad(day)}`, label: label || undefined, year };
+	}
+	const short = line.match(SHORT_DATE_HEADING);
+	if (!short) return null;
+	const month = +short[1];
+	const day = +short[2];
+	if (!validDate(lastYear, month, day)) return null;
+	return { id: `${lastYear}-${pad(month)}-${pad(day)}`, year: lastYear };
+}
+
+function validDate(year: number, month: number, day: number): boolean {
+	if (year < 2000 || year > 2100 || month < 1 || month > 12 || day < 1 || day > 31) return false;
+	const date = new Date(Date.UTC(year, month - 1, day));
+	return date.getUTCFullYear() === year && date.getUTCMonth() === month - 1 && date.getUTCDate() === day;
+}
+
+function applySource(days: ReviewDay[], opts?: { sourceName?: string; sourceSlug?: string }): ReviewDay[] {
+	if (!opts?.sourceName && !opts?.sourceSlug) return days;
+	const namespaced = Boolean(opts.sourceSlug && opts.sourceSlug !== "class");
+	return days.map((day) => ({
+		...day,
+		id: namespaced ? `${day.id}:${opts.sourceSlug}` : day.id,
+		source: opts.sourceName || day.source,
+	}));
+}
+
+function attachFollowUp(last: ReviewItem, cleaned: string): boolean {
+	if (KANA_ONLY.test(cleaned)) {
+		const kana = cleaned.replace(/\s+/g, "");
+		if (looksLikeReading(kana, last.jp)) {
+			const prev = last.reading?.replace(/[・\s]/g, "") || "";
+			if (!prev) {
+				last.reading = kana;
+				return true;
+			}
+			if (toHiragana(prev) === toHiragana(kana)) return true;
+			if (kana.includes(prev) && kana.length > prev.length) {
+				last.reading = kana;
+				return true;
+			}
+		}
+	}
+	if (!last.cn && isChineseFollowUp(cleaned, last)) {
+		Object.assign(last, classifyGloss(cleaned));
+		return true;
+	}
+	const lastHead = last.jp.replace(/[（(][\s\S]*/, "").trim();
+	if (lastHead && cleaned.startsWith(lastHead) && cleaned !== last.jp && !/[\u3040-\u30ff]/.test(cleaned.replace(/[（(][^）)]*[）)]?/g, ""))) {
+		Object.assign(last, classifyGloss(cleaned));
+		return true;
+	}
+	return false;
+}
+
+function looksLikeReading(kana: string, jp: string): boolean {
+	const hira = (kana.match(/[\u3041-\u3096]/g) || []).length;
+	const kata = (kana.match(/[\u30a1-\u30f6]/g) || []).length;
+	if (kata > hira) return false;
+	if (kana.length > 24 || kana.includes("／") || kana.includes("/")) return false;
+	const core = jp.replace(/[（(][^）)]*[）)]?/g, "").replace(/\s+/g, "");
+	if (/^[\u30a0-\u30ffー]+$/.test(core) && /^[\u3040-\u309fー]+$/.test(kana)) {
+		return Math.abs(kana.length - core.length) <= 3;
+	}
+	if (!/[一-龯]/.test(jp)) return false;
+	const jpHasCopula = /です|ます|でしょう|あります/.test(jp);
+	if (!jpHasCopula && /です|でしょう/.test(kana)) return false;
+	if (!jpHasCopula && /ます/.test(kana) && kana !== "ますます") return false;
+	const shortWord = core.length <= 8 && !/[。！？!?]/.test(jp);
+	if (shortWord) {
+		if (kana.length > 12) return false;
+		if (/^(きっと|それは|それなら|そうしよう|だって|でも|じゃあ|やっぱり|さらに|ますます)/.test(kana)) return false;
+		if (/(?:よ|ね|かな)$/.test(kana) && kana.length >= 5) return false;
+	} else if (kana.length < Math.min(8, Math.max(3, core.length - 2))) {
+		return false;
+	}
+	return true;
+}
+
+function isChineseFollowUp(text: string, last?: ReviewItem): boolean {
+	const stripped = text.replace(/[（(][^）)]*[）)]?/g, "");
+	if (/[\u3040-\u30ff]/.test(stripped) || !/[\u4e00-\u9fff]/.test(stripped)) return false;
+	if (/[，。；／]/.test(text)) return true;
+	if (/^(自己|这个|那种|表示|用于)/.test(stripped)) return true;
+	const lastCore = last?.jp.replace(/[（(][^）)]*[）)]?/g, "").trim() || "";
+	if (last && /^[\u30a0-\u30ffー]+$/.test(lastCore)) return true;
+	return /[时这从为对来过经现开关还没钱东车语门问间见贝页马齐气爱乐听读写买卖干后里汉儿吗吧您请谢们个很把让给跟头脑馆视剧电满条长发]|的|了/.test(stripped);
+}
+
+function isChineseProse(text: string): boolean {
+	if (/[\u3040-\u30ff]/.test(text)) return false;
+	if (!/[\u4e00-\u9fff]/.test(text)) return false;
+	const han = (text.match(/[\u4e00-\u9fff]/g) || []).length;
+	return han >= 8 && /[，。；]/.test(text);
 }
 
 function matchHeading(line: string): { level: number; title: string } | null {
@@ -208,6 +367,8 @@ function shouldSkipLine(cleaned: string, raw: string): boolean {
 	if (/^!?\[image\d+\]/i.test(cleaned)) return true;
 	if (/^[-—–_*]{3,}$/.test(cleaned)) return true;
 	if (/^:?-{3,}:?$/.test(cleaned)) return true;
+	if (/^[\d.\s*x×+\-/=]+$/.test(cleaned)) return true;
+	if (/^\d+\s*[A-Za-z]+$/.test(cleaned)) return true;
 	if (/^!\[/.test(raw.trim())) return true;
 	if (HAS_JP.test(cleaned) && isMostlyLatinPrompt(cleaned)) return true;
 	return false;
@@ -243,6 +404,20 @@ function parseTableRow(line: string): ReviewItem | null {
 }
 
 function parseItems(line: string): ReviewItem[] {
+	if (/[|｜]/.test(line)) {
+		const item = parseItem(line);
+		return item ? [item] : [];
+	}
+	const fw = line.split("　").map((part) => part.trim()).filter(Boolean);
+	if (
+		fw.length >= 2 &&
+		fw.every((part) => HAS_JP.test(part) && !isChineseFollowUp(part) && !isGlossOnly(part))
+	) {
+		return fw.flatMap((part) => {
+			const item = parseItem(part);
+			return item ? [item] : [];
+		});
+	}
 	const tokens = line.split(/\s+/).filter(Boolean);
 	if (
 		tokens.length >= 2 &&
@@ -250,6 +425,7 @@ function parseItems(line: string): ReviewItem[] {
 			(token) =>
 				HAS_JP.test(token) &&
 				/[一-龯]/.test(token) &&
+				!/[ァ-ヶ]/.test(token) &&
 				token.length <= 8 &&
 				!/[。！？!?]/.test(token) &&
 				!/=|＝/.test(token),
@@ -303,11 +479,19 @@ function peelTrailingGloss(jp: string): { jp: string; extra?: string } {
 }
 
 function splitJpGloss(line: string): { jp: string; cn?: string; en?: string } {
+	const piped = splitOnce(line.replace(/｜/g, "|"), /\s*\|\s*/);
+	if (piped && HAS_JP.test(piped[0])) return { jp: piped[0], ...classifyGloss(piped[1]) };
+
 	const eq = splitOnce(line, /＝|=/);
 	if (eq) return { jp: eq[0], ...classifyGloss(eq[1]) };
 
 	const fw = line.split("　").map((part) => part.trim()).filter(Boolean);
-	if (fw.length >= 2) return { jp: fw[0], ...classifyGloss(fw.slice(1).join(" ")) };
+	if (fw.length >= 2) {
+		const rest = fw.slice(1).join(" ");
+		if (isGlossOnly(rest) || isChineseFollowUp(rest) || !HAS_JP.test(rest)) {
+			return { jp: fw[0], ...classifyGloss(rest) };
+		}
+	}
 
 	const spaced = line.match(/^(.+?)\s{2,}(.+)$/);
 	if (spaced) return { jp: spaced[1].trim(), ...classifyGloss(spaced[2].trim()) };
@@ -381,6 +565,10 @@ function compactItem(item: ReviewItem): ReviewItem {
 	if (item.reading) out.reading = item.reading;
 	if (item.cn) out.cn = item.cn;
 	if (item.en) out.en = item.en;
+	if (item.example) out.example = item.example;
+	if (item.exampleCn) out.exampleCn = item.exampleCn;
+	if (item.exampleEn) out.exampleEn = item.exampleEn;
+	if (item.example_r) out.example_r = item.example_r;
 	return out;
 }
 

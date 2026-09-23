@@ -11,7 +11,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from n2_vk_cn import KANJI, VOCAB
 
 ROOT = Path(__file__).resolve().parent.parent
-VOCAB_BOOK = ROOT / "public/data/n2vocab.4e440284d9.json"
+VOCAB_BOOK = ROOT / "public/data/n2vocab.90123e4b43.json"
 KANJI_BOOK = ROOT / "public/data/n2kanji.d9739ca8d4.json"
 OUT = ROOT / "public/data/n2-vocab-kanji-daily-translations.json"
 

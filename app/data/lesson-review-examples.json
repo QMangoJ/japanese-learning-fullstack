@@ -1,0 +1,482 @@
+{
+	"すると": {
+		"cn": "于是、然后",
+		"en": "and then / thereupon",
+		"example": "雨が降ると、すぐに寒くなりました。",
+		"exampleCn": "一下雨，马上就变冷了。",
+		"exampleEn": "Once it started raining, it quickly got cold."
+	},
+	"展示": {
+		"cn": "展示、展出",
+		"en": "display / exhibit",
+		"example": "新しい作品を展示します。",
+		"exampleCn": "展出新的作品。",
+		"exampleEn": "They are exhibiting new works."
+	},
+	"ノートを広げる": {
+		"cn": "打开笔记本",
+		"en": "open a notebook",
+		"example": "授業が始まる前にノートを広げます。",
+		"exampleCn": "上课前打开笔记本。",
+		"exampleEn": "I open my notebook before class starts."
+	},
+	"対応": {
+		"cn": "应对、处理",
+		"en": "handling / response",
+		"example": "お客さんの質問に対応します。",
+		"exampleCn": "处理客人的问题。",
+		"exampleEn": "I handle the customer's questions."
+	},
+	"マニュアル": {
+		"cn": "手册、说明书",
+		"en": "manual",
+		"example": "使い方はマニュアルに書いてあります。",
+		"exampleCn": "用法写在说明书里。",
+		"exampleEn": "The instructions are written in the manual."
+	},
+	"心に残る": {
+		"cn": "留在心里、难忘",
+		"en": "to stay in one's heart",
+		"example": "その言葉が心に残りました。",
+		"exampleCn": "那句话留在了心里。",
+		"exampleEn": "Those words stayed with me."
+	},
+	"メモをとる": {
+		"cn": "做笔记",
+		"en": "take notes",
+		"example": "大事なところはメモをとります。",
+		"exampleCn": "重要的地方我会记下来。",
+		"exampleEn": "I take notes on the important parts."
+	},
+	"きちんと": {
+		"cn": "好好、整齐地",
+		"en": "properly / neatly",
+		"example": "名前をきちんと書いてください。",
+		"exampleCn": "请把名字写清楚。",
+		"exampleEn": "Please write your name properly."
+	},
+	"飛ばして読む": {
+		"cn": "跳着读",
+		"en": "skim / skip while reading",
+		"example": "時間がないので、飛ばして読みました。",
+		"exampleCn": "因为没时间，就跳着读了。",
+		"exampleEn": "I didn't have time, so I skimmed it."
+	},
+	"研修": {
+		"cn": "培训、进修",
+		"en": "training",
+		"example": "来週から研修が始まります。",
+		"exampleCn": "下周开始培训。",
+		"exampleEn": "Training starts next week."
+	},
+	"機械加工": {
+		"cn": "机械加工",
+		"en": "machining",
+		"example": "工場で機械加工の仕事をしています。",
+		"exampleCn": "在工厂做机械加工的工作。",
+		"exampleEn": "I do machining work at a factory."
+	},
+	"切り傷": {
+		"cn": "割伤",
+		"en": "a cut",
+		"example": "包丁で指に切り傷を作りました。",
+		"exampleCn": "用菜刀把手指割伤了。",
+		"exampleEn": "I cut my finger with a kitchen knife."
+	},
+	"予約を破る": {
+		"cn": "违约、取消预约",
+		"en": "break a reservation",
+		"example": "当日に予約を破るのは困ります。",
+		"exampleCn": "当天取消预约会让人为难。",
+		"exampleEn": "It's a problem to break a reservation on the day."
+	},
+	"ルールを破る": {
+		"cn": "违反规则",
+		"en": "break a rule",
+		"example": "ゲーム中にルールを破ってはいけません。",
+		"exampleCn": "比赛中不能违反规则。",
+		"exampleEn": "You must not break the rules during the game."
+	},
+	"作業": {
+		"cn": "作业、工作",
+		"en": "task / work",
+		"example": "午後は同じ作業を続けます。",
+		"exampleCn": "下午继续做同样的工作。",
+		"exampleEn": "In the afternoon I continue the same task."
+	},
+	"市民講座": {
+		"cn": "市民讲座",
+		"en": "community lecture",
+		"example": "図書館の市民講座に参加しました。",
+		"exampleCn": "参加了图书馆的市民讲座。",
+		"exampleEn": "I joined a community lecture at the library."
+	},
+	"椅子を作るとしたら": {
+		"cn": "如果要做一把椅子的话",
+		"en": "if one were to make a chair",
+		"example": "椅子を作るとしたら、木がいいです。",
+		"exampleCn": "如果要做椅子，木头比较好。",
+		"exampleEn": "If I were to make a chair, wood would be better."
+	},
+	"一度に": {
+		"cn": "一次、同时",
+		"en": "at one time",
+		"example": "一度にたくさん覚えられません。",
+		"exampleCn": "没法一次记住很多。",
+		"exampleEn": "I can't memorize a lot all at once."
+	},
+	"長く座っても疲れない": {
+		"cn": "坐很久也不会累",
+		"en": "you don't get tired even if you sit for a long time",
+		"example": "この椅子は長く座っても疲れません。",
+		"exampleCn": "这把椅子坐很久也不累。",
+		"exampleEn": "This chair doesn't make you tired even if you sit for a long time."
+	},
+	"リラックス": {
+		"cn": "放松",
+		"en": "relax",
+		"example": "週末は家でリラックスします。",
+		"exampleCn": "周末在家放松。",
+		"exampleEn": "I relax at home on the weekend."
+	},
+	"侍が刀を左側にさす": {
+		"cn": "武士把刀佩在左侧",
+		"en": "a samurai wears the sword on the left",
+		"example": "侍が刀を左側にさしている絵を見ました。",
+		"exampleCn": "我看到一幅武士把刀佩在左侧的画。",
+		"exampleEn": "I saw a picture of a samurai wearing his sword on the left."
+	},
+	"学ぶ": {
+		"cn": "学习",
+		"en": "to learn",
+		"example": "日本で日本語を学んでいます。",
+		"exampleCn": "我在日本学日语。",
+		"exampleEn": "I am learning Japanese in Japan."
+	},
+	"丁寧語": {
+		"cn": "礼貌语、郑重语",
+		"en": "polite language",
+		"example": "店では丁寧語を使います。",
+		"exampleCn": "在店里使用礼貌语。",
+		"exampleEn": "We use polite language in the shop."
+	},
+	"タメ口": {
+		"cn": "随便的说法、平辈口气",
+		"en": "casual speech",
+		"example": "友達とはタメ口で話します。",
+		"exampleCn": "和朋友用随便的口气说话。",
+		"exampleEn": "I talk casually with my friends."
+	},
+	"与える": {
+		"cn": "给予",
+		"en": "to give",
+		"example": "子供にチャンスを与えます。",
+		"exampleCn": "给孩子一个机会。",
+		"exampleEn": "We give children a chance."
+	},
+	"インフルエンザが流行る": {
+		"cn": "流感流行",
+		"en": "the flu spreads",
+		"example": "冬になるとインフルエンザが流行ります。",
+		"exampleCn": "一到冬天流感就会流行。",
+		"exampleEn": "The flu spreads when winter comes."
+	},
+	"条件が揃っている": {
+		"cn": "条件都具备了",
+		"en": "the conditions are in place",
+		"example": "成功する条件が揃っています。",
+		"exampleCn": "成功的条件都齐了。",
+		"exampleEn": "The conditions for success are all in place."
+	},
+	"抵抗力がつく": {
+		"cn": "增强抵抗力",
+		"en": "build resistance",
+		"example": "よく寝ると抵抗力がつきます。",
+		"exampleCn": "睡好觉能增强抵抗力。",
+		"exampleEn": "Sleeping well builds your resistance."
+	},
+	"人から信じてもらえる人": {
+		"cn": "能得到别人信任的人",
+		"en": "a person others can trust",
+		"example": "約束を守る人は、人から信じてもらえる人です。",
+		"exampleCn": "守约的人，是能得到别人信任的人。",
+		"exampleEn": "Someone who keeps promises is someone others can trust."
+	},
+	"好き嫌いをせずに": {
+		"cn": "不挑拣、不凭好恶",
+		"en": "without being picky",
+		"example": "好き嫌いをせずに、何でも食べます。",
+		"exampleCn": "不挑食，什么都吃。",
+		"exampleEn": "I eat everything without being picky."
+	},
+	"小さいことの積み重ね": {
+		"cn": "小事的积累",
+		"en": "the accumulation of small things",
+		"example": "上達は小さいことの積み重ねです。",
+		"exampleCn": "进步是小事一点一点积累起来的。",
+		"exampleEn": "Improvement is the accumulation of small things."
+	},
+	"仕組み": {
+		"cn": "结构、机制",
+		"en": "mechanism / how it works",
+		"example": "この機械の仕組みを教えてください。",
+		"exampleCn": "请告诉我这台机器的构造。",
+		"exampleEn": "Please explain how this machine works."
+	},
+	"看護師": {
+		"cn": "护士",
+		"en": "nurse",
+		"example": "姉は病院で看護師をしています。",
+		"exampleCn": "姐姐在医院当护士。",
+		"exampleEn": "My older sister works as a nurse at a hospital."
+	},
+	"ケアマネジャー": {
+		"cn": "护理管理员",
+		"en": "care manager",
+		"example": "ケアマネジャーに相談しました。",
+		"exampleCn": "和护理管理员商量了。",
+		"exampleEn": "I talked it over with the care manager."
+	},
+	"薬剤師": {
+		"cn": "药剂师",
+		"en": "pharmacist",
+		"example": "薬の飲み方は薬剤師に聞きました。",
+		"exampleCn": "药怎么吃，我问了药剂师。",
+		"exampleEn": "I asked the pharmacist how to take the medicine."
+	},
+	"興味": {
+		"cn": "兴趣",
+		"en": "interest",
+		"example": "日本の歴史に興味があります。",
+		"exampleCn": "我对日本历史有兴趣。",
+		"exampleEn": "I'm interested in Japanese history."
+	},
+	"精算機": {
+		"example": "駅の精算機で切符の料金を払います。",
+		"exampleCn": "在车站的精算机上付票款。",
+		"exampleEn": "I pay for the ticket at the station payment machine."
+	},
+	"見つけちゃった": {
+		"cn": "不小心发现了",
+		"en": "ended up finding it",
+		"example": "探していた本を見つけちゃった。",
+		"exampleCn": "把一直在找的书给找到了。",
+		"exampleEn": "I ended up finding the book I was looking for."
+	},
+	"繰り越す": {
+		"cn": "结转、转入下一期",
+		"en": "carry over",
+		"example": "残った休みを来月に繰り越します。",
+		"exampleCn": "把剩下的假期转到下个月。",
+		"exampleEn": "I carry the remaining days off over to next month."
+	},
+	"試す": {
+		"cn": "试、尝试",
+		"en": "to try",
+		"example": "新しい方法を一度試します。",
+		"exampleCn": "试一次新方法。",
+		"exampleEn": "I'll try the new method once."
+	},
+	"繋がる": {
+		"cn": "连接上",
+		"en": "to connect",
+		"example": "この道は駅に繋がります。",
+		"exampleCn": "这条路通到车站。",
+		"exampleEn": "This road connects to the station."
+	},
+	"見つからなかったら": {
+		"cn": "如果找不到的话",
+		"en": "if you can't find it",
+		"example": "鍵が見つからなかったら、教えてください。",
+		"exampleCn": "如果找不到钥匙，请告诉我。",
+		"exampleEn": "If you can't find the key, please tell me."
+	},
+	"利用者カード": {
+		"cn": "使用者卡",
+		"en": "user card",
+		"example": "図書館では利用者カードが必要です。",
+		"exampleCn": "在图书馆需要使用者卡。",
+		"exampleEn": "You need a user card at the library."
+	},
+	"牛乳を温める": {
+		"example": "夜、牛乳を温めて飲みます。",
+		"exampleCn": "晚上把牛奶热了喝。",
+		"exampleEn": "At night I warm up some milk and drink it."
+	},
+	"日本人が演じている": {
+		"example": "この映画は日本人が演じています。",
+		"exampleCn": "这部电影是日本人演的。",
+		"exampleEn": "Japanese actors are performing in this film."
+	},
+	"ゆで卵": {
+		"cn": "煮鸡蛋",
+		"en": "boiled egg",
+		"example": "朝ごはんにゆで卵を食べました。",
+		"exampleCn": "早饭吃了煮鸡蛋。",
+		"exampleEn": "I ate a boiled egg for breakfast."
+	},
+	"生卵": {
+		"cn": "生鸡蛋",
+		"en": "raw egg",
+		"example": "ご飯に生卵をかけます。",
+		"exampleCn": "在米饭上加生鸡蛋。",
+		"exampleEn": "I put a raw egg on the rice."
+	},
+	"長蛇の列（ちょうだのれつ）": {
+		"example": "店の前に長蛇の列ができています。",
+		"exampleCn": "店门口排起了长队。",
+		"exampleEn": "There's a long line in front of the shop."
+	},
+	"火鍋": {
+		"cn": "火锅",
+		"en": "hot pot",
+		"example": "友達と火鍋を食べに行きました。",
+		"exampleCn": "和朋友去吃了火锅。",
+		"exampleEn": "I went out for hot pot with a friend."
+	},
+	"拒んだ": {
+		"cn": "拒绝了",
+		"en": "refused",
+		"example": "その提案を拒んだ。",
+		"exampleCn": "拒绝了那个提议。",
+		"exampleEn": "I refused that suggestion."
+	},
+	"若い人向けのドラマ": {
+		"example": "これは若い人向けのドラマです。",
+		"exampleCn": "这是面向年轻人的电视剧。",
+		"exampleEn": "This is a drama aimed at young people."
+	},
+	"長生き": {
+		"cn": "长寿",
+		"en": "long life",
+		"example": "野菜を食べて長生きしたいです。",
+		"exampleCn": "我想多吃蔬菜，活得长久。",
+		"exampleEn": "I want to eat vegetables and live a long life."
+	},
+	"喫茶スワン": {
+		"cn": "咖啡店 Swan",
+		"en": "Cafe Swan",
+		"example": "喫茶スワンでコーヒーを飲みました。",
+		"exampleCn": "在 Swan 咖啡店喝了咖啡。",
+		"exampleEn": "I had coffee at Cafe Swan."
+	},
+	"喫茶大使館": {
+		"cn": "咖啡店「大使馆」",
+		"en": "Cafe Embassy",
+		"example": "喫茶大使館は駅の近くにあります。",
+		"exampleCn": "「大使馆」咖啡店在车站附近。",
+		"exampleEn": "Cafe Embassy is near the station."
+	},
+	"喫茶マヅラ": {
+		"cn": "咖啡店 Mazura",
+		"en": "Cafe Mazura",
+		"example": "喫茶マヅラのケーキが好きです。",
+		"exampleCn": "我喜欢 Mazura 咖啡店的蛋糕。",
+		"exampleEn": "I like the cake at Cafe Mazura."
+	},
+	"三年前ぐらい": {
+		"cn": "大约三年前",
+		"en": "about three years ago",
+		"example": "この店は三年前ぐらいにできました。",
+		"exampleCn": "这家店大约三年前开的。",
+		"exampleEn": "This shop opened about three years ago."
+	},
+	"柿の葉寿司": {
+		"cn": "柿叶寿司",
+		"en": "persimmon-leaf sushi",
+		"example": "奈良で柿の葉寿司を食べました。",
+		"exampleCn": "在奈良吃了柿叶寿司。",
+		"exampleEn": "I ate persimmon-leaf sushi in Nara."
+	},
+	"世界に二つだけ": {
+		"cn": "全世界只有两个",
+		"en": "only two in the world",
+		"example": "この建物は世界に二つだけです。",
+		"exampleCn": "这种建筑全世界只有两座。",
+		"exampleEn": "There are only two of these buildings in the world."
+	},
+	"万里の長城": {
+		"cn": "万里长城",
+		"en": "the Great Wall",
+		"example": "万里の長城の写真を見ました。",
+		"exampleCn": "看了万里长城的照片。",
+		"exampleEn": "I saw a photo of the Great Wall."
+	},
+	"体の調子がいい": {
+		"cn": "身体状态很好",
+		"en": "to feel well",
+		"example": "今日は体の調子がいいです。",
+		"exampleCn": "今天身体状态很好。",
+		"exampleEn": "I feel well today."
+	},
+	"世界遺産": {
+		"cn": "世界遗产",
+		"en": "World Heritage site",
+		"example": "京都には世界遺産がたくさんあります。",
+		"exampleCn": "京都有很多世界遗产。",
+		"exampleEn": "Kyoto has many World Heritage sites."
+	},
+	"撃つ": {
+		"cn": "射击、击打",
+		"en": "to shoot / strike",
+		"example": "的を撃つ練習をしました。",
+		"exampleCn": "练习打靶。",
+		"exampleEn": "I practiced shooting at a target."
+	},
+	"草むら": {
+		"cn": "草丛",
+		"en": "grass / undergrowth",
+		"example": "猫が草むらに隠れました。",
+		"exampleCn": "猫藏进了草丛。",
+		"exampleEn": "The cat hid in the grass."
+	},
+	"雨が止んだ": {
+		"cn": "雨停了",
+		"en": "the rain stopped",
+		"example": "雨が止んだので、外に出ました。",
+		"exampleCn": "雨停了，所以出门了。",
+		"exampleEn": "The rain stopped, so I went outside."
+	},
+	"知識": {
+		"cn": "知识",
+		"en": "knowledge",
+		"example": "本を読んで知識が増えました。",
+		"exampleCn": "读书增长了知识。",
+		"exampleEn": "Reading books increased my knowledge."
+	},
+	"1枚ずつ": {
+		"cn": "一张一张地",
+		"en": "one sheet at a time",
+		"example": "紙を1枚ずつ数えます。",
+		"exampleCn": "把纸一张一张地数。",
+		"exampleEn": "I count the sheets one by one."
+	},
+	"お惣菜": {
+		"cn": "家常熟食、便当菜",
+		"en": "prepared side dishes",
+		"example": "スーパーでお惣菜を買いました。",
+		"exampleCn": "在超市买了熟食。",
+		"exampleEn": "I bought prepared side dishes at the supermarket."
+	},
+	"三十度ごえ": {
+		"cn": "超过三十度",
+		"en": "over 30 degrees",
+		"example": "今日は三十度を超えています。",
+		"exampleCn": "今天超过三十度了。",
+		"exampleEn": "It's over 30 degrees today."
+	},
+	"加工食品（かこうしょくひん）": {
+		"cn": "加工食品",
+		"en": "processed food",
+		"example": "加工食品ばかり食べない方がいいです。",
+		"exampleCn": "最好不要只吃加工食品。",
+		"exampleEn": "It's better not to eat only processed food."
+	},
+	"実際": {
+		"cn": "实际上",
+		"en": "actually / in practice",
+		"example": "実際にやってみると難しかったです。",
+		"exampleCn": "实际做起来很难。",
+		"exampleEn": "It was hard when I actually tried it."
+	}
+}

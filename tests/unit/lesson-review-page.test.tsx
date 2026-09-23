@@ -14,10 +14,25 @@ const payload: LessonReviewPayload = {
 			id: "2026-09-11",
 			date: "2026-09-11",
 			title: "2026-09-11",
+			source: "Danielさん",
 			items: [
+				{
+					jp: "先進国（せんしんこく）",
+					jp_r: "<ruby>先進国<rt>せんしんこく</rt></ruby>",
+					reading: "せんしんこく",
+					en: "developed country",
+					kind: "word",
+				},
 				{ jp: "朝型", jp_r: "<ruby>朝型<rt>あさがた</rt></ruby>", en: "morning person", kind: "word" },
 				{ jp: "練習すれば練習するほど、日本語が上手になる", cn: "越练越好", kind: "sentence" },
 			],
+		},
+		{
+			id: "2026-09-11:preply",
+			date: "2026-09-11",
+			title: "2026-09-11",
+			source: "Preply すみれ先生",
+			items: [{ jp: "四日ぶり", reading: "よっかぶり", cn: "时隔四天", kind: "word" }],
 		},
 		{
 			id: "note-workplace",
@@ -46,15 +61,19 @@ describe("ReviewPage", () => {
 		const seen: string[] = [];
 		setNavImpl((key) => seen.push(key));
 		render(<ReviewPage dateId={null} />);
-		expect(await screen.findByText("9月11日")).toBeInTheDocument();
+		expect(await screen.findAllByText("9月11日")).toHaveLength(2);
+		expect(screen.getByText("Danielさん")).toBeInTheDocument();
+		expect(screen.getByText("Preply すみれ先生")).toBeInTheDocument();
 		expect(screen.getByText("職場で文")).toBeInTheDocument();
 		expect(document.querySelector(".review-day .t")?.textContent).toBe("9月11日");
 		expect([...document.querySelectorAll(".review-day .dp")].map((node) => node.textContent)).toEqual([
+			"先進国",
 			"朝型",
 			"練習すれば練習するほど、日本語が上手…",
+			"四日ぶり",
 			"お世話になっております",
 		]);
-		await user.click(screen.getByText("9月11日"));
+		await user.click(screen.getAllByText("9月11日")[0]);
 		expect(seen).toContain("#/review/2026-09-11");
 	});
 
@@ -62,8 +81,17 @@ describe("ReviewPage", () => {
 		const user = userEvent.setup();
 		setNavImpl(() => {});
 		render(<ReviewPage dateId="2026-09-11" />);
-		expect(await screen.findByText("朝型")).toBeInTheDocument();
+		expect(await screen.findByText("先進国")).toBeInTheDocument();
+		expect(screen.queryByText("せんしんこく")).not.toBeInTheDocument();
+		expect(screen.queryByText("先進国（せんしんこく）")).not.toBeInTheDocument();
 		expect(screen.getByText("回想中/英文，点击翻面")).toBeInTheDocument();
+		await user.click(screen.getByText("回想中/英文，点击翻面"));
+		expect(screen.getByText("developed country")).toBeInTheDocument();
+		expect(document.querySelector(".review-reading")?.textContent).toBe("せんしんこく");
+		expect(document.querySelector(".review-flip-ruby rt")?.textContent).toBe("せんしんこく");
+		await user.click(screen.getByRole("button", { name: /下一张|Next/ }));
+		expect(screen.getByText("朝型")).toBeInTheDocument();
+		expect(screen.queryByText("あさがた")).not.toBeInTheDocument();
 		await user.click(screen.getByText("回想中/英文，点击翻面"));
 		expect(screen.getByText("morning person")).toBeInTheDocument();
 		expect(document.querySelector(".review-reading")?.textContent).toBe("あさがた");
@@ -73,6 +101,7 @@ describe("ReviewPage", () => {
 		await user.click(screen.getByRole("button", { name: /^句子$|^Sentences$/ }));
 		expect(screen.getByText("練習すれば練習するほど、日本語が上手になる")).toBeInTheDocument();
 		expect(screen.queryByText("朝型")).not.toBeInTheDocument();
+		expect(screen.queryByText("先進国")).not.toBeInTheDocument();
 	});
 
 	it("marks a card as mastered and hides it from the to-review deck", async () => {
@@ -80,11 +109,11 @@ describe("ReviewPage", () => {
 		setNavImpl(() => {});
 		localStorage.clear();
 		render(<ReviewPage dateId="2026-09-11" />);
-		expect(await screen.findByText("朝型")).toBeInTheDocument();
+		expect(await screen.findByText("先進国")).toBeInTheDocument();
 		await user.click(screen.getByRole("button", { name: /已经记住|Got it/ }));
-		expect(screen.queryByText("朝型")).not.toBeInTheDocument();
-		expect(screen.getByText("練習すれば練習するほど、日本語が上手になる")).toBeInTheDocument();
-		await user.click(screen.getByRole("button", { name: /已掌握|Mastered/ }));
+		expect(screen.queryByText("先進国")).not.toBeInTheDocument();
 		expect(screen.getByText("朝型")).toBeInTheDocument();
+		await user.click(screen.getByRole("button", { name: /已掌握|Mastered/ }));
+		expect(screen.getByText("先進国")).toBeInTheDocument();
 	});
 });

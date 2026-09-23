@@ -6,6 +6,10 @@ export type ReviewItem = {
 	reading?: string;
 	cn?: string;
 	en?: string;
+	example?: string;
+	exampleCn?: string;
+	exampleEn?: string;
+	example_r?: string;
 	kind: ReviewKind;
 };
 
@@ -14,7 +18,14 @@ export type ReviewDay = {
 	date?: string;
 	title: string;
 	label?: string;
+	source?: string;
 	items: ReviewItem[];
+};
+
+export type LessonReviewDoc = {
+	id: string;
+	name: string;
+	slug: string;
 };
 
 export type LessonReviewPayload = {
@@ -23,9 +34,20 @@ export type LessonReviewPayload = {
 	days: ReviewDay[];
 };
 
-export const LESSON_REVIEW_KV_KEY = "lesson-review:v1";
+export const LESSON_REVIEW_KV_KEY = "lesson-review:v2";
 export const LESSON_REVIEW_DOC_ID = "12NwKtAV_HFUeOheYvXGMsJl5G2xIcdb4WG_axC23xrU";
-export const LESSON_REVIEW_SOURCE = `https://docs.google.com/document/d/${LESSON_REVIEW_DOC_ID}/edit`;
+export const LESSON_REVIEW_DOCS: LessonReviewDoc[] = [
+	{ id: LESSON_REVIEW_DOC_ID, name: "Danielさん", slug: "class" },
+	{ id: "1oEZYQYz3Kb3q5bRqNJgdD0TNxUHVEX2PGvLoCju_Cdc", name: "Preply すみれ先生", slug: "preply" },
+];
+export const LESSON_REVIEW_SOURCE = LESSON_REVIEW_DOCS.map(
+	(doc) => `https://docs.google.com/document/d/${doc.id}/edit`,
+).join("\n");
+
+export function reviewDateFromId(id: string): string | null {
+	const match = id.match(/^(\d{4}-\d{2}-\d{2})(?::|$)/);
+	return match ? match[1] : null;
+}
 
 export function parseReviewRoute(key: string): { id: string | null } | null {
 	if (key === "#/review") return { id: null };
@@ -107,6 +129,7 @@ function isReviewDay(value: unknown): value is ReviewDay {
 	if (typeof day.id !== "string" || typeof day.title !== "string" || !Array.isArray(day.items)) return false;
 	if (day.date != null && typeof day.date !== "string") return false;
 	if (day.label != null && typeof day.label !== "string") return false;
+	if (day.source != null && typeof day.source !== "string") return false;
 	return day.items.every(isReviewItem);
 }
 
@@ -119,6 +142,10 @@ function isReviewItem(value: unknown): value is ReviewItem {
 	if (item.jp_r != null && typeof item.jp_r !== "string") return false;
 	if (item.cn != null && typeof item.cn !== "string") return false;
 	if (item.en != null && typeof item.en !== "string") return false;
+	if (item.example != null && typeof item.example !== "string") return false;
+	if (item.exampleCn != null && typeof item.exampleCn !== "string") return false;
+	if (item.exampleEn != null && typeof item.exampleEn !== "string") return false;
+	if (item.example_r != null && typeof item.example_r !== "string") return false;
 	return true;
 }
 
@@ -299,6 +326,28 @@ export function shouldKeepReviewRuby(jp: string, html: string): boolean {
 	if (!html) return false;
 	if (KANA_LETTER.test(jp)) return true;
 	return !rubyHasUncoveredKanji(html);
+}
+
+const KANA_READING = /^[\u3040-\u30ffー\s]+$/;
+const ROMAJI_READING = /^[A-Za-züÜ]+$/;
+
+/** Hide document-annotated pronunciations so the card front is just the word. */
+export function reviewSurfaceText(jp: string): string {
+	if (!jp) return jp;
+	let text = jp;
+	text = text.replace(/[（(]([^）)]*)[）)]?/g, (full, inner: string, offset: number) => {
+		const reading = inner.trim();
+		if (!reading) return full;
+		const isKana = KANA_READING.test(reading) && /[\u3040-\u30ff]/.test(reading);
+		const prev = text.slice(0, offset).trimEnd().slice(-1);
+		const afterKanji = /[一-龯々〆ヵヶ]/.test(prev);
+		const isRomaji = afterKanji && ROMAJI_READING.test(reading) && reading.length <= 12;
+		if (!isKana && !isRomaji) return full;
+		if (offset === 0 && !text.slice(offset + full.length).trim()) return reading.replace(/\s+/g, "");
+		return "";
+	});
+	text = text.replace(/^(.*?[一-龯々〆ヵヶ][^\s]*)\s+([\u3040-\u30ffー]{2,24})$/u, "$1");
+	return text.replace(/[^\S\u3000]+/g, " ").replace(/[ \u3000]+([。、！？!?])/g, "$1").trim();
 }
 
 export function reviewKanaLine(item: ReviewItem): string | undefined {

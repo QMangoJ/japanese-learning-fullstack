@@ -1,4 +1,5 @@
 import type { KanjiExamBatch, KanjiExamQuestion } from "./kanji-exam";
+import { writingWordGloss } from "./kanji-exam-words";
 
 const batchEnglish: Record<string, { title: string; subtitle: string }> = {
 	"school-kanji-2026-08-21": { title: "School Kanji · Chapter 2", subtitle: "Checkout · Inside the store · 24 hours" },
@@ -63,11 +64,23 @@ export function englishLessonLabel(lessonId: string, fallback: string) {
 	return lessonEnglish[lessonId] || fallback;
 }
 
-export function englishSupportForQuestion(question: Pick<KanjiExamQuestion, "kind" | "target" | "answer">) {
+export function englishSupportForQuestion(
+	question: Pick<KanjiExamQuestion, "kind" | "target" | "answer">,
+	form?: string,
+) {
+	if (form && writingWordGloss[form]) {
+		return { label: "Word meaning", meaning: writingWordGloss[form].en };
+	}
+	if (form && wordMeaning[form]) {
+		return { label: "Word meaning", meaning: wordMeaning[form] };
+	}
 	if (question.kind === "reading") {
 		return { label: "Word meaning", meaning: wordMeaning[question.target] || "Meaning not yet reviewed" };
 	}
-	return { label: "Kanji meaning", meaning: kanjiMeaning[question.answer] || "Meaning not yet reviewed" };
+	if (writingWordGloss[question.answer]) {
+		return { label: "Word meaning", meaning: writingWordGloss[question.answer].en };
+	}
+	return { label: "Kanji meaning", meaning: kanjiMeaning[question.answer] || wordMeaning[question.answer] || "Meaning not yet reviewed" };
 }
 
 export function missingEnglishSupport(questions: KanjiExamQuestion[]) {
