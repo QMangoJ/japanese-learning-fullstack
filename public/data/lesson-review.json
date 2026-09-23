@@ -328,7 +328,7 @@
 				{
 					"jp": "だって寒いからでしょう、夏と違って",
 					"kind": "sentence",
-					"jp_r": "だって<ruby>寒い<rt>さむい</rt></ruby>からでしょう、夏と<ruby>違って<rt>ちがって</rt></ruby>",
+					"jp_r": "だって<ruby>寒い<rt>さむい</rt></ruby>からでしょう、<ruby>夏<rt>なつ</rt></ruby>と<ruby>違って<rt>ちがって</rt></ruby>",
 					"cn": "因为冷嘛，跟夏天不一样",
 					"en": "it's because it's cold, unlike summer"
 				},
@@ -357,7 +357,7 @@
 				{
 					"jp": "たくさん稼ぐことも可能です",
 					"kind": "sentence",
-					"jp_r": "たくさん稼ぐことも<ruby>可能<rt>かのう</rt></ruby>です",
+					"jp_r": "たくさん<ruby>稼ぐ<rt>かせぐ</rt></ruby>ことも<ruby>可能<rt>かのう</rt></ruby>です",
 					"cn": "多赚钱也是可能的",
 					"en": "it's also possible to earn a lot"
 				},
@@ -371,7 +371,7 @@
 				{
 					"jp": "お年寄りがいたら咳を譲りましょう",
 					"kind": "sentence",
-					"jp_r": "お<ruby>年寄り<rt>としより</rt></ruby>がいたら咳を譲りましょう",
+					"jp_r": "お<ruby>年寄り<rt>としより</rt></ruby>がいたら<ruby>咳<rt>せき</rt></ruby>を<ruby>譲りましょう<rt>ゆずりましょう</rt></ruby>",
 					"cn": "如果有老人，就把咳嗽让给对方吧（谐音「席を譲る」让座）",
 					"en": "if there are elderly people, let's give them our cough (a pun on giving up your seat)"
 				},
@@ -451,7 +451,7 @@
 				{
 					"jp": "たくさんの人をまとめる役",
 					"kind": "sentence",
-					"jp_r": "たくさんの<ruby>人<rt>ひと</rt></ruby>をまとめる役",
+					"jp_r": "たくさんの<ruby>人<rt>ひと</rt></ruby>をまとめる<ruby>役<rt>やく</rt></ruby>",
 					"cn": "把很多人组织起来的角色",
 					"en": "the role of coordinating many people"
 				}
@@ -731,7 +731,7 @@
 				{
 					"jp": "それでもやっぱりほしいと思ったらまた買いに来れば？",
 					"kind": "sentence",
-					"jp_r": "それでもやっぱりほしいと<ruby>思った<rt>おもった</rt></ruby>らまた<ruby>買い<rt>かい</rt></ruby>に来れば？",
+					"jp_r": "それでもやっぱりほしいと<ruby>思った<rt>おもった</rt></ruby>らまた<ruby>買い<rt>かい</rt></ruby>に<ruby>来れば<rt>くれば</rt></ruby>？",
 					"cn": "要是还是想要的话，再来买就好了呀",
 					"en": "if you still want it, you can just come buy it again"
 				},
@@ -744,6 +744,7 @@
 				{
 					"jp": "きっとすぐペラペラになるね！ めっちゃ応援してる！！👍",
 					"kind": "sentence",
+					"jp_r": "きっとすぐペラペラになるね！ めっちゃ<ruby>応援してる<rt>おうえんしてる</rt></ruby>！！👍",
 					"cn": "一定很快就能说得很流利！超给你加油！！",
 					"en": "you'll be fluent in no time! cheering you on!"
 				},
@@ -921,7 +922,7 @@
 				{
 					"jp": "ギターを演奏してる人",
 					"kind": "sentence",
-					"jp_r": "ギターを演奏してる<ruby>人<rt>ひと</rt></ruby>",
+					"jp_r": "ギターを<ruby>演奏してる<rt>えんそうしてる</rt></ruby><ruby>人<rt>ひと</rt></ruby>",
 					"cn": "在弹吉他的人",
 					"en": "a person playing guitar"
 				},
@@ -1633,7 +1634,7 @@
 				{
 					"jp": "昔に旦那が四人いました",
 					"kind": "sentence",
-					"jp_r": "昔に<ruby>旦那<rt>だんな</rt></ruby>が四<ruby>人<rt>ひと</rt></ruby>いました",
+					"jp_r": "<ruby>昔<rt>むかし</rt></ruby>に<ruby>旦那<rt>だんな</rt></ruby>が<ruby>四人<rt>よにん</rt></ruby>いました",
 					"cn": "以前有过四个丈夫",
 					"en": "she used to have four husbands"
 				},
@@ -1764,7 +1765,7 @@
 				{
 					"jp": "自分で淹れます",
 					"kind": "sentence",
-					"jp_r": "<ruby>自分<rt>じぶん</rt></ruby>で淹れます",
+					"jp_r": "<ruby>自分<rt>じぶん</rt></ruby>で<ruby>淹れます<rt>いれます</rt></ruby>",
 					"cn": "自己冲（咖啡、茶）",
 					"en": "I brew it myself"
 				},
@@ -2728,7 +2729,7 @@
 				{
 					"jp": "飛行機の価格はお得です",
 					"kind": "sentence",
-					"jp_r": "<ruby>飛行機<rt>ひこうき</rt></ruby>の<ruby>価格<rt>かかく</rt></ruby>はお得です",
+					"jp_r": "<ruby>飛行機<rt>ひこうき</rt></ruby>の<ruby>価格<rt>かかく</rt></ruby>は<ruby>お得<rt>おとく</rt></ruby>です",
 					"cn": "机票价格很划算",
 					"en": "the airfare is a good deal"
 				},
