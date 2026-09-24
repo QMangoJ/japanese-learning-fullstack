@@ -1952,7 +1952,9 @@
 	"原因": {
 		"example": "事故の原因を調べています。",
 		"exampleCn": "正在调查事故原因。",
-		"exampleEn": "They're looking into the cause of the accident."
+		"exampleEn": "They're looking into the cause of the accident.",
+		"cn": "原因",
+		"en": "cause"
 	},
 	"原料": {
 		"example": "このパンの原料は小麦です。",
@@ -3803,5 +3805,152 @@
 		"example": "給料から公积金が天引きされます。",
 		"exampleCn": "工资里会扣除公积金。",
 		"exampleEn": "Housing fund contributions are deducted from salary."
+	},
+	"せんたく": {
+		"cn": "洗涤；选择（需看语境）",
+		"en": "washing; selection (context)",
+		"example": "今日はせんたくをします。",
+		"exampleCn": "今天洗衣服。",
+		"exampleEn": "I'll do the laundry today."
+	},
+	"選択（せんたく）": {
+		"cn": "选择",
+		"en": "choice / selection",
+		"example": "メニューから好きな料理を選択します。",
+		"exampleCn": "从菜单里选择喜欢的菜。",
+		"exampleEn": "I choose my favorite dish from the menu."
+	},
+	"富士急ハイランド": {
+		"cn": "富士急乐园",
+		"en": "Fuji-Q Highland",
+		"example": "週末に富士急ハイランドへ行きます。",
+		"exampleCn": "周末去富士急乐园。",
+		"exampleEn": "I'm going to Fuji-Q Highland this weekend."
+	},
+	"ふじきゅうハイランド": {
+		"cn": "富士急乐园（读音）",
+		"en": "Fuji-Q Highland (reading)",
+		"example": "ふじきゅうハイランドの乗り物は速いです。",
+		"exampleCn": "富士急乐园的游乐设施很快。",
+		"exampleEn": "The rides at Fuji-Q Highland are fast."
+	},
+	"ワクワク": {
+		"cn": "兴奋、期待到心跳加速",
+		"en": "excited / thrilled",
+		"example": "旅行が近づいてワクワクします。",
+		"exampleCn": "旅行临近了，很兴奋。",
+		"exampleEn": "I get excited as the trip gets closer."
+	},
+	"速さ（はやさ）": {
+		"cn": "速度",
+		"en": "speed",
+		"example": "この電車の速さに驚きました。",
+		"exampleCn": "这趟电车的速度让我吃惊。",
+		"exampleEn": "I was surprised by how fast this train is."
+	},
+	"二日間（ふつかかん）": {
+		"cn": "两天时间",
+		"en": "for two days",
+		"example": "二日間、温泉に泊まります。",
+		"exampleCn": "住两天温泉。",
+		"exampleEn": "I'll stay at the hot spring for two days."
+	},
+	"宮城県": {
+		"cn": "宫城县",
+		"en": "Miyagi Prefecture",
+		"example": "宮城県の銀山温泉は有名です。",
+		"exampleCn": "宫城县的银山温泉很有名。",
+		"exampleEn": "Ginzan Onsen in Miyagi Prefecture is famous."
+	},
+	"銀山温泉": {
+		"cn": "银山温泉",
+		"en": "Ginzan Onsen",
+		"example": "銀山温泉の街並みがきれいです。",
+		"exampleCn": "银山温泉的街景很漂亮。",
+		"exampleEn": "The townscape of Ginzan Onsen is beautiful."
+	},
+	"柔らかい": {
+		"cn": "柔软的",
+		"en": "soft / tender",
+		"example": "このパンはとても柔らかいです。",
+		"exampleCn": "这个面包很软。",
+		"exampleEn": "This bread is very soft."
+	},
+	"本格的": {
+		"cn": "正式的、地道的",
+		"en": "authentic / full-scale",
+		"example": "本格的な日本料理を食べました。",
+		"exampleCn": "吃了地道的日本料理。",
+		"exampleEn": "I ate authentic Japanese cuisine."
+	},
+	"二匹（にひき）": {
+		"cn": "两只（动物）",
+		"en": "two (small animals)",
+		"example": "猫を二匹飼っています。",
+		"exampleCn": "养了两只猫。",
+		"exampleEn": "I keep two cats."
+	},
+	"餌（えさ）をあげる": {
+		"cn": "喂食",
+		"en": "feed (an animal)",
+		"example": "毎朝、犬に餌をあげます。",
+		"exampleCn": "每天早上给狗喂食。",
+		"exampleEn": "I feed the dog every morning."
+	},
+	"雪だるま": {
+		"cn": "雪人",
+		"en": "snowman",
+		"example": "公園で大きな雪だるまを見ました。",
+		"exampleCn": "在公园看到了大雪人。",
+		"exampleEn": "I saw a big snowman in the park."
+	},
+	"雪だるまを作る": {
+		"cn": "堆雪人",
+		"en": "make a snowman",
+		"example": "子どもと雪だるまを作りました。",
+		"exampleCn": "和孩子一起堆了雪人。",
+		"exampleEn": "I made a snowman with the kids."
+	},
+	"元旦": {
+		"cn": "元旦（一月一日）",
+		"en": "New Year's Day",
+		"example": "元旦に神社へ行きます。",
+		"exampleCn": "元旦去神社。",
+		"exampleEn": "I go to a shrine on New Year's Day."
+	},
+	"鎌倉": {
+		"cn": "镰仓",
+		"en": "Kamakura",
+		"example": "週末に鎌倉を散歩しました。",
+		"exampleCn": "周末在镰仓散步了。",
+		"exampleEn": "I took a walk around Kamakura on the weekend."
+	},
+	"雪合戦": {
+		"cn": "打雪仗",
+		"en": "snowball fight",
+		"example": "友達と雪合戦をしました。",
+		"exampleCn": "和朋友打了雪仗。",
+		"exampleEn": "I had a snowball fight with my friends."
+	},
+	"珍しい": {
+		"cn": "罕见的、稀奇的",
+		"en": "rare / unusual",
+		"example": "東京で雪が降るのは珍しいです。",
+		"exampleCn": "东京下雪很少见。",
+		"exampleEn": "It's unusual for it to snow in Tokyo."
+	},
+	"雪の穴を掘る": {
+		"cn": "挖雪洞",
+		"en": "dig a hole in the snow",
+		"example": "子どもたちが雪の穴を掘っています。",
+		"exampleCn": "孩子们在挖雪洞。",
+		"exampleEn": "The children are digging a hole in the snow."
+	},
+	"基本的": {
+		"cn": "基本的",
+		"en": "basic / fundamental",
+		"example": "基本的な挨拶を覚えましょう。",
+		"exampleCn": "来记住基本的问候吧。",
+		"exampleEn": "Let's learn the basic greetings."
 	}
 }

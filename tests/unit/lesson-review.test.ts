@@ -340,6 +340,20 @@ describe("lesson review helpers", () => {
 	});
 });
 
+
+describe("Japanese -teki adjectives stay as vocab", () => {
+	it("does not treat 本格的 / 基本的 as Chinese glosses", () => {
+		const days = parseLessonReview(
+			`2026.09.24\n柔らかい\n本格的\n\n2026.09.22\n実際\n基本的\n`,
+			{ sourceName: "t", sourceSlug: "t" },
+		);
+		const soft = days.find((d) => d.date === "2026-09-24")?.items.map((i) => i.jp);
+		const actual = days.find((d) => d.date === "2026-09-22")?.items.map((i) => i.jp);
+		expect(soft).toEqual(["柔らかい", "本格的"]);
+		expect(actual).toEqual(["実際", "基本的"]);
+	});
+});
+
 describe("weekly google doc sync", () => {
 	it("parses an export and stores it in KV", async () => {
 		const kv = memoryKv();
