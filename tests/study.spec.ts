@@ -1050,7 +1050,7 @@ test.describe("study interactions", () => {
 		const card = page.locator(".fc-wrap .fcard").first();
 		await expect(card).toBeVisible();
 		await expect(page.getByRole("button", { name: /未掌握|To review/ })).toBeVisible();
-		await expect(page.getByRole("button", { name: /注音|Readings/ })).toBeVisible();
+		await expect(page.locator(".fc-wrap").getByRole("button", { name: /注音|Readings/ })).toBeVisible();
 		await expect(page.getByRole("button", { name: /还没记住|Still learning/ })).toBeVisible();
 		await expect(page.getByRole("button", { name: /已经记住|Got it/ })).toBeVisible();
 		await expect(page.locator("[data-fc='prev']")).toBeVisible();
@@ -1060,6 +1060,28 @@ test.describe("study interactions", () => {
 		await card.click();
 		await expect(page.locator(".fcard .backside")).toBeVisible();
 		await expect(page.getByText("しょうひんけん")).toBeVisible();
+	});
+
+	test("mistake study mode shows the Chinese translation on the back", async ({ page }) => {
+		await page.route("**/api/mistake-translations", async (route) => {
+			const { texts } = route.request().postDataJSON() as { texts: string[] };
+			const translations = Object.fromEntries(texts.map((t) => [t, t.includes("気づく") ? "察觉、注意到" : "（其他）"]));
+			await route.fulfill({ json: { translations, pending: 0 } });
+		});
+		await waitForStudy(page);
+		await openStudyNav(page, "mistakes");
+		await page.locator("[data-mtype='word']").click();
+		await page.locator("#mistakeInput").fill("気づく");
+		await page.locator("[data-mistake-add]").click();
+		await page.locator("[data-mstudy='1']").click();
+
+		const card = page.locator(".fc-wrap .fcard").first();
+		await expect(card).toContainText("気づく");
+		await expect(page.locator("[data-fc-translation]")).toHaveCount(0);
+		await card.click();
+		const translation = page.locator("[data-fc-translation]");
+		await expect(translation).toContainText(/翻译|Translation/);
+		await expect(translation).toContainText("察觉、注意到");
 	});
 
 	test("searches grammar and opens a hit", async ({ page }) => {

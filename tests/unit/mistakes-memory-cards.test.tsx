@@ -1,17 +1,23 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { beforeEach, describe, expect, it } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import {
 	MistakesMemoryCards,
 	cardsFromMistakes,
 	mistakeStudyParts,
+	mistakeTranslationSource,
 } from "../../app/study/mistakes-memory-cards";
 import { resetStudyStateForTests, setMistakeStudy } from "../../app/study/store";
 
 beforeEach(() => {
 	localStorage.clear();
 	resetStudyStateForTests();
+	vi.stubGlobal("fetch", vi.fn(async () => new Response(JSON.stringify({ translations: {} }), { status: 200 })));
+});
+
+afterEach(() => {
+	vi.unstubAllGlobals();
 });
 
 describe("mistakeStudyParts", () => {
@@ -21,6 +27,10 @@ describe("mistakeStudyParts", () => {
 				text: "商品券の読み方\n你的答案：しょうひんけん\n正确答案：しょうひんけん",
 			}),
 		).toEqual({ jp: "商品券の読み方", cn: "しょうひんけん" });
+	});
+
+	it("parses English-UI answer labels too", () => {
+		expect(mistakeStudyParts({ text: "問題\nYour answer：a\nCorrect answer：b" })).toEqual({ jp: "問題", cn: "b" });
 	});
 
 	it("falls back to the whole note when there is no answer line", () => {
@@ -44,7 +54,41 @@ describe("cardsFromMistakes", () => {
 	});
 });
 
+describe("mistakeTranslationSource", () => {
+	it("fills in the correct answer and drops the wrong one", () => {
+		expect(
+			mistakeTranslationSource({ text: "読んではいる（　　）、本は頭に入らない。\n你的答案：ものだから\n正确答案：ものの" }),
+		).toBe("読んではいる（　　）、本は頭に入らない。\n正确答案：ものの");
+	});
+});
+
 describe("MistakesMemoryCards", () => {
+	it("shows the Chinese translation with the revealed answer", async () => {
+		const user = userEvent.setup();
+		const fetchMock = vi.fn(async () =>
+			new Response(JSON.stringify({ translations: { "気づく": "注意到；察觉" } }), { status: 200 }),
+		);
+		vi.stubGlobal("fetch", fetchMock);
+		render(<MistakesMemoryCards list={[{ id: "w1", type: "word", text: "気づく" }]} />);
+		await waitFor(() => expect(fetchMock).toHaveBeenCalledTimes(1));
+		expect(screen.queryByText("注意到；察觉")).not.toBeInTheDocument();
+		await user.click(screen.getByText("回想读音和意思，点击翻面"));
+		expect(await screen.findByText("注意到；察觉")).toBeInTheDocument();
+		expect(screen.getByText("翻译")).toBeInTheDocument();
+		expect(JSON.parse(localStorage.getItem("mistake-translations") || "{}")).toEqual({ "気づく": "注意到；察觉" });
+	});
+
+	it("uses cached translations without refetching", async () => {
+		localStorage.setItem("mistake-translations", JSON.stringify({ "気づく": "注意到" }));
+		const fetchMock = vi.fn();
+		vi.stubGlobal("fetch", fetchMock);
+		const user = userEvent.setup();
+		render(<MistakesMemoryCards list={[{ id: "w1", type: "word", text: "気づく" }]} />);
+		await user.click(screen.getByText("回想读音和意思，点击翻面"));
+		expect(screen.getByText("注意到")).toBeInTheDocument();
+		expect(fetchMock).not.toHaveBeenCalled();
+	});
+
 	it("uses the same flashcard chrome as classroom review", async () => {
 		const user = userEvent.setup();
 		setMistakeStudy(true);
