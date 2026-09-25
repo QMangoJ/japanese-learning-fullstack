@@ -75,7 +75,7 @@ export function useMistakeTranslations(list: { text?: string }[]) {
 			credentials: "same-origin",
 			body: JSON.stringify({ texts: missing }),
 		})
-			.then((res) => (res.ok ? res.json() : null))
+			.then((res) => (res.ok ? (res.json() as Promise<{ translations?: TranslationMap }>) : null))
 			.then((data: { translations?: TranslationMap } | null) => {
 				if (cancelled) return;
 				const next = { ...cache, ...(data?.translations || {}) };

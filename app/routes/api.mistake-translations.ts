@@ -51,7 +51,7 @@ export async function action({ request, context }: Args) {
 			const generated = await geminiTranslate(
 				todo.map((i) => texts[i]),
 				env.GEMINI_API_KEY,
-				{ model: env.GEMINI_MODEL || DEFAULT_GEMINI_MODEL },
+				{ model: DEFAULT_GEMINI_MODEL },
 			);
 			const writes: Promise<void>[] = [];
 			generated.forEach((value, j) => {
