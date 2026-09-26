@@ -13,6 +13,7 @@ import {
 	reviewDayCounts,
 	type LessonReviewPayload,
 	type ReviewDay,
+	LESSON_REVIEW_DOCS,
 } from "./lesson-review";
 import {
 	loadReviewMastery,
@@ -95,9 +96,19 @@ function ReviewCatalog({
 	fetchedAt: string;
 	mastery: ReviewMasteryMap;
 }) {
+	const tabNames = LESSON_REVIEW_DOCS.map((doc) => doc.name);
 	const today = jstToday();
-	const dated = days.filter((day) => day.date);
-	const notes = days.filter((day) => !day.date);
+	const defaultTab =
+		tabNames.find((name) => days.some((day) => day.source === name && day.date === today)) ||
+		tabNames.find((name) => days.some((day) => day.source === name)) ||
+		tabNames[0];
+	const [tab, setTab] = useState(defaultTab);
+	const activeTab = tabNames.includes(tab) ? tab : defaultTab;
+	const scoped = days.filter((day) =>
+		day.source ? day.source === activeTab : activeTab === tabNames[0],
+	);
+	const dated = scoped.filter((day) => day.date);
+	const notes = scoped.filter((day) => !day.date);
 	const todayDays = dated.filter((day) => day.date === today);
 	const todayIds = new Set(todayDays.map((day) => day.id));
 
@@ -112,6 +123,20 @@ function ReviewCatalog({
 					{fetchedAt.slice(0, 10) ? ` · ${fetchedAt.slice(0, 10)}` : ""}
 				</div>
 			) : null}
+			<div className="review-tabs" role="tablist" aria-label={lx("课堂文档", "Lesson documents")}>
+				{tabNames.map((name) => (
+					<button
+						key={name}
+						type="button"
+						role="tab"
+						aria-selected={name === activeTab}
+						className={`review-tab${name === activeTab ? " on" : ""}`}
+						onClick={() => setTab(name)}
+					>
+						{name}
+					</button>
+				))}
+			</div>
 			{todayDays.length ? (
 				<section className="review-sec">
 					<div className="side-h">{lx("今天", "Today")}</div>

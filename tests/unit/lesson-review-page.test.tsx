@@ -56,23 +56,27 @@ afterEach(() => {
 });
 
 describe("ReviewPage", () => {
-	it("lists dates and opens a flashcard deck", async () => {
+	it("lists dates by document tab and opens a flashcard deck", async () => {
 		const user = userEvent.setup();
 		const seen: string[] = [];
 		setNavImpl((key) => seen.push(key));
 		render(<ReviewPage dateId={null} />);
-		expect(await screen.findAllByText("9月11日")).toHaveLength(2);
-		expect(screen.getByText("Danielさん")).toBeInTheDocument();
-		expect(screen.getByText("Preply すみれ先生")).toBeInTheDocument();
+		expect(await screen.findByRole("tab", { name: "Danielさん" })).toHaveAttribute("aria-selected", "true");
+		expect(screen.getByRole("tab", { name: "Preply すみれ先生" })).toHaveAttribute("aria-selected", "false");
+		expect(screen.getAllByText("9月11日")).toHaveLength(1);
 		expect(screen.getByText("職場で文")).toBeInTheDocument();
-		expect(document.querySelector(".review-day .t")?.textContent).toBe("9月11日");
 		expect([...document.querySelectorAll(".review-day .dp")].map((node) => node.textContent)).toEqual([
 			"先進国",
 			"朝型",
 			"練習すれば練習するほど、日本語が上手…",
-			"四日ぶり",
 			"お世話になっております",
 		]);
+		await user.click(screen.getByRole("tab", { name: "Preply すみれ先生" }));
+		expect(screen.getByRole("tab", { name: "Preply すみれ先生" })).toHaveAttribute("aria-selected", "true");
+		expect(screen.getAllByText("9月11日")).toHaveLength(1);
+		expect(screen.queryByText("職場で文")).not.toBeInTheDocument();
+		expect([...document.querySelectorAll(".review-day .dp")].map((node) => node.textContent)).toEqual(["四日ぶり"]);
+		await user.click(screen.getByRole("tab", { name: "Danielさん" }));
 		await user.click(screen.getAllByText("9月11日")[0]);
 		expect(seen).toContain("#/review/2026-09-11");
 	});

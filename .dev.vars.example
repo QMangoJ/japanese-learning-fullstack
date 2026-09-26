@@ -11,3 +11,5 @@ GOOGLE_CLIENT_SECRET=
 # Long random string used to sign session cookies:
 #   openssl rand -hex 32
 SESSION_SECRET=
+# Gemini API key used to translate 错题本 notes into Chinese for recitation mode (optional).
+GEMINI_API_KEY=

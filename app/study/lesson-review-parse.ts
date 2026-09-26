@@ -303,6 +303,8 @@ function looksLikeReading(kana: string, jp: string): boolean {
 function isChineseFollowUp(text: string, last?: ReviewItem): boolean {
 	const stripped = text.replace(/[（(][^）)]*[）)]?/g, "");
 	if (/[\u3040-\u30ff]/.test(stripped) || !/[\u4e00-\u9fff]/.test(stripped)) return false;
+	// Japanese -teki adjectives (本格的 / 基本的) are vocab, not Chinese glosses.
+	if (/^[\u4e00-\u9fff]{1,4}的$/.test(stripped)) return false;
 	if (/[，。；／]/.test(text)) return true;
 	if (/^(自己|这个|那种|表示|用于)/.test(stripped)) return true;
 	const lastCore = last?.jp.replace(/[（(][^）)]*[）)]?/g, "").trim() || "";

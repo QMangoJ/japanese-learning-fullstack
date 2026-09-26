@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useReducer, useRef, useState, type ReactNode } from "react";
+import { Fragment, Suspense, lazy, useEffect, useReducer, useRef, useState, type ReactNode } from "react";
 
 import { JITA_TEARU_EXAMPLES } from "../data/common-jita-tearu";
 import { CardsScopeFilter } from "../study/memory-cards";
@@ -49,6 +49,10 @@ import {
 	toggleWeek,
 	type SearchCategory,
 } from "../study/store";
+
+const MistakesMemoryCards = lazy(() =>
+	import("../study/mistakes-memory-cards").then((module) => ({ default: module.MistakesMemoryCards })),
+);
 
 /* 学習シェル共通ページ：接续表 / 活用 / 变形 / 口语 / 自他动词 / 穿衣穿戴 / 数字 / 検索 / 記憶カード /
  * 週カタログ / 錯題本 / 收藏。ルーティングと日課本文は app/study が持つ。
@@ -1135,14 +1139,6 @@ type MistakesData = {
 	studyMode: boolean; hideJp: boolean; hideCn: boolean; draft: string;
 };
 
-/* 錯題本の答え合わせ用：「你的答案：」以降を切り、「正确答案：」を訳側に回す */
-function mistakeStudyParts(m: any): { jp: string; cn: string } {
-	const text = String(m.text || "");
-	const correct = text.match(/(?:^|\n)正确答案：\s*([^\n]+)/);
-	const question = text.replace(/(?:\n|^)你的答案：[\s\S]*$/, "").trim();
-	return { jp: question || text, cn: correct ? correct[1] : "" };
-}
-
 /* 改行入りのメモは <br> で折り返していた */
 function Lines({ text }: { text: string }) {
 	const parts = String(text).split("\n");
@@ -1173,18 +1169,10 @@ export function MistakesPage({ data }: { data: MistakesData }) {
 	const input = useRef<HTMLTextAreaElement>(null);
 
 	if (data.studyMode) {
-		const rows = data.list.map((m) => ({ ts: m.ts, ...mistakeStudyParts(m) }));
 		return (
-			<>
-				<StudyToolbar
-					count={rows.length}
-					hideJp={data.hideJp}
-					hideCn={data.hideCn}
-					onBack={() => setMistakeStudy(false)}
-					onHide={(kind) => toggleStudyHide(kind)}
-				/>
-				<StudyRows rows={rows} kind="mistake" hideJp={data.hideJp} hideCn={data.hideCn} />
-			</>
+			<Suspense fallback={<div className="empty">{lx("加载中…", "Loading…")}</div>}>
+				<MistakesMemoryCards list={data.list} />
+			</Suspense>
 		);
 	}
 

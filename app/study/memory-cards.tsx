@@ -21,6 +21,8 @@ export type MemoryCardItem = {
 	exampleReading?: string;
 	exampleCn?: string;
 	exampleEn?: string;
+	/** Chinese translation of the whole item (shown on the back). */
+	translation?: string;
 	kind?: MemoryCardKind | string;
 	week?: number;
 	day?: number;
@@ -36,6 +38,8 @@ const KIND_LABELS: Record<string, [string, string]> = {
 	expression: ["表达", "Phrase"],
 	phrase: ["短语", "Phrase"],
 	sentence: ["句子", "Sentence"],
+	grammar: ["语法", "Grammar"],
+	q: ["错题", "Mistake"],
 };
 
 export function memoryKindLabel(kind?: string): string {
@@ -124,6 +128,7 @@ export function MemoryCards({
 	emptyUnknown,
 	emptyAll,
 	defaultSkill = "unknown",
+	translationPending = false,
 }: {
 	deckId: string;
 	items: MemoryCardItem[];
@@ -135,6 +140,7 @@ export function MemoryCards({
 	emptyUnknown?: string;
 	emptyAll?: string;
 	defaultSkill?: SkillFilter;
+	translationPending?: boolean;
 }) {
 	useSyncExternalStore(subscribeDisplay, getDisplayVersion, () => 0);
 	const [mastery, setMastery] = useState<MasteryMap>(() => loadMastery(storageKey));
@@ -233,6 +239,17 @@ export function MemoryCards({
 					{cur.en ? (
 						<div className="meta" style={{ fontSize: "14px" }}>
 							{cur.en}
+						</div>
+					) : null}
+					{cur.translation ? (
+						<div className="ex fcard-ex fcard-trans" data-fc-translation="1">
+							<div className="fcard-ex-label">{lx("翻译", "Translation")}</div>
+							<div className="cn">{cur.translation}</div>
+						</div>
+					) : translationPending ? (
+						<div className="ex fcard-ex fcard-trans">
+							<div className="fcard-ex-label">{lx("翻译", "Translation")}</div>
+							<div className="cn meta">{lx("翻译加载中…", "Loading translation…")}</div>
 						</div>
 					) : null}
 					{cur.exampleJp ? (

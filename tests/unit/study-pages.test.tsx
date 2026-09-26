@@ -160,16 +160,13 @@ describe("MistakesPage", () => {
 		await user.click(screen.getByRole("button", { name: /全部（1）/ }));
 
 		await user.click(screen.getByRole("button", { name: /背诵模式/ }));
-		expect(screen.getByText("‹ 返回列表")).toBeInTheDocument();
-		const columns = document.querySelector(".study-columns") as HTMLElement;
-		await user.click(screen.getByRole("button", { name: "翻译 / 答案" }));
-		expect(columns.classList.contains("study-hide-cn")).toBe(true);
-		expect(document.querySelector(".study-cn")).not.toBeNull();
-		expect(document.querySelector(".study-jp")).not.toBeNull();
-		await user.click(screen.getByRole("button", { name: "日语" }));
-		expect(columns.classList.contains("study-hide-jp")).toBe(true);
-		expect(document.querySelector(".study-jp")).not.toBeNull();
-		await user.click(screen.getByRole("button", { name: "‹ 返回列表" }));
+		expect(await screen.findByText("错题本")).toBeInTheDocument();
+		expect(document.querySelector(".fc-wrap")).not.toBeNull();
+		expect(document.querySelector(".fcard")).not.toBeNull();
+		expect(screen.getByRole("button", { name: /还没记住|Still learning/ })).toBeInTheDocument();
+		expect(screen.getByRole("button", { name: /已经记住|Got it/ })).toBeInTheDocument();
+		expect(screen.getByRole("button", { name: /注音|Readings/ })).toBeInTheDocument();
+		await user.click(screen.getByRole("button", { name: "错题本" }));
 
 		await user.click(screen.getByRole("button", { name: "删除" }));
 		expect(screen.getByText(/还没有记录/)).toBeInTheDocument();

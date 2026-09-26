@@ -286,6 +286,25 @@ describe("lesson review helpers", () => {
 		expect(machine.jp_r).toBe("<ruby>精算機<rt>せいさんき</rt></ruby>");
 		expect(machine.example).toContain("精算機");
 		expect(machine.exampleCn).toBeTruthy();
+		const limit = enrichReviewDays([{ id: "x", title: "x", items: [{ jp: "制限", kind: "word" }] }])[0].items[0];
+		expect(limit.jp_r).toBe("<ruby>制限<rt>せいげん</rt></ruby>");
+		expect(limit.example).toContain("制限");
+		expect(limit.exampleCn).toBeTruthy();
+		expect(limit.exampleEn).toBeTruthy();
+		const returnCard = enrichReviewDays([{ id: "x", title: "x", items: [{ jp: "返却", kind: "word" }] }])[0].items[0];
+		expect(returnCard.example).toContain("返却");
+		expect(returnCard.exampleCn).toBeTruthy();
+		expect(returnCard.exampleEn).toBeTruthy();
+		const balance = enrichReviewDays([{ id: "x", title: "x", items: [{ jp: "残高照会", kind: "word" }] }])[0].items[0];
+		expect(balance.example).toContain("残高照会");
+		expect(balance.exampleCn).toBeTruthy();
+		expect(balance.exampleEn).toBeTruthy();
+		const visit = enrichReviewDays([{ id: "x", title: "x", items: [{ jp: "見舞い", kind: "word" }] }])[0].items[0];
+		expect(visit.example).toContain("見舞い");
+		expect(visit.exampleCn).toBeTruthy();
+		const commute = enrichReviewDays([{ id: "x", title: "x", items: [{ jp: "通勤", kind: "word" }] }])[0].items[0];
+		expect(commute.example).toContain("通勤");
+		expect(commute.exampleEn).toBeTruthy();
 		expect(
 			enrichReviewDays([{ id: "x", title: "x", items: [{ jp: "冬にインフルエンザのウイルスと戦うには", kind: "sentence" }] }])[0].items[0].cn,
 		).toBe("要在冬天对抗流感病毒的话");
@@ -318,6 +337,20 @@ describe("lesson review helpers", () => {
 		expect(advanced?.jp_r).toContain("<ruby>先進国");
 		expect(isLessonReviewPayload({ fetchedAt: "x", days: [{ id: "1", title: "1", items: [{ jp: "", kind: "word" }] }] })).toBe(false);
 		expect(isLessonReviewPayload(null)).toBe(false);
+	});
+});
+
+
+describe("Japanese -teki adjectives stay as vocab", () => {
+	it("does not treat 本格的 / 基本的 as Chinese glosses", () => {
+		const days = parseLessonReview(
+			`2026.09.24\n柔らかい\n本格的\n\n2026.09.22\n実際\n基本的\n`,
+			{ sourceName: "t", sourceSlug: "t" },
+		);
+		const soft = days.find((d) => d.date === "2026-09-24")?.items.map((i) => i.jp);
+		const actual = days.find((d) => d.date === "2026-09-22")?.items.map((i) => i.jp);
+		expect(soft).toEqual(["柔らかい", "本格的"]);
+		expect(actual).toEqual(["実際", "基本的"]);
 	});
 });
 
