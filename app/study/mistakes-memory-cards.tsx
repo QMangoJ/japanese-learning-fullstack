@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 
 import { MemoryCards, type MemoryCardItem } from "./memory-cards";
+import { annotateText, kanaFromRuby } from "./memory-deck";
 import {
 	MAX_TRANSLATION_TEXTS,
 	MISTAKE_TRANSLATION_ENDPOINT,
@@ -16,6 +17,26 @@ export const MISTAKE_TRANSLATION_CACHE_KEY = "mistake-translations";
 
 export { mistakeStudyParts, mistakeTranslationSource };
 
+function kanaAnswer(cn: string): string | undefined {
+	const kana = cn.replace(/[\s・]+/g, "");
+	return kana && /^[\u3040-\u30ffー]+$/.test(kana) ? kana : undefined;
+}
+
+/** A short headword whose correct answer is its reading, not a sentence. */
+function answerIsReading(jp: string, reading: string): boolean {
+	if (!/[一-龯]/.test(jp) || jp.length > 18 || jp.length < 1) return false;
+	if (/[のをにはがとでもへ。！？：:＝=\n（(]/.test(jp)) return false;
+	return reading.length >= jp.replace(/[ぁ-んァ-ンー]/g, "").length;
+}
+
+function annotated(jp: string, reading?: string): { html?: string; reading?: string } {
+	const html = reading ? annotateText(jp, { reading, readings: {} }) : annotateText(jp);
+	if (!html) return {};
+	const kana = kanaFromRuby(html, reading, jp);
+	if (!kana || kana === reading) return { html };
+	return { html, reading: kana };
+}
+
 export function cardsFromMistakes(
 	list: { id: string; type?: string; text?: string }[],
 	translations: TranslationMap = {},
@@ -23,10 +44,18 @@ export function cardsFromMistakes(
 	return list.map((m) => {
 		const { jp, cn } = mistakeStudyParts(m);
 		const translation = translations[mistakeTranslationSource(m)];
+		const spoken = kanaAnswer(cn);
+		const asReading = spoken && answerIsReading(jp, spoken) ? spoken : undefined;
+		const ruby = annotated(jp, asReading);
+		const cnHtml = cn && /[ぁ-んァ-ン]/.test(cn) && /[一-龯]/.test(cn) ? annotateText(cn) : undefined;
+		const reading = ruby.reading && ruby.reading !== spoken ? ruby.reading : undefined;
 		return {
 			id: m.id,
 			jp,
+			...(ruby.html ? { jpHtml: ruby.html } : {}),
+			...(reading ? { reading } : {}),
 			cn: cn || undefined,
+			...(cnHtml ? { cnHtml } : {}),
 			...(translation ? { translation } : {}),
 			kind: m.type || "q",
 		};

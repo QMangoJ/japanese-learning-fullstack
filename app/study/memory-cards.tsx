@@ -23,6 +23,7 @@ export type MemoryCardItem = {
 	exampleEn?: string;
 	/** Chinese translation of the whole item (shown on the back). */
 	translation?: string;
+	cnHtml?: string;
 	kind?: MemoryCardKind | string;
 	week?: number;
 	day?: number;
@@ -235,7 +236,11 @@ export function MemoryCards({
 						{cur.jpHtml ? <RubyHtml html={cur.jpHtml} /> : cur.jp} <SayButton text={cur.jp} />
 					</div>
 					{cur.reading ? <div className="review-reading jp">{cur.reading}</div> : null}
-					{cur.cn ? <div style={{ fontSize: "18px", marginTop: "10px" }}>{cur.cn}</div> : null}
+					{cur.cn ? (
+						<div className="jp review-flip-ruby" style={{ fontSize: "18px", marginTop: "10px" }}>
+							{cur.cnHtml ? <RubyHtml html={cur.cnHtml} /> : cur.cn}
+						</div>
+					) : null}
 					{cur.en ? (
 						<div className="meta" style={{ fontSize: "14px" }}>
 							{cur.en}

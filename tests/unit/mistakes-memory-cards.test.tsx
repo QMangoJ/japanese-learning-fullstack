@@ -39,18 +39,21 @@ describe("mistakeStudyParts", () => {
 });
 
 describe("cardsFromMistakes", () => {
-	it("maps notebook types onto memory-card kinds", () => {
-		expect(
-			cardsFromMistakes([
-				{ id: "1", type: "word", text: "冷蔵庫" },
-				{ id: "2", type: "grammar", text: "ばかり" },
-				{ id: "3", type: "q", text: "問題\n正确答案：答え" },
-			]),
-		).toEqual([
-			{ id: "1", jp: "冷蔵庫", cn: undefined, kind: "word" },
-			{ id: "2", jp: "ばかり", cn: undefined, kind: "grammar" },
-			{ id: "3", jp: "問題", cn: "答え", kind: "q" },
+	it("maps notebook types onto memory-card kinds and adds furigana for kanji", () => {
+		const cards = cardsFromMistakes([
+			{ id: "1", type: "word", text: "冷蔵庫" },
+			{ id: "2", type: "grammar", text: "ばかり" },
+			{ id: "3", type: "q", text: "問題\n正确答案：答え" },
+			{ id: "4", type: "word", text: "商品券\n正确答案：しょうひんけん" },
 		]);
+		expect(cards[0]).toMatchObject({ id: "1", jp: "冷蔵庫", kind: "word" });
+		expect(cards[0].jpHtml).toContain("<ruby>冷蔵庫<rt>れいぞうこ</rt></ruby>");
+		expect(cards[1]).toMatchObject({ id: "2", jp: "ばかり", cn: undefined, kind: "grammar" });
+		expect(cards[1].jpHtml).toBeUndefined();
+		expect(cards[2]).toMatchObject({ id: "3", jp: "問題", cn: "答え", kind: "q" });
+		expect(cards[2].jpHtml).toContain("<rt>もんだい</rt>");
+		expect(cards[3].jpHtml).toBe("<ruby>商品券<rt>しょうひんけん</rt></ruby>");
+		expect(cards[3].reading).toBeUndefined();
 	});
 });
 
@@ -103,6 +106,7 @@ describe("MistakesMemoryCards", () => {
 		expect(screen.getByRole("button", { name: /注音|Readings/ })).toBeInTheDocument();
 		await user.click(screen.getByText("回想读音和意思，点击翻面"));
 		expect(screen.getByText("しょうひんけん")).toBeInTheDocument();
+		expect(document.querySelector(".review-flip-ruby rt")?.textContent).toBeTruthy();
 		expect(screen.getByRole("button", { name: /还没记住|Still learning/ })).toBeInTheDocument();
 		expect(screen.getByRole("button", { name: /已经记住|Got it/ })).toBeInTheDocument();
 	});
