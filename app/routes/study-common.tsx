@@ -1,12 +1,13 @@
 import { Fragment, useEffect, useReducer, useRef, useState, type ReactNode } from "react";
 
 import { JITA_TEARU_EXAMPLES } from "../data/common-jita-tearu";
+import { CardsScopeFilter } from "../study/memory-cards";
 import {
 	afterPaint,
 	addMistakeNote,
 	cardsKind,
 	cardsState,
-	cardsWeeks,
+	cur as currentBundle,
 	clearFavs,
 	clearSearchHistory,
 	closeFavStudyCards,
@@ -31,6 +32,7 @@ import {
 	say,
 	searchEntryCount,
 	searchHits,
+	setCardsDay,
 	setCardsWeek,
 	setFavFilter,
 	setFavSelectionFilter,
@@ -1607,7 +1609,9 @@ export function CardsPage() {
 		card = (
 			<div className="fcard">
 				<div className="empty">
-					{lx("这个模块还没有可刷的卡片", "No flashcards in this module yet")}
+					{fc.day
+						? lx("这一天还没有可刷的卡片", "No flashcards for this day yet")
+						: lx("这个模块还没有可刷的卡片", "No flashcards in this module yet")}
 				</div>
 			</div>
 		);
@@ -1742,17 +1746,20 @@ export function CardsPage() {
 
 	return (
 		<div className="fc-wrap">
-			<div className="fc-filter">
-				{[0, ...Array.from({ length: cardsWeeks() }, (_, i) => i + 1)].map((n) => (
-					<button key={n} className={fc.week === n ? "on" : ""} data-fcweek={n} onClick={act(() => setCardsWeek(n))}>
-						{n === 0
-							? lx("全部", "All")
-							: chapterScale
-								? lx(`第${n}章`, `Ch. ${n}`)
-								: lx(`第${n}週`, `Week ${n}`)}
-					</button>
-				))}
-			</div>
+			<CardsScopeFilter
+				weeks={currentBundle().weeks || []}
+				week={fc.week}
+				day={fc.day}
+				chapter={chapterScale}
+				onWeek={(n) => {
+					setCardsWeek(n);
+					bump();
+				}}
+				onDay={(n) => {
+					setCardsDay(n);
+					bump();
+				}}
+			/>
 			<div className="fc-prog">{fc.deck.length ? `${Math.min(fc.idx + 1, fc.deck.length)} / ${fc.deck.length}` : ""}</div>
 			{/* legacy は innerHTML を書き直すので、カードが変わるたび DOM は必ず作り直しだった。
 			    React に任せると表裏で節点を使い回し、裏面の style を落とした残骸（style=""）が

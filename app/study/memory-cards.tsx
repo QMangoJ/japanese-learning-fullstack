@@ -52,6 +52,67 @@ export function CardsLaunch({ label }: { label?: string }) {
 	);
 }
 
+export type CardScopeWeek = { n: number; days?: { day: number }[] };
+
+export function CardsScopeFilter({
+	weeks,
+	week,
+	day,
+	chapter,
+	onWeek,
+	onDay,
+}: {
+	weeks: CardScopeWeek[];
+	week: number;
+	day: number;
+	chapter: boolean;
+	onWeek: (week: number) => void;
+	onDay: (day: number) => void;
+}) {
+	const dayWeekN = week || (weeks.length === 1 ? weeks[0]?.n : 0);
+	const days = weeks.find((item) => item.n === dayWeekN)?.days || [];
+	return (
+		<>
+			{weeks.length > 1 ? (
+				<div className="fc-filter">
+					<button type="button" className={week === 0 ? "on" : ""} data-fcweek={0} onClick={() => onWeek(0)}>
+						{lx("全部", "All")}
+					</button>
+					{weeks.map((item) => (
+						<button
+							key={item.n}
+							type="button"
+							className={week === item.n ? "on" : ""}
+							data-fcweek={item.n}
+							onClick={() => onWeek(item.n)}
+						>
+							{chapter ? lx(`第${item.n}章`, `Ch. ${item.n}`) : lx(`第${item.n}週`, `Week ${item.n}`)}
+						</button>
+					))}
+				</div>
+			) : null}
+			{days.length > 1 ? (
+				<div className="fc-filter" data-fc-days="1">
+					<button type="button" className={day === 0 ? "on" : ""} data-fcday={0} onClick={() => onDay(0)}>
+						{chapter ? lx("本章全部", "Whole chapter") : lx("本周全部", "Whole week")}
+					</button>
+					{days.map((item) => (
+						<button
+							key={item.day}
+							type="button"
+							className={day === item.day ? "on" : ""}
+							data-fcday={item.day}
+							onClick={() => onDay(item.day)}
+						>
+							{chapter ? lx(`第${item.day}节`, `Sec. ${item.day}`) : lx(`${item.day}日目`, `Day ${item.day}`)}
+						</button>
+					))}
+				</div>
+			) : null}
+		</>
+	);
+}
+
 export function MemoryCards({
 	deckId,
 	items,

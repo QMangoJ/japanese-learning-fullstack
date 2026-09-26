@@ -14,6 +14,7 @@ import {
 	parseListeningHead,
 	splitListeningGloss,
 } from "../../app/study/memory-deck";
+import { chapter1Lessons } from "../../app/data/listening-n3-lessons-ch1";
 import { K2, V2, resetStudyStateForTests, setModule, setNavImpl } from "../../app/study/store";
 
 const sample: MemoryCardItem[] = [
@@ -109,6 +110,58 @@ describe("memory deck builders", () => {
 		expect(items[1].reading).toBe("けんこうしんだん");
 		expect(items[1].exampleJp).toBe("健康診断は午前中に行います。");
 		expect(items[1].exampleCn).toBe("体检在上午进行。");
+	});
+
+	it("builds listening cards from study tables, boxes, and set phrases", () => {
+		const items = cardsFromListeningLesson(
+			{
+				blocks: [
+					{
+						type: "table",
+						title: "命令形　／　依頼形",
+						rows: [
+							["しゅちょう（主張）", "しゅっちょう（出張）"],
+							["〜ちゃった・〜じゃった", "（=〜てしまった・〜でしまった）　食べちゃった"],
+							["待て", "待って"],
+						],
+					},
+					{
+						type: "box",
+						items: [{ title: "うかがう（伺う）", lines: ["尋ねる to ask　ちょっと伺いますが、駅はどちらでしょうか。"] }],
+					},
+					{
+						type: "example",
+						lines: ["A「どうぞお上がりください。」", "B「おじゃまします。」"],
+					},
+				],
+			},
+			1,
+			1,
+			"listening",
+		);
+		expect(items.find((item) => item.jp === "主張 ↔ 出張")).toMatchObject({
+			reading: "しゅちょう / しゅっちょう",
+			cn: "命令形　／　依頼形",
+			day: 1,
+		});
+		expect(items.find((item) => item.jp.includes("ちゃった"))).toMatchObject({
+			exampleJp: "食べちゃった",
+		});
+		expect(items.find((item) => item.jp === "待て")?.cn).toContain("待って");
+		expect(items.find((item) => item.jp === "伺う")).toMatchObject({
+			reading: "うかがう",
+			cn: expect.stringContaining("to ask"),
+			exampleJp: expect.stringContaining("伺います"),
+		});
+		expect(items.find((item) => item.jp === "どうぞお上がりください。")?.cn).toBe("会话表达");
+	});
+
+	it("fills the study days of N3 listening chapter 1", () => {
+		const days = chapter1Lessons.map((lesson, index) => cardsFromListeningLesson(lesson, 1, index + 1, "listening"));
+		expect(days.slice(0, 4).every((items) => items.length >= 4)).toBe(true);
+		expect(days[0].some((item) => item.exampleJp === "食べちゃった")).toBe(true);
+		expect(days[2].some((item) => item.jp.includes("伺"))).toBe(true);
+		expect(days[3].some((item) => item.jp.includes("じゃない"))).toBe(true);
 	});
 
 	it("keeps furigana when filling a quiz example", () => {
@@ -291,5 +344,31 @@ describe("ModuleCardsPage", () => {
 		expect(screen.getByText("setting")).toBeInTheDocument();
 		expect(document.querySelector(".fcard-ex ruby rt")?.textContent).toBeTruthy();
 		expect(document.querySelector(".fcard-ex .jp")?.textContent).toContain("設定");
+	});
+
+	it("filters a week down to one day", async () => {
+		const user = userEvent.setup();
+		setModule("n2vocab");
+		V2.weeks = [
+			{
+				n: 1,
+				days: [
+					{ day: 1, sections: [{ items: [{ jp: "家賃", cn: "房租", en: "rent" }] }] },
+					{ day: 2, sections: [{ items: [{ jp: "給料", cn: "工资", en: "salary" }] }] },
+				],
+			},
+			{
+				n: 2,
+				days: [{ day: 1, sections: [{ items: [{ jp: "残業", cn: "加班", en: "overtime" }] }] }],
+			},
+		];
+		render(<ModuleCardsPage />);
+		await user.click(screen.getByRole("button", { name: "第1週" }));
+		expect(screen.getByRole("button", { name: "1日目" })).toBeInTheDocument();
+		expect(screen.getByRole("button", { name: "2日目" })).toBeInTheDocument();
+		await user.click(screen.getByRole("button", { name: "2日目" }));
+		expect(screen.getByText("給料")).toBeInTheDocument();
+		expect(screen.queryByText("家賃")).not.toBeInTheDocument();
+		expect(screen.queryByText("残業")).not.toBeInTheDocument();
 	});
 });

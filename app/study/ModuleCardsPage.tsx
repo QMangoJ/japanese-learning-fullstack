@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState, useSyncExternalStore } from "react";
 
-import { MemoryCards, type MemoryCardItem } from "./memory-cards";
+import { CardsScopeFilter, MemoryCards, type MemoryCardItem } from "./memory-cards";
 import {
 	cardsFromKanjiWeeks,
 	cardsFromReadingWeeks,
@@ -28,6 +28,7 @@ export function ModuleCardsPage() {
 	useSyncExternalStore(subscribe, getVersion, () => 0);
 	useSyncExternalStore(subscribeN2KanjiLater, n2KanjiLaterLoaded, () => false);
 	const [week, setWeek] = useState(0);
+	const [day, setDay] = useState(0);
 	const [listeningItems, setListeningItems] = useState<MemoryCardItem[] | null>(null);
 	const [listeningError, setListeningError] = useState("");
 
@@ -70,11 +71,11 @@ export function ModuleCardsPage() {
 		return [];
 	}, [listeningItems, laterReady, MODULE]);
 
-	const weeksCount = cur().weeks?.length || 0;
+	const weeks = cur().weeks || [];
 	const chapterScale = homeScale() === "chapter";
 	const items = useMemo(
-		() => (week ? allItems.filter((item) => item.week === week) : allItems),
-		[allItems, week],
+		() => allItems.filter((item) => (!week || item.week === week) && (!day || item.day === day)),
+		[allItems, week, day],
 	);
 
 	if (isReading() && !readingSearchLoaded && !readingSearchError) {
@@ -90,26 +91,28 @@ export function ModuleCardsPage() {
 
 	return (
 		<MemoryCards
-			key={`${MODULE}-${week}`}
+			key={`${MODULE}-${week}-${day}`}
 			deckId={MODULE}
 			items={items}
 			header={
-				weeksCount > 1 ? (
-					<div className="fc-filter">
-						{[0, ...Array.from({ length: weeksCount }, (_, i) => i + 1)].map((n) => (
-							<button key={n} type="button" className={week === n ? "on" : ""} onClick={() => setWeek(n)}>
-								{n === 0
-									? lx("全部", "All")
-									: chapterScale
-										? lx(`第${n}章`, `Ch. ${n}`)
-										: lx(`第${n}週`, `Week ${n}`)}
-							</button>
-						))}
-					</div>
-				) : null
+				<CardsScopeFilter
+					weeks={weeks}
+					week={week}
+					day={day}
+					chapter={chapterScale}
+					onWeek={(next) => {
+						setWeek(next);
+						setDay(0);
+					}}
+					onDay={setDay}
+				/>
 			}
 			emptyUnknown={lx("这些卡片都记住了 🎉", "You've mastered these cards 🎉")}
-			emptyAll={lx("这个模块还没有可刷的卡片", "No flashcards in this module yet")}
+			emptyAll={
+				day
+					? lx("这一天还没有可刷的卡片", "No flashcards for this day yet")
+					: lx("这个模块还没有可刷的卡片", "No flashcards in this module yet")
+			}
 		/>
 	);
 }

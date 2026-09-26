@@ -79,6 +79,7 @@ import {
 	saveSearchHistory,
 	saveSelectionFav,
 	setAfterPaint,
+	setCardsDay,
 	setCardsWeek,
 	setFavFilter,
 	setLang,
@@ -559,6 +560,20 @@ describe("search and cards", () => {
 		prevCard();
 		shuffleCards();
 		expect(cardsState().idx).toBe(0);
+	});
+
+	it("filters a grammar card deck down to one day", () => {
+		seedGrammar();
+		G.weeks[0].days[1].points = [{ pattern: "ところ", usage_cn: "正要" }];
+		setCardsWeek(1);
+		setCardsDay(2);
+		expect(cardsState().day).toBe(2);
+		expect(cardsState().deck.map((card) => card.p.pattern)).toEqual(["ところ"]);
+		setCardsDay(1);
+		expect(cardsState().deck.map((card) => card.p.pattern)).toEqual(["ばかり"]);
+		setCardsWeek(0);
+		expect(cardsState().day).toBe(0);
+		expect(cardsState().deck).toHaveLength(2);
 	});
 });
 

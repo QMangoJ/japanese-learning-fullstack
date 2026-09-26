@@ -546,6 +546,307 @@ export function splitListeningGloss(v: string): { en?: string; cn?: string } {
 	return { en: v };
 }
 
+const PAIRED_WORD = /^([ぁ-んァ-ンー]+)[（(]([^）)]+)[）)]$/;
+
+type ListeningDraft = {
+	jp: string;
+	reading?: string;
+	cn?: string;
+	en?: string;
+	example?: string;
+	kind: "word" | "expression";
+};
+
+function hasKana(text: string): boolean {
+	return /[ぁ-んァ-ン]/.test(text);
+}
+
+function hasLatinWord(text: string): boolean {
+	return /[A-Za-z]{3,}/.test(text);
+}
+
+function isMostlyChinese(text: string): boolean {
+	if (!/[\u4e00-\u9fff]/.test(text) || hasKana(text)) return false;
+	if (/[的了请是不在和与会要就也这那个吗呢吧把被让给从对很最说听做写看们啊哦嗯见问发过时样现门东车长马鱼贝页风飞书买卖习认论计话谢识议记讲读谁义儿么]/u.test(text)) return true;
+	return /[，。！？]/.test(text);
+}
+
+function isJapanesePhrase(text: string): boolean {
+	const value = text.trim();
+	if (!value || value.length > 80) return false;
+	if (hasLatinWord(value) && !/[一-龯]/.test(value)) return false;
+	if (isMostlyChinese(value)) return false;
+	return /[ぁ-んァ-ン一-龯]/.test(value);
+}
+
+function pairedWord(text: string): { jp: string; reading: string } | undefined {
+	const match = text.trim().match(PAIRED_WORD);
+	if (!match || !/[一-龯]/.test(match[2])) return undefined;
+	return { reading: match[1], jp: match[2] };
+}
+
+function stripWrap(text: string): string {
+	const value = text.trim();
+	if ((value.startsWith("（") && value.endsWith("）")) || (value.startsWith("(") && value.endsWith(")"))) return value.slice(1, -1).trim();
+	return value;
+}
+
+function parensBalanced(text: string): boolean {
+	return (text.match(/[（(]/g) || []).length === (text.match(/[）)]/g) || []).length;
+}
+
+function cleanHead(text: string): string {
+	const value = stripWrap(text.trim());
+	const speaker = value.match(/^[A-Za-zＡ-Ｚ]「([^」]+)」$/);
+	if (speaker) return speaker[1].trim();
+	const embedded = value.match(/^([^「」]{0,6})「([^」]+)」$/);
+	if (embedded) return embedded[2].trim();
+	const pair = pairedWord(value);
+	if (pair) return pair.jp;
+	return value
+		.replace(/^[①-⑳]\s*/, "")
+		.replace(/\s*\*[^＊*]*$/, "")
+		.replace(/\s+[A-Za-z]{3,}(?:\s+[A-Za-z]+)*/g, "")
+		.trim();
+}
+
+function headKind(jp: string): "word" | "expression" {
+	if (/[〜～。！？↔]/.test(jp) || jp.length > 12) return "expression";
+	return "word";
+}
+
+function junkHead(jp: string): boolean {
+	return /^(れんしゅう|練習|注意|例題|例|まとめ|問題)/.test(jp);
+}
+
+function cellIsGloss(text: string): boolean {
+	return /[=＝→⇒]/.test(text) || hasLatinWord(text) || isMostlyChinese(text) || text.includes("　");
+}
+
+function classifyGloss(raw: string): { cn?: string; en?: string } {
+	const text = raw
+		.trim()
+		.replace(/^[（(]\s*/, "")
+		.replace(/[）)]$/, "")
+		.replace(/^[=＝]\s*/, "")
+		.trim();
+	if (!text) return {};
+	if (text.includes("/")) {
+		const bits = text.split(/\s*\/\s*/).map((part) => part.trim()).filter(Boolean);
+		const cn = bits.find((part) => isMostlyChinese(part));
+		const en = bits.find((part) => hasLatinWord(part));
+		if (cn || en) return { cn, en: en && en !== cn ? en : undefined };
+	}
+	const split = splitListeningGloss(text);
+	if (split.cn || (split.en && hasLatinWord(split.en || ""))) return split;
+	if (isJapanesePhrase(text) || isMostlyChinese(text)) return { cn: text };
+	return split.en ? split : {};
+}
+
+function glossFromCell(raw: string): { cn?: string; en?: string; example?: string } {
+	const chunks = raw.split(/[　]+/).map((part) => part.trim()).filter(Boolean);
+	let example: string | undefined;
+	const glossChunks: string[] = [];
+	for (const chunk of chunks) {
+		if (glossChunks.length && isJapanesePhrase(chunk) && !cellIsGloss(chunk) && chunk.length <= 40) {
+			if (!example) example = cleanHead(chunk);
+			continue;
+		}
+		glossChunks.push(chunk);
+	}
+	return { ...classifyGloss(glossChunks.join("　")), example };
+}
+
+function glossFromMultiline(raw: string): { cn?: string; en?: string; example?: string } {
+	const cn: string[] = [];
+	const en: string[] = [];
+	let example: string | undefined;
+	for (const line of raw.split(/\n+/).map((part) => part.trim()).filter(Boolean)) {
+		if (isJapanesePhrase(line) && !cellIsGloss(line) && line.length >= 6) {
+			if (!example) example = cleanHead(line);
+			continue;
+		}
+		const found = glossFromCell(line);
+		if (found.cn) cn.push(found.cn);
+		if (found.en) en.push(found.en);
+		if (!example && found.example) example = found.example;
+	}
+	return { cn: cn.join(" ") || undefined, en: en.join(" / ") || undefined, example };
+}
+
+function draftsFromGlossLine(line: string): ListeningDraft[] {
+	const contrasts = line.split(/[　]{1,}|\s{2,}/).flatMap((part) => {
+		const bits = part.split(/\s*[⇔↔]\s*/);
+		if (bits.length !== 2 || !isJapanesePhrase(bits[0]) || !isJapanesePhrase(bits[1])) return [];
+		return [{ jp: `${cleanHead(bits[0])} ↔ ${cleanHead(bits[1])}`, cn: "反义", kind: "word" as const }];
+	});
+	if (/[⇔↔]/.test(line)) return contrasts;
+	const eq = stripWrap(line).split(/\s*[=＝]\s*/);
+	if (eq.length >= 2 && parensBalanced(eq[0])) {
+		const jp = cleanHead(eq[0]);
+		const gloss = classifyGloss(eq.slice(1).join("＝"));
+		if (!isJapanesePhrase(jp) || !(gloss.cn || gloss.en)) return [];
+		return [{ jp, ...gloss, kind: headKind(jp) }];
+	}
+	const chunks = line.split(/[　]+/).map((part) => part.trim()).filter(Boolean);
+	if (chunks.length >= 2 && isJapanesePhrase(chunks[0]) && cellIsGloss(chunks.slice(1).join(" "))) {
+		const gloss = glossFromCell(chunks.slice(1).join("　"));
+		const jp = cleanHead(chunks[0]);
+		if (!(gloss.cn || gloss.en)) return [];
+		return [{ jp, cn: gloss.cn, en: gloss.en, example: gloss.example, kind: headKind(jp) }];
+	}
+	return [];
+}
+
+function draftsFromTable(rows: readonly (readonly string[])[], title?: string): ListeningDraft[] {
+	const out: ListeningDraft[] = [];
+	for (const row of rows) {
+		if (row[0]?.trim() === "場面" || row[1]?.trim() === "内容の例") continue;
+		if (row.length >= 3 && isJapanesePhrase(row[0])) {
+			const gloss = glossFromCell(row.slice(2).join("　"));
+			const example = isJapanesePhrase(row[1]) ? row[1].trim() : gloss.example;
+			const jp = cleanHead(row[0]);
+			if (gloss.cn || gloss.en) out.push({ jp, cn: gloss.cn, en: gloss.en, example, kind: headKind(jp) });
+			continue;
+		}
+		if (row.length < 2) continue;
+		const left = row[0].trim();
+		const right = row[1].trim();
+		if (/^[—\-–]/.test(left)) continue;
+		const pairL = pairedWord(left);
+		const pairR = pairedWord(right);
+		if (pairL && pairR) {
+			out.push({
+				jp: `${pairL.jp} ↔ ${pairR.jp}`,
+				reading: `${pairL.reading} / ${pairR.reading}`,
+				cn: title || "听辨对照",
+				kind: "word",
+			});
+			continue;
+		}
+		if (isJapanesePhrase(left) && cellIsGloss(right)) {
+			const gloss = glossFromCell(right);
+			const jp = pairL?.jp || cleanHead(left);
+			if (gloss.cn || gloss.en) {
+				out.push({
+					jp,
+					reading: pairL?.reading,
+					cn: gloss.cn,
+					en: gloss.en,
+					example: gloss.example,
+					kind: headKind(jp),
+				});
+			}
+			continue;
+		}
+		if (isJapanesePhrase(left) && isJapanesePhrase(right)) {
+			const jp = cleanHead(left);
+			out.push({ jp, cn: [title, cleanHead(right)].filter(Boolean).join("："), kind: "expression" });
+		}
+	}
+	return out;
+}
+
+function draftsFromBox(items: readonly { readonly title: string; readonly lines: readonly string[]; readonly note?: string }[]): ListeningDraft[] {
+	const out: ListeningDraft[] = [];
+	for (const item of items) {
+		const [head, star] = item.title.split("*");
+		const pair = pairedWord(head.trim());
+		const jp = pair?.jp || cleanHead(head);
+		const body = [...item.lines, item.note].filter(Boolean).join("\n");
+		const gloss = glossFromMultiline(body);
+		const cn = [star?.trim(), gloss.cn].filter(Boolean).join(" ");
+		if (!isJapanesePhrase(jp) || !(cn || gloss.en)) continue;
+		out.push({ jp, reading: pair?.reading, cn: cn || undefined, en: gloss.en, example: gloss.example, kind: headKind(jp) });
+	}
+	return out;
+}
+
+function draftsFromExample(lines: readonly string[], title?: string): ListeningDraft[] {
+	const out: ListeningDraft[] = [];
+	const script = lines.some((line) => /答案|^男[:：]|^女[:：]/.test(line.trim()));
+	if (!script && title && hasKana(title) && isJapanesePhrase(title) && title.trim().length <= 36) {
+		const sample = lines.find((line) => isJapanesePhrase(line) && !line.includes("答案"));
+		out.push({ jp: cleanHead(title), example: sample ? cleanHead(sample) : undefined, cn: "会话表达", kind: "expression" });
+	}
+	for (const line of lines) {
+		if (script && !/[=＝⇔↔]|[A-Za-z]{3,}/.test(line)) continue;
+		if (!script) {
+			const quotes = [...line.matchAll(/「([^」]{2,40})」/g)]
+				.map((match) => match[1].trim())
+				.filter((quote) => isJapanesePhrase(quote));
+			if (quotes.length) {
+				for (const quote of quotes) out.push({ jp: quote, cn: "会话表达", kind: headKind(quote) });
+				continue;
+			}
+		}
+		out.push(...draftsFromGlossLine(line));
+	}
+	return out;
+}
+
+function listeningDraftItem(
+	draft: ListeningDraft,
+	id: string,
+	chapter: number,
+	section: number,
+	readings: Record<string, string>,
+	snippets: ExampleHit[],
+): MemoryCardItem | undefined {
+	const jp = draft.jp.trim();
+	if (!jp || jp.length > 70 || junkHead(jp) || !parensBalanced(jp) || isMostlyChinese(jp) || !(draft.cn || draft.en)) return undefined;
+	const cn = draft.cn && draft.cn.length > 90 ? `${draft.cn.slice(0, 90).replace(/[、，\s]+$/, "")}…` : draft.cn;
+	const explicit = draft.example && draft.example !== jp ? { jp: draft.example, cn: draft.cn, en: draft.en } : undefined;
+	const mined = explicit || exampleFromCorpus(jp, snippets);
+	const patterned = /^[〜～]/.test(jp) || jp.includes("↔") || /[。！？]/.test(jp);
+	const ex = mined || (patterned ? undefined : fallbackVocabExample(jp, draft.cn, draft.en));
+	const jpHtml = annotateText(jp, { reading: draft.reading, readings });
+	return {
+		id,
+		jp,
+		jpHtml,
+		reading: draft.reading || kanaFromRuby(jpHtml, draft.reading, jp),
+		cn,
+		en: draft.en,
+		kind: draft.kind,
+		week: chapter,
+		day: section,
+		...attachExample(ex && ex.jp !== jp ? ex : undefined, readings, cn),
+	};
+}
+
+function preferListeningGloss(prev?: string, next?: string): string | undefined {
+	const generic = new Set(["会话表达", "反义", "听辨对照"]);
+	if (!next) return prev;
+	if (!prev) return next;
+	if (generic.has(next) && !generic.has(prev)) return prev;
+	if (generic.has(prev) && !generic.has(next)) return next;
+	if (prev.includes(next)) return prev;
+	return `${prev}／${next}`;
+}
+
+function mergeListeningCards(items: MemoryCardItem[]): MemoryCardItem[] {
+	const seen = new Map<string, MemoryCardItem>();
+	for (const item of items) {
+		const prev = seen.get(item.jp);
+		if (!prev) {
+			seen.set(item.jp, { ...item });
+			continue;
+		}
+		prev.cn = preferListeningGloss(prev.cn, item.cn);
+		if (item.en && prev.en && !prev.en.includes(item.en)) prev.en = `${prev.en} / ${item.en}`;
+		else if (item.en && !prev.en) prev.en = item.en;
+		if (!prev.exampleJp && item.exampleJp) {
+			prev.exampleJp = item.exampleJp;
+			prev.exampleJpHtml = item.exampleJpHtml;
+			prev.exampleReading = item.exampleReading;
+			prev.exampleCn = item.exampleCn;
+			prev.exampleEn = item.exampleEn;
+		}
+	}
+	return [...seen.values()];
+}
+
 export function cardsFromListeningLesson(
 	lesson: Pick<ListeningLesson, "blocks">,
 	chapter: number,
@@ -556,28 +857,33 @@ export function cardsFromListeningLesson(
 	const items: MemoryCardItem[] = [];
 	const snippets = collectListeningSnippets(lesson);
 	(lesson.blocks || []).forEach((block, bi) => {
-		if (block.type !== "kv") return;
-		block.rows.forEach((row, ri) => {
-			const parsed = parseListeningHead(row.k);
-			const gloss = splitListeningGloss(row.v);
-			if (!parsed.jp || !(gloss.cn || gloss.en)) return;
-			const ex = exampleFromCorpus(parsed.jp, snippets) || fallbackVocabExample(parsed.jp, gloss.cn, gloss.en);
-			const jpHtml = annotateText(parsed.jp, { reading: parsed.reading, readings });
-			items.push({
-				id: `${module}:${chapter}-${section}:${bi}-${ri}:${parsed.jp}`,
-				jp: parsed.jp,
-				jpHtml,
-				reading: parsed.reading || kanaFromRuby(jpHtml, parsed.reading, parsed.jp),
-				cn: gloss.cn,
-				en: gloss.en,
-				kind: "word",
-				week: chapter,
-				day: section,
-				...attachExample(ex, readings, gloss.cn),
+		const push = (draft: ListeningDraft, ri: number) => {
+			const item = listeningDraftItem(draft, `${module}:${chapter}-${section}:${bi}-${ri}:${draft.jp}`, chapter, section, readings, snippets);
+			if (item) items.push(item);
+		};
+		if (block.type === "kv") {
+			block.rows.forEach((row, ri) => {
+				const parsed = parseListeningHead(row.k);
+				const gloss = splitListeningGloss(row.v);
+				push({ jp: parsed.jp, reading: parsed.reading, cn: gloss.cn, en: gloss.en, kind: headKind(parsed.jp) }, ri);
 			});
-		});
+			return;
+		}
+		const drafts =
+			block.type === "table"
+				? draftsFromTable(block.rows, block.title)
+				: block.type === "box"
+					? draftsFromBox(block.items)
+					: block.type === "aside" && isJapanesePhrase(cleanHead(block.title))
+						? [{ jp: cleanHead(block.title), ...glossFromMultiline(block.text), kind: headKind(cleanHead(block.title)) }]
+						: block.type === "example"
+							? draftsFromExample(block.lines, block.title)
+							: block.type === "q" && block.note
+								? block.note.split(/[。\n]/).flatMap((line) => draftsFromGlossLine(line))
+								: [];
+		drafts.forEach((draft, ri) => push(draft, ri));
 	});
-	return items;
+	return mergeListeningCards(items);
 }
 
 export function dedupeMemoryCards(items: MemoryCardItem[]): MemoryCardItem[] {

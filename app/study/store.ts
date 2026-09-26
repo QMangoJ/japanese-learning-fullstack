@@ -306,8 +306,9 @@ DATA.n2reading = R2;
 DATA.listening = L;
 DATA.n2listening = L2;
 
-export let fc: { week: number; deck: any[]; idx: number; flipped: boolean } = {
+export let fc: { week: number; day: number; deck: any[]; idx: number; flipped: boolean } = {
 	week: 0,
+	day: 0,
 	deck: [],
 	idx: 0,
 	flipped: false,
@@ -431,7 +432,7 @@ export function saveLastVisit(hash: string) {
 export function setModule(m: ModuleKey) {
 	MODULE = m;
 	lsSet("module", m);
-	fc = { week: 0, deck: [], idx: 0, flipped: false };
+	fc = { week: 0, day: 0, deck: [], idx: 0, flipped: false };
 	showingFavFc = false;
 	deriveLT();
 	emit();
@@ -923,37 +924,48 @@ function startFavFc() {
 	emit();
 }
 
-function buildDeck(week: number) {
+function buildDeck(week: number, day = 0) {
 	const deck: any[] = [];
+	const useDay = (d: { day?: number }) => !day || d.day === day;
 	if (isGram()) {
 		for (const w of cur().weeks || []) {
 			if (week && w.n !== week) continue;
-			for (const d of w.days) (d.points || []).forEach((p: any, i: number) => deck.push({ w: w.n, d: d.day, i, p }));
+			for (const d of w.days) {
+				if (!useDay(d)) continue;
+				(d.points || []).forEach((p: any, i: number) => deck.push({ w: w.n, d: d.day, i, p }));
+			}
 		}
 	} else if (isKanji()) {
 		for (const w of cur().weeks || []) {
 			if (week && w.n !== week) continue;
-			for (const d of w.days) (d.kanji || []).forEach((k: any) => {
-				if (k.words?.length) deck.push({ k });
-			});
+			for (const d of w.days) {
+				if (!useDay(d)) continue;
+				(d.kanji || []).forEach((k: any) => {
+					if (k.words?.length) deck.push({ k, w: w.n, d: d.day });
+				});
+			}
 		}
 	} else if (isReading() || isListening()) {
 		for (const w of cur().weeks || []) {
 			if (week && w.n !== week) continue;
-			for (const d of w.days)
+			for (const d of w.days) {
+				if (!useDay(d)) continue;
 				(d.vocab || []).forEach((it: any) => {
-					if (it.jp && (it.cn || it.en)) deck.push({ v: it });
+					if (it.jp && (it.cn || it.en)) deck.push({ v: it, w: w.n, d: d.day });
 				});
+			}
 		}
 	} else {
 		for (const w of cur().weeks || []) {
 			if (week && w.n !== week) continue;
-			for (const d of w.days)
+			for (const d of w.days) {
+				if (!useDay(d)) continue;
 				(d.sections || []).forEach((sec: any) =>
 					(sec.items || []).forEach((it: any) => {
-						if (it.jp && (it.cn || it.en)) deck.push({ v: it });
+						if (it.jp && (it.cn || it.en)) deck.push({ v: it, w: w.n, d: d.day });
 					}),
 				);
+			}
 		}
 	}
 	for (let i = deck.length - 1; i > 0; i--) {
@@ -1308,7 +1320,14 @@ export function cardsWeeks() {
 }
 export function setCardsWeek(week: number) {
 	fc.week = week;
-	fc.deck = buildDeck(week);
+	fc.day = 0;
+	fc.deck = buildDeck(week, 0);
+	fc.idx = 0;
+	fc.flipped = false;
+}
+export function setCardsDay(day: number) {
+	fc.day = day;
+	fc.deck = buildDeck(fc.week, day);
 	fc.idx = 0;
 	fc.flipped = false;
 }
@@ -1328,7 +1347,7 @@ export function prevCard() {
 	}
 }
 export function shuffleCards() {
-	fc.deck = buildDeck(fc.week);
+	fc.deck = buildDeck(fc.week, fc.day);
 	fc.idx = 0;
 	fc.flipped = false;
 }
@@ -1598,6 +1617,7 @@ export function installStudyBridges() {
 		kind: cardsKind,
 		weeks: cardsWeeks,
 		setWeek: setCardsWeek,
+		setDay: setCardsDay,
 		flip: flipCard,
 		next: nextCard,
 		prev: prevCard,
@@ -1687,7 +1707,7 @@ export function resetStudyStateForTests() {
 	if (typeof document !== "undefined") document.documentElement.classList.remove("theme-switching");
 	studyHideJapanese = false;
 	studyHideTranslation = false;
-	fc = { week: 0, deck: [], idx: 0, flipped: false };
+	fc = { week: 0, day: 0, deck: [], idx: 0, flipped: false };
 	G = { weeks: [] };
 	V = { weeks: [] };
 	K = { weeks: [] };
@@ -2005,7 +2025,7 @@ export function homeIntro() {
 
 export function ensureCardsDeck() {
 	if (!fc.deck.length) {
-		fc.deck = buildDeck(fc.week);
+		fc.deck = buildDeck(fc.week, fc.day);
 		fc.idx = 0;
 		fc.flipped = false;
 	}
@@ -2042,10 +2062,11 @@ declare global {
 			open: (hit: any, keyword?: string) => void;
 		};
 		__studyCards?: {
-			state: () => { week: number; deck: any[]; idx: number; flipped: boolean };
+			state: () => { week: number; day: number; deck: any[]; idx: number; flipped: boolean };
 			kind: () => "gram" | "kanji" | "vocab";
 			weeks: () => number;
 			setWeek: (week: number) => void;
+			setDay: (day: number) => void;
 			flip: () => void;
 			next: () => void;
 			prev: () => void;
