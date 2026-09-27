@@ -100,6 +100,7 @@ export function ModuleCardsPage() {
 					week={week}
 					day={day}
 					chapter={chapterScale}
+					dayHasCards={(w, d) => allItems.some((item) => item.week === w && item.day === d)}
 					onWeek={(next) => {
 						setWeek(next);
 						setDay(0);

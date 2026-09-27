@@ -924,7 +924,7 @@ function startFavFc() {
 	emit();
 }
 
-function buildDeck(week: number, day = 0) {
+function collectDeck(week: number, day = 0) {
 	const deck: any[] = [];
 	const useDay = (d: { day?: number }) => !day || d.day === day;
 	if (isGram()) {
@@ -968,11 +968,24 @@ function buildDeck(week: number, day = 0) {
 			}
 		}
 	}
+	return deck;
+}
+
+function buildDeck(week: number, day = 0) {
+	const deck = collectDeck(week, day);
 	for (let i = deck.length - 1; i > 0; i--) {
 		const j = Math.floor(Math.random() * (i + 1));
 		[deck[i], deck[j]] = [deck[j], deck[i]];
 	}
 	return deck;
+}
+
+/** Days of `week` that actually have flashcards in the current module (e.g. skips the day-7 test). */
+export function cardsDays(week: number): number[] {
+	if (!week) return [];
+	const days = new Set<number>();
+	for (const card of collectDeck(week)) if (typeof card.d === "number") days.add(card.d);
+	return [...days].sort((a, b) => a - b);
 }
 
 function buildIndex() {
