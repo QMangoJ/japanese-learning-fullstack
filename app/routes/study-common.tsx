@@ -6,6 +6,7 @@ import {
 	afterPaint,
 	addMistakeNote,
 	cardsKind,
+	cardsDays,
 	cardsState,
 	cur as currentBundle,
 	clearFavs,
@@ -1739,6 +1740,7 @@ export function CardsPage() {
 				week={fc.week}
 				day={fc.day}
 				chapter={chapterScale}
+				dayHasCards={(w, d) => cardsDays(w).includes(d)}
 				onWeek={(n) => {
 					setCardsWeek(n);
 					bump();

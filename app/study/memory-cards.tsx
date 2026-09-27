@@ -66,6 +66,7 @@ export function CardsScopeFilter({
 	chapter,
 	onWeek,
 	onDay,
+	dayHasCards,
 }: {
 	weeks: CardScopeWeek[];
 	week: number;
@@ -73,9 +74,13 @@ export function CardsScopeFilter({
 	chapter: boolean;
 	onWeek: (week: number) => void;
 	onDay: (day: number) => void;
+	/** When given, days without any card (such as the weekly test on day 7) are left out. */
+	dayHasCards?: (week: number, day: number) => boolean;
 }) {
 	const dayWeekN = week || (weeks.length === 1 ? weeks[0]?.n : 0);
-	const days = weeks.find((item) => item.n === dayWeekN)?.days || [];
+	const days = (weeks.find((item) => item.n === dayWeekN)?.days || []).filter(
+		(item) => !dayHasCards || item.day === day || dayHasCards(dayWeekN, item.day),
+	);
 	return (
 		<>
 			{weeks.length > 1 ? (
