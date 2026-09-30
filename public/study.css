@@ -114,14 +114,17 @@ header.top h1{font-size:16px;margin:0;font-weight:700;flex:1;white-space:nowrap;
 /* 翻页钮悬浮在两侧：不占正文高度，滚到哪儿都能翻。
    手机没有边距，只放一个半透明圆钮；桌面正文两侧有留白，展开成带日期的胶囊。 */
 /* 手机上贴在底栏正上方的两个角：竖直居中会盖住正文首字，而这里正好是拇指位 */
-.daynav-fab{position:fixed;bottom:calc(var(--bottom-nav-height) + env(safe-area-inset-bottom) + 10px);z-index:35;
+.daynav-fab{position:fixed;bottom:calc(var(--bottom-nav-height) + env(safe-area-inset-bottom) + 20px);z-index:35;
   display:flex;align-items:center;gap:7px;justify-content:center;
-  min-width:44px;min-height:44px;padding:0 11px;
+  min-width:52px;min-height:52px;padding:0 13px;
   background:var(--card);border:1px solid var(--line);border-radius:999px;box-shadow:var(--shadow);
   color:var(--accent);font-size:21px;font-weight:800;line-height:1;cursor:pointer;opacity:.88;
   -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
 .daynav-fab{touch-action:manipulation;-webkit-tap-highlight-color:transparent;appearance:none;font:inherit}
 .daynav-fab:active{opacity:1;border-color:var(--accent)}
+/* 箭头盒子本身就是 flex 居中的正方形，不受字体基线影响 */
+.daynav-fab .ar{display:flex;align-items:center;justify-content:center;flex:none;width:26px;height:26px;font-size:26px;line-height:0}
+.daynav-fab .ar svg{display:block;width:26px;height:26px}
 @media (hover:hover) and (pointer:fine){
   .daynav-fab:hover{opacity:1;border-color:var(--accent)}
 }

@@ -131,7 +131,7 @@ html.theme-dark .listening-scan figure,html.theme-dark .listening-answer-panels 
 /* Mobile: share native bottom anchoring with navigation and day controls.
    No JS scroll compensation: stale measurements can push controls offscreen. */
 @media (max-width:899px){
-  body:has(.reader-page--embedded .listening-player){--listening-player-clearance:120px}
+  body:has(.reader-page--embedded .listening-player){--listening-player-clearance:134px}
   .reader-page--embedded .listening-player{
     position:fixed;
     inset:auto calc(10px + env(safe-area-inset-right)) calc(var(--bottom-nav-height) + env(safe-area-inset-bottom) + 8px) calc(10px + env(safe-area-inset-left));
@@ -150,5 +150,5 @@ html.theme-dark .listening-scan figure,html.theme-dark .listening-answer-panels 
 }
 
 @media (max-width:430px){
-  body:has(.reader-page--embedded .listening-player){--listening-player-clearance:176px}
+  body:has(.reader-page--embedded .listening-player){--listening-player-clearance:190px}
 }
