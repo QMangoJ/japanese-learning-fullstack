@@ -56,6 +56,18 @@
 .listening-lesson__example b{display:block;margin-bottom:8px;font-size:15px}
 .listening-lesson__example p{margin:4px 0 0;font:14px/1.8 "Noto Serif JP",serif}
 .listening-lesson__line-cn{display:block;margin-top:3px;color:var(--rm);font:13px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif}
+.listening-lesson__body-cn{white-space:pre-line;font-weight:400}
+.listening-lesson__h small.listening-lesson__body-cn{color:var(--rm);font-size:13px;font-weight:400}
+.listening-lesson__table b .listening-lesson__body-cn,.listening-lesson__example b .listening-lesson__body-cn,.listening-lesson__boxes b+.listening-lesson__body-cn{margin-top:1px}
+.listening-lesson__q li .listening-lesson__body-cn{margin-top:1px}
+.listening-gloss__list{display:grid;gap:0;margin:0;padding:4px 13px 8px;list-style:none}
+.listening-gloss__list li{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 8px;padding:6px 0;border-bottom:1px dashed var(--rl);font-size:14px;line-height:1.55}
+.listening-gloss__list li:last-child{border-bottom:0}
+.listening-gloss__word{color:var(--ri);font:600 15px/1.5 "Noto Serif JP",serif}
+.listening-gloss__reading{color:var(--rm);font-size:12px}
+.listening-gloss__lv{padding:0 6px;border-radius:999px;background:var(--blue-soft);color:var(--blue);font:700 10px/1.7 system-ui,-apple-system,sans-serif;font-style:normal}
+.listening-gloss__cn{flex-basis:100%;color:var(--rm);font-size:13px}
+@media (min-width:651px){.listening-gloss__cn{flex-basis:auto}.listening-gloss__cn::before{content:"— ";color:var(--rl)}}
 .listening-lesson__aside{padding:11px 13px;border:1px dashed var(--rl);border-radius:10px;background:var(--rd)}
 .listening-lesson__aside b{color:var(--blue);font-size:13px}
 .listening-lesson__aside p{margin:4px 0 0;color:var(--ri);font-size:13px;line-height:1.7}

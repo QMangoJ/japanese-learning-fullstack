@@ -1,10 +1,13 @@
 import type { ListeningLesson, ListeningLessonBlock } from "./listening-n3-lesson-types";
+import type { ListeningGloss } from "./listening-n2-transcript-glosses";
 
 export type ListeningQuestionSupport = {
 	readonly answer?: string;
 	readonly transcript?: string;
 	readonly transcript_cn?: string;
 	readonly transcript_en?: string;
+	/** 该题听力原文里的 N3+ 生词（目前只有 N2 听解提供）。 */
+	readonly glosses?: readonly ListeningGloss[];
 };
 
 const GROUP_NAME = "(?:問題|问题)[ⅠⅡⅢⅣⅤⅥIVX]+";
