@@ -1598,13 +1598,13 @@ export function DayNav({ w, d, mod }: { w: number; d: number; mod?: string }) {
 			>
 				{dir === "prev" ? (
 					<>
-						<span className="ar">‹</span>
+						<DayNavChevron dir="prev" />
 						{txt}
 					</>
 				) : (
 					<>
 						{txt}
-						<span className="ar">›</span>
+						<DayNavChevron dir="next" />
 					</>
 				)}
 			</button>
@@ -1878,3 +1878,14 @@ export function parseDayRoute(key: string) {
 
 // keep FAVMETA referenced so exam stars register before first paint
 void FAVMETA;
+
+/** 翻页钮箭头：用 SVG 而不是「‹ ›」字符，避免字体基线让箭头偏下，保证在圆钮里上下左右居中。 */
+function DayNavChevron({ dir }: { dir: "prev" | "next" }) {
+	return (
+		<span className="ar" aria-hidden="true">
+			<svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" focusable="false">
+				<path d={dir === "prev" ? "M14.5 5.5 8 12l6.5 6.5" : "M9.5 5.5 16 12l-6.5 6.5"} />
+			</svg>
+		</span>
+	);
+}
