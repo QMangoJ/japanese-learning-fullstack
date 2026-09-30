@@ -123,6 +123,12 @@ export function isLessonReviewPayload(value: unknown): value is LessonReviewPayl
 	return payload.days.every(isReviewDay);
 }
 
+/** KV can stay stale when a doc export needs login. Use whichever snapshot was fetched later. */
+export function chooseLessonReviewPayload(stored: unknown, seed: LessonReviewPayload): LessonReviewPayload {
+	if (!isLessonReviewPayload(stored)) return seed;
+	return stored.fetchedAt > seed.fetchedAt ? stored : seed;
+}
+
 function isReviewDay(value: unknown): value is ReviewDay {
 	if (!value || typeof value !== "object") return false;
 	const day = value as ReviewDay;

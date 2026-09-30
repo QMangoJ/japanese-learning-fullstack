@@ -2,6 +2,7 @@ import { describe, expect, it, vi } from "vitest";
 
 import {
 	applyKanjiReadings,
+	chooseLessonReviewPayload,
 	buildReviewRuby,
 	formatReviewDate,
 	reviewKanaLine,
@@ -246,6 +247,14 @@ describe("lesson review parser", () => {
 });
 
 describe("lesson review helpers", () => {
+	it("prefers the later lesson-review snapshot", () => {
+		const older = { fetchedAt: "2026-09-24T00:00:00.000Z", days: [{ id: "2026-09-24", title: "2026-09-24", items: [{ jp: "古い", kind: "word" as const }] }] };
+		const newer = { fetchedAt: "2026-09-30T00:00:00.000Z", days: [{ id: "2026-09-28", title: "2026-09-28", items: [{ jp: "新しい", kind: "word" as const }] }] };
+		expect(chooseLessonReviewPayload(older, newer).days[0].id).toBe("2026-09-28");
+		expect(chooseLessonReviewPayload(newer, older).days[0].id).toBe("2026-09-28");
+		expect(chooseLessonReviewPayload({ kept: true }, newer)).toBe(newer);
+	});
+
 	it("parses review routes and formats JST dates", () => {
 		expect(parseReviewRoute("#/review")).toEqual({ id: null });
 		expect(parseReviewRoute("#/review/2026-09-11")).toEqual({ id: "2026-09-11" });

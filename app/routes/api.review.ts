@@ -1,7 +1,7 @@
 import type { AppLoadContext } from "react-router";
 
 import seed from "../../public/data/lesson-review.json";
-import { isLessonReviewPayload, LESSON_REVIEW_KV_KEY } from "../study/lesson-review";
+import { chooseLessonReviewPayload, isLessonReviewPayload, LESSON_REVIEW_KV_KEY } from "../study/lesson-review";
 
 const headers = {
 	"content-type": "application/json; charset=utf-8",
@@ -11,16 +11,15 @@ const headers = {
 type Args = { context: AppLoadContext };
 
 export async function loader({ context }: Args) {
+	let stored: unknown;
 	const raw = await context.cloudflare.env.FAVORITES_KV.get(LESSON_REVIEW_KV_KEY);
 	if (raw) {
 		try {
-			const parsed: unknown = JSON.parse(raw);
-			if (isLessonReviewPayload(parsed)) {
-				return new Response(JSON.stringify(parsed), { headers });
-			}
+			stored = JSON.parse(raw);
 		} catch {
-			/* fall through to the seeded snapshot */
+			stored = undefined;
 		}
 	}
-	return new Response(JSON.stringify(seed), { headers });
+	const payload = isLessonReviewPayload(seed) ? chooseLessonReviewPayload(stored, seed) : seed;
+	return new Response(JSON.stringify(payload), { headers });
 }
