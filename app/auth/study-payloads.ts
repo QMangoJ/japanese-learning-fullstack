@@ -51,3 +51,21 @@ export function isMistakesPayload(value: unknown) {
 		return item.deleted === undefined || typeof item.deleted === "boolean";
 	});
 }
+
+const DUE_KINDS = new Set(["grammar", "mistake", "listening"]);
+const DUE_DATE = /^\d{4}-\d{2}-\d{2}$/;
+
+export function isDueReviewPayload(value: unknown) {
+	if (!Array.isArray(value) || value.length > MAX_ITEMS) return false;
+	return value.every((item) => {
+		if (!isRecord(item)) return false;
+		if (typeof item.id !== "string" || !isSafeId(item.id) || !isString(item.id, MAX_ID_LENGTH, false)) return false;
+		if (typeof item.kind !== "string" || !DUE_KINDS.has(item.kind)) return false;
+		if (!isString(item.jp, MAX_TEXT_LENGTH) || !isString(item.cn, MAX_TEXT_LENGTH) || !isString(item.en, MAX_TEXT_LENGTH)) return false;
+		if (typeof item.due !== "string" || !DUE_DATE.test(item.due)) return false;
+		if (typeof item.step !== "number" || !Number.isInteger(item.step) || item.step < 0 || item.step > 4) return false;
+		if (!isFiniteNumber(item.ts)) return false;
+		if (item.reading !== undefined && !isString(item.reading, MAX_TEXT_LENGTH)) return false;
+		return item.deleted === undefined || typeof item.deleted === "boolean";
+	});
+}

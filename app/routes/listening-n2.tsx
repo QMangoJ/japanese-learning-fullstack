@@ -303,6 +303,7 @@ function ChapterDetail({ chapterNumber, sectionNumber, hideBack = false }: { cha
 						playing={playing}
 						onToggle={toggleCue}
 						translate={chapterNumber <= 2 ? listeningN2BodyTranslation : undefined}
+						missScope={`n2:${chapter.number}-${section.number}`}
 					/>
 					<ListeningSectionNav chapter={chapterNumber} section={sectionNumber} />
 				</main>

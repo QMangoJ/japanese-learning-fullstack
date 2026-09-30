@@ -1,6 +1,7 @@
-import { Fragment, Suspense, lazy, useEffect, useReducer, useRef, useState, type ReactNode } from "react";
+import { Fragment, Suspense, lazy, useEffect, useReducer, useRef, useState, useSyncExternalStore, type ReactNode } from "react";
 
 import { JITA_TEARU_EXAMPLES } from "../data/common-jita-tearu";
+import { dueEntry, getDueVersion, grammarDueId, rememberFail, rememberPass, subscribeDue, dueCount } from "../study/due-review";
 import { CardsScopeFilter } from "../study/memory-cards";
 import {
 	afterPaint,
@@ -20,6 +21,7 @@ import {
 	homeScale,
 	isListening,
 	jumpWeek,
+	MODULE,
 	lx,
 	navTo,
 	nextCard,
@@ -1458,6 +1460,7 @@ function dayPreviewItems(day: any): string[] {
 export function HomePage({ data }: { data: { weeks: any[]; intro: string; lang: string; scale?: "week" | "chapter" } }) {
 	const [, bump] = useReducer((n: number) => n + 1, 0);
 	const [jumpTo, setJumpTo] = useState<number | null>(null);
+	useSyncExternalStore(subscribeDue, getDueVersion, () => 0);
 
 	// legacy は render() の最後で必ず updateStickyVars() していた。--hometoph は
 	// .home-top を実測して決まるので、React では commit 後でないと測れない。
@@ -1469,6 +1472,7 @@ export function HomePage({ data }: { data: { weeks: any[]; intro: string; lang: 
 	});
 
 	const open = openWeekSet();
+	const dueN = dueCount();
 	const lx = (cn?: string, en?: string) => (data.lang === "en" && en ? en : cn || "");
 	const isEnglish = data.lang === "en";
 	const isChapter = data.scale === "chapter";
@@ -1485,6 +1489,17 @@ export function HomePage({ data }: { data: { weeks: any[]; intro: string; lang: 
 	return (
 		<>
 			<div className="home-top">
+				<button type="button" className="due-banner" onClick={() => navTo("#/due")}>
+					<span className="due-banner__text">
+						<b>{lx("今天要复习", "Due today")}</b>
+						<span>
+							{dueN
+								? lx(`${dueN} 张到期`, `${dueN} due`)
+								: lx("答错或标成未掌握后，会出现在这里", "Misses and “still learning” cards show up here")}
+						</span>
+					</span>
+					<span className="due-banner__count">{dueN}</span>
+				</button>
 				<div className="meta" style={{ marginBottom: "10px" }}>
 					{data.intro}
 				</div>
@@ -1571,6 +1586,59 @@ export function HomePage({ data }: { data: { weeks: any[]; intro: string; lang: 
 				);
 			})}
 		</>
+	);
+}
+
+function GrammarDueButtons({
+	pattern,
+	reading,
+	usageCn,
+	usageEn,
+	week,
+	day,
+}: {
+	pattern: string;
+	reading?: string;
+	usageCn?: string;
+	usageEn?: string;
+	week: number;
+	day: number;
+}) {
+	const [, bump] = useReducer((n: number) => n + 1, 0);
+	const id = grammarDueId(MODULE, week, day, pattern);
+	const entry = dueEntry(id);
+	const learning = Boolean(entry && !entry.deleted && entry.step === 0);
+	const known = Boolean(entry && !entry.deleted && entry.step > 0);
+	return (
+		<div className="review-skill">
+			<button
+				type="button"
+				className={learning ? "on" : ""}
+				onClick={() => {
+					rememberFail({
+						id,
+						kind: "grammar",
+						jp: pattern,
+						cn: usageCn || "",
+						en: usageEn || "",
+						reading: reading || "",
+					});
+					bump();
+				}}
+			>
+				{lx("还没记住", "Still learning")}
+			</button>
+			<button
+				type="button"
+				className={known ? "on known" : ""}
+				onClick={() => {
+					rememberPass(id);
+					bump();
+				}}
+			>
+				{lx("已经记住", "Got it")}
+			</button>
+		</div>
 	);
 }
 
@@ -1755,6 +1823,9 @@ export function CardsPage() {
 			    React に任せると表裏で節点を使い回し、裏面の style を落とした残骸（style=""）が
 			    表面に残る。key を変えて作り直させ、移行前と同じ DOM に揃える。 */}
 			<Fragment key={cur ? `${kind}-${fc.idx}-${fc.flipped}` : "done"}>{card}</Fragment>
+			{kind === "gram" && cur?.p?.pattern ? (
+				<GrammarDueButtons pattern={String(cur.p.pattern)} reading={cur.p.reading} usageCn={cur.p.usage_cn} usageEn={cur.p.usage_en} week={cur.w} day={cur.d} />
+			) : null}
 			<div className="fc-btns">
 				<button data-fc="prev" onClick={act(prevCard)}>
 					‹ {lx("上一张", "Prev")}

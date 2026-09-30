@@ -713,6 +713,18 @@ body.hide-cn .vcn,body.hide-cn .cn{visibility:hidden}
   .ct-card{scroll-margin-top:150px}
 }
 .home-top{position:sticky;top:var(--topbarh,88px);z-index:10;background:var(--bg);padding-bottom:4px}
+.due-banner{display:flex;align-items:center;gap:12px;width:100%;box-sizing:border-box;margin:0 0 12px;padding:12px 14px;border:1px solid var(--accent);border-radius:14px;background:var(--accent-soft);color:var(--ink);cursor:pointer;text-align:left}
+.due-banner__text{display:flex;flex-direction:column;gap:2px;min-width:0;flex:1}
+.due-banner__text b{font-size:16px}
+.due-banner__text span{color:var(--sub);font-size:13px;line-height:1.45}
+.due-banner__count{flex:none;min-width:32px;height:32px;padding:0 8px;border-radius:999px;background:var(--accent);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-weight:800}
+.due-kind{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.04em}
+.due-empty{width:100%;max-width:520px;color:var(--sub);font-size:14.5px;line-height:1.65;text-align:left}
+.due-empty b{display:block;color:var(--ink);font-size:18px;margin-bottom:8px}
+.due-empty p{margin:0 0 14px}
+.due-empty button{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:8px 14px;font-weight:700;cursor:pointer}
+.fcard.due-long{min-height:220px}
+.fcard.due-long .big{font-size:16px;line-height:1.75;font-weight:600;text-align:left;width:100%;white-space:pre-wrap}
 .wk-toc{display:none}
 .week-card{scroll-margin-top:calc(var(--topbarh,88px) + var(--hometoph,40px))}
 @media (max-width:680px){

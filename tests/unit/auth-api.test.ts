@@ -3,8 +3,9 @@ import { describe, expect, it } from "vitest";
 import { loader as meLoader } from "../../app/routes/api.me";
 import { action as favAction, loader as favLoader } from "../../app/routes/api.favorites";
 import { action as mistakeAction, loader as mistakeLoader } from "../../app/routes/api.mistakes";
+import { action as dueAction, loader as dueLoader } from "../../app/routes/api.due-review";
 import { loader as logoutLoader } from "../../app/routes/auth.logout";
-import { favsKey, mistakesKey } from "../../app/auth/users";
+import { dueKey, favsKey, mistakesKey } from "../../app/auth/users";
 import { authedRequest, memoryKv, routeContext, seedUser, testEnv } from "./auth-test-utils";
 
 describe("/api/me", () => {
@@ -137,6 +138,45 @@ describe("per-user favorites and mistakes", () => {
 		});
 		expect(res.status).toBe(413);
 		expect(kv.map.has(favsKey("g_1"))).toBe(false);
+	});
+});
+
+describe("/api/due-review", () => {
+	const sample = [{ id: "g1", kind: "grammar", jp: "ばかり", cn: "刚", en: "just", due: "2026-10-01", step: 0, ts: 1 }];
+
+	it("rejects guests and stores the signed-in queue on the mistakes namespace", async () => {
+		const kv = memoryKv();
+		seedUser(kv, { id: "g_1" });
+		const guest = await dueLoader({ request: new Request("http://localhost/api/due-review"), context: routeContext(testEnv(kv)) });
+		expect(guest.status).toBe(401);
+
+		const put = await dueAction({
+			request: await authedRequest("http://localhost/api/due-review", "g_1", { method: "PUT", body: JSON.stringify(sample) }),
+			context: routeContext(testEnv(kv)),
+		});
+		expect(put.status).toBe(200);
+		expect(kv.map.get(dueKey("g_1"))).toContain("ばかり");
+		expect(kv.map.has(mistakesKey("g_1"))).toBe(false);
+
+		const get = await dueLoader({
+			request: await authedRequest("http://localhost/api/due-review", "g_1"),
+			context: routeContext(testEnv(kv)),
+		});
+		expect(await get.json()).toEqual(sample);
+	});
+
+	it("rejects a queue entry with an invalid date", async () => {
+		const kv = memoryKv();
+		seedUser(kv, { id: "g_1" });
+		const res = await dueAction({
+			request: await authedRequest("http://localhost/api/due-review", "g_1", {
+				method: "PUT",
+				body: JSON.stringify([{ ...sample[0], due: "tomorrow" }]),
+			}),
+			context: routeContext(testEnv(kv)),
+		});
+		expect(res.status).toBe(400);
+		expect(kv.map.has(dueKey("g_1"))).toBe(false);
 	});
 });
 

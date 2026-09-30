@@ -86,6 +86,8 @@
 .listening-question-support details[open] summary{border-bottom:1px solid var(--rl)}
 .listening-question-support details[open] summary b{background:var(--blue);color:#fff}
 .listening-question-support details>div{padding:11px 13px;color:var(--ri);font-size:14px;line-height:1.85}
+.listening-miss{border:1px solid var(--rl);background:var(--rd);color:var(--ri);border-radius:10px;padding:9px 12px;font-size:13px;font-weight:800;cursor:pointer;text-align:left}
+.listening-miss.on{background:var(--amber-soft);border-color:var(--amber);color:var(--amber)}
 html.theme-dark .listening-lesson__example{background:#2a2620;border-color:var(--rl);color:var(--ri)}
 html.theme-dark .listening-lesson__figure{background:#fff}
 @media (max-width:650px){.listening-lesson__hero h2{font-size:19px}.listening-lesson__q{padding:13px}.listening-lesson__q header{flex-direction:column}.listening-lesson__table th,.listening-lesson__table td{display:block;width:auto}.listening-question-support{margin-top:12px;padding-top:10px}.listening-question-support summary{padding:9px 10px}.listening-question-support details>div{padding:10px 11px;font-size:13px;line-height:1.8}}

@@ -17,6 +17,8 @@ import {
 	WearingPage,
 } from "../routes/study-common";
 import { ContrastPage, DayNav, DayPage, parseDayRoute } from "./days";
+import { DuePage } from "./DuePage";
+import { dueCount, getDueVersion, subscribeDue } from "./due-review";
 import { formatReviewDate, parseReviewRoute, reviewDateFromId } from "./lesson-review";
 import {
 	ACCOUNT,
@@ -124,6 +126,10 @@ function StudyLoading() {
 
 function useStudyTick() {
 	return useSyncExternalStore(subscribe, getVersion, () => 0);
+}
+
+function useDueTick() {
+	return useSyncExternalStore(subscribeDue, getDueVersion, () => 0);
 }
 
 class StudyPageErrorBoundary extends Component<{ resetKey: string; children: ReactNode }, { error: Error | null }> {
@@ -518,6 +524,7 @@ function Sidebar({ routeKey, onLevel }: { routeKey: string; onLevel: (lv: LevelK
 			</div>
 			<div className="side-foot">
 				{row("#/search", "🔍", lx("搜索", "Search"), null, h === "#/search")}
+				{row("#/due", "🔁", lx("今天要复习", "Due today"), dueCount(), h === "#/due")}
 				{row("#/mistakes", "📝", lx("错题本", "Mistakes"), activeMistakeCount() || "", h === "#/mistakes")}
 				{row("#/favs", "⭐", lx("收藏", "Favorites"), favCount || "", h === "#/favs")}
 			</div>
@@ -835,6 +842,7 @@ function viewMeta(key: string): { nav: string; title: string; back: boolean } {
 			back: false,
 		};
 	if (key === "#/mistakes") return { nav: "mistakes", title: lx("错题 / 生词本", "My Mistakes & Notes"), back: false };
+	if (key === "#/due") return { nav: "home", title: lx("今天要复习", "Due today"), back: false };
 	if (key === "#/ref") return { nav: "common", title: lx("接续表示法 · 接続の表示方法", "Connection Notation"), back: true };
 	if (key === "#/katsuyou") return { nav: "common", title: lx("活用一覧 · 敬語レベルと活用形", "Conjugation: Politeness Levels & Verb Forms"), back: true };
 	if (key === "#/henkei") return { nav: "common", title: lx("動詞の変形ルール · 音便と組み合わせ", "Verb Conjugation Rules"), back: true };
@@ -866,6 +874,7 @@ function RetainedDay({ day }: { day: ReturnType<typeof parseDayRoute> }) {
 
 export function StudyApp() {
 	useStudyTick();
+	useDueTick();
 	const location = useLocation();
 	const navigate = useNavigate();
 	const [booted, setBooted] = useState(false);
@@ -1001,11 +1010,11 @@ export function StudyApp() {
 	const meta = viewMeta(routeKey);
 	const day = parseDayRoute(routeKey);
 	const reviewRoute = parseReviewRoute(routeKey);
-	const commonPages = ["#/search", "#/cards", "#/kanji-exam", "#/favs", "#/mistakes", "#/ref", "#/katsuyou", "#/henkei", "#/kougo", "#/jita", "#/wearing", "#/numbers", "#/review"];
+	const commonPages = ["#/search", "#/cards", "#/kanji-exam", "#/favs", "#/mistakes", "#/due", "#/ref", "#/katsuyou", "#/henkei", "#/kougo", "#/jita", "#/wearing", "#/numbers", "#/review"];
 	const isCommon = commonPages.includes(routeKey) || routeKey === "#/" || Boolean(reviewRoute);
 	if (routeKey === "#/cards") ensureCardsDeck();
 
-	const commonRefPage = ["#/ref", "#/katsuyou", "#/henkei", "#/kougo", "#/jita", "#/wearing", "#/numbers", "#/review"].includes(routeKey) || Boolean(reviewRoute);
+	const commonRefPage = ["#/ref", "#/katsuyou", "#/henkei", "#/kougo", "#/jita", "#/wearing", "#/numbers", "#/review", "#/due"].includes(routeKey) || Boolean(reviewRoute);
 	const waitingN2 = isN2() && MODULE !== "n2listening" && MODULE !== "n2reading" && !n2Loaded && !commonRefPage;
 	const waitingN4 = isN4() && !n4Loaded && !commonRefPage;
 	const waitingSearch = routeKey === "#/search" && (!n2Loaded || !readingSearchLoaded) && !readingSearchError;
@@ -1063,6 +1072,7 @@ export function StudyApp() {
 	else if (routeKey === "#/kanji-exam") body = <LazyKanjiExamPage />;
 	else if (routeKey === "#/favs") body = showingFavFc ? <FavFcPage data={favFcPayload()} /> : <FavsPage data={favsPayload()} />;
 	else if (routeKey === "#/mistakes") body = <MistakesPage data={mistakesPayload()} />;
+	else if (routeKey === "#/due") body = <DuePage />;
 	else if (routeKey === "#/ref") body = DATA.common?.reference ? <RefPage data={DATA.common} /> : <div className="empty">通用参考数据加载中，请稍候…</div>;
 	else if (routeKey === "#/katsuyou") body = DATA.common?.katsuyou ? <KatsuyouPage data={DATA.common} /> : <div className="empty">通用参考数据加载中，请稍候…</div>;
 	else if (routeKey === "#/henkei") body = DATA.common?.henkei ? <HenkeiPage data={DATA.common} /> : <div className="empty">通用参考数据加载中，请稍候…</div>;

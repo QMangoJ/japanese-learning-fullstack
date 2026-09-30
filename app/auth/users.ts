@@ -38,6 +38,10 @@ export function mistakesKey(userId: string): string {
 	return `mistakes:${userId}`;
 }
 
+export function dueKey(userId: string): string {
+	return `due:${userId}`;
+}
+
 export function toPublicUser(user: UserRecord): PublicUser {
 	return {
 		id: user.id,

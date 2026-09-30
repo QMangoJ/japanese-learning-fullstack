@@ -35,6 +35,7 @@ import {
 	toggleFav,
 } from "../../app/study/store";
 import { ContrastPage, DayPage } from "../../app/study/days";
+import { dueEntry, grammarDueId } from "../../app/study/due-review";
 import jitaData from "../../app/data/common-jita.json";
 
 function LiveMistakes() {
@@ -435,6 +436,15 @@ describe("JitaPage", () => {
 });
 
 describe("HomePage and CardsPage", () => {
+	it("opens today's review from the home banner", async () => {
+		const user = userEvent.setup();
+		const seen: string[] = [];
+		setNavImpl((key) => seen.push(key));
+		render(<HomePage data={{ weeks: G.weeks, intro: "目录", lang: "cn", scale: "week" }} />);
+		await user.click(screen.getByRole("button", { name: /今天要复习/ }));
+		expect(seen).toContain("#/due");
+	});
+
 	it("opens a week and navigates to a day", async () => {
 		const user = userEvent.setup();
 		const seen: string[] = [];
@@ -443,6 +453,16 @@ describe("HomePage and CardsPage", () => {
 		expect(screen.getByText("一日目")).toBeInTheDocument();
 		await user.click(screen.getByText("1日目"));
 		expect(seen).toContain("#/day/1-1");
+	});
+
+	it("queues a grammar card that is still learning", async () => {
+		const user = userEvent.setup();
+		setCardsWeek(0);
+		render(<CardsPage />);
+		await user.click(screen.getByRole("button", { name: "还没记住" }));
+		expect(dueEntry(grammarDueId("grammar", 1, 1, "ばかり"))).toMatchObject({ kind: "grammar", jp: "ばかり", cn: "表示刚做完" });
+		await user.click(screen.getByRole("button", { name: "已经记住" }));
+		expect(dueEntry(grammarDueId("grammar", 1, 1, "ばかり"))?.step).toBe(1);
 	});
 
 	it("flips a grammar flashcard", async () => {

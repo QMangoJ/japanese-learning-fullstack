@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { favsKey, googleIndexKey, mistakesKey, toPublicUser, upsertGoogleUser, userRecordKey } from "../../app/auth/users";
+import { dueKey, favsKey, googleIndexKey, mistakesKey, toPublicUser, upsertGoogleUser, userRecordKey } from "../../app/auth/users";
 import { memoryKv } from "./auth-test-utils";
 
 describe("user records", () => {
@@ -9,6 +9,7 @@ describe("user records", () => {
 		expect(googleIndexKey("sub")).toBe("google:sub");
 		expect(favsKey("g_1")).toBe("favs:g_1");
 		expect(mistakesKey("g_1")).toBe("mistakes:g_1");
+		expect(dueKey("g_1")).toBe("due:g_1");
 		expect(favsKey("g_1")).not.toBe("favorites");
 		expect(mistakesKey("g_1")).not.toBe("mistakes");
 	});

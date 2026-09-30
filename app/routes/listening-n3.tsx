@@ -1,4 +1,5 @@
 import { Fragment, useEffect, useMemo, useRef, useState, type PointerEvent, type RefObject } from "react";
+import { listeningDueId, rememberFail, dueEntry } from "../study/due-review";
 import { flushSync } from "react-dom";
 
 import { findListeningChapter, findListeningSection, type ListeningDisc } from "../data/listening-n3-book";
@@ -302,6 +303,7 @@ export function LessonBlocks({
 	playing,
 	onToggle,
 	translate,
+	missScope,
 }: {
 	blocks: readonly ListeningLessonBlock[];
 	questionSupport: ReadonlyMap<number, ListeningQuestionSupport>;
@@ -310,6 +312,7 @@ export function LessonBlocks({
 	playing: boolean;
 	onToggle: (cue: AudioCue) => void;
 	translate?: BodyTranslate;
+	missScope?: string;
 }) {
 	const showCn = LANG !== "en";
 	return (
@@ -539,7 +542,9 @@ export function LessonBlocks({
 										<BodyCn text={block.note} translate={translate} />
 									</p>
 								) : null}
-								{support ? <QuestionSupportPanels support={support} /> : null}
+								{support ? (
+									<QuestionSupportPanels support={support} missId={missScope ? listeningDueId(missScope, block.label) : undefined} />
+								) : null}
 							</article>
 						);
 				}
@@ -548,9 +553,14 @@ export function LessonBlocks({
 	);
 }
 
-function QuestionSupportPanels({ support }: { support: ListeningQuestionSupport }) {
+function QuestionSupportPanels({ support, missId }: { support: ListeningQuestionSupport; missId?: string }) {
 	const showCn = LANG !== "en";
 	const translation = showCn ? support.transcript_cn : support.transcript_en;
+	const [queued, setQueued] = useState(() => {
+		if (!missId) return false;
+		const entry = dueEntry(missId);
+		return Boolean(entry && !entry.deleted);
+	});
 	return (
 		<section className="listening-question-support" aria-label={showCn ? "本题答案、听力原文和译文" : "Answer, transcript and translation"}>
 			{support.answer ? (
@@ -583,6 +593,30 @@ function QuestionSupportPanels({ support }: { support: ListeningQuestionSupport 
 				</details>
 			) : null}
 			{showCn && support.glosses?.length ? <GlossPanel glosses={support.glosses} /> : null}
+			{support.transcript && missId ? (
+				<button
+					type="button"
+					className={`listening-miss${queued ? " on" : ""}`}
+					onClick={() => {
+						rememberFail({
+							id: missId,
+							kind: "listening",
+							jp: support.transcript || "",
+							cn: support.transcript_cn || "",
+							en: support.transcript_en || "",
+						});
+						setQueued(true);
+					}}
+				>
+					{queued
+						? showCn
+							? "已加入明天复习"
+							: "Added for tomorrow"
+						: showCn
+							? "没听清，加入明天复习"
+							: "Didn't catch it — review tomorrow"}
+				</button>
+			) : null}
 		</section>
 	);
 }
@@ -721,7 +755,15 @@ function ChapterDetail({ chapterNumber, sectionNumber, onBack, hideBack = false 
 						<h1>{section.title}</h1>
 					</header>
 					<ListeningPlayer cue={cue} audioRef={audioRef} onPlaybackChange={setPlaying} />
-					<LessonBlocks blocks={lesson.blocks} questionSupport={questionSupport} disc={chapter.disc} active={cue} playing={playing} onToggle={toggleCue} />
+					<LessonBlocks
+						blocks={lesson.blocks}
+						questionSupport={questionSupport}
+						disc={chapter.disc}
+						active={cue}
+						playing={playing}
+						onToggle={toggleCue}
+						missScope={`n3:${chapter.number}-${section.number}`}
+					/>
 					<ListeningSectionNav chapter={chapterNumber} section={sectionNumber} />
 				</main>
 			</div>

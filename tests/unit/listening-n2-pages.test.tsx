@@ -6,6 +6,7 @@ import { listeningN2BookChapters } from "../../app/data/listening-n2-book";
 import { getListeningN2Lesson } from "../../app/data/listening-n2-lessons";
 import { listeningQuestionSupport } from "../../app/data/listening-n3-question-support";
 import { ListeningN2Content } from "../../app/routes/listening-n2";
+import { dueEntry, listeningDueId } from "../../app/study/due-review";
 import { resetStudyStateForTests, setLang } from "../../app/study/store";
 
 beforeEach(() => {
@@ -32,6 +33,9 @@ describe("ListeningN2Content", () => {
 		expect(firstQuestion!.querySelector(".listening-text-answers__body[lang='ja']")?.textContent).toMatch(/ひっこしのトラック/);
 		await user.click(within(firstQuestion!).getByText("译文"));
 		expect(within(firstQuestion!).getByText(/搬家的卡车/)).toBeInTheDocument();
+		await user.click(within(firstQuestion!).getByRole("button", { name: "没听清，加入明天复习" }));
+		expect(dueEntry(listeningDueId("n2:1-1", "1番"))?.kind).toBe("listening");
+		expect(within(firstQuestion!).getByRole("button", { name: "已加入明天复习" })).toBeInTheDocument();
 	});
 
 	it("plays chapter 3 section 5 from CD 2", () => {

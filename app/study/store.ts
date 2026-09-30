@@ -3,6 +3,7 @@ import jitaFallback from "../data/common-jita.json";
 import kougoFallback from "../data/common-kougo.json";
 import wearingFallback from "../data/common-wearing.json";
 import { listeningBundle, listeningN2Bundle, readingBundle, readingN2Bundle } from "./catalogs";
+import { forgetDue, hydrateDue, kickDueSync, mistakeDueDraft, mistakeDueId, noteDueSignedOut, pullDueFromServer, pushDueNow, rememberFail, resetDueForTests } from "./due-review";
 
 export type ModuleKey =
 	| "grammar"
@@ -712,14 +713,17 @@ export function addMistake(type: string, text: string) {
 	const value = (text || "").trim();
 	if (!value) return;
 	if (!requestAccount("mistakes", "/study/mistakes")) return;
-	MISTAKES.unshift({
+	const entry = {
 		id: Date.now() + "-" + Math.random().toString(36).slice(2, 7),
 		type,
 		text: value,
 		ts: Date.now(),
-		level: "new",
-	});
+		level: "new" as const,
+	};
+	MISTAKES.unshift(entry);
 	saveMistakes();
+	const draft = mistakeDueDraft(entry);
+	if (draft) rememberFail(draft);
 	emit();
 }
 export function deleteMistake(id: string) {
@@ -730,6 +734,7 @@ export function deleteMistake(id: string) {
 	} else {
 		MISTAKES.push({ id, deleted: true, ts: Date.now(), type: "q", text: "", level: "new" });
 	}
+	forgetDue(mistakeDueId(id));
 	saveMistakes();
 	emit();
 }
@@ -1754,6 +1759,7 @@ export function resetStudyStateForTests() {
 	n4Loaded = false;
 	loadError = "";
 	for (const key of Object.keys(openWeeks)) delete openWeeks[key];
+	resetDueForTests();
 	navImpl = () => {};
 	afterPaintImpl = () => {};
 	if (typeof document !== "undefined") applyTheme();
@@ -1776,6 +1782,7 @@ export function hydrateFromStorage() {
 	loginSuggestDismissed = lsGet("loginSuggestDismissed", "0") === "1";
 	FAV = cleanFavs(lsJson("favs", {}));
 	MISTAKES = cleanMistakes(lsJson("mistakes", []));
+	hydrateDue();
 	noRuby = lsGet("noruby", "0") === "1";
 	hideJp = lsGet("hidejp", "0") === "1";
 	hideCn = lsGet("hidecn", "0") === "1";
@@ -1984,12 +1991,14 @@ export async function bootAccount() {
 		_mistakesReady = true;
 		_favPendingPush = false;
 		_mistakesPendingPush = false;
+		noteDueSignedOut();
 		return;
 	}
 	await pullFavsFromServer();
 	await pullMistakesFromServer();
+	await pullDueFromServer(ACCOUNT.id);
 	lsSet("accountId", ACCOUNT.id);
-	await Promise.all([pushFavsNow(), pushMistakesNow()]);
+	await Promise.all([pushFavsNow(), pushMistakesNow(), pushDueNow()]);
 }
 
 export function attachResync() {
@@ -1998,6 +2007,7 @@ export function attachResync() {
 		else void resyncFavs();
 		if (_mistakesPendingPush) scheduleMistakesPush(0);
 		else void resyncMistakes();
+		kickDueSync();
 	};
 	const onVis = () => {
 		if (document.visibilityState === "visible") resyncAll();
