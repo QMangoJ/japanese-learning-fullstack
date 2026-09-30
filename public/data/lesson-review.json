@@ -1,7 +1,255 @@
 {
 	"source": "https://docs.google.com/document/d/12NwKtAV_HFUeOheYvXGMsJl5G2xIcdb4WG_axC23xrU/edit\nhttps://docs.google.com/document/d/1oEZYQYz3Kb3q5bRqNJgdD0TNxUHVEX2PGvLoCju_Cdc/edit",
-	"fetchedAt": "2026-09-24T13:37:21.968Z",
+	"fetchedAt": "2026-09-30T14:46:00.646Z",
 	"days": [
+		{
+			"id": "2026-09-28",
+			"date": "2026-09-28",
+			"title": "2026-09-28",
+			"items": [
+				{
+					"jp": "演技",
+					"kind": "word",
+					"jp_r": "<ruby>演技<rt>えんぎ</rt></ruby>",
+					"cn": "演技",
+					"en": "acting / a performance",
+					"example": "彼の演技は自然でした。",
+					"exampleCn": "他的演技很自然。",
+					"exampleEn": "His acting was natural.",
+					"example_r": "<ruby>彼<rt>かれ</rt></ruby>の<ruby>演技<rt>えんぎ</rt></ruby>は<ruby>自然<rt>しぜん</rt></ruby>でした。"
+				},
+				{
+					"jp": "森川 康平",
+					"kind": "word",
+					"jp_r": "<ruby>森川<rt>もりかわ</rt></ruby> <ruby>康平<rt>こうへい</rt></ruby>",
+					"cn": "人名：森川康平",
+					"en": "a person's name: Morikawa Kōhei",
+					"example": "森川康平という人がいます。",
+					"exampleCn": "有一个叫森川康平的人。",
+					"exampleEn": "There is a person named Morikawa Kōhei.",
+					"example_r": "<ruby>森川<rt>もりかわ</rt></ruby><ruby>康平<rt>こうへい</rt></ruby>という<ruby>人<rt>ひと</rt></ruby>がいます。"
+				},
+				{
+					"jp": "森川 浩平",
+					"kind": "word",
+					"jp_r": "<ruby>森川<rt>もりかわ</rt></ruby> <ruby>浩平<rt>こうへい</rt></ruby>",
+					"cn": "人名：森川浩平",
+					"en": "a person's name: Morikawa Kōhei (different kanji)",
+					"example": "森川浩平と森川康平は漢字が違います。",
+					"exampleCn": "森川浩平和森川康平的汉字不一样。",
+					"exampleEn": "The two names use different kanji.",
+					"example_r": "<ruby>森川<rt>もりかわ</rt></ruby><ruby>浩平<rt>こうへい</rt></ruby>と<ruby>森川<rt>もりかわ</rt></ruby><ruby>康平<rt>こうへい</rt></ruby>は<ruby>漢字<rt>かんじ</rt></ruby>が<ruby>違います<rt>ちがいます</rt></ruby>。"
+				},
+				{
+					"jp": "家康",
+					"kind": "word",
+					"jp_r": "<ruby>家康<rt>いえやす</rt></ruby>",
+					"cn": "家康（人名）",
+					"en": "Ieyasu (a given name)",
+					"example": "徳川家康は江戸幕府を開きました。",
+					"exampleCn": "德川家康建立了江户幕府。",
+					"exampleEn": "Tokugawa Ieyasu founded the Edo shogunate.",
+					"example_r": "徳川<ruby>家康<rt>いえやす</rt></ruby>は江戸幕府を開きました。"
+				},
+				{
+					"jp": "キ トウコウ",
+					"kind": "word",
+					"cn": "笔记里写下的片假名",
+					"en": "katakana as written in the note"
+				},
+				{
+					"jp": "ゆっくりします",
+					"kind": "sentence",
+					"cn": "我慢慢来",
+					"en": "I'll take my time"
+				},
+				{
+					"jp": "変",
+					"kind": "word",
+					"jp_r": "<ruby>変<rt>へん</rt></ruby>",
+					"reading": "へん",
+					"cn": "奇怪",
+					"en": "weird",
+					"example": "今日の空はちょっと変です。",
+					"exampleCn": "今天的天色有点怪。",
+					"exampleEn": "The sky looks a bit strange today.",
+					"example_r": "<ruby>今日<rt>きょう</rt></ruby>の空はちょっと変です。"
+				},
+				{
+					"jp": "いっぱいいる",
+					"kind": "word",
+					"cn": "有很多",
+					"en": "there are lots",
+					"example": "公園に子どもがいっぱいいる。",
+					"exampleCn": "公园里有很多孩子。",
+					"exampleEn": "There are lots of children in the park.",
+					"example_r": "<ruby>公園<rt>こうえん</rt></ruby>に<ruby>子<rt>こ</rt></ruby>どもがいっぱいいる。"
+				},
+				{
+					"jp": "浩平",
+					"kind": "word",
+					"jp_r": "<ruby>浩平<rt>こうへい</rt></ruby>",
+					"cn": "人名：浩平",
+					"en": "the given name Kōhei",
+					"example": "浩平くんは来ますか。",
+					"exampleCn": "浩平会来吗？",
+					"exampleEn": "Is Kōhei coming?",
+					"example_r": "<ruby>浩平<rt>こうへい</rt></ruby>くんは<ruby>来ます<rt>きます</rt></ruby>か。"
+				},
+				{
+					"jp": "向かい",
+					"kind": "word",
+					"jp_r": "<ruby>向かい<rt>むかい</rt></ruby>",
+					"cn": "对面",
+					"en": "opposite / across the way",
+					"example": "向かいの席に座ってください。",
+					"exampleCn": "请坐在对面的座位。",
+					"exampleEn": "Please sit in the seat across from me.",
+					"example_r": "<ruby>向かい<rt>むかい</rt></ruby>の席に<ruby>座って<rt>すわって</rt></ruby>ください。"
+				},
+				{
+					"jp": "あくびが出ます",
+					"kind": "sentence",
+					"jp_r": "あくびが<ruby>出ます<rt>でます</rt></ruby>",
+					"cn": "打哈欠",
+					"en": "I yawn / a yawn comes out"
+				},
+				{
+					"jp": "飛んでくる",
+					"kind": "word",
+					"jp_r": "<ruby>飛んでくる<rt>とんでくる</rt></ruby>",
+					"cn": "飞过来",
+					"en": "to come flying",
+					"example": "ボールが飛んでくる。",
+					"exampleCn": "球飞过来了。",
+					"exampleEn": "A ball comes flying over.",
+					"example_r": "ボールが<ruby>飛んでくる<rt>とんでくる</rt></ruby>。"
+				}
+			],
+			"source": "Danielさん"
+		},
+		{
+			"id": "2026-09-26",
+			"date": "2026-09-26",
+			"title": "2026-09-26",
+			"items": [
+				{
+					"jp": "かわいがっていた犬",
+					"kind": "word",
+					"jp_r": "かわいがっていた<ruby>犬<rt>いぬ</rt></ruby>",
+					"cn": "一直很疼爱的狗",
+					"en": "the dog I was fond of",
+					"example": "かわいがっていた犬がいなくなった。",
+					"exampleCn": "一直很疼爱的狗不见了。",
+					"exampleEn": "The dog I was fond of disappeared.",
+					"example_r": "かわいがっていた<ruby>犬<rt>いぬ</rt></ruby>がいなくなった。"
+				},
+				{
+					"jp": "犬に死なれる",
+					"kind": "word",
+					"jp_r": "<ruby>犬<rt>いぬ</rt></ruby>に<ruby>死な<rt>しな</rt></ruby>れる",
+					"cn": "狗离我而死（受害被动）",
+					"en": "my dog died on me (suffering passive)",
+					"example": "犬に死なれて、とても寂しい。",
+					"exampleCn": "狗死了，我非常寂寞。",
+					"exampleEn": "My dog died, and I feel very lonely.",
+					"example_r": "<ruby>犬<rt>いぬ</rt></ruby>に<ruby>死な<rt>しな</rt></ruby>れて、とても寂しい。"
+				},
+				{
+					"jp": "落ち込むんでしまって",
+					"kind": "word",
+					"jp_r": "<ruby>落ち込む<rt>おちこむ</rt></ruby>んでしまって",
+					"cn": "结果沮丧起来了（自然说法是「落ち込んでしまって」）",
+					"en": "ended up feeling down (natural form: 落ち込んでしまって)",
+					"example": "失敗して、落ち込んでしまいました。",
+					"exampleCn": "失败之后，整个人沮丧了。",
+					"exampleEn": "I failed and ended up feeling down.",
+					"example_r": "<ruby>失敗<rt>しっぱい</rt></ruby>して、<ruby>落ち込んで<rt>おちこんで</rt></ruby>しまいました。"
+				},
+				{
+					"jp": "この辺",
+					"kind": "word",
+					"jp_r": "<ruby>この辺<rt>このへん</rt></ruby>",
+					"cn": "这一带",
+					"en": "around here",
+					"example": "この辺に駅はありますか。",
+					"exampleCn": "这一带有车站吗？",
+					"exampleEn": "Is there a station around here?",
+					"example_r": "<ruby>この辺<rt>このへん</rt></ruby>に<ruby>駅<rt>えき</rt></ruby>はありますか。"
+				},
+				{
+					"jp": "やめるんじゃなかったの",
+					"kind": "sentence",
+					"cn": "本来不该放弃的吧",
+					"en": "I shouldn't have quit, should I?"
+				},
+				{
+					"jp": "やめるっていたら",
+					"kind": "word",
+					"cn": "要是说了「不干了」的话（笔记写法，接近「やめると言っていたら」）",
+					"en": "if someone had said they would quit (as written in the note)"
+				},
+				{
+					"jp": "お目にかかれますか",
+					"kind": "word",
+					"jp_r": "お<ruby>目<rt>め</rt></ruby>にかかれますか",
+					"cn": "能见到您吗",
+					"en": "may I see you?",
+					"example": "明日、お目にかかれますか。",
+					"exampleCn": "明天能见到您吗？",
+					"exampleEn": "May I see you tomorrow?",
+					"example_r": "<ruby>明日<rt>あした</rt></ruby>、お<ruby>目<rt>め</rt></ruby>にかかれますか。"
+				},
+				{
+					"jp": "お言付けがございます",
+					"kind": "sentence",
+					"jp_r": "お<ruby>言付け<rt>いいつけ</rt></ruby>がございます",
+					"cn": "有话要转达（「お言い付け」）",
+					"en": "there is a message for you"
+				},
+				{
+					"jp": "謝る",
+					"kind": "word",
+					"jp_r": "<ruby>謝る<rt>あやまる</rt></ruby>",
+					"cn": "道歉",
+					"en": "to apologize",
+					"example": "すぐに謝った方がいいです。",
+					"exampleCn": "还是马上道歉比较好。",
+					"exampleEn": "You should apologize right away.",
+					"example_r": "すぐに<ruby>謝った<rt>あやまった</rt></ruby><ruby>方<rt>ほう</rt></ruby>がいいです。"
+				},
+				{
+					"jp": "礼を言う",
+					"kind": "word",
+					"jp_r": "<ruby>礼を言う<rt>れいをいう</rt></ruby>",
+					"cn": "道谢",
+					"en": "to say thank you",
+					"example": "助けてもらったので礼を言いました。",
+					"exampleCn": "因为得到了帮助，所以道了谢。",
+					"exampleEn": "I said thank you because they helped me.",
+					"example_r": "<ruby>助けて<rt>たすけて</rt></ruby>もらったので<ruby>礼を言いました<rt>れいをいいました</rt></ruby>。"
+				},
+				{
+					"jp": "お手元の資料",
+					"kind": "word",
+					"jp_r": "お<ruby>手元<rt>てもと</rt></ruby>の<ruby>資料<rt>しりょう</rt></ruby>",
+					"cn": "您手头的资料",
+					"en": "the documents in front of you",
+					"example": "お手元の資料をご覧ください。",
+					"exampleCn": "请看您手头的资料。",
+					"exampleEn": "Please look at the documents in front of you.",
+					"example_r": "お<ruby>手元<rt>てもと</rt></ruby>の<ruby>資料<rt>しりょう</rt></ruby>をご覧ください。"
+				},
+				{
+					"jp": "失礼いたしました",
+					"kind": "sentence",
+					"jp_r": "<ruby>失礼<rt>しつれい</rt></ruby>いたしました",
+					"cn": "很抱歉",
+					"en": "I'm sorry (polite past)"
+				}
+			],
+			"source": "Danielさん"
+		},
 		{
 			"id": "2026-09-25",
 			"date": "2026-09-25",
@@ -16,6 +264,106 @@
 					"exampleCn": "一下雨，马上就变冷了。",
 					"exampleEn": "Once it started raining, it quickly got cold.",
 					"example_r": "<ruby>雨<rt>あめ</rt></ruby>が<ruby>降る<rt>ふる</rt></ruby>と、すぐに<ruby>寒く<rt>さむく</rt></ruby>なりました。"
+				},
+				{
+					"jp": "半分",
+					"kind": "word",
+					"jp_r": "<ruby>半分<rt>はんぶん</rt></ruby>",
+					"cn": "一半",
+					"en": "half",
+					"example": "ケーキを半分に切りました。",
+					"exampleCn": "把蛋糕切成了两半。",
+					"exampleEn": "I cut the cake in half.",
+					"example_r": "ケーキを<ruby>半分<rt>はんぶん</rt></ruby>に<ruby>切りました<rt>きりました</rt></ruby>。"
+				},
+				{
+					"jp": "専攻",
+					"kind": "word",
+					"jp_r": "<ruby>専攻<rt>せんこう</rt></ruby>",
+					"cn": "专业",
+					"en": "major / field of study",
+					"example": "大学では経済を専攻しました。",
+					"exampleCn": "大学时主修经济。",
+					"exampleEn": "I majored in economics at university.",
+					"example_r": "<ruby>大学<rt>だいがく</rt></ruby>では<ruby>経済<rt>けいざい</rt></ruby>を<ruby>専攻<rt>せんこう</rt></ruby>しました。"
+				},
+				{
+					"jp": "目が覚める",
+					"kind": "word",
+					"jp_r": "<ruby>目が覚める<rt>めがさめる</rt></ruby>",
+					"cn": "醒来",
+					"en": "to wake up",
+					"example": "朝六時に目が覚めました。",
+					"exampleCn": "早上六点醒了。",
+					"exampleEn": "I woke up at six in the morning.",
+					"example_r": "<ruby>朝<rt>あさ</rt></ruby>六<ruby>時<rt>とき</rt></ruby>に<ruby>目が覚めました<rt>めがさめました</rt></ruby>。"
+				},
+				{
+					"jp": "ピスタチオ",
+					"kind": "word",
+					"cn": "开心果",
+					"en": "pistachio",
+					"example": "ピスタチオを食べました。",
+					"exampleCn": "吃了开心果。",
+					"exampleEn": "I ate pistachios.",
+					"example_r": "ピスタチオを<ruby>食べました<rt>たべました</rt></ruby>。"
+				},
+				{
+					"jp": "強化する（きょうかする）",
+					"kind": "word",
+					"jp_r": "<ruby>強化する<rt>きょうかする</rt></ruby>",
+					"reading": "きょうかする",
+					"cn": "加强、强化",
+					"en": "to strengthen",
+					"example": "体力を強化する。",
+					"exampleCn": "增强体力。",
+					"exampleEn": "Build up your physical strength.",
+					"example_r": "<ruby>体力<rt>たいりょく</rt></ruby>を<ruby>強化<rt>きょうか</rt></ruby>する。"
+				},
+				{
+					"jp": "きそをかためる",
+					"kind": "word",
+					"cn": "打好基础（基礎を固める）",
+					"en": "to solidify the foundation",
+					"example": "今は基礎を固める時期です。",
+					"exampleCn": "现在是打好基础的时候。",
+					"exampleEn": "Now is the time to solidify the foundation.",
+					"example_r": "<ruby>今<rt>いま</rt></ruby>は<ruby>基礎<rt>きそ</rt></ruby>を固める<ruby>時期<rt>じき</rt></ruby>です。"
+				},
+				{
+					"jp": "同僚（どうりょう）",
+					"kind": "word",
+					"jp_r": "<ruby>同僚<rt>どうりょう</rt></ruby>",
+					"reading": "どうりょう",
+					"cn": "同事",
+					"en": "colleague",
+					"example": "同僚とランチに行きました。",
+					"exampleCn": "和同事去吃了午饭。",
+					"exampleEn": "I went to lunch with a colleague.",
+					"example_r": "<ruby>同僚<rt>どうりょう</rt></ruby>とランチに<ruby>行きました<rt>いきました</rt></ruby>。"
+				},
+				{
+					"jp": "体育館（たいいくかん）",
+					"kind": "word",
+					"jp_r": "<ruby>体育館<rt>たいいくかん</rt></ruby>",
+					"reading": "たいいくかん",
+					"cn": "体育馆",
+					"en": "gymnasium",
+					"example": "体育館でバスケットをします。",
+					"exampleCn": "在体育馆打篮球。",
+					"exampleEn": "We play basketball in the gymnasium.",
+					"example_r": "<ruby>体育<rt>たいいく</rt></ruby>館でバスケットをします。"
+				},
+				{
+					"jp": "河",
+					"kind": "word",
+					"jp_r": "<ruby>河<rt>かわ</rt></ruby>",
+					"cn": "长江",
+					"en": "river (the note gives 长江, the Yangtze)",
+					"example": "長江は長い河です。",
+					"exampleCn": "长江是一条很长的河。",
+					"exampleEn": "The Yangtze is a long river.",
+					"example_r": "長江は長い<ruby>河<rt>かわ</rt></ruby>です。"
 				}
 			],
 			"source": "Danielさん"
@@ -1838,13 +2186,18 @@
 					"jp": "して見てべきだ",
 					"kind": "word",
 					"jp_r": "して<ruby>見て<rt>みて</rt></ruby>べきだ",
-					"reading": "にとって",
 					"cn": "应该试试看（してみるべきだ）",
 					"en": "you should try doing it",
 					"example": "一度して見てべきだと思う。",
 					"exampleCn": "我觉得应该试一次。",
 					"exampleEn": "I think you should try doing it once.",
 					"example_r": "<ruby>一度<rt>いちど</rt></ruby>して<ruby>見て<rt>みて</rt></ruby>べきだと<ruby>思う<rt>おもう</rt></ruby>。"
+				},
+				{
+					"jp": "にとって",
+					"kind": "word",
+					"cn": "对……来说",
+					"en": "for / to (someone)"
 				},
 				{
 					"jp": "にたいして",
@@ -2901,7 +3254,7 @@
 					"example_r": "<ruby>犬<rt>いぬ</rt></ruby>の<ruby>首輪<rt>くびわ</rt></ruby>に<ruby>名札<rt>なふだ</rt></ruby>を<ruby>付ける<rt>つける</rt></ruby>。"
 				},
 				{
-					"jp": "衝撃的 しょうげきてき",
+					"jp": "衝撃的",
 					"kind": "word",
 					"jp_r": "<ruby>衝撃的<rt>しょうげきてき</rt></ruby>",
 					"reading": "しょうげきてき",

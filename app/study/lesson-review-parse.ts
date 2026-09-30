@@ -283,6 +283,7 @@ function looksLikeReading(kana: string, jp: string): boolean {
 	if (kana.length > 24 || kana.includes("／") || kana.includes("/")) return false;
 	const core = jp.replace(/[（(][^）)]*[）)]?/g, "").replace(/\s+/g, "");
 	if (/^[\u30a0-\u30ffー]+$/.test(core) && /^[\u3040-\u309fー]+$/.test(kana)) {
+		if (/です|ます|でしょう/.test(kana)) return false;
 		return Math.abs(kana.length - core.length) <= 3;
 	}
 	if (!/[一-龯]/.test(jp)) return false;
@@ -291,6 +292,7 @@ function looksLikeReading(kana: string, jp: string): boolean {
 	if (!jpHasCopula && /ます/.test(kana) && kana !== "ますます") return false;
 	const shortWord = core.length <= 8 && !/[。！？!?]/.test(jp);
 	if (shortWord) {
+		if (/(?:んじゃ|じゃな|って|たら|ます|です|ので|から|けど)/.test(kana)) return false;
 		if (kana.length > 12) return false;
 		if (/^(きっと|それは|それなら|そうしよう|だって|でも|じゃあ|やっぱり|さらに|ますます)/.test(kana)) return false;
 		if (/(?:よ|ね|かな)$/.test(kana) && kana.length >= 5) return false;
@@ -369,6 +371,7 @@ function unescapeMd(raw: string): string {
 function shouldSkipLine(cleaned: string, raw: string): boolean {
 	if (!cleaned) return true;
 	if (/^https?:\/\//i.test(cleaned)) return true;
+	if (cleaned === "日期作业") return true;
 	if (/^!?\[image\d+\]/i.test(cleaned)) return true;
 	if (/^[-—–_*]{3,}$/.test(cleaned)) return true;
 	if (/^:?-{3,}:?$/.test(cleaned)) return true;
@@ -414,7 +417,9 @@ function parseItems(line: string): ReviewItem[] {
 		return item ? [item] : [];
 	}
 	const fw = line.split("　").map((part) => part.trim()).filter(Boolean);
+	const readingGloss = fw.length === 2 && /^[\u3040-\u30ffー]+\s+\S/.test(fw[1]) && !HAS_JP.test(fw[1].replace(/^[\u3040-\u30ffー]+\s+/, ""));
 	if (
+		!readingGloss &&
 		fw.length >= 2 &&
 		fw.every((part) => HAS_JP.test(part) && !isChineseFollowUp(part) && !isGlossOnly(part))
 	) {
@@ -424,7 +429,9 @@ function parseItems(line: string): ReviewItem[] {
 		});
 	}
 	const tokens = line.split(/\s+/).filter(Boolean);
+	const personName = tokens.length === 2 && tokens.every((token) => [...token].length === 2 && /^[一-龯々〆ヵヶ]+$/.test(token));
 	if (
+		!personName &&
 		tokens.length >= 2 &&
 		tokens.every(
 			(token) =>
@@ -450,7 +457,7 @@ function parseItem(line: string): ReviewItem | null {
 	if (!split.jp || !HAS_JP.test(split.jp)) return null;
 	const extracted = extractReading(split.jp);
 	const peeled = peelTrailingGloss(extracted.jp);
-	let reading = extracted.reading;
+	let reading = split.reading || extracted.reading;
 	let cn = split.cn;
 	let en = split.en;
 	if (peeled.extra) {
@@ -483,7 +490,7 @@ function peelTrailingGloss(jp: string): { jp: string; extra?: string } {
 	return { jp };
 }
 
-function splitJpGloss(line: string): { jp: string; cn?: string; en?: string } {
+function splitJpGloss(line: string): { jp: string; cn?: string; en?: string; reading?: string } {
 	const piped = splitOnce(line.replace(/｜/g, "|"), /\s*\|\s*/);
 	if (piped && HAS_JP.test(piped[0])) return { jp: piped[0], ...classifyGloss(piped[1]) };
 
@@ -493,6 +500,10 @@ function splitJpGloss(line: string): { jp: string; cn?: string; en?: string } {
 	const fw = line.split("　").map((part) => part.trim()).filter(Boolean);
 	if (fw.length >= 2) {
 		const rest = fw.slice(1).join(" ");
+		const kanaGloss = rest.match(/^([\u3040-\u30ffー]+)\s+(.+)$/);
+		if (kanaGloss && !HAS_JP.test(kanaGloss[2])) {
+			return { jp: fw[0], reading: kanaGloss[1], ...classifyGloss(kanaGloss[2]) };
+		}
 		if (isGlossOnly(rest) || isChineseFollowUp(rest) || !HAS_JP.test(rest)) {
 			return { jp: fw[0], ...classifyGloss(rest) };
 		}
@@ -500,6 +511,9 @@ function splitJpGloss(line: string): { jp: string; cn?: string; en?: string } {
 
 	const spaced = line.match(/^(.+?)\s{2,}(.+)$/);
 	if (spaced) return { jp: spaced[1].trim(), ...classifyGloss(spaced[2].trim()) };
+
+	const kanjiKanaEn = line.replace(/\u3000/g, " ").match(/^([一-龯々〆ヵヶ]+)\s+([\u3040-\u30ffー]+)\s+([A-Za-z].+)$/);
+	if (kanjiKanaEn) return { jp: kanjiKanaEn[1], reading: kanjiKanaEn[2], en: kanjiKanaEn[3].trim() };
 
 	const jaEn = line.match(/^([\u3040-\u30ff\u4e00-\u9fff\u3000-\u303fぁ-んァ-ンー、。！？]+)\s+([A-Za-z].+)$/);
 	if (jaEn) return { jp: jaEn[1].trim(), ...classifyGloss(jaEn[2].trim()) };

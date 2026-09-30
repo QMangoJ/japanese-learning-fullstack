@@ -126,6 +126,38 @@ describe("lesson review parser", () => {
 		]);
 	});
 
+	it("keeps names, same-line readings, and the next phrase apart", () => {
+		const [day] = parseLessonReview(`# 2026.09.28
+森川 康平
+森川 浩平
+家康
+キ トウコウ
+ゆっくりします
+変　へん weird
+いっぱいいる
+飛んでくる
+日期作业
+# 2026.09.26
+この辺
+やめるんじゃなかったの
+`);
+		expect(day.items.map((item) => item.jp)).toEqual([
+			"森川 康平",
+			"森川 浩平",
+			"家康",
+			"キ トウコウ",
+			"ゆっくりします",
+			"変",
+			"いっぱいいる",
+			"飛んでくる",
+		]);
+		expect(day.items.find((item) => item.jp === "変")).toMatchObject({ reading: "へん", en: "weird" });
+		expect(day.items.find((item) => item.jp === "キ トウコウ")?.reading).toBeUndefined();
+		const next = parseLessonReview("# 2026.09.26\nこの辺\nやめるんじゃなかったの\n")[0];
+		expect(next.items.map((item) => item.jp)).toEqual(["この辺", "やめるんじゃなかったの"]);
+		expect(next.items[0].reading).toBeUndefined();
+	});
+
 	it("keeps consecutive class-note lines as separate cards", () => {
 		const [day] = parseLessonReview(`# 2026.09.20 模擬試験N3
 見舞い
