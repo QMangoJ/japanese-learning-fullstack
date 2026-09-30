@@ -7,6 +7,7 @@ import { getListeningLesson } from "../data/listening-n3-lessons";
 import type { ListeningLessonBlock } from "../data/listening-n3-lesson-types";
 import { listeningQuestionSupport, type ListeningQuestionSupport } from "../data/listening-n3-question-support";
 import { listeningTranscriptWithFurigana } from "../data/listening-n3-furigana";
+import type { ListeningGloss } from "../data/listening-n2-transcript-glosses";
 import { dayNeighbors, isFav, LANG, lx, navTo, registerFavMeta, toggleFav } from "../study/store";
 import { CardsLaunch } from "../study/memory-cards";
 import "./reading-n3.css";
@@ -278,6 +279,21 @@ function LearningLine({ text, translation = false }: { text?: string; translatio
 	);
 }
 
+/** 正文日语的中文译文（N2 第1・2章），显示在原文下方，样式与 N3 正文译文一致。 */
+export type BodyTranslate = (text: string) => string | undefined;
+
+function BodyCn({ text, translate, as = "span" }: { text?: string; translate?: BodyTranslate; as?: "span" | "small" }) {
+	if (!text || !translate || LANG === "en") return null;
+	const cn = translate(text);
+	if (!cn) return null;
+	const Tag = as;
+	return (
+		<Tag className="listening-lesson__line-cn listening-lesson__body-cn" lang="zh-Hans">
+			{cn}
+		</Tag>
+	);
+}
+
 export function LessonBlocks({
 	blocks,
 	questionSupport,
@@ -285,6 +301,7 @@ export function LessonBlocks({
 	active,
 	playing,
 	onToggle,
+	translate,
 }: {
 	blocks: readonly ListeningLessonBlock[];
 	questionSupport: ReadonlyMap<number, ListeningQuestionSupport>;
@@ -292,6 +309,7 @@ export function LessonBlocks({
 	active: AudioCue;
 	playing: boolean;
 	onToggle: (cue: AudioCue) => void;
+	translate?: BodyTranslate;
 }) {
 	const showCn = LANG !== "en";
 	return (
@@ -325,14 +343,14 @@ export function LessonBlocks({
 						return (
 							<h3 className="listening-lesson__h" key={index}>
 								<Jp text={block.jp} />
-								{showCn && block.cn ? <small>{block.cn}</small> : null}
+								{showCn && block.cn ? <small>{block.cn}</small> : <BodyCn text={block.jp} translate={translate} as="small" />}
 							</h3>
 						);
 					case "p":
 						return (
 							<p className="listening-lesson__p" key={index}>
 								<LearningLine text={block.jp} translation />
-								{showCn && block.cn ? <span className="listening-lesson__cn">{block.cn}</span> : null}
+								{showCn && block.cn ? <span className="listening-lesson__cn">{block.cn}</span> : <BodyCn text={block.jp} translate={translate} />}
 								{block.en ? <span className="listening-lesson__en">{block.en}</span> : null}
 							</p>
 						);
@@ -362,7 +380,12 @@ export function LessonBlocks({
 					case "table":
 						return (
 							<div className="listening-lesson__table" key={index}>
-								{block.title ? <b>{block.title}</b> : null}
+								{block.title ? (
+									<b>
+										{block.title}
+										<BodyCn text={block.title} translate={translate} />
+									</b>
+								) : null}
 								<table>
 									<tbody>
 										{(block.rows || []).map((row, rowIndex) => (
@@ -370,6 +393,7 @@ export function LessonBlocks({
 												{row.map((cell, cellIndex) => (
 													<td key={cellIndex}>
 														<Line text={cell} />
+														<BodyCn text={cell} translate={translate} />
 													</td>
 												))}
 											</tr>
@@ -408,12 +432,19 @@ export function LessonBlocks({
 										<b>
 											<Jp text={item.title} />
 										</b>
+										<BodyCn text={item.title} translate={translate} />
 										{(item.lines || []).map((line) => (
 											<p key={line}>
 												<Line text={line} />
+												<BodyCn text={line} translate={translate} />
 											</p>
 										))}
-										{item.note ? <small>{item.note}</small> : null}
+										{item.note ? (
+											<small>
+												{item.note}
+												<BodyCn text={item.note} translate={translate} />
+											</small>
+										) : null}
 									</article>
 								))}
 							</div>
@@ -431,11 +462,13 @@ export function LessonBlocks({
 								{block.title ? (
 									<b>
 										<Jp text={block.title} />
+										<BodyCn text={block.title} translate={translate} />
 									</b>
 								) : null}
 								{(block.lines || []).map((line) => (
 									<p key={line}>
 										<LearningLine text={line} translation />
+										<BodyCn text={line} translate={translate} />
 									</p>
 								))}
 							</div>
@@ -446,6 +479,7 @@ export function LessonBlocks({
 								<b>{block.title}</b>
 								<p>
 									<Line text={block.text} />
+									<BodyCn text={block.text} translate={translate} />
 								</p>
 							</aside>
 						);
@@ -453,6 +487,7 @@ export function LessonBlocks({
 						return (
 							<p className="listening-lesson__note" key={index}>
 								<Line text={block.text} />
+								<BodyCn text={block.text} translate={translate} />
 							</p>
 						);
 					case "q":
@@ -474,9 +509,15 @@ export function LessonBlocks({
 								{block.prompt ? (
 									<p>
 										<Jp text={block.prompt} />
+										<BodyCn text={block.prompt} translate={translate} />
 									</p>
 								) : null}
-								{block.example ? <p className="listening-lesson__example-line">{block.example}</p> : null}
+								{block.example ? (
+									<p className="listening-lesson__example-line">
+										{block.example}
+										<BodyCn text={block.example} translate={translate} />
+									</p>
+								) : null}
 								{block.figure ? (
 									<figure className="listening-lesson__figure">
 										<img src={block.figure} alt={block.figureAlt || block.label} onError={(event) => { event.currentTarget.parentElement?.setAttribute("hidden", ""); }} />
@@ -487,11 +528,17 @@ export function LessonBlocks({
 										{block.options.map((option) => (
 											<li key={option}>
 												<Line text={option} />
+												<BodyCn text={option} translate={translate} />
 											</li>
 										))}
 									</ol>
 								) : null}
-								{block.note ? <p className="listening-lesson__note">{block.note}</p> : null}
+								{block.note ? (
+									<p className="listening-lesson__note">
+										{block.note}
+										<BodyCn text={block.note} translate={translate} />
+									</p>
+								) : null}
 								{support ? <QuestionSupportPanels support={support} /> : null}
 							</article>
 						);
@@ -535,7 +582,35 @@ function QuestionSupportPanels({ support }: { support: ListeningQuestionSupport 
 					<div className="listening-text-answers__body">{translation}</div>
 				</details>
 			) : null}
+			{showCn && support.glosses?.length ? <GlossPanel glosses={support.glosses} /> : null}
 		</section>
+	);
+}
+
+function GlossPanel({ glosses }: { glosses: readonly ListeningGloss[] }) {
+	return (
+		<details className="listening-gloss">
+			<summary>
+				<span>生词 · N3+（{glosses.length}）</span>
+				<b>显示</b>
+			</summary>
+			<ul className="listening-gloss__list">
+				{glosses.map((g) => (
+					<li key={`${g.w}|${g.r}`}>
+						<span className="listening-gloss__word" lang="ja">
+							{g.w}
+						</span>
+						{g.r && g.r !== g.w ? (
+							<span className="listening-gloss__reading" lang="ja">
+								{g.r}
+							</span>
+						) : null}
+						{g.lv ? <i className="listening-gloss__lv">{g.lv}</i> : null}
+						<span className="listening-gloss__cn">{g.cn}</span>
+					</li>
+				))}
+			</ul>
+		</details>
 	);
 }
 

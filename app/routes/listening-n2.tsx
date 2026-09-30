@@ -9,7 +9,9 @@ import {
 	listeningN2TrackSrc,
 	type ListeningDisc,
 } from "../data/listening-n2-book";
-import { listeningQuestionSupport } from "../data/listening-n3-question-support";
+import { listeningQuestionSupport, type ListeningQuestionSupport } from "../data/listening-n3-question-support";
+import { listeningN2BodyTranslation } from "../data/listening-n2-body-support";
+import { listeningN2Glosses } from "../data/listening-n2-transcript-glosses";
 import { dayNeighbors, isFav, LANG, lx, navTo, registerFavMeta, toggleFav } from "../study/store";
 import { CardsLaunch } from "../study/memory-cards";
 import { audioDurationOf, forwardTime, LessonBlocks, rewindTime, seekRatioFromClientX } from "./listening-n3";
@@ -191,6 +193,21 @@ function ListeningPlayer({ cue, audioRef, onPlaybackChange }: { cue: AudioCue; a
 	);
 }
 
+/** 题目答案・原文・译文，再按题目顺序附上听力原文的 N3+ 生词注释。 */
+export function listeningN2QuestionSupport(chapter: number, section: number): ReadonlyMap<number, ListeningQuestionSupport> {
+	const lesson = getListeningN2Lesson(chapter, section);
+	if (!lesson) return new Map();
+	const glosses = listeningN2Glosses(chapter, section);
+	const out = new Map<number, ListeningQuestionSupport>();
+	let questionIndex = 0;
+	for (const [blockIndex, support] of listeningQuestionSupport(lesson)) {
+		const words = support.transcript ? glosses[questionIndex] : undefined;
+		questionIndex += 1;
+		out.set(blockIndex, words?.length ? { ...support, glosses: words } : support);
+	}
+	return out;
+}
+
 function ChapterDetail({ chapterNumber, sectionNumber, hideBack = false }: { chapterNumber: number; sectionNumber: number; hideBack?: boolean }) {
 	const chapter = findListeningN2Chapter(chapterNumber);
 	const section = findListeningN2Section(chapterNumber, sectionNumber);
@@ -200,7 +217,7 @@ function ChapterDetail({ chapterNumber, sectionNumber, hideBack = false }: { cha
 	const [cue, setCue] = useState(initialCue);
 	const [playing, setPlaying] = useState(false);
 	const audioRef = useRef<HTMLAudioElement>(null);
-	const questionSupport = useMemo(() => (lesson ? listeningQuestionSupport(lesson) : new Map()), [lesson]);
+	const questionSupport = useMemo(() => listeningN2QuestionSupport(chapterNumber, sectionNumber), [chapterNumber, sectionNumber]);
 
 	useEffect(() => {
 		setCue(initialCue);
@@ -278,7 +295,15 @@ function ChapterDetail({ chapterNumber, sectionNumber, hideBack = false }: { cha
 						<h1>{section.title}</h1>
 					</header>
 					<ListeningPlayer cue={cue} audioRef={audioRef} onPlaybackChange={setPlaying} />
-					<LessonBlocks blocks={lesson.blocks} questionSupport={questionSupport} disc={disc} active={cue} playing={playing} onToggle={toggleCue} />
+					<LessonBlocks
+						blocks={lesson.blocks}
+						questionSupport={questionSupport}
+						disc={disc}
+						active={cue}
+						playing={playing}
+						onToggle={toggleCue}
+						translate={chapterNumber <= 2 ? listeningN2BodyTranslation : undefined}
+					/>
 					<ListeningSectionNav chapter={chapterNumber} section={sectionNumber} />
 				</main>
 			</div>
