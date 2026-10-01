@@ -540,13 +540,13 @@ function DailyExercisePanels({ info, item, day, w, d }: { info: any; item: any; 
 						<span className="jp">{info.completed}</span>
 					</div>
 				) : null}
-				{breakdown ? <GrammarBreakdown data={breakdown} /> : null}
 				{lx(info.translation, info.translation_en) ? (
 					<div className="an-trans">
 						<b>{lx("原句翻译：", "Sentence translation: ")}</b>
 						{lx(info.translation, info.translation_en)}
 					</div>
 				) : null}
+				{breakdown ? <GrammarBreakdown data={breakdown} /> : null}
 				{breakdown ? null : <WordGloss words={info.words} />}
 				{reason}
 				<DailyPointRefs info={info} day={day} w={w} d={d} />
