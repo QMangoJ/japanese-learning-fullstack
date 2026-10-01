@@ -445,14 +445,22 @@ function DailyPointRefs({ info, day, w, d }: { info: any; day: any; w: number; d
 type GrammarGloss = { w: string; r: string; cn: string; lv?: string };
 type GrammarBreakdownData = { patterns: { p: string; cn: string }[]; structure: string; words: GrammarGloss[] };
 
-/** N2 语法「れい」短语的中文（public/data/n2-grammar-breakdowns.json，中文界面才显示）。 */
-function reiTranslations(nt: any): { jp: string; html?: string; cn: string }[] | null {
+/** N2 语法「れい」「！」短语的中文（public/data/n2-grammar-breakdowns.json，中文界面才显示）。 */
+function notePhraseTranslations(nt: any): { jp: string; html?: string; cn: string }[] | null {
 	if (MODULE !== "n2grammar" || LANG === "en") return null;
-	const cn: string[] | undefined = G2.breakdowns?.rei?.[nt.text];
+	const table = nt.type === "れい" ? G2.breakdowns?.rei : nt.type === "！" ? G2.breakdowns?.bang : null;
+	const cn: string[] | undefined = table?.[nt.text];
 	const phrases = String(nt.text || "").split("／").map((x) => x.trim()).filter(Boolean);
 	if (!cn || cn.length !== phrases.length) return null;
 	const rich = String(nt.text_r || "").split("／").map((x) => x.trim()).filter(Boolean);
 	return phrases.map((jp, i) => ({ jp, html: rich.length === phrases.length ? rich[i] : undefined, cn: cn[i] }));
+}
+
+/** N2 语法「◆」说明的中文。整条翻译，不按「／」拆开。 */
+function noteTip(nt: any): string | null {
+	if (MODULE !== "n2grammar" || LANG === "en" || nt.type !== "◆") return null;
+	const cn = G2.breakdowns?.tips?.[nt.text];
+	return typeof cn === "string" && cn.trim() ? cn : null;
 }
 
 function grammarBreakdownFor(w: number, d: number, n: number): GrammarBreakdownData | undefined {
@@ -892,18 +900,28 @@ function GrammarPoint({ p, w, d, i }: { p: any; w: number; d: number; i: number 
 				);
 			})}
 			{(p.notes || []).map((nt: any, ni: number) => {
-				const rei = nt.type === "れい" ? reiTranslations(nt) : null;
+				const phrases = nt.type === "れい" || nt.type === "！" ? notePhraseTranslations(nt) : null;
+				const tip = noteTip(nt);
 				return (
-					<div className={`${noteClass(nt.type)}${rei ? " note-rei" : ""}`} key={ni}>
+					<div className={`${noteClass(nt.type)}${phrases || tip ? " note-rei" : ""}`} key={ni}>
 						<b className="nt">{noteLabel(nt.type)}</b>
-						{rei ? (
+						{phrases ? (
 							<span className="rei-list">
-								{rei.map((item, ri) => (
+								{phrases.map((item, ri) => (
 									<span className="rei-item" key={ri}>
 										<span className="jp">{item.html ? <RubyHtml html={item.html} /> : item.jp}</span>
 										<small className="rei-cn">{item.cn}</small>
 									</span>
 								))}
+							</span>
+						) : tip ? (
+							<span className="rei-list">
+								<span className="rei-item">
+									<span className="jp">
+										<Rr o={nt} f="text" />
+									</span>
+									<small className="rei-cn">{tip}</small>
+								</span>
 							</span>
 						) : (
 							<span className="jp">

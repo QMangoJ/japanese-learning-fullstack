@@ -33,6 +33,33 @@ describe("N2 grammar れい translations", () => {
 	});
 });
 
+describe("N2 grammar ！ examples and ◆ notes", () => {
+	it("translates every ！ phrase and every ◆ note", () => {
+		let bangPhrases = 0;
+		let tips = 0;
+		for (const week of book.weeks)
+			for (const day of week.days)
+				for (const point of day.points || [])
+					for (const note of point.notes || []) {
+						if (note.type === "！") {
+							const parts = note.text.split("／").filter((x: string) => x.trim());
+							const cn = data.bang[note.text];
+							expect(cn, `w${week.n}d${day.day} ${point.pattern}`).toHaveLength(parts.length);
+							expect(note.text_r.split("／").filter((x: string) => x.trim())).toHaveLength(parts.length);
+							for (const line of cn) expect(line).toMatch(HAN);
+							bangPhrases += parts.length;
+						}
+						if (note.type === "◆") {
+							expect(data.tips[note.text], note.text).toMatch(HAN);
+							tips += 1;
+						}
+					}
+		expect(bangPhrases).toBe(15);
+		expect(tips).toBe(82);
+		expect(data.bang["うれしさのあまり／悲しみのあまり（名詞化した形）"][0]).toContain("高兴");
+	});
+});
+
 describe("N2 grammar sentence breakdowns", () => {
 	it("gives every practice question a grammar breakdown and valid N3+ glosses", () => {
 		for (const week of book.weeks) {

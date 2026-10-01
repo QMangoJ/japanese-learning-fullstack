@@ -1,5 +1,5 @@
 /**
- * N2 语法：「れい」短语中文翻译 + 每日练习完整句的语法拆解与 N3+ 生词。
+ * N2 语法：「れい」「！」短语中文、「◆」说明中文，以及每日练习完整句的语法拆解与 N3+ 生词。
  *
  *   GEMINI_API_KEY=... node --experimental-strip-types scripts/generate-n2-grammar-breakdowns.mts [--fetch] [--weeks=2]
  *
@@ -10,7 +10,13 @@ import { existsSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 
 export type Gloss = { w: string; r: string; cn: string; lv?: string };
 export type Breakdown = { patterns: { p: string; cn: string }[]; structure: string; words: Gloss[] };
-type Store = { weeks: number[]; rei: Record<string, string[]>; questions: Record<string, Record<string, Breakdown>> };
+type Store = {
+	weeks: number[];
+	rei: Record<string, string[]>;
+	bang: Record<string, string[]>;
+	tips: Record<string, string>;
+	questions: Record<string, Record<string, Breakdown>>;
+};
 
 const root = new URL("../", import.meta.url);
 const SOURCE = new URL("scripts/n2-grammar-breakdowns.json", root);
@@ -34,11 +40,16 @@ export function weekDays(week: number): any[] {
 }
 
 export function reiNotes(weeks: number[]): { key: string; text: string; pattern: string }[] {
+	return notesOf(weeks, "れい");
+}
+
+/** 「れい」例子、「！」接续/误用例、「◆」用法说明。 */
+export function notesOf(weeks: number[], type: string): { key: string; text: string; pattern: string }[] {
 	const out: { key: string; text: string; pattern: string }[] = [];
 	for (const week of weeks)
 		for (const day of weekDays(week))
 			(day.points || []).forEach((p: any) => {
-				for (const nt of p.notes || []) if (nt.type === "れい") out.push({ key: `w${week}d${day.day}`, text: nt.text, pattern: p.pattern });
+				for (const nt of p.notes || []) if (nt.type === type) out.push({ key: `w${week}d${day.day}`, text: nt.text, pattern: p.pattern });
 			});
 	return out;
 }
@@ -91,8 +102,11 @@ async function gemini(prompt: string, payload: unknown, schema: unknown): Promis
 }
 
 function load(): Store {
-	if (!existsSync(SOURCE)) return { weeks: [], rei: {}, questions: {} };
-	return JSON.parse(readFileSync(SOURCE, "utf8")) as Store;
+	if (!existsSync(SOURCE)) return { weeks: [], rei: {}, bang: {}, tips: {}, questions: {} };
+	const store = JSON.parse(readFileSync(SOURCE, "utf8")) as Store;
+	store.bang ??= {};
+	store.tips ??= {};
+	return store;
 }
 function save(store: Store) {
 	writeFileSync(SOURCE, `${JSON.stringify(store, null, "\t")}\n`);
@@ -141,6 +155,18 @@ function emit(store: Store, weeks: number[]) {
 		if (!cn || cn.length !== reiPhrases(note.text).length || cn.some((s) => !s.trim())) problems.push(`rei ${note.key}: ${note.text}`);
 		else rei[note.text] = cn;
 	}
+	const bang: Record<string, string[]> = {};
+	for (const note of notesOf(weeks, "！")) {
+		const cn = store.bang[note.text];
+		if (!cn || cn.length !== reiPhrases(note.text).length || cn.some((s) => !s.trim())) problems.push(`！ ${note.key}: ${note.text}`);
+		else bang[note.text] = cn;
+	}
+	const tips: Record<string, string> = {};
+	for (const note of notesOf(weeks, "◆")) {
+		const cn = store.tips[note.text];
+		if (!cn?.trim()) problems.push(`◆ ${note.key}: ${note.text}`);
+		else tips[note.text] = cn.trim();
+	}
 	const qs: Record<string, Record<string, Breakdown>> = {};
 	for (const q of questions(weeks)) {
 		const b = store.questions[q.key]?.[q.n];
@@ -148,9 +174,11 @@ function emit(store: Store, weeks: number[]) {
 		else (qs[q.key] ??= {})[q.n] = b;
 	}
 	if (problems.length) throw new Error(`missing or invalid:\n${problems.join("\n")}`);
-	writeFileSync(OUTPUT, `${JSON.stringify({ weeks, rei, questions: qs })}\n`);
+	writeFileSync(OUTPUT, `${JSON.stringify({ weeks, rei, bang, tips, questions: qs })}\n`);
 	const words = Object.values(qs).flatMap((d) => Object.values(d)).reduce((n, b) => n + b.words.length, 0);
-	console.log(`weeks ${weeks.join(",")}: ${Object.keys(rei).length} れい notes (${Object.values(rei).flat().length} phrases), ${Object.values(qs).reduce((n, d) => n + Object.keys(d).length, 0)} questions, ${words} glossed words`);
+	console.log(
+		`weeks ${weeks.join(",")}: ${Object.keys(rei).length} れい notes (${Object.values(rei).flat().length} phrases), ${Object.keys(bang).length} ！ notes (${Object.values(bang).flat().length} phrases), ${Object.keys(tips).length} ◆ notes, ${Object.values(qs).reduce((n, d) => n + Object.keys(d).length, 0)} questions, ${words} glossed words`,
+	);
 }
 
 if (import.meta.url === new URL(process.argv[1] ?? "", "file://").href) {
