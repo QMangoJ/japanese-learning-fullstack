@@ -442,6 +442,58 @@ function DailyPointRefs({ info, day, w, d }: { info: any; day: any; w: number; d
 	);
 }
 
+type GrammarGloss = { w: string; r: string; cn: string; lv?: string };
+type GrammarBreakdownData = { patterns: { p: string; cn: string }[]; structure: string; words: GrammarGloss[] };
+
+/** N2 语法「れい」短语的中文（public/data/n2-grammar-breakdowns.json，中文界面才显示）。 */
+function reiTranslations(nt: any): { jp: string; html?: string; cn: string }[] | null {
+	if (MODULE !== "n2grammar" || LANG === "en") return null;
+	const cn: string[] | undefined = G2.breakdowns?.rei?.[nt.text];
+	const phrases = String(nt.text || "").split("／").map((x) => x.trim()).filter(Boolean);
+	if (!cn || cn.length !== phrases.length) return null;
+	const rich = String(nt.text_r || "").split("／").map((x) => x.trim()).filter(Boolean);
+	return phrases.map((jp, i) => ({ jp, html: rich.length === phrases.length ? rich[i] : undefined, cn: cn[i] }));
+}
+
+function grammarBreakdownFor(w: number, d: number, n: number): GrammarBreakdownData | undefined {
+	if (MODULE !== "n2grammar" || LANG === "en") return undefined;
+	return G2.breakdowns?.questions?.[`w${w}d${d}`]?.[n];
+}
+
+/** 完整句下方：语法拆解（本题语法点在前）＋ 句子结构 ＋ N3+ 生词。 */
+function GrammarBreakdown({ data }: { data: GrammarBreakdownData }) {
+	return (
+		<div className="an-breakdown">
+			<div className="an-breakdown__h">语法拆解</div>
+			<ul className="an-breakdown__patterns">
+				{data.patterns.map((item, index) => (
+					<li key={`${item.p}-${index}`} className={index === 0 ? "is-tested" : undefined}>
+						<span className="p jp">{item.p}</span>
+						{index === 0 ? <i>本题</i> : null}
+						<span className="m">{item.cn}</span>
+					</li>
+				))}
+			</ul>
+			<p className="an-breakdown__structure">{data.structure}</p>
+			{data.words.length ? (
+				<details className="an-gloss" open>
+					<summary>单词 · N3+（{data.words.length}）</summary>
+					<ul>
+						{data.words.map((g) => (
+							<li key={`${g.w}|${g.r}`}>
+								<span className="w jp">{g.w}</span>
+								{g.r && g.r !== g.w ? <span className="r jp">{g.r}</span> : null}
+								{g.lv ? <i className="lv">{g.lv}</i> : null}
+								<span className="m">{g.cn}</span>
+							</li>
+						))}
+					</ul>
+				</details>
+			) : null}
+		</div>
+	);
+}
+
 function WordGloss({ words }: { words?: { jp?: string; kana?: string; cn?: string; en?: string }[] }) {
 	const list = (words || []).filter((word) => word.jp && (LANG === "en" ? word.en || word.cn : word.cn || word.en));
 	if (!list.length) return null;
@@ -464,6 +516,7 @@ function DailyExercisePanels({ info, item, day, w, d }: { info: any; item: any; 
 	if (!info) return null;
 	const reason = info.type === "order" ? <DailyOrderReason info={info} item={item} /> : <DailyChoiceReason info={info} day={day} />;
 	const base = `daily-${w}-${d}-${item.n}`;
+	const breakdown = grammarBreakdownFor(w, d, item.n);
 	return (
 		<div className="daily-explain">
 			<div className="daily-toggle-controls">
@@ -487,13 +540,14 @@ function DailyExercisePanels({ info, item, day, w, d }: { info: any; item: any; 
 						<span className="jp">{info.completed}</span>
 					</div>
 				) : null}
+				{breakdown ? <GrammarBreakdown data={breakdown} /> : null}
 				{lx(info.translation, info.translation_en) ? (
 					<div className="an-trans">
 						<b>{lx("原句翻译：", "Sentence translation: ")}</b>
 						{lx(info.translation, info.translation_en)}
 					</div>
 				) : null}
-				<WordGloss words={info.words} />
+				{breakdown ? null : <WordGloss words={info.words} />}
 				{reason}
 				<DailyPointRefs info={info} day={day} w={w} d={d} />
 			</FoldBody>
@@ -837,14 +891,28 @@ function GrammarPoint({ p, w, d, i }: { p: any; w: number; d: number; i: number 
 					</div>
 				);
 			})}
-			{(p.notes || []).map((nt: any, ni: number) => (
-				<div className={noteClass(nt.type)} key={ni}>
-					<b className="nt">{noteLabel(nt.type)}</b>
-					<span className="jp">
-						<Rr o={nt} f="text" />
-					</span>
-				</div>
-			))}
+			{(p.notes || []).map((nt: any, ni: number) => {
+				const rei = nt.type === "れい" ? reiTranslations(nt) : null;
+				return (
+					<div className={`${noteClass(nt.type)}${rei ? " note-rei" : ""}`} key={ni}>
+						<b className="nt">{noteLabel(nt.type)}</b>
+						{rei ? (
+							<span className="rei-list">
+								{rei.map((item, ri) => (
+									<span className="rei-item" key={ri}>
+										<span className="jp">{item.html ? <RubyHtml html={item.html} /> : item.jp}</span>
+										<small className="rei-cn">{item.cn}</small>
+									</span>
+								))}
+							</span>
+						) : (
+							<span className="jp">
+								<Rr o={nt} f="text" />
+							</span>
+						)}
+					</div>
+				);
+			})}
 		</div>
 	);
 }
