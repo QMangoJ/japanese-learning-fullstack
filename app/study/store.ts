@@ -1824,14 +1824,18 @@ async function bootN2() {
 		g2.daily_explanations = n2DailyExplanations || {};
 		v2.daily_translations = n2VocabKanjiTranslations.vocab || {};
 		k2.daily_translations = n2VocabKanjiTranslations.kanji || {};
-		const [n2VocabExam, n2KanjiExam] = await Promise.all([
+		const [n2VocabExam, n2KanjiExam, n2Breakdowns] = await Promise.all([
 			fetch("/data/n2-vocab-exam-explanations.json")
 				.then((r) => (r.ok ? r.json() : {}))
 				.catch(() => ({})),
 			fetch("/data/n2-kanji-exam-explanations.json")
 				.then((r) => (r.ok ? r.json() : {}))
 				.catch(() => ({})),
+			fetch("/data/n2-grammar-breakdowns.json")
+				.then((r) => (r.ok ? r.json() : {}))
+				.catch(() => ({})),
 		]);
+		g2.breakdowns = n2Breakdowns || {};
 		attachWeekendKaisetsu(v2, n2VocabExam);
 		attachWeekendKaisetsu(k2, n2KanjiExam);
 		g2.contrast = contrastModule.buildN2GrammarContrast(g2);
