@@ -92,7 +92,11 @@ export function parseLessonReview(
 		if (last && attachFollowUp(last, cleaned)) continue;
 
 		if (isGlossOnly(cleaned)) {
-			if (last && !last.cn && !last.en) Object.assign(last, classifyGloss(cleaned));
+			if (isStandaloneTitle(cleaned)) {
+				pushItem(items, compactItem({ jp: cleaned, kind: "word" }));
+			} else if (last && !last.cn && !last.en) {
+				Object.assign(last, classifyGloss(cleaned));
+			}
 			continue;
 		}
 
@@ -277,11 +281,13 @@ function attachFollowUp(last: ReviewItem, cleaned: string): boolean {
 }
 
 function looksLikeReading(kana: string, jp: string): boolean {
+	const core = jp.replace(/[（(][^）)]*[）)]?/g, "").replace(/\s+/g, "");
+	const known = (kanjiReadings as Record<string, string>)[core];
+	if (known && toHiragana(known.replace(/[\s・]/g, "")) !== toHiragana(kana)) return false;
 	const hira = (kana.match(/[\u3041-\u3096]/g) || []).length;
 	const kata = (kana.match(/[\u30a1-\u30f6]/g) || []).length;
 	if (kata > hira) return false;
 	if (kana.length > 24 || kana.includes("／") || kana.includes("/")) return false;
-	const core = jp.replace(/[（(][^）)]*[）)]?/g, "").replace(/\s+/g, "");
 	if (/^[\u30a0-\u30ffー]+$/.test(core) && /^[\u3040-\u309fー]+$/.test(kana)) {
 		if (/です|ます|でしょう/.test(kana)) return false;
 		return Math.abs(kana.length - core.length) <= 3;
@@ -303,7 +309,7 @@ function looksLikeReading(kana: string, jp: string): boolean {
 }
 
 function isChineseFollowUp(text: string, last?: ReviewItem): boolean {
-	const stripped = text.replace(/[（(][^）)]*[）)]?/g, "");
+	const stripped = text.replace(/[（(][^）)]*[）)]/g, "");
 	if (/[\u3040-\u30ff]/.test(stripped) || !/[\u4e00-\u9fff]/.test(stripped)) return false;
 	// Japanese -teki adjectives (本格的 / 基本的) are vocab, not Chinese glosses.
 	if (/^[\u4e00-\u9fff]{1,4}的$/.test(stripped)) return false;
@@ -391,6 +397,11 @@ function isMostlyLatinPrompt(text: string): boolean {
 
 function isGlossOnly(text: string): boolean {
 	return Boolean(text) && !HAS_JP.test(text);
+}
+
+/** A Latin title such as "On your mark", not a short English gloss like "I wonder". */
+function isStandaloneTitle(text: string): boolean {
+	return /^[A-Z][a-z]+(?:\s+[a-z]+)+$/.test(text);
 }
 
 function parseTableRow(line: string): ReviewItem | null {

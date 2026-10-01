@@ -22,7 +22,7 @@ describe("/api/review", () => {
 		const kv = memoryKv({
 			[LESSON_REVIEW_KV_KEY]: JSON.stringify({
 				source: "kv",
-				fetchedAt: "2026-10-01T00:00:00.000Z",
+				fetchedAt: "2026-12-01T00:00:00.000Z",
 				days: [{ id: "2026-09-14", date: "2026-09-14", title: "2026-09-14", items: [{ jp: "新しい", kind: "word" }] }],
 			}),
 		});

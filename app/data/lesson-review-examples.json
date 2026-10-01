@@ -2843,6 +2843,8 @@
 		"exampleEn": "A new model of smartphone came out."
 	},
 	"おしゃれ": {
+		"cn": "时髦",
+		"en": "stylish",
 		"example": "彼女はいつもおしゃれです。",
 		"exampleCn": "她总是很时髦。",
 		"exampleEn": "She is always stylish."
@@ -4168,5 +4170,223 @@
 		"example": "基本的な挨拶を覚えましょう。",
 		"exampleCn": "来记住基本的问候吧。",
 		"exampleEn": "Let's learn the basic greetings."
+	},
+	"絶対": {
+		"cn": "绝对",
+		"en": "absolutely",
+		"example": "明日は絶対に行きます。",
+		"exampleCn": "明天一定去。",
+		"exampleEn": "I will definitely go tomorrow."
+	},
+	"福島県": {
+		"cn": "福岛县",
+		"en": "Fukushima Prefecture",
+		"example": "福島県に友達がいます。",
+		"exampleCn": "在福岛县有朋友。",
+		"exampleEn": "I have a friend in Fukushima Prefecture."
+	},
+	"りずむ": {
+		"cn": "节奏",
+		"en": "rhythm",
+		"example": "この曲はりずむがいいです。",
+		"exampleCn": "这首曲子节奏很好。",
+		"exampleEn": "This song has a good rhythm."
+	},
+	"歌詞": {
+		"cn": "歌词",
+		"en": "lyrics",
+		"example": "この歌の歌詞を覚えています。",
+		"exampleCn": "我记得这首歌的歌词。",
+		"exampleEn": "I remember the lyrics of this song."
+	},
+	"メロディー": {
+		"cn": "旋律",
+		"en": "melody",
+		"example": "このメロディーは覚えやすいです。",
+		"exampleCn": "这段旋律很好记。",
+		"exampleEn": "This melody is easy to remember."
+	},
+	"ちょっとロックな歌手（かしゅ）": {
+		"cn": "有点摇滚的歌手",
+		"en": "a singer who is a bit rock",
+		"example": "ちょっとロックな歌手が好きです。",
+		"exampleCn": "我喜欢有点摇滚风格的歌手。",
+		"exampleEn": "I like singers who are a bit rock."
+	},
+	"好きな歌手": {
+		"cn": "喜欢的歌手",
+		"en": "a singer I like",
+		"example": "好きな歌手の歌を聞きました。",
+		"exampleCn": "听了喜欢的歌手的歌。",
+		"exampleEn": "I listened to a song by a singer I like."
+	},
+	"SF映画": {
+		"cn": "科幻电影",
+		"en": "science-fiction movie",
+		"example": "週末にSF映画を見ました。",
+		"exampleCn": "周末看了科幻电影。",
+		"exampleEn": "I watched a science-fiction movie on the weekend."
+	},
+	"未来（みらい": {
+		"cn": "未来",
+		"en": "the future",
+		"example": "未来の仕事について話しました。",
+		"exampleCn": "谈了未来的工作。",
+		"exampleEn": "We talked about work in the future."
+	},
+	"宇宙": {
+		"cn": "宇宙",
+		"en": "outer space",
+		"example": "宇宙に行きたいです。",
+		"exampleCn": "想去宇宙。",
+		"exampleEn": "I want to go to outer space."
+	},
+	"発売（はつばい）": {
+		"cn": "发售",
+		"en": "go on sale",
+		"example": "新しいアルバムが来月発売されます。",
+		"exampleCn": "新专辑下个月发售。",
+		"exampleEn": "The new album goes on sale next month."
+	},
+	"On your mark": {
+		"cn": "歌名《On Your Mark》",
+		"en": "the song \"On Your Mark\"",
+		"example": "「On your mark」を聞きました。",
+		"exampleCn": "听了《On Your Mark》。",
+		"exampleEn": "I listened to \"On Your Mark\"."
+	},
+	"聞いたことがあるかわかりません": {
+		"cn": "不知道有没有听过",
+		"en": "I don't know if I've heard it before"
+	},
+	"聞いたかわかりません": {
+		"cn": "不知道有没有听到",
+		"en": "I don't know if I heard it",
+		"example": "その話を聞いたかわかりません。",
+		"exampleCn": "我不知道有没有听到那件事。",
+		"exampleEn": "I don't know whether I heard about that."
+	},
+	"坂本龍一（さかもと りゅういち）": {
+		"cn": "坂本龙一",
+		"en": "Ryuichi Sakamoto",
+		"example": "坂本龍一の曲を聞きました。",
+		"exampleCn": "听了坂本龙一的曲子。",
+		"exampleEn": "I listened to a piece by Ryuichi Sakamoto."
+	},
+	"戦場（せんじょう）のメリークリスマス": {
+		"cn": "《圣诞快乐，劳伦斯先生》",
+		"en": "Merry Christmas, Mr. Lawrence",
+		"example": "戦場のメリークリスマスを見ました。",
+		"exampleCn": "看了《圣诞快乐，劳伦斯先生》。",
+		"exampleEn": "I watched Merry Christmas, Mr. Lawrence."
+	},
+	"えび": {
+		"cn": "虾",
+		"en": "shrimp",
+		"example": "えびの料理を食べました。",
+		"exampleCn": "吃了虾做的菜。",
+		"exampleEn": "I ate a shrimp dish."
+	},
+	"胡椒": {
+		"cn": "胡椒",
+		"en": "pepper",
+		"example": "スープに胡椒を入れました。",
+		"exampleCn": "往汤里放了胡椒。",
+		"exampleEn": "I put pepper in the soup."
+	},
+	"調味料（ちょうみりょう）": {
+		"cn": "调味料",
+		"en": "seasoning",
+		"example": "調味料は塩と胡椒です。",
+		"exampleCn": "调味料是盐和胡椒。",
+		"exampleEn": "The seasonings are salt and pepper."
+	},
+	"時間がだいぶ節約できる": {
+		"cn": "能省下不少时间",
+		"en": "can save quite a bit of time",
+		"example": "この方法なら時間がだいぶ節約できる。",
+		"exampleCn": "用这个方法能省下不少时间。",
+		"exampleEn": "This way saves quite a bit of time."
+	},
+	"部署": {
+		"cn": "部门",
+		"en": "department",
+		"example": "新しい部署に移りました。",
+		"exampleCn": "调到了新的部门。",
+		"exampleEn": "I moved to a new department."
+	},
+	"改善": {
+		"cn": "改善",
+		"en": "improvement",
+		"example": "仕事のやり方を改善しました。",
+		"exampleCn": "改进了工作方法。",
+		"exampleEn": "I improved the way I work."
+	},
+	"車庫": {
+		"cn": "车库",
+		"en": "garage",
+		"example": "車を車庫に入れました。",
+		"exampleCn": "把车开进了车库。",
+		"exampleEn": "I put the car in the garage."
+	},
+	"偽物（にせもの）の髪（かみ）": {
+		"cn": "假发",
+		"en": "a wig",
+		"example": "偽物の髪をつけています。",
+		"exampleCn": "戴着假发。",
+		"exampleEn": "They're wearing a wig."
+	},
+	"はっぴ": {
+		"cn": "法被（祭典短褂）",
+		"en": "happi coat",
+		"example": "祭ではっぴを着ました。",
+		"exampleCn": "祭典上穿了法被。",
+		"exampleEn": "I wore a happi coat at the festival."
+	},
+	"法被": {
+		"cn": "法被",
+		"en": "happi coat",
+		"example": "法被を着て祭に行きました。",
+		"exampleCn": "穿着法被去了祭典。",
+		"exampleEn": "I went to the festival wearing a happi coat."
+	},
+	"動き": {
+		"cn": "动作",
+		"en": "movement",
+		"example": "彼の動きはゆっくりです。",
+		"exampleCn": "他的动作很慢。",
+		"exampleEn": "His movements are slow."
+	},
+	"のんびりな人": {
+		"cn": "慢悠悠的人",
+		"en": "a laid-back person",
+		"example": "彼はのんびりな人です。",
+		"exampleCn": "他是个慢悠悠的人。",
+		"exampleEn": "He is a laid-back person."
+	},
+	"よく仲良くしています": {
+		"cn": "关系很好",
+		"en": "we get along well"
+	},
+	"二泊三日（にはくみっか）": {
+		"cn": "两晚三天",
+		"en": "two nights and three days",
+		"example": "二泊三日の旅行に行きます。",
+		"exampleCn": "去两晚三天的旅行。",
+		"exampleEn": "I'm going on a two-night, three-day trip."
+	},
+	"計画的（けいかくてき）": {
+		"cn": "有计划的",
+		"en": "systematic / well planned",
+		"example": "計画的に勉強しています。",
+		"exampleCn": "在有计划地学习。",
+		"exampleEn": "I'm studying in a planned way."
+	},
+	"へんなひと": {
+		"cn": "奇怪的人",
+		"en": "a strange person",
+		"example": "あの人はへんなひとです。",
+		"exampleCn": "那个人很奇怪。",
+		"exampleEn": "That person is strange."
 	}
 }

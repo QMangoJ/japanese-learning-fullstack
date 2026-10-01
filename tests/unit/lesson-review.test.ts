@@ -230,6 +230,67 @@ describe("lesson review parser", () => {
 		);
 	});
 
+	it("keeps the next vocabulary line when it is not that word's reading", () => {
+		const [day] = parseLessonReview(`# 2026.10.01
+福島県
+りずむ
+車庫
+おしゃれ
+SF映画
+未来（みらい
+発売（はつばい）
+On your mark
+`);
+		expect(day.items.map((item) => item.jp)).toEqual([
+			"福島県",
+			"りずむ",
+			"車庫",
+			"おしゃれ",
+			"SF映画",
+			"未来（みらい",
+			"発売（はつばい）",
+			"On your mark",
+		]);
+		expect(day.items.find((item) => item.jp === "福島県")?.reading).toBeUndefined();
+		expect(day.items.find((item) => item.jp === "車庫")?.reading).toBeUndefined();
+		expect(day.items.find((item) => item.jp === "SF映画")?.cn).toBeUndefined();
+		expect(day.items.find((item) => item.jp === "発売（はつばい）")?.en).toBeUndefined();
+	});
+
+	it("fills Chinese and English on the 2026-10-01 Preply note", () => {
+		const [day] = enrichReviewDays(
+			parseLessonReview(
+				`# 2026.10.01
+絶対
+福島県
+りずむ
+車庫
+おしゃれ
+SF映画
+未来（みらい
+発売（はつばい）
+On your mark
+聞いたことがあるかわかりません
+よく仲良くしています
+`,
+				{ sourceName: "Preply すみれ先生", sourceSlug: "preply" },
+			),
+		);
+		expect(day.id).toBe("2026-10-01:preply");
+		const byJp = Object.fromEntries(day.items.map((item) => [item.jp, item]));
+		expect(byJp["福島県"]?.jp_r).toContain("ふくしまけん");
+		expect(byJp["福島県"]?.cn).toBe("福岛县");
+		expect(byJp["りずむ"]?.cn).toBe("节奏");
+		expect(byJp["おしゃれ"]?.en).toBe("stylish");
+		expect(byJp["SF映画"]?.cn).toBe("科幻电影");
+		expect(byJp["未来（みらい"]?.cn).toBe("未来");
+		expect(byJp["On your mark"]?.jp).toBe("On your mark");
+		expect(byJp["発売（はつばい）"]?.en).toBe("go on sale");
+		expect(byJp["聞いたことがあるかわかりません"]?.kind).toBe("sentence");
+		expect(byJp["よく仲良くしています"]?.jp_r).toContain("なかよく");
+		expect(day.items.every((item) => item.cn && item.en)).toBe(true);
+	});
+
 	it("keeps the same calendar date from two documents as separate decks", () => {
 		const payload = buildLessonReviewPayloadFromDocs(
 			[
