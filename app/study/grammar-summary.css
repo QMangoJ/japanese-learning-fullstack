@@ -39,3 +39,20 @@
 	color: var(--ink);
 	overflow-wrap: anywhere;
 }
+/* N2：同级相似（N2） */
+.grammar-summary__same-level{margin-top:18px;padding-top:12px;border-top:2px solid var(--line);min-width:0}
+.grammar-summary__same-level h3{margin:0}
+.grammar-summary__same-intro{margin:4px 0 0;color:var(--sub);font-size:.72rem;line-height:1.6}
+.same-level__group{margin-top:12px}
+.same-level__group h4{margin:0 0 4px}
+.same-level__self,.same-level__other{border:0;background:none;padding:0;font:inherit;font-weight:700;color:var(--blue);cursor:pointer;text-align:left;text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px}
+.same-level__self{font-size:.95rem;color:var(--ink)}
+.same-level__pair{margin:6px 0 0;padding:8px 10px;border:1px solid var(--line);border-radius:10px;min-width:0}
+.same-level__pair header{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 8px}
+.same-level__vs{font-size:.7rem;font-weight:700;color:var(--sub)}
+.same-level__where{font-size:.68rem;font-weight:700;padding:0 7px;border-radius:999px;background:var(--blue-soft);color:var(--blue);line-height:1.8}
+.same-level__diff{margin:6px 0 0;font-size:.82rem;line-height:1.7}
+.same-level__ex{list-style:none;margin:6px 0 0;padding:0 0 0 10px;border-left:2px solid var(--line)}
+.same-level__ex li{display:flex;flex-direction:column;padding:3px 0;font-size:.82rem;line-height:1.7}
+.same-level__ex b{font-size:.7rem;color:var(--green)}
+.same-level__ex small{color:var(--sub);font-size:.75rem}
