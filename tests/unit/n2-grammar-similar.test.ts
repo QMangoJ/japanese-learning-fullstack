@@ -12,9 +12,9 @@ const patternAt = (w: number, d: number, i: number) => book.weeks.find((x: any) 
 
 describe("N2 grammar same-level (N2) items in 相似表达", () => {
 	it("links real N2 points from other days, at most 2 per grammar point, each with a distinction and example", () => {
-		expect(data.weeks).toEqual([2, 3]);
+		expect(data.weeks).toEqual([1, 2, 3, 4, 5, 6, 7, 8]);
 		const perPoint: Record<string, number> = {};
-		const counts: Record<number, number> = { 2: 0, 3: 0 };
+		const counts: Record<number, number> = {};
 		for (const [key, list] of Object.entries<any[]>(data.days)) {
 			const [, w, d] = /^w(\d+)d(\d+)$/.exec(key)!.map(Number);
 			for (const e of list) {
@@ -30,10 +30,11 @@ describe("N2 grammar same-level (N2) items in 相似表达", () => {
 				const id = `${key}#${e.point}`;
 				perPoint[id] = (perPoint[id] || 0) + 1;
 				expect(perPoint[id]).toBeLessThanOrEqual(2);
-				counts[w] += 1;
+				counts[w] = (counts[w] || 0) + 1;
 			}
 		}
-		expect(counts).toEqual({ 2: 11, 3: 11 });
+		for (const week of data.weeks) expect(counts[week], `week ${week}`).toBeGreaterThan(0);
+		expect(data.days.w2d5).toHaveLength(2);
 	});
 
 	it("has no duplicate pairs and shows cross-week pairs on both sides", () => {

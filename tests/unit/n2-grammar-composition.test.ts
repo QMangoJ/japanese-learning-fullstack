@@ -9,8 +9,8 @@ const HAN = /[\u4e00-\u9fff]/u;
 const KANA = /[\u3040-\u30ff]/u;
 
 describe("N2 grammar 造句练习", () => {
-	it("covers every grammar point of weeks 2 and 3 with 1–2 prompts that use the target grammar", () => {
-		expect(data.weeks).toEqual([2, 3]);
+	it("covers every grammar point of weeks 1–8 with 1–2 prompts that use the target grammar", () => {
+		expect(data.weeks).toEqual([1, 2, 3, 4, 5, 6, 7, 8]);
 		const counts: Record<number, { points: number; prompts: number }> = {};
 		for (const week of book.weeks.filter((w: any) => data.weeks.includes(w.n))) {
 			const c = (counts[week.n] = { points: 0, prompts: 0 });
@@ -34,6 +34,15 @@ describe("N2 grammar 造句练习", () => {
 					c.prompts += list.length;
 				});
 		}
-		expect(counts).toEqual({ 2: { points: 24, prompts: 48 }, 3: { points: 23, prompts: 46 } });
+		expect(counts).toEqual({
+			1: { points: 24, prompts: 48 },
+			2: { points: 24, prompts: 48 },
+			3: { points: 23, prompts: 46 },
+			4: { points: 24, prompts: 48 },
+			5: { points: 24, prompts: 48 },
+			6: { points: 24, prompts: 48 },
+			7: { points: 24, prompts: 48 },
+			8: { points: 24, prompts: 48 },
+		});
 	});
 });
