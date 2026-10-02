@@ -18,7 +18,11 @@ test.describe("N2 daily grammar summaries", () => {
 		await expect(summary).toHaveAttribute("data-level", "N2");
 		await expect(summary.locator(".grammar-summary__rows article")).toHaveCount(4);
 		await expect(summary.locator("details, a[href], .grammar-summary__sources")).toHaveCount(0);
-		await expect(summary.locator(".grammar-summary__meaning")).toHaveCount(6);
+		// 2 cross-level rows + 2 same-level N2 rows mixed into the same 相似表达 list
+		await expect(summary.locator(".grammar-summary__meaning")).toHaveCount(8);
+		const sameLevel = summary.getByTestId("grammar-related").locator('article[data-level="N2"]');
+		await expect(sameLevel).toHaveCount(2);
+		await expect(sameLevel.first()).toContainText("第6週 第2天");
 		await summary.evaluate(el => el.scrollIntoView({ block: "start" }));
 		await page.screenshot({ path: info.outputPath("n2-summary-zh.png") });
 		expect(await page.evaluate(() => document.documentElement.scrollWidth - innerWidth)).toBeLessThanOrEqual(1);
@@ -29,6 +33,7 @@ test.describe("N2 daily grammar summaries", () => {
 		await expect(summary).toContainText("If that were true, it would be like a dream.");
 		await expect(summary).not.toContainText("Even if I go, I can only stay an hour.");
 		await expect(summary).not.toContainText("意思：");
+		await expect(summary.locator('article[data-level="N2"]')).toHaveCount(0);
 		await summary.evaluate(el => el.scrollIntoView({ block: "start" }));
 		await page.screenshot({ path: info.outputPath("n2-summary-en.png") });
 	});
