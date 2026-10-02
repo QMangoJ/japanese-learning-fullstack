@@ -39,3 +39,6 @@
 	color: var(--ink);
 	overflow-wrap: anywhere;
 }
+/* N2：混在「相似表达」里的同级（N2）条目 */
+.grammar-summary__badges .grammar-summary__where{border:0;background:var(--blue-soft);color:var(--blue);font:inherit;font-size:inherit;font-weight:700;border-radius:999px;padding:0 8px;cursor:pointer;line-height:inherit}
+.grammar-summary__against{font-weight:700;color:var(--sub)}

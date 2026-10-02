@@ -57,6 +57,7 @@
 		"generate:n2-listening-support": "node --experimental-strip-types scripts/generate-n2-listening-support.mts",
 		"generate:n2-grammar-breakdowns": "node --experimental-strip-types scripts/generate-n2-grammar-breakdowns.mts",
 		"generate:n2-grammar-composition": "node --experimental-strip-types scripts/generate-n2-grammar-composition.mts",
+		"generate:n2-grammar-similar": "node --experimental-strip-types scripts/generate-n2-grammar-similar.mts",
 		"generate:n4-daily": "python3 scripts/generate-n4-daily-grammar-explanations.py",
 		"generate:n4-vocab-kanji-daily": "python3 scripts/generate-n4-vocab-kanji-daily-translations.py",
 		"generate:n4-vk-exam": "python3 scripts/generate-n4-vk-exam-explanations.py",
