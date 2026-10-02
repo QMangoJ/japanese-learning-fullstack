@@ -10,38 +10,40 @@ const HAN = /[\u4e00-\u9fff]/u;
 const KANA = /[\u3040-\u30ff]/u;
 const patternAt = (w: number, d: number, i: number) => book.weeks.find((x: any) => x.n === w)?.days.find((x: any) => x.day === d)?.points?.[i]?.pattern;
 
-describe("N2 grammar 同级相似（N2）", () => {
-	it("only links real N2 points, with a Chinese distinction and an example on each side", () => {
+describe("N2 grammar same-level (N2) items in 相似表达", () => {
+	it("links real N2 points from other days, at most 2 per grammar point, each with a distinction and example", () => {
 		expect(data.weeks).toEqual([2, 3]);
-		const counts: Record<number, { points: number; entries: number }> = { 2: { points: 0, entries: 0 }, 3: { points: 0, entries: 0 } };
-		for (const [key, byPoint] of Object.entries<Record<string, any[]>>(data.points)) {
+		const perPoint: Record<string, number> = {};
+		const counts: Record<number, number> = { 2: 0, 3: 0 };
+		for (const [key, list] of Object.entries<any[]>(data.days)) {
 			const [, w, d] = /^w(\d+)d(\d+)$/.exec(key)!.map(Number);
-			for (const [index, list] of Object.entries(byPoint)) {
-				expect(patternAt(w, d, +index), `${key}#${index}`).toBeTruthy();
-				counts[w].points += 1;
-				for (const e of list) {
-					expect(patternAt(e.ref[0], e.ref[1], e.ref[2])).toBe(e.pattern);
-					expect(e.ref.join("-")).not.toBe(`${w}-${d}-${index}`);
-					expect(e.diff).toMatch(HAN);
-					for (const ex of [e.self, e.other]) {
-						expect(ex.jp).toMatch(KANA);
-						expect(ex.cn).toMatch(HAN);
-					}
-					counts[w].entries += 1;
-				}
+			for (const e of list) {
+				expect(patternAt(w, d, e.point), `${key}#${e.point}`).toBeTruthy();
+				expect(patternAt(e.ref[0], e.ref[1], e.ref[2])).toBeTruthy();
+				expect(e.ref[0] === w && e.ref[1] === d).toBe(false);
+				expect(e.form).toMatch(KANA);
+				expect(e.against).toMatch(KANA);
+				expect(e.meaning).toMatch(HAN);
+				expect(e.diff).toMatch(HAN);
+				expect(e.example.jp).toMatch(KANA);
+				expect(e.example.cn).toMatch(HAN);
+				const id = `${key}#${e.point}`;
+				perPoint[id] = (perPoint[id] || 0) + 1;
+				expect(perPoint[id]).toBeLessThanOrEqual(2);
+				counts[w] += 1;
 			}
 		}
-		expect(counts).toEqual({ 2: { points: 23, entries: 40 }, 3: { points: 23, entries: 32 } });
+		expect(counts).toEqual({ 2: 11, 3: 11 });
 	});
 
-	it("shows every pair on both sides when both points are in weeks 2–3, with no duplicates", () => {
+	it("has no duplicate pairs and shows cross-week pairs on both sides", () => {
 		const keys = source.pairs.map((p: any) => [p.a, p.b].sort().join("|"));
 		expect(new Set(keys).size).toBe(keys.length);
-		for (const p of source.pairs) {
-			const [w, d, i] = p.a.split("-").map(Number);
-			expect(data.points[`w${w}d${d}`][i].some((e: any) => e.ref.join("-") === p.b)).toBe(true);
-			const [bw, bd, bi] = p.b.split("-").map(Number);
-			if (data.weeks.includes(bw)) expect(data.points[`w${bw}d${bd}`][bi].some((e: any) => e.ref.join("-") === p.a)).toBe(true);
-		}
+		for (const p of source.pairs)
+			for (const [self, other] of [[p.a, p.b], [p.b, p.a]]) {
+				const [w, d, i] = self.split("-").map(Number);
+				if (!data.weeks.includes(w)) continue;
+				expect(data.days[`w${w}d${d}`].some((e: any) => e.point === i && e.ref.join("-") === other)).toBe(true);
+			}
 	});
 });

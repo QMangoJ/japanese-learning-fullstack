@@ -1802,7 +1802,7 @@ export function DayPage({ w, d, token }: { w: number; d: number; token: string |
 			{MODULE === "n2grammar" && d !== 7 ? <Suspense fallback={<p role="status">{lx("语法总结加载中…", "Loading grammar summary…")}</p>}><N2GrammarSummary
 				week={w} day={d} points={day.points || []} language={LANG}
 				onReview={(index) => navTo(`#/day/${w}-${d}/p${index}`)}
-				similar={LANG === "en" ? undefined : G2.similar?.points?.[`w${w}d${d}`]}
+				similar={LANG === "en" ? undefined : G2.similar?.days?.[`w${w}d${d}`]}
 				onOpenPoint={(ref) => navTo(`#/day/${ref[0]}-${ref[1]}/p${ref[2]}`)}
 			/></Suspense> : null}
 			<DayNav w={w} d={d} />
