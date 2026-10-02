@@ -502,6 +502,79 @@ function GrammarBreakdown({ data }: { data: GrammarBreakdownData }) {
 	);
 }
 
+type CompositionPrompt = { cn: string; jp: string; use: string; words: GrammarGloss[] };
+
+/** N2 语法「造句练习」（public/data/n2-grammar-composition.json，中文界面才显示）。 */
+function compositionFor(w: number, d: number, i: number): CompositionPrompt[] | undefined {
+	if (MODULE !== "n2grammar" || LANG === "en") return undefined;
+	const list = G2.composition?.points?.[`w${w}d${d}`]?.[i];
+	return Array.isArray(list) && list.length ? list : undefined;
+}
+
+function highlightUse(jp: string, use: string): ReactNode {
+	const at = use ? jp.indexOf(use) : -1;
+	if (at < 0) return jp;
+	return (
+		<>
+			{jp.slice(0, at)}
+			<strong>{use}</strong>
+			{jp.slice(at + use.length)}
+		</>
+	);
+}
+
+function CompositionItem({ item, id }: { item: CompositionPrompt; id: string }) {
+	const [open, setOpen] = useState(false);
+	return (
+		<li className="compose-item">
+			<p className="compose-cn">{item.cn}</p>
+			<textarea className="compose-input jp" rows={2} lang="ja" placeholder="用本语法写日语…" aria-label="写下你的日语句子" />
+			<button type="button" className="compose-toggle" aria-expanded={open ? "true" : "false"} aria-controls={id} onClick={() => setOpen((v) => !v)}>
+				{open ? "隐藏答案" : "显示答案"}
+			</button>
+			{open ? (
+				<div className="compose-answer" id={id}>
+					<div className="compose-jp jp">
+						{highlightUse(item.jp, item.use)}
+						<SayButton text={item.jp} />
+					</div>
+					{item.words.length ? (
+						<details className="an-gloss" open>
+							<summary>单词 · N3+（{item.words.length}）</summary>
+							<ul>
+								{item.words.map((g) => (
+									<li key={`${g.w}|${g.r}`}>
+										<span className="w jp">{g.w}</span>
+										{g.r && g.r !== g.w ? <span className="r jp">{g.r}</span> : null}
+										{g.lv ? <i className="lv">{g.lv}</i> : null}
+										<span className="m">{g.cn}</span>
+									</li>
+								))}
+							</ul>
+						</details>
+					) : null}
+				</div>
+			) : null}
+		</li>
+	);
+}
+
+/** 每个语法点下方：看中文，用本语法造句，点「显示答案」看参考答案。 */
+function CompositionPractice({ w, d, i }: { w: number; d: number; i: number }) {
+	const list = compositionFor(w, d, i);
+	if (!list) return null;
+	return (
+		<div className="compose">
+			<div className="compose-h">造句练习 <small>用本语法把中文译成日语</small></div>
+			<ol className="compose-list">
+				{list.map((item, k) => (
+					<CompositionItem key={k} item={item} id={`compose-${w}-${d}-${i}-${k}`} />
+				))}
+			</ol>
+		</div>
+	);
+}
+
 function WordGloss({ words }: { words?: { jp?: string; kana?: string; cn?: string; en?: string }[] }) {
 	const list = (words || []).filter((word) => word.jp && (LANG === "en" ? word.en || word.cn : word.cn || word.en));
 	if (!list.length) return null;
@@ -931,6 +1004,7 @@ function GrammarPoint({ p, w, d, i }: { p: any; w: number; d: number; i: number 
 					</div>
 				);
 			})}
+			<CompositionPractice w={w} d={d} i={i} />
 		</div>
 	);
 }

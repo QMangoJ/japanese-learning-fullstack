@@ -808,3 +808,17 @@ body.hide-cn .vcn,body.hide-cn .cn{visibility:hidden}
 @media (min-width:1600px){
   :root{--study-col:1240px}
 }
+/* N2 语法：造句练习 */
+.compose{margin-top:10px;padding:8px 10px;border:1px dashed var(--line);border-radius:10px;background:var(--card)}
+.compose-h{font-size:13px;font-weight:800;color:var(--blue)}
+.compose-h small{margin-left:6px;font-weight:400;color:var(--sub);font-size:11.5px}
+.compose-list{margin:4px 0 0;padding-left:20px}
+.compose-item{padding:6px 0;border-top:1px solid var(--line)}
+.compose-item:first-child{border-top:0}
+.compose-cn{margin:0 0 5px;font-size:14px;line-height:1.55;color:var(--ink)}
+.compose-input{display:block;width:100%;box-sizing:border-box;min-height:40px;resize:vertical;border:1px solid var(--line);border-radius:8px;padding:6px 8px;font:inherit;font-size:14px;background:var(--bg);color:var(--ink)}
+.compose-toggle{margin-top:6px;border:1px solid var(--blue);background:var(--blue-soft);color:var(--blue);border-radius:999px;padding:4px 12px;font-size:12.5px;font-weight:700;cursor:pointer;min-height:30px}
+.compose-answer{margin-top:6px;padding:6px 10px;border-radius:8px;background:var(--green-soft)}
+.compose-jp{font-size:14.5px;line-height:1.6;color:var(--ink)}
+.compose-jp strong{color:var(--green);text-decoration:underline;text-underline-offset:2px}
+.compose-answer .an-gloss{border-top-color:var(--line)}
