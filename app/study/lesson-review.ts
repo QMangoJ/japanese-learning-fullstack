@@ -184,12 +184,73 @@ function rubyRt(reading: string): string {
 
 const PARTICLE_KANA = /^(?:は|が|を|に|の|へ|と|や|も|で)+$/;
 
-function takeWordBefore(jp: string, end: number): { start: number; word: string } | null {
+function normalizeReading(reading: string): string {
+	return toHiragana(reading.replace(/[\s・]+/g, ""));
+}
+
+function composedReading(word: string, readings: Record<string, string>): string | null {
+	let out = "";
+	for (let i = 0; i < word.length; ) {
+		const ch = word[i] || "";
+		if (/[ぁ-んァ-ンー]/.test(ch)) {
+			out += toHiragana(ch);
+			i += 1;
+			continue;
+		}
+		if (!/[一-龯々〆ヵヶ]/.test(ch)) return null;
+		let found: { length: number; reading: string } | null = null;
+		const max = Math.min(12, word.length - i);
+		for (let len = max; len >= 1; len -= 1) {
+			const reading = readings[word.slice(i, i + len)];
+			if (reading) {
+				found = { length: len, reading };
+				break;
+			}
+		}
+		if (!found) return null;
+		out += normalizeReading(found.reading);
+		i += found.length;
+	}
+	return out;
+}
+
+function takeWordBefore(
+	jp: string,
+	end: number,
+	reading?: string,
+	readings?: Record<string, string>,
+): { start: number; word: string } | null {
+	const wide = wideWordBefore(jp, end, reading);
+	if (!wide || !reading || !readings) return wide;
+	const target = normalizeReading(reading);
+	if (!target || composedReading(wide.word, readings) === target) return wide;
+	let best: { start: number; word: string } | null = null;
+	for (let start = wide.start; start < end; start += 1) {
+		const word = jp.slice(start, end);
+		if (!/[一-龯々〆ヵヶ]/.test(word)) continue;
+		if (composedReading(word, readings) !== target) continue;
+		best = { start, word };
+	}
+	if (best) return best;
+	const minStart = Math.max(0, end - 24);
+	for (let start = wide.start - 1; start >= minStart; start -= 1) {
+		if (!/[一-龯々〆ヵヶ]/.test(jp[start] || "")) continue;
+		const word = jp.slice(start, end);
+		if (composedReading(word, readings) !== target) continue;
+		return { start, word };
+	}
+	return wide;
+}
+
+function wideWordBefore(jp: string, end: number, reading?: string): { start: number; word: string } | null {
 	let i = end;
 	let j = i;
 	while (j > 0 && /[ぁ-んァ-ンー]/.test(jp[j - 1] || "")) j -= 1;
 	const trailing = jp.slice(j, i);
-	if (trailing && !PARTICLE_KANA.test(trailing)) i = j;
+	if (trailing) {
+		const covered = !!reading && normalizeReading(reading).endsWith(toHiragana(trailing));
+		if (!PARTICLE_KANA.test(trailing) || covered) i = j;
+	}
 	let seenKanji = false;
 	while (i > 0) {
 		const ch = jp[i - 1] || "";
@@ -235,11 +296,10 @@ export function buildReviewRuby(jp: string, reading?: string, readings?: Record<
 		while (parenAt > last && /\s/.test(jp[parenAt - 1] || "")) parenAt -= 1;
 		const inner = match[1].trim();
 		if (/^[ぁ-んァ-ンー][ぁ-んァ-ンー\s]{0,23}$/.test(inner)) {
-			const wordInfo = takeWordBefore(jp, parenAt);
-			const plainEnd = wordInfo ? wordInfo.start : parenAt;
-			html += wrapPlainWithReadings(jp.slice(last, plainEnd), readings);
+			const wordInfo = takeWordBefore(jp, parenAt, inner, readings);
 			if (wordInfo) {
 				found = true;
+				html += wrapPlainWithReadings(jp.slice(last, wordInfo.start), readings);
 				html += `<ruby>${escapeXml(wordInfo.word)}<rt>${rubyRt(inner)}</rt></ruby>`;
 				last = match.index + match[0].length;
 				continue;

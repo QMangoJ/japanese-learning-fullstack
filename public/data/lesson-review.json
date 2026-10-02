@@ -1,7 +1,300 @@
 {
 	"source": "https://docs.google.com/document/d/12NwKtAV_HFUeOheYvXGMsJl5G2xIcdb4WG_axC23xrU/edit\nhttps://docs.google.com/document/d/1oEZYQYz3Kb3q5bRqNJgdD0TNxUHVEX2PGvLoCju_Cdc/edit",
-	"fetchedAt": "2026-10-01T12:05:42.521Z",
+	"fetchedAt": "2026-10-02T13:46:20.940Z",
 	"days": [
+		{
+			"id": "2026-10-02",
+			"date": "2026-10-02",
+			"title": "2026-10-02",
+			"items": [
+				{
+					"jp": "今晩は",
+					"kind": "word",
+					"jp_r": "<ruby>今晩は<rt>こんばんは</rt></ruby>",
+					"cn": "晚上好",
+					"en": "good evening",
+					"example": "先生、今晩は。",
+					"exampleCn": "老师，晚上好。",
+					"exampleEn": "Good evening, teacher.",
+					"example_r": "<ruby>先生<rt>せんせい</rt></ruby>、<ruby>今晩は<rt>こんばんは</rt></ruby>。"
+				},
+				{
+					"jp": "定期的に（ていきてきに）",
+					"kind": "word",
+					"jp_r": "<ruby>定期的に<rt>ていきてきに</rt></ruby>",
+					"reading": "ていきてきに",
+					"cn": "定期地",
+					"en": "regularly",
+					"example": "定期的に運動しています。",
+					"exampleCn": "在定期运动。",
+					"exampleEn": "I exercise regularly.",
+					"example_r": "<ruby>定期的<rt>ていきてき</rt></ruby>に<ruby>運動<rt>うんどう</rt></ruby>しています。"
+				},
+				{
+					"jp": "定期的にジムとカフェに行ってる",
+					"kind": "sentence",
+					"jp_r": "<ruby>定期的<rt>ていきてき</rt></ruby>にジムとカフェに<ruby>行って<rt>いって</rt></ruby>る",
+					"cn": "定期去健身房和咖啡馆",
+					"en": "I regularly go to the gym and a cafe"
+				},
+				{
+					"jp": "悲しい",
+					"kind": "word",
+					"jp_r": "<ruby>悲しい<rt>かなしい</rt></ruby>",
+					"cn": "悲伤",
+					"en": "sad",
+					"example": "その話を聞いて悲しかった。",
+					"exampleCn": "听了那件事很难过。",
+					"exampleEn": "I was sad to hear that.",
+					"example_r": "その<ruby>話<rt>はなし</rt></ruby>を<ruby>聞いて<rt>きいて</rt></ruby><ruby>悲しかった<rt>かなしかった</rt></ruby>。"
+				},
+				{
+					"jp": "教え甲斐がある",
+					"kind": "word",
+					"jp_r": "<ruby>教え甲斐<rt>おしえがい</rt></ruby>がある",
+					"cn": "值得教、教得有意义",
+					"en": "worth teaching",
+					"example": "生徒が伸びると教え甲斐がある。",
+					"exampleCn": "学生有进步，就值得教。",
+					"exampleEn": "It's worth teaching when the students improve.",
+					"example_r": "<ruby>生徒<rt>せいと</rt></ruby>が<ruby>伸びる<rt>のびる</rt></ruby>と<ruby>教え甲斐<rt>おしえがい</rt></ruby>がある。"
+				},
+				{
+					"jp": "高級 こうきゅう",
+					"kind": "word",
+					"jp_r": "<ruby>高級<rt>こうきゅう</rt></ruby>",
+					"reading": "こうきゅう",
+					"cn": "高级",
+					"en": "high-class / expensive",
+					"example": "高級なレストランに行きました。",
+					"exampleCn": "去了高级餐厅。",
+					"exampleEn": "I went to a high-class restaurant.",
+					"example_r": "<ruby>高級<rt>こうきゅう</rt></ruby>なレストランに<ruby>行きました<rt>いきました</rt></ruby>。"
+				},
+				{
+					"jp": "高度なレベル",
+					"kind": "word",
+					"jp_r": "<ruby>高度<rt>こうど</rt></ruby>なレベル",
+					"cn": "很高的水平",
+					"en": "a high level",
+					"example": "高度なレベルの日本語を話します。",
+					"exampleCn": "说很高水平的日语。",
+					"exampleEn": "They speak Japanese at a high level.",
+					"example_r": "<ruby>高度<rt>こうど</rt></ruby>なレベルの<ruby>日本語<rt>にほんご</rt></ruby>を<ruby>話します<rt>はなします</rt></ruby>。"
+				},
+				{
+					"jp": "高いレベルの表現（ひょうげん）",
+					"kind": "word",
+					"jp_r": "<ruby>高い<rt>たかい</rt></ruby>レベルの<ruby>表現<rt>ひょうげん</rt></ruby>",
+					"reading": "ひょうげん",
+					"cn": "高水平的表达",
+					"en": "a high-level expression",
+					"example": "高いレベルの表現を覚えたいです。",
+					"exampleCn": "想记住高水平的表达。",
+					"exampleEn": "I want to learn high-level expressions.",
+					"example_r": "<ruby>高い<rt>たかい</rt></ruby>レベルの<ruby>表現<rt>ひょうげん</rt></ruby>を<ruby>覚えたい<rt>おぼえたい</rt></ruby>です。"
+				},
+				{
+					"jp": "丼もの",
+					"kind": "word",
+					"jp_r": "<ruby>丼<rt>どんぶり</rt></ruby>もの",
+					"cn": "盖饭",
+					"en": "a rice-bowl dish",
+					"example": "ランチは丼ものにしました。",
+					"exampleCn": "午饭选了盖饭。",
+					"exampleEn": "I chose a rice bowl for lunch.",
+					"example_r": "ランチは<ruby>丼<rt>どんぶり</rt></ruby>ものにしました。"
+				},
+				{
+					"jp": "平和な世界",
+					"kind": "word",
+					"jp_r": "<ruby>平和<rt>へいわ</rt></ruby>な<ruby>世界<rt>せかい</rt></ruby>",
+					"cn": "和平的世界",
+					"en": "a peaceful world",
+					"example": "平和な世界がいいです。",
+					"exampleCn": "希望是和平的世界。",
+					"exampleEn": "I want a peaceful world.",
+					"example_r": "<ruby>平和<rt>へいわ</rt></ruby>な<ruby>世界<rt>せかい</rt></ruby>がいいです。"
+				},
+				{
+					"jp": "太って",
+					"kind": "word",
+					"jp_r": "<ruby>太って<rt>ふとって</rt></ruby>",
+					"cn": "发胖了",
+					"en": "gained weight",
+					"example": "最近少し太ってしまいました。",
+					"exampleCn": "最近胖了一点。",
+					"exampleEn": "I've gained a little weight lately.",
+					"example_r": "<ruby>最近<rt>さいきん</rt></ruby><ruby>少し<rt>すこし</rt></ruby><ruby>太って<rt>ふとって</rt></ruby>しまいました。"
+				},
+				{
+					"jp": "痩せています",
+					"kind": "sentence",
+					"jp_r": "<ruby>痩せ<rt>やせ</rt></ruby>ています",
+					"cn": "现在比较瘦",
+					"en": "I'm slim now"
+				},
+				{
+					"jp": "悲し",
+					"kind": "word",
+					"jp_r": "<ruby>悲し<rt>かなし</rt></ruby>",
+					"cn": "悲伤（「悲しい」的笔记）",
+					"en": "sad (note for 悲しい)"
+				},
+				{
+					"jp": "一戸建",
+					"kind": "word",
+					"jp_r": "<ruby>一戸建<rt>いっこだて</rt></ruby>",
+					"cn": "独栋住宅（「一戸建て」）",
+					"en": "a detached house",
+					"example": "一戸建に住みたいです。",
+					"exampleCn": "想住独栋住宅。",
+					"exampleEn": "I want to live in a detached house.",
+					"example_r": "<ruby>一戸建<rt>いっこだて</rt></ruby>に<ruby>住みたい<rt>すみたい</rt></ruby>です。"
+				},
+				{
+					"jp": "つまらない",
+					"kind": "word",
+					"cn": "无聊",
+					"en": "boring",
+					"example": "その映画はつまらなかった。",
+					"exampleCn": "那部电影很无聊。",
+					"exampleEn": "That movie was boring.",
+					"example_r": "その<ruby>映画<rt>えいが</rt></ruby>はつまらなかった。"
+				},
+				{
+					"jp": "素直",
+					"kind": "word",
+					"jp_r": "<ruby>素直<rt>すなお</rt></ruby>",
+					"cn": "坦率、听话",
+					"en": "honest / straightforward",
+					"example": "彼は素直な人です。",
+					"exampleCn": "他是个坦率的人。",
+					"exampleEn": "He is an honest person.",
+					"example_r": "<ruby>彼<rt>かれ</rt></ruby>は<ruby>素直<rt>すなお</rt></ruby>な<ruby>人<rt>ひと</rt></ruby>です。"
+				},
+				{
+					"jp": "好きだったけど、危ないと気づいた・危ないと思った",
+					"kind": "sentence",
+					"jp_r": "<ruby>好き<rt>すき</rt></ruby>だったけど、<ruby>危ない<rt>あぶない</rt></ruby>と<ruby>気づいた<rt>きづいた</rt></ruby>・<ruby>危ない<rt>あぶない</rt></ruby>と<ruby>思った<rt>おもった</rt></ruby>",
+					"cn": "曾经喜欢，但发觉很危险",
+					"en": "I used to like it, but I realized it was dangerous"
+				},
+				{
+					"jp": "上手くなりやすい",
+					"kind": "word",
+					"jp_r": "<ruby>上手く<rt>うまく</rt></ruby>なりやすい",
+					"cn": "容易变擅长",
+					"en": "easy to get good at",
+					"example": "このスポーツは上手くなりやすいです。",
+					"exampleCn": "这项运动容易练会。",
+					"exampleEn": "This sport is easy to get good at.",
+					"example_r": "このスポーツは<ruby>上手く<rt>うまく</rt></ruby>なりやすいです。"
+				},
+				{
+					"jp": "上手い＝上手",
+					"kind": "word",
+					"jp_r": "<ruby>上手い<rt>うまい</rt></ruby>＝<ruby>上手<rt>じょうず</rt></ruby>",
+					"cn": "「上手い」就是「上手」",
+					"en": "上手い is the casual form of 上手",
+					"example": "彼は料理が上手いです。",
+					"exampleCn": "他菜做得很好。",
+					"exampleEn": "He is good at cooking.",
+					"example_r": "<ruby>彼<rt>かれ</rt></ruby>は<ruby>料理<rt>りょうり</rt></ruby>が<ruby>上手い<rt>うまい</rt></ruby>です。"
+				},
+				{
+					"jp": "軍師官兵衛",
+					"kind": "word",
+					"jp_r": "<ruby>軍師<rt>ぐんし</rt></ruby><ruby>官兵衛<rt>かんべえ</rt></ruby>",
+					"cn": "剧名《军师官兵卫》",
+					"en": "the drama Gunshi Kanbee",
+					"example": "軍師官兵衛を見ました。",
+					"exampleCn": "看了《军师官兵卫》。",
+					"exampleEn": "I watched Gunshi Kanbee.",
+					"example_r": "<ruby>軍師<rt>ぐんし</rt></ruby><ruby>官兵衛<rt>かんべえ</rt></ruby>を<ruby>見ました<rt>みました</rt></ruby>。"
+				},
+				{
+					"jp": "剑心",
+					"kind": "word",
+					"cn": "剑心（神剑闯江湖）",
+					"en": "Kenshin (Rurouni Kenshin)"
+				},
+				{
+					"jp": "歌手：伍佰",
+					"kind": "word",
+					"cn": "歌手：伍佰",
+					"en": "the singer Wu Bai",
+					"example": "この歌手は伍佰です。",
+					"exampleCn": "这位歌手是伍佰。",
+					"exampleEn": "This singer is Wu Bai.",
+					"example_r": "この<ruby>歌手<rt>かしゅ</rt></ruby>は伍佰です。"
+				},
+				{
+					"jp": "涙橋",
+					"kind": "word",
+					"jp_r": "<ruby>涙橋<rt>なみだばし</rt></ruby>",
+					"cn": "歌名《涙橋》",
+					"en": "the song Namidabashi",
+					"example": "涙橋を聞きました。",
+					"exampleCn": "听了《涙橋》。",
+					"exampleEn": "I listened to Namidabashi.",
+					"example_r": "<ruby>涙橋<rt>なみだばし</rt></ruby>を<ruby>聞きました<rt>ききました</rt></ruby>。"
+				},
+				{
+					"jp": "再度重相逢",
+					"kind": "word",
+					"cn": "歌名《再度重相逢》",
+					"en": "the song Zai Du Chong Xiang Feng"
+				},
+				{
+					"jp": "被动",
+					"kind": "word",
+					"cn": "被动",
+					"en": "passiveness"
+				},
+				{
+					"jp": "白鸽",
+					"kind": "word",
+					"cn": "白鸽",
+					"en": "white pigeon"
+				},
+				{
+					"jp": "スラムダンク",
+					"kind": "word",
+					"cn": "灌篮高手",
+					"en": "Slam Dunk",
+					"example": "スラムダンクを読みました。",
+					"exampleCn": "看了《灌篮高手》。",
+					"exampleEn": "I read Slam Dunk.",
+					"example_r": "スラムダンクを<ruby>読みました<rt>よみました</rt></ruby>。"
+				},
+				{
+					"jp": "スパークル",
+					"kind": "word",
+					"cn": "歌名《スパークル》",
+					"en": "the song Sparkle",
+					"example": "スパークルを聞きました。",
+					"exampleCn": "听了《スパークル》。",
+					"exampleEn": "I listened to Sparkle.",
+					"example_r": "スパークルを<ruby>聞きました<rt>ききました</rt></ruby>。"
+				},
+				{
+					"jp": "ミセスグリーンアップル ケセラセラ/青と夏/僕のこと",
+					"kind": "sentence",
+					"jp_r": "ミセスグリーンアップル ケセラセラ/<ruby>青と夏<rt>あおとなつ</rt></ruby>/<ruby>僕<rt>ぼく</rt></ruby>のこと",
+					"cn": "ミセスグリーンアップル的歌：《ケセラセラ》《青と夏》《僕のこと》",
+					"en": "Mrs. GREEN APPLE songs: Que Sera Sera, Ao to Natsu, and Boku no Koto"
+				},
+				{
+					"jp": "善美なものに、さらに良いものを加える。",
+					"kind": "sentence",
+					"jp_r": "<ruby>善美<rt>ぜんび</rt></ruby>なものに、さらに<ruby>良い<rt>よい</rt></ruby>ものを<ruby>加える<rt>くわえる</rt></ruby>。",
+					"cn": "在已经美好的事物上，再添上更好的东西",
+					"en": "Add something even better to what is already good"
+				}
+			],
+			"source": "Danielさん"
+		},
 		{
 			"id": "2026-10-01:preply",
 			"date": "2026-10-01",
@@ -1292,13 +1585,22 @@
 					"jp": "タメ口",
 					"kind": "word",
 					"jp_r": "<ruby>タメ口<rt>ためぐち</rt></ruby>",
-					"reading": "それぞれ",
 					"cn": "随便的说法、平辈口气",
 					"en": "casual speech",
 					"example": "友達とはタメ口で話します。",
 					"exampleCn": "和朋友用随便的口气说话。",
 					"exampleEn": "I talk casually with my friends.",
 					"example_r": "<ruby>友達<rt>ともだち</rt></ruby>とは<ruby>タメ口<rt>ためぐち</rt></ruby>で<ruby>話します<rt>はなします</rt></ruby>。"
+				},
+				{
+					"jp": "それぞれ",
+					"kind": "word",
+					"cn": "各自、分别",
+					"en": "each / respectively",
+					"example": "それぞれ好きなものを選んでください。",
+					"exampleCn": "请各自选喜欢的。",
+					"exampleEn": "Please each choose what you like.",
+					"example_r": "それぞれ<ruby>好きな<rt>すきな</rt></ruby>ものを<ruby>選んで<rt>えらんで</rt></ruby>ください。"
 				},
 				{
 					"jp": "与える",
@@ -1966,7 +2268,7 @@
 				{
 					"jp": "長蛇の列（ちょうだのれつ）",
 					"kind": "word",
-					"jp_r": "<ruby>長蛇<rt>ちょうだ</rt></ruby>の<ruby>列<rt>ちょうだのれつ</rt></ruby>",
+					"jp_r": "<ruby>長蛇の列<rt>ちょうだのれつ</rt></ruby>",
 					"reading": "ちょうだのれつ",
 					"cn": "长队",
 					"en": "a very long line",
@@ -2039,7 +2341,7 @@
 				{
 					"jp": "精神が未熟（せいしんがみじゅく）",
 					"kind": "word",
-					"jp_r": "<ruby>精神<rt>せいしん</rt></ruby>が<ruby>未熟<rt>せいしんがみじゅく</rt></ruby>",
+					"jp_r": "<ruby>精神が未熟<rt>せいしんがみじゅく</rt></ruby>",
 					"reading": "せいしんがみじゅく",
 					"cn": "精神还不成熟",
 					"en": "mentally immature",
@@ -3724,13 +4026,18 @@
 					"jp": "分からなかった",
 					"kind": "word",
 					"jp_r": "<ruby>分からなかった<rt>わからなかった</rt></ruby>",
-					"reading": "それでわかった",
 					"cn": "当时没明白",
 					"en": "I didn't understand",
 					"example": "最初は意味が分からなかった。",
 					"exampleCn": "一开始没明白意思。",
 					"exampleEn": "At first I didn't understand the meaning.",
 					"example_r": "<ruby>最初<rt>さいしょ</rt></ruby>は<ruby>意味<rt>いみ</rt></ruby>が<ruby>分からなかった<rt>わからなかった</rt></ruby>。"
+				},
+				{
+					"jp": "それでわかった",
+					"kind": "word",
+					"cn": "这样才明白了",
+					"en": "that's how I understood"
 				},
 				{
 					"jp": "うちかえるって言った",
@@ -4705,7 +5012,7 @@
 				{
 					"jp": "上手く話せないのが、もどかしい",
 					"kind": "sentence",
-					"jp_r": "<ruby>上手<rt>じょうず</rt></ruby>く<ruby>話せ<rt>はなせ</rt></ruby>ないのが、もどかしい",
+					"jp_r": "<ruby>上手く<rt>うまく</rt></ruby><ruby>話せ<rt>はなせ</rt></ruby>ないのが、もどかしい",
 					"cn": "难受",
 					"en": "n sh"
 				},
@@ -4814,7 +5121,7 @@
 				{
 					"jp": "もっと雨が降っても、さらに激しく踊ってた（おどってた）",
 					"kind": "sentence",
-					"jp_r": "もっと<ruby>雨<rt>あめ</rt></ruby>が<ruby>降って<rt>ふって</rt></ruby>も、さらに<ruby>激しく踊ってた<rt>おどってた</rt></ruby>",
+					"jp_r": "もっと<ruby>雨<rt>あめ</rt></ruby>が<ruby>降って<rt>ふって</rt></ruby>も、さらに<ruby>激しく<rt>はげしく</rt></ruby><ruby>踊ってた<rt>おどってた</rt></ruby>",
 					"reading": "おどってた",
 					"cn": "雨下得更大，大家跳得更疯",
 					"en": "even when it rained harder they danced more wildly"
@@ -5779,11 +6086,16 @@
 					"en": "The kettle was about to fall off the fridge, so I put it on the floor."
 				},
 				{
-					"jp": "無事（ぶじ）",
+					"jp": "無事（ぶじ）＝大丈夫",
 					"kind": "word",
-					"jp_r": "<ruby>無事<rt>ぶじ</rt></ruby>",
+					"jp_r": "<ruby>無事<rt>ぶじ</rt></ruby>＝<ruby>大丈夫<rt>だいじょうぶ</rt></ruby>",
 					"reading": "ぶじ",
-					"cn": "大丈夫"
+					"cn": "「無事」就是「大丈夫」，平安无事",
+					"en": "無事 means 大丈夫: safe, all right",
+					"example": "無事に着きました。",
+					"exampleCn": "平安到达了。",
+					"exampleEn": "I arrived safely.",
+					"example_r": "<ruby>無事<rt>ぶじ</rt></ruby>に<ruby>着きました<rt>つきました</rt></ruby>。"
 				},
 				{
 					"jp": "無事で良かった",
@@ -6459,13 +6771,22 @@
 					"jp": "遠い",
 					"kind": "word",
 					"jp_r": "<ruby>遠い<rt>とおい</rt></ruby>",
-					"reading": "いっこだて",
 					"cn": "远",
 					"en": "far",
 					"example": "実家はここから遠いです。",
 					"exampleCn": "老家离这里很远。",
 					"exampleEn": "My parents' house is far from here.",
 					"example_r": "実<ruby>家<rt>いえ</rt></ruby>はここから<ruby>遠い<rt>とおい</rt></ruby>です。"
+				},
+				{
+					"jp": "いっこだて",
+					"kind": "word",
+					"cn": "独栋住宅",
+					"en": "detached house",
+					"example": "郊外にいっこだてを借りました。",
+					"exampleCn": "在郊外租了独栋住宅。",
+					"exampleEn": "I rented a detached house in the suburbs.",
+					"example_r": "<ruby>郊外<rt>こうがい</rt></ruby>にいっこだてを<ruby>借りました<rt>かりました</rt></ruby>。"
 				},
 				{
 					"jp": "気になる",
@@ -6575,13 +6896,21 @@
 					"jp": "決めた",
 					"kind": "word",
 					"jp_r": "<ruby>決めた<rt>きめた</rt></ruby>",
-					"reading": "これにする",
 					"cn": "决定了",
 					"en": "I've decided",
 					"example": "進路を決めた。",
 					"exampleCn": "决定了出路。",
 					"exampleEn": "I've decided on my path.",
 					"example_r": "<ruby>進路<rt>しんろ</rt></ruby>を<ruby>決めた<rt>きめた</rt></ruby>。"
+				},
+				{
+					"jp": "これにする",
+					"kind": "word",
+					"cn": "就选这个",
+					"en": "I'll go with this",
+					"example": "ランチはこれにする。",
+					"exampleCn": "午餐就选这个。",
+					"exampleEn": "I'll go with this for lunch."
 				}
 			],
 			"source": "Danielさん"
@@ -7266,9 +7595,14 @@
 					"jp": "お気をつけください",
 					"kind": "sentence",
 					"jp_r": "<ruby>お気をつけください<rt>おきをつけください</rt></ruby>",
-					"reading": "マジでやべぇな",
 					"cn": "请小心",
 					"en": "please take care"
+				},
+				{
+					"jp": "マジでやべぇな",
+					"kind": "word",
+					"cn": "真的太糟了",
+					"en": "this is seriously bad"
 				},
 				{
 					"jp": "蘇我駅ヤバすぎ",
@@ -7447,7 +7781,7 @@
 				{
 					"jp": "前よりも成長（せいちょう）しました",
 					"kind": "sentence",
-					"jp_r": "<ruby>前よりも成長<rt>せいちょう</rt></ruby>しました",
+					"jp_r": "<ruby>前<rt>まえ</rt></ruby>よりも<ruby>成長<rt>せいちょう</rt></ruby>しました",
 					"reading": "せいちょう",
 					"cn": "比以前成长了",
 					"en": "I've grown more than before"
@@ -8892,7 +9226,7 @@
 					"example": "彼とはあまり仲良くないです。",
 					"exampleCn": "和他关系不太好。",
 					"exampleEn": "I'm not very close with him.",
-					"example_r": "<ruby>彼<rt>かれ</rt></ruby>とはあまり<ruby>仲良<rt>なかよ</rt></ruby>くないです。"
+					"example_r": "<ruby>彼<rt>かれ</rt></ruby>とはあまり<ruby>仲良く<rt>なかよく</rt></ruby>ないです。"
 				},
 				{
 					"jp": "たぶん",
@@ -9971,7 +10305,7 @@
 				{
 					"jp": "終わり次第（しだい",
 					"kind": "word",
-					"jp_r": "<ruby>終わり次第<rt>しだい</rt></ruby>",
+					"jp_r": "<ruby>終わり<rt>おわり</rt></ruby><ruby>次第<rt>しだい</rt></ruby>",
 					"reading": "しだい",
 					"cn": "一结束就……",
 					"en": "as soon as it finishes",

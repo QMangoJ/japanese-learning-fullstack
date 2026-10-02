@@ -399,8 +399,11 @@ function isGlossOnly(text: string): boolean {
 	return Boolean(text) && !HAS_JP.test(text);
 }
 
-/** A Latin title such as "On your mark", not a short English gloss like "I wonder". */
+/** A short Latin title such as "On your mark", not an English sentence gloss. */
 function isStandaloneTitle(text: string): boolean {
+	const words = text.split(/\s+/);
+	if (words.length < 2 || words.length > 4) return false;
+	if (/^(Could|Would|Please|Can|May|Let|I|We|It|This|That|If)$/.test(words[0] || "")) return false;
 	return /^[A-Z][a-z]+(?:\s+[a-z]+)+$/.test(text);
 }
 
@@ -506,7 +509,17 @@ function splitJpGloss(line: string): { jp: string; cn?: string; en?: string; rea
 	if (piped && HAS_JP.test(piped[0])) return { jp: piped[0], ...classifyGloss(piped[1]) };
 
 	const eq = splitOnce(line, /＝|=/);
-	if (eq) return { jp: eq[0], ...classifyGloss(eq[1]) };
+	if (eq) {
+		const rightIsJapaneseSynonym =
+			!/[A-Za-z]/.test(eq[0]) &&
+			!/[A-Za-z]/.test(eq[1]) &&
+			/[\u3040-\u30ff]/.test(eq[0]) &&
+			!/[\u3040-\u30ff]/.test(eq[1]) &&
+			/[一-龯]/.test(eq[1]) &&
+			!isChineseFollowUp(eq[1]);
+		if (rightIsJapaneseSynonym) return { jp: line };
+		return { jp: eq[0], ...classifyGloss(eq[1]) };
+	}
 
 	const fw = line.split("　").map((part) => part.trim()).filter(Boolean);
 	if (fw.length >= 2) {

@@ -125,6 +125,22 @@ describe("lesson review parser", () => {
 				kind: "sentence",
 			}),
 		]);
+		const [story] = parseLessonReview(
+			`# 2026.08.28\nもし良かったら、もう少し話を聞かせていただけませんか？\nCould you please let me listen to your story\n`,
+		);
+		expect(story.items).toEqual([
+			expect.objectContaining({
+				jp: "もし良かったら、もう少し話を聞かせていただけませんか？",
+				en: "Could you please let me listen to your story",
+			}),
+		]);
+	});
+
+	it("keeps a Japanese synonym after ＝ on the same card", () => {
+		const [day] = parseLessonReview(`# 2026.10.02\n上手い＝上手\n年金 pension = 养老金\n`);
+		expect(day.items[0]).toMatchObject({ jp: "上手い＝上手", kind: "word" });
+		expect(day.items[0].cn).toBeUndefined();
+		expect(day.items[1]).toMatchObject({ jp: "年金", cn: "养老金", en: "pension" });
 	});
 
 	it("keeps names, same-line readings, and the next phrase apart", () => {
@@ -368,6 +384,46 @@ describe("lesson review helpers", () => {
 		expect(buildReviewRuby("日本の男の人は髪（かみ）とか外見（がいけん）に気を遣うけど")).toBe(
 			"日本の男の人は<ruby>髪<rt>かみ</rt></ruby>とか<ruby>外見<rt>がいけん</rt></ruby>に気を遣うけど",
 		);
+		const todayReadings = {
+			定期的: "ていきてき",
+			高い: "たかい",
+			表現: "ひょうげん",
+			前: "まえ",
+			成長: "せいちょう",
+			激しく: "はげしく",
+			踊って: "おどって",
+			歴史: "れきし",
+			的: "てき",
+			街: "まち",
+		};
+		expect(buildReviewRuby("定期的に（ていきてきに）", undefined, todayReadings)).toBe(
+			"<ruby>定期的に<rt>ていきてきに</rt></ruby>",
+		);
+		expect(buildReviewRuby("高いレベルの表現（ひょうげん）", undefined, todayReadings)).toBe(
+			"<ruby>高い<rt>たかい</rt></ruby>レベルの<ruby>表現<rt>ひょうげん</rt></ruby>",
+		);
+		expect(buildReviewRuby("前よりも成長（せいちょう）しました", undefined, todayReadings)).toBe(
+			"<ruby>前<rt>まえ</rt></ruby>よりも<ruby>成長<rt>せいちょう</rt></ruby>しました",
+		);
+		expect(buildReviewRuby("さらに激しく踊ってた（おどってた）", undefined, todayReadings)).toBe(
+			"さらに<ruby>激しく<rt>はげしく</rt></ruby><ruby>踊ってた<rt>おどってた</rt></ruby>",
+		);
+		expect(buildReviewRuby("歴史的な街（れきしてきなまち）", undefined, todayReadings)).toBe(
+			"<ruby>歴史的な街<rt>れきしてきなまち</rt></ruby>",
+		);
+		expect(
+			buildReviewRuby("長蛇の列（ちょうだのれつ）", undefined, { ...todayReadings, 長蛇の列: "ちょうだのれつ", 列: "れつ" }),
+		).toBe("<ruby>長蛇の列<rt>ちょうだのれつ</rt></ruby>");
+		expect(
+			buildReviewRuby("精神が未熟（せいしんがみじゅく）", undefined, {
+				...todayReadings,
+				精神: "せいしん",
+				未熟: "みじゅく",
+			}),
+		).toBe("<ruby>精神が未熟<rt>せいしんがみじゅく</rt></ruby>");
+		expect(
+			buildReviewRuby("終わり次第（しだい", undefined, { 終わり: "おわり", 次第: "しだい", 終わり次第: "おわりしだい" }),
+		).toBe("<ruby>終わり<rt>おわり</rt></ruby><ruby>次第<rt>しだい</rt></ruby>");
 		const drama = enrichReviewDays([
 			{ id: "x", title: "x", items: [{ jp: "主人公は生まれ育った家庭の影響で、よく現実から逃げてしまう。", kind: "sentence" }] },
 		])[0].items[0].jp_r;
