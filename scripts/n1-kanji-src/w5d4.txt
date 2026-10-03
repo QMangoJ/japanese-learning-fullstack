@@ -1,0 +1,121 @@
+T 招待・正体|しょうたい・しょうたい|邀请・原形|
+I Q. 漢字で書くと？　左右たいしょう　→対称。対象・対称・対照、表現で覚えよう。
+S 音読み①|音读①|On-readings ①
+G たいしょう|
+K 対象|たいしょう
+W 外国人対象の試験||a test designed for foreigners|面向外国人的考试
+W 調査対象|ちょうさたいしょう|subject of the survey|调查对象
+K 対称|たいしょう
+W 左右対称のデザイン||a symmetrical design|左右对称的设计
+K 対照|たいしょう
+W 対照的な二人||two contrasting people|鲜明对比的两个人
+W 比較・対照する||compare|比较、对照
+G しょうたい|
+K 招待|しょうたい
+W 招待状|しょうたいじょう|a letter of invitation|请帖
+W 招待を受ける||receive an invitation|接受邀请
+K 正体|しょうたい
+W 正体を現す||unmask|现原形
+W 正体不明|しょうたいふめい|unidentified|本来面目不明
+G さいきん|
+K 最近|さいきん
+W 最近の出来事||a recent event|最近发生的事情
+K 細菌|さいきん
+W 細菌に感染する||contract a bacterial infection|感染细菌
+G こうたい|
+K 後退|こうたい
+W 海岸線が後退する||a shoreline retreats|海岸线后退
+W ◆⇔前進|ぜんしん|moving forward|前进
+K 交代|こうたい
+W 世代交代|せだいこうたい|generational change|世代交替
+K 交替|こうたい
+W 交替で運転する||take turns driving|交替开车|＊「交代」と書いてもよい。
+G ふしん|
+K 不振|ふしん
+W 経営不振|けいえいふしん|a business slump|经营不振
+W 食欲不振|しょくよくふしん|no appetite|食欲不振
+K 不信|ふしん
+W 人間不信|にんげんふしん|distrust of others|不相信人
+W 政治不信|せいじふしん|distrust of politics|不信任政治
+K 不審|ふしん
+W 挙動不審|きょどうふしん|suspicious behavior|举动可疑
+W 不審物|ふしんぶつ|a suspicious object|可疑物
+G ほしょう|
+K 保証|ほしょう
+W 保証人|ほしょうにん|a guarantor|保证人
+W 保証書|ほしょうしょ|a warranty|保证书
+K 保障|ほしょう
+W 社会保障|しゃかいほしょう|social welfare|社会保障
+W 安全保障|あんぜんほしょう|security|安全保障
+K 補償|ほしょう
+W 損害補償|そんがいほしょう|compensation for loss/damage|损害赔偿
+W 災害補償|さいがいほしょう|compensation for loss/damage in a natural disaster|灾害赔偿
+G かいほう|
+K 開放|かいほう
+W 学校を開放する||open a school|开放学校
+K 解放|かいほう
+W 人質を解放する||release a hostage|解放人质
+K 介抱|かいほう
+W 病人を介抱する||look after a sick person|照顾病人
+G かこう|
+K 加工|かこう
+W 加工食品|かこうしょくひん|processed food|加工食品
+K 下降|かこう
+W 飛行機が下降する||an aircraft descends|飞机下降
+W ◆⇔上昇|じょうしょう|rise|上升
+K 河口|かこう
+W ナイル川の河口||the mouth of the Nile|尼罗河的河口
+K 火口|かこう
+W 火山の火口||a crater|火山的火口
+G かてい|
+K 家庭|かてい
+W 家庭教師|かていきょうし|a tutor|家庭教师
+W 家庭的な|かていてきな|homely|家庭的
+K 過程|かてい
+W 過程と結果||process and result|过程和结果
+W 生産過程|せいさんかてい|production process|生产过程
+K 仮定|かてい
+W 仮定に基づく||based on an assumption|根据假定
+W 仮定する|かていする|assume|假定
+K 課程|かてい
+W 博士課程|はかせかてい|a doctoral course|博士课程
+W 教育課程|きょういくかてい|a curriculum|教育课程
+G きげん|
+K 期限|きげん
+W 期限が切れる||expire|过期限了
+W 消費期限|しょうひきげん|Expiration Date / EXP|消费期限
+K 機嫌|きげん
+W 機嫌が悪い（＝不機嫌）||in a bad mood|心情不好
+W ◆上機嫌|じょうきげん|in a good mood|心情好
+K 起源|きげん
+W 生命の起源||the origin of life|生命的起源
+G しんこう|
+K 進行|しんこう
+W 会議を進行する||run a meeting|推进会议
+W 進行方向|しんこうほうこう|the direction in which one is going|前进方向
+K 振興|しんこう
+W 町の振興を図る||promote the development of a town|谋求城市振兴
+K 新興|しんこう
+W 新興住宅地|しんこうじゅうたくち|a newly developed residential area|新兴住宅区
+W 新興宗教|しんこうしゅうきょう|a cult|新兴宗教
+K 信仰|しんこう
+W 宗教・神仏・自然を信仰する||believe in a religion/god/nature|信仰宗教、神灵、自然
+W 信仰が厚い||be very religious|信仰深厚
+X1 a、bの言葉の読みを書き、正しいほうを選びなさい。
+Q （a. 細菌　b. 最近）を培養して研究する。>>培养细菌进行研究。
+Q 社会（a. 補償　b. 保障）制度の見直しをする。>>重新审视社会保障制度。
+Q 携帯電話の使用が会議の（a. 進行　b. 振興）を妨げた。>>使用手机妨碍了会议的进行。
+Q 若手議員は政界の世代（a. 交代　b. 新興）の必要性を訴えた。>>年轻议员呼吁政界需要世代交替。
+Q 彼らは双子だが、性格は（a. 対照　b. 対称）的だ。>>他们虽是双胞胎，性格却截然相反。
+Q 人質（a. 解放　b. 開放）のニュースが伝えられた。>>传来了人质获释的消息。
+X2 ＿＿の部分を漢字で書くとき、最もよいものを□から選びなさい。
+B a. 河口|b. 課程|c. 不振|d. 仮定|e. 機嫌|f. 起源|g. 不信|h. 不審|i. 加工|j. 過程|k. 期限|l. 下降
+Q 7-1|消費{きげん}|＿>>消费期限
+Q 7-2|人類の{きげん}|＿>>人类的起源
+Q 8-1|{かこう}食品|＿>>加工食品
+Q 8-2|支持率の{かこう}|＿>>支持率的下降
+Q 9-1|食欲{ふしん}|＿>>食欲不振
+Q 9-2|挙動{ふしん}|＿>>举动可疑
+Q 10-1|博士{かてい}|＿>>博士课程
+Q 10-2|生産{かてい}|＿>>生产过程
+A Ⅰ：①a ②b ③a ④a ⑤a ⑥a　Ⅱ：⑦1k 2f ⑧1i 2l ⑨1c 2h ⑩1b 2j
