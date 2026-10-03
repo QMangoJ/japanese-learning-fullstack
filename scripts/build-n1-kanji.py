@@ -39,7 +39,11 @@ def strip_tags(h):
 def align(surface, reading):
     """Ruby for a word: kanji runs get the matching slice of the reading, kana stays bare."""
     parts = re.findall(f"[{KJ}]+|[^{KJ}]+", surface)
-    pat = "".join("(.+?)" if KANJI.match(p) else "(" + re.escape(hira(p)) + ")" for p in parts)
+
+    def lit(p):
+        return "".join(re.escape(hira(c)) for c in p)
+
+    pat = "".join("(.+?)" if KANJI.match(p) else "(" + lit(p) + ")" for p in parts)
     m = re.fullmatch(pat, hira(reading))
     if not m:
         return None
@@ -61,8 +65,7 @@ def word_ruby(jp, reading):
         r = align(m.group(1), reading)
         if r:
             return r + esc(jp[len(m.group(1)):])
-    WARN.append(f"word ruby fallback: {jp} / {reading}")
-    return f"<ruby>{esc(jp)}<rt>{esc(reading)}</rt></ruby>"
+        return f"<ruby>{esc(jp)}<rt>{esc(reading)}</rt></ruby>"
 
 
 LEX = {"日本": "にほん", "日本人": "にほんじん", "日本語": "にほんご", "一人": "ひとり", "二人": "ふたり", "今日": "きょう", "明日": "あした", "昨日": "きのう", "大人": "おとな", "何": "なに"}  # UniDic quirks first, then the book's word readings
@@ -79,7 +82,10 @@ def add_lex(jp, reading):
                 rd2 = rd[: -len(suf)]
             else:
                 rd2 = rd
-            LEX.setdefault(k, rd2)
+            if suf and rd2 != rd:
+                LEX.setdefault((k, hira(suf[0])), rd2)
+            else:
+                LEX.setdefault(k, rd2)
             continue
         r = align(chunk, rd)
         if r:
@@ -127,7 +133,9 @@ def seg_r(seg):
         return esc(seg)
     out, pos = [], 0
     for m in RUN.finditer(seg):
-        r = LEX.get(m.group(0))
+        nxt = hira(seg[m.end():m.end() + 1])
+        r = LEX.get((m.group(0), nxt)) if nxt and not KANJI.match(nxt) else None
+        r = r or LEX.get(m.group(0))
         if r:
             out.append(auto(seg[pos:m.start()]) if seg[pos:m.start()] else "")
             out.append(f"<ruby>{esc(m.group(0))}<rt>{esc(r)}</rt></ruby>")
@@ -179,7 +187,7 @@ def choices_of(q):
         return []
     out = []
     for w in m.groups():
-        rd = "".join(re.findall(r"<rt>([^<]*)</rt>", seg_r(w)))
+        rd = re.sub(r"<[^>]+>", "", re.sub(r"<ruby>[^<]*<rt>([^<]*)</rt></ruby>", r"\1", seg_r(w)))
         out.append({"jp": w, "jp_r": seg_r(w), "reading": rd})
     return out
 
@@ -233,6 +241,8 @@ def parse_day(path, w, d):
             if len(t) > 1 and t[1]:
                 cur["readings"] = [x for x in t[1].split("・") if x]
             kanji.append(cur)
+        elif tag == "R":
+            cur["review"], cur["review_r"] = plain(body), ruby(body)
         elif tag == "W":
             t = body.split("|")
             if len(t) < 4:
@@ -244,7 +254,11 @@ def parse_day(path, w, d):
                 it["related"] = True
             if rd.startswith("•"):
                 it["changed"] = True
-            it["jp_r"] = word_ruby(it["jp"], it["reading"])
+            it["jp_r"] = word_ruby(it["jp"], it["reading"]) if it["reading"] else ruby(jp.lstrip("◆"))
+            it["jp"] = plain(it["jp"])
+            if not it["reading"]:
+                it["reading"] = "".join(re.findall(r"<rt>([^<]*)</rt>", it["jp_r"]))
+                it["phrase"] = True
             if note:
                 it["note"], it["note_r"] = plain(note), ruby(note)
             if cur is None:
@@ -279,10 +293,9 @@ def parse_day(path, w, d):
                     it["opts_r"] = [esc(plain(o)) for o in t[1:]]
                     key = qn
             elif xs["type"] == "select":
-                if len(t) != 3 or not re.fullmatch(r"\d+-\d", t[0]):
+                if len(t) != 3 or not re.fullmatch(r"\d+(-\d)?", t[0]):
                     raise SystemExit(f"{where}: 練習Ⅱ Q needs n-m|sentence|slot: {line}")
-                a, b = t[0].split("-")
-                key = f"{a}-{b}"
+                key = t[0] if "-" in t[0] else int(t[0])
                 it = {"n": key, "q": plain(t[1]), "q_r": ruby_ul(t[1]), "slot": t[2]}
                 if ul_of(t[1]):
                     it["ul"] = ul_of(t[1])
@@ -366,9 +379,9 @@ def parse_ex(path, d7):
 def main():
     for f in sorted(glob.glob(os.path.join(SRC, "w*d*.txt"))):
         for raw in open(f, encoding="utf-8"):
-            if raw.startswith("W "):
+            if raw.startswith("W ") or raw.startswith("K "):
                 t = raw[2:].rstrip("\n").split("|")
-                if len(t) > 1 and t[1]:
+                if len(t) > 1 and t[1] and KANJI.search(t[0]) and re.fullmatch(r"[ぁ-んー・]+", t[1].lstrip("•")):
                     add_lex(t[0].lstrip("◆"), t[1].lstrip("•"))
     meta = json.load(open(os.path.join(SRC, "weeks.json"), encoding="utf-8"))
     for w in range(1, 9):

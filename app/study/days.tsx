@@ -1727,6 +1727,12 @@ function DayKanji({ day, w, d, scrollTok }: { day: any; w: number; d: number; sc
 									</div>
 								);
 							})}
+							{k.review ? (
+								<div className="meta jp">
+									{lx("常用读法：", "Common readings: ")}
+									<Rr o={k} f="review" />
+								</div>
+							) : null}
 						</div>
 					</div>
 					</Fragment>
