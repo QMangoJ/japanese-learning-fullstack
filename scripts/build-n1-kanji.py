@@ -178,7 +178,7 @@ def ruby_choice(q):
     if not m:
         WARN.append(f"no (a. b.) choice: {q}")
         return ruby(q)
-    return ruby(q[: m.start()]) + esc(m.group(0)) + ruby(q[m.end():])
+    return ruby_ul(q[: m.start()], tested=True) + esc(m.group(0)) + ruby_ul(q[m.end():], tested=True)
 
 
 def choices_of(q):
@@ -245,7 +245,7 @@ def parse_day(path, w, d):
             # word row (week 4+): V word|reading|en|cn|example|example_cn|note
             t = (body.split("|") + [""] * 7)[:7]
             jp, rd, en, cn, ex, excn, note = t
-            cur = new_kanji(jp, None)
+            cur = new_kanji(jp, group)
             cur["readings"] = [rd]
             it = {"jp": jp, "reading": rd, "en": en, "cn": cn, "jp_r": word_ruby(jp, rd)}
             if note:
@@ -318,6 +318,8 @@ def parse_day(path, w, d):
                 key = qn
                 it = {"n": qn, "q": plain(t[0]), "q_r": ruby_choice(t[0])}
                 it["choices"] = choices_of(t[0])
+                if ul_of(t[0]):
+                    it["ul"] = ul_of(t[0])
             xs["items"].append(it)
             if tr.strip():
                 trans.append({"n": key, "translation": tr.strip()})
@@ -345,7 +347,7 @@ def parse_day(path, w, d):
             reads = []
             for sec in ex_secs:
                 for it in sec["items"]:
-                    if it.get("choices"):
+                    if it.get("choices") and any(KANJI.search(c["jp"]) for c in it["choices"]):
                         reads.append(CIRC[it["n"] - 1] + "　" + "／".join(f"{'ab'[i]}. {c['jp']}（{c['reading']}）" for i, c in enumerate(it["choices"])))
             if reads:
                 day["exercises"]["answers_note"] = "读音：" + "　".join(reads)
