@@ -2320,6 +2320,66 @@
      "translation": "富有国际色彩"
     }
    ]
+  },
+  "w7d5": {
+   "items": [
+    {
+     "n": 1,
+     "translation": "买了一升瓶装的酱油。"
+    },
+    {
+     "n": 2,
+     "translation": "不想只待在一个地方，想到处住住看。"
+    },
+    {
+     "n": 3,
+     "translation": "按笔画数查汉字词典。"
+    },
+    {
+     "n": 4,
+     "translation": "1坪大约是2张榻榻米大小。"
+    },
+    {
+     "n": 5,
+     "translation": "母亲变得同样的话要说好几遍。"
+    },
+    {
+     "n": 6,
+     "translation": "请给我一条吐司面包。"
+    },
+    {
+     "n": 7,
+     "translation": "4只天鹅"
+    },
+    {
+     "n": 8,
+     "translation": "两套一万日元的西装"
+    },
+    {
+     "n": 9,
+     "translation": "三双一千日元的袜子"
+    },
+    {
+     "n": 10,
+     "translation": "1封邮件"
+    },
+    {
+     "n": 11,
+     "translation": "全10卷的漫画"
+    },
+    {
+     "n": 12,
+     "translation": "6只猫"
+    },
+    {
+     "n": 13,
+     "translation": "三天两夜的旅行"
+    },
+    {
+     "n": 14,
+     "translation": "3份证明书"
+    }
+   ]
   }
  }
 }
