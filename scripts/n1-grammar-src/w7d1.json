@@ -1,0 +1,203 @@
+{
+ "week": 7,
+ "day": 1,
+ "title": "考えに考えて",
+ "title_cn": "考虑再三",
+ "title_en": "After thinking it over and over",
+ "dialog": {
+  "lines": [
+   "Q.（　）に共通して入るのは？",
+   "スパゲッティ（　）フォーク、うどん（　）はお箸でしょう。"
+  ],
+  "cn": "问：括号里该填什么？——意大利面配叉子，乌冬面就该配筷子吧。（答案：に）",
+  "en": "Q: What goes in the blank? — Spaghetti goes with a fork, and udon with chopsticks. (Answer: に)"
+ },
+ "points": [
+  {
+   "pattern": "ごはんにお味噌汁",
+   "reading": "ごはんにおみそしる",
+   "connection": "N₁にN₂",
+   "usage_cn": "……配……，……加……（固定的组合）。",
+   "usage_en": "~ with ~ / ~ and ~ (a set combination).",
+   "examples": [
+    {
+     "jp": "日本の朝食と言えば、ごはんにお味噌汁でしょう。",
+     "eq": "=ごはんとお味噌汁の組み合わせ",
+     "en": "When you talk about Japanese breakfast, rice and miso soup should come into the picture.",
+     "cn": "要说日本的早饭，那就是米饭和酱汤。"
+    },
+    {
+     "jp": "私は、家ではたいていジーンズにTシャツを着ています。",
+     "eq": "=ジーンズとTシャツの組み合わせの服",
+     "en": "I wear mostly jeans and a T-shirt when I am at home.",
+     "cn": "我在家里一般穿牛仔裤和T恤。"
+    }
+   ],
+   "notes": []
+  },
+  {
+   "pattern": "考えに考えて",
+   "reading": "かんがえにかんがえて",
+   "connection": "Vます形（去ます）にVて／Vます形（去ます）にVた",
+   "usage_cn": "……了又……，反复……（强调）。",
+   "usage_en": "~ over and over / ~ again and again (emphasis).",
+   "examples": [
+    {
+     "jp": "考えに考えて進学を断念した。",
+     "eq": "=よく考えて",
+     "en": "I decided not to go to high school/university after thinking carefully.",
+     "cn": "考虑再三，放弃了升学。"
+    },
+    {
+     "jp": "不景気だというのに、高級時計が売れに売れているという。",
+     "eq": "=次々とよく売れている",
+     "en": "Despite the bad economy, I hear expensive watches are selling like hotcakes.",
+     "cn": "尽管不景气，听说高级表的销量越来越好。"
+    },
+    {
+     "jp": "彼女は、嘘に嘘を重ねて男からお金を引き出していた。",
+     "eq": "=次々と嘘を言って",
+     "en": "She used numerous lies to pressure him to give her money.",
+     "cn": "她一个接一个地撒谎，从男人手中骗到了钱。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "◆",
+     "text": "強調"
+    },
+    {
+     "type": "もっと",
+     "text": "NにNを重ねて　れい：研究に研究を重ねて／我慢に我慢を重ねて"
+    }
+   ]
+  },
+  {
+   "pattern": "一人や二人",
+   "reading": "ひとりやふたり",
+   "connection": "N₁やN₂",
+   "usage_cn": "一两个……，一……两……（表示数量不多，但并非没有）。",
+   "usage_en": "One or two ~.",
+   "examples": [
+    {
+     "jp": "どこの職場にも、意地の悪い先輩が一人や二人いる。",
+     "eq": "=一人か二人",
+     "en": "No matter what job you get, you'll have to deal with one or two mean senior staff members.",
+     "cn": "在任何一个职场，总有一两名爱刁难人的前辈。"
+    },
+    {
+     "jp": "一年や二年働いても、たいして貯金はできない。",
+     "eq": "=一年か二年",
+     "en": "You won't be able to save much money even if you work for one or two years.",
+     "cn": "就算工作上一两年，也存不了多少钱。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "◆",
+     "text": "Nは数量を表す言葉"
+    },
+    {
+     "type": "れい",
+     "text": "1万や2万のお金／3つや4つの子ども"
+    }
+   ]
+  },
+  {
+   "pattern": "壁という壁",
+   "reading": "かべというかべ",
+   "connection": "NというN",
+   "usage_cn": "所有的……，每一个……（强调）。",
+   "usage_en": "Every single ~ / all ~ (emphasis).",
+   "examples": [
+    {
+     "jp": "息子の部屋は壁という壁に車のポスターが貼ってある。",
+     "eq": "=すべての壁に",
+     "en": "The walls of my son's room are covered with car posters.",
+     "cn": "儿子的房间里，只要是墙面，全都贴着汽车的海报。"
+    },
+    {
+     "jp": "チラシをこの地域の家という家に配って歩いた。",
+     "eq": "=すべての家に",
+     "en": "I delivered flyers to every single house in this area.",
+     "cn": "把广告单发送到这个区域的每家每户。"
+    },
+    {
+     "jp": "今日という今日は、この仕事をやり遂げなければならない。",
+     "eq": "=今日は絶対に",
+     "en": "I must finish the work today!",
+     "cn": "就在今天，一定要完成这项工作。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "◆",
+     "text": "強調"
+    },
+    {
+     "type": "れい",
+     "text": "今度という今度（＝今度は絶対）"
+    }
+   ]
+  }
+ ],
+ "exercises": {
+  "answers_note": "答えはp.113",
+  "sections": [
+   {
+    "type": "choice",
+    "instruction": "正しいほうに〇をつけなさい。",
+    "items": [
+     {
+      "n": 1,
+      "q": "家に変なにおいがこもったので、窓（a. に　b. という）窓を全部開けた。"
+     },
+     {
+      "n": 2,
+      "q": "（a. 1回や2回の　b. 1回や2回も）練習でギターは弾けるようにならないよ。"
+     },
+     {
+      "n": 3,
+      "q": "彼は（a. 努力に努力　b. 努力するに努力）を重ねて、念願の弁護士になった。"
+     },
+     {
+      "n": 4,
+      "q": "娘はおなかがすいていたらしく、（a. 食べる　b. 食べ）に食べていた。"
+     },
+     {
+      "n": 5,
+      "q": "私は朝食はいつもコーヒー（a. で　b. に）パンです。"
+     }
+    ]
+   },
+   {
+    "type": "order",
+    "instruction": "下の語を並べ替えて正しい文を作りなさい。＿＿に数字を書きなさい。",
+    "items": [
+     {
+      "n": 6,
+      "q": "彼は ＿＿ ＿＿ ＿＿ ＿＿ ピアニストになった。",
+      "options": [
+       "1 練習を",
+       "2 ついに",
+       "3 練習に",
+       "4 重ねて"
+      ]
+     },
+     {
+      "n": 7,
+      "q": "彼女は ＿＿ ＿＿ ＿＿ ＿＿ を真っ赤に塗っていた。",
+      "options": [
+       "1 爪という",
+       "2 すべて",
+       "3 爪",
+       "4 学校の規則をよそに"
+      ]
+     }
+    ]
+   }
+  ],
+  "answers": "Ⅰ：①b ②a ③a ④b ⑤b　Ⅱ：⑥3→1→4→2　⑦4→1→3→2"
+ },
+ "hitokoto": ""
+}

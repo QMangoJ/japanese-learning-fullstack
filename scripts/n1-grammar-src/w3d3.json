@@ -1,0 +1,205 @@
+{
+ "week": 3,
+ "day": 3,
+ "title": "兄弟といえども",
+ "title_cn": "即使是兄弟",
+ "title_en": "Even brothers",
+ "dialog": {
+  "lines": [
+   "Q.（　）に入るのは？",
+   "こんなに難しい（　）思いませんでした。"
+  ],
+  "cn": "问：括号里该填什么？——没想到竟然这么难。（答案：とは）",
+  "en": "Q: What goes in the blank? — I never thought it would be this difficult. (Answer: とは)"
+ },
+ "points": [
+  {
+   "pattern": "こんなに高いとは驚きだ",
+   "reading": "こんなにたかいとはおどろきだ",
+   "connection": "V/A/na/N〔普〕＋とは／N・na＋とは",
+   "usage_cn": "竟然……，居然……（表示惊讶、感叹）。",
+   "usage_en": "To think that ~ (surprise).",
+   "examples": [
+    {
+     "jp": "東京は家賃が高いと聞いていたが、こんなに高いとは驚きだ。",
+     "eq": "=こんなに高いなんて",
+     "en": "I heard that the rent in Tokyo was high but I never imagined that it would be this high.",
+     "cn": "早就听说东京房租贵，没想到竟然这么贵，太吃惊了。"
+    },
+    {
+     "jp": "才能のある彼が亡くなるとは、残念でならない。",
+     "eq": "=亡くなるなんて",
+     "en": "It is so sad that such a talented person has died.",
+     "cn": "没想到那么有才华的他去世了，真是无比遗憾。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "◆",
+     "text": "強調／驚き"
+    },
+    {
+     "type": "れい",
+     "text": "こんなに暇（だ）とは／そのような人（だ）とは／あんな場所だったとは"
+    }
+   ]
+  },
+  {
+   "pattern": "教師とはいえ",
+   "reading": "きょうしとはいえ",
+   "connection": "V/A/na/N〔普〕＋とはいえ／N・na＋とはいえ",
+   "usage_cn": "虽说……，但是……。",
+   "usage_en": "Although ~ / even though ~.",
+   "examples": [
+    {
+     "jp": "教師とはいえ、答えられないこともあります。",
+     "eq": "=教師なのだが、それでも",
+     "en": "There are questions even teachers cannot answer.",
+     "cn": "虽说是老师，也有回答不上来的时候。"
+    },
+    {
+     "jp": "不景気で客が少ないとはいえ、一人も来ないことは今までになかったことだ。",
+     "eq": "=客は少ないが、それでも",
+     "en": "Although we've had recessions before, this is the first time our store has had no customers.",
+     "cn": "虽说因不景气客人少，但一个人也没有的情况是前所未有的。"
+    }
+   ],
+   "notes": []
+  },
+  {
+   "pattern": "兄弟といえども",
+   "reading": "きょうだいといえども",
+   "connection": "V/A/na/N〔普〕＋といえども／N・na＋といえども",
+   "usage_cn": "即使是……也……，虽说……但……。",
+   "usage_en": "Even ~ / although ~.",
+   "examples": [
+    {
+     "jp": "たとえ兄弟といえども、憎しみ合うこともある。",
+     "eq": "=兄弟でも",
+     "en": "Even siblings sometimes hate each other.",
+     "cn": "就算是兄弟，也有互相憎恨的时候。"
+    },
+    {
+     "jp": "広い土地があるといえども、田舎なので不動産の価値はない。",
+     "eq": "=あるが",
+     "en": "I have a big chunk of land but it doesn't have much value because it's in the countryside.",
+     "cn": "虽说有大块土地，但因为是乡下，没有房地产价值。"
+    },
+    {
+     "jp": "当たらずといえども遠からず。",
+     "eq": "=ぴったり当たっているとは言えないが、ほとんど間違ってない",
+     "en": "That's pretty close.",
+     "cn": "虽不中，亦不远矣。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "れい",
+     "text": "たとえ～といえども／いくら～といえども"
+    },
+    {
+     "type": "慣用",
+     "text": "当たらずといえども遠からず"
+    },
+    {
+     "type": "硬",
+     "text": "改まった場面や文書で使われる硬い表現"
+    }
+   ]
+  },
+  {
+   "pattern": "遅れるとの連絡があった",
+   "reading": "おくれるとのれんらくがあった",
+   "connection": "〔文〕とのN／〔文〕とのことだ",
+   "usage_cn": "据说……；说是……（传闻；N＝話、依頼、提案など）。",
+   "usage_en": "A message / request saying that ~; I hear that ~.",
+   "examples": [
+    {
+     "jp": "田中さんから10分ほど遅れるとの連絡がありました。",
+     "eq": "=10分ぐらい遅れるという",
+     "en": "Tanaka-san left a message that he would be 10 minutes late.",
+     "cn": "接到了田中的联系，说是要晚到10分钟左右。"
+    },
+    {
+     "jp": "社長の話によると、来月から給料を1割カットするとのことだ。",
+     "eq": "=1割カットするそうだ",
+     "en": "According to what the president said, our salaries will be reduced by 10% from next month.",
+     "cn": "据社长说，从下个月开始工资要减去1成。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "◆",
+     "text": "伝聞"
+    },
+    {
+     "type": "◆",
+     "text": "N＝話、依頼、提案など"
+    },
+    {
+     "type": "硬",
+     "text": "改まった場面や文書で使われる硬い表現"
+    }
+   ]
+  }
+ ],
+ "exercises": {
+  "answers_note": "答えはp.53",
+  "sections": [
+   {
+    "type": "choice",
+    "instruction": "正しいほうに〇をつけなさい。",
+    "items": [
+     {
+      "n": 1,
+      "q": "近所の人の話では、昨夜あの家でだれかが亡くなった（a. とのことだ　b. というらしい）。"
+     },
+     {
+      "n": 2,
+      "q": "入社したばかり（a. とは　b. とはいえ）、もう少しまともな挨拶ができないのだろうか。"
+     },
+     {
+      "n": 3,
+      "q": "親（a. といえども　b. に限り）、子どもをしかるのに暴力はいけない。"
+     },
+     {
+      "n": 4,
+      "q": "鈴木さんから、今日は風邪で休む（a. との　b. とはいう）電話がありました。"
+     },
+     {
+      "n": 5,
+      "q": "あんなに女らしく美しく見える人が、実は男だった（a. とは　b. とはいえ）……。"
+     }
+    ]
+   },
+   {
+    "type": "order",
+    "instruction": "下の語を並べ替えて正しい文を作りなさい。＿＿に数字を書きなさい。",
+    "items": [
+     {
+      "n": 6,
+      "q": "＿＿ ＿＿ ＿＿ ＿＿ をしてしまい、大変申し訳ありませんでした。",
+      "options": [
+       "1 知らなかったこと",
+       "2 失礼なこと",
+       "3 いえ",
+       "4 とは"
+      ]
+     },
+     {
+      "n": 7,
+      "q": "生活 ＿＿ ＿＿ ＿＿ ＿＿ に働かなくてはならない。",
+      "options": [
+       "1 といえども",
+       "2 のため",
+       "3 休まず",
+       "4 休日"
+      ]
+     }
+    ]
+   }
+  ],
+  "answers": "Ⅰ：①a ②b ③a ④a ⑤a　Ⅱ：⑥1→4→3→2　⑦2→4→1→3"
+ },
+ "hitokoto": ""
+}

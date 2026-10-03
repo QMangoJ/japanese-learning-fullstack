@@ -18,9 +18,10 @@ export type ModuleKey =
 	| "n2listening"
 	| "n4grammar"
 	| "n4vocab"
-	| "n4kanji";
+	| "n4kanji"
+	| "n1grammar";
 
-export type LevelKey = "n2" | "n3" | "n4";
+export type LevelKey = "n1" | "n2" | "n3" | "n4";
 export type TypeKey = "grammar" | "vocab" | "kanji" | "reading" | "listening";
 export type Lang = "cn" | "en";
 export type Theme = "light" | "dark";
@@ -51,6 +52,7 @@ export const LEVEL_LIST: [LevelKey, string, string][] = [
 	["n4", "N4", "基础"],
 	["n3", "N3", "进阶"],
 	["n2", "N2", "高阶"],
+	["n1", "N1", "顶级"],
 ];
 export const MODLABELS: Record<ModuleKey, [string, string]> = {
 	grammar: ["N3 语法", "N3 Grammar"],
@@ -66,6 +68,7 @@ export const MODLABELS: Record<ModuleKey, [string, string]> = {
 	n4grammar: ["N4 语法", "N4 Grammar"],
 	n4vocab: ["N4 词汇", "N4 Vocabulary"],
 	n4kanji: ["N4 汉字", "N4 Kanji"],
+	n1grammar: ["N1 语法", "N1 Grammar"],
 };
 export const BOOK_TITLE: Record<ModuleKey, [string, string]> = {
 	grammar: ["N3语法训练", "JLPT Prep N3 Grammar"],
@@ -81,6 +84,7 @@ export const BOOK_TITLE: Record<ModuleKey, [string, string]> = {
 	n4grammar: ["N4语法训练", "JLPT Prep N4 Grammar"],
 	n4vocab: ["N4词汇训练", "JLPT Prep N4 Vocabulary"],
 	n4kanji: ["N4汉字训练", "JLPT Prep N4 Kanji"],
+	n1grammar: ["日本語総まとめ N1 文法", "Nihongo Sou Matome N1 Grammar"],
 };
 export const MODULES: ModuleKey[] = [
 	"grammar",
@@ -96,6 +100,7 @@ export const MODULES: ModuleKey[] = [
 	"n4grammar",
 	"n4vocab",
 	"n4kanji",
+	"n1grammar",
 ];
 export const MISTAKE_TYPES: Record<string, string> = { q: "错题", word: "单词", grammar: "语法" };
 export const MISTAKE_LEVELS: Record<string, string> = { new: "不熟", mid: "一般", done: "已掌握" };
@@ -111,6 +116,7 @@ export const FAV_MOD_ORDER = [
 	"grammar",
 	"n2grammar",
 	"n4grammar",
+	"n1grammar",
 	"vocab",
 	"n2vocab",
 	"n4vocab",
@@ -127,6 +133,7 @@ export const FAV_MOD_LABEL: Record<string, string> = {
 	grammar: "N3语法",
 	n2grammar: "N2语法",
 	n4grammar: "N4语法",
+	n1grammar: "N1语法",
 	vocab: "N3词汇",
 	n2vocab: "N2词汇",
 	n4vocab: "N4词汇",
@@ -150,6 +157,7 @@ const DATA_FILES: Record<string, string> = {
 	n4grammar: "n4grammar.40e138ccdb.json",
 	n4vocab: "n4vocab.026f711eb7.json",
 	n4kanji: "n4kanji.655356d8e2.json",
+	n1grammar: "n1grammar.c2d6c00681.json",
 	common: "common.aa13cae172.json",
 };
 
@@ -167,6 +175,7 @@ const MOD2LT: Record<ModuleKey, [LevelKey, TypeKey]> = {
 	n4grammar: ["n4", "grammar"],
 	n4vocab: ["n4", "vocab"],
 	n4kanji: ["n4", "kanji"],
+	n1grammar: ["n1", "grammar"],
 };
 const LT2MOD: Record<string, ModuleKey> = {
 	"n3:grammar": "grammar",
@@ -182,6 +191,7 @@ const LT2MOD: Record<string, ModuleKey> = {
 	"n4:grammar": "n4grammar",
 	"n4:vocab": "n4vocab",
 	"n4:kanji": "n4kanji",
+	"n1:grammar": "n1grammar",
 };
 
 const listeners = new Set<() => void>();
@@ -245,6 +255,7 @@ export let DATA: Record<string, any> = {};
 export let dataLoaded = false;
 export let n2Loaded = false;
 export let n4Loaded = false;
+export let n1Loaded = false;
 export let loadError = "";
 export let lastVisit: Record<string, string> = {};
 export let lastDay: Record<string, string> = {};
@@ -296,6 +307,7 @@ export let K2: any = emptyBundle;
 export let G4: any = emptyBundle;
 export let V4: any = emptyBundle;
 export let K4: any = emptyBundle;
+export let G1: any = emptyBundle;
 export let R: any = readingBundle();
 export let R2: any = readingN2Bundle();
 export let L: any = listeningBundle();
@@ -356,7 +368,7 @@ export function lx(cn?: string, en?: string) {
 	return LANG === "en" && en ? en : cn || "";
 }
 export function isGram(mod: string = MODULE) {
-	return mod === "grammar" || mod === "n2grammar" || mod === "n4grammar";
+	return mod === "grammar" || mod === "n2grammar" || mod === "n4grammar" || mod === "n1grammar";
 }
 export function isKanji(mod: string = MODULE) {
 	return mod === "kanji" || mod === "n2kanji" || mod === "n4kanji";
@@ -366,6 +378,9 @@ export function isVocab(mod: string = MODULE) {
 }
 export function isN2(mod: string = MODULE) {
 	return mod.startsWith("n2");
+}
+export function isN1(mod: string = MODULE) {
+	return mod.startsWith("n1");
 }
 export function isN4(mod: string = MODULE) {
 	return mod.startsWith("n4");
@@ -379,7 +394,7 @@ export function isListening(mod: string = MODULE) {
 export function moduleFrom(lv: string, ty: string): ModuleKey {
 	if (ty === "reading") return LT2MOD[`${lv}:reading`] || LT2MOD[`${lv}:grammar`] || "grammar";
 	if (ty === "listening") return LT2MOD[`${lv}:listening`] || "listening";
-	return LT2MOD[`${lv}:${ty}`] || "grammar";
+	return LT2MOD[`${lv}:${ty}`] || LT2MOD[`${lv}:grammar`] || "grammar";
 }
 export function deriveLT() {
 	const pair = MOD2LT[MODULE] || ["n3", "grammar"];
@@ -399,6 +414,7 @@ export function cur(mod: string = MODULE) {
 			n4grammar: G4,
 			n4vocab: V4,
 			n4kanji: K4,
+			n1grammar: G1,
 			reading: R,
 			listening: L,
 		}[mod] || G
@@ -447,6 +463,7 @@ export function setLang(lang: Lang) {
 export function typeForLevel(lv: LevelKey, ty: TypeKey): TypeKey {
 	if (ty === "reading" && lv !== "n3" && lv !== "n2") return "grammar";
 	if (ty === "listening" && lv !== "n3" && lv !== "n2") return "grammar";
+	if (lv === "n1") return "grammar";
 	return ty;
 }
 export function applyDisplayClasses() {
@@ -1062,6 +1079,7 @@ function buildIndex() {
 	pushG("grammar", G.weeks);
 	pushG("n2grammar", G2.weeks);
 	pushG("n4grammar", G4.weeks);
+	pushG("n1grammar", G1.weeks);
 	pushV("vocab", V.weeks);
 	pushV("n2vocab", V2.weeks);
 	pushV("n4vocab", V4.weeks);
@@ -1246,7 +1264,7 @@ export function bootReadingSearch() {
 export type SearchCategory = "all" | "grammar" | "kanji" | "vocab" | "mistakes";
 
 export function searchCategoryForModule(module: string): Exclude<SearchCategory, "all"> | "other" {
-	if (module === "grammar" || module === "n2grammar" || module === "n4grammar") return "grammar";
+	if (module === "grammar" || module === "n2grammar" || module === "n4grammar" || module === "n1grammar") return "grammar";
 	if (module === "kanji" || module === "n2kanji" || module === "n4kanji") return "kanji";
 	if (module === "vocab" || module === "n2vocab" || module === "n4vocab") return "vocab";
 	if (module === "mistakes") return "mistakes";
@@ -1735,6 +1753,7 @@ export function resetStudyStateForTests() {
 	G4 = { weeks: [] };
 	V4 = { weeks: [] };
 	K4 = { weeks: [] };
+	G1 = { weeks: [] };
 	R = readingBundle();
 	R2 = readingN2Bundle();
 	L = listeningBundle();
@@ -1751,12 +1770,14 @@ export function resetStudyStateForTests() {
 		n4grammar: G4,
 		n4vocab: V4,
 		n4kanji: K4,
+		n1grammar: G1,
 		reading: R,
 		listening: L,
 	};
 	dataLoaded = false;
 	n2Loaded = false;
 	n4Loaded = false;
+	n1Loaded = false;
 	loadError = "";
 	for (const key of Object.keys(openWeeks)) delete openWeeks[key];
 	resetDueForTests();
@@ -1903,6 +1924,26 @@ async function bootN4() {
 		emit();
 	} catch {
 		/* ignore */
+	}
+	bootN1();
+}
+
+async function bootN1() {
+	try {
+		const [g1, n1ExamExplanations]: any[] = await Promise.all([
+			fetch("/data/" + DATA_FILES.n1grammar).then((r) => r.json()),
+			fetch("/data/n1-grammar-explanations.json")
+				.then((r) => (r.ok ? r.json() : {}))
+				.catch(() => ({})),
+		]);
+		g1.besatsu = n1ExamExplanations || {};
+		G1 = g1;
+		DATA.n1grammar = G1;
+		n1Loaded = true;
+		searchIndex = null;
+		emit();
+	} catch {
+		/* other levels stay usable */
 	}
 }
 

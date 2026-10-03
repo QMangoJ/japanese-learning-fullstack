@@ -36,6 +36,7 @@ DATA_FILES = (
 	"public/data/n2grammar.4e6157570a.json",
 	"public/data/n2vocab.90123e4b43.json",
 	"public/data/n2kanji.d9739ca8d4.json",
+	"public/data/n1grammar.c2d6c00681.json",
 )
 
 RUBY_RE = re.compile(r"<ruby>(.*?)<rt>(.*?)</rt></ruby>", re.DOTALL)

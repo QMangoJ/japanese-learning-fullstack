@@ -1,0 +1,206 @@
+{
+ "week": 3,
+ "day": 2,
+ "title": "今日を限りに",
+ "title_cn": "以今天为限",
+ "title_en": "As of today",
+ "dialog": {
+  "lines": [
+   "Q.（　）に入るのは？",
+   "わからないときは、先生に（　）。"
+  ],
+  "cn": "问：括号里该填什么？——不懂的时候，最好是问老师。（答案：聞くに限る）",
+  "en": "Q: What goes in the blank? — When you don't understand, asking the teacher is best. (Answer: 聞くに限る)"
+ },
+ "points": [
+  {
+   "pattern": "残念な限りだ",
+   "reading": "ざんねんなかぎりだ",
+   "connection": "Aい限りだ／naな限りだ",
+   "usage_cn": "……之至；非常……，极其……（强调说话人的感受）。",
+   "usage_en": "Extremely ~ (speaker's strong feeling).",
+   "examples": [
+    {
+     "jp": "いとこの結婚式に出られないとは、残念な限りだ。",
+     "eq": "=とても残念だ",
+     "en": "It's a shame I can't attend my cousin's wedding.",
+     "cn": "竟然无法参加表弟的结婚典礼，遗憾之至。"
+    },
+    {
+     "jp": "年を取って、お金もなく、家族もいないのは、心細い限りです。",
+     "eq": "=とても心細い",
+     "en": "I feel helpless being old, and not having money or a family.",
+     "cn": "上年纪了，又没有钱，又没有家人，心中充满了不安。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "れい",
+     "text": "うらやましい限り／うれしい限り／寂しい限り／心強い限り／頼もしい限り"
+    }
+   ]
+  },
+  {
+   "pattern": "今日を限りに",
+   "reading": "きょうをかぎりに",
+   "connection": "Nを限りに／N限りで",
+   "usage_cn": "以……为限，到……为止（之后不再……）。",
+   "usage_en": "As of ~ / ending with ~.",
+   "examples": [
+    {
+     "jp": "今日を限りに甘いものをやめることにした。",
+     "eq": "=今日を最後にして",
+     "en": "I've decided to quit eating sweets from today.",
+     "cn": "以今天为界限，我打算不再吃甜食了。"
+    },
+    {
+     "jp": "3月限りでこのクラスはなくなります。",
+     "eq": "=3月末までで",
+     "en": "This course will not be offered from April onwards.",
+     "cn": "到3月为止，这个班就没了。"
+    },
+    {
+     "jp": "彼は声を限りに助けを求めた。",
+     "eq": "=できるだけ大きな声で",
+     "en": "He screamed at the top of his lung for help.",
+     "cn": "他声嘶力竭地求救。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "◆",
+     "text": "Nは主に時を表す語。"
+    },
+    {
+     "type": "慣用",
+     "text": "声を限りに"
+    },
+    {
+     "type": "ダメ",
+     "text": "声限り"
+    },
+    {
+     "type": "れい",
+     "text": "本日を限りに／今回を限りに"
+    }
+   ]
+  },
+  {
+   "pattern": "寝るに限る",
+   "reading": "ねるにかぎる",
+   "connection": "Vる／Vないに限る／Nに限る",
+   "usage_cn": "……最好，最好是……（说话人认为的最佳选择）。",
+   "usage_en": "~ is the best (thing to do).",
+   "examples": [
+    {
+     "jp": "風邪を引いたときは、暖かくして寝るに限る。",
+     "eq": "=寝るのが一番だ",
+     "en": "It is best to keep warm and rest when you catch a cold.",
+     "cn": "感冒的时候，最好是热乎乎地睡觉。"
+    },
+    {
+     "jp": "日本語学校を選ぶなら、この学校に限る。",
+     "eq": "=この学校が一番だ",
+     "en": "When it comes to a Japanese language school, this one is the best.",
+     "cn": "如果要选择日语学校，这个学校最好。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "れい",
+     "text": "～を買うなら安いのに限る"
+    }
+   ]
+  },
+  {
+   "pattern": "我が国に限ったことではない",
+   "reading": "わがくににかぎったことではない",
+   "connection": "Nに限ったことで（は／も）ない",
+   "usage_cn": "不仅限于……，不只是……（「Nに限らない」的书面说法）。",
+   "usage_en": "Not limited to ~.",
+   "examples": [
+    {
+     "jp": "若者の言葉遣いが悪いのは、我が国に限ったことではない。",
+     "eq": "=我が国だけではない",
+     "en": "It is not only in this country that young people do not know how to properly use the language.",
+     "cn": "年轻人说话粗俗的现象，并不只限于我们国家。"
+    },
+    {
+     "jp": "夏にインフルエンザがはやったのは、今年に限ったことではなく、去年も同様だった。",
+     "eq": "=今年だけのことではなく",
+     "en": "A flu broke out not only this summer but last summer as well.",
+     "cn": "夏天爆发流感并不只是今年的事，去年也一样。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "◆",
+     "text": "「Nに限らない」の硬い表現"
+    },
+    {
+     "type": "硬",
+     "text": "改まった場面や文書で使われる硬い表現"
+    }
+   ]
+  }
+ ],
+ "exercises": {
+  "answers_note": "答えはp.51",
+  "sections": [
+   {
+    "type": "choice",
+    "instruction": "正しいほうに〇をつけなさい。",
+    "items": [
+     {
+      "n": 1,
+      "q": "応援していたチームが試合に負けてしまって残念（a. な限りだ　b. に限る）。"
+     },
+     {
+      "n": 2,
+      "q": "新築の家を買った。今月（a. を限りに　b. に限り）このマンションともお別れだ。"
+     },
+     {
+      "n": 3,
+      "q": "風邪をひいたときは、薬など飲むよりゆっくり寝る（a. に限る　b. 限りだ）。"
+     },
+     {
+      "n": 4,
+      "q": "朝の電車が混んでいるのは、今日に（a. 限る　b. 限った）ことではない。"
+     },
+     {
+      "n": 5,
+      "q": "宝くじに当たったなんて、なんともうらやましい（a. 限ったことではない　b. 限りだ）。"
+     }
+    ]
+   },
+   {
+    "type": "order",
+    "instruction": "下の語を並べ替えて正しい文を作りなさい。＿＿に数字を書きなさい。",
+    "items": [
+     {
+      "n": 6,
+      "q": "そのドラマは、視聴率が ＿＿ ＿＿ ＿＿ ＿＿ 打ち切られることになった。",
+      "options": [
+       "1 を限り",
+       "2 に",
+       "3 伸びず",
+       "4 10回目"
+      ]
+     },
+     {
+      "n": 7,
+      "q": "漢字が書けなくなったのは、＿＿ ＿＿ ＿＿ ＿＿ なってからずっとだ。",
+      "options": [
+       "1 コンピューターを使うように",
+       "2 最近",
+       "3 ではなく",
+       "4 に限ったこと"
+      ]
+     }
+    ]
+   }
+  ],
+  "answers": "Ⅰ：①a ②a ③a ④b ⑤b　Ⅱ：⑥3→4→1→2　⑦2→4→3→1"
+ },
+ "hitokoto": ""
+}

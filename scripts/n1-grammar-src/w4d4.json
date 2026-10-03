@@ -1,0 +1,179 @@
+{
+ "week": 4,
+ "day": 4,
+ "title": "この状況にあっては",
+ "title_cn": "在这种状况下",
+ "title_en": "In this situation",
+ "dialog": {
+  "lines": [
+   "Q.（　）に入るのは？",
+   "健康な体（　）人生だ。"
+  ],
+  "cn": "问：括号里该填什么？——有了健康的身体才有人生。（答案：あっての）",
+  "en": "Q: What goes in the blank? — Life depends on having a healthy body. (Answer: あっての)"
+ },
+ "points": [
+  {
+   "pattern": "休日とあって",
+   "reading": "きゅうじつとあって",
+   "connection": "V/A/na/N〔普〕＋とあって／na・N＋とあって",
+   "usage_cn": "因为是……（特殊情况），所以……。",
+   "usage_en": "Because it is ~ (a special situation).",
+   "examples": [
+    {
+     "jp": "今日は休日とあって、車の混雑が激しい。",
+     "eq": "=休日だから",
+     "en": "Today is a holiday so the traffic is terribly congested.",
+     "cn": "因为今天是休息日，路上极其拥挤。"
+    },
+    {
+     "jp": "久しぶりの再会とあって、彼らは何時間も話していた。",
+     "eq": "=久しぶりの再会だから",
+     "en": "They talked for many hours because they had not seen each other for a long time.",
+     "cn": "因为好久没有见面了，他们聊了好几个小时。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "◆",
+     "text": "自分のことにはあまり使わない。"
+    }
+   ]
+  },
+  {
+   "pattern": "娘のためとあれば",
+   "reading": "むすめのためとあれば",
+   "connection": "V/A/na/N〔普〕＋とあれば／na・N＋とあれば",
+   "usage_cn": "如果是……的话，只要是为了……（就……）（强调）。",
+   "usage_en": "If it is (for) ~.",
+   "examples": [
+    {
+     "jp": "娘のためとあれば、どんなことでもします。",
+     "eq": "=娘のためなら",
+     "en": "I'll do anything for my daughter.",
+     "cn": "如果是为了女儿，什么事情都可以做。"
+    },
+    {
+     "jp": "いいものを安く買えるとあれば、遠くの店でも喜んで行きます。",
+     "eq": "=安く買えるなら",
+     "en": "I'd be happy to go to a far-away shop if I could get nice things cheaply.",
+     "cn": "如果能买到便宜的好东西，就算是距离远的商店也乐意去。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "◆",
+     "text": "強調"
+    }
+   ]
+  },
+  {
+   "pattern": "この状況にあって",
+   "reading": "このじょうきょうにあって",
+   "connection": "Nにあって（は）",
+   "usage_cn": "在……（的状况、立场）下。",
+   "usage_en": "In (the situation of) ~.",
+   "examples": [
+    {
+     "jp": "この状況にあって、利益を伸ばすのは困難だ。",
+     "eq": "=この状況において",
+     "en": "It is difficult to make more profit under the present circumstances.",
+     "cn": "处于这种状况下，很难再增加收益。"
+    },
+    {
+     "jp": "父は大学教授だが、家庭にあってはふつうの父親です。",
+     "eq": "=家庭においては",
+     "en": "My father is a university professor but he is an ordinary father at home.",
+     "cn": "父亲是大学教授，但在家里就是普通的父亲。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "硬",
+     "text": "改まった場面や文書で使われる硬い表現"
+    }
+   ]
+  },
+  {
+   "pattern": "お客様あっての",
+   "reading": "おきゃくさまあっての",
+   "connection": "N₁あっての N₂",
+   "usage_cn": "有了……才有……（N₁是N₂成立的前提）。",
+   "usage_en": "~ depends on ~ / no ~ without ~.",
+   "examples": [
+    {
+     "jp": "お客様あっての仕事だから、言葉遣いに気を付けてください。",
+     "eq": "=お客様があって初めてできる仕事",
+     "en": "Please pay attention to the language you use with clients since we cannot afford to lose any of them.",
+     "cn": "有客户才有工作，所以请注意措词。"
+    },
+    {
+     "jp": "健康あっての人生だ。病気にならないよう気をつけよう。",
+     "eq": "=人生は健康が第一だ",
+     "en": "You don't have much if you don't have your health. Let's stay healthy.",
+     "cn": "健康是人生的首要前提，注意不要生病。"
+    }
+   ],
+   "notes": []
+  }
+ ],
+ "exercises": {
+  "answers_note": "答えはp.71",
+  "sections": [
+   {
+    "type": "choice",
+    "instruction": "正しいほうに〇をつけなさい。",
+    "items": [
+     {
+      "n": 1,
+      "q": "僕の幸せは家族（a. あっての　b. にあっての）ものだ。みんな病気をせず元気でいてほしい。"
+     },
+     {
+      "n": 2,
+      "q": "父は、たとえ日曜であっても、仕事（a. とあれば　b. にあって）どこへでも行く。"
+     },
+     {
+      "n": 3,
+      "q": "事業の成功は、皆さんの協力（a. あっての　b. とあっての）ものと感謝しています。"
+     },
+     {
+      "n": 4,
+      "q": "決勝戦（a. とあって　b. にあって）、その試合の入場券はすぐに売り切れた。"
+     },
+     {
+      "n": 5,
+      "q": "情報が氾濫する時代（a. あって　b. にあって）、必要なものを選択するのは難しい。"
+     }
+    ]
+   },
+   {
+    "type": "order",
+    "instruction": "下の語を並べ替えて正しい文を作りなさい。＿＿に数字を書きなさい。",
+    "items": [
+     {
+      "n": 6,
+      "q": "我が子の ＿＿ ＿＿ ＿＿ ＿＿ も我慢できるものだ。",
+      "options": [
+       "1 ため",
+       "2 どんな",
+       "3 苦労",
+       "4 とあれば"
+      ]
+     },
+     {
+      "n": 7,
+      "q": "＿＿ ＿＿ ＿＿ ＿＿ 彼には頭が下がる。",
+      "options": [
+       "1 あきらめないで",
+       "2 困難な状況に",
+       "3 努力をする",
+       "4 あっても"
+      ]
+     }
+    ]
+   }
+  ],
+  "answers": "Ⅰ：①a ②a ③a ④a ⑤b　Ⅱ：⑥1→4→2→3　⑦2→4→1→3"
+ },
+ "hitokoto": ""
+}

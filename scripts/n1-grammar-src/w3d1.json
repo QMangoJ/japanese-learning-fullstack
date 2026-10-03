@@ -1,0 +1,172 @@
+{
+ "week": 3,
+ "day": 1,
+ "title": "毎日はしないまでも",
+ "title_cn": "即使不每天做",
+ "title_en": "Even if not every day",
+ "dialog": {
+  "lines": [
+   "Q.（　）に入るのは？",
+   "敬語が難しいのは、言う（　）。"
+  ],
+  "cn": "问：括号里该填什么？——敬语难，这自不必说。（答案：までもない）",
+  "en": "Q: What goes in the blank? — It goes without saying that keigo is difficult. (Answer: までもない)"
+ },
+ "points": [
+  {
+   "pattern": "聞いてみたまでだ",
+   "reading": "きいてみたまでだ",
+   "connection": "Vる／Vた ＋まで（のこと）だ／それ・これ ＋までだ",
+   "usage_cn": "只是……而已；大不了……就是了；（那）就完了。",
+   "usage_en": "I merely ~ / I'll just have to ~ / that's the end of it.",
+   "examples": [
+    {
+     "jp": "ちょっと聞いてみたまでです。",
+     "eq": "=聞いてみただけだ。ほかの意味はない",
+     "en": "I just wanted to ask.",
+     "cn": "只是稍微问一下。"
+    },
+    {
+     "jp": "妻が反対だと言えば、あきらめるまでだ。",
+     "eq": "=あきらめるしかない",
+     "en": "I'll have to give it up if my wife says no.",
+     "cn": "如果妻子说反对，就只能放弃。"
+    },
+    {
+     "jp": "給料が上がらないなら、会社をやめるまでだ。",
+     "eq": "=やめるしかない",
+     "en": "I'll have to quit this job if I don't get a salary raise.",
+     "cn": "如果工资不涨，就只能辞职。"
+    },
+    {
+     "jp": "いくら高いコンピューターを買っても、使わなければそれまでだ。",
+     "eq": "=それだけで、何の役にも立たない",
+     "en": "It's a waste to buy an expensive computer if you don't use it.",
+     "cn": "不论买多么贵的电脑，如果不用那也白搭。"
+    }
+   ],
+   "notes": []
+  },
+  {
+   "pattern": "毎日はしないまでも",
+   "reading": "まいにちはしないまでも",
+   "connection": "①Vないまでも　②Vてまでも",
+   "usage_cn": "①即使不……，至少……；②甚至不惜……也要……。",
+   "usage_en": "① Even if not ~, at least …; ② Even going so far as to ~.",
+   "examples": [
+    {
+     "jp": "毎日はしないまでも、週に1回くらいは部屋の掃除をしよう。",
+     "eq": "=毎日じゃなくても、少なくとも",
+     "en": "I won't clean my room every day but I will at least once a week.",
+     "cn": "就算不每天打扫，咱们一周至少打扫一次房间吧。"
+    },
+    {
+     "jp": "手紙を書かないまでも電話ぐらいしろ。",
+     "eq": "=手紙を書かなくても",
+     "en": "If you can't be bothered to write to me, at least call.",
+     "cn": "就算不写信，至少要打电话。"
+    },
+    {
+     "jp": "母は体を壊してまでも、朝から晩まで働き続けた。",
+     "eq": "=体を壊す状態になるまで",
+     "en": "My mother worked day and night and sacrificed her health.",
+     "cn": "妈妈从早到晚不停地工作，甚至累垮了身体。"
+    },
+    {
+     "jp": "そのジャーナリストは危険を冒してまでも戦場に行こうとしている。",
+     "eq": "=危険を冒して、それでも",
+     "en": "Despite it being risky, the journalist is going to the war zone.",
+     "cn": "那位记者甚至要冒着危险去战场。"
+    }
+   ],
+   "notes": []
+  },
+  {
+   "pattern": "言うまでもない",
+   "reading": "いうまでもない",
+   "connection": "Vるまでもない",
+   "usage_cn": "用不着……，不必……（理所当然，没有必要）。",
+   "usage_en": "There is no need to ~ / it goes without saying.",
+   "examples": [
+    {
+     "jp": "日本が狭いということは、言うまでもない。",
+     "eq": "=言わなくてもみんなが知っている",
+     "en": "It goes without saying that Japan is a very small country.",
+     "cn": "不言而喻，日本国土狭小。"
+    },
+    {
+     "jp": "その件については、社長に許可を取るまでもない。",
+     "eq": "=許可を取る必要はない",
+     "en": "You don't have to get the president's approval on this matter.",
+     "cn": "关于那件事，不必得到社长的许可。"
+    },
+    {
+     "jp": "アルコール検査をするまでもなく、彼が酔っ払っていることは明白だ。",
+     "eq": "=検査をする必要がないほど",
+     "en": "He is definitely drunk. I don't think we even need to give him a breathalyzer.",
+     "cn": "都不用进行酒精检测，很明显他喝醉了。"
+    }
+   ],
+   "notes": []
+  }
+ ],
+ "exercises": {
+  "answers_note": "答えはp.49",
+  "sections": [
+   {
+    "type": "choice",
+    "instruction": "正しいほうに〇をつけなさい。",
+    "items": [
+     {
+      "n": 1,
+      "q": "来たくなければ来なくてもいい。ただ君が損を（a. する　b. しない）までだ。"
+     },
+     {
+      "n": 2,
+      "q": "親が出る（a. までもなく　b. までも）、子どもたちだけでその問題を解決した。"
+     },
+     {
+      "n": 3,
+      "q": "あの人とは話はしない（a. までもなく　b. までも）、挨拶ぐらいはしますよ。"
+     },
+     {
+      "n": 4,
+      "q": "いくらお金を稼いでも死んでしまえば（a. それまでだ　b. それまでもない）。"
+     },
+     {
+      "n": 5,
+      "q": "これくらいの故障、修理を頼む（a. までのことだ　b. までもない）。僕が直してあげるよ。"
+     }
+    ]
+   },
+   {
+    "type": "order",
+    "instruction": "下の語を並べ替えて正しい文を作りなさい。＿＿に数字を書きなさい。",
+    "items": [
+     {
+      "n": 6,
+      "q": "上手になりたければ、＿＿ ＿＿ ＿＿ ＿＿ のことだ。",
+      "options": [
+       "1 練習",
+       "2 ひたすら",
+       "3 まで",
+       "4 する"
+      ]
+     },
+     {
+      "n": 7,
+      "q": "彼の行為は、＿＿ ＿＿ ＿＿ ＿＿ と言えるだろう。",
+      "options": [
+       "1 犯罪",
+       "2 まで",
+       "3 法律を持ち出す",
+       "4 もなく"
+      ]
+     }
+    ]
+   }
+  ],
+  "answers": "Ⅰ：①a ②a ③b ④a ⑤b　Ⅱ：⑥2→1→4→3　⑦3→2→4→1"
+ },
+ "hitokoto": ""
+}

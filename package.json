@@ -63,6 +63,8 @@
 		"generate:n4-vk-exam": "python3 scripts/generate-n4-vk-exam-explanations.py",
 		"generate:n3-vk-exam": "python3 scripts/generate-n3-vk-exam-explanations.py",
 		"test:n2-exam": "node scripts/check-n2-grammar-explanations.mjs",
+		"test:n1-grammar": "node scripts/check-n1-grammar.mjs",
+		"generate:n1-grammar": "python3 scripts/build-n1-grammar.py && python3 scripts/fix-reviewed-furigana.py && python3 scripts/generate-n1-grammar-explanations.py",
 		"test:n2-vk-exam": "node scripts/check-n2-vk-exam-explanations.mjs",
 		"test:n2-vocab-kanji-daily": "node scripts/check-n2-vocab-kanji-daily-translations.mjs",
 		"generate:lesson-review": "vite-node scripts/build-lesson-review.mjs",

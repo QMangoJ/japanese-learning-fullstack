@@ -1,0 +1,195 @@
+{
+ "week": 6,
+ "day": 6,
+ "title": "結婚を前提として",
+ "title_cn": "以结婚为前提",
+ "title_en": "With marriage in mind",
+ "dialog": {
+  "lines": [
+   "Q.（　）に入るのは？",
+   "来日の（　）、ぜひ我が家へお越しください。"
+  ],
+  "cn": "问：括号里该填什么？——您来日本的时候，请一定到我家来。（答案：折には）",
+  "en": "Q: What goes in the blank? — When you come to Japan, please be sure to visit our home. (Answer: 折には)"
+ },
+ "points": [
+  {
+   "pattern": "結果を踏まえて",
+   "reading": "けっかをふまえて",
+   "connection": "Nを踏まえて",
+   "usage_cn": "根据……，以……为基础（考虑）。",
+   "usage_en": "Based on ~ / taking ~ into account.",
+   "examples": [
+    {
+     "jp": "アンケート結果を踏まえて、業務を改善したいと思います。",
+     "eq": "=アンケート結果をもとにして",
+     "en": "I would like to improve our performance based on the results of the survey.",
+     "cn": "我想根据问卷调查的结果改善业务。"
+    },
+    {
+     "jp": "我が国の問題点を、事実を踏まえて説明しなさい。",
+     "eq": "=事実をもとにしながら",
+     "en": "Please explain the problem that our country is facing taking this fact into consideration.",
+     "cn": "请根据事实来说明我国的问题。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "れい",
+     "text": "意見を踏まえて／経験を踏まえて／議論を踏まえて／状況を踏まえて／〇〇の話を踏まえて"
+    },
+    {
+     "type": "硬",
+     "text": "改まった場面や文書で使われる硬い表現"
+    }
+   ]
+  },
+  {
+   "pattern": "結婚を前提として",
+   "reading": "けっこんをぜんていとして",
+   "connection": "Nを前提として／Nを前提に（して）／N前提で",
+   "usage_cn": "以……为前提。",
+   "usage_en": "On the assumption of ~ / with ~ in mind.",
+   "examples": [
+    {
+     "jp": "彼とは結婚を前提として交際しています。",
+     "eq": "=結婚するということを考えて",
+     "en": "I am going out with him and we are thinking of possibly getting married.",
+     "cn": "和他以结婚为前提在交往。"
+    },
+    {
+     "jp": "事故対策は、事故が起こることを前提に練られている。",
+     "eq": "=事故が起こるということを考えて",
+     "en": "Accident preventive measures are developed by anticipating possible accidents.",
+     "cn": "事故对策，是以发生事故为前提而经推敲制定的。"
+    }
+   ],
+   "notes": []
+  },
+  {
+   "pattern": "オリンピックを境に",
+   "reading": "オリンピックをさかいに",
+   "connection": "Nを境に（して）",
+   "usage_cn": "以……为界，以……为转折点。",
+   "usage_en": "Since ~ / with ~ as the turning point.",
+   "examples": [
+    {
+     "jp": "我が国はオリンピックを境に、急速に発展した。",
+     "eq": "=オリンピックの後から",
+     "en": "This country rapidly developed after the Olympics.",
+     "cn": "自从奥运会以后，我们国家迅速发展。"
+    },
+    {
+     "jp": "日本では就学年齢を4月2日を境にして決めている。",
+     "eq": "=4月2日で区切って",
+     "en": "In Japan, the cut-off date for determining one's school age is April 2.",
+     "cn": "在日本，规定入学年龄以4月2日为界。"
+    }
+   ],
+   "notes": []
+  },
+  {
+   "pattern": "来日の折に",
+   "reading": "らいにちのおりに",
+   "connection": "V/A/na/N〔普〕＋折に（は）（naだ→な、Nだ→の）",
+   "usage_cn": "……的时候，……之际（礼貌的说法）。",
+   "usage_en": "On the occasion of ~ / when ~ (polite).",
+   "examples": [
+    {
+     "jp": "来日の折には、私がご案内します。",
+     "eq": "=来日したときには",
+     "en": "I will show you around when you come to Japan.",
+     "cn": "您来日本的时候，我来当向导。"
+    },
+    {
+     "jp": "私は、早朝の散歩の折に、花のスケッチをしています。",
+     "eq": "=散歩のときに",
+     "en": "I stop to sketch flowers on my early morning walks.",
+     "cn": "我早晨散布的时候写生画花。"
+    }
+   ],
+   "notes": []
+  },
+  {
+   "pattern": "引っ越しを機に",
+   "reading": "ひっこしをきに",
+   "connection": "Nを機に（して）",
+   "usage_cn": "以……为契机，趁……的机会。",
+   "usage_en": "Taking ~ as an opportunity.",
+   "examples": [
+    {
+     "jp": "引っ越しを機に、不用品を処分しよう。",
+     "eq": "=引っ越しを機会として",
+     "en": "Let's use this move as an opportunity to get rid of unnecessary things.",
+     "cn": "趁着搬家，咱们处理掉不用的东西吧。"
+    },
+    {
+     "jp": "会社を辞めたのを機に、水泳を始めた。",
+     "eq": "=会社を辞めたのを機会として",
+     "en": "Quitting my job provided me with the opportunity to start swimming.",
+     "cn": "以辞职为契机，开始了游泳。"
+    }
+   ],
+   "notes": []
+  }
+ ],
+ "exercises": {
+  "answers_note": "答えはp.108",
+  "sections": [
+   {
+    "type": "choice",
+    "instruction": "正しいほうに〇をつけなさい。",
+    "items": [
+     {
+      "n": 1,
+      "q": "その大地震（a. を機に　b. の折に）、各地で地震対策が見直されている。"
+     },
+     {
+      "n": 2,
+      "q": "お近くにお越し（a. の折に　b. を前提として）は、是非お立ち寄りください。"
+     },
+     {
+      "n": 3,
+      "q": "今までの意見を（a. 境に　b. 踏まえて）、この案を採用するかの決定を出したいと思います。"
+     },
+     {
+      "n": 4,
+      "q": "結婚を（a. 前提として　b. 機に）彼女は会社を退職した。"
+     },
+     {
+      "n": 5,
+      "q": "人は40歳を（a. 境に　b. 踏まえて）急に老化が進むそうです。"
+     }
+    ]
+   },
+   {
+    "type": "order",
+    "instruction": "下の語を並べ替えて正しい文を作りなさい。＿＿に数字を書きなさい。",
+    "items": [
+     {
+      "n": 6,
+      "q": "彼は、＿＿ ＿＿ ＿＿ ＿＿ 改め、まじめに働くようになった。",
+      "options": [
+       "1 生活態度を",
+       "2 境に",
+       "3 これまでの",
+       "4 子どもが生まれたのを"
+      ]
+     },
+     {
+      "n": 7,
+      "q": "この自転車は ＿＿ ＿＿ ＿＿ ＿＿ 作られています。",
+      "options": [
+       "1 使用を",
+       "2 身長",
+       "3 前提として",
+       "4 160センチ以上の人の"
+      ]
+     }
+    ]
+   }
+  ],
+  "answers": "Ⅰ：①a ②a ③b ④a ⑤a　Ⅱ：⑥4→2→3→1　⑦2→4→1→3"
+ },
+ "hitokoto": ""
+}

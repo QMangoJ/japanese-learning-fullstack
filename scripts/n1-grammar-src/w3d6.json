@@ -1,0 +1,202 @@
+{
+ "week": 3,
+ "day": 6,
+ "title": "散歩がてら",
+ "title_cn": "散步时顺便",
+ "title_en": "While taking a walk",
+ "dialog": {
+  "lines": [
+   "Q.（　）に入るのは？",
+   "名前を聞いた（　）忘れてしまう。"
+  ],
+  "cn": "问：括号里该填什么？——刚听到名字转眼就忘了。（答案：そばから）",
+  "en": "Q: What goes in the blank? — I forget people's names as soon as I hear them. (Answer: そばから)"
+ },
+ "points": [
+  {
+   "pattern": "覚えるそばから",
+   "reading": "おぼえるそばから",
+   "connection": "Vるそばから／Vたそばから／Vているそばから",
+   "usage_cn": "刚……就……（反复发生，多为不如意的事）。",
+   "usage_en": "As soon as ~ (repeatedly).",
+   "examples": [
+    {
+     "jp": "祖母は、携帯電話の使い方を教えても、教えるそばから忘れてしまう。",
+     "eq": "=教えてもすぐに",
+     "en": "My grandmother forgets how to use a cell phone as soon as I teach her.",
+     "cn": "就算教祖母怎么用手机，刚教完她就忘了。"
+    },
+    {
+     "jp": "小さい子どもは、片付けているそばから部屋を散らかす。",
+     "eq": "=片付けてもそのあとすぐに",
+     "en": "Young kids mess up the room as soon as you tidy it.",
+     "cn": "刚把房子收拾好，小孩子又给弄乱了。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "◆",
+     "text": "動作の繰り返しを表すことが多い。"
+    }
+   ]
+  },
+  {
+   "pattern": "農業のかたわら",
+   "reading": "のうぎょうのかたわら",
+   "connection": "【aかたわらb】（a＝主になること）Nのかたわら／Vるかたわら",
+   "usage_cn": "一边……一边……（在做主业的同时还做别的事）。",
+   "usage_en": "While (mainly) doing ~, also ….",
+   "examples": [
+    {
+     "jp": "父は農業のかたわら、小さい店を経営している。",
+     "eq": "=農業をしながら",
+     "en": "My father is a farmer and at the same time runs a small shop.",
+     "cn": "父亲一边干农活，一边经营小店。"
+    },
+    {
+     "jp": "彼女は女優の仕事をするかたわら、家事もきちんとやっている。",
+     "eq": "=仕事をしながら",
+     "en": "She is an actress but she's also a good homemaker.",
+     "cn": "她从事演员工作的同时，家务活也料理得很好。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "◆",
+     "text": "同時に行うことには使えない。"
+    },
+    {
+     "type": "ダメ",
+     "text": "テレビを見るかたわら勉強する→テレビを見ながら"
+    },
+    {
+     "type": "硬",
+     "text": "改まった場面や文書で使われる硬い表現"
+    }
+   ]
+  },
+  {
+   "pattern": "散歩がてら",
+   "reading": "さんぽがてら",
+   "connection": "N（~する~）がてら／Vます形（去ます）がてら",
+   "usage_cn": "……的时候顺便……，借……之便（スル动词多以名词形式使用）。",
+   "usage_en": "While ~, also / on the way.",
+   "examples": [
+    {
+     "jp": "散歩がてら、本屋に行ってくるよ。",
+     "eq": "=散歩のついでに／散歩を兼ねて",
+     "en": "I'm going for a walk and will drop by a bookstore.",
+     "cn": "散步时顺便去趟书店。"
+    },
+    {
+     "jp": "桜を見がてら隣の駅まで歩いた。",
+     "eq": "=見ながら／見るのを兼ねて",
+     "en": "I walked to the next station while enjoying the cherry blossoms.",
+     "cn": "一路看着樱花，顺便走到了旁边的车站。"
+    },
+    {
+     "jp": "遊びがてらお立ち寄りください。",
+     "eq": "=遊ぶのを兼ねて",
+     "en": "Please drop by at your leisure.",
+     "cn": "游玩时顺便来家里坐坐。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "◆",
+     "text": "スル動詞は名詞として使われることが多い。"
+    }
+   ]
+  },
+  {
+   "pattern": "ご挨拶かたがた",
+   "reading": "ごあいさつかたがた",
+   "connection": "Nかたがた",
+   "usage_cn": "顺便……，兼……（郑重的说法）。",
+   "usage_en": "Also by way of ~ (formal).",
+   "examples": [
+    {
+     "jp": "ご挨拶かたがた、一言お礼を述べさせていただきます。",
+     "eq": "=挨拶をするついでに／挨拶を兼ねて",
+     "en": "I would like to say a word to convey my appreciation.",
+     "cn": "过来打声招呼，同时请允许我表达谢意。"
+    },
+    {
+     "jp": "本日はお礼かたがたお伺いしました。",
+     "eq": "=お礼を兼ねて",
+     "en": "I came to show my gratitude to you today.",
+     "cn": "今天来拜访，同时表达谢意。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "れい",
+     "text": "お見舞いかたがた／お詫びかたがた／ご報告かたがた／散歩かたがた"
+    },
+    {
+     "type": "硬",
+     "text": "改まった場面や文書で使われる硬い表現"
+    }
+   ]
+  }
+ ],
+ "exercises": {
+  "answers_note": "答えはp.60",
+  "sections": [
+   {
+    "type": "choice",
+    "instruction": "正しいほうに〇をつけなさい。",
+    "items": [
+     {
+      "n": 1,
+      "q": "食べる（a. そばから　b. かたわら）次の料理がどんどん運ばれて、ゆっくり味わえなかった。"
+     },
+     {
+      "n": 2,
+      "q": "今日は先日のご報告（a. かたわら　b. かたがた）、部下の紹介に参りました。"
+     },
+     {
+      "n": 3,
+      "q": "散歩（a. がてら　b. のそばから）立ち寄った美術館は、とてもすいていた。"
+     },
+     {
+      "n": 4,
+      "q": "その小説家は執筆（a. のかたわら　b. がてら）、趣味でピアノを弾いている。"
+     },
+     {
+      "n": 5,
+      "q": "その商品は、並べる（a. そばから　b. かたわら）飛ぶように売れていった。"
+     }
+    ]
+   },
+   {
+    "type": "order",
+    "instruction": "下の語を並べ替えて正しい文を作りなさい。＿＿に数字を書きなさい。",
+    "items": [
+     {
+      "n": 6,
+      "q": "忘年会の ＿＿ ＿＿ ＿＿ ＿＿ は、あまりよくなかった。",
+      "options": [
+       "1 飲みに行った",
+       "2 下見",
+       "3 居酒屋",
+       "4 がてら"
+      ]
+     },
+     {
+      "n": 7,
+      "q": "本日は ＿＿ ＿＿ ＿＿ ＿＿ した次第です。",
+      "options": [
+       "1 かたがた",
+       "2 先日の",
+       "3 お詫び",
+       "4 お伺い"
+      ]
+     }
+    ]
+   }
+  ],
+  "answers": "Ⅰ：①a ②b ③a ④a ⑤a　Ⅱ：⑥2→4→1→3　⑦2→3→1→4"
+ },
+ "hitokoto": ""
+}

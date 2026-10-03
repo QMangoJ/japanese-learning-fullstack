@@ -1,0 +1,194 @@
+{
+ "week": 8,
+ "day": 1,
+ "title": "10年前ならいざ知らず",
+ "title_cn": "10年前暂且不论",
+ "title_en": "10 years ago may have been different, but…",
+ "dialog": {
+  "lines": [
+   "Q.（　）に入るのは？",
+   "結果は（　）、試験が終わってほっとした。"
+  ],
+  "cn": "问：括号里该填什么？——不管结果如何，考试结束了，松了一口气。（答案：どうあれ）",
+  "en": "Q: What goes in the blank? — Whatever the result, I'm relieved the exam is over. (Answer: どうあれ)"
+ },
+ "points": [
+  {
+   "pattern": "冗談はさておき",
+   "reading": "じょうだんはさておき",
+   "connection": "Nはさておき",
+   "usage_cn": "……暂且不谈，先不说……（转换话题时使用）。",
+   "usage_en": "~ aside / setting ~ aside.",
+   "examples": [
+    {
+     "jp": "冗談はさておき、この件についての解決方法を考えましょう。",
+     "eq": "=冗談はおいておいて",
+     "en": "Joking aside, let's discuss solutions to this problem.",
+     "cn": "先不开玩笑了，让我们考虑一下这件事的解决办法吧。"
+    },
+    {
+     "jp": "この話はさておき、教科書の80ページを見てください。",
+     "eq": "=この話は今は取り上げないで",
+     "en": "Moving on, please look at page 80 in the textbook.",
+     "cn": "这件事先暂且不提，请看教材的第80页。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "◆",
+     "text": "話題を変えるときに使う。"
+    }
+   ]
+  },
+  {
+   "pattern": "結果はどうあれ",
+   "reading": "けっかはどうあれ",
+   "connection": "Nはどう（で）あれ",
+   "usage_cn": "不管……如何，无论……怎样。",
+   "usage_en": "Whatever ~ may be / regardless of ~.",
+   "examples": [
+    {
+     "jp": "結果はどう（で）あれ、悔いはない。",
+     "eq": "=結果はどうであっても",
+     "en": "I have no regrets regardless of the result.",
+     "cn": "不管结果如何，我不后悔。"
+    },
+    {
+     "jp": "理由は何であれ、教室での携帯電話の使用は認めません。",
+     "eq": "=理由が何であっても",
+     "en": "We won't allow you to use cell phones in the classroom for any reason.",
+     "cn": "不论是何种理由，都不允许在教室里用手机。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "れい",
+     "text": "いつであれ（＝いつでも）／だれであれ（＝だれでも）／どこであれ（＝どこでも）／どんな～であれ（＝どんな～でも）"
+    }
+   ]
+  },
+  {
+   "pattern": "敬語はおろか",
+   "reading": "けいごはおろか",
+   "connection": "Nはおろか～（も／まで／すら）",
+   "usage_cn": "……就不用说了，连……也……（后面多接不好的情况）。",
+   "usage_en": "Let alone ~ / not to mention ~.",
+   "examples": [
+    {
+     "jp": "彼は、敬語はおろか日常会話もできない。",
+     "eq": "=敬語は当然できなくて",
+     "en": "He can't carry on a daily conversation, let alone properly use honorific expressions.",
+     "cn": "别说敬语了，他连日常会话都不会。"
+    },
+    {
+     "jp": "彼は自分の会社はおろか住んでいる家まで失ってしまった。",
+     "eq": "=自分の会社は当然として、さらに",
+     "en": "Not only did he lose his company, he even lost his home.",
+     "cn": "别说自己的公司了，连住的房子都失去了。"
+    },
+    {
+     "jp": "ケガをして、歩くのはおろか立つことすらできない。",
+     "eq": "=歩くのは当然できなくて",
+     "en": "I can't even stand up because of the injury, let alone walk.",
+     "cn": "受伤后，别说走路了，连站都站不起来了。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "(-)",
+     "text": "悪い意味でよく使われる表現"
+    },
+    {
+     "type": "◆",
+     "text": "よくない状況を表す文が続く。"
+    }
+   ]
+  },
+  {
+   "pattern": "10年前ならいざ知らず",
+   "reading": "じゅうねんまえならいざしらず",
+   "connection": "Nなら／Nは ＋いざ知らず",
+   "usage_cn": "……暂且不论，……姑且不说（但是……）。",
+   "usage_en": "~ may be one thing, but … / I don't know about ~, but ….",
+   "examples": [
+    {
+     "jp": "10年前ならいざ知らず、今時、携帯電話を持っていない人は珍しい。",
+     "eq": "=10年前については知らないが",
+     "en": "I don't know about 10 years ago, but it is rare to find a person without a cell phone nowadays.",
+     "cn": "十年前暂且不论，现在这个时候没有手机的人很罕见。"
+    },
+    {
+     "jp": "外国はいざ知らず、それは我が国では法律で禁止されている。",
+     "eq": "=外国についてはどうか知らないが",
+     "en": "I don't know about other countries, but it is prohibited by law in our country.",
+     "cn": "外国暂且不说，这个在我们国家是被法律禁止的。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "硬",
+     "text": "改まった場面や文書で使われる硬い表現"
+    }
+   ]
+  }
+ ],
+ "exercises": {
+  "answers_note": "答えはp.129",
+  "sections": [
+   {
+    "type": "choice",
+    "instruction": "正しいほうに〇をつけなさい。",
+    "items": [
+     {
+      "n": 1,
+      "q": "幼稚園のころの友達の、名前（a. はおろか　b. どうあれ）顔さえ忘れてしまった。"
+     },
+     {
+      "n": 2,
+      "q": "昔（a. ならいざしらず　b. はおろか）、今そんな迷信を信じる人はいないだろう。"
+     },
+     {
+      "n": 3,
+      "q": "仕事の話（a. はさておき　b. はいざ知らず）、今日は思いきり楽しみましょうよ。"
+     },
+     {
+      "n": 4,
+      "q": "近所に泥棒が入り、現金（a. はさておき　b. はおろか）、冷蔵庫の中のものまで盗まれたそうだ。"
+     },
+     {
+      "n": 5,
+      "q": "どんな理由（a. であろうか　b. であれ）、入会金の返金は認められません。"
+     }
+    ]
+   },
+   {
+    "type": "order",
+    "instruction": "下の語を並べ替えて正しい文を作りなさい。＿＿に数字を書きなさい。",
+    "items": [
+     {
+      "n": 6,
+      "q": "最近の大学生の中には、＿＿ ＿＿ ＿＿ ＿＿ 知らない者がいる。",
+      "options": [
+       "1 はおろか",
+       "2 すら",
+       "3 レポートの書き方",
+       "4 論文"
+      ]
+     },
+     {
+      "n": 7,
+      "q": "難しい問題は ＿＿ ＿＿ ＿＿ ＿＿ ものから手をつけよう。",
+      "options": [
+       "1 解決",
+       "2 すぐに",
+       "3 さておき",
+       "4 できそうな"
+      ]
+     }
+    ]
+   }
+  ],
+  "answers": "Ⅰ：①a ②a ③a ④b ⑤b　Ⅱ：⑥4→1→3→2　⑦3→2→1→4"
+ },
+ "hitokoto": ""
+}

@@ -1,0 +1,174 @@
+{
+ "week": 2,
+ "day": 1,
+ "title": "私なりに",
+ "title_cn": "以我自己的方式",
+ "title_en": "In my own way",
+ "dialog": {
+  "lines": [
+   "Q.（　）に入るのは？",
+   "弟は、家に帰る（　）、コンピューターの電源を入れる。"
+  ],
+  "cn": "问：括号里该填什么？——弟弟一回到家，就马上打开电脑。（答案：なり）",
+  "en": "Q: What goes in the blank? — As soon as my brother gets home, he turns on the computer. (Answer: なり)"
+ },
+ "points": [
+  {
+   "pattern": "電話するなりメールするなり",
+   "reading": "でんわするなりメールするなり",
+   "connection": "N₁なりN₂なり／V₁るなり（V₂るなり）する",
+   "usage_cn": "……也好……也好；或者……或者……（举例供选择）。",
+   "usage_en": "Either ~ or ~ (suggesting options).",
+   "examples": [
+    {
+     "jp": "電話なりメールなりで、彼に連絡してください。",
+     "eq": "=電話でもメールでもどの方法でも",
+     "en": "Please get in touch with him either by phone or email.",
+     "cn": "打电话也好，发邮件也行，请跟他联系。"
+    },
+    {
+     "jp": "もう使わないなら、人にあげるなり捨てるなりしたほうがいいと思う。",
+     "eq": "=人にあげるとか、捨てるとか、なんとかした",
+     "en": "I think it's better to either give it away or throw it out if you are no longer using it.",
+     "cn": "如果不用了，我觉得最好是送人或者扔掉。"
+    },
+    {
+     "jp": "会社が倒産した。家のローンもあるし、朝も夜もバイトするなり（なんなり）して、なんとかこの危機を乗り越えなくてはいけない。",
+     "eq": "=バイトしたりして",
+     "en": "My company has gone bankrupt. Since I have a mortgage, I'll have to find a full-time job or a bunch of part-time jobs and work night and day.",
+     "cn": "公司倒闭了，还有房贷，不管是从早到晚打工还是通过什么方式，总之必须要渡过这个危机。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "慣用",
+     "text": "なんなりと（＝なんでも）／～なりなんなり"
+    },
+    {
+     "type": "れい",
+     "text": "電話なりなんなり／人にあげるなりなんなり"
+    }
+   ]
+  },
+  {
+   "pattern": "できないならできないなりに",
+   "reading": "できないならできないなりに",
+   "connection": "（Vるなら）Vる／（Aいなら）Aい／（naなら）na／（Nなら）N ＋なりに／なりのN",
+   "usage_cn": "与……相应地；按……的情况（在其范围之内尽力）。",
+   "usage_en": "In one's own way / within the limits of ~.",
+   "examples": [
+    {
+     "jp": "できないならできないなりに、無理をしないで少しずつやりましょう。",
+     "eq": "=できないならできる方法で",
+     "en": "If you can't do it well at this pace, don't rush and do it at your own pace.",
+     "cn": "如果做不到那就做不到，不要勉强，一点点做吧。"
+    },
+    {
+     "jp": "貧しいなら貧しいなりの生活をしなければならない。",
+     "eq": "=貧しいならできる範囲の",
+     "en": "If you are poor, you must live within your means.",
+     "cn": "如果贫穷就必须过与之相应的穷日子。"
+    },
+    {
+     "jp": "結婚式に出席するなら、それなりの服装をするべきだ。",
+     "eq": "=それにふさわしい",
+     "en": "If you attend the wedding, you should dress up for the occasion.",
+     "cn": "如果参加结婚典礼，应该穿上合适的服装。"
+    },
+    {
+     "jp": "あなたが会社を辞めた理由は私なりに理解しています。",
+     "eq": "=私が考える範囲で",
+     "en": "I think I understand the reason why you quit the job.",
+     "cn": "你辞职的理由，我从自己的角度也能理解。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "れい",
+     "text": "やるならやるなりに／小さいなら小さいなりに／ダメならダメなりに／子どもなら子どもなりに"
+    }
+   ]
+  },
+  {
+   "pattern": "会うなり",
+   "reading": "あうなり",
+   "connection": "Vるなり",
+   "usage_cn": "一……就……（前项刚发生，紧接着出现意外的后项）。",
+   "usage_en": "As soon as ~.",
+   "examples": [
+    {
+     "jp": "田中さんは私に会うなり泣き出した。",
+     "eq": "=会うと同時に／会ったとたんに",
+     "en": "Tanaka-san started crying as soon as she saw me.",
+     "cn": "田中一见到我，马上就哭起来了。"
+    },
+    {
+     "jp": "部長は電話を切るなり、部屋を出て行った。",
+     "eq": "=電話を切ると同時に／電話を切ったとたんに",
+     "en": "The manager left the room as soon as he hung up the phone.",
+     "cn": "部长挂断电话后，马上离开了房间。"
+    }
+   ],
+   "notes": []
+  }
+ ],
+ "exercises": {
+  "answers_note": "答えはp.33",
+  "sections": [
+   {
+    "type": "choice",
+    "instruction": "正しいほうに〇をつけなさい。",
+    "items": [
+     {
+      "n": 1,
+      "q": "彼ったら、家に（a. 帰った　b. 帰る）なり、パソコンの前に座るんだから……。"
+     },
+     {
+      "n": 2,
+      "q": "私は素人だが、この詩を自分（a. なりに　b. なりして）解釈してみた。"
+     },
+     {
+      "n": 3,
+      "q": "顔色が悪いですよ。（a. 座るなり横になるなり　b. 座りつつ横になりつつ）、楽にしてください。"
+     },
+     {
+      "n": 4,
+      "q": "窓を開けた（a. なり　b. とたん）、変な虫が入ってきた。"
+     },
+     {
+      "n": 5,
+      "q": "最終電車に乗り遅れても、タクシーに（a. 乗るなり歩くなり　b. 乗らないなら乗らないなり）して必ず家に帰ってきなさい。"
+     }
+    ]
+   },
+   {
+    "type": "order",
+    "instruction": "下の語を並べ替えて正しい文を作りなさい。＿＿に数字を書きなさい。",
+    "items": [
+     {
+      "n": 6,
+      "q": "高得点を ＿＿ ＿＿ ＿＿ ＿＿ の準備が必要だ。",
+      "options": [
+       "1 狙う",
+       "2 なり",
+       "3 それ",
+       "4 なら"
+      ]
+     },
+     {
+      "n": 7,
+      "q": "＿＿ ＿＿ ＿＿ ＿＿ ならお申し付けください。",
+      "options": [
+       "1 なんなり",
+       "2 雑用",
+       "3 必要",
+       "4 なり"
+      ]
+     }
+    ]
+   }
+  ],
+  "answers": "Ⅰ：①b ②a ③a ④b ⑤a　Ⅱ：⑥1→4→3→2　⑦2→4→1→3"
+ },
+ "hitokoto": ""
+}

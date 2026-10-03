@@ -1,0 +1,200 @@
+{
+ "week": 5,
+ "day": 4,
+ "title": "理由のいかんにかかわらず",
+ "title_cn": "不论理由如何",
+ "title_en": "Regardless of the reason",
+ "dialog": {
+  "lines": [
+   "Q.（　）に入るのは？",
+   "今度の成績（　）、落第も考えられます。"
+  ],
+  "cn": "问：括号里该填什么？——根据这次的成绩，也有可能留级。（答案：いかんでは）",
+  "en": "Q: What goes in the blank? — Depending on your grades this time, you might have to repeat the year. (Answer: いかんでは)"
+ },
+ "points": [
+  {
+   "pattern": "成功するに至った",
+   "reading": "せいこうするにいたった",
+   "connection": "N／Vる ＋に至る／に至って（は／も）／に至らず",
+   "usage_cn": "达到……，到了……地步（经过一番过程后的结果）。",
+   "usage_en": "Reach the point of ~ / come to ~.",
+   "examples": [
+    {
+     "jp": "多くの人の協力を得て、この実験が成功するに至りました。",
+     "eq": "=成功したという状況になりました",
+     "en": "The experiment succeeded due to the support of many people.",
+     "cn": "得到了多人的帮助，这个实验最终成功了。"
+    },
+    {
+     "jp": "今に至ってはもう何もできません。",
+     "eq": "=今の状況になってしまったら",
+     "en": "I can't do anything at this late date.",
+     "cn": "到了如今，已经无计可施。"
+    },
+    {
+     "jp": "手術に至らず、薬だけで治った。",
+     "eq": "=手術をするような状況にならないで",
+     "en": "The medication helped me to recover before I reached the stage of needing an operation.",
+     "cn": "不用手术，光靠药就治好了。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "硬",
+     "text": "改まった場面や文書で使われる硬い表現"
+    }
+   ]
+  },
+  {
+   "pattern": "貯金の額に至るまで",
+   "reading": "ちょきんのがくにいたるまで",
+   "connection": "（～から）Nに至るまで",
+   "usage_cn": "甚至到……，直至……（范围涉及很广）。",
+   "usage_en": "Even down to ~ / all the way to ~.",
+   "examples": [
+    {
+     "jp": "会社の面接で、貯金の額に至るまで、いろいろ聞かれた。",
+     "eq": "=貯金の額まで",
+     "en": "At the job interview, I was asked about many things, even the amount of my savings.",
+     "cn": "在公司面试中被问了好多，甚至问到了存款额。"
+    },
+    {
+     "jp": "ここでは人間から微生物に至るまで、あらゆる生物の研究が行われている。",
+     "eq": "=微生物まで",
+     "en": "Research on all kinds of living things from human beings to microbes is being conducted here.",
+     "cn": "在这里，从人类到微生物，所有生物的研究都在进行。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "◆",
+     "text": "「そんなことまで」という気持ちを表す場合もある。"
+    },
+    {
+     "type": "硬",
+     "text": "改まった場面や文書で使われる硬い表現"
+    }
+   ]
+  },
+  {
+   "pattern": "検査の結果いかんでは",
+   "reading": "けんさのけっかいかんでは",
+   "connection": "N（の）いかんだ／N（の）いかんで（は）／N（の）いかんによって（は）",
+   "usage_cn": "要看……如何，根据……（而定）。",
+   "usage_en": "Depending on ~.",
+   "examples": [
+    {
+     "jp": "検査の結果いかんでは、入院もありえます。",
+     "eq": "=結果次第で／結果によっては",
+     "en": "You may have to be hospitalized depending on the result of the exam.",
+     "cn": "要看检查结果了，有可能会住院。"
+    },
+    {
+     "jp": "来月の業績いかんによっては、閉店することをも考えている。",
+     "eq": "=来月の業績次第で／業績によっては",
+     "en": "Depending on the next month's performance, we may decide to close the shop.",
+     "cn": "根据下个月的业绩，也在考虑是否停止营业。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "硬",
+     "text": "改まった場面や文書で使われる硬い表現"
+    }
+   ]
+  },
+  {
+   "pattern": "理由のいかんにかかわらず",
+   "reading": "りゆうのいかんにかかわらず",
+   "connection": "N（の）いかんにかかわらず／N（の）いかんによらず",
+   "usage_cn": "不论……如何，不管……（都……）。",
+   "usage_en": "Regardless of ~.",
+   "examples": [
+    {
+     "jp": "理由のいかんにかかわらず、ここに駐車をしてはいけない。",
+     "eq": "=どんな理由であるかは関係なく",
+     "en": "You must not park your car here for any reason.",
+     "cn": "不论理由如何，这里都不许停车。"
+    },
+    {
+     "jp": "この講義は専攻のいかんにかかわらず、全員受けてください。",
+     "eq": "=専攻が何かに関係なく",
+     "en": "Everyone must take this lecture regardless of his/her major.",
+     "cn": "不分专业，请所有人员都去听这门课。"
+    },
+    {
+     "jp": "判断力いかんによらず、二十歳以上であれば選挙権がある。ただし認知症の場合などは問題があるだろう。",
+     "eq": "=判断力があるかどうかは関係なく",
+     "en": "Anyone over 20 years old is legally eligible to vote regardless of his/her judgement. However, conditions such as dementia can cause a problem.",
+     "cn": "不论判断力如何，只要是20岁以上就有选举权。不过，如果患有痴呆也许就有问题了。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "硬",
+     "text": "改まった場面や文書で使われる硬い表現"
+    }
+   ]
+  }
+ ],
+ "exercises": {
+  "answers_note": "答えはp.87",
+  "sections": [
+   {
+    "type": "choice",
+    "instruction": "正しいほうに〇をつけなさい。",
+    "items": [
+     {
+      "n": 1,
+      "q": "親として情けないことだが、今に（a. いたっては　b. いたるまで）娘の非行に気づかなかった。"
+     },
+     {
+      "n": 2,
+      "q": "理由のいかんに（a. よらず　b. いたるまで）、試験開始後の入室は認めません。"
+     },
+     {
+      "n": 3,
+      "q": "次の試験の成績いかん（a. では　b. によらず）、進級もできなくなるので頑張るように。"
+     },
+     {
+      "n": 4,
+      "q": "今度の面接の結果（a. いかんで　b. にもかかわらず）、合格か不合格かが決まる。"
+     },
+     {
+      "n": 5,
+      "q": "昨夜のホテル火災は大惨事に（a. 至って　b. 至らずに）済んだ。"
+     }
+    ]
+   },
+   {
+    "type": "order",
+    "instruction": "下の語を並べ替えて正しい文を作りなさい。＿＿に数字を書きなさい。",
+    "items": [
+     {
+      "n": 6,
+      "q": "高層マンションの建設は ＿＿ ＿＿ ＿＿ ＿＿ に至っている。",
+      "options": [
+       "1 今日",
+       "2 計画段階",
+       "3 住民の反対で",
+       "4 のまま"
+      ]
+     },
+     {
+      "n": 7,
+      "q": "弁護士から、A社が ＿＿ ＿＿ ＿＿ ＿＿ 経緯についての説明があった。",
+      "options": [
+       "1 倒産に",
+       "2 努力の",
+       "3 かいなく",
+       "4 至った"
+      ]
+     }
+    ]
+   }
+  ],
+  "answers": "Ⅰ：①b ②a ③a ④a ⑤b　Ⅱ：⑥3→2→4→1　⑦2→3→1→4"
+ },
+ "hitokoto": ""
+}

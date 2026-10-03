@@ -1,0 +1,187 @@
+{
+ "week": 8,
+ "day": 3,
+ "title": "早ければ早いに越したことはない",
+ "title_cn": "越早越好",
+ "title_en": "The sooner, the better",
+ "dialog": {
+  "lines": [
+   "Q.（　）に入るのは？",
+   "スーツじゃなくても（　）ありません。"
+  ],
+  "cn": "问：括号里该填什么？——不穿西装也没关系。（答案：差し支え）",
+  "en": "Q: What goes in the blank? — It's fine even if you don't wear a suit. (Answer: 差し支え)"
+ },
+ "points": [
+  {
+   "pattern": "明日でも差し支えない",
+   "reading": "あしたでもさしつかえない",
+   "connection": "Vても／Aくても／naでも／Nでも ＋差し支えない",
+   "usage_cn": "……也没关系，……也无妨。",
+   "usage_en": "It's all right even if ~ / ~ is no problem.",
+   "examples": [
+    {
+     "jp": "お返事は明日でも差し支えありません。",
+     "eq": "=明日でもかまいません",
+     "en": "It will be fine if you can give me your answer tomorrow.",
+     "cn": "明天答复也没关系。"
+    },
+    {
+     "jp": "この薬はいつも飲んでいるビタミン剤と併用しても差し支えない。",
+     "eq": "=併用しても問題がない",
+     "en": "You don't need to worry about taking this medication together with your daily vitamin.",
+     "cn": "这种药和平时吃的维生素一起吃也没关系。"
+    },
+    {
+     "jp": "もし差し支えないようでしたら",
+     "eq": "=問題がなければ",
+     "en": "if it's alright with you",
+     "cn": "如果没有什么影响"
+    }
+   ],
+   "notes": [
+    {
+     "type": "OK",
+     "text": "～しなくても差し支えない"
+    }
+   ]
+  },
+  {
+   "pattern": "用心するに越したことはない",
+   "reading": "ようじんするにこしたことはない",
+   "connection": "Vる／Vない／Aい／Aくない／na（である）／N（である）＋に越したことはない（Nする→N）",
+   "usage_cn": "最好是……，……是最好不过的。",
+   "usage_en": "It's best to ~ / nothing is better than ~.",
+   "examples": [
+    {
+     "jp": "用心（する）に越したことはない。傘を持っていこう。",
+     "eq": "=用心するのがいちばんいい",
+     "en": "It is better to be prepared. Let's take umbrellas with us.",
+     "cn": "小心一些最好。带着伞去吧。"
+    },
+    {
+     "jp": "お金はあるに越したことはない。",
+     "eq": "=当然あるのはいいことだ",
+     "en": "It's better to have money.",
+     "cn": "有钱是最好的了。"
+    },
+    {
+     "jp": "安いに越したことはないが、品質が悪いものは買いたくない。",
+     "eq": "=安いのは当然いいことだが",
+     "en": "It's better to get it cheaply but I don't want to buy poor quality goods.",
+     "cn": "虽然最好是便宜一些，但也不想买质量差的东西。"
+    },
+    {
+     "jp": "レポートの提出は、早ければ早いに越したことはない。",
+     "eq": "=早いほうがいい",
+     "en": "It would be better if you could submit your paper earlier.",
+     "cn": "交报告，越早越好。"
+    },
+    {
+     "jp": "同じ商品だったら、安ければ安いに越したことはない。",
+     "eq": "=安いほうがいい",
+     "en": "It would be better if you could get the same goods cheaper.",
+     "cn": "如果是同样的商品，当然是越便宜越好。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "もっと",
+     "text": "Vるなら（ば）Vる／Aければ Aい／naなら（ば）na（である）／Nなら（ば）N（である）／～ないなら（ば）＋に越したことはない"
+    }
+   ]
+  },
+  {
+   "pattern": "数えればきりがない",
+   "reading": "かぞえればきりがない",
+   "connection": "Vば／Vたら／Vると ＋きりがない",
+   "usage_cn": "……起来没完没了，……不完。",
+   "usage_en": "There's no end to ~.",
+   "examples": [
+    {
+     "jp": "彼の欠点を数えればきりがない。",
+     "eq": "=数えられないほど多い",
+     "en": "There are no bounds to his shortcomings.",
+     "cn": "他的缺点数不胜数。"
+    },
+    {
+     "jp": "「もっといい時計がほしい。」「このくらいで我慢しないと、上を見たらきりがないよ。」",
+     "eq": "=まだまだ上（この場合、高いもの）がある",
+     "en": "“I want a better watch.” “You should be happy with the one you have because if you start looking for a nicer one, you'll end up spending a lot more money.”",
+     "cn": "“我想要更好的表。”“差不多就凑合吧，光往上看的话，没有尽头的。”"
+    },
+    {
+     "jp": "きりがないから、この辺で終わりましょう。",
+     "eq": "=いつまでも終わりは来ないから",
+     "en": "Let's stop here as there is no end to it.",
+     "cn": "没完没了的，就到这里结束吧。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "れい",
+     "text": "欲を言えばきりがない／愚痴を言えばきりがない"
+    }
+   ]
+  }
+ ],
+ "exercises": {
+  "answers_note": "答えはp.133",
+  "sections": [
+   {
+    "type": "choice",
+    "instruction": "正しいほうに〇をつけなさい。",
+    "items": [
+     {
+      "n": 1,
+      "q": "勝ち負けは気にしないと言っても、やはり（a. 勝つに　b. 勝てば）越したことはない。"
+     },
+     {
+      "n": 2,
+      "q": "欲を言えば（a. きりが　b. きりも）ないから、このマンションに決めよう。"
+     },
+     {
+      "n": 3,
+      "q": "性能が同じなら、価格が（a. 安いと　b. 安いに）越したことはない。"
+     },
+     {
+      "n": 4,
+      "q": "この場所なら、喫煙しても（a. 差し支えありません　b. 差し支えません）。"
+     },
+     {
+      "n": 5,
+      "q": "不満を言うと（a. 差し支えない　b. きりがない）けれど、今の会社を辞めるわけにはいかない。"
+     }
+    ]
+   },
+   {
+    "type": "order",
+    "instruction": "下の語を並べ替えて正しい文を作りなさい。＿＿に数字を書きなさい。",
+    "items": [
+     {
+      "n": 6,
+      "q": "資格を持っていると就職に有利だ。＿＿ ＿＿ ＿＿ ＿＿ なら取っておこう。",
+      "options": [
+       "1 持っている",
+       "2 持っていれば",
+       "3 取れる",
+       "4 に越したことはないから"
+      ]
+     },
+     {
+      "n": 7,
+      "q": "＿＿ ＿＿ ＿＿ ＿＿ ところ、ほかの応募者は全員経験者だった。",
+      "options": [
+       "1 応募した",
+       "2 経験がなくても",
+       "3 というので",
+       "4 差し支えない"
+      ]
+     }
+    ]
+   }
+  ],
+  "answers": "Ⅰ：①a ②a ③b ④a ⑤b　Ⅱ：⑥2→1→4→3　⑦2→4→3→1"
+ },
+ "hitokoto": ""
+}

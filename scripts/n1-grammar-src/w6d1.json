@@ -1,0 +1,178 @@
+{
+ "week": 6,
+ "day": 1,
+ "title": "現状に即して",
+ "title_cn": "根据现状",
+ "title_en": "In line with the current situation",
+ "dialog": {
+  "lines": [
+   "Q.（　）に入るのは？",
+   "以前（　）、努力しています。"
+  ],
+  "cn": "问：括号里该填什么？——比以前更加努力。（答案：にもまして）",
+  "en": "Q: What goes in the blank? — I'm working harder than before. (Answer: にもまして)"
+ },
+ "points": [
+  {
+   "pattern": "世界に先駆けて",
+   "reading": "せかいにさきがけて",
+   "connection": "Nに先駆けて",
+   "usage_cn": "先于……，率先……（比其他人或其他地方更早）。",
+   "usage_en": "Ahead of ~ / before ~.",
+   "examples": [
+    {
+     "jp": "その映画は、世界に先駆けて、日本での上映が決まった。",
+     "eq": "=世界で一番早く",
+     "en": "It's been decided that the world premiere for this movie will be in Japan.",
+     "cn": "那部电影决定率先在日本上映，比世界其他国家早一步。"
+    },
+    {
+     "jp": "その会社は、他社に先駆けて、低燃費の車を開発した。",
+     "eq": "=他社よりも早く",
+     "en": "This company has been at the forefront of developing fuel-efficient cars.",
+     "cn": "那家公司领先其他公司开发了耗油低的汽车。"
+    }
+   ],
+   "notes": []
+  },
+  {
+   "pattern": "以前にもまして",
+   "reading": "いぜんにもまして",
+   "connection": "Nにもまして《増して》",
+   "usage_cn": "比……更……，胜过……。",
+   "usage_en": "More than ~ / even more than ~.",
+   "examples": [
+    {
+     "jp": "久しぶりに会った彼女は、以前にもまして美しかった。",
+     "eq": "=以前も美しかったが、もっと美しくなっていた",
+     "en": "I saw her for the first time after a long time. She looked more beautiful than ever.",
+     "cn": "好久未见的她，比以前更漂亮了。"
+    },
+    {
+     "jp": "今日は平日なのに、いつにもましてお客さんが多い。",
+     "eq": "=いつも多いが、いつもよりもっと",
+     "en": "There are more customers today even though it is a weekday.",
+     "cn": "今天虽然不是周末，但客人比平日都要多。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "れい",
+     "text": "だれにもまして（＝だれよりも）／何にもまして（＝なによりも）／どこにもまして（＝どこよりも）"
+    }
+   ]
+  },
+  {
+   "pattern": "おとなしい姉にひきかえ、妹は…",
+   "reading": "おとなしいあねにひきかえ、いもうとは",
+   "connection": "N₁にひきかえ N₂は",
+   "usage_cn": "与……相反，和……相比（两者形成对比）。",
+   "usage_en": "In contrast to ~.",
+   "examples": [
+    {
+     "jp": "おとなしく引っ込み思案な姉にひきかえ、妹のほうは社交的で友達も多い。",
+     "eq": "=姉と比べ、違って",
+     "en": "In contrast to her quiet and reserved elder sister, the younger one is more social and has more friends.",
+     "cn": "和老实内向的姐姐相反，妹妹善于社交，朋友也多。"
+    },
+    {
+     "jp": "隣の立派な家にひきかえ、うちの家は古くてみすぼらしい。",
+     "eq": "=隣の立派な家と比べて、違って",
+     "en": "Our house looks old and shabby in comparison to our neighbor's nice house.",
+     "cn": "和邻居家的气派房子相反，我家的房子又陈旧又寒酸。"
+    }
+   ],
+   "notes": []
+  },
+  {
+   "pattern": "現状に即して",
+   "reading": "げんじょうにそくして",
+   "connection": "Nに即して V／Nに即した N′",
+   "usage_cn": "根据……，按照……（与实际情况相符）。",
+   "usage_en": "In line with ~ / in accordance with ~.",
+   "examples": [
+    {
+     "jp": "現状に即して物事を考えよう。",
+     "eq": "=現状にちょうど合うように",
+     "en": "Let's be realistic!",
+     "cn": "根据现状考虑事情吧。"
+    },
+    {
+     "jp": "銀行も、時代に即した新しいサービスを提供しなければならない。",
+     "eq": "=時代にちょうど合った",
+     "en": "Banks must offer new services to meet people's needs.",
+     "cn": "银行也必须提供顺应时代的新服务。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "れい",
+     "text": "現実に即して／実態に即して／事実に即して／法律に即して"
+    },
+    {
+     "type": "硬",
+     "text": "改まった場面や文書で使われる硬い表現"
+    }
+   ]
+  }
+ ],
+ "exercises": {
+  "answers_note": "答えはp.97",
+  "sections": [
+   {
+    "type": "choice",
+    "instruction": "正しいほうに〇をつけなさい。",
+    "items": [
+     {
+      "n": 1,
+      "q": "去年の夏も雨が少なかったけれど、今年の水不足は去年（a. にもまして　b. に即して）深刻だ。"
+     },
+     {
+      "n": 2,
+      "q": "CDの発売に（a. 先駆けて　b. 即して）、そのアーチストのコンサートが開かれた。"
+     },
+     {
+      "n": 3,
+      "q": "音楽祭でのあの女性歌手の衣装は前回（a. に先駆けて　b. にもまして）派手になっていた。"
+     },
+     {
+      "n": 4,
+      "q": "友人の息子の優秀なの（a. にひきかえ　b. にもまして）、なんとうちの子の出来の悪いことか。"
+     },
+     {
+      "n": 5,
+      "q": "時代（a. にひきかえた　b. にそくした）考え方をしないと若者には受け入れられない。"
+     }
+    ]
+   },
+   {
+    "type": "order",
+    "instruction": "下の語を並べ替えて正しい文を作りなさい。＿＿に数字を書きなさい。",
+    "items": [
+     {
+      "n": 6,
+      "q": "これは ＿＿ ＿＿ ＿＿ ＿＿ でお届けする商品です。",
+      "options": [
+       "1 に先駆けて",
+       "2 当店のみの",
+       "3 先行発売",
+       "4 全国発売"
+      ]
+     },
+     {
+      "n": 7,
+      "q": "＿＿ ＿＿ ＿＿ ＿＿ 困る。",
+      "options": [
+       "1 いいかげんで",
+       "2 ひきかえ",
+       "3 弟のほうは",
+       "4 しっかり者の兄に"
+      ]
+     }
+    ]
+   }
+  ],
+  "answers": "Ⅰ：①a ②a ③b ④a ⑤b　Ⅱ：⑥4→1→2→3　⑦4→2→3→1"
+ },
+ "hitokoto": ""
+}

@@ -1,0 +1,190 @@
+{
+ "week": 7,
+ "day": 4,
+ "title": "聞くに堪えない",
+ "title_cn": "不堪入耳",
+ "title_en": "Unbearable to listen to",
+ "dialog": {
+  "lines": [
+   "Q.（　）に入るのは？",
+   "彼は、信用する（　）人物だ。"
+  ],
+  "cn": "问：括号里该填什么？——他是值得信赖的人。（答案：に足る）",
+  "en": "Q: What goes in the blank? — He is a person worthy of trust. (Answer: に足る)"
+ },
+ "points": [
+  {
+   "pattern": "使用に耐える",
+   "reading": "しようにたえる",
+   "connection": "Vるにたえる／Nにたえる《耐える／堪える》（Nする→N）",
+   "usage_cn": "经得起……，值得……。",
+   "usage_en": "Withstand ~ / be worth ~.",
+   "examples": [
+    {
+     "jp": "これは50年間の使用に耐える丈夫な製品です。",
+     "eq": "=十分使用できる",
+     "en": "This is a very durable product which will last for 50 years.",
+     "cn": "这是能经得住使用50年的坚固产品。"
+    },
+    {
+     "jp": "この展示は鑑賞に堪える作品が少ない。",
+     "eq": "=鑑賞する価値のある",
+     "en": "There are not many works of art which are worth looking at in this exhibition.",
+     "cn": "这个展览中经得住鉴赏的作品少。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "れい",
+     "text": "議論に堪える／読むに堪える／見るに堪える／聞くに堪える"
+    }
+   ]
+  },
+  {
+   "pattern": "聞くに堪えない",
+   "reading": "きくにたえない",
+   "connection": "Vるに堪えない／Nに堪えない（Nする→N）",
+   "usage_cn": "不堪……，……不下去（程度太差、太过分）。",
+   "usage_en": "Unbearable to ~ / not worth ~.",
+   "examples": [
+    {
+     "jp": "彼女のバイオリンは、あまりに下手で聞くに堪えない。",
+     "eq": "=聞くことが我慢できないほどひどい",
+     "en": "She plays the violin so poorly that we can hardly listen to her.",
+     "cn": "她的小提琴拉得太差，简直不堪入耳。"
+    },
+    {
+     "jp": "昨日の映画は残酷で見るに堪えなかった。",
+     "eq": "=見ることが我慢できないほどひどかった",
+     "en": "The movie I saw yesterday had many cruel scenes so it wasn't worth watching.",
+     "cn": "昨天的电影太残酷了，不堪入目。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "れい",
+     "text": "鑑賞に堪えない／読むに堪えない"
+    }
+   ]
+  },
+  {
+   "pattern": "信頼するに足る",
+   "reading": "しんらいするにたる",
+   "connection": "Vるに足る N／Nに足る N（Nする→N）",
+   "usage_cn": "值得……，足以……。",
+   "usage_en": "Worthy of ~ / sufficient to ~.",
+   "examples": [
+    {
+     "jp": "彼は、信頼に足る人物だ。何でも相談するといい。",
+     "eq": "=十分信頼することのできる",
+     "en": "He is very trustworthy. You can ask him for advice on many things.",
+     "cn": "他是值得信任的人。什么都可以和他商量。"
+    },
+    {
+     "jp": "彼女は、その仕事を任せるに足る人です。",
+     "eq": "=十分任せることができる",
+     "en": "You can trust her to do the job well.",
+     "cn": "她是值得委任这项工作的人。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "れい",
+     "text": "尊敬するに足る／報告するに足る／調査するに足る"
+    }
+   ]
+  },
+  {
+   "pattern": "恐れるに足りない",
+   "reading": "おそれるにたりない",
+   "connection": "Vるに足りない／Nに足りない（Nする→N）",
+   "usage_cn": "不值得……，不足以……。",
+   "usage_en": "Not worth ~ / not enough to ~.",
+   "examples": [
+    {
+     "jp": "就職難など、能力がある学生にとっては、恐れるに足りない。",
+     "eq": "=恐れる必要はない",
+     "en": "Capable students need not worry about the job shortage.",
+     "cn": "对于有能力的学生来说，求职难不足挂齿。"
+    },
+    {
+     "jp": "この証拠だけでは彼が無罪であることを証明するに足りない。",
+     "eq": "=証明するのに十分でない",
+     "en": "This evidence alone is not good enough to prove his innocence.",
+     "cn": "光凭这个证据不足以证明他无罪。"
+    },
+    {
+     "jp": "取るに足りないうわさ",
+     "eq": "=取り上げるほどの価値がない",
+     "en": "a worthless rumor",
+     "cn": "毫无价值的谣言"
+    }
+   ],
+   "notes": [
+    {
+     "type": "れい",
+     "text": "恐るるに足らず（＝恐れるに足りない）"
+    }
+   ]
+  }
+ ],
+ "exercises": {
+  "answers_note": "答えはp.119",
+  "sections": [
+   {
+    "type": "choice",
+    "instruction": "正しいほうに〇をつけなさい。",
+    "items": [
+     {
+      "n": 1,
+      "q": "電車の中で酔っ払いが聞く（a. にたえない　b. にたりない）言葉を大声で言っていた。"
+     },
+     {
+      "n": 2,
+      "q": "学生生活のいい思い出は、信頼する（a. たる　b. にたる）教師に出会えたということだ。"
+     },
+     {
+      "n": 3,
+      "q": "このシャツは毎日の洗濯（a. にたえる　b. にたる）素材で作られています。"
+     },
+     {
+      "n": 4,
+      "q": "交通事故の現場写真は、見るに（a. たえる　b. たえない）ものばかりだ。"
+     },
+     {
+      "n": 5,
+      "q": "この本は子どもたちに推薦する（a. に足る　b. に足りない）いい内容だ。"
+     }
+    ]
+   },
+   {
+    "type": "order",
+    "instruction": "下の語を並べ替えて正しい文を作りなさい。＿＿に数字を書きなさい。",
+    "items": [
+     {
+      "n": 6,
+      "q": "＿＿ ＿＿ ＿＿ ＿＿ はっきりしたことは言えない。",
+      "options": [
+       "1 信ずるに",
+       "2 なくして",
+       "3 足る",
+       "4 情報"
+      ]
+     },
+     {
+      "n": 7,
+      "q": "彼女の演技は ＿＿ ＿＿ ＿＿ ＿＿ ものだった。",
+      "options": [
+       "1 失敗続きの",
+       "2 とても",
+       "3 たえない",
+       "4 見るに"
+      ]
+     }
+    ]
+   }
+  ],
+  "answers": "Ⅰ：①a ②b ③a ④b ⑤a　Ⅱ：⑥1→3→4→2　⑦1→2→4→3"
+ },
+ "hitokoto": ""
+}

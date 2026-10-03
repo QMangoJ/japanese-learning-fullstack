@@ -1,0 +1,188 @@
+{
+ "week": 2,
+ "day": 6,
+ "title": "いつまで続くのやら",
+ "title_cn": "不知要持续到什么时候",
+ "title_en": "I wonder how long it will last",
+ "dialog": {
+  "lines": [
+   "Q.（　）に入るのは？",
+   "彼の話はうそ（　）本当（　）、よくわからない。＊同じ言葉が入ります。"
+  ],
+  "cn": "问：括号里该填什么？——他的话不知是真是假，搞不清楚。（两个括号填同一个词）（答案：なのやら）",
+  "en": "Q: What goes in the blank? — I can't tell whether what he says is a lie or the truth. (The same word goes in both blanks.) (Answer: なのやら)"
+ },
+ "points": [
+  {
+   "pattern": "いいとも悪いとも言えない",
+   "reading": "いいともわるいともいえない",
+   "connection": "【aともbとも】Nとも／V/A/na/N〔普〕＋とも",
+   "usage_cn": "既不能说……也不能说……；是……还是……（难以判断）。",
+   "usage_en": "Can't say whether ~ or ~.",
+   "examples": [
+    {
+     "jp": "最近のゲームは、子どもにいいとも悪いとも言えない。あるものは脳の発達に効果があるらしい。",
+     "eq": "=いい・悪いと決めることはできない",
+     "en": "You can't say all the recent games are bad. Some seem to stimulate brain development.",
+     "cn": "最近的游戏，无法说对孩子好还是不好。听说有些东西有利于大脑发育。"
+    },
+    {
+     "jp": "これは本物とも偽物とも判断ができない。",
+     "eq": "=本物か偽物か",
+     "en": "I can't tell whether it is real or fake.",
+     "cn": "无法判断这究竟是真货还是赝品。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "慣用",
+     "text": "うんともすんともいわない（＝何も言わない／何も音がしない）"
+    }
+   ]
+  },
+  {
+   "pattern": "なかったらなかったで",
+   "reading": "なかったらなかったで",
+   "connection": "Vたら Vたで／Aかったら Aかったで／Aかったら Aいで／naなら naで／Nなら Nで",
+   "usage_cn": "……的话也有……的办法；如果……就……吧（无论哪种情况都有对应）。",
+   "usage_en": "If ~, then (that's fine / so be it).",
+   "examples": [
+    {
+     "jp": "庭があったらあったで、草むしりが大変だ。",
+     "eq": "=あるのはいいが、その場合は",
+     "en": "It's nice to have a garden but someone has to do the weeding.",
+     "cn": "院子是有了，但有院子后拔草也麻烦。"
+    },
+    {
+     "jp": "便せんがなかったらないで、コピー用紙でもかまいません。",
+     "eq": "=あったらいいが、ない場合は",
+     "en": "If there's no letter writing paper available, photocopy paper will do.",
+     "cn": "信纸如果没有就算了，用复印纸也没关系。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "◆",
+     "text": "否定形も使う。"
+    }
+   ]
+  },
+  {
+   "pattern": "喜んでいいのやら悲しんでいいのやら",
+   "reading": "よろこんでいいのやらかなしんでいいのやら",
+   "connection": "【aのやらbのやら】V/A〔普〕＋のやら／naなのやら",
+   "usage_cn": "是……还是……呢（不知如何是好；a与b意思相反）。",
+   "usage_en": "Not knowing whether ~ or ~.",
+   "examples": [
+    {
+     "jp": "喜んでいいのやら悲しんでいいのやら、最近仕事の依頼が多く、趣味の時間がまったくとれない。",
+     "eq": "=喜ぶべきなのか悲しむべきなのかどっちとも言えないが",
+     "en": "It's good to have people send me so many jobs, but on the other hand, I've got so many that I have no time for my hobbies.",
+     "cn": "不知是该高兴还是该悲伤，最近委托我的工作很多，根本没时间休闲。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "◆",
+     "text": "aとbは反対の意味。"
+    },
+    {
+     "type": "れい",
+     "text": "いいのやら悪いのやら／あるのやらないのやら／うそなのやら本当なのやら"
+    }
+   ]
+  },
+  {
+   "pattern": "いつまで続くのやら…",
+   "reading": "いつまでつづくのやら",
+   "connection": "［疑問詞］＋V/A〔普〕／Aい／naな ＋のやら／ものやら／ことやら",
+   "usage_cn": "不知……呢（对疑问的担心或感叹）。",
+   "usage_en": "I wonder ~ (worried / uncertain).",
+   "examples": [
+    {
+     "jp": "この不景気はいつまで続くのやら。",
+     "eq": "=いつまで続くのかわからない",
+     "en": "I wonder how long this economic slump will continue.",
+     "cn": "这种不景气要持续到什么时候呢？"
+    },
+    {
+     "jp": "言葉も話せないのに、来年1年間オーストラリアに行くことにした。どうなることやら。",
+     "eq": "=どうなるだろう",
+     "en": "I've decided to go to Australia next year for a year even though I don't speak the language, but I don't know what to expect.",
+     "cn": "语言都不通，还决定明年一年来在澳大利亚，会怎么样呢？"
+    },
+    {
+     "jp": "奥さんを病気で亡くした彼に、どう声をかけたらいいものやら。",
+     "eq": "=どう声をかけたらいいのかわからない",
+     "en": "I don't know what to say to him. He lost his wife to an illness.",
+     "cn": "他妻子因病去世了，对他该说些什么好呢？"
+    }
+   ],
+   "notes": [
+    {
+     "type": "れい",
+     "text": "何をしたらいいのやら／どうすればいいのやら／いつ帰れることやら／いつになることやら"
+    }
+   ]
+  }
+ ],
+ "exercises": {
+  "answers_note": "答えはp.44",
+  "sections": [
+   {
+    "type": "choice",
+    "instruction": "正しいほうに〇をつけなさい。",
+    "items": [
+     {
+      "n": 1,
+      "q": "仕事がないので毎日友達と遊んでいる。（a. 暇なのやら忙しいのやら　b. 暇とも忙しいとも）。"
+     },
+     {
+      "n": 2,
+      "q": "ペットは（a. いるともいないとも言えなくて　b. いたらいたで）大変だけれど、ペットのいない生活は考えられない。"
+     },
+     {
+      "n": 3,
+      "q": "会社が倒産しそうだ。（a. 何する　b. どうなる）ことやら……。"
+     },
+     {
+      "n": 4,
+      "q": "彼は（a. おとなしいとも消極的だとも　b. おとなしいのやら消極的なのやらと）言えるが、とにかく口数が少ない。"
+     },
+     {
+      "n": 5,
+      "q": "（a. いやならいやで　b. いやともいやじゃないとも）、はっきり言ってください。"
+     }
+    ]
+   },
+   {
+    "type": "order",
+    "instruction": "下の語を並べ替えて正しい文を作りなさい。＿＿に数字を書きなさい。",
+    "items": [
+     {
+      "n": 6,
+      "q": "「ピザ屋のチラシ、どこにある？ ＿＿ ＿＿ ＿＿ ＿＿ 。」",
+      "options": [
+       "1 捨てた",
+       "2 でいいの",
+       "3 だけど",
+       "4 捨てたら"
+      ]
+     },
+     {
+      "n": 7,
+      "q": "この仕事は、いつ ＿＿ ＿＿ ＿＿ ＿＿ もつかない。",
+      "options": [
+       "1 終わる",
+       "2 になったら",
+       "3 見当",
+       "4 ことやら"
+      ]
+     }
+    ]
+   }
+  ],
+  "answers": "Ⅰ：①a ②b ③b ④a ⑤a　Ⅱ：⑥4→1→2→3　⑦2→1→4→3"
+ },
+ "hitokoto": ""
+}

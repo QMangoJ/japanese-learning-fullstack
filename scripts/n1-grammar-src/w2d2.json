@@ -1,0 +1,189 @@
+{
+ "week": 2,
+ "day": 2,
+ "title": "どんなに高かろうが",
+ "title_cn": "不管多贵",
+ "title_en": "No matter how expensive",
+ "dialog": {
+  "lines": [
+   "Q.（　）に入るのは？",
+   "それがいくら（　）、気に入ったら買います。"
+  ],
+  "cn": "问：括号里该填什么？——不管它多少钱，只要喜欢我就买。（答案：であれ）",
+  "en": "Q: What goes in the blank? — Whatever it costs, I'll buy it if I like it. (Answer: であれ)"
+ },
+ "points": [
+  {
+   "pattern": "先生であれ、学生であれ",
+   "reading": "せんせいであれ、がくせいであれ",
+   "connection": "【aであれbであれ】N／naであれ",
+   "usage_cn": "不论是……还是……；无论……都……。",
+   "usage_en": "Whether ~ or ~ / whoever ~.",
+   "examples": [
+    {
+     "jp": "先生であれ学生であれ、この規則には従わなければならない。",
+     "eq": "=先生でも学生でもだれでも",
+     "en": "You must follow the rules regardless of whether you are a teacher or student.",
+     "cn": "不论是老师还是学生，都必须遵守这个规则。"
+    },
+    {
+     "jp": "彼がだれであれ、特別扱いするのはおかしい。",
+     "eq": "=彼がだれでも",
+     "en": "It is wrong to give him special treatment even if he is someone important.",
+     "cn": "不论他是谁，特殊对待都不合适。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "慣用",
+     "text": "だれであれ／どこであれ／何であれ"
+    },
+    {
+     "type": "硬",
+     "text": "改まった場面や文書で使われる硬い表現"
+    }
+   ]
+  },
+  {
+   "pattern": "雨が降ろうが雪が降ろうが",
+   "reading": "あめがふろうがゆきがふろうが",
+   "connection": "【aうとbうと】【aうがbうが】Vよう／Aかろう／na・Nだろう／na・Nであろう ＋が／と",
+   "usage_cn": "不管是……还是……，都……。",
+   "usage_en": "Whether ~ or ~ (it makes no difference).",
+   "examples": [
+    {
+     "jp": "雨が降ろうと雪が降ろうと明日の集まりには必ず行くよ。",
+     "eq": "=雨が降っても雪が降っても",
+     "en": "I'll definitely come to the gathering tomorrow, rain or shine.",
+     "cn": "不论是下雨还是下雪，明天的聚会肯定会去。"
+    },
+    {
+     "jp": "私は肉だろうが魚だろうが、なんでも食べます。",
+     "eq": "=肉でも魚でも",
+     "en": "I'll eat meat, fish, or anything.",
+     "cn": "不管是肉还是鱼，我什么都吃。"
+    },
+    {
+     "jp": "新品であろうと、中古であろうと、そんな型の古いパソコンは買うべきではないと思う。",
+     "eq": "=新品でも中古でもどちらの場合でも",
+     "en": "I don't think you should buy such an old model even if it's new.",
+     "cn": "不论是新品还是二手货，我认为都不应该买这种旧型号的电脑。"
+    },
+    {
+     "jp": "明日、時間があろうとなかろうと、連絡だけは入れてください。",
+     "eq": "=時間があってもなくても",
+     "en": "Please contact me tomorrow even if you are busy.",
+     "cn": "明天不论有没有时间，都要跟我联系一下。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "慣用",
+     "text": "～だろうとなかろうと"
+    }
+   ]
+  },
+  {
+   "pattern": "どんなに高かろうが",
+   "reading": "どんなにたかかろうが",
+   "connection": "［疑問詞］＋Vよう／Aかろう／na・Nだろう／na・Nであろう ＋が／と（も）",
+   "usage_cn": "无论怎么……也……；不管……都……。",
+   "usage_en": "No matter how ~.",
+   "examples": [
+    {
+     "jp": "必要だから、どんなに高かろうがそれを買わなくてはいけない。",
+     "eq": "=どんなに高くても",
+     "en": "I must buy it no matter how expensive it is because I need it.",
+     "cn": "因为需要，不论多么贵，都必须买这个。"
+    },
+    {
+     "jp": "あなたがどんなに謝ろうとも、今回は許さない。",
+     "eq": "=どんなに謝っても",
+     "en": "I won't forgive you this time no matter how much you apologize.",
+     "cn": "不论你怎么道歉，这次决不原谅。"
+    },
+    {
+     "jp": "あなたが何歳であろうが関係ない。仕事ができればいい。",
+     "eq": "=何歳でも",
+     "en": "I don't care how old you are as long as you can do the job.",
+     "cn": "不管你多少岁都没关系，只要能干工作就行。"
+    },
+    {
+     "jp": "私が何をしようが勝手だ。あなたに言う必要はない。",
+     "eq": "=何をしても",
+     "en": "It's not your business. I don't need to tell you what I am going to do.",
+     "cn": "不管我干什么都是我的自由，没必要跟你说。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "れい",
+     "text": "いくら寒かろうと関係ない／どこへ行こうと同じだ／何と言おうが自由だ／どうなろうがどうでもいい"
+    },
+    {
+     "type": "硬",
+     "text": "改まった場面や文書で使われる硬い表現"
+    }
+   ]
+  }
+ ],
+ "exercises": {
+  "answers_note": "答えはp.35",
+  "sections": [
+   {
+    "type": "choice",
+    "instruction": "正しいほうに〇をつけなさい。",
+    "items": [
+     {
+      "n": 1,
+      "q": "彼は、（a. 朝だろうが夜中だろうが　b. 朝だろう夜中だろう）かまわず電話をかけてくる。"
+     },
+     {
+      "n": 2,
+      "q": "この部屋でどんなに（a. 騒ごうとも　b. 騒ぐであれ）、外からは何も聞こえません。"
+     },
+     {
+      "n": 3,
+      "q": "たとえ（a. 雨であろうと雪であろうと　b. 雨が降るが雪が降るが）、明日の試合は予定どおり行います。"
+     },
+     {
+      "n": 4,
+      "q": "どの大学（a. であると　b. であれ）、進学先が決まってほっとした。"
+     },
+     {
+      "n": 5,
+      "q": "（a. 何だろうが　b. 何をしようと）君の自由だが、他人に迷惑をかけることは許されない。"
+     }
+    ]
+   },
+   {
+    "type": "order",
+    "instruction": "下の語を並べ替えて正しい文を作りなさい。＿＿に数字を書きなさい。",
+    "items": [
+     {
+      "n": 6,
+      "q": "あの夫婦が ＿＿ ＿＿ ＿＿ ＿＿ 、子どもはかわいそうだと思う。",
+      "options": [
+       "1 知った",
+       "2 なろうが",
+       "3 どう",
+       "4 ことではないが"
+      ]
+     },
+     {
+      "n": 7,
+      "q": "＿＿ ＿＿ ＿＿ ＿＿ には変わりはない。",
+      "options": [
+       "1 なかろうと",
+       "2 人を傷つけたこと",
+       "3 故意",
+       "4 であろうと"
+      ]
+     }
+    ]
+   }
+  ],
+  "answers": "Ⅰ：①a ②a ③a ④b ⑤b　Ⅱ：⑥3→2→1→4　⑦3→1→4→2"
+ },
+ "hitokoto": ""
+}

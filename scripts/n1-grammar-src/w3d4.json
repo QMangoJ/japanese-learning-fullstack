@@ -1,0 +1,184 @@
+{
+ "week": 3,
+ "day": 4,
+ "title": "努力をもって",
+ "title_cn": "凭借努力",
+ "title_en": "Through effort",
+ "dialog": {
+  "lines": [
+   "Q.（　）に入るのは？",
+   "日本に来てから（　）毎日、日本食を食べている。"
+  ],
+  "cn": "问：括号里该填什么？——自从来到日本以后，每天都吃日本菜。（答案：というもの）",
+  "en": "Q: What goes in the blank? — Ever since I came to Japan, I've eaten Japanese food every day. (Answer: というもの)"
+ },
+ "points": [
+  {
+   "pattern": "東京を皮切りに",
+   "reading": "とうきょうをかわきりに",
+   "connection": "Nを皮切りに（して）／Nを皮切りとして",
+   "usage_cn": "以……为开端，从……开始（接着相继……）。",
+   "usage_en": "Starting with ~.",
+   "examples": [
+    {
+     "jp": "今度の演奏会は、東京を皮切りに、全国10ヵ所で行われる。",
+     "eq": "=東京を最初の場所として",
+     "en": "This round of concerts will take place in ten different locations, starting in Tokyo.",
+     "cn": "这次的演奏会，以东京为开端，要在全国10个地方举行。"
+    },
+    {
+     "jp": "彼の店は大阪で成功したのを皮切りに、各地に次々と出店していずれも成功を収めた。",
+     "eq": "=成功したのがきっかけとなって",
+     "en": "His store first succeeded in Osaka and later in other parts of the country.",
+     "cn": "他的店在大阪大获成功，以此为开端在各地接连开了多家店，都取得了成功。"
+    }
+   ],
+   "notes": []
+  },
+  {
+   "pattern": "努力をもって",
+   "reading": "どりょくをもって",
+   "connection": "①Nをもって（N＝手段／方法）　②N〈期限〉をもって（＝Nを限りに／N限りで）",
+   "usage_cn": "①以……，用……（手段、方法）；②以……为限，到……为止（时间）。",
+   "usage_en": "① By means of ~; ② As of ~ (deadline).",
+   "examples": [
+    {
+     "jp": "熱意と努力をもって、仕事をしてください。",
+     "eq": "=熱意と努力で",
+     "en": "You are expected to work enthusiastically.",
+     "cn": "请带着热情和努力工作。"
+    },
+    {
+     "jp": "彼の実力をもってすれば、成功するだろう。",
+     "eq": "=彼の実力でやってみれば",
+     "en": "He is sure to succeed because he is very capable.",
+     "cn": "如果以他的实力，应该会成功吧。"
+    },
+    {
+     "jp": "地震の恐ろしさを身をもって経験した。",
+     "eq": "=自分自身で／実際に自分が",
+     "en": "I experienced the fear of being in an earthquake firsthand.",
+     "cn": "亲身体验了地震的恐怖。"
+    },
+    {
+     "jp": "「これをもって、始まりのあいさつとさせていただきます。」",
+     "eq": "=これで",
+     "en": "This brings my opening speech to an end. Thank you.",
+     "cn": "请允许我以此作为开始的致词。"
+    },
+    {
+     "jp": "本日をもって、セールは終了となります。",
+     "eq": "=本日で",
+     "en": "The sale will finish today.",
+     "cn": "促销活动到今天为止。"
+    },
+    {
+     "jp": "10月31日をもちまして、退職いたしました。",
+     "eq": "=10月31日で",
+     "en": "I resigned as of October 31.",
+     "cn": "到10月31日，我就退休了。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "れい",
+     "text": "〇月〇日をもって"
+    },
+    {
+     "type": "硬",
+     "text": "改まった場面や文書で使われる硬い表現"
+    }
+   ]
+  },
+  {
+   "pattern": "この1ヵ月というもの",
+   "reading": "このいっかげつというもの",
+   "connection": "（この／ここ）Nというもの／Vてからというもの",
+   "usage_cn": "整整……以来，自从……以后（一直……）（N＝期間）。",
+   "usage_en": "For the whole ~ / ever since ~.",
+   "examples": [
+    {
+     "jp": "この1ヵ月というもの、シャワーを浴びるだけでお風呂に入っていない。",
+     "eq": "=1ヵ月の間ずっと",
+     "en": "Although I like baths, I have only been able to have showers for the last month.",
+     "cn": "在这一个月里，我光冲淋浴，从未泡过澡。"
+    },
+    {
+     "jp": "結婚してからというもの、映画館で映画を見ていない。",
+     "eq": "=結婚してからずっと",
+     "en": "I haven't gone to a movie theater since I got married.",
+     "cn": "自从结婚以后，再也没在电影院看过电影。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "◆",
+     "text": "N＝期間"
+    },
+    {
+     "type": "れい",
+     "text": "ここ3日間というもの／ここしばらくというもの"
+    }
+   ]
+  }
+ ],
+ "exercises": {
+  "answers_note": "答えはp.55",
+  "sections": [
+   {
+    "type": "choice",
+    "instruction": "正しいほうに〇をつけなさい。",
+    "items": [
+     {
+      "n": 1,
+      "q": "あの先生は僕が何を尋ねても、いつも誠意（a. をもって　b. をもちまして）答えてくれる。"
+     },
+     {
+      "n": 2,
+      "q": "私の父は定年退職（a. を皮切りに　b. してからというもの）、一日中テレビばかり見ている。"
+     },
+     {
+      "n": 3,
+      "q": "当選者の発表は、商品の発送（a. をもって　b. を皮切りに）代えさせていただきます。"
+     },
+     {
+      "n": 4,
+      "q": "一人暮らしを始めてから（a. というもの　b. といえども）、まともな食事をしたことがない。"
+     },
+     {
+      "n": 5,
+      "q": "昨日の会議では、彼の発言（a. を皮切りに　b. というもの）反対意見が次々と出た。"
+     }
+    ]
+   },
+   {
+    "type": "order",
+    "instruction": "下の語を並べ替えて正しい文を作りなさい。＿＿に数字を書きなさい。",
+    "items": [
+     {
+      "n": 6,
+      "q": "あの歌手は ＿＿ ＿＿ ＿＿ ＿＿ いるようだ。",
+      "options": [
+       "1 人気が出て",
+       "2 大きくなって",
+       "3 からというもの",
+       "4 態度が"
+      ]
+     },
+     {
+      "n": 7,
+      "q": "＿＿ ＿＿ ＿＿ ＿＿ も難しくないだろう。",
+      "options": [
+       "1 その開発",
+       "2 最新技術",
+       "3 をもって",
+       "4 すれば"
+      ]
+     }
+    ]
+   }
+  ],
+  "answers": "Ⅰ：①a ②b ③a ④a ⑤a　Ⅱ：⑥1→3→4→2　⑦2→3→4→1"
+ },
+ "hitokoto": ""
+}

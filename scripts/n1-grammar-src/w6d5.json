@@ -1,0 +1,180 @@
+{
+ "week": 6,
+ "day": 5,
+ "title": "趣味と実益を兼ねて",
+ "title_cn": "兼顾兴趣与实际利益",
+ "title_en": "Combining a hobby with practical benefit",
+ "dialog": {
+  "lines": [
+   "Q.（　）に入るのは？",
+   "息子は親の（　）、高校をやめて働き出した。"
+  ],
+  "cn": "问：括号里该填什么？——儿子不顾父母的反对，退学去工作了。（答案：反対をよそに）",
+  "en": "Q: What goes in the blank? — Ignoring his parents' opposition, my son quit high school and started working. (Answer: 反対をよそに)"
+ },
+ "points": [
+  {
+   "pattern": "彼女をおいてほかにない",
+   "reading": "かのじょをおいてほかにない",
+   "connection": "Nをおいて（ほかに）Vない",
+   "usage_cn": "除了……以外没有……（再没有比这更合适的）。",
+   "usage_en": "No one/nothing but ~.",
+   "examples": [
+    {
+     "jp": "彼女をおいてほかにその仕事ができる人はいない。",
+     "eq": "=彼女以外には",
+     "en": "She is the only one who can do the job.",
+     "cn": "除了她没有人能胜任那项工作。"
+    },
+    {
+     "jp": "進学するなら、A大学をおいてほかに考えられない。",
+     "eq": "=A大学以外には",
+     "en": "A is the only university I would consider going to.",
+     "cn": "如果考大学的话，除了A大学别的都无法考虑。"
+    }
+   ],
+   "notes": []
+  },
+  {
+   "pattern": "親の心配をよそに",
+   "reading": "おやのしんぱいをよそに",
+   "connection": "Nをよそに",
+   "usage_cn": "不顾……，无视……。",
+   "usage_en": "Without regard to ~ / ignoring ~.",
+   "examples": [
+    {
+     "jp": "親の心配をよそに、彼女は一人旅に出かけた。",
+     "eq": "=親が心配しているということを気にしないで",
+     "en": "She went on a trip alone not knowing how worried her parents were.",
+     "cn": "她不顾父母的担心，一个人出去旅行了。"
+    },
+    {
+     "jp": "外食産業が不景気なのをよそに、そのレストランはいつもにぎわっている。",
+     "eq": "=不景気なのと関係なく",
+     "en": "The restaurant is always packed despite the slump in the restaurant industry.",
+     "cn": "虽然餐饮行业不景气，但那家餐馆总是客人很多。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "れい",
+     "text": "親の反対をよそに／住民の不安をよそに／周囲の期待をよそに／反対の声をよそに／〇〇が苦しんでいるのをよそに"
+    }
+   ]
+  },
+  {
+   "pattern": "20年の時を経て",
+   "reading": "にじゅうねんのときをへて",
+   "connection": "Nを経て",
+   "usage_cn": "经过……，通过……。",
+   "usage_en": "After ~ / through ~.",
+   "examples": [
+    {
+     "jp": "20年の時を経て、伝説のバンドが復活する。",
+     "eq": "=20年という時がたって",
+     "en": "The legendary music group is coming back after twenty years of absence.",
+     "cn": "经过了20年的时光，传说中的乐队复出了。"
+    },
+    {
+     "jp": "その選手は、オリンピックを経て、急激に力をつけてきた。",
+     "eq": "=オリンピックを経験して",
+     "en": "This athlete has improved rapidly after taking part in the Olympics.",
+     "cn": "那位选手经过奥运会后实力迅速提升。"
+    },
+    {
+     "jp": "複雑な手続きを経て、証明書が発行された。",
+     "eq": "=複雑な手続きをした後に",
+     "en": "A certificate was issued following a very complicated process.",
+     "cn": "经过了复杂的手续，才下发了证明文件。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "◆",
+     "text": "N＝時、場所、過程、経験など"
+    }
+   ]
+  },
+  {
+   "pattern": "趣味と実益を兼ねて",
+   "reading": "しゅみとじつえきをかねて",
+   "connection": "（N′と）Nを兼ねて／Nも兼ねて",
+   "usage_cn": "兼……，同时也是为了……（一举两得）。",
+   "usage_en": "Combining ~ / also for the purpose of ~.",
+   "examples": [
+    {
+     "jp": "私は趣味と実益を兼ねてイラストを描いています。",
+     "eq": "=趣味と実益の両方の目的で",
+     "en": "I draw illustrations professionally and as a hobby.",
+     "cn": "我画插图既是兴趣，还能顺便获得些收益。"
+    },
+    {
+     "jp": "英語の勉強も兼ねて、1ヵ月ほどアメリカを旅行してきます。",
+     "eq": "=英語の勉強も目的として",
+     "en": "I will travel to the USA and study English for a month.",
+     "cn": "兼带学习英语，在美国旅行了1个月左右。"
+    }
+   ],
+   "notes": []
+  }
+ ],
+ "exercises": {
+  "answers_note": "答えはp.105",
+  "sections": [
+   {
+    "type": "choice",
+    "instruction": "正しいほうに〇をつけなさい。",
+    "items": [
+     {
+      "n": 1,
+      "q": "この仕事（a. をおいて　b. をよそに）、彼にふさわしい仕事はほかにないでしょう。"
+     },
+     {
+      "n": 2,
+      "q": "彼女は自分の失敗（a. をおいて　b. をよそに）、他人の批判ばかりしている。"
+     },
+     {
+      "n": 3,
+      "q": "観光を（a. かねて　b. 経て）オーストラリアへ研修に行った。"
+     },
+     {
+      "n": 4,
+      "q": "近隣の住民の反対を（a. 経て　b. よそに）、高層マンションが建設されてしまった。"
+     },
+     {
+      "n": 5,
+      "q": "彼女は結婚、出産を（a. 経て　b. かねて）、また競技に復活した。"
+     }
+    ]
+   },
+   {
+    "type": "order",
+    "instruction": "下の語を並べ替えて正しい文を作りなさい。＿＿に数字を書きなさい。",
+    "items": [
+     {
+      "n": 6,
+      "q": "その企業は不景気 ＿＿ ＿＿ ＿＿ ＿＿ 、売り上げを伸ばしている。",
+      "options": [
+       "1 をよそに",
+       "2 による",
+       "3 業績の低迷",
+       "4 他社の"
+      ]
+     },
+     {
+      "n": 7,
+      "q": "今年の年賀状は、＿＿ ＿＿ ＿＿ ＿＿ 、例年より多い数になった。",
+      "options": [
+       "1 報告も",
+       "2 ゆえに",
+       "3 兼ねていた",
+       "4 引っ越しの"
+      ]
+     }
+    ]
+   }
+  ],
+  "answers": "Ⅰ：①a ②b ③a ④b ⑤a　Ⅱ：⑥2→4→3→1　⑦4→1→3→2"
+ },
+ "hitokoto": ""
+}

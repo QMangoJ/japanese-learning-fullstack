@@ -1,0 +1,197 @@
+{
+ "week": 2,
+ "day": 3,
+ "title": "行こうか行くまいか迷っている",
+ "title_cn": "在犹豫去还是不去",
+ "title_en": "I can't decide whether to go or not",
+ "dialog": {
+  "lines": [
+   "Q.（　）に入るのは？",
+   "原因が（　）、この痛みをすぐに取ってもらいたい。"
+  ],
+  "cn": "问：括号里该填什么？——不管原因是什么，希望马上把这疼痛去掉。（答案：何にせよ）",
+  "en": "Q: What goes in the blank? — Whatever the cause, I want this pain taken away right now. (Answer: 何にせよ)"
+ },
+ "points": [
+  {
+   "pattern": "うれしいというか、残念というか",
+   "reading": "うれしいというか、ざんねんというか",
+   "connection": "【aというかbというか】Aい／na／N ＋というか",
+   "usage_cn": "说是……呢，还是……呢（难以一言概括的复杂感受或评价）。",
+   "usage_en": "~ or ~, I'm not sure which (hard to describe).",
+   "examples": [
+    {
+     "jp": "私は合格したが、親友は不合格だった。うれしいというか、残念というか、複雑な気持ちだ。",
+     "eq": "=うれしいとも言えるし、また残念とも言える。とにかく",
+     "en": "I passed the entrance exam but my best friend did not. I'm not sure if I am happy or not. I have mixed feelings.",
+     "cn": "尽管我合格了，但好朋友没有合格。不知是高兴还是遗憾，心情很复杂。"
+    },
+    {
+     "jp": "そんなことをするとは、無茶というか、無知というか、彼のすることは理解できない。",
+     "eq": "=無茶と言えるし、無知とも言える。とにかく",
+     "en": "He did that? Is he stupid or what? I don't understand him.",
+     "cn": "竟然干那种事情，不知该说是乱来还是无知，他的行为无法理解。"
+    }
+   ],
+   "notes": []
+  },
+  {
+   "pattern": "降ろうと降るまいと",
+   "reading": "ふろうとふるまいと",
+   "connection": "Vようと Vるまいと／Vようが Vるまいが",
+   "usage_cn": "不管……还是不……，都……。",
+   "usage_en": "Whether or not ~.",
+   "examples": [
+    {
+     "jp": "雨が降ろうと降るまいと試合は行われます。",
+     "eq": "=雨が降っても降らなくても、どの場合でも",
+     "en": "There will be a game regardless of the weather.",
+     "cn": "不管下不下雨，比赛都将进行。"
+    },
+    {
+     "jp": "私がいようがいまいが関係なく、彼らはけんかを始めた。",
+     "eq": "=いてもいなくても",
+     "en": "In spite of me being there, they started fighting.",
+     "cn": "他们不管我在不在场，就吵开了。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "!",
+     "text": "（ru-V）Vるまい／Vます形（去ます）まい　（u-V）Vるまい　くる→こまい／くるまい　する→しまい／すまい／するまい"
+    },
+    {
+     "type": "硬",
+     "text": "改まった場面や文書で使われる硬い表現"
+    }
+   ]
+  },
+  {
+   "pattern": "行こうか行くまいか",
+   "reading": "いこうかいくまいか",
+   "connection": "Vようか Vるまいか",
+   "usage_cn": "是……还是不……（犹豫不决）。",
+   "usage_en": "Whether to ~ or not (undecided).",
+   "examples": [
+    {
+     "jp": "台風のような雨だ。予定通り美術館に行こうか、行くまいか。",
+     "eq": "=行くか、行かないか、どちらにしようか",
+     "en": "It's raining hard like in a typhoon. Should I go to the museum as planned or not?",
+     "cn": "暴雨像刮台风似的。究竟是按照原定计划去美术馆呢？还是不去呢？"
+    },
+    {
+     "jp": "彼と結婚しようかするまいか悩むくらいなら、やめたほうがいい。",
+     "eq": "=結婚するかしないかどちらにするか",
+     "en": "If you're having a hard time deciding to marry him, you'd better forget about it.",
+     "cn": "如果犹豫是否要和他结婚，那不如别结了。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "!",
+     "text": "（ru-V）Vるまい／Vます形（去ます）まい　（u-V）Vるまい　くる→こまい／くるまい　する→しまい／すまい／するまい"
+    },
+    {
+     "type": "硬",
+     "text": "改まった場面や文書で使われる硬い表現"
+    }
+   ]
+  },
+  {
+   "pattern": "来るにせよ来ないにせよ",
+   "reading": "くるにせよこないにせよ",
+   "connection": "【aにせよ（bにせよ）】【aにしろ（bにしろ）】V/A/na/N〔普〕＋にせよ／にしろ（na~だ~に／N~だ~に）",
+   "usage_cn": "不管是……还是……；即使……也……。",
+   "usage_en": "Whether ~ or ~ / even if ~.",
+   "examples": [
+    {
+     "jp": "来るにせよ来ないにせよ、必ず連絡を入れてください。",
+     "eq": "=来る場合も来ない場合も",
+     "en": "Please make sure you inform us as to whether you will be able to come or not.",
+     "cn": "不论是来还是不来，务必跟我联系。"
+    },
+    {
+     "jp": "熱が下がったにせよ、しばらく安静が必要です。",
+     "eq": "=熱が下がった場合も",
+     "en": "You'll need to rest quietly in bed even though your temperature has come down.",
+     "cn": "尽管退烧了，还需要静养一段日子。"
+    },
+    {
+     "jp": "事故で車は前のほうがめちゃくちゃになったが、何にしろ、誰もけがをしなくてよかった。",
+     "eq": "=どういう場合でも",
+     "en": "The front of my car got smashed up in the accident but I was relieved that no one was hurt.",
+     "cn": "事故中汽车前部已被毁得一塌糊涂了，但不管怎样，幸好没有人受伤。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "OK",
+     "text": "何にせよ／にしろ　だれにせよ／にしろ　いつにせよ／にしろ　どこにせよ／にしろ"
+    },
+    {
+     "type": "硬",
+     "text": "改まった場面や文書で使われる硬い表現"
+    }
+   ]
+  }
+ ],
+ "exercises": {
+  "answers_note": "答えはp.37",
+  "sections": [
+   {
+    "type": "choice",
+    "instruction": "正しいほうに〇をつけなさい。",
+    "items": [
+     {
+      "n": 1,
+      "q": "あなたが反対（a. しようとしまいと　b. しようかするまいか）私は一人で行くつもりです。"
+     },
+     {
+      "n": 2,
+      "q": "大学院へ（a. 行こうと行くまいと　b. 行こうか行くまいか）悩んだ末、いい仕事が見つかったので就職することにした。"
+     },
+     {
+      "n": 3,
+      "q": "来週の会合に（a. 来るにしろ来ないにしろ　b. 来るというか来ないというか）、必ず資料に目を通してください。"
+     },
+     {
+      "n": 4,
+      "q": "欠席（a. するにせよ　b. しようにしろ）連絡はしてください。"
+     },
+     {
+      "n": 5,
+      "q": "それは、（a. 面白かろうと、珍しかろうと　b. 面白いというか、珍しいというか）、とにかく変わったものだ。"
+     }
+    ]
+   },
+   {
+    "type": "order",
+    "instruction": "下の語を並べ替えて正しい文を作りなさい。＿＿に数字を書きなさい。",
+    "items": [
+     {
+      "n": 6,
+      "q": "その新聞記者は、記事を掲載 ＿＿ ＿＿ ＿＿ ＿＿ 、掲載をやめた。",
+      "options": [
+       "1 しようか",
+       "2 悩んだ",
+       "3 あげく",
+       "4 すまいか"
+      ]
+     },
+     {
+      "n": 7,
+      "q": "もう社会人 ＿＿ ＿＿ ＿＿ ＿＿ に責任を持たなければいけない。",
+      "options": [
+       "1 だから",
+       "2 にせよ",
+       "3 自分の行動",
+       "4 何をする"
+      ]
+     }
+    ]
+   }
+  ],
+  "answers": "Ⅰ：①a ②b ③a ④a ⑤b　Ⅱ：⑥1→4→2→3　⑦1→4→2→3"
+ },
+ "hitokoto": ""
+}

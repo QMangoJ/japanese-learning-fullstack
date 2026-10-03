@@ -1,0 +1,212 @@
+{
+ "week": 8,
+ "day": 4,
+ "title": "延期を余儀なくされた",
+ "title_cn": "不得不延期",
+ "title_en": "Had no choice but to postpone",
+ "dialog": {
+  "lines": [
+   "Q.（　）に入るのは？",
+   "君は考えすぎる（　）がある。"
+  ],
+  "cn": "问：括号里该填什么？——你有想太多的倾向。（答案：きらい）",
+  "en": "Q: What goes in the blank? — You tend to think too much. (Answer: きらい)"
+ },
+ "points": [
+  {
+   "pattern": "同情を禁じ得ない",
+   "reading": "どうじょうをきんじえない",
+   "connection": "Nを禁じ得ない",
+   "usage_cn": "禁不住……，不由得……（无法抑制某种感情）。",
+   "usage_en": "Can't help feeling ~.",
+   "examples": [
+    {
+     "jp": "彼の不幸な人生には、同情を禁じ得ない。",
+     "eq": "=同情しないではいられない",
+     "en": "I can't help but feel sorry for his unfortunate circumstances.",
+     "cn": "对于他不幸的人生，同情之心油然而生。"
+    },
+    {
+     "jp": "その葬式での家族の挨拶に、涙を禁じ得なかった。",
+     "eq": "=涙を流さないではいられなかった",
+     "en": "I couldn't help but have tears in my eyes as I listened to the family members addressing the guests at the funeral.",
+     "cn": "听到举办葬礼的家人的致词，眼泪不禁夺眶而出。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "硬",
+     "text": "改まった場面や文書で使われる硬い表現"
+    },
+    {
+     "type": "れい",
+     "text": "笑いを禁じ得ない／怒りを禁じ得ない／憤りを禁じ得ない"
+    }
+   ]
+  },
+  {
+   "pattern": "延期を余儀なくされた",
+   "reading": "えんきをよぎなくされた",
+   "connection": "Nを余儀なくされる",
+   "usage_cn": "不得不……，被迫……（由于外部原因）。",
+   "usage_en": "Be forced to ~ / have no choice but to ~.",
+   "examples": [
+    {
+     "jp": "その試合は雨のため、延期を余儀なくされた。",
+     "eq": "=仕方なく延期した",
+     "en": "Due to the rain, the game had to be postponed.",
+     "cn": "因为下雨，那个比赛不得不延期。"
+    },
+    {
+     "jp": "災害のため、多くの住民が避難所での生活を余儀なくされている。",
+     "eq": "=仕方なく避難所での生活をしている",
+     "en": "Many people have been forced to live in shelters because of the disaster.",
+     "cn": "因为受灾，众多居民不得不在避难所生活。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "硬",
+     "text": "改まった場面や文書で使われる硬い表現"
+    }
+   ]
+  },
+  {
+   "pattern": "考えすぎる嫌いがある",
+   "reading": "かんがえすぎるきらいがある",
+   "connection": "Vる嫌いがある／Nの嫌いがある",
+   "usage_cn": "有……的倾向，容易……（不好的倾向）。",
+   "usage_en": "Have a tendency to ~ (negative).",
+   "examples": [
+    {
+     "jp": "彼は物事を少し考えすぎる嫌いがある。",
+     "eq": "=考えすぎる傾向がある",
+     "en": "He tends to take things too seriously.",
+     "cn": "他考虑事情总是考虑得有点过多。"
+    },
+    {
+     "jp": "この頃の若者は協調性に欠ける嫌いがある。",
+     "eq": "=協調性に欠ける傾向がある",
+     "en": "Young people these days lack the ability to work well with others.",
+     "cn": "现在的年轻人总是缺乏协调性。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "(-)",
+     "text": "悪い意味でよく使われる表現"
+    },
+    {
+     "type": "硬",
+     "text": "改まった場面や文書で使われる硬い表現"
+    },
+    {
+     "type": "◆",
+     "text": "よくない傾向を表す。"
+    },
+    {
+     "type": "◆",
+     "text": "「すぎる嫌いがある」という形が多い。"
+    },
+    {
+     "type": "れい",
+     "text": "長すぎる嫌いがある／～に欠ける嫌いがある"
+    }
+   ]
+  },
+  {
+   "pattern": "落第する始末だ",
+   "reading": "らくだいするしまつだ",
+   "connection": "Vる始末だ",
+   "usage_cn": "（结果）竟然落到……的地步。",
+   "usage_en": "End up ~ (a bad outcome).",
+   "examples": [
+    {
+     "jp": "息子には失望した。勉強しないどころか、落第する始末だ。",
+     "eq": "=落第するという状況だ",
+     "en": "I am so disappointed with my son. Not only does he not study, he has failed a course.",
+     "cn": "对儿子太失望了。不仅不学习，最后还留级了。"
+    },
+    {
+     "jp": "昔はお金がなくて、電気や水道も止められる始末だった。",
+     "eq": "=止められるという状態だった",
+     "en": "I had so little money that my electricity and water were cut off.",
+     "cn": "以前因为没有钱，最后连电和水都被掐断了。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "(-)",
+     "text": "悪い意味でよく使われる表現"
+    },
+    {
+     "type": "!",
+     "text": "この／その／あの始末だ"
+    },
+    {
+     "type": "◆",
+     "text": "最後によくない状況や結果になったことを表す。"
+    }
+   ]
+  }
+ ],
+ "exercises": {
+  "answers_note": "答えはp.135",
+  "sections": [
+   {
+    "type": "choice",
+    "instruction": "正しいほうに〇をつけなさい。",
+    "items": [
+     {
+      "n": 1,
+      "q": "政治家の汚職を見るにつけ怒りを（a. 禁じ得ない　b. 余儀なくされた）。"
+     },
+     {
+      "n": 2,
+      "q": "昨日の彼らのコンサートでは、興奮のあまり気を失う少女が出る（a. きらいがあった　b. しまつだった）。"
+     },
+     {
+      "n": 3,
+      "q": "彼女は大げさに言う（a. きらいがある　b. 始末だ）から、そのつもりで聞くように。"
+     },
+     {
+      "n": 4,
+      "q": "すぐ治るけがだと言われたのに無理をしたため、手術（a. を余儀なくされた　b. を禁じえなかった）。"
+     },
+     {
+      "n": 5,
+      "q": "うちの娘は、ダイエットのしすぎで病気になり、（a. 入院する　b. 入院した）始末だ。"
+     }
+    ]
+   },
+   {
+    "type": "order",
+    "instruction": "下の語を並べ替えて正しい文を作りなさい。＿＿に数字を書きなさい。",
+    "items": [
+     {
+      "n": 6,
+      "q": "田中さんは ＿＿ ＿＿ ＿＿ ＿＿ あると指摘された。",
+      "options": [
+       "1 に欠ける",
+       "2 慎重すぎて",
+       "3 積極性",
+       "4 きらいが"
+      ]
+     },
+     {
+      "n": 7,
+      "q": "彼は、＿＿ ＿＿ ＿＿ ＿＿ のか疑問である。",
+      "options": [
+       "1 始末で",
+       "2 やる気がある",
+       "3 遅刻してきたくせに",
+       "4 早退したいと言い出す"
+      ]
+     }
+    ]
+   }
+  ],
+  "answers": "Ⅰ：①a ②b ③a ④a ⑤a　Ⅱ：⑥2→3→1→4　⑦3→4→1→2"
+ },
+ "hitokoto": ""
+}

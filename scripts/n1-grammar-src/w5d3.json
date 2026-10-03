@@ -1,0 +1,187 @@
+{
+ "week": 5,
+ "day": 3,
+ "title": "すでに述べたごとく",
+ "title_cn": "如前所述",
+ "title_en": "As already stated",
+ "dialog": {
+  "lines": [
+   "Q.（　）に入るのは？",
+   "私（　）、そのような責任の重い仕事は引き受けられません。"
+  ],
+  "cn": "问：括号里该填什么？——像我这样的人，接受不了那么重大责任的工作。（答案：ごときには）",
+  "en": "Q: What goes in the blank? — Someone like me can't take on such a heavy responsibility. (Answer: ごときには)"
+ },
+ "points": [
+  {
+   "pattern": "うちの息子ときたら",
+   "reading": "うちのむすこときたら",
+   "connection": "Nときたら",
+   "usage_cn": "说起……来，提起……（多表示责备、不满）。",
+   "usage_en": "Speaking of ~ (often critical).",
+   "examples": [
+    {
+     "jp": "うちの娘ときたら、もうすぐ試験なのに遊んでばかりいるんですよ。",
+     "eq": "=うちの娘のことを言えば",
+     "en": "My daughter is not studying at all although her exam is coming soon.",
+     "cn": "要说我女儿，尽管马上要考试了，可还是光玩。"
+    },
+    {
+     "jp": "最近はやっている歌ときたら、心に残らないものばかりだ。",
+     "eq": "=最近はやっている歌について言えば",
+     "en": "None of the recent popular songs is very memorable.",
+     "cn": "要说最近流行的歌曲，全是些留不下深刻印象的。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "◆",
+     "text": "非難の気持ちを表すことが多い。"
+    }
+   ]
+  },
+  {
+   "pattern": "安くておいしいときている",
+   "reading": "やすくておいしいときている",
+   "connection": "V/A/na/N〔普〕＋ときている／Nときている",
+   "usage_cn": "因为……（所以当然……）（强调特征、理由）。",
+   "usage_en": "Because it is (so) ~ (naturally …).",
+   "examples": [
+    {
+     "jp": "その店は安くておいしいときているから、いつも客でいっぱいだ。",
+     "eq": "=安くておいしいから当然",
+     "en": "The restaurant is always full because it is cheap and good.",
+     "cn": "因为都说那家店价格便宜且好吃，所以总是客满。"
+    },
+    {
+     "jp": "田中さんは明るくて優秀ときているので、就職には困らないでしょう。",
+     "eq": "=明るくて優秀なので当然",
+     "en": "Tanaka-san is bright and cheerful so she won't have trouble finding a job.",
+     "cn": "都说田中开朗而且优秀，应该不愁找工作。"
+    }
+   ],
+   "notes": []
+  },
+  {
+   "pattern": "すでに述べたごとく",
+   "reading": "すでにのべたごとく",
+   "connection": "Vる／Vた（が）ごとく／Nのごとく／V/A/na/N〔普〕かのごとく（N~だ~である、na~だ~である）",
+   "usage_cn": "如同……，像……一样（书面语）。",
+   "usage_en": "As ~ / like ~ (formal).",
+   "examples": [
+    {
+     "jp": "すでに述べた（が）ごとく、この調査方法にはいくつかの問題点がある。",
+     "eq": "=言ったように",
+     "en": "As I pointed out earlier, there are a few problems with the method used to conduct this survey.",
+     "cn": "正如刚才所述，这个调查方法有若干个问题点。"
+    },
+    {
+     "jp": "そのろう人形は、まるで生きているかのごとく、我々を見ていた。",
+     "eq": "=生きているかのように",
+     "en": "The wax figure was looking at us as if it were alive.",
+     "cn": "那个蜡人，简直像活的一样在看着我们。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "慣用",
+     "text": "湯水のごとく（＝お湯や水のように）→無駄に使うことのたとえ"
+    },
+    {
+     "type": "硬",
+     "text": "改まった場面や文書で使われる硬い表現"
+    }
+   ]
+  },
+  {
+   "pattern": "彼のごとき人物",
+   "reading": "かれのごときじんぶつ",
+   "connection": "N₁のごとき N₂／Nごとき",
+   "usage_cn": "像……这样的（多表示批判或轻蔑）。",
+   "usage_en": "The likes of ~ (often contemptuous).",
+   "examples": [
+    {
+     "jp": "彼のごとき人物は忘れられて当然だ。",
+     "eq": "=彼のような人物",
+     "en": "It's natural for people to want to forget a guy like that.",
+     "cn": "像他那样的人物，当然会被忘记。"
+    },
+    {
+     "jp": "そのような莫大な金額は、我々のごとき庶民には払えるはずがない。",
+     "eq": "=我々のような庶民が",
+     "en": "Average people like us could never pay such an enormous amount of money.",
+     "cn": "这样巨大的金额，像我们这样的老百姓不可能支付得起。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "◆",
+     "text": "批判や軽蔑を表すことが多い。"
+    },
+    {
+     "type": "硬",
+     "text": "改まった場面や文書で使われる硬い表現"
+    }
+   ]
+  }
+ ],
+ "exercises": {
+  "answers_note": "答えはp.85",
+  "sections": [
+   {
+    "type": "choice",
+    "instruction": "正しいほうに〇をつけなさい。",
+    "items": [
+     {
+      "n": 1,
+      "q": "最近のテレビ番組（a. ときたら　b. としたら）コマーシャルが多すぎる。"
+     },
+     {
+      "n": 2,
+      "q": "グラフに示した（a. ごとき　b. ごとく）、わが社の営業成績は伸びています。"
+     },
+     {
+      "n": 3,
+      "q": "その難問が小学生（a. ときたら　b. ごときに）解けるわけがない。"
+     },
+     {
+      "n": 4,
+      "q": "酒好きの父（a. のごとく　b. ときたら）、毎晩ひどく酔っ払って帰ってくるので困る。"
+     },
+     {
+      "n": 5,
+      "q": "子どものけんか（a. ごとき　b. ごとく）に警察を呼ぶとは、大げさだ。"
+     }
+    ]
+   },
+   {
+    "type": "order",
+    "instruction": "下の語を並べ替えて正しい文を作りなさい。＿＿に数字を書きなさい。",
+    "items": [
+     {
+      "n": 6,
+      "q": "その大統領夫人は、＿＿ ＿＿ ＿＿ ＿＿ お金を使ったそうだ。",
+      "options": [
+       "1 ごとく",
+       "2 派手",
+       "3 好きで",
+       "4 湯水の"
+      ]
+     },
+     {
+      "n": 7,
+      "q": "彼女は ＿＿ ＿＿ ＿＿ ＿＿ うらやましがられるのは当然だろう。",
+      "options": [
+       "1 美人の上に",
+       "2 お金持ちと",
+       "3 みんなに",
+       "4 きているから"
+      ]
+     }
+    ]
+   }
+  ],
+  "answers": "Ⅰ：①a ②b ③b ④b ⑤a　Ⅱ：⑥2→3→4→1　⑦1→2→4→3"
+ },
+ "hitokoto": ""
+}

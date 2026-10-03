@@ -1,0 +1,208 @@
+{
+ "week": 4,
+ "day": 5,
+ "title": "あなたならでは",
+ "title_cn": "只有你才有的",
+ "title_en": "Only you could",
+ "dialog": {
+  "lines": [
+   "Q.（　）に入るのは？",
+   "一日（　）、日記を欠かしたことはありません。"
+  ],
+  "cn": "问：括号里该填什么？——哪怕一天也没有落下过日记。（答案：たりとも）",
+  "en": "Q: What goes in the blank? — I've never missed writing my diary, not even for one day. (Answer: たりとも)"
+ },
+ "points": [
+  {
+   "pattern": "20万円からするバッグ",
+   "reading": "にじゅうまんえんからするバッグ",
+   "connection": "N〈重量・寸法・数〉からある／N〈値段〉からする／N〈費用・数〉からの",
+   "usage_cn": "多达……，……以上（强调数量之多）。",
+   "usage_en": "As much as ~ / ~ or more.",
+   "examples": [
+    {
+     "jp": "彼女は、20万からするバッグをいくつも持っている。",
+     "eq": "=20万円もする",
+     "en": "She has many purses that are each worth 200,000 yen.",
+     "cn": "她有好几个20多万日元的手提包。"
+    },
+    {
+     "jp": "7キロからある道を歩いて帰った。",
+     "eq": "=7キロもある",
+     "en": "I walked 7 km to get home.",
+     "cn": "走了7公里多的路，走着回来的。"
+    },
+    {
+     "jp": "この店を改装するには500万円からの資金が必要である。",
+     "eq": "=500万円もの",
+     "en": "You will need about 5 million yen to remodel the shop.",
+     "cn": "要改装这家店，需要500多万日元的资金。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "◆",
+     "text": "その数量が多いということを表す。"
+    }
+   ]
+  },
+  {
+   "pattern": "一秒たりとも",
+   "reading": "いちびょうたりとも",
+   "connection": "Nたりとも～ない（N＝数量）",
+   "usage_cn": "哪怕……也（不）……，即使……也（不）……（最小数量）。",
+   "usage_en": "Not even (one) ~.",
+   "examples": [
+    {
+     "jp": "試験では一秒たりとも時間をむだに使ってはいけません。",
+     "eq": "=たとえ一秒であっても",
+     "en": "You should not waste even one second during the exam.",
+     "cn": "在考试中，哪怕是1秒钟都不能浪费。"
+    },
+    {
+     "jp": "その店は、一円たりともまけてくれませんよ。",
+     "eq": "=たとえ一円であっても",
+     "en": "The shop will not knock off even one yen.",
+     "cn": "那家店，哪怕是1日元都不会让价。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "◆",
+     "text": "N＝数量"
+    },
+    {
+     "type": "れい",
+     "text": "一日たりとも／一滴たりとも／一粒たりとも／一瞬たりとも／一度たりとも"
+    }
+   ]
+  },
+  {
+   "pattern": "多少なりとも",
+   "reading": "たしょうなりとも",
+   "connection": "Nなりとも",
+   "usage_cn": "哪怕……也好，至少……（最低限度）。",
+   "usage_en": "Even if only ~ / at least ~.",
+   "examples": [
+    {
+     "jp": "歌舞伎については、多少なりとも知っています。",
+     "eq": "=少しは",
+     "en": "I know a few things about kabuki.",
+     "cn": "关于歌舞伎，多少知道一点。"
+    },
+    {
+     "jp": "お嬢さんに一目なりとも会わせていただけませんでしょうか。",
+     "eq": "=一目だけでも",
+     "en": "Could I not see your daughter just for a second?",
+     "cn": "能否让我见一见您女儿，哪怕只看一眼。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "◆",
+     "text": "わずかなりとも／どこへなりとも"
+    },
+    {
+     "type": "硬",
+     "text": "改まった場面や文書で使われる硬い表現"
+    }
+   ]
+  },
+  {
+   "pattern": "あなたならでは",
+   "reading": "あなたならでは",
+   "connection": "Nならでは",
+   "usage_cn": "只有……才有的，……特有的（多表示好的内容）。",
+   "usage_en": "Unique to ~ / only ~ could.",
+   "examples": [
+    {
+     "jp": "あなたならではの発想で、この企画を考えてください。",
+     "eq": "=あなた独自の",
+     "en": "Please come up with your own unique plan.",
+     "cn": "请用你独特的思考方式考虑这个企划。"
+    },
+    {
+     "jp": "これは当店ならではの特別価格です。",
+     "eq": "=当店だけの",
+     "en": "This is a special price which is being offered only at this store.",
+     "cn": "这个是本店独有的特价。"
+    },
+    {
+     "jp": "このような習慣があるのは、この地方ならではです。",
+     "eq": "=この地方だけ",
+     "en": "This kind of custom is unique to this area.",
+     "cn": "有这样的习惯是这个地方所特有的。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "◆",
+     "text": "よい内容を表すことが多い。"
+    },
+    {
+     "type": "れい",
+     "text": "女性ならでは／主婦ならでは／手作りならでは／映画ならでは／田舎ならでは"
+    }
+   ]
+  }
+ ],
+ "exercises": {
+  "answers_note": "答えはp.73",
+  "sections": [
+   {
+    "type": "choice",
+    "instruction": "正しいほうに〇をつけなさい。",
+    "items": [
+     {
+      "n": 1,
+      "q": "「鈴木」なんていう名前、この町に千から（a. ある　b. ない）んだよ。どうやって彼を探すんだよ。"
+     },
+     {
+      "n": 2,
+      "q": "300枚（a. からする　b. からある）CDの置き場に困っている。"
+     },
+     {
+      "n": 3,
+      "q": "お米一粒（a. たりとも　b. からある）粗末にするなと、よく祖母から言われた。"
+     },
+     {
+      "n": 4,
+      "q": "桜の木の下で酒を飲んで歌を歌う。日本（a. ならではの　b. ならでもの）お花見の風景だ。"
+     },
+     {
+      "n": 5,
+      "q": "その若者と話してみて、多少（a. だけとも　b. なりとも）共感できることがあった。"
+     }
+    ]
+   },
+   {
+    "type": "order",
+    "instruction": "下の語を並べ替えて正しい文を作りなさい。＿＿に数字を書きなさい。",
+    "items": [
+     {
+      "n": 6,
+      "q": "新作の映画の ＿＿ ＿＿ ＿＿ ＿＿ のある映像です。",
+      "options": [
+       "1 見どころは",
+       "2 ならではの",
+       "3 コンピューターグラフィック",
+       "4 迫力"
+      ]
+     },
+     {
+      "n": 7,
+      "q": "その犬は飼い主の ＿＿ ＿＿ ＿＿ ＿＿ ついていくそうだ。",
+      "options": [
+       "1 どこへ",
+       "2 ところは",
+       "3 なりとも",
+       "4 行く"
+      ]
+     }
+    ]
+   }
+  ],
+  "answers": "Ⅰ：①a ②b ③a ④a ⑤b　Ⅱ：⑥1→3→2→4　⑦4→2→1→3"
+ },
+ "hitokoto": ""
+}

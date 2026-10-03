@@ -1,0 +1,187 @@
+{
+ "week": 1,
+ "day": 4,
+ "title": "私に言わせれば",
+ "title_cn": "要我说的话",
+ "title_en": "If you ask me",
+ "dialog": {
+  "lines": [
+   "Q.（　）に入るのは？",
+   "それは色々なことを（　）出来事だった。"
+  ],
+  "cn": "问：括号里该填什么？——那是一件让人不由得思考很多的事。（答案：考えさせられる）",
+  "en": "Q: What goes in the blank? — It was an event that made me think about many things. (Answer: 考えさせられる)"
+ },
+ "points": [
+  {
+   "pattern": "問題だとされる",
+   "reading": "もんだいだとされる",
+   "connection": "V/A/na/N〔普〕／N／na ＋とされる",
+   "usage_cn": "被认为……；一般认为……（客观、书面的说法）。",
+   "usage_en": "It is considered / held that ~.",
+   "examples": [
+    {
+     "jp": "この国には、よい指導者がいないのが一番の問題（だ）とされている。",
+     "eq": "=一番の問題だと言われている",
+     "en": "The biggest problem in this country is that there are no good leaders.",
+     "cn": "在这个国家，没有好的领导人被认为是最大的问题。"
+    },
+    {
+     "jp": "この物質は植物の生長を促進するとされる。",
+     "eq": "=促進すると言われる",
+     "en": "This substance is believed to promote plant growth.",
+     "cn": "这种物质被认为会促进植物的生长。"
+    }
+   ],
+   "notes": []
+  },
+  {
+   "pattern": "学生時代のことが思い出される",
+   "reading": "がくせいじだいのことがおもいだされる",
+   "connection": "（～が）Vられる《自発の受身形》",
+   "usage_cn": "自然而然地……，不由得……（自发态）。",
+   "usage_en": "~ comes to mind naturally (spontaneous passive).",
+   "examples": [
+    {
+     "jp": "この曲を聴くと、学生時代のことが思い出される。",
+     "eq": "=学生時代のことを自然と思い出す",
+     "en": "This song reminds me of my student days.",
+     "cn": "一听到这首曲子，就会想起学生时代的事。"
+    },
+    {
+     "jp": "彼にひどいことを言ってしまったことが悔やまれる。",
+     "eq": "=言ってしまったことを悔やんでいる",
+     "en": "I regret saying such a terrible thing to him.",
+     "cn": "真后悔对他说了那么过分的话。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "◆",
+     "text": "意志と関係なく、ひとりでにその状態になるという意味。"
+    },
+    {
+     "type": "れい",
+     "text": "～と考えられる／懐かしく思われる／完成が待たれる／息子の将来が案じられる"
+    },
+    {
+     "type": "硬",
+     "text": "改まった場面や文書で使われる硬い表現"
+    }
+   ]
+  },
+  {
+   "pattern": "感心させられる",
+   "reading": "かんしんさせられる",
+   "connection": "Vさせられる《自発の使役受身形》",
+   "usage_cn": "不由得让人……，令人……（使役被动表示自发的感情）。",
+   "usage_en": "Be made to feel ~ / can't help feeling ~.",
+   "examples": [
+    {
+     "jp": "彼の仕事ぶりには感心させられる。",
+     "eq": "=感心している",
+     "en": "I am impressed with his work.",
+     "cn": "他的工作状态真让人佩服。"
+    },
+    {
+     "jp": "隣の家の騒音に悩まされている。",
+     "eq": "=悩んでいる",
+     "en": "I am troubled by the noise next door.",
+     "cn": "受邻居家的噪音困扰。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "れい",
+     "text": "考えさせられる／感じさせられる"
+    }
+   ]
+  },
+  {
+   "pattern": "私に言わせれば",
+   "reading": "わたしにいわせれば",
+   "connection": "Nに言わせれば／Nから言わせれば",
+   "usage_cn": "要……说的话，在……看来（N＝人，表示这个人的意见）。",
+   "usage_en": "If you ask ~ / in ~'s opinion.",
+   "examples": [
+    {
+     "jp": "彼は天才と言われているが、私に言わせれば、単なる努力家だ。",
+     "eq": "=私の意見では",
+     "en": "Some people think he's a genius, but I would say he is just a hard worker.",
+     "cn": "他是公认的天才，但如果让我来说，只不过是努力罢了。"
+    },
+    {
+     "jp": "「もう私も60歳を過ぎて、年をとりましたよ。」「いえ、うちの親に言わせれば、まだまだ若いそうですよ。」",
+     "eq": "=私の親の意見では",
+     "en": "“I am already over 60 years old. I am old.” “Not at all. My parents think you're still young.”",
+     "cn": "“我也已经过60了，老了。”“没有，要让我父母来说呀，这还年轻着呢。”"
+    }
+   ],
+   "notes": [
+    {
+     "type": "◆",
+     "text": "N＝人"
+    }
+   ]
+  }
+ ],
+ "exercises": {
+  "answers_note": "答えはp.23",
+  "sections": [
+   {
+    "type": "choice",
+    "instruction": "正しいほうに〇をつけなさい。",
+    "items": [
+     {
+      "n": 1,
+      "q": "新しいロケットの完成が（a. 待たされます　b. 待たれます）。"
+     },
+     {
+      "n": 2,
+      "q": "彼は社会人として必要（a. とされている　b. にしている）知識に欠ける。"
+     },
+     {
+      "n": 3,
+      "q": "我々の世代の人間に（a. 言わせれば　b. 言われれば）、彼の行動は普通ではない。"
+     },
+     {
+      "n": 4,
+      "q": "それは、死について真剣に（a. 考えされる　b. 考えさせられる）映画だった。"
+     },
+     {
+      "n": 5,
+      "q": "この新薬は、効果はあるが、副作用が強い（a. ことにされている　b. とされている）。"
+     }
+    ]
+   },
+   {
+    "type": "order",
+    "instruction": "下の語を並べ替えて正しい文を作りなさい。＿＿に数字を書きなさい。",
+    "items": [
+     {
+      "n": 6,
+      "q": "若者の海外移住が ＿＿ ＿＿ ＿＿ ＿＿ そうだ。",
+      "options": [
+       "1 ことで",
+       "2 その国の将来が",
+       "3 増加している",
+       "4 案じられている"
+      ]
+     },
+     {
+      "n": 7,
+      "q": "彼の ＿＿ ＿＿ ＿＿ ＿＿ そんなのはただの甘えだ。",
+      "options": [
+       "1 私に言わせれば",
+       "2 やる気がないように",
+       "3 言葉からは",
+       "4 感じられたが"
+      ]
+     }
+    ]
+   }
+  ],
+  "answers": "Ⅰ：①b ②a ③a ④b ⑤b　Ⅱ：⑥3→1→2→4　⑦3→2→4→1"
+ },
+ "hitokoto": ""
+}

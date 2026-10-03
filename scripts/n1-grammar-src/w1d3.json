@@ -1,0 +1,193 @@
+{
+ "week": 1,
+ "day": 3,
+ "title": "彼のことだから",
+ "title_cn": "他那个人嘛",
+ "title_en": "Knowing him",
+ "dialog": {
+  "lines": [
+   "Q.（　）に入るのは？",
+   "もう暗くなった（　）だから、帰ったほうがいいよ。"
+  ],
+  "cn": "问：括号里该填什么？——天已经黑了，还是回去吧。（答案：こと）",
+  "en": "Q: What goes in the blank? — It's already dark, so you'd better go home. (Answer: こと)"
+ },
+ "points": [
+  {
+   "pattern": "慌てることのないように",
+   "reading": "あわてることのないように",
+   "connection": "Vることのないよう（に）",
+   "usage_cn": "为了不……，以免……（比「～ないように」更郑重）。",
+   "usage_en": "So as not to ~ / so that ~ does not happen.",
+   "examples": [
+    {
+     "jp": "災害が来ても慌てることのないよう、日頃から準備しておこう。",
+     "eq": "=慌てないように",
+     "en": "We should be prepared for a disaster so that we can deal with it when it comes.",
+     "cn": "为了灾害来临时不慌乱，平时就做好准备吧。"
+    },
+    {
+     "jp": "今後、このような犯罪と関わることのないように注意してください。",
+     "eq": "=関わらないように",
+     "en": "Please make sure you do not get involved in this kind of crime again.",
+     "cn": "今后请注意，不要再和这类犯罪扯上关系。"
+    }
+   ],
+   "notes": []
+  },
+  {
+   "pattern": "状況を知ることなしに",
+   "reading": "じょうきょうをしることなしに",
+   "connection": "Vることなしに（は）",
+   "usage_cn": "不……就……；如果不做前项，后项就无法实现。",
+   "usage_en": "Without doing ~.",
+   "examples": [
+    {
+     "jp": "今の状況を知ることなしに、未来を予測することはできない。",
+     "eq": "=知らないで／知ることなく",
+     "en": "It isn't possible to predict the future unless we understand the present situation.",
+     "cn": "不了解现在的状况，就无法预测未来。"
+    },
+    {
+     "jp": "過去の事例を見ることなしに、解決方法は見えてこないだろう。",
+     "eq": "=見ないで／見ることなく",
+     "en": "It will not be possible to find a solution without reviewing the past cases.",
+     "cn": "不看过去的案例，就找不到解决办法吧。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "硬",
+     "text": "改まった場面や文書で使われる硬い表現"
+    }
+   ]
+  },
+  {
+   "pattern": "彼のことだから",
+   "reading": "かれのことだから",
+   "connection": "①Nのことだから　②V/A/na/N〔普〕＋ことだから／ことだし（na~だ~な／である、N~だ~である）",
+   "usage_cn": "①因为是……（根据对某人的了解来推测）；②因为……，所以……（说明理由，「ことだし」多用于口语）。",
+   "usage_en": "① Knowing ~ (judging from that person's nature); ② Since ~ (giving a reason).",
+   "examples": [
+    {
+     "jp": "よくできる彼のことだから、合格は間違いないでしょう。",
+     "eq": "=彼はよくできるから、きっと",
+     "en": "He will pass the exam because he is so bright.",
+     "cn": "像他那样能干的人，肯定没问题能考上吧。"
+    },
+    {
+     "jp": "全員そろったことだから、時間前だけれど始めましょうか。",
+     "eq": "=全員そろったから",
+     "en": "It is not time yet but since everyone is here, let's start.",
+     "cn": "既然大家都到齐了，虽然还不到时间，咱们开始吧。"
+    },
+    {
+     "jp": "もう誰も来ないことだし、店を閉めよう。",
+     "eq": "=もう誰も来ないから",
+     "en": "We have no customers so let's close the store.",
+     "cn": "已经没有人再来了，咱们关店吧。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "◆",
+     "text": "①推量が続く。"
+    },
+    {
+     "type": "!",
+     "text": "②na：だ→な／である　N：だ→である"
+    },
+    {
+     "type": "tag",
+     "text": "「ことだし」は会話でよく使われる表現"
+    }
+   ]
+  },
+  {
+   "pattern": "この話は聞かなかったことにしてください",
+   "reading": "このはなしはきかなかったことにしてください",
+   "connection": "Vた／Aかった／na（だ）／N（だ）＋（という）ことにする／（という）ことになる",
+   "usage_cn": "就当作……；当成……（与事实相反地看待、处理）。",
+   "usage_en": "Treat it as if ~ / pretend that ~.",
+   "examples": [
+    {
+     "jp": "この話は聞かなかったことにしてください。",
+     "eq": "=聞かなかったのと同じように扱ってください",
+     "en": "Please pretend that you did not hear that.",
+     "cn": "这件事请当作没听到过。"
+    },
+    {
+     "jp": "彼は、大学を卒業したことになっているけれど、実際は中退したらしい。",
+     "eq": "=卒業したと言われているけれど",
+     "en": "He tells everyone that he graduated from university but I gather he dropped out.",
+     "cn": "他名义上是大学毕业了，听说实际上是中途退学。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "◆",
+     "text": "事実とは反対に扱うという意味。"
+    }
+   ]
+  }
+ ],
+ "exercises": {
+  "answers_note": "答えはp.21",
+  "sections": [
+   {
+    "type": "choice",
+    "instruction": "正しいほうに〇をつけなさい。",
+    "items": [
+     {
+      "n": 1,
+      "q": "お互いが助け合うこと（a. なしに　b. だから）、人間は生きていけない。"
+     },
+     {
+      "n": 2,
+      "q": "明るい彼女のこと（a. にして　b. だから）、どこへ行ってもすぐ友達ができるだろう。"
+     },
+     {
+      "n": 3,
+      "q": "兄が書いたレポートを、自分が（a. 書いたことにして　b. 書くことなしに）提出した。"
+     },
+     {
+      "n": 4,
+      "q": "道に（a. 迷うことのないように　b. 迷うことなしに）、前もって地図で場所を確かめておいた。"
+     },
+     {
+      "n": 5,
+      "q": "彼女は今まで苦労（a. する　b. した）ことなしに生きてきた。"
+     }
+    ]
+   },
+   {
+    "type": "order",
+    "instruction": "下の語を並べ替えて正しい文を作りなさい。＿＿に数字を書きなさい。",
+    "items": [
+     {
+      "n": 6,
+      "q": "ケチで有名な彼 ＿＿ ＿＿ ＿＿ ＿＿ 貸してくれないだろう。",
+      "options": [
+       "1 だって",
+       "2 だから",
+       "3 のこと",
+       "4 百円"
+      ]
+     },
+     {
+      "n": 7,
+      "q": "その２つの関連性を ＿＿ ＿＿ ＿＿ ＿＿ のは困難だ。",
+      "options": [
+       "1 こと",
+       "2 証明する",
+       "3 なしに",
+       "4 解決する"
+      ]
+     }
+    ]
+   }
+  ],
+  "answers": "Ⅰ：①a ②b ③a ④a ⑤a　Ⅱ：⑥3→2→4→1　⑦2→1→3→4"
+ },
+ "hitokoto": ""
+}
