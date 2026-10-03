@@ -127,6 +127,62 @@ def annotate(day):
                 qz["answers_r"] = ruby(qz["answers"])
     return day
 
+# Readings reviewed by hand against UniDic for this book: (ruby base, pykakasi reading, correct reading).
+# Only these exact spans are changed, and only where UniDic tokenizes the same span the same way.
+REVIEWED = {
+    ("額", "ひたい", "がく"), ("相", "そう", "あい"), ("重", "おも", "かさ"), ("堪", "こた", "た"),
+    ("損", "そこな", "そん"), ("難", "がた", "かた"), ("悪", "あく", "わる"), ("小", "ちー", "ちい"),
+    ("否", "ひ", "いな"), ("人", "にん", "ひと"), ("分", "ふん", "ぶん"), ("頃", "ごろ", "ころ"),
+    ("泥", "なず", "どろ"), ("失", "う", "うしな"), ("愛", "め", "あい"), ("月日", "がっぴ", "つきひ"),
+    ("日", "にち", "ひ"), ("交", "まじ", "か"), ("分", "わ", "ふん"), ("末", "まつ", "すえ"),
+    ("口数", "くちすう", "くちかず"), ("本", "ほん", "ぽん"), ("月限", "つきぎり", "がつかぎ"),
+    ("月末", "げつまつ", "がつまつ"), ("出店", "でみせ", "しゅってん"), ("教", "きょう", "おし"),
+    ("場", "ば", "じょう"), ("間", "ま", "かん"), ("両国", "りょうごく", "りょうこく"), ("五分", "ごぶ", "ごふん"),
+    ("一目", "いちもく", "ひとめ"), ("米一", "よねいち", "こめひと"), ("下", "した", "か"), ("品", "ひん", "しな"),
+    ("泣", "きゅう", "な"), ("書", "かき", "しょ"), ("忘", "ぼう", "わす"), ("地道", "ぢみち", "じみち"),
+    ("誘", "ゆう", "さそ"), ("取", "しゅ", "と"), ("相次", "あいつぎ", "あいつ"), ("病", "びょう", "やまい"),
+    ("家", "いえ", "や"), ("人並", "ひとなみ", "ひとな"), ("回", "まわ", "かい"), ("割", "わ", "わり"),
+    ("皮切", "かわきり", "かわき"), ("月", "がつ", "つき"), ("御", "お", "ご"), ("形", "かたち", "けい"),
+    ("高", "たか", "こう"), ("貴", "たかし", "き"), ("位", "くらい", "い"), ("国", "くに", "こく"),
+    ("間", "かん", "あいだ"), ("年", "ねん", "とし"), ("下", "くだ", "か"), ("優", "まさ", "すぐ"),
+    ("止", "や", "と"),
+}
+FIXED = [("<ruby>見<rt>けん</rt></ruby><ruby>違<rt>ちが</rt></ruby>", "<ruby>見違<rt>みちが</rt></ruby>")] + [
+    (f"<ruby>何<rt>なに</rt></ruby>{t}", f"<ruby>何<rt>なん</rt></ruby>{t}") for t in ("なり", "にせよ", "にしろ")]
+
+def review_readings(data):
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("fix", os.path.join(ROOT, "scripts", "fix-reviewed-furigana.py"))
+    fx = importlib.util.module_from_spec(spec); spec.loader.exec_module(fx)
+    def fix(plain, ann):
+        for a, b in FIXED:
+            ann = ann.replace(a, b)
+        toks = fx.token_spans(fx.TAG_RE.sub("", plain))
+        out, last = [], 0
+        for m, st, en in fx.ruby_positions(ann):
+            exp = fx.expected_for_span(toks, st, en)
+            cur = fx.hira(m.group(2))
+            if exp and (m.group(1), cur, exp) in REVIEWED:
+                out.append(ann[last:m.start()]); out.append(f"<ruby>{m.group(1)}<rt>{exp}</rt></ruby>"); last = m.end()
+        out.append(ann[last:])
+        return "".join(out)
+    def walk(n):
+        if isinstance(n, dict):
+            for k, v in list(n.items()):
+                if k.endswith("_r"):
+                    p = n.get(k[:-2])
+                    if isinstance(p, str) and isinstance(v, str):
+                        n[k] = fix(p, v)
+                    elif isinstance(p, list) and isinstance(v, list):
+                        n[k] = [fix(a, c) if isinstance(a, str) and isinstance(c, str) else c for a, c in zip(p, v)]
+                else:
+                    walk(v)
+        elif isinstance(n, list):
+            for x in n:
+                walk(x)
+    walk(data)
+    return data
+
 def main():
     weeks_arg = int(sys.argv[1]) if len(sys.argv) > 1 else 8
     weeks = []
@@ -134,6 +190,7 @@ def main():
         meta = json.load(open(os.path.join(SRC, f"w{w}.json"), encoding="utf-8"))
         days = [annotate(json.load(open(os.path.join(SRC, f"w{w}d{d}.json"), encoding="utf-8"))) for d in range(1, 8)]
         weeks.append({"n": w, "title": meta["title"], "title_cn": meta["title_cn"], "title_en": meta["title_en"], "days": days})
+    review_readings({"weeks": weeks})
     body = json.dumps({"weeks": weeks}, ensure_ascii=False, separators=(",", ":"))
     h = hashlib.sha256(body.encode()).hexdigest()[:10]
     for old in glob.glob(os.path.join(OUT, "n1grammar.*.json")):

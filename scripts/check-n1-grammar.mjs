@@ -4,7 +4,7 @@ import { resolve } from "node:path";
 
 // Integrity checks for 日本語総まとめ N1 文法 (n1grammar): structure, answer keys, links, furigana.
 const root = resolve(import.meta.dirname, "..");
-const book = JSON.parse(await readFile(resolve(root, "public/data/n1grammar.0626af5726.json"), "utf8"));
+const book = JSON.parse(await readFile(resolve(root, "public/data/n1grammar.c2d6c00681.json"), "utf8"));
 const besatsu = JSON.parse(await readFile(resolve(root, "public/data/n1-grammar-explanations.json"), "utf8"));
 const store = await readFile(resolve(root, "app/study/store.ts"), "utf8");
 const days = await readFile(resolve(root, "app/study/days.tsx"), "utf8");

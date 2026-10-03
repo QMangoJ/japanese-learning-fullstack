@@ -223,6 +223,10 @@ describe("language and modules", () => {
 		expect(typeForLevel("n2", "listening")).toBe("listening");
 		expect(typeForLevel("n3", "listening")).toBe("listening");
 		expect(typeForLevel("n4", "listening")).toBe("grammar");
+		expect(moduleFrom("n1", "grammar")).toBe("n1grammar");
+		expect(moduleFrom("n1", "vocab")).toBe("n1grammar");
+		expect(typeForLevel("n1", "kanji")).toBe("grammar");
+		expect(isGram("n1grammar")).toBe(true);
 		expect(isGram("n4grammar")).toBe(true);
 		expect(isVocab("n2vocab")).toBe(true);
 		expect(isKanji("kanji")).toBe(true);

@@ -157,7 +157,7 @@ const DATA_FILES: Record<string, string> = {
 	n4grammar: "n4grammar.40e138ccdb.json",
 	n4vocab: "n4vocab.026f711eb7.json",
 	n4kanji: "n4kanji.655356d8e2.json",
-	n1grammar: "n1grammar.0626af5726.json",
+	n1grammar: "n1grammar.c2d6c00681.json",
 	common: "common.aa13cae172.json",
 };
 
@@ -394,7 +394,7 @@ export function isListening(mod: string = MODULE) {
 export function moduleFrom(lv: string, ty: string): ModuleKey {
 	if (ty === "reading") return LT2MOD[`${lv}:reading`] || LT2MOD[`${lv}:grammar`] || "grammar";
 	if (ty === "listening") return LT2MOD[`${lv}:listening`] || "listening";
-	return LT2MOD[`${lv}:${ty}`] || "grammar";
+	return LT2MOD[`${lv}:${ty}`] || LT2MOD[`${lv}:grammar`] || "grammar";
 }
 export function deriveLT() {
 	const pair = MOD2LT[MODULE] || ["n3", "grammar"];

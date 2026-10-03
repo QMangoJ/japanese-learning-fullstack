@@ -34,6 +34,7 @@ for w in range(1, 9):
             item["note_r"] = b.ruby(item["note"])
         week[sec].append(item)
     out[f"w{w}"] = week
+b.review_readings(out)
 path = os.path.join(ROOT, "public", "data", "n1-grammar-explanations.json")
 open(path, "w", encoding="utf-8").write(json.dumps(out, ensure_ascii=False, indent=1) + "\n")
 print(os.path.relpath(path, ROOT), sum(len(v[k]) for v in out.values() for k in v))
