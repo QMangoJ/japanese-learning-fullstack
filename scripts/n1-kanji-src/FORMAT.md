@@ -14,3 +14,7 @@ PDF page = book page + 2. Week N day D = `wNdD.txt`; exam answers `wNex.txt` (fr
     X2 instruction / B a.殊|b.株|…               練習Ⅱ with box choices
        Q n|sentence|→ answer slot >> 中文
     A answer key (from 別冊)
+
+Page map: lesson pages = book p.12+ (pdf 14+); TOC on pdf 4–5 (week/day titles).
+別冊 (解答・解説): cover pdf 163, 別冊 p.2 = pdf 164 … (別冊 page n = pdf 162+n).
+別冊 gives full furigana for every exercise sentence — use it for readings.
