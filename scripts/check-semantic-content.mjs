@@ -20,6 +20,7 @@ const jsonFiles = [
 	"public/data/n2-grammar-explanations.json",
 	"public/data/n4-grammar-daily-explanations.json",
 	"public/data/n4-grammar-explanations.json",
+	"public/data/n1-grammar-explanations.json",
 ];
 
 const errors = [];

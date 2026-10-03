@@ -10,6 +10,7 @@ const N2GrammarSummary = lazy(() => import("./n2-grammar-summary").then(module =
 import {
 	FAVMETA,
 	G,
+	G1,
 	G2,
 	G4,
 	K,
@@ -1010,8 +1011,8 @@ function GrammarPoint({ p, w, d, i }: { p: any; w: number; d: number; i: number 
 }
 
 function ExamGrammar({ day, w }: { day: any; w: number }) {
-	const useBesatsu = MODULE === "grammar" || MODULE === "n4grammar" || MODULE === "n2grammar";
-	const examBook = MODULE === "n4grammar" ? G4 : MODULE === "n2grammar" ? G2 : G;
+	const useBesatsu = MODULE === "grammar" || MODULE === "n4grammar" || MODULE === "n2grammar" || MODULE === "n1grammar";
+	const examBook = MODULE === "n4grammar" ? G4 : MODULE === "n2grammar" ? G2 : MODULE === "n1grammar" ? G1 : G;
 	const bes = useBesatsu ? examBook.besatsu?.["w" + w] || {} : {};
 	const ansMap: Record<number, any> = {};
 	if (useBesatsu) for (const k of ["mondai1", "mondai2", "mondai3"]) for (const a of bes[k] || []) ansMap[a.n] = a;
@@ -1186,7 +1187,7 @@ function DayGrammar({ day, w, d, scrollP }: { day: any; w: number; d: number; sc
 			<span className="jp">{wk.title}</span>（{lx(wk.title_cn, wk.title_en)}）
 		</>
 	) : (
-		` · ${MODULE === "n2grammar" ? lx("N2 语法", "N2 Grammar") : MODULE === "n4grammar" ? lx("N4 语法", "N4 Grammar") : lx("语法", "Grammar")}`
+		` · ${MODULE === "n1grammar" ? lx("N1 语法", "N1 Grammar") : MODULE === "n2grammar" ? lx("N2 语法", "N2 Grammar") : MODULE === "n4grammar" ? lx("N4 语法", "N4 Grammar") : lx("语法", "Grammar")}`
 	);
 	useScrollHighlight(scrollP != null ? `pt-${w}-${d}-${scrollP}` : null);
 	if (d === 7) {
