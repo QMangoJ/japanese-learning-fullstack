@@ -1,4 +1,4 @@
-import { Fragment, lazy, Suspense, useEffect, useState, useSyncExternalStore, type ReactNode } from "react";
+import { Fragment, lazy, Suspense, useEffect, useRef, useState, useSyncExternalStore, type ReactNode } from "react";
 
 import { ConnBlock, Fmt, Rr, RubyHtml, SayButton } from "../routes/study-common";
 import { CardsLaunch } from "./memory-cards";
@@ -2015,31 +2015,104 @@ function ContrastUsageTable({ children }: { children: ReactNode }) {
 	);
 }
 
+/**
+ * 语法辨析页顶部的吸顶栏：模式切换 + 周次 / 家族目录胶囊。
+ * 把自身高度写进 --ctbarh，供下面吸顶的分组标题、表头和 scroll-margin 叠放；
+ * 滚到顶部吸住后加 is-stuck，显示一条细阴影。
+ */
+function useContrastStickyBar() {
+	const ref = useRef<HTMLDivElement>(null);
+	const [stuck, setStuck] = useState(false);
+	useEffect(() => {
+		const el = ref.current;
+		if (!el) return;
+		const root = document.documentElement;
+		const setHeight = () => root.style.setProperty("--ctbarh", el.offsetHeight + "px");
+		let frame = 0;
+		const check = () => {
+			frame = 0;
+			const top = parseFloat(getComputedStyle(el).top) || 0;
+			setStuck(window.scrollY > 0 && el.getBoundingClientRect().top <= top + 0.5);
+		};
+		const onScroll = () => {
+			if (!frame) frame = window.requestAnimationFrame(check);
+		};
+		setHeight();
+		check();
+		const ro = typeof ResizeObserver === "undefined" ? null : new ResizeObserver(setHeight);
+		ro?.observe(el);
+		window.addEventListener("scroll", onScroll, { passive: true });
+		window.addEventListener("resize", onScroll);
+		return () => {
+			ro?.disconnect();
+			if (frame) window.cancelAnimationFrame(frame);
+			window.removeEventListener("scroll", onScroll);
+			window.removeEventListener("resize", onScroll);
+			root.style.removeProperty("--ctbarh");
+		};
+	}, []);
+	return { ref, stuck };
+}
+
+/** 卡片内吸顶的分组标题；把实际高度写进卡片的 --cthh，让桌面端的表头吸在它下面而不重叠。 */
+function ContrastStickyHeading({ as: Tag, className, children }: { as: "h3" | "h4"; className?: string; children: ReactNode }) {
+	const ref = useRef<HTMLHeadingElement>(null);
+	useEffect(() => {
+		const el = ref.current;
+		const card = el?.parentElement;
+		if (!el || !card) return;
+		const setHeight = () => card.style.setProperty("--cthh", el.offsetHeight + "px");
+		setHeight();
+		const ro = typeof ResizeObserver === "undefined" ? null : new ResizeObserver(setHeight);
+		ro?.observe(el);
+		return () => ro?.disconnect();
+	}, []);
+	return (
+		<Tag ref={ref} className={["ct-stick-h", className].filter(Boolean).join(" ")}>
+			{children}
+		</Tag>
+	);
+}
+
 export function ContrastPage() {
 	const C = cur().contrast || { groups: [] };
 	const groups = C.groups || [];
 	const weeks = cur().weeks || [];
 	const week = weeks.find((w: any) => w.n === ctWeek) || weeks[0];
+	const bar = useContrastStickyBar();
+	const jumpToGroup = (i: number) => document.getElementById(`ct-g-${i}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
 
 	return (
 		<>
-			<div className="fc-filter" style={{ marginBottom: 12 }}>
-				<button className={ctMode === "family" ? "on" : ""} onClick={() => setCtMode("family")}>
-					语法家族
-				</button>
-				<button className={ctMode === "week" ? "on" : ""} onClick={() => setCtMode("week")}>
-					每周总结
-				</button>
-			</div>
-			{ctMode === "week" ? (
-				<>
-					<div className="fc-filter" style={{ marginBottom: 12 }}>
+			<div ref={bar.ref} className={bar.stuck ? "ct-stickybar is-stuck" : "ct-stickybar"}>
+				<div className="fc-filter">
+					<button className={ctMode === "family" ? "on" : ""} onClick={() => setCtMode("family")}>
+						语法家族
+					</button>
+					<button className={ctMode === "week" ? "on" : ""} onClick={() => setCtMode("week")}>
+						每周总结
+					</button>
+				</div>
+				{ctMode === "week" ? (
+					<div className="fc-filter ct-stickybar__chips">
 						{weeks.map((w: any) => (
 							<button key={w.n} className={ctWeek === w.n ? "on" : ""} onClick={() => setCtWeek(w.n)}>
 								第{w.n}周
 							</button>
 						))}
 					</div>
+				) : groups.length ? (
+					<nav className="ct-stickybar__chips ct-toc-chips" aria-label="辨析目录">
+						{groups.map((g: any, i: number) => (
+							<a className="ct-tocitem" key={i} onClick={() => jumpToGroup(i)}>
+								{g.title}
+							</a>
+						))}
+					</nav>
+				) : null}
+			</div>
+			{ctMode === "week" ? (
+				<>
 					{!week ? (
 						<div className="empty">暂无内容</div>
 					) : (
@@ -2055,7 +2128,7 @@ export function ContrastPage() {
 								const dt = lx(d.title_cn, d.title_en);
 								return (
 									<div className="card ct-daysum" key={d.day}>
-										<h4>
+										<ContrastStickyHeading as="h4">
 											{d.day}日目{" "}
 											<span className="jp">
 												<Rr o={d} f="title" />
@@ -2064,7 +2137,7 @@ export function ContrastPage() {
 											<a className="plink" onClick={() => navTo(`#/day/${week.n}-${d.day}`)}>
 												详情 ›
 											</a>
-										</h4>
+										</ContrastStickyHeading>
 										<ContrastUsageTable>
 											{(d.points || []).map((p: any, i: number) => {
 												const ex = (p.examples || [])[0];
@@ -2096,11 +2169,7 @@ export function ContrastPage() {
 					<nav className="ct-toc">
 						<div className="ct-toc-h">目录</div>
 						{groups.map((g: any, i: number) => (
-							<a
-								className="ct-tocitem"
-								key={i}
-								onClick={() => document.getElementById(`ct-g-${i}`)?.scrollIntoView({ behavior: "smooth", block: "start" })}
-							>
+							<a className="ct-tocitem" key={i} onClick={() => jumpToGroup(i)}>
 								{g.title}
 							</a>
 						))}
@@ -2109,7 +2178,9 @@ export function ContrastPage() {
 						{C.intro ? <div className="meta" style={{ marginBottom: 10 }}>{C.intro}</div> : null}
 						{groups.map((g: any, i: number) => (
 							<div className="card ct-card" id={`ct-g-${i}`} key={i}>
-								<h3 className="ct-h jp">{g.title}</h3>
+								<ContrastStickyHeading as="h3" className="ct-h jp">
+									{g.title}
+								</ContrastStickyHeading>
 								{g.tip ? <div className="ct-tip">💡 {g.tip}</div> : null}
 								<ContrastUsageTable>
 									{(g.rows || []).map((r: any, ri: number) => (

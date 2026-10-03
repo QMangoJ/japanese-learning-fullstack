@@ -530,6 +530,23 @@ describe("ContrastPage usage notes", () => {
 		expect(screen.getByText("食べたばかりです。")).toBeInTheDocument();
 	});
 
+	it("pins the mode switch, group chips and group headings in a sticky bar", () => {
+		const { container } = render(<ContrastPage />);
+		const bar = container.querySelector(".ct-stickybar");
+		expect(bar).not.toBeNull();
+		expect(bar?.textContent).toContain("语法家族");
+		expect(bar?.querySelector(".ct-toc-chips")?.textContent).toContain("①「ように」系列");
+		expect(container.querySelector(".ct-card h3.ct-stick-h")?.textContent).toBe("①「ように」系列");
+		expect(document.documentElement.style.getPropertyValue("--ctbarh")).toMatch(/px$/);
+	});
+
+	it("keeps the week chips inside the sticky bar in weekly mode", () => {
+		setCtMode("week");
+		const { container } = render(<ContrastPage />);
+		expect(container.querySelector(".ct-stickybar .ct-stickybar__chips")?.textContent).toContain("第1周");
+		expect(container.querySelector(".ct-daysum h4.ct-stick-h")).not.toBeNull();
+	});
+
 	it("opens the exact grammar point when a family row provides a point link", async () => {
 		const user = userEvent.setup();
 		const seen: string[] = [];
