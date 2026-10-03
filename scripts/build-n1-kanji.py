@@ -54,6 +54,9 @@ def word_ruby(jp, reading):
     """Book word + book reading → ruby. Falls back to one ruby over the kanji part."""
     if not KANJI.search(jp) or not reading:
         return esc(jp)
+    pre = re.match(r"^([⇔～〜]+)", jp)
+    if pre:  # ⇔澄む|すむ: the marker stays outside the ruby
+        return esc(pre.group(1)) + (word_ruby(jp[len(pre.group(1)):], reading[len(pre.group(1)):] if reading.startswith(pre.group(1)) else reading) or "")
     core = re.sub(r"〈[^〉]*〉|（[^）]*）|\([^)]*\)", "", jp)
     for cand in (jp, core):
         r = align(cand, reading)

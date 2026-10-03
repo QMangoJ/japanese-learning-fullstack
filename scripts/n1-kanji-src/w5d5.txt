@@ -86,7 +86,7 @@ W 色彩感覚|しきさいかんかく|colour sense|色彩感觉
 W 金銭感覚|きんせんかんかく|money sense|金钱感觉
 K 間隔|かんかく
 W 間隔を空ける||at regular intervals|空开间隔
-W 1m間隔|いちメートルかんかく|at one meter intervals|1米的间隔
+W 1m間隔|1mかんかく|at one meter intervals|1米的间隔
 G そうさ|
 K 操作|そうさ
 W 機械の操作||handling of a machine|机械操作
