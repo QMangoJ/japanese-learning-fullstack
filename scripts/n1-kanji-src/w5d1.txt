@@ -1,0 +1,132 @@
+T 酢・巣|す・す|醋・巢|
+I Q. 漢字で書くと？　みかんのかわ　→皮。動物の皮で作った製品は「革製品」と言う。
+S 訓読み①|训读①|Kun-readings ①
+G かわ|
+K 皮|かわ
+W 果物の皮||fruit peel|水果皮
+W ◆毛皮|けがわ|fur|毛皮
+K 革|かわ
+W 革の財布||a leather wallet|皮钱包
+W 革製品|かわせいひん|leather goods|皮制品
+G す|
+K 酢|す
+W 酢で味をつける||flavour with vinegar|用醋调味
+W 酢で漬ける||pickle with vinegar|用醋腌
+K 巣|す
+W 鳥の巣||a bird nest|鸟巢
+W ◆空き巣|あきす|sneak thief|撬门贼
+G すみ|
+K 墨|すみ
+W 墨と筆||ink and a brush|墨和笔
+W 墨で書く||write with a brush|用墨写
+K 隅|すみ
+W 部屋の隅||the corner of a room|房间的角落
+W 隅っこ|すみっこ|a corner|角落
+K 炭|すみ
+W 炭|すみ|charcoal|木炭
+W ◆炭火焼き|すみびやき|a barbecue|炭火烤
+G かげ|
+K 影|かげ
+W 影が映る||cast a shadow|影子映照
+W ◆人影|ひとかげ|a silhouette|人影
+K 陰|かげ
+W 陰と日なた||sun and shadow|背阴和朝阳处
+W ◆物陰|ものかげ|a hiding place|隐蔽处
+G あぶら|
+K 油|あぶら
+W 食用の油||cooking oil|食用油
+W 油で揚げる||deep-fry|用油炸
+K 脂|あぶら
+W 脂ののった魚||oil rich fish|肥美的鱼
+W 脂っこい肉||greasy meat|油腻的肉
+G あつい|
+K 暑|あつい
+W 暑い日||a hot day|热天
+W 暑い時期||a hot season|热的时期
+K 熱|あつい
+W 熱い湯||hot water|热水
+W 熱い器||a warm plate|热器皿
+K 厚|あつい
+W 厚い本||a thick book|厚书
+W 厚切りのパン||thickly sliced bread|切厚片的面包
+G かたい|
+K 固|かたい
+W 頭が固い||stubborn|头脑顽固
+W 固い友情||close friendship|牢固的友情
+K 硬|かたい
+W 硬い文章||a formal sentence|生硬的文章
+W 硬い鉛筆||a hard lead pencil|硬铅笔
+K 堅|かたい
+W 口が堅い||discreet|嘴巴严
+W 堅い商売||a reputable business|正经买卖
+G あらい|
+K 荒|あらい
+W 気が荒い||have a violent temper|性情粗暴
+W 荒い波（＝荒波）||rough waves|汹涌的波涛
+K 粗|あらい
+W 網の目が粗い||a large gauge|网眼粗
+W 粒が粗い||coarse|粒儿大
+G うつす|
+K 移|うつす
+W 場所を移す||move to a different site|移走场所
+W 住所を移す||move|迁移住所
+K 写|うつす
+W 写真を写す||take a picture|拍照
+W ノートを写す||copy someone's notebook|抄笔记
+K 映|うつす
+W 映画を映す||show a movie|放映电影
+W 鏡に映す||look at ... in the mirror|照镜子
+G きく|
+K 聞|きく
+W 道を聞く||ask for directions|问路
+W 親の言うことを聞く||listen to parents' wishes|听父母的话
+K 聴|きく
+W 講義を聴く||listen to a lecture|听讲义
+W 名曲を聴く||listen to a famous piece of music|听名曲|＊「聴く」は「聞く」と書いてもよい。
+K 効|きく
+W 薬が効く||medicine works|药物有效
+W 効き目がない||not effective|不见效
+K 利|きく
+W 気が利く||smart and considerate|机灵
+W ◆左利き|ひだりきき|a southpaw|左撇子
+G とまる|
+K 止|とまる
+W 電車が止まる||a train stops|电车停下
+W 時計が止まる||a clock stops|表停了
+K 泊|とまる
+W 友人宅に泊まる||stay overnight at a friend's house|住在朋友家里
+W 船が港に泊まる||a boat is at anchor in the harbour|船停在港口
+G さがす|
+K 捜|さがす
+W 犯人を捜す||look for a suspect|搜寻犯人
+W 迷子を捜す||look for a missing child|找丢失的孩子
+K 探|さがす
+W 職を探す||look for a job|找工作
+W 家を探す||look for a house|找房子
+G あらわす|
+K 表|あらわす
+W 感情を表す||show emotion|表达感情
+W 言葉に表す||put into words|用语言表达
+K 現|あらわす
+W 姿を現す||appear|露面
+W 正体を現す||unmask|现原形
+K 著|あらわす
+W 書物を著す||write a book|著书
+X1 a、bの言葉の読みを書き、正しいほうを選びなさい。
+Q （a. 空き巣　b. 鳥の巣）が入らないように戸締まりに注意する。>>注意锁好门，以防小偷入室。
+Q 暗かったが、確かに（a. 物陰　b. 人影）を見た。>>虽然很暗，但确实看到了人影。
+Q 彼女は（a. 口が堅い　b. 頭が固い）から何でも相談できる。>>她嘴很严，什么都可以和她商量。
+Q 秘書の仕事は（a. 気が荒い　b. 気が利く）人でなければできないだろう。>>秘书的工作，不机灵的人恐怕做不了。
+Q もう来ないかと思ったころに、やっと彼は（a. 姿を現した　b. 正体を現した）。>>正以为他不会来了的时候，他终于露面了。
+Q （a. 効き目　b. 網の目）が粗いと、小さい魚は捕れない。>>网眼太粗的话，就捕不到小鱼。
+X2 ＿＿の部分を漢字で書くとき、最もよいものを□から選びなさい。
+B a. 移|b. 捜|c. 隅|d. 厚|e. 映|f. 暑|g. 探|h. 炭|i. 著|j. 熱|k. 墨|l. 写
+Q 7-1|板書をノートに{うつす}。|＿す>>把板书抄到笔记本上。
+Q 7-2|荷物を別の場所に{うつす}。|＿す>>把行李搬到别的地方。
+Q 8-1|教室の{すみ}|＿>>教室的角落
+Q 8-2|書道の{すみ}|＿>>书法用的墨
+Q 9-1|仕事を{さがす}。|＿す>>找工作。
+Q 9-2|行方不明者を{さがす}。|＿す>>搜寻失踪者。
+Q 10-1|{あつく}切った肉|＿く>>切得厚厚的肉
+Q 10-2|{あつい}お茶|＿い>>热茶
+A Ⅰ：①a ②b ③a ④b ⑤a ⑥b　Ⅱ：⑦1l 2a ⑧1c 2k ⑨1g 2b ⑩1d 2j
