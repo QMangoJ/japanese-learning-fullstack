@@ -20,7 +20,8 @@ export type ModuleKey =
 	| "n4vocab"
 	| "n4kanji"
 	| "n1grammar"
-	| "n1vocab";
+	| "n1vocab"
+	| "n1kanji";
 
 export type LevelKey = "n1" | "n2" | "n3" | "n4";
 export type TypeKey = "grammar" | "vocab" | "kanji" | "reading" | "listening";
@@ -71,6 +72,7 @@ export const MODLABELS: Record<ModuleKey, [string, string]> = {
 	n4kanji: ["N4 汉字", "N4 Kanji"],
 	n1grammar: ["N1 语法", "N1 Grammar"],
 	n1vocab: ["N1 词汇", "N1 Vocabulary"],
+	n1kanji: ["N1 汉字", "N1 Kanji"],
 };
 export const BOOK_TITLE: Record<ModuleKey, [string, string]> = {
 	grammar: ["N3语法训练", "JLPT Prep N3 Grammar"],
@@ -88,6 +90,7 @@ export const BOOK_TITLE: Record<ModuleKey, [string, string]> = {
 	n4kanji: ["N4汉字训练", "JLPT Prep N4 Kanji"],
 	n1grammar: ["日本語総まとめ N1 文法", "Nihongo Sou Matome N1 Grammar"],
 	n1vocab: ["日本語総まとめ N1 語彙", "Nihongo Sou Matome N1 Vocabulary"],
+	n1kanji: ["日本語総まとめ N1 漢字", "Nihongo Sou Matome N1 Kanji"],
 };
 export const MODULES: ModuleKey[] = [
 	"grammar",
@@ -105,6 +108,7 @@ export const MODULES: ModuleKey[] = [
 	"n4kanji",
 	"n1grammar",
 	"n1vocab",
+	"n1kanji",
 ];
 export const MISTAKE_TYPES: Record<string, string> = { q: "错题", word: "单词", grammar: "语法" };
 export const MISTAKE_LEVELS: Record<string, string> = { new: "不熟", mid: "一般", done: "已掌握" };
@@ -128,6 +132,7 @@ export const FAV_MOD_ORDER = [
 	"kanji",
 	"n2kanji",
 	"n4kanji",
+	"n1kanji",
 	"reading",
 	"n2reading",
 	"listening",
@@ -146,6 +151,7 @@ export const FAV_MOD_LABEL: Record<string, string> = {
 	kanji: "N3汉字",
 	n2kanji: "N2汉字",
 	n4kanji: "N4汉字",
+	n1kanji: "N1汉字",
 	reading: "N3读解",
 	n2reading: "N2读解",
 	listening: "N3听解",
@@ -165,6 +171,7 @@ const DATA_FILES: Record<string, string> = {
 	n4kanji: "n4kanji.655356d8e2.json",
 	n1grammar: "n1grammar.c2d6c00681.json",
 	n1vocab: "n1vocab.41d7ac89a7.json",
+	n1kanji: "n1kanji.fd4839449f.json",
 	common: "common.aa13cae172.json",
 };
 
@@ -184,6 +191,7 @@ const MOD2LT: Record<ModuleKey, [LevelKey, TypeKey]> = {
 	n4kanji: ["n4", "kanji"],
 	n1grammar: ["n1", "grammar"],
 	n1vocab: ["n1", "vocab"],
+	n1kanji: ["n1", "kanji"],
 };
 const LT2MOD: Record<string, ModuleKey> = {
 	"n3:grammar": "grammar",
@@ -201,6 +209,7 @@ const LT2MOD: Record<string, ModuleKey> = {
 	"n4:kanji": "n4kanji",
 	"n1:grammar": "n1grammar",
 	"n1:vocab": "n1vocab",
+	"n1:kanji": "n1kanji",
 };
 
 const listeners = new Set<() => void>();
@@ -318,6 +327,7 @@ export let V4: any = emptyBundle;
 export let K4: any = emptyBundle;
 export let G1: any = emptyBundle;
 export let V1: any = emptyBundle;
+export let K1: any = emptyBundle;
 export let R: any = readingBundle();
 export let R2: any = readingN2Bundle();
 export let L: any = listeningBundle();
@@ -381,7 +391,7 @@ export function isGram(mod: string = MODULE) {
 	return mod === "grammar" || mod === "n2grammar" || mod === "n4grammar" || mod === "n1grammar";
 }
 export function isKanji(mod: string = MODULE) {
-	return mod === "kanji" || mod === "n2kanji" || mod === "n4kanji";
+	return mod === "kanji" || mod === "n2kanji" || mod === "n4kanji" || mod === "n1kanji";
 }
 export function isVocab(mod: string = MODULE) {
 	return mod === "vocab" || mod === "n2vocab" || mod === "n4vocab" || mod === "n1vocab";
@@ -426,6 +436,7 @@ export function cur(mod: string = MODULE) {
 			n4kanji: K4,
 			n1grammar: G1,
 			n1vocab: V1,
+			n1kanji: K1,
 			reading: R,
 			listening: L,
 		}[mod] || G
@@ -474,7 +485,7 @@ export function setLang(lang: Lang) {
 export function typeForLevel(lv: LevelKey, ty: TypeKey): TypeKey {
 	if (ty === "reading" && lv !== "n3" && lv !== "n2") return "grammar";
 	if (ty === "listening" && lv !== "n3" && lv !== "n2") return "grammar";
-	if (lv === "n1" && ty !== "grammar" && ty !== "vocab") return "grammar";
+	if (lv === "n1" && ty !== "grammar" && ty !== "vocab" && ty !== "kanji") return "grammar";
 	return ty;
 }
 export function applyDisplayClasses() {
@@ -1098,6 +1109,7 @@ function buildIndex() {
 	pushK("kanji", K.weeks);
 	pushK("n2kanji", K2.weeks);
 	pushK("n4kanji", K4.weeks);
+	pushK("n1kanji", K1.weeks);
 	const pushReading = (mod: string, weeks: any[]) => {
 		for (const w of weeks || [])
 			for (const d of w.days) {
@@ -1277,7 +1289,7 @@ export type SearchCategory = "all" | "grammar" | "kanji" | "vocab" | "mistakes";
 
 export function searchCategoryForModule(module: string): Exclude<SearchCategory, "all"> | "other" {
 	if (module === "grammar" || module === "n2grammar" || module === "n4grammar" || module === "n1grammar") return "grammar";
-	if (module === "kanji" || module === "n2kanji" || module === "n4kanji") return "kanji";
+	if (module === "kanji" || module === "n2kanji" || module === "n4kanji" || module === "n1kanji") return "kanji";
 	if (module === "vocab" || module === "n2vocab" || module === "n4vocab" || module === "n1vocab") return "vocab";
 	if (module === "mistakes") return "mistakes";
 	return "other";
@@ -1767,6 +1779,7 @@ export function resetStudyStateForTests() {
 	K4 = { weeks: [] };
 	G1 = { weeks: [] };
 	V1 = { weeks: [] };
+	K1 = { weeks: [] };
 	R = readingBundle();
 	R2 = readingN2Bundle();
 	L = listeningBundle();
@@ -1785,6 +1798,7 @@ export function resetStudyStateForTests() {
 		n4kanji: K4,
 		n1grammar: G1,
 		n1vocab: V1,
+		n1kanji: K1,
 		reading: R,
 		listening: L,
 	};
@@ -1944,7 +1958,7 @@ async function bootN4() {
 
 async function bootN1() {
 	try {
-		const [g1, n1ExamExplanations, v1, n1VocabDaily, n1VocabExam]: any[] = await Promise.all([
+		const [g1, n1ExamExplanations, v1, n1VocabDaily, n1VocabExam, k1, n1KanjiDaily, n1KanjiExam]: any[] = await Promise.all([
 			fetch("/data/" + DATA_FILES.n1grammar).then((r) => r.json()),
 			fetch("/data/n1-grammar-explanations.json")
 				.then((r) => (r.ok ? r.json() : {}))
@@ -1958,14 +1972,27 @@ async function bootN1() {
 			fetch("/data/n1-vocab-exam-explanations.json")
 				.then((r) => (r.ok ? r.json() : {}))
 				.catch(() => ({})),
+			fetch("/data/" + DATA_FILES.n1kanji)
+				.then((r) => (r.ok ? r.json() : { weeks: [] }))
+				.catch(() => ({ weeks: [] })),
+			fetch("/data/n1-kanji-daily-translations.json")
+				.then((r) => (r.ok ? r.json() : {}))
+				.catch(() => ({})),
+			fetch("/data/n1-kanji-exam-explanations.json")
+				.then((r) => (r.ok ? r.json() : {}))
+				.catch(() => ({})),
 		]);
 		g1.besatsu = n1ExamExplanations || {};
 		v1.daily_translations = (n1VocabDaily && n1VocabDaily.vocab) || {};
 		attachWeekendKaisetsu(v1, n1VocabExam);
+		k1.daily_translations = (n1KanjiDaily && n1KanjiDaily.kanji) || {};
+		attachWeekendKaisetsu(k1, n1KanjiExam);
 		G1 = g1;
 		V1 = v1;
+		K1 = k1;
 		DATA.n1grammar = G1;
 		DATA.n1vocab = V1;
+		DATA.n1kanji = K1;
 		n1Loaded = true;
 		searchIndex = null;
 		emit();

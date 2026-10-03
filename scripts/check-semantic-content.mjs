@@ -14,6 +14,7 @@ const jsonFiles = [
 	"public/data/n2kanji.d9739ca8d4.json",
 	"public/data/n1grammar.c2d6c00681.json",
 	"public/data/n1vocab.41d7ac89a7.json",
+	"public/data/n1kanji.fd4839449f.json",
 	"public/data/common.aa13cae172.json",
 	"public/data/n3-grammar-daily-explanations.json",
 	"public/data/n3-grammar-explanations.json",
@@ -24,6 +25,8 @@ const jsonFiles = [
 	"public/data/n1-grammar-explanations.json",
 	"public/data/n1-vocab-exam-explanations.json",
 	"public/data/n1-vocab-daily-translations.json",
+	"public/data/n1-kanji-exam-explanations.json",
+	"public/data/n1-kanji-daily-translations.json",
 ];
 
 const errors = [];

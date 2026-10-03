@@ -1,0 +1,138 @@
+T 情緒・仮病・天然|じょうちょ・けびょう・てんねん|情绪・装病・天然|
+I Q. ＿の読みは？　弟子　→でし。「弟」には「テイ」以外の音読みがある。
+S 難しい音読み|难的音读|Difficult on-readings
+K 弟|デ
+W 弟子|でし|an apprentice|弟子|＊伝統芸能などの生徒。
+W ◆⇔師匠|ししょう|a master|师傅
+K 緒|チョ
+W 情緒|じょうちょ|an emotion|情绪
+W 情緒豊かな町並み||a street with a great deal of atmosphere|富有情趣的街道
+K 仮|ケ
+W 仮病|けびょう|a feigned illness|装病
+W 仮病を使う||pretend to be sick|装病
+K 然|ネン
+W 天然|てんねん|natural|天然
+W 天然記念物||a natural monument|天然纪念品
+W 天然色|てんねんしょく|a natural colour|天然色
+K 封|ホウ
+W 封建|ほうけん|feudal|封建
+W 封建制度||a feudal system|封建制度
+K 度|タク
+W 支度|したく|preparation|准备
+W 旅支度||travel preparation|准备旅行
+W 身支度|みじたく|getting dressed|打扮
+K 留・守|ル・ス
+W 留守|るす|absence|不在家
+W 留守番電話||an answering machine|留言电话
+K 井|ジョウ
+W 天井|てんじょう|a ceiling|天花板
+W ◆⇔床|ゆか|a floor|（室内的）地板
+K 目|ボク
+W 面目|めんぼく|honor / face|面目
+W 面目ない||be ashamed of|丢脸
+K 川|セン
+W 河川|かせん|a river|河川
+K 団|トン
+W 布団|ふとん|a futon (Japanese mattress)|被褥
+W 座布団|ざぶとん|a cushion used for when sitting on the floor in a Japanese room|坐垫
+K 文|モン
+W 文句|もんく|words/complaints|意见、不满
+W 文部科学省|もんぶかがくしょう|Ministry of Education, Culture, Sports, Science and Technology|教育部
+W 注文|ちゅうもん|an order|订货
+K 都|ツ
+W 都合|つごう|convenience|方便、理由
+W 都度|つど|every time|每次
+K 行|ギョウ
+W 行事|ぎょうじ|events|仪式
+W 行列|ぎょうれつ|a procession|行列
+W 行政|ぎょうせい|an administration|行政
+K 体|テイ
+W 世間体|せけんてい|appearances|面子
+W 体裁|ていさい|appearances|外表；体面
+K 発|ホツ
+W 発作|ほっさ|a fit/attack|发作
+W 発足|ほっそく|an inauguration|出发
+W 発起|ほっき|a proposal/initiation|发起
+K 元|ガン
+W 元祖|がんそ|the founder|始祖
+W 元日|がんじつ|the first day of the year|元旦
+W 元旦|がんたん|New Year's morning|元旦|＊元日の朝
+K 生|ショウ
+W 生じる|しょうじる|occur|发生
+W 一生懸命|いっしょうけんめい|with all one's might|拼命努力
+W 生涯|しょうがい|a life|生涯
+K 名|ミョウ
+W 本名|ほんみょう|one's real name|原名
+W 名字|みょうじ|a surname|名字
+K 黄|オウ
+W 黄金|おうごん|golden|黄金
+W 緑黄色野菜|りょくおうしょくやさい|green & yellow vegetables|黄绿色蔬菜
+K 後|コウ
+W 後半|こうはん|the latter half|后半
+W 後者|こうしゃ|the latter|后者
+W 後方|こうほう|the rear/behind|后方
+K 雨|ウ
+W 雨天|うてん|the rainy weather|雨天
+W 雨季|うき|a rainy season|雨季
+W ◆⇔乾季|かんき|a dry season|旱季
+K 有|ウ
+W 有無|うむ|whether ... or not|有无
+W 有頂天|うちょうてん|in ecstasy/in seventh heaven|欣喜若狂
+W 未曾有|みぞう|unprecedented|空前
+K 解|ゲ
+W 解毒|げどく|detoxification|解毒
+W 解熱剤|げねつざい|an antidote|退烧剂
+K 工|ク
+W 工夫|くふう|a device/invention|想办法
+W 工面する|くめん|manage to get money|设法筹措
+W 大工|だいく|carpenter|木匠
+K 定|ジョウ
+W 定規|じょうぎ|a ruler|定规、尺子
+W 案の定|あんのじょう|as expected|果如所料
+W 勘定|かんじょう|a bill|算账
+K 質|シチ
+W 人質|ひとじち|a hostage|人质
+W 質屋|しちや|a pawnshop|当铺
+K 子|ス
+W 様子|ようす|a state/look|样子
+W 扇子|せんす|a fan|扇子
+W 椅子|いす|a chair|椅子
+K 右|ウ
+W 右折|うせつ|a right turn|向右拐
+W 右派|うは|the right wing|右派
+W 右翼|うよく|the extreme right wing|右翼
+K 下|ゲ
+W 上下|じょうげ|up-and-down/social standing|上下
+W 下旬|げじゅん|the last ten days of the month|下旬
+W 下水道|げすいどう|a sewer|下水道
+K 対|ツイ
+W 一対|いっつい|one pair|一对
+W 対になる|ついになる|be paired up|成对
+K 似|ジ
+W 類似|るいじ|a resemblance|类似
+W 擬似体験|ぎじたいけん|a simulation|模拟体验
+K 汚|オ
+W 汚染|おせん|pollution|污染
+W 汚名返上|おめいへんじょう|clear one's name|挽回名誉
+W 汚職|おしょく|corruption|贪污
+K 戸|コ
+W 戸籍|こせき|a family register|户籍
+W 一戸建て|いっこだて|a (detached) house|独门独户的房子
+X1 a、bの言葉の読みを書き、正しいほうを選びなさい。
+Q 子どもの教育費を（a. 工夫　b. 工面）するために昼夜を問わず働く。>>为了筹措孩子的教育费，不分昼夜地工作。
+Q （a. 未曾有　b. 有頂天）の水害に見舞われる。>>遭受了前所未有的水灾。
+Q トキという鳥は（a. 天然　b. 黄金）記念物に指定されている。>>朱鹮这种鸟被指定为天然纪念物。
+Q 必要な時、その（a. 都度　b. 都合）発行できる1回限りのクレジットカードがあるらしい。>>据说有一种需要时可以每次发行的一次性信用卡。
+Q この商品の（a. 類似　b. 疑似）品にご注意ください。>>请注意这种商品的仿冒品。
+Q ハイジャック犯は乗客を（a. 弟子　b. 人質）に、燃料補給と食糧を要求した。>>劫机犯以乘客为人质，要求补充燃料和食物。
+X2 ＿＿の部分を漢字で書くとき、最もよいものを□から選びなさい。
+B a. 有|b. 下|c. 井|d. 定|e. 解|f. 子|g. 都|h. 仮|i. 守|j. 右|k. 雨|l. 生
+Q 7-1|{うてん}決行|＿天>>风雨无阻
+Q 7-2|{うせつ}禁止|＿折>>禁止右转
+Q 8-1|{てんじょう}に描かれた絵|天＿>>画在天花板上的画
+Q 8-2|三角{じょうぎ}|＿規>>三角尺
+Q 9-1|{ようす}を見に行く。|様＿>>去看看情况。
+Q 9-2|{るすばん}電話|留＿番>>留言电话
+Q 10-1|来月の{げじゅん}|＿旬>>下个月下旬
+Q 10-2|{げねつざい}|＿熱剤>>退烧药
+A Ⅰ：①b ②a ③a ④a ⑤a ⑥b　Ⅱ：⑦1k 2j ⑧1c 2d ⑨1f 2i ⑩1b 2e

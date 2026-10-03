@@ -1,0 +1,150 @@
+T 隠れる・穏やか|かくれる・おだやか|隐藏・平稳|
+I Q. ＿の読みは？　インフレを抑制する　→よくせい。（げいせい？　こうせい？）インフレはいやだ！
+S 見た目が似ているもの②|字形相似的汉字②|Look-alike kanji ②
+K 迎
+W 迎える|むかえる|(go to) meet, welcome|迎接
+W 出迎え|でむかえ|going to meet someone (e.g. at the station)|迎接
+W 歓迎|かんげい|welcome|欢迎
+K 抑
+W 抑える|おさえる|suppress|控制
+W 抑制|よくせい|a restraint|抑制
+W 抑圧|よくあつ|suppression|压制
+K 仰
+W 仰ぐ|あおぐ|seek|仰望
+W 信仰|しんこう|a religion|信仰
+K 隠
+W 隠れる|かくれる|hide|隐藏
+W 隠居|いんきょ|retirement|隐居
+W 目隠し|めかくし|blindfolded|蒙眼布
+K 穏
+W 穏やかな|おだやかな|moderate|平稳
+W 平穏な|へいおんな|peaceful|平稳
+W 穏健な|おんけんな|moderate|稳健
+K 型
+W 小型|こがた|small|小型
+W 血液型|けつえきがた|a blood type|血型
+W 典型的な|てんけいてきな|typical, model, ideal|典型的
+K 堅
+W 堅い|かたい|hard|坚固
+W 堅実な|けんじつな|steady|牢靠
+W 中堅|ちゅうけん|a backbone|骨干
+K 存
+W 存じる|ぞんじる|know|认为；知道
+W 共存|きょうぞん|coexistence|共存
+W 依存|いぞん|dependence|依存
+K 在
+W 存在|そんざい|existence|存在
+W 在庫|ざいこ|a stock|库存
+W 不在|ふざい|absence|不在家
+K 感
+W 感じる|かんじる|feel|感觉到
+W 感心な|かんしんな|admirable|钦佩
+W 感染|かんせん|an infection|感染
+K 惑
+W 迷惑な|めいわくな|annoying|麻烦
+W 惑星|わくせい|a planet|行星
+W 戸惑う|とまどう|confuse|困惑
+K 済
+W 済む|すむ|finish|完
+W 経済|けいざい|economy|经济
+W 返済|へんさい|a repayment|还
+K 剤
+W 洗剤|せんざい|detergents / cleansers|洗洁剂
+W 薬剤|やくざい|a medicine/drug|药剂
+W 錠剤|じょうざい|a tablet|药片
+K 哀
+W 哀れ|あわれ|pathetic|悲哀
+W 哀愁|あいしゅう|pathos|哀愁
+W 哀悼|あいとう|mourning|哀悼
+K 衰
+W 衰える|おとろえる|deteriorate|衰弱
+W 衰弱する|すいじゃくする|become weak|衰弱
+W 老衰|ろうすい|decrepit|老衰
+K 遺
+W 遺跡|いせき|remains|遗迹
+W 遺族|いぞく|the bereaved|遗属
+W 遺言|ゆいごん|a will|遗言
+K 遣
+W 小遣い|こづかい|an allowance|零花钱
+W 無駄遣い|むだづかい|a waste|浪费
+W 派遣|はけん|dispatch|派遣
+K 徴
+W 特徴|とくちょう|features|特点
+W 象徴|しょうちょう|a symbol|象征
+W 徴収|ちょうしゅう|a levy|征收
+K 微
+W 微笑|びしょう|a smile|微笑
+W 微妙|びみょう|subtle|微妙
+W 顕微鏡|けんびきょう|a microscope|显微镜
+K 侮
+W 侮辱|ぶじょく|an insult|侮辱
+W 侮る|あなどる|make light of|轻视
+K 悔
+W 悔しい|くやしい|mortifying|懊悔
+W 悔やむ|くやむ|regret|懊悔
+W 後悔|こうかい|regret|后悔
+K 即
+W 即座に|そくざに|immediately|立刻
+W 即|そく|immediately|马上
+W 即席|そくせき|instant|即席
+K 既
+W 既に|すでに|already|已经
+W 既婚|きこん|married|已婚
+W 既製|きせい|ready-made|成品
+K 殻
+W 殻|から|a shell|外壳
+W 貝殻|かいがら|a shell|贝壳
+W 吸い殻|すいがら|cigarette butts|香烟头
+K 穀
+W 穀物|こくもつ|a grain|谷物
+K 充
+W 補充する|ほじゅうする|refill|补充
+W 充電|じゅうでん|charge|充电
+W 充満する|じゅうまんする|be filled with|充满
+K 弁
+W 弁解|べんかい|a excuse|辩解
+W 弁論大会|べんろんたいかい|a speech contest|辩论大会
+W 勘弁する|かんべんする|forgive|饶恕
+K 亭
+W 料亭|りょうてい|a Japanese restaurant|日本式酒家
+W 亭主|ていしゅ|a husband|丈夫
+K 享
+W 享受する|きょうじゅする|enjoy|享受
+K 宜
+W 適宜|てきぎ|appropriate|适宜
+W 便宜上|べんぎじょう|for convenience|为方便起见
+K 宣
+W 宣伝|せんでん|advertising|宣传
+W 宣言|せんげん|a declaration|宣言
+W 宣誓|せんせい|an oath|宣誓
+K 塁
+W 一塁|いちるい|first base|一垒
+W 満塁|まんるい|the bases loaded|满垒
+K 累
+W 累積|るいせき|a cumulative total|积累
+W 累計|るいけい|a total|累计
+K 奉
+W 奉仕|ほうし|a service|效劳
+W 奉る|たてまつる|offer (something to someone very superior)|奉上
+K 奏
+W 演奏|えんそう|a music performance|演奏
+W 伴奏|ばんそう|accompaniment|伴奏
+W 奏でる|かなでる|play|演奏
+X1 a、bの言葉の読みを書き、正しいほうを選びなさい。
+Q 東大を出て、官僚になり、（a. 典型的　b. 象徴的）なエリートコースを歩む。>>从东大毕业，成为官僚，走典型的精英路线。
+Q 日本に来たばかりの頃は慣れない環境に（a. 戸惑った　b. 悔やんだ）。>>刚来日本时，对不习惯的环境感到困惑。
+Q 監督は部員の（a. 奏でた　b. 隠れた）才能に気づいた。>>教练注意到了队员隐藏的才能。
+Q 弱いからといって相手を（a. 侮って　b. 微笑して）はいけない。>>不能因为对方弱就轻视他。
+Q ゆで卵の（a. 皮　b. 殻）をむく。>>剥煮鸡蛋的壳。
+Q ウイルスの（a. 感染　b. 累積）経路を調べる。>>调查病毒的感染途径。
+X2 ＿＿の部分を漢字で書くとき、最もよいものを□から選びなさい。
+B a. 仰|b. 哀|c. 抑|d. 宜|e. 在|f. 享|g. 存|h. 亭|i. 弁|j. 迎|k. 宣|l. 衰
+Q 7-1|{てきぎ}修正する。|適＿>>酌情修改。
+Q 7-2|テレビで{せんでん}する。|＿伝>>在电视上宣传。
+Q 8-1|感情を{おさえる}。|＿える>>抑制感情。
+Q 8-2|客を{むかえる}。|＿える>>迎接客人。
+Q 9-1|勢いが{おとろえる}。|＿える>>势头减弱。
+Q 9-2|{あわれな}姿|＿れな>>可怜的样子
+Q 10-1|薬に{いぞん}する。|依＿>>依赖药物。
+Q 10-2|{ふざい}通知|不＿>>不在家通知
+A Ⅰ：①a ②a ③b ④a ⑤b ⑥a　Ⅱ：⑦1d 適宜 2k 宣伝 ⑧1c 抑える 2j 迎える ⑨1l 衰える 2b 哀れな ⑩1g 依存 2e 不在

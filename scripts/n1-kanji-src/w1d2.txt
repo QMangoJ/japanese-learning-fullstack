@@ -1,0 +1,123 @@
+T 及・級・吸|キュウ・キュウ・キュウ|及・级・吸|
+I Q. ＿の読みは？　趣旨　→シュシ。「趣」の「走（そうにょう）」は意味を表す。音は「取」の部分（→p.12）。
+S 同じ読みの漢字がたくさんあるもの②|同音汉字多的字②|Kanji that share a reading ②
+G 旨|シ
+K 旨
+W 要旨|ようし|the point|要旨
+W 趣旨|しゅし|a purpose|宗旨
+K 指
+W 指示|しじ|instruction|指示
+W 指摘|してき|point out|指出
+K 脂
+W 脂肪|しぼう|fat|脂肪
+W 油脂|ゆし|oils and fats|油脂
+G 及|キュウ
+K 及
+W 普及|ふきゅう|spread, diffuse|普及
+W 追及|ついきゅう|the pursuit|追究
+K 級
+W 高級|こうきゅう|high class/grade|高级
+W 上級|じょうきゅう|advanced level|高级
+K 吸
+W 吸収|きゅうしゅう|absorption|吸收
+W 呼吸|こきゅう|breathing, respiration|呼吸
+G 巨|キョ
+K 巨
+W 巨大な|きょだい|enormous|巨大的
+W 巨人|きょじん|a giant|巨人
+K 距
+W 距離|きょり|distance|距离
+K 拒
+W 拒否|きょひ|rejection|拒绝
+W 拒絶|きょぜつ|refusal|拒绝
+G 包|ホウ
+K 包
+W 包装|ほうそう|wrapping|包装
+K 砲
+W 大砲|たいほう|a cannon|大炮
+W 鉄砲|•てっぽう|a gun|步枪（小枪）
+K 胞
+W 同胞|どうほう|a countryman|同胞
+W 細胞|さいぼう|a cell|细胞
+K 抱
+W 介抱|かいほう|nursing|护理、照顾
+K 泡
+W 水泡|すいほう|foam, bubbles|水泡
+K 飽
+W 飽和|ほうわ|saturation|饱和
+G 召|ショウ
+K 召
+W 召集|しょうしゅう|a summons|召集
+K 招
+W 招待|しょうたい|an invitation|招待
+K 紹
+W 紹介|しょうかい|an introduction|介绍
+K 照
+W 照合|しょうごう|a collation|对照
+W 照明|しょうめい|illumination, light|照明
+K 昭
+W 昭和|しょうわ|Showa|昭和
+K 沼
+W 沼|ぬま|a swamp|沼泽|＊主に訓読みをする。
+G 旦|タン
+K 旦
+W 一旦|いったん|once|一旦
+W 一旦停止|•いったんていし|stop and proceed|一旦停止
+K 担
+W 担当|たんとう|charge of|担任
+W 負担|ふたん|a burden|负担
+K 胆
+W 大胆な|だいたん|bold, daring|大胆的
+G 兼|ケン
+K 兼
+W 兼業|けんぎょう|having another job (operation)|兼营
+W 兼用|けんよう|have two functions|兼用
+K 謙
+W 謙虚な|けんきょ|humble|谦虚的
+W 謙遜|けんそん|be modest|谦逊
+K 嫌
+W 嫌悪|けんお|hatred|厌恶
+W 自己嫌悪|•じこけんお|self-hate|自我厌恶
+G 干|カン
+K 干
+W 干渉|かんしょう|interfere|干涉
+W 干潮|かんちょう|a low tide|退潮
+K 汗
+W 発汗|はっかん|sweat|发汗
+W 発汗作用|•はっかんさよう|perspiration|发汗作用
+K 刊
+W 刊行|かんこう|a publication|出版
+W 週刊誌|しゅうかんし|a weekly magazine|周刊杂志
+K 肝
+W 肝心の|かんじん|essential|关键的
+W 肝臓|かんぞう|liver|肝脏
+K 幹
+W 幹部|かんぶ|the executives|干部
+W 新幹線|しんかんせん|a bullet train|新干线
+G 屈|クツ
+K 屈
+W 理屈|りくつ|logic|道理
+W 屈折|くっせつ|refraction|曲折、折射
+K 掘
+W 発掘|はっくつ|an excavation|发掘
+W 採掘する|さいくつ|mine|开采
+K 堀
+W 堀|ほり|a moat|护城河|＊主に訓読みをする。
+X1 a、bの言葉の読みを書き、正しいほうを選びなさい。
+Q 係員の（a. 指示　b. 指摘）に従ってください。>>请听从工作人员的指示。
+Q 日本語のクラスは初級、中級、（a. 上級　b. 高級）の3つに分かれています。>>日语班分为初级、中级、高级三个等级。
+Q 彼は論理的というより（a. 理屈　b. 屈折）っぽい。>>与其说他讲逻辑，不如说他爱讲歪理。
+Q 他国の内政には（a. 追及　b. 干渉）するべきではないとA氏は述べた。>>A先生说不应该干涉他国内政。
+Q 自己（a. 拒否　b. 嫌悪）に陥る。>>陷入自我厌恶。
+Q うちの会社では語学の授業料を半分（a. 大胆　b. 負担）してくれる。>>我们公司会负担一半的语言课学费。
+X2 ＿＿の部分を漢字で書くとき、最もよいものを□から選びなさい。
+B a. 脂|b. 泡|c. 肝|d. 招|e. 指|f. 胞|g. 幹|h. 旨|i. 刊|j. 飽|k. 昭|l. 紹
+Q 7-1|パーティーに{しょうたい}する。|＿待>>邀请参加派对。
+Q 7-2|知人を{しょうかい}する。|＿介>>介绍熟人。
+Q 8-1|植物の{さいぼう}について研究する。|細＿>>研究植物细胞。
+Q 8-2|この業界の国内市場は{ほうわ}じょうたいだ。|＿和>>这个行业的国内市场处于饱和状态。
+Q 9-1|{しんかんせん}で京都へ行く。|新＿線>>坐新干线去京都。
+Q 9-2|外見より中身が{かんじん}だ。|＿心>>内在比外表更重要。
+Q 10-1|{ようし}を400字以内にまとめなさい。|要＿>>请把要点归纳在400字以内。
+Q 10-2|運動をして{しぼう}を燃焼させる。|＿肪>>通过运动燃烧脂肪。
+A Ⅰ：①a ②a ③a ④b ⑤b ⑥b　Ⅱ：⑦1d 2l ⑧1f 2j ⑨1g 2c ⑩1h 2a

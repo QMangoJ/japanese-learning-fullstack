@@ -1,0 +1,115 @@
+T 弓・矢・盾|ゆみ・や・たて|弓・箭・盾|
+I Q. ＿の読みは？　縄跳び　→なわとび。「縄」はロープという意味。綱（つな）・縄（なわ）・網（あみ）。
+S 1字でひとつの言葉になるもの|一个字即为一个词|Kanji that form a word by themselves
+G 道具|どうぐ
+K 弓|ゆみ
+W 弓と矢||a bow and arrow|弓和箭
+W 弓を引く||draw a bow|拉弓
+K 矢|や
+W 矢を射る||shoot an arrow|射箭
+W 矢を放つ||shoot an arrow|放箭
+K 盾|たて
+W 盾|たて|a shield|盾
+W 記念の盾||a plaque|纪念盾
+K 旗|はた
+W 旗を振る||wave a flag|摇旗
+W 旗を立てる||hoist a flag|插旗子
+K 傘|かさ
+W 傘をさす||put up an umbrella|打伞
+K 綱|つな
+W 綱引き|つなひき|a tug-of-war|拔河
+W ◆横綱|よこづな|yokozuna (grand champion sumo wrestler)|横纲（相扑冠军的称号）
+K 縄|なわ
+W 縄跳び|なわとび|a skipping rope|跳绳
+W ◆縄張り|なわばり|one's territory|地盘
+K 鎖|くさり
+W 鎖|くさり|a chain|锁链
+W 鎖につなぐ||chain|用链子锁住
+K 網|あみ
+W 網で魚や虫を捕る||catch fish or insects in a net|用网捕捉鱼或虫
+W 網の目||a net/mesh|网眼
+G 形状|けいじょう
+K 塊|かたまり
+W 塊|かたまり|a lump|块儿
+W 土の塊||a lump of soil|土块
+K 渦|うず
+W 渦巻き|うずまき|a spiral|漩涡
+W 渦潮|うずしお|a whirling current|旋流
+K 泡|あわ
+W 泡を立てる||form|起泡
+W 泡が立つ||bubble|有泡
+K 穴|あな
+W 穴があく||make a hole|出了洞
+W 穴を掘る||dig a hole|挖坑
+G 概念|がいねん
+K 公|おおやけ
+W 公の場所||a public place|公共场所
+W 公になる||be public|公开
+K 恥|はじ
+W 恥をかく||be embarrased|出丑
+W 恥をさらす||be embarrased|丢丑
+K 罪|つみ
+W 罪の意識||a sense of guilt|罪恶的意识
+W 『罪と罰[ばつ]』||[Crime and Punishment]|《罪与罚》
+K 趣|おもむき
+W 趣のある庭||a tasteful garden|有雅趣的庭院
+K 技|わざ
+W 技を磨く||improve one's skill|磨练技术
+K 志|こころざし
+W 志を果たす||realize one's aspirations|实现志向
+K 暇|ひま
+W 暇をつぶす||kill time|消磨时间
+W 寝る暇も無い||too busy to sleep|连睡觉的时间都没有
+K 源|みなもと
+W 元気の源||a source of energy|精神之源
+W 健康の源||a source of health|健康之源
+K 魂|たましい
+W 肉体と魂||body and soul|肉体和灵魂
+W 魂の叫び||rattle and hum|灵魂的呐喊
+K 幻|まぼろし
+W 夢、幻||a dream, illusion|梦幻
+W 幻の酒||a rare sake|虚幻般的酒
+G 気象|きしょう
+K 雷|かみなり
+W 雷が鳴る||thunder|雷鸣
+W 雷が落ちる||be struck by lightning|打雷；大发雷霆
+K 霧|きり
+W 霧が出る||a fog sets in|出雾
+W 霧が晴れる||a fog clears|雾散了
+K 霜|しも
+W 霜が降りる||a fog descends|降霜
+G 身体|しんたい
+K 舌|した
+W 舌を噛む||bite one's tongue|咬舌头
+W 舌を出す||stick out one's tongue|吐舌头
+K 唇|くちびる
+W 唇を噛む||bite one's lip|咬嘴唇
+K 姿|すがた
+W 姿を現す||appear|现身
+W 姿を消す||disappear|消失
+G 服飾|ふくしょく
+K 襟|えり
+W シャツの襟||the neck of a shirt|衬衣领子
+W 襟を正す||respectfully|正襟
+K 丈|たけ
+W コートの丈||the length of a coat|大衣的长度
+K 絹|きぬ
+W 絹のスカーフ||a silk scarf|绸的围巾
+K 紫|むらさき
+W 紫色のセーター||a purple sweater|紫色的毛衣
+K 紺|こん
+W 紺色のスーツ||a dark blue suit|藏蓝色的西装
+X1 a、bの言葉の読みを書き、正しいほうを選びなさい。
+Q 国民に隠されていた事実が（a. 穴　b. 公）になった。>>对国民隐瞒的事实公开了。
+Q 家族の笑顔が私の元気の（a. 塊　b. 源）です。>>家人的笑容是我的精神之源。
+Q 漢字の読み方を間違えて（a. 恥　b. 罪）をかきました。>>读错了汉字，出丑了。
+Q 悔しくて（a. 唇　b. 舌）を噛んだ。>>懊悔得咬住了嘴唇。
+Q 幼い子の立派な行動に大人は（a. 丈　b. 襟）を正した。>>年幼孩子的优秀行为让大人们肃然起敬。
+Q この酒は、なかなか手に入らないので（a. 幻　b. 紫）の酒と呼ばれている。>>这种酒很难买到，所以被称为“梦幻之酒”。
+X2 次の（　）には同じ漢字が入ります。□から選びなさい。下線部の読みも書きなさい。
+B a. 縄|b. 雷|c. 綱|d. 鎖|e. 泡|f. 霧|g. 網|h. 渦
+Q 7|{（　）引き}／{横（　）}|（　）>>拔河／横纲
+Q 8|{（　）跳び}／{（　）張り}|（　）>>跳绳／地盘
+Q 9|{（　）潮}／{（　）巻き}|（　）>>旋流／漩涡
+Q 10|{（　）}が鳴る／{（　）}が落ちる|（　）>>打雷／雷落下
+A Ⅰ：①b ②b ③a ④a ⑤b ⑥a　Ⅱ：⑦c 綱（綱引きつなひき／横綱よこづな） ⑧a 縄（縄跳びなわとび／縄張りなわばり） ⑨h 渦（渦潮うずしお／渦巻きうずまき） ⑩b 雷（雷が鳴るかみなり／雷が落ちるかみなり）

@@ -1,0 +1,105 @@
+T 絶える・耐える・堪える|たえる・たえる・たえる|断绝・忍耐・忍受|
+I Q. 漢字で書くと？　問題の解決につとめる　→努める。勤める・務める・努める、がんばるという意味だよね…
+S 訓読み②|训读②|Kun-readings ②
+G つとめる|
+K 勤|つとめる
+W 会社に勤める〈勤務[きんむ]〉||work for a company|就职于公司
+K 務|つとめる
+W 司会を務める||serve as a master of ceremonies|担任司仪
+W 主役を務める||play a main role|扮演主角
+K 努|つとめる
+W 問題の解決に努める〈努力[どりょく]〉||strive to overcome a problem|努力解决问题
+G たえる|
+K 絶|たえる
+W 連絡が絶える||lose contact|联络中断
+W 種が絶える||a species becomes extinct|绝种
+K 耐|たえる
+W 風雪に耐える||is weathered|经受风雪
+W 地震に耐える||endure an earthquake|耐震
+K 堪|たえる
+W 聞くに堪えない話||an unbearable story|不堪入耳的话
+W 見るに堪えない||cannot bear to watch|不堪入目
+G すむ|
+K 澄|すむ
+W 川の水が澄む||the river water becomes clear|河水清澈
+W 澄んだ空||a clear sky|晴朗的天空
+K 住|すむ
+W 日本に住む||live in Japan|住在日本
+K 済|すむ
+W 用事が済む||finish a task|办完事
+W 食事が済む||finish a meal|吃完饭
+G あおぐ|
+K 扇|あおぐ
+W うちわや扇子[せんす]で扇ぐ||fan oneself|用团扇或折扇扇
+K 仰|あおぐ
+W 空を仰ぐ||look up at the sky|仰视天空
+W 指示を仰ぐ||ask for instructions|请求指示
+G うつ|
+K 打|うつ
+W 釘を打つ||pound a nail|敲钉子
+W 太鼓を打つ||beat a drum|打鼓
+K 撃|うつ
+W 銃で的を撃つ||fire a gun at a target|用枪射击目标
+K 討|うつ
+W 敵を討つ||attack an enemy|讨伐敌人
+G あやまる|
+K 謝|あやまる
+W 失言を謝る||apologize for a gaffe|因失言道歉
+K 誤|あやまる
+W 選択を誤る||make a wrong choice|选择错误
+W 運転を誤る||lose control of one's car|开车失误
+G たずねる|
+K 尋|たずねる
+W 道を尋ねる||ask for directions|问路
+K 訪|たずねる
+W 史跡を訪ねる||visit a historical site|寻访历史遗迹
+W 親戚を訪ねる||visit a relative|拜访亲戚
+G とる|
+K 取|とる
+W 手に取る||pick something up and look at it|拿在手上
+W 免許を取る||get a driver's license|考取驾照
+K 捕|とる
+W 動物や魚を捕る〈捕獲[ほかく]〉||trap animals and fish|捕捉动物或鱼
+K 採|とる
+W 昆虫や植物を採る〈採集[さいしゅう]〉||collect insects and plants|采集昆虫或植物
+W 血を採る〈採血[さいけつ]〉||take a blood sample|采血
+W 人を採る〈採用[さいよう]〉||recruit someone|录用人员
+K 撮|とる
+W 写真・映画・ビデオを撮る〈撮影[さつえい]〉||take a picture/movie/video|拍摄照片、电影、录像
+K 執|とる
+W 筆を執る〈執筆[しっぴつ]〉||write|执笔
+G さける|
+K 避|さける
+W 衝突を避ける||avoid a collision|避免冲突
+W 難を避ける〈避難[ひなん]〉||take refuge|避难
+K 裂|さける
+W 布が裂ける||a fabric tears|布破裂
+G おさめる|
+K 納|おさめる
+W 税金を納める〈納税[のうぜい]〉||pay one's taxes|纳税
+W 品物を納める〈納品[のうひん]〉||supply goods|交货
+K 収|おさめる
+W 利益を収める〈収益[しゅうえき]〉||make a profit|收益
+W 成果を収める||achieve positive results|取得成果
+K 治|おさめる
+W 国を治める||govern a country|治国
+K 修|おさめる
+W 学業を修める||study seriously|修学业
+X1 a、bの言葉の読みを書き、正しいほうを選びなさい。
+Q 優秀な成績を（a. 修める　b. 努める）。>>取得优秀的成绩。
+Q ご報告があって、筆を（a. 執りました　b. 討ちました）。>>因有事报告，所以提笔写信。
+Q 秋の美しい空を（a. 仰ぐ　b. 澄む）。>>仰望秋天美丽的天空。
+Q ドラマの主役を（a. 納める　b. 務める）。>>担任电视剧的主角。
+Q 駅までの道を（a. 謝る　b. 尋ねる）。>>打听去车站的路。
+Q 選択を（a. 耐えた　b. 誤った）。>>选择错了。
+X2 ＿＿の部分を漢字で書くとき、最もよいものを□から選びなさい。
+B a. 裂|b. 治|c. 絶|d. 避|e. 収|f. 捕|g. 住|h. 打|i. 済|j. 採|k. 撮|l. 堪
+Q 7-1|人ごみを{さける}。|＿ける>>避开人群。
+Q 7-2|袋が{さける}。|＿ける>>袋子破了。
+Q 8-1|聞くに{たえない}話|＿えない>>不堪入耳的话
+Q 8-2|けんかが{たえない}。|＿えない>>争吵不断。
+Q 9-1|用事が{すむ}。|＿む>>事情办完。
+Q 9-2|両親と{すむ}。|＿む>>和父母住在一起。
+Q 10-1|写真を{とる}。|＿る>>拍照片。
+Q 10-2|血液を{とる}。|＿る>>采血。
+A Ⅰ：①a ②a ③a ④b ⑤b ⑥b　Ⅱ：⑦1d 2a ⑧1l 2c ⑨1i 2g ⑩1k 2j

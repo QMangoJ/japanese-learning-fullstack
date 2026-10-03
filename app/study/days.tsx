@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect, useState, useSyncExternalStore, type ReactNode } from "react";
+import { Fragment, lazy, Suspense, useEffect, useState, useSyncExternalStore, type ReactNode } from "react";
 
 import { ConnBlock, Fmt, Rr, RubyHtml, SayButton } from "../routes/study-common";
 import { CardsLaunch } from "./memory-cards";
@@ -17,6 +17,7 @@ import {
 	K,
 	K2,
 	K4,
+	K1,
 	LANG,
 	MODULE,
 	TYPE,
@@ -1434,12 +1435,22 @@ function DayVocab({ day, w, d, scrollTok }: { day: any; w: number; d: number; sc
 								<div className="meta jp" style={{ margin: "4px 0 8px" }}>
 									{romanN(si)}　{lx(sec.instruction, sec.instruction_en)}
 								</div>
+								{sec.box ? (
+									<div className="opts">
+										{sec.box.map((x: string, bi: number) => (
+											<span className="jp" key={bi}>
+												{x}
+											</span>
+										))}
+									</div>
+								) : null}
 								{(sec.items || []).map((it: any) => (
 									<div className="q daily-q" key={it.n}>
 										<div className="daily-qline">
 											<span className="n">{it.n}</span>
 											<span className="jp">
 												<Rr o={it} f="q" />
+												{it.slot ? <span className="meta">　→ {it.slot}</span> : null}
 											</span>
 										</div>
 										<OptsRow item={it} />
@@ -1602,11 +1613,13 @@ function DayKanji({ day, w, d, scrollTok }: { day: any; w: number; d: number; sc
 					) : null}
 				</CatalogCrumb>
 				<ExamKanji day={day} w={w} />
+				{day.column ? <KanjiColumn column={day.column} notes={day.notes} w={w} d={d} /> : null}
 			</>
 		);
 	}
-	const kanjiBook = MODULE === "n2kanji" ? K2 : MODULE === "n4kanji" ? K4 : K;
-	const dailyItems = (MODULE === "kanji" || MODULE === "n2kanji" || MODULE === "n4kanji") && kanjiBook.daily_translations && kanjiBook.daily_translations[`w${w}d${d}`];
+	const kanjiBook = MODULE === "n2kanji" ? K2 : MODULE === "n4kanji" ? K4 : MODULE === "n1kanji" ? K1 : K;
+	const dailyItems = (MODULE === "kanji" || MODULE === "n2kanji" || MODULE === "n4kanji" || MODULE === "n1kanji") && kanjiBook.daily_translations && kanjiBook.daily_translations[`w${w}d${d}`];
+	const sectionAt = new Map<number, any>((day.sections || []).map((sec: any) => [sec.start, sec]));
 	const translationByNumber = new Map(((dailyItems && dailyItems.items) || []).map((item: any) => [item.n, item]));
 	return (
 		<>
@@ -1635,11 +1648,36 @@ function DayKanji({ day, w, d, scrollTok }: { day: any; w: number; d: number; sc
 					{day.dialog.en ? <div className="en">{day.dialog.en}</div> : null}
 				</div>
 			) : null}
+			{day.intro || day.notes?.length ? (
+				<div className="card">
+					{day.intro ? (
+						<div className="note jp">
+							<Rr o={day} f="intro" />
+						</div>
+					) : null}
+					{(day.notes || []).map((nt: any, ni: number) => (
+						<div key={ni} className="meta jp" style={{ marginTop: 6 }}>
+							<Rr o={nt} f="text" />
+						</div>
+					))}
+				</div>
+			) : null}
 			<MemBar />
 			<CardsLaunch />
 			<div className="card kanji-card">
 				{(day.kanji || []).map((k: any, ki: number) => (
-					<div className="krow" id={`k-${w}-${d}-${ki}`} key={ki}>
+					<Fragment key={ki}>
+					{sectionAt.has(ki) ? (
+						<div className="sec-title jp">
+							<Rr o={sectionAt.get(ki)} f="heading" /> <span className="meta">{lx(sectionAt.get(ki).heading_cn, sectionAt.get(ki).heading_en)}</span>
+						</div>
+					) : null}
+					{k.group && (ki === 0 || day.kanji[ki - 1].group !== k.group || sectionAt.has(ki)) ? (
+						<div className="kgroup meta jp">
+							【{k.group}】{(k.readings || []).join("・")}
+						</div>
+					) : null}
+					<div className="krow" id={`k-${w}-${d}-${ki}`}>
 						<div className="kchar-wrap">
 							<div className="kchar jp">{k.char}</div>
 							<div className="kmeta">{k.strokes ? `${k.strokes}画` : ""}</div>
@@ -1667,6 +1705,12 @@ function DayKanji({ day, w, d, scrollTok }: { day: any; w: number; d: number; sc
 										<div className="vmn">
 											{LANG !== "en" && wd.cn ? <span className="vcn">{wd.cn}</span> : null}
 											{wd.en ? <span className="ven">{wd.en}</span> : null}
+										{wd.changed ? <span className="meta">{lx("● 读音有变化", "● reading changes")}</span> : null}
+										{wd.note ? (
+											<div className="meta jp">
+												<Rr o={wd} f="note" />
+											</div>
+										) : null}
 										{usage ? (
 											<div className="kanji-word-usage">
 												<span className="kanji-word-pos">{lx(usage.posCn, usage.posEn)}</span>
@@ -1690,8 +1734,15 @@ function DayKanji({ day, w, d, scrollTok }: { day: any; w: number; d: number; sc
 									</div>
 								);
 							})}
+							{k.review ? (
+								<div className="meta jp">
+									{lx("常用读法：", "Common readings: ")}
+									<Rr o={k} f="review" />
+								</div>
+							) : null}
 						</div>
 					</div>
+					</Fragment>
 				))}
 			</div>
 			{day.exercises ? (
@@ -1730,6 +1781,57 @@ function DayKanji({ day, w, d, scrollTok }: { day: any; w: number; d: number; sc
 					</div>
 				</>
 			) : null}
+		</>
+	);
+}
+
+function KanjiColumn({ column, notes, w, d }: { column: any; notes?: any[]; w: number; d: number }) {
+	return (
+		<>
+			<div className="sec-title jp">
+				コラム <Rr o={column} f="title" /> <span className="meta">{lx(column.title_cn, column.title_en)}</span>
+			</div>
+			<div className="card kanji-card">
+				{(column.kanji || []).map((k: any, ki: number) => (
+					<div className="krow" id={`k-${w}-${d}-c${ki}`} key={ki}>
+						<div className="kchar-wrap">
+							<div className="kchar jp">{k.char}</div>
+							<div className="kreads jp">
+								{(k.readings || []).map((r: string, i: number) => (
+									<span className="kread" key={i}>
+										{r}
+									</span>
+								))}
+							</div>
+						</div>
+						<div className="kwords">
+							{(k.words || []).map((wd: any, wi: number) => (
+								<div className="vrow" key={wi}>
+									<div className="vjp jp">
+										<span className="vjp-text">{wd.jp_r ? <RubyHtml html={wd.jp_r} /> : wd.jp}</span>
+										<SayButton text={wd.jp} />
+										<StarBtn id={`${MODULE}#${w}-${d}#c${ki}#${wi}`} snap={{ module: MODULE, hash: `#/day/${w}-${d}`, w, d, jp: wd.jp, cn: wd.cn || wd.en || "" }} />
+									</div>
+									<div className="vmn">
+										{LANG !== "en" && wd.cn ? <span className="vcn">{wd.cn}</span> : null}
+										{wd.en ? <span className="ven">{wd.en}</span> : null}
+										{wd.note ? (
+											<div className="meta jp">
+												<Rr o={wd} f="note" />
+											</div>
+										) : null}
+									</div>
+								</div>
+							))}
+						</div>
+					</div>
+				))}
+				{(notes || []).map((nt: any, ni: number) => (
+					<div key={`n${ni}`} className="meta jp" style={{ marginTop: 8 }}>
+						<Rr o={nt} f="text" />
+					</div>
+				))}
+			</div>
 		</>
 	);
 }

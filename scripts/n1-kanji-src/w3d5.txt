@@ -1,0 +1,100 @@
+T 縛る・絞る・殴る|しばる・しぼる・なぐる|捆绑・拧・殴打|
+I Q. ＿の読みは？　締め切り迫る！　→せまる
+S 動詞②|动词②|Verbs ②
+K 縛る|しばる
+W ひもで縛る||tie ... with a rope|用绳子捆
+K 絞る|しぼる
+W 雑巾を絞る||wring out|拧抹布
+W 知恵を絞る||rack one's brains|想方设法
+K 迫る|せまる
+W 締め切りが迫る||the deadline is approaching|截止日期逼近
+W 危険が迫る||be in immediate danger|危险临近
+K 殴る|なぐる
+W 相手を殴る||punch an opponent|打对方
+K 釣る|つる
+W 魚を釣る||to fish|钓鱼
+K 掘る|ほる
+W 穴を掘る||dig a hole|挖洞
+K 織る|おる
+W 布を織る||weave a fabric|织布
+W ◆織物|おりもの|fabric|纺织品
+K 飾る|かざる
+W 部屋を飾る||decorate a room|装饰房间
+K 謝る|あやまる
+W 非礼を謝る||apologize for impoliteness|因无礼道歉
+K 至る|いたる
+W 目的地に至る||reach a destination|到达目的地
+K 劣る|おとる
+W 性能が劣る||be less efficient|性能低劣
+K 腐る|くさる
+W 食べ物が腐る||food goes bad|食物腐烂
+K 濁る|にごる
+W 川の水が濁る||river water becomes muddy|河水浑浊
+W ◆⇔澄む|すむ|becomes clear|清澈
+K 粘る|ねばる
+W 納豆が粘る||natto becomes sticky|纳豆发粘
+W 時間いっぱい粘る||hold out/stay as long as possible|从头到尾坚持到底
+K 黙る|だまる
+W 黙って考える||think silently|默默地考虑
+K 悟る|さとる
+W 自分の無知を悟る||realize your ignorance|领悟到自己的无知
+K 募る|つのる
+W 参加者を募る||recruit participants|招募参加者
+W 会員を募る||recruit members|招募会员
+K 葬る|ほうむる
+W 死者を葬る||bury a body|埋葬死者
+K 茂る|しげる
+W 木が茂る||trees grow thick|树木茂盛
+K 陥る|おちいる
+W 罠に陥る||get trapped|陷入圈套
+W 人間不信に陥る||distrust other people|陷入对人的不信任
+K 遮る|さえぎる
+W 視界を遮る||block access|遮挡视野
+W 話を遮る||cut into someone's conversation|打断话
+K 偏る|かたよる
+W 栄養が偏る||be on a poorly balanced diet|营养不均衡
+K 滞る|とどこおる
+W 作業が滞る||work piles up|工作停滞不前
+K 賜る|たまわる
+W 恩恵を賜る||enjoy the benefits|蒙受恩惠
+W 祝辞を賜る||receive words of congratulations|承蒙祝辞
+K 携わる|たずさわる
+W 教育に携わる||get involved in education|从事教育
+K 関わる|かかわる
+W 事件に関わる||get involved in a case|关系到事件
+K 営む|いとなむ
+W 店を営む||run a store|经营店铺
+W 生活を営む||lead a life|营生
+K 拝む|おがむ
+W 仏壇を拝む||pray at a Buddhist alter|拜佛龛
+K 絡む|からむ
+W 人に絡む||pick a quarrel with someone|纠缠人
+W 金が絡む||money is involved|牵涉到钱
+K 励む|はげむ
+W 勉学に励む||study hard|努力学习
+K 踏む|ふむ
+W 地面を踏む||stamp on the ground|脚踏地面
+K 恨む|うらむ
+W 人を恨む||resent someone|恨人
+K 阻む|はばむ
+W 行く手を阻む||block someone's way|挡住去路
+K 酌む|くむ
+W 酒を酌み交わす||drink together|交杯换盏
+X1 a、bの言葉の読みを書き、正しいほうを選びなさい。
+Q 町の活性化のために、町民が知恵を（a. 絞る　b. 縛る）。>>为了振兴小镇，镇民们集思广益。
+Q （a. 飾らない　b. 織らない）人柄とストレートな話しぶりで人気のタレント。>>以朴实的为人和直率的说话方式而受欢迎的艺人。
+Q 博士は受賞に（a. 粘る　b. 至る）までの長い間の苦労を語った。>>博士讲述了直到获奖为止长期的艰辛。
+Q この問題の解決を（a. 阻んでいる　b. 絡んでいる）のは法律です。>>阻碍这个问题解决的是法律。
+Q この機種はあの機種に比べて、処理能力が（a. 濁る　b. 劣る）。>>这个机型和那个机型相比，处理能力较差。
+Q 父は（a. 釣り　b. 掘り）をしに川や海に行く。>>父亲去河边或海边钓鱼。
+X2 ＿＿の部分を漢字で書くとき、最もよいものを□から選びなさい。
+B a. 賜|b. 励|c. 葬|d. 携|e. 拝|f. 腐|g. 偏|h. 募|i. 滞|j. 陥|k. 黙|l. 遮
+Q 7-1|話を{さえぎる}。|＿る>>打断话。
+Q 7-2|支払いが{とどこおる}。|＿る>>拖欠付款。
+Q 8-1|栄養が{かたよる}。|＿る>>营养不均衡。
+Q 8-2|教育に{たずさわる}。|＿わる>>从事教育。
+Q 9-1|経済危機に{おちいる}。|＿る>>陷入经济危机。
+Q 9-2|協力者を{つのる}。|＿る>>招募合作者。
+Q 10-1|受験勉強に{はげむ}。|＿む>>努力备考。
+Q 10-2|神仏を{おがむ}。|＿む>>拜神佛。
+A Ⅰ：①a ②a ③b ④a ⑤b ⑥a　Ⅱ：⑦1l 2i ⑧1g 2d ⑨1j 2h ⑩1b 2e

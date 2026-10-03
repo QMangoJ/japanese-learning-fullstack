@@ -1,0 +1,126 @@
+T 相互・首相・相性|そうご・しゅしょう・あいしょう|相互・首相・缘分|
+I Q. ＿の読みは？　利口な人　→りこう
+S 読みがたくさんあるもの|有很多读音的字|Kanji with many readings
+G 間|
+K 間|カン
+W 夜間|やかん|night time|夜间
+W 瞬間|しゅんかん|a moment|瞬间
+K 間|ケン
+W 人間|にんげん|a human being|人类
+W 世間|せけん|the world|社会
+K 間|あいだ
+W この間|このあいだ|recently|前几天
+W 間柄|あいだがら|a relationship|关系
+K 間|ま
+W 束の間|つかのま|a brief period of time|一刹那
+W 居間|いま|a living room|起居室
+G 口|
+K 口|コウ
+W 利口な|りこう|clever|聪明
+W 人口|じんこう|population|人口
+K 口|ク
+W 口調|くちょう|a tone|语调
+W 異口同音|いくどうおん|with one voice|异口同声
+K 口|くち
+W 無口な|むくち|quiet|沉默寡言
+W 早口|はやくち|fast speaking|嘴快
+G 言|
+K 言|ゲン
+W 発言|はつげん|a remark|发言
+W 方言|ほうげん|a dialect|方言
+K 言|ゴン
+W 伝言|でんごん|a message|留言
+W 無言|むごん|silent|默不作声
+K 言|いう
+W 言い訳|いいわけ|an excuse|借口、理由
+W 言い付け|いいつけ|an order|吩咐
+K 言|こと
+W 一言言う|ひとこという|say something|说几句
+W 独り言|ひとりごと|speaking to oneself, a monologue|自言自语
+G 相|
+K 相|ソウ
+W 相談に乗る|そうだんにのる|give advice to|帮人商量
+W 相違|そうい|differences|相异
+W 相互|そうご|mutual / reciprocal|相互
+W 真相|しんそう|the truth|真相
+K 相|ショウ
+W 首相|しゅしょう|a prime minister|首相
+W 外相（＝外務大臣）|がいしょう（＝がいむだいじん）|a foreign minister|外交部长
+K 相|あい
+W 相性|あいしょう|compatibility|缘分
+W 相変わらず|あいかわらず|still / as ever|仍旧
+G 省|
+K 省|ショウ
+W 省略する|しょうりゃく|omit|省略
+W 省エネ|しょうエネ|energy saving|节省能源
+W 外務省|がいむしょう|Ministry of Foreign Affairs|外交部
+K 省|セイ
+W 反省する|はんせい|self-examination|反省
+W 帰省|きせい|homecoming|返乡
+K 省|はぶく
+W 無駄を省く|むだをはぶく|eliminate the waste|避免浪费
+W 手間を省く|てまをはぶく|save a lot of time|省事儿
+K 省|かえりみる
+W 自らを省みる|みずからをかえりみる|reflect on oneself|反省自己
+G 端|
+K 端|タン
+W 極端な例|きょくたんなれい|an extreme example|极端的例子
+W 先端技術|せんたんぎじゅつ|high-technology|尖端技术
+K 端|はし
+W 道の端を歩く|みちのはしをあるく|walk along the side of the road|靠路边走
+W 言葉の端々に|ことばのはしばしに|every word indicates|说话的细节处
+K 端|はた
+W 道端の草を摘む|みちばたのくさをつむ|pick flowers by the side of the road|摘路边的草
+W 井戸端会議|いどばたかいぎ|a housewives' gossip session|凑井边闲聊
+K 端|は
+W 中途半端な行動|ちゅうとはんぱなこうどう|an indecisive attitude|不彻底的行动
+W 端数を切り捨てる|はすうをきりすてる|round up|抹去零数
+G 納|
+K 納|ノウ
+W 料金を滞納する|りょうきんをたいのう|fall behind in one's payment|欠款
+W 品物を納入する|しなものをのうにゅう|supply goods|交纳货物
+K 納|ナッ
+W 納得がいかない|なっとくがいかない|not be convinced|无法理解
+W 納豆|なっとう|natto (fermented soy beans)|纳豆
+K 納|おさめる
+W 税金を納める|ぜいきんをおさめる|pay one's taxes|缴纳税金
+W 商品を納める|しょうひんをおさめる|deliver goods|供应商品
+G 柄|
+K 柄|ヘイ
+W 横柄な態度|おうへいなたいど|an arrogant attitude|傲慢的态度
+K 柄|がら
+W 師弟の間柄|していのあいだがら|a teacher-student relationship|师生关系
+W 明るい人柄|あかるいひとがら|a cheerful personality|开朗的性格
+W 柄|がら|a pattern|花样、图案
+W ◆⇔無地|むじ|plain|素色
+K 柄|え
+W 傘の柄|かさのえ|an umbrella handle|伞柄
+W ひしゃくの柄|ひしゃくのえ|a ladle handle|勺子柄
+G 宮|
+K 宮|キュウ
+W 宮殿|きゅうでん|a palace|宫殿
+K 宮|ク
+W 宮内庁|くないちょう|the Imperial Household Agency|宫内厅
+K 宮|グウ
+W 神宮|じんぐう|a (major) Shinto shrine|神宫
+K 宮|みや
+W 宮様|みやさま|an imperial prince/princess|亲王、王族
+W お宮|おみや|a shrine|神社
+X1 a、bの言葉の読みを書き、正しいほうを選びなさい。
+Q その女は（a. 無口　b. 無言）電話をかけて嫌がらせをした。>>那个女人打无声电话骚扰。
+Q （a. 言い付け　b. 言い訳）は聞きたくない。今後注意するように。>>我不想听借口。以后注意。
+Q 電力消費の無駄を（a. 省く　b. 省みる）。>>减少电力消耗的浪费。
+Q 中途（a. 極端　b. 半端）な改革ではなく、やるなら徹底的にやってほしい。>>不要半途而废的改革，要做就彻底做。
+Q 皇室関係の仕事をする行政機関を（a. 宮殿　b. 宮内）庁という。>>负责皇室相关事务的行政机关叫宫内厅。
+Q 勝った試合のインタビューは監督の（a. 利口　b. 口調）も滑らかだった。>>赢球后的采访中，教练的语气也很流畅。
+X2 ＿＿の部分はどう読みますか。□から選びなさい。
+B a. がら|b. けん|c. そう|d. しょう|e. ま|f. え|g. なっ|h. あいだ|i. あい|j. げん|k. へい|l. のう
+Q 7-1|{相性}のいい二人|＿しょう>>合得来的两个人
+Q 7-2|{相互}努力をする。|＿ご>>相互努力。
+Q 8-1|{横柄}な店員|おう＿>>傲慢的店员
+Q 8-2|{花柄}のスカーフ|はな＿>>花纹的围巾
+Q 9-1|{納得}がいかない。|＿とく>>无法理解。
+Q 9-2|{納入}期限|＿にゅう>>交纳期限
+Q 10-1|{束の間}の休み|つかの＿>>短暂的休息
+Q 10-2|{世間}知らず|せ＿>>不谙世事
+A Ⅰ：①b ②b ③a ④b ⑤b ⑥b　Ⅱ：⑦1i 2c ⑧1k 2a ⑨1g 2l ⑩1e 2b

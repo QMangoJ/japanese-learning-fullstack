@@ -1,0 +1,134 @@
+T 壮・荘|ソウ・ソウ|壮・庄|
+I Q. 漢字で書くと？　さいばい　→栽培。植物を育てるから「車」「衣」ではなく「木」。
+S 違う部分に注意！②|注意不同的部分！②|Watch the different parts! ②
+G 𢦏|サイ
+K 栽
+W 栽培|さいばい|cultivation|栽培
+K 裁
+W 裁判|さいばん|a trial|裁判
+W 体裁|ていさい|appearance|样子
+K 載
+W 記載|きさい|mention|记载
+W 掲載|けいさい|carry|刊载
+G 壮|ソウ
+K 壮
+W 壮大な|そうだい|magnificent|壮大的
+W 壮絶な|そうぜつ|fierce|壮烈
+K 荘
+W 別荘|べっそう|a cottage|别墅
+W 山荘|さんそう|a mountain cottage|山庄
+G 卑|ヒ
+K 卑
+W 卑怯な|ひきょう|dirty|卑怯
+W 卑屈な|ひくつ|obsequious|卑屈
+K 碑
+W 碑|ひ|a tombstone, monument|碑
+W 石碑|せきひ|a monument|石碑
+G 昌|ショウ
+K 唱
+W 合唱|がっしょう|a choir|合唱
+W 提唱|ていしょう|advocate|提倡
+K 晶
+W 結晶|けっしょう|a crystal|结晶
+W 水晶|すいしょう|a crystal|水晶
+G 孰|ジュク
+K 熟
+W 成熟|せいじゅく|become mature|成熟
+W 未熟な|みじゅく|immature|未成熟
+K 塾
+W 塾|じゅく|a cram school|私塾
+G 従|ジュウ
+K 従
+W 従来の|じゅうらい|usual|以往的
+W 従事する|じゅうじ|be engaged in|从事
+K 縦
+W 操縦|そうじゅう|operating|驾驶
+W 縦断|じゅうだん|run through|纵贯
+G 盾|ジュン
+K 盾
+W 矛盾|むじゅん|a contradiction|矛盾
+K 循
+W 循環|じゅんかん|circulation|循环
+W 悪循環|あくじゅんかん|a vicious circle|恶性循环
+G 需|ジュ
+K 需
+W 需要|じゅよう|a demand|需要
+W 必需品|ひつじゅひん|necessities|必需品
+K 儒
+W 儒教|じゅきょう|Confucianism|儒教
+G 瓜|コ
+K 孤
+W 孤独な|こどく|lonesome|孤独的
+W 孤立|こりつ|isolation|孤立
+K 弧
+W 括弧|かっこ|a bracket|括弧
+G 充|ジュウ
+K 充
+W 補充する|ほじゅう|refill|补充
+W 充実する|じゅうじつ|full|充实
+K 銃
+W 銃|じゅう|a gun, rifle|枪
+W 銃弾|じゅうだん|a bullet|子弹
+G 㕣|エン
+K 沿
+W 沿岸|えんがん|the coast|沿岸
+W 沿線|えんせん|along a railway line|沿线
+K 鉛
+W 鉛筆|えんぴつ|a pencil|铅笔
+W 亜鉛|あえん|zinc|锌
+G 敝|ヘイ
+K 幣
+W 紙幣|しへい|a bill|纸币
+W 貨幣|かへい|money|货币
+K 弊
+W 弊害|へいがい|an evil/bad effect|弊害
+W 弊社|へいしゃ|our company|敝公司
+G 徹|テツ
+K 徹
+W 徹底|てってい|thorough|彻底
+W 徹夜|てつや|work all night|彻夜
+K 撤
+W 撤去|てっきょ|removal|撤去
+W 撤回|てっかい|a withdrawal|撤回
+G 䍃|ヨウ
+K 揺
+W 動揺|どうよう|be disturbed|动摇
+K 謡
+W 民謡|みんよう|a traditional folk song|民谣
+W 童謡|どうよう|a children's song|童谣
+G 隋|ズイ
+K 随
+W 随筆|ずいひつ|an essay|随笔
+W 随分|ずいぶん|extremely ...|非常
+K 髄
+W 骨髄|こつずい|marrow|骨髓
+W 真髄|しんずい|the essence|精髓
+G 呉|ゴ
+K 呉
+W 呉服|ごふく|silk clothing|和服衣料
+K 娯
+W 娯楽|ごらく|amusement|娱乐
+G 垂|スイ
+K 垂
+W 垂直|すいちょく|perpendicular|垂直
+K 睡
+W 睡眠|すいみん|sleep|睡眠
+W 熟睡|じゅくすい|a sound sleep|熟睡
+X1 a、bの言葉の読みを書き、正しいほうを選びなさい。
+Q （a. 壮大　b. 娯楽）な計画を立てる。>>制定宏大的计划。
+Q 前言を（a. 撤回　b. 徹底）する。>>撤回前言。
+Q （a. 補充　b. 需要）と供給のバランスを保つ。>>保持供需平衡。
+Q 私鉄（a. 沿岸　b. 沿線）のアパートを探す。>>找私营铁路沿线的公寓。
+Q 組織の中で（a. 孤独　b. 孤立）する。>>在组织中被孤立。
+Q 時間は短くても（a. 熟睡　b. 徹夜）できればいい。>>时间短也没关系，只要能睡得熟就好。
+X2 ＿＿の部分を漢字で書くとき、最もよいものを□から選びなさい。
+B a. 縦|b. 栽|c. 弊|d. 従|e. 盾|f. 幣|g. 晶|h. 載|i. 銃|j. 循|k. 裁|l. 充
+Q 7-1|{しへい}と硬貨|紙＿>>纸币和硬币
+Q 7-2|民営化の利点と{へいがい}|＿害>>民营化的好处和弊端
+Q 8-1|論理の展開に{むじゅん}が見られる。|矛＿>>论证的展开中可见矛盾。
+Q 8-2|{じゅんかん}器系の病気|＿環>>循环系统的疾病
+Q 9-1|{さいばん}員制度|＿判>>陪审员制度
+Q 9-2|雑誌に記事が{けいさい}される。|掲＿>>文章刊登在杂志上。
+Q 10-1|{じゅうじつ}した毎日|＿実>>充实的每一天
+Q 10-2|飛行機を{そうじゅう}する。|操＿>>驾驶飞机。
+A Ⅰ：①a ②a ③b ④b ⑤b ⑥a　Ⅱ：⑦1f 2c ⑧1e 2j ⑨1k 2h ⑩1l 2a

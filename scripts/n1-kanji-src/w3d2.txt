@@ -1,0 +1,97 @@
+T 平たい・平らな|ひらたい・たいらな|扁平的・平坦的|
+I Q. ＿の読みは？　負う　→おう。「負」の訓読みは「負ける」、それから？
+S 2つ以上訓読みがあるもの②|有两个以上训读的字②|Kanji with two or more kun-readings ②
+K 平たい|ひらたい
+W 平たい入れ物||a flat container|扁平的容器
+K 平らな|たいら
+W 平らな場所||a flat place|平坦的地方
+K 訪れる|おとずれる
+W 日本を訪れる||visit Japan|访问日本
+K 訪ねる|たずねる
+W 史跡を訪ねる||visit a historical site|访问历史古迹
+K 負かす|まかす
+W 言い負かす||defeat someone in an argument|说服、驳倒
+R 負[ま]ける
+K 負う|おう
+W 責任を負う||take responsibility|负责任
+K 老いる|おいる
+W 年老いた両親||elderly parents|年老的双亲
+K 老ける|ふける
+W 老けて見える||look old|看上去显老
+K 交わる|まじわる
+W 異文化の人と交わる||talk to people from other cultures|和异文化的人交流
+R 交[ま]ざる／交[ま]じる／交[ま]ぜる
+K 交える|まじえる
+W 意見を交える||exchange views|交换意见
+K 交わす|かわす
+W 契約を交わす||sign a contract|缔结契约
+K 厳しい|きびしい
+W 厳しい寒さ||extremely cold weather|严寒
+K 厳かな|おごそか
+W 式が厳かに執[と]り行[おこな]われる||a ritual is solemnly carried out|庄严地举行仪式
+K 染みる|しみる
+W 煙が目に染みる||smoke gets into one's eyes|烟熏眼睛
+R 染[そ]める
+K 染まる|そまる
+W 色が染まる||dye soaks in|染色
+K 潜る|もぐる
+W 水に潜る||dive into the water|潜水
+K 潜む|ひそむ
+W 物陰に潜む||hide oneself|藏在隐蔽处
+K 焦げる|こげる
+W 鍋が焦げる||a pot burns|锅焦了
+R 焦[こ]がす
+K 焦る|あせる
+W 気持ちが焦る||feel impatient|心情焦躁
+K 弾く|ひく
+W ギターを弾く||play the guitar|弹吉他
+K 弾む|はずむ
+W 声が弾む||one's voice is full of excitement|声音兴奋
+K 弾|たま
+W ピストルの弾||a bullet|手枪的子弹
+K 滑る|すべる
+W 氷の上を滑る||skate on the ice|在冰上滑
+K 滑らかな|なめらか
+W 滑らかな表面||a smooth surface|光滑的表面
+K 覆う|おおう
+W 両手で顔を覆う||cover your face with your hands|用双手盖住脸
+K 覆す|くつがえす
+W 現状を覆す||radically change the present state|颠覆现状
+K 盛んな|さかん
+W 盛んなスポーツ||a popular sport|兴盛的体育运动
+K 盛り|さかり
+W 暑い盛り||the height of summer|正热的时候
+K 盛る|もる
+W 器に料理を盛る||serve a dish|把饭菜盛到器皿里
+W 盛り上がる||mound, come to life|鼓起、高涨
+W ◆目盛り|めもり|a graduation|刻度
+W ◆大盛|おおもり|a large serving|大碗
+K 怠ける|なまける
+W 仕事を怠ける||neglect one's work|工作偷懒
+W ◆怠け者|なまけもの|a lazy person|懒人
+K 怠る|おこたる
+W 健康管理を怠る||to not take care of your health|疏忽健康管理
+W 注意を怠る||be careless|疏忽大意
+K 跳ぶ|とぶ
+W ◆幅跳び|はばとび|a long jump|跳远
+W ◆棒高跳び|ぼうたかとび|the pole vault|撑杆跳
+K 跳ねる|はねる
+W ウサギが跳ねる||a rabbit hops|兔子在跳
+X1 a、bの言葉の読みを書き、正しいほうを選びなさい。
+Q 締め切りが近付いて気持ちばかり（a. 焦げる　b. 焦る）。>>截止日期临近，心里干着急。
+Q 住宅の売買契約を（a. 交える　b. 交わす）。>>签订住宅买卖合同。
+Q この島は漁業が（a. 盛りだ　b. 盛んだ）。>>这个岛渔业很兴盛。
+Q 桜が咲くと、公園全体がピンク色に（a. 染まる　b. 染みる）。>>樱花一开，整个公园都染成了粉红色。
+Q このボールペンは（a. 厳か　b. 滑らか）に書ける。>>这支圆珠笔写起来很顺滑。
+Q チームは周囲の予想を（a. 覆して　b. 負かして）優勝した。>>球队颠覆了周围的预测，获得了冠军。
+X2 ＿＿の部分を漢字で書くとき、最もよいものを□から選びなさい。
+B a. 覆|b. 老|c. 滑|d. 怠|e. 訪|f. 平|g. 弾|h. 潜|i. 負|j. 盛|k. 跳|l. 染
+Q 7|責任を{おう}。|＿う>>承担责任。
+Q 8|悲惨な光景に目を{おおう}。|＿う>>悲惨的景象让人不忍直视。
+Q 9|安全確認を{おこたる}。|＿る>>疏忽安全确认。
+Q 10|器に和菓子を{もる}。|＿る>>把日式点心盛在器皿里。
+Q 11|話が{はずむ}。|＿む>>谈得很起劲。
+Q 12|大きい木の陰に{ひそむ}。|＿む>>藏在大树的阴影里。
+Q 13|知人宅を{たずねる}。|＿ねる>>拜访熟人家。
+Q 14|泥が{はねる}。|＿ねる>>泥水溅起来。
+A Ⅰ：①b ②b ③b ④a ⑤b ⑥a　Ⅱ：⑦i ⑧a ⑨d ⑩j ⑪g ⑫h ⑬e ⑭k

@@ -1,0 +1,132 @@
+T 欲・俗・裕|ヨク・ゾク・ユウ|欲・俗・裕|
+I Q. ＿の読みは？　活躍　→かつやく。同じ部分でも音読みが違うものに注意！
+S 同じ部分があっても読みが違うもの　△＝決まった熟語だけ覚えればいい読み|部件相同但读音不同的字　△＝只需记住固定词语的读音|Same part, different readings (△ = only in set words)
+G 翟|
+K 曜|ヨウ
+W 曜日|ようび|day of the week|一星期中的一天
+K 濯|タク
+W 洗濯|せんたく|the washing|洗衣服
+K 躍|ヤク
+W 活躍|かつやく|activity|活跃
+W 飛躍|ひやく|a jump|飞跃
+G 谷|
+K 谷|△コク
+W 渓谷|けいこく|a ravine|溪谷
+K 欲|ヨク
+W 意欲|いよく|will|欲望、热情
+W 欲求|よっきゅう|a desire|欲望
+K 俗|ゾク
+W 民俗|みんぞく|a race|民俗
+W 俗語|ぞくご|slang|俗语
+K 裕|ユウ
+W 余裕|よゆう|time (to spare), a margin|宽裕
+W 裕福な|ゆうふく|wealthy|富裕的
+G 軍|
+K 軍|グン
+W 軍備|ぐんび|armaments|军备
+W 軍事|ぐんじ|military affairs|军事
+K 運|ウン
+W 運輸|うんゆ|transport|运输
+W 運命|うんめい|fate, fortune|命运
+K 揮|キ
+W 指揮|しき|command, direction|指挥
+W 発揮|はっき|show, display|发挥
+K 輝|キ
+W 輝く|かがやく|shine|闪耀|＊主に訓読みをする
+G 㒸|
+K 隊|タイ
+W 軍隊|ぐんたい|an army, troops|军队
+W 自衛隊|じえいたい|self-defence forces|自卫队
+K 墜|ツイ
+W 墜落|ついらく|a fall, a crash|坠落
+K 遂|スイ
+W 遂行|すいこう|accomplishment, execution|完成
+W 未遂|みすい|attempted|未遂
+G 処|
+K 処|ショ
+W 対処|たいしょ|cope, deal|处理
+W 処分|しょぶん|disposal|处分
+K 拠|キョ・コ△
+W 根拠|こんきょ|grounds, basis|根据
+W 占拠|せんきょ|an occupation|占据
+W 証拠|しょうこ|evidence|证据
+G 延|
+K 延|エン
+W 延長|えんちょう|an extension|延长
+W 延期|えんき|a postponement|延期
+K 誕|タン
+W 誕生|たんじょう|a birth|出生
+W 生誕|せいたん|a birth|诞生
+G 能|
+K 能|ノウ
+W 本能|ほんのう|an instinct|本能
+W 能率|のうりつ|efficiency|效率
+K 態|タイ
+W 実態|じったい|actual conditions|实际状态
+W 生態|せいたい|ecology|生态
+G 単|
+K 単|タン
+W 単純|たんじゅん|simple (minded)|单纯
+W 単独|たんどく|single, individual|单独
+K 禅|△ゼン
+W 座禅|ざぜん|Zen meditation|坐禅
+G 今|
+K 今|コン
+W 今後|こんご|from now on, in the future|今后
+W 今年度|こんねんど|the fiscal year|本年度
+K 吟|ギン
+W 吟味|ぎんみ|an examination, inquiry|斟酌、玩味
+G 空|
+K 空|クウ
+W 空腹|くうふく|hunger|空腹
+W 上空|じょうくう|the sky|上空
+K 控|コウ
+W 控除|こうじょ|subtraction|扣除
+W 控訴|こうそ|an appeal to a higher court|上诉
+G 屋|
+K 屋|ヤ・オク
+W 屋根|やね|a roof|屋顶
+W 小屋|こや|a hut, a cabin|小屋
+W 屋上|おくじょう|the rooftop|屋顶
+W 屋外|おくがい|outdoors|室外
+K 握|アク
+W 握手|あくしゅ|handshaking|握手
+W 把握する|はあく|grasp, understand|掌握（情况）
+G 番|
+K 番|バン
+W 当番|とうばん|one's turn (on duty)|值班
+W 背番号|せばんごう|a uniform number (sports)|背上的号码
+K 審|シン
+W 審査|しんさ|an examination|审查
+W 不審な|ふしん|doubtful|可疑的
+G 斥|
+K 斥|△セキ
+W 排斥|はいせき|be rejected|排斥
+K 訴|ソ
+W 訴訟|そしょう|a lawsuit|诉讼
+W 起訴|きそ|prosecution, indictment|起诉
+G 骨|
+K 骨|コツ
+W 骨折|こっせつ|a bone fracture|骨折
+W 骨とう品|•こっとうひん|an antique|古董
+K 滑|カツ
+W 円滑な|えんかつ|smooth|顺利的
+W 滑走路|かっそうろ|a runway|跑道
+X1 a、bの言葉の読みを書き、正しいほうを選びなさい。
+Q （a. 処分　b. 証拠）不十分で不起訴になる。>>因证据不足而不予起诉。
+Q 待望の赤ちゃんが（a. 生態　b. 誕生）する。>>期盼已久的宝宝出生了。
+Q （a. 審査　b. 吟味）が通ると、クレジットカードが発行される。>>审查通过后就会发放信用卡。
+Q 二人はかたい（a. 握手　b. 把握）を交わした。>>两人紧紧地握了手。
+Q 参加者の協力によって会は（a. 単純　b. 円滑）に行われた。>>在参加者的配合下，会议顺利进行。
+Q 税金の医療費（a. 控除　b. 訴訟）について教えてください。>>请告诉我关于税金中医疗费扣除的事。
+X2 ＿＿の部分を漢字で書くとき、最もよいものを□から選びなさい。
+B a. 躍|b. 輝|c. 墜|d. 軍|e. 俗|f. 隊|g. 濯|h. 曜|i. 遂|j. 裕|k. 欲|l. 揮
+Q 7-1|オーケストラの{しき}をする。|指＿>>指挥管弦乐队。
+Q 7-2|{ぐんじ}問題|＿事>>军事问题
+Q 8-1|経済的な{よゆう}|余＿>>经济上的宽裕
+Q 8-2|{よっきゅう}を満たす。|＿求>>满足欲望。
+Q 9-1|任務を{すいこう}する。|＿行>>完成任务。
+Q 9-2|飛行機が{ついらく}する。|＿落>>飞机坠落。
+Q 10-1|話が{ひやく}する。|飛＿>>说话跳跃（逻辑跳跃）。
+Q 10-2|{せんたく}日和|洗＿>>适合洗衣服的好天气
+A Ⅰ：①b ②b ③a ④a ⑤b ⑥a　Ⅱ：⑦1l 2d ⑧1j 2k ⑨1i 2c ⑩1a 2g

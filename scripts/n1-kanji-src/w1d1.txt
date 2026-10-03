@@ -1,0 +1,126 @@
+T 五・語・悟|ゴ・ゴ・ゴ|五・语・悟|
+I Q. ＿の音読みは？　故　→「古」の音読みは「コ」。「故」「固」「個」「湖」は同じ部分「古」と同じ音読み「コ」をもつ漢字！
+S 同じ読みの漢字がたくさんあるもの①|同音汉字多的字①|Kanji that share a reading ①
+G 古|コ
+K 古
+W 古典|こてん|a classic|古典
+W 古代の|こだい|ancient times|古代的
+K 固
+W 固定|こてい|stability, fixation|固定
+W 固有の|こゆう|peculiar to ~|固有的
+K 個
+W 個性|こせい|individuality|个性
+W 個別の|こべつ|individual / separate|个别
+K 故
+W 事故|じこ|an accident|事故
+W 故人|こじん|the deceased|故人
+K 湖
+W 琵琶湖|びわこ|Lake Biwa|琵琶湖
+W 湖畔|こはん|lakeside|湖畔
+G 五|ゴ
+K 五
+W 五十音|ごじゅうおん|Japanese syllabary|五十音
+W 五輪|ごりん|the Olympics|奥运五环
+K 語
+W 言語|げんご|language|言语
+W 語句|ごく|words and phrases|语句
+K 悟
+W 覚悟|かくご|preparedness|精神准备
+G 未|ミ
+K 未
+W 未知|みち|unknown|未知
+W 未定|みてい|undecided / indefinite|未决定
+K 味
+W 中味|なかみ|contents|内容
+W 味覚|みかく|taste|味觉
+K 魅
+W 魅力|みりょく|charm|魅力
+W 魅了|みりょう|fascinate|使…入迷
+G 工|コウ
+K 工
+W 加工|かこう|processing|加工
+W 細工|•さいく|handwork|工艺（品）
+K 紅
+W 紅葉|こうよう|autumn leaves|红叶、枫叶|＊「もみじ」とも読む。
+K 功
+W 成功|せいこう|success|成功
+W 功績|こうせき|achievements|功绩
+K 巧
+W 巧妙な|こうみょう|clever|巧妙的
+W 精巧な|せいこう|elaborate|精巧的
+K 項
+W 項目|こうもく|a heading|项目
+W 事項|じこう|matters|事项
+K 攻
+W 専攻|せんこう|a major / specialty|专门研究、主修
+W 攻撃|こうげき|an attack|攻击
+K 貢
+W 貢献|こうけん|contribute|贡献
+G 取|シュ
+K 取
+W 取材|しゅざい|collect data|采访
+W 取得|しゅとく|acquisition|取得
+K 趣
+W 趣味|しゅみ|a hobby|兴趣
+W 趣向|しゅこう|a device|方案
+G 章|ショウ
+K 章
+W 文章|ぶんしょう|a sentence / composition|文章
+W 第一章|だいいっしょう|chapter 1|第一章
+K 障
+W 故障|こしょう|a break-down, failure|故障
+W 障害|しょうがい|an obstacle|障碍
+K 彰
+W 表彰|ひょうしょう|commendation|表彰
+W ◆表彰状|ひょうしょうじょう|a testimonial|奖状
+G 甫|ホ
+K 補
+W 補足|ほそく|supplementation|补充
+K 捕
+W 捕獲|ほかく|capture|捕获
+K 舗
+W 舗装|ほそう|pavement|铺路
+K 浦
+W 霞ヶ浦・浦安・浦和〈地名〉|かすみがうら・うらやす・うらわ||（地名）|＊主に訓読みをする。
+G 郷|キョウ
+K 郷
+W 故郷|こきょう|a hometown|故乡
+W 帰郷|ききょう|homecoming|回老家
+K 響
+W 影響|えいきょう|influence, effect|影响
+W 反響|はんきょう|a response|反响
+G 帯|タイ
+K 帯
+W 世帯|せたい|a household|（自立门户）家庭
+W 携帯|けいたい|portable|携带
+K 滞
+W 渋滞|じゅうたい|a traffic jam|停滞不前
+W 滞在|たいざい|stay|逗留
+G 朱|シュ
+K 朱
+W 朱色|しゅいろ|cinnabar red|朱红色
+K 珠
+W 珠算|しゅざん|calculations on the abacus|珠算
+W 真珠|•しんじゅ|a pearl|珍珠
+K 殊
+W 特殊|とくしゅ|specials|特殊
+K 株
+W 株|かぶ|a stump, stocks|树桩；股份|＊主に訓読みをする。
+X1 a、bの言葉の読みを書き、正しいほうを選びなさい。
+Q 運転免許を（a. 取得　b. 取材）するために自動車学校に通う。>>为了取得驾照，去驾校学车。
+Q 来年の3月まで日本に（a. 世帯　b. 滞在）する予定だ。>>预定在日本逗留到明年3月。
+Q テレビの受信（a. 故障　b. 障害）が発生している地区がある。>>有些地区出现了电视信号接收障碍。
+Q 宇宙には（a. 未定　b. 未知）の生物が生存する可能性がある。>>宇宙中有可能存在未知的生物。
+Q その記事に対する（a. 反響　b. 影響）は大きく、手紙やメールが5百件以上も寄せられた。>>那篇报道反响很大，收到了五百多封来信和邮件。
+Q 日本人は日本（a. 固有　b. 固定）の文化をもっと大切にするべきではないだろうか。>>日本人难道不应该更加珍视日本固有的文化吗？
+X2 ＿＿の部分を漢字で書くとき、最もよいものを□から選びなさい。
+B a. 殊|b. 株|c. 補|d. 語|e. 功|f. 五|g. 攻|h. 浦|i. 珠|j. 捕|k. 巧|l. 悟
+Q 7-1|{せいこう}に作られた機械|精＿>>制作精巧的机器
+Q 7-2|ロケットの打ち上げに{せいこう}する。|成＿>>火箭发射成功。
+Q 8-1|{しんじゅ}のネックレス|真＿>>珍珠项链
+Q 8-2|{とくしゅ}な事情|特＿>>特殊的情况
+Q 9-1|{ほそく}説明|＿足>>补充说明
+Q 9-2|動物を{ほかく}する。|＿獲>>捕获动物。
+Q 10-1|{げんご}学を学ぶ。|言＿>>学习语言学。
+Q 10-2|死を{かくご}する。|覚＿>>做好死的心理准备。
+A Ⅰ：①a ②b ③b ④b ⑤a ⑥a　Ⅱ：⑦1k 2e ⑧1i 2a ⑨1c 2j ⑩1d 2l

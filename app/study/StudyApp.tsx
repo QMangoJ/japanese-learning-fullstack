@@ -444,7 +444,7 @@ function AuthBanner() {
 function goType(ty: TypeKey) {
 	if (ty === "reading" && LEVEL !== "n3" && LEVEL !== "n2") return;
 	if (ty === "listening" && LEVEL !== "n3" && LEVEL !== "n2") return;
-	if (LEVEL === "n1" && ty !== "grammar" && ty !== "vocab") return;
+	if (LEVEL === "n1" && ty !== "grammar" && ty !== "vocab" && ty !== "kanji") return;
 	const nextMod = moduleFrom(LEVEL, ty);
 	const here = typeof window !== "undefined" ? pathToKey(window.location.pathname) : "#/";
 	const day = parseDayRoute(here);
@@ -471,7 +471,7 @@ function Sidebar({ routeKey, onLevel }: { routeKey: string; onLevel: (lv: LevelK
 	const types: [TypeKey, string, string][] = [
 		["grammar", "📘", lx("语法", "Grammar")],
 		["vocab", "📗", lx("词汇", "Vocabulary")],
-		...(LEVEL === "n1" ? [] : ([["kanji", "📙", lx("汉字", "Kanji")]] as [TypeKey, string, string][])),
+		["kanji", "📙", lx("汉字", "Kanji")],
 		...(LEVEL === "n3" || LEVEL === "n2" ? ([["reading", "📕", lx("读解", "Reading")]] as [TypeKey, string, string][]) : []),
 		...(LEVEL === "n3" || LEVEL === "n2" ? ([["listening", "🎧", lx("听解", "Listening")]] as [TypeKey, string, string][]) : []),
 	];
@@ -1132,7 +1132,6 @@ export function StudyApp() {
 				showTypebar={routeKey === "#/" || Boolean(day)}
 				showReading={LEVEL === "n3" || LEVEL === "n2"}
 				showListening={LEVEL === "n3" || LEVEL === "n2"}
-				showKanji={LEVEL !== "n1"}
 				onBack={() => (day ? navTo("#/") : reviewRoute?.id ? navTo("#/review") : topicsRoute?.slug ? navTo("#/topics") : history.length > 1 ? navigate(-1) : navTo("#/"))}
 				onOpenLevel={() => setSheet("level")}
 			/>

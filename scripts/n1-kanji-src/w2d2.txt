@@ -1,0 +1,126 @@
+T 違・偉・緯・衛|イ・イ・イ・エイ|违・伟・纬・卫|
+I Q. ＿の読みは？　行列　→ぎょうれつ。「例」の読みは「レイ」だけ。
+S 同じ部分の音読みが2つ以上あるもの②　例外に注意！|同一部件有两个以上音读的字②　注意例外！|Parts with two or more on-readings ② Watch the exceptions!
+G 列|レツ
+K 列|レツ
+W 行列|ぎょうれつ|a procession|行列
+K 烈|レツ
+W 強烈な|きょうれつ|severe|强烈的
+K 裂|レツ
+W 分裂|ぶんれつ|a divide, split|分裂
+K 例|レイ
+W 慣例|かんれい|a custom|惯例
+G 韋|イ
+K 違|イ
+W 相違|そうい|difference|不同
+K 偉|イ
+W 偉大な|いだい|great, grand|伟大的
+K 緯|イ
+W 経緯|けいい|how ... came about|经纬、原委
+K 衛|エイ
+W 護衛|ごえい|a guard, escort|护卫
+G 咅|バイ
+K 倍|バイ
+W 倍率|ばいりつ|magnification, degree of competition|倍率
+K 培|バイ
+W 栽培|さいばい|cultivation|栽培
+K 陪|バイ
+W 陪審員|ばいしんいん|a juror|陪审员
+K 賠|バイ
+W 賠償|ばいしょう|compensation|赔偿
+K 剖|ボウ
+W 解剖|かいぼう|a dissection, analysis|解剖
+G 因|イン
+K 因|イン
+W 原因|げんいん|a cause|原因
+K 姻|イン
+W 婚姻届|こんいんとどけ|registration of a marriage|结婚登记申请书
+K 恩|オン
+W 恩恵|おんけい|a favour|恩惠
+G 戠|シキ
+K 識|シキ
+W 知識|ちしき|knowledge|知识
+K 織|シキ
+W 組織|そしき|an organization|组织
+K 職|ショク
+W 職業|しょくぎょう|an occupation/profession|职业
+G 禺|グウ
+K 偶|グウ
+W 偶然|ぐうぜん|by chance|偶然
+K 隅|グウ
+W 一隅|いちぐう|a corner|一角
+K 遇|グウ
+W 待遇|たいぐう|treatment|待遇
+K 愚|グ
+W 愚痴|ぐち|a grumble|牢骚
+G 疑|ギ
+K 疑|ギ
+W 疑問|ぎもん|a question, doubt|疑问
+K 擬|ギ
+W 模擬試験|もぎしけん|a mock exam|模拟考试
+K 凝|ギョウ
+W 凝視|ぎょうし|a stare|凝视
+G 良|ロウ
+K 郎|ロウ
+W 太郎|たろう|〈人名〉|（人名）
+K 朗|ロウ
+W 朗読|ろうどく|reading aloud|朗读
+K 浪|ロウ
+W 浪費|ろうひ|a waste|浪费
+K 廊|ロウ
+W 廊下|ろうか|a corridor|走廊
+K 良|リョウ
+W 善良な|ぜんりょう|good-natured|善良的
+G 意|オク
+K 億|オク
+W 一億|いちおく|a hundred million|一亿
+K 憶|オク
+W 憶測|おくそく|conjecture|揣测
+K 臆|オク
+W 臆病な|おくびょう|cowardly, timid|胆怯的
+K 意|イ
+W 意識|いしき|consciousness|意识
+G 是|ゼ
+K 是|ゼ
+W 是非|ぜひ|right or wrong, by all means|是非；务必
+W 是正|ぜせい|a correction|订正
+K 提|テイ
+W 提出|ていしゅつ|submit, hand in|提出
+K 堤|テイ
+W 堤防|ていぼう|an embankment|堤防
+G 既|キ
+K 既|キ
+W 既成|きせい|established|既成
+W 既製品|きせいひん|ready-made products|既成品
+K 概|ガイ
+W 概念|がいねん|a general idea|概念
+K 慨|ガイ
+W 憤慨|ふんがい|indignation, anger|愤慨
+G 曷|ケイ
+K 掲|ケイ
+W 掲示|けいじ|a notice|告示
+W 掲示板|けいじばん|a bulletin board|告示牌
+K 喝|カツ
+W 恐喝|きょうかつ|a threat|恐吓
+K 渇|カツ
+W 渇水|かっすい|a shortage of water|水荒
+K 褐|カツ
+W 褐色|かっしょく|brown|褐色
+X1 a、bの言葉の読みを書き、正しいほうを選びなさい。
+Q 細胞（a. 行列　b. 分裂）を顕微鏡で観察する。>>用显微镜观察细胞分裂。
+Q 税金の格差を（a. 是正　b. 既成）する。>>纠正税金的差距。
+Q 職場での（a. 恩恵　b. 待遇）を改善する。>>改善职场待遇。
+Q 事件のこれまでの（a. 経緯　b. 相違）を説明する。>>说明事件至今的来龙去脉。
+Q 志望校の（a. 賠償　b. 倍率）を調べる。>>查一下志愿学校的录取竞争率。
+Q レポートを（a. 提出　b. 堤防）する。>>提交报告。
+X2 ＿＿の部分を漢字で書くとき、最もよいものを□から選びなさい。
+B a. 臆|b. 疑|c. 朗|d. 憶|e. 擬|f. 喝|g. 億|h. 掲|i. 浪|j. 廊|k. 凝|l. 褐
+Q 7-1|人口1{おく}3千万人の国|1＿>>人口一亿三千万的国家
+Q 7-2|{おくびょう}な性格|＿病>>胆小的性格
+Q 8-1|{ろう}下を走るな。|＿下>>不要在走廊上奔跑。
+Q 8-2|{ろう}費を改めて節約する。|＿費>>改掉浪费的习惯，注意节约。
+Q 9-1|{もぎ}試験を受ける。|模＿>>参加模拟考试。
+Q 9-2|さまざまな事に{ぎもん}を持つ。|＿問>>对各种事情抱有疑问。
+Q 10-1|{けいじばん}を見る。|＿示板>>看告示牌。
+Q 10-2|{かっしょく}の肌|＿色>>褐色的皮肤
+A Ⅰ：①b ②a ③b ④a ⑤b ⑥a　Ⅱ：⑦1g 2a ⑧1j 2i ⑨1e 2b ⑩1h 2l

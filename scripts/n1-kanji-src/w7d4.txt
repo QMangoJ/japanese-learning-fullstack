@@ -1,0 +1,114 @@
+T 選挙権・著作権|せんきょけん・ちょさくけん|选举权・著作权|
+I Q. 後ろにつく漢字は？　銀行＿（士？　員？　師？　人？）　→銀行員。
+S 語彙の後ろにつく漢字|加在词汇后面的汉字|Kanji suffixes
+G 初級の漢字|しょきゅうのかんじ
+K 員|～の仕事や役を持った人
+W 銀行員|ぎんこういん|a banker|银行职员
+W 作業員|さぎょういん|a worker|工作人员
+K 室|～のための部屋
+W 会議室|かいぎしつ|a meeting room|会议室
+W 休憩室|きゅうけいしつ|a lounge|休息室
+K 界|～の世界
+W 経済界|けいざいかい|a business community|经济界
+W 芸能界|げいのうかい|the entertainment industry|艺能界
+K 業|～の仕事
+W 製造業|せいぞうぎょう|the manufacturing industry|制造业
+W 運送業|うんそうぎょう|the transportation industry|运输业
+K 力|～のちから
+W 理解力|りかいりょく|ability to understand|理解力
+W 集中力|しゅうちゅうりょく|concentration|集中力
+K 色|～のいろ、カラー
+W 天然色|てんねんしょく|natural colour|天然色
+W 国際色|こくさいしょく|international atmosphere|国际化氛围
+K 場|～するための広いところ
+W 駐車場|ちゅうしゃじょう|a parking lot|停车场
+W 運動場|うんどうじょう|a playground|操场
+K 所|～するところ
+W 喫煙所|きつえんじょ|a smoking room|吸烟场所
+W 営業所|えいぎょうしょ|sales branch office|营业所
+G 中級の漢字|ちゅうきゅうのかんじ
+K 権|～の権利
+W 選挙権|せんきょけん|the right to vote|选举权
+W 著作権|ちょさくけん|copyright|著作权
+W 所有権|しょゆうけん|ownership|所有权
+W 拒否権|きょひけん|veto|拒绝权
+K 機|～の機械
+W 洗濯機|せんたくき|a washing machine|洗衣机
+W 扇風機|せんぷうき|a fan|风扇
+W 掃除機|そうじき|a vacuum cleaner|吸尘器
+W 計算機|けいさんき|a calculator|计算器
+K 師|～の資格をもつ人
+W 看護師|かんごし|a nurse|护士
+W 薬剤師|やくざいし|a pharmacist|药剂师
+K 器|～の道具
+W 補聴器|ほちょうき|a hearing aid|助听器
+W 聴診器|ちょうしんき|stethoscope|听诊器
+K 式|～のスタイル
+W 日本式|にほんしき|Japanese style|日本式
+W 電動式|でんどうしき|motorized|电动式
+K 流|～のやり方
+W 日本流|にほんりゅう|Japanese style|日本流
+W 自己流|じこりゅう|one's own way|自己独特的做法
+W 我流|がりゅう|one's own way|自己独特的做法
+K 側|～のサイド
+W 右側|みぎがわ|right side|右侧
+W 内側|うちがわ|inside|内侧
+K 感|～の気持ち
+W 疲労感|ひろうかん|fatigue|疲劳感
+W 充実感|じゅうじつかん|satisfaction|充实感
+W 達成感|たっせいかん|feeling of achievement|成就感
+W 危機感|ききかん|sense of crisis|危机感
+K 園|～が集まっている場所
+W 植物園|しょくぶつえん|a botanical garden|植物园
+W 動物園|どうぶつえん|zoo|动物园
+K 営|～が経営する
+W 市営住宅|しえいじゅうたく|public housing run by the city|市营住宅
+W 都営地下鉄|とえいちかてつ|municipal subway|都营地铁
+G 上級の漢字|じょうきゅうのかんじ
+K 街|まち
+W 地下街|ちかがい|an underground mall|地下街
+W 商店街|しょうてんがい|the shopping street|商店街
+W 繁華街|はんかがい|downtown|繁华街
+W 中華街|ちゅうかがい|China town|中华街
+K 圏|～の範囲
+W 首都圏|しゅとけん|a metropolitan area|首都圈
+W 大気圏|たいきけん|the atmosphere|大气圈
+K 剤|～のくすり／薬品
+W 消化剤|しょうかざい|a stomack medicine|消化剂
+W 除草剤|じょそうざい|a herbicide|除草剂
+W 接着剤|せっちゃくざい|an adhesive|粘贴剂
+W 精神安定剤|せいしんあんていざい|a tranquilizer|精神安定剂
+K 症|病気の状態
+W 自閉症|じへいしょう|autism|自闭症
+W 花粉症|かふんしょう|pollen|花粉症
+W 後遺症|こういしょう|an after-effect|后遗症
+W 不眠症|ふみんしょう|insomnia|失眠症
+K 証|～の証明書
+W 免許証|めんきょしょう|driver's license|驾照
+W 許可証|きょかしょう|a permit|许可证
+K 士|～の専門家
+W 保育士|ほいくし|staff at a nursery school|保育员
+W 運転士|うんてんし|a driver's license|司机
+W 介護士|かいごし|a caregiver|护理师
+W 理学療法士|りがくりょうほうし|a physiotherapist|理疗师
+K 軸|～のじく
+W 時間軸|じかんじく|a timeline|时间轴
+W 縦軸⇔横軸|たてじく⇔よこじく|vertical⇔horizonal|纵轴⇔横轴
+X1 a、bの言葉の読みを書き、正しいほうを選びなさい。
+Q 祖母は耳が遠いので（a. 聴診器　b. 補聴器）が必要だ。>>祖母耳背，需要助听器。
+Q 習ったことはないので、（a. 自己流　b. 日本流）で花を生けます。>>因为没学过，所以按自己的方式插花。
+Q 伝統芸能の後継者不足に（a. 危機感　b. 充実感）を抱く。>>对传统艺能后继无人抱有危机感。
+Q 土地の（a. 所有権　b. 著作権）をめぐって争う。>>围绕土地所有权发生争执。
+Q 今日は（a. 疲労感　b. 集中力）に欠け、作業が進まない。>>今天注意力不集中，工作没有进展。
+Q このシャッターは（a. 計算機　b. 電動式）です。>>这个卷帘门是电动式的。
+X2 ＿＿の部分を漢字で書くとき、最もよいものを□から選びなさい。
+B a. 業|b. 街|c. 界|d. 権|e. 剤|f. 軸|g. 員|h. 証|i. 側|j. 症|k. 色|l. 圏
+Q 7|事故の{こういしょう}|後遺＿>>事故的后遗症
+Q 8|{しゅとけん}のニュース|首都＿>>首都圈的新闻
+Q 9|{しょうかざい}を飲む。|消化＿>>服用消化剂。
+Q 10|グラフの{たてじく}|縦＿>>图表的纵轴
+Q 11|車の{めんきょしょう}|免許＿>>汽车驾照
+Q 12|駅前の{しょうてんがい}|商店＿>>车站前的商店街
+Q 13|{げいのうかい}に入る。|芸能＿>>进入演艺界。
+Q 14|{こくさいしょく}豊か|国際＿>>富有国际色彩
+A Ⅰ：①b ②a ③a ④a ⑤b ⑥b　Ⅱ：⑦j 後遺症 ⑧l 首都圏 ⑨e 消化剤 ⑩f 縦軸 ⑪h 免許証 ⑫b 商店街 ⑬c 芸能界 ⑭k 国際色

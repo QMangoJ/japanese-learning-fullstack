@@ -1,0 +1,127 @@
+T 興味・興奮|きょうみ・こうふん|兴趣・兴奋|
+I Q. ＿の読みは？　同一　→どういつ。「同一人物」「同一料金」などと使う。
+S 2つずつ覚えたい音読み|要成对记住的音读|On-readings to learn in pairs
+G 興|
+K 興|キョウ
+W 興味|きょうみ|interest|兴趣
+W 余興|よきょう|entertainment|余兴
+K 興|コウ
+W 興奮|こうふん|excitement|兴奋
+W 復興|ふっこう|reconstruction|复兴
+G 一|
+K 一|イチ
+W 一律|いちりつ|uniformly|一律
+W 一概に|いちがい|indiscriminately|一概
+K 一|イツ
+W 統一|とういつ|unification|统一
+W 同一の|どういつ|identical|同样的
+G 石|
+K 石|セキ
+W 岩石|がんせき|a rock|岩石
+W 化石|かせき|a fossil|化石
+K 石|シャク
+W 磁石|じしゃく|a magnet / compass|磁铁、指南针
+G 施|
+K 施|シ
+W 実施|じっし|enforcement|实施
+W 施設|しせつ|an institution|设施
+K 施|セ
+W 施工|せこう|enforcement|施工
+W 施術|せじゅつ|a treatment|实施手术
+G 素|
+K 素|ソ
+W 酸素|さんそ|oxygen|氧气
+W 素材|そざい|material|素材
+K 素|ス
+W 素直な|すなお|gentle|坦率、直率
+W 素敵な|すてき|nice|了不起
+G 無|
+K 無|ム
+W 無視|むし|ignore|无视
+W 無念な|むねん|regretful|气愤、悔恨
+K 無|ブ
+W 無事|ぶじ|unharmed, safe|平安
+W 無難な|ぶなん|safe|无可非议
+G 率|
+K 率|リツ
+W 効率|こうりつ|efficiency|效率
+W 比率|ひりつ|a ratio|比率
+K 率|ソツ
+W 統率|とうそつ|leadership|统率
+W 軽率な|けいそつ|hasty|轻率的
+G 平|
+K 平|ヘイ
+W 平均|へいきん|average|平均
+W 公平な|こうへい|fair|公平
+K 平|ビョウ
+W 平等|びょうどう|equality|平等
+G 易|
+K 易|エキ
+W 貿易|ぼうえき|trade|贸易
+K 易|イ
+W 簡易|かんい|simple|简易
+W 安易な|あんい|easy|容易的
+G 児|
+K 児|ジ
+W 児童|じどう|children|幼儿
+W 育児|いくじ|childcare, nursing|育儿
+K 児|ニ
+W 小児科|しょうにか|pediatrics|小儿科
+G 装|
+K 装|ソウ
+W 装置|そうち|a device|装置
+W 服装|ふくそう|clothes|服装
+K 装|ショウ
+W 衣装|いしょう|clothes|服装
+G 省|
+K 省|ショウ
+W 省略|しょうりゃく|an abbreviation, abridgment|省略
+W 省庁|しょうちょう|ministries|省厅（政府部门）
+K 省|セイ
+W 反省|はんせい|reflection|反省
+W 帰省|きせい|homecoming|返乡
+G 重|
+K 重|ジュウ
+W 重要な|じゅうよう|important|重要
+W 厳重な|げんじゅう|strict|严重
+K 重|チョウ
+W 尊重|そんちょう|respect, esteem|尊重
+W 貴重な|きちょう|valuable|贵重
+G 競|
+K 競|キョウ
+W 競合|きょうごう|a competition|竞争
+W 競技|きょうぎ|game, match, contest|运动比赛
+K 競|ケイ
+W 競馬|けいば|horse racing|赛马赌博
+W 競輪|けいりん|a bicycle race|自行车竞赛
+G 悪|
+K 悪|アク
+W 険悪な|けんあく|hostile|险恶
+W 悪魔|あくま|the Devil|恶魔
+K 悪|オ
+W 憎悪|ぞうお|hatred|憎恶
+W 悪寒|おかん|a chill|恶寒
+G 外|
+K 外|ガイ
+W 外来|がいらい|foreign|外来
+W 外交|がいこう|diplomacy|外交
+K 外|ゲ
+W 外科|げか|surgery|外科
+X1 a、bの言葉の読みを書き、正しいほうを選びなさい。
+Q 金メダルが取れた（a. 興奮　b. 余興）で、ゆうべは眠れませんでした。>>因为拿到金牌太兴奋，昨晚没睡着。
+Q （a. 尊重な　b. 貴重な）お時間をいただきまして、ありがとうございます。>>感谢您抽出宝贵的时间。
+Q （a. 貿易　b. 競合）する会社との争いが激しくなってきた。>>与竞争公司的争斗越来越激烈了。
+Q 車にはいろいろな安全（a. 装置　b. 衣装）がついています。>>车上装有各种安全装置。
+Q 文字や記号の表記を（a. 統一　b. 同一）する。>>统一文字和符号的写法。
+Q その場は（a. 険悪　b. 憎悪）なムードに包まれた。>>现场笼罩在险恶的气氛中。
+X2 ＿＿の部分はどう読みますか。□から選びなさい。
+B a. そつ|b. そ|c. そち|d. ちょう|e. せい|f. ひょう|g. へい|h. りつ|i. つ|j. びょう|k. しょう|l. す
+Q 7-1|{反省}する|はん＿>>反省
+Q 7-2|{省略}する|＿りゃく>>省略
+Q 8-1|男女{平等}|＿どう>>男女平等
+Q 8-2|試験の{平均}点|＿きん>>考试的平均分
+Q 9-1|{比率}は1対2|ひ＿>>比率是1比2
+Q 9-2|{軽率}な行動|けい＿>>轻率的行动
+Q 10-1|{酸素}ボンベ|さん＿>>氧气瓶
+Q 10-2|{素直}な性格|＿なお>>直率的性格
+A Ⅰ：①a ②b ③b ④a ⑤a ⑥a　Ⅱ：⑦1e 2k ⑧1j 2g ⑨1h 2a ⑩1b 2l

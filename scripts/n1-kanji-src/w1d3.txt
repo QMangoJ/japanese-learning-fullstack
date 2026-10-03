@@ -1,0 +1,130 @@
+T 講・構・購|コウ・コウ・コウ|讲・构・购|
+I Q. ＿の読みは？　倹約　→けんやく。難しい漢字語彙も同じ部分があれば読める！
+S 難しい漢字も読める！①|难的汉字也能读！①|You can read difficult kanji too! ①
+G 僉|ケン
+K 験
+W 体験|たいけん|an experience|体验
+W 実験|じっけん|an experiment|实验
+K 険
+W 危険な|きけん|dangerous|危险的
+W 険悪な|けんあく|fierce|险恶的
+K 検
+W 検査|けんさ|an exam|检查
+W 点検|てんけん|an inspection|检查
+K 剣
+W 真剣な|しんけん|serious|认真的
+W 剣道|けんどう|kendo; Japanese swordsmanship|（日本）剑术
+K 倹
+W 倹約|けんやく|frugal|节约
+G 冓|コウ
+K 講
+W 講義|こうぎ|a lecture|讲义、讲课
+W 聴講する|ちょうこう|attend (a lecture)|听讲
+K 構
+W 構成|こうせい|a composition|构成
+W 構造|こうぞう|a structure|构造
+K 購
+W 購買|こうばい|purchasing|购买
+W 購入|こうにゅう|a purchase|购买
+K 溝
+W 側溝|そっこう|side ditch|路边排水沟
+W 排水溝|はいすいこう|drain|排水沟
+G 票|ヒョウ
+K 標
+W 目標|もくひょう|a goal|目标
+W 標準|ひょうじゅん|a standard|标准
+K 票
+W 票|ひょう|a vote|票
+W 投票|とうひょう|voting|投票
+K 漂
+W 漂流|ひょうりゅう|drift|漂流
+W 漂白剤|ひょうはくざい|bleach|漂白剂
+G 氐|テイ
+K 低
+W 低下|ていか|decline|低下、下降
+W 低気圧|ていきあつ|low atmospheric pressure|低气压
+K 底
+W 海底|かいてい|the sea bottom|海底
+W 徹底|てってい|thorough|彻底
+K 抵
+W 抵抗|ていこう|resistance|抵抗
+W 大抵の|たいてい|generally|大体上的
+K 邸
+W 邸宅|ていたく|a mansion|府邸
+W 官邸|かんてい|an official residence|官邸
+G 菜|サイ
+K 菜
+W 野菜|やさい|vegetables|蔬菜
+W 菜食主義|さいしょくしゅぎ|vegetarianism|素食主义
+K 採
+W 採用|さいよう|adoption/employment|采用
+W 採算|さいさん|a profit|核算
+K 彩
+W 色彩|しきさい|colours|色彩
+W 多彩な|たさい|colourful|多彩的
+G 同|ドウ
+K 同
+W 同意|どうい|agree|同意
+W 同情|どうじょう|sympathy, compassion|同情
+K 銅
+W 銅像|どうぞう|a bronze statue|铜像
+W 銅メダル|どうメダル|a bronze medal|铜牌
+K 胴
+W 胴|どう|the trunk|躯干
+W 胴体|どうたい|the body|躯体
+G 厤|レキ
+K 歴
+W 履歴|りれき|one's personal history|履历
+W 経歴|けいれき|a career|经历
+K 暦
+W 西暦|せいれき|Anno Domini / Common Era|公历
+W 還暦|かんれき|sixtieth birthday|花甲
+G 県|ケン
+K 県
+W 県庁|けんちょう|a prefectural office|县政府
+W 都道府県|とどうふけん|prefectures|都道府县
+K 懸
+W 懸命な|けんめい|try very hard|拼命的
+W 懸賞|けんしょう|a prize|悬赏
+W 懸念|•けねん|a fear, worry|担忧
+G 表|ヒョウ
+K 表
+W 時刻表|じこくひょう|timetable|时刻表
+W 辞表|じひょう|a resignation|辞呈
+K 俵
+W 土俵|どひょう|sumo ring|相扑台
+G 俞|ユ
+K 輸
+W 輸出入|ゆしゅつにゅう|exportation and importation|进出口
+W 運輸|うんゆ|transportation|运输
+K 愉
+W 愉快な|ゆかい|pleasant|愉快的
+K 癒
+W 治癒|ちゆ|heal|治愈
+W 癒着|ゆちゃく|adhere|粘连、勾结
+K 諭
+W 教諭|きょうゆ|a teacher|教师
+G 倉|ソウ
+K 倉
+W 倉庫|そうこ|warehouse|仓库
+K 創
+W 創作|そうさく|a creation|创作
+W 創立|そうりつ|founding|创立
+X1 a、bの言葉の読みを書き、正しいほうを選びなさい。
+Q あの人は（a. 倹約家　b. 菜食主義）で、無駄遣いはしません。>>那个人很节俭，从不乱花钱。
+Q 薬を長く飲み続けるのは（a. 危険な　b. 真剣な）場合があります。>>长期持续服药有时是危险的。
+Q 今日は学長の（a. 購入　b. 講義）があります。>>今天有校长的讲课。
+Q オリンピックで（a. 銅　b. 胴）メダルをとった。>>在奥运会上获得了铜牌。
+Q 彼はとても（a. 懸命な　b. 愉快な）人で、人を笑わせるのが得意だ。>>他是个非常风趣的人，很会逗人笑。
+Q 面接で家族（a. 構成　b. 経歴）を聞かれた。>>面试时被问到了家庭成员构成。
+X2 ＿＿の部分を漢字で書くとき、最もよいものを□から選びなさい。
+B a. 険|b. 倉|c. 創|d. 検|e. 票|f. 歴|g. 剣|h. 表|i. 漂|j. 倹|k. 暦|l. 標
+Q 7-1|{そうこ}にしまう。|＿庫>>收进仓库。
+Q 7-2|{そうさく}ダンス|＿作>>创作舞蹈
+Q 8-1|{しんけん}に交際する。|真＿>>认真地交往。
+Q 8-2|手荷物{けんさ}|＿査>>行李检查
+Q 9-1|今年の{もくひょう}|目＿>>今年的目标
+Q 9-2|選挙で{とうひょう}する。|投＿>>在选举中投票。
+Q 10-1|{せいれき}2000年|西＿>>公元2000年
+Q 10-2|{りれき}書を書く。|履＿>>写履历书。
+A Ⅰ：①a ②a ③b ④a ⑤b ⑥a　Ⅱ：⑦1b 2c ⑧1g 2d ⑨1l 2e ⑩1k 2f

@@ -1,0 +1,99 @@
+T 攻める・責める|せめる・せめる|进攻・责备|
+I Q. 漢字で書くと？　よく練習して試合にのぞむ　→臨む。「向かう」という意味。
+S 訓読み③|训读③|Kun-readings ③
+G のぞむ|
+K 望|のぞむ
+W 改善を望む||hope for an improvement|期望改善
+W 望みがある〈希望[きぼう]〉||hope for|有希望
+K 臨|のぞむ
+W 海を臨む〈臨海[りんかい]〉||the seaside|临海
+W 試験に臨む||go to an exam|面临考试
+G せめる|
+K 攻|せめる
+W 相手チームを攻める||attack the opposing team|攻击对方的队
+K 責|せめる
+W 非を責める||accuse someone|责备错误
+G さす|
+K 差|さす
+W 傘を差す||use an umbrella|打伞
+W 差し歯|さしば|false teeth|假牙
+K 挿|さす
+W 花瓶に花を挿す||put flowers in a vase|把花插到花瓶
+K 指|さす
+W 指で指す||point one's finger at|用手指指
+W 北を指す||point to the North|指北方
+K 刺|さす
+W ナイフで刺す||stab with a knife|用刀子刺
+W とげを刺す||get a sliver|扎刺
+W 刺身|さしみ|raw fish|生鱼片
+G たつ|
+K 絶|たつ
+W 消息を絶つ||have not heard from|杳无音信
+W 命を絶つ||kill oneself|自杀
+W 食事を絶つ〈絶食[ぜっしょく]〉||quit eating|绝食
+K 断|たつ
+W 酒を断つ||quit drinking|戒酒
+W 食事を断つ〈断食[だんじき]〉||fast|断绝饮食
+K 裁|たつ
+W 布を裁つ||cut fabric|剪裁布
+G しめる|
+K 閉|しめる
+W 扉を閉める||close a door|关门
+W ふたを閉める||close a lid|关盖子
+K 締|しめる
+W ベルトを締める||wear a belt|系腰带
+W ネクタイを締める||wear a tie|系领带
+W 締め切る|しめきる|close|截止
+K 絞|しめる
+W 首を絞める||strangle someone|掐脖子
+K 占|しめる
+W 過半数を占める||be a majority|占多半数
+G はかる|
+K 計|はかる
+W 数や時間を計る||measure a number or time|测量数量和时间
+K 測|はかる
+W 熱を測る||take one's temperature|量温度
+W 長さ・広さを測る||measure length and width|测量长度、大小
+K 量|はかる
+W 重さを量る||measure weight|量重量
+W 量を量る||weigh|测量数量
+K 諮|はかる
+W 審議会に諮る||refer ... to a council|向审议会咨询
+K 謀|はかる
+W 暗殺を謀る||attempt an assassination|谋划暗杀
+K 図|はかる
+W 便宜を図る||facilitate|替人着想
+W 自殺を図る||commit suicide|寻死
+G おかす|
+K 犯|おかす
+W 罪・過ちを犯す||commit a crime|犯罪、犯错
+W 法を犯す||violate laws|犯法
+K 冒|おかす
+W 危険を冒す||take risks|冒危险
+K 侵|おかす
+W 領土を侵す||invade territory|侵犯领土
+W プライバシーを侵す||violate privacy|侵犯隐私
+G かえりみる|
+K 顧|かえりみる
+W 歴史・過去を顧みる||review history/the past|回顾历史、过去
+W 家庭を顧みない||think about family|不顾家庭|＊「振り返る」の意味。
+K 省|かえりみる
+W 自らを省みる||reflect on oneself|反省自己|＊「反省する」の意味。
+X1 a、bの言葉の読みを書き、正しいほうを選びなさい。
+Q 磁石の針が北の方向を（a. 指して　b. 計って）いる。>>磁针指向北方。
+Q 自ら命を（a. 絶つ　b. 犯す）若者が増えている。>>自杀的年轻人在增加。
+Q 「反対」と答えた人が過半数を（a. 締めて　b. 占めて）いる。>>回答“反对”的人占了半数以上。
+Q 金を渡して便宜を（a. 図る　b. 謀る）よう指示した。>>指示给钱以求关照。
+Q 仕事が忙しすぎて家庭を（a. 省みる　b. 顧みる）余裕がない。>>工作太忙，无暇顾及家庭。
+Q 難病に（a. 侵され　b. 絞められ）ながらも強く生きぬく人々がいる。>>有些人虽然身患疑难病症，却依然坚强地活着。
+X2 ＿＿の部分を漢字で書くとき、最もよいものを□から選びなさい。
+B a. 差|b. 量|c. 挿|d. 責|e. 断|f. 望|g. 諮|h. 攻|i. 測|j. 臨|k. 裁|l. 刺
+Q 7-1|進学を{のぞむ}。|＿む>>希望升学。
+Q 7-2|試験に{のぞむ}。|＿む>>参加考试。
+Q 8-1|傘を{さす}|＿す>>打伞
+Q 8-2|ナイフで{さす}。|＿す>>用刀刺。
+Q 9-1|熱を{はかる}。|＿る>>量体温。
+Q 9-2|重さを{はかる}。|＿る>>称重量。
+Q 10-1|相手の弱点を{せめる}。|＿める>>攻击对方的弱点。
+Q 10-2|相手の非を{せめる}。|＿める>>责备对方的过错。
+A Ⅰ：①a ②a ③b ④a ⑤b ⑥a　Ⅱ：⑦1f 2j ⑧1a 2l ⑨1i 2b ⑩1h 2d
