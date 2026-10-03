@@ -219,6 +219,9 @@ describe("language and modules", () => {
 		expect(moduleFrom("n4", "reading")).toBe("n4grammar");
 		expect(moduleFrom("n3", "listening")).toBe("listening");
 		expect(moduleFrom("n2", "listening")).toBe("n2listening");
+		expect(moduleFrom("n1", "listening")).toBe("n1listening");
+		expect(typeForLevel("n1", "listening")).toBe("listening");
+		expect(isListening("n1listening")).toBe(true);
 		expect(moduleFrom("n2", "reading")).toBe("n2reading");
 		expect(typeForLevel("n2", "reading")).toBe("reading");
 		expect(typeForLevel("n2", "listening")).toBe("listening");

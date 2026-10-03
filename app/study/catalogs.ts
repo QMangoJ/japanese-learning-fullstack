@@ -1,3 +1,4 @@
+import { listeningN1CatalogWeeks } from "../data/listening-n1-catalog";
 import { listeningN2BookChapters } from "../data/listening-n2-book";
 import { listeningBookChapters } from "../data/listening-n3-book";
 import {
@@ -72,4 +73,8 @@ export function listeningN2Bundle() {
 			})),
 		})),
 	};
+}
+
+export function listeningN1Bundle() {
+	return { scale: "chapter" as const, weeks: listeningN1CatalogWeeks };
 }
