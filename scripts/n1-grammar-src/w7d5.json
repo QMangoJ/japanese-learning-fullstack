@@ -1,0 +1,205 @@
+{
+ "week": 7,
+ "day": 5,
+ "title": "痛くもなんともない",
+ "title_cn": "一点也不疼",
+ "title_en": "It doesn't hurt at all",
+ "dialog": {
+  "lines": [
+   "Q.（　）に入るのは？",
+   "彼なんかにあの映画のよさは（　）。"
+  ],
+  "cn": "问：括号里该填什么？——像他那样的人根本不懂那部电影的好。（答案：わかりゃしない）",
+  "en": "Q: What goes in the blank? — Someone like him would never understand how good that film is. (Answer: わかりゃしない)"
+ },
+ "points": [
+  {
+   "pattern": "合格してみせる",
+   "reading": "ごうかくしてみせる",
+   "connection": "Vてみせる",
+   "usage_cn": "①一定要……给你看（表示决心）；②……给（别人）看。",
+   "usage_en": "① I'll show you I can ~; ② show someone ~.",
+   "examples": [
+    {
+     "jp": "今度こそ合格してみせるよ。",
+     "eq": "=合格することを約束する",
+     "en": "This time I'll definitely pass the exam.",
+     "cn": "这次一定要考合格给你们瞧瞧。"
+    },
+    {
+     "jp": "ピアノ、うまくなったね。今の曲、もう一回弾いてみせて。",
+     "eq": "=弾いて聞かせて",
+     "en": "You play the piano so much better now. Can you play the piece you just played again?",
+     "cn": "钢琴，有进步呀。刚才的曲子，再弹一次让我听听。"
+    }
+   ],
+   "notes": []
+  },
+  {
+   "pattern": "痛くもなんともない",
+   "reading": "いたくもなんともない",
+   "connection": "Aくもなんともない／naでもなんでもない／Nでもなんでもない",
+   "usage_cn": "一点也不……，根本不……（强调）。",
+   "usage_en": "Not ~ at all (emphasis).",
+   "examples": [
+    {
+     "jp": "歯医者「虫歯がありますよ。」患者「そうですか。まだ痛くもなんともないんですが…」",
+     "eq": "=全く痛くない",
+     "en": "Dentist: “You've got a cavity.” Patient: “Oh, yes? I don't feel it at all.”",
+     "cn": "牙医：“有虫牙。”患者：“是吗。倒是还没什么感觉……”"
+    },
+    {
+     "jp": "彼のこと、好きでもなんでもないけれど、なぜか気にかかる。",
+     "eq": "=好きでも嫌いでもない",
+     "en": "I don't really like him but there is something interesting about him.",
+     "cn": "对他并没有任何喜欢的感觉，可不知为什么总是惦记着。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "◆",
+     "text": "強調"
+    },
+    {
+     "type": "れい",
+     "text": "ほしくもなんでもない／苦労でもなんでもない"
+    },
+    {
+     "type": "tag",
+     "text": "会話でよく使われる表現"
+    }
+   ]
+  },
+  {
+   "pattern": "つまらないといったらない",
+   "reading": "つまらないといったらない",
+   "connection": "Aい／na ＋（と）いったら ＋ない／ありはしない／ありゃしない",
+   "usage_cn": "……得不得了，……极了（无法形容的程度）。",
+   "usage_en": "Extremely ~ / ~ beyond words.",
+   "examples": [
+    {
+     "jp": "昨日見た映画は、つまらないといったらなかった。",
+     "eq": "=とてもつまらなかった",
+     "en": "The movie I saw yesterday was just too boring.",
+     "cn": "昨天看的电影无聊透顶。"
+    },
+    {
+     "jp": "今日は12時間も仕事をした。疲れたといったらありゃしない。",
+     "eq": "=とても疲れた",
+     "en": "I worked for 12 hours today. I'm just so exhausted.",
+     "cn": "今天工作了12个小时。简直累死了。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "◆",
+     "text": "VやNでも使えるものがある。"
+    },
+    {
+     "type": "れい",
+     "text": "腹が立つ（と）いったらない／喉が渇く（と）いったらない／美しさ（と）いったらない"
+    },
+    {
+     "type": "tag",
+     "text": "会話でよく使われる表現"
+    }
+   ]
+  },
+  {
+   "pattern": "わかりゃしない",
+   "reading": "わかりゃしない",
+   "connection": "Vます形（去ます）やしない",
+   "usage_cn": "根本不……，绝对不……（「～はしない」的口语形式）。",
+   "usage_en": "Never ~ / not ~ at all (colloquial).",
+   "examples": [
+    {
+     "jp": "最近、息子は私の言うことなど、聞きやしない。",
+     "eq": "=全然聞かない",
+     "en": "Recently my son doesn't listen to what I say.",
+     "cn": "最近儿子根本不听我的话。"
+    },
+    {
+     "jp": "ドッグフードを変えたら、おいしくないのか、食べやしない。",
+     "eq": "=全然食べない",
+     "en": "I've changed my dog's dog food but he hasn't been eating it at all. Maybe it's not good dog food.",
+     "cn": "换了狗粮后，也许是不好吃，狗连吃都不吃。"
+    },
+    {
+     "jp": "「ああ、スカートにシミがついちゃた……。」「大丈夫だよ。誰もわかりゃしないよ。」",
+     "eq": "=全然わからない",
+     "en": "“Oh, I got a stain on my skirt…” “Don't worry! Nobody'll notice it for sure!”",
+     "cn": "“啊，裙子沾上脏点了……”“没关系，别人看不出来。”"
+    }
+   ],
+   "notes": [
+    {
+     "type": "◆",
+     "text": "「～はしない」の口語形"
+    },
+    {
+     "type": "tag",
+     "text": "会話でよく使われる表現"
+    }
+   ]
+  }
+ ],
+ "exercises": {
+  "answers_note": "答えはp.121",
+  "sections": [
+   {
+    "type": "choice",
+    "instruction": "正しいほうに〇をつけなさい。",
+    "items": [
+     {
+      "n": 1,
+      "q": "最近の若い女の子は爪を黒や緑に塗っていたりして、見苦しい（a. といったらありゃしない　b. といったりやしない）。"
+     },
+     {
+      "n": 2,
+      "q": "昨日のパーティーでの彼の態度は失礼（a. というと　b. といったら）なかった。"
+     },
+     {
+      "n": 3,
+      "q": "自分の子がこんな罪を犯すとは、（a. 情けないといったらない　b. 情けなくもなんともない）。"
+     },
+     {
+      "n": 4,
+      "q": "何度誘われたって、僕はそんなところに（a. 行きやしない　b. 行くったらない）よ。"
+     },
+     {
+      "n": 5,
+      "q": "夏までに10キロ（a. やせてみせる　b. やせるといったらありゃしない）。"
+     }
+    ]
+   },
+   {
+    "type": "order",
+    "instruction": "下の語を並べ替えて正しい文を作りなさい。＿＿に数字を書きなさい。",
+    "items": [
+     {
+      "n": 6,
+      "q": "それを知って相当 ＿＿ ＿＿ ＿＿ ＿＿ といったらなかった。",
+      "options": [
+       "1 らしく",
+       "2 彼の",
+       "3 ショックだった",
+       "4 あわてよう"
+      ]
+     },
+     {
+      "n": 7,
+      "q": "先日の試合は、＿＿ ＿＿ ＿＿ ＿＿ 点に開きがあった。",
+      "options": [
+       "1 なんともない",
+       "2 惜しくも",
+       "3 負けても",
+       "4 くらい"
+      ]
+     }
+    ]
+   }
+  ],
+  "answers": "Ⅰ：①a ②b ③a ④a ⑤a　Ⅱ：⑥3→1→2→4　⑦3→2→1→4"
+ },
+ "hitokoto": ""
+}

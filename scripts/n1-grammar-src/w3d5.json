@@ -1,0 +1,180 @@
+{
+ "week": 3,
+ "day": 5,
+ "title": "休めるかと思いきや",
+ "title_cn": "原以为能休息",
+ "title_en": "Just when I thought I could rest",
+ "dialog": {
+  "lines": [
+   "Q.（　）に入るのは？",
+   "彼はゲームセンターに入った（　）、なかなか出てこない。"
+  ],
+  "cn": "问：括号里该填什么？——他一进游戏厅，就怎么也不出来。（答案：が最後）",
+  "en": "Q: What goes in the blank? — Once he goes into the game arcade, he never comes out. (Answer: が最後)"
+ },
+ "points": [
+  {
+   "pattern": "部屋に入るや否や",
+   "reading": "へやにはいるやいなや",
+   "connection": "Vるや（否や）",
+   "usage_cn": "一……就……，刚……就……（书面语）。",
+   "usage_en": "As soon as ~ / no sooner ~ than.",
+   "examples": [
+    {
+     "jp": "その男の人は部屋に入るや否や、いきなり大声で怒鳴り始めた。",
+     "eq": "=入るのとほとんど同時に／入ったとたんに",
+     "en": "The man started yelling right after he entered the room.",
+     "cn": "那个男人一进房间，就突然开始大声怒喝。"
+    },
+    {
+     "jp": "彼は、それを口に入れるや、吐き出した。",
+     "eq": "=入れるのとほとんど同時に／入れたとたんに",
+     "en": "He spat it out as soon as he put it in his mouth.",
+     "cn": "他刚把那个放进嘴里，就马上吐了出来。"
+    },
+    {
+     "jp": "その政治家は、形勢が不利と見るや、態度を一変した。",
+     "eq": "=不利だとわかってすぐ／不利だとわかったとたんに",
+     "en": "The politician changed his attitude as soon as he sensed that he was in the minority.",
+     "cn": "那个政治家一看形势不利，态度大变。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "硬",
+     "text": "改まった場面や文書で使われる硬い表現"
+    }
+   ]
+  },
+  {
+   "pattern": "ベルが鳴るが早いか",
+   "reading": "ベルがなるがはやいか",
+   "connection": "Vるが早いか",
+   "usage_cn": "刚一……就……（动作紧接着发生）。",
+   "usage_en": "The moment ~ / as soon as ~.",
+   "examples": [
+    {
+     "jp": "その学生は、授業の終わりのベルが鳴るが早いか、教室を出て行った。",
+     "eq": "=ベルが鳴るのとほとんど同時に／鳴ったとたんに",
+     "en": "The student left the classroom as soon as the bell rang at the end of the class.",
+     "cn": "下课铃声刚响，那个学生就出了教室。"
+    },
+    {
+     "jp": "そのタクシーは、信号の色が変わるが早いか、車を発進させた。",
+     "eq": "=変わるのとほとんど同時に／変わったとたんに",
+     "en": "The taxi took off as soon as the traffic light changed.",
+     "cn": "信号灯的颜色刚变，那辆出租车就启动开走了。"
+    }
+   ],
+   "notes": []
+  },
+  {
+   "pattern": "ゲームを始めたが最後",
+   "reading": "ゲームをはじめたがさいご",
+   "connection": "Vたが最後／Vたら最後",
+   "usage_cn": "一旦……就（一直……，没完没了）。",
+   "usage_en": "Once ~, (it goes on and on).",
+   "examples": [
+    {
+     "jp": "彼はパソコンでゲームを始めたが最後、いつも朝までやり続ける。",
+     "eq": "=一度始めたらそのあとずっと",
+     "en": "Once he starts playing a computer game, he plays all night.",
+     "cn": "他如果开始玩电脑游戏就总是一直玩到早晨。"
+    },
+    {
+     "jp": "父は、いったん寝たら最後、朝まで起きない。",
+     "eq": "=寝たらそのあとずっと",
+     "en": "It is impossible to wake my father from his sleep.",
+     "cn": "父亲一旦睡下，直到早晨都不会醒。"
+    }
+   ],
+   "notes": []
+  },
+  {
+   "pattern": "休めるかと思いきや",
+   "reading": "やすめるかとおもいきや",
+   "connection": "V/N/〔文〕〔普〕（か）と思いきや",
+   "usage_cn": "原以为……，没想到……（结果出乎意料）。",
+   "usage_en": "Just when one thought ~ (but unexpectedly).",
+   "examples": [
+    {
+     "jp": "やっとテストが終わって休めると思いきや、宿題をたくさん出された。",
+     "eq": "=休めると思ったが、意外にもすぐに",
+     "en": "I thought I could have a break when the test period was over, but I've got tons of homework.",
+     "cn": "本以为考试好不容易结束可以休息了，没想到又有好多作业。"
+    },
+    {
+     "jp": "宝くじに当たったかと思いきや、番号を見間違えていた。",
+     "eq": "=一瞬当たったと思ったが",
+     "en": "I thought I won the lottery, but I got the number wrong.",
+     "cn": "本以为中彩票了，没想到把号码看错了。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "硬",
+     "text": "改まった場面や文書で使われる硬い表現"
+    }
+   ]
+  }
+ ],
+ "exercises": {
+  "answers_note": "答えはp.57",
+  "sections": [
+   {
+    "type": "choice",
+    "instruction": "正しいほうに〇をつけなさい。",
+    "items": [
+     {
+      "n": 1,
+      "q": "あの人はいつも電車に乗り込む（a. が最後　b. が早いか）、席を確保しようとする。"
+     },
+     {
+      "n": 2,
+      "q": "彼女は家に（a. 入る　b. 入った）や、いきなりトイレに駆け込んだ。"
+     },
+     {
+      "n": 3,
+      "q": "やっと富士山の頂上に着いた（a. と思いきや　b. が早いか）、まだ8合目だった。"
+     },
+     {
+      "n": 4,
+      "q": "119番の通報を受ける（a. が最後　b. が早いか）、救急車は出動した。"
+     },
+     {
+      "n": 5,
+      "q": "彼は普段はとてもおとなしいが、ひとたび（a. 怒ったら最後　b. 怒るが早いか）暴れて手がつけられなくなる。"
+     }
+    ]
+   },
+   {
+    "type": "order",
+    "instruction": "下の語を並べ替えて正しい文を作りなさい。＿＿に数字を書きなさい。",
+    "items": [
+     {
+      "n": 6,
+      "q": "年賀状の最後の1枚を ＿＿ ＿＿ ＿＿ ＿＿ 、20枚も残っていた。",
+      "options": [
+       "1 かと",
+       "2 書き終わった",
+       "3 まだ",
+       "4 思いきや"
+      ]
+     },
+     {
+      "n": 7,
+      "q": "彼のブログは、＿＿ ＿＿ ＿＿ ＿＿ が相次ぐ。",
+      "options": [
+       "1 更新",
+       "2 反響",
+       "3 する",
+       "4 や"
+      ]
+     }
+    ]
+   }
+  ],
+  "answers": "Ⅰ：①b ②a ③a ④b ⑤a　Ⅱ：⑥2→1→4→3　⑦1→3→4→2"
+ },
+ "hitokoto": ""
+}

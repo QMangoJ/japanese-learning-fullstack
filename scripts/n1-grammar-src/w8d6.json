@@ -1,0 +1,207 @@
+{
+ "week": 8,
+ "day": 6,
+ "title": "子どもじゃあるまいし",
+ "title_cn": "又不是小孩子",
+ "title_en": "You're not a child",
+ "dialog": {
+  "lines": [
+   "Q.（　）に入るのは？",
+   "結婚相手は（　）きっと現れますよ。"
+  ],
+  "cn": "问：括号里该填什么？——结婚对象迟早一定会出现的。（答案：遅かれ早かれ）",
+  "en": "Q: What goes in the blank? — Sooner or later, the right person will come along. (Answer: 遅かれ早かれ)"
+ },
+ "points": [
+  {
+   "pattern": "遅かれ早かれ",
+   "reading": "おそかれはやかれ",
+   "connection": "A₁かれA₂かれ",
+   "usage_cn": "或……或……，不管是……还是……（迟早、多少）。",
+   "usage_en": "Whether ~ or ~ / sooner or later.",
+   "examples": [
+    {
+     "jp": "この番組も、遅かれ早かれ視聴者に飽きられるだろう。",
+     "eq": "=その時期が遅いか早いかはわからないが",
+     "en": "People will sooner or later become tired of this program, too.",
+     "cn": "这个节目也早晚会被观众看腻的。"
+    },
+    {
+     "jp": "若い女性なら、多かれ少なかれセクハラを経験したことがあるだろう。",
+     "eq": "=その人数が多いか少ないかはわからないが",
+     "en": "Every young woman has experienced sexual harassment of some sort.",
+     "cn": "年轻女性，多多少少都有过被性骚扰的经历。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "!",
+     "text": "良かれ悪しかれ"
+    }
+   ]
+  },
+  {
+   "pattern": "良きにつけ悪しきにつけ",
+   "reading": "よきにつけあしきにつけ",
+   "connection": "A₁につけ（A₂につけ）",
+   "usage_cn": "不论好坏，好也罢坏也罢。",
+   "usage_en": "For better or worse.",
+   "examples": [
+    {
+     "jp": "良きにつけ悪しきにつけ、子どもは親の影響を受ける。",
+     "eq": "=良くても悪くても",
+     "en": "Children's good or bad behavior is directly affected by their parents' behavior.",
+     "cn": "不论是好是坏，孩子都会受到父母的影响。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "OK",
+     "text": "いいにつけ、悪いにつけ"
+    }
+   ]
+  },
+  {
+   "pattern": "周囲の反対をものともせずに",
+   "reading": "しゅういのはんたいをものともせずに",
+   "connection": "Nをものともせずに",
+   "usage_cn": "不顾……，不把……放在眼里（不畏困难）。",
+   "usage_en": "In defiance of ~ / undaunted by ~.",
+   "examples": [
+    {
+     "jp": "周囲の反対をものともせずに、二人は結婚した。",
+     "eq": "=周囲が反対しているのを全く気にしないで",
+     "en": "They were not bothered by the objections of others and got married anyway.",
+     "cn": "两人不顾周围的人反对结婚了。"
+    },
+    {
+     "jp": "消防士たちは、危険をものともせずに、火の中に飛び込んで行った。",
+     "eq": "=危険を全く恐れないで",
+     "en": "The firemen bravely went into the fire ignoring all risks.",
+     "cn": "消防队员们不顾危险，冲进了火海。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "◆",
+     "text": "問題や困難に負けないで"
+    },
+    {
+     "type": "れい",
+     "text": "敵の攻撃をものともせずに／嵐をものともせずに"
+    }
+   ]
+  },
+  {
+   "pattern": "子どもじゃあるまいし",
+   "reading": "こどもじゃあるまいし",
+   "connection": "Nではあるまいし／Nじゃあるまいし",
+   "usage_cn": "又不是……（所以不该那样）。",
+   "usage_en": "You're not a ~, so ...",
+   "examples": [
+    {
+     "jp": "子どもではあるまいし、泣くのはやめなさい。",
+     "eq": "=子どもではないのだから",
+     "en": "Stop crying! You are not a child.",
+     "cn": "又不是孩子，别哭了。"
+    },
+    {
+     "jp": "夏じゃあるまいし、この冬にTシャツ1枚で外出するなんて、頭がどうかしているよ。",
+     "eq": "=夏ではないのだから",
+     "en": "You must be crazy going out in the middle of winter in a T-shirt. It's not summer, you know.",
+     "cn": "又不是夏天，冬天竟然穿着一件T恤就出去，真是脑子不正常。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "tag",
+     "text": "「Nじゃあるまいし」は会話でよく使われる"
+    }
+   ]
+  },
+  {
+   "pattern": "教師にあるまじき行為",
+   "reading": "きょうしにあるまじきこうい",
+   "connection": "N₁にあるまじきN₂",
+   "usage_cn": "作为……不应有的……，不该……。",
+   "usage_en": "~ unbecoming of / inexcusable for a ~.",
+   "examples": [
+    {
+     "jp": "学生を恐喝するとは、教師にあるまじき行為だ。",
+     "eq": "=教師という立場の人間にあってはならない",
+     "en": "It is totally unacceptable for a teacher to blackmail students.",
+     "cn": "竟然恐吓学生，是教师不应该有的行为。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "硬",
+     "text": "改まった場面や文書で使われる硬い表現"
+    },
+    {
+     "type": "◆",
+     "text": "N₂＝こと／発言／行動／態度"
+    }
+   ]
+  }
+ ],
+ "exercises": {
+  "answers_note": "答えはp.141",
+  "sections": [
+   {
+    "type": "choice",
+    "instruction": "正しいほうに〇をつけなさい。",
+    "items": [
+     {
+      "n": 1,
+      "q": "昨日見た報道番組では、この世に（a. あるまい　b. あるまじき）光景が次々と流された。"
+     },
+     {
+      "n": 2,
+      "q": "野菜が体にいいのはわかるが、（a. 馬じゃあるまいし　b. 馬にはあるまいし）こんなにたくさんは食べられない。"
+     },
+     {
+      "n": 3,
+      "q": "彼女は足の痛み（a. にあるまじき　b. をものともせずに）マラソンを走り抜いた。"
+     },
+     {
+      "n": 4,
+      "q": "弱い者をだまして金を取るなど、人間に（a. あるまじき　b. あるまいし）行為だ。"
+     },
+     {
+      "n": 5,
+      "q": "人は、（a. 多くにつけ少なくにつけ　b. 多かれ少なかれ）悩みはあるものです。"
+     }
+    ]
+   },
+   {
+    "type": "order",
+    "instruction": "下の語を並べ替えて正しい文を作りなさい。＿＿に数字を書きなさい。",
+    "items": [
+     {
+      "n": 6,
+      "q": "それを食べた ＿＿ ＿＿ ＿＿ ＿＿ 、吐き出すなんて大げさすぎるよ。",
+      "options": [
+       "1 から",
+       "2 死ぬ",
+       "3 といって",
+       "4 わけじゃあるまいし"
+      ]
+     },
+     {
+      "n": 7,
+      "q": "子どもはいいに ＿＿ ＿＿ ＿＿ ＿＿ ながら成長している",
+      "options": [
+       "1 につけ",
+       "2 大人を見習い",
+       "3 悪い",
+       "4 つけ"
+      ]
+     }
+    ]
+   }
+  ],
+  "answers": "Ⅰ：①b ②a ③b ④a ⑤b　Ⅱ：⑥1→3→2→4　⑦4→3→1→2"
+ },
+ "hitokoto": ""
+}

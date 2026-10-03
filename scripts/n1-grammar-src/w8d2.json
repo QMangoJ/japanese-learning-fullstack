@@ -1,0 +1,188 @@
+{
+ "week": 8,
+ "day": 2,
+ "title": "願ってやまない",
+ "title_cn": "衷心祈愿",
+ "title_en": "I sincerely hope",
+ "dialog": {
+  "lines": [
+   "Q.（　）に入るのは？",
+   "彼が合格したのは、驚く（　）。"
+  ],
+  "cn": "问：括号里该填什么？——他考上了，没什么好惊讶的。（答案：にはあたらない）",
+  "en": "Q: What goes in the blank? — It's no surprise that he passed. (Answer: にはあたらない)"
+ },
+ "points": [
+  {
+   "pattern": "嘆くにはあたらない",
+   "reading": "なげくにはあたらない",
+   "connection": "Vるに（は）あたらない",
+   "usage_cn": "用不着……，不必……（没必要那样做）。",
+   "usage_en": "There's no need to ~ / it's not worth ~.",
+   "examples": [
+    {
+     "jp": "試験に落ちたからといって、嘆くにはあたらない。",
+     "eq": "=嘆くほどのことではない",
+     "en": "It's not worth crying over failing the entrance examination.",
+     "cn": "就算是考试落榜，也用不着唉声叹气。"
+    },
+    {
+     "jp": "10円貸したくらいで、感謝されるにはあたらない。",
+     "eq": "=感謝されるほどのことではない",
+     "en": "It's not worth thanking me for lending you 10 yen.",
+     "cn": "就借了10日元，用不着人感谢。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "れい",
+     "text": "心配するにはあたらない／非難するにはあたらない／驚くにはあたらない"
+    }
+   ]
+  },
+  {
+   "pattern": "想像に難くない",
+   "reading": "そうぞうにかたくない",
+   "connection": "Nに難くない（Nする→N）／Vるに難くない",
+   "usage_cn": "不难……，很容易……（书面语）。",
+   "usage_en": "It is not hard to ~.",
+   "examples": [
+    {
+     "jp": "彼らが離婚したことは想像に難くない。",
+     "eq": "=簡単に想像できる",
+     "en": "I'm not surprised to hear that they got divorced.",
+     "cn": "不难想象他们已离婚。"
+    },
+    {
+     "jp": "この作品を作るのに、どんなに時間がかかったかは察するに難くない。",
+     "eq": "=簡単に察することができる",
+     "en": "It's not hard to imagine how much time they spent making this movie.",
+     "cn": "不难看出创作这个作品是多么花费时间的。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "れい",
+     "text": "理解に難くない"
+    },
+    {
+     "type": "硬",
+     "text": "改まった場面や文書で使われる硬い表現"
+    }
+   ]
+  },
+  {
+   "pattern": "願ってやまない",
+   "reading": "ねがってやまない",
+   "connection": "Vてやまない",
+   "usage_cn": "衷心……，……不已（表示持续的强烈感情）。",
+   "usage_en": "Never cease to ~ / sincerely ~.",
+   "examples": [
+    {
+     "jp": "僕は君たちの合格を願ってやまない。",
+     "eq": "=いつまでも強く願っている",
+     "en": "I wish you good luck with your entrance exam.",
+     "cn": "我衷心祝愿你们能合格。"
+    },
+    {
+     "jp": "私が愛してやまない国は、タイです。",
+     "eq": "=とても愛している国は",
+     "en": "The country I love is Thailand.",
+     "cn": "我无比热爱的国家是泰国。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "れい",
+     "text": "祈ってやまない／信じてやまない／尊敬してやまない"
+    }
+   ]
+  },
+  {
+   "pattern": "愛でなくてなんだろう",
+   "reading": "あいでなくてなんだろう",
+   "connection": "Nでなくてなんだろう。",
+   "usage_cn": "不是……又是什么呢（就是……）（带有强烈感情的说法）。",
+   "usage_en": "If this isn't ~, what is?",
+   "examples": [
+    {
+     "jp": "彼女に対するこの気持ちは、愛でなくてなんだろう。",
+     "eq": "=愛以外のものではない／確かに愛だ",
+     "en": "This feeling of mine for her must be love.",
+     "cn": "对她的心情，不是爱是什么呢？"
+    },
+    {
+     "jp": "あの政治家のやったことは汚職でなくてなんだろう。",
+     "eq": "=汚職以外のことではない／確かに汚職だ",
+     "en": "What that politician did was definitely corrupt.",
+     "cn": "那个政治家的所作所为不是贪污是什么呢。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "◆",
+     "text": "感情がこもった言い方"
+    }
+   ]
+  }
+ ],
+ "exercises": {
+  "answers_note": "答えはp.131",
+  "sections": [
+   {
+    "type": "choice",
+    "instruction": "正しいほうに〇をつけなさい。",
+    "items": [
+     {
+      "n": 1,
+      "q": "状況から判断して、彼が犯人であることは想像に（a. かたくない　b. あたらない）。"
+     },
+     {
+      "n": 2,
+      "q": "課長が会社を辞めたとしても、驚くには（a. かたくない　b. あたらない）。"
+     },
+     {
+      "n": 3,
+      "q": "彼は裁判で無罪を主張しているが、彼のやったことは殺人で（a. なくて　b. なしで）なんだろう。"
+     },
+     {
+      "n": 4,
+      "q": "母が死んで10年以上たつのに、父はまだ母を（a. 愛し　b. 愛して）やまない。"
+     },
+     {
+      "n": 5,
+      "q": "両親を亡くした彼女の気持ちは察するに（a. かたくない　b. あたらない）。"
+     }
+    ]
+   },
+   {
+    "type": "order",
+    "instruction": "下の語を並べ替えて正しい文を作りなさい。＿＿に数字を書きなさい。",
+    "items": [
+     {
+      "n": 6,
+      "q": "5分ぐらい ＿＿ ＿＿ ＿＿ ＿＿ あたらないだろう。",
+      "options": [
+       "1 からと",
+       "2 遅れた",
+       "3 いって",
+       "4 怒るには"
+      ]
+     },
+     {
+      "n": 7,
+      "q": "子どものために病気になるまで働くとは、＿＿ ＿＿ ＿＿ ＿＿ だろう。",
+      "options": [
+       "1 愛",
+       "2 なん",
+       "3 親の",
+       "4 でなくて"
+      ]
+     }
+    ]
+   }
+  ],
+  "answers": "Ⅰ：①a ②b ③a ④b ⑤a　Ⅱ：⑥2→1→3→4　⑦3→1→4→2"
+ },
+ "hitokoto": ""
+}

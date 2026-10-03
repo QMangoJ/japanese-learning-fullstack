@@ -1,0 +1,189 @@
+{
+ "week": 5,
+ "day": 1,
+ "title": "謝るだけではすまない",
+ "title_cn": "光道歉可不行",
+ "title_en": "An apology alone won't do",
+ "dialog": {
+  "lines": [
+   "Q.（　）に入るのは？",
+   "税金は払わずには（　）。"
+  ],
+  "cn": "问：括号里该填什么？——税金不交可不行。（答案：すまない）",
+  "en": "Q: What goes in the blank? — You can't get away without paying taxes. (Answer: すまない)"
+ },
+ "points": [
+  {
+   "pattern": "歯を抜かずにすんだ",
+   "reading": "はをぬかずにすんだ",
+   "connection": "Vない形（去ない）ずに／Vないで／Vなくて ＋すむ《済んだ》（しない→せずに）",
+   "usage_cn": "不……也可以解决，用不着……就完事了。",
+   "usage_en": "Get by without ~ / manage without having to ~.",
+   "examples": [
+    {
+     "jp": "かなりひどい虫歯だったが、抜かずにすんでよかった。",
+     "eq": "=抜く必要がなく終わって",
+     "en": "Although the cavity was pretty bad, I'm glad that I was able to keep my tooth.",
+     "cn": "虫牙相当严重，不过幸好不用拔掉。"
+    },
+    {
+     "jp": "図書館で借りたので、本を買わずにすんだ。",
+     "eq": "=買う必要がなくて解決した",
+     "en": "I borrowed the book from the library so I didn't have to buy it.",
+     "cn": "在图书馆借到了，就不用买书了。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "!",
+     "text": "する→せず（しない→せず）"
+    }
+   ]
+  },
+  {
+   "pattern": "お礼をせずにすまない",
+   "reading": "おれいをせずにすまない",
+   "connection": "Vない形（去ない）ずに（は）すまない／Vないで（は）すまない《済まない》（しない→せず）",
+   "usage_cn": "不……不行，必须……（考虑到社会常识、情理）。",
+   "usage_en": "Can't get away without ~ / must ~.",
+   "examples": [
+    {
+     "jp": "田中さんには本当にお世話になった。なにかお礼をせずにはすまない。",
+     "eq": "=お礼をしないわけにはいかない／お礼をしなければならない",
+     "en": "I owe Tanaka-san so much. I want to show him my gratitude in some way.",
+     "cn": "真的是受了田中很多照顾，必须以某种方式道谢。"
+    },
+    {
+     "jp": "汚職が発覚した以上、彼は議員を辞職せずにはすまないだろう。",
+     "eq": "=辞職しないわけにはいかない／辞職しなければならない",
+     "en": "Since his involvement in corruption has been disclosed, he will definitely have to resign from being a politician.",
+     "cn": "既然贪污的事情暴露了，他不得不辞去了议员。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "!",
+     "text": "する→せず（しない→せず）"
+    }
+   ]
+  },
+  {
+   "pattern": "謝るだけではすまない",
+   "reading": "あやまるだけではすまない",
+   "connection": "V/A/na/N〔普〕＋では／じゃ／だけでは ＋すまない《済まない》（na~だ~、N~だ~）",
+   "usage_cn": "光……是不能了事的，不只是……就能解决的。",
+   "usage_en": "~ alone won't settle it.",
+   "examples": [
+    {
+     "jp": "多大な損害を与えたのだから、謝るだけではすまない。",
+     "eq": "=謝るだけでは許されない",
+     "en": "You have caused so much damage that you can't get off the huck by just apologizing.",
+     "cn": "因为造成了重大损失，光道歉不行。"
+    },
+    {
+     "jp": "これ以上彼をからかうのはやめなさい。冗談じゃすまなくなるよ。",
+     "eq": "=冗談では許されなくなる",
+     "en": "Stop making fun of him or you may cause some trouble.",
+     "cn": "不要再接着嘲笑他了。要不就不是开玩笑那么简单了。"
+    }
+   ],
+   "notes": []
+  },
+  {
+   "pattern": "感動させずにはおかない",
+   "reading": "かんどうさせずにはおかない",
+   "connection": "Vない形（去ない）ずにはおかない／Vないではおかない（しない→せず）",
+   "usage_cn": "必然会……，一定会……（自然引起某种状态或感情）。",
+   "usage_en": "Cannot fail to ~ / will inevitably ~.",
+   "examples": [
+    {
+     "jp": "彼女の演技は見る人を感動させずにはおかない。",
+     "eq": "=必ず感動させる",
+     "en": "Her performances move the audience without fail.",
+     "cn": "她的演技必然会让观众感动。"
+    },
+    {
+     "jp": "長引く不況は国民を苦しめずにはおかない。",
+     "eq": "=必ず苦しめてしまう",
+     "en": "A long lasting economic slump is definitely causing difficulties for the entire population.",
+     "cn": "长期的不景气必然会让国民痛苦。"
+    },
+    {
+     "jp": "この事件は、政治に影響を与えずにはおかなかった。",
+     "eq": "=自然と影響を与えた",
+     "en": "This incident did not leave the political world unaffected.",
+     "cn": "这个事件必然会影响到政治。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "!",
+     "text": "する→せず（しない→せず）"
+    },
+    {
+     "type": "硬",
+     "text": "改まった場面や文書で使われる硬い表現"
+    }
+   ]
+  }
+ ],
+ "exercises": {
+  "answers_note": "答えはp.81",
+  "sections": [
+   {
+    "type": "choice",
+    "instruction": "正しいほうに〇をつけなさい。",
+    "items": [
+     {
+      "n": 1,
+      "q": "帰りが遅くなってしまった。父にしかられないでは（a. おかない　b. すまない）だろう。"
+     },
+     {
+      "n": 2,
+      "q": "その劇は見る者全員に感動を（a. 与えずにはおかない　b. 与えるだけではすまない）ほどすばらしかった。"
+     },
+     {
+      "n": 3,
+      "q": "それは法に触れる行為です。知らなかった（a. ではおかない　b. ではすまない）ですよ。"
+     },
+     {
+      "n": 4,
+      "q": "父が脳梗塞（※脳梗塞：a stroke）で倒れて入院したが、手術せずに（a. すんで　b. すまなくて）よかった。"
+     },
+     {
+      "n": 5,
+      "q": "税金は払いたくないが、払わず（a. ではすまない　b. にはすまない）。"
+     }
+    ]
+   },
+   {
+    "type": "order",
+    "instruction": "下の語を並べ替えて正しい文を作りなさい。＿＿に数字を書きなさい。",
+    "items": [
+     {
+      "n": 6,
+      "q": "知らなかった ＿＿ ＿＿ ＿＿ ＿＿ すまないだろう。",
+      "options": [
+       "1 謝らずに",
+       "2 迷惑をかけた",
+       "3 とはいえ",
+       "4 のだから"
+      ]
+     },
+     {
+      "n": 7,
+      "q": "学校側は ＿＿ ＿＿ ＿＿ ＿＿ だろう。",
+      "options": [
+       "1 おかない",
+       "2 バイク通学を",
+       "3 禁止せずには",
+       "4 危険性が高い"
+      ]
+     }
+    ]
+   }
+  ],
+  "answers": "Ⅰ：①b ②a ③b ④a ⑤b　Ⅱ：⑥3→2→4→1　⑦4→2→3→1"
+ },
+ "hitokoto": ""
+}

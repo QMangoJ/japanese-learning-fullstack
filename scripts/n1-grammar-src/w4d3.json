@@ -1,0 +1,210 @@
+{
+ "week": 4,
+ "day": 3,
+ "title": "家族ぐるみ",
+ "title_cn": "全家一起",
+ "title_en": "The whole family",
+ "dialog": {
+  "lines": [
+   "Q.（　）に入るのは？",
+   "運動して、（　）になった。"
+  ],
+  "cn": "问：括号里该填什么？——运动之后，浑身是汗。（答案：汗まみれ）",
+  "en": "Q: What goes in the blank? — After exercising, I was covered in sweat. (Answer: 汗まみれ)"
+ },
+ "points": [
+  {
+   "pattern": "黒ずくめ",
+   "reading": "くろずくめ",
+   "connection": "Nずくめ",
+   "usage_cn": "清一色……，全是……，净是……。",
+   "usage_en": "All ~ / nothing but ~.",
+   "examples": [
+    {
+     "jp": "黒ずくめの服装をする。",
+     "eq": "=全部が黒の",
+     "en": "I dress all in black.",
+     "cn": "穿着一身黑衣服。"
+    },
+    {
+     "jp": "規則ずくめのこの学校をやめたい。",
+     "eq": "=規則ばかりの",
+     "en": "I want to quit my school because there are too many rules.",
+     "cn": "我想从这个净是规则的学校退学。"
+    },
+    {
+     "jp": "去年は悪いことずくめの年だった。今年はいい年でありますように。",
+     "eq": "=悪いことばかりの",
+     "en": "There were a lot of disasters last year. Let's hope this year will be a good one.",
+     "cn": "去年一年净是不好的事。希望今年是个好年。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "ダメ",
+     "text": "黒だらけ"
+    },
+    {
+     "type": "れい",
+     "text": "白ずくめ／記録ずくめ／いいことずくめ／ごちそうずくめ／異例ずくめ"
+    },
+    {
+     "type": "ダメ",
+     "text": "ほこりずくめ→ほこりだらけ"
+    }
+   ]
+  },
+  {
+   "pattern": "血まみれ",
+   "reading": "ちまみれ",
+   "connection": "Nまみれ",
+   "usage_cn": "满是……，浑身是……（沾满脏东西）。",
+   "usage_en": "Covered in ~ (something dirty).",
+   "examples": [
+    {
+     "jp": "大変だ！女性が血まみれになって倒れている。",
+     "eq": "=血をいっぱい流して／血だらけになって",
+     "en": "My goodness! There is a woman lying on the ground covered with blood.",
+     "cn": "糟了！有位女性浑身是血地倒在地上。"
+    },
+    {
+     "jp": "彼は汗まみれになって、一生懸命サッカーの練習をしている。",
+     "eq": "=汗をいっぱいかいて／汗だらけになって",
+     "en": "He is practicing soccer very hard so he is covered with sweat.",
+     "cn": "他浑身是汗，拼命地练习足球。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "◆",
+     "text": "汚いものがたくさん付いているという状態を表す。"
+    },
+    {
+     "type": "れい",
+     "text": "泥まみれ／ほこりまみれ／借金まみれ"
+    }
+   ]
+  },
+  {
+   "pattern": "家族ぐるみ",
+   "reading": "かぞくぐるみ",
+   "connection": "Nぐるみ",
+   "usage_cn": "全……，连同……一起（整体一起参与）。",
+   "usage_en": "The whole ~ / together with ~.",
+   "examples": [
+    {
+     "jp": "彼とは長年家族ぐるみの付き合いをしている。",
+     "eq": "=家族全員の",
+     "en": "He and I have been good friends for a long time and so have our families.",
+     "cn": "我们全家和他有长年的来往。"
+    },
+    {
+     "jp": "子どもたちの非行を減らすために、町ぐるみで活動をしている。",
+     "eq": "=町全体で",
+     "en": "We use different strategies in order to reduce crime among the young people in our town.",
+     "cn": "为了减少孩子们的不良行为，举办了整个镇子都参与的活动。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "れい",
+     "text": "地域ぐるみ／組織ぐるみ"
+    },
+    {
+     "type": "慣用",
+     "text": "身ぐるみはがされる（＝身に着けているものも全部とられる）"
+    }
+   ]
+  },
+  {
+   "pattern": "プロ並み",
+   "reading": "プロなみ",
+   "connection": "N並み",
+   "usage_cn": "与……相同水平，和……一样（程度）。",
+   "usage_en": "On a par with ~ / ~-level.",
+   "examples": [
+    {
+     "jp": "社長は将棋が趣味で、腕前はプロ並みだということだ。",
+     "eq": "=プロとほとんど同じ程度",
+     "en": "The president's hobby is shogi and I hear he plays at the professional level.",
+     "cn": "听说社长的爱好是下象棋，而且水平与专业选手差不多。"
+    },
+    {
+     "jp": "裕福ではありませんが、世間並みの生活をしています。",
+     "eq": "=世間の人々と同じ程度の生活",
+     "en": "I am not rich but I make a decent living.",
+     "cn": "虽然不富裕，也过着普通人的生活。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "れい",
+     "text": "新幹線並みのスピード／日本人並みに日本語を話す／休日並みの混雑／平年並みの気温"
+    },
+    {
+     "type": "慣用",
+     "text": "十人並み（＝平均的）"
+    }
+   ]
+  }
+ ],
+ "exercises": {
+  "answers_note": "答えはp.69",
+  "sections": [
+   {
+    "type": "choice",
+    "instruction": "正しいほうに〇をつけなさい。",
+    "items": [
+     {
+      "n": 1,
+      "q": "旅行をしている間ずっと、ごちそう（a. まみれ　b. ずくめ）で、少し太ってしまいました。"
+     },
+     {
+      "n": 2,
+      "q": "初めてのスキーでは転んでばかりで、雪（a. まみれ　b. ずくめ）になってしまった。"
+     },
+     {
+      "n": 3,
+      "q": "その企業が会社（a. ずくめ　b. ぐるみ）で脱税をしていたのが発覚した。"
+     },
+     {
+      "n": 4,
+      "q": "カラスは人間（a. ぐるみ　b. 並み）の知能があるといわれています。"
+     },
+     {
+      "n": 5,
+      "q": "夏の海岸で砂（a. まみれ　b. ぐるみ）になって遊んだ。"
+     }
+    ]
+   },
+   {
+    "type": "order",
+    "instruction": "下の語を並べ替えて正しい文を作りなさい。＿＿に数字を書きなさい。",
+    "items": [
+     {
+      "n": 6,
+      "q": "彼は ＿＿ ＿＿ ＿＿ ＿＿ してしまった。",
+      "options": [
+       "1 まみれに",
+       "2 なったあげく",
+       "3 破産",
+       "4 借金"
+      ]
+     },
+     {
+      "n": 7,
+      "q": "彼女は ＿＿ ＿＿ ＿＿ ＿＿ をしている。",
+      "options": [
+       "1 としては",
+       "2 女優",
+       "3 十人並みの",
+       "4 容姿"
+      ]
+     }
+    ]
+   }
+  ],
+  "answers": "Ⅰ：①b ②a ③b ④b ⑤a　Ⅱ：⑥4→1→2→3　⑦2→1→3→4"
+ },
+ "hitokoto": ""
+}

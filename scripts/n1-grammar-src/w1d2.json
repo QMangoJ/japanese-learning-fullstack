@@ -1,0 +1,187 @@
+{
+ "week": 1,
+ "day": 2,
+ "title": "できるものとして",
+ "title_cn": "就当已经会了",
+ "title_en": "Assuming you can do it",
+ "dialog": {
+  "lines": [
+   "Q.（　）に入るのは？",
+   "この仕事ができるのは、彼ぐらいの（　）だ。"
+  ],
+  "cn": "问：括号里该填什么？——能做这份工作的，也就只有他了。（答案：もの）",
+  "en": "Q: What goes in the blank? — He is about the only one who can do this job. (Answer: もの)"
+ },
+ "points": [
+  {
+   "pattern": "そんなことするくらいなら",
+   "reading": "そんなことするくらいなら",
+   "connection": "Vるくらいなら／Vるぐらいなら",
+   "usage_cn": "与其……，还不如……；表示对前项极其厌恶。",
+   "usage_en": "Rather than ~ (I would rather …).",
+   "examples": [
+    {
+     "jp": "そんなことをするくらいなら、死んだほうがましだ。",
+     "eq": "=そんなことをするのはとてもいやだ。それなら…",
+     "en": "I would rather die than do that.",
+     "cn": "要我干那种事，还不如死了好。"
+    },
+    {
+     "jp": "友達を傷つけるくらいなら、自分が我慢したほうがいい。",
+     "eq": "=傷つけるのはとてもいやだ。それなら…",
+     "en": "I would rather tolerate it than hurt my friend's feelings.",
+     "cn": "与其伤害朋友，不如自己忍着。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "◆",
+     "text": "とてもいやだという気持ち。"
+    },
+    {
+     "type": "れい",
+     "text": "Vるくらいなら～ほうがましだ／Vるくらいなら～ほうがいい／Vるくらいなら～なさい"
+    }
+   ]
+  },
+  {
+   "pattern": "君ぐらいのものだ",
+   "reading": "きみぐらいのものだ",
+   "connection": "（～のは）Nくらい／Nぐらい ＋のものだ／なものだ",
+   "usage_cn": "只有……；也就只有……（限定，程度很低或范围很小）。",
+   "usage_en": "Only ~ / ~ is about the only one.",
+   "examples": [
+    {
+     "jp": "彼が仕事を辞めないように説得できるのは、君ぐらいのものだ。",
+     "eq": "=君しかいない",
+     "en": "You are the only one who can talk him out of quitting work.",
+     "cn": "能劝他别辞职的，也就只有你了。"
+    },
+    {
+     "jp": "君が受かるのは、このランクの大学ぐらいのものだ。",
+     "eq": "=このランクの大学しかない",
+     "en": "You can only aim for the universities at this level.",
+     "cn": "你能考上的，顶多也就是这个档次的大学了。"
+    }
+   ],
+   "notes": []
+  },
+  {
+   "pattern": "できるものとして",
+   "reading": "できるものとして",
+   "connection": "V/A/na/N〔普〕＋ものとして（na~だ~である／な、N~だ~である）",
+   "usage_cn": "假定……，就当……；以某种情况为前提。",
+   "usage_en": "Assuming that ~ / taking it that ~.",
+   "examples": [
+    {
+     "jp": "中級漢字はできるものとして、上級漢字のクラスを取った。",
+     "eq": "=できると考えて",
+     "en": "I took the advanced kanji class assuming that I was beyond the intermediate level.",
+     "cn": "就当中级汉字已经掌握了，我选了高级汉字班。"
+    },
+    {
+     "jp": "田中さんはもう来ないものとして、始めましょう。",
+     "eq": "=来ないと考えて",
+     "en": "Let's presume Tanaka-san is not coming and start without him.",
+     "cn": "就当田中不来了，我们开始吧。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "!",
+     "text": "na：だ→である／な　N：だ→である"
+    }
+   ]
+  },
+  {
+   "pattern": "10月に行うものとする",
+   "reading": "じゅうがつにおこなうものとする",
+   "connection": "Vるものとする",
+   "usage_cn": "规定……；按规定……（用于条款、规章）。",
+   "usage_en": "It is stipulated that ~ / shall ~.",
+   "examples": [
+    {
+     "jp": "採用試験は、毎年10月に行うものとする。",
+     "eq": "=行う、と決める",
+     "en": "We administer the employment examination every October.",
+     "cn": "录用考试定于每年10月举行。"
+    },
+    {
+     "jp": "契約の延長は、双方の同意によるものとする。",
+     "eq": "=同意による、と決める",
+     "en": "Both parties agreed to the extension of the contract.",
+     "cn": "合同的延长须经双方同意。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "◆",
+     "text": "契約書などに多く出てくる表現"
+    },
+    {
+     "type": "硬",
+     "text": "改まった場面や文書で使われる硬い表現"
+    }
+   ]
+  }
+ ],
+ "exercises": {
+  "answers_note": "答えはp.19",
+  "sections": [
+   {
+    "type": "choice",
+    "instruction": "正しいほうに〇をつけなさい。",
+    "items": [
+     {
+      "n": 1,
+      "q": "たぶん行けないと思うので、私はいない（a. ものとして　b. 人として）話を進めてください。"
+     },
+     {
+      "n": 2,
+      "q": "愛する人が病気で苦しむのを見るくらいなら、（a. 見ないほうがましだ　b. 自分が病気になったほうがいい）。"
+     },
+     {
+      "n": 3,
+      "q": "転勤でそんな田舎に行かされる（a. くらいなら　b. ものだから）、会社を辞めたほうがいい。"
+     },
+     {
+      "n": 4,
+      "q": "ぼくが買える家は、これ（a. ぐらいにしたものだ　b. ぐらいのものだ）。"
+     },
+     {
+      "n": 5,
+      "q": "契約の期限が来た場合には、新たに契約書を交わす（a. ものになる　b. ものとする）。"
+     }
+    ]
+   },
+   {
+    "type": "order",
+    "instruction": "下の語を並べ替えて正しい文を作りなさい。＿＿に数字を書きなさい。",
+    "items": [
+     {
+      "n": 6,
+      "q": "昨日授業で教えた ＿＿ ＿＿ ＿＿ ＿＿ 次に進みます。",
+      "options": [
+       "1 もの",
+       "2 ことは",
+       "3 として",
+       "4 わかった"
+      ]
+     },
+     {
+      "n": 7,
+      "q": "そんなことを ＿＿ ＿＿ ＿＿ ＿＿ ほうがましだ。",
+      "options": [
+       "1 させられる",
+       "2 参加しない",
+       "3 なら",
+       "4 くらい"
+      ]
+     }
+    ]
+   }
+  ],
+  "answers": "Ⅰ：①a ②b ③a ④b ⑤b　Ⅱ：⑥2→4→1→3　⑦1→4→3→2"
+ },
+ "hitokoto": ""
+}

@@ -1,0 +1,199 @@
+{
+ "week": 4,
+ "day": 1,
+ "title": "やればできるものを",
+ "title_cn": "明明做了就能成",
+ "title_en": "You could do it if you tried",
+ "dialog": {
+  "lines": [
+   "Q.（　）に入るのは？",
+   "彼が会社を辞めるという話を（　）聞いた。"
+  ],
+  "cn": "问：括号里该填什么？——无意中听说他要辞职。（答案：聞くともなく）",
+  "en": "Q: What goes in the blank? — I happened to overhear that he's quitting the company. (Answer: 聞くともなく)"
+ },
+ "points": [
+  {
+   "pattern": "努力なくして成功はない",
+   "reading": "どりょくなくしてせいこうはない",
+   "connection": "Nなくして…はない",
+   "usage_cn": "如果没有……就不能……（强调必要条件）。",
+   "usage_en": "Without ~, there is no ….",
+   "examples": [
+    {
+     "jp": "努力なくして（は）成功はありえない。",
+     "eq": "=努力しなかったら",
+     "en": "Success cannot be obtained without effort.",
+     "cn": "如果不努力，就不可能成功。"
+    },
+    {
+     "jp": "二国間の相互理解なくして両国の友好関係を保つことはできない。",
+     "eq": "=相互理解がなかったら",
+     "en": "Mutual understanding is essential to the friendship between two countries.",
+     "cn": "如果没有两国间的相互理解，就无法保持两国的友好关系。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "れい",
+     "text": "Vすることなくして～"
+    },
+    {
+     "type": "硬",
+     "text": "改まった場面や文書で使われる硬い表現"
+    }
+   ]
+  },
+  {
+   "pattern": "許可なしに使えない",
+   "reading": "きょかなしにつかえない",
+   "connection": "Nなしに（は）…ない／Nなしでは…ない",
+   "usage_cn": "没有……就（不能）……。",
+   "usage_en": "Without ~, cannot ….",
+   "examples": [
+    {
+     "jp": "先生の許可なしに、それは使えません。",
+     "eq": "=許可がなかったら",
+     "en": "You cannot use it without the teacher's permission.",
+     "cn": "没有老师的许可，不能用这个。"
+    },
+    {
+     "jp": "あなたなしでは生きていけない。",
+     "eq": "=あなたがいなかったら",
+     "en": "I cannot live without you.",
+     "cn": "没有你，我就活不下去。"
+    },
+    {
+     "jp": "みなさんの協力なしには、できません。",
+     "eq": "=協力がなかったら",
+     "en": "We cannot do it without your support.",
+     "cn": "没有大家的帮助，就无法做到。"
+    }
+   ],
+   "notes": []
+  },
+  {
+   "pattern": "見るともなく",
+   "reading": "みるともなく",
+   "connection": "Vるともなく V／Vるともなしに V",
+   "usage_cn": "无意中……，不经意地……（同一动词重复）。",
+   "usage_en": "Without really meaning to ~.",
+   "examples": [
+    {
+     "jp": "テレビを見るともなく見ていたら、私の学校が映っていた。",
+     "eq": "=特に見るつもりではなく",
+     "en": "The TV was on and I suddenly noticed that my school was on the screen.",
+     "cn": "我无意间看了看电视，结果屏幕上出现的是我们学校。"
+    },
+    {
+     "jp": "休みの日にはどこへ行くともなしにドライブすることが多い。",
+     "eq": "=特にどこに行くという目的もなく",
+     "en": "On my holidays, I often go out driving without any particular destination in mind.",
+     "cn": "休假的时候多是开车漫无目的地去兜风。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "れい",
+     "text": "聞くともなしに聞く／何をするともなく、ただ座っている"
+    },
+    {
+     "type": "慣用",
+     "text": "いつからともなく／どこへともなく"
+    }
+   ]
+  },
+  {
+   "pattern": "やればできるものを",
+   "reading": "やればできるものを",
+   "connection": "～ば V/A/na/N〔普〕＋ものを（na~だ~なものを／N~だ~であるものを）",
+   "usage_cn": "本来……却……，要是……就好了（表示遗憾、不满）。",
+   "usage_en": "If only ~ (regret / reproach).",
+   "examples": [
+    {
+     "jp": "やればできるものを、どうしてやらないんですか。",
+     "eq": "=できるのに",
+     "en": "You know you can do it. Why don't you?",
+     "cn": "只要做就能做到，为什么不做呢？"
+    },
+    {
+     "jp": "もう少し頑張れば1位になれたものを、惜しかったですね。",
+     "eq": "=1位になれたのに",
+     "en": "It was a shame you couldn't get the first prize. You were very close.",
+     "cn": "如果再努力一点就能当上第一，真是可惜。"
+    },
+    {
+     "jp": "ちょっと知らせてくれたらいいものを……。",
+     "eq": "=知らせてくれたらいいのに、なぜ…",
+     "en": "Why didn't they tell me that?",
+     "cn": "你要是通知我一下就好了……"
+    }
+   ],
+   "notes": [
+    {
+     "type": "◆",
+     "text": "残念な気持ちを表す。"
+    }
+   ]
+  }
+ ],
+ "exercises": {
+  "answers_note": "答えはp.65",
+  "sections": [
+   {
+    "type": "choice",
+    "instruction": "正しいほうに〇をつけなさい。",
+    "items": [
+     {
+      "n": 1,
+      "q": "何を買う（a. ともなく　b. ことなしに）、デパートの中をぶらぶらしていたら、友人に会った。"
+     },
+     {
+      "n": 2,
+      "q": "黙っていればいい（a. ものを　b. ことを）、つい余計なことを言ってしまった。"
+     },
+     {
+      "n": 3,
+      "q": "健康な体（a. なくしてに　b. なくしては）どんなにお金があっても幸せとは言えない。"
+     },
+     {
+      "n": 4,
+      "q": "この小説は涙（a. なしに　b. なくで）読むことができない。"
+     },
+     {
+      "n": 5,
+      "q": "駅を降りたら、どこから（a. なくして　b. ともなく）おいしそうないい匂いがしてきた。"
+     }
+    ]
+   },
+   {
+    "type": "order",
+    "instruction": "下の語を並べ替えて正しい文を作りなさい。＿＿に数字を書きなさい。",
+    "items": [
+     {
+      "n": 6,
+      "q": "＿＿ ＿＿ ＿＿ ＿＿ 勉強に集中できない。",
+      "options": [
+       "1 聞こえてくる",
+       "2 ピアノの音が気になって",
+       "3 ともなく",
+       "4 どこから"
+      ]
+     },
+     {
+      "n": 7,
+      "q": "五分早く ＿＿ ＿＿ ＿＿ ＿＿ 電車に乗り遅れてしまった。",
+      "options": [
+       "1 のんびりしていて",
+       "2 よかった",
+       "3 ものを",
+       "4 家を出れば"
+      ]
+     }
+    ]
+   }
+  ],
+  "answers": "Ⅰ：①a ②a ③b ④a ⑤b　Ⅱ：⑥4→3→1→2　⑦4→2→3→1"
+ },
+ "hitokoto": ""
+}

@@ -1,0 +1,170 @@
+{
+ "week": 1,
+ "day": 5,
+ "title": "難しいとみると…",
+ "title_cn": "一看到难",
+ "title_en": "As soon as it looks difficult…",
+ "dialog": {
+  "lines": [
+   "Q.（　）に入るのは？",
+   "彼は、外国人だ（　）、だれにでも英語で話しかける。"
+  ],
+  "cn": "问：括号里该填什么？——他一看是外国人，不管是谁都用英语搭话。（答案：とみると）",
+  "en": "Q: What goes in the blank? — Whenever he sees a foreigner, he speaks to them in English. (Answer: とみると)"
+ },
+ "points": [
+  {
+   "pattern": "忙しいとみえて",
+   "reading": "いそがしいとみえて",
+   "connection": "V/A/na/N〔普〕＋とみえて／とみえる",
+   "usage_cn": "看来……，似乎……（根据看到的情况推测）。",
+   "usage_en": "Seemingly ~ / it appears that ~.",
+   "examples": [
+    {
+     "jp": "田中さんは忙しいとみえて、このごろ電話もしてこない。",
+     "eq": "=忙しいようで",
+     "en": "Tanaka-san seems to be very busy, that is maybe why he has not called.",
+     "cn": "田中好像很忙，最近连电话都不打。"
+    },
+    {
+     "jp": "それを聞いて、彼はしばらく声を出さなかった。かなり驚いたとみえる。",
+     "eq": "=驚いたようだ",
+     "en": "He didn't say a word after he heard about it. He must have been very surprised.",
+     "cn": "听了这个，他好久没出声。看上去相当吃惊。"
+    }
+   ],
+   "notes": []
+  },
+  {
+   "pattern": "大きい地震が来るとみられる",
+   "reading": "おおきいじしんがくるとみられる",
+   "connection": "V/A/na/N〔普〕＋とみられる",
+   "usage_cn": "被认为……，据估计……（客观推测）。",
+   "usage_en": "It is expected / thought that ~.",
+   "examples": [
+    {
+     "jp": "この地域では、今後も大きい地震が来るとみられている。",
+     "eq": "=来ると考えられている",
+     "en": "This area is expected to have a major earthquake in the future.",
+     "cn": "人们认为，这个地区今后也会发生大的地震。"
+    },
+    {
+     "jp": "その会社の再建は難しいとみられる。",
+     "eq": "=難しいと思われる",
+     "en": "It looks very difficult to rebuild the company.",
+     "cn": "那个公司的重建被认为很难。"
+    }
+   ],
+   "notes": []
+  },
+  {
+   "pattern": "難しいとみると",
+   "reading": "むずかしいとみると",
+   "connection": "V/A/na/N〔普〕＋とみると",
+   "usage_cn": "一看到……就……；一判断是……就马上……。",
+   "usage_en": "As soon as one sees / judges that ~.",
+   "examples": [
+    {
+     "jp": "彼は問題がちょっと難しいとみると、自分で考えないで人に聞く。",
+     "eq": "=難しいと思うと",
+     "en": "He always asks others for help even when he encounters small problems.",
+     "cn": "他一旦发现问题有点难，就不再自己考虑，而是问别人。"
+    },
+    {
+     "jp": "彼は、店員が韓国人だとみると、必ず韓国語で話しかける。",
+     "eq": "=韓国人だとわかると",
+     "en": "As soon as he notices that the sales clerk is Korean, he switches to Korean.",
+     "cn": "他只要发现店员是韩国人，肯定会用韩语搭话。"
+    },
+    {
+     "jp": "彼女は、男の人にお金がないとみると、急にその人に興味がなくなるようだ。",
+     "eq": "=お金がないことがわかると",
+     "en": "As soon as she notices that a man has no money, she loses interest.",
+     "cn": "她一发现男人没有钱，就会马上对那人失去兴趣。"
+    }
+   ],
+   "notes": []
+  },
+  {
+   "pattern": "歩いて行くとすれば",
+   "reading": "あるいていくとすれば",
+   "connection": "V/A/na/N〔普〕＋とすれば／とすると（＝～としたら）",
+   "usage_cn": "假如……的话（假定条件）。",
+   "usage_en": "If (we suppose that) ~.",
+   "examples": [
+    {
+     "jp": "そこまで歩いて行くとすれば、30分くらいかかるだろう。",
+     "eq": "=もし歩いて行ったら",
+     "en": "It'll take about half an hour if you walk.",
+     "cn": "如果走着去那里的话，大约需要30分钟。"
+    },
+    {
+     "jp": "その話が本当だとすると、大変なことだ。",
+     "eq": "=もし本当なら",
+     "en": "If that is true, we are in trouble.",
+     "cn": "如果那件事是真的，那就麻烦了。"
+    }
+   ],
+   "notes": []
+  }
+ ],
+ "exercises": {
+  "answers_note": "答えはp.25",
+  "sections": [
+   {
+    "type": "choice",
+    "instruction": "正しいほうに〇をつけなさい。",
+    "items": [
+     {
+      "n": 1,
+      "q": "もし車を買い換える（a. とすれば　b. とみると）、次はドイツの車がほしい。"
+     },
+     {
+      "n": 2,
+      "q": "彼女は苦労した（a. として　b. とみえて）、実際の年齢より老けて見える。"
+     },
+     {
+      "n": 3,
+      "q": "彼女の普段の成績から、合格は間違いないと（a. みられている　b. みえている）。"
+     },
+     {
+      "n": 4,
+      "q": "彼は、女性が地方出身だ（a. とみると　b. とすれば）すぐに声をかける。"
+     },
+     {
+      "n": 5,
+      "q": "彼が犯人（a. だとすると　b. だとみえて）、犯罪を犯した動機は何だろう。"
+     }
+    ]
+   },
+   {
+    "type": "order",
+    "instruction": "下の語を並べ替えて正しい文を作りなさい。＿＿に数字を書きなさい。",
+    "items": [
+     {
+      "n": 6,
+      "q": "景気は回復しつつ ＿＿ ＿＿ ＿＿ ＿＿ 人は少ないと思う。",
+      "options": [
+       "1 が",
+       "2 実感している",
+       "3 ある",
+       "4 とみられている"
+      ]
+     },
+     {
+      "n": 7,
+      "q": "インフルエンザが ＿＿ ＿＿ ＿＿ ＿＿ 場合があるので、しばらくは薬を続けてください。",
+      "options": [
+       "1 ウイルスは",
+       "2 治った",
+       "3 まだ残っている",
+       "4 とみえても"
+      ]
+     }
+    ]
+   }
+  ],
+  "answers": "Ⅰ：①a ②b ③a ④a ⑤a　Ⅱ：⑥3→4→1→2　⑦2→4→1→3"
+ },
+ "hitokoto": ""
+}

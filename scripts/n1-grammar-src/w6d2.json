@@ -1,0 +1,202 @@
+{
+ "week": 6,
+ "day": 2,
+ "title": "冗談のつもりで",
+ "title_cn": "本来打算开玩笑",
+ "title_en": "I meant it as a joke",
+ "dialog": {
+  "lines": [
+   "Q.（　）に入るのは？",
+   "店員に勧められる（　）、高いバッグを買ってしまった。"
+  ],
+  "cn": "问：括号里该填什么？——在店员的劝说下，稀里糊涂买了个很贵的包。（答案：ままに）",
+  "en": "Q: What goes in the blank? — I ended up buying an expensive bag at the shop assistant's urging. (Answer: ままに)"
+ },
+ "points": [
+  {
+   "pattern": "冗談のつもりで",
+   "reading": "じょうだんのつもりで",
+   "connection": "Vる／Vた／Aい／naな／Nの ＋つもりで／つもりだ",
+   "usage_cn": "本来打算……，自以为……（主观认为，实际并非如此）。",
+   "usage_en": "Thinking that ~ / intending ~ (but in fact …).",
+   "examples": [
+    {
+     "jp": "冗談のつもりで言ったのに、本気にされてしまった。",
+     "eq": "=冗談という気持ちで",
+     "en": "I was only joking but what I said was taken very seriously.",
+     "cn": "虽然是当作玩笑话说的，对方却当真了。"
+    },
+    {
+     "jp": "カラオケでは、いつも歌手になったつもりで歌っている。",
+     "eq": "=歌手になったという気持ちで",
+     "en": "I feel like a professional singer whenever I sing at a karaoke bar.",
+     "cn": "唱卡拉OK的时候，总是把自己当成歌手唱歌。"
+    },
+    {
+     "jp": "自分では若いつもりだが、年には勝てません。",
+     "eq": "=若いという気持ちだが",
+     "en": "I try to look young but I really can't fight my age.",
+     "cn": "尽管自己还觉得年轻，可年龄不饶人呀。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "◆",
+     "text": "「事実は違う」という意味。"
+    }
+   ]
+  },
+  {
+   "pattern": "言われるままに",
+   "reading": "いわれるままに",
+   "connection": "Vる（が）まま（に）",
+   "usage_cn": "任凭……，听凭……（顺从别人的意志）。",
+   "usage_en": "As one is told / at someone's will.",
+   "examples": [
+    {
+     "jp": "契約のとき、言われるままにハンコを押している人が多い。",
+     "eq": "=言われる通りに",
+     "en": "Lots of people put their seals on contracts without reviewing them well.",
+     "cn": "签约的时候，完全按对方所说的签字盖章的人很多。"
+    },
+    {
+     "jp": "ゆうべは同僚に誘われるままに飲みに行った。",
+     "eq": "=誘われて、断ることもしないで",
+     "en": "Persuaded by my colleagues, I went drinking with them.",
+     "cn": "昨晚被同事邀请去喝酒了。"
+    },
+    {
+     "jp": "あなたが思うまま、話してください。",
+     "eq": "=思うとおりに",
+     "en": "Please say what you think.",
+     "cn": "就按你想的说吧。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "◆",
+     "text": "「Vられるが（まま）」はほかの人の意志のとおりという意味。"
+    }
+   ]
+  },
+  {
+   "pattern": "言わずとも",
+   "reading": "いわずとも",
+   "connection": "Vない形（去ない）ずとも",
+   "usage_cn": "即使不……也……（书面语）。",
+   "usage_en": "Even without ~ (formal).",
+   "examples": [
+    {
+     "jp": "彼があなたのことを好きだということは、言わずともわかる。",
+     "eq": "=言わなくても",
+     "en": "It is obvious that he is in love with you.",
+     "cn": "他喜欢你，这事不说也明白。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "!",
+     "text": "しない→せず"
+    },
+    {
+     "type": "硬",
+     "text": "改まった場面や文書で使われる硬い表現"
+    }
+   ]
+  },
+  {
+   "pattern": "読まずじまい",
+   "reading": "よまずじまい",
+   "connection": "Vない形（去ない）ずじまい",
+   "usage_cn": "结果没能……，最终没有……（带有遗憾的心情）。",
+   "usage_en": "End up never ~ (with regret).",
+   "examples": [
+    {
+     "jp": "英語の本をたくさん買ったが、ほとんど読まずじまいだ。",
+     "eq": "=読まないままだ",
+     "en": "I bought many English books but I haven't touched most of them.",
+     "cn": "买了好多英语书，但几乎都没有读。"
+    },
+    {
+     "jp": "5着も試着したが、どれも気に入らず、買わずじまいで店を出た。",
+     "eq": "=買おうと思っていたけれど結局は買わないで",
+     "en": "I came out of the shop without buying anything, even though I tried on five different dresses.",
+     "cn": "试穿了5件衣服，都不喜欢，结果什么都没买就出了店。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "!",
+     "text": "しない→せず"
+    },
+    {
+     "type": "れい",
+     "text": "会わずじまい／行かずじまい／せずじまい／買えずじまい"
+    },
+    {
+     "type": "◆",
+     "text": "残念な気持ち。"
+    }
+   ]
+  }
+ ],
+ "exercises": {
+  "answers_note": "答えはp.99",
+  "sections": [
+   {
+    "type": "choice",
+    "instruction": "正しいほうに〇をつけなさい。",
+    "items": [
+     {
+      "n": 1,
+      "q": "忙しかったので、あとでお昼を食べようと思っていたが、結局、食べず（a. まま　b. じまい）で、夕食の時間になった。"
+     },
+     {
+      "n": 2,
+      "q": "感想を思う（a. ままに　b. つもりで）アンケートに書いてください。"
+     },
+     {
+      "n": 3,
+      "q": "彼は目が見えず（a. とも　b. じまいで）すばらしい演奏をして、観客に感動を与えた。"
+     },
+     {
+      "n": 4,
+      "q": "店員に勧められる（a. つもりで　b. ままに）、高いテレビを買ってしまった。"
+     },
+     {
+      "n": 5,
+      "q": "待ち合わせ場所を間違えたらしく、結局彼女とは（a. 会えず　b. 会えない）じまいだった。"
+     }
+    ]
+   },
+   {
+    "type": "order",
+    "instruction": "下の語を並べ替えて正しい文を作りなさい。＿＿に数字を書きなさい。",
+    "items": [
+     {
+      "n": 6,
+      "q": "検査の結果を医師にもう少し詳しく ＿＿ ＿＿ ＿＿ ＿＿ 診察室を後にした。",
+      "options": [
+       "1 促されるまま",
+       "2 と思いながらも",
+       "3 看護師に",
+       "4 聞こう"
+      ]
+     },
+     {
+      "n": 7,
+      "q": "＿＿ ＿＿ ＿＿ ＿＿ 飲みに来てしまった。",
+      "options": [
+       "1 早く帰るつもりで",
+       "2 いたのに",
+       "3 誘われるまま",
+       "4 今日こそは"
+      ]
+     }
+    ]
+   }
+  ],
+  "answers": "Ⅰ：①b ②a ③a ④b ⑤a　Ⅱ：⑥4→2→3→1　⑦4→1→2→3"
+ },
+ "hitokoto": ""
+}

@@ -1,0 +1,199 @@
+{
+ "week": 7,
+ "day": 6,
+ "title": "彼には及ばない",
+ "title_cn": "比不上他",
+ "title_en": "No match for him",
+ "dialog": {
+  "lines": [
+   "Q.（　）に入るのは？",
+   "やりたくないが、（　）を得ない。"
+  ],
+  "cn": "问：括号里该填什么？——虽然不想做，但不得不做。（答案：せざる）",
+  "en": "Q: What goes in the blank? — I don't want to, but I have no choice. (Answer: せざる)"
+ },
+ "points": [
+  {
+   "pattern": "知られざる真実",
+   "reading": "しられざるしんじつ",
+   "connection": "Vない形（去ない）ざる N",
+   "usage_cn": "不为……的，没有……的（书面语，「ない」的古语形式）。",
+   "usage_en": "Un~ed / that is not ~ (classical negative).",
+   "examples": [
+    {
+     "jp": "政治の世界には、知られざる真実がたくさんある。",
+     "eq": "=知られていない",
+     "en": "There are a lot of unrevealed truths in the world of politics.",
+     "cn": "政治的世界里有许多不为人知的事实。"
+    },
+    {
+     "jp": "絶えざる不安に夜も眠れない。",
+     "eq": "=絶えない、ずっと続く",
+     "en": "I can't sleep at night because I worry incessantly.",
+     "cn": "不停的不安，让我晚上也睡不着。"
+    }
+   ],
+   "notes": []
+  },
+  {
+   "pattern": "せざるを得ない",
+   "reading": "せざるをえない",
+   "connection": "Vない形（去ない）ざるを得ない（しない→せざる）",
+   "usage_cn": "不得不……，只好……。",
+   "usage_en": "Have no choice but to ~.",
+   "examples": [
+    {
+     "jp": "不本意だがそうせざるを得ない。",
+     "eq": "=そうしなければならない",
+     "en": "Although I don't really want to do it, I have to.",
+     "cn": "虽然并非本意，但不得不这样。"
+    },
+    {
+     "jp": "今回の失敗は君の責任と言わざるを得ない。",
+     "eq": "=言わなければならない",
+     "en": "I would say that the fact that we failed is your responsibility.",
+     "cn": "不得不说这次的失败是你的责任。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "!",
+     "text": "しない→せざる"
+    },
+    {
+     "type": "硬",
+     "text": "改まった場面や文書で使われる硬い表現"
+    }
+   ]
+  },
+  {
+   "pattern": "わざわざ行くには及ばない",
+   "reading": "わざわざいくにはおよばない",
+   "connection": "Vる／N（Nする→N）＋に（は）及ばない",
+   "usage_cn": "不必……，用不着……。",
+   "usage_en": "There's no need to ~.",
+   "examples": [
+    {
+     "jp": "電話で済むことだから、わざわざ行くには及ばない。",
+     "eq": "=わざわざ行く必要がない",
+     "en": "You won't need to go since you can do it over the phone.",
+     "cn": "打个电话就行了，不用专门去。"
+    },
+    {
+     "jp": "ファックスを使えばいい。郵便で送るには及ばない。",
+     "eq": "=郵便で送る必要がない",
+     "en": "You can use a fax machine. You don't need to send it by post.",
+     "cn": "发传真就行了。不必邮寄。"
+    },
+    {
+     "jp": "若者は言うに及ばず、主婦やサラリーマンまで、彼のコンサートに行っている。",
+     "eq": "=若者については言うまでもなく",
+     "en": "Not only are young people going to his concert, so are housewives and businessmen.",
+     "cn": "年轻人就不用说了，连家庭主妇及公司职员都去看他的演唱会。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "れい",
+     "text": "心配には及ばない／それには及ばない"
+    },
+    {
+     "type": "もっと",
+     "text": "Nは言うに及ばず（＝Nは言うまでもなく）"
+    }
+   ]
+  },
+  {
+   "pattern": "彼には及ばない",
+   "reading": "かれにはおよばない",
+   "connection": "Nには及ばない",
+   "usage_cn": "比不上……，不及……（达不到那个水平）。",
+   "usage_en": "Not as good as ~ / no match for ~.",
+   "examples": [
+    {
+     "jp": "どんなに頑張っても、彼の成績には及ばない。",
+     "eq": "=彼の成績のレベルには達しない",
+     "en": "No matter how hard I study, I can't compete with him.",
+     "cn": "不论怎样努力，都不会赶上他的成绩。"
+    },
+    {
+     "jp": "そのオリンピック選手は優勝したが、世界記録には及ばなかった。",
+     "eq": "=世界記録には達しなかった",
+     "en": "He won the gold medal at the Olympics but he did not break the world record.",
+     "cn": "那位奥运会选手虽然获胜，却没有达到世界纪录。"
+    },
+    {
+     "jp": "足元にも及ばない",
+     "eq": "=相手のほうがはるかに優れている",
+     "en": "can't compete with",
+     "cn": "远不可及"
+    }
+   ],
+   "notes": [
+    {
+     "type": "◆",
+     "text": "「そのレベルには達していない」という意味。"
+    }
+   ]
+  }
+ ],
+ "exercises": {
+  "answers_note": "答えはp.124",
+  "sections": [
+   {
+    "type": "choice",
+    "instruction": "正しいほうに〇をつけなさい。",
+    "items": [
+     {
+      "n": 1,
+      "q": "面接の結果は電話で連絡しますので、こちらに（a. 来る　b. 来ない）には及びません。"
+     },
+     {
+      "n": 2,
+      "q": "この交通事故に関しては歩行者側の不注意と（a. 言わざるを　b. 言わずを）えない。"
+     },
+     {
+      "n": 3,
+      "q": "その映画では、主人公が（a. 見えざる　b. 見ざるをえない）敵と戦う姿が印象的だった。"
+     },
+     {
+      "n": 4,
+      "q": "京都には（a. およばず　b. およばない）が、この町にもお寺がたくさんあります。"
+     },
+     {
+      "n": 5,
+      "q": "彼の言うことは間違っていないので、納得（a. しざる　b. せざる）を得ないだろう。"
+     }
+    ]
+   },
+   {
+    "type": "order",
+    "instruction": "下の語を並べ替えて正しい文を作りなさい。＿＿に数字を書きなさい。",
+    "items": [
+     {
+      "n": 6,
+      "q": "レオナルド・ダ・ビンチは、＿＿ ＿＿ ＿＿ ＿＿ 分野においても後世に多くの影響を残した。",
+      "options": [
+       "1 哲学や思想、",
+       "2 言うにおよばず",
+       "3 自然科学の",
+       "4 絵画や彫刻は"
+      ]
+     },
+     {
+      "n": 7,
+      "q": "私は、自分の ＿＿ ＿＿ ＿＿ ＿＿ を得なかった。",
+      "options": [
+       "1 ながらも",
+       "2 納得せざる",
+       "3 決定したことに",
+       "4 意に反し"
+      ]
+     }
+    ]
+   }
+  ],
+  "answers": "Ⅰ：①a ②a ③a ④b ⑤b　Ⅱ：⑥4→2→1→3　⑦4→1→3→2"
+ },
+ "hitokoto": ""
+}

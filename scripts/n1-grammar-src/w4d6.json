@@ -1,0 +1,189 @@
+{
+ "week": 4,
+ "day": 6,
+ "title": "なんとかならないものか",
+ "title_cn": "难道就没有办法吗",
+ "title_en": "Isn't there anything we can do?",
+ "dialog": {
+  "lines": [
+   "Q.（　）に入るのは？",
+   "肉は（　）が、たいてい魚を食べている。"
+  ],
+  "cn": "问：括号里该填什么？——肉也不是不吃，不过大多吃鱼。（答案：食べなくもない）",
+  "en": "Q: What goes in the blank? — It's not that I never eat meat, but I usually eat fish. (Answer: 食べなくもない)"
+ },
+ "points": [
+  {
+   "pattern": "わからなくはない",
+   "reading": "わからなくはない",
+   "connection": "Aくなく／naでなく／Vなく／Vられなく ＋はない／もない；Nがなくはない／Nがなくもない",
+   "usage_cn": "也不是不……，并非不……（消极的肯定）。",
+   "usage_en": "It's not that ~ not (reluctant affirmation).",
+   "examples": [
+    {
+     "jp": "彼は会社を辞めたいらしい。その気持ちはわからなくはない。",
+     "eq": "=わかると言っていい",
+     "en": "I gather he has quit his job. I can understand him to some extent.",
+     "cn": "他似乎想辞职，那心情也不是不能理解的。"
+    },
+    {
+     "jp": "できなくはないが、自信がないからやりたくない。",
+     "eq": "=できると言っていい",
+     "en": "I may be able to do it but I don't want to do it because I don't have enough confidence.",
+     "cn": "也不是做不到，但因为没有信心，所以不想做。"
+    },
+    {
+     "jp": "それくらいのマンションなら、無理すれば買えなくもない。",
+     "eq": "=買えるかもしれない",
+     "en": "I may be able to buy such an apartment if I really put my mind to it.",
+     "cn": "如果是这种程度的房子，咬咬牙也不是买不起。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "◆",
+     "text": "消極的に肯定する言い方。"
+    }
+   ]
+  },
+  {
+   "pattern": "間に合わないものでもない",
+   "reading": "まにあわないものでもない",
+   "connection": "Vない（もの）でもない",
+   "usage_cn": "也并非不……，也不是不可能……（有可能时使用）。",
+   "usage_en": "It is not impossible that ~.",
+   "examples": [
+    {
+     "jp": "今すぐ会社を出れば、コンサートに間に合わないものでもない。",
+     "eq": "=もしかしたら、間に合うかもしれない",
+     "en": "You may be able to make it in time for the concert if you leave right now.",
+     "cn": "如果现在马上离开公司，也并不是赶不上音乐会。"
+    },
+    {
+     "jp": "条件によっては、その仕事を引き受けないものでもない。",
+     "eq": "=もしかしたら、引き受けるかもしれない",
+     "en": "I may take the work depending on the conditions.",
+     "cn": "看什么条件了，并非不能接受那个工作。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "◆",
+     "text": "可能性があるときに使う。"
+    },
+    {
+     "type": "硬",
+     "text": "改まった場面や文書で使われる硬い表現"
+    }
+   ]
+  },
+  {
+   "pattern": "昔とは比べものにならない",
+   "reading": "むかしとはくらべものにならない",
+   "connection": "Nとは比べものにならない",
+   "usage_cn": "与……无法相比，比……好（差）得多。",
+   "usage_en": "Beyond comparison with ~.",
+   "examples": [
+    {
+     "jp": "今の車の性能は、昔とは比べものにならない。",
+     "eq": "=全然違うので比べることができない",
+     "en": "Cars these days are much more fuel efficient than they were in the past.",
+     "cn": "现在的汽车性能和以前无法相提并论。"
+    },
+    {
+     "jp": "彼の成績は、私とは比べものにならないほどいい。",
+     "eq": "=レベルが全然違って比べることができない",
+     "en": "His marks are way better than mine.",
+     "cn": "他的成绩很好，是我无法比拟的。"
+    }
+   ],
+   "notes": []
+  },
+  {
+   "pattern": "なんとかならないものか",
+   "reading": "なんとかならないものか",
+   "connection": "（どうにか／なんとか／もう少し）＋Vないもの（だろう）か／Vれないもの（だろう）か",
+   "usage_cn": "难道不能……吗，能不能想办法……（强烈的愿望）。",
+   "usage_en": "Isn't there some way to ~?",
+   "examples": [
+    {
+     "jp": "このにおい、なんとかならないものか！",
+     "eq": "=どうにかしたい",
+     "en": "Can't we do anything about this smell?",
+     "cn": "这味道，难道没什么办法吗！"
+    },
+    {
+     "jp": "大事な時計が壊れてしまった。どうにか直せないものだろうか。",
+     "eq": "=どうにか直したい",
+     "en": "The clock is out of order. Can't we fix it one way or another?",
+     "cn": "珍贵的表坏了，难道没办法修理了吗？"
+    }
+   ],
+   "notes": [
+    {
+     "type": "硬",
+     "text": "改まった場面や文書で使われる硬い表現"
+    }
+   ]
+  }
+ ],
+ "exercises": {
+  "answers_note": "答えはp.76",
+  "sections": [
+   {
+    "type": "choice",
+    "instruction": "正しいほうに〇をつけなさい。",
+    "items": [
+     {
+      "n": 1,
+      "q": "お金と時間をかければ、私にだってそれはできない（a. ものか　b. ものでもない）。"
+     },
+     {
+      "n": 2,
+      "q": "字がきれいに書ける方法は（a. ないもの　b. ないこと）だろうか。"
+     },
+     {
+      "n": 3,
+      "q": "彼女が腹を立てるのも（a. わからなくはない　b. わからないものだ）が、そんなに怒らなくてもいいだろう。"
+     },
+     {
+      "n": 4,
+      "q": "彼女の声の大きいのはもう少しどうにか（a. なくもない　b. ならない）ものだろうか。"
+     },
+     {
+      "n": 5,
+      "q": "彼の練習量は、ほかの選手と（a. 比べることにならない　b. 比べものにならない）くらい多い。"
+     }
+    ]
+   },
+   {
+    "type": "order",
+    "instruction": "下の語を並べ替えて正しい文を作りなさい。＿＿に数字を書きなさい。",
+    "items": [
+     {
+      "n": 6,
+      "q": "このパソコンは高いが性能がいいので、値引き率 ＿＿ ＿＿ ＿＿ ＿＿ ない。",
+      "options": [
+       "1 買わない",
+       "2 によって",
+       "3 は",
+       "4 ものでも"
+      ]
+     },
+     {
+      "n": 7,
+      "q": "これは、ほかの ＿＿ ＿＿ ＿＿ ＿＿ がいいですよ。",
+      "options": [
+       "1 比べもの",
+       "2 品質",
+       "3 にならないほど",
+       "4 とは"
+      ]
+     }
+    ]
+   }
+  ],
+  "answers": "Ⅰ：①b ②a ③a ④b ⑤b　Ⅱ：⑥2→3→1→4　⑦4→1→3→2"
+ },
+ "hitokoto": ""
+}

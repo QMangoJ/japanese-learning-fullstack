@@ -1,0 +1,222 @@
+{
+ "week": 6,
+ "day": 4,
+ "title": "貧しさゆえに",
+ "title_cn": "因为贫穷",
+ "title_en": "Because of poverty",
+ "dialog": {
+  "lines": [
+   "Q.（　）に入るのは？",
+   "彼女は、つまらないと（　）ばかりに途中で映画館を出て行った。"
+  ],
+  "cn": "问：括号里该填什么？——她一副“真没意思”的样子，中途离开了电影院。（答案：言わん）",
+  "en": "Q: What goes in the blank? — She left the cinema halfway through as if to say it was boring. (Answer: 言わん)"
+ },
+ "points": [
+  {
+   "pattern": "貧しさゆえに",
+   "reading": "まずしさゆえに",
+   "connection": "V/A/na/N〔普〕＋（が）ゆえ（に）／（が）ゆえの N′（N~だ~（である）、na~だ~（である））",
+   "usage_cn": "因为……，由于……（书面语）。",
+   "usage_en": "Because of ~ (formal).",
+   "examples": [
+    {
+     "jp": "貧しさゆえに、彼は盗みを働いた。",
+     "eq": "=貧しいという理由で",
+     "en": "He stole things only because he was so poor.",
+     "cn": "因为穷，他才去偷盗。"
+    },
+    {
+     "jp": "日本語を知らなかったがゆえに、誤解された。",
+     "eq": "=知らなかっただけの理由で",
+     "en": "I was misunderstood because I couldn't speak Japanese.",
+     "cn": "因为不懂日语，被误解了。"
+    },
+    {
+     "jp": "有名人ゆえの悩みがある。",
+     "eq": "=有名人であるための",
+     "en": "Due to their fame, well known people have their share of troubles.",
+     "cn": "因为是名人而带来的烦恼。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "れい",
+     "text": "有名人である（が）ゆえの／貧しい（が）ゆえに／貧乏であった（が）ゆえに"
+    },
+    {
+     "type": "硬",
+     "text": "改まった場面や文書で使われる硬い表現"
+    }
+   ]
+  },
+  {
+   "pattern": "お金をもうけんがために",
+   "reading": "おかねをもうけんがために",
+   "connection": "Vない形（去ない）んが ＋ために／ための N′（しない→せんが）",
+   "usage_cn": "为了……（表示强烈的意志，书面语）。",
+   "usage_en": "In order to ~ (strong will, formal).",
+   "examples": [
+    {
+     "jp": "彼はお金をもうけんがために、ずいぶんひどいことをやってきた。",
+     "eq": "=もうけるために",
+     "en": "He has done a lot of terrible things in order to make money.",
+     "cn": "他为了挣钱，干了许多恶劣的事情。"
+    },
+    {
+     "jp": "一人の青年がおぼれている子どもを救わんがために、川に飛び込んだ。",
+     "eq": "=救うために",
+     "en": "A young man jumped into the river in order to save a drowning child.",
+     "cn": "一位年轻人为了救溺水的孩子，跳到了河里。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "!",
+     "text": "しない→せんが"
+    },
+    {
+     "type": "◆",
+     "text": "強い意志を表す。"
+    },
+    {
+     "type": "硬",
+     "text": "改まった場面や文書で使われる硬い表現"
+    }
+   ]
+  },
+  {
+   "pattern": "あふれんばかりになっている",
+   "reading": "あふれんばかりになっている",
+   "connection": "Vない形（去ない）ん ＋ばかりに／ばかりの N′（しない→せん）",
+   "usage_cn": "几乎要……，眼看就要……（程度之甚）。",
+   "usage_en": "As if about to ~ / almost ~.",
+   "examples": [
+    {
+     "jp": "川の水があふれんばかりになっている。",
+     "eq": "=今にもあふれそうな状態に",
+     "en": "The river is about to flood.",
+     "cn": "河水几乎要溢出来。"
+    },
+    {
+     "jp": "彼女は泣き出さんばかりの顔をして、私に助けを求めてきた。",
+     "eq": "=今にも泣きだしそうな顔",
+     "en": "She came to me for help with a desperate look on her face.",
+     "cn": "她来向我求助，那表情几乎要哭出来。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "!",
+     "text": "しない→せん"
+    },
+    {
+     "type": "れい",
+     "text": "割れんばかりの拍手／あふれんばかりの笑顔／胸がはりさけんばかりに"
+    }
+   ]
+  },
+  {
+   "pattern": "うれしいとばかりに",
+   "reading": "うれしいとばかりに",
+   "connection": "〔文〕と（言わん）ばかりに／〔文〕と（言わん）ばかりの N",
+   "usage_cn": "简直就像在说……似的，一副……的样子（虽然嘴上没说）。",
+   "usage_en": "As if to say ~.",
+   "examples": [
+    {
+     "jp": "その子はうれしいとばかりに、飛び上がった。",
+     "eq": "=本当にうれしい様子で",
+     "en": "The child jumped up and down with joy.",
+     "cn": "那孩子满面欢喜地跳了起来。"
+    },
+    {
+     "jp": "彼は試験中、あきらめたとばかりに鉛筆を投げ出した。",
+     "eq": "=あきらめた様子で",
+     "en": "He threw his pencil down during the exam as if he had given up.",
+     "cn": "他在考试的时候扔掉了铅笔，似乎在说已经放弃了。"
+    },
+    {
+     "jp": "彼女は「いやだ」と言わんばかりに、首を振った。",
+     "eq": "=「いやだ」と口では言わないが、そのような様子で",
+     "en": "She shook her head as if to say “No”.",
+     "cn": "她摇着头，就差说出“不愿意”了。"
+    },
+    {
+     "jp": "ここぞとばかりに、……",
+     "eq": "=今、この時を逃してはいけないという様子で",
+     "en": "In order not to lose this an opportunity",
+     "cn": "像是要说“时不再来”"
+    }
+   ],
+   "notes": [
+    {
+     "type": "◆",
+     "text": "言葉では言わないがそのような様子で。"
+    },
+    {
+     "type": "◆",
+     "text": "N＝表情、様子、調子、態度、口調、顔、目つき など"
+    }
+   ]
+  }
+ ],
+ "exercises": {
+  "answers_note": "答えはp.103",
+  "sections": [
+   {
+    "type": "choice",
+    "instruction": "正しいほうに〇をつけなさい。",
+    "items": [
+     {
+      "n": 1,
+      "q": "心を込めて作った料理なのに、子どもたちはまずい（a. とばかりに　b. ばかりか）顔をゆがめた。"
+     },
+     {
+      "n": 2,
+      "q": "うちの犬は僕を見ると（a. 飛びついたと　b. 飛びつかん）ばかりの勢いで走ってきた。"
+     },
+     {
+      "n": 3,
+      "q": "彼女は疲れた（a. とばかりに　b. ゆえに）、部屋に入るなりベッドに倒れ込んだ。"
+     },
+     {
+      "n": 4,
+      "q": "彼は技術を極めん（a. がために　b. ばかりに）夜も眠らずに努力している。"
+     },
+     {
+      "n": 5,
+      "q": "その病気に関する人々の知識のなさ（a. ゆえに　b. とばかりに）、彼らは迫害された。"
+     }
+    ]
+   },
+   {
+    "type": "order",
+    "instruction": "下の語を並べ替えて正しい文を作りなさい。＿＿に数字を書きなさい。",
+    "items": [
+     {
+      "n": 6,
+      "q": "その国の ＿＿ ＿＿ ＿＿ ＿＿ 接し、私の人生観は変わった。",
+      "options": [
+       "1 笑顔に",
+       "2 子どもたちに",
+       "3 満ちた",
+       "4 あふれんばかりの"
+      ]
+     },
+     {
+      "n": 7,
+      "q": "彼は重い罪を犯したが、事件当時、判断力が ＿＿ ＿＿ ＿＿ ＿＿ 、社会に復帰することができた。",
+      "options": [
+       "1 未熟",
+       "2 がゆえ",
+       "3 とされる",
+       "4 未成年者であった"
+      ]
+     }
+    ]
+   }
+  ],
+  "answers": "Ⅰ：①a ②b ③a ④a ⑤a　Ⅱ：⑥4→1→3→2　⑦1→3→4→2"
+ },
+ "hitokoto": ""
+}

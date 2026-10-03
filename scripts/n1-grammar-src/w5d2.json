@@ -1,0 +1,205 @@
+{
+ "week": 5,
+ "day": 2,
+ "title": "間に合いそうもない",
+ "title_cn": "好像赶不上",
+ "title_en": "It doesn't look like we'll make it",
+ "dialog": {
+  "lines": [
+   "Q.（　）に入るのは？",
+   "電車が止まってしまって、家に（　）帰れない。"
+  ],
+  "cn": "问：括号里该填什么？——电车停了，想回家也回不去。（答案：帰ろうにも）",
+  "en": "Q: What goes in the blank? — The trains have stopped, so I can't get home even if I want to. (Answer: 帰ろうにも)"
+ },
+ "points": [
+  {
+   "pattern": "間に合いそうもない",
+   "reading": "まにあいそうもない",
+   "connection": "Vます形（去ます）そう ＋もない／にない",
+   "usage_cn": "看样子不会……，不太可能……。",
+   "usage_en": "Unlikely to ~ / doesn't look like ~.",
+   "examples": [
+    {
+     "jp": "この分では、締め切りの期限に間に合いそうもない。",
+     "eq": "=間に合う可能性は低い",
+     "en": "At the pace we are going, it doesn't look like we'll make the deadline.",
+     "cn": "按这个样子，看来无法赶得上截止日期了。"
+    },
+    {
+     "jp": "できそうもないことを、簡単に引き受けるな。",
+     "eq": "=できる可能性の低い",
+     "en": "Don't undertake a job which you can't do!",
+     "cn": "不要轻易接受无法做到的事情。"
+    }
+   ],
+   "notes": []
+  },
+  {
+   "pattern": "たとえようがない美しさ",
+   "reading": "たとえようがないうつくしさ",
+   "connection": "Vます形（去ます）よう ＋がない／もない／のないN",
+   "usage_cn": "无法……，没有办法……。",
+   "usage_en": "There is no way to ~.",
+   "examples": [
+    {
+     "jp": "先日見た富士山はたとえようがない美しさだった。",
+     "eq": "=たとえる方法がない",
+     "en": "I saw Mt. Fuji the other day and it was too beautiful to describe.",
+     "cn": "前几天看到的富士山漂亮得无以形容。"
+    },
+    {
+     "jp": "こんなところで地震が起きたら、逃げようがない。",
+     "eq": "=逃げる方法がない",
+     "en": "We have no way to escape from here if an earthquake happens.",
+     "cn": "如果在这样的地方发生地震就无处可逃。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "慣用",
+     "text": "どうしようもない（＝どうする方法もない）"
+    }
+   ]
+  },
+  {
+   "pattern": "町の変わりように驚いた",
+   "reading": "まちのかわりようにおどろいた",
+   "connection": "Vます形（去ます）よう",
+   "usage_cn": "……的样子，……的方式。",
+   "usage_en": "The way ~ / the manner of ~.",
+   "examples": [
+    {
+     "jp": "20年ぶりの故郷の変わりように驚いた。",
+     "eq": "=変わったその様子に",
+     "en": "I was surprised by how much my hometown had changed during the last 20 years.",
+     "cn": "对阔别20年的故乡的变化感到惊异。"
+    },
+    {
+     "jp": "彼女の子どものかわいがりようは、少し異常なくらいだ。",
+     "eq": "=かわいがる様子は",
+     "en": "The way she indulges her child is a bit unusual.",
+     "cn": "她对孩子的疼爱方式，甚至有些异常。"
+    },
+    {
+     "jp": "ものは考えようだ。",
+     "eq": "=考え方による",
+     "en": "Something good can come out of it.",
+     "cn": "事情要看怎么想。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "れい",
+     "text": "～よう（といっ）たらない"
+    },
+    {
+     "type": "慣用",
+     "text": "ものは考えようだ"
+    }
+   ]
+  },
+  {
+   "pattern": "行こうにも行けない",
+   "reading": "いこうにもいけない",
+   "connection": "①Vようにも Vれない／Vるに（も）Vれない　②Vようにも…／Vるにも…",
+   "usage_cn": "①想……也不能……（因为某种理由做不到）；②想要……，但是……（说明做不到的理由）。",
+   "usage_en": "① Can't ~ even if one wants to; ② Want to ~, but ….",
+   "examples": [
+    {
+     "jp": "電車が止まっているので、会社に行こうにも行けない。",
+     "eq": "=行こうとしても行く方法がない",
+     "en": "I want to go to the office but I can't because the trains are not running.",
+     "cn": "因为电车停运了，想去公司也没法去。"
+    },
+    {
+     "jp": "警察官なのに振り込め詐欺にあって、泣くにも泣けない。",
+     "eq": "=泣きたいけれど泣くことができない",
+     "en": "I am very depressed about the fact that although I am a policeman, I was the victim of a defrauding scheme.",
+     "cn": "虽然是警察，却碰上了汇款诈骗，真是欲哭无泪。"
+    },
+    {
+     "jp": "結婚しようにも相手がいない。",
+     "eq": "=結婚したいが",
+     "en": "I like to get married but I can't find anyone I want to marry.",
+     "cn": "就算想结婚，也没有对象。"
+    },
+    {
+     "jp": "天ぷらを作るにも作り方がわからない。",
+     "eq": "=作りたいが／作ろうとしても",
+     "en": "I want to make tempura, but have no clue as to how to make it.",
+     "cn": "就算想做天麸罗，也不知道怎么做。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "◆",
+     "text": "①何か理由があってできないときに使う。"
+    },
+    {
+     "type": "◆",
+     "text": "②…はVができない理由。"
+    }
+   ]
+  }
+ ],
+ "exercises": {
+  "answers_note": "答えはp.83",
+  "sections": [
+   {
+    "type": "choice",
+    "instruction": "正しいほうに〇をつけなさい。",
+    "items": [
+     {
+      "n": 1,
+      "q": "最終電車が行ってしまって、タクシーに（a. 乗ろうにも　b. 乗りようがなく）お金が足りなかった。"
+     },
+     {
+      "n": 2,
+      "q": "できる限りやさしく言葉の意味を教えた。もうこれ以上、説明（a. のしようが　b. しそうも）ない。"
+     },
+     {
+      "n": 3,
+      "q": "この雨はしばらくやみそう（a. がない　b. もない）。"
+     },
+     {
+      "n": 4,
+      "q": "台風で川の水があふれ、橋を渡ろうにも（a. 渡れない　b. 渡れようがない）。"
+     },
+     {
+      "n": 5,
+      "q": "飛び出してきた自転車を（a. 避けようが　b. 避けそうも）なく、ひいてしまった。"
+     }
+    ]
+   },
+   {
+    "type": "order",
+    "instruction": "下の語を並べ替えて正しい文を作りなさい。＿＿に数字を書きなさい。",
+    "items": [
+     {
+      "n": 6,
+      "q": "あの人とは、いくら ＿＿ ＿＿ ＿＿ ＿＿ と思う。",
+      "options": [
+       "1 そうにない",
+       "2 としても",
+       "3 わかり合え",
+       "4 話し合った"
+      ]
+     },
+     {
+      "n": 7,
+      "q": "彼女のこの ＿＿ ＿＿ ＿＿ ＿＿ ではないから、救急車を呼んだほうがいいよ。",
+      "options": [
+       "1 普通",
+       "2 ようは",
+       "3 異常な",
+       "4 痛がり"
+      ]
+     }
+    ]
+   }
+  ],
+  "answers": "Ⅰ：①a ②a ③b ④a ⑤a　Ⅱ：⑥4→2→3→1　⑦3→4→2→1"
+ },
+ "hitokoto": ""
+}

@@ -1,0 +1,218 @@
+{
+ "week": 8,
+ "day": 5,
+ "title": "光栄の至り",
+ "title_cn": "光荣之至",
+ "title_en": "The greatest honor",
+ "dialog": {
+  "lines": [
+   "Q.（　）に入るのは？",
+   "彼の行為は軽率（　）。"
+  ],
+  "cn": "问：括号里该填什么？——他的行为极其轻率。（答案：極まりない）",
+  "en": "Q: What goes in the blank? — His behavior is extremely careless. (Answer: 極まりない)"
+ },
+ "points": [
+  {
+   "pattern": "失礼極まる",
+   "reading": "しつれいきわまる",
+   "connection": "na極まる",
+   "usage_cn": "极其……，……到了极点。",
+   "usage_en": "Extremely ~.",
+   "examples": [
+    {
+     "jp": "彼の態度は失礼極まる。",
+     "eq": "=これ以上ないほど失礼だ",
+     "en": "His attitude is worse than rude.",
+     "cn": "他的态度极其失礼。"
+    },
+    {
+     "jp": "昨日見た映画は、平凡極まる内容だった。",
+     "eq": "=非常に平凡な",
+     "en": "The movie I watched yesterday was simply boring.",
+     "cn": "昨天看的电影，内容极其平凡。"
+    },
+    {
+     "jp": "結婚式で両親の言葉を聞いて、彼女は感情極まって泣き出した。",
+     "eq": "=感情が最高に達して",
+     "en": "She was moved and started to cry as she listened to her parents speak at her wedding.",
+     "cn": "在结婚典礼上听了父母的话，她感激之至，不禁哭了。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "硬",
+     "text": "改まった場面や文書で使われる硬い表現"
+    },
+    {
+     "type": "◆",
+     "text": "慣用句的表現"
+    },
+    {
+     "type": "れい",
+     "text": "不愉快極まる／退屈極まる／卑劣極まる"
+    }
+   ]
+  },
+  {
+   "pattern": "無責任極まりない",
+   "reading": "むせきにんきわまりない",
+   "connection": "na（なこと）／Aいこと ＋極まりない",
+   "usage_cn": "极其……，……之极。",
+   "usage_en": "Extremely ~ / utterly ~.",
+   "examples": [
+    {
+     "jp": "あの人は社長として、無責任極まりない。",
+     "eq": "=これ以上ないほど無責任だ",
+     "en": "As president, he is totally irresponsible.",
+     "cn": "那个人作为社长，真是太不负责了。"
+    },
+    {
+     "jp": "あの発言は一国の首相として、軽率なこと極まりない。",
+     "eq": "=これ以上ないほど軽率だ",
+     "en": "As the Prime Minister of the country, that statement was totally inappropriate.",
+     "cn": "作为一个国家的首相，他的发言简直轻率之极。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "硬",
+     "text": "改まった場面や文書で使われる硬い表現"
+    },
+    {
+     "type": "◆",
+     "text": "「極まる」と同じ意味。「極まりない」のほうがよく使われる。"
+    }
+   ]
+  },
+  {
+   "pattern": "感激の極み",
+   "reading": "かんげきのきわみ",
+   "connection": "Nの極み",
+   "usage_cn": "……之极，极其……（程度达到最高）。",
+   "usage_en": "The height of ~.",
+   "examples": [
+    {
+     "jp": "優勝できて、感激の極みです。",
+     "eq": "=最高に感激している",
+     "en": "I can't tell you how delighted I am that we've won the championship.",
+     "cn": "能够获胜，感激之至。"
+    },
+    {
+     "jp": "長時間の試合で、選手たちは疲労の極みに達していた。",
+     "eq": "=疲労の程度が最高の状態",
+     "en": "The players were totally exhausted during the long-lasting game.",
+     "cn": "由于长时间的比赛，选手们的疲劳程度达到了极点。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "硬",
+     "text": "改まった場面や文書で使われる硬い表現"
+    },
+    {
+     "type": "◆",
+     "text": "程度が最高。"
+    },
+    {
+     "type": "れい",
+     "text": "贅沢の極み／残念の極み／無知の極み"
+    }
+   ]
+  },
+  {
+   "pattern": "光栄の至り",
+   "reading": "こうえいのいたり",
+   "connection": "Nの至り",
+   "usage_cn": "……之至，非常……（表达心情的惯用说法）。",
+   "usage_en": "Utmost ~ / the height of ~.",
+   "examples": [
+    {
+     "jp": "こんなすばらしい賞をいただいて、光栄の至りです。",
+     "eq": "=これ以上ないほど光栄だ",
+     "en": "I am sincerely honored to receive such an award.",
+     "cn": "竟然得到这么了不起的奖，光荣之至。"
+    },
+    {
+     "jp": "若気の至りで、せっかく入った大学をやめてしまった。",
+     "eq": "=若いころの勢いが行きすぎた結果",
+     "en": "Due to the ignorance of youth, I quit university.",
+     "cn": "由于年轻气盛，好不容易考上了大学，却退学了。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "硬",
+     "text": "改まった場面や文書で使われる硬い表現"
+    },
+    {
+     "type": "◆",
+     "text": "慣用句的に使う。気持ちを表す。"
+    },
+    {
+     "type": "れい",
+     "text": "○感激の至り　×疲労の至り"
+    }
+   ]
+  }
+ ],
+ "exercises": {
+  "answers_note": "答えはp.137",
+  "sections": [
+   {
+    "type": "choice",
+    "instruction": "正しいほうに〇をつけなさい。",
+    "items": [
+     {
+      "n": 1,
+      "q": "私は貧乏（a. 極まりない　b. の極み）環境で育ったので、外食などしたことがなかった。"
+     },
+     {
+      "n": 2,
+      "q": "戦争が長く続くその地域の人々の生活は、悲惨（a. 極みだ　b. 極まりない）。"
+     },
+     {
+      "n": 3,
+      "q": "その映画の残酷（a. 極まる　b. の至りの）シーンはカットされた。"
+     },
+     {
+      "n": 4,
+      "q": "あなたのような大スターとお会いできるなんて感激の（a. 至り　b. 極まり）です。"
+     },
+     {
+      "n": 5,
+      "q": "あなたにとっては日常的なことかもしれませんが、私にとってはそれは贅沢（a. の極み　b. の極まり）です。"
+     }
+    ]
+   },
+   {
+    "type": "order",
+    "instruction": "下の語を並べ替えて正しい文を作りなさい。＿＿に数字を書きなさい。",
+    "items": [
+     {
+      "n": 6,
+      "q": "ガソリンスタンドでタバコを吸う ＿＿ ＿＿ ＿＿ ＿＿ だ。",
+      "options": [
+       "1 極まりない",
+       "2 など",
+       "3 行為",
+       "4 危険"
+      ]
+     },
+     {
+      "n": 7,
+      "q": "私の研究が ＿＿ ＿＿ ＿＿ ＿＿ 至りです。",
+      "options": [
+       "1 そのような",
+       "2 評価を受けた",
+       "3 感激の",
+       "4 ということは"
+      ]
+     }
+    ]
+   }
+  ],
+  "answers": "Ⅰ：①a ②b ③a ④a ⑤a　Ⅱ：⑥2→4→1→3　⑦1→2→4→3"
+ },
+ "hitokoto": ""
+}

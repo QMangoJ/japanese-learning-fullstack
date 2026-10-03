@@ -1,0 +1,208 @@
+{
+ "week": 4,
+ "day": 2,
+ "title": "大学教授ですら",
+ "title_cn": "连大学教授都",
+ "title_en": "Even a university professor",
+ "dialog": {
+  "lines": [
+   "Q.（　）に入るのは？",
+   "社長（　）大変だろう。"
+  ],
+  "cn": "问：括号里该填什么？——当上社长的话，一定很辛苦吧。（答案：ともなると）",
+  "en": "Q: What goes in the blank? — Once you become company president, it must be tough. (Answer: ともなると)"
+ },
+ "points": [
+  {
+   "pattern": "大学教授すら",
+   "reading": "だいがくきょうじゅすら",
+   "connection": "N（で）すら／N（に）すら",
+   "usage_cn": "连……都……，甚至……（强调）。",
+   "usage_en": "Even ~.",
+   "examples": [
+    {
+     "jp": "彼は、大学教授（で）すら気が付かなかった問題点を指摘した。",
+     "eq": "=大学教授でも／でさえ",
+     "en": "He pointed out problems that even professors had not noticed.",
+     "cn": "他指出了连大学教授都注意不到的问题点。"
+    },
+    {
+     "jp": "この悩みは親友にすら言えない。",
+     "eq": "=親友にも／親友にさえも",
+     "en": "I can't talk about this problem even with my best friend.",
+     "cn": "这个烦恼连好朋友都不能说。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "◆",
+     "text": "強調"
+    }
+   ]
+  },
+  {
+   "pattern": "先生にして",
+   "reading": "せんせいにして",
+   "connection": "Nにして",
+   "usage_cn": "①即使是……也……；②在……（短时间）内；③既是……又是……。",
+   "usage_en": "Even ~ / in (a moment) / both ~ and ….",
+   "examples": [
+    {
+     "jp": "先生にして間違えるのだから、できないのは当然である。",
+     "eq": "=先生でも",
+     "en": "It is only natural that you couldn't solve it because your teacher couldn't either.",
+     "cn": "连老师都会错，不会做也是理所当然的。"
+    },
+    {
+     "jp": "竜巻が一瞬にして家を吹き飛ばした。",
+     "eq": "=一瞬で",
+     "en": "A tornado blew my house away in a blink.",
+     "cn": "龙卷风顷刻间把房子卷走了。"
+    },
+    {
+     "jp": "彼は、医者にして、画家でもある。",
+     "eq": "=医者で、また",
+     "en": "He is both a doctor and a painter.",
+     "cn": "他既是医生，也是画家。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "硬",
+     "text": "改まった場面や文書で使われる硬い表現"
+    }
+   ]
+  },
+  {
+   "pattern": "大学生ともあろう者が",
+   "reading": "だいがくせいともあろうものが",
+   "connection": "N₁ともあろう N₂／N₁たる N₂",
+   "usage_cn": "身为……的人（却……）；作为……（批评与身份不符的行为）。",
+   "usage_en": "Someone who is (no less than) ~ (should not …).",
+   "examples": [
+    {
+     "jp": "大学生ともあろう者が、その漢字を読めないのは恥ずかしい。",
+     "eq": "=大学生という身分の者が",
+     "en": "University students should feel ashamed of not being able to read this kanji.",
+     "cn": "作为一个大学生连那个汉字都不会读，真是难为情。"
+    },
+    {
+     "jp": "一国の首相たる者が、このような発言をしてはいけない。",
+     "eq": "=首相の立場にある人",
+     "en": "The Prime Minister of a country should never say anything like this.",
+     "cn": "作为一国的首相，不可以有那样的发言。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "◆",
+     "text": "批判が続くことが多い。"
+    },
+    {
+     "type": "れい",
+     "text": "大臣ともあろう人／A社ともあろう企業／教師たる者"
+    },
+    {
+     "type": "硬",
+     "text": "改まった場面や文書で使われる硬い表現"
+    }
+   ]
+  },
+  {
+   "pattern": "大臣ともなると",
+   "reading": "だいじんともなると",
+   "connection": "①Nともなると／Nともなれば　②Nとなると／Nとなれば／V〔普〕となると／となれば／となったら",
+   "usage_cn": "①一旦成为……（这样重要的地位）就……；②真要……的时候，如果……的话。",
+   "usage_en": "① Once one becomes ~; ② When it comes to ~.",
+   "examples": [
+    {
+     "jp": "大臣ともなると、自由に行動できない。",
+     "eq": "=大臣のような重要な地位の人物になったら",
+     "en": "Once you become a minister in a cabinet, you lose your freedom.",
+     "cn": "一旦成为大臣，就无法自由行动了。"
+    },
+    {
+     "jp": "いざ出発となると、不安になってきた。",
+     "eq": "=出発しようとするときになって",
+     "en": "When the departure time actually came, I started feeling worried.",
+     "cn": "一旦要出发了，突然不安起来。"
+    },
+    {
+     "jp": "銀行でお金を借りるとなったら、手続きが大変だ。",
+     "eq": "=借りようとしたら",
+     "en": "You have to deal with a complicated process once you decide to borrow money from a bank.",
+     "cn": "如果要在银行借钱，手续会很麻烦。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "tag",
+     "text": "「となったら」は会話でよく使われる表現"
+    },
+    {
+     "type": "慣用",
+     "text": "いざとなったら（＝重大な状況に直面したら）"
+    }
+   ]
+  }
+ ],
+ "exercises": {
+  "answers_note": "答えはp.67",
+  "sections": [
+   {
+    "type": "choice",
+    "instruction": "正しいほうに〇をつけなさい。",
+    "items": [
+     {
+      "n": 1,
+      "q": "彼はとてもいい人だ。でも結婚（a. ともなく　b. となると）、ちょっと頼りない気がする。"
+     },
+     {
+      "n": 2,
+      "q": "親（a. たる　b. にたる）者は、子どもが悪いことをしたときに、きちんとしかるべきだ。"
+     },
+     {
+      "n": 3,
+      "q": "あのような一流レストラン（a. ともなる　b. ともあろう）と、男性はネクタイが必要だ。"
+     },
+     {
+      "n": 4,
+      "q": "結婚なんてとんでもない。私は男の人と話したこと（a. すら　b. にすら）ないのです。"
+     },
+     {
+      "n": 5,
+      "q": "盗みが悪いことであるのは、小さい子ども（a. ですら　b. ともなると）知っている。"
+     }
+    ]
+   },
+   {
+    "type": "order",
+    "instruction": "下の語を並べ替えて正しい文を作りなさい。＿＿に数字を書きなさい。",
+    "items": [
+     {
+      "n": 6,
+      "q": "＿＿ ＿＿ ＿＿ ＿＿ にはこの暑さは厳しいだろう。",
+      "options": [
+       "1 老人",
+       "2 ですら",
+       "3 つらいのだから",
+       "4 若い私たち"
+      ]
+     },
+     {
+      "n": 7,
+      "q": "内科の ＿＿ ＿＿ ＿＿ ＿＿ が、栄養のことを気にかけないのは理解できない。",
+      "options": [
+       "1 者",
+       "2 医者",
+       "3 あろう",
+       "4 とも"
+      ]
+     }
+    ]
+   }
+  ],
+  "answers": "Ⅰ：①b ②a ③a ④a ⑤a　Ⅱ：⑥4→2→3→1　⑦2→4→3→1"
+ },
+ "hitokoto": ""
+}

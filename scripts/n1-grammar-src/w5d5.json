@@ -1,0 +1,170 @@
+{
+ "week": 5,
+ "day": 5,
+ "title": "見かけによらず",
+ "title_cn": "人不可貌相",
+ "title_en": "Contrary to appearances",
+ "dialog": {
+  "lines": [
+   "Q.（　）に入るのは？",
+   "彼らの歌は、日本だけに（　）、海外でも売れている。"
+  ],
+  "cn": "问：括号里该填什么？——他们的歌不仅在日本，在海外也很畅销。（答案：とどまらず）",
+  "en": "Q: What goes in the blank? — Their songs sell not only in Japan but overseas as well. (Answer: とどまらず)"
+ },
+ "points": [
+  {
+   "pattern": "見かけによらず",
+   "reading": "みかけによらず",
+   "connection": "Nによらず",
+   "usage_cn": "与……无关，不论……（不受……影响）。",
+   "usage_en": "Regardless of ~ / contrary to ~.",
+   "examples": [
+    {
+     "jp": "「君は見かけによらずよく食べるね。」",
+     "eq": "=見た目には関係なく",
+     "en": "You eat a lot more than we thought you would.",
+     "cn": "从外表看不出来，你还挺能吃的。"
+    },
+    {
+     "jp": "職種によらず、賃金によらず、仕事があれば何でもやります。",
+     "eq": "=職種や賃金に関係なく",
+     "en": "I'll take any kind of job regardless of the pay.",
+     "cn": "不论职业种类，不管工资，只要有工作，什么都做。"
+    },
+    {
+     "jp": "この学習書は、レベルによらず、役に立つので買ったほうがいいでしょう。",
+     "eq": "=レベルには関係なく",
+     "en": "You'd better buy the study book regardless of your level, since it is very useful.",
+     "cn": "这个学习用书不论水平高低都会有用，最好还是买了。"
+    }
+   ],
+   "notes": []
+  },
+  {
+   "pattern": "輸入業者にとどまらず",
+   "reading": "ゆにゅうぎょうしゃにとどまらず",
+   "connection": "Nに とどまらず（～も）／Vるに とどまらず（～も）",
+   "usage_cn": "不仅限于……，不只是……（范围扩大到……）。",
+   "usage_en": "Not limited to ~ / not only ~ (but also).",
+   "examples": [
+    {
+     "jp": "円高の影響は、輸入業者にとどまらず、一般家庭にも及んでいる。",
+     "eq": "=輸入業者だけでなく／輸入業者のみならず",
+     "en": "A strong yen is affecting not only the trade companies but general households.",
+     "cn": "日元升值的影响不仅限于进口行业，还波及到一般家庭。"
+    },
+    {
+     "jp": "A社は、材料の偽装にとどまらず、食品の消費期限の改ざんも行っていた。",
+     "eq": "=材料の偽装だけでなく／材料の偽装のみならず",
+     "en": "Company A was not only cheating on the ingredients used for their products but also putting incorrect “best before” dates on them.",
+     "cn": "A公司不仅伪装材料，甚至篡改食品的保质期。"
+    },
+    {
+     "jp": "彼はそのレストランで、文句を言うにとどまらず、テーブルをひっくり返してしまった。",
+     "eq": "=文句を言うだけでなく／文句を言うのみならず",
+     "en": "He not only complained to the restaurant, he flipped the table.",
+     "cn": "他在那家餐馆，不光是大发牢骚，还把桌子掀翻了。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "硬",
+     "text": "改まった場面や文書で使われる硬い表現"
+    }
+   ]
+  },
+  {
+   "pattern": "空の青と相まって",
+   "reading": "そらのあおとあいまって",
+   "connection": "Nと相まって／Nも相まって",
+   "usage_cn": "与……相结合，加上……（共同产生更好或更强的效果）。",
+   "usage_en": "Combined with ~.",
+   "examples": [
+    {
+     "jp": "空の青と相まって、紅葉がより美しく見える。",
+     "eq": "=空の青色と一緒になって",
+     "en": "The fall colours look more beautiful with the blue sky.",
+     "cn": "和蓝天相映照，红叶看上去更美了。"
+    },
+    {
+     "jp": "努力と運が相まって、合格することができた。",
+     "eq": "=努力と運が一緒になって",
+     "en": "I was able to pass the exam due to both effort and luck.",
+     "cn": "努力再加上运气，总算合格了。"
+    },
+    {
+     "jp": "この冷蔵庫はデザインのよさも相まってよく売れている。",
+     "eq": "=ほかの理由とデザインのよさが一緒になって",
+     "en": "This fridge model is selling well due to its performance and design.",
+     "cn": "这种冰箱再加上美观的设计，销路很好。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "硬",
+     "text": "改まった場面や文書で使われる硬い表現"
+    }
+   ]
+  }
+ ],
+ "exercises": {
+  "answers_note": "答えはp.89",
+  "sections": [
+   {
+    "type": "choice",
+    "instruction": "正しいほうに〇をつけなさい。",
+    "items": [
+     {
+      "n": 1,
+      "q": "その歌手の人気は日本だけ（a. にとどまらず　b. によらずに）、アジアの国々にも広まった。"
+     },
+     {
+      "n": 2,
+      "q": "昨日は休日と久しぶりの晴天が（a. にとどまらず　b. あいまって）、遊園地はとても混んでいた。"
+     },
+     {
+      "n": 3,
+      "q": "株の暴落はその年だけに（a. とどまらず　b. よらず）年が明けても続いた。"
+     },
+     {
+      "n": 4,
+      "q": "あの映画は主題歌の人気と（a. とどまらず　b. 相まって）大ヒットした。"
+     },
+     {
+      "n": 5,
+      "q": "駅前のそば屋は、古くてみすぼらしい外観（a. によらず　b. でよらず）おいしいと評判だ。"
+     }
+    ]
+   },
+   {
+    "type": "order",
+    "instruction": "下の語を並べ替えて正しい文を作りなさい。＿＿に数字を書きなさい。",
+    "items": [
+     {
+      "n": 6,
+      "q": "＿＿ ＿＿ ＿＿ ＿＿ の回復は困難だと言われている。",
+      "options": [
+       "1 個人消費",
+       "2 落ち込んだ",
+       "3 不景気が相まって",
+       "4 消費税のアップと"
+      ]
+     },
+     {
+      "n": 7,
+      "q": "＿＿ ＿＿ ＿＿ ＿＿ までカットされることになり、ショックだ。",
+      "options": [
+       "1 給料",
+       "2 ボーナス",
+       "3 がなしになる",
+       "4 にとどまらず"
+      ]
+     }
+    ]
+   }
+  ],
+  "answers": "Ⅰ：①a ②b ③a ④b ⑤a　Ⅱ：⑥4→3→2→1　⑦2→3→4→1"
+ },
+ "hitokoto": ""
+}

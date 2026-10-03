@@ -1,0 +1,204 @@
+{
+ "week": 7,
+ "day": 3,
+ "title": "仕事ぶり",
+ "title_cn": "工作的样子",
+ "title_en": "The way one works",
+ "dialog": {
+  "lines": [
+   "Q.（　）に入るのは？",
+   "彼の（　）は見ていて気持ちがいいね。"
+  ],
+  "cn": "问：括号里该填什么？——看他吃饭的样子真让人痛快。（答案：食べっぷり）",
+  "en": "Q: What goes in the blank? — It's a pleasure to watch the way he eats. (Answer: 食べっぷり)"
+ },
+ "points": [
+  {
+   "pattern": "秋めく",
+   "reading": "あきめく",
+   "connection": "Nめく／Nめいて／Nめいた N′",
+   "usage_cn": "有……的气息，像……的样子。",
+   "usage_en": "Show signs of ~ / ~-like.",
+   "examples": [
+    {
+     "jp": "涼しくなって、ずいぶん秋めいてきましたね。",
+     "eq": "=秋らしくなって",
+     "en": "It's getting cool and autumn is approaching.",
+     "cn": "凉快了，很有秋天的味道了。"
+    },
+    {
+     "jp": "別れた恋人から、脅迫めいたメールが届いて、怖くなった。",
+     "eq": "=脅迫のように感じられる",
+     "en": "I was scared when my ex-boyfriend texted me and seemed to try to blackmail me.",
+     "cn": "收到了已分手的恋人带有恐吓含义的邮件，很害怕。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "れい",
+     "text": "謎めいた女性／皮肉めいた言葉／秘密めいた手紙"
+    }
+   ]
+  },
+  {
+   "pattern": "大人びる",
+   "reading": "おとなびる",
+   "connection": "N／Aい（去い）＋びる／びて～／びた N",
+   "usage_cn": "像……的样子，带有……的味道。",
+   "usage_en": "Look ~ / become ~-like.",
+   "examples": [
+    {
+     "jp": "和子ちゃん、大きくなってずいぶん大人びてきましたね。",
+     "eq": "=大人っぽくなって",
+     "en": "Kazuko! You've grown so much and look so grown up.",
+     "cn": "和子长大了，变得特别像个小大人。"
+    },
+    {
+     "jp": "男は、悪びれる様子もなく、取り調べに応じている。",
+     "eq": "=悪いと思っている",
+     "en": "The police are questioning him but he is showing no remorse for what he did.",
+     "cn": "男人接受了讯问，并没有发怵的样子。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "れい",
+     "text": "古びたコイン／悪びる→悪びれる"
+    },
+    {
+     "type": "もっと",
+     "text": "悪びれる様子もなく（＝悪いと思っている様子もなく）"
+    }
+   ]
+  },
+  {
+   "pattern": "金持ちぶる",
+   "reading": "かねもちぶる",
+   "connection": "na／N ＋ぶる／ぶって／ぶった N",
+   "usage_cn": "装作……的样子，摆……的架子。",
+   "usage_en": "Pretend to be ~ / act ~.",
+   "examples": [
+    {
+     "jp": "彼は金持ちぶっているが、本当は借金がたくさんある。",
+     "eq": "=金持ちのふりをしている",
+     "en": "Though he pretends to be rich, in reality he is in serious debt.",
+     "cn": "他装着是有钱人，实际上有许多欠款。"
+    },
+    {
+     "jp": "彼女はお酒に酔うと、かわい子ぶった口のきき方をする。",
+     "eq": "=意識してかわいく見せようとした",
+     "en": "She talks like a little girl once she gets drunk.",
+     "cn": "她一喝醉酒，说话就变得娇滴滴的。"
+    },
+    {
+     "jp": "息子は悪ぶっているが、実は気の弱い優しい子です。",
+     "eq": "=悪いように見せている",
+     "en": "My son acts tough, but to tell you the truth, he is actually quite weak and gentle.",
+     "cn": "儿子装着很坏，实际上是胆子小性情柔和的孩子。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "(-)",
+     "text": "悪い意味でよく使われる表現"
+    },
+    {
+     "type": "れい",
+     "text": "親切ぶる／学者ぶる／先輩ぶる"
+    }
+   ]
+  },
+  {
+   "pattern": "仕事ぶり",
+   "reading": "しごとぶり",
+   "connection": "Nぶり／Vます形（去ます）ぶり／Vます形（去ます）っぷり",
+   "usage_cn": "……的样子，……的情况。",
+   "usage_en": "The way of ~ / manner of ~.",
+   "examples": [
+    {
+     "jp": "先輩の仕事ぶりを見ながら要領を覚えよう。",
+     "eq": "=仕事の様子",
+     "en": "You should learn the ropes by observing your more experienced colleagues.",
+     "cn": "让我们看着前辈工作的样子来记住要领吧。"
+    },
+    {
+     "jp": "社長の話しぶりでは、今年のボーナスはないようだ。",
+     "eq": "=話の様子では",
+     "en": "According to what the president told us, there may not be a bonus this year.",
+     "cn": "从社长的话语来看，今年似乎没有奖金。"
+    },
+    {
+     "jp": "彼女、飲みっぷりがいいね。相当、酒に強いんだろう。",
+     "eq": "=飲む様子",
+     "en": "She's drinking quickly. She must be able to drink a lot.",
+     "cn": "她喝酒很豪爽。看来酒量很大。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "れい",
+     "text": "活躍ぶり／慌てぶり／食べっぷり／走りっぷり"
+    }
+   ]
+  }
+ ],
+ "exercises": {
+  "answers_note": "答えはp.117",
+  "sections": [
+   {
+    "type": "choice",
+    "instruction": "正しいほうに〇をつけなさい。",
+    "items": [
+     {
+      "n": 1,
+      "q": "彼は中学生になったとたん、大人（a. めいた　b. びた）ことを言うようになった。"
+     },
+     {
+      "n": 2,
+      "q": "（a. 若者ぶって　b. 若者めいて）薄着などするから風邪をひくんですよ。"
+     },
+     {
+      "n": 3,
+      "q": "親切（a. ぶって　b. びて）近づいてくる人には気をつけてください。"
+     },
+     {
+      "n": 4,
+      "q": "犯行現場には謎（a. めいた　b. びた）言葉が書かれていた。"
+     },
+     {
+      "n": 5,
+      "q": "選手の活躍（a. ぶり　b. ぷり）がテレビで紹介されていた。"
+     }
+    ]
+   },
+   {
+    "type": "order",
+    "instruction": "下の語を並べ替えて正しい文を作りなさい。＿＿に数字を書きなさい。",
+    "items": [
+     {
+      "n": 6,
+      "q": "彼は ＿＿ ＿＿ ＿＿ ＿＿ をしていたが、実は一度も行ったことがなかったらしい。",
+      "options": [
+       "1 ぶって",
+       "2 常連",
+       "3 の話",
+       "4 その店"
+      ]
+     },
+     {
+      "n": 7,
+      "q": "その記事に ＿＿ ＿＿ ＿＿ ＿＿ が大量に出版社に届いた。",
+      "options": [
+       "1 メール",
+       "2 対する",
+       "3 反論",
+       "4 めいた"
+      ]
+     }
+    ]
+   }
+  ],
+  "answers": "Ⅰ：①b ②a ③a ④a ⑤a　Ⅱ：⑥2→1→4→3　⑦2→3→4→1"
+ },
+ "hitokoto": ""
+}

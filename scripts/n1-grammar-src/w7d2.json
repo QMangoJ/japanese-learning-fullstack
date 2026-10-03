@@ -1,0 +1,198 @@
+{
+ "week": 7,
+ "day": 2,
+ "title": "思い出すだに",
+ "title_cn": "光是想起来",
+ "title_en": "Just thinking about it",
+ "dialog": {
+  "lines": [
+   "Q.（　）に入るのは？",
+   "（　）、偉そうなことを言うな。"
+  ],
+  "cn": "问：括号里该填什么？——根本做不到，就别说大话。（答案：できもしないで）",
+  "en": "Q: What goes in the blank? — Don't talk big when you can't even do it. (Answer: できもしないで)"
+ },
+ "points": [
+  {
+   "pattern": "40歳にして",
+   "reading": "よんじゅっさいにして",
+   "connection": "Nにして（初めて）",
+   "usage_cn": "到了……才……，正因为是……才……（强调）。",
+   "usage_en": "Only at ~ / only ~ could (emphasis).",
+   "examples": [
+    {
+     "jp": "40歳にして（初めて）車の免許を取った。",
+     "eq": "=40歳のときに、初めて",
+     "en": "I got my first driver's license at the age of 40.",
+     "cn": "到了40岁才拿到了驾照。"
+    },
+    {
+     "jp": "この改革は、あの政治家にして初めてできたことだ。",
+     "eq": "=あの政治家だから",
+     "en": "That politician is responsible for spearheading this reform.",
+     "cn": "这种改革是只有那个政治家才能做到的。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "◆",
+     "text": "強調"
+    }
+   ]
+  },
+  {
+   "pattern": "知りもしないで",
+   "reading": "しりもしないで",
+   "connection": "Vます形（去ます）もしないで",
+   "usage_cn": "连……都不……（就……），根本没……（强调）。",
+   "usage_en": "Without even ~ (emphasis).",
+   "examples": [
+    {
+     "jp": "知りもしないで偉そうなことを言うな。",
+     "eq": "=よく知らないのに",
+     "en": "Don't act like you're an expert when you don't know anything about it!",
+     "cn": "根本都不知道，就不要说大话。"
+    },
+    {
+     "jp": "彼は、いつもやりもしないで、できないと言う。",
+     "eq": "=少しもやらないのに",
+     "en": "He always gives up before he tries.",
+     "cn": "他总是连做都不做，就说不会。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "◆",
+     "text": "強調"
+    },
+    {
+     "type": "れい",
+     "text": "謝りもしないで／見向きもしないで"
+    }
+   ]
+  },
+  {
+   "pattern": "思い出すだに",
+   "reading": "おもいだすだに",
+   "connection": "Vるだに／Nだに",
+   "usage_cn": "仅仅……就……，连……都（不）……（书面语）。",
+   "usage_en": "Just ~ing / even ~ (formal).",
+   "examples": [
+    {
+     "jp": "この間の彼女の態度は、思い出すだに腹が立つ。",
+     "eq": "=思い出すだけでも",
+     "en": "I just couldn't stand her attitude the other day. Thinking about it still upsets me.",
+     "cn": "上次她那态度，只要想起来就生气。"
+    },
+    {
+     "jp": "地下鉄に乗っているときに大地震が起きたらどうなるだろう。想像するだに恐ろしい。",
+     "eq": "=想像するだけでも",
+     "en": "What will happen if an earthquake hits when I am using the subway? The thought is so scary.",
+     "cn": "如果坐地铁的时候发生了大地震会怎么样呢？光想像就觉得恐怖。"
+    },
+    {
+     "jp": "そんなこと、夢（に）だに思わない。",
+     "eq": "=夢でさえ",
+     "en": "I can't even imagine that.",
+     "cn": "这样的事情，连做梦都没想过。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "硬",
+     "text": "改まった場面や文書で使われる硬い表現"
+    }
+   ]
+  },
+  {
+   "pattern": "慣れぬこととて",
+   "reading": "なれぬこととて",
+   "connection": "V/A/na/N〔普〕＋こととて（Nだ→の、naだ→な、ない→ぬ）",
+   "usage_cn": "因为……（所以请原谅）（书面语，多用于道歉、请求谅解）。",
+   "usage_en": "Since ~ / because ~ (formal, often apologetic).",
+   "examples": [
+    {
+     "jp": "新入社員で慣れぬこととて、失礼があればお許しください。",
+     "eq": "=慣れないから",
+     "en": "Please forgive us should any of our new staff not be as well trained as they should be.",
+     "cn": "因为是新职员，有诸多不习惯之处，如有失礼敬请谅解。"
+    },
+    {
+     "jp": "年末年始は休業中のこととて、この時期の依頼にはすぐに対応ができない。",
+     "eq": "=休業中だから",
+     "en": "We can't deal with such requests promptly during this long new year holiday.",
+     "cn": "因为年末年初停止营业，这个时期的订单无法马上处理。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "!",
+     "text": "ない→ぬ"
+    },
+    {
+     "type": "硬",
+     "text": "改まった場面や文書で使われる硬い表現"
+    }
+   ]
+  }
+ ],
+ "exercises": {
+  "answers_note": "答えはp.115",
+  "sections": [
+   {
+    "type": "choice",
+    "instruction": "正しいほうに〇をつけなさい。",
+    "items": [
+     {
+      "n": 1,
+      "q": "まだ検討中の（a. こととて　b. だに）、はっきりとしたお返事はできません。"
+     },
+     {
+      "n": 2,
+      "q": "あんな大きい会社の倒産は、誰もが想像（a. だに　b. にして）しなかった。"
+     },
+     {
+      "n": 3,
+      "q": "これほどの安売りは、現金取引（a. にして　b. だに）初めて可能になることだ。"
+     },
+     {
+      "n": 4,
+      "q": "彼は、授業に遅れてきたのに謝り（a. はしないで　b. もしないで）席に着いた。"
+     },
+     {
+      "n": 5,
+      "q": "外国人と結婚するなんて、夢（a. にして　b. だに）思わなかった。"
+     }
+    ]
+   },
+   {
+    "type": "order",
+    "instruction": "下の語を並べ替えて正しい文を作りなさい。＿＿に数字を書きなさい。",
+    "items": [
+     {
+      "n": 6,
+      "q": "その女優さんは、彼女に ＿＿ ＿＿ ＿＿ ＿＿ 行ってしまった。",
+      "options": [
+       "1 声をかけた",
+       "2 もしないで",
+       "3 見向き",
+       "4 ファンに"
+      ]
+     },
+     {
+      "n": 7,
+      "q": "彼女はまだ ＿＿ ＿＿ ＿＿ ＿＿ やってください。",
+      "options": [
+       "1 初心者",
+       "2 多少の失敗は",
+       "3 大目に見て",
+       "4 のこととて"
+      ]
+     }
+    ]
+   }
+  ],
+  "answers": "Ⅰ：①a ②a ③a ④b ⑤b　Ⅱ：⑥1→4→3→2　⑦1→4→2→3"
+ },
+ "hitokoto": ""
+}

@@ -1,0 +1,190 @@
+{
+ "week": 2,
+ "day": 4,
+ "title": "デザインといい、色といい",
+ "title_cn": "设计也好，颜色也好",
+ "title_en": "Both the design and the colour",
+ "dialog": {
+  "lines": [
+   "Q.（　）に入るのは？",
+   "社員が社員（　）、社長も社長だ。こんな会社には入りたくない。"
+  ],
+  "cn": "问：括号里该填什么？——员工不像样，社长也不像样。这种公司我可不想进。（答案：なら）",
+  "en": "Q: What goes in the blank? — The staff are hopeless and so is the president. I don't want to join such a company. (Answer: なら)"
+ },
+ "points": [
+  {
+   "pattern": "雑誌だのDVDだの",
+   "reading": "ざっしだのディーブイディーだの",
+   "connection": "【aだのbだの】V/A〔普〕＋だの／na・Nだった＋だの／na・N＋だの",
+   "usage_cn": "……啦……啦（列举，多用于抱怨、不满）。",
+   "usage_en": "~ and ~ and so on (listing, often complaining).",
+   "examples": [
+    {
+     "jp": "僕の毎月の小遣いは、雑誌だのDVDだので消えていく。",
+     "eq": "=雑誌やDVDやいろいろなもの",
+     "en": "My monthly allowance disappears quickly on magazines and DVDs.",
+     "cn": "我每月的零花钱都用来买杂志或DVD之类的东西了。"
+    },
+    {
+     "jp": "彼は部屋が狭いだの、食事がまずいだのといつも文句を言っている。",
+     "eq": "=部屋が狭いとか、食事がまずいとか、ほかにもいろいろ",
+     "en": "He is always complaining about how small his room is, how terrible the food is, or something else.",
+     "cn": "他总爱发牢骚，什么房子太小啦，饭菜太难吃啦等等。"
+    },
+    {
+     "jp": "彼は、風邪を引いただの、頭が痛いだのと言って、よく授業を休む。",
+     "eq": "=風邪を引いたとか、頭が痛いとか、ほかにもいろいろ",
+     "en": "He often skips classes saying he has a cold or a headache.",
+     "cn": "他总是以感冒啦、头疼啦为理由，经常不上课。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "(-)",
+     "text": "悪い意味でよく使われる表現"
+    },
+    {
+     "type": "◆",
+     "text": "不満を言うときよく使う。"
+    }
+   ]
+  },
+  {
+   "pattern": "デザインといい、色といい",
+   "reading": "デザインといい、いろといい",
+   "connection": "N₁といい N₂といい",
+   "usage_cn": "……也好……也好（列举两个方面加以评价）。",
+   "usage_en": "Both ~ and ~ (in terms of).",
+   "examples": [
+    {
+     "jp": "デザインといい、色といい、すごく気に入った靴があったんだけれど、サイズがなかった。",
+     "eq": "=デザインも色も",
+     "en": "I liked the design and colour of many shoes but they didn't have ones in my size.",
+     "cn": "有一双鞋，不管是设计还是颜色我都非常喜欢，但没有合适的号码。"
+    },
+    {
+     "jp": "運動といい勉強といい、僕は何をやってもダメだ。",
+     "eq": "=運動も勉強も",
+     "en": "I'm not good at sports or study, or anything.",
+     "cn": "运动也好学习也罢，我干什么都不行。"
+    }
+   ],
+   "notes": []
+  },
+  {
+   "pattern": "子どもが子どもなら、親も親だ",
+   "reading": "こどもがこどもなら、おやもおやだ",
+   "connection": "N₁が N₁なら、N₂も N₂だ／N₁も N₁なら、N₂も N₂だ",
+   "usage_cn": "……不像话，……也不像话（双方都不好）。",
+   "usage_en": "~ is bad, and so is ~.",
+   "examples": [
+    {
+     "jp": "子どもが子どもなら、親も親だ。",
+     "eq": "=子どもも親も両方よくない",
+     "en": "That kid is terrible and so are his parents.",
+     "cn": "孩子有问题，那父母也不怎么样。"
+    },
+    {
+     "jp": "あのレストランは、味も味なら、サービスもサービスだ。",
+     "eq": "=味もサービスも両方よくない",
+     "en": "That restaurant's food is terrible, and so is its service.",
+     "cn": "那家餐馆，味道不怎么样，连服务也不好。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "(-)",
+     "text": "悪い意味でよく使われる表現"
+    }
+   ]
+  },
+  {
+   "pattern": "子どもといわず、大人といわず",
+   "reading": "こどもといわず、おとなといわず",
+   "connection": "N₁といわず N₂といわず",
+   "usage_cn": "不论是……还是……；……也好……也好（都……）。",
+   "usage_en": "Regardless of ~ or ~ / both ~ and ~.",
+   "examples": [
+    {
+     "jp": "日本人は、子どもといわず、大人といわず、マンガをよく読む。",
+     "eq": "=子どもも、大人も、だれでも",
+     "en": "Japanese kids and adults both love comics.",
+     "cn": "日本人不管是孩子还是大人，都爱读漫画。"
+    },
+    {
+     "jp": "私は、牛肉といわず、豚肉といわず、肉は食べません。",
+     "eq": "=牛肉や豚肉だけでなく",
+     "en": "I don't eat beef, pork, or any other meat.",
+     "cn": "不论是牛肉还是猪肉，我什么肉都不吃。"
+    },
+    {
+     "jp": "最近の若者は、食事中といわず、テレビを見ている間といわず、いつでも携帯電話を手にしている。",
+     "eq": "=食事中やテレビを見ている間だけでなく",
+     "en": "Young people these days always keep their cell phones in their hands even when they are eating, watching TV and doing other things.",
+     "cn": "最近的年轻人，不论是吃饭的时候还是看电视的时候，总是手机不离手。"
+    }
+   ],
+   "notes": []
+  }
+ ],
+ "exercises": {
+  "answers_note": "答えはp.39",
+  "sections": [
+   {
+    "type": "choice",
+    "instruction": "正しいほうに〇をつけなさい。",
+    "items": [
+     {
+      "n": 1,
+      "q": "彼女はまだ若いけれど、（a. 経験といい能力といい　b. 経験だの能力だの）申し分のない女性だ。"
+     },
+     {
+      "n": 2,
+      "q": "猫に（a. 顔なり手なり　b. 顔といわず手といわず）引っかかれてしまった。"
+     },
+     {
+      "n": 3,
+      "q": "こんなつまらない商品を、売るほうも売るほう（a. なら　b. だろうが）買うほうも買うほうだ。"
+     },
+     {
+      "n": 4,
+      "q": "彼は、（a. ガムだのあめだの　b. ガムなりあめなり）何かしら口に入れている。"
+     },
+     {
+      "n": 5,
+      "q": "A「あの人、田中さんのお母さんだよね。派手だね。」B「（a. 娘が娘なら母親も母親だね　b. 娘といい母親といい親子なんだね）。」"
+     }
+    ]
+   },
+   {
+    "type": "order",
+    "instruction": "下の語を並べ替えて正しい文を作りなさい。＿＿に数字を書きなさい。",
+    "items": [
+     {
+      "n": 6,
+      "q": "姉がデザインが ＿＿ ＿＿ ＿＿ ＿＿ バッグをずっと使っている。",
+      "options": [
+       "1 くれた",
+       "2 色が気に入らないだの",
+       "3 古いだの",
+       "4 といって"
+      ]
+     },
+     {
+      "n": 7,
+      "q": "彼は学校の ＿＿ ＿＿ ＿＿ ＿＿ から女の子に全然もてない。",
+      "options": [
+       "1 しない",
+       "2 成績といい",
+       "3 パッと",
+       "4 容姿といい"
+      ]
+     }
+    ]
+   }
+  ],
+  "answers": "Ⅰ：①a ②b ③a ④a ⑤a　Ⅱ：⑥3→2→4→1　⑦2→4→3→1"
+ },
+ "hitokoto": ""
+}

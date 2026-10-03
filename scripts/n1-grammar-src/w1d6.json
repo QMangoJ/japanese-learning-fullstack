@@ -1,0 +1,187 @@
+{
+ "week": 1,
+ "day": 6,
+ "title": "何回読んだところで…",
+ "title_cn": "不管读多少遍",
+ "title_en": "No matter how many times I read it…",
+ "dialog": {
+  "lines": [
+   "Q.（　）に入るのは？",
+   "走った（　）間に合わないだろうから、次の電車にしよう。"
+  ],
+  "cn": "问：括号里该填什么？——就算跑也赶不上了吧，坐下一班电车吧。（答案：としたって）",
+  "en": "Q: What goes in the blank? — Even if we run we won't make it, so let's take the next train. (Answer: としたって)"
+ },
+ "points": [
+  {
+   "pattern": "危ないところを",
+   "reading": "あぶないところを",
+   "connection": "V/A〔普〕／naな／Nの ＋ところを",
+   "usage_cn": "正当……的时候（却得到帮助、受到打扰等）；在……的情况下。",
+   "usage_en": "Just when ~ / in the situation where ~.",
+   "examples": [
+    {
+     "jp": "交通事故で命が危ないところを、その医者に助けてもらった。",
+     "eq": "=命が危ない状況だった。そのとき",
+     "en": "I was saved by the doctor when I was in critical condition due to a traffic accident.",
+     "cn": "因交通事故生命垂危时，被那位医生救活了。"
+    },
+    {
+     "jp": "すぐにお礼の電話をしなければいけないところを今になってしまい、申し訳ありません。",
+     "eq": "=電話をしなければいけない状況なのに",
+     "en": "I apologize for not having given you a thank-you call sooner.",
+     "cn": "本该马上打电话致谢的，却一直拖到现在，真是对不起。"
+    }
+   ],
+   "notes": []
+  },
+  {
+   "pattern": "2、3時間というところだ",
+   "reading": "に、さんじかんというところだ",
+   "connection": "N／〔文〕＋というところだ／といったところだ",
+   "usage_cn": "也就是……，顶多……（表示大致的程度、数量不多）。",
+   "usage_en": "About ~ / at most ~.",
+   "examples": [
+    {
+     "jp": "勉強時間は2、3時間というところだ。",
+     "eq": "=だいたい2、3時間ぐらいだ",
+     "en": "I study about 2 or 3 hours (every day).",
+     "cn": "学习时间顶多2、3个小时。"
+    },
+    {
+     "jp": "「例の書類はできましたか。」「はい、あとはもう一度見直せばいいといったところです。」",
+     "eq": "=だいたいもう一度見直せばいいという状態です",
+     "en": "“Is the document we talked about ready?” “Yes, almost. I just have to review it.”",
+     "cn": "“那个资料做好了吗？”“是的，然后顶多再改一次就行了。”"
+    }
+   ],
+   "notes": [
+    {
+     "type": "◆",
+     "text": "Nは数量が入ることが多い。"
+    }
+   ]
+  },
+  {
+   "pattern": "何回読んだところで",
+   "reading": "なんかいよんだところで",
+   "connection": "Vたところで…ない",
+   "usage_cn": "即使……也（没用）；不管怎么……也不……（多接不好的结果）。",
+   "usage_en": "Even if ~ (it is no use).",
+   "examples": [
+    {
+     "jp": "何回読んだところで、意味は全くわからない。",
+     "eq": "=たとえ何回読んでも",
+     "en": "I can't understand it no matter how many times I read it.",
+     "cn": "不管读多少次，还是完全不懂意思。"
+    },
+    {
+     "jp": "そんな多額の借金は、家を売ったところで、到底返せない。",
+     "eq": "=たとえ売っても",
+     "en": "Even if we sell this house, we won't be able to repay such a huge debt.",
+     "cn": "这么大额度的借款，就算是把房子卖了也偿还不起。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "(-)",
+     "text": "悪い意味でよく使われる表現"
+    },
+    {
+     "type": "◆",
+     "text": "悪い結果・状態が続くことが多い。"
+    },
+    {
+     "type": "れい",
+     "text": "いくらVたところで／どんなにVたところで"
+    }
+   ]
+  },
+  {
+   "pattern": "忘れようとしたところで",
+   "reading": "わすれようとしたところで",
+   "connection": "V/A/na/N〔普〕＋としたところで／としたって",
+   "usage_cn": "即使想……也……；就算……也……（「としたって」用于口语）。",
+   "usage_en": "Even if one tries to ~ / even supposing ~.",
+   "examples": [
+    {
+     "jp": "これは忘れようとしたところで、忘れられない出来事だ。",
+     "eq": "=忘れようとしても",
+     "en": "This is an incident I will never forget even if I try hard.",
+     "cn": "这是一件想忘也忘不掉的事情。"
+    },
+    {
+     "jp": "今から急いだとしたって間に合わないだろう。",
+     "eq": "=急いだとしても",
+     "en": "We won't make it even if we hurry.",
+     "cn": "就算现在加急也来不及了吧。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "tag",
+     "text": "「としたって」は会話でよく使われる表現"
+    }
+   ]
+  }
+ ],
+ "exercises": {
+  "answers_note": "答えはp.28",
+  "sections": [
+   {
+    "type": "choice",
+    "instruction": "正しいほうに〇をつけなさい。",
+    "items": [
+     {
+      "n": 1,
+      "q": "どんなに（a. 走るところを　b. 走ったところで）、絶対に間に合わないだろう。"
+     },
+     {
+      "n": 2,
+      "q": "お忙しい（a. ところを　b. ところで）お集まりいただき、ありがとうございます。"
+     },
+     {
+      "n": 3,
+      "q": "「CDは月にどのくらい買うの。」「だいたい5枚（a. というところだ　b. ところだ）ね。」"
+     },
+     {
+      "n": 4,
+      "q": "彼の借金は、休みなく毎日働いた（a. ところを　b. ところで）、返せるような額ではない。"
+     },
+     {
+      "n": 5,
+      "q": "あの頑固な父にタバコをやめさせよう（a. にしたって　b. としたって）、無駄だよ。"
+     }
+    ]
+   },
+   {
+    "type": "order",
+    "instruction": "下の語を並べ替えて正しい文を作りなさい。＿＿に数字を書きなさい。",
+    "items": [
+     {
+      "n": 6,
+      "q": "どんなにやった ＿＿ ＿＿ ＿＿ ＿＿ 変えることはできない。",
+      "options": [
+       "1 ところで",
+       "2 後悔した",
+       "3 ことを",
+       "4 過去を"
+      ]
+     },
+     {
+      "n": 7,
+      "q": "トイレはもちろんキッチンもついていて、この車は ＿＿ ＿＿ ＿＿ ＿＿ です。",
+      "options": [
+       "1 といった",
+       "2 まさに",
+       "3 走る家",
+       "4 ところ"
+      ]
+     }
+    ]
+   }
+  ],
+  "answers": "Ⅰ：①b ②a ③a ④b ⑤b　Ⅱ：⑥3→2→1→4　⑦2→3→1→4"
+ },
+ "hitokoto": ""
+}

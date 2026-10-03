@@ -1,0 +1,212 @@
+{
+ "week": 5,
+ "day": 6,
+ "title": "ここに駐車するべからず",
+ "title_cn": "此处禁止停车",
+ "title_en": "No parking here",
+ "dialog": {
+  "lines": [
+   "Q.（　）に入るのは？",
+   "彼は医師に（　）、医学部への進学を考えている。"
+  ],
+  "cn": "问：括号里该填什么？——他为了当医生，正考虑升入医学院。（答案：なるべく）",
+  "en": "Q: What goes in the blank? — He is thinking of going to medical school in order to become a doctor. (Answer: なるべく)"
+ },
+ "points": [
+  {
+   "pattern": "親の期待に応えるべく",
+   "reading": "おやのきたいにこたえるべく",
+   "connection": "Vるべく",
+   "usage_cn": "为了……（书面语，表示目的）。",
+   "usage_en": "In order to ~ (formal).",
+   "examples": [
+    {
+     "jp": "親の期待に応えるべく、努力して医者の道に進んだ。",
+     "eq": "=親の期待に応えようとして",
+     "en": "I studied hard and became a doctor because of my parents' wishes.",
+     "cn": "为了不辜负父母的期待，在努力成为一名医生。"
+    },
+    {
+     "jp": "彼はよい席を手に入れるべく、2時間も前から並んでいた。",
+     "eq": "=手に入れようとして",
+     "en": "He lined up for two hours to get a good seat.",
+     "cn": "为了能买到好的座位，提前2个小时排队。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "!",
+     "text": "する→するべく／すべく"
+    },
+    {
+     "type": "硬",
+     "text": "改まった場面や文書で使われる硬い表現"
+    }
+   ]
+  },
+  {
+   "pattern": "望むべくもない",
+   "reading": "のぞむべくもない",
+   "connection": "Vるべくもない",
+   "usage_cn": "无法……，根本不可能……（书面语）。",
+   "usage_en": "Cannot possibly ~ / out of the question.",
+   "examples": [
+    {
+     "jp": "祖父の病状は悪くなるばかりだ。回復はもう望むべくもない。",
+     "eq": "=望むことは考えられない",
+     "en": "My grandfather's condition is deteriorating. We can't expect him to recover at this point.",
+     "cn": "祖父的病情不断恶化，恢复已经无望。"
+    },
+    {
+     "jp": "ビートルズとは比べるべくもないが、彼らは日本ではかなり有名なバンドです。",
+     "eq": "=比べることはできないが",
+     "en": "Their band is quite famous in Japan although they don't really compare with the Beatles.",
+     "cn": "虽然和甲壳虫乐队没法比，但他们在日本也是相当有名的乐队。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "!",
+     "text": "する→するべく／すべく"
+    },
+    {
+     "type": "硬",
+     "text": "改まった場面や文書で使われる硬い表現"
+    }
+   ]
+  },
+  {
+   "pattern": "ここに駐車するべからず",
+   "reading": "ここにちゅうしゃするべからず",
+   "connection": "Vるべからず",
+   "usage_cn": "禁止……，不许……（书面语）。",
+   "usage_en": "Must not ~ / ~ prohibited (formal).",
+   "examples": [
+    {
+     "jp": "ここに駐車するべからず。",
+     "eq": "=駐車するな",
+     "en": "No parking!",
+     "cn": "这里不许停车。"
+    },
+    {
+     "jp": "芝生に入るべからず。",
+     "eq": "=入るな",
+     "en": "Keep off the grass!",
+     "cn": "不许进入草地。"
+    },
+    {
+     "jp": "ビル内でたばこを吸うべからず。",
+     "eq": "=吸うな",
+     "en": "No smoking inside the building!",
+     "cn": "在楼内不许吸烟。"
+    },
+    {
+     "jp": "初心、忘るべからず。",
+     "eq": "=忘れるな",
+     "en": "You should always remember your original reason for doing the things you have chosen to do.",
+     "cn": "勿忘初衷。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "◆",
+     "text": "看板や掲示の禁止事項に使われる。"
+    },
+    {
+     "type": "!",
+     "text": "「忘る」：「忘れる」の古い形。"
+    },
+    {
+     "type": "硬",
+     "text": "改まった場面や文書で使われる硬い表現"
+    }
+   ]
+  },
+  {
+   "pattern": "許すべからざる行為",
+   "reading": "ゆるすべからざるこうい",
+   "connection": "Vるべからざる N",
+   "usage_cn": "不可……的，不应该……的（书面语）。",
+   "usage_en": "~ that must not be done / unforgivable ~ (formal).",
+   "examples": [
+    {
+     "jp": "学生を脅迫してお金をゆするとは、教師として許すべからざる行為である。",
+     "eq": "=絶対に許してはいけない",
+     "en": "No excuse will be accepted since you are a teacher and should never blackmail students.",
+     "cn": "竟然逼迫学生勒索钱财，是作为老师决不能允许的行为。"
+    },
+    {
+     "jp": "彼は、わがチームには欠くべからざる選手である。",
+     "eq": "=絶対に欠いてはいけない",
+     "en": "He is a very valuable member of our team.",
+     "cn": "他是我们队不可缺少的选手。"
+    }
+   ],
+   "notes": [
+    {
+     "type": "硬",
+     "text": "改まった場面や文書で使われる硬い表現"
+    }
+   ]
+  }
+ ],
+ "exercises": {
+  "answers_note": "答えはp.92",
+  "sections": [
+   {
+    "type": "choice",
+    "instruction": "正しいほうに〇をつけなさい。",
+    "items": [
+     {
+      "n": 1,
+      "q": "妻は職場に復帰（a. すべく　b. すべからず）、1歳になる子どもの預け先を探している。"
+     },
+     {
+      "n": 2,
+      "q": "人殺しの道具を作るなど許す（a. べからず　b. べからざる）ことだ。"
+     },
+     {
+      "n": 3,
+      "q": "「芝生に入る（a. べきだ　b. べからず）。」という立て札が立ててあった。"
+     },
+     {
+      "n": 4,
+      "q": "戦争での体験は、だれにとっても忘る（a. べからざる　b. べく）悲惨な出来事だ。"
+     },
+     {
+      "n": 5,
+      "q": "日本語能力試験のN1に合格する（a. べくもなく　b. べく）日夜勉強をしています。"
+     }
+    ]
+   },
+   {
+    "type": "order",
+    "instruction": "下の語を並べ替えて正しい文を作りなさい。＿＿に数字を書きなさい。",
+    "items": [
+     {
+      "n": 6,
+      "q": "今、夏なのに雪が降るといった ＿＿ ＿＿ ＿＿ ＿＿ ある。",
+      "options": [
+       "1 あるべからざる",
+       "2 起こっている",
+       "3 現象が",
+       "4 地域が"
+      ]
+     },
+     {
+      "n": 7,
+      "q": "＿＿ ＿＿ ＿＿ ＿＿ 、試験に合格した。",
+      "options": [
+       "1 懸命に続けた",
+       "2 努力が実り",
+       "3 弁護士",
+       "4 になるべく"
+      ]
+     }
+    ]
+   }
+  ],
+  "answers": "Ⅰ：①a ②b ③b ④a ⑤b　Ⅱ：⑥1→3→2→4　⑦3→4→1→2"
+ },
+ "hitokoto": ""
+}
