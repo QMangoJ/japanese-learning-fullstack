@@ -1,0 +1,66 @@
+T 背[そむ]く・経[へ]る・値[あたい]する|违背・经过・值得|Disobey, pass through, be worth
+S words|動詞②（グループⅠ）○く／○ぐ|动词②（第一类）○く／○ぐ|Verbs ② (Group I): ending in く／ぐ
+W 築[きず]く|ダムを築く|build a dam|建造水坝
+W 描[えが]く|風景を心に描く|picture a scene of ...|在心里勾画风景
+W 背[そむ]く|命令に背く|disobey an order|违背命令
+W 相次[あいつ]ぐ|事故が相次ぐ|there continue to be accidents|事故相继发生
+S words|動詞②（グループⅡ）～iる|动词②（第二类）～iる|Verbs ② (Group II): ending in -iru
+W 試[こころ]みる|実験を試みる|try out an experiment|尝试实验
+W →試[こころ]み（N）||an attempt|尝试
+W 省[かえり]みる|過去を省みる|review the past|反省过去
+W 帯[お]びる|酒気を帯びる|have a little alcohol|带有酒气
+S words|動詞②（グループⅡ）～eる|动词②（第二类）～eる|Verbs ② (Group II): ending in -eru
+W 経[へ]る|十年の年月を経る|after ten years|经过十年的岁月
+W 経[へ]る|ドイツを経てイギリスへ行く（＝経由して）|go to England via Germany|经由德国去英国
+W 構[かま]える|大通りに店を構える|have a store on a main street|在大街上开店
+W →カメラを構[かま]える||position a camera|手拿相机
+W 栄[さか]える|国が栄える|country prospers|国家繁荣
+W 絶[た]える|連絡が絶える|lose contact|联系中断
+W →途絶[とだ]える||discontinue|断绝
+W 映[は]える|夕日に映える|~lit by the setting sun|夕阳映照
+W 整[ととの]える|服装を整える|get dressed|整理服装
+W →（～が）整[ととの]う||
+W 授[さず]ける|賞を授ける|award a prize|授奖
+W 傾[かたむ]ける|耳を傾ける|listen to|倾听
+W →（～が）傾[かたむ]く||
+W 設[もう]ける|相談窓口を設ける（＝設置する）|open a customer service counter|设立咨询窗口
+W →機会[きかい]を設[もう]ける||create an opportunity|创造机会
+W 手掛[てが]ける|設計を手掛ける|draw up a plan|动手设计
+W 定[さだ]める|憲法を定める|promulgate a constitution|制定宪法
+W →（～が）定[さだ]まる||
+W 目覚[めざ]める|夢から目覚める（＝覚める）|wake from a dream|从梦中醒来
+W 暮[く]れる|日が暮れる|the sun sets|日暮
+W 遅[おく]らせる|出発を遅らせる（＝遅らす）|delay a departure|推迟出发
+W 寝[ね]かせる|子どもを寝かせる（＝寝かす）|put a child to sleep|让孩子睡觉
+W 震[ふる]わせる|声を震わせる（＝震わす）|one's voice trembles|声音颤抖
+S words|漢字一字＋する（Ⅲ）|汉字一字＋する（第三类）|One kanji + する (Group III)
+W 値[あたい]する|この本は一読に値する|this book is worth reading|这本书值得一读
+W 害[がい]する|健康を害する|ruin one's health|危害健康
+W 称[しょう]する|弁護士と称する男|a man who claims to be a lawyer|自称是律师的男人
+W 称[しょう]する|病気だと称して欠席する|pretend to be ill to avoid attending|称病缺席
+W 制[せい]する|警官が群集を制する|policemen control the crowd|警察压制群众
+W 脱[だっ]する|危険を脱する|escape from danger|脱离危险
+W 徹[てっ]する|裏方に徹する|stay behind the scenes|一直在幕后
+W 面[めん]する|大通りに面する家|a house facing the main street|面向大马路的房子
+W 要[よう]する|急を要する連絡|an urgent message|紧急的联络
+S words|漢字一字＋じる（Ⅱ）／ずる（Ⅲ）|汉字一字＋じる（第二类）／ずる（第三类）|One kanji + じる (Group II) ／ずる (Group III)
+N ＊じる→ずるもOK
+W 案[あん]じる|両親の健康を案じる|worry about parents' health|担心父母的健康
+W 重[おも]んじる|学歴を重んじる|put emphasis on education|重视学历
+W 演[えん]じる|ドラマのヒロインを演じる|play the main (female) role in a drama|出演电视剧主角
+W 興[きょう]じる|トランプに興じる|enjoy card games|玩牌玩得高兴
+W 禁[きん]じる|法律で禁じられている|be prohibited by law|被法律禁止
+W 準[じゅん]じる|待遇は年齢に準じる|pay depends on age|待遇是根据年龄决定
+W 転[てん]じる|状況が転じる|situation changes|状况变化
+W 報[ほう]じる|新聞が事件を報じる|Newspapers report the crime|报纸报道事件
+X1 正しいほうに○を付けなさい。
+Q 夕焼けで赤みを（a. 暮れた　b. 帯びた）空がきれいだ。>>被晚霞染得微红的天空很美。
+Q 父は料理の面白さに（a. 目覚めた　b. 転じた）らしく、毎日台所に立っている。>>父亲好像领悟到了做菜的乐趣，每天都下厨。
+Q 彼女は毎日異国で暮らす息子の健康を（a. 案じている　b. 報じている）。>>她每天都担心在异国生活的儿子的健康。
+Q 我がチームはやっと最下位から（a. 脱する　b. 準じる）ことができた。>>我们队终于摆脱了最后一名。
+Q 最近この地方に大きい地震が（a. 相次いで　b. 震わせて）起こっている。>>最近这个地区接连发生大地震。
+Q 兄は、土日はマージャンに（a. 重んじている　b. 興じている）。>>哥哥周六周日都玩麻将玩得很起劲。
+X2 （　）にはどれが入りますか。一つ選びなさい。
+Q 彼は親の教えに（　　）、不良になってしまった。|制して|害して|背いて|準じて>>他违背父母的教诲，变成了不良少年。
+Q 彼は父親が（　　）財産を次々と売ってしまった。|構えた|栄えた|築いた|値した>>他把父亲积攒下来的财产接二连三地卖掉了。
+A Ⅰ：①b ②a ③a ④a ⑤a ⑥b　Ⅱ：⑦3 ⑧3

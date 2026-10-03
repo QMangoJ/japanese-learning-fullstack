@@ -1,0 +1,57 @@
+T 甘[あま]い・かたい・重[おも]い|甜・硬・重|Sweet, hard, heavy
+S words|甘い|甘い（甜；宽松；天真）|甘い (sweet)
+W 甘[あま]い|このトマトは甘くておいしい。|This tomato is sweet and tasty.|这西红柿又甜又好吃。
+W 甘[あま]い|今朝[けさ]のみそ汁[しる]はちょっと甘い（＝塩分[えんぶん]が少ない）。|The miso soup this morning is rather mild.|早晨的酱汤有点甜。
+W 甘[あま]い|甘い（＝優[やさ]しく快[こころよ]い）声でささやく|whisper sweet things in her ear|用娇滴滴的声音嘟囔
+W 甘[あま]い|彼は子どもたちに甘い（＝厳[きび]しくない）。|He is easy on his kids.|他对孩子很宽松。
+W 甘[あま]い|考[かんが]えが甘い（＝安易[あんい]だ）|an overly optimistic view|想法幼稚
+W 甘[あま]い|準備[じゅんび]なしで受験[じゅけん]したのは甘かった。|I didn't prepare enough. I underestimated the difficulty of the entrance exam.|没准备就参加考试，想得太简单了。
+W 甘[あま]い|仕事を甘く（＝簡単[かんたん]に）見る|not take the job seriously|小瞧工作
+W 甘[あま]い|見通[みとお]しが甘い|an overly optimistic plan|预测过分乐观
+W 甘[あま]い|このねじは甘い（＝ゆるい）からすぐに外[はず]れる。|This screw will come out easily because it is already loose.|这螺丝松了，马上就会掉下来。
+S words|かたい|かたい（硬；坚定；可靠）|かたい (hard, firm)
+W かたい|かたい椅子[いす]|hard chair|硬椅子
+W ⇔やわらかい||
+W かたい|かたい（＝しっかりとした）握手[あくしゅ]を交[か]わす|shake hands firmly|紧紧握手
+W かたい|口がかたい|keep a secret|嘴巴严
+W ⇔口[くち]が軽[かる]い||
+W かたい|彼[かれ]の決意[けつい]はかたい。|He's firm in his decision.|他的决心很坚定。
+W かたい|表情[ひょうじょう]がかたい|a stern look|表情僵硬
+W ⇔やわらかい||
+W かたい|かたい（＝安全な）商売[しょうばい]をする|a stable business|可靠的买卖
+W かたい|彼の合格[ごうかく]はかたい（＝確実[かくじつ]だ）。|He'll certainly pass.|他肯定能合格。
+W かたい|父は頭がかたい（＝頑固[がんこ]だ）。|My father is stubborn.|父亲头脑顽固。
+W ⇔やわらかい||
+W かたい|かたい（＝難[むずか]しい）話はやめよう。|Let's not talk about such a serious topic.|别说严肃的话题了。
+W かたい|外出[がいしゅつ]をかたく（＝絶対[ぜったい]に）禁[きん]ずる。|Going out is prohibited.|严格禁止外出。
+S words|まずい|まずい（不好；拙劣；不妙）|まずい (bad)
+W まずい|対応[たいおう]がまずい（＝よくない）|deal with ... very poorly|对应拙劣
+W まずい|彼[かれ]は性格[せいかく]はいいが顔がまずい。（＝不細工[ぶさいく]だ）|He has a nice personality but he is not very handsome.|他性格好，可长得不好看。
+W まずい|彼[かれ]の歌はまずい（＝下手[へた]だ）。|He sings very poorly.|他歌唱得很难听。
+W まずい|人に聞かれるとまずい（＝都合[つごう]が悪い）。|I don't want anyone to hear this.|让人听见就糟了。
+W まずい|まずい（＝都合[つごう]が悪い）ことになった。|We're in trouble.|坏事了。
+S words|重い|重い（重；重要；沉重）|重い (heavy)
+W 重[おも]い|酸素[さんそ]は水素[すいそ]より重い。|Oxygen is heavier than hydrogen.|氧气比氢气重。
+W 重[おも]い|この自転車のペダルは重い。|This bicycle feels heavy.|这自行车的踏板沉。
+W 重[おも]い|重い（＝重要[じゅうよう]な）地位[ちい]につく|assume an important position|身居高位
+W 重[おも]い|寝不足[ねぶそく]で頭が重い（＝すっきりしない）。|My brain isn't working well due to lack of sleep.|因睡眠不足，感觉头沉。
+W 重[おも]い|パソコンの動きが重い（＝遅[おそ]い）。|This PC is slow.|电脑反应慢。
+W 重[おも]い|その仕事を断[ことわ]るのは気が重い（＝憂[ゆう]うつだ）。|I am reluctant to turn down the job.|拒绝那个工作，心里很沉重。
+W 重[おも]い|今日の会議[かいぎ]の内容[ないよう]は重かった（＝深刻[しんこく]だった）。|The contents of today's meeting were serious.|今天会议的内容沉重。
+S words|明るい|明るい（明亮；开朗；精通）|明るい (bright)
+W 明[あか]るい|明るいブルー（⇔暗い）|light blue|明亮的蓝色
+W 明[あか]るい|明るい性格[せいかく]（⇔暗い）|cheerful personality|开朗的性格
+W 明[あか]るい|明るい声（⇔暗い）|cheerful voice|明朗的声音
+W 明[あか]るい|彼は政治[せいじ]に明るい（＝詳[くわ]しい）。|He knows a lot about politics.|他精通政治。
+W 明[あか]るい|今後[こんご]の見通[みとお]しが明るい。（⇔暗い）|The prospect is very good.|今后前途光明。
+X1 正しいほうに○を付けなさい。
+Q これからのローンの返済[へんさい]を考えると気が（a. 暗い　b. 重い）。>>一想到今后还要还贷款，心情就很沉重。
+Q この仕事を（a. まずく　b. あまく）見ていると、あとで大変[たいへん]だよ。>>如果小看这份工作，以后会很辛苦的。
+Q 彼[かれ]にそのように言ったのは非常[ひじょう]に（a. 重かった　b. まずかった）。>>对他那样说非常不妥。
+Q 不況[ふきょう]を脱[だっ]して今後[こんご]の景気[けいき]の見通[みとお]しは（a. かたい　b. 明るい）。>>摆脱了不景气，今后的经济前景很光明。
+Q タバコをやめようと（a. かたく　b. 重く）決心[けっしん]をした。>>下定决心要戒烟。
+Q 「大[おお]もうけできますよ」という（a. 甘[あま]い　b. 明るい）誘[さそ]いにのって、全財産[ぜんざいさん]を失[うしな]ってしまった。>>听信了"能大赚一笔"的甜言蜜语，失去了全部财产。
+X2 （　）にはどれが入りますか。一つ選びなさい。
+Q 彼[かれ]は、頭が（　　）から、自分の意見を変[か]えないでしょう。|重い|かたい|暗い|まずい>>他头脑顽固，不会改变自己的意见吧。
+Q 我[わ]が社は今回[こんかい]の事故[じこ]を（　　）受[う]け止[と]め、再発防止[さいはつぼうし]に努[つと]めます。|かたく|重く|高く|甘[あま]く>>我公司会严肃对待这次事故，努力防止再次发生。
+A Ⅰ：①b ②b ③b ④b ⑤a ⑥a　Ⅱ：⑦2 ⑧2

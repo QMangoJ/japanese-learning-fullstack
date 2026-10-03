@@ -1,0 +1,45 @@
+T 着々[ちゃくちゃく]と進めよう|稳步推进吧|Let's make steady progress
+S words|様子／人|状态／人|How people look and act
+W ふらふら（する）|頭がふらふらする|feel faint|头晕
+W おどおど（する）|面接でおどおどする|act shyly at interview|面试时战战兢兢的
+W くよくよ（する）|そんなにくよくよしないで。|Stop brooding.|不要那么愁眉不展了。
+W ぴんぴん（する）|祖父はぴんぴんしている。|My grandfather is full of life.|祖父特别硬朗。
+W ぺこぺこ（する）|ぺこぺこお辞儀をする|bow repeatedly|点头哈腰地行礼
+W →ぺこぺこ|おなかがぺこぺこだ。|I am famished.|肚子饿瘪了。
+W こつこつ|こつこつ貯金する|slowly and steadily save money|一点点地坚持存钱
+W こつこつ|靴音がこつこつと響く|hear footsteps|鞋跟咯噔咯噔地响
+W ゆうゆう|待ち合わせにゆうゆう間に合う|arrive early for a meeting|轻轻松松就能赶上约定时间
+W ゆうゆう|ゆうゆうと散歩する|take a leisurely walk|悠闲地散步
+W はらはら（する）|花びらがはらはらと散っている。|The flower petals are fluttering to the ground.|花扑簌簌地落下。
+W はらはら（する）|見ていてはらはらする。|It makes me nervous to watch.|看着就捏着一把汗。
+W むかむか（する）|胃がむかむかする。|My stomach feels sick.|反胃。
+W むかむか（する）|彼の態度にむかむかする（＝むかつく）。|He annoys me.|他的态度让我直冒火。
+W いやいや|いやいや仕事をする|work unwillingly|不情不愿地工作
+W しぶしぶ|しぶしぶ承知する|agree reluctantly|不情愿地答应了
+W つくづく|自分がつくづくいやになる。|I am utterly disappointed with myself.|自己真腻歪死了。
+S words|時|时间|Time
+W ぼつぼつ|さあ、ぼつぼつ（＝そろそろ）出かけよう。|Let's get going.|好了，咱们差不多该走了。
+W ちょくちょく|彼はちょくちょく遊びに来る。|He comes by every once in a while.|他时常过来玩。
+W しばしば|地震がしばしば（＝たびたび）起こる。|Earthquakes occur frequently.|地震常常发生。
+S words|その他|其他|Others
+W 代[か]わる代[が]わる|代わる代わる（＝交代で）意見を述べる|take turns expressing opinions|轮流陈述意见
+W ところどころ|壁がところどころ汚れている。|The wall is dirty here and there.|墙壁上许多地方都脏了。
+W わざわざ|わざわざお越しいただいて……。|Thank you for taking the trouble to come.|您专门过来……
+W くれぐれも|くれぐれもよろしくお伝えください。|Please give my best regards to ...|一定要代我问好。
+W 方々[ほうぼう]|方々歩き回る|wander around|四处奔走
+W 種々[しゅじゅ]|サイズが種々ある|they come in various sizes|有各种尺寸
+W 着々[ちゃくちゃく]|着々と進んでいる|making steady progress|顺利进展
+W 長々[ながなが]|長々とおじゃましました。|I am sorry to have stayed for so long.|长时间打扰了。
+W 転々[てんてん]|職場を転々とする|change jobs frequently|频转换单位
+W 点々[てんてん]|床に血が点々とついている。|There are drops of blood on the floor.|地板上血迹斑斑。
+X1 正しいほうに○を付けなさい。
+Q 彼は住居を（a. 種々　b. 転々）とした。>>他到处搬家。
+Q このラーメン屋には（a. ぼつぼつ　b. ちょくちょく）きます。>>我时常来这家拉面店。
+Q 済んだことをいつまでも（a. くよくよ　b. ふらふら）しても仕方がない。>>对已经过去的事一直耿耿于怀也没用。
+Q 話題のゲームソフトを買おうと思って（a. ほうぼう　b. かわるがわる）探したが、どこも売り切れだった。>>想买那款热门游戏软件，到处找了，但哪里都卖光了。
+Q このレポートは（a. ところどころ　b. 点々）字の間違いはあるが、いい内容だ。>>这份报告虽然有些地方写错了字，但内容很好。
+Q 彼女は文句を言いながらも（a. しぶしぶ　b. つくづく）仕事を手伝ってくれた。>>她虽然发着牢骚，还是勉勉强强地帮我干了活。
+X2 （　）にはどれが入りますか。一つ選びなさい。
+Q 今から駅に向かったら、10時の電車に（　　）間に合うでしょう。|ゆうゆう|はらはら|ちょくちょく|くれぐれも>>现在去车站的话，能从容赶上10点的电车吧。
+Q 彼は家を買う資金を（　　）貯めている。|つくづく|しばしば|こつこつ|わざわざ>>他在一点一点地攒买房的钱。
+A Ⅰ：①b ②b ③a ④a ⑤a ⑥a　Ⅱ：⑦1 ⑧3

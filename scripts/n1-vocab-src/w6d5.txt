@@ -1,0 +1,58 @@
+T 強[つよ]い・ばか・あと|强・傻・后|Strong, foolish, after
+S words|強い|強い（强；耐；擅长）|強い (strong)
+W 強[つよ]い|ひもを強く（＝きつく）結[むす]ぶ|tie the rope tightly|系紧绳子
+W ⇔ゆるく||
+W 強[つよ]い|この木は寒さに強い。|This tree is winter hardy.|这种树耐寒。
+W ⇔弱[よわ]い||
+W 強[つよ]い|彼[かれ]は意志[いし]が強い。|He has a strong will.|他意志坚强。
+W ⇔弱[よわ]い||
+W 強[つよ]い|兄は機械[きかい]に強い（＝詳[くわ]しい）。|He knows a lot about machines.|哥哥擅长机械。
+W 強[つよ]い|彼女[かのじょ]は気が強い。|She is strong-minded.|她生性好强。
+W ⇔弱[よわ]い||
+W 強[つよ]い|今日は日差[ひざ]しが強い。|The sun is strong today.|今天日光强烈。
+W 強[つよ]い|学生に強く注意する（＝厳[きび]しく）|give a strong warning to a student|严厉提醒学生
+S words|ばか（な）|ばか（な）（傻；不值；非常）|ばか (foolish)
+N ＊「バカ」と書くことも多い
+W ばか（な）|ばかなことをする|do a stupid thing|干傻事
+W ばか（な）|友人[ゆうじん]にばかにされる|be looked down on by one's friends|被朋友看不起
+W ばか（な）|交通費[こうつうひ]がばかにならない（＝軽視[けいし]できない）|transportation costs add up|交通费不能小瞧
+W ばか（な）|自分だけがばかを見る（＝損[そん]をする）|waste time & money because of others|只有自己吃亏
+W ばか（な）|ねじがばかになる（＝ゆるくなって使えない）|the screw won't hold|螺丝不起作用了
+W ばか（な）|今日はばかに（＝非常[ひじょう]に）寒い。|It's so cold today.|今天非常冷。
+W 親[おや]ばか||a doting parent|糊涂父母（失去理智地溺爱子女）
+W 専門[せんもん]ばか||person who knows nothing beyond his expertise|专心钻研专业的人
+W ばか力[ぢから]||super human power|蛮力
+W ばか正直[しょうじき]||extremely honest|傻诚实
+S words|あと|あと（后；以后；剩下；痕迹）|あと (after)
+W 後[あと]|故郷[こきょう]を後にする|leave one's hometown|离开故乡
+W 後[あと]|彼[かれ]の後をつける|follow him|跟踪他
+W 後[あと]|面倒[めんどう]なことを後に回[まわ]す|leave aside a troublesome task until later|麻烦的事情往后推
+W 後[あと]|入社[にゅうしゃ]はできたが、後が心配[しんぱい]だ。|I got a job but I am not sure if I'll be able to do it.|虽然进公司了，但担心以后。
+W あと|あと5分で始まる。|It'll start in 5 minutes.|还有5分钟就开始。
+W 後[あと]|事故[じこ]が後を絶[た]たない。（＝次々[つぎつぎ]に起こる）|There continue to be accidents.|事故不绝。
+W 後[あと]|社長の後を継[つ]ぐ|take over the president's position|接任社长的职务
+W 後[あと]|後（＝残[のこ]り）は来月[らいげつ]払[はら]います。|I'll pay the rest next month.|剩下的下个月支付。
+W 跡[あと]|書き直[なお]した跡[あと]がある。|There are signs that it's been rewritten.|有修改的痕迹。
+S words|根|根（根；根本；本性）|根 (root)
+W 根[ね]|雑草[ざっそう]を根から抜[ぬ]く|pull out the weed with its root|把杂草连根拔起
+W 根[ね]|歯[は]の根|root of a tooth|牙根
+W 根[ね]|その問題の根は深[ふか]い。|The root of the problem is deep.|这个问题根源很深。
+W 根[ね]|息[いき]の根を止める|strangle someone|杀死
+W 根[ね]|彼[かれ]は根（＝本来[ほんらい]の性質[せいしつ]）は正直[しょうじき]だ。|He doesn't look it but he is honest.|他秉性诚实。
+W 根[ね]|彼は昔[むかし]のことを根に持っている。|He is bitter about what happened in the past.|他对以前的事情怀恨在心。
+S words|波|波（波浪；起伏；潮流）|波 (wave)
+W 波[なみ]|台風[たいふう]が近づいていて波が高い。|The waves are high because a typhoon is coming.|台风靠近，波浪很高。
+W 波[なみ]|彼[かれ]は感情[かんじょう]に波がある（＝感情の変化[へんか]が大きい）。|He is moody.|他的感情有波动。
+W 波[なみ]|人の波（＝大きな流[なが]れ）に押[お]される|be jostled in a crowd|被人流推着
+W 波[なみ]|国際化[こくさいか]の波に乗る（＝傾向[けいこう]に従[したが]う）|follow the trend for internationalization|乘着国际化的潮流
+X1 正しいほうに○を付けなさい。
+Q 長い人生[じんせい]には、良[よ]いときと悪いときの（a. 根[ね]　b. 波[なみ]）がある。>>漫长的人生中，有好的时候也有坏的时候，起起伏伏。
+Q 今日の授業[じゅぎょう]は（a. 重く　b. ばかに）難[むずか]しかったね。>>今天的课特别难啊。
+Q ホテルを（a. 後に回[まわ]して　b. 後にして）駅へ向[む]かった。>>离开酒店前往车站。
+Q 通うのはいいが、交通費[こうつうひ]がバカに（a. ならない　b. なる）。>>去上学倒是可以，但交通费可不能小看。
+Q その病原菌[びょうげんきん]の（a. ばか力[ぢから]　b. 息[いき]の根[ね]）を止める新薬[しんやく]が発明[はつめい]された。>>能杀死那种病原菌的新药被发明了。
+Q 昔[むかし]のことをいつまでも（a. 根[ね]に持つ　b. 後[あと]を継[つ]ぐ）のはやめましょう。>>别总是对过去的事耿耿于怀了。
+X2 （　）にはどれが入りますか。一つ選びなさい。
+Q 警官[けいかん]はその不審[ふしん]な男の（　　）。|後ろに回[まわ]した|後を継[つ]いだ|後をつけた|後にした>>警察跟踪了那个可疑的男人。
+Q 正直者[しょうじきもの]が（　　）社会であるべきだ。|バカになる|バカにならない|バカをみる|バカをみない>>应该是一个老实人不吃亏的社会。
+A Ⅰ：①b ②b ③b ④a ⑤b ⑥a　Ⅱ：⑦3 ⑧4

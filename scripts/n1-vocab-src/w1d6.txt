@@ -1,0 +1,66 @@
+T どんな調子？|身体状况如何？|How are you feeling?
+S words|体の調子・病院などに関係する言葉|与身体状况・医院等相关的词语|Words about physical condition and hospitals
+W 体[からだ]がだるい|feel sluggish|身体无力
+W 寒気[さむけ]がする|have a chill|恶寒
+W 疲労[ひろう]で目[め]がかすむ|I am so tired my vision is blurry.|困倦得眼睛模糊不清
+W 貧血[ひんけつ]になる|have anemia|贫血
+W 安静[あんせい]にする|rest|静养
+W 虫[むし]に刺[さ]される|get a bite|被虫子叮
+W とげが刺[さ]さる|get a sliver|扎上刺了
+W めまいがする|feel faint|头晕
+W 意識[いしき]がもうろうとする|be only half conscious|神智不清
+W 意識[いしき]が遠[とお]ざかる|slowly lose consciousness|意识模糊
+W ⇔（～を）遠[とお]ざける||
+W 意識不明[いしきふめい]になる|become unconscious|昏迷不醒
+W 足首[あしくび]をねんざする|twist your ankle|脚脖子扭伤
+W 打[う]ったところがはれる|a bruise swelling|撞到的地方肿了
+W 足[あし]がむくむ|legs bloating|脚浮肿
+W →むくみ（N）|swell|浮肿
+W 下痢[げり]をする|have diarrhea|腹泻
+W ⇔便秘[べんぴ]になる|get constipated|便秘
+W 妊娠[にんしん]する|get pregnant|妊娠
+W →出産[しゅっさん]（＝お産[さん]）|give birth|分娩
+W 歯[は]を矯正[きょうせい]する|have braces|矫正牙齿
+W 湿疹[しっしん]ができる|have eczema|出湿疹
+W →じんましん|hives|荨麻疹
+W 皮膚[ひふ]をかく|scratch your skin|挠皮肤
+W →猫[ねこ]に引[ひ]っかかれる|get scratched by a cat|被猫挠
+W 病気[びょうき]の進行[しんこう]が早[はや]まる|a disease progressing quickly.|病情恶化速度加快
+W →（～を）早[はや]める|advance|加快
+W 体[からだ]が弱[よわ]る|become weak|身体衰弱
+W 痛[いた]みが強[つよ]まる⇔弱[よわ]まる|pain increasing ⇔ easing|疼痛加剧⇔减弱
+W →（～を）強[つよ]める⇔弱[よわ]める|turn up ⇔ turn down|加强⇔减弱
+W 痛[いた]みを和[やわ]らげる|ease the pain|缓解疼痛
+W →（～が）和[やわ]らぐ|soften, ease|变缓和
+W リハビリする|undergo rehabilitation|康复训练
+W リハビリを受[う]ける|undergo rehabilitation|康复训练
+W 入院[にゅういん]する|be hospitalized|住院
+W ⇔退院[たいいん]する|be released from the hospital|出院
+W 患者[かんじゃ]に付[つ]き添[そ]う|stay with a sick person|陪伴患者
+W 面会[めんかい]に行[い]く|visit someone|去会面
+W （お）見舞[みま]いに行[い]く|visit someone who is sick|去看望病人
+S words|もっとおぼえましょう　病名|再多记一些　病名|Learn more: names of illnesses
+W 癌[がん]|cancer|癌
+N ＊「ガン」とカタカナで書くことが多い。
+W ぜんそく|asthma|哮喘
+W →ぜんそくの発作[ほっさ]|an asthma attack|哮喘发作
+W 気管支炎[きかんしえん]|bronchitis|支气管炎
+W 肺炎[はいえん]|pneumonia|肺炎
+W 皮膚炎[ひふえん]|dermatitis|皮炎
+W →アトピー性皮膚炎[せいひふえん]|atopy|过敏性皮炎
+W うつ病[びょう]|depression|抑郁症
+W 認知症[にんちしょう]|dementia|痴呆
+W →アルツハイマー病[びょう]|Alzheimer's disease|老年痴呆
+W 熱中症[ねっちゅうしょう]|heatstroke|中暑
+W 花粉症[かふんしょう]|hay fever|花粉症
+X1 正しいほうに○を付けなさい。
+Q 母が病院に通うのに（a. 面会しなければ　b. 付き添わなければ）いけない。>>妈妈去医院，我必须陪着。
+Q 魚の骨がのどに（a. 刺された　b. 刺さった）。>>鱼刺卡在喉咙里了。
+Q 熱中症で意識が（a. もうろうとしている　b. だるい）。>>因为中暑，意识模糊不清。
+Q 虫に刺された指がこんなに（a. かいて　b. はれて）しまった。>>被虫子叮的手指肿成了这样。
+Q 疲れたせいか、目が（a. かすんで　b. 遠ざかって）よく見えない。>>也许是累了，眼睛发花看不清楚。
+Q 薬を飲んだらだいぶ痛みが（a. 弱った　b. 和らいだ）。>>吃了药以后，疼痛缓解了不少。
+X2 （　）にはどれが入りますか。一つ選びなさい。
+Q （　　）がするほど、腹が減っている。|めまい|ねんざ|むくみ|さむけ>>饿得头晕眼花。
+Q 病気の進行が（　　）、彼はついに意識不明になってしまった。|早めり|早まり|弱り|弱まり>>病情加速恶化，他终于陷入了昏迷。
+A Ⅰ：①b ②b ③a ④b ⑤a ⑥b　Ⅱ：⑦1 ⑧2

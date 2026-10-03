@@ -1,0 +1,52 @@
+T 最寄[もよ]り・気配[けはい]・手際[てぎわ]|最近・迹象・手法|Nearest, sign, skill
+S words|名詞・な形容詞|名词・な形容词|Nouns and na-adjectives
+W 最寄[もよ]り|最寄りの駅|the nearest station|最近的车站
+W 誤[あやま]り|誤りが多い|make a lot of mistakes|错误多
+W →誤[あやま]った考[かんが]え||wrong idea|错误的想法
+W 過[あやま]ち|過[あやま]ちを犯[おか]す|make a mistake|犯错
+W 値打[ねう]ち|値打ちがある絵|a valuable painting|有价值的画
+W 勝手[かって]（な）|勝手な行動をとる|behave selfishly|擅自行动
+W 初耳[はつみみ]|その話は初耳だ。|I've heard it for the first time.|这种事第一次听说。
+W 人並[ひとな]み|人並みの生活[せいかつ]|a decent living|普通人的生活
+W 軒並[のきな]み|軒並みに値上[ねあ]がりする|every price goes up|全涨价了
+W →古[ふる]い軒並[のきな]み||a row of old houses|成排的旧房子
+W 人任[ひとまか]せ|仕事を人任せにする|leave one's work to someone else|把工作委托给别人
+W 善[よ]し悪[あ]し|物事[ものごと]の善し悪し|know right from wrong|事物的好坏
+W →善悪[ぜんあく]||right and wrong|善恶
+W 目[ま]の当[あ]たり|惨状[さんじょう]を目の当たりにする|witness a tragic event|目睹了惨状
+W 応急[おうきゅう]|応急[おうきゅう]処置[しょち]をする|give first aid|进行应急处理
+W →応急手当[おうきゅうてあて]||first aid|应急措施
+W 気配[けはい]|人の気配がする|sense someone is around|感觉有人
+W 手際[てぎわ]|手際がいい|be very efficient|本领好
+W 知恵[ちえ]|知恵を出し合う|put ones' heads together|彼此都拿出智慧
+W 自我[じが]|自我が強い|self-centered|自我意识强
+W 自己[じこ]|自己中心的[ちゅうしんてき]な人|a self-centered person|自我中心的人
+W 作戦[さくせん]|作戦を練[ね]る|plan one's strategy|制定作战计划
+W 始末[しまつ]|事故[じこ]の始末をする|deal with the aftermath of the accident|处理事故
+W 決意[けつい]|決意を固[かた]める|strengthen one's determination|下定决心
+W 意欲[いよく]|意欲がある|be very eager|有积极性
+W 片言[かたこと]|片言でしゃべる|speak a few words of the language|说只言片语
+W 独自[どくじ]|独自の見解[けんかい]|one's own idea|独自的见解
+W 個々[ここ]|個々に意見を聞く|solicit each individual's opinion|向每个人征求意见
+W 従来[じゅうらい]|従来の考え方|traditional ways of thinking|以往的想法
+W →従来通[じゅうらいどお]り||as in the past|和以往一样
+W 無茶[むちゃ]（な）|無茶を言う|be unreasonable|胡说
+W →無茶[むちゃ]をする||do reckless things|乱来
+W 過密[かみつ]（な）|過密スケジュール|a very tight schedule|过密的日程安排
+W 不可欠[ふかけつ]（な）|生活[せいかつ]に不可欠なもの|indispensable things|生活不可缺少的东西
+W 画期的[かっきてき]（な）|画期的な発見[はっけん]|an epoch-making discovery|划时代的发现
+W 客観的[きゃっかんてき]（な）|客観的な意見を求[もと]める|request objective views|征求客观意见
+W ⇔主観的[しゅかんてき]（な）||subjective|主观的
+W 自発的[じはつてき]（な）|自発的に参加[さんか]する|participate voluntarily|自发地参加
+W 強制的[きょうせいてき]（な）|強制的に参加[さんか]させる|force someone to participate|强制参加
+X1 正しいほうに○を付けなさい。
+Q 朝の電車は（a. 過密な　b. 独自の）ダイヤで運行[うんこう]している。>>早上的电车按照非常密集的时刻表运行。
+Q 株[かぶ]の売買[ばいばい]は（a. 自己　b. 自我）責任[せきにん]で行うものです。>>股票买卖要自己承担责任。
+Q チラシの30日（土）は（a. 誤り　b. 過ち）です。正しくは30日（日）です。>>传单上的30日（周六）是错误的，正确的是30日（周日）。
+Q この切手は将来[しょうらい]（a. 意欲　b. 値打ち）が出るかもしれない。>>这张邮票将来可能会升值。
+Q フリーズしたパソコンを（a. 無茶に　b. 強制的に）終了[しゅうりょう]させた。>>强制关闭了死机的电脑。
+Q 彼[かれ]は知事選[ちじせん]に立候補[りっこうほ]する（a. 作戦　b. 決意）を固めたようです。>>他好像下定决心参加知事选举了。
+X2 （　）にはどれが入りますか。一つ選びなさい。
+Q 事故[じこ]の現場[げんば]を（　　）にして、恐[おそ]ろしかった。|不可欠|初耳|人任せ|目の当たり>>亲眼目睹了事故现场，非常害怕。
+Q これは我[わ]が社[しゃ]が開発[かいはつ]した（　　）新技術[しんぎじゅつ]です。|画期的な|自己的な|客観的な|自発的な>>这是我公司开发的划时代新技术。
+A Ⅰ：①a ②a ③a ④b ⑤b ⑥b　Ⅱ：⑦4 ⑧1

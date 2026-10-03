@@ -1,0 +1,58 @@
+T 意図[いと]・終日[しゅうじつ]・小売[こう]り|意图・整天・零售|Intention, all day, retail
+S words|体|体|体 (body)
+W 物体[ぶったい]|なぞの物体|a mysterious object|神秘物体
+W 立体[りったい]|立体的な絵|a three dimensional painting|立体画
+W ⇔平面的[へいめんてき]な||
+W 正体[しょうたい]|正体を現す|reveal one's true self|现原形
+S words|意|意|意 (mind)
+W 意向[いこう]|先方の意向を聞く|listen to what the other party intends to do|听取对方的意向
+W 意思[いし]|意思表示|an expression of one's intentions|表明想法
+W →意志[いし]が固[かた]い||strong willed|意志坚定
+W 意地[いじ]|意地を張る|be stubborn|逞强
+W →意地[いじ]っ張[ぱ]り（N）||stubborn person|固执
+W 意図[いと]（する）|早期解散を意図する|plan to dissolve parliament earlier that expected|计划早期解散
+W 意図[いと]（する）|意図的に|intentionally|有意的
+S words|見|见|見 (see)
+W 見地[けんち]|医学的見地から反対する|object from a medical view of point|从医学立场出发反对
+W 会見[かいけん]|記者会見|press conference|记者招待会
+W 見通[みとお]し|見通しの悪い道路|a street with poor visibility|看不清前方的道路
+W 見通[みとお]し|来年度の見通し|the forecast for next year|下年度的预测
+W →見通[みとお]す（V）||
+W 見下[みくだ]す|人を見下す|look down on someone|小看人
+N ＊読み方に注意
+W 見下[みお]ろす|ビルの屋上から見下ろす|look down from the top of a building|从楼顶上往下看
+W 見合[みあ]わせる|顔を見合わせる|exchange glances|面面相觑
+W 見合[みあ]わせる|出発を見合わせる|postpone your departure|推迟出发
+S words|着|着|着 (arrive)
+W 着手[ちゃくしゅ]|新しい事業に着手する|launch a new business|着手新的事业
+W 着色[ちゃくしょく]|着色料を使用する|use coloring|使用染料
+W 着目[ちゃくもく]|子どもの個性に着目する|focus on a child's originality|着眼孩子的个性
+W 着工[ちゃっこう]|新ビルは来月着工する。|The construction of the new building will start next month.|新楼下个月动工。
+S words|日|日|日 (day)
+W 日夜[にちや]|日夜（＝昼も夜も）勉強する|study day and night|日以继夜地学习
+W 日々[ひび]|日々の暮らしに困る|struggle with everyday life|每日生活困窘
+W 日[ひ]ごろ|日ごろの行い|everyday conduct|平时的行为
+W 終日[しゅうじつ]|終日（＝一日中）パソコンに向かう|work on the computer all day long|整天对着电脑
+S words|自|自|自 (self)
+W 自立[じりつ]（する）|女性の自立|women's independence|女性的自立
+W 自主[じしゅ]|自主的に（＝自主トレする）トレーニングする|train of your own free will|自主训练
+W 自首[じしゅ]（する）|警察に自首する|turn yourself in to the police|向警察自首
+S words|売|卖|売 (sell)
+W 小売[こう]り（する）|これは小売りで5千円だ。|This retails for five thousand yen.|这个零售5千日元。
+W 前売[まえう]り（する）|映画の前売り券を買う|book a movie ticket|买电影的预售票
+W 売買[ばいばい]（する）|株を売買する|trade stocks|买卖股票
+S words|間|间|間 (interval)
+W 合間[あいま]|仕事の合間|free time|工作的余暇
+W 空間[くうかん]|狭い空間を利用する|use a small space|利用狭小的空间
+W 民間[みんかん]|民間企業|a private enterprise|民间企业
+X1 正しいほうに○を付けなさい。
+Q 嵐のため、電車のダイヤが（a. 日々　b. 終日）乱れた。>>因为暴风雨，电车时刻表整天都很混乱。
+Q これは、業者向けなので（a. 前売り　b. 小売り）はしません。>>这是面向商家的，所以不零售。
+Q こうなったら（a. 意地　b. 意思）でも完成させてみせよう。>>事已至此，就算赌气也要把它完成给你看。
+Q 仕事の（a. 空間　b. 合間）にお気に入りのコーヒーショップに立ち寄った。>>趁工作的间隙，顺路去了喜欢的咖啡店。
+Q 大雪なので外出するのを（a. 見合わせた　b. 見通した）。>>因为下大雪，暂缓了外出。
+Q 彼はいまだに親から（a. 自主　b. 自立）できていない。>>他至今还没能离开父母自立。
+X2 （　）にはどれが入りますか。一つ選びなさい。
+Q 湖で（　　）不明の生物が目撃された。|物体|意図|正体|見通し>>在湖里目击到了来历不明的生物。
+Q 警察はその事件の捜査に（　　）した。|着工|自主|会見|着手>>警察着手调查那个事件。
+A Ⅰ：①b ②b ③a ④b ⑤a ⑥b　Ⅱ：⑦3 ⑧4

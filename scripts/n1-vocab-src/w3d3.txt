@@ -1,0 +1,48 @@
+T じっくり考えよう|仔细考虑吧|Let's think carefully
+S words|○っ○り|○っ○り型副词|Adverbs of the form ○っ○り
+W じっくり|じっくり考えてから返事をする|reply prudently|考虑仔细后再答复
+W じっとり（する）|じっとりと汗ばむ|sweat heavily|汗津津的
+W しっとり（する）|しっとりとぬれる|damp|湿湿
+W しっとり（する）|しっとりと落ち着いた女性|a calm woman|镇定自若的女性
+W あっさり（する）|あっさりした味|simple flavour|清淡的味道
+W あっさり（する）|試合にあっさり負ける|lose the game easily|比赛中轻易被打败
+W さっぱり（する）|さっぱりした性格|a frank person|直爽的性格
+W さっぱり（する）|お風呂に入ってさっぱりした。|I felt refreshed from the bath.|我洗完澡特别清爽。
+W さっぱり（する）|さっぱり思い出せない。|I cannot remember a thing.|完全想不起来。
+W がっしり（する）|がっしりした体つき|a solid build|健壮的身体
+W がっちり（する）|がっちり（＝がっしり）した建物|a solid building|坚固的建筑物
+W がっちり（する）|がっちりお金をためる|save money steadily|精打细算地存钱
+W がっくり（する）|試験に落ちてがっくり（＝がっかり）した。|feel down from failing the exam.|因考试不合格，特颓丧。
+W がっくり（する）|がっくりと首をたれる|walk with your head hung low|突然无力地垂下头
+W きっかり|きっかり10時に開店する|close at ten on the nose|10点整关门
+W きっぱり|きっぱり断る|flatly refuse|断然拒绝
+W ぐったり（する）|疲れてぐったりする|be dead tired|累得筋疲力尽
+W くっきり（する）|晴れて富士山がくっきり見える。|I can see Mt.Fuji clearly because of the nice weather.|天气晴朗，能清楚地看到富士山。
+W ぐっしょり|汗でぐっしょりぬれる|be soaked with sweat|汗流浃背
+W びっしょり|汗でびっしょりぬれる|be soaked with sweat|汗流浃背
+W げっそり|病気でげっそりやせる|lose a lot of weight from being ill|因生病急剧消瘦
+W てっきり|てっきりみんな知っていると思っていた。|I assumed everyone knew.|我原以为大家肯定都知道。
+W まる（っ）きり|昔とまるっきり（＝まるで）違っている。|It has completely changed.|和以前完全不同。
+W うんざり（する）|その話はもううんざりだ。|I am tired of hearing that story.|那些话早就听烦了。
+W すんなり（する）|すんなりした手足|slender arms and legs|修长的手脚
+W すんなり（する）|問題はすんなり解決した。|The problem was fixed easily.|问题顺利解决了。
+S words|○っと|○っと型副词|Adverbs of the form ○っと
+W さっと|テーブルをさっとふく|give the table a quick wipe|擦了一把桌子
+W はっと（する）|物音にはっとする（＝驚く）|jump from a sudden noise|被那动静吓了一跳
+W はっと（する）|はっと気がつく|suddenly notice|忽然发觉
+W きちっと（する）|引き出しにきちっと（＝きちんと）しまう|put away neatly in a drawer|整整齐齐放到抽屉里
+W ぎゅっと|手をぎゅっと握る|hold hands tightly|用力握手
+S words|その他|其他|Others
+W ぴたりと|ぴたりと言い当てる|guess exactly|一语中的
+W ずばり|ずばり一言で言ってください。|Would you come directly to the point?|请开门见山地说。
+X1 正しいほうに○を付けなさい。
+Q 「たばこ」という言葉は（a. きっぱり　b. てっきり）日本語だと思っていたけど、違うんだね。>>我一直以为「たばこ」这个词肯定是日语，原来不是啊。
+Q 彼はそれが自分の犯行であることを（a. あっさり　b. がっくり）認めた。>>他爽快地承认了那是自己犯的罪。
+Q ライトアップで東京タワーが夜空に（a. くっきり　b. きちっと）浮かび上がった。>>在灯光照射下，东京塔在夜空中清晰地浮现出来。
+Q 彼女は（a. さっと　b. はっと）立ち上がって、座席を老人に譲った。>>她迅速站起来，把座位让给了老人。
+Q 新しい携帯電話の使い方が（a. うんざり　b. さっぱり）わからない。>>完全不懂新手机的用法。
+Q 今日限りで（a. きっぱり　b. きっかり）と酒をやめます。>>从今天起我坚决戒酒。
+X2 （　）にはどれが入りますか。一つ選びなさい。
+Q 遊んだ後はおもちゃを（　　）片付けなさい。|さっぱり|きちっと|すんなり|がっくり>>玩完以后要把玩具收拾整齐。
+Q 運動して汗を（　　）かいた。|しっとり|げっそり|びっしょり|ぎゅっと>>运动后出了一身大汗。
+A Ⅰ：①b ②a ③a ④a ⑤b ⑥a　Ⅱ：⑦2 ⑧3

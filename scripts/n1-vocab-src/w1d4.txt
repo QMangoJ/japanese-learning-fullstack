@@ -1,0 +1,63 @@
+T どんな行動・態度？①|什么样的行动・态度？①|What kind of behavior and attitude? ①
+S fillin|人と関わるとき使う動詞|与人交往时使用的动词|Verbs used when dealing with people
+P 〈人〉を［　　］
+W なだめる|calm down|劝解、平息
+W いたわる|be kind to|怜恤、慰劳
+W しつける|train / discipline|培养、教育
+W ちやほやする|dote on|溺爱、奉承
+W おだてる|flatter|捧上天、挑唆
+W あざ笑[わら]う|make fun of someone|嘲笑
+W あざむく|cheat, deceive|欺骗
+W ねたむ|be jealous|嫉妒
+W さらう|kidnap|掠夺、诱拐
+W 誘拐[ゆうかい]する|kidnap|掠夺、诱拐
+W 殴[なぐ]る|punch|打
+W 裁[さば]く|judge, punish|审判
+W かばう|protect|庇护、袒护
+W 励[はげ]ます|encourage|鼓励、激励
+W もてなす|entertain|接待、招待
+W 冷[ひ]やかす|tease|冷却、嘲笑
+W おどす|threaten|威胁
+W けなす|disparage|贬低
+W ののしる|scold, curse|骂
+W なじる|take to task|责问
+W とがめる|reproach|责难
+W やっつける|vanquish|收拾
+S fillin|人と関わるとき使う動詞|与人交往时使用的动词|Verbs used when dealing with people
+P 〈人〉に［　　］
+W 恋[こい]する|fall in love|恋爱
+W 片思[かたおも]い（を）する|one sided love|单相思
+W 尽[つ]くす|do your best|尽力
+W 食事[しょくじ]をおごる|treat a person to a meal|请吃饭
+W お小遣[こづか]いをねだる|plead for some pocket money|缠着要零花钱
+W 寄付[きふ]を強[し]いる|press to contribute|强迫捐款
+W 新[あたら]しいバッグを見[み]せびらかす|show off your new bag|炫耀新包
+W なつく|become attached|亲近
+W 親[した]しまれる|be liked|被喜欢
+W もてる|be popular among the opposite sex|受欢迎
+W 出[で]くわす（＝たまたま出会[であ]う）|run into|偶然遇见
+W 言[い]いつける|tell on|吩咐
+W 告[つ]げ口[ぐち]（を）する|tell on|打小报告
+W 嫌[いや]がらせ（を）する|be nasty|故意使人不痛快
+W 秘密[ひみつ]をばらす|tell a secret|揭露秘密
+S words|もっとおぼえましょう|再多记一些|Learn more
+W 近所[きんじょ]の人[ひと]ともめる|bicker with the neighbors|和邻居发生纠纷
+W 家族[かぞく]を養[やしな]う|support your family|赡养家人
+W 名付[なづ]ける|name|命名
+W →名付[なづ]け親[おや]|god father|给起名的人
+W 人見知[ひとみし]りする|shy in front of strangers|怕生
+W へりくだった態度[たいど]で接[せっ]する|be humble|以谦逊的态度接触
+W 関係[かんけい]がこじれる|the relationship went sour|关系恶化
+W →風邪[かぜ]をこじらせる|aggravate a cold|感冒加重
+W 話[はなし]がこじれる|a matter getting complicated|话没谈拢
+X1 正しいほうに○を付けなさい。
+Q うちの犬は母にいちばん（a. なついて　b. もてて）います。>>我家的狗最亲近妈妈。
+Q 監督と（a. もめた　b. ののしった）その選手は、結局やめさせられてしまった。>>和教练闹翻的那名选手，最终被迫退出了。
+Q だれも私のことを（a. かばって　b. おごって）くれない。>>谁都不袒护我。
+Q 彼女はご主人によく（a. 養って　b. 尽くして）います。>>她对丈夫尽心尽力。
+Q このまんがの主人公は、最後に悪者をやっと（a. とがめた　b. やっつけた）。>>这部漫画的主人公最后终于收拾了坏人。
+Q 彼は親に（a. ちやほやされて　b. もてなされて）育てられた。>>他是被父母娇生惯养长大的。
+X2 （　）にはどれが入りますか。一つ選びなさい。
+Q いたずらを先生に（　　）された。|いやがらせ|告げ口|言いつけ|人見知り>>恶作剧被人向老师告了状。
+Q 風邪を（　　）入院する騒ぎになってしまった。|強いられて|ばらされて|こじらせて|とがめられて>>感冒加重，闹到了住院的地步。
+A Ⅰ：①a ②a ③a ④b ⑤b ⑥a　Ⅱ：⑦2 ⑧3

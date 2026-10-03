@@ -1,0 +1,46 @@
+T どんな様子？③|什么样的状态？③|What does it look like? ③
+S words|様子・行動を表す動詞|表示状态・行动的动词|Verbs describing states and actions
+W こめる|心をこめて手紙を書いた。|I wrote a very sincere letter.|用心写信。
+W 染[そ]める|髪を染める|dye your hair|染发
+W →（～が）染[そ]まる||be dyed|染上
+W 尽[つ]きる|資源が尽きる|run out of resources|资源枯竭
+W 偏[かたよ]る|偏った考え|biased idea|偏颇的想法
+W はまる|水たまりにはまる|step into a puddle|掉入水塘
+W はまる|鍵が（鍵穴に）はまらない|the key will not fit the keyhole|钥匙塞不进去
+W はまる|型にはまる|fit a pattern|老一套
+W はまる|ゲームにはまる（＝熱中する）|be crazy about video games|热衷于游戏
+W とどまる|この町にとどまる|stay in this town|留在这个镇子上
+W とどまる|物価の上昇はとどまることがない。|The prices keep going up.|物价上涨不止。
+W とどめる|経費を最小限にとどめる|hold the expenses to a minimum|把经费控制在最小程度
+W とどめる|記憶にとどめる|remember|留在记忆中
+W 途切[とぎ]れる|会話が途切れる|a lull in the conversation|会话中断
+W 途絶[とだ]える|便りが途絶える|fall out of contact|音信全无
+W よみがえる|死者がよみがえる|a dead person coming back to life|死者复活
+W よみがえる|あの感動が心によみがえる|a touching memory comes back|那份感动重新涌上心头
+W ありふれる|ありふれた（＝平凡な）話|conventional story|老生常谈
+W 廃[すた]れる|流行が廃れる|is out of fashion|过时
+W かぶれる|肌がかぶれる|get a rash|皮肤发炎
+W かぶれる|ロックにかぶれる|be influenced by rock|热衷于摇滚
+W 化[ば]ける|女に化ける（＝女装する）|disguise yourself as a woman|装扮成女的
+W ばれる|うそがばれる|have a lie exposed|谎言暴露
+W 釣[つ]り合[あ]う|収入と支出が釣り合う|the income and expenses are balanced|收入和支出平衡
+W 絡[から]む|毛糸が絡む|yarn entangled|毛线缠到一起
+W 絡[から]む|たんが絡む|have phlegm caught in your throat|痰堵住了
+W 絡[から]む|酔っ払いに絡まれる|have a drunk try to pick a quarrel with you|被醉鬼纠缠
+W 覆[くつがえ]す|常識を覆す|disprove the common sense|颠覆常识
+W 見[み]なす|それは不正だと見なされている。|That is considered being dishonest.|这被认为是不正当的。
+W もたらす|被害をもたらす|cause damage|带来损失
+W しのぐ|夏の暑さをしのぐ|bear the heat of the summer|忍耐夏天的酷暑
+W 継[つ]ぐ|父の仕事を継ぐ|inherit your father's business|继承父亲的工作
+W つ（っ）つく|ひじでつつく|nudge with an elbow|用胳膊肘捅
+X1 正しいほうに○を付けなさい。
+Q 彼の順位は周囲の予想を（a. くつがえして　b. とだえて）3位に終わった。>>他的名次颠覆了周围人的预测，最终是第3名。
+Q 結婚式のスピーチで、型に（a. そまった　b. はまった）あいさつが続いた。>>婚礼致辞中，千篇一律的客套话一个接一个。
+Q 左右のバランスが（a. つりあって　b. かたよって）いるのなら、まっすぐに進むはずだ。>>如果左右平衡的话，应该能笔直前进。
+Q 彼は山の草や木の実を食べて飢えを（a. つきた　b. しのいだ）らしい。>>他好像是靠吃山里的野草和树果熬过了饥饿。
+Q そのとき一瞬、雲が（a. すたれて　b. とぎれて）陽がさした。>>那一瞬间，云层断开，阳光照了下来。
+Q 浮気が妻に（a. ばれて　b. ばけて）しまった。>>出轨被妻子发现了。
+X2 （　）にはどれが入りますか。一つ選びなさい。
+Q 酔っ払いに（　　）けんかになった。|からまれて|かぶれて|はまられて|みなされて>>被醉汉纠缠，打起架来了。
+Q その村の人口の減少は（　　）ことがなく、とうとう小学校もなくなってしまった。|すたれる|よみがえる|とどまる|ありふれる>>那个村子的人口不断减少，最终连小学也没有了。
+A Ⅰ：①a ②b ③a ④b ⑤b ⑥a　Ⅱ：⑦1 ⑧3

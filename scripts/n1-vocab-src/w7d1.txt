@@ -1,0 +1,60 @@
+T カタカナ①|片假名①|Katakana ①
+S words|省略[しょうりゃく]に注意|注意省略|Watch out for abbreviations
+W ハイテク|わが国はハイテク産業[さんぎょう]に力を入れている。|Our country puts a lot of effort and money into high-technology industries.|我国加大尖端技术产业的力度。
+W リストラ|不景気[ふけいき]でリストラされる|get laid-off in bad economy|因不景气而下岗
+W ＊日本語[にほんご]では会社[かいしゃ]の経営改革[けいえいかいかく]などのために会社[かいしゃ]をやめさせられることを「リストラされる」という。||＊在日语中，因公司经营改革等原因被辞退叫作「リストラされる」。
+W コネ|コネを使う|use a powerful connection|走关系
+W コネ|コネで就職[しゅうしょく]する|get a job through a powerful connection|走后门找工作
+W セクハラ|セクハラを受[う]ける|to be sexually harassed|受到性骚扰
+W ＊日本語訳[にほんごやく]は「性的[せいてき]いやがらせ」||＊日语译为「性的いやがらせ」（性骚扰）。
+W マザコン|彼[かれ]はマザコンだ。|He is a mama's boy.|他有恋母情结。
+W ⇔ファザコン|a papa's girl|恋父情结
+W ゼネコン|大手[おおて]ゼネコン|a major construction firm|大型综合建筑公司
+W ◆ゼネコン業界[ぎょうかい]|a construction industry|建筑行业
+W プレゼン|会議[かいぎ]でプレゼンをする|present one's plan/work in a meeting|在会议上发表
+W ＊プレゼンテーションとも言[い]う。||＊也说「プレゼンテーション」。
+W バイオ|バイオ研究[けんきゅう]|bio-technology research|生物研究
+W ＊バイオテクノロジーとも言[い]う。||＊也说「バイオテクノロジー」。
+W ハンデ|ハンデを克服[こくふく]する|succeed in spite of having a handicap|克服不利条件
+W ハンデ|ハンデをもらう|be given an advantage for a game|获得比赛的让步机会
+W マンネリ|マンネリ化[か]する|get into a rut|成为老套路
+W マンネリ|マンネリに陥[おちい]る|get stuck in a rut|陷入千篇一律的套路
+W ＊何度[なんど]も繰[く]り返[かえ]されて新鮮[しんせん]さを失[うしな]うという意味[いみ]に使[つか]われる。||＊用于表示因多次重复而失去新鲜感。
+W エコ|エコ生活[せいかつ]|eco-friendly lifestyle|环保生活
+W エコ|エコグッズ|eco-friendly products|环保商品
+W エコ|エコカー|eco-friendly car|环保车
+W ギャラ|ギャラが安い|low pay|报酬低
+W インテリ|intellectual|知识分子
+W セレブ|celebrity|高档、贵族
+S words|発音[はつおん]や意味[いみ]に注意[ちゅうい]|注意发音和意思|Watch out for pronunciation and meaning
+W 切手[きって]マニア|serious stamp collector|集邮迷
+W 鉄道[てつどう]マニア|those who are crazy about trains|铁路迷
+W 電気[でんき]ドリル|a electric drill|电钻
+W 学習[がくしゅう]ドリル|a study drill|学习训练
+W 資金[しきん]カンパ|a financial contribution|募集资金
+W 一人[ひとり]500円[えん]ずつカンパする|contribute 500 yen each|每人募集500元
+W ハイネック|a mockneck shirt/sweater|高领衫
+W タートルネック|a turtleneck shirt/sweater|圆领衫
+W 予算[よさん]がネックになっている|not possible due to a lack of funds|预算成为瓶颈
+W レントゲンを撮[と]る|have an x-ray taken|拍X光片
+W ピンセットでつまむ|pick it up with a pair of tweezers|用镊子夹
+W シックなデザイン|sophisticated design|时髦的设计
+W 時間[じかん]にルーズな人[ひと]|a person who is not punctual|没有时间观念的人
+W ガーゼを当[あ]てる|put gauze on ...|贴上纱布
+W 話[はなし]がスムーズに進[すす]む|the plan develops smoothly|谈话顺利进展
+W アフターサービス|あの店はアフターサービスがいい。|This shop provides good after-sales service.|那家店的售后服务好。
+W →アフターケア|maintenance/care|病后调养
+W 後継者[こうけいしゃ]にバトンタッチする|pass the baton to a successor|向后任者递交接力棒
+W テストでカンニングする|cheat on a test|在考试中作弊
+W ホースで庭[にわ]に水[みず]をまく|water the garden with a hose|用胶皮管往院子里浇水
+X1 正しいほうに○を付けなさい。
+Q 彼[かれ]が（a. カンニング　b. マンネリ）したのは明白[めいはく]だ。>>他作弊是很明显的。
+Q 会議[かいぎ]でパソコンを使って（a. カンパ　b. プレゼン）をした。>>在会议上用电脑做了发表。
+Q これは（a. エコ　b. バイオ）の技術[ぎじゅつ]を利用[りよう]して作った害虫[がいちゅう]に強い野菜です。>>这是利用生物技术培育的抗虫害蔬菜。
+Q 会社を（a. セクハラ　b. リストラ）されたらどうしよう。>>要是被公司裁员了怎么办。
+Q 彼[かれ]はとても時間に（a. スムーズ　b. ルーズ）だ。>>他非常没有时间观念。
+Q エコカーには（a. ゼネコン　b. ハイテク）技術[ぎじゅつ]がたくさん使われている。>>环保车使用了很多高科技技术。
+X2 （　）にはどれが入りますか。一つ選びなさい。
+Q いいマンションだが、交通[こうつう]の便[べん]の悪さが（　　）になって、借[か]り手[て]がいない。|タートルネック|シック|ネック|ハンデ>>虽然是不错的公寓，但交通不便成了障碍，没有人租。
+Q ハリウッドスターの（　　）はとても高い。|ハンデ|プレゼン|コネ|ギャラ>>好莱坞明星的片酬非常高。
+A Ⅰ：①a ②b ③b ④b ⑤b ⑥b　Ⅱ：⑦3 ⑧4

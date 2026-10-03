@@ -1,0 +1,47 @@
+T どんな様子？④|什么样的状态？④|What does it look like? ④
+S words|様子を表すい形容詞・な形容詞|表示状态的い形容词・な形容词|い- and な-adjectives describing states
+W くすぐったい|足の裏がくすぐったい。|My feet feel ticklish.|脚心痒痒。
+W 渋[しぶ]い|このお茶は渋い。|This tea is strong.|这茶涩。
+W 渋[しぶ]い|渋い顔をする|look grim|绷着脸
+W →渋[しぶ]い色[いろ]||sober colors|素雅的颜色
+W 華々[はなばな]しい|華々しい人生|a glorious life|辉煌的人生
+W みずみずしい|みずみずしい野菜|fresh vegetables|新鲜的蔬菜
+W 寝苦[ねぐる]しい|寝苦しい夜|a restless night|难以入睡的夜晚
+W 息苦[いきぐる]しい|彼は息苦しそうだ。|He looks as if he is having difficulty breathing.|他好像呼吸困难。
+W →息苦[いきぐる]しい雰囲気[ふんいき]||a tense atmosphere|令人窒息的气氛
+W 暑苦[あつくる]しい|暑苦しい部屋|a stuffy room|闷热的房间
+W すばし（っ）こい|すばしっこい犬|an agile dog|伶俐的狗
+W 素早[すばや]い|素早く答える|answer promptly|快速回答
+W 速[すみ]やか（な）|速やかに退去する|leave instantly|迅速离开
+W 健全[けんぜん]（な）|健全な精神|a sound mind|健全的精神
+W 健[すこ]やか（な）|健やかに育つ|grow up soundly|茁壮成长
+W 軽快[けいかい]（な）|軽快な曲|rhythmical music|轻快的曲子
+W 好調[こうちょう]（な）|好調な売れ行き|selling well|畅销
+W 好評[こうひょう]（な）|新メニューは好評だ。|The new dish is popular.|新菜单深受好评。
+W 滑[なめ]らか（な）|滑らかな肌|smooth skin|滑腻的皮肤
+W 細[こま]やか（な）|細やかな愛情|warm affection|深厚的爱情
+W 鮮[あざ]やか（な）|鮮やかな色|bright colors|鲜亮的颜色
+W 緩[ゆる]やか（な）|川の流れが緩やかだ。|The river is flowing slowly.|河流缓慢。
+W しなやか（な）|しなやかな体|a lithe body|柔韧的身体
+W 和[なご]やか（な）|和やかな会話|a peaceful conversation|平和的谈话
+W のどか（な）|のどかな風景|a tranquil view|宁静的风景
+W シック（な）|シックな服|a chic outfit|雅致的衣服
+W きらびやか（な）|きらびやかな宮殿|a gorgeous palace|华丽的宫殿
+W つぶら（な）|つぶらな瞳|round eyes|圆圆的眼珠
+W 緊急[きんきゅう]（な／の）|緊急な用事|an urgent call|紧急的事情
+W 巧妙[こうみょう]（な）|巧妙な手口|a shrewd trick|巧妙的手法
+W 巧[たく]み（な）|巧みな演技|a skillful performance|绝妙的演技
+W 円満[えんまん]（な）|円満な家庭|a happy family|美满的家庭
+W →円満[えんまん]に解決[かいけつ]する||resolve ... to everyone's satisfaction|圆满地解决
+W 透[す]き通[とお]った|透き通ったガラス|clear glass|透明的玻璃
+X1 正しいほうに○を付けなさい。
+Q あの役者は年を取ってからはとても落ち着いた（a. はなばなしい　b. 渋い）演技をする。>>那位演员上了年纪以后，演技变得非常沉稳老练。
+Q そのサッカー選手は（a. たくみな　b. つぶらな）技で、観客を魅了した。>>那名足球选手用娴熟的技术让观众着迷。
+Q スタートは（a. 健全　b. 好調）だったのに、最後は力が尽きて最下位になった。>>开局明明很顺利，最后却精疲力尽，落到了最后一名。
+Q 彼女はいつも（a. きらびやかな　b. しなやかな）アクセサリーを身につけている。>>她总是戴着华丽耀眼的首饰。
+Q お客様に（a. 細やかな　b. なめらかな）サービスを提供する。>>为顾客提供细致周到的服务。
+Q 景気は（a. のどかに　b. ゆるやかに）回復しています。>>经济正在缓慢恢复。
+X2 （　）にはどれが入りますか。一つ選びなさい。
+Q パーティーは（　　）雰囲気で進行していった。|あざやかな|なごやかな|すこやかな|すみやかな>>派对在和睦的气氛中进行着。
+Q 夫婦（　　）で、幸せな生活を送っています。|円満|健全|軽快|好調>>夫妻和睦，过着幸福的生活。
+A Ⅰ：①b ②a ③b ④a ⑤a ⑥b　Ⅱ：⑦2 ⑧1

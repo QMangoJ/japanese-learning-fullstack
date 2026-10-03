@@ -1,0 +1,50 @@
+T どんな様子？①|什么样的状态？①|What does it look like? ①
+S words|人の様子・行動を表す動詞|表示人的状态・行动的动词|Verbs describing how people look and act
+W 強[つよ]がる|「大丈夫」と強がる|pretend to be fine|逞强说"没关系"
+W くたびれる|歩き回ってくたびれた。|I got tired from walking around.|四处走来走去，真累坏了。
+W ばてる|残業続きでばてている|everyone was exhausted from working overtime.|一直在加班，筋疲力尽。
+W とぼける|「知らない」ととぼける|play dumb|假装不知道。
+W ぼける|年とともにぼけてくる|become forgetful as you get older|上了年纪，糊涂了
+W →ぼける|ピントがぼけた写真|a blurry photo|焦点模糊的照片
+W どもる|スピーチでどもる|stammer in a speech|在讲演中结巴
+W しくじる|入試でしくじる|fail an entrance exam|入学考试考砸了
+W 察[さっ]する|危険を察する|sense danger|察觉危险
+W ささげる|研究に一生をささげる|devote your life to your research|把一生奉献给研究
+W おびえる|物音におびえる|be frightened by a noise|害怕响声
+W こみあげる|涙がこみあげる|tears welling up|眼泪汪汪
+W うぬぼれる|彼女は自分が美人だとうぬぼれている。|She has a very high opinion of her own beauty.|她自我陶醉，觉得自己是个美女。
+W ぼうぜんとする|驚いてぼうぜんとする|be struck dumb with amazement|吃惊得呆住了
+W 赤[あか]らめる|顔を赤らめる|blush with embarrassment|红了脸
+W 凝[こ]る|釣りに凝る|be obsessed in fishing|热衷于钓鱼
+W 懲[こ]りる|失敗に懲りる|learn a lesson by making a mistake|吃一堑，长一智
+W こだわる|物事にこだわる|be particular about something|拘泥于某事
+W 戸惑[とまど]う|慣れない仕事に戸惑う|be at a loss on a new job|因工作不习惯，感到不知所措
+W 嘆[なげ]く|失敗を嘆く|grieve over a failure|感叹失败
+W ぼやく|「給料が安い」とぼやく|complain about the low pay|发牢骚说"工资太低"
+W まごつく|やり方がわからなくてまごつく|hesitate from not knowing how to do something|不知道做法，茫然不知所措
+W 任[まか]す|仕事を任される|be entrusted with a job|被委任工作
+W 和[なご]む|心が和む|relax|心情平静
+W こもる|家にこもる|live in seclusion|闷在家中
+W こもる|体に熱がこもる|feel feverish|全身充满干劲
+W ごまかす|話をごまかす|avoiding telling the truth|说话搪塞
+W ごまかす|値段をごまかす|cheat a person out of money|欺瞒价格
+W さえる|目がさえる|be wide awake|眼睛清醒
+W さえる|頭がさえる|have a clear head|头脑清晰
+W かなう|願いがかなう|have a dream come true|愿望实现
+W →かなえる||fulfil a wish|满足……的愿望
+W かなう|水泳では、彼にかなう者はいない。|No one can match him in swimming.|在游泳方面，没有人能比得上他。
+W かなう|彼にはかなわない|No one is as good as he is.|赶不上他
+W 意気込[いきご]む|「今度こそ勝つぞ！」と意気込む|the team is determined to win this time|干劲十足地说："这次一定要取胜"
+W 老[ふ]ける|彼は年のわりには老けて見える。|He looks old for his age.|年龄不大，看上去显老。
+W →老[お]いる||grow old|年老
+X1 正しいほうに○を付けなさい。
+Q 駅で電車の乗り換えに（a. おびえた　b. まごついた）。>>在车站换乘电车时不知所措。
+Q ピントが合っていない（a. ぼけた　b. とぼけた）写真。>>焦点没对上的模糊照片。
+Q 彼は自分に才能があると（a. こだわって　b. うぬぼれて）いる。>>他自以为很有才能。
+Q あの建物はかなり（a. こった　b. こりた）造りをしている。>>那座建筑的构造相当讲究。
+Q 1時間待ってもバスが来ない。もう待ち（a. くたびれた　b. ばてた）よ。>>等了1个小时公交车还没来，等累了。
+Q 彼は自分の失敗を（a. なげいた　b. ぼうぜんとした）。>>他为自己的失败而叹息。
+X2 （　）にはどれが入りますか。一つ選びなさい。
+Q 夢が（　　）プロの野球選手になれた！|こもって|こみあげて|意気込んで|かなって>>梦想成真，成为了职业棒球选手！
+Q 少年は年齢を（　　）たばこを買った。|どもって|しくじって|ごまかして|とまどって>>少年谎报年龄买了香烟。
+A Ⅰ：①b ②a ③b ④a ⑤a ⑥a　Ⅱ：⑦4 ⑧3

@@ -1,0 +1,49 @@
+T 気長[きなが]・下火[したび]・上[うわ]の空[そら]|耐心・衰退・心不在焉|Patience, waning, absent-mindedness
+S words|気|气|気 (spirit)
+W 水気[みずけ]|水気（＝水分）を切る|remove the moisture|去除水分
+W 人気[ひとけ]|人気のない通り|a deserted street|没有行人的道路
+W 寒気[さむけ]|寒気がする|feel a chill|感觉发冷
+W 気心[きごころ]|気心が知れる|be a close friend|了解脾气
+W 正気[しょうき]|正気になる|regain consciousness|神志清醒
+W 気合[きあい]|気合を入れる|be fired up for|鼓足干劲儿
+W 気長[きなが]|気長に待つ|wait patiently|耐心等待
+S words|出|出|出 (go out)
+W 出品[しゅっぴん]（する）|展覧会に出品する|send some works to the art exhibition|在展会上展出
+W 家出[いえで]（する）|家出する|run away from home|离家出走
+W 出産[しゅっさん]（する）|出産する|give birth to a baby|分娩
+W 出生[しゅっせい]（する）|出生地|place of birth|出生地
+W 出題[しゅつだい]（する）|出題範囲|sections that will be tested|出题范围
+W 出動[しゅつどう]（する）|軍隊が出動する|dispatch the armed forces|军队出动
+W 出社[しゅっしゃ]（する）|出社する（＝出勤する）|go to the office|上班
+W ⇔退社[たいしゃ]（する）||leave the office|下班、退职
+W 出世[しゅっせ]（する）|彼は順調に出世した。|He rose in the company without much problem.|他顺利地出人头地了。
+S words|下|下|下 (below)
+W 下味[したあじ]|塩こしょうで下味をつける|flavor it with salt and pepper before cooking|用盐和胡椒提前调味
+W 下地[したじ]|化粧の下地クリーム|base cream|化妆打底的乳霜
+W 下地[したじ]|彼は語学の下地がある。|He has a good grounding in the language.|他有学习语言的基础。
+W 下火[したび]|インフルエンザの流行が下火になってきた。|The flu epidemic has calmed down.|流感势头减弱了。
+S words|上|上|上 (above)
+W 上向[うわむ]く|景気が上向く|The economy is improving.|景气回升。
+W 上回[うわまわ]る|出生率が予想を上回る|the birth rate has exceeded the expected rate|出生率超过了预测
+W ⇔下回[したまわ]る||falls short|低于……
+W 上[うわ]の空[そら]|彼は上の空で、話を聞いていなかった。|He was absent-minded and was not listening at all.|他心不在焉，没有听到谈话。
+W 上書[うわが]き（する）|データを上書きして保存する|save it over the old data|覆盖数据后保存
+S words|回|回|回 (turn)
+W 回送[かいそう]（する）|バスが車庫に回送される|Out-of-service bus returns to the depot|巴士被开回了车库
+W →回送列車[かいそうれっしゃ]||Out-of-service train|开回车库的列车
+W 回答[かいとう]（する）|アンケートに回答する|fill out the questionnaire|回答问卷调查
+W →問題[もんだい]に解答[かいとう]する||answer the question|解答问题
+W 回[まわ]り道[みち]（する）|回り道をする|make a detour|绕道
+W 遠回[とおまわ]り（する）|工事のせいで、遠回りした。|I had to make a detour because of the road construction.|因施工而绕道。
+W 後回[あとまわ]し|食事は後回しにしよう。|Let's put eating off until later.|吃饭往后推。
+X1 正しいほうに○を付けなさい。
+Q 彼は面倒なことはいつも（a. 回り道　b. 後回し）にする。>>他总是把麻烦的事往后推。
+Q 彼の（a. 出生　b. 出産）地は、青森です。>>他的出生地是青森。
+Q ゲームに熱中していて、話しかけても（a. 上の空　b. 遠回り）だ。>>他沉迷于游戏，跟他说话也心不在焉。
+Q 火事が発生して、消防車が（a. 出動　b. 出勤）した。>>发生了火灾，消防车出动了。
+Q しょうゆで（a. 下地　b. 下味）をつけておいたので、焼くだけですぐ食べられます。>>已经用酱油提前调好味了，只要烤一下马上就能吃。
+Q （a. 水気　b. 人気）のない公園で火事が起こった。>>在没有人的公园里发生了火灾。
+X2 （　）にはどれが入りますか。一つ選びなさい。
+Q 問い合わせに対する（　　）がやっと届いた。|回答|出題|回送|上書き>>对询问的答复终于到了。
+Q さあ、（　　）を入れてがんばろう！|気心|気合|気長|正気>>来，鼓足干劲加油吧！
+A Ⅰ：①b ②a ③a ④a ⑤b ⑥b　Ⅱ：⑦1 ⑧2

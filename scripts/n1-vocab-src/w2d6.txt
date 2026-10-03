@@ -1,0 +1,44 @@
+T どんな様子？⑥|什么样的状态？⑥|What does it look like? ⑥
+S words|程度を表す言葉|表示程度的词语|Words expressing degree
+N 程度を表す言葉は特に意味が似ているものが多いのでフレーズで覚えましょう。
+W ものすごい|外はものすごい風だ。|It is very windy outside.|外面很大的风。
+W おびただしい|おびただしい数の虫|a large number on insects|数量极多的虫子
+W 甚[はなは]だしい|彼は非常識も甚だしい。|He has no commonsense at all.|他非常缺乏常识。
+W 目覚[めざ]ましい|目覚ましい活躍|a remarkable achievement|大显身手
+W 限[かぎ]りなく／無限[むげん]に|限りなく広がる大草原|a prairie that extends to the horizon|无边无际的大草原
+W 果[は]てしない|果てしない大地|there is barren land as far as the eye can see|一望无际的大地
+W 極[きわ]めて|極めて重要な問題|a very serious problem|极其重要的问题
+W 断然[だんぜん]|その店の客は若い人が断然多い。|The shop definitely attracts younger people.|那家店的客人绝对是年轻人多。
+W めちゃくちゃ（な）|車がめちゃくちゃに壊れる|the car is totaled|汽车坏得一塌糊涂
+W めちゃくちゃ（な）|めちゃくちゃおいしい|very good (slang)|非常好吃
+N ＊日常会話でよく使う。
+W 完[かん]ぺき（な）|完ぺきな演技|a perfect performance|完美的演技
+W 強烈[きょうれつ]（な）|強烈な印象|a very strong impression|强烈的印象
+W 猛烈[もうれつ]（な）|猛烈に働く|work extremely hard|拼命地工作
+W 圧倒的[あっとうてき]（な）|反対意見が圧倒的に多い。|The majority are opposed.|反对意见占绝大多数。
+W 極端[きょくたん]（な）|極端な意見|an extreme opinion|极端的意见
+W 大幅[おおはば]（な）|大幅に増加する|increase drastically|大幅增加
+W 半端[はんぱ]（な）|半端な布|a piece of cloth that is an awkward size|零布头
+W 中途半端[ちゅうとはんぱ]（な）|工事が中途半端に終わる|the construction remains unfinished|工程半途而废
+W かすか（な）|かすかに聞こえる|can bareley hear|能隐约听见
+W 若干[じゃっかん]|若干名の社員を募集する|recruit one or two new employees|招募若干名社员
+W いかなる|いかなるときも全力を尽くそう。|We should always try our best.|任何时候都竭尽全力吧。
+W あらゆる|あらゆる機会を利用する|make use of every opportunity|利用所有的机会
+W いたるところ|いたるところで歓迎される|be welcomed everywhere|在各处都受到欢迎
+W 大[おお]げさ（な）|彼の話は大げさだ。|He exaggerates.|他的话很夸张。
+W 大[おお]まか（な）|要点を大まかに話す|talk about the major points|粗略地说说要点
+W おおかた|講義のおおかたは理解できる。|I understand most of the lectures.|讲义多半能理解。
+W だいたい|おおかた、明日には回復するだろう。|Most probably it will recover by tomorrow.|差不多明天能恢复。
+W おおよそ|おおよその見当をつける|estimate roughly|大致能推测出来
+W おおむね|おおむね賛成である|agree in principle|大致赞成
+X1 正しいほうに○を付けなさい。
+Q （a. おおかた　b. おおまか）の人が、彼の意見に賛成した。>>大部分人都赞成他的意见。
+Q 今回、価格を（a. 大幅に　b. 極めて）値下げしました。>>这次价格大幅下调了。
+Q 消費税の値上げには（a. 断然　b. 極端）反対します。>>我坚决反对提高消费税。
+Q コンピューターはここ10年で（a. おおげさな　b. めざましい）進歩を遂げた。>>电脑在这10年里取得了惊人的进步。
+Q このあたりは（a. いたる　b. 限りない）ところにコンビニがあります。>>这一带到处都有便利店。
+Q 砂糖は（a. かすかに　b. 若干）多めに入れたほうがおいしいです。>>糖稍微多放一点会更好吃。
+X2 （　）にはどれが入りますか。一つ選びなさい。
+Q 口げんかでは妻のほうが（　　）強い。|無限に|圧倒的に|半端に|完ぺきに>>吵嘴的话，妻子压倒性地占上风。
+Q （　　）場合でも相談に応じます。|いかなる|いたる|おおよその|おおむねの>>无论什么情况都可以来商量。
+A Ⅰ：①a ②a ③a ④b ⑤a ⑥b　Ⅱ：⑦2 ⑧1

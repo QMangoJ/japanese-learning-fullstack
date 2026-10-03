@@ -1,0 +1,48 @@
+T どんな気持ち？|什么样的心情？|How do you feel?
+S words|人の気持ちを表す言葉|表达人的心情的词语|Words describing feelings
+N ※「が」→「の」でもOK。
+W 情[なさ]けない|また負けてしまって情けない。|I am ashamed of losing again.|又输了，真是难堪。
+W 望[のぞ]ましい|運動は毎日続けることが望ましい。|It is desirable that you continue to exercise everyday.|最好每天坚持运动。
+W 好[この]ましい|好ましい服装|appropriate dress|招人喜欢的服装
+W 申[もう]し分[ぶん]（が）※ない|申し分（が）ない作品|a perfect piece of work|无可挑剔的作品
+W 快[こころよ]い|申し出を快く承諾する|willingly except an offer|爽快地答应了申请
+W すがすがしい|すがすがしい朝|a refreshing morning|清爽的早晨
+W 爽快[そうかい]（な）|気分爽快|invigorating|心情爽快
+W 待[ま]ち遠[どお]しい|春の訪れが待ち遠しい。|I can hardly wait for the spring to come.|盼望着春天的到来。
+W 心強[こころづよ]い|あなたと一緒だと心強い。|I feel secure being with you.|如果和你在一起，心里特踏实。
+W ⇔心細[こころぼそ]い|一人では心細い。|I feel lonely being on my own.|一个人的话心里没底。
+W 空[むな]しい|喜びが何もない空しい生活|an empty life with no joy|没有任何喜悦的空虚生活
+W 切[せつ]ない|彼と離れるのはとても切ない。|I am very sad to part with him.|和他分离，特别难过。
+W 物足[ものた]りない|食事の量が物足りない。|I do not feel satisfied (with the meal).|饭菜的量不足。
+W わずらわしい|隣人との付き合いがわずらわしい。|Getting involved with the neighbors is troublesome.|和邻居的交往真麻烦。
+W うっとうしい|うっとうしい天気|gloomy weather|阴郁的天气
+W うざい（俗語[ぞくご]）|＝うっとうしい、わずらわしい|annoying|烦人、讨厌
+W ばかばかしい|ばかばかしい話|a ridiculous story|无聊的事情
+W 痛[いた]ましい|痛ましい事故現場|the scene of a horrible accident|凄惨的事故现场
+W きまり（が）悪[わる]い|会議に遅れてきまり（が）悪かった。|I felt awkward showing up late for the meeting.|开会迟到，很不好意思。
+W あさましい|彼は根性があさましい。|He is ill-natured.|他秉性下流。
+W おっかない|この辺りは夜になるとおっかない。|It gets dangerous around here at night.|这附近一到晚上就令人恐怖。
+W ふさわしい|彼はリーダーとしてふさわしい。|He has the potential to be a good leader.|他适合做领导。
+W 見苦[みぐる]しい|見苦しい態度|disgraceful behavior|不体面的态度
+W 心苦[こころぐる]しい|こんなことを頼むのは心苦しい。|I feel badly asking you to do this for me.|拜托你这种事情我于心不安。
+W 焦[あせ]る|試験で時間がなくて焦った。|I got in a panic because I did not have enough time on the exam.|考试时没时间了，很着急。
+W あきれる|あまりに高い値段にあきれた。|I was shocked to see the ridiculous price.|价格太高了，简直愕然。
+W 気[き]に障[さわ]る|人の気に障るようなことを言ってはいけない。|I should not say anything that might offend someone.|不能说让别人心里不痛快的话。
+W しゃくに障[さわ]る|彼の態度がしゃくに障った。|I was annoyed by his behavior.|他的态度让人生气。
+W かんに障[さわ]る|彼の態度がかんに障った。|I was annoyed by his behavior.|他的态度让人生气。
+W 気兼[きが]ねする|ホームステイの家族に気兼ねする|feel constrained living with my host family|在寄宿的那家人面前拘谨
+W すねる|子どもがすねている。|There is a child sulking.|小孩在闹别扭。
+W むかつく|彼の顔を見るだけでむかつく。|I feel angry just seeing his face.|光看到他的脸就来气。
+W むかつく|船に酔って、胸がむかつく。|I am sea sick.|晕船了，感觉恶心。
+W 恥[はじ]をかく|みんなの前で恥をかいた。|Make a fool of my self in front of everyone.|在大家面前丢脸了。
+X1 正しいほうに○を付けなさい。
+Q 電車に乗り遅れそうになり（a. あせった　b. 気に障った）。>>差点没赶上电车，很着急。
+Q 山田先生は、怒るととても（a. しゃくに障る　b. おっかない）よ。>>山田老师一生气就非常可怕哦。
+Q 旅行に行く日がとても（a. 快い　b. 待ち遠しい）。>>非常盼望去旅行的日子。
+Q 近所に（a. むかついて　b. 気兼ねして）楽器の練習ができない。>>顾虑邻居，没法练习乐器。
+Q 梅雨時は雨ばかりで（a. うっとうしい　b. 空しい）。>>梅雨季节总是下雨，令人郁闷。
+Q こんな簡単な問題を間違えてしまい、とても（a. 情けない　b. 心細い）。>>这么简单的问题都做错了，真是太丢人了。
+X2 （　）にはどれが入りますか。一つ選びなさい。
+Q このパソコンは（　　）配線の必要がありません。|わずらわしい|あさましい|物足りない|心苦しい>>这台电脑不需要麻烦的布线。
+Q 彼こそ大統領に（　　）人物です。|好ましい|心強い|ふさわしい|うっとうしい>>他才是适合当总统的人物。
+A Ⅰ：①a ②b ③b ④a ⑤a ⑥a　Ⅱ：⑦1 ⑧3

@@ -1,0 +1,51 @@
+T 手分[てわ]け・同[おな]い年[どし]・心地[ここち]|分工・同龄・心情|Dividing work, same age, feeling
+S words|手|手|手 (hand)
+W 手口[てぐち]|犯行の手口|way of committing a crime|犯罪手法
+W 手本[てほん]|習字の手本|calligraphy examples to practice|习字的字帖
+W 手軽[てがる]（な）|手軽な料理|quick and easy recipes|简单的饭菜
+W 手近[てぢか]（な）|手近な材料で作る|cook with usual ingredients|用常见的材料做
+W 手[て]ごろ（な）|手ごろな値段|affordable price|合适的价格
+W 手引[てび]き|海外旅行の手引き|foreign guidebook|海外旅行的介绍
+W 手元[てもと]|それは、今、手元にない。|I do not have it at the moment.|那个，现在没在手头。
+W 手分[てわ]け（する）|手分けして探す|spread out and search|分头去找
+W お手上[てあ]げ|こんなに景気が悪いとお手上げだ。|I feel like giving up because the economy is so bad.|如果景气这么差，真是束手无策。
+W 手中[しゅちゅう]|勝利を手中にする|won|胜利在握
+W 先手[せんて]|先手を打つ|forestall the enemy in the game|先发制人
+W 右手[みぎて]|右手の建物をごらんください。|Please take a look at the building on your right hand side.|请看右手边的建筑物。
+W 入手[にゅうしゅ]|情報を入手する|obtain the information|获取信息
+W 手[て]はず|手はずを整える|make arrangements|做好安排
+W 手[て]がかり|事件の手がかり|a clue for the case|事件的线索
+S words|分|分|分 (part)
+W 塩分[えんぶん]|塩分を控える|reduce one's salt intake|控制盐分
+W →水分[すいぶん]||liquids|水分
+W 分別[ぶんべつ]（する）|ゴミの分別|sorting of garbage|垃圾分类
+W 分別[ふんべつ]|分別のある人|sensible person|有辨别力的人
+W 分野[ぶんや]|専門分野|area of specialty|专业领域
+S words|同|同|同 (same)
+W 同上[どうじょう]|同上の理由により……|due to the same reasons as above|因同上理由……
+N ＊上に書いたことと同じという意味。
+W 同一[どういつ]|同一にみる|consider as one|同等看待
+W →同一人物[どういつじんぶつ]||same person|同一人物
+W 同意[どうい]|同意を求める|seek agreement|征求同意
+W 同[おな]い年[どし]|彼と私は同い年だ。|I am the same age as he is.|他和我年龄相同。
+N ＊言い方に注意
+S words|心|心|心 (heart)
+W 心当[こころあ]たり|その件については、心当たりがない。|I have no idea what the case is about.|关于这件事，我毫无头绪。
+W 下心[したごころ]|下心がある|have some secret intention|另有企图
+W 野心[やしん]|野心がある|have some ambition|有野心
+W 心地[ここち]|住み心地がいい|be a comfortable place to live|住着舒服
+W 内心[ないしん]|内心、穏やかではない|be feeling uneasy|内心不平静
+W 心中[しんちゅう]|心中を察する|feel for ...|体察内心
+W 心中[しんじゅう]（する）|心中を図る|commit suicide with his lover|企图自杀
+W 心遣[こころづか]い|親切な心遣い|kind consideration|热心的关照
+X1 正しいほうに○を付けなさい。
+Q だんだん年をとって、物事の良し悪しの（a. 分別　b. 分野）がつくようになった。>>渐渐上了年纪，能分辨事物的好坏了。
+Q 田中さんの意見に全員が（a. 同上　b. 同意）した。>>全体人员都同意了田中的意见。
+Q 彼は平気な顔をしているが、（a. 内心　b. 心地）は穏やかではない。>>他虽然面不改色，但内心并不平静。
+Q これはオークションで（a. 手中　b. 入手）した中古の冷蔵庫です。>>这是在拍卖会上买到的二手冰箱。
+Q このパソコンは小さくて軽いので、（a. 手ごろ　b. 手軽）に持ち運べる。>>这台电脑又小又轻，可以轻松携带。
+Q このメールの差出人には（a. 心当たり　b. 手がかり）がありません。>>我想不出这封邮件的发件人是谁。
+X2 （　）にはどれが入りますか。一つ選びなさい。
+Q 家族で（　　）して家中お掃除をした。|手引き|手分け|手上げ|手はず>>全家人分工打扫了整个房子。
+Q 給料をもらっても、支払いが多くて（　　）にはいくらも残らない。|手口|手近|手元|手中>>就算领了工资，要付的钱太多，手头也剩不下多少。
+A Ⅰ：①a ②b ③a ④b ⑤b ⑥a　Ⅱ：⑦2 ⑧3

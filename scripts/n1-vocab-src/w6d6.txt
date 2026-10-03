@@ -1,0 +1,53 @@
+T 先[さき]・道[みち]・種[たね]|前方・道路・种子|Ahead, road, seed
+S words|あたり|あたり（附近；左右；命中）|あたり (around, hit)
+W 辺[あた]り|この辺り（＝辺[へん]）は民家[みんか]が多い。|There are a lot of houses around here.|这一带民房多。
+W 辺[あた]り|今月の末辺[すえあた]り（＝ごろ）に、両親[りょうしん]が来る。|My parents will come toward the end of this month.|父母大约在这个月末来。
+W 当[あ]たり|風当[かぜあ]たりが強い|windy, being severely criticized|风势大、指责声大
+W 当[あ]たり|人当[ひとあ]たりのいい人|friendly person|待人和蔼的人
+W 当[あ]たり|当[あ]たり（＝見当[けんとう]）をつける|make a guess|预测
+W 当[あ]たり|その映画は大当[おおあ]たり（＝大成功[だいせいこう]）だった。|The movie was a big hit.|这个电影非常成功。
+W 当[あ]たる|くじに当[あ]たった（＝当選[とうせん]した）。|I won a prize.|中签。
+S words|筋|筋（筋；纤维；条理；素质）|筋 (muscle, line)
+W 筋[すじ]|足の筋を痛[いた]める|injure a tendon in my leg|腿筋扭伤了
+W 筋[すじ]|筋の多い肉|tough meat|筋多的肉
+W 筋[すじ]|爪[つめ]に白い筋（＝線[せん]）が入っている。|develop a white mark on a nail|指甲上有白条纹
+W 筋[すじ]|野菜の筋を取る|cut off the tough parts of vegetables|去除蔬菜的纤维
+W 筋[すじ]|筋（＝血管[けっかん]）が浮[う]いて見える腕[うで]|an arm so thin that veins protrude|青筋暴露的胳膊
+W 筋[すじ]|筋（＝素質[そしつ]）がいいから、上達[じょうたつ]が早そうだ。|You've got talent so you will improve soon.|因为素质好，进步应该会很快。
+W 筋[すじ]の通[とお]った話[はなし]||a reasonable story|合乎道理的事情
+W 物語[ものがたり]の筋[すじ]||plot|故事的梗概
+S words|先|先（尖端；前方；后续；将来）|先 (tip, ahead)
+W 先[さき]|トンボが指[ゆび]の先に止[と]まる|dragonfly perches on the tip of a finger|蜻蜓落在指尖上
+W 先[さき]|目的地[もくてきち]を目指[めざ]して先（＝前）へ進む|move toward one's destination|朝着目的地向前走
+W 先[さき]|話の先（＝続[つづ]き）を聞かせてください。|Let me hear the rest of the story.|请让我听听下文。
+W 先[さき]|名簿[めいぼ]の先（＝はじめ）のほうに名前が出ている。|My name appears early in the list.|名册前面有名字。
+W 先[さき]|先に（＝以前[いぜん]）お知らせしたとおり……|As I informed you earlier, ...|正如刚才所通知的……
+W 先[さき]|先（＝将来[しょうらい]）のことはわからない。|I have no idea what is coming next.|将来的事情（谁也）不知道。
+W 先[さき]|食事代[しょくじだい]を先に（＝食事の前に）払[はら]う|pay in advance for the meal|先支付饭钱
+W 先[さき]|先を争[あらそ]って電車から降[お]りる|push one's way through to the front when getting off the train|争先恐后地从电车上下车
+W 行[い]き先[さき]||one's whereabouts|要去的地方
+W 取引先[とりひきさき]||business connection|交易对方
+S words|道|道（道路；途径；方法；道义；领域）|道 (road, way)
+W 道[みち]|分[わ]かれ道を右に行く|take the road to the right at a junction|从岔道上往右走
+W 道[みち]|合格[ごうかく]への道は険[けわ]しい。|The path to a good school is tough.|通往合格的道路很艰辛。
+W 道[みち]|お金の使い道（＝使う方法[ほうほう]）を考える|teach how to use money|考虑钱怎么用
+W 道[みち]|人の道に外[はず]れる|stray from the path|违背人的道义
+W 道[みち]|彼はその道（＝分野[ぶんや]）の権威[けんい]だ。|He is an expert in the area.|他是这方面的专家。
+W 道[みち]|仏[ほとけ]の道を説[と]く|preach Buddha's teaching|讲解佛教的道理
+S words|種|種（种子；材料；原因；底细）|種 (seed)
+W 種[たね]をまく||seed|播种
+W すしの種[たね]（＝材料[ざいりょう]）||fish used for making sushi|寿司材料
+W 悩[なや]みの種[たね]||the cause of a headache|烦恼的根源
+W 話[はなし]の種[たね]||a conversation topic|话题
+W 種[たね]|手品[てじな]の種（＝仕掛[しか]け）を明[あ]かす|reveal a magic trick|揭露变戏法的底儿
+X1 正しいほうに○を付けなさい。
+Q 首相[しゅしょう]はきちんと（a. 筋[すじ]の入った　b. 筋の通った）説明をした。>>首相做了合乎情理的说明。
+Q 工事[こうじ]はだいぶ（a. 先へ　b. 道を）進んだ。>>工程有了很大进展。
+Q （a. 話の先　b. 話の種[たね]）に、新しくできたレストランに食べに行ってみた。>>为了有个话题，去新开的餐厅吃了一次。
+Q 犯人[はんにん]の（a. 筋[すじ]　b. 当[あ]たり）をつけて、捜査[そうさ]を開始[かいし]した。>>推测出犯人后，开始了搜查。
+Q 君[きみ]は（a. 筋[すじ]　b. 人当[ひとあ]たり）がいいから、すぐに試合[しあい]に出ることができるだろう。>>你素质好，应该很快就能参加比赛吧。
+Q 一人前[いちにんまえ]の医者になるまでの（a. 道　b. 筋[すじ]）は長いですよ。>>成为一名合格医生的道路是很漫长的。
+X2 （　）にはどれが入りますか。一つ選びなさい。
+Q ラッシュアワーの時間、乗客[じょうきゃく]は（　　）を争[あらそ]って電車に乗ったり降[お]りたりしている。|先[さき]|道|筋[すじ]|当[あ]たり>>高峰时段，乘客们争先恐后地上下电车。
+Q 彼[かれ]は、麻薬[まやく]に手を出すという人の（　　）に外[はず]れたことをした。|先[さき]|筋[すじ]|種[たね]|道>>他做了碰毒品这种违背人道的事情。
+A Ⅰ：①b ②a ③b ④b ⑤a ⑥a　Ⅱ：⑦1 ⑧4

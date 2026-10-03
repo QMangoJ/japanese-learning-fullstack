@@ -1,0 +1,39 @@
+T よく使[つか]う表現[ひょうげん]①|常用表达①|Common expressions ①
+S words|あいさつで|寒暄语|In greetings
+W お手数[てすう]をおかけしました。|Sorry to have troubled you.|给您添麻烦了。
+W なにぶん（＝なにとぞ）よろしくお願[ねが]いいたします。|Thank you for your kind help.|请多多关照。
+W 取[と]り急[いそ]ぎお礼[れい]まで。|＊お礼の手紙の最後[さいご]に添[そ]える。|Just a quick note to thank you.|暂表谢意。
+W 夜分遅[やぶんおそ]く、すみませんが……。|＊訪問[ほうもん]や電話でよく使う。|Sorry to trouble you this late at night, but ...|这么晚打扰，真是对不起……
+W お騒[さわ]がせして申[もう]し訳[わけ]ありません。|Sorry to have bothered you.|引起这么大混乱，真是对不起。
+S words|いろいろな表現[ひょうげん]|各种表达|Various expressions
+W 申[もう]し訳[わけ]ありませんが、これをコピーしてください。|Would you kindly make a copy of this?|不好意思，请把这个复印一下。
+W 悪[わる]いけど、そこの雑誌[ざっし]を取[と]ってくれる？|＊謝[あやま]っているのではなく、お願[ねが]いするときに使う。|Would you mind getting the magazine for me?|不好意思，能把那里的杂志拿过来吗？
+W ……ですが、悪[あ]しからず。|I'm sorry but ...|虽然是……，请不要见怪。
+W 差[さ]し支[つか]えなければ、……|If it is ok with you,|如果没有什么不方便……
+W いざというとき（のため）に備[そな]えよう。|Be prepared for an emergency!|为了以防万一。
+W そのことはいざ知[し]らず、……|apart from that|那事暂且不论……
+W きりがいいところで休[やす]みましょう。|Let's take a break when we come to a good place to stop.|在告一段落的时候休息吧。
+W 欲[よく]を言[い]えばきりがない。|Unless you're realistic, you'll never find a solution.|欲望无止境。
+W ワインと言[い]ってもピンからキリまである。|＊「ピンキリだ」と短くして使われることもある。|There are all sorts of wines, ranging from the very good to the awful.|葡萄酒，从最好的到最差的都有。
+W 彼[かれ]のことは一[いち]から十[じゅう]まで知[し]っている。|I know everything about him.|他的事情我全都知道。
+W 来[きた]る3月[がつ]10日[とおか]に卒業式[そつぎょうしき]が行[おこな]われる。|The graduation ceremony will take place on March 10th.|即将到来的3月10日要举办毕业典礼。
+W 去[さ]る3月[がつ]10日[とおか]に卒業式[そつぎょうしき]が行[おこな]われた。|The graduation ceremony took place on March 10th.|已过去的那个3月10日举行了毕业典礼。
+S words|たとえを使った慣用表現[かんようひょうげん]|使用比喻的惯用表达|Idioms using metaphors
+W 胸[むね]をえぐられるような思[おも]いをした。|I had a very heartbreaking experience.|感觉挖心般的痛苦。
+W 彼[かれ]は口[くち]から先[さき]に生[う]まれたような男[おとこ]だ。|He talks endlessly.|他是个能言善辩的男人。
+W それは雲[くも]をつかむような話[はなし]だ。|That is a very unrealistic plan.|那是不着边际的话。
+W 顔[かお]から火[ひ]が出[で]るほど恥[は]ずかしい。|I'm extremely embarrassed.|害羞得脸上火辣辣的。
+W 猫[ねこ]の手[て]も借[か]りたいほど忙[いそが]しい。|We're so busy that we'll take anyone who is willing to help us.|忙得不可开交。
+W それは耳[みみ]にたこができるほど聞[き]いた。|I am sick of hearing that.|那事儿，耳朵都听出茧子了。
+W のどから手[て]が出[で]るほどほしい。|I want it more than anything in the world.|特别渴望得到。
+X1 正しいほうに○を付けなさい。
+Q 祖父[そふ]の自慢話[じまんばなし]は（a. 顔から火が出るほど　b. 耳にたこが出来[でき]るほど）聞かされた。>>祖父的自夸话，我听得耳朵都起茧子了。
+Q （a. 差[さ]し支[つか]えなければ　b. 夜分遅[やぶんおそ]くすみませんが）お名前をお教えくださいませんか。>>如果方便的话，能告诉我您的名字吗？
+Q 若[わか]いころなら（a. 悪[あ]しからず　b. いざ知らず）、今そんな無茶[むちゃ]をすると体を壊[こわ]すよ。>>年轻的时候暂且不论，现在那样乱来会搞坏身体的哦。
+Q 欲[よく]を言えば（a. ピン　b. キリ）がないから、このくらいのアパートでいいんじゃないかな。>>欲望是没有止境的，这种程度的公寓就可以了吧。
+Q （a. 去[さ]る　b. 来[きた]る）10月10日に体育祭[たいいくさい]が行われます。>>即将到来的10月10日将举行运动会。
+Q （a. 申[もう]し訳[わけ]ありませんが　b. 差[さ]し支[つか]えなければ）その商品[しょうひん]は弊社[へいしゃ]では取[と]り扱[あつか]っておりません。>>非常抱歉，本公司不经营那种商品。
+X2 （　）にはどれが入りますか。一つ選びなさい。
+Q （　　）あのドレスがほしいです。|雲[くも]をつかむほど|胸[むね]をえぐられるほど|猫[ねこ]の手も借[か]りたいほど|のどから手が出るほど>>我特别想要那件礼服。
+Q （　　）申[もう]し訳[わけ]ありません。|お騒[さわ]がせして|取[と]り急[いそ]ぎお礼[れい]で|差[さ]し支[つか]えて|お手数[てすう]して>>引起骚动，非常抱歉。
+A Ⅰ：①b ②a ③b ④b ⑤b ⑥a　Ⅱ：⑦4 ⑧1

@@ -1,0 +1,48 @@
+T 受[う]ける・滑[すべ]る・つながる|接受・滑・相连|Receive, slip, connect
+S words|受ける|受ける（接受；受欢迎）|受ける (receive)
+W 受[う]ける|両手[りょうて]でボールを受ける|catch a ball with both hands|双手接住球
+W 受[う]ける|ヨットが風を受けて進む|sailboat is sailing down wind|快艇迎着风前行
+W 受[う]ける|外国から援助[えんじょ]を受ける|received foreign aid|接受外国的援助
+W 受[う]ける|先生の影響[えいきょう]を受ける|be influenced by a teacher|受到老师的影响
+W 受[う]ける|国民[こくみん]の歓迎[かんげい]を受ける|receive a warm welcome from people|受到国民的欢迎
+W 受[う]ける|学生から相談[そうだん]を受ける|be consulted by a student about his problem|接受学生的商谈
+W 受[う]ける|ショックを受ける|be shocked|受到打击
+W 受[う]ける|招待[しょうたい]を受ける|be invited|收到邀请
+W 受[う]ける|検査[けんさ]を受ける|go for a physical exam|接受检查
+W 受[う]ける|若者[わかもの]に受ける映画|movie that is very popular among young people|受年轻人喜欢的电影
+N ＊「ウケる」とカタカナで書く場合が多い。
+W →ウケる|ギャグがウケなかった。|The joke didn't go over well at all.|甩出的"包袱"没有反应。
+W →ウケ|ウケがいい|very popular|受欢迎
+S words|滑る|滑る（滑；失言；落榜）|滑る (slip)
+W 滑[すべ]る|スキーで滑る|ski down|用滑雪板滑行
+W 滑[すべ]る|足が滑って転[ころ]んだ。|I slipped and fell.|脚下一滑摔倒了。
+W 滑[すべ]る|手が滑ってコップを落[お]とした。|A glass slipped from my hand and fell on the floor.|手一滑，杯子掉下去了。
+W 滑[すべ]る|つい口が滑ってしまった。|It just slipped out.|不小心说漏嘴了。
+W 滑[すべ]る|試験に滑って、がっかりしている。|I failed the exam and feel disappointed.|考试没过，很失望。
+S words|つながる|つながる（连接；相关）|つながる (connect)
+W つながる|電話がつながる|connect by phone|拨通电话
+W つながる|町につながっている道|a road leading to a town|连接城镇的道路
+W つながる|渋滞[じゅうたい]で車がつながっている|cars lined up in a traffic jam|因堵车，汽车排成长龙
+W つながる|まだ首がつながっている|has managed to keep one's job|还能保住职位
+W つながる|事件[じけん]につながる人物[じんぶつ]|person who could be involved in a crime|与事件有牵连的人物
+W つながる|もうけにつながる話|a plan to generate a large profit|能赚钱的事
+W つながる|彼[かれ]とは血[ち]がつながっている。|I am related to him by blood.|和他有血缘关系。
+S words|挟む|挟む（夹；隔着；插入）|挟む (put between)
+W 挟[はさ]む|本にしおりを挟む|put a bookmark in a book|书里夹上书签
+W 挟[はさ]む|テーブルを挟んで座[すわ]る|sit across from each other at the table|隔着桌子坐
+W 挟[はさ]む|毛虫[けむし]をはしで挟んで捨[す]てる|pick up a caterpillar with chopsticks and throw it out|用筷子夹住毛毛虫扔掉
+W 挟[はさ]む|指[ゆび]をドアに挟んだ（＝ドアに指を挟まれた）。|I got my finger caught in the door.|门把手指夹住了。
+W 挟[はさ]む|会話に口を挟む|cut into the conversation|谈话中插嘴
+W 挟[はさ]む|会議[かいぎ]は10分の休憩[きゅうけい]を挟んで再開[さいかい]します。|We'll resume the meeting after a 10 minute break.|会议插入10分钟的休息时间，然后再开始。
+W 挟[はさ]む|うわさを耳に挟む|hear a rumor|略微听到一点传言
+X1 正しいほうに○を付けなさい。
+Q 彼[かれ]のギャグは、全然（a. つながらなかった　b. うけなかった）。>>他的笑话完全没人笑。
+Q パンにハムを（a. はさんで　b. つなげて）食べました。>>把火腿夹在面包里吃了。
+Q つい口を（a. はさんで　b. すべらせて）、彼[かれ]の秘密[ひみつ]をばらしてしまった。>>一不小心说漏了嘴，把他的秘密泄露了。
+Q そのときの経験[けいけん]が、今の自信に（a. うけている　b. つながっている）。>>那时的经验和现在的自信是相连的。
+Q 彼女[かのじょ]が結婚[けっこん]するといううわさを耳に（a. はさんだ　b. 受[う]けた）。>>略微听到了她要结婚的传闻。
+Q ドアを開けるとき、手が（a. すべって　b. はさんで）持っていた本を落[お]としてしまった。>>开门时手一滑，把拿着的书掉了。
+X2 （　）にはどれが入りますか。一つ選びなさい。
+Q 彼[かれ]と彼女[かのじょ]は戸籍上[こせきじょう]は兄弟だが、血[ち]は（　　）いない。|受[う]けて|つながって|受かって|つなげて>>他和她在户籍上是兄妹，但没有血缘关系。
+Q 彼[かれ]の家は、うちの前の道路[どうろ]を（　　）向[む]こう側[がわ]にある。|はさんで|すべって|うけて|つなげて>>他家在我家门前道路的对面。
+A Ⅰ：①b ②a ③b ④b ⑤a ⑥a　Ⅱ：⑦2 ⑧1

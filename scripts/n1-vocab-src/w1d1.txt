@@ -1,0 +1,68 @@
+T どんな人？|什么样的人？|What kind of person?
+S fillin|人の性格や個性などを表す言葉|形容人的性格、个性等的词语|Words describing personality and character
+P 田中さんはどんな人ですか？―［　　］人です。
+N ※「が」→「の」でもOK。
+W 愛想[あいそ]が※いい|cheerful|和蔼可亲
+W センスが※いい|have good sense|很有感觉
+W 気立[きだ]てが※いい|good natured|性情温和
+W いさぎよい|frank|果断、干脆
+W ◆いさぎよく罪[つみ]を認[みと]める|willingly admit your mistake|痛快地认罪
+W 情[なさ]け深[ぶか]い|sympathetic|仁慈、热心肠
+W 用心深[ようじんぶか]い|cautious|小心谨慎
+W りりしい|gallant|威严可敬
+W 若々[わかわか]しい|looks young|朝气蓬勃
+W 勇[いさ]ましい|brave, valiant|勇敢的
+W たくましい|strong|健壮、魁梧
+W 思[おも]いやりが※ある|thoughtful|有同情心
+W →思[おも]いやる（V）|be kind to|怜恤、体谅
+W 気品[きひん]が※ある|dignified|有气派
+W 色気[いろけ]が※ある|sexy|有魅力
+W しとやかな|gentle, modest|安详、端庄
+W チャーミングな|charming|迷人的
+W まめな|diligent|勤恳的
+W 生真面目[きまじめ]な|earnest|非常认真
+W 勤勉[きんべん]な|hard working|勤奋
+W 誠実[せいじつ]な|sincere, honest|诚实
+W まともな|proper|正经
+W 大柄[おおがら]な|big|骨架大、大花纹
+W ⇔小柄[こがら]な|small sized|身材矮小
+W 活発[かっぱつ]な|active|活泼
+W 有望[ゆうぼう]な|promising|有希望
+W 純粋[じゅんすい]な|innocent|纯真的
+W 無邪気[むじゃき]な|simple minded / innocent|天真烂漫的
+W 温和[おんわ]な|mild, gentle|温和
+W 気[き]さくな|friendly|坦率
+W おおらかな|magnanimous|落落大方
+W 素朴[そぼく]な|simple|朴素、质朴
+W ◆素朴[そぼく]な疑問[ぎもん]|a simple question|质朴的问题
+W デリケートな|delicate|精致、微妙
+W 気[き]まぐれな|fickle, capricious|心血来潮
+W 近寄[ちかよ]りがたい|hard to approach|难以靠近
+W 無口[むくち]な|reticent|沉默寡言
+W 陰気[いんき]な|gloomy|忧郁、阴沉
+W 物好[ものず]きな|curious|好奇
+W 孤独[こどく]な|lonesome|孤独
+W 臆病[おくびょう]な|timid|胆小
+W なれなれしい|overly friendly|狎昵、熟不拘礼
+W いやらしい|indecent, dirty|可憎、下流
+W 卑[いや]しい|greedy|卑贱、卑劣
+W しぶとい|unyielding, tenacious|顽固、顽强
+W 荒[あら]っぽい|rough, coarse|粗暴
+W 金遣[かねづか]いが荒[あら]い|a spendthrift|挥金如土
+W おせっかいな|a busybody|多管闲事
+W おっちょこちょいな|careless|冒失
+W でしゃばりな|intrusive|多事、多嘴
+W きざな|showy|装腔作势
+W ルーズな|sloppy|松懈、散漫
+W 無礼[ぶれい]な|rude|无礼
+X1 正しいほうに○を付けなさい。
+Q 私の夫はとても金づかいが（a. 悪い　b. 荒い）。>>我丈夫花钱非常大手大脚。
+Q 彼はちょっと時間に（a. まめな　b. ルーズな）ところがある。>>他在时间上有点散漫。
+Q 彼女は大スターなのに、とても（a. 近寄りがたい　b. 気さくな）人です。>>她虽然是大明星，却是个非常坦率随和的人。
+Q 豪華で（a. 気品のある　b. 色気がある）輝きの宝石。>>豪华而有气派、光彩夺目的宝石。
+Q あまりお金に（a. いやしい　b. でしゃばりな）人は嫌われます。>>太贪财的人会被讨厌。
+Q あの店員はだれにでも（a. 愛想がいい　b. センスがいい）。>>那个店员对谁都和蔼可亲。
+X2 （　）にはどれが入りますか。一つ選びなさい。
+Q 彼女は将来（　　）新人女優です。|チャーミングな|しとやかな|活発な|有望な>>她是前途有望的新人女演员。
+Q 彼は（　　）肉体をしている。|りりしい|たくましい|いさぎよい|おおらかな>>他有着健壮的身体。
+A Ⅰ：①b ②b ③b ④a ⑤a ⑥a　Ⅱ：⑦4 ⑧2

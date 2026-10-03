@@ -1,0 +1,62 @@
+T 世代[せだい]・本場[ほんば]・作用[さよう]|世代・发源地・作用|Generation, home ground, effect
+S words|産|产|産 (produce)
+W 産地[さんち]|リンゴの産地|an apple producing area|苹果产地
+W 産出[さんしゅつ]（する）|石油産出国|a petroleum producing country|石油产出国
+W 国産[こくさん]|国産車|a domestic car|国产车
+W →国産品[こくさんひん]||a domestic product|国货
+W 生産[せいさん]（する）|大量に生産する|produce in large quantities|大量生产
+W 名産[めいさん]|この地方の名産品|noted product of this district|这个地方的名产
+S words|不|不|不 (not)
+W 不正[ふせい]（な）|不正な取り引き|illegal dealing|不正当交易
+W 不通[ふつう]|音信不通|do not hear from someone|不通音信
+W 不明[ふめい]|行方不明|missing|去向不明
+W 不良[ふりょう]|不良少年|a delinquent boy|品行不端的少年
+W →不良品[ふりょうひん]||inferior goods|次品
+S words|特|特|特 (special)
+W 特色[とくしょく]|特色を出す|reveal the characteristics|打出特色
+W 特産[とくさん]|この地方の特産物（＝名産）|a special product from this district|这个地方的特产
+W 特集[とくしゅう]|特集記事|a special feature article|专题报道
+W 特有[とくゆう]|この地方特有の習慣|customs peculiar to this district|这个地方特有的习惯
+S words|代|代|代 (replace)
+W 世代[せだい]|世代交代|change of generations|世代交替
+W →三世代[さんせだい]||three generations|三代
+W 代理[だいり]|社長の代理をする|fill in for the president|代理社长
+W 代用[だいよう]（する）|クッションを枕に代用する|substitute a cushion for a pillow|用靠垫代替枕头
+S words|場|场|場 (place)
+W 本場[ほんば]|イタリア料理を本場で学ぶ|study Italian cooking at its origin|在当地学习意大利菜
+W 市場[しじょう]|金融市場|the financial market|金融市场
+W →魚市場[うおいちば]||the fish market|鱼市
+W 立場[たちば]|苦しい立場|a difficult situation|困难的处境
+S words|事|事|事 (matter)
+W 行事[ぎょうじ]|学校行事に参加する|attend school events|参加学校活动
+W 人事[じんじ]|人事課|the personnel section|人事科
+W 事前[じぜん]|事前に調べる|examine beforehand|事先调查
+S words|主|主|主 (main)
+W 主食[しゅしょく]|主食と副食|staple foods and side dishes|主食和副食
+W 主体[しゅたい]|女性が主体の職場|a company made up mainly of women|女性为主体的职场
+W 主題[しゅだい]|映画の主題歌|the theme song of a movie|电影的主题歌
+N ＝テーマ
+S words|生|生|生 (life)
+W 野生[やせい]|野生動物|wild animals|野生动物
+W 生理[せいり]|生理現象|a physiological phenomenon|生理现象
+W 生計[せいけい]|生計を立てる|make a living|谋生
+W 生[い]かす|経験を生かす|make use of your experience|充分发挥经验
+S words|用|用|用 (use)
+W 作用[さよう]（する）|化学作用|a chemical reaction|化学作用
+W →副作用[ふくさよう]||side effects|副作用
+W 用品[ようひん]|スポーツ用品|sporting goods|体育用品
+W →学用品[がくようひん]||stationery|学习用品
+S words|所|所|所 (place)
+W 所有[しょゆう]（する）|この土地は私が所有している。|I own this land.|这土地归我所有。
+W 長所[ちょうしょ]|長所と短所|advantages and disadvantages|长处和短处
+X1 正しいほうに○を付けなさい。
+Q 本日の講演の（a. 主体　b. 主題）はエコロジーです。>>今天演讲的主题是生态学。
+Q その国は世界有数の石油（a. 所有　b. 産出）国である。>>那个国家是世界上屈指可数的石油生产国。
+Q 父の（a. 代用　b. 代理）で市役所に介護保険の申請に行った。>>我代替父亲去市政府申请了护理保险。
+Q 京都には伝統的な年中（a. 行事　b. 人事）が多くあります。>>京都有很多传统的年度节庆活动。
+Q 彼とは大学を卒業して以来、（a. 音信　b. 通信）不通です。>>大学毕业以后就和他断了音信。
+Q 会社の繁栄のために、（a. 世代　b. 世間）交代は避けられないだろう。>>为了公司的繁荣，世代交替恐怕不可避免。
+X2 （　）にはどれが入りますか。一つ選びなさい。
+Q パイナップルはハワイの（　　）物です。|特有|特産|産出|特色>>菠萝是夏威夷的特产。
+Q 薬の（　　）で髪の毛が抜けてしまった。|副作用|不良|生理|特色>>因为药物的副作用，头发掉了。
+A Ⅰ：①b ②b ③b ④a ⑤a ⑥a　Ⅱ：⑦2 ⑧1

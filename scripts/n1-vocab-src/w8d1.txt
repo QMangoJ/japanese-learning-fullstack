@@ -1,0 +1,51 @@
+T 似[に]ている言葉[ことば]①|相似的词①|Similar words ①
+S words|似[に]ている言葉[ことば]|相似的词|Similar words
+W 心[こころ]がける|安全[あんぜん]運転を心がける|try to drive safely|注意安全驾驶
+W →心[こころ]がけ（N）||
+W 心得[こころえ]る|自分の立場[たちば]を心得る|understand where you stand|明白自己的立场
+W 心得[こころえ]る|作法[さほう]を心得ている|have manners|领会方法
+W →心得[こころえ]（N）||
+W ゆがむ|ネクタイがゆがんでいる|one's tie is crooked|领带歪了
+W ゆがむ|彼[かれ]は性格[せいかく]がゆがんでいる。|He's got a warped mind.|他性格扭曲。
+W ねじれる|コードがねじれている|electrical cords are tangled up|电线乱成一团
+W こじれる|交渉[こうしょう]がこじれる|negotiations have become complicated|交涉不顺利
+W ほどける|リボンがほどける|bow comes untied|带子松开了
+W ほころびる|スカートの裾[すそ]がほころびている。|The hem of the skirt is coming down.|裙子下摆开线了。
+W にじむ|雨でハガキの字がにじむ|rain smudged the ink on the postcard|因雨水明信片上的字花了
+W にじむ|涙[なみだ]がにじむ|one's eyes are filled with tears|流出泪水
+W しみる|煙[けむり]が目にしみる|smoke gets into one's eye|烟熏痛眼睛
+W しみる|シャツに汗[あせ]が染[し]みる|sweat soaks through a shirt|汗水渗透衬衣
+W しなびる|野菜がしなびる|leafy vegetables have wilted|蔬菜蔫了
+W かれる|木が枯[か]れる|a tree dies|树木枯萎
+W かれる|声がかれる|one's voice becomes hoarse|声音嘶哑
+W かれる|池[いけ]がかれる|pond dries up|水池干枯
+W じきに|雨はじきに（＝すぐに）あがるでしょう。|The rain will soon stop.|估计雨会马上停。
+W じかに|社長とじかに（＝直接[ちょくせつ]）話す|talk directly to the president|直接和社长谈
+W 何[なに]もかも|何もかも（＝すべて）いやになった。|I no longer care about anything.|厌倦了一切。
+W 何[なん]でもかんでも|うちの犬は、何でもかんでも（＝すぐに）かじる。|Our dog chews anything.|我们家的狗，不管什么东西都咬。
+W 何[なん]だかんだ|何だかんだ（＝あれこれ）言っても、彼[かれ]は偉[えら]い。|However he's accomplished a lot.|不论怎么说，他还是很了不起。
+W いかに|それをいかに（＝どのように）実現[じつげん]するかが問題[もんだい]だ。|How we implement it is the question.|如何实现是个问题。
+W いかに|いかに（＝どんなに）急いでも間[ま]に合わないだろう。|No matter how much we hurry, we won't make it.|估计无论怎么着急也赶不上了。
+W いかにも|それはいかにも残念[ざんねん]です。|It is certainly disappointing.|这的确很遗憾。
+W いかにも|彼[かれ]はいかにも学者[がくしゃ]らしい。|He surely looks like a scholar.|他真的像个学者。
+W ひび|壁[かべ]にひびが入っている。|There's a crack in the wall.|墙上有裂缝。
+W すき間[ま]|机[つくえ]とタンスのすき間|space between the desk and the dresser|桌子和衣柜的缝隙
+W 粒[つぶ]|一粒[ひとつぶ]の米[こめ]|one grain of rice|一粒大米
+W 粒[つぶ]|大粒[おおつぶ]の雨|big drops of rain|大滴的雨点
+W 滴[しずく]|雨の滴|a raindrop|雨滴
+W 滴[しずく]|滴がたれる|water drips|水往下滴
+W あか|爪[つめ]のあか|dirt under one's fingernails|指甲的污垢
+W あか|あかを落[お]とす|scrub oneself clean|去除污垢
+W あざ|あざができる|get a bruise|瘀伤
+W あざ|生まれつきのあざ|birthmark|天生的胎记
+X1 正しいほうに○を付けなさい。
+Q 熱[あつ]いなべを手で（a. じかに　b. いかに）つかんで、やけどをしてしまった。>>直接用手抓了热锅，烫伤了。
+Q かゆいので肌[はだ]をかきむしったら、血[ち]が（a. しみて　b. にじんで）きた。>>因为痒，把皮肤挠破了，渗出了血。
+Q 最近[さいきん]お酒[さけ]を飲む量[りょう]を減[へ]らそうと（a. 心がけて　b. 心得[こころえ]て）います。>>最近我注意减少喝酒的量。
+Q 転[ころ]んだら、腰[こし]の骨[ほね]に（a. あざ　b. ひび）が入ってしまった。>>摔了一跤，腰骨出现了裂纹。
+Q 私は（a. 一粒[ひとつぶ]の　b. 小粒[こつぶ]の）納豆[なっとう]が好きです。>>我喜欢小粒的纳豆。
+Q （a. しなびた　b. 枯[か]れた）白菜[はくさい]があったが、スープにしたらおいしかった。>>有一棵蔫了的白菜，做成汤后很好喝。
+X2 （　）にはどれが入りますか。一つ選びなさい。
+Q 彼[かれ]は（　　）政治家[せいじか]らしい口調[くちょう]で話す。|いかに|いかにも|何もかも|じかに>>他用很有政治家派头的口吻说话。
+Q 靴[くつ]のひもが（　　）いるよ。|しなびて|ほどけて|ほころびて|にじんで>>鞋带松开了哦。
+A Ⅰ：①a ②b ③a ④b ⑤b ⑥a　Ⅱ：⑦2 ⑧2

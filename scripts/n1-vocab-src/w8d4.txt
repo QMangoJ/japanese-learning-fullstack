@@ -1,0 +1,44 @@
+T 体[からだ]の部分[ぶぶん]を使った言葉[ことば]②|使用身体部位的词②|Words using body parts ②
+S words|体[からだ]の部分[ぶぶん]を使った言葉[ことば]|使用身体部位的词|Words using body parts
+W 手[て]|悪い仲間[なかま]と手を切る|cut ties with bad friends|和坏朋友分手
+W →縁[えん]を切[き]る||
+W 手[て]|手が足[た]りないから、手伝[てつだ]ってくれ。|There aren't enough people. Can you help me?|因为人手不够，请帮我。
+W 手[て]|私の手に余[あま]る仕事|work which is too difficult for me|这是我解决不了的工作
+W 手[て]|その問題に早く手を打[う]つべきだ。|We must tackle the problem right away.|应该尽快采取措施处理这个问题。
+W 手[て]|あの子は親の手に負[お]えない。|That kid is beyond his parents' control.|对那孩子父母束手无策。
+W 手[て]|いたずらな生徒[せいと]に手を焼[や]く|have a hard time with mischievous kids|对调皮的学生感到棘手
+W 手[て]|仕事の手を抜[ぬ]く|cut corners at work|工作草率
+W 手[て]|問題解決[かいけつ]のためにあらゆる手を尽[つ]くす|try every means possible for solving a problem|为了解决问题，用尽了所有的办法
+W 手[て]|手も足も出ない問題|very tough problem|束手无策的问题
+W 足[あし]|経費[けいひ]がかかりすぎて足が出た。|We ran over budget because of the high costs.|经费花得太多，超支了。
+W 足[あし]|1日中歩いて足が棒[ぼう]になった。|My legs were extremely tired after walking all day.|走了一整天，腿脚都麻木了。
+W 足[あし]|同僚[どうりょう]の足を引[ひ]っ張[ぱ]る|obstruct a colleague's attempt|拖同事的后腿
+W 足[あし]|生[なま]ものは足が早[はや]い。|Raw food goes bad fast.|生东西容易腐烂。
+W 首[くび]|首を横[よこ]に振[ふ]る|shake one's head at|摇头
+W 首[くび]|首を長くして待つ|long for|翘首期盼
+W 首[くび]|首をひねるような結果[けっか]|baffling result|叫人迷惑的结果
+W 首[くび]|厄介[やっかい]な問題に首を突[つ]っ込[こ]む|get into trouble|积极参与麻烦的问题
+W 首[くび]|借金[しゃっきん]で首が回[まわ]らない|be deep in debt|因借款一筹莫展
+W 息[いき]|走って息が切れる|be out of breath from running|跑得气喘吁吁
+W 息[いき]|満員[まんいん]電車で息が詰[つ]まりそうだ。|I feel suffocated in a very crowded train.|在满员电车里，快喘不上气了。
+W 息[いき]|息が長い役者[やくしゃ]|a veteran actor|长久不衰的演员
+W 息[いき]|彼[かれ]は息もつかずにしゃべり続[つづ]けた。|He talked on and on without pausing for breath.|他连口气也不喘地不停地说着。
+W 息[いき]|息を抜[ぬ]く暇[ひま]もないくらい忙[いそが]しい|be extremely busy|忙得连歇口气的功夫都没有
+W 息[いき]|息をのむほど美[うつく]しい景色[けしき]|a breathtaking view|让人屏息的景色
+W 気[き]|彼[かれ]は田中[たなか]さんに気があるらしい。|He seems interested in Tanaka-san.|他好像对田中有意思。
+W 気[き]|誘[さそ]われたけど、気が向[む]かない。|I've been invited but I don't feel like going.|虽然被邀请了，但不感兴趣。
+W 気[き]|彼[かれ]は周囲[しゅうい]に気を配[くば]る人[ひと]だ。|He is attentive to those around him.|他是一个关心周围的人。
+W →気配[きくば]り（N）||
+W 気[き]|彼女[かのじょ]は気が利[き]く人だ。|She is smart and good-natured.|她是个机灵的人。
+W 気[き]|気が散[ち]って勉強が手につかない。|I can't concentrate on my study.|心不在焉，无法专心学习。
+X1 正しいほうに○を付けなさい。
+Q 服装[ふくそう]だけでなく髪型[かみがた]にも（a. 気が利[き]く　b. 気を配[くば]る）。>>不仅注意服装，也注意发型。
+Q イカの刺身[さしみ]は（a. 手が　b. 足が）早いので、今日中に食べたほうがいいです。>>鱿鱼生鱼片容易坏，最好今天之内吃掉。
+Q 私の学校は、やたら規律[きりつ]にうるさいので（a. 息[いき]が切れる　b. 息が詰[つ]まる）。>>我们学校对纪律要求过分严格，让人喘不过气来。
+Q その景色[けしき]の美[うつく]しさに思わず（a. 息[いき]をのんだ　b. 息が切れた）。>>被那景色之美惊得不由屏住了呼吸。
+Q 客[きゃく]が多くても少なくても、彼[かれ]はいつも（a. 気がある　b. 手を抜[ぬ]かない）演奏[えんそう]をする。>>无论观众多少，他的演奏总是一丝不苟。
+Q 老[お]いた母は我[わ]が子の帰国[きこく]を（a. 息[いき]を　b. 首を）長くして待っていた。>>年迈的母亲翘首期盼着孩子回国。
+X2 （　）にはどれが入りますか。一つ選びなさい。
+Q こんな大きな犬を飼[か]うのは、ちょっと私の（　　）と思います。|手を尽[つ]くす|足が出る|手に余[あま]る|息[いき]がつまる>>我觉得养这么大的狗，我有点应付不来。
+Q ハイキングで一日中歩き回[まわ]ったら足が（　　）。|長くなった|棒[ぼう]になった|出なくなった|つまった>>远足走了一整天，腿都僵了。
+A Ⅰ：①b ②b ③b ④a ⑤b ⑥b　Ⅱ：⑦3 ⑧2
