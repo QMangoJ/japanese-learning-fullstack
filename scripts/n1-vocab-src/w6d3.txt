@@ -1,0 +1,55 @@
+T はる・送[おく]る・飛[と]ぶ|张・送・飞|Stretch, send, fly
+S words|はる|はる（张；贴；绷紧）|はる (stretch, stick)
+W 張[は]る|糸[いと]がピンと張る|thread is stretched tight|把绳子拉紧
+W 張[は]る|根[ね]が深[ふか]く張る|roots go deep into the ground|深深扎根
+W 張[は]る|池に氷[こおり]が張る|a pond freezes|水池里结冰
+W 張[は]る|くもの巣[す]が張る|a spider weaves a web|结着蜘蛛网
+W 張[は]る|おなかが張る|one's abdomen is bloated|肚子胀
+W 張[は]る|テントを張る|pitch a tent|搭帐篷
+W 張[は]る|気が張る|feel tense|心情紧张
+W 張[は]る|胸[むね]を張る|puff up one's chest|挺起胸膛
+W 張[は]る|見栄[みえ]を張る|show off|好面子
+W →見栄[みえ]っ張[ぱ]り||a vain person|装门面
+W 貼[は]る|ポスターを貼る|put up a poster|贴海报
+S words|送る|送る（送；度过；发出）|送る (send)
+W 送[おく]る|扇風機[せんぷうき]で風を送る|circulate air using a fan|用电风扇送风
+W 送[おく]る|使いの者[もの]を送る|send someone|派遣使者
+W 送[おく]る|送りがなを送る|insert kana above kanji|标上假名
+W 送[おく]る|駅まで送る|take someone to a station|送到车站
+W 送[おく]る|多忙[たぼう]な日を送る|have a very busy life|过着繁忙的日子
+W 送[おく]る|拍手[はくしゅ]を送る|applause|送上掌声
+W 送[おく]る|目で合図[あいず]を送る|convey a message through a look|用眼睛送信号
+S words|とける|とける（解开；溶化；解除）|とける (come undone, melt)
+W 解[と]ける|靴[くつ]のひもが解ける|shoe laces come undone|鞋带开了
+W 解[と]ける|誤解[ごかい]が解ける|resolve a misunderstanding|误解消除
+W 溶[と]ける|洗剤[せんざい]が水に溶ける|detergent dissolves in the water|洗涤剂溶在水里
+W 溶[と]ける|アイスクリームが室温[しつおん]で溶ける|ice-cream melts at room temperature|冰淇淋在室温下融化了
+W 解[と]ける|この問題は難[むずか]しくて解けない。|This problem is too difficult for me to solve.|这个问题太难，不好解答（解决）。
+W 解[と]ける|停学処分[ていがくしょぶん]が解けてまた通学[つうがく]している。|He is no longer suspended from school and now goes to school every day.|停学处分解除，又去上学了。
+S words|飛ぶ|飛ぶ（飞；飞溅；跳跃）|飛ぶ (fly)
+W 飛[と]ぶ|ヘリコプターが飛んでいる|helicopter is hovering|直升飞机在飞
+W 飛[と]ぶ|台風[たいふう]で看板[かんばん]が飛んだ。（＝空中[くうちゅう]に舞[ま]う）|A sign got blown away in a typhoon.|台风把广告牌刮飞了。
+W 飛[と]ぶ|ニューヨークまで飛ぶ（＝飛行機[ひこうき]で目的地[もくてきち]に行く）|fly to New York|飞到了纽约
+W 飛[と]ぶ|水たまりの泥[どろ]が飛ぶ（＝はねる）|mud splashes up from a puddle|水坑的泥溅起来了
+W 飛[と]ぶ|ヒューズが飛ぶ|fuse blows|保险丝断开
+W 飛[と]ぶ|記者[きしゃ]が現場[げんば]に飛ぶ（＝急いで行く）|reporters rush to the site|记者赶赴现场
+W 飛[と]ぶ|ローンの返済[へんさい]でボーナスが飛ぶ（＝消[き]えてなくなる）|mortgage payments eat up one's bonus|因要还贷款，奖金马上就没了
+W 飛[と]ぶ|話があちこちに飛ぶ|jump from one topic to another|话题跳来跳去
+S words|結ぶ|結ぶ（系；缔结；连接）|結ぶ (tie)
+W 結[むす]ぶ|靴[くつ]のひもを結ぶ|tie shoe laces|系鞋带
+W 結[むす]ぶ|口を固[かた]く結ぶ|keep one's mouth shut|紧闭嘴巴
+W 結[むす]ぶ|契約[けいやく]を結ぶ|sign a contract|缔结契约
+W 結[むす]ぶ|東京[とうきょう]と大阪[おおさか]を結ぶバス（＝2つの地点[ちてん]をつなぐ）|bus runs between Tokyo and Osaka|连接东京和大阪的巴士
+W 結[むす]ぶ|二人は信頼感[しんらいかん]で結ばれている。（＝つながっている）|They trust each other.|两人靠信赖感结合在一起。
+W 結[むす]ぶ|長年[ながねん]の努力[どりょく]が実[み]を結ぶ。（＝形[かたち]になる）|Sustained efforts eventually bear fruit.|长年的努力有了结果。
+X1 正しいほうに○を付けなさい。
+Q 彼[かれ]とは固[かた]い友情[ゆうじょう]で（a. 結[むす]ばれて　b. 結んで）いる。>>我和他以牢固的友情联系在一起。
+Q 結婚[けっこん]して数年間[すうねんかん]は幸[しあわ]せな日々[ひび]を（a. はって　b. 送って）いた。>>结婚后的几年过着幸福的日子。
+Q 努力[どりょく]が実[み]を（a. 結[むす]んで　b. 解[と]けて）、実験[じっけん]に成功[せいこう]した。>>努力有了结果，实验成功了。
+Q 私は、胸[むね]を（a. はって　b. とんで）、この作品[さくひん]には自信[じしん]があると言えます。>>我可以挺起胸膛说，我对这部作品有信心。
+Q パソコンがフリーズして一瞬[いっしゅん]でデータが（a. とんで　b. とけて）しまった。>>电脑死机，数据一瞬间就没了。
+Q 彼女[かのじょ]の誤解[ごかい]が（a. むすぶ　b. とける）には時間がかかるだろう。>>要消除她的误解需要时间吧。
+X2 （　）にはどれが入りますか。一つ選びなさい。
+Q パチンコで一万円札[さつ]が（　　）いった。|飛[と]んで|送って|とけて|張[は]って>>一万日元的钞票在柏青哥上花掉了。
+Q その2社[しゃ]は、合併[がっぺい]の契約[けいやく]を（　　）。|通した|送った|結[むす]んだ|つないだ>>那两家公司签订了合并的合同。
+A Ⅰ：①a ②b ③a ④a ⑤a ⑥b　Ⅱ：⑦1 ⑧3

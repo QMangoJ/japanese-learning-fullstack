@@ -1,0 +1,54 @@
+T 通[とお]る・引[ひ]く・回[まわ]す|通过・拉・转|Pass, pull, turn
+S words|通る|通る（通过；通畅；有名）|通る (pass)
+W 通[とお]る|町に高速道路[こうそくどうろ]が通る。|An expressway will be built through the town.|镇子上通了高速公路。
+W 通[とお]る|名の通った医師[いし]|a famous doctor|有名的医师
+W 通[とお]る|彼[かれ]の声はよく通る。|His voice carries well.|他的声音很响亮。
+W 通[とお]る|風がよく通る家|house with good ventilation|通风好的房子
+W 通[とお]る|詰[つ]まっていた鼻[はな]が通る|one's stuffed nose is clearing|堵塞的鼻子通了
+W 通[とお]る|食べ物がのどを通らない|not have an appetite|食不下咽
+W 通[とお]る|議案[ぎあん]が国会[こっかい]を通った。|Parliament passed the bill.|议案在国会上通过了。
+W 通[とお]る|この肉は火がよく通っていない。|This meat is not cooked.|这肉没有熟透。
+W 通[とお]る|彼の言うことは筋[すじ]が通っている。|What he says makes sense.|他说的合乎道理。
+S words|引く|引く（拉；引起；退）|引く (pull)
+W 引[ひ]く|綱[つな]を引く|pull a fishing net in|拉绳子
+W 引[ひ]く|潮[しお]が引く|tide goes out|退潮
+W 引[ひ]く|子どもの手を引く|take one's child's hand|拉着孩子的手
+W 引[ひ]く|値段[ねだん]を引いて売る|sell it for a discounted price|降低价格卖
+W 引[ひ]く|この地域[ちいき]に水道[すいどう]を引く|install a public water system in this area|在这一带铺设自来水管道
+W 引[ひ]く|神社[じんじゃ]でおみくじを引く|draw one's fortune at a shrine|在神社抽签
+W 引[ひ]く|フライパンに油[あぶら]を引く|put oil in a pan|在平底锅上涂一层油
+W 引[ひ]く|熱[ねつ]が引いて平熱[へいねつ]になった。|My fever has gone away.|烧退了，已是正常体温。
+W 引[ひ]く|注意を引くために大声[おおごえ]を出す|shout to get attention|为了引起注意出大声
+W 引[ひ]く|身[み]を引く|retire from / leave|抽身
+W 引[ひ]く|彼はイギリス人の血[ち]を引いている。|He has some English blood.|他继承了英国人的血统。
+S words|乗る|乗る（乘；跟着；参与）|乗る (ride)
+W 乗[の]る|リズムに乗って踊[おど]る|dance to the music|跟着节奏跳舞
+W 乗[の]る|友人の相談[そうだん]に乗る|give some advice to one's friend|帮朋友商量
+W 乗[の]る|友人[ゆうじん]の誘[さそ]いに乗る|accept a friend's invitation|答应朋友的邀请
+W 乗[の]る|その手には乗らない。|I don't buy your plan!|不会被这种手段上当。
+W 乗[の]る|調子[ちょうし]に乗っていると、失敗[しっぱい]するよ。|You'll fail if you get carried away too much.|如果得意忘形，就会失败。
+W 乗[の]る|花粉[かふん]が風に乗って運[はこ]ばれる|flower pollen is carried by the wind|花粉随风被带了过来
+W 乗[の]る|誘[さそ]われたが、気分が乗らないから断[ことわ]った。|Although I was invited, I didn't go as I was not in the mood.|虽然接到了邀请，但没心情，拒绝了。
+S words|回す|回す（转；传递；转移）|回す (turn)
+W 回[まわ]す|びんのふたを左に回す|twist the lid of the bottle to the left|向左拧瓶盖
+W 回[まわ]す|回覧板[かいらんばん]を回す|circulate an information bulletin|依次传递传阅板
+W 回[まわ]す|彼女[かのじょ]の肩[かた]に手を回す|put an arm over her shoulder|手绕到她的肩膀上
+W 回[まわ]す|旧友[きゅうゆう]を敵[てき]に回す|have a good friend in the opponent's camp|老朋友变成了敌人
+W 回[まわ]す|洗濯機[せんたくき]を回す|turn on the washing machine|转动洗衣机
+W 回[まわ]す|事前[じぜん]に手を回す|try to arrange ... in advance|事先做好安排
+W 回[まわ]す|仕事を明日に回す|postpone a job till tomorrow|把工作推到明天
+W 回[まわ]す|子どもを連[つ]れ回す|drag a child around with you|带着孩子到处走
+W 回[まわ]す|社長室に電話を回す|forward a call to the president's office|把电话转到社长办公室
+W 回[まわ]す|患者[かんじゃ]を外科[げか]に回す|refer the patient to the surgery section|把患者转到外科
+X1 正しいほうに○を付けなさい。
+Q 会議[かいぎ]で反対[はんたい]意見が出ないよう、事前[じぜん]に手を（a. 引いて　b. 回[まわ]して）おいた。>>为了在会议上不出现反对意见，事先做了疏通。
+Q こんなに遅[おそ]い時間まで子どもを（a. 連[つ]れ回す　b. 連[つ]れ引く）のは、非常識[ひじょうしき]だ。>>这么晚还带着孩子到处跑，太没常识了。
+Q 桜[さくら]の花[はな]びらが風に（a. 通って　b. 乗って）運ばれてきた。>>樱花花瓣随风飘了过来。
+Q この肉はまだ火がじゅうぶんに（a. 乗って　b. 通って）ないから、もう一度焼[や]いてください。>>这块肉还没有完全熟，请再烤一下。
+Q 彼女[かのじょ]は泣[な]いてみんなの注意を（a. 引いた　b. 回[まわ]した）。>>她哭着引起了大家的注意。
+Q 彼[かれ]はイギリスではかなり名[な]の（a. 乗った　b. 通った）作家[さっか]です。>>他在英国是相当有名的作家。
+X2 （　）にはどれが入りますか。一つ選びなさい。
+# 原書の⑦は選択肢2と4がどちらも「通らない」と印刷されている（そのまま転記）。
+Q 気が（　　）けれど、上司[じょうし]に飲みに誘[さそ]われたら断[ことわ]れない。|引けない|通らない|乗らない|通らない>>虽然没心情，但被上司邀请去喝酒就没法拒绝。（原书选项2和4均印作「通らない」）
+Q 彼[かれ]の提案[ていあん]は筋[すじ]が（　　）が、実現[じつげん]するには難[むずか]しいだろう。|通っている|乗っている|回[まわ]している|引いている>>他的提案虽然合乎道理，但很难实现吧。
+A Ⅰ：①b ②a ③b ④b ⑤a ⑥b　Ⅱ：⑦3 ⑧1
