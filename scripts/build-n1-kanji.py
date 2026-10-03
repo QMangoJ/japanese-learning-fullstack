@@ -78,10 +78,15 @@ def add_lex(jp, reading):
         m = re.fullmatch(f"([{KJ}]+)([ぁ-んァ-ン]*)", chunk)
         if m:
             k, suf = m.groups()
-            if suf and rd.endswith(hira(suf)) and len(rd) > len(suf):
-                rd2 = rd[: -len(suf)]
-            else:
-                rd2 = rd
+            rd2 = rd
+            if suf:
+                hs = hira(suf)
+                for i in range(len(hs), 0, -1):  # 新たな|あらた: the reading may cover only part of the okurigana
+                    if rd.endswith(hs[:i]) and len(rd) > i:
+                        rd2 = rd[:-i]
+                        break
+                else:
+                    continue
             if suf and rd2 != rd:
                 LEX.setdefault((k, hira(suf[0])), rd2)
             else:
@@ -341,7 +346,7 @@ def parse_day(path, w, d):
             k["n"] = i
         day["kanji"] = kanji
         day["sections"] = [{k: v for k, v in s.items()} for s in sections]
-        day["exercises"] = {"sections": ex_secs, "answers_note": f"答えは別冊p.{BESSATSU.get((w, d), '')}"}
+        day["exercises"] = {"sections": ex_secs, "answers_note": ""}
         if day.get("answers_text"):
             day["exercises"]["answers"] = day.pop("answers_text")
             reads = []
@@ -397,6 +402,8 @@ def main():
         for raw in open(f, encoding="utf-8"):
             if raw.startswith("W ") or raw.startswith("K ") or raw.startswith("V "):
                 t = raw[2:].rstrip("\n").split("|")
+                if raw[0] in "KV" and len(t[0]) == 1:
+                    continue  # bare kanji headers (e.g. 暑|あつい) are group readings, not word readings
                 if len(t) > 1 and t[1] and KANJI.search(t[0]) and re.fullmatch(r"[ぁ-んー・]+", t[1].lstrip("•")):
                     add_lex(t[0].lstrip("◆"), t[1].lstrip("•"))
     meta = json.load(open(os.path.join(SRC, "weeks.json"), encoding="utf-8"))

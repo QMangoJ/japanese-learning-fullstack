@@ -28,7 +28,7 @@ V 梅雨|つゆ|the rainy season|梅雨|梅雨入り／梅雨明け|入梅／出
 V 雪崩|なだれ|an avalanche|雪崩|雪崩に巻き込まれる|被卷入雪崩
 V 吹雪|ふぶき|a snow storm|暴风雪|吹雪で欠航となる|因暴风雪停航
 V 日和|ひより|the weather/situation|晴天|花見日和|赏花的好天气
-V 名残|なごり|a trace|惜别|名残り雪|残雪
+V 名残|なごり|a trace|惜别|名残[なご]り雪|残雪
 V 最寄り|もより|nearest|最近|最寄りの駅|最近的车站
 V 為替|かわせ|foreign exchange|汇兑|外国為替|外汇
 V 数珠|じゅず|prayer beads|念珠|数珠を持って葬儀に参列する|拿着念珠参加葬礼

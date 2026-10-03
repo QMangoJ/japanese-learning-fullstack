@@ -60,7 +60,7 @@ K 専ら|もっぱら
 W 専ら|もっぱら|just like|专门
 W 見るのは専ら娯楽番組だ。|||看的专门是娱乐节目。
 K 巧みな|たくみ
-W 巧みな|たくみ|skillful|巧妙的
+W 巧みな|たくみな|skillful|巧妙的
 W 言葉巧みに|||花言巧语地
 S とまどいやすい読み|容易弄错的读音|Readings that are easy to confuse
 K 夜行|やこう

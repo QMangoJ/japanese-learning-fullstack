@@ -2380,6 +2380,66 @@
      "translation": "3份证明书"
     }
    ]
+  },
+  "w7d6": {
+   "items": [
+    {
+     "n": 1,
+     "translation": "我捡回了一只受伤的小狗。"
+    },
+    {
+     "n": 2,
+     "translation": "这是潜水时穿的衣服。"
+    },
+    {
+     "n": 3,
+     "translation": "想摆脱悲惨的生活。"
+    },
+    {
+     "n": 4,
+     "translation": "没有继承人是烦恼的根源。"
+    },
+    {
+     "n": 5,
+     "translation": "让荒废的城镇恢复活力。"
+    },
+    {
+     "n": 6,
+     "translation": "父母有抚养孩子的义务。"
+    },
+    {
+     "n": 7,
+     "translation": "默默认可＝默认"
+    },
+    {
+     "n": 8,
+     "translation": "忍耐"
+    },
+    {
+     "n": 9,
+     "translation": "全部灭亡＝全灭"
+    },
+    {
+     "n": 10,
+     "translation": "坏习惯＝恶习"
+    },
+    {
+     "n": 11,
+     "translation": "促使推进＝促进"
+    },
+    {
+     "n": 12,
+     "translation": "互相竞争＝竞争"
+    },
+    {
+     "n": 13,
+     "translation": "装扮修饰＝装饰"
+    },
+    {
+     "n": 14,
+     "translation": "尊重敬仰＝尊敬"
+    }
+   ]
   }
  }
 }
