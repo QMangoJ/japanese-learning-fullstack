@@ -711,7 +711,7 @@ body.hide-cn .vcn,body.hide-cn .cn{visibility:hidden}
 .ct-usage__v{min-width:0}
 @media (min-width:900px){
   .ct-usage-table__head,.ct-usage{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px 0;align-items:start}
-  .ct-usage-table__head{padding:0 0 8px;margin-bottom:2px;border-bottom:1px solid var(--line);position:sticky;top:var(--topbarh,88px);z-index:2;background:var(--card);font-size:12px;font-weight:700;color:var(--sub);letter-spacing:.02em}
+  .ct-usage-table__head{padding:0 0 8px;margin-bottom:2px;border-bottom:1px solid var(--line);position:sticky;top:calc(var(--topbarh,88px) + var(--ctbarh,0px) + var(--cthh,0px));z-index:2;background:var(--card);font-size:12px;font-weight:700;color:var(--sub);letter-spacing:.02em}
   .ct-usage-table__head span,.ct-usage__row{display:block;margin-top:0;padding:0 16px;min-width:0}
   .ct-usage-table__head span:first-child,.ct-usage__row:first-child{padding-left:0}
   .ct-usage-table__head span:last-child,.ct-usage__row:last-child{padding-right:0}
@@ -733,19 +733,30 @@ body.hide-cn .vcn,body.hide-cn .cn{visibility:hidden}
 .ct-daysum li{margin:6px 0;font-size:14.5px;line-height:1.5}
 .ct-daysum li .ct-mean{color:var(--sub)}
 .ct-wrap{display:flex;gap:16px;align-items:flex-start}
-.ct-toc{position:sticky;top:calc(var(--topbarh,88px) + 12px);flex:0 0 168px;max-height:calc(100vh - var(--topbarh,88px) - 24px);overflow-y:auto;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:8px}
+.ct-toc{position:sticky;top:calc(var(--topbarh,88px) + var(--ctbarh,0px) + 12px);flex:0 0 168px;max-height:calc(100vh - var(--topbarh,88px) - var(--ctbarh,0px) - 24px);overflow-y:auto;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:8px}
 .ct-toc-h{font-size:12px;color:var(--sub);font-weight:700;padding:4px 8px}
 .ct-tocitem{display:block;padding:6px 8px;font-size:13px;color:var(--ink);cursor:pointer;border-radius:8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .ct-tocitem:hover{background:var(--bg);color:var(--accent)}
 .ct-body{flex:1;min-width:0}
-.ct-card{scroll-margin-top:110px}
+.ct-card,.ct-daysum{scroll-margin-top:calc(var(--topbarh,88px) + var(--ctbarh,0px) + 8px)}
+/* 语法辨析：模式切换 + 周次/目录胶囊整条吸在标题栏下面；吸住后出一条细阴影。
+   高度由 JS 写进 --ctbarh，分组标题、桌面表头、目录侧栏都叠在它下面。 */
+.ct-stickybar{position:sticky;top:var(--topbarh,88px);z-index:12;display:flex;flex-direction:column;gap:8px;margin:-14px -14px 12px;padding:10px 14px;background:var(--bg);border-bottom:1px solid transparent;transition:box-shadow .15s ease,border-color .15s ease}
+.ct-stickybar.is-stuck{border-bottom-color:var(--line);box-shadow:0 8px 14px -10px rgba(0,0,0,.35)}
+.ct-stickybar__chips{display:flex;flex-wrap:wrap;justify-content:center;gap:6px}
+.ct-toc-chips{display:none}
+.ct-toc-chips .ct-tocitem{flex:0 0 auto;display:inline-flex;align-items:center;min-height:32px;box-sizing:border-box;padding:4px 12px;background:var(--card);border:1px solid var(--line);border-radius:999px;font-size:13.5px}
+/* 卡片里的分组标题（家族名 / N日目）吸在吸顶栏下面，长列表里始终知道在看哪一组 */
+.ct-stick-h{position:sticky;top:calc(var(--topbarh,88px) + var(--ctbarh,0px));z-index:3;background:var(--card);margin-left:-16px;margin-right:-16px;padding:6px 16px;border-bottom:1px solid var(--line)}
 @media (max-width:680px){
   .ct-wrap{flex-direction:column;gap:8px;align-items:stretch}
-  .ct-toc{top:107px;flex:none;width:100%;max-width:100%;box-sizing:border-box;max-height:none;display:flex;gap:6px;overflow-x:auto;overflow-y:hidden;z-index:10;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
-  .ct-toc-h{display:none}
-  .ct-tocitem{flex:0 0 auto;background:var(--bg);border:1px solid var(--line)}
+  /* 手机上目录并进吸顶栏（.ct-toc-chips），这里不再单独吸顶 */
+  .ct-toc{display:none}
+  .ct-toc-chips{display:flex}
+  .ct-stickybar__chips{flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;overflow-y:hidden;margin:0 -14px;padding:0 14px;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;scrollbar-width:none}
+  .ct-stickybar__chips::-webkit-scrollbar{display:none}
+  .ct-stickybar__chips>*{flex:0 0 auto}
   .ct-body{min-width:0;max-width:100%}
-  .ct-card{scroll-margin-top:150px}
 }
 .home-top{position:sticky;top:var(--topbarh,88px);z-index:10;background:var(--bg);padding-bottom:4px}
 .due-banner{display:flex;align-items:center;gap:12px;width:100%;box-sizing:border-box;margin:0 0 12px;padding:12px 14px;border:1px solid var(--accent);border-radius:14px;background:var(--accent-soft);color:var(--ink);cursor:pointer;text-align:left}
@@ -808,6 +819,7 @@ body.hide-cn .vcn,body.hide-cn .cn{visibility:hidden}
   .lvchip{display:none}
   :root{--study-col:1080px;--study-fab-space:152px}
   main{max-width:var(--study-col);padding:18px 24px}
+  .ct-stickybar{margin:-18px -24px 14px;padding:12px 24px}
   /* 课文页两侧有日期胶囊；栏变宽后不再有天然留白，按实际沟宽补进内边距 */
   body:has(.daynav-fab) main{
     padding-left:max(24px, calc(var(--study-fab-space) - max(0px, calc((100vw - 224px - var(--study-col)) / 2))));
