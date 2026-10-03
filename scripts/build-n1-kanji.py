@@ -68,7 +68,7 @@ def word_ruby(jp, reading):
         return f"<ruby>{esc(jp)}<rt>{esc(reading)}</rt></ruby>"
 
 
-LEX = {"日本": "にほん", "日本人": "にほんじん", "日本語": "にほんご", "一人": "ひとり", "二人": "ふたり", "今日": "きょう", "明日": "あした", "昨日": "きのう", "大人": "おとな", "何": "なに"}  # UniDic quirks first, then the book's word readings
+LEX = {"日本": "にほん", "日本人": "にほんじん", "日本語": "にほんご", "一人": "ひとり", "二人": "ふたり", "今日": "きょう", "明日": "あした", "昨日": "きのう", "大人": "おとな", "何": "なに", "私": "わたし"}  # UniDic quirks first, then the book's word readings
 
 
 def add_lex(jp, reading):
