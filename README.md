@@ -128,6 +128,8 @@ Course JSON and static assets are committed under `public/`. Generators for Engl
 
 An installed PWA opens directly at `/study`. It caches visited learning pages, their course data, and up to 24 recently played audio tracks. Authentication and notebook API responses are never cached, and the app does not download the entire audio library up front. Favorites and mistakes created offline stay local first and retry automatically when the connection returns.
 
+The service-worker cache version is generated at build time; never edit it by hand. `public/sw.js` holds the placeholder `__SW_CACHE_VERSION__`, and the Vite plugin in `sw-cache-version.ts` writes `<UTC build time>-<short commit>` (for example `20261004T071205Z-abcdef1`) into `build/client/sw.js`. The commit comes from `WORKERS_CI_COMMIT_SHA` on Cloudflare Workers Builds, `GITHUB_SHA` on GitHub Actions, or `git rev-parse HEAD` locally. Every deploy therefore ships a new worker that clears the old caches and reloads open clients, and parallel pull requests never conflict on the version.
+
 ### API
 
 | Endpoint | Methods | Purpose |

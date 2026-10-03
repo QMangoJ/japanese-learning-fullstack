@@ -764,6 +764,8 @@ body.hide-cn .vcn,body.hide-cn .cn{visibility:hidden}
 .due-banner__text span{color:var(--sub);font-size:13px;line-height:1.45}
 .due-banner__count{flex:none;min-width:32px;height:32px;padding:0 8px;border-radius:999px;background:var(--accent);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-weight:800}
 .due-kind{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.04em}
+.due-why{margin:2px 0 6px;color:var(--sub);font-size:12px;font-weight:700}
+.due-source{margin:0 0 8px;color:var(--sub);font-size:13px;line-height:1.5;text-align:center}
 .due-empty{width:100%;max-width:520px;color:var(--sub);font-size:14.5px;line-height:1.65;text-align:left}
 .due-empty b{display:block;color:var(--ink);font-size:18px;margin-bottom:8px}
 .due-empty p{margin:0 0 14px}

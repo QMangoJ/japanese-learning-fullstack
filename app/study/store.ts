@@ -629,6 +629,15 @@ function activeMistakes() {
 	return MISTAKES.filter((m) => !m.deleted);
 }
 
+export function reviewMistakes(): { id: string; text: string; ts: number; level: string }[] {
+	return activeMistakes().map((item) => ({
+		id: item.id,
+		text: item.text,
+		ts: item.ts,
+		level: item.level || "new",
+	}));
+}
+
 function cleanFavs(value: unknown): Record<string, FavSnap> {
 	if (!value || typeof value !== "object" || Array.isArray(value)) return {};
 	const clean: Record<string, FavSnap> = {};

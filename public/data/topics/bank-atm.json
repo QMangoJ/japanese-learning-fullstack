@@ -1,0 +1,238 @@
+{
+	"version": 1,
+	"slug": "bank-atm",
+	"title_zh": "银行 ATM 取钱",
+	"title_ja": "ATMでお金を引き出す",
+	"title_en": "Withdrawing cash at an ATM",
+	"description_zh": "柜员机画面用尊敬语按钮名。课本里的动词是「引き出す」「預ける」，画面上写成「お引出し」「お預入れ」。",
+	"description_en": "ATM screens use polite button names. Textbook verbs are 引き出す and 預ける; the buttons say お引出し and お預入れ.",
+	"subtopics": [
+		{
+			"zh": "画面上的按钮",
+			"ja": "画面のボタン",
+			"en": "On-screen buttons"
+		},
+		{
+			"zh": "插卡和确认",
+			"ja": "カードと確認",
+			"en": "Card and confirmation"
+		},
+		{
+			"zh": "账户和金额",
+			"ja": "口座と金額",
+			"en": "Account and amounts"
+		}
+	],
+	"cards": [
+		{
+			"id": "atm-001",
+			"jp": "お引出し",
+			"kana": "おひきだし",
+			"zh": "取款（ATM 按钮）",
+			"en": "withdrawal (ATM button)",
+			"subtopic": "画面上的按钮",
+			"example_jp": "まず画面の「お引出し」を押します。",
+			"example_zh": "先按画面上的「取款」。",
+			"example_en": "First press Withdrawal on the screen.",
+			"note": "按钮用「お引出し」。自己说“我取了钱”用动词「引き出す」。"
+		},
+		{
+			"id": "atm-002",
+			"jp": "お預入れ",
+			"kana": "おあずけいれ",
+			"zh": "存款（ATM 按钮）",
+			"en": "deposit (ATM button)",
+			"subtopic": "画面上的按钮",
+			"example_jp": "このATMでお預入れもできます。",
+			"example_zh": "这台 ATM 也可以存款。",
+			"example_en": "You can also make a deposit at this ATM."
+		},
+		{
+			"id": "atm-003",
+			"jp": "残高照会",
+			"kana": "ざんだかしょうかい",
+			"zh": "余额查询",
+			"en": "balance inquiry",
+			"subtopic": "画面上的按钮",
+			"example_jp": "ATMで残高照会をしました。",
+			"example_zh": "在 ATM 上查了余额。",
+			"example_en": "I checked my balance at the ATM."
+		},
+		{
+			"id": "atm-004",
+			"jp": "お振り込み",
+			"kana": "おふりこみ",
+			"zh": "转账（ATM 按钮）",
+			"en": "transfer (ATM button)",
+			"subtopic": "画面上的按钮",
+			"example_jp": "画面の「お振り込み」から家賃を払います。",
+			"example_zh": "从画面上的「转账」付房租。",
+			"example_en": "I pay the rent from Transfer on the screen."
+		},
+		{
+			"id": "atm-005",
+			"jp": "通帳記入",
+			"kana": "つうちょうきにゅう",
+			"zh": "存折补登",
+			"en": "passbook update",
+			"subtopic": "画面上的按钮",
+			"example_jp": "通帳を入れて、通帳記入を選びます。",
+			"example_zh": "插入存折，然后选存折补登。",
+			"example_en": "Insert the passbook, then choose Passbook update."
+		},
+		{
+			"id": "atm-006",
+			"jp": "キャッシュカード",
+			"kana": "キャッシュカード",
+			"zh": "银行卡（现金卡）",
+			"en": "cash card",
+			"subtopic": "插卡和确认",
+			"example_jp": "キャッシュカードを忘れずに取り出してください。",
+			"example_zh": "请别忘了取回银行卡。",
+			"example_en": "Please remember to take your cash card."
+		},
+		{
+			"id": "atm-007",
+			"jp": "挿入",
+			"kana": "そうにゅう",
+			"zh": "插入",
+			"en": "insert",
+			"subtopic": "插卡和确认",
+			"example_jp": "カードを挿入してください。",
+			"example_zh": "请插入卡片。",
+			"example_en": "Please insert your card."
+		},
+		{
+			"id": "atm-008",
+			"jp": "暗証番号",
+			"kana": "あんしょうばんごう",
+			"zh": "密码",
+			"en": "PIN",
+			"subtopic": "插卡和确认",
+			"example_jp": "暗証番号を四桁入力してください。",
+			"example_zh": "请输入四位密码。",
+			"example_en": "Please enter your four-digit PIN."
+		},
+		{
+			"id": "atm-009",
+			"jp": "確認",
+			"kana": "かくにん",
+			"zh": "确认",
+			"en": "confirm",
+			"subtopic": "插卡和确认",
+			"example_jp": "金額を見てから、確認を押します。",
+			"example_zh": "看过金额后再按确认。",
+			"example_en": "Check the amount, then press Confirm."
+		},
+		{
+			"id": "atm-010",
+			"jp": "取消",
+			"kana": "とりけし",
+			"zh": "取消",
+			"en": "cancel",
+			"subtopic": "插卡和确认",
+			"example_jp": "間違えたので、取消を押しました。",
+			"example_zh": "输错了，所以按了取消。",
+			"example_en": "I made a mistake, so I pressed Cancel."
+		},
+		{
+			"id": "atm-011",
+			"jp": "現金",
+			"kana": "げんきん",
+			"zh": "现金",
+			"en": "cash",
+			"subtopic": "插卡和确认",
+			"example_jp": "現金をお受け取りください。",
+			"example_zh": "请取走现金。",
+			"example_en": "Please take your cash."
+		},
+		{
+			"id": "atm-012",
+			"jp": "引き出す",
+			"kana": "ひきだす",
+			"zh": "取款，提取",
+			"en": "withdraw",
+			"subtopic": "账户和金额",
+			"example_jp": "ATMで三万円を引き出しました。",
+			"example_zh": "在 ATM 取了三万日元。",
+			"example_en": "I withdrew 30,000 yen at the ATM."
+		},
+		{
+			"id": "atm-013",
+			"jp": "預ける",
+			"kana": "あずける",
+			"zh": "存入",
+			"en": "deposit",
+			"subtopic": "账户和金额",
+			"example_jp": "余った現金を口座に預けました。",
+			"example_zh": "把剩下的现金存进账户了。",
+			"example_en": "I deposited the leftover cash into my account."
+		},
+		{
+			"id": "atm-014",
+			"jp": "振り込む",
+			"kana": "ふりこむ",
+			"zh": "转入，汇款",
+			"en": "transfer money into",
+			"subtopic": "账户和金额",
+			"example_jp": "家賃をATMで振り込みました。",
+			"example_zh": "在 ATM 转了房租。",
+			"example_en": "I transferred the rent at the ATM."
+		},
+		{
+			"id": "atm-015",
+			"jp": "口座",
+			"kana": "こうざ",
+			"zh": "账户",
+			"en": "account",
+			"subtopic": "账户和金额",
+			"example_jp": "給与はこの口座に振り込まれます。",
+			"example_zh": "工资会打进这个账户。",
+			"example_en": "My salary is paid into this account."
+		},
+		{
+			"id": "atm-016",
+			"jp": "残高",
+			"kana": "ざんだか",
+			"zh": "余额",
+			"en": "balance",
+			"subtopic": "账户和金额",
+			"example_jp": "残高が足りないので、一万円だけ引き出します。",
+			"example_zh": "余额不够，所以只取一万日元。",
+			"example_en": "The balance is short, so I'll withdraw just 10,000 yen."
+		},
+		{
+			"id": "atm-017",
+			"jp": "手数料",
+			"kana": "てすうりょう",
+			"zh": "手续费",
+			"en": "fee",
+			"subtopic": "账户和金额",
+			"example_jp": "他の銀行のATMは手数料がかかります。",
+			"example_zh": "用其他银行的 ATM 要收手续费。",
+			"example_en": "Another bank's ATM charges a fee."
+		},
+		{
+			"id": "atm-018",
+			"jp": "明細",
+			"kana": "めいさい",
+			"zh": "明细",
+			"en": "statement / receipt",
+			"subtopic": "账户和金额",
+			"example_jp": "明細票を忘れずに取りました。",
+			"example_zh": "没忘了把明细单拿走。",
+			"example_en": "I remembered to take the transaction slip."
+		},
+		{
+			"id": "atm-019",
+			"jp": "限度額",
+			"kana": "げんどがく",
+			"zh": "限额",
+			"en": "limit",
+			"subtopic": "账户和金额",
+			"example_jp": "一日の引出限度額を超えています。",
+			"example_zh": "超过了一天的取款限额。",
+			"example_en": "This is over the daily withdrawal limit."
+		}
+	]
+}

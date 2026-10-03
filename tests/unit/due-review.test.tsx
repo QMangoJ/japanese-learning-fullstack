@@ -158,7 +158,7 @@ describe("DuePage", () => {
 	it("explains an empty day", async () => {
 		noteDueSignedOut();
 		render(<DuePage />);
-		expect(await screen.findByText("今天没有到期的卡片")).toBeInTheDocument();
+		expect(await screen.findByText("今天没有要复习的内容")).toBeInTheDocument();
 	});
 
 	it("grades the snapshotted card and reschedules it", async () => {
@@ -175,6 +175,6 @@ describe("DuePage", () => {
 		expect(screen.getByText("刚做完")).toBeInTheDocument();
 		await user.click(screen.getByRole("button", { name: "已经记住" }));
 		expect(dueEntry("a")).toMatchObject({ step: 1, due: addIsoDays(jstToday(), 1) });
-		expect(screen.getByText("今天的复习做完了")).toBeInTheDocument();
+		expect(screen.getByText("今天抽出的复习做完了")).toBeInTheDocument();
 	});
 });

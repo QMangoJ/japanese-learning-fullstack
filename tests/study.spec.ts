@@ -530,6 +530,69 @@ test.describe("study navigation", () => {
 		expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(await page.evaluate(() => document.documentElement.clientWidth));
 	});
 
+	test("opens topic vocabulary for investing, ATM, frontend work, and clothes shopping", async ({ page }) => {
+		await waitForStudy(page);
+		const side = page.locator("#side .side-item", { hasText: /专题词汇|Topics/ });
+		if (await side.isVisible()) await side.click();
+		else {
+			await page.locator('.bottom button[data-nav="common"]').click();
+			await page.getByRole("button", { name: /专题词汇|Topics/ }).click();
+		}
+		await expect(page.locator("#title")).toContainText(/专题词汇|Topic vocabulary/);
+		await expect(page.locator("[data-topic='japan-investing']")).toBeVisible();
+		await page.locator("[data-topic='bank-atm']").click();
+		await expect(page.locator(".topic-item__jp", { hasText: "お引出し" })).toBeVisible();
+		await expect(page.getByText("在 ATM 取了三万日元。")).toBeVisible();
+		await page.getByRole("button", { name: /专题|Topics/ }).first().click();
+		await page.locator("[data-topic='frontend']").click();
+		await expect(page.getByText("修正が終わったので、プルリクエストを出しました。")).toBeVisible();
+		await page.getByRole("button", { name: /专题|Topics/ }).first().click();
+		await page.locator("[data-topic='clothes-shopping']").click();
+		await expect(page.getByText("这件大衣可以试穿吗？")).toBeVisible();
+		await expect(page.getByText("今天是八折。")).toBeVisible();
+		expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(await page.evaluate(() => document.documentElement.clientWidth));
+		const list = page.locator(".topic-list");
+		const columns = await list.evaluate((node) => getComputedStyle(node).gridTemplateColumns.split(" ").filter(Boolean).length);
+		const narrow = (page.viewportSize()?.width || 1280) < 900;
+		expect(columns).toBe(narrow ? 1 : 2);
+	});
+
+	test("samples yesterday's opened grammar on the review page", async ({ page }) => {
+		await waitForStudy(page);
+		await page.locator(".day-item").first().click();
+		await expect(page.locator(".point").first()).toBeVisible({ timeout: 15_000 });
+		const patterns = await page.evaluate(() => {
+			const today = new Intl.DateTimeFormat("en-CA", {
+				timeZone: "Asia/Tokyo",
+				year: "numeric",
+				month: "2-digit",
+				day: "2-digit",
+			}).format(new Date());
+			const [year, month, day] = today.split("-").map(Number);
+			const yesterday = new Date(Date.UTC(year, month - 1, day - 1)).toISOString().slice(0, 10);
+			const key = "jl-grammar-visits-v1";
+			const hits = JSON.parse(localStorage.getItem(key) || "[]") as { date: string; jp: string }[];
+			if (!hits.length) return [];
+			for (const hit of hits) hit.date = yesterday;
+			localStorage.setItem(key, JSON.stringify(hits));
+			return hits.map((hit) => hit.jp);
+		});
+		expect(patterns.length).toBeGreaterThan(0);
+		await page.goto("/study/due");
+		await expect(page.getByText(/昨天看过的语法和做错的题/)).toBeVisible();
+		const front = page.locator(".fcard .big");
+		await expect(front).toBeVisible();
+		const shown = (await front.innerText()).trim();
+		expect(patterns).toContain(shown);
+		await page.getByText("先回忆意思，点击翻面").click();
+		await page.getByRole("button", { name: "已经记住" }).click();
+		if (await page.locator(".fcard .big").count()) {
+			await expect(page.locator(".fcard .big")).not.toHaveText(shown);
+		} else {
+			await expect(page.getByText("今天抽出的复习做完了")).toBeVisible();
+		}
+	});
+
 	test("opens the spoken-contraction reference", async ({ page }) => {
 		await waitForStudy(page);
 		const side = page.locator("#side .side-item", { hasText: /口语|Casual/ });

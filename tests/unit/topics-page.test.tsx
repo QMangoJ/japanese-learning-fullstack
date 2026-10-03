@@ -26,6 +26,9 @@ describe("TopicsPage", () => {
 		render(<TopicsPage slug={null} />);
 		expect(await screen.findByText("日本投资理财日语")).toBeInTheDocument();
 		expect(screen.getByText("121 个词")).toBeInTheDocument();
+		expect(screen.getByText("银行 ATM 取钱")).toBeInTheDocument();
+		expect(screen.getByText("前端工程师")).toBeInTheDocument();
+		expect(screen.getByText("逛街买衣服")).toBeInTheDocument();
 	});
 
 	it("filters by subtopic, marks a word as 不会 and shows only those", async () => {

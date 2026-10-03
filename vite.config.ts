@@ -3,6 +3,7 @@ import { cloudflare } from "@cloudflare/vite-plugin";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
+import { swCacheVersionPlugin } from "./sw-cache-version";
 
 const isE2E = process.env.E2E === "1";
 
@@ -20,5 +21,6 @@ export default defineConfig({
 		tailwindcss(),
 		reactRouter(),
 		tsconfigPaths(),
+		swCacheVersionPlugin(),
 	],
 });
