@@ -1,0 +1,47 @@
+T どんな様子？⑤|什么样的状态？⑤|What does it look like? ⑤
+S words|様子を表すい形容詞・な形容詞|表示状态的い形容词・な形容词|い- and な-adjectives describing states
+W 何気[なにげ]ない|何気ない言葉に傷つく|be hurt by a careless remark|因不经意的话而受伤
+W あっけない|あっけない人生|a brief life|无聊的人生
+W みすぼらしい|みすぼらしい家|a shabby house|破旧的家
+W みっともない|みっともない態度|behave badly|不体面的态度
+W 汚[けが]らわしい|汚らわしい行為|indecent behavior|卑鄙的行为
+W 乏[とぼ]しい|わが国は資源に乏しい。|Natural resources are scarce in this country.|我们国家缺乏资源。
+W あくどい|あくどい商売|crooked dealing|恶毒的买卖
+W 危[あや]うい|このままでは合格が危うい。|Your chances of passing the entrance exam are waning.|这样下去的话，想合格就危险了。
+W ややこしい|ややこしい関係|a complicated relationship|复杂的关系
+W 素[そ]っ気[け]ない|素っ気ない返事|a brusque answer|冷淡的答复
+W もろい|もろく壊れやすいワイングラス|a fragile wine glass|易碎易坏的葡萄酒杯
+W 紛[まぎ]らわしい|紛らわしい言葉|confusing words|含糊不清的话语
+W 久[ひさ]しい|彼に久しく会っていない。|I have not seen him for a long time.|我好久没有见他了。
+W たやすい|たやすく引き受ける|agree to do something without giving it much thought|轻易接受
+W 平[ひら]たい|平たい石（＝平らな）|a flat rock|平坦的石头
+W はかない|はかない命|a transitory life|短暂的生命
+W あやふや（な）|あやふやな態度をとる|a noncommittal attitude|含糊的态度
+W うつろ（な）|うつろな瞳|vacant eyes|呆滞的眼睛
+W こっけい（な）|こっけいな姿|look funny|滑稽的样子
+W →こっけいな話[はなし]||a funny story|可笑的话
+W ちっぽけ（な）|ちっぽけな夢|a very small dream|小小的梦想
+W ぞんざい（な）|ぞんざいな言葉遣い|rough language|粗鲁的话语
+W 不気味[ぶきみ]（な）|不気味な生き物|a weird creature|瘆人的生物
+W 不細工[ぶさいく]（な）|不細工な形|an ugly shape|难看的形状
+W 無茶[むちゃ]（な）|無茶なことを言う|talk nonsense|胡说八道
+W 雑[ざつ]（な）|彼の仕事は雑だ。|His work is sloppy.|他工作草率。
+W 露骨[ろこつ]（な）|露骨に嫌がる|bluntly reject|露骨地厌恶
+W 念入[ねんい]り（な）|念入りな計画|well prepared plan|周到的计划
+W 密[ひそ]か（な）|密かな楽しみ|a small pleasure|隐私的乐趣
+W おろそか（な）|勉強がおろそかになる|study gets pushed aside|学习不认真
+W まとも（な）|まともな仕事|a decent job|正经的工作
+W まとも（な）|風をまともに受ける|face the wind|正面迎风
+W ろくな～ない|それはろくな仕事ではない。|I doubt that it's a decent job.|那不是什么正经工作。
+W ろくな～ない|朝からろくに食べていない。|I haven't eaten much since this morning.|从早晨就没正经吃东西。
+X1 正しいほうに○を付けなさい。
+Q ドライブの前に（a. まともに　b. 念入りに）車の点検をした。>>开车兜风前仔细检查了车。
+Q 一軒家といっても、二部屋だけの（a. ちっぽけな　b. とぼしい）家です。>>虽说是独栋房子，其实是只有两个房间的小房子。
+Q 子育ては決して（a. おろそかな　b. たやすい）ことではない。>>养育孩子绝不是件容易的事。
+Q 電話から（a. ぶきみな　b. ぶさいくな）声が聞こえてきた。>>电话里传来了令人毛骨悚然的声音。
+Q （a. みっともない　b. みすぼらしい）から、電車の中でお化粧するのはやめなさい。>>太难看了，别在电车里化妆。
+Q 生まれて1週間で死ぬという（a. はかない　b. 危うい）命の虫。>>出生一周就会死去的、生命短暂的虫子。
+X2 （　）にはどれが入りますか。一つ選びなさい。
+Q 友人に金を貸してほしいと言ったら、（　　）いやな顔をされた。|ひそかに|むちゃに|ろこつに|こっけいな>>我向朋友借钱，结果对方露骨地表现出不情愿。
+Q 警察は詐欺師の（　　）手口を解明した。|ぞんざいな|あくどい|けがらわしい|あっけない>>警察查明了骗子恶毒的手法。
+A Ⅰ：①b ②a ③b ④a ⑤a ⑥a　Ⅱ：⑦3 ⑧2

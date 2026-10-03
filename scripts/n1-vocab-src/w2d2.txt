@@ -1,0 +1,47 @@
+T どんな様子？②|什么样的状态？②|What does it look like? ②
+S words|様子を表す動詞|表示状态的动词|Verbs describing how things are
+W かする|弾が耳をかすった。|The bullet grazed my ear.|子弹擦过耳朵。
+W →かすり傷[きず]／すり傷[きず]||a escape|擦伤
+W ぶれる|写真がぶれている。|The picture is blurred.|照片照虚了。
+W ぼやける|字がぼやけてよく見えない。|The letters are not clear.|字体模糊，看不清楚。
+W かさむ|経費がかさむ|expenses piling up|经费增多
+W かさばる|荷物がかさばって持ちにくい。|The bags are too bulky to carry.|行李体积太大，不好拿。
+W 重[かさ]なる|予定が重なる|plans overlapping|计划发生冲突
+W →（～を）重[かさ]ねる||pile up|把……重叠
+W そびえる|高層ビルが空にそびえている。|Skyscrapers tower high over the city.|高楼大厦耸立在高空。
+W たるむ|ひもがたるんでいる|The string is sagging.|绳子松了。
+W たるむ|気持ちがたるむ|be lazy|心情松懈
+W とろける|口の中でチーズがとろける|cheese melting in your mouth|奶酪在嘴里化了
+W はげる|ペンキがはげる|paint coming off|油漆脱落
+W はげる|頭がはげる|go bald|头秃了
+W さえずる|小鳥がさえずる|birds chirping|小鸟唧唧喳喳地叫
+W きしむ|床がきしむ|floor creaking|地板嘎吱嘎吱地响
+W 弾[はじ]く|油は水を弾く|oil repels water|油不溶于水
+W 弾[ひ]く|ギターの弦を弾く|strum a guitar|弹吉他弦
+W はぐ|魚の皮をはぐ|skin a fish|剥鱼皮
+W 潤[うるお]う|肌が潤う|moisturized skin|皮肤滋润
+W 潤[うるお]う|駅ができて商店街が潤う。|The new station has enriched the community.|车站建成后，商店街很受益。
+W 繕[つくろ]う|ほころびを繕う|have an open seam mended|修理破绽
+W 繕[つくろ]う|体裁を繕う|keep up appearances|修饰外表
+W はかどる|仕事がはかどる|make progress with your work|工作有进展
+W 差[さ]し掛[か]かる|曲がり角に差し掛かる|reach a turning point|来到拐角
+W 差[さ]し掛[か]かる|子どもが思春期に差し掛かる|a child reaching adolescent|孩子到了青春期
+W 引[ひ]きずる|足を引きずる|limp|拖着腿
+W 反[そ]る|板が反る|a piece of wood is getting warped|板翘起来
+W →ひげをそる||shave your beard|刮胡子
+W とがる|とがったナイフ|a sharp knife|尖刀
+W はれる|まぶたがはれる|have swollen eyelids|眼皮肿
+W ずれる|眼鏡がずれる|glasses slipping off|眼镜滑下来
+W ずれる|タイミングがずれる|timing is off|错过了时机
+W いかれる（俗語[ぞくご]）|エンジンがいかれる|the engine is kaputt|发动机坏了
+X1 正しいほうに○を付けなさい。
+Q 最近、先の（a. そびえた　b. とがった）靴がはやっているようだ。>>最近好像流行尖头鞋。
+Q 戸が（a. きしんで　b. さえずって）キーキーうるさい音がする。>>门嘎吱嘎吱地响，很吵。
+Q このシチューは牛肉が（a. たるむ　b. とろける）ようにやわらかくて、とてもおいしい。>>这道炖菜里的牛肉软得像要化了，非常好吃。
+Q 母が穴の空いた靴下を（a. うるおって　b. つくろって）くれた。>>妈妈帮我把破了洞的袜子补好了。
+Q バットを振ったが、ボールは（a. かすった　b. さしかかった）だけで飛ばなかった。>>挥了球棒，但球只是擦了一下，没有飞出去。
+Q メガネが合わないのか、字が（a. かすって　b. ぼやけて）よく見えない。>>也许是眼镜度数不合适，字模模糊糊看不清楚。
+X2 （　）にはどれが入りますか。一つ選びなさい。
+Q この布は水を（　　）加工がされている。|かさむ|はじく|はぐ|そる>>这块布经过了防水加工。
+Q 虫歯で顔が（　　）しまった。|はげて|ずれて|ぶれて|はれて>>因为蛀牙，脸肿了。
+A Ⅰ：①b ②a ③b ④b ⑤a ⑥b　Ⅱ：⑦2 ⑧4
