@@ -1,0 +1,58 @@
+T どんな行動・態度？②|什么样的行动・态度？②|What kind of behavior and attitude? ②
+S words|人の行動・態度を表す動詞|表示人的行动・态度的动词|Verbs describing behavior and attitude
+W すすぐ|ふきんをすすぐ|rinse the cloth|洗抹布
+W ゆすぐ|口をゆすぐ|rinse your mouth|漱口
+W ゆすぐ|コップをゆすぐ|rinse a glass|刷杯子
+W こす|水をこす|filter water|过滤水
+W ばらまく|豆をばらまく|scatter beans|撒豆子
+W 緩[ゆる]める|ベルトを緩める|loosen your belt|放松腰带
+W →緩[ゆる]む（V）||loosen|松弛
+W 揺[ゆ]する|木を揺する|shake a tree|摇晃树
+W 生[は]やす|ひげを生やす|grow a beard|留胡子
+W →（～が）生[は]える||it grows|生长
+W 生[い]ける|花を生ける|arrange flowers|插花
+W よこす|手紙をよこす|send a letter|寄信
+W よこす|「金をよこせ！」|Hand over the money!|把钱给我！
+W そらす|目をそらす|turn your eyes away|把视线移开
+W そらす|話をそらす|change the subject|岔开话题
+W さらす|日光にさらす|expose to the sun|晒太阳
+W さらす|水にさらす|soak in water|用凉水冲
+W 凝[こ]らす|工夫を凝らす|come up with ideas|找窍门
+W たどる|足跡をたどる|trackng footprints|追寻脚印
+W 据[す]える|防犯カメラを据える|install a security camera|安装防盗摄像
+W →据[す]え付[つ]ける||install|安装
+W 添[そ]える|写真を添える|include a picture|附加照片
+W 控[ひか]える|隣室に控える|wait in the room next door|在旁边房间等候
+W 控[ひか]える|塩分を控える|reduce one's salt intake|控制盐分
+W →控[ひか]え室[しつ]||a waiting room|等候室
+W 歩[あゆ]む|彼と別の人生を歩む|lead a different life from him|和他走的是不同的人生道路
+W →歩[あゆ]み（N）||history|脚步
+W もくろむ|世界進出をもくろむ|plan to expand worldwide|计划向世界发展
+W 阻[はば]む|彼らの侵入を阻む|prevent their invasion|阻止他们的侵入
+W 遮[さえぎ]る|人の話を遮る|cut someone off|打断别人的话
+W つづる|英文でつづる|write in English|用英文写
+W →つづり（N）||spelling / a pile of papers|册、拼字
+W 仕掛[しか]ける|わなを仕掛ける|set up a trap|设置圈套
+W 手掛[てが]ける|新しい仕事を手掛ける|start a new project|着手新的工作
+W 合[あ]わす|声を合わして（＝合わせて）歌う|sing together|合声唱
+W 合[あ]わす|力を合わす|work together|合力
+W 与[あた]える|子どもに小遣いを与える|give children some pocket money|给小孩零花钱
+W 交[まじ]える|先生を交えて話し合う|have a discussion with the teachers|老师也参加在内讨论
+W →交[まじ]わる||cross, intersect|交换
+W 交[か]わす|あいさつを交わす|greet one another|互相寒暄
+W 束[たば]ねる|髪を束ねる|tie up your hair|束发
+W 背[そむ]く|命令に背く|disobey an order|违背命令
+W 逃[のが]す|チャンスを逃す|miss an opportunity|放掉机会
+W →逃[のが]れる||escape|逃跑
+W 促[うなが]す|この液体は植物の成長を促す。|this liquid stimulates plant growth.|这种液体能促进植物生长。
+X1 正しいほうに○を付けなさい。
+Q 風呂場にかびが（a. 生けた　b. 生えた）。>>浴室里长霉了。
+Q サルにえさを（a. あたえないで　b. しかけないで）ください。>>请不要给猴子喂食。
+Q カーテンで光を（a. こらした　b. さえぎった）。>>用窗帘挡住了光线。
+Q 切った玉ネギを水に（a. さらして　b. 与えて）ください。>>请把切好的洋葱用水泡一下。
+Q 暑いので、つけていたネクタイを（a. ゆるめた　b. ひかえた）。>>因为太热，把系着的领带松开了。
+Q 手が滑り、ポップコーンを床に（a. のがして　b. ばらまいて）しまった。>>手一滑，爆米花撒了一地。
+X2 （　）にはどれが入りますか。一つ選びなさい。
+Q けんかになりそうになったので、あわてて話題を（　　）。|しかけた|交えた|つづった|そらした>>眼看要吵起来，赶紧岔开了话题。
+Q 彼と（　　）約束を破ってしまった。|かわした|こらした|あわした|手がけた>>我违背了和他定下的约定。
+A Ⅰ：①b ②a ③b ④a ⑤a ⑥b　Ⅱ：⑦4 ⑧1

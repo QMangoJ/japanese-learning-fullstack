@@ -1,0 +1,55 @@
+T どんな動作？|什么样的动作？|What kind of action?
+S words|人の動作を表す言葉・頭|表示人的动作的词语・头|Words describing actions: head
+W うつむく|cast your eyes down|低头
+W →うなずく|nod|点头
+S words|人の動作を表す言葉・目|表示人的动作的词语・眼|Words describing actions: eyes
+W まばたき（を）する|blink your eyes|眨眼
+W 目[め]をつぶる|close your eyes|闭眼睛
+S words|人の動作を表す言葉・口|表示人的动作的词语・口|Words describing actions: mouth
+W 一言[ひとこと]つぶやく|mutter|嘟囔一两句
+W →ささやく|whisper|低声私语
+W 歌[うた]を口[くち]ずさむ|sing a song|哼歌
+W 煙[けむり]にむせる|choke from the smoke|被烟呛着了
+W 食[た]べ物[もの]でむせる|swallow food the wrong way|吃东西呛着了
+S words|人の動作を表す言葉・手|表示人的动作的词语・手|Words describing actions: hands
+W ほっぺたをつねる|pinch your cheek|拧脸蛋儿
+W 草[くさ]をむしる|pull weeds|拔草
+W カレンダーをめくる|turn over a page of the calendar|翻日历
+W 塩[しお]をつまむ|take a pinch of salt|捏点盐
+W 鼻[はな]をつまむ|pinch your nose|捏鼻子
+W 花[はな]を摘[つ]む|pick flowers|摘花
+W 才能[さいのう]の芽[め]を摘[つ]む|ruin a person's opportunity to succeed|把才能扼杀在摇篮里
+W 足[あし]をさする|rub your legs|按脚
+W 髪[かみ]の毛[け]をいじる|play with your hair|摆弄头发
+W 庭[にわ]をいじる|gardening|摆弄庭院
+W 家具[かぐ]のほこりをはたく|dust the furniture|掸家具上的灰尘
+W 水[みず]をすくう|scoop up water|舀水
+W 杖[つえ]を突[つ]く|use a cane|拄拐杖
+W 赤[あか]ちゃんをバスタオルでくるむ|wrap a baby in a towel|用浴巾把孩子包起来
+W 紙[かみ]を丸[まる]める|crumple a piece of paper|把纸团起来
+W 体[からだ]を丸[まる]める|curl up|弯曲身体
+W マッチを擦[す]る|strike a match|划火柴
+W 指[ゆび]をさす|point a finger|用手指
+S words|人の動作を表す言葉・体|表示人的动作的词语・身体|Words describing actions: body
+W 横[よこ]になる|lie down|躺下
+W うつ伏[ぶ]せになる|lie on your stomach|俯卧
+W 仰向[あおむ]けになる|lie on your back|仰面躺着
+W 体[からだ]を反[そ]らす（⇔曲[ま]げる）|bend backward|身体后转
+W 馬[うま]にまたがる|sit astride a horse|骑马
+W 3年[ねん]にまたがる（＝わたる）計画[けいかく]|a three-year-long project|为期3年的计划
+W 湯[ゆ]につかる|soak in hot water|泡在洗澡水里
+W 門[もん]をくぐる|go through the gate|钻过门
+W 水[みず]たまりをよける|avoid a puddle of water|避开水洼
+W 水中[すいちゅう]でもがく／あがく|struggle in the water|在水里挣扎
+W 山中[さんちゅう]をさまよう|get lost and wander about in the mountains|在山里彷徨
+X1 正しいほうに○を付けなさい。
+Q 肩までお湯によく（a. つかりましょう　b. すくいましょう）。>>好好泡在热水里，泡到肩膀吧。
+Q 車の前に飛び出してきた猫を（a. よけたら　b. そらしたら）電柱にぶつかってしまった。>>为了避开窜到车前的猫，结果撞上了电线杆。
+Q 踏切の遮断機※を（a. さまよっては　b. くぐっては）いけません。（※遮断機[しゃだんき]：a crossing gate）>>不能从道口的栏杆下面钻过去。
+Q それは、私が子どものころよく（a. つぶやいた　b. 口ずさんだ）歌です。>>那是我小时候经常哼的歌。
+Q ごはんをのりで（a. くるんで　b. めくって）食べます。>>用海苔把米饭包起来吃。
+Q しかられた生徒は（a. うなづいて　b. うつむいて）泣いていた。>>被批评的学生低着头哭了。
+X2 （　）にはどれが入りますか。一つ選びなさい。
+Q 疲れたのでちょっとソファーで（　　）いいでしょうか。|うつ伏せになっても|仰向けになっても|横になっても|もがいても>>累了，可以在沙发上躺一会儿吗？
+Q 休日に庭を（　　）のが、私の趣味です。|いじる|さする|むしる|つまむ>>假日里摆弄庭院是我的爱好。
+A Ⅰ：①a ②a ③b ④b ⑤a ⑥b　Ⅱ：⑦3 ⑧1
