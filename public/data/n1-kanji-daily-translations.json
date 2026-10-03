@@ -1468,6 +1468,66 @@
      "translation": "热茶"
     }
    ]
+  },
+  "w5d2": {
+   "items": [
+    {
+     "n": 1,
+     "translation": "取得优秀的成绩。"
+    },
+    {
+     "n": 2,
+     "translation": "因有事报告，所以提笔写信。"
+    },
+    {
+     "n": 3,
+     "translation": "仰望秋天美丽的天空。"
+    },
+    {
+     "n": 4,
+     "translation": "担任电视剧的主角。"
+    },
+    {
+     "n": 5,
+     "translation": "打听去车站的路。"
+    },
+    {
+     "n": 6,
+     "translation": "选择错了。"
+    },
+    {
+     "n": "7-1",
+     "translation": "避开人群。"
+    },
+    {
+     "n": "7-2",
+     "translation": "袋子破了。"
+    },
+    {
+     "n": "8-1",
+     "translation": "不堪入耳的话"
+    },
+    {
+     "n": "8-2",
+     "translation": "争吵不断。"
+    },
+    {
+     "n": "9-1",
+     "translation": "事情办完。"
+    },
+    {
+     "n": "9-2",
+     "translation": "和父母住在一起。"
+    },
+    {
+     "n": "10-1",
+     "translation": "拍照片。"
+    },
+    {
+     "n": "10-2",
+     "translation": "采血。"
+    }
+   ]
   }
  }
 }
