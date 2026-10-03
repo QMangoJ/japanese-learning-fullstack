@@ -241,6 +241,20 @@ def parse_day(path, w, d):
             if len(t) > 1 and t[1]:
                 cur["readings"] = [x for x in t[1].split("・") if x]
             kanji.append(cur)
+        elif tag == "V":
+            # word row (week 4+): V word|reading|en|cn|example|example_cn|note
+            t = (body.split("|") + [""] * 7)[:7]
+            jp, rd, en, cn, ex, excn, note = t
+            cur = new_kanji(jp, None)
+            cur["readings"] = [rd]
+            it = {"jp": jp, "reading": rd, "en": en, "cn": cn, "jp_r": word_ruby(jp, rd)}
+            if note:
+                it["note"], it["note_r"] = plain(note), ruby(note)
+            cur["words"].append(it)
+            if ex:
+                exr = ruby(ex)
+                cur["words"].append({"jp": plain(ex), "reading": re.sub(r"<[^>]+>", "", re.sub(r"<ruby>[^<]*<rt>([^<]*)</rt></ruby>", r"\1", exr)), "en": "", "cn": excn, "jp_r": exr, "phrase": True})
+            kanji.append(cur)
         elif tag == "R":
             cur["review"], cur["review_r"] = plain(body), ruby(body)
         elif tag == "W":
@@ -379,7 +393,7 @@ def parse_ex(path, d7):
 def main():
     for f in sorted(glob.glob(os.path.join(SRC, "w*d*.txt"))):
         for raw in open(f, encoding="utf-8"):
-            if raw.startswith("W ") or raw.startswith("K "):
+            if raw.startswith("W ") or raw.startswith("K ") or raw.startswith("V "):
                 t = raw[2:].rstrip("\n").split("|")
                 if len(t) > 1 and t[1] and KANJI.search(t[0]) and re.fullmatch(r"[ぁ-んー・]+", t[1].lstrip("•")):
                     add_lex(t[0].lstrip("◆"), t[1].lstrip("•"))
