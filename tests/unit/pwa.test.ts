@@ -2,6 +2,12 @@ import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import vm from "node:vm";
 import { describe, expect, it, vi } from "vitest";
+import {
+	SW_CACHE_VERSION_PATTERN,
+	SW_CACHE_VERSION_PLACEHOLDER,
+	injectSwCacheVersion,
+	resolveSwCacheVersion,
+} from "../../sw-cache-version";
 
 const publicDir = resolve(import.meta.dirname, "../../public");
 const source = readFileSync(resolve(publicDir, "sw.js"), "utf8");
@@ -112,9 +118,32 @@ describe("PWA offline policy", () => {
 		expect(fetch).toHaveBeenCalledOnce();
 	});
 
-	it("uses a new cache namespace for this release", () => {
-		expect(source).toContain('const CACHE_VERSION = "2026-10-04-v9"');
+	it("keeps a build-time placeholder instead of a hand-bumped cache version", () => {
+		expect(source).toContain(`const CACHE_VERSION = "${SW_CACHE_VERSION_PLACEHOLDER}";`);
+		expect(source.match(/const CACHE_VERSION = /g)).toHaveLength(1);
 		expect(source).toContain('url.pathname === "/study.css"');
+	});
+
+	it("generates a unique cache version from build time and commit", () => {
+		const now = new Date("2026-10-04T07:12:05.123Z");
+		const sha = "ABCDEF1234567890abcdef1234567890abcdef12";
+		expect(resolveSwCacheVersion({ env: { WORKERS_CI_COMMIT_SHA: sha }, now, gitSha: () => "1111111" })).toBe("20261004T071205Z-abcdef1");
+		expect(resolveSwCacheVersion({ env: { GITHUB_SHA: "2222222abc" }, now, gitSha: () => "1111111" })).toBe("20261004T071205Z-2222222");
+		expect(resolveSwCacheVersion({ env: { WORKERS_CI_COMMIT_SHA: " " }, now, gitSha: () => "3333333\n" })).toBe("20261004T071205Z-3333333");
+		expect(resolveSwCacheVersion({ env: {}, now, gitSha: () => undefined })).toBe("20261004T071205Z-nogit");
+		expect(resolveSwCacheVersion()).toMatch(SW_CACHE_VERSION_PATTERN);
+		const later = resolveSwCacheVersion({ env: { GITHUB_SHA: sha }, now: new Date("2026-10-04T07:12:06Z") });
+		expect(later).not.toBe(resolveSwCacheVersion({ env: { GITHUB_SHA: sha }, now }));
+	});
+
+	it("injects the generated version into the built worker", () => {
+		const built = injectSwCacheVersion(source, "20261004T071205Z-abcdef1");
+		expect(built).toContain('const CACHE_VERSION = "20261004T071205Z-abcdef1";');
+		expect(built).not.toContain(SW_CACHE_VERSION_PLACEHOLDER);
+		expect(() => injectSwCacheVersion("const CACHE_VERSION = \"v1\";", "x")).toThrow(/placeholder/);
+		const context = vm.createContext({ self: { addEventListener: vi.fn(), location: { origin: "https://study.example" } }, caches: {} });
+		vm.runInContext(built, context);
+		expect(vm.runInContext("SHELL_CACHE", context)).toBe("jl-shell-20261004T071205Z-abcdef1");
 	});
 
 	it("matches pre-cached static assets regardless of browser-added Vary headers", async () => {

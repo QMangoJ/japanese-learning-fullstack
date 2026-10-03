@@ -1,7 +1,9 @@
 /* 日本語上手: conservative offline cache for visited study content. */
-// Bump this whenever the application shell changes. A new worker then removes
-// the previous HTML/runtime cache before a standalone PWA can reuse it.
-const CACHE_VERSION = "2026-10-04-v9";
+// Do not edit: every production build replaces the placeholder in
+// build/client/sw.js with "<UTC build time>-<commit>" (see sw-cache-version.ts).
+// Each deploy therefore ships a byte-different worker, which installs, removes
+// the previous HTML/runtime cache, and reloads open clients.
+const CACHE_VERSION = "__SW_CACHE_VERSION__";
 const SHELL_CACHE = `jl-shell-${CACHE_VERSION}`;
 const RUNTIME_CACHE = `jl-runtime-${CACHE_VERSION}`;
 const MEDIA_CACHE = `jl-media-${CACHE_VERSION}`;
