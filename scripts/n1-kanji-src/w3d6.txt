@@ -1,0 +1,98 @@
+T 用いる・率いる・悔いる|もちいる・ひきいる・くいる|使用・率领・后悔|
+I Q. ＿の読みは？　控える　→ひかえる。「控える」は「控え室」「領収書の控え」「お酒を控える」などと使う。
+S 動詞③|动词③|Verbs ③
+K 煮る|にる
+W 野菜を煮る||boil vegetables|煮蔬菜
+K 射る|いる
+W 矢を射る||shoot an arrow|射箭
+K 用いる|もちいる
+W 閣僚に民間人を用いる||appoint a civilian to a cabinet post|选普通人进入内阁
+K 率いる|ひきいる
+W チームを率いる||lead a team|率领团队
+K 報いる|むくいる
+W 恩に報いる||repay a person's kindness|报恩
+K 悔いる|くいる
+W 失言を悔いる||regret one's gaffe|后悔失言
+K 帯びる|おびる
+W 熱を帯びる||get heated|带有热度
+K 備える|そなえる
+W 災害に備える||prepare for a disaster|防备灾害
+K 蓄える|たくわえる
+W 力を蓄える||restore one's energy|储备力量
+K 訴える|うったえる
+W 人を訴える||sue a person|控告人
+W 苦痛を訴える||complain about the pain|申述苦痛
+K 控える|ひかえる
+W 外出を控える||refrain from going out|控制外出
+W 発言を控える||refrain from speaking|克制发言
+K 鍛える|きたえる
+W 体を鍛える||train one's body|锻炼身体
+K 暴れる|あばれる
+W 酔っ払いが暴れる||a drunk acts violently|醉汉乱闹
+K 枯れる|かれる
+W 植物が枯れる||a plant dies|植物枯萎
+K 隠れる|かくれる
+W 物陰に隠れる||hide behind something|躲在隐蔽处
+K 垂れる|たれる
+W 汁が垂れる||liquid drips|汤汁滴落
+K 漏れる|もれる
+W 空気が漏れる||air leaks|漏气
+K 膨れる|ふくれる
+W 腹が膨れる||stomach sticks out|胀肚
+K 離れる|はなれる
+W 故郷を離れる||leave your hometown|离开故乡
+K 揺れる|ゆれる
+W 風に揺れる||swing in the wind|随风摇摆
+W 心が揺れる||waver|内心动摇
+K 伏せる|ふせる
+W 顔を伏せる||look down|低下头
+K 載せる|のせる
+W 記事を載せる||write an article|登新闻
+K 改める|あらためる
+W 料金を改める||revise the fees|改费用
+K 定める|さだめる
+W 規則を定める||set the rules|制定规则
+K 慰める|なぐさめる
+W 友人を慰める||console a friend|安慰朋友
+K 褒める|ほめる
+W 子を褒める||praise a child|表扬孩子
+K 緩める|ゆるめる
+W ベルトを緩める||loosen your belt|放松腰带
+W スピードを緩める||slow down|放慢速度
+K 授ける|さずける
+W 知恵を授ける||teach some wisdom|传授智慧
+K 化ける|ばける
+W 人間に化ける||take the form of a human being|变成人
+K 設ける|もうける
+W 機会を設ける||provide an opportunity|创造机会
+K 掛ける|かける
+W 絵を壁に掛ける||hang a painting on a wall|把画挂在墙上
+K 漬ける|つける
+W 野菜を塩に漬ける||pickle vegetables in salt|用盐腌蔬菜
+W ◆漬け物|つけもの|pickles|酱菜
+K 揚げる|あげる
+W 油で揚げる||deep-fry|用油炸
+K 告げる|つげる
+W 春を告げる||be a sign of spring|宣告春天的到来
+K 遂げる|とげる
+W 急成長を遂げる||attain a high rate of growth|实现快速增长
+K 掲げる|かかげる
+W スローガンを掲げる||state a slogan|打着口号
+X1 a、bの言葉の読みを書き、正しいほうを選びなさい。
+Q お酒を（a. 鍛える　b. 控える）ようにと医者に言われた。>>医生让我少喝酒。
+Q 新しいビジネスが急成長を（a. 遂げた　b. 設けた）。>>新业务实现了快速增长。
+Q 日本代表を（a. 報いる　b. 率いる）A監督にインタビューをした。>>采访了率领日本代表队的A教练。
+Q 道端の草花が春の訪れを（a. 告げて　b. 帯びて）いる。>>路边的花草宣告着春天的到来。
+Q 友人のあまりの不運な出来事に（a. 慰める　b. 褒める）言葉も見つからなかった。>>朋友遭遇的事太不幸了，我连安慰的话都找不到。
+Q 次の語句を（a. 悔いて　b. 用いて）短い文を作りなさい。>>请用下面的词语造一个短句。
+X2 ＿＿の部分を漢字で書くとき、最もよいものを□から選びなさい。
+B a. 膨|b. 訴|c. 垂|d. 定|e. 射|f. 改|g. 蓄|h. 載|i. 漏|j. 揺|k. 枯|l. 備
+Q 7-1|地震に{そなえる}。|＿える>>防备地震。
+Q 7-2|電力を{たくわえる}。|＿える>>储蓄电力。
+Q 8-1|水が{もれる}。|＿れる>>漏水。
+Q 8-2|赤字が{ふくれる}。|＿れる>>赤字膨胀。
+Q 9-1|鼻水が{たれる}。|＿れる>>流鼻涕。
+Q 9-2|花が{かれる}。|＿れる>>花枯萎。
+Q 10-1|料金を{あらためる}。|＿める>>修改费用。
+Q 10-2|法律を{さだめる}。|＿める>>制定法律。
+A Ⅰ：①b ②a ③b ④a ⑤a ⑥b　Ⅱ：⑦1l 2g ⑧1i 2a ⑨1c 2k ⑩1f 2d
