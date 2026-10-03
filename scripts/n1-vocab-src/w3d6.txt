@@ -3,8 +3,8 @@ S words|副詞|副词|Adverbs
 W あいにく|あいにく留守にしています。|Unfortunately he is out.|不巧他不在家。
 W 案[あん]の定[じょう]|ダメだと思っていたら、案の定不合格だった。|I thought I would fail, and sure enough I did.|本来就觉得不行，不出所料，就是不合格。
 W 敢[あ]えて|負けるとわかっているが、敢えて挑戦した。|I knew I would lose but I tried anyway.|我知道会失败，但硬是挑战了。
-W 強[し]いて（→p.18 強いる）|強いて（＝無理に）それを変更しろとは言わない。|I will not insist on you changing it.|我不会硬要你更改。
-W 強[し]いて（→p.18 強いる）|強いて言えば、こっちのほうがました。|If I were to compare them, this one is better.|非要说的话，这个更好些。
+W 強[し]いて（→p.18 強[し]いる）|強いて（＝無理に）それを変更しろとは言わない。|I will not insist on you changing it.|我不会硬要你更改。
+W 強[し]いて（→p.18 強[し]いる）|強いて言えば、こっちのほうがました。|If I were to compare them, this one is better.|非要说的话，这个更好些。
 W 自[おの]ずから／自[おの]ずと|努力すれば自ずから道は開ける。|If you work hard, opportunities will arise.|只要努力，道路自然就会铺开。
 W 自[みずか]ら|自ら進んで勉強する|study of your own initiative|自己主动学习
 W とかく|寒くなると、とかく遅刻者が多くなる。|More people tend to come late as it gets colder.|变冷后，迟到的人变的多了。

@@ -1,0 +1,51 @@
+T 目下[もっか]・大家[たいか]・万人[ばんにん]|目前・大师・众人|At present, master, everyone
+S words|目|目|目 (eye)
+W 目方[めかた]|目方（＝重さ、体重）を量る|weigh|称重量
+W 目下[もっか]|目下、失業中である。|I am currently unemployed.|目前正处于失业状态。
+W →目下[めした]の人[ひと]||a subordinate|晚辈
+W 切[き]れ目[め]|肉に切れ目を入れる|score the meat|肉上面切上几刀
+W 切[き]れ目[め]|文章の切れ目（＝区切り）|the end of a sentence|文章的段落
+W 目先[めさき]|目先の利益を追う|try to gain an immediate profit|追求眼前利益
+W 大目[おおめ]|大目に見る|overlook|宽恕
+S words|明|明|明 (bright)
+W 明白[めいはく]（な）|明白な証拠|clear evidence|明显的证据
+W 声明[せいめい]|声明を発表する|make a statement|发表声明
+W 夜明[よあ]け|夜明け（＝明け方）まで仕事をする|work until dawn|一直工作到天明
+W 夜明[よあ]け|宇宙時代の夜明け|dawn of the space era|宇宙时代的黎明
+W 文明[ぶんめい]|古代文明|ancient civilization|古代文明
+W 明[あ]かす|秘密を明かす|confide a secret|揭露秘密
+W 明[あ]かす|一夜を明かす|stay up all night|过了一晚
+S words|家|家|家 (house)
+W 家計[かけい]|家計が苦しい|having trouble making ends meet financially|家庭收支困难
+W 家業[かぎょう]|家業を継ぐ|take over the family business|继承家业
+W 家主[やぬし]|（＝貸家の所有者　＝大家[おおや]）|a landlord|房东
+W 家主[やぬし]|（＝一家の主人）|the head of a family|一家之主
+W 家来[けらい]|家来とその主人|a servant and his master|家臣和主人
+W 大家[たいか]|絵の大家|owner of a painting|绘画大家
+S words|人|人|人 (person)
+W 社会人[しゃかいじん]|社会人になる|become a member of society|成为社会人
+W 万人[ばんにん]|万人向けの製品|a product that appeals to most people|面向大众的制品
+W 人目[ひとめ]|人目につく|stands out|被人看见
+W 住人[じゅうにん]|アパートの住人|resident of an apartment|公寓的住户
+S words|進|进|進 (advance)
+W 進行[しんこう]（する）|調査が順調に進行している|there is progress in the investigation|调查在顺利推进
+W 進出[しんしゅつ]（する）|海外に進出する|advance into foreign markets|向海外发展
+W 進度[しんど]|学習の進度|progress in one's studies|学习进度
+W 行進[こうしん]（する）|大通りを行進する|march on the main street|在大马路上游行
+S words|先|先|先 (ahead)
+W 先頭[せんとう]|先頭に立つ|stand at the front of the line|站在前头
+W 先行[せんこう]（する）|時代に先行する|be ahead of the times|走在时代的前列
+W 先行[せんこう]（する）|先行発売|a pre-release sale|提前销售
+W 先着[せんちゃく]|先着10名様限り|will except only the first 10 people who arrive|仅限先到的10名
+W 先方[せんぽう]|先方（＝相手）の意見を聞く|listen to the other party's opinion|听取对方的意见
+X1 正しいほうに○を付けなさい。
+Q 日本では少子高齢化が（a. 行進　b. 進行）している。>>日本的少子老龄化正在加剧。
+Q （a. 万人　b. 社会人）の共通の願いは、健康であることだ。>>所有人共同的愿望就是健康。
+Q 政府が緊急（a. 進出　b. 声明）を発表した。>>政府发表了紧急声明。
+Q 車の中だと（a. 人目　b. 大目）を気にせず大声で歌を歌える。>>在车里可以不在意别人的目光大声唱歌。
+Q その件に関して（a. 目下　b. 目先）検討しているところです。>>关于那件事，目前正在研究。
+Q 私が（a. 先方　b. 先頭）に立って改革を成しとげるつもりです。>>我打算带头完成改革。
+X2 （　）にはどれが入りますか。一つ選びなさい。
+Q 住宅ローンが我が家の（　　）を圧迫している。|家業|家計|先方|住人>>住房贷款压得我家开支很紧张。
+Q あの女優は実力より人気が（　　）しているね。|先行|先着|進行|進出>>那个女演员人气走在了实力前面啊。
+A Ⅰ：①b ②a ③b ④a ⑤a ⑥b　Ⅱ：⑦2 ⑧1

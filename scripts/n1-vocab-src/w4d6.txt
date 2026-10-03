@@ -1,0 +1,57 @@
+T 新入[しんい]り・本音[ほんね]・発足[ほっそく]|新人・真心话・成立|Newcomer, true intention, inauguration
+S words|国|国|国 (country)
+W 国民[こくみん]|国民の義務|citizen's obligation|国民的义务
+W 国家[こっか]|国家試験|a state examination|国家考试
+W 国会[こっかい]|国会を解散する|dissolve the Diet|解散国会
+W 国有[こくゆう]|国有財産|national property|国有财产
+W 母国[ぼこく]|母国に帰る|go back to your home country|回到祖国
+W 帰国[きこく]|帰国子女|returnee|归国子女
+W 国土[こくど]|国土計画|national land planning|国土计划
+S words|新|新|新 (new)
+W 新入[しんい]り|新入りの会員|new member|新参加的会员
+W 新入[しんにゅう]|新入生|new student|新生
+W →新入社員[しんにゅうしゃいん]||new employee|新职员
+W 新人[しんじん]|新人歌手|new singer|新歌手
+S words|土|土|土 (earth)
+W 土台[どだい]|家の土台|the foundation of a house|房子的地基
+W 土手[どて]|土手を歩く|walk on the river bank|沿着河堤走
+W 土砂[どしゃ]|土砂崩れが起きる|a mudslide occurred|发生了塌方
+S words|業|业|業 (business)
+W 業者[ぎょうしゃ]|旅行業者|travel agent|旅游行业
+W →輸出業者[ゆしゅつぎょうしゃ]||exporter|出口行业
+W 事業[じぎょう]|事業を始める|start a business|开始事业
+W →社会事業[しゃかいじぎょう]||social work|社会事业
+W 分業[ぶんぎょう]（する）|分業で仕事をする|divide the work|分工来工作
+S words|音|音|音 (sound)
+W 音色[ねいろ]|澄んだ音色|a clear tone|清晰悦耳的音色
+W 本音[ほんね]|本音と建前|private intentions and public statements|真心话和场面话
+S words|発|发|発 (start)
+W 発足[ほっそく]（はっそく）（する）|組織が発足する|found an organization|组织成立
+W 自発[じはつ]|自発的に勉強する|study on your own initiative|自发地学习
+S words|風|风|風 (wind)
+W 風習[ふうしゅう]|昔の風習を守る|carry on practicing old customs|保持以前的风俗
+W 風土[ふうど]|日本の風土|the Japanese climate|日本的风土
+S words|春|春|春 (spring)
+W 青春[せいしゅん]|青春時代|young days|青春时代
+W 思春期[ししゅんき]|思春期の少年少女|teenagers|青春期的少男少女
+S words|台|台|台 (stand)
+W 台無[だいな]し|雨で桜が台無しになる|the rain spoiled the cherry blossoms|因下雨，樱花被糟蹋了
+W 台本[だいほん]|台本を読む|read the script|读剧本
+S words|その他|其他|Others
+W 強行[きょうこう]（する）|増税を強行する|impose enforce a tax increase|强行增税
+W 正味[しょうみ]|正味8時間働く|work a full eight hours|实际工作8小时
+W 有力[ゆうりょく]（な）|有力な政党|a powerful political party|有实力的政党
+W 早急[そうきゅう]（さっきゅう）（な）|早急に解決する|be settled immediately|火速解决
+W 思考[しこう]|思考力が低下する|cannot think straight|思考能力低下
+W 口頭[こうとう]|口頭で報告する|make an oral report|口头报告
+X1 正しいほうに○を付けなさい。
+Q 次期社長は田中専務だろうという意見が（a. 正味　b. 有力）だ。>>认为下任社长会是田中专务的意见占优势。
+Q 川の（a. 土手　b. 土台）に沿って道路がある。>>沿着河堤有一条路。
+Q 酒の席でつい（a. 本音　b. 音色）を打ち明けてしまった。>>在酒席上不小心说出了真心话。
+Q 今年度の（a. 国有　b. 国家）予算は前年を上回った。>>本年度的国家预算超过了上一年。
+Q 新しいプロジェクトを（a. 発足　b. 自発）させた。>>启动了新项目。
+Q ツアーは2週間で10ヵ所も回るという（a. 強行　b. 早急）なスケジュールだった。>>旅游团两周要走10个地方，日程非常紧张。
+X2 （　）にはどれが入りますか。一つ選びなさい。
+Q その銀行は一時（　　）された。|所有化|国有化|母国化|国家化>>那家银行一度被收归国有。
+Q その家は崖が崩れて大量の（　　）に埋まった。|土砂|土台|土手|台本>>悬崖崩塌，那座房子被大量泥沙掩埋了。
+A Ⅰ：①b ②a ③a ④b ⑤a ⑥a　Ⅱ：⑦2 ⑧1
