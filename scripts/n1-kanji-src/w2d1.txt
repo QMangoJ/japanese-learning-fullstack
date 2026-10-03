@@ -1,0 +1,121 @@
+T 放・訪・房・防|ホウ・ホウ・ボウ・ボウ|放・访・房・防|
+I Q. ＿の読みは？　波浪注意報　→はろうちゅういほう。「波浪注意報」は天気予報の用語。
+S 同じ部分の音読みが2つ以上あるもの①|同一部件有两个以上音读的字①|Parts with two or more on-readings ①
+G 皮|ヒ・ハ
+K 皮|ヒ
+W 皮革製品|ひかくせいひん|leather goods|皮革制品
+W 脱皮|だっぴ|shedding|脱皮
+K 彼|ヒ
+W 彼岸|ひがん|the week of the vernal equinox|春分（秋分）
+K 被|ヒ
+W 被害|ひがい|damage|被害
+K 疲|ヒ
+W 疲労|ひろう|fatigue|疲劳
+K 披|ヒ
+W 披露|ひろう|an announcement|公布
+K 波|ハ
+W 波浪注意報|はろうちゅういほう|a high seas warning|波浪警报
+W 電波|でんぱ|electromagnetic wave|电波
+K 破|ハ
+W 破壊する|はかい|destroy|破坏
+W 突破|とっぱ|a break through|突破|＊「っ」や「ん」のあとは注意。
+G 方|ホウ・ボウ
+K 方|ホウ
+W 方針|ほうしん|a principle, policy|方针
+K 放|ホウ
+W 放置|ほうち|let alone|放置
+K 訪|ホウ
+W 訪問|ほうもん|a visit|访问
+K 倣|ホウ
+W 模倣|もほう|an imitation|模仿
+K 芳|ホウ
+W 芳香剤|ほうこうざい|an aromatic|芳香剂
+K 坊|ボウ
+W 寝坊|ねぼう|a late riser, sleepyhead|睡懒觉
+K 房|ボウ
+W 文房具|ぶんぼうぐ|stationery|文具
+K 防|ボウ
+W 防衛|ぼうえい|defence|防卫
+K 妨|ボウ
+W 妨害する|ぼうがい|block, disturb|妨碍
+K 紡|ボウ
+W 紡績|ぼうせき|spinning|纺织
+K 傍|ボウ
+W 傍聴|ぼうちょう|a hearing|旁听
+K 肪|ボウ
+W 脂肪|しぼう|fat|脂肪
+G 非|ヒ・ハイ
+K 非|ヒ
+W 非行|ひこう|misconduct|不正当行为
+W 非常識|ひじょうしき|lack of common sense|非常识
+K 悲|ヒ
+W 悲観|ひかん|pessimism|悲观
+W ◆楽観|らっかん|optimism|乐观
+K 俳|ハイ
+W 俳優|はいゆう|an actor/actress|演员
+K 排|ハイ
+W 排除|はいじょ|exclusion|排除
+K 輩|ハイ
+W 後輩|こうはい|a junior|后辈
+W 先輩|せんぱい|a senior|先辈、前辈
+G 監|カン・ラン
+K 監|カン
+W 監視|かんし|a watch|监视
+K 鑑|カン
+W 鑑賞|かんしょう|appreciate, enjoy|鉴赏
+K 艦|カン
+W 軍艦|ぐんかん|a warship|军舰
+K 覧|ラン
+W 展覧会|てんらんかい|an exhibition|展览会|＊もとは「監」が入った「覽」という字。
+K 濫|ラン
+W 氾濫|はんらん|flooding|泛滥
+G 兆|チョウ・トウ
+K 兆|チョウ
+W 1兆|いっちょう|a trillion|1万亿
+K 挑|チョウ
+W 挑戦|ちょうせん|a challenge|挑战
+K 眺|チョウ
+W 眺望|ちょうぼう|view|眺望
+K 逃|トウ
+W 逃亡|とうぼう|an escape|逃亡
+K 桃|トウ
+W 白桃|はくとう|a white peach|白桃
+G 君|クン・グン
+K 君|クン
+W 諸君|しょくん|gentlemen|诸君
+K 郡|グン
+W ○○郡|○○ぐん|○○ prefecture|○○郡
+K 群|グン
+W 群衆|ぐんしゅう|a crowd|群众
+G 各|カク・ラク
+K 各|カク
+W 各自|かくじ|respective / each person|各自
+K 客|カク
+W 旅客|りょかく|a traveller|旅客
+W 観客|•かんきゃく|a spectator, audience|观众|＊「客」は「キャク」と読むことが多い。
+K 格|カク
+W 格差|かくさ|a difference, a gap|差距
+K 落|ラク
+W 落下|らっか|a fall, drop|落下
+K 絡|ラク
+W 連絡|れんらく|contact / connection|联络
+K 酪|ラク
+W 酪農|らくのう|dairy farming|奶畜牧业
+X1 a、bの言葉の読みを書き、正しいほうを選びなさい。
+Q 防犯カメラで店内を（a. 監視　b. 鑑賞）する。>>用防盗摄像头监视店内。
+Q 関心のある事件の裁判を（a. 防衛　b. 傍聴）する。>>旁听自己关心的案件的审判。
+Q 少年少女が（a. 逃亡　b. 非行）に走らないよう学校と家庭で見守る。>>学校和家庭共同守护，防止少男少女走上歧途。
+Q 私の故郷は（a. 観客　b. 酪農）が盛んです。>>我的家乡奶畜牧业很兴盛。
+Q この辺は携帯電話の（a. 電波　b. 突破）が届きにくい。>>这一带手机信号很难收到。
+Q ここは駐輪禁止です。（a. 放置　b. 妨害）自転車は撤去します。>>此处禁止停放自行车。乱停放的自行车将被清除。
+X2 ＿＿の部分を漢字で書くとき、最もよいものを□から選びなさい。
+B a. 輩|b. 各|c. 排|d. 彼|e. 濫|f. 被|g. 絡|h. 格|i. 覧|j. 披|k. 俳|l. 監
+Q 7-1|結婚{ひろう}パーティー|＿露>>结婚喜宴
+Q 7-2|地震による{ひがい}|＿害>>地震造成的灾害
+Q 8-1|{せんぱい}を頼る。|先＿>>依靠前辈。
+Q 8-2|魅力のある{はいゆう}|＿優>>有魅力的演员
+Q 9-1|1票の{かくさ}が問題となる。|＿差>>一票之差（选票价值不均）成为问题。
+Q 9-2|{れんらくさき}が記載されている。|連＿先>>上面写有联系方式。
+Q 10-1|{てんらんかい}を見に行く。|展＿会>>去看展览会。
+Q 10-2|台風で川が{はんらん}する。|氾＿>>台风导致河水泛滥。
+A Ⅰ：①a ②b ③b ④b ⑤a ⑥a　Ⅱ：⑦1j 2f ⑧1a 2k ⑨1h 2g ⑩1i 2e
