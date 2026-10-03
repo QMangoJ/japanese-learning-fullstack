@@ -1613,7 +1613,7 @@ function DayKanji({ day, w, d, scrollTok }: { day: any; w: number; d: number; sc
 					) : null}
 				</CatalogCrumb>
 				<ExamKanji day={day} w={w} />
-				{day.column ? <KanjiColumn column={day.column} w={w} d={d} /> : null}
+				{day.column ? <KanjiColumn column={day.column} notes={day.notes} w={w} d={d} /> : null}
 			</>
 		);
 	}
@@ -1648,11 +1648,18 @@ function DayKanji({ day, w, d, scrollTok }: { day: any; w: number; d: number; sc
 					{day.dialog.en ? <div className="en">{day.dialog.en}</div> : null}
 				</div>
 			) : null}
-			{day.intro ? (
+			{day.intro || day.notes?.length ? (
 				<div className="card">
-					<div className="note jp">
-						<Rr o={day} f="intro" />
-					</div>
+					{day.intro ? (
+						<div className="note jp">
+							<Rr o={day} f="intro" />
+						</div>
+					) : null}
+					{(day.notes || []).map((nt: any, ni: number) => (
+						<div key={ni} className="meta jp" style={{ marginTop: 6 }}>
+							<Rr o={nt} f="text" />
+						</div>
+					))}
 				</div>
 			) : null}
 			<MemBar />
@@ -1778,7 +1785,7 @@ function DayKanji({ day, w, d, scrollTok }: { day: any; w: number; d: number; sc
 	);
 }
 
-function KanjiColumn({ column, w, d }: { column: any; w: number; d: number }) {
+function KanjiColumn({ column, notes, w, d }: { column: any; notes?: any[]; w: number; d: number }) {
 	return (
 		<>
 			<div className="sec-title jp">
@@ -1817,6 +1824,11 @@ function KanjiColumn({ column, w, d }: { column: any; w: number; d: number }) {
 								</div>
 							))}
 						</div>
+					</div>
+				))}
+				{(notes || []).map((nt: any, ni: number) => (
+					<div key={`n${ni}`} className="meta jp" style={{ marginTop: 8 }}>
+						<Rr o={nt} f="text" />
 					</div>
 				))}
 			</div>
