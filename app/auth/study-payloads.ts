@@ -52,7 +52,7 @@ export function isMistakesPayload(value: unknown) {
 	});
 }
 
-const DUE_KINDS = new Set(["grammar", "mistake", "listening"]);
+const DUE_KINDS = new Set(["grammar", "mistake", "listening", "topic"]);
 const DUE_DATE = /^\d{4}-\d{2}-\d{2}$/;
 
 export function isDueReviewPayload(value: unknown) {
