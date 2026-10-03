@@ -18,6 +18,42 @@
 				"汇率・外国证券",
 				"风险・策略"
 			]
+		},
+		{
+			"slug": "bank-atm",
+			"title_zh": "银行 ATM 取钱",
+			"title_ja": "ATMでお金を引き出す",
+			"count": 19,
+			"title_en": "Withdrawing cash at an ATM",
+			"subtopics": [
+				"画面上的按钮",
+				"插卡和确认",
+				"账户和金额"
+			]
+		},
+		{
+			"slug": "frontend",
+			"title_zh": "前端工程师",
+			"title_ja": "フロントエンドの仕事",
+			"count": 25,
+			"title_en": "Frontend engineering",
+			"subtopics": [
+				"需求和进度",
+				"写页面",
+				"问题和发布"
+			]
+		},
+		{
+			"slug": "clothes-shopping",
+			"title_zh": "逛街买衣服",
+			"title_ja": "服を買いに行く",
+			"count": 19,
+			"title_en": "Shopping for clothes",
+			"subtopics": [
+				"进店和试穿",
+				"合不合身",
+				"价格和结账"
+			]
 		}
 	]
 }

@@ -1,0 +1,239 @@
+{
+	"version": 1,
+	"slug": "clothes-shopping",
+	"title_zh": "逛街买衣服",
+	"title_ja": "服を買いに行く",
+	"title_en": "Shopping for clothes",
+	"description_zh": "进店、试穿、说合不合身、到收银台结账。穿上身用哪个动词，在「穿衣穿戴」里。",
+	"description_en": "Getting into the shop, trying something on, talking about the fit, and paying. The verbs for putting clothes on are in Wearing.",
+	"subtopics": [
+		{
+			"zh": "进店和试穿",
+			"ja": "店と試着",
+			"en": "In the shop"
+		},
+		{
+			"zh": "合不合身",
+			"ja": "サイズ感",
+			"en": "Fit"
+		},
+		{
+			"zh": "价格和结账",
+			"ja": "値段と会計",
+			"en": "Price and checkout"
+		}
+	],
+	"cards": [
+		{
+			"id": "shop-001",
+			"jp": "買い物",
+			"kana": "かいもの",
+			"zh": "买东西，购物",
+			"en": "shopping",
+			"subtopic": "进店和试穿",
+			"example_jp": "休みの日に服を買いに行きます。",
+			"example_zh": "休息日去买衣服。",
+			"example_en": "I go shopping for clothes on my day off."
+		},
+		{
+			"id": "shop-002",
+			"jp": "試着",
+			"kana": "しちゃく",
+			"zh": "试穿",
+			"en": "trying on",
+			"subtopic": "进店和试穿",
+			"example_jp": "このコートを試着してもいいですか。",
+			"example_zh": "这件大衣可以试穿吗？",
+			"example_en": "May I try this coat on?"
+		},
+		{
+			"id": "shop-003",
+			"jp": "試着室",
+			"kana": "しちゃくしつ",
+			"zh": "试衣间",
+			"en": "fitting room",
+			"subtopic": "进店和试穿",
+			"example_jp": "試着室はどこですか。",
+			"example_zh": "试衣间在哪里？",
+			"example_en": "Where is the fitting room?"
+		},
+		{
+			"id": "shop-004",
+			"jp": "サイズ",
+			"kana": "サイズ",
+			"zh": "尺码",
+			"en": "size",
+			"subtopic": "进店和试穿",
+			"example_jp": "Mサイズを試着したいです。",
+			"example_zh": "我想试 M 码。",
+			"example_en": "I'd like to try the medium."
+		},
+		{
+			"id": "shop-005",
+			"jp": "在庫",
+			"kana": "ざいこ",
+			"zh": "库存",
+			"en": "stock",
+			"subtopic": "进店和试穿",
+			"example_jp": "このサイズの在庫はありますか。",
+			"example_zh": "这个尺码还有货吗？",
+			"example_en": "Do you have this size in stock?"
+		},
+		{
+			"id": "shop-006",
+			"jp": "売り切れ",
+			"kana": "うりきれ",
+			"zh": "卖完了",
+			"en": "sold out",
+			"subtopic": "进店和试穿",
+			"example_jp": "欲しい色は売り切れでした。",
+			"example_zh": "想要的颜色卖完了。",
+			"example_en": "The color I wanted was sold out."
+		},
+		{
+			"id": "shop-007",
+			"jp": "丈",
+			"kana": "たけ",
+			"zh": "衣长，长度",
+			"en": "length",
+			"subtopic": "合不合身",
+			"example_jp": "丈が少し長いです。",
+			"example_zh": "衣长有一点长。",
+			"example_en": "The length is a bit long."
+		},
+		{
+			"id": "shop-008",
+			"jp": "袖",
+			"kana": "そで",
+			"zh": "袖子",
+			"en": "sleeve",
+			"subtopic": "合不合身",
+			"example_jp": "袖が長いので、一つ小さいサイズはありますか。",
+			"example_zh": "袖子长，有小一号的吗？",
+			"example_en": "The sleeves are long. Do you have one size smaller?"
+		},
+		{
+			"id": "shop-009",
+			"jp": "きつい",
+			"kana": "きつい",
+			"zh": "紧",
+			"en": "tight",
+			"subtopic": "合不合身",
+			"example_jp": "袖が少しきついです。",
+			"example_zh": "袖子有一点紧。",
+			"example_en": "The sleeves are a little tight."
+		},
+		{
+			"id": "shop-010",
+			"jp": "ゆるい",
+			"kana": "ゆるい",
+			"zh": "松",
+			"en": "loose",
+			"subtopic": "合不合身",
+			"example_jp": "このサイズは少しゆるいです。",
+			"example_zh": "这个尺码有一点松。",
+			"example_en": "This size is a little loose."
+		},
+		{
+			"id": "shop-011",
+			"jp": "似合う",
+			"kana": "にあう",
+			"zh": "适合，好看",
+			"en": "suit / look good on",
+			"subtopic": "合不合身",
+			"example_jp": "この色は私に似合いますか。",
+			"example_zh": "这个颜色适合我吗？",
+			"example_en": "Does this color look good on me?"
+		},
+		{
+			"id": "shop-012",
+			"jp": "柄",
+			"kana": "がら",
+			"zh": "花纹，图案",
+			"en": "pattern",
+			"subtopic": "合不合身",
+			"example_jp": "無地と柄、どちらにしますか。",
+			"example_zh": "素色和带图案的，你要哪件？",
+			"example_en": "Would you like the plain one or the patterned one?"
+		},
+		{
+			"id": "shop-013",
+			"jp": "定価",
+			"kana": "ていか",
+			"zh": "原价，定价",
+			"en": "list price",
+			"subtopic": "价格和结账",
+			"example_jp": "定価は税込みで表示されています。",
+			"example_zh": "标价是含税价。",
+			"example_en": "The list price is shown tax included."
+		},
+		{
+			"id": "shop-014",
+			"jp": "割引",
+			"kana": "わりびき",
+			"zh": "折扣",
+			"en": "discount",
+			"subtopic": "价格和结账",
+			"example_jp": "今日は二割引きです。",
+			"example_zh": "今天是八折。",
+			"example_en": "It's 20 percent off today.",
+			"note": "二割引き是减掉两成，也就是八折。"
+		},
+		{
+			"id": "shop-015",
+			"jp": "税込み",
+			"kana": "ぜいこみ",
+			"zh": "含税",
+			"en": "tax included",
+			"subtopic": "价格和结账",
+			"example_jp": "税込みで五千円です。",
+			"example_zh": "含税五千日元。",
+			"example_en": "It's 5,000 yen including tax.",
+			"note": "价签上的「税込」就是含税。「税抜」是税前。"
+		},
+		{
+			"id": "shop-016",
+			"jp": "会計",
+			"kana": "かいけい",
+			"zh": "结账",
+			"en": "checkout / the bill",
+			"subtopic": "价格和结账",
+			"example_jp": "お会計お願いします。",
+			"example_zh": "请结账。",
+			"example_en": "Could I pay, please?"
+		},
+		{
+			"id": "shop-017",
+			"jp": "袋",
+			"kana": "ふくろ",
+			"zh": "袋子",
+			"en": "bag",
+			"subtopic": "价格和结账",
+			"example_jp": "袋はいりません。",
+			"example_zh": "不用袋子。",
+			"example_en": "I don't need a bag."
+		},
+		{
+			"id": "shop-018",
+			"jp": "返品",
+			"kana": "へんぴん",
+			"zh": "退货",
+			"en": "return",
+			"subtopic": "价格和结账",
+			"example_jp": "このシャツを返品したいです。",
+			"example_zh": "我想退这件衬衫。",
+			"example_en": "I'd like to return this shirt."
+		},
+		{
+			"id": "shop-019",
+			"jp": "交換",
+			"kana": "こうかん",
+			"zh": "换货",
+			"en": "exchange",
+			"subtopic": "价格和结账",
+			"example_jp": "サイズが合わないので、交換できますか。",
+			"example_zh": "尺码不合适，可以换吗？",
+			"example_en": "The size doesn't fit. Can I exchange it?"
+		}
+	]
+}
