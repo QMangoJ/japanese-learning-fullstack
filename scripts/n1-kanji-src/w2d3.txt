@@ -1,0 +1,108 @@
+T 凍・棟・練・陳|トウ・トウ・レン・チン|冻・栋・练・陈|
+I Q. ＿の読みは？　解釈　→かいしゃく
+S 同じ部分の音読みが2つ以上あるもの③|同一部件有两个以上音读的字③|Parts with two or more on-readings ③
+G 尺|シャク・ヤク・タク
+K 尺|シャク
+W 縮尺|しゅくしゃく|a reduced scale|缩尺
+W 尺度|しゃくど|a measure, a standard|尺度
+K 釈|シャク
+W 解釈|かいしゃく|an interpretation|解释
+W 釈明|しゃくめい|a vindication, an explanation|阐明
+K 訳|ヤク
+W 翻訳|ほんやく|a translation|笔译
+W 通訳|つうやく|interpretation|口译
+K 択|タク
+W 選択|せんたく|a choice|选择
+W 採択|さいたく|adoption|采纳
+K 沢|タク
+W 光沢|こうたく|gloss, sheen|光泽
+W 贅沢|ぜいたく|a luxury, an extravagance|奢侈
+G 東|トウ・レン・チン
+K 凍|トウ
+W 凍結|とうけつ|freeze|冻结
+W 解凍|かいとう|thaw|解冻
+K 棟|トウ
+W 病棟|びょうとう|a ward|住院楼
+W A棟・B棟|Aとう・Bとう|building A, building B|A栋、B栋
+K 練|レン
+W 訓練|くんれん|a training / drill|训练
+W 試練|しれん|a trial|考验
+K 陳|チン
+W 陳列|ちんれつ|a display|陈列
+W 陳謝|ちんしゃ|an apology|道歉
+G 寺|ジ・タイ・トク
+K 寺|ジ
+W 寺院|じいん|a temple, abbey|寺院
+W ○○寺|○○じ|○○ Temple|○○寺
+K 時|ジ
+W 時差|じさ|a time difference|时差
+W 臨時|りんじ|temporary|临时
+K 持|ジ
+W 維持|いじ|maintenance|保养、维持
+W 支持|しじ|support|支持
+K 詩|シ
+W 詩人|しじん|a poet|诗人
+W 詩集|ししゅう|a collection of poems|诗集
+K 待|タイ
+W 待遇|たいぐう|treatment, reception|待遇
+W 待望|たいぼう|wait eagerly for ...|期待
+K 特|トク
+W 特技|とくぎ|a special ability|特技
+W 特許|とっきょ|a patent|专利
+K 侍|－
+W 侍|さむらい|a samurai|武士|＊主に訓読みをする
+G 区|ク・スウ・オウ
+K 区|ク
+W 区画|くかく|a division, a section|区划
+W 区間|くかん|the section, the segment|区间
+K 駆|ク
+W 駆使|くし|make use of ~|运用（自如）
+W 駆除|くじょ|get rid of ...|驱除
+K 枢|スウ
+W 中枢|ちゅうすう|the centre, the nucleus|中枢
+K 欧|オウ
+W 欧米|おうべい|Europe and America, the West|欧美
+W 欧州|おうしゅう|Europe|欧洲
+K 殴|オウ
+W 殴打|おうだ|beat|殴打
+G 失|シツ・チツ・テツ
+K 失|シツ
+W 損失|そんしつ|a loss|损失
+W 失脚|しっきゃく|a downfall|垮台
+K 秩|チツ
+W 秩序|ちつじょ|order|秩序
+K 鉄|テツ
+W 製鉄|せいてつ|steel manufacturing|炼铁
+W 鉄棒|てつぼう|a metal rod|铁棍
+K 迭|テツ
+W 更迭|こうてつ|a change, a reshuffle|更迭
+G 尃|ハク・バク・ボ
+K 博|ハク
+W 博物館|はくぶつかん|a museum|博物馆
+W 博覧会|はくらんかい|an exposition|博览会
+K 薄|ハク
+W 薄弱な|はくじゃく|weak, feeble|薄弱
+W 希薄な|きはく|thin, weak|稀薄
+K 縛|バク
+W 束縛|そくばく|a restraint|束缚
+K 簿|ボ
+W 名簿|めいぼ|a list of names|名册
+W 家計簿|かけいぼ|a household account book|家庭账簿
+X1 a、bの言葉の読みを書き、正しいほうを選びなさい。
+Q 二十歳のとき、人生の（a. 選択　b. 採択）を迫られた。>>二十岁时，被迫做出人生的选择。
+Q 現在の能力を（a. 支持　b. 維持）するよう努力してください。>>请努力保持现在的能力。
+Q 物事を（a. 解釈　b. 秩序）立てて考える。>>有条理地思考事情。
+Q 自由を（a. 束縛　b. 損失）されたくない。>>不想被束缚自由。
+Q 道路が（a. 凍結　b. 更迭）しているので運転に注意してください。>>道路结冰了，开车请小心。
+Q 日本とモスクワの（a. 臨時　b. 時差）は6時間です。>>日本和莫斯科的时差是6小时。
+X2 ＿＿の部分を漢字で書くとき、最もよいものを□から選びなさい。
+B a. 薄|b. 練|c. 駆|d. 詩|e. 簿|f. 棟|g. 特|h. 区|i. 博|j. 陳|k. 寺|l. 欧
+Q 7-1|{くかく}整理された土地|＿画>>经过区划整理的土地
+Q 7-2|ねずみを{くじょ}する。|＿除>>驱除老鼠。
+Q 8-1|商品を{ちんれつ}する。|＿列>>陈列商品。
+Q 8-2|職業{くんれん}所|訓＿>>职业训练所
+Q 9-1|発明品の{とっきょ}をとる。|＿許>>为发明取得专利。
+Q 9-2|{じいん}を見学する。|＿院>>参观寺院。
+Q 10-1|{はくぶつかん}めぐりをする。|＿物館>>逛博物馆。
+Q 10-2|{かけいぼ}をつける。|家計＿>>记家庭账本。
+A Ⅰ：①a ②b ③a ④a ⑤a ⑥b　Ⅱ：⑦1h 2c ⑧1j 2b ⑨1g 2k ⑩1i 2e

@@ -1,0 +1,143 @@
+T 生・性・姓|セイ／ショウ・セイ／ショウ・セイ|生・性・姓|
+I Q. ＿の読みは？　登山　→とざん。「豆」の部分をもつ漢字には「トウ・ト・ズ」という3種類の音がある。熟語で覚えよう！
+S 音が複数あるもの　△＝決まった熟語だけ覚えればいい読み|有多个音读的字　△＝只需记住固定词语的读音|Kanji with several on-readings (△ = only in set words)
+G 豆|
+K 豆|トウ・ズ△
+W 豆腐|とうふ|bean curd, tofu|豆腐
+W 大豆|だいず|soybean|大豆
+K 頭|トウ・ズ△
+W 頭部|とうぶ|the head|头部
+W 頭痛|ずつう|a headache|头痛
+K 登|トウ・ト△
+W 登録|とうろく|registration|登记
+W 登山|とざん|mountain climbing|爬山
+K 闘|トウ
+W 闘争|とうそう|a fight|斗争
+G 生|
+K 生|セイ・ショウ△
+W 生存|せいぞん|survival|生存
+W 一生|いっしょう|all one's life|一生
+K 性|セイ・ショウ△
+W 性格|せいかく|character, personality|性格
+W 根性|こんじょう|spirit, guts|精神、毅力
+K 姓|セイ
+W 姓名|せいめい|a full name|姓名
+K 牲|セイ
+W 犠牲|ぎせい|a sacrifice|牺牲
+G 莫|
+K 幕|バク△・マク
+W 幕府|ばくふ|the shogunate|幕府
+W 幕|まく|a curtain|幕
+K 漠|バク
+W 漠然|ばくぜん|vaguely|漠然
+K 膜|マク
+W 角膜|かくまく|the cornea|角膜
+K 模|ボ△・モ
+W 規模|きぼ|scale|规模
+W 模範|もはん|a model|模范
+G 正|
+K 正|セイ・ショウ
+W 是正|ぜせい|a correction|订正
+W 正直な|しょうじき|honesty|诚实
+K 政|セイ
+W 政策|せいさく|a policy|政策
+K 征|セイ
+W 征服|せいふく|conquer|征服
+K 証|ショウ
+W 証明書|しょうめいしょ|a certificate|证明书
+K 症|ショウ
+W 症状|しょうじょう|a condition, symptom|症状
+G 必|
+K 必|ヒツ
+W 必需品|ひつじゅひん|necessity|必需品
+K 泌|ヒツ・ヒ△
+W 分泌|ぶんぴつ|a secretion|分泌
+W 泌尿器科|ひにょうきか|urology|泌尿科
+K 秘|ヒ
+W 秘密|ひみつ|a secret|秘密
+W 神秘|しんぴ|a mystery|神秘
+G 成|
+K 成|セイ・ジョウ
+W 成熟|せいじゅく|ripeness, maturity|成熟
+W 成就|じょうじゅ|accomplish, attain|成就
+K 盛|セイ・ジョウ
+W 盛大な|せいだい|grand|盛大的
+W 繁盛|はんじょう|prosperity|兴隆
+K 誠|セイ
+W 誠実な|せいじつ|sincerity, integrity|诚实的
+G 丁|
+K 丁|チョウ・テイ
+W ～丁目|ちょうめ|... chome|～巷（街区）
+W 丁寧|ていねい|polite, careful|礼貌、郑重
+K 町|チョウ
+W 町長|ちょうちょう|a town mayor|镇长
+K 庁|チョウ
+W 省庁|しょうちょう|ministries and government offices|中央政府机关
+K 頂|チョウ
+W 頂上|ちょうじょう|the summit / top|顶峰
+K 亭|テイ
+W 亭主|ていしゅ|an owner, husband|丈夫
+K 停|テイ
+W 停留所|ていりゅうじょ|a (bus) stop/station|公交车站
+K 訂|テイ
+W 訂正|ていせい|a correction|订正
+G 余|
+K 余|ヨ
+W 余暇|よか|leisure time|余暇
+K 除|ジョ・ジ△
+W 削除|さくじょ|a deletion|删除
+W 掃除|そうじ|cleaning|打扫
+K 徐|ジョ
+W 徐行する|じょこう|go slowly|慢行
+K 叙|ジョ
+W 叙述|じょじゅつ|a narration|叙述
+G 参|
+K 参|サン
+W 参加|さんか|participation|参加
+K 惨|サン・ザン△
+W 悲惨な|ひさん|miserable, cruel|悲惨的
+W 惨敗|ざんぱい|a humiliating defeat|惨败
+G 暴|
+K 暴|ボウ・バク△
+W 暴風|ぼうふう|a windstorm|暴风
+W 暴露|ばくろ|a disclosure|暴露
+K 爆|バク
+W 爆弾|ばくだん|a bomb|炸弹
+G 直|
+K 直|チョク・ジキ△
+W 直面|ちょくめん|face|直面
+W 正直な|しょうじき|honesty|诚实
+K 植|ショク
+W 植物|しょくぶつ|a plant|植物
+K 殖|ショク
+W 繁殖|はんしょく|breed, propagate|繁殖
+G 路|
+K 路|ロ
+W 進路|しんろ|a course, a route|前进的道路
+K 露|ロ・ロウ△
+W 暴露|ばくろ|a disclosure|暴露
+W 披露|ひろう|announcement|披露
+G 凡|
+K 凡|ハン△・ボン
+W 凡例|はんれい|explanatory notes, a legend|凡例
+W 平凡|へいぼん|ordinary, common|平凡
+K 帆|ハン
+W 帆船|はんせん|a sailboat|帆船
+X1 a、bの言葉の読みを書き、正しいほうを選びなさい。
+Q 書類のミスを（a. 訂正　b. 是正）する。>>订正文件中的错误。
+Q 困難に（a. 直面　b. 進路）してもあきらめないで進む。>>即使面临困难也不放弃，继续前进。
+Q 商売が（a. 繁盛　b. 盛大）する。>>生意兴隆。
+Q 今回の地震で約300人が（a. 悲惨　b. 犠牲）になった。>>这次地震中约300人遇难。
+Q （a. 正直　b. 平凡）な毎日が続く。>>平凡的日子一天天继续。
+Q 恵まれない子どもたちのために（a. 一生　b. 生存）をささげる。>>为了不幸的孩子们献出一生。
+X2 ＿＿の部分を漢字で書くとき、最もよいものを□から選びなさい。
+B a. 頭|b. 叙|c. 漠|d. 除|e. 登|f. 模|g. 秘|h. 徐|i. 必|j. 豆|k. 膜|l. 泌
+Q 7-1|{ひみつ}を暴露する。|＿密>>揭露秘密。
+Q 7-2|生活{ひつじゅひん}|＿需品>>生活必需品
+Q 8-1|ファイルを{さくじょ}する。|削＿>>删除文件。
+Q 8-2|{じょこう}運転をする。|＿行>>慢速驾驶。
+Q 9-1|{だいきぼ}なストライキ|大規＿>>大规模的罢工
+Q 9-2|{ばくぜん}とした不安|＿然>>模糊的不安
+Q 10-1|{ずつう}がする。|＿痛>>头痛。
+Q 10-2|外国人{とうろく}|＿録>>外国人登记
+A Ⅰ：①a ②a ③a ④b ⑤b ⑥a　Ⅱ：⑦1g 2i ⑧1d 2h ⑨1f 2c ⑩1a 2e
