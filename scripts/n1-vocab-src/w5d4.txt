@@ -1,0 +1,54 @@
+T 試[ため]す・営[いとな]む・損[そこ]なう|尝试・经营・损害|Try, run, damage
+S words|動詞①（グループⅠ）○す|动词①（第一类）○す|Verbs ① (Group I): ending in す
+W 志[こころざ]す|学者を志す|aspire to be a scholar|立志当学者
+W 試[ため]す|新商品を試す|try out a new product|试用新商品
+W 犯[おか]す|罪を犯す|commit a crime|犯罪
+W 乱[みだ]す|秩序を乱す|not follow convention|扰乱秩序
+W →（～が）乱[みだ]れる||
+W 満[み]たす|容器に水を満たす|fill up a container with water|容器里装满水
+W →要求[ようきゅう]を満[み]たす||fulfill someone's request|满足要求
+W 果[は]たす|目的を果たす|achieve the purpose|实现目的
+W 抜[ぬ]かす|1行抜かして読む|skip a line while reading|略过1行阅读
+W 負[ま]かす|敵を負かす|defeat the opponent/enemy|打败敌人
+W 悩[なや]ます|騒音に悩まされる|be disturbed by a noise|苦恼于噪音
+W 慣[な]らす|耳を慣らす|train your ear|（多听）使耳朵习惯
+W 荒[あ]らす|イノシシが作物を荒らす|wild boars damage the crops|野猪把农作物糟蹋了
+W 費[つい]やす|エネルギーを費やす|spend energy|消耗能量
+S words|動詞①（グループⅠ）○る|动词①（第一类）○る|Verbs ① (Group I): ending in る
+W 練[ね]る|計画を練る|work on a plan|推敲计划
+W 鈍[にぶ]る|勘が鈍る|lose one's touch|感觉迟钝
+W 勝[まさ]る|これに勝る喜びはない|nothing is more joyful than this|没有比这更高兴的了
+W 操[あやつ]る|機械を上手に操る|handle the machine well|熟练操作机械
+W 群[むら]がる|アリが砂糖に群がる|ants gather to feed on sugar|砂糖那儿聚了一堆蚂蚁
+W 備[そな]わる|才能が備わっている|have a talent for|拥有才能
+W 改[あらた]まる|規則が改まる|regulations are updated|规则革新
+W →改[あらた]まった場所[ばしょ]||a formal place|正式场所
+S words|動詞①（グループⅠ）○む|动词①（第一类）○む|Verbs ① (Group I): ending in む
+W 病[や]む|肺を病む|suffer from a lung disease|肺部患病
+W →気[き]に病[や]む||worry about|介意
+W 富[と]む|天然資源に富む|have rich natural resources|富有天然资源
+W 恵[めぐ]む|食べ物を恵む|give food|施舍食物
+W →恵[めぐ]み（N）||blessing|恩惠
+W 営[いとな]む|日常生活を営む|live in the usual way|操持日常生活
+W →旅館[りょかん]を営[いとな]む||run a Japanese inn|经营旅馆
+W 危[あや]ぶむ|会議の開催が危ぶまれる|anxious about the opening of the conference|担心会议能否召开
+S words|動詞①（グループⅠ）○う|动词①（第一类）○う|Verbs ① (Group I): ending in う
+W 負[お]う|責任を負う|be responsible|承担责任
+W →やけどを負[お]う||get burnt|被烧伤了
+W 沿[そ]う|川に沿って進む|move along the river|沿着河流向前走
+W 損[そこ]なう|健康を損なう|ruin one's health|有损健康
+W 似通[にかよ]う|似通った考え|similar way of thinking|相似的想法
+W 恥[は]じらう|下を向いて恥じらう|lower one's eyes due to shyness|低着头害羞
+S words|動詞①（グループⅠ）○つ|动词①（第一类）○つ|Verbs ① (Group I): ending in つ
+W 保[たも]つ|部屋を清潔に保つ|keep a room very clean|保持房间清洁
+X1 正しいほうに○を付けなさい。
+Q 彼女は歌手を（a. 志して　b. 試して）上京した。>>她立志当歌手，来到了东京。
+Q 年を取っても、彼の腕は（a. 鈍って　b. 乱して）いない。>>即使上了年纪，他的手艺也没有退步。
+Q 健康を（a. 損なわない　b. 病まない）ように注意してください。>>请注意不要损害健康。
+Q この失敗については、彼が全責任を（a. 保つ　b. 負う）そうだ。>>据说这次的失败由他承担全部责任。
+Q 我が社の製品はすべて安全基準を（a. 果たして　b. 満たして）います。>>我公司的产品全部符合安全标准。
+Q この子には芸術の才能が（a. 備わっている　b. 恵んでいる）。>>这孩子有艺术才能。
+X2 （　）にはどれが入りますか。一つ選びなさい。
+Q リサイクルして物を作るのには、実はかなりのエネルギーを（　　）らしい。|慣らす|費やす|荒らす|操る>>据说回收再利用制造东西，其实要消耗相当多的能源。
+Q 我が国もかつては天然資源に（　　）。|勝っていた|営んでいた|富んでいた|満たしていた>>我国过去也曾富有天然资源。
+A Ⅰ：①a ②a ③a ④b ⑤b ⑥a　Ⅱ：⑦2 ⑧3

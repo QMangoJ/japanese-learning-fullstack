@@ -1,0 +1,61 @@
+T 砂利[じゃり]・間柄[あいだがら]・説得[せっとく]|砂石・关系・说服|Gravel, relationship, persuasion
+S words|利|利|利 (profit)
+W 利子[りし]／利息[りそく]|銀行の利子|bank interest|银行利息
+W 利点[りてん]|A案には多くの利点がある。|Plan A has a lot of merits.|A方案有许多优点。
+W 砂利[じゃり]|砂利道|a gravel road|砂石路
+W 左利[ひだりき]き|左利き|left-handed|左撇子
+W ⇔右利[みぎき]き||
+S words|有|有|有 (have)
+W 有望[ゆうぼう]（な）|有望な研究者|a promising researcher|前途有望的研究者
+W 有益[ゆうえき]（な）|有益な本|a useful book|有益的书
+W ⇔無益[むえき]（な）||
+W 有益[ゆうえき]（な）|休暇を有益に使う|make good use of a holiday|有效利用休假
+W 有力[ゆうりょく]（な）|地域の有力者|an influential person in the area|地域的有权势者
+W 私有[しゆう]|私有財産|private property|私有财产
+W →私有地[しゆうち]||a private lot|私有土地
+W 有[ゆう]する|権利を有する|hold the rights to ...|拥有权力
+S words|現|现|現 (present)
+W 現行[げんこう]|現行犯|catch a person in the act of ...|现行犯
+W 現場[げんば]|工事現場|a construction site|施工现场
+W 現地[げんち]|現地に向かう|go to the actual location|去现场
+W 出現[しゅつげん]（する）|UFOが出現する|UFO appears|出现UFO
+W 再現[さいげん]（する）|事故の状況を再現する|reenact the accident|再现事故情况
+S words|柄|柄|柄 (pattern, character)
+W 間柄[あいだがら]|親密な間柄|very close relationship|亲密的关系
+W 事柄[ことがら]|重要な事柄|a very important matter|重要的事情
+W 人柄[ひとがら]|立派な人柄|a wonderful person|高尚的人品
+S words|訳|译|訳 (translate, reason)
+W 直訳[ちょくやく]（する）|文章を直訳する|do a literal translation of the sentence|直译文章
+W 内訳[うちわけ]|請求書の内訳|an itemized bill|账单明细
+W 言[い]い訳[わけ]（する）|遅刻の言い訳をする|give an excuse for the delay|辩解迟到的理由
+S words|説|说|説 (explain)
+W 説得[せっとく]（する）|親を説得する|persuade parents|说服父母
+W 伝説[でんせつ]|伝説上の人物|a legendary figure|传说中的人物
+W 説[と]く|教えを説く|preach|说教
+S words|仕|仕|仕 (do, serve)
+W 仕上[しあ]げる|作品を仕上げる|finish a piece of art|完成作品
+W →仕上[しあ]げ（N）||finish|完成
+W 仕入[しい]れる|商品を仕入れる|stock goods|进货
+W →仕入[しい]れ（N）||stock|采购
+W 仕切[しき]る|部屋を仕切る|subdivide a room|把房间隔开
+W 仕切[しき]る|宴会を仕切る|control a party|负责安排宴会
+W 仕組[しく]み|世の中の仕組み|social system|社会的构造
+W 仕[つか]える|神に仕える|serve God|服侍神灵
+S words|差|差|差 (difference)
+W 日差[ひざ]し|日差しが強い|the sun is strong|日照强
+W 時差[じさ]|時差がある|there's a time difference|有时差
+W →時差[じさ]ぼけ||jetlag|时差没倒过来
+W 点差[てんさ]|点差が開く|the lead is widening|拉开了分数差距
+W →5点差[てんさ]||a 5-point difference in the score|5分的差距
+W 指差[ゆびさ]す|家のほうを指差す|point in the direction of the house|用手指着家的方向
+X1 正しいほうに○を付けなさい。
+Q 会議で新しい製品の必要性を（a. つかえた　b. といた）。>>在会议上阐述了新产品的必要性。
+Q これは本物を忠実に（a. 出現　b. 再現）した模型です。>>这是忠实再现真品的模型。
+Q 親に（a. 言い訳　b. 説得）されて進学をあきらめた。>>被父母说服，放弃了升学。
+Q 魚市場で新鮮な魚介類を（a. 仕入れた　b. 仕上げた）。>>在鱼市场采购了新鲜的海鲜。
+Q 彼はまじめで（a. 間柄　b. 人柄）の良い人物です。>>他是个认真、人品好的人。
+Q 定期預金に少しだけ（a. 利子　b. 有益）がついた。>>定期存款有了一点点利息。
+X2 （　）にはどれが入りますか。一つ選びなさい。
+Q 彼は失敗するといつも見苦しい（　　）ばかりする。|説得|言い訳|内訳|事柄>>他一失败就总是找些难看的借口。
+Q 最近は、情報という文字を（　　）学部が多い。|有する|仕切る|直訳する|指差す>>最近，名称中带有"信息"二字的学院很多。
+A Ⅰ：①b ②b ③b ④a ⑤b ⑥a　Ⅱ：⑦2 ⑧1

@@ -1,0 +1,56 @@
+T 身近[みぢか]・日取[ひど]り・前置[まえお]き|身边・日期・开场白|Familiar, date, introduction
+S words|当|当|当 (this, hit)
+W 当日[とうじつ]|試験の当日|the very day of the exam|考试当天
+W 当番[とうばん]|掃除当番|be in charge of cleaning|卫生值日
+W 当人[とうにん]|当人に確認する|check with the very person|向本人确认
+W 当選[とうせん]（する）|選挙で当選する|be elected in a public election|选举中当选
+W ⇔落選[らくせん]（する）||
+W 見当[けんとう]|見当をつける|guess|预计
+W 正当[せいとう]（な）|正当な理由|a proper reason|正当理由
+W →正当化[せいとうか]||justify|正当化
+S words|身|身|身 (body, self)
+W 身[み]の上[うえ]|身の上相談|advice column|商量个人问题
+W 身[み]の回[まわ]り|身の回りのもの|one's personal belongings|日常用品
+W 身軽[みがる]（な）|身軽な格好|casually dressed|轻便的打扮
+W 身動[みうご]き|身動きが取れない|can't move|动弹不得
+W 身内[みうち]|身内だけで祝う|have a family celebration|只和亲人一起庆祝
+W 身近[みぢか]（な）|身近な出来事|common event|身边的事情
+W 身元[みもと]|身元保証人|guarantor|身份保证人
+W →身元不明[みもとふめい]||unidentified person|来历不明
+W 身分[みぶん]|身分が高い人|person with a high social rank|身份高的人
+W 生身[なまみ]|生身の体|a living being|活着的肉体
+W 単身[たんしん]|単身赴任|be transferred to a new post and live apart from one's family|单身赴任
+S words|取|取|取 (take)
+W 取[と]り分[ぶん]|自分の取り分を主張する|claim one's share|主张自己应得的份额
+W 下取[したど]り（する）|車を下取りしてもらう|trade one's old car in|用汽车以旧换新
+W 手取[てど]り|給料の手取り額|take-home pay|工资净收入
+W 日取[ひど]り|結婚式の日取りを決める|set a date for a wedding|决定婚礼日期
+W 取材[しゅざい]（する）|事件を取材する|gather information for an article at the scene|采访事件
+S words|根|根|根 (root)
+W 根気[こんき]|根気がいる仕事|job which requires perseverance|需要耐心的工作
+W 根本的[こんぽんてき]（な）|根本的な誤り|a fundamental mistake|根本性错误
+W 根回[ねまわ]し（する）|関係者に根回しする|quietly solicit support for one's plan|提前和相关人员沟通
+S words|向|向|向 (face)
+W 出向[でむ]く|現場に出向く|go to the site|前去现场
+W 前向[まえむ]き（な）|前向きに考える|think positively|积极地考虑
+W 表向[おもてむ]き|表向きの理由|an official reason|表面理由
+W 向上[こうじょう]（する）|学力が向上する|make progress at school|学力提高
+W ⇔低下[ていか]（する）||
+S words|前|前|前 (before)
+W 前置[まえお]き（する）|前置きが長い|the introductory note is long|开场白冗长
+W 前借[まえが]り（する）|給料を前借りする|get an advance against one's next month's salary|预支工资
+W ⇔前貸[まえが]し（する）||
+W 前払[まえばら]い（する）|料金を前払いする|pay a fee in advance|预付工资
+W ⇔後払[あとばら]い（する）||
+W 前科[ぜんか]|前科のある人|person with a criminal record|有前科的人
+X1 正しいほうに○を付けなさい。
+Q 彼は、（a. 前借り　b. 前科）があるので、就職は難しいだろう。>>他有前科，找工作恐怕很难吧。
+Q （a. 正当　b. 根本的）な理由がなく、刃物を持ち歩くことは禁止されている。>>没有正当理由携带刀具是被禁止的。
+Q 公園で（a. 身元　b. 生身）のわからない遺体が見つかった。>>在公园里发现了一具身份不明的遗体。
+Q 大地震が来るというので、とりあえず（a. 身の回り　b. 身の上）のものだけを持って避難所に行った。>>听说大地震要来了，先只带着随身物品去了避难所。
+Q 彼は（a. 表向き　b. 前向き）は普通のサラリーマンだが、実は刑事です。>>他表面上是普通的上班族，其实是刑警。
+Q 古い車を（a. 手取り　b. 下取り）に出して新車を買いました。>>把旧车折价卖掉，买了新车。
+X2 （　）にはどれが入りますか。一つ選びなさい。
+Q 新人タレントを売り出すためには、いろいろな（　　）が必要だ。|前置き|身動き|見当|根回し>>要推出新艺人，需要做各种事前疏通。
+Q あなたの給料は、税金を差し引いて（　　）でこの金額になります。|日取り|手取り|下取り|前払い>>你的工资扣掉税金后，到手就是这个金额。
+A Ⅰ：①b ②a ③a ④a ⑤a ⑥b　Ⅱ：⑦4 ⑧2

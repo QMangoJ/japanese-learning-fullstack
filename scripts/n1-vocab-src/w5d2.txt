@@ -1,0 +1,57 @@
+T 和[なご]む・指図[さしず]・公[おおやけ]|缓和・指示・公开|Soften, instruct, public
+S words|和|和|和 (harmony, Japan)
+W 和風[わふう]|和風建築|Japanese architecture|日本式建筑
+W ⇔洋風[ようふう]||Western|洋式
+W 和式[わしき]|和式トイレ|Japanese style toilet|日式厕所
+W ⇔洋式[ようしき]||western style|洋式
+W 温和[おんわ]（な）|温和な気候|a mild climate|温和的气候
+W →温和[おんわ]な人[ひと]||a gentle person|温和的人
+W 調和[ちょうわ]（する）|よく調和する|be well matched|非常协调
+W 和[なご]む|心が和む|heartwarming|心情平和
+S words|図|图|図 (diagram)
+W 図案[ずあん]|図案を描く|draw a design|描绘图案
+W 指図[さしず]（する）|あれこれ指図する|give various directions|作出各种指示
+S words|実|实|実 (truth, fruit)
+W 実態[じったい]|実態を調査する|investigate an actual situation|调查实情
+W 実業家[じつぎょうか]||a business owner|实业家
+W 誠実[せいじつ]（な）|誠実な人|a sincere person|诚实的人
+W 真実[しんじつ]|真実を語る|reveal the truth|说实情
+W 口実[こうじつ]|下手な口実|a poor excuse|拙劣的借口
+W 実入[みい]り|実入りのいい商売|a profitable business|收入好的买卖
+S words|公|公|公 (public)
+W 公正[こうせい]（な）|公正な取り引き|fair deals|公正的交易
+W 公平[こうへい]（な）|公平に分ける|share ... evenly|公平分配
+W 公立[こうりつ]|公立の学校|a public school|公立学校
+W ⇔私立[しりつ]||private|私立
+W 公用[こうよう]|公用語|an official language|官方语言
+W →公用車[こうようしゃ]||an official car|公车
+W 公私[こうし]|公私混同する|mix private and official matters|公私混淆
+W 主人公[しゅじんこう]|物語の主人公|the main character in the story|故事的主人公
+W 公[おおやけ]|事件が公になる|make the crime public|事件公开
+W →公[おおやけ]の発表[はっぴょう]||an official announcement|官方发表
+S words|連|连|連 (connect)
+W 連休[れんきゅう]|3日間の連休|a three day holiday|3天连休
+W 連帯[れんたい]|連帯責任|collective responsibility|连带责任
+W 連[つら]なる|渋滞で車が連なっている|cars lined up because of a traffic jam|因堵车汽车连成一串
+W 連[つら]ねる|リストに名前を連ねる|be on a name list|在名单上排列名字
+S words|告|告|告 (tell)
+W 告知[こくち]（する）|ガンの告知をする|notify a patient that he/she has cancer|告知患了癌症
+W 告白[こくはく]（する）|罪を告白する|confess a sin|坦白罪行
+W 予告[よこく]（する）|映画の予告|a movie trailer|电影预告
+W 告[つ]げる|名前を告げる|provide one's name|告诉姓名
+S words|記|记|記 (record)
+W 手記[しゅき]|体験を手記にまとめる|write about one's experiences in a book|把体验总结在手记上
+W 伝記[でんき]|伝記を読む|read a biography|阅读传记
+W 記[しる]す|名前を記す|write one's name|写下姓名
+W →心[こころ]に記[しる]す||bear it in mind|记在心里
+X1 正しいほうに○を付けなさい。
+Q 小さい輪がいくつも（a. 連ねた　b. 連なった）ネックレス。>>由许多小环连在一起的项链。
+Q 犯人の（a. 予告　b. 口実）どおり、犯行が行われてしまった。>>和犯人预告的一样，罪行发生了。
+Q もらった報酬を全員で（a. 公平に　b. 連帯で）分けた。>>得到的报酬全体人员平分了。
+Q その店員は（a. 誠実に　b. 真実に）対応をしてくれた。>>那个店员诚恳地接待了我。
+Q 彼は母親に万引きをしてしまったことを（a. 告白　b. 告知）した。>>他向母亲坦白了自己偷东西的事。
+Q 我々は、自然と（a. 温和　b. 調和）のとれた街作りを目指している。>>我们致力于建设与自然和谐的城市。
+X2 （　）にはどれが入りますか。一つ選びなさい。
+Q その女優が実は結婚しているということが、先日（　　）になった。|口実|公|告白|公用>>那个女演员其实已经结婚的事，前几天公开了。
+Q 彼は、ガンで入院中に書いた（　　）をまとめて出版した。|手記|告知|伝記|指図>>他把因癌症住院期间写的手记整理出版了。
+A Ⅰ：①b ②a ③a ④a ⑤a ⑥b　Ⅱ：⑦2 ⑧1
