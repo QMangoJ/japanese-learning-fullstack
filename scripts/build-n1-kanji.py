@@ -296,7 +296,7 @@ def parse_day(path, w, d):
                 if len(t) != 3 or not re.fullmatch(r"\d+(-\d)?", t[0]):
                     raise SystemExit(f"{where}: 練習Ⅱ Q needs n-m|sentence|slot: {line}")
                 key = t[0] if "-" in t[0] else int(t[0])
-                it = {"n": key, "q": plain(t[1]), "q_r": ruby_ul(t[1]), "slot": t[2]}
+                it = {"n": key, "q": plain(t[1]), "q_r": ruby_ul(t[1], tested=True), "slot": t[2]}
                 if ul_of(t[1]):
                     it["ul"] = ul_of(t[1])
             else:
