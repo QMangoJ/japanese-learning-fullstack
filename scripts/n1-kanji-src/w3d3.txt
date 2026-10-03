@@ -1,0 +1,98 @@
+T 憎い・幼い・快い|にくい・おさない・こころよい|可憎的・幼小的・愉快的|
+I Q. ＿の読みは？　辺り　→あたり。「この辺」「この辺り」は「近く」という意味。
+S 名詞・形容詞　名詞|名词・形容词　名词|Nouns and adjectives: nouns
+K 辺り|あたり
+W 辺りを見回す||look around|环顾四周
+K 怒り|いかり
+W 怒りをあらわにする||openly show your anger|露骨地表示愤怒
+K 周り|まわり
+W 周りに気を配る||be kind to the people around you|注意周围
+K 狩り|かり
+W 狩りをする||go hunting|打猎
+K 誇り|ほこり
+W 誇りを持つ||be proud|自豪
+K 勢い|いきおい
+W 飛ぶ鳥を落とす勢い||a very strong force|势不可当
+K 潤い|うるおい
+W 潤いのある暮らし||lead a rich life|有情趣的生活
+K 斜め|ななめ
+W 縦、横、斜め||length, width, diagonal|纵、横、斜
+K 眺め|ながめ
+W 山頂からの眺め||the view from the mountaintop|从山顶看到的景色
+S な形容詞|な形容词|Na-adjectives
+K 細やかな|こまやか
+W 細やかな心遣い||be thoughtful|无微不至的关怀
+K 健やかな|すこやか
+W 健やかな笑顔||a wholesome smile|健康的笑脸
+K 速やかな|すみやか
+W 速やかな対応||a prompt response|快速应对
+K 和やかな|なごやか
+W 和やかな話し合い||a peaceful meeting|和谐的谈话
+S い形容詞|い形容词|I-adjectives
+K 憎い|にくい
+W 憎い相手||a hateful companion|可恶的对手
+K 幼い|おさない
+W 幼い子ども||a young child|年幼的孩子
+K 快い|こころよい
+W 快く受け入れる||pleasantly accept|愉快地接受
+K 貴い|とうとい
+W 貴い命||a precious life|可贵的生命
+K 醜い|みにくい
+W 醜い争い||an ugly fight|丑恶的争斗
+K 渋い|しぶい
+W 渋いお茶||strong tea|涩茶
+W 渋い顔||look grim|绷着面孔
+W ◆渋柿|しぶがき|an astringent persimmon|涩柿子
+K 生臭い|なまぐさい
+W 生臭いにおい||a fishy smell|腥味
+K 久しい|ひさしい
+W 故郷を出て久しい||it has been a long time since I left my home town|离开故乡好久了
+K 著しい|いちじるしい
+W 増減が著しい||the fluctuations are remarkable|增减显著
+K 寂しい|さびしい
+W 寂しい暮らし||a lonely life|寂寞的生活
+K 激しい|はげしい
+W 激しい雨||heavy rain|暴雨
+K 怪しい|あやしい
+W 怪しい人影||a strange figure of a person|可疑的人影
+K 卑しい|いやしい
+W 卑しい行い||be greedy|卑鄙的行为
+K 惜しい|おしい
+W 惜しい。合格に1点不足だ。||It's very close, but one point short from passing.|可惜。离合格差1分。
+K 慌ただしい|あわただしい
+W 年の暮れは慌ただしい。||The end of the year is always hectic.|年末忙乱。
+K 甚だしい|はなはだしい
+W 勘違いも甚だしい||a gross misunderstanding|误会很深
+K 懐かしい|なつかしい
+W 懐かしい曲||a familiar song|令人怀念的曲子
+W 懐かしい写真||a nostalgic picture|令人怀念的照片
+K 騒がしい|さわがしい
+W 外が騒がしい。何ごとだろう。||Someone is making noise outside. I wonder what is going on?|外面嘈杂。出什么事了？
+K 紛らわしい|まぎらわしい
+W 紛らわしい表現||a confusing expression|容易混淆的表达方式
+K 煩わしい|わずらわしい
+W 人との付き合いが煩わしい||getting along with others seems troublesome|厌烦和人交往
+K 悩ましい|なやましい
+W 悩ましい態度||seductive behaviour|令人苦恼的态度
+K 勇ましい|いさましい
+W 勇ましい姿||manly|勇猛的身姿
+K 華々しい|はなばなしい
+W 華々しい活躍||a glorious achievement|大显身手
+X1 a、bの言葉の読みを書き、正しいほうを選びなさい。
+Q （a. 細やかな　b. 和やかな）気配りができる人を求めています。>>寻找能细心周到照顾他人的人。
+Q 本屋は花屋の（a. 眺め　b. 斜め）向かいにあります。>>书店在花店的斜对面。
+Q 居眠り運転による事故で（a. 快い　b. 貴い）命が犠牲になった。>>因疲劳驾驶引发的事故，宝贵的生命牺牲了。
+Q 楽しい音楽を聞いて（a. 寂しさ　b. 激しさ）を紛らわす。>>听快乐的音乐排遣寂寞。
+Q 年の暮れは（a. 慌ただしい　b. 久しい）。>>年末忙乱。
+Q もう少しで1位になれたのに、（a. 惜しい　b. 甚だしい）。>>差一点就能得第一了，真可惜。
+X2 ＿＿の部分を漢字で書くとき、最もよいものを□から選びなさい。
+B a. 誇|b. 勢|c. 潤|d. 幼|e. 卑|f. 懐|g. 悩|h. 憎|i. 勇|j. 醜|k. 著|l. 渋
+Q 7-1|{なやましい}態度|＿ましい>>令人苦恼的态度
+Q 7-2|{いさましい}行進曲|＿ましい>>雄壮的进行曲
+Q 8-1|{いちじるしい}進歩を遂げる。|＿しい>>取得显著的进步。
+Q 8-2|{いやしい}行い|＿しい>>卑鄙的行为
+Q 9-1|{みにくい}心|＿い>>丑恶的心
+Q 9-2|{にくい}相手|＿い>>可恶的对手
+Q 10-1|{うるおい}のある生活|＿い>>有情趣的生活
+Q 10-2|{いきおい}のある企業|＿い>>有活力的企业
+A Ⅰ：①a ②b ③b ④a ⑤a ⑥a　Ⅱ：⑦1g 2i ⑧1k 2e ⑨1j 2h ⑩1c 2b
