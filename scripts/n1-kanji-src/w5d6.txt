@@ -1,0 +1,101 @@
+T 注射・駐車|ちゅうしゃ・ちゅうしゃ|注射・停车|
+I Q. 漢字で書くと？　多額のふさい　→負債。「借金」という意味。
+S 音読み③|音读③|On-readings ③
+G ふさい|
+K 夫妻|ふさい
+W 大家さんご夫妻||a couple that is one's landlord|房东夫妇
+K 負債|ふさい
+W 多額の負債を抱える||be in deep debt|有高额负债
+G ちゅうしゃ|
+K 注射|ちゅうしゃ
+W 筋肉に注射する||give an intramuscular injection|肌肉注射
+K 駐車|ちゅうしゃ
+W 駐車禁止|ちゅうしゃきんし|no parking|禁止停车
+G へいこう|
+K 平行|へいこう
+W 平行四辺形|へいこうしへんけい|a parallelogram|平行四边形
+W 話し合いが平行線をたどる||negotiations which fail to reach a consensus|协商难以达成一致
+K 並行|へいこう
+W 2つの調査を並行して行う||conduct two surveys at the same time|同时进行2个调查
+K 平衡|へいこう
+W 平衡感覚を失う||lose one's sense of balance|失去平衡感觉
+K 閉口|へいこう
+W 失礼な質問に閉口する||be annoyed by a rude question|失礼的问题让人受不了
+G がいとう|
+K 街頭|がいとう
+W 街頭で演説する||give a speech on the road|在街头演说
+K 該当|がいとう
+W 該当者なし||no eligible person|没有符合条件的人
+G けっかん|
+K 血管|けっかん
+W 血管に注射をする||give an injection into a vein|血管注射
+K 欠陥|けっかん
+W 欠陥のある車||a defective car|有缺陷的车
+G きしゃ|
+K 汽車|きしゃ
+W ＊蒸気機関車[じょうききかんしゃ]のこと||a locomotive|火车
+K 貴社|きしゃ
+W ＊相手の会社のこと（敬語）||your company|贵公司
+K 記者|きしゃ
+W 彼は新聞記者だ。||He is a newspaper reporter.|他是报社记者。
+G きけん|
+K 危険|きけん
+W 危険な仕事||a dangerous job|危险的工作
+K 棄権|きけん
+W 投票を棄権する||abstain from voting|弃权投票
+G かせん|
+K 化繊|かせん
+W ＊化学繊維[かがくせんい]のこと||a synthetic material|化学纤维
+K 河川|かせん
+W 河川工事|かせんこうじ|improvement work on a riverbank|河川工程
+K 下線|かせん
+W 下線部の読みを書きなさい。||Please read the underlined portions.|请写出下划线部分的读法。
+G けいき|
+K 契機|けいき
+W 事故を契機に安全性を見直す||use the accident as an opportunity to review the safety measures|以事故为契机，重新认识安全性
+K 景気|けいき
+W 景気が回復する||economy recovers|景气恢复
+K 計器|けいき
+W 計器を導入する||introduce new equipment|引进计量仪器
+K 刑期|けいき
+W 刑期を終える||complete one's prison sentence|刑期期满
+G ほうふ|
+K 抱負|ほうふ
+W 今年の抱負を語る||talk about one's hope for this year|讲述今年的抱负
+K 豊富|ほうふ
+W 豊富な食材||a variety of ingredients|丰富的食物
+W 経験豊富|けいけんほうふ|well-experienced|经验丰富
+G きょうさく|
+K 凶作|きょうさく
+W 凶作の年と豊作[ほうさく]の年||a poor harvest and a good harvest|歉收年和丰收年
+K 共作|きょうさく
+W A氏とB氏共作の曲||a piece jointly composed by Mr. A and Mr. B|A和B共同创作的曲子
+G かくしん|
+K 核心|かくしん
+W 核心に迫る||reach the heart of the matter|逼近核心
+W 核心をつく|かくしんをつく|get to the point|直击核心
+K 確信|かくしん
+W 確信する|かくしんする|be convinced of|确信
+W 確信がない|かくしんがない|be uncertain|没有确信
+K 革新|かくしん
+W 技術革新|ぎじゅつかくしん|technical innovation|技术革新
+W 革新政党|かくしんせいとう|a progressive political party|革新政党
+W ◆⇔保守政党|ほしゅせいとう|a conservative political party|保守政党
+X1 a、bの言葉の読みを書き、正しいほうを選びなさい。
+Q 事件の（a. 契機　b. 核心）に迫る情報はなかった。>>没有触及事件核心的信息。
+Q 新市長は（a. 抱負　b. 負債）を述べた。>>新市长讲述了抱负。
+Q 転倒した選手は（a. 閉口　b. 棄権）せず、最後まで滑りきった。>>摔倒的选手没有弃权，坚持滑到了最后。
+Q 製品に（a. 危険　b. 欠陥）が見つかった。>>产品被发现有缺陷。
+Q 今回の最優秀賞には（a. 該当　b. 確信）者がなかった。>>这次最优秀奖没有合适的人选。
+Q 田中夫妻は社交的で、話題が（a. 豊富　b. 共作）だ。>>田中夫妇善于交际，话题丰富。
+X2 ＿＿の部分を漢字で書くとき、最もよいものを□から選びなさい。
+B a. 化繊|b. 平衡|c. 刑期|d. 貴社|e. 下線|f. 景気|g. 記者|h. 平行|i. 計器|j. 並行|k. 河川|l. 汽車
+Q 7-1|{へいこう}四辺形|＿>>平行四边形
+Q 7-2|{へいこう}感覚|＿>>平衡感觉
+Q 8-1|{けいき}の回復|＿>>景气的恢复
+Q 8-2|{けいき}の故障|＿>>仪表的故障
+Q 9-1|{かせん}工事|＿>>河川工程
+Q 9-2|{かせん}を引く。|＿>>画下划线。
+Q 10-1|新聞{きしゃ}|＿>>报社记者
+Q 10-2|おもちゃの{きしゃ}|＿>>玩具火车
+A Ⅰ：①b ②a ③b ④b ⑤a ⑥a　Ⅱ：⑦1h 2b ⑧1f 2i ⑨1k 2e ⑩1g 2l
