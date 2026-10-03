@@ -236,8 +236,16 @@ function Header({
 					‹ <span className="lbl">{backLabel}</span>
 				</button>
 				{showLevel ? (
-					<button className="lvchip" id="lvChip" aria-haspopup="dialog" onClick={onOpenLevel}>
-						{LEVEL.toUpperCase()} <span className="cv">▾</span>
+					<button
+						className="lvchip"
+						id="lvChip"
+						aria-haspopup="dialog"
+						aria-label={lx(`当前级别 ${LEVEL.toUpperCase()}，点击切换级别`, `Level ${LEVEL.toUpperCase()}, tap to change`)}
+						title={lx("切换级别", "Change level")}
+						onClick={onOpenLevel}
+					>
+						<span className="lv">{LEVEL.toUpperCase()}</span>
+						<span className="cv" aria-hidden="true">▾</span>
 					</button>
 				) : null}
 				<h1 id="title">{title}</h1>

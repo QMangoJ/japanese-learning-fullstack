@@ -68,10 +68,13 @@ npm run import:topic -- --topic <slug> [--title-zh … --title-ja … --title-en
 ### 日本投资理财日语（japan-investing）
 
 来源：Google Doc「日本投资理财日语词汇与表达」(id `1qgg9BRz6NS5_6p2IQLfT8hNynTZH7tyIH6MCb_LGNpQ`，117 词，9 组)，
-另加 `scripts/topic-sources/japan-investing-extra.tsv` 里 4 个文档没有的基础词。重新导入：
+另加 `scripts/topic-sources/japan-investing-extra.tsv` 里 4 个文档没有的基础词；
+`scripts/topic-sources/japan-investing-overrides.tsv` 放对文档词条的补充（按 `jp`+`kana` 匹配，只覆盖给出的列，例如给「貯蓄型投資信託」加 note）。
+同一次导入里后面的文件会补充 / 覆盖前面同一个词的字段。重新导入：
 
 ```bash
 # 先把文档下载为 .docx（Google Docs：文件 → 下载 → Microsoft Word），覆盖 scripts/topic-sources/japan-investing.docx
 npm run import:topic -- --topic japan-investing --expect 121 \
-  scripts/topic-sources/japan-investing.docx scripts/topic-sources/japan-investing-extra.tsv
+  scripts/topic-sources/japan-investing.docx scripts/topic-sources/japan-investing-extra.tsv \
+  scripts/topic-sources/japan-investing-overrides.tsv
 ```

@@ -47,6 +47,7 @@ describe("topic vocabulary data", () => {
 		}
 		expect(topic.cards.find((c) => c.jp === "インデックス")?.example_jp).toContain("S&P500");
 		expect(topic.cards.find((c) => c.jp === "成行")?.kana).toBe("なりゆき");
+		expect(topic.cards.find((c) => c.jp === "貯蓄型投資信託")?.note).toBe("也叫累投型／自動けいぞく投資コース，指分配金自动再投资的类型");
 	});
 });
 
@@ -145,6 +146,16 @@ describe("topic vocabulary import", () => {
 		]);
 		expect(replaced).toMatchObject({ added: 1, updated: 1, removed: 1 });
 		expect(mergeTopicCards(existing, drafts, { mode: "merge", idPrefix: "inv" }).cards.map((c) => c.id)).toEqual(["inv-001", "inv-002", "inv-003"]);
+	});
+
+	it("lets a later overrides row add fields to a word from the same import", () => {
+		const drafts = [
+			{ jp: "株価", kana: "かぶか", zh: "股价", subtopic: "股票", example_jp: "a", example_zh: "b" },
+			{ jp: "株価", kana: "かぶか", note: "补充" },
+		];
+		const { cards, added } = mergeTopicCards([], drafts, { mode: "replace", idPrefix: "inv" });
+		expect(added).toBe(1);
+		expect(cards).toEqual([{ id: "inv-001", jp: "株価", kana: "かぶか", zh: "股价", subtopic: "股票", example_jp: "a", example_zh: "b", note: "补充" }]);
 	});
 
 	it("converts bracket readings to ruby", () => {
