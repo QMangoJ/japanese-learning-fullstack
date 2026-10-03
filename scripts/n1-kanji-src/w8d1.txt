@@ -1,0 +1,91 @@
+T 政治について|せいじについて|关于政治|
+I 中田氏、衆院選に出馬　財政改革に意欲／○○内閣総辞職へ　発足から1年で退陣／A国大統領来日　首脳会談で両国の同盟関係を強調／田中財務大臣更迭　後任に山中総務相　収賄疑惑で──金銭の授受は否定　（「出馬」は「出馬する」、「意欲」は「意欲を見せる」という意味。）
+S おぼえましょう|记一记|Let's remember
+K 氏
+W ○○氏|○○し|Mr. ○○|○○氏|＊人名の改まった呼び方
+K 衆
+W 衆議院|しゅうぎいん|the House of Representatives|众议院
+W 衆議院選挙　cf. 参議院[さんぎいん]|||众议院选举　cf. 参议院
+W 大衆|たいしゅう|the general public|大众
+K 挙
+W 選挙|せんきょ|an election|选举
+W 選挙に出馬する／選挙権|||参加竞选／选举权
+W 一挙に|いっきょに|at a stroke|一下子
+K 閣
+W 内閣|ないかく|the cabinet|内阁
+W 内閣総理大臣／内閣発足／内閣改造|||内阁总理大臣／内阁成立／内阁改组
+W 組閣|そかく|cabinet formation|组阁
+W 閣僚|かくりょう|cabinet ministers|阁僚
+K 陣
+W 退陣|たいじん|a resignation|退职
+W 陣営|じんえい|a camp|阵营
+W 報道陣|ほうどうじん|the press|聚集在现场的媒体
+W 報道陣に囲まれる|||被记者们包围
+K 賄
+W 賄賂|わいろ|a bribe|贿赂
+W 贈収賄|ぞうしゅうわい|bribery|收受贿赂
+K 銭
+W 金銭|きんせん|money|金钱
+W 金銭感覚|||金钱观念
+K 献
+W 貢献|こうけん|a contribution|贡献
+W 社会に貢献する|||为社会做贡献
+W 献金|けんきん|a monetary contribution|捐款
+W 政治献金|||政治捐款
+K 統
+W 大統領|だいとうりょう|the president|总统
+W 統治|とうち|a reign|统治
+W 統合|とうごう|integration|统一
+K 盟
+W 同盟|どうめい|an alliance|同盟
+W 連盟|れんめい|a federation|联盟
+K 迭
+W 更迭|こうてつ|replacement of one or more people|更迭
+W 大臣を更迭する|||撤换大臣
+K 罷
+W 罷免|ひめん|a dismissal|罢免
+W 知事を罷免する|||罢免知事
+K 憲
+W 憲法|けんぽう|a constitution|宪法
+W 憲法違反で訴える／憲法改正|||以违宪起诉／修改宪法
+W 違憲|いけん|a violation of the constitution|违反宪法
+W ◆⇔合憲|ごうけん|constitutionality|合宪
+K 派
+W ○○派|○○は|group, party|○○派
+W 保守派 ⇔ 革新派|||保守派 ⇔ 革新派
+K 閥
+W 派閥|はばつ|a faction|派别
+W 派閥争い／無派閥|||派系斗争／无派系
+W 財閥|ざいばつ|zaibatsu / financial combine|财阀
+S 関連語彙|相关词汇|Related vocabulary
+K 関連語彙
+W 総務省|そうむしょう|the Ministry of Public Management|总务省
+W 財務省|ざいむしょう|the Ministry of Finance|财务部
+W 防衛省|ぼうえいしょう|the Ministry of Defense|国防部
+W 外務省|がいむしょう|the Ministry of Foreign Affairs|外交部
+W 官邸|かんてい|an official residence|官邸
+W 官僚|かんりょう|a government official|官僚
+W 政権|せいけん|political power|政权
+W 地方分権|ちほうぶんけん|decentralization|地方分权
+W 候補|こうほ|a candidate|候补
+W 立候補|りっこうほ|candidacy|候选人
+W ○○党推薦|○○とうすいせん|nominated by ○○ Party|○○党推荐
+W ○○党公認|○○とうこうにん|officially recognized by the ○○ Party|○○党公认
+W 支持率|しじりつ|the approval rating|支持率
+W 疑惑|ぎわく|a suspicion|疑惑
+W 首脳|しゅのう|a head, leader|首脑
+W 総辞職|そうじしょく|resign as a group|总辞职
+X1 a、bの言葉の読みを書き、正しいほうを選びなさい。
+Q 市長は市立博物館の館長を（a. 更迭　b. 統合）して組織を一新したいと述べた。>>市长表示想撤换市立博物馆馆长，使组织焕然一新。
+Q 新（a. 閣僚　b. 内閣）が発足してから1年が経過した。>>新内阁成立已经一年了。
+Q 公共事業をめぐる（a. 罷免　b. 贈収賄）事件で町長が起訴された。>>镇长因公共事业相关的行贿受贿案被起诉。
+Q （a. 憲法　b. 違憲）改正について考える会が開かれた。>>召开了思考修改宪法的会议。
+Q 選挙に出馬というのは（a. 立候補　b. 総辞職）するという意味だ。>>“出马参选”就是参加竞选的意思。
+Q 来月中旬に日米（a. 同盟　b. 首脳）会談が開かれる予定だ。>>下月中旬预定举行日美首脑会谈。
+X2 次の（　）には同じ漢字が入ります。□から選びなさい。下線部の読みも書きなさい。
+B a. 鉄|b. 派|c. 庁|d. 省|e. 脈|f. 銭|g. 資|h. 献
+Q 7|政治{（　）金}を集める。／社会に{貢（　）}する。|（　）>>募集政治捐款。／为社会做贡献。
+Q 8|{金（　）}感覚がずれている。／革の{小（　）}入れ|（　）>>金钱观念有偏差。／皮革零钱包
+Q 9|{財務（　）}／一日の{反（　）}をする。|（　）>>财务省／反省一天。
+Q 10|{（　）閥}争い／{立（　）}な人|（　）>>派系斗争／出色的人
+A Ⅰ：①a ②b ③b ④a ⑤a ⑥b　Ⅱ：⑦h 献（献金けんきん／貢献こうけん） ⑧f 銭（金銭きんせん／小銭こぜに） ⑨d 省（財務省ざいむしょう／反省はんせい） ⑩b 派（派閥はばつ／立派りっぱ）
