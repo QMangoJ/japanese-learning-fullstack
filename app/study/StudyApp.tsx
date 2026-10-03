@@ -105,6 +105,9 @@ import "../routes/listening-n3.css";
 import "../routes/reading-n3.css";
 import "../routes/reading-n3-book.css";
 
+const LazyListeningN1Content = lazy(() =>
+	import("../routes/listening-n1").then((module) => ({ default: module.ListeningN1Content })),
+);
 const LazyListeningN2Content = lazy(() =>
 	import("../routes/listening-n2").then((module) => ({ default: module.ListeningN2Content })),
 );
@@ -455,8 +458,8 @@ function AuthBanner() {
 
 function goType(ty: TypeKey) {
 	if (ty === "reading" && LEVEL !== "n3" && LEVEL !== "n2") return;
-	if (ty === "listening" && LEVEL !== "n3" && LEVEL !== "n2") return;
-	if (LEVEL === "n1" && ty !== "grammar" && ty !== "vocab" && ty !== "kanji") return;
+	if (ty === "listening" && LEVEL !== "n3" && LEVEL !== "n2" && LEVEL !== "n1") return;
+	if (LEVEL === "n1" && ty !== "grammar" && ty !== "vocab" && ty !== "kanji" && ty !== "listening") return;
 	const nextMod = moduleFrom(LEVEL, ty);
 	const here = typeof window !== "undefined" ? pathToKey(window.location.pathname) : "#/";
 	const day = parseDayRoute(here);
@@ -485,7 +488,7 @@ function Sidebar({ routeKey, onLevel }: { routeKey: string; onLevel: (lv: LevelK
 		["vocab", "📗", lx("词汇", "Vocabulary")],
 		["kanji", "📙", lx("汉字", "Kanji")],
 		...(LEVEL === "n3" || LEVEL === "n2" ? ([["reading", "📕", lx("读解", "Reading")]] as [TypeKey, string, string][]) : []),
-		...(LEVEL === "n3" || LEVEL === "n2" ? ([["listening", "🎧", lx("听解", "Listening")]] as [TypeKey, string, string][]) : []),
+		...(LEVEL === "n3" || LEVEL === "n2" || LEVEL === "n1" ? ([["listening", "🎧", lx("听解", "Listening")]] as [TypeKey, string, string][]) : []),
 	];
 	const favCount = Object.keys(FAV).length;
 	const row = (go: string, ic: string, label: string, count: string | number | null, on: boolean) => (
@@ -943,7 +946,7 @@ export function StudyApp() {
 
 	useEffect(() => {
 		const mode = new URLSearchParams(location.search).get("module");
-		if (mode === "reading" || mode === "n2reading" || mode === "listening" || mode === "n2listening") {
+		if (mode === "reading" || mode === "n2reading" || mode === "listening" || mode === "n2listening" || mode === "n1listening") {
 			setModule(mode);
 			window.history.replaceState({}, "", location.pathname + (isTrial ? "?trial=1" : ""));
 			navTo(entryHash(mode));
@@ -1084,7 +1087,7 @@ export function StudyApp() {
 	const commonRefPage = ["#/ref", "#/katsuyou", "#/henkei", "#/kougo", "#/jita", "#/wearing", "#/numbers", "#/review", "#/due"].includes(routeKey) || Boolean(reviewRoute) || Boolean(topicsRoute);
 	const waitingN2 = isN2() && MODULE !== "n2listening" && MODULE !== "n2reading" && !n2Loaded && !commonRefPage;
 	const waitingN4 = isN4() && !n4Loaded && !commonRefPage;
-	const waitingN1 = isN1() && !n1Loaded && !commonRefPage;
+	const waitingN1 = isN1() && MODULE !== "n1listening" && !n1Loaded && !commonRefPage;
 	const waitingSearch = routeKey === "#/search" && (!n2Loaded || !readingSearchLoaded) && !readingSearchError;
 	const weekLocked = isTrial && day && (LEVEL !== "n3" || day.w !== 1);
 	const homeLocked = isTrial && LEVEL !== "n3";
@@ -1115,6 +1118,8 @@ export function StudyApp() {
 			<>
 				{MODULE === "n2listening" ? (
 					<LazyListeningN2Content chapter={day.w} section={day.d} embedded />
+				) : MODULE === "n1listening" ? (
+					<LazyListeningN1Content chapter={day.w} section={day.d} embedded />
 				) : (
 					<LazyListeningN3Content chapter={day.w} section={day.d} embedded />
 				)}
@@ -1175,7 +1180,7 @@ export function StudyApp() {
 				showLevel={!commonPages.includes(routeKey) && !reviewRoute && !topicsRoute}
 				showTypebar={routeKey === "#/" || Boolean(day)}
 				showReading={LEVEL === "n3" || LEVEL === "n2"}
-				showListening={LEVEL === "n3" || LEVEL === "n2"}
+				showListening={LEVEL === "n3" || LEVEL === "n2" || LEVEL === "n1"}
 				onBack={() => (day ? navTo("#/") : reviewRoute?.id ? navTo("#/review") : topicsRoute?.slug ? navTo("#/topics") : history.length > 1 ? navigate(-1) : navTo("#/"))}
 				onOpenLevel={() => setSheet("level")}
 			/>

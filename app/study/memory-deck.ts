@@ -905,7 +905,16 @@ export async function loadListeningDeck(module: string): Promise<MemoryCardItem[
 		collectReadingsFromKanjiWeeks(K2.weeks),
 	);
 	const items: MemoryCardItem[] = [];
-	if (module === "n2listening") {
+	if (module === "n1listening") {
+		const { listeningN1BookChapters } = await import("../data/listening-n1-book");
+		const { getListeningN1Lesson } = await import("../data/listening-n1-lessons");
+		for (const ch of listeningN1BookChapters()) {
+			for (const sec of ch.sections) {
+				const lesson = getListeningN1Lesson(ch.number, sec.number);
+				if (lesson) items.push(...cardsFromListeningLesson(lesson, ch.number, sec.number, module, readings));
+			}
+		}
+	} else if (module === "n2listening") {
 		const { listeningN2BookChapters } = await import("../data/listening-n2-book");
 		const { getListeningN2Lesson } = await import("../data/listening-n2-lessons");
 		for (const ch of listeningN2BookChapters()) {

@@ -1,0 +1,366 @@
+import { useEffect, useMemo, useRef, useState, type PointerEvent, type RefObject } from "react";
+import { flushSync } from "react-dom";
+
+import { getListeningN1Lesson } from "../data/listening-n1-lessons";
+import {
+	findListeningN1Chapter,
+	findListeningN1Section,
+	listeningN1SectionDisc,
+	listeningN1TrackSrc,
+	type ListeningDisc,
+} from "../data/listening-n1-book";
+import { listeningQuestionSupport, type ListeningQuestionSupport } from "../data/listening-n3-question-support";
+import { listeningN1BodyTranslation } from "../data/listening-n1-body-support";
+import { listeningN1Glosses } from "../data/listening-n1-transcript-glosses";
+import { dayNeighbors, isFav, LANG, lx, navTo, registerFavMeta, toggleFav } from "../study/store";
+import { CardsLaunch } from "../study/memory-cards";
+import { audioDurationOf, forwardTime, LessonBlocks, rewindTime, seekRatioFromClientX } from "./listening-n3";
+import "./reading-n3.css";
+import "./listening-n3.css";
+
+type AudioCue = { disc: ListeningDisc; track: number };
+
+const audioLabel: Record<ListeningDisc, string> = { cd1: "CD 1", cd2: "CD 2" };
+
+function cueLabel(cue: AudioCue) {
+	return `${audioLabel[cue.disc]} · ${String(cue.track).padStart(2, "0")}`;
+}
+
+function formatTime(seconds: number) {
+	if (!Number.isFinite(seconds) || seconds < 0) return "0:00";
+	const minutes = Math.floor(seconds / 60);
+	const remainder = Math.floor(seconds % 60);
+	return `${minutes}:${String(remainder).padStart(2, "0")}`;
+}
+
+function ListeningSeekBar({ currentTime, duration, onSeek }: { currentTime: number; duration: number; onSeek: (time: number) => void }) {
+	const trackRef = useRef<HTMLDivElement>(null);
+	const ready = duration > 0;
+	const ratio = ready ? Math.min(1, Math.max(0, currentTime / duration)) : 0;
+
+	function seekFromPointer(event: PointerEvent<HTMLDivElement>) {
+		const el = trackRef.current;
+		if (!el || !ready) return;
+		onSeek(seekRatioFromClientX(event.clientX, el.getBoundingClientRect()) * duration);
+	}
+
+	return (
+		<div
+			ref={trackRef}
+			className={`listening-seek${ready ? "" : " is-disabled"}`}
+			role="slider"
+			aria-label="再生位置"
+			aria-valuemin={0}
+			aria-valuemax={ready ? Math.round(duration) : 0}
+			aria-valuenow={ready ? Math.round(currentTime) : 0}
+			aria-disabled={!ready}
+			tabIndex={ready ? 0 : -1}
+			onPointerDown={(event) => {
+				if (!ready) return;
+				event.preventDefault();
+				event.currentTarget.setPointerCapture(event.pointerId);
+				seekFromPointer(event);
+			}}
+			onPointerMove={(event) => {
+				if (!event.currentTarget.hasPointerCapture(event.pointerId)) return;
+				seekFromPointer(event);
+			}}
+			onKeyDown={(event) => {
+				if (!ready) return;
+				if (event.key === "ArrowRight" || event.key === "ArrowUp") {
+					event.preventDefault();
+					onSeek(Math.min(duration, currentTime + 5));
+				} else if (event.key === "ArrowLeft" || event.key === "ArrowDown") {
+					event.preventDefault();
+					onSeek(Math.max(0, currentTime - 5));
+				} else if (event.key === "Home") {
+					event.preventDefault();
+					onSeek(0);
+				} else if (event.key === "End") {
+					event.preventDefault();
+					onSeek(duration);
+				}
+			}}
+		>
+			<div className="listening-seek__rail" />
+			<div className="listening-seek__fill" style={{ width: `${ratio * 100}%` }} />
+			<div className="listening-seek__thumb" style={{ left: `${ratio * 100}%` }} />
+		</div>
+	);
+}
+
+function ListeningPlayer({ cue, audioRef, onPlaybackChange }: { cue: AudioCue; audioRef: RefObject<HTMLAudioElement | null>; onPlaybackChange: (playing: boolean) => void }) {
+	const [speed, setSpeed] = useState(1);
+	const [loop, setLoop] = useState(false);
+	const [currentTime, setCurrentTime] = useState(0);
+	const [duration, setDuration] = useState(0);
+	const [isPlaying, setIsPlaying] = useState(false);
+
+	useEffect(() => {
+		if (audioRef.current) audioRef.current.playbackRate = speed;
+	}, [audioRef, speed]);
+
+	useEffect(() => {
+		setCurrentTime(0);
+		setDuration(0);
+		setIsPlaying(false);
+	}, [cue]);
+
+	function togglePlayback() {
+		const audio = audioRef.current;
+		if (!audio) return;
+		if (audio.paused) void audio.play().catch(() => undefined);
+		else audio.pause();
+	}
+
+	function seek(nextTime: number, play = false) {
+		const audio = audioRef.current;
+		const limit = duration || (audio ? audioDurationOf(audio) : 0);
+		const clamped = Math.min(Math.max(nextTime, 0), limit || nextTime);
+		if (audio) audio.currentTime = clamped;
+		setCurrentTime(clamped);
+		if (play && audio?.paused) void audio.play().catch(() => undefined);
+	}
+
+	function syncDuration(audio: HTMLAudioElement) {
+		const next = audioDurationOf(audio);
+		if (next > 0) setDuration(next);
+	}
+
+	return (
+		<section className="reader-section listening-player" aria-label="音声プレーヤー">
+			<div className="listening-player__top">
+				<button className={`listening-player__toggle${isPlaying ? " playing" : ""}`} onClick={togglePlayback} aria-label="再生または一時停止">
+					{isPlaying ? "❚❚" : "▶"}
+				</button>
+				<button
+					className="listening-player__rewind"
+					onClick={() => seek(rewindTime(audioRef.current?.currentTime ?? currentTime))}
+					aria-label="往前 3 秒"
+				>
+					<span aria-hidden="true">↶</span>
+					<small aria-hidden="true">3</small>
+				</button>
+				<div>
+					<span>音声</span>
+					<strong>{cueLabel(cue)}</strong>
+				</div>
+				<div className="listening-speed" aria-label="再生速度">
+					{[0.75, 1, 1.25].map((value) => (
+						<button key={value} className={speed === value ? "on" : ""} onClick={() => setSpeed(value)}>
+							{value}×
+						</button>
+					))}
+					<button className={loop ? "on" : ""} onClick={() => setLoop((value) => !value)} aria-label="繰り返し再生">
+						↻
+					</button>
+				</div>
+			</div>
+			<div className="listening-player__timeline">
+				<span>{formatTime(currentTime)}</span>
+				<ListeningSeekBar currentTime={currentTime} duration={duration} onSeek={(time) => seek(time, true)} />
+				<span>{formatTime(duration)}</span>
+			</div>
+			<audio
+				ref={audioRef}
+				preload="metadata"
+				loop={loop}
+				src={listeningN1TrackSrc(cue.disc, cue.track)}
+				onLoadedMetadata={(event) => {
+					event.currentTarget.playbackRate = speed;
+					syncDuration(event.currentTarget);
+				}}
+				onDurationChange={(event) => syncDuration(event.currentTarget)}
+				onCanPlay={(event) => syncDuration(event.currentTarget)}
+				onTimeUpdate={(event) => {
+					syncDuration(event.currentTarget);
+					setCurrentTime(event.currentTarget.currentTime);
+				}}
+				onPlay={() => {
+					setIsPlaying(true);
+					onPlaybackChange(true);
+				}}
+				onPause={() => {
+					setIsPlaying(false);
+					onPlaybackChange(false);
+				}}
+				onEnded={() => {
+					setIsPlaying(false);
+					onPlaybackChange(false);
+				}}
+			/>
+		</section>
+	);
+}
+
+/** 题目答案・原文・译文，再按题目顺序附上听力原文的 N3+ 生词注释。 */
+export function listeningN1QuestionSupport(chapter: number, section: number): ReadonlyMap<number, ListeningQuestionSupport> {
+	const lesson = getListeningN1Lesson(chapter, section);
+	if (!lesson) return new Map();
+	const glosses = listeningN1Glosses(chapter, section);
+	const out = new Map<number, ListeningQuestionSupport>();
+	let questionIndex = 0;
+	for (const [blockIndex, support] of listeningQuestionSupport(lesson)) {
+		const words = support.transcript ? glosses[questionIndex] : undefined;
+		questionIndex += 1;
+		out.set(blockIndex, words?.length ? { ...support, glosses: words } : support);
+	}
+	return out;
+}
+
+function ChapterDetail({ chapterNumber, sectionNumber, hideBack = false }: { chapterNumber: number; sectionNumber: number; hideBack?: boolean }) {
+	const chapter = findListeningN1Chapter(chapterNumber);
+	const section = findListeningN1Section(chapterNumber, sectionNumber);
+	const lesson = getListeningN1Lesson(chapterNumber, sectionNumber);
+	const disc = listeningN1SectionDisc(chapterNumber, sectionNumber);
+	const initialCue = useMemo<AudioCue>(() => ({ disc, track: section?.firstTrack ?? 1 }), [disc, section]);
+	const [cue, setCue] = useState(initialCue);
+	const [playing, setPlaying] = useState(false);
+	const audioRef = useRef<HTMLAudioElement>(null);
+	const questionSupport = useMemo(() => listeningN1QuestionSupport(chapterNumber, sectionNumber), [chapterNumber, sectionNumber]);
+
+	useEffect(() => {
+		setCue(initialCue);
+	}, [initialCue, chapterNumber, sectionNumber]);
+
+	function toggleCue(next: AudioCue) {
+		const sameCue = cue.disc === next.disc && cue.track === next.track;
+		if (sameCue && audioRef.current && !audioRef.current.paused) {
+			audioRef.current.pause();
+			return;
+		}
+		// Keep playback in the trusted user gesture after committing the source.
+		if (!sameCue) flushSync(() => setCue(next));
+		void audioRef.current?.play().catch(() => undefined);
+	}
+
+	useEffect(() => {
+		const onKeyDown = (event: KeyboardEvent) => {
+			if (event.metaKey || event.ctrlKey || event.altKey || event.shiftKey) return;
+			if (document.querySelector('[role="dialog"][aria-modal="true"]')) return;
+			const target = event.target as HTMLElement | null;
+			const tag = target?.tagName;
+			if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT" || tag === "BUTTON" || tag === "A" || target?.isContentEditable || target?.getAttribute("role") === "slider") return;
+			const audio = audioRef.current;
+			if (!audio) return;
+			const isToggleKey = event.key === "Enter" || event.code === "Space" || event.key === " ";
+			const isSeekKey = event.key === "ArrowLeft" || event.key === "ArrowRight";
+			if (!isToggleKey && !isSeekKey) return;
+			event.preventDefault();
+			event.stopImmediatePropagation();
+			if (isToggleKey) {
+				if (event.repeat) return;
+				if (audio.paused) void audio.play().catch(() => undefined);
+				else audio.pause();
+				return;
+			}
+			const duration = audioDurationOf(audio);
+			audio.currentTime = event.key === "ArrowLeft" ? rewindTime(audio.currentTime) : forwardTime(audio.currentTime, duration);
+		};
+		document.addEventListener("keydown", onKeyDown, true);
+		return () => document.removeEventListener("keydown", onKeyDown, true);
+	}, []);
+
+	if (!chapter || !section || !lesson) {
+		return (
+			<div className="reader-page reader-page--embedded">
+				<div className="reader-wrap reader-layout">
+					<main className="reader-main listening-detail">
+						<p>未找到这一节听解内容。</p>
+					</main>
+				</div>
+			</div>
+		);
+	}
+
+	return (
+		<div className="reader-page reader-page--embedded">
+			<div className="reader-wrap reader-layout">
+				<main className="reader-main listening-detail">
+					<header className="listening-crumb">
+						{hideBack ? null : (
+							<button className="listening-crumb__back" onClick={() => navTo("#/")} aria-label="聴解目次へ戻る">
+								‹
+							</button>
+						)}
+						<div className="listening-crumb__path">
+							<span>
+								N1 <ruby>聴解<rt>ちょうかい</rt></ruby>
+							</span>
+							<i>/</i>
+							<b>
+								第 {chapter.number} 章 / {section.number}
+							</b>
+						</div>
+						<h1>{section.title}</h1>
+					</header>
+					<ListeningPlayer cue={cue} audioRef={audioRef} onPlaybackChange={setPlaying} />
+					<LessonBlocks
+						blocks={lesson.blocks}
+						questionSupport={questionSupport}
+						disc={disc}
+						active={cue}
+						playing={playing}
+						onToggle={toggleCue}
+						translate={listeningN1BodyTranslation}
+						missScope={`n1:${chapter.number}-${section.number}`}
+					/>
+					<ListeningSectionNav chapter={chapterNumber} section={sectionNumber} />
+				</main>
+			</div>
+		</div>
+	);
+}
+
+export function ListeningN1Content({
+	chapter,
+	section,
+	embedded = false,
+}: {
+	chapter: number;
+	section: number;
+	embedded?: boolean;
+}) {
+	const found = findListeningN1Section(chapter, section);
+	const titleText = found?.title ?? `第${chapter}章 ${section}节`;
+	const favId = `n1listening#${chapter}-${section}`;
+	registerFavMeta(favId, {
+		module: "n1listening",
+		hash: `#/day/${chapter}-${section}`,
+		w: chapter,
+		d: section,
+		jp: titleText,
+		cn: found?.title_cn || found?.subtitle || "",
+	});
+	return (
+		<>
+			<div style={{ display: "flex", justifyContent: "flex-end", alignItems: "center", gap: 10, maxWidth: 820, margin: "0 auto 8px", padding: "0 14px" }}>
+				<CardsLaunch />
+				<button type="button" className="starb" onClick={() => toggleFav(favId)} aria-label="收藏本节">
+					{isFav(favId) ? "★" : "☆"}
+				</button>
+			</div>
+			<ChapterDetail key={`${chapter}-${section}`} chapterNumber={chapter} sectionNumber={section} hideBack={embedded} />
+		</>
+	);
+}
+
+function ListeningSectionNav({ chapter, section }: { chapter: number; section: number }) {
+	const { prev, next } = dayNeighbors(chapter, section, "n1listening");
+	const label = (item: [number, number, any]) =>
+		lx(`第${item[0]}章 ${item[1]}节 · ${item[2].title || ""}`, `Ch. ${item[0]} §${item[1]} · ${item[2].title_en || item[2].title || ""}`);
+	return (
+		<nav className="listening-nav" aria-label={lx("章节切换", "Section navigation")}>
+			<button type="button" disabled={!prev} onClick={() => prev && navTo(`#/day/${prev[0]}-${prev[1]}`)}>
+				<small>{lx("上一节", "Previous")}</small>
+				<b>{prev ? label(prev) : lx("已经是第一节", "First section")}</b>
+			</button>
+			<button type="button" disabled={!next} onClick={() => next && navTo(`#/day/${next[0]}-${next[1]}`)}>
+				<small>{lx("下一节", "Next")}</small>
+				<b>{next ? label(next) : lx("已经是最后一节", "Last section")}</b>
+			</button>
+		</nav>
+	);
+}
+
+void LANG;
