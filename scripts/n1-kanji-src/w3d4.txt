@@ -1,0 +1,96 @@
+T 伴う・狂う・誓う|ともなう・くるう・ちかう|伴随・发疯・发誓|
+I Q. ＿の読みは？　取り扱い　→とりあつかい。意味はわかっても、正しく読めるかな？
+S 動詞①|动词①|Verbs ①
+K 扱う|あつかう
+W 商品を扱う||sell a product|经营商品
+K 伴う|ともなう
+W 家族を伴う||be accompanied by your family|带着家人
+K 狂う|くるう
+W 予定が狂う||plans being upset|计划打乱
+K 誓う|ちかう
+W 忠誠を誓う||pledge your loyalty|起誓忠诚
+K 奪う|うばう
+W 自由を奪う||take away freedom|剥夺自由
+K 慕う|したう
+W 先輩を慕う||adore a senior|爱慕前辈
+K 繕う|つくろう
+W 体裁を繕う||try to keep up appearances|修饰门面
+K 償う|つぐなう
+W 罪を償う||make up for your sins|赎罪
+K 縫う|ぬう
+W 洋服を縫う||sew a dress|缝衣服
+W ◆縫い物|ぬいもの|sewing|缝纫
+K 補う|おぎなう
+W 不足を補う||cover the shortage|弥补不足
+K 賄う|まかなう
+W 財政を賄う||manage the finances|筹措财政
+K 損なう|そこなう
+W 健康を損なう||one's health fails|有损健康
+W ボールを受け損なう||miss a ball|接球失误
+K 履く|はく
+W 靴を履く||put on shoes|穿鞋
+K 敷く|しく
+W 布団を敷く||put down a futon|铺被褥
+K 渇く|かわく
+W 唇が渇く||lips going dry|嘴唇干
+K 描く|えがく
+W 弧を描く||draw an arc|画弧形
+K 裁く|さばく
+W 法で裁く||be legally judged|用法律裁判
+K 嘆く|なげく
+W 不運を嘆く||grieve over your misfortune|感叹不幸
+K 導く|みちびく
+W 成功へ導く||lead to success|引向成功
+K 驚く|おどろく
+W 異変に驚く||be shocked by an extraordinary event|惊讶于异变
+K 貫く|つらぬく
+W 初心を貫く||carry out your original intention|坚持初衷
+W 弾が頭を貫く||bullet goes through the head|子弹穿过脑袋
+K 赴く|おもむく
+W 任地に赴く||proceed to your new post|赶赴就任地
+K 輝く|かがやく
+W 星が輝く||stars twinkling|星星闪耀
+K 注ぐ|そそぐ
+W 油を注ぐ||pour oil over / add fuel to ...|加油、唆使
+W 愛情を注ぐ||love someone|倾注爱情
+K 担ぐ|かつぐ
+W 縁起を担ぐ||be superstitious|迷信
+K 防ぐ|ふせぐ
+W 事故を防ぐ||prevent accidents|防止事故
+K 稼ぐ|かせぐ
+W 生活費を稼ぐ||earn a living|挣生活费
+K 卸す|おろす
+W 品物を卸す||sell products at wholesale|卸货物
+K 脅す|おどす
+W 脅して金銭を奪う||extort money from someone|威逼抢钱
+K 崩す|くずす
+W 体調を崩す||get sick|身体垮了
+K 志す|こころざす
+W 医師を志す||want to become a doctor|立志当医生
+K 催す|もよおす
+W 会を催す||hold a gathering|举办会议
+W 吐き気を催す||feel nauseated|觉得恶心
+K 促す|うながす
+W 支払いを促す||pressure someone to make a payment|催促支付
+K 浸す|ひたす
+W 水に浸す||soak in water|浸在水里
+K 施す|ほどこす
+W 金銭を施す||give, do|施舍金钱
+X1 a、bの言葉の読みを書き、正しいほうを選びなさい。
+Q 記者が取材のため、事件現場に（a. 驚いた　b. 赴いた）。>>记者为了采访赶赴事发现场。
+Q 取引先の担当者の機嫌を（a. 損なって　b. 賄って）しまった。>>惹得客户的负责人不高兴了。
+Q どうぞ、座布団を（a. 敷いて　b. 履いて）ください。>>请铺上坐垫（坐）吧。
+Q のどが（a. 嘆き　b. 渇き）ましたね、お茶でも飲みましょう。>>口渴了吧，喝点茶吧。
+Q あの時計は（a. 補って　b. 狂って）いますね。電池を交換しないといけません。>>那个钟不准了，得换电池。
+Q 神に（a. 慕って　b. 誓って）、私は不正をしておりません。>>我对神发誓，我没有做不正当的事。
+X2 ＿＿の部分を漢字で書くとき、最もよいものを□から選びなさい。
+B a. 崩|b. 志|c. 裁|d. 担|e. 注|f. 導|g. 促|h. 繕|i. 防|j. 催|k. 貫|l. 縫
+Q 7-1|体裁を{つくろう}。|＿う>>修饰门面。
+Q 7-2|浴衣を{ぬう}。|＿う>>缝浴衣。
+Q 8-1|愛情を{そそぐ}。|＿ぐ>>倾注爱情。
+Q 8-2|虫歯を{ふせぐ}。|＿ぐ>>预防蛀牙。
+Q 9-1|生徒を{みちびく}。|＿く>>引导学生。
+Q 9-2|初心を{つらぬく}。|＿く>>坚持初衷。
+Q 10-1|注意を{うながす}。|＿す>>提醒注意。
+Q 10-2|体勢を{くずす}。|＿す>>失去平衡。
+A Ⅰ：①b ②a ③a ④b ⑤b ⑥b　Ⅱ：⑦1h 2l ⑧1e 2i ⑨1f 2k ⑩1g 2a
