@@ -1,0 +1,96 @@
+T 由・油・抽|ユ／ユウ／ユイ・ユ・チュウ|由・油・抽|
+I Q.「ハク」と読まないのは？　白夜　拍手　宿泊　→白夜（びゃくや）。「白」の音はたいてい「ハク」だが例外に注意。
+S 例外に注意したいもの　△＝決まった熟語だけ覚えればいい読み|需要注意例外的字　△＝只需记住固定词语的读音|Watch the exceptions (△ = only in set words)
+G 白|
+K 白|ハク・ビャク△
+W 告白|こくはく|a confession|告白
+W 白状する|はくじょう|confess|坦白
+W 白夜|•びゃくや|the midnight sun|白夜
+K 拍|ハク・ヒョウ△
+W 拍手|はくしゅ|applause|拍手
+W 1拍・2拍…|いっぱく・にはく|first beat, second beat|1拍、2拍……
+W 拍子|•ひょうし|rhythm, chance|拍子
+K 泊|ハク
+W 宿泊|しゅくはく|lodging|住宿
+W 1泊・2泊…|いっぱく・にはく|one-night stay, two-night stay|1宿、2宿……
+K 迫|ハク
+W 迫害|はくがい|persecution|迫害
+W 圧迫|あっぱく|pressure, oppression|压迫
+K 舶|ハク
+W 船舶|せんぱく|a ship|船舶
+G 由|
+K 由|ユ△・ユウ・ユイ△
+W 経由|•けいゆ|via|经由
+W 由来|•ゆらい|the origin, the source|由来
+W 自由|じゆう|freedom|自由
+W 由緒|•ゆいしょ|a history|渊源
+K 油|ユ
+W 原油|げんゆ|crude oil|原油
+K 抽|チュウ
+W 抽象|ちゅうしょう|an abstraction|抽象
+W 抽選|ちゅうせん|drawing lots|抽签
+G 申|
+K 神|シン・ジン△
+W 精神|せいしん|mind/spirit|精神
+W 神社|•じんじゃ|a shrine|神社
+W 神宮|•じんぐう|(major) Shinto shrine|神宫
+K 申|シン
+W 申請|しんせい|an application|申请
+W 申告|しんこく|a report, a declaration|申告
+K 伸|シン
+W 伸縮|しんしゅく|expansion and contraction|伸缩
+W 追伸|ついしん|a postscript|又启
+K 紳|シン
+W 紳士|しんし|a gentleman|绅士
+G 己|
+K 己|キ△・コ
+W 克己心|こっきしん|self-control|克己心
+W 自己|じこ|self|自我
+K 記|キ
+W 記述|きじゅつ|a description|记述
+K 紀|キ
+W 世紀|せいき|a century|世纪
+G 圣|
+K 経|ケイ・キョウ△
+W 経費|けいひ|expenses|经费
+W 経典|•きょうてん|the canon|教典
+W (お)経|•(お)きょう|a sutra|佛经
+K 軽|ケイ
+W 軽率な|けいそつ|hasty|轻率
+K 径|ケイ
+W 半径|はんけい|a radius|半径
+W 直径|ちょっけい|a diameter|直径
+G 分|
+K 分|フン△・ブン・ブ△
+W 5分間|ごふんかん|5 minutes|5分钟
+W 分別|ふんべつ|discretion, sort|分别、辨别力
+W 分析|ぶんせき|an analysis|分析
+W 五分五分|ごぶごぶ|fifty-fifty, even|不相上下
+K 粉|フン
+W 粉末|ふんまつ|powder|粉末
+W 花粉|かふん|pollen|花粉
+K 紛|フン
+W 紛失|ふんしつ|lose|遗失
+W 紛争|ふんそう|dispute|纠纷
+K 雰|フン
+W 雰囲気|ふんいき|atmosphere|氛围
+K 盆|ボン
+W (お)盆|(お)ぼん|a tray|托盘
+X1 a、bの言葉の読みを書き、正しいほうを選びなさい。
+Q パスポートの（a. 申告　b. 申請）をする。>>申请护照。
+Q 地名の（a. 経由　b. 由来）を調べる。>>调查地名的由来。
+Q データを（a. 分析　b. 分別）する。>>分析数据。
+Q お（a. 盆　b. 経）にのせてお茶を運ぶ。>>把茶放在托盘上端过去。
+Q ゲストは盛大な（a. 拍手　b. 拍子）で迎えられた。>>客人受到热烈的掌声欢迎。
+Q 事務所のかぎを（a. 粉末　b. 紛失）する。>>弄丢了办公室的钥匙。
+X2 ＿＿の部分を漢字で書くとき、最もよいものを□から選びなさい。
+B a. 由|b. 紀|c. 舶|d. 径|e. 記|f. 軽|g. 己|h. 抽|i. 泊|j. 経|k. 迫|l. 油
+Q 7-1|{はんけい}5センチの円|半＿>>半径5厘米的圆
+Q 7-2|{けいひ}の節約|＿費>>节约经费
+Q 8-1|{じこ}中心的な考え方|自＿>>以自我为中心的想法
+Q 8-2|{きじゅつ}式の試験|＿述>>笔述式的考试
+Q 9-1|{ゆいしょ}正しい家|＿緒>>名门世家
+Q 9-2|{ちゅうしょう}的な絵|＿象>>抽象画
+Q 10-1|気圧による耳の{あっぱく}感|圧＿>>气压造成的耳朵压迫感
+Q 10-2|旅館に{しゅくはく}する。|宿＿>>住在旅馆。
+A Ⅰ：①b ②b ③a ④a ⑤a ⑥b　Ⅱ：⑦1d 2j ⑧1g 2e ⑨1a 2h ⑩1k 2i
