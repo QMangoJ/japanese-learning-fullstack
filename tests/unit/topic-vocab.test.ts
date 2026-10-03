@@ -49,6 +49,28 @@ describe("topic vocabulary data", () => {
 		expect(topic.cards.find((c) => c.jp === "成行")?.kana).toBe("なりゆき");
 		expect(topic.cards.find((c) => c.jp === "貯蓄型投資信託")?.note).toBe("也叫累投型／自動けいぞく投資コース，指分配金自动再投资的类型");
 	});
+
+	it("adds ATM withdrawal, frontend work, and clothes shopping beside the investing list", () => {
+		const index = JSON.parse(readFileSync(join(DIR, "index.json"), "utf8")) as { topics: { slug: string }[] };
+		expect(index.topics.map((topic) => topic.slug)).toEqual(["japan-investing", "bank-atm", "frontend", "clothes-shopping"]);
+		const load = (slug: string): TopicFile => JSON.parse(readFileSync(join(DIR, `${slug}.json`), "utf8"));
+		const atm = load("bank-atm");
+		const frontend = load("frontend");
+		const shopping = load("clothes-shopping");
+		expect(atm.cards.map((card) => card.jp)).toEqual(
+			expect.arrayContaining(["お引出し", "暗証番号", "引き出す", "残高", "通帳記入"]),
+		);
+		expect(frontend.cards.map((card) => card.jp)).toEqual(expect.arrayContaining(["仕様", "プルリクエスト", "不具合", "デプロイ"]));
+		expect(shopping.cards.map((card) => card.jp)).toEqual(expect.arrayContaining(["試着", "税込み", "割引", "会計"]));
+		expect(atm.cards.find((card) => card.jp === "引き出す")?.example_zh).toBe("在 ATM 取了三万日元。");
+		expect(atm.cards.find((card) => card.jp === "お引出し")?.note).toContain("引き出す");
+		expect(frontend.cards.find((card) => card.jp === "プルリクエスト")?.example_jp).toBe(
+			"修正が終わったので、プルリクエストを出しました。",
+		);
+		expect(shopping.cards.find((card) => card.jp === "試着")?.example_zh).toBe("这件大衣可以试穿吗？");
+		expect(shopping.cards.find((card) => card.jp === "割引")?.example_zh).toBe("今天是八折。");
+		expect(shopping.cards.find((card) => card.jp === "割引")?.note).toContain("八折");
+	});
 });
 
 describe("topic vocabulary schema", () => {

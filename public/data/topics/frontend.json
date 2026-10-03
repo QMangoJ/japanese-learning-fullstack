@@ -1,0 +1,304 @@
+{
+	"version": 1,
+	"slug": "frontend",
+	"title_zh": "前端工程师",
+	"title_ja": "フロントエンドの仕事",
+	"title_en": "Frontend engineering",
+	"description_zh": "开会、写页面、提合并请求时会反复听到的词。片假名和日语说法都保留了实际说法。",
+	"description_en": "Words that come up in meetings, UI work, and pull requests. Katakana is kept where engineers actually say it.",
+	"subtopics": [
+		{
+			"zh": "需求和进度",
+			"ja": "要件と進捗",
+			"en": "Requirements and progress"
+		},
+		{
+			"zh": "写页面",
+			"ja": "画面を作る",
+			"en": "Building the screen"
+		},
+		{
+			"zh": "问题和发布",
+			"ja": "不具合とリリース",
+			"en": "Bugs and release"
+		}
+	],
+	"cards": [
+		{
+			"id": "fe-001",
+			"jp": "仕様",
+			"kana": "しよう",
+			"zh": "规格，设计说明",
+			"en": "specification",
+			"subtopic": "需求和进度",
+			"example_jp": "仕様と画面が食い違っています。",
+			"example_zh": "规格和页面不一致。",
+			"example_en": "The screen does not match the spec."
+		},
+		{
+			"id": "fe-002",
+			"jp": "要件",
+			"kana": "ようけん",
+			"zh": "需求",
+			"en": "requirement",
+			"subtopic": "需求和进度",
+			"example_jp": "この要件は次のリリースに入れます。",
+			"example_zh": "这个需求放进下一次发布。",
+			"example_en": "We'll put this requirement in the next release."
+		},
+		{
+			"id": "fe-003",
+			"jp": "見積もり",
+			"kana": "みつもり",
+			"zh": "工时估计",
+			"en": "estimate",
+			"subtopic": "需求和进度",
+			"example_jp": "この画面の見積もりは二日です。",
+			"example_zh": "这个页面的估计是两天。",
+			"example_en": "The estimate for this screen is two days."
+		},
+		{
+			"id": "fe-004",
+			"jp": "進捗",
+			"kana": "しんちょく",
+			"zh": "进度",
+			"en": "progress",
+			"subtopic": "需求和进度",
+			"example_jp": "定例で進捗を共有しました。",
+			"example_zh": "在例会上同步了进度。",
+			"example_en": "I shared the progress at the regular meeting."
+		},
+		{
+			"id": "fe-005",
+			"jp": "納期",
+			"kana": "のうき",
+			"zh": "交付日期",
+			"en": "deadline",
+			"subtopic": "需求和进度",
+			"example_jp": "納期は今週末です。",
+			"example_zh": "交付日是这个周末。",
+			"example_en": "The deadline is this weekend."
+		},
+		{
+			"id": "fe-006",
+			"jp": "定例",
+			"kana": "ていれい",
+			"zh": "例会",
+			"en": "regular meeting",
+			"subtopic": "需求和进度",
+			"example_jp": "毎朝の定例は十五分です。",
+			"example_zh": "每天早上的例会是十五分钟。",
+			"example_en": "The morning standup is fifteen minutes."
+		},
+		{
+			"id": "fe-007",
+			"jp": "課題",
+			"kana": "かだい",
+			"zh": "课题，待办",
+			"en": "issue / task",
+			"subtopic": "需求和进度",
+			"example_jp": "この課題は先に再現手順を書きます。",
+			"example_zh": "这个课题先写下复现步骤。",
+			"example_en": "For this task I'll write the repro steps first."
+		},
+		{
+			"id": "fe-008",
+			"jp": "引き継ぎ",
+			"kana": "ひきつぎ",
+			"zh": "交接",
+			"en": "handoff",
+			"subtopic": "需求和进度",
+			"example_jp": "休暇の前に引き継ぎを残します。",
+			"example_zh": "休假前把交接留下来。",
+			"example_en": "I'll leave a handoff before my time off."
+		},
+		{
+			"id": "fe-009",
+			"jp": "実装",
+			"kana": "じっそう",
+			"zh": "实现",
+			"en": "implementation",
+			"subtopic": "写页面",
+			"example_jp": "このボタンの処理を実装します。",
+			"example_zh": "我来实现这个按钮的处理。",
+			"example_en": "I'll implement the behavior of this button."
+		},
+		{
+			"id": "fe-010",
+			"jp": "画面",
+			"kana": "がめん",
+			"zh": "页面，界面",
+			"en": "screen",
+			"subtopic": "写页面",
+			"example_jp": "画面の表示が仕様と違います。",
+			"example_zh": "页面显示和规格不一样。",
+			"example_en": "What the screen shows differs from the spec."
+		},
+		{
+			"id": "fe-011",
+			"jp": "コンポーネント",
+			"kana": "コンポーネント",
+			"zh": "组件",
+			"en": "component",
+			"subtopic": "写页面",
+			"example_jp": "この表は共通コンポーネントにします。",
+			"example_zh": "这个表格做成共用组件。",
+			"example_en": "I'll make this table a shared component."
+		},
+		{
+			"id": "fe-012",
+			"jp": "状態",
+			"kana": "じょうたい",
+			"zh": "状态",
+			"en": "state",
+			"subtopic": "写页面",
+			"example_jp": "入力の状態は送信後にリセットします。",
+			"example_zh": "输入的状态在提交后重置。",
+			"example_en": "The input state resets after submit."
+		},
+		{
+			"id": "fe-013",
+			"jp": "非同期",
+			"kana": "ひどうき",
+			"zh": "异步",
+			"en": "asynchronous",
+			"subtopic": "写页面",
+			"example_jp": "データ取得は非同期で行います。",
+			"example_zh": "取数据用异步来做。",
+			"example_en": "We fetch the data asynchronously."
+		},
+		{
+			"id": "fe-014",
+			"jp": "関数",
+			"kana": "かんすう",
+			"zh": "函数",
+			"en": "function",
+			"subtopic": "写页面",
+			"example_jp": "この関数は金額を表示用に整えます。",
+			"example_zh": "这个函数把金额整理成显示用的格式。",
+			"example_en": "This function formats the amount for display."
+		},
+		{
+			"id": "fe-015",
+			"jp": "変数",
+			"kana": "へんすう",
+			"zh": "变量",
+			"en": "variable",
+			"subtopic": "写页面",
+			"example_jp": "この変数には入力中の金額が入ります。",
+			"example_zh": "这个变量里放的是正在输入的金额。",
+			"example_en": "This variable holds the amount being typed."
+		},
+		{
+			"id": "fe-016",
+			"jp": "型",
+			"kana": "かた",
+			"zh": "类型",
+			"en": "type",
+			"subtopic": "写页面",
+			"example_jp": "戻り値の型が合っていません。",
+			"example_zh": "返回值的类型对不上。",
+			"example_en": "The return type does not match."
+		},
+		{
+			"id": "fe-017",
+			"jp": "ライブラリ",
+			"kana": "ライブラリ",
+			"zh": "库",
+			"en": "library",
+			"subtopic": "写页面",
+			"example_jp": "日付の処理はライブラリに任せます。",
+			"example_zh": "日期处理交给库来做。",
+			"example_en": "We'll leave date handling to a library."
+		},
+		{
+			"id": "fe-018",
+			"jp": "不具合",
+			"kana": "ふぐあい",
+			"zh": "故障，缺陷",
+			"en": "defect",
+			"subtopic": "问题和发布",
+			"example_jp": "この不具合は本番環境だけで出ます。",
+			"example_zh": "这个故障只在生产环境出现。",
+			"example_en": "This defect shows up only in production.",
+			"note": "口头常说バグ。写报告、开票时多用「不具合」。"
+		},
+		{
+			"id": "fe-019",
+			"jp": "修正",
+			"kana": "しゅうせい",
+			"zh": "修改，修正",
+			"en": "fix",
+			"subtopic": "问题和发布",
+			"example_jp": "レビューの指摘を修正しました。",
+			"example_zh": "审查里指出的地方已经改了。",
+			"example_en": "I fixed the points from review."
+		},
+		{
+			"id": "fe-020",
+			"jp": "デバッグ",
+			"kana": "デバッグ",
+			"zh": "调试",
+			"en": "debug",
+			"subtopic": "问题和发布",
+			"example_jp": "ローカルでデバッグして原因を特定します。",
+			"example_zh": "在本地调试，把原因找出来。",
+			"example_en": "I'll debug locally and pin down the cause."
+		},
+		{
+			"id": "fe-021",
+			"jp": "レビュー",
+			"kana": "レビュー",
+			"zh": "审查，代码评审",
+			"en": "review",
+			"subtopic": "问题和发布",
+			"example_jp": "プルリクエストのレビューをお願いします。",
+			"example_zh": "请帮忙看一下这个拉取请求。",
+			"example_en": "Could you review the pull request?"
+		},
+		{
+			"id": "fe-022",
+			"jp": "プルリクエスト",
+			"kana": "プルリクエスト",
+			"zh": "拉取请求",
+			"en": "pull request",
+			"subtopic": "问题和发布",
+			"example_jp": "修正が終わったので、プルリクエストを出しました。",
+			"example_zh": "改完了，已经提交了拉取请求。",
+			"example_en": "The fix is done, so I opened a pull request."
+		},
+		{
+			"id": "fe-023",
+			"jp": "デプロイ",
+			"kana": "デプロイ",
+			"zh": "部署",
+			"en": "deploy",
+			"subtopic": "问题和发布",
+			"example_jp": "確認が取れてから本番へデプロイします。",
+			"example_zh": "确认之后再部署到生产环境。",
+			"example_en": "We'll deploy to production after it is approved."
+		},
+		{
+			"id": "fe-024",
+			"jp": "本番環境",
+			"kana": "ほんばんかんきょう",
+			"zh": "生产环境",
+			"en": "production environment",
+			"subtopic": "问题和发布",
+			"example_jp": "本番環境の設定はローカルと別です。",
+			"example_zh": "生产环境的配置和本地不一样。",
+			"example_en": "Production settings are separate from local ones."
+		},
+		{
+			"id": "fe-025",
+			"jp": "ビルド",
+			"kana": "ビルド",
+			"zh": "构建",
+			"en": "build",
+			"subtopic": "问题和发布",
+			"example_jp": "直したあと、もう一度ビルドします。",
+			"example_zh": "改完之后再构建一次。",
+			"example_en": "After the fix, build once more."
+		}
+	]
+}

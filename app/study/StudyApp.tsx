@@ -18,8 +18,9 @@ import {
 } from "../routes/study-common";
 import { ContrastPage, DayNav, DayPage, parseDayRoute } from "./days";
 import { DuePage } from "./DuePage";
-import { dueCount, getDueVersion, subscribeDue } from "./due-review";
-import { formatReviewDate, parseReviewRoute, reviewDateFromId } from "./lesson-review";
+import { recordGrammarPage, getReviewVersion, reviewCount, subscribeReview } from "./daily-review";
+import { getDueVersion, subscribeDue } from "./due-review";
+import { formatReviewDate, jstToday, parseReviewRoute, reviewDateFromId } from "./lesson-review";
 import { parseTopicsRoute } from "./topic-route";
 import {
 	ACCOUNT,
@@ -135,7 +136,8 @@ function useStudyTick() {
 }
 
 function useDueTick() {
-	return useSyncExternalStore(subscribeDue, getDueVersion, () => 0);
+	useSyncExternalStore(subscribeDue, getDueVersion, () => 0);
+	useSyncExternalStore(subscribeReview, getReviewVersion, () => 0);
 }
 
 class StudyPageErrorBoundary extends Component<{ resetKey: string; children: ReactNode }, { error: Error | null }> {
@@ -550,7 +552,7 @@ function Sidebar({ routeKey, onLevel }: { routeKey: string; onLevel: (lv: LevelK
 			</div>
 			<div className="side-foot">
 				{row("#/search", "🔍", lx("搜索", "Search"), null, h === "#/search")}
-				{row("#/due", "🔁", lx("今天要复习", "Due today"), dueCount(), h === "#/due")}
+				{row("#/due", "🔁", lx("今天要复习", "Due today"), reviewCount(), h === "#/due")}
 				{row("#/mistakes", "📝", lx("错题本", "Mistakes"), activeMistakeCount() || "", h === "#/mistakes")}
 				{row("#/favs", "⭐", lx("收藏", "Favorites"), favCount || "", h === "#/favs")}
 			</div>
@@ -912,6 +914,7 @@ export function StudyApp() {
 	const [booted, setBooted] = useState(false);
 	const [sheet, setSheet] = useState<"level" | "common" | null>(null);
 	const scrollPositions = useRef(new Map<string, number>());
+	const recordedVisit = useRef("");
 	const isTrial = typeof window !== "undefined" && new URLSearchParams(location.search).get("trial") === "1";
 
 	useEffect(() => {
@@ -1014,6 +1017,37 @@ export function StudyApp() {
 			scrollPositions.current.set(viewKey, lastY);
 		};
 	}, [viewKey]);
+
+	useEffect(() => {
+		const dayRoute = parseDayRoute(routeKey);
+		const moduleReady = isN1() ? n1Loaded : isN2() ? n2Loaded : isN4() ? n4Loaded : dataLoaded;
+		if (!dayRoute || !isGram() || !moduleReady) {
+			if (!dayRoute || !isGram()) recordedVisit.current = "";
+			return;
+		}
+		const lesson = findDay(dayRoute.w, dayRoute.d);
+		const points = Array.isArray(lesson?.points) ? lesson.points : [];
+		if (!points.length) {
+			recordedVisit.current = "";
+			return;
+		}
+		const stamp = `${MODULE}|${routeKey}|${jstToday()}`;
+		if (recordedVisit.current === stamp) return;
+		recordedVisit.current = stamp;
+		const focusedRaw = dayRoute.token && dayRoute.token[0] === "p" ? Number(dayRoute.token.slice(1)) : null;
+		recordGrammarPage({
+			module: MODULE,
+			week: dayRoute.w,
+			day: dayRoute.d,
+			focused: typeof focusedRaw === "number" && Number.isInteger(focusedRaw) ? focusedRaw : null,
+			points: points.map((point: { pattern?: string; reading?: string; usage_cn?: string; usage_en?: string }) => ({
+				pattern: String(point?.pattern || ""),
+				reading: point?.reading || "",
+				cn: point?.usage_cn || "",
+				en: point?.usage_en || "",
+			})),
+		});
+	}, [dataLoaded, n1Loaded, n2Loaded, n4Loaded, routeKey, MODULE]);
 
 	useEffect(() => {
 		if (routeKey === "#/search" && !readingSearchLoaded && !readingSearchError) {
