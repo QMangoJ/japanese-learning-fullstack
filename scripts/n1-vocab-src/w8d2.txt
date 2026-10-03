@@ -4,10 +4,10 @@ W 一同[いちどう]|一同を代表[だいひょう]して…|on behalf of us
 W 一同[いちどう]|出席者[しゅっせきしゃ]一同|all those present|全体出席人员
 W 一面[いちめん]|物事[ものごと]の一面|one aspect of something|事物的一方面
 W 一面[いちめん]|空一面|the entire sky|整面天空
-W 一面[いちめん]|一面記事[きじ]|a front page article|头版报道
+W 一面[いちめん]|一面[いちめん]記事[きじ]|a front page article|头版报道
 W 一連[いちれん]|一連の事件[じけん]|a series of crimes|一系列事件
 W 一目[いちもく]|一目瞭然[りょうぜん]|very obvious|一目了然
-W 一目[いちもく]|一目置[お]く|recognize someone's ability|另眼相看
+W 一目[いちもく]|一目[いちもく]置[お]く|recognize someone's ability|另眼相看
 W 一律[いちりつ]（に）|一律1万円支給[しきゅう]される|10,000 yen will be paid across the board|一律被支付1万日元。
 W 一律[いちりつ]（に）|給料[きゅうりょう]を一律に上げる|raise salaries across the board|一律提高工资
 W 一様[いちよう]（に）|参加者[さんかしゃ]は一様に驚[おどろ]きの声をあげた。|All those present reacted in surprise.|参加人员全都发出了惊奇的声音。

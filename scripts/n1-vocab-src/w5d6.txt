@@ -14,7 +14,7 @@ W 人任[ひとまか]せ|仕事を人任せにする|leave one's work to someon
 W 善[よ]し悪[あ]し|物事[ものごと]の善し悪し|know right from wrong|事物的好坏
 W →善悪[ぜんあく]||right and wrong|善恶
 W 目[ま]の当[あ]たり|惨状[さんじょう]を目の当たりにする|witness a tragic event|目睹了惨状
-W 応急[おうきゅう]|応急処置[しょち]をする|give first aid|进行应急处理
+W 応急[おうきゅう]|応急[おうきゅう]処置[しょち]をする|give first aid|进行应急处理
 W →応急手当[おうきゅうてあて]||first aid|应急措施
 W 気配[けはい]|人の気配がする|sense someone is around|感觉有人
 W 手際[てぎわ]|手際がいい|be very efficient|本领好

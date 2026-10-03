@@ -4,7 +4,7 @@ import { applyKanjiReadings, buildReviewRuby, toHiragana } from "./lesson-review
 import { getKanjiWordUsage, getReviewedKanjiWordUsage, kanjiWordSurface, type KanjiWord } from "./kanji-word-usage";
 import type { MemoryCardItem } from "./memory-cards";
 import { getN2KanjiWordUsage } from "./n2-kanji-word-usage";
-import { K, K2, V, V2, V4 } from "./store";
+import { K, K2, V, V1, V2, V4 } from "./store";
 
 const BASE_READINGS = kanjiReadings as Record<string, string>;
 
@@ -266,6 +266,7 @@ function collectVocabQuizCorpus(
 function vocabBook(module: string) {
 	if (module === "n2vocab") return V2;
 	if (module === "n4vocab") return V4;
+	if (module === "n1vocab") return V1;
 	return V;
 }
 

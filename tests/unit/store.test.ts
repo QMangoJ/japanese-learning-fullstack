@@ -55,6 +55,7 @@ import {
 	isGram,
 	isKanji,
 	isListening,
+	isN1,
 	isN2,
 	isN4,
 	isReading,
@@ -224,7 +225,11 @@ describe("language and modules", () => {
 		expect(typeForLevel("n3", "listening")).toBe("listening");
 		expect(typeForLevel("n4", "listening")).toBe("grammar");
 		expect(moduleFrom("n1", "grammar")).toBe("n1grammar");
-		expect(moduleFrom("n1", "vocab")).toBe("n1grammar");
+		expect(moduleFrom("n1", "vocab")).toBe("n1vocab");
+		expect(moduleFrom("n1", "kanji")).toBe("n1grammar");
+		expect(typeForLevel("n1", "vocab")).toBe("vocab");
+		expect(isVocab("n1vocab")).toBe(true);
+		expect(isN1("n1vocab")).toBe(true);
 		expect(typeForLevel("n1", "kanji")).toBe("grammar");
 		expect(isGram("n1grammar")).toBe(true);
 		expect(isGram("n4grammar")).toBe(true);

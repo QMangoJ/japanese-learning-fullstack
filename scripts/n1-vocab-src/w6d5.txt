@@ -31,7 +31,7 @@ W 後[あと]|入社[にゅうしゃ]はできたが、後が心配[しんぱい
 W あと|あと5分で始まる。|It'll start in 5 minutes.|还有5分钟就开始。
 W 後[あと]|事故[じこ]が後を絶[た]たない。（＝次々[つぎつぎ]に起こる）|There continue to be accidents.|事故不绝。
 W 後[あと]|社長の後を継[つ]ぐ|take over the president's position|接任社长的职务
-W 後[あと]|後（＝残[のこ]り）は来月払[はら]います。|I'll pay the rest next month.|剩下的下个月支付。
+W 後[あと]|後（＝残[のこ]り）は来月[らいげつ]払[はら]います。|I'll pay the rest next month.|剩下的下个月支付。
 W 跡[あと]|書き直[なお]した跡[あと]がある。|There are signs that it's been rewritten.|有修改的痕迹。
 S words|根|根（根；根本；本性）|根 (root)
 W 根[ね]|雑草[ざっそう]を根から抜[ぬ]く|pull out the weed with its root|把杂草连根拔起

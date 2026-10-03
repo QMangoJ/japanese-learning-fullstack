@@ -11,6 +11,7 @@ import {
 	FAVMETA,
 	G,
 	G1,
+	V1,
 	G2,
 	G4,
 	K,
@@ -1353,7 +1354,7 @@ function ExamVocab({ day, w }: { day: any; w: number }) {
 
 function DayVocab({ day, w, d, scrollTok }: { day: any; w: number; d: number; scrollTok: string | null }) {
 	const mod = MODULE;
-	const modLbl = mod === "n2vocab" ? "N2 词汇" : mod === "n4vocab" ? "N4 词汇" : "词汇";
+	const modLbl = mod === "n2vocab" ? "N2 词汇" : mod === "n4vocab" ? "N4 词汇" : mod === "n1vocab" ? "N1 词汇" : "词汇";
 	useScrollHighlight(scrollTok ? `v-${w}-${d}-${scrollTok}` : null);
 	if (d === 7) {
 		return (
@@ -1365,8 +1366,8 @@ function DayVocab({ day, w, d, scrollTok }: { day: any; w: number; d: number; sc
 			</>
 		);
 	}
-	const vocabBook = MODULE === "n2vocab" ? V2 : MODULE === "n4vocab" ? V4 : V;
-	const dailyItems = (MODULE === "vocab" || MODULE === "n2vocab" || MODULE === "n4vocab") && vocabBook.daily_translations && vocabBook.daily_translations[`w${w}d${d}`];
+	const vocabBook = MODULE === "n2vocab" ? V2 : MODULE === "n4vocab" ? V4 : MODULE === "n1vocab" ? V1 : V;
+	const dailyItems = (MODULE === "vocab" || MODULE === "n2vocab" || MODULE === "n4vocab" || MODULE === "n1vocab") && vocabBook.daily_translations && vocabBook.daily_translations[`w${w}d${d}`];
 	const translationByNumber = new Map(((dailyItems && dailyItems.items) || []).map((item: any) => [item.n, item]));
 	return (
 		<>

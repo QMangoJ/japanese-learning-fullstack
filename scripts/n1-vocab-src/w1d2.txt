@@ -16,7 +16,7 @@ W 切[せつ]ない|彼と離れるのはとても切ない。|I am very sad to 
 W 物足[ものた]りない|食事の量が物足りない。|I do not feel satisfied (with the meal).|饭菜的量不足。
 W わずらわしい|隣人との付き合いがわずらわしい。|Getting involved with the neighbors is troublesome.|和邻居的交往真麻烦。
 W うっとうしい|うっとうしい天気|gloomy weather|阴郁的天气
-W うざい（俗語[ぞくご]）|＝うっとうしい、わずらわしい||
+W うざい（俗語[ぞくご]）|＝うっとうしい、わずらわしい|annoying|烦人、讨厌
 W ばかばかしい|ばかばかしい話|a ridiculous story|无聊的事情
 W 痛[いた]ましい|痛ましい事故現場|the scene of a horrible accident|凄惨的事故现场
 W きまり（が）悪[わる]い|会議に遅れてきまり（が）悪かった。|I felt awkward showing up late for the meeting.|开会迟到，很不好意思。

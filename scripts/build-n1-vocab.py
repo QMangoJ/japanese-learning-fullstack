@@ -201,6 +201,18 @@ def parse_day(path, w, d):
             day["exercises"]["answers"] = day.pop("answers_text")
     return day, trans
 
+def split_opts(s):
+    """Split option translations on ／, but keep ／ inside 「…」 (e.g. 应为「ある／強い」)."""
+    out, cur, depth = [], "", 0
+    for ch in s or "":
+        if ch == "「": depth += 1
+        elif ch == "」": depth = max(0, depth - 1)
+        if ch == "／" and depth == 0:
+            out.append(cur); cur = ""
+        else:
+            cur += ch
+    return out + [cur] if s else []
+
 BESSATSU_PAGE = {1: 1, 2: 1, 3: 2, 4: 2, 5: 3, 6: 3, 7: 4, 8: 4}
 
 def parse_ex(path):
@@ -213,7 +225,7 @@ def parse_ex(path):
         if len(t) != 6:
             raise SystemExit(f"{path}: need 6 fields: {line}")
         n, ans, note, tr, opts, point = t
-        e = {"n": int(n), "ans": int(ans), "trans": tr, "option_translations": opts.split("／") if opts else [], "point": point}
+        e = {"n": int(n), "ans": int(ans), "trans": tr, "option_translations": split_opts(opts), "point": point}
         if note:
             e["note"] = plain(note)
             e["note_r"] = ruby(note)
