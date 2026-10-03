@@ -2,6 +2,7 @@ import { COMPLETION_COMPARISON, N3_DAILY_SUMMARIES, SUMMARY_SOURCES, type Usage 
 import { N3_RELATED_GRAMMAR, RELATED_LEVEL_SOURCES } from "../data/n3-related-grammar";
 import { DAILY_MEANINGS, RELATED_MEANINGS } from "../data/n3-summary-meanings";
 import { RubyHtml } from "../routes/study-common";
+import { translateOutsideRuby, useSimilarFurigana } from "../data/similar-furigana-text";
 import "./grammar-summary.css";
 
 type Point = {
@@ -42,6 +43,7 @@ export function GrammarSummary({ week, day, points, language, onReview }: {
 	language: string;
 	onReview: (index: number) => void;
 }) {
+	const similarFurigana = useSimilarFurigana();
 	const summary = N3_DAILY_SUMMARIES[`${week}-${day}`];
 	const related = N3_RELATED_GRAMMAR[`${week}-${day}`];
 	// Week-end tests and other unknown lessons deliberately have no summary.
@@ -88,13 +90,13 @@ export function GrammarSummary({ week, day, points, language, onReview }: {
 					<p className="grammar-summary__tip">{related.tip[lang]}</p>
 					<div className="grammar-summary__columns" aria-hidden="true"><span>{label("表达 · 参考等级 · 接续", "Pattern · reference level · form")}</span><span>{label("与本课怎么区分", "How it differs from this lesson")}</span><span>{label("对比例句", "Comparison example")}</span></div>
 					{related.rows.map(([form, level, usage, connection, zh, en, jp, translationZh, translationEn]) => <article className="grammar-summary__row" key={form}>
-						<header><h4 lang="ja">{formLabel(form, !!lang)}</h4>
+						<header><h4 lang="ja"><RubyHtml html={translateOutsideRuby(similarFurigana(form), text => formLabel(text, !!lang))} /></h4>
 							{!lang && <p className="grammar-summary__meaning">意思：{RELATED_MEANINGS[form]}</p>}
 							<div className="grammar-summary__badges"><span>{level} · {label("参考", "reference")}</span><span>{USAGE_LABELS[usage][lang]}</span></div>
 							<p className="grammar-summary__connection">{connectionLabel(connection, !!lang)}</p>
 						</header>
 						<p>{lang ? en : zh}</p>
-						<div className="grammar-summary__example-body"><p className="jp" lang="ja">{jp}</p><p className={lang ? "en" : "cn"}>{lang ? translationEn : translationZh}</p></div>
+						<div className="grammar-summary__example-body"><p className="jp" lang="ja"><RubyHtml html={similarFurigana(jp)} /></p><p className={lang ? "en" : "cn"}>{lang ? translationEn : translationZh}</p></div>
 					</article>)}
 				</section> : null}
 				{week === 5 && day === 2 ? <div className="grammar-summary__related">

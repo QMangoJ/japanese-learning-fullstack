@@ -3,6 +3,7 @@ import { N2_SUMMARY_RELATED } from "../data/n2-summary-related";
 import { n2SummaryExample } from "../data/n2-summary-examples";
 import type { Usage } from "../data/n3-daily-summaries";
 import { RubyHtml } from "../routes/study-common";
+import { translateOutsideRuby, useSimilarFurigana } from "../data/similar-furigana-text";
 import "./grammar-summary.css";
 
 type Point = { examples?: { jp: string; jp_r?: string; cn?: string; en?: string }[] };
@@ -24,6 +25,7 @@ export function N2GrammarSummary({ week, day, points, language, onReview, simila
 	week: number; day: number; points: Point[]; language: string; onReview: (index: number) => void;
 	similar?: N2SimilarEntry[]; onOpenPoint?: (ref: [number, number, number]) => void;
 }) {
+	const similarFurigana = useSimilarFurigana();
 	const summary = N2_DAILY_SUMMARIES[`${week}-${day}`];
 	if (!summary) return null;
 	const lang = language === "en" ? 1 : 0;
@@ -57,24 +59,24 @@ export function N2GrammarSummary({ week, day, points, language, onReview, simila
 				{summary.related.map(key => {
 					const row = N2_SUMMARY_RELATED[key];
 					return <article className="grammar-summary__row" key={key}>
-						<header><h4 lang="ja">{lang ? englishForm(row.form) : row.form}</h4>
+						<header><h4 lang="ja"><RubyHtml html={translateOutsideRuby(similarFurigana(row.form), text => (lang ? englishForm(text) : text))} /></h4>
 							<p className="grammar-summary__meaning">{t("意思：", "Meaning: ")}{row.meaning[lang]}</p>
 							<div className="grammar-summary__badges"><span>{row.level} · {t("参考等级", "reference level")}</span><span>{USAGE[row.usage][lang]}</span></div>
 						</header>
 						<p>{row.distinction[lang]}</p>
-						<div className="grammar-summary__example-body"><p className="jp" lang="ja">{row.example[0]}</p><p className={lang ? "en" : "cn"}>{row.example[lang + 1]}</p></div>
+						<div className="grammar-summary__example-body"><p className="jp" lang="ja"><RubyHtml html={similarFurigana(row.example[0])} /></p><p className={lang ? "en" : "cn"}>{row.example[lang + 1]}</p></div>
 					</article>;
 				})}
 				{sameLevel.map(entry => {
 					const here = entry.ref[0] === week && entry.ref[1] === day;
 					return <article className="grammar-summary__row" key={`n2-${entry.point}-${entry.ref.join("-")}`} data-level="N2">
-						<header><h4 lang="ja">{entry.form}</h4>
+						<header><h4 lang="ja"><RubyHtml html={similarFurigana(entry.form)} /></h4>
 							<p className="grammar-summary__meaning">意思：{entry.meaning}</p>
 							<div className="grammar-summary__badges"><span>N2</span>
 								<button type="button" className="grammar-summary__where" onClick={() => (here ? onReview(entry.ref[2]) : onOpenPoint?.(entry.ref))}>第{entry.ref[0]}週 第{entry.ref[1]}天 ›</button></div>
 						</header>
-						<p><span className="grammar-summary__against" lang="ja">对比本课{entry.against}：</span>{entry.diff}</p>
-						<div className="grammar-summary__example-body"><p className="jp" lang="ja">{entry.example.jp}</p><p className="cn">{entry.example.cn}</p></div>
+						<p><span className="grammar-summary__against" lang="ja">对比本课<RubyHtml html={similarFurigana(entry.against)} />：</span>{entry.diff}</p>
+						<div className="grammar-summary__example-body"><p className="jp" lang="ja"><RubyHtml html={similarFurigana(entry.example.jp)} /></p><p className="cn">{entry.example.cn}</p></div>
 					</article>;
 				})}
 			</section>
