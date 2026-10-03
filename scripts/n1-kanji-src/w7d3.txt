@@ -1,0 +1,118 @@
+T 再検査・再編成|さいけんさ・さいへんせい|再检查・再编制|
+I Q. 前につく漢字は？　＿範囲（広？　名？　高？）　→広範囲。「範囲」の意味を考えれば、わかるはず。
+S 語彙の前につく漢字|加在词汇前面的汉字|Kanji prefixes
+G 初級の漢字|しょきゅうのかんじ
+K 名|すぐれて、有名な
+W 名曲|めいきょく|a famous tune|名曲
+W 名選手|めいせんしゅ|a famous player|名选手
+K 高|たかい
+W 高性能|こうせいのう|high-performance|高性能
+W 高学歴|こうがくれき|highly educated|高学历
+K 低|ひくい
+W 低血圧|ていけつあつ|low blood pressure|低血压
+W 低気圧|ていきあつ|low pressure|低气压
+K 重|重い、大きい
+W 重金属|じゅうきんぞく|heavy metal|重金属
+W 重工業|じゅうこうぎょう|heavy industries|重工业
+K 軽|かるい
+W 軽自動車|けいじどうしゃ|a minicar|小型汽车
+W 軽工業|けいこうぎょう|light industries|轻工业
+K 好|いい
+W 好青年|こうせいねん|a cheerful young man|好青年
+W 好都合|こうつごう|advantageous|方便
+K 悪|わるい
+W 悪循環|あくじゅんかん|a vicious circle|恶性循环
+W 悪役|あくやく|a villain|反派角色
+K 急|きゅうに
+W 急停車|きゅうていしゃ|a sudden stop|急停车
+W 急発進|きゅうはっしん|a sudden start|突然起飞
+K 正|ちょうど
+W 正反対|せいはんたい|a complete opposite|正相反
+W 正三角形|せいさんかっけい|an equilateral triangle|正三角形
+K 広|ひろい
+W 広範囲|こうはんい|a wide area|广范围
+K 真|ほんとうの
+W 真犯人|しんはんにん|a culprit|真犯人
+G 中級の漢字|ちゅうきゅうのかんじ
+K 再|もういちど
+W 再検査|さいけんさ|a reexamination|再检查
+W 再編成|さいへんせい|a reorganization|重编
+K 助|アシストする
+W 助監督|じょかんとく|an assistant director|副导演
+W 助動詞|じょどうし|an auxiliary verb|助动词
+K 副|2番目の
+W 副作用|ふくさよう|a side effect|副作用
+W 副都心|ふくとしん|a newly developed city centre|大城市里新产生的中心地区
+K 初|初めての
+W 初耳|はつみみ|news/first heard|初次听到
+W 初公開|はつこうかい|a premiere|初次公开
+K 諸|いろいろな
+W 諸問題|しょもんだい|problems|诸问题
+W 諸事情|しょじじょう|circumstances|诸情况
+K 被|～される
+W 被害者|ひがいしゃ|victims|被害者
+W 被災者|ひさいしゃ|victims in a natural disaster|受灾者
+K 異|ことなった
+W 異文化|いぶんか|a different culture|异文化
+W 異次元|いじげん|a different dimension|异次元
+K 旧|前の、古いほうの
+W 旧姓|きゅうせい|a maiden name|娘家姓
+W 旧体制|きゅうたいせい|old regime|旧体制
+K 誤|あやまった
+W 誤字|ごじ|a typographical error|错字
+W 誤作動|ごさどう|a malfunction|运转错误
+K 仮|一時的な
+W 仮契約|かりけいやく|a temporary contract|临时签约
+W 仮免許|かりめんきょ|a provisional license|临时执照
+K 準|～のつぎの
+W 準会員|じゅんかいいん|an associate member|准会员
+W 準決勝|じゅんけっしょう|semifinals|半决赛
+K 乱|みだれた
+W 乱気流|らんきりゅう|turbulence|湍流
+W 乱反射|らんはんしゃ|a diffused reflection|漫反射
+K 棒|棒のような
+W 棒読み|ぼうよみ|reading in a monotone voice|直读（念得没有抑扬）
+W 棒立ち|ぼうだち|stand perfectly still|呆立不动
+K 超|普通をこえた
+W 超音波|ちょうおんぱ|ultrasound|超音波
+W 超能力|ちょうのうりょく|a supernatural power|超能力
+G 上級の漢字|じょうきゅうのかんじ
+K 亜|～に続く程度の
+W 亜熱帯|あねったい|subtropical areas|亚热带
+W 亜寒帯|あかんたい|subarctic areas|亚寒带
+K 微|とても小さい、少しの
+W 微調整|びちょうせい|a subtle adjustment|微调整
+W 微粒子|びりゅうし|particles|微粒子
+K 序|はじめの
+W 序章|じょしょう|an introduction|序章
+W 序曲|じょきょく|an overture|序曲
+K 猛|はげしい
+W 猛練習|もうれんしゅう|heavy training/practice|拼命练习
+W 猛特訓|もうとっくん|special crash training|猛烈的特别训练
+K 俗|世間の
+W 俗語|ぞくご|slang|俗语
+W 俗説|ぞくせつ|a common belief|世俗之说
+K 豆|豆のように小さい、少しの
+W 豆知識|まめちしき|trivia|小知识
+W 豆電球|まめでんきゅう|a miniature bulb|小灯泡
+K 偽|にせものの
+W 偽札|にせさつ|a counterfeit bill|假钞
+W 偽者|にせもの|an impostor|冒充者
+X1 正しいほうに○をつけなさい。
+Q 新人のアナウンサーが原稿を（a. 棒　b. 誤）読みしている。>>新播音员在毫无抑扬顿挫地念稿子。
+Q ほぼ準備はできたので、あとは各自で（a. 豆　b. 微）調整してください。>>准备基本完成了，剩下的请各自微调。
+Q この薬はよく効くが（a. 副　b. 助）作用がある。>>这种药很有效，但有副作用。
+Q （a. 諸　b. 急）事情により、この度会社を辞めることになりました。>>由于种种原因，这次要辞去公司的工作了。
+Q 彼にそんな特技があったなんて（a. 初　b. 真）耳です。>>他有那样的特长，我还是第一次听说。
+Q そうしていただけるなら、私にとっては（a. 高　b. 好）都合です。>>如果您能那样做，对我来说很方便。
+X2 ＿＿の部分を漢字で書くとき、最もよいものを□から選びなさい。
+B a. 亜|b. 重|c. 仮|d. 急|e. 俗|f. 再|g. 準|h. 序|i. 軽|j. 超|k. 猛|l. 異
+Q 7|論文の{じょしょう}|＿章>>论文的序章
+Q 8|{もうとっくん}をする。|＿特訓>>进行猛烈的特训。
+Q 9|{かりめんきょ}を取る。|＿免許>>取得临时驾照。
+Q 10|{じゅんけっしょう}に進む。|＿決勝>>进入半决赛。
+Q 11|{けいじどうしゃ}に乗る。|＿自動車>>坐小型汽车。
+Q 12|{さいにゅうこく}手続き|＿入国>>再入境手续
+Q 13|{きゅうていしゃ}する。|＿停車>>紧急停车。
+Q 14|{あねったい}植物|＿熱帯>>亚热带植物
+A Ⅰ：①a ②b ③a ④a ⑤a ⑥b　Ⅱ：⑦h 序章 ⑧k 猛特訓 ⑨c 仮免許 ⑩g 準決勝 ⑪i 軽自動車 ⑫f 再入国 ⑬d 急停車 ⑭a 亜熱帯
