@@ -1,6 +1,6 @@
 import { jstToday } from "./lesson-review";
 
-export type DueKind = "grammar" | "mistake" | "listening";
+export type DueKind = "grammar" | "mistake" | "listening" | "topic";
 
 export type DueEntry = {
 	id: string;
@@ -116,7 +116,7 @@ export function mistakeDueDraft(mistake: { id: string; text: string }): DueDraft
 }
 
 function isKind(value: unknown): value is DueKind {
-	return value === "grammar" || value === "mistake" || value === "listening";
+	return value === "grammar" || value === "mistake" || value === "listening" || value === "topic";
 }
 
 export function cleanDue(value: unknown): DueEntry[] {
@@ -240,6 +240,25 @@ export function rememberPass(id: string, today = jstToday()) {
 	items = items.map((item) => (item.id === id ? entry : item));
 	commit();
 	return true;
+}
+
+/**
+ * 「会了」：已在队列里就按答对推进；从没标过的卡片也排进队列，从第二档（3 天后）开始确认。
+ * 专题词汇用它，让「会了」也进入间隔复习。
+ */
+export function rememberKnown(draft: DueDraft, today = jstToday()) {
+	if (rememberPass(draft.id, today)) return;
+	const id = draft.id.trim();
+	if (!id || id.length > MAX_ID) return;
+	const jp = clip(draft.jp, SNAP_JP);
+	const cn = clip(draft.cn, SNAP_TEXT);
+	if (!jp && !cn) return;
+	const next = scheduleAfterPass(today, 1);
+	const entry: DueEntry = { id, kind: draft.kind, jp, cn, en: clip(draft.en, SNAP_TEXT), due: next.due, step: next.step, ts: Date.now() };
+	const reading = clip(draft.reading, SNAP_READING);
+	if (reading) entry.reading = reading;
+	items = [entry, ...items.filter((item) => item.id !== id)];
+	commit();
 }
 
 export function forgetDue(id: string) {

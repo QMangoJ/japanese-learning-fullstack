@@ -1,0 +1,23 @@
+{
+	"version": 1,
+	"topics": [
+		{
+			"slug": "japan-investing",
+			"title_zh": "日本投资理财日语",
+			"title_ja": "投資・資産運用の日本語",
+			"count": 121,
+			"title_en": "Investing & Personal Finance Japanese",
+			"subtopics": [
+				"开户・本人确认",
+				"账户・税制（NISA等）",
+				"下单・交易",
+				"股票",
+				"投资信托・基金",
+				"债券・其他商品",
+				"收益・成本",
+				"汇率・外国证券",
+				"风险・策略"
+			]
+		}
+	]
+}

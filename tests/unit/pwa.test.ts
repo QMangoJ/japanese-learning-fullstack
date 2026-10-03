@@ -113,7 +113,7 @@ describe("PWA offline policy", () => {
 	});
 
 	it("uses a new cache namespace for this release", () => {
-		expect(source).toContain('const CACHE_VERSION = "2026-10-03-v2"');
+		expect(source).toContain('const CACHE_VERSION = "2026-10-03-v3"');
 		expect(source).toContain('url.pathname === "/study.css"');
 	});
 

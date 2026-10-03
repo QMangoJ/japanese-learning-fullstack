@@ -7,6 +7,7 @@ const KIND_LABEL: Record<DueKind, [string, string]> = {
 	grammar: ["语法", "Grammar"],
 	mistake: ["错题", "Mistake"],
 	listening: ["听解", "Listening"],
+	topic: ["专题词汇", "Topic vocabulary"],
 };
 
 export function DuePage() {
