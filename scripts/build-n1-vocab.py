@@ -148,7 +148,7 @@ def parse_day(path, w, d):
         elif tag == "P":
             sec["pattern"], sec["pattern_r"] = plain(body), ruby(body)
         elif tag == "N":
-            sec["note"] = body
+            sec["note"] = (sec["note"] + "　" + body) if sec.get("note") else body
         elif tag == "W":
             t = body.split("|")
             if len(t) == 3:

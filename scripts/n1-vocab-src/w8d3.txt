@@ -1,0 +1,46 @@
+T 体[からだ]の部分[ぶぶん]を使った言葉[ことば]①|使用身体部位的词①|Words using body parts ①
+S words|体[からだ]の名称[めいしょう]を使った表現[ひょうげん]|使用身体名称的表达|Expressions using names of body parts
+W 顔[かお]|彼[かれ]はこの辺[あた]りでは顔が売れている。|He's well connected around here.|他在这一带很出名。
+W 顔[かお]|彼[かれ]はとても顔が広い。|He's well connected.|他交际特别广。
+W 顔[かお]|私はその店に顔が利[き]く。|I'm a good customer of theirs, so they give me special treatment.|我在那家店有面子。
+W 顔[かお]|親に合わせる顔がない。|I can't face my parents again.|没脸见父母。
+W 顔[かお]|上司[じょうし]の顔を立てる|try to protect one's boss' reputation|给上司面子
+W →上司[じょうし]の顔[かお]が立[た]つ||
+W 目[め]|目が回[まわ]るような忙[いそが]しさ|incredibly busy|忙得头晕眼花
+W 目[め]|故郷[こきょう]の様子[ようす]が目に浮[う]かぶ|fondly recall the places in one's hometown|眼前浮现出故乡的样子
+W 目[め]|目を疑[うたが]うような光景[こうけい]|an unbelievable scene|这情景叫人怀疑自己的眼睛
+W 目[め]|子どもから目を離[はな]す|take one's eyes off the child|疏忽孩子
+W 目[め]|突然[とつぜん]のプレゼントに目を丸[まる]くする|be very surprised by an unexpected present|因意外的礼物，吃惊地睁大了眼睛
+W 目[め]|目を引くデザイン|attract attention|引人注目的设计
+W 目[め]|目がさえて眠[ねむ]れない|be completely awake and can't go to sleep|精神兴奋，睡不着
+W 目[め]|大事[だいじ]なものを目が届[とど]くところに置[お]く|put a very important thing where you can see it|把重要的东西放在眼睛能看到的地方
+W 目[め]|子どもの将来[しょうらい]を長い目で見る|take a long view of one's child's future|用长远的眼光看待孩子的未来
+W 目[め]|彼[かれ]は絵画[かいが]に対して目が肥[こ]えている。（＝目が高い）|He has an expert eye for paintings.|他对绘画很有鉴赏力。
+W 耳[みみ]|耳を澄[す]ます|listen very carefully|注意听
+W 耳[みみ]|子どもの話に耳を傾[かたむ]ける|listen carefully to what children say|倾听孩子的话
+W 耳[みみ]|工事[こうじ]の音が耳に障[さわ]る|the noise from the construction is too loud|施工的声音很刺耳
+W 耳[みみ]|親の小言[こごと]に耳をふさぐ|cover one's ears to block out a parent's lecture|不想听父母的牢骚
+W 耳[みみ]|彼[かれ]は私の話に耳を貸[か]してくれなかった。|He didn't listen to what I said.|他没有倾听我的话。
+W 耳[みみ]|CMの音楽が耳について離[はな]れない。|The music from the commercial keeps running through my head.|CM的音乐萦绕在耳边，久久不能忘怀。
+W 鼻[はな]|彼女[かのじょ]は美人[びじん]を鼻にかけている。|She's always boasting about her beauty.|她总是炫耀自己的美丽。
+W 鼻[はな]|立派[りっぱ]な息子[むすこ]を持って鼻が高[たか]い。|I'm proud of my good son.|有杰出的儿子，真是骄傲。
+W 鼻[はな]|彼女の態度[たいど]は鼻につく。|I can't stand her attitude.|她的态度让人腻烦。
+W 口[くち]|彼[かれ]は口が重い。|He doesn't talk much.|他少言寡语。
+W 口[くち]|つい口が滑[すべ]った。|I let the secret slip.|不小心说漏嘴了。
+W 口[くち]|彼[かれ]は口が肥[こ]えている。|He is a gourmet.|他嘴刁。
+W 口[くち]|話に口を挟[はさ]むな。|Don't cut in!|别插话。
+W 頭[あたま]|頭を冷[ひ]やして考える。|I'll think it over once I calm down.|头脑冷静后再考虑。
+W 頭[あたま]|頭を抱[かか]える問題|a problem over which one tears out one's hair|伤脑筋的问题
+W 頭[あたま]|彼[かれ]は頭がよく切れる。|He is very sharp.|他头脑特别聪明。
+W 頭[あたま]|彼の努力[どりょく]には頭が下がる。|I admire his effort.|他的努力令人佩服。
+X1 正しいほうに○を付けなさい。
+Q 彼[かれ]の人を見下[みくだ]した態度[たいど]が、（a. 鼻[はな]が高い　b. 鼻につく）。>>他瞧不起人的态度让人腻烦。
+Q あの人は口が（a. すべっている　b. こえている）から、そのレストランの料理では満足[まんぞく]しないでしょう。>>那个人嘴刁，那家餐厅的菜他不会满意吧。
+Q 答えるのに頭を（a. かたむける　b. かかえる）ような質問がたくさん来た。>>来了很多让人头疼、难以回答的问题。
+Q ありがとうございます。そうしていただけると私の（a. 顔が立ちます　b. 顔がききます）。>>谢谢。您这样做的话我就有面子了。
+Q 彼[かれ]の努力[どりょく]には（a. 頭が下がる　b. 会わせる顔が無い）。>>他的努力令人佩服。
+Q 美しい歌声[うたごえ]に（a. 耳を傾[かたむ]けた　b. 耳を貸[か]した）。>>倾听了美妙的歌声。
+X2 （　）にはどれが入りますか。一つ選びなさい。
+Q 彼女[かのじょ]はそれを聞いたとたん、（　　）驚[おどろ]きの声をあげた。|顔を立てて|口が滑[すべ]って|目を丸[まる]くして|鼻[はな]をかけて>>她一听到那件事，就睁大眼睛发出了惊叫。
+Q 女優[じょゆう]の中でも、彼女[かのじょ]は特[とく]に（　　）美[うつく]しい女性[じょせい]です。|目を引く|目に浮[う]かぶ|目を疑[うたが]う|目が回[まわ]る>>在女演员中，她也是格外引人注目的美丽女性。
+A Ⅰ：①b ②b ③b ④a ⑤a ⑥a　Ⅱ：⑦3 ⑧1

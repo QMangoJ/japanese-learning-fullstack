@@ -1,0 +1,56 @@
+T 似[に]ている言葉[ことば]②|相似的词②|Similar words ②
+S words|「一[いち]」のつく語彙[ごい]|带「一」的词汇|Words with 「一」
+W 一同[いちどう]|一同を代表[だいひょう]して…|on behalf of us all|代表大家
+W 一同[いちどう]|出席者[しゅっせきしゃ]一同|all those present|全体出席人员
+W 一面[いちめん]|物事[ものごと]の一面|one aspect of something|事物的一方面
+W 一面[いちめん]|空一面|the entire sky|整面天空
+W 一面[いちめん]|一面記事[きじ]|a front page article|头版报道
+W 一連[いちれん]|一連の事件[じけん]|a series of crimes|一系列事件
+W 一目[いちもく]|一目瞭然[りょうぜん]|very obvious|一目了然
+W 一目[いちもく]|一目置[お]く|recognize someone's ability|另眼相看
+W 一律[いちりつ]（に）|一律1万円支給[しきゅう]される|10,000 yen will be paid across the board|一律被支付1万日元。
+W 一律[いちりつ]（に）|給料[きゅうりょう]を一律に上げる|raise salaries across the board|一律提高工资
+W 一様[いちよう]（に）|参加者[さんかしゃ]は一様に驚[おどろ]きの声をあげた。|All those present reacted in surprise.|参加人员全都发出了惊奇的声音。
+W 一瞬[いっしゅん]|一瞬、ためらった。|I hesitated for a second.|犹豫了片刻。
+W 一瞬[いっしゅん]|一瞬の出来事[できごと]|something that happens in an instant|一刹那的事情
+W 一帯[いったい]|付近[ふきん]一帯を捜索[そうさく]する|search the surrounding area|搜索附近一带
+W 一斉[いっせい]（に）|一斉にスタートする|... all start together|一起开始
+W 一心[いっしん]（に）|一心同体[どうたい]|be one in body and spirit|同心同德
+W 一心[いっしん]（に）|一心に祈[いの]る|pray wholeheartedly|专心祈祷
+W 一挙[いっきょ]（に）|問題が一挙に解決[かいけつ]する（＝一気[いっき]に）|solve the problems all at once|问题一举解决
+W 一見[いっけん]（する）|一見本物[ほんもの]のようだが…|If you just glance it, you might think it's real.|乍一看像是真的，不过……
+W 一見[いっけん]（する）|一見の価値[かち]がある|worth seeing|值得一看
+W 一新[いっしん]（する）|気分を一新する|change the mood completely|转换心情
+W 一掃[いっそう]（する）|暴力[ぼうりょく]を一掃する|render a violent place safe|肃清暴力
+W 一変[いっぺん]（する）|態度[たいど]が一変する|totally change one's attitude|态度大变
+W 一息[ひといき]|一息入れる／一息つく|take a break|喘口气
+W 一息[ひといき]|一息に登[のぼ]る|climb ... without a break|一口气攀登
+W 一息[ひといき]|あと一息で頂上[ちょうじょう]だ。|We'll be on the summit very soon.|再加把劲就到山顶了。
+W 一頃[ひところ]|一頃はやった歌|a song that was once very popular|流行一时的歌
+W 一筋[ひとすじ]|田中[たなか]さんは仕事一筋の人間だ。|Tanaka-san has devoted his whole life to his work.|田中是一心扑在工作上的人。
+W 一苦労[ひとくろう]|レポートを仕上[しあ]げるのは一苦労だった。|It was hard work to finish the paper.|写好报告真是费了点劲。
+W 一休[ひとやす]み（する）|この辺[へん]で、一休みしよう。|Let's have a break now.|在这附近歇歇脚。
+W 一眠[ひとねむ]り（する）|一眠りしてから、また仕事をしよう。|I'll have a nap and then work more.|睡一会儿后再工作。
+S words|「見[み]」のつく語彙[ごい]|带「見」的词汇|Words with 「見」
+W 見逃[みのが]す|チャンスを見逃す|miss an opportunity|错过机会
+W 見逃[みのが]す|ミスを見逃す|turn a blind eye to a mistake|放任错误
+W 見落[みお]とす|間違[まちが]いを見落とす|not notice a mistake|忽略错误
+W 見失[みうしな]う|道を見失う|get lost|迷路
+W 見失[みうしな]う|目標[もくひょう]を見失う|lose one's motivation|迷失目标
+W 見積[みつ]もる|費用[ひよう]を見積もる|estimate the cost|估算费用
+W 見積[みつ]もる|安く見積もる|underestimate the cost|便宜估算
+W →見積[みつ]もり（N）||
+W 見計[みはか]らう|ラッシュの終わるころを見計らって出かける|wait to leave until after the morning rush hour|估计交通高峰快过去的时候出发
+W 見違[みちが]える|父は見違えるように元気になった。|My father's been doing so much better.|爸爸像换了个人一样精神很好。
+W 見晴[みは]らし|見晴らしがいい部屋[へや]|a room with a good view|远景好的房间
+X1 正しいほうに○を付けなさい。
+Q スリを追[お]いかけたが、途中[とちゅう]で（a. 見失[みうしな]って　b. 見落[みお]として）しまった。>>追小偷，但半路上跟丢了。
+Q 全[ぜん]社員に（a. 一連[いちれん]　b. 一斉[いっせい]）にメールを送[おく]った。>>同时给全体职员发了邮件。
+Q 古い家がリフォームで（a. 見違[みちが]える　b. 見計[みはか]らう）ようになった。>>旧房子经过翻修，变得焕然一新。
+Q ドラマの最終回[さいしゅうかい]を（a. 見落[みお]として　b. 見逃[みのが]して）しまった。>>错过了电视剧的最后一集。
+Q 黒い煙[けむり]が空（a. 一様[いちよう]　b. 一面[いちめん]）に広がっている。>>黑烟弥漫了整个天空。
+Q ここからの眺[なが]めは（a. 一目[いちもく]　b. 一見[いっけん]）の価値[かち]がある。>>从这里看到的景色值得一看。
+X2 （　）にはどれが入りますか。一つ選びなさい。
+Q この棚[たな]の商品[しょうひん]は（　　）3割引[わりび]きになっています。|一同[いちどう]|一律[いちりつ]|一帯[いったい]|一連[いちれん]>>这个架子上的商品一律打七折。
+Q 新型[しんがた]の車は以前[いぜん]のデザインを（　　）した。|一掃[いっそう]|一心[いっしん]|一新[いっしん]|一見[いっけん]>>新型车彻底更新了以前的设计。
+A Ⅰ：①a ②b ③a ④b ⑤b ⑥b　Ⅱ：⑦2 ⑧3
