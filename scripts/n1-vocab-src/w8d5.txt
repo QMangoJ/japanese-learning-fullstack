@@ -11,20 +11,20 @@ W 悪[わる]いけど、そこの雑誌[ざっし]を取[と]ってくれる？
 W ……ですが、悪[あ]しからず。|I'm sorry but ...|虽然是……，请不要见怪。
 W 差[さ]し支[つか]えなければ、……|If it is ok with you,|如果没有什么不方便……
 W いざというとき（のため）に備[そな]えよう。|Be prepared for an emergency!|为了以防万一。
-W そのことはいざ知らず、……|apart from that|那事暂且不论……
-W きりがいいところで休みましょう。|Let's take a break when we come to a good place to stop.|在告一段落的时候休息吧。
-W 欲[よく]を言えばきりがない。|Unless you're realistic, you'll never find a solution.|欲望无止境。
-W ワインと言ってもピンからキリまである。|＊「ピンキリだ」と短くして使われることもある。|There are all sorts of wines, ranging from the very good to the awful.|葡萄酒，从最好的到最差的都有。
-W 彼[かれ]のことは一[いち]から十[じゅう]まで知っている。|I know everything about him.|他的事情我全都知道。
-W 来[きた]る3月10日に卒業式[そつぎょうしき]が行われる。|The graduation ceremony will take place on March 10th.|即将到来的3月10日要举办毕业典礼。
-W 去[さ]る3月10日に卒業式[そつぎょうしき]が行われた。|The graduation ceremony took place on March 10th.|已过去的那个3月10日举行了毕业典礼。
+W そのことはいざ知[し]らず、……|apart from that|那事暂且不论……
+W きりがいいところで休[やす]みましょう。|Let's take a break when we come to a good place to stop.|在告一段落的时候休息吧。
+W 欲[よく]を言[い]えばきりがない。|Unless you're realistic, you'll never find a solution.|欲望无止境。
+W ワインと言[い]ってもピンからキリまである。|＊「ピンキリだ」と短くして使われることもある。|There are all sorts of wines, ranging from the very good to the awful.|葡萄酒，从最好的到最差的都有。
+W 彼[かれ]のことは一[いち]から十[じゅう]まで知[し]っている。|I know everything about him.|他的事情我全都知道。
+W 来[きた]る3月[がつ]10日[とおか]に卒業式[そつぎょうしき]が行[おこな]われる。|The graduation ceremony will take place on March 10th.|即将到来的3月10日要举办毕业典礼。
+W 去[さ]る3月[がつ]10日[とおか]に卒業式[そつぎょうしき]が行[おこな]われた。|The graduation ceremony took place on March 10th.|已过去的那个3月10日举行了毕业典礼。
 S words|たとえを使った慣用表現[かんようひょうげん]|使用比喻的惯用表达|Idioms using metaphors
-W 胸[むね]をえぐられるような思いをした。|I had a very heartbreaking experience.|感觉挖心般的痛苦。
-W 彼[かれ]は口[くち]から先[さき]に生[う]まれたような男だ。|He talks endlessly.|他是个能言善辩的男人。
-W それは雲[くも]をつかむような話だ。|That is a very unrealistic plan.|那是不着边际的话。
+W 胸[むね]をえぐられるような思[おも]いをした。|I had a very heartbreaking experience.|感觉挖心般的痛苦。
+W 彼[かれ]は口[くち]から先[さき]に生[う]まれたような男[おとこ]だ。|He talks endlessly.|他是个能言善辩的男人。
+W それは雲[くも]をつかむような話[はなし]だ。|That is a very unrealistic plan.|那是不着边际的话。
 W 顔[かお]から火[ひ]が出[で]るほど恥[は]ずかしい。|I'm extremely embarrassed.|害羞得脸上火辣辣的。
 W 猫[ねこ]の手[て]も借[か]りたいほど忙[いそが]しい。|We're so busy that we'll take anyone who is willing to help us.|忙得不可开交。
-W それは耳[みみ]にたこができるほど聞いた。|I am sick of hearing that.|那事儿，耳朵都听出茧子了。
+W それは耳[みみ]にたこができるほど聞[き]いた。|I am sick of hearing that.|那事儿，耳朵都听出茧子了。
 W のどから手[て]が出[で]るほどほしい。|I want it more than anything in the world.|特别渴望得到。
 X1 正しいほうに○を付けなさい。
 Q 祖父[そふ]の自慢話[じまんばなし]は（a. 顔から火が出るほど　b. 耳にたこが出来[でき]るほど）聞かされた。>>祖父的自夸话，我听得耳朵都起茧子了。

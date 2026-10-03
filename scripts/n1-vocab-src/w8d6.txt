@@ -1,0 +1,70 @@
+T よく使[つか]う表現[ひょうげん]②|常用表达②|Common expressions ②
+S words|生活[せいかつ]でよく使う名詞[めいし]|生活中常用的名词|Nouns often used in daily life
+W 勘違[かんちが]い|a misunderstanding|误会
+W 人違[ひとちが]い|mistake someone for someone else|认错人
+W 色違[いろちが]い|in a different colour|颜色不同
+W 一字違[いちじちが]い|spelled the same except for one letter|错一个字
+W 食[く]い違[ちが]い|a discrepancy|不一致
+W 行[い]き違[ちが]い|crossed|错过
+W 食[た]べ放題[ほうだい]|all you can eat|自助（随便吃）
+W 飲[の]み放題[ほうだい]|all you can drink|自助（随便喝酒）
+W 度忘[どわす]れ（する）|slip one's mind|一时蒙住
+W 物忘[ものわす]れ（する）|being forgetful|忘事儿
+W 負[ま]けず嫌[ぎら]い|never content to be second best|不认输
+W 食[く]わず嫌[ぎら]い|dislike something before tasting it|挑食
+W よその人[ひと]|someone who is not in one's social group|外人
+W ただの人[ひと]|no one special|普通人
+W 見知[みし]らぬ人[ひと]|a stranger|素不相识的人
+W 赤[あか]の他人[たにん]|a complete stranger|毫无关系的外人
+W 逆立[さかだ]ち|a handstand|倒立
+W 逆[さか]さま|a upside-down|颠倒
+W 共稼[ともかせ]ぎ（する）・共働[ともばたら]き（する）|double-income|双职工
+W （お）あいこ|be even|不分胜负
+W （お）しまい|be finished|结束
+W （お）似合[にあ]い|well-matched|相称
+W 呼[よ]び捨[す]て（する）|address coarsely|直呼其名
+W 裏返[うらがえ]し|inside-out|翻过来
+W あべこべ|the other way around|相反的
+W 交互[こうご]・互[たが]い違[ちが]い|alternatively|交替，交错
+W でこぼこ（する）|uneven / bumpy|凹凸不平
+W じゃんけん（する）|scissors-paper-rock|猜拳
+W 引[ひ]き分[わ]け|draw|平局
+W びり|last one / worst one|最后一名
+W やせっぽち|thin person|瘦子
+W デブ〈俗語[ぞくご]〉|fat person|胖子
+W 恋愛[れんあい]（する）|love|恋爱
+W 交際[こうさい]（する）|have a relationship|交际
+W きっかけ|a start / opportunity|契机
+W なれそめ（＝交際[こうさい]のきっかけ）|beginning of a romance|恋爱之初
+W 初対面[しょたいめん]|one's first meeting|初次见面
+W 一目[ひとめ]ぼれ（する）|love at first sight|一见钟情
+W （お）見合[みあ]い（する）|a meeting set up with a prospective partner|相亲
+W 浮気[うわき]（する）|have an affair|花心
+W 再婚[さいこん]（する）|remarry|再婚
+W ナンパ（する）〈俗語[ぞくご]〉|trying to pick girls up|勾搭女人
+W バツイチ〈俗語[ぞくご]〉|been divorced once|离过一次婚的人
+W つじつま|話[はなし]のつじつまが合[あ]わない|contradict oneself|说话不合逻辑
+W ひずみ|地震[じしん]でひずみが発生[はっせい]する|visible signs of damage from the earthquake|因地震发生了变形
+W ひずみ|無理[むり]な経済政策[けいざいせいさく]のひずみ|strains caused by the unworkable economic policy|难以实行的经济政策的弊病
+W はり|張[は]りのある肌[はだ]|smooth skin|有弹性的皮肤
+W つや|つやのある髪[かみ]|hair that has a beautiful sheen|有光泽的头发
+W こつ|こつをつかむ|get the hang of it|抓住窍门
+W めど|めどがたつ|have some idea as to when/how it will be done|有指望
+W ゆとり|ゆとりのある生活[せいかつ]|an affluent lifestyle|宽裕的生活
+W ゆとり|予算[よさん]にゆとりがある|have enough budget|预算有余
+W ぐち|ぐちを言う|complain|抱怨
+W ぐち|ぐちをこぼす|grumble|发牢骚
+W ねた〈俗語[ぞくご]〉|話[はなし]のねた|an entertaining story|话题
+W ねた〈俗語[ぞくご]〉|すしのねた|fish used for making sushi|寿司材料
+N ＊「ねた」は「たね（種）」を逆[ぎゃく]に読んだ言葉[ことば]。→p.103
+X1 正しいほうに○を付けなさい。
+Q 恩師[おんし]の名前を（a. 物忘[ものわす]れ　b. 度忘[どわす]れ）した。>>一时想不起恩师的名字了。
+Q ボーリングの投球[とうきゅう]の（a. こつ　b. めど）をつかんだ。>>掌握了打保龄球投球的窍门。
+Q 彼[かれ]の話は時間的[てき]に（a. ひずみ　b. つじつま）が合わない。>>他的话在时间上前后矛盾。
+Q ビルの完成[かんせい]のめどがやっと（a. 合った　b. たった）。>>大楼的完工终于有了眉目。
+Q 彼らはとても（a. お似合[にあ]い　b. お見合[みあ]い）のカップルですね。>>他们真是很般配的一对啊。
+Q 彼はシャツのボタンを（a. 互[たが]い違[ちが]い　b. 裏返[うらがえ]し）に止めていた。>>他把衬衫的扣子扣错位了。
+X2 （　）にはどれが入りますか。一つ選びなさい。
+Q 初対面[しょたいめん]の彼女[かのじょ]に（　　）してしまった。|なれそめ|一目[ひとめ]ぼれ|見合[みあ]い|気合[きあい]>>对初次见面的她一见钟情了。
+Q 時間を（　　）して待ち合わせに遅[おく]れてしまった。|食[く]い違[ちが]い|行[い]き違[ちが]い|勘違[かんちが]い|見違[みちが]い>>把时间搞错了，约会迟到了。
+A Ⅰ：①b ②a ③b ④b ⑤a ⑥a　Ⅱ：⑦2 ⑧3
