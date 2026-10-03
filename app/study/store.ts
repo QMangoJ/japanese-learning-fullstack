@@ -171,7 +171,7 @@ const DATA_FILES: Record<string, string> = {
 	n4kanji: "n4kanji.655356d8e2.json",
 	n1grammar: "n1grammar.c2d6c00681.json",
 	n1vocab: "n1vocab.41d7ac89a7.json",
-	n1kanji: "n1kanji.5c1d2d5f84.json",
+	n1kanji: "n1kanji.fd4839449f.json",
 	common: "common.aa13cae172.json",
 };
 

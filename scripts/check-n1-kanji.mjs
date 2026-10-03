@@ -7,7 +7,7 @@ const root = resolve(import.meta.dirname, "..");
 const store = await readFile(resolve(root, "app/study/store.ts"), "utf8");
 const file = store.match(/n1kanji: "(n1kanji\.[0-9a-f]{10}\.json)"/)?.[1];
 assert.ok(file, "store must load the hashed N1 kanji file");
-assert.equal(file, "n1kanji.5c1d2d5f84.json", "store points at the current build");
+assert.equal(file, "n1kanji.fd4839449f.json", "store points at the current build");
 assert.ok((await readdir(resolve(root, "public/data"))).includes(file), `${file} exists`);
 const book = JSON.parse(await readFile(resolve(root, "public/data", file), "utf8"));
 const exam = JSON.parse(await readFile(resolve(root, "public/data/n1-kanji-exam-explanations.json"), "utf8"));
