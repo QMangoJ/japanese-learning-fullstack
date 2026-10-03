@@ -43,7 +43,7 @@ W 時間[じかん]にルーズな人[ひと]|a person who is not punctual|没�
 W ガーゼを当[あ]てる|put gauze on ...|贴上纱布
 W 話[はなし]がスムーズに進[すす]む|the plan develops smoothly|谈话顺利进展
 W アフターサービス|あの店はアフターサービスがいい。|This shop provides good after-sales service.|那家店的售后服务好。
-W ⇔アフターケア|maintenance/care|病后调养
+W →アフターケア|maintenance/care|病后调养
 W 後継者[こうけいしゃ]にバトンタッチする|pass the baton to a successor|向后任者递交接力棒
 W テストでカンニングする|cheat on a test|在考试中作弊
 W ホースで庭[にわ]に水[みず]をまく|water the garden with a hose|用胶皮管往院子里浇水

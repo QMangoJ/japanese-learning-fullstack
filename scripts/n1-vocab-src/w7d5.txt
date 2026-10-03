@@ -1,0 +1,48 @@
+T 組[く]み合[あ]わせの言葉[ことば]②|复合词②|Compound words ②
+S words|組[く]み合[あ]わせの言葉[ことば]|复合词|Compound words
+N ※居酒屋（いざかや）：a Japanese pub／小酒馆
+W 取[と]り込[こ]む|洗濯物[せんたくもの]を取り込む|take in the laundry|收晾晒的衣服
+W 取[と]り込[こ]む|画像[がぞう]を取り込む|transfer digital pictures into ...|输入图像
+W 溶[と]け込[こ]む|新しい職場[しょくば]に溶け込む|get used to a new workplace|融入新的工作单位
+W 組[く]み込[こ]む|予算[よさん]に組み込む|include it in the budget|纳入预算
+W 乗[の]り込[こ]む|飛行機[ひこうき]に乗り込む|board an airplane|乘坐飞机
+W 乗[の]り込[こ]む|敵地[てきち]に乗り込む|go into the enemy's territory|进入敌军阵地
+W 踏[ふ]み込[こ]む|アクセルを踏み込む|step on the accelerator|踩油门
+W 踏[ふ]み込[こ]む|他人[たにん]の家庭事情[かていじじょう]に踏み込む|involve oneself in someone's family affairs|干预别人的家庭问题
+W 放[ほう]り込[こ]む|新聞を放り込む|throw a newspaper in ...|粗暴地扔报纸
+W 放[ほう]り込[こ]む|刑務所[けいむしょ]に放り込まれる|be sent to prison|被投入监狱
+W 打[う]ち込[こ]む|パソコンにデータを打ち込む|input data to the computer|把资料输入电脑
+W 打[う]ち込[こ]む|仕事に打ち込む|put one's heart and soul into one's work|热衷于工作
+W 買[か]い込[こ]む|缶詰[かんづめ]を買い込む|stock canned food|大量购买罐头
+W 引[ひ]っ込[こ]む|田舎[いなか]に引っ込む|withdraw to the countryside|退居农村
+W 落[お]ち込[こ]む|成績[せいせき]が落ち込む|grades get worse|成绩下降
+W 落[お]ち込[こ]む|試合に負[ま]けて落ち込む|feel depressed after losing a game|比赛输了，情绪低落
+W 持[も]ち込[こ]む|飲食物[いんしょくぶつ]をホテルに持ち込む|bring food into a hotel room|把饮料带到酒店
+W →持[も]ち込[こ]み（N）||
+W 持[も]ち込[こ]む|苦情[くじょう]を持ち込む|file a complaint|投诉
+W 飲[の]み込[こ]む|つばを飲み込む|swallow saliva|咽口水
+W 飲[の]み込[こ]む|こつを飲み込む|get the hang of it|领会技巧
+W 抜[ぬ]け出[だ]す|会社を抜け出す|slip out of the office|偷偷溜出公司
+W 投[な]げ出[だ]す|事故[じこ]で車から投げ出される|get thrown from a car in an accident|因事故，被从车里抛出去了
+W 投[な]げ出[だ]す・放[ほう]り出[だ]す|仕事を中途[ちゅうと]で放り出す|quit in the middle of the task|中途抛下工作
+W 逃[に]げ出[だ]す|その場から逃げ出す|run away from ...|逃离现场
+W 突[つ]っ張[ぱ]る|筋肉[きんにく]が突っ張る|have cramps|肌肉僵硬
+W 出[で]っ張[ぱ]る|腹[はら]が出っ張る|belly sticks out|肚子突出
+W 振[ふ]り返[かえ]る|後ろを振り返る（＝振り向[む]く）|look over one's shoulder|回头看
+W 振[ふ]り返[かえ]る|少年[しょうねん]時代を振り返る（≠振り向く）|look back on one's childhood|回顾少年时代
+W 折[お]り返[かえ]す|袖[そで]を折り返す|turn one's sleeves up|挽袖子
+W 折[お]り返[かえ]す|折り返し、お電話いたします。|I'll call you back.|马上给您打电话。
+W かき回[まわ]す|砂糖[さとう]を入れてコーヒーをかき回す（＝かき混[ま]ぜる）|mix sugar into one's coffee|放入砂糖后搅拌咖啡
+W かき回[まわ]す|彼[かれ]のせいで会議[かいぎ]がかき回された。（≠かき混ぜる）|The meeting didn't go well because of him.|因为他，会议被搅乱了。
+W 埋[う]め立[た]てる|海を埋め立てる|reclaim land from the sea|填海
+W かみ切[き]る|この肉は固[かた]くてかみ切れない。|This meat is so tough that I can't chew it.|这肉硬，咬不动。
+X1 正しいほうに○を付けなさい。
+Q 首相[しゅしょう]は政権[せいけん]を途中[とちゅう]で（a. 抜[ぬ]け出した　b. 投[な]げ出した）。>>首相中途放弃了政权。
+Q （a. 出[で]っ張[ぱ]った　b. 突[つ]っ張[ぱ]った）釘[くぎ]で服[ふく]が破[やぶ]けてしまった。>>衣服被突出来的钉子刮破了。
+Q 売り上げがどんどん（a. 引[ひ]っ込[こ]んで　b. 落[お]ち込[こ]んで）いる。>>销售额不断下降。
+Q 名前を呼[よ]ばれて（a. 折[お]り返[かえ]したら　b. 振[ふ]り返[かえ]ったら）、山田さんだった。>>被叫了名字，回头一看，原来是山田。
+Q ガムを口に（a. 持[も]ち込[こ]んだ　b. 放[ほう]り込[こ]んだ）。>>把口香糖扔进了嘴里。
+Q 夜中[よなか]にこっそり家を（a. 抜[ぬ]け出して　b. 放[ほう]り出して）、遊[あそ]びに行った。>>半夜偷偷溜出家门去玩了。
+X2 （　）にはどれが入りますか。一つ選びなさい。
+Q 彼[かれ]はギターの練習に（　　）いる。|組[く]み込[こ]んで|取[と]り込[こ]んで|溶[と]け込[こ]んで|打[う]ち込[こ]んで>>他埋头练习吉他。
+Q このあたりは、海を（　　）作った土地だ。|埋[う]め立てて|埋[う]め入れて|乗り込[こ]んで|乗り入れて>>这一带是填海造出来的土地。
