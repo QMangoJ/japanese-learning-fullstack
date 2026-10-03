@@ -3,7 +3,7 @@
  *
  *   node --experimental-strip-types scripts/import-topic-vocab.mts --topic <slug> [options] <file> [<file> ...]
  *
- * 输入文件（可以多个，按顺序合并；后面的同词条覆盖前面的）：
+ * 输入文件（可以多个，按顺序合并；后面文件里的同一个词只补充 / 覆盖它给出的列，可用来放 overrides）：
  *   .docx  Google Docs「下载 → Microsoft Word」，或 Drive 连接器下载的文件。每个标题（Heading）下的表格是一组，标题作为 subtopic。
  *   .md    Google Docs「下载 → Markdown」，或 Drive 连接器 read_file_content 读出的文本。## 标题同样作为 subtopic。
  *   .tsv / .csv  Google Sheets 导出等；第一行表头，可带 subtopic 列。

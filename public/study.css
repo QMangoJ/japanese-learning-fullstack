@@ -63,8 +63,17 @@ header.top .back{border:none;background:none;color:var(--blue);font-size:15px;pa
 header.top h1{font-size:16px;margin:0;font-weight:700;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 /* 级别收成标题栏里的一个胶囊：换级别是低频操作，点开弹层选；
    类型（语法/单词/汉字）是高频操作，保持常驻一排、点一下就切。 */
-.lvchip{flex:none;display:flex;align-items:center;gap:4px;border:1px solid var(--blue);background:var(--blue-soft);color:var(--blue);border-radius:999px;padding:5px 12px;font-size:14px;font-weight:800;letter-spacing:.5px;cursor:pointer;min-height:32px}
-.lvchip .cv{font-size:10px;opacity:.7}
+/* 44px 触控区；实心强调色胶囊 + 明显的下拉箭头，深浅色模式都用同一组变量。 */
+.lvchip{flex:none;display:inline-flex;align-items:center;justify-content:center;gap:5px;box-sizing:border-box;min-height:44px;min-width:64px;border:2px solid var(--accent);background:var(--accent);color:#fff;border-radius:999px;padding:0 12px 0 14px;font-size:16px;font-weight:800;letter-spacing:.5px;line-height:1;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.18);-webkit-tap-highlight-color:transparent}
+.lvchip .lv{display:block}
+.lvchip .cv{display:block;font-size:15px;line-height:1;opacity:1;transform:translateY(1px)}
+.lvchip:active{transform:scale(.96)}
+html.theme-dark .lvchip{color:#1c1a16;box-shadow:0 1px 4px rgba(0,0,0,.4)}
+.lvchip:focus-visible{outline:3px solid var(--accent-soft);outline-offset:2px}
+@media(max-width:360px){
+  .lvchip{min-width:56px;padding:0 9px 0 11px;font-size:15px;gap:3px}
+  .lvchip .cv{font-size:13px}
+}
 .modewrap{background:var(--card);border-bottom:1px solid var(--line)}
 .typebar{display:flex;gap:6px;justify-content:center;padding:8px 14px 4px}
 .typebar--skills{padding:0 14px 8px}

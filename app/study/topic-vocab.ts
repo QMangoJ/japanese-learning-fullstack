@@ -466,8 +466,21 @@ export function mergeTopicCards(
 	const out: TopicCard[] = opts.mode === "merge" ? existing.map((c) => ({ ...c })) : [];
 	let added = 0;
 	let updated = 0;
+	// 同一次导入里后面的行（例如 overrides 文件）只补充 / 覆盖它给出的字段。
+	const runByWord = new Map<string, string>();
 	for (const d of drafts) {
-		const prev = (d.id && byId.get(d.id)) || byWord.get(`${d.jp}|${d.kana ?? ""}`) || (!d.kana ? byJp.get(d.jp!) : undefined);
+		const word = `${d.jp}|${d.kana ?? ""}`;
+		const runId = (d.id && touched.has(d.id) ? d.id : undefined) || runByWord.get(word) || (!d.kana ? [...runByWord].find(([k]) => k.startsWith(`${d.jp}|`))?.[1] : undefined);
+		if (runId) {
+			const at = out.findIndex((c) => c.id === runId);
+			const base = out[at];
+			const merged = { ...base, ...d, id: runId } as TopicCard;
+			if (d.example_jp && d.example_jp !== base.example_jp && !d.example_ruby) delete merged.example_ruby;
+			if (d.example_jp && d.example_jp !== base.example_jp && !d.example_kana) delete merged.example_kana;
+			out[at] = orderCard(merged);
+			continue;
+		}
+		const prev = (d.id && byId.get(d.id)) || byWord.get(word) || (!d.kana ? byJp.get(d.jp!) : undefined);
 		const card = { ...(prev || {}), ...d } as TopicCard;
 		if (!card.subtopic && opts.defaultSubtopic) card.subtopic = opts.defaultSubtopic;
 		if (prev && d.example_jp && d.example_jp !== prev.example_jp && !d.example_ruby) delete card.example_ruby;
@@ -475,6 +488,7 @@ export function mergeTopicCards(
 		card.id = prev?.id || d.id || nextId();
 		if (touched.has(card.id)) continue;
 		touched.add(card.id);
+		runByWord.set(`${card.jp}|${card.kana ?? ""}`, card.id);
 		const ordered = orderCard(card);
 		const at = out.findIndex((c) => c.id === card.id);
 		if (at >= 0) out[at] = ordered;
