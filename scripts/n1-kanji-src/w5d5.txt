@@ -1,0 +1,121 @@
+T 普通・不通|ふつう・ふつう|普通・不通|
+I Q. 漢字で書くと？　ひなん訓練　→避難。「災難をさける」という意味。
+S 音読み②|音读②|On-readings ②
+G ひなん|
+K 非難|ひなん
+W 人や作品を非難する||criticize people/artworks|指责人或作品
+K 避難|ひなん
+W 避難訓練|ひなんくんれん|an evacuation drill|避难训练
+W 避難場所|ひなんばしょ|an evacuation area|避难场所
+G ふつう|
+K 普通|ふつう
+W 普通電車（＝各駅停車[かくえきていしゃ]）||a local train|各站都停的电车
+W 普通|ふつう|ordinary|普通
+W ◆⇔特別|とくべつ|special|特别
+K 不通|ふつう
+W 電車が不通になる||train has been suspended|电车不通
+W 音信不通|おんしんふつう|no contact for a long time|杳无音信
+G ほけん|
+K 保険|ほけん
+W 健康保険証|けんこうほけんしょう|a health insurance card|健康保险证
+W 生命保険|せいめいほけん|life insurance|生命保险
+K 保健|ほけん
+W 保健所|ほけんじょ|a public health center|保健所
+G けいせい|
+K 形成|けいせい
+W 人格形成|じんかくけいせい|personality development|人格形成
+K 形勢|けいせい
+W 形勢不利|けいせいふり|against the tide|形势不利
+W 形勢逆転|けいせいぎゃくてん|reversal of a situation|形势逆转
+G えいせい|
+K 衛生|えいせい
+W 保健衛生|ほけんえいせい|sanitation|保健卫生
+W 衛生的な|えいせいてきな|hygienic|卫生的
+K 衛星|えいせい
+W 衛星放送|えいせいほうそう|satellite broadcasting|卫星播放
+W 人工衛星|じんこうえいせい|a satellite|人造卫星
+G しきゅう|
+K 支給|しきゅう
+W 交通費を支給する||pay a transportation fee|支付交通费
+K 至急|しきゅう
+W 至急を要する||require urgent attention|要求紧急（处理）
+W 大至急|だいしきゅう|most urgent|十万火急
+G きかく|
+K 企画|きかく
+W イベントの企画||planning of an event|活动的企划
+W 企画書|きかくしょ|a planning document|企划书
+K 規格|きかく
+W 規格に合う製品||a product which meets a standard|合乎规格的制品
+W 規格外|きかくがい|nonstandard|规格外
+G けいい|
+K 敬意|けいい
+W 敬意を表する／表す／払う||pay respect|表明敬意
+K 経緯|けいい
+W 経緯を説明する||explain how it came about|说明经纬
+W 事件の経緯|じけんのけいい|circumstances of a crime|事件的经过|＊経緯＝いきさつ
+G こうがい|
+K 公害|こうがい
+W 公害問題|こうがいもんだい|a pollution problem|公害问题
+W 公害訴訟|こうがいそしょう|a lawsuit on pollution|公害诉讼
+K 郊外|こうがい
+W 郊外に住む||live in the suburbs|住在郊外
+G しじ|
+K 指示|しじ
+W 係員の指示に従う||follow the directions of the person in charge|遵从工作人员的指示
+W 指示する|しじする|direct|指示
+K 支持|しじ
+W 政党を支持する||support a political party|支持政党
+W 支持率|しじりつ|approval rate|支持率
+G いぜん|
+K 以前|いぜん
+W 以前住んでいた町||a town where I used to live|以前住的城镇
+K 依然|いぜん
+W 依然として変わらない||yet to change|依然没有变化
+G いぎ|
+K 意義|いぎ
+W 意義のある仕事||an important job|有意义的工作
+W 有意義な|ゆういぎな|meaningful|有意义
+K 異議|いぎ
+W 異議を唱える||object to|提出异议
+W 異議なし|いぎなし|no objection|没有异议
+K 異義|いぎ
+W 同音異義語|どうおんいぎご|a homonym|同音异义词
+G かんかく|
+K 感覚|かんかく
+W 色彩感覚|しきさいかんかく|colour sense|色彩感觉
+W 金銭感覚|きんせんかんかく|money sense|金钱感觉
+K 間隔|かんかく
+W 間隔を空ける||at regular intervals|空开间隔
+W 1m間隔|いちメートルかんかく|at one meter intervals|1米的间隔
+G そうさ|
+K 操作|そうさ
+W 機械の操作||handling of a machine|机械操作
+W ハンドル操作||steering|方向盘操作
+K 捜査|そうさ
+W 事件の捜査||investigation of a crime|事件的搜查
+G こうえん|
+K 公演|こうえん
+W 定期公演|ていきこうえん|a regular performance|定期公演
+W 東京公演|とうきょうこうえん|a performance in Tokyo|东京公演
+K 講演|こうえん
+W 教授に講演を依頼する||ask a professor to give a lecture|委托教授讲演
+K 後援|こうえん
+W 後援会事務所|こうえんかいじむしょ|a support office|后援会事务所
+X1 a、bの言葉の読みを書き、正しいほうを選びなさい。
+Q 交通費は会社から（a. 支給　b. 支持）される。>>交通费由公司支付。
+Q 野外音楽会の開催を（a. 企画　b. 避難）する。>>策划举办露天音乐会。
+Q ハンドル（a. 指示　b. 操作）を誤って事故を起こす。>>方向盘操作失误引发事故。
+Q 経済状況は（a. 以前　b. 依然）として厳しい。>>经济状况依然严峻。
+Q （a. 形成　b. 形勢）が逆転し、チームは優勝した。>>形势逆转，球队获得了冠军。
+Q 台風のため、電車が一時（a. 不通　b. 非難）になった。>>因为台风，电车一度停运。
+X2 ＿＿の部分を漢字で書くとき、最もよいものを□から選びなさい。
+B a. 意義|b. 公演|c. 異議|d. 規格|e. 衛生|f. 感覚|g. 経緯|h. 異義|i. 後援|j. 衛星|k. 講演|l. 間隔
+Q 7-1|同音{いぎ}語|＿>>同音异义词
+Q 7-2|{いぎ}を唱える。|＿>>提出异议。
+Q 8-1|人工{えいせい}|＿>>人造卫星
+Q 8-2|保健{えいせい}|＿>>保健卫生
+Q 9-1|1m{かんかく}|＿>>1米间隔
+Q 9-2|色彩{かんかく}|＿>>色彩感觉
+Q 10-1|環境問題についての{こうえん}|＿>>关于环境问题的讲演
+Q 10-2|イタリアオペラの日本{こうえん}|＿>>意大利歌剧的日本公演
+A Ⅰ：①a ②a ③b ④b ⑤b ⑥a　Ⅱ：⑦1h 2c ⑧1j 2e ⑨1l 2f ⑩1k 2b
