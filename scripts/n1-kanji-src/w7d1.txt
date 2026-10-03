@@ -1,0 +1,152 @@
+T 困る・原因・囚人|こまる・げんいん・しゅうじん|为难・原因・囚犯|
+I Q. 漢字で書くと？　かたなのはを磨く　→刀の刃。（刀の力？　力の歯？）ぼくは歯を磨かない。
+S 見た目が似ているもの①|字形相似的汉字①|Look-alike kanji ①
+K 力
+W 力|ちから|force|力量
+W 学力|がくりょく|academic skills|学力
+W 力士|りきし|sumo wrestlers|力士
+K 刀
+W 刀|かたな|a sword|刀
+W 日本刀|にほんとう|a Japanese sword|日本刀
+W ◆竹刀|しない|a sword made from bamboo|竹刀
+K 刃
+W 包丁の刃|ほうちょうのは|a knife blade|菜刀的刀刃
+W ひげ剃りの刃|ひげそりのは|a shaver blade|刮胡刀的刀刃
+W 刃物|はもの|a knife/cutlery|刀具
+K 困
+W 困る|こまる|be in trouble|为难
+W 困惑する|こんわくする|be perplexed|困惑
+W 困難な|こんなんな|difficult|困难
+K 因
+W 原因|げんいん|a cause|原因
+W 要因|よういん|a factor|主要原因
+W 因縁|いんねん|fate|因缘
+K 囚
+W 囚人|しゅうじん|a prisoner|犯人
+W 死刑囚|しけいしゅう|a condemned criminal|死刑囚
+K 考
+W 考える|かんがえる|think|考虑
+W 選考|せんこう|a selection|选考
+W 思考|しこう|a thought|思考
+K 老
+W 老人|ろうじん|elderly|老人
+W 老いる|おいる|grow old|上年纪
+W 老ける|ふける|age|上年纪
+K 孝
+W 親孝行|おやこうこう|be dutiful/good to one's parents|孝顺父母
+W 親不孝|おやふこう|be undutiful to one's parents|不孝
+K 券
+W 定期券|ていきけん|a commuter pass|月票
+W 回数券|かいすうけん|a (book of) commuter ticket(s)|联票
+W 旅券|りょけん|a passport|护照
+K 巻
+W 巻く|まく|roll|卷上
+W 取り巻く|とりまく|surrounding|围绕
+W ～巻|～かん|volume|～卷
+K 緑
+W 緑色|みどりいろ|green|绿色
+W 新緑|しんりょく|fresh greenery|新绿
+W 緑茶|りょくちゃ|green tea|绿茶
+K 録
+W 記録|きろく|a record|记录
+W 登録|とうろく|registration|登记
+W 録画|ろくが|video recording|录制影像
+K 縁
+W 縁がある|えんがある|have a chance|有缘
+W 額縁|がくぶち|a frame|画框
+W 縁取り|ふちどり|a border|边饰
+K 委
+W 委員|いいん|committee member|委员
+W 委託|いたく|entrust (a thing to a person, a person with a thing)|委托
+K 季
+W 季節|きせつ|a season|季节
+W 四季|しき|four seasons|四季
+W 季刊|きかん|quarterly|季刊
+K 秀
+W 優秀な|ゆうしゅうな|excellent|优秀
+W 秀才|しゅうさい|a very bright person|有才华的人
+W 秀でる|ひいでる|excel|优秀
+K 住
+W 住む|すむ|live|住
+W 住まい|すまい|housing|居住
+W 衣食住|いしょくじゅう|food, clothing and shelter|衣食住
+K 往
+W 往復|おうふく|a round trip|往返
+W 立ち往生|たちおうじょう|get stuck|进退不得
+W 往診|おうしん|house calls|出诊
+K 墓
+W 墓|はか|a graveyard|墓
+W 墓参り|はかまいり|visiting a graveyard|扫墓
+W 墓地|ぼち|graveyard|墓地
+K 暮
+W お歳暮|おせいぼ|a year-end gift|年底送的礼物
+W 夕暮れ|ゆうぐれ|dusk|傍晚
+W 暮らし|くらし|life|生活
+K 募
+W 募金|ぼきん|fundraising|募捐
+W 募る|つのる|raise|招募
+W 応募|おうぼ|apply|应募
+K 慕
+W 慕う|したう|adore|爱慕
+K 幕
+W 幕|まく|a curtain|幕
+W 開幕|かいまく|an opening|开幕
+W 字幕|じまく|a subtitle|字幕
+K 卒
+W 卒業|そつぎょう|a graduation|毕业
+W 新卒|しんそつ|a new graduate|新毕业生
+W 脳卒中|のうそっちゅう|a stroke|脑中风
+K 率
+W 率いる|ひきいる|lead|带领
+W 能率|のうりつ|efficiency|效率
+W 率直な|そっちょくな|frank, candid|坦率
+W 引率する|いんそつする|lead|率领
+K 氷
+W 氷|こおり|ice|冰
+W 氷山|ひょうざん|an iceberg|冰山
+W 氷河|ひょうが|a glacier|冰河
+K 永
+W 永い|ながい|long (time)|长久
+W 永遠|えいえん|eternity|永远
+W 永久|えいきゅう|permanency|永久
+K 祈
+W 祈る|いのる|pray|祈祷
+W 祈り|いのり|a prayer|祈祷
+W 祈願|きがん|a prayer|祈愿
+K 折
+W 折る|おる|fold|折
+W 折り紙|おりがみ|origami|折纸
+W 屈折|くっせつ|refraction|曲折
+K 技
+W 技術|ぎじゅつ|a technique, technology, skill|技术
+W 技|わざ|art, technique|技术
+K 枝
+W 枝|えだ|a branch|枝
+W 小枝|こえだ|a twig/stick|小树枝
+K 肢
+W 選択肢|せんたくし|a choice|选择项
+K 牧
+W 牧場／牧場|ぼくじょう／まきば|a ranch|牧场
+W 牧師|ぼくし|a priest|牧师
+K 枚
+W 枚数|まいすう|number (of)|张数
+K 朴
+W 素朴な|そぼくな|simple|朴素
+X1 a、bの言葉の読みを書き、正しいほうを選びなさい。
+Q 神社で試験の合格を（a. 折る　b. 祈る）。>>在神社祈祷考试合格。
+Q 結婚式で（a. 永遠　b. 因縁）の愛を誓う。>>在婚礼上发誓永远相爱。
+Q 踏み切りで立ち（a. 往生　b. 困惑）していた車に電車が突っ込んだ。>>电车撞上了困在道口的汽车。
+Q 子どもたちを取り（a. 巻く　b. 率いる）環境の変化について講演する。>>就围绕孩子们的环境变化进行演讲。
+Q 仕事の（a. 能率　b. 思考）を上げるために、歩くことが有効だそうだ。>>据说走路对提高工作效率很有效。
+Q 姉は文章を書くのに（a. 老いて　b. 秀でて）いる。>>姐姐擅长写文章。
+X2 ＿＿の部分を漢字で書くとき、最もよいものを□から選びなさい。
+B a. 券|b. 縁|c. 幕|d. 委|e. 緑|f. 慕|g. 暮|h. 録|i. 募|j. 季|k. 墓|l. 秀
+Q 7-1|{おせいぼ}|お歳＿>>年底送的礼物
+Q 7-2|{はかまいり}|＿参り>>扫墓
+Q 8-1|映画の{じまく}|字＿>>电影的字幕
+Q 8-2|{ぼきん}運動|＿金>>募捐运动
+Q 9-1|世界{きろく}|記＿>>世界纪录
+Q 9-2|{がくぶち}|額＿>>画框
+Q 10-1|桜の{きせつ}|＿節>>樱花的季节
+Q 10-2|審査{いいん}長|＿員>>审查委员长
+A Ⅰ：①b ②a ③a ④a ⑤a ⑥b　Ⅱ：⑦1g お歳暮 2k 墓参り ⑧1c 字幕 2i 募金 ⑨1h 記録 2b 額縁 ⑩1j 季節 2d 委員

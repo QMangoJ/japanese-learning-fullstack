@@ -2080,6 +2080,66 @@
      "translation": "酌情考虑的余地"
     }
    ]
+  },
+  "w7d1": {
+   "items": [
+    {
+     "n": 1,
+     "translation": "在神社祈祷考试合格。"
+    },
+    {
+     "n": 2,
+     "translation": "在婚礼上发誓永远相爱。"
+    },
+    {
+     "n": 3,
+     "translation": "电车撞上了困在道口的汽车。"
+    },
+    {
+     "n": 4,
+     "translation": "就围绕孩子们的环境变化进行演讲。"
+    },
+    {
+     "n": 5,
+     "translation": "据说走路对提高工作效率很有效。"
+    },
+    {
+     "n": 6,
+     "translation": "姐姐擅长写文章。"
+    },
+    {
+     "n": "7-1",
+     "translation": "年底送的礼物"
+    },
+    {
+     "n": "7-2",
+     "translation": "扫墓"
+    },
+    {
+     "n": "8-1",
+     "translation": "电影的字幕"
+    },
+    {
+     "n": "8-2",
+     "translation": "募捐运动"
+    },
+    {
+     "n": "9-1",
+     "translation": "世界纪录"
+    },
+    {
+     "n": "9-2",
+     "translation": "画框"
+    },
+    {
+     "n": "10-1",
+     "translation": "樱花的季节"
+    },
+    {
+     "n": "10-2",
+     "translation": "审查委员长"
+    }
+   ]
   }
  }
 }
