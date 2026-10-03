@@ -1,7 +1,7 @@
 T 講・構・購|コウ・コウ・コウ|讲・构・购|
 I Q. ＿の読みは？　倹約　→けんやく。難しい漢字語彙も同じ部分があれば読める！
 S 難しい漢字も読める！①|难的汉字也能读！①|You can read difficult kanji too! ①
-G 㑒|ケン
+G 僉|ケン
 K 験
 W 体験|たいけん|an experience|体验
 W 実験|じっけん|an experiment|实验
@@ -31,7 +31,7 @@ W 側溝|そっこう|side ditch|路边排水沟
 W 排水溝|はいすいこう|drain|排水沟
 G 票|ヒョウ
 K 標
-W 目標|もくひょう|decline|目标
+W 目標|もくひょう|a goal|目标
 W 標準|ひょうじゅん|a standard|标准
 K 票
 W 票|ひょう|a vote|票

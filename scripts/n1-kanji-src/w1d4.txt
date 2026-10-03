@@ -1,0 +1,138 @@
+T 長・張・帳|チョウ・チョウ・チョウ|长・张・帐|
+I Q. ＿の読みは？　犠牲　→ぎせい。「義」のつく漢字は全部「ギ」。
+S 難しい漢字も読める！②|难的汉字也能读！②|You can read difficult kanji too! ②
+G 義|ギ
+K 議
+W 議論|ぎろん|an argument, discussion, debate|争论、讨论
+W 議会|ぎかい|an assembly|议会
+K 義
+W 義理|ぎり|a duty, obligation|人情、情义
+W 義務|ぎむ|duty|义务
+K 儀
+W 礼儀|れいぎ|manners|礼仪
+W 行儀|ぎょうぎ|behaviour|举止
+K 犠
+W 犠牲|ぎせい|sacrifice|牺牲
+G 長|チョウ
+K 長
+W 議長|ぎちょう|the chairman|议长
+W 成長|せいちょう|grow|成长
+K 張
+W 出張|しゅっちょう|business trip|出差
+W 主張|しゅちょう|an assertion, claim|主张
+K 帳
+W 手帳|てちょう|a diary|笔记本
+W 通帳|つうちょう|a bankbook|存折
+K 腸
+W 胃腸|いちょう|stomach and intestines|肠胃
+W 盲腸|もうちょう|the appendix|盲肠
+G 啇|テキ
+K 適
+W 適当な|てきとう|correct / appropriate|适当的
+W 適応|てきおう|suitable|适应
+K 摘
+W 指摘|してき|point out|指出
+W 摘発|てきはつ|a disclosure|揭发
+K 滴
+W 水滴|すいてき|a water drop|水滴
+W 点滴|てんてき|I.V.|点滴（输液）
+K 敵
+W 匹敵|ひってき|equal, match|匹敌
+W 強敵|きょうてき|a powerful enemy|强敌
+G 昆|コン
+K 混
+W 混雑|こんざつ|congested|拥挤
+W 混乱|こんらん|confusion, disorder|混乱
+K 昆
+W 昆虫|こんちゅう|an insect|昆虫
+W 昆布|こんぶ|kelp|海带
+G 廷|テイ
+K 庭
+W 家庭|かてい|a home, family, household|家庭
+W 庭園|ていえん|a garden|庭园
+K 廷
+W 法廷|ほうてい|a court|法庭
+G 劦|キョウ
+K 協
+W 協定|きょうてい|an agreement|协定
+W 妥協|だきょう|a compromise|妥协
+K 脅
+W 脅迫|きょうはく|a threat|威胁
+W 脅威|きょうい|a threat|威胁
+G 普|フ
+K 普
+W 普及|ふきゅう|spread, diffuse|普及
+W 普遍的な|ふへんてき|universally|普遍的
+K 譜
+W 楽譜|がくふ|a score|乐谱
+G 冒|ボウ
+K 帽
+W 帽子|ぼうし|a hat|帽子
+W 脱帽|だつぼう|take off your hat|脱帽
+K 冒
+W 冒険|ぼうけん|an adventure|冒险
+W 冒頭|ぼうとう|the beginning|开头
+G 荅|トウ
+K 塔
+W 塔|とう|a tower|塔
+K 搭
+W 搭乗券|とうじょうけん|a boarding pass|机票、船票
+G 般|ハン
+K 般
+W 一般|•いっぱん|(in) general|普通、一般
+W 全般|•ぜんぱん|overall|全面
+K 搬
+W 運搬|•うんぱん|transport|搬运
+W 搬入|はんにゅう|delivery|搬入
+G 毛|モウ
+K 毛
+W 羊毛|ようもう|wool|羊毛
+K 耗
+W 消耗|しょうもう|consume|消耗
+W 消耗品|しょうもうひん|consumables|消耗品
+G 戒|カイ
+K 械
+W 機械|きかい|machine|机器
+W 器械体操|きかいたいそう|gymnastics (using equipment)|器械体操
+K 戒
+W 警戒|けいかい|caution|警戒
+W 戒厳令|かいげんれい|martial law|戒严令
+G 州|シュウ
+K 州
+W 九州|きゅうしゅう|Kyushu|九州
+W 本州|ほんしゅう|Honshu (main island of Japan)|本州
+K 酬
+W 報酬|ほうしゅう|a reward|报酬
+W 応酬|おうしゅう|answer|应酬、回击
+G 呈|テイ
+K 程
+W 程度|ていど|degree, amount|程度
+W 日程|にってい|schedule|日程
+K 呈
+W 進呈|しんてい|presentation|奉送
+W 贈呈|ぞうてい|presentation|赠送
+G 畜|チク
+K 畜
+W 家畜|かちく|domestic animal|家畜
+W 畜産|ちくさん|animal husbandry|畜产
+K 蓄
+W 蓄積|ちくせき|accumulation|积蓄
+W 貯蓄|ちょちく|save money|储蓄
+X1 a、bの言葉の読みを書き、正しいほうを選びなさい。
+Q 労働に対して（a. 応酬　b. 報酬）が与えられる。>>对劳动给予报酬。
+Q 携帯電話が（a. 普遍　b. 普及）する。>>手机普及。
+Q 突然の出来事に頭が（a. 混乱　b. 混雑）する。>>突发事件让脑子一片混乱。
+Q 疲労が（a. 蓄積　b. 消耗）する。>>疲劳积累。
+Q 国民としての権利を（a. 出張　b. 主張）する。>>主张作为国民的权利。
+Q 隣の国と（a. 協定　b. 妥協）を結ぶ。>>与邻国签订协定。
+X2 ＿＿の部分を漢字で書くとき、最もよいものを□から選びなさい。
+B a. 搭|b. 呈|c. 摘|d. 儀|e. 滴|f. 塔|g. 廷|h. 議|i. 程|j. 義|k. 敵|l. 適
+Q 7-1|{ぎむ}を果たす。|＿務>>履行义务。
+Q 7-2|{れいぎ}をわきまえる。|礼＿>>懂礼貌。
+Q 8-1|パリのエッフェル{とう}|＿>>巴黎的埃菲尔铁塔
+Q 8-2|飛行機の{とうじょうけん}|＿乗券>>飞机的登机牌
+Q 9-1|異文化に{てきおう}する。|＿応>>适应不同的文化。
+Q 9-2|プロに{ひってき}する実力|匹＿>>能与专业人士匹敌的实力
+Q 10-1|サンプルを{しんてい}する。|進＿>>赠送样品。
+Q 10-2|{ほうてい}で争う。|法＿>>在法庭上争讼。
+A Ⅰ：①b ②b ③a ④a ⑤b ⑥b　Ⅱ：⑦1j 2d ⑧1f 2a ⑨1l 2k ⑩1b 2g

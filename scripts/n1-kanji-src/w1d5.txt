@@ -1,0 +1,119 @@
+T 麻・磨・摩・魔|マ・マ・マ・マ|麻・磨・摩・魔|
+I Q. 漢字で書くと？　ちりょう　→治療。「ちりょう」は病気を治すことだから、「疒」。
+S 違う部分に注意！①|注意不同的部分！①|Watch the different parts! ①
+G 尞|リョウ
+K 療
+W 治療|ちりょう|a treatment|治疗
+W 療養|りょうよう|a medical treatment / recuperation|疗养
+K 僚
+W 同僚|どうりょう|a colleague|（单位）同事
+W 官僚|かんりょう|a government official|官僚
+K 寮
+W 寮|りょう|a dorm|宿舍
+G 麻|マ
+K 麻
+W 麻酔|ますい|anesthesia|麻醉
+W 麻薬|まやく|a drug|麻药、毒品
+K 磨
+W 研磨剤|けんまざい|abrasives|研磨剂
+K 摩
+W 摩擦|まさつ|friction|摩擦
+K 魔
+W 邪魔な|じゃま|a nuisance|妨碍
+W 魔法|まほう|magic|魔法
+G 曼|マン
+K 慢
+W 自慢|じまん|proud of, brag|自满、自夸
+W 我慢|がまん|patience/endurance|忍耐
+K 漫
+W 漫画|まんが|comics|漫画
+W 散漫な|さんまん|loose|散漫的
+G 雚|カン
+K 観
+W 観察|かんさつ|observation|观察
+W 価値観|かちかん|values|价值观
+K 歓
+W 歓迎|かんげい|a welcome|欢迎
+W 歓声|かんせい|cheer|欢声
+K 勧
+W 勧誘|かんゆう|an invitation|劝诱
+W 勧告|かんこく|(official) advice|劝告
+G 襄|ジョウ
+K 譲
+W 譲渡|じょうと|a transfer|转让
+W 譲歩|じょうほ|a concession|让步
+K 嬢
+W お嬢さん|おじょうさん|your daughter, a young lady|令爱
+K 壌
+W 土壌|どじょう|soil|土壤
+K 醸
+W 醸造|じょうぞう|brewing|酿造
+G 且|ソ
+K 組
+W 組織|そしき|an organization|组织
+W 組閣|そかく|cabinet formation|组阁
+K 祖
+W 祖父母|そふぼ|grand parents|祖父母
+W 祖先|そせん|ancestor|祖先
+K 阻
+W 阻止する|そし|stop|阻止
+K 粗
+W 粗品|そしな|a small present|粗陋的东西；微薄的礼物
+W 粗悪な|そあく|crude|劣质的
+K 租
+W 租税|そぜい|taxes|租税
+G 扁|ヘン
+K 編
+W 編集|へんしゅう|editing|编辑
+W 長編|ちょうへん|long|长篇
+K 遍
+W 普遍の|ふへん|general|普遍的
+K 偏
+W 偏見|へんけん|prejudice|偏见
+W 偏差値|へんさち|deviation (measure for school ranking)|偏差值
+G 賁|フン
+K 噴
+W 噴水|ふんすい|a fountain|喷泉
+W 噴火|ふんか|an eruption|喷火
+K 憤
+W 憤慨|ふんがい|indignation, anger|愤慨
+K 墳
+W 古墳|こふん|an ancient tomb|古墓
+G 蒦|カク
+K 獲
+W 獲得|かくとく|acquisition|获得
+W 捕獲|ほかく|capture|捕获
+K 穫
+W 収穫|しゅうかく|a harvest|收获（农作物）
+G 菐|ボク
+K 僕
+W 僕|ぼく|me (used by males)|我（男性用）
+K 撲
+W 撲滅|ぼくめつ|eradication|扑灭
+W 打撲|だぼく|a bruise/blow|跌打
+G 卆|スイ
+K 酔
+W 麻酔|ますい|anesthesia|麻醉
+K 粋
+W 純粋な|じゅんすい|pure|纯粹
+K 枠
+W 枠組み|わくぐみ|a frame|框架
+W 予算の枠|よさんのわく|a budget|预算范围|＊「枠」は音読みがない
+X1 a、bの言葉の読みを書き、正しいほうを選びなさい。
+Q 手術の前に（a. 摩擦　b. 麻酔）をする。>>手术前进行麻醉。
+Q 家賃が安ければ多少の不便は（a. 自慢　b. 我慢）します。>>只要房租便宜，有点不方便我也能忍。
+Q 植物の生育を（a. 観察　b. 勧誘）する。>>观察植物的生长。
+Q 土地を（a. 譲渡　b. 譲歩）する。>>转让土地。
+Q 来月は会社の（a. 組織　b. 編集）替えがある。>>下个月公司要进行机构改组。
+Q 差別や（a. 邪魔　b. 偏見）をなくそう。>>消除歧视和偏见吧。
+X2 ＿＿の部分を漢字で書くとき、最もよいものを□から選びなさい。
+B a. 獲|b. 祖|c. 噴|d. 枠|e. 粗|f. 穫|g. 酔|h. 組|i. 墳|j. 粋|k. 憤|l. 租
+Q 7-1|{そしな}をもらう。|＿品>>收到小礼品。
+Q 7-2|{そふぼ}に育てられる。|＿父母>>由祖父母抚养长大。
+Q 8-1|作物を{しゅうかく}する。|収＿>>收获农作物。
+Q 8-2|賞金を{かくとく}する。|＿得>>获得奖金。
+Q 9-1|火山が{ふんか}する。|＿火>>火山喷发。
+Q 9-2|{こふん}を発掘する。|古＿>>发掘古坟。
+Q 10-1|予算の{わく}|＿>>预算的范围
+Q 10-2|{じゅんすい}な心|純＿>>纯洁的心
+A Ⅰ：①b ②b ③a ④a ⑤a ⑥b　Ⅱ：⑦1e 2b ⑧1f 2a ⑨1c 2i ⑩1d 2j
