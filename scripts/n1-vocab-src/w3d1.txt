@@ -1,0 +1,44 @@
+T こつこつ努力しよう|孜孜不倦地努力吧|Let's work steadily
+S words|様子を表す言葉|表示状态的词语|Words describing states
+W こうこうと|ライトがこうこうとついている。|The lights are shining brightly.|灯亮堂堂的。
+W ごしごし|鍋をごしごしこすって洗う|scrub the pot|用力刷锅
+W すらすら|難問をすらすら解く|answer difficult questions|顺利地解答难题
+W ずるずる|重い荷物をずるずる引きずる|drag heavy luggage|拖拉着沉重的行李
+W ずるずる|ストがずるずる長引く|the strike is dragging on|罢工拖拖拉拉地拖延
+W ばらばら|機械をばらばらにする|take a machine apart|把机器拆开
+W ばらばら|一家がばらばらになる|a family falls apart|一家四分五裂
+W じめじめ（する）|梅雨で部屋がじめじめしている。|The room is damp during the rainy season.|因梅雨房间里很潮湿。
+W じめじめ（する）|じめじめした話|a depressing story|阴郁的话
+W ざあざあ|雨がざあざあ降っている|It is pouring outside.|雨哗啦哗啦地下。
+W がんがん（する）|頭ががんがんする。|My head is pounding.|头痛得厉害。
+W かんかん|父がかんかんに怒っている。|My father is in a rage.|父亲大发雷霆。
+W かんかん|夏の太陽がかんかんに照りつける。|The summer sun is beating down.|夏天的太阳毒辣辣地照着。
+W だらだら|汗をだらだら流す|dripping with sweat|大汗淋漓
+W だらだら|だらだらと仕事をする|work inefficiently|磨磨蹭蹭地工作
+W だらだら|だらだらとした生活|a bad lifestyle|拖拖拉拉地生活
+W だぶだぶ|だぶだぶ（＝ぶかぶか）のズボン|baggy pants|肥肥大大的裤子
+W つやつや（する）|つやつやしている髪|silky hair|油亮的头发
+W まちまち|人の意見はまちまちだ。|Opinions vary from person to person.|意见各有不同。
+W 丸々[まるまる]|丸々太っている赤ちゃん|a plump baby|胖嘟嘟的婴儿
+W 丸々[まるまる]|それをやるには丸々三日かかる。|It will take three whole days to do that.|要这样做，需要整整三天。
+W ひらひら（する）|カーテンがひらひらしている。|The curtains are swaying.|窗帘在飘动。
+W ぐちゃぐちゃ|かばんの中がぐちゃぐちゃになっている。|The inside of my bag is a mess.|包里乱七八糟的。
+S words|もっとおぼえましょう　程度を表す言葉|再多记一些　表示程度的词语|Learn more: words expressing degree
+W むちゃくちゃ|電車がむちゃくちゃ混む|the train gets unbelievably crowded|电车挤得一塌糊涂
+W →むちゃくちゃな意見[いけん]||an opinion that makes no sense|毫无道理的意见
+W さんざん|さんざん注意される|be warned strongly|被狠狠地说了一顿
+W →さんざんな目[め]にあう||have a disastrous experience|倒大霉
+W ほどほど|ほどほどにお酒を飲む|drink moderately|适量饮酒
+W そこそこ|試験でそこそこいい点を取る|do alright on an exam|考试考得还凑合
+W 甚[はなは]だ|甚だ迷惑である。|It is extremely bothersome.|非常麻烦。
+X1 正しいほうに○を付けなさい。
+Q 雨の日が続いて部屋が（a. ざあざあ　b. じめじめ）している。>>连续下雨，房间里湿漉漉的。
+Q 犬がえさを前にして、（a. ずるずる　b. だらだら）よだれをたらしている。>>狗对着食物，口水直流。
+Q 運送料は業者によって（a. まちまち　b. まるまる）です。>>运费因运输公司而各不相同。
+Q 野原をちょうちょうが（a. ぶかぶか　b. ひらひら）飛んでいる。>>蝴蝶在原野上翩翩飞舞。
+Q （a. ばらばら　b. だらだら）のジグソーパズルを組み合わせて完成させた。>>把零散的拼图拼好完成了。
+Q （a. ずるずる　b. すらすら）と日本語が読めるようになりたい。>>想能流利地读日语。
+X2 （　）にはどれが入りますか。一つ選びなさい。
+Q 契約に失敗した。上司は（　　）怒るだろうなあ。|がんがんに|かんかんに|ごしごしと|こうこうと>>合同没谈成，上司肯定会大发雷霆吧。
+Q 絶対に当選すると思っていたので、彼が落選したのは（　　）残念なことです。|そこそこ|ほどほど|はなはだ|さんざん>>原以为他一定会当选，他落选了实在是非常遗憾。
+A Ⅰ：①b ②b ③a ④b ⑤a ⑥b　Ⅱ：⑦2 ⑧3

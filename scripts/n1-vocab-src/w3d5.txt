@@ -1,0 +1,41 @@
+T ひたすら覚えよう|一心一意地记住吧|Let's memorize single-mindedly
+S words|強調を表す言葉|表示强调的词语|Words for emphasis
+W 至[いた]って|母は、至って元気です。|My mother is doing very well.|妈妈非常精神。
+W いかにも|社長の考えはいかにも日本的だ。|The president's way of thinking is typically Japanese.|社长的想法实在是日本式的。
+W →いかにも|いかに（＝どれほど）努力してもできないだろう。|I probably will not succeed no matter how hard I try.|无论怎么努力，都不行。
+W いやに|今日はいやに暑い。|It is awfully hot today.|今天特别热。
+W さも|さもあろう。|That maybe so.|很可能吧。
+N ＊当然だという気持ちを表す。
+W さも|彼はさも（＝いかにも）うれしそうに笑った。|He smiled with evident pleasure.|他很高兴似地笑了。
+W 何[なに]より|合格して何よりうれしい。|I am so glad to have passed the exam.|合格了，比什么都高兴。
+W とりわけ|とりわけ（＝特に）ビールが好きだ。|I particularly like beer.|特别喜欢啤酒。
+W ことに|この小説はことに（＝特に、とりわけ）面白い。|This novel is quite interesting.|这个小说特别有趣。
+W さぞ／さぞかし|ご両親はさぞ（かし）お喜びでしょう。|Your parents must be happy.|您父母肯定会很高兴。
+W よほど|あの荷物はよほど重いようだ。|That box looks awfully heavy.|那行李好像很沉。
+W よっぽど|よっぽど国に帰ろうかと思った。|I almost went back to my country.|很想回国。
+W なおさら|だめだと言われると、なおさら（＝ますます）やりたくなる。|Being told it is impossible makes me want to do it all the more.|如果别人说不行，反而更想做。
+W まさしく|これはまさしく本物のダイヤです。|This is definitely a real diamond.|这的确是真的钻石。
+W まして|大人でもできないのだから、まして子どもには無理だ。|There is no way an adult can do it, let alone a child.|连大人都不会，孩子就更不行了。
+W やけに|やけにのどが渇くなあ。|I am awfully thirsty.|嗓子渴得要命。
+W やたらに／やたらと|最近、やたらと寝汗をかく。|I sweat an awful lot in my sleep these days.|最近晚上盗汗很厉害。
+W 誠[まこと]に|誠に申し訳ありません。|I am truly sorry.|真是对不起了。
+W もっぱら|休日はもっぱらゴルフをしている。|I devote my spare time entirely to golf.|休假日净打高尔夫。
+W ひたすら|ひたすら走り続ける|keep running forever|一个劲儿地跑步
+W もろに|もろに地震の被害を受けた。|We were directly affected by the earthquake.|全面受到了地震的危害。
+W たかが|たかが一度の失敗で、あきらめるな。|Don't give up over just one failure.|不就是失败了一次吗，不要放弃。
+W たかが|たかが子どもの言うことだ。|It's just a child's comment.|不过是孩子说的话。
+W てんで|その話はてんで面白くない。|That story is not at all interesting.|这事儿一点也没意思。
+W むろん|むろん（＝もちろん、言うまでもなく）賛成だ。|I certainly agree.|当然赞成。
+W なんと／なんて|なんときれいな人だろう。|What a beautiful person.|多么漂亮的人呀。
+W 残[のこ]らず|知っていることを残らず話す|tell all of what you know|把知道的毫无保留地说出来
+X1 正しいほうに○を付けなさい。
+Q このカップ麺はあそこのラーメン屋より（a. よっぽど　b. まして）おいしい。>>这个杯面比那边的拉面店好吃多了。
+Q 彼は何も言わないが、（a. さも　b. いたって）いやそうな顔をしている。>>他虽然什么都没说，但一脸很不情愿的样子。
+Q 虫に刺されたところをかいたら、（a. なおさら　b. まさしく）かゆくなった。>>挠了被虫子叮的地方，结果更痒了。
+Q あのおばあさんは、昔は（a. さぞかし　b. なんと）美人だったことでしょう。>>那位老奶奶年轻时想必是个美人吧。
+Q 今日、外は（a. まして　b. やけに）寒いです。>>今天外面特别冷。
+Q 棚の角に（a. むろん　b. もろに）頭をぶつけてしまった。>>头狠狠地撞在了架子角上。
+X2 （　）にはどれが入りますか。一つ選びなさい。
+Q 試験問題はとても難しく、（　　）わからなかった。|いたって|さぞ|てんで|もろに>>考题非常难，完全不会。
+Q 年をとっても健康でいられるということは（　　）ですね。|とりわけ|なにより|ひたすら|いかにも>>上了年纪也能保持健康，这比什么都好啊。
+A Ⅰ：①a ②a ③a ④a ⑤b ⑥b　Ⅱ：⑦3 ⑧2

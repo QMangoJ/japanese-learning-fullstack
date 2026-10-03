@@ -1,0 +1,46 @@
+T あらかじめ準備しておこう|事先做好准备吧|Let's prepare in advance
+S words|時を表す言葉|表示时间的词语|Words expressing time
+W 先[さき]に|先に述べたように……|As I mentioned to you earlier,|正如刚才所说的……
+W じきに|にわか雨だからじきにやむよ。|It is only a light rain so it will stop shortly.|因为是阵雨，马上就会停。
+W さなか|暑いさなかに外出する|go out on a hot day|正热的时候外出
+W とっさに|とっさにブレーキを踏んだ。|I slamed on the breaks.|刹那间踩刹车。
+W 不意[ふい]に|不意に訪問される|have an unexpected visit|突然有人造访
+W 今[いま]さら|今さらできないと言われても困る。|It is too late for you to renege.|事到如今你再跟我说无法做到，那可麻烦了。
+W 今[いま]さら|今さら言うまでもないが…|I shouldn't have to tell you this but ...|到现在不用再说了……
+W 今[いま]に|そんなことをしていると、今に後悔しますよ。|You will someday regret what you are doing now.|那样做早晚会后悔的。
+W 今[いま]にも|今にも雨が降りそうだ。|It looks like it's going to rain any minute.|好像马上就要下雨了。
+W 未[いま]だに|未だにその事件は解決していない。|The crime has still not been solved.|那个事件至今仍然没有解决。
+W いざ|いざとなれば、私も働きます。|When the time comes, I will work.|万一有什么事的时候，我也会工作。
+W →いざという時[とき]に||in case of emergency|紧急的时候
+W あらかじめ（＝前[まえ]もって）|欠席の場合は、あらかじめご連絡ください。|Please contact us in advance if you cannot attend.|如果缺席，请提前联系。
+N ＊少し硬い言い方
+W かねて（より／から）|かねて計画していた旅行をする|he left on a trip which he had been planned in advance|按事先的计划去旅行
+W かねて（より／から）|お名前はかねてから伺っております。|I have been hearing about you for a long time.|您的名字早有耳闻。
+W かつて|かつて住んでいた場所|a place where I once lived|以前住过的地方
+W かつて|かつてないにぎわい|it has never been so crowded|前所未有的繁华
+S words|頻度を表す言葉|表示频度的词语|Words expressing frequency
+W しょっちゅう|しょっちゅう酒を飲む|likes to drink|经常喝酒
+W 絶[た]えず|絶えず水が流れている|the water is constantly running|水不断地流
+W 再三[さいさん]|再三、注意する|warn over and over again|再三提醒
+W 片時[かたとき]も|子どもから片時も目が離せない。|I cannot take my eyes off him for even one second.|眼睛一刻也不能离开孩子。
+W 四六時中[しろくじちゅう]|彼は四六時中、食べている。|He eats at all hours of the day.|他一天到晚都在吃。
+W 時折[ときおり]|時折、鳥の鳴き声がする。|I hear birds chirping every once in a while.|偶尔会听到鸟叫声。
+S words|否定語が後に来る言葉|后接否定的词语|Words followed by a negative
+W 到底[とうてい]～ない|到底間に合わない|cannot possibly make it in time|无论如何也赶不上
+W 到底[とうてい]～ない|到底無理だ。|It's absolutely impossible.|总归不行。
+W 一向[いっこう]に～ない|話が一向に進まない。|The discussion is going nowhere.|谈话毫无进展。
+W →一向[いっこう]に平気[へいき]だ。||I don't care at all.|完全不在乎。
+W 一切[いっさい]～ない|私はその事件とは一切関係ない。|I have nothing to do with the case.|我和那个事件没有丝毫关系。
+W さっぱり～ない|講義がさっぱりわからない。|I do not understand the lecture at all.|讲义一点也不明白。
+W さほど～ない|今日はさほど（＝それほど）寒くない。|It is not that cold today.|今天没有那么冷。
+X1 正しいほうに○を付けなさい。
+Q 彼女はぐっすり寝ていて、（a. いっこうに　b. とうてい）目を覚ます気配がない。>>她睡得很熟，一点也没有要醒的迹象。
+Q 私は（a. いまに　b. いまだに）カセットテープレコーダーを使っている。>>我至今还在用盒式录音机。
+Q 新タイプの機種ですが、値段は（a. さっぱり　b. さほど）高くないですよ。>>虽然是新型号，价格并没有那么贵哦。
+Q 最初は違和感があるけど、（a. 先に　b. じきに）慣れるよ。>>刚开始会觉得别扭，但很快就会习惯的。
+Q 妻は（a. 四六時中　b. 片時も）文句を言っている。>>妻子一天到晚都在发牢骚。
+Q 後ろから（a. 時折　b. 不意に）呼びかけられて驚いた。>>突然被人从后面叫住，吓了一跳。
+X2 （　）にはどれが入りますか。一つ選びなさい。
+Q 最近の高校生は（　　）携帯電話を離さない。|しょっちゅう|片時も|再三|とっさに>>最近的高中生手机片刻不离手。
+Q 30年ぶりに母校を訪ねたら、（　　）校庭だったところに大きなマンションが建っていた。|かつて|いまに|先に|かねて>>时隔30年回母校一看，曾经是校园的地方建起了一座大公寓。
+A Ⅰ：①a ②b ③b ④b ⑤a ⑥b　Ⅱ：⑦2 ⑧1

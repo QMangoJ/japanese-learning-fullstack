@@ -1,0 +1,44 @@
+T どうにか最後までやろう|好歹坚持到最后吧|Let's somehow see it through to the end
+S words|副詞|副词|Adverbs
+W あいにく|あいにく留守にしています。|Unfortunately he is out.|不巧他不在家。
+W 案[あん]の定[じょう]|ダメだと思っていたら、案の定不合格だった。|I thought I would fail, and sure enough I did.|本来就觉得不行，不出所料，就是不合格。
+W 敢[あ]えて|負けるとわかっているが、敢えて挑戦した。|I knew I would lose but I tried anyway.|我知道会失败，但硬是挑战了。
+W 強[し]いて（→p.18 強いる）|強いて（＝無理に）それを変更しろとは言わない。|I will not insist on you changing it.|我不会硬要你更改。
+W 強[し]いて（→p.18 強いる）|強いて言えば、こっちのほうがました。|If I were to compare them, this one is better.|非要说的话，这个更好些。
+W 自[おの]ずから／自[おの]ずと|努力すれば自ずから道は開ける。|If you work hard, opportunities will arise.|只要努力，道路自然就会铺开。
+W 自[みずか]ら|自ら進んで勉強する|study of your own initiative|自己主动学习
+W とかく|寒くなると、とかく遅刻者が多くなる。|More people tend to come late as it gets colder.|变冷后，迟到的人变的多了。
+W なるたけ|なるたけ（＝なるべく）早く来てください。|Please come as soon as possible.|请尽量早点来。
+W 努[つと]めて|努めて（＝できるだけ）冷静にする|make an effort to compose yourself|尽量冷静
+W ひいては|自分のため、ひいては家族全体のために頑張ろう。|I'll work hard for the benefit of myself and my family.|为了自己以及全家人，我要努力。
+W もはや～ない|もはや（＝もう）彼の回復は望めない。|He no longer has any chance of recovery.|他恢复已经没有指望了。
+W かえって|近道したら、かえって時間がかかった。|We took a shortcut but it actually took us more time.|本想走近道，反而更花时间。
+W 取[と]りあえず|取りあえず何か食べよう。|Let's eat first.|先吃点什么吧。
+W 取[と]りあえず|取りあえず問題はないだろう。|Let's not worry about it for now.|暂且没有问题了吧。
+W かろうじて|かろうじて最終電車に間に合った。|I barely made the last train.|勉勉强强赶上了末班电车。
+W ことごとく|私の案はことごとく却下された。|All my proposals were rejected.|我的方案全部被驳回了。
+W ふんだんに|イチゴをふんだんに使ったケーキ|a cake with plenty of strawberries in it|用了大量草莓的蛋糕
+W 幸[さいわ]い（に）|事故にあったが、幸いけがはなかった。|I was in an accident but luckily I was not injured.|遇上了事故，幸而没有受伤。
+W 幸[さいわ]い（に）|お返事をいただければ幸いです。|I will look forward to your reply.|如果您能答复，我将不胜荣幸。
+W 現[げん]に|現に（＝実際に）、私はそれを見た。|I actually saw it.|我亲眼看到了。
+W いずれも／いずれにしても／いずれにせよ|いずれにしても、高くて買えない。|It is too expensive for me to buy anyway.|总之是太贵，买不起。
+W →いずれ|いずれ（＝そのうち）また来ます。|I will come again soon.|改日再来。
+W 仮[かり]に|仮に試験に落ちたら、どうしますか。|Suppose you fail the exam. What will you do then?|如果考试没过，那该怎么办。
+W ひょっとすると／ひょっとして|ひょっとすると彼の話はうそかもしれない。|His story may possibly be a lie.|也许他说的都是谎言。
+W もしかして／もしかすると|もしかして、あなたは、田中さん？|Are you Mr.Tanaka, by any chance?|难道你是田中先生？
+W どうにか|どうにかあの会社に就職したい。|I somehow or other want to get a job at that company.|无论如何都想进那家公司。
+W どうにか|どうにか大学は卒業した。|I somehow graduated from university.|好歹算是大学毕业了。
+W どうにか|どうにかなるだろう。（＝何とかなるだろう）|I'll manage.|总会有办法。
+W どうやら|どうやら（＝おそらく）彼が優勝しそうだ。|It is likely that he will win the competition.|看来多半他能获胜。
+W どうやら|どうやら（＝どうにか）間に合った。|I just made it.|好歹算是赶上了。
+X1 正しいほうに○を付けなさい。
+Q 夫婦円満だと思っていたのに、（a. どうにか　b. どうやら）彼らは離婚したらしい。>>本以为他们夫妻和睦，看样子他们好像离婚了。
+Q （a. 仮に　b. 現に）手術したとしても、彼は助からなかっただろう。>>即使做了手术，他恐怕也救不过来吧。
+Q あれ、おかしい。（a. ひょっとすると　b. あえて）道を間違えたかもしれない。>>咦，奇怪。说不定走错路了。
+Q チームは（a. なるたけ　b. かろうじて）予選を勝ち抜いた。>>队伍勉强通过了预选。
+Q お客様には（a. つとめて　b. しいて）笑顔で接してください。>>对待客人请尽量面带笑容。
+Q 申し訳ありません。その本は（a. もしかして　b. あいにく）在庫を切らしております。>>非常抱歉，那本书不巧已经没有库存了。
+X2 （　）にはどれが入りますか。一つ選びなさい。
+Q これは、季節の野菜を（　　）使った料理です。|おのずから|ことごとく|ふんだんに|とかく>>这是用了大量时令蔬菜的菜肴。
+Q いくつも提案したが、私の案は（　　）受け入れられなかった。|ことごとく|ひょっとして|ひいては|かりに>>我提了好几个方案，但全都没被采纳。
+A Ⅰ：①b ②a ③a ④b ⑤a ⑥b　Ⅱ：⑦3 ⑧1
