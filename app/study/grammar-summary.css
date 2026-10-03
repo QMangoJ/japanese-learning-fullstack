@@ -42,3 +42,8 @@
 /* N2：混在「相似表达」里的同级（N2）条目 */
 .grammar-summary__badges .grammar-summary__where{border:0;background:var(--blue-soft);color:var(--blue);font:inherit;font-size:inherit;font-weight:700;border-radius:999px;padding:0 8px;cursor:pointer;line-height:inherit}
 .grammar-summary__against{font-weight:700;color:var(--sub)}
+/* 「相似表达」的日语（表达名、对方语法、对比例句）带注音：给 rt 留出行高，手机上不和上一行重叠 */
+.grammar-summary__cross-level .grammar-summary__row h4{line-height:1.95}
+.grammar-summary__cross-level .grammar-summary__example-body .jp{line-height:2.05}
+.grammar-summary__cross-level .grammar-summary__row>p{line-height:1.85}
+.grammar-summary__cross-level ruby rt{font-weight:400}
