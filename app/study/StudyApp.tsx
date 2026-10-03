@@ -245,7 +245,9 @@ function Header({
 						onClick={onOpenLevel}
 					>
 						<span className="lv">{LEVEL.toUpperCase()}</span>
-						<span className="cv" aria-hidden="true">▾</span>
+						<svg className="cv" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+							<path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+						</svg>
 					</button>
 				) : null}
 				<h1 id="title">{title}</h1>
