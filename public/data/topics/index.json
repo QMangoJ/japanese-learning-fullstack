@@ -47,12 +47,15 @@
 			"slug": "clothes-shopping",
 			"title_zh": "逛街买衣服",
 			"title_ja": "服を買いに行く",
-			"count": 19,
+			"count": 122,
 			"title_en": "Shopping for clothes",
 			"subtopics": [
 				"进店和试穿",
 				"合不合身",
-				"价格和结账"
+				"价格和结账",
+				"评价衣服",
+				"和朋友逛街",
+				"和店员交流"
 			]
 		}
 	]

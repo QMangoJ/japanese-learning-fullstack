@@ -31,6 +31,8 @@ export type TopicCard = {
 	example_ruby?: string;
 	subtopic: string;
 	level?: string;
+	/** 例句的使用场景（可选），例如「朋友从试衣间出来时」。 */
+	scene?: string;
 	note?: string;
 };
 
@@ -76,6 +78,7 @@ const CARD_KEYS = new Set([
 	"example_ruby",
 	"subtopic",
 	"level",
+	"scene",
 	"note",
 ]);
 
@@ -106,7 +109,7 @@ export function validateTopicCard(card: unknown, subtopics: Set<string>, where: 
 	for (const key of ["jp", "kana", "zh", "example_jp", "example_zh", "subtopic"] as const) {
 		if (!text(card[key], true)) errors.push(`${where}: ${key} is required (non-empty, trimmed string)`);
 	}
-	for (const key of ["en", "example_en", "example_kana", "example_ruby", "level", "note"] as const) {
+	for (const key of ["en", "example_en", "example_kana", "example_ruby", "level", "scene", "note"] as const) {
 		if (!text(card[key], false)) errors.push(`${where}: ${key} must be a trimmed string when present`);
 	}
 	if (typeof card.kana === "string" && card.kana && !KANA.test(card.kana)) errors.push(`${where}: kana must be kana only ("${card.kana}")`);
@@ -269,6 +272,9 @@ const HEADER_ALIASES: Record<string, keyof TopicCard> = {
 	类别: "subtopic",
 	level: "level",
 	等级: "level",
+	scene: "scene",
+	场景: "scene",
+	使用场景: "scene",
 	难度: "level",
 	note: "note",
 	notes: "note",
@@ -500,7 +506,7 @@ export function mergeTopicCards(
 	return { cards: out, added, updated, removed };
 }
 
-const ORDER: (keyof TopicCard)[] = ["id", "jp", "kana", "zh", "en", "subtopic", "level", "example_jp", "example_ruby", "example_kana", "example_zh", "example_en", "note"];
+const ORDER: (keyof TopicCard)[] = ["id", "jp", "kana", "zh", "en", "subtopic", "level", "scene", "example_jp", "example_ruby", "example_kana", "example_zh", "example_en", "note"];
 
 function orderCard(card: TopicCard): TopicCard {
 	const out: Record<string, string> = {};
