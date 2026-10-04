@@ -259,6 +259,7 @@ function TopicDetail({ slug }: { slug: string }) {
 									</div>
 									<div className="topic-item__zh">{LANG === "en" && card.en ? card.en : card.zh}</div>
 									<div className="topic-item__ex">
+										{card.scene ? <div className="topic-item__scene">🎬 {card.scene}</div> : null}
 										<div className="jp">
 											{card.example_ruby ? <RubyHtml html={card.example_ruby} /> : card.example_jp} <SayButton text={card.example_jp} />
 										</div>
@@ -267,7 +268,10 @@ function TopicDetail({ slug }: { slug: string }) {
 									</div>
 									{card.note ? <div className="topic-item__note">💡 {card.note}</div> : null}
 									<div className="topic-item__foot">
-										<span className="review-day__chip">{subLabel.get(card.subtopic)}</span>
+										<span className="topic-item__chips">
+											<span className="review-day__chip">{subLabel.get(card.subtopic)}</span>
+											{card.level ? <span className="review-day__chip">{card.level}</span> : null}
+										</span>
 										<span className="topic-item__grade">
 											<button type="button" className={st.status === "unknown" ? "on" : ""} onClick={() => grade(card, false, false)}>
 												{lx("不会", "Don't know")}
@@ -320,6 +324,7 @@ function TopicDetail({ slug }: { slug: string }) {
 								{cur.en ? <div className="meta" style={{ fontSize: "14px" }}>{cur.en}</div> : null}
 								<div className="ex fcard-ex">
 									<div className="fcard-ex-label">{lx("例句", "Example")}</div>
+									{cur.scene ? <div className="topic-item__scene">🎬 {cur.scene}</div> : null}
 									<div className="jp">
 										{cur.example_ruby ? <RubyHtml html={cur.example_ruby} /> : cur.example_jp} <SayButton text={cur.example_jp} />
 									</div>

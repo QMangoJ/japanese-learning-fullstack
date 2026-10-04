@@ -7,7 +7,7 @@
  *   .docx  Google Docs「下载 → Microsoft Word」，或 Drive 连接器下载的文件。每个标题（Heading）下的表格是一组，标题作为 subtopic。
  *   .md    Google Docs「下载 → Markdown」，或 Drive 连接器 read_file_content 读出的文本。## 标题同样作为 subtopic。
  *   .tsv / .csv  Google Sheets 导出等；第一行表头，可带 subtopic 列。
- * 表头可以是英文字段名（jp, kana, zh, example_jp, example_zh, subtopic, level, note, en, example_kana, example_ruby, id）
+ * 表头可以是英文字段名（jp, kana, zh, example_jp, example_zh, subtopic, level, scene, note, en, example_kana, example_ruby, id）
  * 或常见中文表头（日语 / 假名读音 / 中文意思 / 例句（日语） / 例句（中文） / 主题 / 备注 …）。每张表的表头行会自动跳过。
  * 例句或 example_ruby 列里可以写「株式[かぶしき]を買[か]う」，会转成注音。
  *

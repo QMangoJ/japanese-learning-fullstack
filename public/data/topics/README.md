@@ -33,7 +33,8 @@ public/data/topics/
       "en": "…", "example_en": "…",    // 可选
       "example_kana": "…",             // 可选：例句整句假名
       "example_ruby": "<ruby>口座<rt>こうざ</rt></ruby>を…", // 可选：只允许 ruby/rt，去掉注音后必须等于 example_jp
-      "level": "…", "note": "…"        // 可选
+      "level": "…", "note": "…",       // 可选；level 会显示成小标签（如 N3）
+      "scene": "…"                     // 可选：例句的使用场景，显示在例句上方
     }
   ]
 }
@@ -58,7 +59,7 @@ npm run import:topic -- --topic <slug> [--title-zh … --title-ja … --title-en
 
 - 输入可以是 Google Docs 下载的 `.docx`、`.md`（Markdown），或 `.tsv` / `.csv`。
   文档里每个标题下的表格是一组，标题自动当作 `subtopic`；每张表的表头行自动跳过。
-- 表头认中文或英文：`日语 | 假名读音 | 中文意思 | 例句（日语） | 例句（中文）`，或 `jp, kana, zh, example_jp, example_zh, subtopic, note, …`。
+- 表头认中文或英文：`日语 | 假名读音 | 中文意思 | 例句（日语） | 例句（中文）`，或 `jp, kana, zh, example_jp, example_zh, subtopic, level, scene, note, …`。
 - 例句可以写成 `株式[かぶしき]を買[か]う`，会转成 `example_ruby`。
 - 默认 `--mode replace`：结果只含这次导入的词；`--mode merge` 保留已有但没出现在这次导入里的词。
   同一个词（同 `jp`+`kana`）沿用原来的 `id`，复习进度不会丢。新增的子主题只有 `zh`，可以手动补 `ja`/`en`，之后重导会保留。
@@ -77,4 +78,14 @@ npm run import:topic -- --topic <slug> [--title-zh … --title-ja … --title-en
 npm run import:topic -- --topic japan-investing --expect 121 \
   scripts/topic-sources/japan-investing.docx scripts/topic-sources/japan-investing-extra.tsv \
   scripts/topic-sources/japan-investing-overrides.tsv
+```
+
+### 逛街买衣服（clothes-shopping）
+
+最初的 19 个词直接写在 JSON 里；「评价衣服」「和朋友逛街」「和店员交流」三组（103 个，带 `scene` 和例句注音）
+来自 `scripts/topic-sources/clothes-shopping-extra.tsv`，用 merge 导入，不会动原来的 19 个：
+
+```bash
+npm run import:topic -- --topic clothes-shopping --mode merge --id-prefix shop --expect 122 \
+  scripts/topic-sources/clothes-shopping-extra.tsv
 ```

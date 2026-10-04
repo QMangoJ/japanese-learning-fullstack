@@ -71,6 +71,28 @@ describe("topic vocabulary data", () => {
 		expect(shopping.cards.find((card) => card.jp === "割引")?.example_zh).toBe("今天是八折。");
 		expect(shopping.cards.find((card) => card.jp === "割引")?.note).toContain("八折");
 	});
+
+	it("adds everyday clothes-shopping words in three new groups, each with a scene and furigana", () => {
+		const shopping: TopicFile = JSON.parse(readFileSync(join(DIR, "clothes-shopping.json"), "utf8"));
+		const count = (zh: string) => shopping.cards.filter((c) => c.subtopic === zh).length;
+		expect(shopping.subtopics.map((s) => [s.zh, count(s.zh)])).toEqual([
+			["进店和试穿", 6],
+			["合不合身", 6],
+			["价格和结账", 7],
+			["评价衣服", 33],
+			["和朋友逛街", 35],
+			["和店员交流", 35],
+		]);
+		expect(shopping.cards.slice(0, 19).map((c) => c.id)).toEqual(Array.from({ length: 19 }, (_, i) => `shop-${String(i + 1).padStart(3, "0")}`));
+		for (const card of shopping.cards.slice(19)) {
+			expect(card.scene, card.id).toBeTruthy();
+			if (/[\u4e00-\u9fff]/.test(card.example_jp)) expect(card.example_ruby, card.id).toContain("<ruby>");
+		}
+		const byJp = (jp: string) => shopping.cards.find((c) => c.jp === jp);
+		expect(byJp("着回しが利く")).toMatchObject({ kana: "きまわしがきく", subtopic: "评价衣服" });
+		expect(byJp("被る")).toMatchObject({ kana: "かぶる", subtopic: "和朋友逛街" });
+		expect(byJp("取り置き")).toMatchObject({ kana: "とりおき", subtopic: "和店员交流" });
+	});
 });
 
 describe("topic vocabulary schema", () => {
