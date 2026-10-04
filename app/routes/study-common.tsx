@@ -1501,7 +1501,7 @@ export function HomePage({ data }: { data: { weeks: any[]; intro: string; lang: 
 						<span>
 							{dueN
 								? lx(`抽出 ${dueN} 项`, `${dueN} picked`)
-								: lx("看过的语法和错题，第二天按权重抽出", "Yesterday's grammar and mistakes are sampled by weight")}
+								: lx("打开语法课后，从看过的句型和错题里抽出", "Opened grammar and mistakes are sampled by weight")}
 						</span>
 					</span>
 					<span className="due-banner__count">{dueN}</span>

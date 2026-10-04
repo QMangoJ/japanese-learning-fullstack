@@ -30,13 +30,18 @@ function sourceLabel(sourceDate: string | null, candidateCount: number, shown: n
 	if (!sourceDate) {
 		return lx(portionCn || "这些是到了复习时间的卡片", portionEn || "These cards are due");
 	}
-	const yesterday = addIsoDays(jstToday(), -1);
-	const whenCn = sourceDate === yesterday
-		? "昨天看过的语法和做错的题"
-		: `${formatReviewMonthDay(sourceDate, lang)}看过的语法和做错的题`;
-	const whenEn = sourceDate === yesterday
-		? "Yesterday's grammar and mistakes"
-		: `Grammar and mistakes from ${formatReviewMonthDay(sourceDate, "en")}`;
+	const today = jstToday();
+	const yesterday = addIsoDays(today, -1);
+	const whenCn = sourceDate === today
+		? "今天看过的语法和做错的题"
+		: sourceDate === yesterday
+			? "昨天看过的语法和做错的题"
+			: `${formatReviewMonthDay(sourceDate, lang)}看过的语法和做错的题`;
+	const whenEn = sourceDate === today
+		? "Today's grammar and mistakes"
+		: sourceDate === yesterday
+			? "Yesterday's grammar and mistakes"
+			: `Grammar and mistakes from ${formatReviewMonthDay(sourceDate, "en")}`;
 	return lx(portionCn ? `${whenCn}，${portionCn}` : whenCn, portionEn ? `${whenEn}. ${portionEn}` : whenEn);
 }
 
@@ -97,8 +102,8 @@ export function DuePage() {
 							<b>{lx("今天没有要复习的内容", "Nothing to review today")}</b>
 							<p>
 								{lx(
-									"打开语法课后，第二天会从看过的句型里抽一部分。做错的题权重更高，打开次数越多也越容易被抽到。已经到期的卡片会在空出来的位置里一起复习。",
-									"Open a grammar lesson, and the next day a sample of those patterns is ready. Mistakes weigh more, and pages you open more often are more likely to be picked. Cards already due fill any space left.",
+									"打开一课语法，这里就会从看过的句型里抽最多 12 项。做错的题权重更高，打开次数越多也越容易被抽到。昨天学过的优先；很久以前积压的到期卡片不再整批出现。",
+									"Open a grammar lesson and this page samples at most 12 of those patterns. Mistakes weigh more, and pages you open more often are more likely to be picked. Yesterday comes first. An old backlog no longer fills the page.",
 								)}
 							</p>
 						</>

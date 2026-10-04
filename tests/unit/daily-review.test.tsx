@@ -126,6 +126,67 @@ describe("daily review selection", () => {
 		expect(review.cards[0]).toMatchObject({ kind: "topic", jp: "お引出し", reason: "due", reading: "おひきだし" });
 	});
 
+	it("samples grammar opened today when yesterday is empty, and lets yesterday win", () => {
+		const today = jstToday();
+		const yesterday = addIsoDays(today, -1);
+		recordGrammarPage({
+			module: "grammar",
+			week: 1,
+			day: 4,
+			focused: 0,
+			today,
+			now: 1,
+			points: [point("今天的句型")],
+		});
+		expect(selectDailyReview(today)).toMatchObject({
+			sourceDate: today,
+			cards: [expect.objectContaining({ jp: "今天的句型", weight: 3 })],
+		});
+		recordGrammarPage({
+			module: "grammar",
+			week: 1,
+			day: 3,
+			focused: null,
+			today: yesterday,
+			now: 2,
+			points: [point("昨天的句型")],
+		});
+		const review = selectDailyReview(today);
+		expect(review.sourceDate).toBe(yesterday);
+		expect(review.cards.map((card) => card.jp)).toEqual(["昨天的句型"]);
+	});
+
+	it("drops a backlog that has not been touched recently", () => {
+		const today = jstToday();
+		localStorage.setItem(
+			DUE_STORAGE_KEY,
+			JSON.stringify([
+				{
+					id: "old-backlog",
+					kind: "grammar",
+					jp: "旧队列",
+					cn: "",
+					en: "",
+					due: addIsoDays(today, -30),
+					step: 0,
+					ts: Date.parse("2020-01-01T00:00:00Z"),
+				},
+				{
+					id: "recent-miss",
+					kind: "topic",
+					jp: "お引出し",
+					cn: "取款",
+					en: "",
+					due: today,
+					step: 0,
+					ts: Date.now(),
+				},
+			]),
+		);
+		hydrateDue();
+		expect(selectDailyReview(today).cards.map((card) => card.id)).toEqual(["recent-miss"]);
+	});
+
 	it("uses the latest earlier study day when yesterday is empty", () => {
 		const today = jstToday();
 		const older = addIsoDays(today, -4);
@@ -218,5 +279,21 @@ describe("DuePage sampling", () => {
 		expect(await screen.findByText("ばかり")).toBeInTheDocument();
 		expect(screen.getByText("看过的语法")).toBeInTheDocument();
 		expect(screen.getByText(/昨天看过的语法和做错的题/)).toBeInTheDocument();
+	});
+
+	it("shows a grammar point opened today", async () => {
+		noteDueSignedOut();
+		recordGrammarPage({
+			module: "grammar",
+			week: 2,
+			day: 1,
+			focused: null,
+			today: jstToday(),
+			now: 1,
+			points: [point("ところだ", "刚打开")],
+		});
+		render(<DuePage />);
+		expect(await screen.findByText("ところだ")).toBeInTheDocument();
+		expect(screen.getByText(/今天看过的语法和做错的题/)).toBeInTheDocument();
 	});
 });

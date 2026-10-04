@@ -10,9 +10,9 @@ import {
 } from "./due-review";
 import { reviewMistakes } from "./store";
 
-/** How many cards today's review shows. Yesterday's study fills these first. */
+/** How many cards today's review shows. Recent study fills these first. */
 export const DAILY_REVIEW_CAP = 12;
-/** If yesterday is empty, use the newest study day inside this window. */
+/** Yesterday wins. Otherwise the newest study day in this window, including today. */
 export const ACTIVITY_LOOKBACK_DAYS = 14;
 
 const ACTIVITY_KEY = "jl-grammar-visits-v1";
@@ -201,12 +201,12 @@ function studySourceDate(today: string, hits: GrammarHit[], mistakes: { ts: numb
 	const earliest = addIsoDays(today, -ACTIVITY_LOOKBACK_DAYS);
 	const dates: string[] = [];
 	for (const hit of hits) {
-		if (hit.date < today && hit.date >= earliest) dates.push(hit.date);
+		if (hit.date <= today && hit.date >= earliest) dates.push(hit.date);
 	}
 	for (const mistake of mistakes) {
 		if (!mistake.ts) continue;
 		const date = jstToday(mistake.ts);
-		if (date < today && date >= earliest) dates.push(date);
+		if (date <= today && date >= earliest) dates.push(date);
 	}
 	if (!dates.length) return null;
 	const yesterday = addIsoDays(today, -1);
@@ -328,9 +328,12 @@ export function selectDailyReview(today = jstToday()): DailyReview {
 	}
 	const uniqueActivity = dedupe(activity);
 	const activityIds = new Set(uniqueActivity.map((card) => card.id));
+	const earliestTouch = addIsoDays(today, -ACTIVITY_LOOKBACK_DAYS);
 	const dueCards: ReviewCard[] = [];
 	for (const entry of dueToday(today)) {
 		if (activityIds.has(entry.id) || isSettled(entry.id, today)) continue;
+		// An untouched backlog is what made this page feel useless. Only cards touched recently fill the leftover slots.
+		if (!Number.isFinite(entry.ts) || jstToday(entry.ts) < earliestTouch) continue;
 		dueCards.push({ ...entry, reason: "due", times: 1, weight: dueItemWeight(entry, today) });
 	}
 	const rankedActivity = rank(uniqueActivity, today).slice(0, DAILY_REVIEW_CAP);

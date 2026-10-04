@@ -557,6 +557,31 @@ test.describe("study navigation", () => {
 		expect(columns).toBe(narrow ? 1 : 2);
 	});
 
+	test("shows the daily review banner on the catalog", async ({ page }) => {
+		await waitForStudy(page);
+		const banner = page.locator(".due-banner");
+		await expect(banner).toContainText("今天要复习");
+		await expect(banner).toContainText("打开语法课后，从看过的句型和错题里抽出");
+		await banner.click();
+		await expect(page.locator("#title")).toContainText("今天要复习");
+		await expect(page.getByText("今天没有要复习的内容")).toBeVisible();
+	});
+
+	test("samples grammar opened today on the review page", async ({ page }) => {
+		await waitForStudy(page);
+		await page.locator(".day-item").first().click();
+		await expect(page.locator(".point").first()).toBeVisible({ timeout: 15_000 });
+		const patterns = await page.evaluate(() => {
+			const hits = JSON.parse(localStorage.getItem("jl-grammar-visits-v1") || "[]") as { jp: string }[];
+			return hits.map((hit) => hit.jp);
+		});
+		expect(patterns.length).toBeGreaterThan(0);
+		await page.goto("/study/due");
+		await expect(page.getByText(/今天看过的语法和做错的题/)).toBeVisible();
+		const shown = (await page.locator(".fcard .big").innerText()).trim();
+		expect(patterns).toContain(shown);
+	});
+
 	test("samples yesterday's opened grammar on the review page", async ({ page }) => {
 		await waitForStudy(page);
 		await page.locator(".day-item").first().click();
