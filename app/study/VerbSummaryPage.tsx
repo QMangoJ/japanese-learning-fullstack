@@ -1,5 +1,6 @@
 import summary from "../data/common-verb-summary.json";
 import { lx } from "./store";
+import { conjugateVerb, EXTRA_FORM_FIELDS, verbSummaryGroup } from "./verb-forms";
 
 type Group = {
 	name_cn: string;
@@ -39,6 +40,33 @@ const data = summary as {
 
 function jump(id: string) {
 	document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function ExtraCards({ groupName, rows }: { groupName: string; rows: string[][] }) {
+	const group = verbSummaryGroup(groupName);
+	return (
+		<div className="verb-sum-extras">
+			{rows.map((row) => {
+				const forms = conjugateVerb(row[0], row[1], group);
+				return (
+					<div className="verb-sum-verb" key={row[0]}>
+						<div className="verb-sum-verb-name jp">
+							{row[0]}
+							{row[0] !== row[1] ? <span className="meta">{row[1]}</span> : null}
+						</div>
+						<div className="verb-sum-pairs">
+							{EXTRA_FORM_FIELDS.map((field) => (
+								<div className="verb-sum-pair" key={field.key}>
+									<span className="verb-sum-pair-label">{lx(field.label_cn, field.label_en)}</span>
+									<span className="jp">{forms[field.key]}</span>
+								</div>
+							))}
+						</div>
+					</div>
+				);
+			})}
+		</div>
+	);
 }
 
 function Grid({ heads, rows }: { heads?: string[]; rows: string[][] }) {
@@ -111,6 +139,8 @@ export function VerbSummaryPage() {
 					<div key={group.name_cn}>
 						<h3>{lx(group.name_cn, group.name_en)}</h3>
 						<Grid heads={lx(examples.heads_cn.join("\n"), examples.heads_en.join("\n")).split("\n")} rows={group.rows} />
+						<p className="meta verb-sum-extra-label">{lx("其余变形", "Other forms")}</p>
+						<ExtraCards groupName={group.name_cn} rows={group.rows} />
 					</div>
 				))}
 			</section>

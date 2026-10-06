@@ -886,5 +886,15 @@ body.hide-cn .vcn,body.hide-cn .cn{visibility:hidden}
 .verb-sum h2{margin:0 0 6px;font-size:18px;line-height:1.45}
 .verb-sum h3{margin:14px 0 4px;font-size:15px}
 .verb-sum .meta{line-height:1.6}
+.verb-sum .card{scroll-margin-top:calc(var(--topbarh, 88px) + 8px)}
 .verb-sum-table{min-width:0}
 .verb-sum-table td,.verb-sum-table th{white-space:nowrap}
+.verb-sum-extra-label{margin:12px 0 8px}
+.verb-sum-extras{display:grid;grid-template-columns:1fr;gap:8px}
+@media (min-width:700px){.verb-sum-extras{grid-template-columns:1fr 1fr}}
+.verb-sum-verb{border:1px solid var(--line);border-radius:12px;padding:10px 12px;min-width:0}
+.verb-sum-verb-name{font-weight:700;font-size:16px;margin-bottom:6px}
+.verb-sum-verb-name .meta{margin-left:8px;font-weight:500}
+.verb-sum-pairs{display:grid;grid-template-columns:max-content 1fr;gap:2px 8px;align-items:baseline}
+.verb-sum-pair{display:contents}
+.verb-sum-pair-label{color:var(--sub);font-size:12px}

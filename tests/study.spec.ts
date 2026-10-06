@@ -334,7 +334,7 @@ test.describe("study navigation", () => {
 		await expect(page.getByText(/Oops|unexpected error/i)).toHaveCount(0);
 	});
 
-	test("opens the classroom verb-form summary", async ({ page }) => {
+	test("opens the classroom verb-form summary", async ({ page }, testInfo) => {
 		await waitForStudy(page);
 		const side = page.locator("#side .side-item", { hasText: /变形总结|Verb summary/ });
 		if (await side.isVisible()) await side.click();
@@ -345,11 +345,35 @@ test.describe("study navigation", () => {
 		await expect(page.locator("#title")).toContainText(/动词变形总结|Verb form summary/);
 		await expect(page.getByRole("heading", { name: /辞書形のつくりかた/ })).toBeVisible();
 		await expect(page.getByRole("heading", { name: /て形のつくりかた/ })).toBeVisible();
+		await page.getByRole("button", { name: "ない形" }).click();
+		await expect(page.getByRole("heading", { name: /ない形のつくりかた/ })).toBeVisible();
+		await page.getByRole("button", { name: "使役形" }).click();
+		await expect(page.getByRole("heading", { name: /使役形のつくりかた/ })).toBeVisible();
 		await page.getByRole("button", { name: /动词示例|Examples/ }).click();
-		await expect(page.getByText("買おう")).toBeVisible();
-		await expect(page.getByText("食べよう")).toBeVisible();
-		await expect(page.getByText("連れてこよう")).toBeVisible();
+		await expect(page.getByText("買おう", { exact: true })).toBeVisible();
+		await expect(page.getByText("買わない", { exact: true })).toBeVisible();
+		await expect(page.getByText("行った", { exact: true })).toBeVisible();
+		await expect(page.getByText("話させる", { exact: true })).toBeVisible();
+		await expect(page.getByText("食べよう", { exact: true })).toBeVisible();
+		await expect(page.getByText("食べろ", { exact: true })).toBeVisible();
+		await expect(page.getByText("連れてこよう", { exact: true })).toBeVisible();
+		await expect(page.getByText("連れてこい", { exact: true })).toBeVisible();
 		await expect(page.getByText("いって").first()).toBeVisible();
+		const buy = page.locator(".verb-sum-verb", { hasText: "買う" });
+		const apply = page.locator(".verb-sum-verb", { hasText: "申し込む" });
+		await buy.scrollIntoViewIfNeeded();
+		await expect(buy.getByText("買わせる", { exact: true })).toBeVisible();
+		await apply.scrollIntoViewIfNeeded();
+		await expect(apply.getByText("申し込ませる", { exact: true })).toBeVisible();
+		const columns = await page.locator(".verb-sum-extras").first().evaluate((element) => getComputedStyle(element).gridTemplateColumns.split(" ").length);
+		expect(columns).toBe(testInfo.project.name.startsWith("mobile-") ? 1 : 2);
+		for (const card of [buy, apply]) {
+			const within = await card.evaluate((element) => {
+				const rect = element.getBoundingClientRect();
+				return rect.left >= -1 && rect.right <= document.documentElement.clientWidth + 1;
+			});
+			expect(within).toBe(true);
+		}
 		expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(
 			await page.evaluate(() => document.documentElement.clientWidth),
 		);

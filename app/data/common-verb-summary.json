@@ -1,6 +1,6 @@
 {
-  "intro_cn": "课堂笔记里的动词变形。一类是五段，二类是一段，三类是「する」和「来る」。手写空格按表上的规则补全。带 ★ 的ます形看起来像一类，其实是二类。",
-  "intro_en": "Classroom verb forms. Group I is godan, Group II is ichidan, and Group III is する and 来る. Blank cells are filled from the chart. A ★ marks a Group II verb whose ます form looks like Group I.",
+  "intro_cn": "课堂笔记里的动词变形。一类是五段，二类是一段，三类是「する」和「来る」。手写空格按表上的规则补全。带 ★ 的ます形看起来像一类，其实是二类。前面四节是课堂的四张表。后面用同一套分类，补上ます形、ない形、た形、ば形、命令形、受身形和使役形。",
+  "intro_en": "Classroom verb forms. Group I is godan, Group II is ichidan, and Group III is する and 来る. Blank cells are filled from the chart. A ★ marks a Group II verb whose ます form looks like Group I. The first four sections are the classroom sheets. Later sections add the ます, ない, た, ば, imperative, passive, and causative forms with the same three groups.",
   "forms": [
     {
       "id": "dict",
@@ -256,13 +256,466 @@
           ]
         }
       ]
+    },
+    {
+      "id": "masu",
+      "title_jp": "ます形のつくりかた",
+      "title_cn": "ます形",
+      "title_en": "Masu form",
+      "rule_cn": "从辞书形做成ます形，方向和辞书形那一节相反。一类把う段改成い段，再加ます。二类去掉る，加上ます。三类是します、きます。",
+      "rule_en": "Build the ます form from the dictionary form, the reverse of the dictionary section. Group I changes the u-row to the i-row and adds ます. Group II drops る and adds ます. Group III is します and きます.",
+      "groups": [
+        {
+          "name_cn": "一类",
+          "name_en": "Group I",
+          "rule_cn": "辞书形是う段，ます形是い段。",
+          "rule_en": "The dictionary form is the u-row, and the ます form is the i-row.",
+          "heads": ["辞書形", "ます"],
+          "chart": [
+            ["う", "い"],
+            ["く", "き"],
+            ["ぐ", "ぎ"],
+            ["す", "し"],
+            ["つ", "ち"],
+            ["ぬ", "に"],
+            ["ぶ", "び"],
+            ["む", "み"],
+            ["る", "り"]
+          ],
+          "drill_heads": ["辞書形", "ます形"],
+          "rows": [
+            ["うたう", "うたいます（い）"],
+            ["かく", "かきます（き）"],
+            ["およぐ", "およぎます（ぎ）"],
+            ["はなす", "はなします（し）"],
+            ["まつ", "まちます（ち）"],
+            ["しぬ", "しにます（に）"],
+            ["あそぶ", "あそびます（び）"],
+            ["よむ", "よみます（み）"],
+            ["とる", "とります（り）"]
+          ]
+        },
+        {
+          "name_cn": "二类",
+          "name_en": "Group II",
+          "rule_cn": "去掉る，加上ます。",
+          "rule_en": "Drop る and add ます.",
+          "drill_heads": ["辞書形", "ます形"],
+          "rows": [
+            ["たべる", "たべます"],
+            ["★みる", "みます"],
+            ["★いる", "います"],
+            ["★あびる", "あびます"],
+            ["★かりる", "かります"]
+          ]
+        },
+        {
+          "name_cn": "三类",
+          "name_en": "Group III",
+          "rule_cn": "する → します，くる → きます。",
+          "rule_en": "する becomes します, and くる becomes きます.",
+          "drill_heads": ["辞書形", "ます形"],
+          "rows": [
+            ["する", "します"],
+            ["くる", "きます"]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nai",
+      "title_jp": "ない形のつくりかた",
+      "title_cn": "ない形",
+      "title_en": "Nai form",
+      "rule_cn": "表示「不做」。一类把う段改成あ段，再加ない。う动词的あ段是わ，所以買う是買わない。二类去掉る，加上ない。三类是しない、こない。",
+      "rule_en": "This means “do not”. Group I changes the u-row to the a-row and adds ない. The a-row of an う verb is わ, so 買う becomes 買わない. Group II drops る and adds ない. Group III is しない and こない.",
+      "groups": [
+        {
+          "name_cn": "一类",
+          "name_en": "Group I",
+          "rule_cn": "ない形的词尾是あ段。う动词用わ，不要写成あ。",
+          "rule_en": "The nai ending is the a-row. U-verbs use わ, not あ.",
+          "heads": ["辞書形", "ない"],
+          "chart": [
+            ["う", "わ"],
+            ["く", "か"],
+            ["ぐ", "が"],
+            ["す", "さ"],
+            ["つ", "た"],
+            ["ぬ", "な"],
+            ["ぶ", "ば"],
+            ["む", "ま"],
+            ["る", "ら"]
+          ],
+          "drill_heads": ["辞書形", "ない形"],
+          "rows": [
+            ["うたう", "うたわない（わ）"],
+            ["かく", "かかない（か）"],
+            ["およぐ", "およがない（が）"],
+            ["はなす", "はなさない（さ）"],
+            ["まつ", "またない（た）"],
+            ["しぬ", "しなない（な）"],
+            ["あそぶ", "あそばない（ば）"],
+            ["よむ", "よまない（ま）"],
+            ["とる", "とらない（ら）"]
+          ]
+        },
+        {
+          "name_cn": "二类",
+          "name_en": "Group II",
+          "rule_cn": "去掉る，加上ない。",
+          "rule_en": "Drop る and add ない.",
+          "drill_heads": ["辞書形", "ない形"],
+          "rows": [
+            ["たべる", "たべない"],
+            ["★みる", "みない"],
+            ["★いる", "いない"],
+            ["★あびる", "あびない"],
+            ["★かりる", "かりない"]
+          ]
+        },
+        {
+          "name_cn": "三类",
+          "name_en": "Group III",
+          "rule_cn": "する → しない，くる → こない。",
+          "rule_en": "する becomes しない, and くる becomes こない.",
+          "drill_heads": ["辞書形", "ない形"],
+          "rows": [
+            ["する", "しない"],
+            ["くる", "こない"]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ta",
+      "title_jp": "た形のつくりかた",
+      "title_cn": "た形",
+      "title_en": "Ta form",
+      "rule_cn": "表示「做了」。一类的音便和て形相同，只是て换成た、で换成だ。行く仍是いった。二类去掉ます加上た。三类是した、きた。た形后面加ら就是たら。",
+      "rule_en": "This means “did”. Group I uses the same sound changes as the te-form, with て becoming た and で becoming だ. 行く is still いった. Group II drops ます and adds た. Group III is した and きた. Add ら to make たら.",
+      "groups": [
+        {
+          "name_cn": "一类",
+          "name_en": "Group I",
+          "rule_cn": "き→いた，但是行きます→いった。ぎ→いだ。み・び・に→んだ。り・い・ち→った。し→した。",
+          "rule_en": "き becomes いた, except 行きます → いった. ぎ becomes いだ. み, び, and に become んだ. り, い, and ち become った. し becomes した.",
+          "heads": ["ます词尾", "た形", "例子"],
+          "chart": [
+            ["き（行く除外）", "いた", "かきます → かいた"],
+            ["行きます", "った", "いきます → いった"],
+            ["ぎ", "いだ", "いそぎます → いそいだ"],
+            ["み・び・に", "んだ", "のみます → のんだ"],
+            ["り・い・ち", "った", "とります → とった"],
+            ["し", "した", "けします → けした"]
+          ],
+          "drill_heads": ["ます形", "た形"],
+          "rows": [
+            ["かきます", "かいた（いた）"],
+            ["いきます", "いった（った）"],
+            ["いそぎます", "いそいだ（いだ）"],
+            ["のみます", "のんだ（んだ）"],
+            ["よびます", "よんだ（んだ）"],
+            ["とります", "とった（った）"],
+            ["あいます", "あった（った）"],
+            ["まちます", "まった（った）"],
+            ["けします", "けした（した）"]
+          ]
+        },
+        {
+          "name_cn": "二类",
+          "name_en": "Group II",
+          "rule_cn": "去掉ます，加上た。",
+          "rule_en": "Drop ます and add た.",
+          "drill_heads": ["ます形", "た形"],
+          "rows": [
+            ["たべます", "たべた"],
+            ["ねます", "ねた"],
+            ["★みます", "みた"],
+            ["★います", "いた"],
+            ["★おきます", "おきた"],
+            ["★かります", "かりた"]
+          ]
+        },
+        {
+          "name_cn": "三类",
+          "name_en": "Group III",
+          "rule_cn": "します → した，きます → きた。",
+          "rule_en": "します becomes した, and きます becomes きた.",
+          "drill_heads": ["ます形", "た形"],
+          "rows": [
+            ["します", "した"],
+            ["きます", "きた"]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ba",
+      "title_jp": "ば形のつくりかた",
+      "title_cn": "ば形",
+      "title_en": "Ba form",
+      "rule_cn": "表示「如果做」。一类把う段改成え段，再加ば。二类把る换成れば。三类是すれば、くれば。",
+      "rule_en": "This means “if”. Group I changes the u-row to the e-row and adds ば. Group II replaces る with れば. Group III is すれば and くれば.",
+      "groups": [
+        {
+          "name_cn": "一类",
+          "name_en": "Group I",
+          "rule_cn": "ば形的词尾是え段＋ば。",
+          "rule_en": "The ba ending is the e-row plus ば.",
+          "heads": ["辞書形", "ば"],
+          "chart": [
+            ["う", "え"],
+            ["く", "け"],
+            ["ぐ", "げ"],
+            ["す", "せ"],
+            ["つ", "て"],
+            ["ぬ", "ね"],
+            ["ぶ", "べ"],
+            ["む", "め"],
+            ["る", "れ"]
+          ],
+          "drill_heads": ["辞書形", "ば形"],
+          "rows": [
+            ["うたう", "うたえば（え）"],
+            ["かく", "かけば（け）"],
+            ["およぐ", "およげば（げ）"],
+            ["はなす", "はなせば（せ）"],
+            ["まつ", "まてば（て）"],
+            ["しぬ", "しねば（ね）"],
+            ["あそぶ", "あそべば（べ）"],
+            ["よむ", "よめば（め）"],
+            ["とる", "とれば（れ）"]
+          ]
+        },
+        {
+          "name_cn": "二类",
+          "name_en": "Group II",
+          "rule_cn": "る → れば。",
+          "rule_en": "Replace る with れば.",
+          "drill_heads": ["辞書形", "ば形"],
+          "rows": [
+            ["たべる", "たべれば"],
+            ["★みる", "みれば"],
+            ["★いる", "いれば"],
+            ["★あびる", "あびれば"],
+            ["★かりる", "かりれば"]
+          ]
+        },
+        {
+          "name_cn": "三类",
+          "name_en": "Group III",
+          "rule_cn": "する → すれば，くる → くれば。",
+          "rule_en": "する becomes すれば, and くる becomes くれば.",
+          "drill_heads": ["辞書形", "ば形"],
+          "rows": [
+            ["する", "すれば"],
+            ["くる", "くれば"]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "imperative",
+      "title_jp": "命令形のつくりかた",
+      "title_cn": "命令形",
+      "title_en": "Imperative",
+      "rule_cn": "这是简体命令，口气硬。一类把う段改成え段，不加る。二类把る换成ろ。三类是しろ、こい。",
+      "rule_en": "This is the plain command, and it sounds blunt. Group I changes the u-row to the e-row and does not add る. Group II replaces る with ろ. Group III is しろ and こい.",
+      "groups": [
+        {
+          "name_cn": "一类",
+          "name_en": "Group I",
+          "rule_cn": "命令形的词尾是え段。",
+          "rule_en": "The imperative ending is the e-row.",
+          "heads": ["辞書形", "命令"],
+          "chart": [
+            ["う", "え"],
+            ["く", "け"],
+            ["ぐ", "げ"],
+            ["す", "せ"],
+            ["つ", "て"],
+            ["ぬ", "ね"],
+            ["ぶ", "べ"],
+            ["む", "め"],
+            ["る", "れ"]
+          ],
+          "drill_heads": ["辞書形", "命令形"],
+          "rows": [
+            ["うたう", "うたえ（え）"],
+            ["かく", "かけ（け）"],
+            ["およぐ", "およげ（げ）"],
+            ["はなす", "はなせ（せ）"],
+            ["まつ", "まて（て）"],
+            ["しぬ", "しね（ね）"],
+            ["あそぶ", "あそべ（べ）"],
+            ["よむ", "よめ（め）"],
+            ["とる", "とれ（れ）"]
+          ]
+        },
+        {
+          "name_cn": "二类",
+          "name_en": "Group II",
+          "rule_cn": "る → ろ。文章里也可以写成よ，表里只记ろ。",
+          "rule_en": "Replace る with ろ. Written Japanese can also use よ. The chart keeps ろ.",
+          "drill_heads": ["辞書形", "命令形"],
+          "rows": [
+            ["たべる", "たべろ"],
+            ["★みる", "みろ"],
+            ["★いる", "いろ"],
+            ["★あびる", "あびろ"],
+            ["★かりる", "かりろ"]
+          ]
+        },
+        {
+          "name_cn": "三类",
+          "name_en": "Group III",
+          "rule_cn": "する → しろ。文章里的せよ不列入。くる → こい。",
+          "rule_en": "する becomes しろ. The written せよ is not in the chart. くる becomes こい.",
+          "drill_heads": ["辞書形", "命令形"],
+          "rows": [
+            ["する", "しろ"],
+            ["くる", "こい"]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "passive",
+      "title_jp": "受身形のつくりかた",
+      "title_cn": "受身形",
+      "title_en": "Passive",
+      "rule_cn": "表示「被做」。一类把う段改成あ段，再加れる。二类把る换成られる，样子和可能形一样。三类「する」是される，「来る」是こられる。",
+      "rule_en": "This means “be done”. Group I changes the u-row to the a-row and adds れる. Group II replaces る with られる, the same shape as the potential. Group III is される and こられる.",
+      "groups": [
+        {
+          "name_cn": "一类",
+          "name_en": "Group I",
+          "rule_cn": "受身形的词尾是あ段＋れる。う动词用わ。す动词是される。",
+          "rule_en": "The passive ending is the a-row plus れる. U-verbs use わ. A す verb becomes される.",
+          "heads": ["辞書形", "受身"],
+          "chart": [
+            ["う", "わ"],
+            ["く", "か"],
+            ["ぐ", "が"],
+            ["す", "さ"],
+            ["つ", "た"],
+            ["ぬ", "な"],
+            ["ぶ", "ば"],
+            ["む", "ま"],
+            ["る", "ら"]
+          ],
+          "drill_heads": ["辞書形", "受身形"],
+          "rows": [
+            ["うたう", "うたわれる（わ）"],
+            ["かく", "かかれる（か）"],
+            ["およぐ", "およがれる（が）"],
+            ["はなす", "はなされる（さ）"],
+            ["まつ", "またれる（た）"],
+            ["しぬ", "しなれる（な）"],
+            ["あそぶ", "あそばれる（ば）"],
+            ["よむ", "よまれる（ま）"],
+            ["とる", "とられる（ら）"]
+          ]
+        },
+        {
+          "name_cn": "二类",
+          "name_en": "Group II",
+          "rule_cn": "る → られる。和可能形的样子相同。",
+          "rule_en": "Replace る with られる. This is the same shape as the potential.",
+          "drill_heads": ["辞書形", "受身形"],
+          "rows": [
+            ["たべる", "たべられる"],
+            ["★みる", "みられる"],
+            ["★いる", "いられる"],
+            ["★あびる", "あびられる"],
+            ["★かりる", "かりられる"]
+          ]
+        },
+        {
+          "name_cn": "三类",
+          "name_en": "Group III",
+          "rule_cn": "する → される。这是受身，可能形仍是できる。くる → こられる，和可能形相同。",
+          "rule_en": "する becomes される. That is the passive; the potential stays できる. くる becomes こられる, the same as its potential.",
+          "drill_heads": ["辞書形", "受身形"],
+          "rows": [
+            ["する", "される"],
+            ["くる", "こられる"]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "causative",
+      "title_jp": "使役形のつくりかた",
+      "title_cn": "使役形",
+      "title_en": "Causative",
+      "rule_cn": "表示「让别人做」。一类把う段改成あ段，再加せる。二类把る换成させる。三类是させる、こさせる。",
+      "rule_en": "This means “make or let someone do”. Group I changes the u-row to the a-row and adds せる. Group II replaces る with させる. Group III is させる and こさせる.",
+      "groups": [
+        {
+          "name_cn": "一类",
+          "name_en": "Group I",
+          "rule_cn": "使役形的词尾是あ段＋せる。す动词是させる，不是ささせる。口语里还有更短的五段使役，比如書かす，表里只写せる。",
+          "rule_en": "The causative ending is the a-row plus せる. A す verb becomes させる, not ささせる. Spoken Japanese also has a shorter godan causative such as 書かす. The chart keeps せる.",
+          "heads": ["辞書形", "使役"],
+          "chart": [
+            ["う", "わ"],
+            ["く", "か"],
+            ["ぐ", "が"],
+            ["す", "さ"],
+            ["つ", "た"],
+            ["ぬ", "な"],
+            ["ぶ", "ば"],
+            ["む", "ま"],
+            ["る", "ら"]
+          ],
+          "drill_heads": ["辞書形", "使役形"],
+          "rows": [
+            ["うたう", "うたわせる（わ）"],
+            ["かく", "かかせる（か）"],
+            ["およぐ", "およがせる（が）"],
+            ["はなす", "はなさせる（さ）"],
+            ["まつ", "またせる（た）"],
+            ["しぬ", "しなせる（な）"],
+            ["あそぶ", "あそばせる（ば）"],
+            ["よむ", "よませる（ま）"],
+            ["とる", "とらせる（ら）"]
+          ]
+        },
+        {
+          "name_cn": "二类",
+          "name_en": "Group II",
+          "rule_cn": "る → させる。",
+          "rule_en": "Replace る with させる.",
+          "drill_heads": ["辞書形", "使役形"],
+          "rows": [
+            ["たべる", "たべさせる"],
+            ["★みる", "みさせる"],
+            ["★いる", "いさせる"],
+            ["★あびる", "あびさせる"],
+            ["★かりる", "かりさせる"]
+          ]
+        },
+        {
+          "name_cn": "三类",
+          "name_en": "Group III",
+          "rule_cn": "する → させる，くる → こさせる。",
+          "rule_en": "する becomes させる, and くる becomes こさせる.",
+          "drill_heads": ["辞書形", "使役形"],
+          "rows": [
+            ["する", "させる"],
+            ["くる", "こさせる"]
+          ]
+        }
+      ]
     }
   ],
   "examples": {
     "title_cn": "一类、二类、三类的动词示例",
     "title_en": "Group I, II, and III examples",
-    "note_cn": "这些词来自意向形练习。帰る、作る、登る虽然以る结尾，但是一类。行く的て形是行って。名词＋する 仍然是三类，可能形用「できる」。",
-    "note_en": "These verbs are from the volitional worksheet. 帰る, 作る, and 登る end in る but are Group I. The te-form of 行く is 行って. A noun plus する stays Group III, and its potential uses できる.",
+    "note_cn": "这些词来自意向形练习。帰る、作る、登る虽然以る结尾，但是一类。行く的て形是行って。名词＋する 仍然是三类，可能形用「できる」。每组表格下面，用同一套规则列出这批词的ない形、た形、ば形、命令形、受身形和使役形。二类的可能形和受身形都是られる。",
+    "note_en": "These verbs are from the volitional worksheet. 帰る, 作る, and 登る end in る but are Group I. The te-form of 行く is 行って. A noun plus する stays Group III, and its potential uses できる. Under each table, the same rules fill in ない, た, ば, imperative, passive, and causative. Group II potential and passive are both られる.",
     "heads_cn": ["辞书形", "读音", "ます形", "て形", "可能形", "意向形"],
     "heads_en": ["Dictionary", "Reading", "ます", "て", "Potential", "Volitional"],
     "groups": [
