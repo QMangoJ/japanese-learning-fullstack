@@ -386,6 +386,34 @@ test.describe("study navigation", () => {
 		);
 	});
 
+	test("opens the keigo summary", async ({ page }) => {
+		await waitForStudy(page);
+		const side = page.locator("#side .side-item", { hasText: /敬语总结|Keigo summary/ });
+		if (await side.isVisible()) await side.click();
+		else {
+			await page.locator('.bottom button[data-nav="common"]').click();
+			await page.getByRole("button", { name: /敬语总结|Keigo summary/ }).click();
+		}
+		await expect(page.locator("#title")).toContainText(/敬语总结|Keigo summary/);
+		await expect(page.locator(".verb-sum-form rt", { hasText: "そんけい" }).first()).toBeVisible();
+		await expect(page.locator(".verb-sum-form rt", { hasText: "けんじょう" }).first()).toBeVisible();
+		await expect(page.locator("#keigo-kinds rt", { hasText: "ていちょう" }).first()).toBeVisible();
+		await page.locator(".verb-sum-nav button").filter({ hasText: "けんじょう" }).click();
+		await expect(page.locator("#keigo-kenjo")).toBeVisible();
+		await expect(page.locator("#keigo-kenjo rt", { hasText: "うかが" }).first()).toBeVisible();
+		await page.locator(".verb-sum-nav button").filter({ hasText: "あやま" }).click();
+		await expect(page.locator("#keigo-mistakes")).toBeVisible();
+		await expect(page.getByText("いらっしゃいます", { exact: true })).toBeVisible();
+		await page.locator(".verb-sum-nav button").filter({ hasText: "ばめん" }).click();
+		await expect(page.locator("#keigo-examples")).toBeVisible();
+		await expect(page.getByText(/席を外しております/)).toBeVisible();
+		expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(
+			await page.evaluate(() => document.documentElement.clientWidth),
+		);
+		await page.locator(".verb-sum").getByRole("button", { name: /活用|Conjugation/ }).click();
+		await expect(page.locator("#title")).toContainText(/活用|Conjugation/);
+	});
+
 	test("keeps mistake filters aligned at desktop and mobile widths", async ({ page }, testInfo) => {
 		await waitForStudy(page);
 		await openStudyNav(page, "mistakes");

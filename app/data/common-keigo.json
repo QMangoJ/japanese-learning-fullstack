@@ -1,0 +1,140 @@
+{
+  "intro_cn": "先看动作是谁做的，再看是不是做给对方。抬高对方用尊敬語，放低自己对对方做的事用謙譲語，只是郑重地说自己的事用丁重語，整句话变礼貌用丁寧語。美化語只是把事物说得雅一点，不抬人。名词和形容词的普通形、丁寧形、尊敬語对照在「活用」。",
+  "intro_en": "First see who does the action, then whether it is done for the other person. Respectful forms raise the other person, humble forms lower your action toward them, and deferential forms simply speak politely about yourself. Polite です and ます soften the whole sentence. Beautified words dress up a thing without raising a person. Noun and adjective levels are on the Conjugation page.",
+  "sections": [
+    {
+      "id": "kinds",
+      "title_html": "五つの<ruby>敬語<rt>けいご</rt></ruby>",
+      "title_cn": "五种敬语",
+      "title_en": "Five kinds",
+      "rule_cn": "课本里常分成尊敬語、謙譲語、丁寧語三类。文化厅的《敬語の指針》再把谦让语分成两类，并单列美化语。日常先用三类就够，遇到「参る」「おる」再看它是不是丁重語。",
+      "rule_en": "Textbooks often teach three kinds. The Agency for Cultural Affairs splits humble language in two and lists beautified words separately. The three-way split is enough day to day.",
+      "heads": ["种类", "作用", "例子"],
+      "rows": [
+        ["<ruby>尊敬語<rt>そんけいご</rt></ruby>", "抬高对方或话题中该尊敬的人", "<ruby>先生<rt>せんせい</rt></ruby>がおっしゃいます"],
+        ["<ruby>謙譲語<rt>けんじょうご</rt></ruby> I", "放低自己对对方做的事", "<ruby>先生<rt>せんせい</rt></ruby>にうかがいます"],
+        ["<ruby>謙譲語<rt>けんじょうご</rt></ruby> II・<ruby>丁重語<rt>ていちょうご</rt></ruby>", "郑重地说自己的事，对方不一定是动作对象", "<ruby>明日<rt>あした</rt></ruby><ruby>参<rt>まい</rt></ruby>ります"],
+        ["<ruby>丁寧語<rt>ていねいご</rt></ruby>", "整句话变礼貌", "<ruby>行<rt>い</rt></ruby>きます・<ruby>学生<rt>がくせい</rt></ruby>です"],
+        ["<ruby>美化語<rt>びかご</rt></ruby>", "把事物说得雅，不抬高某个人", "お茶・お菓子"]
+      ]
+    },
+    {
+      "id": "sonkei",
+      "title_html": "<ruby>尊敬語<rt>そんけいご</rt></ruby>",
+      "title_cn": "尊敬语",
+      "title_en": "Respectful",
+      "rule_cn": "主语是对方。多数动词用「お＋ます形词干＋になる」。词干只有一个假名，或「する・来る・見る・食べる」这类，优先用专用词。另一种是词尾加れる・られる，口气轻一些，样子和被动相同。",
+      "rule_en": "The subject is the other person. Most verbs take お plus the ます stem plus になる. One-kana stems and verbs such as する, 来る, 見る, and 食べる prefer a special verb. れる and られる are lighter and look like the passive.",
+      "heads": ["做法", "普通", "尊敬語"],
+      "rows": [
+        ["お＋词干＋になる", "<ruby>読<rt>よ</rt></ruby>む", "お<ruby>読<rt>よ</rt></ruby>みになる"],
+        ["お＋词干＋になる", "<ruby>待<rt>ま</rt></ruby>つ", "お<ruby>待<rt>ま</rt></ruby>ちになる"],
+        ["ご＋汉字词＋になる", "<ruby>出席<rt>しゅっせき</rt></ruby>する", "ご<ruby>出席<rt>しゅっせき</rt></ruby>になる"],
+        ["れる・られる", "<ruby>書<rt>か</rt></ruby>く", "<ruby>書<rt>か</rt></ruby>かれる"],
+        ["专用词", "いる・<ruby>行<rt>い</rt></ruby>く・<ruby>来<rt>く</rt></ruby>る", "いらっしゃる"],
+        ["专用词", "<ruby>言<rt>い</rt></ruby>う", "おっしゃる"],
+        ["专用词", "する", "なさる"],
+        ["专用词", "<ruby>食<rt>た</rt></ruby>べる・<ruby>飲<rt>の</rt></ruby>む", "<ruby>召<rt>め</rt></ruby>し<ruby>上<rt>あ</rt></ruby>がる"],
+        ["专用词", "<ruby>見<rt>み</rt></ruby>る", "ご<ruby>覧<rt>らん</rt></ruby>になる"],
+        ["专用词", "くれる", "くださる"],
+        ["专用词", "<ruby>知<rt>し</rt></ruby>っている", "ご<ruby>存<rt>ぞん</rt></ruby>じだ"],
+        ["专用词", "<ruby>寝<rt>ね</rt></ruby>る", "お<ruby>休<rt>やす</rt></ruby>みになる"]
+      ],
+      "note_cn": "いらっしゃる、なさる、おっしゃる、くださる的ます形是「います」，不是「ります」：いらっしゃいます、なさいます、おっしゃいます、くださいます。其余按五段动词变。对方的物品和状态加お或ご：お名前、ご住所、お元気。和语多用お，汉字词多用ご。",
+      "note_en": "The ます form of いらっしゃる, なさる, おっしゃる, and くださる ends in います, not ります. Other forms follow godan verbs. Add お or ご to the other person's things and states: お名前, ご住所, お元気. Japanese words usually take お, and Chinese compounds usually take ご."
+    },
+    {
+      "id": "kenjo",
+      "title_html": "<ruby>謙譲語<rt>けんじょうご</rt></ruby>",
+      "title_cn": "谦让语",
+      "title_en": "Humble",
+      "rule_cn": "主语是自己。动作是做给对方的，用「お＋ます形词干＋する」，汉字词用「ご〜する」。只是郑重地说自己的动作、对方并不是接受的人，用丁重語：いたす、参る、申す、おる。",
+      "rule_en": "The subject is yourself. When the action is for the other person, use お plus the ます stem plus する, or ご for a Chinese compound. When you are only speaking deferentially about yourself, use いたす, 参る, 申す, or おる.",
+      "heads": ["普通", "谦让或丁重", "什么时候用"],
+      "rows": [
+        ["<ruby>持<rt>も</rt></ruby>つ", "お<ruby>持<rt>も</rt></ruby>ちする", "替对方拿"],
+        ["<ruby>説明<rt>せつめい</rt></ruby>する", "ご<ruby>説明<rt>せつめい</rt></ruby>する", "向对方说明"],
+        ["する", "いたす", "郑重地说自己做"],
+        ["<ruby>行<rt>い</rt></ruby>く・<ruby>来<rt>く</rt></ruby>る", "<ruby>参<rt>まい</rt></ruby>る", "郑重地说自己去或来"],
+        ["いる", "おる", "郑重地说自己在"],
+        ["<ruby>言<rt>い</rt></ruby>う", "<ruby>申<rt>もう</rt></ruby>す", "郑重地自称、说"],
+        ["<ruby>言<rt>い</rt></ruby>う", "<ruby>申<rt>もう</rt></ruby>し<ruby>上<rt>あ</rt></ruby>げる", "对上级说"],
+        ["<ruby>食<rt>た</rt></ruby>べる・<ruby>飲<rt>の</rt></ruby>む・もらう", "いただく", "自谦地吃喝，或从对方得到"],
+        ["<ruby>見<rt>み</rt></ruby>る", "<ruby>拝見<rt>はいけん</rt></ruby>する", "看对方的东西"],
+        ["<ruby>聞<rt>き</rt></ruby>く・<ruby>訪<rt>たず</rt></ruby>ねる", "<ruby>伺<rt>うかが</rt></ruby>う", "问对方、拜访对方"],
+        ["<ruby>思<rt>おも</rt></ruby>う・<ruby>知<rt>し</rt></ruby>る", "<ruby>存<rt>ぞん</rt></ruby>じる", "郑重地想或知道"],
+        ["人を<ruby>知<rt>し</rt></ruby>る", "<ruby>存<rt>ぞん</rt></ruby>じ<ruby>上<rt>あ</rt></ruby>げる", "认识对方或上级"],
+        ["あげる", "さしあげる", "给对方"],
+        ["<ruby>会<rt>あ</rt></ruby>う", "お<ruby>目<rt>め</rt></ruby>にかかる", "见对方"],
+        ["<ruby>見<rt>み</rt></ruby>せる", "お<ruby>目<rt>め</rt></ruby>にかける", "给对方看"]
+      ],
+      "note_cn": "授受也跟着换：对方给你是「てくださる」，你请对方做是「ていただく」，你为对方做是「てさしあげる」。お〜する不能用来描述对方的动作。",
+      "note_en": "Giving and receiving change too: てくださる when they do it for you, ていただく when you receive their favor, and てさしあげる when you do it for them. お〜する cannot describe the other person's action."
+    },
+    {
+      "id": "teinei",
+      "title_html": "<ruby>丁寧語<rt>ていねいご</rt></ruby>と<ruby>美化語<rt>びかご</rt></ruby>",
+      "title_cn": "礼貌语和美化语",
+      "title_en": "Polite and beautified",
+      "rule_cn": "丁寧語不改变谁高谁低，只让句子礼貌。美化語的お、ご可以出现在自己的东西上。不是每个词都能加，咖啡说コーヒー，一般不加お。",
+      "rule_en": "Polite language does not raise or lower anyone. Beautified お and ご may be used for your own things. Not every word takes them: コーヒー normally has no お.",
+      "heads": ["种类", "说法", "意思"],
+      "rows": [
+        ["丁寧語", "です・ます", "礼貌的判断和动词"],
+        ["更郑重的丁寧語", "でございます", "正式场合的「です」"],
+        ["美化語", "お茶・お菓子・ご<ruby>飯<rt>はん</rt></ruby>", "茶、点心、饭"],
+        ["美化語", "お<ruby>金<rt>かね</rt></ruby>・お<ruby>風呂<rt>ふろ</rt></ruby>", "钱、洗澡"],
+        ["不加", "コーヒー・ビール", "一般不加お"]
+      ],
+      "note_cn": "名词接「でいらっしゃる」，な形容词也可以，い形容词本身不变，只在前面加お。四种时态的对照表在「活用」。",
+      "note_en": "Nouns and na-adjectives take でいらっしゃる. An i-adjective stays the same and only adds お. The four-tense chart is on the Conjugation page."
+    },
+    {
+      "id": "uchi",
+      "title_html": "うちとそと",
+      "title_cn": "自己人和外人",
+      "title_en": "Inside and outside",
+      "rule_cn": "对家里人可以尊敬，对外人谈到自己家里或自己公司的人，要改用谦让，即使那个人是你的上司。公司对外称自己一方为弊社，称对方为御社；写信时对方公司也常写貴社。",
+      "rule_en": "You may respect people inside your group. When you speak to an outsider about your family or company, humble them, even your own boss. 弊社 is your company, 御社 is theirs on the phone, and 貴社 is common in writing.",
+      "heads": ["说自己这边", "说对方那边", "读音提示"],
+      "rows": [
+        ["<ruby>父<rt>ちち</rt></ruby>・<ruby>母<rt>はは</rt></ruby>", "お<ruby>父様<rt>とうさま</rt></ruby>・お<ruby>母様<rt>かあさま</rt></ruby>", "对外不用お父さん称呼自己父亲"],
+        ["<ruby>兄<rt>あに</rt></ruby>・<ruby>姉<rt>あね</rt></ruby>", "お<ruby>兄様<rt>にいさま</rt></ruby>・お<ruby>姉様<rt>ねえさま</rt></ruby>", "弟弟妹妹对外仍说弟、妹，对对方用弟さん、妹さん"],
+        ["<ruby>夫<rt>おっと</rt></ruby>・<ruby>妻<rt>つま</rt></ruby>", "ご<ruby>主人<rt>しゅじん</rt></ruby>・<ruby>奥様<rt>おくさま</rt></ruby>", "对方的丈夫、妻子"],
+        ["<ruby>息子<rt>むすこ</rt></ruby>・<ruby>娘<rt>むすめ</rt></ruby>", "<ruby>息子<rt>むすこ</rt></ruby>さん・お<ruby>嬢<rt>じょう</rt></ruby>さん", "对方的孩子"],
+        ["<ruby>弊社<rt>へいしゃ</rt></ruby>", "<ruby>御社<rt>おんしゃ</rt></ruby>・<ruby>貴社<rt>きしゃ</rt></ruby>", "自己公司、对方公司"]
+      ],
+      "note_cn": "给客人说到自己的部长：部长はただ今席を外しております。不要说部长がいらっしゃいます。",
+      "note_en": "About your manager to a visitor: 部長はただ今席を外しております. Do not say 部長がいらっしゃいます."
+    },
+    {
+      "id": "mistakes",
+      "title_html": "よくある<ruby>誤<rt>あやま</rt></ruby>り",
+      "title_cn": "常见误用",
+      "title_en": "Common mistakes",
+      "rule_cn": "方向反了、敬语叠两层、以及内外搞反，是最常见的三类错。",
+      "rule_en": "The usual mistakes are reversing the direction, stacking two honorifics, and treating your own group as outsiders.",
+      "heads": ["不要这样说", "改成", "原因"],
+      "rows": [
+        ["<ruby>先生<rt>せんせい</rt></ruby>が<ruby>申<rt>もう</rt></ruby>しました", "<ruby>先生<rt>せんせい</rt></ruby>がおっしゃいました", "申す是谦让，不能用在老师身上"],
+        ["<ruby>私<rt>わたし</rt></ruby>がおっしゃいます", "<ruby>私<rt>わたし</rt></ruby>が<ruby>申<rt>もう</rt></ruby>します", "おっしゃる是尊敬，不能用在自己身上"],
+        ["お<ruby>読<rt>よ</rt></ruby>みになられる", "お<ruby>読<rt>よ</rt></ruby>みになる", "お〜になる已经是尊敬，再加れる是双重敬语"],
+        ["<ruby>社長<rt>しゃちょう</rt></ruby>がお<ruby>読<rt>よ</rt></ruby>みしてください", "お<ruby>読<rt>よ</rt></ruby>みください", "お〜する是谦让，不能描述社长"],
+        ["いらっしゃります", "いらっしゃいます", "这四个特殊词的ます形用います"],
+        ["いつでも<ruby>説明<rt>せつめい</rt></ruby>させていただきます", "ご<ruby>説明<rt>せつめい</rt></ruby>いたします", "没有对方的允许和自己的受益，不必用させていただく"]
+      ],
+      "note_cn": "「お召し上がりになる」「お見えになる」虽然也是两层，但是习惯说法，可以保留。させていただく要同时有两件：对方允许你做，而且结果对你有益。只是礼貌地做事，用いたします。",
+      "note_en": "お召し上がりになる and お見えになる are established exceptions and can stay. Use させていただく only when the other person allows the action and you benefit. Otherwise いたします is enough."
+    }
+  ],
+  "examples": {
+    "title_html": "<ruby>場面<rt>ばめん</rt></ruby>",
+    "title_cn": "三个场面",
+    "title_en": "Three situations",
+    "rows": [
+      ["问老师在不在", "<ruby>先生<rt>せんせい</rt></ruby>はもうお<ruby>帰<rt>かえ</rt></ruby>りになりましたか。", "老师是主语，用尊敬语"],
+      ["告诉老师自己要去", "<ruby>明日<rt>あした</rt></ruby>、うかがいます。", "自己去见老师，用谦让语"],
+      ["对外客说自己部长", "<ruby>部長<rt>ぶちょう</rt></ruby>はただ今<ruby>席<rt>せき</rt></ruby>を<ruby>外<rt>はず</rt></ruby>しております。", "对自己人用丁重语，不用尊敬语"]
+    ]
+  }
+}

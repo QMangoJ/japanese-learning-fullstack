@@ -129,6 +129,9 @@ const LazyTopicsPage = lazy(() =>
 const LazyVerbSummaryPage = lazy(() =>
 	import("./VerbSummaryPage").then((module) => ({ default: module.VerbSummaryPage })),
 );
+const LazyKeigoSummaryPage = lazy(() =>
+	import("./KeigoSummaryPage").then((module) => ({ default: module.KeigoSummaryPage })),
+);
 const LazyModuleCardsPage = lazy(() =>
 	import("./ModuleCardsPage").then((module) => ({ default: module.ModuleCardsPage })),
 );
@@ -544,6 +547,7 @@ function Sidebar({ routeKey, onLevel }: { routeKey: string; onLevel: (lv: LevelK
 				{row("#/katsuyou", "🔄", lx("活用", "Conjugation"), null, h === "#/katsuyou")}
 				{row("#/henkei", "✍️", lx("变形口诀", "Verb mnemonics"), null, h === "#/henkei")}
 				{row("#/verb-summary", "🔤", lx("变形总结", "Verb summary"), null, h === "#/verb-summary")}
+				{row("#/keigo", "🙏", lx("敬语总结", "Keigo summary"), null, h === "#/keigo")}
 				{row("#/kougo", "💬", lx("口语", "Casual"), null, h === "#/kougo")}
 				{row("#/jita", "↔️", lx("自他动词", "Verb pairs"), null, h === "#/jita")}
 				{row("#/wearing", "👕", lx("穿衣穿戴", "Wearing"), null, h === "#/wearing")}
@@ -635,7 +639,10 @@ function Sheet({
 								<span className="ic">🔤</span>
 								{lx("变形总结", "Verb summary")}
 							</button>
-							<span className="sheet-item" style={{ visibility: "hidden" }} />
+							<button className="sheet-item" onClick={() => { onClose(); navTo("#/keigo"); }}>
+								<span className="ic">🙏</span>
+								{lx("敬语总结", "Keigo summary")}
+							</button>
 							<span className="sheet-item" style={{ visibility: "hidden" }} />
 						</div>
 						<div className="sheet-row">
@@ -896,6 +903,7 @@ function viewMeta(key: string): { nav: string; title: string; back: boolean } {
 	if (key === "#/katsuyou") return { nav: "common", title: lx("活用一覧 · 敬語レベルと活用形", "Conjugation: Politeness Levels & Verb Forms"), back: true };
 	if (key === "#/henkei") return { nav: "common", title: lx("变形口诀", "Verb mnemonics"), back: true };
 	if (key === "#/verb-summary") return { nav: "common", title: lx("动词变形总结", "Verb form summary"), back: true };
+	if (key === "#/keigo") return { nav: "common", title: lx("敬语总结", "Keigo summary"), back: true };
 	if (key === "#/kougo") return { nav: "common", title: lx("口语缩约 · 口語の縮約", "Spoken Contractions"), back: true };
 	if (key === "#/jita") return { nav: "common", title: lx("自动词和他动词 · 自動詞と他動詞", "Transitive & Intransitive Verbs"), back: true };
 	if (key === "#/wearing") return { nav: "common", title: lx("穿衣穿戴 · 衣服と身につける物", "Clothes & Accessories"), back: true };
@@ -1093,11 +1101,11 @@ export function StudyApp() {
 	const day = parseDayRoute(routeKey);
 	const reviewRoute = parseReviewRoute(routeKey);
 	const topicsRoute = parseTopicsRoute(routeKey);
-	const commonPages = ["#/search", "#/cards", "#/kanji-exam", "#/favs", "#/mistakes", "#/due", "#/ref", "#/katsuyou", "#/henkei", "#/verb-summary", "#/kougo", "#/jita", "#/wearing", "#/numbers", "#/review"];
+	const commonPages = ["#/search", "#/cards", "#/kanji-exam", "#/favs", "#/mistakes", "#/due", "#/ref", "#/katsuyou", "#/henkei", "#/verb-summary", "#/keigo", "#/kougo", "#/jita", "#/wearing", "#/numbers", "#/review"];
 	const isCommon = commonPages.includes(routeKey) || routeKey === "#/" || Boolean(reviewRoute) || Boolean(topicsRoute);
 	if (routeKey === "#/cards") ensureCardsDeck();
 
-	const commonRefPage = ["#/ref", "#/katsuyou", "#/henkei", "#/verb-summary", "#/kougo", "#/jita", "#/wearing", "#/numbers", "#/review", "#/due"].includes(routeKey) || Boolean(reviewRoute) || Boolean(topicsRoute);
+	const commonRefPage = ["#/ref", "#/katsuyou", "#/henkei", "#/verb-summary", "#/keigo", "#/kougo", "#/jita", "#/wearing", "#/numbers", "#/review", "#/due"].includes(routeKey) || Boolean(reviewRoute) || Boolean(topicsRoute);
 	const waitingN2 = isN2() && MODULE !== "n2listening" && MODULE !== "n2reading" && !n2Loaded && !commonRefPage;
 	const waitingN4 = isN4() && !n4Loaded && !commonRefPage;
 	const waitingN1 = isN1() && MODULE !== "n1listening" && !n1Loaded && !commonRefPage;
@@ -1164,6 +1172,7 @@ export function StudyApp() {
 	else if (routeKey === "#/katsuyou") body = DATA.common?.katsuyou ? <KatsuyouPage data={DATA.common} /> : <div className="empty">通用参考数据加载中，请稍候…</div>;
 	else if (routeKey === "#/henkei") body = DATA.common?.henkei ? <HenkeiPage data={DATA.common} /> : <div className="empty">通用参考数据加载中，请稍候…</div>;
 	else if (routeKey === "#/verb-summary") body = <LazyVerbSummaryPage />;
+	else if (routeKey === "#/keigo") body = <LazyKeigoSummaryPage />;
 	else if (routeKey === "#/kougo") body = DATA.common?.kougo ? <KougoPage data={DATA.common} /> : <div className="empty">通用参考数据加载中，请稍候…</div>;
 	else if (routeKey === "#/jita") body = DATA.common?.jita ? <JitaPage data={DATA.common} /> : <div className="empty">通用参考数据加载中，请稍候…</div>;
 	else if (routeKey === "#/wearing") body = DATA.common?.wearing ? <WearingPage data={DATA.common} /> : <div className="empty">通用参考数据加载中，请稍候…</div>;
