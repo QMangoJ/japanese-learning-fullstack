@@ -43,6 +43,59 @@ function jump(id: string) {
 	document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
+const FORM_LABELS: Record<string, { html: string; lesson: number }> = {
+	masu: { html: "ます<ruby>形<rt>けい</rt></ruby>", lesson: 4 },
+	te: { html: "て<ruby>形<rt>けい</rt></ruby>", lesson: 14 },
+	nai: { html: "ない<ruby>形<rt>けい</rt></ruby>", lesson: 17 },
+	dict: { html: "<ruby>辞書<rt>じしょ</rt></ruby><ruby>形<rt>けい</rt></ruby>", lesson: 18 },
+	ta: { html: "た<ruby>形<rt>けい</rt></ruby>", lesson: 19 },
+	potential: { html: "<ruby>可能<rt>かのう</rt></ruby><ruby>形<rt>けい</rt></ruby>", lesson: 27 },
+	volitional: { html: "<ruby>意向<rt>いこう</rt></ruby><ruby>形<rt>けい</rt></ruby>", lesson: 31 },
+	imperative: { html: "<ruby>命令<rt>めいれい</rt></ruby><ruby>形<rt>けい</rt></ruby>", lesson: 33 },
+	ba: { html: "ば<ruby>形<rt>けい</rt></ruby>", lesson: 35 },
+	passive: { html: "<ruby>受身<rt>うけみ</rt></ruby><ruby>形<rt>けい</rt></ruby>", lesson: 37 },
+	causative: { html: "<ruby>使役<rt>しえき</rt></ruby><ruby>形<rt>けい</rt></ruby>", lesson: 48 },
+};
+
+const HEAD_RUBY: Record<string, string> = {
+	辞書形: FORM_LABELS.dict.html,
+	ます形: FORM_LABELS.masu.html,
+	て形: FORM_LABELS.te.html,
+	ない形: FORM_LABELS.nai.html,
+	た形: FORM_LABELS.ta.html,
+	ば形: FORM_LABELS.ba.html,
+	可能形: FORM_LABELS.potential.html,
+	可能: "<ruby>可能<rt>かのう</rt></ruby>",
+	意向形: FORM_LABELS.volitional.html,
+	命令形: FORM_LABELS.imperative.html,
+	命令: "<ruby>命令<rt>めいれい</rt></ruby>",
+	受身形: FORM_LABELS.passive.html,
+	受身: "<ruby>受身<rt>うけみ</rt></ruby>",
+	使役形: FORM_LABELS.causative.html,
+	使役: "<ruby>使役<rt>しえき</rt></ruby>",
+	読み: "<ruby>読<rt>よ</rt></ruby>み",
+};
+
+function FormName({ id }: { id: string }) {
+	const label = FORM_LABELS[id];
+	if (!label) return null;
+	return (
+		<span className="jp verb-sum-form">
+			<RubyHtml html={label.html} />
+		</span>
+	);
+}
+
+function HeadLabel({ text }: { text: string }) {
+	const html = HEAD_RUBY[text];
+	if (!html) return text;
+	return (
+		<span className="jp verb-sum-form">
+			<RubyHtml html={html} />
+		</span>
+	);
+}
+
 function GroupLabel({ name }: { name: string }) {
 	const ruby = VERB_GROUP_RUBY[name as keyof typeof VERB_GROUP_RUBY];
 	if (!ruby) return <span className="jp">{name}</span>;
@@ -68,7 +121,9 @@ function ExtraCards({ groupName, rows }: { groupName: string; rows: string[][] }
 						<div className="verb-sum-pairs">
 							{EXTRA_FORM_FIELDS.map((field) => (
 								<div className="verb-sum-pair" key={field.key}>
-									<span className="verb-sum-pair-label">{lx(field.label_cn, field.label_en)}</span>
+									<span className="verb-sum-pair-label">
+										<HeadLabel text={field.label_cn} />
+									</span>
 									<span className="jp">{forms[field.key]}</span>
 								</div>
 							))}
@@ -89,7 +144,9 @@ function Grid({ heads, rows }: { heads?: string[]; rows: string[][] }) {
 					<thead>
 						<tr>
 							{heads.map((head) => (
-								<th key={head}>{head}</th>
+								<th key={head}>
+									<HeadLabel text={head} />
+								</th>
 							))}
 						</tr>
 					</thead>
@@ -118,7 +175,7 @@ export function VerbSummaryPage() {
 			<div className="verb-sum-nav">
 				{data.forms.map((form) => (
 					<button key={form.id} type="button" onClick={() => jump(`verb-${form.id}`)}>
-						{lx(form.title_cn, form.title_en)}
+						<FormName id={form.id} />
 					</button>
 				))}
 				<button type="button" onClick={() => jump("verb-examples")}>
@@ -128,7 +185,8 @@ export function VerbSummaryPage() {
 			{data.forms.map((form) => (
 				<section className="card" id={`verb-${form.id}`} key={form.id}>
 					<h2 className="jp">
-						{form.title_jp} <span className="meta">{lx(form.title_cn, form.title_en)}</span>
+						<FormName id={form.id} />
+						<span className="meta">のつくりかた · {lx(`第${FORM_LABELS[form.id].lesson}課`, `Lesson ${FORM_LABELS[form.id].lesson}`)}</span>
 					</h2>
 					<p className="meta">{lx(form.rule_cn, form.rule_en)}</p>
 					{form.groups.map((group) => (

@@ -28,6 +28,19 @@ describe("verb form summary", () => {
 		expect(examples[0].rows.find((row) => row[0] === "行く")).toEqual(["行く", "いく", "いきます", "いって", "いける", "行こう"]);
 		expect(examples[0].rows.find((row) => row[0] === "帰る")?.[5]).toBe("帰ろう");
 		expect(examples[1].rows.find((row) => row[0] === "食べる")?.[5]).toBe("食べよう");
+		expect(summary.forms.map((form) => form.id)).toEqual([
+			"masu",
+			"te",
+			"nai",
+			"dict",
+			"ta",
+			"potential",
+			"volitional",
+			"imperative",
+			"ba",
+			"passive",
+			"causative",
+		]);
 		expect(examples[2].rows.find((row) => row[0] === "発表する")).toEqual([
 			"発表する",
 			"はっぴょうする",
@@ -40,18 +53,20 @@ describe("verb form summary", () => {
 
 	it("renders the four forms and an example from each group", () => {
 		render(<VerbSummaryPage />);
-		expect(screen.getByText("辞書形のつくりかた")).toBeInTheDocument();
+		const lessons = screen
+			.getAllByRole("heading", { level: 2 })
+			.map((heading) => heading.textContent?.match(/第(\d+)課/)?.[1])
+			.filter(Boolean);
+		expect(lessons).toEqual(["4", "14", "17", "18", "19", "27", "31", "33", "35", "37", "48"]);
+		expect(screen.getAllByText("じしょ").length).toBeGreaterThan(0);
+		expect(screen.getAllByText("かのう").length).toBeGreaterThan(0);
+		expect(screen.getAllByText("いこう").length).toBeGreaterThan(0);
+		expect(screen.getAllByText("めいれい").length).toBeGreaterThan(0);
+		expect(screen.getAllByText("うけみ").length).toBeGreaterThan(0);
+		expect(screen.getAllByText("しえき").length).toBeGreaterThan(0);
 		expect(screen.getAllByText("ごだん").length).toBeGreaterThan(0);
 		expect(screen.getAllByText("いちだん").length).toBeGreaterThan(0);
 		expect(screen.getAllByText("ふきそく").length).toBeGreaterThan(0);
-		expect(screen.getByText("意向形のつくりかた")).toBeInTheDocument();
-		expect(screen.getByText("可能形のつくりかた")).toBeInTheDocument();
-		expect(screen.getByText("て形のつくりかた")).toBeInTheDocument();
-		expect(screen.getByText("ない形のつくりかた")).toBeInTheDocument();
-		expect(screen.getByText("た形のつくりかた")).toBeInTheDocument();
-		expect(screen.getByText("命令形のつくりかた")).toBeInTheDocument();
-		expect(screen.getByText("受身形のつくりかた")).toBeInTheDocument();
-		expect(screen.getByText("使役形のつくりかた")).toBeInTheDocument();
 		expect(screen.getByText("買おう")).toBeInTheDocument();
 		expect(screen.getByText("買わない")).toBeInTheDocument();
 		expect(screen.getByText("行った")).toBeInTheDocument();

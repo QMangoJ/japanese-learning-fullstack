@@ -346,12 +346,16 @@ test.describe("study navigation", () => {
 		await expect(page.locator(".verb-sum-group rt", { hasText: "ごだん" }).first()).toBeVisible();
 		await expect(page.locator(".verb-sum-group rt", { hasText: "いちだん" }).first()).toBeVisible();
 		await expect(page.locator(".verb-sum-group rt", { hasText: "ふきそく" }).first()).toBeVisible();
-		await expect(page.getByRole("heading", { name: /辞書形のつくりかた/ })).toBeVisible();
-		await expect(page.getByRole("heading", { name: /て形のつくりかた/ })).toBeVisible();
-		await page.getByRole("button", { name: "ない形" }).click();
-		await expect(page.getByRole("heading", { name: /ない形のつくりかた/ })).toBeVisible();
-		await page.getByRole("button", { name: "使役形" }).click();
-		await expect(page.getByRole("heading", { name: /使役形のつくりかた/ })).toBeVisible();
+		const lessons = await page.locator(".verb-sum > section.card h2").evaluateAll((headings) =>
+			headings.map((heading) => heading.textContent?.match(/第(\d+)課/)?.[1] ?? ""),
+		);
+		expect(lessons.filter(Boolean)).toEqual(["4", "14", "17", "18", "19", "27", "31", "33", "35", "37", "48"]);
+		await expect(page.locator(".verb-sum-form rt", { hasText: "じしょ" }).first()).toBeVisible();
+		await expect(page.locator(".verb-sum-form rt", { hasText: "かのう" }).first()).toBeVisible();
+		await page.locator(".verb-sum-nav button").filter({ hasText: "ない" }).click();
+		await expect(page.locator("#verb-nai")).toBeVisible();
+		await page.locator(".verb-sum-nav button").filter({ hasText: "しえき" }).click();
+		await expect(page.locator("#verb-causative")).toBeVisible();
 		await page.getByRole("button", { name: /动词示例|Examples/ }).click();
 		await expect(page.getByText("買おう", { exact: true })).toBeVisible();
 		await expect(page.getByText("買わない", { exact: true })).toBeVisible();

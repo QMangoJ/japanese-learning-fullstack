@@ -882,8 +882,9 @@ body.hide-cn .vcn,body.hide-cn .cn{visibility:hidden}
 .fcard .topic-st{margin-top:8px}
 .verb-sum-lead{margin:0 0 12px;line-height:1.65}
 .verb-sum-nav{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px}
-.verb-sum-nav button{border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--ink);padding:6px 12px;font-size:13px;font-weight:700;cursor:pointer}
-.verb-sum h2{margin:0 0 6px;font-size:18px;line-height:1.45}
+.verb-sum-nav button{border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--ink);padding:8px 12px 6px;font-size:13px;font-weight:700;cursor:pointer;line-height:1.35}
+.verb-sum h2{margin:0 0 6px;font-size:18px;line-height:1.8}
+.verb-sum-form rt,body.no-ruby .verb-sum-form rt{visibility:visible}
 .verb-sum h3{margin:14px 0 4px;font-size:15px;line-height:1.9}
 .verb-sum-examples-title{line-height:1.9}
 .verb-sum-group rt,body.no-ruby .verb-sum-group rt{visibility:visible}

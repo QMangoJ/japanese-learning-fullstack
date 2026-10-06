@@ -49,8 +49,8 @@ export const VERB_GROUP_RUBY: Record<keyof typeof VERB_SUMMARY_GROUPS, string> =
 export const EXTRA_FORM_FIELDS = [
 	{ key: "nai", label_cn: "ない形", label_en: "Nai" },
 	{ key: "ta", label_cn: "た形", label_en: "Ta" },
-	{ key: "ba", label_cn: "ば形", label_en: "Ba" },
 	{ key: "imperative", label_cn: "命令形", label_en: "Imperative" },
+	{ key: "ba", label_cn: "ば形", label_en: "Ba" },
 	{ key: "passive", label_cn: "受身形", label_en: "Passive" },
 	{ key: "causative", label_cn: "使役形", label_en: "Causative" },
 ] as const satisfies ReadonlyArray<{ key: keyof VerbForms; label_cn: string; label_en: string }>;

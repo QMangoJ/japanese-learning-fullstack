@@ -9,7 +9,7 @@ export function meta({}: Route.MetaArgs) {
 	];
 }
 
-const STUDY_CSS = "/study.css?v=2026-10-07-verb-groups";
+const STUDY_CSS = "/study.css?v=2026-10-07-verb-form-names";
 
 export const links: Route.LinksFunction = () => [
 	{ rel: "stylesheet", href: STUDY_CSS },
