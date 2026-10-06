@@ -35,10 +35,16 @@ const GODAN: Record<string, GodanRow> = {
 };
 
 export const VERB_SUMMARY_GROUPS = {
-	一类: "I",
-	二类: "II",
-	三类: "III",
+	五段動詞: "I",
+	一段動詞: "II",
+	不規則動詞: "III",
 } as const satisfies Record<string, VerbGroup>;
+
+export const VERB_GROUP_RUBY: Record<keyof typeof VERB_SUMMARY_GROUPS, string> = {
+	五段動詞: "<ruby>五段<rt>ごだん</rt></ruby><ruby>動詞<rt>どうし</rt></ruby>",
+	一段動詞: "<ruby>一段<rt>いちだん</rt></ruby><ruby>動詞<rt>どうし</rt></ruby>",
+	不規則動詞: "<ruby>不規則<rt>ふきそく</rt></ruby><ruby>動詞<rt>どうし</rt></ruby>",
+};
 
 export const EXTRA_FORM_FIELDS = [
 	{ key: "nai", label_cn: "ない形", label_en: "Nai" },
@@ -129,6 +135,6 @@ export function conjugateVerb(dict: string, reading: string, group: VerbGroup): 
 }
 
 export function verbSummaryGroup(name: string): VerbGroup {
-	if (name === "一类" || name === "二类" || name === "三类") return VERB_SUMMARY_GROUPS[name];
+	if (name === "五段動詞" || name === "一段動詞" || name === "不規則動詞") return VERB_SUMMARY_GROUPS[name];
 	throw new Error(`unknown verb group: ${name}`);
 }

@@ -1,6 +1,7 @@
+import { RubyHtml } from "../routes/study-common";
 import summary from "../data/common-verb-summary.json";
 import { lx } from "./store";
-import { conjugateVerb, EXTRA_FORM_FIELDS, verbSummaryGroup } from "./verb-forms";
+import { conjugateVerb, EXTRA_FORM_FIELDS, VERB_GROUP_RUBY, verbSummaryGroup } from "./verb-forms";
 
 type Group = {
 	name_cn: string;
@@ -40,6 +41,16 @@ const data = summary as {
 
 function jump(id: string) {
 	document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function GroupLabel({ name }: { name: string }) {
+	const ruby = VERB_GROUP_RUBY[name as keyof typeof VERB_GROUP_RUBY];
+	if (!ruby) return <span className="jp">{name}</span>;
+	return (
+		<span className="jp verb-sum-group">
+			<RubyHtml html={ruby} />
+		</span>
+	);
 }
 
 function ExtraCards({ groupName, rows }: { groupName: string; rows: string[][] }) {
@@ -123,7 +134,7 @@ export function VerbSummaryPage() {
 					{form.groups.map((group) => (
 						<div key={group.name_cn}>
 							<h3>
-								{lx(group.name_cn, group.name_en)}
+								<GroupLabel name={group.name_cn} />
 							</h3>
 							<p className="meta">{lx(group.rule_cn, group.rule_en)}</p>
 							<Grid heads={group.heads} rows={group.chart || []} />
@@ -133,11 +144,18 @@ export function VerbSummaryPage() {
 				</section>
 			))}
 			<section className="card" id="verb-examples">
-				<h2>{lx(examples.title_cn, examples.title_en)}</h2>
+				<h2 className="verb-sum-examples-title">
+					<GroupLabel name="五段動詞" />
+					、<GroupLabel name="一段動詞" />
+					、<GroupLabel name="不規則動詞" />
+					{lx("的例子", " examples")}
+				</h2>
 				<p className="meta">{lx(examples.note_cn, examples.note_en)}</p>
 				{examples.groups.map((group) => (
 					<div key={group.name_cn}>
-						<h3>{lx(group.name_cn, group.name_en)}</h3>
+						<h3>
+							<GroupLabel name={group.name_cn} />
+						</h3>
 						<Grid heads={lx(examples.heads_cn.join("\n"), examples.heads_en.join("\n")).split("\n")} rows={group.rows} />
 						<p className="meta verb-sum-extra-label">{lx("其余变形", "Other forms")}</p>
 						<ExtraCards groupName={group.name_cn} rows={group.rows} />

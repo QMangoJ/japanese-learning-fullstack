@@ -542,7 +542,7 @@ function Sidebar({ routeKey, onLevel }: { routeKey: string; onLevel: (lv: LevelK
 				{row("#/topics", "🏷️", lx("专题词汇", "Topic vocabulary"), null, h.startsWith("#/topics"))}
 				{row("#/ref", "📖", lx("接续表", "Connections"), null, h === "#/ref")}
 				{row("#/katsuyou", "🔄", lx("活用", "Conjugation"), null, h === "#/katsuyou")}
-				{row("#/henkei", "✍️", lx("变形", "Verb forms"), null, h === "#/henkei")}
+				{row("#/henkei", "✍️", lx("变形口诀", "Verb mnemonics"), null, h === "#/henkei")}
 				{row("#/verb-summary", "🔤", lx("变形总结", "Verb summary"), null, h === "#/verb-summary")}
 				{row("#/kougo", "💬", lx("口语", "Casual"), null, h === "#/kougo")}
 				{row("#/jita", "↔️", lx("自他动词", "Verb pairs"), null, h === "#/jita")}
@@ -627,7 +627,7 @@ function Sheet({
 							</button>
 							<button className="sheet-item" onClick={() => { onClose(); navTo("#/henkei"); }}>
 								<span className="ic">✍️</span>
-								{lx("变形", "Verb forms")}
+								{lx("变形口诀", "Verb mnemonics")}
 							</button>
 						</div>
 						<div className="sheet-row">
@@ -894,7 +894,7 @@ function viewMeta(key: string): { nav: string; title: string; back: boolean } {
 	if (key === "#/due") return { nav: "home", title: lx("今天要复习", "Due today"), back: false };
 	if (key === "#/ref") return { nav: "common", title: lx("接续表示法 · 接続の表示方法", "Connection Notation"), back: true };
 	if (key === "#/katsuyou") return { nav: "common", title: lx("活用一覧 · 敬語レベルと活用形", "Conjugation: Politeness Levels & Verb Forms"), back: true };
-	if (key === "#/henkei") return { nav: "common", title: lx("動詞の変形ルール · 音便と組み合わせ", "Verb Conjugation Rules"), back: true };
+	if (key === "#/henkei") return { nav: "common", title: lx("变形口诀", "Verb mnemonics"), back: true };
 	if (key === "#/verb-summary") return { nav: "common", title: lx("动词变形总结", "Verb form summary"), back: true };
 	if (key === "#/kougo") return { nav: "common", title: lx("口语缩约 · 口語の縮約", "Spoken Contractions"), back: true };
 	if (key === "#/jita") return { nav: "common", title: lx("自动词和他动词 · 自動詞と他動詞", "Transitive & Intransitive Verbs"), back: true };

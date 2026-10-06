@@ -6,8 +6,8 @@ import { conjugateVerb, type VerbGroup } from "../../app/study/verb-forms";
 const groups = summary.examples.groups;
 
 function groupOf(name: string): VerbGroup {
-	if (name === "一类") return "I";
-	if (name === "二类") return "II";
+	if (name === "五段動詞") return "I";
+	if (name === "一段動詞") return "II";
 	return "III";
 }
 

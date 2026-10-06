@@ -1,18 +1,18 @@
 {
-  "intro_cn": "课堂笔记里的动词变形。一类是五段，二类是一段，三类是「する」和「来る」。手写空格按表上的规则补全。带 ★ 的ます形看起来像一类，其实是二类。前面四节是课堂的四张表。后面用同一套分类，补上ます形、ない形、た形、ば形、命令形、受身形和使役形。",
-  "intro_en": "Classroom verb forms. Group I is godan, Group II is ichidan, and Group III is する and 来る. Blank cells are filled from the chart. A ★ marks a Group II verb whose ます form looks like Group I. The first four sections are the classroom sheets. Later sections add the ます, ない, た, ば, imperative, passive, and causative forms with the same three groups.",
+  "intro_cn": "课堂笔记里的动词变形，分成五段動詞（ごだんどうし）、一段動詞（いちだんどうし）和不規則動詞（ふきそくどうし）。不規則動詞是「する」和「来る」。手写空格按表上的规则补全。带 ★ 的ます形看起来像五段動詞，其实是一段動詞。前面四节是课堂的四张表。后面用同一套分类，补上ます形、ない形、た形、ば形、命令形、受身形和使役形。",
+  "intro_en": "Classroom verb forms, grouped as 五段動詞 (ごだんどうし), 一段動詞 (いちだんどうし), and 不規則動詞 (ふきそくどうし). Irregular verbs are する and 来る. Blank cells are filled from the chart. A ★ marks an ichidan verb whose ます form looks like a godan verb. The first four sections are the classroom sheets. Later sections add the ます, ない, た, ば, imperative, passive, and causative forms with the same three groups.",
   "forms": [
     {
       "id": "dict",
       "title_jp": "辞書形のつくりかた",
       "title_cn": "辞书形",
       "title_en": "Dictionary form",
-      "rule_cn": "从ます形还原辞书形。一类把ます前面的い段改成う段。二类去掉ます、加上る。三类是固定的する、くる。",
-      "rule_en": "Rebuild the dictionary form from the ます form. Group I changes the i-row kana before ます to the u-row. Group II drops ます and adds る. Group III is する and くる.",
+      "rule_cn": "从ます形还原辞书形。五段動詞把ます前面的い段改成う段。一段動詞去掉ます、加上る。不規則動詞是固定的する、くる。",
+      "rule_en": "Rebuild the dictionary form from the ます form. 五段動詞 changes the i-row kana before ます to the u-row. 一段動詞 drops ます and adds る. 不規則動詞 is する and くる.",
       "groups": [
         {
-          "name_cn": "一类",
-          "name_en": "Group I",
+          "name_cn": "五段動詞",
+          "name_en": "五段動詞",
           "rule_cn": "ない形是あ段（う动词用わ），ます形是い段，辞书形是う段。",
           "rule_en": "The nai stem is the a-row (わ for u-verbs), the ます stem is the i-row, and the dictionary form is the u-row.",
           "heads": ["ない", "ます", "辞書形"],
@@ -40,8 +40,8 @@
           ]
         },
         {
-          "name_cn": "二类",
-          "name_en": "Group II",
+          "name_cn": "一段動詞",
+          "name_en": "一段動詞",
           "rule_cn": "去掉ます，加上る。",
           "rule_en": "Drop ます and add る.",
           "drill_heads": ["ます形", "辞書形"],
@@ -54,8 +54,8 @@
           ]
         },
         {
-          "name_cn": "三类",
-          "name_en": "Group III",
+          "name_cn": "不規則動詞",
+          "name_en": "不規則動詞",
           "rule_cn": "します → する，きます → くる。",
           "rule_en": "します becomes する, and きます becomes くる.",
           "drill_heads": ["ます形", "辞書形"],
@@ -71,12 +71,12 @@
       "title_jp": "意向形のつくりかた",
       "title_cn": "意向形",
       "title_en": "Volitional",
-      "rule_cn": "表示「我来做吧」。一类把う段改成お段，再加う。二类把る换成よう。三类是しよう、こよう。",
-      "rule_en": "This is the “let’s / I’ll” form. Group I changes the u-row to the o-row and adds う. Group II replaces る with よう. Group III is しよう and こよう.",
+      "rule_cn": "表示「我来做吧」。五段動詞把う段改成お段，再加う。一段動詞把る换成よう。不規則動詞是しよう、こよう。",
+      "rule_en": "This is the “let’s / I’ll” form. 五段動詞 changes the u-row to the o-row and adds う. 一段動詞 replaces る with よう. 不規則動詞 is しよう and こよう.",
       "groups": [
         {
-          "name_cn": "一类",
-          "name_en": "Group I",
+          "name_cn": "五段動詞",
+          "name_en": "五段動詞",
           "rule_cn": "ます形い段、辞书形う段，意向形是お段＋う。",
           "rule_en": "ます stem is the i-row, dictionary form is the u-row, and the volitional is the o-row plus う.",
           "heads": ["ます", "辞書形", "意向形"],
@@ -104,8 +104,8 @@
           ]
         },
         {
-          "name_cn": "二类",
-          "name_en": "Group II",
+          "name_cn": "一段動詞",
+          "name_en": "一段動詞",
           "rule_cn": "る → よう。",
           "rule_en": "Replace る with よう.",
           "drill_heads": ["辞書形", "意向形"],
@@ -118,8 +118,8 @@
           ]
         },
         {
-          "name_cn": "三类",
-          "name_en": "Group III",
+          "name_cn": "不規則動詞",
+          "name_en": "不規則動詞",
           "rule_cn": "する → しよう，くる → こよう。",
           "rule_en": "する becomes しよう, and くる becomes こよう.",
           "drill_heads": ["辞書形", "意向形"],
@@ -135,12 +135,12 @@
       "title_jp": "可能形のつくりかた",
       "title_cn": "可能形",
       "title_en": "Potential",
-      "rule_cn": "表示「能做」。一类把う段改成え段，再加る。二类在る前面加られ。三类「する」用できる，「来る」用こられる。",
-      "rule_en": "This means “can”. Group I changes the u-row to the e-row and adds る. Group II inserts られ before る. Group III uses できる and こられる.",
+      "rule_cn": "表示「能做」。五段動詞把う段改成え段，再加る。一段動詞在る前面加られ。不規則動詞「する」用できる，「来る」用こられる。",
+      "rule_en": "This means “can”. 五段動詞 changes the u-row to the e-row and adds る. 一段動詞 inserts られ before る. 不規則動詞 uses できる and こられる.",
       "groups": [
         {
-          "name_cn": "一类",
-          "name_en": "Group I",
+          "name_cn": "五段動詞",
+          "name_en": "五段動詞",
           "rule_cn": "可能形的词尾是え段＋る。礼貌形再把る改成ます。",
           "rule_en": "The potential ending is the e-row plus る. The polite form changes that る to ます.",
           "heads": ["ます", "辞書形", "可能"],
@@ -168,8 +168,8 @@
           ]
         },
         {
-          "name_cn": "二类",
-          "name_en": "Group II",
+          "name_cn": "一段動詞",
+          "name_en": "一段動詞",
           "rule_cn": "ます形去掉ます，加上られます。",
           "rule_en": "Drop ます and add られます.",
           "drill_heads": ["ます形", "可能形"],
@@ -182,8 +182,8 @@
           ]
         },
         {
-          "name_cn": "三类",
-          "name_en": "Group III",
+          "name_cn": "不規則動詞",
+          "name_en": "不規則動詞",
           "rule_cn": "します → できます，きます → こられます。",
           "rule_en": "します becomes できます, and きます becomes こられます.",
           "drill_heads": ["ます形", "可能形"],
@@ -199,12 +199,12 @@
       "title_jp": "て形のつくりかた",
       "title_cn": "て形",
       "title_en": "Te-form",
-      "rule_cn": "一类看ます形最后一个假名做音便。二类去掉ます加上て。三类是して、きて。行く是唯一要单独记的例外：いって，不是いいて。",
-      "rule_en": "Group I changes by the last kana of the ます stem. Group II drops ます and adds て. Group III is して and きて. 行く is the exception: いって, not いいて.",
+      "rule_cn": "五段動詞看ます形最后一个假名做音便。一段動詞去掉ます加上て。不規則動詞是して、きて。行く是唯一要单独记的例外：いって，不是いいて。",
+      "rule_en": "五段動詞 changes by the last kana of the ます stem. 一段動詞 drops ます and adds て. 不規則動詞 is して and きて. 行く is the exception: いって, not いいて.",
       "groups": [
         {
-          "name_cn": "一类",
-          "name_en": "Group I",
+          "name_cn": "五段動詞",
+          "name_en": "五段動詞",
           "rule_cn": "き→いて，但是行きます→いって。ぎ→いで。み・び・に→んで。り・い・ち→って。し→して。",
           "rule_en": "き becomes いて, except 行きます → いって. ぎ becomes いで. み, び, and に become んで. り, い, and ち become って. し becomes して.",
           "heads": ["ます词尾", "て形", "例子"],
@@ -230,8 +230,8 @@
           ]
         },
         {
-          "name_cn": "二类",
-          "name_en": "Group II",
+          "name_cn": "一段動詞",
+          "name_en": "一段動詞",
           "rule_cn": "去掉ます，加上て。",
           "rule_en": "Drop ます and add て.",
           "drill_heads": ["ます形", "て形"],
@@ -245,8 +245,8 @@
           ]
         },
         {
-          "name_cn": "三类",
-          "name_en": "Group III",
+          "name_cn": "不規則動詞",
+          "name_en": "不規則動詞",
           "rule_cn": "します → して，きます → きて。",
           "rule_en": "します becomes して, and きます becomes きて.",
           "drill_heads": ["ます形", "て形"],
@@ -262,12 +262,12 @@
       "title_jp": "ます形のつくりかた",
       "title_cn": "ます形",
       "title_en": "Masu form",
-      "rule_cn": "从辞书形做成ます形，方向和辞书形那一节相反。一类把う段改成い段，再加ます。二类去掉る，加上ます。三类是します、きます。",
-      "rule_en": "Build the ます form from the dictionary form, the reverse of the dictionary section. Group I changes the u-row to the i-row and adds ます. Group II drops る and adds ます. Group III is します and きます.",
+      "rule_cn": "从辞书形做成ます形，方向和辞书形那一节相反。五段動詞把う段改成い段，再加ます。一段動詞去掉る，加上ます。不規則動詞是します、きます。",
+      "rule_en": "Build the ます form from the dictionary form, the reverse of the dictionary section. 五段動詞 changes the u-row to the i-row and adds ます. 一段動詞 drops る and adds ます. 不規則動詞 is します and きます.",
       "groups": [
         {
-          "name_cn": "一类",
-          "name_en": "Group I",
+          "name_cn": "五段動詞",
+          "name_en": "五段動詞",
           "rule_cn": "辞书形是う段，ます形是い段。",
           "rule_en": "The dictionary form is the u-row, and the ます form is the i-row.",
           "heads": ["辞書形", "ます"],
@@ -296,8 +296,8 @@
           ]
         },
         {
-          "name_cn": "二类",
-          "name_en": "Group II",
+          "name_cn": "一段動詞",
+          "name_en": "一段動詞",
           "rule_cn": "去掉る，加上ます。",
           "rule_en": "Drop る and add ます.",
           "drill_heads": ["辞書形", "ます形"],
@@ -310,8 +310,8 @@
           ]
         },
         {
-          "name_cn": "三类",
-          "name_en": "Group III",
+          "name_cn": "不規則動詞",
+          "name_en": "不規則動詞",
           "rule_cn": "する → します，くる → きます。",
           "rule_en": "する becomes します, and くる becomes きます.",
           "drill_heads": ["辞書形", "ます形"],
@@ -327,12 +327,12 @@
       "title_jp": "ない形のつくりかた",
       "title_cn": "ない形",
       "title_en": "Nai form",
-      "rule_cn": "表示「不做」。一类把う段改成あ段，再加ない。う动词的あ段是わ，所以買う是買わない。二类去掉る，加上ない。三类是しない、こない。",
-      "rule_en": "This means “do not”. Group I changes the u-row to the a-row and adds ない. The a-row of an う verb is わ, so 買う becomes 買わない. Group II drops る and adds ない. Group III is しない and こない.",
+      "rule_cn": "表示「不做」。五段動詞把う段改成あ段，再加ない。う动词的あ段是わ，所以買う是買わない。一段動詞去掉る，加上ない。不規則動詞是しない、こない。",
+      "rule_en": "This means “do not”. 五段動詞 changes the u-row to the a-row and adds ない. The a-row of an う verb is わ, so 買う becomes 買わない. 一段動詞 drops る and adds ない. 不規則動詞 is しない and こない.",
       "groups": [
         {
-          "name_cn": "一类",
-          "name_en": "Group I",
+          "name_cn": "五段動詞",
+          "name_en": "五段動詞",
           "rule_cn": "ない形的词尾是あ段。う动词用わ，不要写成あ。",
           "rule_en": "The nai ending is the a-row. U-verbs use わ, not あ.",
           "heads": ["辞書形", "ない"],
@@ -361,8 +361,8 @@
           ]
         },
         {
-          "name_cn": "二类",
-          "name_en": "Group II",
+          "name_cn": "一段動詞",
+          "name_en": "一段動詞",
           "rule_cn": "去掉る，加上ない。",
           "rule_en": "Drop る and add ない.",
           "drill_heads": ["辞書形", "ない形"],
@@ -375,8 +375,8 @@
           ]
         },
         {
-          "name_cn": "三类",
-          "name_en": "Group III",
+          "name_cn": "不規則動詞",
+          "name_en": "不規則動詞",
           "rule_cn": "する → しない，くる → こない。",
           "rule_en": "する becomes しない, and くる becomes こない.",
           "drill_heads": ["辞書形", "ない形"],
@@ -392,12 +392,12 @@
       "title_jp": "た形のつくりかた",
       "title_cn": "た形",
       "title_en": "Ta form",
-      "rule_cn": "表示「做了」。一类的音便和て形相同，只是て换成た、で换成だ。行く仍是いった。二类去掉ます加上た。三类是した、きた。た形后面加ら就是たら。",
-      "rule_en": "This means “did”. Group I uses the same sound changes as the te-form, with て becoming た and で becoming だ. 行く is still いった. Group II drops ます and adds た. Group III is した and きた. Add ら to make たら.",
+      "rule_cn": "表示「做了」。五段動詞的音便和て形相同，只是て换成た、で换成だ。行く仍是いった。一段動詞去掉ます加上た。不規則動詞是した、きた。た形后面加ら就是たら。",
+      "rule_en": "This means “did”. 五段動詞 uses the same sound changes as the te-form, with て becoming た and で becoming だ. 行く is still いった. 一段動詞 drops ます and adds た. 不規則動詞 is した and きた. Add ら to make たら.",
       "groups": [
         {
-          "name_cn": "一类",
-          "name_en": "Group I",
+          "name_cn": "五段動詞",
+          "name_en": "五段動詞",
           "rule_cn": "き→いた，但是行きます→いった。ぎ→いだ。み・び・に→んだ。り・い・ち→った。し→した。",
           "rule_en": "き becomes いた, except 行きます → いった. ぎ becomes いだ. み, び, and に become んだ. り, い, and ち become った. し becomes した.",
           "heads": ["ます词尾", "た形", "例子"],
@@ -423,8 +423,8 @@
           ]
         },
         {
-          "name_cn": "二类",
-          "name_en": "Group II",
+          "name_cn": "一段動詞",
+          "name_en": "一段動詞",
           "rule_cn": "去掉ます，加上た。",
           "rule_en": "Drop ます and add た.",
           "drill_heads": ["ます形", "た形"],
@@ -438,8 +438,8 @@
           ]
         },
         {
-          "name_cn": "三类",
-          "name_en": "Group III",
+          "name_cn": "不規則動詞",
+          "name_en": "不規則動詞",
           "rule_cn": "します → した，きます → きた。",
           "rule_en": "します becomes した, and きます becomes きた.",
           "drill_heads": ["ます形", "た形"],
@@ -455,12 +455,12 @@
       "title_jp": "ば形のつくりかた",
       "title_cn": "ば形",
       "title_en": "Ba form",
-      "rule_cn": "表示「如果做」。一类把う段改成え段，再加ば。二类把る换成れば。三类是すれば、くれば。",
-      "rule_en": "This means “if”. Group I changes the u-row to the e-row and adds ば. Group II replaces る with れば. Group III is すれば and くれば.",
+      "rule_cn": "表示「如果做」。五段動詞把う段改成え段，再加ば。一段動詞把る换成れば。不規則動詞是すれば、くれば。",
+      "rule_en": "This means “if”. 五段動詞 changes the u-row to the e-row and adds ば. 一段動詞 replaces る with れば. 不規則動詞 is すれば and くれば.",
       "groups": [
         {
-          "name_cn": "一类",
-          "name_en": "Group I",
+          "name_cn": "五段動詞",
+          "name_en": "五段動詞",
           "rule_cn": "ば形的词尾是え段＋ば。",
           "rule_en": "The ba ending is the e-row plus ば.",
           "heads": ["辞書形", "ば"],
@@ -489,8 +489,8 @@
           ]
         },
         {
-          "name_cn": "二类",
-          "name_en": "Group II",
+          "name_cn": "一段動詞",
+          "name_en": "一段動詞",
           "rule_cn": "る → れば。",
           "rule_en": "Replace る with れば.",
           "drill_heads": ["辞書形", "ば形"],
@@ -503,8 +503,8 @@
           ]
         },
         {
-          "name_cn": "三类",
-          "name_en": "Group III",
+          "name_cn": "不規則動詞",
+          "name_en": "不規則動詞",
           "rule_cn": "する → すれば，くる → くれば。",
           "rule_en": "する becomes すれば, and くる becomes くれば.",
           "drill_heads": ["辞書形", "ば形"],
@@ -520,12 +520,12 @@
       "title_jp": "命令形のつくりかた",
       "title_cn": "命令形",
       "title_en": "Imperative",
-      "rule_cn": "这是简体命令，口气硬。一类把う段改成え段，不加る。二类把る换成ろ。三类是しろ、こい。",
-      "rule_en": "This is the plain command, and it sounds blunt. Group I changes the u-row to the e-row and does not add る. Group II replaces る with ろ. Group III is しろ and こい.",
+      "rule_cn": "这是简体命令，口气硬。五段動詞把う段改成え段，不加る。一段動詞把る换成ろ。不規則動詞是しろ、こい。",
+      "rule_en": "This is the plain command, and it sounds blunt. 五段動詞 changes the u-row to the e-row and does not add る. 一段動詞 replaces る with ろ. 不規則動詞 is しろ and こい.",
       "groups": [
         {
-          "name_cn": "一类",
-          "name_en": "Group I",
+          "name_cn": "五段動詞",
+          "name_en": "五段動詞",
           "rule_cn": "命令形的词尾是え段。",
           "rule_en": "The imperative ending is the e-row.",
           "heads": ["辞書形", "命令"],
@@ -554,8 +554,8 @@
           ]
         },
         {
-          "name_cn": "二类",
-          "name_en": "Group II",
+          "name_cn": "一段動詞",
+          "name_en": "一段動詞",
           "rule_cn": "る → ろ。文章里也可以写成よ，表里只记ろ。",
           "rule_en": "Replace る with ろ. Written Japanese can also use よ. The chart keeps ろ.",
           "drill_heads": ["辞書形", "命令形"],
@@ -568,8 +568,8 @@
           ]
         },
         {
-          "name_cn": "三类",
-          "name_en": "Group III",
+          "name_cn": "不規則動詞",
+          "name_en": "不規則動詞",
           "rule_cn": "する → しろ。文章里的せよ不列入。くる → こい。",
           "rule_en": "する becomes しろ. The written せよ is not in the chart. くる becomes こい.",
           "drill_heads": ["辞書形", "命令形"],
@@ -585,12 +585,12 @@
       "title_jp": "受身形のつくりかた",
       "title_cn": "受身形",
       "title_en": "Passive",
-      "rule_cn": "表示「被做」。一类把う段改成あ段，再加れる。二类把る换成られる，样子和可能形一样。三类「する」是される，「来る」是こられる。",
-      "rule_en": "This means “be done”. Group I changes the u-row to the a-row and adds れる. Group II replaces る with られる, the same shape as the potential. Group III is される and こられる.",
+      "rule_cn": "表示「被做」。五段動詞把う段改成あ段，再加れる。一段動詞把る换成られる，样子和可能形一样。不規則動詞「する」是される，「来る」是こられる。",
+      "rule_en": "This means “be done”. 五段動詞 changes the u-row to the a-row and adds れる. 一段動詞 replaces る with られる, the same shape as the potential. 不規則動詞 is される and こられる.",
       "groups": [
         {
-          "name_cn": "一类",
-          "name_en": "Group I",
+          "name_cn": "五段動詞",
+          "name_en": "五段動詞",
           "rule_cn": "受身形的词尾是あ段＋れる。う动词用わ。す动词是される。",
           "rule_en": "The passive ending is the a-row plus れる. U-verbs use わ. A す verb becomes される.",
           "heads": ["辞書形", "受身"],
@@ -619,8 +619,8 @@
           ]
         },
         {
-          "name_cn": "二类",
-          "name_en": "Group II",
+          "name_cn": "一段動詞",
+          "name_en": "一段動詞",
           "rule_cn": "る → られる。和可能形的样子相同。",
           "rule_en": "Replace る with られる. This is the same shape as the potential.",
           "drill_heads": ["辞書形", "受身形"],
@@ -633,8 +633,8 @@
           ]
         },
         {
-          "name_cn": "三类",
-          "name_en": "Group III",
+          "name_cn": "不規則動詞",
+          "name_en": "不規則動詞",
           "rule_cn": "する → される。这是受身，可能形仍是できる。くる → こられる，和可能形相同。",
           "rule_en": "する becomes される. That is the passive; the potential stays できる. くる becomes こられる, the same as its potential.",
           "drill_heads": ["辞書形", "受身形"],
@@ -650,12 +650,12 @@
       "title_jp": "使役形のつくりかた",
       "title_cn": "使役形",
       "title_en": "Causative",
-      "rule_cn": "表示「让别人做」。一类把う段改成あ段，再加せる。二类把る换成させる。三类是させる、こさせる。",
-      "rule_en": "This means “make or let someone do”. Group I changes the u-row to the a-row and adds せる. Group II replaces る with させる. Group III is させる and こさせる.",
+      "rule_cn": "表示「让别人做」。五段動詞把う段改成あ段，再加せる。一段動詞把る换成させる。不規則動詞是させる、こさせる。",
+      "rule_en": "This means “make or let someone do”. 五段動詞 changes the u-row to the a-row and adds せる. 一段動詞 replaces る with させる. 不規則動詞 is させる and こさせる.",
       "groups": [
         {
-          "name_cn": "一类",
-          "name_en": "Group I",
+          "name_cn": "五段動詞",
+          "name_en": "五段動詞",
           "rule_cn": "使役形的词尾是あ段＋せる。す动词是させる，不是ささせる。口语里还有更短的五段使役，比如書かす，表里只写せる。",
           "rule_en": "The causative ending is the a-row plus せる. A す verb becomes させる, not ささせる. Spoken Japanese also has a shorter godan causative such as 書かす. The chart keeps せる.",
           "heads": ["辞書形", "使役"],
@@ -684,8 +684,8 @@
           ]
         },
         {
-          "name_cn": "二类",
-          "name_en": "Group II",
+          "name_cn": "一段動詞",
+          "name_en": "一段動詞",
           "rule_cn": "る → させる。",
           "rule_en": "Replace る with させる.",
           "drill_heads": ["辞書形", "使役形"],
@@ -698,8 +698,8 @@
           ]
         },
         {
-          "name_cn": "三类",
-          "name_en": "Group III",
+          "name_cn": "不規則動詞",
+          "name_en": "不規則動詞",
           "rule_cn": "する → させる，くる → こさせる。",
           "rule_en": "する becomes させる, and くる becomes こさせる.",
           "drill_heads": ["辞書形", "使役形"],
@@ -712,16 +712,16 @@
     }
   ],
   "examples": {
-    "title_cn": "一类、二类、三类的动词示例",
-    "title_en": "Group I, II, and III examples",
-    "note_cn": "这些词来自意向形练习。帰る、作る、登る虽然以る结尾，但是一类。行く的て形是行って。名词＋する 仍然是三类，可能形用「できる」。每组表格下面，用同一套规则列出这批词的ない形、た形、ば形、命令形、受身形和使役形。二类的可能形和受身形都是られる。",
-    "note_en": "These verbs are from the volitional worksheet. 帰る, 作る, and 登る end in る but are Group I. The te-form of 行く is 行って. A noun plus する stays Group III, and its potential uses できる. Under each table, the same rules fill in ない, た, ば, imperative, passive, and causative. Group II potential and passive are both られる.",
+    "title_cn": "五段動詞、一段動詞、不規則動詞的例子",
+    "title_en": "Examples for 五段動詞, 一段動詞, and 不規則動詞",
+    "note_cn": "这些词来自意向形练习。帰る、作る、登る虽然以る结尾，但是五段動詞。行く的て形是行って。名词＋する 仍然是不規則動詞，可能形用「できる」。每组表格下面，用同一套规则列出这批词的ない形、た形、ば形、命令形、受身形和使役形。一段動詞的可能形和受身形都是られる。",
+    "note_en": "These verbs are from the volitional worksheet. 帰る, 作る, and 登る end in る but are 五段動詞. The te-form of 行く is 行って. A noun plus する stays 不規則動詞, and its potential uses できる. Under each table, the same rules fill in ない, た, ば, imperative, passive, and causative. 一段動詞 potential and passive are both られる.",
     "heads_cn": ["辞书形", "读音", "ます形", "て形", "可能形", "意向形"],
     "heads_en": ["Dictionary", "Reading", "ます", "て", "Potential", "Volitional"],
     "groups": [
       {
-        "name_cn": "一类",
-        "name_en": "Group I",
+        "name_cn": "五段動詞",
+        "name_en": "五段動詞",
         "rows": [
           ["買う", "かう", "かいます", "かって", "かえる", "買おう"],
           ["習う", "ならう", "ならいます", "ならって", "ならえる", "習おう"],
@@ -741,8 +741,8 @@
         ]
       },
       {
-        "name_cn": "二类",
-        "name_en": "Group II",
+        "name_cn": "一段動詞",
+        "name_en": "一段動詞",
         "rows": [
           ["食べる", "たべる", "たべます", "たべて", "たべられる", "食べよう"],
           ["受ける", "うける", "うけます", "うけて", "うけられる", "受けよう"],
@@ -756,8 +756,8 @@
         ]
       },
       {
-        "name_cn": "三类",
-        "name_en": "Group III",
+        "name_cn": "不規則動詞",
+        "name_en": "不規則動詞",
         "rows": [
           ["する", "する", "します", "して", "できる", "しよう"],
           ["発表する", "はっぴょうする", "発表します", "発表して", "発表できる", "発表しよう"],

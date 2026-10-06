@@ -24,7 +24,7 @@ describe("verb form summary", () => {
 		expect(byId.causative.groups[0].rows).toContainEqual(["はなす", "はなさせる（さ）"]);
 		expect(byId.causative.groups[0].rows.some((row) => row[1].includes("ささせ"))).toBe(false);
 		const examples = summary.examples.groups;
-		expect(examples.map((group) => group.name_cn)).toEqual(["一类", "二类", "三类"]);
+		expect(examples.map((group) => group.name_cn)).toEqual(["五段動詞", "一段動詞", "不規則動詞"]);
 		expect(examples[0].rows.find((row) => row[0] === "行く")).toEqual(["行く", "いく", "いきます", "いって", "いける", "行こう"]);
 		expect(examples[0].rows.find((row) => row[0] === "帰る")?.[5]).toBe("帰ろう");
 		expect(examples[1].rows.find((row) => row[0] === "食べる")?.[5]).toBe("食べよう");
@@ -41,6 +41,9 @@ describe("verb form summary", () => {
 	it("renders the four forms and an example from each group", () => {
 		render(<VerbSummaryPage />);
 		expect(screen.getByText("辞書形のつくりかた")).toBeInTheDocument();
+		expect(screen.getAllByText("ごだん").length).toBeGreaterThan(0);
+		expect(screen.getAllByText("いちだん").length).toBeGreaterThan(0);
+		expect(screen.getAllByText("ふきそく").length).toBeGreaterThan(0);
 		expect(screen.getByText("意向形のつくりかた")).toBeInTheDocument();
 		expect(screen.getByText("可能形のつくりかた")).toBeInTheDocument();
 		expect(screen.getByText("て形のつくりかた")).toBeInTheDocument();

@@ -518,7 +518,7 @@ export function KatsuyouPage({ data }: { data: any }) {
 
 export function HenkeiPage({ data }: { data: any }) {
 	const HK = data?.henkei;
-	if (!HK) return <div className="empty">{lx("变形数据还没加载完，请稍后重试。", "Verb-form data is still loading.")}</div>;
+	if (!HK) return <div className="empty">{lx("变形口诀还没加载完，请稍后重试。", "Verb mnemonic data is still loading.")}</div>;
 	return (
 		<>
 			{HK.intro ? (
@@ -580,7 +580,7 @@ export function KougoPage({ data }: { data: any }) {
 				<div className="note" style={{ marginBottom: 12 }}>
 					<span>{lx(KG.seeAlso, KG.seeAlso_en)}</span>{" "}
 					<button type="button" className="side-item" style={{ display: "inline-flex", width: "auto", padding: "4px 10px", marginLeft: 6 }} onClick={() => navTo("#/henkei")}>
-						✍️ {lx("变形", "Verb forms")}
+						✍️ {lx("变形口诀", "Verb mnemonics")}
 					</button>
 				</div>
 			) : null}

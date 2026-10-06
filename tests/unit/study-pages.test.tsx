@@ -255,7 +255,7 @@ describe("SearchPage", () => {
 describe("HenkeiPage", () => {
 	it("does not crash when verb-form data is missing", () => {
 		expect(() => render(<HenkeiPage data={{}} />)).not.toThrow();
-		expect(screen.getByText(/变形数据还没加载完|Verb-form data/)).toBeInTheDocument();
+		expect(screen.getByText(/变形口诀还没加载完|Verb mnemonic data/)).toBeInTheDocument();
 	});
 
 	it("renders sound-change rules", () => {

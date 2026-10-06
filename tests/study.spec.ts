@@ -323,13 +323,13 @@ test.describe("study navigation", () => {
 		await openStudyNav(page, "ref");
 		await expect(page.locator("#title")).toContainText(/接续|Connection/);
 
-		const henkei = page.locator("#side .side-item", { hasText: /变形|Verb forms/ }).filter({ hasNotText: /总结|summary/i });
+		const henkei = page.locator("#side .side-item", { hasText: /变形口诀|Verb mnemonics/ });
 		if (await henkei.isVisible()) await henkei.click();
 		else {
 			await page.locator('.bottom button[data-nav="common"]').click();
-			await page.getByRole("button", { name: /变形|Verb forms/ }).filter({ hasNotText: /总结|summary/i }).click();
+			await page.getByRole("button", { name: /变形口诀|Verb mnemonics/ }).click();
 		}
-		await expect(page.locator("#title")).toContainText(/変形|Verb Conjugation|变形|音便/);
+		await expect(page.locator("#title")).toContainText(/变形口诀|Verb mnemonics/);
 		await expect(page.getByRole("heading", { name: "五段動詞のテ形・タ形（音便）" })).toBeVisible();
 		await expect(page.getByText(/Oops|unexpected error/i)).toHaveCount(0);
 	});
@@ -343,6 +343,9 @@ test.describe("study navigation", () => {
 			await page.getByRole("button", { name: /变形总结|Verb summary/ }).click();
 		}
 		await expect(page.locator("#title")).toContainText(/动词变形总结|Verb form summary/);
+		await expect(page.locator(".verb-sum-group rt", { hasText: "ごだん" }).first()).toBeVisible();
+		await expect(page.locator(".verb-sum-group rt", { hasText: "いちだん" }).first()).toBeVisible();
+		await expect(page.locator(".verb-sum-group rt", { hasText: "ふきそく" }).first()).toBeVisible();
 		await expect(page.getByRole("heading", { name: /辞書形のつくりかた/ })).toBeVisible();
 		await expect(page.getByRole("heading", { name: /て形のつくりかた/ })).toBeVisible();
 		await page.getByRole("button", { name: "ない形" }).click();
