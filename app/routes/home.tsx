@@ -9,7 +9,7 @@ export function meta({}: Route.MetaArgs) {
 	];
 }
 
-const STUDY_CSS = "/study.css?v=2026-10-04-v9";
+const STUDY_CSS = "/study.css?v=2026-10-06-verb-summary";
 
 export const links: Route.LinksFunction = () => [
 	{ rel: "stylesheet", href: STUDY_CSS },

@@ -323,15 +323,36 @@ test.describe("study navigation", () => {
 		await openStudyNav(page, "ref");
 		await expect(page.locator("#title")).toContainText(/接续|Connection/);
 
-		const henkei = page.locator("#side .side-item", { hasText: /变形|Verb forms/ });
+		const henkei = page.locator("#side .side-item", { hasText: /变形|Verb forms/ }).filter({ hasNotText: /总结|summary/i });
 		if (await henkei.isVisible()) await henkei.click();
 		else {
 			await page.locator('.bottom button[data-nav="common"]').click();
-			await page.getByRole("button", { name: /变形|Verb forms/ }).click();
+			await page.getByRole("button", { name: /变形|Verb forms/ }).filter({ hasNotText: /总结|summary/i }).click();
 		}
 		await expect(page.locator("#title")).toContainText(/変形|Verb Conjugation|变形|音便/);
 		await expect(page.getByRole("heading", { name: "五段動詞のテ形・タ形（音便）" })).toBeVisible();
 		await expect(page.getByText(/Oops|unexpected error/i)).toHaveCount(0);
+	});
+
+	test("opens the classroom verb-form summary", async ({ page }) => {
+		await waitForStudy(page);
+		const side = page.locator("#side .side-item", { hasText: /变形总结|Verb summary/ });
+		if (await side.isVisible()) await side.click();
+		else {
+			await page.locator('.bottom button[data-nav="common"]').click();
+			await page.getByRole("button", { name: /变形总结|Verb summary/ }).click();
+		}
+		await expect(page.locator("#title")).toContainText(/动词变形总结|Verb form summary/);
+		await expect(page.getByRole("heading", { name: /辞書形のつくりかた/ })).toBeVisible();
+		await expect(page.getByRole("heading", { name: /て形のつくりかた/ })).toBeVisible();
+		await page.getByRole("button", { name: /动词示例|Examples/ }).click();
+		await expect(page.getByText("買おう")).toBeVisible();
+		await expect(page.getByText("食べよう")).toBeVisible();
+		await expect(page.getByText("連れてこよう")).toBeVisible();
+		await expect(page.getByText("いって").first()).toBeVisible();
+		expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(
+			await page.evaluate(() => document.documentElement.clientWidth),
+		);
 	});
 
 	test("keeps mistake filters aligned at desktop and mobile widths", async ({ page }, testInfo) => {
