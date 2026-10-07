@@ -1,7 +1,6 @@
 import { Fragment, Suspense, lazy, useEffect, useReducer, useRef, useState, useSyncExternalStore, type ReactNode } from "react";
 
 import { JITA_TEARU_EXAMPLES } from "../data/common-jita-tearu";
-import { getReviewVersion, reviewCount, subscribeReview } from "../study/daily-review";
 import { dueEntry, getDueVersion, grammarDueId, rememberFail, rememberPass, subscribeDue } from "../study/due-review";
 import { CardsScopeFilter } from "../study/memory-cards";
 import {
@@ -1465,8 +1464,6 @@ function dayPreviewItems(day: any): string[] {
 export function HomePage({ data }: { data: { weeks: any[]; intro: string; lang: string; scale?: "week" | "chapter" } }) {
 	const [, bump] = useReducer((n: number) => n + 1, 0);
 	const [jumpTo, setJumpTo] = useState<number | null>(null);
-	useSyncExternalStore(subscribeDue, getDueVersion, () => 0);
-	useSyncExternalStore(subscribeReview, getReviewVersion, () => 0);
 
 	// legacy は render() の最後で必ず updateStickyVars() していた。--hometoph は
 	// .home-top を実測して決まるので、React では commit 後でないと測れない。
@@ -1478,7 +1475,6 @@ export function HomePage({ data }: { data: { weeks: any[]; intro: string; lang: 
 	});
 
 	const open = openWeekSet();
-	const dueN = reviewCount();
 	const lx = (cn?: string, en?: string) => (data.lang === "en" && en ? en : cn || "");
 	const isEnglish = data.lang === "en";
 	const isChapter = data.scale === "chapter";
@@ -1495,17 +1491,6 @@ export function HomePage({ data }: { data: { weeks: any[]; intro: string; lang: 
 	return (
 		<>
 			<div className="home-top">
-				<button type="button" className="due-banner" onClick={() => navTo("#/due")}>
-					<span className="due-banner__text">
-						<b>{lx("今天要复习", "Due today")}</b>
-						<span>
-							{dueN
-								? lx(`抽出 ${dueN} 项`, `${dueN} picked`)
-								: lx("打开语法课后，从看过的句型和错题里抽出", "Opened grammar and mistakes are sampled by weight")}
-						</span>
-					</span>
-					<span className="due-banner__count">{dueN}</span>
-				</button>
 				<div className="meta" style={{ marginBottom: "10px" }}>
 					{data.intro}
 				</div>

@@ -76,8 +76,8 @@ function TopicList() {
 		<div className="review-wrap topic-wrap">
 			<p className="review-lead">
 				{lx(
-					"按领域背单词和常用表达。标「不会」的词明天出现在「今天要复习」；标「会了」的词之后按 3、7、14、30 天的间隔再确认。",
-					"Study words and phrases by field. Cards marked “Don't know” come back tomorrow in Due today; cards marked “Got it” return after 3, 7, 14, and 30 days.",
+					"按领域背单词和常用表达。标「不会」的词明天出现在专题里的「今天要复习」筛选；标「会了」的词之后按 3、7、14、30 天的间隔再确认。",
+					"Study words and phrases by field. Cards marked “Don't know” come back tomorrow under the topic’s Due today filter; cards marked “Got it” return after 3, 7, 14, and 30 days.",
 				)}
 			</p>
 			<div className="review-list">

@@ -637,67 +637,6 @@ test.describe("study navigation", () => {
 		expect(columns).toBe(narrow ? 1 : 2);
 	});
 
-	test("shows the daily review banner on the catalog", async ({ page }) => {
-		await waitForStudy(page);
-		const banner = page.locator(".due-banner");
-		await expect(banner).toContainText("今天要复习");
-		await expect(banner).toContainText("打开语法课后，从看过的句型和错题里抽出");
-		await banner.click();
-		await expect(page.locator("#title")).toContainText("今天要复习");
-		await expect(page.getByText("今天没有要复习的内容")).toBeVisible();
-	});
-
-	test("samples grammar opened today on the review page", async ({ page }) => {
-		await waitForStudy(page);
-		await page.locator(".day-item").first().click();
-		await expect(page.locator(".point").first()).toBeVisible({ timeout: 15_000 });
-		const patterns = await page.evaluate(() => {
-			const hits = JSON.parse(localStorage.getItem("jl-grammar-visits-v1") || "[]") as { jp: string }[];
-			return hits.map((hit) => hit.jp);
-		});
-		expect(patterns.length).toBeGreaterThan(0);
-		await page.goto("/study/due");
-		await expect(page.getByText(/今天看过的语法和做错的题/)).toBeVisible();
-		const shown = (await page.locator(".fcard .big").innerText()).trim();
-		expect(patterns).toContain(shown);
-	});
-
-	test("samples yesterday's opened grammar on the review page", async ({ page }) => {
-		await waitForStudy(page);
-		await page.locator(".day-item").first().click();
-		await expect(page.locator(".point").first()).toBeVisible({ timeout: 15_000 });
-		const patterns = await page.evaluate(() => {
-			const today = new Intl.DateTimeFormat("en-CA", {
-				timeZone: "Asia/Tokyo",
-				year: "numeric",
-				month: "2-digit",
-				day: "2-digit",
-			}).format(new Date());
-			const [year, month, day] = today.split("-").map(Number);
-			const yesterday = new Date(Date.UTC(year, month - 1, day - 1)).toISOString().slice(0, 10);
-			const key = "jl-grammar-visits-v1";
-			const hits = JSON.parse(localStorage.getItem(key) || "[]") as { date: string; jp: string }[];
-			if (!hits.length) return [];
-			for (const hit of hits) hit.date = yesterday;
-			localStorage.setItem(key, JSON.stringify(hits));
-			return hits.map((hit) => hit.jp);
-		});
-		expect(patterns.length).toBeGreaterThan(0);
-		await page.goto("/study/due");
-		await expect(page.getByText(/昨天看过的语法和做错的题/)).toBeVisible();
-		const front = page.locator(".fcard .big");
-		await expect(front).toBeVisible();
-		const shown = (await front.innerText()).trim();
-		expect(patterns).toContain(shown);
-		await page.getByText("先回忆意思，点击翻面").click();
-		await page.getByRole("button", { name: "已经记住" }).click();
-		if (await page.locator(".fcard .big").count()) {
-			await expect(page.locator(".fcard .big")).not.toHaveText(shown);
-		} else {
-			await expect(page.getByText("今天抽出的复习做完了")).toBeVisible();
-		}
-	});
-
 	test("opens the spoken-contraction reference", async ({ page }) => {
 		await waitForStudy(page);
 		const side = page.locator("#side .side-item", { hasText: /口语|Casual/ });

@@ -1,24 +1,18 @@
-import { render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import { isDueReviewPayload } from "../../app/auth/study-payloads";
 import {
-	addIsoDays,
 	dueEntries,
 	dueEntry,
 	dueToday,
 	grammarDueId,
 	mergeDueEntries,
 	mistakeDueId,
-	noteDueSignedOut,
 	rememberFail,
 	rememberPass,
 	scheduleAfterPass,
 	type DueEntry,
 } from "../../app/study/due-review";
-import { DuePage } from "../../app/study/DuePage";
-import { jstToday } from "../../app/study/lesson-review";
 import { addMistake, bootAccount, deleteMistake, mistakesPayload, resetStudyStateForTests, setAccountStateForTests } from "../../app/study/store";
 
 function card(id: string, ts: number, extra: Partial<DueEntry> = {}): DueEntry {
@@ -151,30 +145,5 @@ describe("due review sync", () => {
 		await bootAccount();
 		expect(dueEntries().map((item) => item.id)).toEqual(["grammar:cloud"]);
 		expect(puts.some((body) => body.includes("旧账号"))).toBe(false);
-	});
-});
-
-describe("DuePage", () => {
-	it("explains an empty day", async () => {
-		noteDueSignedOut();
-		render(<DuePage />);
-		expect(await screen.findByText("今天没有要复习的内容")).toBeInTheDocument();
-	});
-
-	it("grades the snapshotted card and reschedules it", async () => {
-		const user = userEvent.setup();
-		noteDueSignedOut();
-		rememberFail(
-			{ id: "a", kind: "grammar", jp: "ばかり", cn: "刚做完", en: "just", reading: "ばかり" },
-			addIsoDays(jstToday(), -1),
-		);
-		render(<DuePage />);
-		expect(await screen.findByText("语法")).toBeInTheDocument();
-		expect(screen.getByText("ばかり")).toBeInTheDocument();
-		await user.click(screen.getByText("先回忆意思，点击翻面"));
-		expect(screen.getByText("刚做完")).toBeInTheDocument();
-		await user.click(screen.getByRole("button", { name: "已经记住" }));
-		expect(dueEntry("a")).toMatchObject({ step: 1, due: addIsoDays(jstToday(), 1) });
-		expect(screen.getByText("今天抽出的复习做完了")).toBeInTheDocument();
 	});
 });
