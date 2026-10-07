@@ -436,15 +436,6 @@ describe("JitaPage", () => {
 });
 
 describe("HomePage and CardsPage", () => {
-	it("opens today's review from the home banner", async () => {
-		const user = userEvent.setup();
-		const seen: string[] = [];
-		setNavImpl((key) => seen.push(key));
-		render(<HomePage data={{ weeks: G.weeks, intro: "目录", lang: "cn", scale: "week" }} />);
-		await user.click(screen.getByRole("button", { name: /今天要复习/ }));
-		expect(seen).toContain("#/due");
-	});
-
 	it("opens a week and navigates to a day", async () => {
 		const user = userEvent.setup();
 		const seen: string[] = [];

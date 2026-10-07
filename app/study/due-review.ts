@@ -56,10 +56,6 @@ export function getDueVersion() {
 	return version;
 }
 
-export function isDueReady() {
-	return ready;
-}
-
 function emitDue() {
 	version += 1;
 	listeners.forEach((fn) => fn());
