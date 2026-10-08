@@ -73,6 +73,8 @@ npm run dev
 
 自己在错题本里手打的单词 / 语法（`type=word|grammar`）**不会**调用 Gemini 或 Workers AI。背诵页显示「翻译中…」，由助手写好译文后写入 KV。
 
+本项目不调用任何模型（Gemini API 和 Cloudflare Workers AI 额度只给 news-learning 阅读项目用）。`/api/mistake-translations` 和 `/api/mistake-study` 只读 KV 缓存；题目译文来自课本数据。
+
 线上 Worker 可配置 webhook（可选）：用户新加手动笔记时 POST 通知，方便触发一次助手翻译。未配置则跳过，不影响保存。
 
 ```bash
