@@ -11,10 +11,6 @@ GOOGLE_CLIENT_SECRET=
 # Long random string used to sign session cookies:
 #   openssl rand -hex 32
 SESSION_SECRET=
-# Gemini API key — do NOT use for 错题本 manual notes (assistant CLI only).
-# Optional leftover for other paths; prefer leaving empty.
-GEMINI_API_KEY=
-
 # Optional: notify when the learner adds a manual 错题本 note (word/grammar).
 # When unset, the worker skips the webhook (saving still succeeds).
 # MISTAKE_NOTIFY_WEBHOOK_URL=https://example.com/hooks/mistake-manual

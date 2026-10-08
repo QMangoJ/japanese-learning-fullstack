@@ -2,10 +2,10 @@
  * Pre-fill the 错题本 recitation caches in MISTAKES_KV for saved notes:
  *   - "mistake-cn:v1:*"    Chinese meaning (same prompt as /api/mistake-translations)
  *   - "mistake-study:v1:*" reading / meaning / example for self-typed word & grammar notes (--study)
- * Uses the same provider chain as the Worker: Gemini (GEMINI_API_KEY), the lite model, then
- * Workers AI over the REST API (CLOUDFLARE_API_TOKEN + CLOUDFLARE_ACCOUNT_ID).
+ * Uses the same provider as the Worker: Workers AI over the REST API
+ * (CLOUDFLARE_API_TOKEN + CLOUDFLARE_ACCOUNT_ID). No Gemini: that key is only for news-learning articles.
  *
- *   CLOUDFLARE_ACCOUNT_ID=... [GEMINI_API_KEY=...] \
+ *   CLOUDFLARE_API_TOKEN=... CLOUDFLARE_ACCOUNT_ID=... \
  *     node --experimental-strip-types scripts/backfill-mistake-translations.mts [--user g_123] [--study] [--write]
  *
  * Without --write it only prints what would be cached.
@@ -31,7 +31,6 @@ const study = args.includes("--study");
 const userIndex = args.indexOf("--user");
 const onlyUser = userIndex >= 0 ? args[userIndex + 1] : "";
 
-const apiKey = process.env.GEMINI_API_KEY || undefined;
 const token = process.env.CLOUDFLARE_API_TOKEN;
 const account = process.env.CLOUDFLARE_ACCOUNT_ID;
 const ai: AiRunner | null =
@@ -49,7 +48,7 @@ const ai: AiRunner | null =
 				},
 			}
 		: null;
-if (!apiKey && !ai) throw new Error("Set GEMINI_API_KEY or CLOUDFLARE_API_TOKEN + CLOUDFLARE_ACCOUNT_ID");
+if (!ai) throw new Error("Set CLOUDFLARE_API_TOKEN + CLOUDFLARE_ACCOUNT_ID (Workers AI)");
 
 function wrangler(cmd: string[]): string {
 	return execFileSync("npx", ["wrangler", ...cmd, "--namespace-id", NAMESPACE, "--remote"], {
@@ -108,7 +107,7 @@ async function fill<T>(
 	}
 }
 
-const opts = { apiKey, ai, log: (m: string) => console.warn(m) };
+const opts = { ai, log: (m: string) => console.warn(m) };
 await fill("translations", [...sources], translationKey, listKeys("mistake-cn:v1:"), (t) => generateTranslations(t, opts), (v) => v);
 if (study) {
 	await fill("study", [...typed], studyAidKey, listKeys("mistake-study:v1:"), (t) => generateStudyAids(t, opts), (v) => JSON.stringify(v));

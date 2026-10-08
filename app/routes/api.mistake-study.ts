@@ -50,13 +50,13 @@ export async function action({ request, context }: Args) {
 	let retry = false;
 	const allowGenerate = body.generate !== false;
 	const ai = (env.AI as unknown as AiRunner | undefined) ?? null;
-	if (allowGenerate && missing.length && (env.GEMINI_API_KEY || ai)) {
+	if (allowGenerate && missing.length && ai) {
 		const allowed = !isAuthConfigured(env) || Boolean(await getSessionUser(request, env));
 		if (allowed) {
 			const todo = missing.slice(0, MAX_TRANSLATION_GENERATE);
 			const generated = await generateStudyAids(
 				todo.map((i) => texts[i]),
-				{ apiKey: env.GEMINI_API_KEY || undefined, ai },
+				{ ai },
 			);
 			const writes: Promise<void>[] = [];
 			generated.forEach((value, j) => {
