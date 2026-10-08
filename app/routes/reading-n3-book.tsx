@@ -14,6 +14,7 @@ import {
 const readingBooks = { n3: readingN3, n2: readingN2 } as const;
 type ReadingBookKey = keyof typeof readingBooks;
 import { addMistake, isFav, LANG, lx, navTo, registerFavMeta, toggleFav } from "../study/store";
+import { readingWrongNote } from "../study/exam-answers";
 import { CardsLaunch } from "../study/memory-cards";
 import "./reading-n3-book.css";
 
@@ -282,9 +283,7 @@ function QuestionCard({
 								onClick={() => {
 									setPicked(number);
 									if (number !== question.answer) {
-										const pickedText = question.choices[index]?.jp || String(number);
-										const rightText = question.choices[question.answer - 1]?.jp || String(question.answer);
-										addMistake("q", `${question.label} ${question.jp}\n你的答案：${pickedText}\n正确答案：${rightText}`);
+										addMistake("q", readingWrongNote(question, number));
 									}
 								}}
 								aria-pressed={picked === number}

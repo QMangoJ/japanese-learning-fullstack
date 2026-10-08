@@ -1,5 +1,13 @@
 import kanjiReadings from "../data/lesson-review-kanji-readings.json";
 import type { ListeningLesson } from "../data/listening-n3-lesson-types";
+import {
+	N3_KANJI_EXAM_KEYS,
+	answerMapFromKeys,
+	numericExamAnswers,
+	parseCircledAnswers,
+	parseExamAnswerDetails,
+	passageBlankPrompt,
+} from "./exam-answers";
 import { applyKanjiReadings, buildReviewRuby, toHiragana } from "./lesson-review";
 import { getKanjiWordUsage, getReviewedKanjiWordUsage, kanjiWordSurface, type KanjiWord } from "./kanji-word-usage";
 import type { MemoryCardItem } from "./memory-cards";
@@ -322,7 +330,14 @@ export function lookupHeadwordExample(jp: string): ExampleHit | undefined {
 	return exampleFromCorpus(jp, headwordCorpus);
 }
 
-export type MistakeGloss = { cn?: string; en?: string };
+export type MistakeGloss = {
+	cn?: string;
+	en?: string;
+	/** Matched a quiz question itself (not just a headword), so it is the translation of this exact prompt. */
+	question?: boolean;
+	/** The passage sentence for an old passage-blank note that was saved without one. */
+	prompt?: string;
+};
 
 /** Compare a mistake prompt with a textbook headword or question. */
 export function glossKey(text: string): string {
@@ -335,9 +350,15 @@ export function glossKey(text: string): string {
 		.trim();
 }
 
-export function addMistakeGloss(index: Map<string, MistakeGloss>, jp: string, gloss: MistakeGloss) {
+/** A quiz prompt together with its correct answer. Exact even when the prompt is one kanji (用法 / 読み questions). */
+function answerKey(prompt: string, answer: string): string {
+	return `qa:${glossKey(prompt)}\u0000${glossKey(answer)}`;
+}
+
+export function addMistakeGloss(index: Map<string, MistakeGloss>, jp: string, gloss: MistakeGloss, answer?: string) {
 	if (!gloss.cn && !gloss.en) return;
 	const keys = new Set<string>();
+	if (answer && glossKey(jp) && glossKey(answer)) keys.add(answerKey(jp, answer));
 	const whole = glossKey(jp);
 	if (whole.length >= 2) keys.add(whole);
 	for (const part of jp.split(/[／/]/)) {
@@ -347,7 +368,36 @@ export function addMistakeGloss(index: Map<string, MistakeGloss>, jp: string, gl
 	for (const key of keys) if (!index.has(key)) index.set(key, gloss);
 }
 
-export function findMistakeGloss(index: Map<string, MistakeGloss>, jp: string): MistakeGloss | undefined {
+/**
+ * Before passage blanks carried a prompt, their notes held only the two
+ * answers. Key those by (wrong answer, correct answer) so old notes still
+ * find their sentence and translation.
+ */
+function legacyBlankKey(picked: string, answer: string): string {
+	return `blank:${glossKey(picked)}\u0000${glossKey(answer)}`;
+}
+
+function addLegacyBlankGloss(index: Map<string, MistakeGloss>, opts: string[], answer: string, gloss: MistakeGloss) {
+	for (const opt of opts) {
+		const key = legacyBlankKey(String(opt), answer);
+		if (String(opt) !== answer && !index.has(key)) index.set(key, gloss);
+	}
+}
+
+/** The learner's wrong answer, when a note has no prompt line (old passage-blank notes). */
+export function legacyBlankPick(jp: string): string | undefined {
+	const match = jp.match(/^(?:你的答案|Your answer)：\s*(.+)$/);
+	return match ? match[1].trim() : undefined;
+}
+
+export function findMistakeGloss(index: Map<string, MistakeGloss>, jp: string, answer?: string): MistakeGloss | undefined {
+	if (answer) {
+		const exact = index.get(answerKey(jp, answer));
+		if (exact) return exact;
+		const picked = legacyBlankPick(jp);
+		const legacy = picked ? index.get(legacyBlankKey(picked, answer)) : undefined;
+		if (legacy) return legacy;
+	}
 	for (const text of [jp, jp.split("\n")[0] || ""]) {
 		const key = glossKey(text);
 		if (key.length >= 2 && index.has(key)) return index.get(key);
@@ -356,6 +406,19 @@ export function findMistakeGloss(index: Map<string, MistakeGloss>, jp: string): 
 }
 
 const QUESTION_BUCKETS = ["mondai1", "mondai2", "mondai3", "mondai4"] as const;
+const GRAMMAR_EXAM_BUCKETS = ["mondai1", "mondai2", "mondai3"] as const;
+
+type QuizItem = { n?: number; q?: string; opts?: string[] };
+
+function questionGloss(cn?: string, en?: string): MistakeGloss | undefined {
+	return cn || en ? { cn: cn || undefined, en: en || undefined, question: true } : undefined;
+}
+
+function addQuestionGloss(index: Map<string, MistakeGloss>, it: QuizItem, gloss: MistakeGloss | undefined, ans?: number) {
+	if (!gloss || !it.q) return;
+	const answer = ans != null ? it.opts?.[ans - 1] : undefined;
+	addMistakeGloss(index, String(it.q), gloss, answer ? String(answer) : undefined);
+}
 
 /** Index headwords and quiz prompts from one loaded textbook. */
 export function glossIndexFromBook(book: any, index: Map<string, MistakeGloss>) {
@@ -377,15 +440,24 @@ export function glossIndexFromBook(book: any, index: Map<string, MistakeGloss>) 
 					if (ex?.jp) addMistakeGloss(index, String(ex.jp), { cn: ex.cn, en: ex.en });
 				}
 			}
-			const byN = new Map<number, MistakeGloss>();
+			// Quiz prompts also get a prompt+answer key, so a short 用法 prompt still finds its own sentence.
+			const byN = new Map<number, { gloss: MistakeGloss; ans?: number }>();
 			const daily = book.daily_translations?.[`w${week.n}d${day.day}`];
 			for (const item of daily?.items || []) {
-				if (item?.n != null && item.translation) byN.set(item.n, { cn: item.translation });
+				const gloss = questionGloss(item?.translation);
+				if (item?.n != null && gloss) byN.set(item.n, { gloss });
 			}
+			const keyed = day.answers
+				? numericExamAnswers(parseExamAnswerDetails(day.answers))
+				: day.kaisetsu?.length && book === K
+					? answerMapFromKeys(N3_KANJI_EXAM_KEYS[week.n])
+					: {};
 			for (const item of day.kaisetsu || []) {
-				if (item?.n != null && (item.trans || item.trans_en)) byN.set(item.n, { cn: item.trans, en: item.trans_en });
+				const gloss = questionGloss(item?.trans, item?.trans_en);
+				const ans = typeof item?.ans === "number" ? item.ans : keyed[item?.n];
+				if (item?.n != null && gloss) byN.set(item.n, { gloss, ans });
 			}
-			const questions: { n?: number; q?: string }[] = [];
+			const questions: QuizItem[] = [];
 			for (const sec of day.exercises?.sections || []) {
 				for (const it of sec.items || []) if (it?.q) questions.push(it);
 			}
@@ -393,15 +465,67 @@ export function glossIndexFromBook(book: any, index: Map<string, MistakeGloss>) 
 				for (const it of day[bucket]?.items || []) if (it?.q) questions.push(it);
 			}
 			for (const it of questions) {
-				const gloss = it.n != null ? byN.get(it.n) : undefined;
-				if (gloss && it.q) addMistakeGloss(index, String(it.q), gloss);
+				const hit = it.n != null ? byN.get(it.n) : undefined;
+				if (hit) addQuestionGloss(index, it, hit.gloss, hit.ans);
 			}
+			// Grammar weekly tests keep their answers and translations in the separate 別冊 (besatsu).
+			const besatsu = book.besatsu?.[`w${week.n}`];
+			if (besatsu && day.day === 7) {
+				for (const bucket of GRAMMAR_EXAM_BUCKETS) {
+					const answers = new Map<number, any>((besatsu[bucket] || []).map((a: any) => [a?.n, a]));
+					for (const it of day[bucket]?.items || []) {
+						const a = it?.n != null ? answers.get(it.n) : undefined;
+						const gloss = a ? questionGloss(a.trans, a.trans_en) : undefined;
+						if (!gloss) continue;
+						const ans = typeof a.ans === "number" ? a.ans : undefined;
+						if (it.q) {
+							addQuestionGloss(index, it, gloss, ans);
+							continue;
+						}
+						// 問題3 passage blanks: the note's prompt is the sentence holding【n】.
+						const prompt = passageBlankPrompt(day[bucket]?.passage, it.n);
+						if (prompt) addQuestionGloss(index, { ...it, q: prompt }, gloss, ans);
+						const answer = ans != null ? it.opts?.[ans - 1] : undefined;
+						if (prompt && answer) addLegacyBlankGloss(index, it.opts || [], String(answer), { ...gloss, prompt });
+					}
+				}
+			}
+		}
+	}
+	for (const group of book?.contrast?.groups || []) {
+		const answers = parseCircledAnswers(group.quiz?.answers);
+		for (const it of group.quiz?.items || []) {
+			addQuestionGloss(index, it, questionGloss(it?.trans, it?.trans_en), it?.n != null ? answers[it.n] : undefined);
 		}
 	}
 }
 
+/** Reading-book questions, written into the 错题本 as「問1 question」. */
+export function glossIndexFromReadingDays(
+	days: readonly {
+		mondai?: { questions: ReadingQuestion[] };
+		practice?: { groups: { questions: ReadingQuestion[] }[] };
+	}[],
+	index: Map<string, MistakeGloss>,
+) {
+	for (const day of days) {
+		const questions = [...(day.mondai?.questions || []), ...(day.practice?.groups || []).flatMap((g) => g.questions || [])];
+		for (const q of questions) {
+			const gloss = questionGloss(q.cn, q.en);
+			if (!gloss) continue;
+			const answer = q.choices?.[q.answer - 1]?.jp;
+			addMistakeGloss(index, `${q.label} ${q.jp}`, gloss, answer);
+			addMistakeGloss(index, q.jp, gloss, answer);
+		}
+	}
+}
+
+type ReadingQuestion = { label: string; jp: string; cn?: string; en?: string; answer: number; choices?: { jp: string }[] };
+
 let glossIndex: Map<string, MistakeGloss> | null = null;
 let glossToken = "";
+const readingGlossIndex = new Map<string, MistakeGloss>();
+let readingGlossLoad: Promise<void> | null = null;
 
 function kaisetsuCount(book: any): number {
 	let count = 0;
@@ -411,19 +535,51 @@ function kaisetsuCount(book: any): number {
 	return count;
 }
 
+function extraToken(book: any): string {
+	return `${Object.keys(book?.besatsu || {}).length}.${book?.contrast?.groups?.length || 0}`;
+}
+
 const GLOSS_BOOKS = () => [V, V2, V4, V1, K, K2, K4, K1, G, G2, G4, G1];
 
-/** Chinese and English already printed in a loaded textbook for this mistake prompt. */
-export function lookupMistakeGloss(jp: string): MistakeGloss | undefined {
+/** A reading-book question note starts with its printed label: 問1 / 問い / 1. */
+export function looksLikeReadingQuestion(jp: string): boolean {
+	return /^(?:問[0-9０-９]*|問い|[0-9]{1,2})\s/.test(jp);
+}
+
+export function readingGlossesLoaded(): boolean {
+	return readingGlossIndex.size > 0;
+}
+
+/** Load the N3 / N2 reading questions' Chinese into the lookup (they live in a lazy chunk). */
+export function loadReadingGlosses(): Promise<void> {
+	if (!readingGlossLoad) {
+		readingGlossLoad = Promise.all([import("../data/reading-n3"), import("../data/reading-n2")])
+			.then(([n3, n2]) => {
+				glossIndexFromReadingDays(n3.readingDays, readingGlossIndex);
+				glossIndexFromReadingDays(n2.readingDays, readingGlossIndex);
+			})
+			.catch(() => {
+				readingGlossLoad = null;
+			});
+	}
+	return readingGlossLoad;
+}
+
+/** Chinese and English already printed in a textbook for this mistake prompt (and its correct answer). */
+export function lookupMistakeGloss(jp: string, answer?: string): MistakeGloss | undefined {
 	const token = GLOSS_BOOKS()
-		.map((book) => `${bookDataToken(book)}.${kaisetsuCount(book)}`)
+		.map((book) => `${bookDataToken(book)}.${kaisetsuCount(book)}.${extraToken(book)}`)
 		.join("|");
 	if (!glossIndex || glossToken !== token) {
 		glossToken = token;
 		glossIndex = new Map();
 		for (const book of GLOSS_BOOKS()) glossIndexFromBook(book, glossIndex);
 	}
-	return findMistakeGloss(glossIndex, jp);
+	if (looksLikeReadingQuestion(jp)) {
+		const reading = findMistakeGloss(readingGlossIndex, jp, answer);
+		if (reading) return reading;
+	}
+	return findMistakeGloss(glossIndex, jp, answer);
 }
 
 function collectListeningSnippets(lesson: Pick<ListeningLesson, "blocks">): ExampleHit[] {

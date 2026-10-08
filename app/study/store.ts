@@ -165,7 +165,7 @@ export const FAV_MOD_LABEL: Record<string, string> = {
 	selection: "划词收藏",
 };
 
-const DATA_FILES: Record<string, string> = {
+export const DATA_FILES: Record<string, string> = {
 	grammar: "grammar.d15be04258.json",
 	kanji: "kanji.e43232869e.json",
 	vocab: "vocab.856eb48e32.json",
@@ -1564,7 +1564,7 @@ function normalizeN3GrammarOcr(node: any): any {
 	}
 	return node;
 }
-function fixN3GrammarExerciseLayout(g: any) {
+export function fixN3GrammarExerciseLayout(g: any) {
 	normalizeN3GrammarOcr(g);
 	const day = g.weeks?.find((w: any) => w.n === 2)?.days?.find((d: any) => d.day === 4);
 	const item = day?.exercises?.sections.flatMap((section: any) => section.items || []).find((q: any) => q.n === 5);
@@ -1850,6 +1850,24 @@ export function resetStudyStateForTests() {
 	if (typeof document !== "undefined") applyTheme();
 }
 
+type StudyBooks = { G: any; V: any; K: any; G2: any; V2: any; K2: any; G4: any; V4: any; K4: any; G1: any; V1: any; K1: any };
+
+/** Load textbook bundles directly, for tests that need real lookups. */
+export function setStudyBooksForTests(books: Partial<StudyBooks>) {
+	if (books.G) G = DATA.grammar = books.G;
+	if (books.V) V = DATA.vocab = books.V;
+	if (books.K) K = DATA.kanji = books.K;
+	if (books.G2) G2 = DATA.n2grammar = books.G2;
+	if (books.V2) V2 = DATA.n2vocab = books.V2;
+	if (books.K2) K2 = DATA.n2kanji = books.K2;
+	if (books.G4) G4 = DATA.n4grammar = books.G4;
+	if (books.V4) V4 = DATA.n4vocab = books.V4;
+	if (books.K4) K4 = DATA.n4kanji = books.K4;
+	if (books.G1) G1 = DATA.n1grammar = books.G1;
+	if (books.V1) V1 = DATA.n1vocab = books.V1;
+	if (books.K1) K1 = DATA.n1kanji = books.K1;
+}
+
 export function setAccountStateForTests(user: PublicUser | null, configured: boolean, ready = true) {
 	ACCOUNT = user;
 	authConfigured = configured;
@@ -2037,7 +2055,21 @@ async function bootN1() {
 	}
 }
 
-function attachWeekendKaisetsu(book: any, pack: Record<string, any[]>) {
+/** Merge per-question explanations (translations, reasons) into the N3 grammar answer book. */
+export function mergeGrammarExplanations(g: any, explanations: Record<string, any>) {
+	for (const [weekKey, sections] of Object.entries(explanations || {}) as [string, any][]) {
+		const targetWeek = g.besatsu && g.besatsu[weekKey];
+		if (!targetWeek) continue;
+		for (const section of ["mondai1", "mondai2", "mondai3"]) {
+			const enriched = sections && sections[section];
+			if (!Array.isArray(enriched) || !Array.isArray(targetWeek[section])) continue;
+			const byNumber = new Map(enriched.map((item: any) => [item.n, item]));
+			targetWeek[section] = targetWeek[section].map((item: any) => Object.assign({}, item, byNumber.get(item.n) || {}));
+		}
+	}
+}
+
+export function attachWeekendKaisetsu(book: any, pack: Record<string, any[]>) {
 	if (!book?.weeks || !pack) return;
 	for (const week of book.weeks) {
 		const day = (week.days || []).find((entry: any) => entry.day === 7);
@@ -2064,16 +2096,7 @@ export async function bootStudyData() {
 				.catch(() => ({})),
 		]);
 		fixN3GrammarExerciseLayout(g);
-		for (const [weekKey, sections] of Object.entries(grammarExplanations || {}) as [string, any][]) {
-			const targetWeek = g.besatsu && g.besatsu[weekKey];
-			if (!targetWeek) continue;
-			for (const section of ["mondai1", "mondai2", "mondai3"]) {
-				const enriched = sections && sections[section];
-				if (!Array.isArray(enriched) || !Array.isArray(targetWeek[section])) continue;
-				const byNumber = new Map(enriched.map((item: any) => [item.n, item]));
-				targetWeek[section] = targetWeek[section].map((item: any) => Object.assign({}, item, byNumber.get(item.n) || {}));
-			}
-		}
+		mergeGrammarExplanations(g, grammarExplanations);
 		g.daily_explanations = dailyGrammarExplanations || {};
 		v.daily_translations = dailyVocabKanjiTranslations.vocab || {};
 		k.daily_translations = dailyVocabKanjiTranslations.kanji || {};

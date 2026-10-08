@@ -9,7 +9,7 @@ import {
 	mistakeTranslationSource,
 } from "../../app/study/mistakes-memory-cards";
 import { addMistakeGloss, findMistakeGloss, glossIndexFromBook } from "../../app/study/memory-deck";
-import { resetStudyStateForTests, setMistakeStudy } from "../../app/study/store";
+import { resetStudyStateForTests, setMistakeStudy, setStudyBooksForTests } from "../../app/study/store";
 
 beforeEach(() => {
 	localStorage.clear();
@@ -184,5 +184,45 @@ describe("MistakesMemoryCards", () => {
 		expect(document.querySelector(".review-flip-ruby rt")?.textContent).toBeTruthy();
 		expect(screen.getByRole("button", { name: /还没记住|Still learning/ })).toBeInTheDocument();
 		expect(screen.getByRole("button", { name: /已经记住|Got it/ })).toBeInTheDocument();
+	});
+	it("shows a grammar test's textbook translation without asking Gemini", async () => {
+		setStudyBooksForTests({
+			G1: {
+				weeks: [
+					{
+						n: 1,
+						days: [
+							{
+								day: 7,
+								mondai1: { items: [{ n: 1, q: "雨の（　　）、試合は中止になった。", opts: ["せいで", "おかげで"] }] },
+								mondai3: { passage: "朝は晴れていた。昼から雨が【21】。", items: [{ n: 21, opts: ["降り出した", "降りかけた"] }] },
+							},
+						],
+					},
+				],
+				besatsu: {
+					w1: {
+						mondai1: [{ n: 1, ans: 1, trans: "因为下雨，比赛取消了。" }],
+						mondai3: [{ n: 21, ans: 1, trans: "从中午开始下起雨来了。" }],
+					},
+				},
+			},
+		});
+		const fetchMock = vi.fn(async () => new Response(JSON.stringify({ translations: {}, aids: {} }), { status: 200 }));
+		vi.stubGlobal("fetch", fetchMock);
+		const user = userEvent.setup();
+		render(
+			<MistakesMemoryCards
+				list={[
+					{ id: "q1", type: "q", text: "雨の（　　）、試合は中止になった。\n你的答案：おかげで\n正确答案：せいで" },
+					{ id: "q2", type: "q", text: "你的答案：降りかけた\n正确答案：降り出した" },
+				]}
+			/>,
+		);
+		await user.click(screen.getByText("回想读音和意思，点击翻面"));
+		expect(screen.getByText("因为下雨，比赛取消了。")).toBeInTheDocument();
+		expect(fetchMock).not.toHaveBeenCalledWith("/api/mistake-translations", expect.anything());
+		const cards = cardsFromMistakes([{ id: "q2", type: "q", text: "你的答案：降りかけた\n正确答案：降り出した" }]);
+		expect(cards[0]).toMatchObject({ jp: "昼から雨が【21】。", translation: "从中午开始下起雨来了。" });
 	});
 });

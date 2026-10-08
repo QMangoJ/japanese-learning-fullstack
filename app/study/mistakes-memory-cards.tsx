@@ -1,7 +1,16 @@
 import { useEffect, useMemo, useState } from "react";
 
 import { MemoryCards, type MemoryCardItem } from "./memory-cards";
-import { annotateText, kanaFromRuby, lookupHeadwordExample, lookupMistakeGloss } from "./memory-deck";
+import {
+	annotateText,
+	kanaFromRuby,
+	legacyBlankPick,
+	loadReadingGlosses,
+	looksLikeReadingQuestion,
+	lookupHeadwordExample,
+	lookupMistakeGloss,
+	readingGlossesLoaded,
+} from "./memory-deck";
 import {
 	MAX_TRANSLATION_TEXTS,
 	MISTAKE_STUDY_ENDPOINT,
@@ -64,7 +73,11 @@ export function cardsFromMistakes(
 	aids: StudyAidMap = {},
 ): MemoryCardItem[] {
 	return list.map((m) => {
-		const { jp, cn } = mistakeStudyParts(m);
+		const parts = mistakeStudyParts(m);
+		const { cn } = parts;
+		const gloss = lookupMistakeGloss(parts.jp, cn || undefined);
+		// Old passage-blank notes were saved without a prompt; show the passage sentence instead of "你的答案：…".
+		const jp = gloss?.prompt && legacyBlankPick(parts.jp) ? gloss.prompt : parts.jp;
 		const source = mistakeTranslationSource(m);
 		const translation = translations[source];
 		const aid: StudyAid | undefined = aids[source];
@@ -74,8 +87,8 @@ export function cardsFromMistakes(
 		const ruby = annotated(jp, supplied);
 		const cnHtml = cn && /[ぁ-んァ-ン]/.test(cn) && /[一-龯]/.test(cn) ? annotateText(cn) : undefined;
 		const reading = ruby.reading && ruby.reading !== spoken ? ruby.reading : !ruby.html && aid?.reading && aid.reading !== spoken ? aid.reading : undefined;
-		const gloss = lookupMistakeGloss(jp);
-		const meaning = translation || gloss?.cn || aid?.cn || chineseAnswer(cn);
+		// The textbook's own translation of a quiz question beats a generated one; a bare headword match does not.
+		const meaning = (gloss?.question ? gloss.cn : undefined) || translation || gloss?.cn || aid?.cn || chineseAnswer(cn);
 		const card: MemoryCardItem = {
 			id: m.id,
 			jp,
@@ -125,9 +138,39 @@ function saveCache(cache: TranslationMap, keep: string[]) {
 	}
 }
 
+/** The textbook already prints a translation of this exact quiz question. */
+function hasTextbookTranslation(m: { text?: string }): boolean {
+	const { jp, cn } = mistakeStudyParts(m);
+	const gloss = lookupMistakeGloss(jp, cn || undefined);
+	return Boolean(gloss?.question && gloss.cn);
+}
+
+/** Reading-book questions keep their Chinese in a lazy chunk; load it when the notebook has any. */
+export function useReadingGlosses(list: { text?: string }[]) {
+	const needed = useMemo(() => list.some((m) => looksLikeReadingQuestion(mistakeStudyParts(m).jp)), [list]);
+	const [ready, setReady] = useState(() => readingGlossesLoaded());
+	useEffect(() => {
+		if (!needed || ready) return;
+		let cancelled = false;
+		void loadReadingGlosses().then(() => {
+			if (!cancelled) setReady(readingGlossesLoaded());
+		});
+		return () => {
+			cancelled = true;
+		};
+	}, [needed, ready]);
+	return !needed || ready;
+}
+
 /** Chinese translations for the notebook, cached locally and in KV. */
-export function useMistakeTranslations(list: { text?: string }[]) {
-	const sources = useMemo(() => [...new Set(list.map(mistakeTranslationSource).filter(Boolean))], [list]);
+export function useMistakeTranslations(list: { text?: string }[], textbookReady = true) {
+	const sources = useMemo(
+		() =>
+			textbookReady
+				? [...new Set(list.filter((m) => !hasTextbookTranslation(m)).map(mistakeTranslationSource).filter(Boolean))]
+				: [],
+		[list, textbookReady],
+	);
 	const sourceKey = sources.join("\u0000");
 	const [translations, setTranslations] = useState<TranslationMap>(() => loadCache());
 	const [loading, setLoading] = useState(false);
@@ -197,11 +240,12 @@ function saveStudyCache(cache: StudyAidMap, keep: string[]) {
 }
 
 /** Readings and example sentences for notebook cards that the dictionaries do not cover. */
-export function useMistakeStudyAids(list: { text?: string }[]) {
+export function useMistakeStudyAids(list: { text?: string }[], textbookReady = true) {
 	const sources = useMemo(() => {
+		if (!textbookReady) return [];
 		const cache = loadStudyCache();
 		return [...new Set(list.filter((item) => mistakeNeedsStudyAid(item, cache)).map(mistakeTranslationSource).filter(Boolean))];
-	}, [list]);
+	}, [list, textbookReady]);
 	const sourceKey = sources.join("\u0000");
 	const [aids, setAids] = useState<StudyAidMap>(() => loadStudyCache());
 	const [loading, setLoading] = useState(false);
@@ -249,15 +293,16 @@ export function MistakesMemoryCards({
 }: {
 	list: { id: string; type?: string; text?: string }[];
 }) {
-	const { translations, loading } = useMistakeTranslations(list);
-	const { aids, loading: aidsLoading } = useMistakeStudyAids(list);
+	const readingReady = useReadingGlosses(list);
+	const { translations, loading } = useMistakeTranslations(list, readingReady);
+	const { aids, loading: aidsLoading } = useMistakeStudyAids(list, readingReady);
 	const items = cardsFromMistakes(list, translations, aids);
 	return (
 		<MemoryCards
 			deckId={MISTAKE_DECK_ID}
 			storageKey={MISTAKE_MASTERY_KEY}
 			items={items}
-			translationPending={loading || aidsLoading}
+			translationPending={loading || aidsLoading || !readingReady}
 			crumb={
 				<div className="crumb">
 					<button type="button" className="crumb-home" data-mstudy-back="1" onClick={() => setMistakeStudy(false)}>

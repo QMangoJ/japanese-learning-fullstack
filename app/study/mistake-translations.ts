@@ -1,6 +1,7 @@
 /**
- * 错题本背诵的中文翻译。错题是用户自由输入的笔记，没有自带译文，
- * 所以由 /api/mistake-translations 用 Gemini 生成一次后缓存在 KV。
+ * 错题本背诵的中文翻译。做题时答错记下的题目，先按题目原文（加正确答案）
+ * 在课本数据里查现成译文（见 memory-deck.ts 的 lookupMistakeGloss）；
+ * 课本里没有的自由笔记，才由 /api/mistake-translations 用 Gemini 生成一次后缓存在 KV。
  */
 
 export const MISTAKE_TRANSLATION_ENDPOINT = "/api/mistake-translations";
