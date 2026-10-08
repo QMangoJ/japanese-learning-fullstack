@@ -1,7 +1,8 @@
 /**
  * 错题本背诵的中文翻译。做题时答错记下的题目，先按题目原文（加正确答案）
  * 在课本数据里查现成译文（见 memory-deck.ts 的 lookupMistakeGloss）；
- * 课本里没有的自由笔记，才由 /api/mistake-translations 用 Gemini 生成一次后缓存在 KV。
+ * 课本里没有的自由笔记（自己手打的单词/语法），由 /api/mistake-translations 生成一次后缓存在 KV：
+ * 依次尝试 Gemini、Gemini lite、Workers AI，任何一个成功即可。
  */
 
 export const MISTAKE_TRANSLATION_ENDPOINT = "/api/mistake-translations";
@@ -86,55 +87,194 @@ const PROMPT = `你是日语老师。下面是一位中文母语的日语学习�
 
 type Fetcher = typeof fetch;
 
-export async function geminiTranslate(
+/** Gemini models tried in order; the lite model has its own quota. */
+export const FALLBACK_GEMINI_MODEL = "gemini-flash-lite-latest";
+export const GEMINI_MODELS = [DEFAULT_GEMINI_MODEL, FALLBACK_GEMINI_MODEL];
+/** Last resort when Gemini is rate-limited or down (Workers AI binding `AI`). */
+export const WORKERS_AI_MODEL = "@cf/openai/gpt-oss-120b";
+
+/** The subset of the Workers AI binding we use (also satisfied by a REST shim in scripts). */
+export type AiRunner = { run: (model: string, input: Record<string, unknown>) => Promise<unknown> };
+
+export type GenerateOptions = {
+	apiKey?: string;
+	ai?: AiRunner | null;
+	/** Gemini models to try, in order. Defaults to GEMINI_MODELS. */
+	models?: string[];
+	fetchImpl?: Fetcher;
+	log?: (message: string) => void;
+};
+
+type Provider = { name: string; run: (batch: string[]) => Promise<unknown> };
+
+function defaultLog(message: string) {
+	console.warn(`[mistake-ai] ${message}`);
+}
+
+/** Pull the JSON array out of a model reply (tolerates ```json fences and chatter). */
+export function parseJsonArray(raw: unknown): unknown[] | null {
+	if (Array.isArray(raw)) return raw;
+	if (typeof raw !== "string") return null;
+	const text = raw.replace(/```(?:json)?/gi, "").trim();
+	const start = text.indexOf("[");
+	const end = text.lastIndexOf("]");
+	if (start < 0 || end <= start) return null;
+	try {
+		const parsed: unknown = JSON.parse(text.slice(start, end + 1));
+		return Array.isArray(parsed) ? parsed : null;
+	} catch {
+		return null;
+	}
+}
+
+/** Text of a Workers AI reply: chat-completions, Responses API or legacy `{ response }`. */
+export function workersAiText(result: unknown): unknown {
+	if (typeof result === "string" || Array.isArray(result)) return result;
+	if (!result || typeof result !== "object") return null;
+	const r = result as {
+		response?: unknown;
+		choices?: { message?: { content?: unknown } }[];
+		output?: { type?: string; content?: { text?: unknown }[] }[];
+		output_text?: unknown;
+	};
+	if (r.response !== undefined && r.response !== null) return r.response;
+	const content = r.choices?.[0]?.message?.content;
+	if (typeof content === "string") return content;
+	if (typeof r.output_text === "string") return r.output_text;
+	if (Array.isArray(r.output)) {
+		const text = r.output
+			.flatMap((o) => (o.type === "reasoning" ? [] : o.content || []))
+			.map((c) => (typeof c.text === "string" ? c.text : ""))
+			.join("");
+		if (text) return text;
+	}
+	return null;
+}
+
+function providers(prompt: string, schema: unknown, opts: GenerateOptions): Provider[] {
+	const log = opts.log || defaultLog;
+	const fetchImpl = opts.fetchImpl || fetch;
+	const list: Provider[] = [];
+	if (opts.apiKey) {
+		for (const model of opts.models?.length ? opts.models : GEMINI_MODELS) {
+			list.push({
+				name: model,
+				run: async (batch) => {
+					const res = await fetchImpl(
+						`https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent`,
+						{
+							method: "POST",
+							headers: { "content-type": "application/json", "x-goog-api-key": opts.apiKey as string },
+							body: JSON.stringify({
+								contents: [{ role: "user", parts: [{ text: `${prompt}\n\n${JSON.stringify(batch)}` }] }],
+								generationConfig: {
+									temperature: 0.2,
+									responseMimeType: "application/json",
+									responseSchema: schema,
+								},
+							}),
+						},
+					);
+					if (!res.ok) {
+						const detail = await res.text().catch(() => "");
+						log(`gemini ${model} HTTP ${res.status}: ${detail.replace(/\s+/g, " ").slice(0, 200)}`);
+						return null;
+					}
+					const data = (await res.json()) as {
+						candidates?: { content?: { parts?: { text?: string }[] } }[];
+					};
+					return data.candidates?.[0]?.content?.parts?.map((p) => p.text || "").join("") || "";
+				},
+			});
+		}
+	}
+	if (opts.ai) {
+		const ai = opts.ai;
+		list.push({
+			name: WORKERS_AI_MODEL,
+			run: async (batch) =>
+				workersAiText(
+					await ai.run(WORKERS_AI_MODEL, {
+						messages: [
+							{ role: "system", content: `${prompt}\n只输出 JSON 数组本身，不要 Markdown。` },
+							{ role: "user", content: JSON.stringify(batch) },
+						],
+						max_tokens: 6000,
+						temperature: 0.2,
+						reasoning: { effort: "low" },
+					}),
+				),
+		});
+	}
+	return list;
+}
+
+/**
+ * Run each batch through Gemini, then the lite model, then Workers AI. Items a
+ * provider leaves empty (or a provider that errors / is rate-limited) fall
+ * through to the next one, so one exhausted quota no longer means "no
+ * translation". Failures are logged so they show up in Workers Observability.
+ */
+async function generateWithFallback<T>(
+	texts: string[],
+	prompt: string,
+	schema: unknown,
+	normalize: (value: unknown) => T | null,
+	opts: GenerateOptions,
+): Promise<(T | null)[]> {
+	const log = opts.log || defaultLog;
+	const chain = providers(prompt, schema, opts);
+	const out: (T | null)[] = [];
+	for (let i = 0; i < texts.length; i += GEMINI_BATCH) {
+		const batch = texts.slice(i, i + GEMINI_BATCH);
+		const result: (T | null)[] = batch.map(() => null);
+		let remaining = batch.map((_, j) => j);
+		for (const provider of chain) {
+			if (!remaining.length) break;
+			const sub = remaining.map((j) => batch[j]);
+			try {
+				const parsed = parseJsonArray(await provider.run(sub));
+				if (!parsed) continue;
+				if (parsed.length !== sub.length) {
+					log(`${provider.name} returned ${parsed.length} items for ${sub.length}`);
+					continue;
+				}
+				parsed.forEach((value, k) => {
+					result[remaining[k]] = normalize(value);
+				});
+			} catch (error) {
+				log(`${provider.name} failed: ${String((error as Error)?.message || error).slice(0, 200)}`);
+				continue;
+			}
+			remaining = remaining.filter((j) => result[j] === null);
+		}
+		if (remaining.length) log(`${remaining.length}/${batch.length} items left without a result`);
+		out.push(...result);
+	}
+	return out;
+}
+
+export function normalizeTranslation(v: unknown): string | null {
+	if (typeof v === "string" && v.trim()) return v.trim().slice(0, 400);
+	if (v && typeof v === "object" && !Array.isArray(v)) {
+		const record = v as { cn?: unknown; translation?: unknown; meaning?: unknown };
+		const text = [record.cn, record.translation, record.meaning].find((t) => typeof t === "string" && t.trim());
+		if (typeof text === "string") return text.trim().slice(0, 400);
+	}
+	return null;
+}
+
+export function generateTranslations(texts: string[], opts: GenerateOptions): Promise<(string | null)[]> {
+	return generateWithFallback(texts, PROMPT, { type: "ARRAY", items: { type: "STRING" } }, normalizeTranslation, opts);
+}
+
+/** Gemini-only translation (kept for the backfill script and tests). */
+export function geminiTranslate(
 	texts: string[],
 	apiKey: string,
 	{ model = DEFAULT_GEMINI_MODEL, fetchImpl = fetch }: { model?: string; fetchImpl?: Fetcher } = {},
 ): Promise<(string | null)[]> {
-	const out: (string | null)[] = [];
-	for (let i = 0; i < texts.length; i += GEMINI_BATCH) {
-		const batch = texts.slice(i, i + GEMINI_BATCH);
-		let result: (string | null)[] = batch.map(() => null);
-		try {
-			const res = await fetchImpl(
-				`https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent`,
-				{
-					method: "POST",
-					headers: { "content-type": "application/json", "x-goog-api-key": apiKey },
-					body: JSON.stringify({
-						contents: [{ role: "user", parts: [{ text: `${PROMPT}\n\n${JSON.stringify(batch)}` }] }],
-						generationConfig: {
-							temperature: 0.2,
-							responseMimeType: "application/json",
-							responseSchema: { type: "ARRAY", items: { type: "STRING" } },
-						},
-					}),
-				},
-			);
-			if (res.ok) {
-				const data = (await res.json()) as {
-					candidates?: { content?: { parts?: { text?: string }[] } }[];
-				};
-				const raw = data.candidates?.[0]?.content?.parts?.map((p) => p.text || "").join("") || "";
-				const parsed: unknown = JSON.parse(raw);
-				if (Array.isArray(parsed) && parsed.length === batch.length) {
-					result = parsed.map((v) => {
-						if (typeof v === "string" && v.trim()) return v.trim().slice(0, 400);
-						if (v && typeof v === "object" && !Array.isArray(v)) {
-							const record = v as { cn?: unknown; translation?: unknown };
-							const text = typeof record.cn === "string" ? record.cn : record.translation;
-							if (typeof text === "string" && text.trim()) return text.trim().slice(0, 400);
-						}
-						return null;
-					});
-				}
-			}
-		} catch {
-			/* leave this batch untranslated; it is retried next time */
-		}
-		out.push(...result);
-	}
-	return out;
+	return generateTranslations(texts, { apiKey, models: [model], fetchImpl });
 }
 
 const STUDY_PROMPT = `你是日语老师。下面是一位中文母语的学习者在「错题本」里记下的条目（JSON 数组）。
@@ -180,6 +320,30 @@ export function normalizeStudyAid(value: unknown): StudyAid | null {
 	return aid;
 }
 
+function toHiragana(text: string): string {
+	return text.replace(/[\u30a1-\u30f6]/g, (ch) => String.fromCharCode(ch.charCodeAt(0) - 0x60));
+}
+
+/**
+ * A generated reading is only shown for a single headword or phrase it fully
+ * covers: notes listing several words ("曲がる\n回る") or with their own kana
+ * line get a run-together or partial reading from the model, which reads worse
+ * than none. Every kana run of the note must appear, in order, in the reading.
+ */
+export function studyReadingFits(jp: string, reading: string): boolean {
+	const text = jp.trim();
+	if (!text || !reading || /[\s\u3000]/.test(text) || !/[\u4e00-\u9fff々]/.test(text)) return false;
+	if (reading.length > text.length * 4 + 4) return false;
+	const kanaRuns = toHiragana(text).match(/[\u3041-\u3096ー]+/g) || [];
+	let at = 0;
+	for (const run of kanaRuns) {
+		const found = reading.indexOf(run, at);
+		if (found < 0) return false;
+		at = found + run.length;
+	}
+	return true;
+}
+
 export function parseStoredStudyAid(value: string | null): StudyAid | null {
 	if (!value) return null;
 	try {
@@ -195,57 +359,29 @@ export async function studyAidKey(text: string): Promise<string> {
 	return MISTAKE_STUDY_KV_PREFIX + hex;
 }
 
-export async function geminiStudyAids(
+const STUDY_SCHEMA = {
+	type: "ARRAY",
+	items: {
+		type: "OBJECT",
+		properties: {
+			reading: { type: "STRING" },
+			cn: { type: "STRING" },
+			example: { type: "STRING" },
+			exampleCn: { type: "STRING" },
+		},
+		required: ["reading", "cn", "example", "exampleCn"],
+	},
+};
+
+export function generateStudyAids(texts: string[], opts: GenerateOptions): Promise<(StudyAid | null)[]> {
+	return generateWithFallback(texts, STUDY_PROMPT, STUDY_SCHEMA, normalizeStudyAid, opts);
+}
+
+/** Gemini-only study aids (kept for scripts and tests). */
+export function geminiStudyAids(
 	texts: string[],
 	apiKey: string,
 	{ model = DEFAULT_GEMINI_MODEL, fetchImpl = fetch }: { model?: string; fetchImpl?: Fetcher } = {},
 ): Promise<(StudyAid | null)[]> {
-	const out: (StudyAid | null)[] = [];
-	for (let i = 0; i < texts.length; i += GEMINI_BATCH) {
-		const batch = texts.slice(i, i + GEMINI_BATCH);
-		let result: (StudyAid | null)[] = batch.map(() => null);
-		try {
-			const res = await fetchImpl(
-				`https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent`,
-				{
-					method: "POST",
-					headers: { "content-type": "application/json", "x-goog-api-key": apiKey },
-					body: JSON.stringify({
-						contents: [{ role: "user", parts: [{ text: `${STUDY_PROMPT}\n\n${JSON.stringify(batch)}` }] }],
-						generationConfig: {
-							temperature: 0.2,
-							responseMimeType: "application/json",
-							responseSchema: {
-								type: "ARRAY",
-								items: {
-									type: "OBJECT",
-									properties: {
-										reading: { type: "STRING" },
-										cn: { type: "STRING" },
-										example: { type: "STRING" },
-										exampleCn: { type: "STRING" },
-									},
-									required: ["reading", "cn", "example", "exampleCn"],
-								},
-							},
-						},
-					}),
-				},
-			);
-			if (res.ok) {
-				const data = (await res.json()) as {
-					candidates?: { content?: { parts?: { text?: string }[] } }[];
-				};
-				const raw = data.candidates?.[0]?.content?.parts?.map((p) => p.text || "").join("") || "";
-				const parsed: unknown = JSON.parse(raw);
-				if (Array.isArray(parsed) && parsed.length === batch.length) {
-					result = parsed.map((value) => normalizeStudyAid(value));
-				}
-			}
-		} catch {
-			/* leave this batch empty; it is retried next time */
-		}
-		out.push(...result);
-	}
-	return out;
+	return generateStudyAids(texts, { apiKey, models: [model], fetchImpl });
 }

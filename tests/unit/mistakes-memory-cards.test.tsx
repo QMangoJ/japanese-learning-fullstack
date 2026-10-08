@@ -7,7 +7,9 @@ import {
 	cardsFromMistakes,
 	mistakeStudyParts,
 	mistakeTranslationSource,
+	postWithRetry,
 } from "../../app/study/mistakes-memory-cards";
+import { studyReadingFits } from "../../app/study/mistake-translations";
 import { addMistakeGloss, findMistakeGloss, glossIndexFromBook } from "../../app/study/memory-deck";
 import { resetStudyStateForTests, setMistakeStudy, setStudyBooksForTests } from "../../app/study/store";
 
@@ -224,5 +226,61 @@ describe("MistakesMemoryCards", () => {
 		expect(fetchMock).not.toHaveBeenCalledWith("/api/mistake-translations", expect.anything());
 		const cards = cardsFromMistakes([{ id: "q2", type: "q", text: "你的答案：降りかけた\n正确答案：降り出した" }]);
 		expect(cards[0]).toMatchObject({ jp: "昼から雨が【21】。", translation: "从中午开始下起雨来了。" });
+	});
+});
+
+describe("self-typed notes in 背诵", () => {
+	it("re-asks only for the notes the server could not translate yet", async () => {
+		const bodies: string[][] = [];
+		const replies = [
+			{ translations: { 勿体ない: "可惜；浪费" }, pending: 1, retry: true },
+			{ translations: { 習得: "掌握；学会" }, pending: 0, retry: false },
+		];
+		vi.stubGlobal(
+			"fetch",
+			vi.fn(async (_url: string, init: RequestInit) => {
+				bodies.push(JSON.parse(String(init.body)).texts);
+				return new Response(JSON.stringify(replies.shift()), { status: 200 });
+			}),
+		);
+		const got: Record<string, string> = {};
+		await postWithRetry<string>("/api/mistake-translations", ["勿体ない", "習得"], "translations", () => false, (g) => Object.assign(got, g), [0, 0]);
+		expect(bodies).toEqual([["勿体ない", "習得"], ["習得"]]);
+		expect(got).toEqual({ 勿体ない: "可惜；浪费", 習得: "掌握；学会" });
+	});
+
+	it("does not loop for a guest whose misses are never generated", async () => {
+		const fetchMock = vi.fn(async () => new Response(JSON.stringify({ translations: {}, pending: 1, retry: false }), { status: 200 }));
+		vi.stubGlobal("fetch", fetchMock);
+		await postWithRetry<string>("/api/mistake-translations", ["習得"], "translations", () => false, () => {}, [0, 0]);
+		expect(fetchMock).toHaveBeenCalledTimes(1);
+	});
+
+	it("shows reading + Chinese for a typed word and Chinese for a typed grammar note", () => {
+		const [word, grammar] = cardsFromMistakes(
+			[
+				{ id: "w", type: "word", text: "習得" },
+				{ id: "g", type: "grammar", text: "はずだった" },
+			],
+			{ 習得: "掌握；学会", はずだった: "本应该……（结果却没有）" },
+			{ 習得: { reading: "しゅうとく", cn: "掌握" } },
+		);
+		expect(word.translation).toBe("掌握；学会");
+		expect(word.jpHtml || "").toContain("しゅうとく");
+		expect(grammar.translation).toBe("本应该……（结果却没有）");
+		expect(grammar.kind).toBe("grammar");
+	});
+
+	it("ignores a run-together or partial generated reading", () => {
+		expect(studyReadingFits("勿体ない", "もったいない")).toBe(true);
+		expect(studyReadingFits("トウコウと申しますが", "とうこうともうしますが")).toBe(true);
+		expect(studyReadingFits("曲がる\n回る", "まがるまわる")).toBe(false);
+		expect(studyReadingFits("ああいうマナーの悪い人", "わるい")).toBe(false);
+		expect(studyReadingFits("サンダル", "さんだる")).toBe(false);
+		const [card] = cardsFromMistakes([{ id: "x", type: "word", text: "空いているん\nあいているん" }], {}, {
+			"空いているん\nあいているん": { reading: "あいているんあいているん", cn: "空着" },
+		});
+		expect(card.reading).toBeUndefined();
+		expect(card.translation).toBe("空着");
 	});
 });

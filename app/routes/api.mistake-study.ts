@@ -3,10 +3,10 @@ import type { AppLoadContext } from "react-router";
 import { isAuthConfigured } from "../auth/google";
 import { getSessionUser, json } from "../auth/http";
 import {
-	DEFAULT_GEMINI_MODEL,
 	MAX_TRANSLATION_GENERATE,
-	geminiStudyAids,
+	generateStudyAids,
 	isTranslationRequest,
+	type AiRunner,
 	normalizeTranslationSource,
 	parseStoredStudyAid,
 	studyAidKey,
@@ -45,14 +45,15 @@ export async function action({ request, context }: Args) {
 	});
 
 	let pending = missing.length;
-	if (missing.length && env.GEMINI_API_KEY) {
+	let retry = false;
+	const ai = (env.AI as unknown as AiRunner | undefined) ?? null;
+	if (missing.length && (env.GEMINI_API_KEY || ai)) {
 		const allowed = !isAuthConfigured(env) || Boolean(await getSessionUser(request, env));
 		if (allowed) {
 			const todo = missing.slice(0, MAX_TRANSLATION_GENERATE);
-			const generated = await geminiStudyAids(
+			const generated = await generateStudyAids(
 				todo.map((i) => texts[i]),
-				env.GEMINI_API_KEY,
-				{ model: DEFAULT_GEMINI_MODEL },
+				{ apiKey: env.GEMINI_API_KEY || undefined, ai },
 			);
 			const writes: Promise<void>[] = [];
 			generated.forEach((value, j) => {
@@ -63,8 +64,10 @@ export async function action({ request, context }: Args) {
 				pending -= 1;
 			});
 			await Promise.all(writes);
+			// Something failed (quota, outage): tell the client a retry may help.
+			retry = pending > 0;
 		}
 	}
 
-	return json({ aids, pending });
+	return json({ aids, pending, retry });
 }
