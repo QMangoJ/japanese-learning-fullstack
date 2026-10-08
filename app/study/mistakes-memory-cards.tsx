@@ -15,6 +15,7 @@ import {
 	MAX_TRANSLATION_TEXTS,
 	MISTAKE_STUDY_ENDPOINT,
 	MISTAKE_TRANSLATION_ENDPOINT,
+	isManualMistakeType,
 	mistakeNeedsExample,
 	mistakeStudyParts,
 	mistakeTranslationSource,
@@ -100,6 +101,7 @@ export function cardsFromMistakes(
 			...(cnHtml && !chineseAnswer(cn) ? { cnHtml } : {}),
 			...(gloss?.en ? { en: gloss.en } : {}),
 			...(meaning ? { translation: meaning } : {}),
+			...( !meaning && isManualMistakeType(m.type) ? { awaitingTranslation: true } : {}),
 			kind: m.type || "q",
 		};
 		const local = mistakeNeedsExample(jp) ? lookupHeadwordExample(jp) : undefined;
@@ -179,9 +181,12 @@ export async function postWithRetry<T>(
 	isCancelled: () => boolean,
 	onResult: (got: Record<string, T>) => void,
 	delays: number[] = MISTAKE_RETRY_DELAYS_MS,
+	generate = true,
 ): Promise<void> {
 	let todo = texts;
-	for (let attempt = 0; attempt <= delays.length && todo.length; attempt++) {
+	// Manual notes never ask the worker to generate — only cache lookup, no retries for AI.
+	const attemptLimit = generate ? delays.length : 0;
+	for (let attempt = 0; attempt <= attemptLimit && todo.length; attempt++) {
 		if (attempt > 0) {
 			await new Promise((resolve) => setTimeout(resolve, delays[attempt - 1]));
 			if (isCancelled()) return;
@@ -192,7 +197,7 @@ export async function postWithRetry<T>(
 				method: "POST",
 				headers: { "content-type": "application/json" },
 				credentials: "same-origin",
-				body: JSON.stringify({ texts: todo }),
+				body: JSON.stringify({ texts: todo, generate }),
 			});
 			if (isCancelled()) return;
 			if (res.ok) {
@@ -214,32 +219,83 @@ export async function postWithRetry<T>(
 }
 
 /** Chinese translations for the notebook, cached locally and in KV. */
-export function useMistakeTranslations(list: { text?: string }[], textbookReady = true) {
-	const sources = useMemo(
+export function useMistakeTranslations(list: { id?: string; type?: string; text?: string }[], textbookReady = true) {
+	const manualSources = useMemo(
 		() =>
 			textbookReady
-				? [...new Set(list.filter((m) => !hasTextbookTranslation(m)).map(mistakeTranslationSource).filter(Boolean))]
+				? [
+						...new Set(
+							list
+								.filter((m) => isManualMistakeType(m.type) && !hasTextbookTranslation(m))
+								.map(mistakeTranslationSource)
+								.filter(Boolean),
+						),
+					]
 				: [],
 		[list, textbookReady],
 	);
+	const quizSources = useMemo(
+		() =>
+			textbookReady
+				? [
+						...new Set(
+							list
+								.filter((m) => !isManualMistakeType(m.type) && !hasTextbookTranslation(m))
+								.map(mistakeTranslationSource)
+								.filter(Boolean),
+						),
+					]
+				: [],
+		[list, textbookReady],
+	);
+	const sources = useMemo(() => [...new Set([...manualSources, ...quizSources])], [manualSources, quizSources]);
 	const sourceKey = sources.join("\u0000");
 	const [translations, setTranslations] = useState<TranslationMap>(() => loadCache());
 	const [loading, setLoading] = useState(false);
 
 	useEffect(() => {
 		const cache = loadCache();
-		const missing = sources.filter((s) => !cache[s]).slice(0, MAX_TRANSLATION_TEXTS);
-		if (!missing.length) {
+		const missingManual = manualSources.filter((s) => !cache[s]).slice(0, MAX_TRANSLATION_TEXTS);
+		const missingQuiz = quizSources.filter((s) => !cache[s]).slice(0, MAX_TRANSLATION_TEXTS);
+		if (!missingManual.length && !missingQuiz.length) {
 			setTranslations(cache);
 			return;
 		}
 		let cancelled = false;
 		setLoading(true);
-		void postWithRetry<string>(MISTAKE_TRANSLATION_ENDPOINT, missing, "translations", () => cancelled, (got) => {
+		const apply = (got: TranslationMap) => {
 			const next = { ...loadCache(), ...got };
 			saveCache(next, sources);
 			setTranslations(next);
-		}).finally(() => {
+		};
+		const jobs: Promise<void>[] = [];
+		if (missingManual.length) {
+			jobs.push(
+				postWithRetry<string>(
+					MISTAKE_TRANSLATION_ENDPOINT,
+					missingManual,
+					"translations",
+					() => cancelled,
+					apply,
+					MISTAKE_RETRY_DELAYS_MS,
+					false,
+				),
+			);
+		}
+		if (missingQuiz.length) {
+			jobs.push(
+				postWithRetry<string>(
+					MISTAKE_TRANSLATION_ENDPOINT,
+					missingQuiz,
+					"translations",
+					() => cancelled,
+					apply,
+					MISTAKE_RETRY_DELAYS_MS,
+					true,
+				),
+			);
+		}
+		void Promise.all(jobs).finally(() => {
 			if (!cancelled) setLoading(false);
 		});
 		return () => {
@@ -279,31 +335,79 @@ function saveStudyCache(cache: StudyAidMap, keep: string[]) {
 }
 
 /** Readings and example sentences for notebook cards that the dictionaries do not cover. */
-export function useMistakeStudyAids(list: { text?: string }[], textbookReady = true) {
-	const sources = useMemo(() => {
-		if (!textbookReady) return [];
+export function useMistakeStudyAids(list: { type?: string; text?: string }[], textbookReady = true) {
+	const needed = useMemo(() => {
+		if (!textbookReady) return [] as { text?: string; type?: string }[];
 		const cache = loadStudyCache();
-		return [...new Set(list.filter((item) => mistakeNeedsStudyAid(item, cache)).map(mistakeTranslationSource).filter(Boolean))];
+		return list.filter((item) => mistakeNeedsStudyAid(item, cache));
 	}, [list, textbookReady]);
+	const manualSources = useMemo(
+		() =>
+			[
+				...new Set(
+					needed.filter((item) => isManualMistakeType(item.type)).map(mistakeTranslationSource).filter(Boolean),
+				),
+			],
+		[needed],
+	);
+	const quizSources = useMemo(
+		() =>
+			[
+				...new Set(
+					needed.filter((item) => !isManualMistakeType(item.type)).map(mistakeTranslationSource).filter(Boolean),
+				),
+			],
+		[needed],
+	);
+	const sources = useMemo(() => [...new Set([...manualSources, ...quizSources])], [manualSources, quizSources]);
 	const sourceKey = sources.join("\u0000");
 	const [aids, setAids] = useState<StudyAidMap>(() => loadStudyCache());
 	const [loading, setLoading] = useState(false);
 
 	useEffect(() => {
 		const cache = loadStudyCache();
-		const missing = sources.filter((source) => !cache[source]).slice(0, MAX_TRANSLATION_TEXTS);
-		if (!missing.length) {
+		const missingManual = manualSources.filter((source) => !cache[source]).slice(0, MAX_TRANSLATION_TEXTS);
+		const missingQuiz = quizSources.filter((source) => !cache[source]).slice(0, MAX_TRANSLATION_TEXTS);
+		if (!missingManual.length && !missingQuiz.length) {
 			setAids(cache);
 			return;
 		}
 		let cancelled = false;
 		setLoading(true);
-		void postWithRetry<StudyAid>(MISTAKE_STUDY_ENDPOINT, missing, "aids", () => cancelled, (got) => {
+		const apply = (got: StudyAidMap) => {
 			const next = { ...loadStudyCache(), ...got };
 			const keep = [...new Set(list.map(mistakeTranslationSource).filter(Boolean))];
 			saveStudyCache(next, keep);
 			setAids(next);
-		}).finally(() => {
+		};
+		const jobs: Promise<void>[] = [];
+		if (missingManual.length) {
+			jobs.push(
+				postWithRetry<StudyAid>(
+					MISTAKE_STUDY_ENDPOINT,
+					missingManual,
+					"aids",
+					() => cancelled,
+					apply,
+					MISTAKE_RETRY_DELAYS_MS,
+					false,
+				),
+			);
+		}
+		if (missingQuiz.length) {
+			jobs.push(
+				postWithRetry<StudyAid>(
+					MISTAKE_STUDY_ENDPOINT,
+					missingQuiz,
+					"aids",
+					() => cancelled,
+					apply,
+					MISTAKE_RETRY_DELAYS_MS,
+					true,
+				),
+			);
+		}
+		void Promise.all(jobs).finally(() => {
 			if (!cancelled) setLoading(false);
 		});
 		return () => {

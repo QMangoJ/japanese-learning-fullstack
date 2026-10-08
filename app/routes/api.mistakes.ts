@@ -3,6 +3,7 @@ import type { AppLoadContext } from "react-router";
 import { getSessionUser, json } from "../auth/http";
 import { isMistakesPayload } from "../auth/study-payloads";
 import { mistakesKey } from "../auth/users";
+import { manualNotesNeedingNotify, notifyManualMistakesAdded } from "../study/mistake-notify";
 
 const MAX_BYTES = 500_000;
 const headers = {
@@ -42,6 +43,14 @@ export async function action({ request, context }: Args) {
 		return json({ error: "invalid json" }, { status: 400 });
 	}
 
-	await context.cloudflare.env.MISTAKES_KV.put(mistakesKey(user.id), body);
+	const key = mistakesKey(user.id);
+	const previous = await context.cloudflare.env.MISTAKES_KV.get(key);
+	await context.cloudflare.env.MISTAKES_KV.put(key, body);
+
+	const notes = manualNotesNeedingNotify(previous, body);
+	if (notes.length) {
+		context.cloudflare.ctx.waitUntil(notifyManualMistakesAdded(context.cloudflare.env, user.id, notes));
+	}
+
 	return json({ ok: true });
 }
