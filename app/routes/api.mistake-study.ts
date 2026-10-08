@@ -5,10 +5,12 @@ import { getSessionUser, json } from "../auth/http";
 import {
 	MAX_TRANSLATION_GENERATE,
 	generateStudyAids,
+	isAssistantStudyAid,
 	isTranslationRequest,
 	type AiRunner,
 	normalizeTranslationSource,
 	parseStoredStudyAid,
+	serializeStudyAid,
 	studyAidKey,
 	type StudyAidMap,
 } from "../study/mistake-translations";
@@ -16,9 +18,9 @@ import {
 type Args = { request: Request; context: AppLoadContext };
 
 /**
- * POST { texts } → { aids: { [text]: { reading?, example?, exampleCn? } } }.
- * Cached aids are returned to anyone. New ones are generated only for a
- * signed-in user, same gate as the Chinese translations.
+ * POST { texts, generate? } → { aids: { [text]: StudyAid }, pending, retry }.
+ * Same generate gate as /api/mistake-translations. Manual notes use generate:false;
+ * assistant-marked aids are never overwritten.
  */
 export async function action({ request, context }: Args) {
 	if (request.method !== "POST") return json({ error: "method not allowed" }, { status: 405 });
@@ -46,8 +48,9 @@ export async function action({ request, context }: Args) {
 
 	let pending = missing.length;
 	let retry = false;
+	const allowGenerate = body.generate !== false;
 	const ai = (env.AI as unknown as AiRunner | undefined) ?? null;
-	if (missing.length && ai) {
+	if (allowGenerate && missing.length && ai) {
 		const allowed = !isAuthConfigured(env) || Boolean(await getSessionUser(request, env));
 		if (allowed) {
 			const todo = missing.slice(0, MAX_TRANSLATION_GENERATE);
@@ -59,12 +62,17 @@ export async function action({ request, context }: Args) {
 			generated.forEach((value, j) => {
 				if (!value) return;
 				const i = todo[j];
+				if (isAssistantStudyAid(cached[i])) {
+					const locked = parseStoredStudyAid(cached[i]);
+					if (locked) aids[texts[i]] = locked;
+					pending -= 1;
+					return;
+				}
 				aids[texts[i]] = value;
-				writes.push(env.MISTAKES_KV.put(keys[i], JSON.stringify(value)));
+				writes.push(env.MISTAKES_KV.put(keys[i], serializeStudyAid(value)));
 				pending -= 1;
 			});
 			await Promise.all(writes);
-			// Something failed (quota, outage): tell the client a retry may help.
 			retry = pending > 0;
 		}
 	}

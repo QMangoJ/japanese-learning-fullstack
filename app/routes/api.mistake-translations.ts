@@ -5,9 +5,12 @@ import { getSessionUser, json } from "../auth/http";
 import {
 	MAX_TRANSLATION_GENERATE,
 	generateTranslations,
+	isAssistantTranslation,
 	isTranslationRequest,
 	type AiRunner,
 	normalizeTranslationSource,
+	parseStoredTranslation,
+	serializeTranslation,
 	translationKey,
 	type TranslationMap,
 } from "../study/mistake-translations";
@@ -15,10 +18,11 @@ import {
 type Args = { request: Request; context: AppLoadContext };
 
 /**
- * POST { texts } → { translations: { [text]: 中文 } }.
- * Cached translations are returned to anyone; new ones are only generated
- * for signed-in users (or local dev without auth) so the Workers AI binding can't
- * be used as an open translation proxy.
+ * POST { texts, generate? } → { translations: { [text]: 中文 }, pending, retry }.
+ * Cached translations are returned to anyone. New ones are only generated when
+ * `generate` is not false and the caller is signed in (or local dev without auth).
+ * Manual word/grammar notes must call with `generate: false` — the assistant CLI
+ * writes those. Entries marked source=assistant are never overwritten.
  */
 export async function action({ request, context }: Args) {
 	if (request.method !== "POST") return json({ error: "method not allowed" }, { status: 405 });
@@ -39,14 +43,16 @@ export async function action({ request, context }: Args) {
 	const translations: TranslationMap = {};
 	const missing: number[] = [];
 	cached.forEach((value, i) => {
-		if (value) translations[texts[i]] = value;
+		const parsed = parseStoredTranslation(value);
+		if (parsed) translations[texts[i]] = parsed.cn;
 		else missing.push(i);
 	});
 
 	let pending = missing.length;
 	let retry = false;
+	const allowGenerate = body.generate !== false;
 	const ai = (env.AI as unknown as AiRunner | undefined) ?? null;
-	if (missing.length && ai) {
+	if (allowGenerate && missing.length && ai) {
 		const allowed = !isAuthConfigured(env) || Boolean(await getSessionUser(request, env));
 		if (allowed) {
 			const todo = missing.slice(0, MAX_TRANSLATION_GENERATE);
@@ -58,12 +64,18 @@ export async function action({ request, context }: Args) {
 			generated.forEach((value, j) => {
 				if (!value) return;
 				const i = todo[j];
+				// Never clobber an assistant-reviewed entry that appeared mid-flight.
+				if (isAssistantTranslation(cached[i])) {
+					const locked = parseStoredTranslation(cached[i]);
+					if (locked) translations[texts[i]] = locked.cn;
+					pending -= 1;
+					return;
+				}
 				translations[texts[i]] = value;
-				writes.push(env.MISTAKES_KV.put(keys[i], value));
+				writes.push(env.MISTAKES_KV.put(keys[i], serializeTranslation(value)));
 				pending -= 1;
 			});
 			await Promise.all(writes);
-			// Something failed (quota, outage): tell the client a retry may help.
 			retry = pending > 0;
 		}
 	}

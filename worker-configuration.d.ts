@@ -10,6 +10,8 @@ interface __BaseEnv_Env {
 	GOOGLE_CLIENT_ID: string;
 	GOOGLE_CLIENT_SECRET: string;
 	SESSION_SECRET: string;
+	MISTAKE_NOTIFY_WEBHOOK_URL: string;
+	MISTAKE_NOTIFY_WEBHOOK_KEY: string;
 }
 declare namespace Cloudflare {
 	interface GlobalProps {
@@ -22,7 +24,7 @@ type StringifyValues<EnvType extends Record<string, unknown>> = {
 	[Binding in keyof EnvType]: EnvType[Binding] extends string ? EnvType[Binding] : string;
 };
 declare namespace NodeJS {
-	interface ProcessEnv extends StringifyValues<Pick<Cloudflare.Env, "LESSON_REVIEW_DOC_ID" | "GOOGLE_CLIENT_ID" | "GOOGLE_CLIENT_SECRET" | "SESSION_SECRET">> {}
+	interface ProcessEnv extends StringifyValues<Pick<Cloudflare.Env, "LESSON_REVIEW_DOC_ID" | "GOOGLE_CLIENT_ID" | "GOOGLE_CLIENT_SECRET" | "SESSION_SECRET" | "MISTAKE_NOTIFY_WEBHOOK_URL" | "MISTAKE_NOTIFY_WEBHOOK_KEY">> {}
 }
 
 // Begin runtime types

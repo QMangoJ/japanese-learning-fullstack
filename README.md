@@ -68,6 +68,56 @@ npm run dev
 
 接口限制请求体最大为 500 KB，并返回 JSON。收藏与错题按用户写入 KV；游客只使用浏览器本地存储。
 
+
+## 错题本手动笔记翻译（助手 CLI）
+
+自己在错题本里手打的单词 / 语法（`type=word|grammar`）**不会**调用 Gemini 或 Workers AI。背诵页显示「翻译中…」，由助手写好译文后写入 KV。
+
+线上 Worker 可配置 webhook（可选）：用户新加手动笔记时 POST 通知，方便触发一次助手翻译。未配置则跳过，不影响保存。
+
+```bash
+# 生产密钥（只设一次）
+npx wrangler secret put MISTAKE_NOTIFY_WEBHOOK_URL
+npx wrangler secret put MISTAKE_NOTIFY_WEBHOOK_KEY
+```
+
+Webhook 请求体（JSON）：
+
+```json
+{
+  "event": "mistake.manual_added",
+  "userId": "g_…",
+  "notes": [{ "id": "…", "text": "勿体ない", "type": "word" }]
+}
+```
+
+请求头：`Authorization: Bearer <MISTAKE_NOTIFY_WEBHOOK_KEY>`（若设置了 key）、`Content-Type: application/json`。
+
+日常翻译流程（在仓库根目录，需已登录 wrangler / `CLOUDFLARE_API_TOKEN`）：
+
+```bash
+# 1) 列出尚未由助手确认的手动笔记（含临时译文 current，若有）
+npm run mistakes:pending -- --user g_102093748195310724746 --out /tmp/mistake-pending.json
+
+# 2) 助手填写译文，写成 JSON 数组，例如：
+# [
+#   {
+#     "id": "…",
+#     "text": "勿体ない",
+#     "type": "word",
+#     "reading": "もったいない",
+#     "cn": "浪费可惜；不舍得",
+#     "example": "食べ物を残すのは勿体ない。",
+#     "exampleCn": "把食物剩下太可惜了。"
+#   }
+# ]
+
+# 3) 写回 KV（mistake-cn + mistake-study，source=assistant，优先生效且不会被模型覆盖）
+npm run mistakes:write -- --file /tmp/mistake-translations.json
+```
+
+单词建议带 `reading`（平假名）、`cn`、短例句 `example` + `exampleCn`；语法带 `cn`（意思/用法）和例句即可。
+
 ## 构建与部署
 
 ```bash
