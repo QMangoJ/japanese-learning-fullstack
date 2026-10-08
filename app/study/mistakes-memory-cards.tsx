@@ -18,6 +18,7 @@ import {
 	mistakeNeedsExample,
 	mistakeStudyParts,
 	mistakeTranslationSource,
+	studyReadingFits,
 	type StudyAid,
 	type StudyAidMap,
 	type TranslationMap,
@@ -81,12 +82,13 @@ export function cardsFromMistakes(
 		const source = mistakeTranslationSource(m);
 		const translation = translations[source];
 		const aid: StudyAid | undefined = aids[source];
+		const aidReading = aid?.reading && studyReadingFits(jp, aid.reading) ? aid.reading : undefined;
 		const spoken = kanaAnswer(cn);
 		const asReading = spoken && answerIsReading(jp, spoken) ? spoken : undefined;
-		const supplied = asReading || (!asReading && aid?.reading ? aid.reading : undefined);
+		const supplied = asReading || (!asReading && aidReading ? aidReading : undefined);
 		const ruby = annotated(jp, supplied);
 		const cnHtml = cn && /[ぁ-んァ-ン]/.test(cn) && /[一-龯]/.test(cn) ? annotateText(cn) : undefined;
-		const reading = ruby.reading && ruby.reading !== spoken ? ruby.reading : !ruby.html && aid?.reading && aid.reading !== spoken ? aid.reading : undefined;
+		const reading = ruby.reading && ruby.reading !== spoken ? ruby.reading : !ruby.html && aidReading && aidReading !== spoken ? aidReading : undefined;
 		// The textbook's own translation of a quiz question beats a generated one; a bare headword match does not.
 		const meaning = (gloss?.question ? gloss.cn : undefined) || translation || gloss?.cn || aid?.cn || chineseAnswer(cn);
 		const card: MemoryCardItem = {
@@ -162,6 +164,55 @@ export function useReadingGlosses(list: { text?: string }[]) {
 	return !needed || ready;
 }
 
+/** Delays before re-asking for notes the server could not translate yet. */
+export const MISTAKE_RETRY_DELAYS_MS = [2500, 8000];
+
+/**
+ * POST the missing notes; when the server says generation failed for some of
+ * them (quota, outage) ask again for just those, a couple of times, so a
+ * self-typed note does not stay blank until the next visit.
+ */
+export async function postWithRetry<T>(
+	endpoint: string,
+	texts: string[],
+	field: "translations" | "aids",
+	isCancelled: () => boolean,
+	onResult: (got: Record<string, T>) => void,
+	delays: number[] = MISTAKE_RETRY_DELAYS_MS,
+): Promise<void> {
+	let todo = texts;
+	for (let attempt = 0; attempt <= delays.length && todo.length; attempt++) {
+		if (attempt > 0) {
+			await new Promise((resolve) => setTimeout(resolve, delays[attempt - 1]));
+			if (isCancelled()) return;
+		}
+		let retry = false;
+		try {
+			const res = await fetch(endpoint, {
+				method: "POST",
+				headers: { "content-type": "application/json" },
+				credentials: "same-origin",
+				body: JSON.stringify({ texts: todo }),
+			});
+			if (isCancelled()) return;
+			if (res.ok) {
+				const data = (await res.json()) as Record<string, unknown> & { retry?: boolean };
+				const got = (data[field] || {}) as Record<string, T>;
+				if (isCancelled()) return;
+				onResult(got);
+				todo = todo.filter((t) => !got[t]);
+				retry = Boolean(data.retry);
+			} else {
+				retry = res.status >= 500 || res.status === 429;
+			}
+		} catch {
+			/* offline: show cards without translations */
+			return;
+		}
+		if (!retry) return;
+	}
+}
+
 /** Chinese translations for the notebook, cached locally and in KV. */
 export function useMistakeTranslations(list: { text?: string }[], textbookReady = true) {
 	const sources = useMemo(
@@ -184,25 +235,13 @@ export function useMistakeTranslations(list: { text?: string }[], textbookReady 
 		}
 		let cancelled = false;
 		setLoading(true);
-		fetch(MISTAKE_TRANSLATION_ENDPOINT, {
-			method: "POST",
-			headers: { "content-type": "application/json" },
-			credentials: "same-origin",
-			body: JSON.stringify({ texts: missing }),
-		})
-			.then((res) => (res.ok ? (res.json() as Promise<{ translations?: TranslationMap }>) : null))
-			.then((data: { translations?: TranslationMap } | null) => {
-				if (cancelled) return;
-				const next = { ...cache, ...(data?.translations || {}) };
-				saveCache(next, sources);
-				setTranslations(next);
-			})
-			.catch(() => {
-				/* offline: show cards without translations */
-			})
-			.finally(() => {
-				if (!cancelled) setLoading(false);
-			});
+		void postWithRetry<string>(MISTAKE_TRANSLATION_ENDPOINT, missing, "translations", () => cancelled, (got) => {
+			const next = { ...loadCache(), ...got };
+			saveCache(next, sources);
+			setTranslations(next);
+		}).finally(() => {
+			if (!cancelled) setLoading(false);
+		});
 		return () => {
 			cancelled = true;
 		};
@@ -259,26 +298,14 @@ export function useMistakeStudyAids(list: { text?: string }[], textbookReady = t
 		}
 		let cancelled = false;
 		setLoading(true);
-		fetch(MISTAKE_STUDY_ENDPOINT, {
-			method: "POST",
-			headers: { "content-type": "application/json" },
-			credentials: "same-origin",
-			body: JSON.stringify({ texts: missing }),
-		})
-			.then((res) => (res.ok ? (res.json() as Promise<{ aids?: StudyAidMap }>) : null))
-			.then((data: { aids?: StudyAidMap } | null) => {
-				if (cancelled) return;
-				const next = { ...cache, ...(data?.aids || {}) };
-				const keep = [...new Set(list.map(mistakeTranslationSource).filter(Boolean))];
-				saveStudyCache(next, keep);
-				setAids(next);
-			})
-			.catch(() => {
-				/* offline: show whatever the dictionaries already know */
-			})
-			.finally(() => {
-				if (!cancelled) setLoading(false);
-			});
+		void postWithRetry<StudyAid>(MISTAKE_STUDY_ENDPOINT, missing, "aids", () => cancelled, (got) => {
+			const next = { ...loadStudyCache(), ...got };
+			const keep = [...new Set(list.map(mistakeTranslationSource).filter(Boolean))];
+			saveStudyCache(next, keep);
+			setAids(next);
+		}).finally(() => {
+			if (!cancelled) setLoading(false);
+		});
 		return () => {
 			cancelled = true;
 		};

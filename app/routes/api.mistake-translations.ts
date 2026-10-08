@@ -3,10 +3,10 @@ import type { AppLoadContext } from "react-router";
 import { isAuthConfigured } from "../auth/google";
 import { getSessionUser, json } from "../auth/http";
 import {
-	DEFAULT_GEMINI_MODEL,
 	MAX_TRANSLATION_GENERATE,
-	geminiTranslate,
+	generateTranslations,
 	isTranslationRequest,
+	type AiRunner,
 	normalizeTranslationSource,
 	translationKey,
 	type TranslationMap,
@@ -44,14 +44,15 @@ export async function action({ request, context }: Args) {
 	});
 
 	let pending = missing.length;
-	if (missing.length && env.GEMINI_API_KEY) {
+	let retry = false;
+	const ai = (env.AI as unknown as AiRunner | undefined) ?? null;
+	if (missing.length && (env.GEMINI_API_KEY || ai)) {
 		const allowed = !isAuthConfigured(env) || Boolean(await getSessionUser(request, env));
 		if (allowed) {
 			const todo = missing.slice(0, MAX_TRANSLATION_GENERATE);
-			const generated = await geminiTranslate(
+			const generated = await generateTranslations(
 				todo.map((i) => texts[i]),
-				env.GEMINI_API_KEY,
-				{ model: DEFAULT_GEMINI_MODEL },
+				{ apiKey: env.GEMINI_API_KEY || undefined, ai },
 			);
 			const writes: Promise<void>[] = [];
 			generated.forEach((value, j) => {
@@ -62,8 +63,10 @@ export async function action({ request, context }: Args) {
 				pending -= 1;
 			});
 			await Promise.all(writes);
+			// Something failed (quota, outage): tell the client a retry may help.
+			retry = pending > 0;
 		}
 	}
 
-	return json({ translations, pending });
+	return json({ translations, pending, retry });
 }
