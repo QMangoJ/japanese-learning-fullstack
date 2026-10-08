@@ -8,6 +8,7 @@ import {
 	mistakeStudyParts,
 	mistakeTranslationSource,
 } from "../../app/study/mistakes-memory-cards";
+import { addMistakeGloss, findMistakeGloss, glossIndexFromBook } from "../../app/study/memory-deck";
 import { resetStudyStateForTests, setMistakeStudy } from "../../app/study/store";
 
 beforeEach(() => {
@@ -66,6 +67,46 @@ describe("cardsFromMistakes", () => {
 		expect(cards[0].exampleJp).toBe("溶岩が冷えて石になりました。");
 		expect(cards[0].exampleCn).toBe("熔岩冷却后变成了石头。");
 		expect(cards[0].exampleJpHtml).toContain("溶岩");
+	});
+
+	it("shows a Chinese answer and a study-aid meaning as the translation", () => {
+		const fromAnswer = cardsFromMistakes([{ id: "fridge", type: "word", text: "冷蔵庫\n正确答案：冰箱" }]);
+		expect(fromAnswer[0].jp).toBe("冷蔵庫");
+		expect(fromAnswer[0].cn).toBeUndefined();
+		expect(fromAnswer[0].translation).toBe("冰箱");
+
+		const fromAid = cardsFromMistakes(
+			[{ id: "lava", type: "word", text: "溶岩" }],
+			{},
+			{ 溶岩: { reading: "ようがん", cn: "熔岩" } },
+		);
+		expect(fromAid[0].translation).toBe("熔岩");
+	});
+
+	it("matches a textbook headword and a quiz prompt to their Chinese", () => {
+		const index = new Map();
+		glossIndexFromBook(
+			{
+				weeks: [
+					{
+						n: 1,
+						days: [
+							{
+								day: 1,
+								sections: [{ items: [{ jp: "家賃", cn: "房租", en: "monthly rent" }] }],
+								exercises: { sections: [{ items: [{ n: 1, q: "私は（　　）に住んでいます。" }] }] },
+							},
+						],
+					},
+				],
+				daily_translations: { w1d1: { items: [{ n: 1, translation: "我住在那里。" }] } },
+			},
+			index,
+		);
+		expect(findMistakeGloss(index, "家賃")).toEqual({ cn: "房租", en: "monthly rent" });
+		expect(findMistakeGloss(index, "私は（a. ここ）に住んでいます。")?.cn).toBe("我住在那里。");
+		addMistakeGloss(index, "ただ", { cn: "免费" });
+		expect(findMistakeGloss(index, "ただ")?.cn).toBe("免费");
 	});
 
 	it("does not invent an example for a full question", () => {

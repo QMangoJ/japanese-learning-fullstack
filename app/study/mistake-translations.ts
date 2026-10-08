@@ -18,6 +18,8 @@ export type TranslationMap = Record<string, string>;
 
 export type StudyAid = {
 	reading?: string;
+	/** 简体中文意思。空字符串表示已经问过、模型没有给出。 */
+	cn?: string;
 	example?: string;
 	exampleCn?: string;
 };
@@ -115,7 +117,15 @@ export async function geminiTranslate(
 				const raw = data.candidates?.[0]?.content?.parts?.map((p) => p.text || "").join("") || "";
 				const parsed: unknown = JSON.parse(raw);
 				if (Array.isArray(parsed) && parsed.length === batch.length) {
-					result = parsed.map((v) => (typeof v === "string" && v.trim() ? v.trim().slice(0, 400) : null));
+					result = parsed.map((v) => {
+						if (typeof v === "string" && v.trim()) return v.trim().slice(0, 400);
+						if (v && typeof v === "object" && !Array.isArray(v)) {
+							const record = v as { cn?: unknown; translation?: unknown };
+							const text = typeof record.cn === "string" ? record.cn : record.translation;
+							if (typeof text === "string" && text.trim()) return text.trim().slice(0, 400);
+						}
+						return null;
+					});
 				}
 			}
 		} catch {
@@ -129,6 +139,7 @@ export async function geminiTranslate(
 const STUDY_PROMPT = `你是日语老师。下面是一位中文母语的学习者在「错题本」里记下的条目（JSON 数组）。
 请为每一条返回一个对象，字段如下：
 - reading：词头或整句的平假名读音，不要汉字、不要罗马字、不要空格。条目本身已经全是假名时返回空字符串。
+- cn：条目的简体中文意思。单词给词义，句子或填空题把正确答案填进去后翻译整句。不要重复条目里已有的中文。没有日语可译时返回空字符串。
 - example：用条目里的单词或语法造一个简短、自然的日语例句，不超过 40 个字。条目本身已经是完整句子时返回空字符串。
 - exampleCn：例句的简体中文。没有例句时返回空字符串。
 不要解释。按相同顺序返回同样长度的 JSON 对象数组。`;
@@ -144,11 +155,17 @@ export function mistakeNeedsExample(jp: string): boolean {
 
 export function normalizeStudyAid(value: unknown): StudyAid | null {
 	if (!value || typeof value !== "object" || Array.isArray(value)) return null;
-	const raw = value as { reading?: unknown; example?: unknown; exampleCn?: unknown };
+	const raw = value as { reading?: unknown; cn?: unknown; example?: unknown; exampleCn?: unknown };
 	const aid: StudyAid = {};
 	if (typeof raw.reading === "string") {
 		const reading = raw.reading.replace(/[\s・]+/g, "");
 		if (reading && /^[\u3040-\u30ffー]+$/.test(reading) && reading.length <= 80) aid.reading = reading;
+	}
+	if (typeof raw.cn === "string") {
+		const cn = raw.cn.trim();
+		aid.cn = cn && /[\u4e00-\u9fff]/.test(cn) && cn.length <= 120 ? cn : "";
+	} else {
+		aid.cn = "";
 	}
 	if (typeof raw.example === "string") {
 		const example = raw.example.trim();
@@ -158,7 +175,7 @@ export function normalizeStudyAid(value: unknown): StudyAid | null {
 		const exampleCn = raw.exampleCn.trim();
 		if (exampleCn && exampleCn.length <= 80) aid.exampleCn = exampleCn;
 	}
-	if (!aid.reading && !aid.example) return null;
+	if (!aid.reading && !aid.example && !aid.cn) return null;
 	return aid;
 }
 
@@ -203,10 +220,11 @@ export async function geminiStudyAids(
 									type: "OBJECT",
 									properties: {
 										reading: { type: "STRING" },
+										cn: { type: "STRING" },
 										example: { type: "STRING" },
 										exampleCn: { type: "STRING" },
 									},
-									required: ["reading", "example", "exampleCn"],
+									required: ["reading", "cn", "example", "exampleCn"],
 								},
 							},
 						},

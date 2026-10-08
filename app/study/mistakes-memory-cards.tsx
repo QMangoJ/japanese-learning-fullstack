@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 
 import { MemoryCards, type MemoryCardItem } from "./memory-cards";
-import { annotateText, kanaFromRuby, lookupHeadwordExample } from "./memory-deck";
+import { annotateText, kanaFromRuby, lookupHeadwordExample, lookupMistakeGloss } from "./memory-deck";
 import {
 	MAX_TRANSLATION_TEXTS,
 	MISTAKE_STUDY_ENDPOINT,
@@ -25,6 +25,12 @@ export { mistakeNeedsExample, mistakeStudyParts, mistakeTranslationSource };
 function kanaAnswer(cn: string): string | undefined {
 	const kana = cn.replace(/[\s・]+/g, "");
 	return kana && /^[\u3040-\u30ffー]+$/.test(kana) ? kana : undefined;
+}
+
+/** A correct answer written in Chinese is the meaning, not a Japanese reading. */
+function chineseAnswer(cn: string): string | undefined {
+	const text = cn.trim();
+	return text && /[\u4e00-\u9fff]/.test(text) && !/[ぁ-んァ-ン]/.test(text) ? text : undefined;
 }
 
 /** A short headword whose correct answer is its reading, not a sentence. */
@@ -68,14 +74,17 @@ export function cardsFromMistakes(
 		const ruby = annotated(jp, supplied);
 		const cnHtml = cn && /[ぁ-んァ-ン]/.test(cn) && /[一-龯]/.test(cn) ? annotateText(cn) : undefined;
 		const reading = ruby.reading && ruby.reading !== spoken ? ruby.reading : !ruby.html && aid?.reading && aid.reading !== spoken ? aid.reading : undefined;
+		const gloss = lookupMistakeGloss(jp);
+		const meaning = translation || gloss?.cn || aid?.cn || chineseAnswer(cn);
 		const card: MemoryCardItem = {
 			id: m.id,
 			jp,
 			...(ruby.html ? { jpHtml: ruby.html } : {}),
 			...(reading ? { reading } : {}),
-			cn: cn || undefined,
-			...(cnHtml ? { cnHtml } : {}),
-			...(translation ? { translation } : {}),
+			cn: cn && !chineseAnswer(cn) ? cn : undefined,
+			...(cnHtml && !chineseAnswer(cn) ? { cnHtml } : {}),
+			...(gloss?.en ? { en: gloss.en } : {}),
+			...(meaning ? { translation: meaning } : {}),
 			kind: m.type || "q",
 		};
 		const local = mistakeNeedsExample(jp) ? lookupHeadwordExample(jp) : undefined;
@@ -87,11 +96,13 @@ export function cardsFromMistakes(
 
 export function mistakeNeedsStudyAid(m: { text?: string }, aids: StudyAidMap = {}): boolean {
 	const source = mistakeTranslationSource(m);
-	if (aids[source]) return false;
-	const [card] = cardsFromMistakes([{ id: "", text: m.text }], {}, aids);
+	const aid = aids[source];
 	const { jp } = mistakeStudyParts(m);
-	if (/[一-龯]/.test(jp) && !card?.jpHtml && !card?.reading) return true;
-	return mistakeNeedsExample(jp) && !card?.exampleJp;
+	const [card] = cardsFromMistakes([{ id: "", text: m.text }], {}, aids);
+	const needsReading = /[一-龯]/.test(jp) && !card?.jpHtml && !card?.reading;
+	const needsExample = mistakeNeedsExample(jp) && !card?.exampleJp;
+	const needsMeaning = !loadCache()[source] && !card?.translation && aid?.cn == null;
+	return needsReading || needsExample || needsMeaning;
 }
 
 function loadCache(): TranslationMap {
@@ -167,7 +178,7 @@ function loadStudyCache(): StudyAidMap {
 		for (const [key, value] of Object.entries(parsed)) {
 			if (!value || typeof value !== "object" || Array.isArray(value)) continue;
 			const aid = value as StudyAid;
-			if (aid.reading || aid.example) aids[key] = aid;
+			if (aid.reading || aid.example || aid.cn) aids[key] = aid;
 		}
 		return aids;
 	} catch {

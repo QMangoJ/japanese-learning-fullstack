@@ -79,7 +79,7 @@ describe("/api/mistake-study", () => {
 							content: {
 								parts: [
 									{
-										text: JSON.stringify([{ reading: "ようがん", example: "溶岩が流れました。", exampleCn: "熔岩流下来了。" }]),
+										text: JSON.stringify([{ reading: "ようがん", cn: "熔岩", example: "溶岩が流れました。", exampleCn: "熔岩流下来了。" }]),
 									},
 								],
 							},
@@ -98,7 +98,7 @@ describe("/api/mistake-study", () => {
 		});
 		const res = await studyAction({ request, context: routeContext(env) });
 		expect(await res.json()).toEqual({
-			aids: { 溶岩: { reading: "ようがん", example: "溶岩が流れました。", exampleCn: "熔岩流下来了。" } },
+			aids: { 溶岩: { reading: "ようがん", cn: "熔岩", example: "溶岩が流れました。", exampleCn: "熔岩流下来了。" } },
 			pending: 0,
 		});
 		expect(kv.map.get(await studyAidKey("溶岩"))).toContain("ようがん");

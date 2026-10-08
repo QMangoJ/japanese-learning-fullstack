@@ -4,7 +4,7 @@ import { applyKanjiReadings, buildReviewRuby, toHiragana } from "./lesson-review
 import { getKanjiWordUsage, getReviewedKanjiWordUsage, kanjiWordSurface, type KanjiWord } from "./kanji-word-usage";
 import type { MemoryCardItem } from "./memory-cards";
 import { getN2KanjiWordUsage } from "./n2-kanji-word-usage";
-import { K, K2, V, V1, V2, V4 } from "./store";
+import { G, G1, G2, G4, K, K1, K2, K4, V, V1, V2, V4 } from "./store";
 
 const BASE_READINGS = kanjiReadings as Record<string, string>;
 
@@ -304,9 +304,15 @@ function fallbackVocabExample(jp: string, cn?: string, en?: string): ExampleHit 
 let headwordCorpus: ExampleHit[] | null = null;
 let headwordCorpusToken = "";
 
+function bookDataToken(book: any): string {
+	const weeks = book?.weeks?.length || 0;
+	const daily = book?.daily_translations ? Object.keys(book.daily_translations).length : 0;
+	return `${weeks}.${daily}`;
+}
+
 /** An example sentence already in a loaded vocab book, when the headword appears in it. */
 export function lookupHeadwordExample(jp: string): ExampleHit | undefined {
-	const token = [V, V2, V4, V1].map((book) => book?.weeks?.length || 0).join(":");
+	const token = [V, V2, V4, V1].map(bookDataToken).join(":");
 	if (!headwordCorpus || headwordCorpusToken !== token) {
 		headwordCorpusToken = token;
 		headwordCorpus = [V, V2, V4, V1].flatMap((book) =>
@@ -314,6 +320,110 @@ export function lookupHeadwordExample(jp: string): ExampleHit | undefined {
 		);
 	}
 	return exampleFromCorpus(jp, headwordCorpus);
+}
+
+export type MistakeGloss = { cn?: string; en?: string };
+
+/** Compare a mistake prompt with a textbook headword or question. */
+export function glossKey(text: string): string {
+	return text
+		.replace(/<[^>]+>/g, "")
+		.replace(/\{([^{}|]+)\|[^{}|]+\}/g, "$1")
+		.replace(/[（(][^）)]*[）)]?/g, "")
+		.replace(/[〜～]/g, "")
+		.replace(/[　\s]+/g, "")
+		.trim();
+}
+
+export function addMistakeGloss(index: Map<string, MistakeGloss>, jp: string, gloss: MistakeGloss) {
+	if (!gloss.cn && !gloss.en) return;
+	const keys = new Set<string>();
+	const whole = glossKey(jp);
+	if (whole.length >= 2) keys.add(whole);
+	for (const part of jp.split(/[／/]/)) {
+		const key = glossKey(part);
+		if (key.length >= 2) keys.add(key);
+	}
+	for (const key of keys) if (!index.has(key)) index.set(key, gloss);
+}
+
+export function findMistakeGloss(index: Map<string, MistakeGloss>, jp: string): MistakeGloss | undefined {
+	for (const text of [jp, jp.split("\n")[0] || ""]) {
+		const key = glossKey(text);
+		if (key.length >= 2 && index.has(key)) return index.get(key);
+	}
+	return undefined;
+}
+
+const QUESTION_BUCKETS = ["mondai1", "mondai2", "mondai3", "mondai4"] as const;
+
+/** Index headwords and quiz prompts from one loaded textbook. */
+export function glossIndexFromBook(book: any, index: Map<string, MistakeGloss>) {
+	for (const week of book?.weeks || []) {
+		for (const day of week.days || []) {
+			for (const sec of day.sections || []) {
+				for (const it of sec.items || []) {
+					if (it?.jp) addMistakeGloss(index, String(it.jp), { cn: it.cn, en: it.en });
+				}
+			}
+			for (const kanji of day.kanji || []) {
+				for (const word of kanji.words || []) {
+					if (word?.jp) addMistakeGloss(index, String(word.jp), { cn: word.cn, en: word.en });
+				}
+			}
+			for (const point of day.points || []) {
+				if (point?.pattern) addMistakeGloss(index, String(point.pattern), { cn: point.usage_cn, en: point.usage_en });
+				for (const ex of point.examples || []) {
+					if (ex?.jp) addMistakeGloss(index, String(ex.jp), { cn: ex.cn, en: ex.en });
+				}
+			}
+			const byN = new Map<number, MistakeGloss>();
+			const daily = book.daily_translations?.[`w${week.n}d${day.day}`];
+			for (const item of daily?.items || []) {
+				if (item?.n != null && item.translation) byN.set(item.n, { cn: item.translation });
+			}
+			for (const item of day.kaisetsu || []) {
+				if (item?.n != null && (item.trans || item.trans_en)) byN.set(item.n, { cn: item.trans, en: item.trans_en });
+			}
+			const questions: { n?: number; q?: string }[] = [];
+			for (const sec of day.exercises?.sections || []) {
+				for (const it of sec.items || []) if (it?.q) questions.push(it);
+			}
+			for (const bucket of QUESTION_BUCKETS) {
+				for (const it of day[bucket]?.items || []) if (it?.q) questions.push(it);
+			}
+			for (const it of questions) {
+				const gloss = it.n != null ? byN.get(it.n) : undefined;
+				if (gloss && it.q) addMistakeGloss(index, String(it.q), gloss);
+			}
+		}
+	}
+}
+
+let glossIndex: Map<string, MistakeGloss> | null = null;
+let glossToken = "";
+
+function kaisetsuCount(book: any): number {
+	let count = 0;
+	for (const week of book?.weeks || []) {
+		for (const day of week.days || []) count += day.kaisetsu?.length || 0;
+	}
+	return count;
+}
+
+const GLOSS_BOOKS = () => [V, V2, V4, V1, K, K2, K4, K1, G, G2, G4, G1];
+
+/** Chinese and English already printed in a loaded textbook for this mistake prompt. */
+export function lookupMistakeGloss(jp: string): MistakeGloss | undefined {
+	const token = GLOSS_BOOKS()
+		.map((book) => `${bookDataToken(book)}.${kaisetsuCount(book)}`)
+		.join("|");
+	if (!glossIndex || glossToken !== token) {
+		glossToken = token;
+		glossIndex = new Map();
+		for (const book of GLOSS_BOOKS()) glossIndexFromBook(book, glossIndex);
+	}
+	return findMistakeGloss(glossIndex, jp);
 }
 
 function collectListeningSnippets(lesson: Pick<ListeningLesson, "blocks">): ExampleHit[] {

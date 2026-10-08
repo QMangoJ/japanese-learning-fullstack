@@ -1204,6 +1204,28 @@ test.describe("study interactions", () => {
 		);
 	});
 
+	test("mistake study mode shows a textbook Chinese gloss without Gemini", async ({ page }) => {
+		await page.route("**/api/mistake-translations", async (route) => {
+			await route.fulfill({ json: { translations: {}, pending: 0 } });
+		});
+		await page.route("**/api/mistake-study", async (route) => {
+			await route.fulfill({ json: { aids: {}, pending: 0 } });
+		});
+		await waitForStudy(page);
+		await openStudyNav(page, "mistakes");
+		await page.locator("[data-mtype='word']").click();
+		await page.locator("#mistakeInput").fill("冷蔵庫");
+		await page.locator("[data-mistake-add]").click();
+		await page.locator("[data-mstudy='1']").click();
+
+		await page.locator(".fc-wrap .fcard").first().click();
+		const translation = page.locator("[data-fc-translation]");
+		await expect(translation).toContainText("冰箱");
+		expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(
+			await page.evaluate(() => document.documentElement.clientWidth),
+		);
+	});
+
 	test("searches grammar and opens a hit", async ({ page }) => {
 		await waitForStudy(page);
 		await openStudyNav(page, "search");
