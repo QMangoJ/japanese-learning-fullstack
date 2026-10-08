@@ -46,14 +46,16 @@ import {
 	toggleDisplay,
 	toggleFav,
 } from "./store";
-
-const CIRCLED_NUMS = "①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳㉑㉒㉓㉔㉕㉖㉗㉘㉙㉚㉛㉜㉝㉞㉟";
-const N3_KANJI_EXAM_KEYS: Record<number, number[]> = {
-	1: [2, 1, 2, 4, 3, 4, 1, 2, 2, 4, 3, 1, 4, 2, 3, 4, 2, 3, 4, 1],
-	2: [2, 2, 2, 3, 1, 1, 4, 4, 3, 1, 2, 1, 4, 3, 1, 3, 4, 1, 3, 4],
-	3: [1, 3, 1, 4, 4, 2, 3, 1, 2, 1, 4, 1, 4, 2, 4, 2, 1, 3, 2, 3],
-	4: [3, 3, 4, 1, 3, 2, 4, 4, 3, 1, 4, 2, 3, 3, 1, 1, 3, 1, 2, 3],
-};
+import {
+	CIRCLED_NUMS,
+	N3_KANJI_EXAM_KEYS,
+	answerMapFromKeys,
+	numericExamAnswers,
+	parseCircledAnswers,
+	parseExamAnswerDetails,
+	passageBlankPrompt,
+	wrongAnswerNote,
+} from "./exam-answers";
 
 function romanN(i: number) {
 	return ["Ⅰ", "Ⅱ", "Ⅲ", "Ⅳ", "Ⅴ"][i] || String(i + 1);
@@ -71,52 +73,6 @@ function Rich({ html }: { html?: string }) {
 	return <>{html}</>;
 }
 
-function parseCircledAnswers(str?: string) {
-	const map: Record<number, number> = {};
-	if (!str) return map;
-	let i = 0;
-	while (i < str.length) {
-		const ci = CIRCLED_NUMS.indexOf(str[i]);
-		if (ci >= 0) {
-			let j = i + 1;
-			let num = "";
-			while (j < str.length && /[0-9]/.test(str[j])) {
-				num += str[j];
-				j++;
-			}
-			if (num) map[ci + 1] = +num;
-			i = j;
-		} else i++;
-	}
-	return map;
-}
-function parseExamAnswerDetails(str?: string) {
-	const map: Record<number, { ans?: number; order?: string; text?: string }> = {};
-	if (!str) return map;
-	const re = new RegExp("([" + CIRCLED_NUMS + "])([^" + CIRCLED_NUMS + "]*)", "g");
-	for (const match of str.matchAll(re)) {
-		const n = CIRCLED_NUMS.indexOf(match[1]) + 1;
-		const raw = match[2].trim();
-		const star = raw.match(/★\s*([1-4])/);
-		const direct = raw.match(/^\s*([1-4])(?:\s|$|→)/);
-		const ans = star ? +star[1] : direct ? +direct[1] : null;
-		if (ans != null) map[n] = { ans, order: star ? raw : "" };
-		else if (raw) map[n] = { text: raw };
-	}
-	return map;
-}
-function numericExamAnswers(details: Record<number, { ans?: number }>) {
-	const map: Record<number, number> = {};
-	for (const [n, a] of Object.entries(details || {})) if (a.ans != null) map[+n] = a.ans;
-	return map;
-}
-function answerMapFromKeys(keys?: number[]) {
-	const map: Record<number, number> = {};
-	(keys || []).forEach((answer, i) => {
-		map[i + 1] = answer;
-	});
-	return map;
-}
 function rangedList(n: string | number) {
 	const nums = String(n).match(/\d+/g) || [];
 	return nums.length === 2 && nums[0] !== nums[1]
@@ -904,14 +860,7 @@ function ExamExplanation({ a, item, module, section }: { a: any; item: any; modu
 }
 
 function logWrong(item: any, picked: number) {
-	const qText = item.q || "";
-	const pickedText = (item.opts || [])[picked - 1] || "";
-	const correct = item._correct;
-	const correctText = correct != null ? (item.opts || [])[correct - 1] || "" : "";
-	addMistake(
-		"q",
-		`${String(qText).trim()}\n${lx("你的答案", "Your answer")}：${String(pickedText).trim()}\n${lx("正确答案", "Correct answer")}：${String(correctText).trim()}`,
-	);
+	addMistake("q", wrongAnswerNote(item, picked, item._correct, LANG));
 }
 
 function ExamFav({ item, module, w, answer, translation }: { item: any; module: string; w: number; answer: string; translation?: string }) {
@@ -1042,7 +991,7 @@ function ExamGrammar({ day, w }: { day: any; w: number }) {
 						correct={a.ans}
 						foldNote
 						foldId={`exam-${w}-${it.n}`}
-						onWrong={(picked) => logWrong({ ...it, _correct: a.ans }, picked)}
+						onWrong={(picked) => logWrong({ ...it, q: it.q || passageBlankPrompt(day[section]?.passage, it.n), _correct: a.ans }, picked)}
 					>
 						{a ? <ExamExplanation a={a} item={it} module="grammar" section={section} /> : null}
 					</QuizOpts>
