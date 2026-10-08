@@ -1,9 +1,9 @@
 /**
  * N2 听解：第1・2章正文中文翻译 + 每道题听力原文的 N3+ 生词注释。
  *
- *   GEMINI_API_KEY=... node --experimental-strip-types scripts/generate-n2-listening-support.mts [--fetch] [--only=body|gloss]
+ *   node --experimental-strip-types scripts/generate-n2-listening-support.mts [--fetch] [--only=body|gloss]
  *
- * --fetch 调用 Gemini 补齐 scripts/n2-listening-support.json 里缺的条目（已有条目不覆盖，
+ * --fetch（已停用：Gemini key 只用于 news-learning 文章翻译，带 --fetch 会直接报错）调用 Gemini 补齐 scripts/n2-listening-support.json 里缺的条目（已有条目不覆盖，
  * 人工校对后的 JSON 是唯一来源）；不带 --fetch 时只根据 JSON 重新生成
  * app/data/listening-n2-body-support.ts 与 app/data/listening-n2-transcript-glosses.ts。
  */
@@ -122,6 +122,9 @@ const GLOSS_PROMPT = `你是 JLPT 老师。学习者是中文母语、日语约 
 返回 JSON 数组，每项 {"w":..., "r":..., "cn":..., "lv":...}。`;
 
 async function gemini(prompt: string, payload: unknown, schema: unknown): Promise<unknown> {
+	// Alan's rule: the Gemini key is only for news-learning article translation.
+	throw new Error("Refusing to call Gemini: GEMINI_API_KEY is reserved for translating news articles on news-learning (news.ki-toko.com) only. Generate this content without the Gemini API.");
+	// eslint-disable-next-line no-unreachable
 	const apiKey = process.env.GEMINI_API_KEY;
 	if (!apiKey) throw new Error("GEMINI_API_KEY is required for --fetch");
 	for (let attempt = 1; attempt <= 3; attempt += 1) {

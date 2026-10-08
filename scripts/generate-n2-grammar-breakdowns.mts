@@ -1,9 +1,9 @@
 /**
  * N2 语法：「れい」「！」短语中文、「◆」说明中文，以及每日练习完整句的语法拆解与 N3+ 生词。
  *
- *   GEMINI_API_KEY=... node --experimental-strip-types scripts/generate-n2-grammar-breakdowns.mts [--fetch] [--weeks=2]
+ *   node --experimental-strip-types scripts/generate-n2-grammar-breakdowns.mts [--fetch] [--weeks=2]
  *
- * --fetch 调用 Gemini 补齐 scripts/n2-grammar-breakdowns.json 里缺的条目（已有条目不覆盖；
+ * --fetch（已停用：Gemini key 只用于 news-learning 文章翻译，带 --fetch 会直接报错）调用 Gemini 补齐 scripts/n2-grammar-breakdowns.json 里缺的条目（已有条目不覆盖；
  * 人工校对后的 JSON 是唯一来源）。不带 --fetch 时只校验并输出 public/data/n2-grammar-breakdowns.json。
  */
 import { existsSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
@@ -77,6 +77,9 @@ const Q_PROMPT = `你是 JLPT N2 语法老师，学习者是中文母语、日�
 - words：句中对 N4 学习者是生词的词：JLPT N3、N2、N1 词汇（跳过 N5/N4 基础词，如 会社、顔、勉強、病気、薬、料理、食べる）。每项 {w: 辞书形, r: 平假名读音, cn: 本句语境下的简洁中文（不超过 12 字）, lv: "N3"|"N2"|"N1"}。没有就返回空数组。不要把语法点本身放进 words。`;
 
 async function gemini(prompt: string, payload: unknown, schema: unknown): Promise<any> {
+	// Alan's rule: the Gemini key is only for news-learning article translation.
+	throw new Error("Refusing to call Gemini: GEMINI_API_KEY is reserved for translating news articles on news-learning (news.ki-toko.com) only. Generate this content without the Gemini API.");
+	// eslint-disable-next-line no-unreachable
 	const apiKey = process.env.GEMINI_API_KEY;
 	if (!apiKey) throw new Error("GEMINI_API_KEY is required for --fetch");
 	for (let attempt = 1; attempt <= 3; attempt += 1) {

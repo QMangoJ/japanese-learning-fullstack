@@ -1,9 +1,9 @@
 /**
  * N2 语法「造句练习」：每个语法点 1–2 道「看中文 → 用本语法造日语句」的题目，附参考答案与 N3+ 生词。
  *
- *   GEMINI_API_KEY=... node --experimental-strip-types scripts/generate-n2-grammar-composition.mts [--fetch] [--weeks=2,3]
+ *   node --experimental-strip-types scripts/generate-n2-grammar-composition.mts [--fetch] [--weeks=2,3]
  *
- * --fetch 调用 Gemini 补齐 scripts/n2-grammar-composition.json 里缺的语法点（已有条目不覆盖；
+ * --fetch（已停用：Gemini key 只用于 news-learning 文章翻译，带 --fetch 会直接报错）调用 Gemini 补齐 scripts/n2-grammar-composition.json 里缺的语法点（已有条目不覆盖；
  * 人工校对后的 JSON 是唯一来源）。不带 --fetch 时只校验并输出 public/data/n2-grammar-composition.json。
  */
 import { existsSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
@@ -52,6 +52,9 @@ const SCHEMA = {
 };
 
 async function gemini(payload: unknown): Promise<any> {
+	// Alan's rule: the Gemini key is only for news-learning article translation.
+	throw new Error("Refusing to call Gemini: GEMINI_API_KEY is reserved for translating news articles on news-learning (news.ki-toko.com) only. Generate this content without the Gemini API.");
+	// eslint-disable-next-line no-unreachable
 	const apiKey = process.env.GEMINI_API_KEY;
 	if (!apiKey) throw new Error("GEMINI_API_KEY is required for --fetch");
 	for (let attempt = 1; attempt <= 3; attempt += 1) {

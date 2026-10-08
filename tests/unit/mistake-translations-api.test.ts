@@ -46,9 +46,11 @@ describe("/api/mistake-translations", () => {
 	it("generates and caches missing translations for signed-in users", async () => {
 		const kv = memoryKv();
 		seedUser(kv, { id: "g_1" });
-		const fetchMock = vi.fn(async () => geminiResponse(["高兴；喜悦"]));
+		const fetchMock = vi.fn();
 		vi.stubGlobal("fetch", fetchMock);
-		const env = { ...testEnv(kv), GEMINI_API_KEY: "k" };
+		const run = vi.fn(async () => ({ response: ["高兴；喜悦"] }));
+		// The Gemini key is reserved for news-learning: the route must not use it even when present.
+		const env = { ...testEnv(kv), GEMINI_API_KEY: "k", AI: { run } };
 		const request = await authedRequest("http://localhost/api/mistake-translations", "g_1", {
 			method: "POST",
 			headers: { "content-type": "application/json" },
@@ -57,7 +59,8 @@ describe("/api/mistake-translations", () => {
 		const res = await action({ request, context: routeContext(env) });
 		expect(await res.json()).toEqual({ translations: { "喜ぶ\nよろこぶ": "高兴；喜悦" }, pending: 0, retry: false });
 		expect(kv.map.get(await translationKey("喜ぶ\nよろこぶ"))).toBe("高兴；喜悦");
-		expect(fetchMock).toHaveBeenCalledTimes(1);
+		expect(run).toHaveBeenCalledTimes(1);
+		expect(fetchMock).not.toHaveBeenCalled();
 	});
 
 	it("rejects bad payloads", async () => {
@@ -78,26 +81,12 @@ describe("/api/mistake-study", () => {
 	it("generates and caches a reading and an example for a signed-in user", async () => {
 		const kv = memoryKv();
 		seedUser(kv, { id: "g_1" });
-		const fetchMock = vi.fn(async () =>
-			new Response(
-				JSON.stringify({
-					candidates: [
-						{
-							content: {
-								parts: [
-									{
-										text: JSON.stringify([{ reading: "ようがん", cn: "熔岩", example: "溶岩が流れました。", exampleCn: "熔岩流下来了。" }]),
-									},
-								],
-							},
-						},
-					],
-				}),
-				{ status: 200, headers: { "content-type": "application/json" } },
-			),
-		);
+		const fetchMock = vi.fn();
 		vi.stubGlobal("fetch", fetchMock);
-		const env = { ...testEnv(kv), GEMINI_API_KEY: "k" };
+		const run = vi.fn(async () => ({
+			response: [{ reading: "ようがん", cn: "熔岩", example: "溶岩が流れました。", exampleCn: "熔岩流下来了。" }],
+		}));
+		const env = { ...testEnv(kv), GEMINI_API_KEY: "k", AI: { run } };
 		const request = await authedRequest("http://localhost/api/mistake-study", "g_1", {
 			method: "POST",
 			headers: { "content-type": "application/json" },
@@ -110,6 +99,7 @@ describe("/api/mistake-study", () => {
 			retry: false,
 		});
 		expect(kv.map.get(await studyAidKey("溶岩"))).toContain("ようがん");
+		expect(fetchMock).not.toHaveBeenCalled();
 	});
 });
 
@@ -133,7 +123,7 @@ describe("self-typed notes when Gemini is out of quota", () => {
 			status: 429,
 		});
 
-	it("falls back to the lite model, then Workers AI, caches the result and logs why", async () => {
+	it("uses Workers AI only (never Gemini) and caches the result", async () => {
 		const kv = memoryKv();
 		seedUser(kv, { id: "g_1" });
 		const fetchMock = vi.fn(async () => quota());
@@ -155,13 +145,10 @@ describe("self-typed notes when Gemini is out of quota", () => {
 			pending: 0,
 			retry: false,
 		});
-		expect(fetchMock).toHaveBeenCalledTimes(2);
-		expect(String(fetchMock.mock.calls[0][0])).toContain("gemini-flash-latest");
-		expect(String(fetchMock.mock.calls[1][0])).toContain("gemini-flash-lite-latest");
+		expect(fetchMock).not.toHaveBeenCalled();
 		expect(run).toHaveBeenCalledWith("@cf/openai/gpt-oss-120b", expect.objectContaining({ messages: expect.any(Array) }));
 		expect(kv.map.get(await translationKey("習得"))).toBe("掌握；学会");
 		const logged = warn.mock.calls.map((c) => String(c[0])).join("\n");
-		expect(logged).toContain("HTTP 429");
 		expect(logged).not.toContain("secret-key");
 		warn.mockRestore();
 	});

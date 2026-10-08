@@ -17,8 +17,8 @@ type Args = { request: Request; context: AppLoadContext };
 /**
  * POST { texts } → { translations: { [text]: 中文 } }.
  * Cached translations are returned to anyone; new ones are only generated
- * for signed-in users (or local dev without auth) so the Gemini key can't be
- * used as an open translation proxy.
+ * for signed-in users (or local dev without auth) so the Workers AI binding can't
+ * be used as an open translation proxy.
  */
 export async function action({ request, context }: Args) {
 	if (request.method !== "POST") return json({ error: "method not allowed" }, { status: 405 });
@@ -46,13 +46,13 @@ export async function action({ request, context }: Args) {
 	let pending = missing.length;
 	let retry = false;
 	const ai = (env.AI as unknown as AiRunner | undefined) ?? null;
-	if (missing.length && (env.GEMINI_API_KEY || ai)) {
+	if (missing.length && ai) {
 		const allowed = !isAuthConfigured(env) || Boolean(await getSessionUser(request, env));
 		if (allowed) {
 			const todo = missing.slice(0, MAX_TRANSLATION_GENERATE);
 			const generated = await generateTranslations(
 				todo.map((i) => texts[i]),
-				{ apiKey: env.GEMINI_API_KEY || undefined, ai },
+				{ ai },
 			);
 			const writes: Promise<void>[] = [];
 			generated.forEach((value, j) => {

@@ -7,7 +7,7 @@
  * 只收最容易混淆、且不在同一天的组合（同一天的语法点已在「语法总结」里逐条区分），每个语法点最多 2 条。
  * 脚本校验引用的语法点都存在，并按天展开（成对的两边如都在 weeks 内，两天都会显示），输出 public/data/n2-grammar-similar.json，
  * 前端把这些条目和跨等级条目放在同一个「相似表达」列表里，只多一个等级标签 N2。
- * --review 额外调用 Gemini（GEMINI_API_KEY）做一遍校对，只打印可疑条目，不改文件。
+ * --review（已停用：Gemini key 只用于 news-learning 文章翻译，会直接报错）额外调用 Gemini做一遍校对，只打印可疑条目，不改文件。
  */
 import { readdirSync, readFileSync, writeFileSync } from "node:fs";
 
@@ -66,6 +66,9 @@ export function build(src: Source) {
 }
 
 async function review(src: Source) {
+	// Alan's rule: the Gemini key is only for news-learning article translation.
+	throw new Error("Refusing to call Gemini: GEMINI_API_KEY is reserved for translating news articles on news-learning (news.ki-toko.com) only. Generate this content without the Gemini API.");
+	// eslint-disable-next-line no-unreachable
 	const apiKey = process.env.GEMINI_API_KEY;
 	if (!apiKey) throw new Error("GEMINI_API_KEY is required for --review");
 	const items = src.pairs.map((p) => ({ id: `${p.a}|${p.b}`, a: point(p.a)?.pattern, b: point(p.b)?.pattern, diff: p.diff, a_ex: p.a_ex, b_ex: p.b_ex }));
