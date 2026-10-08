@@ -93,7 +93,9 @@
 		"test:vocab-kanji-daily": "node scripts/check-n3-vocab-kanji-daily-translations.mjs",
 		"test:vocab-english": "node scripts/check-n3-n4-vocab-english.mjs",
 		"typegen": "react-router typegen",
-		"typecheck": "npm run typegen && tsc -b"
+		"typecheck": "npm run typegen && tsc -b",
+		"mistakes:pending": "node --experimental-strip-types scripts/mistakes-pending.mts",
+		"mistakes:write": "node --experimental-strip-types scripts/mistakes-write.mts"
 	},
 	"type": "module"
 }

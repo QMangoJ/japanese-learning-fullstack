@@ -23,6 +23,8 @@ export type MemoryCardItem = {
 	exampleEn?: string;
 	/** Chinese translation of the whole item (shown on the back). */
 	translation?: string;
+	/** Manual note waiting for an assistant translation (show 「翻译中…」). */
+	awaitingTranslation?: boolean;
 	cnHtml?: string;
 	kind?: MemoryCardKind | string;
 	week?: number;
@@ -256,10 +258,10 @@ export function MemoryCards({
 							<div className="fcard-ex-label">{lx("翻译", "Translation")}</div>
 							<div className="cn">{cur.translation}</div>
 						</div>
-					) : translationPending ? (
-						<div className="ex fcard-ex fcard-trans">
+					) : translationPending || cur.awaitingTranslation ? (
+						<div className="ex fcard-ex fcard-trans" data-fc-translation-pending="1">
 							<div className="fcard-ex-label">{lx("翻译", "Translation")}</div>
-							<div className="cn meta">{lx("翻译加载中…", "Loading translation…")}</div>
+							<div className="cn meta">{lx("翻译中…", "Translating…")}</div>
 						</div>
 					) : null}
 					{cur.exampleJp ? (

@@ -60,6 +60,46 @@ describe("/api/mistake-translations", () => {
 		expect(fetchMock).toHaveBeenCalledTimes(1);
 	});
 
+
+	it("skips generation when generate is false (manual notes)", async () => {
+		const kv = memoryKv();
+		seedUser(kv, { id: "g_1" });
+		const fetchMock = vi.fn();
+		vi.stubGlobal("fetch", fetchMock);
+		const env = { ...testEnv(kv), GEMINI_API_KEY: "k" };
+		const request = await authedRequest("http://localhost/api/mistake-translations", "g_1", {
+			method: "POST",
+			headers: { "content-type": "application/json" },
+			body: JSON.stringify({ texts: ["勿体ない"], generate: false }),
+		});
+		const res = await action({ request, context: routeContext(env) });
+		expect(await res.json()).toEqual({ translations: {}, pending: 1, retry: false });
+		expect(fetchMock).not.toHaveBeenCalled();
+	});
+
+	it("returns assistant-marked cache and never overwrites it", async () => {
+		const kv = memoryKv();
+		seedUser(kv, { id: "g_1" });
+		const key = await translationKey("勿体ない");
+		kv.map.set(key, JSON.stringify({ cn: "浪费可惜；不舍得", source: "assistant" }));
+		const fetchMock = vi.fn(async () => geminiResponse(["错误覆盖"]));
+		vi.stubGlobal("fetch", fetchMock);
+		const env = { ...testEnv(kv), GEMINI_API_KEY: "k" };
+		const request = await authedRequest("http://localhost/api/mistake-translations", "g_1", {
+			method: "POST",
+			headers: { "content-type": "application/json" },
+			body: JSON.stringify({ texts: ["勿体ない"] }),
+		});
+		const res = await action({ request, context: routeContext(env) });
+		expect(await res.json()).toEqual({
+			translations: { 勿体ない: "浪费可惜；不舍得" },
+			pending: 0,
+			retry: false,
+		});
+		expect(kv.map.get(key)).toContain("assistant");
+		expect(fetchMock).not.toHaveBeenCalled();
+	});
+
 	it("rejects bad payloads", async () => {
 		const env = testEnv(memoryKv());
 		const res = await action({ request: post({ texts: [1] }), context: routeContext(env) });

@@ -1,8 +1,9 @@
 /**
  * 错题本背诵的中文翻译。做题时答错记下的题目，先按题目原文（加正确答案）
- * 在课本数据里查现成译文（见 memory-deck.ts 的 lookupMistakeGloss）；
- * 课本里没有的自由笔记（自己手打的单词/语法），由 /api/mistake-translations 生成一次后缓存在 KV：
- * 依次尝试 Gemini、Gemini lite、Workers AI，任何一个成功即可。
+ * 在课本数据里查现成译文（见 memory-deck.ts 的 lookupMistakeGloss）。
+ * 自己手打的单词/语法（type=word|grammar）不走任何模型：背诵页显示「翻译中…」，
+ * 由助手通过 scripts/mistakes-*.mts 写入 KV（source=assistant），优先生效且不会被覆盖。
+ * 其余缺译文的错题仍可由 /api/mistake-translations 生成并缓存（见该路由；勿在此接 Gemini）。
  */
 
 export const MISTAKE_TRANSLATION_ENDPOINT = "/api/mistake-translations";
@@ -18,12 +19,25 @@ export const DEFAULT_GEMINI_MODEL = "gemini-flash-latest";
 
 export type TranslationMap = Record<string, string>;
 
+/** Manual notebook notes the learner typed in (not quiz mistakes). */
+export const MANUAL_MISTAKE_TYPES = new Set(["word", "grammar"]);
+
+export function isManualMistakeType(type: string | undefined): boolean {
+	return MANUAL_MISTAKE_TYPES.has(String(type || ""));
+}
+
+/** Written by the assistant CLI; must never be overwritten by on-demand AI. */
+export const ASSISTANT_SOURCE = "assistant" as const;
+export type MistakeTranslationSource = typeof ASSISTANT_SOURCE | "workers-ai" | "gemini";
+
 export type StudyAid = {
 	reading?: string;
 	/** 简体中文意思。空字符串表示已经问过、模型没有给出。 */
 	cn?: string;
 	example?: string;
 	exampleCn?: string;
+	/** `assistant` = human/assistant review; wins over any model cache. */
+	source?: MistakeTranslationSource;
 };
 
 export type StudyAidMap = Record<string, StudyAid>;
@@ -60,14 +74,27 @@ export function mistakeTranslationSource(m: { text?: string }): string {
 	return normalizeTranslationSource(cn ? `${jp}\n正确答案：${cn}` : jp);
 }
 
-export function isTranslationRequest(value: unknown): value is { texts: string[] } {
+export type TranslationRequest = {
+	texts: string[];
+	/** When false, only return KV cache (used for manual word/grammar notes). Default true. */
+	generate?: boolean;
+};
+
+export function isTranslationRequest(value: unknown): value is TranslationRequest {
 	if (typeof value !== "object" || value === null || Array.isArray(value)) return false;
-	const texts = (value as { texts?: unknown }).texts;
-	return (
-		Array.isArray(texts) &&
-		texts.length <= MAX_TRANSLATION_TEXTS &&
-		texts.every((t) => typeof t === "string" && t.length <= MAX_TRANSLATION_TEXT_LENGTH * 2)
-	);
+	const record = value as { texts?: unknown; generate?: unknown };
+	const texts = record.texts;
+	if (
+		!(
+			Array.isArray(texts) &&
+			texts.length <= MAX_TRANSLATION_TEXTS &&
+			texts.every((t) => typeof t === "string" && t.length <= MAX_TRANSLATION_TEXT_LENGTH * 2)
+		)
+	) {
+		return false;
+	}
+	if (record.generate !== undefined && typeof record.generate !== "boolean") return false;
+	return true;
 }
 
 export async function translationKey(text: string): Promise<string> {
@@ -296,7 +323,13 @@ export function mistakeNeedsExample(jp: string): boolean {
 
 export function normalizeStudyAid(value: unknown): StudyAid | null {
 	if (!value || typeof value !== "object" || Array.isArray(value)) return null;
-	const raw = value as { reading?: unknown; cn?: unknown; example?: unknown; exampleCn?: unknown };
+	const raw = value as {
+		reading?: unknown;
+		cn?: unknown;
+		example?: unknown;
+		exampleCn?: unknown;
+		source?: unknown;
+	};
 	const aid: StudyAid = {};
 	if (typeof raw.reading === "string") {
 		const reading = raw.reading.replace(/[\s・]+/g, "");
@@ -316,8 +349,53 @@ export function normalizeStudyAid(value: unknown): StudyAid | null {
 		const exampleCn = raw.exampleCn.trim();
 		if (exampleCn && exampleCn.length <= 80) aid.exampleCn = exampleCn;
 	}
+	if (raw.source === ASSISTANT_SOURCE) aid.source = ASSISTANT_SOURCE;
+	else if (raw.source === "workers-ai" || raw.source === "gemini") aid.source = raw.source;
 	if (!aid.reading && !aid.example && !aid.cn) return null;
 	return aid;
+}
+
+/** Plain string (legacy AI) or `{ cn, source }` JSON written by the assistant CLI. */
+export function parseStoredTranslation(value: string | null): { cn: string; source?: MistakeTranslationSource } | null {
+	if (!value) return null;
+	const trimmed = value.trim();
+	if (!trimmed) return null;
+	if (trimmed.startsWith("{")) {
+		try {
+			const parsed: unknown = JSON.parse(trimmed);
+			if (parsed && typeof parsed === "object" && !Array.isArray(parsed)) {
+				const record = parsed as { cn?: unknown; source?: unknown };
+				if (typeof record.cn === "string" && record.cn.trim()) {
+					const source =
+						record.source === ASSISTANT_SOURCE || record.source === "workers-ai" || record.source === "gemini"
+							? record.source
+							: undefined;
+					return { cn: record.cn.trim().slice(0, 400), source };
+				}
+			}
+		} catch {
+			/* fall through: treat as plain Chinese */
+		}
+	}
+	return { cn: trimmed.slice(0, 400) };
+}
+
+export function serializeTranslation(cn: string, source?: MistakeTranslationSource): string {
+	const text = cn.trim().slice(0, 400);
+	if (source === ASSISTANT_SOURCE) return JSON.stringify({ cn: text, source });
+	return text;
+}
+
+export function serializeStudyAid(aid: StudyAid): string {
+	return JSON.stringify(aid);
+}
+
+export function isAssistantTranslation(value: string | null): boolean {
+	return parseStoredTranslation(value)?.source === ASSISTANT_SOURCE;
+}
+
+export function isAssistantStudyAid(value: string | null): boolean {
+	return parseStoredStudyAid(value)?.source === ASSISTANT_SOURCE;
 }
 
 function toHiragana(text: string): string {
