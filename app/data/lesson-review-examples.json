@@ -4575,5 +4575,274 @@
 		"example": "無事に着きました。",
 		"exampleCn": "平安到达了。",
 		"exampleEn": "I arrived safely."
+	},
+	"1 日目（いちにちめ）": {
+		"cn": "第1天",
+		"en": "the first day",
+		"example": "旅行の1日目は京都でした。",
+		"exampleCn": "旅行的第一天是京都。",
+		"exampleEn": "The first day of the trip was Kyoto."
+	},
+	"2 日目（ふつかめ）": {
+		"cn": "第2天",
+		"en": "the second day",
+		"example": "2日目に箱根へ行きました。",
+		"exampleCn": "第二天去了箱根。",
+		"exampleEn": "On the second day I went to Hakone."
+	},
+	"3 日目（みっかめ）": {
+		"cn": "第3天",
+		"en": "the third day",
+		"example": "3日目は雨でした。",
+		"exampleCn": "第三天下雨了。",
+		"exampleEn": "It rained on the third day."
+	},
+	"4 日目（よっかめ）": {
+		"cn": "第4天",
+		"en": "the fourth day",
+		"example": "4日目に東京へ戻りました。",
+		"exampleCn": "第四天回了东京。",
+		"exampleEn": "I returned to Tokyo on the fourth day."
+	},
+	"初日（しょにち）": {
+		"cn": "第一天",
+		"en": "the first day",
+		"example": "仕事の初日は緊張しました。",
+		"exampleCn": "上班第一天很紧张。",
+		"exampleEn": "I was nervous on my first day of work."
+	},
+	"叩く（たたく）": {
+		"cn": "敲、拍",
+		"en": "to knock / to tap",
+		"example": "ドアを叩きました。",
+		"exampleCn": "敲了门。",
+		"exampleEn": "I knocked on the door."
+	},
+	"汚かった（よごかった）": {
+		"cn": "脏了",
+		"en": "was dirty",
+		"example": "昨日の部屋は汚かったです。",
+		"exampleCn": "昨天的房间很脏。",
+		"exampleEn": "The room was dirty yesterday."
+	},
+	"翌日（よくじつ）": {
+		"cn": "第二天、次日",
+		"en": "the next day",
+		"example": "翌日、また同じ店へ行きました。",
+		"exampleCn": "第二天又去了同一家店。",
+		"exampleEn": "The next day I went to the same shop again."
+	},
+	"二泊（にはく）三日（みっか）": {
+		"cn": "两晚三天",
+		"en": "two nights and three days",
+		"example": "箱根に二泊三日で行きました。",
+		"exampleCn": "去箱根住了两晚三天。",
+		"exampleEn": "I went to Hakone for two nights and three days."
+	},
+	"ソファを開けるとベッドになった": {
+		"cn": "把沙发打开就变成了床",
+		"en": "When I opened the sofa, it turned into a bed"
+	},
+	"大涌谷（おおわくだに）": {
+		"cn": "大涌谷（箱根）",
+		"en": "Owakudani, in Hakone",
+		"example": "大涌谷で卵を買いました。",
+		"exampleCn": "在大涌谷买了鸡蛋。",
+		"exampleEn": "I bought eggs at Owakudani."
+	},
+	"匂い（におい）": {
+		"cn": "气味",
+		"en": "a smell",
+		"example": "いい匂いがします。",
+		"exampleCn": "有一股好闻的气味。",
+		"exampleEn": "It smells good."
+	},
+	"長生き（ながいき）できる": {
+		"cn": "能够长寿",
+		"en": "can live a long life",
+		"example": "よく歩くと長生きできるそうです。",
+		"exampleCn": "据说常走路就能长寿。",
+		"exampleEn": "They say walking a lot helps you live a long life."
+	},
+	"溶岩（ようがん）": {
+		"cn": "熔岩",
+		"en": "lava",
+		"example": "溶岩が冷えて石になりました。",
+		"exampleCn": "熔岩冷却后变成了石头。",
+		"exampleEn": "The lava cooled and turned into rock."
+	},
+	"体に悪い影響（えいきょう）があったら、こわいです": {
+		"cn": "如果对身体有不好的影响，会害怕",
+		"en": "I'd be scared if it had a bad effect on my body"
+	},
+	"表（ひょう）": {
+		"cn": "表、表格",
+		"en": "a table / a chart",
+		"example": "この表を見てください。",
+		"exampleCn": "请看这张表。",
+		"exampleEn": "Please look at this chart."
+	},
+	"団（だん）": {
+		"cn": "团",
+		"en": "a group",
+		"example": "旅行団で京都へ行きました。",
+		"exampleCn": "跟旅行团去了京都。",
+		"exampleEn": "I went to Kyoto with a tour group."
+	},
+	"学業（がくぎょう）": {
+		"cn": "学业",
+		"en": "one's studies",
+		"example": "学業が忙しいです。",
+		"exampleCn": "学业很忙。",
+		"exampleEn": "My studies keep me busy."
+	},
+	"開運御守（かいうんおまもり）": {
+		"cn": "开运御守",
+		"en": "a good-luck charm",
+		"example": "お寺で開運御守を買いました。",
+		"exampleCn": "在寺庙买了开运御守。",
+		"exampleEn": "I bought a good-luck charm at the temple."
+	},
+	"鞍馬寺（くらまでら）": {
+		"cn": "鞍马寺",
+		"en": "Kurama-dera",
+		"example": "鞍馬寺まで歩きました。",
+		"exampleCn": "走到了鞍马寺。",
+		"exampleEn": "I walked as far as Kurama-dera."
+	},
+	"不思議（ふしぎ）": {
+		"cn": "不可思议",
+		"en": "mysterious / strange",
+		"example": "不思議な話を聞きました。",
+		"exampleCn": "听了一个不可思议的故事。",
+		"exampleEn": "I heard a mysterious story."
+	},
+	"壺（つぼ）": {
+		"cn": "壶",
+		"en": "a jar",
+		"example": "古い壺が棚にあります。",
+		"exampleCn": "架子上有一个旧壶。",
+		"exampleEn": "There is an old jar on the shelf."
+	},
+	"何十年前に（なんじゅうねんまえに）": {
+		"cn": "几十年前",
+		"en": "decades ago",
+		"example": "何十年前にこの寺ができました。",
+		"exampleCn": "这座寺庙是几十年前建成的。",
+		"exampleEn": "This temple was built decades ago."
+	},
+	"お祈り（おいのり）": {
+		"cn": "祈祷",
+		"en": "a prayer",
+		"example": "神社でお祈りをしました。",
+		"exampleCn": "在神社祈祷了。",
+		"exampleEn": "I said a prayer at the shrine."
+	},
+	"そんなことをしました": {
+		"cn": "做了那样的事",
+		"en": "I did that"
+	},
+	"お祈りしたことが、叶う（かなう）": {
+		"cn": "祈祷的事情实现了",
+		"en": "What I prayed for came true"
+	},
+	"くもりでした": {
+		"cn": "是阴天",
+		"en": "it was cloudy",
+		"example": "昨日は一日くもりでした。",
+		"exampleCn": "昨天一整天都是阴天。",
+		"exampleEn": "It was cloudy all day yesterday."
+	},
+	"ツアー": {
+		"cn": "跟团游",
+		"en": "a tour",
+		"example": "日帰りツアーに参加しました。",
+		"exampleCn": "参加了当日往返的旅游团。",
+		"exampleEn": "I joined a day-trip tour."
+	},
+	"グーグルレビュー": {
+		"cn": "谷歌上的评价",
+		"en": "a Google review",
+		"example": "ホテルのグーグルレビューを読みました。",
+		"exampleCn": "看了酒店在谷歌上的评价。",
+		"exampleEn": "I read the hotel's Google reviews."
+	},
+	"日帰り（ひがえり）温泉（おんせん）": {
+		"cn": "当日往返的温泉",
+		"en": "a day-trip hot spring",
+		"example": "週末に日帰り温泉へ行きました。",
+		"exampleCn": "周末去了当日往返的温泉。",
+		"exampleEn": "I went to a day-trip hot spring on the weekend."
+	},
+	"雰囲気（ふんいき）": {
+		"cn": "气氛",
+		"en": "atmosphere",
+		"example": "この店は落ち着いた雰囲気です。",
+		"exampleCn": "这家店的气氛很安静。",
+		"exampleEn": "This shop has a calm atmosphere."
+	},
+	"観光客（かんこうきゃく）": {
+		"cn": "游客",
+		"en": "a tourist",
+		"example": "今日は観光客が多いです。",
+		"exampleCn": "今天游客很多。",
+		"exampleEn": "There are a lot of tourists today."
+	},
+	"杉並区（すぎなみく）": {
+		"cn": "杉并区",
+		"en": "Suginami Ward",
+		"example": "友達は杉並区に住んでいます。",
+		"exampleCn": "朋友住在杉并区。",
+		"exampleEn": "My friend lives in Suginami."
+	},
+	"果物（くだもの）": {
+		"cn": "水果",
+		"en": "fruit",
+		"example": "新鮮な果物を買いました。",
+		"exampleCn": "买了新鲜的水果。",
+		"exampleEn": "I bought fresh fruit."
+	},
+	"励ましてくれました（はげましてくれました）": {
+		"cn": "鼓励了我",
+		"en": "encouraged me"
+	},
+	"資格（しかく）": {
+		"cn": "资格、证书",
+		"en": "a qualification",
+		"example": "日本語の資格を取りたいです。",
+		"exampleCn": "想考一个日语证书。",
+		"exampleEn": "I want to get a Japanese qualification."
+	},
+	"どのくらいの頻度（ひんど）で行きます": {
+		"cn": "多久去一次",
+		"en": "How often do you go?"
+	},
+	"１週間に３回": {
+		"cn": "一周三次",
+		"en": "three times a week",
+		"example": "ジムに１週間に３回行きます。",
+		"exampleCn": "一周去三次健身房。",
+		"exampleEn": "I go to the gym three times a week."
+	},
+	"前日（ぜんじつ）": {
+		"cn": "前一天",
+		"en": "the day before",
+		"example": "旅行の前日に荷物を準備しました。",
+		"exampleCn": "旅行的前一天准备了行李。",
+		"exampleEn": "I packed the day before the trip."
+	},
+	"祝いました（いわいました）": {
+		"cn": "庆祝了",
+		"en": "celebrated",
+		"example": "誕生日を祝いました。",
+		"exampleCn": "庆祝了生日。",
+		"exampleEn": "We celebrated a birthday."
+	},
+	"泣きました（なきました）": {
+		"cn": "哭了",
+		"en": "cried",
+		"example": "映画を見て泣きました。",
+		"exampleCn": "看电影的时候哭了。",
+		"exampleEn": "I cried while watching the movie."
 	}
 }

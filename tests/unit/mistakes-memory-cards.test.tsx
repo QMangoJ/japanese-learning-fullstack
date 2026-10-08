@@ -55,6 +55,32 @@ describe("cardsFromMistakes", () => {
 		expect(cards[3].jpHtml).toBe("<ruby>商品券<rt>しょうひんけん</rt></ruby>");
 		expect(cards[3].reading).toBeUndefined();
 	});
+
+	it("fills a missing reading and an example sentence", () => {
+		const cards = cardsFromMistakes(
+			[{ id: "lava", type: "word", text: "溶岩" }],
+			{},
+			{ 溶岩: { reading: "ようがん", example: "溶岩が冷えて石になりました。", exampleCn: "熔岩冷却后变成了石头。" } },
+		);
+		expect(cards[0].jpHtml).toContain("ようがん");
+		expect(cards[0].exampleJp).toBe("溶岩が冷えて石になりました。");
+		expect(cards[0].exampleCn).toBe("熔岩冷却后变成了石头。");
+		expect(cards[0].exampleJpHtml).toContain("溶岩");
+	});
+
+	it("does not invent an example for a full question", () => {
+		const cards = cardsFromMistakes(
+			[{ id: "q", type: "q", text: "読んではいる（　　）、本は頭に入らない。\n正确答案：ものの" }],
+			{},
+			{
+				"読んではいる（　　）、本は頭に入らない。\n正确答案：ものの": {
+					example: "これは余計な例句です。",
+					exampleCn: "这是多余的例句。",
+				},
+			},
+		);
+		expect(cards[0].exampleJp).toBeUndefined();
+	});
 });
 
 describe("mistakeTranslationSource", () => {
@@ -73,7 +99,7 @@ describe("MistakesMemoryCards", () => {
 		);
 		vi.stubGlobal("fetch", fetchMock);
 		render(<MistakesMemoryCards list={[{ id: "w1", type: "word", text: "気づく" }]} />);
-		await waitFor(() => expect(fetchMock).toHaveBeenCalledTimes(1));
+		await waitFor(() => expect(fetchMock).toHaveBeenCalled());
 		expect(screen.queryByText("注意到；察觉")).not.toBeInTheDocument();
 		await user.click(screen.getByText("回想读音和意思，点击翻面"));
 		expect(await screen.findByText("注意到；察觉")).toBeInTheDocument();
@@ -81,14 +107,22 @@ describe("MistakesMemoryCards", () => {
 		expect(JSON.parse(localStorage.getItem("mistake-translations") || "{}")).toEqual({ "気づく": "注意到；察觉" });
 	});
 
-	it("uses cached translations without refetching", async () => {
+	it("uses cached translations and study aids without refetching", async () => {
 		localStorage.setItem("mistake-translations", JSON.stringify({ "気づく": "注意到" }));
+		localStorage.setItem(
+			"mistake-study-aids",
+			JSON.stringify({ "気づく": { reading: "きづく", example: "間違いに気づきました。", exampleCn: "发觉了错误。" } }),
+		);
 		const fetchMock = vi.fn();
 		vi.stubGlobal("fetch", fetchMock);
 		const user = userEvent.setup();
 		render(<MistakesMemoryCards list={[{ id: "w1", type: "word", text: "気づく" }]} />);
 		await user.click(screen.getByText("回想读音和意思，点击翻面"));
 		expect(screen.getByText("注意到")).toBeInTheDocument();
+		expect(document.querySelector(".fcard-ex .jp")?.textContent).toContain("間違い");
+		expect(document.querySelector(".fcard-ex .jp")?.textContent).toContain("づきました");
+		expect(screen.getByText("まちがいにきづきました。")).toBeInTheDocument();
+		expect(screen.getByText("发觉了错误。")).toBeInTheDocument();
 		expect(fetchMock).not.toHaveBeenCalled();
 	});
 

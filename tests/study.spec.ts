@@ -1175,6 +1175,13 @@ test.describe("study interactions", () => {
 			const translations = Object.fromEntries(texts.map((t) => [t, t.includes("気づく") ? "察觉、注意到" : "（其他）"]));
 			await route.fulfill({ json: { translations, pending: 0 } });
 		});
+		await page.route("**/api/mistake-study", async (route) => {
+			const { texts } = route.request().postDataJSON() as { texts: string[] };
+			const aids = Object.fromEntries(
+				texts.map((text) => [text, { reading: "きづく", example: "間違いに気づきました。", exampleCn: "发觉了错误。" }]),
+			);
+			await route.fulfill({ json: { aids, pending: 0 } });
+		});
 		await waitForStudy(page);
 		await openStudyNav(page, "mistakes");
 		await page.locator("[data-mtype='word']").click();
@@ -1189,6 +1196,12 @@ test.describe("study interactions", () => {
 		const translation = page.locator("[data-fc-translation]");
 		await expect(translation).toContainText(/翻译|Translation/);
 		await expect(translation).toContainText("察觉、注意到");
+		await expect(page.locator(".fcard-ex > .jp").first()).toContainText("づきました");
+		await expect(page.getByText("まちがいにきづきました。")).toBeVisible();
+		await expect(page.getByText("发觉了错误。")).toBeVisible();
+		expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(
+			await page.evaluate(() => document.documentElement.clientWidth),
+		);
 	});
 
 	test("searches grammar and opens a hit", async ({ page }) => {
@@ -1231,7 +1244,10 @@ test.describe("study interactions", () => {
 		await openStudyNav(page, "review");
 		await expect(page.locator("#title")).toContainText(/课堂复习|Lesson review/);
 		await expect(page.locator(".review-day").first()).toBeVisible({ timeout: 15_000 });
-		await page.locator(".review-day").first().click();
+		await page.getByRole("tab", { name: "Preply すみれ先生" }).click();
+		const newest = page.locator(".review-day").first();
+		await expect(newest).toContainText(/10月6日|Oct 6/);
+		await newest.click();
 		await expect(page.locator(".fcard").first()).toBeVisible({ timeout: 15_000 });
 		await page.locator(".fcard").first().click();
 		await expect(page.locator(".fcard .backside, .fcard .hint").first()).toBeVisible();

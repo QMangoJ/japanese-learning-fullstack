@@ -307,6 +307,31 @@ On your mark
 		expect(day.items.every((item) => item.cn && item.en)).toBe(true);
 	});
 
+	it("fills the 2026-10-06 Preply note with readings and glosses", () => {
+		const [day] = enrichReviewDays(
+			parseLessonReview(
+				`# 2026.10.06
+1 日目（いちにちめ）｜第1天
+初日（しょにち）
+大涌谷（おおわくだに）
+ソファを開けるとベッドになった
+励ましてくれました（はげましてくれました）
+杉並区（すぎなみく）
+`,
+				{ sourceName: "Preply すみれ先生", sourceSlug: "preply" },
+			),
+		);
+		expect(day.id).toBe("2026-10-06:preply");
+		const byJp = Object.fromEntries(day.items.map((item) => [item.jp, item]));
+		expect(byJp["1 日目（いちにちめ）"]?.cn).toBe("第1天");
+		expect(byJp["初日（しょにち）"]?.example).toContain("初日");
+		expect(byJp["大涌谷（おおわくだに）"]?.jp_r).toContain("おおわくだに");
+		expect(byJp["ソファを開けるとベッドになった"]?.jp_r).toContain("あける");
+		expect(byJp["励ましてくれました（はげましてくれました）"]?.cn).toBe("鼓励了我");
+		expect(byJp["杉並区（すぎなみく）"]?.en).toBe("Suginami Ward");
+		expect(day.items.every((item) => item.cn && item.en)).toBe(true);
+	});
+
 	it("keeps the same calendar date from two documents as separate decks", () => {
 		const payload = buildLessonReviewPayloadFromDocs(
 			[

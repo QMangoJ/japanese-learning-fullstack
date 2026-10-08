@@ -5,6 +5,8 @@
 
 export const MISTAKE_TRANSLATION_ENDPOINT = "/api/mistake-translations";
 export const MISTAKE_TRANSLATION_KV_PREFIX = "mistake-cn:v1:";
+export const MISTAKE_STUDY_ENDPOINT = "/api/mistake-study";
+export const MISTAKE_STUDY_KV_PREFIX = "mistake-study:v1:";
 export const MAX_TRANSLATION_TEXTS = 200;
 export const MAX_TRANSLATION_TEXT_LENGTH = 600;
 /** Misses translated per request; the rest come back on the next open. */
@@ -13,6 +15,14 @@ const GEMINI_BATCH = 25;
 export const DEFAULT_GEMINI_MODEL = "gemini-flash-latest";
 
 export type TranslationMap = Record<string, string>;
+
+export type StudyAid = {
+	reading?: string;
+	example?: string;
+	exampleCn?: string;
+};
+
+export type StudyAidMap = Record<string, StudyAid>;
 
 export function normalizeTranslationSource(text: string): string {
 	return String(text || "")
@@ -110,6 +120,111 @@ export async function geminiTranslate(
 			}
 		} catch {
 			/* leave this batch untranslated; it is retried next time */
+		}
+		out.push(...result);
+	}
+	return out;
+}
+
+const STUDY_PROMPT = `你是日语老师。下面是一位中文母语的学习者在「错题本」里记下的条目（JSON 数组）。
+请为每一条返回一个对象，字段如下：
+- reading：词头或整句的平假名读音，不要汉字、不要罗马字、不要空格。条目本身已经全是假名时返回空字符串。
+- example：用条目里的单词或语法造一个简短、自然的日语例句，不超过 40 个字。条目本身已经是完整句子时返回空字符串。
+- exampleCn：例句的简体中文。没有例句时返回空字符串。
+不要解释。按相同顺序返回同样长度的 JSON 对象数组。`;
+
+/** A short headword can take an example sentence. A full question already is one. */
+export function mistakeNeedsExample(jp: string): boolean {
+	const core = jp.replace(/[（(][^）)]*[）)]?/g, "").replace(/\s+/g, "");
+	if (!core || core.length > 18) return false;
+	if (/[。！？]/.test(jp) || /（\s*）|（　　）/.test(jp)) return false;
+	if (/(です|ます|ました|ません)($|。)/.test(core) && core.length > 12) return false;
+	return /[\u3040-\u30ff\u4e00-\u9fff]/.test(core);
+}
+
+export function normalizeStudyAid(value: unknown): StudyAid | null {
+	if (!value || typeof value !== "object" || Array.isArray(value)) return null;
+	const raw = value as { reading?: unknown; example?: unknown; exampleCn?: unknown };
+	const aid: StudyAid = {};
+	if (typeof raw.reading === "string") {
+		const reading = raw.reading.replace(/[\s・]+/g, "");
+		if (reading && /^[\u3040-\u30ffー]+$/.test(reading) && reading.length <= 80) aid.reading = reading;
+	}
+	if (typeof raw.example === "string") {
+		const example = raw.example.trim();
+		if (example && /[\u3040-\u30ff\u4e00-\u9fff]/.test(example) && example.length <= 80) aid.example = example;
+	}
+	if (typeof raw.exampleCn === "string") {
+		const exampleCn = raw.exampleCn.trim();
+		if (exampleCn && exampleCn.length <= 80) aid.exampleCn = exampleCn;
+	}
+	if (!aid.reading && !aid.example) return null;
+	return aid;
+}
+
+export function parseStoredStudyAid(value: string | null): StudyAid | null {
+	if (!value) return null;
+	try {
+		return normalizeStudyAid(JSON.parse(value));
+	} catch {
+		return null;
+	}
+}
+
+export async function studyAidKey(text: string): Promise<string> {
+	const digest = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(normalizeTranslationSource(text)));
+	const hex = [...new Uint8Array(digest)].map((b) => b.toString(16).padStart(2, "0")).join("");
+	return MISTAKE_STUDY_KV_PREFIX + hex;
+}
+
+export async function geminiStudyAids(
+	texts: string[],
+	apiKey: string,
+	{ model = DEFAULT_GEMINI_MODEL, fetchImpl = fetch }: { model?: string; fetchImpl?: Fetcher } = {},
+): Promise<(StudyAid | null)[]> {
+	const out: (StudyAid | null)[] = [];
+	for (let i = 0; i < texts.length; i += GEMINI_BATCH) {
+		const batch = texts.slice(i, i + GEMINI_BATCH);
+		let result: (StudyAid | null)[] = batch.map(() => null);
+		try {
+			const res = await fetchImpl(
+				`https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent`,
+				{
+					method: "POST",
+					headers: { "content-type": "application/json", "x-goog-api-key": apiKey },
+					body: JSON.stringify({
+						contents: [{ role: "user", parts: [{ text: `${STUDY_PROMPT}\n\n${JSON.stringify(batch)}` }] }],
+						generationConfig: {
+							temperature: 0.2,
+							responseMimeType: "application/json",
+							responseSchema: {
+								type: "ARRAY",
+								items: {
+									type: "OBJECT",
+									properties: {
+										reading: { type: "STRING" },
+										example: { type: "STRING" },
+										exampleCn: { type: "STRING" },
+									},
+									required: ["reading", "example", "exampleCn"],
+								},
+							},
+						},
+					}),
+				},
+			);
+			if (res.ok) {
+				const data = (await res.json()) as {
+					candidates?: { content?: { parts?: { text?: string }[] } }[];
+				};
+				const raw = data.candidates?.[0]?.content?.parts?.map((p) => p.text || "").join("") || "";
+				const parsed: unknown = JSON.parse(raw);
+				if (Array.isArray(parsed) && parsed.length === batch.length) {
+					result = parsed.map((value) => normalizeStudyAid(value));
+				}
+			}
+		} catch {
+			/* leave this batch empty; it is retried next time */
 		}
 		out.push(...result);
 	}

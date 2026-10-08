@@ -301,6 +301,21 @@ function fallbackVocabExample(jp: string, cn?: string, en?: string): ExampleHit 
 	};
 }
 
+let headwordCorpus: ExampleHit[] | null = null;
+let headwordCorpusToken = "";
+
+/** An example sentence already in a loaded vocab book, when the headword appears in it. */
+export function lookupHeadwordExample(jp: string): ExampleHit | undefined {
+	const token = [V, V2, V4, V1].map((book) => book?.weeks?.length || 0).join(":");
+	if (!headwordCorpus || headwordCorpusToken !== token) {
+		headwordCorpusToken = token;
+		headwordCorpus = [V, V2, V4, V1].flatMap((book) =>
+			collectVocabQuizCorpus(book?.weeks || [], book?.daily_translations),
+		);
+	}
+	return exampleFromCorpus(jp, headwordCorpus);
+}
+
 function collectListeningSnippets(lesson: Pick<ListeningLesson, "blocks">): ExampleHit[] {
 	const out: ExampleHit[] = [];
 	const add = (jp?: string, cn?: string, en?: string) => {

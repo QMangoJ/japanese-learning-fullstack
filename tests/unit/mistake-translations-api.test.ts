@@ -1,7 +1,8 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 
+import { action as studyAction } from "../../app/routes/api.mistake-study";
 import { action } from "../../app/routes/api.mistake-translations";
-import { geminiTranslate, translationKey } from "../../app/study/mistake-translations";
+import { geminiStudyAids, geminiTranslate, studyAidKey, translationKey } from "../../app/study/mistake-translations";
 import { authedRequest, memoryKv, routeContext, seedUser, testEnv } from "./auth-test-utils";
 
 function geminiResponse(values: string[]) {
@@ -63,5 +64,57 @@ describe("geminiTranslate", () => {
 	it("returns nulls when the response shape is wrong", async () => {
 		const fetchImpl = vi.fn(async () => geminiResponse(["only one"])) as unknown as typeof fetch;
 		expect(await geminiTranslate(["a", "b"], "k", { fetchImpl })).toEqual([null, null]);
+	});
+});
+
+describe("/api/mistake-study", () => {
+	it("generates and caches a reading and an example for a signed-in user", async () => {
+		const kv = memoryKv();
+		seedUser(kv, { id: "g_1" });
+		const fetchMock = vi.fn(async () =>
+			new Response(
+				JSON.stringify({
+					candidates: [
+						{
+							content: {
+								parts: [
+									{
+										text: JSON.stringify([{ reading: "ようがん", example: "溶岩が流れました。", exampleCn: "熔岩流下来了。" }]),
+									},
+								],
+							},
+						},
+					],
+				}),
+				{ status: 200, headers: { "content-type": "application/json" } },
+			),
+		);
+		vi.stubGlobal("fetch", fetchMock);
+		const env = { ...testEnv(kv), GEMINI_API_KEY: "k" };
+		const request = await authedRequest("http://localhost/api/mistake-study", "g_1", {
+			method: "POST",
+			headers: { "content-type": "application/json" },
+			body: JSON.stringify({ texts: ["溶岩"] }),
+		});
+		const res = await studyAction({ request, context: routeContext(env) });
+		expect(await res.json()).toEqual({
+			aids: { 溶岩: { reading: "ようがん", example: "溶岩が流れました。", exampleCn: "熔岩流下来了。" } },
+			pending: 0,
+		});
+		expect(kv.map.get(await studyAidKey("溶岩"))).toContain("ようがん");
+	});
+});
+
+describe("geminiStudyAids", () => {
+	it("drops an aid that is not hiragana and not a Japanese example", async () => {
+		const fetchImpl = vi.fn(async () =>
+			new Response(
+				JSON.stringify({
+					candidates: [{ content: { parts: [{ text: JSON.stringify([{ reading: "lava", example: "hello", exampleCn: "你好" }]) }] } }],
+				}),
+				{ status: 200 },
+			),
+		) as unknown as typeof fetch;
+		expect(await geminiStudyAids(["溶岩"], "k", { fetchImpl })).toEqual([null]);
 	});
 });
