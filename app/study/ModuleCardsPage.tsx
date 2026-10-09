@@ -19,6 +19,7 @@ import {
 	isReading,
 	isVocab,
 	lx,
+	moduleCardsScopeNow,
 	readingSearchError,
 	readingSearchLoaded,
 	subscribe,
@@ -27,8 +28,8 @@ import {
 export function ModuleCardsPage() {
 	useSyncExternalStore(subscribe, getVersion, () => 0);
 	useSyncExternalStore(subscribeN2KanjiLater, n2KanjiLaterLoaded, () => false);
-	const [week, setWeek] = useState(0);
-	const [day, setDay] = useState(0);
+	const [week, setWeek] = useState(() => moduleCardsScopeNow().week);
+	const [day, setDay] = useState(() => moduleCardsScopeNow().day);
 	const [listeningItems, setListeningItems] = useState<MemoryCardItem[] | null>(null);
 	const [listeningError, setListeningError] = useState("");
 
@@ -62,6 +63,8 @@ export function ModuleCardsPage() {
 	}, [MODULE]);
 
 	const laterReady = n2KanjiLaterLoaded();
+	// Reading words arrive in a later bootReadingSearch() emit. Without readingSearchLoaded
+	// the first render memoizes an empty catalog deck and the day row never appears.
 	const allItems = useMemo(() => {
 		if (isListening()) return listeningItems || [];
 		const weeks = cur().weeks || [];
@@ -69,7 +72,7 @@ export function ModuleCardsPage() {
 		if (isReading()) return cardsFromReadingWeeks(weeks, MODULE);
 		if (isVocab()) return cardsFromVocabWeeks(weeks, MODULE);
 		return [];
-	}, [listeningItems, laterReady, MODULE]);
+	}, [listeningItems, laterReady, MODULE, readingSearchLoaded]);
 
 	const weeks = cur().weeks || [];
 	const chapterScale = homeScale() === "chapter";

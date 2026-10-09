@@ -666,7 +666,7 @@ function DayView({
 				<section className="rb-sheet">
 					<span className="rb-sheet__tag">ことば</span>
 					<p className="rb-instruction rb-instruction--row">
-						生词・读音 <CardsLaunch label={lx("用记忆卡背这些词 ›", "Study these as flashcards ›")} />
+						生词・读音 <CardsLaunch week={data.week} day={data.day} label={lx("用记忆卡背这些词 ›", "Study these as flashcards ›")} />
 					</p>
 					<div className="rb-vocab">
 						{data.vocab.map((word, index) => {

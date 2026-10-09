@@ -380,7 +380,21 @@ export function setNavImpl(fn: (key: string) => void) {
 	navImpl = fn;
 	if (typeof window !== "undefined") window.__studyNav = (key) => fn(key);
 }
+/** Week/day the next 记忆卡 open should start on. Sidebar 「记忆卡」 clears it. */
+let moduleCardsScope = { week: 0, day: 0 };
+
+export function moduleCardsScopeNow() {
+	return moduleCardsScope;
+}
+
+/** Open 记忆卡 on one lesson day. `navTo("#/cards")` still opens the whole module. */
+export function openModuleCards(week: number, day: number) {
+	moduleCardsScope = { week, day };
+	navImpl("#/cards");
+}
+
 export function navTo(key: string) {
+	if (key === "#/cards") moduleCardsScope = { week: 0, day: 0 };
 	navImpl(key);
 }
 
@@ -1319,6 +1333,16 @@ export function bootReadingSearch() {
 		});
 	return readingSearchPromise;
 }
+
+/** Tests: keep the reading deck on the catalog until the test finishes the load itself. */
+export function pauseReadingSearchForTests() {
+	readingSearchPromise = new Promise(() => {});
+}
+
+export function setReadingSearchLoadedForTests(loaded: boolean) {
+	readingSearchLoaded = loaded;
+}
+
 export type SearchCategory = "all" | "grammar" | "kanji" | "vocab" | "mistakes";
 
 export function searchCategoryForModule(module: string): Exclude<SearchCategory, "all"> | "other" {
@@ -1788,6 +1812,7 @@ export function resetStudyStateForTests() {
 	readingSearchLoaded = false;
 	readingSearchError = "";
 	readingSearchPromise = null;
+	moduleCardsScope = { week: 0, day: 0 };
 	lastVisit = {};
 	lastDay = {};
 	noRuby = false;

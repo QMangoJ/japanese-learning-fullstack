@@ -1,7 +1,7 @@
 import { Fragment, useMemo, useState, useSyncExternalStore, type ReactNode } from "react";
 
 import { RubyHtml, SayButton } from "../routes/study-common";
-import { getDisplayVersion, lx, navTo, subscribeDisplay, toggleDisplay, noRuby } from "./store";
+import { getDisplayVersion, lx, navTo, noRuby, openModuleCards, subscribeDisplay, toggleDisplay } from "./store";
 import { isMastered, loadMastery, setMastered, type MasteryMap } from "./memory-mastery";
 
 export const FLASHCARD_MASTERY_KEY = "flashcard-mastery";
@@ -51,9 +51,13 @@ export function memoryKindLabel(kind?: string): string {
 	return pair ? lx(...pair) : kind;
 }
 
-export function CardsLaunch({ label }: { label?: string }) {
+export function CardsLaunch({ label, week, day }: { label?: string; week?: number; day?: number }) {
 	return (
-		<button type="button" className="cards-launch" onClick={() => navTo("#/cards")}>
+		<button
+			type="button"
+			className="cards-launch"
+			onClick={() => (week && day ? openModuleCards(week, day) : navTo("#/cards"))}
+		>
 			{label || lx("用记忆卡背诵 ›", "Study with flashcards ›")}
 		</button>
 	);

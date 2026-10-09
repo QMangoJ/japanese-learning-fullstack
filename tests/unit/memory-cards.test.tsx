@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { beforeEach, describe, expect, it } from "vitest";
 
-import { MemoryCards, type MemoryCardItem } from "../../app/study/memory-cards";
+import { CardsLaunch, MemoryCards, type MemoryCardItem } from "../../app/study/memory-cards";
 import { ModuleCardsPage } from "../../app/study/ModuleCardsPage";
 import {
 	annotateText,
@@ -15,7 +15,17 @@ import {
 	splitListeningGloss,
 } from "../../app/study/memory-deck";
 import { chapter1Lessons } from "../../app/data/listening-n3-lessons-ch1";
-import { K2, V2, resetStudyStateForTests, setModule, setNavImpl } from "../../app/study/store";
+import {
+	K2,
+	R2,
+	V2,
+	emit,
+	pauseReadingSearchForTests,
+	resetStudyStateForTests,
+	setReadingSearchLoadedForTests,
+	setModule,
+	setNavImpl,
+} from "../../app/study/store";
 
 const sample: MemoryCardItem[] = [
 	{
@@ -370,5 +380,58 @@ describe("ModuleCardsPage", () => {
 		expect(screen.getByText("給料")).toBeInTheDocument();
 		expect(screen.queryByText("家賃")).not.toBeInTheDocument();
 		expect(screen.queryByText("残業")).not.toBeInTheDocument();
+	});
+
+	it("splits N2 reading words into days after the vocabulary loads", async () => {
+		const user = userEvent.setup();
+		pauseReadingSearchForTests();
+		setModule("n2reading");
+		render(<ModuleCardsPage />);
+		expect(screen.getByText("读解词汇加载中…")).toBeInTheDocument();
+
+		R2.weeks = [
+			{
+				n: 1,
+				days: [
+					{ day: 1, vocab: [{ jp: "折扣词", cn: "折扣券", en: "coupon" }] },
+					{ day: 2, vocab: [{ jp: "直邮词", cn: "直邮", en: "mail" }] },
+				],
+			},
+			{ n: 2, days: [{ day: 1, vocab: [{ jp: "通知词", cn: "通知", en: "notice" }] }] },
+		];
+		setReadingSearchLoadedForTests(true);
+		emit();
+
+		await user.click(await screen.findByRole("button", { name: "第1週" }));
+		expect(screen.getByRole("button", { name: "1日目" })).toBeInTheDocument();
+		expect(screen.getByRole("button", { name: "2日目" })).toBeInTheDocument();
+		await user.click(screen.getByRole("button", { name: "2日目" }));
+		expect(screen.getByText("直邮词")).toBeInTheDocument();
+		expect(screen.queryByText("折扣词")).not.toBeInTheDocument();
+		expect(screen.queryByText("通知词")).not.toBeInTheDocument();
+		expect(screen.getByText("1 / 1")).toBeInTheDocument();
+	});
+
+	it("opens the reading day's own word deck from the lesson", async () => {
+		const user = userEvent.setup();
+		pauseReadingSearchForTests();
+		setModule("n2reading");
+		R2.weeks = [
+			{
+				n: 1,
+				days: [
+					{ day: 1, vocab: [{ jp: "折扣词", cn: "折扣券", en: "coupon" }] },
+					{ day: 2, vocab: [{ jp: "直邮词", cn: "直邮", en: "mail" }] },
+				],
+			},
+			{ n: 2, days: [{ day: 1, vocab: [{ jp: "通知词", cn: "通知", en: "notice" }] }] },
+		];
+		setReadingSearchLoadedForTests(true);
+		render(<CardsLaunch week={1} day={2} label="用记忆卡背这些词 ›" />);
+		await user.click(screen.getByRole("button", { name: "用记忆卡背这些词 ›" }));
+		render(<ModuleCardsPage />);
+		expect(screen.getByRole("button", { name: "2日目" })).toHaveClass("on");
+		expect(screen.getByText("直邮词")).toBeInTheDocument();
+		expect(screen.queryByText("折扣词")).not.toBeInTheDocument();
 	});
 });
