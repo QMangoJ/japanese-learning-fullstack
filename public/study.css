@@ -119,7 +119,8 @@ html.theme-dark .lvchip{color:#1c1a16;box-shadow:0 1px 3px rgba(0,0,0,.4)}
 .side-item.on .ct{color:var(--blue)}
 .side-foot{margin-top:auto;display:flex;flex-direction:column;gap:2px;padding-top:12px;border-top:1px solid var(--line)}
 /* 翻页钮悬浮在两侧：不占正文高度，滚到哪儿都能翻。
-   手机没有边距，只放一个半透明圆钮；桌面正文两侧有留白，展开成带日期的胶囊。 */
+   手机贴在底栏上方，桌面贴在目录右侧和窗口右缘，都只放小圆钮。
+   日期写在 title / aria-label 上，不再展开成胶囊，避免盖住正文。 */
 /* 手机上贴在底栏正上方的两个角：竖直居中会盖住正文首字，而这里正好是拇指位 */
 .daynav-fab{position:fixed;bottom:calc(var(--bottom-nav-height) + env(safe-area-inset-bottom) + 20px);z-index:35;
   display:flex;align-items:center;gap:7px;justify-content:center;
@@ -139,12 +140,12 @@ html.theme-dark .lvchip{color:#1c1a16;box-shadow:0 1px 3px rgba(0,0,0,.4)}
 .daynav-fab.next{right:calc(10px + env(safe-area-inset-right))}
 .daynav-fab .lb{display:none;font-size:13px;font-weight:600;color:var(--ink);white-space:nowrap}
 .daynav-fab .sub{display:none;font-size:11.5px;font-weight:400;color:var(--sub);white-space:nowrap;max-width:150px;overflow:hidden;text-overflow:ellipsis}
-/* 桌面正文两侧有留白，放回竖直居中并展开成带日期的胶囊 */
+/* 桌面：40px 圆钮。12px 边距 + 8px 空隙，正文用 --study-fab-space 让开。 */
 @media (min-width:900px){
-  .daynav-fab{bottom:auto;top:50%;transform:translateY(-50%);padding:11px 15px;opacity:.95;gap:9px}
-  .daynav-fab .lb,.daynav-fab .sub{display:block}
-  .daynav-fab .txt{display:flex;flex-direction:column;gap:1px;align-items:flex-start}
-  .daynav-fab.next .txt{align-items:flex-end}
+  .daynav-fab{bottom:auto;top:50%;transform:translateY(-50%);
+    width:40px;height:40px;min-width:40px;min-height:40px;padding:0;gap:0;opacity:.92}
+  .daynav-fab .txt{display:none}
+  .daynav-fab .ar,.daynav-fab .ar svg{width:18px;height:18px}
   .daynav-fab.prev{left:calc(224px + 12px)}
   .daynav-fab.next{right:12px}
 }
@@ -813,10 +814,10 @@ body.hide-cn .vcn,body.hide-cn .cn{visibility:hidden}
   nav.bottom{display:none}
   .modewrap{display:none}
   .lvchip{display:none}
-  :root{--study-col:1080px;--study-fab-space:152px}
+  :root{--study-col:1080px;--study-fab-space:60px}
   main{max-width:var(--study-col);padding:18px 24px}
   .ct-stickybar{margin:-18px -24px 14px;padding:12px 24px}
-  /* 课文页两侧有日期胶囊；栏变宽后不再有天然留白，按实际沟宽补进内边距 */
+  /* 课文页两侧有翻页圆钮。两侧沟宽够时不额外缩正文，不够时按圆钮占位补内边距。 */
   body:has(.daynav-fab) main{
     padding-left:max(24px, calc(var(--study-fab-space) - max(0px, calc((100vw - 224px - var(--study-col)) / 2))));
     padding-right:max(24px, calc(var(--study-fab-space) - max(0px, calc((100vw - 224px - var(--study-col)) / 2))));
