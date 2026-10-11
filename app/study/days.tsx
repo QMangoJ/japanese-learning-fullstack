@@ -1,3 +1,4 @@
+import { describePracticeAnswer, otherChoices, parsePracticeAnswers } from "./practice-answers";
 import { Fragment, lazy, Suspense, useEffect, useRef, useState, useSyncExternalStore, type ReactNode } from "react";
 
 import { ConnBlock, Fmt, Rr, RubyHtml, SayButton } from "../routes/study-common";
@@ -615,6 +616,36 @@ function DailyTranslationOnly({ info, module, w, d, item }: { info: any; module:
 			<FoldBody id={panelId} kind="translation" open={open}>
 				<b>{lx("原句翻译：", "Sentence translation: ")}</b>
 				{translation}
+			</FoldBody>
+		</div>
+	);
+}
+
+function PracticeAnswer({ raw, item, box, translation, panelId }: { raw?: string; item: any; box?: string[]; translation?: string; panelId: string }) {
+	const [open, setOpen] = useState(false);
+	if (!raw) return null;
+	const answer = describePracticeAnswer(raw, item, box);
+	const others = otherChoices(raw, item);
+	return (
+		<div className="daily-explain daily-explain-translation-only">
+			<div className="daily-toggle-controls">
+				<FoldToggle id={panelId} kind="analysis" show={lx("显示答案", "Show answer")} hide={lx("隐藏答案", "Hide answer")} open={open} onToggle={() => setOpen((v) => !v)} />
+			</div>
+			<FoldBody id={panelId} kind="analysis" open={open}>
+				<div className="an-answer-key">
+					{lx("正确答案：", "Correct answer: ")}
+					<span className="jp">{answer}</span>
+				</div>
+				{others.length ? (
+					<div className="an-trans">
+						{lx(`为什么不选 ${others.join("、")}：放进句中意思不通，只有「${answer.replace(/^[a-z0-9]+\.\s*/u, "")}」符合句意${translation ? `（${translation}）` : ""}。`, `Why not ${others.join(", ")}: it does not fit the sentence.`)}
+					</div>
+				) : translation ? (
+					<div className="an-trans">
+						<b>{lx("句意：", "Meaning: ")}</b>
+						{translation}
+					</div>
+				) : null}
 			</FoldBody>
 		</div>
 	);
@@ -1319,6 +1350,7 @@ function DayVocab({ day, w, d, scrollTok }: { day: any; w: number; d: number; sc
 	const vocabBook = MODULE === "n2vocab" ? V2 : MODULE === "n4vocab" ? V4 : MODULE === "n1vocab" ? V1 : V;
 	const dailyItems = (MODULE === "vocab" || MODULE === "n2vocab" || MODULE === "n4vocab" || MODULE === "n1vocab") && vocabBook.daily_translations && vocabBook.daily_translations[`w${w}d${d}`];
 	const translationByNumber = new Map(((dailyItems && dailyItems.items) || []).map((item: any) => [item.n, item]));
+	const practiceAnswers = parsePracticeAnswers(day?.exercises?.answers, day?.exercises?.sections);
 	return (
 		<>
 			<CatalogCrumb>
@@ -1404,6 +1436,7 @@ function DayVocab({ day, w, d, scrollTok }: { day: any; w: number; d: number; sc
 										</div>
 										<OptsRow item={it} />
 										<DailyTranslationOnly info={translationByNumber.get(it.n)} module="vocab" w={w} d={d} item={it} />
+<PracticeAnswer raw={practiceAnswers.get(String(it.n))} item={it} box={sec.box} translation={(() => { const t: any = translationByNumber.get(it.n); return t ? lx(t.translation, t.translation_en) : undefined; })()} panelId={`practice-vocab-${w}-${d}-${it.n}-answer`} />
 									</div>
 								))}
 							</div>
@@ -1570,6 +1603,7 @@ function DayKanji({ day, w, d, scrollTok }: { day: any; w: number; d: number; sc
 	const dailyItems = (MODULE === "kanji" || MODULE === "n2kanji" || MODULE === "n4kanji" || MODULE === "n1kanji") && kanjiBook.daily_translations && kanjiBook.daily_translations[`w${w}d${d}`];
 	const sectionAt = new Map<number, any>((day.sections || []).map((sec: any) => [sec.start, sec]));
 	const translationByNumber = new Map(((dailyItems && dailyItems.items) || []).map((item: any) => [item.n, item]));
+	const practiceAnswers = parsePracticeAnswers(day?.exercises?.answers, day?.exercises?.sections);
 	return (
 		<>
 			<CatalogCrumb>
@@ -1713,6 +1747,7 @@ function DayKanji({ day, w, d, scrollTok }: { day: any; w: number; d: number; sc
 										</div>
 										<OptsRow item={it} />
 										<DailyTranslationOnly info={translationByNumber.get(it.n)} module="kanji" w={w} d={d} item={it} />
+<PracticeAnswer raw={practiceAnswers.get(String(it.n))} item={it} box={sec.box} translation={(() => { const t: any = translationByNumber.get(it.n); return t ? lx(t.translation, t.translation_en) : undefined; })()} panelId={`practice-kanji-${w}-${d}-${it.n}-answer`} />
 									</div>
 								))}
 							</div>
