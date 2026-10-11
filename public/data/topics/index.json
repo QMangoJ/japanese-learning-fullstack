@@ -35,12 +35,17 @@
 			"slug": "frontend",
 			"title_zh": "前端工程师",
 			"title_ja": "フロントエンドの仕事",
-			"count": 25,
+			"count": 89,
 			"title_en": "Frontend engineering",
 			"subtopics": [
 				"需求和进度",
 				"写页面",
-				"问题和发布"
+				"问题和发布",
+				"代码评审",
+				"性能和无障碍",
+				"测试",
+				"沟通和汇报",
+				"面试"
 			]
 		},
 		{
