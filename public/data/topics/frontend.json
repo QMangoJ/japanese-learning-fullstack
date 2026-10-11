@@ -4,7 +4,7 @@
 	"title_zh": "前端工程师",
 	"title_ja": "フロントエンドの仕事",
 	"title_en": "Frontend engineering",
-	"description_zh": "开会、写页面、提合并请求时会反复听到的词。片假名和日语说法都保留了实际说法。",
+	"description_zh": "开会、写页面、评审代码、测试、汇报和转职面试时会反复听到的词。片假名和日语说法都保留了实际说法。",
 	"description_en": "Words that come up in meetings, UI work, and pull requests. Katakana is kept where engineers actually say it.",
 	"subtopics": [
 		{
@@ -21,6 +21,31 @@
 			"zh": "问题和发布",
 			"ja": "不具合とリリース",
 			"en": "Bugs and release"
+		},
+		{
+			"zh": "代码评审",
+			"ja": "コードレビュー",
+			"en": "Code review"
+		},
+		{
+			"zh": "性能和无障碍",
+			"ja": "パフォーマンスとアクセシビリティ",
+			"en": "Performance and accessibility"
+		},
+		{
+			"zh": "测试",
+			"ja": "テスト",
+			"en": "Testing"
+		},
+		{
+			"zh": "沟通和汇报",
+			"ja": "報告・相談",
+			"en": "Reporting and discussion"
+		},
+		{
+			"zh": "面试",
+			"ja": "転職面接",
+			"en": "Job interviews"
 		}
 	],
 	"cards": [
@@ -299,6 +324,710 @@
 			"example_jp": "直したあと、もう一度ビルドします。",
 			"example_zh": "改完之后再构建一次。",
 			"example_en": "After the fix, build once more."
+		},
+		{
+			"id": "fe-026",
+			"jp": "要件定義",
+			"kana": "ようけんていぎ",
+			"zh": "需求定义",
+			"en": "requirements definition",
+			"subtopic": "需求和进度",
+			"example_jp": "要件定義の段階からフロントも入ってほしいそうです。",
+			"example_zh": "听说希望前端从需求定义阶段就参与进来。",
+			"example_en": "They want frontend involved from the requirements stage."
+		},
+		{
+			"id": "fe-027",
+			"jp": "仕様変更",
+			"kana": "しようへんこう",
+			"zh": "需求变更",
+			"en": "spec change",
+			"subtopic": "需求和进度",
+			"example_jp": "また仕様変更が入ったので、見積もりを出し直します。",
+			"example_zh": "又来了需求变更，我重新给一下工时估计。",
+			"example_en": "Another spec change came in, so I will redo the estimate."
+		},
+		{
+			"id": "fe-028",
+			"jp": "工数",
+			"kana": "こうすう",
+			"zh": "工时",
+			"en": "person-hours",
+			"subtopic": "需求和进度",
+			"example_jp": "この改修は工数がかなりかかりそうです。",
+			"example_zh": "这个改动看起来要花不少工时。",
+			"example_en": "This change looks like it will take a lot of hours."
+		},
+		{
+			"id": "fe-029",
+			"jp": "優先度",
+			"kana": "ゆうせんど",
+			"zh": "优先级",
+			"en": "priority",
+			"subtopic": "需求和进度",
+			"example_jp": "優先度が高いものから対応していきます。",
+			"example_zh": "从优先级高的开始处理。",
+			"example_en": "I will handle the high-priority ones first."
+		},
+		{
+			"id": "fe-030",
+			"jp": "スケジュール",
+			"kana": "すけじゅーる",
+			"zh": "日程，排期",
+			"en": "schedule",
+			"subtopic": "需求和进度",
+			"example_jp": "このままだとスケジュールが厳しいです。",
+			"example_zh": "照这样下去排期会很紧。",
+			"example_en": "At this rate the schedule is tight."
+		},
+		{
+			"id": "fe-031",
+			"jp": "スコープ",
+			"kana": "すこーぷ",
+			"zh": "范围",
+			"en": "scope",
+			"subtopic": "需求和进度",
+			"example_jp": "今回のスコープからは外しましょう。",
+			"example_zh": "这次先把它排除在范围外吧。",
+			"example_en": "Let us leave it out of scope this time."
+		},
+		{
+			"id": "fe-032",
+			"jp": "タスク",
+			"kana": "たすく",
+			"zh": "任务",
+			"en": "task",
+			"subtopic": "需求和进度",
+			"example_jp": "タスクを細かく分けてチケットにしました。",
+			"example_zh": "把任务拆细，建成了工单。",
+			"example_en": "I split the task into smaller tickets."
+		},
+		{
+			"id": "fe-033",
+			"jp": "チケット",
+			"kana": "ちけっと",
+			"zh": "工单",
+			"en": "ticket",
+			"subtopic": "需求和进度",
+			"example_jp": "この件はチケットを切っておきます。",
+			"example_zh": "这件事我先建个工单。",
+			"example_en": "I will open a ticket for this."
+		},
+		{
+			"id": "fe-034",
+			"jp": "デザインカンプ",
+			"kana": "でざいんかんぷ",
+			"zh": "设计稿",
+			"en": "design comp / mockup",
+			"subtopic": "需求和进度",
+			"example_jp": "デザインカンプとスマホ表示が少し違います。",
+			"example_zh": "设计稿和手机上的显示有点不一样。",
+			"example_en": "The mobile view differs a bit from the design comp."
+		},
+		{
+			"id": "fe-035",
+			"jp": "改修",
+			"kana": "かいしゅう",
+			"zh": "改造，修改（现有系统）",
+			"en": "modification",
+			"subtopic": "需求和进度",
+			"example_jp": "既存画面の改修がメインの案件です。",
+			"example_zh": "这是以改造现有页面为主的项目。",
+			"example_en": "The project is mainly reworking existing screens."
+		},
+		{
+			"id": "fe-036",
+			"jp": "設計",
+			"kana": "せっけい",
+			"zh": "设计（技术方案）",
+			"en": "design / architecture",
+			"subtopic": "写页面",
+			"example_jp": "実装に入る前に設計を一度見てもらえますか。",
+			"example_zh": "开始写之前，能帮我看一下设计吗？",
+			"example_en": "Could you look at the design before I start implementing?"
+		},
+		{
+			"id": "fe-037",
+			"jp": "共通化",
+			"kana": "きょうつうか",
+			"zh": "抽成公共部分",
+			"en": "making something shared",
+			"subtopic": "写页面",
+			"example_jp": "このボタンは共通化してコンポーネントにします。",
+			"example_zh": "把这个按钮抽成公共组件。",
+			"example_en": "I will turn this button into a shared component."
+		},
+		{
+			"id": "fe-038",
+			"jp": "切り出す",
+			"kana": "きりだす",
+			"zh": "抽出来，拆出来",
+			"en": "to extract",
+			"subtopic": "写页面",
+			"example_jp": "このロジックはカスタムフックに切り出しましょう。",
+			"example_zh": "把这段逻辑抽到自定义 Hook 里吧。",
+			"example_en": "Let us extract this logic into a custom hook."
+		},
+		{
+			"id": "fe-039",
+			"jp": "依存関係",
+			"kana": "いぞんかんけい",
+			"zh": "依赖关系",
+			"en": "dependency",
+			"subtopic": "写页面",
+			"example_jp": "依存関係を更新したらビルドが落ちました。",
+			"example_zh": "更新依赖之后构建失败了。",
+			"example_en": "The build broke after updating dependencies."
+		},
+		{
+			"id": "fe-040",
+			"jp": "レスポンシブ",
+			"kana": "れすぽんしぶ",
+			"zh": "响应式",
+			"en": "responsive",
+			"subtopic": "写页面",
+			"example_jp": "この一覧はレスポンシブ対応がまだです。",
+			"example_zh": "这个列表还没做响应式适配。",
+			"example_en": "This list is not responsive yet."
+		},
+		{
+			"id": "fe-041",
+			"jp": "表示崩れ",
+			"kana": "ひょうじくずれ",
+			"zh": "显示错乱，样式崩了",
+			"en": "layout breakage",
+			"subtopic": "写页面",
+			"example_jp": "Safariだけで表示崩れが起きています。",
+			"example_zh": "只有 Safari 出现样式错乱。",
+			"example_en": "The layout breaks only in Safari."
+		},
+		{
+			"id": "fe-042",
+			"jp": "挙動",
+			"kana": "きょどう",
+			"zh": "行为，表现（程序的动作）",
+			"en": "behavior",
+			"subtopic": "写页面",
+			"example_jp": "この挙動は仕様通りですか。",
+			"example_zh": "这个行为符合规格吗？",
+			"example_en": "Is this behavior as specified?"
+		},
+		{
+			"id": "fe-043",
+			"jp": "描画",
+			"kana": "びょうが",
+			"zh": "渲染，绘制",
+			"en": "rendering",
+			"subtopic": "写页面",
+			"example_jp": "データが多いと描画に時間がかかります。",
+			"example_zh": "数据多的时候渲染要花时间。",
+			"example_en": "Rendering takes time when there is a lot of data."
+		},
+		{
+			"id": "fe-044",
+			"jp": "再レンダリング",
+			"kana": "さいれんだりんぐ",
+			"zh": "重新渲染",
+			"en": "re-render",
+			"subtopic": "写页面",
+			"example_jp": "入力するたびに全体が再レンダリングされています。",
+			"example_zh": "每次输入整个页面都在重新渲染。",
+			"example_en": "The whole page re-renders on every keystroke."
+		},
+		{
+			"id": "fe-045",
+			"jp": "バリデーション",
+			"kana": "ばりでーしょん",
+			"zh": "表单校验",
+			"en": "validation",
+			"subtopic": "写页面",
+			"example_jp": "バリデーションのエラー文言はまだ仮です。",
+			"example_zh": "校验的报错文案还是临时的。",
+			"example_en": "The validation error messages are still placeholders."
+		},
+		{
+			"id": "fe-046",
+			"jp": "文言",
+			"kana": "もんごん",
+			"zh": "文案，措辞",
+			"en": "wording / copy",
+			"subtopic": "写页面",
+			"example_jp": "ボタンの文言を「保存する」に変えてください。",
+			"example_zh": "请把按钮文案改成「保存する」。",
+			"example_en": "Please change the button text to \"Save\"."
+		},
+		{
+			"id": "fe-047",
+			"jp": "再現",
+			"kana": "さいげん",
+			"zh": "复现",
+			"en": "reproduce",
+			"subtopic": "问题和发布",
+			"example_jp": "手元では再現しませんでした。",
+			"example_zh": "在我本地没能复现。",
+			"example_en": "I could not reproduce it locally."
+		},
+		{
+			"id": "fe-048",
+			"jp": "切り分け",
+			"kana": "きりわけ",
+			"zh": "问题定位，区分原因",
+			"en": "isolating the cause",
+			"subtopic": "问题和发布",
+			"example_jp": "フロントかAPIか、まず切り分けます。",
+			"example_zh": "先区分是前端还是 API 的问题。",
+			"example_en": "First I will isolate whether it is frontend or API."
+		},
+		{
+			"id": "fe-049",
+			"jp": "影響範囲",
+			"kana": "えいきょうはんい",
+			"zh": "影响范围",
+			"en": "scope of impact",
+			"subtopic": "问题和发布",
+			"example_jp": "この修正の影響範囲を確認しました。",
+			"example_zh": "确认了这次修改的影响范围。",
+			"example_en": "I checked what this fix affects."
+		},
+		{
+			"id": "fe-050",
+			"jp": "暫定対応",
+			"kana": "ざんていたいおう",
+			"zh": "临时处理",
+			"en": "temporary fix",
+			"subtopic": "问题和发布",
+			"example_jp": "今日は暫定対応で、恒久対応は来週です。",
+			"example_zh": "今天先临时处理，根本处理放到下周。",
+			"example_en": "Today is a stopgap; the permanent fix is next week."
+		},
+		{
+			"id": "fe-051",
+			"jp": "切り戻し",
+			"kana": "きりもどし",
+			"zh": "回滚",
+			"en": "rollback",
+			"subtopic": "问题和发布",
+			"example_jp": "エラーが増えたので、すぐ切り戻しました。",
+			"example_zh": "错误变多了，所以马上回滚了。",
+			"example_en": "Errors increased, so we rolled back right away."
+		},
+		{
+			"id": "fe-052",
+			"jp": "障害",
+			"kana": "しょうがい",
+			"zh": "故障，线上事故",
+			"en": "incident / outage",
+			"subtopic": "问题和发布",
+			"example_jp": "昨夜の障害の振り返りを午後にやります。",
+			"example_zh": "下午做昨晚线上事故的复盘。",
+			"example_en": "We will do the retro on last night's outage this afternoon."
+		},
+		{
+			"id": "fe-053",
+			"jp": "検証環境",
+			"kana": "けんしょうかんきょう",
+			"zh": "测试（预发布）环境",
+			"en": "staging environment",
+			"subtopic": "问题和发布",
+			"example_jp": "検証環境に上げたので確認お願いします。",
+			"example_zh": "已经发到测试环境了，请确认一下。",
+			"example_en": "It is up on staging; please check."
+		},
+		{
+			"id": "fe-054",
+			"jp": "リリース",
+			"kana": "りりーす",
+			"zh": "发布，上线",
+			"en": "release",
+			"subtopic": "问题和发布",
+			"example_jp": "リリースは木曜の夕方を予定しています。",
+			"example_zh": "计划周四傍晚发布。",
+			"example_en": "The release is planned for Thursday evening."
+		},
+		{
+			"id": "fe-055",
+			"jp": "指摘",
+			"kana": "してき",
+			"zh": "指出（的问题），评审意见",
+			"en": "review comment",
+			"subtopic": "代码评审",
+			"example_jp": "レビューの指摘はすべて対応しました。",
+			"example_zh": "评审提出的意见全部处理了。",
+			"example_en": "I addressed all the review comments."
+		},
+		{
+			"id": "fe-056",
+			"jp": "差分",
+			"kana": "さぶん",
+			"zh": "差异，diff",
+			"en": "diff",
+			"subtopic": "代码评审",
+			"example_jp": "差分が大きいので、PRを二つに分けます。",
+			"example_zh": "改动太大，把 PR 拆成两个。",
+			"example_en": "The diff is large, so I will split the PR in two."
+		},
+		{
+			"id": "fe-057",
+			"jp": "リファクタリング",
+			"kana": "りふぁくたりんぐ",
+			"zh": "重构",
+			"en": "refactoring",
+			"subtopic": "代码评审",
+			"example_jp": "機能追加の前に少しリファクタリングしたいです。",
+			"example_zh": "加功能前想先稍微重构一下。",
+			"example_en": "I want to refactor a bit before adding the feature."
+		},
+		{
+			"id": "fe-058",
+			"jp": "可読性",
+			"kana": "かどくせい",
+			"zh": "可读性",
+			"en": "readability",
+			"subtopic": "代码评审",
+			"example_jp": "可読性のために変数名を変えました。",
+			"example_zh": "为了可读性改了变量名。",
+			"example_en": "I renamed the variable for readability."
+		},
+		{
+			"id": "fe-059",
+			"jp": "命名",
+			"kana": "めいめい",
+			"zh": "命名",
+			"en": "naming",
+			"subtopic": "代码评审",
+			"example_jp": "この関数の命名、少し分かりにくいかもしれません。",
+			"example_zh": "这个函数的命名可能有点不好懂。",
+			"example_en": "This function name may be a little unclear."
+		},
+		{
+			"id": "fe-060",
+			"jp": "マージ",
+			"kana": "まーじ",
+			"zh": "合并",
+			"en": "merge",
+			"subtopic": "代码评审",
+			"example_jp": "承認をもらったのでマージします。",
+			"example_zh": "拿到批准了，我来合并。",
+			"example_en": "I got approval, so I will merge."
+		},
+		{
+			"id": "fe-061",
+			"jp": "コンフリクト",
+			"kana": "こんふりくと",
+			"zh": "冲突",
+			"en": "merge conflict",
+			"subtopic": "代码评审",
+			"example_jp": "mainとコンフリクトしているので解消します。",
+			"example_zh": "和 main 有冲突，我来解决。",
+			"example_en": "It conflicts with main, so I will resolve it."
+		},
+		{
+			"id": "fe-062",
+			"jp": "技術的負債",
+			"kana": "ぎじゅつてきふさい",
+			"zh": "技术债",
+			"en": "technical debt",
+			"subtopic": "代码评审",
+			"example_jp": "技術的負債が溜まっていて、改修に時間がかかります。",
+			"example_zh": "技术债积累太多，改起来很费时间。",
+			"example_en": "Tech debt has piled up, so changes take time."
+		},
+		{
+			"id": "fe-063",
+			"jp": "お手すきの際に",
+			"kana": "おてすきのさいに",
+			"zh": "有空的时候（客气说法）",
+			"en": "when you have a moment",
+			"subtopic": "代码评审",
+			"example_jp": "お手すきの際にレビューをお願いします。",
+			"example_zh": "有空的时候麻烦帮忙评审一下。",
+			"example_en": "Please review it when you have a moment."
+		},
+		{
+			"id": "fe-064",
+			"jp": "パフォーマンス",
+			"kana": "ぱふぉーまんす",
+			"zh": "性能",
+			"en": "performance",
+			"subtopic": "性能和无障碍",
+			"example_jp": "一覧ページのパフォーマンスを改善しました。",
+			"example_zh": "改善了列表页的性能。",
+			"example_en": "I improved the performance of the list page."
+		},
+		{
+			"id": "fe-065",
+			"jp": "読み込み",
+			"kana": "よみこみ",
+			"zh": "加载",
+			"en": "loading",
+			"subtopic": "性能和无障碍",
+			"example_jp": "画像の読み込みが遅いので遅延読み込みにします。",
+			"example_zh": "图片加载太慢，改成懒加载。",
+			"example_en": "Images load slowly, so I will lazy-load them."
+		},
+		{
+			"id": "fe-066",
+			"jp": "計測",
+			"kana": "けいそく",
+			"zh": "测量，监测",
+			"en": "measurement",
+			"subtopic": "性能和无障碍",
+			"example_jp": "改善の前と後でLighthouseのスコアを計測しました。",
+			"example_zh": "改善前后都测了 Lighthouse 分数。",
+			"example_en": "I measured Lighthouse scores before and after."
+		},
+		{
+			"id": "fe-067",
+			"jp": "最適化",
+			"kana": "さいてきか",
+			"zh": "优化",
+			"en": "optimization",
+			"subtopic": "性能和无障碍",
+			"example_jp": "バンドルサイズを最適化しました。",
+			"example_zh": "优化了打包体积。",
+			"example_en": "I optimized the bundle size."
+		},
+		{
+			"id": "fe-068",
+			"jp": "キャッシュ",
+			"kana": "きゃっしゅ",
+			"zh": "缓存",
+			"en": "cache",
+			"subtopic": "性能和无障碍",
+			"example_jp": "キャッシュが残っていて古い画面が出ています。",
+			"example_zh": "缓存还在，所以显示的是旧页面。",
+			"example_en": "Old screens show because of a stale cache."
+		},
+		{
+			"id": "fe-069",
+			"jp": "アクセシビリティ",
+			"kana": "あくせしびりてぃ",
+			"zh": "无障碍",
+			"en": "accessibility",
+			"subtopic": "性能和无障碍",
+			"example_jp": "アクセシビリティのため、画像にalt属性を付けました。",
+			"example_zh": "为了无障碍，给图片加了 alt 属性。",
+			"example_en": "For accessibility I added alt attributes to images."
+		},
+		{
+			"id": "fe-070",
+			"jp": "読み上げ",
+			"kana": "よみあげ",
+			"zh": "朗读（屏幕阅读器）",
+			"en": "screen reader reading",
+			"subtopic": "性能和无障碍",
+			"example_jp": "スクリーンリーダーでボタン名が読み上げられません。",
+			"example_zh": "屏幕阅读器读不出按钮名称。",
+			"example_en": "The screen reader does not read the button name."
+		},
+		{
+			"id": "fe-071",
+			"jp": "単体テスト",
+			"kana": "たんたいてすと",
+			"zh": "单元测试",
+			"en": "unit test",
+			"subtopic": "测试",
+			"example_jp": "この関数には単体テストを追加しました。",
+			"example_zh": "给这个函数加了单元测试。",
+			"example_en": "I added unit tests for this function."
+		},
+		{
+			"id": "fe-072",
+			"jp": "結合テスト",
+			"kana": "けつごうてすと",
+			"zh": "集成测试",
+			"en": "integration test",
+			"subtopic": "测试",
+			"example_jp": "結合テストでAPIとのずれが見つかりました。",
+			"example_zh": "集成测试时发现了和 API 对不上的地方。",
+			"example_en": "Integration tests found a mismatch with the API."
+		},
+		{
+			"id": "fe-073",
+			"jp": "テストケース",
+			"kana": "てすとけーす",
+			"zh": "测试用例",
+			"en": "test case",
+			"subtopic": "测试",
+			"example_jp": "異常系のテストケースが足りていません。",
+			"example_zh": "异常情况的测试用例不够。",
+			"example_en": "We do not have enough error-case tests."
+		},
+		{
+			"id": "fe-074",
+			"jp": "動作確認",
+			"kana": "どうさかくにん",
+			"zh": "运行确认，自测",
+			"en": "checking it works",
+			"subtopic": "测试",
+			"example_jp": "iPhoneでも動作確認済みです。",
+			"example_zh": "在 iPhone 上也确认过能正常运行了。",
+			"example_en": "I have also checked it works on iPhone."
+		},
+		{
+			"id": "fe-075",
+			"jp": "正常系",
+			"kana": "せいじょうけい",
+			"zh": "正常流程（用例）",
+			"en": "happy path",
+			"subtopic": "测试",
+			"example_jp": "正常系は問題ありませんが、異常系がまだです。",
+			"example_zh": "正常流程没问题，异常流程还没测。",
+			"example_en": "The happy path is fine; error cases are not done yet."
+		},
+		{
+			"id": "fe-076",
+			"jp": "異常系",
+			"kana": "いじょうけい",
+			"zh": "异常流程（用例）",
+			"en": "error cases",
+			"subtopic": "测试",
+			"example_jp": "通信エラーのときの異常系も確認してください。",
+			"example_zh": "也请确认一下网络出错时的异常流程。",
+			"example_en": "Please also check the error case when the request fails."
+		},
+		{
+			"id": "fe-077",
+			"jp": "認識合わせ",
+			"kana": "にんしきあわせ",
+			"zh": "对齐理解",
+			"en": "getting on the same page",
+			"subtopic": "沟通和汇报",
+			"example_jp": "仕様について、一度認識合わせをさせてください。",
+			"example_zh": "关于规格，请让我们先对齐一下理解。",
+			"example_en": "Let us get aligned on the spec once."
+		},
+		{
+			"id": "fe-078",
+			"jp": "すり合わせ",
+			"kana": "すりあわせ",
+			"zh": "协调，磨合（意见）",
+			"en": "aligning / reconciling",
+			"subtopic": "沟通和汇报",
+			"example_jp": "デザイナーと細かいところをすり合わせます。",
+			"example_zh": "和设计师协调细节。",
+			"example_en": "I will align on the details with the designer."
+		},
+		{
+			"id": "fe-079",
+			"jp": "共有",
+			"kana": "きょうゆう",
+			"zh": "共享，同步（信息）",
+			"en": "sharing",
+			"subtopic": "沟通和汇报",
+			"example_jp": "議事録をSlackで共有しておきます。",
+			"example_zh": "我把会议记录发到 Slack 上同步。",
+			"example_en": "I will share the minutes on Slack."
+		},
+		{
+			"id": "fe-080",
+			"jp": "相談",
+			"kana": "そうだん",
+			"zh": "商量",
+			"en": "consultation",
+			"subtopic": "沟通和汇报",
+			"example_jp": "実装方針について少しご相談したいです。",
+			"example_zh": "关于实现方针想跟您商量一下。",
+			"example_en": "I would like to consult you about the approach."
+		},
+		{
+			"id": "fe-081",
+			"jp": "ブロッカー",
+			"kana": "ぶろっかー",
+			"zh": "阻塞项",
+			"en": "blocker",
+			"subtopic": "沟通和汇报",
+			"example_jp": "APIがまだなので、それがブロッカーになっています。",
+			"example_zh": "API 还没好，这个成了阻塞项。",
+			"example_en": "The API is not ready, so that is the blocker."
+		},
+		{
+			"id": "fe-082",
+			"jp": "巻き取る",
+			"kana": "まきとる",
+			"zh": "接手（别人的工作）",
+			"en": "to take over (work)",
+			"subtopic": "沟通和汇报",
+			"example_jp": "その残タスクは私が巻き取ります。",
+			"example_zh": "剩下的任务我来接手。",
+			"example_en": "I will pick up those remaining tasks."
+		},
+		{
+			"id": "fe-083",
+			"jp": "おっしゃる通り",
+			"kana": "おっしゃるとおり",
+			"zh": "您说得对",
+			"en": "exactly as you say",
+			"subtopic": "沟通和汇报",
+			"example_jp": "おっしゃる通りです。その方向で直します。",
+			"example_zh": "您说得对，我按那个方向改。",
+			"example_en": "You are right. I will fix it that way."
+		},
+		{
+			"id": "fe-084",
+			"jp": "職務経歴書",
+			"kana": "しょくむけいれきしょ",
+			"zh": "工作经历书（简历）",
+			"en": "career history document",
+			"subtopic": "面试",
+			"example_jp": "職務経歴書には担当したプロダクトを具体的に書きました。",
+			"example_zh": "工作经历书里具体写了负责过的产品。",
+			"example_en": "I wrote the products I worked on concretely in my career history."
+		},
+		{
+			"id": "fe-085",
+			"jp": "技術選定",
+			"kana": "ぎじゅつせんてい",
+			"zh": "技术选型",
+			"en": "technology selection",
+			"subtopic": "面试",
+			"example_jp": "前職ではNext.jsの技術選定から関わりました。",
+			"example_zh": "上一份工作里我从 Next.js 的技术选型就参与了。",
+			"example_en": "At my last job I was involved from choosing Next.js."
+		},
+		{
+			"id": "fe-086",
+			"jp": "担当",
+			"kana": "たんとう",
+			"zh": "负责",
+			"en": "in charge of",
+			"subtopic": "面试",
+			"example_jp": "フロントエンド全体の設計を担当していました。",
+			"example_zh": "我负责过整个前端的设计。",
+			"example_en": "I was in charge of the whole frontend architecture."
+		},
+		{
+			"id": "fe-087",
+			"jp": "技術スタック",
+			"kana": "ぎじゅつすたっく",
+			"zh": "技术栈",
+			"en": "tech stack",
+			"subtopic": "面试",
+			"example_jp": "御社の技術スタックについて伺ってもよろしいですか。",
+			"example_zh": "可以问一下贵公司的技术栈吗？",
+			"example_en": "May I ask about your tech stack?"
+		},
+		{
+			"id": "fe-088",
+			"jp": "チーム開発",
+			"kana": "ちーむかいはつ",
+			"zh": "团队开发",
+			"en": "team development",
+			"subtopic": "面试",
+			"example_jp": "五人のチーム開発でリーダーを務めました。",
+			"example_zh": "在五人团队开发中担任过组长。",
+			"example_en": "I led a five-person development team."
+		},
+		{
+			"id": "fe-089",
+			"jp": "カジュアル面談",
+			"kana": "かじゅあるめんだん",
+			"zh": "非正式面谈",
+			"en": "casual interview",
+			"subtopic": "面试",
+			"example_jp": "まずはカジュアル面談でお話を聞きたいです。",
+			"example_zh": "想先通过非正式面谈了解一下情况。",
+			"example_en": "I would like to start with a casual chat."
 		}
 	]
 }
