@@ -52,6 +52,7 @@ export function StudyFlip({
 	onGrade,
 	onSwipe,
 	fav = false,
+	instant = false,
 }: {
 	flipped: boolean;
 	onFlip: () => void;
@@ -62,6 +63,8 @@ export function StudyFlip({
 	/** Completed drag. Falls back to onGrade. */
 	onSwipe?: (grade: SwipeGrade) => void;
 	fav?: boolean;
+	/** Swap faces immediately. Lesson review uses this; other decks keep the 3D turn. */
+	instant?: boolean;
 }) {
 	const [holdBack, setHoldBack] = useState(false);
 	const [drag, setDrag] = useState<{ dx: number; dy: number } | null>(null);
@@ -72,9 +75,10 @@ export function StudyFlip({
 	const flyTimer = useRef<number | null>(null);
 	const gradeKeys = onGrade ?? onSwipe;
 	const swipeTo = onSwipe ?? onGrade;
-	const showBack = flipped || holdBack;
+	const showBack = instant ? flipped : flipped || holdBack;
 
 	useEffect(() => {
+		if (instant) return;
 		if (flipped) {
 			setHoldBack(true);
 			return;
@@ -83,7 +87,7 @@ export function StudyFlip({
 		const delay = reducedMotion() ? 0 : 260;
 		const id = window.setTimeout(() => setHoldBack(false), delay);
 		return () => window.clearTimeout(id);
-	}, [flipped, holdBack]);
+	}, [flipped, holdBack, instant]);
 
 	useEffect(() => {
 		return () => {
@@ -158,23 +162,24 @@ export function StudyFlip({
 		setDrag(null);
 	};
 
-	const flipTurn = flipped ? 180 : 0;
+	const flipTurn = instant ? 0 : flipped ? 180 : 0;
 	const rot = drag ? Math.max(-12, Math.min(12, drag.dx / 8)) : 0;
-	let transform = `rotateY(${flipTurn}deg)`;
-	if (fly === "pass") transform = `translate(120%, -8%) rotate(12deg) rotateY(${flipTurn}deg)`;
-	else if (fly === "fail") transform = `translate(-120%, -8%) rotate(-12deg) rotateY(${flipTurn}deg)`;
-	else if (fly === "fuzzy") transform = `translateY(-120%) rotateY(${flipTurn}deg)`;
-	else if (drag) transform = `translate(${drag.dx}px, ${drag.dy}px) rotate(${rot}deg) rotateY(${flipTurn}deg)`;
+	const turn = instant ? "" : ` rotateY(${flipTurn}deg)`;
+	let transform = instant ? "none" : `rotateY(${flipTurn}deg)`;
+	if (fly === "pass") transform = `translate(120%, -8%) rotate(12deg)${turn}`;
+	else if (fly === "fail") transform = `translate(-120%, -8%) rotate(-12deg)${turn}`;
+	else if (fly === "fuzzy") transform = `translateY(-120%)${turn}`;
+	else if (drag) transform = `translate(${drag.dx}px, ${drag.dy}px) rotate(${rot}deg)${turn}`;
 	const rotorStyle: CSSProperties = { transform };
 	const hint = fly || (drag ? stampOf(drag.dx, drag.dy) : null);
 
 	return (
 		<div
-			className={`fcard-slot${hint ? ` is-${hint}` : ""}${fly ? " is-flying" : ""}`}
+			className={`fcard-slot${instant ? " is-instant" : ""}${hint ? ` is-${hint}` : ""}${fly ? " is-flying" : ""}`}
 		>
 			<div
 				ref={cardRef}
-				className={`fcard${flipped ? " is-flipped" : ""}${swipeTo ? " is-swipeable" : ""}`}
+				className={`fcard${instant ? " is-instant" : ""}${flipped ? " is-flipped" : ""}${swipeTo ? " is-swipeable" : ""}`}
 				tabIndex={0}
 				{...(fav ? { "data-favflip": "" } : { "data-fcflip": "1" })}
 				onClick={(event) => {

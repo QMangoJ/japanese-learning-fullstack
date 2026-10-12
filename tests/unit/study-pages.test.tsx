@@ -17,6 +17,7 @@ import {
 	SearchPage,
 	Star,
 } from "../../app/routes/study-common";
+import { EndingSwap } from "../../app/study/ending-swap";
 import {
 	G,
 	V,
@@ -258,7 +259,7 @@ describe("HenkeiPage", () => {
 		expect(screen.getByText(/变形口诀还没加载完|Verb mnemonic data/)).toBeInTheDocument();
 	});
 
-	it("renders sound-change rules", () => {
+	it("renders sound-change rules", async () => {
 		render(
 			<HenkeiPage
 				data={{
@@ -271,6 +272,36 @@ describe("HenkeiPage", () => {
 		);
 		expect(screen.getByText("五段動詞のテ形・タ形（音便）")).toBeInTheDocument();
 		expect(screen.getByText("書く→書いて")).toBeInTheDocument();
+		expect(document.querySelector(".ending-swap__word")?.textContent).toBe("書く");
+		await userEvent.setup().click(screen.getByRole("button", { name: "いて" }));
+		expect(document.querySelector(".ending-swap__word")?.textContent).toBe("書いて");
+		expect(screen.getByText("書く→書いて")).toBeInTheDocument();
+	});
+
+	it("calls startViewTransition as a document method", async () => {
+		const user = userEvent.setup();
+		const start = vi.fn(function (this: unknown, update: () => void) {
+			expect(this).toBe(document);
+			update();
+		});
+		Object.defineProperty(document, "startViewTransition", { configurable: true, value: start });
+		try {
+			render(
+				<EndingSwap
+					title="词尾"
+					stem="書"
+					forms={[
+						{ ending: "く", label: "く" },
+						{ ending: "いて", label: "いて" },
+					]}
+				/>,
+			);
+			await user.click(screen.getByRole("button", { name: "いて" }));
+			expect(start).toHaveBeenCalledOnce();
+			expect(document.querySelector(".ending-swap__word")?.textContent).toBe("書いて");
+		} finally {
+			Reflect.deleteProperty(document, "startViewTransition");
+		}
 	});
 
 	it("summarizes dictionary-to-masu rules for all three verb groups", () => {
@@ -442,6 +473,8 @@ describe("HomePage and CardsPage", () => {
 		setNavImpl((key) => seen.push(key));
 		render(<HomePage data={{ weeks: G.weeks, intro: "目录", lang: "cn", scale: "week" }} />);
 		expect(screen.getByText("一日目")).toBeInTheDocument();
+		expect(screen.getByRole("slider", { name: "最近 60 天" })).toBeInTheDocument();
+		expect(document.querySelectorAll(".radial line")).toHaveLength(60);
 		await user.click(screen.getByText("1日目"));
 		expect(seen).toContain("#/day/1-1");
 	});
@@ -461,6 +494,7 @@ describe("HomePage and CardsPage", () => {
 		setCardsWeek(0);
 		render(<CardsPage />);
 		expect(screen.getByText("回想接续与意思，点击翻面")).toBeInTheDocument();
+		expect(document.querySelector("[data-fcflip]")).not.toHaveClass("is-instant");
 		await user.click(screen.getByText("回想接续与意思，点击翻面"));
 		expect(screen.getByText("表示刚做完")).toBeInTheDocument();
 	});

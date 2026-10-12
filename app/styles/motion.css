@@ -13,6 +13,11 @@
 	position: relative;
 	width: 100%;
 	max-width: 520px;
+	/* Pop the slot. The rotor owns rotateY, and a transform animation there freezes the flip. */
+	animation: card-pop var(--dur-base) var(--spring-soft);
+}
+.fcard-slot.is-instant {
+	animation: none;
 }
 .fcard {
 	perspective: 1100px;
@@ -32,7 +37,6 @@
 	transform-style: preserve-3d;
 	-webkit-transform-style: preserve-3d;
 	transition: transform var(--dur-base) var(--spring-soft);
-	animation: card-pop var(--dur-base) var(--spring-soft);
 }
 .fcard-rotor.is-dragging,
 .fcard-rotor.is-flying {
@@ -49,6 +53,21 @@
 .fcard-back {
 	transform: rotateY(180deg);
 }
+.fcard.is-instant {
+	perspective: none;
+}
+.fcard.is-instant .fcard-face,
+.fcard.is-instant .fcard-back {
+	transform: none;
+	backface-visibility: visible;
+	-webkit-backface-visibility: visible;
+}
+.fcard.is-instant.is-flipped .fcard-front,
+.fcard.is-instant:not(.is-flipped) .fcard-back {
+	display: none;
+}
+.fcard.is-instant .kana-plain { opacity: 1; }
+.fcard.is-instant .kana-stagger { display: none; }
 .fcard-slot.is-pass .fcard {
 	background: var(--green-soft);
 	border-color: var(--green);
@@ -215,6 +234,126 @@
 	to { transform: none; opacity: 1; }
 }
 
+.starb { position: relative; transition: opacity var(--dur-fast) var(--ease-out); }
+.starb.on { opacity: 1; animation: star-pop var(--dur-base) var(--spring-bouncy); }
+.starb.on::after {
+	content: "";
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 3px;
+	height: 3px;
+	margin: -1.5px;
+	border-radius: 50%;
+	background: var(--amber);
+	pointer-events: none;
+	animation: star-sparks var(--dur-base) var(--ease-out) forwards;
+	box-shadow:
+		9px -7px 0 0 var(--amber),
+		-11px -3px 0 0 var(--amber),
+		7px 9px 0 0 var(--amber),
+		-7px 8px 0 0 var(--amber),
+		12px 2px 0 0 var(--amber),
+		-1px -12px 0 0 var(--amber);
+}
+.starb:focus-visible { outline: 2px solid var(--amber); outline-offset: 2px; }
+
+.study-play { display: flex; flex-direction: column; gap: 8px; margin: 4px 0 14px; }
+.study-play__row { display: flex; align-items: center; gap: 10px; }
+.mame-wrap { display: flex; flex-direction: column; align-items: center; gap: 4px; width: 72px; flex: none; }
+.mame { width: 40px; height: 40px; overflow: visible; }
+.mame-body { fill: var(--accent-soft, #ffe8df); stroke: var(--accent, #b83d2c); stroke-width: 1.6; }
+.mame-ear { fill: var(--accent, #b83d2c); }
+.mame-eyes, .mame-mouth { fill: none; stroke: var(--ink, #2c2420); stroke-width: 1.6; stroke-linecap: round; }
+.mame-eyes { fill: var(--ink, #2c2420); transform-box: fill-box; transform-origin: center; }
+.mame.is-blink .mame-eyes { animation: mame-blink 4.2s linear infinite; }
+.mame.is-jump { animation: mame-jump 520ms var(--spring-bouncy); }
+.mame.is-sleepy { transform: rotate(-8deg); }
+.mame.is-sleepy .mame-eyes { transform: scaleY(.2); }
+.mame-label { font-size: 11px; font-weight: 700; color: var(--sub); text-align: center; line-height: 1.3; }
+.radial {
+	position: relative;
+	width: 168px;
+	height: 168px;
+	flex: none;
+	touch-action: none;
+	border-radius: 50%;
+}
+.radial:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.radial svg { width: 100%; height: 100%; display: block; }
+.radial line { stroke: var(--line, #f0e0d4); stroke-width: 2.5; stroke-linecap: round; }
+.radial line.is-hot { stroke: var(--accent, #b83d2c); }
+.radial line.is-on { stroke: var(--blue, #2f7a72); stroke-width: 3.5; }
+.radial-num {
+	position: absolute;
+	inset: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	pointer-events: none;
+}
+.radial-num__n {
+	font-size: 28px;
+	font-weight: 800;
+	font-variant-numeric: tabular-nums;
+	line-height: 1;
+	color: var(--ink);
+	animation: radial-num var(--dur-fast) var(--ease-out);
+}
+.radial-num__d { margin-top: 2px; font-size: 12px; font-weight: 700; color: var(--sub); font-variant-numeric: tabular-nums; }
+.study-demo summary { cursor: pointer; font-weight: 700; color: var(--sub); }
+.study-demo__card { margin-top: 10px; }
+.study-demo__note { margin-top: 8px; }
+
+.ending-swap { margin-bottom: 12px; }
+.ending-swap__title { font-size: 13px; font-weight: 700; color: var(--sub); margin-bottom: 6px; }
+.ending-swap__word { margin: 0 0 10px; font-size: 32px; font-weight: 800; line-height: 1.2; }
+.ending-swap__end { display: inline-block; color: var(--accent); }
+.ending-swap__forms { display: flex; flex-wrap: wrap; gap: 8px; }
+.ending-swap__forms button {
+	border: 1px solid var(--line);
+	background: var(--card);
+	color: var(--sub);
+	border-radius: 999px;
+	padding: 6px 12px;
+	font: 700 13px/1 inherit;
+	cursor: pointer;
+}
+.ending-swap__forms button.on { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+.ending-swap__forms button:active { transform: scale(.97); }
+.ending-swap__forms button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+@keyframes star-pop {
+	0% { transform: scale(.8); }
+	55% { transform: scale(1.2); }
+	100% { transform: scale(1); }
+}
+@keyframes star-sparks {
+	to { transform: scale(1.8); opacity: 0; }
+}
+@keyframes mame-blink {
+	0%, 42%, 48%, 100% { transform: scaleY(1); }
+	45% { transform: scaleY(.12); }
+}
+@keyframes mame-jump {
+	0%, 100% { transform: translateY(0); }
+	40% { transform: translateY(-8px); }
+}
+@keyframes radial-num {
+	from { transform: translateY(8px); opacity: .45; }
+	to { transform: none; opacity: 1; }
+}
+@keyframes ending-out {
+	to { transform: translateY(-14px); opacity: 0; }
+}
+@keyframes ending-in {
+	from { transform: translateY(14px); opacity: 0; }
+	to { transform: none; opacity: 1; }
+}
+::view-transition-old(ending-swap) { animation: ending-out var(--dur-base) var(--ease-out); }
+::view-transition-new(ending-swap) { animation: ending-in var(--dur-base) var(--ease-out); }
+
 @media (prefers-reduced-motion: reduce) {
 	:root {
 		--dur-instant: 0ms;
@@ -222,6 +361,7 @@
 		--dur-base: 0ms;
 		--dur-slow: 0ms;
 	}
+	.fcard-slot,
 	.fcard-rotor,
 	.fcard-rotor.is-dragging,
 	.fcard-back,
@@ -240,11 +380,24 @@
 	.fc-btns button:active,
 	.fc-filter button:active,
 	.opt-btn:active,
-	.rb-choice:active {
+	.rb-choice:active,
+	.starb,
+	.starb.on,
+	.starb.on::after,
+	.mame,
+	.mame.is-blink .mame-eyes,
+	.mame.is-sleepy .mame-eyes,
+	.mame.is-jump,
+	.mame.is-sleepy,
+	.radial-num__n,
+	.ending-swap__forms button:active {
 		animation: none !important;
 		transition: opacity 150ms linear !important;
 		transform: none !important;
 	}
+	.starb.on::after { display: none; }
+	::view-transition-old(ending-swap),
+	::view-transition-new(ending-swap) { animation: none; }
 	.fcard.is-flipped .fcard-front,
 	.fcard:not(.is-flipped) .fcard-back {
 		visibility: hidden;

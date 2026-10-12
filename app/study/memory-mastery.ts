@@ -183,6 +183,16 @@ export function getMasteryVersion() {
 	return version;
 }
 
+/** Local mark times for the home timeline. Not part of the sync payload. */
+export function masteryActivityStamps(): number[] {
+	ensureHydrated();
+	const stamps: number[] = [];
+	for (const entry of Object.values(entries)) {
+		if (entry.ts > 0) stamps.push(entry.ts);
+	}
+	return stamps;
+}
+
 export function loadMastery(storageKey: string): MasteryMap {
 	if (storageKey === FLASHCARD_MASTERY_KEY) return currentKnown();
 	try {

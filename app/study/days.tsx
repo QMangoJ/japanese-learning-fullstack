@@ -231,9 +231,11 @@ function StarBtn({ id, snap, exam }: { id: string; snap: any; exam?: boolean }) 
 	}
 	return (
 		<button
-			className="starb"
+			type="button"
+			className={`starb${active ? " on" : ""}`}
 			data-fav={id}
 			aria-label={active ? lx("取消收藏", "Remove from favorites") : lx("收藏", "Save to favorites")}
+			aria-pressed={active}
 			onClick={() => toggleFav(id)}
 		>
 			{active ? "★" : "☆"}

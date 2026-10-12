@@ -2,6 +2,8 @@ import { Fragment, Suspense, lazy, useEffect, useReducer, useRef, useState, useS
 
 import { JITA_TEARU_EXAMPLES } from "../data/common-jita-tearu";
 import { dueEntry, getDueVersion, grammarDueId, rememberFail, rememberPass, subscribeDue } from "../study/due-review";
+import { EndingSwap } from "../study/ending-swap";
+import { StudyHomePlay } from "../study/study-home-play";
 import { CardsScopeFilter } from "../study/memory-cards";
 import { KanaStagger, StudyFlip } from "../study/study-flip";
 import type { SwipeGrade } from "../study/swipe-grade";
@@ -428,6 +430,17 @@ export function KatsuyouPage({ data }: { data: any }) {
 
 	return (
 		<>
+			<EndingSwap
+				title={lx("词尾滑一下", "Slide the ending")}
+				stem="食べ"
+				forms={[
+					{ ending: "る", label: "る" },
+					{ ending: "ない", label: "ない" },
+					{ ending: "ます", label: "ます" },
+					{ ending: "た", label: "た" },
+					{ ending: "て", label: "て" },
+				]}
+			/>
 			{KY.intro ? (
 				<div className="meta" style={{ marginBottom: 10 }}>
 					{KY.intro}
@@ -522,6 +535,16 @@ export function HenkeiPage({ data }: { data: any }) {
 	if (!HK) return <div className="empty">{lx("变形口诀还没加载完，请稍后重试。", "Verb mnemonic data is still loading.")}</div>;
 	return (
 		<>
+			<EndingSwap
+				title={lx("词尾滑一下", "Slide the ending")}
+				stem="書"
+				forms={[
+					{ ending: "く", label: "く" },
+					{ ending: "いて", label: "いて" },
+					{ ending: "いた", label: "いた" },
+					{ ending: "かない", label: "かない" },
+				]}
+			/>
 			{HK.intro ? (
 				<div className="meta" style={{ marginBottom: 6 }}>
 					{lx(HK.intro, HK.intro_en)}
@@ -662,6 +685,14 @@ export function JitaPage({ data }: { data: any }) {
 	if (!JT) return <div className="empty">{lx("自动词和他动词数据还没加载完，请稍后重试。", "Transitive/intransitive data is still loading.")}</div>;
 	return (
 		<>
+			<EndingSwap
+				title={lx("词尾滑一下", "Slide the ending")}
+				stem="閉"
+				forms={[
+					{ ending: "める", label: "他" },
+					{ ending: "まる", label: "自" },
+				]}
+			/>
 			{JT.intro ? <div className="meta" style={{ marginBottom: 12 }}>{lx(JT.intro, JT.intro_en)}</div> : null}
 			{(JT.groups || []).map((group: any, gi: number) => (
 				<div className="card jita-group" key={gi}>
@@ -1519,6 +1550,7 @@ export function HomePage({ data }: { data: { weeks: any[]; intro: string; lang: 
 					</div>
 				) : null}
 			</div>
+			<StudyHomePlay />
 			{data.weeks.map((w) => {
 				const isOpen = open.has(w.n);
 				const sub = lx(w.title_cn, w.title_en);

@@ -42,6 +42,22 @@ describe("StudyFlip", () => {
 		expect(document.querySelector(".review-reading")?.textContent).toBe("かな");
 	});
 
+	it("swaps an instant card without turning it", () => {
+		const onFlip = vi.fn();
+		const { rerender } = render(
+			<StudyFlip instant flipped={false} onFlip={onFlip} front={<div>表面</div>} back={<div className="review-reading">かな</div>} />,
+		);
+		expect(document.querySelector(".fcard")).toHaveClass("is-instant");
+		expect(document.querySelector(".review-reading")).toBeNull();
+		expect(document.querySelector(".fcard-rotor")?.getAttribute("style") || "").not.toContain("rotateY");
+		fireEvent.click(screen.getByText("表面"));
+		rerender(<StudyFlip instant flipped onFlip={onFlip} front={<div>表面</div>} back={<div className="review-reading">かな</div>} />);
+		expect(document.querySelector(".review-reading")?.textContent).toBe("かな");
+		expect(document.querySelector(".fcard-rotor")?.getAttribute("style") || "").not.toContain("rotateY");
+		rerender(<StudyFlip instant flipped={false} onFlip={onFlip} front={<div>表面</div>} back={<div className="review-reading">かな</div>} />);
+		expect(document.querySelector(".review-reading")).toBeNull();
+	});
+
 	it("grades a right swipe and ignores a short drag click", () => {
 		vi.useFakeTimers();
 		const onFlip = vi.fn();

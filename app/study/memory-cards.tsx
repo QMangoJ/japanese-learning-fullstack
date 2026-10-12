@@ -161,6 +161,7 @@ export function MemoryCards({
 	emptyAll,
 	defaultSkill = "unknown",
 	translationPending = false,
+	instantFlip = false,
 }: {
 	deckId: string;
 	items: MemoryCardItem[];
@@ -173,6 +174,7 @@ export function MemoryCards({
 	emptyAll?: string;
 	defaultSkill?: SkillFilter;
 	translationPending?: boolean;
+	instantFlip?: boolean;
 }) {
 	useSyncExternalStore(subscribeDisplay, getDisplayVersion, () => 0);
 	const syncFlashcards = storageKey === FLASHCARD_MASTERY_KEY;
@@ -275,6 +277,7 @@ export function MemoryCards({
 	} else {
 		card = (
 			<StudyFlip
+				instant={instantFlip}
 				flipped={flipped}
 				onFlip={() => setFlipped((value) => !value)}
 				onGrade={(grade) => mark(gradeKnown(grade))}

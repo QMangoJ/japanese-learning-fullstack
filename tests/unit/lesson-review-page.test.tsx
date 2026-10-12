@@ -89,6 +89,8 @@ describe("ReviewPage", () => {
 		expect(screen.queryByText("せんしんこく")).not.toBeInTheDocument();
 		expect(screen.queryByText("先進国（せんしんこく）")).not.toBeInTheDocument();
 		expect(screen.getByText("回想中/英文，点击翻面")).toBeInTheDocument();
+		expect(document.querySelector(".fcard")).toHaveClass("is-instant");
+		expect(document.querySelector(".fcard-rotor")?.getAttribute("style") || "").not.toContain("rotateY");
 		await user.click(screen.getByText("回想中/英文，点击翻面"));
 		expect(screen.getByText("developed country")).toBeInTheDocument();
 		expect(document.querySelector(".review-reading")?.textContent).toBe("せんしんこく");
