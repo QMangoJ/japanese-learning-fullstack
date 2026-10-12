@@ -27,6 +27,6 @@
 		"LESSON_REVIEW_DOC_ID": "12NwKtAV_HFUeOheYvXGMsJl5G2xIcdb4WG_axC23xrU"
 	},
 	"triggers": {
-		"crons": ["0 6 * * *"]
+		"crons": ["0 13 * * MON,THU,FRI"]
 	}
 }

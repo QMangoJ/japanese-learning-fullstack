@@ -571,7 +571,7 @@ describe("Japanese -teki adjectives stay as vocab", () => {
 	});
 });
 
-describe("daily google doc sync", () => {
+describe("scheduled google doc sync", () => {
 	it("parses an export and stores it in KV", async () => {
 		const kv = memoryKv();
 		const fetcher = vi.fn(async (url: string) => {
