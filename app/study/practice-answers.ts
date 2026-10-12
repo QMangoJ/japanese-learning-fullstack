@@ -96,3 +96,95 @@ export function otherChoices(raw: string, item: any): string[] {
 	for (const m of q.matchAll(/([a-d])\.\s*([^\s\u3000）)]+)/gu)) if (m[1] !== r) res.push(`${m[1]}. ${m[2]}`);
 	return res;
 }
+
+export type DailyChoiceQuiz = {
+	opts: string[];
+	opts_r?: string[];
+	/** 1-based option indexes that count as correct. */
+	accept: number[];
+};
+
+type ChoiceItem = {
+	q?: string;
+	q_r?: string;
+	opts?: string[];
+	opts_r?: string[];
+	options?: string[];
+	options_r?: string[];
+};
+
+const MARK_RE = /^[○〇◯×✕✖✗]/u;
+const BOTH_RE = /^(?:ab|ba|a[・·･／/]b|b[・·･／/]a)$/u;
+
+function stripChoiceLabel(value: string): string {
+	const text = String(value ?? "");
+	const match = text.match(/^\s*[0-9０-９]{1,2}[.．、]?\s+(\S[\s\S]*)$/u);
+	return (match ? match[1] : text).trim();
+}
+
+function inlinePairs(text: string | undefined): { a: string; b: string }[] {
+	if (!text) return [];
+	const re = /（\s*a[.．]\s*([^）]*?)\s+b[.．]\s*([^）]*?)\s*）/gu;
+	return [...text.matchAll(re)]
+		.map((match) => ({ a: match[1].trim(), b: match[2].trim() }))
+		.filter((pair) => pair.a && pair.b);
+}
+
+function abAccept(answer: string): number[] | null {
+	const clean = answer.replace(/\s+/gu, "");
+	if (clean === "a") return [1];
+	if (clean === "b") return [2];
+	if (BOTH_RE.test(clean)) return [1, 2];
+	return null;
+}
+
+function numberAccept(answer: string, count: number): number[] | null {
+	const clean = answer.replace(/\s+/gu, "");
+	if (!/^[1-9]$/.test(clean)) return null;
+	const n = Number(clean);
+	return n >= 1 && n <= count ? [n] : null;
+}
+
+/**
+ * Clickable options for one grammar れんしゅう choice.
+ * Order items, multi-blank items, and items with no matched key stay null
+ * so the page can keep the static option row.
+ */
+export function dailyChoiceQuiz(
+	sectionType: string | undefined,
+	item: ChoiceItem,
+	answer: string | null | undefined,
+	infoType?: string,
+): DailyChoiceQuiz | null {
+	if (sectionType !== "choice" || infoType === "order") return null;
+	const raw = String(answer ?? "").trim();
+	if (!raw) return null;
+	if (/→/u.test(raw) && !MARK_RE.test(raw)) return null;
+
+	const source = item.opts?.length ? item.opts : item.options;
+	if (source?.length) {
+		const opts = source.map(stripChoiceLabel);
+		const richSource = item.opts?.length ? item.opts_r : item.options_r;
+		const opts_r = richSource?.length === source.length ? richSource.map(stripChoiceLabel) : undefined;
+		const numbered = numberAccept(raw, opts.length);
+		const byText = opts.findIndex((opt) => opt === raw || stripChoiceLabel(opt) === raw);
+		const accept = numbered || (byText >= 0 ? [byText + 1] : null);
+		if (!accept) return null;
+		return { opts, ...(opts_r ? { opts_r } : {}), accept };
+	}
+
+	const pairs = inlinePairs(item.q);
+	if (pairs.length > 1) return null;
+	if (pairs.length === 1) {
+		const accept = abAccept(raw);
+		if (!accept) return null;
+		const rich = inlinePairs(item.q_r);
+		const opts_r = rich.length === 1 ? [rich[0].a, rich[0].b] : undefined;
+		return { opts: [pairs[0].a, pairs[0].b], ...(opts_r ? { opts_r } : {}), accept };
+	}
+
+	const mark = raw.match(MARK_RE);
+	if (!mark) return null;
+	const wrong = "×✕✖✗".includes(mark[0]);
+	return { opts: ["〇", "×"], accept: [wrong ? 2 : 1] };
+}

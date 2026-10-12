@@ -71,6 +71,72 @@ export function memoryKindLabel(kind?: string): string {
 	return pair ? lx(...pair) : kind;
 }
 
+function MemoryCardFront({ cur, hint }: { cur: MemoryCardItem; hint: string }) {
+	return (
+		<>
+			{cur.kind ? <div className="review-k">{memoryKindLabel(cur.kind)}</div> : null}
+			<div className="big jp" style={cur.jp.length > 22 ? { fontSize: 20 } : undefined}>
+				{cur.jp}
+			</div>
+			<div className="hint">{hint}</div>
+		</>
+	);
+}
+
+function MemoryCardBack({
+	cur,
+	translationPending,
+	staggerReading = false,
+}: {
+	cur: MemoryCardItem;
+	translationPending: boolean;
+	staggerReading?: boolean;
+}) {
+	return (
+		<div className="backside review-flip" style={{ textAlign: "center" }}>
+			{cur.kind ? <div className="review-k">{memoryKindLabel(cur.kind)}</div> : null}
+			<div className="jp review-flip-ruby" style={{ fontWeight: 700, fontSize: "22px" }}>
+				{cur.jpHtml ? <RubyHtml html={cur.jpHtml} /> : cur.jp} <SayButton text={cur.jp} />
+			</div>
+			{cur.reading ? (
+				<div className="review-reading jp">{staggerReading ? <KanaStagger text={cur.reading} /> : cur.reading}</div>
+			) : null}
+			{cur.cn ? (
+				<div className="jp review-flip-ruby" style={{ fontSize: "18px", marginTop: "10px" }}>
+					{cur.cnHtml ? <RubyHtml html={cur.cnHtml} /> : cur.cn}
+				</div>
+			) : null}
+			{cur.en ? (
+				<div className="meta" style={{ fontSize: "14px" }}>
+					{cur.en}
+				</div>
+			) : null}
+			{cur.translation ? (
+				<div className="ex fcard-ex fcard-trans" data-fc-translation="1">
+					<div className="fcard-ex-label">{lx("翻译", "Translation")}</div>
+					<div className="cn">{cur.translation}</div>
+				</div>
+			) : translationPending || cur.awaitingTranslation ? (
+				<div className="ex fcard-ex fcard-trans" data-fc-translation-pending="1">
+					<div className="fcard-ex-label">{lx("翻译", "Translation")}</div>
+					<div className="cn meta">{lx("翻译中…", "Translating…")}</div>
+				</div>
+			) : null}
+			{cur.exampleJp ? (
+				<div className="ex fcard-ex">
+					<div className="fcard-ex-label">{lx("例句", "Example")}</div>
+					<div className="jp">
+						{cur.exampleJpHtml ? <RubyHtml html={cur.exampleJpHtml} /> : cur.exampleJp} <SayButton text={cur.exampleJp} />
+					</div>
+					{cur.exampleReading ? <div className="review-reading jp">{cur.exampleReading}</div> : null}
+					{cur.exampleCn ? <div className="cn">{cur.exampleCn}</div> : null}
+					{cur.exampleEn ? <div className="en">{cur.exampleEn}</div> : null}
+				</div>
+			) : null}
+		</div>
+	);
+}
+
 export function CardsLaunch({ label, week, day }: { label?: string; week?: number; day?: number }) {
 	return (
 		<button
@@ -162,6 +228,7 @@ export function MemoryCards({
 	defaultSkill = "unknown",
 	translationPending = false,
 	instantFlip = false,
+	plainFlip = false,
 }: {
 	deckId: string;
 	items: MemoryCardItem[];
@@ -175,6 +242,8 @@ export function MemoryCards({
 	defaultSkill?: SkillFilter;
 	translationPending?: boolean;
 	instantFlip?: boolean;
+	/** 错题本: remount a static face on each flip, with no spring turn or swipe grade. */
+	plainFlip?: boolean;
 }) {
 	useSyncExternalStore(subscribeDisplay, getDisplayVersion, () => 0);
 	const syncFlashcards = storageKey === FLASHCARD_MASTERY_KEY;
@@ -275,68 +344,23 @@ export function MemoryCards({
 			</div>
 		);
 	} else {
-		card = (
+		card = plainFlip ? (
+			<div className="fcard" data-fcflip="1" onClick={() => setFlipped((value) => !value)}>
+				{flipped ? (
+					<MemoryCardBack cur={cur} translationPending={translationPending} />
+				) : (
+					<MemoryCardFront cur={cur} hint={frontHint} />
+				)}
+			</div>
+		) : (
 			<StudyFlip
 				instant={instantFlip}
 				flipped={flipped}
 				onFlip={() => setFlipped((value) => !value)}
 				onGrade={(grade) => mark(gradeKnown(grade))}
 				onSwipe={swipe}
-				front={
-					<>
-						{cur.kind ? <div className="review-k">{memoryKindLabel(cur.kind)}</div> : null}
-						<div className="big jp" style={cur.jp.length > 22 ? { fontSize: 20 } : undefined}>
-							{cur.jp}
-						</div>
-						<div className="hint">{frontHint}</div>
-					</>
-				}
-				back={
-					<div className="backside review-flip" style={{ textAlign: "center" }}>
-						{cur.kind ? <div className="review-k">{memoryKindLabel(cur.kind)}</div> : null}
-						<div className="jp review-flip-ruby" style={{ fontWeight: 700, fontSize: "22px" }}>
-							{cur.jpHtml ? <RubyHtml html={cur.jpHtml} /> : cur.jp} <SayButton text={cur.jp} />
-						</div>
-						{cur.reading ? (
-							<div className="review-reading jp">
-								<KanaStagger text={cur.reading} />
-							</div>
-						) : null}
-						{cur.cn ? (
-							<div className="jp review-flip-ruby" style={{ fontSize: "18px", marginTop: "10px" }}>
-								{cur.cnHtml ? <RubyHtml html={cur.cnHtml} /> : cur.cn}
-							</div>
-						) : null}
-						{cur.en ? (
-							<div className="meta" style={{ fontSize: "14px" }}>
-								{cur.en}
-							</div>
-						) : null}
-						{cur.translation ? (
-							<div className="ex fcard-ex fcard-trans" data-fc-translation="1">
-								<div className="fcard-ex-label">{lx("翻译", "Translation")}</div>
-								<div className="cn">{cur.translation}</div>
-							</div>
-						) : translationPending || cur.awaitingTranslation ? (
-							<div className="ex fcard-ex fcard-trans" data-fc-translation-pending="1">
-								<div className="fcard-ex-label">{lx("翻译", "Translation")}</div>
-								<div className="cn meta">{lx("翻译中…", "Translating…")}</div>
-							</div>
-						) : null}
-						{cur.exampleJp ? (
-							<div className="ex fcard-ex">
-								<div className="fcard-ex-label">{lx("例句", "Example")}</div>
-								<div className="jp">
-									{cur.exampleJpHtml ? <RubyHtml html={cur.exampleJpHtml} /> : cur.exampleJp}{" "}
-									<SayButton text={cur.exampleJp} />
-								</div>
-								{cur.exampleReading ? <div className="review-reading jp">{cur.exampleReading}</div> : null}
-								{cur.exampleCn ? <div className="cn">{cur.exampleCn}</div> : null}
-								{cur.exampleEn ? <div className="en">{cur.exampleEn}</div> : null}
-							</div>
-						) : null}
-					</div>
-				}
+				front={<MemoryCardFront cur={cur} hint={frontHint} />}
+				back={<MemoryCardBack cur={cur} translationPending={translationPending} staggerReading />}
 			/>
 		);
 	}
@@ -376,15 +400,17 @@ export function MemoryCards({
 				</button>
 			</div>
 			<div className="fc-prog">{deck.length ? `${safeIdx + 1} / ${deck.length}` : ""}</div>
-			<Fragment key={cur ? `${deckId}-${kind}-${skill}-${cur.id}` : `${deckId}-done`}>{card}</Fragment>
+			<Fragment key={cur ? (plainFlip ? `${deckId}-${kind}-${skill}-${safeIdx}-${flipped}` : `${deckId}-${kind}-${skill}-${cur.id}`) : `${deckId}-done`}>{card}</Fragment>
 			{cur ? (
 				<div className="review-skill">
 					<button type="button" className={!known ? "on" : ""} onClick={() => mark(false)}>
 						{lx("还没记住", "Still learning")}
 					</button>
-					<button type="button" onClick={() => mark(false)}>
-						{lx("模糊", "Unsure")}
-					</button>
+					{plainFlip ? null : (
+						<button type="button" onClick={() => mark(false)}>
+							{lx("模糊", "Unsure")}
+						</button>
+					)}
 					<button type="button" className={known ? "on known" : ""} onClick={() => mark(true)}>
 						{lx("已经记住", "Got it")}
 					</button>
