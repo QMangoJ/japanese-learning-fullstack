@@ -4,8 +4,10 @@ import { loader as meLoader } from "../../app/routes/api.me";
 import { action as favAction, loader as favLoader } from "../../app/routes/api.favorites";
 import { action as mistakeAction, loader as mistakeLoader } from "../../app/routes/api.mistakes";
 import { action as dueAction, loader as dueLoader } from "../../app/routes/api.due-review";
+import { action as masteryAction, loader as masteryLoader } from "../../app/routes/api.mastery";
 import { loader as logoutLoader } from "../../app/routes/auth.logout";
-import { dueKey, favsKey, mistakesKey } from "../../app/auth/users";
+import { isMasteryPayload } from "../../app/auth/study-payloads";
+import { dueKey, favsKey, masteryKey, mistakesKey } from "../../app/auth/users";
 import { authedRequest, memoryKv, routeContext, seedUser, testEnv } from "./auth-test-utils";
 
 describe("/api/me", () => {
@@ -177,6 +179,60 @@ describe("/api/due-review", () => {
 		});
 		expect(res.status).toBe(400);
 		expect(kv.map.has(dueKey("g_1"))).toBe(false);
+	});
+});
+
+describe("/api/mastery", () => {
+	const sample = [{ id: "n2vocab::n2vocab:1-2:0-3:単語", known: true, ts: 1 }];
+
+	it("rejects guests and stores only the signed-in user's marks", async () => {
+		const kv = memoryKv();
+		seedUser(kv, { id: "g_1" });
+		seedUser(kv, { id: "g_2" });
+		kv.map.set(masteryKey("g_2"), JSON.stringify([{ id: "other", known: true, ts: 2 }]));
+
+		const guest = await masteryLoader({ request: new Request("http://localhost/api/mastery"), context: routeContext(testEnv(kv)) });
+		expect(guest.status).toBe(401);
+
+		const put = await masteryAction({
+			request: await authedRequest("http://localhost/api/mastery", "g_1", { method: "PUT", body: JSON.stringify(sample) }),
+			context: routeContext(testEnv(kv)),
+		});
+		expect(put.status).toBe(200);
+		expect(kv.map.get(masteryKey("g_1"))).toContain("単語");
+		expect(kv.map.get(masteryKey("g_2"))).toContain("other");
+		expect(kv.map.has(mistakesKey("g_1"))).toBe(false);
+
+		const get = await masteryLoader({
+			request: await authedRequest("http://localhost/api/mastery", "g_1"),
+			context: routeContext(testEnv(kv)),
+		});
+		expect(await get.json()).toEqual(sample);
+	});
+
+	it("rejects a mark that is not a boolean or uses an unsafe id", async () => {
+		const kv = memoryKv();
+		seedUser(kv, { id: "g_1" });
+		const badKnown = await masteryAction({
+			request: await authedRequest("http://localhost/api/mastery", "g_1", {
+				method: "PUT",
+				body: JSON.stringify([{ id: "card", known: "yes", ts: 1 }]),
+			}),
+			context: routeContext(testEnv(kv)),
+		});
+		expect(badKnown.status).toBe(400);
+		const unsafe = await masteryAction({
+			request: await authedRequest("http://localhost/api/mastery", "g_1", {
+				method: "PUT",
+				body: JSON.stringify([{ id: "__proto__", known: true, ts: 1 }]),
+			}),
+			context: routeContext(testEnv(kv)),
+		});
+		expect(unsafe.status).toBe(400);
+		expect(kv.map.has(masteryKey("g_1"))).toBe(false);
+		expect(isMasteryPayload(sample)).toBe(true);
+		expect(isMasteryPayload([{ id: "card", known: true, ts: Number.NaN }])).toBe(false);
+		expect(isMasteryPayload(Array.from({ length: 6001 }, (_, i) => ({ id: `k${i}`, known: true, ts: 1 })))).toBe(false);
 	});
 });
 

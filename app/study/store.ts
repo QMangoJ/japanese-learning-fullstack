@@ -4,6 +4,7 @@ import kougoFallback from "../data/common-kougo.json";
 import wearingFallback from "../data/common-wearing.json";
 import { listeningBundle, listeningN1Bundle, listeningN2Bundle, readingBundle, readingN2Bundle } from "./catalogs";
 import { forgetDue, hydrateDue, kickDueSync, mistakeDueDraft, mistakeDueId, noteDueSignedOut, pullDueFromServer, pushDueNow, rememberFail, resetDueForTests } from "./due-review";
+import { hydrateMastery, kickMasterySync, noteMasterySignedOut, pullMasteryFromServer, pushMasteryNow, resetMasteryForTests } from "./memory-mastery";
 
 export type ModuleKey =
 	| "grammar"
@@ -1870,6 +1871,7 @@ export function resetStudyStateForTests() {
 	loadError = "";
 	for (const key of Object.keys(openWeeks)) delete openWeeks[key];
 	resetDueForTests();
+	resetMasteryForTests();
 	navImpl = () => {};
 	afterPaintImpl = () => {};
 	if (typeof document !== "undefined") applyTheme();
@@ -1911,6 +1913,7 @@ export function hydrateFromStorage() {
 	FAV = cleanFavs(lsJson("favs", {}));
 	MISTAKES = cleanMistakes(lsJson("mistakes", []));
 	hydrateDue();
+	hydrateMastery();
 	noRuby = lsGet("noruby", "0") === "1";
 	hideJp = lsGet("hidejp", "0") === "1";
 	hideCn = lsGet("hidecn", "0") === "1";
@@ -2183,13 +2186,15 @@ export async function bootAccount() {
 		_favPendingPush = false;
 		_mistakesPendingPush = false;
 		noteDueSignedOut();
+		noteMasterySignedOut();
 		return;
 	}
 	await pullFavsFromServer();
 	await pullMistakesFromServer();
 	await pullDueFromServer(ACCOUNT.id);
+	await pullMasteryFromServer(ACCOUNT.id);
 	lsSet("accountId", ACCOUNT.id);
-	await Promise.all([pushFavsNow(), pushMistakesNow(), pushDueNow()]);
+	await Promise.all([pushFavsNow(), pushMistakesNow(), pushDueNow(), pushMasteryNow()]);
 }
 
 export function attachResync() {
@@ -2199,6 +2204,7 @@ export function attachResync() {
 		if (_mistakesPendingPush) scheduleMistakesPush(0);
 		else void resyncMistakes();
 		kickDueSync();
+		kickMasterySync();
 	};
 	const onVis = () => {
 		if (document.visibilityState === "visible") resyncAll();

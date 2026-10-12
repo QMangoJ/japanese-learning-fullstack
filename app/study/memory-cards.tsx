@@ -2,10 +2,28 @@ import { Fragment, useMemo, useState, useSyncExternalStore, type ReactNode } fro
 
 import { RubyHtml, SayButton } from "../routes/study-common";
 import { getDisplayVersion, lx, navTo, noRuby, openModuleCards, subscribeDisplay, toggleDisplay } from "./store";
-import { isMastered, loadMastery, setMastered, type MasteryMap } from "./memory-mastery";
+import {
+	FLASHCARD_MASTERY_KEY,
+	getMasteryVersion,
+	isMastered,
+	loadMastery,
+	setMastered,
+	subscribeMastery,
+	type MasteryMap,
+} from "./memory-mastery";
 
-export const FLASHCARD_MASTERY_KEY = "flashcard-mastery";
+export { FLASHCARD_MASTERY_KEY };
 export const REVIEW_MASTERY_KEY = "lesson-review-mastery";
+
+const EMPTY_MASTERY: MasteryMap = {};
+
+function subscribeNothing(_listener: () => void) {
+	return () => {};
+}
+
+function masteryVersionZero() {
+	return 0;
+}
 
 export type MemoryCardKind = "word" | "kanji" | "expression" | "sentence" | "phrase";
 
@@ -155,7 +173,20 @@ export function MemoryCards({
 	translationPending?: boolean;
 }) {
 	useSyncExternalStore(subscribeDisplay, getDisplayVersion, () => 0);
-	const [mastery, setMastery] = useState<MasteryMap>(() => loadMastery(storageKey));
+	const syncFlashcards = storageKey === FLASHCARD_MASTERY_KEY;
+	const masteryVersion = useSyncExternalStore(
+		syncFlashcards ? subscribeMastery : subscribeNothing,
+		syncFlashcards ? getMasteryVersion : masteryVersionZero,
+		masteryVersionZero,
+	);
+	const [localMastery, setLocalMastery] = useState<MasteryMap>(() =>
+		syncFlashcards ? EMPTY_MASTERY : loadMastery(storageKey),
+	);
+	const flashMastery = useMemo(
+		() => (syncFlashcards ? loadMastery(storageKey) : EMPTY_MASTERY),
+		[syncFlashcards, storageKey, masteryVersion],
+	);
+	const mastery = syncFlashcards ? flashMastery : localMastery;
 	const [kind, setKind] = useState("all");
 	const [skill, setSkill] = useState<SkillFilter>(defaultSkill);
 	const [idx, setIdx] = useState(0);
@@ -203,7 +234,8 @@ export function MemoryCards({
 
 	const mark = (nextKnown: boolean) => {
 		if (!cur) return;
-		setMastery(setMastered(storageKey, mastery, deckId, cur.id, nextKnown));
+		const next = setMastered(storageKey, mastery, deckId, cur.id, nextKnown);
+		if (storageKey !== FLASHCARD_MASTERY_KEY) setLocalMastery(next);
 		setFlipped(false);
 	};
 

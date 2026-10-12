@@ -7,6 +7,7 @@ export default [
 	route("api/favorites", "routes/api.favorites.ts"),
 	route("api/mistakes", "routes/api.mistakes.ts"),
 	route("api/due-review", "routes/api.due-review.ts"),
+	route("api/mastery", "routes/api.mastery.ts"),
 	route("api/mistake-translations", "routes/api.mistake-translations.ts"),
 	route("api/mistake-study", "routes/api.mistake-study.ts"),
 	route("api/me", "routes/api.me.ts"),

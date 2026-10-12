@@ -42,6 +42,10 @@ export function dueKey(userId: string): string {
 	return `due:${userId}`;
 }
 
+export function masteryKey(userId: string): string {
+	return `mastery:${userId}`;
+}
+
 export function toPublicUser(user: UserRecord): PublicUser {
 	return {
 		id: user.id,
