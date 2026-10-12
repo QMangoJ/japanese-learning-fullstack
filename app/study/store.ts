@@ -5,6 +5,7 @@ import wearingFallback from "../data/common-wearing.json";
 import { listeningBundle, listeningN1Bundle, listeningN2Bundle, readingBundle, readingN2Bundle } from "./catalogs";
 import { forgetDue, hydrateDue, kickDueSync, mistakeDueDraft, mistakeDueId, noteDueSignedOut, pullDueFromServer, pushDueNow, rememberFail, resetDueForTests } from "./due-review";
 import { hydrateMastery, kickMasterySync, noteMasterySignedOut, pullMasteryFromServer, pushMasteryNow, resetMasteryForTests } from "./memory-mastery";
+import { pushToast } from "./toast";
 
 export type ModuleKey =
 	| "grammar"
@@ -884,7 +885,10 @@ export function registerFavMeta(id: string, snap: FavSnap) {
 export function toggleFav(id: string) {
 	if (!requestAccount("favs", "/study/favs")) return;
 	if (FAV[id]) delete FAV[id];
-	else if (FAVMETA[id]) FAV[id] = { ...FAVMETA[id], ts: Date.now() };
+	else if (FAVMETA[id]) {
+		FAV[id] = { ...FAVMETA[id], ts: Date.now() };
+		pushToast(lx("已收藏", "Saved"));
+	}
 	saveFav();
 	emit();
 }
@@ -903,6 +907,7 @@ export function saveSelectionFav(type: string, text: string, hash: string) {
 	};
 	saveFav();
 	emit();
+	pushToast(lx("已收藏", "Saved"));
 	return id;
 }
 export function selectionFavId(type: string, text: string) {
@@ -1479,8 +1484,10 @@ export function setMistakeDraft(value: string) {
 	mistakeDraft = value;
 }
 export function addMistakeNote(text: string) {
+	const before = MISTAKES.length;
 	addMistake(mistakeAddType, text);
 	mistakeDraft = "";
+	if (MISTAKES.length > before) pushToast(lx("已加入错题本", "Added to the mistake book"));
 }
 export function setMistakeFilter(filter: string) {
 	mistakeFilter = filter;

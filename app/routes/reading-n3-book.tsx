@@ -13,6 +13,7 @@ import {
 
 const readingBooks = { n3: readingN3, n2: readingN2 } as const;
 type ReadingBookKey = keyof typeof readingBooks;
+import { AnswerFeedback } from "../study/answer-feedback";
 import { addMistake, isFav, LANG, lx, navTo, registerFavMeta, toggleFav } from "../study/store";
 import { readingWrongNote } from "../study/exam-answers";
 import { CardsLaunch } from "../study/memory-cards";
@@ -288,6 +289,7 @@ function QuestionCard({
 								}}
 								aria-pressed={picked === number}
 							>
+								<AnswerFeedback verdict={settled && isAnswer ? "correct" : settled && picked === number && !isAnswer ? "wrong" : "idle"}>
 								<span className="rb-choice__num">{number}</span>
 								<span>
 									<Jp text={choice.jp} />
@@ -298,6 +300,7 @@ function QuestionCard({
 										</span>
 									)}
 								</span>
+								</AnswerFeedback>
 							</button>
 						</li>
 					);

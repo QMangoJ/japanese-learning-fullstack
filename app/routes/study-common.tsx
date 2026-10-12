@@ -3,6 +3,8 @@ import { Fragment, Suspense, lazy, useEffect, useReducer, useRef, useState, useS
 import { JITA_TEARU_EXAMPLES } from "../data/common-jita-tearu";
 import { dueEntry, getDueVersion, grammarDueId, rememberFail, rememberPass, subscribeDue } from "../study/due-review";
 import { CardsScopeFilter } from "../study/memory-cards";
+import { KanaStagger, StudyFlip } from "../study/study-flip";
+import type { SwipeGrade } from "../study/swipe-grade";
 import {
 	afterPaint,
 	addMistakeNote,
@@ -1419,23 +1421,26 @@ export function FavFcPage({ data }: { data: { jp: string; cn: string; idx: numbe
 			<div className="fc-prog">
 				{data.idx + 1} / {data.total}
 			</div>
-			<Fragment key={`${data.idx}-${data.flipped}`}>
-				{data.flipped ? (
-					<div className="fcard" data-favflip="" onClick={() => flipFavCard()}>
-						<div className="backside" style={{ textAlign: "center" }}>
-							<div className="jp" style={{ fontWeight: 700, fontSize: "24px" }}>
-								{data.jp} <SayButton text={data.jp} />
-							</div>
-							{data.cn ? <div style={{ fontSize: "18px", marginTop: "12px" }}>{data.cn}</div> : null}
-						</div>
-					</div>
-				) : (
-					<div className="fcard" data-favflip="" onClick={() => flipFavCard()}>
+			<StudyFlip
+				key={data.idx}
+				fav
+				flipped={data.flipped}
+				onFlip={() => flipFavCard()}
+				front={
+					<>
 						<div className="big jp">{data.jp}</div>
 						<div className="hint">{lx("点击翻面看释义", "Tap to see the meaning")}</div>
+					</>
+				}
+				back={
+					<div className="backside" style={{ textAlign: "center" }}>
+						<div className="jp" style={{ fontWeight: 700, fontSize: "24px" }}>
+							{data.jp} <SayButton text={data.jp} />
+						</div>
+						{data.cn ? <div style={{ fontSize: "18px", marginTop: "12px" }}>{data.cn}</div> : null}
 					</div>
-				)}
-			</Fragment>
+				}
+			/>
 			<div className="fc-btns">
 				<button data-favprev="" onClick={() => prevFavCard()}>‹ {lx("上一张", "Prev")}</button>
 				<button className="primary" data-favnext="" onClick={() => nextFavCard()}>{lx("下一张", "Next")} ›</button>
@@ -1621,6 +1626,22 @@ function GrammarDueButtons({
 			</button>
 			<button
 				type="button"
+				onClick={() => {
+					rememberFail({
+						id,
+						kind: "grammar",
+						jp: pattern,
+						cn: usageCn || "",
+						en: usageEn || "",
+						reading: reading || "",
+					});
+					bump();
+				}}
+			>
+				{lx("模糊", "Unsure")}
+			</button>
+			<button
+				type="button"
 				className={known ? "on known" : ""}
 				onClick={() => {
 					rememberPass(id);
@@ -1652,6 +1673,24 @@ export function CardsPage() {
 	const cur = fc.deck[fc.idx];
 
 	const chapterScale = homeScale() === "chapter";
+	const gradeGrammar = (grade: SwipeGrade, advance: boolean) => {
+		if (kind !== "gram" || !cur?.p?.pattern) return;
+		const pattern = String(cur.p.pattern);
+		const id = grammarDueId(MODULE, cur.w, cur.d, pattern);
+		if (grade === "pass") rememberPass(id);
+		else {
+			rememberFail({
+				id,
+				kind: "grammar",
+				jp: pattern,
+				cn: cur.p.usage_cn || "",
+				en: cur.p.usage_en || "",
+				reading: cur.p.reading || "",
+			});
+		}
+		if (advance) nextCard();
+		bump();
+	};
 	let card: ReactNode;
 	if (!fc.deck.length) {
 		card = (
@@ -1676,119 +1715,138 @@ export function CardsPage() {
 	} else if (kind === "gram") {
 		const p = cur.p;
 		const eg = p.examples && p.examples[0];
-		card = !fc.flipped ? (
-			<div className="fcard" data-fcflip="1" onClick={flip}>
-				<div className="big jp">{p.pattern}</div>
-				<div className="hint">{lx("回想接续与意思，点击翻面", "Recall the pattern, then tap to flip")}</div>
-			</div>
-		) : (
-			<div className="fcard" data-fcflip="1" onClick={flip}>
-				<div className="backside">
-					<div className="jp" style={{ fontWeight: 700, fontSize: "18px" }}>
-						<Rr o={p} f="pattern" />
-					</div>
-					{p.reading ? <div className="reading jp meta">{p.reading}</div> : null}
-					<ConnBlock connection={p.connection} />
-					{p.usage_jp ? (
-						<div className="usage jp">
-							<Rr o={p} f="usage_jp" />
+		card = (
+			<StudyFlip
+				flipped={fc.flipped}
+				onFlip={flip}
+				onGrade={(grade) => gradeGrammar(grade, false)}
+				onSwipe={(grade) => gradeGrammar(grade, true)}
+				front={
+					<>
+						<div className="big jp">{p.pattern}</div>
+						<div className="hint">{lx("回想接续与意思，点击翻面", "Recall the pattern, then tap to flip")}</div>
+					</>
+				}
+				back={
+					<div className="backside">
+						<div className="jp" style={{ fontWeight: 700, fontSize: "18px" }}>
+							<Rr o={p} f="pattern" />
 						</div>
-					) : null}
-					{p.usage_cn ? (
-						<div className="usage">
-							<span className="cn">{p.usage_cn}</span>
-						</div>
-					) : null}
-					{eg ? (
-						<div className="ex">
-							<div className="jp">
-								<Rr o={eg} f="jp" />
+						{p.reading ? (
+							<div className="reading jp meta">
+								<KanaStagger text={p.reading} />
 							</div>
-							{eg.cn ? <div className="cn">{eg.cn}</div> : null}
+						) : null}
+						<ConnBlock connection={p.connection} />
+						{p.usage_jp ? (
+							<div className="usage jp">
+								<Rr o={p} f="usage_jp" />
+							</div>
+						) : null}
+						{p.usage_cn ? (
+							<div className="usage">
+								<span className="cn">{p.usage_cn}</span>
+							</div>
+						) : null}
+						{eg ? (
+							<div className="ex">
+								<div className="jp">
+									<Rr o={eg} f="jp" />
+								</div>
+								{eg.cn ? <div className="cn">{eg.cn}</div> : null}
+							</div>
+						) : null}
+						<div className="meta">
+							{lx(`出处：第${cur.w}週 ${cur.d}日目`, `From: Week ${cur.w} Day ${cur.d}`)}
+							{"　"}
+							<span
+								className="plink"
+								data-go={`#/day/${cur.w}-${cur.d}/p${cur.i}`}
+								style={{ cursor: "pointer" }}
+								onClick={(event) => {
+									event.stopPropagation();
+									navTo(`#/day/${cur.w}-${cur.d}/p${cur.i}`);
+								}}
+							>
+								{lx("详情 ›", "Details ›")}
+							</span>
 						</div>
-					) : null}
-					<div className="meta">
-						{lx(`出处：第${cur.w}週 ${cur.d}日目`, `From: Week ${cur.w} Day ${cur.d}`)}
-						{"　"}
-						<span
-							className="plink"
-							data-go={`#/day/${cur.w}-${cur.d}/p${cur.i}`}
-							style={{ cursor: "pointer" }}
-							onClick={(event) => {
-								// legacy の委任は [data-go] を [data-fcflip] より先に見て return していた。
-								// ここは入れ子なので、止めないと詳細へ飛びつつ裏返ってしまう。
-								event.stopPropagation();
-								navTo(`#/day/${cur.w}-${cur.d}/p${cur.i}`);
-							}}
-						>
-							{lx("详情 ›", "Details ›")}
-						</span>
 					</div>
-				</div>
-			</div>
+				}
+			/>
 		);
 	} else if (kind === "kanji") {
 		const k = cur.k;
-		card = !fc.flipped ? (
-			<div className="fcard" data-fcflip="1" onClick={flip}>
-				<div className="big jp" style={{ fontSize: "64px" }}>
-					{k.char}
-				</div>
-				<div className="hint">{lx("回想读音与词语，点击翻面", "Recall the reading and words, then tap to flip")}</div>
-			</div>
-		) : (
-			<div className="fcard" data-fcflip="1" onClick={flip}>
-				<div className="backside" style={{ textAlign: "center" }}>
-					<div className="jp" style={{ fontWeight: 700, fontSize: "40px" }}>
-						{k.char}
-					</div>
-					<div className="meta jp" style={{ fontSize: "15px" }}>
-						{(k.readings || []).map((r: string, i: number) => (
-							<span className="kread" key={i}>
-								{r}
-							</span>
-						))}
-						{k.strokes ? <span className="kread">{k.strokes}画</span> : null}
-					</div>
-					{(k.words || []).map((wd: any, i: number) => (
-						<div className="ex" key={i}>
-							<div className="jp">
-								<Rr o={wd} f="jp" />
-							</div>
-							{wd.cn ? <div className="cn">{wd.cn}</div> : null}
+		card = (
+			<StudyFlip
+				flipped={fc.flipped}
+				onFlip={flip}
+				front={
+					<>
+						<div className="big jp" style={{ fontSize: "64px" }}>
+							{k.char}
 						</div>
-					))}
-				</div>
-			</div>
+						<div className="hint">{lx("回想读音与词语，点击翻面", "Recall the reading and words, then tap to flip")}</div>
+					</>
+				}
+				back={
+					<div className="backside" style={{ textAlign: "center" }}>
+						<div className="jp" style={{ fontWeight: 700, fontSize: "40px" }}>
+							{k.char}
+						</div>
+						<div className="meta jp" style={{ fontSize: "15px" }}>
+							{(k.readings || []).map((r: string, i: number) => (
+								<span className="kread" key={i}>
+									<KanaStagger text={r} />
+								</span>
+							))}
+							{k.strokes ? <span className="kread">{k.strokes}画</span> : null}
+						</div>
+						{(k.words || []).map((wd: any, i: number) => (
+							<div className="ex" key={i}>
+								<div className="jp">
+									<Rr o={wd} f="jp" />
+								</div>
+								{wd.cn ? <div className="cn">{wd.cn}</div> : null}
+							</div>
+						))}
+					</div>
+				}
+			/>
 		);
 	} else {
 		const it = cur.v;
-		card = !fc.flipped ? (
-			<div className="fcard" data-fcflip="1" onClick={flip}>
-				<div className="big jp">
-					<Rr o={it} f="jp" />
-				</div>
-				<div className="hint">{lx("回想中/英文，点击翻面", "Recall the meaning, then tap to flip")}</div>
-			</div>
-		) : (
-			<div className="fcard" data-fcflip="1" onClick={flip}>
-				<div className="backside" style={{ textAlign: "center" }}>
-					<div className="jp" style={{ fontWeight: 700, fontSize: "22px" }}>
-						<Rr o={it} f="jp" />
+		card = (
+			<StudyFlip
+				flipped={fc.flipped}
+				onFlip={flip}
+				front={
+					<>
+						<div className="big jp">
+							<Rr o={it} f="jp" />
+						</div>
+						<div className="hint">{lx("回想中/英文，点击翻面", "Recall the meaning, then tap to flip")}</div>
+					</>
+				}
+				back={
+					<div className="backside" style={{ textAlign: "center" }}>
+						<div className="jp" style={{ fontWeight: 700, fontSize: "22px" }}>
+							<Rr o={it} f="jp" />
+						</div>
+						{it.cn ? <div style={{ fontSize: "18px", marginTop: "10px" }}>{it.cn}</div> : null}
+						{it.en ? (
+							<div className="meta" style={{ fontSize: "14px" }}>
+								{it.en}
+							</div>
+						) : null}
+						{it.rel ? (
+							<div className="vrel jp" style={{ marginTop: "8px" }}>
+								<Rr o={it} f="rel" />
+							</div>
+						) : null}
 					</div>
-					{it.cn ? <div style={{ fontSize: "18px", marginTop: "10px" }}>{it.cn}</div> : null}
-					{it.en ? (
-						<div className="meta" style={{ fontSize: "14px" }}>
-							{it.en}
-						</div>
-					) : null}
-					{it.rel ? (
-						<div className="vrel jp" style={{ marginTop: "8px" }}>
-							<Rr o={it} f="rel" />
-						</div>
-					) : null}
-				</div>
-			</div>
+				}
+			/>
 		);
 	}
 
@@ -1810,10 +1868,7 @@ export function CardsPage() {
 				}}
 			/>
 			<div className="fc-prog">{fc.deck.length ? `${Math.min(fc.idx + 1, fc.deck.length)} / ${fc.deck.length}` : ""}</div>
-			{/* legacy は innerHTML を書き直すので、カードが変わるたび DOM は必ず作り直しだった。
-			    React に任せると表裏で節点を使い回し、裏面の style を落とした残骸（style=""）が
-			    表面に残る。key を変えて作り直させ、移行前と同じ DOM に揃える。 */}
-			<Fragment key={cur ? `${kind}-${fc.idx}-${fc.flipped}` : "done"}>{card}</Fragment>
+			<Fragment key={cur ? `${kind}-${fc.idx}` : "done"}>{card}</Fragment>
 			{kind === "gram" && cur?.p?.pattern ? (
 				<GrammarDueButtons pattern={String(cur.p.pattern)} reading={cur.p.reading} usageCn={cur.p.usage_cn} usageEn={cur.p.usage_en} week={cur.w} day={cur.d} />
 			) : null}

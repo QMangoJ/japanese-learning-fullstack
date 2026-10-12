@@ -17,6 +17,7 @@ import {
 	WearingPage,
 } from "../routes/study-common";
 import { ContrastPage, DayNav, DayPage, parseDayRoute } from "./days";
+import { ToastStack } from "./toast-stack";
 import { getDueVersion, subscribeDue } from "./due-review";
 import { formatReviewDate, jstToday, parseReviewRoute, reviewDateFromId } from "./lesson-review";
 import { parseTopicsRoute } from "./topic-route";
@@ -1188,6 +1189,7 @@ export function StudyApp() {
 			<BottomNav active={meta.nav} onCommon={() => setSheet("common")} />
 			<Sheet kind={sheet} onClose={() => setSheet(null)} onLevel={pickLevel} />
 			<SelectionPopover routeKey={routeKey} />
+			<ToastStack />
 			<LoginPromptDialog />
 			<GuestLoginSuggest />
 		</>

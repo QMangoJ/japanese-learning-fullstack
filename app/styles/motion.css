@@ -1,0 +1,261 @@
+:root {
+	--dur-instant: 100ms;
+	--dur-fast: 160ms;
+	--dur-base: 240ms;
+	--dur-slow: 420ms;
+	--ease-out: cubic-bezier(.23, 1, .32, 1);
+	--ease-in-out: cubic-bezier(.77, 0, .175, 1);
+	--spring-bouncy: linear(0, .29 7%, .78 17%, 1.06 27%, 1.1 33%, 1.03 45%, .99 57%, 1);
+	--spring-soft: linear(0, .4 10%, .85 25%, 1.02 40%, 1 60%, 1);
+}
+
+.fcard-slot {
+	position: relative;
+	width: 100%;
+	max-width: 520px;
+}
+.fcard {
+	perspective: 1100px;
+	border-radius: 24px;
+	transform-style: preserve-3d;
+}
+.fcard:focus-visible {
+	outline: 3px solid var(--accent);
+	outline-offset: 3px;
+}
+.fcard.is-swipeable {
+	touch-action: none;
+}
+.fcard-rotor {
+	width: 100%;
+	display: grid;
+	transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
+	transition: transform var(--dur-base) var(--spring-soft);
+	animation: card-pop var(--dur-base) var(--spring-soft);
+}
+.fcard-rotor.is-dragging,
+.fcard-rotor.is-flying {
+	animation: none;
+}
+.fcard-rotor.is-dragging {
+	transition: none;
+}
+.fcard-face {
+	grid-area: 1 / 1;
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+}
+.fcard-back {
+	transform: rotateY(180deg);
+}
+.fcard-slot.is-pass .fcard {
+	background: var(--green-soft);
+	border-color: var(--green);
+}
+.fcard-slot.is-fail .fcard {
+	background: var(--red-soft);
+	border-color: var(--red);
+}
+.fcard-slot.is-fuzzy .fcard {
+	background: var(--amber-soft);
+	border-color: var(--amber);
+}
+.swipe-stamp {
+	position: absolute;
+	top: 18px;
+	z-index: 2;
+	min-width: 42px;
+	padding: 4px 10px;
+	border: 3px solid currentColor;
+	border-radius: 999px;
+	font-size: 20px;
+	font-weight: 800;
+	line-height: 1.2;
+	pointer-events: none;
+	opacity: .92;
+}
+.swipe-stamp.is-pass { left: 18px; color: var(--green); }
+.swipe-stamp.is-fail { right: 18px; color: var(--red); }
+.swipe-stamp.is-fuzzy { left: 50%; color: var(--amber); transform: translateX(-50%); }
+
+.kana-stagger-wrap { display: inline-grid; }
+.kana-plain,
+.kana-stagger { grid-area: 1 / 1; }
+.kana-plain { opacity: 0; }
+.kana-stagger span {
+	display: inline-block;
+	opacity: 0;
+	animation: kana-in var(--dur-fast) var(--ease-out) forwards;
+}
+.kana-stagger span::before { content: var(--ch); }
+
+.hanamaru {
+	width: 22px;
+	height: 22px;
+	margin-left: 6px;
+	vertical-align: -4px;
+	fill: none;
+	stroke: currentColor;
+	stroke-width: 2.5;
+	stroke-linecap: round;
+	stroke-dasharray: 80;
+	stroke-dashoffset: 80;
+	animation: hanamaru-draw 350ms var(--ease-out) forwards;
+}
+.opt-btn.correct,
+.rb-choice.is-right,
+.kanji-exam-question.correct {
+	animation: answer-pop var(--dur-base) var(--spring-soft);
+}
+.kanji-exam-question.correct { position: relative; }
+.kanji-exam-question > .hanamaru {
+	position: absolute;
+	top: 14px;
+	right: 4px;
+	width: 28px;
+	height: 28px;
+	margin: 0;
+}
+.opt-btn.wrong,
+.rb-choice.is-wrong,
+.kanji-exam-question.wrong {
+	animation: answer-shake 300ms var(--ease-out);
+}
+.qz.answered .opt-btn.correct,
+.rb-choice.is-right,
+.answer-line {
+	position: relative;
+}
+.qz.answered .opt-btn.correct::after,
+.rb-choice.is-right::after,
+.answer-line::after {
+	content: "";
+	position: absolute;
+	left: 8px;
+	right: 8px;
+	bottom: 1px;
+	height: 2px;
+	background: currentColor;
+	transform: scaleX(0);
+	transform-origin: left center;
+	animation: answer-underline 350ms var(--ease-out) forwards;
+	pointer-events: none;
+}
+
+.review-skill button:active,
+.fc-btns button:active,
+.fc-filter button:active,
+.opt-btn:active,
+.rb-choice:active {
+	transform: scale(.97);
+}
+
+.toast-stack {
+	position: fixed;
+	left: 50%;
+	bottom: calc(var(--bottom-nav-height, 64px) + 12px + env(safe-area-inset-bottom));
+	z-index: 60;
+	display: flex;
+	flex-direction: column-reverse;
+	align-items: center;
+	gap: 8px;
+	width: min(420px, calc(100% - 24px));
+	transform: translateX(-50%);
+	pointer-events: none;
+}
+.toast-item {
+	pointer-events: auto;
+	max-width: 100%;
+	padding: 10px 16px;
+	border-radius: 999px;
+	background: var(--card, #fffdf9);
+	color: var(--ink, #2c2420);
+	box-shadow: var(--shadow, 0 10px 28px rgba(90, 50, 30, .12));
+	font-size: 14px;
+	font-weight: 700;
+	animation: toast-in var(--dur-base) var(--spring-soft);
+}
+.toast-item:nth-child(2) { transform: scale(.96); opacity: .9; }
+.toast-item:nth-child(3) { transform: scale(.92); opacity: .78; }
+
+@media (hover: hover) {
+	.fcard:hover { box-shadow: 0 12px 28px rgba(180, 100, 70, .12); }
+	.toast-stack:hover .toast-item { transform: none; opacity: 1; }
+}
+
+@keyframes card-pop {
+	from { transform: translateY(18px) scale(.98); }
+	to { transform: none; }
+}
+@keyframes kana-in {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+@keyframes hanamaru-draw {
+	to { stroke-dashoffset: 0; }
+}
+@keyframes answer-pop {
+	0% { transform: scale(1); }
+	45% { transform: scale(1.04); }
+	100% { transform: scale(1); }
+}
+@keyframes answer-shake {
+	0%, 100% { transform: translateX(0); }
+	20% { transform: translateX(-6px); }
+	40% { transform: translateX(6px); }
+	60% { transform: translateX(-4px); }
+	80% { transform: translateX(4px); }
+}
+@keyframes answer-underline {
+	to { transform: scaleX(1); }
+}
+@keyframes toast-in {
+	from { transform: translateY(14px) scale(.96); opacity: 0; }
+	to { transform: none; opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+	:root {
+		--dur-instant: 0ms;
+		--dur-fast: 0ms;
+		--dur-base: 0ms;
+		--dur-slow: 0ms;
+	}
+	.fcard-rotor,
+	.fcard-rotor.is-dragging,
+	.fcard-back,
+	.kana-plain,
+	.kana-stagger,
+	.kana-stagger span,
+	.hanamaru,
+	.opt-btn.correct,
+	.opt-btn.wrong,
+	.rb-choice.is-right,
+	.rb-choice.is-wrong,
+	.kanji-exam-question.correct,
+	.kanji-exam-question.wrong,
+	.toast-item,
+	.review-skill button:active,
+	.fc-btns button:active,
+	.fc-filter button:active,
+	.opt-btn:active,
+	.rb-choice:active {
+		animation: none !important;
+		transition: opacity 150ms linear !important;
+		transform: none !important;
+	}
+	.fcard.is-flipped .fcard-front,
+	.fcard:not(.is-flipped) .fcard-back {
+		visibility: hidden;
+	}
+	.kana-plain { opacity: 1; }
+	.kana-stagger { visibility: hidden; }
+	.qz.answered .opt-btn.correct::after,
+	.rb-choice.is-right::after,
+	.answer-line::after {
+		animation: none;
+		transform: none;
+	}
+	.toast-item:nth-child(n) { transform: none; }
+}

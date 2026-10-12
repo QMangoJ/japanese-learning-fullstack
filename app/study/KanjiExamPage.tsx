@@ -16,6 +16,7 @@ import {
 	englishSupportForQuestion,
 } from "../data/kanji-exam-english";
 import { chineseMeaningForQuestion } from "../data/kanji-exam-chinese";
+import { Hanamaru } from "./answer-feedback";
 import { LANG, lx } from "./store";
 import "../routes/kanji-exam.css";
 
@@ -103,9 +104,11 @@ function FilledKanji({ question }: { question: Pick<KanjiExamQuestion, "kind" | 
 function AnswerReveal({
 	question,
 	answerKey = false,
+	emphasize = false,
 }: {
 	question: Pick<KanjiExamQuestion, "kind" | "prompt" | "target" | "answer">;
 	answerKey?: boolean;
+	emphasize?: boolean;
 }) {
 	const word = completeKanjiWord(question);
 	const cn = chineseMeaningForQuestion(question, word);
@@ -113,7 +116,7 @@ function AnswerReveal({
 	return (
 		<div className={`kanji-exam-correction${answerKey ? " answer-key" : ""}`}>
 			<span>{lx("正确答案", "Answer")}</span>
-			<strong>{question.answer}</strong>
+			<strong className={emphasize ? "answer-line" : undefined}>{question.answer}</strong>
 			<FilledKanji question={question} />
 			<span className="kanji-exam-answer-gloss">
 				{LANG === "en" ? (
@@ -454,6 +457,7 @@ export function KanjiExamPage() {
 						const correct = submitted && correctSet.has(question.id);
 						return (
 							<div className={`kanji-exam-question ${submitted ? correct ? "correct" : "wrong" : ""}`} key={question.id}>
+								{submitted && correct ? <Hanamaru /> : null}
 								<span className="kanji-exam-question__number">{number}</span>
 								<div className="kanji-exam-question__body">
 									<small className="kanji-exam-question__meta">{lessonTitleById.get(question.lessonId)} · {question.kind === "reading" ? lx("读音", "Reading") : lx("汉字", "Kanji")}</small>
@@ -473,7 +477,7 @@ export function KanjiExamPage() {
 										{submitted ? <i>{correct ? "✓" : "×"}</i> : null}
 									</label>
 									{showAllAnswers || (submitted && !correct) ? (
-										<AnswerReveal question={question} answerKey={!submitted || correct} />
+										<AnswerReveal question={question} answerKey={!submitted || correct} emphasize={submitted && !correct} />
 									) : null}
 									{submitted && !showAllAnswers && correct ? <QuestionMeaning question={question} review /> : null}
 								</div>

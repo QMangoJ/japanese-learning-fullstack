@@ -1,5 +1,6 @@
 import type { Route } from "./+types/home";
 import { StudyApp } from "../study/StudyApp";
+import "../styles/motion.css";
 import "./study-shell.css";
 
 export function meta({}: Route.MetaArgs) {
@@ -9,7 +10,7 @@ export function meta({}: Route.MetaArgs) {
 	];
 }
 
-const STUDY_CSS = "/study.css?v=2026-10-10-daynav";
+const STUDY_CSS = "/study.css?v=2026-10-12-motion";
 
 export const links: Route.LinksFunction = () => [
 	{ rel: "stylesheet", href: STUDY_CSS },

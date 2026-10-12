@@ -5,6 +5,7 @@ import { ConnBlock, Fmt, Rr, RubyHtml, SayButton } from "../routes/study-common"
 import { CardsLaunch } from "./memory-cards";
 import { getKanjiWordUsage, kanjiWordSurface } from "./kanji-word-usage";
 import { getN2KanjiWordUsage, loadN2KanjiUsageLater, n2KanjiLaterLoaded, subscribeN2KanjiLater } from "./n2-kanji-word-usage";
+import { AnswerFeedback } from "./answer-feedback";
 import { ExerciseReset, ExerciseSession, useQuestionProgress } from "./exercise-progress";
 import { GrammarSummary } from "./grammar-summary";
 const N2GrammarSummary = lazy(() => import("./n2-grammar-summary").then(module => ({ default: module.N2GrammarSummary })));
@@ -165,7 +166,9 @@ function QuizOpts({
 								if (idx !== correct) onWrong?.(idx, item);
 							}}
 						>
-							{idx} <Rich html={String(o)} />
+							<AnswerFeedback verdict={answered && idx === correct ? "correct" : answered && idx === picked ? "wrong" : "idle"}>
+								{idx} <Rich html={String(o)} />
+							</AnswerFeedback>
 						</button>
 					);
 				})}

@@ -2,6 +2,8 @@ import { useEffect, useMemo, useState, useSyncExternalStore } from "react";
 
 import { RubyHtml, SayButton } from "../routes/study-common";
 import { dueEntry, getDueVersion, rememberFail, rememberKnown, subscribeDue, type DueDraft } from "./due-review";
+import { KanaStagger, StudyFlip } from "./study-flip";
+import type { SwipeGrade } from "./swipe-grade";
 import { jstToday } from "./lesson-review";
 import { LANG, lx, navTo } from "./store";
 import { isTopicFile, isTopicIndex, topicDueId, type TopicCard, type TopicFile, type TopicIndex } from "./topic-vocab";
@@ -303,42 +305,55 @@ function TopicDetail({ slug }: { slug: string }) {
 								{lx("点「重新洗牌」再来一轮，或切到「只看不会的」。", "Shuffle for another round, or switch to “don't know” only.")}
 							</div>
 						</div>
-					) : !flipped ? (
-						<div className="fcard" data-fcflip="1" onClick={() => setFlipped(true)}>
-							<div className="review-k">{subLabel.get(cur.subtopic)}</div>
-							<div className="big jp" style={cur.jp.length > 10 ? { fontSize: 22 } : undefined}>
-								{cur.jp}
-							</div>
-							{chip(cur)}
-							<div className="hint">{lx("先回想读音和意思，点击翻面", "Recall the reading and meaning, then tap to flip")}</div>
-						</div>
 					) : (
-						<div className="fcard" data-fcflip="1" onClick={() => setFlipped(false)}>
-							<div className="backside review-flip" style={{ textAlign: "center" }}>
-								<div className="review-k">{subLabel.get(cur.subtopic)}</div>
-								<div className="jp" style={{ fontWeight: 700, fontSize: "22px" }}>
-									{cur.jp} <SayButton text={cur.jp} />
-								</div>
-								<div className="review-reading jp">{cur.kana}</div>
-								<div style={{ fontSize: "18px", marginTop: "10px" }}>{cur.zh}</div>
-								{cur.en ? <div className="meta" style={{ fontSize: "14px" }}>{cur.en}</div> : null}
-								<div className="ex fcard-ex">
-									<div className="fcard-ex-label">{lx("例句", "Example")}</div>
-									{cur.scene ? <div className="topic-item__scene">🎬 {cur.scene}</div> : null}
-									<div className="jp">
-										{cur.example_ruby ? <RubyHtml html={cur.example_ruby} /> : cur.example_jp} <SayButton text={cur.example_jp} />
+						<StudyFlip
+							key={cur.id}
+							flipped={flipped}
+							onFlip={() => setFlipped((value) => !value)}
+							onGrade={(swipeGrade: SwipeGrade) => grade(cur, swipeGrade === "pass", true)}
+							onSwipe={(swipeGrade: SwipeGrade) => grade(cur, swipeGrade === "pass", true)}
+							front={
+								<>
+									<div className="review-k">{subLabel.get(cur.subtopic)}</div>
+									<div className="big jp" style={cur.jp.length > 10 ? { fontSize: 22 } : undefined}>
+										{cur.jp}
 									</div>
-									{cur.example_kana ? <div className="review-reading jp">{cur.example_kana}</div> : null}
-									<div className="cn">{cur.example_zh}</div>
+									{chip(cur)}
+									<div className="hint">{lx("先回想读音和意思，点击翻面", "Recall the reading and meaning, then tap to flip")}</div>
+								</>
+							}
+							back={
+								<div className="backside review-flip" style={{ textAlign: "center" }}>
+									<div className="review-k">{subLabel.get(cur.subtopic)}</div>
+									<div className="jp" style={{ fontWeight: 700, fontSize: "22px" }}>
+										{cur.jp} <SayButton text={cur.jp} />
+									</div>
+									<div className="review-reading jp">
+										<KanaStagger text={cur.kana} />
+									</div>
+									<div style={{ fontSize: "18px", marginTop: "10px" }}>{cur.zh}</div>
+									{cur.en ? <div className="meta" style={{ fontSize: "14px" }}>{cur.en}</div> : null}
+									<div className="ex fcard-ex">
+										<div className="fcard-ex-label">{lx("例句", "Example")}</div>
+										{cur.scene ? <div className="topic-item__scene">🎬 {cur.scene}</div> : null}
+										<div className="jp">
+											{cur.example_ruby ? <RubyHtml html={cur.example_ruby} /> : cur.example_jp} <SayButton text={cur.example_jp} />
+										</div>
+										{cur.example_kana ? <div className="review-reading jp">{cur.example_kana}</div> : null}
+										<div className="cn">{cur.example_zh}</div>
+									</div>
+									{cur.note ? <div className="topic-item__note">💡 {cur.note}</div> : null}
 								</div>
-								{cur.note ? <div className="topic-item__note">💡 {cur.note}</div> : null}
-							</div>
-						</div>
+							}
+						/>
 					)}
 					{cur ? (
 						<div className="review-skill">
 							<button type="button" data-grade="fail" onClick={() => grade(cur, false, true)}>
 								{lx("不会", "Don't know")}
+							</button>
+							<button type="button" data-grade="fuzzy" onClick={() => grade(cur, false, true)}>
+								{lx("模糊", "Unsure")}
 							</button>
 							<button type="button" data-grade="pass" onClick={() => grade(cur, true, true)}>
 								{lx("会了", "Got it")}

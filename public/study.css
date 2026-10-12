@@ -1,18 +1,33 @@
 :root{
-  --bg:#f6f7f9; --card:#ffffff; --ink:#22272e; --sub:#6a737d; --line:#e3e6ea;
-  --accent:#c0392b; --accent-soft:#fdf0ee; --blue:#2b6cb0; --blue-soft:#ebf3fb;
-  --green:#2f855a; --green-soft:#ecf7f0; --amber:#b7791f; --amber-soft:#fdf6e9;
-  --red:#c0392b; --red-soft:#fdecea;
-  --shadow:0 1px 3px rgba(0,0,0,.06),0 4px 14px rgba(0,0,0,.04); --radius:14px; --bottom-nav-height:64px;
+  --bg:#fff6ee; --card:#fffdf9; --ink:#2c2420; --sub:#6f5c54; --line:#f0e0d4;
+  --accent:#b83d2c; --accent-soft:#ffe8df; --blue:#2f7a72; --blue-soft:#e7f6f2;
+  --green:#1f8a56; --green-soft:#e7f6ee; --amber:#a56a12; --amber-soft:#fff3df;
+  --red:#c4314a; --red-soft:#fdecef;
+  --shadow:0 10px 28px rgba(120, 70, 40, .08), 0 1px 2px rgba(120, 70, 40, .04); --radius:22px; --bottom-nav-height:64px;
   --study-col:760px;
 }
 html.theme-light{color-scheme:light}
 html.theme-dark{color-scheme:dark;
-  --bg:#1c1a16; --card:#26231e; --ink:#ebe6dc; --sub:#b0a89c; --line:#3d3830;
-  --accent:#e08a7a; --accent-soft:#3a2a24; --blue:#8eb4d4; --blue-soft:#243040;
-  --green:#8fbf9a; --green-soft:#243028; --amber:#d4b07a; --amber-soft:#322a1c;
-  --red:#e08a8a; --red-soft:#3a2727;
-  --shadow:0 1px 3px rgba(0,0,0,.45);}
+  --bg:#221c18; --card:#2c2521; --ink:#f7f0ea; --sub:#cbb8ac; --line:#4a3d34;
+  --accent:#ff9a7a; --accent-soft:#3d2a24; --blue:#8fd0c6; --blue-soft:#243430;
+  --green:#8fceab; --green-soft:#243028; --amber:#f0c27a; --amber-soft:#3a2e1c;
+  --red:#ffb0b8; --red-soft:#3d2428;
+  --shadow:0 10px 28px rgba(0,0,0,.35);}
+html.theme-dark .langbar button.on,
+html.theme-dark .typebar button.on,
+html.theme-dark .search-category button.on,
+html.theme-dark .fc-filter button.on,
+html.theme-dark .fc-btns button.primary,
+html.theme-dark .review-tab.on,
+html.theme-dark .review-day .today-mark,
+html.theme-dark .toggle-all.on,
+html.theme-dark .selection-popover__actions button.primary,
+html.theme-dark .fav-actions button.primary,
+html.theme-dark .mistake-types button.on,
+html.theme-dark .mistake-widget>button[data-mistake-add],
+html.theme-dark .study-toolbar button.primary,
+html.theme-dark .num-nav a.on,
+html.theme-dark .login-dialog__go{color:#2c2420}
 html.theme-switching,
 html.theme-switching body,
 html.theme-switching *:not(img):not(svg):not(video):not(canvas){
@@ -49,14 +64,14 @@ html.theme-switching *:not(img):not(svg):not(video):not(canvas){
 }
 *{box-sizing:border-box; -webkit-tap-highlight-color:transparent}
 html{margin:0;padding:0;max-width:100%;overflow-x:clip;background:var(--bg)}
-body{margin:0;padding:0;max-width:100%;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans","Hiragino Kaku Gothic ProN","Microsoft YaHei","Noto Sans CJK SC",sans-serif;font-size:16px;line-height:1.65;padding-bottom:calc(var(--bottom-nav-height) + env(safe-area-inset-bottom));overflow-wrap:break-word}
+body{margin:0;padding:0;max-width:100%;background:var(--bg);color:var(--ink);font-family:"Hiragino Maru Gothic ProN","M PLUS Rounded 1c","PingFang SC","Hiragino Sans","Yu Gothic",-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif;font-size:16px;line-height:1.65;padding-bottom:calc(var(--bottom-nav-height) + env(safe-area-inset-bottom));overflow-wrap:break-word}
 /* Keep the study document's edge from rubber-banding underneath native fixed
    controls. Do not translate the controls from visualViewport/probe readings:
    WebKit's asynchronous scrolling can report a different edge than it paints. */
 @media (max-width:899px){
   html:has(nav.bottom){overscroll-behavior-y:none}
 }
-.jp{font-family:-apple-system,"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic","Noto Sans CJK JP","PingFang SC",sans-serif}
+.jp{font-family:"Hiragino Maru Gothic ProN","M PLUS Rounded 1c","Hiragino Sans","Yu Gothic","PingFang SC",sans-serif}
 .topbar{position:sticky;top:0;z-index:20;background:var(--bg)}
 header.top{background:var(--card);border-bottom:1px solid var(--line);padding:8px 12px;display:flex;align-items:center;gap:7px;box-shadow:var(--shadow)}
 header.top .back{border:none;background:none;color:var(--blue);font-size:15px;padding:4px 2px;cursor:pointer;flex:none}
@@ -449,7 +464,7 @@ nav.bottom button.on{color:var(--accent);font-weight:700}
 .fc-filter{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
 .fc-filter button{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:4px 14px;font-size:13.5px;cursor:pointer}
 .fc-filter button.on{background:var(--accent);border-color:var(--accent);color:#fff}
-.fcard{width:100%;max-width:520px;min-height:280px;background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:22px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;cursor:pointer}
+.fcard{width:100%;max-width:520px;min-height:280px;background:var(--card);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);padding:22px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;cursor:pointer}
 .fcard .big{font-size:26px;font-weight:700}
 .fcard .hint{color:var(--sub);font-size:12.5px;margin-top:16px}
 .fcard .backside{text-align:left;width:100%}
