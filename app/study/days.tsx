@@ -1,4 +1,4 @@
-import { describePracticeAnswer, otherChoices, parsePracticeAnswers } from "./practice-answers";
+import { dailyChoiceQuiz, describePracticeAnswer, otherChoices, parsePracticeAnswers } from "./practice-answers";
 import { Fragment, lazy, Suspense, useEffect, useRef, useState, useSyncExternalStore, type ReactNode } from "react";
 
 import { ConnBlock, Fmt, Rr, RubyHtml, SayButton } from "../routes/study-common";
@@ -115,6 +115,7 @@ function QuizOpts({
 	foldNote,
 	foldId,
 	questionId,
+	accept,
 }: {
 	item: any;
 	correct?: number | null;
@@ -123,6 +124,8 @@ function QuizOpts({
 	foldNote?: boolean;
 	foldId?: string;
 	questionId?: string;
+	/** 1-based indexes that count as correct. Defaults to `correct`. */
+	accept?: number[];
 }) {
 	// Include the source question and answer key so revised content starts fresh.
 	const [progress, updateProgress] = useQuestionProgress(JSON.stringify([
@@ -143,6 +146,7 @@ function QuizOpts({
 		);
 	}
 	const answered = picked != null;
+	const ok = new Set(accept?.length ? accept : [correct]);
 	return (
 		<>
 			<div className={`opts qz${answered ? " answered" : ""}`} data-qcorrect={correct}>
@@ -150,7 +154,7 @@ function QuizOpts({
 					const idx = i + 1;
 					let cls = "opt-btn jp";
 					if (answered) {
-						if (idx === correct) cls += " correct";
+						if (ok.has(idx)) cls += " correct";
 						else if (idx === picked) cls += " wrong";
 					}
 					return (
@@ -163,10 +167,10 @@ function QuizOpts({
 							onClick={() => {
 								if (answered) return;
 								updateProgress({ picked: idx });
-								if (idx !== correct) onWrong?.(idx, item);
+								if (!ok.has(idx)) onWrong?.(idx, item);
 							}}
 						>
-							<AnswerFeedback verdict={answered && idx === correct ? "correct" : answered && idx === picked ? "wrong" : "idle"}>
+							<AnswerFeedback verdict={answered && ok.has(idx) ? "correct" : answered && idx === picked ? "wrong" : "idle"}>
 								{idx} <Rich html={String(o)} />
 							</AnswerFeedback>
 						</button>
@@ -174,8 +178,8 @@ function QuizOpts({
 				})}
 			</div>
 			{answered ? (
-				<div className={`qz-result ${picked === correct ? "ok" : "ng"}`}>
-					{picked === correct ? lx("✓ 答对了", "✓ Correct") : lx("✗ 答错了", "✗ Incorrect")}
+				<div className={`qz-result ${picked != null && ok.has(picked) ? "ok" : "ng"}`}>
+					{picked != null && ok.has(picked) ? lx("✓ 答对了", "✓ Correct") : lx("✗ 答错了", "✗ Incorrect")}
 				</div>
 			) : null}
 			{answered && children ? (
@@ -1190,7 +1194,8 @@ function DayGrammar({ day, w, d, scrollP }: { day: any; w: number; d: number; sc
 	}
 	const dailyBook = MODULE === "n2grammar" ? G2 : MODULE === "n4grammar" ? G4 : G;
 	const dailyItems = (MODULE === "grammar" || MODULE === "n2grammar" || MODULE === "n4grammar") && dailyBook.daily_explanations && dailyBook.daily_explanations[`w${w}d${d}`];
-	const explanationByNumber = new Map(((dailyItems && dailyItems.items) || []).map((item: any) => [item.n, item]));
+	const explanationByNumber = new Map<any, any>(((dailyItems && dailyItems.items) || []).map((item: any) => [item.n, item]));
+	const practiceAnswers = parsePracticeAnswers(day.exercises?.answers, day.exercises?.sections);
 	return (
 		<>
 			<CatalogCrumb>
@@ -1230,7 +1235,11 @@ function DayGrammar({ day, w, d, scrollP }: { day: any; w: number; d: number; sc
 								<div className="meta jp" style={{ margin: "4px 0 8px" }}>
 									{sec.type === "choice" ? "Ⅰ" : "Ⅱ"}　{lx(sec.instruction, sec.instruction_en)}
 								</div>
-								{(sec.items || []).map((it: any) => (
+								{(sec.items || []).map((it: any) => {
+									const info = explanationByNumber.get(it.n);
+									const answer = info?.type === "order" ? undefined : (info?.answer ?? practiceAnswers.get(String(it.n)));
+									const quiz = dailyChoiceQuiz(sec.type, it, answer, info?.type);
+									return (
 									<div className="q daily-q" key={it.n}>
 										<div className="daily-qline">
 											<span className="n">{it.n}</span>
@@ -1238,10 +1247,21 @@ function DayGrammar({ day, w, d, scrollP }: { day: any; w: number; d: number; sc
 												<Rr o={it} f="q" />
 											</span>
 										</div>
-										<OptsRow item={it} />
-										<DailyExercisePanels info={explanationByNumber.get(it.n)} item={it} day={day} w={w} d={d} />
+										{quiz ? (
+											<QuizOpts
+												questionId={`daily:${w}-${d}:${it.n}`}
+												item={{ ...it, opts: quiz.opts, opts_r: quiz.opts_r, _correct: quiz.accept[0] }}
+												correct={quiz.accept[0]}
+												accept={quiz.accept}
+												onWrong={(picked) => logWrong({ ...it, opts: quiz.opts, _correct: quiz.accept[0] }, picked)}
+											/>
+										) : (
+											<OptsRow item={it} />
+										)}
+										<DailyExercisePanels info={info} item={it} day={day} w={w} d={d} />
 									</div>
-								))}
+									);
+								})}
 							</div>
 						))}
 						{day.exercises.answers ? (

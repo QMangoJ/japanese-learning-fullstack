@@ -433,6 +433,7 @@ export function MistakesMemoryCards({
 			deckId={MISTAKE_DECK_ID}
 			storageKey={MISTAKE_MASTERY_KEY}
 			items={items}
+			plainFlip
 			translationPending={loading || aidsLoading || !readingReady}
 			crumb={
 				<div className="crumb">

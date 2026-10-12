@@ -187,6 +187,33 @@ describe("MistakesMemoryCards", () => {
 		expect(screen.getByRole("button", { name: /还没记住|Still learning/ })).toBeInTheDocument();
 		expect(screen.getByRole("button", { name: /已经记住|Got it/ })).toBeInTheDocument();
 	});
+	it("opens the next card on its own front", async () => {
+		const user = userEvent.setup();
+		render(
+			<MistakesMemoryCards
+				list={[
+					{ id: "w1", type: "word", text: "気づく" },
+					{ id: "w2", type: "word", text: "冷蔵庫\n正确答案：冰箱" },
+				]}
+			/>,
+		);
+		expect(screen.getByText("気づく")).toBeInTheDocument();
+		expect(screen.queryByText("冰箱")).not.toBeInTheDocument();
+		await user.click(screen.getByText("回想读音和意思，点击翻面"));
+		expect(screen.queryByText("冰箱")).not.toBeInTheDocument();
+		expect(document.querySelector(".fcard-rotor")).toBeNull();
+		await user.click(screen.getByRole("button", { name: /下一张/ }));
+		expect(screen.getByText("2 / 2")).toBeInTheDocument();
+		expect(screen.getByText("冷蔵庫")).toBeInTheDocument();
+		expect(screen.queryByText("気づく")).not.toBeInTheDocument();
+		expect(screen.queryByText("冰箱")).not.toBeInTheDocument();
+		expect(screen.getByText("回想读音和意思，点击翻面")).toBeInTheDocument();
+		await user.click(screen.getByText("回想读音和意思，点击翻面"));
+		expect(screen.getByText("冰箱")).toBeInTheDocument();
+		expect(screen.getByText("翻译")).toBeInTheDocument();
+		expect(screen.queryByText("気づく")).not.toBeInTheDocument();
+	});
+
 	it("shows a grammar test's textbook translation without asking Gemini", async () => {
 		setStudyBooksForTests({
 			G1: {
