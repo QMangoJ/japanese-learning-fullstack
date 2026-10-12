@@ -214,6 +214,22 @@ function composedReading(word: string, readings: Record<string, string>): string
 	return out;
 }
 
+function withReadingPrefix(
+	jp: string,
+	span: { start: number; word: string } | null,
+	reading?: string,
+): { start: number; word: string } | null {
+	if (!span || !reading) return span;
+	const target = normalizeReading(reading);
+	let start = span.start;
+	while (start > 0 && /[ぁ-んァ-ンー]/.test(jp[start - 1] || "")) start -= 1;
+	if (start === span.start) return span;
+	const prefix = toHiragana(jp.slice(start, span.start));
+	if (!prefix || !target.startsWith(prefix) || target.length <= prefix.length) return span;
+	const end = span.start + span.word.length;
+	return { start, word: jp.slice(start, end) };
+}
+
 function takeWordBefore(
 	jp: string,
 	end: number,
@@ -221,9 +237,9 @@ function takeWordBefore(
 	readings?: Record<string, string>,
 ): { start: number; word: string } | null {
 	const wide = wideWordBefore(jp, end, reading);
-	if (!wide || !reading || !readings) return wide;
+	if (!wide || !reading || !readings) return withReadingPrefix(jp, wide, reading);
 	const target = normalizeReading(reading);
-	if (!target || composedReading(wide.word, readings) === target) return wide;
+	if (!target || composedReading(wide.word, readings) === target) return withReadingPrefix(jp, wide, reading);
 	let best: { start: number; word: string } | null = null;
 	for (let start = wide.start; start < end; start += 1) {
 		const word = jp.slice(start, end);
@@ -231,15 +247,15 @@ function takeWordBefore(
 		if (composedReading(word, readings) !== target) continue;
 		best = { start, word };
 	}
-	if (best) return best;
+	if (best) return withReadingPrefix(jp, best, reading);
 	const minStart = Math.max(0, end - 24);
 	for (let start = wide.start - 1; start >= minStart; start -= 1) {
 		if (!/[一-龯々〆ヵヶ]/.test(jp[start] || "")) continue;
 		const word = jp.slice(start, end);
 		if (composedReading(word, readings) !== target) continue;
-		return { start, word };
+		return withReadingPrefix(jp, { start, word }, reading);
 	}
-	return wide;
+	return withReadingPrefix(jp, wide, reading);
 }
 
 function wideWordBefore(jp: string, end: number, reading?: string): { start: number; word: string } | null {

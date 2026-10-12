@@ -27,7 +27,7 @@ import {
 	enrichReviewDays,
 	parseLessonReview,
 } from "../../app/study/lesson-review-parse";
-import { fetchGoogleDocText, syncLessonReview } from "../../app/study/lesson-review-sync";
+import { fetchGoogleDocText, mergeFreshLessonDays, syncLessonReview } from "../../app/study/lesson-review-sync";
 import { memoryKv } from "./auth-test-utils";
 
 const SAMPLE = `
@@ -137,10 +137,43 @@ describe("lesson review parser", () => {
 	});
 
 	it("keeps a Japanese synonym after ＝ on the same card", () => {
-		const [day] = parseLessonReview(`# 2026.10.02\n上手い＝上手\n年金 pension = 养老金\n`);
+		const [day] = parseLessonReview(`# 2026.10.02\n上手い＝上手\n年金 pension = 养老金\n具合（ぐあい）が悪い＝調子が悪い\n`);
 		expect(day.items[0]).toMatchObject({ jp: "上手い＝上手", kind: "word" });
 		expect(day.items[0].cn).toBeUndefined();
 		expect(day.items[1]).toMatchObject({ jp: "年金", cn: "养老金", en: "pension" });
+		expect(day.items[2]).toMatchObject({ jp: "具合（ぐあい）が悪い＝調子が悪い", kind: "word" });
+		expect(day.items[2].cn).toBeUndefined();
+	});
+
+	it("keeps a blank line from gluing the next English gloss onto the previous card", () => {
+		const [day] = parseLessonReview(`# 2026.10.12
+家族のうちの1人は
+
+sarcastic
+皮肉っぽい
+Genki1 p165-180 Bまで
+友達を連れてきてください
+
+いそいでください
+もう少し
+もうちょっと
+長袖ながそで
+半袖はんそで
+`);
+		expect(day.items.map((item) => item.jp)).toEqual([
+			"家族のうちの1人は",
+			"皮肉っぽい",
+			"友達を連れてきてください",
+			"いそいでください",
+			"もう少し",
+			"もうちょっと",
+			"長袖",
+			"半袖",
+		]);
+		expect(day.items[0].en).toBeUndefined();
+		expect(day.items[1].en).toBe("sarcastic");
+		expect(day.items.find((item) => item.jp === "長袖")).toMatchObject({ reading: "ながそで" });
+		expect(day.items.find((item) => item.jp === "半袖")).toMatchObject({ reading: "はんそで" });
 	});
 
 	it("keeps names, same-line readings, and the next phrase apart", () => {
@@ -388,6 +421,7 @@ describe("lesson review helpers", () => {
 		expect(reviewSurfaceText("良い休日を（お過ごし下さい）")).toBe("良い休日を（お過ごし下さい）");
 		expect(reviewSurfaceText("朝型 あさがた")).toBe("朝型");
 		expect(buildReviewRuby("先進国（せんしんこく）")).toBe("<ruby>先進国<rt>せんしんこく</rt></ruby>");
+		expect(buildReviewRuby("お米（おこめ）", "おこめ")).toBe("<ruby>お米<rt>おこめ</rt></ruby>");
 		expect(buildReviewRuby("つうがく（通学）")).toBe("<ruby>通学<rt>つうがく</rt></ruby>");
 		expect(buildReviewRuby("字幕", "じまく")).toBe("<ruby>字幕<rt>じまく</rt></ruby>");
 		expect(
@@ -537,7 +571,7 @@ describe("Japanese -teki adjectives stay as vocab", () => {
 	});
 });
 
-describe("weekly google doc sync", () => {
+describe("daily google doc sync", () => {
 	it("parses an export and stores it in KV", async () => {
 		const kv = memoryKv();
 		const fetcher = vi.fn(async (url: string) => {
@@ -563,5 +597,74 @@ describe("weekly google doc sync", () => {
 		expect(result.ok).toBe(false);
 		expect(kv.map.get(LESSON_REVIEW_KV_KEY)).toContain("kept");
 		await expect(fetchGoogleDocText("doc-id", fetcher as unknown as typeof fetch)).rejects.toThrow(/login/i);
+	});
+
+	it("merges a fresh note when the other document needs login", async () => {
+		const kv = memoryKv();
+		const fetcher = vi.fn(async (url: string) => {
+			if (String(url).includes(LESSON_REVIEW_DOCS[1].id)) return new Response("<html>sign in</html>", { status: 200 });
+			return new Response("# 2026.10.20\nテスト用の新しい行\n# 2026.09.13 模擬試験N3\n原料\n新しい行\n", { status: 200 });
+		});
+		const result = await syncLessonReview({ FAVORITES_KV: kv as unknown as KVNamespace }, fetcher as unknown as typeof fetch);
+		expect(result.ok).toBe(true);
+		const stored = JSON.parse(kv.map.get(LESSON_REVIEW_KV_KEY) || "{}");
+		expect(stored.days.some((day: { id: string }) => day.id === "2026-10-06:preply")).toBe(true);
+		expect(stored.days.find((day: { id: string }) => day.id === "2026-10-20")?.items[0].jp).toBe("テスト用の新しい行");
+		const older = stored.days.find((day: { id: string }) => day.id === "2026-09-13");
+		expect(older.items[0]).toMatchObject({ jp: "原料", cn: "原料" });
+		expect(older.items.at(-1).jp).toBe("新しい行");
+		expect(older.items.filter((item: { jp: string }) => item.jp === "原料")).toHaveLength(1);
+	});
+
+	it("keeps hand-tuned cards and skips a fresh Preply rewrite", () => {
+		const baseline = [
+			{
+				id: "2026-10-02",
+				date: "2026-10-02",
+				title: "2026-10-02",
+				source: "Danielさん",
+				items: [{ jp: "今晩は", cn: "晚上好", en: "good evening", kind: "word" as const }],
+			},
+			{
+				id: "2026-10-06:preply",
+				date: "2026-10-06",
+				title: "2026-10-06",
+				source: "Preply すみれ先生",
+				items: [{ jp: "1 日目（いちにちめ）", kind: "word" as const }],
+			},
+		];
+		const fresh = [
+			{
+				id: "2026-10-12",
+				date: "2026-10-12",
+				title: "2026-10-12",
+				source: "Danielさん",
+				items: [{ jp: "お肌にいい", kind: "word" as const }],
+			},
+			{
+				id: "2026-10-02",
+				date: "2026-10-02",
+				title: "2026-10-02",
+				source: "Danielさん",
+				items: [
+					{ jp: "今晩は", cn: "WRONG", kind: "word" as const },
+					{ jp: "新しい", kind: "word" as const },
+				],
+			},
+			{
+				id: "2026-10-06:preply",
+				date: "2026-10-06",
+				title: "2026-10-06",
+				source: "Preply すみれ先生",
+				items: [{ jp: "REPLACED", kind: "word" as const }],
+			},
+		];
+		const merged = mergeFreshLessonDays(baseline, fresh);
+		expect(merged.map((day) => day.id)).toEqual(["2026-10-12", "2026-10-06:preply", "2026-10-02"]);
+		expect(merged.find((day) => day.id === "2026-10-02")?.items).toEqual([
+			{ jp: "今晩は", cn: "晚上好", en: "good evening", kind: "word" },
+			{ jp: "新しい", kind: "word" },
+		]);
+		expect(merged.find((day) => day.id === "2026-10-06:preply")?.items[0].jp).toBe("1 日目（いちにちめ）");
 	});
 });

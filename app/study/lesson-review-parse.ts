@@ -38,6 +38,8 @@ export function parseLessonReview(
 	const notes = new Map<string, { title: string; items: ReviewItem[] }>();
 	let current: OpenGroup | null = null;
 	let lastYear = new Date().getFullYear();
+	let separated = false;
+	let pendingGloss: { cn?: string; en?: string } | null = null;
 
 	const itemsOf = (group: OpenGroup): ReviewItem[] => {
 		if (group.kind === "date") {
@@ -52,10 +54,17 @@ export function parseLessonReview(
 
 	for (const raw of markdown.replace(/^\uFEFF/, "").replace(/\r\n/g, "\n").split("\n")) {
 		const trimmed = raw.trim();
+		if (!trimmed) {
+			separated = true;
+			pendingGloss = null;
+			continue;
+		}
 		const date = matchDateHeading(trimmed, lastYear);
 		if (date) {
 			current = { kind: "date", id: date.id };
 			lastYear = date.year;
+			separated = false;
+			pendingGloss = null;
 			if (!dated.has(date.id)) dated.set(date.id, []);
 			if (date.label) dateLabels.set(date.id, date.label);
 			continue;
@@ -89,18 +98,34 @@ export function parseLessonReview(
 
 		const items = itemsOf(current);
 		const last = items[items.length - 1];
-		if (last && attachFollowUp(last, cleaned)) continue;
+		if (last && !separated && attachFollowUp(last, cleaned)) {
+			separated = false;
+			continue;
+		}
 
 		if (isGlossOnly(cleaned)) {
 			if (isStandaloneTitle(cleaned)) {
 				pushItem(items, compactItem({ jp: cleaned, kind: "word" }));
-			} else if (last && !last.cn && !last.en) {
+				pendingGloss = null;
+			} else if (last && !separated && !last.cn && !last.en) {
 				Object.assign(last, classifyGloss(cleaned));
+				pendingGloss = null;
+			} else {
+				pendingGloss = classifyGloss(cleaned);
 			}
+			separated = false;
 			continue;
 		}
 
-		for (const item of parseItems(cleaned)) pushItem(items, item);
+		for (const item of parseItems(cleaned)) {
+			if (pendingGloss) {
+				if (!item.cn && pendingGloss.cn) item.cn = pendingGloss.cn;
+				if (!item.en && pendingGloss.en) item.en = pendingGloss.en;
+				pendingGloss = null;
+			}
+			pushItem(items, item);
+		}
+		separated = false;
 	}
 
 	const days: ReviewDay[] = [...dated.entries()]
@@ -296,6 +321,7 @@ function looksLikeReading(kana: string, jp: string): boolean {
 	const jpHasCopula = /です|ます|でしょう|あります/.test(jp);
 	if (!jpHasCopula && /です|でしょう/.test(kana)) return false;
 	if (!jpHasCopula && /ます/.test(kana) && kana !== "ますます") return false;
+	if (/ください|下さい|ましょう/.test(kana)) return false;
 	const shortWord = core.length <= 8 && !/[。！？!?]/.test(jp);
 	if (shortWord) {
 		if (/(?:んじゃ|じゃな|って|たら|ます|です|ので|から|けど)/.test(kana)) return false;
@@ -378,6 +404,7 @@ function shouldSkipLine(cleaned: string, raw: string): boolean {
 	if (!cleaned) return true;
 	if (/^https?:\/\//i.test(cleaned)) return true;
 	if (cleaned === "日期作业") return true;
+	if (/^genki\s*\d/i.test(cleaned)) return true;
 	if (/^!?\[image\d+\]/i.test(cleaned)) return true;
 	if (/^[-—–_*]{3,}$/.test(cleaned)) return true;
 	if (/^:?-{3,}:?$/.test(cleaned)) return true;
@@ -487,13 +514,24 @@ function parseItem(line: string): ReviewItem | null {
 		reading = en.replace(/\s+/g, "");
 		en = undefined;
 	}
+	const glued = peelGluedReading(peeled.jp);
 	return compactItem({
-		jp: peeled.jp,
-		reading,
+		jp: glued.jp,
+		reading: reading || glued.reading,
 		cn,
 		en,
-		kind: classifyKind(peeled.jp),
+		kind: classifyKind(glued.jp),
 	});
+}
+
+function peelGluedReading(jp: string): { jp: string; reading?: string } {
+	const match = jp.match(/^([一-龯々〆ヵヶ]{1,8})([\u3040-\u309fー]{2,12})$/);
+	if (!match) return { jp };
+	const known = (kanjiReadings as Record<string, string>)[match[1]];
+	if (!known) return { jp };
+	const kana = known.replace(/[\s・]/g, "");
+	if (toHiragana(kana) !== toHiragana(match[2])) return { jp };
+	return { jp: match[1], reading: match[2] };
 }
 
 function peelTrailingGloss(jp: string): { jp: string; extra?: string } {
@@ -517,7 +555,9 @@ function splitJpGloss(line: string): { jp: string; cn?: string; en?: string; rea
 			!/[\u3040-\u30ff]/.test(eq[1]) &&
 			/[一-龯]/.test(eq[1]) &&
 			!isChineseFollowUp(eq[1]);
-		if (rightIsJapaneseSynonym) return { jp: line };
+		const rightIsKanaParaphrase =
+			!/[A-Za-z]/.test(eq[1]) && /[\u3040-\u30ff]/.test(eq[1]) && !isChineseFollowUp(eq[1]);
+		if (rightIsJapaneseSynonym || rightIsKanaParaphrase) return { jp: line };
 		return { jp: eq[0], ...classifyGloss(eq[1]) };
 	}
 
@@ -582,7 +622,7 @@ function extractReading(jp: string): { jp: string; reading?: string } {
 	let match: RegExpExecArray | null;
 	while ((match = re.exec(jp))) {
 		const inner = match[1].replace(/\s+/g, "").trim();
-		if (inner && /[\u3040-\u30ff]/.test(inner) && inner.length <= 24) readings.push(inner);
+		if (inner && /^[\u3040-\u30ffー・]+$/.test(inner) && inner.length <= 24) readings.push(inner);
 	}
 	return { jp: jp.trim(), reading: readings.length ? unique(readings).join("・") : undefined };
 }

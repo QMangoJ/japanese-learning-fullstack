@@ -4844,5 +4844,285 @@
 		"example": "映画を見て泣きました。",
 		"exampleCn": "看电影的时候哭了。",
 		"exampleEn": "I cried while watching the movie."
+	},
+	"お肌にいい": {
+		"cn": "对皮肤好",
+		"en": "good for the skin",
+		"example": "このクリームはお肌にいいです。",
+		"exampleCn": "这款面霜对皮肤好。",
+		"exampleEn": "This cream is good for the skin."
+	},
+	"昼寝（ひるね）した": {
+		"cn": "睡了午觉",
+		"en": "took a nap",
+		"example": "午後に昼寝をしました。",
+		"exampleCn": "下午睡了午觉。",
+		"exampleEn": "I took a nap in the afternoon."
+	},
+	"行った / 行ってた": {
+		"cn": "去了 / 一直常去（口语）",
+		"en": "went / had been going (casual)",
+		"example": "昨日は海に行った。前はよく行ってた。",
+		"exampleCn": "昨天去了海边。以前经常去。",
+		"exampleEn": "I went to the sea yesterday. I used to go a lot."
+	},
+	"外国人だらけ": {
+		"cn": "全是外国人",
+		"en": "full of foreigners",
+		"example": "その店は外国人だらけだった。",
+		"exampleCn": "那家店全是外国人。",
+		"exampleEn": "That shop was full of foreigners."
+	},
+	"外国人ばっかり": {
+		"cn": "净是外国人",
+		"en": "nothing but foreigners",
+		"example": "今日のクラスは外国人ばっかりです。",
+		"exampleCn": "今天班上净是外国人。",
+		"exampleEn": "Today's class is nothing but foreigners."
+	},
+	"なるべく早く": {
+		"cn": "尽快",
+		"en": "as soon as possible",
+		"example": "なるべく早く返事します。",
+		"exampleCn": "我会尽快回复。",
+		"exampleEn": "I'll reply as soon as possible."
+	},
+	"なるはや": {
+		"cn": "尽快（なるべく早く的口语省略）",
+		"en": "ASAP (casual short form of なるべく早く)",
+		"example": "なるはやでお願いします。",
+		"exampleCn": "请尽快。",
+		"exampleEn": "As soon as possible, please."
+	},
+	"末（まつ）": {
+		"cn": "末尾、结束",
+		"en": "the end (of a period)",
+		"example": "今月の末までに出します。",
+		"exampleCn": "这个月底之前交。",
+		"exampleEn": "I'll turn it in by the end of this month."
+	},
+	"7月末": {
+		"cn": "7月底",
+		"en": "the end of July",
+		"example": "7月末に日本へ行きます。",
+		"exampleCn": "7月底去日本。",
+		"exampleEn": "I'm going to Japan at the end of July."
+	},
+	"投稿（とうこう）": {
+		"cn": "发帖、投稿",
+		"en": "a post / to post",
+		"example": "昨日、写真を投稿しました。",
+		"exampleCn": "昨天发了一张照片。",
+		"exampleEn": "I posted a photo yesterday."
+	},
+	"黒竜江省 こくりゅうこうしょう": {
+		"cn": "黑龙江省",
+		"en": "Heilongjiang Province",
+		"example": "黒竜江省は中国の北東にあります。",
+		"exampleCn": "黑龙江省在中国东北。",
+		"exampleEn": "Heilongjiang Province is in northeastern China."
+	},
+	"どう言えばいいかなぁ": {
+		"cn": "该怎么说呢",
+		"en": "I'm not sure how to say it",
+		"example": "どう言えばいいかなぁ、うまく説明できない。",
+		"exampleCn": "该怎么说呢，我解释不好。",
+		"exampleEn": "I'm not sure how to say it. I can't explain it well."
+	},
+	"物流の仲介業": {
+		"cn": "物流中介",
+		"en": "logistics brokerage",
+		"example": "彼は物流の仲介業をしています。",
+		"exampleCn": "他做物流中介。",
+		"exampleEn": "He works in logistics brokerage."
+	},
+	"超重要な仕事": {
+		"cn": "极其重要的工作",
+		"en": "an extremely important job",
+		"example": "これは超重要な仕事です。",
+		"exampleCn": "这是极其重要的工作。",
+		"exampleEn": "This is an extremely important job."
+	},
+	"お米（おこめ）": {
+		"cn": "大米、米饭",
+		"en": "rice",
+		"example": "日本のお米はとてもおいしいです。",
+		"exampleCn": "日本的大米很好吃。",
+		"exampleEn": "Japanese rice is very good."
+	},
+	"田んぼ": {
+		"cn": "稻田",
+		"en": "rice field",
+		"example": "村の田んぼでお米を作ります。",
+		"exampleCn": "在村里的稻田种大米。",
+		"exampleEn": "They grow rice in the village fields."
+	},
+	"違いがわかる": {
+		"cn": "能分出差别",
+		"en": "can tell the difference",
+		"example": "食べれば違いがわかります。",
+		"exampleCn": "一吃就能分出差别。",
+		"exampleEn": "If you taste it, you can tell the difference."
+	},
+	"柔らかい（やわらかい）": {
+		"cn": "柔软",
+		"en": "soft",
+		"example": "このパンは柔らかいです。",
+		"exampleCn": "这个面包很柔软。",
+		"exampleEn": "This bread is soft."
+	},
+	"美味しさ": {
+		"cn": "美味的程度",
+		"en": "how good it tastes",
+		"example": "産地で美味しさが変わります。",
+		"exampleCn": "产地不同，好吃的程度也不一样。",
+		"exampleEn": "How good it tastes depends on where it is grown."
+	},
+	"長袖": {
+		"cn": "长袖",
+		"en": "long sleeves",
+		"example": "今日は長袖を着ていきます。",
+		"exampleCn": "今天穿长袖去。",
+		"exampleEn": "I'll wear long sleeves today."
+	},
+	"半袖": {
+		"cn": "短袖",
+		"en": "short sleeves",
+		"example": "夏は半袖がいいです。",
+		"exampleCn": "夏天穿短袖就好。",
+		"exampleEn": "Short sleeves are better in summer."
+	},
+	"ホステスクラブ": {
+		"cn": "陪酒俱乐部",
+		"en": "hostess club",
+		"example": "駅前にホステスクラブがあります。",
+		"exampleCn": "车站前有一家陪酒俱乐部。",
+		"exampleEn": "There is a hostess club in front of the station."
+	},
+	"家族のうちの1人は": {
+		"cn": "家里人当中有一个",
+		"en": "one of the family members",
+		"example": "家族のうちの1人は医者です。",
+		"exampleCn": "家里人当中有一个是医生。",
+		"exampleEn": "One of the family members is a doctor."
+	},
+	"皮肉っぽい": {
+		"cn": "带刺的、挖苦的",
+		"en": "sarcastic",
+		"example": "その言い方は皮肉っぽいです。",
+		"exampleCn": "那种说法带刺。",
+		"exampleEn": "That way of speaking is sarcastic."
+	},
+	"下旬": {
+		"cn": "下旬",
+		"en": "the last third of the month",
+		"example": "来月の下旬に会いましょう。",
+		"exampleCn": "下个月下旬见吧。",
+		"exampleEn": "Let's meet in the last third of next month."
+	},
+	"もう少し": {
+		"cn": "再稍微一点",
+		"en": "a little more",
+		"example": "もう少し時間をください。",
+		"exampleCn": "请再给我一点时间。",
+		"exampleEn": "Please give me a little more time."
+	},
+	"もうちょっと": {
+		"cn": "再一点点（口语）",
+		"en": "a bit more (casual)",
+		"example": "もうちょっと待ってください。",
+		"exampleCn": "请再等一下。",
+		"exampleEn": "Please wait a bit more."
+	},
+	"品質水準": {
+		"cn": "质量水准",
+		"en": "quality level",
+		"example": "品質水準を守ってください。",
+		"exampleCn": "请守住质量水准。",
+		"exampleEn": "Please keep to the quality level."
+	},
+	"まぶしい（眩しい）": {
+		"cn": "晃眼、耀眼",
+		"en": "dazzling",
+		"example": "太陽がまぶしいです。",
+		"exampleCn": "太阳晃眼。",
+		"exampleEn": "The sun is dazzling."
+	},
+	"方向": {
+		"cn": "方向",
+		"en": "direction",
+		"example": "駅の方向に歩きます。",
+		"exampleCn": "朝车站的方向走。",
+		"exampleEn": "I walk toward the station."
+	},
+	"変わった": {
+		"cn": "变了；与众不同",
+		"en": "changed; also unusual",
+		"example": "彼は変わった人です。",
+		"exampleCn": "他是个与众不同的人。",
+		"exampleEn": "He is an unusual person."
+	},
+	"日本っぽい": {
+		"cn": "很有日本的感觉",
+		"en": "very Japan-like",
+		"example": "この町は日本っぽいです。",
+		"exampleCn": "这座城市很有日本的感觉。",
+		"exampleEn": "This town feels very Japan-like."
+	},
+	"けど": {
+		"cn": "但是、虽然",
+		"en": "but / although",
+		"example": "行きたいけど、時間がない。",
+		"exampleCn": "想去，但是没有时间。",
+		"exampleEn": "I want to go, but I don't have time."
+	},
+	"観光地 かんこうち": {
+		"cn": "观光地",
+		"en": "a sightseeing spot",
+		"example": "京都は有名な観光地です。",
+		"exampleCn": "京都是有名的观光地。",
+		"exampleEn": "Kyoto is a famous sightseeing spot."
+	},
+	"持ってきて": {
+		"cn": "拿过来",
+		"en": "bring it here",
+		"example": "その本を持ってきてください。",
+		"exampleCn": "请把那本书拿过来。",
+		"exampleEn": "Please bring that book here."
+	},
+	"返して": {
+		"cn": "还回来",
+		"en": "give it back",
+		"example": "借りた本を返してください。",
+		"exampleCn": "请把借的书还回来。",
+		"exampleEn": "Please give back the book you borrowed."
+	},
+	"連れて行く 連れて行って下さい": {
+		"cn": "带（某人）去 / 请带他们去",
+		"en": "take (someone) / please take them",
+		"example": "駅まで連れて行って下さい。",
+		"exampleCn": "请带到车站。",
+		"exampleEn": "Please take me to the station."
+	},
+	"具合（ぐあい）が悪い＝調子が悪い": {
+		"cn": "身体不舒服",
+		"en": "not feeling well",
+		"example": "今日は具合が悪いです。",
+		"exampleCn": "今天身体不舒服。",
+		"exampleEn": "I'm not feeling well today."
+	},
+	"失くす（なくす）": {
+		"cn": "丢失、弄丢",
+		"en": "to lose",
+		"example": "鍵を失くしました。",
+		"exampleCn": "钥匙弄丢了。",
+		"exampleEn": "I lost my keys."
+	},
+	"プロ": {
+		"cn": "专业人士、行家",
+		"en": "a pro",
+		"example": "彼は料理のプロです。",
+		"exampleCn": "他是做菜的行家。",
+		"exampleEn": "He is a pro at cooking."
 	}
 }

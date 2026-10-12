@@ -1,7 +1,532 @@
 {
 	"source": "https://docs.google.com/document/d/12NwKtAV_HFUeOheYvXGMsJl5G2xIcdb4WG_axC23xrU/edit\nhttps://docs.google.com/document/d/1oEZYQYz3Kb3q5bRqNJgdD0TNxUHVEX2PGvLoCju_Cdc/edit",
-	"fetchedAt": "2026-10-08T12:44:46.513Z",
+	"fetchedAt": "2026-10-12T12:19:52.055Z",
 	"days": [
+		{
+			"id": "2026-10-12",
+			"date": "2026-10-12",
+			"title": "2026-10-12",
+			"items": [
+				{
+					"jp": "お肌にいい",
+					"kind": "word",
+					"jp_r": "お<ruby>肌<rt>はだ</rt></ruby>にいい",
+					"cn": "对皮肤好",
+					"en": "good for the skin",
+					"example": "このクリームはお肌にいいです。",
+					"exampleCn": "这款面霜对皮肤好。",
+					"exampleEn": "This cream is good for the skin.",
+					"example_r": "このクリームはお<ruby>肌<rt>はだ</rt></ruby>にいいです。"
+				},
+				{
+					"jp": "昼寝（ひるね）した",
+					"kind": "word",
+					"jp_r": "<ruby>昼寝<rt>ひるね</rt></ruby>した",
+					"reading": "ひるね",
+					"cn": "睡了午觉",
+					"en": "took a nap",
+					"example": "午後に昼寝をしました。",
+					"exampleCn": "下午睡了午觉。",
+					"exampleEn": "I took a nap in the afternoon.",
+					"example_r": "<ruby>午後<rt>ごご</rt></ruby>に<ruby>昼寝<rt>ひるね</rt></ruby>をしました。"
+				},
+				{
+					"jp": "行った / 行ってた",
+					"kind": "word",
+					"jp_r": "<ruby>行った<rt>いった</rt></ruby> / <ruby>行って<rt>いって</rt></ruby>た",
+					"cn": "去了 / 一直常去（口语）",
+					"en": "went / had been going (casual)",
+					"example": "昨日は海に行った。前はよく行ってた。",
+					"exampleCn": "昨天去了海边。以前经常去。",
+					"exampleEn": "I went to the sea yesterday. I used to go a lot.",
+					"example_r": "<ruby>昨日<rt>きのう</rt></ruby>は海に<ruby>行った<rt>いった</rt></ruby>。<ruby>前<rt>まえ</rt></ruby>はよく<ruby>行って<rt>いって</rt></ruby>た。"
+				},
+				{
+					"jp": "外国人だらけ",
+					"kind": "word",
+					"jp_r": "<ruby>外国人<rt>がいこくじん</rt></ruby>だらけ",
+					"cn": "全是外国人",
+					"en": "full of foreigners",
+					"example": "その店は外国人だらけだった。",
+					"exampleCn": "那家店全是外国人。",
+					"exampleEn": "That shop was full of foreigners.",
+					"example_r": "その<ruby>店<rt>みせ</rt></ruby>は<ruby>外国人<rt>がいこくじん</rt></ruby>だらけだった。"
+				},
+				{
+					"jp": "外国人ばっかり",
+					"kind": "word",
+					"jp_r": "<ruby>外国人<rt>がいこくじん</rt></ruby>ばっかり",
+					"cn": "净是外国人",
+					"en": "nothing but foreigners",
+					"example": "今日のクラスは外国人ばっかりです。",
+					"exampleCn": "今天班上净是外国人。",
+					"exampleEn": "Today's class is nothing but foreigners.",
+					"example_r": "<ruby>今日<rt>きょう</rt></ruby>のクラスは<ruby>外国人<rt>がいこくじん</rt></ruby>ばっかりです。"
+				},
+				{
+					"jp": "なるべく早く",
+					"kind": "word",
+					"jp_r": "なるべく<ruby>早く<rt>はやく</rt></ruby>",
+					"cn": "尽快",
+					"en": "as soon as possible",
+					"example": "なるべく早く返事します。",
+					"exampleCn": "我会尽快回复。",
+					"exampleEn": "I'll reply as soon as possible.",
+					"example_r": "なるべく<ruby>早く<rt>はやく</rt></ruby><ruby>返事<rt>へんじ</rt></ruby>します。"
+				},
+				{
+					"jp": "なるはや",
+					"kind": "word",
+					"cn": "尽快（なるべく早く的口语省略）",
+					"en": "ASAP (casual short form of なるべく早く)",
+					"example": "なるはやでお願いします。",
+					"exampleCn": "请尽快。",
+					"exampleEn": "As soon as possible, please.",
+					"example_r": "なるはやで<ruby>お願い<rt>おねがい</rt></ruby>します。"
+				},
+				{
+					"jp": "なるべく早く仕事を見つけたい",
+					"kind": "sentence",
+					"jp_r": "なるべく<ruby>早く<rt>はやく</rt></ruby><ruby>仕事<rt>しごと</rt></ruby>を<ruby>見つけたい<rt>みつけたい</rt></ruby>",
+					"cn": "想尽快找到工作",
+					"en": "I want to find a job as soon as possible."
+				},
+				{
+					"jp": "末（まつ）",
+					"kind": "word",
+					"jp_r": "<ruby>末<rt>まつ</rt></ruby>",
+					"reading": "まつ",
+					"cn": "末尾、结束",
+					"en": "the end (of a period)",
+					"example": "今月の末までに出します。",
+					"exampleCn": "这个月底之前交。",
+					"exampleEn": "I'll turn it in by the end of this month.",
+					"example_r": "<ruby>今月<rt>こんげつ</rt></ruby>の<ruby>末<rt>まつ</rt></ruby>までに出します。"
+				},
+				{
+					"jp": "7月末",
+					"kind": "word",
+					"jp_r": "7<ruby>月末<rt>げつまつ</rt></ruby>",
+					"cn": "7月底",
+					"en": "the end of July",
+					"example": "7月末に日本へ行きます。",
+					"exampleCn": "7月底去日本。",
+					"exampleEn": "I'm going to Japan at the end of July.",
+					"example_r": "7<ruby>月末<rt>げつまつ</rt></ruby>に<ruby>日本<rt>にほん</rt></ruby>へ<ruby>行きます<rt>いきます</rt></ruby>。"
+				},
+				{
+					"jp": "投稿（とうこう）",
+					"kind": "word",
+					"jp_r": "<ruby>投稿<rt>とうこう</rt></ruby>",
+					"reading": "とうこう",
+					"cn": "发帖、投稿",
+					"en": "a post / to post",
+					"example": "昨日、写真を投稿しました。",
+					"exampleCn": "昨天发了一张照片。",
+					"exampleEn": "I posted a photo yesterday.",
+					"example_r": "<ruby>昨日<rt>きのう</rt></ruby>、<ruby>写真<rt>しゃしん</rt></ruby>を投稿しました。"
+				},
+				{
+					"jp": "黒竜江省 こくりゅうこうしょう",
+					"kind": "word",
+					"jp_r": "<ruby>黒竜江省<rt>こくりゅうこうしょう</rt></ruby>",
+					"reading": "こくりゅうこうしょう",
+					"cn": "黑龙江省",
+					"en": "Heilongjiang Province",
+					"example": "黒竜江省は中国の北東にあります。",
+					"exampleCn": "黑龙江省在中国东北。",
+					"exampleEn": "Heilongjiang Province is in northeastern China.",
+					"example_r": "<ruby>黒竜江省<rt>こくりゅうこうしょう</rt></ruby>は<ruby>中国<rt>ちゅうごく</rt></ruby>の北東にあります。"
+				},
+				{
+					"jp": "どう言えばいいかなぁ",
+					"kind": "word",
+					"jp_r": "どう<ruby>言えば<rt>いえば</rt></ruby>いいかなぁ",
+					"cn": "该怎么说呢",
+					"en": "I'm not sure how to say it",
+					"example": "どう言えばいいかなぁ、うまく説明できない。",
+					"exampleCn": "该怎么说呢，我解释不好。",
+					"exampleEn": "I'm not sure how to say it. I can't explain it well.",
+					"example_r": "どう<ruby>言えば<rt>いえば</rt></ruby>いいかなぁ、うまく<ruby>説明<rt>せつめい</rt></ruby>できない。"
+				},
+				{
+					"jp": "物流の仲介業",
+					"kind": "word",
+					"jp_r": "<ruby>物流<rt>ぶつりゅう</rt></ruby>の<ruby>仲介業<rt>ちゅうかいぎょう</rt></ruby>",
+					"cn": "物流中介",
+					"en": "logistics brokerage",
+					"example": "彼は物流の仲介業をしています。",
+					"exampleCn": "他做物流中介。",
+					"exampleEn": "He works in logistics brokerage.",
+					"example_r": "<ruby>彼<rt>かれ</rt></ruby>は<ruby>物流<rt>ぶつりゅう</rt></ruby>の<ruby>仲介業<rt>ちゅうかいぎょう</rt></ruby>をしています。"
+				},
+				{
+					"jp": "超重要な仕事",
+					"kind": "word",
+					"jp_r": "<ruby>超重要<rt>ちょうじゅうよう</rt></ruby>な<ruby>仕事<rt>しごと</rt></ruby>",
+					"cn": "极其重要的工作",
+					"en": "an extremely important job",
+					"example": "これは超重要な仕事です。",
+					"exampleCn": "这是极其重要的工作。",
+					"exampleEn": "This is an extremely important job.",
+					"example_r": "これは<ruby>超重要<rt>ちょうじゅうよう</rt></ruby>な<ruby>仕事<rt>しごと</rt></ruby>です。"
+				},
+				{
+					"jp": "お米（おこめ）",
+					"kind": "word",
+					"jp_r": "<ruby>お米<rt>おこめ</rt></ruby>",
+					"reading": "おこめ",
+					"cn": "大米、米饭",
+					"en": "rice",
+					"example": "日本のお米はとてもおいしいです。",
+					"exampleCn": "日本的大米很好吃。",
+					"exampleEn": "Japanese rice is very good.",
+					"example_r": "<ruby>日本<rt>にほん</rt></ruby>の<ruby>お米<rt>おこめ</rt></ruby>はとてもおいしいです。"
+				},
+				{
+					"jp": "田んぼ",
+					"kind": "word",
+					"jp_r": "<ruby>田んぼ<rt>たんぼ</rt></ruby>",
+					"cn": "稻田",
+					"en": "rice field",
+					"example": "村の田んぼでお米を作ります。",
+					"exampleCn": "在村里的稻田种大米。",
+					"exampleEn": "They grow rice in the village fields.",
+					"example_r": "村の<ruby>田んぼ<rt>たんぼ</rt></ruby>で<ruby>お米<rt>おこめ</rt></ruby>を<ruby>作ります<rt>つくります</rt></ruby>。"
+				},
+				{
+					"jp": "違いがわかる",
+					"kind": "word",
+					"jp_r": "<ruby>違い<rt>ちがい</rt></ruby>がわかる",
+					"cn": "能分出差别",
+					"en": "can tell the difference",
+					"example": "食べれば違いがわかります。",
+					"exampleCn": "一吃就能分出差别。",
+					"exampleEn": "If you taste it, you can tell the difference.",
+					"example_r": "<ruby>食べれば<rt>たべれば</rt></ruby><ruby>違い<rt>ちがい</rt></ruby>がわかります。"
+				},
+				{
+					"jp": "柔らかい（やわらかい）",
+					"kind": "word",
+					"jp_r": "<ruby>柔らかい<rt>やわらかい</rt></ruby>",
+					"reading": "やわらかい",
+					"cn": "柔软",
+					"en": "soft",
+					"example": "このパンは柔らかいです。",
+					"exampleCn": "这个面包很柔软。",
+					"exampleEn": "This bread is soft.",
+					"example_r": "このパンは<ruby>柔らかい<rt>やわらかい</rt></ruby>です。"
+				},
+				{
+					"jp": "美味しさ",
+					"kind": "word",
+					"jp_r": "<ruby>美味し<rt>おいし</rt></ruby>さ",
+					"cn": "美味的程度",
+					"en": "how good it tastes",
+					"example": "産地で美味しさが変わります。",
+					"exampleCn": "产地不同，好吃的程度也不一样。",
+					"exampleEn": "How good it tastes depends on where it is grown.",
+					"example_r": "産地で<ruby>美味し<rt>おいし</rt></ruby>さが<ruby>変わります<rt>かわります</rt></ruby>。"
+				},
+				{
+					"jp": "背が高いです",
+					"kind": "sentence",
+					"jp_r": "背が<ruby>高い<rt>たかい</rt></ruby>です",
+					"cn": "个子高",
+					"en": "is tall"
+				},
+				{
+					"jp": "長袖",
+					"kind": "word",
+					"jp_r": "<ruby>長袖<rt>ながそで</rt></ruby>",
+					"reading": "ながそで",
+					"cn": "长袖",
+					"en": "long sleeves",
+					"example": "今日は長袖を着ていきます。",
+					"exampleCn": "今天穿长袖去。",
+					"exampleEn": "I'll wear long sleeves today.",
+					"example_r": "<ruby>今日<rt>きょう</rt></ruby>は<ruby>長袖<rt>ながそで</rt></ruby>を<ruby>着て<rt>きて</rt></ruby>いきます。"
+				},
+				{
+					"jp": "半袖",
+					"kind": "word",
+					"jp_r": "<ruby>半袖<rt>はんそで</rt></ruby>",
+					"reading": "はんそで",
+					"cn": "短袖",
+					"en": "short sleeves",
+					"example": "夏は半袖がいいです。",
+					"exampleCn": "夏天穿短袖就好。",
+					"exampleEn": "Short sleeves are better in summer.",
+					"example_r": "<ruby>夏<rt>なつ</rt></ruby>は<ruby>半袖<rt>はんそで</rt></ruby>がいいです。"
+				},
+				{
+					"jp": "ホステスクラブ",
+					"kind": "word",
+					"cn": "陪酒俱乐部",
+					"en": "hostess club",
+					"example": "駅前にホステスクラブがあります。",
+					"exampleCn": "车站前有一家陪酒俱乐部。",
+					"exampleEn": "There is a hostess club in front of the station.",
+					"example_r": "<ruby>駅前<rt>えきまえ</rt></ruby>にホステスクラブがあります。"
+				},
+				{
+					"jp": "家族のうちの1人は",
+					"kind": "word",
+					"jp_r": "<ruby>家族<rt>かぞく</rt></ruby>のうちの1<ruby>人<rt>ひと</rt></ruby>は",
+					"cn": "家里人当中有一个",
+					"en": "one of the family members",
+					"example": "家族のうちの1人は医者です。",
+					"exampleCn": "家里人当中有一个是医生。",
+					"exampleEn": "One of the family members is a doctor.",
+					"example_r": "<ruby>家族<rt>かぞく</rt></ruby>のうちの1<ruby>人<rt>ひと</rt></ruby>は<ruby>医者<rt>いしゃ</rt></ruby>です。"
+				},
+				{
+					"jp": "皮肉っぽい",
+					"kind": "word",
+					"jp_r": "<ruby>皮肉<rt>ひにく</rt></ruby>っぽい",
+					"cn": "带刺的、挖苦的",
+					"en": "sarcastic",
+					"example": "その言い方は皮肉っぽいです。",
+					"exampleCn": "那种说法带刺。",
+					"exampleEn": "That way of speaking is sarcastic.",
+					"example_r": "その<ruby>言い方<rt>いいかた</rt></ruby>は<ruby>皮肉<rt>ひにく</rt></ruby>っぽいです。"
+				},
+				{
+					"jp": "新潟 南魚沼産のお米が一番おいしいです！！",
+					"kind": "sentence",
+					"jp_r": "<ruby>新潟<rt>にいがた</rt></ruby> <ruby>南魚沼産<rt>みなみうおぬまさん</rt></ruby>の<ruby>お米<rt>おこめ</rt></ruby>が<ruby>一番<rt>いちばん</rt></ruby>おいしいです！！",
+					"cn": "新潟南鱼沼产的大米最好吃",
+					"en": "Niigata Minamiuonuma rice is the most delicious"
+				},
+				{
+					"jp": "六歳（年）上です",
+					"kind": "sentence",
+					"jp_r": "<ruby>六歳<rt>ろくさい</rt></ruby>（年）<ruby>上<rt>うえ</rt></ruby>です",
+					"cn": "大六岁（歳也可以写成年）",
+					"en": "is six years older"
+				},
+				{
+					"jp": "下旬",
+					"kind": "word",
+					"jp_r": "<ruby>下旬<rt>げじゅん</rt></ruby>",
+					"cn": "下旬",
+					"en": "the last third of the month",
+					"example": "来月の下旬に会いましょう。",
+					"exampleCn": "下个月下旬见吧。",
+					"exampleEn": "Let's meet in the last third of next month.",
+					"example_r": "<ruby>来月<rt>らいげつ</rt></ruby>の<ruby>下旬<rt>げじゅん</rt></ruby>に<ruby>会い<rt>あい</rt></ruby>ましょう。"
+				},
+				{
+					"jp": "もう少し",
+					"kind": "word",
+					"jp_r": "<ruby>もう少し<rt>もうすこし</rt></ruby>",
+					"cn": "再稍微一点",
+					"en": "a little more",
+					"example": "もう少し時間をください。",
+					"exampleCn": "请再给我一点时间。",
+					"exampleEn": "Please give me a little more time.",
+					"example_r": "<ruby>もう少し<rt>もうすこし</rt></ruby><ruby>時間<rt>じかん</rt></ruby>をください。"
+				},
+				{
+					"jp": "もうちょっと",
+					"kind": "word",
+					"cn": "再一点点（口语）",
+					"en": "a bit more (casual)",
+					"example": "もうちょっと待ってください。",
+					"exampleCn": "请再等一下。",
+					"exampleEn": "Please wait a bit more.",
+					"example_r": "もうちょっと<ruby>待って<rt>まって</rt></ruby>ください。"
+				}
+			],
+			"source": "Danielさん"
+		},
+		{
+			"id": "2026-10-09",
+			"date": "2026-10-09",
+			"title": "2026-10-09",
+			"items": [
+				{
+					"jp": "品質水準",
+					"kind": "word",
+					"jp_r": "<ruby>品質<rt>ひんしつ</rt></ruby><ruby>水準<rt>すいじゅん</rt></ruby>",
+					"cn": "质量水准",
+					"en": "quality level",
+					"example": "品質水準を守ってください。",
+					"exampleCn": "请守住质量水准。",
+					"exampleEn": "Please keep to the quality level.",
+					"example_r": "<ruby>品質<rt>ひんしつ</rt></ruby><ruby>水準<rt>すいじゅん</rt></ruby>を<ruby>守って<rt>まもって</rt></ruby>ください。"
+				},
+				{
+					"jp": "まぶしい（眩しい）",
+					"kind": "word",
+					"cn": "晃眼、耀眼",
+					"en": "dazzling",
+					"example": "太陽がまぶしいです。",
+					"exampleCn": "太阳晃眼。",
+					"exampleEn": "The sun is dazzling.",
+					"example_r": "<ruby>太陽<rt>たいよう</rt></ruby>がまぶしいです。"
+				},
+				{
+					"jp": "方向",
+					"kind": "word",
+					"jp_r": "<ruby>方向<rt>ほうこう</rt></ruby>",
+					"reading": "ほうこう",
+					"cn": "方向",
+					"en": "direction",
+					"example": "駅の方向に歩きます。",
+					"exampleCn": "朝车站的方向走。",
+					"exampleEn": "I walk toward the station.",
+					"example_r": "<ruby>駅<rt>えき</rt></ruby>の<ruby>方向<rt>ほうこう</rt></ruby>に<ruby>歩きます<rt>あるきます</rt></ruby>。"
+				},
+				{
+					"jp": "変わった",
+					"kind": "word",
+					"jp_r": "<ruby>変わった<rt>かわった</rt></ruby>",
+					"cn": "变了；与众不同",
+					"en": "changed; also unusual",
+					"example": "彼は変わった人です。",
+					"exampleCn": "他是个与众不同的人。",
+					"exampleEn": "He is an unusual person.",
+					"example_r": "<ruby>彼<rt>かれ</rt></ruby>は<ruby>変わった<rt>かわった</rt></ruby><ruby>人<rt>ひと</rt></ruby>です。"
+				},
+				{
+					"jp": "日本っぽい",
+					"kind": "word",
+					"jp_r": "<ruby>日本<rt>にほん</rt></ruby>っぽい",
+					"cn": "很有日本的感觉",
+					"en": "very Japan-like",
+					"example": "この町は日本っぽいです。",
+					"exampleCn": "这座城市很有日本的感觉。",
+					"exampleEn": "This town feels very Japan-like.",
+					"example_r": "この町は<ruby>日本<rt>にほん</rt></ruby>っぽいです。"
+				},
+				{
+					"jp": "３つレストランに行ったけど全部満席だった",
+					"kind": "sentence",
+					"jp_r": "３つレストランに<ruby>行った<rt>いった</rt></ruby>けど<ruby>全部<rt>ぜんぶ</rt></ruby><ruby>満席<rt>まんせき</rt></ruby>だった",
+					"cn": "去了三家餐厅，可是都满座了",
+					"en": "I went to three restaurants, but they were all full"
+				},
+				{
+					"jp": "けど",
+					"kind": "word",
+					"cn": "但是、虽然",
+					"en": "but / although",
+					"example": "行きたいけど、時間がない。",
+					"exampleCn": "想去，但是没有时间。",
+					"exampleEn": "I want to go, but I don't have time.",
+					"example_r": "<ruby>行きたい<rt>いきたい</rt></ruby>けど、<ruby>時間<rt>じかん</rt></ruby>がない。"
+				},
+				{
+					"jp": "観光地 かんこうち",
+					"kind": "word",
+					"jp_r": "<ruby>観光地<rt>かんこうち</rt></ruby>",
+					"reading": "かんこうち",
+					"cn": "观光地",
+					"en": "a sightseeing spot",
+					"example": "京都は有名な観光地です。",
+					"exampleCn": "京都是有名的观光地。",
+					"exampleEn": "Kyoto is a famous sightseeing spot.",
+					"example_r": "<ruby>京都<rt>きょうと</rt></ruby>は<ruby>有名な<rt>ゆうめいな</rt></ruby><ruby>観光地<rt>かんこうち</rt></ruby>です。"
+				},
+				{
+					"jp": "持ってきて",
+					"kind": "word",
+					"jp_r": "<ruby>持ってきて<rt>もってきて</rt></ruby>",
+					"cn": "拿过来",
+					"en": "bring it here",
+					"example": "その本を持ってきてください。",
+					"exampleCn": "请把那本书拿过来。",
+					"exampleEn": "Please bring that book here.",
+					"example_r": "その<ruby>本<rt>ほん</rt></ruby>を<ruby>持ってきて<rt>もってきて</rt></ruby>ください。"
+				},
+				{
+					"jp": "返して",
+					"kind": "word",
+					"jp_r": "<ruby>返して<rt>かえして</rt></ruby>",
+					"cn": "还回来",
+					"en": "give it back",
+					"example": "借りた本を返してください。",
+					"exampleCn": "请把借的书还回来。",
+					"exampleEn": "Please give back the book you borrowed.",
+					"example_r": "<ruby>借りた<rt>かりた</rt></ruby><ruby>本<rt>ほん</rt></ruby>を<ruby>返して<rt>かえして</rt></ruby>ください。"
+				},
+				{
+					"jp": "友達を連れてきてください",
+					"kind": "sentence",
+					"jp_r": "<ruby>友達<rt>ともだち</rt></ruby>を<ruby>連れて<rt>つれて</rt></ruby>きてください",
+					"cn": "请带一个朋友来",
+					"en": "Please bring a friend"
+				},
+				{
+					"jp": "いそいでください",
+					"kind": "sentence",
+					"cn": "请快点",
+					"en": "Please hurry"
+				},
+				{
+					"jp": "早くしてください",
+					"kind": "sentence",
+					"jp_r": "<ruby>早く<rt>はやく</rt></ruby>してください",
+					"cn": "请做得快一点",
+					"en": "Please do it quickly"
+				},
+				{
+					"jp": "連れて行く 連れて行って下さい",
+					"kind": "word",
+					"jp_r": "<ruby>連れて行く<rt>つれていく</rt></ruby> <ruby>連れて行<rt>つれてい</rt></ruby>って<ruby>下さい<rt>ください</rt></ruby>",
+					"cn": "带（某人）去 / 请带他们去",
+					"en": "take (someone) / please take them",
+					"example": "駅まで連れて行って下さい。",
+					"exampleCn": "请带到车站。",
+					"exampleEn": "Please take me to the station.",
+					"example_r": "<ruby>駅<rt>えき</rt></ruby>まで<ruby>連れて行<rt>つれてい</rt></ruby>って<ruby>下さい<rt>ください</rt></ruby>。"
+				},
+				{
+					"jp": "具合（ぐあい）が悪い＝調子が悪い",
+					"kind": "word",
+					"jp_r": "<ruby>具合<rt>ぐあい</rt></ruby>が<ruby>悪い<rt>わるい</rt></ruby>＝<ruby>調子<rt>ちょうし</rt></ruby>が<ruby>悪い<rt>わるい</rt></ruby>",
+					"reading": "ぐあい",
+					"cn": "身体不舒服",
+					"en": "not feeling well",
+					"example": "今日は具合が悪いです。",
+					"exampleCn": "今天身体不舒服。",
+					"exampleEn": "I'm not feeling well today.",
+					"example_r": "<ruby>今日<rt>きょう</rt></ruby>は<ruby>具合<rt>ぐあい</rt></ruby>が<ruby>悪い<rt>わるい</rt></ruby>です。"
+				},
+				{
+					"jp": "失くす（なくす）",
+					"kind": "word",
+					"jp_r": "<ruby>失くす<rt>なくす</rt></ruby>",
+					"reading": "なくす",
+					"cn": "丢失、弄丢",
+					"en": "to lose",
+					"example": "鍵を失くしました。",
+					"exampleCn": "钥匙弄丢了。",
+					"exampleEn": "I lost my keys.",
+					"example_r": "<ruby>鍵<rt>かぎ</rt></ruby>を失くしました。"
+				},
+				{
+					"jp": "卒業（そつぎょう）しました",
+					"kind": "sentence",
+					"jp_r": "<ruby>卒業<rt>そつぎょう</rt></ruby>しました",
+					"reading": "そつぎょう",
+					"cn": "毕业了",
+					"en": "I graduated"
+				},
+				{
+					"jp": "プロ",
+					"kind": "word",
+					"cn": "专业人士、行家",
+					"en": "a pro",
+					"example": "彼は料理のプロです。",
+					"exampleCn": "他是做菜的行家。",
+					"exampleEn": "He is a pro at cooking.",
+					"example_r": "<ruby>彼<rt>かれ</rt></ruby>は<ruby>料理<rt>りょうり</rt></ruby>のプロです。"
+				}
+			],
+			"source": "Danielさん"
+		},
 		{
 			"id": "2026-10-06:preply",
 			"date": "2026-10-06",

@@ -2442,5 +2442,201 @@
 	"助け合う": {
 		"cn": "互相帮助",
 		"en": "help each other"
+	},
+	"お肌にいい": {
+		"cn": "对皮肤好",
+		"en": "good for the skin"
+	},
+	"昼寝（ひるね）した": {
+		"cn": "睡了午觉",
+		"en": "took a nap"
+	},
+	"行った / 行ってた": {
+		"cn": "去了 / 一直常去（口语）",
+		"en": "went / had been going (casual)"
+	},
+	"外国人だらけ": {
+		"cn": "全是外国人",
+		"en": "full of foreigners"
+	},
+	"外国人ばっかり": {
+		"cn": "净是外国人",
+		"en": "nothing but foreigners"
+	},
+	"なるべく早く": {
+		"cn": "尽快",
+		"en": "as soon as possible"
+	},
+	"なるはや": {
+		"cn": "尽快（なるべく早く的口语省略）",
+		"en": "ASAP (casual short form of なるべく早く)"
+	},
+	"なるべく早く仕事を見つけたい": {
+		"cn": "想尽快找到工作",
+		"en": "I want to find a job as soon as possible."
+	},
+	"末（まつ）": {
+		"cn": "末尾、结束",
+		"en": "the end (of a period)"
+	},
+	"7月末": {
+		"cn": "7月底",
+		"en": "the end of July"
+	},
+	"投稿（とうこう）": {
+		"cn": "发帖、投稿",
+		"en": "a post / to post"
+	},
+	"黒竜江省 こくりゅうこうしょう": {
+		"cn": "黑龙江省",
+		"en": "Heilongjiang Province"
+	},
+	"どう言えばいいかなぁ": {
+		"cn": "该怎么说呢",
+		"en": "I'm not sure how to say it"
+	},
+	"物流の仲介業": {
+		"cn": "物流中介",
+		"en": "logistics brokerage"
+	},
+	"超重要な仕事": {
+		"cn": "极其重要的工作",
+		"en": "an extremely important job"
+	},
+	"お米（おこめ）": {
+		"cn": "大米、米饭",
+		"en": "rice"
+	},
+	"田んぼ": {
+		"cn": "稻田",
+		"en": "rice field"
+	},
+	"違いがわかる": {
+		"cn": "能分出差别",
+		"en": "can tell the difference"
+	},
+	"柔らかい（やわらかい）": {
+		"cn": "柔软",
+		"en": "soft"
+	},
+	"美味しさ": {
+		"cn": "美味的程度",
+		"en": "how good it tastes"
+	},
+	"背が高いです": {
+		"cn": "个子高",
+		"en": "is tall"
+	},
+	"長袖": {
+		"cn": "长袖",
+		"en": "long sleeves"
+	},
+	"半袖": {
+		"cn": "短袖",
+		"en": "short sleeves"
+	},
+	"ホステスクラブ": {
+		"cn": "陪酒俱乐部",
+		"en": "hostess club"
+	},
+	"家族のうちの1人は": {
+		"cn": "家里人当中有一个",
+		"en": "one of the family members"
+	},
+	"皮肉っぽい": {
+		"cn": "带刺的、挖苦的",
+		"en": "sarcastic"
+	},
+	"新潟 南魚沼産のお米が一番おいしいです！！": {
+		"cn": "新潟南鱼沼产的大米最好吃",
+		"en": "Niigata Minamiuonuma rice is the most delicious"
+	},
+	"六歳（年）上です": {
+		"cn": "大六岁（歳也可以写成年）",
+		"en": "is six years older"
+	},
+	"下旬": {
+		"cn": "下旬",
+		"en": "the last third of the month"
+	},
+	"もう少し": {
+		"cn": "再稍微一点",
+		"en": "a little more"
+	},
+	"もうちょっと": {
+		"cn": "再一点点（口语）",
+		"en": "a bit more (casual)"
+	},
+	"品質水準": {
+		"cn": "质量水准",
+		"en": "quality level"
+	},
+	"まぶしい（眩しい）": {
+		"cn": "晃眼、耀眼",
+		"en": "dazzling"
+	},
+	"方向": {
+		"cn": "方向",
+		"en": "direction"
+	},
+	"変わった": {
+		"cn": "变了；与众不同",
+		"en": "changed; also unusual"
+	},
+	"日本っぽい": {
+		"cn": "很有日本的感觉",
+		"en": "very Japan-like"
+	},
+	"３つレストランに行ったけど全部満席だった": {
+		"cn": "去了三家餐厅，可是都满座了",
+		"en": "I went to three restaurants, but they were all full"
+	},
+	"けど": {
+		"cn": "但是、虽然",
+		"en": "but / although"
+	},
+	"観光地 かんこうち": {
+		"cn": "观光地",
+		"en": "a sightseeing spot"
+	},
+	"持ってきて": {
+		"cn": "拿过来",
+		"en": "bring it here"
+	},
+	"返して": {
+		"cn": "还回来",
+		"en": "give it back"
+	},
+	"友達を連れてきてください": {
+		"cn": "请带一个朋友来",
+		"en": "Please bring a friend"
+	},
+	"いそいでください": {
+		"cn": "请快点",
+		"en": "Please hurry"
+	},
+	"早くしてください": {
+		"cn": "请做得快一点",
+		"en": "Please do it quickly"
+	},
+	"連れて行く 連れて行って下さい": {
+		"cn": "带（某人）去 / 请带他们去",
+		"en": "take (someone) / please take them"
+	},
+	"具合（ぐあい）が悪い＝調子が悪い": {
+		"cn": "身体不舒服",
+		"en": "not feeling well"
+	},
+	"失くす（なくす）": {
+		"cn": "丢失、弄丢",
+		"en": "to lose"
+	},
+	"卒業（そつぎょう）しました": {
+		"cn": "毕业了",
+		"en": "I graduated"
+	},
+	"プロ": {
+		"cn": "专业人士、行家",
+		"en": "a pro"
 	}
 }
