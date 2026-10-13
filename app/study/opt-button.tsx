@@ -60,7 +60,7 @@ export function OptButton({
 	return (
 		<button ref={ref} type="button" className={className} data-optidx={idx} aria-pressed={pressed} onClick={onPick}>
 			<span className="opt-ripples" aria-hidden="true" />
-			{children}
+			<span className="opt-label">{children}</span>
 		</button>
 	);
 }

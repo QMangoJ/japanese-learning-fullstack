@@ -110,7 +110,7 @@ function AnsBlock({
 	);
 }
 
-function QuizOpts({
+export function QuizOpts({
 	item,
 	correct,
 	onWrong,
