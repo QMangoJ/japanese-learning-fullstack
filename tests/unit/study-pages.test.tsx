@@ -495,7 +495,9 @@ describe("HomePage and CardsPage", () => {
 		setCardsWeek(0);
 		render(<CardsPage />);
 		expect(screen.getByText("回想接续与意思，点击翻面")).toBeInTheDocument();
-		expect(document.querySelector("[data-fcflip]")).not.toHaveClass("is-instant");
+		expect(document.querySelector("[data-fcflip]")).toHaveClass("is-instant");
+		expect(document.querySelector(".fcard-rotor")?.getAttribute("style") || "").not.toContain("rotateY");
+		expect(screen.queryByText("表示刚做完")).not.toBeInTheDocument();
 		await user.click(screen.getByText("回想接续与意思，点击翻面"));
 		expect(screen.getByText("表示刚做完")).toBeInTheDocument();
 	});

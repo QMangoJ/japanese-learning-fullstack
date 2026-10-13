@@ -13,16 +13,9 @@
 	position: relative;
 	width: 100%;
 	max-width: 520px;
-	/* Pop the slot. The rotor owns rotateY, and a transform animation there freezes the flip. */
-	animation: card-pop var(--dur-base) var(--spring-soft);
-}
-.fcard-slot.is-instant {
-	animation: none;
 }
 .fcard {
-	perspective: 1100px;
 	border-radius: 24px;
-	transform-style: preserve-3d;
 }
 .fcard:focus-visible {
 	outline: 3px solid var(--accent);
@@ -31,43 +24,18 @@
 .fcard.is-swipeable {
 	touch-action: none;
 }
+/* Swipe grading still translates the rotor. The flip itself swaps one face and does not transition. */
 .fcard-rotor {
 	width: 100%;
-	display: grid;
-	transform-style: preserve-3d;
-	-webkit-transform-style: preserve-3d;
-	transition: transform var(--dur-base) var(--spring-soft);
 }
-.fcard-rotor.is-dragging,
 .fcard-rotor.is-flying {
-	animation: none;
+	transition: transform var(--dur-base) var(--ease-out);
 }
 .fcard-rotor.is-dragging {
 	transition: none;
 }
-.fcard-face {
-	grid-area: 1 / 1;
-	backface-visibility: hidden;
-	-webkit-backface-visibility: hidden;
-}
-.fcard-back {
-	transform: rotateY(180deg);
-}
-.fcard.is-instant {
-	perspective: none;
-}
-.fcard.is-instant .fcard-face,
-.fcard.is-instant .fcard-back {
-	transform: none;
-	backface-visibility: visible;
-	-webkit-backface-visibility: visible;
-}
-.fcard.is-instant.is-flipped .fcard-front,
-.fcard.is-instant:not(.is-flipped) .fcard-back {
-	display: none;
-}
-.fcard.is-instant .kana-plain { opacity: 1; }
-.fcard.is-instant .kana-stagger { display: none; }
+.fcard .kana-plain { opacity: 1; }
+.fcard .kana-stagger { display: none; }
 .fcard-slot.is-pass .fcard {
 	background: var(--green-soft);
 	border-color: var(--green);
@@ -203,10 +171,6 @@
 	.toast-stack:hover .toast-item { transform: none; opacity: 1; }
 }
 
-@keyframes card-pop {
-	from { transform: translateY(18px) scale(.98); }
-	to { transform: none; }
-}
 @keyframes kana-in {
 	from { opacity: 0; }
 	to { opacity: 1; }
@@ -619,8 +583,12 @@ ruby:focus-within rt {
 		--dur-slow: 0ms;
 	}
 	.fcard-slot,
+	.fcard,
 	.fcard-rotor,
 	.fcard-rotor.is-dragging,
+	.fcard-rotor.is-flying,
+	.fcard-face,
+	.fcard-front,
 	.fcard-back,
 	.kana-plain,
 	.kana-stagger,
@@ -686,10 +654,6 @@ ruby:focus-within rt {
 	.starb.on::after { display: none; }
 	::view-transition-old(ending-swap),
 	::view-transition-new(ending-swap) { animation: none; }
-	.fcard.is-flipped .fcard-front,
-	.fcard:not(.is-flipped) .fcard-back {
-		visibility: hidden;
-	}
 	.kana-plain { opacity: 1; }
 	.kana-stagger { visibility: hidden; }
 	.qz.answered .opt-btn.correct::after,
