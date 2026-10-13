@@ -2,6 +2,7 @@ import { Fragment, useMemo, useState, useSyncExternalStore, type ReactNode } fro
 
 import { RubyHtml, SayButton } from "../routes/study-common";
 import { KanaStagger, StudyFlip } from "./study-flip";
+import { CountPair } from "./tick-text";
 import type { SwipeGrade } from "./swipe-grade";
 import { getDisplayVersion, lx, navTo, noRuby, openModuleCards, subscribeDisplay, toggleDisplay } from "./store";
 import {
@@ -399,7 +400,7 @@ export function MemoryCards({
 					{lx("注音", "Readings")}
 				</button>
 			</div>
-			<div className="fc-prog">{deck.length ? `${safeIdx + 1} / ${deck.length}` : ""}</div>
+			<div className="fc-prog">{deck.length ? <CountPair current={safeIdx + 1} total={deck.length} /> : ""}</div>
 			<Fragment key={cur ? (plainFlip ? `${deckId}-${kind}-${skill}-${safeIdx}-${flipped}` : `${deckId}-${kind}-${skill}-${cur.id}`) : `${deckId}-done`}>{card}</Fragment>
 			{cur ? (
 				<div className="review-skill">

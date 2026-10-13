@@ -6,8 +6,11 @@ import { CardsLaunch } from "./memory-cards";
 import { getKanjiWordUsage, kanjiWordSurface } from "./kanji-word-usage";
 import { getN2KanjiWordUsage, loadN2KanjiUsageLater, n2KanjiLaterLoaded, subscribeN2KanjiLater } from "./n2-kanji-word-usage";
 import { AnswerFeedback } from "./answer-feedback";
+import { GlossPopover, rubyReading } from "./gloss-popover";
+import { OptButton } from "./opt-button";
+import { TickText } from "./tick-text";
 import { ExerciseReset, ExerciseSession, useQuestionProgress } from "./exercise-progress";
-import { GrammarSummary } from "./grammar-summary";
+const GrammarSummary = lazy(() => import("./grammar-summary").then(module => ({ default: module.GrammarSummary })));
 const N2GrammarSummary = lazy(() => import("./n2-grammar-summary").then(module => ({ default: module.N2GrammarSummary })));
 import {
 	FAVMETA,
@@ -158,13 +161,12 @@ function QuizOpts({
 						else if (idx === picked) cls += " wrong";
 					}
 					return (
-						<button
-							type="button"
+						<OptButton
 							className={cls}
-							data-optidx={idx}
-							aria-pressed={picked === idx}
+							idx={idx}
+							pressed={picked === idx}
 							key={idx}
-							onClick={() => {
+							onPick={() => {
 								if (answered) return;
 								updateProgress({ picked: idx });
 								if (!ok.has(idx)) onWrong?.(idx, item);
@@ -173,13 +175,13 @@ function QuizOpts({
 							<AnswerFeedback verdict={answered && ok.has(idx) ? "correct" : answered && idx === picked ? "wrong" : "idle"}>
 								{idx} <Rich html={String(o)} />
 							</AnswerFeedback>
-						</button>
+						</OptButton>
 					);
 				})}
 			</div>
 			{answered ? (
 				<div className={`qz-result ${picked != null && ok.has(picked) ? "ok" : "ng"}`}>
-					{picked != null && ok.has(picked) ? lx("✓ 答对了", "✓ Correct") : lx("✗ 答错了", "✗ Incorrect")}
+					<TickText value={picked != null && ok.has(picked) ? lx("✓ 答对了", "✓ Correct") : lx("✗ 答错了", "✗ Incorrect")} />
 				</div>
 			) : null}
 			{answered && children ? (
@@ -925,12 +927,46 @@ function useScrollHighlight(id?: string | null) {
 	}, [id]);
 }
 
+function glossMeaning(item: { cn?: string; en?: string }) {
+	return LANG === "en" ? item.en || item.cn || "" : item.cn || "";
+}
+
+function grammarPeek(p: any) {
+	const ex = (p.examples || [])[0];
+	if (!ex) return "";
+	const gloss = LANG === "en" ? ex.en : ex.cn;
+	return [ex.jp, gloss].filter(Boolean).join(" · ");
+}
+
+function usagePeek(usage: { before?: string; after?: string; exampleCn?: string; exampleEn?: string } | null, word: string) {
+	if (!usage) return "";
+	const jp = `${usage.before || ""}${word}${usage.after || ""}`.trim();
+	const gloss = LANG === "en" ? usage.exampleEn : usage.exampleCn;
+	return [jp, gloss].filter(Boolean).join(" · ");
+}
+
+function VocabLabel({
+	item,
+	example,
+}: {
+	item: { jp?: string; jp_r?: string; reading?: string; cn?: string; en?: string; rel?: string };
+	example?: string;
+}) {
+	return (
+		<GlossPopover reading={item.reading || rubyReading(item.jp_r)} meaning={glossMeaning(item)} example={example || item.rel || ""}>
+			<span className="vjp-text">{item.jp_r ? <RubyHtml html={item.jp_r} /> : item.jp}</span>
+		</GlossPopover>
+	);
+}
+
 function GrammarPoint({ p, w, d, i }: { p: any; w: number; d: number; i: number }) {
 	const pid = `${MODULE}#${w}-${d}#${i}`;
 	return (
-		<div className="point" id={`pt-${w}-${d}-${i}`}>
+		<div className="point tilt-card" id={`pt-${w}-${d}-${i}`}>
 			<h3 className="jp">
-				<Rr o={p} f="pattern" />
+				<GlossPopover reading={p.reading} meaning={glossMeaning({ cn: p.usage_cn, en: p.usage_en })} example={grammarPeek(p)}>
+					<Rr o={p} f="pattern" />
+				</GlossPopover>
 			</h3>
 			<StarBtn id={pid} snap={{ module: MODULE, hash: `#/day/${w}-${d}/p${i}`, w, d, jp: p.pattern, cn: p.usage_cn || "" }} />
 			<SayButton text={p.pattern} />
@@ -1413,9 +1449,9 @@ function DayVocab({ day, w, d, scrollTok }: { day: any; w: number; d: number; sc
 							{(sec.items || []).map((it: any, ii: number) => {
 								const vid = `${mod}#${w}-${d}#${si}#${ii}`;
 								return (
-									<div className="vrow" id={`v-${w}-${d}-${si}-${ii}`} key={ii}>
+									<div className="vrow tilt-card" id={`v-${w}-${d}-${si}-${ii}`} key={ii}>
 										<div className="vjp jp">
-											<span className="vjp-text">{it.jp_r ? <RubyHtml html={it.jp_r} /> : it.jp}</span>
+											<VocabLabel item={it} />
 											<SayButton text={it.jp} />
 											<StarBtn id={vid} snap={{ module: mod, hash: `#/day/${w}-${d}`, w, d, jp: it.jp, cn: it.cn || it.en || "" }} />
 										</div>
@@ -1685,7 +1721,7 @@ function DayKanji({ day, w, d, scrollTok }: { day: any; w: number; d: number; sc
 							【{k.group}】{(k.readings || []).join("・")}
 						</div>
 					) : null}
-					<div className="krow" id={`k-${w}-${d}-${ki}`}>
+					<div className="krow tilt-card" id={`k-${w}-${d}-${ki}`}>
 						<div className="kchar-wrap">
 							<div className="kchar jp">{k.char}</div>
 							<div className="kmeta">{k.strokes ? `${k.strokes}画` : ""}</div>
@@ -1704,9 +1740,9 @@ function DayKanji({ day, w, d, scrollTok }: { day: any; w: number; d: number; sc
 								const usageWord = usage?.focus || (usage ? kanjiWordSurface(wd) : "");
 								const usageReading = usage?.focusReading || wd.reading;
 								return (
-									<div className="vrow" key={wi}>
+									<div className="vrow tilt-card" key={wi}>
 										<div className="vjp jp">
-											<span className="vjp-text">{wd.jp_r ? <RubyHtml html={wd.jp_r} /> : wd.jp}</span>
+											<VocabLabel item={wd} example={usagePeek(usage, usageWord)} />
 											<SayButton text={wd.jp} />
 											<StarBtn id={kid} snap={{ module: MODULE, hash: `#/day/${w}-${d}`, w, d, jp: wd.jp, cn: wd.cn || wd.en || "" }} />
 										</div>
@@ -1802,7 +1838,7 @@ function KanjiColumn({ column, notes, w, d }: { column: any; notes?: any[]; w: n
 			</div>
 			<div className="card kanji-card">
 				{(column.kanji || []).map((k: any, ki: number) => (
-					<div className="krow" id={`k-${w}-${d}-c${ki}`} key={ki}>
+					<div className="krow tilt-card" id={`k-${w}-${d}-c${ki}`} key={ki}>
 						<div className="kchar-wrap">
 							<div className="kchar jp">{k.char}</div>
 							<div className="kreads jp">
@@ -1815,9 +1851,9 @@ function KanjiColumn({ column, notes, w, d }: { column: any; notes?: any[]; w: n
 						</div>
 						<div className="kwords">
 							{(k.words || []).map((wd: any, wi: number) => (
-								<div className="vrow" key={wi}>
+								<div className="vrow tilt-card" key={wi}>
 									<div className="vjp jp">
-										<span className="vjp-text">{wd.jp_r ? <RubyHtml html={wd.jp_r} /> : wd.jp}</span>
+										<VocabLabel item={wd} />
 										<SayButton text={wd.jp} />
 										<StarBtn id={`${MODULE}#${w}-${d}#c${ki}#${wi}`} snap={{ module: MODULE, hash: `#/day/${w}-${d}`, w, d, jp: wd.jp, cn: wd.cn || wd.en || "" }} />
 									</div>
@@ -1908,10 +1944,10 @@ export function DayPage({ w, d, token }: { w: number; d: number; token: string |
 			) : (
 				<DayVocab day={day} w={w} d={d} scrollTok={vocabTok} />
 			)}
-			{MODULE === "grammar" && d !== 7 ? <GrammarSummary
+			{MODULE === "grammar" && d !== 7 ? <Suspense fallback={<p role="status">{lx("语法总结加载中…", "Loading grammar summary…")}</p>}><GrammarSummary
 				week={w} day={d} points={day.points || []} language={LANG}
 				onReview={(index) => navTo(`#/day/${w}-${d}/p${index}`)}
-			/> : null}
+			/></Suspense> : null}
 			{MODULE === "n2grammar" && d !== 7 ? <Suspense fallback={<p role="status">{lx("语法总结加载中…", "Loading grammar summary…")}</p>}><N2GrammarSummary
 				week={w} day={d} points={day.points || []} language={LANG}
 				onReview={(index) => navTo(`#/day/${w}-${d}/p${index}`)}

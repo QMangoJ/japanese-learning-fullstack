@@ -17,6 +17,7 @@ import {
 } from "../data/kanji-exam-english";
 import { chineseMeaningForQuestion } from "../data/kanji-exam-chinese";
 import { Hanamaru } from "./answer-feedback";
+import { TickText } from "./tick-text";
 import { LANG, lx } from "./store";
 import "../routes/kanji-exam.css";
 
@@ -362,7 +363,7 @@ export function KanjiExamPage() {
 						{history.slice(0, 5).map((item) => (
 							<details key={item.id}>
 								<summary>
-									<span><strong>{scoreLabel(item.correct, item.total)}</strong>{lx("分", " pts")}</span>
+									<span><strong><TickText value={scoreLabel(item.correct, item.total)} /></strong>{lx("分", " pts")}</span>
 									<p><b>{interfaceEnglish ? englishBatchLabel(KANJI_EXAM_BATCHES.find((batchItem) => batchItem.id === item.batchId) || batch).title : item.batchTitle}</b><small>{modeLabel(item.mode)} · {new Date(item.completedAt).toLocaleString()}</small></p>
 									<em>{item.correct}/{item.total}</em>
 								</summary>
@@ -417,7 +418,7 @@ export function KanjiExamPage() {
 			<div className="kanji-exam-toolbar">
 				<button onClick={() => { setStarted(false); setSubmitted(false); setRetrying(false); setShowAllAnswers(false); setActiveQuestions([]); }}>{lx("‹ 返回题库", "‹ Back to sets")}</button>
 				<div><strong>{batchTitle}</strong><span>{retrying ? lx("错题重练", "Retry incorrect") : modeLabel(mode)} · {questions.length}{lx("题", " questions")}</span></div>
-				<em>{answeredCount}/{questions.length}</em>
+				<em><TickText value={`${answeredCount}/${questions.length}`} /></em>
 			</div>
 
 			<header className="kanji-exam-paper__head">
@@ -431,7 +432,7 @@ export function KanjiExamPage() {
 
 			{submitted ? (
 				<div className="kanji-exam-result" ref={resultRef}>
-					<div><strong>{scoreLabel(correctIds.length, questions.length)}</strong><span>/ 100</span></div>
+					<div><strong><TickText value={scoreLabel(correctIds.length, questions.length)} /></strong><span>/ 100</span></div>
 					<p><b>{lx("本次得分", "Your score")}</b><span>{lx(`答对 ${correctIds.length} 题，答错 ${questions.length - correctIds.length} 题`, `${correctIds.length} correct, ${questions.length - correctIds.length} incorrect`)}</span></p>
 					{incorrectQuestions.length ? <button onClick={retryWrong}>{lx(`只重练错题（${incorrectQuestions.length}）`, `Retry incorrect (${incorrectQuestions.length})`)}</button> : <span className="kanji-exam-perfect">✓ {lx("全部答对", "Perfect score")}</span>}
 				</div>
