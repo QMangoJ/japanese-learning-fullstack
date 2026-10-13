@@ -19,7 +19,7 @@ export const w3d7: ReadingDay = {
 				instruction:
 					"{次|つぎ}の{文章|ぶんしょう}は「{相談者|そうだんしゃ}」からの{相談|そうだん}と、それに{対|たい}するAとBからの{回答|かいとう}である。{三|みっ}つの{文章|ぶんしょう}を{読|よ}んで、{後|あと}の{問|と}いに{対|たい}する{答|こた}えとして、{最|もっと}もよいものを1・2・3・4から{一|ひと}つ{選|えら}びなさい。",
 				instructionCn:
-					"下面的文章是「咨询者」的咨询以及 A 和 B 的回答。阅读这三篇文章，从 1・2・3・4 中选出最合适的一个作为后面问题的答案。",
+					"下面的文章是来自「咨询者」的咨询，以及A和B对此的回答。请阅读这三篇文章，从1・2・3・4中选出一个最好的，作为后面问题的答案。",
 				instructionEn:
 					"The following texts are a query from a “consultor” and replies from A and B. Read the three texts and choose the best answer to each question from 1, 2, 3, or 4.",
 				blocks: [
@@ -27,33 +27,33 @@ export const w3d7: ReadingDay = {
 					{
 						type: "paragraph",
 						jp: "うちの{子|こ}は{小学校|しょうがっこう}に{入|はい}ってから、ご{飯|はん}を{食|た}べる{前|まえ}に「いただきます」と{言|い}うようになりました。うちではそんなことを{教|おし}えていなかったのに、{学校|がっこう}で{給食|きゅうしょく}のときにみんなで{言|い}わされているようなのです。「いただきます」だなんて、{食|た}べ{物|もの}を{学校|がっこう}からもらっているわけではありません。ちゃんと{給食費|きゅうしょくひ}を{払|はら}っているのに、なぜそんなことを{言|い}わされなければならないのか、{私|わたし}にはわかりません。{給食費|きゅうしょくひ}を{払|はら}っていない{家庭|かてい}があるそうですから、そういう{家|いえ}の{子|こ}にだけ「いただきます」と{言|い}わせればいいんじゃないかと{腹|はら}だたしく{思|おも}います。{学校|がっこう}に{抗議|こうぎ}しようと{思|おも}っているのですが、{私|わたし}は{間違|まちが}っていますか。",
-						cn: "我家孩子上小学以后，开始在吃饭前说「我开动了」。家里并没有教过这个，好像是学校在吃营养午餐时让大家一起说的。什么「我开动了」，又不是从学校白拿食物。好好地交了伙食费，为什么非要被迫说那种话，我真不明白。听说也有不交伙食费的家庭，让那些家里的孩子说「我开动了」不就行了吗，越想越窝火。正打算向学校抗议，是我错了吗？",
+						cn: "我们家孩子上小学以后，开始在吃饭前说「我开动了」。家里并没有教过这种事，可好像是在学校吃营养午餐时，被要求大家一起说的。什么「我开动了」，又不是从学校领受食物。明明好好交了营养午餐费，为什么非要被迫说那种话，我无法理解。听说有不交营养午餐费的家庭，所以我恼火地觉得，只让那些家里的孩子说「我开动了」不就行了吗。我正打算向学校抗议，不过，是我错了吗？",
 						en: "Since starting elementary school, our child has begun saying “itadakimasu” before meals. We had never taught that at home; it seems they are made to say it all together at school lunch. “Itadakimasu”? It isn’t as if the food is being given by the school. We pay the lunch fees properly, so I don’t see why they have to be made to say that. I hear some families don’t pay the lunch fees, so why not make only those children say “itadakimasu”? It makes me angry. I’m thinking of protesting to the school — am I wrong?",
 					},
 					{ type: "heading", jp: "{回答者|かいとうしゃ}：A", cn: "回答者：A", en: "Replier: A" },
 					{
 						type: "paragraph",
 						jp: "「いただきます」の{意味|いみ}をご{存|ぞん}じないとは{驚|おどろ}きました。{確|たし}かに、{人|ひと}から{何|なに}かをもらったときに「ありがとうございます。いただきます。」というふうにも{言|い}いますが、それとは{違|ちが}います。{私|わたし}たちは{植物|しょくぶつ}や{動物|どうぶつ}の{命|いのち}をいただいて{自分|じぶん}の{命|いのち}をつないでいます。ですから、{食|た}べる{前|まえ}にその{感謝|かんしゃ}の{心|こころ}を{表|あらわ}すために「いただきます」というのです。お{金|かね}を{払|はら}っているかどうかという{問題|もんだい}ではないのです。{学校|がっこう}が{強制的|きょうせいてき}に「いただきます」と{言|い}わなければ{絶対|ぜったい}にいけないと{言|い}わない{限|かぎ}り、{抗議|こうぎ}するほうが{間違|まちが}っていると{思|おも}います。",
-						cn: "您居然不知道「いただきます」的意思，我很吃惊。的确，从别人那里拿到东西时也会说「谢谢。我收下了。」但那是另一回事。我们是领受植物和动物的生命来延续自己的生命。所以在吃之前，为了表达那份感谢之心才说「いただきます」。这不是有没有付钱的问题。只要学校没有强制说「不说『いただきます』就绝对不行」，我认为去抗议反而是错的。",
+						cn: "您居然不知道「我开动了」的意思，我很吃惊。的确，从别人那里得到什么东西的时候，也会说「谢谢。我收下了。」这样，但那是不一样的。我们领受植物和动物的生命，以此来延续自己的生命。所以，在吃之前，为了表达这份感谢之心，才说「我开动了」。这并不是有没有付钱的问题。只要学校没有强制地说不说「我开动了」就绝对不行，我认为抗议的一方才是错的。",
 						en: "I am surprised you do not know what “itadakimasu” means. It is true that when you receive something from someone you also say “thank you; I will take it,” but this is different. We receive the lives of plants and animals and thereby keep our own lives going. So we say “itadakimasu” before eating in order to express that gratitude. It is not a question of whether you have paid. Unless the school is saying you absolutely must say “itadakimasu,” I think it is wrong to protest.",
 					},
 					{
 						type: "paragraph",
 						jp: "まずは、あなたが「いただきます」の{本当|ほんとう}の{意味|いみ}を{理解|りかい}すべきでしょう。",
-						cn: "首先，您应当理解「いただきます」真正的意思。",
+						cn: "首先，您应当理解「我开动了」真正的意思吧。",
 						en: "First of all, you should understand the true meaning of “itadakimasu.”",
 					},
 					{ type: "heading", jp: "{回答者|かいとうしゃ}：B", cn: "回答者：B", en: "Replier: B" },
 					{
 						type: "paragraph",
 						jp: "あなたの{家|いえ}では{食|た}べるときに{何|なに}も{言|い}わないのですね。それはそれで{構|かま}わないと{思|おも}いますが「いただきます」は{挨拶|あいさつ}ですから、{学校|がっこう}で、「おはようございます」「さようなら」などと{同|おな}じように{言|い}うのは{普通|ふつう}のことです。{給食費|きゅうしょくひ}を{払|はら}っているかどうかとは{関係|かんけい}ないのです。",
-						cn: "你们家吃饭时什么都不说，对吧。那样也没关系，但「いただきます」是一句招呼，所以在学校里和「早上好」「再见」一样说，是很普通的事。和有没有交伙食费没有关系。",
+						cn: "你家里吃饭的时候什么都不说，是吧。我觉得那样本身也无妨，不过「我开动了」是一句问候，所以在学校里像「早上好」「再见」等那样说，是很普通的事。这和有没有交营养午餐费没有关系。",
 						en: "So at your house you say nothing when you eat. I think that is fine in itself, but “itadakimasu” is a greeting, so saying it at school the same way as “good morning” or “goodbye” is the usual thing. It has nothing to do with whether lunch fees are paid.",
 					},
 					{
 						type: "paragraph",
 						jp: "ちなみにうちでは「いただきます」とみんな{言|い}います。{本来|ほんらい}は{食|た}べ{物|もの}をいただける{感謝|かんしゃ}を{表|あらわ}した{表現|ひょうげん}だと{思|おも}いますが、どちらかというと{料理|りょうり}を{作|つく}ってくれた{人|ひと}や{食|た}べ{物|もの}を{用意|ようい}してくれた{人|ひと}への{感謝|かんしゃ}の{気持|きも}ちが{自然|しぜん}にわいてくることが{多|おお}いと{感|かん}じます。そういう{意味|いみ}でも{挨拶|あいさつ}というのは{悪|わる}くない{習慣|しゅうかん}だと{思|おも}いますし、あなたも{挨拶|あいさつ}だと{思|おも}えば{腹|はら}も{立|た}たないのではないでしょうか。",
-						cn: "顺便说，我们家大家都说「いただきます」。本来这是表达能领受食物的感谢，但我觉得更多时候，是对做菜的人、准备食物的人的感谢之情自然涌出来。就这层意思来说，招呼也不是坏习惯；您要是把它当成招呼，大概就不会生气了吧。",
+						cn: "顺便一提，我们家大家都说「我开动了」。我认为它本来是表达能够领受食物这份感谢的说法，但比较而言，我感觉更多时候是对给自己做了菜的人、给自己准备了食物的人的感谢之情会自然地涌上来。从这个意义上说，我也觉得问候并不是个坏习惯，你要是也把它当成问候，大概也就不会生气了吧。",
 						en: "At our house, by the way, everyone says “itadakimasu.” I think originally it is an expression of thanks for being able to receive food, but if anything I often feel gratitude welling up naturally toward the person who cooked or who prepared the food. In that sense too I don’t think greeting is a bad custom, and if you think of it as a greeting, perhaps you would not get angry.",
 					},
 				],
@@ -61,13 +61,13 @@ export const w3d7: ReadingDay = {
 					{
 						label: "1",
 						jp: "{相談者|そうだんしゃ}は、「いただきます」の{意味|いみ}をどう{理解|りかい}しているか。",
-						cn: "咨询者是怎样理解「いただきます」的意思的？",
+						cn: "咨询者是如何理解「我开动了」的意思的？",
 						en: "How does the consultor understand the meaning of “itadakimasu”?",
 						choices: [
-							{ jp: "{学校|がっこう}で{給食|きゅうしょく}を{食|た}べる{前|まえ}に{言|い}う{挨拶|あいさつ}の{表現|ひょうげん}である。", cn: "是在学校吃营养午餐前说的招呼用语。", en: "It is a greeting said before eating school lunch." },
-							{ jp: "{人|ひと}からいただいたものに{対|たい}して{感謝|かんしゃ}する{表現|ひょうげん}である。", cn: "是对从别人那里得到的东西表示感谢的表达。", en: "It is an expression of thanks for something received from someone." },
-							{ jp: "{給食費|きゅうしょくひ}を{払|はら}わない{場合|ばあい}に{言|い}う{挨拶|あいさつ}の{表現|ひょうげん}である。", cn: "是不交伙食费时说的招呼用语。", en: "It is a greeting said when lunch fees are not paid." },
-							{ jp: "{料理|りょうり}を{作|つく}ってくれた{人|ひと}に{対|たい}して{感謝|かんしゃ}する{表現|ひょうげん}である。", cn: "是对做菜的人表示感谢的表达。", en: "It is an expression of thanks to the person who cooked." },
+							{ jp: "{学校|がっこう}で{給食|きゅうしょく}を{食|た}べる{前|まえ}に{言|い}う{挨拶|あいさつ}の{表現|ひょうげん}である。", cn: "是在学校吃营养午餐前说的问候表达。", en: "It is a greeting said before eating school lunch." },
+							{ jp: "{人|ひと}からいただいたものに{対|たい}して{感謝|かんしゃ}する{表現|ひょうげん}である。", cn: "是对从别人那里领受的东西表示感谢的表达。", en: "It is an expression of thanks for something received from someone." },
+							{ jp: "{給食費|きゅうしょくひ}を{払|はら}わない{場合|ばあい}に{言|い}う{挨拶|あいさつ}の{表現|ひょうげん}である。", cn: "是在不交营养午餐费的情况下说的问候表达。", en: "It is a greeting said when lunch fees are not paid." },
+							{ jp: "{料理|りょうり}を{作|つく}ってくれた{人|ひと}に{対|たい}して{感謝|かんしゃ}する{表現|ひょうげん}である。", cn: "是对给自己做了菜的人表示感谢的表达。", en: "It is an expression of thanks to the person who cooked." },
 						],
 						answer: 2,
 						explanation:
@@ -90,27 +90,27 @@ export const w3d7: ReadingDay = {
 					{
 						label: "2",
 						jp: "{相談者|そうだんしゃ}の{相談|そうだん}に{対|たい}するA、Bの{回答|かいとう}について{正|ただ}しいのはどれか。",
-						cn: "关于 A、B 对咨询的回答，正确的是哪一项？",
+						cn: "关于A、B对咨询者的咨询所作的回答，正确的是哪一个？",
 						en: "Which is correct about A’s and B’s replies to the consultor?",
 						choices: [
 							{
 								jp: "Aは{相談者|そうだんしゃ}が「いただきます」の{意味|いみ}を{理解|りかい}していないことに{驚|おどろ}き、Bは{相談者|そうだんしゃ}がその{表現|ひょうげん}を{使|つか}わないことに{驚|おどろ}いている。",
-								cn: "A 对咨询者不理解「いただきます」的意思感到吃惊，B 对咨询者不用这个表达感到吃惊。",
+								cn: "A对咨询者不理解「我开动了」的意思感到吃惊，B对咨询者不使用这一表达感到吃惊。",
 								en: "A is surprised the consultor does not understand the meaning of “itadakimasu,” and B is surprised the consultor does not use the expression.",
 							},
 							{
 								jp: "Aは{強制的|きょうせいてき}に「いただきます」を{言|い}わせる{学校|がっこう}に{抗議|こうぎ}すべきだと{言|い}い、Bは{挨拶|あいさつ}だと{考|かんが}えて{抗議|こうぎ}しないほうがいいと{言|い}っている。",
-								cn: "A 说应当向强制让学生说「いただきます」的学校抗议，B 说应把它当成招呼、最好不要抗议。",
+								cn: "A说应当向强制让人说「我开动了」的学校抗议，B认为那是问候，所以说还是不要抗议为好。",
 								en: "A says one should protest a school that forces children to say “itadakimasu,” and B says it is a greeting so it is better not to protest.",
 							},
 							{
 								jp: "AもBも、{食事|しょくじ}の{前|まえ}にする「いただきます」という{表現|ひょうげん}の{意味|いみ}を{相談者|そうだんしゃ}が{正|ただ}しく{理解|りかい}すべきだと{言|い}っている。",
-								cn: "A 和 B 都说咨询者应当正确理解饭前「いただきます」这一表达的意思。",
+								cn: "A和B都说，咨询者应当正确理解用餐前说的「我开动了」这一表达的意思。",
 								en: "Both A and B say the consultor should correctly understand the meaning of “itadakimasu” said before a meal.",
 							},
 							{
 								jp: "AもBも、{食事|しょくじ}の{前|まえ}の「いただきます」という{挨拶|あいさつ}を{家|いえ}でも{学校|がっこう}でも{子|こ}どもにもさせるべきだと{言|い}っている。",
-								cn: "A 和 B 都说应当让孩子在家里和学校吃饭前都说「いただきます」这句招呼。",
+								cn: "A和B都说，用餐前的问候「我开动了」，在家里也好、在学校也好，都应该让孩子也说。",
 								en: "Both A and B say children should be made to say the greeting “itadakimasu” before meals at home and at school.",
 							},
 						],
@@ -139,7 +139,7 @@ export const w3d7: ReadingDay = {
 				instruction:
 					"{次|つぎ}の{文章|ぶんしょう}を{読|よ}んで、{後|あと}の{問|と}いに{対|たい}する{答|こた}えとして{最|もっと}もよいものを1・2・3・4から{一|ひと}つ{選|えら}びなさい。",
 				instructionCn:
-					"阅读下面的文章，从 1・2・3・4 中选出最合适的一个作为后面问题的答案。",
+					"请阅读下面的文章，从1・2・3・4中选出一个最好的，作为后面问题的答案。",
 				instructionEn:
 					"Read the following text and choose the best answer to each question from 1, 2, 3, or 4.",
 				blocks: [
@@ -147,13 +147,13 @@ export const w3d7: ReadingDay = {
 						type: "paragraph",
 						indent: true,
 						jp: "{教|おし}えられたことをおぼえるだけなら、{電子計算機|でんしけいさんき}はみんなおぼえちゃうよ。よくおぼえたものは{成績|せいせき}がいいなんて、コケなこと（注1）だな。{学校|がっこう}の{成績|せいせき}がいいやつで、{仕事|しごと}のできないやつがたくさんいるんでね、おかしいと{思|おも}って、{医務室|いむしつ}へいってきたんです。{脳|のう}の{構造|こうぞう}はね、{考|かんが}えるところが{大脳|だいのう}で、{運動神経|うんどうしんけい}を{扱|あつか}っているのが{小脳|しょうのう}。ものをおぼえるところ、{電子計算機|でんしけいさんき}のコンピュータの{役目|やくめ}のところは、どのくらいの{大|おお}きさだったいったら、この{脳|のう}のなかで{親指|おやゆび}ぐらいのもんだそうだ。してみると、{親指|おやゆび}ぐらいのものが{成熟|せいじゅく}したか、せんかで（注2）、{成績|せいせき}がいい、{悪|わる}いなんて{答|こた}えを{出|だ}すのは{僭越|せんえつ}（注3）だね。いまの{学校|がっこう}はその{答|こた}を{出|だ}して{人間|にんげん}の{一生|いっしょう}を{左右|さゆう}しちまう（注4）。",
-						cn: "如果只是记住别人教的东西，电子计算机全能记住。记住了成绩就好，那可真是蠢话。学校成绩好却不会干活的人多得很。我觉得奇怪，就去了医务室。脑子的构造呢，思考的地方是大脑，管运动神经的是小脑。记东西的地方、起电子计算机那种作用的部分，有多大呢，听说只是脑子里大拇指那么一块。这么看来，只凭大拇指那么大的一块成熟了没有，就给出成绩好还是坏的答案，未免僭越。如今的学校给出那个答案，就把人的一生左右了。",
+						cn: "如果只是把教给的东西记住，电子计算机可是全都记得住的哟。说什么记得好的人成绩就好，真是蠢事（注1）啊。学校成绩好、工作却干不了的家伙多的是呢，我觉得奇怪，就到医务室去了。脑的构造呢，思考的地方是大脑，管运动神经的是小脑。记东西的地方，也就是担负电子计算机中电脑这一职能的部分，要说有多大吧，听说在这个脑里也就大拇指那么一块。这么看来，就凭大拇指那么大的东西成熟了还是没成熟（注2），就给出成绩好、成绩坏之类的答案，可真是僭越（注3）啊。现在的学校给出那个答案，就把人的一生给左右了（注4）。",
 						en: "If it is only a matter of remembering what you were taught, electronic computers remember it all. Saying that people who remember well get good grades is a foolish thing. There are plenty of people with good school grades who can’t do the job, you know. I thought that was odd, so I went along to the infirmary. The structure of the brain: the thinking part is the cerebrum, and the cerebellum handles the motor nerves. The part that remembers things, the part that does the job of an electronic computer — how big is it? They say it’s about the size of a thumb in this brain. That being so, it is presumptuous to give an answer of good grades or bad according to whether something the size of a thumb has matured or not. Schools today give that answer and end up deciding a person’s whole life.",
 					},
 					{
 						type: "source",
 						jp: "（PHP{研究所編|けんきゅうしょへん}『{本田宗一郎|ほんだそういちろう}「{一日一話|いちにちいちわ}」——『{独創|どくそう}』に{賭|か}ける{男|おとこ}の{哲学|てつがく}』PHP{研究所|けんきゅうしょ}）",
-						cn: "（PHP 研究所编《本田宗一郎「一日一话」——赌上「独创」的男人的哲学》PHP 研究所）",
+						cn: "（PHP研究所编《本田宗一郎「一日一话」——赌上「独创」的男人的哲学》PHP研究所）",
 						en: "(PHP Institute, ed., Honda Sōichirō: “One Story a Day” — The Philosophy of a Man Who Gambled on Originality, PHP Institute)",
 					},
 				],
@@ -170,10 +170,10 @@ export const w3d7: ReadingDay = {
 						cn: "「给出那个答案」是什么意思？",
 						en: "What does “giving that answer” mean?",
 						choices: [
-							{ jp: "{成績|せいせき}がいいか{悪|わる}いか{決|き}めて", cn: "判定成绩好还是坏", en: "deciding whether grades are good or bad" },
-							{ jp: "{覚|おぼ}える{部分|ぶぶん}の{脳|のう}の{大|おお}きさをはかって", cn: "测量负责记忆的那部分脑子有多大", en: "measuring how big the memory part of the brain is" },
-							{ jp: "{学校|がっこう}の{成績|せいせき}がいい{人|ひと}がなぜ{仕事|しごと}ができないか{聞|き}いて", cn: "去问为什么学校成绩好的人却不会干活", en: "asking why people with good school grades cannot do the job" },
-							{ jp: "{人間|にんげん}の{一生|いっしょう}を{左右|さゆう}するかどうか{考|かんが}えて", cn: "思考会不会左右人的一生", en: "considering whether it will decide a person’s whole life" },
+							{ jp: "{成績|せいせき}がいいか{悪|わる}いか{決|き}めて", cn: "决定成绩是好还是坏", en: "deciding whether grades are good or bad" },
+							{ jp: "{覚|おぼ}える{部分|ぶぶん}の{脳|のう}の{大|おお}きさをはかって", cn: "测量脑中负责记忆的部分的大小", en: "measuring how big the memory part of the brain is" },
+							{ jp: "{学校|がっこう}の{成績|せいせき}がいい{人|ひと}がなぜ{仕事|しごと}ができないか{聞|き}いて", cn: "询问为什么学校成绩好的人干不了工作", en: "asking why people with good school grades cannot do the job" },
+							{ jp: "{人間|にんげん}の{一生|いっしょう}を{左右|さゆう}するかどうか{考|かんが}えて", cn: "考虑是否会左右人的一生", en: "considering whether it will decide a person’s whole life" },
 						],
 						answer: 1,
 						explanation:
@@ -196,13 +196,13 @@ export const w3d7: ReadingDay = {
 					{
 						label: "4",
 						jp: "この{文章|ぶんしょう}で{筆者|ひっしゃ}が{言|い}いたいことは{何|なに}か。",
-						cn: "这篇文章里笔者想说的是什么？",
+						cn: "在这篇文章中，笔者想说的是什么？",
 						en: "What does the writer want to say in this text?",
 						choices: [
-							{ jp: "{人間|にんげん}の{脳|のう}はおぼえるだけの{電子計算機|でんしけいさんき}に{比|くら}べてはるかにすばらしい。", cn: "人脑比起只会记忆的电子计算机要出色得多。", en: "The human brain is far superior to an electronic computer that only remembers." },
-							{ jp: "{仕事|しごと}ができるかどうかは{脳|のう}のどの{部分|ぶぶん}で{考|かんが}えているかによる。", cn: "会不会干活取决于用脑子的哪一部分思考。", en: "Whether you can do a job depends on which part of the brain you think with." },
-							{ jp: "{脳|のう}のなかで{重要|じゅうよう}な{働|はたら}きをする{部分|ぶぶん}は{意外|いがい}に{小|ちい}さい。", cn: "脑子里起重要作用的部分意外地小。", en: "The part of the brain that does the important work is surprisingly small." },
-							{ jp: "おぼえることだけを{重視|じゅうし}した{現在|げんざい}の{学校|がっこう}{教育|きょういく}のあり{方|かた}はおかしい。", cn: "只重视记忆的现行学校教育的做法是不对的。", en: "The way school education is now, putting weight only on remembering, is wrong." },
+							{ jp: "{人間|にんげん}の{脳|のう}はおぼえるだけの{電子計算機|でんしけいさんき}に{比|くら}べてはるかにすばらしい。", cn: "人脑远比只会记东西的电子计算机出色。", en: "The human brain is far superior to an electronic computer that only remembers." },
+							{ jp: "{仕事|しごと}ができるかどうかは{脳|のう}のどの{部分|ぶぶん}で{考|かんが}えているかによる。", cn: "能不能干工作，取决于是用脑的哪个部分在思考。", en: "Whether you can do a job depends on which part of the brain you think with." },
+							{ jp: "{脳|のう}のなかで{重要|じゅうよう}な{働|はたら}きをする{部分|ぶぶん}は{意外|いがい}に{小|ちい}さい。", cn: "脑中发挥重要作用的部分意外地小。", en: "The part of the brain that does the important work is surprisingly small." },
+							{ jp: "おぼえることだけを{重視|じゅうし}した{現在|げんざい}の{学校|がっこう}{教育|きょういく}のあり{方|かた}はおかしい。", cn: "只重视记东西的现在的学校教育的做法是奇怪的。", en: "The way school education is now, putting weight only on remembering, is wrong." },
 						],
 						answer: 4,
 						explanation:
@@ -256,7 +256,7 @@ export const w3d7: ReadingDay = {
 			meaningEn: "it is not the case that….",
 			example: {
 				jp: "{食|た}べ{物|もの}を{学校|がっこう}からもらっているわけではありません。",
-				cn: "并不是从学校白拿食物。",
+				cn: "并不是从学校领受食物。",
 				en: "It isn’t as if the food is being given by the school.",
 			},
 		},
@@ -267,7 +267,7 @@ export const w3d7: ReadingDay = {
 			meaningEn: "unless…; as long as … not….",
 			example: {
 				jp: "{言|い}わなければ{絶対|ぜったい}にいけないと{言|い}わない{限|かぎ}り、{抗議|こうぎ}するほうが{間違|まちが}っている。",
-				cn: "除非说「不说就不行」，否则去抗议反而是错的。",
+				cn: "除非说「不说就绝对不行」，否则抗议的一方是错的。",
 				en: "Unless they say you absolutely must say it, it is wrong to protest.",
 			},
 		},
@@ -278,7 +278,7 @@ export const w3d7: ReadingDay = {
 			meaningEn: "should; ought to.",
 			example: {
 				jp: "あなたが「いただきます」の{本当|ほんとう}の{意味|いみ}を{理解|りかい}すべきでしょう。",
-				cn: "您应当理解「いただきます」真正的意思。",
+				cn: "您应当理解「我开动了」真正的意思吧。",
 				en: "You should understand the true meaning of “itadakimasu.”",
 			},
 		},

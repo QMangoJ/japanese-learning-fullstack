@@ -19,14 +19,14 @@ export const w5d7: ReadingDay = {
 				instruction:
 					"{次|つぎ}の{記事|きじ}はある{写真展|しゃしんてん}の{紹介記事|しょうかいきじ}である。{読|よ}んで、{後|あと}の{問|と}いに{対|たい}する{答|こた}えとして{最|もっと}もよいものを1・2・3・4から{一|ひと}つ{選|えら}びなさい。",
 				instructionCn:
-					"下面这篇报道是某摄影展的介绍。阅读后，从 1・2・3・4 中选出对后面问题最合适的一个答案。",
+					"下面的报道是某摄影展的介绍文章。请阅读，并从1・2・3・4中选出一个作为后面问题的最佳答案。",
 				instructionEn:
 					"The following article introduces a photography exhibition. Read it and choose the best answer to each question from 1, 2, 3, or 4.",
 				blocks: [
 					{
 						type: "paragraph",
 						jp: "{現在|げんざい}、{古川市美術館|ふるかわしびじゅつかん}で{震災|しんさい}（{注|ちゅう}1）{後|ご}10{年|ねん}を{記念|きねん}した{写真展|しゃしんてん}が{開|ひら}かれている。カメラマン（{注|ちゅう}2）はプロではなく、{一般|いっぱん}の{人|ひと}たち。{地震直後|じしんちょくご}の{町|まち}のようすを{撮|と}った{写真|しゃしん}{約|やく}100{点|てん}が{展示|てんじ}されている（{注|ちゅう}3）。「この{家|いえ}は、{亡|な}くなった{主人|しゅじん}が{好|す}きだった{家|いえ}なんです。{壊|こわ}れたままの{形|かたち}でもいいから、とにかく{写真|しゃしん}に{撮|と}って{残|のこ}しておきたいと{思|おも}って。そしたら、お{隣|となり}の{家|いえ}も、その{隣|となり}の{家|いえ}も{残|のこ}したいと{思|おも}って、この{辺|あた}りを{夢中|むちゅう}で{撮|と}りました。」と{話|はな}すのは、60{代|だい}の{主婦|しゅふ}の{安川|やすかわ}さん。{復興|ふっこう}（{注|ちゅう}4）が{進|すす}み、{新|あたら}しい{町並|まちな}み（{注|ちゅう}5）が{広|ひろ}がる{古川|ふるかわ}。10{年前|ねんまえ}、{確|たし}かにここで{起|お}こった{出来事|できごと}が{昨日|きのう}のことのように{思|おも}い{出|だ}される。{今月|こんげつ}{末|まつ}まで{開催|かいさい}されている（{注|ちゅう}6）。",
-						cn: "目前，古川市美术馆正在举办纪念震灾十年的摄影展。摄影师不是专业人士，而是普通人。展出约 100 张拍摄地震刚过之后城镇样子的照片。「这栋房子是过世的丈夫喜欢的家。就算保持倒塌的样子也没关系，只想先拍下来留下。结果隔壁的家、再隔壁的家也想留下，就把这一带拼命拍下来了。」说话的是 60 多岁的主妇安川。古川重建推进，新的街景铺展开来。十年前确实在这里发生的事情，宛如昨日。展览举办至本月底。",
+						cn: "目前，古川市美术馆正在举办纪念震灾（注1）后10年的摄影展。摄影师（注2）不是专业人士，而是普通人。展出约100张拍摄地震刚刚过后城镇样子的照片（注3）。「这栋房子，是去世的丈夫喜欢的房子。因为就算保持着损坏后的样子也没关系，我心想无论如何都要拍成照片保存下来。然后又想着把隔壁的房子、再隔壁的房子也保存下来，就把这一带入迷地拍了下来。」这样说的，是60多岁的主妇安川女士。重建（注4）正在推进、新的街景（注5）铺展开来的古川。10年前确实在这里发生的事情，仿佛就像昨天的事一样被回忆起来。截至本月底都在举办（注6）。",
 						en: "A photography exhibition marking ten years after the disaster is now on at the Furukawa City Art Museum. The photographers are not professionals but ordinary people. About 100 photographs of the town just after the earthquake are on display. “This house is the one my late husband loved. Even in its ruined shape I just wanted to photograph it and keep it. Then I wanted to keep the neighbor’s house, and the next one, and I shot this whole area in a frenzy,” says Mrs. Yasukawa, a homemaker in her sixties. Reconstruction has moved on, and a new townscape is spreading in Furukawa. The event that certainly happened here ten years ago comes back as if it were yesterday. The show runs through the end of this month.",
 						indent: true,
 					},
@@ -43,13 +43,13 @@ export const w5d7: ReadingDay = {
 					{
 						label: "1",
 						jp: "ここで{起|お}こった{出来事|できごと}とは、どんな{出来事|できごと}か。",
-						cn: "「在这里发生的事情」是什么样的事情？",
+						cn: "所谓在这里发生的事情，是什么样的事情？",
 						en: "What is the “event that happened here”?",
 						choices: [
-							{ jp: "{地震|じしん}があったこと", cn: "发生了地震", en: "that there was an earthquake" },
-							{ jp: "{安川|やすかわ}さんの{家|いえ}が{地震|じしん}で{壊|こわ}れたこと", cn: "安川的家被地震震塌了", en: "that Mrs. Yasukawa’s house was destroyed in the earthquake" },
-							{ jp: "{安川|やすかわ}さんの{夫|おっと}が{亡|な}くなったこと", cn: "安川的丈夫去世了", en: "that Mrs. Yasukawa’s husband died" },
-							{ jp: "{写真展|しゃしんてん}を{開|ひら}いたこと", cn: "举办了摄影展", en: "that a photography exhibition was opened" },
+							{ jp: "{地震|じしん}があったこと", cn: "发生了地震这件事", en: "that there was an earthquake" },
+							{ jp: "{安川|やすかわ}さんの{家|いえ}が{地震|じしん}で{壊|こわ}れたこと", cn: "安川女士的房子因地震毁坏了这件事", en: "that Mrs. Yasukawa’s house was destroyed in the earthquake" },
+							{ jp: "{安川|やすかわ}さんの{夫|おっと}が{亡|な}くなったこと", cn: "安川女士的丈夫去世了这件事", en: "that Mrs. Yasukawa’s husband died" },
+							{ jp: "{写真展|しゃしんてん}を{開|ひら}いたこと", cn: "举办了摄影展这件事", en: "that a photography exhibition was opened" },
 						],
 						answer: 1,
 						explanation:
@@ -72,13 +72,13 @@ export const w5d7: ReadingDay = {
 					{
 						label: "2",
 						jp: "この{文章|ぶんしょう}の{内容|ないよう}と{合|あ}っているものはどれか。",
-						cn: "与这篇文章内容相符的是哪一项？",
+						cn: "与这篇文章的内容相符的是哪一项？",
 						en: "Which of the following matches the content of this passage?",
 						choices: [
-							{ jp: "{安川|やすかわ}さんは、{地震|じしん}が{起|お}きているときに{写真|しゃしん}を{撮|と}った。", cn: "安川是在地震正在发生的时候拍照的。", en: "Mrs. Yasukawa took photographs while the earthquake was happening." },
-							{ jp: "{安川|やすかわ}さんは、{地震|じしん}から10{年|ねん}たった{町|まち}の{写真|しゃしん}を{撮|と}った。", cn: "安川拍的是地震过去十年后的城镇照片。", en: "Mrs. Yasukawa took photographs of the town ten years after the earthquake." },
-							{ jp: "{安川|やすかわ}さんは、{地震|じしん}の{直後|ちょくご}の{町|まち}を{写真|しゃしん}に{撮|と}った。", cn: "安川把地震刚过之后的城镇拍成了照片。", en: "Mrs. Yasukawa photographed the town immediately after the earthquake." },
-							{ jp: "{安川|やすかわ}さんは、{地震|じしん}のあとプロのカメラマンになった。", cn: "安川在地震之后成了专业摄影师。", en: "Mrs. Yasukawa became a professional photographer after the earthquake." },
+							{ jp: "{安川|やすかわ}さんは、{地震|じしん}が{起|お}きているときに{写真|しゃしん}を{撮|と}った。", cn: "安川女士在地震正在发生的时候拍了照片。", en: "Mrs. Yasukawa took photographs while the earthquake was happening." },
+							{ jp: "{安川|やすかわ}さんは、{地震|じしん}から10{年|ねん}たった{町|まち}の{写真|しゃしん}を{撮|と}った。", cn: "安川女士拍了地震10年后的城镇照片。", en: "Mrs. Yasukawa took photographs of the town ten years after the earthquake." },
+							{ jp: "{安川|やすかわ}さんは、{地震|じしん}の{直後|ちょくご}の{町|まち}を{写真|しゃしん}に{撮|と}った。", cn: "安川女士把地震刚刚过后的城镇拍成了照片。", en: "Mrs. Yasukawa photographed the town immediately after the earthquake." },
+							{ jp: "{安川|やすかわ}さんは、{地震|じしん}のあとプロのカメラマンになった。", cn: "安川女士在地震之后成了专业摄影师。", en: "Mrs. Yasukawa became a professional photographer after the earthquake." },
 						],
 						answer: 3,
 						explanation:
@@ -105,21 +105,21 @@ export const w5d7: ReadingDay = {
 				instruction:
 					"{次|つぎ}の{新聞記事|しんぶんきじ}を{読|よ}んで、{後|あと}の{問|と}いに{対|たい}する{答|こた}えとして{最|もっと}もよいものを1・2・3・4から{一|ひと}つ{選|えら}びなさい。",
 				instructionCn:
-					"阅读下面的新闻报道，从 1・2・3・4 中选出对后面问题最合适的一个答案。",
+					"请阅读下面的新闻报道，并从1・2・3・4中选出一个作为后面问题的最佳答案。",
 				instructionEn:
 					"Read the newspaper article below and choose the best answer to each question from 1, 2, 3, or 4.",
 				blocks: [
 					{
 						type: "title",
 						jp: "{京都|きょうと}、{人身事故|じんしんじこ}（{注|ちゅう}1）で13{万|まん}{人|にん}{影響|えいきょう}　JR{東海道線|とうかいどうせん}",
-						cn: "京都，人身事故影响 13 万人　JR 东海道线",
+						cn: "京都，因撞人事故（注1）致13万人受影响　JR东海道线",
 						en: "Kyoto: person-on-track accident affects 130,000 — JR Tokaido Line",
 						sub: { jp: "― {裁判員|さいばんいん}も{遅刻|ちこく} ―", cn: "― 裁判员也迟到 ―", en: "— lay judges late as well —" },
 					},
 					{
 						type: "paragraph",
 						jp: "8{日午前|にちごぜん}7{時|じ}5{分|ふん}ごろ、{京都府|きょうとふ}○○{町|ちょう}のJR{東海道線|とうかいどうせん}◎{駅付近|えきふきん}の{踏切|ふみきり}で、{女性|じょせい}が{下|くだ}り{貨物列車|かもつれっしゃ}にはねられ（{注|ちゅう}2）{死亡|しぼう}した。JR{西日本|にしにほん}によると、{上|のぼ}り{線|せん}85{本|ほん}が{運休|うんきゅう}、103{本|ほん}が{遅|おく}れ、13{万|まん}{人|にん}に{影響|えいきょう}が{出|で}た。{神戸地裁|こうべちさい}で{開|ひら}かれた{大麻|たいま}{取|と}り{扱|あつか}い{法違反|ほういはん}などの{罪|つみ}に{問|と}われた{被告|ひこく}（{注|ちゅう}3）の{裁判|さいばん}に、{裁判員|さいばんいん}が{遅刻|ちこく}。25{分|ふん}{遅|おく}れて{開廷|かいてい}（{注|ちゅう}4）した。△{署|しょ}によると、{死亡|しぼう}したのは70{代|だい}ぐらいの{女性|じょせい}で、{身元確認|みもとかくにん}を{進|すす}めている。{目撃者|もくげきしゃ}（{注|ちゅう}5）の{話|はなし}では、{女性|じょせい}が{自|みずか}ら{遮断機|しゃだんき}（{注|ちゅう}6）を{持|も}ち{上|あ}げて{線路内|せんろない}に{入|はい}った。",
-						cn: "8 日上午 7 点 5 分左右，在京都府 ○○ 町 JR 东海道线 ◎ 站附近的道口，一名女性被下行货车撞上死亡。据 JR 西日本称，上行线 85 趟停运、103 趟晚点，影响 13 万人。神户地方法院审理涉嫌违反大麻取缔法等罪的被告时，裁判员迟到，开庭推迟 25 分钟。据 △ 署称，死者是大约 70 多岁的女性，身份确认仍在进行。目击者说，该女性自己抬起道口栏杆走进了线路内。",
+						cn: "8日上午7时5分左右，在京都府○○町的JR东海道线◎站附近的道口，一名女性被下行货物列车撞上（注2）后死亡。据JR西日本称，上行线85列停运、103列晚点，对13万人造成了影响。在神户地方法院举行的、被问以违反大麻处理法等罪的被告（注3）的审判中，裁判员迟到。晚了25分钟才开庭（注4）。据△署称，死亡的是70多岁左右的女性，身份确认正在推进。据目击者（注5）的说法，该女性亲自抬起道口栏杆（注6），进入了线路内。",
 						en: "Around 7:05 a.m. on the 8th, at a crossing near ◎ Station on the JR Tokaido Line in ○○-chō, Kyoto Prefecture, a woman was struck by a down freight train and killed. According to JR West, 85 inbound trains were cancelled and 103 delayed, affecting 130,000 people. At a Kobe District Court trial of a defendant charged with violating marijuana-control law and other offenses, lay judges were late, and the court opened 25 minutes behind. △ Police say the dead woman appears to be in her seventies and identification is still under way. A witness said she herself lifted the crossing barrier and walked onto the tracks.",
 						indent: true,
 					},
@@ -136,13 +136,13 @@ export const w5d7: ReadingDay = {
 					{
 						label: "3",
 						jp: "この{記事|きじ}からはっきりわかることはどれか。",
-						cn: "从这篇报道可以清楚知道的是哪一项？",
+						cn: "从这篇报道中能够清楚知道的是哪一项？",
 						en: "Which of the following is clearly known from this article?",
 						choices: [
-							{ jp: "{事故|じこ}で{死亡|しぼう}した{人|ひと}は{自殺|じさつ}だった。", cn: "事故中死亡的人是自杀。", en: "The person who died in the accident committed suicide." },
-							{ jp: "{人|ひと}をはねた{電車|でんしゃ}の{乗客|じょうきゃく}にけがはなかった。", cn: "撞人的那趟电车的乘客没有受伤。", en: "None of the passengers on the train that hit the person were injured." },
-							{ jp: "{事故|じこ}による{開廷|かいてい}の{遅|おく}れは{裁判|さいばん}に{影響|えいきょう}した。", cn: "因事故造成的开庭推迟对审判产生了影响。", en: "The delay in opening court because of the accident affected the trial." },
-							{ jp: "{死亡|しぼう}した{人|ひと}の{身元|みもと}はまだわかっていない。", cn: "死者的身份还不清楚。", en: "The identity of the person who died is not yet known." },
+							{ jp: "{事故|じこ}で{死亡|しぼう}した{人|ひと}は{自殺|じさつ}だった。", cn: "在事故中死亡的人是自杀。", en: "The person who died in the accident committed suicide." },
+							{ jp: "{人|ひと}をはねた{電車|でんしゃ}の{乗客|じょうきゃく}にけがはなかった。", cn: "把人撞了的电车的乘客没有受伤。", en: "None of the passengers on the train that hit the person were injured." },
+							{ jp: "{事故|じこ}による{開廷|かいてい}の{遅|おく}れは{裁判|さいばん}に{影響|えいきょう}した。", cn: "因事故造成的开庭推迟影响了审判。", en: "The delay in opening court because of the accident affected the trial." },
+							{ jp: "{死亡|しぼう}した{人|ひと}の{身元|みもと}はまだわかっていない。", cn: "死亡的人的身份还不知道。", en: "The identity of the person who died is not yet known." },
 						],
 						answer: 4,
 						explanation:
@@ -165,13 +165,13 @@ export const w5d7: ReadingDay = {
 					{
 						label: "4",
 						jp: "この{記事|きじ}からわからないことはどれか。",
-						cn: "从这篇报道无法知道的是哪一项？",
+						cn: "从这篇报道中无法知道的是哪一项？",
 						en: "Which of the following cannot be known from this article?",
 						choices: [
 							{ jp: "{裁判|さいばん}の{終|お}わった{時刻|じこく}", cn: "审判结束的时刻", en: "the time the trial ended" },
 							{ jp: "{事故|じこ}の{起|お}こった{時刻|じこく}", cn: "事故发生的时刻", en: "the time the accident happened" },
 							{ jp: "{運休|うんきゅう}した{電車|でんしゃ}の{本数|ほんすう}", cn: "停运电车的趟数", en: "the number of cancelled trains" },
-							{ jp: "{亡|な}くなった{人|ひと}の{性別|せいべつ}", cn: "死者的性别", en: "the sex of the person who died" },
+							{ jp: "{亡|な}くなった{人|ひと}の{性別|せいべつ}", cn: "去世的人的性别", en: "the sex of the person who died" },
 						],
 						answer: 1,
 						explanation:
@@ -198,7 +198,7 @@ export const w5d7: ReadingDay = {
 				instruction:
 					"{次|つぎ}のAとBは、それぞれ「おさかなポスト」についてかかれた{記事|きじ}である。AとBの{両方|りょうほう}を{読|よ}んで、{後|あと}の{問|と}いに{対|たい}する{答|こた}えとして、{最|もっと}もよいものを1・2・3・4から{一|ひと}つ{選|えら}びなさい。",
 				instructionCn:
-					"下面的 A 和 B 分别是关于「鱼类邮筒」的报道。阅读 A 和 B 两边，从 1・2・3・4 中选出对后面问题最合适的一个答案。",
+					"下面的A和B，分别是就「鱼邮筒」所写的报道。请阅读A和B两者，并从1・2・3・4中选出一个作为后面问题的最佳答案。",
 				instructionEn:
 					"A and B below are each an article about “fish postboxes.” Read both A and B and choose the best answer to each question from 1, 2, 3, or 4.",
 				blocks: [
@@ -206,27 +206,27 @@ export const w5d7: ReadingDay = {
 					{
 						type: "title",
 						jp: "{川崎|かわさき}「おさかなポスト」に{捨|す}て{魚|うお}、{年|ねん}1{万匹|まんびき}",
-						cn: "川崎「鱼类邮筒」弃鱼，一年一万条",
+						cn: "川崎「鱼邮筒」遭扔鱼，一年1万条",
 						en: "Kawasaki “fish post”: 10,000 fish dumped a year",
 					},
 					{
 						type: "paragraph",
 						jp: "{自宅|じたく}で{飼|か}えなくなった{魚|さかな}を{引|ひ}き{取|と}る{川崎市多摩区|かわさきしたまく}の「おさかなポスト」に、{年間|ねんかん}{約|やく}1{万匹|まんびき}ものペットが{捨|す}てられている。{外来魚|がいらいぎょ}（{注|ちゅう}1）が{川|かわ}に{捨|す}てられるのを{防|ふせ}ぐポスト{本来|ほんらい}の{目的|もくてき}は{実現|じつげん}しつつあるが、「{最後|さいご}まで{面倒|めんどう}を{見|み}るのが{飼|か}い{主|ぬし}の{責任|せきにん}なのに」と{管理者|かんりしゃ}は{残念|ざんねん}がっている。",
-						cn: "川崎市多摩区回收家里养不了的鱼的「鱼类邮筒」，一年被丢进约一万条宠物鱼。防止外来鱼被扔进河里这一邮筒本来的目的正在逐步实现，但管理者遗憾地说：「负责到底本该是饲主的责任。」",
+						cn: "每年竟有约1万条之多的宠物，被丢弃在接收自己家里已无法饲养的鱼的川崎市多摩区「鱼邮筒」里。防止外来鱼（注1）被扔进河里这一邮筒本来的目的正在逐步实现，但管理者觉得可惜：「明明照顾到最后才是饲养人的责任，可是……」。",
 						en: "At the “fish post” in Tama Ward, Kawasaki, which takes in fish people can no longer keep at home, some 10,000 pets a year are being dumped. The box’s original purpose—stopping foreign fish being thrown into the river—is being achieved, but the manager is sorry: “Seeing it through to the end is the owner’s responsibility.”",
 						indent: true,
 					},
 					{
 						type: "paragraph",
 						jp: "ポストは{縦|たて}{約|やく}60センチ、{横|よこ}{約|やく}120センチ、{深|ふか}さ{約|やく}100センチの{網|あみ}のかごで、{捨|す}てられた{魚|さかな}は{近|ちか}くの{小中学校|しょうちゅうがっこう}や{老人|ろうじん}ホームなどに{贈|おく}られる。",
-						cn: "邮筒是约高 60 厘米、宽 120 厘米、深 100 厘米的网筐，被丢进来的鱼会赠给附近的中小学或养老院等。",
+						cn: "邮筒是高约60厘米、宽约120厘米、深约100厘米的网笼，被丢弃的鱼会被赠送给附近的小学、初中及养老院等。",
 						en: "The post is a mesh cage about 60 cm high, 120 cm wide and 100 cm deep; dumped fish are given to nearby elementary and junior-high schools, nursing homes, and the like.",
 						indent: true,
 					},
 					{
 						type: "paragraph",
 						jp: "{捨|す}てられる{魚|さかな}は{過去|かこ}3{年|ねん}、{年間|ねんかん}{約|やく}1{万匹|まんびき}。{飼|か}えなくなった{最近|さいきん}の{理由|りゆう}は、「マンションからアパートに{引|ひ}っ{越|こ}した」「えさ{代|だい}が{払|はら}えなくなった」など{不況|ふきょう}（{注|ちゅう}2）によるものが{多|おお}いという。",
-						cn: "被丢弃的鱼在过去三年里每年约一万条。最近养不了的理由，多为「从公寓搬到了小公寓」「饲料费付不起」等不景气造成的。",
+						cn: "被丢弃的鱼，过去3年里每年约1万条。据说，最近变得无法饲养的理由，多为「从高级公寓搬到了廉价公寓」、「饲料费付不起了」等不景气（注2）所致。",
 						en: "For the past three years about 10,000 fish a year have been dumped. Recent reasons for no longer keeping them are often recession-related, such as “we moved from a condominium to an apartment” or “we can no longer afford feed.”",
 						indent: true,
 					},
@@ -234,20 +234,20 @@ export const w5d7: ReadingDay = {
 					{
 						type: "title",
 						jp: "{多摩川|たまがわ}の「タマゾン」{対策|たいさく}に「おさかなポスト」",
-						cn: "针对多摩川「塔马逊」的对策：「鱼类邮筒」",
+						cn: "作为多摩川「多摩逊」对策的「鱼邮筒」",
 						en: "A “fish post” as a measure against the Tama River “Tamazon”",
 					},
 					{
 						type: "paragraph",
 						jp: "いま{多摩川|たまがわ}が「タマゾン」などと{呼|よ}ばれている。これは、アマゾン{川|がわ}にすむようなピラニアやアロワナ、グッピー、エンゼルフィッシュといった{様々|さまざま}な{外来種|がいらいしゅ}が{増|ふ}えたため、もともといた{魚|さかな}が{外来種|がいらいしゅ}に{食|た}べられて{少|すく}なくなってしまったからである。",
-						cn: "现在多摩川被称为「塔马逊」。因为亚马逊河里才有的食人鱼、龙鱼、孔雀鱼、神仙鱼等各种外来种增加，原来就在的鱼被外来种吃掉、变少了。",
+						cn: "现在，多摩川被称作「多摩逊」之类。这是因为，由于像栖息在亚马逊河的食人鱼、龙鱼、孔雀鱼、神仙鱼这样的各种外来种增多，原本就有的鱼被外来种吃掉，结果变少了。",
 						en: "The Tama River is now nicknamed the “Tamazon.” All sorts of introduced species that belong in the Amazon—piranha, arowana, guppies, angelfish—have increased, and the fish that were originally there have been eaten and dwindled.",
 						indent: true,
 					},
 					{
 						type: "paragraph",
 						jp: "この「タマゾン」{対策|たいさく}に、「おさかなポスト」というものが{効果|こうか}を{上|あ}げている。このポストは2005{年|ねん}に{設置|せっち}されたが、そのきっかけは2004{年|ねん}の{夏|なつ}のこと。「{世話|せわ}をしないなら{捨|す}てなさい」と{母親|ははおや}に{叱|しか}られて{泣|な}きながら{金魚|きんぎょ}を{捨|す}てに{来|き}た{男|おとこ}の{子|こ}に「{川|かわ}に{捨|す}てないで。ときどき{会|あ}いに{来|き}なさいよ。」と{言|い}って{金魚|きんぎょ}を{預|あず}かったのが{始|はじ}まりで、「{生|い}き{物|もの}の{命|いのち}を{大切|たいせつ}にすること」と「{生態系|せいたいけい}を{乱|みだ}すのを{防|ふせ}ぐこと」に{役立|やくだ}っていると{管理者|かんりしゃ}は{言|い}う。",
-						cn: "作为「塔马逊」对策，「鱼类邮筒」正在见效。这个邮筒 2005 年设置，起因是 2004 年夏天。一个被母亲骂「不照料就扔掉」而哭着来扔金鱼的男孩，管理人说「别扔河里。偶尔来看看它」，把金鱼收下——由此开始。管理者说，这有助于「珍惜生命」和「防止扰乱生态系统」。",
+						cn: "作为应对这一「多摩逊」的对策，一种叫做「鱼邮筒」的东西正在取得成效。这个邮筒是2005年设置的，但其契机却是2004年夏天的事。对一个被母亲责骂「不好好照顾的话就扔掉」、哭着前来扔金鱼的男孩说了「不要扔进河里。要时不时来看看它哦」，并代为保管了金鱼，这就是开始。管理者说，这有助于「珍惜生物的生命」和「防止扰乱生态系统」。",
 						en: "As a measure against the “Tamazon,” the “fish post” is proving effective. It was installed in 2005; the trigger was the summer of 2004. A boy who had been scolded “If you won’t look after it, throw it away” came in tears to dump a goldfish; he was told “Don’t throw it in the river. Come visit it now and then,” and the goldfish was taken in—that is how it began. The manager says it helps both “to value the lives of living things” and “to keep the ecosystem from being disturbed.”",
 						indent: true,
 					},
@@ -260,13 +260,13 @@ export const w5d7: ReadingDay = {
 					{
 						label: "5",
 						jp: "{両方|りょうほう}の{記事|きじ}に{書|か}かれている{内容|ないよう}はどれか。",
-						cn: "两边报道都写到的内容是哪一项？",
+						cn: "两篇报道都写到的内容是哪一项？",
 						en: "Which content is written in both articles?",
 						choices: [
-							{ jp: "おさかなポストが{置|お}かれるようになったきっかけ", cn: "鱼类邮筒被设置起来的契机", en: "what led to the fish post being set up" },
-							{ jp: "おさかなポストを{設置|せっち}している{目的|もくてき}", cn: "设置鱼类邮筒的目的", en: "the purpose of installing the fish post" },
-							{ jp: "{外来魚|がいらいぎょ}が{川|かわ}に{捨|す}てられると{困|こま}る{理由|りゆう}", cn: "外来鱼被扔进河里会带来困扰的理由", en: "why it is a problem if foreign fish are dumped in the river" },
-							{ jp: "おさかなポストに{捨|す}てられる{魚|さかな}の{数|かず}", cn: "丢进鱼类邮筒的鱼的数量", en: "the number of fish dumped in the fish post" },
+							{ jp: "おさかなポストが{置|お}かれるようになったきっかけ", cn: "鱼邮筒开始被设置的契机", en: "what led to the fish post being set up" },
+							{ jp: "おさかなポストを{設置|せっち}している{目的|もくてき}", cn: "设置鱼邮筒的目的", en: "the purpose of installing the fish post" },
+							{ jp: "{外来魚|がいらいぎょ}が{川|かわ}に{捨|す}てられると{困|こま}る{理由|りゆう}", cn: "外来鱼被扔进河里会令人困扰的理由", en: "why it is a problem if foreign fish are dumped in the river" },
+							{ jp: "おさかなポストに{捨|す}てられる{魚|さかな}の{数|かず}", cn: "被丢进鱼邮筒的鱼的数量", en: "the number of fish dumped in the fish post" },
 						],
 						answer: 2,
 						explanation:
@@ -289,13 +289,13 @@ export const w5d7: ReadingDay = {
 					{
 						label: "6",
 						jp: "{両方|りょうほう}の{記事|きじ}から{判断|はんだん}して「おさかなポスト」に{関|かん}して{管理者|かんりしゃ}はどのように{思|おも}っていると{考|かんが}えられるか。",
-						cn: "根据两边报道判断，关于「鱼类邮筒」，可以认为管理者是怎么想的？",
+						cn: "根据两篇报道来判断，关于「鱼邮筒」，可以认为管理者是怎样想的？",
 						en: "Judging from both articles, how does the manager appear to feel about the “fish post”?",
 						choices: [
-							{ jp: "おさかなポストに{捨|す}てられる{魚|さかな}の{数|かず}が{増|ふ}えているので{困|こま}っている。", cn: "丢进鱼类邮筒的鱼在增加，所以很困扰。", en: "They are troubled because the number of fish dumped in the post is rising." },
-							{ jp: "ペットの{外来魚|がいらいぎょ}は{日本|にほん}の{川|かわ}に{捨|す}てられると{死|し}んでしまうので{捨|す}てないでほしい。", cn: "宠物外来鱼扔进日本的河里就会死，所以希望不要扔。", en: "They want people not to dump pet foreign fish because those fish die in Japanese rivers." },
-							{ jp: "{近|ちか}くの{学校|がっこう}や{老人|ろうじん}ホームに{贈|おく}ると{喜|よろこ}ばれるのでもっと{集|あつ}めたい。", cn: "赠给附近学校和养老院会让人高兴，所以还想再多收集。", en: "They want to collect still more because schools and nursing homes are glad to receive them." },
-							{ jp: "ペットの{魚|さかな}の{命|いのち}も、{川|かわ}にもともとすんでいる{魚|さかな}の{命|いのち}も{大切|たいせつ}にしてほしい。", cn: "希望宠物鱼的生命、河里原来就有的鱼的生命都得到珍惜。", en: "They want people to value both the lives of pet fish and the lives of the fish that originally live in the river." },
+							{ jp: "おさかなポストに{捨|す}てられる{魚|さかな}の{数|かず}が{増|ふ}えているので{困|こま}っている。", cn: "因为被丢进鱼邮筒的鱼的数量正在增加，所以感到困扰。", en: "They are troubled because the number of fish dumped in the post is rising." },
+							{ jp: "ペットの{外来魚|がいらいぎょ}は{日本|にほん}の{川|かわ}に{捨|す}てられると{死|し}んでしまうので{捨|す}てないでほしい。", cn: "作为宠物的外来鱼一旦被扔进日本的河里就会死掉，所以希望不要扔掉。", en: "They want people not to dump pet foreign fish because those fish die in Japanese rivers." },
+							{ jp: "{近|ちか}くの{学校|がっこう}や{老人|ろうじん}ホームに{贈|おく}ると{喜|よろこ}ばれるのでもっと{集|あつ}めたい。", cn: "因为赠给附近的学校和养老院会让人高兴，所以想再多收集一些。", en: "They want to collect still more because schools and nursing homes are glad to receive them." },
+							{ jp: "ペットの{魚|さかな}の{命|いのち}も、{川|かわ}にもともとすんでいる{魚|さかな}の{命|いのち}も{大切|たいせつ}にしてほしい。", cn: "希望宠物鱼的生命也好，原本栖息在河里的鱼的生命也好，都能得到珍惜。", en: "They want people to value both the lives of pet fish and the lives of the fish that originally live in the river." },
 						],
 						answer: 4,
 						explanation:
@@ -360,7 +360,7 @@ export const w5d7: ReadingDay = {
 			meaningEn: "according to …. News marking of sources; 話では is a witness/hearsay line, not a confirmed fact.",
 			example: {
 				jp: "{目撃者|もくげきしゃ}の{話|はなし}では、{女性|じょせい}が{自|みずか}ら{遮断機|しゃだんき}を{持|も}ち{上|あ}げた。",
-				cn: "据目击者说，该女性自己抬起了道口栏杆。",
+				cn: "据目击者的说法，女性亲自抬起了道口栏杆。",
 				en: "According to a witness, the woman herself lifted the crossing barrier.",
 			},
 		},
@@ -371,7 +371,7 @@ export const w5d7: ReadingDay = {
 			meaningEn: "that was how it began / starting from …. Introduces an origin story.",
 			example: {
 				jp: "{金魚|きんぎょ}を{預|あず}かったのが{始|はじ}まりで、{生態系|せいたいけい}を{乱|みだ}すのを{防|ふせ}ぐことに{役立|やくだ}っている。",
-				cn: "从收下金鱼开始，后来有助于防止扰乱生态系统。",
+				cn: "以代为保管金鱼为开端，并且有助于防止扰乱生态系统。",
 				en: "Taking in the goldfish is how it began, and it now helps keep the ecosystem from being disturbed.",
 			},
 		},

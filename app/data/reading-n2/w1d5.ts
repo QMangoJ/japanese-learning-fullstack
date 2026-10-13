@@ -12,17 +12,17 @@ export const w1d5: ReadingDay = {
 
 	point: {
 		title: "{施設|しせつ}などの{利用|りよう}に{関|かん}する{注意事項|ちゅういじこう}をよく{読|よ}もう！",
-		titleCn: "仔细阅读与使用设施等相关的注意事项！",
+		titleCn: "仔细阅读有关设施等使用的注意事项吧！",
 		titleEn: "Read the notices for the users of the facility carefully!",
 		figure: {
 			alt: "自転車がなくて困っている人「ボクの自転車がない……」と、「ちゃんと駐輪場に止めないからだよ。」と指摘する人",
-			cn: "一个人找不到自行车：「我的自行车没了……」；另一个人说：「因为你没好好停在停车场啊。」",
+			cn: "因自行车不见了而发愁的人：「我的自行车不见了……」，以及指出「那是因为你不好好停在自行车停车场啊。」的人",
 			en: "One character has lost a bike—“My bicycle is gone…”—and the other says, “That’s because you didn’t park it properly in the bike lot.”",
 		},
 		tips: [
 			{
 				jp: "{例えば|たとえば}{駐輪場|ちゅうりんじょう}の{利用案内|りようあんない}にはこんな{言葉|ことば}が{出|で}てきます。",
-				cn: "比如自行车停车场的使用指南里会出现下面这些词语。",
+				cn: "例如，自行车停车场的使用指南中会出现这样的词语。",
 				en: "A bicycle-parking guide, for example, uses words like these.",
 			},
 		],
@@ -42,7 +42,7 @@ export const w1d5: ReadingDay = {
 
 	renshu: {
 		instruction: "{次|つぎ}の{会話文|かいわぶん}を{読|よ}んで、{後|あと}の{文|ぶん}から{正|ただ}しいものを{選|えら}ぼう。",
-		instructionCn: "阅读下面的对话，从后面的句子中选出正确的。（答案在下一页）",
+		instructionCn: "阅读下面的对话，从后面的句子中选出正确的吧。",
 		instructionEn: "Read the conversation below and choose the correct statements from the sentences that follow. (Answers are on the next page.)",
 		blocks: [
 			{
@@ -51,7 +51,7 @@ export const w1d5: ReadingDay = {
 				speakerCn: "妹妹",
 				speakerEn: "Younger sister",
 				jp: "お{兄|にい}ちゃん、いつも{自転車|じてんしゃ}どこに{止|と}めてる？",
-				cn: "哥，你自行车一般都停哪儿？",
+				cn: "哥，你总是把自行车停在哪儿？",
 				en: "Where do you always park your bike, brother?",
 			},
 			{
@@ -60,7 +60,7 @@ export const w1d5: ReadingDay = {
 				speakerCn: "哥哥",
 				speakerEn: "Older brother",
 				jp: "たいてい{駅前|えきまえ}の{無料|むりょう}のとこ。いっぱいのときは、{北口|きたぐち}。",
-				cn: "多半在车站前免费的地方。满了就停北口。",
+				cn: "一般都是车站前免费的地方。满了的时候，北口。",
 				en: "Usually the free place in front of the station. When that’s full, the north exit.",
 			},
 			{
@@ -69,7 +69,7 @@ export const w1d5: ReadingDay = {
 				speakerCn: "妹妹",
 				speakerEn: "Younger sister",
 				jp: "{北口|きたぐち}って{有料|ゆうりょう}でしょう？　いくらかかる？",
-				cn: "北口是收费的吧？要多少钱？",
+				cn: "北口是收费的吧？　要多少钱？",
 				en: "The north exit is paid, right? How much is it?",
 			},
 			{
@@ -78,7 +78,7 @@ export const w1d5: ReadingDay = {
 				speakerCn: "哥哥",
 				speakerEn: "Older brother",
 				jp: "100{円|えん}で6{時間|じかん}だけど、{最初|さいしょ}の2{時間|じかん}は{無料|むりょう}だし、{近|ちか}くて、{便利|べんり}だよ。",
-				cn: "100 日元停 6 小时，不过开头 2 小时免费，又近又方便。",
+				cn: "100日元可以停6小时，不过最初的2小时是免费的，而且又近又方便哦。",
 				en: "It’s 100 yen for 6 hours, but the first 2 hours are free, and it’s close and convenient.",
 			},
 			{
@@ -87,7 +87,7 @@ export const w1d5: ReadingDay = {
 				speakerCn: "妹妹",
 				speakerEn: "Younger sister",
 				jp: "そうなんだ、{知|し}らなかった。{私|わたし}、{駅前|えきまえ}が{満車|まんしゃ}だったから{公園|こうえん}の{無料駐輪場|むりょうちゅうりんじょう}まで{戻|もど}って{遅刻|ちこく}しそうになっちゃった。",
-				cn: "这样啊，我都不知道。我因为站前停满了，又折回公园的免费停车场，差点迟到。",
+				cn: "原来是这样啊，我不知道。我因为车站前面满车了，折回到公园的免费自行车停车场，结果差点迟到了。",
 				en: "I didn’t know that. The station-front lot was full, so I went back as far as the free park lot and almost ended up late.",
 			},
 			{
@@ -96,7 +96,7 @@ export const w1d5: ReadingDay = {
 				speakerCn: "哥哥",
 				speakerEn: "Older brother",
 				jp: "{要領|ようりょう}{悪|わる}いからなあ、お前は。{月極|つきぎめ}にすれば？　{学割|がくわり}も{利|き}くんだし。",
-				cn: "你就是不机灵。办包月啊？学生优惠也适用。",
+				cn: "你啊，可真不得要领。办包月怎么样？　学生折扣也能用呢。",
 				en: "You’re just not practical. Why not get a monthly space? The student discount applies too.",
 			},
 			{
@@ -105,28 +105,28 @@ export const w1d5: ReadingDay = {
 				speakerCn: "妹妹",
 				speakerEn: "Younger sister",
 				jp: "ほとんど{毎日行|まいにちい}くんだから、そうだね……。",
-				cn: "我几乎每天都去，也是……。",
+				cn: "因为几乎每天都去，也是啊……。",
 				en: "I go almost every day, so yeah…",
 			},
 		],
 		choices: [
-			{ jp: "{妹|いもうと}は{北口|きたぐち}の{駐輪場|ちゅうりんじょう}を{利用|りよう}したことがない。", cn: "妹妹没用过北口的停车场。", en: "The sister has never used the north-exit bike lot." },
-			{ jp: "{兄|あに}はいつでも{無料駐輪場|むりょうちゅうりんじょう}を{利用|りよう}している。", cn: "哥哥无论何时都在用免费停车场。", en: "The brother always uses a free bike lot." },
-			{ jp: "{兄|あに}も{妹|いもうと}も{駅前|えきまえ}の{無料駐輪場|むりょうちゅうりんじょう}を{利用|りよう}したことがある。", cn: "哥哥和妹妹都用过站前的免费停车场。", en: "Both brother and sister have used the free lot in front of the station." },
-			{ jp: "{兄|あに}は{妹|いもうと}に{学生割引|がくせいわりびき}の{使|つか}える{駐輪場|ちゅうりんじょう}をすすめている。", cn: "哥哥在向妹妹推荐能用学生优惠的停车场。", en: "The brother is recommending a bike lot where a student discount can be used." },
-			{ jp: "{北口|きたぐち}の{駐輪場|ちゅうりんじょう}は、{駅ビル|えきびる}で{買|か}い{物|もの}をすれば8{時間|じかん}100{円|えん}で{止|と}められる。", cn: "北口停车场如果在车站大楼购物，8 小时 100 日元就能停。", en: "At the north-exit lot you can park for 8 hours at 100 yen if you shop in the station building." },
+			{ jp: "{妹|いもうと}は{北口|きたぐち}の{駐輪場|ちゅうりんじょう}を{利用|りよう}したことがない。", cn: "妹妹没有使用过北口的自行车停车场。", en: "The sister has never used the north-exit bike lot." },
+			{ jp: "{兄|あに}はいつでも{無料駐輪場|むりょうちゅうりんじょう}を{利用|りよう}している。", cn: "哥哥无论何时都使用免费自行车停车场。", en: "The brother always uses a free bike lot." },
+			{ jp: "{兄|あに}も{妹|いもうと}も{駅前|えきまえ}の{無料駐輪場|むりょうちゅうりんじょう}を{利用|りよう}したことがある。", cn: "哥哥和妹妹都使用过车站前的免费自行车停车场。", en: "Both brother and sister have used the free lot in front of the station." },
+			{ jp: "{兄|あに}は{妹|いもうと}に{学生割引|がくせいわりびき}の{使|つか}える{駐輪場|ちゅうりんじょう}をすすめている。", cn: "哥哥正在向妹妹推荐可以使用学生折扣的自行车停车场。", en: "The brother is recommending a bike lot where a student discount can be used." },
+			{ jp: "{北口|きたぐち}の{駐輪場|ちゅうりんじょう}は、{駅ビル|えきびる}で{買|か}い{物|もの}をすれば8{時間|じかん}100{円|えん}で{止|と}められる。", cn: "北口的自行车停车场，如果在车站大楼购物，就能以8小时100日元停放。", en: "At the north-exit lot you can park for 8 hours at 100 yen if you shop in the station building." },
 		],
 		answers: [1, 3, 4],
 		hint: {
 			jp: "「{無料|むりょう}のとこ」＝{無料|むりょう}のところ　／　「{学割|がくわり}が{利|き}く」＝{学割|がくわり}が{使|つか}える",
-			cn: "「免费的とこ」＝免费的地方。　「学割が利く」＝能用学生优惠。",
+			cn: "「無料のとこ」＝無料のところ（免费的地方）　／　「学割が利く」＝学割が使える（能使用学生折扣）",
 			en: "muryō no toko = muryō no tokoro (the free place). gakuwari ga kiku = the student discount can be used.",
 		},
 	},
 
 	mondai: {
 		instruction: "{次|つぎ}の{駐輪場|ちゅうりんじょう}の{利用案内|りようあんない}を{見|み}て、{後|あと}の{問|と}いに{答|こた}えなさい。",
-		instructionCn: "看下面的自行车停车场使用指南，回答后面的问题。（答案在别册 p.2）",
+		instructionCn: "看下面的自行车停车场使用指南，回答后面的问题。",
 		instructionEn: "Look at the bicycle-parking guide below and answer the questions that follow. (Answers are in the separate booklet, p. 2.)",
 		blocks: [
 			{
@@ -138,19 +138,19 @@ export const w1d5: ReadingDay = {
 			{
 				type: "paragraph",
 				jp: "ご{利用時間|りようじかん}：5{時|じ}〜{翌|よく}1{時|じ}（1〜5{時|じ}の{間|あいだ}は{自転車|じてんしゃ}の{出|だ}し{入|い}れができません。）",
-				cn: "使用时间：5 点〜次日 1 点（1 点〜5 点之间不能存取自行车。）",
+				cn: "使用时间：5点〜次日1点（1点〜5点之间不能存取自行车。）",
 				en: "Hours: 5:00 to 1:00 the next day (bicycles cannot be taken in or out between 1:00 and 5:00).",
 			},
 			{
 				type: "paragraph",
 				jp: "{定期利用|ていきりよう}〔{月極|つきぎめ}〕の{場合|ばあい}は{前|まえ}の{月|つき}の25{日|にち}までに{申込書|もうしこみしょ}を{駐輪場窓口|ちゅうりんじょうまどぐち}に{提出|ていしゅつ}してください。",
-				cn: "定期使用〔包月〕时，请在前一个月的 25 日之前把申请书交到停车场窗口。",
+				cn: "定期使用〔包月〕的情况下，请在前一个月的25日之前将申请书提交到自行车停车场窗口。",
 				en: "For regular (monthly) use, submit the application form at the parking window by the 25th of the previous month.",
 			},
 			{
 				type: "note",
 				jp: "＊お{申|もう}し{込|こ}みの{際|さい}は{料金|りょうきん}（{契約月数分|けいやくげっすうぶん}）および（{注|ちゅう}）{身分証明書|みぶんしょうめいしょ}（{学割|がくわり}を{受|う}ける{場合|ばあい}は{学生証|がくせいしょう}）・{印鑑|いんかん}が{必要|ひつよう}です。",
-				cn: "＊申请时需要费用（按合同月数）、以及（注）身份证明（享受学生优惠时为学生证）和印章。",
+				cn: "＊申请时需要费用（按合同月数计算）以及（注）身份证明（享受学生折扣的情况下为学生证）・印章。",
 				en: "* When you apply you need the fee (for the number of contracted months) and (note) identification (a student ID if you want the student discount) and a seal.",
 			},
 			{
@@ -159,34 +159,34 @@ export const w1d5: ReadingDay = {
 					[
 						{ jp: "{料金|りょうきん}", cn: "费用", en: "Fees", header: true, align: "center" },
 						{ jp: "{定期利用|ていきりよう}〔{月極|つきぎめ}〕", cn: "定期使用〔包月〕", en: "Regular use (monthly)", header: true, align: "center" },
-						{ jp: "{一時利用|いちじりよう}〔{時間貸|じかんがし}〕", cn: "临时使用〔计时〕", en: "Short-term use (hourly)", header: true, align: "center" },
+						{ jp: "{一時利用|いちじりよう}〔{時間貸|じかんがし}〕", cn: "临时使用〔计时出租〕", en: "Short-term use (hourly)", header: true, align: "center" },
 					],
 					[
 						{ jp: "{自転車|じてんしゃ}", cn: "自行车", en: "Bicycle", header: true, align: "center" },
 						{
 							jp: "2,000{円|えん}\n（{学割|がくわり} 1,500{円|えん}）",
-							cn: "2,000 日元\n（学生优惠 1,500 日元）",
+							cn: "2,000日元\n（学生折扣价 1,500日元）",
 							en: "2,000 yen\n(student rate 1,500 yen)",
 							align: "center",
 						},
 						{
 							jp: "{最初|さいしょ}の2{時間|じかん}は{無料|むりょう}\n{以降|いこう}6{時間|じかん}あたり100{円|えん}",
-							cn: "开头 2 小时免费\n之后每 6 小时 100 日元",
+							cn: "最初的2小时免费\n此后每6小时100日元",
 							en: "First 2 hours free\nthen 100 yen per 6 hours",
 							align: "center",
 						},
 					],
 					[
-						{ jp: "{原付|げんつき}（50cc{以下|いか}）", cn: "轻便摩托（50cc 以下）", en: "Moped (50 cc or under)", header: true, align: "center" },
+						{ jp: "{原付|げんつき}（50cc{以下|いか}）", cn: "轻便摩托车（50cc以下）", en: "Moped (50 cc or under)", header: true, align: "center" },
 						{
 							jp: "2,600{円|えん}\n（{学割|がくわり} 2,000{円|えん}）",
-							cn: "2,600 日元\n（学生优惠 2,000 日元）",
+							cn: "2,600日元\n（学生折扣价 2,000日元）",
 							en: "2,600 yen\n(student rate 2,000 yen)",
 							align: "center",
 						},
 						{
 							jp: "{最初|さいしょ}の2{時間|じかん}は{無料|むりょう}\n{以降|いこう}6{時間|じかん}あたり200{円|えん}",
-							cn: "开头 2 小时免费\n之后每 6 小时 200 日元",
+							cn: "最初的2小时免费\n此后每6小时200日元",
 							en: "First 2 hours free\nthen 200 yen per 6 hours",
 							align: "center",
 						},
@@ -196,19 +196,19 @@ export const w1d5: ReadingDay = {
 			{
 				type: "heading",
 				jp: "{駐輪場|ちゅうりんじょう}はルールを{守|まも}ってご{利用|りよう}しましょう。",
-				cn: "请遵守规则使用停车场。",
+				cn: "请遵守规则使用自行车停车场吧。",
 				en: "Please follow the rules when using the bicycle parking.",
 			},
 			{
 				type: "list",
 				marker: "●",
 				items: [
-					{ jp: "ゴミなどは{捨|す}てないでください。", cn: "请不要扔垃圾等。", en: "Please do not throw away garbage or the like." },
-					{ jp: "{盗難防止|とうなんぼうし}のため、カギは{必|かなら}ずおかけください。", cn: "为防止被盗，请务必上锁。", en: "Always lock your bicycle to prevent theft." },
-					{ jp: "{駐輪場|ちゅうりんじょう}での{事故|じこ}・{盗難|とうなん}・{破損|はそん}{等|とう}については、{一切責任|いっさいせきにん}を{負|お}いません。", cn: "对于停车场内的事故、被盗、损坏等，概不负责。", en: "We assume no responsibility whatsoever for accidents, theft, damage, etc. in the lot." },
+					{ jp: "ゴミなどは{捨|す}てないでください。", cn: "请不要丢弃垃圾之类的东西。", en: "Please do not throw away garbage or the like." },
+					{ jp: "{盗難防止|とうなんぼうし}のため、カギは{必|かなら}ずおかけください。", cn: "为了防止被盗，请务必上锁。", en: "Always lock your bicycle to prevent theft." },
+					{ jp: "{駐輪場|ちゅうりんじょう}での{事故|じこ}・{盗難|とうなん}・{破損|はそん}{等|とう}については、{一切責任|いっさいせきにん}を{負|お}いません。", cn: "对于自行车停车场内的事故・盗窃・破损等，不承担一切责任。", en: "We assume no responsibility whatsoever for accidents, theft, damage, etc. in the lot." },
 					{
 						jp: "{無断|むだん}で{駐輪|ちゅうりん}している{場合|ばあい}や、{一時利用|いちじりよう}{置|お}き{場|ば}に2{日以上|にちいじょう}{放置|ほうち}されている{場合|ばあい}は{撤去|てっきょ}の{対象|たいしょう}となります＊のでご{注意|ちゅうい}ください。",
-						cn: "擅自停放，或在临时停车区放置 2 天以上的，将成为拖走对象＊，请注意。",
+						cn: "擅自停放的情况下，或在临时使用停放处被放置2天以上的情况下，将成为撤除对象＊，请注意。",
 						en: "Unauthorized parking, or bikes left in the short-term area for 2 days or more, are subject to removal＊.",
 					},
 				],
@@ -225,7 +225,7 @@ export const w1d5: ReadingDay = {
 		pageNotes: [
 			{
 				jp: "＊ Bicycles parked illegally or in temporary parking areas for more than 2 days will be subject to removal",
-				cn: "＊擅自停放的自行车或者在临时停车处放置两天以上的自行车会予以撤除",
+				cn: "＊非法停放，或在临时停车区域停放超过2天的自行车，将作为撤除对象。",
 				en: "Bicycles parked illegally or in temporary parking areas for more than 2 days will be subject to removal",
 			},
 		],
@@ -233,13 +233,13 @@ export const w1d5: ReadingDay = {
 			{
 				label: "問1",
 				jp: "{正|ただ}しいものはどれか。",
-				cn: "哪一项是正确的？",
+				cn: "正确的是哪一个？",
 				en: "Which of the following is correct?",
 				choices: [
-					{ jp: "{月極|つきぎめ}で{利用|りよう}したい{場合|ばあい}には、{市役所|しやくしょ}に{申|もう}し{込|こ}まなければならない。", cn: "想包月使用时，必须向市政府申请。", en: "If you want monthly use, you must apply at city hall." },
-					{ jp: "4{月|がつ}から{定期利用|ていきりよう}したい{場合|ばあい}は3{月末|がつまつ}までに{申|もう}し{込|こ}まなければならない。", cn: "想从 4 月开始定期使用时，必须在 3 月底之前申请。", en: "To start regular use in April, you must apply by the end of March." },
-					{ jp: "{一時利用|いちじりよう}で1{時間|じかん}{止|と}めた{場合|ばあい}は{無料|むりょう}である。", cn: "临时使用停 1 小时的话是免费的。", en: "If you park for 1 hour on short-term use, it is free." },
-					{ jp: "{時間貸|じかんがし}で24{時間|じかん}{止|と}めた{場合|ばあい}、{自転車|じてんしゃ}が{別|べつ}の{場所|ばしょ}に{移動|いどう}される。", cn: "计时停 24 小时的话，自行车会被移到别的地方。", en: "If you park 24 hours on the hourly rate, the bicycle is moved to another place." },
+					{ jp: "{月極|つきぎめ}で{利用|りよう}したい{場合|ばあい}には、{市役所|しやくしょ}に{申|もう}し{込|こ}まなければならない。", cn: "想以包月方式使用的情况下，必须向市政府申请。", en: "If you want monthly use, you must apply at city hall." },
+					{ jp: "4{月|がつ}から{定期利用|ていきりよう}したい{場合|ばあい}は3{月末|がつまつ}までに{申|もう}し{込|こ}まなければならない。", cn: "想从4月开始定期使用的情况下，必须在3月末之前申请。", en: "To start regular use in April, you must apply by the end of March." },
+					{ jp: "{一時利用|いちじりよう}で1{時間|じかん}{止|と}めた{場合|ばあい}は{無料|むりょう}である。", cn: "以临时使用方式停放1小时的情况下，是免费的。", en: "If you park for 1 hour on short-term use, it is free." },
+					{ jp: "{時間貸|じかんがし}で24{時間|じかん}{止|と}めた{場合|ばあい}、{自転車|じてんしゃ}が{別|べつ}の{場所|ばしょ}に{移動|いどう}される。", cn: "以计时出租方式停放24小时的情况下，自行车会被移到别的地方。", en: "If you park 24 hours on the hourly rate, the bicycle is moved to another place." },
 				],
 				answer: 3,
 				explanation:
@@ -262,13 +262,13 @@ export const w1d5: ReadingDay = {
 			{
 				label: "問2",
 				jp: "{学生|がくせい}がバイク（{原付|げんつき}）を3{カ月|かげつ}{定期利用|ていきりよう}する{場合|ばあい}、{申|もう}し{込|こ}みの{際|さい}いくら{必要|ひつよう}か。",
-				cn: "学生把轻便摩托定期使用 3 个月时，申请时需要多少钱？",
+				cn: "学生定期使用摩托车（轻便摩托车）3个月的情况下，申请时需要多少钱？",
 				en: "If a student uses a moped on a 3-month regular contract, how much is needed at the time of application?",
 				choices: [
-					{ jp: "2,000{円|えん}", cn: "2,000 日元", en: "2,000 yen" },
-					{ jp: "2,600{円|えん}", cn: "2,600 日元", en: "2,600 yen" },
-					{ jp: "6,000{円|えん}", cn: "6,000 日元", en: "6,000 yen" },
-					{ jp: "7,800{円|えん}", cn: "7,800 日元", en: "7,800 yen" },
+					{ jp: "2,000{円|えん}", cn: "2,000日元", en: "2,000 yen" },
+					{ jp: "2,600{円|えん}", cn: "2,600日元", en: "2,600 yen" },
+					{ jp: "6,000{円|えん}", cn: "6,000日元", en: "6,000 yen" },
+					{ jp: "7,800{円|えん}", cn: "7,800日元", en: "7,800 yen" },
 				],
 				answer: 3,
 				explanation:
@@ -318,7 +318,7 @@ export const w1d5: ReadingDay = {
 			meaningEn: "A and B. Written style, equal to A to B. The note on this page: oyobi = to.",
 			example: {
 				jp: "{料金|りょうきん}（{契約月数分|けいやくげっすうぶん}）および{身分証明書|みぶんしょうめいしょ}・{印鑑|いんかん}が{必要|ひつよう}です。",
-				cn: "需要费用（按合同月数）以及身份证明和印章。",
+				cn: "需要费用（按合同月数计算）以及身份证明・印章。",
 				en: "You need the fee (for the contracted months) and identification and a seal.",
 			},
 		},
@@ -329,7 +329,7 @@ export const w1d5: ReadingDay = {
 			meaningEn: "not … at all. Used on notices to refuse all liability.",
 			example: {
 				jp: "{一切責任|いっさいせきにん}を{負|お}いません。",
-				cn: "概不负责。",
+				cn: "不承担一切责任。",
 				en: "We assume no responsibility whatsoever.",
 			},
 		},
@@ -340,7 +340,7 @@ export const w1d5: ReadingDay = {
 			meaningEn: "to be subject to…. Used in terms to say how something will be treated.",
 			example: {
 				jp: "{撤去|てっきょ}の{対象|たいしょう}となります。",
-				cn: "将成为拖走对象。",
+				cn: "将成为撤除对象。",
 				en: "It will be subject to removal.",
 			},
 		},

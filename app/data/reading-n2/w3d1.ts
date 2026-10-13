@@ -12,17 +12,17 @@ export const w3d1: ReadingDay = {
 
 	point: {
 		title: "{文末表現|ぶんまつひょうげん}に{注意|ちゅうい}！",
-		titleCn: "注意文章末尾的表达形式！",
+		titleCn: "注意句末表达！",
 		titleEn: "Be careful with words/phrases at the end of the sentence!",
 		figure: {
 			alt: "元気なキャラクターが「ボクは日本語をマスターしつつある！」と言い、もう一体が寝そべって「ボクは遊びすぎて試験に落ちる始末だ……」と言っているイラスト",
-			cn: "一个角色精神十足地说「我正逐渐掌握日语！」，另一个趴着说「我玩过头，落得个考试不及格的下场……」",
+			cn: "一个精神十足的角色说着「我正在逐渐掌握日语！」，另一个趴着说「我玩得太多，落得个考试不及格的下场……」的插图",
 			en: "One character says “I’m in the process of mastering Japanese!”; another lies sprawled out saying “I played too much, and now I’ve gone and failed the exam…”",
 		},
 		tips: [
 			{
 				jp: "こんな{表現|ひょうげん}に{注意|ちゅうい}しましょう！",
-				cn: "请注意下面这类表达！",
+				cn: "我们来注意这类表达吧！",
 				en: "Watch out for expressions like these!",
 			},
 		],
@@ -34,7 +34,7 @@ export const w3d1: ReadingDay = {
 
 	renshu: {
 		instruction: "{次|つぎ}の{会話文|かいわぶん}を{読|よ}んで、{後|あと}の{文|ぶん}から{正|ただ}しいものを{選|えら}ぼう。",
-		instructionCn: "阅读下面的对话，从后面的句子中选出正确的。（答案在下一页）",
+		instructionCn: "阅读下面的对话，从后面的句子中选出正确的吧。",
 		instructionEn: "Read the conversation below and choose the correct statements from the sentences that follow. (Answers are on the next page.)",
 		blocks: [
 			{
@@ -43,7 +43,7 @@ export const w3d1: ReadingDay = {
 				speakerCn: "男士",
 				speakerEn: "Man",
 				jp: "また{病院|びょういん}のミスで{患者|かんじゃ}が{死|し}んだんだって。{看護師|かんごし}（注1）が{患者|かんじゃ}に{間違|まちが}った{薬|くすり}を{点滴|てんてき}（注2）したらしいよ。",
-				cn: "又听说医院出错把病人弄死了。好像是护士给病人输错了药。",
+				cn: "听说又有病人因为医院的失误死了。好像是护士（注1）给病人输液（注2）了错误的药哦。",
 				en: "I heard another patient died from a hospital error. Apparently a nurse gave the patient the wrong drug by IV.",
 			},
 			{
@@ -52,7 +52,7 @@ export const w3d1: ReadingDay = {
 				speakerCn: "女士",
 				speakerEn: "Woman",
 				jp: "え？　{薬|くすり}の{確認|かくにん}は{当然|とうぜん}するでしょう？",
-				cn: "诶？核对药品不是理所当然的吗？",
+				cn: "诶？药品核对不是理所当然会做的吗？",
 				en: "What? They check the medicine as a matter of course, don’t they?",
 			},
 			{
@@ -61,7 +61,7 @@ export const w3d1: ReadingDay = {
 				speakerCn: "男士",
 				speakerEn: "Man",
 				jp: "{確認|かくにん}はしたけど{患者|かんじゃ}の{名前|なまえ}が{間違|まちが}って{書|か}かれていたんだって。",
-				cn: "核对是核对了，可是病人的名字写错了。",
+				cn: "核对倒是做了，可听说病人的名字被写错了。",
 				en: "They did check, but the patient’s name had been written incorrectly.",
 			},
 			{
@@ -70,7 +70,7 @@ export const w3d1: ReadingDay = {
 				speakerCn: "女士",
 				speakerEn: "Woman",
 				jp: "{信|しん}じられない。そんなケアレスミス（注3）で{人|ひと}の{命|いのち}が{奪|うば}われる（注4）なんて……。",
-				cn: "难以置信。居然因为这种粗心失误就夺去人的性命……",
+				cn: "难以置信。竟然因为那样的粗心失误（注3），人的性命就被夺走（注4）……",
 				en: "I can’t believe it. To think a careless mistake like that can take someone’s life…",
 			},
 			{
@@ -79,7 +79,7 @@ export const w3d1: ReadingDay = {
 				speakerCn: "男士",
 				speakerEn: "Man",
 				jp: "ああ、ひどいよね。ニュースにならないミスはもっともっとあるということなんだろうね。",
-				cn: "是啊，太糟了。没上新闻的失误大概还要多得多吧。",
+				cn: "啊，真糟糕吧。大概就是说，不会成为新闻的失误还有更多更多吧。",
 				en: "Yeah, it’s awful. There are probably far more mistakes that never make the news.",
 			},
 		],
@@ -90,18 +90,18 @@ export const w3d1: ReadingDay = {
 			{ marker: "（注4）", term: "命が奪われる", jp: "いのちがうばわれる", cn: "被夺走生命", en: "to be killed" },
 		],
 		choices: [
-			{ jp: "{患者|かんじゃ}が{死|し}んだのは、{病院|びょういん}のせいである。", cn: "病人死了是医院的责任。", en: "The patient’s death is the hospital’s fault." },
-			{ jp: "{病院|びょういん}の{不注意|ふちゅうい}で、{患者|かんじゃ}が{違|ちが}う{薬|くすり}を{飲|の}んでしまった。", cn: "因为医院不小心，病人喝错了药。", en: "Through the hospital’s carelessness, the patient ended up taking the wrong medicine." },
+			{ jp: "{患者|かんじゃ}が{死|し}んだのは、{病院|びょういん}のせいである。", cn: "病人死亡，是医院的过错。", en: "The patient’s death is the hospital’s fault." },
+			{ jp: "{病院|びょういん}の{不注意|ふちゅうい}で、{患者|かんじゃ}が{違|ちが}う{薬|くすり}を{飲|の}んでしまった。", cn: "因为医院的疏忽，病人把不对的药吃下去了。", en: "Through the hospital’s carelessness, the patient ended up taking the wrong medicine." },
 			{ jp: "{看護師|かんごし}は{薬|くすり}の{確認|かくにん}をしなかった。", cn: "护士没有核对药品。", en: "The nurse did not check the medicine." },
-			{ jp: "{女|おんな}の{人|ひと}は{看護師|かんごし}たちが{薬|くすり}の{名前|なまえ}を{知|し}らなかったことが{信|しん}じられない。", cn: "女士无法相信护士们竟然不知道药名。", en: "The woman cannot believe that the nurses did not know the name of the medicine." },
-			{ jp: "{男|おとこ}の{人|ひと}は、{病院|びょういん}の{不注意|ふちゅうい}はたくさんあると{思|おも}っている。", cn: "男士认为医院的疏忽有很多。", en: "The man thinks hospital carelessness is very common." },
+			{ jp: "{女|おんな}の{人|ひと}は{看護師|かんごし}たちが{薬|くすり}の{名前|なまえ}を{知|し}らなかったことが{信|しん}じられない。", cn: "女士无法相信护士们不知道药的名字这件事。", en: "The woman cannot believe that the nurses did not know the name of the medicine." },
+			{ jp: "{男|おとこ}の{人|ひと}は、{病院|びょういん}の{不注意|ふちゅうい}はたくさんあると{思|おも}っている。", cn: "男士认为，医院的疏忽有很多。", en: "The man thinks hospital carelessness is very common." },
 		],
 		answers: [1, 5],
 	},
 
 	mondai: {
 		instruction: "{次|つぎ}の{文章|ぶんしょう}を{読|よ}んで、{後|あと}の{問|と}いに{答|こた}えなさい。",
-		instructionCn: "阅读下面的文章，回答后面的问题。（答案在别册 p.4）",
+		instructionCn: "阅读下面的文章，回答后面的问题。",
 		instructionEn: "Read the following text and answer the questions that follow. (Answers are in the separate booklet, p. 4.)",
 		blocks: [
 			{
@@ -114,27 +114,27 @@ export const w3d1: ReadingDay = {
 				type: "paragraph",
 				indent: true,
 				jp: "ニュースを{見|み}たとたん、{思|おも}わず「またか！」と{声|こえ}を{上|あ}げてしまった。{病院|びょういん}のケアレスミスで、また{一人|ひとり}の{患者|かんじゃ}が{死|し}に{至|いた}った。",
-				cn: "一看新闻，就不由得喊出「又来了！」。因为医院的疏忽失误，又有一名病人丧命。",
+				cn: "一看新闻，就不由得喊出了「又来了！」。由于医院的粗心失误，又有一名病人最终死亡。",
 				en: "The moment I saw the news, I couldn’t help crying “Not again!” Another patient had died from a hospital’s careless mistake.",
 			},
 			{
 				type: "paragraph",
 				indent: true,
 				jp: "{今回|こんかい}のミスは、{似|に}た{名前|なまえ}の{別人|べつじん}に{間違|まちが}った{薬|くすり}を{点滴|てんてき}してしまったというものである*。ちょっと{気|き}をつけて①{確認|かくにん}すれば、{簡単|かんたん}に{避|さ}けられるようなミスだ。{責任者|せきにんしゃ}である{院長|いんちょう}が、どんなに{謝|あやま}っても{失|うしな}われた{命|いのち}は{二度|にど}と{帰|かえ}らない。",
-				cn: "这次的失误，是把药错输给了姓名相似的另一个人*。只要稍加留心①核对，本是轻易就能避免的失误。作为负责人的院长无论怎么道歉，失去的生命也不会再回来。",
+				cn: "这次的失误，就是不慎给姓名相似的另一个人输液了错误的药*。这是只要稍微注意并①核对，就能够轻易避免的那种失误。作为责任人的院长无论怎么道歉，失去的生命也再也回不来了。",
 				en: "This latest error was that the wrong drug was given by IV to someone else with a similar name.* It is the kind of mistake that could easily have been avoided if they had just been a little more careful and ①checked. No matter how much the hospital director, who is responsible, apologizes, a life that has been lost will never come back.",
 			},
 			{
 				type: "paragraph",
 				indent: true,
 				jp: "{最近|さいきん}、このような{事故|じこ}が{増|ふ}える{一方|いっぽう}である。いや、これは{事故|じこ}ではなく、「{殺人|さつじん}」である。よく「{人間|にんげん}は{間違|まちが}う{動物|どうぶつ}だ」などと{言|い}うが、{大切|たいせつ}な{命|いのち}を{預|あず}かる**{病院|びょういん}で、ケアレスミスは{許|ゆる}されないことだ。すべての{病院関係者|びょういんかんけいしゃ}はこのことを②{人ごと|ひとごと}とはせずに{重|おも}く{受|う}け{止|と}め（注2）、{自分|じぶん}の{病院|びょういん}のシステムを{見直|みなお}す{努力|どりょく}をしてほしい。",
-				cn: "最近，这类事故有增无减。不，这已不是事故，而是「杀人」。人们常说「人是会犯错的动物」，但在受托掌管宝贵生命**的医院里，疏忽失误是不可原谅的。希望所有医院相关人员不要把这件事当作②与己无关，而要认真对待，努力重新审视自己医院的体系。",
+				cn: "最近，这类事故有增无减。不，这不是事故，而是「杀人」。人们常说「人是会犯错的动物」之类的话，但在受托照管宝贵的生命**的医院里，粗心失误是不被允许的事情。希望所有医院相关人员不要把这件事当作②别人的事，而要郑重对待（注2），并努力重新审视自己医院的系统。",
 				en: "Recently, accidents like this have been increasing steadily. No — this is not an accident; it is “murder.” People often say “humans are animals that make mistakes,” but in a hospital entrusted with precious lives,** a careless mistake cannot be allowed. I want everyone connected with hospitals not to treat this as ②somebody else’s problem, but to take it very seriously (note 2) and work to review the systems at their own hospitals.",
 			},
 			{
 				type: "heading",
 				jp: "システム（注1）の{見直|みなお}しを！",
-				cn: "请重新审视体系（注1）！",
+				cn: "重新审视系统（注1）！",
 				en: "Review the system (note 1)!",
 			},
 		],
@@ -145,12 +145,12 @@ export const w3d1: ReadingDay = {
 		pageNotes: [
 			{
 				jp: "＊{似|に}た{名前|なまえ}の{別人|べつじん}に{間違|まちが}った{薬|くすり}を{点滴|てんてき}してしまった。",
-				cn: "这次的事故是错误地将药输入到姓名相似的其他病人。",
+				cn: "＊不慎给姓名相似的另一个人输液了错误的药。",
 				en: "The most recent incident involved an intravenous drip being inadvertently administered to a patient with a similar name.",
 			},
 			{
 				jp: "＊＊{大切|たいせつ}な{命|いのち}を{預|あず}かる",
-				cn: "掌管珍贵的生命",
+				cn: "＊＊受托照管宝贵的生命",
 				en: "to be responsible for saving people’s lives",
 			},
 		],
@@ -158,13 +158,13 @@ export const w3d1: ReadingDay = {
 			{
 				label: "問1",
 				jp: "①{確認|かくにん}すればとあるが、{何|なに}を{確認|かくにん}するのか。",
-				cn: "文中说①「只要核对」，要核对的是什么？",
+				cn: "文中写道①「如果核对的话」，要核对的是什么？",
 				en: "The text says “if they ①checked.” What should be checked?",
 				choices: [
-					{ jp: "ケアレスミス", cn: "疏忽失误", en: "a careless mistake" },
+					{ jp: "ケアレスミス", cn: "粗心失误", en: "a careless mistake" },
 					{ jp: "{患者|かんじゃ}の{状態|じょうたい}", cn: "病人的状态", en: "the patient’s condition" },
-					{ jp: "{点滴|てんてき}の{量|りょう}", cn: "输液的剂量", en: "the amount of the intravenous drip" },
-					{ jp: "{患者|かんじゃ}の{名前|なまえ}", cn: "病人的姓名", en: "the patient’s name" },
+					{ jp: "{点滴|てんてき}の{量|りょう}", cn: "输液的量", en: "the amount of the intravenous drip" },
+					{ jp: "{患者|かんじゃ}の{名前|なまえ}", cn: "病人的名字", en: "the patient’s name" },
 				],
 				answer: 4,
 				explanation:
@@ -187,13 +187,13 @@ export const w3d1: ReadingDay = {
 			{
 				label: "問2",
 				jp: "②{人ごと|ひとごと}とはせずにとあるが、どういう{意味|いみ}か。",
-				cn: "文中说②「不要当作与己无关」，是什么意思？",
+				cn: "文中写道②「不要当作别人的事」，是什么意思？",
 				en: "What does ②“not treat it as somebody else’s problem” mean?",
 				choices: [
-					{ jp: "{自分|じぶん}には{関係|かんけい}ないことと{思|おも}わないで", cn: "不要觉得这和自己无关", en: "without thinking it has nothing to do with you" },
-					{ jp: "{人間|にんげん}だけのことは{思|おも}わないで", cn: "不要觉得这只是人类的事", en: "without thinking it is only a human matter" },
-					{ jp: "{患者|かんじゃ}だけのことは{思|おも}わないで", cn: "不要觉得这只是病人的事", en: "without thinking it concerns only the patient" },
-					{ jp: "{重要|じゅうよう}ではないとは{思|おも}わないで", cn: "不要觉得这不重要", en: "without thinking it is unimportant" },
+					{ jp: "{自分|じぶん}には{関係|かんけい}ないことと{思|おも}わないで", cn: "不要认为是与自己无关的事", en: "without thinking it has nothing to do with you" },
+					{ jp: "{人間|にんげん}だけのことは{思|おも}わないで", cn: "不要认为只是人类的事", en: "without thinking it is only a human matter" },
+					{ jp: "{患者|かんじゃ}だけのことは{思|おも}わないで", cn: "不要认为只是病人的事", en: "without thinking it concerns only the patient" },
+					{ jp: "{重要|じゅうよう}ではないとは{思|おも}わないで", cn: "不要认为是不重要的", en: "without thinking it is unimportant" },
 				],
 				answer: 1,
 				explanation:
@@ -256,7 +256,7 @@ export const w3d1: ReadingDay = {
 			meaningEn: "to go so far as to… / to result in…. Written style; stresses how serious the outcome is.",
 			example: {
 				jp: "{患者|かんじゃ}が{死|し}に{至|いた}った。",
-				cn: "病人因此丧命。",
+				cn: "病人最终死亡了。",
 				en: "The patient ended up dying.",
 			},
 		},

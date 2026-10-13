@@ -12,34 +12,34 @@ export const w3d2: ReadingDay = {
 
 	point: {
 		title: "カタカナで{書|か}かれた{言葉|ことば}に{注意|ちゅうい}！①",
-		titleCn: "注意用片假名写的词汇！①——日式英语的情况",
+		titleCn: "注意用片假名写的词语！①",
 		titleEn: "Pay attention to “katakana” words! ① — Japanese words derived from English.",
 		figure: {
 			alt: "キャラクターが「ベビーカー？」と考え、頭の中に「… baby car」と浮かべているイラスト",
-			cn: "角色想着「ベビーカー？」，脑子里浮现「… baby car」",
+			cn: "角色想着「婴儿车？」，脑海中浮现出「… baby car」的插图",
 			en: "A character wondering “bebīkā?” with “… baby car” floating in thought",
 		},
 		tips: [
 			{
 				jp: "{例|たと}えばこんな{言葉|ことば}が{和製英語|わせいえいご}です。",
-				cn: "比如下面这些就是和制英语。",
+				cn: "例如，像这样的词语就是和制英语。",
 				en: "Words like these, for example, are wasei-eigo (Japanese-made English).",
 			},
 		],
 		expressions: [
 			{ jp: "モーニングコール", cn: "叫醒服务", en: "a wake-up call" },
-			{ jp: "ケアレスミス", cn: "疏忽失误", en: "a careless mistake" },
+			{ jp: "ケアレスミス", cn: "粗心错误", en: "a careless mistake" },
 			{ jp: "ペーパーテスト", cn: "笔试", en: "a written test" },
 			{ jp: "ベビーカー", cn: "婴儿车", en: "a baby carriage, stroller, pram" },
 			{ jp: "パソコン", cn: "个人电脑", en: "a personal computer" },
 			{ jp: "リモコン", cn: "遥控器", en: "a remote-control device" },
 			{ jp: "コンビニ", cn: "便利店", en: "a convenience store" },
-			{ jp: "マナー", cn: "礼貌、规矩", en: "manners" },
+			{ jp: "マナー", cn: "礼仪", en: "manners" },
 		],
 		notes: [
 			{
 				jp: "ほかにもたくさんありますが、これらは{外来語|がいらいご}ではなく、{日本語|にほんご}として{考|かんが}えましょう。",
-				cn: "除此之外还有许多词汇是用片假名标记的，但这些词汇不应该视为外来语，而应看作是日语。",
+				cn: "除此之外还有很多，不过让我们不要把这些当作外来语，而是当作日语来看吧。",
 				en: "There are other similar words, but let’s consider them as Japanese words rather than words of foreign origin.",
 			},
 		],
@@ -47,7 +47,7 @@ export const w3d2: ReadingDay = {
 
 	renshu: {
 		instruction: "{次|つぎ}の{会話文|かいわぶん}を{読|よ}んで、{後|あと}の{文|ぶん}から{正|ただ}しいものを{選|えら}ぼう。",
-		instructionCn: "阅读下面的对话，从后面的句子中选出正确的。（答案在下一页）",
+		instructionCn: "阅读下面的对话，从后面的句子中选出正确的吧。",
 		instructionEn: "Read the conversation below and choose the correct statements from the sentences that follow. (Answers are on the next page.)",
 		blocks: [
 			{
@@ -56,7 +56,7 @@ export const w3d2: ReadingDay = {
 				speakerCn: "A",
 				speakerEn: "A",
 				jp: "{最近|さいきん}の{若|わか}い{親|おや}は{頭|あたま}に{来|く}るんですよ。{電車|でんしゃ}の{中|なか}で{自分|じぶん}の{子|こ}どもが{走|はし}っていても{注意|ちゅうい}しないし、{靴|くつ}のまま{座席|ざせき}に{上|あ}がらせるし、まったく{子|こ}どものしつけがなっていません（注1）よ。",
-				cn: "最近的年轻父母真让人生气。电车里自己的孩子跑来跑去也不管，还让孩子穿着鞋爬上座位，孩子完全没教养。",
+				cn: "最近的年轻父母，真是让人火大啊。在电车里，哪怕自己的孩子在跑也不提醒，还让他们穿着鞋就上到座位上去，孩子简直毫无教养（注1）啊。",
 				en: "Young parents these days make me so angry. They don’t even tell their kids off for running around on the train, they let them climb onto the seats with their shoes on — they just haven’t taught their children how to behave at all.",
 			},
 			{
@@ -65,7 +65,7 @@ export const w3d2: ReadingDay = {
 				speakerCn: "B",
 				speakerEn: "B",
 				jp: "いやー、{子|こ}どものしつけがなっていないどころか（注2）、{親|おや}{自身|じしん}のマナーがひどい。{子|こ}どもに{注意|ちゅうい}すると、{親|おや}がにらんでくるんですよ*。あのベビーカーもやめてほしいですよ。{混|こ}んだ{電車|でんしゃ}にそのまま{乗|の}ってくるし。",
-				cn: "哎呀，岂止是孩子没教养，父母自己的规矩就很差。一提醒孩子，家长就朝你瞪眼。婴儿车也希望他们别那样用了，拥挤的电车里也不折起来就上来。",
+				cn: "哎呀，岂止是孩子没有教养（注2），父母自身的礼仪糟糕得很。一提醒孩子，父母就朝你瞪过来啊*。那种婴儿车也希望他们别再用了啊。拥挤的电车里就那样上来。",
 				en: "Oh, far from the children not having been taught how to behave, the parents’ own manners are awful. If you tell the child off, the parent starts glaring at you.* And I wish they’d stop with those strollers. They get on crowded trains with them still open.",
 			},
 			{
@@ -74,7 +74,7 @@ export const w3d2: ReadingDay = {
 				speakerCn: "A",
 				speakerEn: "A",
 				jp: "{親|おや}にも{子|こ}どもにも{注意|ちゅうい}してやらないといけないっていうことですよね。",
-				cn: "就是说对家长和孩子都得提醒才行，对吧。",
+				cn: "也就是说，对父母和孩子都得提醒才行，对吧。",
 				en: "So we have to speak up to the parents as well as the children, don’t we.",
 			},
 		],
@@ -85,50 +85,50 @@ export const w3d2: ReadingDay = {
 		pageNotes: [
 			{
 				jp: "＊{親|おや}がにらんでくる",
-				cn: "家长对我怒目而视",
+				cn: "＊父母瞪过来",
 				en: "The parent started glaring at me",
 			},
 		],
 		choices: [
-			{ jp: "Aさんは{自分|じぶん}の{子|こ}どものしつけができていない。", cn: "A 没能教育好自己的孩子。", en: "A has not taught their own child how to behave." },
-			{ jp: "Bさんは{親|おや}より{子|こ}どものしつけが{大切|たいせつ}だと{言|い}っている。", cn: "B 说教育孩子比教育父母更重要。", en: "B says teaching children how to behave is more important than the parents." },
-			{ jp: "AさんもBさんも{親|おや}のマナーが{悪|わる}いと{思|おも}っている。", cn: "A 和 B 都认为父母的规矩很差。", en: "Both A and B think the parents’ manners are bad." },
-			{ jp: "Bさんはベビーカーに{子|こ}どもを{乗|の}せたまま{電車|でんしゃ}に{乗|の}ってくる{親|おや}に{文句|もんく}がある。", cn: "B 对把孩子放在婴儿车里就上电车的家长有意见。", en: "B has a complaint about parents who get on the train with a child still in the stroller." },
-			{ jp: "Aさんはにらまれるので{親|おや}には{注意|ちゅうい}したくない。", cn: "A 因为会被瞪，所以不想提醒家长。", en: "A does not want to speak to the parents because they get glared at." },
+			{ jp: "Aさんは{自分|じぶん}の{子|こ}どものしつけができていない。", cn: "A没能把自己的孩子教养好。", en: "A has not taught their own child how to behave." },
+			{ jp: "Bさんは{親|おや}より{子|こ}どものしつけが{大切|たいせつ}だと{言|い}っている。", cn: "B说，比起父母，孩子的教养更重要。", en: "B says teaching children how to behave is more important than the parents." },
+			{ jp: "AさんもBさんも{親|おや}のマナーが{悪|わる}いと{思|おも}っている。", cn: "A和B都认为父母的礼仪很差。", en: "Both A and B think the parents’ manners are bad." },
+			{ jp: "Bさんはベビーカーに{子|こ}どもを{乗|の}せたまま{電車|でんしゃ}に{乗|の}ってくる{親|おや}に{文句|もんく}がある。", cn: "B对让孩子坐在婴儿车里就上电车来的父母有怨言。", en: "B has a complaint about parents who get on the train with a child still in the stroller." },
+			{ jp: "Aさんはにらまれるので{親|おや}には{注意|ちゅうい}したくない。", cn: "A因为会被瞪，所以不想提醒父母。", en: "A does not want to speak to the parents because they get glared at." },
 		],
 		answers: [3, 4],
 	},
 
 	mondai: {
 		instruction: "{次|つぎ}の{文|ぶん}は{雑誌|ざっし}に{寄|よ}せられた{投書|とうしょ}である。{読|よ}んで{後|あと}の{問|と}いに{答|こた}えなさい。",
-		instructionCn: "下面是一封投给杂志的读者来信。阅读后回答后面的问题。（答案在别册 p.4）",
+		instructionCn: "下面的文章是投给杂志的读者来信。请阅读并回答后面的问题。",
 		instructionEn: "The following is a letter sent in to a magazine. Read it and answer the questions that follow. (Answers are in the separate booklet, p. 4.)",
 		blocks: [
 			{
 				type: "title",
 				jp: "チョット{一言|ひとこと}",
-				cn: "说一句",
+				cn: "就说一句",
 				en: "A word",
 			},
 			{
 				type: "paragraph",
 				indent: true,
 				jp: "{最近|さいきん}の{若|わか}い{母親|ははおや}に{言|い}いたい。{電車|でんしゃ}の{中|なか}では、ベビーカーをたたんでほしい。ベビーカーは{赤|あか}ちゃんを{乗|の}せるもの。たたんでしまえば{大|おお}きな{荷物|にもつ}になってしまう。{赤|あか}ちゃんのほかに{大|おお}きな{荷物|にもつ}を{抱|かか}えるのは{大変|たいへん}だ。それはわかる。しかし、{混|こ}んだ{電車|でんしゃ}の{中|なか}まで{平気|へいき}で（注1）{赤|あか}ちゃんを{乗|の}せたまま{乗|の}り{込|こ}んでくるのは、{迷惑|めいわく}である。まるで「{私|わたし}はこんな{小|ちい}さい{子|こ}を{連|つ}れていて{大変|たいへん}なんです。{場所|ばしょ}を{空|あ}けてくれるのは{当|あ}たり{前|まえ}でしょ。」と{言|い}っているような{顔|かお}をする。こちらがちょっと{迷惑|めいわく}そうな{顔|かお}をすると{反対|はんたい}に①にらみつけて（注2）くる。すいているときならともかく、{混|こ}んだ{車内|しゃない}では{絶対|ぜったい}に{折|お}りたたむ（注3）べきだ。{今|いま}のベビーカーは{昔|むかし}のとは{違|ちが}って{軽|かる}く、{簡単|かんたん}にたためるのだから。",
-				cn: "想对最近的年轻母亲说一句。在电车里，希望把婴儿车折起来。婴儿车是用来载宝宝的。一折起来就成了一件大行李。除了宝宝还要抱着大行李，确实很辛苦。这我明白。可是，连拥挤的电车里也满不在乎地（注1）不把宝宝抱下来就挤上来，实在是添麻烦。那神情简直像在说：「我带着这么小的孩子很不容易。给让个地方不是理所当然的吗。」我这边稍露出一点嫌麻烦的脸色，对方反而①瞪过来。车不挤也就罢了，拥挤的车厢里绝对应该把车折起来（注3）。现在的婴儿车和以前不同，又轻又容易折。",
+				cn: "想对最近的年轻母亲说。在电车里，希望把婴儿车折起来。婴儿车是用来让宝宝坐的。一旦折起来，就会变成一件大行李。除了宝宝还要抱着大行李，很辛苦。这一点我明白。但是，连拥挤的电车里也满不在乎地（注1）让宝宝坐着就挤进来，是添麻烦的。那神情简直像在说：「我带着这么小的孩子，很辛苦的。给我腾出地方不是理所当然的吗。」我这边稍微露出一点嫌麻烦的神色，对方反而①瞪视（注2）过来。不拥挤的时候倒也罢了，在拥挤的车厢里绝对应该折叠起来（注3）。毕竟现在的婴儿车和从前的不同，又轻，又很容易折叠。",
 				en: "I have something to say to young mothers these days. On the train, I want them to fold the stroller. A stroller is for carrying a baby. Once you fold it, it becomes a bulky piece of luggage. Having to hold a baby and a bulky load as well is hard. I understand that. But boarding a crowded train without a care (note 1), baby still in the stroller, is a nuisance. They look as if they are saying, “I have a small child with me; it’s hard. Of course you should make space.” If I so much as look a little put out, they ①glare back at me instead. When the train is not crowded it might be another matter, but in a packed car you absolutely should fold it (note 3). Today’s strollers, unlike the old ones, are light and easy to fold.",
 			},
 			{
 				type: "paragraph",
 				indent: true,
 				jp: "{最近|さいきん}、{電車|でんしゃ}の{中|なか}でマナーの{悪|わる}い{子|こ}どもをよく{見|み}かけるが、{注意|ちゅうい}をしない{親|おや}に{問題|もんだい}がある。{子|こ}どもをしつける（注4）{以前|いぜん}に、まず{教育|きょういく}しなければならないのは{親|おや}のほうだ。{周|まわ}りの{人|ひと}も{黙|だま}らないで、{注意|ちゅうい}をするべきだろう。{今|いま}まで、{迷惑|めいわく}だと{思|おも}うだけで{何|なに}も{言|い}わずにきたが、{今度|こんど}からははっきり{言|い}わせてもらおう。「②」と。",
-				cn: "最近在电车里常看到不懂规矩的孩子，问题出在不管的父母。在管教孩子（注4）之前，首先必须受教育的是父母。周围的人也不该沉默，应该提醒。以前我只是觉得麻烦却什么也不说，今后我要说清楚了：「②」。",
+				cn: "最近，在电车里常能看到礼仪很差的孩子，但问题在于不提醒的父母。在管教孩子（注4）之前，首先必须受教育的是父母这一方。周围的人也不要沉默，应该出言提醒吧。迄今为止我只是觉得添麻烦，一直什么也没说，但从下次起，就请允许我把话说明白吧：「②」。",
 				en: "Lately I often see children with bad manners on the train, and the problem is the parents who do not speak up. Before teaching the children how to behave (note 4), it is the parents who first need educating. People around them should not stay silent either; they should say something. Until now I have only thought it was a nuisance and said nothing, but from now on I will say it plainly: “②.”",
 			},
 			{
 				type: "line",
 				align: "right",
 				jp: "（{東京都|とうきょうと}{主婦|しゅふ} {五十二歳|ごじゅうにさい}）",
-				cn: "（东京都 家庭主妇 五十二岁）",
+				cn: "（东京都主妇 五十二岁）",
 				en: "(Housewife, Tokyo, age 52)",
 			},
 		],
@@ -141,7 +141,7 @@ export const w3d2: ReadingDay = {
 		pageNotes: [
 			{
 				jp: "＊すいているときならともかく",
-				cn: "不拥挤的时候也就罢了",
+				cn: "＊不拥挤的时候倒也罢了",
 				en: "When it is not crowded, it might be possible but …",
 			},
 		],
@@ -149,13 +149,13 @@ export const w3d2: ReadingDay = {
 			{
 				label: "問1",
 				jp: "①にらみつけてくるとあるが、そのときの{若|わか}い{母親|ははおや}の{気持|きも}ちに{最|もっと}も{近|ちか}いものはどれか。",
-				cn: "文中说①「瞪过来」，当时年轻母亲的心情最接近哪一项？",
+				cn: "文中说①瞪视过来，当时年轻母亲的心情最接近哪一个？",
 				en: "The text says they ①glare. Which is closest to what the young mother is feeling then?",
 				choices: [
-					{ jp: "この{人|ひと}は、なんてしつけがなっていない{人|ひと}なんだろう。", cn: "这个人真是没教养啊。", en: "What an ill-mannered person this is." },
-					{ jp: "この{人|ひと}は、なんてやさしくない{人|ひと}なんだろう。", cn: "这个人真是不善良啊。", en: "What an unkind person this is." },
-					{ jp: "この{人|ひと}は、なんて{迷惑|めいわく}な{人|ひと}なんだろう。", cn: "这个人真是添麻烦啊。", en: "What a nuisance this person is." },
-					{ jp: "この{人|ひと}は、なんて{気|き}が{強|つよ}い{人|ひと}なんだろう。", cn: "这个人真是好强啊。", en: "What a strong-willed person this is." },
+					{ jp: "この{人|ひと}は、なんてしつけがなっていない{人|ひと}なんだろう。", cn: "这个人真是个多么没有教养的人啊。", en: "What an ill-mannered person this is." },
+					{ jp: "この{人|ひと}は、なんてやさしくない{人|ひと}なんだろう。", cn: "这个人真是个多么不亲切的人啊。", en: "What an unkind person this is." },
+					{ jp: "この{人|ひと}は、なんて{迷惑|めいわく}な{人|ひと}なんだろう。", cn: "这个人真是个多么给人添麻烦的人啊。", en: "What a nuisance this person is." },
+					{ jp: "この{人|ひと}は、なんて{気|き}が{強|つよ}い{人|ひと}なんだろう。", cn: "这个人真是个多么好强的人啊。", en: "What a strong-willed person this is." },
 				],
 				answer: 2,
 				explanation:
@@ -178,12 +178,12 @@ export const w3d2: ReadingDay = {
 			{
 				label: "問2",
 				jp: "「②」の{中|なか}に{入|はい}る{最|もっと}も{適当|てきとう}な{言葉|ことば}はどれか。",
-				cn: "填入「②」最合适的是哪一句？",
+				cn: "填入「②」中最恰当的话是哪一句？",
 				en: "Which words fit best in “②”?",
 				choices: [
-					{ jp: "{混|こ}んだ{電車|でんしゃ}ではベビーカーをたたんでください", cn: "拥挤的电车上请把婴儿车折起来", en: "Please fold the stroller on a crowded train" },
+					{ jp: "{混|こ}んだ{電車|でんしゃ}ではベビーカーをたたんでください", cn: "在拥挤的电车里请把婴儿车折起来", en: "Please fold the stroller on a crowded train" },
 					{ jp: "{混|こ}んだ{電車|でんしゃ}に{乗|の}らないでください", cn: "请不要乘坐拥挤的电车", en: "Please do not board a crowded train" },
-					{ jp: "{子|こ}どもの{前|まえ}に{親|おや}の{教育|きょういく}をしてください", cn: "请先教育父母再教育孩子", en: "Please educate the parents before the children" },
+					{ jp: "{子|こ}どもの{前|まえ}に{親|おや}の{教育|きょういく}をしてください", cn: "请在孩子之前对父母进行教育", en: "Please educate the parents before the children" },
 					{ jp: "だまっていないで{注意|ちゅうい}をしてください", cn: "请不要沉默，请出言提醒", en: "Please don’t stay silent; please speak up" },
 				],
 				answer: 1,
@@ -233,7 +233,7 @@ export const w3d2: ReadingDay = {
 			meaningEn: "far from…; on the contrary…. Rejects the first idea and puts a stronger one after it.",
 			example: {
 				jp: "{子|こ}どものしつけがなっていないどころか、{親|おや}{自身|じしん}のマナーがひどい。",
-				cn: "岂止是孩子没教养，父母自己的规矩就很差。",
+				cn: "岂止是孩子没有教养，父母自身的礼仪糟糕得很。",
 				en: "Far from the children not having been taught how to behave, the parents’ own manners are awful.",
 			},
 		},
@@ -244,7 +244,7 @@ export const w3d2: ReadingDay = {
 			meaningEn: "still in the state of… (while doing something else).",
 			example: {
 				jp: "{赤|あか}ちゃんを{乗|の}せたまま{乗|の}り{込|こ}んでくる。",
-				cn: "不把宝宝抱下来就挤上车。",
+				cn: "让宝宝坐着就挤进来。",
 				en: "They board with the baby still in the stroller.",
 			},
 		},
@@ -255,7 +255,7 @@ export const w3d2: ReadingDay = {
 			meaningEn: "… would be another matter, but…. The following case is not acceptable.",
 			example: {
 				jp: "すいているときならともかく、{混|こ}んだ{車内|しゃない}では{絶対|ぜったい}に{折|お}りたたむべきだ。",
-				cn: "车不挤也就罢了，拥挤的车厢里绝对应该折起来。",
+				cn: "不拥挤的时候倒也罢了，在拥挤的车厢里绝对应该折叠起来。",
 				en: "When it isn’t crowded it might be another matter, but in a packed car you absolutely should fold it.",
 			},
 		},

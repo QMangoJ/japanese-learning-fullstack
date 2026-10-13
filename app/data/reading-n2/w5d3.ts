@@ -12,27 +12,27 @@ export const w5d3: ReadingDay = {
 
 	point: {
 		title: "{事件|じけん}や{事故|じこ}の{記事|きじ}に{慣|な}れよう！",
-		titleCn: "熟悉关于事件或事故的报道文章！",
+		titleCn: "来熟悉事件和事故的报道吧！",
 		titleEn: "Try to familiarize yourself with articles dealing with crimes and accidents!",
 		figure: {
 			alt: "新聞を読むキャラクターと「事件や事故の記事は、ほぼ同じ表現が使われます。」という吹き出し",
-			cn: "角色读报，气泡写着：「事件、事故报道用的几乎是同一套说法。」",
+			cn: "正在读报的角色，以及写着「事件和事故的报道，几乎使用相同的表达。」的气泡",
 			en: "A character reading a paper, with a bubble: “Crime and accident articles use almost the same set of expressions.”",
 		},
 		tips: [
 			{
 				jp: "{事件|じけん}や{事故|じこ}の{記事|きじ}は、ほぼ{同|おな}じ{表現|ひょうげん}が{使|つか}われます。",
-				cn: "事件、事故报道几乎都用同一套说法。",
+				cn: "事件和事故的报道，几乎使用相同的表达。",
 				en: "Crime and accident articles use almost the same expressions.",
 			},
 			{
 				jp: "【{例|れい}の{見出|みだ}し】{大麻譲渡容疑|たいまじょうとようぎ}で{男|おとこ}ら{逮捕|たいほ}　{女子中学生|じょしちゅうがくせい}が{所持|しょじ}",
-				cn: "【示例标题】男子等因涉嫌转让大麻被捕　女初中生持有大麻",
+				cn: "【示例标题】因涉嫌转让大麻，男子等人被捕　女初中生持有",
 				en: "[Sample headline] Men arrested on suspicion of transferring marijuana — junior-high girl in possession",
 			},
 			{
 				jp: "○○{市|し}の{市立中学|しりつちゅうがく}3{年|ねん}の{女子生徒|じょしせいと}（14）が{大麻|たいま}を{所持|しょじ}したとして{逮捕|たいほ}された{事件|じけん}で、この{生徒|せいと}に{大麻|たいま}を{渡|わた}したとして○○{市|し}の{男|おとこ}2{人|にん}が{大麻取締法違反|たいまとりしまりほういはん}の{疑|うたが}いで{逮捕|たいほ}されたことがわかった。{逮捕|たいほ}されたのは18{歳|さい}の{少年|しょうねん}と21{歳|さい}の{男|おとこ}で、いずれも{大麻所持|たいましょじ}を{認|みと}めているという。",
-				cn: "○○ 市市立中学三年级女学生（14 岁）因持有大麻被捕。据了解，向该学生转让大麻的 ○○ 市两名男子因涉嫌违反大麻取缔法被捕。被捕的是 18 岁少年和 21 岁男子，两人都承认持有大麻。",
+				cn: "在○○市市立初中3年级女学生（14岁）因持有大麻而被捕的案件中，据悉，○○市的2名男子因把大麻交给该学生，涉嫌违反大麻取缔法而被捕。被捕的是18岁的少年和21岁的男子，据说两人都承认持有大麻。",
 				en: "In a case in which a third-year girl (14) at a municipal junior high in ○○ City was arrested for possessing marijuana, it has emerged that two men from ○○ City who gave her the marijuana have been arrested on suspicion of violating the Marijuana Control Law. Those arrested are an 18-year-old youth and a 21-year-old man; both are said to have admitted possessing marijuana.",
 			},
 		],
@@ -53,13 +53,13 @@ export const w5d3: ReadingDay = {
 
 	renshu: {
 		instruction: "{次|つぎ}の{会話文|かいわぶん}を{読|よ}んで、{後|あと}の{文|ぶん}から{正|ただ}しいものを{選|えら}ぼう。",
-		instructionCn: "阅读下面的对话，从后面的句子中选出正确的。（答案在下一页）",
+		instructionCn: "阅读下面的对话，从后面的句子中选出正确的吧。",
 		instructionEn: "Read the conversation below and choose the correct statements from the sentences that follow. (Answers are on the next page.)",
 		blocks: [
 			{
 				type: "note",
 				jp: "《Aさんは{新聞|しんぶん}を{見|み}ながらBさんと{話|はな}しています。》",
-				cn: "《A 看着报纸在和 B 说话。》",
+				cn: "《A边看报纸边和B说话。》",
 				en: "(A is talking with B while looking at a newspaper.)",
 			},
 			{
@@ -68,7 +68,7 @@ export const w5d3: ReadingDay = {
 				speakerCn: "A",
 				speakerEn: "A",
 				jp: "またひき{逃|に}げだって。{多|おお}いね。",
-				cn: "又是肇事逃逸。真多啊。",
+				cn: "又说是肇事逃逸。真多啊。",
 				en: "Another hit-and-run. There are a lot of them.",
 			},
 			{
@@ -77,7 +77,7 @@ export const w5d3: ReadingDay = {
 				speakerCn: "B",
 				speakerEn: "B",
 				jp: "どうして{逃|に}げるのかな。すぐに{通報|つうほう}すれば、{助|たす}かったかもしれないのに。",
-				cn: "为什么要逃呢。要是马上报警，说不定还能得救。",
+				cn: "为什么要逃呢。明明马上报警的话，也许就能得救的。",
 				en: "Why run? If they reported it right away, the person might have been saved.",
 			},
 			{
@@ -86,7 +86,7 @@ export const w5d3: ReadingDay = {
 				speakerCn: "A",
 				speakerEn: "A",
 				jp: "{怖|こわ}くなって{逃|に}げるのとか、もしかしたら、{飲酒運転|いんしゅうんてん}していたかもしれないね。",
-				cn: "大概是害怕才逃的，说不定当时还酒驾了。",
+				cn: "是因为害怕才逃跑之类的，说不定，也许是在酒后驾驶呢。",
 				en: "Maybe they ran because they got scared—or maybe they were driving drunk.",
 			},
 			{
@@ -95,7 +95,7 @@ export const w5d3: ReadingDay = {
 				speakerCn: "B",
 				speakerEn: "B",
 				jp: "ああ、{飲酒運転|いんしゅうんてん}の{罰則|ばっそく}が{厳|きび}しいから、お{酒|さけ}を{飲|の}んでいたことがわからなくなるように{逃|に}げるんだよね。ひき{逃|に}げの{罰則|ばっそく}がまだまだ{甘|あま}いんじゃないかな。",
-				cn: "对啊，酒驾罚则严，所以才逃，好让人查不出喝过酒。肇事逃逸的罚则还是太轻了吧。",
+				cn: "啊，因为酒后驾驶的罚则很严，所以才逃跑，好让人查不出喝过酒呀。肇事逃逸的罚则是不是还太轻了呢。",
 				en: "Right—DUI penalties are strict, so they run so it won’t come out that they’d been drinking. Hit-and-run penalties are still too lenient, don’t you think?",
 			},
 			{
@@ -104,43 +104,43 @@ export const w5d3: ReadingDay = {
 				speakerCn: "A",
 				speakerEn: "A",
 				jp: "うん、{幼児|ようじ}3{人|にん}が{亡|な}くなる{事件|じけん}があってから、{両方|りょうほう}の{罰則|ばっそく}が{厳|きび}しくなったんだよね。でも{飲酒運転|いんしゅうんてん}はずいぶん{減|へ}ったのにひき{逃|に}げはあんまり{減|へ}ってないんでしょ？　もっと{厳|きび}しくしないと、なくならないんじゃないかな。",
-				cn: "嗯，自从发生幼儿 3 人死亡的事件以后，两边的罚则都变严了。可酒驾少了很多，肇事逃逸却没怎么减少吧？再不加严，恐怕消不掉。",
+				cn: "嗯，自从发生幼儿3人去世的事件之后，两边的罚则都变严了呀。可是酒后驾驶减少了不少，肇事逃逸却没怎么减少吧？要是不更严一些，恐怕不会消失吧。",
 				en: "Yeah, after an incident in which three small children died, both penalties were tightened. But drunk driving has fallen a lot, while hit-and-runs haven’t really, right? If they don’t get stricter, they won’t go away.",
 			},
 		],
 		choices: [
-			{ jp: "Aさんは{飲酒運転|いんしゅうんてん}による{交通事故|こうつうじこ}の{記事|きじ}を{読|よ}んでいる。", cn: "A 在读酒驾导致交通事故的报道。", en: "A is reading an article about a traffic accident caused by drunk driving." },
-			{ jp: "Aさんはひき{逃|に}げで{幼児|ようじ}3{人|にん}が{死亡|しぼう}した{記事|きじ}を{読|よ}んでいる。", cn: "A 在读肇事逃逸造成幼儿 3 人死亡的报道。", en: "A is reading an article about a hit-and-run in which three small children died." },
-			{ jp: "Bさんはひき{逃|に}げをする{人|ひと}の{気持|きも}ちが{理解|りかい}できない。", cn: "B 不能理解肇事逃逸者的心情。", en: "B cannot understand the feelings of people who commit hit-and-run." },
-			{ jp: "AさんとBさんは{飲酒運転|いんしゅうんてん}の{罰則|ばっそく}をもっと{厳|きび}しくすべきだと{言|い}っている。", cn: "A 和 B 都说应该把酒驾罚则再加严。", en: "A and B say drunk-driving penalties should be made even stricter." },
-			{ jp: "AさんとBさんはひき{逃|に}げ{事件|じけん}の{罰則|ばっそく}をもっと{厳|きび}しくすべきだと{言|い}っている。", cn: "A 和 B 都说应该把肇事逃逸事件的罚则再加严。", en: "A and B say hit-and-run penalties should be made even stricter." },
+			{ jp: "Aさんは{飲酒運転|いんしゅうんてん}による{交通事故|こうつうじこ}の{記事|きじ}を{読|よ}んでいる。", cn: "A正在读因酒后驾驶造成的交通事故报道。", en: "A is reading an article about a traffic accident caused by drunk driving." },
+			{ jp: "Aさんはひき{逃|に}げで{幼児|ようじ}3{人|にん}が{死亡|しぼう}した{記事|きじ}を{読|よ}んでいる。", cn: "A正在读因肇事逃逸造成幼儿3人死亡的报道。", en: "A is reading an article about a hit-and-run in which three small children died." },
+			{ jp: "Bさんはひき{逃|に}げをする{人|ひと}の{気持|きも}ちが{理解|りかい}できない。", cn: "B不能理解肇事逃逸者的心情。", en: "B cannot understand the feelings of people who commit hit-and-run." },
+			{ jp: "AさんとBさんは{飲酒運転|いんしゅうんてん}の{罰則|ばっそく}をもっと{厳|きび}しくすべきだと{言|い}っている。", cn: "A和B说应该把酒后驾驶的罚则变得更严。", en: "A and B say drunk-driving penalties should be made even stricter." },
+			{ jp: "AさんとBさんはひき{逃|に}げ{事件|じけん}の{罰則|ばっそく}をもっと{厳|きび}しくすべきだと{言|い}っている。", cn: "A和B说应该把肇事逃逸事件的罚则变得更严。", en: "A and B say hit-and-run penalties should be made even stricter." },
 		],
 		answers: [3, 5],
 	},
 
 	mondai: {
 		instruction: "{次|つぎ}の{新聞記事|しんぶんきじ}を{読|よ}んで、{後|あと}の{問|と}いに{答|こた}えなさい。",
-		instructionCn: "阅读下面的新闻报道，回答后面的问题。（答案在别册 p.6）",
+		instructionCn: "阅读下面的新闻报道，回答后面的问题。",
 		instructionEn: "Read the newspaper article below and answer the questions that follow. (Answers are in the separate booklet, p. 6.)",
 		blocks: [
 			{
 				type: "title",
 				jp: "ひき{逃|に}げか {女性死亡|じょせいしぼう}",
-				cn: "或为肇事逃逸 女性死亡",
+				cn: "肇事逃逸？ 女性死亡",
 				en: "Possible hit-and-run: woman dead",
 				sub: { jp: "{横浜|よこはま}・{港北区|こうほくく}", cn: "横滨・港北区", en: "Yokohama, Kohoku Ward" },
 			},
 			{
 				type: "paragraph",
 				jp: "18{日午後|にちごご}9{時|じ}ごろ、{横浜市港北区|よこはましこうほくく}の○○{町|ちょう}のJR{横浜線|よこはません}の{踏切|ふみきり}{近|ちか}くの{市道|しどう}で、{女性|じょせい}が{血|ち}を{流|なが}し、うつぶせ（{注|ちゅう}1）に{倒|たお}れているのを{近|ちか}くに{住|す}む{男性|だんせい}が{見|み}つけ、110{番通報|ばんつうほう}した。{女性|じょせい}は{病院|びょういん}に{運|はこ}ばれたが{間|ま}もなく{死亡|しぼう}が{確認|かくにん}された。",
-				cn: "18 日下午 9 点左右，在横滨市港北区 ○○ 町 JR 横滨线道口附近的市道上，住在附近的一名男子发现一名女性流血、趴在地上，随即拨打 110。女性被送往医院后不久确认死亡。",
+				cn: "18日晚上9时左右，在横滨市港北区○○町的JR横滨线铁路道口附近的市道上，住在附近的一名男性发现一名女性流着血、俯卧（注1）倒地，随即拨打110报警。女性被送往医院，但不久即被确认死亡。",
 				en: "Around 9 p.m. on the 18th, on a city road near a JR Yokohama Line crossing in ○○-chō, Kohoku Ward, Yokohama, a man living nearby found a woman lying face down and bleeding, and called 110. She was taken to hospital but was confirmed dead shortly afterward.",
 				indent: true,
 			},
 			{
 				type: "paragraph",
 				jp: "{付近|ふきん}の{路面|ろめん}に{約|やく}170メートルにわたって{引|ひ}きずられたような{血痕|けっこん}（{注|ちゅう}2）が{残|のこ}っていたことから、{港北署|こうほくしょ}ではひき{逃|に}げ{事件|じけん}として{捜査|そうさ}している。また、{女性|じょせい}は60{代|だい}ぐらいとみられ、{身元|みもと}（{注|ちゅう}3）や{死因|しいん}の{特定|とくてい}を{急|いそ}いでいる。",
-				cn: "附近路面上留下约 170 米像被拖过的血痕，因此港北署按肇事逃逸事件进行搜查。另外，该女性看起来六十多岁，正在加紧确认身份和死因。",
+				cn: "由于附近路面上残留着绵延约170米、像是被拖行过的血痕（注2），港北署正在作为肇事逃逸事件进行侦查。另外，女性被认为大概60多岁，正在加紧查明身份（注3）和死因。",
 				en: "Because bloodstains as if she had been dragged for about 170 meters remained on the nearby road surface, Kohoku Police are investigating it as a hit-and-run. The woman appears to be in her sixties, and they are rushing to establish her identity and the cause of death.",
 				indent: true,
 			},
@@ -153,7 +153,7 @@ export const w5d3: ReadingDay = {
 		pageNotes: [
 			{
 				jp: "They are trying to identify the victim and the cause of her death",
-				cn: "正在紧急查明死者身份及死亡原因",
+				cn: "他们正在试图确认受害者的身份及其死因。",
 				en: "They are trying to identify the victim and the cause of her death",
 			},
 		],
@@ -161,13 +161,13 @@ export const w5d3: ReadingDay = {
 			{
 				label: "問1",
 				jp: "{警察|けいさつ}がひき{逃|に}げ{事件|じけん}と{考|かんが}えているのはなぜか。",
-				cn: "警察认为这是肇事逃逸事件，是为什么？",
+				cn: "警察为什么认为这是肇事逃逸事件？",
 				en: "Why do the police think this is a hit-and-run?",
 				choices: [
-					{ jp: "{道路|どうろ}にひき{逃|に}げされたと{思|おも}われるような{跡|あと}があったから。", cn: "因为路上有像被肇事逃逸拖过的痕迹。", en: "Because there were marks on the road that look as if she had been hit and dragged." },
-					{ jp: "{飲酒運転|いんしゅうんてん}によるひき{逃|に}げ{事件|じけん}が{多発|たはつ}しているから。", cn: "因为酒驾肇事逃逸事件多发。", en: "Because hit-and-runs caused by drunk driving are happening frequently." },
-					{ jp: "{女性|じょせい}が{血|ち}を{流|なが}し、うつぶせで{倒|たお}れていたから。", cn: "因为女性流着血、趴在地上。", en: "Because the woman was lying face down and bleeding." },
-					{ jp: "{女性|じょせい}が{道路|どうろ}をわたって{引|ひ}きずられたから。", cn: "因为女性过马路时被拖走了。", en: "Because the woman was dragged as she crossed the road." },
+					{ jp: "{道路|どうろ}にひき{逃|に}げされたと{思|おも}われるような{跡|あと}があったから。", cn: "因为道路上有像是遭遇了肇事逃逸的痕迹。", en: "Because there were marks on the road that look as if she had been hit and dragged." },
+					{ jp: "{飲酒運転|いんしゅうんてん}によるひき{逃|に}げ{事件|じけん}が{多発|たはつ}しているから。", cn: "因为由酒后驾驶引发的肇事逃逸事件频发。", en: "Because hit-and-runs caused by drunk driving are happening frequently." },
+					{ jp: "{女性|じょせい}が{血|ち}を{流|なが}し、うつぶせで{倒|たお}れていたから。", cn: "因为女性流着血、俯卧倒地。", en: "Because the woman was lying face down and bleeding." },
+					{ jp: "{女性|じょせい}が{道路|どうろ}をわたって{引|ひ}きずられたから。", cn: "因为女性在过马路时被拖行了。", en: "Because the woman was dragged as she crossed the road." },
 				],
 				answer: 1,
 				explanation:
@@ -190,13 +190,13 @@ export const w5d3: ReadingDay = {
 			{
 				label: "問2",
 				jp: "この{記事|きじ}の{内容|ないよう}と{合|あ}っているものはどれか。",
-				cn: "与这篇报道内容相符的是哪一项？",
+				cn: "与这篇报道的内容相符的是哪一个？",
 				en: "Which of the following matches the content of this article?",
 				choices: [
-					{ jp: "{飲酒運転|いんしゅうんてん}をしていた{人|ひと}が{女性|じょせい}を{引|ひ}いたとみられる。", cn: "据推测是酒驾的人撞了这名女性。", en: "It appears a drunk driver hit the woman." },
-					{ jp: "ひき{逃|に}げされたとみられる{女性|じょせい}はまだ{身元|みもと}が{不明|ふめい}である。", cn: "据推测遭遇肇事逃逸的女性身份仍然不明。", en: "The woman believed to have been the victim of a hit-and-run has not yet been identified." },
-					{ jp: "{踏切事故|ふみきりじこ}にあった{女性|じょせい}は{病院|びょういん}に{運|はこ}ばれたが{助|たす}からなかった。", cn: "遭遇道口事故的女性被送往医院但没能救活。", en: "The woman in the crossing accident was taken to hospital but could not be saved." },
-					{ jp: "{女性|じょせい}をひいた{車|くるま}を{運転|うんてん}していた{男性|だんせい}が{警察|けいさつ}に{通報|つうほう}した。", cn: "撞了女性的那辆车的男司机向警察报了案。", en: "The man driving the car that hit the woman reported it to the police." },
+					{ jp: "{飲酒運転|いんしゅうんてん}をしていた{人|ひと}が{女性|じょせい}を{引|ひ}いたとみられる。", cn: "被认为是正在酒后驾驶的人撞了女性。", en: "It appears a drunk driver hit the woman." },
+					{ jp: "ひき{逃|に}げされたとみられる{女性|じょせい}はまだ{身元|みもと}が{不明|ふめい}である。", cn: "被认为遭遇肇事逃逸的女性，身份仍然不明。", en: "The woman believed to have been the victim of a hit-and-run has not yet been identified." },
+					{ jp: "{踏切事故|ふみきりじこ}にあった{女性|じょせい}は{病院|びょういん}に{運|はこ}ばれたが{助|たす}からなかった。", cn: "遭遇铁路道口事故的女性被送往医院，但没能得救。", en: "The woman in the crossing accident was taken to hospital but could not be saved." },
+					{ jp: "{女性|じょせい}をひいた{車|くるま}を{運転|うんてん}していた{男性|だんせい}が{警察|けいさつ}に{通報|つうほう}した。", cn: "驾驶撞到女性的那辆车的男性向警察报了案。", en: "The man driving the car that hit the woman reported it to the police." },
 				],
 				answer: 2,
 				explanation:
@@ -249,7 +249,7 @@ export const w5d3: ReadingDay = {
 			meaningEn: "as… (treating it as…). In accident copy, this classifies the case: investigating it as a hit-and-run.",
 			example: {
 				jp: "ひき{逃|に}げ{事件|じけん}として{捜査|そうさ}している。",
-				cn: "按肇事逃逸事件进行搜查。",
+				cn: "正在作为肇事逃逸事件进行侦查。",
 				en: "They are investigating it as a hit-and-run.",
 			},
 		},
@@ -260,7 +260,7 @@ export const w5d3: ReadingDay = {
 			meaningEn: "from the fact that… / because…. Gives the grounds for a judgment or action.",
 			example: {
 				jp: "{引|ひ}きずられたような{血痕|けっこん}が{残|のこ}っていたことから、ひき{逃|に}げ{事件|じけん}として{捜査|そうさ}している。",
-				cn: "因为留下了像被拖过的血痕，所以按肇事逃逸事件搜查。",
+				cn: "由于残留着像是被拖行过的血痕，因此正在作为肇事逃逸事件进行侦查。",
 				en: "Because bloodstains as if she had been dragged remained, they are investigating it as a hit-and-run.",
 			},
 		},
@@ -271,7 +271,7 @@ export const w5d3: ReadingDay = {
 			meaningEn: "appears to be… / is believed to be…. Common in news when age or identity is not yet confirmed.",
 			example: {
 				jp: "{女性|じょせい}は60{代|だい}ぐらいとみられ、{身元|みもと}の{特定|とくてい}を{急|いそ}いでいる。",
-				cn: "该女性看起来六十多岁，正在加紧确认身份。",
+				cn: "女性被认为大概60多岁，正在加紧查明身份。",
 				en: "The woman appears to be in her sixties, and they are rushing to establish her identity.",
 			},
 		},

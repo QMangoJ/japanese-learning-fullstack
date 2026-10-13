@@ -12,11 +12,11 @@ export const w5d6: ReadingDay = {
 
 	point: {
 		title: "{引用|いんよう}{部分|ぶぶん}を{表|あらわ}す「　」「『　』」に{注意|ちゅうい}！",
-		titleCn: "注意表示引用部分的「　」「『　』」符号！",
+		titleCn: "注意表示引用部分的「　」「『　』」！",
 		titleEn: "Pay attention to 「　」「『　』」 which indicate quotations!",
 		figure: {
 			alt: "キャラクターが「ボクは『総まとめ』で勉強してるよ。」「このページは「書評」っていうタイトルだよ！」と言っている。",
-			cn: "角色说：「我在用『总复习』学习。」「这一页的标题是「书评」哦！」",
+			cn: "角色在说：「我在用『总复习』学习哦。」「这一页的标题叫「书评」哦！」",
 			en: "A character saying, “I’m studying with『総まとめ』.” “This page’s title is「書評」!”",
 		},
 		tips: [
@@ -27,13 +27,13 @@ export const w5d6: ReadingDay = {
 			},
 			{
 				jp: "「　」「『　』」の{記号|きごう}はほかの{人|ひと}の{話|はな}し{言葉|ことば}や、{文章|ぶんしょう}や{本|ほん}のタイトルなどを{引用|いんよう}するときに{使|つか}います。{強調|きょうちょう}したい{言葉|ことば}などにも{使|つか}います。",
-				cn: "「　」「『　』」用来引用别人的话、文章或书名。想强调的词语也可以用。",
+				cn: "「　」「『　』」这些符号，在引用别人的话语、文章或书的标题等时使用。想要强调的词语等，也会用这些符号。",
 				en: "「　」 and 『　』 mark what someone has said, or quote a passage or a book title. They are also used to emphasize certain words.",
 			},
 		],
 		expressions: [
-			{ jp: "「　」（かぎかっこ）", cn: "引号：对话、强调、引用短句", en: "quotation marks: speech, emphasis, short quotes" },
-			{ jp: "『　』（二重かぎかっこ）", cn: "书名号：书名、作品名", en: "double quotes: book / work titles" },
+			{ jp: "「　」（かぎかっこ）", cn: "「　」（钩引号）", en: "quotation marks: speech, emphasis, short quotes" },
+			{ jp: "『　』（二重かぎかっこ）", cn: "『　』（双钩引号）", en: "double quotes: book / work titles" },
 			{ jp: "書評", kana: "しょひょう", cn: "书评", en: "book review" },
 			{ jp: "引用する", kana: "いんようする", cn: "引用", en: "to quote" },
 			{ jp: "強調する", kana: "きょうちょうする", cn: "强调", en: "to emphasize" },
@@ -46,7 +46,7 @@ export const w5d6: ReadingDay = {
 
 	renshu: {
 		instruction: "{次|つぎ}の{会話文|かいわぶん}を{読|よ}んで、{後|あと}の{文|ぶん}から{正|ただ}しいものを{選|えら}ぼう。",
-		instructionCn: "阅读下面的对话，从后面的句子中选出正确的。（答案在下一页）",
+		instructionCn: "阅读下面的对话文，从后面的句子中选出正确的吧。",
 		instructionEn: "Read the conversation below and choose the correct statements from the sentences that follow. (Answers are on the next page.)",
 		blocks: [
 			{
@@ -55,7 +55,7 @@ export const w5d6: ReadingDay = {
 				speakerCn: "女人",
 				speakerEn: "Woman",
 				jp: "{土屋先生|つちやせんせい}のエッセイ（{注|ちゅう}1）、{読|よ}んだ？",
-				cn: "土屋老师的随笔，你读了吗？",
+				cn: "土屋老师的随笔（注1），读了吗？",
 				en: "Have you read Professor Tsuchiya’s essays?",
 			},
 			{
@@ -73,7 +73,7 @@ export const w5d6: ReadingDay = {
 				speakerCn: "女人",
 				speakerEn: "Woman",
 				jp: "そう。あの{先生|せんせい}、エッセイも{書|か}いているのよ。",
-				cn: "对。那位老师也写随笔呢。",
+				cn: "对。那位老师也写随笔的哦。",
 				en: "Yes. He writes essays too.",
 			},
 			{
@@ -82,7 +82,7 @@ export const w5d6: ReadingDay = {
 				speakerCn: "男人",
 				speakerEn: "Man",
 				jp: "ふーん。{哲学|てつがく}の{本|ほん}じゃないんだ。",
-				cn: "哦——不是哲学书啊。",
+				cn: "嗯——。不是哲学书啊。",
 				en: "Huh. So it’s not a philosophy book.",
 			},
 			{
@@ -91,7 +91,7 @@ export const w5d6: ReadingDay = {
 				speakerCn: "女人",
 				speakerEn: "Woman",
 				jp: "うん、でもね、「{人間|にんげん}の{定義|ていぎ}（{注|ちゅう}2）」を{書|か}いているところなんて、{笑|わら}っちゃうんだけど、{読|よ}んでいくうちに、{結局|けっきょく}は{哲学|てつがく}を{考|かんが}えさせられるっていう{不思議|ふしぎ}なエッセイなの。でも、{文章|ぶんしょう}は{難|むずか}しくないから、すらすら{読|よ}めて、{楽|たの}しかったー。",
-				cn: "嗯，不过呢，写「人的定义」那段让人笑出来，可读着读着最后还是被逼着思考哲学，很奇妙的随笔。文章并不难，读得很顺，挺开心的。",
+				cn: "嗯，不过呢，写着「人的定义（注2）」的地方什么的，虽然会让人忍不住笑出来，但在读下去的过程中，到头来还是会让人不得不去思考哲学，就是这样一篇不可思议的随笔呢。不过，文章并不难，所以能顺畅地读，很开心啊。",
 				en: "Yeah, but the part on “the definition of a human” makes you laugh, and as you read on you end up being made to think about philosophy—a strange kind of essay. The writing isn’t hard, though, so it read smoothly and was fun.",
 			},
 			{
@@ -100,7 +100,7 @@ export const w5d6: ReadingDay = {
 				speakerCn: "男人",
 				speakerEn: "Man",
 				jp: "へえ、{読|よ}みたいな。{貸|か}してよ。",
-				cn: "哦，想读。借我看看。",
+				cn: "哦，想读呢。借我嘛。",
 				en: "Oh, I’d like to read it. Lend it to me.",
 			},
 		],
@@ -109,10 +109,10 @@ export const w5d6: ReadingDay = {
 			{ marker: "（注2）", term: "定義", jp: "a definition", cn: "定义", en: "a definition" },
 		],
 		choices: [
-			{ jp: "{女|おんな}の{人|ひと}は{哲学|てつがく}の{本|ほん}を{読|よ}んでいる。", cn: "女人在读哲学书。", en: "The woman is reading a philosophy book." },
+			{ jp: "{女|おんな}の{人|ひと}は{哲学|てつがく}の{本|ほん}を{読|よ}んでいる。", cn: "女人正在读哲学书。", en: "The woman is reading a philosophy book." },
 			{ jp: "{土屋先生|つちやせんせい}のエッセイはおもしろい。", cn: "土屋老师的随笔很有趣。", en: "Professor Tsuchiya’s essays are interesting." },
-			{ jp: "{土屋先生|つちやせんせい}のエッセイは{不思議|ふしぎ}でわかりにくいところがある。", cn: "土屋老师的随笔有奇妙而难懂的地方。", en: "Professor Tsuchiya’s essays have strange, hard-to-understand parts." },
-			{ jp: "{女|おんな}の{人|ひと}は{土屋先生|つちやせんせい}のエッセイを{簡単|かんたん}に{読|よ}めた。", cn: "女人轻松读完了土屋老师的随笔。", en: "The woman was able to read Professor Tsuchiya’s essays easily." },
+			{ jp: "{土屋先生|つちやせんせい}のエッセイは{不思議|ふしぎ}でわかりにくいところがある。", cn: "土屋老师的随笔有既不可思议又难以理解的地方。", en: "Professor Tsuchiya’s essays have strange, hard-to-understand parts." },
+			{ jp: "{女|おんな}の{人|ひと}は{土屋先生|つちやせんせい}のエッセイを{簡単|かんたん}に{読|よ}めた。", cn: "女人能够很容易地阅读土屋老师的随笔。", en: "The woman was able to read Professor Tsuchiya’s essays easily." },
 			{ jp: "{男|おとこ}の{人|ひと}は、{哲学|てつがく}の{本|ほん}は{読|よ}みたくない。", cn: "男人不想读哲学书。", en: "The man does not want to read philosophy books." },
 		],
 		answers: [2, 4],
@@ -120,40 +120,40 @@ export const w5d6: ReadingDay = {
 
 	mondai: {
 		instruction: "{次|つぎ}の{文章|ぶんしょう}は、ある{本|ほん}について{書|か}かれたものである。{読|よ}んで、{後|あと}の{問|と}いに{答|こた}えなさい。",
-		instructionCn: "下面这篇文章是就某本书写的。阅读后回答后面的问题。（答案在别册 p.6）",
+		instructionCn: "下面的文章是就某一本书写成的。请阅读，并回答后面的问题。",
 		instructionEn: "The following text was written about a certain book. Read it and answer the questions that follow. (Answers are in the separate booklet, p. 6.)",
 		blocks: [
 			{
 				type: "title",
 				jp: "『われ{笑|わら}う、ゆえにわれあり』　{土屋賢二|つちやけんじ} {著|ちょ}",
-				cn: "《我笑故我在》　土屋贤二 著",
+				cn: "『我笑，故我在』　土屋贤二 著",
 				en: "I Laugh, Therefore I Am, by Kenji Tsuchiya",
 				sub: { jp: "（{文春文庫|ぶんしゅんぶんこ}）", cn: "（文春文库）", en: "(Bunchun Bunko)" },
 			},
 			{
 				type: "figure",
 				alt: "文庫本の表紙。題名『われ笑う、ゆえにわれあり』、著者名「土屋賢二」。人物の顔が描かれている。",
-				cn: "文库本封面。书名《我笑故我在》，作者土屋贤二。画着人物的脸。",
+				cn: "文库本的封面。题名『我笑，故我在』，作者名「土屋贤二」。画着人物的脸。",
 				en: "Paperback cover. Title I Laugh, Therefore I Am, author Kenji Tsuchiya. A face is drawn on it.",
 			},
 			{
 				type: "paragraph",
 				jp: "{作者本人|さくしゃほんにん}は{本書|ほんしょ}を「ユーモアエッセイ」と{称|しょう}している（{注|ちゅう}1）が、ユーモアのつもりで{読|よ}んでいると、いつの{間|ま}にか{鋭|するど}い{社会批評|しゃかいひひょう}であったり、{冗談|じょうだん}だと{思|おも}えば{哲学|てつがく}の{問題|もんだい}であったりする。",
-				cn: "作者本人把这本书称作「幽默随笔」，可你当幽默来读，不知不觉就成了尖锐的社会批评；当笑话来听，又成了哲学问题。",
+				cn: "作者本人把本书称作「幽默随笔」（注1），然而若当作幽默来读，不知不觉间它便会是尖锐的社会批评，你若以为是玩笑，它便会是哲学问题。",
 				en: "The author himself calls the book a “humor essay,” but if you read it as humor, before you know it it is sharp social criticism, and what you took for a joke turns out to be a philosophical problem.",
 				indent: true,
 			},
 			{
 				type: "paragraph",
 				jp: "その{文章|ぶんしょう}は{非常|ひじょう}に{読|よ}みやすい。やさしい{言葉|ことば}や{表現|ひょうげん}を{用|もち}いているため、{哲学|てつがく}の{話|はなし}と{気|き}がつかない{場合|ばあい}がある。しかし、いつの{間|ま}にか、{本来|ほんらい}{難|むずか}しいはずの{論理|ろんり}を{考|かんが}えていたりするという①{不思議|ふしぎ}なエッセイである。",
-				cn: "文章非常好读。因为用的是浅白的词语和表达，有时竟察觉不到是在讲哲学。可不知不觉间，你已经在思考本来很难的逻辑——就是这样一种①奇妙的随笔。",
+				cn: "其文章非常易读。由于使用了浅易的词语和表达，有时会察觉不到是在讲哲学。然而，不知不觉间，就会去思考本来应该很难的逻辑，正是这样一篇①不可思议的随笔。",
 				en: "The writing is extremely easy to read. Because it uses gentle words and expressions, you sometimes do not even realize it is talking about philosophy. And yet, before you know it, you are thinking through logic that ought to be hard—that is the kind of ① strange essay it is.",
 				indent: true,
 			},
 			{
 				type: "paragraph",
 				jp: "{本書|ほんしょ}の「{人間|にんげん}を{定義|ていぎ}するのは{不可能|ふかのう}である」という{項目|こうもく}の{中|なか}で、さまざまな{例|れい}をあげながら「{人間|にんげん}の{定義|ていぎ}」を{論|ろん}じている（{注|ちゅう}2）のだが、「{我々|われわれ}がどこから{見|み}ても{人間|にんげん}に{見|み}えるが{犬|いぬ}から{生|う}まれた{場合|ばあい}」や、「{一生|いっしょう}の{間|あいだ}に1{分間|ぷんかん}だけカエルになった{場合|ばあい}」など、{突拍子|とっぴょうし}もない（{注|ちゅう}3）{条件|じょうけん}に{笑|わら}いながら{読|よ}み{進|すす}んでいくと、「{定義|ていぎ}」とはどういうものかということが、ぼんやりとではあるが{見|み}えてくるのである＊。（ ② ）にもお{勧|すす}め（{注|ちゅう}4）の{一冊|いっさつ}である。",
-				cn: "本书在「人是不可能被定义的」这一节里，举出种种例子来讨论「人的定义」。比如「不论从哪看都像人、却是狗生的场合」「一辈子里只有一分钟变成青蛙的场合」这类荒诞条件，你笑着读下去，对「定义」究竟是什么，便会模模糊糊地看见一点轮廓。这也是一本向（ ② ）推荐的书。",
+				cn: "在本书「定义人是不可能的」这一项目中，一边举出各种各样的例子，一边论述着「人的定义」（注2）。而对「无论我们从哪里看都像人、却是狗生下来的情况」以及「一生之中只有1分钟变成了青蛙的情况」等荒唐无稽（注3）的条件，一边笑着读下去，「定义」究竟是怎样的东西这一点，虽说模糊，却会渐渐显现出来＊。也是向（ ② ）推荐（注4）的一本书。",
 				en: "In the section “It is impossible to define a human,” the book discusses “the definition of a human” with all sorts of examples. Conditions as wild as “a being that looks human from every angle but was born of a dog,” or “a case of becoming a frog for just one minute in a lifetime,” make you laugh as you read on—and, if only vaguely, what a “definition” is starts to come into view. It is also a volume to recommend to ( ② ).",
 				indent: true,
 			},
@@ -167,7 +167,7 @@ export const w5d6: ReadingDay = {
 		pageNotes: [
 			{
 				jp: "You will gradually but vaguely understand what the definition means",
-				cn: "对什么是“定义”这个问题，虽然有些模糊，但也会知道一些",
+				cn: "你会逐渐地、却又模糊地理解定义意味着什么。",
 				en: "You will gradually but vaguely understand what the definition means",
 			},
 		],
@@ -175,13 +175,13 @@ export const w5d6: ReadingDay = {
 			{
 				label: "問1",
 				jp: "なぜ①{不思議|ふしぎ}なエッセイなのか。",
-				cn: "为什么说是①奇妙的随笔？",
+				cn: "为什么是①不可思议的随笔呢？",
 				en: "Why is it a ① strange essay?",
 				choices: [
-					{ jp: "エッセイなのに{哲学|てつがく}のことばかり{書|か}いてあるから。", cn: "明明是随笔却净写哲学。", en: "Because although it is an essay it writes about nothing but philosophy." },
-					{ jp: "やさしい{言葉|ことば}や{表現|ひょうげん}を{用|もち}いているから。", cn: "因为用了浅白的词语和表达。", en: "Because it uses gentle words and expressions." },
-					{ jp: "{知|し}らないうちに、{哲学的|てつがくてき}なことを{考|かんが}えさせられるから。", cn: "因为不知不觉就被带着去思考哲学性的事情。", en: "Because before you know it you are made to think about philosophical things." },
-					{ jp: "{理解|りかい}しにくい{冗談|じょうだん}が{多|おお}いから。", cn: "因为难懂的笑话很多。", en: "Because there are many jokes that are hard to understand." },
+					{ jp: "エッセイなのに{哲学|てつがく}のことばかり{書|か}いてあるから。", cn: "因为虽然是随笔，写的却尽是哲学方面的事。", en: "Because although it is an essay it writes about nothing but philosophy." },
+					{ jp: "やさしい{言葉|ことば}や{表現|ひょうげん}を{用|もち}いているから。", cn: "因为使用了浅易的词语和表达。", en: "Because it uses gentle words and expressions." },
+					{ jp: "{知|し}らないうちに、{哲学的|てつがくてき}なことを{考|かんが}えさせられるから。", cn: "因为在还没察觉的时候，会让人不得不去思考哲学性的事情。", en: "Because before you know it you are made to think about philosophical things." },
+					{ jp: "{理解|りかい}しにくい{冗談|じょうだん}が{多|おお}いから。", cn: "因为难以理解的玩笑很多。", en: "Because there are many jokes that are hard to understand." },
 				],
 				answer: 3,
 				explanation:
@@ -204,13 +204,13 @@ export const w5d6: ReadingDay = {
 			{
 				label: "問2",
 				jp: "（ ② ）に{入|はい}るものとして{最|もっと}も{適当|てきとう}なものはどれか。",
-				cn: "填入（ ② ）最合适的是哪一项？",
+				cn: "作为填入（ ② ）的内容，最恰当的是哪一个？",
 				en: "Which of the following best fills ( ② )?",
 				choices: [
-					{ jp: "ユーモアには{興味|きょうみ}がないという{若者|わかもの}", cn: "对幽默不感兴趣的年轻人", en: "young people who have no interest in humor" },
-					{ jp: "{哲学|てつがく}には{興味|きょうみ}がないという{若者|わかもの}", cn: "对哲学不感兴趣的年轻人", en: "young people who have no interest in philosophy" },
-					{ jp: "エッセイには{興味|きょうみ}がないという{若者|わかもの}", cn: "对随笔不感兴趣的年轻人", en: "young people who have no interest in essays" },
-					{ jp: "{条件|じょうけん}には{興味|きょうみ}がないという{若者|わかもの}", cn: "对条件不感兴趣的年轻人", en: "young people who have no interest in conditions" },
+					{ jp: "ユーモアには{興味|きょうみ}がないという{若者|わかもの}", cn: "对幽默没有兴趣的年轻人", en: "young people who have no interest in humor" },
+					{ jp: "{哲学|てつがく}には{興味|きょうみ}がないという{若者|わかもの}", cn: "对哲学没有兴趣的年轻人", en: "young people who have no interest in philosophy" },
+					{ jp: "エッセイには{興味|きょうみ}がないという{若者|わかもの}", cn: "对随笔没有兴趣的年轻人", en: "young people who have no interest in essays" },
+					{ jp: "{条件|じょうけん}には{興味|きょうみ}がないという{若者|わかもの}", cn: "对条件没有兴趣的年轻人", en: "young people who have no interest in conditions" },
 				],
 				answer: 2,
 				explanation:
@@ -257,7 +257,7 @@ export const w5d6: ReadingDay = {
 			meaningEn: "before one knows it. In the review: you start in humor and, without noticing, you are doing philosophy.",
 			example: {
 				jp: "ユーモアのつもりで{読|よ}んでいると、いつの{間|ま}にか{鋭|するど}い{社会批評|しゃかいひひょう}であったりする。",
-				cn: "当幽默来读，不知不觉就成了尖锐的社会批评。",
+				cn: "若当作幽默来读，不知不觉间便会是尖锐的社会批评之类的。",
 				en: "If you read it as humor, before you know it it is sharp social criticism.",
 			},
 		},
@@ -268,7 +268,7 @@ export const w5d6: ReadingDay = {
 			meaningEn: "as / while …. Warm-up: “as you read on, you are made to think about philosophy.”",
 			example: {
 				jp: "{読|よ}んでいくうちに、{結局|けっきょく}は{哲学|てつがく}を{考|かんが}えさせられる。",
-				cn: "读着读着，最后还是被带着去思考哲学。",
+				cn: "在读下去的过程中，到头来还是会让人不得不去思考哲学。",
 				en: "As you read on, you end up being made to think about philosophy.",
 			},
 		},
@@ -279,7 +279,7 @@ export const w5d6: ReadingDay = {
 			meaningEn: "to call (it) … (often of the speaker’s own claim). More written than to iu; common in reviews.",
 			example: {
 				jp: "{作者本人|さくしゃほんにん}は{本書|ほんしょ}を「ユーモアエッセイ」と{称|しょう}している。",
-				cn: "作者本人把这本书称作「幽默随笔」。",
+				cn: "作者本人把本书称作「幽默随笔」。",
 				en: "The author himself calls the book a “humor essay.”",
 			},
 		},

@@ -12,27 +12,27 @@ export const w6d3: ReadingDay = {
 
 	point: {
 		title: "{段落|だんらく}ごとに{意味|いみ}を{理解|りかい}しよう！",
-		titleCn: "按段落理解意思！",
+		titleCn: "按每个段落来理解意思吧！",
 		titleEn: "Try to understand it paragraph by paragraph!",
 		figure: {
 			alt: "「ボクが言いたいことは…」と話すキャラクターと、「あなたのことなんか聞いてない！」と耳をふさぐキャラクター",
-			cn: "一个角色说「我想说的是……」，另一个捂着耳朵说「你的事我才不听呢！」",
+			cn: "一个说着「我想说的是……」的角色，和一个捂着耳朵说「你的事我才没在听！」的角色",
 			en: "One character says “What I want to say is…,” and another covers its ears: “I’m not listening to anything about you!”",
 		},
 		tips: [
 			{
 				jp: "こんな{段落構成|だんらくこうせい}になっていることが{多|おお}いです。",
-				cn: "常常是这样的段落结构。",
+				cn: "往往是这样的段落结构。",
 				en: "Passages are often organized in paragraphs like this.",
 			},
 			{
 				jp: "{第|だい}1{段落|だんらく}：{事実|じじつ}や{説明|せつめい}（{生物|せいぶつ}の{特性|とくせい}など）　→　{第|だい}2{段落|だんらく}：{筆者|ひっしゃ}が{言|い}いたいこと",
-				cn: "第 1 段：事实或说明（生物的特性等）→ 第 2 段：笔者想说的话",
+				cn: "第1段落：事实或说明（生物的特性等）　→　第2段落：笔者想说的话",
 				en: "Paragraph 1: facts or explanation (e.g. traits of living things) → Paragraph 2: what the writer wants to say",
 			},
 			{
 				jp: "★{生物|せいぶつ}に{関|かん}する{文章|ぶんしょう}は、{左|ひだり}のように{段落|だんらく}によってはっきりと{内容|ないよう}が{分|わ}かれていることが{多|おお}いです。",
-				cn: "与生物有关的文章，往往像左边这样，各段内容划分得很清楚。",
+				cn: "★与生物有关的文章，往往像左边那样，内容按段落划分得很清楚。",
 				en: "Articles about biology tend to be clearly divided by paragraph, as in the example on the left.",
 			},
 		],
@@ -51,7 +51,7 @@ export const w6d3: ReadingDay = {
 	renshu: {
 		instruction:
 			"{次|つぎ}の{会話文|かいわぶん}を{読|よ}んで、{後|あと}の{文|ぶん}から{正|ただ}しいものを{選|えら}ぼう。",
-		instructionCn: "阅读下面的对话，从后面的句子中选出正确的。（答案在下一页）",
+		instructionCn: "阅读下面的对话，从后面的句子中选出正确的吧。",
 		instructionEn:
 			"Read the conversation below and choose the correct statements from the sentences that follow. (Answers are on the next page.)",
 		blocks: [
@@ -70,7 +70,7 @@ export const w6d3: ReadingDay = {
 				speakerCn: "男人",
 				speakerEn: "Man",
 				jp: "うん、スズメバチ（{注|ちゅう}2）に{刺|さ}されたことがあるけど、ものすごく{痛|いた}かったよ。こんなにはれた（{注|ちゅう}3）し。",
-				cn: "嗯，被马蜂（注2）蜇过，疼得要命。还肿成这样（注3）。",
+				cn: "嗯，我被胡蜂（注2）蜇过，疼得不得了呀。而且还肿成这样（注3）。",
 				en: "Yeah, I’ve been stung by a hornet (note 2), and it hurt like crazy. It swelled up this much (note 3).",
 			},
 			{
@@ -79,7 +79,7 @@ export const w6d3: ReadingDay = {
 				speakerCn: "女人",
 				speakerEn: "Woman",
 				jp: "{私|わたし}も{一度|いちど}{刺|さ}されたんだけど、{次|つぎ}は{気|き}をつけろってお{医者|いしゃ}さんに{言|い}われたの。{私|わたし}、アレルギー{体質|たいしつ}（{注|ちゅう}4）だから、{次|つぎ}に{刺|さ}されたらアレルギー{反応|はんのう}を{起|お}こすかもしれないんだって。{死|し}ぬ{場合|ばあい}だってあるらしいよ。",
-				cn: "我也被蜇过一次，医生让我下次千万小心。说我是过敏体质（注4），再被蜇可能会引起过敏反应。好像还有死掉的情况呢。",
+				cn: "我也被蜇过一次，医生叫我下次要小心。说因为我是过敏体质（注4），下次再被蜇的话可能会引起过敏反应。据说甚至还有会死的情况呢。",
 				en: "I’ve been stung once too, and the doctor told me to be careful next time. I’m allergic (note 4), so if I’m stung again I might have an allergic reaction. Apparently it can even be fatal.",
 			},
 			{
@@ -88,7 +88,7 @@ export const w6d3: ReadingDay = {
 				speakerCn: "男人",
 				speakerEn: "Man",
 				jp: "へー、{怖|こわ}いんだね。{刺|さ}されないように{気|き}をつけなきゃ。",
-				cn: "诶——好吓人啊。可得小心别被蜇到。",
+				cn: "诶——，好可怕呢。得小心别被蜇到。",
 				en: "Wow, that’s scary. We’ll have to be careful not to get stung.",
 			},
 		],
@@ -101,12 +101,12 @@ export const w6d3: ReadingDay = {
 		choices: [
 			{
 				jp: "2{人|にん}はハチの{種類|しゅるい}について{話|はな}している。",
-				cn: "两个人在谈论蜂的种类。",
+				cn: "2个人在谈论蜂的种类。",
 				en: "The two are talking about kinds of bees.",
 			},
 			{
 				jp: "2{人|にん}ともハチに{刺|さ}されたことがある。",
-				cn: "两个人都曾被蜂蜇过。",
+				cn: "2个人都曾被蜂蜇过。",
 				en: "Both of them have been stung by a bee.",
 			},
 			{
@@ -121,7 +121,7 @@ export const w6d3: ReadingDay = {
 			},
 			{
 				jp: "{女|おんな}の{人|ひと}はハチに{刺|さ}されないように{特|とく}に{注意|ちゅうい}が{必要|ひつよう}だ。",
-				cn: "女人需要特别注意不要被蜂蜇。",
+				cn: "女人为了不被蜂蜇，特别需要注意。",
 				en: "The woman especially needs to be careful not to be stung.",
 			},
 		],
@@ -130,21 +130,21 @@ export const w6d3: ReadingDay = {
 
 	mondai: {
 		instruction: "{次|つぎ}の{文章|ぶんしょう}を{読|よ}んで、{後|あと}の{問|と}いに{答|こた}えなさい。",
-		instructionCn: "阅读下面的文章，回答后面的问题。（答案在别册 p.7）",
+		instructionCn: "请阅读下面的文章，回答后面的问题。",
 		instructionEn: "Read the following passage and answer the questions that follow. (Answers are in the separate booklet, p. 7.)",
 		blocks: [
 			{
 				type: "paragraph",
 				indent: true,
 				jp: "ハチに{刺|さ}されると、はれてとても{痛|いた}い。{中|なか}でも{怖|こわ}いのはスズメバチである。スズメバチの{針|はり}（{注|ちゅう}1）はミツバチ（{注|ちゅう}2）などと{違|ちが}い、{何度|なんど}でも{刺|さ}せる。{毒性|どくせい}が{強|つよ}い（{注|ちゅう}3）ので1{匹|ぴき}だけでもひどくはれたりして{大変|たいへん}だが、ほとんどの{場合|ばあい}、{集団|しゅうだん}で{襲|おそ}って（{注|ちゅう}4）くるのでさらに{恐|おそ}ろしい。また、スズメバチに{限|かぎ}らず、ハチに{刺|さ}されて{怖|こわ}いのはそれだけではない。アレルギーによるショック{症状|しょうじょう}（{注|ちゅう}5）だ。もし、アレルギー{体質|たいしつ}の{人|ひと}が{刺|さ}されると、1{回目|かいめ}は{痛|いた}みだけですむが、2{回目|かいめ}に{刺|さ}されると、{抗体|こうたい}（{注|ちゅう}6）によりアレルギー{反応|はんのう}を{起|お}こし、{吐|は}き{気|け}やめまいが{起|お}こり、{場合|ばあい}によっては{呼吸困難|こきゅうこんなん}で{死|し}んでしまうこともあるのだ*。",
-				cn: "被蜂蜇会肿、会非常痛。其中最可怕的是马蜂。马蜂的刺（注1）和蜜蜂（注2）等不同，可以反复蜇。毒性很强（注3），哪怕一只要也会肿得很厉害，够受的；而且多数情况下会成群袭击（注4），更加可怕。另外，不限于马蜂，被蜂蜇的可怕之处还不止这些：还有过敏引起的休克症状（注5）。过敏体质的人如果被蜇，第一次往往只是疼一疼就过去了，但第二次被蜇时，会因抗体（注6）引起过敏反应，出现恶心、头晕，有时还会因呼吸困难而死亡*。",
+				cn: "被蜂蜇后会肿胀，非常疼痛。其中最可怕的是胡蜂。胡蜂的针（注1）与蜜蜂（注2）等不同，无论多少次都能蜇。毒性很强（注3），所以哪怕只有1只，也会肿得厉害，十分严重，不过大多数情况下会成群袭来（注4），因此更加恐怖。另外，不限于胡蜂，被蜂蜇的可怕之处还不止这些。是过敏引起的休克症状（注5）。如果过敏体质的人被蜇，第1次只是疼痛便了事，但第2次被蜇时，会因抗体（注6）引起过敏反应，出现恶心和头晕，在有些情况下还会因呼吸困难而死去*。",
 				en: "If you are stung by a bee, it swells and hurts a great deal. The scariest of all is the hornet. Unlike a honeybee (note 2), a hornet’s stinger (note 1) can sting again and again. The venom is strong (note 3), so even one insect can cause severe swelling and real trouble, and in most cases they attack in a group (note 4), which is still more frightening. And it is not only hornets: being stung is scary for more than that. There are allergic shock symptoms (note 5). If a person with an allergic constitution is stung, the first time may end with pain alone, but a second sting brings an allergic reaction via antibodies (note 6), with nausea and dizziness, and in some cases death from difficulty breathing*.",
 			},
 			{
 				type: "paragraph",
 				indent: true,
 				jp: "ハチに{刺|さ}されないようにするためには、{服装|ふくそう}や{帽子|ぼうし}はできるだけ{白|しろ}っぽいものにしたほうがよい。ハチは{黒|くろ}いものを{攻撃|こうげき}する{習性|しゅうせい}（{注|ちゅう}7）があるからである。それから、スズメバチなどは{巣|す}に{近|ちか}づいた{人|ひと}に{対|たい}してカチカチと{音|おと}を{出|だ}すので、そういう{音|おと}が{聞|き}こえたら、そっと、すぐにそこから{逃|に}げるのが{一番|いちばん}である。",
-				cn: "为了不被蜂蜇，衣服和帽子尽量选偏白的为好。因为蜂有攻击黑色物体的习性（注7）。另外，马蜂等对靠近巢穴的人会发出咔嚓咔嚓的声音，一旦听到那种声音，悄悄地马上离开那里才是上策。",
+				cn: "为了不被蜂蜇，服装和帽子尽可能选用偏白的为好。这是因为蜂有攻击黑色东西的习性（注7）。另外，胡蜂等会对靠近巢的人发出咔嗒咔嗒的声音，所以如果听到那种声音，悄悄地、立刻从那里逃走是最好的。",
 				en: "To avoid being stung, it is better to make clothing and hats as whitish as possible. Bees have a habit of attacking dark things (note 7). Also, hornets and the like click at people who approach the nest, so if you hear that sound, the best thing is to slip away from there at once.",
 			},
 		],
@@ -160,7 +160,7 @@ export const w6d3: ReadingDay = {
 		pageNotes: [
 			{
 				jp: "in some cases, you could die from breathing difficulties",
-				cn: "有时可能会因呼吸困难而死",
+				cn: "在某些情况下，你可能会因呼吸困难而死亡",
 				en: "in some cases, you could die from breathing difficulties",
 			},
 		],
@@ -168,10 +168,10 @@ export const w6d3: ReadingDay = {
 			{
 				label: "問1",
 				jp: "{怖|こわ}いのはそれだけではないとあるが、ほかに{何|なに}が{怖|こわ}いのか。",
-				cn: "文中说可怕的还不止这些，另外还有什么可怕？",
+				cn: "文中说可怕的还不止这些，另外还有什么可怕的呢？",
 				en: "The passage says that is not the only scary thing. What else is scary?",
 				choices: [
-					{ jp: "スズメバチに{刺|さ}されること", cn: "被马蜂蜇", en: "being stung by a hornet" },
+					{ jp: "スズメバチに{刺|さ}されること", cn: "被胡蜂蜇", en: "being stung by a hornet" },
 					{ jp: "{痛|いた}くてはれること", cn: "又疼又肿", en: "hurting and swelling" },
 					{ jp: "アレルギー{体質|たいしつ}になること", cn: "变成过敏体质", en: "becoming allergic" },
 					{ jp: "アレルギー{反応|はんのう}を{起|お}こすこと", cn: "引起过敏反应", en: "having an allergic reaction" },
@@ -197,13 +197,13 @@ export const w6d3: ReadingDay = {
 			{
 				label: "問2",
 				jp: "ハチに{攻撃|こうげき}されないようにするためには、どうすればいいか。",
-				cn: "为了不被蜂攻击，应该怎么做？",
+				cn: "为了不被蜂攻击，怎么做才好？",
 				en: "What should you do to avoid being attacked by bees?",
 				choices: [
-					{ jp: "{帽子|ぼうし}をかぶらないようにする。", cn: "不戴帽子。", en: "Avoid wearing a hat." },
-					{ jp: "{黒|くろ}っぽい{服|ふく}を{着|き}ないようにする。", cn: "不穿偏黑的衣服。", en: "Avoid wearing darkish clothes." },
-					{ jp: "カチカチと{音|おと}をたてて{逃|に}げる。", cn: "发出咔嚓声然后逃跑。", en: "Make a clicking sound and run." },
-					{ jp: "{集団行動|しゅうだんこうどう}をしないようにする。", cn: "不要集体行动。", en: "Avoid acting in a group." },
+					{ jp: "{帽子|ぼうし}をかぶらないようにする。", cn: "尽量不戴帽子。", en: "Avoid wearing a hat." },
+					{ jp: "{黒|くろ}っぽい{服|ふく}を{着|き}ないようにする。", cn: "尽量不穿偏黑的衣服。", en: "Avoid wearing darkish clothes." },
+					{ jp: "カチカチと{音|おと}をたてて{逃|に}げる。", cn: "发出咔嗒咔嗒的声音然后逃走。", en: "Make a clicking sound and run." },
+					{ jp: "{集団行動|しゅうだんこうどう}をしないようにする。", cn: "尽量不采取集体行动。", en: "Avoid acting in a group." },
 				],
 				answer: 2,
 				explanation:
@@ -253,7 +253,7 @@ export const w6d3: ReadingDay = {
 			meaningEn: "not limited to…; not only….",
 			example: {
 				jp: "スズメバチに{限|かぎ}らず、ハチに{刺|さ}されて{怖|こわ}いのはそれだけではない。",
-				cn: "不限于马蜂，被蜂蜇的可怕之处还不止这些。",
+				cn: "不限于胡蜂，被蜂蜇的可怕之处还不止这些。",
 				en: "Not only with hornets: being stung is scary for more than that.",
 			},
 		},
@@ -264,7 +264,7 @@ export const w6d3: ReadingDay = {
 			meaningEn: "it is better to…. Offers advice.",
 			example: {
 				jp: "{服装|ふくそう}や{帽子|ぼうし}はできるだけ{白|しろ}っぽいものにしたほうがよい。",
-				cn: "衣服和帽子尽量选偏白的为好。",
+				cn: "服装和帽子尽可能选用偏白的为好。",
 				en: "It is better to make clothing and hats as whitish as possible.",
 			},
 		},
@@ -275,7 +275,7 @@ export const w6d3: ReadingDay = {
 			meaningEn: "to make a point of doing / not doing…. Conscious effort.",
 			example: {
 				jp: "ハチに{刺|さ}されないようにする。",
-				cn: "设法不被蜂蜇。",
+				cn: "尽量不被蜂蜇。",
 				en: "to make sure one is not stung by a bee",
 			},
 		},

@@ -11,32 +11,32 @@ export const w3d6: ReadingDay = {
 
 	point: {
 		title: "「〜したい」「〜してもらいたい」ときの{敬語|けいご}に{注意|ちゅうい}しよう！",
-		titleCn: "注意表达「想做〜」「想请对方为我做〜」时的敬语！",
+		titleCn: "我们来注意「想做〜」「想请对方为自己做〜」时的敬语！",
 		titleEn:
 			"Pay attention to polite language indicating your desire to do things, and polite language used to ask others to do things for you!",
 		figure: {
 			alt: "部下が上司に「あのー、今日は、早く帰らせていただけませんでしょうか。」とおそるおそる頼んでいるイラスト",
-			cn: "下属战战兢兢地对上司说：「那个……今天能不能让我早点回去呢？」",
+			cn: "下属战战兢兢地向上司请求「那个……今天，能否请允许我早点回去呢？」的插图",
 			en: "A subordinate nervously asks the boss, “Um … would it be possible for me to leave early today?”",
 		},
 		tips: [
 			{
 				jp: "{仕事|しごと}での{支払|しはら}いの{催促|さいそく}などについては、{遠回|とおまわ}しでていねいな{表現|ひょうげん}を{使|つか}います。",
-				cn: "工作中催款之类的事情，要使用委婉而礼貌的表达方式——不会直接说「早く払ってください」。",
+				cn: "关于工作中的催款等事宜，使用婉转而礼貌的表达。",
 				en: "For things like asking for payment at work, use roundabout, polite wording — you do not say “Please pay soon” directly.",
 			},
 		],
 		expressions: [
-			{ jp: "〜（さ）せていただけませんか。", cn: "【想做某事】能否让我……？（最客气）", en: "May I be allowed to …?" },
-			{ jp: "〜（さ）せてください。", cn: "【想做某事】请让我……", en: "Please let me …" },
-			{ jp: "〜（さ）せていただきます。", cn: "【想做某事】请允许我……（已决定要做）", en: "I will (take the liberty to) …" },
-			{ jp: "お／ご〜いただけませんか。", cn: "【想请对方做】能否请您……？", en: "Could you kindly …?" },
+			{ jp: "〜（さ）せていただけませんか。", cn: "能否请允许我〜？", en: "May I be allowed to …?" },
+			{ jp: "〜（さ）せてください。", cn: "请让我〜。", en: "Please let me …" },
+			{ jp: "〜（さ）せていただきます。", cn: "我将〜。", en: "I will (take the liberty to) …" },
+			{ jp: "お／ご〜いただけませんか。", cn: "能否请您〜？", en: "Could you kindly …?" },
 			{ jp: "お／ご〜願えませんか。", kana: "ねがえませんか", cn: "【想请对方做】能否拜托您……？", en: "Might I ask you to …?" },
 		],
 		notes: [
 			{
 				jp: "＊「〜させていただきます」は{相手|あいて}の{許可|きょか}を{必要|ひつよう}としないときや、{待|ま}てないときに{使|つか}います。",
-				cn: "＊「〜させていただきます」用于不需要对方许可、或来不及等对方许可的场合（例如「期限は12月8日とさせていただきます」＝期限就定为 12 月 8 日了）。",
+				cn: "＊「〜させていただきます」（我将〜）在不需要对方许可时，或等不及的时候使用。",
 				en: "＊ ~sasete itadakimasu is used when the other person’s permission is not needed, or when you cannot wait for it (e.g. “We will set the deadline as December 8”).",
 			},
 		],
@@ -44,7 +44,7 @@ export const w3d6: ReadingDay = {
 
 	renshu: {
 		instruction: "{次|つぎ}の{会話文|かいわぶん}を{読|よ}んで、{後|あと}の{文|ぶん}から{正|ただ}しいものを{選|えら}ぼう。",
-		instructionCn: "阅读下面的对话，从后面的句子中选出正确的。（答案在下一页）",
+		instructionCn: "阅读下面的对话，从后面的句子中选出正确的吧。",
 		instructionEn: "Read the dialogue below and choose the correct statements from the sentences that follow. (Answers are on the next page.)",
 		blocks: [
 			{
@@ -53,17 +53,17 @@ export const w3d6: ReadingDay = {
 				speakerCn: "男子",
 				speakerEn: "Man",
 				jp: "もしもし、こちらミドリ{旅行社|りょこうしゃ}の{田中|たなか}と{申|もう}しますが、{中井道子様|なかいみちこさま}はいらっしゃいますでしょうか。",
-				cn: "喂，您好，我是绿色旅行社的田中，请问中井道子女士在吗？",
+				cn: "喂，我是绿旅行社的田中，请问中井道子女士在吗？",
 				en: "Hello, this is Tanaka of Midori Travel. Is Ms. Michiko Nakai available?",
 			},
-			{ type: "speech", speaker: "{女|おんな}の{人|ひと}", speakerCn: "女子", speakerEn: "Woman", jp: "はい、{私|わたし}ですが……。", cn: "是的，我就是……", en: "Yes, speaking …" },
+			{ type: "speech", speaker: "{女|おんな}の{人|ひと}", speakerCn: "女子", speakerEn: "Woman", jp: "はい、{私|わたし}ですが……。", cn: "是的，我就是……。", en: "Yes, speaking …" },
 			{
 				type: "speech",
 				speaker: "{男|おとこ}の{人|ひと}",
 				speakerCn: "男子",
 				speakerEn: "Man",
 				jp: "あのー、12{月|がつ}23{日|にち}にご{出発|しゅっぱつ}の{旅行代金|りょこうだいきん}をまだお{振|ふ}り{込|こ}み（※1）いただいていないようですが……。",
-				cn: "那个……12 月 23 日出发的旅费，好像还没有收到您的汇款……",
+				cn: "那个……12月23日出发的旅行费用，似乎还没有收到您的汇款（※1）……。",
 				en: "Um … it seems we have not yet received the payment for the trip departing on December 23 …",
 			},
 			{
@@ -72,7 +72,7 @@ export const w3d6: ReadingDay = {
 				speakerCn: "女子",
 				speakerEn: "Woman",
 				jp: "あっ、すみません。すぐ{振|ふ}り{込|こ}みます。えーと、いくらでしたっけ？　あのー、{書類|しょるい}なくしちゃったみたいで、{口座番号|こうざばんごう}（※2）もわからなくって……。",
-				cn: "啊，抱歉。我马上汇。嗯……是多少钱来着？那个……文件好像被我弄丢了，账号也不知道……",
+				cn: "啊，对不起。我马上汇款。呃，是多少钱来着？　那个，文件好像弄丢了，账户号码（※2）也不知道了……。",
 				en: "Oh, I’m sorry. I’ll transfer it right away. Um, how much was it again? I seem to have lost the papers, so I don’t even know the account number …",
 			},
 		],
@@ -81,40 +81,40 @@ export const w3d6: ReadingDay = {
 			{ marker: "※2", term: "口座番号", jp: "an account number", cn: "银行账号", en: "an account number" },
 		],
 		choices: [
-			{ jp: "{女|おんな}の{人|ひと}は、{旅行|りょこう}に{行|い}く{予定|よてい}である。", cn: "女子打算去旅行。", en: "The woman is planning to go on a trip." },
-			{ jp: "{女|おんな}の{人|ひと}は、ミドリ{旅行社|りょこうしゃ}に{旅行|りょこう}を{申|もう}し{込|こ}んでいた。", cn: "女子曾向绿色旅行社报名了旅行。", en: "The woman had booked a trip with Midori Travel." },
-			{ jp: "{女|おんな}の{人|ひと}は、12{月|がつ}23{日|にち}に{旅行代金|りょこうだいきん}を{払|はら}うことにしていた。", cn: "女子原定 12 月 23 日支付旅费。", en: "The woman was supposed to pay the travel fee on December 23." },
+			{ jp: "{女|おんな}の{人|ひと}は、{旅行|りょこう}に{行|い}く{予定|よてい}である。", cn: "女子计划去旅行。", en: "The woman is planning to go on a trip." },
+			{ jp: "{女|おんな}の{人|ひと}は、ミドリ{旅行社|りょこうしゃ}に{旅行|りょこう}を{申|もう}し{込|こ}んでいた。", cn: "女子已经向绿旅行社报名了旅行。", en: "The woman had booked a trip with Midori Travel." },
+			{ jp: "{女|おんな}の{人|ひと}は、12{月|がつ}23{日|にち}に{旅行代金|りょこうだいきん}を{払|はら}うことにしていた。", cn: "女子原定于12月23日支付旅行费用。", en: "The woman was supposed to pay the travel fee on December 23." },
 			{
 				jp: "{女|おんな}の{人|ひと}は、ミドリ{旅行社|りょこうしゃ}から{旅行|りょこう}についての{書類|しょるい}をもらわなかった。",
-				cn: "女子没有从绿色旅行社收到关于旅行的文件。",
+				cn: "女子没有从绿旅行社收到关于旅行的文件。",
 				en: "The woman never received any travel documents from Midori Travel.",
 			},
-			{ jp: "{女|おんな}の{人|ひと}は、{旅行代金|りょこうだいきん}を{払|はら}うつもりはなかった。", cn: "女子本来就不打算付旅费。", en: "The woman never intended to pay the travel fee." },
+			{ jp: "{女|おんな}の{人|ひと}は、{旅行代金|りょこうだいきん}を{払|はら}うつもりはなかった。", cn: "女子当时没有支付旅行费用的打算。", en: "The woman never intended to pay the travel fee." },
 		],
 		answers: [1, 2],
 		hint: {
 			jp: "12{月|がつ}23{日|にち}は「ご{出発|しゅっぱつ}」の{日|ひ}。{書類|しょるい}は「なくしちゃった」＝もらったが{失|な}くした。",
-			cn: "12 月 23 日是「出发」的日子，不是付款日；文件是「弄丢了」，说明本来收到过。她说「すぐ振り込みます」，也不是不想付。",
+			cn: "12月23日是「ご出発」（出发）的日子。文件是「なくしちゃった」＝もらったが失くした（弄丢了＝收到了但弄丢了）。",
 			en: "December 23 is the departure date, not the payment date. “I lost the papers” means she did receive them. She also says “I’ll transfer it right away,” so it is not that she never meant to pay.",
 		},
 	},
 
 	mondai: {
 		instruction: "{次|つぎ}のファックスを{読|よ}んで、{後|あと}の{問|と}いに{答|こた}えなさい。",
-		instructionCn: "阅读下面的传真，回答后面的问题。（答案在别册 p.4）",
+		instructionCn: "请阅读下面的传真，回答后面的问题。",
 		instructionEn: "Read the fax below and answer the questions that follow. (Answers are in the separate booklet, p. 4.)",
 		blocks: [
 			{ type: "title", jp: "ＦＡＸ{送信|そうしん}のご{案内|あんない}", cn: "传真发送说明", en: "Fax Transmission Notice" },
-			{ type: "line", jp: "{安心|あんしん}できる{旅|たび}をあなたに…　ミドリ{旅行社|りょこうしゃ}", cn: "为您献上安心的旅程…　绿色旅行社", en: "A trip you can trust… Midori Travel", align: "center" },
-			{ type: "line", jp: "20XX{年|ねん}12{月|がつ}2{日|か}", cn: "20XX 年 12 月 2 日", en: "December 2, 20XX", align: "right" },
+			{ type: "line", jp: "{安心|あんしん}できる{旅|たび}をあなたに…　ミドリ{旅行社|りょこうしゃ}", cn: "把可以安心的旅行献给您…　绿旅行社", en: "A trip you can trust… Midori Travel", align: "center" },
+			{ type: "line", jp: "20XX{年|ねん}12{月|がつ}2{日|か}", cn: "20XX年12月2日", en: "December 2, 20XX", align: "right" },
 			{
 				type: "table",
 				rows: [
 					[
 						{ jp: "{送付先|そうふさき}", cn: "收件人", en: "To", header: true, align: "center" },
 						{ jp: "{中井|なかい}　{道子|みちこ}　{様|さま}", cn: "中井　道子　女士", en: "Ms. Michiko Nakai" },
-						{ jp: "{発信者|はっしんしゃ}（※1）", cn: "发件人", en: "From", header: true, align: "center" },
-						{ jp: "{株式会社|かぶしきがいしゃ}ミドリ{旅行社|りょこうしゃ}\n{田中|たなか}　{健一|けんいち}", cn: "绿色旅行社股份有限公司\n田中　健一", en: "Midori Travel Co., Ltd.\nKenichi Tanaka" },
+						{ jp: "{発信者|はっしんしゃ}（※1）", cn: "发件人（※1）", en: "From", header: true, align: "center" },
+						{ jp: "{株式会社|かぶしきがいしゃ}ミドリ{旅行社|りょこうしゃ}\n{田中|たなか}　{健一|けんいち}", cn: "绿旅行社股份有限公司\n田中　健一", en: "Midori Travel Co., Ltd.\nKenichi Tanaka" },
 					],
 					[
 						{ jp: "fax", cn: "传真", en: "fax", header: true, align: "center" },
@@ -123,33 +123,33 @@ export const w3d6: ReadingDay = {
 					],
 					[
 						{ jp: "{件名|けんめい}", cn: "主题", en: "Subject", header: true, align: "center" },
-						{ jp: "{代金未納|だいきんみのう}の{件|けん}（※2）", cn: "关于货款未缴一事", en: "Regarding unpaid fees" },
+						{ jp: "{代金未納|だいきんみのう}の{件|けん}（※2）", cn: "关于费用未缴纳一事（※2）", en: "Regarding unpaid fees" },
 						{ jp: "{枚数|まいすう}", cn: "页数", en: "Pages", header: true, align: "center" },
-						{ jp: "{本状|ほんじょう}（※3）を{含|ふく}めて　2{枚|まい}", cn: "含本页共 2 页", en: "2 pages including this one" },
+						{ jp: "{本状|ほんじょう}（※3）を{含|ふく}めて　2{枚|まい}", cn: "含本函（※3）共　2页", en: "2 pages including this one" },
 					],
 					[
 						{
 							jp: "☑{至急|しきゅう}！　□ご{参考|さんこう}まで　☑ご{確認|かくにん}ください　□ご{返信|へんしん}ください",
-							cn: "☑加急！　□仅供参考　☑请确认　□请回复",
+							cn: "☑加急！　□仅供参考　☑请您确认　□请您回复",
 							en: "☑ Urgent!  □ For your information  ☑ Please confirm  □ Please reply",
 							colSpan: 4,
 						},
 					],
 				],
 			},
-			{ type: "paragraph", jp: "いつもご{利用|りよう}いただき、ありがとうございます。", cn: "一直以来承蒙惠顾，非常感谢。", en: "Thank you for your continued patronage." },
+			{ type: "paragraph", jp: "いつもご{利用|りよう}いただき、ありがとうございます。", cn: "一直以来承蒙使用，非常感谢。", en: "Thank you for your continued patronage." },
 			{
 				type: "paragraph",
 				indent: true,
 				jp: "{先|さき}ほど、お{電話|でんわ}でお{話|はな}しした{件|けん}ですが、お{申|もう}し{込|こ}みいただいた{旅行代金|りょこうだいきん}が{未納|みのう}（※4）になっております。さっそく、{請求書|せいきゅうしょ}の{控|ひか}え（※5）をファックスさせていただきますので、{金額|きんがく}をご{確認|かくにん}の{上|うえ}、{指定|してい}の{口座|こうざ}にお{振|ふ}り{込|こ}みいただきますようお{願|ねが}い{申|もう}し{上|あ}げます＊。",
-				cn: "关于刚才电话中谈到的事宜，您报名的旅费目前尚未缴纳。我们立即将账单副本传真给您，请您确认金额后，汇款至指定账户＊。",
+				cn: "关于刚才电话中所谈之事，您所报名的旅行费用目前尚未缴纳（※4）。我们将立即把账单副本（※5）传真给您，故恳请您确认金额后汇至指定账户＊。",
 				en: "Regarding the matter we discussed on the phone a short while ago, the travel fee you applied for remains unpaid. We will fax you a copy of the invoice immediately, so please confirm the amount and transfer it to the designated account＊.",
 			},
 			{
 				type: "paragraph",
 				indent: true,
 				jp: "なお、お{振|ふ}り{込|こ}み{期限|きげん}は12{月|がつ}8{日|か}とさせていただきます。",
-				cn: "另外，汇款期限定为 12 月 8 日。",
+				cn: "另外，汇款期限我们定为12月8日。",
 				en: "Please note that we will set the transfer deadline as December 8.",
 			},
 		],
@@ -163,7 +163,7 @@ export const w3d6: ReadingDay = {
 		pageNotes: [
 			{
 				jp: "＊ An invoice will soon be faxed to you. Please kindly confirm the amount and arrange for a bank transfer to the designated account.",
-				cn: "＊我们会立即把账单副本用传真发给您，请确认金额后汇款至指定的银行账户。",
+				cn: "＊账单不久将传真给您。敬请确认金额，并安排向指定账户进行银行汇款。",
 				en: "＊ An invoice will soon be faxed to you. Please kindly confirm the amount and arrange for a bank transfer to the designated account.",
 			},
 		],
@@ -174,9 +174,9 @@ export const w3d6: ReadingDay = {
 				cn: "中井女士必须做的事情是什么？",
 				en: "What does Ms. Nakai have to do?",
 				choices: [
-					{ jp: "12{月|がつ}8{日|か}までに{代金|だいきん}を{送金|そうきん}する。", cn: "在 12 月 8 日之前汇款。", en: "Send the payment by December 8." },
-					{ jp: "{請求書|せいきゅうしょ}の{控|ひか}えを{田中|たなか}さんにFAXする。", cn: "把账单副本传真给田中。", en: "Fax a copy of the invoice to Tanaka." },
-					{ jp: "12{月|がつ}8{日|か}に{旅行代金|りょこうだいきん}を{振|ふ}り{込|こ}む。", cn: "在 12 月 8 日当天汇旅费。", en: "Transfer the travel fee on December 8." },
+					{ jp: "12{月|がつ}8{日|か}までに{代金|だいきん}を{送金|そうきん}する。", cn: "在12月8日之前汇出费用。", en: "Send the payment by December 8." },
+					{ jp: "{請求書|せいきゅうしょ}の{控|ひか}えを{田中|たなか}さんにFAXする。", cn: "把账单副本传真给田中先生。", en: "Fax a copy of the invoice to Tanaka." },
+					{ jp: "12{月|がつ}8{日|か}に{旅行代金|りょこうだいきん}を{振|ふ}り{込|こ}む。", cn: "在12月8日汇入旅行费用。", en: "Transfer the travel fee on December 8." },
 					{ jp: "{旅行社|りょこうしゃ}に{電話|でんわ}をする。", cn: "给旅行社打电话。", en: "Call the travel agency." },
 				],
 				answer: 1,
@@ -200,13 +200,13 @@ export const w3d6: ReadingDay = {
 			{
 				label: "問2",
 				jp: "このファックスの{内容|ないよう}について{正|ただ}しいものはどれか。",
-				cn: "关于这份传真的内容，下列哪一项正确？",
+				cn: "关于这份传真的内容，正确的是哪一个？",
 				en: "Which of the following is correct about the content of this fax?",
 				choices: [
-					{ jp: "{旅行代金|りょこうだいきん}に{変更|へんこう}があった。", cn: "旅费有变更。", en: "The travel fee has been changed." },
-					{ jp: "{旅行代金|りょこうだいきん}を{申込者|もうしこみしゃ}に{知|し}らせていなかった。", cn: "没有把旅费告知报名者。", en: "The applicant had not been told the travel fee." },
-					{ jp: "{旅行代金|りょこうだいきん}の{請求書|せいきゅうしょ}の{控|ひか}えを2{枚目|まいめ}に{送|おく}った。", cn: "把旅费账单的副本放在第 2 页发送了。", en: "A copy of the travel-fee invoice was sent as page 2." },
-					{ jp: "{旅行代金|りょこうだいきん}の{支払方法|しはらいほうほう}は{決|き}まっていない。", cn: "旅费的支付方式还没定。", en: "The method of paying the travel fee has not been decided." },
+					{ jp: "{旅行代金|りょこうだいきん}に{変更|へんこう}があった。", cn: "旅行费用发生了变更。", en: "The travel fee has been changed." },
+					{ jp: "{旅行代金|りょこうだいきん}を{申込者|もうしこみしゃ}に{知|し}らせていなかった。", cn: "没有将旅行费用告知报名者。", en: "The applicant had not been told the travel fee." },
+					{ jp: "{旅行代金|りょこうだいきん}の{請求書|せいきゅうしょ}の{控|ひか}えを2{枚目|まいめ}に{送|おく}った。", cn: "把旅行费用账单的副本作为第2页发送了。", en: "A copy of the travel-fee invoice was sent as page 2." },
+					{ jp: "{旅行代金|りょこうだいきん}の{支払方法|しはらいほうほう}は{決|き}まっていない。", cn: "旅行费用的支付方式尚未确定。", en: "The method of paying the travel fee has not been decided." },
 				],
 				answer: 3,
 				explanation:
@@ -260,7 +260,7 @@ export const w3d6: ReadingDay = {
 			meaningEn: "Please allow me to …. On the surface it asks permission; in practice it formally announces what you will do.",
 			example: {
 				jp: "お{振|ふ}り{込|こ}み{期限|きげん}は12{月|がつ}8{日|か}とさせていただきます。",
-				cn: "汇款期限就定为 12 月 8 日。",
+				cn: "汇款期限我们定为12月8日。",
 				en: "We will set the transfer deadline as December 8.",
 			},
 			note: "本课要点。用于不需要（或来不及等）对方许可的场合，商务文书中极常见。",
@@ -272,7 +272,7 @@ export const w3d6: ReadingDay = {
 			meaningEn: "We kindly ask that you …. The most formal business-letter request, a set phrase when asking for payment.",
 			example: {
 				jp: "{指定|してい}の{口座|こうざ}にお{振|ふ}り{込|こ}みいただきますようお{願|ねが}い{申|もう}し{上|あ}げます。",
-				cn: "恳请您汇款至指定账户。",
+				cn: "恳请您向指定账户汇款。",
 				en: "We kindly ask that you transfer the money to the designated account.",
 			},
 		},
@@ -280,19 +280,19 @@ export const w3d6: ReadingDay = {
 			pattern: "お／ご〜いただく",
 			meaning: "承蒙您……。把对方的动作用谦让形式表达，抬高对方。",
 			meaningEn: "To have you … (humbly). Expresses the other person’s action in humble form, raising them.",
-			example: { jp: "いつもご{利用|りよう}いただき、ありがとうございます。", cn: "一直以来承蒙惠顾，非常感谢。", en: "Thank you for your continued patronage." },
+			example: { jp: "いつもご{利用|りよう}いただき、ありがとうございます。", cn: "一直以来承蒙使用，非常感谢。", en: "Thank you for your continued patronage." },
 		},
 		{
 			pattern: "〜の{上|うえ}",
 			meaning: "在……之后。书面语，表示步骤的先后。",
 			meaningEn: "After …. Written style for the order of steps.",
-			example: { jp: "{金額|きんがく}をご{確認|かくにん}の{上|うえ}", cn: "请确认金额之后（再……）", en: "after confirming the amount" },
+			example: { jp: "{金額|きんがく}をご{確認|かくにん}の{上|うえ}", cn: "在确认金额之后", en: "after confirming the amount" },
 		},
 		{
 			pattern: "〜と{申|もう}します",
 			meaning: "我叫……。「言う」的谦让语，自我介绍时使用。",
 			meaningEn: "My name is …. Humble form of iu, used when introducing yourself.",
-			example: { jp: "ミドリ{旅行社|りょこうしゃ}の{田中|たなか}と{申|もう}します。", cn: "我是绿色旅行社的田中。", en: "This is Tanaka of Midori Travel." },
+			example: { jp: "ミドリ{旅行社|りょこうしゃ}の{田中|たなか}と{申|もう}します。", cn: "我是绿旅行社的田中。", en: "This is Tanaka of Midori Travel." },
 		},
 		{
 			pattern: "〜ようですが……",
@@ -300,7 +300,7 @@ export const w3d6: ReadingDay = {
 			meaningEn: "It seems that … (but). A tentative tone that points out a problem without blaming the other person directly.",
 			example: {
 				jp: "まだお{振|ふ}り{込|こ}みいただいていないようですが……",
-				cn: "好像还没有收到您的汇款……",
+				cn: "似乎还没有收到您的汇款……",
 				en: "it seems we have not yet received your transfer …",
 			},
 			note: "催款时不直接说「払ってください」，而用「〜ないようですが」暗示，这就是本课说的「遠回しでていねいな表現」。",
@@ -310,7 +310,7 @@ export const w3d6: ReadingDay = {
 			pattern: "〜でしたっけ",
 			meaning: "是……来着？确认自己记不清的事情，口语。",
 			meaningEn: "What was … again? Spoken form for checking something you cannot quite remember.",
-			example: { jp: "えーと、いくらでしたっけ？", cn: "嗯……是多少钱来着？", en: "Um, how much was it again?" },
+			example: { jp: "えーと、いくらでしたっけ？", cn: "呃，是多少钱来着？", en: "Um, how much was it again?" },
 		},
 	],
 };

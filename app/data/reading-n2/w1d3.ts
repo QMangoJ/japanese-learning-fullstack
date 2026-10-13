@@ -12,17 +12,17 @@ export const w1d3: ReadingDay = {
 
 	point: {
 		title: "{特|とく}に{曜日|ようび}・{時間帯|じかんたい}などに{注意|ちゅうい}！",
-		titleCn: "尤其要注意星期和时段等！",
+		titleCn: "尤其要注意星期・时段等！",
 		titleEn: "Pay special attention to the days and the hours!",
 		figure: {
 			alt: "日給5,000円の求人を見て「1時間5,000円ももらえるんだ！」と喜ぶ人と、「時給じゃなくて1日5,000円よ！」と指摘する人",
-			cn: "一个人看见「日薪 5,000 日元」高兴地说「一小时就能拿 5,000 日元！」；另一个人指出「不是时薪，是一天 5,000 日元！」",
+			cn: "看到日薪5,000日元的招聘广告，高兴地说「一个小时居然能拿5,000日元啊！」的人，和指出「不是时薪，是一天5,000日元呀！」的人",
 			en: "One character sees “daily wage ¥5,000” and cheers “I get ¥5,000 an hour!”; the other points out “That’s not hourly—it’s ¥5,000 a day!”",
 		},
 		tips: [
 			{
 				jp: "アルバイト{情報|じょうほう}には{例えば|たとえば}こんな{言葉|ことば}が{出|で}てきます。",
-				cn: "兼职招聘信息里会出现例如下面这些词语。",
+				cn: "兼职信息里会出现例如这样的词语。",
 				en: "Job ads for part-time work use words like the ones below.",
 			},
 		],
@@ -46,7 +46,7 @@ export const w1d3: ReadingDay = {
 
 	renshu: {
 		instruction: "{次|つぎ}の{会話文|かいわぶん}を{読|よ}んで、{後|あと}の{文|ぶん}から{正|ただ}しいものを{選|えら}ぼう。",
-		instructionCn: "阅读下面的对话，从后面的句子中选出正确的。（答案在下一页）",
+		instructionCn: "阅读下面的对话文，从后面的句子中选出正确的吧。",
 		instructionEn: "Read the conversation below and choose the correct statements from the sentences that follow. (Answers are on the next page.)",
 		blocks: [
 			{
@@ -55,7 +55,7 @@ export const w1d3: ReadingDay = {
 				speakerCn: "A",
 				speakerEn: "A",
 				jp: "クリーンスタッフとか、ホールスタッフってどういう{仕事|しごと}なのかな？",
-				cn: "清洁员工、大厅员工到底是什么样的工作啊？",
+				cn: "清洁员、大厅员工什么的，是什么样的工作呢？",
 				en: "What kind of jobs are “clean staff” and “hall staff,” anyway?",
 			},
 			{
@@ -64,7 +64,7 @@ export const w1d3: ReadingDay = {
 				speakerCn: "B",
 				speakerEn: "B",
 				jp: "クリーンは{掃除|そうじ}をするってことだろ。カタカナにすると{聞|き}いたときの{印象|いんしょう}がいいから。ホールスタッフは{店|みせ}によって{違|ちが}うけど、この{店|みせ}の{場合|ばあい}、たぶんレストランの{店員|てんいん}と{同|おな}じように{注文|ちゅうもん}とったり、{運|はこ}んだり、{片付|かたづ}けたりするんじゃないかな。",
-				cn: "清洁就是打扫卫生吧。写成片假名，听起来印象比较好。大厅员工要看店，这家大概是跟餐厅店员一样点单、传菜、收拾什么的。",
+				cn: "清洁就是做打扫的意思吧。因为写成片假名的话，听着印象好。大厅员工每家店都不一样，不过这家店的话，大概像餐厅店员那样，点单、端菜、收拾之类的吧。",
 				en: "Clean means doing the cleaning, right? Putting it in katakana makes it sound nicer. Hall staff depends on the place, but here they probably take orders, carry food, and clear tables, like restaurant staff.",
 			},
 			{
@@ -73,7 +73,7 @@ export const w1d3: ReadingDay = {
 				speakerCn: "A",
 				speakerEn: "A",
 				jp: "{掃除|そうじ}はちょっと……。レジも{大変|たいへん}そう。{販売員|はんばいいん}なんて、{絶対|ぜったい}{向|む}いてないし……。",
-				cn: "打扫我可不太……。收银也看着够呛。销售员那种，我绝对不适合……。",
+				cn: "打扫有点……。收银看起来也很辛苦。销售员什么的，绝对不适合……。",
 				en: "Cleaning’s not really… And cashier work looks hard. I’m definitely not cut out to be a sales clerk…",
 			},
 			{
@@ -82,7 +82,7 @@ export const w1d3: ReadingDay = {
 				speakerCn: "B",
 				speakerEn: "B",
 				jp: "ぼくは{土日|どにち}しかできないし、このいちばん{時給|じきゅう}の{高|たか}いのにしようかなあ。{仕事内容|しごとないよう}にも{興味|きょうみ}があるし。",
-				cn: "我只能周末做，就挑这个时薪最高的吧。工作内容我也感兴趣。",
+				cn: "我只能周六周日做，这个时薪最高的，就选这个好了吧。工作内容我也感兴趣。",
 				en: "I can only work weekends, so I think I’ll go for this one with the highest hourly pay. I’m interested in the work itself too.",
 			},
 			{
@@ -91,16 +91,16 @@ export const w1d3: ReadingDay = {
 				speakerCn: "A",
 				speakerEn: "A",
 				jp: "{私|わたし}は、{夜|よる}はできないし、{平日|へいじつ}も{無理|むり}。",
-				cn: "我晚上不行，平日也没办法。",
+				cn: "我的话，晚上做不了，平日也办不到。",
 				en: "I can’t do nights, and weekdays are impossible too.",
 			},
 		],
 		choices: [
-			{ jp: "ホールスタッフとはイベント{会場|かいじょう}の{受付|うけつけ}の{仕事|しごと}である。", cn: "大厅员工指的是在活动会场做接待。", en: "Hall staff means working reception at an event venue." },
-			{ jp: "Bさんはやりたいことやできる{日|ひ}、{希望|きぼう}がはっきりしている。", cn: "B 想做的事、能做的日子，希望都很明确。", en: "B is clear about what they want to do, which days they can work, and what they hope for." },
-			{ jp: "AさんもBさんも{週末|しゅうまつ}しかバイトができない。", cn: "A 和 B 都只能周末打工。", en: "Neither A nor B can work part-time except on weekends." },
-			{ jp: "Bさんは{簡単|かんたん}なレジの{仕事|しごと}やきれいな{清掃業務|せいそうぎょうむ}ならやってみたい。", cn: "B 想试试看简单的收银或干净的清扫工作。", en: "B would like to try easy cashier work or tidy cleaning work." },
-			{ jp: "Aさんは{飲食店|いんしょくてん}の{接客|せっきゃく}の{仕事|しごと}に{興味|きょうみ}がある。", cn: "A 对餐饮店的接待工作感兴趣。", en: "A is interested in waiting on customers in a restaurant." },
+			{ jp: "ホールスタッフとはイベント{会場|かいじょう}の{受付|うけつけ}の{仕事|しごと}である。", cn: "所谓大厅员工，是活动会场接待处的工作。", en: "Hall staff means working reception at an event venue." },
+			{ jp: "Bさんはやりたいことやできる{日|ひ}、{希望|きぼう}がはっきりしている。", cn: "B想做的事、能上班的日子和希望都很明确。", en: "B is clear about what they want to do, which days they can work, and what they hope for." },
+			{ jp: "AさんもBさんも{週末|しゅうまつ}しかバイトができない。", cn: "A和B都只能在周末打工。", en: "Neither A nor B can work part-time except on weekends." },
+			{ jp: "Bさんは{簡単|かんたん}なレジの{仕事|しごと}やきれいな{清掃業務|せいそうぎょうむ}ならやってみたい。", cn: "如果是简单的收银工作或干净的清扫业务的话，B想试试看。", en: "B would like to try easy cashier work or tidy cleaning work." },
+			{ jp: "Aさんは{飲食店|いんしょくてん}の{接客|せっきゃく}の{仕事|しごと}に{興味|きょうみ}がある。", cn: "A对餐饮店的待客工作感兴趣。", en: "A is interested in waiting on customers in a restaurant." },
 		],
 		answers: [2, 3],
 		hint: {
@@ -112,7 +112,7 @@ export const w1d3: ReadingDay = {
 
 	mondai: {
 		instruction: "{次|つぎ}のアルバイト{情報|じょうほう}を{見|み}て、{後|あと}の{問|と}いに{答|こた}えなさい。",
-		instructionCn: "看下面的兼职招聘信息，回答后面的问题。（答案在别册 p.2）",
+		instructionCn: "请看下面的兼职信息，回答后面的问题。",
 		instructionEn: "Look at the part-time job listings below and answer the questions that follow. (Answers are in the separate booklet, p. 2.)",
 		blocks: [
 			{
@@ -128,14 +128,14 @@ export const w1d3: ReadingDay = {
 					[
 						{
 							jp: "A　ランチタイムスタッフ{募集|ぼしゅう}！\n○○シティホテル　レストランみやび",
-							cn: "A　招聘午餐时段员工！\n○○城市酒店　餐厅雅",
+							cn: "A　招聘午餐时段员工！\n○○城市酒店　餐厅「雅」",
 							en: "A  Lunchtime staff wanted!\n○○ City Hotel, Restaurant Miyabi",
 							header: true,
 						},
 						{ jp: "レストランスタッフ", cn: "餐厅员工", en: "Restaurant staff" },
-						{ jp: "{平日|へいじつ} 11:00〜14:00\n{週|しゅう}2{回|かい}からOK", cn: "平日 11:00〜14:00\n每周 2 次起即可", en: "Weekdays 11:00–14:00\nFrom 2 days a week OK" },
-						{ jp: "1000{円|えん}〜", cn: "1000 日元起", en: "From 1,000 yen", align: "center" },
-						{ jp: "1{日|にち} 500{円|えん}まで", cn: "每天最多 500 日元", en: "Up to 500 yen a day", align: "center" },
+						{ jp: "{平日|へいじつ} 11:00〜14:00\n{週|しゅう}2{回|かい}からOK", cn: "平日 11:00〜14:00\n每周2次起即可", en: "Weekdays 11:00–14:00\nFrom 2 days a week OK" },
+						{ jp: "1000{円|えん}〜", cn: "1000日元起", en: "From 1,000 yen", align: "center" },
+						{ jp: "1{日|にち} 500{円|えん}まで", cn: "每天最多500日元", en: "Up to 500 yen a day", align: "center" },
 					],
 					[
 						{
@@ -144,33 +144,33 @@ export const w1d3: ReadingDay = {
 							en: "B  Home-appliance store clerk wanted\nIshimaru Camera Midori store",
 							header: true,
 						},
-						{ jp: "{接客|せっきゃく}・{販売|はんばい}", cn: "接待・销售", en: "Customer service / sales" },
-						{ jp: "9:00〜18:00\n{土日祝日勤務|どにちしゅくじつきんむ}", cn: "9:00〜18:00\n需上周末及节假日的班", en: "9:00–18:00\nWeekend and holiday shifts" },
-						{ jp: "950{円|えん}〜", cn: "950 日元起", en: "From 950 yen", align: "center" },
+						{ jp: "{接客|せっきゃく}・{販売|はんばい}", cn: "待客・销售", en: "Customer service / sales" },
+						{ jp: "9:00〜18:00\n{土日祝日勤務|どにちしゅくじつきんむ}", cn: "9:00〜18:00\n周六、周日、节假日上班", en: "9:00–18:00\nWeekend and holiday shifts" },
+						{ jp: "950{円|えん}〜", cn: "950日元起", en: "From 950 yen", align: "center" },
 						{ jp: "{全額支給|ぜんがくしきゅう}", cn: "全额支付", en: "Paid in full", align: "center" },
 					],
 					[
 						{
 							jp: "C　ホールスタッフ{募集|ぼしゅう}\nビアホール「ブラハ」",
-							cn: "C　招聘大厅员工\n啤酒馆「布拉哈」",
+							cn: "C　招聘大厅员工\n啤酒大厅「布拉哈」",
 							en: "C  Hall staff wanted\nBeer hall “Praha”",
 							header: true,
 						},
-						{ jp: "ホールスタッフ\n{明|あか}るく{元気|げんき}な{方|かた}{大歓迎|だいかんげい}！", cn: "大厅员工\n特别欢迎开朗有活力的人！", en: "Hall staff\nCheerful, energetic people especially welcome!" },
-						{ jp: "17{時|じ}〜{翌|よく}2{時|じ}の{間|あいだ}で{週|しゅう}3{回|かい}、3{時間以上勤務|じかんいじょうきんむ}できる{方|かた}。", cn: "在 17 点〜次日 2 点之间，每周 3 次、能工作 3 小时以上者。", en: "People who can work 3+ hours, 3 times a week, between 17:00 and 2:00 the next day." },
-						{ jp: "1200{円|えん}〜", cn: "1200 日元起", en: "From 1,200 yen", align: "center" },
+						{ jp: "ホールスタッフ\n{明|あか}るく{元気|げんき}な{方|かた}{大歓迎|だいかんげい}！", cn: "大厅员工\n热烈欢迎开朗有活力的人！", en: "Hall staff\nCheerful, energetic people especially welcome!" },
+						{ jp: "17{時|じ}〜{翌|よく}2{時|じ}の{間|あいだ}で{週|しゅう}3{回|かい}、3{時間以上勤務|じかんいじょうきんむ}できる{方|かた}。", cn: "在17点〜次日2点之间，每周3次、每次能上班3小时以上的人。", en: "People who can work 3+ hours, 3 times a week, between 17:00 and 2:00 the next day." },
+						{ jp: "1200{円|えん}〜", cn: "1200日元起", en: "From 1,200 yen", align: "center" },
 						{ jp: "{全額支給|ぜんがくしきゅう}", cn: "全额支付", en: "Paid in full", align: "center" },
 					],
 					[
 						{
 							jp: "D　スタッフ{募集|ぼしゅう}\nシネマフォレスト",
-							cn: "D　招聘员工\n森林影院",
+							cn: "D　招聘员工\n电影森林",
 							en: "D  Staff wanted\nCinema Forest",
 							header: true,
 						},
 						{ jp: "{映画館|えいがかん}スタッフ", cn: "电影院员工", en: "Movie theater staff" },
-						{ jp: "8:00〜24:00の{間|あいだ}で1{日|にち}4{時間以上|じかんいじょう}。{土日勤務|どにちきんむ}できる{方|かた}{歓迎|かんげい}。", cn: "在 8:00〜24:00 之间每天 4 小时以上。欢迎能上周末班的人。", en: "4+ hours a day between 8:00 and 24:00. People who can work weekends welcome." },
-						{ jp: "850{円|えん}〜", cn: "850 日元起", en: "From 850 yen", align: "center" },
+						{ jp: "8:00〜24:00の{間|あいだ}で1{日|にち}4{時間以上|じかんいじょう}。{土日勤務|どにちきんむ}できる{方|かた}{歓迎|かんげい}。", cn: "在8:00〜24:00之间每天4小时以上。欢迎能在周六周日上班的人。", en: "4+ hours a day between 8:00 and 24:00. People who can work weekends welcome." },
+						{ jp: "850{円|えん}〜", cn: "850日元起", en: "From 850 yen", align: "center" },
 						{ jp: "{全額支給|ぜんがくしきゅう}", cn: "全额支付", en: "Paid in full", align: "center" },
 					],
 					[
@@ -180,49 +180,49 @@ export const w1d3: ReadingDay = {
 							en: "E  Kitchen / hall staff wanted!\nCafé Lionné",
 							header: true,
 						},
-						{ jp: "{調理補助|ちょうりほじょ}\nホール{係|がかり}", cn: "烹饪助理\n大厅服务员", en: "Kitchen assistant\nHall staff" },
-						{ jp: "10:00〜24:00の{間|あいだ}で{応相談|おうそうだん}。ランチタイム・{土日勤務|どにちきんむ}できる{方|かた}{歓迎|かんげい}。", cn: "10:00〜24:00 之间可面议。欢迎能上午餐时段和周末班的人。", en: "Negotiable between 10:00 and 24:00. People who can work lunchtime and weekends welcome." },
-						{ jp: "650{円|えん}〜", cn: "650 日元起", en: "From 650 yen", align: "center" },
+						{ jp: "{調理補助|ちょうりほじょ}\nホール{係|がかり}", cn: "烹饪辅助\n大厅服务员", en: "Kitchen assistant\nHall staff" },
+						{ jp: "10:00〜24:00の{間|あいだ}で{応相談|おうそうだん}。ランチタイム・{土日勤務|どにちきんむ}できる{方|かた}{歓迎|かんげい}。", cn: "在10:00〜24:00之间可协商。欢迎能在午餐时段和周六周日上班的人。", en: "Negotiable between 10:00 and 24:00. People who can work lunchtime and weekends welcome." },
+						{ jp: "650{円|えん}〜", cn: "650日元起", en: "From 650 yen", align: "center" },
 						{ jp: "なし", cn: "无", en: "None", align: "center" },
 					],
 					[
 						{
 							jp: "F　クリーンスタッフ{募集|ぼしゅう}\n{光|ひかり}ビルサービス {寺下事業所|てらしたじぎょうしょ}",
-							cn: "F　招聘清洁员工\n光大楼服务 寺下营业所",
+							cn: "F　招聘清洁员\n光大楼服务 寺下事业所",
 							en: "F  Clean staff wanted\nHikari Building Service Terashita office",
 							header: true,
 						},
-						{ jp: "ビル{内|ない}のきれいなお{仕事|しごと}です。{未経験者歓迎|みけいけんしゃかんげい}！", cn: "大楼内干净的工作。欢迎无经验者！", en: "Tidy work inside a building. Inexperienced people welcome!" },
-						{ jp: "9:00〜12:30の{間|あいだ}で{週|しゅう}3{日程度|にちていど}。{委細面談|いさいめんだん}。", cn: "9:00〜12:30 之间，每周大约 3 天。详情面谈。", en: "About 3 days a week between 9:00 and 12:30. Details at interview." },
-						{ jp: "700{円|えん}〜", cn: "700 日元起", en: "From 700 yen", align: "center" },
+						{ jp: "ビル{内|ない}のきれいなお{仕事|しごと}です。{未経験者歓迎|みけいけんしゃかんげい}！", cn: "是大楼内的干净工作。欢迎无经验者！", en: "Tidy work inside a building. Inexperienced people welcome!" },
+						{ jp: "9:00〜12:30の{間|あいだ}で{週|しゅう}3{日程度|にちていど}。{委細面談|いさいめんだん}。", cn: "在9:00〜12:30之间，每周3天左右。详情面谈。", en: "About 3 days a week between 9:00 and 12:30. Details at interview." },
+						{ jp: "700{円|えん}〜", cn: "700日元起", en: "From 700 yen", align: "center" },
 						{ jp: "{全額支給|ぜんがくしきゅう}", cn: "全额支付", en: "Paid in full", align: "center" },
 					],
 					[
 						{
 							jp: "G　コンビニスタッフ{募集|ぼしゅう}\nキラキラマート {寺下店|てらしたてん}",
-							cn: "G　招聘便利店员工\n闪亮超市 寺下店",
+							cn: "G　招聘便利店员工\n闪闪玛特 寺下店",
 							en: "G  Convenience-store staff wanted\nKirakira Mart Terashita store",
 							header: true,
 						},
-						{ jp: "レジ・{販売補助|はんばいほじょ}", cn: "收银・销售助理", en: "Cash register / sales assistant" },
-						{ jp: "{週|しゅう}2{日|にち}、1{日|にち}4h（{注|ちゅう}）〜。{早朝勤務|そうちょうきんむ}できる{方|かた}{歓迎|かんげい}。", cn: "每周 2 天，每天 4 小时起。欢迎能上早班的人。", en: "2 days a week, 4h (note)+ a day. People who can work early mornings welcome." },
-						{ jp: "690{円|えん}〜", cn: "690 日元起", en: "From 690 yen", align: "center" },
+						{ jp: "レジ・{販売補助|はんばいほじょ}", cn: "收银・销售辅助", en: "Cash register / sales assistant" },
+						{ jp: "{週|しゅう}2{日|にち}、1{日|にち}4h（{注|ちゅう}）〜。{早朝勤務|そうちょうきんむ}できる{方|かた}{歓迎|かんげい}。", cn: "每周2天，每天4h（注）起。欢迎能上清晨班的人。", en: "2 days a week, 4h (note)+ a day. People who can work early mornings welcome." },
+						{ jp: "690{円|えん}〜", cn: "690日元起", en: "From 690 yen", align: "center" },
 						{ jp: "{全額支給|ぜんがくしきゅう}", cn: "全额支付", en: "Paid in full", align: "center" },
 					],
 					[
 						{
 							jp: "H　{弁当店|べんとうてん}スタッフ{募集|ぼしゅう}\nお{弁当|べんとう}のホットK {寺下公園店|てらしたこうえんてん}",
-							cn: "H　招聘便当店员工\n便当 Hot K 寺下公园店",
+							cn: "H　招聘便当店员工\n热K便当 寺下公园店",
 							en: "H  Bento-shop staff wanted\nObentō no Hot K Terashita Park store",
 							header: true,
 						},
 						{
 							jp: "{接客|せっきゃく}・{調理|ちょうり}※\n※{調理経験|ちょうりけいけん}のない{方|かた}も{心配無用|しんぱいむよう}！",
-							cn: "接待・烹饪※\n※没有烹饪经验的人也不必担心！",
+							cn: "待客・烹饪※\n※没有烹饪经验的人也不必担心！",
 							en: "Customer service / cooking※\n※ No cooking experience? No need to worry!",
 						},
-						{ jp: "17:00〜23:00\n{週|しゅう}2{日|にち}〜", cn: "17:00〜23:00\n每周 2 天起", en: "17:00–23:00\nFrom 2 days a week" },
-						{ jp: "700{円|えん}〜", cn: "700 日元起", en: "From 700 yen", align: "center" },
+						{ jp: "17:00〜23:00\n{週|しゅう}2{日|にち}〜", cn: "17:00〜23:00\n每周2天起", en: "17:00–23:00\nFrom 2 days a week" },
+						{ jp: "700{円|えん}〜", cn: "700日元起", en: "From 700 yen", align: "center" },
 						{ jp: "{全額支給|ぜんがくしきゅう}", cn: "全额支付", en: "Paid in full", align: "center" },
 					],
 					[
@@ -232,10 +232,10 @@ export const w1d3: ReadingDay = {
 							en: "I  Mobile-phone shop sales staff wanted\nDocoml shop Midori store",
 							header: true,
 						},
-						{ jp: "{接客|せっきゃく}・{販売|はんばい}", cn: "接待・销售", en: "Customer service / sales" },
-						{ jp: "{土日|どにち}のみ\n10:00〜18:00", cn: "仅周末\n10:00〜18:00", en: "Weekends only\n10:00–18:00" },
-						{ jp: "1200{円|えん}〜", cn: "1200 日元起", en: "From 1,200 yen", align: "center" },
-						{ jp: "{片道|かたみち} 400{円|えん}まで", cn: "单程最多 400 日元", en: "Up to 400 yen one way", align: "center" },
+						{ jp: "{接客|せっきゃく}・{販売|はんばい}", cn: "待客・销售", en: "Customer service / sales" },
+						{ jp: "{土日|どにち}のみ\n10:00〜18:00", cn: "仅周六周日\n10:00〜18:00", en: "Weekends only\n10:00–18:00" },
+						{ jp: "1200{円|えん}〜", cn: "1200日元起", en: "From 1,200 yen", align: "center" },
+						{ jp: "{片道|かたみち} 400{円|えん}まで", cn: "单程最多400日元", en: "Up to 400 yen one way", align: "center" },
 					],
 				],
 			},
@@ -251,13 +251,13 @@ export const w1d3: ReadingDay = {
 			{
 				label: "問1",
 				jp: "{左|ひだり}ページの{会話|かいわ}から、Aさんの{条件|じょうけん}に{合|あ}わないものを{除|のぞ}くと、どれが{残|のこ}るか。",
-				cn: "根据左页对话，去掉不符合 A 的条件的招聘后，还剩下哪一组？",
+				cn: "从左页的对话来看，若排除不符合A的条件的，会剩下哪些？",
 				en: "From the conversation on the left-hand page, if you exclude the jobs that do not match A’s conditions, which ones remain?",
 				choices: [
-					{ jp: "CとE", cn: "C 和 E", en: "C and E" },
-					{ jp: "CとD", cn: "C 和 D", en: "C and D" },
-					{ jp: "DとE", cn: "D 和 E", en: "D and E" },
-					{ jp: "DとG", cn: "D 和 G", en: "D and G" },
+					{ jp: "CとE", cn: "C和E", en: "C and E" },
+					{ jp: "CとD", cn: "C和D", en: "C and D" },
+					{ jp: "DとE", cn: "D和E", en: "D and E" },
+					{ jp: "DとG", cn: "D和G", en: "D and G" },
 				],
 				answer: 3,
 				explanation:
@@ -280,7 +280,7 @@ export const w1d3: ReadingDay = {
 			{
 				label: "問2",
 				jp: "{左|ひだり}ページの{会話|かいわ}で、Bさんが{興味|きょうみ}を{持|も}っているのはどの{仕事|しごと}と{考|かんが}えられるか。",
-				cn: "根据左页对话，B 感兴趣的可以认为是哪一份工作？",
+				cn: "在左页的对话中，可以认为B感兴趣的是哪一份工作？",
 				en: "From the conversation on the left-hand page, which job can we take B to be interested in?",
 				choices: [
 					{ jp: "B", cn: "B", en: "B" },
@@ -337,7 +337,7 @@ export const w1d3: ReadingDay = {
 			meaningEn: "only… (with a sense of limitation). do-nichi shika dekinai = can only do weekends.",
 			example: {
 				jp: "ぼくは{土日|どにち}しかできないし、このいちばん{時給|じきゅう}の{高|たか}いのにしようかなあ。",
-				cn: "我只能周末做，就挑这个时薪最高的吧。",
+				cn: "我只能周六周日做，这个时薪最高的，就选这个好了吧。",
 				en: "I can only work weekends, so I think I’ll go for this one with the highest hourly pay.",
 			},
 		},
@@ -348,7 +348,7 @@ export const w1d3: ReadingDay = {
 			meaningEn: "muite inai = not suited. The answer key: muite (i) nai = awanai.",
 			example: {
 				jp: "{販売員|はんばいいん}なんて、{絶対|ぜったい}{向|む}いてないし……。",
-				cn: "销售员那种，我绝对不适合……。",
+				cn: "销售员什么的，绝对不适合……。",
 				en: "I’m definitely not cut out to be a sales clerk…",
 			},
 		},
@@ -358,7 +358,7 @@ export const w1d3: ReadingDay = {
 			meaningEn: "Compressed conditions in job ads. shū 2-kai kara OK = two days a week is enough; mikeikensha kangei = no experience required.",
 			example: {
 				jp: "{週|しゅう}2{回|かい}からOK　／　{未経験者歓迎|みけいけんしゃかんげい}",
-				cn: "每周 2 次起即可　／　欢迎无经验者",
+				cn: "每周2次起即可　／　欢迎无经验者",
 				en: "From two times a week OK / inexperienced people welcome",
 			},
 		},

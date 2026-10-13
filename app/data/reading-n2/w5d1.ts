@@ -12,32 +12,32 @@ export const w5d1: ReadingDay = {
 
 	point: {
 		title: "{見出|みだ}しから{文|ぶん}を{作|つく}って{理解|りかい}しよう！",
-		titleCn: "利用标题造句子，以此来帮助理解！",
+		titleCn: "从标题造句来理解吧！",
 		titleEn: "Make a sentence from the headline that demonstrates the main point!",
 		figure: {
 			alt: "新聞を読んで「見出しだけで新聞読めちゃうね。」と言うキャラクター",
-			cn: "角色看着报纸说：「光看标题就能读报了呢。」",
+			cn: "读着报纸说「只靠标题就能读报了呢。」的角色",
 			en: "A character looking at a newspaper and saying, “You can read the paper from the headlines alone!”",
 		},
 		tips: [
 			{
 				jp: "{例えば|たとえば}こんなふうに{見出|みだ}しを{文|ぶん}にします。",
-				cn: "比如可以像下面这样把标题还原成句子。",
+				cn: "例如，像这样把标题变成句子。",
 				en: "Turn headlines into sentences like this.",
 			},
 			{
 				jp: "【{見出|みだ}し】A{鉄道|てつどう}{新線|しんせん} 2030{年|ねん}に{延期|えんき}　{収益悪化|しゅうえきあっか}のため\n→ A{鉄道|てつどう}は{新線|しんせん}の{開通|かいつう}を、{収益悪化|しゅうえきあっか}のため2030{年|ねん}に{延期|えんき}した。",
-				cn: "【标题】A 铁道新线延期至 2030 年　因收益恶化\n→ A 铁道因收益恶化，将开通新线的计划延期至 2030 年。",
+				cn: "【标题】A铁道新线 延期至2030年　因收益恶化\n→ A铁道因收益恶化，将新线的开通延期到了2030年。",
 				en: "[Headline] “A” Railway new line postponed to 2030 — due to worsening profits\n→ “A” Railway postponed the opening of the new line to 2030 because of worsening profits.",
 			},
 			{
 				jp: "【{見出|みだ}し】○○{劇場|げきじょう} さよなら{公演|こうえん}に {長蛇|ちょうだ}の{列|れつ}\n→ ○○{劇場|げきじょう}の{最後|さいご}の{公演|こうえん}（を{見|み}たい{人|ひと}たちが）とても{長|なが}い{列|れつ}を{作|つく}って{並|なら}んだ。",
-				cn: "【标题】○○剧场 告别公演排起长龙\n→ 想看○○剧场最后一场公演的人排了很长的队。",
+				cn: "【标题】○○剧场 告别公演 长蛇之列\n→ ○○剧场的最后一场公演（想看的人们）排成了非常长的队伍。",
 				en: "[Headline] Long line for ○○ Theater’s farewell performance\n→ People who wanted to see ○○ Theater’s last performance formed a very long line.",
 			},
 			{
 				jp: "【{見出|みだ}し】{裁判員裁判|さいばんいんさいばん}　{判決|はんけつ}　{自宅放火|じたくほうか}{被告|ひこく}に{懲役|ちょうえき}1{年|ねん}6{ヵ|か}{月|げつ}\n→ {裁判員裁判|さいばんいんさいばん}で、{自宅|じたく}に{放火|ほうか}した{被告|ひこく}に{懲役|ちょうえき}1{年|ねん}6{ヵ|か}{月|げつ}の{判決|はんけつ}が{出|で}た。",
-				cn: "【标题】裁判员审判　判决　对住宅纵火被告判处有期徒刑一年六个月\n→ 在裁判员审判中，对在自己家里放火的被告作出了有期徒刑一年六个月的判决。",
+				cn: "【标题】裁判员审判　判决　对自家纵火被告处以惩役1年6个月\n→ 在裁判员审判中，对在自己家放火的被告作出了惩役1年6个月的判决。",
 				en: "[Headline] Lay-judge trial — verdict: 1 year 6 months for home-arson defendant\n→ At the lay-judge trial, the defendant who set fire to his own home was sentenced to 1 year and 6 months in prison.",
 			},
 		],
@@ -57,7 +57,7 @@ export const w5d1: ReadingDay = {
 
 	renshu: {
 		instruction: "{次|つぎ}の{会話文|かいわぶん}を{読|よ}んで、{後|あと}の{文|ぶん}から{正|ただ}しいものを{選|えら}ぼう。",
-		instructionCn: "阅读下面的对话，从后面的句子中选出正确的。（答案在下一页）",
+		instructionCn: "阅读下面的对话，从后面的句子中选出正确的吧。",
 		instructionEn: "Read the conversation below and choose the correct statements from the sentences that follow. (Answers are on the next page.)",
 		blocks: [
 			{
@@ -75,7 +75,7 @@ export const w5d1: ReadingDay = {
 				speakerCn: "男",
 				speakerEn: "Man",
 				jp: "え？　ああ、ずっと{空港|くうこう}で{寝袋|ねぶくろ}にくるまって{飛行機|ひこうき}が{飛|と}ぶの{待|ま}ってた{人|ひと}たちか。",
-				cn: "诶？啊，是那些一直裹着睡袋在机场等飞机起飞的人啊。",
+				cn: "诶？啊，是那些一直裹着睡袋、在机场等飞机起飞的人啊。",
 				en: "Huh? Oh, those are the people who’ve been wrapped in sleeping bags at the airport waiting for planes to fly.",
 			},
 			{
@@ -84,7 +84,7 @@ export const w5d1: ReadingDay = {
 				speakerCn: "女",
 				speakerEn: "Woman",
 				jp: "1{週間|しゅうかん}よ。{気|き}の{毒|どく}に。でもしょうがないね、{自然災害|しぜんさいがい}じゃ。",
-				cn: "都一周了。真可怜。不过也没办法，是自然灾害嘛。",
+				cn: "1周了呀。真可怜。不过没办法呢，是自然灾害嘛。",
 				en: "A whole week. Poor things. But it can’t be helped—it’s a natural disaster.",
 			},
 			{
@@ -93,7 +93,7 @@ export const w5d1: ReadingDay = {
 				speakerCn: "男",
 				speakerEn: "Man",
 				jp: "よかったよ、{飛|と}べるようになって。{乗客|じょうきゃく}だけじゃなくて、{商品|しょうひん}も{足止|あしど}め（{注|ちゅう}1）されていたからビジネスにも{影響|えいきょう}があっただろうし、{航空業界|こうくうぎょうかい}の{損失|そんしつ}（{注|ちゅう}2）は2,000{億|おく}{円|えん}とか3,000{億|おく}{円|えん}とか、とにかく、すごい{額|がく}らしいから。",
-				cn: "能飞了真是太好了。不只是乘客，货物也被困住了，生意大概也受了影响；航空业的损失据说有 2000 亿日元、3000 亿日元什么的，反正是个天文数字。",
+				cn: "太好了呀，变得能飞了。因为不只是乘客，商品也被滞留（注1）了，所以生意大概也受到了影响，而且航空业的损失（注2）有2,000亿日元、3,000亿日元什么的，总之，据说是个惊人的数额。",
 				en: "Good that they can fly again. Not just passengers—goods were stranded too, so business must have been hit, and the airline industry’s losses are something like 200 billion or 300 billion yen; anyway, a huge amount.",
 			},
 		],
@@ -103,29 +103,29 @@ export const w5d1: ReadingDay = {
 		],
 		choices: [
 			{ jp: "{空港|くうこう}で{催|もよお}し{物|もの}があったので、{観光客|かんこうきゃく}は{出発|しゅっぱつ}を{遅|おく}らせた。", cn: "机场有活动，所以游客推迟了出发。", en: "There was an event at the airport, so tourists delayed their departure." },
-			{ jp: "{自然災害|しぜんさいがい}の{影響|えいきょう}で{予定|よてい}の{飛行機|ひこうき}に{乗|の}れない{人|ひと}たちがいた。", cn: "受自然灾害影响，有人没能坐上预定的飞机。", en: "Because of a natural disaster, some people could not board their scheduled flights." },
-			{ jp: "{乱|みだ}れていた{空|そら}のダイヤはまだもとに{戻|もど}らない。", cn: "被打乱的航班时刻表还没有恢复。", en: "The disrupted flight schedule has not yet returned to normal." },
-			{ jp: "この{災害|さいがい}で{観光客|かんこうきゃく}だけでなく{輸出|ゆしゅつ}や{輸入|ゆにゅう}の{商品|しょうひん}も{影響|えいきょう}を{受|う}けた。", cn: "这场灾害不仅影响了游客，进出口货物也受到了影响。", en: "This disaster affected not only tourists but also exported and imported goods." },
-			{ jp: "この{災害|さいがい}の{影響|えいきょう}でホテル{業界|ぎょうかい}は{多額|たがく}の{利益|りえき}を{得|え}た。", cn: "受这场灾害影响，酒店业获得了巨额利润。", en: "Because of this disaster the hotel industry made a large profit." },
+			{ jp: "{自然災害|しぜんさいがい}の{影響|えいきょう}で{予定|よてい}の{飛行機|ひこうき}に{乗|の}れない{人|ひと}たちがいた。", cn: "受自然灾害的影响，有些人无法乘坐原定的飞机。", en: "Because of a natural disaster, some people could not board their scheduled flights." },
+			{ jp: "{乱|みだ}れていた{空|そら}のダイヤはまだもとに{戻|もど}らない。", cn: "曾被打乱的航班时刻表还没有恢复原状。", en: "The disrupted flight schedule has not yet returned to normal." },
+			{ jp: "この{災害|さいがい}で{観光客|かんこうきゃく}だけでなく{輸出|ゆしゅつ}や{輸入|ゆにゅう}の{商品|しょうひん}も{影響|えいきょう}を{受|う}けた。", cn: "由于这场灾害，不仅是游客，出口和进口的商品也受到了影响。", en: "This disaster affected not only tourists but also exported and imported goods." },
+			{ jp: "この{災害|さいがい}の{影響|えいきょう}でホテル{業界|ぎょうかい}は{多額|たがく}の{利益|りえき}を{得|え}た。", cn: "受这场灾害的影响，酒店业获得了巨额利润。", en: "Because of this disaster the hotel industry made a large profit." },
 		],
 		answers: [2, 4],
 	},
 
 	mondai: {
 		instruction: "{次|つぎ}の{新聞記事|しんぶんきじ}を{読|よ}んで、{後|あと}の{問|と}いに{答|こた}えなさい。",
-		instructionCn: "阅读下面的新闻报道，回答后面的问题。（答案在别册 p.6）",
+		instructionCn: "阅读下面的新闻报道，回答后面的问题。",
 		instructionEn: "Read the newspaper article below and answer the questions that follow. (Answers are in the separate booklet, p. 6.)",
 		blocks: [
 			{
 				type: "title",
 				jp: "A{国|こく} {火山噴火|かざんふんか}（{注|ちゅう}1） 「{空|そら}の{足|あし}」{正常化|せいじょうか}",
-				cn: "A 国火山喷发　「空中交通」恢复正常",
+				cn: "A国 火山喷发（注1） 「空中交通」恢复正常",
 				en: "Country A volcanic eruption: “air legs” back to normal",
 			},
 			{
 				type: "paragraph",
 				jp: "A{国|こく}{火山噴火|かざんふんか}による{影響|えいきょう}で、{大混乱|だいこんらん}となっていた{欧州|おうしゅう}の{航空輸送網|こうくうゆそうもう}（{注|ちゅう}2）が22{日中|にちじゅう}に{正常化|せいじょうか}する{見通|みとお}しを{発表|はっぴょう}した。15{日|にち}に{火山灰|かざんばい}（{注|ちゅう}3）が{拡散|かくさん}（{注|ちゅう}4）して、{以来|いらい}10{万便|まんびん}{以上|いじょう}が{欠航|けっこう}、{世界中|せかいじゅう}で700{万|まん}{人|にん}{以上|いじょう}が{足止|あしど}めされた。{航空業界|こうくうぎょうかい}の{受|う}けた{損失|そんしつ}は15{億|おく}〜25{億|おく}ユーロに{上|のぼ}るとみられ、{観光業|かんこうぎょう}を{含|ふく}めるとさらに{損失|そんしつ}は{拡大|かくだい}するとみられている。",
-				cn: "因 A 国火山喷发，陷入大混乱的欧洲航空运输网发表了将于 22 日当天恢复正常的展望。15 日火山灰扩散以来，逾 10 万个航班停飞，全世界有 700 万人以上滞留。航空业蒙受的损失估计达 15 亿至 25 亿欧元，若把旅游业也算进去，损失还会进一步扩大。",
+				cn: "发表了因A国火山喷发的影响而陷入大混乱的欧洲航空运输网（注2）将在22日当天恢复正常的展望。15日火山灰（注3）扩散（注4），自那以来10万班以上航班取消，全世界有700万人以上被滞留。航空业所受的损失估计高达15亿〜25亿欧元，若计入旅游业，估计损失还将进一步扩大。",
 				en: "It was announced that Europe’s air-transport network, thrown into chaos by Country A’s volcanic eruption, is expected to return to normal during the 22nd. Since volcanic ash spread on the 15th, more than 100,000 flights have been cancelled and more than 7 million people worldwide have been stranded. Losses to the airline industry are put at 1.5 to 2.5 billion euros, and if tourism is included the damage is expected to grow still further.",
 				indent: true,
 			},
@@ -139,7 +139,7 @@ export const w5d1: ReadingDay = {
 		pageNotes: [
 			{
 				jp: "The financial damage to the airline industry may amount to between 15-25 billion euros, and more, if you include the tourist industry.",
-				cn: "航空业蒙受的损失预计将超过 15 亿〜25 亿欧元，若加上旅游业则损失会更大。",
+				cn: "航空业的经济损失可能达到150亿至250亿欧元；如果把旅游业也包括进去，还会更多。",
 				en: "The financial damage to the airline industry may amount to between 15-25 billion euros, and more, if you include the tourist industry.",
 			},
 		],
@@ -151,9 +151,9 @@ export const w5d1: ReadingDay = {
 				en: "What does “空の足” refer to?",
 				choices: [
 					{ jp: "{観光業|かんこうぎょう}", cn: "旅游业", en: "the tourist industry" },
-					{ jp: "{空港|くうこう}の{構内|こうない}", cn: "机场场内", en: "the airport premises" },
+					{ jp: "{空港|くうこう}の{構内|こうない}", cn: "机场区域内", en: "the airport premises" },
 					{ jp: "{航空業界|こうくうぎょうかい}", cn: "航空业", en: "the airline industry" },
-					{ jp: "{飛行機|ひこうき}の{便|びん}", cn: "航班", en: "flights / air services" },
+					{ jp: "{飛行機|ひこうき}の{便|びん}", cn: "飞机航班", en: "flights / air services" },
 				],
 				answer: 4,
 				explanation:
@@ -176,13 +176,13 @@ export const w5d1: ReadingDay = {
 			{
 				label: "問2",
 				jp: "この{記事|きじ}の{内容|ないよう}と{合|あ}っているものはどれか。",
-				cn: "与这篇报道内容相符的是哪一项？",
+				cn: "与这篇报道的内容相符的是哪一个？",
 				en: "Which of the following matches the content of this article?",
 				choices: [
-					{ jp: "この{災害|さいがい}による{航空|こうくう}、{観光業界|かんこうぎょうかい}の{損失|そんしつ}は25{億|おく}ユーロにとどまった。", cn: "这场灾害给航空、旅游业造成的损失止于 25 亿欧元。", en: "Losses to aviation and tourism from this disaster stopped at 2.5 billion euros." },
+					{ jp: "この{災害|さいがい}による{航空|こうくう}、{観光業界|かんこうぎょうかい}の{損失|そんしつ}は25{億|おく}ユーロにとどまった。", cn: "这场灾害造成的航空业、旅游业的损失止于25亿欧元。", en: "Losses to aviation and tourism from this disaster stopped at 2.5 billion euros." },
 					{ jp: "{火山|かざん}が{噴火|ふんか}するといつも{飛行機|ひこうき}は{飛|と}べなくなる。", cn: "火山一喷发，飞机就总是飞不了。", en: "Whenever a volcano erupts, planes always become unable to fly." },
-					{ jp: "{火山噴火|かざんふんか}の{影響|えいきょう}で{観光客|かんこうきゃく}は{欧州旅行|おうしゅうりょこう}を{中止|ちゅうし}し、{日本|にほん}などアジアへ{来|き}た。", cn: "受火山喷发影响，游客取消了欧洲旅行，改来日本等亚洲国家。", en: "Because of the eruption, tourists cancelled trips to Europe and came to Japan and the rest of Asia." },
-					{ jp: "{混乱|こんらん}から{正常化|せいじょうか}まで1{週間|しゅうかん}かかった。", cn: "从混乱到恢复正常花了一周。", en: "It took one week from the chaos until things returned to normal." },
+					{ jp: "{火山噴火|かざんふんか}の{影響|えいきょう}で{観光客|かんこうきゃく}は{欧州旅行|おうしゅうりょこう}を{中止|ちゅうし}し、{日本|にほん}などアジアへ{来|き}た。", cn: "受火山喷发的影响，游客中止了欧洲旅行，来到了日本等亚洲地区。", en: "Because of the eruption, tourists cancelled trips to Europe and came to Japan and the rest of Asia." },
+					{ jp: "{混乱|こんらん}から{正常化|せいじょうか}まで1{週間|しゅうかん}かかった。", cn: "从混乱到恢复正常花了1周。", en: "It took one week from the chaos until things returned to normal." },
 				],
 				answer: 4,
 				explanation:
@@ -236,7 +236,7 @@ export const w5d1: ReadingDay = {
 			meaningEn: "the outlook is that… / … is expected. Common in news for a coming trend.",
 			example: {
 				jp: "22{日中|にちじゅう}に{正常化|せいじょうか}する{見通|みとお}しを{発表|はっぴょう}した。",
-				cn: "发表了将于 22 日当天恢复正常的展望。",
+				cn: "发表了将在22日当天恢复正常的展望。",
 				en: "They announced the outlook that it would return to normal during the 22nd.",
 			},
 		},
@@ -247,7 +247,7 @@ export const w5d1: ReadingDay = {
 			meaningEn: "is seen as… / is estimated to…. Used in reporting for figures and judgments that are not fully confirmed.",
 			example: {
 				jp: "{損失|そんしつ}は15{億|おく}〜25{億|おく}ユーロに{上|のぼ}るとみられる。",
-				cn: "损失估计高达 15 亿至 25 亿欧元。",
+				cn: "损失估计高达15亿〜25亿欧元。",
 				en: "Losses are estimated to amount to 1.5 to 2.5 billion euros.",
 			},
 		},
@@ -258,7 +258,7 @@ export const w5d1: ReadingDay = {
 			meaningEn: "since… (and continuing up to now).",
 			example: {
 				jp: "15{日|にち}に{火山灰|かざんばい}が{拡散|かくさん}して、{以来|いらい}10{万便|まんびん}{以上|いじょう}が{欠航|けっこう}。",
-				cn: "自 15 日火山灰扩散以来，逾 10 万个航班停飞。",
+				cn: "15日火山灰扩散，自那以来10万班以上航班取消。",
 				en: "Since the ash spread on the 15th, more than 100,000 flights have been cancelled.",
 			},
 		},

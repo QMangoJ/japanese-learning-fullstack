@@ -86,17 +86,17 @@ export const w4d2: ReadingDay = {
 
 	point: {
 		title: "グラフの{説明|せつめい}によく{出|で}てくる{言葉|ことば}を{覚|おぼ}えよう！①",
-		titleCn: "记住图表说明中经常出现的词汇！①",
+		titleCn: "来记住图表说明中经常出现的词语吧！①",
 		titleEn: "Let's learn some expressions that are commonly used as labels on graphs! ①",
 		figure: {
 			alt: "右上がりの線グラフに「体重が急激に増えました。」、右下がりの線グラフに「体重が徐々に減りました。」という説明がついたイラスト",
-			cn: "向右上升的折线图配文「体重急剧增加了」；向右下降的折线图配文「体重渐渐减少了」。",
+			cn: "一幅插图，向右上升的折线图配有「体重急剧增加了。」的说明，向右下降的折线图配有「体重逐渐减少了。」的说明。",
 			en: "A line graph rising to the right is labeled “Weight increased sharply”; a line graph falling to the right is labeled “Weight decreased gradually.”",
 		},
 		tips: [
 			{
 				jp: "「どう{変|か}わったか（{増|ふ}えた・{減|へ}った）」と「どのくらいの{速|はや}さで{変|か}わったか（{急激|きゅうげき}に・{徐々|じょじょ}に）」を{分|わ}けて{読|よ}み{取|と}ろう。",
-				cn: "把「怎么变的（增加还是减少）」和「变化的速度（急剧还是渐渐）」分开来读——图表题基本就考这两点。",
+				cn: "把「怎么变的（增加了・减少了）」和「以多快的速度变的（急剧地・逐渐地）」分开来读取吧。",
 				en: "Read separately “how it changed (up or down)” and “how fast it changed (sharply or gradually)” — that is basically what graph questions test.",
 			},
 		],
@@ -108,40 +108,40 @@ export const w4d2: ReadingDay = {
 			{ jp: "伸び", kana: "のび", cn: "增长、增幅", en: "an increase / growth" },
 			{ jp: "（〜％／〜円など）に達する", kana: "たっする", cn: "达到（〜％／〜日元等）", en: "to reach … % / yen" },
 			{ jp: "一定", kana: "いってい", cn: "一定、保持不变", en: "constant (remains the same)" },
-			{ jp: "〜のみ", cn: "只有〜（＝だけ）", en: "only" },
+			{ jp: "〜のみ", cn: "仅〜", en: "only" },
 		],
 	},
 
 	renshu: {
 		instruction: "{次|つぎ}の{会話文|かいわぶん}を{読|よ}んで、{後|あと}の{文|ぶん}から{正|ただ}しいものを{選|えら}ぼう。",
-		instructionCn: "阅读下面的对话，从后面的句子中选出正确的。（答案在下一页）",
+		instructionCn: "阅读下面的会话文，从后面的句子中选出正确的吧。",
 		instructionEn: "Read the dialogue below and choose the correct statements from the sentences that follow. (Answers are on the next page.)",
 		blocks: [
 			{
 				type: "speech",
 				speaker: "Aさん",
-				speakerCn: "A",
+				speakerCn: "A先生",
 				speakerEn: "A",
 				jp: "{日本|にほん}の{輸入額|ゆにゅうがく}（※1）、51{兆円|ちょうえん}（※2）もあるそうです。",
-				cn: "听说日本的进口额高达 51 万亿日元呢。",
+				cn: "听说日本的进口额（※1）竟有51万亿日元（※2）之多。",
 				en: "I hear Japan’s imports amount to as much as 51 trillion yen.",
 			},
 			{
 				type: "speech",
 				speaker: "Bさん",
-				speakerCn: "B",
+				speakerCn: "B先生",
 				speakerEn: "B",
 				jp: "いろいろなものを{輸入|ゆにゅう}していますからね。やっぱり、アメリカからの{輸入|ゆにゅう}がいちばん{多|おお}いんでしょうね。",
-				cn: "毕竟进口的东西五花八门嘛。果然还是从美国进口的最多吧。",
+				cn: "因为在进口各种各样的东西嘛。果然，来自美国的进口应该是最多的吧。",
 				en: "They import all kinds of things, after all. I suppose imports from the U.S. are still the largest, right?",
 			},
 			{
 				type: "speech",
 				speaker: "Aさん",
-				speakerCn: "A",
+				speakerCn: "A先生",
 				speakerEn: "A",
 				jp: "いえいえ、それが{最近|さいきん}では{中国|ちゅうごく}がトップですよ。2008{年|ねん}までは{輸入|ゆにゅう}はともかく{輸出|ゆしゅつ}（※3）はアメリカが{一番|いちばん}だったんですが、それも{中国|ちゅうごく}で。{我|わ}が{国|くに}は、{中国|ちゅうごく}については{輸出|ゆしゅつ}より{輸入|ゆにゅう}のほうが{多|おお}いんですよ。",
-				cn: "不不，最近是中国排第一哦。到 2008 年为止，进口先不说，出口一直是美国第一，可现在出口也是中国了。我国对中国是进口比出口多呢。",
+				cn: "不不，其实最近是中国排第一哦。到2008年为止，进口姑且不论，出口（※3）曾是美国第一，不过那个也是中国了。我国就中国而言，进口比出口多哦。",
 				en: "No, no — lately China is at the top. Until 2008, leaving imports aside, exports to the U.S. were number one, but now those are China too. With China, our imports are larger than our exports.",
 			},
 		],
@@ -151,16 +151,16 @@ export const w4d2: ReadingDay = {
 			{ marker: "※3", term: "輸出", jp: "an export", cn: "出口", en: "an export" },
 		],
 		choices: [
-			{ jp: "{日本|にほん}で{最|もっと}も{輸出額|ゆしゅつがく}が{多|おお}いのは、アメリカである。", cn: "日本出口额最多的对象国是美国。", en: "Japan’s largest export partner is the United States." },
-			{ jp: "{日本|にほん}で{最|もっと}も{輸入額|ゆにゅうがく}が{多|おお}いのは、アメリカである。", cn: "日本进口额最多的对象国是美国。", en: "Japan’s largest import partner is the United States." },
-			{ jp: "{日本|にほん}で{最|もっと}も{輸出額|ゆしゅつがく}が{多|おお}いのは、{中国|ちゅうごく}である。", cn: "日本出口额最多的对象国是中国。", en: "Japan’s largest export partner is China." },
+			{ jp: "{日本|にほん}で{最|もっと}も{輸出額|ゆしゅつがく}が{多|おお}いのは、アメリカである。", cn: "日本出口额最多的，是美国。", en: "Japan’s largest export partner is the United States." },
+			{ jp: "{日本|にほん}で{最|もっと}も{輸入額|ゆにゅうがく}が{多|おお}いのは、アメリカである。", cn: "日本进口额最多的，是美国。", en: "Japan’s largest import partner is the United States." },
+			{ jp: "{日本|にほん}で{最|もっと}も{輸出額|ゆしゅつがく}が{多|おお}いのは、{中国|ちゅうごく}である。", cn: "日本出口额最多的，是中国。", en: "Japan’s largest export partner is China." },
 			{ jp: "{日本|にほん}の{中国|ちゅうごく}への{輸出額|ゆしゅつがく}は{輸入額|ゆにゅうがく}より{多|おお}い。", cn: "日本对中国的出口额比进口额多。", en: "Japan’s exports to China are larger than its imports from China." },
 			{ jp: "{日本|にほん}の{中国|ちゅうごく}への{輸出額|ゆしゅつがく}は{輸入額|ゆにゅうがく}より{少|すく}ない。", cn: "日本对中国的出口额比进口额少。", en: "Japan’s exports to China are smaller than its imports from China." },
 		],
 		answers: [3, 5],
 		hint: {
 			jp: "「2008{年|ねん}までは……アメリカが{一番|いちばん}だった」＝{今|いま}は{違|ちが}う。「{輸出|ゆしゅつ}より{輸入|ゆにゅう}のほうが{多|おお}い」＝{輸出|ゆしゅつ}のほうが{少|すく}ない。",
-			cn: "「到 2008 年为止是美国第一」意味着现在已经不是了；「輸出より輸入のほうが多い」换个说法就是「輸出は輸入より少ない」。",
+			cn: "「2008年までは……アメリカが一番だった」＝今は違う（“到2008年为止……美国是第一”＝现在不同了）。「輸出より輸入のほうが多い」＝輸出のほうが少ない（“进口比出口多”＝出口更少）。",
 			en: "“Until 2008 the U.S. was number one” means that is no longer true. “Imports are larger than exports” is another way of saying “exports are smaller than imports.”",
 		},
 	},
@@ -168,20 +168,20 @@ export const w4d2: ReadingDay = {
 	mondai: {
 		instruction:
 			"{次|つぎ}の{文章|ぶんしょう}は、{日本|にほん}の{輸出額|ゆしゅつがく}と{輸入額|ゆにゅうがく}について{述|の}べたものである。{読|よ}んで、{後|あと}の{問|と}いに{答|こた}えなさい。",
-		instructionCn: "下面这篇文章讲述的是日本的出口额与进口额。阅读后回答后面的问题。（答案在别册 p.5）",
+		instructionCn: "下面的文章是就日本的出口额和进口额进行叙述的。请阅读并回答后面的问题。",
 		instructionEn: "The passage below is about Japan’s exports and imports. Read it and answer the questions that follow. (Answers are in the separate booklet, p. 5.)",
 		blocks: [
 			{
 				type: "paragraph",
 				jp: "{日本|にほん}の{主|おも}な{貿易相手国|ぼうえきあいてこく}＊は、アメリカ{合衆国|がっしゅうこく}、EU（※）、{中国|ちゅうごく}、{韓国|かんこく}です。{輸入額|ゆにゅうがく}・{輸出額|ゆしゅつがく}とも{中国|ちゅうごく}がトップであり、{輸入額|ゆにゅうがく}は11.4{兆円|ちょうえん}に{達|たっ}しています＊＊。アメリカ・EUはその{約半分|やくはんぶん}です。{輸出額|ゆしゅつがく}では{中国|ちゅうごく}とアメリカの{差|さ}はさほど{大|おお}きくありませんが、EUは{中国|ちゅうごく}の{約|やく}3{分|ぶん}の2、{韓国|かんこく}は{半分以下|はんぶんいか}です。ほとんどの{国|くに}は{輸入額|ゆにゅうがく}より{輸出額|ゆしゅつがく}のほうが{多|おお}いですが、{中国|ちゅうごく}のみ{輸入額|ゆにゅうがく}のほうが{多|おお}くなっています。",
-				cn: "日本主要的贸易伙伴国是美利坚合众国、欧盟（EU）、中国、韩国。进口额与出口额均以中国居首，进口额达到 11.4 万亿日元。美国和欧盟约为其一半。在出口额方面，中国与美国的差距并不算大，而欧盟约为中国的三分之二，韩国则在一半以下。大多数国家都是出口额多于进口额，只有中国是进口额更多。",
+				cn: "日本主要的贸易伙伴国＊是美利坚合众国、EU（※）、中国、韩国。进口额和出口额都是中国居首，进口额达到11.4万亿日元＊＊。美国和EU约为其一半。在出口额方面，中国与美国的差距并不那么大，但EU约为中国的三分之二，韩国则是一半以下。大多数国家是出口额比进口额多，但只有中国是进口额更多。",
 				en: "Japan’s main trading partners are the United States, the EU, China, and South Korea. China ranks first in both imports and exports, and imports reach 11.4 trillion yen＊＊. The U.S. and the EU are about half of that. On the export side, the gap between China and the U.S. is not that large, but the EU is about two-thirds of China, and South Korea is less than half. For most countries exports exceed imports, but only with China are imports larger.",
 			},
-			{ type: "line", jp: "（{資料|しりょう}：{財務省|ざいむしょう}「{貿易統計|ぼうえきとうけい}」）", cn: "（资料：财务省《贸易统计》）", en: "(Source: Ministry of Finance, Trade Statistics)", align: "right" },
+			{ type: "line", jp: "（{資料|しりょう}：{財務省|ざいむしょう}「{貿易統計|ぼうえきとうけい}」）", cn: "（资料：财务省「贸易统计」）", en: "(Source: Ministry of Finance, Trade Statistics)", align: "right" },
 			{
 				type: "figure",
 				alt: "日本の相手先別輸出入額（2009年）を示す4つの棒グラフ。■＝輸入、□＝輸出。韓国・中国・EU・米国の4か国について、0〜12兆円の目盛りで示されている",
-				cn: "四张柱状图，显示 2009 年日本按贸易对象国分类的进出口额。■＝进口（实心），□＝出口（空心）；对象为韩国、中国、欧盟、美国，刻度 0〜12 万亿日元。（本站按原书重绘）",
+				cn: "显示日本按贸易对象分类的进出口额（2009年）的4个柱状图。■＝进口、□＝出口。就韩国、中国、EU、美国这4个国家，以0〜12万亿日元的刻度标示。",
 				en: "Four bar charts of Japan’s imports and exports by partner in 2009. Solid = imports, outline = exports; partners are South Korea, China, the EU, and the U.S., scaled 0–12 trillion yen. (Redrawn from the book.)",
 				svg: `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px">
   ${tradeChart("1", rowsCorrect)}
@@ -193,15 +193,15 @@ export const w4d2: ReadingDay = {
 		],
 		footnotes: [{ marker: "※", term: "EU", jp: "European Union", cn: "欧盟", en: "European Union" }],
 		pageNotes: [
-			{ jp: "＊ a country which imports (Japanese) goods", cn: "＊贸易伙伴国", en: "＊ a country which imports (Japanese) goods" },
-			{ jp: "＊＊ the total imports amount to 11.4 trillion yen", cn: "＊＊进口额达到 11.4 万亿日元", en: "＊＊ the total imports amount to 11.4 trillion yen" },
-			{ jp: "＊＊＊ Broken down by importing countries", cn: "＊＊＊按贸易对象国分类", en: "＊＊＊ Broken down by importing countries" },
+			{ jp: "＊ a country which imports (Japanese) goods", cn: "＊进口（日本）商品的国家", en: "＊ a country which imports (Japanese) goods" },
+			{ jp: "＊＊ the total imports amount to 11.4 trillion yen", cn: "＊＊进口总额达到11.4万亿日元", en: "＊＊ the total imports amount to 11.4 trillion yen" },
+			{ jp: "＊＊＊ Broken down by importing countries", cn: "＊＊＊按进口国细分", en: "＊＊＊ Broken down by importing countries" },
 		],
 		questions: [
 			{
 				label: "問い",
 				jp: "{次|つぎ}のグラフからこの{文章|ぶんしょう}に{合|あ}うものを{選|えら}びなさい。（■＝{輸入|ゆにゅう}　□＝{輸出|ゆしゅつ}／{日本|にほん}の{相手先別輸出入額|あいてさきべつゆしゅつにゅうがく}　2009{年|ねん}）",
-				cn: "请从下面的图表中选出与本文相符的一个。（■＝进口　□＝出口／日本按贸易对象国分类的进出口额　2009 年）",
+				cn: "请从下面的图表中选出与这篇文章相符的。（■＝进口　□＝出口／日本按贸易对象分类的进出口额　2009年）",
 				en: "Choose the graph that matches this passage. (Solid = imports, outline = exports / Japan’s imports and exports by partner, 2009)",
 				choices: [
 					{ jp: "グラフ 1", cn: "图表 1", en: "Graph 1" },
@@ -257,14 +257,14 @@ export const w4d2: ReadingDay = {
 			formation: "数量を表す名詞 ＋ に達する",
 			meaning: "达到……（某个数值）。图表说明的常用表达。",
 			meaningEn: "To reach … (a figure). A common expression in graph descriptions.",
-			example: { jp: "{輸入額|ゆにゅうがく}は11.4{兆円|ちょうえん}に{達|たっ}しています。", cn: "进口额达到 11.4 万亿日元。", en: "Imports reach 11.4 trillion yen." },
+			example: { jp: "{輸入額|ゆにゅうがく}は11.4{兆円|ちょうえん}に{達|たっ}しています。", cn: "进口额达到11.4万亿日元。", en: "Imports reach 11.4 trillion yen." },
 		},
 		{
 			pattern: "〜とも",
 			formation: "名詞A・名詞B ＋ とも",
 			meaning: "……两者都。「輸入額・輸出額とも」＝进口额和出口额两方面都。",
 			meaningEn: "Both …. “Imports and exports tomo” = in both imports and exports.",
-			example: { jp: "{輸入額|ゆにゅうがく}・{輸出額|ゆしゅつがく}とも{中国|ちゅうごく}がトップ", cn: "进口额、出口额都是中国第一", en: "China ranks first in both imports and exports" },
+			example: { jp: "{輸入額|ゆにゅうがく}・{輸出額|ゆしゅつがく}とも{中国|ちゅうごく}がトップ", cn: "进口额和出口额都是中国居首", en: "China ranks first in both imports and exports" },
 		},
 		{
 			pattern: "〜のみ",
@@ -278,26 +278,26 @@ export const w4d2: ReadingDay = {
 			pattern: "さほど〜ない",
 			meaning: "并不那么……。比「あまり〜ない」更书面。",
 			meaningEn: "Not all that …. More formal than amari ~nai.",
-			example: { jp: "{中国|ちゅうごく}とアメリカの{差|さ}はさほど{大|おお}きくありません。", cn: "中国与美国的差距并不算大。", en: "The gap between China and the U.S. is not that large." },
+			example: { jp: "{中国|ちゅうごく}とアメリカの{差|さ}はさほど{大|おお}きくありません。", cn: "中国与美国的差距并不那么大。", en: "The gap between China and the U.S. is not that large." },
 		},
 		{
 			pattern: "AはBの約〜分の〜",
 			meaning: "A 约为 B 的几分之几。比较数量的常用说法。",
 			meaningEn: "A is about such-and-such a fraction of B. A common way to compare amounts.",
-			example: { jp: "EUは{中国|ちゅうごく}の{約|やく}3{分|ぶん}の2", cn: "欧盟约为中国的三分之二", en: "The EU is about two-thirds of China" },
+			example: { jp: "EUは{中国|ちゅうごく}の{約|やく}3{分|ぶん}の2", cn: "EU约为中国的三分之二", en: "The EU is about two-thirds of China" },
 		},
 		{
 			pattern: "〜はともかく",
 			formation: "名詞 ＋ はともかく",
 			meaning: "……姑且不论、先不说……。",
 			meaningEn: "Leaving … aside / never mind ….",
-			example: { jp: "{輸入|ゆにゅう}はともかく{輸出|ゆしゅつ}はアメリカが{一番|いちばん}だった", cn: "进口先不说，出口一直是美国第一", en: "leaving imports aside, exports to the U.S. were number one" },
+			example: { jp: "{輸入|ゆにゅう}はともかく{輸出|ゆしゅつ}はアメリカが{一番|いちばん}だった", cn: "进口姑且不论，出口曾是美国第一", en: "leaving imports aside, exports to the U.S. were number one" },
 		},
 		{
 			pattern: "〜そうです（伝聞）",
 			meaning: "听说……。",
 			meaningEn: "I hear that ….",
-			example: { jp: "51{兆円|ちょうえん}もあるそうです。", cn: "听说高达 51 万亿日元。", en: "I hear it is as much as 51 trillion yen." },
+			example: { jp: "51{兆円|ちょうえん}もあるそうです。", cn: "听说竟有51万亿日元之多。", en: "I hear it is as much as 51 trillion yen." },
 		},
 	],
 };

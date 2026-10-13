@@ -19,41 +19,41 @@ export const w6d7: ReadingDay = {
 				label: "問題1",
 				instruction:
 					"つぎの{文章|ぶんしょう}を{読|よ}んで、あとの{質問|しつもん}に{答|こた}えなさい。{答|こた}えは、1・2・3・4から{最|もっと}もよいものを{一|ひと}つ{選|えら}びなさい。",
-				instructionCn: "阅读下面的文章，回答后面的问题。答案从 1・2・3・4 中选出最合适的一个。",
+				instructionCn: "阅读下面的文章，回答后面的问题。答案从1・2・3・4中选出最好的一个。",
 				instructionEn: "Read the passage below and answer the questions that follow. Choose the best answer from 1, 2, 3, or 4.",
 				blocks: [
 					{
 						type: "paragraph",
 						indent: true,
 						jp: "（{前略|ぜんりゃく}）{人|ひと}は{睡眠中|すいみんちゅう}に、{極|ごく}（※1）{浅|あさ}い{眠|ねむ}り、{浅|あさ}い{眠|ねむ}り、{中|ちゅう}くらいの{眠|ねむ}り、{深|ふか}い{眠|ねむ}りの{四段階|よんだんかい}の{眠|ねむ}りをします。この{眠|ねむ}りをノンレム{睡眠|すいみん}といいますが、ノンレム{睡眠|すいみん}の{次|つぎ}にもう{一|ひと}つの{眠|ねむ}りがきます。これが、レム{睡眠|すいみん}です。（{中略|ちゅうりゃく}）{七|なな}〜{八時間|はちじかん}の{睡眠|すいみん}のうち、ノンレム{睡眠|すいみん}とレム{睡眠|すいみん}を{何回|なんかい}か{繰|く}り{返|かえ}しますが、①{夢|ゆめ}を{見|み}るのはレム{睡眠|すいみん}のときだけです。",
-						cn: "（前略）人在睡眠中会经历极浅睡眠、浅睡眠、中度睡眠、深睡眠这四个阶段。这样的睡眠称为非快速眼动睡眠（非 REM 睡眠），而在它之后还会出现另一种睡眠，这就是快速眼动睡眠（REM 睡眠）。（中略）在七到八小时的睡眠中，非 REM 睡眠和 REM 睡眠会反复交替数次，而①做梦只发生在 REM 睡眠的时候。",
+						cn: "（前文省略）人在睡眠中会进行极（※1）浅的睡眠、浅的睡眠、中等程度的睡眠、深的睡眠这四个阶段的睡眠。这种睡眠叫做非快速眼动睡眠，不过在非快速眼动睡眠之后，还会有另一种睡眠到来。这就是快速眼动睡眠。（中间省略）在七〜八小时的睡眠之中，非快速眼动睡眠和快速眼动睡眠会反复数次，但是①只有在快速眼动睡眠的时候才做梦。",
 						en: "(earlier part omitted) While we sleep, we go through four stages: very light sleep, light sleep, medium sleep, and deep sleep. This sleep is called non-REM sleep, and after non-REM sleep another kind of sleep comes. This is REM sleep. (passage omitted) In seven to eight hours of sleep, non-REM and REM sleep repeat several times, but ① we dream only during REM sleep.",
 					},
 					{
 						type: "paragraph",
 						indent: true,
 						jp: "（　②　）のときにはいつでも{夢|ゆめ}を{見|み}ていますが、その{夢|ゆめ}を{覚|おぼ}えているのは、{夢|ゆめ}を{見|み}た{後約八分|あとやくはっぷん}だけだそうです。この{間|あいだ}に{目|め}が{覚|さ}めれば{覚|おぼ}えているのですが、そのまま{眠|ねむ}り{続|つづ}けてしまえば、{夢|ゆめ}を{見|み}たことすら（※2）{忘|わす}れてしまいます。だから、ぐっすり{熟睡|じゅくすい}（※3）して{浅|あさ}い{眠|ねむ}りから{深|ふか}い{眠|ねむ}りへすぐ{移行|いこう}して（※4）しまうと、{夢|ゆめ}はあまり{見|み}ません。",
-						cn: "在（　②　）的时候人始终在做梦，但据说能记住那个梦的时间，只有做梦之后约八分钟。如果在这段时间里醒来就还记得，若是就那样继续睡下去，连做过梦这件事本身都会忘掉。所以，如果睡得很沉、从浅睡眠很快过渡到深睡眠，就不太会做梦。",
+						cn: "在（　②　）的时候总是在做梦，不过据说能记住那个梦的时间，只有做梦之后大约八分钟。如果在这段时间里醒来就还记得，可要是就那样继续睡下去，甚至（※2）连做过梦这件事都会忘掉。所以，如果沉沉地熟睡（※3），从浅的睡眠很快就过渡（※4）到深的睡眠的话，就不太做梦。",
 						en: "During (　②　) we are always dreaming, but it is said that we only remember that dream for about eight minutes after we have it. If we wake up in that window we remember it; if we just keep sleeping, we forget even that we dreamed at all. So if we sleep soundly and move quickly from light sleep to deep sleep, we do not dream much.",
 					},
 					{
 						type: "paragraph",
 						indent: true,
 						jp: "また、（　③　）が{長|なが}くなると{夢|ゆめ}を{見|み}ている{時間|じかん}が{長|なが}くなります。{眠|ねむ}る{時間|じかん}が{長|なが}ければレム{睡眠|すいみん}の{長|なが}さも{延|の}びますが、{同|おな}じ{時間寝|じかんね}ていても、{強|つよ}いストレス（※5）を{受|う}けているときのほうがレム{睡眠|すいみん}が{長|なが}くなるそうです。それに、ストレスを{受|う}けているときにはウツウツとして（※6）よく{眠|ねむ}れず、{目|め}が{覚|さ}めやすいということもあります。そういえば、テストの{前|まえ}とか{仕事|しごと}がうまくいかないときとか、ふられた（※7）ときとか、イヤーなことがあったときによく{夢|ゆめ}を{見|み}たなと、{思|おも}い{当|あ}たりませんか。",
-						cn: "另外，（　③　）一变长，做梦的时间也会变长。睡眠时间越长，REM 睡眠的长度也会延长；但据说即使睡同样长的时间，承受强烈压力时 REM 睡眠会更长。而且，承受压力时人会郁郁不安、睡不踏实，也更容易醒来。这么一说，考试前、工作不顺时、被人拒绝时，或是遇到讨厌的事时常常做梦——你是不是也有同感呢？",
+						cn: "另外，（　③　）一变长，做梦的时间也会变长。如果睡觉的时间长，快速眼动睡眠的长度也会延长，但据说即使睡同样长的时间，受到强烈压力（※5）的时候，快速眼动睡眠会更长。而且，受到压力的时候，有时也会闷闷不乐（※6），睡不好，容易醒来。说起来，考试前啦、工作不顺利的时候啦、被人甩了（※7）的时候啦、遇到讨厌的事的时候，经常做梦啊——你没有想起来吗？",
 						en: "Also, when (　③　) gets longer, the time spent dreaming gets longer. If you sleep longer, REM sleep also lengthens; but even if you sleep the same amount of time, REM sleep is said to be longer when you are under strong stress. On top of that, when you are under stress you feel gloomy, cannot sleep well, and wake more easily. Come to think of it — before a test, when work isn’t going well, when you’ve been turned down, or when something unpleasant has happened — don’t you recall dreaming a lot then?",
 					},
 					{
 						type: "paragraph",
 						indent: true,
 						jp: "アメリカで{行|おこ}なわれた{実験|じっけん}でも、④{夢|ゆめ}をあまり{見|み}ない{人|ひと}というのは、{楽天的|らくてんてき}（※8）で{自我|じが}があまり{強|つよ}くない{人|ひと}（※9）という{結果|けっか}が{出|で}ているそうです。{何|なに}も{考|かんが}えず、バタンキュー（※10）と{眠|ねむ}ってしまうのが、{最上|さいじょう}の{眠|ねむ}りのようです。",
-						cn: "在美国进行的实验也得出结论：④不太做梦的人，是那种乐天、自我意识不太强的人。什么都不想、倒头就睡，看来才是最好的睡眠。",
+						cn: "在美国进行的实验，据说也得出了④不太做梦的人是乐天（※8）、自我不太强的人（※9）这一结果。什么都不想，啪地一下（※10）倒头就睡着，这似乎是最好的睡眠。",
 						en: "An experiment done in America is also said to have found that ④ people who do not dream much are optimistic people whose sense of self is not very strong. Falling asleep in a heap without thinking about anything seems to be the best kind of sleep.",
 					},
 					{
 						type: "source",
 						jp: "（{竹内均|たけうちひとし}『{頭|あたま}にやさしい{雑学読本|ざつがくどくほん}⑦ ちょっと{意外|いがい}なお{茶|ちゃ}の{間|ま}の{科学|かがく}』{同文書院|どうぶんしょいん}）",
-						cn: "（竹内均《对头脑友好的杂学读本⑦ 有点意外的居家科学》同文书院）",
+						cn: "（竹内均《对头脑友好的杂学读本⑦ 有点意外的客厅科学》同文书院）",
 						en: "(Hitoshi Takeuchi, A Brain-Friendly Miscellany ⑦: Slightly Surprising Living-Room Science, Dobun Shoin)",
 					},
 				],
@@ -82,10 +82,10 @@ export const w6d7: ReadingDay = {
 						cn: "①「做梦」是在什么时候？",
 						en: "When do we ① “dream”?",
 						choices: [
-							{ jp: "レム{睡眠|すいみん}のとき", cn: "REM 睡眠的时候", en: "during REM sleep" },
-							{ jp: "ノンレム{睡眠|すいみん}のとき", cn: "非 REM 睡眠的时候", en: "during non-REM sleep" },
-							{ jp: "{深|ふか}い{眠|ねむ}りのとき", cn: "深睡眠的时候", en: "during deep sleep" },
-							{ jp: "7〜8{時間寝|じかんね}たとき", cn: "睡了 7〜8 小时的时候", en: "when you have slept 7–8 hours" },
+							{ jp: "レム{睡眠|すいみん}のとき", cn: "快速眼动睡眠的时候", en: "during REM sleep" },
+							{ jp: "ノンレム{睡眠|すいみん}のとき", cn: "非快速眼动睡眠的时候", en: "during non-REM sleep" },
+							{ jp: "{深|ふか}い{眠|ねむ}りのとき", cn: "深的睡眠的时候", en: "during deep sleep" },
+							{ jp: "7〜8{時間寝|じかんね}たとき", cn: "睡了7〜8小时的时候", en: "when you have slept 7–8 hours" },
 						],
 						answer: 1,
 						explanation:
@@ -108,13 +108,13 @@ export const w6d7: ReadingDay = {
 					{
 						label: "2",
 						jp: "（　②　）（　③　）に{入|はい}る{言葉|ことば}として{適当|てきとう}な{組|く}み{合|あ}わせのものはどれか。",
-						cn: "填入（　②　）（　③　）的词语组合，恰当的是哪一个？",
+						cn: "作为填入（　②　）（　③　）的词语，恰当的组合是哪一个？",
 						en: "Which pair of words fits (　②　) and (　③　)?",
 						choices: [
-							{ jp: "②ノンレム{睡眠|すいみん}　③レム{睡眠|すいみん}", cn: "②非 REM 睡眠　③REM 睡眠", en: "② non-REM sleep　③ REM sleep" },
-							{ jp: "②ノンレム{睡眠|すいみん}　③ノンレム{睡眠|すいみん}", cn: "②非 REM 睡眠　③非 REM 睡眠", en: "② non-REM sleep　③ non-REM sleep" },
-							{ jp: "②レム{睡眠|すいみん}　③レム{睡眠|すいみん}", cn: "②REM 睡眠　③REM 睡眠", en: "② REM sleep　③ REM sleep" },
-							{ jp: "②レム{睡眠|すいみん}　③ノンレム{睡眠|すいみん}", cn: "②REM 睡眠　③非 REM 睡眠", en: "② REM sleep　③ non-REM sleep" },
+							{ jp: "②ノンレム{睡眠|すいみん}　③レム{睡眠|すいみん}", cn: "②非快速眼动睡眠　③快速眼动睡眠", en: "② non-REM sleep　③ REM sleep" },
+							{ jp: "②ノンレム{睡眠|すいみん}　③ノンレム{睡眠|すいみん}", cn: "②非快速眼动睡眠　③非快速眼动睡眠", en: "② non-REM sleep　③ non-REM sleep" },
+							{ jp: "②レム{睡眠|すいみん}　③レム{睡眠|すいみん}", cn: "②快速眼动睡眠　③快速眼动睡眠", en: "② REM sleep　③ REM sleep" },
+							{ jp: "②レム{睡眠|すいみん}　③ノンレム{睡眠|すいみん}", cn: "②快速眼动睡眠　③非快速眼动睡眠", en: "② REM sleep　③ non-REM sleep" },
 						],
 						answer: 3,
 						explanation:
@@ -142,8 +142,8 @@ export const w6d7: ReadingDay = {
 						choices: [
 							{ jp: "{睡眠時間|すいみんじかん}が{長|なが}い{人|ひと}", cn: "睡眠时间长的人", en: "someone who sleeps a long time" },
 							{ jp: "{睡眠時間|すいみんじかん}が{短|みじか}い{人|ひと}", cn: "睡眠时间短的人", en: "someone who sleeps a short time" },
-							{ jp: "いろいろなことに{悩|なや}む{人|ひと}", cn: "为各种事烦恼的人", en: "someone who worries about all kinds of things" },
-							{ jp: "いろいろなことに{悩|なや}まない{人|ひと}", cn: "不为各种事烦恼的人", en: "someone who does not worry about all kinds of things" },
+							{ jp: "いろいろなことに{悩|なや}む{人|ひと}", cn: "为各种各样的事情烦恼的人", en: "someone who worries about all kinds of things" },
+							{ jp: "いろいろなことに{悩|なや}まない{人|ひと}", cn: "不为各种各样的事情烦恼的人", en: "someone who does not worry about all kinds of things" },
 						],
 						answer: 4,
 						explanation:
@@ -166,13 +166,13 @@ export const w6d7: ReadingDay = {
 					{
 						label: "4",
 						jp: "ストレスの{多|おお}い{人|ひと}について、{正|ただ}しいものはどれか。",
-						cn: "关于压力大的人，下列哪一项正确？",
+						cn: "关于压力大的人，正确的是哪一个？",
 						en: "Which of the following is true of people under a lot of stress?",
 						choices: [
-							{ jp: "ストレスの{多|おお}い{人|ひと}ほどレム{睡眠|すいみん}が{短|みじか}い。", cn: "压力越大的人，REM 睡眠越短。", en: "The more stress someone has, the shorter their REM sleep." },
+							{ jp: "ストレスの{多|おお}い{人|ひと}ほどレム{睡眠|すいみん}が{短|みじか}い。", cn: "压力越大的人，快速眼动睡眠越短。", en: "The more stress someone has, the shorter their REM sleep." },
 							{ jp: "ストレスの{多|おお}い{人|ひと}ほど{睡眠時間|すいみんじかん}が{長|なが}い。", cn: "压力越大的人，睡眠时间越长。", en: "The more stress someone has, the longer they sleep." },
 							{ jp: "ストレスの{多|おお}い{人|ひと}ほど{睡眠時間|すいみんじかん}が{短|みじか}い。", cn: "压力越大的人，睡眠时间越短。", en: "The more stress someone has, the shorter they sleep." },
-							{ jp: "ストレスの{多|おお}い{人|ひと}ほどよく{夢|ゆめ}を{見|み}る。", cn: "压力越大的人，越常做梦。", en: "The more stress someone has, the more they dream." },
+							{ jp: "ストレスの{多|おお}い{人|ひと}ほどよく{夢|ゆめ}を{見|み}る。", cn: "压力越大的人，越经常做梦。", en: "The more stress someone has, the more they dream." },
 						],
 						answer: 4,
 						explanation:
@@ -198,17 +198,17 @@ export const w6d7: ReadingDay = {
 				label: "問題2",
 				instruction:
 					"つぎの{文章|ぶんしょう}を{読|よ}んで、あとの{質問|しつもん}に{答|こた}えなさい。{答|こた}えは、1・2・3・4から{最|もっと}もよいものを{一|ひと}つ{選|えら}びなさい。",
-				instructionCn: "阅读下面的文章，回答后面的问题。答案从 1・2・3・4 中选出最合适的一个。",
+				instructionCn: "阅读下面的文章，回答后面的问题。答案从1・2・3・4中选出最好的一个。",
 				instructionEn: "Read the passage below and answer the questions that follow. Choose the best answer from 1, 2, 3, or 4.",
 				blocks: [
 					{
 						type: "paragraph",
 						indent: true,
 						jp: "{人間|にんげん}はだれでも{本当|ほんとう}は{死|し}と{隣|とな}りあわせで{生|い}きている。{自殺|じさつ}、などというものも、{特別|とくべつ}に{異常|いじょう}なことではなく、{手|て}をのばせばすぐとどくところにある{世界|せかい}なのではあるまいか。ひょいと{気軽|きがる}に（{注|ちゅう}1）{道路|どうろ}の{白線|はくせん}をまたぐように、{人|ひと}は{日常生活|にちじょうせいかつ}を{投|な}げだす（{注|ちゅう}2）こともありえないことではない。ああ、もう{面倒|めんどう}くさい、と、{特別|とくべつ}な{理由|りゆう}もなく{死|し}に{向|む}かって{歩|あゆ}みだす（{注|ちゅう}3）こともあるだろう。{私|わたし}たちはいつもすれすれの（{注|ちゅう}4）ところできわどく（{注|ちゅう}5）{生|い}きているのだ。",
-						cn: "其实每个人都是与死亡比邻而生的。所谓自杀，也并不是什么特别异常的事，而是一个只要一伸手就能够到的世界，不是吗？就像随随便便地跨过马路上的白线一样，人抛下日常生活这种事，也并非不可能发生。「啊，真是烦透了」——没有什么特别的理由，就朝着死亡迈出脚步的情形大概也是有的。我们始终都是在那条边缘线上、惊险地活着的。",
+						cn: "人无论是谁，其实都是与死亡为邻而活着的。自杀之类的事，也并不是特别异常的事，难道不就是一个位于一伸手就能立刻够到之处的世界吗？像轻巧地、随随便便地（注1）跨过道路的白线那样，人把日常生活抛下（注2）这种事，也不是不可能的。“啊，真是太麻烦了”，并没有特别的理由，就朝着死亡迈出脚步（注3），这样的事大概也会有吧。我们始终是在擦着边（注4）的地方惊险地（注5）活着的。",
 						en: "The truth is that every human being lives next door to death. Suicide, too, is not something especially abnormal, but a world that is right there if you just stretch out your hand, is it not? Just as you might casually step over a white line on the road, it is not impossible for a person to throw everyday life away. “Ah, I’ve had enough” — there are probably times when, with no special reason, someone starts walking toward death. We are always living on the edge, just barely.",
 					},
-					{ type: "source", jp: "（{五木寛之|いつきひろゆき}『{大河|たいが}の{一滴|いってき}』{幻冬舎|げんとうしゃ}）", cn: "（五木宽之《大河一滴》幻冬舍）", en: "(Hiroyuki Itsuki, A Drop in the Great River, Gentosha)" },
+					{ type: "source", jp: "（{五木寛之|いつきひろゆき}『{大河|たいが}の{一滴|いってき}』{幻冬舎|げんとうしゃ}）", cn: "（五木宽之《大河的一滴》幻冬舍）", en: "(Hiroyuki Itsuki, A Drop in the Great River, Gentosha)" },
 				],
 				footnotes: [
 					{ marker: "注1", term: "ひょいと気軽に", jp: "何気なくかんたんに", cn: "不经意地、轻易地", en: "casually; without thinking much about it" },
@@ -221,17 +221,17 @@ export const w6d7: ReadingDay = {
 					{
 						label: "5",
 						jp: "「すれすれのところできわどく{生|い}きている」とは、どういう{意味|いみ}か。",
-						cn: "「在边缘处惊险地活着」是什么意思？",
+						cn: "「在擦着边的地方惊险地活着」是什么意思？",
 						en: "What does “living on the edge, just barely” mean?",
 						choices: [
-							{ jp: "{自殺|じさつ}してもおかしくない{状況|じょうきょう}の{中|なか}で{生活|せいかつ}している。", cn: "生活在随时自杀也不奇怪的状况之中。", en: "Living in a situation where suicide would not be surprising." },
-							{ jp: "{危険|きけん}なものに{囲|かこ}まれた{状況|じょうきょう}の{中|なか}で{生活|せいかつ}している。", cn: "生活在被危险事物包围的状况之中。", en: "Living in a situation surrounded by dangerous things." },
+							{ jp: "{自殺|じさつ}してもおかしくない{状況|じょうきょう}の{中|なか}で{生活|せいかつ}している。", cn: "在即使自杀也不奇怪的状况中生活着。", en: "Living in a situation where suicide would not be surprising." },
+							{ jp: "{危険|きけん}なものに{囲|かこ}まれた{状況|じょうきょう}の{中|なか}で{生活|せいかつ}している。", cn: "在被危险的东西包围的状况中生活着。", en: "Living in a situation surrounded by dangerous things." },
 							{
 								jp: "{簡単|かんたん}に{死|し}を{選|えら}べないという{状況|じょうきょう}の{中|なか}で{生活|せいかつ}している。",
-								cn: "生活在无法轻易选择死亡的状况之中。",
+								cn: "在不能轻易选择死亡这一状况中生活着。",
 								en: "Living in a situation where you cannot easily choose death.",
 							},
-							{ jp: "だれでもいつかは{死|し}ぬという{状況|じょうきょう}の{中|なか}で{生活|せいかつ}している。", cn: "生活在人终有一死的状况之中。", en: "Living in the situation that everyone dies someday." },
+							{ jp: "だれでもいつかは{死|し}ぬという{状況|じょうきょう}の{中|なか}で{生活|せいかつ}している。", cn: "在无论谁总有一天都会死这一状况中生活着。", en: "Living in the situation that everyone dies someday." },
 						],
 						answer: 1,
 						explanation:
@@ -285,14 +285,14 @@ export const w6d7: ReadingDay = {
 			formation: "名詞 ＋ すら",
 			meaning: "连……都。书面语，强调极端的例子。",
 			meaningEn: "Even …. Written style; emphasizes an extreme case.",
-			example: { jp: "{夢|ゆめ}を{見|み}たことすら{忘|わす}れてしまいます。", cn: "连做过梦这件事都会忘掉。", en: "You even forget that you dreamed at all." },
+			example: { jp: "{夢|ゆめ}を{見|み}たことすら{忘|わす}れてしまいます。", cn: "甚至连做过梦这件事都会忘掉。", en: "You even forget that you dreamed at all." },
 		},
 		{
 			pattern: "〜ほど〜",
 			formation: "普通形 ＋ ほど",
 			meaning: "越……越……。用于表示比例关系。",
 			meaningEn: "The more …, the more …. Used for a proportional relationship.",
-			example: { jp: "ストレスの{多|おお}い{人|ひと}ほどよく{夢|ゆめ}を{見|み}る。", cn: "压力越大的人越常做梦。", en: "The more stress someone has, the more they dream." },
+			example: { jp: "ストレスの{多|おお}い{人|ひと}ほどよく{夢|ゆめ}を{見|み}る。", cn: "压力越大的人，越经常做梦。", en: "The more stress someone has, the more they dream." },
 		},
 		{
 			pattern: "〜のではあるまいか",
@@ -300,7 +300,7 @@ export const w6d7: ReadingDay = {
 			meaningEn: "Is it not …? A written, slightly classical form of “〜のではないだろうか,” using a rhetorical question to stress a claim.",
 			example: {
 				jp: "{手|て}をのばせばすぐとどくところにある{世界|せかい}なのではあるまいか。",
-				cn: "难道不是一伸手就能够到的世界吗？",
+				cn: "难道不就是一个位于一伸手就能立刻够到之处的世界吗？",
 				en: "Is it not a world that is right there if you just stretch out your hand?",
 			},
 			note: "与第 3 日学的「〜のではないだろうか」同类，都是用疑问形式表达断定。",
@@ -312,7 +312,7 @@ export const w6d7: ReadingDay = {
 			meaningEn: "It is not impossible. A double negative that really means “it is possible.”",
 			example: {
 				jp: "{人|ひと}は{日常生活|にちじょうせいかつ}を{投|な}げだすこともありえないことではない。",
-				cn: "人抛下日常生活这种事也并非不可能。",
+				cn: "人把日常生活抛下这种事，也不是不可能的。",
 				en: "It is not impossible for a person to throw everyday life away.",
 			},
 			note: "双重否定要还原成肯定来理解——这是读解常考点。",
@@ -322,26 +322,26 @@ export const w6d7: ReadingDay = {
 			pattern: "〜ば〜ほど／〜ば〜も",
 			meaning: "如果……就……。表示条件与结果的连动。",
 			meaningEn: "If …, then also …. Marks a condition and the result that goes with it.",
-			example: { jp: "{眠|ねむ}る{時間|じかん}が{長|なが}ければレム{睡眠|すいみん}の{長|なが}さも{延|の}びます。", cn: "睡眠时间越长，REM 睡眠也会延长。", en: "If you sleep longer, REM sleep also lengthens." },
+			example: { jp: "{眠|ねむ}る{時間|じかん}が{長|なが}ければレム{睡眠|すいみん}の{長|なが}さも{延|の}びます。", cn: "如果睡觉的时间长，快速眼动睡眠的长度也会延长。", en: "If you sleep longer, REM sleep also lengthens." },
 		},
 		{
 			pattern: "〜ように",
 			formation: "動詞辞書形 ＋ ように",
 			meaning: "像……一样。表示比喻。",
 			meaningEn: "As if … / the way …. Marks a comparison.",
-			example: { jp: "{道路|どうろ}の{白線|はくせん}をまたぐように", cn: "就像跨过马路上的白线一样", en: "the way you step over a white line on the road" },
+			example: { jp: "{道路|どうろ}の{白線|はくせん}をまたぐように", cn: "像跨过道路的白线那样", en: "the way you step over a white line on the road" },
 		},
 		{
 			pattern: "〜そうです（伝聞）",
 			meaning: "据说……。本文多处引用研究结果时使用。",
 			meaningEn: "It is said that …. Used here in several places when citing research.",
-			example: { jp: "レム{睡眠|すいみん}が{長|なが}くなるそうです。", cn: "据说 REM 睡眠会变长。", en: "REM sleep is said to get longer." },
+			example: { jp: "レム{睡眠|すいみん}が{長|なが}くなるそうです。", cn: "据说快速眼动睡眠会变长。", en: "REM sleep is said to get longer." },
 		},
 		{
 			pattern: "〜ず（に）",
 			meaning: "不……（就）。书面否定形。",
 			meaningEn: "Without …-ing. Written negative.",
-			example: { jp: "{何|なに}も{考|かんが}えず、バタンキューと{眠|ねむ}ってしまう", cn: "什么都不想，倒头就睡", en: "falling asleep in a heap without thinking about anything" },
+			example: { jp: "{何|なに}も{考|かんが}えず、バタンキューと{眠|ねむ}ってしまう", cn: "什么都不想，啪地一下倒头就睡着", en: "falling asleep in a heap without thinking about anything" },
 		},
 	],
 };

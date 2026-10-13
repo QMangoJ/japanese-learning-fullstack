@@ -12,17 +12,17 @@ export const w2d1: ReadingDay = {
 
 	point: {
 		title: "{決|き}まったパターンに{慣|な}れよう！①",
-		titleCn: "熟悉固定句式吧！①",
+		titleCn: "来习惯固定模式吧！①",
 		titleEn: "Try to get used to the sentence patterns! ①",
 		figure: {
 			alt: "ギターを持って怒ったような顔の人と、ギターを弾きながら「ぼく、ギタリストになりたい！」と言っている人のイラスト",
-			cn: "一个人拿着吉他一脸不服，另一个人边弹吉他边说「我想当吉他手！」",
+			cn: "一个拿着吉他、表情像在生气的人，以及边弹吉他边说「我想当吉他手！」的人的插图",
 			en: "One person clutching a guitar with a fierce look, and another playing guitar and saying “I want to be a guitarist!”",
 		},
 		tips: [
 			{
 				jp: "コンサートやリサイタルのお{知|し}らせではこんな{言葉|ことば}がよく{使|つか}われます。",
-				cn: "音乐会、独奏会的启事里经常出现下面这些词。",
+				cn: "在音乐会、独奏会的通知里，经常使用这样的词语。",
 				en: "Notices for concerts and recitals often use words like these.",
 			},
 		],
@@ -34,19 +34,19 @@ export const w2d1: ReadingDay = {
 			{ jp: "前売（券）", kana: "まえうり（けん）", cn: "预售（票）", en: "a ticket sold in advance" },
 			{ jp: "当日（券）", kana: "とうじつ（けん）", cn: "当天（票）", en: "a ticket sold on the day of the performance" },
 			{ jp: "入賞", kana: "にゅうしょう", cn: "获奖", en: "prize-winning" },
-			{ jp: "デビュー", cn: "初次登台", en: "a debut" },
+			{ jp: "デビュー", cn: "出道", en: "a debut" },
 			{ jp: "共演", kana: "きょうえん", cn: "合演、同台演出", en: "a co-star; performing together" },
 			{ jp: "クラシック", cn: "古典音乐", en: "classical music" },
 			{ jp: "公演", kana: "こうえん", cn: "公演、演出", en: "a performance" },
 			{ jp: "ジャズ", cn: "爵士乐", en: "jazz" },
 			{ jp: "ギタリスト", cn: "吉他手", en: "a guitarist" },
-			{ jp: "ピアニスト", cn: "钢琴师", en: "a pianist" },
+			{ jp: "ピアニスト", cn: "钢琴家", en: "a pianist" },
 		],
 	},
 
 	renshu: {
 		instruction: "{次|つぎ}の{会話文|かいわぶん}を{読|よ}んで、{後|あと}の{文|ぶん}から{正|ただ}しいものを{選|えら}ぼう。",
-		instructionCn: "阅读下面的对话，从后面的句子中选出正确的。（答案在下一页）",
+		instructionCn: "阅读下面的对话，从后面的句子中选出正确的吧。",
 		instructionEn: "Read the conversation below and choose the correct statements from the sentences that follow. (Answers are on the next page.)",
 		blocks: [
 			{
@@ -55,7 +55,7 @@ export const w2d1: ReadingDay = {
 				speakerCn: "A",
 				speakerEn: "A",
 				jp: "{今度|こんど}、{大谷美和|おおたにみわ}のコンサート{行|い}かない？　ギタリスト2{人|にん}とピアニストの4{人|にん}でやるんだって。",
-				cn: "这次要不要去大谷美和的音乐会？听说是两个吉他手加钢琴，一共四个人演。",
+				cn: "这次，不去大谷美和的音乐会吗？听说是两个吉他手和钢琴家，一共四个人来演的。",
 				en: "Want to go to Otani Miwa’s concert? They say it’s four people: two guitarists and a pianist.",
 			},
 			{
@@ -64,7 +64,7 @@ export const w2d1: ReadingDay = {
 				speakerCn: "B",
 				speakerEn: "B",
 				jp: "{行|い}く、{行|い}く。{日本|にほん}でのコンサートは{久|ひさ}しぶりだよね。",
-				cn: "去，去。她在日本开音乐会都好久了吧。",
+				cn: "去，去。她在日本的音乐会，好久没开了吧。",
 				en: "Yes, yes. It’s been a while since her last concert in Japan.",
 			},
 			{
@@ -73,7 +73,7 @@ export const w2d1: ReadingDay = {
 				speakerCn: "A",
 				speakerEn: "A",
 				jp: "うん、パリに{住|す}んでいるし、{海外|かいがい}での{活動|かつどう}のほうがずっと{多|おお}いらしいよ。",
-				cn: "嗯，她住在巴黎，据说在海外的活动要多得多。",
+				cn: "嗯，她住在巴黎，而且海外的活动好像要多得多哦。",
 				en: "Yeah, she lives in Paris, and apparently she performs overseas a lot more.",
 			},
 			{
@@ -82,7 +82,7 @@ export const w2d1: ReadingDay = {
 				speakerCn: "B",
 				speakerEn: "B",
 				jp: "ふーん。もっと{日本|にほん}でやってくれればいいのに。",
-				cn: "哦——要是能多在日本演就好了。",
+				cn: "嗯——。要是她多在日本演就好了。",
 				en: "Hmm. I wish she’d perform more in Japan.",
 			},
 			{
@@ -91,23 +91,23 @@ export const w2d1: ReadingDay = {
 				speakerCn: "A",
 				speakerEn: "A",
 				jp: "そうだよね。あ、{今度|こんど}はクラシックだけじゃなくて、{映画音楽|えいがおんがく}や{日本|にほん}の{歌|うた}もやるんだって。",
-				cn: "就是啊。啊，听说这次不光演古典，还演电影音乐和日本歌曲。",
+				cn: "是啊。啊，听说这次不只是古典音乐，还会演电影音乐和日本歌曲。",
 				en: "I know. Oh, and this time it won’t be only classical—they’ll also do film music and Japanese songs.",
 			},
 		],
 		choices: [
-			{ jp: "AさんはBさんをコンサートに{誘|さそ}っている。", cn: "A 在邀请 B 去音乐会。", en: "A is inviting B to the concert." },
-			{ jp: "{大谷美和|おおたにみわ}は{今度|こんど}{日本|にほん}で{初|はじ}めてコンサートを{開|ひら}く。", cn: "大谷美和这次是第一次在日本开音乐会。", en: "This will be Otani Miwa’s first concert in Japan." },
+			{ jp: "AさんはBさんをコンサートに{誘|さそ}っている。", cn: "A在邀请B去音乐会。", en: "A is inviting B to the concert." },
+			{ jp: "{大谷美和|おおたにみわ}は{今度|こんど}{日本|にほん}で{初|はじ}めてコンサートを{開|ひら}く。", cn: "大谷美和这次是第一次在日本举办音乐会。", en: "This will be Otani Miwa’s first concert in Japan." },
 			{ jp: "{大谷美和|おおたにみわ}は{日本国内|にほんこくない}での{活動|かつどう}が{少|すく}ない。", cn: "大谷美和在日本国内的活动很少。", en: "Otani Miwa does not perform much inside Japan." },
-			{ jp: "{大谷美和|おおたにみわ}は{今度|こんど}のコンサートでクラシックを{演奏|えんそう}しない。", cn: "大谷美和这次音乐会上不演奏古典音乐。", en: "Otani Miwa will not play classical music at this concert." },
-			{ jp: "Bさんは、{大谷美和|おおたにみわ}のコンサートに{行|い}きたがっている。", cn: "B 很想去大谷美和的音乐会。", en: "B wants to go to Otani Miwa’s concert." },
+			{ jp: "{大谷美和|おおたにみわ}は{今度|こんど}のコンサートでクラシックを{演奏|えんそう}しない。", cn: "大谷美和在这次的音乐会上不演奏古典音乐。", en: "Otani Miwa will not play classical music at this concert." },
+			{ jp: "Bさんは、{大谷美和|おおたにみわ}のコンサートに{行|い}きたがっている。", cn: "B想去大谷美和的音乐会。", en: "B wants to go to Otani Miwa’s concert." },
 		],
 		answers: [1, 3, 5],
 	},
 
 	mondai: {
 		instruction: "{次|つぎ}の{文書|ぶんしょ}を{読|よ}んで、{後|あと}の{問|と}いに{答|こた}えなさい。",
-		instructionCn: "阅读下面的文书，回答后面的问题。（答案在别册 p.3）",
+		instructionCn: "阅读下面的文书，回答后面的问题。",
 		instructionEn: "Read the following document and answer the questions that follow. (Answers are in the separate booklet, p. 3.)",
 		blocks: [
 			{
@@ -119,21 +119,21 @@ export const w2d1: ReadingDay = {
 			{
 				type: "figure",
 				alt: "バイオリンを弾いている大谷美和のイラスト",
-				cn: "大谷美和拉小提琴的插图",
+				cn: "大谷美和正在拉小提琴的插图",
 				en: "Illustration of Otani Miwa playing the violin",
 			},
 			{
 				type: "list",
 				marker: "・",
 				items: [
-					{ jp: "{曲|きょく}：シャコンヌ　Take Five　{五木|いつき}の{子守歌|こもりうた}　{他|ほか}", cn: "曲目：恰空、Take Five、五木摇篮曲 等", en: "Program: Chaconne; Take Five; Itsuki Lullaby; and others" },
-					{ jp: "20XX{年|ねん}7{月|がつ}3{日|にち}（{土|ど}）", cn: "20XX 年 7 月 3 日（周六）", en: "Saturday, July 3, 20XX" },
-					{ jp: "ヤマセホール", cn: "雅马塞音乐厅", en: "Yamase Hall" },
-					{ jp: "（{開場|かいじょう}：14:30　{開演|かいえん} 15:00）", cn: "（开门入场：14:30　开演 15:00）", en: "(Doors open: 14:30; performance starts 15:00)" },
-					{ jp: "{全席自由|ぜんせきじゆう}　{前売|まえうり}2,500{円|えん}　{当日|とうじつ}3,000{円|えん}", cn: "全场自由入座　预售 2,500 日元　当天 3,000 日元", en: "Free seating; advance tickets ¥2,500; door tickets ¥3,000" },
+					{ jp: "{曲|きょく}：シャコンヌ　Take Five　{五木|いつき}の{子守歌|こもりうた}　{他|ほか}", cn: "曲目：恰空　Take Five　五木摇篮曲　等", en: "Program: Chaconne; Take Five; Itsuki Lullaby; and others" },
+					{ jp: "20XX{年|ねん}7{月|がつ}3{日|にち}（{土|ど}）", cn: "20XX年7月3日（周六）", en: "Saturday, July 3, 20XX" },
+					{ jp: "ヤマセホール", cn: "雅马塞大厅", en: "Yamase Hall" },
+					{ jp: "（{開場|かいじょう}：14:30　{開演|かいえん} 15:00）", cn: "（入场：14:30　开演 15:00）", en: "(Doors open: 14:30; performance starts 15:00)" },
+					{ jp: "{全席自由|ぜんせきじゆう}　{前売|まえうり}2,500{円|えん}　{当日|とうじつ}3,000{円|えん}", cn: "全席自由入座　预售2,500日元　当日3,000日元", en: "Free seating; advance tickets ¥2,500; door tickets ¥3,000" },
 					{
 						jp: "チケット・{問|と}い{合|あ}わせ：{大谷音楽事務所|おおたにおんがくじむしょ}（03-XXXX-XXX）／ヤマセホール（03-XXXX-XXX）",
-						cn: "门票・咨询：大谷音乐事务所（03-XXXX-XXX）／雅马塞音乐厅（03-XXXX-XXX）",
+						cn: "门票・咨询：大谷音乐事务所（03-XXXX-XXX）／雅马塞大厅（03-XXXX-XXX）",
 						en: "Tickets / inquiries: Otani Music Office (03-XXXX-XXX) / Yamase Hall (03-XXXX-XXX)",
 					},
 				],
@@ -147,7 +147,7 @@ export const w2d1: ReadingDay = {
 			{
 				type: "paragraph",
 				jp: "1970{年|ねん}{東京|とうきょう}{生|う}まれ。22{歳|さい}の{時|とき}、プレオベール{国際音楽|こくさいおんがく}コンクール　バイオリン{部門|ぶもん}にて3{位入賞|いにゅうしょう}し、{国際舞台|こくさいぶたい}にデビュー。{現在|げんざい}パリ{在住|ざいじゅう}（{注|ちゅう}1）で、{演奏活動|えんそうかつどう}で{世界中|せかいじゅう}を{回|まわ}っている。",
-				cn: "1970 年出生于东京。22 岁时在普雷奥贝尔国际音乐比赛小提琴组获第 3 名，登上国际舞台。现在住在巴黎（注1），在世界各地巡回演出。",
+				cn: "1970年出生于东京。22岁时，在普雷奥贝尔国际音乐比赛的小提琴组获得第3名，并在国际舞台出道。现居巴黎（注1），因演奏活动而在世界各地巡回。",
 				en: "Born in Tokyo in 1970. At age 22 she took third prize in the violin division of the Préaubert International Music Competition and made her international debut. She currently lives in Paris (note 1) and tours the world as a performer.",
 			},
 			{
@@ -159,19 +159,19 @@ export const w2d1: ReadingDay = {
 			{
 				type: "paragraph",
 				jp: "{大谷美和|おおたにみわ}さんと{僕|ぼく}との{出会|であ}いは{彼女|かのじょ}がまだパリの{音楽院|おんがくいん}の{学生|がくせい}だった{頃|ころ}、オーケストラでの{共演|きょうえん}がきっかけでした。{若|わか}さに{似合|にあ}わない{高度|こうど}な{技術|ぎじゅつ}＊と{美|うつく}しいバイオリンの{響|ひび}きに{驚|おどろ}かされたものです。",
-				cn: "我和大谷美和的相识，是在她还是巴黎音乐学院学生的时候，因为一次管弦乐合演。她那与年纪不相称的高超技艺＊和美丽的小提琴音色，让我吃了一惊。",
+				cn: "我与大谷美和女士相识的契机，是她还是巴黎音乐学院学生时，在管弦乐队的一次同台演出。那与她的年轻不相称的高超技艺＊和美丽的小提琴音色，着实让我吃了一惊。",
 				en: "I first met Otani Miwa when she was still a student at the Paris conservatory; we performed together in an orchestra. I was astonished by technique far beyond her years＊ and by the beauty of her violin tone.",
 			},
 			{
 				type: "paragraph",
 				jp: "{日本|にほん}の{音楽|おんがく}ファンの{方|かた}は{大谷美和|おおたにみわ}といえばクラシックというイメージをお{持|も}ちかと{思|おも}いますが、{久|ひさ}しぶりの{日本公演|にほんこうえん}となる{今回|こんかい}は、ジャズや{日本|にほん}の{歌|うた}なども{弾|ひ}くとのこと。ギタリスト2{人|にん}とピアニストと{一緒|いっしょ}ににぎやかに、ということで{彼女|かのじょ}のまた{違|ちが}った{一面|いちめん}が{見|み}られそうです＊＊。{先日|せんじつ}{久|ひさ}しぶりに{会|あ}った{彼女|かのじょ}は「{今|いま}から{緊張|きんちょう}しています」と{笑顔|えがお}で{語|かた}ってくれました。{僕|ぼく}も{非常|ひじょう}に{楽|たの}しみにしています。",
-				cn: "日本的乐迷一提起大谷美和，大概都会想到古典音乐；但阔别已久的这次日本公演，据说也会演奏爵士和日本歌曲。将与两名吉他手和钢琴师一起热闹演出，想必能看到她另一面＊＊。前几天久别重逢时，她带着笑容说「从现在起就开始紧张了」。我也非常期待。",
+				cn: "我想，日本的音乐爱好者一提到大谷美和，抱有的大概是古典音乐这一印象；不过此次将是时隔已久的日本公演，据说也会演奏爵士乐和日本歌曲等。与两名吉他手和钢琴家一起热闹地演出，因此似乎能看到她又不一样的一面＊＊。前几天久违地见到她时，她笑着告诉我：「我从现在就开始紧张了。」我也非常期待着。",
 				en: "Japanese music fans probably picture Otani Miwa as classical, but this long-awaited Japan performance will also include jazz and Japanese songs. With two guitarists and a pianist it should be lively, and we may see a different side of her＊＊. When I saw her the other day after a long time, she smiled and said, “I’m already getting nervous.” I am very much looking forward to it as well.",
 			},
 			{
 				type: "figure",
 				alt: "大谷美和の顔のイラスト",
-				cn: "大谷美和的头像插图",
+				cn: "大谷美和的脸部插图",
 				en: "Portrait illustration of Otani Miwa",
 			},
 		],
@@ -182,12 +182,12 @@ export const w2d1: ReadingDay = {
 		pageNotes: [
 			{
 				jp: "＊ very good technique for her young age",
-				cn: "＊年纪轻却技艺精湛",
+				cn: "＊就她的年轻而言非常出色的技艺",
 				en: "very good technique for her young age",
 			},
 			{
 				jp: "＊＊ We might see a different side of her as the performance will be quite lively with two guitarists and a pianist.",
-				cn: "＊＊她和钢琴师及两名吉他手热闹地配合演奏，也许能看到她的另一面。",
+				cn: "＊＊由于将与两名吉他手和一名钢琴家一起相当热闹地演出，我们或许能看到她不同的一面。",
 				en: "We might see a different side of her as the performance will be quite lively with two guitarists and a pianist.",
 			},
 		],
@@ -195,12 +195,12 @@ export const w2d1: ReadingDay = {
 			{
 				label: "問1",
 				jp: "{非常|ひじょう}に{楽|たの}しみにしていますとあるが、{何|なに}が{楽|たの}しみなのか。",
-				cn: "文中说「非常期待」，期待的是什么？",
+				cn: "文中说「非常期待着」，但期待的是什么？",
 				en: "The text says “I am very much looking forward to it.” What is being looked forward to?",
 				choices: [
 					{ jp: "{大谷美和|おおたにみわ}が{語|かた}ること", cn: "大谷美和讲述的内容", en: "What Otani Miwa talks about" },
 					{ jp: "{大谷美和|おおたにみわ}の{笑顔|えがお}を{見|み}ること", cn: "看到大谷美和的笑容", en: "Seeing Otani Miwa’s smile" },
-					{ jp: "{大谷美和|おおたにみわ}が{緊張|きんちょう}すること", cn: "大谷美和紧张这件事", en: "Otani Miwa being nervous" },
+					{ jp: "{大谷美和|おおたにみわ}が{緊張|きんちょう}すること", cn: "大谷美和感到紧张", en: "Otani Miwa being nervous" },
 					{ jp: "{大谷美和|おおたにみわ}のコンサート", cn: "大谷美和的音乐会", en: "Otani Miwa’s concert" },
 				],
 				answer: 4,
@@ -224,12 +224,12 @@ export const w2d1: ReadingDay = {
 			{
 				label: "問2",
 				jp: "どのようなことが{書|か}かれているか。",
-				cn: "文中写的是哪一类内容？",
+				cn: "文中写着什么样的内容？",
 				en: "What kind of content is written here?",
 				choices: [
 					{ jp: "コンサートの{感想|かんそう}", cn: "对音乐会的感想", en: "impressions of the concert" },
 					{ jp: "コンサートの{紹介|しょうかい}", cn: "对音乐会的介绍", en: "an introduction to the concert" },
-					{ jp: "コンサートの{批評|ひひょう}", cn: "对音乐会的评论", en: "a critique of the concert" },
+					{ jp: "コンサートの{批評|ひひょう}", cn: "对音乐会的批评", en: "a critique of the concert" },
 					{ jp: "コンサートの{批判|ひはん}", cn: "对音乐会的批判", en: "criticism of the concert" },
 				],
 				answer: 2,
@@ -282,7 +282,7 @@ export const w2d1: ReadingDay = {
 			meaningEn: "at / in…. Written-style equivalent of de; common on notices and in formal prose.",
 			example: {
 				jp: "バイオリン{部門|ぶもん}にて3{位入賞|いにゅうしょう}し、{国際舞台|こくさいぶたい}にデビュー。",
-				cn: "在小提琴组获第 3 名，登上国际舞台。",
+				cn: "在小提琴组获得第3名，并在国际舞台出道。",
 				en: "She took third prize in the violin division and made her international debut.",
 			},
 		},
@@ -293,7 +293,7 @@ export const w2d1: ReadingDay = {
 			meaningEn: "I hear that… / they say that…. Reports what one has been told; more written than sō da.",
 			example: {
 				jp: "ジャズや{日本|にほん}の{歌|うた}なども{弾|ひ}くとのこと。",
-				cn: "据说也会演奏爵士和日本歌曲。",
+				cn: "据说也会演奏爵士乐和日本歌曲等。",
 				en: "They say she will also play jazz and Japanese songs.",
 			},
 		},
@@ -304,7 +304,7 @@ export const w2d1: ReadingDay = {
 			meaningEn: "Recalls a strong impression from the past. Odoro kasareta mono desu has an exclamatory tone.",
 			example: {
 				jp: "{美|うつく}しいバイオリンの{響|ひび}きに{驚|おどろ}かされたものです。",
-				cn: "那美丽的小提琴音色真是让我吃了一惊。",
+				cn: "美丽的小提琴音色，着实让我吃了一惊。",
 				en: "I was truly astonished by the beauty of her violin tone.",
 			},
 		},

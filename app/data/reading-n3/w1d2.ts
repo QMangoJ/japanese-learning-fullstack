@@ -45,17 +45,17 @@ export const w1d2: ReadingDay = {
 
 	point: {
 		title: "{場所|ばしょ}や{方向|ほうこう}を{正|ただ}しく{読|よ}もう！",
-		titleCn: "正确阅读地点和方向！",
+		titleCn: "正确阅读地点和方向吧！",
 		titleEn: "Try to read the places and directions correctly!",
 		figure: {
 			alt: "「四つ角」って四つ目の角のこと？──交差点そのものを1つ目として数える図と、その四つ角を入れて数えて四つ目の角になる図",
-			cn: "「四つ角」是指第四个拐角吗？——图中说明：眼前这个十字路口本身就叫「四つ角」；而把这个路口算进去往下数，第四个拐角才是「四つ目の角」。",
+			cn: "「四つ角」是指第四个拐角吗？——把交叉路口本身算作第1个来数的图，以及把这个「四つ角」算进去、数成第四个拐角的图",
 			en: "Does yotsukado mean “the fourth corner”? The diagram shows that the intersection right in front of you is itself called a yotsukado, while the fourth corner you count from there is yottsu-me no kado.",
 		},
 		tips: [
 			{
 				jp: "「{四|よ}つ{角|かど}」は{十字路|じゅうじろ}そのもの、「{四|よっ}つ{目|め}の{角|かど}」は{数|かぞ}えて4{番目|ばんめ}の{角|かど}。{数|かぞ}え{始|はじ}める{位置|いち}に{注意|ちゅうい}しよう。",
-				cn: "「四つ角」指十字路口本身，「四つ目の角」是数到第 4 个的拐角。要特别注意从哪里开始数。",
+				cn: "「四つ角」就是十字路口本身，「四つ目の角」是数下来的第4个拐角。注意开始数的位置吧。",
 				en: "Yotsukado means the intersection itself; yottsu-me no kado is the fourth corner you count to. Pay close attention to where you start counting.",
 			},
 		],
@@ -68,7 +68,7 @@ export const w1d2: ReadingDay = {
 			{ jp: "四つ角", kana: "よつかど", cn: "十字路口", en: "crossroads" },
 			{ jp: "交差点", kana: "こうさてん", cn: "交叉路口", en: "intersection" },
 			{ jp: "有料駐車場", kana: "ゆうりょうちゅうしゃじょう", cn: "收费停车场", en: "a pay parking lot" },
-			{ jp: "つきあたり", cn: "路走到底的尽头", en: "the end of" },
+			{ jp: "つきあたり", cn: "尽头", en: "the end of" },
 			{ jp: "前方", kana: "ぜんぽう", cn: "前方", en: "ahead" },
 			{ jp: "後方", kana: "こうほう", cn: "后方", en: "behind" },
 			{ jp: "右折する", kana: "うせつする", cn: "右拐", en: "to turn right" },
@@ -81,7 +81,7 @@ export const w1d2: ReadingDay = {
 
 	renshu: {
 		instruction: "{次|つぎ}の{会話文|かいわぶん}を{読|よ}んで、{後|あと}の{文|ぶん}から{正|ただ}しいものを{選|えら}ぼう。",
-		instructionCn: "阅读下面的对话，从后面的句子中选出正确的。（答案在下一页）",
+		instructionCn: "阅读下面的对话，从后面的句子中选出正确的吧。",
 		instructionEn: "Read the conversation below and choose the correct statements from the sentences that follow. (Answers are on the next page.)",
 		blocks: [
 			{
@@ -90,7 +90,7 @@ export const w1d2: ReadingDay = {
 				speakerCn: "女学生",
 				speakerEn: "Female student",
 				jp: "ねえ、そろそろ{会場|かいじょう}に{着|つ}いてもいいころじゃない？",
-				cn: "喂，差不多该到会场了吧？",
+				cn: "哎，差不多该到会场了吧？",
 				en: "Hey, shouldn’t we be arriving at the venue about now?",
 			},
 			{
@@ -99,7 +99,7 @@ export const w1d2: ReadingDay = {
 				speakerCn: "男学生",
 				speakerEn: "Male student",
 				jp: "そうだね。ずいぶん{歩|ある}いたし、{変|へん}だよね。ドラッグストア（※）の{向|む}こうって{書|か}いてあるけれど、ドラッグストアなんてどこにもないよ。",
-				cn: "是啊。走了这么久，真奇怪。上面写着在药店的那一边，可是哪里都没有药店啊。",
+				cn: "是啊。走了这么远，奇怪吧。写着在药妆店（※）再过去的那一边，可是药妆店什么的，哪儿都没有啊。",
 				en: "Yeah. We’ve walked a long way—it’s strange. It says it’s beyond the drugstore, but there’s no drugstore anywhere.",
 			},
 			{
@@ -108,7 +108,7 @@ export const w1d2: ReadingDay = {
 				speakerCn: "女学生",
 				speakerEn: "Female student",
 				jp: "えーと、ちゃんと4つ{目|め}の{信号|しんごう}を{左|ひだり}に{曲|ま}がったよね。{変|へん}ねえ。",
-				cn: "嗯……我们确实是在第 4 个红绿灯左拐的吧。真奇怪。",
+				cn: "嗯……我们是在第4个红绿灯好好左拐了的吧。真奇怪呢。",
 				en: "Um… we did turn left at the fourth traffic light, right? That’s odd.",
 			},
 			{
@@ -117,7 +117,7 @@ export const w1d2: ReadingDay = {
 				speakerCn: "男学生",
 				speakerEn: "Male student",
 				jp: "あー、4つ{目|め}の{信号|しんごう}って、{地下鉄|ちかてつ}の{出口|でぐち}を{出|で}たところの{信号|しんごう}も{入|い}れて4つっていうことだったんだよ、きっと。さあ、{戻|もど}ろう。",
-				cn: "啊——所谓第 4 个红绿灯，肯定是把出地铁口时那个红绿灯也算进去的第 4 个。走，回去吧。",
+				cn: "啊——所谓第4个红绿灯，就是把刚出地铁口那个地方的红绿灯也算进去、一共4个的意思啊，肯定是。来，回去吧。",
 				en: "Ah—the “fourth traffic light” must have meant the fourth one counting the light right outside the subway exit. Come on, let’s go back.",
 			},
 			{
@@ -126,51 +126,51 @@ export const w1d2: ReadingDay = {
 				speakerCn: "女学生",
 				speakerEn: "Female student",
 				jp: "うん、もうすぐ{説明会|せつめいかい}が{始|はじ}まっちゃうから、{急|いそ}ごう。",
-				cn: "嗯，说明会马上就要开始了，快点吧。",
+				cn: "嗯，说明会马上就要开始了，赶紧吧。",
 				en: "Yeah, the information session is about to start, so let’s hurry.",
 			},
 		],
 		footnotes: [{ marker: "※", term: "ドラッグストア", jp: "a drugstore / pharmacy", cn: "药店（兼卖化妆品、日用品的药妆店）", en: "a drugstore / pharmacy" }],
 		choices: [
-			{ jp: "この{学生|がくせい}たちは、{説明会|せつめいかい}に{行|い}くところである。", cn: "这些学生正要去参加说明会。", en: "These students are on their way to an information session." },
-			{ jp: "この{学生|がくせい}たちは、{反対|はんたい}に{曲|ま}がってしまったようだ。", cn: "这些学生好像拐错了方向（拐反了）。", en: "These students seem to have turned the wrong way (the opposite direction)." },
-			{ jp: "ドラッグストアの{手前|てまえ}に{会場|かいじょう}がある。", cn: "会场在药店的这一侧（还没到药店的位置）。", en: "The venue is on this side of the drugstore (before you reach it)." },
-			{ jp: "この{学生|がくせい}たちは、ドラッグストアを{通|とお}り{過|す}ぎてしまったようだ。", cn: "这些学生好像走过头，错过了药店。", en: "These students seem to have gone past the drugstore." },
-			{ jp: "この{学生|がくせい}たちは、{曲|ま}がるところを{間違|まちが}えたようだ。", cn: "这些学生好像拐弯的地方弄错了。", en: "These students seem to have turned at the wrong place." },
+			{ jp: "この{学生|がくせい}たちは、{説明会|せつめいかい}に{行|い}くところである。", cn: "这些学生正要去说明会。", en: "These students are on their way to an information session." },
+			{ jp: "この{学生|がくせい}たちは、{反対|はんたい}に{曲|ま}がってしまったようだ。", cn: "这些学生好像拐到相反方向去了。", en: "These students seem to have turned the wrong way (the opposite direction)." },
+			{ jp: "ドラッグストアの{手前|てまえ}に{会場|かいじょう}がある。", cn: "会场在还没到药妆店的这一边。", en: "The venue is on this side of the drugstore (before you reach it)." },
+			{ jp: "この{学生|がくせい}たちは、ドラッグストアを{通|とお}り{過|す}ぎてしまったようだ。", cn: "这些学生好像已经走过药妆店了。", en: "These students seem to have gone past the drugstore." },
+			{ jp: "この{学生|がくせい}たちは、{曲|ま}がるところを{間違|まちが}えたようだ。", cn: "这些学生好像弄错了拐弯的地方。", en: "These students seem to have turned at the wrong place." },
 		],
 		answers: [1, 5],
 		hint: {
 			jp: "{数|かぞ}え{始|はじ}めの{信号|しんごう}をどこにするかで、{曲|ま}がる{場所|ばしょ}がずれてしまう。",
-			cn: "从哪一个红绿灯开始数，会直接导致拐弯的地点整个错开。",
+			cn: "从哪个红绿灯开始数，拐弯的地点就会错开。",
 			en: "Where you start counting traffic lights shifts the whole place where you turn.",
 		},
 	},
 
 	mondai: {
 		instruction: "{次|つぎ}の{案内|あんない}を{見|み}て、{後|あと}の{問|と}いに{答|こた}えなさい。",
-		instructionCn: "看下面的指南，回答后面的问题。（答案在别册 p.2）",
+		instructionCn: "看下面的指南，请回答后面的问题。",
 		instructionEn: "Look at the notice below and answer the questions that follow. (Answers are in the separate booklet, p. 2.)",
 		blocks: [
 			{
 				type: "figure",
 				alt: "会場の案内図：地下鉄けやき線さくら野駅、1〜5番出口、タワービル、ドラッグストア、会場（地下1階）、有料駐車場の位置関係を示す地図",
-				cn: "会场路线图：地铁榉树线樱野站、1〜5 号出口、塔楼大厦、药店、会场（地下 1 层）、收费停车场的位置关系。",
+				cn: "会场指南图：标示地铁榉树线樱野站、1〜5号出口、塔楼大厦、药妆店、会场（地下1层）、收费停车场位置关系的地图",
 				en: "Map of the venue: Sakurano Station on the subway Keyaki Line, exits 1–5, the tower building, a drugstore, the venue (basement floor 1), and a pay parking lot.",
 				svg: venueMap,
 			},
-			{ type: "heading", jp: "{会場|かいじょう}の{案内図|あんないず}", cn: "会场路线图", en: "Map of the venue" },
+			{ type: "heading", jp: "{会場|かいじょう}の{案内図|あんないず}", cn: "会场指南图", en: "Map of the venue" },
 			{
 				type: "list",
 				marker: "・",
 				items: [
 					{
 						jp: "{地下鉄|ちかてつ}さくら{野駅|のえき}より{徒歩|とほ}10{分|ぷん}",
-						cn: "从地铁樱野站步行 10 分钟",
+						cn: "从地铁樱野站步行10分钟",
 						en: "10 minutes on foot from subway Sakurano Station",
 					},
 					{
 						jp: "5{番出口|ばんでぐち}を{出|で}て、タワービル{方面|ほうめん}に{向|む}かって{歩|ある}き、4つ{目|め}の{信号|しんごう}で{左折|させつ}してください。そこから100メートルほど{行|い}ったところにドラッグストアがあります。その{角|かど}から4{軒|けん}{向|む}こうのビルの{地下|ちか}です＊。",
-						cn: "出 5 号出口后朝塔楼大厦方向走，在第 4 个红绿灯处左拐。从那里再走约 100 米就有一家药店。会场就在那个拐角往前数第 4 栋楼的地下＊。",
+						cn: "请从5号出口出去，朝塔楼大厦方向走，在第4个红绿灯处左转。从那里再走100米左右的地方有一家药妆店。从那个拐角再过去第4栋楼的地下即是＊。",
 						en: "Leave by Exit 5, walk toward the tower building, and turn left at the fourth traffic light. About 100 meters from there is a drugstore. The venue is in the basement of the fourth building from that corner.＊",
 					},
 					{
@@ -183,14 +183,14 @@ export const w1d2: ReadingDay = {
 			{
 				type: "note",
 				jp: "※ビルに{面|めん}した{道路|どうろ}は{一方通行|いっぽうつうこう}になっています＊＊。お{車|くるま}の{場合|ばあい}は、ご{注意|ちゅうい}ください。",
-				cn: "※大楼所临的道路是单向通行＊＊。开车前来时请注意。",
+				cn: "※大楼临街的道路是单向通行＊＊。您若开车，请注意。",
 				en: "※The street facing the building is one-way.＊＊ Please be careful if you are coming by car.",
 			},
 		],
 		footnotes: [],
 		pageNotes: [
-			{ jp: "＊ You'll find it in the basement of the fourth building from the corner.", cn: "＊从那个拐角起往前数，第 4 栋楼的地下层就是会场。", en: "You'll find it in the basement of the fourth building from the corner." },
-			{ jp: "＊＊ The building is on a one-way street.", cn: "＊＊大楼前面的道路是单向通行。", en: "The building is on a one-way street." },
+			{ jp: "＊ You'll find it in the basement of the fourth building from the corner.", cn: "＊你会在从拐角数起的第4栋楼的地下室里找到它。", en: "You'll find it in the basement of the fourth building from the corner." },
+			{ jp: "＊＊ The building is on a one-way street.", cn: "＊＊大楼在单行道上。", en: "The building is on a one-way street." },
 		],
 		questions: [
 			{
@@ -200,8 +200,8 @@ export const w1d2: ReadingDay = {
 				en: "What does “walk toward the tower building” mean?",
 				choices: [
 					{ jp: "タワービルに{着|つ}くまで{歩|ある}く", cn: "一直走到塔楼大厦为止", en: "Walk until you reach the tower building" },
-					{ jp: "タワービルを{前|まえ}のほうに{見|み}ながら{歩|ある}く", cn: "一边把塔楼大厦看在前方一边走", en: "Walk with the tower building ahead of you" },
-					{ jp: "タワービルに{向|む}かって{左|ひだり}のほうに{歩|ある}く", cn: "面朝塔楼大厦往左边走", en: "Walk to the left while facing the tower building" },
+					{ jp: "タワービルを{前|まえ}のほうに{見|み}ながら{歩|ある}く", cn: "一边看着前方的塔楼大厦一边走", en: "Walk with the tower building ahead of you" },
+					{ jp: "タワービルに{向|む}かって{左|ひだり}のほうに{歩|ある}く", cn: "面向塔楼大厦往左边走", en: "Walk to the left while facing the tower building" },
 					{ jp: "タワービルを{通|とお}り{過|す}ぎるまで{歩|ある}く", cn: "一直走到走过塔楼大厦为止", en: "Walk until you have gone past the tower building" },
 				],
 				answer: 2,
@@ -225,12 +225,12 @@ export const w1d2: ReadingDay = {
 			{
 				label: "問2",
 				jp: "この{案内|あんない}の{内容|ないよう}と{合|あ}っているものはどれか。",
-				cn: "下列哪一项与这份指南的内容相符？",
+				cn: "哪一个与这份指南的内容相符？",
 				en: "Which of the following matches the content of this notice?",
 				choices: [
-					{ jp: "ドラッグストアの4{軒|けん}となりに{有料駐車場|ゆうりょうちゅうしゃじょう}がある。", cn: "药店隔壁数第 4 家是收费停车场。", en: "The pay parking lot is four buildings down from the drugstore." },
-					{ jp: "ドラッグストアと{会場|かいじょう}は{約|やく}100メートル{離|はな}れている。", cn: "药店和会场相距约 100 米。", en: "The drugstore and the venue are about 100 meters apart." },
-					{ jp: "ビルの{前|まえ}の{道|みち}は{一方通行|いっぽうつうこう}である。", cn: "大楼前面的道路是单向通行。", en: "The street in front of the building is one-way." },
+					{ jp: "ドラッグストアの4{軒|けん}となりに{有料駐車場|ゆうりょうちゅうしゃじょう}がある。", cn: "药妆店过去第4栋有收费停车场。", en: "The pay parking lot is four buildings down from the drugstore." },
+					{ jp: "ドラッグストアと{会場|かいじょう}は{約|やく}100メートル{離|はな}れている。", cn: "药妆店和会场相距约100米。", en: "The drugstore and the venue are about 100 meters apart." },
+					{ jp: "ビルの{前|まえ}の{道|みち}は{一方通行|いっぽうつうこう}である。", cn: "大楼前面的路是单向通行。", en: "The street in front of the building is one-way." },
 					{ jp: "{会場|かいじょう}へは{車|くるま}で{来|き}てはいけない。", cn: "不可以开车来会场。", en: "You must not come to the venue by car." },
 				],
 				answer: 3,
@@ -282,7 +282,7 @@ export const w1d2: ReadingDay = {
 			formation: "名詞 ＋ に向かって",
 			meaning: "朝着……（方向）。只表示行进的方向，不含「到达」之意——本课 問1 的考点。",
 			meaningEn: "toward… (in the direction of). It only names the direction of travel, not arriving there—the key point of Question 1.",
-			example: { jp: "タワービル{方面|ほうめん}に{向|む}かって{歩|ある}く。", cn: "朝塔楼大厦的方向走。", en: "Walk toward the tower building." },
+			example: { jp: "タワービル{方面|ほうめん}に{向|む}かって{歩|ある}く。", cn: "朝塔楼大厦方向走。", en: "Walk toward the tower building." },
 		},
 		{
 			pattern: "〜たところに／〜たところ",
@@ -291,7 +291,7 @@ export const w1d2: ReadingDay = {
 			meaningEn: "at the place / time where you have just done something. In directions, it means “when you have walked as far as….”",
 			example: {
 				jp: "100メートルほど{行|い}ったところにドラッグストアがあります。",
-				cn: "走约 100 米的地方有一家药店。",
+				cn: "大约走100米的地方有一家药妆店。",
 				en: "There is a drugstore about 100 meters along.",
 			},
 		},
@@ -307,14 +307,14 @@ export const w1d2: ReadingDay = {
 			formation: "普通形 ＋ ようだ",
 			meaning: "好像……。根据眼前的情况做出的推测。",
 			meaningEn: "it seems that…. A guess based on what you can see right now.",
-			example: { jp: "{曲|ま}がるところを{間違|まちが}えたようだ。", cn: "好像是拐弯的地方弄错了。", en: "It seems they turned at the wrong place." },
+			example: { jp: "{曲|ま}がるところを{間違|まちが}えたようだ。", cn: "好像弄错了拐弯的地方。", en: "It seems they turned at the wrong place." },
 		},
 		{
 			pattern: "〜って書いてある",
 			formation: "引用内容 ＋ って書いてある",
 			meaning: "（上面）写着……。「って」是「と」的口语形式，指示牌、通知的内容常这样引用。",
 			meaningEn: "it says… / it’s written that…. tte is the spoken form of to; often used to quote a sign or notice.",
-			example: { jp: "ドラッグストアの{向|む}こうって{書|か}いてある。", cn: "上面写着在药店的那一边。", en: "It says it’s beyond the drugstore." },
+			example: { jp: "ドラッグストアの{向|む}こうって{書|か}いてある。", cn: "写着在药妆店再过去的那一边。", en: "It says it’s beyond the drugstore." },
 		},
 		{
 			pattern: "〜も入れて",
@@ -323,7 +323,7 @@ export const w1d2: ReadingDay = {
 			meaningEn: "including… as well. Used when you explain what you are counting from.",
 			example: {
 				jp: "{地下鉄|ちかてつ}の{出口|でぐち}を{出|で}たところの{信号|しんごう}も{入|い}れて4つ。",
-				cn: "把出地铁口那个红绿灯也算进去，一共 4 个。",
+				cn: "把刚出地铁口那个地方的红绿灯也算进去，一共4个。",
 				en: "Four, counting the traffic light right outside the subway exit as well.",
 			},
 		},

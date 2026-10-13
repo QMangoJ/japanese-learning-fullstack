@@ -13,35 +13,35 @@ export const w5d3: ReadingDay = {
 
 	point: {
 		title: "{事実|じじつ}と{筆者|ひっしゃ}の{気持|きも}ちを{区別|くべつ}しよう！",
-		titleCn: "区分事实与笔者的心情！",
+		titleCn: "来区分事实和笔者的心情吧！",
 		titleEn: "Learn to distinguish between the facts and the writer's feelings!",
 		figure: {
 			alt: "「ほんとに起きたことなの？」「考えてることなの？」と、事実か気持ちかを見分けようとしているキャラクターのイラスト",
-			cn: "两个角色在分辨：「这是真的发生过的事吗？」「还是只是心里想的？」",
+			cn: "说着「真的是发生过的事吗？」「是心里在想的事吗？」，正在试图分辨是事实还是心情的角色插图",
 			en: "Two characters are trying to tell them apart: “Did this really happen?” “Or is it just something they’re thinking?”",
 		},
 		tips: [
 			{
 				jp: "「〜（し）たい」「〜と{思|おも}う」「〜と{感|かん}じる」「〜ではないだろうか」──これらの{言葉|ことば}の{前|まえ}は、{事実|じじつ}ではなく、{筆者|ひっしゃ}の{気持|きも}ちを{表|あらわ}しています。",
-				cn: "「〜（し）たい」「〜と思う」「〜と感じる」「〜ではないだろうか」——**这些词前面的内容不是事实，而是笔者的心情或想法**。做题时先把「事实」和「感受」分开。",
+				cn: "「〜（し）たい」（想做……）「〜と思う」（觉得……）「〜と感じる」（感到……）「〜ではないだろうか」（难道不是……吗）——这些词语的前面不是事实，而是表达笔者的心情。",
 				en: "“〜(し)たい,” “〜と思う,” “〜と感じる,” “〜ではないだろうか” — what comes before these words is not a fact, but the writer’s feeling or thought. When you answer questions, first separate the facts from the feelings.",
 			},
 		],
 		expressions: [
-			{ jp: "〜（し）たい", cn: "想做〜（愿望＝心情）", en: "want to do … (a wish = a feeling)" },
+			{ jp: "〜（し）たい", cn: "想做……", en: "want to do … (a wish = a feeling)" },
 			{ jp: "〜と思う", kana: "おも", cn: "认为〜（判断＝心情）", en: "I think … (a judgment = a feeling)" },
 			{ jp: "〜と感じる", kana: "かん", cn: "感觉〜（感受＝心情）", en: "I feel … (a sensation = a feeling)" },
-			{ jp: "〜ではないだろうか", cn: "难道不是〜吗（推测＝心情）", en: "isn’t it …? (a guess = a feeling)" },
-			{ jp: "〜のだろうか", cn: "究竟是〜吗（疑问＝心情）", en: "I wonder if … (a question = a feeling)" },
+			{ jp: "〜ではないだろうか", cn: "难道不是……吗", en: "isn’t it …? (a guess = a feeling)" },
+			{ jp: "〜のだろうか", cn: "究竟是不是……呢", en: "I wonder if … (a question = a feeling)" },
 			{ jp: "不思議だ", kana: "ふしぎ", cn: "不可思议、想不通", en: "strange, puzzling" },
 			{ jp: "暴力を振るう", kana: "ぼうりょくをふるう", cn: "施加暴力", en: "to be violent" },
-			{ jp: "がまんする", cn: "忍耐", en: "to put up with" },
+			{ jp: "がまんする", cn: "忍受", en: "to put up with" },
 		],
 	},
 
 	renshu: {
 		instruction: "{次|つぎ}の{会話文|かいわぶん}を{読|よ}んで、{後|あと}の{文|ぶん}から{正|ただ}しいものを{選|えら}ぼう。",
-		instructionCn: "阅读下面的对话，从后面的句子中选出正确的。（答案在下一页）",
+		instructionCn: "阅读下面的对话，从后面的句子中选出正确的吧。",
 		instructionEn: "Read the conversation below and choose the correct statements from the sentences that follow. (Answers are on the next page.)",
 		blocks: [
 			{
@@ -50,7 +50,7 @@ export const w5d3: ReadingDay = {
 				speakerCn: "健",
 				speakerEn: "Ken",
 				jp: "{母|かあ}さん、{顔|かお}、どうしたの？　また{父|とう}さんに{殴|なぐ}られたの？　ひどいあざ（※1）だよ。",
-				cn: "妈，你的脸怎么了？又被爸打了？瘀青得好厉害。",
+				cn: "妈，你的脸怎么了？又被爸打了吗？这淤青（※1）可真严重啊。",
 				en: "Mom, what happened to your face? Did Dad hit you again? That’s a nasty bruise.",
 			},
 			{
@@ -59,7 +59,7 @@ export const w5d3: ReadingDay = {
 				speakerCn: "健的母亲",
 				speakerEn: "Ken’s mother",
 				jp: "ああ、でも、{大|たい}したことないわよ。お{父|とう}さんね、{今仕事|いましごと}が{大変|たいへん}なのよ。",
-				cn: "啊，不过没什么大不了的。你爸他最近工作很辛苦嘛。",
+				cn: "啊，不过，没什么大不了的呀。你爸爸啊，现在工作很辛苦哦。",
 				en: "Oh, it’s nothing serious. Your dad’s been having a hard time at work lately.",
 			},
 			{
@@ -68,7 +68,7 @@ export const w5d3: ReadingDay = {
 				speakerCn: "健",
 				speakerEn: "Ken",
 				jp: "だからって、{母|かあ}さんに{暴力|ぼうりょく}を{振|ふ}るう（※2）なんてひどいよ。{母|かあ}さん、{一生懸命|いっしょうけんめい}やってるじゃないか。{貧乏|びんぼう}（※3）させられているうえに、こんなにひどい{扱|あつか}い（※4）をされるなんて、よくがまんしているよね。おれと{恵子|けいこ}のことなんか{気|き}にせず、{離婚|りこん}しちゃえばいいんだよ。",
-				cn: "就算这样，对妈妈动手也太过分了。妈你不是一直很拼命吗。既要被迫过苦日子，还要受这种对待，你居然忍得下来。别管我和惠子了，干脆离婚算了。",
+				cn: "就算这样，对妈施暴（※2）也太过分了呀。妈，你不是一直很拼命吗。被逼得过穷日子（※3），而且还受到这么过分的对待（※4），你可真能忍啊。别把我和惠子放在心上，离婚就好了呀。",
 				en: "Even so, being violent to you is awful. You’ve been working so hard. Being made to live in poverty on top of being treated like this — I don’t know how you put up with it. Forget about Keiko and me, and just get a divorce.",
 			},
 			{
@@ -77,7 +77,7 @@ export const w5d3: ReadingDay = {
 				speakerCn: "健的母亲",
 				speakerEn: "Ken’s mother",
 				jp: "そういうわけにはいかない（※5）わよ。あれで、{優|やさ}しいところもあるのよ。",
-				cn: "那可不行。他那个人啊，其实也有温柔的一面呢。",
+				cn: "不能那么做（※5）呀。别看他那样，也有温柔的一面哦。",
 				en: "I can’t do that. He has a gentle side too, you know.",
 			},
 		],
@@ -93,33 +93,33 @@ export const w5d3: ReadingDay = {
 			{ jp: "{健|けん}の{母|はは}の{父親|ちちおや}は{仕事|しごと}が{忙|いそが}しい。", cn: "健的母亲的父亲工作很忙。", en: "Ken’s mother’s father is busy with work." },
 			{ jp: "{健|けん}の{母|はは}は{離婚|りこん}をしたい。", cn: "健的母亲想离婚。", en: "Ken’s mother wants a divorce." },
 			{ jp: "{健|けん}は{父親|ちちおや}が{好|す}きだ。", cn: "健喜欢父亲。", en: "Ken likes his father." },
-			{ jp: "{健|けん}は{両親|りょうしん}が{離婚|りこん}してもいいと{思|おも}っている。", cn: "健认为父母离婚也没关系。", en: "Ken thinks it would be all right if his parents got divorced." },
+			{ jp: "{健|けん}は{両親|りょうしん}が{離婚|りこん}してもいいと{思|おも}っている。", cn: "健认为父母就算离婚也没关系。", en: "Ken thinks it would be all right if his parents got divorced." },
 		],
 		answers: [1, 5],
 		hint: {
 			jp: "「だからって」（＝だからといって）。「お{父|とう}さん」は{健|けん}の{父|ちち}であって、{母|はは}の{父親|ちちおや}ではない。",
-			cn: "「だからって」＝「だからといって（即使那样）」。另外要注意：「お父さん」指的是健的父亲，不是母亲的父亲；母亲说「そういうわけにはいかない」，说明她并不想离婚。",
+			cn: "「だからって」（＝だからといって（虽说如此））。「お父さん」（爸爸）是健的父亲，而不是母亲的父亲。",
 			en: "“だからって” = “だからといって” (even so). Also note: “お父さん” is Ken’s father, not his mother’s father. The mother says “I can’t do that,” so she does not want a divorce.",
 		},
 	},
 
 	mondai: {
 		instruction: "{次|つぎ}の{文章|ぶんしょう}を{読|よ}んで、{後|あと}の{問|と}いに{答|こた}えなさい。",
-		instructionCn: "阅读下面的文章，回答后面的问题。（原书答案在别册 p.6）",
+		instructionCn: "阅读下面的文章，回答后面的问题。",
 		instructionEn: "Read the passage below and answer the questions that follow. (Answers are in the supplement, p. 6.)",
 		blocks: [
 			{
 				type: "paragraph",
 				indent: true,
 				jp: "ぼくは{父親|ちちおや}に{対|たい}していい{思|おも}い{出|で}がない。{父|ちち}は{画家|がか}だった。{才能|さいのう}はあったようだが、{昼間|ひるま}から{酒|さけ}を{飲|の}み、{仕事|しごと}をしているのかしていないのかわからないような{生活|せいかつ}を{送|おく}っていた＊。{父|ちち}はぼくたち{家族|かぞく}の{生活|せいかつ}のことはまるで{考|かんが}えず（※）、{母|はは}は{本当|ほんとう}に{苦労|くろう}をしてきた。{気|き}に{入|い}らないことがあるとすぐに{母|はは}に{暴力|ぼうりょく}を{振|ふ}るった。{食事|しょくじ}がまずいと{皿|さら}を{投|な}げられ、{真夜中|まよなか}に{酒|さけ}を{買|か}いに{行|い}かされ、それでも{母|はは}は{文句一|もんくひと}つ{言|い}わない＊＊。なぜそこまでがまんをするのだろうと{不思議|ふしぎ}に{感|かん}じていた。",
-				cn: "对于父亲，我没有什么美好的回忆。父亲曾是个画家。他似乎是有才华的，可是大白天就开始喝酒，过着让人分不清他到底在不在工作的生活＊。父亲完全不考虑我们一家的生计，母亲真是吃尽了苦头。只要有一点不合心意，他马上就对母亲动手。嫌饭菜难吃就摔盘子，半夜还要支使母亲去买酒，即便如此，母亲也从不抱怨一句＊＊。我一直想不通，她为什么要忍到这个地步。",
+				cn: "对于父亲，我没有什么好的回忆。父亲是个画家。他似乎有才能，但从大白天就开始喝酒，过着让人分不清他到底有没有在工作的生活＊。父亲完全不考虑我们一家人的生活（※），母亲真是吃尽了苦。一有不称心的事，立刻就对母亲施暴。饭菜不好吃就被扔盘子，深更半夜被差去买酒，即便如此，母亲一句怨言也不说＊＊。为什么要忍受到那种地步呢，我一直觉得不可思议。",
 				en: "I have no good memories of my father. He was a painter. He seemed to have talent, but he drank from the middle of the day and led a life where you couldn’t tell whether he was working or not＊. He never thought about our family’s livelihood at all, and my mother really had a hard time. If something didn’t please him, he immediately became violent toward her. If the food was bad he threw plates; he made her go out at midnight to buy more drink — and still she never complained once＊＊. I always found it strange that she would put up with so much.",
 			},
 			{
 				type: "paragraph",
 				indent: true,
 				jp: "{父|ちち}の{作品|さくひん}が{賞|しょう}をとり、{海外|かいがい}で{紹介|しょうかい}されてからは、{生活|せいかつ}に{困|こま}ることはなくなったが、やはり{酒|さけ}や{暴力|ぼうりょく}は{変|か}わらなかった。そんな{父|ちち}が{亡|な}くなって{母|はは}はほっとしただろうと{思|おも}っていたのに、なぜか{父|ちち}のかいた{絵|え}を{見|み}ながら{毎日泣|まいにちな}いている。{父|ちち}のことを「いい{人|ひと}だった。」と{言|い}う。{夫婦|ふうふ}とは（　　　　　）と{思|おも}う。",
-				cn: "自从父亲的作品获奖、被介绍到海外之后，生活上不再拮据，但酗酒和暴力依旧没有改变。这样的父亲去世后，我本以为母亲一定松了一口气，可她却不知为何每天看着父亲画的画流泪。她说父亲「是个好人」。夫妻这种关系，我觉得实在是（　　　　　）。",
+				cn: "父亲的作品获奖、在海外被介绍之后，生活不再困难了，但喝酒和暴力还是没有改变。我本以为，那样的父亲去世后，母亲会松一口气吧，可她却不知为什么每天看着父亲画的画在哭。她说父亲「是个好人。」我觉得夫妻（　　　　　）。",
 				en: "After my father’s work won a prize and was introduced overseas, we no longer had money troubles — but the drinking and the violence didn’t change. When a father like that died, I thought my mother would be relieved, and yet for some reason she cries every day looking at the pictures he painted. She says he “was a good man.” Being a married couple, I think, is (　　　　　).",
 			},
 		],
@@ -127,22 +127,22 @@ export const w5d3: ReadingDay = {
 		pageNotes: [
 			{
 				jp: "＊ with the life he lead, I never knew whether he actually did any work",
-				cn: "＊他过着那样的生活，我从来不知道他到底有没有在工作。",
+				cn: "＊就他过的那种生活来看，我从来不知道他到底有没有在工作。",
 				en: "＊ with the life he lead, I never knew whether he actually did any work",
 			},
-			{ jp: "＊＊ my mother never complained once", cn: "＊＊母亲一句怨言也没有。", en: "＊＊ my mother never complained once" },
+			{ jp: "＊＊ my mother never complained once", cn: "＊＊我母亲一次都没有抱怨过。", en: "＊＊ my mother never complained once" },
 		],
 		questions: [
 			{
 				label: "問1",
 				jp: "「なぜそこまでがまんをするのだろうと{不思議|ふしぎ}に{感|かん}じていた」とあるが、{筆者|ひっしゃ}は{母|はは}に{対|たい}してどのように{思|おも}っていたのか。",
-				cn: "文中说「我一直想不通她为什么要忍到这个地步」，那么笔者对母亲是怎么想的？",
+				cn: "文中说「为什么要忍受到那种地步呢，我一直觉得不可思议」，笔者对母亲是怎样想的呢？",
 				en: "The text says “I always found it strange that she would put up with so much.” How did the writer feel about his mother?",
 				choices: [
-					{ jp: "そんなにがまんしている{母|はは}はとてもえらい。", cn: "这么能忍的母亲真了不起。", en: "A mother who puts up with so much is really admirable." },
-					{ jp: "そんなにがまんをするほど{父|ちち}のことを{愛|あい}しているのだろう。", cn: "忍到这个地步，大概是很爱父亲吧。", en: "She must love Father so much that she puts up with all that." },
-					{ jp: "そんなにがまんをしないで{文句|もんく}ぐらい{言|い}えばいいのに。", cn: "不必忍成那样，至少该抱怨几句才对。", en: "She shouldn’t put up with so much — she should at least complain a little." },
-					{ jp: "そんなにがまんをしないで{一緒|いっしょ}にお{酒|さけ}を{飲|の}めばいいのに。", cn: "不必忍成那样，一起喝酒不就好了。", en: "She shouldn’t put up with so much — she should just drink with him." },
+					{ jp: "そんなにがまんしている{母|はは}はとてもえらい。", cn: "这么能忍的母亲非常了不起。", en: "A mother who puts up with so much is really admirable." },
+					{ jp: "そんなにがまんをするほど{父|ちち}のことを{愛|あい}しているのだろう。", cn: "她爱父亲，大概爱到了能那样忍耐的程度吧。", en: "She must love Father so much that she puts up with all that." },
+					{ jp: "そんなにがまんをしないで{文句|もんく}ぐらい{言|い}えばいいのに。", cn: "她要是不那么忍着，至少抱怨几句就好了。", en: "She shouldn’t put up with so much — she should at least complain a little." },
+					{ jp: "そんなにがまんをしないで{一緒|いっしょ}にお{酒|さけ}を{飲|の}めばいいのに。", cn: "她要是不那么忍着，一起喝酒就好了。", en: "She shouldn’t put up with so much — she should just drink with him." },
 				],
 				answer: 3,
 				explanation:
@@ -165,13 +165,13 @@ export const w5d3: ReadingDay = {
 			{
 				label: "問2",
 				jp: "（　　）に{入|はい}る{言葉|ことば}として{最|もっと}も{適当|てきとう}なものはどれか。",
-				cn: "填入（　　）中最恰当的词语是哪一个？",
+				cn: "作为填入（　　）的词语，最恰当的是哪一个？",
 				en: "Which word fits best in the blank (　　)?",
 				choices: [
 					{ jp: "いやなものだ", cn: "是件讨厌的事", en: "is something unpleasant" },
 					{ jp: "{悲|かな}しいものだ", cn: "是件悲伤的事", en: "is something sad" },
-					{ jp: "{美|うつく}しいものだ", cn: "是件美好的事", en: "is something beautiful" },
-					{ jp: "わからないものだ", cn: "是件让人搞不懂的事", en: "is something you just can’t understand" },
+					{ jp: "{美|うつく}しいものだ", cn: "是件美丽的事", en: "is something beautiful" },
+					{ jp: "わからないものだ", cn: "是件让人无法理解的事", en: "is something you just can’t understand" },
 				],
 				answer: 4,
 				explanation:
@@ -225,7 +225,7 @@ export const w5d3: ReadingDay = {
 			meaningEn: "What comes before these words is the writer’s thought or feeling, not an objective fact. When you read essays, keep the two apart.",
 			example: {
 				jp: "なぜそこまでがまんをするのだろうと{不思議|ふしぎ}に{感|かん}じていた。",
-				cn: "我一直想不通她为什么要忍到这个地步。",
+				cn: "为什么要忍受到那种地步呢，我一直觉得不可思议。",
 				en: "I always found it strange that she would put up with so much.",
 			},
 			note: "本课要点。选项里如果把「心情」写成了「事实」，那就是错的。",
@@ -237,7 +237,7 @@ export const w5d3: ReadingDay = {
 			meaningEn: "Even though … / and yet …. Marks something contrary to expectation; used here to create a twist.",
 			example: {
 				jp: "{母|はは}はほっとしただろうと{思|おも}っていたのに、なぜか{毎日泣|まいにちな}いている。",
-				cn: "本以为母亲会松一口气，她却不知为何每天流泪。",
+				cn: "我本以为母亲会松一口气吧，可她却不知为什么每天都在哭。",
 				en: "I thought my mother would be relieved, and yet for some reason she cries every day.",
 			},
 		},
@@ -245,33 +245,33 @@ export const w5d3: ReadingDay = {
 			pattern: "〜（さ）せられる（使役受身）",
 			meaning: "被迫……。",
 			meaningEn: "To be made to ….",
-			example: { jp: "{真夜中|まよなか}に{酒|さけ}を{買|か}いに{行|い}かされ", cn: "半夜被支使去买酒", en: "was made to go buy alcohol in the middle of the night" },
+			example: { jp: "{真夜中|まよなか}に{酒|さけ}を{買|か}いに{行|い}かされ", cn: "深更半夜被差去买酒", en: "was made to go buy alcohol in the middle of the night" },
 		},
 		{
 			pattern: "まるで〜ない／まるで〜ず",
 			meaning: "完全不……。「ず」是「ない」的书面形式。",
 			meaningEn: "Not … at all. “ず” is the written form of “ない.”",
-			example: { jp: "{家族|かぞく}の{生活|せいかつ}のことはまるで{考|かんが}えず", cn: "完全不考虑家人的生计", en: "never thought about the family’s livelihood at all" },
+			example: { jp: "{家族|かぞく}の{生活|せいかつ}のことはまるで{考|かんが}えず", cn: "完全不考虑家人的生活", en: "never thought about the family’s livelihood at all" },
 		},
 		{
 			pattern: "〜{一|ひと}つ〜ない",
 			formation: "名詞 ＋ 一つ ＋ 否定",
 			meaning: "连一个……都没有。强调彻底的否定。",
 			meaningEn: "Not even one …. Emphasizes a complete negative.",
-			example: { jp: "{母|はは}は{文句一|もんくひと}つ{言|い}わない。", cn: "母亲连一句怨言都没有。", en: "Mother never complained even once." },
+			example: { jp: "{母|はは}は{文句一|もんくひと}つ{言|い}わない。", cn: "母亲一句怨言也不说。", en: "Mother never complained even once." },
 		},
 		{
 			pattern: "〜とは〜ものだ",
 			formation: "名詞 ＋ とは ＋ 〜ものだ",
 			meaning: "所谓……就是……。用于下结论、发感慨，随笔的结尾常见。",
 			meaningEn: "So-called … is …. Used to draw a conclusion or sigh over something; common at the end of essays.",
-			example: { jp: "{夫婦|ふうふ}とはわからないものだと{思|おも}う。", cn: "我觉得夫妻这种关系真是让人搞不懂。", en: "I think being a married couple is something you just can’t understand." },
+			example: { jp: "{夫婦|ふうふ}とはわからないものだと{思|おも}う。", cn: "我觉得夫妻是件让人无法理解的事。", en: "I think being a married couple is something you just can’t understand." },
 		},
 		{
 			pattern: "だからって（＝だからといって）",
 			meaning: "即使那样也……。用来反驳对方的理由。",
 			meaningEn: "Even so / that doesn’t mean …. Used to reject the other person’s reason.",
-			example: { jp: "だからって、{母|かあ}さんに{暴力|ぼうりょく}を{振|ふ}るうなんてひどいよ。", cn: "就算那样，对妈妈动手也太过分了。", en: "Even so, being violent to Mom is awful." },
+			example: { jp: "だからって、{母|かあ}さんに{暴力|ぼうりょく}を{振|ふ}るうなんてひどいよ。", cn: "就算这样，对妈施暴也太过分了呀。", en: "Even so, being violent to Mom is awful." },
 		},
 	],
 };

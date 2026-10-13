@@ -13,35 +13,35 @@ export const w6d2: ReadingDay = {
 
 	point: {
 		title: "{筆者|ひっしゃ}の{意見|いけん}や{考|かんが}えのある{部分|ぶぶん}を{見|み}つけよう！",
-		titleCn: "找出表达笔者观点的那一部分！",
+		titleCn: "找出含有笔者意见和想法的部分吧！",
 		titleEn: "Identify the parts which express the writer's opinions and ideas!",
 		figure: {
 			alt: "2つのパターン図。①「筆者の意見や考え → なぜなら／というのは → 理由」　②「事実や具体的な例 → けれども・しかし・ところが・だから・それで・したがって → 筆者の意見や考え」。横で「接続詞に注意しよう！」と言うキャラクター",
-			cn: "两种结构图：①「笔者的观点 → なぜなら／というのは → 理由」　②「事实或具体例子 → けれども・しかし・ところが・だから・それで・したがって → 笔者的观点」。旁边写着：「注意接续词！」",
+			cn: "两幅模式图。①「笔者的意见和想法 → なぜなら（因为）／というのは（原因是） → 理由」　②「事实或具体例子 → けれども（不过）・しかし（但是）・ところが（然而）・だから（所以）・それで（于是）・したがって（因此） → 笔者的意见和想法」。旁边有一个角色说：「注意接续词吧！」",
 			en: "A diagram of two patterns: ① “the writer’s opinion → なぜなら / というのは → reasons”  ② “facts or concrete examples → けれども / しかし / ところが / だから / それで / したがって → the writer’s opinion.” Nearby: “Pay attention to the conjunctions!”",
 		},
 		tips: [
 			{
 				jp: "{接続詞|せつぞくし}に{注意|ちゅうい}しよう！「なぜなら」「というのは」の{後|あと}は{理由|りゆう}、「けれども」「しかし」「だから」「したがって」の{後|あと}は{筆者|ひっしゃ}の{意見|いけん}や{考|かんが}えです。",
-				cn: "注意接续词！「なぜなら」「というのは」后面是**理由**；「けれども」「しかし」「ところが」「だから」「それで」「したがって」后面是**笔者的观点**。",
+				cn: "注意接续词吧！「なぜなら」（因为）、「というのは」（原因是）的后面是理由，「けれども」（不过）、「しかし」（但是）、「だから」（所以）、「したがって」（因此）的后面是笔者的意见和想法。",
 				en: "Pay attention to the conjunctions! After “なぜなら” and “というのは” comes a reason; after “けれども,” “しかし,” “ところが,” “だから,” “それで,” and “したがって” comes the writer’s opinion.",
 			},
 		],
 		expressions: [
-			{ jp: "なぜなら／というのは", cn: "因为（后面接理由）", en: "because (what follows is a reason)" },
-			{ jp: "けれども／しかし／ところが", cn: "但是（后面接观点）", en: "however (what follows is an opinion)" },
-			{ jp: "だから／それで／したがって", cn: "因此（后面接观点、结论）", en: "therefore (what follows is an opinion or conclusion)" },
+			{ jp: "なぜなら／というのは", cn: "因为／原因是", en: "because (what follows is a reason)" },
+			{ jp: "けれども／しかし／ところが", cn: "不过／但是／然而", en: "however (what follows is an opinion)" },
+			{ jp: "だから／それで／したがって", cn: "所以／于是／因此", en: "therefore (what follows is an opinion or conclusion)" },
 			{ jp: "具体的な", kana: "ぐたいてきな", cn: "具体的", en: "concrete / specific" },
 			{ jp: "平均寿命", kana: "へいきんじゅみょう", cn: "平均寿命", en: "average life expectancy" },
 			{ jp: "きつい", cn: "吃力、够呛", en: "hard / difficult" },
-			{ jp: "だらだらと", cn: "拖拖拉拉地", en: "to drag on" },
+			{ jp: "だらだらと", cn: "懒散拖沓地", en: "to drag on" },
 			{ jp: "挑戦する", kana: "ちょうせんする", cn: "挑战", en: "to take up a challenge" },
 		],
 	},
 
 	renshu: {
 		instruction: "{次|つぎ}の{会話文|かいわぶん}を{読|よ}んで、{後|あと}の{文|ぶん}から{正|ただ}しいものを{選|えら}ぼう。",
-		instructionCn: "阅读下面的对话，从后面的句子中选出正确的。（答案在下一页）",
+		instructionCn: "阅读下面的对话，从后面的句子中选出正确的吧。",
 		instructionEn: "Read the conversation below and choose the correct statements from the sentences that follow. (Answers are on the next page.)",
 		blocks: [
 			{
@@ -50,7 +50,7 @@ export const w6d2: ReadingDay = {
 				speakerCn: "丈夫",
 				speakerEn: "Husband",
 				jp: "また{日本人|にほんじん}の{平均寿命|へいきんじゅみょう}（※1）が{伸|の}びたんだってね。",
-				cn: "听说日本人的平均寿命又延长了呢。",
+				cn: "听说日本人的平均寿命（※1）又延长了呢。",
 				en: "I hear the average life expectancy of Japanese people has gone up again.",
 			},
 			{
@@ -59,7 +59,7 @@ export const w6d2: ReadingDay = {
 				speakerCn: "妻子",
 				speakerEn: "Wife",
 				jp: "そう、{男性|だんせい}は79{歳|さい}、{女性|じょせい}は86{歳|さい}になったのよ。",
-				cn: "是啊，男性到了 79 岁，女性到了 86 岁呢。",
+				cn: "是啊，男性到了79岁，女性到了86岁了哦。",
 				en: "Yes — 79 for men and 86 for women now.",
 			},
 			{
@@ -68,7 +68,7 @@ export const w6d2: ReadingDay = {
 				speakerCn: "丈夫",
 				speakerEn: "Husband",
 				jp: "ということは、おれたちが{平均寿命|へいきんじゅみょう}まで{生|い}きたとしたら、おれはこれから25{年|ねん}、お{前|まえ}は35{年|ねん}もあるっていうことになるよね。",
-				cn: "也就是说，如果我们能活到平均寿命，我还有 25 年，你还有 35 年呢。",
+				cn: "也就是说，假如我们活到平均寿命的话，就等于我今后还有25年、你还有35年之多，对吧。",
 				en: "So if we lived to the average life expectancy, I’d have 25 years left and you’d have 35.",
 			},
 			{
@@ -77,7 +77,7 @@ export const w6d2: ReadingDay = {
 				speakerCn: "妻子",
 				speakerEn: "Wife",
 				jp: "この{先|さき}、{長|なが}いのね。{楽|たの}しまなきゃ。{私|わたし}、ダンス、{習|なら}いに{行|い}こうかしら。",
-				cn: "往后的日子还长着呢。得好好享受才行。我要不要去学跳舞呢。",
+				cn: "今后还长着呢。得好好享受才行。我要不要去学跳舞呢。",
 				en: "That’s a long way ahead. We’d better enjoy it. Maybe I should go take dance lessons.",
 			},
 			{
@@ -86,7 +86,7 @@ export const w6d2: ReadingDay = {
 				speakerCn: "丈夫",
 				speakerEn: "Husband",
 				jp: "おい、50{過|す}ぎてからダンスはきつい（※2）んじゃないの？",
-				cn: "喂，过了 50 才开始跳舞，不会太吃力吗？",
+				cn: "喂，过了50岁再跳舞，不是挺吃力（※2）的吗？",
 				en: "Hey, isn’t starting dance after 50 a bit hard?",
 			},
 			{
@@ -95,7 +95,7 @@ export const w6d2: ReadingDay = {
 				speakerCn: "妻子",
 				speakerEn: "Wife",
 				jp: "そりゃ{若|わか}い{人|ひと}には{負|ま}けるだろうけど、ゆっくりと{長|なが}くやっていればできるようになるでしょう。だって、{私|わたし}の{人生|じんせい}これからまだまだあるんだもの。",
-				cn: "那当然比不过年轻人，可只要慢慢地长期练下去，总会学会的吧。因为我的人生往后还长着呢。",
+				cn: "那当然赢不过年轻人吧，不过只要慢慢地、长久地做下去，应该就能做到吧。因为我的人生今后还长得很嘛。",
 				en: "Well, I couldn’t keep up with young people, but if I take it slowly and keep at it for a long time, I’ll get there. After all, I still have plenty of life ahead of me.",
 			},
 		],
@@ -104,44 +104,44 @@ export const w6d2: ReadingDay = {
 			{ marker: "※2", term: "きつい", jp: "hard / difficult", cn: "吃力、够呛", en: "hard / difficult" },
 		],
 		choices: [
-			{ jp: "この{夫婦|ふうふ}は50{代|だい}である。", cn: "这对夫妻是 50 多岁。", en: "This couple is in their fifties." },
+			{ jp: "この{夫婦|ふうふ}は50{代|だい}である。", cn: "这对夫妻是50多岁。", en: "This couple is in their fifties." },
 			{ jp: "{夫|おっと}より{妻|つま}のほうが{年|とし}を{取|と}っている。", cn: "妻子比丈夫年纪大。", en: "The wife is older than the husband." },
-			{ jp: "{夫|おっと}は{日本人|にほんじん}の{平均寿命|へいきんじゅみょう}まで{生|い}きたいと{思|おも}っている。", cn: "丈夫希望活到日本人的平均寿命。", en: "The husband wants to live to the Japanese average life expectancy." },
-			{ jp: "{妻|つま}は{夫|おっと}と{一緒|いっしょ}にダンスを{習|なら}いたがっている。", cn: "妻子想和丈夫一起去学跳舞。", en: "The wife wants to take dance lessons together with her husband." },
-			{ jp: "{妻|つま}は{残|のこ}りの{人生|じんせい}を{楽|たの}しんで{生|い}きたいと{思|おも}っている。", cn: "妻子想快乐地度过余生。", en: "The wife wants to enjoy the rest of her life." },
+			{ jp: "{夫|おっと}は{日本人|にほんじん}の{平均寿命|へいきんじゅみょう}まで{生|い}きたいと{思|おも}っている。", cn: "丈夫想要活到日本人的平均寿命。", en: "The husband wants to live to the Japanese average life expectancy." },
+			{ jp: "{妻|つま}は{夫|おっと}と{一緒|いっしょ}にダンスを{習|なら}いたがっている。", cn: "妻子想要和丈夫一起学跳舞。", en: "The wife wants to take dance lessons together with her husband." },
+			{ jp: "{妻|つま}は{残|のこ}りの{人生|じんせい}を{楽|たの}しんで{生|い}きたいと{思|おも}っている。", cn: "妻子想要享受着余生活下去。", en: "The wife wants to enjoy the rest of her life." },
 		],
 		answers: [1, 5],
 		hint: {
 			jp: "{夫|おっと}：79−25＝54{歳|さい}。{妻|つま}：86−35＝51{歳|さい}。{二人|ふたり}とも50{代|だい}で、{年上|としうえ}は{夫|おっと}。",
-			cn: "丈夫：79−25＝54 岁；妻子：86−35＝51 岁。两人都是 50 多岁，而且年长的是丈夫。「平均寿命まで生きたとしたら」只是假设，不是丈夫的愿望。",
+			cn: "丈夫：79−25＝54岁。妻子：86−35＝51岁。两人都是50多岁，年长的是丈夫。",
 			en: "Husband: 79 − 25 = 54. Wife: 86 − 35 = 51. Both are in their fifties, and the older one is the husband. “If we lived to the average life expectancy” is only a hypothesis, not the husband’s wish.",
 		},
 	},
 
 	mondai: {
 		instruction: "{次|つぎ}の{文章|ぶんしょう}を{読|よ}んで、{後|あと}の{問|と}いに{答|こた}えなさい。",
-		instructionCn: "阅读下面的文章，回答后面的问题。（原书答案在别册 p.7）",
+		instructionCn: "阅读下面的文章，回答后面的问题。",
 		instructionEn: "Read the passage below and answer the questions that follow. (Answers are in the supplement, p. 7.)",
 		blocks: [
 			{
 				type: "paragraph",
 				indent: true,
 				jp: "{昔|むかし}①「{人生|じんせい}50{年|ねん}」と{言|い}われましたが、{現在|げんざい}では、その{約|やく}30{年|ねん}の{人生|じんせい}があるのが{当|あ}たり{前|まえ}になりました。{人|ひと}は、{生|い}きる{目標|もくひょう}が{必要|ひつよう}な{動物|どうぶつ}です。{目的|もくてき}もなく、だらだらと（※1）{生活|せいかつ}することはとてもつまらないものです。",
-				cn: "从前人们说①「人生五十年」，而如今，在这之后还有约 30 年的人生已成为理所当然的事。人是需要生活目标的动物。毫无目的、拖拖拉拉地过日子，是非常无趣的。",
+				cn: "从前人们说①「人生50年」，但如今，在那之后还拥有约30年的人生已是理所当然的了。人是需要生活目标的动物。没有目的、懒散拖沓地（※1）生活，是非常无聊的事。",
 				en: "In the old days people said ① “life is fifty years,” but today it has become normal to have about another thirty years of life after that. Human beings are animals that need a goal in life. Living on and on with no purpose is a very dull thing.",
 			},
 			{
 				type: "paragraph",
 				indent: true,
 				jp: "{若|わか}いときなら、{何|なに}かを{始|はじ}める{場合|ばあい}に{特別大|とくべつおお}きい{障害|しょうがい}（※2）はありません。{体|からだ}も{動|うご}くし{頭|あたま}もやわらかいです。{新|あたら}しいことをどんどん{吸収|きゅうしゅう}できます。スポーツでも{勉強|べんきょう}でも、やる{気|き}になったものをある{程度|ていど}の{形|かたち}にするのは{比較的簡単|ひかくてきかんたん}でしょう＊。しかし、50を{過|す}ぎると{体|からだ}も{硬|かた}くなり{物覚|ものおぼ}え（※3）も{悪|わる}くなります。{若|わか}いときのように{何|なに}にでも{挑戦|ちょうせん}できる（※4）という{状態|じょうたい}ではなくなってしまうのは、{事実|じじつ}なのです。",
-				cn: "如果是年轻的时候，开始做点什么并没有特别大的障碍。身体灵活，头脑也灵光。新事物都能不断吸收。无论是运动还是学习，只要有心去做，要达到一定水平相对来说是比较容易的＊。然而，一过 50，身体变硬，记性也变差。不再像年轻时那样什么都能挑战——这是事实。",
+				cn: "若是年轻的时候，开始做某件事时并没有特别大的障碍（※2）。身体也能活动，头脑也很灵活。能够源源不断地吸收新事物。无论是运动还是学习，把起了干劲要做的事做成一定的样子，相对来说比较容易吧＊。但是，一过50，身体也会变硬，记性（※3）也会变差。已经不再是能像年轻时那样无论什么都可以挑战（※4）的状态了，这是事实。",
 				en: "When you are young, there is no especially large obstacle to starting something. The body still moves and the mind is still flexible. You can keep absorbing new things. In sports or in study, once you decide to do it, bringing it to a certain level is relatively easy＊. After you pass 50, though, the body stiffens and the memory gets worse. It is a fact that you are no longer in a state where you can take on anything the way you could when you were young.",
 			},
 			{
 				type: "paragraph",
 				indent: true,
 				jp: "けれども、{次|つぎ}のように{考|かんが}えてみてはどうでしょうか。{若|わか}いときなら5{年|ねん}でマスターできることを、その{倍|ばい}の{時間|じかん}がかかったとしても10{年|ねん}。それでも{残|のこ}りの{人生|じんせい}はまだ20{年|ねん}あるのです。そう{考|かんが}えれば50から{始|はじ}めても{決|けっ}して{遅|おそ}くはありません。もう{年|とし}だからとあきらめず、{常|つね}に{新|あたら}しいこと、やりたいことに{挑戦|ちょうせん}し{続|つづ}けることは{大切|たいせつ}です。これは、{人生|じんせい}80{年|ねん}という{時代|じだい}の②ひとつの{生|い}き{方|かた}だと{思|おも}います。",
-				cn: "不过，我们不妨这样想一想。年轻时 5 年能掌握的事，就算花上双倍的时间，也不过 10 年。即便如此，剩下的人生还有 20 年。这样一想，从 50 岁开始也绝不算晚。不要以「都这把年纪了」为由放弃，而要始终不断地挑战新事物、挑战自己想做的事——这很重要。我认为，这正是「人生八十年」这个时代的②一种活法。",
+				cn: "不过，试着像下面这样想一想，怎么样呢？若是年轻时5年就能掌握的事，即便花上其两倍的时间，也就是10年。即便如此，剩下的人生还有20年。这么一想，即使从50岁开始也绝不算晚。不因「已经上了年纪」而放弃，始终不断挑战新事物、想做的事，这很重要。这是「人生80年」这个时代的②一种活法，我是这么认为的。",
 				en: "Still, how about thinking of it this way? Something you could master in five years when you were young would take ten even if it took twice as long. Even then you would still have twenty years of life left. Thought of that way, starting at 50 is by no means too late. Not giving up because you are “too old,” and always keeping on taking up new things and things you want to do, is important. I think this is ② one way of living in an age when life is eighty years.",
 			},
 		],
@@ -154,7 +154,7 @@ export const w6d2: ReadingDay = {
 		pageNotes: [
 			{
 				jp: "＊ it is relatively easy to master the basics once you decide to do it",
-				cn: "＊只要有心去做，要达到一定程度是比较容易的。",
+				cn: "＊一旦决定要做，掌握基础是相对容易的",
 				en: "＊ it is relatively easy to master the basics once you decide to do it",
 			},
 		],
@@ -162,13 +162,13 @@ export const w6d2: ReadingDay = {
 			{
 				label: "問1",
 				jp: "①「{人生|じんせい}50{年|ねん}」というのはどういう{意味|いみ}か。",
-				cn: "①「人生五十年」是什么意思？",
+				cn: "①「人生50年」是什么意思？",
 				en: "What does ① “life is fifty years” mean?",
 				choices: [
-					{ jp: "{昔|むかし}は50{歳|さい}くらいで{死|し}ぬ{人|ひと}が{多|おお}かった。", cn: "从前 50 岁左右去世的人很多。", en: "In the old days many people died around the age of 50." },
-					{ jp: "50{歳|さい}で{死|し}ぬ{人|ひと}は{少|すく}ない。", cn: "50 岁去世的人很少。", en: "Few people die at 50." },
-					{ jp: "{人生|じんせい}は50{年間|ねんかん}は{目標|もくひょう}をもって{生活|せいかつ}すべきだ。", cn: "人生的头 50 年应该有目标地生活。", en: "For the first 50 years of life you should live with a goal." },
-					{ jp: "{残|のこ}りの{人生|じんせい}がまだ50{年|ねん}ある。", cn: "剩下的人生还有 50 年。", en: "There are still 50 years of life left." },
+					{ jp: "{昔|むかし}は50{歳|さい}くらいで{死|し}ぬ{人|ひと}が{多|おお}かった。", cn: "从前在50岁左右死去的人很多。", en: "In the old days many people died around the age of 50." },
+					{ jp: "50{歳|さい}で{死|し}ぬ{人|ひと}は{少|すく}ない。", cn: "在50岁死去的人很少。", en: "Few people die at 50." },
+					{ jp: "{人生|じんせい}は50{年間|ねんかん}は{目標|もくひょう}をもって{生活|せいかつ}すべきだ。", cn: "人生在50年间应该带着目标生活。", en: "For the first 50 years of life you should live with a goal." },
+					{ jp: "{残|のこ}りの{人生|じんせい}がまだ50{年|ねん}ある。", cn: "剩下的人生还有50年。", en: "There are still 50 years of life left." },
 				],
 				answer: 1,
 				explanation:
@@ -191,19 +191,19 @@ export const w6d2: ReadingDay = {
 			{
 				label: "問2",
 				jp: "②「ひとつの{生|い}き{方|かた}」とはどういう{生|い}き{方|かた}か。",
-				cn: "②「一种活法」指的是什么样的活法？",
+				cn: "②「一种活法」是怎样的活法？",
 				en: "What kind of way of living is ② “one way of living”?",
 				choices: [
 					{
 						jp: "{若|わか}い{人|ひと}とは{違|ちが}って、{老人|ろうじん}は{老人|ろうじん}らしくするような{生|い}き{方|かた}",
-						cn: "与年轻人不同，老年人就要有老年人样子的活法",
+						cn: "与年轻人不同、老年人要像老年人那样的活法",
 						en: "A way of living in which, unlike young people, the old behave as old people should",
 					},
-					{ jp: "{若|わか}い{人|ひと}とは{違|ちが}う{新|あたら}しいことをするような{生|い}き{方|かた}", cn: "做一些和年轻人不一样的新事情的活法", en: "A way of living that involves doing new things different from what young people do" },
-					{ jp: "{若|わか}い{人|ひと}の2{倍|ばい}は{努力|どりょく}するような{生|い}き{方|かた}", cn: "付出年轻人两倍努力的活法", en: "A way of living that means working twice as hard as young people" },
+					{ jp: "{若|わか}い{人|ひと}とは{違|ちが}う{新|あたら}しいことをするような{生|い}き{方|かた}", cn: "做与年轻人不同的新事情那样的活法", en: "A way of living that involves doing new things different from what young people do" },
+					{ jp: "{若|わか}い{人|ひと}の2{倍|ばい}は{努力|どりょく}するような{生|い}き{方|かた}", cn: "要付出年轻人2倍努力那样的活法", en: "A way of living that means working twice as hard as young people" },
 					{
 						jp: "{年|とし}を{気|き}にせずにやりたいことに{挑戦|ちょうせん}し{続|つづ}けるような{生|い}き{方|かた}",
-						cn: "不在意年龄、不断挑战想做之事的活法",
+						cn: "不在意年龄、不断挑战想做的事那样的活法",
 						en: "A way of living that means not worrying about age and keeping on taking up what you want to do",
 					},
 				],
@@ -256,7 +256,7 @@ export const w6d2: ReadingDay = {
 			pattern: "けれども／しかし ＋ 意見",
 			meaning: "转折词之后是笔者的主张。本文第三段以「けれども」开头，正文的结论全在那里。",
 			meaningEn: "After a contrast word comes the writer’s claim. The third paragraph here starts with “けれども,” and the conclusion of the piece is all in that paragraph.",
-			example: { jp: "けれども、{次|つぎ}のように{考|かんが}えてみてはどうでしょうか。", cn: "不过，我们不妨这样想一想。", en: "Still, how about thinking of it this way?" },
+			example: { jp: "けれども、{次|つぎ}のように{考|かんが}えてみてはどうでしょうか。", cn: "不过，试着像下面这样想一想，怎么样呢？", en: "Still, how about thinking of it this way?" },
 			note: "本课要点。「なぜなら／というのは」之后是理由，「けれども／だから／したがって」之后是观点。",
 			noteEn: "This is the key point of the lesson. After “なぜなら / というのは” comes a reason; after “けれども / だから / したがって” comes an opinion.",
 		},
@@ -265,33 +265,33 @@ export const w6d2: ReadingDay = {
 			formation: "動詞て形 ＋ はどうでしょうか",
 			meaning: "……如何呢？用委婉的建议形式提出自己的主张。",
 			meaningEn: "How about …? Puts forward a claim in the form of a gentle suggestion.",
-			example: { jp: "{考|かんが}えてみてはどうでしょうか。", cn: "不妨这样想一想如何呢？", en: "How about thinking of it this way?" },
+			example: { jp: "{考|かんが}えてみてはどうでしょうか。", cn: "试着想一想，怎么样呢？", en: "How about thinking of it this way?" },
 		},
 		{
 			pattern: "〜としても",
 			formation: "普通形 ＋ としても",
 			meaning: "即使……也……。表示让步的假设。",
 			meaningEn: "Even if …. A concessive hypothesis.",
-			example: { jp: "その{倍|ばい}の{時間|じかん}がかかったとしても10{年|ねん}。", cn: "即使花上双倍时间，也不过 10 年。", en: "Even if it took twice as long, that would be ten years." },
+			example: { jp: "その{倍|ばい}の{時間|じかん}がかかったとしても10{年|ねん}。", cn: "即便花上其两倍的时间，也就是10年。", en: "Even if it took twice as long, that would be ten years." },
 		},
 		{
 			pattern: "〜ず（に）",
 			formation: "動詞ない形（ない→ず）",
 			meaning: "不……（就）。「〜ないで」的书面形式。",
 			meaningEn: "Without …-ing. The written form of “〜ないで.”",
-			example: { jp: "もう{年|とし}だからとあきらめず", cn: "不要以「都这把年纪了」为由放弃", en: "not giving up because you are “too old”" },
+			example: { jp: "もう{年|とし}だからとあきらめず", cn: "不因「已经上了年纪」而放弃", en: "not giving up because you are “too old”" },
 		},
 		{
 			pattern: "{決|けっ}して〜ない",
 			meaning: "绝不……。强调否定。",
 			meaningEn: "By no means …. Emphasizes a negative.",
-			example: { jp: "50から{始|はじ}めても{決|けっ}して{遅|おそ}くはありません。", cn: "从 50 岁开始也绝不算晚。", en: "Starting at 50 is by no means too late." },
+			example: { jp: "50から{始|はじ}めても{決|けっ}して{遅|おそ}くはありません。", cn: "即使从50岁开始也绝不算晚。", en: "Starting at 50 is by no means too late." },
 		},
 		{
 			pattern: "〜たとしたら",
 			meaning: "如果……的话。表示假设。",
 			meaningEn: "If … (were the case). Marks a hypothesis.",
-			example: { jp: "{平均寿命|へいきんじゅみょう}まで{生|い}きたとしたら", cn: "如果能活到平均寿命的话", en: "if we lived to the average life expectancy" },
+			example: { jp: "{平均寿命|へいきんじゅみょう}まで{生|い}きたとしたら", cn: "假如活到平均寿命的话", en: "if we lived to the average life expectancy" },
 		},
 		{
 			pattern: "〜し{続|つづ}ける",

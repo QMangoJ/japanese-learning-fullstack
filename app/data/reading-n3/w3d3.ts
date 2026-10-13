@@ -12,27 +12,27 @@ export const w3d3: ReadingDay = {
 
 	point: {
 		title: "「します」「です」を{表|あらわ}す{敬語|けいご}や{手紙|てがみ}の{形式|けいしき}に{慣|な}れよう！",
-		titleCn: "熟悉「します」「です」的敬语表达以及书信的固定格式！",
+		titleCn: "来熟悉表示「します」（做）、「です」（是）的敬语以及书信格式吧！",
 		titleEn: "Get used to the polite language using 'shimasu' and 'desu' and the letter format!",
 		figure: {
 			alt: "手紙の構成図：「拝啓」→「○○の季節となりました…」→「さて、…」→「では、お元気で。」→「敬具」。横で「先生、元気ですか？また連絡します。」という手紙に「もっとていねいに書いたほうがいいよ。」と助言している",
-			cn: "书信结构图：「拝啓」→ 季节问候 →「さて，……（正文）」→ 结尾问候 →「敬具」。旁边有人写了「老师，你好吗？再联系。」，被提醒「应该写得更礼貌一些哦」。",
+			cn: "书信结构图：「敬启者」→「已是○○的季节……」→「且说，……」→「那么，请多保重。」→「敬上」。旁边，正对一封写着「老师，你好吗？我再联系。」的信劝道：「还是写得更礼貌一些比较好哦。」",
 			en: "A letter-structure diagram: “Haikei” → seasonal greeting → “Sate, …” (the main point) → closing greeting → “Keigu.” Beside it, someone who wrote “Teacher, how are you? I’ll be in touch” is told, “You should write more politely.”",
 		},
 		tips: [
 			{
 				jp: "{手紙|てがみ}の{形式|けいしき}：①{始|はじ}めのことば（{拝啓|はいけい}・{前略|ぜんりゃく}）→②{始|はじ}めのあいさつ（{季節|きせつ}のあいさつ、{相手|あいて}の{健康|けんこう}をたずねる{文|ぶん}、{最近|さいきん}の{自分|じぶん}のこと）→③{本文|ほんぶん}（「さて」「ところで」「さっそくですが」で{始|はじ}まることが{多|おお}い）→④{終|お}わりのあいさつ（{相手|あいて}の{健康|けんこう}を{願|ねが}うことば、{感謝|かんしゃ}のことば）→⑤{終|お}わりのことば（{敬具|けいぐ}・{草々|そうそう}）。",
-				cn: "书信的固定格式：①起首语（拝啓・前略）→②开头寒暄（季节问候、询问对方健康、自己近况）→③正文（多以「さて」「ところで」「さっそくですが」开头）→④结尾寒暄（祝对方健康、致谢）→⑤结尾语（敬具・草々）。**找正文时，先看「さて」在哪里。**",
+				cn: "书信的格式：①起首语（「拝啓」（敬启者）・「前略」（省略前文））→②开头寒暄（季节问候、询问对方健康的句子、自己最近的情况）→③正文（多以「さて」（且说）、「ところで」（话说）、「さっそくですが」（那就直说了）开头）→④结尾寒暄（祝愿对方健康的话、感谢的话）→⑤结尾语（「敬具」（敬上）・「草々」（草草））。",
 				en: "The set format of a letter: ① opening word (haikei / zenryaku) → ② opening greetings (season, the other person’s health, your own recent news) → ③ main body (often starting with sate / tokoro de / sassoku desu ga) → ④ closing greetings (wishes for their health, thanks) → ⑤ closing word (keigu / sōsō). **To find the main point, look first for where sate appears.**",
 			},
 		],
 		expressions: [
-			{ jp: "します → なさいます", cn: "【尊敬语】您做", en: "to do (honorific)" },
-			{ jp: "します → いたします", cn: "【谦让语】我做", en: "to do (humble)" },
-			{ jp: "〜ています → 〜ていらっしゃいます", cn: "【尊敬语】您正在……", en: "to be doing (honorific)" },
-			{ jp: "〜ています → 〜ております", cn: "【谦让语】我正在……", en: "to be doing (humble)" },
-			{ jp: "〜です → （お／ご）〜でいらっしゃいます", cn: "【尊敬语】您是……", en: "to be (honorific)" },
-			{ jp: "〜です → 〜でございます", cn: "【礼貌语】是……", en: "to be (polite)" },
+			{ jp: "します → なさいます", cn: "します → なさいます（尊敬语：您做）", en: "to do (honorific)" },
+			{ jp: "します → いたします", cn: "します → いたします（谦让语：我做）", en: "to do (humble)" },
+			{ jp: "〜ています → 〜ていらっしゃいます", cn: "〜ています → 〜ていらっしゃいます（尊敬语：您正在……）", en: "to be doing (honorific)" },
+			{ jp: "〜ています → 〜ております", cn: "〜ています → 〜ております（谦让语：我正在……）", en: "to be doing (humble)" },
+			{ jp: "〜です → （お／ご）〜でいらっしゃいます", cn: "〜です → （お／ご）〜でいらっしゃいます（尊敬语：您是……）", en: "to be (honorific)" },
+			{ jp: "〜です → 〜でございます", cn: "〜です → 〜でございます（郑重语：是……）", en: "to be (polite)" },
 			{ jp: "拝啓／敬具", kana: "はいけい／けいぐ", cn: "敬启／敬上（正式书信的起首语与结尾语，成对使用）", en: "Dear Sir or Madam / Yours sincerely (formal pair)" },
 			{ jp: "前略／草々", kana: "ぜんりゃく／そうそう", cn: "前略／草草（省去寒暄时使用，成对使用）", en: "Skipping the opening / hastily yours (informal pair)" },
 		],
@@ -40,7 +40,7 @@ export const w3d3: ReadingDay = {
 
 	renshu: {
 		instruction: "{次|つぎ}の{会話文|かいわぶん}を{読|よ}んで、{後|あと}の{文|ぶん}から{正|ただ}しいものを{選|えら}ぼう。",
-		instructionCn: "阅读下面的对话，从后面的句子中选出正确的。（答案在下一页）",
+		instructionCn: "阅读下面的会话，从后面的句子中选出正确的吧。",
 		instructionEn: "Read the dialogue below and choose the correct statements from the sentences that follow. (Answers are on the next page.)",
 		blocks: [
 			{
@@ -49,7 +49,7 @@ export const w3d3: ReadingDay = {
 				speakerCn: "母亲",
 				speakerEn: "Mother",
 				jp: "{明|あきら}、{由美|ゆみ}ちゃん、って{覚|おぼ}えてる？　{去年|きょねん}の{夏|なつ}、{一緒|いっしょ}にザリガニ（※1）とりに{行|い}ったり、{花火|はなび}をしたりした{子|こ}。",
-				cn: "小明，你还记得由美吗？去年夏天一起去抓小龙虾、放烟花的那个孩子。",
+				cn: "小明，由美，你还记得吗？就是去年夏天一起去抓小龙虾（※1）、一起放烟花的那个孩子。",
 				en: "Akira, do you remember Yumi? The child you caught crayfish with and set off fireworks with last summer.",
 			},
 			{
@@ -58,7 +58,7 @@ export const w3d3: ReadingDay = {
 				speakerCn: "小明",
 				speakerEn: "Akira",
 				jp: "ああ、ザリガニ{見|み}て{泣|な}いたあの{子|こ}？",
-				cn: "啊，是看到小龙虾就哭的那个孩子？",
+				cn: "哦，是看到小龙虾就哭了的那个孩子？",
 				en: "Oh, the kid who cried when she saw the crayfish?",
 			},
 			{
@@ -67,7 +67,7 @@ export const w3d3: ReadingDay = {
 				speakerCn: "母亲",
 				speakerEn: "Mother",
 				jp: "そうそう、またお{盆休|ぼんやす}み（※2）に{来|く}るんだって。{今度|こんど}は{赤|あか}ちゃんも{一緒|いっしょ}よ。{健一君|けんいちくん}っていうのよ。あの{由美|ゆみ}ちゃんがお{姉|ねえ}ちゃんになったのよ。",
-				cn: "对对，听说盂兰盆节假期还要来。这次婴儿也一起来哦。叫健一。那个由美当上姐姐了呢。",
+				cn: "对对，听说他们盂兰盆节假期（※2）还会再来呢。这次宝宝也一起来哦。名叫健一哦。那个由美当上姐姐了哦。",
 				en: "That’s right. I hear they’re coming again during the Obon holiday. This time the baby is coming too. His name is Kenichi. That little Yumi has become a big sister.",
 			},
 			{
@@ -76,7 +76,7 @@ export const w3d3: ReadingDay = {
 				speakerCn: "小明",
 				speakerEn: "Akira",
 				jp: "ふーん、あんなに{小|ちい}さくてもお{姉|ねえ}ちゃんかぁ。",
-				cn: "唔，那么小也当姐姐啦。",
+				cn: "嗯——，那么小也是姐姐呀。",
 				en: "Huh, she’s that little and already a big sister.",
 			},
 		],
@@ -86,49 +86,49 @@ export const w3d3: ReadingDay = {
 		],
 		choices: [
 			{ jp: "{由美|ゆみ}は{明|あきら}より{年上|としうえ}である。", cn: "由美比小明年长。", en: "Yumi is older than Akira." },
-			{ jp: "{明|あきら}と{由美|ゆみ}は{去年|きょねん}の{夏|なつ}、{一緒|いっしょ}に{遊|あそ}んだ。", cn: "小明和由美去年夏天一起玩过。", en: "Akira and Yumi played together last summer." },
+			{ jp: "{明|あきら}と{由美|ゆみ}は{去年|きょねん}の{夏|なつ}、{一緒|いっしょ}に{遊|あそ}んだ。", cn: "小明和由美去年夏天一起玩了。", en: "Akira and Yumi played together last summer." },
 			{ jp: "{由美|ゆみ}は{健一|けんいち}の{妹|いもうと}である。", cn: "由美是健一的妹妹。", en: "Yumi is Kenichi’s younger sister." },
-			{ jp: "{明|あきら}は{去年|きょねん}の{夏|なつ}、{健一|けんいち}に{会|あ}った。", cn: "小明去年夏天见过健一。", en: "Akira met Kenichi last summer." },
+			{ jp: "{明|あきら}は{去年|きょねん}の{夏|なつ}、{健一|けんいち}に{会|あ}った。", cn: "小明去年夏天见到了健一。", en: "Akira met Kenichi last summer." },
 			{ jp: "{由美|ゆみ}はザリガニをこわがった。", cn: "由美害怕小龙虾。", en: "Yumi was afraid of the crayfish." },
 		],
 		answers: [2, 5],
 		hint: {
 			jp: "{由美|ゆみ}は「あんなに{小|ちい}さくても」と{言|い}われているので{明|あきら}より{年下|としした}。{健一|けんいち}は{今度生|こんどう}まれた{赤|あか}ちゃんで、{由美|ゆみ}の{弟|おとうと}。",
-			cn: "小明说「那么小也当姐姐」，说明由美比小明小；健一是刚出生的婴儿、是由美的弟弟，所以去年夏天还没见过。",
+			cn: "由美被说成「就算那么小」，所以比小明年幼。健一是这次出生的婴儿，是由美的弟弟。",
 			en: "Akira says “she’s that little and already a big sister,” so Yumi is younger than Akira. Kenichi is a newborn baby — Yumi’s younger brother — so Akira could not have met him last summer.",
 		},
 	},
 
 	mondai: {
 		instruction: "{次|つぎ}の{手紙|てがみ}を{読|よ}んで、{後|あと}の{問|と}いに{答|こた}えなさい。",
-		instructionCn: "阅读下面的书信，回答后面的问题。（答案在别册 p.4）※原书为竖排书写。",
+		instructionCn: "阅读下面的信，回答后面的问题。",
 		instructionEn: "Read the letter below and answer the questions that follow. (Answers are in the separate booklet, p. 4.) ※ The original is written vertically.",
 		blocks: [
 			{
 				type: "paragraph",
 				jp: "{拝啓|はいけい}　{毎日暑|まいにちあつ}い{日|ひ}が{続|つづ}いておりますが、みなさま（　①　）。お{母様|かあさま}が{退院|たいいん}なさったそうですね。{良|よ}くなられて{本当|ほんとう}によかったです。",
-				cn: "敬启者　每天持续着炎热的日子，各位（　①　）。听说令堂已经出院了。能够好转真是太好了。",
+				cn: "敬启者　虽然每天都持续着炎热的日子，各位（　①　）。听说令堂出院了呢。好转了，真是太好了。",
 				en: "Dear friends, these hot days continue; I hope you all (　①　). I hear your mother has been discharged from the hospital. I’m so glad she is better.",
 			},
 			{
 				type: "paragraph",
 				indent: true,
 				jp: "こちらも、おかげさまでみんな（　②　）。{去年|きょねん}の{今|いま}ごろは、{大|おお}きなおなかを{抱|かか}えてふうふう{言|い}って（※1）いましたが、{今|いま}は{早|はや}くも（※2）{歩|ある}き{出|だ}した{健一|けんいち}の{後|あと}を{追|お}いかけるのに{忙|いそが}しく、やはりふうふう{言|い}っています＊。",
-				cn: "我们这边托您的福，大家（　②　）。去年这个时候，我还挺着大肚子气喘吁吁的；如今又忙着追在已经会走路的健一后面跑，还是一样气喘吁吁＊。",
+				cn: "我们这边也托您的福，大家（　②　）。去年这个时候我还挺着大肚子、气喘吁吁（※1），而现在忙着追在早已（※2）开始走路的健一后面，还是气喘吁吁＊。",
 				en: "On our side, thanks to you, everyone (　②　). This time last year I was puffing and panting with a big belly; now I’m busy chasing after Kenichi, who is already walking, and I’m puffing and panting again＊.",
 			},
 			{
 				type: "paragraph",
 				indent: true,
 				jp: "ところで、お{盆|ぼん}には{一家|いっか}そろって{実家|じっか}（※3）へ{帰|かえ}る{予定|よてい}です。またそちらのほうにもお{伺|うかが}いしたいと{思|おも}っていますが、ご{都合|つごう}はいかがでしょうか。{由美|ゆみ}は{明君|あきらくん}と{花火|はなび}をしてもらったことをよく{覚|おぼ}えていて、「お{兄|にい}ちゃんと{花火|はなび}するんだ。」と{楽|たの}しみにしています＊＊。",
-				cn: "话说，盂兰盆节我们打算全家一起回娘家。届时也想到您那边拜访，不知您是否方便？由美一直记得小明陪她放烟花的事，正期待着说「要和哥哥一起放烟花」＊＊。",
+				cn: "话说，盂兰盆节我们计划全家一起回娘家（※3）。也想前往府上拜访，不知您是否方便？由美一直清楚地记着让小明陪着放了烟花的事，正满心期待，说着：「我要和哥哥放烟花。」＊＊。",
 				en: "By the way, we plan to go back to my parents’ home as a family for Obon. We would also like to visit you then — would that be convenient? Yumi still remembers setting off fireworks with Akira and is looking forward to it, saying, “I’m going to do fireworks with big brother”＊＊.",
 			},
 			{
 				type: "paragraph",
 				indent: true,
 				jp: "まだまだこれからが{夏本番|なつほんばん}（※4）です。どうかみなさまお{体|からだ}に{気|き}をつけてお{過|す}ごしください。では、またご{連絡|れんらく}いたします。",
-				cn: "今后才是真正的盛夏。请各位务必保重身体。那么，之后再与您联系。",
+				cn: "真正的盛夏（※4）还在后头。请各位务必保重身体。那么，之后再与您联系。",
 				en: "The real heat of summer is still ahead. Please take good care of yourselves. I’ll be in touch again.",
 			},
 			{ type: "line", jp: "{敬具|けいぐ}", cn: "敬上", en: "Yours sincerely", align: "right" },
@@ -145,12 +145,12 @@ export const w3d3: ReadingDay = {
 		pageNotes: [
 			{
 				jp: "＊ Last year at this time I was always short of breath because of my growing tummy. Now our Kenichi is already starting to walk, so I again find myself panting as I am busy chasing after him.",
-				cn: "＊去年这个时候我正挺着大肚子、总是气喘吁吁；现在又忙着追在已经会走路的健一身后，同样气喘吁吁。",
+				cn: "＊去年这个时候，因为肚子越来越大，我总是喘不上气。现在我们的健一已经开始走路了，我忙着追赶他，又气喘吁吁起来。",
 				en: "＊ Last year at this time I was always short of breath because of my growing tummy. Now our Kenichi is already starting to walk, so I again find myself panting as I am busy chasing after him.",
 			},
 			{
 				jp: "＊＊ we are planning to go back to my parents' during the Obon holiday",
-				cn: "＊＊盂兰盆节我们打算全家一起回娘家。",
+				cn: "＊＊我们计划在盂兰盆节期间回我父母家。",
 				en: "＊＊ we are planning to go back to my parents' during the Obon holiday",
 			},
 		],
@@ -161,10 +161,10 @@ export const w3d3: ReadingDay = {
 				cn: "填入（　①　）（　②　）的词语组合，最恰当的是哪一个？",
 				en: "Which combination of words is the most appropriate for (　①　) and (　②　)?",
 				choices: [
-					{ jp: "①お{元気|げんき}でおりますか　②{元気|げんき}でございます", cn: "①お元気でおりますか　②元気でございます", en: "① o-genki de orimasu ka  ② genki de gozaimasu" },
-					{ jp: "①お{元気|げんき}でいらっしゃいますか　②{元気|げんき}にしております", cn: "①お元気でいらっしゃいますか　②元気にしております", en: "① o-genki de irasshaimasu ka  ② genki ni shite orimasu" },
-					{ jp: "①お{元気|げんき}でなさいますか　②{元気|げんき}にしております", cn: "①お元気でなさいますか　②元気にしております", en: "① o-genki de nasaimasu ka  ② genki ni shite orimasu" },
-					{ jp: "①お{元気|げんき}でいらっしゃいますか　②{元気|げんき}にいたしてございます", cn: "①お元気でいらっしゃいますか　②元気にいたしてございます", en: "① o-genki de irasshaimasu ka  ② genki ni itashite gozaimasu" },
+					{ jp: "①お{元気|げんき}でおりますか　②{元気|げんき}でございます", cn: "①您身体还好吗（谦让语）　②很好（郑重语）", en: "① o-genki de orimasu ka  ② genki de gozaimasu" },
+					{ jp: "①お{元気|げんき}でいらっしゃいますか　②{元気|げんき}にしております", cn: "①您身体可好吗（尊敬语）　②一直过得很好（谦让语）", en: "① o-genki de irasshaimasu ka  ② genki ni shite orimasu" },
+					{ jp: "①お{元気|げんき}でなさいますか　②{元気|げんき}にしております", cn: "①您身体可好吗（“做”的尊敬语）　②一直过得很好（谦让语）", en: "① o-genki de nasaimasu ka  ② genki ni shite orimasu" },
+					{ jp: "①お{元気|げんき}でいらっしゃいますか　②{元気|げんき}にいたしてございます", cn: "①您身体可好吗（尊敬语）　②谨将身体维持得很好（谦让兼郑重语）", en: "① o-genki de irasshaimasu ka  ② genki ni itashite gozaimasu" },
 				],
 				answer: 2,
 				explanation:
@@ -187,13 +187,13 @@ export const w3d3: ReadingDay = {
 			{
 				label: "問2",
 				jp: "{中村|なかむら}さんは{何|なん}のためにこの{手紙|てがみ}を{書|か}いたのか。",
-				cn: "中村是为了什么写这封信的？",
+				cn: "中村女士是为了什么写这封信的？",
 				en: "Why did Nakamura write this letter?",
 				choices: [
-					{ jp: "{季節|きせつ}のあいさつをするため。", cn: "为了做季节问候。", en: "To give a seasonal greeting." },
-					{ jp: "{松田|まつだ}さんの{家族|かぞく}の{健康状態|けんこうじょうたい}を{聞|き}くため。", cn: "为了询问松田家人的健康状况。", en: "To ask about the health of the Matsuda family." },
-					{ jp: "{赤|あか}ちゃんが{生|う}まれたことを{知|し}らせるため。", cn: "为了通知孩子出生的事。", en: "To announce that a baby has been born." },
-					{ jp: "お{盆|ぼん}に{実家|じっか}に{帰|かえ}ることを{松田|まつだ}さんに{知|し}らせるため。", cn: "为了告诉松田盂兰盆节要回娘家的事。", en: "To let Matsuda know they will go back to her parents’ home for Obon." },
+					{ jp: "{季節|きせつ}のあいさつをするため。", cn: "为了致以季节问候。", en: "To give a seasonal greeting." },
+					{ jp: "{松田|まつだ}さんの{家族|かぞく}の{健康状態|けんこうじょうたい}を{聞|き}くため。", cn: "为了询问松田女士家人的健康状况。", en: "To ask about the health of the Matsuda family." },
+					{ jp: "{赤|あか}ちゃんが{生|う}まれたことを{知|し}らせるため。", cn: "为了告知婴儿出生一事。", en: "To announce that a baby has been born." },
+					{ jp: "お{盆|ぼん}に{実家|じっか}に{帰|かえ}ることを{松田|まつだ}さんに{知|し}らせるため。", cn: "为了告知松田女士盂兰盆节回娘家一事。", en: "To let Matsuda know they will go back to her parents’ home for Obon." },
 				],
 				answer: 4,
 				explanation:
@@ -241,13 +241,13 @@ export const w3d3: ReadingDay = {
 			pattern: "〜ております（謙譲語）",
 			meaning: "「〜ています」的谦让形式，用于说自己一方的状态。",
 			meaningEn: "Humble form of ~te imasu, used for one’s own side’s state.",
-			example: { jp: "{毎日暑|まいにちあつ}い{日|ひ}が{続|つづ}いております", cn: "每天持续着炎热的日子", en: "These hot days continue" },
+			example: { jp: "{毎日暑|まいにちあつ}い{日|ひ}が{続|つづ}いております", cn: "每天都持续着炎热的日子", en: "These hot days continue" },
 		},
 		{
 			pattern: "〜ていらっしゃいます（尊敬語）",
 			meaning: "「〜ています」的尊敬形式，用于对方的状态。",
 			meaningEn: "Honorific form of ~te imasu, used for the other person’s state.",
-			example: { jp: "みなさまお{元気|げんき}でいらっしゃいますか。", cn: "各位都好吗？", en: "I hope you are all well." },
+			example: { jp: "みなさまお{元気|げんき}でいらっしゃいますか。", cn: "各位身体可好吗。", en: "I hope you are all well." },
 			note: "本课要点。①对方 → 尊敬语；②自己 → 谦让语，这是填空题的判断依据。",
 			noteEn: "This lesson’s key point. ① the other person → honorific; ② oneself → humble. That is how you decide the fill-in.",
 		},
@@ -261,7 +261,7 @@ export const w3d3: ReadingDay = {
 			pattern: "ところで／さて",
 			meaning: "话说、且说。书信中用来从寒暄切入正文的信号词。",
 			meaningEn: "By the way / now then. Signal words that move a letter from greetings into the main point.",
-			example: { jp: "ところで、お{盆|ぼん}には{一家|いっか}そろって{実家|じっか}へ{帰|かえ}る{予定|よてい}です。", cn: "话说，盂兰盆节我们打算全家回娘家。", en: "By the way, we plan to go back to my parents’ home as a family for Obon." },
+			example: { jp: "ところで、お{盆|ぼん}には{一家|いっか}そろって{実家|じっか}へ{帰|かえ}る{予定|よてい}です。", cn: "话说，盂兰盆节我们计划全家一起回娘家。", en: "By the way, we plan to go back to my parents’ home as a family for Obon." },
 			note: "找「写信目的」时，先找到「さて」「ところで」，答案通常就在后面。",
 			noteEn: "When looking for “why this letter was written,” find sate or tokoro de first — the answer is usually right after.",
 		},
@@ -270,7 +270,7 @@ export const w3d3: ReadingDay = {
 			formation: "普通形 ＋ そうです",
 			meaning: "听说……。表示传闻。",
 			meaningEn: "I hear that …. Used for hearsay.",
-			example: { jp: "お{母様|かあさま}が{退院|たいいん}なさったそうですね。", cn: "听说令堂出院了。", en: "I hear your mother has been discharged." },
+			example: { jp: "お{母様|かあさま}が{退院|たいいん}なさったそうですね。", cn: "听说令堂出院了呢。", en: "I hear your mother has been discharged." },
 		},
 		{
 			pattern: "〜のに{忙|いそが}しい",
@@ -283,7 +283,7 @@ export const w3d3: ReadingDay = {
 			pattern: "〜てもらう",
 			meaning: "请（别人）为我做……。",
 			meaningEn: "To have (someone) do … for me.",
-			example: { jp: "{明君|あきらくん}と{花火|はなび}をしてもらったこと", cn: "小明陪她放烟花的事", en: "Akira setting off fireworks with her" },
+			example: { jp: "{明君|あきらくん}と{花火|はなび}をしてもらったこと", cn: "让小明陪着放了烟花这件事", en: "Akira setting off fireworks with her" },
 		},
 	],
 };
