@@ -12,27 +12,27 @@ export const w6d2: ReadingDay = {
 
 	point: {
 		title: "キーワードを{見|み}つけよう！",
-		titleCn: "找出关键词！",
+		titleCn: "找出关键词吧！",
 		titleEn: "Try to find the key words!",
 		figure: {
 			alt: "左手の新聞記事では「キーワード」が何度も○で囲まれ、四択の答えも①キーワード。右では「女の子」が何度も出てくる文を○で囲みながら読むキャラクター",
-			cn: "左边报纸短文里「キーワード」被反复圈出，选项也是①キーワード；右边角色一边读一边把反复出现的「女の子」圈起来。",
+			cn: "左边的报纸文章中，「关键词」被反复用○圈出，四选一的答案也是①关键词。右边是一个角色，一边把「女孩」反复出现的句子用○圈起来，一边阅读。",
 			en: "On the left, a newspaper snippet has キーワード circled again and again, and the multiple-choice answer is ① キーワード. On the right, a character reads while circling 女の子, which keeps appearing.",
 		},
 		tips: [
 			{
 				jp: "{例|たと}えばこんなふうにチェックします。",
-				cn: "比如可以像这样做记号。",
+				cn: "例如，就像这样来做标记。",
 				en: "Check the text in a way like this, for example.",
 			},
 			{
 				jp: "★{何度|なんど}も{出|で}てくる{言葉|ことば}はキーワードです。○をつけながら{読|よ}みましょう。",
-				cn: "反复出现的词就是关键词。一边圈一边读。",
+				cn: "★反复出现的词语就是关键词。一边标上○一边读吧。",
 				en: "Words that appear repeatedly are keywords. Mark them with ○ as you read.",
 			},
 			{
 				jp: "どんな{文章|ぶんしょう}にもキーワードというものがあります。キーワードとは、かなり{重要|じゅうよう}な{言葉|ことば}です。{文章|ぶんしょう}にキーワードという{言葉|ことば}が{何度|なんど}も{出|で}てきたら、それがキーワードだという{可能性|かのうせい}が{高|たか}いです。",
-				cn: "任何文章都有关键词。关键词是相当重要的词。如果「关键词」这个词在文章里反复出现，它本身是关键词的可能性就很高——这是书上那则短文的玩笑。",
+				cn: "无论什么文章，都有关键词这种东西。所谓关键词，是相当重要的词语。如果文章里反复出现「关键词」这个词，那么它是关键词的可能性就很高。",
 				en: "Every passage has keywords — fairly important words. If the word “keyword” itself keeps appearing, it is very likely the keyword. That is the joke in the sample clipping.",
 			},
 		],
@@ -51,7 +51,7 @@ export const w6d2: ReadingDay = {
 	renshu: {
 		instruction:
 			"{次|つぎ}の{会話文|かいわぶん}を{読|よ}んで、{後|あと}の{文|ぶん}から{正|ただ}しいものを{選|えら}ぼう。",
-		instructionCn: "阅读下面的对话，从后面的句子中选出正确的。（答案在下一页）",
+		instructionCn: "阅读下面的对话，从后面的句子中选出正确的吧。",
 		instructionEn:
 			"Read the conversation below and choose the correct statements from the sentences that follow. (Answers are on the next page.)",
 		blocks: [
@@ -61,7 +61,7 @@ export const w6d2: ReadingDay = {
 				speakerCn: "A",
 				speakerEn: "A",
 				jp: "わあ、きれいなマンション。{新築|しんちく}なんだね。",
-				cn: "哇，好漂亮的公寓。是新建的啊。",
+				cn: "哇，好漂亮的公寓。是新建的呢。",
 				en: "Wow, what a nice apartment building. It’s newly built, isn’t it?",
 			},
 			{
@@ -70,7 +70,7 @@ export const w6d2: ReadingDay = {
 				speakerCn: "B",
 				speakerEn: "B",
 				jp: "うん。でもさ、なんか、この{部屋|へや}に{引|ひ}っ{越|こ}してから{調子|ちょうし}が{悪|わる}いんだ。",
-				cn: "嗯。可是啊，搬进这间房之后身体就不太对劲。",
+				cn: "嗯。不过啊，总觉得，搬进这个房间之后就不舒服了。",
 				en: "Yeah. But, you know, I’ve felt off ever since I moved into this room.",
 			},
 			{
@@ -79,7 +79,7 @@ export const w6d2: ReadingDay = {
 				speakerCn: "A",
 				speakerEn: "A",
 				jp: "え？　どんなふうに？",
-				cn: "诶？怎么个不对劲法？",
+				cn: "诶？是怎样的呢？",
 				en: "Huh? In what way?",
 			},
 			{
@@ -88,7 +88,7 @@ export const w6d2: ReadingDay = {
 				speakerCn: "B",
 				speakerEn: "B",
 				jp: "よく{頭痛|ずつう}がするし、{目|め}がチカチカする（{注|ちゅう}1）んだよね。",
-				cn: "经常头痛，眼睛还刺刺的（注1）。",
+				cn: "经常会头痛，而且眼睛还刺刺的（注1）呢。",
 				en: "I get headaches a lot, and my eyes burn (note 1).",
 			},
 			{
@@ -97,7 +97,7 @@ export const w6d2: ReadingDay = {
 				speakerCn: "A",
 				speakerEn: "A",
 				jp: "あ、もしかしたら、シックハウス{症候群|しょうこうぐん}（{注|ちゅう}2）じゃない？　ほら、{壁紙|かべがみ}の{接着剤|せっちゃくざい}（{注|ちゅう}3）なんかでアレルギー{症状|しょうじょう}（{注|ちゅう}4）が{出|で}るっていうじゃない。",
-				cn: "啊，会不会是病屋综合征（注2）？你看，不是说壁纸的粘合剂（注3）什么的会引发过敏症状（注4）吗。",
+				cn: "啊，说不定是病屋综合征（注2）吧？你看，不是说壁纸的粘合剂（注3）什么的会引发过敏症状（注4）吗。",
 				en: "Oh, maybe it’s sick-house syndrome (note 2)? You know — they say wallpaper adhesive (note 3) and such can cause allergic symptoms (note 4).",
 			},
 			{
@@ -106,7 +106,7 @@ export const w6d2: ReadingDay = {
 				speakerCn: "B",
 				speakerEn: "B",
 				jp: "やっぱりそうかなぁ。{病院|びょういん}へ{行|い}って{調|しら}べてもらおうかな。",
-				cn: "果然是那样吗。要不要去医院查一查。",
+				cn: "果然是这样吗。要不要去医院让人查一查呢。",
 				en: "So that’s it, then? Maybe I should go to the hospital and have it checked.",
 			},
 		],
@@ -131,27 +131,27 @@ export const w6d2: ReadingDay = {
 		choices: [
 			{
 				jp: "Bさんは{最近|さいきん}、{新築|しんちく}のマンションに{引|ひ}っ{越|こ}した。",
-				cn: "B 最近搬进了新建的公寓。",
+				cn: "B最近搬进了新建的公寓。",
 				en: "B recently moved into a newly built apartment.",
 			},
 			{
 				jp: "Bさんの{体調|たいちょう}が{悪|わる}い{原因|げんいん}は、はっきりわかっている。",
-				cn: "B 身体不适的原因已经清楚了。",
+				cn: "B身体不适的原因已经很清楚了。",
 				en: "The cause of B’s feeling unwell is clearly known.",
 			},
 			{
 				jp: "Bさんは{引|ひ}っ{越|こ}しする{前|まえ}から{接着剤|せっちゃくざい}に{対|たい}してアレルギー{症状|しょうじょう}が{出|で}ていた。",
-				cn: "B 在搬家之前就对粘合剂出现过过敏症状。",
+				cn: "B从搬家之前起就一直对粘合剂有过敏症状。",
 				en: "B already had allergic symptoms to adhesive before moving.",
 			},
 			{
 				jp: "Aさんもシックハウス{症候群|しょうこうぐん}である。",
-				cn: "A 也得了病屋综合征。",
+				cn: "A也患有病屋综合征。",
 				en: "A also has sick-house syndrome.",
 			},
 			{
 				jp: "Bさんは{頭痛|ずつう}や{目|め}がチカチカする{原因|げんいん}を{病院|びょういん}で{調|しら}べてもらいたい。",
-				cn: "B 想去医院查清头痛和眼睛刺痛的原因。",
+				cn: "B想在医院让人查一查头痛和眼睛刺刺的原因。",
 				en: "B wants the hospital to check the cause of the headaches and burning eyes.",
 			},
 		],
@@ -160,35 +160,35 @@ export const w6d2: ReadingDay = {
 
 	mondai: {
 		instruction: "{次|つぎ}の{文章|ぶんしょう}を{読|よ}んで、{後|あと}の{問|と}いに{答|こた}えなさい。",
-		instructionCn: "阅读下面的文章，回答后面的问题。（答案在别册 p.7）",
+		instructionCn: "阅读下面的文章，回答后面的问题。",
 		instructionEn: "Read the following passage and answer the questions that follow. (Answers are in the separate booklet, p. 7.)",
 		blocks: [
 			{
 				type: "paragraph",
 				indent: true,
 				jp: "{近年|きんねん}、「シックハウス{症候群|しょうこうぐん}」という{言葉|ことば}が{用|もち}いられるようになった。「シック」「ハウス」はともに{英語|えいご}の「sick（{病気|びょうき}）」「house（{家|いえ}）」から{来|き}ているが、{実際|じっさい}にはどういうものなのだろうか。",
-				cn: "近年来，「病屋综合征」这个词开始被人使用。「シック」「ハウス」都来自英语的 sick（生病）和 house（房子），但实际上它究竟是怎样一种情况呢？",
+				cn: "近年来，「病屋综合征」这个词开始被使用了。「シック」和「ハウス」都来自英语的「sick（疾病）」和「house（家）」，但实际上它究竟是什么呢？",
 				en: "In recent years the term “sick-house syndrome” has come into use. Both “sick” and “house” come from English, but what is it actually?",
 			},
 			{
 				type: "paragraph",
 				indent: true,
 				jp: "{新築|しんちく}の{家|いえ}に{引|ひ}っ{越|こ}しをすると、{体調|たいちょう}が{悪|わる}くなる{人|ひと}がいる。これは{家|いえ}に{使|つか}われている{材料|ざいりょう}に{対|たい}して{人間|にんげん}の{体|からだ}がアレルギーのような{反応|はんのう}（{注|ちゅう}1）を{起|お}こすためである。この{症状|しょうじょう}が「シックハウス{症候群|しょうこうぐん}」で、{木材|もくざい}や{壁紙|かべがみ}に{使用|しよう}されている{接着剤|せっちゃくざい}の{原料|げんりょう}に{含|ふく}まれるホルムアルデヒド（{注|ちゅう}2）が{主|おも}な{原因|げんいん}だと{言|い}われている。",
-				cn: "有人搬进新建的房子后身体就会变差。这是因为人体对房子里使用的材料产生了类似过敏的反应（注1）。这种症状就是「病屋综合征」，据说木材、壁纸所用粘合剂原料中含有的甲醛（注2）是主要原因。",
+				cn: "有人搬进新建的房子后，身体状况会变差。这是因为人的身体会对房子里使用的材料产生类似过敏的反应（注1）。这种症状就是「病屋综合征」，据说木材和壁纸所使用的粘合剂的原料中含有的甲醛（注2）是主要原因。",
 				en: "Some people feel unwell after moving into a newly built house. That is because the body has an allergy-like reaction (note 1) to the materials used in the house. This condition is “sick-house syndrome,” and formaldehyde (note 2) contained in the raw materials of adhesives used on wood and wallpaper is said to be the main cause.",
 			},
 			{
 				type: "paragraph",
 				indent: true,
 				jp: "ホルムアルデヒドにはたんぱく{質|しつ}（{注|ちゅう}3）を{変化|へんか}させるという{特性|とくせい}がある。{人間|にんげん}の{体|からだ}は{水分|すいぶん}を{除|のぞ}くと{半分|はんぶん}{近|ちか}くがたんぱく{質|しつ}で{形成|けいせい}されて（{注|ちゅう}4）おり、これが{人体|じんたい}に{害|がい}を{与|あた}えるのは{当然|とうぜん}である。",
-				cn: "甲醛有使蛋白质（注3）发生变化的特性。人体除去水分后将近一半由蛋白质构成（注4），它危害人体也就理所当然。",
+				cn: "甲醛具有使蛋白质（注3）发生变化这一特性。人体除去水分后，将近一半由蛋白质构成（注4），因此这会危害人体是理所当然的。",
 				en: "Formaldehyde has the property of altering protein (note 3). With water removed, nearly half of the human body is formed of protein (note 4), so of course this harms the body.",
 			},
 			{
 				type: "paragraph",
 				indent: true,
 				jp: "しかし、「シックハウス{症候群|しょうこうぐん}」が、このたんぱく{質|しつ}の{変質|へんしつ}によるものなのかと{言|い}われると、{一概|いちがい}にそうとも{言|い}えない（{注|ちゅう}5）。なぜならホルムアルデヒドを{含|ふく}む{接着剤|せっちゃくざい}を{使|つか}った{壁紙|かべがみ}を{貼|は}った{部屋|へや}であっても、{空気中|くうきちゅう}に{含|ふく}まれるホルムアルデヒドはほんのわずかで、たんぱく{質|しつ}を{変質|へんしつ}させる{量|りょう}には{満|み}たない（{注|ちゅう}6）からだ。",
-				cn: "但是，若问病屋综合征是不是由这种蛋白质变质引起的，却不能一概而论（注5）。因为即便是贴了含甲醛粘合剂壁纸的房间，空气中的甲醛也只有一点点，达不到使蛋白质变质的量（注6）。",
+				cn: "但是，若问「病屋综合征」是不是由这种蛋白质的变质引起的，却不能一概而论（注5）。因为即便是贴了使用含有甲醛的粘合剂的壁纸的房间，空气中含有的甲醛也只有一点点，达不到使蛋白质变质的量（注6）。",
 				en: "But if one asks whether sick-house syndrome is due to this denaturation of protein, one cannot generalize (note 5). Even in a room papered with adhesive that contains formaldehyde, the formaldehyde in the air is only a trace, and it falls short of the amount that would denature protein (note 6).",
 			},
 		],
@@ -210,7 +210,7 @@ export const w6d2: ReadingDay = {
 			{
 				label: "問1",
 				jp: "これは{何|なに}について{書|か}かれた{文章|ぶんしょう}か。",
-				cn: "这是关于什么写的文章？",
+				cn: "这是关于什么而写的文章？",
 				en: "What is this passage written about?",
 				choices: [
 					{
@@ -220,7 +220,7 @@ export const w6d2: ReadingDay = {
 					},
 					{
 						jp: "シックハウス{症候群|しょうこうぐん}の{原因物質|げんいんぶっしつ}について",
-						cn: "关于病屋综合征的致病物质",
+						cn: "关于病屋综合征的原因物质",
 						en: "about the causal substance of sick-house syndrome",
 					},
 					{
@@ -230,7 +230,7 @@ export const w6d2: ReadingDay = {
 					},
 					{
 						jp: "シックハウス{症候群|しょうこうぐん}になりやすい{体質|たいしつ}について",
-						cn: "关于容易得病屋综合征的体质",
+						cn: "关于容易患上病屋综合征的体质",
 						en: "about constitutions prone to sick-house syndrome",
 					},
 				],
@@ -255,22 +255,22 @@ export const w6d2: ReadingDay = {
 			{
 				label: "問2",
 				jp: "なぜ{一概|いちがい}にそうとも{言|い}えないのか。",
-				cn: "为什么不能一概而论？",
+				cn: "为什么不能一概而论呢？",
 				en: "Why can one not generalize that way?",
 				choices: [
 					{
 						jp: "ホルムアルデヒドがたんぱく{質|しつ}を{変質|へんしつ}させるとは{限|かぎ}らないから。",
-						cn: "因为甲醛未必会使蛋白质变质。",
+						cn: "因为甲醛并不一定会使蛋白质变质。",
 						en: "Because it is not necessarily the case that formaldehyde denatures protein.",
 					},
 					{
 						jp: "{空気中|くうきちゅう}のホルムアルデヒドの{量|りょう}はたんぱく{質|しつ}を{変質|へんしつ}させるほどの{量|りょう}ではないから。",
-						cn: "因为空气中的甲醛量还达不到使蛋白质变质的程度。",
+						cn: "因为空气中的甲醛量并非足以使蛋白质变质的量。",
 						en: "Because the amount of formaldehyde in the air is not enough to denature protein.",
 					},
 					{
 						jp: "{接着剤|せっちゃくざい}にホルムアルデヒドが{含|ふく}まれていない{場合|ばあい}があるから。",
-						cn: "因为有的粘合剂不含甲醛。",
+						cn: "因为有的粘合剂并不含有甲醛。",
 						en: "Because some adhesives do not contain formaldehyde.",
 					},
 					{
@@ -328,7 +328,7 @@ export const w6d2: ReadingDay = {
 			meaningEn: "to come to… (it was not so before). Marks a resulting change.",
 			example: {
 				jp: "「シックハウス{症候群|しょうこうぐん}」という{言葉|ことば}が{用|もち}いられるようになった。",
-				cn: "「病屋综合征」这个词开始被人使用了。",
+				cn: "「病屋综合征」这个词开始被使用了。",
 				en: "The term “sick-house syndrome” has come into use.",
 			},
 		},

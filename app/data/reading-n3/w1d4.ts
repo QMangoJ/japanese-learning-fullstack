@@ -12,17 +12,17 @@ export const w1d4: ReadingDay = {
 
 	point: {
 		title: "{似|に}ている{言葉|ことば}に{注意|ちゅうい}しよう！",
-		titleCn: "注意相似的词汇！",
+		titleCn: "注意相似的词语吧！",
 		titleEn: "Pay attention to similar words!",
 		figure: {
 			alt: "「レポートは7月31日までに提出すること」という掲示を見て、「7月31日までに提出しないといけないって。」「7月31日って、明日だ！」と驚く二人",
-			cn: "两人看着「报告须于 7 月 31 日之前提交」的公告，一个说「说是必须在 7 月 31 日之前交」，另一个惊呼「7 月 31 日不就是明天嘛！」",
+			cn: "看着写有「报告须在7月31日之前提交」的告示，说着「得在7月31日之前提交才行。」「7月31日，是明天啊！」而吃惊的两个人",
 			en: "Two people look at a notice that says “Submit the report by July 31.” One says, “We have to hand it in by July 31,” and the other gasps, “July 31 is tomorrow!”",
 		},
 		tips: [
 			{
 				jp: "「10{日|か}まで」は10{日|か}{当日|とうじつ}も{受|う}け{付|つ}ける、「10{日|か}までに」は10{日|か}を{過|す}ぎてはいけない{期限|きげん}。{助詞|じょし}{一|ひと}つで{意味|いみ}が{変|か}わる。",
-				cn: "「10 日まで」表示到 10 日当天为止一直受理；「10 日までに」表示期限，不能超过 10 日。一个助词就改变了意思。",
+				cn: "「10日まで」（到10日为止）是10日当天也受理，「10日までに」（到10日截止）是不能超过10日的期限。一个助词，意思就变了。",
 				en: "made means they will accept it through the 10th itself; made ni is a deadline you must not go past. One particle changes the meaning.",
 			},
 		],
@@ -39,7 +39,7 @@ export const w1d4: ReadingDay = {
 		notes: [
 			{
 				jp: "「{今回|こんかい}」「{今度|こんど}」は{終|お}わったばかりのものにも{使|つか}う。",
-				cn: "「今回」「今度」也可以用于刚刚结束的事情（既能指「下一次」，也能指「这一次／刚刚这次」，要看上下文）。",
+				cn: "「今回」「今度」也可以用于刚刚结束的事情。",
 				en: "konkai and kondo can also refer to something that has just finished (they can mean “next time” or “this / the latest time,” depending on context).",
 			},
 		],
@@ -47,7 +47,7 @@ export const w1d4: ReadingDay = {
 
 	renshu: {
 		instruction: "{次|つぎ}の{会話文|かいわぶん}を{読|よ}んで、{後|あと}の{文|ぶん}から{正|ただ}しいものを{選|えら}ぼう。",
-		instructionCn: "阅读下面的对话，从后面的句子中选出正确的。（答案在下一页）",
+		instructionCn: "阅读下面的对话，从后面的句子中选出正确的吧。",
 		instructionEn: "Read the conversation below and choose the correct statements from the sentences that follow. (Answers are on the next page.)",
 		blocks: [
 			{
@@ -56,7 +56,7 @@ export const w1d4: ReadingDay = {
 				speakerCn: "男学生",
 				speakerEn: "Male student",
 				jp: "もうすぐ、{試験|しけん}だね。ノート、{貸|か}してくれない？",
-				cn: "马上就要考试了呢。笔记能借我吗？",
+				cn: "马上就要考试了呢。笔记，能借给我吗？",
 				en: "The exam is coming up, isn’t it? Could you lend me your notes?",
 			},
 			{
@@ -65,7 +65,7 @@ export const w1d4: ReadingDay = {
 				speakerCn: "女学生",
 				speakerEn: "Female student",
 				jp: "いいけど、{土曜日|どようび}までに{返|かえ}してよね。{私|わたし}も{試験勉強|しけんべんきょう}しないといけないから。",
-				cn: "可以，但你要在星期六之前还我哦。我也得复习考试呢。",
+				cn: "可以，不过你可要在星期六之前还给我哦。因为我也得准备考试。",
 				en: "Sure, but give them back by Saturday. I have to study for the exam too.",
 			},
 			{
@@ -74,7 +74,7 @@ export const w1d4: ReadingDay = {
 				speakerCn: "男学生",
 				speakerEn: "Male student",
 				jp: "うん、わかった。ところで、レポート、{書|か}いてる？　おれ、まだ1ページしか{書|か}いていないんだ。",
-				cn: "嗯，知道了。对了，报告你写了吗？我才写了 1 页。",
+				cn: "嗯，知道了。话说，报告你在写吗？我啊，到现在还只写了1页呢。",
 				en: "Okay. By the way, have you been writing the report? I’ve only written one page so far.",
 			},
 			{
@@ -83,7 +83,7 @@ export const w1d4: ReadingDay = {
 				speakerCn: "女学生",
 				speakerEn: "Female student",
 				jp: "わー、それは{大変|たいへん}！　31{日|にち}までに{提出|ていしゅつ}しない（※1）と、{減点|げんてん}（※2）って{書|か}いてあるし、もし{出|だ}さなかったら、{単位|たんい}（※3）、もらえないよ。",
-				cn: "哇，那可糟了！上面写着不在 31 日之前提交就要扣分，而且要是干脆不交，学分都拿不到哦。",
+				cn: "哇，那可糟了！上面写着不在31日之前提交（※1）就要扣分（※2），而且要是不交的话，学分（※3），就拿不到哦。",
 				en: "Wow, that’s bad! It says you’ll lose points if you don’t submit it by the 31st, and if you don’t hand it in at all, you won’t get the credit.",
 			},
 		],
@@ -93,29 +93,29 @@ export const w1d4: ReadingDay = {
 			{ marker: "※3", term: "単位", jp: "a credit", cn: "学分", en: "a credit" },
 		],
 		choices: [
-			{ jp: "{男子学生|だんしがくせい}と{女子学生|じょしがくせい}は{同|おな}じ{試験|しけん}を{受|う}ける。", cn: "男学生和女学生要参加同一场考试。", en: "The male student and the female student are taking the same exam." },
-			{ jp: "これから{男子学生|だんしがくせい}は{女子学生|じょしがくせい}にノートを{貸|か}してあげる。", cn: "接下来男学生要把笔记借给女学生。", en: "The male student is about to lend his notes to the female student." },
+			{ jp: "{男子学生|だんしがくせい}と{女子学生|じょしがくせい}は{同|おな}じ{試験|しけん}を{受|う}ける。", cn: "男学生和女学生参加同一场考试。", en: "The male student and the female student are taking the same exam." },
+			{ jp: "これから{男子学生|だんしがくせい}は{女子学生|じょしがくせい}にノートを{貸|か}してあげる。", cn: "接下来男学生会把笔记借给女学生。", en: "The male student is about to lend his notes to the female student." },
 			{ jp: "{男子学生|だんしがくせい}はレポートを{書|か}かないつもりである。", cn: "男学生打算不写报告。", en: "The male student does not intend to write the report." },
-			{ jp: "レポートは31{日|にち}までに{提出|ていしゅつ}すれば、{減点|げんてん}にならない。", cn: "报告只要在 31 日之前提交就不会被扣分。", en: "If the report is submitted by the 31st, no points will be taken off." },
-			{ jp: "レポートの{期限|きげん}に{遅|おく}れた{場合|ばあい}は、{単位|たんい}がもらえない。", cn: "报告超过期限的话就拿不到学分。", en: "If the report is late, you will not get the credit." },
+			{ jp: "レポートは31{日|にち}までに{提出|ていしゅつ}すれば、{減点|げんてん}にならない。", cn: "报告如果在31日之前提交，就不会扣分。", en: "If the report is submitted by the 31st, no points will be taken off." },
+			{ jp: "レポートの{期限|きげん}に{遅|おく}れた{場合|ばあい}は、{単位|たんい}がもらえない。", cn: "如果误了报告的期限，就拿不到学分。", en: "If the report is late, you will not get the credit." },
 		],
 		answers: [1, 4],
 		hint: {
 			jp: "「{出|だ}さなかったら{単位|たんい}がもらえない」と「{遅|おく}れたら{減点|げんてん}」は{別|べつ}のこと。",
-			cn: "「不交＝拿不到学分」和「迟交＝扣分」是两回事，不要混为一谈。",
+			cn: "「不交的话就拿不到学分」和「迟了的话就扣分」是两回事。",
 			en: "“If you don’t hand it in, you won’t get the credit” and “if you’re late, you lose points” are two different things. Don’t mix them up.",
 		},
 	},
 
 	mondai: {
 		instruction: "{次|つぎ}の{掲示|けいじ}を{読|よ}んで、{後|あと}の{問|と}いに{答|こた}えなさい。",
-		instructionCn: "阅读下面的公告，回答后面的问题。（答案在别册 p.2）",
+		instructionCn: "请阅读下面的告示，回答后面的问题。",
 		instructionEn: "Read the notice below and answer the questions that follow. (Answers are in the separate booklet, p. 2.)",
 		blocks: [
 			{
 				type: "title",
 				jp: "{日本語文法|にほんごぶんぽう}Ⅱ　{試験|しけん}とレポートの{提出|ていしゅつ}について",
-				cn: "日语语法Ⅱ　关于考试与报告提交",
+				cn: "日语语法Ⅱ　关于考试和报告的提交",
 				en: "Japanese Grammar II: About the exam and submitting the report",
 			},
 			{ type: "line", jp: "{中田|なかた}　{敬一|けいいち}", cn: "中田　敬一", en: "Nakata Keiichi", align: "right" },
@@ -124,10 +124,10 @@ export const w1d4: ReadingDay = {
 				type: "list",
 				marker: "・",
 				items: [
-					{ jp: "{授業|じゅぎょう}の{最終日|さいしゅうび}に{試験|しけん}を{行|おこな}います。", cn: "考试于课程的最后一天举行。", en: "The exam will be held on the last day of class." },
+					{ jp: "{授業|じゅぎょう}の{最終日|さいしゅうび}に{試験|しけん}を{行|おこな}います。", cn: "将在上课的最后一天举行考试。", en: "The exam will be held on the last day of class." },
 					{
 						jp: "{試験範囲|しけんはんい}は、{教科書|きょうかしょ}の5{課|か}〜9{課|か}です。（ただし、P.35〜39までは{除|のぞ}きます＊。）",
-						cn: "考试范围为教科书第 5 课〜第 9 课。（但不包括 P.35〜39＊。）",
+						cn: "考试范围是教科书第5课〜第9课。（但P.35〜39除外＊。）",
 						en: "The exam covers Lessons 5–9 of the textbook. (However, pp. 35–39 are excluded.＊)",
 					},
 				],
@@ -135,7 +135,7 @@ export const w1d4: ReadingDay = {
 			{
 				type: "note",
 				jp: "※これ{以外|いがい}にも、{授業|じゅぎょう}で{話|はな}したことも{出|だ}しますので、{授業|じゅぎょう}のノートをしっかり{見直|みなお}しておいてください。",
-				cn: "※除此之外，课堂上讲过的内容也会出题，请务必好好复习课堂笔记。",
+				cn: "※除此之外，课堂上讲过的内容也会出题，因此请事先认真复习课堂笔记。",
 				en: "※Besides this, things discussed in class will also appear on the exam, so please review your class notes carefully in advance.",
 			},
 			{ type: "heading", jp: "【レポートについて】", cn: "【关于报告】", en: "[About the report]" },
@@ -145,17 +145,17 @@ export const w1d4: ReadingDay = {
 				items: [
 					{
 						jp: "{内容|ないよう}については、{今学期|こんがっき}の1{週目|しゅうめ}に{渡|わた}したプリントで{伝|つた}えた{通|とお}りです。",
-						cn: "关于内容，与本学期第 1 周发下去的讲义上所写的一致。",
+						cn: "关于内容，正如本学期第1周发下的打印资料中所传达的那样。",
 						en: "As for the content, it is as explained on the handout given out in week 1 of this term.",
 					},
-					{ jp: "{提出期限|ていしゅつきげん}は、7{月|がつ}31{日|にち}です。", cn: "提交期限为 7 月 31 日。", en: "The deadline is July 31." },
+					{ jp: "{提出期限|ていしゅつきげん}は、7{月|がつ}31{日|にち}です。", cn: "提交期限是7月31日。", en: "The deadline is July 31." },
 				],
 			},
 			{
 				type: "paragraph",
 				indent: true,
 				jp: "{今回|こんかい}は、{試験|しけん}50％ レポート50％ という{配分|はいぶん}（※1）で{成績|せいせき}をつけますので、レポートを{提出|ていしゅつ}しない{場合|ばあい}は{単位|たんい}を{与|あた}えません。{必|かなら}ず7{月|がつ}31{日|にち}までに{提出|ていしゅつ}してください。{遅|おく}れた{場合|ばあい}は、{減点|げんてん}しますので{注意|ちゅうい}してください。なお、{病気|びょうき}などの{理由|りゆう}で{試験|しけん}が{受|う}けられなかった{場合|ばあい}は、{上記|じょうき}の（※2）レポートとは{別|べつ}にレポートを{提出|ていしゅつ}しなければなりません＊＊。{何|なに}か{質問|しつもん}があれば、{中田|なかた}まで{連絡|れんらく}してください。",
-				cn: "本次成绩按考试 50％、报告 50％ 的比例评定，因此不提交报告者将不予学分。请务必在 7 月 31 日之前提交。逾期提交将会扣分，请注意。另外，因生病等原因未能参加考试的同学，除上述报告之外还必须另交一份报告＊＊。如有疑问，请与中田联系。",
+				cn: "本次将按考试50％、报告50％这一配分（※1）来评定成绩，因此若不提交报告，则不给予学分。请务必在7月31日之前提交。若逾期，将会扣分，请注意。另外，因生病等原因未能参加考试时，必须在上述（※2）报告之外另行提交一份报告＊＊。如有什么问题，请与中田联系。",
 				en: "This time grades will be 50% exam and 50% report, so if you do not submit the report you will not receive credit. Be sure to submit it by July 31. Late submissions will lose points, so please be careful. Also, if you cannot take the exam because of illness or another reason, you must submit a separate report in addition to the one mentioned above.＊＊ If you have any questions, please contact Nakata.",
 			},
 		],
@@ -164,10 +164,10 @@ export const w1d4: ReadingDay = {
 			{ marker: "※2", term: "上記の", jp: "above mentioned", cn: "上述的", en: "above mentioned" },
 		],
 		pageNotes: [
-			{ jp: "＊ Note that this excludes p. 35–39.", cn: "＊但不包括 P.35〜P.39。", en: "Note that this excludes p. 35–39." },
+			{ jp: "＊ Note that this excludes p. 35–39.", cn: "＊请注意，此处不包括第35–39页。", en: "Note that this excludes p. 35–39." },
 			{
 				jp: "＊＊ If you are unable to take the test due to illness or other circumstances, you must submit a separate report in addition to the report described above.",
-				cn: "＊＊如果因疾病等原因不能参加考试，除上述报告之外还必须另外提交一份报告。",
+				cn: "＊＊如果因疾病或其他情况无法参加考试，除上文所述的报告之外，还必须另行提交一份报告。",
 				en: "If you are unable to take the test due to illness or other circumstances, you must submit a separate report in addition to the report described above.",
 			},
 		],
@@ -175,13 +175,13 @@ export const w1d4: ReadingDay = {
 			{
 				label: "問1",
 				jp: "「{伝|つた}えた{通|とお}りです」とあるが、いつどのように{伝|つた}えたか。",
-				cn: "文中说「与所传达的一致」，那么是在什么时候、以什么方式传达的？",
+				cn: "文中写有「正如所传达的那样」，那么是何时、以何种方式传达的？",
 				en: "The text says “as you were told.” When and how was that information given?",
 				choices: [
-					{ jp: "{今学期|こんがっき}の1{週目|しゅうめ}の{授業|じゅぎょう}のときに、{教師|きょうし}が{話|はな}した。", cn: "本学期第 1 周上课时由教师口头讲述。", en: "The teacher said it verbally in class in week 1 of this term." },
-					{ jp: "7{月|がつ}の{第|だい}1{週目|しゅうめ}に、{紙|かみ}に{印刷|いんさつ}したものを{配|くば}った。", cn: "7 月第 1 周发放了印刷好的纸质材料。", en: "Printed paper was handed out in the first week of July." },
-					{ jp: "{今学期|こんがっき}の{最初|さいしょ}の{週|しゅう}に、{紙|かみ}に{印刷|いんさつ}したものを{渡|わた}した。", cn: "本学期第一周发放了印刷好的纸质材料。", en: "Printed paper was handed out in the first week of this term." },
-					{ jp: "{今学期|こんがっき}の{初|はじ}めに、メールで{知|し}らせた。", cn: "本学期初通过邮件通知。", en: "It was announced by email at the beginning of this term." },
+					{ jp: "{今学期|こんがっき}の1{週目|しゅうめ}の{授業|じゅぎょう}のときに、{教師|きょうし}が{話|はな}した。", cn: "在本学期第1周上课时，教师讲了。", en: "The teacher said it verbally in class in week 1 of this term." },
+					{ jp: "7{月|がつ}の{第|だい}1{週目|しゅうめ}に、{紙|かみ}に{印刷|いんさつ}したものを{配|くば}った。", cn: "在7月第1周，分发了印在纸上的材料。", en: "Printed paper was handed out in the first week of July." },
+					{ jp: "{今学期|こんがっき}の{最初|さいしょ}の{週|しゅう}に、{紙|かみ}に{印刷|いんさつ}したものを{渡|わた}した。", cn: "在本学期最初的一周，发下了印在纸上的材料。", en: "Printed paper was handed out in the first week of this term." },
+					{ jp: "{今学期|こんがっき}の{初|はじ}めに、メールで{知|し}らせた。", cn: "在本学期初，用邮件通知了。", en: "It was announced by email at the beginning of this term." },
 				],
 				answer: 3,
 				explanation:
@@ -204,13 +204,13 @@ export const w1d4: ReadingDay = {
 			{
 				label: "問2",
 				jp: "この{掲示|けいじ}の{内容|ないよう}と{合|あ}っていないものはどれか。",
-				cn: "下列哪一项与这则公告的内容不符？",
+				cn: "哪一项与这则告示的内容不符？",
 				en: "Which of the following does not match the content of this notice?",
 				choices: [
-					{ jp: "{試験|しけん}を{受|う}けられなかった{人|ひと}は、2{種類|しゅるい}のレポートを{出|だ}さなければならない。", cn: "没能参加考试的人必须交两种报告。", en: "People who could not take the exam must submit two kinds of report." },
-					{ jp: "{試験|しけん}を{受|う}ける{人|ひと}は、1{種類|しゅるい}のレポートを{書|か}くだけでよい。", cn: "参加考试的人只写一种报告就可以了。", en: "People who take the exam only need to write one kind of report." },
-					{ jp: "{試験|しけん}で{満点|まんてん}を{取|と}っても、レポートを{出|だ}さない{人|ひと}は{単位|たんい}がもらえない。", cn: "即使考试拿满分，不交报告的人也拿不到学分。", en: "Even if you get a perfect score on the exam, you will not get credit if you do not submit the report." },
-					{ jp: "{試験|しけん}で{満点|まんてん}を{取|と}れば、レポートを{出|だ}さなくてもいい。", cn: "考试拿了满分的话，就可以不交报告。", en: "If you get a perfect score on the exam, you do not have to submit the report." },
+					{ jp: "{試験|しけん}を{受|う}けられなかった{人|ひと}は、2{種類|しゅるい}のレポートを{出|だ}さなければならない。", cn: "未能参加考试的人必须交两种报告。", en: "People who could not take the exam must submit two kinds of report." },
+					{ jp: "{試験|しけん}を{受|う}ける{人|ひと}は、1{種類|しゅるい}のレポートを{書|か}くだけでよい。", cn: "参加考试的人只写一种报告即可。", en: "People who take the exam only need to write one kind of report." },
+					{ jp: "{試験|しけん}で{満点|まんてん}を{取|と}っても、レポートを{出|だ}さない{人|ひと}は{単位|たんい}がもらえない。", cn: "即使考试得了满分，不交报告的人也拿不到学分。", en: "Even if you get a perfect score on the exam, you will not get credit if you do not submit the report." },
+					{ jp: "{試験|しけん}で{満点|まんてん}を{取|と}れば、レポートを{出|だ}さなくてもいい。", cn: "如果考试得了满分，就可以不交报告。", en: "If you get a perfect score on the exam, you do not have to submit the report." },
 				],
 				answer: 4,
 				explanation:
@@ -260,7 +260,7 @@ export const w1d4: ReadingDay = {
 			meaningEn: "made means “through / until that time”; made ni is a deadline you must not go past. The most important distinction in this lesson.",
 			example: {
 				jp: "10{日|か}まで{受|う}け{付|つ}けます。／10{日|か}までに{提出|ていしゅつ}してください。",
-				cn: "受理到 10 日为止。／请在 10 日之前提交。",
+				cn: "受理到10日为止。／请在10日之前提交。",
 				en: "We will accept it through the 10th. / Please submit it by the 10th.",
 			},
 		},
@@ -269,7 +269,7 @@ export const w1d4: ReadingDay = {
 			formation: "動詞た形／名詞＋の ＋ 通りです",
 			meaning: "和……一样、如……所述。",
 			meaningEn: "as… / just as (explained / written).",
-			example: { jp: "プリントで{伝|つた}えた{通|とお}りです。", cn: "与讲义上所传达的一致。", en: "It is as explained on the handout." },
+			example: { jp: "プリントで{伝|つた}えた{通|とお}りです。", cn: "正如打印资料中所传达的那样。", en: "It is as explained on the handout." },
 		},
 		{
 			pattern: "〜については",
@@ -294,21 +294,21 @@ export const w1d4: ReadingDay = {
 			formation: "名詞 ＋ とは別に",
 			meaning: "与……另外、除……之外再……。",
 			meaningEn: "separately from… / in addition to….",
-			example: { jp: "{上記|じょうき}のレポートとは{別|べつ}に", cn: "除上述报告之外，另……", en: "separately from the report mentioned above" },
+			example: { jp: "{上記|じょうき}のレポートとは{別|べつ}に", cn: "除上述报告之外另行", en: "separately from the report mentioned above" },
 		},
 		{
 			pattern: "〜しか〜ない",
 			formation: "名詞・数量詞 ＋ しか ＋ 否定",
 			meaning: "只有……（含「太少了」的语气）。",
 			meaningEn: "only… (with a “that’s not enough” feeling).",
-			example: { jp: "まだ1ページしか{書|か}いていないんだ。", cn: "我才写了 1 页而已。", en: "I’ve only written one page so far." },
+			example: { jp: "まだ1ページしか{書|か}いていないんだ。", cn: "到现在还只写了1页呢。", en: "I’ve only written one page so far." },
 		},
 		{
 			pattern: "〜ておく",
 			formation: "動詞て形 ＋ おく",
 			meaning: "事先做好……（为将来做准备）。",
 			meaningEn: "to do… in advance (to be ready for later).",
-			example: { jp: "ノートをしっかり{見直|みなお}しておいてください。", cn: "请事先好好复习笔记。", en: "Please review your notes carefully in advance." },
+			example: { jp: "ノートをしっかり{見直|みなお}しておいてください。", cn: "请事先认真复习笔记。", en: "Please review your notes carefully in advance." },
 		},
 	],
 };

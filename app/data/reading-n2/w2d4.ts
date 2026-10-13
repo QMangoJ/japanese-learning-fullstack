@@ -12,32 +12,32 @@ export const w2d4: ReadingDay = {
 
 	point: {
 		title: "メールの{形式|けいしき}に{慣|な}れよう！",
-		titleCn: "熟悉电子邮件的格式！",
+		titleCn: "来熟悉电子邮件的格式吧！",
 		titleEn: "Let’s get used to the proper e-mail format!",
 		figure: {
 			alt: "メールの構成図：冒頭に「ABCのスミスです。」、本文にご注文内容、末尾に（株）ABC 山田太郎とメールアドレス。横に「拝啓　時下ますます〜」が省略されることを示す",
-			cn: "电子邮件结构图：开头是「我是 ABC 的史密斯。」，正文是订货内容，末尾是公司名、山田太郎和邮箱。旁边标出「拜启　时下日益……」这类套话常被省略。",
+			cn: "邮件构成图：开头是「我是ABC的史密斯。」，正文是订单内容，末尾是股份公司ABC、山田太郎和电子邮箱。旁边表示「拜启　时下日益〜」被省略。",
 			en: "Diagram of an e-mail: it opens with “This is Smith of ABC,” the body is the order, and it ends with ABC, Yamada Tarō, and an address. A formal “Dear Sir, I hope this finds you well…” greeting is shown as often omitted.",
 		},
 		tips: [
 			{
 				jp: "★メールでは{形式的|けいしきてき}な{挨拶|あいさつ}などは{省略|しょうりゃく}されることが{多|おお}いです。",
-				cn: "★电子邮件里，形式上的寒暄等常常被省略。",
+				cn: "★在电子邮件中，形式上的寒暄等常常被省略。",
 				en: "Formal greetings are often left out in e-mail messages.",
 			},
 			{
 				jp: "★{普通|ふつう}の{手紙|てがみ}では{最後|さいご}に{来|く}る{所属|しょぞく}や{名前|なまえ}が、メールの{場合|ばあい}は{最初|さいしょ}に{来|き}ます。",
-				cn: "★一般书信里放在末尾的单位和姓名，电子邮件则放在开头。",
+				cn: "★普通信件里写在最后的所属单位和姓名，在电子邮件中则写在开头。",
 				en: "In a letter your position and name come last; in e-mail they come first.",
 			},
 			{
 				jp: "★★{連絡先|れんらくさき}や{取引|とりひき}の{詳細|しょうさい}などの{情報|じょうほう}は{普通|ふつう}{後|うし}ろにまとめてあります。",
-				cn: "★★联系方式和交易详情等信息，一般汇总写在后面。",
+				cn: "★★联系方式和交易详情等信息，通常汇总在后面。",
 				en: "Information such as contact details and transaction particulars is usually gathered at the end.",
 			},
 			{
 				jp: "{例えば|たとえば}{商品|しょうひん}の{納品|のうひん}に{関|かん}するメールならこんな{言葉|ことば}が{出|で}てきます。",
-				cn: "比如有关商品交货的邮件里会出现下面这些词。",
+				cn: "例如，如果是有关商品交货的邮件，就会出现这样的词语。",
 				en: "An e-mail about delivery of goods, for example, will use words like these.",
 			},
 		],
@@ -54,7 +54,7 @@ export const w2d4: ReadingDay = {
 
 	renshu: {
 		instruction: "{次|つぎ}の{会話文|かいわぶん}を{読|よ}んで、{後|あと}の{文|ぶん}から{正|ただ}しいものを{選|えら}ぼう。",
-		instructionCn: "阅读下面的对话，从后面的句子中选出正确的。（答案在下一页）",
+		instructionCn: "阅读下面的对话，从后面的句子中选出正确的吧。",
 		instructionEn: "Read the conversation below and choose the correct statements from the sentences that follow. (Answers are on the next page.)",
 		blocks: [
 			{
@@ -72,7 +72,7 @@ export const w2d4: ReadingDay = {
 				speakerCn: "B",
 				speakerEn: "B",
 				jp: "あ、それが、1{週間|しゅうかん}{遅|おく}れるんだそうです。18{日|にち}の{午前中|ごぜんちゅう}……。",
-				cn: "啊，那个啊，说是要晚一个星期。18 号上午……",
+				cn: "啊，其实，说是要晚一个星期。18号上午……。",
 				en: "Ah, about that—they say it will be a week late. The morning of the 18th…",
 			},
 			{
@@ -81,7 +81,7 @@ export const w2d4: ReadingDay = {
 				speakerCn: "A",
 				speakerEn: "A",
 				jp: "え？　1{週間|しゅうかん}も？　だったら{秋葉原|あきはばら}に{行|い}けばよかったなあ。あれ、18{日|にち}って、{健康診断|けんこうしんだん}で{会社|かいしゃ}にだれもいないんじゃない？",
-				cn: "诶？晚整整一个星期？早知道去秋叶原买就好了。咦，18 号体检，公司里不是谁都不在吗？",
+				cn: "诶？整整一个星期？那样的话，要是去秋叶原就好了啊。咦，18号的话，因为体检，公司里不是谁都不在吗？",
 				en: "What? A whole week? We should have just gone to Akihabara. Wait, on the 18th isn’t everyone out of the office for the health check?",
 			},
 			{
@@ -90,7 +90,7 @@ export const w2d4: ReadingDay = {
 				speakerCn: "B",
 				speakerEn: "B",
 				jp: "あ、そうでしたね。えっと、{午後|ごご}には{戻|もど}ってこられると{思|おも}いますけど、ちょっと{時間|じかん}わからないですよね。19{日|にち}にしてもらいましょうか。",
-				cn: "啊，对哦。那个，下午应该能回来，但时间有点说不准。要不要改成 19 号？",
+				cn: "啊，对哦。嗯，我想下午能回来，不过时间有点说不准，是吧。要不要让他们改成19号？",
 				en: "Oh, that’s right. Um, I think we can be back in the afternoon, but the time is a bit uncertain. Shall we ask them to make it the 19th?",
 			},
 			{
@@ -99,7 +99,7 @@ export const w2d4: ReadingDay = {
 				speakerCn: "A",
 				speakerEn: "A",
 				jp: "いや、{早|はや}いほうがいいから、{夕方|ゆうがた}とかにしてもらえないの？",
-				cn: "不，还是早一点好，能不能改成傍晚什么的？",
+				cn: "不，早一点比较好，所以能不能让他们改成傍晚什么的？",
 				en: "No, sooner is better—couldn’t they make it evening or something?",
 			},
 			{
@@ -108,23 +108,23 @@ export const w2d4: ReadingDay = {
 				speakerCn: "B",
 				speakerEn: "B",
 				jp: "じゃ、いちばん{遅|おそ}い{時間|じかん}にしてもらいます。",
-				cn: "那我让他们改到当天最晚的时间。",
+				cn: "那就让他们改成最晚的时间。",
 				en: "All right, I’ll ask them to make it the latest time.",
 			},
 		],
 		choices: [
-			{ jp: "プリンターは{最初|さいしょ}の{予定|よてい}では{今日|きょう}{届|とど}くはずだった。", cn: "按最初的预定，打印机今天就该送到。", en: "The printer was originally supposed to arrive today." },
-			{ jp: "プリンターは19{日|にち}の{遅|おそ}い{時間|じかん}に{届|とど}けてもらうことにした。", cn: "决定让打印机在 19 号较晚的时间送达。", en: "They decided to have the printer delivered late on the 19th." },
-			{ jp: "AさんもBさんも18{日|にち}の{午前中|ごぜんちゅう}は{会社|かいしゃ}にいない。", cn: "A 和 B 18 号上午都不在公司。", en: "Neither A nor B will be at the office on the morning of the 18th." },
-			{ jp: "AさんもBさんも19{日|にち}は{午後|ごご}にしか{会社|かいしゃ}にいない。", cn: "A 和 B 19 号只有下午才在公司。", en: "On the 19th, A and B will only be at the office in the afternoon." },
-			{ jp: "プリンターは{最初|さいしょ}の{予定|よてい}より1{週間|しゅうかん}{遅|おく}れて{届|とど}くことになる。", cn: "打印机将比最初预定晚一个星期送到。", en: "The printer will arrive one week later than originally planned." },
+			{ jp: "プリンターは{最初|さいしょ}の{予定|よてい}では{今日|きょう}{届|とど}くはずだった。", cn: "按最初的预定，打印机今天本该送到。", en: "The printer was originally supposed to arrive today." },
+			{ jp: "プリンターは19{日|にち}の{遅|おそ}い{時間|じかん}に{届|とど}けてもらうことにした。", cn: "决定让打印机在19号较晚的时间送达。", en: "They decided to have the printer delivered late on the 19th." },
+			{ jp: "AさんもBさんも18{日|にち}の{午前中|ごぜんちゅう}は{会社|かいしゃ}にいない。", cn: "A和B在18号上午都不在公司。", en: "Neither A nor B will be at the office on the morning of the 18th." },
+			{ jp: "AさんもBさんも19{日|にち}は{午後|ごご}にしか{会社|かいしゃ}にいない。", cn: "A和B在19号都只有下午才在公司。", en: "On the 19th, A and B will only be at the office in the afternoon." },
+			{ jp: "プリンターは{最初|さいしょ}の{予定|よてい}より1{週間|しゅうかん}{遅|おく}れて{届|とど}くことになる。", cn: "打印机将比最初的预定晚一个星期送到。", en: "The printer will arrive one week later than originally planned." },
 		],
 		answers: [3, 5],
 	},
 
 	mondai: {
 		instruction: "{次|つぎ}のeメールを{読|よ}んで、{後|あと}の{問|と}いに{答|こた}えなさい。",
-		instructionCn: "阅读下面的电子邮件，回答后面的问题。（答案在别册 p.3）",
+		instructionCn: "阅读下面的电子邮件，回答后面的问题。",
 		instructionEn: "Read the following e-mail and answer the questions that follow. (Answers are in the separate booklet, p. 3.)",
 		blocks: [
 			{
@@ -136,7 +136,7 @@ export const w2d4: ReadingDay = {
 			{
 				type: "paragraph",
 				jp: "【PCショップ・スマイル】の{川田|かわだ}と{申|もう}します。",
-				cn: "我是【PC Shop Smile】的川田。",
+				cn: "我是【PC商店・微笑】的川田。",
 				en: "This is Kawada of PC Shop Smile.",
 			},
 			{
@@ -148,7 +148,7 @@ export const w2d4: ReadingDay = {
 			{
 				type: "paragraph",
 				jp: "ご{注文|ちゅうもん}{頂|いただ}きました{商品|しょうひん}ですが、メーカーの{都合|つごう}で{入荷|にゅうか}が{遅|おく}れ、{予定|よてい}{通|どお}り{発送|はっそう}できなくなってしまいましたので、お{知|し}らせいたします。",
-				cn: "您订购的商品，因厂家方面的原因进货延迟，已无法按预定发货，特此通知。",
+				cn: "您订购的商品，因厂家方面的原因进货延迟，已无法按预定发货了，特此通知。",
 				en: "The goods you ordered will not ship as scheduled, because arrival from the manufacturer has been delayed due to the maker’s circumstances. We are writing to let you know.",
 			},
 			{
@@ -160,37 +160,37 @@ export const w2d4: ReadingDay = {
 			{
 				type: "paragraph",
 				jp: "ご{不便|ふべん}・ご{迷惑|めいわく}おかけいたしまして、{大変|たいへん}{申|もう}し{訳|わけ}ございません。",
-				cn: "给您带来不便和麻烦，深表歉意。",
+				cn: "给您带来不便和麻烦，实在非常抱歉。",
 				en: "We are very sorry for the inconvenience.",
 			},
 			{
 				type: "paragraph",
 				jp: "{下記|かき}のとおり、{配送予定|はいそうよてい}を{変更|へんこう}{手配|てはい}させていただきましたので、ご{確認|かくにん}いただきますようお{願|ねが}い{申|もう}し{上|あ}げます。",
-				cn: "已按如下安排变更配送预定，敬请确认。",
+				cn: "已如下变更安排好了配送预定，敬请予以确认。",
 				en: "We have arranged a change to the delivery schedule as below, and would be grateful if you would confirm it.",
 			},
 			{
 				type: "line",
 				jp: "■{発送日|はっそうび}　5{月|がつ}17{日|にち}",
-				cn: "■发货日　5 月 17 日",
+				cn: "■发货日　5月17日",
 				en: "■ Dispatch date: May 17",
 			},
 			{
 				type: "line",
 				jp: "■お{届|とど}け{日|び}　5{月|がつ}18{日|にち}　{午前中|ごぜんちゅう}",
-				cn: "■送达日　5 月 18 日　上午",
+				cn: "■送达日　5月18日　上午",
 				en: "■ Delivery date: May 18, morning",
 			},
 			{
 				type: "paragraph",
 				jp: "もし5{月|がつ}18{日|にち}{以降|いこう}で{他|ほか}にお{受|う}け{取|と}りのご{都合|つごう}のよろしい{日時|にちじ}がございましたら、お{手数|てすう}ですが、このメールに{返信|へんしん}でご{連絡|れんらく}をお{願|ねが}いします。",
-				cn: "如果 5 月 18 日以后另有方便签收的日期时间，麻烦您回复本邮件告知。",
+				cn: "如果在5月18日或之后另有方便签收的日期和时间，麻烦您通过回复本邮件与我们联系。",
 				en: "If another date and time on or after May 18 would be more convenient for taking delivery, please reply to this e-mail (we are sorry for the trouble).",
 			},
 			{
 				type: "paragraph",
 				jp: "ご{連絡|れんらく}がない{場合|ばあい}は、{予定|よてい}{通|どお}りの{発送|はっそう}となります。",
-				cn: "如无联系，将按预定发货。",
+				cn: "如果没有您的联系，将按预定发货。",
 				en: "If we do not hear from you, it will be dispatched as scheduled.",
 			},
 			{
@@ -202,7 +202,7 @@ export const w2d4: ReadingDay = {
 			{
 				type: "line",
 				jp: "〒XXX-XXXX　{台東区|たいとうく}○○1−5−2　SKビル4F",
-				cn: "邮编 XXX-XXXX　台东区○○1−5−2　SK 大厦 4 层",
+				cn: "〒XXX-XXXX　台东区○○1−5−2　SK大厦4楼",
 				en: "〒XXX-XXXX  1-5-2 ○○, Taitō-ku  SK Building 4F",
 			},
 			{
@@ -249,25 +249,25 @@ export const w2d4: ReadingDay = {
 			{
 				type: "line",
 				jp: "PCショップ・すまいる　（^^♪",
-				cn: "PC Shop Smile　（^^♪",
+				cn: "PC商店・微笑　（^^♪",
 				en: "PC Shop Smile  (^^♪",
 			},
 			{
 				type: "paragraph",
 				jp: "ご{注文内容変更|ちゅうもんないようへんこう}や{配送|はいそう}に{関|かん}するお{問|と}い{合|あ}わせ（{配送|はいそう}センター）XXX-XXXX-XXX",
-				cn: "订单内容变更及配送咨询（配送中心）XXX-XXXX-XXX",
+				cn: "关于订单内容变更及配送的咨询（配送中心）XXX-XXXX-XXX",
 				en: "Inquiries about order changes or delivery (Dispatch Center) XXX-XXXX-XXX",
 			},
 			{
 				type: "line",
 				jp: "{受付|うけつけ}：AM9:00〜PM6:00（{水曜日定休|すいようびていきゅう}）",
-				cn: "受理：上午 9:00〜下午 6:00（周三休息）",
+				cn: "受理：上午9:00〜下午6:00（星期三固定休息）",
 				en: "Hours: 9:00 a.m.–6:00 p.m. (closed Wednesdays)",
 			},
 			{
 				type: "note",
 				jp: "※お{電話|でんわ}でのお{問|と}い{合|あ}わせは{営業時間内|えいぎょうじかんない}にお{願|ねが}い{致|いた}します。",
-				cn: "※电话咨询请在营业时间内联系。",
+				cn: "※电话咨询敬请在营业时间内联系。",
 				en: "※ Please telephone only during business hours.",
 			},
 		],
@@ -275,13 +275,13 @@ export const w2d4: ReadingDay = {
 			{
 				label: "問1",
 				jp: "{商品|しょうひん}の{受|う}け{取|と}りの{希望|きぼう}について、{正|ただ}しくないものはどれか。",
-				cn: "关于希望签收商品，哪一项是不正确的？",
+				cn: "关于商品的签收希望，不正确的是哪一个。",
 				en: "Which of the following is not correct regarding requests for taking delivery?",
 				choices: [
-					{ jp: "5{月|がつ}17{日|にち}{以前|いぜん}に{希望|きぼう}することはできない。", cn: "不能希望在 5 月 17 日以前签收。", en: "You cannot request a date before May 17." },
-					{ jp: "5{月|がつ}17{日|にち}に{希望|きぼう}する{場合|ばあい}、{夜遅|よるおそ}くしかできない。", cn: "如果希望 5 月 17 日签收，只能很晚。", en: "If you request May 17, it can only be late at night." },
-					{ jp: "5{月|がつ}18{日|にち}の{午前中|ごぜんちゅう}に{希望|きぼう}する{場合|ばあい}、{連絡|れんらく}しなくてもよい。", cn: "如果希望 5 月 18 日上午签收，可以不联系。", en: "If you want the morning of May 18, you do not need to contact them." },
-					{ jp: "5{月|がつ}18{日|にち}の{午後|ごご}に{希望|きぼう}する{場合|ばあい}、{連絡|れんらく}しなければならない。", cn: "如果希望 5 月 18 日下午签收，必须联系。", en: "If you want the afternoon of May 18, you must contact them." },
+					{ jp: "5{月|がつ}17{日|にち}{以前|いぜん}に{希望|きぼう}することはできない。", cn: "不能希望在5月17日以前。", en: "You cannot request a date before May 17." },
+					{ jp: "5{月|がつ}17{日|にち}に{希望|きぼう}する{場合|ばあい}、{夜遅|よるおそ}くしかできない。", cn: "如果希望在5月17日，就只能是夜里很晚的时间。", en: "If you request May 17, it can only be late at night." },
+					{ jp: "5{月|がつ}18{日|にち}の{午前中|ごぜんちゅう}に{希望|きぼう}する{場合|ばあい}、{連絡|れんらく}しなくてもよい。", cn: "如果希望在5月18日上午，不联系也可以。", en: "If you want the morning of May 18, you do not need to contact them." },
+					{ jp: "5{月|がつ}18{日|にち}の{午後|ごご}に{希望|きぼう}する{場合|ばあい}、{連絡|れんらく}しなければならない。", cn: "如果希望在5月18日下午，就必须联系。", en: "If you want the afternoon of May 18, you must contact them." },
 				],
 				answer: 2,
 				explanation:
@@ -304,13 +304,13 @@ export const w2d4: ReadingDay = {
 			{
 				label: "問2",
 				jp: "このメールの{内容|ないよう}と{合|あ}わないものはどれか。",
-				cn: "哪一项与这封邮件的内容不符？",
+				cn: "与这封邮件的内容不符的是哪一个。",
 				en: "Which of the following does not match the content of this e-mail?",
 				choices: [
 					{ jp: "{今回|こんかい}の{商品|しょうひん}に{送料|そうりょう}はかかっていない。", cn: "这次的商品没有运费。", en: "There is no shipping charge on this order." },
-					{ jp: "{商品|しょうひん}の{受|う}け{取|と}り{日時|にちじ}の{変更|へんこう}はこのメールに{返信|へんしん}する。", cn: "变更签收日期时间要回复这封邮件。", en: "To change the delivery date and time, you reply to this e-mail." },
-					{ jp: "この{店|みせ}は{水曜日以外|すいようびいがい}は{営業|えいぎょう}している。", cn: "这家店除了星期三都营业。", en: "This shop is open every day except Wednesday." },
-					{ jp: "{商品|しょうひん}が1{週間|しゅうかん}{遅|おく}れるのは、このPCショップの{都合|つごう}である。", cn: "商品晚一个星期是这家电脑店自己的原因。", en: "The one-week delay is due to this PC shop’s circumstances." },
+					{ jp: "{商品|しょうひん}の{受|う}け{取|と}り{日時|にちじ}の{変更|へんこう}はこのメールに{返信|へんしん}する。", cn: "变更商品的签收日期和时间，要回复这封邮件。", en: "To change the delivery date and time, you reply to this e-mail." },
+					{ jp: "この{店|みせ}は{水曜日以外|すいようびいがい}は{営業|えいぎょう}している。", cn: "这家店除星期三以外都在营业。", en: "This shop is open every day except Wednesday." },
+					{ jp: "{商品|しょうひん}が1{週間|しゅうかん}{遅|おく}れるのは、このPCショップの{都合|つごう}である。", cn: "商品晚一个星期，是这家PC商店方面的原因。", en: "The one-week delay is due to this PC shop’s circumstances." },
 				],
 				answer: 4,
 				explanation:
@@ -359,7 +359,7 @@ export const w2d4: ReadingDay = {
 			meaningEn: "due to …’s circumstances. Used on notices to explain a delay.",
 			example: {
 				jp: "メーカーの{都合|つごう}で{入荷|にゅうか}が{遅|おく}れ、{予定|よてい}{通|どお}り{発送|はっそう}できなくなってしまいました。",
-				cn: "因厂家方面的原因进货延迟，已无法按预定发货。",
+				cn: "因厂家方面的原因进货延迟，已无法按预定发货了。",
 				en: "Arrival from the manufacturer was delayed due to the maker’s circumstances, so we can no longer ship as scheduled.",
 			},
 		},
@@ -380,7 +380,7 @@ export const w2d4: ReadingDay = {
 			meaningEn: "I am sorry to trouble you, but…. A polite buffer when asking the other person to do something.",
 			example: {
 				jp: "お{手数|てすう}ですが、このメールに{返信|へんしん}でご{連絡|れんらく}をお{願|ねが}いします。",
-				cn: "麻烦您回复本邮件告知。",
+				cn: "麻烦您通过回复本邮件与我们联系。",
 				en: "Sorry to trouble you, but please reply to this e-mail.",
 			},
 		},

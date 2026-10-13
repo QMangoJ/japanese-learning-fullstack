@@ -12,27 +12,27 @@ export const w6d6: ReadingDay = {
 
 	point: {
 		title: "{複雑|ふくざつ}な{文章|ぶんしょう}を{整理|せいり}して{理解|りかい}しよう！③",
-		titleCn: "整理并理解复杂的文章内容！③",
+		titleCn: "把复杂的文章整理一下，来理解它们吧！③",
 		titleEn: "Try to understand the complicated sentences by reorganizing them! ③",
 		figure: {
 			alt: "「全体の構成がわかったら、問いを先に読むと効果的です。」と言うキャラクター",
-			cn: "角色说：「弄清整体结构之后，先读问题会更有效。」",
+			cn: "说「弄清整体结构之后，先读问题会很有效。」的角色",
 			en: "A character says, “Once you see the overall structure, it is effective to read the questions first.”",
 		},
 		tips: [
 			{
 				jp: "{例|たと}えば、{右|みぎ}の{文章|ぶんしょう}はこんな{構成|こうせい}になっています。",
-				cn: "比如，右页的文章就是这样的结构。",
+				cn: "例如，右边的文章是这样的结构。",
 				en: "For example, the passage on the right is organized like this.",
 			},
 			{
 				jp: "{第|だい}1{段落|だんらく}：{筆者|ひっしゃ}が{読者|どくしゃ}に{呼|よ}びかけ、{意見|いけん}を{言|い}っている　／　{第|だい}2{段落|だんらく}：{昔|むかし}……　{第|だい}3{段落|だんらく}：そこへ……　{第|だい}4{段落|だんらく}：{何年|なんねん}か{後|あと}……　{第|だい}5{段落|だんらく}：ところが……　→　{話|はなし}　このように2つの{部分|ぶぶん}に{分|わ}かれていることがわかります。",
-				cn: "第 1 段：笔者向读者打招呼并发表意见　／　第 2 段：从前……　第 3 段：这时……　第 4 段：过了几年……　第 5 段：可是……　→　故事　可以看出全文分成这样两部分。",
+				cn: "第1段落：笔者向读者发话，并说出意见　／　第2段落：从前……　第3段落：这时……　第4段落：过了几年……　第5段落：可是……　→　故事　可以看出，文章就是这样分成两个部分的。",
 				en: "Paragraph 1: the writer addresses the reader and states an opinion. / Paragraph 2: Long ago…  Paragraph 3: Then…  Paragraph 4: Some years later…  Paragraph 5: However…  → the story. You can see the passage splits into these two parts.",
 			},
 			{
 				jp: "{全体|ぜんたい}の{構成|こうせい}がわかったら、{問|と}いを{先|さき}に{読|よ}むと{効果的|こうかてき}です。",
-				cn: "弄清整体结构之后，先读问题会更有效。",
+				cn: "弄清整体结构之后，先读问题会很有效。",
 				en: "Once you understand the overall structure, it is effective to read the questions first.",
 			},
 		],
@@ -51,7 +51,7 @@ export const w6d6: ReadingDay = {
 	renshu: {
 		instruction:
 			"{次|つぎ}の{会話文|かいわぶん}を{読|よ}んで、{後|あと}の{文|ぶん}から{正|ただ}しいものを{選|えら}ぼう。",
-		instructionCn: "阅读下面的对话，从后面的句子中选出正确的。（答案在下一页）",
+		instructionCn: "阅读下面的对话文，从后面的句子中选出正确的吧。",
 		instructionEn:
 			"Read the conversation below and choose the correct statements from the sentences that follow. (Answers are on the next page.)",
 		blocks: [
@@ -61,7 +61,7 @@ export const w6d6: ReadingDay = {
 				speakerCn: "孩子",
 				speakerEn: "Child",
 				jp: "お{父|とう}さん、ラクダ（{注|ちゅう}）の{計算|けいさん}の{話|はなし}、{知|し}ってる？",
-				cn: "爸爸，骆驼（注）分配的计算故事，你知道吗？",
+				cn: "爸爸，骆驼（注）的计算故事，你知道吗？",
 				en: "Dad, do you know the story about calculating with camels (note)?",
 			},
 			{
@@ -70,7 +70,7 @@ export const w6d6: ReadingDay = {
 				speakerCn: "父亲",
 				speakerEn: "Father",
 				jp: "ああ、1{頭|とう}{借|か}りて3{人|にん}で{分|わ}けて、{借|か}りた1{頭|とう}もちゃんと{返|かえ}せたって{話|はなし}ね。",
-				cn: "啊，借来一头，三个人分完，借来的那一头也顺利还回去了的那个故事吧。",
+				cn: "啊，就是借来1头，3个人分，借来的那1头也能好好还回去的那个故事吧。",
 				en: "Ah, the one where they borrow one camel, divide among three, and still manage to give the borrowed one back.",
 			},
 			{
@@ -79,7 +79,7 @@ export const w6d6: ReadingDay = {
 				speakerCn: "孩子",
 				speakerEn: "Child",
 				jp: "うん、その{後|あと}の{話|はなし}がわからないんだ。",
-				cn: "嗯，那之后的故事我就搞不懂了。",
+				cn: "嗯，那之后的故事我搞不懂。",
 				en: "Yeah — it’s the story after that I don’t get.",
 			},
 			{
@@ -88,7 +88,7 @@ export const w6d6: ReadingDay = {
 				speakerCn: "父亲",
 				speakerEn: "Father",
 				jp: "まねした{人|ひと}が{貸|か}した1{頭|とう}を{返|かえ}してもらえなかったっていうんだろ？",
-				cn: "是模仿的人把借出的那一头没能要回来的那个吧？",
+				cn: "你说的是，模仿的人没能把借出的那1头要回来，对吧？",
 				en: "You mean the one where the person who copied it didn’t get the camel they lent back?",
 			},
 			{
@@ -97,7 +97,7 @@ export const w6d6: ReadingDay = {
 				speakerCn: "孩子",
 				speakerEn: "Child",
 				jp: "そう。どうして、{同|おな}じようにしたのにだめだったの？",
-				cn: "对。为什么做法一样却不行了呢？",
+				cn: "对。为什么明明做得一样，却不行呢？",
 				en: "Right. Why did the same method not work?",
 			},
 			{
@@ -106,7 +106,7 @@ export const w6d6: ReadingDay = {
 				speakerCn: "父亲",
 				speakerEn: "Father",
 				jp: "{分数|ぶんすう}にして、{足|た}し{算|ざん}してみたら{答|こた}えが{違|ちが}うことに{気|き}が{付|つ}くよ。1/2 ＋ 1/3 ＋ 1/9はどうやって{足|た}す？",
-				cn: "改成分数做加法，就会发现答案不一样。1/2＋1/3＋1/9 怎么加？",
+				cn: "化成分数，试着做加法的话，你就会发现答案不一样哦。1/2 ＋ 1/3 ＋ 1/9要怎么加？",
 				en: "If you turn them into fractions and add them up, you’ll notice the answers are different. How do you add 1/2 + 1/3 + 1/9?",
 			},
 			{
@@ -115,7 +115,7 @@ export const w6d6: ReadingDay = {
 				speakerCn: "孩子",
 				speakerEn: "Child",
 				jp: "えっと、{分母|ぶんぼ}を18にして、9＋6＋2だから、17/18でしょ。それから、こっちは{分母|ぶんぼ}を12にして6＋4＋2で、12/12……あ、そうか。",
-				cn: "嗯，把分母变成 18，9＋6＋2，所以是 17/18。然后这边把分母变成 12，6＋4＋2 是 12/12……啊，原来如此。",
+				cn: "那个，把分母变成18，9＋6＋2，所以是17/18吧。然后这边把分母变成12，6＋4＋2，就是12/12……啊，原来如此。",
 				en: "Um, make the denominator 18: 9 + 6 + 2, so 17/18. And this one, denominator 12: 6 + 4 + 2 is 12/12… oh, I see.",
 			},
 		],
@@ -125,27 +125,27 @@ export const w6d6: ReadingDay = {
 		choices: [
 			{
 				jp: "{子|こ}どもはラクダの{計算|けいさん}の{話|はなし}を{聞|き}いたことがない。",
-				cn: "孩子从没听过骆驼计算的故事。",
+				cn: "孩子没有听过骆驼计算的故事。",
 				en: "The child has never heard the camel-calculation story.",
 			},
 			{
 				jp: "ラクダの{計算|けいさん}を{使|つか}うと{何|なに}かを{分|わ}けるときに{必|かなら}ずうまくいく。",
-				cn: "用骆驼计算的方法分东西时一定能成功。",
+				cn: "使用骆驼的计算的话，在分某种东西的时候一定能顺利。",
 				en: "Using the camel calculation always works when dividing something.",
 			},
 			{
 				jp: "ラクダの{計算|けいさん}の{話|はなし}には、{借|か}りたラクダを{返|かえ}せた{話|はなし}と{返|かえ}せない{話|はなし}がある。",
-				cn: "骆驼计算的故事里，有借来的骆驼能还回去的，也有还不回去的。",
+				cn: "骆驼计算的故事里，有借来的骆驼能还回去的故事，也有还不回去的故事。",
 				en: "In the camel-calculation stories, there is one where the borrowed camel can be returned and one where it cannot.",
 			},
 			{
 				jp: "{父親|ちちおや}はラクダの{計算|けいさん}を{子|こ}どもから{教|おし}えてもらった。",
-				cn: "父亲是从孩子那里学会骆驼计算的。",
+				cn: "父亲请孩子教了自己骆驼的计算。",
 				en: "The father was taught the camel calculation by the child.",
 			},
 			{
 				jp: "{子|こ}どもは{父親|ちちおや}のヒントでラクダの{計算|けいさん}を{理解|りかい}した。",
-				cn: "孩子靠父亲的提示理解了骆驼计算。",
+				cn: "孩子靠父亲的提示理解了骆驼的计算。",
 				en: "The child understood the camel calculation from the father’s hint.",
 			},
 		],
@@ -154,42 +154,42 @@ export const w6d6: ReadingDay = {
 
 	mondai: {
 		instruction: "{次|つぎ}の{文章|ぶんしょう}を{読|よ}んで、{後|あと}の{問|と}いに{答|こた}えなさい。",
-		instructionCn: "阅读下面的文章，回答后面的问题。（答案在别册 p.7）",
+		instructionCn: "请阅读下面的文章，回答后面的问题。",
 		instructionEn: "Read the following passage and answer the questions that follow. (Answers are in the separate booklet, p. 7.)",
 		blocks: [
 			{
 				type: "paragraph",
 				indent: true,
 				jp: "みなさんは、{分数|ぶんすう}が{得意|とくい}だろうか。{分数|ぶんすう}と{聞|き}くだけで、{嫌|いや}だと{思|おも}う{人|ひと}もいるかもしれない。{実|じつ}はコンピューターでさえ、{分数|ぶんすう}は{苦手|にがて}だとか。でも、①この{話|はなし}を{読|よ}めば、きっと{分数|ぶんすう}に{興味|きょうみ}を{持|も}つようになるだろう。",
-				cn: "各位擅长分数吗？也许有人一听到分数就觉得讨厌。据说就连电脑也不擅长分数。不过，读了①这个故事，你一定会对分数产生兴趣吧。",
+				cn: "大家擅长分数吗？也许有人光是听到分数就觉得讨厌。其实，据说就连电脑也不擅长分数。不过，如果读了①这个故事，一定就会开始对分数感兴趣吧。",
 				en: "Are you good at fractions? Some people may dislike them at the mere mention. Computers themselves are said to be weak at fractions. But if you read ① this story, you will surely come to take an interest in fractions.",
 			},
 			{
 				type: "paragraph",
 				indent: true,
 				jp: "{昔|むかし}、アラビア（{注|ちゅう}1）のある{村|むら}で{年老|としお}いた{商人|しょうにん}が3{人|にん}の{息子|むすこ}に{次|つぎ}のような{言葉|ことば}を{残|のこ}して{亡|な}くなった。「{私|わたし}が{死|し}んだらラクダをお{前|まえ}たちにやる。{長男|ちょうなん}は1/2、{次男|じなん}は1/3、{三男|さんなん}は1/9とする。」ところが、ラクダの{数|かず}は17{頭|とう}だったので、2でも、3でも9でも{割|わ}り{切|き}れない（{注|ちゅう}2）。3{人|にん}はけんかを{始|はじ}めてしまった。",
-				cn: "从前，在阿拉伯（注1）的某个村子里，一位年迈的商人给三个儿子留下这样的话就去世了：「我死后把骆驼分给你们。长子 1/2，次子 1/3，三子 1/9。」可骆驼一共 17 头，2、3、9 都除不尽（注2）。三个人就吵了起来。",
+				cn: "从前，在阿拉伯（注1）的某个村子里，一位年老的商人给3个儿子留下如下的话后去世了。「我死后把骆驼给你们。长子为1/2，次子为1/3，三子为1/9。」可是，骆驼的数量是17头，所以2也好、3也好、9也好，都除不尽（注2）。3个人就吵起架来了。",
 				en: "Long ago, in a village in Arabia (note 1), an aged merchant died leaving these words to his three sons: “When I die I will give you the camels. The eldest shall have 1/2, the second 1/3, the third 1/9.” But there were 17 camels, which cannot be divided evenly (note 2) by 2, 3, or 9. The three began to quarrel.",
 			},
 			{
 				type: "paragraph",
 				indent: true,
 				jp: "そこへ{旅|たび}の{老人|ろうじん}がラクダに{乗|の}ってやってきた。そしてけんかの{理由|りゆう}を{聞|き}き、「それなら{私|わたし}のラクダを{貸|か}してあげよう。」と{言|い}った。{父親|ちちおや}の{残|のこ}したラクダに1{頭|とう}{足|た}すと18{頭|とう}になったので、{長男|ちょうなん}は9{頭|とう}、{次男|じなん}は6{頭|とう}、{三男|さんなん}は2{頭|とう}で{父親|ちちおや}の{言葉|ことば}どおりに{分|わ}けることができた。{余|あま}った1{頭|とう}は{元通|もとどお}りに{旅|たび}の{老人|ろうじん}が{連|つ}れていった。",
-				cn: "这时一位旅行的老人骑着骆驼过来了。听完吵架的原因，他说：「那就借给你们我的骆驼吧。」父亲留下的骆驼加上 1 头变成 18 头，于是长子 9 头、次子 6 头、三子 2 头，正好按父亲的话分完。剩下的 1 头仍由旅行的老人带走。",
+				cn: "这时，一位旅行的老人骑着骆驼过来了。然后听了吵架的原因，说道：「那样的话，我就把我的骆驼借给你们吧。」父亲留下的骆驼加上1头，变成了18头，因此长子9头、次子6头、三子2头，能够按照父亲的话那样来分。剩下的1头，由旅行的老人照原样牵走了。",
 				en: "Then an old traveler arrived on a camel. Hearing why they were quarreling, he said, “Then I will lend you my camel.” Adding one to the father’s camels made 18, so the eldest got 9, the second 6, and the third 2, divided just as the father had said. The leftover one the traveler took away as before.",
 			},
 			{
 				type: "paragraph",
 				indent: true,
 				jp: "{何年|なんねん}か{後|あと}、{同|おな}じように11{頭|とう}のラクダを{連|つ}れている{老人|ろうじん}が「{長男|ちょうなん}には1/2、{次男|じなん}には1/3、{三男|さんなん}には1/6のラクダを。」と{言|い}い{残|のこ}して{死|し}んでしまった。そこで、{前述|ぜんじゅつ}の（{注|ちゅう}3）{話|はなし}を{思|おも}い{出|だ}した{近所|きんじょ}の{人|ひと}が{自分|じぶん}のラクダを{連|つ}れてきて{解決|かいけつ}してみせようとした*。{長男|ちょうなん}には1/2の6{頭|とう}、{次男|じなん}には1/3の4{頭|とう}、{三男|さんなん}には1/6の2{頭|とう}。",
-				cn: "过了几年，同样有一位带着 11 头骆驼的老人留下「长子 1/2，次子 1/3，三子 1/6」的话就死了。于是，想起前述（注3）故事的邻居牵来自己的骆驼，想当场解决*。长子分到 1/2 即 6 头，次子 1/3 即 4 头，三子 1/6 即 2 头。",
+				cn: "过了几年，同样地，一位牵着11头骆驼的老人留下「给长子1/2、给次子1/3、给三子1/6的骆驼。」这句话后便死了。于是，想起前述（注3）故事的邻居牵来自己的骆驼，试图解决给他们看*。长子是1/2的6头，次子是1/3的4头，三子是1/6的2头。",
 				en: "Some years later, in the same way, an old man with 11 camels died leaving the words “1/2 to the eldest, 1/3 to the second, 1/6 to the third.” A neighbor who remembered the story told above (note 3) brought his own camel and tried to settle it*. The eldest got 1/2, six camels; the second 1/3, four; the third 1/6, two.",
 			},
 			{
 				type: "paragraph",
 				indent: true,
 				jp: "ところが、{今度|こんど}は3{人|にん}のラクダを{合計|ごうけい}すると6＋4＋2＝12{頭|とう}となり、{連|つ}れてきたラクダを{持|も}って{帰|かえ}ることができず、{損|そん}をしてしまった。{前|まえ}の{話|はなし}では1/2＋1/3＋1/9＝17/18になるのに{対|たい}し、1/2＋1/3＋1/6＝1となり、（②）に{気|き}づかなかったのだ。",
-				cn: "可是这次三个人的骆驼合计 6＋4＋2＝12 头，牵来的那头骆驼带不回去了，亏了。前一个故事里 1/2＋1/3＋1/9＝17/18，与此相对，1/2＋1/3＋1/6＝1，他没有注意到（②）。",
+				cn: "可是，这一次把3个人的骆驼合计起来，就成了6＋4＋2＝12头，没能把牵来的骆驼带回家，结果受了损失。前一个故事里1/2＋1/3＋1/9＝17/18，与此相对，1/2＋1/3＋1/6＝1，却没有注意到（②）。",
 				en: "This time, though, the three men’s camels added up to 6 + 4 + 2 = 12, so he could not take home the camel he had brought, and he took a loss. In the earlier story 1/2 + 1/3 + 1/9 = 17/18, whereas 1/2 + 1/3 + 1/6 = 1, and he had not noticed (②).",
 			},
 		],
@@ -201,7 +201,7 @@ export const w6d6: ReadingDay = {
 		pageNotes: [
 			{
 				jp: "A neighbor who remembered the story he had heard earlier brought his own camel to settle the problem",
-				cn: "一位邻居想起往事，便牵来自己的骆驼要帮他们解决难题",
+				cn: "一位想起自己早先听过的那个故事的邻居，牵来自己的骆驼来解决这个问题。",
 				en: "A neighbor who remembered the story he had heard earlier brought his own camel to settle the problem",
 			},
 		],
@@ -209,7 +209,7 @@ export const w6d6: ReadingDay = {
 			{
 				label: "問1",
 				jp: "①この{話|はなし}とはどんな{話|はなし}か。{最|もっと}も{適当|てきとう}なものを{選|えら}びなさい。",
-				cn: "①这个故事是怎样的故事？请选最合适的一项。",
+				cn: "①这个故事是什么样的故事？请选择最适当的一项。",
 				en: "What kind of story is ① “this story”? Choose the most appropriate option.",
 				choices: [
 					{
@@ -254,19 +254,19 @@ export const w6d6: ReadingDay = {
 			{
 				label: "問2",
 				jp: "（②）に{入|はい}る{最|もっと}も{適当|てきとう}なものはどれか。",
-				cn: "填入（②）最合适的是哪一项？",
+				cn: "最适合填入（②）的是哪一个？",
 				en: "Which is the most appropriate item to fill in (②)?",
 				choices: [
-					{ jp: "{数|かず}が{少|すく}なくなること", cn: "数量变少", en: "that the number becomes smaller" },
-					{ jp: "{数|かず}が{多|おお}くなること", cn: "数量变多", en: "that the number becomes larger" },
+					{ jp: "{数|かず}が{少|すく}なくなること", cn: "数目变少这一点", en: "that the number becomes smaller" },
+					{ jp: "{数|かず}が{多|おお}くなること", cn: "数目变多这一点", en: "that the number becomes larger" },
 					{
 						jp: "{割|わ}り{切|き}れて{余|あま}りがなくなること",
-						cn: "能整除、没有剩余",
+						cn: "能整除、不再有余数这一点",
 						en: "that it divides evenly and there is no remainder",
 					},
 					{
 						jp: "また{割|わ}り{切|き}れなくなること",
-						cn: "又变得除不尽",
+						cn: "又变得除不尽这一点",
 						en: "that it again cannot be divided evenly",
 					},
 				],
@@ -319,7 +319,7 @@ export const w6d6: ReadingDay = {
 			meaningEn: "just as…; according to….",
 			example: {
 				jp: "{父親|ちちおや}の{言葉|ことば}どおりに{分|わ}けることができた。",
-				cn: "能够按照父亲的话那样分开。",
+				cn: "能够按照父亲的话那样来分配。",
 				en: "They were able to divide them just as the father had said.",
 			},
 		},
@@ -330,7 +330,7 @@ export const w6d6: ReadingDay = {
 			meaningEn: "whereas; in contrast to…. Used to contrast two things.",
 			example: {
 				jp: "1/2＋1/3＋1/9＝17/18になるのに{対|たい}し、1/2＋1/3＋1/6＝1となり",
-				cn: "与 1/2＋1/3＋1/9＝17/18 相对，1/2＋1/3＋1/6＝1",
+				cn: "1/2＋1/3＋1/9＝17/18，与此相对，1/2＋1/3＋1/6＝1，",
 				en: "whereas 1/2 + 1/3 + 1/9 = 17/18, 1/2 + 1/3 + 1/6 = 1",
 			},
 		},
@@ -341,7 +341,7 @@ export const w6d6: ReadingDay = {
 			meaningEn: "completes an action, or marks an unfortunate result. Here: the old man dies; the neighbor takes a loss.",
 			example: {
 				jp: "{連|つ}れてきたラクダを{持|も}って{帰|かえ}ることができず、{損|そん}をしてしまった。",
-				cn: "牵来的骆驼带不回去，吃了亏。",
+				cn: "没能把牵来的骆驼带回家，结果受了损失。",
 				en: "He could not take home the camel he had brought, and ended up taking a loss.",
 			},
 		},

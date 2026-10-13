@@ -12,17 +12,17 @@ export const w1d2: ReadingDay = {
 
 	point: {
 		title: "{期間|きかん}や{特典|とくてん}を{受|う}ける{条件|じょうけん}に{注意|ちゅうい}！",
-		titleCn: "注意优惠期间及能够得到优惠的条件！",
+		titleCn: "注意期间以及获得特典的条件！",
 		titleEn: "Pay attention to the dates and the conditions for receiving bonuses!",
 		figure: {
 			alt: "安い！30%で買えるんだ！と喜ぶ人と、違うよ！30%引き！と訂正する人のイラスト",
-			cn: "一个人高兴地说「好便宜！三折就能买到！」；另一个人纠正「不对！是打七折（减 30%）！」",
+			cn: "高兴地说「好便宜！按30%就能买到啊！」的人，和纠正说「不对！是减30%！」的人的插图",
 			en: "One character cheers “Cheap! I can buy it for 30%!”; the other corrects “Wrong! It’s 30% off!”",
 		},
 		tips: [
 			{
 				jp: "{例えば|たとえば}セールのお{知|し}らせなら、こんな{内容|ないよう}が{書|か}いてあります。",
-				cn: "比如促销通知里，会写着下面这类内容。",
+				cn: "例如，如果是促销通知的话，会写着这样的内容。",
 				en: "A sale notice, for example, will typically include the kind of information below.",
 			},
 		],
@@ -38,7 +38,7 @@ export const w1d2: ReadingDay = {
 
 	renshu: {
 		instruction: "{次|つぎ}の{会話文|かいわぶん}を{読|よ}んで、{後|あと}の{文|ぶん}から{正|ただ}しいものを{選|えら}ぼう。",
-		instructionCn: "阅读下面的对话，从后面的句子中选出正确的。（答案在下一页）",
+		instructionCn: "阅读下面的对话，从后面的句子中选出正确的吧。",
 		instructionEn: "Read the conversation below and choose the correct statements from the sentences that follow. (Answers are on the next page.)",
 		blocks: [
 			{
@@ -47,7 +47,7 @@ export const w1d2: ReadingDay = {
 				speakerCn: "丈夫",
 				speakerEn: "Husband",
 				jp: "{今日|きょう}も{暑|あつ}くなりそうだなあ……お、セールのハガキか。",
-				cn: "今天好像也会很热啊……哦，是促销的明信片吗。",
+				cn: "今天好像也会热起来啊……哦，是促销的明信片吗？",
 				en: "Looks like it’ll be hot again today… oh, a sale postcard?",
 			},
 			{
@@ -56,7 +56,7 @@ export const w1d2: ReadingDay = {
 				speakerCn: "妻子",
 				speakerEn: "Wife",
 				jp: "うん、{昨日来|きのうき}てた。{毎年|まいとし}{来|く}るけど。",
-				cn: "嗯，昨天到的。每年都会来。",
+				cn: "嗯，昨天到的。每年都会来，不过……",
 				en: "Yeah, it came yesterday. They send one every year.",
 			},
 			{
@@ -65,7 +65,7 @@ export const w1d2: ReadingDay = {
 				speakerCn: "丈夫",
 				speakerEn: "Husband",
 				jp: "なんだ、3{日間|にちかん}だけか。……しかも、{平日|へいじつ}。うちなんか{行|い}けるわけないよな。",
-				cn: "什么嘛，只有三天。……而且还是平日。我们哪能去得了啊。",
+				cn: "什么呀，只有3天吗？……而且还是平日。我们这种人根本去不了吧。",
 				en: "What, only three days? …And weekdays at that. There’s no way we can go.",
 			},
 			{
@@ -74,7 +74,7 @@ export const w1d2: ReadingDay = {
 				speakerCn: "妻子",
 				speakerEn: "Wife",
 				jp: "そうなのよ。{土日|どにち}だったらね……。あ、もうこんな{時間|じかん}。はい、お{弁当|べんとう}。えっと、{今日|きょう}はちょっと{遅|おそ}くなるけど、あなたよりは{早|はや}く{帰|かえ}れると{思|おも}うから。",
-				cn: "就是啊。要是周末就好了……。啊，已经这个时间了。来，便当。嗯，今天我会稍晚一点，不过应该还是比你早到家。",
+				cn: "就是啊。要是周六周日的话……。啊，已经这个时间了。给，便当。嗯，今天会稍微晚一点，不过我想会比你早回来，所以……",
 				en: "I know. If it were the weekend… oh, look at the time. Here’s your lunch. Um, I’ll be a little late today, but I think I’ll still get home before you.",
 			},
 			{
@@ -83,7 +83,7 @@ export const w1d2: ReadingDay = {
 				speakerCn: "丈夫",
 				speakerEn: "Husband",
 				jp: "{了解|りょうかい}。じゃ、{行|い}ってくる。",
-				cn: "知道了。那我走了。",
+				cn: "明白。那我走了。",
 				en: "Got it. Well, I’m off.",
 			},
 			{
@@ -92,23 +92,23 @@ export const w1d2: ReadingDay = {
 				speakerCn: "妻子",
 				speakerEn: "Wife",
 				jp: "いってらっしゃい。{私|わたし}も{急|いそ}がないと。お{弁当持|べんとうも}ったし、{窓|まど}は{閉|し}めたし……。",
-				cn: "路上小心。我也得抓紧了。便当拿了，窗也关了……。",
+				cn: "走好。我也得抓紧了。便当拿了，窗也关了……。",
 				en: "See you. I have to hurry too. Lunch, check; windows closed, check…",
 			},
 		],
 		choices: [
-			{ jp: "{今週末|こんしゅうまつ}、3{日間|にちかん}セールがある。", cn: "这个周末有为期三天的促销。", en: "There is a three-day sale this weekend." },
-			{ jp: "{夫|おっと}は{今日帰宅|きょうきたく}が{遅|おそ}くなるかもしれない。", cn: "丈夫今天回家可能会晚。", en: "The husband may get home late today." },
-			{ jp: "{妻|つま}は{今日仕事|きょうしごと}の{帰|かえ}りにセールに{行|い}くつもりだ。", cn: "妻子打算今天下班路上顺便去促销。", en: "The wife plans to go to the sale on her way home from work today." },
+			{ jp: "{今週末|こんしゅうまつ}、3{日間|にちかん}セールがある。", cn: "这个周末有为期3天的促销。", en: "There is a three-day sale this weekend." },
+			{ jp: "{夫|おっと}は{今日帰宅|きょうきたく}が{遅|おそ}くなるかもしれない。", cn: "丈夫今天可能会晚回家。", en: "The husband may get home late today." },
+			{ jp: "{妻|つま}は{今日仕事|きょうしごと}の{帰|かえ}りにセールに{行|い}くつもりだ。", cn: "妻子打算今天在下班回来的路上去促销。", en: "The wife plans to go to the sale on her way home from work today." },
 			{ jp: "{夫|おっと}はセールに{興味|きょうみ}がある。", cn: "丈夫对促销有兴趣。", en: "The husband is interested in the sale." },
-			{ jp: "{二人|ふたり}はセールに{行|い}きたくても{行|い}けない。", cn: "两个人即使想去促销也去不了。", en: "The two of them cannot go to the sale even if they want to." },
+			{ jp: "{二人|ふたり}はセールに{行|い}きたくても{行|い}けない。", cn: "两人即使想去促销也去不了。", en: "The two of them cannot go to the sale even if they want to." },
 		],
 		answers: [4, 5],
 	},
 
 	mondai: {
 		instruction: "{次|つぎ}のダイレクトメールを{読|よ}んで、{後|あと}の{問|と}いに{答|こた}えなさい。",
-		instructionCn: "阅读下面的直邮广告，回答后面的问题。（答案在别册 p.2）",
+		instructionCn: "阅读下面的直邮，回答后面的问题。",
 		instructionEn: "Read the direct mail below and answer the questions that follow. (Answers are in the separate booklet, p. 2.)",
 		blocks: [
 			{
@@ -120,11 +120,11 @@ export const w1d2: ReadingDay = {
 			{
 				type: "title",
 				jp: "{会員様|かいいんさま}ご{招待|しょうたい} {特別|とくべつ}セール",
-				cn: "会员招待　特别促销",
+				cn: "会员招待 特别促销",
 				en: "Special sale by invitation for members",
 				sub: {
 					jp: "{期間限定|きかんげんてい}・{会員様|かいいんさま}だけにお{届|とど}けする\n3{日間|にちかん}だけのお{得|とく}なセールのご{案内|あんない}",
-					cn: "限时・仅寄给会员\n仅三天的超值促销通知",
+					cn: "期间限定・仅向会员寄送\n仅限3天的超值促销通知",
 					en: "Limited time · sent to members only\nNotice of a bargain sale for three days only",
 				},
 			},
@@ -137,38 +137,38 @@ export const w1d2: ReadingDay = {
 			{
 				type: "line",
 				jp: "20XX{年|ねん}7{月|がつ}5{日|か}（{火|か}）〜7{月|がつ}7{日|か}（{木|もく}）",
-				cn: "20XX 年 7 月 5 日（周二）〜7 月 7 日（周四）",
+				cn: "20XX年7月5日（周二）〜7月7日（周四）",
 				en: "Tuesday, July 5, 20XX – Thursday, July 7, 20XX",
 				align: "center",
 			},
 			{
 				type: "heading",
 				jp: "特典1",
-				cn: "优惠 1",
+				cn: "特典1",
 				en: "Bonus 1",
 			},
 			{
 				type: "paragraph",
 				jp: "{新商品|しんしょうひん}も、{割引商品|わりびきしょうひん}も、{店頭表示価格|てんとうひょうじかかく}から{店内全品|てんないぜんぴん}20%OFF＊",
-				cn: "无论是新品还是已经打折的商品，一律按店内标价全场 20% OFF＊",
+				cn: "新品也好，打折商品也好，店内全部商品均在店头标价基础上20%OFF＊",
 				en: "New items and already-discounted items alike: 20% OFF＊ the in-store ticket price on everything in the store",
 			},
 			{
 				type: "paragraph",
 				jp: "さらに、1{万円以上|まんえんいじょう}ご{購入|こうにゅう}の{際|さい}は30%OFF",
-				cn: "此外，一次性购买满 1 万日元时为 30% OFF",
+				cn: "另外，购买1万日元以上时30%OFF",
 				en: "And if you spend 10,000 yen or more, 30% OFF",
 			},
 			{
 				type: "heading",
 				jp: "特典2",
-				cn: "优惠 2",
+				cn: "特典2",
 				en: "Bonus 2",
 			},
 			{
 				type: "paragraph",
 				jp: "セール{中|ちゅう}ご{来店|らいてん}の{お客様|きゃくさま}に、もれなく（{注|ちゅう}）{記念品|きねんひん}をプレゼント！",
-				cn: "促销期间光临本店的顾客，一律赠送纪念品！",
+				cn: "向促销期间光临的各位顾客，一律（注）赠送纪念品！",
 				en: "A souvenir for every customer who visits during the sale, without exception (note)!",
 			},
 			{
@@ -181,7 +181,7 @@ export const w1d2: ReadingDay = {
 			{
 				type: "figure",
 				alt: "値札：¥14,000 が線で消され、下に「特価 ¥10,000」と書いてある",
-				cn: "价签：原价 14,000 日元被划掉，下面写着特价 10,000 日元",
+				cn: "价签：¥14,000被线划掉，下面写着「特价 ¥10,000」",
 				en: "Price tag: ¥14,000 crossed out, with “special price ¥10,000” underneath",
 			},
 		],
@@ -191,7 +191,7 @@ export const w1d2: ReadingDay = {
 		pageNotes: [
 			{
 				jp: "＊ all 20% off the original price",
-				cn: "＊店内所有商品按标价优惠 20%",
+				cn: "＊一律按原价减20%",
 				en: "all 20% off the original price",
 			},
 		],
@@ -199,12 +199,12 @@ export const w1d2: ReadingDay = {
 			{
 				label: "問1",
 				jp: "{正|ただ}しくないのはどれか。",
-				cn: "哪一项是不正确的？",
+				cn: "不正确的是哪一个？",
 				en: "Which of the following is not correct?",
 				choices: [
-					{ jp: "{割引|わりびき}になっている{商品|しょうひん}もさらに{安|やす}くなる。", cn: "已经打折的商品还会再便宜。", en: "Items that are already on discount become even cheaper." },
-					{ jp: "1{万円以上|まんえんいじょう}{買|か}えば3{割引|わりびき}になる。", cn: "买满 1 万日元就打七折。", en: "If you buy 10,000 yen or more, you get 30% off." },
-					{ jp: "{記念品|きねんひん}をもらうには{案内状|あんないじょう}が{必要|ひつよう}だ。", cn: "要拿纪念品必须有邀请函。", en: "You need the invitation notice in order to receive the souvenir." },
+					{ jp: "{割引|わりびき}になっている{商品|しょうひん}もさらに{安|やす}くなる。", cn: "已经打折的商品也会更便宜。", en: "Items that are already on discount become even cheaper." },
+					{ jp: "1{万円以上|まんえんいじょう}{買|か}えば3{割引|わりびき}になる。", cn: "买1万日元以上的话，就是减价三成。", en: "If you buy 10,000 yen or more, you get 30% off." },
+					{ jp: "{記念品|きねんひん}をもらうには{案内状|あんないじょう}が{必要|ひつよう}だ。", cn: "要领到纪念品，需要通知函。", en: "You need the invitation notice in order to receive the souvenir." },
 					{ jp: "{新商品|しんしょうひん}はセールの{対象|たいしょう}ではない。", cn: "新品不是促销对象。", en: "New products are not included in the sale." },
 				],
 				answer: 4,
@@ -228,13 +228,13 @@ export const w1d2: ReadingDay = {
 			{
 				label: "問2",
 				jp: "{右|みぎ}の{値札|ねふだ}がついている{商品|しょうひん}1{点|てん}だけを{購入|こうにゅう}する{場合|ばあい}、いくらで{買|か}えるか。",
-				cn: "只购买右边价签上的那一件商品时，可以多少钱买到？",
+				cn: "只购买贴有右边价签的那1件商品时，能以多少钱买到？",
 				en: "If you buy only the one item with the price tag on the right, how much can you get it for?",
 				choices: [
-					{ jp: "7,000{円|えん}", cn: "7,000 日元", en: "7,000 yen" },
-					{ jp: "8,000{円|えん}", cn: "8,000 日元", en: "8,000 yen" },
-					{ jp: "9,800{円|えん}", cn: "9,800 日元", en: "9,800 yen" },
-					{ jp: "10,000{円|えん}", cn: "10,000 日元", en: "10,000 yen" },
+					{ jp: "7,000{円|えん}", cn: "7,000日元", en: "7,000 yen" },
+					{ jp: "8,000{円|えん}", cn: "8,000日元", en: "8,000 yen" },
+					{ jp: "9,800{円|えん}", cn: "9,800日元", en: "9,800 yen" },
+					{ jp: "10,000{円|えん}", cn: "10,000日元", en: "10,000 yen" },
 				],
 				answer: 1,
 				explanation:
@@ -283,7 +283,7 @@ export const w1d2: ReadingDay = {
 			meaningEn: "when / at the time of…. Used on notices to mark when a condition applies.",
 			example: {
 				jp: "1{万円以上|まんえんいじょう}ご{購入|こうにゅう}の{際|さい}は30%OFF",
-				cn: "购买满 1 万日元时为 30% OFF",
+				cn: "购买1万日元以上时30%OFF",
 				en: "30% OFF when you spend 10,000 yen or more",
 			},
 		},
@@ -294,7 +294,7 @@ export const w1d2: ReadingDay = {
 			meaningEn: "… or more, including the number itself. 1-man-en ijō includes exactly 10,000 yen.",
 			example: {
 				jp: "1{万円以上|まんえんいじょう}ご{購入|こうにゅう}の{際|さい}",
-				cn: "购买满 1 万日元时",
+				cn: "购买1万日元以上时",
 				en: "when you purchase 10,000 yen or more",
 			},
 		},
@@ -305,7 +305,7 @@ export const w1d2: ReadingDay = {
 			meaningEn: "there’s no way that… / it’s impossible that…. Emphatic spoken negation.",
 			example: {
 				jp: "うちなんか{行|い}けるわけないよな。",
-				cn: "我们哪能去得了啊。",
+				cn: "我们这种人根本去不了吧。",
 				en: "There’s no way the likes of us can go.",
 			},
 		},

@@ -91,21 +91,21 @@ export const w4d7: ReadingDay = {
 				instruction:
 					"つぎのグラフは{日本|にほん}の{人口|じんこう}の{推移|すいい}（※1）と{将来|しょうらい}の{人口|じんこう}を{表|あらわ}したものである。よく{見|み}て、{下|した}の{質問|しつもん}に{答|こた}えなさい。{答|こた}えは、1・2・3・4から{最|もっと}もよいものを{一|ひと}つえらびなさい。",
 				instructionCn:
-					"下面的图表显示的是日本人口的变迁与未来的人口。请仔细看图，回答下面的问题。答案从 1・2・3・4 中选出最合适的一个。",
+					"下面的图表表示的是日本人口的变迁（※1）和将来的人口。请仔细看，回答下面的问题。答案请从1・2・3・4中选出最好的一个。",
 				instructionEn:
 					"The graph below shows the change in Japan’s population and the population in the future. Look at it carefully and answer the questions. Choose the best answer from 1, 2, 3, or 4.",
 				blocks: [
 					{
 						type: "figure",
 						alt: "棒グラフが総人口（万人・左目盛り）、折れ線が65歳以上の構成比（％・右目盛り）を表す複合グラフ。1925年から2105年まで10年刻み",
-						cn: "复合图：柱状表示总人口（万人，左侧刻度），折线表示 65 岁以上人口的构成比（％，右侧刻度）。横轴为 1925 年至 2105 年，每 10 年一格。（本站按原书重绘）",
+						cn: "柱状图表示总人口（万人・左侧刻度）、折线表示65岁以上的构成比（％・右侧刻度）的复合图表。从1925年到2105年，以10年为间隔。",
 						en: "A combined chart: bars show total population (10,000s of people, left scale); the line shows the share aged 65 and over (%, right scale). The x-axis runs from 1925 to 2105 in 10-year steps. (Redrawn from the book.)",
 						svg: populationChart(),
 					},
 					{
 						type: "line",
 						jp: "（{資料|しりょう}：{総務省統計局|そうむしょうとうけいきょく}「{人口|じんこう}の{推移|すいい}と{将来人口|しょうらいじんこう}」）",
-						cn: "（资料：总务省统计局《人口的变迁与未来人口》）",
+						cn: "（资料：总务省统计局「人口的变迁与将来人口」）",
 						en: "(Source: Statistics Bureau, Ministry of Internal Affairs, “Population Trends and Future Population”)",
 						align: "right",
 					},
@@ -118,27 +118,27 @@ export const w4d7: ReadingDay = {
 					{
 						label: "1",
 						jp: "{日本|にほん}の{総人口|そうじんこう}について、{正|ただ}しいものはどれか。グラフを{見|み}て{答|こた}えなさい。",
-						cn: "关于日本的总人口，下列哪一项正确？请看图作答。",
+						cn: "关于日本的总人口，正确的是哪一个？请看图表回答。",
 						en: "Which of the following is correct about Japan’s total population? Answer by looking at the graph.",
 						choices: [
 							{
 								jp: "{日本|にほん}の{人口|じんこう}は2005{年|ねん}には1925{年|ねん}の2{倍|ばい}まで{増加|ぞうか}したが、その{後|ご}は{一定|いってい}になると{予想|よそう}される。",
-								cn: "日本人口到 2005 年增加到 1925 年的 2 倍，此后预计将保持不变。",
+								cn: "日本的人口到2005年增加到了1925年的2倍，但预计此后将保持不变。",
 								en: "Japan’s population had doubled from 1925 by 2005, and after that it is expected to stay constant.",
 							},
 							{
 								jp: "{日本|にほん}の{人口|じんこう}は2005{年|ねん}には1925{年|ねん}の2{分|ぶん}の1まで{減少|げんしょう}したが、それを{境|さかい}に{少|すこ}しずつ{増加|ぞうか}していくと{予想|よそう}される。",
-								cn: "日本人口到 2005 年减少到 1925 年的二分之一，此后预计将逐渐增加。",
+								cn: "日本的人口到2005年减少到了1925年的二分之一，但预计将以此为界一点一点地增加下去。",
 								en: "Japan’s population had fallen to half of 1925 by 2005, and after that turning point it is expected to increase little by little.",
 							},
 							{
 								jp: "{日本|にほん}の{人口|じんこう}は2005{年|ねん}には1925{年|ねん}の2{倍|ばい}まで{増加|ぞうか}したが、それをピークに{減少|げんしょう}すると{予想|よそう}される。",
-								cn: "日本人口到 2005 年增加到 1925 年的 2 倍，此后预计将以此为顶点开始减少。",
+								cn: "日本的人口到2005年增加到了1925年的2倍，但预计将以此为顶点开始减少。",
 								en: "Japan’s population had doubled from 1925 by 2005, and after that peak it is expected to decrease.",
 							},
 							{
 								jp: "{日本|にほん}の{人口|じんこう}は2060{年|ねん}ごろまで{増加|ぞうか}する{見込|みこ}みだが、その{後|ご}は{少|すこ}しずつ{減|へ}っていくと{予想|よそう}される。",
-								cn: "日本人口预计到 2060 年左右为止持续增加，此后将逐渐减少。",
+								cn: "日本的人口有望增加至2060年前后，但预计此后将一点一点地减少下去。",
 								en: "Japan’s population is expected to keep increasing until around 2060, and after that to fall little by little.",
 							},
 						],
@@ -163,27 +163,27 @@ export const w4d7: ReadingDay = {
 					{
 						label: "2",
 						jp: "{人口|じんこう}の{構成比|こうせいひ}（※2）について、{正|ただ}しいものはどれか。グラフを{見|み}て{答|こた}えなさい。",
-						cn: "关于人口的构成比，下列哪一项正确？请看图作答。",
+						cn: "关于人口的构成比（※2），正确的是哪一个？请看图表回答。",
 						en: "Which of the following is correct about the composition of the population? Answer by looking at the graph.",
 						choices: [
 							{
 								jp: "10％にも{満|み}たなかった65{歳以上|さいいじょう}の{人口|じんこう}は1975{年|ねん}ごろから{急激|きゅうげき}に{増加|ぞうか}し{続|つづ}け、40％に{達|たっ}すると{予想|よそう}されている。",
-								cn: "曾经不到 10％ 的 65 岁以上人口，从 1975 年前后开始急剧持续增加，预计将达到 40％。",
+								cn: "曾经连10％都不到的65岁以上人口，从1975年前后起急剧地持续增加，据预测将达到40％。",
 								en: "The share aged 65 and over, which was under 10%, has risen sharply since around 1975 and is expected to reach 40%.",
 							},
 							{
 								jp: "65{歳以上|さいいじょう}の{人口|じんこう}は1975{年|ねん}ごろから{徐々|じょじょ}に{伸|の}び、{将来|しょうらい}は{総人口|そうじんこう}の{半分|はんぶん}を{占|し}めると{予想|よそう}される。",
-								cn: "65 岁以上人口从 1975 年前后开始缓慢增长，预计将来会占总人口的一半。",
+								cn: "65岁以上人口从1975年前后起逐渐增长，预计将来将占总人口的一半。",
 								en: "The population aged 65 and over has grown gradually since around 1975 and is expected to account for half of the total in the future.",
 							},
 							{
 								jp: "10％にも{満|み}たなかった65{歳以上|さいいじょう}の{人口|じんこう}は1975{年|ねん}ごろから{急激|きゅうげき}に{増加|ぞうか}し{続|つづ}け、{将来|しょうらい}は{総人口|そうじんこう}の{半分|はんぶん}を{占|し}めると{予想|よそう}される。",
-								cn: "曾经不到 10％ 的 65 岁以上人口，从 1975 年前后开始急剧持续增加，预计将来会占总人口的一半。",
+								cn: "曾经连10％都不到的65岁以上人口，从1975年前后起急剧地持续增加，预计将来将占总人口的一半。",
 								en: "The share aged 65 and over, which was under 10%, has risen sharply since around 1975 and is expected to account for half of the total in the future.",
 							},
 							{
 								jp: "65{歳以上|さいいじょう}の{人口|じんこう}は1975{年|ねん}ごろから{徐々|じょじょ}に{伸|の}びているが、2070{年|ねん}ごろを{境|さかい}に{急激|きゅうげき}に{減少|げんしょう}し{続|つづ}けると{予想|よそう}される。",
-								cn: "65 岁以上人口从 1975 年前后开始缓慢增长，但预计以 2070 年前后为界将急剧持续减少。",
+								cn: "65岁以上人口从1975年前后起一直在逐渐增长，但预计以2070年前后为界将急剧地持续减少。",
 								en: "The population aged 65 and over has grown gradually since around 1975, but after around 2070 it is expected to keep falling sharply.",
 							},
 						],
@@ -211,17 +211,17 @@ export const w4d7: ReadingDay = {
 				label: "問題2",
 				instruction:
 					"つぎの{新聞記事|しんぶんきじ}を{読|よ}んで、{質問|しつもん}に{答|こた}えなさい。{答|こた}えは、1・2・3・4から{最|もっと}もよいものを{一|ひと}つえらびなさい。",
-				instructionCn: "阅读下面的新闻报道，回答问题。答案从 1・2・3・4 中选出最合适的一个。",
+				instructionCn: "请阅读下面的新闻报道，回答问题。答案请从1・2・3・4中选出最好的一个。",
 				instructionEn: "Read the newspaper article below and answer the questions. Choose the best answer from 1, 2, 3, or 4.",
 				blocks: [
-					{ type: "title", jp: "{事件|じけん}の{影響|えいきょう}で（※1）{心|こころ}の{傷|きず}", cn: "受事件影响　心灵创伤", en: "Emotional wounds from the incident" },
-					{ type: "heading", jp: "カウンセリング（※2）{開始|かいし}", cn: "开始心理辅导", en: "Counseling begins" },
-					{ type: "line", jp: "{大阪市中央区|おおさかしちゅうおうく}の{小中学校|しょうちゅうがっこう}", cn: "大阪市中央区的中小学", en: "Elementary and junior high schools in Chuo Ward, Osaka", align: "right" },
+					{ type: "title", jp: "{事件|じけん}の{影響|えいきょう}で（※1）{心|こころ}の{傷|きず}", cn: "受事件影响（※1）的心灵创伤", en: "Emotional wounds from the incident" },
+					{ type: "heading", jp: "カウンセリング（※2）{開始|かいし}", cn: "心理辅导（※2）开始", en: "Counseling begins" },
+					{ type: "line", jp: "{大阪市中央区|おおさかしちゅうおうく}の{小中学校|しょうちゅうがっこう}", cn: "大阪市中央区的小学和初中", en: "Elementary and junior high schools in Chuo Ward, Osaka", align: "right" },
 					{
 						type: "paragraph",
 						indent: true,
 						jp: "「{子|こ}どもが{一人|ひとり}で{寝|ね}られない」「{包丁|ほうちょう}を{見|み}ると{泣|な}き{出|だ}す」。{大阪|おおさか}で{起|お}きた{児童殺傷|じどうさっしょう}（※3）{事件|じけん}の{影響|えいきょう}で、{事件|じけん}の{現場|げんば}（※4）となった{青山小学校|あおやましょうがっこう}の{児童|じどう}たちが{深刻|しんこく}な{心|こころ}の{傷|きず}を{訴|うった}えている。また{事件|じけん}に{直接関係|ちょくせつかんけい}のない{付近|ふきん}の{小学校|しょうがっこう}や{中学校|ちゅうがっこう}でも、{事件後|じけんご}、「{学校|がっこう}へ{行|い}くのをいやがる」「{怖|こわ}い{夢|ゆめ}をみる」という{生徒|せいと}が{増|ふ}えるなどの{現象|げんしょう}が{起|お}きており、{各校|かくこう}では{十一日|じゅういちにち}より{学校関係者|がっこうかんけいしゃ}による{子|こ}どもたちのカウンセリングを{開始|かいし}した。",
-						cn: "「孩子不敢一个人睡」「一看到菜刀就哭起来」。受大阪发生的儿童杀伤事件影响，作为事发现场的青山小学的学生们诉说着深重的心理创伤。此外，在与事件没有直接关系的附近中小学，事件之后也出现了「不愿意去学校」「做噩梦」的学生增多等现象，各校已于 11 日起由学校相关人员开始对孩子们进行心理辅导。",
+						cn: "「孩子不能一个人睡觉」「一看到菜刀就哭起来」。受在大阪发生的儿童杀伤（※3）事件的影响，成为事件现场（※4）的青山小学的儿童们诉说着严重的心灵创伤。此外，就连与事件没有直接关系的附近小学和初中，事件后也出现了「不愿意去学校」「做可怕的梦」的学生增多等现象，各校从11日起开始了由学校相关人员对孩子们进行的心理辅导。",
 						en: "“My child cannot sleep alone.” “He bursts into tears when he sees a kitchen knife.” Affected by a child stabbing incident in Osaka, pupils at Aoyama Elementary School — the scene of the crime — are reporting serious emotional wounds. Nearby elementary and junior high schools not directly connected to the incident have also seen more pupils who “don’t want to go to school” or “have nightmares” since then, and on the 11th each school began counseling for the children, provided by school staff.",
 					},
 				],
@@ -235,13 +235,13 @@ export const w4d7: ReadingDay = {
 					{
 						label: "3",
 						jp: "この{記事|きじ}からわかることはどれか。",
-						cn: "从这则报道可以得知的是哪一项？",
+						cn: "从这篇报道可以知道的是哪一个？",
 						en: "Which of the following can we tell from this article?",
 						choices: [
 							{ jp: "いつ{事件|じけん}が{起|お}こったか。", cn: "事件是什么时候发生的。", en: "when the incident happened" },
-							{ jp: "だれが{児童|じどう}を{傷|きず}つけたか。", cn: "是谁伤害了学生。", en: "who injured the children" },
+							{ jp: "だれが{児童|じどう}を{傷|きず}つけたか。", cn: "是谁伤害了儿童。", en: "who injured the children" },
 							{ jp: "どこで{事件|じけん}が{起|お}こったか。", cn: "事件是在哪里发生的。", en: "where the incident happened" },
-							{ jp: "{何人|なんにん}の{児童|じどう}が{傷|きず}つけられたか。", cn: "有多少学生受伤。", en: "how many children were injured" },
+							{ jp: "{何人|なんにん}の{児童|じどう}が{傷|きず}つけられたか。", cn: "有多少名儿童被伤害了。", en: "how many children were injured" },
 						],
 						answer: 3,
 						explanation:
@@ -264,27 +264,27 @@ export const w4d7: ReadingDay = {
 					{
 						label: "4",
 						jp: "この{文章|ぶんしょう}には{何|なに}が{書|か}いてあるか。",
-						cn: "这篇文章写的是什么？",
+						cn: "这篇文章里写着什么？",
 						en: "What is this article about?",
 						choices: [
 							{
 								jp: "{青山小学校|あおやましょうがっこう}より{付近|ふきん}の{小中学校|しょうちゅうがっこう}のほうが{事件|じけん}の{影響|えいきょう}が{大|おお}きい。",
-								cn: "附近的中小学比青山小学受事件的影响更大。",
+								cn: "附近的小学和初中比青山小学受事件的影响更大。",
 								en: "Nearby schools were more affected by the incident than Aoyama Elementary.",
 							},
 							{
 								jp: "{事件|じけん}による{子|こ}どもたちの{心|こころ}の{傷|きず}は{深|ふか}く、カウンセリングが{必要|ひつよう}である。",
-								cn: "事件给孩子们造成的心灵创伤很深，需要心理辅导。",
+								cn: "事件给孩子们造成的心灵创伤很深，心理辅导是必要的。",
 								en: "The children’s emotional wounds from the incident are deep, and counseling is needed.",
 							},
 							{
 								jp: "カウンセリングをしても{事件|じけん}による{子|こ}どもたちの{心|こころ}の{傷|きず}は{治|なお}らない。",
-								cn: "即使做心理辅导，事件给孩子们造成的心灵创伤也无法治愈。",
+								cn: "即使进行心理辅导，事件给孩子们造成的心灵创伤也不会痊愈。",
 								en: "Even with counseling, the children’s emotional wounds from the incident will not heal.",
 							},
 							{
 								jp: "{学校関係者|がっこうかんけいしゃ}は{事件|じけん}について{深刻|しんこく}な{心|こころ}の{傷|きず}を{訴|うった}えている。",
-								cn: "学校相关人员诉说着关于事件的深重心理创伤。",
+								cn: "学校相关人员诉说着关于事件的严重心灵创伤。",
 								en: "School staff are reporting serious emotional wounds from the incident.",
 							},
 						],
@@ -348,20 +348,20 @@ export const w4d7: ReadingDay = {
 			formation: "名詞 ＋ を境に",
 			meaning: "以……为界（前后发生变化）。",
 			meaningEn: "With … as the turning point (things change after that).",
-			example: { jp: "2070{年|ねん}ごろを{境|さかい}に", cn: "以 2070 年前后为界", en: "with around 2070 as the turning point" },
+			example: { jp: "2070{年|ねん}ごろを{境|さかい}に", cn: "以2070年前后为界", en: "with around 2070 as the turning point" },
 		},
 		{
 			pattern: "〜にも{満|み}たない",
 			formation: "数量詞 ＋ にも満たない",
 			meaning: "连……都不到。强调数量之少。",
 			meaningEn: "Not even as much as …. Stresses how small the number is.",
-			example: { jp: "10％にも{満|み}たなかった65{歳以上|さいいじょう}の{人口|じんこう}", cn: "曾经连 10％ 都不到的 65 岁以上人口", en: "the population aged 65 and over, which was not even 10%" },
+			example: { jp: "10％にも{満|み}たなかった65{歳以上|さいいじょう}の{人口|じんこう}", cn: "曾经连10％都不到的65岁以上人口", en: "the population aged 65 and over, which was not even 10%" },
 		},
 		{
 			pattern: "〜{見込|みこ}みだ／〜と{予想|よそう}される",
 			meaning: "预计……。图表、报道中陈述预测的固定说法。",
 			meaningEn: "It is expected that …. A set way to state a forecast in graphs and articles.",
-			example: { jp: "その{後|ご}は{少|すこ}しずつ{減|へ}っていくと{予想|よそう}される。", cn: "此后预计将逐渐减少。", en: "After that it is expected to fall little by little." },
+			example: { jp: "その{後|ご}は{少|すこ}しずつ{減|へ}っていくと{予想|よそう}される。", cn: "预计此后将一点一点地减少下去。", en: "After that it is expected to fall little by little." },
 		},
 		{
 			pattern: "〜の{影響|えいきょう}で",
@@ -374,7 +374,7 @@ export const w4d7: ReadingDay = {
 			formation: "名詞 ＋ による",
 			meaning: "由……造成的、依据……的。",
 			meaningEn: "Caused by … / carried out by ….",
-			example: { jp: "{学校関係者|がっこうかんけいしゃ}による{子|こ}どもたちのカウンセリング", cn: "由学校相关人员进行的儿童心理辅导", en: "counseling for the children provided by school staff" },
+			example: { jp: "{学校関係者|がっこうかんけいしゃ}による{子|こ}どもたちのカウンセリング", cn: "由学校相关人员进行的孩子们的心理辅导", en: "counseling for the children provided by school staff" },
 		},
 		{
 			pattern: "〜など（の）〜が{起|お}きており",
@@ -382,7 +382,7 @@ export const w4d7: ReadingDay = {
 			meaningEn: "Phenomena such as … have been occurring. ~te ori is the written form of ~te ite, common in news.",
 			example: {
 				jp: "{生徒|せいと}が{増|ふ}えるなどの{現象|げんしょう}が{起|お}きており",
-				cn: "出现了学生增多等现象",
+				cn: "学生增多等现象正在发生",
 				en: "phenomena such as an increase in pupils have been occurring",
 			},
 		},

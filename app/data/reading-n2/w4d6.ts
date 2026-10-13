@@ -12,38 +12,38 @@ export const w4d6: ReadingDay = {
 
 	point: {
 		title: "{情景|じょうけい}や{登場人物|とうじょうじんぶつ}の{様子|ようす}、{気持|きも}ちを{読|よ}み{取|と}ろう！",
-		titleCn: "阅读并领会情景及出场人物的表情和心情！",
+		titleCn: "试着读懂情景，以及出场人物的样子和心情吧！",
 		titleEn: "Try to comprehend the scenes, the characters’ states and their feelings!",
 		figure: {
 			alt: "もじもじしながら「あの、ぼく……」と言うジョバンニと、真っ赤になっているジョバンニのイラスト",
-			cn: "乔万尼扭扭捏捏地说「那个，我……」；另一边脸红得通红。",
+			cn: "一边扭扭捏捏、一边说着「那个，我……」的乔万尼，以及涨得通红的乔万尼的插画",
 			en: "Giovanni fidgets, saying “Um, I…”; another drawing shows him flushed bright red.",
 		},
 		tips: [
 			{
 				jp: "{例えば|たとえば}こんなふうに{気持|きも}ちを{読|よ}み{取|と}ります。",
-				cn: "比如可以像下面这样领会心情。",
+				cn: "例如，像这样来读懂心情。",
 				en: "You read feelings like this, for example.",
 			},
 			{
 				jp: "{先生|せんせい}は{意外|いがい}なように（{質問|しつもん}に{答|こた}えない）カムパネルラを{見|み}ていました。→{先生|せんせい}はカムパネルラが{答|こた}えられると{思|おも}っているから「{意外|いがい}」。",
-				cn: "老师意外地看着（没有回答问题的）康帕内拉。→因为老师以为康帕内拉能答上来，所以才「意外」。",
+				cn: "老师像是感到意外似的看着（不回答问题的）康帕内拉。→因为老师认为康帕内拉答得出来，所以「意外」（出乎意料）。",
 				en: "The teacher looked at Campanella as if surprised (that he did not answer). → The teacher thought Campanella could answer, so it is “unexpected.”",
 			},
 			{
 				jp: "もじもじ{立|た}ち{上|あ}がったままやはり{答|こた}えができませんでした。→……したいことがはっきりできないときに「もじもじ」する。",
-				cn: "扭扭捏捏地站着，还是答不出来。→想做的事没法痛痛快快做出来时，就会「もじもじ」。",
+				cn: "扭扭捏捏地站着，还是没能回答出来。→……想做的事无法清楚地做到时，就会「もじもじ」（扭扭捏捏）。",
 				en: "He stood up fidgeting and still could not answer. → You fidget (mojimoji) when you cannot do clearly what you want to do.",
 			},
 			{
 				jp: "ジョバンニはまっ{赤|か}になってうなずきました。→{恥|は}ずかしいときや{怒|おこ}ったときに「{真|ま}っ{赤|か}に」なる。",
-				cn: "乔万尼满脸通红地点了点头。→害羞或生气的时候会「涨红」。",
+				cn: "乔万尼涨得通红地点了点头。→害羞的时候，或是生气的时候，就会变得「真っ赤に」（通红）。",
 				en: "Giovanni nodded, turning bright red. → People turn “bright red” when they are embarrassed or angry.",
 			},
 		],
 		expressions: [
 			{ jp: "意外なように", kana: "いがい", cn: "一副意外的样子", en: "as if surprised / unexpectedly" },
-			{ jp: "もじもじ", cn: "扭扭捏捏、局促", en: "fidgeting; hesitating" },
+			{ jp: "もじもじ", cn: "扭扭捏捏、局促不安", en: "fidgeting; hesitating" },
 			{ jp: "真っ赤になる", kana: "まっかになる", cn: "涨得通红（害羞或生气）", en: "to turn bright red (from embarrassment or anger)" },
 			{ jp: "うなずく", cn: "点头", en: "to nod" },
 			{ jp: "名指す", kana: "なざす", cn: "点名", en: "to call on (by name)" },
@@ -52,7 +52,7 @@ export const w4d6: ReadingDay = {
 
 	renshu: {
 		instruction: "{次|つぎ}の{会話文|かいわぶん}を{読|よ}んで、{後|あと}の{文|ぶん}から{正|ただ}しいものを{選|えら}ぼう。",
-		instructionCn: "阅读下面的对话，从后面的句子中选出正确的。（答案在下一页）",
+		instructionCn: "阅读下面的对话，从后面的句子中选出正确的吧。",
 		instructionEn: "Read the conversation below and choose the correct statements from the sentences that follow. (Answers are on the next page.)",
 		blocks: [
 			{
@@ -61,7 +61,7 @@ export const w4d6: ReadingDay = {
 				speakerCn: "女儿",
 				speakerEn: "Daughter",
 				jp: "お{母|かあ}さん、「{銀河|ぎんが}（{注|ちゅう}1）{鉄道|てつどう}の{夜|よる}」って{読|よ}んだことある？",
-				cn: "妈妈，《银河铁道之夜》你读过吗？",
+				cn: "妈妈，「银河（注1）铁道之夜」你读过吗？",
 				en: "Mom, have you ever read Night on the Galactic Railroad?",
 			},
 			{
@@ -70,7 +70,7 @@ export const w4d6: ReadingDay = {
 				speakerCn: "母亲",
 				speakerEn: "Mother",
 				jp: "{宮沢賢治|みやざわけんじ}（{注|ちゅう}2）の？　あるよ。なんで？",
-				cn: "宫泽贤治的？读过啊。怎么了？",
+				cn: "宫泽贤治（注2）的？有啊。为什么？",
 				en: "Miyazawa Kenji’s? Yes, I have. Why?",
 			},
 			{
@@ -79,7 +79,7 @@ export const w4d6: ReadingDay = {
 				speakerCn: "女儿",
 				speakerEn: "Daughter",
 				jp: "{今日|きょう}{学校|がっこう}で{借|か}りて{読|よ}んだんだけど、カンパネラ（{注|ちゅう}3）って{最後|さいご}、{死|し}んじゃったの？",
-				cn: "今天在学校借来看的，康帕内拉最后是死了吗？",
+				cn: "今天在学校借来读了，康帕内拉（注3）最后，是死掉了吗？",
 				en: "I borrowed it at school today and read it — does Campanella die at the end?",
 			},
 			{
@@ -88,7 +88,7 @@ export const w4d6: ReadingDay = {
 				speakerCn: "母亲",
 				speakerEn: "Mother",
 				jp: "そうだよ。{主人公|しゅじんこう}の{友|とも}だちでしょ？　かわいそうだよね。{賢|かしこ}くていい{子|こ}なのに。",
-				cn: "是啊。是主人公的朋友吧？真可怜。明明又聪明又好。",
+				cn: "是啊。是主人公的朋友吧？真可怜吧。明明又聪明，又是个好孩子。",
 				en: "That’s right. He’s the main character’s friend, isn’t he? It’s sad. He’s a smart, good kid, too.",
 			},
 			{
@@ -97,7 +97,7 @@ export const w4d6: ReadingDay = {
 				speakerCn: "女儿",
 				speakerEn: "Daughter",
 				jp: "そうそう。ジョバンニ、{貧乏|びんぼう}だからってみんなにいじめられてるんだよね。お{父|とう}さんが{漁|りょう}から{帰|かえ}ってこなくて、お{母|かあ}さんも{病気|びょうき}でかわいそうなのに。でもカンパネラだけは{優|やさ}しくて、たった{一人|ひとり}の{友|とも}だちなのに、ひどい！",
-				cn: "对对。乔万尼因为穷被大家欺负。爸爸打渔没回来，妈妈又生病，已经够可怜了。可只有康帕内拉对他好，就这么一个朋友，太惨了！",
+				cn: "对对。乔万尼就因为穷被大家欺负，对吧。爸爸打鱼没有回来，妈妈也生病，明明很可怜。可是只有康帕内拉很温柔，明明是唯一的一个朋友，太过分了！",
 				en: "Right, right. Giovanni gets bullied because he’s poor. His father hasn’t come back from fishing, and his mother is ill — it’s already so sad. And Campanella is the only one who’s kind, his only friend, and then — how awful!",
 			},
 		],
@@ -107,90 +107,90 @@ export const w4d6: ReadingDay = {
 			{ marker: "（注3）", term: "カンパネラ", jp: "カムパネルラ", cn: "康帕内拉（作品中的人物）", en: "Campanella" },
 		],
 		choices: [
-			{ jp: "{娘|むすめ}は「{銀河鉄道|ぎんがてつどう}の{夜|よる}」という{本|ほん}を{読|よ}んだことがない。", cn: "女儿没读过《银河铁道之夜》这本书。", en: "The daughter has never read Night on the Galactic Railroad." },
+			{ jp: "{娘|むすめ}は「{銀河鉄道|ぎんがてつどう}の{夜|よる}」という{本|ほん}を{読|よ}んだことがない。", cn: "女儿没有读过名为「银河铁道之夜」的书。", en: "The daughter has never read Night on the Galactic Railroad." },
 			{ jp: "カンパネラとジョバンニは{本|ほん}の{中|なか}の{登場人物|とうじょうじんぶつ}である。", cn: "康帕内拉和乔万尼是书中的出场人物。", en: "Campanella and Giovanni are characters in the book." },
 			{ jp: "カンパネラはジョバンニの{友|とも}だちである。", cn: "康帕内拉是乔万尼的朋友。", en: "Campanella is Giovanni’s friend." },
-			{ jp: "ジョバンニは{病気|びょうき}である。", cn: "乔万尼生病了。", en: "Giovanni is ill." },
-			{ jp: "カンパネラはひどい{人|ひと}だ。", cn: "康帕内拉是个很坏的人。", en: "Campanella is a terrible person." },
+			{ jp: "ジョバンニは{病気|びょうき}である。", cn: "乔万尼在生病。", en: "Giovanni is ill." },
+			{ jp: "カンパネラはひどい{人|ひと}だ。", cn: "康帕内拉是个很过分的人。", en: "Campanella is a terrible person." },
 		],
 		answers: [2, 3],
 	},
 
 	mondai: {
 		instruction: "{次|つぎ}の{文章|ぶんしょう}を{読|よ}んで、{後|あと}の{問|と}いに{答|こた}えなさい。",
-		instructionCn: "阅读下面的文章，回答后面的问题。（答案在别册 p.5）",
+		instructionCn: "请阅读下面的文章，回答后面的问题。",
 		instructionEn: "Read the passage below and answer the questions that follow. (Answers are in the separate booklet, p. 5.)",
 		blocks: [
 			{
 				type: "paragraph",
 				jp: "「ではみなさんは、そういうふうに{川|かわ}だと{言|い}われたり、{乳|ちち}の{流|なが}れのあとだと{言|い}われたりしていた、このぼんやりと{白|しろ}いものがほんとうは{何|なに}かご{承知|しょうち}ですか。」（{中略|ちゅうりゃく}）",
-				cn: "「那么，诸位，那个一直被人说成是河、说成是乳汁流过的痕迹的、朦朦胧胧的白色的东西，究竟是什么，你们知道吗？」（中略）",
+				cn: "「那么，诸位，这个被人那样说成是河、或被说成是乳汁流过的痕迹的、朦朦胧胧的白色东西，实际上究竟是什么，你们可知道吗？」（中略）",
 				en: "“Now then, everyone: that hazy white thing that people have called a river, or the trace of a flow of milk — do you know what it really is?” (passage omitted)",
 			},
 			{
 				type: "paragraph",
 				indent: true,
 				jp: "カムパネルラが{手|て}をあげました。それから{四|よ}、{五人|ごにん}{手|て}をあげました。ジョバンニも①{手|て}をあげようとして、{急|いそ}いでそのままやめました。たしかにあれがみんな{星|ほし}だと、いつか{雑誌|ざっし}で{読|よ}んだのでしたが、このごろはジョバンニはまるで{毎日|まいにち}{教室|きょうしつ}でも{眠|ねむ}く、{本|ほん}を{読|よ}むひまも{読|よ}む{本|ほん}もないので、なんだかどんなこともよくわからないという{気持|きも}ちがするのでした。",
-				cn: "康帕内拉举起了手。接着又有四五个人举起了手。乔万尼也①正要举手，又连忙停了下来。那东西全是星星，他以前确实在杂志上读到过；可最近乔万尼每天在教室里都困，既没有读书的时间也没有可读的书，总觉得什么都弄不太明白。",
+				cn: "康帕内拉举起了手。接着四、五个人举起了手。乔万尼也①正要举手，又连忙就此停住了。那个全都是星星，这一点他确实有一次在杂志上读到过；可是近来，乔万尼简直每天连在教室里都犯困，既没有读书的时间，也没有可读的书，所以不知怎么地，有一种什么都不大明白的心情。",
 				en: "Campanella raised his hand. Then four or five others raised theirs. Giovanni too ① was about to raise his hand, then hurriedly stopped. He had certainly read in a magazine once that those were all stars; but these days Giovanni was sleepy in class every day, had neither time to read nor books to read, and felt as if he didn’t really understand anything.",
 			},
 			{
 				type: "paragraph",
 				indent: true,
 				jp: "ところが{先生|せんせい}は{早|はや}くもそれを{見|み}つけたのでした。",
-				cn: "可老师已经很快发现了。",
+				cn: "然而，老师却很快就发现了这件事。",
 				en: "But the teacher had already noticed it.",
 			},
-			{ type: "line", jp: "「ジョバンニさん。あなたはわかっているのでしょう。」", cn: "「乔万尼。你是知道的吧。」", en: "“Giovanni. You know, don’t you.”" },
+			{ type: "line", jp: "「ジョバンニさん。あなたはわかっているのでしょう。」", cn: "「乔万尼同学。你是知道的吧。」", en: "“Giovanni. You know, don’t you.”" },
 			{
 				type: "paragraph",
 				indent: true,
 				jp: "ジョバンニは{勢|いきお}いよく{立|た}ちあがりましたが、{立|た}ってみるともうはっきりとそれを{答|こた}えることができないのでした。（{中略|ちゅうりゃく}）{先生|せんせい}がまた{言|い}いました。",
-				cn: "乔万尼猛地站了起来，可站起来一看，已经没法清楚地回答了。（中略）老师又说。",
+				cn: "乔万尼猛地站了起来，可是站起来一看，已经没法清楚地回答了。（中略）老师又说道。",
 				en: "Giovanni stood up with a rush, but once he was on his feet he could no longer answer it clearly. (passage omitted) The teacher spoke again.",
 			},
-			{ type: "line", jp: "「{大|おお}きな{望遠鏡|ぼうえんきょう}で{銀河|ぎんが}をよく{調|しら}べると{銀河|ぎんが}はだいたい{何|なん}でしょう。」", cn: "「用大望远镜好好观察银河，银河大体上是什么呢？」", en: "“If you look at the galaxy well through a large telescope, what, roughly, is the galaxy?”" },
+			{ type: "line", jp: "「{大|おお}きな{望遠鏡|ぼうえんきょう}で{銀河|ぎんが}をよく{調|しら}べると{銀河|ぎんが}はだいたい{何|なん}でしょう。」", cn: "「如果用大望远镜好好查看银河，银河大致是什么呢？」", en: "“If you look at the galaxy well through a large telescope, what, roughly, is the galaxy?”" },
 			{
 				type: "paragraph",
 				indent: true,
 				jp: "やっぱり{星|ほし}だとジョバンニは{思|おも}いましたが、こんどもすぐに{答|こた}えることができませんでした。",
-				cn: "乔万尼想，果然还是星星，可这次也没能马上回答。",
+				cn: "乔万尼想，果然还是星星，可是这一次也没能马上回答。",
 				en: "Giovanni thought, it is stars after all — but this time too he could not answer at once.",
 			},
 			{
 				type: "paragraph",
 				indent: true,
 				jp: "{先生|せんせい}はしばらく{困|こま}ったようすでしたが、{眼|め}をカムパネルラのほうへ{向|む}けて、",
-				cn: "老师为难了一会儿，把目光转向康帕内拉，",
+				cn: "老师为难了片刻，将目光转向康帕内拉那边，",
 				en: "The teacher looked troubled for a while, then turned his eyes toward Campanella.",
 			},
-			{ type: "line", jp: "「ではカムパネルラさん。」と{名指|なざ}しました。", cn: "「那么康帕内拉。」点了名。", en: "“Then, Campanella,” he called on him." },
+			{ type: "line", jp: "「ではカムパネルラさん。」と{名指|なざ}しました。", cn: "「那么，康帕内拉同学。」点了名。", en: "“Then, Campanella,” he called on him." },
 			{
 				type: "paragraph",
 				indent: true,
 				jp: "するとあんなに{元気|げんき}に{手|て}をあげたカムパネルラが、やはりもじもじ{立|た}ち{上|あ}がったままやはり{答|こた}えができませんでした。",
-				cn: "可刚才那么精神地举起手的康帕内拉，也扭扭捏捏地站着，还是答不出来。",
+				cn: "于是，那么精神地举过手的康帕内拉，还是扭扭捏捏地站着，还是没能回答出来。",
 				en: "Then Campanella, who had raised his hand so brightly, stood up fidgeting and still could not answer either.",
 			},
 			{
 				type: "paragraph",
 				indent: true,
 				jp: "{先生|せんせい}は{意外|いがい}なようにしばらくじっとカムパネルラを{見|み}ていましたが、{急|いそ}いで、",
-				cn: "老师意外地盯着康帕内拉看了一会儿，然后连忙说，",
+				cn: "老师像是感到意外似的，盯着康帕内拉看了一会儿，随即连忙，",
 				en: "The teacher looked at Campanella for a while as if surprised, then hurriedly",
 			},
-			{ type: "line", jp: "「では、よし。」と{言|い}いながら、{自分|じぶん}で{星図|せいず}を{指|さ}しました。", cn: "「那么，好了。」一边说着，自己指起星图来。", en: "said, “All right then,” and pointed to the star chart himself." },
+			{ type: "line", jp: "「では、よし。」と{言|い}いながら、{自分|じぶん}で{星図|せいず}を{指|さ}しました。", cn: "一边说着「那么，好吧。」，一边亲自指着星图。", en: "said, “All right then,” and pointed to the star chart himself." },
 			{
 				type: "paragraph",
 				jp: "「このぼんやりと{白|しろ}い{銀河|ぎんが}を{大|おお}きないい{望遠鏡|ぼうえんきょう}で{見|み}ますと、もうたくさんの{小|ちい}さな{星|ほし}に{見|み}えるのです。ジョバンニさんそうでしょう。」",
-				cn: "「把这朦朦胧胧的白色银河用一架又大又好的望远镜来看，就已经能看成许多小星星了。乔万尼，是这样吧。」",
+				cn: "「用一架又大又好的望远镜来看这朦朦胧胧的白色银河的话，看起来就已经是许多小星星了。乔万尼同学，是这样吧。」",
 				en: "“If you look at this hazy white galaxy through a large, good telescope, it already appears as a great many little stars. That’s right, isn’t it, Giovanni.”",
 			},
 			{
 				type: "paragraph",
 				indent: true,
 				jp: "ジョバンニはまっ{赤|か}になってうなずきました。けれどもいつかジョバンニの{眼|め}のなかには②{涙|なみだ}がいっぱいになりました。そうだ{僕|ぼく}は{知|し}っていたのだ、もちろんカムパネルラも{知|し}っている、それはいつかカムパネルラのお{父|とう}さんの{博士|はかせ}のうちでカムパネルラといっしょに{読|よ}んだ{雑誌|ざっし}のなかにあったのだ。（{中略|ちゅうりゃく}）それをカムパネルラが{忘|わす}れるはずなかったのに、すぐに{返事|へんじ}をしなかったのは、このごろぼくが、{朝|あさ}にも{午後|ごご}にも{仕事|しごと}がつらく、{学校|がっこう}に{出|で}てももうみんなともはきはき{遊|あそ}ばず、カムパネルラともあんまり{物|もの}を{言|い}わないようになったので、カムパネルラがそれを{知|し}って{気|き}の{毒|どく}がってわざと{返事|へんじ}をしなかったのだ、そう{考|かんが}えるとたまらないほど、{自分|じぶん}もカムパネルラもあわれなような{気|き}がするのでした。",
-				cn: "乔万尼涨得通红地点了点头。可不知什么时候，乔万尼眼里②已经满是泪水。对了，我是知道的，康帕内拉当然也知道，那是以前在康帕内拉的博士父亲家里，和他一起读过的杂志里写着的。（中略）康帕内拉不可能忘了，却没有马上回答——是因为最近我早晚干活都吃力，到了学校也不再和大家痛快地玩，和康帕内拉也几乎不说话了，康帕内拉知道这些，觉得可怜，才故意不回答的。一想到这儿，就难过得受不了，觉得自己和康帕内拉都那么可怜。",
+				cn: "乔万尼涨得通红地点了点头。可是不知不觉间，乔万尼的眼里②充满了泪水。对了，我是知道的，康帕内拉当然也知道，那是有一次在康帕内拉的博士父亲家里，和康帕内拉一起读的杂志里有的。（中略）那件事康帕内拉不可能忘记，却没有马上回答，是因为近来我早上也好、下午也好，工作都很辛苦，即使去上学，也不再和大家活泼地玩，和康帕内拉也变得不太说话了，康帕内拉知道了这些，觉得我可怜，才故意没有回答。这么一想，就有一种自己也好、康帕内拉也好都可怜得不得了的感觉。",
 				en: "Giovanni nodded, turning bright red. But before he knew it, ② his eyes had filled with tears. That’s right — I knew it, and of course Campanella knows too; it was in a magazine they had read together once at Campanella’s father’s, the professor’s, house. (passage omitted) Campanella could not have forgotten, and yet he did not answer at once — because these days work was hard for me morning and afternoon, and even at school I no longer played brightly with the others, and hardly spoke with Campanella either, so Campanella knew that and felt sorry for me and deliberately did not answer. Thinking that, it was more than he could bear, and both he and Campanella felt pitiful.",
 			},
 			{
@@ -204,13 +204,13 @@ export const w4d6: ReadingDay = {
 			{
 				label: "問1",
 				jp: "①{手|て}をあげようとして、{急|いそ}いでそのままやめましたとあるが、ジョバンニはなぜやめたのか。",
-				cn: "文中说①「正要举手，又连忙停了下来」，乔万尼为什么停下来？",
+				cn: "文中说①「正要举手，又连忙就此停住了」，乔万尼为什么停住了？",
 				en: "The text says ① he “was about to raise his hand, then hurriedly stopped.” Why did Giovanni stop?",
 				choices: [
-					{ jp: "{急|きゅう}に{眠|ねむ}くなってしまったから。", cn: "因为突然困了。", en: "Because he suddenly became sleepy." },
-					{ jp: "カンパネラが{手|て}をあげていたから。", cn: "因为康帕内拉已经举起了手。", en: "Because Campanella had raised his hand." },
-					{ jp: "{答|こた}えに{自信|じしん}がなくなったから。", cn: "因为对答案没有了自信。", en: "Because he lost confidence in the answer." },
-					{ jp: "{見|み}た{雑誌|ざっし}が{自分|じぶん}のものではなかったから。", cn: "因为看过的杂志不是自己的。", en: "Because the magazine he had seen was not his own." },
+					{ jp: "{急|きゅう}に{眠|ねむ}くなってしまったから。", cn: "因为突然变得困了。", en: "Because he suddenly became sleepy." },
+					{ jp: "カンパネラが{手|て}をあげていたから。", cn: "因为康帕内拉举着手。", en: "Because Campanella had raised his hand." },
+					{ jp: "{答|こた}えに{自信|じしん}がなくなったから。", cn: "因为对答案没有自信了。", en: "Because he lost confidence in the answer." },
+					{ jp: "{見|み}た{雑誌|ざっし}が{自分|じぶん}のものではなかったから。", cn: "因为看过的杂志不是自己的东西。", en: "Because the magazine he had seen was not his own." },
 				],
 				answer: 3,
 				explanation:
@@ -233,13 +233,13 @@ export const w4d6: ReadingDay = {
 			{
 				label: "問2",
 				jp: "②{涙|なみだ}がいっぱいになりましたとあるが、なぜか。",
-				cn: "文中说②「眼里满是泪水」，是为什么？",
+				cn: "文中说②「充满了泪水」，是为什么？",
 				en: "The text says ② “his eyes had filled with tears.” Why?",
 				choices: [
-					{ jp: "{答|こた}えがわかっていたのに{先生|せんせい}の{質問|しつもん}に{答|こた}えられなくて{悔|くや}しかったから。", cn: "因为明明知道答案却没能回答老师的问题，觉得不甘心。", en: "Because he knew the answer but could not answer the teacher’s question, and felt frustrated." },
-					{ jp: "{自分|じぶん}のことも、{自分|じぶん}を{心配|しんぱい}してくれるカンパネラもかわいそうになったから。", cn: "因为觉得自己可怜，连为自己担心的康帕内拉也可怜。", en: "Because both he himself and Campanella, who was worrying about him, seemed pitiful." },
-					{ jp: "{仕事|しごと}がきつくて{学校|がっこう}に{来|き}ても{勉強|べんきょう}に{集中|しゅうちゅう}できなくて{悲|かな}しくなったから。", cn: "因为干活太累，来了学校也无法集中学习，感到悲伤。", en: "Because work was hard and he could not concentrate on studying even at school, and he felt sad." },
-					{ jp: "{自分|じぶん}のことを{先生|せんせい}も{友達|ともだち}もだれもわかってくれないことがさびしかったから。", cn: "因为老师和朋友谁都不理解自己，感到寂寞。", en: "Because neither the teacher nor his friends understood him, and he felt lonely." },
+					{ jp: "{答|こた}えがわかっていたのに{先生|せんせい}の{質問|しつもん}に{答|こた}えられなくて{悔|くや}しかったから。", cn: "因为明明知道答案，却没能回答老师的问题，觉得不甘心。", en: "Because he knew the answer but could not answer the teacher’s question, and felt frustrated." },
+					{ jp: "{自分|じぶん}のことも、{自分|じぶん}を{心配|しんぱい}してくれるカンパネラもかわいそうになったから。", cn: "因为自己也好，为自己担心的康帕内拉也好，都变得可怜了。", en: "Because both he himself and Campanella, who was worrying about him, seemed pitiful." },
+					{ jp: "{仕事|しごと}がきつくて{学校|がっこう}に{来|き}ても{勉強|べんきょう}に{集中|しゅうちゅう}できなくて{悲|かな}しくなったから。", cn: "因为工作很辛苦，即使来到学校也无法集中精力学习，感到悲伤了。", en: "Because work was hard and he could not concentrate on studying even at school, and he felt sad." },
+					{ jp: "{自分|じぶん}のことを{先生|せんせい}も{友達|ともだち}もだれもわかってくれないことがさびしかったから。", cn: "因为老师也好，朋友也好，谁都不理解自己的事，感到寂寞了。", en: "Because neither the teacher nor his friends understood him, and he felt lonely." },
 				],
 				answer: 2,
 				explanation:
@@ -286,7 +286,7 @@ export const w4d6: ReadingDay = {
 			meaningEn: "was about to …, then stopped as is. Giving up mid-motion shows hesitation or lack of confidence.",
 			example: {
 				jp: "{手|て}をあげようとして、{急|いそ}いでそのままやめました。",
-				cn: "正要举手，又连忙停了下来。",
+				cn: "正要举手，又连忙就此停住了。",
 				en: "He was about to raise his hand, then hurriedly stopped.",
 			},
 		},
@@ -297,7 +297,7 @@ export const w4d6: ReadingDay = {
 			meaningEn: "there is no way that … / it cannot be that …. The speaker’s conviction that it is not so.",
 			example: {
 				jp: "それをカムパネルラが{忘|わす}れるはずなかった。",
-				cn: "康帕内拉不可能忘了那件事。",
+				cn: "那件事康帕内拉不可能忘记。",
 				en: "There is no way Campanella would have forgotten that.",
 			},
 		},
@@ -308,7 +308,7 @@ export const w4d6: ReadingDay = {
 			meaningEn: "to have a feeling that … / it seems as if …. Common in fiction for a character’s inner sense.",
 			example: {
 				jp: "{自分|じぶん}もカムパネルラもあわれなような{気|き}がするのでした。",
-				cn: "觉得自己和康帕内拉都那么可怜。",
+				cn: "有一种自己也好、康帕内拉也好都很可怜的感觉。",
 				en: "He had a feeling that both he and Campanella were pitiful.",
 			},
 		},

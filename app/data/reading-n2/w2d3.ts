@@ -12,12 +12,12 @@ export const w2d3: ReadingDay = {
 
 	point: {
 		title: "{常識|じょうしき}を{働|はたら}かせて{必要|ひつよう}な{情報|じょうほう}だけ{読|よ}み{取|と}ろう！",
-		titleCn: "运用常识，只读取必要信息！",
+		titleCn: "运用常识，只读取必要的信息吧！",
 		titleEn: "Use common sense to select the necessary information!",
 		tips: [
 			{
 				jp: "{例えば|たとえば}{日帰|ひがえ}り{旅行|りょこう}のお{知|し}らせにはこんな{言葉|ことば}が{出|で}てきます。",
-				cn: "比如一日游的通知里会出现下面这些词。",
+				cn: "例如，当日往返旅行的通知里会出现这样的词语。",
 				en: "A day-trip notice, for example, will use words like these.",
 			},
 			{
@@ -27,32 +27,32 @@ export const w2d3: ReadingDay = {
 			},
 			{
 				jp: "・{泊|と}まる？　→　{日帰|ひがえ}り / ○{泊|はく}○{日|か}？",
-				cn: "・过夜吗？　→　当日往返 / 住○晚共○天？",
+				cn: "・过夜吗？　→　当日往返 / ○晚○天？",
 				en: "Overnight? → A day trip / ○ nights ○ days?",
 			},
 			{
 				jp: "・{何|なに}をする？　→　{海水浴|かいすいよく}・バーベキュー / ○○{見学|けんがく} / ○○{研修|けんしゅう}など",
-				cn: "・做什么？　→　海水浴、烧烤 / 参观○○ / ○○研修 等",
+				cn: "・做什么？　→　海水浴・烧烤 / 参观○○ / ○○研修等",
 				en: "What will we do? → Swimming in the sea, a barbecue / a visit to ○○ / training at ○○, etc.",
 			},
 			{
 				jp: "・お{金|かね}は？　→　{参加費|さんかひ}はいくらか / いつ{集|あつ}めるか：{申|もう}し{込|こ}むとき・{旅行当日|りょこうとうじつ}",
-				cn: "・钱呢？　→　参加费多少 / 什么时候收：报名时・旅行当天",
+				cn: "・钱呢？　→　参加费是多少 / 什么时候收：报名时・旅行当天",
 				en: "Money? → How much is the fee / when is it collected: when you apply, or on the day of the trip",
 			},
 			{
 				jp: "・どうやって{行|い}く？　→　バス？　{電車|でんしゃ}？　{徒歩|とほ}？",
-				cn: "・怎么去？　→　巴士？电车？步行？",
+				cn: "・怎么去？　→　巴士？　电车？　步行？",
 				en: "How do we go? → Bus? Train? On foot?",
 			},
 			{
 				jp: "・{定員|ていいん}　→　{人数|にんずう}が{決|き}まっている{場合|ばあい}があります。{定員|ていいん}になり{次第|しだい}{締|し}め{切|き}ります。",
-				cn: "・名额　→　有时人数是定好的。一满员即截止。",
+				cn: "・定员　→　有时人数是定好的。一到定员即截止。",
 				en: "Capacity → Sometimes the number of places is fixed. Applications close as soon as the limit is reached.",
 			},
 			{
 				jp: "・{申|もう}し{込|こ}みは？　→　いつまで？　だれに？　どうやって？",
-				cn: "・怎么报名？　→　截止到什么时候？向谁？用什么方式？",
+				cn: "・报名呢？　→　到什么时候为止？向谁？怎么做？",
 				en: "How to apply? → Until when? To whom? How?",
 			},
 		],
@@ -61,7 +61,7 @@ export const w2d3: ReadingDay = {
 			{ jp: "集合時間", kana: "しゅうごうじかん", cn: "集合时间", en: "meeting time" },
 			{ jp: "出発時間", kana: "しゅっぱつじかん", cn: "出发时间", en: "departure time" },
 			{ jp: "海水浴", kana: "かいすいよく", cn: "海水浴、下海游泳", en: "swimming in the sea" },
-			{ jp: "バーベキュー", cn: "户外烧烤", en: "a barbecue" },
+			{ jp: "バーベキュー", cn: "烧烤", en: "a barbecue" },
 			{ jp: "見学", kana: "けんがく", cn: "参观", en: "a visit / a tour" },
 			{ jp: "研修", kana: "けんしゅう", cn: "研修、培训", en: "study and training" },
 			{ jp: "参加費", kana: "さんかひ", cn: "参加费", en: "a participation fee" },
@@ -73,7 +73,7 @@ export const w2d3: ReadingDay = {
 
 	renshu: {
 		instruction: "{次|つぎ}の{会話文|かいわぶん}を{読|よ}んで、{後|あと}の{文|ぶん}から{正|ただ}しいものを{選|えら}ぼう。",
-		instructionCn: "阅读下面的对话，从后面的句子中选出正确的。（答案在下一页）",
+		instructionCn: "阅读下面的对话文，从后面的句子中选出正确的吧。",
 		instructionEn: "Read the conversation below and choose the correct statements from the sentences that follow. (Answers are on the next page.)",
 		blocks: [
 			{
@@ -82,7 +82,7 @@ export const w2d3: ReadingDay = {
 				speakerCn: "学生",
 				speakerEn: "Student",
 				jp: "{先生|せんせい}、これ、{海|うみ}に{遊|あそ}びに{行|い}くっていうお{知|し}らせですよね。いいですね。{行|い}きたいです！",
-				cn: "老师，这是去海边玩的通知吧。真好啊。我想去！",
+				cn: "老师，这个是说去海边玩的通知吧。真好呢。我想去！",
 				en: "Teacher, this is the notice about going to the sea, right? Nice. I want to go!",
 			},
 			{
@@ -91,7 +91,7 @@ export const w2d3: ReadingDay = {
 				speakerCn: "教师",
 				speakerEn: "Teacher",
 				jp: "じゃあ、{早|はや}く{申|もう}し{込|こ}みをしたほうがいいですよ。40{人|にん}しか{行|い}けませんから。",
-				cn: "那就早点报名比较好。只能去 40 个人。",
+				cn: "那就早点报名比较好哦。因为只能去40个人。",
 				en: "Then you’d better apply soon. Only 40 people can go.",
 			},
 			{
@@ -100,7 +100,7 @@ export const w2d3: ReadingDay = {
 				speakerCn: "学生",
 				speakerEn: "Student",
 				jp: "あ、でも、2,500{円|えん}……{今日|きょう}はありません。{明日|あした}でも{大丈夫|だいじょうぶ}ですか。",
-				cn: "啊，可是 2,500 日元……今天没有。明天也行吗？",
+				cn: "啊，可是，2,500日元……今天没有。明天也没关系吗？",
 				en: "Oh, but 2,500 yen… I don’t have it today. Is tomorrow all right?",
 			},
 			{
@@ -109,7 +109,7 @@ export const w2d3: ReadingDay = {
 				speakerCn: "教师",
 				speakerEn: "Teacher",
 				jp: "{大丈夫|だいじょうぶ}だと{思|おも}いますよ。{申|もう}し{込|こ}みだけ{今日|きょう}したらいいんじゃない？",
-				cn: "我想没问题。今天先报上名不就行了？",
+				cn: "我觉得没关系哦。今天只报名不就行了吗？",
 				en: "I think that’s fine. Why not just put your name down today?",
 			},
 			{
@@ -118,7 +118,7 @@ export const w2d3: ReadingDay = {
 				speakerCn: "学生",
 				speakerEn: "Student",
 				jp: "わかりました。でも、{先生|せんせい}、20{日|か}は{月曜日|げつようび}ですね。{月曜日|げつようび}は{授業|じゅぎょう}がありますね。",
-				cn: "明白了。可是老师，20 号是星期一吧。星期一有课吧。",
+				cn: "明白了。可是，老师，20号是星期一吧。星期一有课吧。",
 				en: "I see. But teacher, the 20th is a Monday, right? We have class on Mondays.",
 			},
 			{
@@ -127,29 +127,29 @@ export const w2d3: ReadingDay = {
 				speakerCn: "教师",
 				speakerEn: "Teacher",
 				jp: "20{日|か}は{海|うみ}の{日|ひ}で{休|やす}みですから、{授業|じゅぎょう}はありませんよ。",
-				cn: "20 号是海洋日放假，所以没有课哦。",
+				cn: "20号是海之日，是休息日，所以没有课哦。",
 				en: "The 20th is Marine Day, a holiday, so there is no class.",
 			},
 		],
 		choices: [
-			{ jp: "{二人|ふたり}は{旅行会社|りょこうがいしゃ}に{来|き}ている。", cn: "两个人是来旅行社的。", en: "The two of them are at a travel agency." },
-			{ jp: "{二人|ふたり}は{旅行|りょこう}のお{知|し}らせの{紙|かみ}を{見|み}ている。", cn: "两个人在看旅行通知的纸。", en: "The two of them are looking at a trip notice." },
-			{ jp: "{旅行|りょこう}に{行|い}く{人|ひと}は{授業|じゅぎょう}を{休|やす}む。", cn: "去旅行的人要请假不上课。", en: "People who go on the trip will miss class." },
-			{ jp: "{代金|だいきん}は{旅行|りょこう}の{当日|とうじつ}に{払|はら}う。", cn: "费用在旅行当天付。", en: "The fee is paid on the day of the trip." },
-			{ jp: "{参加者|さんかしゃ}が40{人|にん}になったら、{申|もう}し{込|こ}みはできなくなる。", cn: "参加者到了 40 人就不能再报名了。", en: "Once 40 people have signed up, applications will close." },
+			{ jp: "{二人|ふたり}は{旅行会社|りょこうがいしゃ}に{来|き}ている。", cn: "两个人来到了旅行社。", en: "The two of them are at a travel agency." },
+			{ jp: "{二人|ふたり}は{旅行|りょこう}のお{知|し}らせの{紙|かみ}を{見|み}ている。", cn: "两个人正在看旅行通知的纸。", en: "The two of them are looking at a trip notice." },
+			{ jp: "{旅行|りょこう}に{行|い}く{人|ひと}は{授業|じゅぎょう}を{休|やす}む。", cn: "去旅行的人会缺课。", en: "People who go on the trip will miss class." },
+			{ jp: "{代金|だいきん}は{旅行|りょこう}の{当日|とうじつ}に{払|はら}う。", cn: "费用在旅行当天支付。", en: "The fee is paid on the day of the trip." },
+			{ jp: "{参加者|さんかしゃ}が40{人|にん}になったら、{申|もう}し{込|こ}みはできなくなる。", cn: "参加者一到40人，就不能报名了。", en: "Once 40 people have signed up, applications will close." },
 		],
 		answers: [2, 5],
 	},
 
 	mondai: {
 		instruction: "{次|つぎ}のお{知|し}らせを{読|よ}んで、{後|あと}の{問|と}いに{答|こた}えなさい。",
-		instructionCn: "阅读下面的启事，回答后面的问题。（答案在别册 p.3）",
+		instructionCn: "阅读下面的通知，回答后面的问题。",
 		instructionEn: "Read the following notice and answer the questions that follow. (Answers are in the separate booklet, p. 3.)",
 		blocks: [
 			{
 				type: "line",
 				jp: "20XX{年|ねん}○{月|がつ}○{日|にち}",
-				cn: "20XX 年○月○日",
+				cn: "20XX年○月○日",
 				en: "○ ○, 20XX",
 				align: "right",
 			},
@@ -176,31 +176,31 @@ export const w2d3: ReadingDay = {
 			{
 				type: "paragraph",
 				jp: "もうすぐ{夏休|なつやす}みです！　みなさん、{夏休|なつやす}みの{計画|けいかく}は{立|た}てましたか？",
-				cn: "马上就是暑假了！大家订好暑假计划了吗？",
+				cn: "马上就是暑假了！大家，暑假的计划制定好了吗？",
 				en: "Summer vacation is almost here! Have you all made your summer plans?",
 			},
 			{
 				type: "paragraph",
 				jp: "{今年|ことし}の{夏休|なつやす}み{日帰|ひがえ}りバス{旅行|りょこう}は、{大島町|おおしまちょう}の{白浜海水浴場|しらはまかいすいよくじょう}へ{行|い}きます。{美|うつく}しい{自然|しぜん}{豊|ゆた}かな{海水浴場|かいすいよくじょう}で、{遊|あそ}べるスペースもたくさんあります。{海水浴|かいすいよく}やバーベキューなど、みんなで{楽|たの}しみましょう。",
-				cn: "今年暑假的一日巴士游将前往大岛町的白滨海水浴场。那里自然优美、海水浴场广阔，好玩的地方也很多。一起来享受海水浴、烧烤等活动吧。",
+				cn: "今年暑假的当日往返巴士旅行将前往大岛町的白滨海水浴场。那里是一处美丽、自然丰富的海水浴场，可以玩的空间也很多。海水浴、烧烤等，大家一起来享受吧。",
 				en: "This year’s summer day-trip by bus is to Shirahama Beach in Ōshima-chō. It is a beautiful, nature-rich beach with plenty of space to play. Let’s all enjoy swimming, a barbecue, and more.",
 			},
 			{
 				type: "line",
 				jp: "{日時|にちじ}：20XX{年|ねん}7{月|がつ}20{日|にち}（{月|げつ}）{海|うみ}の{日|ひ}　※{小雨決行|こさめけっこう}　{大雨中止|おおあめちゅうし}",
-				cn: "日期时间：20XX 年 7 月 20 日（周一）海洋日　※小雨照常　大雨取消",
+				cn: "日期时间：20XX年7月20日（周一）海之日　※小雨照常举行　大雨中止",
 				en: "Date and time: Monday, July 20, 20XX, Marine Day  ※ Goes ahead in light rain; cancelled in heavy rain",
 			},
 			{
 				type: "line",
 				jp: "8:50{集合|しゅうごう}（{学校前|がっこうまえ}）　※9:00には{出発|しゅっぱつ}します。{遅|おく}れないようにしてください。",
-				cn: "8:50 集合（学校前）　※9:00 出发。请不要迟到。",
+				cn: "8:50集合（学校前面）　※9:00就出发。请不要迟到。",
 				en: "Meet at 8:50 (in front of the school). ※ We leave at 9:00. Please do not be late.",
 			},
 			{
 				type: "line",
 				jp: "17:30ごろ{学校|がっこう}に{到着|とうちゃく}する{予定|よてい}です。",
-				cn: "预定 17:30 左右回到学校。",
+				cn: "预计17:30左右到达学校。",
 				en: "We are scheduled to arrive back at school around 17:30.",
 			},
 			{
@@ -212,19 +212,19 @@ export const w2d3: ReadingDay = {
 			{
 				type: "line",
 				jp: "{参加費|さんかひ}：1{人|にん} 2,500{円|えん}　※{参加費|さんかひ}には{交通費|こうつうひ}・{食事代|しょくじだい}が{含|ふく}まれています。",
-				cn: "参加费：每人 2,500 日元　※参加费含交通费和餐费。",
+				cn: "参加费：每人2,500日元　※参加费包含交通费・餐费。",
 				en: "Fee: ¥2,500 per person  ※ The fee includes transport and meals.",
 			},
 			{
 				type: "line",
 				jp: "{交通|こうつう}：{大型|おおがた}バス1{台|だい}",
-				cn: "交通：大型巴士 1 辆",
+				cn: "交通：大型巴士1辆",
 				en: "Transport: one large bus",
 			},
 			{
 				type: "line",
 				jp: "{定員|ていいん}：40{名|めい}",
-				cn: "名额：40 人",
+				cn: "定员：40名",
 				en: "Capacity: 40 people",
 			},
 			{
@@ -233,17 +233,17 @@ export const w2d3: ReadingDay = {
 				items: [
 					{
 						jp: "{参加|さんか}を{希望|きぼう}する{人|ひと}は、{申込用紙|もうしこみようし}に{記入|きにゅう}し、{参加費|さんかひ}といっしょに{受付|うけつけ}に{出|だ}してください。",
-						cn: "希望参加的人请填写报名表，连同参加费一并交到受理处。",
+						cn: "希望参加的人，请填写报名表，连同参加费一起交到接待处。",
 						en: "If you wish to take part, fill in the application form and hand it in at reception together with the fee.",
 					},
 					{
 						jp: "{申込締切|もうしこみしめきり}　7{月|がつ}10{日|にち}　★ただし、{定員|ていいん}になり{次第|しだい}{締|し}め{切|き}ります。",
-						cn: "报名截止　7 月 10 日　★不过，一满员即截止。",
+						cn: "报名截止　7月10日　★不过，一到定员即截止。",
 						en: "Application deadline: July 10  ★ However, applications will close as soon as the quota is filled.",
 					},
 					{
 						jp: "{詳|くわ}しい{情報|じょうほう}が{知|し}りたい{人|ひと}は、{事務室|じむしつ}{山中|やまなか}までお{問|と}い{合|あ}わせください。",
-						cn: "想了解详细信息的人，请向办公室山中咨询。",
+						cn: "想知道详细信息的人，请向事务室的山中咨询。",
 						en: "For more information, please inquire with Yamanaka in the office.",
 					},
 				],
@@ -251,24 +251,24 @@ export const w2d3: ReadingDay = {
 			{
 				type: "heading",
 				jp: "{日帰|ひがえ}りバス{旅行|りょこう}　{参加申込書|さんかもうしこみしょ}",
-				cn: "一日巴士游　参加申请书",
+				cn: "当日往返巴士旅行　参加申请书",
 				en: "Day-trip bus tour  Application form",
 			},
 			{
 				type: "list",
 				items: [
-					{ jp: "{申込日|もうしこみび}　　{月|がつ}　　{日|か}", cn: "报名日期　　月　　日", en: "Date of application    month    day" },
+					{ jp: "{申込日|もうしこみび}　　{月|がつ}　　{日|か}", cn: "报名日　　月　　日", en: "Date of application    month    day" },
 					{ jp: "{参加者名|さんかしゃめい}", cn: "参加者姓名", en: "Participant’s name" },
 					{ jp: "クラス", cn: "班级", en: "Class" },
 					{ jp: "{国籍|こくせき}", cn: "国籍", en: "Nationality" },
-					{ jp: "{電話|でんわ}（{携帯可|けいたいか}）", cn: "电话（可用手机）", en: "Telephone (mobile OK)" },
+					{ jp: "{電話|でんわ}（{携帯可|けいたいか}）", cn: "电话（手机亦可）", en: "Telephone (mobile OK)" },
 					{ jp: "{性別|せいべつ}　{男|おとこ}・{女|おんな}", cn: "性别　男・女", en: "Sex  male / female" },
 				],
 			},
 			{
 				type: "figure",
 				alt: "雨の中、雷が落ちている海岸に人が立っているイラスト",
-				cn: "大雨雷电中，有人站在海边的插图",
+				cn: "雨中，雷电落下的海岸上站着一个人的插图",
 				en: "Illustration of a person standing on the shore in rain and lightning",
 			},
 		],
@@ -279,10 +279,10 @@ export const w2d3: ReadingDay = {
 				cn: "参加者在旅行当天必须注意的是什么？",
 				en: "What must participants be careful about on the day of the trip?",
 				choices: [
-					{ jp: "お{弁当|べんとう}など{昼食|ちゅうしょく}の{準備|じゅんび}", cn: "准备盒饭等午饭", en: "preparing a boxed lunch or other midday meal" },
-					{ jp: "{出発|しゅっぱつ}の10{分前|ふんまえ}までに{集|あつ}まること", cn: "出发前 10 分钟集合", en: "gathering at least 10 minutes before departure" },
+					{ jp: "お{弁当|べんとう}など{昼食|ちゅうしょく}の{準備|じゅんび}", cn: "便当等午餐的准备", en: "preparing a boxed lunch or other midday meal" },
+					{ jp: "{出発|しゅっぱつ}の10{分前|ふんまえ}までに{集|あつ}まること", cn: "最晚在出发前10分钟集合", en: "gathering at least 10 minutes before departure" },
 					{ jp: "{参加費|さんかひ}を{持|も}ってくること", cn: "把参加费带来", en: "bringing the participation fee" },
-					{ jp: "{申|もう}し{込|こ}みの{定員|ていいん}が40{名|めい}になること", cn: "报名人额达到 40 人", en: "the application quota reaching 40 people" },
+					{ jp: "{申|もう}し{込|こ}みの{定員|ていいん}が40{名|めい}になること", cn: "报名的定员变为40名", en: "the application quota reaching 40 people" },
 				],
 				answer: 2,
 				explanation:
@@ -305,13 +305,13 @@ export const w2d3: ReadingDay = {
 			{
 				label: "問2",
 				jp: "このお{知|し}らせの{内容|ないよう}と{合|あ}うものはどれか。",
-				cn: "哪一项与这则通知的内容相符？",
+				cn: "与这则通知的内容相符的是哪一个？",
 				en: "Which of the following matches the content of this notice?",
 				choices: [
-					{ jp: "{急|きゅう}に{行|い}けなくなったら{参加費|さんかひ}は{返|かえ}してもらえる。", cn: "如果突然去不了，参加费可以退还。", en: "If you suddenly cannot go, the fee will be refunded." },
-					{ jp: "{参加費|さんかひ}のほかに{交通費|こうつうひ}や{食事代|しょくじだい}などがかかる。", cn: "参加费之外还要付交通费和餐费等。", en: "On top of the fee you also pay for transport and meals." },
-					{ jp: "{旅行先|りょこうさき}に{泊|と}まらずにその{日|ひ}のうちに{帰|かえ}ってくる。", cn: "不在旅行地过夜，当天就回来。", en: "You do not stay at the destination; you come back the same day." },
-					{ jp: "{少|すこ}しでも{雨|あめ}が{降|ふ}ったら{旅行|りょこう}は{中止|ちゅうし}になる。", cn: "只要下一点雨旅行就会取消。", en: "If it rains even a little, the trip will be cancelled." },
+					{ jp: "{急|きゅう}に{行|い}けなくなったら{参加費|さんかひ}は{返|かえ}してもらえる。", cn: "如果突然去不成了，参加费可以退回来。", en: "If you suddenly cannot go, the fee will be refunded." },
+					{ jp: "{参加費|さんかひ}のほかに{交通費|こうつうひ}や{食事代|しょくじだい}などがかかる。", cn: "除参加费之外，还要花交通费、餐费等。", en: "On top of the fee you also pay for transport and meals." },
+					{ jp: "{旅行先|りょこうさき}に{泊|と}まらずにその{日|ひ}のうちに{帰|かえ}ってくる。", cn: "不在旅行地过夜，当天之内回来。", en: "You do not stay at the destination; you come back the same day." },
+					{ jp: "{少|すこ}しでも{雨|あめ}が{降|ふ}ったら{旅行|りょこう}は{中止|ちゅうし}になる。", cn: "哪怕只下一点雨，旅行就会中止。", en: "If it rains even a little, the trip will be cancelled." },
 				],
 				answer: 3,
 				explanation:
@@ -359,7 +359,7 @@ export const w2d3: ReadingDay = {
 			meaningEn: "as soon as…. Teiin ni nari shidai shimekirimasu = applications close as soon as the quota is filled.",
 			example: {
 				jp: "{定員|ていいん}になり{次第|しだい}{締|し}め{切|き}ります。",
-				cn: "一满员即截止。",
+				cn: "一到定员即截止。",
 				en: "Applications will close as soon as the quota is filled.",
 			},
 		},
@@ -380,7 +380,7 @@ export const w2d3: ReadingDay = {
 			meaningEn: "within that same day. Confirms it is a day trip, with no overnight stay.",
 			example: {
 				jp: "{旅行先|りょこうさき}に{泊|と}まらずにその{日|ひ}のうちに{帰|かえ}ってくる。",
-				cn: "不在旅行地过夜，当天就回来。",
+				cn: "不在旅行地过夜，当天之内回来。",
 				en: "You do not stay at the destination; you come back the same day.",
 			},
 		},

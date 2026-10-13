@@ -12,26 +12,26 @@ export const w3d5: ReadingDay = {
 
 	point: {
 		title: "{特別|とくべつ}な{敬語|けいご}を{覚|おぼ}えよう！ －「{言|い}う」「{見|み}る」「{食|た}べる」など",
-		titleCn: "记住特殊的敬语！——「言う」「見る」「食べる」等",
+		titleCn: "记住特殊的敬语吧！－「说」「看」「吃」等",
 		titleEn: "Let's look at some special polite language! — 'iu' (to speak/say), 'miru' (to see/look/watch), 'taberu' (to eat)",
 		figure: {
 			alt: "鳥が虫をくわえて差し出しながら「どうぞお召し上がりください」と言っているイラスト",
-			cn: "一只鸟叼着虫子递过去，说「请您用（吃）吧」。",
+			cn: "一只鸟叼着虫子，一边递上前一边说着「请您享用吧」的插图",
 			en: "A bird holds out a worm in its beak and says, “Please help yourself (do eat).”",
 		},
 		tips: [
 			{
 				jp: "{尊敬語|そんけいご}と{謙譲語|けんじょうご}が{形|かたち}のまったく{違|ちが}う{特別|とくべつ}な{動詞|どうし}は、{一組|ひとくみ}ずつ{覚|おぼ}えるしかない。「だれの{動作|どうさ}か」が{読解|どっかい}の{手|て}がかりになる。",
-				cn: "尊敬语和谦让语形式完全不同的这些特殊动词，只能一组一组地记。判断「这是谁的动作」正是读解的关键线索。",
+				cn: "尊敬语和谦让语形式完全不同的特殊动词，只能一组一组地记。「是谁的动作」会成为读解的线索。",
 				en: "For these special verbs whose honorific and humble forms look completely different, you simply have to learn them in pairs. Deciding “whose action is this?” is the key reading clue.",
 			},
 		],
 		expressions: [
-			{ jp: "言います → おっしゃいます／申します", cn: "【尊敬】您说／【谦让】我说", en: "to say" },
+			{ jp: "言います → おっしゃいます／申します", cn: "说 → （尊敬）您说／（谦让）我说", en: "to say" },
 			{ jp: "見ます → ご覧になります／拝見します", kana: "ごらんになります／はいけんします", cn: "【尊敬】您看／【谦让】我看", en: "to see / look / watch" },
 			{ jp: "食べます・飲みます → 召し上がります／いただきます", kana: "めしあがります", cn: "【尊敬】您吃・喝／【谦让】我吃・喝", en: "to eat / drink" },
 			{ jp: "知っています → ご存じです／存じております", kana: "ごぞんじです／ぞんじております", cn: "【尊敬】您知道／【谦让】我知道", en: "to know" },
-			{ jp: "知りません → ご存じではありません／存じません", cn: "【尊敬】您不知道／【谦让】我不知道", en: "not to know" },
+			{ jp: "知りません → ご存じではありません／存じません", cn: "不知道 → （尊敬）您不知道／（谦让）我不知道", en: "not to know" },
 			{ jp: "訪問します・聞きます → ご訪問になります・お聞きになります／伺います", kana: "うかがいます", cn: "【尊敬】您拜访・问／【谦让】我拜访・请教", en: "to visit / to ask" },
 			{ jp: "会います → お会いになります／お目にかかります", kana: "おめにかかります", cn: "【尊敬】您见／【谦让】我拜见", en: "to meet" },
 		],
@@ -39,7 +39,7 @@ export const w3d5: ReadingDay = {
 
 	renshu: {
 		instruction: "{次|つぎ}の{会話文|かいわぶん}を{読|よ}んで、{後|あと}の{文|ぶん}から{正|ただ}しいものを{選|えら}ぼう。",
-		instructionCn: "阅读下面的对话，从后面的句子中选出正确的。（答案在下一页）",
+		instructionCn: "读下面的会话文，从后面的句子中选出正确的吧。",
 		instructionEn: "Read the dialogue below and choose the correct statements from the sentences that follow. (Answers are on the next page.)",
 		blocks: [
 			{
@@ -48,7 +48,7 @@ export const w3d5: ReadingDay = {
 				speakerCn: "邻居",
 				speakerEn: "Neighbor",
 				jp: "あら、{陽子|ようこ}ちゃん、{腕|うで}どうしたの？",
-				cn: "哎呀，阳子的胳膊怎么了？",
+				cn: "哎呀，阳子，胳膊怎么了？",
 				en: "Oh my, Yoko, what happened to your arm?",
 			},
 			{
@@ -57,7 +57,7 @@ export const w3d5: ReadingDay = {
 				speakerCn: "阳子的母亲",
 				speakerEn: "Yoko’s mother",
 				jp: "{転|ころ}んじゃってすりむいた（※1）の。{大|おお}きい{犬|いぬ}にほえられてね。",
-				cn: "摔倒了擦破了皮。被一只大狗叫了一声。",
+				cn: "不小心摔倒，擦破皮了（※1）。被一只大狗吠了呢。",
 				en: "She fell and scraped it. A big dog barked at her.",
 			},
 			{
@@ -66,7 +66,7 @@ export const w3d5: ReadingDay = {
 				speakerCn: "邻居",
 				speakerEn: "Neighbor",
 				jp: "あらー、それはびっくりしたでしょうね。",
-				cn: "哎呀，那一定吓坏了吧。",
+				cn: "哎呀呀，那她吓了一跳吧。",
 				en: "Oh dear, that must have given her a shock.",
 			},
 			{
@@ -75,7 +75,7 @@ export const w3d5: ReadingDay = {
 				speakerCn: "阳子的母亲",
 				speakerEn: "Yoko’s mother",
 				jp: "ええ、この{子|こ}、「あ、ワンワン（※2）だー」って{言|い}って{近寄|ちかよ}っていったの。そうしたら、{犬|いぬ}が{驚|おどろ}いたらしくって……。",
-				cn: "是啊，这孩子说「啊，是汪汪」就凑过去了。结果好像把狗吓着了……",
+				cn: "是啊，这孩子说着「啊，是汪汪（※2）呀！」就凑过去了。结果，狗好像吃了一惊……",
 				en: "Yes, she said “Oh, a bow-wow!” and went right up to it. Then the dog seemed startled …",
 			},
 			{
@@ -84,7 +84,7 @@ export const w3d5: ReadingDay = {
 				speakerCn: "邻居",
 				speakerEn: "Neighbor",
 				jp: "あら、そう。でも{大|たい}したことがなくて（※3）よかったわね。",
-				cn: "哦，这样啊。不过不严重真是太好了。",
+				cn: "哦，这样啊。不过没什么大碍（※3），太好了呢。",
 				en: "I see. Well, I’m glad it wasn’t anything serious.",
 			},
 		],
@@ -95,52 +95,52 @@ export const w3d5: ReadingDay = {
 		],
 		choices: [
 			{ jp: "{陽子|ようこ}は{犬|いぬ}が{嫌|きら}いだった。", cn: "阳子讨厌狗。", en: "Yoko disliked dogs." },
-			{ jp: "{陽子|ようこ}は{犬|いぬ}を{驚|おどろ}かせようと{思|おも}って{近|ちか}づいた。", cn: "阳子是想吓狗才靠近的。", en: "Yoko went closer because she wanted to startle the dog." },
+			{ jp: "{陽子|ようこ}は{犬|いぬ}を{驚|おどろ}かせようと{思|おも}って{近|ちか}づいた。", cn: "阳子想让狗吃一惊，于是靠近了。", en: "Yoko went closer because she wanted to startle the dog." },
 			{ jp: "{陽子|ようこ}のけがは{軽|かる}かった。", cn: "阳子的伤很轻。", en: "Yoko’s injury was minor." },
-			{ jp: "{陽子|ようこ}にほえた{犬|いぬ}は{陽子|ようこ}の{家|いえ}の{犬|いぬ}ではない。", cn: "对阳子叫的那只狗不是阳子家的狗。", en: "The dog that barked at Yoko is not Yoko’s family’s dog." },
+			{ jp: "{陽子|ようこ}にほえた{犬|いぬ}は{陽子|ようこ}の{家|いえ}の{犬|いぬ}ではない。", cn: "对阳子吠的那只狗不是阳子家的狗。", en: "The dog that barked at Yoko is not Yoko’s family’s dog." },
 			{ jp: "{犬|いぬ}は{陽子|ようこ}をかんだ。", cn: "狗咬了阳子。", en: "The dog bit Yoko." },
 		],
 		answers: [3, 4],
 		hint: {
 			jp: "「あ、ワンワンだー」と{言|い}って{近寄|ちかよ}った＝{犬|いぬ}が{好|す}きだから。けがは「すりむいた」だけ。",
-			cn: "说着「啊，是汪汪」就凑过去，说明她喜欢狗；伤只是擦破皮，狗并没有咬人，只是叫了一声。",
+			cn: "说着「啊，是汪汪呀」凑上前去＝是因为喜欢狗。伤只是「擦破皮」。",
 			en: "Saying “Oh, a bow-wow!” and going closer means she likes dogs. The injury is only a scrape — the dog barked, it did not bite.",
 		},
 	},
 
 	mondai: {
 		instruction: "{次|つぎ}の{手紙|てがみ}を{読|よ}んで、{後|あと}の{問|と}いに{答|こた}えなさい。",
-		instructionCn: "阅读下面的书信，回答后面的问题。（答案在别册 p.4）※原书为竖排书写。",
+		instructionCn: "请阅读下面的信，回答后面的问题。",
 		instructionEn: "Read the letter below and answer the questions that follow. (Answers are in the separate booklet, p. 4.) ※ The original is written vertically.",
 		blocks: [
-			{ type: "line", jp: "{山本様|やまもとさま}", cn: "山本先生／女士", en: "Dear Mr./Ms. Yamamoto" },
+			{ type: "line", jp: "{山本様|やまもとさま}", cn: "山本先生", en: "Dear Mr./Ms. Yamamoto" },
 			{
 				type: "paragraph",
 				indent: true,
 				jp: "{先日|せんじつ}は、わが{家|や}の{犬|いぬ}がほえたことで、お{嬢様|じょうさま}におけがをさせてしまいまして、{本当|ほんとう}に{申|もう}し{訳|わけ}ございませんでした。{深|ふか}くおわび{申|もう}し{上|あ}げます。",
-				cn: "前几天因为我家的狗叫了一声，害令爱受了伤，实在非常抱歉。谨向您深深致歉。",
+				cn: "前几天，由于我家的狗吠叫，致使令爱受了伤，实在非常抱歉。谨此深表歉意。",
 				en: "The other day our dog barked and caused your daughter to be injured. I am truly sorry. Please accept my deepest apologies.",
 			},
 			{
 				type: "paragraph",
 				indent: true,
 				jp: "ふだんはおとなしい{犬|いぬ}なのですが、あの{時|とき}はどういうわけか（※1）{興奮|こうふん}して（※2）いたようです＊。{決|けっ}して{攻撃|こうげき}するということはないのですが、{何|なに}しろ{声|こえ}が{大|おお}きいもので、お{嬢様|じょうさま}がびっくりなさったのも{当然|とうぜん}です（※3）。{転|ころ}んだときに{頭|あたま}を{打|う}たれたのではないかと{心配|しんぱい}しましたが、{腕|うで}のすり{傷|きず}（※4）だけで、それもすぐよくなられたということでほっといたしました。でも、{歩|ある}き{始|はじ}めたばかりの{小|ちい}さいお{子|こ}さまに{怖|こわ}い{思|おも}いをさせてしまったこと、{本当|ほんとう}に{申|もう}し{訳|わけ}なく{思|おも}っております＊＊。",
-				cn: "它平时是很温顺的狗，不知为什么那天似乎有些兴奋＊。它绝不会攻击人，只是叫声实在很大，令爱受到惊吓也是理所当然的。我很担心她摔倒时是不是撞到了头，所幸只是手臂擦伤，而且听说很快就好了，这才放下心来。不过，让刚刚学会走路的小朋友受到这样的惊吓，我实在深感抱歉＊＊。",
+				cn: "它平时是一只很温顺的狗，但那时不知为何（※1），似乎兴奋（※2）了＊。它绝不会攻击，但毕竟叫声很大，令爱吓了一跳也是理所当然的（※3）。我担心她摔倒时是不是撞到了头，不过只是手臂的擦伤（※4），而且得知那也很快就好了，我才放下了心。但是，让刚刚才开始走路的年幼的孩子受了惊吓，我实在感到非常抱歉＊＊。",
 				en: "She is usually a quiet dog, but for some reason she seemed excited then＊. She would never attack anyone, but her bark is so loud that it is only natural your daughter was startled. I was worried she might have hit her head when she fell, but it was only a scrape on the arm, and I hear it healed quickly, so I was relieved. Still, putting such a fright into a small child who has only just started walking — I truly feel terrible＊＊.",
 			},
 			{
 				type: "paragraph",
 				indent: true,
 				jp: "{今後|こんご}は、こういうことのないように{注意|ちゅうい}いたしますので、どうかお{許|ゆる}しくださいますようお{願|ねが}い{申|もう}し{上|あ}げます。",
-				cn: "今后我一定注意不再发生这样的事，恳请您原谅。",
+				cn: "今后我会注意，不让这样的事发生，恳请您予以原谅。",
 				en: "From now on I will be careful so that this does not happen again. Please forgive us.",
 			},
 			{ type: "line", jp: "{林|はやし}　{幸男|ゆきお}", cn: "林　幸男", en: "Yukio Hayashi", align: "right" },
-			{ type: "heading", jp: "{追伸|ついしん}（※5）", cn: "附言（P.S.）", en: "P.S." },
+			{ type: "heading", jp: "{追伸|ついしん}（※5）", cn: "附言（※5）", en: "P.S." },
 			{
 				type: "paragraph",
 				jp: "{別便|べつびん}で（※6）、クッキーをお{送|おく}りいたしました。おやつのときにでも、お{召|め}し{上|あ}がりください。",
-				cn: "我另外寄了饼干过去。请在吃点心的时候尝一尝。",
+				cn: "已另行寄上（※6）饼干。不妨在吃点心的时候享用。",
 				en: "I have sent some cookies by separate mail. Please enjoy them at snack time.",
 			},
 		],
@@ -153,10 +153,10 @@ export const w3d5: ReadingDay = {
 			{ marker: "※6", term: "別便で", jp: "by separate mail", cn: "另函、另外寄", en: "by separate mail" },
 		],
 		pageNotes: [
-			{ jp: "＊ for some reason, our dog got a little too excited at that time", cn: "＊不知为什么，那时候它有点太兴奋了。", en: "＊ for some reason, our dog got a little too excited at that time" },
+			{ jp: "＊ for some reason, our dog got a little too excited at that time", cn: "＊不知为什么，那时我们的狗变得有点太兴奋了。", en: "＊ for some reason, our dog got a little too excited at that time" },
 			{
 				jp: "＊＊ we are extremely sorry for putting your dear toddler through such a horrifying experience",
-				cn: "＊＊让刚会走路的小朋友受到这样的惊吓，我们深感抱歉。",
+				cn: "＊＊让您心爱的幼儿经历了如此可怕的事，我们万分抱歉。",
 				en: "＊＊ we are extremely sorry for putting your dear toddler through such a horrifying experience",
 			},
 		],
@@ -164,13 +164,13 @@ export const w3d5: ReadingDay = {
 			{
 				label: "問1",
 				jp: "{犬|いぬ}にほえられて{女|おんな}の{子|こ}はどうなったのか。",
-				cn: "被狗叫了之后，那个小女孩怎么样了？",
+				cn: "女孩子被狗吠了之后怎么样了？",
 				en: "What happened to the little girl after the dog barked at her?",
 				choices: [
-					{ jp: "{転|ころ}んで{頭|あたま}を{打|う}った。", cn: "摔倒撞到了头。", en: "She fell and hit her head." },
-					{ jp: "{興奮|こうふん}して{大|おお}きい{声|こえ}で{泣|な}いた。", cn: "激动得大声哭了。", en: "She got excited and cried loudly." },
-					{ jp: "{転|ころ}んで{腕|うで}に{軽|かる}いけがをした。", cn: "摔倒后手臂受了轻伤。", en: "She fell and slightly injured her arm." },
-					{ jp: "びっくりしたが、すぐに{歩|ある}き{始|はじ}めた。", cn: "虽然吓了一跳，但马上就开始走路了。", en: "She was startled but immediately started walking." },
+					{ jp: "{転|ころ}んで{頭|あたま}を{打|う}った。", cn: "摔倒，撞到了头。", en: "She fell and hit her head." },
+					{ jp: "{興奮|こうふん}して{大|おお}きい{声|こえ}で{泣|な}いた。", cn: "兴奋了，大声哭了。", en: "She got excited and cried loudly." },
+					{ jp: "{転|ころ}んで{腕|うで}に{軽|かる}いけがをした。", cn: "摔倒，手臂受了轻伤。", en: "She fell and slightly injured her arm." },
+					{ jp: "びっくりしたが、すぐに{歩|ある}き{始|はじ}めた。", cn: "吓了一跳，但马上就开始走路了。", en: "She was startled but immediately started walking." },
 				],
 				answer: 3,
 				explanation:
@@ -193,19 +193,19 @@ export const w3d5: ReadingDay = {
 			{
 				label: "問2",
 				jp: "この{手紙|てがみ}からわかることはどれか。",
-				cn: "从这封信可以得知的是哪一项？",
+				cn: "从这封信可以得知的是哪一个？",
 				en: "Which of the following can we tell from this letter?",
 				choices: [
-					{ jp: "{山本|やまもと}さんの{子|こ}どもは、クッキーを{喜|よろこ}んで{食|た}べた。", cn: "山本家的孩子高兴地吃了饼干。", en: "The Yamamotos’ child happily ate the cookies." },
-					{ jp: "{林幸男|はやしゆきお}さんの{犬|いぬ}は、だれにでもよくほえる{犬|いぬ}である。", cn: "林幸男的狗是对谁都爱叫的狗。", en: "Yukio Hayashi’s dog barks at everyone." },
+					{ jp: "{山本|やまもと}さんの{子|こ}どもは、クッキーを{喜|よろこ}んで{食|た}べた。", cn: "山本的孩子高兴地吃了饼干。", en: "The Yamamotos’ child happily ate the cookies." },
+					{ jp: "{林幸男|はやしゆきお}さんの{犬|いぬ}は、だれにでもよくほえる{犬|いぬ}である。", cn: "林幸男的狗是一只无论对谁都经常吠叫的狗。", en: "Yukio Hayashi’s dog barks at everyone." },
 					{
 						jp: "{山本|やまもと}さんの{子|こ}どもは、{林|はやし}さんの{犬|いぬ}にほえられて、{犬|いぬ}が{嫌|きら}いになった。",
-						cn: "山本家的孩子被林家的狗叫过之后，变得讨厌狗了。",
+						cn: "山本的孩子被林的狗吠了之后，变得讨厌狗了。",
 						en: "After being barked at by Hayashi’s dog, the Yamamotos’ child came to dislike dogs.",
 					},
 					{
 						jp: "{林幸男|はやしゆきお}さんは、{山本|やまもと}さんの{子|こ}どものけがが{大|たい}したことがなくて{安心|あんしん}した。",
-						cn: "林幸男因为山本家孩子的伤不严重而放心了。",
+						cn: "林幸男因为山本孩子的伤没什么大碍而放心了。",
 						en: "Yukio Hayashi was relieved that the Yamamotos’ child’s injury was not serious.",
 					},
 				],
@@ -257,7 +257,7 @@ export const w3d5: ReadingDay = {
 			pattern: "召し上がる／いただく",
 			meaning: "「食べる・飲む」的尊敬语与谦让语。",
 			meaningEn: "The honorific and humble forms of taberu / nomu (“to eat / drink”).",
-			example: { jp: "おやつのときにでも、お{召|め}し{上|あ}がりください。", cn: "请在吃点心时尝一尝。", en: "Please enjoy them at snack time." },
+			example: { jp: "おやつのときにでも、お{召|め}し{上|あ}がりください。", cn: "不妨在吃点心的时候享用。", en: "Please enjoy them at snack time." },
 			note: "本课要点。「お召し上がりください」是请对方吃的最礼貌说法。",
 			noteEn: "This lesson’s key point. O-meshiagari kudasai is the most polite way to invite someone to eat.",
 		},
@@ -266,7 +266,7 @@ export const w3d5: ReadingDay = {
 			formation: "動詞未然形 ＋ れる／られる",
 			meaning: "被……。本课多次出现，注意「谁对谁做」的方向。",
 			meaningEn: "To be … (passive). It appears often in this lesson; watch who does what to whom.",
-			example: { jp: "{大|おお}きい{犬|いぬ}にほえられてね。", cn: "被一只大狗叫了。", en: "A big dog barked at her." },
+			example: { jp: "{大|おお}きい{犬|いぬ}にほえられてね。", cn: "被一只大狗吠了呢。", en: "A big dog barked at her." },
 		},
 		{
 			pattern: "〜（さ）せてしまう",
@@ -275,7 +275,7 @@ export const w3d5: ReadingDay = {
 			meaningEn: "To end up causing someone to … (unintentionally). A common phrase in apology letters.",
 			example: {
 				jp: "お{嬢様|じょうさま}におけがをさせてしまいまして",
-				cn: "害令爱受了伤",
+				cn: "致使令爱受了伤，",
 				en: "I caused your daughter to be injured",
 			},
 		},
@@ -292,19 +292,19 @@ export const w3d5: ReadingDay = {
 			formation: "動詞た形 ＋ ばかり",
 			meaning: "刚刚……。",
 			meaningEn: "Has only just ….",
-			example: { jp: "{歩|ある}き{始|はじ}めたばかりの{小|ちい}さいお{子|こ}さま", cn: "刚学会走路的小朋友", en: "a small child who has only just started walking" },
+			example: { jp: "{歩|ある}き{始|はじ}めたばかりの{小|ちい}さいお{子|こ}さま", cn: "刚刚才开始走路的年幼的孩子", en: "a small child who has only just started walking" },
 		},
 		{
 			pattern: "〜くださいますようお{願|ねが}い{申|もう}し{上|あ}げます",
 			meaning: "恳请您……。书面语中最郑重的请求方式。",
 			meaningEn: "I humbly ask that you …. The most formal written request.",
-			example: { jp: "どうかお{許|ゆる}しくださいますようお{願|ねが}い{申|もう}し{上|あ}げます。", cn: "恳请您原谅。", en: "Please forgive us." },
+			example: { jp: "どうかお{許|ゆる}しくださいますようお{願|ねが}い{申|もう}し{上|あ}げます。", cn: "恳请您予以原谅。", en: "Please forgive us." },
 		},
 		{
 			pattern: "〜ないように",
 			meaning: "为了不……。",
 			meaningEn: "So that … does not happen.",
-			example: { jp: "こういうことのないように{注意|ちゅうい}いたします。", cn: "我会注意不再发生这样的事。", en: "I will be careful so that this does not happen again." },
+			example: { jp: "こういうことのないように{注意|ちゅうい}いたします。", cn: "我会注意，不让这样的事发生。", en: "I will be careful so that this does not happen again." },
 		},
 	],
 };

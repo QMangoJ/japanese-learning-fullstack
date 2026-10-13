@@ -11,26 +11,26 @@ export const w2d2: ReadingDay = {
 
 	point: {
 		title: "{比較|ひかく}を{表|あらわ}す{文|ぶん}に{注意|ちゅうい}しよう！",
-		titleCn: "注意表示比较的句子！",
+		titleCn: "注意表示比较的句子吧！",
 		titleEn: "Pay attention to the sentences describing comparisons!",
 		figure: {
 			alt: "「ぼくのは、あの子のより大きいよ。」「ぼくのほど大きくないね。」と比べ合うキャラクターたち",
-			cn: "几个角色互相比较：「我的比那孩子的大哦。」「没有我的那么大呢。」",
+			cn: "说着「我的比那个孩子的大哦。」「没有我的那么大呢。」互相比较的角色们",
 			en: "Characters comparing things: “Mine is bigger than that kid’s.” “It’s not as big as mine.”",
 		},
 		tips: [
 			{
 				jp: "ポイントをしぼって{比較|ひかく}しましょう。{何|なに}と{何|なに}を、どの{点|てん}で{比|くら}べているのかを{確|たし}かめること。",
-				cn: "要集中在重点上进行比较：先弄清楚是「拿什么和什么」「在哪一点上」作比较。",
+				cn: "聚焦要点来比较吧。要确认是在拿什么和什么、在哪一点上进行比较。",
 				en: "Narrow the comparison to the key point. Check what is being compared with what, and on which point.",
 			},
 		],
 		expressions: [
-			{ jp: "AはBより大きい。", cn: "A 比 B 大。", en: "A is bigger than B." },
-			{ jp: "BよりAのほうが大きい。", cn: "与 B 相比，A 更大。", en: "Comparing to B, A is bigger." },
-			{ jp: "Aが最も（＝いちばん）大きい。", cn: "A 最大。", en: "A is the biggest." },
-			{ jp: "BはAほど大きくない。", cn: "B 没有 A 那么大。", en: "B is not as big as A." },
-			{ jp: "BはCに比べて大きい。", cn: "B 与 C 相比更大。", en: "B is bigger compared to C." },
+			{ jp: "AはBより大きい。", cn: "A比B大。", en: "A is bigger than B." },
+			{ jp: "BよりAのほうが大きい。", cn: "比起B，A更大。", en: "Comparing to B, A is bigger." },
+			{ jp: "Aが最も（＝いちばん）大きい。", cn: "A是最大的（＝最）。", en: "A is the biggest." },
+			{ jp: "BはAほど大きくない。", cn: "B没有A那么大。", en: "B is not as big as A." },
+			{ jp: "BはCに比べて大きい。", cn: "B与C相比更大。", en: "B is bigger compared to C." },
 			{ jp: "サイズ", cn: "尺寸", en: "size" },
 			{ jp: "容量", kana: "ようりょう", cn: "容量", en: "capacity" },
 			{ jp: "幅", kana: "はば", cn: "宽度", en: "width" },
@@ -40,7 +40,7 @@ export const w2d2: ReadingDay = {
 		notes: [
 			{
 				jp: "「AほどBではない」は{否定形|ひていけい}なので、A>Bの{関係|かんけい}になる。{読|よ}み{間違|まちが}えやすいので{注意|ちゅうい}。",
-				cn: "「AほどBではない」是否定形式，意思是「没有 A 那么……」，即 A 更大。这个句型最容易读反，务必注意。",
+				cn: "「AほどBではない」是否定形式，所以是A>B的关系。容易读错，要注意。",
 				en: "A hodo B de wa nai is negative, so A is greater than B. This pattern is easy to reverse—watch it.",
 			},
 		],
@@ -48,7 +48,7 @@ export const w2d2: ReadingDay = {
 
 	renshu: {
 		instruction: "{次|つぎ}の{会話文|かいわぶん}を{読|よ}んで、{後|あと}の{文|ぶん}から{正|ただ}しいものを{選|えら}ぼう。",
-		instructionCn: "阅读下面的对话，从后面的句子中选出正确的。（答案在下一页）",
+		instructionCn: "阅读下面的对话，从后面的句子中选出正确的吧。",
 		instructionEn: "Read the conversation below and choose the correct statements from the sentences that follow. (Answers are on the next page.)",
 		blocks: [
 			{
@@ -57,7 +57,7 @@ export const w2d2: ReadingDay = {
 				speakerCn: "丈夫",
 				speakerEn: "Husband",
 				jp: "{今度|こんど}のボーナスで{新|あたら}しい{冷蔵庫|れいぞうこ}を{買|か}おうか。これは{古|ふる}いし{小|ちい}さいしね。",
-				cn: "用这次的奖金买台新冰箱吧。这台又旧又小。",
+				cn: "用这次的奖金买台新冰箱怎么样？这台又旧又小呢。",
 				en: "Shall we buy a new fridge with this bonus? This one is old and small.",
 			},
 			{
@@ -66,7 +66,7 @@ export const w2d2: ReadingDay = {
 				speakerCn: "妻子",
 				speakerEn: "Wife",
 				jp: "うん、でも、{大|おお}きいのは、ここに{入|はい}るかしら。",
-				cn: "嗯，可是大的放得进这里吗？",
+				cn: "嗯，不过，大的，不知能不能放进这里。",
 				en: "Yes, but will a big one fit here?",
 			},
 			{
@@ -75,7 +75,7 @@ export const w2d2: ReadingDay = {
 				speakerCn: "丈夫",
 				speakerEn: "Husband",
 				jp: "{大丈夫|だいじょうぶ}だよ。{最近|さいきん}のは、{容量|ようりょう}が{大|おお}きくなっても、サイズはこれと{変|か}わらないんだ。それに、{消費電力|しょうひでんりょく}も{少|すく}なくなっているし、{電気代|でんきだい}があんまりかからなくなるよ。いちばん{新|あたら}しいタイプは、{去年|きょねん}よりもさらに{少|すく}なくなったって{宣伝|せんでん}してたし。",
-				cn: "没问题的。最近的冰箱容量变大了，尺寸却和这台差不多。而且耗电量也变少了，电费不会太高。听说最新款比去年的还要更省电呢。",
+				cn: "没问题的。最近的，即使容量变大了，尺寸也跟这台没差别的。而且耗电量也减少了，电费就不会太贵了哦。最新型广告上说，比去年进一步减少了呢。",
 				en: "It’ll be fine. Recent models have more capacity but the same size as this one. They also use less electricity, so the bill won’t be so high. They were advertising that the newest type uses even less than last year’s.",
 			},
 			{
@@ -84,36 +84,36 @@ export const w2d2: ReadingDay = {
 				speakerCn: "妻子",
 				speakerEn: "Wife",
 				jp: "じゃ、そのいちばん{新|あたら}しいのにしましょうよ。",
-				cn: "那就买那款最新的吧。",
+				cn: "那，就选那个最新的吧。",
 				en: "Then let’s get that newest one.",
 			},
 		],
 		choices: [
 			{ jp: "この{夫婦|ふうふ}は、{電気店|でんきてん}で{話|はなし}をしている。", cn: "这对夫妻正在电器店里说话。", en: "This couple is talking in an appliance store." },
-			{ jp: "この{夫婦|ふうふ}は、{冷蔵庫|れいぞうこ}を{買|か}い{替|か}えたいと{思|おも}っている。", cn: "这对夫妻想换一台新冰箱。", en: "This couple wants to replace their refrigerator." },
+			{ jp: "この{夫婦|ふうふ}は、{冷蔵庫|れいぞうこ}を{買|か}い{替|か}えたいと{思|おも}っている。", cn: "这对夫妻想要更换冰箱。", en: "This couple wants to replace their refrigerator." },
 			{
 				jp: "この{夫婦|ふうふ}が{今使|いまつか}っている{冷蔵庫|れいぞうこ}は、{新|あたら}しい{冷蔵庫|れいぞうこ}に{比|くら}べて{電気代|でんきだい}がかかる。",
-				cn: "这对夫妻现在用的冰箱，比新冰箱更费电。",
+				cn: "这对夫妻现在使用的冰箱，与新冰箱相比，电费花费更高。",
 				en: "The refrigerator they use now costs more in electricity than a new one.",
 			},
-			{ jp: "{新|あたら}しい{冷蔵庫|れいぞうこ}は{物|もの}がよく{入|はい}るが、{電気代|でんきだい}が{高|たか}くつく。", cn: "新冰箱虽然能装很多东西，但电费高。", en: "A new refrigerator holds a lot, but the electricity bill is high." },
+			{ jp: "{新|あたら}しい{冷蔵庫|れいぞうこ}は{物|もの}がよく{入|はい}るが、{電気代|でんきだい}が{高|たか}くつく。", cn: "新冰箱很能装东西，但电费开销大。", en: "A new refrigerator holds a lot, but the electricity bill is high." },
 			{
 				jp: "{去年|きょねん}の{冷蔵庫|れいぞうこ}より{今年|ことし}の{冷蔵庫|れいぞうこ}のほうが{容量|ようりょう}が{小|ちい}さい。",
-				cn: "今年的冰箱比去年的容量小。",
+				cn: "比起去年的冰箱，今年的冰箱容量更小。",
 				en: "This year’s refrigerator has a smaller capacity than last year’s.",
 			},
 		],
 		answers: [2, 3],
 		hint: {
 			jp: "「{去年|きょねん}よりもさらに{少|すく}なくなった」のは{消費電力|しょうひでんりょく}。{容量|ようりょう}のことではない。",
-			cn: "「比去年更少」说的是耗电量，不是容量。另外两人是在家里看目录商量，并没有说在电器店。",
+			cn: "「比去年进一步减少了」的是耗电量。不是容量的事。",
 			en: "“Even less than last year” refers to power use, not capacity. Also, they are looking at a catalogue at home; nothing says they are in a store.",
 		},
 	},
 
 	mondai: {
 		instruction: "{次|つぎ}の{広告|こうこく}を{読|よ}んで、{後|あと}の{問|と}いに{答|こた}えなさい。",
-		instructionCn: "阅读下面的广告，回答后面的问题。（答案在别册 p.3）",
+		instructionCn: "请阅读下面的广告，回答后面的问题。",
 		instructionEn: "Read the advertisement below and answer the questions that follow. (Answers are in the separate booklet, p. 3.)",
 		blocks: [
 			{
@@ -122,16 +122,16 @@ export const w2d2: ReadingDay = {
 					[
 						{ jp: "", cn: "", header: true, rowSpan: 2, align: "center" },
 						{ jp: "{型番|かたばん}", cn: "型号", en: "Model", header: true, rowSpan: 2, align: "center" },
-						{ jp: "{容量|ようりょう}（L）", cn: "容量（升）", en: "Capacity (L)", header: true, colSpan: 4, align: "center" },
-						{ jp: "{幅|はば}\n(cm)", cn: "宽度", en: "Width", header: true, rowSpan: 2, align: "center" },
-						{ jp: "{高|たか}さ\n(cm)", cn: "高度", en: "Height", header: true, rowSpan: 2, align: "center" },
-						{ jp: "{奥行|おくゆ}き\n(cm)", cn: "进深", en: "Depth", header: true, rowSpan: 2, align: "center" },
-						{ jp: "{消費電力|しょうひでんりょく}\n(kwh／{年|ねん})", cn: "耗电量（度/年）", en: "Power use (kWh/year)", header: true, rowSpan: 2, align: "center" },
+						{ jp: "{容量|ようりょう}（L）", cn: "容量（L）", en: "Capacity (L)", header: true, colSpan: 4, align: "center" },
+						{ jp: "{幅|はば}\n(cm)", cn: "宽度\n(cm)", en: "Width", header: true, rowSpan: 2, align: "center" },
+						{ jp: "{高|たか}さ\n(cm)", cn: "高度\n(cm)", en: "Height", header: true, rowSpan: 2, align: "center" },
+						{ jp: "{奥行|おくゆ}き\n(cm)", cn: "深度\n(cm)", en: "Depth", header: true, rowSpan: 2, align: "center" },
+						{ jp: "{消費電力|しょうひでんりょく}\n(kwh／{年|ねん})", cn: "耗电量\n(kwh／年)", en: "Power use (kWh/year)", header: true, rowSpan: 2, align: "center" },
 					],
 					[
-						{ jp: "{全体|ぜんたい}", cn: "整体", en: "Total", header: true, align: "center" },
-						{ jp: "{冷蔵室|れいぞうしつ}＊", cn: "冷藏室", en: "Fridge section", header: true, align: "center" },
-						{ jp: "{冷凍室|れいとうしつ}＊＊", cn: "冷冻室", en: "Freezer", header: true, align: "center" },
+						{ jp: "{全体|ぜんたい}", cn: "合计", en: "Total", header: true, align: "center" },
+						{ jp: "{冷蔵室|れいぞうしつ}＊", cn: "冷藏室＊", en: "Fridge section", header: true, align: "center" },
+						{ jp: "{冷凍室|れいとうしつ}＊＊", cn: "冷冻室＊＊", en: "Freezer", header: true, align: "center" },
 						{ jp: "{野菜室|やさいしつ}", cn: "蔬菜室", en: "Vegetable drawer", header: true, align: "center" },
 					],
 					[
@@ -150,7 +150,7 @@ export const w2d2: ReadingDay = {
 						{ jp: "", cn: "", header: true },
 						{
 							jp: "お{年寄|としよ}りや{子|こ}どもも{手|て}が{届|とど}く{低|ひく}めサイズ。{整理|せいり}しやすく{使|つか}い{勝手|がって}がよい{真|ま}ん{中冷凍室|なかれいとうしつ}。",
-							cn: "老人和孩子也够得着的低矮尺寸。位于正中的冷冻室，便于整理、使用方便。",
+							cn: "老年人和孩子的手也能够到的偏矮尺寸。便于整理、使用方便的正中冷冻室。",
 							en: "A lower size that older people and children can reach. A mid-height freezer that is easy to organize and use.",
 							colSpan: 9,
 						},
@@ -171,7 +171,7 @@ export const w2d2: ReadingDay = {
 						{ jp: "", cn: "", header: true },
 						{
 							jp: "{狭|せま}い{空間|くうかん}にもスッキリ{収|おさ}まる！　ニオイを{抑|おさ}える{除菌|じょきん}・{脱臭機能|だっしゅうきのう}で{食品|しょくひん}のおいしさを{保|たも}ちます。",
-							cn: "狭窄的空间也能整齐放下！具备抑制异味的除菌・除臭功能，保持食品的美味。",
+							cn: "连狭窄的空间也能整整齐齐放下！　凭借抑制异味的除菌・脱臭功能，保持食品的美味。",
 							en: "Fits neatly even in a tight space! Sterilizing and deodorizing functions keep food tasting good.",
 							colSpan: 9,
 						},
@@ -192,7 +192,7 @@ export const w2d2: ReadingDay = {
 						{ jp: "", cn: "", header: true },
 						{
 							jp: "{食品|しょくひん}のおいしさを{逃|のが}さない「スピード{冷凍|れいとう}」。{新鮮野菜|しんせんやさい}もたっぷり{収納|しゅうのう}。{野菜|やさい}の{水分|すいぶん}を{奪|うば}わない「フレッシュ{野菜室|やさいしつ}」。",
-							cn: "不让食品美味流失的「快速冷冻」。新鲜蔬菜也能大量收纳。不夺走蔬菜水分的「保鲜蔬菜室」。",
+							cn: "不让食品的美味流失的「快速冷冻」。新鲜蔬菜也能大量收纳。不夺走蔬菜水分的「新鲜蔬菜室」。",
 							en: "“Speed freeze” that does not let food lose its taste. Plenty of room for fresh vegetables. A “fresh vegetable drawer” that does not take moisture from the vegetables.",
 							colSpan: 9,
 						},
@@ -213,7 +213,7 @@ export const w2d2: ReadingDay = {
 						{ jp: "", cn: "", header: true },
 						{
 							jp: "エコNo.1！　{省|しょう}エネ{性能|せいのう}パワーアップ。キッチンで{出|で}っ{張|ば}らない{薄型|うすがた}！　サイズは{従来|じゅうらい}と{同|おな}じでもたっぷり{収納|しゅうのう}。",
-							cn: "环保 No.1！节能性能升级。在厨房里不占地方的薄型！尺寸与以往相同，却能大量收纳。",
+							cn: "环保No.1！　节能性能升级。在厨房里不外凸的薄型！　尺寸即便与以往相同，也能大量收纳。",
 							en: "No. 1 for eco! Energy-saving performance stepped up. Slim, so it does not stick out in the kitchen! The same size as before, but plenty of storage.",
 							colSpan: 9,
 						},
@@ -223,7 +223,7 @@ export const w2d2: ReadingDay = {
 			{
 				type: "note",
 				jp: "【ご{注意|ちゅうい}】{壁|かべ}との{間|あいだ}を{左右各|さゆうかく}2cm、{後|うし}ろ10cm、{上部|じょうぶ}5cm{以上離|いじょうはな}して{設置|せっち}してください。＊＊＊",
-				cn: "【请注意】安装时请与墙壁保持左右各 2cm、后方 10cm、上方 5cm 以上的距离。＊＊＊",
+				cn: "【请注意】安装时请与墙壁保持左右各2cm、后方10cm、上方5cm以上的间距。＊＊＊",
 				en: "[Please note] Leave at least 2 cm on each side, 10 cm behind, and 5 cm above between the unit and the wall.＊＊＊",
 			},
 		],
@@ -234,7 +234,7 @@ export const w2d2: ReadingDay = {
 		pageNotes: [
 			{
 				jp: "＊＊＊ Please ensure that the following spaces between the wall and the product exist: 2 cm on both sides, 10 cm in the back and 5 cm and more above.",
-				cn: "＊＊＊请安装在离墙壁左右各 2cm、后方 10cm、上方 5cm 以上的位置。",
+				cn: "＊＊＊请确保墙壁与产品之间存在以下间隔：两侧各2 cm、后方10 cm、上方5 cm及以上。",
 				en: "Please ensure that the following spaces between the wall and the product exist: 2 cm on both sides, 10 cm in the back and 5 cm and more above.",
 			},
 		],
@@ -242,7 +242,7 @@ export const w2d2: ReadingDay = {
 			{
 				label: "問1",
 				jp: "{上|うえ}のカタログから{次|つぎ}の{条件|じょうけん}で{冷蔵庫|れいぞうこ}を{選|えら}んだ{場合|ばあい}、どれになるか。　【{条件|じょうけん}】{高|たか}さ180cm、{幅|はば}65cmのスペースに{置|お}くことができて、{電気代|でんきだい}がなるべく{安|やす}いもの。",
-				cn: "按下列条件从上面的目录中挑选冰箱，应该选哪一台？【条件】能放进高 180cm、宽 65cm 的空间，并且电费尽量便宜。",
+				cn: "从上面的目录中按以下条件选择冰箱的话，会是哪一台？　【条件】能够放在高180cm、宽65cm的空间里，并且电费尽量便宜的。",
 				en: "If you choose a refrigerator from the catalogue above under the following conditions, which one is it? [Conditions] It must fit in a space 180 cm high and 65 cm wide, and the electricity bill should be as low as possible.",
 				choices: [
 					{ jp: "A（AS-33L）", cn: "A（AS-33L）", en: "A (AS-33L)" },
@@ -271,13 +271,13 @@ export const w2d2: ReadingDay = {
 			{
 				label: "問2",
 				jp: "Dの{冷蔵庫|れいぞうこ}の{特徴|とくちょう}として、{合|あ}っていないものはどれか。",
-				cn: "关于 D 这台冰箱的特点，下列哪一项不正确？",
+				cn: "作为D冰箱的特征，不相符的是哪一项？",
 				en: "Which of the following is not true of refrigerator D?",
 				choices: [
-					{ jp: "{冷凍庫|れいとうこ}に{入|はい}る{量|りょう}が{最|もっと}も{多|おお}い。", cn: "冷冻室的容量最大。", en: "It has the largest freezer capacity." },
-					{ jp: "1{年間|ねんかん}にかかる{電気代|でんきだい}が{最|もっと}も{安|やす}い。", cn: "一年所需的电费最便宜。", en: "Its yearly electricity cost is the lowest." },
-					{ jp: "{高|たか}さがあるほうだが、Bほどではない。", cn: "算是比较高的，但没有 B 那么高。", en: "It is on the tall side, but not as tall as B." },
-					{ jp: "ほかの{冷蔵庫|れいぞうこ}と{比|くら}べて{厚|あつ}い。", cn: "和其他冰箱相比更厚。", en: "It is thicker than the other refrigerators." },
+					{ jp: "{冷凍庫|れいとうこ}に{入|はい}る{量|りょう}が{最|もっと}も{多|おお}い。", cn: "能装进冷冻库的量最多。", en: "It has the largest freezer capacity." },
+					{ jp: "1{年間|ねんかん}にかかる{電気代|でんきだい}が{最|もっと}も{安|やす}い。", cn: "1年所花的电费最便宜。", en: "Its yearly electricity cost is the lowest." },
+					{ jp: "{高|たか}さがあるほうだが、Bほどではない。", cn: "算是比较高的，但没有B那么高。", en: "It is on the tall side, but not as tall as B." },
+					{ jp: "ほかの{冷蔵庫|れいぞうこ}と{比|くら}べて{厚|あつ}い。", cn: "与其他冰箱相比更厚。", en: "It is thicker than the other refrigerators." },
 				],
 				answer: 4,
 				explanation:
@@ -328,7 +328,7 @@ export const w2d2: ReadingDay = {
 			pattern: "AはBほど〜ない",
 			meaning: "A 没有 B 那么……。否定形式的比较，结论是 B 更……。最容易读反的句型。",
 			meaningEn: "A is not as … as B. A negative comparison; B is the greater one. The pattern that is easiest to reverse.",
-			example: { jp: "{高|たか}さがあるほうだが、Bほどではない。", cn: "算是高的，但没有 B 那么高。", en: "It is on the tall side, but not as tall as B." },
+			example: { jp: "{高|たか}さがあるほうだが、Bほどではない。", cn: "算是比较高的，但没有B那么高。", en: "It is on the tall side, but not as tall as B." },
 			note: "本课要点。看到「ほど〜ない」，先确定谁大谁小再作答。",
 			noteEn: "The key point of this lesson. When you see hodo ~ nai, first decide which one is larger.",
 		},
@@ -339,7 +339,7 @@ export const w2d2: ReadingDay = {
 			meaningEn: "compared with B, A….",
 			example: {
 				jp: "{今使|いまつか}っている{冷蔵庫|れいぞうこ}は、{新|あたら}しい{冷蔵庫|れいぞうこ}に{比|くら}べて{電気代|でんきだい}がかかる。",
-				cn: "现在用的冰箱和新冰箱相比更费电。",
+				cn: "现在使用的冰箱，与新冰箱相比，电费花费更高。",
 				en: "The refrigerator they use now costs more in electricity than a new one.",
 			},
 		},
@@ -347,13 +347,13 @@ export const w2d2: ReadingDay = {
 			pattern: "AよりBのほうが〜",
 			meaning: "比起 A，B 更……。最基本的比较句型。",
 			meaningEn: "B is more … than A. The most basic comparison pattern.",
-			example: { jp: "{去年|きょねん}よりもさらに{少|すく}なくなった", cn: "比去年还要更少了", en: "even less than last year" },
+			example: { jp: "{去年|きょねん}よりもさらに{少|すく}なくなった", cn: "比去年进一步减少了", en: "even less than last year" },
 		},
 		{
 			pattern: "{最|もっと}も〜（＝いちばん）",
 			meaning: "最……。书面语的最高级说法。",
 			meaningEn: "the most…. Written-style superlative (= ichiban).",
-			example: { jp: "1{年間|ねんかん}にかかる{電気代|でんきだい}が{最|もっと}も{安|やす}い。", cn: "一年的电费最便宜。", en: "The yearly electricity cost is the lowest." },
+			example: { jp: "1{年間|ねんかん}にかかる{電気代|でんきだい}が{最|もっと}も{安|やす}い。", cn: "1年所花的电费最便宜。", en: "The yearly electricity cost is the lowest." },
 		},
 		{
 			pattern: "〜ても",
@@ -362,7 +362,7 @@ export const w2d2: ReadingDay = {
 			meaningEn: "even if…. A concessive condition.",
 			example: {
 				jp: "{容量|ようりょう}が{大|おお}きくなっても、サイズはこれと{変|か}わらない。",
-				cn: "即使容量变大了，尺寸也和这台没差别。",
+				cn: "即使容量变大了，尺寸也跟这台没差别。",
 				en: "Even if the capacity is larger, the size is the same as this one.",
 			},
 		},
@@ -377,7 +377,7 @@ export const w2d2: ReadingDay = {
 			pattern: "〜以上{離|はな}して",
 			meaning: "留出……以上的距离。说明书、注意事项里的固定说法，「以上」含本数。",
 			meaningEn: "leave at least… of space. A set phrase in manuals; ijō includes the number.",
-			example: { jp: "{後|うし}ろ10cm、{上部|じょうぶ}5cm{以上離|いじょうはな}して{設置|せっち}してください。", cn: "请留出后方 10cm、上方 5cm 以上的距离安装。", en: "Please install it at least 10 cm from the back and 5 cm from the top." },
+			example: { jp: "{後|うし}ろ10cm、{上部|じょうぶ}5cm{以上離|いじょうはな}して{設置|せっち}してください。", cn: "请与后方保持10cm、与上方保持5cm以上的间距进行安装。", en: "Please install it at least 10 cm from the back and 5 cm from the top." },
 		},
 	],
 };

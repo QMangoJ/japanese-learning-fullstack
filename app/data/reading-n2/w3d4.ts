@@ -12,17 +12,17 @@ export const w3d4: ReadingDay = {
 
 	point: {
 		title: "{問|と}われている{部分|ぶぶん}に{焦点|しょうてん}を{当|あ}てて{読|よ}もう。",
-		titleCn: "阅读文章时要把焦点放在提问的部分。",
+		titleCn: "把焦点对准被问到的部分来读吧。",
 		titleEn: "Try to focus on the main ideas as you read!",
 		figure: {
 			alt: "左のキャラクターが「問いから読んで早く答えを探す読み方です。」と言い、右のキャラクターが子どもを抱いて「この子、かわいいなあ」と思っているイラスト",
-			cn: "左边角色说「这是先看问题再找答案的读法。」右边角色抱着孩子想「这孩子真可爱啊」",
+			cn: "左边的角色说「这是从问题读起、快速寻找答案的读法。」，右边的角色抱着孩子，想着「这孩子，真可爱啊」的插图",
 			en: "The left character says “This is a way of reading that starts from the question and finds the answer quickly.” The right one holds a child and thinks “This child is so cute.”",
 		},
 		tips: [
 			{
 				jp: "{例|たと}えばこんなことを{問|と}われたら？",
-				cn: "比如被问到这些的时候？",
+				cn: "比如说，要是被问到这样的事情呢？",
 				en: "If you are asked something like this, for example?",
 			},
 		],
@@ -34,7 +34,7 @@ export const w3d4: ReadingDay = {
 
 	renshu: {
 		instruction: "{次|つぎ}の{会話文|かいわぶん}を{読|よ}んで、{後|あと}の{文|ぶん}から{正|ただ}しいものを{選|えら}ぼう。",
-		instructionCn: "阅读下面的对话，从后面的句子中选出正确的。（答案在下一页）",
+		instructionCn: "阅读下面的对话文，从后面的句子中选出正确的吧。",
 		instructionEn: "Read the conversation below and choose the correct statements from the sentences that follow. (Answers are on the next page.)",
 		blocks: [
 			{
@@ -43,7 +43,7 @@ export const w3d4: ReadingDay = {
 				speakerCn: "妻子",
 				speakerEn: "Wife",
 				jp: "もう、まったく、あの{子|こ}ったら、{毎日|まいにち}だらだらと{過|す}ごして……しょうがないんだから。パパからも{叱|しか}ってよ。{今|いま}からきちんと{勉強|べんきょう}しておかないと！　ほんと、もったいない。{私|わたし}があの{子|こ}だったらと{思|おも}うけどな。{若|わか}い{時|とき}は{二度|にど}ないんだし。",
-				cn: "真是的，那孩子每天就那么晃荡……没办法。你也骂骂他。从现在起不好好学习不行！真浪费。我要是那孩子就好了。年轻的时候只有一次啊。",
+				cn: "真是的，简直了，那孩子啊，每天就这么懒懒散散地过……真是拿他没办法。爸爸你也骂骂他呀。从现在起不认认真真学起来可不行！真的，太可惜了。我倒是会想，要是我是那孩子就好了呢。年轻的时候不会有第二次啊。",
 				en: "Honestly, that child, loafing around every day… I don’t know what to do. You scold him too. If he doesn’t start studying properly now—! It’s such a waste. I wish I were that child. You only get to be young once.",
 			},
 			{
@@ -52,7 +52,7 @@ export const w3d4: ReadingDay = {
 				speakerCn: "丈夫",
 				speakerEn: "Husband",
 				jp: "あいつはあいつでちゃんと{考|かんが}えているさ。それより、{君|きみ}はどうなの？",
-				cn: "那孩子有那孩子自己的想法。倒是你怎么样？",
+				cn: "那家伙嘛，他自己也在好好想着呢。比起这个，你怎么样？",
 				en: "He has his own way of thinking. More to the point, what about you?",
 			},
 			{
@@ -61,7 +61,7 @@ export const w3d4: ReadingDay = {
 				speakerCn: "妻子",
 				speakerEn: "Wife",
 				jp: "え？　{私|わたし}？　{私|わたし}はもう……。",
-				cn: "诶？我？我已经……",
+				cn: "诶？我？我已经……。",
 				en: "Huh? Me? I’m already…",
 			},
 			{
@@ -70,7 +70,7 @@ export const w3d4: ReadingDay = {
 				speakerCn: "丈夫",
 				speakerEn: "Husband",
 				jp: "もう、{何|なに}？　{終|お}わったと{思|おも}ってるの？　{若|わか}いときだけが{大事|だいじ}だとか{思|おも}ってないよね。{俺|おれ}たちだって{同|おな}じだよ。ただ{毎日|まいにち}を{忙|いそが}しく{過|す}ごせばいいってわけじゃない。{勉強|べんきょう}したり、{楽|たの}しんだり、{泣|な}いたり{笑|わら}ったりしないと。{人生|じんせい}にはその{年|とし}その{年|とし}で{特有|とくゆう}の（注）{喜|よろこ}びや{悲|かな}しみがあるんだから。だから、あいつにも{今|いま}をただ{老後|ろうご}の{準備|じゅんび}にしてほしくないね、{俺|おれ}は。",
-				cn: "已经怎样？你觉得结束了？可别以为只有年轻的时候才重要。我们也一样。并不是每天忙忙碌碌就行。要学习、要享受、要哭要笑。人生在每一个年纪都有那个年纪特有的（注）欢乐和悲伤。所以我也不希望那孩子把现在只当成养老的准备。",
+				cn: "已经什么？你觉得结束了吗？你不会认为只有年轻的时候才重要什么的吧。我们也都一样啊。并不是只要每天忙忙碌碌地过就行。得学习、得享受、得哭、得笑才行。因为人生在每一个年纪，都有那个年纪所特有的（注）喜悦和悲伤。所以我啊，也不希望那家伙把现在仅仅当成晚年的准备。",
 				en: "Already what? You think it’s over? You don’t think only being young matters, do you? It’s the same for us. It isn’t as if just staying busy every day is enough. You have to study, enjoy yourself, cry and laugh. Life has joys and sorrows unique (note) to each age. So I don’t want him to make the present nothing but preparation for old age, either.",
 			},
 		],
@@ -78,10 +78,10 @@ export const w3d4: ReadingDay = {
 			{ marker: "（注）", term: "特有の", jp: "とくゆうの", cn: "特有的", en: "unique" },
 		],
 		choices: [
-			{ jp: "{妻|つま}は{若|わか}い{人|ひと}は{若|わか}い{時|とき}を{大事|だいじ}に{過|す}ごすべきだと{思|おも}っている。", cn: "妻子认为年轻人应该珍惜地度过年轻时光。", en: "The wife thinks young people should spend their youth with care." },
-			{ jp: "{夫|おっと}は{大事|だいじ}に{過|す}ごすのは{中年|ちゅうねん}も{老年|ろうねん}も{同|おな}じだと{思|おも}っている。", cn: "丈夫认为中年和老年同样应该珍惜地度过。", en: "The husband thinks middle age and old age should be lived with the same care." },
-			{ jp: "{妻|つま}は{老後|ろうご}をどう{過|す}ごすかが{大事|だいじ}だと{思|おも}っている。", cn: "妻子认为如何度过晚年才重要。", en: "The wife thinks how you spend old age is what matters." },
-			{ jp: "{夫|おっと}は{子|こ}どもにあまり{勉強|べんきょう}してほしくないと{思|おも}っている。", cn: "丈夫不太希望孩子学习。", en: "The husband does not really want the child to study." },
+			{ jp: "{妻|つま}は{若|わか}い{人|ひと}は{若|わか}い{時|とき}を{大事|だいじ}に{過|す}ごすべきだと{思|おも}っている。", cn: "妻子认为年轻人应该珍惜地度过年轻的时候。", en: "The wife thinks young people should spend their youth with care." },
+			{ jp: "{夫|おっと}は{大事|だいじ}に{過|す}ごすのは{中年|ちゅうねん}も{老年|ろうねん}も{同|おな}じだと{思|おも}っている。", cn: "丈夫认为，珍惜地度过这一点，中年和老年都是一样的。", en: "The husband thinks middle age and old age should be lived with the same care." },
+			{ jp: "{妻|つま}は{老後|ろうご}をどう{過|す}ごすかが{大事|だいじ}だと{思|おも}っている。", cn: "妻子认为如何度过晚年是重要的。", en: "The wife thinks how you spend old age is what matters." },
+			{ jp: "{夫|おっと}は{子|こ}どもにあまり{勉強|べんきょう}してほしくないと{思|おも}っている。", cn: "丈夫并不太想让孩子学习。", en: "The husband does not really want the child to study." },
 			{ jp: "{妻|つま}は{子|こ}どもより{自分|じぶん}と{夫|おっと}の{老後|ろうご}のことを{心配|しんぱい}している。", cn: "妻子比起孩子，更担心自己和丈夫的晚年。", en: "The wife is more worried about her and her husband’s old age than about the child." },
 		],
 		answers: [1, 2],
@@ -89,48 +89,48 @@ export const w3d4: ReadingDay = {
 
 	mondai: {
 		instruction: "{次|つぎ}の{文章|ぶんしょう}を{読|よ}んで、{後|あと}の{問|と}いに{答|こた}えなさい。",
-		instructionCn: "阅读下面的文章，回答后面的问题。（答案在别册 p.4）",
+		instructionCn: "阅读下面的文章，回答后面的问题。",
 		instructionEn: "Read the following text and answer the questions that follow. (Answers are in the separate booklet, p. 4.)",
 		blocks: [
 			{
 				type: "paragraph",
 				indent: true,
 				jp: "{若|わか}い{時|とき}は{二度|にど}ない——と{言|い}う。だから、{若|わか}い{時代|じだい}を{大事|だいじ}にせよ、といった{意味|いみ}である。",
-				cn: "常说——年轻只有一次。所以意思是要珍惜年轻时代。",
+				cn: "人们说，年轻的时候不会有第二次——。因此，就是要珍惜年轻时代这样的意思。",
 				en: "People say you are only young once. So the meaning is: treat your youth as something precious.",
 			},
 			{
 				type: "paragraph",
 				indent: true,
 				jp: "なるほど、その{通|とお}りである。だが、{皮肉屋|ひにくや}（注1）のわたしは、このことばに{反論|はんろん}したい。たしかに{若|わか}い{時|とき}は{一度|いちど}しかないが、{中年|ちゅうねん}だって、{老年|ろうねん}だって{一度|いちど}しかないのである。われわれは{若|わか}い{時代|じだい}を{大事|だいじ}にすべきであるが、{同様|どうよう}に{中年|ちゅうねん}を{大事|だいじ}にすべきであるし、{老年|ろうねん}を{大事|だいじ}にしなければならない。①{若|わか}い{時代|じだい}だけを{特別視|とくべつし}する{必要|ひつよう}はないのである。",
-				cn: "的确如此。可是，爱挖苦的（注1）我，想反驳这句话。年轻固然只有一次，可中年也好、老年也好，也都只有一次。我们应当珍惜年轻时代，同样也应当珍惜中年，并且必须珍惜老年。①没有必要只把年轻时代看得特别。",
+				cn: "的确，正是如此。但是，我这个爱挖苦的人（注1），想反驳这句话。年轻的时候的确只有一次，可中年也好，老年也好，都只有一次。我们应当珍惜年轻时代，同样也应当珍惜中年，并且必须珍惜老年。①没有必要只把年轻时代特别看待。",
 				en: "Quite so. But I, a sarcastic person (note 1), want to argue with these words. It is true you are only young once — but you are only middle-aged once, and only old once as well. We should treat youth as precious, and likewise we should treat middle age as precious, and we must treat old age as precious. ①There is no need to single out youth as special.",
 			},
 			{
 				type: "paragraph",
 				indent: true,
 				jp: "わたし{自身|じしん}は{先|さき}ごろ、{五十三歳|ごじゅうさんさい}になった。{昔|むかし}の{呼称|こしょう}だと、もう{立派|りっぱ}な\"{老年|ろうねん}\"である。だから、ひがんで（注2）{言|い}っているのではない。わたしは、{老年|ろうねん}には{老年|ろうねん}のよさがあると思っている。（{中略|ちゅうりゃく}）{人生|じんせい}のそれぞれの{段階|だんかい}には、それぞれに{違|ちが}った{人生|じんせい}のこくがある。わたしはそう{思|おも}っている。わたしたちは、それぞれの{段階|だんかい}に{特有|とくゆう}な{人生|じんせい}の{喜|よろこ}びと{悲|かな}しみを{味|あじ}わいながら{生|い}きたい。",
-				cn: "我自己不久前刚满五十三岁。按从前的叫法，已经是不折不扣的「老年」了。所以并不是出于嫉妒（注2）才这么说。我认为老年有老年的好处。（中略）人生的每一个阶段，都有各不相同的人生况味。我是这么想的。我们希望一边体味每个阶段特有的欢乐与悲伤，一边活下去。",
+				cn: "我自己前不久年满五十三岁。按从前的称呼，已经是十足的「老年」了。所以，并不是出于嫉妒（注2）才这么说的。我认为，老年有老年的好处。（中略）人生的每一个阶段，都有各自不同的人生况味。我是这么想的。我们想一边体味每个阶段所特有的人生喜悦与悲伤，一边生活。",
 				en: "I myself turned fifty-three not long ago. By the old name for it, I am already a proper “old man.” So I am not saying this out of jealousy (note 2). I think old age has the good points of old age. (omission) Each stage of life has a richness of life that is different from the others. That is what I think. I want us to live while tasting the joys and sorrows unique to each stage.",
 			},
 			{
 				type: "paragraph",
 				indent: true,
 				jp: "にもかかわらず、どうして{若|わか}い{時代|じだい}だけが{特別視|とくべつし}されるのか！？　わたしには{不思議|ふしぎ}である。{思|おも}うに、{人々|ひとびと}は{若|わか}い{時代|じだい}を{準備段階|じゅんびだんかい}と{考|かんが}えているようだ。{若|わか}い{時|とき}にしっかりと{学問|がくもん}や{体験|たいけん}の{蓄積|ちくせき}をしておかないと、{後|あと}になって{困|こま}る。だから、{若|わか}いうちから{遊|あそ}びほうけて（注3）いてはいけない。と、{結局|けっきょく}は、{若者|わかもの}に{自制|じせい}と{禁欲|きんよく}（注4）を{呼|よ}びかけているのである。",
-				cn: "尽管如此，为什么只有年轻时代被看得特别！？我觉得很奇怪。想来，人们似乎把年轻时代当成准备阶段。年轻时不扎扎实实地积累学问和体验，以后会为难。所以从年轻时起就不能沉溺玩乐（注3）。结果就是在呼吁年轻人自制与禁欲（注4）。",
+				cn: "尽管如此，为什么只有年轻时代会被特别看待呢！？我感到不可思议。想来，人们似乎把年轻时代看作准备阶段。如果在年轻的时候不扎扎实实地预先积累学问和体验，以后会不好办。所以，不能从还年轻时起就玩得忘乎所以（注3）。归根结底，这是在向年轻人呼吁自制与禁欲（注4）。",
 				en: "And yet, why is only youth singled out as special!? I find it strange. People seem to think of youth as a preparatory stage. If you do not build up learning and experience firmly while you are young, you will be in trouble later. So you must not idle your youth away (note 3). In the end, they are calling on the young for self-control and abstinence (note 4).",
 			},
 			{
 				type: "paragraph",
 				indent: true,
 				jp: "でも、わたしは、②それはまちがいだと{思|おも}う。{若|わか}い{時代|じだい}に、{若|わか}い{時代|じだい}に{特有|とくゆう}の{人生|じんせい}の{喜|よろこ}び・{悲|かな}しみを{体験|たいけん}しておかないと、{中年|ちゅうねん}や{老年|ろうねん}になって、その{段階|だんかい}での{人生|じんせい}の{喜|よろこ}び・{悲|かな}しみが{味|あじ}わえない。{若|わか}い{時代|じだい}は{決|けっ}して{準備段階|じゅんびだんかい}ではない。{若者|わかもの}はそのことを{銘記|めいき}すべき（注5）である。",
-				cn: "可是，我认为②那是错的。若是年轻时没有体验过年轻时代特有的人生欢乐与悲伤，到了中年或老年，就体味不到那个阶段的欢乐与悲伤。年轻时代绝不是准备阶段。年轻人应当把这一点铭记在心（注5）。",
+				cn: "不过，我认为②那是错误的。如果在年轻时代没有体验过年轻时代所特有的人生喜悦、悲伤，那么到了中年或老年，就无法体味那个阶段的人生喜悦、悲伤。年轻时代绝不是准备阶段。年轻人应当把这一点铭记在心（注5）。",
 				en: "But I think ②that is a mistake. If you do not experience the joys and sorrows unique to youth while you are young, then in middle age or old age you will not be able to taste the joys and sorrows of those stages. Youth is by no means a preparatory stage. The young should engrave that on their minds (note 5).",
 			},
 			{
 				type: "source",
 				jp: "（ひろさちや『まんだら{人生論|じんせいろん}（{下|げ}）』{読売新聞社|よみうりしんぶんしゃ}）",
-				cn: "（ひろさちや《曼荼罗人生论（下）》读卖新闻社）",
+				cn: "（广幸也《曼荼罗人生论（下）》读卖新闻社）",
 				en: "(Hirosachiya, Mandala Essays on Life, vol. 2, Yomiuri Shimbunsha)",
 			},
 		],
@@ -145,13 +145,13 @@ export const w3d4: ReadingDay = {
 			{
 				label: "問1",
 				jp: "①{若|わか}い{時代|じだい}だけを{特別視|とくべつし}する{必要|ひつよう}はないとあるが、それはなぜか。",
-				cn: "文中说①没有必要只把年轻时代看得特别，为什么？",
+				cn: "文中说①没有必要只把年轻时代特别看待，这是为什么？",
 				en: "It says ①there is no need to single out youth as special. Why?",
 				choices: [
 					{ jp: "{老年|ろうねん}のほうが{人生|じんせい}のよさがあるから。", cn: "因为老年更有人生的好处。", en: "Because old age has more of what is good in life." },
 					{ jp: "{自分|じぶん}が{皮肉屋|ひにくや}だから。", cn: "因为自己是爱挖苦的人。", en: "Because he himself is a sarcastic person." },
 					{ jp: "{若|わか}い{時代|じだい}と{同様|どうよう}に、{中年|ちゅうねん}、{老年|ろうねん}も{大事|だいじ}だから。", cn: "因为和年轻时代一样，中年、老年也很重要。", en: "Because middle age and old age matter just as youth does." },
-					{ jp: "{若|わか}いときは{一度|いちど}しかないから。", cn: "因为年轻只有一次。", en: "Because you are only young once." },
+					{ jp: "{若|わか}いときは{一度|いちど}しかないから。", cn: "因为年轻的时候只有一次。", en: "Because you are only young once." },
 				],
 				answer: 3,
 				explanation:
@@ -174,13 +174,13 @@ export const w3d4: ReadingDay = {
 			{
 				label: "問2",
 				jp: "②それはまちがいだと{思|おも}うとあるが、{何|なに}がまちがいであると{思|おも}うのか。",
-				cn: "文中说②那是错的，他认为错的是什么？",
+				cn: "文中说②我认为那是错误的，他认为什么是错误的呢？",
 				en: "It says ②he thinks that is a mistake. What does he think is a mistake?",
 				choices: [
-					{ jp: "{若|わか}いうちから{遊|あそ}びほうけること", cn: "从年轻时起就沉溺玩乐", en: "idling one’s youth away" },
+					{ jp: "{若|わか}いうちから{遊|あそ}びほうけること", cn: "从还年轻时起就玩得忘乎所以", en: "idling one’s youth away" },
 					{ jp: "{若|わか}い{時代|じだい}にしっかりと{学問|がくもん}や{体験|たいけん}の{蓄積|ちくせき}をすること", cn: "在年轻时代扎扎实实地积累学问和体验", en: "building up learning and experience firmly in youth" },
-					{ jp: "{若|わか}い{時代|じだい}を{特別視|とくべつし}しないこと", cn: "不把年轻时代看得特别", en: "not singling out youth as special" },
-					{ jp: "{若者|わかもの}に{自制|じせい}と{禁欲|きんよく}を{呼|よ}びかけること", cn: "呼吁年轻人自制与禁欲", en: "calling on the young for self-control and abstinence" },
+					{ jp: "{若|わか}い{時代|じだい}を{特別視|とくべつし}しないこと", cn: "不把年轻时代特别看待", en: "not singling out youth as special" },
+					{ jp: "{若者|わかもの}に{自制|じせい}と{禁欲|きんよく}を{呼|よ}びかけること", cn: "向年轻人呼吁自制与禁欲", en: "calling on the young for self-control and abstinence" },
 				],
 				answer: 4,
 				explanation:
@@ -244,7 +244,7 @@ export const w3d4: ReadingDay = {
 			meaningEn: "it is not the case that…. Partial negation.",
 			example: {
 				jp: "ただ{毎日|まいにち}を{忙|いそが}しく{過|す}ごせばいいってわけじゃない。",
-				cn: "并不是每天忙忙碌碌就行。",
+				cn: "并不是只要每天忙忙碌碌地过就行。",
 				en: "It isn’t as if just staying busy every day is enough.",
 			},
 		},
@@ -255,7 +255,7 @@ export const w3d4: ReadingDay = {
 			meaningEn: "to do … in advance / leave … done. Preparation, or keeping a state.",
 			example: {
 				jp: "{学問|がくもん}や{体験|たいけん}の{蓄積|ちくせき}をしておかないと、{後|あと}になって{困|こま}る。",
-				cn: "不事先积累学问和体验，以后会为难。",
+				cn: "如果不预先积累学问和体验，以后会不好办。",
 				en: "If you do not build up learning and experience (in advance), you will be in trouble later.",
 			},
 		},

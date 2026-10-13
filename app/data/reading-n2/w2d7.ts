@@ -19,7 +19,7 @@ export const w2d7: ReadingDay = {
 				instruction:
 					"{次|つぎ}の2つの{文書|ぶんしょ}はどちらも{市民講座|しみんこうざ}の{案内|あんない}である。{読|よ}んで、{下|した}の{問|と}いに{対|たい}する{答|こた}えとして{最|もっと}もよいものを1・2・3・4から{一|ひと}つ{選|えら}びなさい。",
 				instructionCn:
-					"下面两份文书都是市民讲座的介绍。阅读后，从 1・2・3・4 中选出对下面问题最合适的一个答案。",
+					"下面的两份文书都是市民讲座的介绍。请阅读，并从1・2・3・4中选出一个对下面问题最合适的答案。",
 				instructionEn:
 					"The two documents below are both information about civic courses. Read them and choose the best answer to the questions from 1, 2, 3, or 4.",
 				blocks: [
@@ -32,13 +32,13 @@ export const w2d7: ReadingDay = {
 					{
 						type: "figure",
 						alt: "空手着の子どもと、突きのポーズをしている人のイラスト",
-						cn: "穿着空手道服的孩子和摆出击打姿势的人的插图",
+						cn: "穿着空手道服的孩子和摆出击拳姿势的人的插图",
 						en: "Illustrations of a child in a karate gi and a person in a punching pose",
 					},
 					{
 						type: "paragraph",
 						jp: "{子|こ}どもから{大人|おとな}まで、{礼儀|れいぎ}を{身|み}に{付|つ}け、{仲間|なかま}づくりをしながら{心|こころ}と{体|からだ}を{強|つよ}くします。お{年寄|としよ}りの{健康維持|けんこういじ}、{女性|じょせい}の{護身術|ごしんじゅつ}（{注|ちゅう}）としてもお{勧|すす}めします。{皆|みな}で{楽|たの}しみながら{一生懸命|いっしょうけんめい}{稽古|けいこ}しています！　{私達|わたしたち}といっしょに{汗|あせ}を{流|なが}しませんか？",
-						cn: "从孩子到大人，在养成礼仪、结交伙伴的同时强健身心。也推荐作为老人的健康维持、女性的防身术（注）。大家一边享受一边拼命练习！要不要和我们一起流汗？",
+						cn: "从孩子到大人，养成礼仪，并在结交伙伴的同时使心灵和身体变强。也推荐作为老年人维持健康、女性防身术（注）之用。大家都在一边享受一边拼命练习！要不要和我们一起流汗？",
 						en: "From children to adults, we build manners and friendships while strengthening mind and body. We also recommend it for older people’s health and as self-defense for women (note). We train hard and have fun! Won’t you sweat with us?",
 					},
 					{
@@ -47,12 +47,12 @@ export const w2d7: ReadingDay = {
 						items: [
 							{
 								jp: "{稽古日時|けいこにちじ}……　（{小学生|しょうがくせい}）{毎週|まいしゅう}{火|か}・{木曜日|もくようび}　16:00〜17:15　※{稽古|けいこ}には{何回|なんかい}でも{参加|さんか}できます。（{中学生以上|ちゅうがくせいいじょう}）{毎週水曜日|まいしゅうすいようび}　19:00〜20:30",
-								cn: "练习时间……（小学生）每周二、周四 16:00〜17:15　※练习来几次都可以。（中学生以上）每周三 19:00〜20:30",
+								cn: "练习日期时间……　（小学生）每周二・周四　16:00〜17:15　※练习可以不限次数参加。（中学生以上）每周周三　19:00〜20:30",
 								en: "Practice times… (elementary) every Tuesday and Thursday 16:00–17:15. ※ You may attend as many sessions as you like. (junior high and up) every Wednesday 19:00–20:30",
 							},
 							{
 								jp: "{稽古場所|けいこばしょ}……　みどり{市|し}{体育館|たいいくかん}　トレーニングルーム",
-								cn: "练习地点……绿市体育馆　训练室",
+								cn: "练习场所……　绿市体育馆　训练室",
 								en: "Place… Midori City Gymnasium, training room",
 							},
 							{
@@ -73,28 +73,28 @@ export const w2d7: ReadingDay = {
 							[
 								{ jp: "{月会費|つきかいひ}（スポーツ{保険料|ほけんりょう}{含|ふく}む）", cn: "月会费（含运动保险费）", en: "Monthly fee (sports insurance included)", header: true, rowSpan: 3 },
 								{ jp: "{小学生|しょうがくせい}", cn: "小学生", en: "elementary" },
-								{ jp: "2,000{円|えん}", cn: "2,000 日元", en: "¥2,000" },
+								{ jp: "2,000{円|えん}", cn: "2,000日元", en: "¥2,000" },
 							],
 							[
-								{ jp: "{中学|ちゅうがく}・{高校生|こうこうせい}", cn: "初中・高中生", en: "junior / senior high" },
-								{ jp: "2,500{円|えん}", cn: "2,500 日元", en: "¥2,500" },
+								{ jp: "{中学|ちゅうがく}・{高校生|こうこうせい}", cn: "初中生・高中生", en: "junior / senior high" },
+								{ jp: "2,500{円|えん}", cn: "2,500日元", en: "¥2,500" },
 							],
 							[
 								{ jp: "{大学生|だいがくせい}・{一般|いっぱん}", cn: "大学生・一般", en: "university / adult" },
-								{ jp: "3,000{円|えん}", cn: "3,000 日元", en: "¥3,000" },
+								{ jp: "3,000{円|えん}", cn: "3,000日元", en: "¥3,000" },
 							],
 						],
 					},
 					{
 						type: "note",
 						jp: "※{必要|ひつよう}な{用具|ようぐ}は{貸|か}し{出|だ}します。{購入|こうにゅう}も{実費|じっぴ}で{可能|かのう}です。",
-						cn: "※所需用具可以出借。也可以按成本价购买。",
+						cn: "※所需用具予以出借。也可以按成本价购买。",
 						en: "※ Needed equipment can be borrowed. Purchase at cost is also possible.",
 					},
 					{
 						type: "note",
 						jp: "※{見学|けんがく}はいつでもOKです。ぜひ{一度|いちど}{見学|けんがく}にいらしてください。",
-						cn: "※随时可以观摩。请务必来观摩一次。",
+						cn: "※观摩随时都可以。请务必前来观摩一次。",
 						en: "※ Observation is always welcome. Please come and watch a session.",
 					},
 					{
@@ -107,50 +107,50 @@ export const w2d7: ReadingDay = {
 					{
 						type: "title",
 						jp: "やさしいヨガ{講座|こうざ}",
-						cn: "轻松瑜伽讲座",
+						cn: "简易瑜伽讲座",
 						en: "Easy yoga course",
 						sub: { jp: "— {開講|かいこう}のご{案内|あんない} —", cn: "— 开课介绍 —", en: "— Course opening information —" },
 					},
 					{
 						type: "figure",
 						alt: "あぐらをかいて両手を合わせている女性のイラスト",
-						cn: "盘腿双手合十的女性插图",
+						cn: "盘腿坐着、双手合十的女性插图",
 						en: "Illustration of a woman sitting cross-legged with her palms together",
 					},
 					{
 						type: "paragraph",
 						jp: "ヨガのゆったりとした{呼吸|こきゅう}で{心|こころ}と{体|からだ}をリフレッシュ！",
-						cn: "用瑜伽舒缓的呼吸给身心充电！",
+						cn: "用瑜伽舒缓的呼吸，让心灵和身体焕然一新！",
 						en: "Refresh mind and body with yoga’s easy breathing!",
 					},
 					{
 						type: "paragraph",
 						jp: "{忙|いそが}しい{毎日|まいにち}の{中|なか}で{心|こころ}や{体|からだ}が{疲|つか}れていませんか？",
-						cn: "忙碌的每一天里，身心是不是累了？",
+						cn: "在忙碌的每一天里，心灵或身体是不是累了？",
 						en: "Are your mind and body tired from busy days?",
 					},
 					{
 						type: "paragraph",
 						jp: "{生活習慣|せいかつしゅうかん}で{体|からだ}が{曲|ま}がったり、ずれたりしていませんか？",
-						cn: "生活习惯是不是让身体歪了、错位了？",
+						cn: "由于生活习惯，身体是不是变弯了，或者错位了？",
 						en: "Has daily habit left your body bent or out of line?",
 					},
 					{
 						type: "paragraph",
 						jp: "そんな{体|からだ}のゆがみを{直|なお}して、{体調|たいちょう}をよくする{効果|こうか}もあります。",
-						cn: "纠正这种身体的歪斜，也有改善身体状况的效果。",
+						cn: "还有通过纠正这种身体歪斜来改善身体状况的效果。",
 						en: "Straightening that distortion can also improve how you feel.",
 					},
 					{
 						type: "paragraph",
 						jp: "もちろんシェイプアップ{効果|こうか}も{期待|きたい}できます。",
-						cn: "当然也可以期待塑形效果。",
+						cn: "当然，也可以期待塑形效果。",
 						en: "You can of course also expect a slimming effect.",
 					},
 					{
 						type: "paragraph",
 						jp: "あなたも{楽|たの}しみながらヨガを{始|はじ}めてみませんか？",
-						cn: "您也来一边享受一边开始瑜伽吧？",
+						cn: "你也要不要一边享受一边试着开始瑜伽呢？",
 						en: "Won’t you start yoga too, and enjoy it?",
 					},
 					{
@@ -159,7 +159,7 @@ export const w2d7: ReadingDay = {
 						items: [
 							{
 								jp: "{日時|にちじ}　20XX{年|ねん}5{月|がつ}・6{月|がつ}の{毎週木曜日|まいしゅうもくようび}（{計|けい}8{回|かい}）　PM6:30〜7:30",
-								cn: "日期时间　20XX 年 5 月・6 月每周四（共 8 次）　下午 6:30〜7:30",
+								cn: "日期时间　20XX年5月・6月的每周星期四（共8次）　下午6:30〜7:30",
 								en: "When  every Thursday in May and June 20XX (8 sessions in all)  6:30–7:30 p.m.",
 							},
 							{
@@ -169,27 +169,27 @@ export const w2d7: ReadingDay = {
 							},
 							{
 								jp: "{受講料|じゅこうりょう}　1{人|にん}あたり 3,000{円|えん}（{全|ぜん}8{回分|かいぶん}、{初回全額納入|しょかいぜんがくのうにゅう}）",
-								cn: "听讲费　每人 3,000 日元（8 次全部，第一次全额缴纳）",
+								cn: "听讲费　每人 3,000日元（全部8次的费用，首次全额缴纳）",
 								en: "Fee  ¥3,000 per person (for all 8 sessions; paid in full at the first meeting)",
 							},
 							{
 								jp: "{参加資格|さんかしかく}　みどり{市|し}にお{住|す}まい・またはお{勤|つと}めの18{歳以上|さいいじょう}の{方|かた}",
-								cn: "参加资格　在绿市居住或上班、18 岁以上的人",
+								cn: "参加资格　在绿市居住或在绿市工作的18岁以上人士",
 								en: "Eligibility  residents of, or people who work in, Midori City, aged 18 or over",
 							},
 							{
 								jp: "{募集人数|ぼしゅうにんずう}　20{人|にん}（{応募者多数|おうぼしゃたすう}の{場合|ばあい}、{先着順|せんちゃくじゅん}）",
-								cn: "招募人数　20 人（报名过多时按先到先得）",
+								cn: "招募人数　20人（报名者众多时，按先到先得）",
 								en: "Places  20 (first come, first served if there are many applicants)",
 							},
 							{
 								jp: "{講師|こうし}　ビバシャ・シェラワト{先生|せんせい}",
-								cn: "讲师　比瓦夏・谢拉瓦托老师",
+								cn: "讲师　维瓦莎・谢拉瓦特老师",
 								en: "Instructor  Ms. Vivasha Sherawat",
 							},
 							{
 								jp: "{申込締切|もうしこみしめきり}　4{月|がつ}20{日|にち}（{火|か}）",
-								cn: "报名截止　4 月 20 日（周二）",
+								cn: "报名截止　4月20日（周二）",
 								en: "Application deadline  April 20 (Tue)",
 							},
 						],
@@ -197,7 +197,7 @@ export const w2d7: ReadingDay = {
 					{
 						type: "line",
 						jp: "お{申|もう}し{込|こ}みは{寺下公民館|てらしたこうみんかん}（XX-XXXX）まで。",
-						cn: "请到寺下公民馆（XX-XXXX）报名。",
+						cn: "报名请洽寺下公民馆（XX-XXXX）。",
 						en: "Apply at Terashita Civic Hall (XX-XXXX).",
 					},
 				],
@@ -214,13 +214,13 @@ export const w2d7: ReadingDay = {
 					{
 						label: "1",
 						jp: "{小学生|しょうがくせい}が{週|しゅう}に2{回|かい}ずつ{空手|からて}の{稽古|けいこ}に{通|かよ}う{場合|ばあい}、{毎月|まいつき}{払|はら}うお{金|かね}はいくらになるか。",
-						cn: "小学生每周去练两次空手道时，每月要付多少钱？",
+						cn: "如果小学生每周去参加两次空手道练习，每个月要付的钱是多少？",
 						en: "If an elementary-school child goes to karate practice twice a week, how much is paid each month?",
 						choices: [
-							{ jp: "1,000{円|えん}", cn: "1,000 日元", en: "¥1,000" },
-							{ jp: "2,000{円|えん}", cn: "2,000 日元", en: "¥2,000" },
-							{ jp: "3,000{円|えん}", cn: "3,000 日元", en: "¥3,000" },
-							{ jp: "4,000{円|えん}", cn: "4,000 日元", en: "¥4,000" },
+							{ jp: "1,000{円|えん}", cn: "1,000日元", en: "¥1,000" },
+							{ jp: "2,000{円|えん}", cn: "2,000日元", en: "¥2,000" },
+							{ jp: "3,000{円|えん}", cn: "3,000日元", en: "¥3,000" },
+							{ jp: "4,000{円|えん}", cn: "4,000日元", en: "¥4,000" },
 						],
 						answer: 2,
 						explanation:
@@ -243,13 +243,13 @@ export const w2d7: ReadingDay = {
 					{
 						label: "2",
 						jp: "みどり{市|し}のスーパーで{働|はたら}いている62{歳|さい}の{女性|じょせい}が{習|なら}うことができるのはどれか。",
-						cn: "在绿市超市工作的 62 岁女性能够学的是哪一项？",
+						cn: "在绿市的超市工作的62岁女性能够学的是哪一个？",
 						en: "Which can a 62-year-old woman who works at a supermarket in Midori City take up?",
 						choices: [
 							{ jp: "{空手|からて}だけ", cn: "只有空手道", en: "karate only" },
 							{ jp: "ヨガだけ", cn: "只有瑜伽", en: "yoga only" },
 							{ jp: "{空手|からて}とヨガ", cn: "空手道和瑜伽", en: "karate and yoga" },
-							{ jp: "どちらも{習|なら}えない", cn: "两个都不能学", en: "neither" },
+							{ jp: "どちらも{習|なら}えない", cn: "两者都不能学", en: "neither" },
 						],
 						answer: 3,
 						explanation:
@@ -275,26 +275,26 @@ export const w2d7: ReadingDay = {
 				label: "問題2",
 				instruction:
 					"{次|つぎ}の{文書|ぶんしょ}を{読|よ}んで、{後|あと}の{問|と}いに{対|たい}する{答|こた}えとして{最|もっと}もよいものを1・2・3・4から{一|ひと}つ{選|えら}びなさい。",
-				instructionCn: "阅读下面的文书，从 1・2・3・4 中选出对后面问题最合适的一个答案。",
+				instructionCn: "请阅读下面的文书，并从1・2・3・4中选出一个对后面问题最合适的答案。",
 				instructionEn: "Read the following document and choose the best answer to the questions from 1, 2, 3, or 4.",
 				blocks: [
 					{
 						type: "line",
 						jp: "{平成|へいせい}XX{年|ねん}10{月|がつ}10{日|にち}",
-						cn: "平成 XX 年 10 月 10 日",
+						cn: "平成XX年10月10日",
 						en: "October 10, Heisei XX",
 						align: "right",
 					},
 					{
 						type: "line",
 						jp: "{会員|かいいん} No. 1003412",
-						cn: "会员编号 1003412",
+						cn: "会员 No. 1003412",
 						en: "Member No. 1003412",
 					},
 					{
 						type: "line",
 						jp: "{田中|たなか}まき　{様|さま}",
-						cn: "田中真希 女士",
+						cn: "田中真希　女士",
 						en: "Ms. Tanaka Maki",
 					},
 					{
@@ -321,7 +321,7 @@ export const w2d7: ReadingDay = {
 					{
 						type: "title",
 						jp: "{会費納入|かいひのうにゅう}のお願い",
-						cn: "请缴纳会费",
+						cn: "缴纳会费的请求",
 						en: "Request for payment of membership dues",
 					},
 					{
@@ -333,25 +333,25 @@ export const w2d7: ReadingDay = {
 					{
 						type: "paragraph",
 						jp: "{早速|さっそく}ですが、{以前|いぜん}より{数回|すうかい}にわたりご{通知|つうち}しておりますとおり、{平成|へいせい}2X{年度|ねんど}の{会費|かいひ}が{期限|きげん}の3{月末|がつまつ}から6{ヵ月|かげつ}も{未納|みのう}のままとなっております。",
-						cn: "恕我直入正题：正如此前已多次通知，平成 2X 年度会费自期限 3 月底起已有 6 个月未缴。",
+						cn: "恕我直入正题，正如我们此前已多次通知您的那样，平成2X年度的会费自期限3月底起，已长达6个月仍未缴纳。",
 						en: "To come straight to the point: as we have notified you several times already, the Heisei 2X membership dues have now been unpaid for six months since the deadline at the end of March.",
 					},
 					{
 						type: "paragraph",
 						jp: "つきましては、{今月|こんげつ}{末日|まつじつ}までにお{振|ふ}り{込|こ}みいただきますようお{願|ねが}いいたします。",
-						cn: "因此，请于本月月底之前汇入。",
+						cn: "为此，恳请您于本月最后一天之前汇款。",
 						en: "We therefore ask that you transfer the payment by the last day of this month.",
 					},
 					{
 						type: "paragraph",
 						jp: "{期限|きげん}までにお{支払|しはら}いがない{場合|ばあい}、{会員規約|かいいんきやく}（{注|ちゅう}1）9{条|じょう}に{基|もと}づき、{除名|じょめい}の{措置|そち}を{取|と}らせていただきます（{注|ちゅう}2）ので、ご{了承|りょうしょう}ください。",
-						cn: "若期限前仍未支付，将根据会员章程（注1）第 9 条采取除名措施（注2），敬请谅解。",
+						cn: "若至期限仍未付款，将根据会员规约（注1）第9条采取除名措施（注2），敬请谅解。",
 						en: "If payment is not made by the deadline, we will take steps to remove you from membership (note 2) in accordance with Article 9 of the membership regulations (note 1). Please understand.",
 					},
 					{
 						type: "paragraph",
 						jp: "{万一|まんいち}{本状|ほんじょう}と{行|い}き{違|ちが}いでお{支払|しはら}いの{場合|ばあい}、{失礼|しつれい}をお{詫|わ}び{申|もう}し{上|あ}げます。",
-						cn: "万一此信与您的付款交错，失礼之处敬请见谅。",
+						cn: "万一此信与您的付款发生交错，谨为失礼之处致歉。",
 						en: "If this letter has crossed with a payment, we apologize for the discourtesy.",
 					},
 				],
@@ -363,13 +363,13 @@ export const w2d7: ReadingDay = {
 					{
 						label: "3",
 						jp: "この{文書|ぶんしょ}について{正|ただ}しいものはどれか。",
-						cn: "关于这份文书，正确的是哪一项？",
+						cn: "关于这份文书，正确的是哪一个？",
 						en: "Which of the following is true of this document?",
 						choices: [
-							{ jp: "{会費納入|かいひのうにゅう}のお願いという{通知|つうち}は{初|はじ}めて{来|き}た。", cn: "「请缴纳会费」这种通知是第一次寄来。", en: "This is the first time a request to pay dues has been sent." },
-							{ jp: "この{人|ひと}は3{ヵ月分|かげつぶん}の{会費|かいひ}が{未納|みのう}になっている。", cn: "这个人有 3 个月的会费未缴。", en: "This person is three months behind on dues." },
-							{ jp: "このまま{会費|かいひ}を{払|はら}わなければ{会員|かいいん}ではなくなる。", cn: "如果继续不缴会费，就会失去会员资格。", en: "If the dues are not paid, this person will cease to be a member." },
-							{ jp: "{会員|かいいん}は{会費|かいひ}を{毎月|まいつき}{払|はら}わなければならない。", cn: "会员必须每月缴会费。", en: "Members must pay dues every month." },
+							{ jp: "{会費納入|かいひのうにゅう}のお願いという{通知|つうち}は{初|はじ}めて{来|き}た。", cn: "名为「缴纳会费的请求」的通知是第一次来的。", en: "This is the first time a request to pay dues has been sent." },
+							{ jp: "この{人|ひと}は3{ヵ月分|かげつぶん}の{会費|かいひ}が{未納|みのう}になっている。", cn: "这个人有3个月的会费尚未缴纳。", en: "This person is three months behind on dues." },
+							{ jp: "このまま{会費|かいひ}を{払|はら}わなければ{会員|かいいん}ではなくなる。", cn: "如果照这样不缴会费，就不再是会员了。", en: "If the dues are not paid, this person will cease to be a member." },
+							{ jp: "{会員|かいいん}は{会費|かいひ}を{毎月|まいつき}{払|はら}わなければならない。", cn: "会员必须每月缴纳会费。", en: "Members must pay dues every month." },
 						],
 						answer: 3,
 						explanation:
@@ -392,13 +392,13 @@ export const w2d7: ReadingDay = {
 					{
 						label: "4",
 						jp: "この{文書|ぶんしょ}を{受|う}け{取|と}った{後|あと}、{会費|かいひ}はいつまでに{払|はら}わなければならないか。",
-						cn: "收到这份文书之后，会费必须在什么时候以前付清？",
+						cn: "收到这份文书之后，会费必须在什么时候之前支付？",
 						en: "After receiving this document, by when must the dues be paid?",
 						choices: [
-							{ jp: "10{月|がつ}10{日|にち}", cn: "10 月 10 日", en: "October 10" },
-							{ jp: "10{月|がつ}31{日|にち}", cn: "10 月 31 日", en: "October 31" },
-							{ jp: "11{月|がつ}10{日|にち}", cn: "11 月 10 日", en: "November 10" },
-							{ jp: "11{月|がつ}30{日|にち}", cn: "11 月 30 日", en: "November 30" },
+							{ jp: "10{月|がつ}10{日|にち}", cn: "10月10日", en: "October 10" },
+							{ jp: "10{月|がつ}31{日|にち}", cn: "10月31日", en: "October 31" },
+							{ jp: "11{月|がつ}10{日|にち}", cn: "11月10日", en: "November 10" },
+							{ jp: "11{月|がつ}30{日|にち}", cn: "11月30日", en: "November 30" },
 						],
 						answer: 2,
 						explanation:
@@ -464,7 +464,7 @@ export const w2d7: ReadingDay = {
 			meaningEn: "on the basis of… / in accordance with…. Written style; common when citing a rule.",
 			example: {
 				jp: "{会員規約|かいいんきやく}9{条|じょう}に{基|もと}づき、{除名|じょめい}の{措置|そち}を{取|と}らせていただきます。",
-				cn: "根据会员章程第 9 条，将采取除名措施。",
+				cn: "将根据会员规约第9条采取除名措施。",
 				en: "We will take steps to remove you from membership in accordance with Article 9 of the membership regulations.",
 			},
 		},
@@ -474,7 +474,7 @@ export const w2d7: ReadingDay = {
 			meaningEn: "To come straight to the point. After zenryaku, the letter goes straight to business.",
 			example: {
 				jp: "{早速|さっそく}ですが、{以前|いぜん}より{数回|すうかい}にわたりご{通知|つうち}しておりますとおり……",
-				cn: "恕我直入正题：正如此前已多次通知……",
+				cn: "恕我直入正题，正如我们此前已多次通知您的那样……",
 				en: "To come straight to the point: as we have notified you several times already…",
 			},
 		},
@@ -485,7 +485,7 @@ export const w2d7: ReadingDay = {
 			meaningEn: "if by any chance…. Common at the end of a reminder in case payment has already been made.",
 			example: {
 				jp: "{万一|まんいち}{本状|ほんじょう}と{行|い}き{違|ちが}いでお{支払|しはら}いの{場合|ばあい}、{失礼|しつれい}をお{詫|わ}び{申|もう}し{上|あ}げます。",
-				cn: "万一此信与您的付款交错，失礼之处敬请见谅。",
+				cn: "万一此信与您的付款发生交错，谨为失礼之处致歉。",
 				en: "If this letter has crossed with a payment, we apologize for the discourtesy.",
 			},
 		},

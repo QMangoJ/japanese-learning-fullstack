@@ -12,27 +12,27 @@ export const w5d4: ReadingDay = {
 
 	point: {
 		title: "グラフの{違|ちが}いを{見|み}つけよう！",
-		titleCn: "找出图表的不同之处！",
+		titleCn: "找出图表的不同之处吧！",
 		titleEn: "Let’s compare and analyse the graphs!",
 		figure: {
 			alt: "左：棒グラフ2つ（左はBが最も高くAが最も低い／右はAが最も高くBが最も低い）。右：帯グラフ2つ（上はA70%・B20%・C10%、下はA20%・B70%・C10%）。",
-			cn: "左：两幅柱状图（左图 B 最高、A 最低；右图 A 最高、B 最低）。右：两幅带状图（上图 A 七成、B 两成；下图 A 两成、B 七成）。",
+			cn: "左：两幅柱状图（左图B最高、A最低／右图A最高、B最低）。右：两幅带状图（上图A70%・B20%・C10%，下图A20%・B70%・C10%）。",
 			en: "Left: two bar charts (left: B highest, A lowest; right: A highest, B lowest). Right: two stacked bars (top: A 70%, B 20%, C 10%; bottom: A 20%, B 70%, C 10%).",
 		},
 		tips: [
 			{
 				jp: "{比|くら}べてどこが{違|ちが}うか{考|かんが}えましょう。",
-				cn: "比较一下，想想哪里不一样。",
+				cn: "比较一下，想想哪里不同吧。",
 				en: "Compare them and think about what is different.",
 			},
 			{
 				jp: "グラフが2つ{以上|いじょう}あるときはどこが{違|ちが}うかよく{見比|みくら}べてみましょう。",
-				cn: "出现 2 个以上图表时，请注意比较有哪些不同。",
+				cn: "当图表有2个以上时，请仔细对照看看哪里不同。",
 				en: "When there are multiple graphs, have a close look at what the differences are.",
 			},
 			{
 				jp: "Aが7{割|わり}、Bが2{割|わり}　／　Aが2{割|わり}、Bが7{割|わり}。{一番高|いちばんたか}い・{一番低|いちばんひく}い項目がどれかをまず{確認|かくにん}する。",
-				cn: "A 占七成、B 占两成　／　A 占两成、B 占七成。先确认哪一项最高、哪一项最低。",
+				cn: "A占七成、B占两成　／　A占两成、B占七成。先确认最高・最低的项目是哪一项。",
 				en: "A is 70%, B 20% / A is 20%, B 70%. First check which item is highest and which is lowest.",
 			},
 		],
@@ -46,7 +46,7 @@ export const w5d4: ReadingDay = {
 
 	renshu: {
 		instruction: "{次|つぎ}の{会話文|かいわぶん}を{読|よ}んで、{後|あと}の{文|ぶん}から{正|ただ}しいものを{選|えら}ぼう。",
-		instructionCn: "阅读下面的对话，从后面的句子中选出正确的。（答案在下一页）",
+		instructionCn: "阅读下面的对话，从后面的句子中选出正确的吧。",
 		instructionEn: "Read the conversation below and choose the correct statements from the sentences that follow. (Answers are on the next page.)",
 		blocks: [
 			{
@@ -55,7 +55,7 @@ export const w5d4: ReadingDay = {
 				speakerCn: "母亲",
 				speakerEn: "Mother",
 				jp: "また、{違|ちが}う{時計|とけい}しているのね。{一体|いったい}いくつもってるの？",
-				cn: "又换了一块不同的手表啊。你到底有几块？",
+				cn: "又戴着不一样的手表呢。你到底有几块啊？",
 				en: "You’re wearing a different watch again. How many do you actually have?",
 			},
 			{
@@ -64,7 +64,7 @@ export const w5d4: ReadingDay = {
 				speakerCn: "儿子",
 				speakerEn: "Son",
 				jp: "5つくらいあるけど、お{気|き}に{入|い}りは3つくらいかな。{仕事用|しごとよう}、おしゃれ{用|よう}、{遊|あそ}び{用|よう}……。あれ、そういえば、{母|はは}さんは{時計|とけい}していないの？",
-				cn: "大概有 5 块，喜欢的大概 3 块吧。工作用、打扮用、玩的时候用……咦，说起来，妈妈你不戴表吗？",
+				cn: "大概有5块，不过最喜欢的大概3块吧。工作用、打扮用、游玩用……。咦，说起来，妈妈不戴手表吗？",
 				en: "About five, but I really like maybe three. One for work, one for dressing up, one for going out… Wait, come to think of it, you don’t wear a watch?",
 			},
 			{
@@ -73,7 +73,7 @@ export const w5d4: ReadingDay = {
 				speakerCn: "母亲",
 				speakerEn: "Mother",
 				jp: "{最近|さいきん}、{携帯電話|けいたいでんわ}で{見|み}るから。{要|い}らないの。",
-				cn: "最近都看手机。不需要了。",
+				cn: "最近都用手机看时间，所以不需要了。",
 				en: "Lately I check the time on my cellphone. I don’t need one.",
 			},
 			{
@@ -82,7 +82,7 @@ export const w5d4: ReadingDay = {
 				speakerCn: "儿子",
 				speakerEn: "Son",
 				jp: "へえ、{若|わか}い{子|こ}みたいだね。",
-				cn: "嘿，跟年轻人似的。",
+				cn: "诶，跟年轻人似的呢。",
 				en: "Huh, like a young person.",
 			},
 			{
@@ -91,7 +91,7 @@ export const w5d4: ReadingDay = {
 				speakerCn: "母亲",
 				speakerEn: "Mother",
 				jp: "でも、{携帯|けいたい}って{面倒|めんどう}なのよね、{意外|いがい}と。{落|お}としたり、{忘|わす}れたり。だから、{携帯電話|けいたいでんわ}が{時計|とけい}みたいに{腕|うで}につけられるといいんだけど。",
-				cn: "不过手机意外地麻烦呢。又会掉、又会忘。所以要是手机能像手表一样戴在手腕上就好了。",
+				cn: "不过，手机这东西意外地挺麻烦的呢。会掉、会忘。所以，要是手机能像手表一样戴在手腕上就好了。",
 				en: "But cellphones are more of a hassle than you’d think. You drop them, you forget them. So it’d be nice if a cellphone could be worn on the wrist like a watch.",
 			},
 			{
@@ -100,7 +100,7 @@ export const w5d4: ReadingDay = {
 				speakerCn: "儿子",
 				speakerEn: "Son",
 				jp: "それなら、{時計|とけい}に{通信機能|つうしんきのう}がつけばいいわけだよね。そういうのあるらしいよ。",
-				cn: "那就是给手表加上通信功能就行了呗。好像已经有那种东西了。",
+				cn: "那样的话，手表加上通信功能就行了吧。好像有那种东西哦。",
 				en: "Then you just need a watch with a communications function. Apparently those exist.",
 			},
 			{
@@ -109,14 +109,14 @@ export const w5d4: ReadingDay = {
 				speakerCn: "母亲",
 				speakerEn: "Mother",
 				jp: "まあ、{便利|べんり}ね。だったら、ついでに{万歩計|まんぽけい}（{注|ちゅう}）とか{健康診断|けんこうしんだん}の{機能|きのう}もつけてほしいわ。",
-				cn: "哟，真方便。那样的话，顺便把计步器、体检功能也加上就更好了。",
+				cn: "哎呀，真方便呢。那样的话，希望顺便也加上计步器（注）和体检功能。",
 				en: "My, how handy. In that case I’d want a pedometer and a health-check function on it too.",
 			},
 		],
 		footnotes: [{ marker: "（注）", term: "万歩計", jp: "a pedometer", cn: "计步器", en: "a pedometer" }],
 		choices: [
 			{ jp: "{息子|むすこ}は{腕時計|うでどけい}が{好|す}きだ。", cn: "儿子喜欢手表。", en: "The son likes wristwatches." },
-			{ jp: "{母親|ははおや}は{腕時計|うでどけい}が{面倒|めんどう}だから{使|つか}わない。", cn: "母亲觉得手表麻烦所以不戴。", en: "The mother does not use a wristwatch because it is a hassle." },
+			{ jp: "{母親|ははおや}は{腕時計|うでどけい}が{面倒|めんどう}だから{使|つか}わない。", cn: "母亲因为手表麻烦，所以不用。", en: "The mother does not use a wristwatch because it is a hassle." },
 			{ jp: "{息子|むすこ}の{時計|とけい}には{通信機能|つうしんきのう}がついている。", cn: "儿子的手表带有通信功能。", en: "The son’s watch has a communications function." },
 			{ jp: "{母親|ははおや}は{携帯電話|けいたいでんわ}を{時計|とけい}がわりにしている。", cn: "母亲把手机当手表用。", en: "The mother uses her cellphone in place of a watch." },
 			{ jp: "{現在|げんざい}、{時計|とけい}に{通信機能|つうしんきのう}がついているものはない。", cn: "目前没有带通信功能的手表。", en: "At present there are no watches with a communications function." },
@@ -126,56 +126,56 @@ export const w5d4: ReadingDay = {
 
 	mondai: {
 		instruction: "{次|つぎ}の{記事|きじ}を{読|よ}んで、{後|あと}の{問|と}いに{答|こた}えなさい。",
-		instructionCn: "阅读下面的报道，回答后面的问题。（答案在别册 p.6）",
+		instructionCn: "阅读下面的报道，回答后面的问题。",
 		instructionEn: "Read the article below and answer the questions that follow. (Answers are in the separate booklet, p. 6.)",
 		blocks: [
 			{
 				type: "title",
 				jp: "{腕時計|うでどけい}に{付加機能|ふかきのう}（{注|ちゅう}1）　7{割|わり}が「{不要|ふよう}」",
-				cn: "手表附加功能　七成认为「不需要」",
+				cn: "手表附加功能（注1）　七成「不需要」",
 				en: "Extra features on wristwatches: 70% say “unnecessary”",
 			},
 			{
 				type: "paragraph",
 				jp: "{時計|とけい}メーカーが{実施|じっし}した{調査|ちょうさ}で、{腕時計|うでどけい}に{付加機能|ふかきのう}はいらないと{答|こた}えた{人|ひと}が7{割|わり}もいたことがわかった。「{機能|きのう}が{増|ふ}えると{操作|そうさ}が{複雑|ふくざつ}になる」「デザイン{性|せい}が{損|そこ}なわれる（{注|ちゅう}2）」という{理由|りゆう}からのようだ。IT{分野|ぶんや}から{次世代型機器|じせだいがたきき}として{腕時計型|うでどけいがた}のパソコンなどさまざまな{製品|せいひん}の{提案|ていあん}がされており、{今後|こんご}{腕時計|うでどけい}のIT{化|か}、{多機能化|たきのうか}が{進|すす}むと{思|おも}われている{中|なか}での{意外|いがい}な{調査結果|ちょうさけっか}だったが、50{代|だい}からは{通信機能|つうしんきのう}や{健康診断機能|けんこうしんだんきのう}、20{代|だい}からはデジカメ{機能|きのう}が{少数|しょうすう}ながら{支持|しじ}されている（{注|ちゅう}3）。{金額|きんがく}やサイズの{面|めん}で{手軽|てがる}な（{注|ちゅう}4）{機器|きき}が{出|で}てくれば、{支持|しじ}はさらに{広|ひろ}がるかもしれない。",
-				cn: "钟表厂家实施的调查发现，有七成的人回答手表不需要附加功能。理由似乎是「功能一多操作就变复杂」「设计感会被破坏」。IT 领域正把手表型电脑等作为下一代设备提出种种方案，一般认为今后手表会走向 IT 化、多功能化——在这种背景下，这个调查结果出人意料。不过，50 多岁的人当中有少数人支持通信功能和体检功能，20 多岁的人当中有少数人支持数码相机功能。如果在价格和尺寸上出现更简便的设备，支持或许还会扩大。",
+				cn: "钟表厂商实施的调查发现，回答说手表不需要附加功能的人竟多达七成。理由似乎是「功能一增加，操作就会变复杂」「设计性会受损（注2）」。IT领域正在提出将手表型电脑等作为下一代设备的各种产品方案，在人们认为今后手表的IT化、多功能化将会推进的情况下，这是一个出人意料的调查结果，不过，50多岁的人对通信功能和体检功能、20多岁的人对数码相机功能，虽属少数但仍有支持（注3）。如果在金额和尺寸方面出现简便（注4）的设备，支持也许还会进一步扩大。",
 				en: "A survey by a watch maker found that as many as 70% of people said they do not want extra features on a wristwatch. The reasons appear to be “more functions make operation complicated” and “the design is spoiled.” The IT world has been proposing all sorts of next-generation devices such as wristwatch PCs, and watches have been expected to become more IT-based and multi-function—so the result was a surprise. Still, communications and health-check functions have some support, if only from a minority, among people in their 50s, and a digital-camera function among people in their 20s. If cheaper, more compact devices appear, support may spread further.",
 				indent: true,
 			},
 			{
 				type: "figure",
 				alt: "凡例：黒＝通信（携帯電話）機能、濃灰＝パソコン機能、白＝ゲーム機能、中灰＝デジカメ機能、薄＝健康診断機能、斜線＝付加機能はいらない。横軸0〜100。縦軸は全体・20代・30代・40代・50代〜の積み上げ横棒。",
-				cn: "图例：黑＝通信（手机）功能，深灰＝电脑功能，白＝游戏功能，中灰＝数码相机功能，浅＝体检功能，斜线＝不需要附加功能。横轴 0〜100。纵轴为全体、20 多岁、30 多岁、40 多岁、50 岁以上的堆积条形图。",
+				cn: "图例：黑＝通信（手机）功能，浓灰＝电脑功能，白＝游戏功能，中灰＝数码相机功能，浅＝体检功能，斜线＝不需要附加功能。横轴0〜100。纵轴为全体・20多岁・30多岁・40多岁・50多岁〜的堆积横条。",
 				en: "Legend: black = communications (cellphone) function; dark grey = PC function; white = game function; mid grey = digital-camera function; light = health-check function; hatching = do not want extra features. Horizontal axis 0–100. Rows: overall, 20s, 30s, 40s, 50s and over. Stacked bars.",
 			},
 			{
 				type: "figure",
 				alt: "グラフ1：全体で通信機能が約4〜5割と最大。付加機能不要は右端で約1割と少ない。各年代とも通信が最大で、50代では通信が半分近く。記事の「7割が不要」と合わない。",
-				cn: "图1：全体中通信功能约占四到五成、最大。不需要附加功能只在右端约一成。各年龄段都以通信最大，50 多岁通信近一半。与报道「七成不需要」不符。",
+				cn: "图1：全体中通信功能约占4〜5成，为最大。不需要附加功能在右端约占1成，较少。各年龄段都是通信最大，50多岁中通信接近一半。与报道的「七成不需要」不符。",
 				en: "Chart 1: communications is largest overall (~40–50%). “Do not want extras” is only ~10% at the right. Communications leads every age group and is nearly half among the 50s. Does not match “70% say unnecessary.”",
 			},
 			{
 				type: "figure",
 				alt: "グラフ2：全体で斜線（付加機能はいらない）が約7割。20代はデジカメが他年代よりやや多い。50代は通信と健康診断が他年代より多いが、不要はなお約半分。記事と一致。",
-				cn: "图2：全体斜线（不需要附加功能）约占七成。20 多岁的数码相机比其他年龄段略多。50 多岁的通信和体检比其他年龄段多，但「不需要」仍约占一半。与报道一致。",
+				cn: "图2：全体中斜线（不需要附加功能）约占七成。20多岁的数码相机比其他年龄段略多。50多岁的通信和体检比其他年龄段多，但不需要仍约占一半。与报道一致。",
 				en: "Chart 2: hatching (“do not want extras”) is about 70% overall. The 20s have a bit more digital-camera than other ages. The 50s have more communications and health-check than other ages, but “unnecessary” is still about half. Matches the article.",
 			},
 			{
 				type: "figure",
 				alt: "グラフ3：白いゲーム機能の帯が目立ち、全体で約3〜4割。付加機能不要は右端で約3割。20代でゲームが特に大きい。記事の「7割不要」と合わない。",
-				cn: "图3：白色游戏功能带很显眼，全体约占三到四成。不需要附加功能在右端约三成。20 多岁游戏特别多。与「七成不需要」不符。",
+				cn: "图3：白色的游戏功能条带很显眼，全体约占3〜4成。不需要附加功能在右端约占3成。20多岁中游戏特别大。与报道的「七成不需要」不符。",
 				en: "Chart 3: the white game-function band stands out (~30–40% overall). “Do not want extras” is only ~30% at the right. Games are especially large in the 20s. Does not match “70% unnecessary.”",
 			},
 			{
 				type: "figure",
 				alt: "グラフ4：全体で通信機能が約4割と最大。付加機能不要は右端で約2割。50代で通信が約半分。記事の「7割不要」と合わない。",
-				cn: "图4：全体中通信功能约占四成、最大。不需要附加功能在右端约两成。50 多岁通信约一半。与「七成不需要」不符。",
+				cn: "图4：全体中通信功能约占4成，为最大。不需要附加功能在右端约占2成。50多岁中通信约占一半。与报道的「七成不需要」不符。",
 				en: "Chart 4: communications is largest overall (~40%). “Do not want extras” is ~20% at the right. Communications is about half among the 50s. Does not match “70% unnecessary.”",
 			},
 			{
 				type: "source",
 				jp: "（{資料|しりょう}：シチズン{意識調査|いしきちょうさ} http://www.citizen.co.jp/research/watch/20020813/09.html）",
-				cn: "（资料：西铁城意识调查）",
+				cn: "（资料：西铁城意识调查 http://www.citizen.co.jp/research/watch/20020813/09.html）",
 				en: "(Source: Citizen attitude survey http://www.citizen.co.jp/research/watch/20020813/09.html)",
 			},
 		],
@@ -189,13 +189,13 @@ export const w5d4: ReadingDay = {
 			{
 				label: "問い",
 				jp: "この{記事|きじ}の{内容|ないよう}と{合|あ}うグラフはどれか。",
-				cn: "与这篇报道内容相符的图表是哪一个？",
+				cn: "与这篇报道的内容相符的图表是哪一个？",
 				en: "Which graph matches the content of this article?",
 				choices: [
-					{ jp: "1", cn: "图1（全体通信功能最大，「不需要」很少）", en: "Chart 1 (communications largest overall; few say they do not want extras)" },
-					{ jp: "2", cn: "图2（全体约七成「不需要」；50 多岁偏通信和体检、20 多岁偏数码相机）", en: "Chart 2 (about 70% overall do not want extras; 50s lean to comms/health, 20s to digital camera)" },
-					{ jp: "3", cn: "图3（游戏功能突出，「不需要」约三成）", en: "Chart 3 (games stand out; “unnecessary” about 30%)" },
-					{ jp: "4", cn: "图4（全体通信功能最大，「不需要」约两成）", en: "Chart 4 (communications largest overall; “unnecessary” about 20%)" },
+					{ jp: "1", cn: "1", en: "Chart 1 (communications largest overall; few say they do not want extras)" },
+					{ jp: "2", cn: "2", en: "Chart 2 (about 70% overall do not want extras; 50s lean to comms/health, 20s to digital camera)" },
+					{ jp: "3", cn: "3", en: "Chart 3 (games stand out; “unnecessary” about 30%)" },
+					{ jp: "4", cn: "4", en: "Chart 4 (communications largest overall; “unnecessary” about 20%)" },
 				],
 				answer: 2,
 				explanation:
@@ -244,7 +244,7 @@ export const w5d4: ReadingDay = {
 			meaningEn: "although… / even if…. The answer key notes 少数ながら = 少数だが. A concession: there is still some support.",
 			example: {
 				jp: "{少数|しょうすう}ながら{支持|しじ}されている。",
-				cn: "虽然是少数，但仍有人支持。",
+				cn: "虽属少数，但仍受到支持。",
 				en: "They are supported, even if only by a few.",
 			},
 			note: "別冊：本文6行目「少数ながら」（＝少数だが）",
@@ -257,7 +257,7 @@ export const w5d4: ReadingDay = {
 			meaningEn: "in the midst of… / against a background of…. Here, a contrary result amid the expectation of more features.",
 			example: {
 				jp: "{多機能化|たきのうか}が{進|すす}むと{思|おも}われている{中|なか}での{意外|いがい}な{調査結果|ちょうさけっか}。",
-				cn: "在人们以为会走向多功能化的背景下，出现了出人意料的调查结果。",
+				cn: "在人们认为多功能化将会推进的背景下的出人意料的调查结果。",
 				en: "A surprising survey result amid the expectation that multi-function watches would spread.",
 			},
 		},

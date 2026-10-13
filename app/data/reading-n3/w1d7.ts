@@ -19,7 +19,7 @@ export const w1d7: ReadingDay = {
 				instruction:
 					"{右|みぎ}のページはビジネスホテルの{案内|あんない}である。これを{読|よ}んで、{下|した}の{質問|しつもん}に{答|こた}えなさい。{答|こた}えは、1・2・3・4から{最|もっと}もよいものを{一|ひと}つえらびなさい。",
 				instructionCn:
-					"右页是一家商务酒店的介绍。阅读后回答下面的问题。答案从 1・2・3・4 中选出最合适的一个。",
+					"右页是商务酒店的介绍。请阅读此内容，并回答下面的问题。答案请从1・2・3・4中选出最好的一个。",
 				instructionEn:
 					"The right-hand page is information about a business hotel. Read it and answer the questions below. Choose the best answer from 1, 2, 3, or 4.",
 				blocks: [
@@ -27,13 +27,13 @@ export const w1d7: ReadingDay = {
 					{
 						type: "heading",
 						jp: "◎チェックイン18:00からのお{得|とく}なプラン",
-						cn: "◎ 18:00 之后办理入住的超值方案",
+						cn: "◎自18:00起办理入住的划算方案",
 						en: "◎ Bargain plan for check-in from 18:00",
 					},
 					{
 						type: "line",
 						jp: "【{期間|きかん}】201X{年|ねん}01{月|がつ}10{日|にち}〜201X{年|ねん}03{月|がつ}31{日|にち}",
-						cn: "【期间】201X 年 01 月 10 日〜201X 年 03 月 31 日",
+						cn: "【期间】201X年01月10日〜201X年03月31日",
 						en: "[Period] January 10, 201X – March 31, 201X",
 					},
 					{
@@ -42,36 +42,36 @@ export const w1d7: ReadingDay = {
 						items: [
 							{
 								jp: "チェックインタイムが18:00からだから{安|やす}いお{得|とく}なプラン！",
-								cn: "因为入住时间从 18:00 开始，所以价格便宜、非常划算！",
+								cn: "因为入住时间从18:00开始，所以是便宜又划算的方案！",
 								en: "Because check-in starts at 18:00, this plan is cheap and a great deal!",
 							},
 							{
 								jp: "お{荷物|にもつ}をフロントに{預|あず}け、ご{飯|はん}を{食|た}べたり、お{酒|さけ}を{飲|の}んでからのチェックインにも{最適|さいてき}！！",
-								cn: "把行李寄存在前台，先去吃饭喝酒之后再来办理入住也非常合适！！",
+								cn: "把行李寄存在前台，吃过饭、喝过酒之后再办理入住也最合适！！",
 								en: "Perfect if you leave your bags at the front desk, eat or have a drink, and then check in!!",
 							},
-							{ jp: "チェックアウトタイムは12:00なので、のんびりできます！", cn: "退房时间是 12:00，可以悠闲地休息！", en: "Check-out is at 12:00, so you can take it easy!" },
-							{ jp: "{週末|しゅうまつ}も{同料金|どうりょうきん}！", cn: "周末也是同样的价格！", en: "The same rate on weekends too!" },
+							{ jp: "チェックアウトタイムは12:00なので、のんびりできます！", cn: "退房时间是12:00，所以可以悠闲放松！", en: "Check-out is at 12:00, so you can take it easy!" },
+							{ jp: "{週末|しゅうまつ}も{同料金|どうりょうきん}！", cn: "周末也是同样的费用！", en: "The same rate on weekends too!" },
 						],
 					},
 					{
 						type: "paragraph",
 						jp: "{部屋|へや}のタイプ：140センチのセミダブルベッド、バス・トイレ{付|つき}、{禁煙|きんえん}ルーム",
-						cn: "房型：140 厘米的小双人床、带浴室卫生间、无烟房",
+						cn: "房间类型：140厘米的半双人床、附浴室・卫生间、禁烟房",
 						en: "Room type: 140 cm semi-double bed, bath and toilet included, non-smoking",
 					},
 					{
 						type: "paragraph",
 						jp: "{料金|りょうきん}：1{名|めい}4000{円|えん}（2{名|めい}1{室利用|しつりよう}）　{食事|しょくじ}なし、インターネット{接続無料|せつぞくむりょう}（※2）",
-						cn: "价格：每人 4000 日元（2 人 1 间）　不含餐，免费上网（※2）",
+						cn: "费用：1名4000日元（2名1间使用）　不含餐，网络连接免费（※2）",
 						en: "Rate: 4,000 yen per person (two people, one room). No meals. Free internet (※2)",
 					},
 					{
 						type: "list",
 						marker: "＊",
 						items: [
-							{ jp: "1{名|めい}で1{室利用|しつりよう}の{場合|ばあい}…7000{円|えん}", cn: "1 人使用 1 间的情况…7000 日元", en: "One person using one room… 7,000 yen" },
-							{ jp: "{子|こ}ども{料金|りょうきん}…6{歳以下|さいいか}のみ10%{割引|わりびき}", cn: "儿童价…仅限 6 岁以下打 9 折", en: "Child rate… 10% off for ages 6 and under only" },
+							{ jp: "1{名|めい}で1{室利用|しつりよう}の{場合|ばあい}…7000{円|えん}", cn: "1名使用1间的情况下…7000日元", en: "One person using one room… 7,000 yen" },
+							{ jp: "{子|こ}ども{料金|りょうきん}…6{歳以下|さいいか}のみ10%{割引|わりびき}", cn: "儿童费用…仅限6岁以下优惠10%", en: "Child rate… 10% off for ages 6 and under only" },
 						],
 					},
 					{
@@ -80,21 +80,21 @@ export const w1d7: ReadingDay = {
 						items: [
 							{
 								jp: "18{時以前|じいぜん}のチェックインはできませんので、お{早|はや}めにご{到着|とうちゃく}のお{客様|きゃくさま}は{手荷物|てにもつ}をフロントにてお{預|あず}かりいたします。",
-								cn: "18 点之前无法办理入住，提前抵达的客人可将随身行李寄存在前台。",
+								cn: "18点以前无法办理入住，因此提早抵达的客人，我们将在前台代为保管其随身行李。",
 								en: "Check-in before 18:00 is not possible. Guests who arrive early may leave their hand luggage at the front desk.",
 							},
 							{
 								jp: "チェックイン{予定時間|よていじかん}を{過|す}ぎるとキャンセルとして{取|と}り{扱|あつか}われることがございますので、{遅|おく}れる{場合|ばあい}は{必|かなら}ず{連絡|れんらく}してください。",
-								cn: "超过预定入住时间有可能被视为取消预订，如会迟到请务必联系我们。",
+								cn: "如果超过预定入住时间，有可能被当作取消处理，因此若会迟到，请务必联系。",
 								en: "If you miss your scheduled check-in time, the booking may be treated as cancelled, so please contact us if you will be late.",
 							},
 						],
 					},
-					{ type: "title", jp: "ビジネスホテル・ニュー{東京|とうきょう}イン", cn: "商务酒店・新东京 INN", en: "Business Hotel New Tokyo Inn" },
+					{ type: "title", jp: "ビジネスホテル・ニュー{東京|とうきょう}イン", cn: "商务酒店・新东京旅馆", en: "Business Hotel New Tokyo Inn" },
 					{
 						type: "line",
 						jp: "{東京都中央区|とうきょうとちゅうおうく}○○2−1　＜{東京駅|とうきょうえき}より{徒歩|とほ}7{分|ふん}＞",
-						cn: "东京都中央区○○ 2−1　＜从东京站步行 7 分钟＞",
+						cn: "东京都中央区○○2−1　＜从东京站步行7分钟＞",
 						en: "2-1 ○○, Chuo-ku, Tokyo  <7 minutes on foot from Tokyo Station>",
 					},
 					{ type: "line", jp: "TEL　03−○○○○−○○○○", cn: "电话　03−○○○○−○○○○", en: "Tel. 03-○○○○-○○○○" },
@@ -108,13 +108,13 @@ export const w1d7: ReadingDay = {
 					{
 						label: "1",
 						jp: "この{案内|あんない}の{内容|ないよう}と{合|あ}っているものはどれか。",
-						cn: "下列哪一项与这份介绍的内容相符？",
+						cn: "与这份介绍的内容相符的是哪一个？",
 						en: "Which of the following matches the content of this information?",
 						choices: [
-							{ jp: "この{料金|りょうきん}で{泊|と}まることができるのは、{期間中|きかんちゅう}の{平日|へいじつ}である。", cn: "能以这个价格入住的只有活动期间的平日。", en: "You can stay at this rate only on weekdays during the period." },
-							{ jp: "{大人|おとな}1{名|めい}と8{歳|さい}の{子|こ}どもと{二人|ふたり}で{泊|と}まる{場合|ばあい}は、8000{円|えん}である。", cn: "1 名大人和 1 名 8 岁儿童两人入住时，共 8000 日元。", en: "One adult and one 8-year-old child staying together pay 8,000 yen." },
-							{ jp: "{前|まえ}もって{連絡|れんらく}を{入|い}れていれば、17:00にチェックインすることができる。", cn: "只要事先联系，就可以在 17:00 办理入住。", en: "If you contact them in advance, you can check in at 17:00." },
-							{ jp: "{一人|ひとり}でこの{部屋|へや}に{泊|と}まる{場合|ばあい}は、{二人|ふたり}で{泊|と}まる{場合|ばあい}の10%{割引|わりびき}になる。", cn: "1 人入住此房间时，可享受 2 人入住价格的 9 折。", en: "One person staying in this room gets 10% off the two-person rate." },
+							{ jp: "この{料金|りょうきん}で{泊|と}まることができるのは、{期間中|きかんちゅう}の{平日|へいじつ}である。", cn: "能以这个费用入住的，是期间中的平日。", en: "You can stay at this rate only on weekdays during the period." },
+							{ jp: "{大人|おとな}1{名|めい}と8{歳|さい}の{子|こ}どもと{二人|ふたり}で{泊|と}まる{場合|ばあい}は、8000{円|えん}である。", cn: "大人1名与8岁的孩子两人入住的情况下，是8000日元。", en: "One adult and one 8-year-old child staying together pay 8,000 yen." },
+							{ jp: "{前|まえ}もって{連絡|れんらく}を{入|い}れていれば、17:00にチェックインすることができる。", cn: "如果事先联系了，就可以在17:00办理入住。", en: "If you contact them in advance, you can check in at 17:00." },
+							{ jp: "{一人|ひとり}でこの{部屋|へや}に{泊|と}まる{場合|ばあい}は、{二人|ふたり}で{泊|と}まる{場合|ばあい}の10%{割引|わりびき}になる。", cn: "一个人入住这个房间时，按两个人入住的费用优惠10%。", en: "One person staying in this room gets 10% off the two-person rate." },
 						],
 						answer: 2,
 						explanation:
@@ -137,27 +137,27 @@ export const w1d7: ReadingDay = {
 					{
 						label: "2",
 						jp: "{山下|やました}さんは{妻|つま}と{二人|ふたり}で{東京|とうきょう}への{旅行|りょこう}を{計画|けいかく}している。201X{年|ねん}2{月|がつ}4{日|か}（{金|きん}）から2{泊|はく}でこのプランの{予約|よやく}をしたいと{思|おも}っている。18{時|じ}10{分東京着|ぷんとうきょうちゃく}の{新幹線|しんかんせん}に{乗|の}り、{東京駅|とうきょうえき}に{着|つ}いてから{近|ちか}くのレストランで{食事|しょくじ}をし、ホテルに{向|む}かうつもりだ。{正|ただ}しく{申|もう}し{込|こ}みをしているのはどれか。",
-						cn: "山下先生计划和妻子两人去东京旅行。他想预订 201X 年 2 月 4 日（周五）起住 2 晚的这个方案。他将乘坐 18 点 10 分抵达东京的新干线，到东京站后先在附近的餐厅吃饭，然后前往酒店。正确填写申请的是哪一个？",
+						cn: "山下先生正与妻子两人计划去东京旅行。他想预订从201X年2月4日（周五）起住2晚的这个方案。他打算乘坐18点10分抵达东京的新干线，到达东京站之后在附近的餐厅用餐，然后前往酒店。正确进行申请的是哪一个？",
 						en: "Mr. Yamashita is planning a trip to Tokyo with his wife. He wants to book this plan for 2 nights starting Friday, February 4, 201X. They will take a shinkansen that arrives in Tokyo at 18:10, eat at a restaurant near Tokyo Station, then go to the hotel. Which booking is filled in correctly?",
 						choices: [
 							{
 								jp: "チェックイン{日|び}：2{月|がつ}4{日|か}（{金|きん}）／チェックアウト{日|び}：2{月|がつ}5{日|か}（{土|ど}）／{大人|おとな}2{名|めい}／チェックイン{予定時間|よていじかん}：20{時|じ}ごろ",
-								cn: "入住日：2 月 4 日（五）／退房日：2 月 5 日（六）／大人 2 名／预定入住时间：20 点左右",
+								cn: "入住日：2月4日（周五）／退房日：2月5日（周六）／大人2名／预定入住时间：20点左右",
 								en: "Check-in: Feb. 4 (Fri) / Check-out: Feb. 5 (Sat) / 2 adults / Scheduled check-in: around 20:00",
 							},
 							{
 								jp: "チェックイン{日|び}：2{月|がつ}4{日|か}（{金|きん}）／チェックアウト{日|び}：2{月|がつ}5{日|か}（{土|ど}）／{大人|おとな}2{名|めい}／チェックイン{予定時間|よていじかん}：18{時半|じはん}ごろ",
-								cn: "入住日：2 月 4 日（五）／退房日：2 月 5 日（六）／大人 2 名／预定入住时间：18 点半左右",
+								cn: "入住日：2月4日（周五）／退房日：2月5日（周六）／大人2名／预定入住时间：18点半左右",
 								en: "Check-in: Feb. 4 (Fri) / Check-out: Feb. 5 (Sat) / 2 adults / Scheduled check-in: around 18:30",
 							},
 							{
 								jp: "チェックイン{日|び}：2{月|がつ}4{日|か}（{金|きん}）／チェックアウト{日|び}：2{月|がつ}6{日|か}（{日|にち}）／{大人|おとな}2{名|めい}／チェックイン{予定時間|よていじかん}：20{時|じ}ごろ",
-								cn: "入住日：2 月 4 日（五）／退房日：2 月 6 日（日）／大人 2 名／预定入住时间：20 点左右",
+								cn: "入住日：2月4日（周五）／退房日：2月6日（周日）／大人2名／预定入住时间：20点左右",
 								en: "Check-in: Feb. 4 (Fri) / Check-out: Feb. 6 (Sun) / 2 adults / Scheduled check-in: around 20:00",
 							},
 							{
 								jp: "チェックイン{日|び}：2{月|がつ}4{日|か}（{金|きん}）／チェックアウト{日|び}：2{月|がつ}6{日|か}（{日|にち}）／{大人|おとな}2{名|めい}／チェックイン{予定時間|よていじかん}：18{時半|じはん}ごろ",
-								cn: "入住日：2 月 4 日（五）／退房日：2 月 6 日（日）／大人 2 名／预定入住时间：18 点半左右",
+								cn: "入住日：2月4日（周五）／退房日：2月6日（周日）／大人2名／预定入住时间：18点半左右",
 								en: "Check-in: Feb. 4 (Fri) / Check-out: Feb. 6 (Sun) / 2 adults / Scheduled check-in: around 18:30",
 							},
 						],
@@ -186,7 +186,7 @@ export const w1d7: ReadingDay = {
 				instruction:
 					"つぎの{文書|ぶんしょ}は、{老人|ろうじん}が{暮|く}らす{施設|しせつ}のボランティア（※1）を{募集|ぼしゅう}するための{案内|あんない}である。{読|よ}んで、{下|した}の{質問|しつもん}に{答|こた}えなさい。{答|こた}えは1・2・3・4から{最|もっと}もよいものを{一|ひと}つえらびなさい。",
 				instructionCn:
-					"下面这篇文章是一家养老院为招募志愿者（※1）而发布的启事。阅读后回答下面的问题。答案从 1・2・3・4 中选出最合适的一个。",
+					"下面这篇文书是用以招募老人生活设施志愿者（※1）的介绍。请阅读并回答下面的问题。答案请从1・2・3・4中选出最好的一个。",
 				instructionEn:
 					"The following text is a notice from a facility for older people, calling for volunteers (※1). Read it and answer the questions below. Choose the best answer from 1, 2, 3, or 4.",
 				blocks: [
@@ -194,31 +194,31 @@ export const w1d7: ReadingDay = {
 					{
 						type: "paragraph",
 						jp: "「やすらぎホーム」ではお{年寄|としよ}りと{一緒|いっしょ}に{遊|あそ}んだり、{歌|うた}を{歌|うた}って{下|くだ}さるボランティアを{募集|ぼしゅう}しています。",
-						cn: "「安逸之家」正在招募能陪老人一起玩耍、唱歌的志愿者。",
+						cn: "「安宁之家」正在招募肯陪老人家一起玩耍、唱歌的志愿者。",
 						en: "Yasuragi Home is looking for volunteers who will play with the older residents and sing with them.",
 					},
 					{
 						type: "paragraph",
 						jp: "ピアノやバイオリンなどの{楽器|がっき}ができる{方|かた}は{特|とく}に{大歓迎|だいかんげい}です。{楽器|がっき}でなくても、なにか{特技|とくぎ}（※2）があれば、ぜひそれを{活用|かつよう}してください。",
-						cn: "会弹钢琴、拉小提琴等乐器的人尤其欢迎。即使不是乐器，只要有什么拿手本领，也请一定发挥出来。",
+						cn: "会弹钢琴、拉小提琴等乐器的人士尤其受到热烈欢迎。即使不是乐器，只要有什么特长（※2），请务必加以运用。",
 						en: "People who play the piano, violin, or another instrument are especially welcome. Even if it is not an instrument, if you have a special skill (※2), please put it to use.",
 					},
 					{
 						type: "paragraph",
 						jp: "お{年寄|としよ}りとの{話|はなし}は、{興味深|きょうみぶか}く、{人生|じんせい}の{勉強|べんきょう}になることも{多|おお}いです。きっとあなたにとっていい{体験|たいけん}（※3）になるでしょう。たくさんのご{応募|おうぼ}をお{待|ま}ちしています。",
-						cn: "与老人的交谈很有意思，往往还能成为人生的学习。这对您来说一定会是一次很好的体验。期待大家踊跃报名。",
+						cn: "与老人家的交谈很有趣，而且常常也能成为人生的学习。想必一定会成为对你而言的好的体验（※3）吧。我们期待着大量的报名。",
 						en: "Talking with older people is fascinating, and often becomes a lesson in life. It will surely be a good experience (※3) for you. We look forward to many applications.",
 					},
 					{
 						type: "list",
 						marker: "・",
 						items: [
-							{ jp: "{高校生以上|こうこうせいいじょう}ならどなたでもOK", cn: "高中生以上任何人均可", en: "Anyone of high-school age or older is welcome" },
-							{ jp: "{月曜日|げつようび}から{金曜日|きんようび}（{週|しゅう}に{何日|なんにち}でもかまいません。）", cn: "周一至周五（一周来几天都可以。）", en: "Monday through Friday (any number of days a week is fine)" },
-							{ jp: "{午後|ごご}1{時|じ}から5{時|じ}までの{間|あいだ}の{可能|かのう}な2{時間|じかん}ほど", cn: "下午 1 点到 5 点之间，方便的时段约 2 小时", en: "About two hours at a time that works for you, between 1:00 p.m. and 5:00 p.m." },
+							{ jp: "{高校生以上|こうこうせいいじょう}ならどなたでもOK", cn: "高中生以上的话，无论哪位都可以", en: "Anyone of high-school age or older is welcome" },
+							{ jp: "{月曜日|げつようび}から{金曜日|きんようび}（{週|しゅう}に{何日|なんにち}でもかまいません。）", cn: "星期一至星期五（一周不论几天都可以。）", en: "Monday through Friday (any number of days a week is fine)" },
+							{ jp: "{午後|ごご}1{時|じ}から5{時|じ}までの{間|あいだ}の{可能|かのう}な2{時間|じかん}ほど", cn: "下午1点到5点之间所能安排的大约2小时", en: "About two hours at a time that works for you, between 1:00 p.m. and 5:00 p.m." },
 						],
 					},
-					{ type: "line", jp: "やすらぎホーム（たから{市民病院|しみんびょういん}となり）", cn: "安逸之家（宝市民医院隔壁）", en: "Yasuragi Home (next to Takara Municipal Hospital)", align: "right" },
+					{ type: "line", jp: "やすらぎホーム（たから{市民病院|しみんびょういん}となり）", cn: "安宁之家（宝市民医院隔壁）", en: "Yasuragi Home (next to Takara Municipal Hospital)", align: "right" },
 					{ type: "line", jp: "0220−38−××××", cn: "0220−38−××××", en: "0220-38-××××", align: "right" },
 				],
 				footnotes: [
@@ -236,13 +236,13 @@ export const w1d7: ReadingDay = {
 					{
 						label: "3",
 						jp: "この{募集|ぼしゅう}の{内容|ないよう}と{合|あ}っているものはどれか。",
-						cn: "下列哪一项与这则招募启事的内容相符？",
+						cn: "与这份招募的内容相符的是哪一个？",
 						en: "Which of the following matches the content of this call for volunteers?",
 						choices: [
-							{ jp: "{歌|うた}だけでなく、{楽器|がっき}もできる{音楽家|おんがくか}だけを{募集|ぼしゅう}している。", cn: "只招募既会唱歌又会乐器的音乐家。", en: "They are only looking for musicians who can both sing and play an instrument." },
-							{ jp: "{高校生|こうこうせい}のボランティアは{受|う}け{付|つ}けていない。", cn: "不接受高中生做志愿者。", en: "They do not accept high-school volunteers." },
-							{ jp: "{老人|ろうじん}たちによる{講演会|こうえんかい}に{参加|さんか}する{人|ひと}を{募集|ぼしゅう}している。", cn: "招募参加由老人们举办的演讲会的人。", en: "They are looking for people to attend a lecture given by the older residents." },
-							{ jp: "{曜日|ようび}や{時間|じかん}は、{決|き}まった{範囲内|はんいない}で{相談|そうだん}して{決|き}めることができる。", cn: "星期几和时间可以在规定范围内商量决定。", en: "The day of the week and the hours can be decided by discussion within a set range." },
+							{ jp: "{歌|うた}だけでなく、{楽器|がっき}もできる{音楽家|おんがくか}だけを{募集|ぼしゅう}している。", cn: "只招募不仅会唱歌、而且也会演奏乐器的音乐家。", en: "They are only looking for musicians who can both sing and play an instrument." },
+							{ jp: "{高校生|こうこうせい}のボランティアは{受|う}け{付|つ}けていない。", cn: "不接受高中生志愿者。", en: "They do not accept high-school volunteers." },
+							{ jp: "{老人|ろうじん}たちによる{講演会|こうえんかい}に{参加|さんか}する{人|ひと}を{募集|ぼしゅう}している。", cn: "正在招募参加由老人们主讲的演讲会的人。", en: "They are looking for people to attend a lecture given by the older residents." },
+							{ jp: "{曜日|ようび}や{時間|じかん}は、{決|き}まった{範囲内|はんいない}で{相談|そうだん}して{決|き}めることができる。", cn: "星期和时间可以在既定范围内商量后决定。", en: "The day of the week and the hours can be decided by discussion within a set range." },
 						],
 						answer: 4,
 						explanation:
@@ -265,13 +265,13 @@ export const w1d7: ReadingDay = {
 					{
 						label: "4",
 						jp: "{何|なに}が「いい{体験|たいけん}」になるか。",
-						cn: "什么会成为「很好的体验」？",
+						cn: "什么会成为「好的体验」？",
 						en: "What will be a “good experience”?",
 						choices: [
 							{ jp: "ボランティアを{募集|ぼしゅう}すること", cn: "招募志愿者这件事", en: "Calling for volunteers" },
-							{ jp: "やすらぎホームに{応募|おうぼ}すること", cn: "向安逸之家报名这件事", en: "Applying to Yasuragi Home" },
-							{ jp: "やすらぎホームでボランティアをすること", cn: "在安逸之家做志愿者这件事", en: "Volunteering at Yasuragi Home" },
-							{ jp: "お{年寄|としよ}りと{人生|じんせい}の{勉強|べんきょう}をすること", cn: "和老人一起学习人生这件事", en: "Studying life together with the older people" },
+							{ jp: "やすらぎホームに{応募|おうぼ}すること", cn: "向安宁之家报名这件事", en: "Applying to Yasuragi Home" },
+							{ jp: "やすらぎホームでボランティアをすること", cn: "在安宁之家做志愿者这件事", en: "Volunteering at Yasuragi Home" },
+							{ jp: "お{年寄|としよ}りと{人生|じんせい}の{勉強|べんきょう}をすること", cn: "与老人家一起学习人生这件事", en: "Studying life together with the older people" },
 						],
 						answer: 3,
 						explanation:
@@ -324,14 +324,14 @@ export const w1d7: ReadingDay = {
 			pattern: "〜以下（いか）／〜以上（いじょう）",
 			meaning: "含本数。「6 歳以下」包含 6 岁，「高校生以上」包含高中生。本次实战题两处都考到了。",
 			meaningEn: "Includes the number itself. 6-sai ika includes age 6; kōkōsei ijō includes high school students. Both appear in this practice set.",
-			example: { jp: "{子|こ}ども{料金|りょうきん}…6{歳以下|さいいか}のみ10%{割引|わりびき}", cn: "儿童价…仅限 6 岁以下打 9 折", en: "Child rate… 10% off for ages 6 and under only" },
+			example: { jp: "{子|こ}ども{料金|りょうきん}…6{歳以下|さいいか}のみ10%{割引|わりびき}", cn: "儿童费用…仅限6岁以下优惠10%", en: "Child rate… 10% off for ages 6 and under only" },
 		},
 		{
 			pattern: "〜のみ",
 			formation: "名詞 ＋ のみ",
 			meaning: "只、仅。「だけ」的书面语形式。",
 			meaningEn: "only. The written form of dake.",
-			example: { jp: "6{歳以下|さいいか}のみ10%{割引|わりびき}", cn: "仅限 6 岁以下打 9 折", en: "10% off for ages 6 and under only" },
+			example: { jp: "6{歳以下|さいいか}のみ10%{割引|わりびき}", cn: "仅限6岁以下优惠10%", en: "10% off for ages 6 and under only" },
 		},
 		{
 			pattern: "〜として{取|と}り{扱|あつか}われる",
@@ -339,7 +339,7 @@ export const w1d7: ReadingDay = {
 			meaningEn: "to be treated as…. Passive + written style, common in notices and terms.",
 			example: {
 				jp: "キャンセルとして{取|と}り{扱|あつか}われることがございます。",
-				cn: "有可能被视为取消预订。",
+				cn: "有可能被当作取消处理。",
 				en: "It may be treated as a cancellation.",
 			},
 		},
@@ -347,32 +347,32 @@ export const w1d7: ReadingDay = {
 			pattern: "〜ことがございます",
 			meaning: "「〜ことがあります」的郑重说法，表示有时会发生某种情况。",
 			meaningEn: "A polite form of koto ga arimasu. It means a situation may sometimes occur.",
-			example: { jp: "{取|と}り{扱|あつか}われることがございます。", cn: "有时会被那样处理。", en: "It may sometimes be handled that way." },
+			example: { jp: "{取|と}り{扱|あつか}われることがございます。", cn: "有可能被处理。", en: "It may sometimes be handled that way." },
 		},
 		{
 			pattern: "お〜いたします／お〜する（謙譲語）",
 			meaning: "自谦语，服务业对顾客说话时使用。",
 			meaningEn: "Humble language, used by service staff when speaking to customers.",
-			example: { jp: "{手荷物|てにもつ}をフロントにてお{預|あず}かりいたします。", cn: "我们会在前台为您保管随身行李。", en: "We will look after your hand luggage at the front desk." },
+			example: { jp: "{手荷物|てにもつ}をフロントにてお{預|あず}かりいたします。", cn: "我们将在前台代为保管随身行李。", en: "We will look after your hand luggage at the front desk." },
 		},
 		{
 			pattern: "〜てくださる",
 			meaning: "「〜てくれる」的尊敬语，表示对方为我方做某事。",
 			meaningEn: "The honorific of te kureru. The other person does something for us.",
-			example: { jp: "{歌|うた}を{歌|うた}って{下|くだ}さるボランティア", cn: "愿意（为我们）唱歌的志愿者", en: "volunteers who will (kindly) sing for us" },
+			example: { jp: "{歌|うた}を{歌|うた}って{下|くだ}さるボランティア", cn: "肯为我们唱歌的志愿者", en: "volunteers who will (kindly) sing for us" },
 		},
 		{
 			pattern: "〜でもかまいません",
 			meaning: "……也没关系、都可以。表示宽松的条件。",
 			meaningEn: "… is also fine / it doesn’t matter. A loose condition.",
-			example: { jp: "{週|しゅう}に{何日|なんにち}でもかまいません。", cn: "一周来几天都可以。", en: "Any number of days a week is fine." },
+			example: { jp: "{週|しゅう}に{何日|なんにち}でもかまいません。", cn: "一周不论几天都可以。", en: "Any number of days a week is fine." },
 		},
 		{
 			pattern: "〜にとって",
 			formation: "名詞 ＋ にとって",
 			meaning: "对……来说。表示评价的立场。",
 			meaningEn: "for… / from the standpoint of…. Marks whose evaluation it is.",
-			example: { jp: "あなたにとっていい{体験|たいけん}になるでしょう。", cn: "对您来说一定会是很好的体验。", en: "It will surely be a good experience for you." },
+			example: { jp: "あなたにとっていい{体験|たいけん}になるでしょう。", cn: "对你来说会成为好的体验吧。", en: "It will surely be a good experience for you." },
 		},
 	],
 };

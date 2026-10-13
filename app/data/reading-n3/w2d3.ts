@@ -11,17 +11,17 @@ export const w2d3: ReadingDay = {
 
 	point: {
 		title: "{範囲|はんい}を{表|あらわ}す{言葉|ことば}に{注意|ちゅうい}しよう！",
-		titleCn: "注意表示范围的词汇！",
+		titleCn: "注意表示范围的词语吧！",
 		titleEn: "Pay attention to the expressions indicating a range!",
 		figure: {
 			alt: "親鳥がひなに餌をやりながら「これも、今日限りです。これからは自分で捕りに行きなさいね。」と言っているイラスト",
-			cn: "大鸟一边喂小鸟一边说：「这也是最后一次了（今天为止）。以后要自己去捕食哦。」",
+			cn: "亲鸟一边给雏鸟喂食，一边说着「这个也只限今天。今后要自己去捕哦。」的插图",
 			en: "A parent bird feeding a chick: “This is the last time (today only). From now on, go catch food yourself.”",
 		},
 		tips: [
 			{
 				jp: "{時間|じかん}や{場所|ばしょ}を{表|あらわ}す{言葉|ことば}と{一緒|いっしょ}によく{使|つか}われます。",
-				cn: "这些表示范围的词经常和表示时间、地点的词一起使用。",
+				cn: "经常与表示时间或地点的词语一起使用。",
 				en: "These words that mark a range are often used together with words for time or place.",
 			},
 		],
@@ -29,13 +29,13 @@ export const w2d3: ReadingDay = {
 			{ jp: "〜限りで", kana: "かぎりで", cn: "到〜为止（＝〜までで）", en: "until" },
 			{ jp: "〜に限り／〜に限って", kana: "かぎり／かぎって", cn: "只有〜、仅限〜（＝〜だけ）", en: "only" },
 			{ jp: "〜に限らず", kana: "かぎらず", cn: "不仅〜（＝〜だけでなく）", en: "not only" },
-			{ jp: "AからBにかけて", cn: "从 A 到 B 的范围里（＝AからBまでの範囲で）", en: "within the range from A to B" },
-			{ jp: "〜にわたって", cn: "在〜（时间或空间）的范围里（＝〜の範囲で）", en: "over a period of time (or space)" },
+			{ jp: "AからBにかけて", cn: "从A到B的范围内", en: "within the range from A to B" },
+			{ jp: "〜にわたって", cn: "在整个〜的范围内", en: "over a period of time (or space)" },
 		],
 		notes: [
 			{
 				jp: "「〜に{限|かぎ}り」と「〜に{限|かぎ}らず」は{一文字|ひともじ}{違|ちが}うだけで{意味|いみ}が{正反対|せいはんたい}になる。",
-				cn: "「〜に限り（仅限）」和「〜に限らず（不仅）」只差一个字，意思却完全相反，是本课最大的考点。",
+				cn: "「〜に限り」（仅限）和「〜に限らず」（不仅）只相差一个字，意思就会变得完全相反。",
 				en: "ni kagiri (“only”) and ni kagirazu (“not only”) differ by one character but mean the opposite. This is the biggest test point of the lesson.",
 			},
 		],
@@ -43,7 +43,7 @@ export const w2d3: ReadingDay = {
 
 	renshu: {
 		instruction: "{次|つぎ}の{会話文|かいわぶん}を{読|よ}んで、{後|あと}の{文|ぶん}から{正|ただ}しいものを{選|えら}ぼう。",
-		instructionCn: "阅读下面的对话，从后面的句子中选出正确的。（答案在下一页）",
+		instructionCn: "阅读下面的对话，从后面的句子中选出正确的吧。",
 		instructionEn: "Read the conversation below and choose the correct statements from the sentences that follow. (Answers are on the next page.)",
 		blocks: [
 			{
@@ -52,7 +52,7 @@ export const w2d3: ReadingDay = {
 				speakerCn: "妻子",
 				speakerEn: "Wife",
 				jp: "{野菜|やさい}ジュースのサンプル（※1）をもらったんだけど、{飲|の}む？",
-				cn: "我拿到了蔬菜汁的样品，你要喝吗？",
+				cn: "我拿到了蔬菜汁的样品（※1），要喝吗？",
 				en: "I got a sample (※1) of vegetable juice. Want some?",
 			},
 			{
@@ -61,7 +61,7 @@ export const w2d3: ReadingDay = {
 				speakerCn: "丈夫",
 				speakerEn: "Husband",
 				jp: "「{元気|げんき}な{野菜|やさい}くん」（※2）か。{前|まえ}に{飲|の}んだことあるよね。",
-				cn: "「元气蔬菜君」啊。我们以前喝过吧。",
+				cn: "「元气蔬菜君」（※2）啊。以前喝过吧。",
 				en: "“Genki-na Yasai-kun” (※2)? We’ve had that before, right?",
 			},
 			{
@@ -70,7 +70,7 @@ export const w2d3: ReadingDay = {
 				speakerCn: "妻子",
 				speakerEn: "Wife",
 				jp: "うん、でもあんまりおいしくなかったのよね。これは{改良|かいりょう}した（※3）から{子|こ}どもにも{飲|の}みやすいって{書|か}いてあるけれど……。",
-				cn: "嗯，不过不怎么好喝呢。这个上面写着经过改良，小孩子也容易入口……",
+				cn: "嗯，不过不怎么好喝呢。这个上面写着因为改良了（※3），所以小孩子也容易喝，可是……",
 				en: "Yes, but it wasn’t very tasty. This one says it has been improved (※3) so children can drink it easily, but…",
 			},
 			{
@@ -79,7 +79,7 @@ export const w2d3: ReadingDay = {
 				speakerCn: "丈夫",
 				speakerEn: "Husband",
 				jp: "あ、おいしいよ。これなら、{愛子|あいこ}も{飲|の}める。{栄養|えいよう}になるし、さっそく{注文|ちゅうもん}しようか。",
-				cn: "啊，好喝。这个的话爱子也能喝。又有营养，我们赶紧订购吧。",
+				cn: "啊，好喝哦。这个的话，爱子也能喝。又有营养，马上订购吧？",
 				en: "Oh, it’s good. Aiko could drink this one. It’s nutritious too—shall we order it right away?",
 			},
 			{
@@ -88,7 +88,7 @@ export const w2d3: ReadingDay = {
 				speakerCn: "妻子",
 				speakerEn: "Wife",
 				jp: "うん、でも7{月|がつ}1{日|ついたち}に{発売|はつばい}らしいから、7{月|がつ}になってから{申|もう}し{込|こ}むね。",
-				cn: "嗯，不过好像 7 月 1 日才发售，那我等到 7 月再申请吧。",
+				cn: "嗯，不过好像是7月1日发售，所以到了7月再申请哦。",
 				en: "Yes, but it seems it goes on sale on July 1, so I’ll apply after July starts.",
 			},
 		],
@@ -100,42 +100,42 @@ export const w2d3: ReadingDay = {
 		choices: [
 			{ jp: "「{元気|げんき}な{野菜|やさい}くん」は{野菜|やさい}ジュースである。", cn: "「元气蔬菜君」是蔬菜汁。", en: "“Genki-na Yasai-kun” is a vegetable juice." },
 			{ jp: "{夫|おっと}も{妻|つま}も{前|まえ}に「{元気|げんき}な{野菜|やさい}くん」を{飲|の}んだことがある。", cn: "丈夫和妻子以前都喝过「元气蔬菜君」。", en: "Both husband and wife have drunk “Genki-na Yasai-kun” before." },
-			{ jp: "{今|いま}、{夫|おっと}が{飲|の}んでいる「{元気|げんき}な{野菜|やさい}くん」は{買|か}ったものである。", cn: "现在丈夫喝的「元气蔬菜君」是买来的。", en: "The “Genki-na Yasai-kun” the husband is drinking now is one they bought." },
-			{ jp: "「{元気|げんき}な{野菜|やさい}くん」は{前|まえ}に{飲|の}んだものと{同|おな}じものである。", cn: "「元气蔬菜君」和以前喝的是同一种东西。", en: "“Genki-na Yasai-kun” is the same as the one they drank before." },
-			{ jp: "{改良|かいりょう}された「{元気|げんき}な{野菜|やさい}くん」はもう{発売|はつばい}されている。", cn: "改良后的「元气蔬菜君」已经开始发售了。", en: "The improved “Genki-na Yasai-kun” is already on sale." },
+			{ jp: "{今|いま}、{夫|おっと}が{飲|の}んでいる「{元気|げんき}な{野菜|やさい}くん」は{買|か}ったものである。", cn: "现在丈夫正在喝的「元气蔬菜君」是买来的。", en: "The “Genki-na Yasai-kun” the husband is drinking now is one they bought." },
+			{ jp: "「{元気|げんき}な{野菜|やさい}くん」は{前|まえ}に{飲|の}んだものと{同|おな}じものである。", cn: "「元气蔬菜君」和以前喝过的是同样的东西。", en: "“Genki-na Yasai-kun” is the same as the one they drank before." },
+			{ jp: "{改良|かいりょう}された「{元気|げんき}な{野菜|やさい}くん」はもう{発売|はつばい}されている。", cn: "经过改良的「元气蔬菜君」已经发售了。", en: "The improved “Genki-na Yasai-kun” is already on sale." },
 		],
 		answers: [1, 2],
 		hint: {
 			jp: "{今飲|いまの}んでいるのは「もらったサンプル」。{発売|はつばい}は7{月|がつ}1{日|ついたち}で、まだ{発売前|はつばいまえ}である。",
-			cn: "现在喝的是「拿到的样品」，不是买的；发售日是 7 月 1 日，也就是说现在还没开卖。",
+			cn: "现在喝的是「拿到的样品」。发售日是7月1日，目前仍处于发售前。",
 			en: "What they are drinking now is a sample they received, not something they bought. Sale starts July 1, so it is not on sale yet.",
 		},
 	},
 
 	mondai: {
 		instruction: "{次|つぎ}の{文章|ぶんしょう}を{読|よ}んで、{後|あと}の{問|と}いに{答|こた}えなさい。",
-		instructionCn: "阅读下面的文章，回答后面的问题。（答案在别册 p.3）",
+		instructionCn: "阅读下面的文章，回答后面的问题。",
 		instructionEn: "Read the text below and answer the questions that follow. (Answers are in the separate booklet, p. 3.)",
 		blocks: [
 			{ type: "title", jp: "「{新元気|しんげんき}な{野菜|やさい}くん」{発売|はつばい}のお{知|し}らせ", cn: "「新元气蔬菜君」发售通知", en: "Notice of the sale of “Shin Genki-na Yasai-kun”" },
 			{
 				type: "paragraph",
 				jp: "いつも{弊社|へいしゃ}の{商品|しょうひん}をご{購入|こうにゅう}いただきまして、ありがとうございます＊。",
-				cn: "一直以来承蒙惠购本公司产品，不胜感激＊。",
+				cn: "一直以来承蒙惠购本公司商品，非常感谢＊。",
 				en: "Thank you for always purchasing our products.＊",
 			},
 			{
 				type: "paragraph",
 				indent: true,
 				jp: "さて、{長年|ながねん}（※1）にわたって{好評|こうひょう}（※2）をいただいている{栄養|えいよう}ジュース「{元気|げんき}な{野菜|やさい}くん」ですが、より{飲|の}みやすく{改良|かいりょう}した「{新元気|しんげんき}な{野菜|やさい}くん」として{生|う}まれ{変|か}わることになりました。7{月|がつ}1{日|ついたち}に{発売|はつばい}を{開始|かいし}いたします。{今回|こんかい}は、みなさんに{飲|の}みやすさを{実感|じっかん}して（※3）いただきたいと{思|おも}い、{発売前|はつばいまえ}にサンプルをお{届|とど}けしました。お{値段|ねだん}はそのままで、さらにおいしくなり、{大人|おとな}の{方|かた}（　　　　　）お{子様|こさま}にも{喜|よろこ}んでいただけると{思|おも}います。ぜひお{試|ため}しください。",
-				cn: "长年以来备受好评的营养果汁「元气蔬菜君」，此次将以更易入口、经过改良的「新元气蔬菜君」焕然一新。将于 7 月 1 日开始发售。这次为了让大家亲身感受它的顺口，我们在发售前送上了样品。价格维持不变，口味更加美味，相信（　　　　　）大人，连小朋友也会喜欢。敬请品尝。",
+				cn: "那么，长期以来（※1）一直承蒙好评（※2）的营养汁「元气蔬菜君」，已决定作为改良得更易饮用的「新元气蔬菜君」而重获新生。将于7月1日开始发售。此次希望大家能够亲身感受（※3）其易于饮用这一点，因此在发售前送上了样品。价格保持不变，味道会更加美味，我们认为各位大人（　　　　　）孩子们也会喜欢。请务必试一试。",
 				en: "Our nutrition juice “Genki-na Yasai-kun,” which has been well received for many years (※1) (※2), will be reborn as “Shin Genki-na Yasai-kun,” improved so that it is easier to drink. Sales will start on July 1. This time, so that you can really feel (※3) how easy it is to drink, we sent a sample before the sale. The price stays the same, it tastes even better, and we think (          ) adults, children will enjoy it too. Please try it.",
 			},
 			{
 				type: "paragraph",
 				indent: true,
 				jp: "なお、「{新元気|しんげんき}な{野菜|やさい}くん」の{発売|はつばい}に{伴|ともな}い（※4）、{現在|げんざい}の「{元気|げんき}な{野菜|やさい}くん」の{販売|はんばい}を6{月|がつ}30{日限|にちかぎ}りで{中止|ちゅうし}いたします。7{月|がつ}1{日以降|ついたちいこう}の「{元気|げんき}な{野菜|やさい}くん」のご{注文|ちゅうもん}は{自動的|じどうてき}に（※5）「{新元気|しんげんき}な{野菜|やさい}くん」になりますのでご{注意|ちゅうい}ください＊＊。",
-				cn: "另外，随着「新元气蔬菜君」的发售，现有的「元气蔬菜君」将于 6 月 30 日为止停止销售。7 月 1 日以后订购的「元气蔬菜君」将自动变为「新元气蔬菜君」，敬请注意＊＊。",
+				cn: "另外，随着「新元气蔬菜君」的发售（※4），目前「元气蔬菜君」的销售将以6月30日为限停止。自7月1日起，对「元气蔬菜君」的订购将自动（※5）变为「新元气蔬菜君」，敬请注意＊＊。",
 				en: "Also, with the sale of “Shin Genki-na Yasai-kun” (※4), sales of the current “Genki-na Yasai-kun” will end as of June 30. From July 1 on, orders for “Genki-na Yasai-kun” will automatically (※5) become “Shin Genki-na Yasai-kun,” so please take note.＊＊",
 			},
 			{ type: "line", jp: "カモメ{食品株式会社|しょくひんかぶしきがいしゃ}", cn: "海鸥食品股份有限公司", en: "Kamome Foods Co., Ltd.", align: "right" },
@@ -148,10 +148,10 @@ export const w2d3: ReadingDay = {
 			{ marker: "※5", term: "自動的に", jp: "automatically", cn: "自动地", en: "automatically" },
 		],
 		pageNotes: [
-			{ jp: "＊ Thank you for purchasing our products.", cn: "＊感谢您平时购买我公司产品。", en: "Thank you for purchasing our products." },
+			{ jp: "＊ Thank you for purchasing our products.", cn: "＊感谢您购买我们的产品。", en: "Thank you for purchasing our products." },
 			{
 				jp: '＊＊ Please note that in light of the release of "Shin genki-na yasai-kun", we will be discontinuing the sales of our current "Genki-na yasai-kun" on June 30th. Beginning on July 1st, all orders placed for "Genki-na yasai-kun" will be automatically processed as "Shin genki-na yasai-kun".',
-				cn: "＊＊随着「新元气蔬菜君」的发售，现有的「元气蔬菜君」将于 6 月 30 日停止销售。7 月 1 日起，订购「元气蔬菜君」将自动按「新元气蔬菜君」处理。",
+				cn: "＊＊请注意，鉴于「新元气蔬菜君」的发售，我们将于6月30日停止本公司现有「元气蔬菜君」的销售。从7月1日开始，所有订购「元气蔬菜君」的订单都将自动作为「新元气蔬菜君」处理。",
 				en: 'Please note that in light of the release of "Shin genki-na yasai-kun", we will be discontinuing the sales of our current "Genki-na yasai-kun" on June 30th. Beginning on July 1st, all orders placed for "Genki-na yasai-kun" will be automatically processed as "Shin genki-na yasai-kun".',
 			},
 		],
@@ -162,10 +162,10 @@ export const w2d3: ReadingDay = {
 				cn: "填入（　　）中的是哪一个？",
 				en: "Which of the following goes in the blank?",
 				choices: [
-					{ jp: "に{限|かぎ}って", cn: "に限って（仅限、偏偏）", en: "ni kagitte (only / of all times)" },
-					{ jp: "に{限|かぎ}らず", cn: "に限らず（不仅）", en: "ni kagirazu (not only)" },
-					{ jp: "{限|かぎ}りで", cn: "限りで（到……为止）", en: "kagiri de (as of / until)" },
-					{ jp: "に{限|かぎ}り", cn: "に限り（仅限）", en: "ni kagiri (limited to)" },
+					{ jp: "に{限|かぎ}って", cn: "偏偏；仅限", en: "ni kagitte (only / of all times)" },
+					{ jp: "に{限|かぎ}らず", cn: "不仅；不限于", en: "ni kagirazu (not only)" },
+					{ jp: "{限|かぎ}りで", cn: "以……为限", en: "kagiri de (as of / until)" },
+					{ jp: "に{限|かぎ}り", cn: "仅限", en: "ni kagiri (limited to)" },
 				],
 				answer: 2,
 				explanation:
@@ -188,12 +188,12 @@ export const w2d3: ReadingDay = {
 			{
 				label: "問2",
 				jp: "この{文章|ぶんしょう}の{内容|ないよう}と{合|あ}っているものはどれか。",
-				cn: "下列哪一项与这篇文章的内容相符？",
+				cn: "哪一个与这篇文章的内容相符？",
 				en: "Which of the following matches the content of this text?",
 				choices: [
-					{ jp: "「{新元気|しんげんき}な{野菜|やさい}くん」は、{使|つか}っている{野菜|やさい}が{変|か}わり{味|あじ}も{変|か}わった。", cn: "「新元气蔬菜君」使用的蔬菜变了，味道也变了。", en: "“Shin Genki-na Yasai-kun” uses different vegetables, and the taste has changed." },
-					{ jp: "「{新元気|しんげんき}な{野菜|やさい}くん」は、おいしくなったので{注文|ちゅうもん}がたくさん{来|き}ている。", cn: "「新元气蔬菜君」因为变好喝了，订单纷至沓来。", en: "“Shin Genki-na Yasai-kun” tastes better, so many orders are coming in." },
-					{ jp: "「{新元気|しんげんき}な{野菜|やさい}くん」は、6{月|がつ}30{日|にち}までしか{注文|ちゅうもん}できない。", cn: "「新元气蔬菜君」只能订购到 6 月 30 日。", en: "“Shin Genki-na Yasai-kun” can only be ordered until June 30." },
+					{ jp: "「{新元気|しんげんき}な{野菜|やさい}くん」は、{使|つか}っている{野菜|やさい}が{変|か}わり{味|あじ}も{変|か}わった。", cn: "「新元气蔬菜君」所使用的蔬菜变了，味道也变了。", en: "“Shin Genki-na Yasai-kun” uses different vegetables, and the taste has changed." },
+					{ jp: "「{新元気|しんげんき}な{野菜|やさい}くん」は、おいしくなったので{注文|ちゅうもん}がたくさん{来|き}ている。", cn: "「新元气蔬菜君」因为变得更好吃了，所以来了很多订单。", en: "“Shin Genki-na Yasai-kun” tastes better, so many orders are coming in." },
+					{ jp: "「{新元気|しんげんき}な{野菜|やさい}くん」は、6{月|がつ}30{日|にち}までしか{注文|ちゅうもん}できない。", cn: "「新元气蔬菜君」只能订购到6月30日。", en: "“Shin Genki-na Yasai-kun” can only be ordered until June 30." },
 					{ jp: "「{新元気|しんげんき}な{野菜|やさい}くん」は、「{元気|げんき}な{野菜|やさい}くん」と{同|おな}じ{値段|ねだん}である。", cn: "「新元气蔬菜君」和「元气蔬菜君」价格相同。", en: "“Shin Genki-na Yasai-kun” costs the same as “Genki-na Yasai-kun.”" },
 				],
 				answer: 4,
@@ -247,7 +247,7 @@ export const w2d3: ReadingDay = {
 			meaningEn: "not only… (but also…). Often followed by mo.",
 			example: {
 				jp: "{大人|おとな}の{方|かた}に{限|かぎ}らずお{子様|こさま}にも{喜|よろこ}んでいただける",
-				cn: "不仅大人，连小朋友也会喜欢",
+				cn: "不仅限于大人，孩子们也会喜欢",
 				en: "not only adults but children will enjoy it too",
 			},
 			note: "本课要点。与「に限り（仅限）」意思相反，注意区分。",
@@ -258,14 +258,14 @@ export const w2d3: ReadingDay = {
 			formation: "時を表す名詞 ＋ 限りで",
 			meaning: "到……为止（之后就结束）。",
 			meaningEn: "as of… / until… (and then it ends).",
-			example: { jp: "{販売|はんばい}を6{月|がつ}30{日限|にちかぎ}りで{中止|ちゅうし}いたします。", cn: "销售到 6 月 30 日为止停止。", en: "Sales will be discontinued as of June 30." },
+			example: { jp: "{販売|はんばい}を6{月|がつ}30{日限|にちかぎ}りで{中止|ちゅうし}いたします。", cn: "将以6月30日为限停止销售。", en: "Sales will be discontinued as of June 30." },
 		},
 		{
 			pattern: "〜にわたって",
 			formation: "期間・範囲を表す名詞 ＋ にわたって",
 			meaning: "历经……、在……的范围内。",
 			meaningEn: "over… / throughout… (a period or range).",
-			example: { jp: "{長年|ながねん}にわたって{好評|こうひょう}をいただいている", cn: "长年以来一直备受好评", en: "has been well received over many years" },
+			example: { jp: "{長年|ながねん}にわたって{好評|こうひょう}をいただいている", cn: "长期以来一直承蒙好评", en: "has been well received over many years" },
 		},
 		{
 			pattern: "〜に{伴|ともな}い",
@@ -278,20 +278,20 @@ export const w2d3: ReadingDay = {
 			pattern: "〜ことになりました",
 			meaning: "（经决定）将要……。表示由组织、外部决定的结果，通知里的固定说法。",
 			meaningEn: "it has been decided that…. A result decided by an organization or someone else; a set phrase in notices.",
-			example: { jp: "{生|う}まれ{変|か}わることになりました。", cn: "决定以全新面貌推出。", en: "It has been decided that it will be reborn." },
+			example: { jp: "{生|う}まれ{変|か}わることになりました。", cn: "已决定重获新生。", en: "It has been decided that it will be reborn." },
 		},
 		{
 			pattern: "ご／お〜いただく（謙譲語）",
 			meaning: "承蒙您……。商务文书中对客户的自谦表达。",
 			meaningEn: "to have you (kindly)…. Humble language toward customers in business writing.",
-			example: { jp: "ご{購入|こうにゅう}いただきまして、ありがとうございます。", cn: "承蒙惠购，不胜感激。", en: "Thank you for purchasing (from us)." },
+			example: { jp: "ご{購入|こうにゅう}いただきまして、ありがとうございます。", cn: "承蒙惠购，非常感谢。", en: "Thank you for purchasing (from us)." },
 		},
 		{
 			pattern: "〜てから",
 			formation: "動詞て形 ＋ から",
 			meaning: "……之后再……。强调先后顺序。",
 			meaningEn: "after…. Stresses the order of actions.",
-			example: { jp: "7{月|がつ}になってから{申|もう}し{込|こ}むね。", cn: "等到 7 月再申请吧。", en: "I’ll apply after July starts." },
+			example: { jp: "7{月|がつ}になってから{申|もう}し{込|こ}むね。", cn: "到了7月再申请哦。", en: "I’ll apply after July starts." },
 		},
 	],
 };

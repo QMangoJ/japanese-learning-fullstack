@@ -12,42 +12,42 @@ export const w2d2: ReadingDay = {
 
 	point: {
 		title: "{決|き}まったパターンに{慣|な}れよう！②",
-		titleCn: "熟悉固定句式吧！②",
+		titleCn: "习惯固定模式吧！②",
 		titleEn: "Try to get used to the sentence patterns! ②",
 		figure: {
 			alt: "断水のお知らせを見て「あれ、水、出ない？」と言う人と、蛇口から水が出ていないイラスト",
-			cn: "有人看着停水通知说「咦，不出水了？」；水龙头也不出水。",
+			cn: "看着停水通知说「咦，水，不出吗？」的人，以及水龙头没有出水的插图",
 			en: "A person looking at a water-cutoff notice and saying “Huh? No water?”; a tap with nothing coming out.",
 		},
 		tips: [
 			{
 				jp: "{例えば|たとえば}{断水|だんすい}（{水道|すいどう}が{使|つか}えなくなること）のお{知|し}らせなら、こんな{内容|ないよう}が{書|か}いてあります。",
-				cn: "比如停水（自来水不能用）的通知里，会写下面这些内容。",
+				cn: "例如，如果是停水（自来水无法使用）的通知，就会写着这样的内容。",
 				en: "A notice about a water cutoff (when the tap water cannot be used), for example, will include content like this.",
 			},
 			{
 				jp: "・いつ？　→　{日時|にちじ}を{読|よ}みましょう！",
-				cn: "・什么时候？　→　要看清日期和时间！",
+				cn: "・什么时候？　→　来读日期和时间吧！",
 				en: "When? → Read the date and time!",
 			},
 			{
 				jp: "・どうすればいい？　→　{飲|の}み{水|みず}とか、{洗|あら}い{物|もの}をする{水|みず}をくんでおきましょう！",
-				cn: "・该怎么办？　→　先把饮用水、洗碗用水舀好备用！",
+				cn: "・该怎么办？　→　饮用水之类、洗碗用的水，事先舀好吧！",
 				en: "What should I do? → Draw drinking water and water for washing in advance!",
 			},
 			{
 				jp: "・どうして？　→　{普通|ふつう}は{水道|すいどう}の{工事|こうじ}のため。{災害|さいがい}や{水不足|みずぶそく}の{場合|ばあい}もある。",
-				cn: "・为什么？　→　一般是因为自来水管施工。有时也因灾害或缺水。",
+				cn: "・为什么？　→　通常是因为自来水施工。也有灾害或缺水的情况。",
 				en: "Why? → Usually because of water-pipe work. It can also be due to a disaster or a water shortage.",
 			},
 			{
 				jp: "・なぜ{工事|こうじ}をするの？　→　{水道管|すいどうかん}を{直|なお}したり{新|あたら}しいのと{取|と}り{替|か}えたり。",
-				cn: "・为什么要施工？　→　修理水管，或换成新的。",
+				cn: "・为什么要施工呢？　→　修理自来水管，或换成新的，等等。",
 				en: "Why the construction? → To repair the water pipes or replace them with new ones.",
 			},
 			{
 				jp: "・{工事|こうじ}のあとで……　→　{赤|あか}く{濁|にご}った{水|みず}が{出|で}る{場合|ばあい}は、{水道課|すいどうか}まで{連絡|れんらく}する。",
-				cn: "・施工之后……　→　如果流出混浊发红的水，请联系自来水科。",
+				cn: "・施工之后……　→　如果流出发红浑浊的水，就联系自来水科。",
 				en: "After the work… → If red, cloudy water comes out, contact the waterworks section.",
 			},
 		],
@@ -65,7 +65,7 @@ export const w2d2: ReadingDay = {
 
 	renshu: {
 		instruction: "{次|つぎ}の{会話文|かいわぶん}を{読|よ}んで、{後|あと}の{文|ぶん}から{正|ただ}しいものを{選|えら}ぼう。",
-		instructionCn: "阅读下面的对话，从后面的句子中选出正确的。（答案在下一页）",
+		instructionCn: "阅读下面的对话，从后面的句子中选出正确的吧。",
 		instructionEn: "Read the conversation below and choose the correct statements from the sentences that follow. (Answers are on the next page.)",
 		blocks: [
 			{
@@ -74,7 +74,7 @@ export const w2d2: ReadingDay = {
 				speakerCn: "母亲",
 				speakerEn: "Mother",
 				jp: "あ、もう10{時|じ}だ。あと1{時間半|じかんはん}だからね。みんなお{風呂|ふろ}{入|はい}ったわね？　{今日|きょう}はお{風呂|ふろ}のお{湯|ゆ}、{捨|す}てないでそのままにしておくから。{夜中|よなか}にトイレに{行|い}きたくなったら、バケツにお{風呂|ふろ}のお{湯|ゆ}をくんで{使|つか}ってね。{飲|の}み{水|みず}は{冷蔵庫|れいぞうこ}にもやかんにも、それから、お{鍋|なべ}にも{入|はい}ってるし、ペットボトルにも{水道|すいどう}の{水|みず}{入|い}れてたくさん{置|お}いてあるから。それから……。",
-				cn: "啊，已经 10 点了。还剩一个半小时哦。大家都洗过澡了吧？今天浴缸里的水不要放掉，就那样留着。夜里想上厕所的话，用桶舀浴缸里的水来用。饮用水冰箱里、水壶里都有，锅里也装着，塑料瓶里也灌了很多自来水放着。还有……",
+				cn: "啊，已经10点了。还剩1个半小时哦。大家都洗过澡了吧？今天浴缸里的热水不要放掉，就那样留着。半夜想上厕所的话，用桶舀浴缸里的热水来用哦。饮用水冰箱里也有、水壶里也有，而且锅里也装着，塑料瓶里也灌了自来水，放了很多。还有……",
 				en: "Oh, it’s already 10:00. An hour and a half left, all right? You’ve all had your baths? Don’t drain the bathwater today—leave it as it is. If you need the toilet in the night, scoop some bathwater into a bucket and use that. Drinking water is in the fridge and the kettle, and in a pot too, and I’ve filled lots of plastic bottles with tap water. And also…",
 			},
 			{
@@ -83,7 +83,7 @@ export const w2d2: ReadingDay = {
 				speakerCn: "儿子",
 				speakerEn: "Son",
 				jp: "もうわかったよ。{今夜|こんや}は{早|はや}く{寝|ね}るし、{朝|あさ}4{時前|じまえ}になんて{起|お}きないし。",
-				cn: "知道了啦。今晚早点睡，早上 4 点前才不会起来呢。",
+				cn: "已经知道了啦。今晚会早点睡，早上4点前什么的也不会起来。",
 				en: "I already get it. I’ll go to bed early tonight, and I’m not getting up before 4:00 in the morning.",
 			},
 			{
@@ -92,7 +92,7 @@ export const w2d2: ReadingDay = {
 				speakerCn: "父亲",
 				speakerEn: "Father",
 				jp: "ははは、{家中|うちじゅう}{水|みず}だらけだな。{断水|だんすい}は{一晩|ひとばん}だけだっていうのに、{災害時|さいがいじ}みたいだ。",
-				cn: "哈哈哈，家里到处都是水啊。说是只停一晚，搞得跟受灾时一样。",
+				cn: "哈哈哈，家里到处都是水啊。说是停水只有一晚而已，却跟受灾时似的。",
 				en: "Haha, the whole house is full of water. They say the cutoff is only overnight, but it looks like a disaster.",
 			},
 		],
@@ -100,15 +100,15 @@ export const w2d2: ReadingDay = {
 			{ jp: "{母親|ははおや}は{節水|せっすい}をしている。", cn: "母亲在节水。", en: "The mother is conserving water." },
 			{ jp: "{母親|ははおや}は{断水|だんすい}をしている。", cn: "母亲在停水。", en: "The mother is cutting off the water." },
 			{ jp: "{母親|ははおや}は{断水|だんすい}に{備|そな}えて{準備|じゅんび}をしている。", cn: "母亲在为停水做准备。", en: "The mother is preparing for the water cutoff." },
-			{ jp: "{災害|さいがい}のため、{水|みず}が{止|と}まってしまった。", cn: "因为灾害，水已经停了。", en: "The water has already stopped because of a disaster." },
-			{ jp: "{断水|だんすい}は{今夜|こんや}11{時半|じはん}から{翌朝|よくあさ}4{時|じ}までらしい。", cn: "停水好像是今晚 11 点半到次日早上 4 点。", en: "The cutoff seems to run from 11:30 tonight until 4:00 the next morning." },
+			{ jp: "{災害|さいがい}のため、{水|みず}が{止|と}まってしまった。", cn: "因为灾害，水停掉了。", en: "The water has already stopped because of a disaster." },
+			{ jp: "{断水|だんすい}は{今夜|こんや}11{時半|じはん}から{翌朝|よくあさ}4{時|じ}までらしい。", cn: "停水好像是从今晚11点半到第二天早上4点。", en: "The cutoff seems to run from 11:30 tonight until 4:00 the next morning." },
 		],
 		answers: [3, 5],
 	},
 
 	mondai: {
 		instruction: "{次|つぎ}のお{知|し}らせを{読|よ}んで、{後|あと}の{問|と}いに{答|こた}えなさい。",
-		instructionCn: "阅读下面的启事，回答后面的问题。（答案在别册 p.3）",
+		instructionCn: "阅读下面的通知，回答后面的问题。",
 		instructionEn: "Read the following notice and answer the questions that follow. (Answers are in the separate booklet, p. 3.)",
 		blocks: [
 			{
@@ -134,13 +134,13 @@ export const w2d2: ReadingDay = {
 			{
 				type: "paragraph",
 				jp: "{下記|かき}の{通|とお}り、{水道管|すいどうかん}の{修理工事|しゅうりこうじ}を{行|おこな}います。{工事|こうじ}に{伴|ともな}い（{注|ちゅう}1）{断水|だんすい}となりますので、{水道水|すいどうすい}のくみ{置|お}き（{注|ちゅう}2）など、お{願|ねが}いします。{工事中|こうじちゅう}はご{迷惑|めいわく}をおかけすることと{思|おも}いますが、ご{理解|りかい}とご{協力|きょうりょく}をお{願|ねが}い{申|もう}し{上|あ}げます。",
-				cn: "将按如下安排进行自来水管修理施工。因施工（注1）将停水，请预先储存自来水（注2）等。施工期间会给您添麻烦，敬请理解与配合。",
+				cn: "将按如下内容进行自来水管修理施工。伴随施工（注1）将停水，因此请预先汲存自来水（注2）等。施工期间想必会给您添麻烦，恳请予以理解和配合。",
 				en: "We will carry out repair work on the water pipes as stated below. Because of the work (note 1) there will be a water cutoff, so please store tap water in advance (note 2) and so on. The work will cause inconvenience; we ask for your understanding and cooperation.",
 			},
 			{
 				type: "paragraph",
 				jp: "なお、{工事終了後|こうじしゅうりょうご}、{赤|あか}く{濁|にご}った{水|みず}が{出|で}る{場合|ばあい}は{市水道課|しすいどうか}までご{連絡|れんらく}をお{願|ねが}いします。",
-				cn: "另外，施工结束后如果流出混浊发红的水，请与市自来水科联系。",
+				cn: "另外，施工结束后，如果流出发红浑浊的水，请与市自来水科联系。",
 				en: "Also, if red, cloudy water comes out after the work is finished, please contact the city waterworks section.",
 			},
 			{
@@ -153,10 +153,10 @@ export const w2d2: ReadingDay = {
 				type: "list",
 				marker: "○",
 				items: [
-					{ jp: "{工事場所|こうじばしょ}：みどり{市|し}{緑が丘|みどりがおか}1{丁目|ちょうめ}{大山神社|おおやまじんじゃ}{付近|ふきん}", cn: "施工地点：绿市绿丘一丁目大山神社附近", en: "Work site: near Ōyama Shrine, 1-chōme Midorigaoka, Midori City" },
+					{ jp: "{工事場所|こうじばしょ}：みどり{市|し}{緑が丘|みどりがおか}1{丁目|ちょうめ}{大山神社|おおやまじんじゃ}{付近|ふきん}", cn: "施工地点：绿市绿丘1丁目大山神社附近", en: "Work site: near Ōyama Shrine, 1-chōme Midorigaoka, Midori City" },
 					{ jp: "{断水地域|だんすいちいき}：みどり{市|し}{緑が丘地区|みどりがおかちく}", cn: "停水区域：绿市绿丘地区", en: "Cutoff area: Midorigaoka district, Midori City" },
 					{ jp: "{施工業者|せこうぎょうしゃ}（{注|ちゅう}3）：（{株|かぶ}）グリーン{建設|けんせつ}（{電話|でんわ} 123-4567）", cn: "施工单位（注3）：绿色建设股份有限公司（电话 123-4567）", en: "Contractor (note 3): Green Construction Co., Ltd. (tel. 123-4567)" },
-					{ jp: "{作業時間|さぎょうじかん}：2{月|がつ}20{日|にち}（{木|もく}）23{時|じ}30{分|ぷん}〜2{月|がつ}21{日|にち}（{金|きん}）4{時|じ}", cn: "作业时间：2 月 20 日（周四）23:30〜2 月 21 日（周五）4:00", en: "Work hours: Thursday, February 20, 23:30 – Friday, February 21, 4:00" },
+					{ jp: "{作業時間|さぎょうじかん}：2{月|がつ}20{日|にち}（{木|もく}）23{時|じ}30{分|ぷん}〜2{月|がつ}21{日|にち}（{金|きん}）4{時|じ}", cn: "作业时间：2月20日（周四）23时30分〜2月21日（周五）4时", en: "Work hours: Thursday, February 20, 23:30 – Friday, February 21, 4:00" },
 				],
 			},
 			{
@@ -174,13 +174,13 @@ export const w2d2: ReadingDay = {
 			{
 				type: "paragraph",
 				jp: "{雨不足|あめぶそく}により、{水源|すいげん}（{注|ちゅう}4）の{水位|すいい}（{注|ちゅう}5）が{低下|ていか}しています。{最悪|さいあく}の{場合|ばあい}は{断水|だんすい}となる{恐|おそ}れがあります。",
-				cn: "由于雨水不足，水源（注4）水位（注5）正在下降。最坏的情况下有停水的可能。",
+				cn: "由于降雨不足，水源（注4）的水位（注5）正在下降。最坏的情况下，有停水的可能。",
 				en: "Because of a lack of rain, the water level (note 5) at the water source (note 4) is falling. In the worst case there is a risk of a cutoff.",
 			},
 			{
 				type: "paragraph",
 				jp: "{住民|じゅうみん}の{皆|みな}さんには、{節水|せっすい}にご{協力|きょうりょく}くださいますようお{願|ねが}いします。",
-				cn: "请各位居民协助节水。",
+				cn: "恳请各位居民协助节水。",
 				en: "We ask all residents to kindly cooperate in saving water.",
 			},
 			{
@@ -202,13 +202,13 @@ export const w2d2: ReadingDay = {
 			{
 				label: "問1",
 				jp: "Aの{内容|ないよう}と{合|あ}っていないものはどれか。",
-				cn: "哪一项与 A 的内容不符？",
+				cn: "哪一项与A的内容不符？",
 				en: "Which of the following does not match the content of A?",
 				choices: [
-					{ jp: "{水道|すいどう}の{工事|こうじ}があるので、{必要|ひつよう}な{水|みず}は{用意|ようい}しておいたほうがいい。", cn: "因为有自来水施工，最好预先准备好需要的水。", en: "Because of waterworks, it is better to prepare the water you will need." },
-					{ jp: "{水道|すいどう}の{工事|こうじ}があるのは{一晩|ひとばん}だけだ。", cn: "自来水施工只进行一个晚上。", en: "The waterworks last only overnight." },
-					{ jp: "{水道|すいどう}の{工事中|こうじちゅう}は{赤|あか}く{濁|にご}った{水|みず}が{出|で}るかもしれない。", cn: "自来水施工期间可能会流出混浊发红的水。", en: "Red, cloudy water may come out during the waterworks." },
-					{ jp: "{水道|すいどう}の{工事|こうじ}のため4{時間半|じかんはん}ぐらい{水|みず}が{出|で}ない。", cn: "因为自来水施工，大约四个半小时不出水。", en: "Because of the waterworks, there will be no water for about four and a half hours." },
+					{ jp: "{水道|すいどう}の{工事|こうじ}があるので、{必要|ひつよう}な{水|みず}は{用意|ようい}しておいたほうがいい。", cn: "因为有自来水施工，需要的水最好事先准备好。", en: "Because of waterworks, it is better to prepare the water you will need." },
+					{ jp: "{水道|すいどう}の{工事|こうじ}があるのは{一晩|ひとばん}だけだ。", cn: "自来水施工只有一个晚上。", en: "The waterworks last only overnight." },
+					{ jp: "{水道|すいどう}の{工事中|こうじちゅう}は{赤|あか}く{濁|にご}った{水|みず}が{出|で}るかもしれない。", cn: "自来水施工期间，可能会流出发红浑浊的水。", en: "Red, cloudy water may come out during the waterworks." },
+					{ jp: "{水道|すいどう}の{工事|こうじ}のため4{時間半|じかんはん}ぐらい{水|みず}が{出|で}ない。", cn: "因为自来水施工，大约4个半小时不出水。", en: "Because of the waterworks, there will be no water for about four and a half hours." },
 				],
 				answer: 3,
 				explanation:
@@ -231,13 +231,13 @@ export const w2d2: ReadingDay = {
 			{
 				label: "問2",
 				jp: "{次|つぎ}の①②に{入|はい}る{正|ただ}しい{組|く}み{合|あ}わせはどれか。Aは（①）、Bは（②）と{言|い}っている。",
-				cn: "填入①②的正确组合是哪一项？A 说的是（①），B 说的是（②）。",
+				cn: "填入下面①②的正确组合是哪一个？A说的是（①），B说的是（②）。",
 				en: "Which is the correct pair to fill in ① and ②? A is saying (①), and B is saying (②).",
 				choices: [
-					{ jp: "①{水|みず}が{一時的|いちじてき}に{出|で}なくなる　②{水|みず}を{大切|たいせつ}に{使|つか}ってほしい", cn: "①水会暂时不出　②希望大家珍惜用水", en: "① water will temporarily stop  ② please use water carefully" },
-					{ jp: "①{水|みず}が{一時的|いちじてき}に{濁|にご}る　②{水|みず}が{出|で}なくなるかもしれない", cn: "①水会暂时变浑　②水有可能不出", en: "① water will temporarily become cloudy  ② water may stop coming out" },
-					{ jp: "①{水|みず}を{大切|たいせつ}に{使|つか}ってほしい　②{水|みず}をくんでおいてほしい", cn: "①希望大家珍惜用水　②希望预先把水舀好", en: "① please use water carefully  ② please draw water in advance" },
-					{ jp: "①{水|みず}が{濁|にご}るかもしれない　②{水源|すいげん}の{水位|すいい}に{注意|ちゅうい}してほしい", cn: "①水可能会变浑　②希望注意水源水位", en: "① water may become cloudy  ② please watch the water-source level" },
+					{ jp: "①{水|みず}が{一時的|いちじてき}に{出|で}なくなる　②{水|みず}を{大切|たいせつ}に{使|つか}ってほしい", cn: "①水会暂时不出　②希望珍惜用水", en: "① water will temporarily stop  ② please use water carefully" },
+					{ jp: "①{水|みず}が{一時的|いちじてき}に{濁|にご}る　②{水|みず}が{出|で}なくなるかもしれない", cn: "①水会暂时变浑　②水可能会不出", en: "① water will temporarily become cloudy  ② water may stop coming out" },
+					{ jp: "①{水|みず}を{大切|たいせつ}に{使|つか}ってほしい　②{水|みず}をくんでおいてほしい", cn: "①希望珍惜用水　②希望事先把水舀好", en: "① please use water carefully  ② please draw water in advance" },
+					{ jp: "①{水|みず}が{濁|にご}るかもしれない　②{水源|すいげん}の{水位|すいい}に{注意|ちゅうい}してほしい", cn: "①水可能会变浑　②希望注意水源的水位", en: "① water may become cloudy  ② please watch the water-source level" },
 				],
 				answer: 1,
 				explanation:
@@ -286,7 +286,7 @@ export const w2d2: ReadingDay = {
 			meaningEn: "along with… / due to…. Written style; common on notices when giving a reason.",
 			example: {
 				jp: "{工事|こうじ}に{伴|ともな}い{断水|だんすい}となります。",
-				cn: "因施工将停水。",
+				cn: "伴随施工，将停水。",
 				en: "There will be a water cutoff due to the construction.",
 			},
 		},
@@ -308,7 +308,7 @@ export const w2d2: ReadingDay = {
 			meaningEn: "to do something in advance. Kunde okimashō on a cutoff notice means draw the water beforehand.",
 			example: {
 				jp: "{飲|の}み{水|みず}とか、{洗|あら}い{物|もの}をする{水|みず}をくんでおきましょう。",
-				cn: "先把饮用水、洗碗用水舀好备用。",
+				cn: "饮用水之类、洗碗用的水，事先舀好吧。",
 				en: "Let’s draw drinking water and water for washing in advance.",
 			},
 		},

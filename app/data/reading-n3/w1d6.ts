@@ -29,22 +29,22 @@ export const w1d6: ReadingDay = {
 
 	point: {
 		title: "{家|いえ}やアパートの{案内|あんない}で{使|つか}われている{特別|とくべつ}な{言葉|ことば}を{覚|おぼ}えよう！",
-		titleCn: "记住租房、公寓广告里特有的词汇！",
+		titleCn: "来记住房屋和公寓介绍中使用的特殊词语吧！",
 		titleEn: "Let's look at some special language used in real estate advertisements!",
 		figure: {
 			alt: "「1K・2LDK・3LDKって何のこと？」という疑問と、アパート1K 3.2万円／マンション2LDK 9万円／マンション3LDK 12万円の3つの物件。「数字は部屋の数で、Kはキッチン、Dはダイニング（食事をする部屋）、Lはリビングルームのことです。読み方に注意しましょう。」",
-			cn: "「1K・2LDK・3LDK 是什么意思？」——数字表示房间数量，K 是厨房（キッチン），D 是餐厅（ダイニング＝吃饭的房间），L 是客厅（リビングルーム）。注意读法。",
+			cn: "「1K・2LDK・3LDK是什么意思？」这一疑问，以及公寓1K 3.2万日元／公寓楼2LDK 9万日元／公寓楼3LDK 12万日元这三个房源。「数字是房间的数量，K是厨房，D是餐厅（吃饭的房间），L是客厅。请注意读法。」",
 			en: "“What do 1K, 2LDK, and 3LDK mean?” The number is the number of rooms; K is kitchen, D is dining room, L is living room. Watch how they are read.",
 		},
 		tips: [
 			{
 				jp: "{数字|すうじ}は{部屋|へや}の{数|かず}、Kはキッチン、Dはダイニング（{食事|しょくじ}をする{部屋|へや}）、Lはリビングルームのことです。{読|よ}み{方|かた}に{注意|ちゅうい}しましょう。",
-				cn: "数字＝房间数量，K＝厨房，D＝餐厅，L＝客厅。「2K」读作「にケー」，「2LDK」读作「にエルディーケー」。",
+				cn: "数字是房间的数量，K是厨房，D是餐厅（吃饭的房间），L是客厅。请注意读法。",
 				en: "The number is the number of rooms; K = kitchen, D = dining room, L = living room. 2K is read ni-kē; 2LDK is ni-eru-dī-kē.",
 			},
 		],
 		expressions: [
-			{ jp: "マンション", cn: "（钢筋结构的）公寓、大楼", en: "an apartment; well built" },
+			{ jp: "マンション", cn: "（建造得较坚固的）公寓楼", en: "an apartment; well built" },
 			{ jp: "間取り", kana: "まどり", cn: "房间布局", en: "a floor plan" },
 			{ jp: "和室", kana: "わしつ", cn: "日式房间（榻榻米）", en: "a Japanese style room" },
 			{ jp: "洋室", kana: "ようしつ", cn: "西式房间", en: "a Western-style room" },
@@ -63,7 +63,7 @@ export const w1d6: ReadingDay = {
 
 	renshu: {
 		instruction: "{次|つぎ}の{会話文|かいわぶん}を{読|よ}んで、{後|あと}の{文|ぶん}から{正|ただ}しいものを{選|えら}ぼう。",
-		instructionCn: "阅读下面的对话，从后面的句子中选出正确的。（答案在下一页）",
+		instructionCn: "阅读下面的对话，从后面的句子中选出正确的吧。",
 		instructionEn: "Read the conversation below and choose the correct statements from the sentences that follow. (Answers are on the next page.)",
 		blocks: [
 			{
@@ -72,7 +72,7 @@ export const w1d6: ReadingDay = {
 				speakerCn: "妻子",
 				speakerEn: "Wife",
 				jp: "このマンションはどう？　{駅|えき}から{徒歩|とほ}5{分|ふん}って{書|か}いてあるし、{広|ひろ}さもちょうどいいんじゃない？　{家賃|やちん}もそんなに{高|たか}くないし。",
-				cn: "这套公寓怎么样？上面写着离车站步行 5 分钟，大小也正合适吧？房租也不算太贵。",
+				cn: "这套公寓楼怎么样？写着从车站步行5分钟，大小不也正合适吗？房租也没那么贵。",
 				en: "How about this apartment? It says it’s a 5-minute walk from the station, and the size is just right, isn’t it? The rent isn’t that high either.",
 			},
 			{
@@ -81,74 +81,74 @@ export const w1d6: ReadingDay = {
 				speakerCn: "丈夫",
 				speakerEn: "Husband",
 				jp: "そうだね。{敷金|しききん}は3ヵ{月分|げつぶん}だけれど、{礼金|れいきん}はなしって{書|か}いてあるし、いいかもしれない。でも、{本当|ほんとう}は{一軒家|いっけんや}のほうがいいんだけどなあ。",
-				cn: "是啊。押金是 3 个月的房租，不过上面写着不用谢礼金，也许不错。不过说实话，我还是更想住独栋房子啊。",
+				cn: "是啊。虽然押金是3个月的份，但写着没有礼金，也许不错。不过，其实还是独栋房子更好啊。",
 				en: "Yeah. The deposit is three months’ rent, but it says there’s no key money, so it might be fine. Still, I’d really rather live in a detached house.",
 			},
 		],
 		choices: [
 			{ jp: "{夫婦|ふうふ}は{住|す}むところをさがしている。", cn: "这对夫妇正在找住的地方。", en: "The couple is looking for a place to live." },
-			{ jp: "{夫婦|ふうふ}は{今|いま}、マンションを{見学|けんがく}している。", cn: "这对夫妇现在正在实地参观公寓。", en: "The couple is now viewing an apartment in person." },
-			{ jp: "このマンションを{借|か}りる{場合|ばあい}、{敷金|しききん}は3ヵ{月前|げつまえ}に{払|はら}わなければならない。", cn: "租这套公寓的话，押金必须提前 3 个月支付。", en: "If they rent this apartment, they must pay the deposit three months in advance." },
-			{ jp: "このマンションを{借|か}りる{場合|ばあい}、{礼金|れいきん}を{払|はら}わなくてもいい。", cn: "租这套公寓的话，可以不用付谢礼金。", en: "If they rent this apartment, they do not have to pay key money." },
-			{ jp: "{夫|おっと}はマンションより{一軒家|いっけんや}に{住|す}みたいと{思|おも}っている。", cn: "比起公寓，丈夫更想住独栋房子。", en: "The husband would rather live in a detached house than in an apartment." },
+			{ jp: "{夫婦|ふうふ}は{今|いま}、マンションを{見学|けんがく}している。", cn: "这对夫妇现在正在参观公寓楼。", en: "The couple is now viewing an apartment in person." },
+			{ jp: "このマンションを{借|か}りる{場合|ばあい}、{敷金|しききん}は3ヵ{月前|げつまえ}に{払|はら}わなければならない。", cn: "如果租这套公寓楼，押金必须在3个月前支付。", en: "If they rent this apartment, they must pay the deposit three months in advance." },
+			{ jp: "このマンションを{借|か}りる{場合|ばあい}、{礼金|れいきん}を{払|はら}わなくてもいい。", cn: "如果租这套公寓楼，可以不付礼金。", en: "If they rent this apartment, they do not have to pay key money." },
+			{ jp: "{夫|おっと}はマンションより{一軒家|いっけんや}に{住|す}みたいと{思|おも}っている。", cn: "丈夫觉得，比起公寓楼，更想住独栋房子。", en: "The husband would rather live in a detached house than in an apartment." },
 		],
 		answers: [1, 4, 5],
 		hint: {
 			jp: "「{敷金|しききん}3ヵ{月|げつ}」は「{家賃|やちん}3ヵ{月分|げつぶん}の{金額|きんがく}」のこと。「3ヵ{月前|げつまえ}に{払|はら}う」ではない。",
-			cn: "「敷金 3 ヵ月」指的是「相当于 3 个月房租的金额」，不是「提前 3 个月付」。另外两人是在看广告，不是在实地参观。",
+			cn: "「押金3个月」指的是「相当于3个月房租的金额」。并不是「在3个月前支付」。",
 			en: "“Deposit: 3 months” means an amount equal to three months’ rent, not “pay three months in advance.” Also, they are looking at an ad, not viewing the place in person.",
 		},
 	},
 
 	mondai: {
 		instruction: "{次|つぎ}の{募集広告|ぼしゅうこうこく}を{読|よ}んで、{後|あと}の{問|と}いに{答|こた}えなさい。",
-		instructionCn: "阅读下面的租房广告，回答后面的问题。（答案在别册 p.2）",
+		instructionCn: "请阅读下面的招租广告，回答后面的问题。",
 		instructionEn: "Read the rental advertisement below and answer the questions that follow. (Answers are in the separate booklet, p. 2.)",
 		blocks: [
 			{
 				type: "title",
 				jp: "マンション　2K",
-				cn: "公寓　2K（两室一厨）",
+				cn: "公寓楼　2K",
 				en: "Apartment — 2K (two rooms + kitchen)",
-				sub: { jp: "{中央線中野駅徒歩|ちゅうおうせんなかのえきとほ}5{分|ふん}", cn: "中央线中野站步行 5 分钟", en: "5 minutes on foot from Nakano Station on the Chūō Line" },
+				sub: { jp: "{中央線中野駅徒歩|ちゅうおうせんなかのえきとほ}5{分|ふん}", cn: "中央线中野站步行5分钟", en: "5 minutes on foot from Nakano Station on the Chūō Line" },
 			},
 			{
 				type: "table",
 				rows: [
 					[
 						{ jp: "{家賃|やちん}", cn: "房租", en: "Rent", header: true, align: "center" },
-						{ jp: "9.6{万円|まんえん}", cn: "9.6 万日元", en: "96,000 yen" },
+						{ jp: "9.6{万円|まんえん}", cn: "9.6万日元", en: "96,000 yen" },
 					],
 					[
 						{ jp: "{敷金|しききん}", cn: "押金", en: "Deposit", header: true, align: "center" },
-						{ jp: "3ヵ{月|げつ}", cn: "3 个月（＝3 个月房租的金额）", en: "3 months (= three months’ rent)" },
+						{ jp: "3ヵ{月|げつ}", cn: "3个月", en: "3 months (= three months’ rent)" },
 					],
 					[
-						{ jp: "{礼金|れいきん}", cn: "谢礼金", en: "Key money", header: true, align: "center" },
+						{ jp: "{礼金|れいきん}", cn: "礼金", en: "Key money", header: true, align: "center" },
 						{ jp: "なし", cn: "无", en: "None" },
 					],
 					[
 						{ jp: "{管理費|かんりひ}", cn: "管理费", en: "Management fee", header: true, align: "center" },
-						{ jp: "{月|つき}4,000{円|えん}", cn: "每月 4,000 日元", en: "4,000 yen a month" },
+						{ jp: "{月|つき}4,000{円|えん}", cn: "每月4,000日元", en: "4,000 yen a month" },
 					],
 					[
 						{ jp: "{専有面積|せんゆうめんせき}", cn: "专有面积", en: "Floor space", header: true, align: "center" },
-						{ jp: "52.05㎡", cn: "52.05 平方米", en: "52.05 m²" },
+						{ jp: "52.05㎡", cn: "52.05㎡", en: "52.05 m²" },
 					],
 					[
-						{ jp: "{階数|かいすう}", cn: "楼层", en: "Floor", header: true, align: "center" },
-						{ jp: "4{階建|かいだ}て3{階|かい}", cn: "4 层楼的第 3 层", en: "3rd floor of a 4-story building" },
+						{ jp: "{階数|かいすう}", cn: "层数", en: "Floor", header: true, align: "center" },
+						{ jp: "4{階建|かいだ}て3{階|かい}", cn: "4层楼的第3层", en: "3rd floor of a 4-story building" },
 					],
 					[
 						{ jp: "{築年数|ちくねんすう}", cn: "房龄", en: "Age of building", header: true, align: "center" },
-						{ jp: "{築|ちく}15{年|ねん}", cn: "建成 15 年", en: "Built 15 years ago" },
+						{ jp: "{築|ちく}15{年|ねん}", cn: "建成15年", en: "Built 15 years ago" },
 					],
 				],
 			},
 			{
 				type: "figure",
 				alt: "2Kの間取り図：キッチン、バス、トイレ、和室6畳、洋室8畳、ベランダ",
-				cn: "2K 户型图：厨房、浴室、卫生间、和室 6 叠、洋室 8 叠、阳台。",
+				cn: "2K的户型图：厨房、浴室、卫生间、和室6叠、洋室8叠、阳台",
 				en: "2K floor plan: kitchen, bath, toilet, 6-tatami Japanese-style room, 8-tatami Western-style room, balcony.",
 				svg: floorPlan,
 			},
@@ -156,8 +156,8 @@ export const w1d6: ReadingDay = {
 				type: "list",
 				marker: "・",
 				items: [
-					{ jp: "{使|つか}いやすい{間取|まど}り!!", cn: "格局好用!!", en: "A convenient floor plan!!" },
-					{ jp: "バス・トイレ{別|べつ}＊　エアコン{付|つき}", cn: "浴室与卫生间分开＊　配有空调", en: "Separate bath and toilet＊　Air-conditioner included" },
+					{ jp: "{使|つか}いやすい{間取|まど}り!!", cn: "使用方便的户型!!", en: "A convenient floor plan!!" },
+					{ jp: "バス・トイレ{別|べつ}＊　エアコン{付|つき}", cn: "浴室・卫生间分开＊　带空调", en: "Separate bath and toilet＊　Air-conditioner included" },
 					{ jp: "ペット{不可|ふか}", cn: "不可养宠物", en: "No pets" },
 				],
 			},
@@ -167,13 +167,13 @@ export const w1d6: ReadingDay = {
 			{
 				label: "問1",
 				jp: "この{広告|こうこく}でわからないのはどれか。",
-				cn: "从这则广告中无法得知的是哪一项？",
+				cn: "从这则广告中无法知道的是哪一个？",
 				en: "Which of the following can you not tell from this advertisement?",
 				choices: [
-					{ jp: "エアコンがいくつついているか。", cn: "配了几台空调。", en: "How many air-conditioners there are." },
-					{ jp: "{敷金|しききん}をいくらはらえばいいか。", cn: "押金要付多少钱。", en: "How much the deposit is." },
+					{ jp: "エアコンがいくつついているか。", cn: "空调装有几台。", en: "How many air-conditioners there are." },
+					{ jp: "{敷金|しききん}をいくらはらえばいいか。", cn: "押金付多少钱就行。", en: "How much the deposit is." },
 					{ jp: "この{部屋|へや}が{何階|なんがい}にあるか。", cn: "这个房间在几层。", en: "Which floor this room is on." },
-					{ jp: "このマンションが{何年前|なんねんまえ}に{建|た}てられたか。", cn: "这栋公寓是几年前建的。", en: "How many years ago this apartment was built." },
+					{ jp: "このマンションが{何年前|なんねんまえ}に{建|た}てられたか。", cn: "这栋公寓楼是几年前建造的。", en: "How many years ago this apartment was built." },
 				],
 				answer: 1,
 				explanation:
@@ -196,13 +196,13 @@ export const w1d6: ReadingDay = {
 			{
 				label: "問2",
 				jp: "この{広告|こうこく}の{内容|ないよう}と{合|あ}っているものはどれか。",
-				cn: "下列哪一项与这则广告的内容相符？",
+				cn: "与这则广告的内容相符的是哪一个？",
 				en: "Which of the following matches the content of this advertisement?",
 				choices: [
-					{ jp: "{毎月払|まいつきはら}うのは96,000{円|えん}である。", cn: "每月要付的是 96,000 日元。", en: "The monthly payment is 96,000 yen." },
-					{ jp: "{敷金|しききん}は96,000{円|えん}の3{倍分|ばいぶん}を{払|はら}わなければならない。", cn: "押金必须付 96,000 日元的 3 倍。", en: "You must pay a deposit of three times 96,000 yen." },
+					{ jp: "{毎月払|まいつきはら}うのは96,000{円|えん}である。", cn: "每月支付的是96,000日元。", en: "The monthly payment is 96,000 yen." },
+					{ jp: "{敷金|しききん}は96,000{円|えん}の3{倍分|ばいぶん}を{払|はら}わなければならない。", cn: "押金必须支付96,000日元的3倍的份。", en: "You must pay a deposit of three times 96,000 yen." },
 					{ jp: "エアコンの{代金|だいきん}を{払|はら}わなければならない。", cn: "必须支付空调的费用。", en: "You must pay for the air-conditioner." },
-					{ jp: "{洋室|ようしつ}より{和室|わしつ}のほうが{広|ひろ}い。", cn: "和室比洋室宽敞。", en: "The Japanese-style room is larger than the Western-style room." },
+					{ jp: "{洋室|ようしつ}より{和室|わしつ}のほうが{広|ひろ}い。", cn: "比起洋室，和室更宽敞。", en: "The Japanese-style room is larger than the Western-style room." },
 				],
 				answer: 2,
 				explanation:
@@ -250,14 +250,14 @@ export const w1d6: ReadingDay = {
 			pattern: "〜付（つき）／〜別（べつ）／〜不可（ふか）",
 			meaning: "租房广告的固定缩略语。「エアコン付」＝附带空调；「バス・トイレ別」＝浴室和厕所分开；「ペット不可」＝不能养宠物。",
 			meaningEn: "Set abbreviations in rental ads. eakon-tsuki = air-conditioner included; basu-toire betsu = separate bath and toilet; petto fuka = no pets.",
-			example: { jp: "エアコン{付|つき}／ペット{不可|ふか}", cn: "配有空调／不可养宠物", en: "air-conditioner included / no pets" },
+			example: { jp: "エアコン{付|つき}／ペット{不可|ふか}", cn: "带空调／不可养宠物", en: "air-conditioner included / no pets" },
 		},
 		{
 			pattern: "〜ヵ月分",
 			formation: "数量詞 ＋ 分（ぶん）",
 			meaning: "相当于……的量／金额。「敷金3ヵ月」＝相当于 3 个月房租的押金。",
 			meaningEn: "an amount equal to…. “Deposit: 3 months” = a deposit equal to three months’ rent.",
-			example: { jp: "{敷金|しききん}は3ヵ{月分|げつぶん}", cn: "押金为 3 个月（房租）的金额", en: "The deposit is three months’ (rent)." },
+			example: { jp: "{敷金|しききん}は3ヵ{月分|げつぶん}", cn: "押金是3个月的份", en: "The deposit is three months’ (rent)." },
 			note: "本课陷阱：不是「提前 3 个月付」的意思。",
 			noteEn: "A common trap: it does not mean “pay three months in advance.”",
 		},
@@ -265,27 +265,27 @@ export const w1d6: ReadingDay = {
 			pattern: "〜って書いてある",
 			meaning: "上面写着……。「って」是「と」的口语形式，看广告、看告示时的常用说法。",
 			meaningEn: "it says… / it’s written that…. tte is the spoken form of to; common when reading ads or notices.",
-			example: { jp: "{駅|えき}から{徒歩|とほ}5{分|ふん}って{書|か}いてある", cn: "上面写着离车站步行 5 分钟", en: "It says it’s a 5-minute walk from the station." },
+			example: { jp: "{駅|えき}から{徒歩|とほ}5{分|ふん}って{書|か}いてある", cn: "写着从车站步行5分钟", en: "It says it’s a 5-minute walk from the station." },
 		},
 		{
 			pattern: "〜んじゃない？",
 			meaning: "不是……吗？向对方确认自己的看法，语气比较柔和。",
 			meaningEn: "Isn’t it…? Checking your opinion with the listener; a soft tone.",
-			example: { jp: "{広|ひろ}さもちょうどいいんじゃない？", cn: "大小也正合适吧？", en: "The size is just right, isn’t it?" },
+			example: { jp: "{広|ひろ}さもちょうどいいんじゃない？", cn: "大小不也正合适吗？", en: "The size is just right, isn’t it?" },
 		},
 		{
 			pattern: "〜より〜のほうがいい",
 			formation: "名詞A より 名詞B のほうがいい",
 			meaning: "比起 A，B 更好。比较句型。",
 			meaningEn: "B is better than A. A basic comparison pattern.",
-			example: { jp: "{本当|ほんとう}は{一軒家|いっけんや}のほうがいい", cn: "说实话还是独栋房子更好", en: "To be honest, a detached house would be better." },
+			example: { jp: "{本当|ほんとう}は{一軒家|いっけんや}のほうがいい", cn: "其实还是独栋房子更好", en: "To be honest, a detached house would be better." },
 		},
 		{
 			pattern: "〜なくてもいい",
 			formation: "動詞ない形（ない→なくても）＋ いい",
 			meaning: "不……也可以、不必……。",
 			meaningEn: "you don’t have to… / it’s all right not to….",
-			example: { jp: "{礼金|れいきん}を{払|はら}わなくてもいい。", cn: "可以不用付谢礼金。", en: "You don’t have to pay key money." },
+			example: { jp: "{礼金|れいきん}を{払|はら}わなくてもいい。", cn: "可以不付礼金。", en: "You don’t have to pay key money." },
 		},
 		{
 			pattern: "〜かもしれない",

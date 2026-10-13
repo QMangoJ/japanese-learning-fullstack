@@ -12,7 +12,7 @@ export const w2d5: ReadingDay = {
 
 	point: {
 		title: "{改|あらた}まった{手紙|てがみ}の{形式|けいしき}を{覚|おぼ}えよう！",
-		titleCn: "记住正式书信的格式！",
+		titleCn: "来记住正式书信的格式吧！",
 		titleEn: "Try to remember the format of formal letters!",
 		tips: [
 			{
@@ -22,32 +22,32 @@ export const w2d5: ReadingDay = {
 			},
 			{
 				jp: "①{始|はじ}めと{終|お}わりの{言葉|ことば}　→　{拝啓|はいけい}……{敬具|けいぐ}・{前略|ぜんりゃく}……{草々|そうそう}　＊{始|はじ}めと{終|お}わりに{書|か}く",
-				cn: "①开头和结尾用语　→　拜启……敬具・前略……草草　＊写在开头和结尾",
+				cn: "①开头和结尾的用语　→　拜启……敬具・前略……草草　＊写在开头和结尾",
 				en: "① Opening and closing words → Haikei… Keigu / Zenryaku… Sōsō  * Written at the beginning and the end",
 			},
 			{
 				jp: "②{始|はじ}めの{挨拶|あいさつ}　→　ex. {時下|じか}ますますご{清栄|せいえい}（ご{健勝|けんしょう}）のこととお{喜|よろこ}び{申|もう}し{上|あ}げます。",
-				cn: "②开头寒暄　→　例：时下日益清泰（康健），可喜可贺。",
+				cn: "②开头的寒暄　→　例：时下您日益清荣（康健），不胜欣喜。",
 				en: "② Opening greeting → e.g. I hope this letter finds you well.",
 			},
 			{
 				jp: "③{終|お}わりの{挨拶|あいさつ}　→　ex. {今後|こんご}のご{活躍|かつやく}をお{祈|いの}り{申|もう}し{上|あ}げます。",
-				cn: "③结尾寒暄　→　例：祝愿您今后大展宏图。",
+				cn: "③结尾的寒暄　→　例：谨祝您今后大有作为。",
 				en: "③ Closing greeting → e.g. I wish you all the best in your future endeavors.",
 			},
 			{
 				jp: "【{重要|じゅうよう}な{部分|ぶぶん}】",
-				cn: "【重要部分】",
+				cn: "【重要的部分】",
 				en: "[Important parts]",
 			},
 			{
 				jp: "①キーワード　→　{書類選考|しょるいせんこう}・{一次試験|いちじしけん}・{二次試験|にじしけん}・{面接|めんせつ}・{履歴書|りれきしょ}",
-				cn: "①关键词　→　材料筛选・一次考试・二次考试・面试・简历",
+				cn: "①关键词　→　书面材料选拔・一次考试・二次考试・面试・履历书",
 				en: "① Keywords → screening of documents, first exam, second exam, interview, résumé",
 			},
 			{
 				jp: "②{結果|けっか}　→　「{不合格|ふごうかく}」「{不採用|ふさいよう}」→だめだった　／　「{採用|さいよう}」「{合格|ごうかく}」→{二次試験|にじしけん}、{面接|めんせつ}の{場所|ばしょ}・{日時|にちじ}、{持|も}っていくものに{注意|ちゅうい}",
-				cn: "②结果　→　「不合格」「不录用」＝没过　／　「录用」「合格」→注意二次考试、面试的地点・日期时间、要带的东西",
+				cn: "②结果　→　「不合格」「不录用」→没成　／　「录用」「合格」→注意二次考试、面试的地点・日期时间、要带去的东西",
 				en: "② Result → “fail” / “not hired” = unsuccessful. “Hired” / “pass” → check the place and time of the next exam or interview, and what to bring.",
 			},
 		],
@@ -66,7 +66,7 @@ export const w2d5: ReadingDay = {
 
 	renshu: {
 		instruction: "{次|つぎ}の{会話文|かいわぶん}を{読|よ}んで、{後|あと}の{文|ぶん}から{正|ただ}しいものを{選|えら}ぼう。",
-		instructionCn: "阅读下面的对话，从后面的句子中选出正确的。（答案在下一页）",
+		instructionCn: "阅读下面的对话，从后面的句子中选出正确的吧。",
 		instructionEn: "Read the conversation below and choose the correct statements from the sentences that follow. (Answers are on the next page.)",
 		blocks: [
 			{
@@ -75,7 +75,7 @@ export const w2d5: ReadingDay = {
 				speakerCn: "田中",
 				speakerEn: "Tanaka",
 				jp: "{先輩|せんぱい}、{就活|しゅうかつ}はどうですか？",
-				cn: "学长，求职怎么样了？",
+				cn: "前辈，求职怎么样？",
 				en: "Senpai, how is the job hunt going?",
 			},
 			{
@@ -84,7 +84,7 @@ export const w2d5: ReadingDay = {
 				speakerCn: "森",
 				speakerEn: "Mori",
 				jp: "ああ、{就職活動|しゅうしょくかつどう}？　{一|ひと}つ{落|お}ちて、{一|ひと}つ{受|う}かったところ。",
-				cn: "啊，求职？一个没过，一个刚过。",
+				cn: "啊，求职活动？　一个没过，一个刚过。",
 				en: "The job hunt? I failed one and just passed another.",
 			},
 			{
@@ -93,7 +93,7 @@ export const w2d5: ReadingDay = {
 				speakerCn: "田中",
 				speakerEn: "Tanaka",
 				jp: "わあ、おめでとうございます！　それ、{採用通知|さいようつうち}ですか。",
-				cn: "哇，恭喜！那是录用通知吗？",
+				cn: "哇，恭喜！　那是录用通知吗？",
 				en: "Wow, congratulations! Is that a job offer?",
 			},
 			{
@@ -102,7 +102,7 @@ export const w2d5: ReadingDay = {
 				speakerCn: "森",
 				speakerEn: "Mori",
 				jp: "まだだよ。{一次|いちじ}が{通|とお}っただけで、これから{二次|にじ}の{面接|めんせつ}があるんだから。あれ、この{日|ひ}、{大学|だいがく}の{補講|ほこう}があるんだった。どうしよう。",
-				cn: "还早呢。只是一试过了，接下来还有二试面试。咦，这一天大学有补课。怎么办。",
+				cn: "还没呢。只是一次过了而已，接下来还有二次面试呢。咦，这一天，大学有补课来着。怎么办。",
 				en: "Not yet. I only passed the first round; there’s still a second-round interview. Wait, I have a makeup class at university that day. What do I do?",
 			},
 			{
@@ -111,7 +111,7 @@ export const w2d5: ReadingDay = {
 				speakerCn: "田中",
 				speakerEn: "Tanaka",
 				jp: "{先生|せんせい}にお{願|ねが}いして{休|やす}ませてもらうとか、{会社|かいしゃ}に{別|べつ}の{日|ひ}にしてもらうとか？",
-				cn: "跟老师请假，或者请公司改期？",
+				cn: "跟老师请求准假不去，或者请公司改到别的日子之类的？",
 				en: "Ask the teacher for the day off, or ask the company for another day?",
 			},
 			{
@@ -120,16 +120,16 @@ export const w2d5: ReadingDay = {
 				speakerCn: "森",
 				speakerEn: "Mori",
 				jp: "こういう{場合|ばあい}、どっちに{先|さき}に{聞|き}いたらいいんだろう？　{学生課|がくせいか}で{相談|そうだん}してみる。",
-				cn: "这种时候该先问哪边？我去学生科商量看看。",
+				cn: "这种情况下，该先问哪一边才好呢？　去学生科商量看看。",
 				en: "In this situation, which should I ask first? I’ll talk it over at the student affairs office.",
 			},
 		],
 		choices: [
-			{ jp: "{田中|たなか}さんは{森|もり}さんの{後輩|こうはい}である。", cn: "田中是森的学弟。", en: "Tanaka is Mori’s junior." },
-			{ jp: "{森|もり}さんは{就職|しゅうしょく}が{決|き}まった。", cn: "森已经确定工作了。", en: "Mori has already landed a job." },
-			{ jp: "{森|もり}さんにとって{二次試験|にじしけん}の{日|ひ}は{都合|つごう}が{悪|わる}い。", cn: "对森来说，二试那天时间不方便。", en: "The day of the second exam is inconvenient for Mori." },
-			{ jp: "{森|もり}さんは{補講|ほこう}を{休|やす}んで{面接|めんせつ}を{受|う}ける。", cn: "森会请假不去补课去面试。", en: "Mori will skip the makeup class and attend the interview." },
-			{ jp: "{森|もり}さんは{面接|めんせつ}の{日|ひ}を{別|べつ}の{日|ひ}にしてもらう。", cn: "森会请对方把面试改到另一天。", en: "Mori will have the interview moved to another day." },
+			{ jp: "{田中|たなか}さんは{森|もり}さんの{後輩|こうはい}である。", cn: "田中是森的后辈。", en: "Tanaka is Mori’s junior." },
+			{ jp: "{森|もり}さんは{就職|しゅうしょく}が{決|き}まった。", cn: "森已经确定就职了。", en: "Mori has already landed a job." },
+			{ jp: "{森|もり}さんにとって{二次試験|にじしけん}の{日|ひ}は{都合|つごう}が{悪|わる}い。", cn: "对森来说，二次考试那天不方便。", en: "The day of the second exam is inconvenient for Mori." },
+			{ jp: "{森|もり}さんは{補講|ほこう}を{休|やす}んで{面接|めんせつ}を{受|う}ける。", cn: "森不上补课，去参加面试。", en: "Mori will skip the makeup class and attend the interview." },
+			{ jp: "{森|もり}さんは{面接|めんせつ}の{日|ひ}を{別|べつ}の{日|ひ}にしてもらう。", cn: "森请对方把面试的日期改到别的日子。", en: "Mori will have the interview moved to another day." },
 		],
 		answers: [1, 3],
 	},
@@ -137,7 +137,7 @@ export const w2d5: ReadingDay = {
 	mondai: {
 		instruction:
 			"{次|つぎ}の2つの{文書|ぶんしょ}は{森|もり}さんが{受|う}け{取|と}った{就職試験|しゅうしょくしけん}の{結果通知|けっかつうち}の{一部|いちぶ}である。{読|よ}んで、{後|あと}の{問|と}いに{答|こた}えなさい。",
-		instructionCn: "下面两份文书是森收到的就职考试结果通知的一部分。阅读后回答后面的问题。（答案在别册 p.3）",
+		instructionCn: "下面两份文书是森收到的就职考试结果通知的一部分。阅读后，回答后面的问题。",
 		instructionEn: "The two documents below are parts of job-exam result notices that Mori received. Read them and answer the questions that follow. (Answers are in the separate booklet, p. 3.)",
 		blocks: [
 			{
@@ -149,7 +149,7 @@ export const w2d5: ReadingDay = {
 			{
 				type: "title",
 				jp: "ご{応募|おうぼ}の{結果|けっか}について",
-				cn: "关于应聘结果",
+				cn: "关于您应聘的结果",
 				en: "Regarding the result of your application",
 			},
 			{
@@ -161,31 +161,31 @@ export const w2d5: ReadingDay = {
 			{
 				type: "paragraph",
 				jp: "{時下|じか}、ますますご{健勝|けんしょう}のことと、お{喜|よろこ}び{申|もう}し{上|あ}げます。",
-				cn: "时下您日益康健，可喜可贺。",
+				cn: "时下，您日益康健，不胜欣喜。",
 				en: "I hope this letter finds you in ever better health.",
 			},
 			{
 				type: "paragraph",
 				jp: "このたびは{弊社|へいしゃ}の{社員採用試験|しゃいんさいようしけん}にご{応募|おうぼ}いただき、ありがとうございました。",
-				cn: "此次承蒙应聘敝公司员工录用考试，深表感谢。",
+				cn: "此次承蒙应聘敝公司的员工录用考试，深表感谢。",
 				en: "Thank you for applying to our company’s employee hiring examination.",
 			},
 			{
 				type: "paragraph",
 				jp: "さて、{面接|めんせつ}の{結果|けっか}につきまして{慎重|しんちょう}に{協議|きょうぎ}いたしましたが、{残念|ざんねん}ながら、{今回|こんかい}は{不採用|ふさいよう}とさせていただくことになりました。",
-				cn: "关于面试结果，我们已慎重协议，但很遗憾，此次决定不予录用。",
+				cn: "那么，关于面试结果，我们已慎重商议，但很遗憾，此次决定不予录用。",
 				en: "We have carefully discussed the result of the interview, but regrettably we have decided not to offer you a position this time.",
 			},
 			{
 				type: "paragraph",
 				jp: "なお、お{預|あず}かりした{履歴書|りれきしょ}をご{返送|へんそう}いたします。",
-				cn: "另外，将把您交来的简历寄还。",
+				cn: "另外，我们将寄还您交存的履历书。",
 				en: "We will also return the résumé you left with us.",
 			},
 			{
 				type: "paragraph",
 				jp: "{今後|こんご}のご{活躍|かつやく}をお{祈|いの}り{申|もう}し{上|あ}げます。",
-				cn: "祝愿您今后大展宏图。",
+				cn: "谨祝您今后大有作为。",
 				en: "We wish you every success in the future.",
 			},
 			{
@@ -216,19 +216,19 @@ export const w2d5: ReadingDay = {
 			{
 				type: "paragraph",
 				jp: "{先日|せんじつ}{実施|じっし}いたしました{採用試験|さいようしけん}の{選考|せんこう}の{結果|けっか}、あなたは、{第一次選考|だいいちじせんこう}に{合格|ごうかく}されましたので、お{知|し}らせいたします。",
-				cn: "日前实施的录用考试选拔结果，您已通过第一次选拔，特此通知。",
+				cn: "日前实施的录用考试，其选拔结果为您已在第一次选拔中合格，特此通知。",
 				en: "As a result of the selection in the hiring examination held the other day, you have passed the first round. We are writing to inform you.",
 			},
 			{
 				type: "paragraph",
 				jp: "つきましては、{下記|かき}の{通|とお}り{面接試験|めんせつしけん}を{実施|じっし}いたしますので、よろしくお{願|ねが}いいたします。",
-				cn: "因此，将按如下安排实施面试考试，敬请光临。",
+				cn: "因此，将按如下安排实施面试考试，敬请配合。",
 				en: "We will therefore hold an interview examination as stated below, and would be grateful for your attendance.",
 			},
 			{
 				type: "paragraph",
 				jp: "なお、お{越|こ}しになれない{場合|ばあい}は、{前日|ぜんじつ}までに{必|かなら}ず{当社|とうしゃ}{総務部|そうむぶ}、{本田|ほんだ}までご{連絡|れんらく}ください。",
-				cn: "另外，如无法前来，请务必于前一天之前与本公司总务部本田联系。",
+				cn: "另外，如您无法前来，请务必于前一天之前与本公司总务部的本田联系。",
 				en: "If you are unable to come, please be sure to contact Honda in our General Affairs Department by the day before.",
 			},
 			{
@@ -243,17 +243,17 @@ export const w2d5: ReadingDay = {
 				items: [
 					{
 						jp: "{日時|にちじ}：{平成|へいせい}2X{年|ねん}5{月|がつ}20{日|にち}（{木曜日|もくようび}）{午前|ごぜん}9{時|じ}30{分|ぷん}〜{午前|ごぜん}11{時|じ}30{分|ぷん}　※{午前|ごぜん}9{時|じ}より、{受付|うけつけ}を{開始|かいし}いたします。",
-						cn: "日期时间：平成 2X 年 5 月 20 日（星期四）上午 9:30〜上午 11:30　※上午 9 点开始受理报到。",
+						cn: "日期时间：平成2X年5月20日（星期四）上午9时30分〜上午11时30分　※自上午9时起，开始接待。",
 						en: "Date and time: Thursday, May 20, Heisei 2X, 9:30 a.m.–11:30 a.m.  ※ Reception opens at 9:00 a.m.",
 					},
 					{
 						jp: "{場所|ばしょ}：○○{県|けん}みどり{市|し}{西町|にしまち}3−2−1　みどりシティホール1F　{小会議室|しょうかいぎしつ}",
-						cn: "地点：○○县绿市西町 3−2−1　绿城市大厅 1 层　小会议室",
+						cn: "地点：○○县绿市西町3-2-1　绿城市大厅1层　小会议室",
 						en: "Place: Midori City Hall 1F, small meeting room, 3-2-1 Nishimachi, Midori City, ○○ Prefecture",
 					},
 					{
 						jp: "{持|も}ち{物|もの}：{本状|ほんじょう}・{筆記用具|ひっきようぐ}・{印鑑|いんかん}（{交通費|こうつうひ}を{精算|せいさん}いたします）",
-						cn: "携带物品：本通知・书写用具・印章（交通费予以结算报销）",
+						cn: "携带物品：本函・书写用具・印章（交通费将予以结算）",
 						en: "What to bring: this letter, writing materials, and a personal seal (travel expenses will be reimbursed)",
 					},
 				],
@@ -270,7 +270,7 @@ export const w2d5: ReadingDay = {
 			{
 				label: "問1",
 				jp: "AとBに{共通|きょうつう}して{書|か}かれていることは{何|なに}か。",
-				cn: "A 和 B 共同写到的是什么？",
+				cn: "A和B中共同写着的是什么？",
 				en: "What is written in both A and B?",
 				choices: [
 					{ jp: "{面接試験|めんせつしけん}の{結果|けっか}", cn: "面试考试的结果", en: "the result of the interview examination" },
@@ -299,13 +299,13 @@ export const w2d5: ReadingDay = {
 			{
 				label: "問2",
 				jp: "Bの{通知|つうち}の{内容|ないよう}と{合|あ}うものはどれか。",
-				cn: "哪一项与 B 通知的内容相符？",
+				cn: "与B的通知内容相符的是哪一个？",
 				en: "Which of the following matches the content of notice B?",
 				choices: [
 					{ jp: "{二次面接|にじめんせつ}に{行|い}けない{人|ひと}は、{前日|ぜんじつ}に{連絡|れんらく}しなければならない。", cn: "不能去二次面试的人必须在前一天联系。", en: "People who cannot attend the second interview must contact them the day before." },
-					{ jp: "{森|もり}さんがこの{会社|かいしゃ}に{就職|しゅうしょく}できるかどうかはわからない。", cn: "森能不能进这家公司还不清楚。", en: "It is not yet known whether Mori will be hired by this company." },
-					{ jp: "{面接|めんせつ}を{受|う}ける{人|ひと}は5{月|がつ}20{日|にち}の9{時|じ}までに{行|い}かなければならない。", cn: "参加面试的人必须在 5 月 20 日 9 点之前到达。", en: "People taking the interview must arrive by 9:00 on May 20." },
-					{ jp: "この{会社|かいしゃ}の{面接試験|めんせつしけん}は{社内|しゃない}で{行|おこな}われる{予定|よてい}だ。", cn: "这家公司的面试预定在公司内部举行。", en: "This company’s interview is scheduled to be held on its own premises." },
+					{ jp: "{森|もり}さんがこの{会社|かいしゃ}に{就職|しゅうしょく}できるかどうかはわからない。", cn: "不知道森能否在这家公司就职。", en: "It is not yet known whether Mori will be hired by this company." },
+					{ jp: "{面接|めんせつ}を{受|う}ける{人|ひと}は5{月|がつ}20{日|にち}の9{時|じ}までに{行|い}かなければならない。", cn: "接受面试的人必须在5月20日9时之前去。", en: "People taking the interview must arrive by 9:00 on May 20." },
+					{ jp: "この{会社|かいしゃ}の{面接試験|めんせつしけん}は{社内|しゃない}で{行|おこな}われる{予定|よてい}だ。", cn: "这家公司的面试考试预定在公司内部举行。", en: "This company’s interview is scheduled to be held on its own premises." },
 				],
 				answer: 2,
 				explanation:
@@ -379,7 +379,7 @@ export const w2d5: ReadingDay = {
 			meaningEn: "Honorific of kuru. Used on notices when asking the addressee to come.",
 			example: {
 				jp: "お{越|こ}しになれない{場合|ばあい}は、{前日|ぜんじつ}までにご{連絡|れんらく}ください。",
-				cn: "如无法前来，请于前一天之前联系。",
+				cn: "如您无法前来，请于前一天之前联系。",
 				en: "If you are unable to come, please contact us by the day before.",
 			},
 		},

@@ -12,17 +12,17 @@ export const w4d1: ReadingDay = {
 
 	point: {
 		title: "{答|こた}えが{書|か}いてある{部分|ぶぶん}を{見|み}つけよう！",
-		titleCn: "找出写着答案的部分！",
+		titleCn: "找出写着答案的部分吧！",
 		titleEn: "Let's focus on locating the answers!",
 		figure: {
 			alt: "星マークのキャラクターが「問いを先に読むと、早く答えが見付けられるね！」と言い、眼鏡のキャラクターが本を読みながら「問いの○○、△△、××を探すと、近くに答えの「……」が見つかります。」と言っている",
-			cn: "带星号的角色说：「先读问题的话，很快就能找到答案！」戴眼镜的角色一边看书一边说：「去找问题里的○○、△△、××，附近就能看到答案的「……」。」",
+			cn: "带星星标记的角色说：「先读问题的话，就能更快找到答案呢！」戴眼镜的角色一边看书一边说：「寻找问题中的○○、△△、××的话，附近就能找到答案的「……」。」",
 			en: "A star-marked character says, “If you read the questions first, you’ll find the answers faster!” A bespectacled character reading a book says, “Look for the ○○, △△, and ×× from the question, and you’ll find the answer ‘……’ nearby.”",
 		},
 		tips: [
 			{
 				jp: "{例えば|たとえば}{問|と}いが{次|つぎ}のような{場合|ばあい}",
-				cn: "比如问题是下面这种类型的时候",
+				cn: "例如，问题是下面这种情况时",
 				en: "For example, when the question looks like this:",
 			},
 			{
@@ -32,28 +32,28 @@ export const w4d1: ReadingDay = {
 			},
 			{
 				jp: "△△したのはいつか。　→　……ころが△△したといえるのかもしれない。",
-				cn: "△△是什么时候？　→　……的时候或许可以说是△△了。",
+				cn: "是什么时候△△的？　→　……的时候或许可以说是△△了。",
 				en: "When did △△ happen? → It may be that the time of …… is when △△ happened.",
 			},
 			{
 				jp: "{何|なん}のために××したのか。　→　……ためにしか××しなかった。",
-				cn: "是为了什么才××的？　→　只为了……才××。",
+				cn: "是为了什么才××的？　→　只为了……才××了。",
 				en: "For what purpose did they ××? → They only ××’d for the sake of …….",
 			},
 		],
 		expressions: [
 			{ jp: "〜とは何のことか", cn: "〜指的是什么", en: "what does … refer to?" },
-			{ jp: "〜したのはいつか", cn: "〜是什么时候", en: "when was it that …?" },
+			{ jp: "〜したのはいつか", cn: "是什么时候〜的", en: "when was it that …?" },
 			{ jp: "何のために〜したのか", cn: "是为了什么才〜的", en: "for what purpose did they …?" },
-			{ jp: "それは、〜のようなものであった", cn: "那是像〜一样的东西（答案常在「それは」附近）", en: "that was something like … (the answer is often near sore wa)" },
-			{ jp: "〜ころが〜したといえるのかもしれない", cn: "……的时候或许可以说是〜了", en: "it may be that that time is when … happened" },
-			{ jp: "〜ためにしか〜しなかった", cn: "只为了〜才〜", en: "only did … for the sake of …" },
+			{ jp: "それは、〜のようなものであった", cn: "那是像〜一样的东西", en: "that was something like … (the answer is often near sore wa)" },
+			{ jp: "〜ころが〜したといえるのかもしれない", cn: "〜的时候或许可以说是〜了", en: "it may be that that time is when … happened" },
+			{ jp: "〜ためにしか〜しなかった", cn: "只为了〜才〜了", en: "only did … for the sake of …" },
 		],
 	},
 
 	renshu: {
 		instruction: "{次|つぎ}の{会話文|かいわぶん}を{読|よ}んで、{後|あと}の{文|ぶん}から{正|ただ}しいものを{選|えら}ぼう。",
-		instructionCn: "阅读下面的对话，从后面的句子中选出正确的。（答案在下一页）",
+		instructionCn: "阅读下面的对话，从后面的句子中选出正确的吧。",
 		instructionEn: "Read the conversation below and choose the correct statements from the sentences that follow. (Answers are on the next page.)",
 		blocks: [
 			{
@@ -62,7 +62,7 @@ export const w4d1: ReadingDay = {
 				speakerCn: "女儿",
 				speakerEn: "Daughter",
 				jp: "{最近|さいきん}、{本|ほん}を{読|よ}まなくなったなあ、{私|わたし}。",
-				cn: "最近我不看书了啊。",
+				cn: "最近，我不看书了啊，我。",
 				en: "Lately I haven’t been reading books.",
 			},
 			{
@@ -71,7 +71,7 @@ export const w4d1: ReadingDay = {
 				speakerCn: "母亲",
 				speakerEn: "Mother",
 				jp: "え？　いつも{読|よ}んでいるじゃないの。",
-				cn: "诶？你不是一直在看吗。",
+				cn: "诶？　你不是一直在看书吗。",
 				en: "What? You’re always reading, aren’t you?",
 			},
 			{
@@ -80,7 +80,7 @@ export const w4d1: ReadingDay = {
 				speakerCn: "女儿",
 				speakerEn: "Daughter",
 				jp: "ああ、{仕事関係|しごとかんけい}の{本|ほん}ばかりなの。そういう、{必要|ひつよう}にせまられて（{注|ちゅう}）っていうのは{違|ちが}うでしょ。{中学|ちゅうがく}のころからか、こんなふうになったのは。レポート{書|か}くためとか。{子|こ}どものころは{本当|ほんとう}にただ{本|ほん}を{読|よ}んでいたのにね。{楽|たの}しかったなあ……。",
-				cn: "啊，净是和工作有关的书。那种被需要逼着看的，不算吧。变成这样大概是从中学开始的。为了写报告什么的。小时候可是真的只是在看书啊。真开心啊……。",
+				cn: "啊，净是和工作有关的书。那种被必要性所迫（注）的，不一样吧。大概是从初中那时候起吧，变成这样的。为了写报告什么的。小时候明明真的只是在看书呢。真开心啊……。",
 				en: "Ah, it’s only work-related books. Being forced to read out of necessity doesn’t count, right? I think it started around junior high. For writing reports and so on. When I was a child I really was just reading. That was fun…",
 			},
 			{
@@ -89,7 +89,7 @@ export const w4d1: ReadingDay = {
 				speakerCn: "母亲",
 				speakerEn: "Mother",
 				jp: "そうね。うれしそうに、よく{図書館|としょかん}に{通|かよ}っていたわね。あんまり{買|か}ってやれなかったしね。",
-				cn: "是啊。你当时开开心心地常去图书馆呢。我也没怎么能买给你看。",
+				cn: "是啊。你一副高兴的样子，经常去图书馆呢。也没太能给你买书啊。",
 				en: "That’s right. You used to go to the library looking so happy. I couldn’t really buy books for you, either.",
 			},
 		],
@@ -97,25 +97,25 @@ export const w4d1: ReadingDay = {
 			{ marker: "（注）", term: "必要にせまられて", jp: "out of necessity", cn: "迫于需要而不得已", en: "out of necessity" },
 		],
 		choices: [
-			{ jp: "{娘|むすめ}は{大人|おとな}になってから{本|ほん}を{読|よ}んでいない。", cn: "女儿长大以后就没再看书了。", en: "The daughter has not read books since she became an adult." },
+			{ jp: "{娘|むすめ}は{大人|おとな}になってから{本|ほん}を{読|よ}んでいない。", cn: "女儿成年以后没有看书。", en: "The daughter has not read books since she became an adult." },
 			{ jp: "{母|はは}は{娘|むすめ}が{子|こ}どものころ、よく{本|ほん}を{買|か}ってやった。", cn: "母亲在女儿小时候经常给她买书。", en: "The mother often bought books for her daughter when she was a child." },
-			{ jp: "{娘|むすめ}は{中学|ちゅうがく}のころ、よく{好|す}きな{本|ほん}を{読|よ}んで{楽|たの}しんだ。", cn: "女儿中学时经常读自己喜欢的书，并从中得到乐趣。", en: "In junior high the daughter often enjoyed reading books she liked." },
-			{ jp: "{母|はは}は、{娘|むすめ}が{子|こ}どものころ、{図書館|としょかん}で{働|はたら}いていた。", cn: "母亲在女儿小时候在图书馆工作。", en: "The mother worked at the library when her daughter was a child." },
-			{ jp: "{娘|むすめ}は{子|こ}どものころの{読書|どくしょ}が{楽|たの}しかったと{思|おも}っている。", cn: "女儿觉得小时候的阅读很快乐。", en: "The daughter thinks the reading she did as a child was enjoyable." },
+			{ jp: "{娘|むすめ}は{中学|ちゅうがく}のころ、よく{好|す}きな{本|ほん}を{読|よ}んで{楽|たの}しんだ。", cn: "女儿在初中时，经常读自己喜欢的书，并从中得到乐趣。", en: "In junior high the daughter often enjoyed reading books she liked." },
+			{ jp: "{母|はは}は、{娘|むすめ}が{子|こ}どものころ、{図書館|としょかん}で{働|はたら}いていた。", cn: "母亲在女儿小时候，在图书馆工作。", en: "The mother worked at the library when her daughter was a child." },
+			{ jp: "{娘|むすめ}は{子|こ}どものころの{読書|どくしょ}が{楽|たの}しかったと{思|おも}っている。", cn: "女儿认为小时候的阅读很愉快。", en: "The daughter thinks the reading she did as a child was enjoyable." },
 		],
 		answers: [5],
 	},
 
 	mondai: {
 		instruction: "{次|つぎ}の{文章|ぶんしょう}を{読|よ}んで、{後|あと}の{問|と}いに{答|こた}えなさい。",
-		instructionCn: "阅读下面的文章，回答后面的问题。（答案在别册 p.5）",
+		instructionCn: "请阅读下面的文章，回答后面的问题。",
 		instructionEn: "Read the passage below and answer the questions that follow. (Answers are in the separate booklet, p. 5.)",
 		blocks: [
 			{
 				type: "paragraph",
 				indent: true,
 				jp: "{子|こ}どものころ、よく{図書館|としょかん}へ{行|い}って{本|ほん}を{借|か}りたものだ。{自分|じぶん}では{楽|たの}しんで{本|ほん}を{読|よ}んでいるという{意識|いしき}はなかった。{読|よ}み{終|お}えた{本|ほん}を{返|かえ}しに{行|い}くと、そこに{当然|とうぜん}のことだが{未知|みち}の{本|ほん}があり、それをまた{借|か}りる、ということを{繰|く}り{返|かえ}していたのだ。{中学|ちゅうがく}に{入学|にゅうがく}したころからは、{学校|がっこう}のレポート{提出|ていしゅつ}などのためにしか{本|ほん}を{読|よ}まなくなった。それは{一種|いっしゅ}の{作業|さぎょう}のようなものであった。{社会人|しゃかいじん}になってから、{読|よ}みたい{本|ほん}ぐらいはいくらでも{買|か}えるようになったが、{仕事|しごと}がらみ（{注|ちゅう}）で{必要|ひつよう}にせまられてのことが{多|おお}い。{今|いま}{思|おも}うと、{図書館通|としょかんがよ}いをしていたあのころが、ほんとうに{読書|どくしょ}を{楽|たの}しんでいたと{言|い}えるのかもしれない。",
-				cn: "小时候，我常常去图书馆借书。自己并没有「我在享受阅读」这种意识。去还看完的书时，那里当然会有没读过的书，于是再借回来——就这样循环着。从进了中学以后，就只为交学校报告之类的事才看书。那成了一种作业似的东西。成为社会人以后，想读的书再怎么买也买得起了，但多半还是和工作有关、被需要逼着看的。现在想来，或许去图书馆的那段日子，才真正称得上是在享受阅读。",
+				cn: "小时候，是常常去图书馆借书的。自己并没有那种正在享受着读书的意识。去还读完的书时，那里理所当然会有没见过的书，于是再把它们借来，这样的事反复做着。从升入初中前后起，就变得只为了提交学校报告之类才读书了。那是一种像作业一样的东西。成为社会人以后，想读的书之类，无论多少都买得起了，但因和工作有关（注）而被必要性所迫的情况很多。现在想来，常去图书馆的那个时候，或许可以说是真正在享受阅读。",
 				en: "When I was a child, I often went to the library and borrowed books. I had no sense that I myself was enjoying reading. When I went to return a book I had finished, there were of course unknown books there, and I would borrow those too — I kept repeating that. From around the time I entered junior high, I stopped reading books except for things like school reports. That was something like a kind of chore. After I became a working adult I could buy as many books as I wanted to read, but much of it was still out of work-related necessity. Thinking about it now, perhaps those days of going to the library were when I was truly enjoying reading.",
 			},
 		],
@@ -126,13 +126,13 @@ export const w4d1: ReadingDay = {
 			{
 				label: "問1",
 				jp: "{一種|いっしゅ}の{作業|さぎょう}のようなものとは{何|なん}のことか。",
-				cn: "「一种作业似的东西」指的是什么？",
+				cn: "一种像作业一样的东西指的是什么？",
 				en: "What does “something like a kind of chore” refer to?",
 				choices: [
 					{ jp: "{社会人|しゃかいじん}になって{本|ほん}を{買|か}うこと", cn: "成为社会人以后买书", en: "buying books after becoming a working adult" },
 					{ jp: "{学校|がっこう}でレポートを{提出|ていしゅつ}すること", cn: "在学校提交报告", en: "submitting reports at school" },
 					{ jp: "レポート{提出|ていしゅつ}のために{本|ほん}を{読|よ}むこと", cn: "为了提交报告而读书", en: "reading books in order to submit reports" },
-					{ jp: "{図書館|としょかん}で{本|ほん}を{借|か}りたり{返|かえ}したりすること", cn: "在图书馆借书还书", en: "borrowing and returning books at the library" },
+					{ jp: "{図書館|としょかん}で{本|ほん}を{借|か}りたり{返|かえ}したりすること", cn: "在图书馆借书和还书", en: "borrowing and returning books at the library" },
 				],
 				answer: 3,
 				explanation:
@@ -155,12 +155,12 @@ export const w4d1: ReadingDay = {
 			{
 				label: "問2",
 				jp: "{筆者|ひっしゃ}がほんとうに{読書|どくしょ}を{楽|たの}しんでいたと{思|おも}われるのはいつか。",
-				cn: "笔者认为自己真正在享受阅读，是在什么时候？",
+				cn: "可以认为笔者真正在享受阅读是在什么时候？",
 				en: "When does the writer seem to have been truly enjoying reading?",
 				choices: [
 					{ jp: "{子|こ}どものころ", cn: "小时候", en: "in childhood" },
-					{ jp: "{子|こ}どものときからずっと{今|いま}も", cn: "从小时候一直到现在", en: "from childhood right up to now" },
-					{ jp: "{中学生|ちゅうがくせい}のころ", cn: "中学时候", en: "in junior-high days" },
+					{ jp: "{子|こ}どものときからずっと{今|いま}も", cn: "从小时候起一直到现在", en: "from childhood right up to now" },
+					{ jp: "{中学生|ちゅうがくせい}のころ", cn: "初中生的时候", en: "in junior-high days" },
 					{ jp: "{仕事|しごと}をするようになってから", cn: "开始工作以后", en: "after starting to work" },
 				],
 				answer: 1,
@@ -207,7 +207,7 @@ export const w4d1: ReadingDay = {
 			meaningEn: "used to … (with a nostalgic tone).",
 			example: {
 				jp: "よく{図書館|としょかん}へ{行|い}って{本|ほん}を{借|か}りたものだ。",
-				cn: "那时常常去图书馆借书。",
+				cn: "是常常去图书馆借书的。",
 				en: "I used to go to the library and borrow books.",
 			},
 		},
@@ -218,7 +218,7 @@ export const w4d1: ReadingDay = {
 			meaningEn: "only … for the sake of …. The purpose is narrowed to this one thing.",
 			example: {
 				jp: "レポート{提出|ていしゅつ}などのためにしか{本|ほん}を{読|よ}まなくなった。",
-				cn: "变得只为交报告之类的事才看书。",
+				cn: "变得只为了提交报告之类才读书了。",
 				en: "I stopped reading books except for things like submitting reports.",
 			},
 		},
@@ -229,7 +229,7 @@ export const w4d1: ReadingDay = {
 			meaningEn: "perhaps … / it may be that …. Used for a conclusion reached on looking back.",
 			example: {
 				jp: "あのころが、ほんとうに{読書|どくしょ}を{楽|たの}しんでいたと{言|い}えるのかもしれない。",
-				cn: "或许那个时候才真正称得上是在享受阅读。",
+				cn: "那个时候，或许可以说是真正在享受阅读。",
 				en: "Perhaps those days were when I was truly enjoying reading.",
 			},
 		},

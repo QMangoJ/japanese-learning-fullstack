@@ -12,51 +12,51 @@ export const w4d5: ReadingDay = {
 
 	point: {
 		title: "{指示語|しじご}に{注意|ちゅうい}！②",
-		titleCn: "注意指示词！②——注意指示词所指的内容出现在后面的情况！",
+		titleCn: "注意指示词！②",
 		titleEn: "Pay attention to demonstratives! ② — especially those which refer to subjects that are subsequently introduced!",
 		figure: {
 			alt: "「この人を知りませんか。」→いきなり女性の写真を突きつけられる。「私はこういう者です。」→男が警察手帳を見せる→刑事だった。ハートを浮かべて写真を見るキャラクター",
-			cn: "「你认识这个人吗？」→冷不丁把女性照片戳到眼前。「我是这样的人。」→男人出示警察手册→原来是刑警。角色看着照片冒出爱心。",
+			cn: "「你认识这个人吗？」→冷不防，女性的照片被戳到面前。「我是这样的人。」→男人出示警察手册→原来是刑警。看着照片冒出爱心的角色。",
 			en: "“Do you know this person?” → a woman’s photo is suddenly thrust forward. “This is who I am.” → the man shows a police notebook → he was a detective. A character looks at the photo with hearts.",
 		},
 		tips: [
 			{
 				jp: "{例えば|たとえば}こんな{場合|ばあい}があります。",
-				cn: "比如有下面这种情况。",
+				cn: "例如，有这样的情况。",
 				en: "There are cases like this, for example.",
 			},
 			{
 				jp: "「この{人|ひと}を{知|し}りませんか。」→{僕|ぼく}はいきなり、（{女性|じょせい}）の{写真|しゃしん}を{目|め}の{前|まえ}に{突|つ}きつけられた。",
-				cn: "「你认识这个人吗？」→我冷不丁被把（女性）的照片戳到眼前。",
+				cn: "「你认识这个人吗？」→我冷不防被把（女性）的照片戳到了眼前。",
 				en: "“Do you know this person?” → All of a sudden a photo of (a woman) was thrust in front of me.",
 			},
 			{
 				jp: "「{私|わたし}はこういう{者|もの}です。」そう{言|い}うと{男|おとこ}は{警察手帳|けいさつてちょう}を{見|み}せた。→（{刑事|けいじ}）だった。",
-				cn: "「我是这样的人。」男人说着出示了警察手册。→原来是（刑警）。",
+				cn: "「我是这样的人。」男人这么一说，就出示了警察手册。→原来是（刑警）。",
 				en: "“This is who I am.” Saying that, the man showed a police notebook. → He was (a detective).",
 			},
 		],
 		expressions: [
-			{ jp: "この人／こういう者", cn: "这个人／这样的人（所指在后文才出现）", en: "this person / someone like this (referent comes later)" },
+			{ jp: "この人／こういう者", cn: "这个人／这样的人", en: "this person / someone like this (referent comes later)" },
 			{ jp: "宣教師", kana: "せんきょうし", cn: "传教士、神父", en: "a missionary; a priest" },
 			{ jp: "ご存知", kana: "ごぞんじ", cn: "知道（尊敬语）", en: "to know (honorific)" },
-			{ jp: "言ってごらんなさい", cn: "你说说看（＝言ってみなさい）", en: "go ahead and say it" },
+			{ jp: "言ってごらんなさい", cn: "你说说看", en: "go ahead and say it" },
 			{ jp: "お嬢さん", kana: "おじょうさん", cn: "小姐、小姑娘", en: "young lady; miss" },
 		],
 	},
 
 	renshu: {
 		instruction: "{次|つぎ}の{会話文|かいわぶん}を{読|よ}んで、{後|あと}の{文|ぶん}から{正|ただ}しいものを{選|えら}ぼう。",
-		instructionCn: "阅读下面的对话，从后面的句子中选出正确的。（答案在下一页）",
+		instructionCn: "阅读下面的会话，从后面的句子中选出正确的吧。",
 		instructionEn: "Read the conversation below and choose the correct statements from the sentences that follow. (Answers are on the next page.)",
 		blocks: [
 			{
 				type: "speech",
 				speaker: "{宣教師|せんきょうし}（{注|ちゅう}1）",
-				speakerCn: "传教士",
+				speakerCn: "传教士（注1）",
 				speakerEn: "Missionary",
 				jp: "お{嬢|じょう}さんはおいくつですか？",
-				cn: "小姐今年多大了？",
+				cn: "小姐，您几岁了？",
 				en: "How old are you, miss?",
 			},
 			{
@@ -65,7 +65,7 @@ export const w4d5: ReadingDay = {
 				speakerCn: "少女",
 				speakerEn: "Girl",
 				jp: "あたし？　あたしは{来年|らいねん}12。",
-				cn: "我？我明年 12 岁。",
+				cn: "我？　我明年12岁。",
 				en: "Me? I’ll be twelve next year.",
 			},
 			{
@@ -74,7 +74,7 @@ export const w4d5: ReadingDay = {
 				speakerCn: "传教士",
 				speakerEn: "Missionary",
 				jp: "きょうはどちらへいらっしゃるのですか？",
-				cn: "今天要去哪里呢？",
+				cn: "今天您要去哪里呢？",
 				en: "Where are you going today?",
 			},
 			{
@@ -83,7 +83,7 @@ export const w4d5: ReadingDay = {
 				speakerCn: "少女",
 				speakerEn: "Girl",
 				jp: "きょう？　きょうはもう{家|いえ}へ{帰|かえ}るところなの。",
-				cn: "今天？今天已经是要回家了。",
+				cn: "今天？　今天已经要回家了呀。",
 				en: "Today? I’m already on my way home.",
 			},
 			{
@@ -92,7 +92,7 @@ export const w4d5: ReadingDay = {
 				speakerCn: "传教士",
 				speakerEn: "Missionary",
 				jp: "きょうは{何日|なんにち}だかご{存知|ぞんじ}ですか？",
-				cn: "你知道今天是几号吗？",
+				cn: "您知道今天是几号吗？",
 				en: "Do you know what date it is today?",
 			},
 			{
@@ -101,7 +101,7 @@ export const w4d5: ReadingDay = {
 				speakerCn: "少女",
 				speakerEn: "Girl",
 				jp: "12{月|がつ}25{日|にち}でしょう。",
-				cn: "是 12 月 25 日吧。",
+				cn: "是12月25日吧。",
 				en: "December 25th, isn’t it?",
 			},
 			{
@@ -110,7 +110,7 @@ export const w4d5: ReadingDay = {
 				speakerCn: "传教士",
 				speakerEn: "Missionary",
 				jp: "ええ、12{月|がつ}25{日|にち}です。12{月|がつ}25{日|にち}は{何|なん}の{日|ひ}ですか？お{嬢|じょう}さん、あなたはご{存知|ぞんじ}ですか？",
-				cn: "对，是 12 月 25 日。12 月 25 日是什么日子？小姐，你知道吗？",
+				cn: "嗯，是12月25日。12月25日是什么日子？小姐，您知道吗？",
 				en: "Yes, December 25th. What day is December 25th? Miss, do you know?",
 			},
 			{
@@ -119,7 +119,7 @@ export const w4d5: ReadingDay = {
 				speakerCn: "少女",
 				speakerEn: "Girl",
 				jp: "ええ、それは{知|し}っているわ。",
-				cn: "嗯，那个我知道。",
+				cn: "嗯，那个我知道呀。",
 				en: "Yes, I know that.",
 			},
 			{
@@ -128,7 +128,7 @@ export const w4d5: ReadingDay = {
 				speakerCn: "传教士",
 				speakerEn: "Missionary",
 				jp: "ではきょうは{何|なん}の{日|ひ}ですか？　ご{存知|ぞんじ}ならば{言|い}ってごらんなさい（{注|ちゅう}2）。",
-				cn: "那么今天是什么日子？知道的话就说说看。",
+				cn: "那么今天是什么日子？　您知道的话就说说看（注2）。",
 				en: "Then what day is today? If you know, go ahead and say it.",
 			},
 			{
@@ -143,7 +143,7 @@ export const w4d5: ReadingDay = {
 			{
 				type: "source",
 				jp: "（{芥川龍之介|あくたがわりゅうのすけ}『{少年|しょうねん}』〈{会話部分|かいわぶぶん}のみ{抜粋|ばっすい}〉）",
-				cn: "（芥川龙之介《少年》，仅摘录对话部分）",
+				cn: "（芥川龙之介『少年』〈仅摘录对话部分〉）",
 				en: "(Akutagawa Ryūnosuke, “Shōnen”; dialogue excerpt only)",
 			},
 		],
@@ -156,58 +156,58 @@ export const w4d5: ReadingDay = {
 			{ jp: "{少女|しょうじょ}はこれから{教会|きょうかい}へ{行|い}く。", cn: "少女接下来要去教堂。", en: "The girl is going to church from here." },
 			{ jp: "{今日|きょう}はクリスマスである。", cn: "今天是圣诞节。", en: "Today is Christmas." },
 			{ jp: "{少女|しょうじょ}は{今日|きょう}が{何日|なんにち}か{知|し}らなかった。", cn: "少女不知道今天是几号。", en: "The girl did not know what date it was today." },
-			{ jp: "{宣教師|せんきょうし}は{少女|しょうじょ}とクリスマスについて{話|はな}したかった。", cn: "传教士想和少女谈圣诞节。", en: "The missionary wanted to talk with the girl about Christmas." },
+			{ jp: "{宣教師|せんきょうし}は{少女|しょうじょ}とクリスマスについて{話|はな}したかった。", cn: "传教士想和少女谈谈圣诞节。", en: "The missionary wanted to talk with the girl about Christmas." },
 		],
 		answers: [3, 5],
 	},
 
 	mondai: {
 		instruction: "{次|つぎ}の{文章|ぶんしょう}を{読|よ}んで、{後|あと}の{問|と}いに{答|こた}えなさい。",
-		instructionCn: "阅读下面的文章，回答后面的问题。（答案在别册 p.5）",
+		instructionCn: "阅读下面的文章，回答后面的问题。",
 		instructionEn: "Read the passage below and answer the questions that follow. (Answers are in the separate booklet, p. 5.)",
 		blocks: [
 			{
 				type: "paragraph",
 				indent: true,
 				jp: "{昨年|さくねん}のクリスマスの{午後|ごご}、{堀川保吉|ほりかわやすきち}は{須田町|すだちょう}の{角|かど}から{新橋|しんばし}{行|ゆ}きの{乗|の}り{合|あ}い{自動車|じどうしゃ}（{注|ちゅう}1）に{乗|の}った。{彼|かれ}の{席|せき}だけはあったものの、{自動車|じどうしゃ}の{中|なか}は{相変|あいか}わらず{身動|みうご}きさえ{出来|でき}ぬ{満員|まんいん}（{注|ちゅう}2）である。（{中略|ちゅうりゃく}）",
-				cn: "去年圣诞节的下午，堀川保吉从须田町街角坐上了开往新桥的公共汽车。虽然他倒是有座位，可车里照旧挤得连身子都动不了。（中略）",
+				cn: "去年圣诞节的下午，堀川保吉从须田町的街角乘上了开往新桥的公共汽车（注1）。虽然他的座位倒是有，汽车里却照旧是挤得连身子都动弹不得的满员（注2）。（中略）",
 				en: "On the afternoon of Christmas last year, Horikawa Yasukichi boarded a bus bound for Shimbashi from the corner of Sudachō. He did have a seat, but the bus was as packed as ever — so full you could not even move. (passage omitted)",
 			},
-			{ type: "line", jp: "「お{嬢|じょう}さん。ここへおかけなさい。」", cn: "「小姐。请坐到这儿来。」", en: "“Miss. Please sit here.”" },
-			{ type: "paragraph", indent: true, jp: "{宣教師|せんきょうし}は{太|ふと}い{腰|こし}を{起|おこ}した。（{中略|ちゅうりゃく}）", cn: "传教士挪动粗腰站了起来。（中略）", en: "The missionary heaved his thick waist up. (passage omitted)" },
+			{ type: "line", jp: "「お{嬢|じょう}さん。ここへおかけなさい。」", cn: "「小姐。请坐到这里来。」", en: "“Miss. Please sit here.”" },
+			{ type: "paragraph", indent: true, jp: "{宣教師|せんきょうし}は{太|ふと}い{腰|こし}を{起|おこ}した。（{中略|ちゅうりゃく}）", cn: "传教士撑起粗腰站了起来。（中略）", en: "The missionary heaved his thick waist up. (passage omitted)" },
 			{ type: "line", jp: "「ありがとう。」", cn: "「谢谢。」", en: "“Thank you.”" },
 			{
 				type: "paragraph",
 				indent: true,
 				jp: "{少女|しょうじょ}は{宣教師|せんきょうし}と{入|い}れ{違|ちが}いに{保吉|やすきち}の{隣|となり}へ{腰|こし}をかけた。（{中略|ちゅうりゃく}、{左|ひだり}ページの{会話|かいわ}に{続|つづ}く）",
-				cn: "少女和传教士交错着，在保吉旁边坐下。（中略，接左页对话）",
+				cn: "少女与传教士错身而过，在保吉旁边坐下。（中略，下接左页的对话）",
 				en: "The girl sat down next to Yasukichi as she and the missionary changed places. (passage omitted; the conversation on the left-hand page continues)",
 			},
-			{ type: "line", jp: "「きょうはあなたのお{誕生日|たんじょうび}！」", cn: "「今天是你的生日！」", en: "“Today is your birthday!”" },
-			{ type: "paragraph", indent: true, jp: "{宣教師|せんきょうし}は{突然|とつぜん}{笑|わら}い{出|だ}した。（{中略|ちゅうりゃく}）", cn: "传教士突然笑了出来。（中略）", en: "The missionary suddenly burst out laughing. (passage omitted)" },
+			{ type: "line", jp: "「きょうはあなたのお{誕生日|たんじょうび}！」", cn: "「今天是您的生日！」", en: "“Today is your birthday!”" },
+			{ type: "paragraph", indent: true, jp: "{宣教師|せんきょうし}は{突然|とつぜん}{笑|わら}い{出|だ}した。（{中略|ちゅうりゃく}）", cn: "传教士突然笑了起来。（中略）", en: "The missionary suddenly burst out laughing. (passage omitted)" },
 			{
 				type: "paragraph",
 				jp: "「お{嬢|じょう}さん。あなたは{好|よ}い{日|ひ}にお{生|う}まれなさいましたね。きょうはこの{上|うえ}もないお{誕生日|たんじょうび}です。{世界中|せかいじゅう}のお{祝|いわ}いするお{誕生日|たんじょうび}です。あなたは{今|いま}に、——あなたの{大人|おとな}になった{時|とき}にはですね、あなたはきっと……」",
-				cn: "「小姐。你可是生在一个好日子啊。今天是再好不过的生日。是全世界都在庆贺的生日。你往后——等你长大成人的时候，你一定……」",
+				cn: "「小姐。您生在一个好日子里呢。今天是再好不过的生日。是全世界都庆贺的生日。您总有一天，——等您长大成人的时候呢，您一定……」",
 				en: "“Miss. You were born on a fine day. Today is the finest birthday there is. It is a birthday the whole world celebrates. One of these days — when you have grown up, that is — you will surely…”",
 			},
 			{
 				type: "paragraph",
 				indent: true,
 				jp: "{宣教師|せんきょうし}は{言葉|ことば}につかえたまま（{注|ちゅう}3）、{自動車|じどうしゃ}の{中|なか}を{見回|みまわ}した。{同時|どうじ}に{保吉|やすきち}と{眼|め}を{合|あ}わせた。{宣教師|せんきょうし}の{眼|め}はパンス・ネエ（{注|ちゅう}4）の{奥|おく}に{笑|わら}い{涙|なみだ}をかがやかせている。{保吉|やすきち}はその{幸福|こうふく}に{満|み}ちた{鼠色|ねずみいろ}の{眼|め}の{中|なか}にあらゆるクリスマスの{美|うつく}しさを{感|かん}じた＊。（{中略|ちゅうりゃく}）",
-				cn: "传教士一时语塞，环视车内。同时和保吉四目相对。传教士的眼睛在夹鼻眼镜后面闪着含笑的泪光。保吉在那双充满幸福的灰色眼睛里，感到了圣诞节的一切美丽＊。（中略）",
+				cn: "传教士话卡住了（注3），环视车内。同时与保吉对上了眼。传教士的眼睛在夹鼻眼镜（注4）后面闪烁着含笑的泪光。保吉在那双充满幸福的鼠灰色眼睛里，感到了圣诞节所有的美＊。（中略）",
 				en: "The missionary, still groping for words, looked around the bus. At the same time his eyes met Yasukichi’s. Behind the pince-nez, the missionary’s eyes were shining with tears of laughter. In those happiness-filled grey eyes Yasukichi felt all the beauty of Christmas.* (passage omitted)",
 			},
 			{
 				type: "paragraph",
 				jp: "「あなたはきっと{賢|かしこ}い{奥|おく}さんに——{優|やさ}しいお{母|かあ}さんにおなりなさるでしょう。ではお{嬢|じょう}さん、さようなら。わたしの{降|お}りる{所|ところ}へ{来|き}ましたから。では——」",
-				cn: "「你将来一定会成为聪明的太太——温柔的母亲吧。那么小姐，再见。我要下车的地方到了。那么——」",
+				cn: "「您一定会成为聪明的太太——温柔的母亲吧。那么，小姐，再见。因为到了我下车的地方了。那么——」",
 				en: "“You will surely become a wise wife — a kind mother. Well then, miss, goodbye. We have come to where I get off. Well then—”",
 			},
 			{
 				type: "source",
 				jp: "（{芥川龍之介|あくたがわりゅうのすけ}『{少年|しょうねん}』）",
-				cn: "（芥川龙之介《少年》）",
+				cn: "（芥川龙之介『少年』）",
 				en: "(Akutagawa Ryūnosuke, “Shōnen”)",
 			},
 		],
@@ -220,7 +220,7 @@ export const w4d5: ReadingDay = {
 		pageNotes: [
 			{
 				jp: "* Yasukichi found all the beauty of Christmas in his (priest's) happiness filled grey eyes.",
-				cn: "保吉从他那双充满幸福的灰色眼睛里，感受到了圣诞节所有的美。",
+				cn: "＊保吉在他（神父）那双充满幸福的灰色眼睛里，发现了圣诞节所有的美。",
 				en: "Yasukichi found all the beauty of Christmas in his (the priest’s) happiness-filled grey eyes.",
 			},
 		],
@@ -228,13 +228,13 @@ export const w4d5: ReadingDay = {
 			{
 				label: "問1",
 				jp: "ここの{指|さ}すものはどれか。",
-				cn: "「ここ」指的是哪里？",
+				cn: "「这里」指的是哪一个？",
 				en: "What does koko refer to?",
 				choices: [
 					{ jp: "{少女|しょうじょ}と{保吉|やすきち}の{間|あいだ}の{席|せき}", cn: "少女和保吉之间的座位", en: "the seat between the girl and Yasukichi" },
-					{ jp: "ひとつだけあった{保吉|やすきち}の{席|せき}", cn: "仅有的保吉自己的座位", en: "the one seat that was Yasukichi’s" },
+					{ jp: "ひとつだけあった{保吉|やすきち}の{席|せき}", cn: "仅有一个的保吉的座位", en: "the one seat that was Yasukichi’s" },
 					{ jp: "{保吉|やすきち}と{宣教師|せんきょうし}の{間|あいだ}の{席|せき}", cn: "保吉和传教士之间的座位", en: "the seat between Yasukichi and the missionary" },
-					{ jp: "{保吉|やすきち}の{隣|となり}の、{宣教師|せんきょうし}の{席|せき}", cn: "保吉旁边、传教士的座位", en: "the missionary’s seat, next to Yasukichi" },
+					{ jp: "{保吉|やすきち}の{隣|となり}の、{宣教師|せんきょうし}の{席|せき}", cn: "保吉旁边的、传教士的座位", en: "the missionary’s seat, next to Yasukichi" },
 				],
 				answer: 4,
 				explanation:
@@ -257,13 +257,13 @@ export const w4d5: ReadingDay = {
 			{
 				label: "問2",
 				jp: "{保吉|やすきち}の{気持|きも}ちとして{考|かんが}えられるものはどれか。",
-				cn: "可以看作保吉心情的是哪一项？",
+				cn: "可以看作保吉心情的是哪一个？",
 				en: "Which of the following can be taken as Yasukichi’s feeling?",
 				choices: [
-					{ jp: "クリスマスだと{答|こた}えなかった{少女|しょうじょ}はあまり{賢|かしこ}くない。", cn: "没回答是圣诞节的少女不太聪明。", en: "The girl who did not answer “Christmas” is not very clever." },
-					{ jp: "{期待|きたい}した{答|こた}えがもらえなかった{宣教師|せんきょうし}が{気|き}の{毒|どく}だ。", cn: "没得到期待中的答案，传教士挺可怜的。", en: "The missionary is pitiful for not getting the answer he expected." },
-					{ jp: "{少女|しょうじょ}の{意外|いがい}な{答|こた}えに{感動|かんどう}した{宣教師|せんきょうし}は{幸福|こうふく}そうで{美|うつく}しい。", cn: "被少女出乎意料的回答打动的传教士，看起来幸福而美好。", en: "Moved by the girl’s unexpected answer, the missionary looks happy and beautiful." },
-					{ jp: "キリスト{教|きょう}を{広|ひろ}めるために{少女|しょうじょ}に{話|はな}しかけた{宣教師|せんきょうし}は{嫌|いや}だ。", cn: "为了传播基督教而跟少女搭话的传教士让人讨厌。", en: "The missionary who spoke to the girl in order to spread Christianity is unpleasant." },
+					{ jp: "クリスマスだと{答|こた}えなかった{少女|しょうじょ}はあまり{賢|かしこ}くない。", cn: "没有回答说是圣诞节的少女不太聪明。", en: "The girl who did not answer “Christmas” is not very clever." },
+					{ jp: "{期待|きたい}した{答|こた}えがもらえなかった{宣教師|せんきょうし}が{気|き}の{毒|どく}だ。", cn: "没能得到所期待的回答的传教士很可怜。", en: "The missionary is pitiful for not getting the answer he expected." },
+					{ jp: "{少女|しょうじょ}の{意外|いがい}な{答|こた}えに{感動|かんどう}した{宣教師|せんきょうし}は{幸福|こうふく}そうで{美|うつく}しい。", cn: "被少女意外的回答感动了的传教士显得很幸福，很美丽。", en: "Moved by the girl’s unexpected answer, the missionary looks happy and beautiful." },
+					{ jp: "キリスト{教|きょう}を{広|ひろ}めるために{少女|しょうじょ}に{話|はな}しかけた{宣教師|せんきょうし}は{嫌|いや}だ。", cn: "为了传播基督教而跟少女搭话的传教士很讨厌。", en: "The missionary who spoke to the girl in order to spread Christianity is unpleasant." },
 				],
 				answer: 3,
 				explanation:
@@ -308,7 +308,7 @@ export const w4d5: ReadingDay = {
 			meaningEn: "Koko / kore / kō iu sometimes appear first, and the person, thing, or place they point to is revealed only afterward. Plug the later content back in to check.",
 			example: {
 				jp: "「お{嬢|じょう}さん。ここへおかけなさい。」→{宣教師|せんきょうし}が{立|た}ち{上|あ}がり、{少女|しょうじょ}が{保吉|やすきち}の{隣|となり}へ{座|すわ}った。",
-				cn: "「小姐，请坐到这儿来。」→传教士站起来，少女坐到了保吉旁边。",
+				cn: "「小姐。请坐到这里来。」→传教士站了起来，少女坐到了保吉旁边。",
 				en: "“Miss. Please sit here.” → The missionary stood up, and the girl sat down next to Yasukichi.",
 			},
 		},
@@ -319,7 +319,7 @@ export const w4d5: ReadingDay = {
 			meaningEn: "Honorific request or action. Okake nasai; oumare nasaimashita; onari nasaru.",
 			example: {
 				jp: "ここへおかけなさい。",
-				cn: "请坐到这儿来。",
+				cn: "请坐到这里来。",
 				en: "Please sit here.",
 			},
 		},
@@ -330,7 +330,7 @@ export const w4d5: ReadingDay = {
 			meaningEn: "although … / even though …. Concedes the first clause, then turns.",
 			example: {
 				jp: "{彼|かれ}の{席|せき}だけはあったものの、{自動車|じどうしゃ}の{中|なか}は{満員|まんいん}である。",
-				cn: "虽然他倒是有座位，可车里仍是满员。",
+				cn: "虽然他的座位倒是有，汽车里却是满员。",
 				en: "He did have a seat, but the bus was packed.",
 			},
 		},

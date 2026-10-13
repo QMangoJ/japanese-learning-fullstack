@@ -19,7 +19,7 @@ export const w6d7: ReadingDay = {
 				instruction:
 					"{次|つぎ}の（1）から（2）の{文章|ぶんしょう}を{読|よ}んで、{後|あと}の{問|と}いに{対|たい}する{答|こた}えとして{最|もっと}もよいものを1・2・3・4から{一|ひと}つ{選|えら}びなさい。",
 				instructionCn:
-					"阅读下面（1）到（2）的文章，从 1・2・3・4 中选出作为后面问题答案最合适的一个。（答案在别册 p.7〜8）",
+					"请阅读下面（1）到（2）的文章，从1・2・3・4中选出一个作为后面问题的最好答案。",
 				instructionEn:
 					"Read passages (1) through (2) below and choose the best answer to each question from 1, 2, 3, or 4. (Answers are in the separate booklet, pp. 7–8.)",
 				blocks: [
@@ -33,14 +33,14 @@ export const w6d7: ReadingDay = {
 						type: "paragraph",
 						indent: true,
 						jp: "もし、あなたが{草原|そうげん}にいて{目|め}の{前|まえ}に{猛獣|もうじゅう}（{注|ちゅう}1）が{現|あらわ}れたとしたら、{人間|にんげん}の{自然|しぜん}な{行動|こうどう}として{全力|ぜんりょく}で{逃|に}げ{出|だ}すだろう。しかし、{逃|に}げ{出|だ}すのはかえって{危険|きけん}になり、いちばん{身近|みぢか}な{木|き}に{登|のぼ}って{待|ま}つのがよい{場合|ばあい}もある。",
-						cn: "假如你在草原上，眼前突然出现猛兽（注1），作为人类的自然反应大概会全力逃走。可是逃走反而可能更危险，有时爬上最近的树等待才更好。",
+						cn: "假如你在草原上，眼前出现了猛兽（注1）的话，作为人类的自然行动，大概会全力逃走吧。然而，逃走反而会变得危险，有时最好爬上离自己最近的树等待。",
 						en: "If you were on a grassland and a fierce beast (note 1) appeared in front of you, as a natural human action you would probably flee with all your might. But fleeing can actually become more dangerous, and sometimes it is better to climb the nearest tree and wait.",
 					},
 					{
 						type: "paragraph",
 						indent: true,
 						jp: "{私|わたし}たち{人間|にんげん}は、このようなときその{場|ば}の{状況|じょうきょう}をとっさに（{注|ちゅう}2）{判断|はんだん}し、{正|ただ}しく{行動|こうどう}するという{知恵|ちえ}を{働|はたら}かせなければならない。このことは、{毎日|まいにち}の{生活|せいかつ}についても{言|い}えることである。{例|たと}えば、おふろにお{湯|ゆ}を{貯|た}めるとき、{人|ひと}が{入|はい}ってもあふれないように{水|みず}の{量|りょう}を{加減|かげん}しなければならない。お{客|きゃく}さんの{来|く}る{時間|じかん}に{合|あ}わせて{料理|りょうり}を{用意|ようい}しなければならない。つまり、やろうとしていることの{目的|もくてき}を{考慮|こうりょ}に{入|い}れておくという{基本的|きほんてき}な{知恵|ちえ}が{必要|ひつよう}なのだ。",
-						cn: "我们人类在这种时候必须运用智慧，当场立刻（注2）判断状况并正确行动。这件事在每天的生活里也同样说得通。比如往浴缸里放热水时，必须调节水量，以免人进去后溢出来。必须配合客人到来的时间准备好饭菜。也就是说，需要把打算做的事情的目的事先考虑进去——这种基本的智慧。",
+						cn: "我们人类在这种时候，必须运用智慧：瞬间（注2）判断当场的状况，并正确地行动。这一点，对每天的生活也可以这样说。例如，往浴缸里放热水时，必须调节水量，使人进去也不会溢出来。必须配合客人到来的时间准备饭菜。也就是说，事先把打算要做的事的目的考虑在内，这种基本的智慧是必要的。",
 						en: "We humans must, at such times, exercise the wisdom of judging the situation on the spot in an instant (note 2) and acting correctly. The same can be said of everyday life. For example, when you fill a bath, you have to adjust the amount of water so it will not overflow when someone gets in. You have to prepare food to match the time a guest will arrive. In other words, the basic wisdom of keeping in mind the purpose of what you are trying to do is necessary.",
 					},
 				],
@@ -64,7 +64,7 @@ export const w6d7: ReadingDay = {
 					{
 						label: "1",
 						jp: "このようなときとはどんなときか。",
-						cn: "「这种时候」是怎样的时候？",
+						cn: "「这种时候」是什么样的时候？",
 						en: "What kind of time is “such times”?",
 						choices: [
 							{ jp: "{危険|きけん}を{感|かん}じたとき", cn: "感到危险的时候", en: "when you sense danger" },
@@ -103,7 +103,7 @@ export const w6d7: ReadingDay = {
 							},
 							{
 								jp: "{状況判断|じょうきょうはんだん}を{間違|まちが}えると{危険|きけん}である。",
-								cn: "状况判断一旦出错就危险。",
+								cn: "搞错状况判断是危险的。",
 								en: "A wrong judgment of the situation is dangerous.",
 							},
 							{
@@ -141,7 +141,7 @@ export const w6d7: ReadingDay = {
 				label: "問題1（2）",
 				instruction:
 					"{次|つぎ}の{文章|ぶんしょう}を{読|よ}んで、{後|あと}の{問|と}いに{対|たい}する{答|こた}えとして{最|もっと}もよいものを1・2・3・4から{一|ひと}つ{選|えら}びなさい。",
-				instructionCn: "阅读下面的文章，从 1・2・3・4 中选出作为后面问题答案最合适的一个。",
+				instructionCn: "请阅读下面的文章，从1・2・3・4中选出一个作为后面问题的最好答案。",
 				instructionEn:
 					"Read the following passage and choose the best answer to each question from 1, 2, 3, or 4.",
 				blocks: [
@@ -155,34 +155,34 @@ export const w6d7: ReadingDay = {
 						type: "paragraph",
 						indent: true,
 						jp: "スピーチをする{際|さい}に{困|こま}るのは、{自分|じぶん}がしゃべっているうちに{会場|かいじょう}が{白|しら}けて（{注|ちゅう}1）しまうこと。こうなるとよけいに{緊張|きんちょう}が{高|たか}まって、スピーチがしどろもどろ（{注|ちゅう}2）になってしまう。こんなときにかねてから（{注|ちゅう}3）{用意|ようい}しておいた①「{笑|わら}いのツボ」、つまり{絶対|ぜったい}にウケる{話|はなし}をすれば{会場|かいじょう}が{一気|いっき}になごみ（{注|ちゅう}4）、{話|はなし}を{聞|き}いてもらえる{環境|かんきょう}を{作|つく}ることができる。",
-						cn: "做演讲时最为难的，是自己讲着讲着会场就冷了场（注1）。这样一来会更加紧张，演讲变得结结巴巴（注2）。这种时候如果抛出事先（注3）准备好的①「笑点」，也就是绝对能逗乐的话，会场会一下子缓和下来（注4），就能造出别人愿意听你讲的环境。",
+						cn: "做演讲时让人为难的是，自己讲着讲着，会场就冷场了（注1）。这样一来，紧张会进一步高涨，演讲就变得语无伦次（注2）。在这种时候，如果讲出事先（注3）准备好的①「笑点」，也就是绝对会逗乐的话，会场就会一下子变得融洽（注4），从而能够营造出让人听你说话的环境。",
 						en: "What is awkward when giving a speech is the hall going cold (note 1) while you are still talking. Then the tension rises further, and the speech becomes a stammering mess (note 2). At such a time, if you use a ① “punch line for laughter” you had prepared beforehand (note 3) — that is, a bit that is guaranteed to go over — the hall warms all at once (note 4), and you can create an environment in which people will listen.",
 					},
 					{
 						type: "paragraph",
 						indent: true,
 						jp: "といっても{普通|ふつう}の{人|ひと}はスピーチや{挨拶|あいさつ}をする{機会|きかい}はそんなに{多|おお}くないので、「ウケるパターン」を{体|からだ}で{覚|おぼ}えるところまではいかないという{人|ひと}もいるだろう。",
-						cn: "话虽如此，普通人做演讲或致辞的机会并不那么多，所以也有人觉得，还达不到把「能逗乐的套路」练到身体记住的程度。",
+						cn: "话虽如此，普通人做演讲或致辞的机会并没有那么多，所以大概也有人到不了用身体记住「能逗乐的模式」的地步吧。",
 						en: "That said, ordinary people do not get that many chances to give a speech or a greeting, so some will say they never get as far as learning a “pattern that goes over” by body.",
 					},
 					{
 						type: "paragraph",
 						indent: true,
 						jp: "しかし、しゃべりというのは{何|なに}もパーティー{会場|かいじょう}だけでするものではなく、{会社|かいしゃ}の{朝礼|ちょうれい}（{注|ちゅう}5）や{取引先|とりひきさき}（{注|ちゅう}6）との{会話|かいわ}など{普段|ふだん}からしているもの。{日頃|ひごろ}の{会話|かいわ}の{中|なか}でも、{自分|じぶん}のネタ（{注|ちゅう}7）がウケているかどうかを{客観的|きゃっかんてき}に（{注|ちゅう}8）{判断|はんだん}するように{意識|いしき}することが{肝心|かんじん}である（{注|ちゅう}9）。",
-						cn: "但是，说话绝不是只在派对会场才做的事，公司早会（注5）、和客户（注6）交谈等平时就在做。在日常对话里也要有意识地、客观地（注8）判断自己的段子（注7）是否受欢迎——这一点才是关键（注9）。",
+						cn: "但是，说话绝不是只在派对会场才做的，像公司早会（注5）、与交易对象（注6）的交谈等，平时都在做。即便在日常会话当中，对于自己的段子（注7）是否逗乐了人，也要有意识地去客观地（注8）判断，这一点才是关键（注9）。",
 						en: "But talking is by no means something you do only at a party: it is something you already do day to day, at the morning meeting (note 5) at work and in conversation with clients (note 6). Even in everyday conversation, the crucial thing (note 9) is to make a point of judging objectively (note 8) whether your own material (note 7) is going over.",
 					},
 					{
 						type: "paragraph",
 						indent: true,
 						jp: "そして、{少|すこ}しでもウケたネタがあったら、それを{何回|なんかい}か{使|つか}ってブラッシュアップ（{注|ちゅう}10）し、{絶対|ぜったい}にウケるネタに{仕上|しあ}げていく。そうすれば、②スピーチに{自信|じしん}が{持|も}てるようになる。",
-						cn: "然后，只要有稍微受欢迎的段子，就多用几次加以打磨（注10），加工成绝对能逗乐的段子。这样一来，②对演讲就能有自信了。",
+						cn: "然后，只要有哪怕稍微逗乐了人的段子，就用上几次，加以打磨（注10），把它做成绝对会逗乐的段子。这样的话，②就能变得对演讲有自信了。",
 						en: "Then, if you have even a little material that went over, use it a few times, brush it up (note 10), and finish it into a bit that is guaranteed to work. Do that, and ② you will come to have confidence in your speeches.",
 					},
 					{
 						type: "source",
 						jp: "（{高嶋秀武|たかしまひでたけ}『{話|はなし}のおもしろい{人|ひと}、つまらない{人|ひと}』PHP{研究所|けんきゅうしょ}）",
-						cn: "（高嶋秀武《说话有趣的人、无趣的人》PHP 研究所）",
+						cn: "（高嶋秀武《说话有趣的人、说话无趣的人》PHP研究所）",
 						en: "(Hidetake Takashima, People Whose Talk Is Interesting and People Whose Talk Is Dull, PHP Institute)",
 					},
 				],
@@ -244,7 +244,7 @@ export const w6d7: ReadingDay = {
 					{
 						label: "3",
 						jp: "①「{笑|わら}いのツボ」とあるが、ここではどういうことか。",
-						cn: "①「笑点」在这里是什么意思？",
+						cn: "①「笑点」，在这里是什么意思？",
 						en: "① “笑いのツボ” — what does it mean here?",
 						choices: [
 							{
@@ -254,12 +254,12 @@ export const w6d7: ReadingDay = {
 							},
 							{
 								jp: "おもしろい{話|はなし}を{聞|き}いている{人|ひと}の{笑|わら}い{声|ごえ}",
-								cn: "听有趣的话的人的笑声",
+								cn: "正在听有趣的话的人的笑声",
 								en: "the laughter of people listening to a funny story",
 							},
 							{
 								jp: "みんなが{白|しら}けた{話|はなし}",
-								cn: "让大家都冷了场的话",
+								cn: "让大家都冷场了的话",
 								en: "a story that made everyone go cold",
 							},
 							{
@@ -289,27 +289,27 @@ export const w6d7: ReadingDay = {
 					{
 						label: "4",
 						jp: "②スピーチに{自信|じしん}が{持|も}てるようになるためには、どうすればいいか。",
-						cn: "要变得对演讲有自信，应该怎么做？",
+						cn: "②要想变得对演讲有自信，该怎么做？",
 						en: "What should you do in order to come to have confidence in your speeches?",
 						choices: [
 							{
 								jp: "みんなの{反応|はんのう}がよかった{話|はなし}をさらによくしていくように{訓練|くんれん}する。",
-								cn: "把大家反应好的话再进一步练好。",
+								cn: "进行训练，以便把大家反应好的话变得更好。",
 								en: "Train so as to make still better the stories that got a good reaction.",
 							},
 							{
 								jp: "{会社|かいしゃ}などで{成功|せいこう}するように{努力|どりょく}する。",
-								cn: "努力在公司等场合取得成功。",
+								cn: "为了在公司等地取得成功而努力。",
 								en: "Work so as to succeed at the company and elsewhere.",
 							},
 							{
 								jp: "{緊張|きんちょう}しないように{体|からだ}の{訓練|くんれん}をする。",
-								cn: "做身体训练以便不紧张。",
+								cn: "为了不紧张而进行身体训练。",
 								en: "Do physical training so as not to get nervous.",
 							},
 							{
 								jp: "スピーチをするとき、{話|はなし}が{途中|とちゅう}で{止|と}まらないように{努力|どりょく}する。",
-								cn: "做演讲时努力不让话在中途停住。",
+								cn: "做演讲时，努力不让话在中途停下来。",
 								en: "When giving a speech, try not to let the talk stop halfway.",
 							},
 						],
@@ -337,7 +337,7 @@ export const w6d7: ReadingDay = {
 				label: "問題2",
 				instruction:
 					"{次|つぎ}の{文章|ぶんしょう}を{読|よ}んで、{後|あと}の{問|と}いに{対|たい}する{答|こた}えとして{最|もっと}もよいものを1・2・3・4から{一|ひと}つ{選|えら}びなさい。",
-				instructionCn: "阅读下面的文章，从 1・2・3・4 中选出作为后面问题答案最合适的一个。",
+				instructionCn: "请阅读下面的文章，从1・2・3・4中选出一个作为后面问题的最好答案。",
 				instructionEn:
 					"Read the following passage and choose the best answer to each question from 1, 2, 3, or 4.",
 				blocks: [
@@ -351,7 +351,7 @@ export const w6d7: ReadingDay = {
 						type: "paragraph",
 						indent: true,
 						jp: "{障子|しょうじ}は{破|やぶ}ろうと{思|おも}えばすぐ{破|やぶ}れる。ちょっとものが{触|さわ}ったり、{子供|こども}が{指|ゆび}を{突|つ}いただけで{破|やぶ}れてしまう。こんな{弱|よわ}い{商品|しょうひん}はない。しかしだれもが、{障子|しょうじ}は{欠陥商品|けっかんしょうひん}だから、もっと{強度|きょうど}を{上|あ}げろとは{主張|しゅちょう}してはいない。この{障子|しょうじ}というものは、①もののあり{方|かた}の{非常|ひじょう}によい{面|めん}を{示|しめ}している。ものがメーカーの{努力|どりょく}によってよくなった。{丈夫|じょうぶ}になって、ちょっとやそっとでは{壊|こわ}れない。このことが{使|つか}う{側|がわ}に{乱暴|らんぼう}に{扱|あつか}っても{平気|へいき}という{粗暴|そぼう}な{気持|きも}ちを{養|やしな}ってしまった。ものによって{人間|にんげん}が{育|そだ}てられるということの{逆現象|ぎゃくげんしょう}である。{丈夫|じょうぶ}なもの、{壊|こわ}れないものを{使|つか}って、{知|し}らぬ{間|ま}に{壊|こわ}れていったのは{人間|にんげん}{自身|じしん}のほうだ。だが{障子|しょうじ}は、{弱|よわ}いがゆえにこそ、{取|と}り{扱|あつか}う{者|もの}に{丁寧|ていねい}な{扱|あつか}いを{要求|ようきゅう}する。それによって、{扱|あつか}う{者|もの}が{育|そだ}つ。{昔|むかし}ながらに、{障子|しょうじ}のあけたて（{注|ちゅう}1）{一|ひと}つにしても{作法|さほう}があるのは、そういう{意味|いみ}を{持|も}っているのである。",
-						cn: "障子纸门，你想捅破的话马上就能破。稍微碰一下、小孩用手指一戳就会破。再没有这么弱的商品了。可是并没有人主张「障子是缺陷商品，得把强度再提高」。这种障子，①显示出「物」应有状态里非常好的一面。东西因厂家的努力而变好了，变结实了，轻轻碰一下已经坏不了。这件事却在使用的一方养成了「粗暴对待也无所谓」的粗暴心情。本该是人被物所培育，这里却成了相反的现象。用着结实的、坏不了的东西，在不知不觉中坏掉的反而是人自己。然而障子正因为弱，才要求使用者小心对待。由此，使用的人得以成长。自古以来，连开关障子（注1）都有规矩，正是带着这层意思。",
+						cn: "障子，只要想弄破，马上就会破。东西稍微碰一下，或者小孩用手指一戳，就会破掉。没有这么脆弱的商品了。可是，谁也不主张「障子是缺陷商品，所以要把强度再提高」。这种障子，①显示出物的应有方式非常好的一面。物品靠制造商的努力变好了。变得结实了，不是稍一碰撞就会坏的。这件事，让使用的一方竟养成了粗暴对待也无所谓的粗暴心情。这是“人被物培育”的相反现象。使用着结实的、不会坏的东西，不知不觉间渐渐坏掉的，反而是人自己。然而障子正因为弱，才要求经手的人细心对待。由此，经手的人得以成长。自古以来，就连障子的开闭（注1）都有礼仪，正是包含着这样的意思。",
 						en: "A shoji screen tears at once if you mean to tear it. A light touch, or a child poking a finger, is enough to rip it. There is no weaker product. Yet no one claims that shoji is defective and that its strength should be raised. This thing called shoji ① shows a very good side of how things ought to be. Things have been improved by manufacturers’ efforts. They have become sturdy, and no longer break at a slight knock. That has fostered in the user a coarse feeling that it is fine to handle them roughly. It is the reverse of the idea that human beings are raised by things. Using sturdy things that do not break, it is human beings themselves who have, without noticing, gone to ruin. But shoji, precisely because they are weak, demand careful handling of the person who uses them. Through that, the handler grows. That even the opening and closing (note 1) of a shoji has, from of old, its own etiquette, carries that meaning.",
 					},
 					{
@@ -364,7 +364,7 @@ export const w6d7: ReadingDay = {
 						type: "paragraph",
 						indent: true,
 						jp: "それだけではない。{障子|しょうじ}は、{直|なお}すことを{考|かんが}えるという{立場|たちば}からみたとき、②{実|じつ}にすばらしいものだ。{今日|こんにち}の{進|すす}んだ{技術|ぎじゅつ}の{道具|どうぐ}、{例|たと}えばマイクロ・コンピューターでも{自動車|じどうしゃ}でも、{直|なお}すときは、その{故障|こしょう}した{部分|ぶぶん}を{修理|しゅうり}するのではない。{悪|わる}い{部分|ぶぶん}を{含|ふく}めたユニット{全体|ぜんたい}を{取|と}り{替|か}えてしまう。{部分修理|ぶぶんしゅうり}のめんどう、{手間|てま}を{節約|せつやく}したほうがより{合理的|ごうりてき}だという{姿勢|しせい}である。{仮|かり}にICが{二十個|にじゅうこ}ついたプリント{基板|きばん}があって、そのうち{一個|いっこ}が{壊|こわ}れていたとすると、そっくり{取|と}り{替|か}えてしまうから、{壊|こわ}れていない{残|のこ}りの{十九個|じゅうきゅうこ}も{廃棄|はいき}してしまう。そういう{修理方法|しゅうりほうほう}が{最近|さいきん}ではきわめて{多|おお}くなってきた。これは{障子|しょうじ}の{修理|しゅうり}の{仕方|しかた}と{正反対|せいはんたい}である。",
-						cn: "还不止这些。障子从「考虑修理」这一立场来看，②实在了不起。如今技术先进的器具，比如微型计算机、汽车，修理时并不是修好出故障的那一部分，而是把包含坏掉部分的整个单元换掉。这是一种觉得省去局部修理的麻烦和工夫更合理的态度。假如一块印有二十个集成电路的线路板里坏了一个，就会整块换掉，于是没坏的那十九个也被废弃。这种修理方法近来极其常见。这和障子的修理方式正好相反。",
+						cn: "还不仅如此。从考虑修理的立场来看，障子②实在是出色的东西。今天技术先进的工具，比如微型计算机也好，汽车也好，修理的时候并不是去修出了故障的那一部分，而是把包含坏掉部分在内的整个单元换掉。这是一种认为省去局部修理的麻烦和工夫更为合理的态度。假如有一块装了二十个集成电路的印刷电路板，其中坏了一个，就会整块换掉，所以没坏的其余十九个也都被废弃掉。这种修理方法，近来变得极其多了。这与障子的修理方式正好相反。",
 						en: "That is not all. Seen from the standpoint of thinking about repair, shoji are ② truly splendid. With today’s technically advanced tools — a microcomputer or a car, for example — when you “fix” them you do not repair the part that failed. You replace the whole unit that contains the bad part. The attitude is that saving the bother and labor of partial repair is more rational. Suppose a printed circuit board has twenty ICs and one of them is broken: you replace the whole board, so the remaining nineteen that are not broken are discarded too. That kind of repair has become extremely common of late. It is the exact opposite of how shoji are repaired.",
 					},
 					{
@@ -377,7 +377,7 @@ export const w6d7: ReadingDay = {
 						type: "paragraph",
 						indent: true,
 						jp: "{障子|しょうじ}では、{一箇所|いっかしょ}{破|やぶ}れたといっても{全部|ぜんぶ}{取|と}り{替|か}えるようなことはしない。そればかりか、{破|やぶ}れた{桝|ます}の{一五|じゅうご}センチ{角|かく}ぐらいの{紙|かみ}{全体|ぜんたい}を{切|き}り{取|と}ってそこに{新|あたら}しい{紙|かみ}をはるというようなことさえ、{初|はじ}めはしない。まずは、{破|やぶ}れた{所|ところ}を{元|もと}に{戻|もど}し、{破|やぶ}れ{目|め}に、{色紙|いろがみ}を{紅葉|もみじ}の{葉|は}にかたどってはるというようなことをする。すると、その{障子|しょうじ}は、{修理|しゅうり}する{以前|いぜん}よりも{美|うつく}しくなる。たいていのものは{壊|こわ}れる{前|まえ}を100とすれば{壊|こわ}れて30、{直|なお}して80がいいところだが、{障子|しょうじ}は{破|やぶ}れる{前|まえ}が100で、{直|なお}せば130にもなる。{壊|こわ}れて{修理|しゅうり}したほうがより{美|うつく}しくなる。パリから{有名|ゆうめい}なデザイナーが{来|き}て、{日本|にほん}の{建築|けんちく}をあちこち{見|み}て{歩|ある}いたとき、{破|やぶ}れた{障子|しょうじ}に、{紅葉|もみじ}や{桜|さくら}がはってあるのに、いたく（{注|ちゅう}2）{感|かん}じ{入|い}って、そればかりカメラに{収|おさ}めて{帰|かえ}ったという。",
-						cn: "障子即使破了一处，也不会整扇换掉。岂止如此，就连把破了的那一格大约十五厘米见方的纸整张剪下再贴上新纸，一开始也不会做。首先是把破处复原，在裂口上贴一片剪成红叶形状的色纸之类。于是那扇障子会比修理以前更美。一般的东西，坏前算 100，坏了剩 30，修好能到 80 就算不错；障子破前是 100，修好能到 130。坏了再修反而更美。据说巴黎来的一位著名设计师走访日本建筑时，看见破障子上贴着红叶和樱花，大为（注2）感动，净拍这些，然后回去了。",
+						cn: "就障子而言，即便破了一处，也不会把整个都换掉。岂止如此，就连把破了的方格里大约15厘米见方的纸整张剪下来、再在那里贴上新纸这样的事，一开始也不会做。首先是把破的地方恢复原状，在裂口上把彩纸做成红叶的形状贴上去之类。于是，那扇障子会变得比修理之前更美。大多数东西，若把坏前定为100，则坏了是30，修好到80就算不错了；障子则是破前为100，修好甚至能到130。坏了再修理，会变得更美。据说，一位著名设计师从巴黎来，四处参观日本建筑时，看到破了的障子上贴着红叶和樱花，大为（注2）感动，只把这些拍进相机就回去了。",
 						en: "With shoji, even if one spot is torn you do not replace the whole thing. More than that, you do not even, at first, cut out the whole sheet of paper in the torn lattice square — about fifteen centimeters on a side — and paste new paper there. First you put the torn place back as it was, and on the tear you paste colored paper cut in the shape of a maple leaf, or the like. Then that shoji becomes more beautiful than before the repair. For most things, if the state before breaking is 100, they fall to 30 when broken and 80 after repair is about as good as it gets; but shoji are 100 before they tear and become as much as 130 when repaired. Broken and then repaired, they become more beautiful. A famous designer from Paris, walking around looking at Japanese architecture, is said to have been greatly (note 2) struck by torn shoji with maple leaves and cherry blossoms pasted on them, and to have gone home with his camera full of nothing else.",
 					},
 					{
@@ -390,13 +390,13 @@ export const w6d7: ReadingDay = {
 						type: "paragraph",
 						indent: true,
 						jp: "ものを{直|なお}すということは{人間|にんげん}にとって{非常|ひじょう}にだいじなことであり、{道具|どうぐ}というものにほんとうの{愛情|あいじょう}を{感|かん}じる{源|みなもと}でもある。{修理|しゅうり}は{機械|きかい}と{人間|にんげん}とが{一体|いったい}となることなのだ。",
-						cn: "把东西修好，对人类来说是非常要紧的事，也是对「器具」产生真正爱情的源泉。修理，就是机械与人成为一体。",
+						cn: "修理东西这件事，对人类来说是非常重要的，也是对工具萌生真正爱惜之情的源泉。修理，就是机械与人成为一体。",
 						en: "Mending things is something of great importance for human beings, and it is also the source of true affection for tools. Repair is machine and human becoming one.",
 					},
 					{
 						type: "source",
 						jp: "（{森政弘|もりまさひろ}「{障子|しょうじ}の{破|やぶ}れに{学|まな}ぶもの」『{中学|ちゅうがく}{新|あたら}しい{国語|こくご} 3〈{平成|へいせい}9{年度|ねんど}〉』{東京書籍|とうきょうしょせき}）",
-						cn: "（森政弘「从障子的破损中学到的」《中学新国语 3〈平成 9 年度〉》东京书籍）",
+						cn: "（森政弘「从障子的破损中学到的东西」《中学新国语 3〈平成9年度〉》东京书籍）",
 						en: "(Masahiro Mori, “What We Learn from a Tear in Shoji,” New Junior-High Japanese 3, Heisei 9 edition, Tokyo Shoseki)",
 					},
 				],
@@ -408,27 +408,27 @@ export const w6d7: ReadingDay = {
 					{
 						label: "5",
 						jp: "①もののあり{方|かた}の{非常|ひじょう}によい{面|めん}とは、ここではどのようなことか。",
-						cn: "①「物应有状态里非常好的一面」在这里指什么？",
+						cn: "①“物的应有方式非常好的一面”，在这里指的是什么？",
 						en: "Here, what is ① “a very good side of how things ought to be”?",
 						choices: [
 							{
 								jp: "{丈夫|じょうぶ}でこわれないこと",
-								cn: "结实、坏不了",
+								cn: "结实、不会坏",
 								en: "being sturdy and not breaking",
 							},
 							{
 								jp: "{使|つか}う{側|がわ}が{乱暴|らんぼう}に{扱|あつか}っても{平気|へいき}であること",
-								cn: "使用的一方粗暴对待也无所谓",
+								cn: "使用的一方即便粗暴对待也无所谓",
 								en: "the user being fine with handling it roughly",
 							},
 							{
 								jp: "{取|と}り{扱|あつか}う{者|もの}に{丁寧|ていねい}な{扱|あつか}いが{必要|ひつよう}なこと",
-								cn: "需要使用者小心对待",
+								cn: "需要经手的人细心对待",
 								en: "careful handling being required of the person who uses it",
 							},
 							{
 								jp: "{強度|きょうど}を{上|あ}げる{必要|ひつよう}のないこと",
-								cn: "没有必要提高强度",
+								cn: "没有提高强度的必要",
 								en: "there being no need to raise the strength",
 							},
 						],
@@ -453,27 +453,27 @@ export const w6d7: ReadingDay = {
 					{
 						label: "6",
 						jp: "②{実|じつ}にすばらしいものだとあるが、{筆者|ひっしゃ}によると、それはなぜか。",
-						cn: "②说「实在了不起」，据笔者，那是为什么？",
+						cn: "②说是“实在是出色的东西”，据笔者所说，那是为什么？",
 						en: "② They are “truly splendid” — according to the writer, why?",
 						choices: [
 							{
 								jp: "{障子|しょうじ}は{進|すす}んだ{技術|ぎじゅつ}により、{部分修理|ぶぶんしゅうり}できるようになったから。",
-								cn: "因为障子靠先进技术已经可以局部修理了。",
+								cn: "因为障子凭借先进技术，已经能够局部修理了。",
 								en: "Because shoji, thanks to advanced technology, have become partially repairable.",
 							},
 							{
 								jp: "{障子|しょうじ}は{一箇所|いっかしょ}{破|やぶ}れたぐらいでは{修理|しゅうり}する{必要|ひつよう}がないから。",
-								cn: "因为障子破了一处还不需要修理。",
+								cn: "因为障子仅仅破了一处，就没有修理的必要。",
 								en: "Because shoji do not need repair just because one spot is torn.",
 							},
 							{
 								jp: "{障子|しょうじ}の{修理|しゅうり}は、{手間|てま}がかからず{合理的|ごうりてき}であるから。",
-								cn: "因为修理障子不费工夫、很合理。",
+								cn: "因为障子的修理不费工夫，而且合理。",
 								en: "Because repairing shoji takes little trouble and is rational.",
 							},
 							{
 								jp: "{障子|しょうじ}は、{壊|こわ}れて{修理|しゅうり}したあとのほうが{美|うつく}しくなるから。",
-								cn: "因为障子坏了再修之后会变得更美。",
+								cn: "因为障子坏了再修理之后会变得更美。",
 								en: "Because after they break and are repaired, shoji become more beautiful.",
 							},
 						],
@@ -498,13 +498,13 @@ export const w6d7: ReadingDay = {
 					{
 						label: "7",
 						jp: "{左|ひだり}の{文章|ぶんしょう}のどこかに{次|つぎ}の{文章|ぶんしょう}が{入|はい}るが、それはどこか。\n「{今日|こんにち}、{機械|きかい}はどんどん{進歩|しんぽ}して、{壊|こわ}れたからといって{素人|しろうと}が{手|て}を{出|だ}すことはできない。{専門家|せんもんか}にしか{直|なお}せないものほど、{進歩的|しんぽてき}で{価値|かち}あるものと{思|おも}いがちだ。もちろんその{考|かんが}えもあながち{間違|まちが}いではない。だが、{素人|しろうと}にすぐ{直|なお}せるようなものを{軽|かる}く{見|み}るようになると{間違|まちが}ってくる。」",
-						cn: "下面这段话会插入左边文章的某处，是哪里？\n「如今机械不断进步，坏了也不能由外行动手。越是只有专家才能修好的东西，人们越容易觉得它进步、有价值。当然这种想法也未必全错。可是，一旦开始轻视外行马上就能修好的东西，那就错了。」",
+						cn: "左边的文章某处要插入下面这段文章，是哪里？\n「如今，机械不断进步，外行并不能因为坏了就出手去修。越是只有专家才能修好的东西，人们就越容易认为它是进步的、有价值的。当然，这种想法也未必就是错的。但是，一旦变得轻视外行马上就能修好的东西，就会出错。」",
 						en: "The following paragraph belongs somewhere in the passage on the left. Where?\n“Today machines keep advancing, and just because something is broken an amateur cannot lay a hand on it. The more something can be fixed only by a specialist, the more we tend to think it progressive and valuable. Of course that idea is not entirely wrong. But we go wrong if we come to look down on things an amateur can fix at once.”",
 						choices: [
-							{ jp: "AとBの{間|あいだ}", cn: "A 与 B 之间", en: "between A and B" },
-							{ jp: "BとCの{間|あいだ}", cn: "B 与 C 之间", en: "between B and C" },
-							{ jp: "CとDの{間|あいだ}", cn: "C 与 D 之间", en: "between C and D" },
-							{ jp: "Dの{後|うし}ろ", cn: "D 的后面", en: "after D" },
+							{ jp: "AとBの{間|あいだ}", cn: "A与B之间", en: "between A and B" },
+							{ jp: "BとCの{間|あいだ}", cn: "B与C之间", en: "between B and C" },
+							{ jp: "CとDの{間|あいだ}", cn: "C与D之间", en: "between C and D" },
+							{ jp: "Dの{後|うし}ろ", cn: "D的后面", en: "after D" },
 						],
 						answer: 3,
 						explanation:
@@ -532,22 +532,22 @@ export const w6d7: ReadingDay = {
 						choices: [
 							{
 								jp: "{素人|しろうと}の{修理|しゅうり}も、{専門家|せんもんか}が{直|なお}すことと{同様|どうよう}、{重要|じゅうよう}なことである。",
-								cn: "外行的修理和专家来修同样重要。",
+								cn: "外行的修理，与专家修理同样，也是重要的。",
 								en: "Repair by amateurs is just as important as repair by specialists.",
 							},
 							{
 								jp: "ものを{修理|しゅうり}することによって、ものを{大切|たいせつ}にする{気持|きも}ちが{育|そだ}つものだ。",
-								cn: "通过修理东西，珍惜东西的心情会成长起来。",
+								cn: "通过修理东西，珍惜东西的心情是会成长起来的。",
 								en: "By repairing things, a feeling of treasuring them is fostered.",
 							},
 							{
 								jp: "ものを{修理|しゅうり}することは、{実|じつ}は{進歩的|しんぽてき}で{合理的|ごうりてき}なことだ。",
-								cn: "修理东西其实是进步而合理的。",
+								cn: "修理东西，其实是进步而又合理的事。",
 								en: "Repairing things is in fact progressive and rational.",
 							},
 							{
 								jp: "ものを{修理|しゅうり}するときは、{修理後|しゅうりご}のほうがよりよくなるようにすべきである。",
-								cn: "修理东西时，应该让修好之后变得更好。",
+								cn: "修理东西时，应该让修理之后变得更好。",
 								en: "When repairing things, one should make them better after the repair than before.",
 							},
 						],
@@ -616,7 +616,7 @@ export const w6d7: ReadingDay = {
 			meaningEn: "if… (hypothetically).",
 			example: {
 				jp: "{目|め}の{前|まえ}に{猛獣|もうじゅう}が{現|あらわ}れたとしたら、{全力|ぜんりょく}で{逃|に}げ{出|だ}すだろう。",
-				cn: "假如眼前出现猛兽，大概会全力逃走。",
+				cn: "假如眼前出现了猛兽，大概会全力逃走吧。",
 				en: "If a fierce beast appeared in front of you, you would probably flee with all your might.",
 			},
 		},
@@ -627,7 +627,7 @@ export const w6d7: ReadingDay = {
 			meaningEn: "precisely because…. Written style; emphasizes the reason.",
 			example: {
 				jp: "{弱|よわ}いがゆえにこそ、{取|と}り{扱|あつか}う{者|もの}に{丁寧|ていねい}な{扱|あつか}いを{要求|ようきゅう}する。",
-				cn: "正因为弱，才要求使用者小心对待。",
+				cn: "正因为弱，才要求经手的人细心对待。",
 				en: "Precisely because they are weak, they demand careful handling of the user.",
 			},
 		},
@@ -638,7 +638,7 @@ export const w6d7: ReadingDay = {
 			meaningEn: "not only… but even…. The following item goes further.",
 			example: {
 				jp: "そればかりか、{破|やぶ}れた{桝|ます}の{紙|かみ}{全体|ぜんたい}を{切|き}り{取|と}るようなことさえ、{初|はじ}めはしない。",
-				cn: "岂止如此，就连把破了的那一格纸整张剪下这种事，一开始也不会做。",
+				cn: "岂止如此，就连把破了的方格里的纸整张剪下来这样的事，一开始也不会做。",
 				en: "More than that, you do not even, at first, cut out the whole sheet in the torn lattice square.",
 			},
 		},
