@@ -423,7 +423,25 @@
 	outline: 2px solid var(--accent);
 	outline-offset: 2px;
 }
-.gloss-pop {
+/* Legacy descendant span rules (.opts span, .vrow span, .q span, .meta span, .kread) must not turn the anchor into a chip. */
+.vrow .gloss-anchor,
+.krow .gloss-anchor,
+.point .gloss-anchor,
+.q .gloss-anchor,
+.meta .gloss-anchor,
+.kreads .gloss-anchor,
+.kread .gloss-anchor,
+.fc-prog .gloss-anchor {
+	background: none;
+	border: 0;
+	padding: 0;
+	margin: 0;
+	color: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	box-shadow: none;
+}
+.gloss-anchor > .gloss-pop {
 	position: absolute;
 	z-index: 5;
 	left: 0;
@@ -444,12 +462,12 @@
 	transform-origin: left bottom;
 	animation: gloss-in var(--dur-fast) var(--ease-out);
 }
-.gloss-pop__read,
-.gloss-pop__mean,
-.gloss-pop__ex { display: block; }
-.gloss-pop__read { color: var(--blue); font-weight: 700; }
-.gloss-pop__mean { color: var(--ink); }
-.gloss-pop__ex { margin-top: 2px; color: var(--sub); font-weight: 500; }
+.gloss-anchor > .gloss-pop > .gloss-pop__read,
+.gloss-anchor > .gloss-pop > .gloss-pop__mean,
+.gloss-anchor > .gloss-pop > .gloss-pop__ex { display: block; background: none; border: 0; padding: 0; }
+.gloss-anchor > .gloss-pop > .gloss-pop__read { color: var(--blue); font-weight: 700; }
+.gloss-anchor > .gloss-pop > .gloss-pop__mean { color: var(--ink); }
+.gloss-anchor > .gloss-pop > .gloss-pop__ex { margin-top: 2px; color: var(--sub); font-weight: 500; }
 @keyframes gloss-in {
 	from { opacity: 0; transform: scale(.96); }
 	to { opacity: 1; transform: none; }
@@ -488,17 +506,44 @@ ruby:focus-within rt {
 .opt-ripples {
 	position: absolute;
 	inset: 0;
+	z-index: 0;
 	overflow: hidden;
 	border-radius: inherit;
 	pointer-events: none;
+	background: none;
+	border: 0;
+	padding: 0;
+	margin: 0;
 }
-.opt-ripple {
+.opt-btn > .opt-label {
+	position: relative;
+	z-index: 1;
+	background: none;
+	border: 0;
+	padding: 0;
+	margin: 0;
+	color: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	line-height: inherit;
+	overflow-wrap: break-word;
+	opacity: 1;
+}
+.qz.answered .opt-btn.correct > .opt-label,
+.qz.answered .opt-btn.wrong > .opt-label {
+	color: inherit;
+	background: none;
+	opacity: 1;
+}
+.opt-btn > .opt-ripples > .opt-ripple {
 	position: absolute;
 	left: 0;
 	top: 0;
 	width: 12px;
 	height: 12px;
 	margin: -6px 0 0 -6px;
+	border: 0;
+	padding: 0;
 	border-radius: 50%;
 	background: currentColor;
 	opacity: 0;
@@ -532,7 +577,34 @@ ruby:focus-within rt {
 .tick-text {
 	display: inline-block;
 	font-variant-numeric: tabular-nums;
+	background: none;
+	border: 0;
+	padding: 0;
+	margin: 0;
+	color: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	line-height: inherit;
 	animation: tick-roll var(--dur-fast) var(--ease-out);
+}
+.fc-prog .tick-text,
+.qz-result .tick-text,
+.meta .tick-text,
+.q .tick-text,
+.vrow .tick-text,
+.kread .tick-text,
+.kreads .tick-text,
+.kanji-exam-toolbar .tick-text,
+.kanji-exam-result .tick-text,
+.kanji-exam-history .tick-text {
+	background: none;
+	border: 0;
+	padding: 0;
+	margin: 0;
+	color: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	line-height: inherit;
 }
 @keyframes tick-roll {
 	from { transform: translateY(6px); opacity: 0; }
@@ -604,6 +676,13 @@ ruby:focus-within rt {
 	.opt-btn.correct::before,
 	.opt-ripple,
 	.opt-ripple.is-on { opacity: 0 !important; }
+	.opt-btn > .opt-label,
+	.tick-text,
+	.gloss-pop__read,
+	.gloss-pop__mean,
+	.gloss-pop__ex {
+		opacity: 1 !important;
+	}
 	.starb.on::after { display: none; }
 	::view-transition-old(ending-swap),
 	::view-transition-new(ending-swap) { animation: none; }

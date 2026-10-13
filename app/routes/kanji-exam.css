@@ -84,7 +84,7 @@
 .kanji-exam-toolbar button{padding:6px 10px;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--blue);font-size:12px;font-weight:700;cursor:pointer}
 .kanji-exam-toolbar>div{display:flex;min-width:0;flex-direction:column;align-items:center;line-height:1.35}
 .kanji-exam-toolbar strong{max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:13px}
-.kanji-exam-toolbar span{color:var(--sub);font-size:10px}
+.kanji-exam-toolbar span:not(.tick-text){color:var(--sub);font-size:10px}
 .kanji-exam-toolbar em{min-width:48px;color:var(--accent);font-size:12px;font-style:normal;font-weight:800;text-align:right}
 .kanji-exam-paper__head{position:relative;overflow:hidden;margin-bottom:18px;padding:26px 28px;border:1px solid #d8d2c3;border-radius:12px;background:linear-gradient(90deg,#fffefb,#f7f3ea);color:var(--exam-ink)}
 .kanji-exam-paper__head>span{color:var(--exam-accent);font-size:10px;font-weight:900;letter-spacing:.2em}
@@ -95,7 +95,7 @@
 .kanji-exam-result{scroll-margin-top:120px;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:18px;margin-bottom:18px;padding:18px 22px;border:1px solid var(--blue);border-radius:14px;background:var(--blue-soft)}
 .kanji-exam-result>div{color:var(--blue);line-height:1}
 .kanji-exam-result>div strong{font-size:42px}
-.kanji-exam-result>div span{font-size:12px}
+.kanji-exam-result>div span:not(.tick-text){font-size:12px}
 .kanji-exam-result p{display:flex;flex-direction:column;margin:0}
 .kanji-exam-result p b{font-size:15px}
 .kanji-exam-result p span{color:var(--sub);font-size:12px}

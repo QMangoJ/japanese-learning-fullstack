@@ -1,9 +1,8 @@
 import { act, fireEvent, render, screen } from "@testing-library/react";
-import { useRef, type RefObject } from "react";
 import { afterEach, describe, expect, it, vi } from "vitest";
 
 import { GlossPopover, rubyReading } from "../../app/study/gloss-popover";
-import { useOptRipple } from "../../app/study/opt-button";
+import { OptButton } from "../../app/study/opt-button";
 import { bindPointerTilt } from "../../app/study/pointer-tilt";
 import { CountPair, TickText } from "../../app/study/tick-text";
 
@@ -41,13 +40,10 @@ function installMedia(reduced: boolean, fine: boolean) {
 }
 
 function RippleButton({ answered = false }: { answered?: boolean }) {
-	const ref = useRef<HTMLButtonElement>(null);
-	useOptRipple(ref as RefObject<HTMLButtonElement>);
 	const button = (
-		<button ref={ref} type="button" className="opt-btn">
-			<span className="opt-ripples" />
+		<OptButton className="opt-btn" idx={1} pressed={false} onPick={() => {}}>
 			選択肢
-		</button>
+		</OptButton>
 	);
 	return answered ? <div className="qz answered">{button}</div> : button;
 }
