@@ -55,6 +55,21 @@ export type MemoryCardItem = {
 export type MemoryKindOption = { value: string; label: string };
 
 type SkillFilter = "all" | "unknown" | "known";
+type PromptSide = "jp" | "cn" | "en";
+
+function recallFace(item: MemoryCardItem, side: PromptSide): { text: string; missing: boolean } {
+	if (side === "cn") {
+		const text = item.cn?.trim() || item.translation?.trim() || "";
+		if (text) return { text, missing: false };
+		return { text: lx("这张没有中文", "No Chinese for this card"), missing: true };
+	}
+	if (side === "en") {
+		const text = item.en?.trim() || "";
+		if (text) return { text, missing: false };
+		return { text: lx("这张没有英文", "No English for this card"), missing: true };
+	}
+	return { text: item.jp, missing: false };
+}
 
 const KIND_LABELS: Record<string, [string, string]> = {
 	word: ["单词", "Word"],
@@ -72,12 +87,26 @@ export function memoryKindLabel(kind?: string): string {
 	return pair ? lx(...pair) : kind;
 }
 
-function MemoryCardFront({ cur, hint }: { cur: MemoryCardItem; hint: string }) {
+function MemoryCardFront({
+	cur,
+	hint,
+	face,
+}: {
+	cur: MemoryCardItem;
+	hint: string;
+	face?: { text: string; missing: boolean; side: PromptSide };
+}) {
+	const text = face?.text ?? cur.jp;
+	const japanese = !face || face.side === "jp";
 	return (
 		<>
 			{cur.kind ? <div className="review-k">{memoryKindLabel(cur.kind)}</div> : null}
-			<div className="big jp" style={cur.jp.length > 22 ? { fontSize: 20 } : undefined}>
-				{cur.jp}
+			<div
+				className={japanese ? "big jp" : face?.missing ? "meta" : "big"}
+				data-fc-face={face?.side ?? "jp"}
+				style={!face?.missing && text.length > 22 ? { fontSize: 20 } : undefined}
+			>
+				{text}
 			</div>
 			<div className="hint">{hint}</div>
 		</>
@@ -230,6 +259,7 @@ export function MemoryCards({
 	translationPending = false,
 	instantFlip = false,
 	plainFlip = false,
+	recallPrompt = false,
 }: {
 	deckId: string;
 	items: MemoryCardItem[];
@@ -245,6 +275,8 @@ export function MemoryCards({
 	instantFlip?: boolean;
 	/** 错题本: remount a static face on each flip, with no spring turn or swipe grade. */
 	plainFlip?: boolean;
+	/** Front can show Chinese or English so the flip reveals the Japanese. */
+	recallPrompt?: boolean;
 }) {
 	useSyncExternalStore(subscribeDisplay, getDisplayVersion, () => 0);
 	const syncFlashcards = storageKey === FLASHCARD_MASTERY_KEY;
@@ -266,6 +298,7 @@ export function MemoryCards({
 	const [idx, setIdx] = useState(0);
 	const [flipped, setFlipped] = useState(false);
 	const [order, setOrder] = useState<number[] | null>(null);
+	const [prompt, setPrompt] = useState<PromptSide>("jp");
 
 	const derivedKinds = useMemo(() => {
 		if (kindOptions) return kindOptions;
@@ -296,7 +329,23 @@ export function MemoryCards({
 	const safeIdx = deck.length ? Math.min(idx, deck.length - 1) : 0;
 	const cur = deck[safeIdx];
 	const known = cur ? isMastered(mastery, deckId, cur.id) : false;
-	const frontHint = hint || lx("回想读音和意思，点击翻面", "Recall the reading and meaning, then tap to flip");
+	const hasCn = useMemo(
+		() => items.some((item) => Boolean(item.cn?.trim() || item.translation?.trim())),
+		[items],
+	);
+	const hasEn = useMemo(() => items.some((item) => Boolean(item.en?.trim())), [items]);
+	const promptSide: PromptSide = prompt === "cn" && hasCn ? "cn" : prompt === "en" && hasEn ? "en" : "jp";
+	const showPrompt = recallPrompt && (hasCn || hasEn);
+	const promptOptions: { value: PromptSide; label: string }[] = [
+		{ value: "jp", label: lx("看日语", "See Japanese") },
+	];
+	if (hasCn) promptOptions.push({ value: "cn", label: lx("看中文", "See Chinese") });
+	if (hasEn) promptOptions.push({ value: "en", label: lx("看英文", "See English") });
+	const face = cur ? recallFace(cur, promptSide) : null;
+	const frontHint =
+		promptSide === "jp"
+			? hint || lx("回想读音和意思，点击翻面", "Recall the reading and meaning, then tap to flip")
+			: lx("回想日语，点击翻面", "Recall the Japanese, then tap to flip");
 
 	const resetDeck = (nextKind: string, nextSkill: SkillFilter) => {
 		setKind(nextKind);
@@ -345,12 +394,19 @@ export function MemoryCards({
 			</div>
 		);
 	} else {
+		const front = (
+			<MemoryCardFront
+				cur={cur}
+				hint={frontHint}
+				face={face ? { text: face.text, missing: face.missing, side: promptSide } : undefined}
+			/>
+		);
 		card = plainFlip ? (
 			<div className="fcard" data-fcflip="1" onClick={() => setFlipped((value) => !value)}>
 				{flipped ? (
 					<MemoryCardBack cur={cur} translationPending={translationPending} />
 				) : (
-					<MemoryCardFront cur={cur} hint={frontHint} />
+					front
 				)}
 			</div>
 		) : (
@@ -360,7 +416,7 @@ export function MemoryCards({
 				onFlip={() => setFlipped((value) => !value)}
 				onGrade={(grade) => mark(gradeKnown(grade))}
 				onSwipe={swipe}
-				front={<MemoryCardFront cur={cur} hint={frontHint} />}
+				front={front}
 				back={<MemoryCardBack cur={cur} translationPending={translationPending} staggerReading />}
 			/>
 		);
@@ -400,6 +456,25 @@ export function MemoryCards({
 					{lx("注音", "Readings")}
 				</button>
 			</div>
+			{showPrompt ? (
+				<div className="fc-filter" data-fc-prompt="1">
+					{promptOptions.map((option) => (
+						<button
+							key={option.value}
+							type="button"
+							className={promptSide === option.value ? "on" : ""}
+							aria-pressed={promptSide === option.value}
+							onClick={() => {
+								if (option.value === prompt) return;
+								setPrompt(option.value);
+								setFlipped(false);
+							}}
+						>
+							{option.label}
+						</button>
+					))}
+				</div>
+			) : null}
 			<div className="fc-prog">{deck.length ? <CountPair current={safeIdx + 1} total={deck.length} /> : ""}</div>
 			<Fragment key={cur ? (plainFlip ? `${deckId}-${kind}-${skill}-${safeIdx}-${flipped}` : `${deckId}-${kind}-${skill}-${cur.id}`) : `${deckId}-done`}>{card}</Fragment>
 			{cur ? (

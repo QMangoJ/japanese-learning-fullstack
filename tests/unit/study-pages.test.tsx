@@ -1,7 +1,7 @@
 import { render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { useSyncExternalStore } from "react";
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import {
 	CardsPage,
@@ -20,6 +20,7 @@ import {
 import { EndingSwap } from "../../app/study/ending-swap";
 import {
 	G,
+	K2,
 	V,
 	addMistake,
 	bootReadingSearch,
@@ -615,5 +616,51 @@ describe("FavsPage", () => {
 
 		expect(screen.getByText("N2读解")).toHaveClass("r2");
 		expect(screen.getByText("有效期限")).toBeInTheDocument();
+	});
+});
+
+describe("sentence translation panel", () => {
+	afterEach(() => {
+		document.body.classList.remove("hide-cn");
+	});
+
+	it("stays readable after the gloss toggle hides other Chinese", async () => {
+		const user = userEvent.setup();
+		setModule("n2kanji");
+		K2.weeks = [
+			{
+				n: 1,
+				days: [
+					{
+						day: 6,
+						title: "救",
+						kanji: [],
+						exercises: {
+							sections: [
+								{
+									instruction: "選びなさい。",
+									items: [{ n: 1, q: "急ぎの手紙を（a. 小包 b. 速達）で送る。" }],
+								},
+							],
+						},
+					},
+				],
+			},
+		];
+		K2.daily_translations = {
+			w1d6: { items: [{ n: 1, translation: "紧急信件用快递寄出。" }] },
+		};
+		const style = document.createElement("style");
+		style.textContent = "body.hide-cn .vcn, body.hide-cn .cn { visibility: hidden }";
+		document.head.appendChild(style);
+		render(<DayPage w={1} d={6} token={null} />);
+		await user.click(within(document.querySelector(".mem-bar") as HTMLElement).getByRole("button", { name: "翻译" }));
+		expect(document.body).toHaveClass("hide-cn");
+		await user.click(screen.getByRole("button", { name: /显示原句翻译/ }));
+		const body = document.querySelector(".daily-translation-body");
+		expect(body).not.toHaveClass("cn");
+		expect(body).toHaveTextContent("原句翻译：紧急信件用快递寄出。");
+		expect(body).toBeVisible();
+		style.remove();
 	});
 });

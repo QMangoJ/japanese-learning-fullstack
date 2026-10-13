@@ -312,7 +312,7 @@ function FoldBody({
 	children: ReactNode;
 }) {
 	return (
-		<div id={id} className={`daily-toggle-body daily-${kind}-body${kind === "translation" ? " cn" : ""}`} hidden={!open}>
+		<div id={id} className={`daily-toggle-body daily-${kind}-body`} hidden={!open}>
 			{children}
 		</div>
 	);

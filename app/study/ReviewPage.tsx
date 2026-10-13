@@ -251,6 +251,7 @@ function ReviewCards({ day }: { day: ReviewDay }) {
 			]}
 			hint={lx("回想中/英文，点击翻面", "Recall the meaning, then tap to flip")}
 			instantFlip
+			recallPrompt
 			emptyUnknown={lx("这一天的卡片都记住了 🎉", "You've mastered this day's cards 🎉")}
 			emptyAll={lx("这一天还没有可刷的卡片", "No flashcards for this day")}
 		/>

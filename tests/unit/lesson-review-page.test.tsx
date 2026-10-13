@@ -110,6 +110,40 @@ describe("ReviewPage", () => {
 		expect(screen.queryByText("先進国")).not.toBeInTheDocument();
 	});
 
+	it("can show Chinese or English on the front so the Japanese is recalled on the back", async () => {
+		const user = userEvent.setup();
+		setNavImpl(() => {});
+		render(<ReviewPage dateId="2026-09-11" />);
+		expect(await screen.findByText("先進国")).toBeInTheDocument();
+		expect(screen.getByRole("button", { name: "看日语" })).toHaveAttribute("aria-pressed", "true");
+		expect(screen.getByText("1 / 3")).toBeInTheDocument();
+
+		await user.click(screen.getByRole("button", { name: "看英文" }));
+		expect(document.querySelector("[data-fc-face]")?.textContent).toBe("developed country");
+		expect(screen.queryByText("先進国")).not.toBeInTheDocument();
+		expect(screen.getByText("回想日语，点击翻面")).toBeInTheDocument();
+		expect(screen.getByText("1 / 3")).toBeInTheDocument();
+		expect(screen.getByRole("button", { name: "看英文" })).toHaveAttribute("aria-pressed", "true");
+
+		await user.click(screen.getByText("回想日语，点击翻面"));
+		expect(document.querySelector(".review-flip-ruby")?.textContent).toContain("先進国");
+		expect(document.querySelector(".review-reading")?.textContent).toBe("せんしんこく");
+
+		await user.click(screen.getByRole("button", { name: "看中文" }));
+		expect(document.querySelector("[data-fc-face]")?.textContent).toBe("这张没有中文");
+		expect(document.querySelector(".review-reading")).toBeNull();
+		expect(screen.getByText("1 / 3")).toBeInTheDocument();
+
+		await user.click(screen.getByRole("button", { name: /下一张|Next/ }));
+		await user.click(screen.getByRole("button", { name: /下一张|Next/ }));
+		expect(document.querySelector("[data-fc-face]")?.textContent).toBe("越练越好");
+		expect(screen.queryByText("練習すれば練習するほど、日本語が上手になる")).not.toBeInTheDocument();
+
+		await user.click(screen.getByRole("button", { name: "看日语" }));
+		expect(screen.getByText("練習すれば練習するほど、日本語が上手になる")).toBeInTheDocument();
+		expect(screen.queryByText("越练越好")).not.toBeInTheDocument();
+	});
+
 	it("marks a card as mastered and hides it from the to-review deck", async () => {
 		const user = userEvent.setup();
 		setNavImpl(() => {});
