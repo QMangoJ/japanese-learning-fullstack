@@ -3,6 +3,7 @@ import { useEffect, useMemo, useState, useSyncExternalStore } from "react";
 import { RubyHtml, SayButton } from "../routes/study-common";
 import { dueEntry, getDueVersion, rememberFail, rememberKnown, subscribeDue, type DueDraft } from "./due-review";
 import { KanaStagger, StudyFlip } from "./study-flip";
+import { CountPair } from "./tick-text";
 import type { SwipeGrade } from "./swipe-grade";
 import { jstToday } from "./lesson-review";
 import { LANG, lx, navTo } from "./store";
@@ -292,7 +293,7 @@ function TopicDetail({ slug }: { slug: string }) {
 				)
 			) : (
 				<div className="fc-wrap">
-					<div className="fc-prog">{deck.length ? `${Math.min(idx + 1, deck.length)} / ${deck.length}` : ""}</div>
+					<div className="fc-prog">{deck.length ? <CountPair current={Math.min(idx + 1, deck.length)} total={deck.length} /> : ""}</div>
 					{!deck.length ? (
 						<div className="fcard">
 							<div className="empty">{emptyText(only)}</div>

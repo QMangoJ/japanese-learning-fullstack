@@ -5,6 +5,7 @@ import { dueEntry, getDueVersion, grammarDueId, rememberFail, rememberPass, subs
 import { EndingSwap } from "../study/ending-swap";
 import { StudyHomePlay } from "../study/study-home-play";
 import { CardsScopeFilter } from "../study/memory-cards";
+import { CountPair } from "../study/tick-text";
 import { KanaStagger, StudyFlip } from "../study/study-flip";
 import type { SwipeGrade } from "../study/swipe-grade";
 import {
@@ -1450,7 +1451,7 @@ export function FavFcPage({ data }: { data: { jp: string; cn: string; idx: numbe
 	return (
 		<div className="fc-wrap">
 			<div className="fc-prog">
-				{data.idx + 1} / {data.total}
+				<CountPair current={data.idx + 1} total={data.total} />
 			</div>
 			<StudyFlip
 				key={data.idx}
@@ -1899,7 +1900,7 @@ export function CardsPage() {
 					bump();
 				}}
 			/>
-			<div className="fc-prog">{fc.deck.length ? `${Math.min(fc.idx + 1, fc.deck.length)} / ${fc.deck.length}` : ""}</div>
+			<div className="fc-prog">{fc.deck.length ? <CountPair current={Math.min(fc.idx + 1, fc.deck.length)} total={fc.deck.length} /> : ""}</div>
 			<Fragment key={cur ? `${kind}-${fc.idx}` : "done"}>{card}</Fragment>
 			{kind === "gram" && cur?.p?.pattern ? (
 				<GrammarDueButtons pattern={String(cur.p.pattern)} reading={cur.p.reading} usageCn={cur.p.usage_cn} usageEn={cur.p.usage_en} week={cur.w} day={cur.d} />
