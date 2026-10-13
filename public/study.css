@@ -465,7 +465,8 @@ nav.bottom button.on{color:var(--accent);font-weight:700}
 .fc-filter{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
 .fc-filter button{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:4px 14px;font-size:13.5px;cursor:pointer}
 .fc-filter button.on{background:var(--accent);border-color:var(--accent);color:#fff}
-.fcard{width:100%;max-width:520px;min-height:280px;background:var(--card);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);padding:22px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;cursor:pointer}
+.fcard{width:100%;max-width:520px;min-height:280px;background:var(--card);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);padding:22px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;cursor:pointer;perspective:none;transition:none;will-change:auto}
+.fcard-slot,.fcard-face,.fcard-front,.fcard-back{perspective:none;transition:none;transform:none;will-change:auto}
 .fcard .big{font-size:26px;font-weight:700}
 .fcard .hint{color:var(--sub);font-size:12.5px;margin-top:16px}
 .fcard .backside{text-align:left;width:100%}

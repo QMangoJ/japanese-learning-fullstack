@@ -257,7 +257,6 @@ export function MemoryCards({
 	emptyAll,
 	defaultSkill = "unknown",
 	translationPending = false,
-	instantFlip = false,
 	plainFlip = false,
 	recallPrompt = false,
 }: {
@@ -272,8 +271,7 @@ export function MemoryCards({
 	emptyAll?: string;
 	defaultSkill?: SkillFilter;
 	translationPending?: boolean;
-	instantFlip?: boolean;
-	/** 错题本: remount a static face on each flip, with no spring turn or swipe grade. */
+	/** 错题本: one static face, with no flip transition or swipe grade. */
 	plainFlip?: boolean;
 	/** Front can show Chinese or English so the flip reveals the Japanese. */
 	recallPrompt?: boolean;
@@ -402,7 +400,18 @@ export function MemoryCards({
 			/>
 		);
 		card = plainFlip ? (
-			<div className="fcard" data-fcflip="1" onClick={() => setFlipped((value) => !value)}>
+			<div
+				className="fcard is-instant"
+				data-fcflip="1"
+				tabIndex={0}
+				onClick={() => setFlipped((value) => !value)}
+				onKeyDown={(event) => {
+					if (event.target !== event.currentTarget) return;
+					if (event.key !== " " && event.key !== "Enter") return;
+					event.preventDefault();
+					setFlipped((value) => !value);
+				}}
+			>
 				{flipped ? (
 					<MemoryCardBack cur={cur} translationPending={translationPending} />
 				) : (
@@ -411,7 +420,6 @@ export function MemoryCards({
 			</div>
 		) : (
 			<StudyFlip
-				instant={instantFlip}
 				flipped={flipped}
 				onFlip={() => setFlipped((value) => !value)}
 				onGrade={(grade) => mark(gradeKnown(grade))}
@@ -476,7 +484,7 @@ export function MemoryCards({
 				</div>
 			) : null}
 			<div className="fc-prog">{deck.length ? <CountPair current={safeIdx + 1} total={deck.length} /> : ""}</div>
-			<Fragment key={cur ? (plainFlip ? `${deckId}-${kind}-${skill}-${safeIdx}-${flipped}` : `${deckId}-${kind}-${skill}-${cur.id}`) : `${deckId}-done`}>{card}</Fragment>
+			<Fragment key={cur ? (plainFlip ? `${deckId}-${kind}-${skill}-${safeIdx}` : `${deckId}-${kind}-${skill}-${cur.id}`) : `${deckId}-done`}>{card}</Fragment>
 			{cur ? (
 				<div className="review-skill">
 					<button type="button" className={!known ? "on" : ""} onClick={() => mark(false)}>

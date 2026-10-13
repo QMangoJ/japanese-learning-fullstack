@@ -52,7 +52,6 @@ export function StudyFlip({
 	onGrade,
 	onSwipe,
 	fav = false,
-	instant = false,
 }: {
 	flipped: boolean;
 	onFlip: () => void;
@@ -63,31 +62,14 @@ export function StudyFlip({
 	/** Completed drag. Falls back to onGrade. */
 	onSwipe?: (grade: SwipeGrade) => void;
 	fav?: boolean;
-	/** Swap faces immediately. Lesson review uses this; other decks keep the 3D turn. */
-	instant?: boolean;
 }) {
-	const [holdBack, setHoldBack] = useState(false);
 	const [drag, setDrag] = useState<{ dx: number; dy: number } | null>(null);
 	const [fly, setFly] = useState<SwipeGrade | null>(null);
 	const pointer = useRef<{ id: number; x: number; y: number; t: number; moved: boolean } | null>(null);
 	const suppressClick = useRef(false);
-	const cardRef = useRef<HTMLDivElement>(null);
 	const flyTimer = useRef<number | null>(null);
 	const gradeKeys = onGrade ?? onSwipe;
 	const swipeTo = onSwipe ?? onGrade;
-	const showBack = instant ? flipped : flipped || holdBack;
-
-	useEffect(() => {
-		if (instant) return;
-		if (flipped) {
-			setHoldBack(true);
-			return;
-		}
-		if (!holdBack) return;
-		const delay = reducedMotion() ? 0 : 260;
-		const id = window.setTimeout(() => setHoldBack(false), delay);
-		return () => window.clearTimeout(id);
-	}, [flipped, holdBack, instant]);
 
 	useEffect(() => {
 		return () => {
@@ -162,24 +144,18 @@ export function StudyFlip({
 		setDrag(null);
 	};
 
-	const flipTurn = instant ? 0 : flipped ? 180 : 0;
-	const rot = drag ? Math.max(-12, Math.min(12, drag.dx / 8)) : 0;
-	const turn = instant ? "" : ` rotateY(${flipTurn}deg)`;
-	let transform = instant ? "none" : `rotateY(${flipTurn}deg)`;
-	if (fly === "pass") transform = `translate(120%, -8%) rotate(12deg)${turn}`;
-	else if (fly === "fail") transform = `translate(-120%, -8%) rotate(-12deg)${turn}`;
-	else if (fly === "fuzzy") transform = `translateY(-120%)${turn}`;
-	else if (drag) transform = `translate(${drag.dx}px, ${drag.dy}px) rotate(${rot}deg)${turn}`;
-	const rotorStyle: CSSProperties = { transform };
+	let transform = "";
+	if (fly === "pass") transform = "translate(120%, -8%) rotate(12deg)";
+	else if (fly === "fail") transform = "translate(-120%, -8%) rotate(-12deg)";
+	else if (fly === "fuzzy") transform = "translateY(-120%)";
+	else if (drag) transform = `translate(${drag.dx}px, ${drag.dy}px)`;
+	const rotorStyle: CSSProperties | undefined = transform ? { transform } : undefined;
 	const hint = fly || (drag ? stampOf(drag.dx, drag.dy) : null);
 
 	return (
-		<div
-			className={`fcard-slot${instant ? " is-instant" : ""}${hint ? ` is-${hint}` : ""}${fly ? " is-flying" : ""}`}
-		>
+		<div className={`fcard-slot is-instant${hint ? ` is-${hint}` : ""}${fly ? " is-flying" : ""}`}>
 			<div
-				ref={cardRef}
-				className={`fcard${instant ? " is-instant" : ""}${flipped ? " is-flipped" : ""}${swipeTo ? " is-swipeable" : ""}`}
+				className={`fcard is-instant${flipped ? " is-flipped" : ""}${swipeTo ? " is-swipeable" : ""}`}
 				tabIndex={0}
 				{...(fav ? { "data-favflip": "" } : { "data-fcflip": "1" })}
 				onClick={(event) => {
@@ -202,8 +178,7 @@ export function StudyFlip({
 				onPointerCancel={onPointerUp}
 			>
 				<div className={`fcard-rotor${drag ? " is-dragging" : ""}${fly ? " is-flying" : ""}`} style={rotorStyle}>
-					<div className="fcard-face fcard-front">{front}</div>
-					{showBack ? <div className="fcard-face fcard-back">{back}</div> : null}
+					{flipped ? <div className="fcard-face fcard-back">{back}</div> : <div className="fcard-face fcard-front">{front}</div>}
 				</div>
 				{hint ? (
 					<div className={`swipe-stamp is-${hint}`} aria-hidden="true">

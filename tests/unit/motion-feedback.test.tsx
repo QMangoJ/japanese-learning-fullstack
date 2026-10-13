@@ -40,21 +40,26 @@ describe("StudyFlip", () => {
 		expect(onFlip).toHaveBeenCalledOnce();
 		rerender(<StudyFlip flipped onFlip={onFlip} front={<div>表面</div>} back={<div className="review-reading">かな</div>} />);
 		expect(document.querySelector(".review-reading")?.textContent).toBe("かな");
+		expect(screen.queryByText("表面")).not.toBeInTheDocument();
+		expect(document.querySelector(".fcard-front")).toBeNull();
 	});
 
-	it("swaps an instant card without turning it", () => {
+	it("swaps the visible face without a 3D turn", () => {
 		const onFlip = vi.fn();
 		const { rerender } = render(
-			<StudyFlip instant flipped={false} onFlip={onFlip} front={<div>表面</div>} back={<div className="review-reading">かな</div>} />,
+			<StudyFlip flipped={false} onFlip={onFlip} front={<div>表面</div>} back={<div className="review-reading">かな</div>} />,
 		);
 		expect(document.querySelector(".fcard")).toHaveClass("is-instant");
 		expect(document.querySelector(".review-reading")).toBeNull();
+		expect(document.querySelector(".fcard-back")).toBeNull();
 		expect(document.querySelector(".fcard-rotor")?.getAttribute("style") || "").not.toContain("rotateY");
 		fireEvent.click(screen.getByText("表面"));
-		rerender(<StudyFlip instant flipped onFlip={onFlip} front={<div>表面</div>} back={<div className="review-reading">かな</div>} />);
+		rerender(<StudyFlip flipped onFlip={onFlip} front={<div>表面</div>} back={<div className="review-reading">かな</div>} />);
 		expect(document.querySelector(".review-reading")?.textContent).toBe("かな");
+		expect(screen.queryByText("表面")).not.toBeInTheDocument();
 		expect(document.querySelector(".fcard-rotor")?.getAttribute("style") || "").not.toContain("rotateY");
-		rerender(<StudyFlip instant flipped={false} onFlip={onFlip} front={<div>表面</div>} back={<div className="review-reading">かな</div>} />);
+		expect(document.querySelector(".fcard-rotor")?.getAttribute("style") || "").not.toMatch(/perspective|will-change/);
+		rerender(<StudyFlip flipped={false} onFlip={onFlip} front={<div>表面</div>} back={<div className="review-reading">かな</div>} />);
 		expect(document.querySelector(".review-reading")).toBeNull();
 	});
 
