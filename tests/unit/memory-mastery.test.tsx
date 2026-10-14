@@ -109,7 +109,7 @@ describe("flashcard mastery sync", () => {
 			await bootAccount();
 		});
 		expect(screen.getByText("禁止")).toBeInTheDocument();
-		expect(document.querySelector("[data-fc-level]")?.textContent).toBe("记住了");
+		expect(document.querySelector(".review-skill button.on")?.textContent).toBe("记住了");
 		expect(screen.getByRole("button", { name: /^记住了 / })).toHaveTextContent("2");
 	});
 
@@ -164,7 +164,7 @@ describe("flashcard mastery sync", () => {
 		localStorage.setItem(FLASHCARD_MASTERY_KEY, JSON.stringify({ "test::a": true }));
 		render(<MemoryCards deckId="test" items={sample} />);
 		expect(screen.getByText("禁止")).toBeInTheDocument();
-		expect(document.querySelector("[data-fc-level]")?.textContent).toBe("记住了");
+		expect(document.querySelector(".review-skill button.on")?.textContent).toBe("记住了");
 		expect(screen.getByRole("button", { name: /^记住了 / })).toHaveTextContent("2");
 	});
 
