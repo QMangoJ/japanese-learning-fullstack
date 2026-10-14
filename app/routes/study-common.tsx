@@ -1892,6 +1892,7 @@ export function CardsPage() {
 							<div className="ex" key={i}>
 								<div className="jp">
 									<Rr o={wd} f="jp" />
+									{wd.pos ? <span className="kpos">{wd.pos}</span> : null}
 								</div>
 								{wd.cn ? <div className="cn">{wd.cn}</div> : null}
 							</div>

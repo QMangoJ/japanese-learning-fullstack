@@ -4,7 +4,7 @@ import { resolve } from "node:path";
 
 const root = resolve(import.meta.dirname, "..");
 const vocab = JSON.parse(await readFile(resolve(root, "public/data/vocab.856eb48e32.json"), "utf8"));
-const kanji = JSON.parse(await readFile(resolve(root, "public/data/kanji.e43232869e.json"), "utf8"));
+const kanji = JSON.parse(await readFile(resolve(root, "public/data/kanji.94a6d6a8d1.json"), "utf8"));
 const translations = JSON.parse(
 	await readFile(resolve(root, "public/data/n3-vocab-kanji-daily-translations.json"), "utf8"),
 );

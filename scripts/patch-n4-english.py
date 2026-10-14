@@ -77,7 +77,7 @@ def patch_book(path: Path) -> tuple[int, int, int]:
 
 
 def main() -> None:
-	for name in ("n4vocab.026f711eb7.json", "n4kanji.655356d8e2.json", "n4grammar.40e138ccdb.json"):
+	for name in ("n4vocab.026f711eb7.json", "n4kanji.55810b32d6.json", "n4grammar.40e138ccdb.json"):
 		t, h, i = patch_book(ROOT / "public/data" / name)
 		print(f"{name}: title_en +{t}, heading_en +{h}, instruction_en +{i}")
 
