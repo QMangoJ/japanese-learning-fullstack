@@ -5,6 +5,7 @@ export const TEST_SECRET = "unit-test-session-secret!!";
 
 export function memoryKv(init: Record<string, string> = {}) {
 	const map = new Map(Object.entries(init));
+	const meta = new Map<string, unknown>();
 	return {
 		async get(key: string, type?: "text" | "json") {
 			const value = map.get(key);
@@ -12,8 +13,13 @@ export function memoryKv(init: Record<string, string> = {}) {
 			if (type === "json") return JSON.parse(value);
 			return value;
 		},
-		async put(key: string, value: string) {
+		async put(key: string, value: string, opts?: { metadata?: unknown }) {
 			map.set(key, value);
+			if (opts?.metadata !== undefined) meta.set(key, opts.metadata);
+		},
+		async list({ prefix = "" }: { prefix?: string; cursor?: string } = {}) {
+			const keys = [...map.keys()].filter((k) => k.startsWith(prefix)).sort().map((name) => ({ name, metadata: meta.get(name) }));
+			return { keys, list_complete: true, cursor: "" };
 		},
 		async delete(key: string) {
 			map.delete(key);

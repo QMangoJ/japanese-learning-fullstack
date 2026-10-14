@@ -13,6 +13,7 @@ import {
 	parseUsageDelta,
 	pendingDelta,
 } from "../../app/study/usage-time";
+import { combineDays, dayRecordTotal, mergeDayRecord, parseUsageReport } from "../../app/study/usage-time";
 import { authedRequest, memoryKv, routeContext, seedUser, testEnv } from "./auth-test-utils";
 
 describe("usage time math", () => {
@@ -93,7 +94,7 @@ describe("/api/usage", () => {
 			request: new Request("http://localhost/api/usage?app=reading"),
 			context: ctx,
 		});
-		expect(await read.json()).toEqual({ days: {} });
+		expect(await read.json()).toEqual({ days: {}, mine: {} });
 		expect(JSON.parse(kv.map.get(usageKey("g_1")) || "{}").days["2026-10-14"]).toBe(65);
 	});
 
@@ -120,5 +121,33 @@ describe("usage CORS", () => {
 		expect(opened.headers.get("Cross-Origin-Resource-Policy")).toBe("cross-origin");
 		expect(isUsageRequest(new Request("https://example.com/api/usage?app=shadowing"))).toBe(true);
 		expect(isUsageRequest(new Request("https://example.com/api/mastery"))).toBe(false);
+	});
+});
+
+describe("per-day records", () => {
+	it("stores one idempotent record per day and keeps legacy days", async () => {
+		const kv = memoryKv({ [usageKey("g_2")]: JSON.stringify({ days: { "2026-10-13": 500 } }) });
+		seedUser(kv, { id: "g_2" });
+		const ctx = routeContext(testEnv(kv));
+		const send = (totals: Record<string, number>) => authedRequest("http://localhost/api/usage?device=devaaaa", "g_2", {
+			method: "POST",
+			body: JSON.stringify({ device: "devaaaa", totals }),
+		});
+		await usageAction({ request: await send({ "2026-10-14": 100 }), context: ctx });
+		const res = await usageAction({ request: await send({ "2026-10-14": 100, "2026-10-15": 30 }), context: ctx });
+		expect(await res.json()).toEqual({ days: { "2026-10-13": 500, "2026-10-14": 100, "2026-10-15": 30 }, mine: { "2026-10-14": 100, "2026-10-15": 30 } });
+		expect(kv.map.has("usage-day:u:g_2:2026-10-15")).toBe(true);
+	});
+	it("keeps max per device, sums devices, legacy is a floor", () => {
+		let rec = mergeDayRecord(null, "dev1abc", 100);
+		rec = mergeDayRecord(rec, "dev1abc", 40);
+		rec = mergeDayRecord(rec, "dev2abc", 50);
+		expect(rec.devices).toEqual({ dev1abc: 100, dev2abc: 50 });
+		expect(dayRecordTotal(rec)).toBe(150);
+		expect(dayRecordTotal({ ...rec, legacy: 300 })).toBe(300);
+	});
+	it("combines remote with live local without double counting", () => {
+		expect(combineDays({ "2026-10-14": 150 }, { "2026-10-14": 100 }, { "2026-10-14": 120, "2026-10-15": 5 })).toEqual({ "2026-10-14": 170, "2026-10-15": 5 });
+		expect(parseUsageReport({ device: "BAD", totals: {} })).toBeNull();
 	});
 });
