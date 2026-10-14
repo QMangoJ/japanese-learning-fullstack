@@ -230,3 +230,20 @@ describe("topic vocabulary review", () => {
 		expect(isDueReviewPayload(dueEntries())).toBe(true);
 	});
 });
+
+describe("topic example furigana", () => {
+	const dir = join(process.cwd(), "public/data/topics");
+	const index = JSON.parse(readFileSync(join(dir, "index.json"), "utf8")) as { topics: { slug: string }[] };
+	for (const { slug } of index.topics) {
+		it(`${slug}: every example with kanji has ruby readings over all its kanji`, () => {
+			const topic: TopicFile = JSON.parse(readFileSync(join(dir, `${slug}.json`), "utf8"));
+			for (const card of topic.cards) {
+				if (!/[\u4e00-\u9fff々]/.test(card.example_jp)) continue;
+				expect(card.example_ruby, card.id).toBeTruthy();
+				expect(stripRuby(card.example_ruby!), card.id).toBe(card.example_jp);
+				const outside = card.example_ruby!.replace(/<ruby>[^<]*<rt>[^<]*<\/rt><\/ruby>/g, "");
+				expect(outside, card.id).not.toMatch(/[\u4e00-\u9fff々]/);
+			}
+		});
+	}
+});

@@ -58,6 +58,7 @@
 			"subtopic": "需求和进度",
 			"example_jp": "仕様と画面が食い違っています。",
 			"example_zh": "规格和页面不一致。",
+			"example_ruby": "<ruby>仕様<rt>しよう</rt></ruby>と<ruby>画面<rt>がめん</rt></ruby>が<ruby>食<rt>く</rt></ruby>い<ruby>違<rt>ちが</rt></ruby>っています。",
 			"example_en": "The screen does not match the spec."
 		},
 		{
@@ -69,6 +70,7 @@
 			"subtopic": "需求和进度",
 			"example_jp": "この要件は次のリリースに入れます。",
 			"example_zh": "这个需求放进下一次发布。",
+			"example_ruby": "この<ruby>要件<rt>ようけん</rt></ruby>は<ruby>次<rt>つぎ</rt></ruby>のリリースに<ruby>入<rt>い</rt></ruby>れます。",
 			"example_en": "We'll put this requirement in the next release."
 		},
 		{
@@ -80,6 +82,7 @@
 			"subtopic": "需求和进度",
 			"example_jp": "この画面の見積もりは二日です。",
 			"example_zh": "这个页面的估计是两天。",
+			"example_ruby": "この<ruby>画面<rt>がめん</rt></ruby>の<ruby>見積<rt>みつ</rt></ruby>もりは<ruby>二日<rt>ふつか</rt></ruby>です。",
 			"example_en": "The estimate for this screen is two days."
 		},
 		{
@@ -91,6 +94,7 @@
 			"subtopic": "需求和进度",
 			"example_jp": "定例で進捗を共有しました。",
 			"example_zh": "在例会上同步了进度。",
+			"example_ruby": "<ruby>定例<rt>ていれい</rt></ruby>で<ruby>進捗<rt>しんちょく</rt></ruby>を<ruby>共有<rt>きょうゆう</rt></ruby>しました。",
 			"example_en": "I shared the progress at the regular meeting."
 		},
 		{
@@ -102,6 +106,7 @@
 			"subtopic": "需求和进度",
 			"example_jp": "納期は今週末です。",
 			"example_zh": "交付日是这个周末。",
+			"example_ruby": "<ruby>納期<rt>のうき</rt></ruby>は<ruby>今週末<rt>こんしゅうまつ</rt></ruby>です。",
 			"example_en": "The deadline is this weekend."
 		},
 		{
@@ -113,6 +118,7 @@
 			"subtopic": "需求和进度",
 			"example_jp": "毎朝の定例は十五分です。",
 			"example_zh": "每天早上的例会是十五分钟。",
+			"example_ruby": "<ruby>毎朝<rt>まいあさ</rt></ruby>の<ruby>定例<rt>ていれい</rt></ruby>は<ruby>十五<rt>じゅうご</rt></ruby><ruby>分<rt>ふん</rt></ruby>です。",
 			"example_en": "The morning standup is fifteen minutes."
 		},
 		{
@@ -124,6 +130,7 @@
 			"subtopic": "需求和进度",
 			"example_jp": "この課題は先に再現手順を書きます。",
 			"example_zh": "这个课题先写下复现步骤。",
+			"example_ruby": "この<ruby>課題<rt>かだい</rt></ruby>は<ruby>先<rt>さき</rt></ruby>に<ruby>再現手順<rt>さいげんてじゅん</rt></ruby>を<ruby>書<rt>か</rt></ruby>きます。",
 			"example_en": "For this task I'll write the repro steps first."
 		},
 		{
@@ -135,6 +142,7 @@
 			"subtopic": "需求和进度",
 			"example_jp": "休暇の前に引き継ぎを残します。",
 			"example_zh": "休假前把交接留下来。",
+			"example_ruby": "<ruby>休暇<rt>きゅうか</rt></ruby>の<ruby>前<rt>まえ</rt></ruby>に<ruby>引<rt>ひ</rt></ruby>き<ruby>継<rt>つ</rt></ruby>ぎを<ruby>残<rt>のこ</rt></ruby>します。",
 			"example_en": "I'll leave a handoff before my time off."
 		},
 		{
@@ -146,6 +154,7 @@
 			"subtopic": "写页面",
 			"example_jp": "このボタンの処理を実装します。",
 			"example_zh": "我来实现这个按钮的处理。",
+			"example_ruby": "このボタンの<ruby>処理<rt>しょり</rt></ruby>を<ruby>実装<rt>じっそう</rt></ruby>します。",
 			"example_en": "I'll implement the behavior of this button."
 		},
 		{
@@ -157,6 +166,7 @@
 			"subtopic": "写页面",
 			"example_jp": "画面の表示が仕様と違います。",
 			"example_zh": "页面显示和规格不一样。",
+			"example_ruby": "<ruby>画面<rt>がめん</rt></ruby>の<ruby>表示<rt>ひょうじ</rt></ruby>が<ruby>仕様<rt>しよう</rt></ruby>と<ruby>違<rt>ちが</rt></ruby>います。",
 			"example_en": "What the screen shows differs from the spec."
 		},
 		{
@@ -168,6 +178,7 @@
 			"subtopic": "写页面",
 			"example_jp": "この表は共通コンポーネントにします。",
 			"example_zh": "这个表格做成共用组件。",
+			"example_ruby": "この<ruby>表<rt>ひょう</rt></ruby>は<ruby>共通<rt>きょうつう</rt></ruby>コンポーネントにします。",
 			"example_en": "I'll make this table a shared component."
 		},
 		{
@@ -179,6 +190,7 @@
 			"subtopic": "写页面",
 			"example_jp": "入力の状態は送信後にリセットします。",
 			"example_zh": "输入的状态在提交后重置。",
+			"example_ruby": "<ruby>入力<rt>にゅうりょく</rt></ruby>の<ruby>状態<rt>じょうたい</rt></ruby>は<ruby>送信後<rt>そうしんご</rt></ruby>にリセットします。",
 			"example_en": "The input state resets after submit."
 		},
 		{
@@ -190,6 +202,7 @@
 			"subtopic": "写页面",
 			"example_jp": "データ取得は非同期で行います。",
 			"example_zh": "取数据用异步来做。",
+			"example_ruby": "データ<ruby>取得<rt>しゅとく</rt></ruby>は<ruby>非同期<rt>ひどうき</rt></ruby>で<ruby>行<rt>おこな</rt></ruby>います。",
 			"example_en": "We fetch the data asynchronously."
 		},
 		{
@@ -201,6 +214,7 @@
 			"subtopic": "写页面",
 			"example_jp": "この関数は金額を表示用に整えます。",
 			"example_zh": "这个函数把金额整理成显示用的格式。",
+			"example_ruby": "この<ruby>関数<rt>かんすう</rt></ruby>は<ruby>金額<rt>きんがく</rt></ruby>を<ruby>表示用<rt>ひょうじよう</rt></ruby>に<ruby>整<rt>ととの</rt></ruby>えます。",
 			"example_en": "This function formats the amount for display."
 		},
 		{
@@ -212,6 +226,7 @@
 			"subtopic": "写页面",
 			"example_jp": "この変数には入力中の金額が入ります。",
 			"example_zh": "这个变量里放的是正在输入的金额。",
+			"example_ruby": "この<ruby>変数<rt>へんすう</rt></ruby>には<ruby>入力中<rt>にゅうりょくちゅう</rt></ruby>の<ruby>金額<rt>きんがく</rt></ruby>が<ruby>入<rt>い</rt></ruby>ります。",
 			"example_en": "This variable holds the amount being typed."
 		},
 		{
@@ -223,6 +238,7 @@
 			"subtopic": "写页面",
 			"example_jp": "戻り値の型が合っていません。",
 			"example_zh": "返回值的类型对不上。",
+			"example_ruby": "<ruby>戻<rt>もど</rt></ruby>り<ruby>値<rt>ち</rt></ruby>の<ruby>型<rt>かた</rt></ruby>が<ruby>合<rt>あ</rt></ruby>っていません。",
 			"example_en": "The return type does not match."
 		},
 		{
@@ -234,6 +250,7 @@
 			"subtopic": "写页面",
 			"example_jp": "日付の処理はライブラリに任せます。",
 			"example_zh": "日期处理交给库来做。",
+			"example_ruby": "<ruby>日付<rt>ひづけ</rt></ruby>の<ruby>処理<rt>しょり</rt></ruby>はライブラリに<ruby>任<rt>まか</rt></ruby>せます。",
 			"example_en": "We'll leave date handling to a library."
 		},
 		{
@@ -245,6 +262,7 @@
 			"subtopic": "问题和发布",
 			"example_jp": "この不具合は本番環境だけで出ます。",
 			"example_zh": "这个故障只在生产环境出现。",
+			"example_ruby": "この<ruby>不具合<rt>ふぐあい</rt></ruby>は<ruby>本番<rt>ほんばん</rt></ruby><ruby>環境<rt>かんきょう</rt></ruby>だけで<ruby>出<rt>で</rt></ruby>ます。",
 			"example_en": "This defect shows up only in production.",
 			"note": "口头常说バグ。写报告、开票时多用「不具合」。"
 		},
@@ -257,6 +275,7 @@
 			"subtopic": "问题和发布",
 			"example_jp": "レビューの指摘を修正しました。",
 			"example_zh": "审查里指出的地方已经改了。",
+			"example_ruby": "レビューの<ruby>指摘<rt>してき</rt></ruby>を<ruby>修正<rt>しゅうせい</rt></ruby>しました。",
 			"example_en": "I fixed the points from review."
 		},
 		{
@@ -268,6 +287,7 @@
 			"subtopic": "问题和发布",
 			"example_jp": "ローカルでデバッグして原因を特定します。",
 			"example_zh": "在本地调试，把原因找出来。",
+			"example_ruby": "ローカルでデバッグして<ruby>原因<rt>げんいん</rt></ruby>を<ruby>特定<rt>とくてい</rt></ruby>します。",
 			"example_en": "I'll debug locally and pin down the cause."
 		},
 		{
@@ -279,6 +299,7 @@
 			"subtopic": "问题和发布",
 			"example_jp": "プルリクエストのレビューをお願いします。",
 			"example_zh": "请帮忙看一下这个拉取请求。",
+			"example_ruby": "プルリクエストのレビューをお<ruby>願<rt>ねが</rt></ruby>いします。",
 			"example_en": "Could you review the pull request?"
 		},
 		{
@@ -290,6 +311,7 @@
 			"subtopic": "问题和发布",
 			"example_jp": "修正が終わったので、プルリクエストを出しました。",
 			"example_zh": "改完了，已经提交了拉取请求。",
+			"example_ruby": "<ruby>修正<rt>しゅうせい</rt></ruby>が<ruby>終<rt>お</rt></ruby>わったので、プルリクエストを<ruby>出<rt>だ</rt></ruby>しました。",
 			"example_en": "The fix is done, so I opened a pull request."
 		},
 		{
@@ -301,6 +323,7 @@
 			"subtopic": "问题和发布",
 			"example_jp": "確認が取れてから本番へデプロイします。",
 			"example_zh": "确认之后再部署到生产环境。",
+			"example_ruby": "<ruby>確認<rt>かくにん</rt></ruby>が<ruby>取<rt>と</rt></ruby>れてから<ruby>本番<rt>ほんばん</rt></ruby>へデプロイします。",
 			"example_en": "We'll deploy to production after it is approved."
 		},
 		{
@@ -312,6 +335,7 @@
 			"subtopic": "问题和发布",
 			"example_jp": "本番環境の設定はローカルと別です。",
 			"example_zh": "生产环境的配置和本地不一样。",
+			"example_ruby": "<ruby>本番<rt>ほんばん</rt></ruby><ruby>環境<rt>かんきょう</rt></ruby>の<ruby>設定<rt>せってい</rt></ruby>はローカルと<ruby>別<rt>べつ</rt></ruby>です。",
 			"example_en": "Production settings are separate from local ones."
 		},
 		{
@@ -323,6 +347,7 @@
 			"subtopic": "问题和发布",
 			"example_jp": "直したあと、もう一度ビルドします。",
 			"example_zh": "改完之后再构建一次。",
+			"example_ruby": "<ruby>直<rt>なお</rt></ruby>したあと、もう<ruby>一度<rt>いちど</rt></ruby>ビルドします。",
 			"example_en": "After the fix, build once more."
 		},
 		{
@@ -334,6 +359,7 @@
 			"subtopic": "需求和进度",
 			"example_jp": "要件定義の段階からフロントも入ってほしいそうです。",
 			"example_zh": "听说希望前端从需求定义阶段就参与进来。",
+			"example_ruby": "<ruby>要件<rt>ようけん</rt></ruby><ruby>定義<rt>ていぎ</rt></ruby>の<ruby>段階<rt>だんかい</rt></ruby>からフロントも<ruby>入<rt>はい</rt></ruby>ってほしいそうです。",
 			"example_en": "They want frontend involved from the requirements stage."
 		},
 		{
@@ -345,6 +371,7 @@
 			"subtopic": "需求和进度",
 			"example_jp": "また仕様変更が入ったので、見積もりを出し直します。",
 			"example_zh": "又来了需求变更，我重新给一下工时估计。",
+			"example_ruby": "また<ruby>仕様変更<rt>しようへんこう</rt></ruby>が<ruby>入<rt>はい</rt></ruby>ったので、<ruby>見積<rt>みつ</rt></ruby>もりを<ruby>出<rt>だ</rt></ruby>し<ruby>直<rt>なお</rt></ruby>します。",
 			"example_en": "Another spec change came in, so I will redo the estimate."
 		},
 		{
@@ -356,6 +383,7 @@
 			"subtopic": "需求和进度",
 			"example_jp": "この改修は工数がかなりかかりそうです。",
 			"example_zh": "这个改动看起来要花不少工时。",
+			"example_ruby": "この<ruby>改修<rt>かいしゅう</rt></ruby>は<ruby>工数<rt>こうすう</rt></ruby>がかなりかかりそうです。",
 			"example_en": "This change looks like it will take a lot of hours."
 		},
 		{
@@ -367,6 +395,7 @@
 			"subtopic": "需求和进度",
 			"example_jp": "優先度が高いものから対応していきます。",
 			"example_zh": "从优先级高的开始处理。",
+			"example_ruby": "<ruby>優先度<rt>ゆうせんど</rt></ruby>が<ruby>高<rt>たか</rt></ruby>いものから<ruby>対応<rt>たいおう</rt></ruby>していきます。",
 			"example_en": "I will handle the high-priority ones first."
 		},
 		{
@@ -378,6 +407,7 @@
 			"subtopic": "需求和进度",
 			"example_jp": "このままだとスケジュールが厳しいです。",
 			"example_zh": "照这样下去排期会很紧。",
+			"example_ruby": "このままだとスケジュールが<ruby>厳<rt>きび</rt></ruby>しいです。",
 			"example_en": "At this rate the schedule is tight."
 		},
 		{
@@ -389,6 +419,7 @@
 			"subtopic": "需求和进度",
 			"example_jp": "今回のスコープからは外しましょう。",
 			"example_zh": "这次先把它排除在范围外吧。",
+			"example_ruby": "<ruby>今回<rt>こんかい</rt></ruby>のスコープからは<ruby>外<rt>はず</rt></ruby>しましょう。",
 			"example_en": "Let us leave it out of scope this time."
 		},
 		{
@@ -400,6 +431,7 @@
 			"subtopic": "需求和进度",
 			"example_jp": "タスクを細かく分けてチケットにしました。",
 			"example_zh": "把任务拆细，建成了工单。",
+			"example_ruby": "タスクを<ruby>細<rt>こま</rt></ruby>かく<ruby>分<rt>わ</rt></ruby>けてチケットにしました。",
 			"example_en": "I split the task into smaller tickets."
 		},
 		{
@@ -411,6 +443,7 @@
 			"subtopic": "需求和进度",
 			"example_jp": "この件はチケットを切っておきます。",
 			"example_zh": "这件事我先建个工单。",
+			"example_ruby": "この<ruby>件<rt>けん</rt></ruby>はチケットを<ruby>切<rt>き</rt></ruby>っておきます。",
 			"example_en": "I will open a ticket for this."
 		},
 		{
@@ -422,6 +455,7 @@
 			"subtopic": "需求和进度",
 			"example_jp": "デザインカンプとスマホ表示が少し違います。",
 			"example_zh": "设计稿和手机上的显示有点不一样。",
+			"example_ruby": "デザインカンプとスマホ<ruby>表示<rt>ひょうじ</rt></ruby>が<ruby>少<rt>すこ</rt></ruby>し<ruby>違<rt>ちが</rt></ruby>います。",
 			"example_en": "The mobile view differs a bit from the design comp."
 		},
 		{
@@ -433,6 +467,7 @@
 			"subtopic": "需求和进度",
 			"example_jp": "既存画面の改修がメインの案件です。",
 			"example_zh": "这是以改造现有页面为主的项目。",
+			"example_ruby": "<ruby>既存<rt>きぞん</rt></ruby><ruby>画面<rt>がめん</rt></ruby>の<ruby>改修<rt>かいしゅう</rt></ruby>がメインの<ruby>案件<rt>あんけん</rt></ruby>です。",
 			"example_en": "The project is mainly reworking existing screens."
 		},
 		{
@@ -444,6 +479,7 @@
 			"subtopic": "写页面",
 			"example_jp": "実装に入る前に設計を一度見てもらえますか。",
 			"example_zh": "开始写之前，能帮我看一下设计吗？",
+			"example_ruby": "<ruby>実装<rt>じっそう</rt></ruby>に<ruby>入<rt>い</rt></ruby>る<ruby>前<rt>まえ</rt></ruby>に<ruby>設計<rt>せっけい</rt></ruby>を<ruby>一度<rt>いちど</rt></ruby><ruby>見<rt>み</rt></ruby>てもらえますか。",
 			"example_en": "Could you look at the design before I start implementing?"
 		},
 		{
@@ -455,6 +491,7 @@
 			"subtopic": "写页面",
 			"example_jp": "このボタンは共通化してコンポーネントにします。",
 			"example_zh": "把这个按钮抽成公共组件。",
+			"example_ruby": "このボタンは<ruby>共通化<rt>きょうつうか</rt></ruby>してコンポーネントにします。",
 			"example_en": "I will turn this button into a shared component."
 		},
 		{
@@ -466,6 +503,7 @@
 			"subtopic": "写页面",
 			"example_jp": "このロジックはカスタムフックに切り出しましょう。",
 			"example_zh": "把这段逻辑抽到自定义 Hook 里吧。",
+			"example_ruby": "このロジックはカスタムフックに<ruby>切<rt>き</rt></ruby>り<ruby>出<rt>だ</rt></ruby>しましょう。",
 			"example_en": "Let us extract this logic into a custom hook."
 		},
 		{
@@ -477,6 +515,7 @@
 			"subtopic": "写页面",
 			"example_jp": "依存関係を更新したらビルドが落ちました。",
 			"example_zh": "更新依赖之后构建失败了。",
+			"example_ruby": "<ruby>依存関係<rt>いぞんかんけい</rt></ruby>を<ruby>更新<rt>こうしん</rt></ruby>したらビルドが<ruby>落<rt>お</rt></ruby>ちました。",
 			"example_en": "The build broke after updating dependencies."
 		},
 		{
@@ -488,6 +527,7 @@
 			"subtopic": "写页面",
 			"example_jp": "この一覧はレスポンシブ対応がまだです。",
 			"example_zh": "这个列表还没做响应式适配。",
+			"example_ruby": "この<ruby>一覧<rt>いちらん</rt></ruby>はレスポンシブ<ruby>対応<rt>たいおう</rt></ruby>がまだです。",
 			"example_en": "This list is not responsive yet."
 		},
 		{
@@ -499,6 +539,7 @@
 			"subtopic": "写页面",
 			"example_jp": "Safariだけで表示崩れが起きています。",
 			"example_zh": "只有 Safari 出现样式错乱。",
+			"example_ruby": "Safariだけで<ruby>表示<rt>ひょうじ</rt></ruby><ruby>崩<rt>くず</rt></ruby>れが<ruby>起<rt>お</rt></ruby>きています。",
 			"example_en": "The layout breaks only in Safari."
 		},
 		{
@@ -510,6 +551,7 @@
 			"subtopic": "写页面",
 			"example_jp": "この挙動は仕様通りですか。",
 			"example_zh": "这个行为符合规格吗？",
+			"example_ruby": "この<ruby>挙動<rt>きょどう</rt></ruby>は<ruby>仕様<rt>しよう</rt></ruby><ruby>通<rt>どお</rt></ruby>りですか。",
 			"example_en": "Is this behavior as specified?"
 		},
 		{
@@ -521,6 +563,7 @@
 			"subtopic": "写页面",
 			"example_jp": "データが多いと描画に時間がかかります。",
 			"example_zh": "数据多的时候渲染要花时间。",
+			"example_ruby": "データが<ruby>多<rt>おお</rt></ruby>いと<ruby>描画<rt>びょうが</rt></ruby>に<ruby>時間<rt>じかん</rt></ruby>がかかります。",
 			"example_en": "Rendering takes time when there is a lot of data."
 		},
 		{
@@ -532,6 +575,7 @@
 			"subtopic": "写页面",
 			"example_jp": "入力するたびに全体が再レンダリングされています。",
 			"example_zh": "每次输入整个页面都在重新渲染。",
+			"example_ruby": "<ruby>入力<rt>にゅうりょく</rt></ruby>するたびに<ruby>全体<rt>ぜんたい</rt></ruby>が<ruby>再<rt>さい</rt></ruby>レンダリングされています。",
 			"example_en": "The whole page re-renders on every keystroke."
 		},
 		{
@@ -543,6 +587,7 @@
 			"subtopic": "写页面",
 			"example_jp": "バリデーションのエラー文言はまだ仮です。",
 			"example_zh": "校验的报错文案还是临时的。",
+			"example_ruby": "バリデーションのエラー<ruby>文言<rt>もんごん</rt></ruby>はまだ<ruby>仮<rt>かり</rt></ruby>です。",
 			"example_en": "The validation error messages are still placeholders."
 		},
 		{
@@ -554,6 +599,7 @@
 			"subtopic": "写页面",
 			"example_jp": "ボタンの文言を「保存する」に変えてください。",
 			"example_zh": "请把按钮文案改成「保存する」。",
+			"example_ruby": "ボタンの<ruby>文言<rt>もんごん</rt></ruby>を「<ruby>保存<rt>ほぞん</rt></ruby>する」に<ruby>変<rt>か</rt></ruby>えてください。",
 			"example_en": "Please change the button text to \"Save\"."
 		},
 		{
@@ -565,6 +611,7 @@
 			"subtopic": "问题和发布",
 			"example_jp": "手元では再現しませんでした。",
 			"example_zh": "在我本地没能复现。",
+			"example_ruby": "<ruby>手元<rt>てもと</rt></ruby>では<ruby>再現<rt>さいげん</rt></ruby>しませんでした。",
 			"example_en": "I could not reproduce it locally."
 		},
 		{
@@ -576,6 +623,7 @@
 			"subtopic": "问题和发布",
 			"example_jp": "フロントかAPIか、まず切り分けます。",
 			"example_zh": "先区分是前端还是 API 的问题。",
+			"example_ruby": "フロントかAPIか、まず<ruby>切<rt>き</rt></ruby>り<ruby>分<rt>わ</rt></ruby>けます。",
 			"example_en": "First I will isolate whether it is frontend or API."
 		},
 		{
@@ -587,6 +635,7 @@
 			"subtopic": "问题和发布",
 			"example_jp": "この修正の影響範囲を確認しました。",
 			"example_zh": "确认了这次修改的影响范围。",
+			"example_ruby": "この<ruby>修正<rt>しゅうせい</rt></ruby>の<ruby>影響<rt>えいきょう</rt></ruby><ruby>範囲<rt>はんい</rt></ruby>を<ruby>確認<rt>かくにん</rt></ruby>しました。",
 			"example_en": "I checked what this fix affects."
 		},
 		{
@@ -598,6 +647,7 @@
 			"subtopic": "问题和发布",
 			"example_jp": "今日は暫定対応で、恒久対応は来週です。",
 			"example_zh": "今天先临时处理，根本处理放到下周。",
+			"example_ruby": "<ruby>今日<rt>きょう</rt></ruby>は<ruby>暫定<rt>ざんてい</rt></ruby><ruby>対応<rt>たいおう</rt></ruby>で、<ruby>恒久<rt>こうきゅう</rt></ruby><ruby>対応<rt>たいおう</rt></ruby>は<ruby>来週<rt>らいしゅう</rt></ruby>です。",
 			"example_en": "Today is a stopgap; the permanent fix is next week."
 		},
 		{
@@ -609,6 +659,7 @@
 			"subtopic": "问题和发布",
 			"example_jp": "エラーが増えたので、すぐ切り戻しました。",
 			"example_zh": "错误变多了，所以马上回滚了。",
+			"example_ruby": "エラーが<ruby>増<rt>ふ</rt></ruby>えたので、すぐ<ruby>切<rt>き</rt></ruby>り<ruby>戻<rt>もど</rt></ruby>しました。",
 			"example_en": "Errors increased, so we rolled back right away."
 		},
 		{
@@ -620,6 +671,7 @@
 			"subtopic": "问题和发布",
 			"example_jp": "昨夜の障害の振り返りを午後にやります。",
 			"example_zh": "下午做昨晚线上事故的复盘。",
+			"example_ruby": "<ruby>昨夜<rt>さくや</rt></ruby>の<ruby>障害<rt>しょうがい</rt></ruby>の<ruby>振<rt>ふ</rt></ruby>り<ruby>返<rt>かえ</rt></ruby>りを<ruby>午後<rt>ごご</rt></ruby>にやります。",
 			"example_en": "We will do the retro on last night's outage this afternoon."
 		},
 		{
@@ -631,6 +683,7 @@
 			"subtopic": "问题和发布",
 			"example_jp": "検証環境に上げたので確認お願いします。",
 			"example_zh": "已经发到测试环境了，请确认一下。",
+			"example_ruby": "<ruby>検証<rt>けんしょう</rt></ruby><ruby>環境<rt>かんきょう</rt></ruby>に<ruby>上<rt>あ</rt></ruby>げたので<ruby>確認<rt>かくにん</rt></ruby>お<ruby>願<rt>ねが</rt></ruby>いします。",
 			"example_en": "It is up on staging; please check."
 		},
 		{
@@ -642,6 +695,7 @@
 			"subtopic": "问题和发布",
 			"example_jp": "リリースは木曜の夕方を予定しています。",
 			"example_zh": "计划周四傍晚发布。",
+			"example_ruby": "リリースは<ruby>木曜<rt>もくよう</rt></ruby>の<ruby>夕方<rt>ゆうがた</rt></ruby>を<ruby>予定<rt>よてい</rt></ruby>しています。",
 			"example_en": "The release is planned for Thursday evening."
 		},
 		{
@@ -653,6 +707,7 @@
 			"subtopic": "代码评审",
 			"example_jp": "レビューの指摘はすべて対応しました。",
 			"example_zh": "评审提出的意见全部处理了。",
+			"example_ruby": "レビューの<ruby>指摘<rt>してき</rt></ruby>はすべて<ruby>対応<rt>たいおう</rt></ruby>しました。",
 			"example_en": "I addressed all the review comments."
 		},
 		{
@@ -664,6 +719,7 @@
 			"subtopic": "代码评审",
 			"example_jp": "差分が大きいので、PRを二つに分けます。",
 			"example_zh": "改动太大，把 PR 拆成两个。",
+			"example_ruby": "<ruby>差分<rt>さぶん</rt></ruby>が<ruby>大<rt>おお</rt></ruby>きいので、PRを<ruby>二<rt>ふた</rt></ruby>つに<ruby>分<rt>わ</rt></ruby>けます。",
 			"example_en": "The diff is large, so I will split the PR in two."
 		},
 		{
@@ -675,6 +731,7 @@
 			"subtopic": "代码评审",
 			"example_jp": "機能追加の前に少しリファクタリングしたいです。",
 			"example_zh": "加功能前想先稍微重构一下。",
+			"example_ruby": "<ruby>機能追加<rt>きのうついか</rt></ruby>の<ruby>前<rt>まえ</rt></ruby>に<ruby>少<rt>すこ</rt></ruby>しリファクタリングしたいです。",
 			"example_en": "I want to refactor a bit before adding the feature."
 		},
 		{
@@ -686,6 +743,7 @@
 			"subtopic": "代码评审",
 			"example_jp": "可読性のために変数名を変えました。",
 			"example_zh": "为了可读性改了变量名。",
+			"example_ruby": "<ruby>可読性<rt>かどくせい</rt></ruby>のために<ruby>変数名<rt>へんすうめい</rt></ruby>を<ruby>変<rt>か</rt></ruby>えました。",
 			"example_en": "I renamed the variable for readability."
 		},
 		{
@@ -697,6 +755,7 @@
 			"subtopic": "代码评审",
 			"example_jp": "この関数の命名、少し分かりにくいかもしれません。",
 			"example_zh": "这个函数的命名可能有点不好懂。",
+			"example_ruby": "この<ruby>関数<rt>かんすう</rt></ruby>の<ruby>命名<rt>めいめい</rt></ruby>、<ruby>少<rt>すこ</rt></ruby>し<ruby>分<rt>わ</rt></ruby>かりにくいかもしれません。",
 			"example_en": "This function name may be a little unclear."
 		},
 		{
@@ -708,6 +767,7 @@
 			"subtopic": "代码评审",
 			"example_jp": "承認をもらったのでマージします。",
 			"example_zh": "拿到批准了，我来合并。",
+			"example_ruby": "<ruby>承認<rt>しょうにん</rt></ruby>をもらったのでマージします。",
 			"example_en": "I got approval, so I will merge."
 		},
 		{
@@ -719,6 +779,7 @@
 			"subtopic": "代码评审",
 			"example_jp": "mainとコンフリクトしているので解消します。",
 			"example_zh": "和 main 有冲突，我来解决。",
+			"example_ruby": "mainとコンフリクトしているので<ruby>解消<rt>かいしょう</rt></ruby>します。",
 			"example_en": "It conflicts with main, so I will resolve it."
 		},
 		{
@@ -730,6 +791,7 @@
 			"subtopic": "代码评审",
 			"example_jp": "技術的負債が溜まっていて、改修に時間がかかります。",
 			"example_zh": "技术债积累太多，改起来很费时间。",
+			"example_ruby": "<ruby>技術的<rt>ぎじゅつてき</rt></ruby><ruby>負債<rt>ふさい</rt></ruby>が<ruby>溜<rt>た</rt></ruby>まっていて、<ruby>改修<rt>かいしゅう</rt></ruby>に<ruby>時間<rt>じかん</rt></ruby>がかかります。",
 			"example_en": "Tech debt has piled up, so changes take time."
 		},
 		{
@@ -741,6 +803,7 @@
 			"subtopic": "代码评审",
 			"example_jp": "お手すきの際にレビューをお願いします。",
 			"example_zh": "有空的时候麻烦帮忙评审一下。",
+			"example_ruby": "お<ruby>手<rt>て</rt></ruby>すきの<ruby>際<rt>さい</rt></ruby>にレビューをお<ruby>願<rt>ねが</rt></ruby>いします。",
 			"example_en": "Please review it when you have a moment."
 		},
 		{
@@ -752,6 +815,7 @@
 			"subtopic": "性能和无障碍",
 			"example_jp": "一覧ページのパフォーマンスを改善しました。",
 			"example_zh": "改善了列表页的性能。",
+			"example_ruby": "<ruby>一覧<rt>いちらん</rt></ruby>ページのパフォーマンスを<ruby>改善<rt>かいぜん</rt></ruby>しました。",
 			"example_en": "I improved the performance of the list page."
 		},
 		{
@@ -763,6 +827,7 @@
 			"subtopic": "性能和无障碍",
 			"example_jp": "画像の読み込みが遅いので遅延読み込みにします。",
 			"example_zh": "图片加载太慢，改成懒加载。",
+			"example_ruby": "<ruby>画像<rt>がぞう</rt></ruby>の<ruby>読<rt>よ</rt></ruby>み<ruby>込<rt>こ</rt></ruby>みが<ruby>遅<rt>おそ</rt></ruby>いので<ruby>遅延<rt>ちえん</rt></ruby><ruby>読<rt>よ</rt></ruby>み<ruby>込<rt>こ</rt></ruby>みにします。",
 			"example_en": "Images load slowly, so I will lazy-load them."
 		},
 		{
@@ -774,6 +839,7 @@
 			"subtopic": "性能和无障碍",
 			"example_jp": "改善の前と後でLighthouseのスコアを計測しました。",
 			"example_zh": "改善前后都测了 Lighthouse 分数。",
+			"example_ruby": "<ruby>改善<rt>かいぜん</rt></ruby>の<ruby>前<rt>まえ</rt></ruby>と<ruby>後<rt>あと</rt></ruby>でLighthouseのスコアを<ruby>計測<rt>けいそく</rt></ruby>しました。",
 			"example_en": "I measured Lighthouse scores before and after."
 		},
 		{
@@ -785,6 +851,7 @@
 			"subtopic": "性能和无障碍",
 			"example_jp": "バンドルサイズを最適化しました。",
 			"example_zh": "优化了打包体积。",
+			"example_ruby": "バンドルサイズを<ruby>最適化<rt>さいてきか</rt></ruby>しました。",
 			"example_en": "I optimized the bundle size."
 		},
 		{
@@ -796,6 +863,7 @@
 			"subtopic": "性能和无障碍",
 			"example_jp": "キャッシュが残っていて古い画面が出ています。",
 			"example_zh": "缓存还在，所以显示的是旧页面。",
+			"example_ruby": "キャッシュが<ruby>残<rt>のこ</rt></ruby>っていて<ruby>古<rt>ふる</rt></ruby>い<ruby>画面<rt>がめん</rt></ruby>が<ruby>出<rt>で</rt></ruby>ています。",
 			"example_en": "Old screens show because of a stale cache."
 		},
 		{
@@ -807,6 +875,7 @@
 			"subtopic": "性能和无障碍",
 			"example_jp": "アクセシビリティのため、画像にalt属性を付けました。",
 			"example_zh": "为了无障碍，给图片加了 alt 属性。",
+			"example_ruby": "アクセシビリティのため、<ruby>画像<rt>がぞう</rt></ruby>にalt<ruby>属性<rt>ぞくせい</rt></ruby>を<ruby>付<rt>つ</rt></ruby>けました。",
 			"example_en": "For accessibility I added alt attributes to images."
 		},
 		{
@@ -818,6 +887,7 @@
 			"subtopic": "性能和无障碍",
 			"example_jp": "スクリーンリーダーでボタン名が読み上げられません。",
 			"example_zh": "屏幕阅读器读不出按钮名称。",
+			"example_ruby": "スクリーンリーダーでボタン<ruby>名<rt>めい</rt></ruby>が<ruby>読<rt>よ</rt></ruby>み<ruby>上<rt>あ</rt></ruby>げられません。",
 			"example_en": "The screen reader does not read the button name."
 		},
 		{
@@ -829,6 +899,7 @@
 			"subtopic": "测试",
 			"example_jp": "この関数には単体テストを追加しました。",
 			"example_zh": "给这个函数加了单元测试。",
+			"example_ruby": "この<ruby>関数<rt>かんすう</rt></ruby>には<ruby>単体<rt>たんたい</rt></ruby>テストを<ruby>追加<rt>ついか</rt></ruby>しました。",
 			"example_en": "I added unit tests for this function."
 		},
 		{
@@ -840,6 +911,7 @@
 			"subtopic": "测试",
 			"example_jp": "結合テストでAPIとのずれが見つかりました。",
 			"example_zh": "集成测试时发现了和 API 对不上的地方。",
+			"example_ruby": "<ruby>結合<rt>けつごう</rt></ruby>テストでAPIとのずれが<ruby>見<rt>み</rt></ruby>つかりました。",
 			"example_en": "Integration tests found a mismatch with the API."
 		},
 		{
@@ -851,6 +923,7 @@
 			"subtopic": "测试",
 			"example_jp": "異常系のテストケースが足りていません。",
 			"example_zh": "异常情况的测试用例不够。",
+			"example_ruby": "<ruby>異常系<rt>いじょうけい</rt></ruby>のテストケースが<ruby>足<rt>た</rt></ruby>りていません。",
 			"example_en": "We do not have enough error-case tests."
 		},
 		{
@@ -862,6 +935,7 @@
 			"subtopic": "测试",
 			"example_jp": "iPhoneでも動作確認済みです。",
 			"example_zh": "在 iPhone 上也确认过能正常运行了。",
+			"example_ruby": "iPhoneでも<ruby>動作確認<rt>どうさかくにん</rt></ruby><ruby>済<rt>す</rt></ruby>みです。",
 			"example_en": "I have also checked it works on iPhone."
 		},
 		{
@@ -873,6 +947,7 @@
 			"subtopic": "测试",
 			"example_jp": "正常系は問題ありませんが、異常系がまだです。",
 			"example_zh": "正常流程没问题，异常流程还没测。",
+			"example_ruby": "<ruby>正常系<rt>せいじょうけい</rt></ruby>は<ruby>問題<rt>もんだい</rt></ruby>ありませんが、<ruby>異常系<rt>いじょうけい</rt></ruby>がまだです。",
 			"example_en": "The happy path is fine; error cases are not done yet."
 		},
 		{
@@ -884,6 +959,7 @@
 			"subtopic": "测试",
 			"example_jp": "通信エラーのときの異常系も確認してください。",
 			"example_zh": "也请确认一下网络出错时的异常流程。",
+			"example_ruby": "<ruby>通信<rt>つうしん</rt></ruby>エラーのときの<ruby>異常系<rt>いじょうけい</rt></ruby>も<ruby>確認<rt>かくにん</rt></ruby>してください。",
 			"example_en": "Please also check the error case when the request fails."
 		},
 		{
@@ -895,6 +971,7 @@
 			"subtopic": "沟通和汇报",
 			"example_jp": "仕様について、一度認識合わせをさせてください。",
 			"example_zh": "关于规格，请让我们先对齐一下理解。",
+			"example_ruby": "<ruby>仕様<rt>しよう</rt></ruby>について、<ruby>一度<rt>いちど</rt></ruby><ruby>認識<rt>にんしき</rt></ruby><ruby>合<rt>あ</rt></ruby>わせをさせてください。",
 			"example_en": "Let us get aligned on the spec once."
 		},
 		{
@@ -906,6 +983,7 @@
 			"subtopic": "沟通和汇报",
 			"example_jp": "デザイナーと細かいところをすり合わせます。",
 			"example_zh": "和设计师协调细节。",
+			"example_ruby": "デザイナーと<ruby>細<rt>こま</rt></ruby>かいところをすり<ruby>合<rt>あ</rt></ruby>わせます。",
 			"example_en": "I will align on the details with the designer."
 		},
 		{
@@ -917,6 +995,7 @@
 			"subtopic": "沟通和汇报",
 			"example_jp": "議事録をSlackで共有しておきます。",
 			"example_zh": "我把会议记录发到 Slack 上同步。",
+			"example_ruby": "<ruby>議事録<rt>ぎじろく</rt></ruby>をSlackで<ruby>共有<rt>きょうゆう</rt></ruby>しておきます。",
 			"example_en": "I will share the minutes on Slack."
 		},
 		{
@@ -928,6 +1007,7 @@
 			"subtopic": "沟通和汇报",
 			"example_jp": "実装方針について少しご相談したいです。",
 			"example_zh": "关于实现方针想跟您商量一下。",
+			"example_ruby": "<ruby>実装<rt>じっそう</rt></ruby><ruby>方針<rt>ほうしん</rt></ruby>について<ruby>少<rt>すこ</rt></ruby>しご<ruby>相談<rt>そうだん</rt></ruby>したいです。",
 			"example_en": "I would like to consult you about the approach."
 		},
 		{
@@ -950,6 +1030,7 @@
 			"subtopic": "沟通和汇报",
 			"example_jp": "その残タスクは私が巻き取ります。",
 			"example_zh": "剩下的任务我来接手。",
+			"example_ruby": "その<ruby>残<rt>ざん</rt></ruby>タスクは<ruby>私<rt>わたし</rt></ruby>が<ruby>巻<rt>ま</rt></ruby>き<ruby>取<rt>と</rt></ruby>ります。",
 			"example_en": "I will pick up those remaining tasks."
 		},
 		{
@@ -961,6 +1042,7 @@
 			"subtopic": "沟通和汇报",
 			"example_jp": "おっしゃる通りです。その方向で直します。",
 			"example_zh": "您说得对，我按那个方向改。",
+			"example_ruby": "おっしゃる<ruby>通<rt>どお</rt></ruby>りです。その<ruby>方向<rt>ほうこう</rt></ruby>で<ruby>直<rt>なお</rt></ruby>します。",
 			"example_en": "You are right. I will fix it that way."
 		},
 		{
@@ -972,6 +1054,7 @@
 			"subtopic": "面试",
 			"example_jp": "職務経歴書には担当したプロダクトを具体的に書きました。",
 			"example_zh": "工作经历书里具体写了负责过的产品。",
+			"example_ruby": "<ruby>職務<rt>しょくむ</rt></ruby><ruby>経歴書<rt>けいれきしょ</rt></ruby>には<ruby>担当<rt>たんとう</rt></ruby>したプロダクトを<ruby>具体的<rt>ぐたいてき</rt></ruby>に<ruby>書<rt>か</rt></ruby>きました。",
 			"example_en": "I wrote the products I worked on concretely in my career history."
 		},
 		{
@@ -983,6 +1066,7 @@
 			"subtopic": "面试",
 			"example_jp": "前職ではNext.jsの技術選定から関わりました。",
 			"example_zh": "上一份工作里我从 Next.js 的技术选型就参与了。",
+			"example_ruby": "<ruby>前職<rt>ぜんしょく</rt></ruby>ではNext.jsの<ruby>技術<rt>ぎじゅつ</rt></ruby><ruby>選定<rt>せんてい</rt></ruby>から<ruby>関<rt>かか</rt></ruby>わりました。",
 			"example_en": "At my last job I was involved from choosing Next.js."
 		},
 		{
@@ -994,6 +1078,7 @@
 			"subtopic": "面试",
 			"example_jp": "フロントエンド全体の設計を担当していました。",
 			"example_zh": "我负责过整个前端的设计。",
+			"example_ruby": "フロントエンド<ruby>全体<rt>ぜんたい</rt></ruby>の<ruby>設計<rt>せっけい</rt></ruby>を<ruby>担当<rt>たんとう</rt></ruby>していました。",
 			"example_en": "I was in charge of the whole frontend architecture."
 		},
 		{
@@ -1005,6 +1090,7 @@
 			"subtopic": "面试",
 			"example_jp": "御社の技術スタックについて伺ってもよろしいですか。",
 			"example_zh": "可以问一下贵公司的技术栈吗？",
+			"example_ruby": "<ruby>御社<rt>おんしゃ</rt></ruby>の<ruby>技術<rt>ぎじゅつ</rt></ruby>スタックについて<ruby>伺<rt>うかが</rt></ruby>ってもよろしいですか。",
 			"example_en": "May I ask about your tech stack?"
 		},
 		{
@@ -1016,6 +1102,7 @@
 			"subtopic": "面试",
 			"example_jp": "五人のチーム開発でリーダーを務めました。",
 			"example_zh": "在五人团队开发中担任过组长。",
+			"example_ruby": "<ruby>五人<rt>ごにん</rt></ruby>のチーム<ruby>開発<rt>かいはつ</rt></ruby>でリーダーを<ruby>務<rt>つと</rt></ruby>めました。",
 			"example_en": "I led a five-person development team."
 		},
 		{
@@ -1027,6 +1114,7 @@
 			"subtopic": "面试",
 			"example_jp": "まずはカジュアル面談でお話を聞きたいです。",
 			"example_zh": "想先通过非正式面谈了解一下情况。",
+			"example_ruby": "まずはカジュアル<ruby>面談<rt>めんだん</rt></ruby>でお<ruby>話<rt>はなし</rt></ruby>を<ruby>聞<rt>き</rt></ruby>きたいです。",
 			"example_en": "I would like to start with a casual chat."
 		}
 	]

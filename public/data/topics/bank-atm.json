@@ -33,6 +33,7 @@
 			"subtopic": "画面上的按钮",
 			"example_jp": "まず画面の「お引出し」を押します。",
 			"example_zh": "先按画面上的「取款」。",
+			"example_ruby": "まず<ruby>画面<rt>がめん</rt></ruby>の「お<ruby>引出<rt>ひきだ</rt></ruby>し」を<ruby>押<rt>お</rt></ruby>します。",
 			"example_en": "First press Withdrawal on the screen.",
 			"note": "按钮用「お引出し」。自己说“我取了钱”用动词「引き出す」。"
 		},
@@ -45,6 +46,7 @@
 			"subtopic": "画面上的按钮",
 			"example_jp": "このATMでお預入れもできます。",
 			"example_zh": "这台 ATM 也可以存款。",
+			"example_ruby": "このATMでお<ruby>預<rt>あず</rt></ruby><ruby>入<rt>い</rt></ruby>れもできます。",
 			"example_en": "You can also make a deposit at this ATM."
 		},
 		{
@@ -56,6 +58,7 @@
 			"subtopic": "画面上的按钮",
 			"example_jp": "ATMで残高照会をしました。",
 			"example_zh": "在 ATM 上查了余额。",
+			"example_ruby": "ATMで<ruby>残高照会<rt>ざんだかしょうかい</rt></ruby>をしました。",
 			"example_en": "I checked my balance at the ATM."
 		},
 		{
@@ -67,6 +70,7 @@
 			"subtopic": "画面上的按钮",
 			"example_jp": "画面の「お振り込み」から家賃を払います。",
 			"example_zh": "从画面上的「转账」付房租。",
+			"example_ruby": "<ruby>画面<rt>がめん</rt></ruby>の「お<ruby>振<rt>ふ</rt></ruby>り<ruby>込<rt>こ</rt></ruby>み」から<ruby>家賃<rt>やちん</rt></ruby>を<ruby>払<rt>はら</rt></ruby>います。",
 			"example_en": "I pay the rent from Transfer on the screen."
 		},
 		{
@@ -78,6 +82,7 @@
 			"subtopic": "画面上的按钮",
 			"example_jp": "通帳を入れて、通帳記入を選びます。",
 			"example_zh": "插入存折，然后选存折补登。",
+			"example_ruby": "<ruby>通帳<rt>つうちょう</rt></ruby>を<ruby>入<rt>い</rt></ruby>れて、<ruby>通帳<rt>つうちょう</rt></ruby><ruby>記入<rt>きにゅう</rt></ruby>を<ruby>選<rt>えら</rt></ruby>びます。",
 			"example_en": "Insert the passbook, then choose Passbook update."
 		},
 		{
@@ -89,6 +94,7 @@
 			"subtopic": "插卡和确认",
 			"example_jp": "キャッシュカードを忘れずに取り出してください。",
 			"example_zh": "请别忘了取回银行卡。",
+			"example_ruby": "キャッシュカードを<ruby>忘<rt>わす</rt></ruby>れずに<ruby>取<rt>と</rt></ruby>り<ruby>出<rt>だ</rt></ruby>してください。",
 			"example_en": "Please remember to take your cash card."
 		},
 		{
@@ -100,6 +106,7 @@
 			"subtopic": "插卡和确认",
 			"example_jp": "カードを挿入してください。",
 			"example_zh": "请插入卡片。",
+			"example_ruby": "カードを<ruby>挿入<rt>そうにゅう</rt></ruby>してください。",
 			"example_en": "Please insert your card."
 		},
 		{
@@ -111,6 +118,7 @@
 			"subtopic": "插卡和确认",
 			"example_jp": "暗証番号を四桁入力してください。",
 			"example_zh": "请输入四位密码。",
+			"example_ruby": "<ruby>暗証番号<rt>あんしょうばんごう</rt></ruby>を<ruby>四<rt>よん</rt></ruby><ruby>桁<rt>けた</rt></ruby><ruby>入力<rt>にゅうりょく</rt></ruby>してください。",
 			"example_en": "Please enter your four-digit PIN."
 		},
 		{
@@ -122,6 +130,7 @@
 			"subtopic": "插卡和确认",
 			"example_jp": "金額を見てから、確認を押します。",
 			"example_zh": "看过金额后再按确认。",
+			"example_ruby": "<ruby>金額<rt>きんがく</rt></ruby>を<ruby>見<rt>み</rt></ruby>てから、<ruby>確認<rt>かくにん</rt></ruby>を<ruby>押<rt>お</rt></ruby>します。",
 			"example_en": "Check the amount, then press Confirm."
 		},
 		{
@@ -133,6 +142,7 @@
 			"subtopic": "插卡和确认",
 			"example_jp": "間違えたので、取消を押しました。",
 			"example_zh": "输错了，所以按了取消。",
+			"example_ruby": "<ruby>間違<rt>まちが</rt></ruby>えたので、<ruby>取消<rt>とりけし</rt></ruby>を<ruby>押<rt>お</rt></ruby>しました。",
 			"example_en": "I made a mistake, so I pressed Cancel."
 		},
 		{
@@ -144,6 +154,7 @@
 			"subtopic": "插卡和确认",
 			"example_jp": "現金をお受け取りください。",
 			"example_zh": "请取走现金。",
+			"example_ruby": "<ruby>現金<rt>げんきん</rt></ruby>をお<ruby>受<rt>う</rt></ruby>け<ruby>取<rt>と</rt></ruby>りください。",
 			"example_en": "Please take your cash."
 		},
 		{
@@ -155,6 +166,7 @@
 			"subtopic": "账户和金额",
 			"example_jp": "ATMで三万円を引き出しました。",
 			"example_zh": "在 ATM 取了三万日元。",
+			"example_ruby": "ATMで<ruby>三万<rt>さんまん</rt></ruby><ruby>円<rt>えん</rt></ruby>を<ruby>引<rt>ひ</rt></ruby>き<ruby>出<rt>だ</rt></ruby>しました。",
 			"example_en": "I withdrew 30,000 yen at the ATM."
 		},
 		{
@@ -166,6 +178,7 @@
 			"subtopic": "账户和金额",
 			"example_jp": "余った現金を口座に預けました。",
 			"example_zh": "把剩下的现金存进账户了。",
+			"example_ruby": "<ruby>余<rt>あま</rt></ruby>った<ruby>現金<rt>げんきん</rt></ruby>を<ruby>口座<rt>こうざ</rt></ruby>に<ruby>預<rt>あず</rt></ruby>けました。",
 			"example_en": "I deposited the leftover cash into my account."
 		},
 		{
@@ -177,6 +190,7 @@
 			"subtopic": "账户和金额",
 			"example_jp": "家賃をATMで振り込みました。",
 			"example_zh": "在 ATM 转了房租。",
+			"example_ruby": "<ruby>家賃<rt>やちん</rt></ruby>をATMで<ruby>振<rt>ふ</rt></ruby>り<ruby>込<rt>こ</rt></ruby>みました。",
 			"example_en": "I transferred the rent at the ATM."
 		},
 		{
@@ -188,6 +202,7 @@
 			"subtopic": "账户和金额",
 			"example_jp": "給与はこの口座に振り込まれます。",
 			"example_zh": "工资会打进这个账户。",
+			"example_ruby": "<ruby>給与<rt>きゅうよ</rt></ruby>はこの<ruby>口座<rt>こうざ</rt></ruby>に<ruby>振<rt>ふ</rt></ruby>り<ruby>込<rt>こ</rt></ruby>まれます。",
 			"example_en": "My salary is paid into this account."
 		},
 		{
@@ -199,6 +214,7 @@
 			"subtopic": "账户和金额",
 			"example_jp": "残高が足りないので、一万円だけ引き出します。",
 			"example_zh": "余额不够，所以只取一万日元。",
+			"example_ruby": "<ruby>残高<rt>ざんだか</rt></ruby>が<ruby>足<rt>た</rt></ruby>りないので、<ruby>一万円<rt>いちまんえん</rt></ruby>だけ<ruby>引<rt>ひ</rt></ruby>き<ruby>出<rt>だ</rt></ruby>します。",
 			"example_en": "The balance is short, so I'll withdraw just 10,000 yen."
 		},
 		{
@@ -210,6 +226,7 @@
 			"subtopic": "账户和金额",
 			"example_jp": "他の銀行のATMは手数料がかかります。",
 			"example_zh": "用其他银行的 ATM 要收手续费。",
+			"example_ruby": "<ruby>他<rt>ほか</rt></ruby>の<ruby>銀行<rt>ぎんこう</rt></ruby>のATMは<ruby>手数料<rt>てすうりょう</rt></ruby>がかかります。",
 			"example_en": "Another bank's ATM charges a fee."
 		},
 		{
@@ -221,6 +238,7 @@
 			"subtopic": "账户和金额",
 			"example_jp": "明細票を忘れずに取りました。",
 			"example_zh": "没忘了把明细单拿走。",
+			"example_ruby": "<ruby>明細<rt>めいさい</rt></ruby><ruby>票<rt>ひょう</rt></ruby>を<ruby>忘<rt>わす</rt></ruby>れずに<ruby>取<rt>と</rt></ruby>りました。",
 			"example_en": "I remembered to take the transaction slip."
 		},
 		{
@@ -232,6 +250,7 @@
 			"subtopic": "账户和金额",
 			"example_jp": "一日の引出限度額を超えています。",
 			"example_zh": "超过了一天的取款限额。",
+			"example_ruby": "<ruby>一日<rt>いちにち</rt></ruby>の<ruby>引出<rt>ひきだし</rt></ruby><ruby>限度額<rt>げんどがく</rt></ruby>を<ruby>超<rt>こ</rt></ruby>えています。",
 			"example_en": "This is over the daily withdrawal limit."
 		}
 	]
