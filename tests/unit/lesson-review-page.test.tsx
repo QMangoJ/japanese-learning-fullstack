@@ -150,9 +150,9 @@ describe("ReviewPage", () => {
 		localStorage.clear();
 		render(<ReviewPage dateId="2026-09-11" />);
 		expect(await screen.findByText("先進国")).toBeInTheDocument();
-		expect(document.querySelector("[data-fc-level]")?.textContent).toBe("记住了");
+		expect(document.querySelector(".review-skill button.on")?.textContent).toBe("记住了");
 		await user.click(screen.getByRole("button", { name: /^模糊$/ }));
-		expect(document.querySelector("[data-fc-level]")?.textContent).toBe("模糊");
+		expect(document.querySelector(".review-skill button.on")?.textContent).toBe("模糊");
 		expect(screen.getByText("先進国")).toBeInTheDocument();
 		await user.click(screen.getByRole("button", { name: /^记住了 / }));
 		expect(screen.queryByText("先進国")).not.toBeInTheDocument();

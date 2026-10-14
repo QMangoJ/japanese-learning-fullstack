@@ -133,9 +133,6 @@ function MemoryCardFront({
 	return (
 		<>
 			{cur.kind ? <div className="review-k">{memoryKindLabel(cur.kind)}</div> : null}
-			<div className="meta" data-fc-level={level}>
-				{levelLabel(level)}
-			</div>
 			<div
 				className={japanese ? "big jp" : face?.missing ? "meta" : "big"}
 				data-fc-face={face?.side ?? "jp"}
