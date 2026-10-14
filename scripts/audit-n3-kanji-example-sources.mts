@@ -3,7 +3,7 @@ import { extname, join, relative, resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 
 const root = resolve(import.meta.dirname, "..");
-const kanji = JSON.parse(await readFile(join(root, "public/data/kanji.e43232869e.json"), "utf8"));
+const kanji = JSON.parse(await readFile(join(root, "public/data/kanji.94a6d6a8d1.json"), "utf8"));
 
 const stripRuby = (value: string) => value
 	.replace(/\{([^|{}]+)\|[^{}]+\}/g, "$1")

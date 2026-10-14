@@ -3,7 +3,7 @@ import { resolve } from "node:path";
 
 const root = resolve(import.meta.dirname, "..");
 const vocabPath = resolve(root, "public/data/vocab.856eb48e32.json");
-const kanjiPath = resolve(root, "public/data/kanji.e43232869e.json");
+const kanjiPath = resolve(root, "public/data/kanji.94a6d6a8d1.json");
 const outputPath = resolve(root, "public/data/n3-vocab-kanji-daily-translations.json");
 
 // 日课题目的完整句翻译。数组顺序与每天 exercises.sections 中的题目顺序一致；

@@ -1,6 +1,6 @@
 import json, re, glob
 D="/workspace/wt-n1-listening/public/data/"
-SRC=[("n1vocab.41d7ac89a7.json","N1"),("n1kanji.fd4839449f.json","N1"),("n2vocab.90123e4b43.json","N2"),("n2kanji.d9739ca8d4.json","N2"),("vocab.856eb48e32.json","N3"),("kanji.e43232869e.json","N3")]
+SRC=[("n1vocab.41d7ac89a7.json","N1"),("n1kanji.ed64b5136d.json","N1"),("n2vocab.90123e4b43.json","N2"),("n2kanji.29f929e8a8.json","N2"),("vocab.856eb48e32.json","N3"),("kanji.94a6d6a8d1.json","N3")]
 def ruby_reading(r):
     return re.sub(r"<ruby>(.*?)<rt>(.*?)</rt></ruby>",lambda m:m.group(2),r)
 ents={}

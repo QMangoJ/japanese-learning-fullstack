@@ -12,7 +12,7 @@ from n4_vk_cn import KANJI, VOCAB
 
 ROOT = Path(__file__).resolve().parent.parent
 VOCAB_BOOK = ROOT / "public/data/n4vocab.026f711eb7.json"
-KANJI_BOOK = ROOT / "public/data/n4kanji.655356d8e2.json"
+KANJI_BOOK = ROOT / "public/data/n4kanji.55810b32d6.json"
 OUT = ROOT / "public/data/n4-vocab-kanji-daily-translations.json"
 
 

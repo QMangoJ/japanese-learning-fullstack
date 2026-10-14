@@ -26,9 +26,9 @@ VOCAB_BOOKS = [
 	DATA / "vocab.856eb48e32.json",
 	DATA / "n2vocab.90123e4b43.json",
 	DATA / "n4vocab.026f711eb7.json",
-	DATA / "kanji.e43232869e.json",
-	DATA / "n2kanji.d9739ca8d4.json",
-	DATA / "n4kanji.655356d8e2.json",
+	DATA / "kanji.94a6d6a8d1.json",
+	DATA / "n2kanji.29f929e8a8.json",
+	DATA / "n4kanji.55810b32d6.json",
 ]
 
 

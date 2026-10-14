@@ -1,5 +1,5 @@
 import { beforeAll, describe, expect, it } from "vitest";
-import kanji from "../../public/data/n2kanji.d9739ca8d4.json";
+import kanji from "../../public/data/n2kanji.29f929e8a8.json";
 import { N2_KANJI_USAGE } from "../../app/data/n2-kanji-usage";
 import { getN2KanjiWordUsage, loadN2KanjiUsageLater } from "../../app/study/n2-kanji-word-usage";
 import { kanjiWordSurface } from "../../app/study/kanji-word-usage";

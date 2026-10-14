@@ -27,3 +27,18 @@
 .usage-day{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 12px}
 .usage-day.today{border-color:var(--accent)}
 .usage-day b{font-size:15px}
+
+/* 汉字记忆卡：词性小标签 */
+.kpos {
+	display: inline-block;
+	margin-left: 6px;
+	padding: 0 6px;
+	border: 1px solid var(--line, rgba(127, 127, 127, 0.35));
+	border-radius: 999px;
+	font-size: 11px;
+	line-height: 18px;
+	font-weight: 500;
+	vertical-align: middle;
+	opacity: 0.75;
+	white-space: nowrap;
+}

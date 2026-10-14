@@ -170,17 +170,17 @@ export const FAV_MOD_LABEL: Record<string, string> = {
 
 export const DATA_FILES: Record<string, string> = {
 	grammar: "grammar.d15be04258.json",
-	kanji: "kanji.e43232869e.json",
+	kanji: "kanji.94a6d6a8d1.json",
 	vocab: "vocab.856eb48e32.json",
 	n2grammar: "n2grammar.4e6157570a.json",
 	n2vocab: "n2vocab.90123e4b43.json",
-	n2kanji: "n2kanji.d9739ca8d4.json",
+	n2kanji: "n2kanji.29f929e8a8.json",
 	n4grammar: "n4grammar.40e138ccdb.json",
 	n4vocab: "n4vocab.026f711eb7.json",
-	n4kanji: "n4kanji.655356d8e2.json",
+	n4kanji: "n4kanji.55810b32d6.json",
 	n1grammar: "n1grammar.c2d6c00681.json",
 	n1vocab: "n1vocab.41d7ac89a7.json",
-	n1kanji: "n1kanji.fd4839449f.json",
+	n1kanji: "n1kanji.ed64b5136d.json",
 	common: "common.aa13cae172.json",
 };
 

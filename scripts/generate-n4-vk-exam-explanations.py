@@ -67,7 +67,7 @@ def pack(rows: list[dict], table: dict[str, dict]) -> dict[str, list]:
 
 def main() -> None:
 	vocab_rows = collect(ROOT / "public/data/n4vocab.026f711eb7.json")
-	kanji_rows = collect(ROOT / "public/data/n4kanji.655356d8e2.json")
+	kanji_rows = collect(ROOT / "public/data/n4kanji.55810b32d6.json")
 	(ROOT / "public/data/n4-vocab-exam-explanations.json").write_text(
 		json.dumps(pack(vocab_rows, VOCAB_EXAM), ensure_ascii=False, indent="\t") + "\n",
 		encoding="utf-8",

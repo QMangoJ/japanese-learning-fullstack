@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import kanji from "../../public/data/kanji.e43232869e.json";
+import kanji from "../../public/data/kanji.94a6d6a8d1.json";
 import { getKanjiWordUsage, kanjiWordSurface } from "../../app/study/kanji-word-usage";
 
 const words = kanji.weeks.flatMap((week) =>
