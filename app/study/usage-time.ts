@@ -154,8 +154,15 @@ function saveLocal() {
 	}
 }
 
-function publish() {
-	snapshot = { days: displayDays(remote, local.days, local.synced), signedIn, synced: lastSyncOk, kind };
+function daysWithOpenSegment(now: number): DayMap {
+	if (segmentStart == null) return local.days;
+	const end = audioPlaying ? now : Math.min(now, lastInput + USAGE_IDLE_MS);
+	const capEnd = audioPlaying ? end : Math.min(end, segmentStart + IDLE_SLICE_MS);
+	return addSecondsAcrossDays(local.days, segmentStart, capEnd);
+}
+
+function publish(now = Date.now()) {
+	snapshot = { days: displayDays(remote, daysWithOpenSegment(now), local.synced), signedIn, synced: lastSyncOk, kind };
 	for (const listener of listeners) listener();
 }
 
@@ -195,13 +202,13 @@ function commit(start: number, end: number, fromAudio: boolean) {
 	if (capEnd <= start) return;
 	local = { ...local, days: addSecondsAcrossDays(local.days, start, capEnd) };
 	saveLocal();
-	publish();
 }
 
 function closeSegment(now = Date.now()) {
 	if (segmentStart == null) return;
 	commit(segmentStart, now, audioPlaying);
 	segmentStart = null;
+	publish(now);
 }
 
 function tick() {
@@ -214,6 +221,7 @@ function tick() {
 	}
 	if (segmentStart == null) {
 		if (active) segmentStart = now;
+		publish(now);
 		return;
 	}
 	const end = audioPlaying ? now : Math.min(now, lastInput + USAGE_IDLE_MS);
@@ -221,6 +229,7 @@ function tick() {
 		commit(segmentStart, end, audioPlaying);
 		segmentStart = active ? now : null;
 	}
+	publish(now);
 }
 
 function onOnline() {
@@ -355,31 +364,45 @@ export function refreshUsageAccount(signedInNow?: boolean) {
 	void refreshAccount().then(() => syncNow());
 }
 
+function startTimer() {
+	if (typeof window === "undefined") return;
+	if (timer) window.clearInterval(timer);
+	timer = window.setInterval(tick, 1000);
+}
+
+function stopTimer() {
+	if (typeof window === "undefined" || !timer) return;
+	window.clearInterval(timer);
+	timer = 0;
+}
+
 export function startUsageTracker(nextKind: UsageKind = "account"): () => void {
 	started += 1;
 	kind = nextKind;
-	if (started === 1 && typeof window !== "undefined") {
-		local = loadLocal();
-		lastInput = Date.now();
-		publish();
-		const opts = { passive: true } as AddEventListenerOptions;
-		window.addEventListener("pointerdown", onActivity, opts);
-		window.addEventListener("keydown", onActivity);
-		document.addEventListener("scroll", onActivity, { passive: true, capture: true });
-		window.addEventListener("touchstart", onActivity, opts);
-		document.addEventListener("visibilitychange", onVisibility);
-		window.addEventListener("online", onOnline);
-		window.addEventListener("pagehide", onPageHide);
-		window.addEventListener("storage", onStorage);
-		timer = window.setInterval(tick, 1000);
-		void refreshAccount().then(() => syncNow());
-		if (counting(Date.now())) segmentStart = Date.now();
+	if (typeof window !== "undefined") {
+		if (started === 1) {
+			local = loadLocal();
+			lastInput = Date.now();
+			const opts = { passive: true } as AddEventListenerOptions;
+			window.addEventListener("pointerdown", onActivity, opts);
+			window.addEventListener("keydown", onActivity);
+			document.addEventListener("scroll", onActivity, { passive: true, capture: true });
+			window.addEventListener("touchstart", onActivity, opts);
+			document.addEventListener("visibilitychange", onVisibility);
+			window.addEventListener("online", onOnline);
+			window.addEventListener("pagehide", onPageHide);
+			window.addEventListener("storage", onStorage);
+			void refreshAccount().then(() => syncNow());
+			if (counting(Date.now())) segmentStart = Date.now();
+			publish();
+		}
+		startTimer();
 	}
 	return () => {
 		started = Math.max(0, started - 1);
 		if (started > 0 || typeof window === "undefined") return;
 		closeSegment();
-		window.clearInterval(timer);
+		stopTimer();
 		window.removeEventListener("pointerdown", onActivity);
 		window.removeEventListener("keydown", onActivity);
 		document.removeEventListener("scroll", onActivity, true);
