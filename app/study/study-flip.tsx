@@ -91,6 +91,25 @@ export function StudyFlip({
 		return () => window.removeEventListener("keydown", onKey);
 	}, [gradeKeys]);
 
+	const flipRef = useRef(onFlip);
+	flipRef.current = onFlip;
+	useEffect(() => {
+		const onKey = (event: KeyboardEvent) => {
+			if (event.key !== " " && event.code !== "Space") return;
+			if (event.defaultPrevented || event.metaKey || event.ctrlKey || event.altKey) return;
+			if (editableTarget(event.target)) return;
+			if (document.querySelectorAll(".fcard").length > 1) {
+				const el = event.target instanceof Element ? event.target.closest(".fcard") : null;
+				if (!el) return;
+			}
+			event.preventDefault();
+			if (event.repeat) return;
+			flipRef.current();
+		};
+		window.addEventListener("keydown", onKey);
+		return () => window.removeEventListener("keydown", onKey);
+	}, []);
+
 	const release = (grade: SwipeGrade) => {
 		if (!swipeTo) return;
 		if (reducedMotion()) {
@@ -168,7 +187,7 @@ export function StudyFlip({
 				}}
 				onKeyDown={(event) => {
 					if (nestedControl(event.target, event.currentTarget)) return;
-					if (event.key !== " " && event.key !== "Enter") return;
+					if (event.key !== "Enter") return;
 					event.preventDefault();
 					onFlip();
 				}}
