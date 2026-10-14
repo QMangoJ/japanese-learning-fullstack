@@ -17,7 +17,7 @@ export type UsageSnapshot = {
 	kind: UsageKind;
 };
 
-type LocalUsage = { days: DayMap; synced: DayMap };
+type LocalUsage = { days: DayMap; synced: DayMap; device: string };
 
 export function jstDayKey(ms: number): string {
 	return new Intl.DateTimeFormat("en-CA", {
@@ -107,6 +107,43 @@ export function displayDays(remote: DayMap, local: DayMap, synced: DayMap): DayM
 	return out;
 }
 
+const DEVICE = /^[a-z0-9]{6,40}$/;
+
+/** Client report: this device's absolute per-day totals. Idempotent, so a retry or stale read never loses time. */
+export function parseUsageReport(body: unknown): { device: string; totals: DayMap } | null {
+	if (!body || typeof body !== "object" || Array.isArray(body)) return null;
+	const { device, totals } = body as { device?: unknown; totals?: unknown };
+	if (typeof device !== "string" || !DEVICE.test(device)) return null;
+	if (!totals || typeof totals !== "object" || Array.isArray(totals)) return null;
+	return { device, totals: sanitizeDays(totals) };
+}
+
+export type DayRecord = { devices: Record<string, number>; legacy?: number };
+
+/** Merge one device's absolute total into a day record (max, never decreases). */
+export function mergeDayRecord(rec: DayRecord | null, device: string, sec: number): DayRecord {
+	const devices = { ...(rec?.devices || {}) };
+	devices[device] = Math.min(USAGE_DAY_CAP_SEC, Math.max(devices[device] || 0, sec));
+	return { ...(rec?.legacy ? { legacy: rec.legacy } : {}), devices };
+}
+
+export function dayRecordTotal(rec: DayRecord | null | undefined): number {
+	if (!rec) return 0;
+	const sum = Object.values(rec.devices || {}).reduce((a, b) => a + (Number.isFinite(b) ? b : 0), 0);
+	return Math.min(USAGE_DAY_CAP_SEC, Math.max(rec.legacy || 0, sum));
+}
+
+/** Display: server total minus what this device already uploaded, plus this device's live total. */
+export function combineDays(remote: DayMap, mine: DayMap, local: DayMap): DayMap {
+	const out: DayMap = {};
+	for (const day of new Set([...Object.keys(remote), ...Object.keys(local)])) {
+		const others = Math.max(0, (remote[day] || 0) - (mine[day] || 0));
+		const total = Math.max(remote[day] || 0, others + (local[day] || 0));
+		if (total > 0) out[day] = Math.min(USAGE_DAY_CAP_SEC, total);
+	}
+	return out;
+}
+
 export function usageEndpoint(kind: UsageKind): string {
 	if (kind === "shadowing") return `${USAGE_ENDPOINT}?app=shadowing`;
 	if (kind === "reading") return `${USAGE_ENDPOINT}?app=reading`;
@@ -117,7 +154,8 @@ const EMPTY_SNAPSHOT: UsageSnapshot = { days: {}, signedIn: false, synced: false
 
 let kind: UsageKind = "account";
 let remote: DayMap = {};
-let local: LocalUsage = { days: {}, synced: {} };
+let remoteMine: DayMap = {};
+let local: LocalUsage = { days: {}, synced: {}, device: "" };
 let signedIn = false;
 let lastSyncOk = false;
 let audioPlaying = false;
@@ -127,11 +165,16 @@ let snapshot: UsageSnapshot = EMPTY_SNAPSHOT;
 let timer = 0;
 let started = 0;
 let syncing: Promise<void> | null = null;
+let lastSyncAt = Date.now();
 const listeners = new Set<() => void>();
 const tabId = `t${Math.random().toString(36).slice(2)}`;
 
+function newDevice(): string {
+	return `d${Math.random().toString(36).slice(2)}${Date.now().toString(36)}`.slice(0, 40);
+}
+
 function emptyLocal(): LocalUsage {
-	return { days: {}, synced: {} };
+	return { days: {}, synced: {}, device: newDevice() };
 }
 
 function loadLocal(): LocalUsage {
@@ -139,7 +182,8 @@ function loadLocal(): LocalUsage {
 	try {
 		const raw = JSON.parse(localStorage.getItem(LOCAL_KEY) || "");
 		if (!raw || typeof raw !== "object") return emptyLocal();
-		return { days: sanitizeDays(raw.days), synced: sanitizeDays(raw.synced) };
+		const device = typeof raw.device === "string" && /^[a-z0-9]{6,40}$/.test(raw.device) ? raw.device : newDevice();
+		return { days: sanitizeDays(raw.days), synced: sanitizeDays(raw.synced), device };
 	} catch {
 		return emptyLocal();
 	}
@@ -162,7 +206,7 @@ function daysWithOpenSegment(now: number): DayMap {
 }
 
 function publish(now = Date.now()) {
-	snapshot = { days: displayDays(remote, daysWithOpenSegment(now), local.synced), signedIn, synced: lastSyncOk, kind };
+	snapshot = { days: combineDays(remote, remoteMine, daysWithOpenSegment(now)), signedIn, synced: lastSyncOk, kind };
 	for (const listener of listeners) listener();
 }
 
@@ -238,6 +282,7 @@ function onOnline() {
 
 function onPageHide() {
 	if (!audioPlaying) closeSegment();
+	void syncNow();
 }
 
 function credentials(): RequestCredentials {
@@ -260,10 +305,19 @@ async function refreshAccount() {
 	publish();
 }
 
+function withDevice(endpoint: string): string {
+	return `${endpoint}${endpoint.includes("?") ? "&" : "?"}device=${local.device}`;
+}
+
+function readRemote(body: { days?: unknown; mine?: unknown }) {
+	remote = sanitizeDays(body.days);
+	remoteMine = sanitizeDays(body.mine);
+}
+
 async function doSync() {
 	if (kind === "account" && !signedIn) return;
-	if (typeof fetch === "undefined") return;
-	const endpoint = usageEndpoint(kind);
+	if (typeof fetch === "undefined" || !local.device) return;
+	const endpoint = withDevice(usageEndpoint(kind));
 	try {
 		const got = await fetch(endpoint, { credentials: credentials(), cache: "no-store" });
 		if (got.status === 401) {
@@ -277,29 +331,24 @@ async function doSync() {
 			publish();
 			return;
 		}
-		const body = (await got.json()) as { days?: unknown };
-		remote = sanitizeDays(body.days);
-		const delta = pendingDelta(local.days, local.synced, remote);
-		if (Object.keys(delta).length && claimLock()) {
+		readRemote((await got.json()) as { days?: unknown; mine?: unknown });
+		// Upload absolute totals for days the server is behind on. The server keeps the max per device, so this is safe to repeat.
+		const totals: DayMap = {};
+		for (const [day, sec] of Object.entries(local.days)) if (sec > (remoteMine[day] || 0)) totals[day] = sec;
+		if (Object.keys(totals).length && claimLock()) {
 			const posted = await fetch(endpoint, {
 				method: "POST",
 				credentials: credentials(),
 				headers: { "content-type": "application/json" },
-				body: JSON.stringify({ days: delta }),
+				body: JSON.stringify({ device: local.device, totals }),
+				keepalive: true,
 			});
 			if (!posted.ok) {
 				lastSyncOk = false;
 				publish();
 				return;
 			}
-			const saved = (await posted.json()) as { days?: unknown };
-			remote = sanitizeDays(saved.days);
-			const synced = { ...local.synced };
-			for (const [day, sent] of Object.entries(delta)) {
-				synced[day] = Math.min(local.days[day] || 0, (synced[day] || 0) + sent);
-			}
-			local = { ...local, synced };
-			saveLocal();
+			readRemote((await posted.json()) as { days?: unknown; mine?: unknown });
 		}
 		lastSyncOk = true;
 	} catch {
@@ -356,7 +405,10 @@ export function setUsageAudioPlaying(playing: boolean) {
 export function refreshUsageAccount(signedInNow?: boolean) {
 	if (typeof signedInNow === "boolean") {
 		signedIn = signedInNow;
-		if (!signedIn) remote = {};
+		if (!signedIn) {
+			remote = {};
+			remoteMine = {};
+		}
 		publish();
 		if (signedIn) void syncNow();
 		return;
@@ -367,7 +419,13 @@ export function refreshUsageAccount(signedInNow?: boolean) {
 function startTimer() {
 	if (typeof window === "undefined") return;
 	if (timer) window.clearInterval(timer);
-	timer = window.setInterval(tick, 1000);
+	timer = window.setInterval(() => {
+		tick();
+		if (Date.now() - lastSyncAt >= 60_000) {
+			lastSyncAt = Date.now();
+			void syncNow();
+		}
+	}, 1000);
 }
 
 function stopTimer() {
@@ -382,6 +440,7 @@ export function startUsageTracker(nextKind: UsageKind = "account"): () => void {
 	if (typeof window !== "undefined") {
 		if (started === 1) {
 			local = loadLocal();
+			saveLocal();
 			lastInput = Date.now();
 			const opts = { passive: true } as AddEventListenerOptions;
 			window.addEventListener("pointerdown", onActivity, opts);
