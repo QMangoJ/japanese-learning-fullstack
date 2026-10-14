@@ -538,6 +538,13 @@ function Sidebar({ routeKey, onLevel }: { routeKey: string; onLevel: (lv: LevelK
 				))}
 			</div>
 			<div className="side-sec">
+				<div className="side-h">{lx("本模块", "This module")}</div>
+				{row("#/cards", "🗂️", lx("记忆卡", "Flashcards"), null, h === "#/cards")}
+				{isGram() && hasContrast(MODULE)
+					? row("#/contrast", "🔀", `${LV} ${lx("辨析", "Contrast")}`, null, h === "#/contrast")
+					: null}
+			</div>
+			<div className="side-sec">
 				<div className="side-h">
 					{lx("通用知识", "General reference")} <span className="n">· {lx("不分级别", "All levels")}</span>
 				</div>
@@ -553,13 +560,6 @@ function Sidebar({ routeKey, onLevel }: { routeKey: string; onLevel: (lv: LevelK
 				{row("#/wearing", "👕", lx("穿衣穿戴", "Wearing"), null, h === "#/wearing")}
 				{row("#/numbers", "🔢", lx("数字", "Numbers"), null, h === "#/numbers")}
 				{row("#/kanji-exam", "🈶", lx("汉字自测", "Kanji Self-test"), null, h === "#/kanji-exam")}
-			</div>
-			<div className="side-sec">
-				<div className="side-h">{lx("本模块", "This module")}</div>
-				{row("#/cards", "🗂️", lx("记忆卡", "Flashcards"), null, h === "#/cards")}
-				{isGram() && hasContrast(MODULE)
-					? row("#/contrast", "🔀", `${LV} ${lx("辨析", "Contrast")}`, null, h === "#/contrast")
-					: null}
 			</div>
 			<div className="side-foot">
 				{row("#/usage", "⏱️", lx("使用时间", "Study time"), null, h === "#/usage")}
