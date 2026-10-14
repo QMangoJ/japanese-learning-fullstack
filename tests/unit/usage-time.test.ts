@@ -1,0 +1,124 @@
+import { describe, expect, it } from "vitest";
+
+import { applySecurityHeaders } from "../../workers/security-headers";
+import { isUsageRequest, withUsageCors } from "../../workers/usage-cors";
+import { action as usageAction, loader as usageLoader } from "../../app/routes/api.usage";
+import { usageAppKey, usageKey } from "../../app/auth/users";
+import {
+	USAGE_DAY_CAP_SEC,
+	addSecondsAcrossDays,
+	applyUsageDelta,
+	displayDays,
+	jstDayKey,
+	parseUsageDelta,
+	pendingDelta,
+} from "../../app/study/usage-time";
+import { authedRequest, memoryKv, routeContext, seedUser, testEnv } from "./auth-test-utils";
+
+describe("usage time math", () => {
+	it("splits a segment on the JST midnight and caps a day at 16 hours", () => {
+		const start = Date.parse("2026-10-13T14:59:30.000Z");
+		const end = Date.parse("2026-10-13T15:00:30.000Z");
+		expect(jstDayKey(start)).toBe("2026-10-13");
+		expect(jstDayKey(end)).toBe("2026-10-14");
+		expect(addSecondsAcrossDays({}, start, end)).toEqual({ "2026-10-13": 30, "2026-10-14": 30 });
+		const dayStart = Date.parse("2026-10-13T15:00:00.000Z");
+		const capped = addSecondsAcrossDays({}, dayStart, dayStart + 20 * 60 * 60 * 1000);
+		expect(capped).toEqual({ "2026-10-14": USAGE_DAY_CAP_SEC });
+		const spilled = addSecondsAcrossDays({}, dayStart, dayStart + 30 * 60 * 60 * 1000);
+		expect(spilled["2026-10-14"]).toBe(USAGE_DAY_CAP_SEC);
+		expect(spilled["2026-10-15"]).toBe(6 * 60 * 60);
+	});
+
+	it("shows the server total plus seconds this device has not uploaded", () => {
+		expect(pendingDelta({ "2026-10-14": 150 }, { "2026-10-14": 80 }, { "2026-10-14": 100 })).toEqual({
+			"2026-10-14": 70,
+		});
+		expect(displayDays({ "2026-10-14": 100 }, { "2026-10-14": 150 }, { "2026-10-14": 80 })).toEqual({
+			"2026-10-14": 170,
+		});
+		expect(displayDays({ "2026-10-14": USAGE_DAY_CAP_SEC }, { "2026-10-14": 50 }, {})).toEqual({
+			"2026-10-14": USAGE_DAY_CAP_SEC,
+		});
+	});
+
+	it("adds deltas permanently and drops a future day", () => {
+		const now = Date.parse("2026-10-14T03:00:00.000Z");
+		expect(parseUsageDelta({ days: { "2026-10-14": 20, bad: 5, "2026-10-13": 0 } })).toEqual({ "2026-10-14": 20 });
+		expect(parseUsageDelta([])).toBeNull();
+		const stored = applyUsageDelta({ "2026-10-14": 10 }, { "2026-10-14": 15, "2099-01-01": 30 }, now);
+		expect(stored).toEqual({ "2026-10-14": 25 });
+		expect(applyUsageDelta({ "2026-10-14": USAGE_DAY_CAP_SEC - 10 }, { "2026-10-14": 50 }, now)).toEqual({
+			"2026-10-14": USAGE_DAY_CAP_SEC,
+		});
+	});
+});
+
+describe("/api/usage", () => {
+	it("keeps a signed-in user's days and a public app's days apart", async () => {
+		const kv = memoryKv();
+		seedUser(kv, { id: "g_1" });
+		const ctx = routeContext(testEnv(kv));
+		const guest = await usageLoader({ request: new Request("http://localhost/api/usage"), context: ctx });
+		expect(guest.status).toBe(401);
+
+		const post = await usageAction({
+			request: await authedRequest("http://localhost/api/usage", "g_1", {
+				method: "POST",
+				body: JSON.stringify({ days: { "2026-10-14": 40 } }),
+			}),
+			context: ctx,
+		});
+		expect(await post.json()).toEqual({ days: { "2026-10-14": 40 } });
+		const again = await usageAction({
+			request: await authedRequest("http://localhost/api/usage", "g_1", {
+				method: "POST",
+				body: JSON.stringify({ days: { "2026-10-14": 25 } }),
+			}),
+			context: ctx,
+		});
+		expect(await again.json()).toEqual({ days: { "2026-10-14": 65 } });
+		expect(JSON.parse(kv.map.get(usageKey("g_1")) || "{}").days).toEqual({ "2026-10-14": 65 });
+
+		const shadow = await usageAction({
+			request: new Request("http://localhost/api/usage?app=shadowing", {
+				method: "POST",
+				body: JSON.stringify({ days: { "2026-10-14": 15 } }),
+			}),
+			context: ctx,
+		});
+		expect(shadow.status).toBe(200);
+		expect(JSON.parse(kv.map.get(usageAppKey("shadowing")) || "{}").days).toEqual({ "2026-10-14": 15 });
+		const read = await usageLoader({
+			request: new Request("http://localhost/api/usage?app=reading"),
+			context: ctx,
+		});
+		expect(await read.json()).toEqual({ days: {} });
+		expect(JSON.parse(kv.map.get(usageKey("g_1")) || "{}").days["2026-10-14"]).toBe(65);
+	});
+
+	it("rejects an unknown app and a bad payload", async () => {
+		const ctx = routeContext(testEnv(memoryKv()));
+		const unknown = await usageLoader({
+			request: new Request("http://localhost/api/usage?app=other"),
+			context: ctx,
+		});
+		expect(unknown.status).toBe(400);
+		const bad = await usageAction({
+			request: new Request("http://localhost/api/usage?app=reading", { method: "POST", body: "{" }),
+			context: ctx,
+		});
+		expect(bad.status).toBe(400);
+	});
+});
+
+describe("usage CORS", () => {
+	it("lets shadowing and reading read the usage response", () => {
+		const secured = applySecurityHeaders(new Response(JSON.stringify({ days: {} }), { status: 200 }));
+		const opened = withUsageCors(secured);
+		expect(opened.headers.get("Access-Control-Allow-Origin")).toBe("*");
+		expect(opened.headers.get("Cross-Origin-Resource-Policy")).toBe("cross-origin");
+		expect(isUsageRequest(new Request("https://example.com/api/usage?app=shadowing"))).toBe(true);
+		expect(isUsageRequest(new Request("https://example.com/api/mastery"))).toBe(false);
+	});
+});

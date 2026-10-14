@@ -60,6 +60,7 @@ export function isMasteryPayload(value: unknown) {
 		if (!isRecord(item)) return false;
 		if (typeof item.id !== "string" || !isSafeId(item.id) || !isString(item.id, MAX_ID_LENGTH, false)) return false;
 		if (typeof item.known !== "boolean") return false;
+		if (item.level !== undefined && item.level !== "fuzzy" && item.level !== "blank") return false;
 		return isFiniteNumber(item.ts);
 	});
 }

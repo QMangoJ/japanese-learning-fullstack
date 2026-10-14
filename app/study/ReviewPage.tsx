@@ -194,7 +194,7 @@ function DayButton({ day, today = false, mastery }: { day: ReviewDay; today?: bo
 				<span className="review-day__chip">{lx(`单词 ${counts.words}`, `${counts.words} words`)}</span>
 				<span className="review-day__chip">{lx(`句子 ${counts.sentences}`, `${counts.sentences} sentences`)}</span>
 				<span className={`review-day__chip${unknown ? " todo" : ""}`}>
-					{lx(`未掌握 ${unknown}`, `${unknown} to review`)}
+					{lx(`要复习 ${unknown}`, `${unknown} to review`)}
 				</span>
 			</span>
 			{preview.length ? (

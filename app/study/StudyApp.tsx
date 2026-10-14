@@ -17,6 +17,7 @@ import {
 	WearingPage,
 } from "../routes/study-common";
 import { ContrastPage, DayNav, DayPage, parseDayRoute } from "./days";
+import { UsagePage } from "./UsagePage";
 import { PointerTiltRoot } from "./pointer-tilt";
 import { ToastStack } from "./toast-stack";
 import { getDueVersion, subscribeDue } from "./due-review";
@@ -561,6 +562,7 @@ function Sidebar({ routeKey, onLevel }: { routeKey: string; onLevel: (lv: LevelK
 					: null}
 			</div>
 			<div className="side-foot">
+				{row("#/usage", "⏱️", lx("使用时间", "Study time"), null, h === "#/usage")}
 				{row("#/search", "🔍", lx("搜索", "Search"), null, h === "#/search")}
 				{row("#/mistakes", "📝", lx("错题本", "Mistakes"), activeMistakeCount() || "", h === "#/mistakes")}
 				{row("#/favs", "⭐", lx("收藏", "Favorites"), favCount || "", h === "#/favs")}
@@ -616,6 +618,10 @@ function Sheet({
 							<button className="sheet-item sheet-item--feature" data-sheet="topics" onClick={() => { onClose(); navTo("#/topics"); }}>
 								<span className="ic">🏷️</span>
 								{lx("专题词汇", "Topic vocabulary")}
+							</button>
+							<button className="sheet-item sheet-item--feature" data-sheet="usage" onClick={() => { onClose(); navTo("#/usage"); }}>
+								<span className="ic">⏱️</span>
+								{lx("使用时间", "Study time")}
 							</button>
 						</div>
 						<div className="sheet-row">
@@ -875,6 +881,7 @@ function TrialLock() {
 
 function viewMeta(key: string): { nav: string; title: string; back: boolean } {
 	if (key === "#/search") return { nav: "search", title: lx("搜索", "Search"), back: false };
+	if (key === "#/usage") return { nav: "common", title: lx("使用时间", "Study time"), back: false };
 	if (key === "#/cards") return { nav: "common", title: `${lx("记忆卡", "Flashcards")} · ${modLabel()}`, back: false };
 	const review = parseReviewRoute(key);
 	if (review) {
@@ -1066,11 +1073,11 @@ export function StudyApp() {
 	const day = parseDayRoute(routeKey);
 	const reviewRoute = parseReviewRoute(routeKey);
 	const topicsRoute = parseTopicsRoute(routeKey);
-	const commonPages = ["#/search", "#/cards", "#/kanji-exam", "#/favs", "#/mistakes", "#/ref", "#/katsuyou", "#/henkei", "#/verb-summary", "#/keigo", "#/kougo", "#/jita", "#/wearing", "#/numbers", "#/review"];
+	const commonPages = ["#/search", "#/cards", "#/kanji-exam", "#/favs", "#/mistakes", "#/usage", "#/ref", "#/katsuyou", "#/henkei", "#/verb-summary", "#/keigo", "#/kougo", "#/jita", "#/wearing", "#/numbers", "#/review"];
 	const isCommon = commonPages.includes(routeKey) || routeKey === "#/" || Boolean(reviewRoute) || Boolean(topicsRoute);
 	if (routeKey === "#/cards") ensureCardsDeck();
 
-	const commonRefPage = ["#/ref", "#/katsuyou", "#/henkei", "#/verb-summary", "#/keigo", "#/kougo", "#/jita", "#/wearing", "#/numbers", "#/review"].includes(routeKey) || Boolean(reviewRoute) || Boolean(topicsRoute);
+	const commonRefPage = ["#/usage", "#/ref", "#/katsuyou", "#/henkei", "#/verb-summary", "#/keigo", "#/kougo", "#/jita", "#/wearing", "#/numbers", "#/review"].includes(routeKey) || Boolean(reviewRoute) || Boolean(topicsRoute);
 	const waitingN2 = isN2() && MODULE !== "n2listening" && MODULE !== "n2reading" && !n2Loaded && !commonRefPage;
 	const waitingN4 = isN4() && !n4Loaded && !commonRefPage;
 	const waitingN1 = isN1() && MODULE !== "n1listening" && !n1Loaded && !commonRefPage;
@@ -1128,6 +1135,7 @@ export function StudyApp() {
 			<HomePage data={homeData} />
 		);
 	else if (routeKey === "#/search") body = <SearchPage />;
+	else if (routeKey === "#/usage") body = <UsagePage />;
 	else if (routeKey === "#/cards") body = isGram() ? <CardsPage /> : <LazyModuleCardsPage />;
 	else if (routeKey === "#/kanji-exam") body = <LazyKanjiExamPage />;
 	else if (routeKey === "#/favs") body = showingFavFc ? <FavFcPage data={favFcPayload()} /> : <FavsPage data={favsPayload()} />;

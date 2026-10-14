@@ -1,7 +1,9 @@
-export type MasteryMap = Record<string, true>;
+/** `true` is 记住了. `fuzzy` and `blank` are the only marks that leave the default. */
+export type MasteryMap = Record<string, true | "fuzzy" | "blank">;
 
 /** Signed-in flashcard mark. `known: false` keeps a newer unmark from being overwritten. */
-export type MasteryRow = { id: string; known: boolean; ts: number };
+export type CardLevel = "known" | "fuzzy" | "blank";
+export type MasteryRow = { id: string; known: boolean; ts: number; level?: Exclude<CardLevel, "known"> };
 
 export const FLASHCARD_MASTERY_KEY = "flashcard-mastery";
 
@@ -10,7 +12,7 @@ const MAX_ID = 1_000;
 const SYNC_RETRY_BASE_MS = 1_500;
 const SYNC_RETRY_MAX_MS = 30_000;
 
-type Entry = { known: boolean; ts: number };
+type Entry = { known: boolean; ts: number; level?: Exclude<CardLevel, "known"> };
 type EntryMap = Record<string, Entry>;
 
 const listeners = new Set<() => void>();
@@ -46,7 +48,9 @@ function byRecent(a: MasteryRow, b: MasteryRow) {
 
 function rowsFromEntries(): MasteryRow[] {
 	const rows: MasteryRow[] = [];
-	for (const [id, entry] of Object.entries(entries)) rows.push({ id, known: entry.known, ts: entry.ts });
+	for (const [id, entry] of Object.entries(entries)) {
+		rows.push({ id, known: entry.known, ts: entry.ts, ...(entry.level && !entry.known ? { level: entry.level } : {}) });
+	}
 	rows.sort(byRecent);
 	return rows;
 }
@@ -56,7 +60,7 @@ function sameRows(a: MasteryRow[], b: MasteryRow[]) {
 	const byId = new Map(b.map((item) => [item.id, item]));
 	return a.every((item) => {
 		const other = byId.get(item.id);
-		return !!other && other.known === item.known && other.ts === item.ts;
+		return !!other && other.known === item.known && other.ts === item.ts && other.level === item.level;
 	});
 }
 
@@ -70,13 +74,21 @@ export function cleanMastery(value: unknown): MasteryRow[] {
 		if (typeof item.known !== "boolean") continue;
 		if (typeof item.ts !== "number" || !Number.isFinite(item.ts)) continue;
 		const prev = byId.get(item.id);
-		if (!prev || item.ts >= prev.ts) byId.set(item.id, { id: item.id, known: item.known, ts: item.ts });
+		const level = item.level === "fuzzy" || item.level === "blank" ? item.level : undefined;
+		if (!prev || item.ts >= prev.ts) {
+			byId.set(item.id, { id: item.id, known: item.known, ts: item.ts, ...(level && !item.known ? { level } : {}) });
+		}
 	}
 	return [...byId.values()].sort(byRecent);
 }
 
 export function mergeMastery(local: MasteryRow[], server: MasteryRow[], sameDevice: boolean): MasteryRow[] {
-	const copy = (item: MasteryRow): MasteryRow => ({ id: item.id, known: item.known, ts: item.ts });
+	const copy = (item: MasteryRow): MasteryRow => ({
+		id: item.id,
+		known: item.known,
+		ts: item.ts,
+		...(item.level ? { level: item.level } : {}),
+	});
 	if (!sameDevice) return server.map(copy).sort(byRecent);
 	const byId = new Map<string, MasteryRow>();
 	for (const item of server) byId.set(item.id, copy(item));
@@ -104,7 +116,8 @@ function readStored(): EntryMap {
 			const item = value as Record<string, unknown>;
 			if (typeof item.known !== "boolean") continue;
 			if (typeof item.ts !== "number" || !Number.isFinite(item.ts)) continue;
-			out[key] = { known: item.known, ts: item.ts };
+			const level = item.level === "fuzzy" || item.level === "blank" ? item.level : undefined;
+			out[key] = { known: item.known, ts: item.ts, ...(level && !item.known ? { level } : {}) };
 		}
 	} catch {
 		/* ignore broken storage */
@@ -136,7 +149,7 @@ function applyRows(rows: MasteryRow[]) {
 	const next = freshMap();
 	for (const row of rows) {
 		if (!isSafeCardId(row.id)) continue;
-		next[row.id] = { known: row.known, ts: row.ts };
+		next[row.id] = { known: row.known, ts: row.ts, ...(row.level && !row.known ? { level: row.level } : {}) };
 	}
 	entries = next;
 	trimEntries();
@@ -145,7 +158,9 @@ function applyRows(rows: MasteryRow[]) {
 function writeFlashcards() {
 	try {
 		const payload: Record<string, Entry> = {};
-		for (const [id, entry] of Object.entries(entries)) payload[id] = { known: entry.known, ts: entry.ts };
+		for (const [id, entry] of Object.entries(entries)) {
+			payload[id] = { known: entry.known, ts: entry.ts, ...(entry.level && !entry.known ? { level: entry.level } : {}) };
+		}
 		localStorage.setItem(FLASHCARD_MASTERY_KEY, JSON.stringify(payload));
 	} catch {
 		/* ignore quota / private mode */
@@ -162,7 +177,10 @@ function currentKnown(): MasteryMap {
 	ensureHydrated();
 	if (snapshotVersion !== version) {
 		const next: MasteryMap = {};
-		for (const [id, entry] of Object.entries(entries)) if (entry.known) next[id] = true;
+		for (const [id, entry] of Object.entries(entries)) {
+			if (entry.known) next[id] = true;
+			else next[id] = entry.level === "fuzzy" ? "fuzzy" : "blank";
+		}
 		snapshot = next;
 		snapshotVersion = version;
 	}
@@ -203,6 +221,12 @@ export function loadMastery(storageKey: string): MasteryMap {
 		const out: MasteryMap = {};
 		for (const [key, value] of Object.entries(parsed as Record<string, unknown>)) {
 			if (value === true) out[key] = true;
+			else if (value === "fuzzy" || value === "blank") out[key] = value;
+			else if (value && typeof value === "object" && !Array.isArray(value)) {
+				const item = value as Record<string, unknown>;
+				if (item.known === true) out[key] = true;
+				else if (item.known === false) out[key] = item.level === "fuzzy" ? "fuzzy" : "blank";
+			}
 		}
 		return out;
 	} catch {
@@ -218,8 +242,13 @@ export function saveMastery(storageKey: string, map: MasteryMap) {
 	}
 }
 
+export function cardLevel(map: MasteryMap, deckId: string, itemId: string): CardLevel {
+	const value = map[masteryKey(deckId, itemId)];
+	return value === "fuzzy" || value === "blank" ? value : "known";
+}
+
 export function isMastered(map: MasteryMap, deckId: string, itemId: string): boolean {
-	return map[masteryKey(deckId, itemId)] === true;
+	return cardLevel(map, deckId, itemId) === "known";
 }
 
 function retryDelay(attempt: number) {
@@ -251,16 +280,33 @@ export function setMastered(
 	known: boolean,
 ): MasteryMap {
 	const key = masteryKey(deckId, itemId);
+	return writeLevel(storageKey, map, key, known ? "known" : "blank");
+}
+
+export function setCardLevel(
+	storageKey: string,
+	map: MasteryMap,
+	deckId: string,
+	itemId: string,
+	level: CardLevel,
+): MasteryMap {
+	return writeLevel(storageKey, map, masteryKey(deckId, itemId), level);
+}
+
+function writeLevel(storageKey: string, map: MasteryMap, key: string, level: CardLevel): MasteryMap {
 	if (storageKey !== FLASHCARD_MASTERY_KEY) {
 		const next = { ...map };
-		if (known) next[key] = true;
-		else delete next[key];
+		if (level === "known") next[key] = true;
+		else next[key] = level;
 		saveMastery(storageKey, next);
 		return next;
 	}
 	ensureHydrated();
 	if (!isSafeCardId(key)) return currentKnown();
-	entries[key] = { known, ts: Date.now() };
+	entries[key] =
+		level === "known"
+			? { known: true, ts: Date.now() }
+			: { known: false, level, ts: Date.now() };
 	trimEntries();
 	commitFlashcards();
 	return currentKnown();

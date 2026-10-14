@@ -85,28 +85,32 @@ describe("flashcard mastery sync", () => {
 		await bootAccount();
 		const user = userEvent.setup();
 		render(<MemoryCards deckId="test" items={sample} />);
-		await user.click(screen.getByRole("button", { name: /已经记住|Got it/ }));
-		expect(screen.queryByText("禁止")).not.toBeInTheDocument();
+		await user.click(screen.getByRole("button", { name: /^记住了$/ }));
+		expect(screen.getByText("禁止")).toBeInTheDocument();
 		await pushMasteryNow();
 		expect(JSON.parse(puts.at(-1) || "[]")).toEqual([expect.objectContaining({ id: "test::a", known: true })]);
 
-		await user.click(screen.getByRole("button", { name: /已掌握|Mastered/ }));
-		await user.click(screen.getByRole("button", { name: /还没记住|Still learning/ }));
+		await user.click(screen.getByRole("button", { name: /^完全没印象$/ }));
 		await pushMasteryNow();
-		expect(JSON.parse(puts.at(-1) || "[]")).toEqual([expect.objectContaining({ id: "test::a", known: false })]);
-		await user.click(screen.getByRole("button", { name: /未掌握|To review/ }));
+		expect(JSON.parse(puts.at(-1) || "[]")).toEqual([
+			expect.objectContaining({ id: "test::a", known: false, level: "blank" }),
+		]);
+		await user.click(screen.getByRole("button", { name: /^记住了 / }));
+		expect(screen.queryByText("禁止")).not.toBeInTheDocument();
+		await user.click(screen.getByRole("button", { name: /^完全没印象 / }));
 		expect(screen.getByText("禁止")).toBeInTheDocument();
 	});
 
-	it("hides a card the account already marked known", async () => {
+	it("keeps a card the account already marked known", async () => {
 		stubAccount("g_1", [{ id: "test::a", known: true, ts: 10 }]);
 		render(<MemoryCards deckId="test" items={sample} />);
 		expect(screen.getByText("禁止")).toBeInTheDocument();
 		await act(async () => {
 			await bootAccount();
 		});
-		expect(screen.queryByText("禁止")).not.toBeInTheDocument();
-		expect(screen.getByText("有効期限")).toBeInTheDocument();
+		expect(screen.getByText("禁止")).toBeInTheDocument();
+		expect(document.querySelector("[data-fc-level]")?.textContent).toBe("记住了");
+		expect(screen.getByRole("button", { name: /^记住了 / })).toHaveTextContent("2");
 	});
 
 	it("uploads legacy local marks on first login and keeps them when the response is not a list", async () => {
@@ -132,7 +136,7 @@ describe("flashcard mastery sync", () => {
 		await bootAccount();
 		render(<MemoryCards deckId="test" items={sample} />);
 		expect(screen.getByText("禁止")).toBeInTheDocument();
-		expect(loadMastery(FLASHCARD_MASTERY_KEY)["test::a"]).toBeUndefined();
+		expect(loadMastery(FLASHCARD_MASTERY_KEY)["test::a"]).toBe("blank");
 	});
 
 	it("does not upload the previous account's marks", async () => {
@@ -159,8 +163,9 @@ describe("flashcard mastery sync", () => {
 	it("reads a legacy remembered flag as mastered", () => {
 		localStorage.setItem(FLASHCARD_MASTERY_KEY, JSON.stringify({ "test::a": true }));
 		render(<MemoryCards deckId="test" items={sample} />);
-		expect(screen.queryByText("禁止")).not.toBeInTheDocument();
-		expect(screen.getByText("有効期限")).toBeInTheDocument();
+		expect(screen.getByText("禁止")).toBeInTheDocument();
+		expect(document.querySelector("[data-fc-level]")?.textContent).toBe("记住了");
+		expect(screen.getByRole("button", { name: /^记住了 / })).toHaveTextContent("2");
 	});
 
 	it("drops the oldest tombstones once the account cap is reached", () => {

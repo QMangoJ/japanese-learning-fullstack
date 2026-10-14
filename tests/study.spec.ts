@@ -1138,7 +1138,7 @@ test.describe("study interactions", () => {
 		await page.locator("[data-mstudy='1']").click();
 		await expect(page.locator(".fc-wrap .fcard")).toBeVisible();
 		await expect(page.getByText(note)).toBeVisible();
-		await expect(page.getByRole("button", { name: /还没记住|Still learning/ })).toBeVisible();
+		await expect(page.getByRole("button", { name: /^完全没印象$/ })).toBeVisible();
 		await page.locator("[data-mstudy-back='1']").click();
 
 		await item.locator("[data-mistake-del]").click();
@@ -1156,10 +1156,10 @@ test.describe("study interactions", () => {
 
 		const card = page.locator(".fc-wrap .fcard").first();
 		await expect(card).toBeVisible();
-		await expect(page.getByRole("button", { name: /未掌握|To review/ })).toBeVisible();
+		await expect(page.getByRole("button", { name: /全部熟练度|All levels/ })).toBeVisible();
 		await expect(page.locator(".fc-wrap").getByRole("button", { name: /注音|Readings/ })).toBeVisible();
-		await expect(page.getByRole("button", { name: /还没记住|Still learning/ })).toBeVisible();
-		await expect(page.getByRole("button", { name: /已经记住|Got it/ })).toBeVisible();
+		await expect(page.getByRole("button", { name: /^完全没印象$/ })).toBeVisible();
+		await expect(page.getByRole("button", { name: /^记住了$/ })).toBeVisible();
 		await expect(page.locator("[data-fc='prev']")).toBeVisible();
 		await expect(page.locator("[data-fc='next']")).toBeVisible();
 		await expect(page.locator("[data-fc='shuffle']")).toBeVisible();

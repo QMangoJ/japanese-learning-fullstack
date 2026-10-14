@@ -5,6 +5,7 @@ import wearingFallback from "../data/common-wearing.json";
 import { listeningBundle, listeningN1Bundle, listeningN2Bundle, readingBundle, readingN2Bundle } from "./catalogs";
 import { forgetDue, hydrateDue, kickDueSync, mistakeDueDraft, mistakeDueId, noteDueSignedOut, pullDueFromServer, pushDueNow, rememberFail, resetDueForTests } from "./due-review";
 import { hydrateMastery, kickMasterySync, noteMasterySignedOut, pullMasteryFromServer, pushMasteryNow, resetMasteryForTests } from "./memory-mastery";
+import { refreshUsageAccount } from "./usage-time";
 import { pushToast } from "./toast";
 
 export type ModuleKey =
@@ -2190,6 +2191,7 @@ export async function bootAccount() {
 	}
 	accountReady = true;
 	emit();
+	refreshUsageAccount(Boolean(ACCOUNT));
 	if (!ACCOUNT) {
 		_favReady = true;
 		_mistakesReady = true;

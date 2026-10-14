@@ -606,9 +606,9 @@
 				{
 					"jp": "汚かった（よごかった）",
 					"kind": "word",
-					"jp_r": "<ruby>汚かった<rt>よごかった</rt></ruby>",
-					"reading": "よごかった",
-					"cn": "脏了",
+					"jp_r": "<ruby>汚かった<rt>きたなかった</rt></ruby>",
+					"reading": "きたなかった",
+					"cn": "很脏",
 					"en": "was dirty",
 					"example": "昨日の部屋は汚かったです。",
 					"exampleCn": "昨天的房间很脏。",
@@ -811,7 +811,7 @@
 				{
 					"jp": "お祈り（おいのり）",
 					"kind": "word",
-					"jp_r": "お<ruby>祈り<rt>おいのり</rt></ruby>",
+					"jp_r": "<ruby>お祈り<rt>おいのり</rt></ruby>",
 					"reading": "おいのり",
 					"cn": "祈祷",
 					"en": "a prayer",
@@ -4403,7 +4403,7 @@
 				{
 					"jp": "ご利益（ごりやく）があります ごりやくがあります 有神佑／有灵验",
 					"kind": "sentence",
-					"jp_r": "ご<ruby>利益<rt>ごりやく</rt></ruby>があります ごりやくがあります 有神佑／有灵验",
+					"jp_r": "<ruby>ご利益<rt>ごりやく</rt></ruby>があります ごりやくがあります 有神佑／有灵验",
 					"reading": "ごりやく"
 				},
 				{
@@ -5321,7 +5321,7 @@
 				{
 					"jp": "🙆‍♀️わさび もう少し もらえますか？",
 					"kind": "sentence",
-					"jp_r": "🙆‍♀️わさび もう<ruby>少し<rt>すこし</rt></ruby> もらえますか？",
+					"jp_r": "🙆‍♀️わさび <ruby>もう少し<rt>もうすこし</rt></ruby> もらえますか？",
 					"cn": "芥末可以再给我一点吗？",
 					"en": "I want less ice when order a cup of coffee"
 				},
@@ -5475,7 +5475,7 @@
 				{
 					"jp": "お得（おとく",
 					"kind": "word",
-					"jp_r": "お<ruby>得<rt>おとく</rt></ruby>",
+					"jp_r": "<ruby>お得<rt>おとく</rt></ruby>",
 					"reading": "おとく",
 					"cn": "划算、便宜",
 					"en": "a good deal",
@@ -6620,7 +6620,7 @@
 				{
 					"jp": "もし良かったら、もう少し話を聞かせていただけませんか？",
 					"kind": "sentence",
-					"jp_r": "もし<ruby>良かった<rt>よかった</rt></ruby>ら、もう<ruby>少し<rt>すこし</rt></ruby><ruby>話<rt>はなし</rt></ruby>を<ruby>聞か<rt>きか</rt></ruby>せていただけませんか？",
+					"jp_r": "もし<ruby>良かった<rt>よかった</rt></ruby>ら、<ruby>もう少し<rt>もうすこし</rt></ruby><ruby>話<rt>はなし</rt></ruby>を<ruby>聞か<rt>きか</rt></ruby>せていただけませんか？",
 					"cn": "方便的话，能再听您讲一点吗？",
 					"en": "Could you please let me listen to your story"
 				},

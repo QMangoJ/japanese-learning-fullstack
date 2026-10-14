@@ -16,3 +16,14 @@
 .trial-week-lock{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:0;background:var(--accent-soft)}
 .trial-week-lock span{color:var(--sub);font-size:13px;flex:1}
 .trial-week-lock a{padding:6px 11px}
+.usage-page{max-width:var(--study-col,720px);margin:0 auto;padding:8px 0 28px}
+.usage-lead{margin:0 0 12px;color:var(--sub);font-size:13px;line-height:1.7}
+.usage-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
+.usage-stat,.usage-day{border:1px solid var(--line);border-radius:12px;background:var(--card)}
+.usage-stat{padding:14px 16px}
+.usage-stat span,.usage-day span{color:var(--sub);font-size:12px}
+.usage-stat b{display:block;margin-top:4px;font-size:22px}
+.usage-days{display:grid;gap:6px}
+.usage-day{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 12px}
+.usage-day.today{border-color:var(--accent)}
+.usage-day b{font-size:15px}

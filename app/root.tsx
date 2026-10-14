@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 
 import type { Route } from "./+types/root";
 import "./app.css";
+import { startUsageTracker } from "./study/usage-time";
 
 let reloadedForServiceWorkerUpdate = false;
 
@@ -75,6 +76,8 @@ export default function App() {
 			document.removeEventListener("touchmove", preventMultiTouch);
 		};
 	}, []);
+
+	useEffect(() => startUsageTracker("account"), []);
 
 	useEffect(() => {
 		setOnline(navigator.onLine);

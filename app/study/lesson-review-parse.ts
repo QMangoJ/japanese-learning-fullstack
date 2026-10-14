@@ -205,6 +205,8 @@ type ReviewExtra = {
 	example?: string;
 	exampleCn?: string;
 	exampleEn?: string;
+	/** Replaces a wrong parenthetical reading, such as よごかった on 汚かった. */
+	reading?: string;
 };
 
 function enrichReviewItem(item: ReviewItem): ReviewItem {
@@ -223,13 +225,19 @@ function enrichReviewItem(item: ReviewItem): ReviewItem {
 		if (extra.exampleEn) next.exampleEn = extra.exampleEn;
 	}
 	const inline = splitInlineReading(next.jp);
-	const reading = next.reading || inline.reading;
-	const surface = inline.jp.replace(/\([A-Za-züÜ]+\d*\)/g, "");
+	if (extra?.reading) next.reading = extra.reading;
+	if (extra?.reading && extra.cn) next.cn = extra.cn;
+	if (extra?.reading && extra.en) next.en = extra.en;
+	const reading = extra?.reading || next.reading || inline.reading;
+	// A corrected reading replaces the parenthetical in the source, which would otherwise win.
+	const surface = extra?.reading
+		? inline.jp.replace(/[（(][^）)]*[）)]?/g, "").trim()
+		: inline.jp.replace(/\([A-Za-züÜ]+\d*\)/g, "");
 	delete next.jp_r;
 	delete next.example_r;
 	const ruby = buildReviewRuby(surface, reading, kanjiReadings);
 	if (ruby && shouldKeepReviewRuby(surface, ruby)) next.jp_r = ruby;
-	if (reading && !next.reading) next.reading = reading;
+	if (reading) next.reading = reading;
 	if (next.example && next.kind === "word") {
 		const exampleRuby = buildReviewRuby(next.example, undefined, kanjiReadings);
 		if (exampleRuby && shouldKeepReviewRuby(next.example, exampleRuby)) next.example_r = exampleRuby;

@@ -8,10 +8,11 @@ import { getDisplayVersion, lx, navTo, noRuby, openModuleCards, subscribeDisplay
 import {
 	FLASHCARD_MASTERY_KEY,
 	getMasteryVersion,
-	isMastered,
+	cardLevel,
 	loadMastery,
-	setMastered,
+	setCardLevel,
 	subscribeMastery,
+	type CardLevel,
 	type MasteryMap,
 } from "./memory-mastery";
 
@@ -73,7 +74,17 @@ export type MemoryCardItem = {
 
 export type MemoryKindOption = { value: string; label: string };
 
-type SkillFilter = "all" | "unknown" | "known";
+type SkillFilter = "all" | CardLevel;
+
+const LEVEL_LABEL: Record<CardLevel, [string, string]> = {
+	known: ["记住了", "Remembered"],
+	fuzzy: ["模糊", "Unsure"],
+	blank: ["完全没印象", "No memory"],
+};
+
+function levelLabel(level: CardLevel) {
+	return lx(...LEVEL_LABEL[level]);
+}
 type PromptSide = "jp" | "cn" | "en";
 
 function recallFace(item: MemoryCardItem, side: PromptSide): { text: string; missing: boolean } {
@@ -110,16 +121,21 @@ function MemoryCardFront({
 	cur,
 	hint,
 	face,
+	level,
 }: {
 	cur: MemoryCardItem;
 	hint: string;
 	face?: { text: string; missing: boolean; side: PromptSide };
+	level: CardLevel;
 }) {
 	const text = face?.text ?? cur.jp;
 	const japanese = !face || face.side === "jp";
 	return (
 		<>
 			{cur.kind ? <div className="review-k">{memoryKindLabel(cur.kind)}</div> : null}
+			<div className="meta" data-fc-level={level}>
+				{levelLabel(level)}
+			</div>
 			<div
 				className={japanese ? "big jp" : face?.missing ? "meta" : "big"}
 				data-fc-face={face?.side ?? "jp"}
@@ -274,7 +290,7 @@ export function MemoryCards({
 	hint,
 	emptyUnknown,
 	emptyAll,
-	defaultSkill = "unknown",
+	defaultSkill = "all",
 	translationPending = false,
 	plainFlip = false,
 	recallPrompt = true,
@@ -328,15 +344,22 @@ export function MemoryCards({
 		];
 	}, [items, kindOptions]);
 
+	const levelOf = (item: MemoryCardItem) => cardLevel(mastery, deckId, item.id);
 	const filtered = useMemo(() => {
 		return items.filter((item) => {
 			if (kind !== "all" && item.kind !== kind) return false;
-			const known = isMastered(mastery, deckId, item.id);
-			if (skill === "known") return known;
-			if (skill === "unknown") return !known;
+			if (skill !== "all" && levelOf(item) !== skill) return false;
 			return true;
 		});
 	}, [items, kind, skill, mastery, deckId]);
+	const levelCounts = useMemo(() => {
+		const counts: Record<CardLevel, number> = { known: 0, fuzzy: 0, blank: 0 };
+		for (const item of items) {
+			if (kind !== "all" && item.kind !== kind) continue;
+			counts[levelOf(item)] += 1;
+		}
+		return counts;
+	}, [items, kind, mastery, deckId]);
 
 	const deck = useMemo(() => {
 		if (!order) return filtered;
@@ -345,7 +368,7 @@ export function MemoryCards({
 
 	const safeIdx = deck.length ? Math.min(idx, deck.length - 1) : 0;
 	const cur = deck[safeIdx];
-	const known = cur ? isMastered(mastery, deckId, cur.id) : false;
+	const level = cur ? levelOf(cur) : "known";
 	const hasCn = useMemo(
 		() => items.some((item) => Boolean(item.cn?.trim() || item.translation?.trim())),
 		[items],
@@ -382,20 +405,18 @@ export function MemoryCards({
 		setOrder(null);
 	};
 
-	const mark = (nextKnown: boolean) => {
-		if (!cur) return;
-		const next = setMastered(storageKey, mastery, deckId, cur.id, nextKnown);
+	const applyLevel = (nextLevel: CardLevel) => {
+		if (!cur) return false;
+		const next = setCardLevel(storageKey, mastery, deckId, cur.id, nextLevel);
 		if (storageKey !== FLASHCARD_MASTERY_KEY) setLocalMastery(next);
 		setFlipped(false);
+		return skill !== "all" && nextLevel !== skill;
 	};
-
-	const gradeKnown = (grade: SwipeGrade) => grade === "pass";
 
 	const swipe = (grade: SwipeGrade) => {
 		if (!cur) return;
-		const pass = gradeKnown(grade);
-		const leaves = (skill === "unknown" && pass) || (skill === "known" && !pass);
-		mark(pass);
+		const nextLevel: CardLevel = grade === "pass" ? "known" : grade === "fuzzy" ? "fuzzy" : "blank";
+		const leaves = applyLevel(nextLevel);
 		if (!leaves) setIdx((n) => n + 1);
 	};
 
@@ -404,8 +425,8 @@ export function MemoryCards({
 		card = (
 			<div className="fcard">
 				<div className="empty">
-					{skill === "unknown"
-						? emptyUnknown || lx("这些卡片都记住了 🎉", "You've mastered these cards 🎉")
+					{skill !== "all"
+						? emptyUnknown || lx("这一档还没有卡片", "No cards at this level")
 						: emptyAll || lx("还没有可刷的卡片", "No flashcards yet")}
 				</div>
 			</div>
@@ -425,6 +446,7 @@ export function MemoryCards({
 			<MemoryCardFront
 				cur={cur}
 				hint={frontHint}
+				level={level}
 				face={face ? { text: face.text, missing: face.missing, side: promptSide } : undefined}
 			/>
 		);
@@ -451,7 +473,10 @@ export function MemoryCards({
 			<StudyFlip
 				flipped={flipped}
 				onFlip={() => setFlipped((value) => !value)}
-				onGrade={(grade) => mark(gradeKnown(grade))}
+				onGrade={(grade) => {
+					const nextLevel: CardLevel = grade === "pass" ? "known" : grade === "fuzzy" ? "fuzzy" : "blank";
+					applyLevel(nextLevel);
+				}}
 				onSwipe={swipe}
 				front={front}
 				back={<MemoryCardBack cur={cur} translationPending={translationPending} staggerReading />}
@@ -477,16 +502,17 @@ export function MemoryCards({
 					))}
 				</div>
 			) : null}
-			<div className="fc-filter">
+			<div className="fc-filter" data-fc-levels="1">
 				{(
 					[
-						["unknown", lx("未掌握", "To review")],
-						["known", lx("已掌握", "Mastered")],
-						["all", lx("全部熟练度", "All progress")],
+						["all", lx("全部熟练度", "All levels"), levelCounts.known + levelCounts.fuzzy + levelCounts.blank],
+						["known", levelLabel("known"), levelCounts.known],
+						["fuzzy", levelLabel("fuzzy"), levelCounts.fuzzy],
+						["blank", levelLabel("blank"), levelCounts.blank],
 					] as const
-				).map(([value, label]) => (
+				).map(([value, label, count]) => (
 					<button key={value} type="button" className={skill === value ? "on" : ""} onClick={() => resetDeck(kind, value)}>
-						{label}
+						{label} {count}
 					</button>
 				))}
 				<button type="button" className={!noRuby ? "on" : ""} aria-pressed={!noRuby} onClick={() => toggleDisplay("ruby")}>
@@ -516,16 +542,14 @@ export function MemoryCards({
 			<Fragment key={cur ? (plainFlip ? `${deckId}-${kind}-${skill}-${safeIdx}` : `${deckId}-${kind}-${skill}-${cur.id}`) : `${deckId}-done`}>{card}</Fragment>
 			{cur ? (
 				<div className="review-skill">
-					<button type="button" className={!known ? "on" : ""} onClick={() => mark(false)}>
-						{lx("还没记住", "Still learning")}
+					<button type="button" className={level === "blank" ? "on" : ""} onClick={() => applyLevel("blank")}>
+						{levelLabel("blank")}
 					</button>
-					{plainFlip ? null : (
-						<button type="button" onClick={() => mark(false)}>
-							{lx("模糊", "Unsure")}
-						</button>
-					)}
-					<button type="button" className={known ? "on known" : ""} onClick={() => mark(true)}>
-						{lx("已经记住", "Got it")}
+					<button type="button" className={level === "fuzzy" ? "on" : ""} onClick={() => applyLevel("fuzzy")}>
+						{levelLabel("fuzzy")}
+					</button>
+					<button type="button" className={level === "known" ? "on known" : ""} onClick={() => applyLevel("known")}>
+						{levelLabel("known")}
 					</button>
 				</div>
 			) : null}

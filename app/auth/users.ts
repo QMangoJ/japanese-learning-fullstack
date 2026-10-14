@@ -46,6 +46,14 @@ export function masteryKey(userId: string): string {
 	return `mastery:${userId}`;
 }
 
+export function usageKey(userId: string): string {
+	return `usage:${userId}`;
+}
+
+export function usageAppKey(app: "shadowing" | "reading"): string {
+	return `usage-app:${app}`;
+}
+
 export function toPublicUser(user: UserRecord): PublicUser {
 	return {
 		id: user.id,

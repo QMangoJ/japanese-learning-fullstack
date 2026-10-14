@@ -166,8 +166,8 @@ describe("MistakesPage", () => {
 		expect(await screen.findByText("错题本")).toBeInTheDocument();
 		expect(document.querySelector(".fc-wrap")).not.toBeNull();
 		expect(document.querySelector(".fcard")).not.toBeNull();
-		expect(screen.getByRole("button", { name: /还没记住|Still learning/ })).toBeInTheDocument();
-		expect(screen.getByRole("button", { name: /已经记住|Got it/ })).toBeInTheDocument();
+		expect(screen.getByRole("button", { name: /^完全没印象$/ })).toBeInTheDocument();
+		expect(screen.getByRole("button", { name: /^记住了$/ })).toBeInTheDocument();
 		expect(screen.getByRole("button", { name: /注音|Readings/ })).toBeInTheDocument();
 		await user.click(screen.getByRole("button", { name: "错题本" }));
 

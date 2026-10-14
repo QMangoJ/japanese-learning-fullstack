@@ -62,15 +62,19 @@ describe("MemoryCards", () => {
 		render(<MemoryCards deckId="test" items={sample} />);
 		expect(screen.getByText("禁止")).toBeInTheDocument();
 		expect(document.querySelector(".review-reading")).toBeNull();
+		expect(document.querySelector("[data-fc-level]")?.textContent).toBe("记住了");
 		await user.click(screen.getByText("回想读音和意思，点击翻面"));
 		expect(document.querySelector(".review-reading")?.textContent).toBe("きんし");
 		expect(screen.getByText("prohibition")).toBeInTheDocument();
 		expect(screen.getByText("例句")).toBeInTheDocument();
 		expect(screen.getByText("ここで禁煙です。")).toBeInTheDocument();
-		await user.click(screen.getByRole("button", { name: /已经记住|Got it/ }));
+		await user.click(screen.getByRole("button", { name: /^完全没印象$/ }));
+		expect(document.querySelector("[data-fc-level]")?.textContent).toBe("完全没印象");
+		expect(screen.getByText("禁止")).toBeInTheDocument();
+		await user.click(screen.getByRole("button", { name: /^记住了 / }));
 		expect(screen.queryByText("禁止")).not.toBeInTheDocument();
 		expect(screen.getByText("有効期限")).toBeInTheDocument();
-		await user.click(screen.getByRole("button", { name: /已掌握|Mastered/ }));
+		await user.click(screen.getByRole("button", { name: /^完全没印象 / }));
 		expect(screen.getByText("禁止")).toBeInTheDocument();
 	});
 

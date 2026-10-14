@@ -539,6 +539,13 @@ describe("lesson review helpers", () => {
 		expect(
 			enrichReviewDays([{ id: "x", title: "x", items: [{ jp: "伝統的（でんとうてき）な漢字", kind: "word" }] }])[0].items[0].jp_r,
 		).toBe("<ruby>伝統的<rt>でんとうてき</rt></ruby>な<ruby>漢字<rt>かんじ</rt></ruby>");
+		const dirty = enrichReviewDays([
+			{ id: "x", title: "x", items: [{ jp: "汚かった（よごかった）", kind: "word", cn: "脏了", reading: "よごかった" }] },
+		])[0].items[0];
+		expect(dirty.cn).toBe("很脏");
+		expect(dirty.reading).toBe("きたなかった");
+		expect(dirty.jp_r).toBe("<ruby>汚かった<rt>きたなかった</rt></ruby>");
+		expect(dirty.exampleCn).toBe("昨天的房间很脏。");
 		expect(jstToday(Date.parse("2026-09-10T16:00:00Z"))).toBe("2026-09-11");
 		expect(reviewDayCounts({ id: "x", title: "x", items: [{ jp: "a", kind: "word" }, { jp: "b", kind: "sentence" }] })).toEqual({
 			words: 1,

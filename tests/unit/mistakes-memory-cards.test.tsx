@@ -179,13 +179,13 @@ describe("MistakesMemoryCards", () => {
 		);
 		expect(screen.getByText("商品券の読み方")).toBeInTheDocument();
 		expect(screen.queryByText("しょうひんけん")).not.toBeInTheDocument();
-		expect(screen.getByRole("button", { name: /未掌握|To review/ })).toBeInTheDocument();
+		expect(screen.getByRole("button", { name: /全部熟练度|All levels/ })).toBeInTheDocument();
 		expect(screen.getByRole("button", { name: /注音|Readings/ })).toBeInTheDocument();
 		await user.click(screen.getByText("回想读音和意思，点击翻面"));
 		expect(screen.getByText("しょうひんけん")).toBeInTheDocument();
 		expect(document.querySelector(".review-flip-ruby rt")?.textContent).toBeTruthy();
-		expect(screen.getByRole("button", { name: /还没记住|Still learning/ })).toBeInTheDocument();
-		expect(screen.getByRole("button", { name: /已经记住|Got it/ })).toBeInTheDocument();
+		expect(screen.getByRole("button", { name: /^完全没印象$/ })).toBeInTheDocument();
+		expect(screen.getByRole("button", { name: /^记住了$/ })).toBeInTheDocument();
 	});
 	it("opens the next card on its own front", async () => {
 		const user = userEvent.setup();

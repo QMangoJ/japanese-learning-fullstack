@@ -4619,8 +4619,9 @@
 		"exampleEn": "I knocked on the door."
 	},
 	"汚かった（よごかった）": {
-		"cn": "脏了",
+		"cn": "很脏",
 		"en": "was dirty",
+		"reading": "きたなかった",
 		"example": "昨日の部屋は汚かったです。",
 		"exampleCn": "昨天的房间很脏。",
 		"exampleEn": "The room was dirty yesterday."
