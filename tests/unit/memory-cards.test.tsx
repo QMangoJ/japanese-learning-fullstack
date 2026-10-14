@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { beforeEach, describe, expect, it } from "vitest";
 
@@ -72,6 +72,70 @@ describe("MemoryCards", () => {
 		expect(screen.getByText("有効期限")).toBeInTheDocument();
 		await user.click(screen.getByRole("button", { name: /已掌握|Mastered/ }));
 		expect(screen.getByText("禁止")).toBeInTheDocument();
+	});
+
+	it("shows the meaning first and reveals the Japanese after the flip", async () => {
+		const user = userEvent.setup();
+		render(
+			<MemoryCards
+				deckId="test"
+				items={[
+					{ id: "a", jp: "有効期限", reading: "ゆうこうきげん", cn: "有效期限", en: "expiry date", kind: "word" },
+					{ id: "b", jp: "気づく", en: "to notice", kind: "word" },
+				]}
+			/>,
+		);
+		expect(screen.getByRole("button", { name: "看日语" })).toHaveAttribute("aria-pressed", "true");
+		expect(screen.getByText("有効期限")).toBeInTheDocument();
+
+		await user.click(screen.getByRole("button", { name: "看英文" }));
+		expect(document.querySelector("[data-fc-face]")?.textContent).toBe("expiry date");
+		expect(screen.queryByText("有効期限")).not.toBeInTheDocument();
+
+		await user.click(screen.getByRole("button", { name: "看中文" }));
+		expect(document.querySelector("[data-fc-face]")?.textContent).toBe("有效期限");
+		expect(document.querySelector("[data-fc-face]")?.classList.contains("cn")).toBe(false);
+		expect(screen.queryByText("有効期限")).not.toBeInTheDocument();
+		expect(screen.getByText("回想日语，点击翻面")).toBeInTheDocument();
+		expect(screen.getByText("1 / 2")).toBeInTheDocument();
+
+		await user.click(screen.getByText("回想日语，点击翻面"));
+		expect(screen.getByText("有効期限")).toBeInTheDocument();
+		expect(document.querySelector(".review-reading")?.textContent).toBe("ゆうこうきげん");
+
+		await user.click(screen.getByRole("button", { name: /下一张|Next/ }));
+		expect(document.querySelector("[data-fc-face]")?.textContent).toBe("这张没有中文");
+		expect(screen.queryByText("気づく")).not.toBeInTheDocument();
+		expect(screen.getByText("2 / 2")).toBeInTheDocument();
+
+		await user.click(screen.getByRole("button", { name: "看日语" }));
+		expect(screen.getByText("気づく")).toBeInTheDocument();
+		expect(screen.queryByText("这张没有中文")).not.toBeInTheDocument();
+	});
+
+	it("steps to the next and previous card with the arrow keys", async () => {
+		const user = userEvent.setup();
+		render(
+			<>
+				<input aria-label="检索" />
+				<MemoryCards deckId="test" items={sample} />
+			</>,
+		);
+		expect(screen.getByText("禁止")).toBeInTheDocument();
+		fireEvent.keyDown(screen.getByRole("textbox", { name: "检索" }), { key: "ArrowRight" });
+		expect(screen.getByText("禁止")).toBeInTheDocument();
+
+		await user.click(screen.getByText("回想读音和意思，点击翻面"));
+		expect(document.querySelector(".review-reading")?.textContent).toBe("きんし");
+		fireEvent.keyDown(window, { key: "ArrowRight" });
+		expect(screen.getByText("有効期限")).toBeInTheDocument();
+		expect(screen.queryByText("禁止")).not.toBeInTheDocument();
+		expect(document.querySelector(".review-reading")).toBeNull();
+
+		fireEvent.keyDown(window, { key: "ArrowLeft" });
+		expect(screen.getByText("禁止")).toBeInTheDocument();
+		expect(screen.queryByText("有効期限")).not.toBeInTheDocument();
+		expect(document.querySelector(".review-reading")).toBeNull();
 	});
 });
 

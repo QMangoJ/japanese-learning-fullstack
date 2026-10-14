@@ -1,4 +1,4 @@
-import { Fragment, useMemo, useState, useSyncExternalStore, type ReactNode } from "react";
+import { Fragment, useEffect, useMemo, useRef, useState, useSyncExternalStore, type ReactNode } from "react";
 
 import { RubyHtml, SayButton } from "../routes/study-common";
 import { KanaStagger, StudyFlip } from "./study-flip";
@@ -17,6 +17,25 @@ import {
 
 export { FLASHCARD_MASTERY_KEY };
 export const REVIEW_MASTERY_KEY = "lesson-review-mastery";
+
+/** Left and right arrows step through a deck. Grades stay on 1, 2, and 3. */
+export function useDeckArrowKeys(onPrev: () => void, onNext: () => void) {
+	const move = useRef({ onPrev, onNext });
+	move.current = { onPrev, onNext };
+	useEffect(() => {
+		const onKey = (event: KeyboardEvent) => {
+			if (event.metaKey || event.ctrlKey || event.altKey) return;
+			if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+			const target = event.target;
+			if (target instanceof Element && target.closest("input, textarea, select, [contenteditable='true']")) return;
+			event.preventDefault();
+			if (event.key === "ArrowLeft") move.current.onPrev();
+			else move.current.onNext();
+		};
+		window.addEventListener("keydown", onKey);
+		return () => window.removeEventListener("keydown", onKey);
+	}, []);
+}
 
 const EMPTY_MASTERY: MasteryMap = {};
 
@@ -258,7 +277,7 @@ export function MemoryCards({
 	defaultSkill = "unknown",
 	translationPending = false,
 	plainFlip = false,
-	recallPrompt = false,
+	recallPrompt = true,
 }: {
 	deckId: string;
 	items: MemoryCardItem[];
@@ -273,7 +292,7 @@ export function MemoryCards({
 	translationPending?: boolean;
 	/** 错题本: one static face, with no flip transition or swipe grade. */
 	plainFlip?: boolean;
-	/** Front can show Chinese or English so the flip reveals the Japanese. */
+	/** Front can show Chinese or English so the flip reveals the Japanese. On unless a deck opts out. */
 	recallPrompt?: boolean;
 }) {
 	useSyncExternalStore(subscribeDisplay, getDisplayVersion, () => 0);
@@ -333,6 +352,16 @@ export function MemoryCards({
 	);
 	const hasEn = useMemo(() => items.some((item) => Boolean(item.en?.trim())), [items]);
 	const promptSide: PromptSide = prompt === "cn" && hasCn ? "cn" : prompt === "en" && hasEn ? "en" : "jp";
+	useDeckArrowKeys(
+		() => {
+			setIdx((n) => Math.max(0, n - 1));
+			setFlipped(false);
+		},
+		() => {
+			setIdx((n) => n + 1);
+			setFlipped(false);
+		},
+	);
 	const showPrompt = recallPrompt && (hasCn || hasEn);
 	const promptOptions: { value: PromptSide; label: string }[] = [
 		{ value: "jp", label: lx("看日语", "See Japanese") },

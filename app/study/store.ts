@@ -1458,6 +1458,9 @@ export function setCardsDay(day: number) {
 export function flipCard() {
 	fc.flipped = !fc.flipped;
 }
+export function showCardFront() {
+	fc.flipped = false;
+}
 export function nextCard() {
 	if (fc.idx < fc.deck.length) {
 		fc.idx++;

@@ -4,7 +4,7 @@ import { JITA_TEARU_EXAMPLES } from "../data/common-jita-tearu";
 import { dueEntry, getDueVersion, grammarDueId, rememberFail, rememberPass, subscribeDue } from "../study/due-review";
 import { EndingSwap } from "../study/ending-swap";
 import { StudyHomePlay } from "../study/study-home-play";
-import { CardsScopeFilter } from "../study/memory-cards";
+import { CardsScopeFilter, useDeckArrowKeys } from "../study/memory-cards";
 import { CountPair } from "../study/tick-text";
 import { KanaStagger, StudyFlip } from "../study/study-flip";
 import type { SwipeGrade } from "../study/swipe-grade";
@@ -22,6 +22,7 @@ import {
 	deleteMistake,
 	flipCard,
 	flipFavCard,
+	showCardFront,
 	getSearchHistory,
 	homeScale,
 	isListening,
@@ -1448,6 +1449,10 @@ export function FavsPage({ data }: { data: FavsData }) {
 
 /* 收藏から作る闪卡。山は legacy の favDeck が持つ。 */
 export function FavFcPage({ data }: { data: { jp: string; cn: string; idx: number; total: number; flipped: boolean } }) {
+	useDeckArrowKeys(
+		() => prevFavCard(),
+		() => nextFavCard(),
+	);
 	return (
 		<div className="fc-wrap">
 			<div className="fc-prog">
@@ -1689,12 +1694,28 @@ function GrammarDueButtons({
 
 /* ---------------- 记忆卡 ---------------- */
 
+type CardPrompt = "jp" | "cn" | "en";
+
+function grammarGloss(point: { usage_cn?: string; usage_en?: string } | undefined, field: "usage_cn" | "usage_en") {
+	return String(point?.[field] || "").trim();
+}
+
+function grammarRecallFace(point: { usage_cn?: string; usage_en?: string }, side: Exclude<CardPrompt, "jp">) {
+	const text = grammarGloss(point, side === "cn" ? "usage_cn" : "usage_en");
+	if (text) return { text, missing: false };
+	return {
+		text: side === "cn" ? lx("这张没有中文", "No Chinese for this card") : lx("这张没有英文", "No English for this card"),
+		missing: true,
+	};
+}
+
 /* デッキの中身（どの週のどの語彙を出すか・シャッフル）は DATA と MODULE を持つ
    legacy 側に残し、ここは表示と操作だけを担う。fc をこちらへ複製しないのは、
    カードを離れて戻ったときに同じ山・同じ位置・同じ表裏へ戻る挙動を保つため
    （legacy の fc はモジュール変数なので view を跨いで生き残る）。 */
 export function CardsPage() {
 	const [, bump] = useReducer((n: number) => n + 1, 0);
+	const [prompt, setPrompt] = useState<CardPrompt>("jp");
 
 	const fc = cardsState();
 	const act = (fn: () => void) => () => {
@@ -1704,6 +1725,22 @@ export function CardsPage() {
 	const flip = act(flipCard);
 	const kind = cardsKind();
 	const cur = fc.deck[fc.idx];
+	const hasCn = kind === "gram" && fc.deck.some((card) => grammarGloss(card?.p, "usage_cn"));
+	const hasEn = kind === "gram" && fc.deck.some((card) => grammarGloss(card?.p, "usage_en"));
+	const promptSide: CardPrompt = prompt === "cn" && hasCn ? "cn" : prompt === "en" && hasEn ? "en" : "jp";
+	const promptOptions: { value: CardPrompt; label: string }[] = [{ value: "jp", label: lx("看日语", "See Japanese") }];
+	if (hasCn) promptOptions.push({ value: "cn", label: lx("看中文", "See Chinese") });
+	if (hasEn) promptOptions.push({ value: "en", label: lx("看英文", "See English") });
+	useDeckArrowKeys(
+		() => {
+			prevCard();
+			bump();
+		},
+		() => {
+			nextCard();
+			bump();
+		},
+	);
 
 	const chapterScale = homeScale() === "chapter";
 	const gradeGrammar = (grade: SwipeGrade, advance: boolean) => {
@@ -1748,6 +1785,7 @@ export function CardsPage() {
 	} else if (kind === "gram") {
 		const p = cur.p;
 		const eg = p.examples && p.examples[0];
+		const recall = promptSide === "jp" ? null : grammarRecallFace(p, promptSide);
 		card = (
 			<StudyFlip
 				flipped={fc.flipped}
@@ -1755,10 +1793,25 @@ export function CardsPage() {
 				onGrade={(grade) => gradeGrammar(grade, false)}
 				onSwipe={(grade) => gradeGrammar(grade, true)}
 				front={
-					<>
-						<div className="big jp">{p.pattern}</div>
-						<div className="hint">{lx("回想接续与意思，点击翻面", "Recall the pattern, then tap to flip")}</div>
-					</>
+					recall ? (
+						<>
+							<div
+								className={recall.missing ? "meta" : "big"}
+								data-fc-face={promptSide}
+								style={!recall.missing && recall.text.length > 22 ? { fontSize: 20 } : undefined}
+							>
+								{recall.text}
+							</div>
+							<div className="hint">{lx("回想日语，点击翻面", "Recall the Japanese, then tap to flip")}</div>
+						</>
+					) : (
+						<>
+							<div className="big jp" data-fc-face="jp">
+								{p.pattern}
+							</div>
+							<div className="hint">{lx("回想接续与意思，点击翻面", "Recall the pattern, then tap to flip")}</div>
+						</>
+					)
 				}
 				back={
 					<div className="backside">
@@ -1900,6 +1953,26 @@ export function CardsPage() {
 					bump();
 				}}
 			/>
+			{promptOptions.length > 1 ? (
+				<div className="fc-filter" data-fc-prompt="1">
+					{promptOptions.map((option) => (
+						<button
+							key={option.value}
+							type="button"
+							className={promptSide === option.value ? "on" : ""}
+							aria-pressed={promptSide === option.value}
+							onClick={() => {
+								if (option.value === prompt) return;
+								setPrompt(option.value);
+								showCardFront();
+								bump();
+							}}
+						>
+							{option.label}
+						</button>
+					))}
+				</div>
+			) : null}
 			<div className="fc-prog">{fc.deck.length ? <CountPair current={Math.min(fc.idx + 1, fc.deck.length)} total={fc.deck.length} /> : ""}</div>
 			<Fragment key={cur ? `${kind}-${fc.idx}` : "done"}>{card}</Fragment>
 			{kind === "gram" && cur?.p?.pattern ? (

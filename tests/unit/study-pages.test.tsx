@@ -1,4 +1,4 @@
-import { render, screen, within } from "@testing-library/react";
+import { fireEvent, render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { useSyncExternalStore } from "react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
@@ -500,6 +500,43 @@ describe("HomePage and CardsPage", () => {
 		expect(screen.queryByText("表示刚做完")).not.toBeInTheDocument();
 		await user.click(screen.getByText("回想接续与意思，点击翻面"));
 		expect(screen.getByText("表示刚做完")).toBeInTheDocument();
+	});
+
+	it("shows a grammar meaning first and the Japanese pattern after the flip", async () => {
+		const user = userEvent.setup();
+		setCardsWeek(0);
+		render(<CardsPage />);
+		expect(screen.getByRole("button", { name: "看日语" })).toHaveAttribute("aria-pressed", "true");
+
+		await user.click(screen.getByRole("button", { name: "看英文" }));
+		expect(document.querySelector("[data-fc-face]")?.textContent).toBe("have just done");
+		expect(screen.queryByText("ばかり")).not.toBeInTheDocument();
+
+		await user.click(screen.getByRole("button", { name: "看中文" }));
+		expect(document.querySelector("[data-fc-face]")?.textContent).toBe("表示刚做完");
+		expect(document.querySelector("[data-fc-face]")?.classList.contains("cn")).toBe(false);
+		expect(screen.queryByText("ばかり")).not.toBeInTheDocument();
+		expect(screen.getByText("回想日语，点击翻面")).toBeInTheDocument();
+
+		await user.click(screen.getByText("回想日语，点击翻面"));
+		expect(document.querySelector(".backside .jp")?.textContent).toBe("ばかり");
+
+		await user.click(screen.getByRole("button", { name: "看日语" }));
+		expect(document.querySelector("[data-fc-face]")?.textContent).toBe("ばかり");
+	});
+
+	it("steps through grammar cards with the arrow keys", async () => {
+		const user = userEvent.setup();
+		setCardsWeek(0);
+		render(<CardsPage />);
+		await user.click(screen.getByText("回想接续与意思，点击翻面"));
+		expect(screen.getByText("表示刚做完")).toBeInTheDocument();
+		fireEvent.keyDown(window, { key: "ArrowRight" });
+		expect(screen.getByText(/本组已完成/)).toBeInTheDocument();
+		expect(screen.queryByText("表示刚做完")).not.toBeInTheDocument();
+		fireEvent.keyDown(window, { key: "ArrowLeft" });
+		expect(screen.getByText("ばかり")).toBeInTheDocument();
+		expect(screen.queryByText("表示刚做完")).not.toBeInTheDocument();
 	});
 });
 
