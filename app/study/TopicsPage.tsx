@@ -204,7 +204,7 @@ function TopicDetail({ slug }: { slug: string }) {
 	};
 
 	return (
-		<div className="topic-wrap">
+		<div className="topic-wrap taste">
 			<div className="topic-head">
 				<div className="topic-title">
 					<b>{lx(topic.title_zh, topic.title_en || topic.title_zh)}</b>
@@ -219,10 +219,10 @@ function TopicDetail({ slug }: { slug: string }) {
 			</div>
 			<div className="fc-filter topic-views" role="tablist">
 				<button type="button" role="tab" aria-selected={view === "list"} className={view === "list" ? "on" : ""} onClick={() => setView("list")}>
-					📋 {lx("单词表", "Word list")}
+					{lx("单词表", "Word list")}
 				</button>
 				<button type="button" role="tab" aria-selected={view === "cards"} className={view === "cards" ? "on" : ""} onClick={() => setView("cards")}>
-					🗂️ {lx("闪卡自测", "Flashcards")}
+					{lx("闪卡自测", "Flashcards")}
 				</button>
 			</div>
 			<div className="fc-filter topic-subs" aria-label={lx("按主题筛选", "Filter by subtopic")}>
@@ -320,7 +320,7 @@ function TopicDetail({ slug }: { slug: string }) {
 										{cur.jp}
 									</div>
 									{chip(cur)}
-									<div className="hint">{lx("先回想读音和意思，点击翻面", "Recall the reading and meaning, then tap to flip")}</div>
+									<div className="hint">{lx("先回想读音和意思，点击或按空格翻面", "Recall the reading and meaning, then tap or press Space")}</div>
 								</>
 							}
 							back={
@@ -351,12 +351,15 @@ function TopicDetail({ slug }: { slug: string }) {
 					{cur ? (
 						<div className="review-skill">
 							<button type="button" data-grade="fail" onClick={() => grade(cur, false, true)}>
+								<kbd className="taste-key" aria-hidden="true">1</kbd>
 								{lx("不会", "Don't know")}
 							</button>
 							<button type="button" data-grade="fuzzy" onClick={() => grade(cur, false, true)}>
+								<kbd className="taste-key" aria-hidden="true">2</kbd>
 								{lx("模糊", "Unsure")}
 							</button>
 							<button type="button" data-grade="pass" onClick={() => grade(cur, true, true)}>
+								<kbd className="taste-key" aria-hidden="true">3</kbd>
 								{lx("会了", "Got it")}
 							</button>
 						</div>
