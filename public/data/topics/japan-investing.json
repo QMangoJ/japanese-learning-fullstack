@@ -61,7 +61,8 @@
 			"zh": "证券账户",
 			"subtopic": "开户・本人确认",
 			"example_jp": "ネット証券で証券口座を開設しました。",
-			"example_zh": "我在网络券商开了证券账户。"
+			"example_zh": "我在网络券商开了证券账户。",
+			"example_ruby": "ネット<ruby>証券<rt>しょうけん</rt></ruby>で<ruby>証券<rt>しょうけん</rt></ruby><ruby>口座<rt>こうざ</rt></ruby>を<ruby>開設<rt>かいせつ</rt></ruby>しました。"
 		},
 		{
 			"id": "inv-002",
@@ -70,7 +71,8 @@
 			"zh": "开户",
 			"subtopic": "开户・本人确认",
 			"example_jp": "口座開設の申し込みはスマホから最短5分で完了します。",
-			"example_zh": "开户申请用手机最快5分钟即可完成。"
+			"example_zh": "开户申请用手机最快5分钟即可完成。",
+			"example_ruby": "<ruby>口座<rt>こうざ</rt></ruby><ruby>開設<rt>かいせつ</rt></ruby>の<ruby>申<rt>もう</rt></ruby>し<ruby>込<rt>こ</rt></ruby>みはスマホから<ruby>最短<rt>さいたん</rt></ruby>5<ruby>分<rt>ふん</rt></ruby>で<ruby>完了<rt>かんりょう</rt></ruby>します。"
 		},
 		{
 			"id": "inv-003",
@@ -79,7 +81,8 @@
 			"zh": "身份验证",
 			"subtopic": "开户・本人确认",
 			"example_jp": "本人確認が完了すると、取引を始められます。",
-			"example_zh": "身份验证完成后即可开始交易。"
+			"example_zh": "身份验证完成后即可开始交易。",
+			"example_ruby": "<ruby>本人<rt>ほんにん</rt></ruby><ruby>確認<rt>かくにん</rt></ruby>が<ruby>完了<rt>かんりょう</rt></ruby>すると、<ruby>取引<rt>とりひき</rt></ruby>を<ruby>始<rt>はじ</rt></ruby>められます。"
 		},
 		{
 			"id": "inv-004",
@@ -88,7 +91,8 @@
 			"zh": "身份证明文件",
 			"subtopic": "开户・本人确认",
 			"example_jp": "本人確認書類として在留カードを提出しました。",
-			"example_zh": "我提交了在留卡作为身份证明文件。"
+			"example_zh": "我提交了在留卡作为身份证明文件。",
+			"example_ruby": "<ruby>本人<rt>ほんにん</rt></ruby><ruby>確認書<rt>かくにんしょ</rt></ruby><ruby>類<rt>るい</rt></ruby>として<ruby>在留<rt>ざいりゅう</rt></ruby>カードを<ruby>提出<rt>ていしゅつ</rt></ruby>しました。"
 		},
 		{
 			"id": "inv-005",
@@ -97,7 +101,8 @@
 			"zh": "个人编号（My Number）",
 			"subtopic": "开户・本人确认",
 			"example_jp": "証券口座の開設にはマイナンバーの提出が必要です。",
-			"example_zh": "开设证券账户需要提交个人编号。"
+			"example_zh": "开设证券账户需要提交个人编号。",
+			"example_ruby": "<ruby>証券<rt>しょうけん</rt></ruby><ruby>口座<rt>こうざ</rt></ruby>の<ruby>開設<rt>かいせつ</rt></ruby>にはマイナンバーの<ruby>提出<rt>ていしゅつ</rt></ruby>が<ruby>必要<rt>ひつよう</rt></ruby>です。"
 		},
 		{
 			"id": "inv-006",
@@ -106,7 +111,8 @@
 			"zh": "个人编号卡",
 			"subtopic": "开户・本人确认",
 			"example_jp": "マイナンバーカードがあれば、本人確認書類は1点で済みます。",
-			"example_zh": "有个人编号卡的话，身份证明文件只需一份。"
+			"example_zh": "有个人编号卡的话，身份证明文件只需一份。",
+			"example_ruby": "マイナンバーカードがあれば、<ruby>本人<rt>ほんにん</rt></ruby><ruby>確認書<rt>かくにんしょ</rt></ruby><ruby>類<rt>るい</rt></ruby>は1<ruby>点<rt>てん</rt></ruby>で<ruby>済<rt>す</rt></ruby>みます。"
 		},
 		{
 			"id": "inv-007",
@@ -115,7 +121,8 @@
 			"zh": "在留卡",
 			"subtopic": "开户・本人确认",
 			"example_jp": "在留カードの有効期限が切れていないか確認してください。",
-			"example_zh": "请确认在留卡是否已过有效期。"
+			"example_zh": "请确认在留卡是否已过有效期。",
+			"example_ruby": "<ruby>在留<rt>ざいりゅう</rt></ruby>カードの<ruby>有効期限<rt>ゆうこうきげん</rt></ruby>が<ruby>切<rt>き</rt></ruby>れていないか<ruby>確認<rt>かくにん</rt></ruby>してください。"
 		},
 		{
 			"id": "inv-008",
@@ -124,7 +131,8 @@
 			"zh": "审核",
 			"subtopic": "开户・本人确认",
 			"example_jp": "口座開設の審査には数日かかる場合があります。",
-			"example_zh": "开户审核有时需要几天时间。"
+			"example_zh": "开户审核有时需要几天时间。",
+			"example_ruby": "<ruby>口座<rt>こうざ</rt></ruby><ruby>開設<rt>かいせつ</rt></ruby>の<ruby>審査<rt>しんさ</rt></ruby>には<ruby>数日<rt>すうじつ</rt></ruby>かかる<ruby>場合<rt>ばあい</rt></ruby>があります。"
 		},
 		{
 			"id": "inv-009",
@@ -133,7 +141,8 @@
 			"zh": "入金；存入资金",
 			"subtopic": "开户・本人确认",
 			"example_jp": "即時入金サービスを使えば、手数料無料ですぐに反映されます。",
-			"example_zh": "使用即时入金服务，免手续费并可立即到账。"
+			"example_zh": "使用即时入金服务，免手续费并可立即到账。",
+			"example_ruby": "<ruby>即時<rt>そくじ</rt></ruby><ruby>入金<rt>にゅうきん</rt></ruby>サービスを<ruby>使<rt>つか</rt></ruby>えば、<ruby>手数料<rt>てすうりょう</rt></ruby><ruby>無料<rt>むりょう</rt></ruby>ですぐに<ruby>反映<rt>はんえい</rt></ruby>されます。"
 		},
 		{
 			"id": "inv-010",
@@ -142,7 +151,8 @@
 			"zh": "出金；提取资金",
 			"subtopic": "开户・本人确认",
 			"example_jp": "出金を指示すると、翌営業日に銀行口座へ振り込まれます。",
-			"example_zh": "发出出金指示后，次一营业日汇入银行账户。"
+			"example_zh": "发出出金指示后，次一营业日汇入银行账户。",
+			"example_ruby": "<ruby>出金<rt>しゅっきん</rt></ruby>を<ruby>指示<rt>しじ</rt></ruby>すると、<ruby>翌<rt>よく</rt></ruby><ruby>営業日<rt>えいぎょうび</rt></ruby>に<ruby>銀行口座<rt>ぎんこうこうざ</rt></ruby>へ<ruby>振<rt>ふ</rt></ruby>り<ruby>込<rt>こ</rt></ruby>まれます。"
 		},
 		{
 			"id": "inv-011",
@@ -151,7 +161,8 @@
 			"zh": "特定账户",
 			"subtopic": "账户・税制（NISA等）",
 			"example_jp": "特定口座なら、証券会社が年間の損益を計算してくれます。",
-			"example_zh": "选择特定账户的话，券商会帮你计算全年盈亏。"
+			"example_zh": "选择特定账户的话，券商会帮你计算全年盈亏。",
+			"example_ruby": "<ruby>特定<rt>とくてい</rt></ruby><ruby>口座<rt>こうざ</rt></ruby>なら、<ruby>証券会社<rt>しょうけんがいしゃ</rt></ruby>が<ruby>年間<rt>ねんかん</rt></ruby>の<ruby>損益<rt>そんえき</rt></ruby>を<ruby>計算<rt>けいさん</rt></ruby>してくれます。"
 		},
 		{
 			"id": "inv-012",
@@ -160,7 +171,8 @@
 			"zh": "一般账户",
 			"subtopic": "账户・税制（NISA等）",
 			"example_jp": "一般口座では、自分で損益を計算して確定申告する必要があります。",
-			"example_zh": "一般账户需要自己计算盈亏并进行确定申告。"
+			"example_zh": "一般账户需要自己计算盈亏并进行确定申告。",
+			"example_ruby": "<ruby>一般<rt>いっぱん</rt></ruby><ruby>口座<rt>こうざ</rt></ruby>では、<ruby>自分<rt>じぶん</rt></ruby>で<ruby>損益<rt>そんえき</rt></ruby>を<ruby>計算<rt>けいさん</rt></ruby>して<ruby>確定申告<rt>かくていしんこく</rt></ruby>する<ruby>必要<rt>ひつよう</rt></ruby>があります。"
 		},
 		{
 			"id": "inv-013",
@@ -169,7 +181,8 @@
 			"zh": "代扣代缴（税款）",
 			"subtopic": "账户・税制（NISA等）",
 			"example_jp": "源泉徴収ありの特定口座を選べば、原則として確定申告は不要です。",
-			"example_zh": "选择代扣税款的特定账户，原则上无需确定申告。"
+			"example_zh": "选择代扣税款的特定账户，原则上无需确定申告。",
+			"example_ruby": "<ruby>源泉徴収<rt>げんせんちょうしゅう</rt></ruby>ありの<ruby>特定<rt>とくてい</rt></ruby><ruby>口座<rt>こうざ</rt></ruby>を<ruby>選<rt>えら</rt></ruby>べば、<ruby>原則<rt>げんそく</rt></ruby>として<ruby>確定申告<rt>かくていしんこく</rt></ruby>は<ruby>不要<rt>ふよう</rt></ruby>です。"
 		},
 		{
 			"id": "inv-014",
@@ -178,7 +191,8 @@
 			"zh": "新NISA（日本个人免税投资制度）",
 			"subtopic": "账户・税制（NISA等）",
 			"example_jp": "2024年から新NISAが始まり、非課税期間が無期限になりました。",
-			"example_zh": "新NISA从2024年开始实施，免税期限变为无限期。"
+			"example_zh": "新NISA从2024年开始实施，免税期限变为无限期。",
+			"example_ruby": "2024<ruby>年<rt>ねん</rt></ruby>から<ruby>新<rt>しん</rt></ruby>NISAが<ruby>始<rt>はじ</rt></ruby>まり、<ruby>非課税<rt>ひかぜい</rt></ruby><ruby>期間<rt>きかん</rt></ruby>が<ruby>無期限<rt>むきげん</rt></ruby>になりました。"
 		},
 		{
 			"id": "inv-015",
@@ -187,7 +201,8 @@
 			"zh": "定投投资额度",
 			"subtopic": "账户・税制（NISA等）",
 			"example_jp": "つみたて投資枠では年間120万円まで投資できます。",
-			"example_zh": "定投投资额度每年最多可投资120万日元。"
+			"example_zh": "定投投资额度每年最多可投资120万日元。",
+			"example_ruby": "つみたて<ruby>投資<rt>とうし</rt></ruby><ruby>枠<rt>わく</rt></ruby>では<ruby>年間<rt>ねんかん</rt></ruby>120<ruby>万円<rt>まんえん</rt></ruby>まで<ruby>投資<rt>とうし</rt></ruby>できます。"
 		},
 		{
 			"id": "inv-016",
@@ -196,7 +211,8 @@
 			"zh": "成长投资额度",
 			"subtopic": "账户・税制（NISA等）",
 			"example_jp": "成長投資枠を使って個別株を購入しました。",
-			"example_zh": "我用成长投资额度买了个股。"
+			"example_zh": "我用成长投资额度买了个股。",
+			"example_ruby": "<ruby>成長<rt>せいちょう</rt></ruby><ruby>投資<rt>とうし</rt></ruby><ruby>枠<rt>わく</rt></ruby>を<ruby>使<rt>つか</rt></ruby>って<ruby>個別<rt>こべつ</rt></ruby><ruby>株<rt>かぶ</rt></ruby>を<ruby>購入<rt>こうにゅう</rt></ruby>しました。"
 		},
 		{
 			"id": "inv-017",
@@ -205,7 +221,8 @@
 			"zh": "免税",
 			"subtopic": "账户・税制（NISA等）",
 			"example_jp": "NISA口座で得た利益は非課税になります。",
-			"example_zh": "在NISA账户获得的收益免税。"
+			"example_zh": "在NISA账户获得的收益免税。",
+			"example_ruby": "NISA<ruby>口座<rt>こうざ</rt></ruby>で<ruby>得<rt>え</rt></ruby>た<ruby>利益<rt>りえき</rt></ruby>は<ruby>非課税<rt>ひかぜい</rt></ruby>になります。"
 		},
 		{
 			"id": "inv-018",
@@ -214,7 +231,8 @@
 			"zh": "免税持有上限额",
 			"subtopic": "账户・税制（NISA等）",
 			"example_jp": "新NISAの非課税保有限度額は1,800万円です。",
-			"example_zh": "新NISA的免税持有上限额为1800万日元。"
+			"example_zh": "新NISA的免税持有上限额为1800万日元。",
+			"example_ruby": "<ruby>新<rt>しん</rt></ruby>NISAの<ruby>非課税<rt>ひかぜい</rt></ruby><ruby>保有<rt>ほゆう</rt></ruby><ruby>限度額<rt>げんどがく</rt></ruby>は1,800<ruby>万円<rt>まんえん</rt></ruby>です。"
 		},
 		{
 			"id": "inv-019",
@@ -223,7 +241,8 @@
 			"zh": "确定申告（年度报税）",
 			"subtopic": "账户・税制（NISA等）",
 			"example_jp": "損失を繰り越すには確定申告が必要です。",
-			"example_zh": "要结转亏损，需要进行确定申告。"
+			"example_zh": "要结转亏损，需要进行确定申告。",
+			"example_ruby": "<ruby>損失<rt>そんしつ</rt></ruby>を<ruby>繰<rt>く</rt></ruby>り<ruby>越<rt>こ</rt></ruby>すには<ruby>確定申告<rt>かくていしんこく</rt></ruby>が<ruby>必要<rt>ひつよう</rt></ruby>です。"
 		},
 		{
 			"id": "inv-020",
@@ -232,7 +251,8 @@
 			"zh": "转让收益；资本利得",
 			"subtopic": "账户・税制（NISA等）",
 			"example_jp": "株式の譲渡益には20.315%の税金がかかります。",
-			"example_zh": "股票转让收益需缴纳20.315%的税。"
+			"example_zh": "股票转让收益需缴纳20.315%的税。",
+			"example_ruby": "<ruby>株式<rt>かぶしき</rt></ruby>の<ruby>譲渡<rt>じょうと</rt></ruby><ruby>益<rt>えき</rt></ruby>には20.315%の<ruby>税金<rt>ぜいきん</rt></ruby>がかかります。"
 		},
 		{
 			"id": "inv-021",
@@ -241,7 +261,8 @@
 			"zh": "转让亏损",
 			"subtopic": "账户・税制（NISA等）",
 			"example_jp": "譲渡損失は翌年以降3年間繰り越せます。",
-			"example_zh": "转让亏损可以向后结转3年。"
+			"example_zh": "转让亏损可以向后结转3年。",
+			"example_ruby": "<ruby>譲渡<rt>じょうと</rt></ruby><ruby>損失<rt>そんしつ</rt></ruby>は<ruby>翌年<rt>よくねん</rt></ruby><ruby>以降<rt>いこう</rt></ruby>3<ruby>年間<rt>ねんかん</rt></ruby><ruby>繰<rt>く</rt></ruby>り<ruby>越<rt>こ</rt></ruby>せます。"
 		},
 		{
 			"id": "inv-022",
@@ -250,7 +271,8 @@
 			"zh": "盈亏相抵",
 			"subtopic": "账户・税制（NISA等）",
 			"example_jp": "複数の口座の利益と損失を損益通算できます。",
-			"example_zh": "多个账户的盈利和亏损可以相抵。"
+			"example_zh": "多个账户的盈利和亏损可以相抵。",
+			"example_ruby": "<ruby>複数<rt>ふくすう</rt></ruby>の<ruby>口座<rt>こうざ</rt></ruby>の<ruby>利益<rt>りえき</rt></ruby>と<ruby>損失<rt>そんしつ</rt></ruby>を<ruby>損益<rt>そんえき</rt></ruby><ruby>通算<rt>つうさん</rt></ruby>できます。"
 		},
 		{
 			"id": "inv-023",
@@ -259,7 +281,8 @@
 			"zh": "结转扣除",
 			"subtopic": "账户・税制（NISA等）",
 			"example_jp": "確定申告をすれば、損失の繰越控除が受けられます。",
-			"example_zh": "进行确定申告就可以享受亏损结转扣除。"
+			"example_zh": "进行确定申告就可以享受亏损结转扣除。",
+			"example_ruby": "<ruby>確定申告<rt>かくていしんこく</rt></ruby>をすれば、<ruby>損失<rt>そんしつ</rt></ruby>の<ruby>繰越<rt>くりこし</rt></ruby><ruby>控除<rt>こうじょ</rt></ruby>が<ruby>受<rt>う</rt></ruby>けられます。"
 		},
 		{
 			"id": "inv-024",
@@ -268,7 +291,8 @@
 			"zh": "个人型确定缴费养老金",
 			"subtopic": "账户・税制（NISA等）",
 			"example_jp": "iDeCoの掛金は全額が所得控除の対象になります。",
-			"example_zh": "iDeCo的缴费金额可全额抵扣所得。"
+			"example_zh": "iDeCo的缴费金额可全额抵扣所得。",
+			"example_ruby": "iDeCoの<ruby>掛金<rt>かけきん</rt></ruby>は<ruby>全額<rt>ぜんがく</rt></ruby>が<ruby>所得控除<rt>しょとくこうじょ</rt></ruby>の<ruby>対象<rt>たいしょう</rt></ruby>になります。"
 		},
 		{
 			"id": "inv-025",
@@ -277,7 +301,8 @@
 			"zh": "现货交易",
 			"subtopic": "下单・交易",
 			"example_jp": "初心者はまず現物取引から始めるのがおすすめです。",
-			"example_zh": "建议新手先从现货交易开始。"
+			"example_zh": "建议新手先从现货交易开始。",
+			"example_ruby": "<ruby>初心者<rt>しょしんしゃ</rt></ruby>はまず<ruby>現物<rt>げんぶつ</rt></ruby><ruby>取引<rt>とりひき</rt></ruby>から<ruby>始<rt>はじ</rt></ruby>めるのがおすすめです。"
 		},
 		{
 			"id": "inv-026",
@@ -286,7 +311,8 @@
 			"zh": "信用交易；融资融券",
 			"subtopic": "下单・交易",
 			"example_jp": "信用取引では資金の約3.3倍まで取引できます。",
-			"example_zh": "信用交易最多可交易资金的约3.3倍。"
+			"example_zh": "信用交易最多可交易资金的约3.3倍。",
+			"example_ruby": "<ruby>信用<rt>しんよう</rt></ruby><ruby>取引<rt>とりひき</rt></ruby>では<ruby>資金<rt>しきん</rt></ruby>の<ruby>約<rt>やく</rt></ruby>3.3<ruby>倍<rt>ばい</rt></ruby>まで<ruby>取引<rt>とりひき</rt></ruby>できます。"
 		},
 		{
 			"id": "inv-027",
@@ -295,7 +321,8 @@
 			"zh": "下单；委托",
 			"subtopic": "下单・交易",
 			"example_jp": "取引時間外に出した注文は、翌営業日に執行されます。",
-			"example_zh": "交易时间外下的单会在次一营业日执行。"
+			"example_zh": "交易时间外下的单会在次一营业日执行。",
+			"example_ruby": "<ruby>取引<rt>とりひき</rt></ruby><ruby>時間外<rt>じかんがい</rt></ruby>に<ruby>出<rt>だ</rt></ruby>した<ruby>注文<rt>ちゅうもん</rt></ruby>は、<ruby>翌<rt>よく</rt></ruby><ruby>営業日<rt>えいぎょうび</rt></ruby>に<ruby>執行<rt>しっこう</rt></ruby>されます。"
 		},
 		{
 			"id": "inv-028",
@@ -304,7 +331,8 @@
 			"zh": "市价（单）",
 			"subtopic": "下单・交易",
 			"example_jp": "成行で注文すると、すぐに約定しやすいです。",
-			"example_zh": "以市价下单比较容易立即成交。"
+			"example_zh": "以市价下单比较容易立即成交。",
+			"example_ruby": "<ruby>成行<rt>なりゆき</rt></ruby>で<ruby>注文<rt>ちゅうもん</rt></ruby>すると、すぐに<ruby>約定<rt>やくじょう</rt></ruby>しやすいです。"
 		},
 		{
 			"id": "inv-029",
@@ -313,7 +341,8 @@
 			"zh": "限价（单）",
 			"subtopic": "下单・交易",
 			"example_jp": "1,500円の指値で買い注文を出しました。",
-			"example_zh": "我以1500日元的限价下了买单。"
+			"example_zh": "我以1500日元的限价下了买单。",
+			"example_ruby": "1,500<ruby>円<rt>えん</rt></ruby>の<ruby>指値<rt>さしね</rt></ruby>で<ruby>買<rt>か</rt></ruby>い<ruby>注文<rt>ちゅうもん</rt></ruby>を<ruby>出<rt>だ</rt></ruby>しました。"
 		},
 		{
 			"id": "inv-030",
@@ -322,7 +351,8 @@
 			"zh": "止损单；反向限价单",
 			"subtopic": "下单・交易",
 			"example_jp": "損失を抑えるために逆指値を設定しておきましょう。",
-			"example_zh": "为控制亏损，先设置好止损单吧。"
+			"example_zh": "为控制亏损，先设置好止损单吧。",
+			"example_ruby": "<ruby>損失<rt>そんしつ</rt></ruby>を<ruby>抑<rt>おさ</rt></ruby>えるために<ruby>逆<rt>ぎゃく</rt></ruby><ruby>指値<rt>さしね</rt></ruby>を<ruby>設定<rt>せってい</rt></ruby>しておきましょう。"
 		},
 		{
 			"id": "inv-031",
@@ -331,7 +361,8 @@
 			"zh": "成交",
 			"subtopic": "下单・交易",
 			"example_jp": "買い注文が約定したという通知が届きました。",
-			"example_zh": "收到了买单已成交的通知。"
+			"example_zh": "收到了买单已成交的通知。",
+			"example_ruby": "<ruby>買<rt>か</rt></ruby>い<ruby>注文<rt>ちゅうもん</rt></ruby>が<ruby>約定<rt>やくじょう</rt></ruby>したという<ruby>通知<rt>つうち</rt></ruby>が<ruby>届<rt>とど</rt></ruby>きました。"
 		},
 		{
 			"id": "inv-032",
@@ -340,7 +371,8 @@
 			"zh": "交割",
 			"subtopic": "下单・交易",
 			"example_jp": "株式の受渡は約定日の2営業日後に行われます。",
-			"example_zh": "股票交割在成交日后的第2个营业日进行。"
+			"example_zh": "股票交割在成交日后的第2个营业日进行。",
+			"example_ruby": "<ruby>株式<rt>かぶしき</rt></ruby>の<ruby>受渡<rt>うけわたし</rt></ruby>は<ruby>約定<rt>やくじょう</rt></ruby><ruby>日<rt>にち</rt></ruby>の2<ruby>営業日<rt>えいぎょうび</rt></ruby><ruby>後<rt>ご</rt></ruby>に<ruby>行<rt>おこな</rt></ruby>われます。"
 		},
 		{
 			"id": "inv-033",
@@ -349,7 +381,8 @@
 			"zh": "撤单；取消",
 			"subtopic": "下单・交易",
 			"example_jp": "まだ約定していない注文は取消できます。",
-			"example_zh": "尚未成交的委托可以撤单。"
+			"example_zh": "尚未成交的委托可以撤单。",
+			"example_ruby": "まだ<ruby>約定<rt>やくじょう</rt></ruby>していない<ruby>注文<rt>ちゅうもん</rt></ruby>は<ruby>取消<rt>とりけし</rt></ruby>できます。"
 		},
 		{
 			"id": "inv-034",
@@ -358,7 +391,8 @@
 			"zh": "可用买入资金",
 			"subtopic": "下单・交易",
 			"example_jp": "買付余力が足りないため、注文が出せません。",
-			"example_zh": "可用买入资金不足，无法下单。"
+			"example_zh": "可用买入资金不足，无法下单。",
+			"example_ruby": "<ruby>買付<rt>かいつけ</rt></ruby><ruby>余力<rt>よりょく</rt></ruby>が<ruby>足<rt>た</rt></ruby>りないため、<ruby>注文<rt>ちゅうもん</rt></ruby>が<ruby>出<rt>だ</rt></ruby>せません。"
 		},
 		{
 			"id": "inv-035",
@@ -367,7 +401,8 @@
 			"zh": "交易手续费",
 			"subtopic": "下单・交易",
 			"example_jp": "国内株式の売買手数料が無料になりました。",
-			"example_zh": "日本国内股票的交易手续费变为免费了。"
+			"example_zh": "日本国内股票的交易手续费变为免费了。",
+			"example_ruby": "<ruby>国内<rt>こくない</rt></ruby><ruby>株式<rt>かぶしき</rt></ruby>の<ruby>売買<rt>ばいばい</rt></ruby><ruby>手数料<rt>てすうりょう</rt></ruby>が<ruby>無料<rt>むりょう</rt></ruby>になりました。"
 		},
 		{
 			"id": "inv-036",
@@ -376,7 +411,8 @@
 			"zh": "卖空",
 			"subtopic": "下单・交易",
 			"example_jp": "空売りは株価が下がると利益が出る取引です。",
-			"example_zh": "卖空是股价下跌时获利的交易。"
+			"example_zh": "卖空是股价下跌时获利的交易。",
+			"example_ruby": "<ruby>空売<rt>からう</rt></ruby>りは<ruby>株価<rt>かぶか</rt></ruby>が<ruby>下<rt>さ</rt></ruby>がると<ruby>利益<rt>りえき</rt></ruby>が<ruby>出<rt>で</rt></ruby>る<ruby>取引<rt>とりひき</rt></ruby>です。"
 		},
 		{
 			"id": "inv-037",
@@ -385,7 +421,8 @@
 			"zh": "涨停",
 			"subtopic": "下单・交易",
 			"example_jp": "好決算を受けて、株価はストップ高まで上昇しました。",
-			"example_zh": "受业绩利好影响，股价涨停。"
+			"example_zh": "受业绩利好影响，股价涨停。",
+			"example_ruby": "<ruby>好<rt>こう</rt></ruby><ruby>決算<rt>けっさん</rt></ruby>を<ruby>受<rt>う</rt></ruby>けて、<ruby>株価<rt>かぶか</rt></ruby>はストップ<ruby>高<rt>だか</rt></ruby>まで<ruby>上昇<rt>じょうしょう</rt></ruby>しました。"
 		},
 		{
 			"id": "inv-038",
@@ -394,7 +431,8 @@
 			"zh": "跌停",
 			"subtopic": "下单・交易",
 			"example_jp": "不祥事が発覚し、株価はストップ安になりました。",
-			"example_zh": "丑闻曝光后，股价跌停。"
+			"example_zh": "丑闻曝光后，股价跌停。",
+			"example_ruby": "<ruby>不祥事<rt>ふしょうじ</rt></ruby>が<ruby>発覚<rt>はっかく</rt></ruby>し、<ruby>株価<rt>かぶか</rt></ruby>はストップ<ruby>安<rt>やす</rt></ruby>になりました。"
 		},
 		{
 			"id": "inv-039",
@@ -403,7 +441,8 @@
 			"zh": "个股；品种",
 			"subtopic": "股票",
 			"example_jp": "どの銘柄を買えばいいか迷っています。",
-			"example_zh": "我在犹豫该买哪只股票。"
+			"example_zh": "我在犹豫该买哪只股票。",
+			"example_ruby": "どの<ruby>銘柄<rt>めいがら</rt></ruby>を<ruby>買<rt>か</rt></ruby>えばいいか<ruby>迷<rt>まよ</rt></ruby>っています。"
 		},
 		{
 			"id": "inv-040",
@@ -412,7 +451,8 @@
 			"zh": "股价",
 			"subtopic": "股票",
 			"example_jp": "決算発表の後、株価が大きく動きました。",
-			"example_zh": "业绩公布后，股价大幅波动。"
+			"example_zh": "业绩公布后，股价大幅波动。",
+			"example_ruby": "<ruby>決算<rt>けっさん</rt></ruby><ruby>発表<rt>はっぴょう</rt></ruby>の<ruby>後<rt>あと</rt></ruby>、<ruby>株価<rt>かぶか</rt></ruby>が<ruby>大<rt>おお</rt></ruby>きく<ruby>動<rt>うご</rt></ruby>きました。"
 		},
 		{
 			"id": "inv-041",
@@ -421,7 +461,8 @@
 			"zh": "一手股；单位股",
 			"subtopic": "股票",
 			"example_jp": "日本株は通常、100株が1単元株です。",
-			"example_zh": "日本股票通常100股为一手。"
+			"example_zh": "日本股票通常100股为一手。",
+			"example_ruby": "<ruby>日本<rt>にほん</rt></ruby><ruby>株<rt>かぶ</rt></ruby>は<ruby>通常<rt>つうじょう</rt></ruby>、100<ruby>株<rt>かぶ</rt></ruby>が1<ruby>単元<rt>たんげん</rt></ruby><ruby>株<rt>かぶ</rt></ruby>です。"
 		},
 		{
 			"id": "inv-042",
@@ -430,7 +471,8 @@
 			"zh": "不足一手的零股",
 			"subtopic": "股票",
 			"example_jp": "単元未満株なら1株から少額で投資できます。",
-			"example_zh": "零股可以从1股开始小额投资。"
+			"example_zh": "零股可以从1股开始小额投资。",
+			"example_ruby": "<ruby>単元<rt>たんげん</rt></ruby><ruby>未満<rt>みまん</rt></ruby><ruby>株<rt>かぶ</rt></ruby>なら1<ruby>株<rt>かぶ</rt></ruby>から<ruby>少額<rt>しょうがく</rt></ruby>で<ruby>投資<rt>とうし</rt></ruby>できます。"
 		},
 		{
 			"id": "inv-043",
@@ -439,7 +481,8 @@
 			"zh": "股东",
 			"subtopic": "股票",
 			"example_jp": "株主総会の招集通知が届きました。",
-			"example_zh": "收到了股东大会的召集通知。"
+			"example_zh": "收到了股东大会的召集通知。",
+			"example_ruby": "<ruby>株主総会<rt>かぶぬしそうかい</rt></ruby>の<ruby>招集<rt>しょうしゅう</rt></ruby><ruby>通知<rt>つうち</rt></ruby>が<ruby>届<rt>とど</rt></ruby>きました。"
 		},
 		{
 			"id": "inv-044",
@@ -448,7 +491,8 @@
 			"zh": "股东优待",
 			"subtopic": "股票",
 			"example_jp": "この銘柄は株主優待で食事券がもらえます。",
-			"example_zh": "持有这只股票可以获得餐券作为股东优待。"
+			"example_zh": "持有这只股票可以获得餐券作为股东优待。",
+			"example_ruby": "この<ruby>銘柄<rt>めいがら</rt></ruby>は<ruby>株主優待<rt>かぶぬしゆうたい</rt></ruby>で<ruby>食事券<rt>しょくじけん</rt></ruby>がもらえます。"
 		},
 		{
 			"id": "inv-045",
@@ -457,7 +501,8 @@
 			"zh": "分红；股息",
 			"subtopic": "股票",
 			"example_jp": "この会社は年に2回配当を出しています。",
-			"example_zh": "这家公司每年分红两次。"
+			"example_zh": "这家公司每年分红两次。",
+			"example_ruby": "この<ruby>会社<rt>かいしゃ</rt></ruby>は<ruby>年<rt>ねん</rt></ruby>に2<ruby>回<rt>かい</rt></ruby><ruby>配当<rt>はいとう</rt></ruby>を<ruby>出<rt>だ</rt></ruby>しています。"
 		},
 		{
 			"id": "inv-046",
@@ -466,7 +511,8 @@
 			"zh": "股息率",
 			"subtopic": "股票",
 			"example_jp": "配当利回りが4%を超える高配当株を探しています。",
-			"example_zh": "我在寻找股息率超过4%的高股息股票。"
+			"example_zh": "我在寻找股息率超过4%的高股息股票。",
+			"example_ruby": "<ruby>配当<rt>はいとう</rt></ruby><ruby>利回<rt>りまわ</rt></ruby>りが4%を<ruby>超<rt>こ</rt></ruby>える<ruby>高配当<rt>こうはいとう</rt></ruby><ruby>株<rt>かぶ</rt></ruby>を<ruby>探<rt>さが</rt></ruby>しています。"
 		},
 		{
 			"id": "inv-047",
@@ -475,7 +521,8 @@
 			"zh": "权利确定日（股权登记日）",
 			"subtopic": "股票",
 			"example_jp": "配当をもらうには、権利確定日に株主である必要があります。",
-			"example_zh": "要获得分红，必须在权利确定日持有股票。"
+			"example_zh": "要获得分红，必须在权利确定日持有股票。",
+			"example_ruby": "<ruby>配当<rt>はいとう</rt></ruby>をもらうには、<ruby>権利<rt>けんり</rt></ruby><ruby>確定<rt>かくてい</rt></ruby><ruby>日<rt>にち</rt></ruby>に<ruby>株主<rt>かぶぬし</rt></ruby>である<ruby>必要<rt>ひつよう</rt></ruby>があります。"
 		},
 		{
 			"id": "inv-048",
@@ -484,7 +531,8 @@
 			"zh": "市值",
 			"subtopic": "股票",
 			"example_jp": "トヨタは時価総額で国内トップの企業です。",
-			"example_zh": "丰田是日本国内市值最高的企业。"
+			"example_zh": "丰田是日本国内市值最高的企业。",
+			"example_ruby": "トヨタは<ruby>時価<rt>じか</rt></ruby><ruby>総額<rt>そうがく</rt></ruby>で<ruby>国内<rt>こくない</rt></ruby>トップの<ruby>企業<rt>きぎょう</rt></ruby>です。"
 		},
 		{
 			"id": "inv-049",
@@ -493,7 +541,8 @@
 			"zh": "上市",
 			"subtopic": "股票",
 			"example_jp": "その企業は来月、東証に上場する予定です。",
-			"example_zh": "该企业预计下个月在东京证券交易所上市。"
+			"example_zh": "该企业预计下个月在东京证券交易所上市。",
+			"example_ruby": "その<ruby>企業<rt>きぎょう</rt></ruby>は<ruby>来月<rt>らいげつ</rt></ruby>、<ruby>東証<rt>とうしょう</rt></ruby>に<ruby>上場<rt>じょうじょう</rt></ruby>する<ruby>予定<rt>よてい</rt></ruby>です。"
 		},
 		{
 			"id": "inv-050",
@@ -502,7 +551,8 @@
 			"zh": "决算；财报",
 			"subtopic": "股票",
 			"example_jp": "決算発表で今期の業績予想が上方修正されました。",
-			"example_zh": "在财报发布中，本期业绩预期被上调。"
+			"example_zh": "在财报发布中，本期业绩预期被上调。",
+			"example_ruby": "<ruby>決算<rt>けっさん</rt></ruby><ruby>発表<rt>はっぴょう</rt></ruby>で<ruby>今期<rt>こんき</rt></ruby>の<ruby>業績<rt>ぎょうせき</rt></ruby><ruby>予想<rt>よそう</rt></ruby>が<ruby>上方<rt>じょうほう</rt></ruby><ruby>修正<rt>しゅうせい</rt></ruby>されました。"
 		},
 		{
 			"id": "inv-051",
@@ -511,7 +561,8 @@
 			"zh": "日经平均股价指数",
 			"subtopic": "股票",
 			"example_jp": "日経平均株価は前日比300円高で取引を終えました。",
-			"example_zh": "日经平均指数较前一日上涨300日元收盘。"
+			"example_zh": "日经平均指数较前一日上涨300日元收盘。",
+			"example_ruby": "<ruby>日経平均<rt>にっけいへいきん</rt></ruby><ruby>株価<rt>かぶか</rt></ruby>は<ruby>前日<rt>ぜんじつ</rt></ruby><ruby>比<rt>ひ</rt></ruby>300<ruby>円高<rt>えんだか</rt></ruby>で<ruby>取引<rt>とりひき</rt></ruby>を<ruby>終<rt>お</rt></ruby>えました。"
 		},
 		{
 			"id": "inv-052",
@@ -520,7 +571,8 @@
 			"zh": "投资信托（公募基金）",
 			"subtopic": "投资信托・基金",
 			"example_jp": "投資信託は100円から購入できます。",
-			"example_zh": "投资信托100日元起即可购买。"
+			"example_zh": "投资信托100日元起即可购买。",
+			"example_ruby": "<ruby>投資信託<rt>とうししんたく</rt></ruby>は100<ruby>円<rt>えん</rt></ruby>から<ruby>購入<rt>こうにゅう</rt></ruby>できます。"
 		},
 		{
 			"id": "inv-053",
@@ -529,7 +581,8 @@
 			"zh": "基金净值（每单位价格）",
 			"subtopic": "投资信托・基金",
 			"example_jp": "投資信託の基準価額は1日に1回算出されます。",
-			"example_zh": "投资信托的净值每天计算一次。"
+			"example_zh": "投资信托的净值每天计算一次。",
+			"example_ruby": "<ruby>投資信託<rt>とうししんたく</rt></ruby>の<ruby>基準<rt>きじゅん</rt></ruby><ruby>価額<rt>かがく</rt></ruby>は1<ruby>日<rt>にち</rt></ruby>に1<ruby>回<rt>かい</rt></ruby><ruby>算出<rt>さんしゅつ</rt></ruby>されます。"
 		},
 		{
 			"id": "inv-054",
@@ -538,7 +591,8 @@
 			"zh": "基金净资产总额",
 			"subtopic": "投资信托・基金",
 			"example_jp": "純資産総額が大きいファンドは安定して運用されやすいです。",
-			"example_zh": "净资产总额大的基金运作通常较稳定。"
+			"example_zh": "净资产总额大的基金运作通常较稳定。",
+			"example_ruby": "<ruby>純<rt>じゅん</rt></ruby><ruby>資産<rt>しさん</rt></ruby><ruby>総額<rt>そうがく</rt></ruby>が<ruby>大<rt>おお</rt></ruby>きいファンドは<ruby>安定<rt>あんてい</rt></ruby>して<ruby>運用<rt>うんよう</rt></ruby>されやすいです。"
 		},
 		{
 			"id": "inv-055",
@@ -547,7 +601,8 @@
 			"zh": "（基金）分配金",
 			"subtopic": "投资信托・基金",
 			"example_jp": "分配金を受け取らずに再投資する設定にしました。",
-			"example_zh": "我设置成不领取分配金而是再投资。"
+			"example_zh": "我设置成不领取分配金而是再投资。",
+			"example_ruby": "<ruby>分配<rt>ぶんぱい</rt></ruby><ruby>金<rt>きん</rt></ruby>を<ruby>受<rt>う</rt></ruby>け<ruby>取<rt>と</rt></ruby>らずに<ruby>再<rt>さい</rt></ruby><ruby>投資<rt>とうし</rt></ruby>する<ruby>設定<rt>せってい</rt></ruby>にしました。"
 		},
 		{
 			"id": "inv-056",
@@ -556,7 +611,8 @@
 			"zh": "信托报酬（基金管理费）",
 			"subtopic": "投资信托・基金",
 			"example_jp": "信託報酬が低いインデックスファンドを選びましょう。",
-			"example_zh": "选择信托报酬低的指数基金吧。"
+			"example_zh": "选择信托报酬低的指数基金吧。",
+			"example_ruby": "<ruby>信託<rt>しんたく</rt></ruby><ruby>報酬<rt>ほうしゅう</rt></ruby>が<ruby>低<rt>ひく</rt></ruby>いインデックスファンドを<ruby>選<rt>えら</rt></ruby>びましょう。"
 		},
 		{
 			"id": "inv-057",
@@ -565,7 +621,8 @@
 			"zh": "申购费",
 			"subtopic": "投资信托・基金",
 			"example_jp": "ネット証券では購入時手数料がかからないファンドが多いです。",
-			"example_zh": "在网络券商，很多基金不收申购费。"
+			"example_zh": "在网络券商，很多基金不收申购费。",
+			"example_ruby": "ネット<ruby>証券<rt>しょうけん</rt></ruby>では<ruby>購入時<rt>こうにゅうじ</rt></ruby><ruby>手数料<rt>てすうりょう</rt></ruby>がかからないファンドが<ruby>多<rt>おお</rt></ruby>いです。"
 		},
 		{
 			"id": "inv-058",
@@ -574,7 +631,8 @@
 			"zh": "指数基金",
 			"subtopic": "投资信托・基金",
 			"example_jp": "インデックスファンドは日経平均などの指数に連動します。",
-			"example_zh": "指数基金跟踪日经平均等指数。"
+			"example_zh": "指数基金跟踪日经平均等指数。",
+			"example_ruby": "インデックスファンドは<ruby>日経平均<rt>にっけいへいきん</rt></ruby>などの<ruby>指数<rt>しすう</rt></ruby>に<ruby>連動<rt>れんどう</rt></ruby>します。"
 		},
 		{
 			"id": "inv-059",
@@ -583,7 +641,8 @@
 			"zh": "指数",
 			"subtopic": "投资信托・基金",
 			"example_jp": "S&P500などのインデックスに連動する商品が人気です。",
-			"example_zh": "跟踪标普500等指数的产品很受欢迎。"
+			"example_zh": "跟踪标普500等指数的产品很受欢迎。",
+			"example_ruby": "S&P500などのインデックスに<ruby>連動<rt>れんどう</rt></ruby>する<ruby>商品<rt>しょうひん</rt></ruby>が<ruby>人気<rt>にんき</rt></ruby>です。"
 		},
 		{
 			"id": "inv-060",
@@ -592,7 +651,8 @@
 			"zh": "交易所交易基金",
 			"subtopic": "投资信托・基金",
 			"example_jp": "ETFは株と同じように取引時間中に売買できます。",
-			"example_zh": "ETF可以像股票一样在交易时间内买卖。"
+			"example_zh": "ETF可以像股票一样在交易时间内买卖。",
+			"example_ruby": "ETFは<ruby>株<rt>かぶ</rt></ruby>と<ruby>同<rt>おな</rt></ruby>じように<ruby>取引<rt>とりひき</rt></ruby><ruby>時間中<rt>じかんちゅう</rt></ruby>に<ruby>売買<rt>ばいばい</rt></ruby>できます。"
 		},
 		{
 			"id": "inv-061",
@@ -601,7 +661,8 @@
 			"zh": "不动产投资信托",
 			"subtopic": "投资信托・基金",
 			"example_jp": "REITを通じて少額から不動産に投資できます。",
-			"example_zh": "通过REIT可以小额投资不动产。"
+			"example_zh": "通过REIT可以小额投资不动产。",
+			"example_ruby": "REITを<ruby>通<rt>つう</rt></ruby>じて<ruby>少額<rt>しょうがく</rt></ruby>から<ruby>不動産<rt>ふどうさん</rt></ruby>に<ruby>投資<rt>とうし</rt></ruby>できます。"
 		},
 		{
 			"id": "inv-062",
@@ -610,7 +671,8 @@
 			"zh": "累积投资（定期定额买入）",
 			"subtopic": "投资信托・基金",
 			"example_jp": "累積投資を利用して、毎月決まった金額で株を買っています。",
-			"example_zh": "我利用累积投资每月以固定金额买股票。"
+			"example_zh": "我利用累积投资每月以固定金额买股票。",
+			"example_ruby": "<ruby>累積<rt>るいせき</rt></ruby><ruby>投資<rt>とうし</rt></ruby>を<ruby>利用<rt>りよう</rt></ruby>して、<ruby>毎月<rt>まいつき</rt></ruby><ruby>決<rt>き</rt></ruby>まった<ruby>金額<rt>きんがく</rt></ruby>で<ruby>株<rt>かぶ</rt></ruby>を<ruby>買<rt>か</rt></ruby>っています。"
 		},
 		{
 			"id": "inv-063",
@@ -619,7 +681,8 @@
 			"zh": "定投；定期积累",
 			"subtopic": "投资信托・基金",
 			"example_jp": "毎月3万円の積立を設定しました。",
-			"example_zh": "我设置了每月3万日元的定投。"
+			"example_zh": "我设置了每月3万日元的定投。",
+			"example_ruby": "<ruby>毎月<rt>まいつき</rt></ruby>3<ruby>万円<rt>まんえん</rt></ruby>の<ruby>積立<rt>つみたて</rt></ruby>を<ruby>設定<rt>せってい</rt></ruby>しました。"
 		},
 		{
 			"id": "inv-064",
@@ -629,6 +692,7 @@
 			"subtopic": "投资信托・基金",
 			"example_jp": "貯蓄型投資信託は分配金を自動で再投資するタイプです。",
 			"example_zh": "储蓄型投资信托是自动将分配金再投资的类型。",
+			"example_ruby": "<ruby>貯蓄<rt>ちょちく</rt></ruby><ruby>型<rt>がた</rt></ruby><ruby>投資信託<rt>とうししんたく</rt></ruby>は<ruby>分配<rt>ぶんぱい</rt></ruby><ruby>金<rt>きん</rt></ruby>を<ruby>自動<rt>じどう</rt></ruby>で<ruby>再<rt>さい</rt></ruby><ruby>投資<rt>とうし</rt></ruby>するタイプです。",
 			"note": "也叫累投型／自動けいぞく投資コース，指分配金自动再投资的类型"
 		},
 		{
@@ -638,7 +702,8 @@
 			"zh": "再投资",
 			"subtopic": "投资信托・基金",
 			"example_jp": "分配金を再投資することで複利効果が期待できます。",
-			"example_zh": "通过将分配金再投资，可以期待复利效果。"
+			"example_zh": "通过将分配金再投资，可以期待复利效果。",
+			"example_ruby": "<ruby>分配<rt>ぶんぱい</rt></ruby><ruby>金<rt>きん</rt></ruby>を<ruby>再<rt>さい</rt></ruby><ruby>投資<rt>とうし</rt></ruby>することで<ruby>複利<rt>ふくり</rt></ruby><ruby>効果<rt>こうか</rt></ruby>が<ruby>期待<rt>きたい</rt></ruby>できます。"
 		},
 		{
 			"id": "inv-066",
@@ -647,7 +712,8 @@
 			"zh": "招募说明书",
 			"subtopic": "投资信托・基金",
 			"example_jp": "購入前に目論見書でリスクと手数料を確認してください。",
-			"example_zh": "购买前请在招募说明书中确认风险和费用。"
+			"example_zh": "购买前请在招募说明书中确认风险和费用。",
+			"example_ruby": "<ruby>購入前<rt>こうにゅうまえ</rt></ruby>に<ruby>目論見<rt>もくろみ</rt></ruby><ruby>書<rt>しょ</rt></ruby>でリスクと<ruby>手数料<rt>てすうりょう</rt></ruby>を<ruby>確認<rt>かくにん</rt></ruby>してください。"
 		},
 		{
 			"id": "inv-067",
@@ -656,7 +722,8 @@
 			"zh": "全球股票",
 			"subtopic": "投资信托・基金",
 			"example_jp": "全世界株式のインデックスファンドを新NISAで積み立てています。",
-			"example_zh": "我在新NISA里定投全球股票指数基金。"
+			"example_zh": "我在新NISA里定投全球股票指数基金。",
+			"example_ruby": "<ruby>全世界<rt>ぜんせかい</rt></ruby><ruby>株式<rt>かぶしき</rt></ruby>のインデックスファンドを<ruby>新<rt>しん</rt></ruby>NISAで<ruby>積<rt>つ</rt></ruby>み<ruby>立<rt>た</rt></ruby>てています。"
 		},
 		{
 			"id": "inv-068",
@@ -665,7 +732,8 @@
 			"zh": "债券",
 			"subtopic": "债券・其他商品",
 			"example_jp": "債券は株式に比べて値動きが小さいと言われています。",
-			"example_zh": "一般认为债券的价格波动比股票小。"
+			"example_zh": "一般认为债券的价格波动比股票小。",
+			"example_ruby": "<ruby>債券<rt>さいけん</rt></ruby>は<ruby>株式<rt>かぶしき</rt></ruby>に<ruby>比<rt>くら</rt></ruby>べて<ruby>値<rt>ね</rt></ruby><ruby>動<rt>うご</rt></ruby>きが<ruby>小<rt>ちい</rt></ruby>さいと<ruby>言<rt>い</rt></ruby>われています。"
 		},
 		{
 			"id": "inv-069",
@@ -674,7 +742,8 @@
 			"zh": "公司债及公共债（债券总称）",
 			"subtopic": "债券・其他商品",
 			"example_jp": "公社債投資信託は比較的安定した運用を目指します。",
-			"example_zh": "公社债投资信托追求相对稳定的运作。"
+			"example_zh": "公社债投资信托追求相对稳定的运作。",
+			"example_ruby": "<ruby>公社債<rt>こうしゃさい</rt></ruby><ruby>投資信託<rt>とうししんたく</rt></ruby>は<ruby>比較的<rt>ひかくてき</rt></ruby><ruby>安定<rt>あんてい</rt></ruby>した<ruby>運用<rt>うんよう</rt></ruby>を<ruby>目指<rt>めざ</rt></ruby>します。"
 		},
 		{
 			"id": "inv-070",
@@ -683,7 +752,8 @@
 			"zh": "国债",
 			"subtopic": "债券・其他商品",
 			"example_jp": "個人向け国債は1万円から購入できます。",
-			"example_zh": "面向个人的国债1万日元起即可购买。"
+			"example_zh": "面向个人的国债1万日元起即可购买。",
+			"example_ruby": "<ruby>個人<rt>こじん</rt></ruby><ruby>向<rt>む</rt></ruby>け<ruby>国債<rt>こくさい</rt></ruby>は1<ruby>万円<rt>まんえん</rt></ruby>から<ruby>購入<rt>こうにゅう</rt></ruby>できます。"
 		},
 		{
 			"id": "inv-071",
@@ -692,7 +762,8 @@
 			"zh": "公司债",
 			"subtopic": "债券・其他商品",
 			"example_jp": "大手企業が個人向けの社債を発行しました。",
-			"example_zh": "大企业发行了面向个人的公司债。"
+			"example_zh": "大企业发行了面向个人的公司债。",
+			"example_ruby": "<ruby>大手<rt>おおて</rt></ruby><ruby>企業<rt>きぎょう</rt></ruby>が<ruby>個人<rt>こじん</rt></ruby><ruby>向<rt>む</rt></ruby>けの<ruby>社債<rt>しゃさい</rt></ruby>を<ruby>発行<rt>はっこう</rt></ruby>しました。"
 		},
 		{
 			"id": "inv-072",
@@ -701,7 +772,8 @@
 			"zh": "可转换公司债",
 			"subtopic": "债券・其他商品",
 			"example_jp": "転換社債は一定の条件で株式に転換できる債券です。",
-			"example_zh": "可转换公司债是可在一定条件下转换为股票的债券。"
+			"example_zh": "可转换公司债是可在一定条件下转换为股票的债券。",
+			"example_ruby": "<ruby>転換<rt>てんかん</rt></ruby><ruby>社債<rt>しゃさい</rt></ruby>は<ruby>一定<rt>いってい</rt></ruby>の<ruby>条件<rt>じょうけん</rt></ruby>で<ruby>株式<rt>かぶしき</rt></ruby>に<ruby>転換<rt>てんかん</rt></ruby>できる<ruby>債券<rt>さいけん</rt></ruby>です。"
 		},
 		{
 			"id": "inv-073",
@@ -710,7 +782,8 @@
 			"zh": "利率；票面利率",
 			"subtopic": "债券・其他商品",
 			"example_jp": "この社債の利率は年1.5%です。",
-			"example_zh": "这只公司债的利率为年1.5%。"
+			"example_zh": "这只公司债的利率为年1.5%。",
+			"example_ruby": "この<ruby>社債<rt>しゃさい</rt></ruby>の<ruby>利率<rt>りりつ</rt></ruby>は<ruby>年<rt>ねん</rt></ruby>1.5%です。"
 		},
 		{
 			"id": "inv-074",
@@ -719,7 +792,8 @@
 			"zh": "偿还；到期兑付",
 			"subtopic": "债券・其他商品",
 			"example_jp": "債券は満期になると額面金額で償還されます。",
-			"example_zh": "债券到期后按面值兑付。"
+			"example_zh": "债券到期后按面值兑付。",
+			"example_ruby": "<ruby>債券<rt>さいけん</rt></ruby>は<ruby>満期<rt>まんき</rt></ruby>になると<ruby>額面<rt>がくめん</rt></ruby><ruby>金額<rt>きんがく</rt></ruby>で<ruby>償還<rt>しょうかん</rt></ruby>されます。"
 		},
 		{
 			"id": "inv-075",
@@ -728,7 +802,8 @@
 			"zh": "到期",
 			"subtopic": "债券・其他商品",
 			"example_jp": "この国債は10年後に満期を迎えます。",
-			"example_zh": "这只国债10年后到期。"
+			"example_zh": "这只国债10年后到期。",
+			"example_ruby": "この<ruby>国債<rt>こくさい</rt></ruby>は10<ruby>年後<rt>ねんご</rt></ruby>に<ruby>満期<rt>まんき</rt></ruby>を<ruby>迎<rt>むか</rt></ruby>えます。"
 		},
 		{
 			"id": "inv-076",
@@ -737,7 +812,8 @@
 			"zh": "期货・期权",
 			"subtopic": "债券・其他商品",
 			"example_jp": "先物・オプション取引はリスクが高いので注意が必要です。",
-			"example_zh": "期货和期权交易风险高，需要注意。"
+			"example_zh": "期货和期权交易风险高，需要注意。",
+			"example_ruby": "<ruby>先物<rt>さきもの</rt></ruby>・オプション<ruby>取引<rt>とりひき</rt></ruby>はリスクが<ruby>高<rt>たか</rt></ruby>いので<ruby>注意<rt>ちゅうい</rt></ruby>が<ruby>必要<rt>ひつよう</rt></ruby>です。"
 		},
 		{
 			"id": "inv-077",
@@ -746,7 +822,8 @@
 			"zh": "黄金定投",
 			"subtopic": "债券・其他商品",
 			"example_jp": "インフレ対策として純金積立を始めました。",
-			"example_zh": "作为抗通胀措施，我开始了黄金定投。"
+			"example_zh": "作为抗通胀措施，我开始了黄金定投。",
+			"example_ruby": "インフレ<ruby>対策<rt>たいさく</rt></ruby>として<ruby>純金<rt>じゅんきん</rt></ruby><ruby>積立<rt>つみたて</rt></ruby>を<ruby>始<rt>はじ</rt></ruby>めました。"
 		},
 		{
 			"id": "inv-078",
@@ -755,7 +832,8 @@
 			"zh": "外币计价货币基金",
 			"subtopic": "债券・其他商品",
 			"example_jp": "米ドルの外貨建てMMFで待機資金を運用しています。",
-			"example_zh": "我用美元货币基金打理闲置资金。"
+			"example_zh": "我用美元货币基金打理闲置资金。",
+			"example_ruby": "<ruby>米<rt>べい</rt></ruby>ドルの<ruby>外貨<rt>がいか</rt></ruby><ruby>建<rt>た</rt></ruby>てMMFで<ruby>待機<rt>たいき</rt></ruby><ruby>資金<rt>しきん</rt></ruby>を<ruby>運用<rt>うんよう</rt></ruby>しています。"
 		},
 		{
 			"id": "inv-079",
@@ -764,7 +842,8 @@
 			"zh": "收益率",
 			"subtopic": "收益・成本",
 			"example_jp": "この債券の利回りは年3%です。",
-			"example_zh": "这只债券的收益率为年3%。"
+			"example_zh": "这只债券的收益率为年3%。",
+			"example_ruby": "この<ruby>債券<rt>さいけん</rt></ruby>の<ruby>利回<rt>りまわ</rt></ruby>りは<ruby>年<rt>ねん</rt></ruby>3%です。"
 		},
 		{
 			"id": "inv-080",
@@ -773,7 +852,8 @@
 			"zh": "价格上涨收益；资本利得",
 			"subtopic": "收益・成本",
 			"example_jp": "株式投資の利益には、値上がり益と配当があります。",
-			"example_zh": "股票投资的收益有价格上涨收益和分红两种。"
+			"example_zh": "股票投资的收益有价格上涨收益和分红两种。",
+			"example_ruby": "<ruby>株式投資<rt>かぶしきとうし</rt></ruby>の<ruby>利益<rt>りえき</rt></ruby>には、<ruby>値上<rt>ねあ</rt></ruby>がり<ruby>益<rt>えき</rt></ruby>と<ruby>配当<rt>はいとう</rt></ruby>があります。"
 		},
 		{
 			"id": "inv-081",
@@ -782,7 +862,8 @@
 			"zh": "盈亏",
 			"subtopic": "收益・成本",
 			"example_jp": "保有銘柄の損益はアプリで確認できます。",
-			"example_zh": "持仓股票的盈亏可以在应用里查看。"
+			"example_zh": "持仓股票的盈亏可以在应用里查看。",
+			"example_ruby": "<ruby>保有<rt>ほゆう</rt></ruby><ruby>銘柄<rt>めいがら</rt></ruby>の<ruby>損益<rt>そんえき</rt></ruby>はアプリで<ruby>確認<rt>かくにん</rt></ruby>できます。"
 		},
 		{
 			"id": "inv-082",
@@ -791,7 +872,8 @@
 			"zh": "浮盈；账面收益",
 			"subtopic": "收益・成本",
 			"example_jp": "円安のおかげで米国株に含み益が出ています。",
-			"example_zh": "托日元贬值的福，美股有了浮盈。"
+			"example_zh": "托日元贬值的福，美股有了浮盈。",
+			"example_ruby": "<ruby>円安<rt>えんやす</rt></ruby>のおかげで<ruby>米国<rt>べいこく</rt></ruby><ruby>株<rt>かぶ</rt></ruby>に<ruby>含<rt>ふく</rt></ruby>み<ruby>益<rt>えき</rt></ruby>が<ruby>出<rt>で</rt></ruby>ています。"
 		},
 		{
 			"id": "inv-083",
@@ -800,7 +882,8 @@
 			"zh": "浮亏；账面亏损",
 			"subtopic": "收益・成本",
 			"example_jp": "含み損を抱えたまま、なかなか売れません。",
-			"example_zh": "一直背着浮亏，迟迟卖不出去。"
+			"example_zh": "一直背着浮亏，迟迟卖不出去。",
+			"example_ruby": "<ruby>含<rt>ふく</rt></ruby>み<ruby>損<rt>ぞん</rt></ruby>を<ruby>抱<rt>かか</rt></ruby>えたまま、なかなか<ruby>売<rt>う</rt></ruby>れません。"
 		},
 		{
 			"id": "inv-084",
@@ -809,7 +892,8 @@
 			"zh": "获利了结；止盈",
 			"subtopic": "收益・成本",
 			"example_jp": "目標株価に達したので利確しました。",
-			"example_zh": "达到目标股价了，所以止盈了。"
+			"example_zh": "达到目标股价了，所以止盈了。",
+			"example_ruby": "<ruby>目標<rt>もくひょう</rt></ruby><ruby>株価<rt>かぶか</rt></ruby>に<ruby>達<rt>たっ</rt></ruby>したので<ruby>利確<rt>りかく</rt></ruby>しました。"
 		},
 		{
 			"id": "inv-085",
@@ -818,7 +902,8 @@
 			"zh": "止损",
 			"subtopic": "收益・成本",
 			"example_jp": "10%下がったら損切りするルールを決めています。",
-			"example_zh": "我定了下跌10%就止损的规则。"
+			"example_zh": "我定了下跌10%就止损的规则。",
+			"example_ruby": "10%<ruby>下<rt>さ</rt></ruby>がったら<ruby>損切<rt>そんぎ</rt></ruby>りするルールを<ruby>決<rt>き</rt></ruby>めています。"
 		},
 		{
 			"id": "inv-086",
@@ -827,7 +912,8 @@
 			"zh": "市值；评估金额",
 			"subtopic": "收益・成本",
 			"example_jp": "ポートフォリオの評価額が100万円を超えました。",
-			"example_zh": "投资组合的市值超过了100万日元。"
+			"example_zh": "投资组合的市值超过了100万日元。",
+			"example_ruby": "ポートフォリオの<ruby>評価<rt>ひょうか</rt></ruby><ruby>額<rt>がく</rt></ruby>が100<ruby>万円<rt>まんえん</rt></ruby>を<ruby>超<rt>こ</rt></ruby>えました。"
 		},
 		{
 			"id": "inv-087",
@@ -836,7 +922,8 @@
 			"zh": "持仓成本价",
 			"subtopic": "收益・成本",
 			"example_jp": "買い増しして取得単価を下げました。",
-			"example_zh": "通过加仓降低了持仓成本价。"
+			"example_zh": "通过加仓降低了持仓成本价。",
+			"example_ruby": "<ruby>買<rt>か</rt></ruby>い<ruby>増<rt>ま</rt></ruby>しして<ruby>取得<rt>しゅとく</rt></ruby><ruby>単価<rt>たんか</rt></ruby>を<ruby>下<rt>さ</rt></ruby>げました。"
 		},
 		{
 			"id": "inv-088",
@@ -845,7 +932,8 @@
 			"zh": "免手续费",
 			"subtopic": "收益・成本",
 			"example_jp": "国内株の売買は手数料無料です。",
-			"example_zh": "日本国内股票买卖免手续费。"
+			"example_zh": "日本国内股票买卖免手续费。",
+			"example_ruby": "<ruby>国内<rt>こくない</rt></ruby><ruby>株<rt>かぶ</rt></ruby>の<ruby>売買<rt>ばいばい</rt></ruby>は<ruby>手数料<rt>てすうりょう</rt></ruby><ruby>無料<rt>むりょう</rt></ruby>です。"
 		},
 		{
 			"id": "inv-089",
@@ -854,7 +942,8 @@
 			"zh": "金融资产",
 			"subtopic": "收益・成本",
 			"example_jp": "家計の金融資産の半分以上が現金・預金です。",
-			"example_zh": "家庭金融资产的一半以上是现金和存款。"
+			"example_zh": "家庭金融资产的一半以上是现金和存款。",
+			"example_ruby": "<ruby>家計<rt>かけい</rt></ruby>の<ruby>金融資産<rt>きんゆうしさん</rt></ruby>の<ruby>半分以上<rt>はんぶんいじょう</rt></ruby>が<ruby>現金<rt>げんきん</rt></ruby>・<ruby>預金<rt>よきん</rt></ruby>です。"
 		},
 		{
 			"id": "inv-090",
@@ -863,7 +952,8 @@
 			"zh": "本金",
 			"subtopic": "收益・成本",
 			"example_jp": "投資信託は元本が保証されていません。",
-			"example_zh": "投资信托不保本。"
+			"example_zh": "投资信托不保本。",
+			"example_ruby": "<ruby>投資信託<rt>とうししんたく</rt></ruby>は<ruby>元本<rt>がんぽん</rt></ruby>が<ruby>保証<rt>ほしょう</rt></ruby>されていません。"
 		},
 		{
 			"id": "inv-091",
@@ -872,7 +962,8 @@
 			"zh": "复利",
 			"subtopic": "收益・成本",
 			"example_jp": "長期投資では複利の効果が大きくなります。",
-			"example_zh": "长期投资中复利效果会变大。"
+			"example_zh": "长期投资中复利效果会变大。",
+			"example_ruby": "<ruby>長期<rt>ちょうき</rt></ruby><ruby>投資<rt>とうし</rt></ruby>では<ruby>複利<rt>ふくり</rt></ruby>の<ruby>効果<rt>こうか</rt></ruby>が<ruby>大<rt>おお</rt></ruby>きくなります。"
 		},
 		{
 			"id": "inv-092",
@@ -881,7 +972,8 @@
 			"zh": "回报；收益",
 			"subtopic": "收益・成本",
 			"example_jp": "過去10年間の年平均リターンは約7%でした。",
-			"example_zh": "过去10年的年平均回报约为7%。"
+			"example_zh": "过去10年的年平均回报约为7%。",
+			"example_ruby": "<ruby>過去<rt>かこ</rt></ruby>10<ruby>年間<rt>ねんかん</rt></ruby>の<ruby>年<rt>ねん</rt></ruby><ruby>平均<rt>へいきん</rt></ruby>リターンは<ruby>約<rt>やく</rt></ruby>7%でした。"
 		},
 		{
 			"id": "inv-093",
@@ -890,7 +982,8 @@
 			"zh": "汇率；外汇",
 			"subtopic": "汇率・外国证券",
 			"example_jp": "外国株は為替の影響を受けます。",
-			"example_zh": "外国股票会受到汇率的影响。"
+			"example_zh": "外国股票会受到汇率的影响。",
+			"example_ruby": "<ruby>外国<rt>がいこく</rt></ruby><ruby>株<rt>かぶ</rt></ruby>は<ruby>為替<rt>かわせ</rt></ruby>の<ruby>影響<rt>えいきょう</rt></ruby>を<ruby>受<rt>う</rt></ruby>けます。"
 		},
 		{
 			"id": "inv-094",
@@ -899,7 +992,8 @@
 			"zh": "汇率",
 			"subtopic": "汇率・外国证券",
 			"example_jp": "為替レートは1ドル=150円前後で推移しています。",
-			"example_zh": "汇率在1美元兑150日元左右波动。"
+			"example_zh": "汇率在1美元兑150日元左右波动。",
+			"example_ruby": "<ruby>為替<rt>かわせ</rt></ruby>レートは1ドル=150<ruby>円<rt>えん</rt></ruby><ruby>前後<rt>ぜんご</rt></ruby>で<ruby>推移<rt>すいい</rt></ruby>しています。"
 		},
 		{
 			"id": "inv-095",
@@ -908,7 +1002,8 @@
 			"zh": "换汇手续费",
 			"subtopic": "汇率・外国证券",
 			"example_jp": "米ドルに両替する際は為替手数料がかかります。",
-			"example_zh": "兑换美元时要收取换汇手续费。"
+			"example_zh": "兑换美元时要收取换汇手续费。",
+			"example_ruby": "<ruby>米<rt>べい</rt></ruby>ドルに<ruby>両替<rt>りょうがえ</rt></ruby>する<ruby>際<rt>さい</rt></ruby>は<ruby>為替<rt>かわせ</rt></ruby><ruby>手数料<rt>てすうりょう</rt></ruby>がかかります。"
 		},
 		{
 			"id": "inv-096",
@@ -917,7 +1012,8 @@
 			"zh": "日元贬值",
 			"subtopic": "汇率・外国证券",
 			"example_jp": "円安が進み、輸出企業の株価が上昇しました。",
-			"example_zh": "日元持续贬值，出口企业的股价上涨了。"
+			"example_zh": "日元持续贬值，出口企业的股价上涨了。",
+			"example_ruby": "<ruby>円安<rt>えんやす</rt></ruby>が<ruby>進<rt>すす</rt></ruby>み、<ruby>輸出<rt>ゆしゅつ</rt></ruby><ruby>企業<rt>きぎょう</rt></ruby>の<ruby>株価<rt>かぶか</rt></ruby>が<ruby>上昇<rt>じょうしょう</rt></ruby>しました。"
 		},
 		{
 			"id": "inv-097",
@@ -926,7 +1022,8 @@
 			"zh": "日元升值",
 			"subtopic": "汇率・外国证券",
 			"example_jp": "円高になると、外国資産の円換算額は減ります。",
-			"example_zh": "日元升值时，外国资产换算成日元的金额会减少。"
+			"example_zh": "日元升值时，外国资产换算成日元的金额会减少。",
+			"example_ruby": "<ruby>円高<rt>えんだか</rt></ruby>になると、<ruby>外国<rt>がいこく</rt></ruby><ruby>資産<rt>しさん</rt></ruby>の<ruby>円換算<rt>えんかんさん</rt></ruby><ruby>額<rt>がく</rt></ruby>は<ruby>減<rt>へ</rt></ruby>ります。"
 		},
 		{
 			"id": "inv-098",
@@ -935,7 +1032,8 @@
 			"zh": "汇兑收益",
 			"subtopic": "汇率・外国证券",
 			"example_jp": "ドルを円に戻したときに為替差益が出ました。",
-			"example_zh": "把美元换回日元时产生了汇兑收益。"
+			"example_zh": "把美元换回日元时产生了汇兑收益。",
+			"example_ruby": "ドルを<ruby>円<rt>えん</rt></ruby>に<ruby>戻<rt>もど</rt></ruby>したときに<ruby>為替<rt>かわせ</rt></ruby><ruby>差益<rt>さえき</rt></ruby>が<ruby>出<rt>で</rt></ruby>ました。"
 		},
 		{
 			"id": "inv-099",
@@ -944,7 +1042,8 @@
 			"zh": "汇率风险",
 			"subtopic": "汇率・外国证券",
 			"example_jp": "為替ヘッジありのファンドなら為替リスクを抑えられます。",
-			"example_zh": "选择有汇率对冲的基金可以降低汇率风险。"
+			"example_zh": "选择有汇率对冲的基金可以降低汇率风险。",
+			"example_ruby": "<ruby>為替<rt>かわせ</rt></ruby>ヘッジありのファンドなら<ruby>為替<rt>かわせ</rt></ruby>リスクを<ruby>抑<rt>おさ</rt></ruby>えられます。"
 		},
 		{
 			"id": "inv-100",
@@ -953,7 +1052,8 @@
 			"zh": "外国证券",
 			"subtopic": "汇率・外国证券",
 			"example_jp": "外国株式を買う前に、外国証券取引口座を開設します。",
-			"example_zh": "购买外国股票前先开设外国证券交易账户。"
+			"example_zh": "购买外国股票前先开设外国证券交易账户。",
+			"example_ruby": "<ruby>外国<rt>がいこく</rt></ruby><ruby>株式<rt>かぶしき</rt></ruby>を<ruby>買<rt>か</rt></ruby>う<ruby>前<rt>まえ</rt></ruby>に、<ruby>外国<rt>がいこく</rt></ruby><ruby>証券<rt>しょうけん</rt></ruby><ruby>取引<rt>とりひき</rt></ruby><ruby>口座<rt>こうざ</rt></ruby>を<ruby>開設<rt>かいせつ</rt></ruby>します。"
 		},
 		{
 			"id": "inv-101",
@@ -962,7 +1062,8 @@
 			"zh": "美股",
 			"subtopic": "汇率・外国证券",
 			"example_jp": "米国株は1株単位で購入できます。",
-			"example_zh": "美股可以按1股为单位购买。"
+			"example_zh": "美股可以按1股为单位购买。",
+			"example_ruby": "<ruby>米国<rt>べいこく</rt></ruby><ruby>株<rt>かぶ</rt></ruby>は1<ruby>株<rt>かぶ</rt></ruby><ruby>単位<rt>たんい</rt></ruby>で<ruby>購入<rt>こうにゅう</rt></ruby>できます。"
 		},
 		{
 			"id": "inv-102",
@@ -971,7 +1072,8 @@
 			"zh": "外币",
 			"subtopic": "汇率・外国证券",
 			"example_jp": "外貨預金より外貨建てMMFの方が利回りが高いことがあります。",
-			"example_zh": "外币货币基金的收益率有时比外币存款高。"
+			"example_zh": "外币货币基金的收益率有时比外币存款高。",
+			"example_ruby": "<ruby>外貨<rt>がいか</rt></ruby><ruby>預金<rt>よきん</rt></ruby>より<ruby>外貨<rt>がいか</rt></ruby><ruby>建<rt>た</rt></ruby>てMMFの<ruby>方<rt>ほう</rt></ruby>が<ruby>利回<rt>りまわ</rt></ruby>りが<ruby>高<rt>たか</rt></ruby>いことがあります。"
 		},
 		{
 			"id": "inv-103",
@@ -980,7 +1082,8 @@
 			"zh": "日元结算",
 			"subtopic": "汇率・外国证券",
 			"example_jp": "円貨決済なら、ドルを用意しなくても米国株が買えます。",
-			"example_zh": "选择日元结算，不准备美元也能买美股。"
+			"example_zh": "选择日元结算，不准备美元也能买美股。",
+			"example_ruby": "<ruby>円貨<rt>えんか</rt></ruby><ruby>決済<rt>けっさい</rt></ruby>なら、ドルを<ruby>用意<rt>ようい</rt></ruby>しなくても<ruby>米国<rt>べいこく</rt></ruby><ruby>株<rt>かぶ</rt></ruby>が<ruby>買<rt>か</rt></ruby>えます。"
 		},
 		{
 			"id": "inv-104",
@@ -989,7 +1092,8 @@
 			"zh": "外币结算",
 			"subtopic": "汇率・外国证券",
 			"example_jp": "外貨決済を選ぶと、売却代金をドルのまま受け取れます。",
-			"example_zh": "选择外币结算，卖出款项可以直接以美元收取。"
+			"example_zh": "选择外币结算，卖出款项可以直接以美元收取。",
+			"example_ruby": "<ruby>外貨<rt>がいか</rt></ruby><ruby>決済<rt>けっさい</rt></ruby>を<ruby>選<rt>えら</rt></ruby>ぶと、<ruby>売却<rt>ばいきゃく</rt></ruby><ruby>代金<rt>だいきん</rt></ruby>をドルのまま<ruby>受<rt>う</rt></ruby>け<ruby>取<rt>と</rt></ruby>れます。"
 		},
 		{
 			"id": "inv-105",
@@ -998,7 +1102,8 @@
 			"zh": "外国税额抵免",
 			"subtopic": "汇率・外国证券",
 			"example_jp": "米国株の配当は確定申告で外国税額控除を受けられます。",
-			"example_zh": "美股分红可以通过确定申告享受外国税额抵免。"
+			"example_zh": "美股分红可以通过确定申告享受外国税额抵免。",
+			"example_ruby": "<ruby>米国<rt>べいこく</rt></ruby><ruby>株<rt>かぶ</rt></ruby>の<ruby>配当<rt>はいとう</rt></ruby>は<ruby>確定申告<rt>かくていしんこく</rt></ruby>で<ruby>外国<rt>がいこく</rt></ruby><ruby>税額<rt>ぜいがく</rt></ruby><ruby>控除<rt>こうじょ</rt></ruby>を<ruby>受<rt>う</rt></ruby>けられます。"
 		},
 		{
 			"id": "inv-106",
@@ -1007,7 +1112,8 @@
 			"zh": "分散投资",
 			"subtopic": "风险・策略",
 			"example_jp": "一つの銘柄に集中せず、分散投資を心がけましょう。",
-			"example_zh": "不要集中于一只股票，要注意分散投资。"
+			"example_zh": "不要集中于一只股票，要注意分散投资。",
+			"example_ruby": "<ruby>一<rt>ひと</rt></ruby>つの<ruby>銘柄<rt>めいがら</rt></ruby>に<ruby>集中<rt>しゅうちゅう</rt></ruby>せず、<ruby>分散<rt>ぶんさん</rt></ruby><ruby>投資<rt>とうし</rt></ruby>を<ruby>心<rt>こころ</rt></ruby>がけましょう。"
 		},
 		{
 			"id": "inv-107",
@@ -1016,7 +1122,8 @@
 			"zh": "长期投资",
 			"subtopic": "风险・策略",
 			"example_jp": "長期投資では短期的な値動きを気にしすぎないことが大切です。",
-			"example_zh": "长期投资中重要的是不要过分在意短期波动。"
+			"example_zh": "长期投资中重要的是不要过分在意短期波动。",
+			"example_ruby": "<ruby>長期<rt>ちょうき</rt></ruby><ruby>投資<rt>とうし</rt></ruby>では<ruby>短期的<rt>たんきてき</rt></ruby>な<ruby>値<rt>ね</rt></ruby><ruby>動<rt>うご</rt></ruby>きを<ruby>気<rt>き</rt></ruby>にしすぎないことが<ruby>大切<rt>たいせつ</rt></ruby>です。"
 		},
 		{
 			"id": "inv-108",
@@ -1025,7 +1132,8 @@
 			"zh": "资产管理；理财",
 			"subtopic": "风险・策略",
 			"example_jp": "老後に備えて資産運用を始める人が増えています。",
-			"example_zh": "为养老做准备而开始理财的人越来越多。"
+			"example_zh": "为养老做准备而开始理财的人越来越多。",
+			"example_ruby": "<ruby>老後<rt>ろうご</rt></ruby>に<ruby>備<rt>そな</rt></ruby>えて<ruby>資産<rt>しさん</rt></ruby><ruby>運用<rt>うんよう</rt></ruby>を<ruby>始<rt>はじ</rt></ruby>める<ruby>人<rt>ひと</rt></ruby>が<ruby>増<rt>ふ</rt></ruby>えています。"
 		},
 		{
 			"id": "inv-109",
@@ -1034,7 +1142,8 @@
 			"zh": "投资组合",
 			"subtopic": "风险・策略",
 			"example_jp": "株式と債券を組み合わせたポートフォリオを作りました。",
-			"example_zh": "我建立了股票和债券组合的投资组合。"
+			"example_zh": "我建立了股票和债券组合的投资组合。",
+			"example_ruby": "<ruby>株式<rt>かぶしき</rt></ruby>と<ruby>債券<rt>さいけん</rt></ruby>を<ruby>組<rt>く</rt></ruby>み<ruby>合<rt>あ</rt></ruby>わせたポートフォリオを<ruby>作<rt>つく</rt></ruby>りました。"
 		},
 		{
 			"id": "inv-110",
@@ -1043,7 +1152,8 @@
 			"zh": "风险承受能力",
 			"subtopic": "风险・策略",
 			"example_jp": "自分のリスク許容度に合った商品を選びましょう。",
-			"example_zh": "选择适合自己风险承受能力的产品吧。"
+			"example_zh": "选择适合自己风险承受能力的产品吧。",
+			"example_ruby": "<ruby>自分<rt>じぶん</rt></ruby>のリスク<ruby>許容度<rt>きょようど</rt></ruby>に<ruby>合<rt>あ</rt></ruby>った<ruby>商品<rt>しょうひん</rt></ruby>を<ruby>選<rt>えら</rt></ruby>びましょう。"
 		},
 		{
 			"id": "inv-111",
@@ -1052,7 +1162,8 @@
 			"zh": "跌破本金；亏本",
 			"subtopic": "风险・策略",
 			"example_jp": "投資信託は元本割れする可能性があります。",
-			"example_zh": "投资信托有可能跌破本金。"
+			"example_zh": "投资信托有可能跌破本金。",
+			"example_ruby": "<ruby>投資信託<rt>とうししんたく</rt></ruby>は<ruby>元本<rt>がんぽん</rt></ruby><ruby>割<rt>わ</rt></ruby>れする<ruby>可能性<rt>かのうせい</rt></ruby>があります。"
 		},
 		{
 			"id": "inv-112",
@@ -1061,7 +1172,8 @@
 			"zh": "价格波动",
 			"subtopic": "风险・策略",
 			"example_jp": "新興国株は値動きが大きい傾向があります。",
-			"example_zh": "新兴市场股票往往价格波动较大。"
+			"example_zh": "新兴市场股票往往价格波动较大。",
+			"example_ruby": "<ruby>新興国<rt>しんこうこく</rt></ruby><ruby>株<rt>かぶ</rt></ruby>は<ruby>値<rt>ね</rt></ruby><ruby>動<rt>うご</rt></ruby>きが<ruby>大<rt>おお</rt></ruby>きい<ruby>傾向<rt>けいこう</rt></ruby>があります。"
 		},
 		{
 			"id": "inv-113",
@@ -1070,7 +1182,8 @@
 			"zh": "平均成本法（定期定额投资法）",
 			"subtopic": "风险・策略",
 			"example_jp": "ドルコスト平均法で毎月一定額を買い付けます。",
-			"example_zh": "用平均成本法每月买入固定金额。"
+			"example_zh": "用平均成本法每月买入固定金额。",
+			"example_ruby": "ドルコスト<ruby>平均<rt>へいきん</rt></ruby><ruby>法<rt>ほう</rt></ruby>で<ruby>毎月<rt>まいつき</rt></ruby><ruby>一定額<rt>いっていがく</rt></ruby>を<ruby>買<rt>か</rt></ruby>い<ruby>付<rt>つ</rt></ruby>けます。"
 		},
 		{
 			"id": "inv-114",
@@ -1079,7 +1192,8 @@
 			"zh": "再平衡",
 			"subtopic": "风险・策略",
 			"example_jp": "年に一度、資産配分のリバランスを行っています。",
-			"example_zh": "我每年进行一次资产配置的再平衡。"
+			"example_zh": "我每年进行一次资产配置的再平衡。",
+			"example_ruby": "<ruby>年<rt>ねん</rt></ruby>に<ruby>一度<rt>いちど</rt></ruby>、<ruby>資産<rt>しさん</rt></ruby><ruby>配分<rt>はいぶん</rt></ruby>のリバランスを<ruby>行<rt>おこな</rt></ruby>っています。"
 		},
 		{
 			"id": "inv-115",
@@ -1088,7 +1202,8 @@
 			"zh": "暴跌",
 			"subtopic": "风险・策略",
 			"example_jp": "暴落時こそ慌てて売らないことが大切です。",
-			"example_zh": "正是在暴跌时，不慌忙卖出才最重要。"
+			"example_zh": "正是在暴跌时，不慌忙卖出才最重要。",
+			"example_ruby": "<ruby>暴落<rt>ぼうらく</rt></ruby><ruby>時<rt>じ</rt></ruby>こそ<ruby>慌<rt>あわ</rt></ruby>てて<ruby>売<rt>う</rt></ruby>らないことが<ruby>大切<rt>たいせつ</rt></ruby>です。"
 		},
 		{
 			"id": "inv-116",
@@ -1097,7 +1212,8 @@
 			"zh": "杠杆",
 			"subtopic": "风险・策略",
 			"example_jp": "レバレッジをかけると、利益も損失も大きくなります。",
-			"example_zh": "加杠杆后，收益和亏损都会放大。"
+			"example_zh": "加杠杆后，收益和亏损都会放大。",
+			"example_ruby": "レバレッジをかけると、<ruby>利益<rt>りえき</rt></ruby>も<ruby>損失<rt>そんしつ</rt></ruby>も<ruby>大<rt>おお</rt></ruby>きくなります。"
 		},
 		{
 			"id": "inv-117",
@@ -1106,7 +1222,8 @@
 			"zh": "追加保证金",
 			"subtopic": "风险・策略",
 			"example_jp": "株価が急落し、信用取引で追証が発生しました。",
-			"example_zh": "股价急跌，信用交易产生了追加保证金。"
+			"example_zh": "股价急跌，信用交易产生了追加保证金。",
+			"example_ruby": "<ruby>株価<rt>かぶか</rt></ruby>が<ruby>急落<rt>きゅうらく</rt></ruby>し、<ruby>信用<rt>しんよう</rt></ruby><ruby>取引<rt>とりひき</rt></ruby>で<ruby>追証<rt>おいしょう</rt></ruby>が<ruby>発生<rt>はっせい</rt></ruby>しました。"
 		},
 		{
 			"id": "inv-118",
@@ -1115,7 +1232,8 @@
 			"zh": "股票；股份",
 			"subtopic": "股票",
 			"example_jp": "株式に投資する前に、会社の業績を調べました。",
-			"example_zh": "投资股票之前，我先查了公司的业绩。"
+			"example_zh": "投资股票之前，我先查了公司的业绩。",
+			"example_ruby": "<ruby>株式<rt>かぶしき</rt></ruby>に<ruby>投資<rt>とうし</rt></ruby>する<ruby>前<rt>まえ</rt></ruby>に、<ruby>会社<rt>かいしゃ</rt></ruby>の<ruby>業績<rt>ぎょうせき</rt></ruby>を<ruby>調<rt>しら</rt></ruby>べました。"
 		},
 		{
 			"id": "inv-119",
@@ -1125,6 +1243,7 @@
 			"subtopic": "账户・税制（NISA等）",
 			"example_jp": "会社の確定拠出年金で、運用する商品を自分で選びます。",
 			"example_zh": "在公司的确定缴费型养老金里，自己选择要运用的产品。",
+			"example_ruby": "<ruby>会社<rt>かいしゃ</rt></ruby>の<ruby>確定<rt>かくてい</rt></ruby><ruby>拠出<rt>きょしゅつ</rt></ruby><ruby>年金<rt>ねんきん</rt></ruby>で、<ruby>運用<rt>うんよう</rt></ruby>する<ruby>商品<rt>しょうひん</rt></ruby>を<ruby>自分<rt>じぶん</rt></ruby>で<ruby>選<rt>えら</rt></ruby>びます。",
 			"note": "企业型叫「企業型DC」，个人型就是 iDeCo。"
 		},
 		{
@@ -1134,7 +1253,8 @@
 			"zh": "外币存款",
 			"subtopic": "汇率・外国证券",
 			"example_jp": "外貨預金は為替の変動で元本割れすることがあります。",
-			"example_zh": "外币存款可能因汇率变动而跌破本金。"
+			"example_zh": "外币存款可能因汇率变动而跌破本金。",
+			"example_ruby": "<ruby>外貨<rt>がいか</rt></ruby><ruby>預金<rt>よきん</rt></ruby>は<ruby>為替<rt>かわせ</rt></ruby>の<ruby>変動<rt>へんどう</rt></ruby>で<ruby>元本<rt>がんぽん</rt></ruby><ruby>割<rt>わ</rt></ruby>れすることがあります。"
 		},
 		{
 			"id": "inv-121",
@@ -1143,7 +1263,8 @@
 			"zh": "手续费",
 			"subtopic": "收益・成本",
 			"example_jp": "長く持つなら、手数料の安い商品を選びましょう。",
-			"example_zh": "如果长期持有，就选手续费低的产品吧。"
+			"example_zh": "如果长期持有，就选手续费低的产品吧。",
+			"example_ruby": "<ruby>長<rt>なが</rt></ruby>く<ruby>持<rt>も</rt></ruby>つなら、<ruby>手数料<rt>てすうりょう</rt></ruby>の<ruby>安<rt>やす</rt></ruby>い<ruby>商品<rt>しょうひん</rt></ruby>を<ruby>選<rt>えら</rt></ruby>びましょう。"
 		}
 	]
 }

@@ -48,6 +48,7 @@
 			"subtopic": "进店和试穿",
 			"example_jp": "休みの日に服を買いに行きます。",
 			"example_zh": "休息日去买衣服。",
+			"example_ruby": "<ruby>休<rt>やす</rt></ruby>みの<ruby>日<rt>にち</rt></ruby>に<ruby>服<rt>ふく</rt></ruby>を<ruby>買<rt>か</rt></ruby>いに<ruby>行<rt>い</rt></ruby>きます。",
 			"example_en": "I go shopping for clothes on my day off."
 		},
 		{
@@ -59,6 +60,7 @@
 			"subtopic": "进店和试穿",
 			"example_jp": "このコートを試着してもいいですか。",
 			"example_zh": "这件大衣可以试穿吗？",
+			"example_ruby": "このコートを<ruby>試着<rt>しちゃく</rt></ruby>してもいいですか。",
 			"example_en": "May I try this coat on?"
 		},
 		{
@@ -70,6 +72,7 @@
 			"subtopic": "进店和试穿",
 			"example_jp": "試着室はどこですか。",
 			"example_zh": "试衣间在哪里？",
+			"example_ruby": "<ruby>試着室<rt>しちゃくしつ</rt></ruby>はどこですか。",
 			"example_en": "Where is the fitting room?"
 		},
 		{
@@ -81,6 +84,7 @@
 			"subtopic": "进店和试穿",
 			"example_jp": "Mサイズを試着したいです。",
 			"example_zh": "我想试 M 码。",
+			"example_ruby": "Mサイズを<ruby>試着<rt>しちゃく</rt></ruby>したいです。",
 			"example_en": "I'd like to try the medium."
 		},
 		{
@@ -92,6 +96,7 @@
 			"subtopic": "进店和试穿",
 			"example_jp": "このサイズの在庫はありますか。",
 			"example_zh": "这个尺码还有货吗？",
+			"example_ruby": "このサイズの<ruby>在庫<rt>ざいこ</rt></ruby>はありますか。",
 			"example_en": "Do you have this size in stock?"
 		},
 		{
@@ -103,6 +108,7 @@
 			"subtopic": "进店和试穿",
 			"example_jp": "欲しい色は売り切れでした。",
 			"example_zh": "想要的颜色卖完了。",
+			"example_ruby": "<ruby>欲<rt>ほ</rt></ruby>しい<ruby>色<rt>いろ</rt></ruby>は<ruby>売<rt>う</rt></ruby>り<ruby>切<rt>き</rt></ruby>れでした。",
 			"example_en": "The color I wanted was sold out."
 		},
 		{
@@ -114,6 +120,7 @@
 			"subtopic": "合不合身",
 			"example_jp": "丈が少し長いです。",
 			"example_zh": "衣长有一点长。",
+			"example_ruby": "<ruby>丈<rt>たけ</rt></ruby>が<ruby>少<rt>すこ</rt></ruby>し<ruby>長<rt>なが</rt></ruby>いです。",
 			"example_en": "The length is a bit long."
 		},
 		{
@@ -125,6 +132,7 @@
 			"subtopic": "合不合身",
 			"example_jp": "袖が長いので、一つ小さいサイズはありますか。",
 			"example_zh": "袖子长，有小一号的吗？",
+			"example_ruby": "<ruby>袖<rt>そで</rt></ruby>が<ruby>長<rt>なが</rt></ruby>いので、<ruby>一<rt>ひと</rt></ruby>つ<ruby>小<rt>ちい</rt></ruby>さいサイズはありますか。",
 			"example_en": "The sleeves are long. Do you have one size smaller?"
 		},
 		{
@@ -136,6 +144,7 @@
 			"subtopic": "合不合身",
 			"example_jp": "袖が少しきついです。",
 			"example_zh": "袖子有一点紧。",
+			"example_ruby": "<ruby>袖<rt>そで</rt></ruby>が<ruby>少<rt>すこ</rt></ruby>しきついです。",
 			"example_en": "The sleeves are a little tight."
 		},
 		{
@@ -147,6 +156,7 @@
 			"subtopic": "合不合身",
 			"example_jp": "このサイズは少しゆるいです。",
 			"example_zh": "这个尺码有一点松。",
+			"example_ruby": "このサイズは<ruby>少<rt>すこ</rt></ruby>しゆるいです。",
 			"example_en": "This size is a little loose."
 		},
 		{
@@ -158,6 +168,7 @@
 			"subtopic": "合不合身",
 			"example_jp": "この色は私に似合いますか。",
 			"example_zh": "这个颜色适合我吗？",
+			"example_ruby": "この<ruby>色<rt>いろ</rt></ruby>は<ruby>私<rt>わたし</rt></ruby>に<ruby>似合<rt>にあ</rt></ruby>いますか。",
 			"example_en": "Does this color look good on me?"
 		},
 		{
@@ -169,6 +180,7 @@
 			"subtopic": "合不合身",
 			"example_jp": "無地と柄、どちらにしますか。",
 			"example_zh": "素色和带图案的，你要哪件？",
+			"example_ruby": "<ruby>無地<rt>むじ</rt></ruby>と<ruby>柄<rt>がら</rt></ruby>、どちらにしますか。",
 			"example_en": "Would you like the plain one or the patterned one?"
 		},
 		{
@@ -180,6 +192,7 @@
 			"subtopic": "价格和结账",
 			"example_jp": "定価は税込みで表示されています。",
 			"example_zh": "标价是含税价。",
+			"example_ruby": "<ruby>定価<rt>ていか</rt></ruby>は<ruby>税込<rt>ぜいこ</rt></ruby>みで<ruby>表示<rt>ひょうじ</rt></ruby>されています。",
 			"example_en": "The list price is shown tax included."
 		},
 		{
@@ -191,6 +204,7 @@
 			"subtopic": "价格和结账",
 			"example_jp": "今日は二割引きです。",
 			"example_zh": "今天是八折。",
+			"example_ruby": "<ruby>今日<rt>きょう</rt></ruby>は<ruby>二割<rt>にわり</rt></ruby><ruby>引<rt>ひ</rt></ruby>きです。",
 			"example_en": "It's 20 percent off today.",
 			"note": "二割引き是减掉两成，也就是八折。"
 		},
@@ -203,6 +217,7 @@
 			"subtopic": "价格和结账",
 			"example_jp": "税込みで五千円です。",
 			"example_zh": "含税五千日元。",
+			"example_ruby": "<ruby>税込<rt>ぜいこ</rt></ruby>みで<ruby>五千円<rt>ごせんえん</rt></ruby>です。",
 			"example_en": "It's 5,000 yen including tax.",
 			"note": "价签上的「税込」就是含税。「税抜」是税前。"
 		},
@@ -215,6 +230,7 @@
 			"subtopic": "价格和结账",
 			"example_jp": "お会計お願いします。",
 			"example_zh": "请结账。",
+			"example_ruby": "お<ruby>会計<rt>かいけい</rt></ruby>お<ruby>願<rt>ねが</rt></ruby>いします。",
 			"example_en": "Could I pay, please?"
 		},
 		{
@@ -226,6 +242,7 @@
 			"subtopic": "价格和结账",
 			"example_jp": "袋はいりません。",
 			"example_zh": "不用袋子。",
+			"example_ruby": "<ruby>袋<rt>ふくろ</rt></ruby>はいりません。",
 			"example_en": "I don't need a bag."
 		},
 		{
@@ -237,6 +254,7 @@
 			"subtopic": "价格和结账",
 			"example_jp": "このシャツを返品したいです。",
 			"example_zh": "我想退这件衬衫。",
+			"example_ruby": "このシャツを<ruby>返品<rt>へんぴん</rt></ruby>したいです。",
 			"example_en": "I'd like to return this shirt."
 		},
 		{
@@ -248,6 +266,7 @@
 			"subtopic": "价格和结账",
 			"example_jp": "サイズが合わないので、交換できますか。",
 			"example_zh": "尺码不合适，可以换吗？",
+			"example_ruby": "サイズが<ruby>合<rt>あ</rt></ruby>わないので、<ruby>交換<rt>こうかん</rt></ruby>できますか。",
 			"example_en": "The size doesn't fit. Can I exchange it?"
 		},
 		{
