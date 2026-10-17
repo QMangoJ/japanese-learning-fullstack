@@ -5125,5 +5125,240 @@
 		"example": "彼は料理のプロです。",
 		"exampleCn": "他是做菜的行家。",
 		"exampleEn": "He is a pro at cooking."
+	},
+	"当ててみて": {
+		"cn": "猜猜看",
+		"en": "Take a guess.",
+		"example": "私の年齢を当ててみて。",
+		"exampleCn": "猜猜我多大。",
+		"exampleEn": "Guess how old I am."
+	},
+	"効果": {
+		"cn": "效果",
+		"en": "effect",
+		"reading": "こうか",
+		"example": "この薬はよく効果があります。",
+		"exampleCn": "这个药很有效果。",
+		"exampleEn": "This medicine is very effective."
+	},
+	"お金/時間を節約できる": {
+		"cn": "能节省钱/时间",
+		"en": "can save money / time",
+		"example": "自炊するとお金を節約できる。",
+		"exampleCn": "自己做饭能省钱。",
+		"exampleEn": "Cooking for yourself saves money."
+	},
+	"蛋白質が入ってる食材": {
+		"cn": "含有蛋白质的食材",
+		"en": "ingredients",
+		"example": "卵は蛋白質が入ってる食材です。",
+		"exampleCn": "鸡蛋是含有蛋白质的食材。",
+		"exampleEn": "Eggs are an ingredient that contains protein."
+	},
+	"少なくとも": {
+		"cn": "至少",
+		"en": "at least",
+		"reading": "すくなくとも",
+		"example": "少なくとも毎日一時間は勉強します。",
+		"exampleCn": "每天至少学习一个小时。",
+		"exampleEn": "I study for at least an hour a day."
+	},
+	"みずいろ": {
+		"cn": "浅蓝色（汉字写作 水色）",
+		"en": "light blue",
+		"example": "みずいろのシャツを買いました。",
+		"exampleCn": "买了一件浅蓝色的衬衫。",
+		"exampleEn": "I bought a light blue shirt."
+	},
+	"母方の祖母 そぼ": {
+		"cn": "外婆（母亲那边的祖母）",
+		"en": "maternal grandmother",
+		"reading": "ははかたのそぼ",
+		"example": "母方の祖母は北海道に住んでいます。",
+		"exampleCn": "我外婆住在北海道。",
+		"exampleEn": "My maternal grandmother lives in Hokkaido."
+	},
+	"祖父 そふ": {
+		"cn": "祖父、爷爷（对别人提自己的爷爷）",
+		"en": "grandfather",
+		"example": "祖父は八十歳です。",
+		"exampleCn": "我爷爷八十岁了。",
+		"exampleEn": "My grandfather is eighty."
+	},
+	"主語": {
+		"cn": "主语",
+		"en": "subject (grammar)",
+		"example": "この文の主語は何ですか。",
+		"exampleCn": "这个句子的主语是什么？",
+		"exampleEn": "What is the subject of this sentence?"
+	},
+	"景色": {
+		"cn": "景色、风景",
+		"en": "view, scenery",
+		"reading": "けしき",
+		"example": "ここから見る景色はきれいです。",
+		"exampleCn": "从这里看到的风景很美。",
+		"exampleEn": "The view from here is beautiful."
+	},
+	"努力": {
+		"cn": "努力",
+		"en": "effort",
+		"example": "毎日少しずつ努力しています。",
+		"exampleCn": "每天都在一点点努力。",
+		"exampleEn": "I make a little effort every day."
+	},
+	"学期（がっき）": {
+		"cn": "学期",
+		"en": "semester, term",
+		"example": "新しい学期が始まりました。",
+		"exampleCn": "新学期开始了。",
+		"exampleEn": "The new semester has started."
+	},
+	"イライラ": {
+		"cn": "烦躁、焦躁",
+		"en": "irritated, frustrated",
+		"example": "電車が遅れてイライラしました。",
+		"exampleCn": "电车晚点，弄得我很烦躁。",
+		"exampleEn": "I got irritated because the train was late."
+	},
+	"のんびり": {
+		"cn": "悠闲、慢悠悠",
+		"en": "relaxed, leisurely",
+		"example": "週末は家でのんびりします。",
+		"exampleCn": "周末在家悠闲地待着。",
+		"exampleEn": "I take it easy at home on weekends."
+	},
+	"笑ってない顔": {
+		"cn": "没在笑的脸、不笑的表情",
+		"en": "a face that isn't smiling",
+		"example": "写真の私は笑ってない顔をしています。",
+		"exampleCn": "照片里的我没在笑。",
+		"exampleEn": "In the photo I'm not smiling."
+	},
+	"田舎": {
+		"cn": "乡下、老家",
+		"en": "the countryside, one's rural hometown",
+		"reading": "いなか",
+		"example": "夏休みに田舎へ帰ります。",
+		"exampleCn": "暑假回乡下老家。",
+		"exampleEn": "I'm going back to the countryside for summer vacation."
+	},
+	"パニク": {
+		"cn": "慌了、惊慌失措（パニクる 的省略，来自英语 panic）",
+		"en": "to panic (short for パニクる)",
+		"example": "急に質問されてパニクった。",
+		"exampleCn": "突然被提问，一下就慌了。",
+		"exampleEn": "I panicked when I was suddenly asked a question."
+	},
+	"モヤモヤ": {
+		"cn": "心里不痛快、说不清的郁闷",
+		"en": "a vague, unsettled feeling",
+		"example": "返事が来なくてモヤモヤしています。",
+		"exampleCn": "一直没收到回复，心里很不踏实。",
+		"exampleEn": "I feel uneasy because I haven't got a reply."
+	},
+	"計画派": {
+		"cn": "计划派（做事先定好计划的人）",
+		"en": "the planner type",
+		"reading": "けいかくは",
+		"example": "私は旅行の前に全部決める計画派です。",
+		"exampleCn": "我是旅行前把一切都定好的计划派。",
+		"exampleEn": "I'm the type who plans everything before a trip."
+	},
+	"ギリギリ派": {
+		"cn": "拖到最后一刻的类型",
+		"en": "the last-minute type",
+		"example": "彼はいつも宿題を最後にやるギリギリ派です。",
+		"exampleCn": "他总是拖到最后才写作业。",
+		"exampleEn": "He always does his homework at the last minute."
+	},
+	"逆": {
+		"cn": "相反、反过来",
+		"en": "the opposite",
+		"reading": "ぎゃく",
+		"example": "私は兄と逆で、朝が苦手です。",
+		"exampleCn": "我和哥哥相反，早上起不来。",
+		"exampleEn": "Unlike my brother, I'm not a morning person."
+	},
+	"早めに準備する": {
+		"cn": "提早准备",
+		"en": "to prepare early",
+		"example": "試験のために早めに準備します。",
+		"exampleCn": "为了考试提早准备。",
+		"exampleEn": "I prepare early for exams."
+	},
+	"負けず嫌い": {
+		"cn": "不服输、好胜",
+		"en": "hates losing, competitive",
+		"reading": "まけずぎらい",
+		"example": "弟は負けず嫌いで、ゲームに負けると怒ります。",
+		"exampleCn": "弟弟很好胜，打游戏输了就生气。",
+		"exampleEn": "My little brother hates losing and gets angry when he loses a game."
+	},
+	"はきらめが早い": {
+		"cn": "容易放弃、很快死心（正确写法：諦めが早い あきらめがはやい）",
+		"en": "gives up easily",
+		"example": "私は諦めが早いほうです。",
+		"exampleCn": "我属于很容易放弃的人。",
+		"exampleEn": "I tend to give up easily."
+	},
+	"自分に挑戦": {
+		"cn": "挑战自己",
+		"en": "challenge oneself",
+		"example": "新しいことで自分に挑戦したいです。",
+		"exampleCn": "想通过新的事情挑战自己。",
+		"exampleEn": "I want to challenge myself with new things."
+	},
+	"演奏する": {
+		"cn": "演奏（乐器）",
+		"en": "to perform (music), to play",
+		"example": "ピアノを演奏するのが好きです。",
+		"exampleCn": "我喜欢弹钢琴。",
+		"exampleEn": "I like playing the piano."
+	},
+	"内向的": {
+		"cn": "内向的",
+		"en": "introverted",
+		"reading": "ないこうてき",
+		"example": "私は少し内向的な性格です。",
+		"exampleCn": "我性格有点内向。",
+		"exampleEn": "I'm a little introverted."
+	},
+	"外交的": {
+		"cn": "外向的（说性格一般写作「外向的」，读音同为 がいこうてき）",
+		"en": "outgoing, extroverted",
+		"reading": "がいこうてき",
+		"example": "姉は外向的で、すぐ友達ができます。",
+		"exampleCn": "姐姐很外向，很快就能交到朋友。",
+		"exampleEn": "My older sister is outgoing and makes friends quickly."
+	},
+	"境界": {
+		"cn": "界限、边界",
+		"en": "boundary",
+		"reading": "きょうかい",
+		"example": "仕事とプライベートの境界をはっきりさせたいです。",
+		"exampleCn": "想把工作和私生活的界限分清楚。",
+		"exampleEn": "I want a clear boundary between work and private life."
+	},
+	"ほとんどんの場合": {
+		"cn": "大多数情况下（正确是 ほとんどの場合）",
+		"en": "in most cases",
+		"example": "ほとんどの場合、電車で通勤します。",
+		"exampleCn": "大多数时候坐电车通勤。",
+		"exampleEn": "In most cases I commute by train."
+	},
+	"その時によって": {
+		"cn": "看当时的情况",
+		"en": "it depends on the time",
+		"example": "朝ご飯はその時によってパンかご飯です。",
+		"exampleCn": "早饭看情况，吃面包或米饭。",
+		"exampleEn": "Breakfast is bread or rice, depending on the time."
+	},
+	"その日の気分によって": {
+		"cn": "看当天的心情",
+		"en": "depending on my mood that day",
+		"example": "その日の気分によって服を選びます。",
+		"exampleCn": "根据当天的心情选衣服。",
+		"exampleEn": "I choose my clothes depending on my mood that day."
 	}
 }
