@@ -2638,5 +2638,177 @@
 	"プロ": {
 		"cn": "专业人士、行家",
 		"en": "a pro"
+	},
+	"当ててみて": {
+		"cn": "猜猜看",
+		"en": "Take a guess."
+	},
+	"効果": {
+		"cn": "效果",
+		"en": "effect"
+	},
+	"お金/時間を節約できる": {
+		"cn": "能节省钱/时间",
+		"en": "can save money / time"
+	},
+	"蛋白質が入ってる食材": {
+		"cn": "含有蛋白质的食材",
+		"en": "ingredients"
+	},
+	"トレーニングをしてる": {
+		"cn": "在做训练、在健身",
+		"en": "training"
+	},
+	"綺麗でいっぱい人がいます": {
+		"cn": "很漂亮，人很多（老师改成下一句更自然）",
+		"en": "It's beautiful and there are lots of people."
+	},
+	"綺麗でいっぱい人がいる街です": {
+		"cn": "是一个漂亮、人很多的城市",
+		"en": "It's a beautiful city with lots of people."
+	},
+	"少なくとも": {
+		"cn": "至少",
+		"en": "at least"
+	},
+	"みずいろ": {
+		"cn": "浅蓝色（汉字写作 水色）",
+		"en": "light blue"
+	},
+	"亡くなる・亡くなりました": {
+		"cn": "去世・去世了（「死ぬ」的委婉说法）",
+		"en": "to pass away / passed away"
+	},
+	"母方の祖母 そぼ": {
+		"cn": "外婆（母亲那边的祖母）",
+		"en": "maternal grandmother"
+	},
+	"祖父 そふ": {
+		"cn": "祖父、爷爷（对别人提自己的爷爷）",
+		"en": "grandfather"
+	},
+	"主語": {
+		"cn": "主语",
+		"en": "subject (grammar)"
+	},
+	"夜遅くうちに帰らないと思います": {
+		"cn": "我想晚上不会很晚才回家",
+		"en": "I don't think I'll get home late at night."
+	},
+	"景色": {
+		"cn": "景色、风景",
+		"en": "view, scenery"
+	},
+	"努力": {
+		"cn": "努力",
+		"en": "effort"
+	},
+	"いった/ゆった I said 言う": {
+		"cn": "说了（ゆった 是 言った 的口语发音，原形 言う）",
+		"en": "said (ゆった is a casual pronunciation of 言った)"
+	},
+	"人はいろいろなことを経験することによって、性格が変わります": {
+		"cn": "人会因为经历各种事情而改变性格",
+		"en": "People's personalities change by experiencing many things."
+	},
+	"わたしの趣味はジムにいくことです": {
+		"cn": "我的爱好是去健身房",
+		"en": "My hobby is going to the gym."
+	},
+	"アプリの故障が起きた時、": {
+		"cn": "应用出故障的时候，",
+		"en": "When the app broke down,"
+	},
+	"学期（がっき）": {
+		"cn": "学期",
+		"en": "semester, term"
+	},
+	"前は、とてもせっかちな性格でした": {
+		"cn": "以前我是个很急性子的人",
+		"en": "I used to be very impatient."
+	},
+	"今は冷静な性格になりました": {
+		"cn": "现在变得很冷静了",
+		"en": "Now I've become a calm person."
+	},
+	"イライラ": {
+		"cn": "烦躁、焦躁",
+		"en": "irritated, frustrated"
+	},
+	"のんびり": {
+		"cn": "悠闲、慢悠悠",
+		"en": "relaxed, leisurely"
+	},
+	"笑ってない顔": {
+		"cn": "没在笑的脸、不笑的表情",
+		"en": "a face that isn't smiling"
+	},
+	"田舎": {
+		"cn": "乡下、老家",
+		"en": "the countryside, one's rural hometown"
+	},
+	"パニク": {
+		"cn": "慌了、惊慌失措（パニクる 的省略，来自英语 panic）",
+		"en": "to panic (short for パニクる)"
+	},
+	"モヤモヤ": {
+		"cn": "心里不痛快、说不清的郁闷",
+		"en": "a vague, unsettled feeling"
+	},
+	"計画派": {
+		"cn": "计划派（做事先定好计划的人）",
+		"en": "the planner type"
+	},
+	"ギリギリ派": {
+		"cn": "拖到最后一刻的类型",
+		"en": "the last-minute type"
+	},
+	"逆": {
+		"cn": "相反、反过来",
+		"en": "the opposite"
+	},
+	"早めに準備する": {
+		"cn": "提早准备",
+		"en": "to prepare early"
+	},
+	"負けず嫌い": {
+		"cn": "不服输、好胜",
+		"en": "hates losing, competitive"
+	},
+	"はきらめが早い": {
+		"cn": "容易放弃、很快死心（正确写法：諦めが早い あきらめがはやい）",
+		"en": "gives up easily"
+	},
+	"自分に挑戦": {
+		"cn": "挑战自己",
+		"en": "challenge oneself"
+	},
+	"演奏する": {
+		"cn": "演奏（乐器）",
+		"en": "to perform (music), to play"
+	},
+	"内向的": {
+		"cn": "内向的",
+		"en": "introverted"
+	},
+	"外交的": {
+		"cn": "外向的（说性格一般写作「外向的」，读音同为 がいこうてき）",
+		"en": "outgoing, extroverted"
+	},
+	"境界": {
+		"cn": "界限、边界",
+		"en": "boundary"
+	},
+	"ほとんどんの場合": {
+		"cn": "大多数情况下（正确是 ほとんどの場合）",
+		"en": "in most cases"
+	},
+	"その時によって": {
+		"cn": "看当时的情况",
+		"en": "it depends on the time"
+	},
+	"その日の気分によって": {
+		"cn": "看当天的心情",
+		"en": "depending on my mood that day"
 	}
 }
