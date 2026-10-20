@@ -1,7 +1,444 @@
 {
 	"source": "https://docs.google.com/document/d/12NwKtAV_HFUeOheYvXGMsJl5G2xIcdb4WG_axC23xrU/edit\nhttps://docs.google.com/document/d/1oEZYQYz3Kb3q5bRqNJgdD0TNxUHVEX2PGvLoCju_Cdc/edit",
-	"fetchedAt": "2026-10-17T01:15:11.000Z",
+	"fetchedAt": "2026-10-20T10:02:01.805Z",
 	"days": [
+		{
+			"id": "2026-10-22:preply",
+			"date": "2026-10-22",
+			"title": "2026-10-22",
+			"items": [
+				{
+					"jp": "お金を稼ぐ",
+					"kind": "word",
+					"jp_r": "<ruby>お金<rt>おかね</rt></ruby>を<ruby>稼ぐ<rt>かせぐ</rt></ruby>",
+					"cn": "赚钱",
+					"en": "to earn money",
+					"example": "アルバイトでお金を稼ぐ。",
+					"exampleCn": "靠打工赚钱。",
+					"exampleEn": "I earn money from a part-time job.",
+					"example_r": "アルバイトで<ruby>お金<rt>おかね</rt></ruby>を<ruby>稼ぐ<rt>かせぐ</rt></ruby>。"
+				},
+				{
+					"jp": "スキルを身につけたい",
+					"kind": "word",
+					"jp_r": "スキルを<ruby>身<rt>み</rt></ruby>につけたい",
+					"cn": "想掌握技能",
+					"en": "I want to acquire skills",
+					"example": "新しいスキルを身につけたいです。",
+					"exampleCn": "我想掌握新的技能。",
+					"exampleEn": "I want to acquire new skills.",
+					"example_r": "<ruby>新しい<rt>あたらしい</rt></ruby>スキルを<ruby>身<rt>み</rt></ruby>につけたいです。"
+				},
+				{
+					"jp": "職場",
+					"kind": "word",
+					"jp_r": "<ruby>職場<rt>しょくば</rt></ruby>",
+					"cn": "工作单位、职场",
+					"en": "workplace",
+					"example": "職場は駅から近いです。",
+					"exampleCn": "公司离车站很近。",
+					"exampleEn": "My workplace is close to the station.",
+					"example_r": "<ruby>職場<rt>しょくば</rt></ruby>は<ruby>駅<rt>えき</rt></ruby>から<ruby>近い<rt>ちかい</rt></ruby>です。"
+				}
+			],
+			"source": "Preply すみれ先生"
+		},
+		{
+			"id": "2026-10-19",
+			"date": "2026-10-19",
+			"title": "2026-10-19",
+			"items": [
+				{
+					"jp": "考えないといけない",
+					"kind": "word",
+					"jp_r": "<ruby>考えない<rt>かんがえない</rt></ruby>といけない",
+					"cn": "必须考虑、得想想",
+					"en": "I have to think (about it)",
+					"example": "将来のことを考えないといけない。",
+					"exampleCn": "得考虑将来的事。",
+					"exampleEn": "I have to think about the future.",
+					"example_r": "<ruby>将来<rt>しょうらい</rt></ruby>のことを<ruby>考えない<rt>かんがえない</rt></ruby>といけない。"
+				},
+				{
+					"jp": "考えないといけなかった",
+					"kind": "sentence",
+					"jp_r": "<ruby>考えない<rt>かんがえない</rt></ruby>といけなかった",
+					"cn": "（当时）必须考虑",
+					"en": "I had to think (about it)",
+					"example": "昨日は答えを考えないといけなかった。",
+					"exampleCn": "昨天必须想出答案。",
+					"exampleEn": "Yesterday I had to think of an answer."
+				},
+				{
+					"jp": "考えなければいけない/ならない",
+					"kind": "word",
+					"jp_r": "<ruby>考え<rt>かんがえ</rt></ruby>なければいけない/ならない",
+					"cn": "必须考虑（较正式的说法）",
+					"en": "formal",
+					"example": "この問題はよく考えなければなりません。",
+					"exampleCn": "这个问题必须好好考虑。",
+					"exampleEn": "We must think carefully about this problem.",
+					"example_r": "この<ruby>問題<rt>もんだい</rt></ruby>はよく<ruby>考え<rt>かんがえ</rt></ruby>なければなりません。"
+				},
+				{
+					"jp": "自分のアイディアに決まった",
+					"kind": "sentence",
+					"jp_r": "<ruby>自分<rt>じぶん</rt></ruby>のアイディアに<ruby>決まった<rt>きまった</rt></ruby>",
+					"cn": "决定用我自己的点子了",
+					"en": "it was decided on my own idea",
+					"example": "発表のテーマは自分のアイディアに決まった。",
+					"exampleCn": "发表的主题定成我自己的点子了。",
+					"exampleEn": "The presentation theme was decided on my own idea."
+				},
+				{
+					"jp": "案",
+					"kind": "word",
+					"jp_r": "<ruby>案<rt>あん</rt></ruby>",
+					"cn": "方案、提案（=idea）",
+					"en": "idea",
+					"example": "いい案がありますか。",
+					"exampleCn": "有好的方案吗？",
+					"exampleEn": "Do you have a good idea?",
+					"example_r": "いい<ruby>案<rt>あん</rt></ruby>がありますか。"
+				},
+				{
+					"jp": "使いたくない",
+					"kind": "word",
+					"jp_r": "<ruby>使い<rt>つかい</rt></ruby>たくない",
+					"cn": "不想用",
+					"en": "I don't want to use (it)",
+					"example": "このアプリはもう使いたくない。",
+					"exampleCn": "这个应用我不想再用了。",
+					"exampleEn": "I don't want to use this app anymore.",
+					"example_r": "このアプリはもう<ruby>使い<rt>つかい</rt></ruby>たくない。"
+				},
+				{
+					"jp": "クラスの中で作るから、大丈夫",
+					"kind": "sentence",
+					"jp_r": "クラスの中で<ruby>作る<rt>つくる</rt></ruby>から、<ruby>大丈夫<rt>だいじょうぶ</rt></ruby>",
+					"cn": "在课上做，所以没问题",
+					"en": "It's fine because we'll make it in class",
+					"example": "資料はクラスの中で作るから、大丈夫です。",
+					"exampleCn": "资料在课上做，所以没关系。",
+					"exampleEn": "The materials will be made in class, so it's fine."
+				},
+				{
+					"jp": "通る",
+					"kind": "word",
+					"jp_r": "<ruby>通る<rt>とおる</rt></ruby>",
+					"cn": "通过、经过",
+					"en": "to pass (through)",
+					"example": "この道を通ると駅に着きます。",
+					"exampleCn": "走这条路就到车站。",
+					"exampleEn": "If you go along this road, you'll reach the station.",
+					"example_r": "この<ruby>道<rt>みち</rt></ruby>を<ruby>通る<rt>とおる</rt></ruby>と<ruby>駅<rt>えき</rt></ruby>に<ruby>着きます<rt>つきます</rt></ruby>。"
+				},
+				{
+					"jp": "交番",
+					"kind": "word",
+					"jp_r": "<ruby>交番<rt>こうばん</rt></ruby>",
+					"cn": "派出所",
+					"en": "police box",
+					"example": "道がわからないときは交番で聞きます。",
+					"exampleCn": "不认识路时去派出所问。",
+					"exampleEn": "When I don't know the way, I ask at the police box.",
+					"example_r": "<ruby>道<rt>みち</rt></ruby>がわからないときは<ruby>交番<rt>こうばん</rt></ruby>で<ruby>聞きます<rt>ききます</rt></ruby>。"
+				},
+				{
+					"jp": "まじえる",
+					"kind": "word",
+					"cn": "掺杂、夹杂（汉字写作 交える）",
+					"en": "to mix in / include",
+					"example": "冗談をまじえて話す。",
+					"exampleCn": "说话时夹带玩笑。",
+					"exampleEn": "to talk while mixing in jokes",
+					"example_r": "<ruby>冗談<rt>じょうだん</rt></ruby>をまじえて<ruby>話す<rt>はなす</rt></ruby>。"
+				},
+				{
+					"jp": "交わる",
+					"kind": "word",
+					"jp_r": "<ruby>交わる<rt>まじわる</rt></ruby>",
+					"cn": "相交、交叉",
+					"en": "to cross / intersect",
+					"example": "二本の道がここで交わる。",
+					"exampleCn": "两条路在这里交汇。",
+					"exampleEn": "The two roads intersect here.",
+					"example_r": "二<ruby>本<rt>ほん</rt></ruby>の<ruby>道<rt>みち</rt></ruby>がここで<ruby>交わる<rt>まじわる</rt></ruby>。"
+				},
+				{
+					"jp": "黄色",
+					"kind": "word",
+					"jp_r": "<ruby>黄色<rt>きいろ</rt></ruby>",
+					"cn": "黄色",
+					"en": "yellow",
+					"example": "黄色の傘を買いました。",
+					"exampleCn": "买了一把黄色的伞。",
+					"exampleEn": "I bought a yellow umbrella.",
+					"example_r": "<ruby>黄色<rt>きいろ</rt></ruby>の<ruby>傘<rt>かさ</rt></ruby>を<ruby>買いました<rt>かいました</rt></ruby>。"
+				},
+				{
+					"jp": "青い",
+					"kind": "word",
+					"jp_r": "<ruby>青い<rt>あおい</rt></ruby>",
+					"cn": "蓝色的（也指绿灯等）",
+					"en": "blue",
+					"example": "今日は空が青いです。",
+					"exampleCn": "今天天空很蓝。",
+					"exampleEn": "The sky is blue today.",
+					"example_r": "<ruby>今日<rt>きょう</rt></ruby>は空が<ruby>青い<rt>あおい</rt></ruby>です。"
+				},
+				{
+					"jp": "黄金 おうごん",
+					"kind": "word",
+					"jp_r": "<ruby>黄金<rt>おうごん</rt></ruby>",
+					"reading": "おうごん",
+					"cn": "黄金",
+					"en": "gold",
+					"example": "黄金の時間。",
+					"exampleCn": "黄金时间。",
+					"exampleEn": "golden time",
+					"example_r": "黄金の<ruby>時間<rt>じかん</rt></ruby>。"
+				},
+				{
+					"jp": "卵黄",
+					"kind": "word",
+					"jp_r": "<ruby>卵黄<rt>らんおう</rt></ruby>",
+					"cn": "蛋黄",
+					"en": "egg yolk",
+					"example": "卵黄だけを使います。",
+					"exampleCn": "只用蛋黄。",
+					"exampleEn": "Use only the egg yolk.",
+					"example_r": "<ruby>卵黄<rt>らんおう</rt></ruby>だけを<ruby>使います<rt>つかいます</rt></ruby>。"
+				},
+				{
+					"jp": "駅",
+					"kind": "word",
+					"jp_r": "<ruby>駅<rt>えき</rt></ruby>",
+					"cn": "车站",
+					"en": "station",
+					"example": "駅で友達を待ちます。",
+					"exampleCn": "在车站等朋友。",
+					"exampleEn": "I'll wait for my friend at the station.",
+					"example_r": "<ruby>駅<rt>えき</rt></ruby>で<ruby>友達<rt>ともだち</rt></ruby>を<ruby>待ちます<rt>まちます</rt></ruby>。"
+				},
+				{
+					"jp": "鉄",
+					"kind": "word",
+					"jp_r": "<ruby>鉄<rt>てつ</rt></ruby>",
+					"cn": "铁",
+					"en": "iron",
+					"example": "この橋は鉄でできています。",
+					"exampleCn": "这座桥是铁做的。",
+					"exampleEn": "This bridge is made of iron.",
+					"example_r": "この橋は<ruby>鉄<rt>てつ</rt></ruby>でできています。"
+				},
+				{
+					"jp": "乗る",
+					"kind": "word",
+					"jp_r": "<ruby>乗る<rt>のる</rt></ruby>",
+					"cn": "乘坐",
+					"en": "to get on / ride",
+					"example": "毎朝電車に乗ります。",
+					"exampleCn": "每天早上坐电车。",
+					"exampleEn": "I take the train every morning.",
+					"example_r": "<ruby>毎朝<rt>まいあさ</rt></ruby><ruby>電車<rt>でんしゃ</rt></ruby>に<ruby>乗ります<rt>のります</rt></ruby>。"
+				},
+				{
+					"jp": "降りる",
+					"kind": "word",
+					"jp_r": "<ruby>降りる<rt>おりる</rt></ruby>",
+					"cn": "下（车）",
+					"en": "to get off",
+					"example": "次の駅で降ります。",
+					"exampleCn": "在下一站下车。",
+					"exampleEn": "I'll get off at the next station.",
+					"example_r": "次の<ruby>駅<rt>えき</rt></ruby>で<ruby>降ります<rt>ふります</rt></ruby>。"
+				},
+				{
+					"jp": "開ける",
+					"kind": "word",
+					"jp_r": "<ruby>開ける<rt>あける</rt></ruby>",
+					"cn": "打开",
+					"en": "to open",
+					"example": "窓を開けてもいいですか。",
+					"exampleCn": "可以开窗吗？",
+					"exampleEn": "May I open the window?"
+				},
+				{
+					"jp": "閉める",
+					"kind": "word",
+					"jp_r": "<ruby>閉める<rt>しめる</rt></ruby>",
+					"cn": "关上",
+					"en": "to close",
+					"example": "ドアを閉めてください。",
+					"exampleCn": "请关门。",
+					"exampleEn": "Please close the door.",
+					"example_r": "ドアを<ruby>閉めて<rt>しめて</rt></ruby>ください。"
+				},
+				{
+					"jp": "始発",
+					"kind": "word",
+					"jp_r": "<ruby>始発<rt>しはつ</rt></ruby>",
+					"cn": "首班车",
+					"en": "first train",
+					"example": "始発に乗って空港へ行きました。",
+					"exampleCn": "坐首班车去了机场。",
+					"exampleEn": "I took the first train to the airport.",
+					"example_r": "<ruby>始発<rt>しはつ</rt></ruby>に<ruby>乗って<rt>のって</rt></ruby><ruby>空港<rt>くうこう</rt></ruby>へ<ruby>行きました<rt>いきました</rt></ruby>。"
+				},
+				{
+					"jp": "終電",
+					"kind": "word",
+					"jp_r": "<ruby>終電<rt>しゅうでん</rt></ruby>",
+					"cn": "末班车",
+					"en": "last train",
+					"example": "終電に間に合いませんでした。",
+					"exampleCn": "没赶上末班车。",
+					"exampleEn": "I missed the last train.",
+					"example_r": "<ruby>終電<rt>しゅうでん</rt></ruby>に<ruby>間に合い<rt>まにあい</rt></ruby>ませんでした。"
+				},
+				{
+					"jp": "着く",
+					"kind": "word",
+					"jp_r": "<ruby>着く<rt>つく</rt></ruby>",
+					"cn": "到达",
+					"en": "to arrive",
+					"example": "東京に三時に着きます。",
+					"exampleCn": "三点到东京。",
+					"exampleEn": "I'll arrive in Tokyo at three.",
+					"example_r": "<ruby>東京<rt>とうきょう</rt></ruby>に三<ruby>時<rt>とき</rt></ruby>に<ruby>着きます<rt>つきます</rt></ruby>。"
+				},
+				{
+					"jp": "到着",
+					"kind": "word",
+					"jp_r": "<ruby>到着<rt>とうちゃく</rt></ruby>",
+					"cn": "到达（书面语）",
+					"en": "arrival",
+					"example": "飛行機は十時に到着しました。",
+					"exampleCn": "飞机十点到达了。",
+					"exampleEn": "The plane arrived at ten.",
+					"example_r": "<ruby>飛行機<rt>ひこうき</rt></ruby>は<ruby>十<rt>じゅう</rt></ruby><ruby>時<rt>とき</rt></ruby>に<ruby>到着<rt>とうちゃく</rt></ruby>しました。"
+				},
+				{
+					"jp": "高台",
+					"kind": "word",
+					"jp_r": "<ruby>高台<rt>たかだい</rt></ruby>",
+					"cn": "高地、高处",
+					"en": "high ground / hill",
+					"example": "高台から町が見えます。",
+					"exampleCn": "从高处能看到整个镇子。",
+					"exampleEn": "You can see the town from the high ground.",
+					"example_r": "<ruby>高台<rt>たかだい</rt></ruby>から町が見えます。"
+				},
+				{
+					"jp": "台所",
+					"kind": "word",
+					"jp_r": "<ruby>台所<rt>だいどころ</rt></ruby>",
+					"cn": "厨房",
+					"en": "kitchen",
+					"example": "母は台所で料理しています。",
+					"exampleCn": "妈妈在厨房做饭。",
+					"exampleEn": "My mother is cooking in the kitchen.",
+					"example_r": "母は<ruby>台所<rt>だいどころ</rt></ruby>で<ruby>料理<rt>りょうり</rt></ruby>しています。"
+				},
+				{
+					"jp": "止まる",
+					"kind": "word",
+					"jp_r": "<ruby>止ま<rt>やま</rt></ruby>る",
+					"cn": "停下、停止",
+					"en": "to stop",
+					"example": "電車が駅に止まりました。",
+					"exampleCn": "电车在车站停了。",
+					"exampleEn": "The train stopped at the station.",
+					"example_r": "<ruby>電車<rt>でんしゃ</rt></ruby>が<ruby>駅<rt>えき</rt></ruby>に<ruby>止ま<rt>やま</rt></ruby>りました。"
+				},
+				{
+					"jp": "タバコを吸ってる人 の 隣にいる のが嫌いです",
+					"kind": "sentence",
+					"jp_r": "タバコを<ruby>吸って<rt>すって</rt></ruby>る<ruby>人<rt>ひと</rt></ruby> の 隣にいる のが嫌いです",
+					"cn": "我讨厌待在抽烟的人旁边",
+					"en": "I hate being next to people who are smoking",
+					"example": "タバコを吸ってる人の隣にいるのが嫌いです。",
+					"exampleCn": "我讨厌待在抽烟的人旁边。",
+					"exampleEn": "I hate being next to people who are smoking."
+				},
+				{
+					"jp": "しる",
+					"kind": "word",
+					"cn": "知道（应为 知る しる）",
+					"en": "to know",
+					"example": "その話は知らなかった。",
+					"exampleCn": "那件事我不知道。",
+					"exampleEn": "I didn't know that story.",
+					"example_r": "その<ruby>話<rt>はなし</rt></ruby>は<ruby>知らなかった<rt>しらなかった</rt></ruby>。"
+				},
+				{
+					"jp": "帰る",
+					"kind": "word",
+					"jp_r": "<ruby>帰る<rt>かえる</rt></ruby>",
+					"cn": "回去、回家",
+					"en": "to go home / return",
+					"example": "六時に家に帰ります。",
+					"exampleCn": "六点回家。",
+					"exampleEn": "I go home at six.",
+					"example_r": "六<ruby>時<rt>とき</rt></ruby>に<ruby>家<rt>いえ</rt></ruby>に<ruby>帰ります<rt>かえります</rt></ruby>。"
+				},
+				{
+					"jp": "かっこいい",
+					"kind": "word",
+					"cn": "帅、酷",
+					"en": "cool / good-looking",
+					"example": "その車はかっこいいですね。",
+					"exampleCn": "那辆车很酷呢。",
+					"exampleEn": "That car is cool."
+				},
+				{
+					"jp": "繋ぐ",
+					"kind": "word",
+					"jp_r": "<ruby>繋ぐ<rt>つなぐ</rt></ruby>",
+					"cn": "连接、牵（手）",
+					"en": "to connect / hold (hands)",
+					"example": "手を繋いで歩きました。",
+					"exampleCn": "手牵手走了。",
+					"exampleEn": "We walked holding hands.",
+					"example_r": "手を繋いで<ruby>歩きました<rt>あるきました</rt></ruby>。"
+				},
+				{
+					"jp": "知らないとだめ！",
+					"kind": "sentence",
+					"jp_r": "<ruby>知らない<rt>しらない</rt></ruby>とだめ！",
+					"cn": "不知道可不行！",
+					"en": "You have to know this!",
+					"example": "これは知らないとだめ！",
+					"exampleCn": "这个不知道可不行！",
+					"exampleEn": "You have to know this!"
+				},
+				{
+					"jp": "common=共通きょうつう",
+					"kind": "word",
+					"jp_r": "common=<ruby>共通<rt>きょうつう</rt></ruby>きょうつう",
+					"cn": "共通、共同的（共通 きょうつう）",
+					"en": "common / shared",
+					"example": "二人の共通の趣味は映画です。",
+					"exampleCn": "两人共同的爱好是电影。",
+					"exampleEn": "The two share a hobby: movies.",
+					"example_r": "<ruby>二人<rt>ふたり</rt></ruby>の<ruby>共通<rt>きょうつう</rt></ruby>の<ruby>趣味<rt>しゅみ</rt></ruby>は<ruby>映画<rt>えいが</rt></ruby>です。"
+				},
+				{
+					"jp": "穏やか おだやか",
+					"kind": "word",
+					"jp_r": "<ruby>穏やか<rt>なにがあったっけ</rt></ruby>",
+					"reading": "なにがあったっけ",
+					"cn": "平静、温和",
+					"en": "calm",
+					"example": "今日は海が穏やかです。",
+					"exampleCn": "今天海面很平静。",
+					"exampleEn": "The sea is calm today.",
+					"example_r": "<ruby>今日<rt>きょう</rt></ruby>は海が穏やかです。"
+				}
+			],
+			"source": "Danielさん"
+		},
 		{
 			"id": "2026-10-16",
 			"date": "2026-10-16",
