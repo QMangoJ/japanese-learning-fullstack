@@ -5360,5 +5360,278 @@
 		"example": "その日の気分によって服を選びます。",
 		"exampleCn": "根据当天的心情选衣服。",
 		"exampleEn": "I choose my clothes depending on my mood that day."
+	},
+	"お金を稼ぐ": {
+		"cn": "赚钱",
+		"en": "to earn money",
+		"example": "アルバイトでお金を稼ぐ。",
+		"exampleCn": "靠打工赚钱。",
+		"exampleEn": "I earn money from a part-time job."
+	},
+	"スキルを身につけたい": {
+		"cn": "想掌握技能",
+		"en": "I want to acquire skills",
+		"example": "新しいスキルを身につけたいです。",
+		"exampleCn": "我想掌握新的技能。",
+		"exampleEn": "I want to acquire new skills."
+	},
+	"職場": {
+		"cn": "工作单位、职场",
+		"en": "workplace",
+		"example": "職場は駅から近いです。",
+		"exampleCn": "公司离车站很近。",
+		"exampleEn": "My workplace is close to the station."
+	},
+	"考えないといけない": {
+		"cn": "必须考虑、得想想",
+		"en": "I have to think (about it)",
+		"example": "将来のことを考えないといけない。",
+		"exampleCn": "得考虑将来的事。",
+		"exampleEn": "I have to think about the future."
+	},
+	"考えないといけなかった": {
+		"cn": "（当时）必须考虑",
+		"en": "I had to think (about it)",
+		"example": "昨日は答えを考えないといけなかった。",
+		"exampleCn": "昨天必须想出答案。",
+		"exampleEn": "Yesterday I had to think of an answer."
+	},
+	"考えなければいけない/ならない": {
+		"cn": "必须考虑（较正式的说法）",
+		"en": "must think (formal)",
+		"example": "この問題はよく考えなければなりません。",
+		"exampleCn": "这个问题必须好好考虑。",
+		"exampleEn": "We must think carefully about this problem."
+	},
+	"自分のアイディアに決まった": {
+		"cn": "决定用我自己的点子了",
+		"en": "it was decided on my own idea",
+		"example": "発表のテーマは自分のアイディアに決まった。",
+		"exampleCn": "发表的主题定成我自己的点子了。",
+		"exampleEn": "The presentation theme was decided on my own idea."
+	},
+	"案": {
+		"cn": "方案、提案（=idea）",
+		"en": "idea / plan / proposal",
+		"example": "いい案がありますか。",
+		"exampleCn": "有好的方案吗？",
+		"exampleEn": "Do you have a good idea?"
+	},
+	"使いたくない": {
+		"cn": "不想用",
+		"en": "I don't want to use (it)",
+		"example": "このアプリはもう使いたくない。",
+		"exampleCn": "这个应用我不想再用了。",
+		"exampleEn": "I don't want to use this app anymore."
+	},
+	"クラスの中で作るから、大丈夫": {
+		"cn": "在课上做，所以没问题",
+		"en": "It's fine because we'll make it in class",
+		"example": "資料はクラスの中で作るから、大丈夫です。",
+		"exampleCn": "资料在课上做，所以没关系。",
+		"exampleEn": "The materials will be made in class, so it's fine."
+	},
+	"通る": {
+		"cn": "通过、经过",
+		"en": "to pass (through)",
+		"example": "この道を通ると駅に着きます。",
+		"exampleCn": "走这条路就到车站。",
+		"exampleEn": "If you go along this road, you'll reach the station."
+	},
+	"交番": {
+		"cn": "派出所",
+		"en": "police box",
+		"example": "道がわからないときは交番で聞きます。",
+		"exampleCn": "不认识路时去派出所问。",
+		"exampleEn": "When I don't know the way, I ask at the police box."
+	},
+	"まじえる": {
+		"cn": "掺杂、夹杂（汉字写作 交える）",
+		"en": "to mix in / include",
+		"example": "冗談をまじえて話す。",
+		"exampleCn": "说话时夹带玩笑。",
+		"exampleEn": "to talk while mixing in jokes"
+	},
+	"交わる": {
+		"cn": "相交、交叉",
+		"en": "to cross / intersect",
+		"example": "二本の道がここで交わる。",
+		"exampleCn": "两条路在这里交汇。",
+		"exampleEn": "The two roads intersect here."
+	},
+	"黄色": {
+		"cn": "黄色",
+		"en": "yellow",
+		"example": "黄色の傘を買いました。",
+		"exampleCn": "买了一把黄色的伞。",
+		"exampleEn": "I bought a yellow umbrella."
+	},
+	"青い": {
+		"cn": "蓝色的（也指绿灯等）",
+		"en": "blue",
+		"example": "今日は空が青いです。",
+		"exampleCn": "今天天空很蓝。",
+		"exampleEn": "The sky is blue today."
+	},
+	"黄金 おうごん": {
+		"cn": "黄金",
+		"en": "gold",
+		"example": "黄金の時間。",
+		"exampleCn": "黄金时间。",
+		"exampleEn": "golden time"
+	},
+	"卵黄": {
+		"cn": "蛋黄",
+		"en": "egg yolk",
+		"example": "卵黄だけを使います。",
+		"exampleCn": "只用蛋黄。",
+		"exampleEn": "Use only the egg yolk."
+	},
+	"駅": {
+		"cn": "车站",
+		"en": "station",
+		"example": "駅で友達を待ちます。",
+		"exampleCn": "在车站等朋友。",
+		"exampleEn": "I'll wait for my friend at the station."
+	},
+	"鉄": {
+		"cn": "铁",
+		"en": "iron",
+		"example": "この橋は鉄でできています。",
+		"exampleCn": "这座桥是铁做的。",
+		"exampleEn": "This bridge is made of iron."
+	},
+	"乗る": {
+		"cn": "乘坐",
+		"en": "to get on / ride",
+		"example": "毎朝電車に乗ります。",
+		"exampleCn": "每天早上坐电车。",
+		"exampleEn": "I take the train every morning."
+	},
+	"降りる": {
+		"cn": "下（车）",
+		"en": "to get off",
+		"example": "次の駅で降ります。",
+		"exampleCn": "在下一站下车。",
+		"exampleEn": "I'll get off at the next station."
+	},
+	"開ける": {
+		"cn": "打开",
+		"en": "to open",
+		"example": "窓を開けてもいいですか。",
+		"exampleCn": "可以开窗吗？",
+		"exampleEn": "May I open the window?"
+	},
+	"閉める": {
+		"cn": "关上",
+		"en": "to close",
+		"example": "ドアを閉めてください。",
+		"exampleCn": "请关门。",
+		"exampleEn": "Please close the door."
+	},
+	"始発": {
+		"cn": "首班车",
+		"en": "first train",
+		"example": "始発に乗って空港へ行きました。",
+		"exampleCn": "坐首班车去了机场。",
+		"exampleEn": "I took the first train to the airport."
+	},
+	"終電": {
+		"cn": "末班车",
+		"en": "last train",
+		"example": "終電に間に合いませんでした。",
+		"exampleCn": "没赶上末班车。",
+		"exampleEn": "I missed the last train."
+	},
+	"着く": {
+		"cn": "到达",
+		"en": "to arrive",
+		"example": "東京に三時に着きます。",
+		"exampleCn": "三点到东京。",
+		"exampleEn": "I'll arrive in Tokyo at three."
+	},
+	"到着": {
+		"cn": "到达（书面语）",
+		"en": "arrival",
+		"example": "飛行機は十時に到着しました。",
+		"exampleCn": "飞机十点到达了。",
+		"exampleEn": "The plane arrived at ten."
+	},
+	"高台": {
+		"cn": "高地、高处",
+		"en": "high ground / hill",
+		"example": "高台から町が見えます。",
+		"exampleCn": "从高处能看到整个镇子。",
+		"exampleEn": "You can see the town from the high ground."
+	},
+	"台所": {
+		"cn": "厨房",
+		"en": "kitchen",
+		"example": "母は台所で料理しています。",
+		"exampleCn": "妈妈在厨房做饭。",
+		"exampleEn": "My mother is cooking in the kitchen."
+	},
+	"止まる": {
+		"cn": "停下、停止",
+		"en": "to stop",
+		"example": "電車が駅に止まりました。",
+		"exampleCn": "电车在车站停了。",
+		"exampleEn": "The train stopped at the station."
+	},
+	"タバコを吸ってる人 の 隣にいる のが嫌いです": {
+		"cn": "我讨厌待在抽烟的人旁边",
+		"en": "I hate being next to people who are smoking",
+		"example": "タバコを吸ってる人の隣にいるのが嫌いです。",
+		"exampleCn": "我讨厌待在抽烟的人旁边。",
+		"exampleEn": "I hate being next to people who are smoking."
+	},
+	"しる": {
+		"cn": "知道（应为 知る しる）",
+		"en": "to know",
+		"example": "その話は知らなかった。",
+		"exampleCn": "那件事我不知道。",
+		"exampleEn": "I didn't know that story."
+	},
+	"帰る": {
+		"cn": "回去、回家",
+		"en": "to go home / return",
+		"example": "六時に家に帰ります。",
+		"exampleCn": "六点回家。",
+		"exampleEn": "I go home at six."
+	},
+	"かっこいい": {
+		"cn": "帅、酷",
+		"en": "cool / good-looking",
+		"example": "その車はかっこいいですね。",
+		"exampleCn": "那辆车很酷呢。",
+		"exampleEn": "That car is cool."
+	},
+	"繋ぐ": {
+		"cn": "连接、牵（手）",
+		"en": "to connect / hold (hands)",
+		"example": "手を繋いで歩きました。",
+		"exampleCn": "手牵手走了。",
+		"exampleEn": "We walked holding hands."
+	},
+	"知らないとだめ！": {
+		"cn": "不知道可不行！",
+		"en": "You have to know this!",
+		"example": "これは知らないとだめ！",
+		"exampleCn": "这个不知道可不行！",
+		"exampleEn": "You have to know this!"
+	},
+	"common=共通きょうつう": {
+		"cn": "共通、共同的（共通 きょうつう）",
+		"en": "common / shared",
+		"example": "二人の共通の趣味は映画です。",
+		"exampleCn": "两人共同的爱好是电影。",
+		"exampleEn": "The two share a hobby: movies."
+	},
+	"穏やか おだやか": {
+		"cn": "平静、温和",
+		"en": "calm",
+		"example": "今日は海が穏やかです。",
+		"exampleCn": "今天海面很平静。",
+		"exampleEn": "The sea is calm today."
 	}
 }
