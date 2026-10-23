@@ -5633,5 +5633,173 @@
 		"example": "今日は海が穏やかです。",
 		"exampleCn": "今天海面很平静。",
 		"exampleEn": "The sea is calm today."
+	},
+	"MC 司会": {
+		"cn": "主持人、司仪（MC）",
+		"en": "MC / master of ceremonies",
+		"example": "結婚式で司会をしました。",
+		"exampleCn": "我在婚礼上当了主持人。",
+		"exampleEn": "I was the MC at a wedding."
+	},
+	"泊まる": {
+		"cn": "住宿、过夜",
+		"en": "to stay overnight",
+		"example": "友達の家に泊まりました。",
+		"exampleCn": "我在朋友家住了一晚。",
+		"exampleEn": "I stayed overnight at my friend's house."
+	},
+	"ごろごろするつもりです": {
+		"cn": "打算（在家）懒洋洋地躺着",
+		"en": "I plan to laze around",
+		"example": "週末は家でごろごろするつもりです。",
+		"exampleCn": "周末我打算在家躺着休息。",
+		"exampleEn": "I plan to laze around at home this weekend."
+	},
+	"進みました": {
+		"cn": "进展了、往前推进了",
+		"en": "(it) progressed / moved forward",
+		"example": "今日の授業はたくさん進みました。",
+		"exampleCn": "今天的课进度推进了很多。",
+		"exampleEn": "We covered a lot in today's class."
+	},
+	"スラスラ": {
+		"cn": "流利地、顺畅地",
+		"en": "smoothly / fluently",
+		"example": "日本語がスラスラ話せるようになりたいです。",
+		"exampleCn": "我想把日语说得很流利。",
+		"exampleEn": "I want to be able to speak Japanese fluently."
+	},
+	"双子": {
+		"cn": "双胞胎",
+		"en": "twins",
+		"example": "私の友達は双子です。",
+		"exampleCn": "我的朋友是双胞胎。",
+		"exampleEn": "My friends are twins."
+	},
+	"彼女はお互いに知り合いではありません": {
+		"cn": "她们彼此并不认识",
+		"en": "They don't know each other",
+		"example": "二人はお互いに知り合いではありません。",
+		"exampleCn": "她们两个人互相不认识。",
+		"exampleEn": "The two of them don't know each other."
+	},
+	"ペコペコ": {
+		"cn": "（肚子）饿扁了",
+		"en": "starving (stomach empty)",
+		"example": "おなかがペコペコです。",
+		"exampleCn": "肚子饿扁了。",
+		"exampleEn": "I'm starving."
+	},
+	"そっくり": {
+		"cn": "一模一样、非常像",
+		"en": "exactly alike",
+		"example": "彼女はお母さんにそっくりです。",
+		"exampleCn": "她和她妈妈长得一模一样。",
+		"exampleEn": "She looks exactly like her mother."
+	},
+	"いわし": {
+		"cn": "沙丁鱼",
+		"en": "sardine",
+		"example": "朝ご飯にいわしを食べました。",
+		"exampleCn": "早饭吃了沙丁鱼。",
+		"exampleEn": "I ate sardines for breakfast."
+	},
+	"アボカド": {
+		"cn": "牛油果",
+		"en": "avocado",
+		"example": "アボカドのサラダが好きです。",
+		"exampleCn": "我喜欢牛油果沙拉。",
+		"exampleEn": "I like avocado salad."
+	},
+	"喉が乾いた": {
+		"cn": "口渴了",
+		"en": "I'm thirsty",
+		"example": "喉が乾いたので、水を飲みます。",
+		"exampleCn": "口渴了，所以喝水。",
+		"exampleEn": "I'm thirsty, so I'll drink some water."
+	},
+	"ヘトヘト": {
+		"cn": "筋疲力尽、累坏了",
+		"en": "exhausted",
+		"example": "仕事のあとはヘトヘトです。",
+		"exampleCn": "下班后累坏了。",
+		"exampleEn": "I'm exhausted after work."
+	},
+	"バックコーラス": {
+		"cn": "伴唱、和声",
+		"en": "backing vocals",
+		"example": "彼はバックコーラスを担当しています。",
+		"exampleCn": "他负责伴唱。",
+		"exampleEn": "He sings backing vocals."
+	},
+	"いくつかの": {
+		"cn": "几个、一些",
+		"en": "several / some",
+		"example": "いくつかの質問があります。",
+		"exampleCn": "我有几个问题。",
+		"exampleEn": "I have a few questions."
+	},
+	"何位ですか？": {
+		"cn": "第几名？",
+		"en": "What place (rank) is it?",
+		"example": "この歌はランキングで何位ですか？",
+		"exampleCn": "这首歌在排行榜上第几名？",
+		"exampleEn": "What rank is this song on the chart?"
+	},
+	"団子": {
+		"cn": "团子（日式糯米丸子）",
+		"en": "dango (rice dumplings)",
+		"example": "公園で団子を食べました。",
+		"exampleCn": "在公园吃了团子。",
+		"exampleEn": "I ate dango in the park."
+	},
+	"梅": {
+		"cn": "梅子、梅花",
+		"en": "plum / ume",
+		"example": "梅のおにぎりが好きです。",
+		"exampleCn": "我喜欢梅子饭团。",
+		"exampleEn": "I like ume rice balls."
+	},
+	"🦑いか": {
+		"cn": "鱿鱼、乌贼",
+		"en": "squid",
+		"example": "いかの刺身を食べました。",
+		"exampleCn": "吃了鱿鱼刺身。",
+		"exampleEn": "I ate squid sashimi."
+	},
+	"興味がある": {
+		"cn": "感兴趣",
+		"en": "to be interested in",
+		"example": "日本の歴史に興味があります。",
+		"exampleCn": "我对日本历史感兴趣。",
+		"exampleEn": "I'm interested in Japanese history."
+	},
+	"福井県": {
+		"cn": "福井县（日本北陆地区）",
+		"en": "Fukui Prefecture",
+		"example": "福井県は恐竜で有名です。",
+		"exampleCn": "福井县以恐龙闻名。",
+		"exampleEn": "Fukui Prefecture is famous for dinosaurs."
+	},
+	"中島みゆき": {
+		"cn": "中岛美雪（日本歌手）",
+		"en": "Miyuki Nakajima (singer)",
+		"example": "中島みゆきの歌をよく聞きます。",
+		"exampleCn": "我经常听中岛美雪的歌。",
+		"exampleEn": "I often listen to Miyuki Nakajima's songs."
+	},
+	"伍佰": {
+		"cn": "伍佰（台湾歌手）",
+		"en": "Wu Bai (Taiwanese singer)",
+		"example": "伍佰は台湾の歌手です。",
+		"exampleCn": "伍佰是台湾歌手。",
+		"exampleEn": "Wu Bai is a Taiwanese singer."
+	},
+	"林志炫": {
+		"cn": "林志炫（台湾歌手）",
+		"en": "Terry Lin (Taiwanese singer)",
+		"example": "林志炫の声はとてもきれいです。",
+		"exampleCn": "林志炫的声音非常好听。",
+		"exampleEn": "Terry Lin's voice is very beautiful."
 	}
 }
