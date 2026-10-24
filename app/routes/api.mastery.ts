@@ -1,6 +1,7 @@
 import type { AppLoadContext } from "react-router";
 
 import { getSessionUser, json } from "../auth/http";
+import { putIfChanged } from "../auth/kv-write";
 import { isMasteryPayload } from "../auth/study-payloads";
 import { masteryKey } from "../auth/users";
 
@@ -42,6 +43,7 @@ export async function action({ request, context }: Args) {
 		return json({ error: "invalid json" }, { status: 400 });
 	}
 
-	await context.cloudflare.env.MISTAKES_KV.put(masteryKey(user.id), body);
-	return json({ ok: true });
+	const saved = await putIfChanged(context.cloudflare.env.MISTAKES_KV, masteryKey(user.id), body);
+	if (saved instanceof Response) return saved;
+	return json({ ok: true, written: saved.written });
 }

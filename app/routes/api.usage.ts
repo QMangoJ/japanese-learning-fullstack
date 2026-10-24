@@ -1,6 +1,7 @@
 import type { AppLoadContext } from "react-router";
 
 import { getSessionUser, json } from "../auth/http";
+import { isKvLimitError, kvLimitResponse } from "../auth/kv-write";
 import { usageAppKey, usageKey } from "../auth/users";
 import {
 	applyUsageDelta,
@@ -13,6 +14,7 @@ import {
 	type DayMap,
 	type DayRecord,
 	type UsageKind,
+	USAGE_DAY_CAP_SEC,
 } from "../study/usage-time";
 
 const MAX_BYTES = 32_000;
@@ -46,9 +48,20 @@ function dayPrefix(app: "account" | "shadowing" | "reading", userId: string): st
 	return app === "account" ? `usage-day:u:${userId}:` : `usage-day:app:${app}:`;
 }
 
+const DEVICE_ID = /^[a-z0-9]{6,40}$/;
+
+// Device ids are not day keys, so sanitizeDays() would drop them all: that made every stored record
+// look empty, so each report rewrote every day (and lost other devices' totals).
 function asRecord(value: unknown): DayRecord | null {
 	if (!value || typeof value !== "object") return null;
-	const devices = sanitizeDays((value as { devices?: unknown }).devices);
+	const raw = (value as { devices?: unknown }).devices;
+	const devices: Record<string, number> = {};
+	if (raw && typeof raw === "object" && !Array.isArray(raw)) {
+		for (const [device, sec] of Object.entries(raw as Record<string, unknown>)) {
+			if (!DEVICE_ID.test(device) || typeof sec !== "number" || !Number.isInteger(sec) || sec <= 0) continue;
+			devices[device] = Math.min(USAGE_DAY_CAP_SEC, sec);
+		}
+	}
 	return { devices };
 }
 
@@ -68,6 +81,22 @@ async function readHistory(kv: KVNamespace, app: "account" | "shadowing" | "read
 	return { records, legacy, device };
 }
 
+// Per-isolate cache of the day list so frequent GETs (other apps poll this) don't each cost a KV list().
+// Best effort only: totals may lag by up to HISTORY_CACHE_MS across isolates, writes here update it.
+const HISTORY_CACHE_MS = 5 * 60_000;
+const historyCache = new Map<string, { at: number; records: Record<string, DayRecord>; legacy: DayMap }>();
+
+function rememberHistory(prefix: string, records: Record<string, DayRecord>, legacy: DayMap) {
+	if (historyCache.size > 500) historyCache.clear();
+	historyCache.set(prefix, { at: Date.now(), records: { ...records }, legacy });
+}
+
+function pickDays(days: DayMap, keys: string[]): DayMap {
+	const out: DayMap = {};
+	for (const day of keys) if (days[day]) out[day] = days[day];
+	return out;
+}
+
 function summarize(records: Record<string, DayRecord>, legacy: DayMap, device: string | null) {
 	const days: DayMap = {};
 	const mine: DayMap = {};
@@ -82,7 +111,7 @@ function summarize(records: Record<string, DayRecord>, legacy: DayMap, device: s
 
 function deviceParam(request: Request): string | null {
 	const d = new URL(request.url).searchParams.get("device");
-	return d && /^[a-z0-9]{6,40}$/.test(d) ? d : null;
+	return d && DEVICE_ID.test(d) ? d : null;
 }
 
 export async function loader({ request, context }: Args) {
@@ -95,8 +124,20 @@ export async function loader({ request, context }: Args) {
 		if (!user) return json({ error: "unauthorized" }, { status: 401 });
 		userId = user.id;
 	}
-	const { records, legacy, device } = await readHistory(kv, app, userId, deviceParam(request));
-	return new Response(JSON.stringify(summarize(records, legacy, device)), { headers });
+	const prefix = dayPrefix(app, userId);
+	const cached = historyCache.get(prefix);
+	let history: { records: Record<string, DayRecord>; legacy: DayMap };
+	if (cached && Date.now() - cached.at < HISTORY_CACHE_MS) history = cached;
+	else {
+		try {
+			history = await readHistory(kv, app, userId, null);
+		} catch (error) {
+			if (isKvLimitError(error)) return kvLimitResponse();
+			throw error;
+		}
+		rememberHistory(prefix, history.records, history.legacy);
+	}
+	return new Response(JSON.stringify(summarize(history.records, history.legacy, deviceParam(request))), { headers });
 }
 
 export async function action({ request, context }: Args) {
@@ -121,26 +162,41 @@ export async function action({ request, context }: Args) {
 	if (report) {
 		const latest = jstDayKey(Date.now() + 24 * 60 * 60 * 1000);
 		const prefix = dayPrefix(app, userId);
-		const { records, legacy } = await readHistory(kv, app, userId, report.device);
-		for (const [day, sec] of Object.entries(report.totals).slice(0, 400)) {
-			if (day > latest) continue;
-			const key = prefix + day;
-			const current = asRecord(await kv.get(key, "json")) || records[day] || null;
-			const next = mergeDayRecord(current, report.device, sec);
-			if (next.devices[report.device] === current?.devices[report.device]) {
+		// `lite` clients already did a GET this page open: no list(), answer with the posted days only.
+		const lite = new URL(request.url).searchParams.get("lite") === "1";
+		try {
+			const history = lite ? null : await readHistory(kv, app, userId, report.device);
+			const records: Record<string, DayRecord> = history ? history.records : {};
+			const legacy = history ? history.legacy : await readDays(kv, storageKey(app, userId));
+			for (const [day, sec] of Object.entries(report.totals).slice(0, 400)) {
+				if (day > latest) continue;
+				const key = prefix + day;
+				const current = asRecord(await kv.get(key, "json")) || records[day] || null;
+				const next = mergeDayRecord(current, report.device, sec);
 				records[day] = next;
-				continue;
+				if (next.devices[report.device] === current?.devices[report.device]) continue;
+				await kv.put(key, JSON.stringify(next), { metadata: next });
+				const cachedHistory = historyCache.get(prefix);
+				if (cachedHistory) cachedHistory.records[day] = next;
 			}
-			await kv.put(key, JSON.stringify(next), { metadata: next });
-			records[day] = next;
+			if (history) rememberHistory(prefix, records, legacy);
+			const shownLegacy = lite ? pickDays(legacy, Object.keys(records)) : legacy;
+			return new Response(JSON.stringify(summarize(records, shownLegacy, report.device)), { headers });
+		} catch (error) {
+			if (isKvLimitError(error)) return kvLimitResponse();
+			throw error;
 		}
-		return new Response(JSON.stringify(summarize(records, legacy, report.device)), { headers });
 	}
 	// Old clients still send deltas; keep them landing in the legacy blob.
 	const delta = parseUsageDelta(body);
 	if (!delta) return json({ error: "invalid usage payload" }, { status: 400 });
 	const key = storageKey(app, userId);
 	const days = applyUsageDelta(await readDays(kv, key), delta);
-	await kv.put(key, JSON.stringify({ days }));
+	try {
+		await kv.put(key, JSON.stringify({ days }));
+	} catch (error) {
+		if (isKvLimitError(error)) return kvLimitResponse();
+		throw error;
+	}
 	return new Response(JSON.stringify({ days }), { headers });
 }

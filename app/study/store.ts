@@ -4,6 +4,7 @@ import kougoFallback from "../data/common-kougo.json";
 import wearingFallback from "../data/common-wearing.json";
 import { listeningBundle, listeningN1Bundle, listeningN2Bundle, readingBundle, readingN2Bundle } from "./catalogs";
 import { forgetDue, hydrateDue, kickDueSync, mistakeDueDraft, mistakeDueId, noteDueSignedOut, pullDueFromServer, pushDueNow, rememberFail, resetDueForTests } from "./due-review";
+import { canAttemptSync, noteSyncResult, resetSyncPolicyForTests } from "./kv-sync-policy";
 import { hydrateMastery, kickMasterySync, noteMasterySignedOut, pullMasteryFromServer, pushMasteryNow, resetMasteryForTests } from "./memory-mastery";
 import { refreshUsageAccount } from "./usage-time";
 import { pushToast } from "./toast";
@@ -364,15 +365,11 @@ let searchIndex: any[] | null = null;
 let readingSearchPromise: Promise<void> | null = null;
 let jaVoice: SpeechSynthesisVoice | null = null;
 let _favSyncing = false;
-let _favPushTimer: ReturnType<typeof setTimeout> | null = null;
 let _favPushing = false;
-let _favRetryAttempt = 0;
 let _favReady = false;
 let _favPendingPush = false;
 let _mistakeSyncing = false;
-let _mistakePushTimer: ReturnType<typeof setTimeout> | null = null;
 let _mistakePushing = false;
-let _mistakeRetryAttempt = 0;
 let _mistakesReady = false;
 let _mistakesPendingPush = false;
 let _resyncingM = false;
@@ -678,33 +675,11 @@ function cleanFavs(value: unknown): Record<string, FavSnap> {
 	return clean;
 }
 
-const SYNC_RETRY_BASE_MS = 1_500;
-const SYNC_RETRY_MAX_MS = 30_000;
-
-function retryDelay(attempt: number) {
-	return Math.min(SYNC_RETRY_MAX_MS, SYNC_RETRY_BASE_MS * 2 ** Math.max(0, attempt - 1));
-}
-
-function scheduleMistakesPush(delay = 400) {
-	if (_mistakePushTimer) clearTimeout(_mistakePushTimer);
-	_mistakePushTimer = setTimeout(() => {
-		_mistakePushTimer = null;
-		void pushMistakesNow();
-	}, delay);
-}
-
 async function pushMistakesNow() {
-	if (!ACCOUNT || !_mistakesReady) return false;
-	if (_mistakePushTimer) {
-		clearTimeout(_mistakePushTimer);
-		_mistakePushTimer = null;
-	}
-	if (_mistakePushing) {
-		_mistakesPendingPush = true;
-		return false;
-	}
+	if (!ACCOUNT || !_mistakesReady || !_mistakesPendingPush) return false;
+	if (_mistakePushing) return false;
+	if (!canAttemptSync("/api/mistakes")) return false;
 	_mistakePushing = true;
-	_mistakesPendingPush = false;
 	const snapshot = JSON.stringify(MISTAKES);
 	try {
 		const response = await fetch("/api/mistakes", {
@@ -713,17 +688,16 @@ async function pushMistakesNow() {
 			credentials: "same-origin",
 			body: snapshot,
 		});
+		noteSyncResult("/api/mistakes", response.status);
 		if (!response.ok) throw new Error(`mistakes sync failed: ${response.status}`);
-		_mistakeRetryAttempt = 0;
-		if (JSON.stringify(MISTAKES) !== snapshot) _mistakesPendingPush = true;
+		_mistakesPendingPush = JSON.stringify(MISTAKES) !== snapshot;
 		return true;
 	} catch {
-		_mistakesPendingPush = true;
-		_mistakeRetryAttempt += 1;
+		// Keep local data; the next page open (after the cooldown) tries again.
+		noteSyncResult("/api/mistakes", 0);
 		return false;
 	} finally {
 		_mistakePushing = false;
-		if (_mistakesPendingPush) scheduleMistakesPush(retryDelay(_mistakeRetryAttempt || 1));
 	}
 }
 export function saveMistakes() {
@@ -737,7 +711,7 @@ export function saveMistakes() {
 		_mistakesPendingPush = false;
 		return;
 	}
-	scheduleMistakesPush();
+	// Uploaded once on the next page open, not on every change (KV write budget).
 }
 export function needsAccount() {
 	return accountReady && authConfigured && !ACCOUNT;
@@ -823,26 +797,11 @@ export function cycleMistakeLevel(id: string) {
 	emit();
 }
 
-function scheduleFavsPush(delay = 400) {
-	if (_favPushTimer) clearTimeout(_favPushTimer);
-	_favPushTimer = setTimeout(() => {
-		_favPushTimer = null;
-		void pushFavsNow();
-	}, delay);
-}
-
 async function pushFavsNow() {
-	if (!ACCOUNT || !_favReady) return false;
-	if (_favPushTimer) {
-		clearTimeout(_favPushTimer);
-		_favPushTimer = null;
-	}
-	if (_favPushing) {
-		_favPendingPush = true;
-		return false;
-	}
+	if (!ACCOUNT || !_favReady || !_favPendingPush) return false;
+	if (_favPushing) return false;
+	if (!canAttemptSync("/api/favorites")) return false;
 	_favPushing = true;
-	_favPendingPush = false;
 	const snapshot = JSON.stringify(FAV);
 	try {
 		const response = await fetch("/api/favorites", {
@@ -851,17 +810,16 @@ async function pushFavsNow() {
 			credentials: "same-origin",
 			body: snapshot,
 		});
+		noteSyncResult("/api/favorites", response.status);
 		if (!response.ok) throw new Error(`favorites sync failed: ${response.status}`);
-		_favRetryAttempt = 0;
-		if (JSON.stringify(FAV) !== snapshot) _favPendingPush = true;
+		_favPendingPush = JSON.stringify(FAV) !== snapshot;
 		return true;
 	} catch {
-		_favPendingPush = true;
-		_favRetryAttempt += 1;
+		// Keep local data; the next page open (after the cooldown) tries again.
+		noteSyncResult("/api/favorites", 0);
 		return false;
 	} finally {
 		_favPushing = false;
-		if (_favPendingPush) scheduleFavsPush(retryDelay(_favRetryAttempt || 1));
 	}
 }
 export function saveFav() {
@@ -875,7 +833,7 @@ export function saveFav() {
 		_favPendingPush = false;
 		return;
 	}
-	scheduleFavsPush();
+	// Uploaded once on the next page open, not on every change (KV write budget).
 }
 export function isFav(id: string) {
 	return !!FAV[id];
@@ -1620,6 +1578,7 @@ async function pullMistakesFromServer() {
 		_mistakesReady = true;
 		return;
 	}
+	let pulled = false;
 	try {
 		const res = await fetch("/api/mistakes", { cache: "no-store", credentials: "same-origin" });
 		if (res.ok) {
@@ -1636,22 +1595,25 @@ async function pullMistakesFromServer() {
 				MISTAKES = merged;
 				lsSet("mistakes", JSON.stringify(MISTAKES));
 				_mistakeSyncing = false;
+				// Upload only when this browser has something the server doesn't.
+				_mistakesPendingPush = mistakesSig(MISTAKES) !== mistakesSig(server);
 				emit();
+				pulled = true;
 			}
 		}
 	} catch {
 		/* offline */
 	}
+	// Without a server copy to compare against, don't overwrite it; local data stays and syncs next open.
+	if (!pulled) _mistakesPendingPush = false;
 	_mistakesReady = true;
-	if (_mistakesPendingPush) {
-		scheduleMistakesPush(0);
-	}
 }
 async function pullFavsFromServer() {
 	if (!ACCOUNT) {
 		_favReady = true;
 		return;
 	}
+	let pulled = false;
 	try {
 		const res = await fetch("/api/favorites", { cache: "no-store", credentials: "same-origin" });
 		if (res.ok) {
@@ -1662,16 +1624,18 @@ async function pullFavsFromServer() {
 				FAV = sameAccountDevice(ACCOUNT.id) ? Object.assign({}, server, FAV) : server;
 				lsSet("favs", JSON.stringify(FAV));
 				_favSyncing = false;
+				// Upload only when this browser has something the server doesn't.
+				_favPendingPush = favsSig(FAV) !== favsSig(server);
 				emit();
+				pulled = true;
 			}
 		}
 	} catch {
 		/* offline */
 	}
+	// Without a server copy to compare against, don't overwrite it; local data stays and syncs next open.
+	if (!pulled) _favPendingPush = false;
 	_favReady = true;
-	if (_favPendingPush) {
-		scheduleFavsPush(0);
-	}
 }
 
 function mistakesSig(arr: Mistake[]) {
@@ -1681,7 +1645,7 @@ function favsSig(o: Record<string, FavSnap>) {
 	return JSON.stringify(Object.keys(o).sort().map((k) => [k, o[k]]));
 }
 async function resyncMistakes() {
-	if (!ACCOUNT || !_mistakesReady || _mistakePushTimer || _mistakePushing || _mistakesPendingPush || _resyncingM) return;
+	if (!ACCOUNT || !_mistakesReady || _mistakePushing || _mistakesPendingPush || _resyncingM) return;
 	_resyncingM = true;
 	try {
 		const res = await fetch("/api/mistakes", { cache: "no-store", credentials: "same-origin" });
@@ -1705,7 +1669,7 @@ async function resyncMistakes() {
 	_resyncingM = false;
 }
 async function resyncFavs() {
-	if (!ACCOUNT || !_favReady || _favPushTimer || _favPushing || _favPendingPush || _resyncingF) return;
+	if (!ACCOUNT || !_favReady || _favPushing || _favPendingPush || _resyncingF) return;
 	_resyncingF = true;
 	try {
 		const res = await fetch("/api/favorites", { cache: "no-store", credentials: "same-origin" });
@@ -1796,16 +1760,11 @@ export function resetStudyStateForTests() {
 	_favPendingPush = false;
 	_favReady = false;
 	_favPushing = false;
-	_favRetryAttempt = 0;
-	if (_favPushTimer) clearTimeout(_favPushTimer);
-	_favPushTimer = null;
+	resetSyncPolicyForTests();
 	_mistakeSyncing = false;
 	_mistakesPendingPush = false;
 	_mistakesReady = false;
 	_mistakePushing = false;
-	_mistakeRetryAttempt = 0;
-	if (_mistakePushTimer) clearTimeout(_mistakePushTimer);
-	_mistakePushTimer = null;
 	_resyncingM = false;
 	_resyncingF = false;
 	mistakeAddType = "q";
@@ -2211,10 +2170,9 @@ export async function bootAccount() {
 
 export function attachResync() {
 	const resyncAll = () => {
-		if (_favPendingPush) scheduleFavsPush(0);
-		else void resyncFavs();
-		if (_mistakesPendingPush) scheduleMistakesPush(0);
-		else void resyncMistakes();
+		// Read-only refresh on focus; uploads happen once per page open (bootAccount).
+		if (!_favPendingPush) void resyncFavs();
+		if (!_mistakesPendingPush) void resyncMistakes();
 		kickDueSync();
 		kickMasterySync();
 	};
