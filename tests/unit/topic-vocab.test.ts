@@ -52,7 +52,7 @@ describe("topic vocabulary data", () => {
 
 	it("adds ATM withdrawal, frontend work, and clothes shopping beside the investing list", () => {
 		const index = JSON.parse(readFileSync(join(DIR, "index.json"), "utf8")) as { topics: { slug: string }[] };
-		expect(index.topics.map((topic) => topic.slug)).toEqual(["japan-investing", "bank-atm", "frontend", "clothes-shopping"]);
+		expect(index.topics.map((topic) => topic.slug)).toEqual(["japan-investing", "bank-atm", "frontend", "clothes-shopping", "cafe-menu"]);
 		const load = (slug: string): TopicFile => JSON.parse(readFileSync(join(DIR, `${slug}.json`), "utf8"));
 		const atm = load("bank-atm");
 		const frontend = load("frontend");
@@ -70,6 +70,13 @@ describe("topic vocabulary data", () => {
 		expect(shopping.cards.find((card) => card.jp === "試着")?.example_zh).toBe("这件大衣可以试穿吗？");
 		expect(shopping.cards.find((card) => card.jp === "割引")?.example_zh).toBe("今天是八折。");
 		expect(shopping.cards.find((card) => card.jp === "割引")?.note).toContain("八折");
+	});
+
+	it("adds a café menu topic with ordering phrases that each have a scene", () => {
+		const cafe = JSON.parse(readFileSync(join(DIR, "cafe-menu.json"), "utf8")) as TopicFile;
+		expect(cafe.cards.map((card) => card.jp)).toEqual(expect.arrayContaining(["紅茶", "販売中止", "以上でよろしいですか"]));
+		expect(cafe.cards.find((card) => card.jp === "以上でよろしいですか")?.kana).toBe("いじょうでよろしいですか");
+		for (const card of cafe.cards.filter((c) => c.subtopic === "点单会话")) expect(card.scene, card.id).toBeTruthy();
 	});
 
 	it("adds everyday clothes-shopping words in three new groups, each with a scene and furigana", () => {
