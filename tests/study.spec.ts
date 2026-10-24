@@ -1268,7 +1268,7 @@ test.describe("study interactions", () => {
 		await expect(page.locator(".review-day").first()).toBeVisible({ timeout: 15_000 });
 		await page.getByRole("tab", { name: "Preply すみれ先生" }).click();
 		const newest = page.locator(".review-day").first();
-		await expect(newest).toContainText(/10月22日|Oct 22/);
+		await expect(newest).toContainText(/10月23日|Oct 23/);
 		await newest.click();
 		await expect(page.locator(".fcard").first()).toBeVisible({ timeout: 15_000 });
 		await page.locator(".fcard").first().click();

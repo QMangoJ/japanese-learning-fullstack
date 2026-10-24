@@ -1,7 +1,68 @@
 {
 	"source": "https://docs.google.com/document/d/12NwKtAV_HFUeOheYvXGMsJl5G2xIcdb4WG_axC23xrU/edit\nhttps://docs.google.com/document/d/1oEZYQYz3Kb3q5bRqNJgdD0TNxUHVEX2PGvLoCju_Cdc/edit",
-	"fetchedAt": "2026-10-20T10:02:01.805Z",
+	"fetchedAt": "2026-10-24T00:00:00.000Z",
 	"days": [
+		{
+			"id": "2026-10-23",
+			"date": "2026-10-23",
+			"title": "2026-10-23",
+			"items": [
+				{
+					"jp": "MC 司会",
+					"kind": "word",
+					"jp_r": "MC <ruby>司会<rt>しかい</rt></ruby>",
+					"cn": "主持人、司仪（MC）",
+					"en": "MC / master of ceremonies",
+					"example": "結婚式で司会をしました。",
+					"exampleCn": "我在婚礼上当了主持人。",
+					"exampleEn": "I was the MC at a wedding.",
+					"example_r": "<ruby>結婚式<rt>けっこんしき</rt></ruby>で<ruby>司会<rt>しかい</rt></ruby>をしました。"
+				},
+				{
+					"jp": "泊まる",
+					"kind": "word",
+					"jp_r": "<ruby>泊<rt>と</rt></ruby>まる",
+					"cn": "住宿、过夜",
+					"en": "to stay overnight",
+					"example": "友達の家に泊まりました。",
+					"exampleCn": "我在朋友家住了一晚。",
+					"exampleEn": "I stayed overnight at my friend's house.",
+					"example_r": "<ruby>友達<rt>ともだち</rt></ruby>の<ruby>家<rt>いえ</rt></ruby>に<ruby>泊<rt>と</rt></ruby>まりました。"
+				},
+				{
+					"jp": "ごろごろするつもりです",
+					"kind": "sentence",
+					"cn": "打算（在家）懒洋洋地躺着",
+					"en": "I plan to laze around",
+					"example": "週末は家でごろごろするつもりです。",
+					"exampleCn": "周末我打算在家躺着休息。",
+					"exampleEn": "I plan to laze around at home this weekend.",
+					"example_r": "<ruby>週末<rt>しゅうまつ</rt></ruby>は<ruby>家<rt>いえ</rt></ruby>でごろごろするつもりです。"
+				},
+				{
+					"jp": "進みました",
+					"kind": "sentence",
+					"jp_r": "<ruby>進<rt>すす</rt></ruby>みました",
+					"cn": "进展了、往前推进了",
+					"en": "(it) progressed / moved forward",
+					"example": "今日の授業はたくさん進みました。",
+					"exampleCn": "今天的课进度推进了很多。",
+					"exampleEn": "We covered a lot in today's class.",
+					"example_r": "<ruby>今日<rt>きょう</rt></ruby>の<ruby>授業<rt>じゅぎょう</rt></ruby>はたくさん<ruby>進<rt>すす</rt></ruby>みました。"
+				},
+				{
+					"jp": "スラスラ",
+					"kind": "word",
+					"cn": "流利地、顺畅地",
+					"en": "smoothly / fluently",
+					"example": "日本語がスラスラ話せるようになりたいです。",
+					"exampleCn": "我想把日语说得很流利。",
+					"exampleEn": "I want to be able to speak Japanese fluently.",
+					"example_r": "<ruby>日本語<rt>にほんご</rt></ruby>がスラスラ<ruby>話<rt>はな</rt></ruby>せるようになりたいです。"
+				}
+			],
+			"source": "Danielさん"
+		},
 		{
 			"id": "2026-10-22:preply",
 			"date": "2026-10-22",
@@ -39,6 +100,206 @@
 					"exampleCn": "公司离车站很近。",
 					"exampleEn": "My workplace is close to the station.",
 					"example_r": "<ruby>職場<rt>しょくば</rt></ruby>は<ruby>駅<rt>えき</rt></ruby>から<ruby>近い<rt>ちかい</rt></ruby>です。"
+				},
+				{
+					"jp": "双子",
+					"kind": "word",
+					"jp_r": "<ruby>双子<rt>ふたご</rt></ruby>",
+					"cn": "双胞胎",
+					"en": "twins",
+					"example": "私の友達は双子です。",
+					"exampleCn": "我的朋友是双胞胎。",
+					"exampleEn": "My friends are twins.",
+					"example_r": "<ruby>私<rt>わたし</rt></ruby>の<ruby>友達<rt>ともだち</rt></ruby>は<ruby>双子<rt>ふたご</rt></ruby>です。"
+				},
+				{
+					"jp": "彼女はお互いに知り合いではありません",
+					"kind": "sentence",
+					"jp_r": "<ruby>彼女<rt>かのじょ</rt></ruby>はお<ruby>互<rt>たが</rt></ruby>いに<ruby>知<rt>し</rt></ruby>り<ruby>合<rt>あ</rt></ruby>いではありません",
+					"cn": "她们彼此并不认识",
+					"en": "They don't know each other",
+					"example": "二人はお互いに知り合いではありません。",
+					"exampleCn": "她们两个人互相不认识。",
+					"exampleEn": "The two of them don't know each other.",
+					"example_r": "<ruby>二人<rt>ふたり</rt></ruby>はお<ruby>互<rt>たが</rt></ruby>いに<ruby>知<rt>し</rt></ruby>り<ruby>合<rt>あ</rt></ruby>いではありません。"
+				},
+				{
+					"jp": "ペコペコ",
+					"kind": "word",
+					"cn": "（肚子）饿扁了",
+					"en": "starving (stomach empty)",
+					"example": "おなかがペコペコです。",
+					"exampleCn": "肚子饿扁了。",
+					"exampleEn": "I'm starving."
+				},
+				{
+					"jp": "そっくり",
+					"kind": "word",
+					"cn": "一模一样、非常像",
+					"en": "exactly alike",
+					"example": "彼女はお母さんにそっくりです。",
+					"exampleCn": "她和她妈妈长得一模一样。",
+					"exampleEn": "She looks exactly like her mother.",
+					"example_r": "<ruby>彼女<rt>かのじょ</rt></ruby>はお<ruby>母<rt>かあ</rt></ruby>さんにそっくりです。"
+				},
+				{
+					"jp": "いわし",
+					"kind": "word",
+					"cn": "沙丁鱼",
+					"en": "sardine",
+					"example": "朝ご飯にいわしを食べました。",
+					"exampleCn": "早饭吃了沙丁鱼。",
+					"exampleEn": "I ate sardines for breakfast.",
+					"example_r": "<ruby>朝<rt>あさ</rt></ruby>ご<ruby>飯<rt>はん</rt></ruby>にいわしを<ruby>食<rt>た</rt></ruby>べました。"
+				},
+				{
+					"jp": "アボカド",
+					"kind": "word",
+					"cn": "牛油果",
+					"en": "avocado",
+					"example": "アボカドのサラダが好きです。",
+					"exampleCn": "我喜欢牛油果沙拉。",
+					"exampleEn": "I like avocado salad.",
+					"example_r": "アボカドのサラダが<ruby>好<rt>す</rt></ruby>きです。"
+				},
+				{
+					"jp": "喉が乾いた",
+					"kind": "word",
+					"jp_r": "<ruby>喉<rt>のど</rt></ruby>が<ruby>乾<rt>かわ</rt></ruby>いた",
+					"cn": "口渴了",
+					"en": "I'm thirsty",
+					"example": "喉が乾いたので、水を飲みます。",
+					"exampleCn": "口渴了，所以喝水。",
+					"exampleEn": "I'm thirsty, so I'll drink some water.",
+					"example_r": "<ruby>喉<rt>のど</rt></ruby>が<ruby>乾<rt>かわ</rt></ruby>いたので、<ruby>水<rt>みず</rt></ruby>を<ruby>飲<rt>の</rt></ruby>みます。"
+				},
+				{
+					"jp": "ヘトヘト",
+					"kind": "word",
+					"cn": "筋疲力尽、累坏了",
+					"en": "exhausted",
+					"example": "仕事のあとはヘトヘトです。",
+					"exampleCn": "下班后累坏了。",
+					"exampleEn": "I'm exhausted after work.",
+					"example_r": "<ruby>仕事<rt>しごと</rt></ruby>のあとはヘトヘトです。"
+				},
+				{
+					"jp": "バックコーラス",
+					"kind": "word",
+					"cn": "伴唱、和声",
+					"en": "backing vocals",
+					"example": "彼はバックコーラスを担当しています。",
+					"exampleCn": "他负责伴唱。",
+					"exampleEn": "He sings backing vocals.",
+					"example_r": "<ruby>彼<rt>かれ</rt></ruby>はバックコーラスを<ruby>担当<rt>たんとう</rt></ruby>しています。"
+				},
+				{
+					"jp": "いくつかの",
+					"kind": "word",
+					"cn": "几个、一些",
+					"en": "several / some",
+					"example": "いくつかの質問があります。",
+					"exampleCn": "我有几个问题。",
+					"exampleEn": "I have a few questions.",
+					"example_r": "いくつかの<ruby>質問<rt>しつもん</rt></ruby>があります。"
+				},
+				{
+					"jp": "何位ですか？",
+					"kind": "sentence",
+					"jp_r": "<ruby>何位<rt>なんい</rt></ruby>ですか？",
+					"cn": "第几名？",
+					"en": "What place (rank) is it?",
+					"example": "この歌はランキングで何位ですか？",
+					"exampleCn": "这首歌在排行榜上第几名？",
+					"exampleEn": "What rank is this song on the chart?",
+					"example_r": "この<ruby>歌<rt>うた</rt></ruby>はランキングで<ruby>何位<rt>なんい</rt></ruby>ですか？"
+				},
+				{
+					"jp": "団子",
+					"kind": "word",
+					"jp_r": "<ruby>団子<rt>だんご</rt></ruby>",
+					"cn": "团子（日式糯米丸子）",
+					"en": "dango (rice dumplings)",
+					"example": "公園で団子を食べました。",
+					"exampleCn": "在公园吃了团子。",
+					"exampleEn": "I ate dango in the park.",
+					"example_r": "<ruby>公園<rt>こうえん</rt></ruby>で<ruby>団子<rt>だんご</rt></ruby>を<ruby>食<rt>た</rt></ruby>べました。"
+				},
+				{
+					"jp": "梅",
+					"kind": "word",
+					"jp_r": "<ruby>梅<rt>うめ</rt></ruby>",
+					"cn": "梅子、梅花",
+					"en": "plum / ume",
+					"example": "梅のおにぎりが好きです。",
+					"exampleCn": "我喜欢梅子饭团。",
+					"exampleEn": "I like ume rice balls.",
+					"example_r": "<ruby>梅<rt>うめ</rt></ruby>のおにぎりが<ruby>好<rt>す</rt></ruby>きです。"
+				},
+				{
+					"jp": "🦑いか",
+					"kind": "word",
+					"cn": "鱿鱼、乌贼",
+					"en": "squid",
+					"example": "いかの刺身を食べました。",
+					"exampleCn": "吃了鱿鱼刺身。",
+					"exampleEn": "I ate squid sashimi.",
+					"example_r": "いかの<ruby>刺身<rt>さしみ</rt></ruby>を<ruby>食<rt>た</rt></ruby>べました。"
+				},
+				{
+					"jp": "興味がある",
+					"kind": "word",
+					"jp_r": "<ruby>興味<rt>きょうみ</rt></ruby>がある",
+					"cn": "感兴趣",
+					"en": "to be interested in",
+					"example": "日本の歴史に興味があります。",
+					"exampleCn": "我对日本历史感兴趣。",
+					"exampleEn": "I'm interested in Japanese history.",
+					"example_r": "<ruby>日本<rt>にほん</rt></ruby>の<ruby>歴史<rt>れきし</rt></ruby>に<ruby>興味<rt>きょうみ</rt></ruby>があります。"
+				},
+				{
+					"jp": "福井県",
+					"kind": "word",
+					"jp_r": "<ruby>福井県<rt>ふくいけん</rt></ruby>",
+					"cn": "福井县（日本北陆地区）",
+					"en": "Fukui Prefecture",
+					"example": "福井県は恐竜で有名です。",
+					"exampleCn": "福井县以恐龙闻名。",
+					"exampleEn": "Fukui Prefecture is famous for dinosaurs.",
+					"example_r": "<ruby>福井県<rt>ふくいけん</rt></ruby>は<ruby>恐竜<rt>きょうりゅう</rt></ruby>で<ruby>有名<rt>ゆうめい</rt></ruby>です。"
+				},
+				{
+					"jp": "中島みゆき",
+					"kind": "word",
+					"jp_r": "<ruby>中島<rt>なかじま</rt></ruby>みゆき",
+					"cn": "中岛美雪（日本歌手）",
+					"en": "Miyuki Nakajima (singer)",
+					"example": "中島みゆきの歌をよく聞きます。",
+					"exampleCn": "我经常听中岛美雪的歌。",
+					"exampleEn": "I often listen to Miyuki Nakajima's songs.",
+					"example_r": "<ruby>中島<rt>なかじま</rt></ruby>みゆきの<ruby>歌<rt>うた</rt></ruby>をよく<ruby>聞<rt>き</rt></ruby>きます。"
+				},
+				{
+					"jp": "伍佰",
+					"kind": "word",
+					"jp_r": "<ruby>伍佰<rt>ウーバイ</rt></ruby>",
+					"cn": "伍佰（台湾歌手）",
+					"en": "Wu Bai (Taiwanese singer)",
+					"example": "伍佰は台湾の歌手です。",
+					"exampleCn": "伍佰是台湾歌手。",
+					"exampleEn": "Wu Bai is a Taiwanese singer.",
+					"example_r": "<ruby>伍佰<rt>ウーバイ</rt></ruby>は<ruby>台湾<rt>たいわん</rt></ruby>の<ruby>歌手<rt>かしゅ</rt></ruby>です。"
+				},
+				{
+					"jp": "林志炫",
+					"kind": "word",
+					"jp_r": "<ruby>林志炫<rt>リンジーシュエン</rt></ruby>",
+					"cn": "林志炫（台湾歌手）",
+					"en": "Terry Lin (Taiwanese singer)",
+					"example": "林志炫の声はとてもきれいです。",
+					"exampleCn": "林志炫的声音非常好听。",
+					"exampleEn": "Terry Lin's voice is very beautiful.",
+					"example_r": "<ruby>林志炫<rt>リンジーシュエン</rt></ruby>の<ruby>声<rt>こえ</rt></ruby>はとてもきれいです。"
 				}
 			],
 			"source": "Preply すみれ先生"
