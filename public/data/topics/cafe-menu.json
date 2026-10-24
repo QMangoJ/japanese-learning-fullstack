@@ -4,16 +4,26 @@
 	"title_zh": "咖啡店菜单",
 	"title_ja": "カフェのメニュー",
 	"title_en": "Café menu",
-	"description_zh": "咖啡店菜单上的饮料、浮冰淇淋饮料、甜点和套餐，菜单上常见的提示词，以及在柜台点单时的常用会话（每句标出场景）。",
-	"description_en": "Drinks, floats, desserts and sets from a café menu, common menu labels, and the phrases you use when ordering at the counter (each with its scene).",
+	"description_zh": "常去的咖啡店菜单上的 39 个词。每张卡片依次是日语、中文意思、原词和来源语言、特点和图片；可以按分类和词源筛选，也可以盖住意思自测。下面还有点单会话。",
+	"description_en": "39 words from a café menu, each with its meaning, source word and language, notes and a photo. Filter by category or word origin, hide the meanings to test yourself, and practice ordering phrases.",
 	"subtopics": [
 		{
-			"zh": "饮料",
-			"ja": "ドリンク",
-			"en": "Drinks"
+			"zh": "咖啡",
+			"ja": "コーヒー",
+			"en": "Coffee"
 		},
 		{
-			"zh": "浮冰淇淋饮料",
+			"zh": "茶",
+			"ja": "お茶",
+			"en": "Tea"
+		},
+		{
+			"zh": "其他饮料",
+			"ja": "その他のドリンク",
+			"en": "Other drinks"
+		},
+		{
+			"zh": "浮冰淇淋",
 			"ja": "フロート",
 			"en": "Floats"
 		},
@@ -28,14 +38,9 @@
 			"en": "Sets"
 		},
 		{
-			"zh": "菜单上的其他词",
+			"zh": "菜单用词",
 			"ja": "メニューの言葉",
-			"en": "Menu labels"
-		},
-		{
-			"zh": "点单会话",
-			"ja": "注文の会話",
-			"en": "Ordering"
+			"en": "Menu words"
 		}
 	],
 	"cards": [
@@ -43,52 +48,92 @@
 			"id": "cafe-001",
 			"jp": "ブレンドコーヒー",
 			"kana": "ブレンドコーヒー",
-			"zh": "综合（拼配）咖啡",
+			"zh": "拼配咖啡，店里的招牌热咖啡",
 			"en": "blend coffee",
-			"subtopic": "饮料",
+			"subtopic": "咖啡",
 			"example_jp": "ブレンドコーヒーを一つください。",
 			"example_ruby": "ブレンドコーヒーを<ruby>一<rt>ひと</rt></ruby>つください。",
 			"example_zh": "请给我一杯综合咖啡。",
 			"example_en": "One blend coffee, please.",
-			"note": "几种咖啡豆拼配的店家招牌热咖啡，点单时常简称「ブレンド」。"
+			"note": "原词：英语 blend coffee（外来语）。店家把几种咖啡豆拼配烘焙出的招牌热咖啡，味道均衡。在喫茶店不知道喝什么时，点「ブレンド」最常见。"
 		},
 		{
 			"id": "cafe-002",
 			"jp": "アメリカンコーヒー",
 			"kana": "アメリカンコーヒー",
-			"zh": "美式咖啡",
+			"zh": "美式，比 Blend 淡",
 			"en": "American coffee",
-			"subtopic": "饮料",
+			"subtopic": "咖啡",
 			"example_jp": "朝はいつもアメリカンコーヒーを飲みます。",
 			"example_ruby": "<ruby>朝<rt>あさ</rt></ruby>はいつもアメリカンコーヒーを<ruby>飲<rt>の</rt></ruby>みます。",
 			"example_zh": "我早上总是喝美式咖啡。",
 			"example_en": "I always drink American coffee in the morning.",
-			"note": "日本的「アメリカン」一般指浅烘、口味较淡的咖啡。"
+			"note": "原词：英语 American + coffee。指浅烘焙、偏淡的咖啡，跟意式的 Americano 不完全一样（和制英语）。通常用浅烘焙的豆子，或冲得淡一些，口感比 Blend 清爽、苦味轻。想喝淡一点的咖啡时点。"
 		},
 		{
 			"id": "cafe-003",
 			"jp": "カフェオーレ",
 			"kana": "カフェオーレ",
-			"zh": "咖啡欧蕾",
+			"zh": "咖啡欧蕾，咖啡加热牛奶",
 			"en": "café au lait",
-			"subtopic": "饮料",
+			"subtopic": "咖啡",
 			"example_jp": "温かいカフェオーレが飲みたいです。",
 			"example_ruby": "<ruby>温<rt>あたた</rt></ruby>かいカフェオーレが<ruby>飲<rt>の</rt></ruby>みたいです。",
 			"example_zh": "我想喝热的咖啡欧蕾。",
 			"example_en": "I'd like a warm café au lait.",
-			"note": "滴滤咖啡加热牛奶，和用浓缩做的拿铁不同。"
+			"note": "原词：法语 café au lait（加了牛奶的咖啡）（外来语）。用滴滤咖啡加热牛奶做成，跟用浓缩咖啡做的拿铁相比，咖啡味更柔和。"
 		},
 		{
 			"id": "cafe-004",
 			"jp": "黒糖カフェオーレ",
 			"kana": "こくとうカフェオーレ",
-			"zh": "黑糖咖啡欧蕾",
+			"zh": "黑糖欧蕾",
 			"en": "brown-sugar café au lait",
-			"subtopic": "饮料",
+			"subtopic": "咖啡",
 			"example_jp": "黒糖カフェオーレは少し甘いです。",
 			"example_ruby": "<ruby>黒糖<rt>こくとう</rt></ruby>カフェオーレは<ruby>少<rt>すこ</rt></ruby>し<ruby>甘<rt>あま</rt></ruby>いです。",
 			"example_zh": "黑糖欧蕾有点甜。",
-			"example_en": "The brown-sugar café au lait is a little sweet."
+			"example_en": "The brown-sugar café au lait is a little sweet.",
+			"note": "原词：黒糖 是日语固有词（音读汉字词）+ 法语 café au lait（混合）。在咖啡欧蕾里加黑糖，带黑糖特有的浓厚甜香。"
+		},
+		{
+			"id": "cafe-006",
+			"jp": "カフェラテ",
+			"kana": "カフェラテ",
+			"zh": "拿铁，浓缩咖啡加牛奶",
+			"en": "caffè latte",
+			"subtopic": "咖啡",
+			"example_jp": "カフェラテをホットでお願いします。",
+			"example_ruby": "カフェラテをホットでお<ruby>願<rt>ねが</rt></ruby>いします。",
+			"example_zh": "请给我一杯热拿铁。",
+			"example_en": "A hot caffè latte, please.",
+			"note": "原词：意大利语 caffè latte。在意大利只说 latte 会端上来一杯牛奶（外来语）。浓缩咖啡加大量蒸汽牛奶，表面有一层奶泡，常有拉花。"
+		},
+		{
+			"id": "cafe-007",
+			"jp": "カフェモカ",
+			"kana": "カフェモカ",
+			"zh": "摩卡，加了巧克力的拿铁",
+			"en": "caffè mocha",
+			"subtopic": "咖啡",
+			"example_jp": "甘いものが飲みたいから、カフェモカにします。",
+			"example_ruby": "<ruby>甘<rt>あま</rt></ruby>いものが<ruby>飲<rt>の</rt></ruby>みたいから、カフェモカにします。",
+			"example_zh": "想喝点甜的，所以点摩卡。",
+			"example_en": "I want something sweet, so I'll have a caffè mocha.",
+			"note": "原词：意大利语 caffè mocha，名字来自也门的咖啡港口 Mocha（外来语）。浓缩咖啡加巧克力酱和牛奶，常在上面加鲜奶油，想喝甜一点的时候点。"
+		},
+		{
+			"id": "cafe-008",
+			"jp": "エスプレッソ",
+			"kana": "エスプレッソ",
+			"zh": "浓缩咖啡",
+			"en": "espresso",
+			"subtopic": "咖啡",
+			"example_jp": "エスプレッソはとても濃いです。",
+			"example_ruby": "エスプレッソはとても<ruby>濃<rt>こ</rt></ruby>いです。",
+			"example_zh": "浓缩咖啡非常浓。",
+			"example_en": "Espresso is very strong.",
+			"note": "原词：意大利语 espresso（外来语）。用高压在短时间内萃取的一小杯浓咖啡，味道很浓，也是拿铁、摩卡的基底。"
 		},
 		{
 			"id": "cafe-005",
@@ -96,47 +141,12 @@
 			"kana": "アイスコーヒー",
 			"zh": "冰咖啡",
 			"en": "iced coffee",
-			"subtopic": "饮料",
+			"subtopic": "咖啡",
 			"example_jp": "暑い日はアイスコーヒーがいいです。",
 			"example_ruby": "<ruby>暑<rt>あつ</rt></ruby>い<ruby>日<rt>ひ</rt></ruby>はアイスコーヒーがいいです。",
 			"example_zh": "天热的时候喝冰咖啡最好。",
-			"example_en": "Iced coffee is best on hot days."
-		},
-		{
-			"id": "cafe-006",
-			"jp": "カフェラテ",
-			"kana": "カフェラテ",
-			"zh": "拿铁",
-			"en": "caffè latte",
-			"subtopic": "饮料",
-			"example_jp": "カフェラテをホットでお願いします。",
-			"example_ruby": "カフェラテをホットでお<ruby>願<rt>ねが</rt></ruby>いします。",
-			"example_zh": "请给我一杯热拿铁。",
-			"example_en": "A hot caffè latte, please."
-		},
-		{
-			"id": "cafe-007",
-			"jp": "カフェモカ",
-			"kana": "カフェモカ",
-			"zh": "摩卡",
-			"en": "caffè mocha",
-			"subtopic": "饮料",
-			"example_jp": "甘いものが飲みたいから、カフェモカにします。",
-			"example_ruby": "<ruby>甘<rt>あま</rt></ruby>いものが<ruby>飲<rt>の</rt></ruby>みたいから、カフェモカにします。",
-			"example_zh": "想喝点甜的，所以点摩卡。",
-			"example_en": "I want something sweet, so I'll have a caffè mocha."
-		},
-		{
-			"id": "cafe-008",
-			"jp": "エスプレッソ",
-			"kana": "エスプレッソ",
-			"zh": "意式浓缩咖啡",
-			"en": "espresso",
-			"subtopic": "饮料",
-			"example_jp": "エスプレッソはとても濃いです。",
-			"example_ruby": "エスプレッソはとても<ruby>濃<rt>こ</rt></ruby>いです。",
-			"example_zh": "浓缩咖啡非常浓。",
-			"example_en": "Espresso is very strong."
+			"example_en": "Iced coffee is best on hot days.",
+			"note": "原词：英语 iced coffee（日语把 iced 缩成 アイス）（外来语）。日本的冰咖啡多用深烘焙的豆子，店家常附上奶和糖浆，所以不要时要说「なしで」。"
 		},
 		{
 			"id": "cafe-009",
@@ -144,12 +154,13 @@
 			"kana": "こうちゃ",
 			"zh": "红茶",
 			"en": "black tea",
-			"subtopic": "饮料",
+			"subtopic": "茶",
 			"level": "N4",
 			"example_jp": "紅茶はミルクとレモン、どちらにしますか？",
 			"example_ruby": "<ruby>紅茶<rt>こうちゃ</rt></ruby>はミルクとレモン、どちらにしますか？",
 			"example_zh": "红茶要加奶还是加柠檬？",
-			"example_en": "Would you like milk or lemon with your tea?"
+			"example_en": "Would you like milk or lemon with your tea?",
+			"note": "原词：音读汉字词，不是外来语（日语固有词）。在日本点红茶，店员常会问要「ストレート、ミルク、レモン」哪一种。"
 		},
 		{
 			"id": "cafe-010",
@@ -157,34 +168,50 @@
 			"kana": "アイスティー",
 			"zh": "冰红茶",
 			"en": "iced tea",
-			"subtopic": "饮料",
+			"subtopic": "茶",
 			"example_jp": "アイスティーを一つください。",
 			"example_ruby": "アイスティーを<ruby>一<rt>ひと</rt></ruby>つください。",
 			"example_zh": "请给我一杯冰红茶。",
-			"example_en": "One iced tea, please."
+			"example_en": "One iced tea, please.",
+			"note": "原词：英语 iced tea（外来语）。冰镇的红茶，可以加柠檬、奶或糖浆。"
 		},
 		{
 			"id": "cafe-011",
 			"jp": "ルイボスティー",
 			"kana": "ルイボスティー",
-			"zh": "路易波士茶",
+			"zh": "路易波士茶，本身不含咖啡因",
 			"en": "rooibos tea",
-			"subtopic": "饮料",
+			"subtopic": "茶",
 			"example_jp": "ルイボスティーはカフェインがありません。",
 			"example_zh": "路易波士茶不含咖啡因。",
-			"example_en": "Rooibos tea has no caffeine."
+			"example_en": "Rooibos tea has no caffeine.",
+			"note": "原词：南非荷兰语 rooibos（意思是“红灌木”）+ 英语 tea（外来语）。用南非特有的路易波士灌木叶制成，不含咖啡因，味道带一点甜。晚上想避开咖啡因时常点。"
 		},
 		{
 			"id": "cafe-012",
 			"jp": "ロイヤルミルクティー",
 			"kana": "ロイヤルミルクティー",
-			"zh": "皇家奶茶",
+			"zh": "用牛奶煮的浓奶茶",
 			"en": "royal milk tea",
-			"subtopic": "饮料",
+			"subtopic": "茶",
 			"example_jp": "ロイヤルミルクティーは牛乳で紅茶を煮て作ります。",
 			"example_ruby": "ロイヤルミルクティーは<ruby>牛乳<rt>ぎゅうにゅう</rt></ruby>で<ruby>紅茶<rt>こうちゃ</rt></ruby>を<ruby>煮<rt>に</rt></ruby>て<ruby>作<rt>つく</rt></ruby>ります。",
 			"example_zh": "皇家奶茶是用牛奶煮红茶做的。",
-			"example_en": "Royal milk tea is made by simmering tea in milk."
+			"example_en": "Royal milk tea is made by simmering tea in milk.",
+			"note": "原词：royal + milk tea，日本自创的叫法（和制英语）。把茶叶直接放进牛奶里煮，比在红茶里加奶的普通奶茶更浓、奶香更重。"
+		},
+		{
+			"id": "cafe-032",
+			"jp": "ストレート",
+			"kana": "ストレート",
+			"zh": "纯的，红茶不加奶也不加柠檬",
+			"en": "straight (no milk or lemon)",
+			"subtopic": "茶",
+			"example_jp": "紅茶はストレートでお願いします。",
+			"example_ruby": "<ruby>紅茶<rt>こうちゃ</rt></ruby>はストレートでお<ruby>願<rt>ねが</rt></ruby>いします。",
+			"example_zh": "红茶要纯的，什么都不加。",
+			"example_en": "Tea straight, please.",
+			"note": "原词：英语 straight。英语里多用来说酒不加冰，日本用来说茶什么都不加（外来语（意思有变化））。点红茶时说「ストレートで」，就是什么都不加的纯红茶。"
 		},
 		{
 			"id": "cafe-013",
@@ -192,11 +219,12 @@
 			"kana": "ココア",
 			"zh": "可可",
 			"en": "hot cocoa",
-			"subtopic": "饮料",
+			"subtopic": "其他饮料",
 			"example_jp": "寒い日は熱いココアが飲みたくなります。",
 			"example_ruby": "<ruby>寒<rt>さむ</rt></ruby>い<ruby>日<rt>ひ</rt></ruby>は<ruby>熱<rt>あつ</rt></ruby>いココアが<ruby>飲<rt>の</rt></ruby>みたくなります。",
 			"example_zh": "冷天就想喝热可可。",
-			"example_en": "On cold days I feel like a hot cocoa."
+			"example_en": "On cold days I feel like a hot cocoa.",
+			"note": "原词：英语 cocoa（外来语）。用可可粉加牛奶和糖调成的饮料，天冷时常点热的。"
 		},
 		{
 			"id": "cafe-014",
@@ -204,11 +232,12 @@
 			"kana": "まっちゃラテ",
 			"zh": "抹茶拿铁",
 			"en": "matcha latte",
-			"subtopic": "饮料",
+			"subtopic": "其他饮料",
 			"example_jp": "抹茶ラテをアイスでお願いします。",
 			"example_ruby": "<ruby>抹茶<rt>まっちゃ</rt></ruby>ラテをアイスでお<ruby>願<rt>ねが</rt></ruby>いします。",
 			"example_zh": "请给我一杯冰抹茶拿铁。",
-			"example_en": "An iced matcha latte, please."
+			"example_en": "An iced matcha latte, please.",
+			"note": "原词：抹茶 是日语固有词 + 意大利语 latte（混合）。抹茶粉加牛奶，通常加了糖，甜中带抹茶的微苦。"
 		},
 		{
 			"id": "cafe-015",
@@ -216,11 +245,12 @@
 			"kana": "ミルク",
 			"zh": "牛奶",
 			"en": "milk",
-			"subtopic": "饮料",
+			"subtopic": "其他饮料",
 			"example_jp": "子どもにはミルクをお願いします。",
 			"example_ruby": "<ruby>子<rt>こ</rt></ruby>どもにはミルクをお<ruby>願<rt>ねが</rt></ruby>いします。",
 			"example_zh": "孩子要一杯牛奶。",
-			"example_en": "Milk for the child, please."
+			"example_en": "Milk for the child, please.",
+			"note": "原词：英语 milk（外来语）。菜单上的「ミルク」就是一杯牛奶。"
 		},
 		{
 			"id": "cafe-016",
@@ -228,10 +258,11 @@
 			"kana": "オレンジジュースひゃくパーセント",
 			"zh": "100% 橙汁",
 			"en": "100% orange juice",
-			"subtopic": "饮料",
+			"subtopic": "其他饮料",
 			"example_jp": "オレンジジュースは100%です。",
 			"example_zh": "橙汁是 100% 纯果汁。",
-			"example_en": "The orange juice is 100% juice."
+			"example_en": "The orange juice is 100% juice.",
+			"note": "原词：英语 orange juice（100% 读作 ひゃくパーセント）（外来语）。「100%」表示是纯果汁，不是兑水加糖的果汁饮料。"
 		},
 		{
 			"id": "cafe-017",
@@ -239,73 +270,77 @@
 			"kana": "アップルジュースひゃくパーセント",
 			"zh": "100% 苹果汁",
 			"en": "100% apple juice",
-			"subtopic": "饮料",
+			"subtopic": "其他饮料",
 			"example_jp": "アップルジュースを一つください。",
 			"example_ruby": "アップルジュースを<ruby>一<rt>ひと</rt></ruby>つください。",
 			"example_zh": "请给我一杯苹果汁。",
-			"example_en": "One apple juice, please."
+			"example_en": "One apple juice, please.",
+			"note": "原词：英语 apple juice（外来语）。「100%」表示是纯果汁，不是兑水加糖的果汁饮料。"
 		},
 		{
 			"id": "cafe-018",
 			"jp": "クリームソーダ",
 			"kana": "クリームソーダ",
-			"zh": "冰淇淋苏打",
+			"zh": "绿色苏打水上面放一球冰淇淋",
 			"en": "cream soda (soda with ice cream)",
-			"subtopic": "浮冰淇淋饮料",
+			"subtopic": "浮冰淇淋",
 			"example_jp": "緑のクリームソーダは昔からある喫茶店の定番です。",
 			"example_ruby": "<ruby>緑<rt>みどり</rt></ruby>のクリームソーダは<ruby>昔<rt>むかし</rt></ruby>からある<ruby>喫茶店<rt>きっさてん</rt></ruby>の<ruby>定番<rt>ていばん</rt></ruby>です。",
 			"example_zh": "绿色的冰淇淋苏打是老派咖啡馆的经典。",
 			"example_en": "Green cream soda is a classic at old-style cafés.",
-			"note": "日本的「クリームソーダ」是汽水上面放一球香草冰淇淋。"
+			"note": "原词：英语 cream soda。美国的 cream soda 是香草味汽水（外来语（意思有变化））。昭和喫茶店的怀旧经典：蜜瓜味的绿色苏打水上放一球香草冰淇淋，常配一颗樱桃。"
 		},
 		{
 			"id": "cafe-019",
 			"jp": "コーヒーフロート",
 			"kana": "コーヒーフロート",
-			"zh": "咖啡上浮冰淇淋",
+			"zh": "冰咖啡上面放一球冰淇淋",
 			"en": "coffee float",
-			"subtopic": "浮冰淇淋饮料",
+			"subtopic": "浮冰淇淋",
 			"example_jp": "コーヒーフロートのアイスが溶けてきました。",
 			"example_ruby": "コーヒーフロートのアイスが<ruby>溶<rt>と</rt></ruby>けてきました。",
 			"example_zh": "咖啡上的冰淇淋开始化了。",
-			"example_en": "The ice cream on my coffee float is starting to melt."
+			"example_en": "The ice cream on my coffee float is starting to melt.",
+			"note": "原词：英语 coffee float（外来语）。冰咖啡上放一球香草冰淇淋，冰淇淋慢慢化进咖啡里，越喝越甜越顺。"
 		},
 		{
 			"id": "cafe-020",
 			"jp": "抹茶フロート",
 			"kana": "まっちゃフロート",
-			"zh": "抹茶上浮冰淇淋",
+			"zh": "抹茶上面放一球冰淇淋",
 			"en": "matcha float",
-			"subtopic": "浮冰淇淋饮料",
+			"subtopic": "浮冰淇淋",
 			"example_jp": "抹茶フロートはちょっと苦くて甘いです。",
 			"example_ruby": "<ruby>抹茶<rt>まっちゃ</rt></ruby>フロートはちょっと<ruby>苦<rt>にが</rt></ruby>くて<ruby>甘<rt>あま</rt></ruby>いです。",
 			"example_zh": "抹茶冰淇淋饮料有点苦又有点甜。",
-			"example_en": "The matcha float is a little bitter and sweet."
+			"example_en": "The matcha float is a little bitter and sweet.",
+			"note": "原词：抹茶 是日语固有词 + 英语 float（混合）。冰的抹茶饮料上放一球冰淇淋，冰淇淋的甜配抹茶的苦。"
 		},
 		{
 			"id": "cafe-021",
 			"jp": "ココアフロート",
 			"kana": "ココアフロート",
-			"zh": "可可上浮冰淇淋",
+			"zh": "可可上面放一球冰淇淋",
 			"en": "cocoa float",
-			"subtopic": "浮冰淇淋饮料",
+			"subtopic": "浮冰淇淋",
 			"example_jp": "ココアフロートは子どもに人気です。",
 			"example_ruby": "ココアフロートは<ruby>子<rt>こ</rt></ruby>どもに<ruby>人気<rt>にんき</rt></ruby>です。",
 			"example_zh": "可可冰淇淋饮料很受孩子欢迎。",
-			"example_en": "The cocoa float is popular with kids."
+			"example_en": "The cocoa float is popular with kids.",
+			"note": "原词：英语 cocoa float（外来语）。冰可可上放一球冰淇淋，想喝甜的时候点。"
 		},
 		{
-			"id": "cafe-022",
-			"jp": "フロートトッピング",
-			"kana": "フロートトッピング",
-			"zh": "加一球冰淇淋（加料）",
-			"en": "add an ice-cream float (topping)",
-			"subtopic": "浮冰淇淋饮料",
-			"example_jp": "アイスティーにフロートトッピングをお願いします。",
-			"example_ruby": "アイスティーにフロートトッピングをお<ruby>願<rt>ねが</rt></ruby>いします。",
-			"example_zh": "冰红茶请帮我加一球冰淇淋。",
-			"example_en": "Please add an ice-cream float to my iced tea.",
-			"note": "把任意饮料改成「フロート」的加料选项。"
+			"id": "cafe-046",
+			"jp": "トッピング",
+			"kana": "トッピング",
+			"zh": "加料",
+			"en": "topping",
+			"subtopic": "浮冰淇淋",
+			"example_jp": "ソフトクリームにトッピングをお願いします。",
+			"example_ruby": "ソフトクリームにトッピングをお<ruby>願<rt>ねが</rt></ruby>いします。",
+			"example_zh": "软冰淇淋请帮我加料。",
+			"example_en": "Please add a topping to my soft-serve.",
+			"note": "原词：英语 topping（外来语）。可以额外加在饮料或甜点上的东西，比如冰淇淋、鲜奶油，一般要另外加钱。"
 		},
 		{
 			"id": "cafe-023",
@@ -317,7 +352,8 @@
 			"example_jp": "コーヒーゼリーにクリームをかけて食べます。",
 			"example_ruby": "コーヒーゼリーにクリームをかけて<ruby>食<rt>た</rt></ruby>べます。",
 			"example_zh": "咖啡冻上浇奶油吃。",
-			"example_en": "I eat coffee jelly with cream poured over it."
+			"example_en": "I eat coffee jelly with cream poured over it.",
+			"note": "原词：英语 coffee jelly（外来语）。用咖啡加明胶做成的果冻，常配奶油或糖浆一起吃，是日本喫茶店的常见甜点。"
 		},
 		{
 			"id": "cafe-024",
@@ -331,7 +367,7 @@
 			"example_ruby": "この<ruby>焼<rt>や</rt></ruby>きプリンはとろりとしていて<ruby>濃厚<rt>のうこう</rt></ruby>です。",
 			"example_zh": "这个烤布丁又滑嫩又浓郁。",
 			"example_en": "This baked pudding is silky and rich.",
-			"note": "「とろり」＝滑溜溜、软嫩；「濃厚」＝味道浓郁（N2）。"
+			"note": "原词：プリン ← 英语 pudding，读音被缩短，专指焦糖布丁；とろり、濃厚、焼き 是日语固有词（外来语（意思有变化））。放进烤箱烤出来的布丁，表面带焦色，底下是焦糖。「とろり濃厚」是说口感滑嫩、蛋奶味浓。"
 		},
 		{
 			"id": "cafe-025",
@@ -343,7 +379,8 @@
 			"example_jp": "食後にソフトクリームを食べました。",
 			"example_ruby": "<ruby>食後<rt>しょくご</rt></ruby>にソフトクリームを<ruby>食<rt>た</rt></ruby>べました。",
 			"example_zh": "饭后吃了软冰淇淋。",
-			"example_en": "I had soft-serve after the meal."
+			"example_en": "I had soft-serve after the meal.",
+			"note": "原词：soft + cream，英语说 soft serve（和制英语）。机器现打出来的冰淇淋，比一般盒装冰淇淋更软、更顺滑。"
 		},
 		{
 			"id": "cafe-026",
@@ -355,7 +392,8 @@
 			"example_jp": "昼ご飯は焼きたてサンドセットにします。",
 			"example_ruby": "<ruby>昼<rt>ひる</rt></ruby>ご<ruby>飯<rt>はん</rt></ruby>は<ruby>焼<rt>や</rt></ruby>きたてサンドセットにします。",
 			"example_zh": "午饭我点现烤三明治套餐。",
-			"example_en": "I'll have the freshly toasted sandwich set for lunch."
+			"example_en": "I'll have the freshly toasted sandwich set for lunch.",
+			"note": "原词：焼きたて 是日语固有词 + サンド（sandwich 的简称）+ 英语 set（混合）。现烤的三明治配饮料的套餐，咖啡店午餐和早餐常见。"
 		},
 		{
 			"id": "cafe-027",
@@ -367,7 +405,8 @@
 			"example_jp": "パスタセットにはサラダとドリンクが付きます。",
 			"example_ruby": "パスタセットにはサラダとドリンクが<ruby>付<rt>つ</rt></ruby>きます。",
 			"example_zh": "意面套餐附沙拉和饮料。",
-			"example_en": "The pasta set comes with a salad and a drink."
+			"example_en": "The pasta set comes with a salad and a drink.",
+			"note": "原词：意大利语 pasta + 英语 set（外来语）。意面套餐。日本喫茶店最经典的意面是番茄酱炒的拿坡里意面（ナポリタン）。"
 		},
 		{
 			"id": "cafe-028",
@@ -378,20 +417,22 @@
 			"subtopic": "套餐",
 			"example_jp": "ライスセットのドリンクはアイスコーヒーにします。",
 			"example_zh": "饭类套餐的饮料我选冰咖啡。",
-			"example_en": "For the rice set drink I'll take iced coffee."
+			"example_en": "For the rice set drink I'll take iced coffee.",
+			"note": "原词：英语 rice + set（外来语）。菜单上的「ライス」指白米饭，「ライスセット」是带米饭的套餐。"
 		},
 		{
 			"id": "cafe-029",
 			"jp": "熱々",
 			"kana": "あつあつ",
-			"zh": "热乎乎、刚出锅的",
+			"zh": "热乎乎",
 			"en": "piping hot",
-			"subtopic": "菜单上的其他词",
+			"subtopic": "菜单用词",
 			"level": "N3",
 			"example_jp": "熱々のうちに食べてください。",
 			"example_ruby": "<ruby>熱々<rt>あつあつ</rt></ruby>のうちに<ruby>食<rt>た</rt></ruby>べてください。",
 			"example_zh": "请趁热吃。",
-			"example_en": "Please eat it while it's piping hot."
+			"example_en": "Please eat it while it's piping hot.",
+			"note": "原词：日语本来的词（日语固有词）。刚做好、烫嘴的那种热，菜单上常用来形容刚出锅的料理。"
 		},
 		{
 			"id": "cafe-030",
@@ -399,13 +440,40 @@
 			"kana": "やきたて",
 			"zh": "刚烤好的",
 			"en": "freshly baked",
-			"subtopic": "菜单上的其他词",
+			"subtopic": "菜单用词",
 			"level": "N3",
 			"example_jp": "焼きたてのパンはいい匂いがします。",
 			"example_ruby": "<ruby>焼<rt>や</rt></ruby>きたてのパンはいい<ruby>匂<rt>にお</rt></ruby>いがします。",
 			"example_zh": "刚烤好的面包闻起来很香。",
 			"example_en": "Freshly baked bread smells great.",
-			"note": "「動詞ます形＋たて」＝刚……好，如「できたて」「いれたて」。"
+			"note": "原词：日语本来的词（焼く＋たて：刚……好）（日语固有词）。「〜たて」表示刚做好，类似的说法还有「できたて」（刚做好）、「いれたて」（刚冲好）。"
+		},
+		{
+			"id": "cafe-047",
+			"jp": "濃厚",
+			"kana": "のうこう",
+			"zh": "浓郁",
+			"en": "rich (in flavor)",
+			"subtopic": "菜单用词",
+			"level": "N2",
+			"example_jp": "このプリンは味が濃厚です。",
+			"example_ruby": "このプリンは<ruby>味<rt>あじ</rt></ruby>が<ruby>濃厚<rt>のうこう</rt></ruby>です。",
+			"example_zh": "这个布丁味道很浓郁。",
+			"example_en": "This pudding has a rich flavor.",
+			"note": "原词：音读汉字词，不是外来语（日语固有词）。形容味道浓郁醇厚，菜单上常用在布丁、芝士、汤头上。"
+		},
+		{
+			"id": "cafe-048",
+			"jp": "とろり",
+			"kana": "とろり",
+			"zh": "滑嫩、稠稠的口感",
+			"en": "silky, thick and smooth",
+			"subtopic": "菜单用词",
+			"example_jp": "とろりとしたプリンが好きです。",
+			"example_ruby": "とろりとしたプリンが<ruby>好<rt>す</rt></ruby>きです。",
+			"example_zh": "我喜欢滑嫩的布丁。",
+			"example_en": "I like silky pudding.",
+			"note": "原词：日语拟态词（日语固有词）。形容稠稠的东西慢慢流动的样子，比如融化的芝士、半熟的蛋黄、滑嫩的布丁。"
 		},
 		{
 			"id": "cafe-031",
@@ -413,24 +481,13 @@
 			"kana": "はんばいちゅうし",
 			"zh": "停售",
 			"en": "no longer sold / discontinued",
-			"subtopic": "菜单上的其他词",
+			"subtopic": "菜单用词",
 			"level": "N2",
 			"example_jp": "このメニューは現在販売中止です。",
 			"example_ruby": "このメニューは<ruby>現在<rt>げんざい</rt></ruby><ruby>販売中止<rt>はんばいちゅうし</rt></ruby>です。",
 			"example_zh": "这个菜品现在停售了。",
-			"example_en": "This menu item is currently not available."
-		},
-		{
-			"id": "cafe-032",
-			"jp": "ストレート",
-			"kana": "ストレート",
-			"zh": "纯的（不加奶也不加柠檬）",
-			"en": "straight (no milk or lemon)",
-			"subtopic": "菜单上的其他词",
-			"example_jp": "紅茶はストレートでお願いします。",
-			"example_ruby": "<ruby>紅茶<rt>こうちゃ</rt></ruby>はストレートでお<ruby>願<rt>ねが</rt></ruby>いします。",
-			"example_zh": "红茶要纯的，什么都不加。",
-			"example_en": "Tea straight, please."
+			"example_en": "This menu item is currently not available.",
+			"note": "原词：音读汉字词，不是外来语（日语固有词）。贴在菜单上，表示这个商品现在不卖了。"
 		},
 		{
 			"id": "cafe-033",
@@ -438,169 +495,64 @@
 			"kana": "カフェインレス",
 			"zh": "无咖啡因",
 			"en": "decaf / caffeine-free",
-			"subtopic": "菜单上的其他词",
+			"subtopic": "菜单用词",
 			"example_jp": "夜はカフェインレスのコーヒーにしています。",
 			"example_ruby": "<ruby>夜<rt>よる</rt></ruby>はカフェインレスのコーヒーにしています。",
 			"example_zh": "晚上我喝无咖啡因的咖啡。",
-			"example_en": "I drink decaf coffee in the evening."
+			"example_en": "I drink decaf coffee in the evening.",
+			"note": "原词：caffeine + less，英语一般说 decaf（和制英语）。去掉了咖啡因的咖啡或饮料，晚上想喝又怕睡不着时点。"
 		},
 		{
-			"id": "cafe-034",
-			"jp": "R／L",
-			"kana": "アール・エル",
-			"zh": "杯型（R＝常规杯，L＝大杯）",
-			"en": "cup size (R = regular, L = large)",
-			"subtopic": "菜单上的其他词",
+			"id": "cafe-049",
+			"jp": "R（レギュラー）",
+			"kana": "アール レギュラー",
+			"zh": "普通杯",
+			"en": "regular (size)",
+			"subtopic": "菜单用词",
+			"example_jp": "ブレンドのRでお願いします。",
+			"example_ruby": "ブレンドのRでお<ruby>願<rt>ねが</rt></ruby>いします。",
+			"example_zh": "请给我普通杯的拼配咖啡。",
+			"example_en": "A regular blend, please.",
+			"note": "原词：英语 regular（外来语）。标准尺寸的杯型。"
+		},
+		{
+			"id": "cafe-050",
+			"jp": "L（ラージ）",
+			"kana": "エル ラージ",
+			"zh": "大杯",
+			"en": "large (size)",
+			"subtopic": "菜单用词",
 			"example_jp": "カフェラテのLをお願いします。",
 			"example_ruby": "カフェラテのLをお<ruby>願<rt>ねが</rt></ruby>いします。",
 			"example_zh": "请给我大杯拿铁。",
-			"example_en": "A large caffè latte, please."
+			"example_en": "A large caffè latte, please.",
+			"note": "原词：英语 large（外来语）。大号杯型，一般比普通杯贵一点。"
 		},
 		{
-			"id": "cafe-035",
-			"jp": "ホット／アイス",
-			"kana": "ホット・アイス",
-			"zh": "热的／冰的",
-			"en": "hot / iced",
-			"subtopic": "菜单上的其他词",
-			"example_jp": "カフェラテはホットとアイス、どちらにしますか？",
-			"example_zh": "拿铁要热的还是冰的？",
-			"example_en": "Would you like your latte hot or iced?"
+			"id": "cafe-051",
+			"jp": "ホット",
+			"kana": "ホット",
+			"zh": "热的",
+			"en": "hot",
+			"subtopic": "菜单用词",
+			"example_jp": "カフェラテをホットでお願いします。",
+			"example_ruby": "カフェラテをホットでお<ruby>願<rt>ねが</rt></ruby>いします。",
+			"example_zh": "请给我热拿铁。",
+			"example_en": "A hot caffè latte, please.",
+			"note": "原词：英语 hot（外来语）。热饮。点单时说「ホットで」就是要热的。"
 		},
 		{
-			"id": "cafe-036",
-			"jp": "店内でお召し上がりですか",
-			"kana": "てんないでおめしあがりですか",
-			"zh": "您在店里用吗？（店员）",
-			"en": "Will you be eating here?",
-			"subtopic": "点单会话",
-			"scene": "在柜台点单时，店员问堂食还是外带",
-			"example_jp": "「店内でお召し上がりですか？」「店内で。」",
-			"example_ruby": "「<ruby>店内<rt>てんない</rt></ruby>でお<ruby>召<rt>め</rt></ruby>し<ruby>上<rt>あ</rt></ruby>がりですか？」「<ruby>店内<rt>てんない</rt></ruby>で。」",
-			"example_zh": "「您在店里用吗？」「在店里。」",
-			"example_en": "\"For here?\" \"For here.\"",
-			"note": "「召し上がる」是「食べる・飲む」的尊敬语。"
-		},
-		{
-			"id": "cafe-037",
-			"jp": "店内で",
-			"kana": "てんないで",
-			"zh": "在店里吃（堂食）",
-			"en": "for here",
-			"subtopic": "点单会话",
-			"scene": "回答店员：堂食",
-			"example_jp": "「店内でお召し上がりですか？」「はい、店内で。」",
-			"example_ruby": "「<ruby>店内<rt>てんない</rt></ruby>でお<ruby>召<rt>め</rt></ruby>し<ruby>上<rt>あ</rt></ruby>がりですか？」「はい、<ruby>店内<rt>てんない</rt></ruby>で。」",
-			"example_zh": "「您在店里用吗？」「对，在店里。」",
-			"example_en": "\"For here?\" \"Yes, for here.\""
-		},
-		{
-			"id": "cafe-038",
-			"jp": "持ち帰りで",
-			"kana": "もちかえりで",
-			"zh": "带走（外带）",
-			"en": "to go",
-			"subtopic": "点单会话",
-			"scene": "回答店员：外带",
-			"example_jp": "「店内でお召し上がりですか？」「いえ、持ち帰りで。」",
-			"example_ruby": "「<ruby>店内<rt>てんない</rt></ruby>でお<ruby>召<rt>め</rt></ruby>し<ruby>上<rt>あ</rt></ruby>がりですか？」「いえ、<ruby>持<rt>も</rt></ruby>ち<ruby>帰<rt>かえ</rt></ruby>りで。」",
-			"example_zh": "「您在店里用吗？」「不，带走。」",
-			"example_en": "\"For here?\" \"No, to go.\""
-		},
-		{
-			"id": "cafe-039",
-			"jp": "ブレンドのRでお願いします",
-			"kana": "ブレンドのアールでおねがいします",
-			"zh": "请给我常规杯的综合咖啡",
-			"en": "A regular blend, please.",
-			"subtopic": "点单会话",
-			"scene": "点咖啡并说杯型",
-			"example_jp": "「ご注文は？」「ブレンドのRでお願いします。」",
-			"example_ruby": "「ご<ruby>注文<rt>ちゅうもん</rt></ruby>は？」「ブレンドのRでお<ruby>願<rt>ねが</rt></ruby>いします。」",
-			"example_zh": "「请问您要点什么？」「请给我常规杯的综合咖啡。」",
-			"example_en": "\"What can I get you?\" \"A regular blend, please.\"",
-			"note": "「饮料名＋の＋杯型＋でお願いします」可以套用到任何饮料。"
-		},
-		{
-			"id": "cafe-040",
-			"jp": "アイスコーヒー、ミルクとシロップなしで",
-			"kana": "アイスコーヒー ミルクとシロップなしで",
-			"zh": "冰咖啡，不要奶和糖浆",
-			"en": "Iced coffee, no milk or syrup.",
-			"subtopic": "点单会话",
-			"scene": "点冰咖啡，不要奶球和糖浆",
-			"example_jp": "アイスコーヒー、ミルクとシロップなしでお願いします。",
-			"example_ruby": "アイスコーヒー、ミルクとシロップなしでお<ruby>願<rt>ねが</rt></ruby>いします。",
-			"example_zh": "冰咖啡，不要奶也不要糖浆。",
-			"example_en": "Iced coffee with no milk or syrup, please.",
-			"note": "「〜なしで」＝不要……；想要就说「〜ありで」。"
-		},
-		{
-			"id": "cafe-041",
-			"jp": "紅茶はレモンでお願いします",
-			"kana": "こうちゃはレモンでおねがいします",
-			"zh": "红茶要加柠檬",
-			"en": "Lemon with the tea, please.",
-			"subtopic": "点单会话",
-			"scene": "店员问红茶配奶还是柠檬",
-			"example_jp": "「ミルクとレモン、どちらになさいますか？」「紅茶はレモンでお願いします。」",
-			"example_ruby": "「ミルクとレモン、どちらになさいますか？」「<ruby>紅茶<rt>こうちゃ</rt></ruby>はレモンでお<ruby>願<rt>ねが</rt></ruby>いします。」",
-			"example_zh": "「要奶还是柠檬？」「红茶要柠檬。」",
-			"example_en": "\"Milk or lemon?\" \"Lemon with the tea, please.\""
-		},
-		{
-			"id": "cafe-042",
-			"jp": "カフェインレスってありますか",
-			"kana": "カフェインレスってありますか",
-			"zh": "有无咖啡因的吗？",
-			"en": "Do you have decaf?",
-			"subtopic": "点单会话",
-			"scene": "晚上想喝无咖啡因的饮料",
-			"example_jp": "夜なので、カフェインレスってありますか？",
-			"example_ruby": "<ruby>夜<rt>よる</rt></ruby>なので、カフェインレスってありますか？",
-			"example_zh": "因为是晚上，有没有无咖啡因的？",
-			"example_en": "It's evening, so do you have anything decaf?",
-			"note": "「〜って」是口语里的「〜は」，用来提起话题。"
-		},
-		{
-			"id": "cafe-043",
-			"jp": "以上でよろしいですか",
-			"kana": "いじょうでよろしいですか",
-			"zh": "就这些吗？（店员）",
-			"en": "Will that be all?",
-			"subtopic": "点单会话",
-			"scene": "点完单后店员确认",
-			"example_jp": "「以上でよろしいですか？」「はい、以上で。」",
-			"example_ruby": "「<ruby>以上<rt>いじょう</rt></ruby>でよろしいですか？」「はい、<ruby>以上<rt>いじょう</rt></ruby>で。」",
-			"example_zh": "「就这些吗？」「对，就这些。」",
-			"example_en": "\"Will that be all?\" \"Yes, that's all.\""
-		},
-		{
-			"id": "cafe-044",
-			"jp": "はい、以上で",
-			"kana": "はい いじょうで",
-			"zh": "对，就这些",
-			"en": "Yes, that's all.",
-			"subtopic": "点单会话",
-			"scene": "回答店员：点完了",
-			"example_jp": "「ほかにご注文はありますか？」「はい、以上で。」",
-			"example_ruby": "「ほかにご<ruby>注文<rt>ちゅうもん</rt></ruby>はありますか？」「はい、<ruby>以上<rt>いじょう</rt></ruby>で。」",
-			"example_zh": "「还要点别的吗？」「不用了，就这些。」",
-			"example_en": "\"Anything else?\" \"No, that's all.\""
-		},
-		{
-			"id": "cafe-045",
-			"jp": "これ、今やってないんですか",
-			"kana": "これ いまやってないんですか",
-			"zh": "这个现在没有了吗？",
-			"en": "Isn't this available now?",
-			"subtopic": "点单会话",
-			"scene": "在菜单上看到「販売中止」时问店员",
-			"example_jp": "メニューに「販売中止」と書いてあったので、「これ、今やってないんですか？」と聞きました。",
-			"example_ruby": "メニューに「<ruby>販売中止<rt>はんばいちゅうし</rt></ruby>」と<ruby>書<rt>か</rt></ruby>いてあったので、「これ、<ruby>今<rt>いま</rt></ruby>やってないんですか？」と<ruby>聞<rt>き</rt></ruby>きました。",
-			"example_zh": "看到菜单上写着「停售」，就问店员「这个现在没有了吗？」",
-			"example_en": "The menu said \"discontinued,\" so I asked, \"Isn't this available now?\"",
-			"note": "「やってない」这里是「没有在卖」的口语说法。"
+			"id": "cafe-052",
+			"jp": "アイス",
+			"kana": "アイス",
+			"zh": "冰的",
+			"en": "iced",
+			"subtopic": "菜单用词",
+			"example_jp": "抹茶ラテをアイスでお願いします。",
+			"example_ruby": "<ruby>抹茶<rt>まっちゃ</rt></ruby>ラテをアイスでお<ruby>願<rt>ねが</rt></ruby>いします。",
+			"example_zh": "请给我冰抹茶拿铁。",
+			"example_en": "An iced matcha latte, please.",
+			"note": "原词：英语 ice（英语一般说 iced）（外来语）。冰饮。点单时说「アイスで」就是要冰的。"
 		}
 	]
 }

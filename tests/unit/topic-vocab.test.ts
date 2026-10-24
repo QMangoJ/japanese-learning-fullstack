@@ -72,11 +72,12 @@ describe("topic vocabulary data", () => {
 		expect(shopping.cards.find((card) => card.jp === "割引")?.note).toContain("八折");
 	});
 
-	it("adds a café menu topic with ordering phrases that each have a scene", () => {
+	it("keeps the café menu topic as the board's 39 words for flashcard review", () => {
 		const cafe = JSON.parse(readFileSync(join(DIR, "cafe-menu.json"), "utf8")) as TopicFile;
-		expect(cafe.cards.map((card) => card.jp)).toEqual(expect.arrayContaining(["紅茶", "販売中止", "以上でよろしいですか"]));
-		expect(cafe.cards.find((card) => card.jp === "以上でよろしいですか")?.kana).toBe("いじょうでよろしいですか");
-		for (const card of cafe.cards.filter((c) => c.subtopic === "点单会话")) expect(card.scene, card.id).toBeTruthy();
+		expect(cafe.cards).toHaveLength(39);
+		expect(cafe.cards.map((card) => card.jp)).toEqual(expect.arrayContaining(["紅茶", "販売中止", "濃厚", "トッピング"]));
+		expect(cafe.cards.find((card) => card.jp === "販売中止")?.kana).toBe("はんばいちゅうし");
+		for (const card of cafe.cards) expect(card.note, card.id).toMatch(/^原词：/);
 	});
 
 	it("adds everyday clothes-shopping words in three new groups, each with a scene and furigana", () => {
