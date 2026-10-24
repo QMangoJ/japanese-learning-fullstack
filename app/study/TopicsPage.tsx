@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState, useSyncExternalStore } from "react";
+import { Suspense, lazy, useEffect, useMemo, useState, useSyncExternalStore } from "react";
 
 import { RubyHtml, SayButton } from "../routes/study-common";
 import { dueEntry, getDueVersion, rememberFail, rememberKnown, subscribeDue, type DueDraft } from "./due-review";
@@ -11,7 +11,11 @@ import { isTopicFile, isTopicIndex, topicDueId, type TopicCard, type TopicFile, 
 
 type Status = "new" | "unknown" | "learning";
 type OnlyFilter = "all" | "unknown" | "due";
-type View = "list" | "cards";
+type View = "list" | "cards" | "board";
+
+/** 有专用「看板」页面的专题：默认打开看板，「单词表」由看板代替，闪卡复习仍用通用格式。 */
+const BOARD_SLUGS = new Set(["cafe-menu"]);
+const LazyCafeMenuBoard = lazy(() => import("./CafeMenuBoard").then((module) => ({ default: module.CafeMenuBoard })));
 
 const cache = new Map<string, Promise<unknown>>();
 
@@ -123,7 +127,8 @@ function TopicDetail({ slug }: { slug: string }) {
 	const [error, setError] = useState(false);
 	const [sub, setSub] = useState("all");
 	const [only, setOnly] = useState<OnlyFilter>("all");
-	const [view, setView] = useState<View>("list");
+	const hasBoard = BOARD_SLUGS.has(slug);
+	const [view, setView] = useState<View>(hasBoard ? "board" : "list");
 	const [deckIds, setDeckIds] = useState<string[]>([]);
 	const [idx, setIdx] = useState(0);
 	const [flipped, setFlipped] = useState(false);
@@ -218,36 +223,57 @@ function TopicDetail({ slug }: { slug: string }) {
 				</div>
 			</div>
 			<div className="fc-filter topic-views" role="tablist">
-				<button type="button" role="tab" aria-selected={view === "list"} className={view === "list" ? "on" : ""} onClick={() => setView("list")}>
-					📋 {lx("单词表", "Word list")}
-				</button>
+				{hasBoard ? (
+					<button
+						type="button"
+						role="tab"
+						aria-selected={view === "board"}
+						className={view === "board" ? "on" : ""}
+						data-view="board"
+						onClick={() => setView("board")}
+					>
+						🖼️ {lx("菜单看板", "Menu board")}
+					</button>
+				) : (
+					<button type="button" role="tab" aria-selected={view === "list"} className={view === "list" ? "on" : ""} onClick={() => setView("list")}>
+						📋 {lx("单词表", "Word list")}
+					</button>
+				)}
 				<button type="button" role="tab" aria-selected={view === "cards"} className={view === "cards" ? "on" : ""} onClick={() => setView("cards")}>
 					🗂️ {lx("闪卡自测", "Flashcards")}
 				</button>
 			</div>
-			<div className="fc-filter topic-subs" aria-label={lx("按主题筛选", "Filter by subtopic")}>
-				<button type="button" className={sub === "all" ? "on" : ""} onClick={() => setSub("all")}>
-					{lx("全部", "All")} <span className="n">{topic.cards.length}</span>
-				</button>
-				{topic.subtopics.map((s) => (
-					<button key={s.zh} type="button" className={sub === s.zh ? "on" : ""} data-subtopic={s.zh} onClick={() => setSub(s.zh)}>
-						{subLabel.get(s.zh)} <span className="n">{topic.cards.filter((c) => c.subtopic === s.zh).length}</span>
-					</button>
-				))}
-			</div>
-			<div className="fc-filter topic-only">
-				<button type="button" className={only === "all" ? "on" : ""} onClick={() => setOnly("all")}>
-					{lx("全部", "All")}
-				</button>
-				<button type="button" className={only === "unknown" ? "on" : ""} data-only="unknown" onClick={() => setOnly("unknown")}>
-					{lx("只看不会的", "Only “don't know”")} {counts.unknown ? <span className="n">{counts.unknown}</span> : null}
-				</button>
-				<button type="button" className={only === "due" ? "on" : ""} onClick={() => setOnly("due")}>
-					{lx("今天要复习", "Due today")} {counts.due ? <span className="n">{counts.due}</span> : null}
-				</button>
-			</div>
-
-			{view === "list" ? (
+			{view === "board" ? (
+				<Suspense fallback={<div className="empty">{lx("看板加载中…", "Loading board…")}</div>}>
+					<LazyCafeMenuBoard />
+				</Suspense>
+			) : null}
+			{view === "board" ? null : (
+				<>
+					<div className="fc-filter topic-subs" aria-label={lx("按主题筛选", "Filter by subtopic")}>
+						<button type="button" className={sub === "all" ? "on" : ""} onClick={() => setSub("all")}>
+							{lx("全部", "All")} <span className="n">{topic.cards.length}</span>
+						</button>
+						{topic.subtopics.map((s) => (
+							<button key={s.zh} type="button" className={sub === s.zh ? "on" : ""} data-subtopic={s.zh} onClick={() => setSub(s.zh)}>
+								{subLabel.get(s.zh)} <span className="n">{topic.cards.filter((c) => c.subtopic === s.zh).length}</span>
+							</button>
+						))}
+					</div>
+					<div className="fc-filter topic-only">
+						<button type="button" className={only === "all" ? "on" : ""} onClick={() => setOnly("all")}>
+							{lx("全部", "All")}
+						</button>
+						<button type="button" className={only === "unknown" ? "on" : ""} data-only="unknown" onClick={() => setOnly("unknown")}>
+							{lx("只看不会的", "Only “don't know”")} {counts.unknown ? <span className="n">{counts.unknown}</span> : null}
+						</button>
+						<button type="button" className={only === "due" ? "on" : ""} onClick={() => setOnly("due")}>
+							{lx("今天要复习", "Due today")} {counts.due ? <span className="n">{counts.due}</span> : null}
+						</button>
+					</div>
+				</>
+			)}
+			{view === "board" ? null : view === "list" ? (
 				filtered.length ? (
 					<ul className="topic-list">
 						{filtered.map((card) => {
