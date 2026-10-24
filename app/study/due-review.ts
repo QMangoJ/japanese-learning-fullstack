@@ -1,3 +1,4 @@
+import { canAttemptSync, noteSyncResult } from "./kv-sync-policy";
 import { jstToday } from "./lesson-review";
 
 export type DueKind = "grammar" | "mistake" | "listening" | "topic";
@@ -32,8 +33,6 @@ const SNAP_JP = 800;
 const SNAP_TEXT = 4_000;
 const SNAP_READING = 200;
 const MAX_ID = 1_000;
-const SYNC_RETRY_BASE_MS = 1_500;
-const SYNC_RETRY_MAX_MS = 30_000;
 
 const listeners = new Set<() => void>();
 let version = 0;
@@ -44,8 +43,6 @@ let dirty = false;
 let syncing = false;
 let pushing = false;
 let resyncing = false;
-let retryAttempt = 0;
-let pushTimer: ReturnType<typeof setTimeout> | null = null;
 
 export function subscribeDue(listener: () => void) {
 	listeners.add(listener);
@@ -168,8 +165,7 @@ function commit() {
 	dirty = true;
 	writeLocal();
 	emitDue();
-	if (!signedIn || !ready || syncing) return;
-	schedulePush();
+	// Synced to the server once on the next page open (see kv-sync-policy), not on every change.
 }
 
 export function hydrateDue() {
@@ -264,19 +260,6 @@ export function forgetDue(id: string) {
 	commit();
 }
 
-function retryDelay(attempt: number) {
-	return Math.min(SYNC_RETRY_MAX_MS, SYNC_RETRY_BASE_MS * 2 ** Math.max(0, attempt - 1));
-}
-
-function schedulePush(delay = 400) {
-	if (!signedIn || !ready || !dirty) return;
-	if (pushTimer) clearTimeout(pushTimer);
-	pushTimer = setTimeout(() => {
-		pushTimer = null;
-		void pushDueNow();
-	}, delay);
-}
-
 function lastAccountId() {
 	try {
 		return localStorage.getItem("accountId") || "";
@@ -288,10 +271,6 @@ function lastAccountId() {
 export function noteDueSignedOut() {
 	signedIn = false;
 	ready = true;
-	if (pushTimer) {
-		clearTimeout(pushTimer);
-		pushTimer = null;
-	}
 	emitDue();
 }
 
@@ -320,17 +299,13 @@ export async function pullDueFromServer(accountId: string) {
 		ready = true;
 		if (!pulled && items.length) dirty = true;
 		emitDue();
-		if (dirty) schedulePush(0);
 	}
 }
 
 export async function pushDueNow() {
 	if (!signedIn || !ready || !dirty) return false;
-	if (pushTimer) {
-		clearTimeout(pushTimer);
-		pushTimer = null;
-	}
 	if (pushing) return false;
+	if (!canAttemptSync("/api/due-review")) return false;
 	pushing = true;
 	const snapshot = JSON.stringify(items);
 	try {
@@ -340,21 +315,21 @@ export async function pushDueNow() {
 			credentials: "same-origin",
 			body: snapshot,
 		});
+		noteSyncResult("/api/due-review", response.status);
 		if (!response.ok) throw new Error(`due review sync failed: ${response.status}`);
-		retryAttempt = 0;
 		if (JSON.stringify(items) === snapshot) dirty = false;
 		return true;
 	} catch {
-		retryAttempt += 1;
+		// Network error: keep local data, try again on a later page open (cooldown applies).
+		noteSyncResult("/api/due-review", 0);
 		return false;
 	} finally {
 		pushing = false;
-		if (dirty) schedulePush(retryDelay(retryAttempt || 1));
 	}
 }
 
 export async function resyncDue() {
-	if (!signedIn || !ready || pushTimer || pushing || dirty || resyncing) return;
+	if (!signedIn || !ready || pushing || dirty || resyncing) return;
 	resyncing = true;
 	try {
 		const res = await fetch("/api/due-review", { cache: "no-store", credentials: "same-origin" });
@@ -370,7 +345,6 @@ export async function resyncDue() {
 		syncing = false;
 		dirty = JSON.stringify(merged) !== JSON.stringify(server);
 		if (changed) emitDue();
-		if (dirty) schedulePush();
 	} catch {
 		/* ignore */
 	} finally {
@@ -380,8 +354,8 @@ export async function resyncDue() {
 
 export function kickDueSync() {
 	if (!signedIn || !ready) return;
-	if (dirty) schedulePush(0);
-	else void resyncDue();
+	// Pushes happen once per page open; on focus only pull (read-only) when nothing is pending.
+	if (!dirty) void resyncDue();
 }
 
 export function resetDueForTests() {
@@ -392,7 +366,4 @@ export function resetDueForTests() {
 	syncing = false;
 	pushing = false;
 	resyncing = false;
-	retryAttempt = 0;
-	if (pushTimer) clearTimeout(pushTimer);
-	pushTimer = null;
 }

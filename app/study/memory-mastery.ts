@@ -1,3 +1,4 @@
+import { canAttemptSync, noteSyncResult } from "./kv-sync-policy";
 /** `true` is 记住了. `fuzzy` and `blank` are the only marks that leave the default. */
 export type MasteryMap = Record<string, true | "fuzzy" | "blank">;
 
@@ -9,8 +10,6 @@ export const FLASHCARD_MASTERY_KEY = "flashcard-mastery";
 
 const MAX_ITEMS = 6_000;
 const MAX_ID = 1_000;
-const SYNC_RETRY_BASE_MS = 1_500;
-const SYNC_RETRY_MAX_MS = 30_000;
 
 type Entry = { known: boolean; ts: number; level?: Exclude<CardLevel, "known"> };
 type EntryMap = Record<string, Entry>;
@@ -27,8 +26,6 @@ let dirty = false;
 let syncing = false;
 let pushing = false;
 let resyncing = false;
-let retryAttempt = 0;
-let pushTimer: ReturnType<typeof setTimeout> | null = null;
 
 export function masteryKey(deckId: string, itemId: string): string {
 	return `${deckId}::${itemId}`;
@@ -251,25 +248,11 @@ export function isMastered(map: MasteryMap, deckId: string, itemId: string): boo
 	return cardLevel(map, deckId, itemId) === "known";
 }
 
-function retryDelay(attempt: number) {
-	return Math.min(SYNC_RETRY_MAX_MS, SYNC_RETRY_BASE_MS * 2 ** Math.max(0, attempt - 1));
-}
-
-function schedulePush(delay = 400) {
-	if (!signedIn || !ready || !dirty) return;
-	if (pushTimer) clearTimeout(pushTimer);
-	pushTimer = setTimeout(() => {
-		pushTimer = null;
-		void pushMasteryNow();
-	}, delay);
-}
-
 function commitFlashcards() {
 	dirty = true;
 	writeFlashcards();
 	emit();
-	if (!signedIn || !ready || syncing) return;
-	schedulePush();
+	// Synced to the server once on the next page open (see kv-sync-policy), not on every change.
 }
 
 export function setMastered(
@@ -333,10 +316,6 @@ export function hydrateMastery() {
 export function noteMasterySignedOut() {
 	signedIn = false;
 	ready = true;
-	if (pushTimer) {
-		clearTimeout(pushTimer);
-		pushTimer = null;
-	}
 	emit();
 }
 
@@ -365,17 +344,13 @@ export async function pullMasteryFromServer(accountId: string) {
 		ready = true;
 		if (!pulled && rowsFromEntries().length > 0) dirty = true;
 		emit();
-		if (dirty) schedulePush(0);
 	}
 }
 
 export async function pushMasteryNow() {
 	if (!signedIn || !ready || !dirty) return false;
-	if (pushTimer) {
-		clearTimeout(pushTimer);
-		pushTimer = null;
-	}
 	if (pushing) return false;
+	if (!canAttemptSync("/api/mastery")) return false;
 	pushing = true;
 	const snapshotRows = JSON.stringify(rowsFromEntries());
 	try {
@@ -385,21 +360,21 @@ export async function pushMasteryNow() {
 			credentials: "same-origin",
 			body: snapshotRows,
 		});
+		noteSyncResult("/api/mastery", response.status);
 		if (!response.ok) throw new Error(`mastery sync failed: ${response.status}`);
-		retryAttempt = 0;
 		if (JSON.stringify(rowsFromEntries()) === snapshotRows) dirty = false;
 		return true;
 	} catch {
-		retryAttempt += 1;
+		// Network error: keep local data, try again on a later page open (cooldown applies).
+		noteSyncResult("/api/mastery", 0);
 		return false;
 	} finally {
 		pushing = false;
-		if (dirty) schedulePush(retryDelay(retryAttempt || 1));
 	}
 }
 
 export async function resyncMastery() {
-	if (!signedIn || !ready || pushTimer || pushing || dirty || resyncing) return;
+	if (!signedIn || !ready || pushing || dirty || resyncing) return;
 	resyncing = true;
 	try {
 		const res = await fetch("/api/mastery", { cache: "no-store", credentials: "same-origin" });
@@ -415,7 +390,6 @@ export async function resyncMastery() {
 		syncing = false;
 		dirty = !sameRows(rowsFromEntries(), server);
 		if (!sameRows(rowsFromEntries(), before)) emit();
-		if (dirty) schedulePush();
 	} catch {
 		/* ignore */
 	} finally {
@@ -426,8 +400,8 @@ export async function resyncMastery() {
 
 export function kickMasterySync() {
 	if (!signedIn || !ready) return;
-	if (dirty) schedulePush(0);
-	else void resyncMastery();
+	// Pushes happen once per page open; on focus only pull (read-only) when nothing is pending.
+	if (!dirty) void resyncMastery();
 }
 
 export function resetMasteryForTests() {
@@ -442,7 +416,4 @@ export function resetMasteryForTests() {
 	syncing = false;
 	pushing = false;
 	resyncing = false;
-	retryAttempt = 0;
-	if (pushTimer) clearTimeout(pushTimer);
-	pushTimer = null;
 }

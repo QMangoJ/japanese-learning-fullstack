@@ -1,6 +1,7 @@
 import type { AppLoadContext } from "react-router";
 
 import { getSessionUser, json } from "../auth/http";
+import { putIfChanged } from "../auth/kv-write";
 import { isMistakesPayload } from "../auth/study-payloads";
 import { mistakesKey } from "../auth/users";
 import { manualNotesNeedingNotify, notifyManualMistakesAdded } from "../study/mistake-notify";
@@ -44,13 +45,14 @@ export async function action({ request, context }: Args) {
 	}
 
 	const key = mistakesKey(user.id);
-	const previous = await context.cloudflare.env.MISTAKES_KV.get(key);
-	await context.cloudflare.env.MISTAKES_KV.put(key, body);
+	const saved = await putIfChanged(context.cloudflare.env.MISTAKES_KV, key, body);
+	if (saved instanceof Response) return saved;
+	if (!saved.written) return json({ ok: true, written: false });
 
-	const notes = manualNotesNeedingNotify(previous, body);
+	const notes = manualNotesNeedingNotify(saved.previous, body);
 	if (notes.length) {
 		context.cloudflare.ctx.waitUntil(notifyManualMistakesAdded(context.cloudflare.env, user.id, notes));
 	}
 
-	return json({ ok: true });
+	return json({ ok: true, written: true });
 }

@@ -1,3 +1,5 @@
+import { canAttemptSync, noteSyncResult } from "./kv-sync-policy";
+
 export const USAGE_DAY_CAP_SEC = 16 * 60 * 60;
 export const USAGE_IDLE_MS = 3 * 60 * 1000;
 export const USAGE_ENDPOINT = "https://japanese-fullstack.alanjwakawaka.workers.dev/api/usage";
@@ -165,7 +167,8 @@ let snapshot: UsageSnapshot = EMPTY_SNAPSHOT;
 let timer = 0;
 let started = 0;
 let syncing: Promise<void> | null = null;
-let lastSyncAt = Date.now();
+// Study time is kept locally during the session and uploaded once per page open (KV write budget).
+let syncedThisPage = false;
 const listeners = new Set<() => void>();
 const tabId = `t${Math.random().toString(36).slice(2)}`;
 
@@ -276,13 +279,8 @@ function tick() {
 	publish(now);
 }
 
-function onOnline() {
-	void syncNow();
-}
-
 function onPageHide() {
 	if (!audioPlaying) closeSegment();
-	void syncNow();
 }
 
 function credentials(): RequestCredentials {
@@ -314,19 +312,31 @@ function readRemote(body: { days?: unknown; mine?: unknown }) {
 	remoteMine = sanitizeDays(body.mine);
 }
 
+// A `lite` POST answers with the posted days only; fold them into what the GET returned.
+function mergeRemote(body: { days?: unknown; mine?: unknown }) {
+	remote = { ...remote, ...sanitizeDays(body.days) };
+	remoteMine = { ...remoteMine, ...sanitizeDays(body.mine) };
+}
+
 async function doSync() {
 	if (kind === "account" && !signedIn) return;
 	if (typeof fetch === "undefined" || !local.device) return;
+	if (syncedThisPage) return;
+	const policyKey = `usage:${kind}`;
+	if (!canAttemptSync(policyKey)) return;
+	syncedThisPage = true;
 	const endpoint = withDevice(usageEndpoint(kind));
 	try {
 		const got = await fetch(endpoint, { credentials: credentials(), cache: "no-store" });
 		if (got.status === 401) {
+			syncedThisPage = false;
 			signedIn = false;
 			lastSyncOk = false;
 			publish();
 			return;
 		}
 		if (!got.ok) {
+			noteSyncResult(policyKey, got.status);
 			lastSyncOk = false;
 			publish();
 			return;
@@ -336,22 +346,23 @@ async function doSync() {
 		const totals: DayMap = {};
 		for (const [day, sec] of Object.entries(local.days)) if (sec > (remoteMine[day] || 0)) totals[day] = sec;
 		if (Object.keys(totals).length && claimLock()) {
-			const posted = await fetch(endpoint, {
+			const posted = await fetch(`${endpoint}&lite=1`, {
 				method: "POST",
 				credentials: credentials(),
 				headers: { "content-type": "application/json" },
 				body: JSON.stringify({ device: local.device, totals }),
-				keepalive: true,
 			});
+			noteSyncResult(policyKey, posted.status);
 			if (!posted.ok) {
 				lastSyncOk = false;
 				publish();
 				return;
 			}
-			readRemote((await posted.json()) as { days?: unknown; mine?: unknown });
-		}
+			mergeRemote((await posted.json()) as { days?: unknown; mine?: unknown });
+		} else noteSyncResult(policyKey, got.status);
 		lastSyncOk = true;
 	} catch {
+		noteSyncResult(policyKey, 0);
 		lastSyncOk = false;
 	}
 	publish();
@@ -375,7 +386,6 @@ function onVisibility() {
 	const now = Date.now();
 	if (typeof document !== "undefined" && document.hidden && !audioPlaying) closeSegment(now);
 	else if (counting(now) && segmentStart == null) segmentStart = now;
-	if (typeof document !== "undefined" && !document.hidden) void syncNow();
 }
 
 function onStorage(event: StorageEvent) {
@@ -419,13 +429,7 @@ export function refreshUsageAccount(signedInNow?: boolean) {
 function startTimer() {
 	if (typeof window === "undefined") return;
 	if (timer) window.clearInterval(timer);
-	timer = window.setInterval(() => {
-		tick();
-		if (Date.now() - lastSyncAt >= 60_000) {
-			lastSyncAt = Date.now();
-			void syncNow();
-		}
-	}, 1000);
+	timer = window.setInterval(tick, 1000);
 }
 
 function stopTimer() {
@@ -448,7 +452,6 @@ export function startUsageTracker(nextKind: UsageKind = "account"): () => void {
 			document.addEventListener("scroll", onActivity, { passive: true, capture: true });
 			window.addEventListener("touchstart", onActivity, opts);
 			document.addEventListener("visibilitychange", onVisibility);
-			window.addEventListener("online", onOnline);
 			window.addEventListener("pagehide", onPageHide);
 			window.addEventListener("storage", onStorage);
 			void refreshAccount().then(() => syncNow());
@@ -467,7 +470,6 @@ export function startUsageTracker(nextKind: UsageKind = "account"): () => void {
 		document.removeEventListener("scroll", onActivity, true);
 		window.removeEventListener("touchstart", onActivity);
 		document.removeEventListener("visibilitychange", onVisibility);
-		window.removeEventListener("online", onOnline);
 		window.removeEventListener("pagehide", onPageHide);
 		window.removeEventListener("storage", onStorage);
 		audioPlaying = false;

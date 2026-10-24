@@ -210,6 +210,31 @@ describe("/api/mastery", () => {
 		expect(await get.json()).toEqual(sample);
 	});
 
+	it("skips the KV write when nothing changed and answers 429 once KV is out of quota", async () => {
+		const kv = memoryKv();
+		seedUser(kv, { id: "g_1" });
+		let writes = 0;
+		const put = kv.put;
+		kv.put = async (...args: Parameters<typeof put>) => {
+			writes += 1;
+			return put(...args);
+		};
+		const send = async () =>
+			masteryAction({
+				request: await authedRequest("http://localhost/api/mastery", "g_1", { method: "PUT", body: JSON.stringify(sample) }),
+				context: routeContext(testEnv(kv)),
+			});
+		expect((await send()).status).toBe(200);
+		expect((await send()).status).toBe(200);
+		expect(writes).toBe(1);
+
+		kv.map.delete(masteryKey("g_1"));
+		kv.put = async () => {
+			throw new Error("KV put() limit exceeded for the day.");
+		};
+		expect((await send()).status).toBe(429);
+	});
+
 	it("rejects a mark that is not a boolean or uses an unsafe id", async () => {
 		const kv = memoryKv();
 		seedUser(kv, { id: "g_1" });

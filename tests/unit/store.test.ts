@@ -444,7 +444,7 @@ describe("favorites", () => {
 		expect(localStorage.getItem("accountId")).toBe("g_1");
 	});
 
-	it("retries an unsaved favorite as soon as the browser comes back online", async () => {
+	it("keeps an unsaved favorite locally and retries it on a later page open after the cooldown", async () => {
 		vi.useFakeTimers();
 		try {
 			saveSelectionFav("word", "冷蔵庫", "#/");
@@ -471,11 +471,20 @@ describe("favorites", () => {
 
 			await bootAccount();
 			expect(favPuts).toBe(1);
+			// No retries within the page: coming back online or focusing never re-uploads.
 			const detach = attachResync();
 			window.dispatchEvent(new Event("online"));
-			await vi.advanceTimersByTimeAsync(0);
-			expect(favPuts).toBe(2);
+			await vi.advanceTimersByTimeAsync(60_000);
+			expect(favPuts).toBe(1);
 			detach();
+			expect(localStorage.getItem("favs")).toContain("冷蔵庫");
+			// A page open inside the one-hour cooldown still skips the upload.
+			await bootAccount();
+			expect(favPuts).toBe(1);
+			// The next page open after the cooldown uploads once.
+			vi.setSystemTime(Date.now() + 61 * 60_000);
+			await bootAccount();
+			expect(favPuts).toBe(2);
 		} finally {
 			vi.useRealTimers();
 		}

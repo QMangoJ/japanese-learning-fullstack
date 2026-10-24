@@ -1,6 +1,7 @@
 import type { AppLoadContext } from "react-router";
 
 import { getSessionUser, json } from "../auth/http";
+import { putIfChanged } from "../auth/kv-write";
 import { isFavoritesPayload } from "../auth/study-payloads";
 import { favsKey } from "../auth/users";
 
@@ -42,6 +43,7 @@ export async function action({ request, context }: Args) {
 		return json({ error: "invalid json" }, { status: 400 });
 	}
 
-	await context.cloudflare.env.FAVORITES_KV.put(favsKey(user.id), body);
-	return json({ ok: true });
+	const saved = await putIfChanged(context.cloudflare.env.FAVORITES_KV, favsKey(user.id), body);
+	if (saved instanceof Response) return saved;
+	return json({ ok: true, written: saved.written });
 }

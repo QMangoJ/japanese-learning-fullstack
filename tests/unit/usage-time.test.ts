@@ -138,6 +138,39 @@ describe("per-day records", () => {
 		expect(await res.json()).toEqual({ days: { "2026-10-13": 500, "2026-10-14": 100, "2026-10-15": 30 }, mine: { "2026-10-14": 100, "2026-10-15": 30 } });
 		expect(kv.map.has("usage-day:u:g_2:2026-10-15")).toBe(true);
 	});
+	it("lite reports skip list() and unchanged writes, answering with the posted days only", async () => {
+		const kv = memoryKv({ [usageKey("g_3")]: JSON.stringify({ days: { "2026-10-13": 500 } }) });
+		seedUser(kv, { id: "g_3" });
+		let lists = 0;
+		let writes = 0;
+		const { list, put } = kv;
+		kv.list = async (...args: Parameters<typeof list>) => {
+			lists += 1;
+			return list(...args);
+		};
+		kv.put = async (...args: Parameters<typeof put>) => {
+			if (args[0].startsWith("usage-day:")) writes += 1;
+			return put(...args);
+		};
+		const ctx = routeContext(testEnv(kv));
+		const send = (totals: Record<string, number>) => authedRequest("http://localhost/api/usage?device=devbbbb&lite=1", "g_3", {
+			method: "POST",
+			body: JSON.stringify({ device: "devbbbb", totals }),
+		});
+		const res = await usageAction({ request: await send({ "2026-10-14": 100 }), context: ctx });
+		expect(await res.json()).toEqual({ days: { "2026-10-14": 100 }, mine: { "2026-10-14": 100 } });
+		await usageAction({ request: await send({ "2026-10-14": 100 }), context: ctx });
+		expect(lists).toBe(0);
+		expect(writes).toBe(1);
+		const other = await usageAction({
+			request: await authedRequest("http://localhost/api/usage?device=devcccc&lite=1", "g_3", {
+				method: "POST",
+				body: JSON.stringify({ device: "devcccc", totals: { "2026-10-14": 50 } }),
+			}),
+			context: ctx,
+		});
+		expect(await other.json()).toEqual({ days: { "2026-10-14": 150 }, mine: { "2026-10-14": 50 } });
+	});
 	it("keeps max per device, sums devices, legacy is a floor", () => {
 		let rec = mergeDayRecord(null, "dev1abc", 100);
 		rec = mergeDayRecord(rec, "dev1abc", 40);
