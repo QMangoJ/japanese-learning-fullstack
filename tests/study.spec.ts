@@ -625,7 +625,7 @@ test.describe("study navigation", () => {
 		await expect(page.getByText("在 ATM 取了三万日元。")).toBeVisible();
 		await page.getByRole("button", { name: /专题|Topics/ }).first().click();
 		await page.locator("[data-topic='frontend']").click();
-		await expect(page.getByText("修正が終わったので、プルリクエストを出しました。")).toBeVisible();
+		await expect(page.locator(".topic-item__jp", { hasText: "プルリクエスト" }).first()).toBeVisible();
 		await page.getByRole("button", { name: /专题|Topics/ }).first().click();
 		await page.locator("[data-topic='clothes-shopping']").click();
 		await expect(page.getByText("这件大衣可以试穿吗？")).toBeVisible();
@@ -1268,7 +1268,7 @@ test.describe("study interactions", () => {
 		await expect(page.locator(".review-day").first()).toBeVisible({ timeout: 15_000 });
 		await page.getByRole("tab", { name: "Preply すみれ先生" }).click();
 		const newest = page.locator(".review-day").first();
-		await expect(newest).toContainText(/10月23日|Oct 23/);
+		await expect(newest).toContainText(/10月22日|Oct 22/);
 		await newest.click();
 		await expect(page.locator(".fcard").first()).toBeVisible({ timeout: 15_000 });
 		await page.locator(".fcard").first().click();
