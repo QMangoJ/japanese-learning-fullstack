@@ -1105,11 +1105,14 @@ export function StudyApp() {
 	else if (routeKey === "#/search" && readingSearchError)
 		body = <div className="empty">{lx("读解词典加载失败，请返回后重试。", "Reading search data failed to load. Please go back and try again.")}</div>;
 	else if (weekLocked || homeLocked) body = <TrialLock />;
-	else if (day && isReading()) body = <LazyReadingN3Content week={day.w} day={day.d} embedded book={MODULE === "n2reading" ? "n2" : "n3"} />;
-	else if (day && isListening())
+	// 读解和听解都走这里：正文各自渲染，翻页圆钮统一挂上，和语法、词汇、汉字页一样（DayPage 自带 DayNav）。
+	// 以前只有听解分支挂了 DayNav，读解只剩正文最底部的「上一课/下一课」，滚到底才看得到。
+	else if (day && (isReading() || isListening()))
 		body = (
 			<>
-				{MODULE === "n2listening" ? (
+				{isReading() ? (
+					<LazyReadingN3Content week={day.w} day={day.d} embedded book={MODULE === "n2reading" ? "n2" : "n3"} />
+				) : MODULE === "n2listening" ? (
 					<LazyListeningN2Content chapter={day.w} section={day.d} embedded />
 				) : MODULE === "n1listening" ? (
 					<LazyListeningN1Content chapter={day.w} section={day.d} embedded />
