@@ -1089,6 +1089,8 @@ test.describe("study typebar", () => {
 		await page.getByRole("button", { name: "语法讲解" }).click();
 		await expect(page.locator(".rb-grammar")).toBeVisible();
 		await expect(page.locator(".rb-nav button").last()).toBeEnabled();
+		// 读解页和其他课文页一样有悬浮翻页钮，不用滚到底
+		await expect(page.locator("button.daynav-fab.next")).toBeVisible();
 	});
 });
 
