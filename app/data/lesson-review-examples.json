@@ -5801,5 +5801,257 @@
 		"example": "林志炫の声はとてもきれいです。",
 		"exampleCn": "林志炫的声音非常好听。",
 		"exampleEn": "Terry Lin's voice is very beautiful."
+	},
+	"コツがいります": {
+		"cn": "需要窍门、得有诀窍（コツ＝诀窍；がいる＝需要）",
+		"en": "It takes a knack.",
+		"example": "天ぷらをきれいに揚げるのはコツがいります。",
+		"exampleCn": "把天妇罗炸得好看是需要诀窍的。",
+		"exampleEn": "Frying tempura nicely takes a knack."
+	},
+	"ずっと海外に住みたかったんだ": {
+		"cn": "我一直都很想住在国外（〜たかった：过去一直想；〜んだ：说明自己的心情）",
+		"en": "I'd always wanted to live abroad.",
+		"example": "子どものころから、ずっと海外に住みたかったんだ。",
+		"exampleCn": "我从小就一直很想住在国外。",
+		"exampleEn": "I'd wanted to live abroad ever since I was a kid."
+	},
+	"夢を叶えたね！": {
+		"cn": "你实现梦想了呢！（叶える かなえる：实现愿望，N2）",
+		"en": "You made your dream come true!",
+		"example": "ついに留学できたんだ。夢を叶えたね！",
+		"exampleCn": "终于能留学了啊。你实现梦想了呢！",
+		"exampleEn": "You finally got to study abroad. You made your dream come true!"
+	},
+	"業界": {
+		"cn": "行业、业界（ぎょうかい，N2）",
+		"en": "industry; business world",
+		"example": "IT業界で働いています。",
+		"exampleCn": "我在IT行业工作。",
+		"exampleEn": "I work in the IT industry."
+	},
+	"無敵！": {
+		"cn": "无敌！（むてき，N1）",
+		"en": "Invincible!",
+		"example": "二人が組めば無敵だ！",
+		"exampleCn": "我们俩联手就无敌了！",
+		"exampleEn": "If the two of us team up, we're unstoppable!"
+	},
+	"敬語の種類": {
+		"cn": "敬语的种类：尊敬语、谦让语、丁宁语三种",
+		"en": "the types of keigo (honorific language)",
+		"example": "敬語の種類は大きく三つに分けられます。",
+		"exampleCn": "敬语大致可以分为三种。",
+		"exampleEn": "Keigo can be broadly divided into three types."
+	},
+	"尊敬語": {
+		"cn": "尊敬语：抬高对方，用于对方（长辈、客户）的动作",
+		"en": "sonkeigo: respectful language for the other person's actions",
+		"example": "「いらっしゃる」は「行く」の尊敬語です。",
+		"exampleCn": "「いらっしゃる」是「行く」的尊敬语。",
+		"exampleEn": "\"Irassharu\" is the sonkeigo form of \"iku\" (to go)."
+	},
+	"謙譲語": {
+		"cn": "谦让语：把自己放低来表示敬意，用于自己或自己一方的人的动作",
+		"en": "kenjogo: humble language for your own actions",
+		"example": "「伺う」は「行く」の謙譲語です。",
+		"exampleCn": "「伺う」是「行く」的谦让语。",
+		"exampleEn": "\"Ukagau\" is the kenjogo form of \"iku\" (to go)."
+	},
+	"相手を高める": {
+		"cn": "抬高对方（尊敬语的作用）",
+		"en": "to raise (show respect to) the other person",
+		"example": "尊敬語は相手を高める言い方です。",
+		"exampleCn": "尊敬语是抬高对方的说法。",
+		"exampleEn": "Sonkeigo is a way of speaking that raises the other person."
+	},
+	"自分をへりくだらせて敬意を示す": {
+		"cn": "把自己放低来表示敬意（谦让语的作用；へりくだる：谦逊、自谦，N1；敬意 けいい：敬意）",
+		"en": "to show respect by humbling yourself",
+		"example": "謙譲語は、自分をへりくだらせて相手に敬意を示す言い方です。",
+		"exampleCn": "谦让语是把自己放低、向对方表示敬意的说法。",
+		"exampleEn": "Kenjogo is a way of showing respect to the other person by humbling yourself."
+	},
+	"言う → おっしゃる／申し上げる": {
+		"cn": "说：尊敬语 おっしゃる（对方说）／谦让语 申し上げる（我说）",
+		"en": "to say: ossharu (respectful) / moushiageru (humble)",
+		"example": "部長がおっしゃったことを、お客様に申し上げました。",
+		"exampleCn": "我把部长说的话转告给了客户。",
+		"exampleEn": "I passed on what the manager said to the client."
+	},
+	"行く → いらっしゃる／伺う": {
+		"cn": "去：尊敬语 いらっしゃる／谦让语 伺う",
+		"en": "to go: irassharu (respectful) / ukagau (humble)",
+		"example": "明日の午後、御社に伺います。",
+		"exampleCn": "明天下午我去贵公司拜访。",
+		"exampleEn": "I will visit your company tomorrow afternoon."
+	},
+	"見る → ご覧になる／拝見する": {
+		"cn": "看：尊敬语 ご覧になる／谦让语 拝見する（拝見いたします 更郑重）",
+		"en": "to look: goran ni naru (respectful) / haiken suru (humble)",
+		"example": "資料を拝見いたしました。",
+		"exampleCn": "我看过资料了。",
+		"exampleEn": "I have looked over the materials."
+	},
+	"聞く → お聞きになる／伺う・拝聴する": {
+		"cn": "听、问：尊敬语 お聞きになる／谦让语 伺う・拝聴する（拝聴 はいちょう：恭听，N1）",
+		"en": "to hear/ask: okiki ni naru (respectful) / ukagau, haichou suru (humble)",
+		"example": "すでにお聞きになったかと存じますが、来月から新しいシステムになります。",
+		"exampleCn": "想必您已经听说了，下个月起会换成新系统。",
+		"exampleEn": "As you may have already heard, we are moving to a new system next month."
+	},
+	"する → される／させていただく": {
+		"cn": "做：尊敬语 される（例：来社されました）／谦让语 させていただく",
+		"en": "to do: sareru (respectful) / sasete itadaku (humble)",
+		"example": "先ほど田中様が来社されました。",
+		"exampleCn": "刚才田中先生来公司了。",
+		"exampleEn": "Mr. Tanaka came to our office a little while ago."
+	},
+	"知っている → ご存じだ／存じている": {
+		"cn": "知道：尊敬语 ご存じだ／谦让语 存じている（常说 存じております）",
+		"en": "to know: gozonji da (respectful) / zonjite iru (humble)",
+		"example": "その件はよく存じております。",
+		"exampleCn": "那件事我很清楚。",
+		"exampleEn": "I am well aware of that matter."
+	},
+	"会う → お会いになる／お目にかかる": {
+		"cn": "见面：尊敬语 お会いになる／谦让语 お目にかかる",
+		"en": "to meet: oai ni naru (respectful) / ome ni kakaru (humble)",
+		"example": "社長にお目にかかれて光栄です。",
+		"exampleCn": "能见到社长我很荣幸。",
+		"exampleEn": "It is an honor to meet you, President."
+	},
+	"もらう → いただく": {
+		"cn": "得到、收到：谦让语 いただく（没有对应的尊敬语）",
+		"en": "to receive: itadaku (humble only)",
+		"example": "先生から本をいただきました。",
+		"exampleCn": "我从老师那里得到了一本书。",
+		"exampleEn": "I received a book from my teacher."
+	},
+	"弊社": {
+		"cn": "敝公司（称自己的公司，谦称）",
+		"en": "our company (humble)",
+		"example": "弊社の新しいサービスをご紹介します。",
+		"exampleCn": "向您介绍敝公司的新服务。",
+		"exampleEn": "Let me introduce our company's new service."
+	},
+	"御社": {
+		"cn": "贵公司（称对方的公司，口头用；书面写 貴社 きしゃ）",
+		"en": "your company (respectful, spoken)",
+		"example": "御社の理念に共感して応募しました。",
+		"exampleCn": "我认同贵公司的理念，所以来应聘了。",
+		"exampleEn": "I applied because I share your company's philosophy."
+	},
+	"こちらをご確認いただけますか？": {
+		"cn": "能请您确认一下这个吗？（比「これを確認してください」更礼貌；ご〜いただく：请对方做）",
+		"en": "Could you please check this?",
+		"example": "お手数ですが、こちらをご確認いただけますか？",
+		"exampleCn": "麻烦您了，能请您确认一下这个吗？",
+		"exampleEn": "Sorry for the trouble, but could you please check this?"
+	},
+	"恐れ入りますが、明日までにお送りいただけますでしょうか。": {
+		"cn": "不好意思，能麻烦您明天之前发给我吗？（恐れ入りますが：请求前的缓冲语；〜いただけますでしょうか：非常礼貌的请求）",
+		"en": "I'm sorry to trouble you, but could you please send it by tomorrow?",
+		"example": "恐れ入りますが、明日までに資料をお送りいただけますでしょうか。",
+		"exampleCn": "不好意思，能麻烦您明天之前把资料发给我吗？",
+		"exampleEn": "I'm sorry to trouble you, but could you send me the materials by tomorrow?"
+	},
+	"少々お待ちいただけますか？": {
+		"cn": "能请您稍等一下吗？（比「ちょっと待ってください」礼貌）",
+		"en": "Could you please wait a moment?",
+		"example": "担当者に確認しますので、少々お待ちいただけますか？",
+		"exampleCn": "我去和负责人确认一下，能请您稍等吗？",
+		"exampleEn": "I'll check with the person in charge, so could you wait a moment?"
+	},
+	"申し訳ございませんが、対応いたしかねます。": {
+		"cn": "非常抱歉，我们无法处理（〜かねる：难以……，商务中礼貌地拒绝；比「できません」委婉）",
+		"en": "I'm sorry, but we are unable to accommodate your request.",
+		"example": "申し訳ございませんが、そのご要望には対応いたしかねます。",
+		"exampleCn": "非常抱歉，您的这个要求我们无法办理。",
+		"exampleEn": "I'm sorry, but we are unable to accommodate that request."
+	},
+	"あいにく本日は都合がつきません。": {
+		"cn": "不巧今天我抽不出时间（あいにく：不巧；都合がつく：时间方便；比「今日は無理です」礼貌）",
+		"en": "Unfortunately, I'm unavailable today.",
+		"example": "あいにく本日は都合がつきませんので、明日はいかがでしょうか。",
+		"exampleCn": "不巧今天我不方便，明天您看可以吗？",
+		"exampleEn": "Unfortunately I'm not available today; how about tomorrow?"
+	},
+	"申し訳ありませんが、今回は見送らせていただきたいと存じます。": {
+		"cn": "很抱歉，这次我们想先不采用（見送る：暂缓、放弃；比「その提案は嫌です」委婉得多）",
+		"en": "I'm sorry, but we would like to pass on it this time.",
+		"example": "ご提案ありがとうございます。申し訳ありませんが、今回は見送らせていただきたいと存じます。",
+		"exampleCn": "感谢您的提案。很抱歉，这次我们想先不采用。",
+		"exampleEn": "Thank you for the proposal. I'm sorry, but we would like to pass on it this time."
+	},
+	"ご連絡が遅くなり、申し訳ございません。": {
+		"cn": "这么晚才联系您，非常抱歉（比「返事が遅れました」礼貌；笔记里写成了 遅（おく）く，正确读音是 おそく）",
+		"en": "I apologize for the delayed response.",
+		"example": "ご連絡が遅くなり、申し訳ございません。資料を添付いたします。",
+		"exampleCn": "这么晚才联系您，非常抱歉。资料附在后面。",
+		"exampleEn": "I apologize for the late reply. I have attached the materials."
+	},
+	"遅れてしまい、大変申し訳ございません。": {
+		"cn": "迟到（耽误）了，实在非常抱歉（〜てしまう：表示遗憾）",
+		"en": "I'm terribly sorry for being late.",
+		"example": "会議に遅れてしまい、大変申し訳ございません。",
+		"exampleCn": "开会迟到了，实在非常抱歉。",
+		"exampleEn": "I'm terribly sorry for being late to the meeting."
+	},
+	"私の確認不足で、誤りがございました。": {
+		"cn": "由于我确认不够仔细，出现了错误（比「間違えました」正式；確認不足：确认不足）",
+		"en": "There was an error due to my insufficient checking.",
+		"example": "私の確認不足で、請求書の金額に誤りがございました。",
+		"exampleCn": "由于我确认不够仔细，账单金额出了错。",
+		"exampleEn": "Due to my insufficient checking, there was an error in the invoice amount."
+	},
+	"現在対応中で、完了までにもう少々お時間をいただく見込みです。": {
+		"cn": "目前正在处理，预计还需要一点时间才能完成（比「まだ終わっていません」正式；見込み：预计）",
+		"en": "I'm currently working on it and expect to need a little more time to finish.",
+		"example": "申し訳ありません。現在対応中で、完了までにもう少々お時間をいただく見込みです。",
+		"exampleCn": "非常抱歉。目前正在处理，预计还需要一点时间才能完成。",
+		"exampleEn": "I apologize. I'm currently working on it and expect to need a little more time to finish."
+	},
+	"恐れ入りますが": {
+		"cn": "不好意思（麻烦您）……：请求之前用的缓冲语（クッション言葉）",
+		"en": "I'm sorry to trouble you, but...",
+		"example": "恐れ入りますが、お名前を伺ってもよろしいでしょうか。",
+		"exampleCn": "不好意思，可以请问您的名字吗？",
+		"exampleEn": "I'm sorry to trouble you, but may I ask your name?"
+	},
+	"あいにく": {
+		"cn": "不巧、很遗憾：无法满足对方希望时用",
+		"en": "unfortunately",
+		"example": "あいにく担当者は席を外しております。",
+		"exampleCn": "不巧负责人现在不在座位上。",
+		"exampleEn": "Unfortunately, the person in charge is away from their desk."
+	},
+	"〜いたしかねます": {
+		"cn": "难以……、无法……：商务中礼貌拒绝的说法（〜かねる 的谦让语）",
+		"en": "I'm unable to...",
+		"example": "個人情報についてはお答えいたしかねます。",
+		"exampleCn": "关于个人信息，恕我们无法回答。",
+		"exampleEn": "I'm afraid we cannot answer questions about personal information."
+	},
+	"〜と存じます": {
+		"cn": "我认为／我想……：郑重地表达自己的想法（「思います」的谦让语）",
+		"en": "I believe / I would like to...",
+		"example": "来週お伺いしたいと存じます。",
+		"exampleCn": "我想下周去拜访您。",
+		"exampleEn": "I would like to visit you next week."
+	},
+	"〜見込みです": {
+		"cn": "预计……：报告计划或预期时用",
+		"en": "it is expected that...",
+		"example": "荷物は明日届く見込みです。",
+		"exampleCn": "包裹预计明天送到。",
+		"exampleEn": "The package is expected to arrive tomorrow."
+	},
+	"クリスチャン・ディオール": {
+		"cn": "克里斯汀·迪奥（Christian Dior，法国时装品牌）",
+		"en": "Christian Dior",
+		"example": "母の誕生日にクリスチャン・ディオールの香水を贈りました。",
+		"exampleCn": "我在妈妈生日时送了迪奥的香水。",
+		"exampleEn": "I gave my mother a Christian Dior perfume for her birthday."
 	}
 }

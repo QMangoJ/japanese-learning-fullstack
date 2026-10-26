@@ -1,4 +1,5 @@
 import { describe, expect, it, vi } from "vitest";
+import seedJson from "../../public/data/lesson-review.json";
 
 import {
 	applyKanjiReadings,
@@ -589,12 +590,29 @@ describe("scheduled google doc sync", () => {
 		});
 		const result = await syncLessonReview({ FAVORITES_KV: kv as unknown as KVNamespace }, fetcher as unknown as typeof fetch);
 		expect(result.ok).toBe(true);
-		expect(result.days).toBe(6);
 		const stored = JSON.parse(kv.map.get(LESSON_REVIEW_KV_KEY) || "{}");
-		expect(stored.days[0].id).toBe("2026-09-13");
-		expect(stored.days[0].label).toBe("模擬試験N3");
-		expect(stored.days[0].source).toBe("Danielさん");
+		const sept13 = stored.days.find((day: { id: string }) => day.id === "2026-09-13");
+		expect(sept13.label).toBe("模擬試験N3");
+		expect(sept13.source).toBe("Danielさん");
 		expect(stored.days.find((day: { id: string }) => day.id === "2026-09-02:preply")?.source).toBe("Preply すみれ先生");
+	});
+
+	it("never rewrites a hand-written seed day, even when both documents export", async () => {
+		const kv = memoryKv();
+		const seedDay = seedJson.days.find((day) => day.id === "2026-10-26");
+		expect(seedDay).toBeTruthy();
+		const fetcher = vi.fn(async (url: string) => {
+			const body = String(url).includes(LESSON_REVIEW_DOCS[1].id)
+				? "2026.10.22\nお金を稼ぐ\n"
+				: "2026.10.30\n新しい行\n2026.10.26\nコツがいります\n(もうしあげる)\n";
+			return new Response(body, { status: 200 });
+		});
+		const result = await syncLessonReview({ FAVORITES_KV: kv as unknown as KVNamespace }, fetcher as unknown as typeof fetch);
+		expect(result.ok).toBe(true);
+		const stored = JSON.parse(kv.map.get(LESSON_REVIEW_KV_KEY) || "{}");
+		expect(stored.days.find((day: { id: string }) => day.id === "2026-10-26")).toEqual(seedDay);
+		expect(stored.days.find((day: { id: string }) => day.id === "2026-10-30")?.items[0].jp).toBe("新しい行");
+		expect(stored.days.length).toBe(seedJson.days.length + 1);
 	});
 
 	it("keeps the previous snapshot when export is blocked", async () => {
@@ -606,7 +624,7 @@ describe("scheduled google doc sync", () => {
 		await expect(fetchGoogleDocText("doc-id", fetcher as unknown as typeof fetch)).rejects.toThrow(/login/i);
 	});
 
-	it("merges a fresh note when the other document needs login", async () => {
+	it("adds a fresh day but keeps seed days when the other document needs login", async () => {
 		const kv = memoryKv();
 		const fetcher = vi.fn(async (url: string) => {
 			if (String(url).includes(LESSON_REVIEW_DOCS[1].id)) return new Response("<html>sign in</html>", { status: 200 });
@@ -619,7 +637,8 @@ describe("scheduled google doc sync", () => {
 		expect(stored.days.find((day: { id: string }) => day.id === "2026-10-20")?.items[0].jp).toBe("テスト用の新しい行");
 		const older = stored.days.find((day: { id: string }) => day.id === "2026-09-13");
 		expect(older.items[0]).toMatchObject({ jp: "原料", cn: "原料" });
-		expect(older.items.at(-1).jp).toBe("新しい行");
+		// 2026-09-13 ships in the hand-written seed, so the sync leaves it as is.
+		expect(older).toEqual(seedJson.days.find((day) => day.id === "2026-09-13"));
 		expect(older.items.filter((item: { jp: string }) => item.jp === "原料")).toHaveLength(1);
 	});
 

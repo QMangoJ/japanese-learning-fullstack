@@ -44,8 +44,15 @@ export async function fetchGoogleDocText(docId: string, fetcher: typeof fetch = 
 
 const PREPLY_SOURCE = "Preply すみれ先生";
 
-/** Keep saved cards. Append only new Japanese lines, and never rewrite an existing Preply day. */
-export function mergeFreshLessonDays(baseline: ReviewDay[], fresh: ReviewDay[]): ReviewDay[] {
+/**
+ * Keep saved cards. Append only new Japanese lines, and never rewrite an existing Preply day.
+ * Days in `curated` (the hand-written seed shipped with the build) are left exactly as they are.
+ */
+export function mergeFreshLessonDays(
+	baseline: ReviewDay[],
+	fresh: ReviewDay[],
+	curated: ReadonlySet<string> = new Set(),
+): ReviewDay[] {
 	const byId = new Map<string, ReviewDay>();
 	for (const day of baseline) byId.set(day.id, day);
 	for (const day of fresh) {
@@ -54,6 +61,7 @@ export function mergeFreshLessonDays(baseline: ReviewDay[], fresh: ReviewDay[]):
 			byId.set(day.id, day);
 			continue;
 		}
+		if (curated.has(day.id)) continue;
 		if (day.source === PREPLY_SOURCE || day.id.endsWith(":preply")) continue;
 		const known = new Set(prev.items.map((item) => item.jp));
 		const extra = day.items.filter((item) => item.jp && !known.has(item.jp));
@@ -63,15 +71,14 @@ export function mergeFreshLessonDays(baseline: ReviewDay[], fresh: ReviewDay[]):
 	return mergeLessonReviewDays([[...byId.values()]]);
 }
 
+const SEED: LessonReviewPayload | null = isLessonReviewPayload(seedJson) ? seedJson : null;
+const CURATED_IDS: ReadonlySet<string> = new Set(SEED?.days.map((day) => day.id) || []);
+
+/** Hand-written seed days win over whatever an earlier sync stored; KV only adds days the seed lacks. */
 function reviewBaseline(stored: unknown): ReviewDay[] {
-	const seed: LessonReviewPayload | null = isLessonReviewPayload(seedJson) ? seedJson : null;
 	const kv = isLessonReviewPayload(stored) ? stored : null;
-	if (kv && seed && kv.fetchedAt > seed.fetchedAt) {
-		const ids = new Set(kv.days.map((day) => day.id));
-		return [...kv.days, ...seed.days.filter((day) => !ids.has(day.id))];
-	}
-	if (seed) return seed.days;
-	return kv?.days || [];
+	const seedDays = SEED?.days || [];
+	return [...seedDays, ...(kv?.days || []).filter((day) => !CURATED_IDS.has(day.id))];
 }
 
 async function readStoredPayload(env: ReviewEnv): Promise<unknown> {
@@ -109,17 +116,10 @@ export async function syncLessonReview(env: ReviewEnv, fetcher: typeof fetch = f
 		return { ok: false, days: 0, items: 0, fetchedAt, error: errors[0] || "google doc export failed" };
 	}
 	try {
-		if (fetched.length === docs.length) {
-			const payload = buildLessonReviewPayloadFromDocs(fetched, { fetchedAt });
-			const items = payload.days.reduce((sum, day) => sum + day.items.length, 0);
-			if (!payload.days.length || items === 0) throw new Error("parsed zero review items");
-			await env.FAVORITES_KV.put(LESSON_REVIEW_KV_KEY, JSON.stringify(payload));
-			return syncResult(payload);
-		}
 		const fresh = buildLessonReviewPayloadFromDocs(fetched, { fetchedAt });
 		const freshItems = fresh.days.reduce((sum, day) => sum + day.items.length, 0);
 		if (!fresh.days.length || freshItems === 0) throw new Error("parsed zero review items");
-		const days = mergeFreshLessonDays(reviewBaseline(await readStoredPayload(env)), fresh.days);
+		const days = mergeFreshLessonDays(reviewBaseline(await readStoredPayload(env)), fresh.days, CURATED_IDS);
 		const payload: LessonReviewPayload = {
 			source: LESSON_REVIEW_SOURCE,
 			fetchedAt,
