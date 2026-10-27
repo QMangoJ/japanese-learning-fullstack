@@ -21,6 +21,11 @@
 			"zh": "账户和金额",
 			"ja": "口座と金額",
 			"en": "Account and amounts"
+		},
+		{
+			"zh": "还款和转账",
+			"ja": "支払いと振込",
+			"en": "Repayments and transfers"
 		}
 	],
 	"cards": [
@@ -252,6 +257,156 @@
 			"example_zh": "超过了一天的取款限额。",
 			"example_ruby": "<ruby>一日<rt>いちにち</rt></ruby>の<ruby>引出<rt>ひきだし</rt></ruby><ruby>限度額<rt>げんどがく</rt></ruby>を<ruby>超<rt>こ</rt></ruby>えています。",
 			"example_en": "This is over the daily withdrawal limit."
+		},
+		{
+			"id": "atm-020",
+			"jp": "臨時のお支払い",
+			"kana": "りんじのおしはらい",
+			"zh": "临时还款",
+			"en": "extra (early) payment",
+			"subtopic": "还款和转账",
+			"scene": "信用卡刷多了，想提前还掉一部分",
+			"example_jp": "今月使いすぎたから、臨時のお支払いで先に返しておこう。",
+			"example_zh": "这个月刷太多了，先用临时还款还掉一部分吧。",
+			"example_ruby": "<ruby>今月<rt>こんげつ</rt></ruby><ruby>使<rt>つか</rt></ruby>いすぎたから、<ruby>臨時<rt>りんじ</rt></ruby>のお<ruby>支払<rt>しはら</rt></ruby>いで<ruby>先<rt>さき</rt></ruby>に<ruby>返<rt>かえ</rt></ruby>しておこう。",
+			"example_en": "I spent too much this month, so I'll pay some back early with an extra payment.",
+			"note": "在固定扣款日之前，自己主动先还一部分钱。"
+		},
+		{
+			"id": "atm-021",
+			"jp": "お振込みによる臨時のお支払い",
+			"kana": "おふりこみによるりんじのおしはらい",
+			"zh": "通过银行转账做临时还款",
+			"en": "extra payment by bank transfer",
+			"subtopic": "还款和转账",
+			"scene": "卡公司官网或客服的说明",
+			"example_jp": "お振込みによる臨時のお支払いは、事前に電話での申し込みが必要です。",
+			"example_zh": "通过银行转账做临时还款，需要事先打电话申请。",
+			"example_ruby": "お<ruby>振込<rt>ふりこ</rt></ruby>みによる<ruby>臨時<rt>りんじ</rt></ruby>のお<ruby>支払<rt>しはら</rt></ruby>いは、<ruby>事前<rt>じぜん</rt></ruby>に<ruby>電話<rt>でんわ</rt></ruby>での<ruby>申<rt>もう</rt></ruby>し<ruby>込<rt>こ</rt></ruby>みが<ruby>必要<rt>ひつよう</rt></ruby>です。",
+			"example_en": "An extra payment by bank transfer requires applying by phone in advance.",
+			"note": "「〜による」＝用……方式、通过……。"
+		},
+		{
+			"id": "atm-022",
+			"jp": "1回払い",
+			"kana": "いっかいばらい",
+			"zh": "一次付清",
+			"en": "single payment (no installments)",
+			"subtopic": "还款和转账",
+			"scene": "店里刷卡时店员问「お支払い回数は？」",
+			"example_jp": "お支払い方法は1回払いでお願いします。",
+			"example_zh": "付款方式请用一次付清。",
+			"example_ruby": "お<ruby>支払<rt>しはら</rt></ruby>い<ruby>方法<rt>ほうほう</rt></ruby>は<ruby>1回払<rt>いっかいばら</rt></ruby>いでお<ruby>願<rt>ねが</rt></ruby>いします。",
+			"example_en": "I'd like to pay in a single payment, please.",
+			"note": "不分期，不另收手续费。"
+		},
+		{
+			"id": "atm-023",
+			"jp": "リボ払い",
+			"kana": "リボばらい",
+			"zh": "循环还款",
+			"en": "revolving payment",
+			"subtopic": "还款和转账",
+			"scene": "朋友之间聊理财",
+			"example_jp": "リボ払いは手数料が高いから、やめたほうがいいよ。",
+			"example_zh": "循环还款手续费很高，最好别用。",
+			"example_ruby": "リボ<ruby>払<rt>ばら</rt></ruby>いは<ruby>手数料<rt>てすうりょう</rt></ruby>が<ruby>高<rt>たか</rt></ruby>いから、やめたほうがいいよ。",
+			"example_en": "Revolving payments have high fees, so you'd better avoid them.",
+			"note": "每月只还固定金额，剩下的部分要付利息（手续费）。"
+		},
+		{
+			"id": "atm-024",
+			"jp": "お振込み先",
+			"kana": "おふりこみさき",
+			"zh": "收款账户",
+			"en": "transfer destination (payee account)",
+			"subtopic": "还款和转账",
+			"scene": "转账页面的提示",
+			"example_jp": "お振込み先の口座番号をもう一度ご確認ください。",
+			"example_zh": "请再确认一次收款账户的账号。",
+			"example_ruby": "お<ruby>振込<rt>ふりこ</rt></ruby>み<ruby>先<rt>さき</rt></ruby>の<ruby>口座番号<rt>こうざばんごう</rt></ruby>をもう<ruby>一度<rt>いちど</rt></ruby>ご<ruby>確認<rt>かくにん</rt></ruby>ください。",
+			"example_en": "Please check the payee's account number once more.",
+			"note": "钱要转去的那个银行账户。"
+		},
+		{
+			"id": "atm-025",
+			"jp": "電信扱い",
+			"kana": "でんしんあつかい",
+			"zh": "电汇（当天到账）",
+			"en": "wire transfer (same-day)",
+			"subtopic": "还款和转账",
+			"scene": "在银行窗口办转账",
+			"example_jp": "お振込みは電信扱いでお願いします。",
+			"example_zh": "转账请按电汇办理。",
+			"example_ruby": "お<ruby>振込<rt>ふりこ</rt></ruby>みは<ruby>電信扱<rt>でんしんあつか</rt></ruby>いでお<ruby>願<rt>ねが</rt></ruby>いします。",
+			"example_en": "Please send the transfer by wire.",
+			"note": "转账当天就能到账。相对的是「文書扱い（ぶんしょあつかい）」，到账更慢。"
+		},
+		{
+			"id": "atm-026",
+			"jp": "ご請求額",
+			"kana": "ごせいきゅうがく",
+			"zh": "账单金额",
+			"en": "billing amount",
+			"subtopic": "还款和转账",
+			"scene": "信用卡公司的账单通知",
+			"example_jp": "今月のご請求額は32,000円です。",
+			"example_zh": "本月的账单金额是 32,000 日元。",
+			"example_ruby": "<ruby>今月<rt>こんげつ</rt></ruby>のご<ruby>請求額<rt>せいきゅうがく</rt></ruby>は32,000<ruby>円<rt>えん</rt></ruby>です。",
+			"example_en": "This month's billing amount is 32,000 yen."
+		},
+		{
+			"id": "atm-027",
+			"jp": "お支払い日",
+			"kana": "おしはらいび",
+			"zh": "还款日",
+			"en": "payment due date",
+			"subtopic": "还款和转账",
+			"scene": "卡公司说明还款规则",
+			"example_jp": "お支払い日は毎月27日です。",
+			"example_zh": "还款日是每月 27 号。",
+			"example_ruby": "お<ruby>支払<rt>しはら</rt></ruby>い<ruby>日<rt>び</rt></ruby>は<ruby>毎月<rt>まいつき</rt></ruby>27<ruby>日<rt>にち</rt></ruby>です。",
+			"example_en": "The payment date is the 27th of every month."
+		},
+		{
+			"id": "atm-028",
+			"jp": "口座振替",
+			"kana": "こうざふりかえ",
+			"zh": "从银行账户自动扣款",
+			"en": "automatic debit from a bank account",
+			"subtopic": "还款和转账",
+			"scene": "办信用卡时选扣款方式",
+			"example_jp": "カードの代金は口座振替で引き落とされます。",
+			"example_zh": "刷卡的钱会从银行账户自动扣款。",
+			"example_ruby": "カードの<ruby>代金<rt>だいきん</rt></ruby>は<ruby>口座振替<rt>こうざふりかえ</rt></ruby>で<ruby>引<rt>ひ</rt></ruby>き<ruby>落<rt>お</rt></ruby>とされます。",
+			"example_en": "Card charges are automatically debited from your bank account."
+		},
+		{
+			"id": "atm-029",
+			"jp": "振込手数料",
+			"kana": "ふりこみてすうりょう",
+			"zh": "转账手续费",
+			"en": "bank transfer fee",
+			"subtopic": "还款和转账",
+			"scene": "转账还款说明里的注意事项",
+			"example_jp": "振込手数料はお客様のご負担となります。",
+			"example_zh": "转账手续费由客户承担。",
+			"example_ruby": "<ruby>振込手数料<rt>ふりこみてすうりょう</rt></ruby>はお<ruby>客様<rt>きゃくさま</rt></ruby>のご<ruby>負担<rt>ふたん</rt></ruby>となります。",
+			"example_en": "The transfer fee is to be paid by the customer."
+		},
+		{
+			"id": "atm-030",
+			"jp": "締め日",
+			"kana": "しめび",
+			"zh": "账单日",
+			"en": "statement closing date",
+			"subtopic": "还款和转账",
+			"scene": "卡公司说明账单周期",
+			"example_jp": "締め日は毎月15日なので、16日以降の利用は来月分になります。",
+			"example_zh": "账单日是每月 15 号，16 号以后的消费算到下个月的账单。",
+			"example_ruby": "<ruby>締<rt>し</rt></ruby>め<ruby>日<rt>び</rt></ruby>は<ruby>毎月<rt>まいつき</rt></ruby>15<ruby>日<rt>にち</rt></ruby>なので、16<ruby>日<rt>にち</rt></ruby><ruby>以降<rt>いこう</rt></ruby>の<ruby>利用<rt>りよう</rt></ruby>は<ruby>来月<rt>らいげつ</rt></ruby><ruby>分<rt>ぶん</rt></ruby>になります。",
+			"example_en": "The closing date is the 15th, so purchases from the 16th go on next month's bill.",
+			"note": "到这一天为止的消费算进本期账单。"
 		}
 	]
 }
