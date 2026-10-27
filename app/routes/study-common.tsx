@@ -1080,7 +1080,7 @@ export function SearchPage() {
 						const tag = MODULE_TAG[e.module];
 						return (
 							<div className="card result" key={ix} onClick={() => openHit(e)}>
-								<div className="jp" style={{ fontSize: "16.5px", fontWeight: 700 }}>
+								<div className="jp" style={{ fontSize: "18.5px", fontWeight: 700 }}>
 									{tag ? <span className={`mtag ${tag[0]}`}>{tag[1]}</span> : null}
 									<Mark text={e.key} keyword={kw} />
 								</div>
@@ -1471,10 +1471,10 @@ export function FavFcPage({ data }: { data: { jp: string; cn: string; idx: numbe
 				}
 				back={
 					<div className="backside" style={{ textAlign: "center" }}>
-						<div className="jp" style={{ fontWeight: 700, fontSize: "24px" }}>
+						<div className="jp" style={{ fontWeight: 700, fontSize: "26px" }}>
 							{data.jp} <SayButton text={data.jp} />
 						</div>
-						{data.cn ? <div style={{ fontSize: "18px", marginTop: "12px" }}>{data.cn}</div> : null}
+						{data.cn ? <div style={{ fontSize: "20px", marginTop: "12px" }}>{data.cn}</div> : null}
 					</div>
 				}
 			/>
@@ -1798,7 +1798,7 @@ export function CardsPage() {
 							<div
 								className={recall.missing ? "meta" : "big"}
 								data-fc-face={promptSide}
-								style={!recall.missing && recall.text.length > 22 ? { fontSize: 20 } : undefined}
+								style={!recall.missing && recall.text.length > 22 ? { fontSize: 22.5 } : undefined}
 							>
 								{recall.text}
 							</div>
@@ -1815,7 +1815,7 @@ export function CardsPage() {
 				}
 				back={
 					<div className="backside">
-						<div className="jp" style={{ fontWeight: 700, fontSize: "18px" }}>
+						<div className="jp" style={{ fontWeight: 700, fontSize: "20px" }}>
 							<Rr o={p} f="pattern" />
 						</div>
 						{p.reading ? (
@@ -1880,7 +1880,7 @@ export function CardsPage() {
 						<div className="jp" style={{ fontWeight: 700, fontSize: "40px" }}>
 							{k.char}
 						</div>
-						<div className="meta jp" style={{ fontSize: "15px" }}>
+						<div className="meta jp" style={{ fontSize: "17px" }}>
 							{(k.readings || []).map((r: string, i: number) => (
 								<span className="kread" key={i}>
 									<KanaStagger text={r} />
@@ -1917,12 +1917,12 @@ export function CardsPage() {
 				}
 				back={
 					<div className="backside" style={{ textAlign: "center" }}>
-						<div className="jp" style={{ fontWeight: 700, fontSize: "22px" }}>
+						<div className="jp" style={{ fontWeight: 700, fontSize: "24px" }}>
 							<Rr o={it} f="jp" />
 						</div>
-						{it.cn ? <div style={{ fontSize: "18px", marginTop: "10px" }}>{it.cn}</div> : null}
+						{it.cn ? <div style={{ fontSize: "20px", marginTop: "10px" }}>{it.cn}</div> : null}
 						{it.en ? (
-							<div className="meta" style={{ fontSize: "14px" }}>
+							<div className="meta" style={{ fontSize: "16px" }}>
 								{it.en}
 							</div>
 						) : null}

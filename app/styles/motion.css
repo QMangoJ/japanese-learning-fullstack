@@ -56,7 +56,7 @@
 	padding: 4px 10px;
 	border: 3px solid currentColor;
 	border-radius: 999px;
-	font-size: 20px;
+	font-size: 22.5px;
 	font-weight: 800;
 	line-height: 1.2;
 	pointer-events: none;
@@ -159,7 +159,7 @@
 	background: var(--card, #fffdf9);
 	color: var(--ink, #2c2420);
 	box-shadow: var(--shadow, 0 10px 28px rgba(90, 50, 30, .12));
-	font-size: 14px;
+	font-size: 16px;
 	font-weight: 700;
 	animation: toast-in var(--dur-base) var(--spring-soft);
 }
@@ -234,7 +234,7 @@
 .mame.is-jump { animation: mame-jump 520ms var(--spring-bouncy); }
 .mame.is-sleepy { transform: rotate(-8deg); }
 .mame.is-sleepy .mame-eyes { transform: scaleY(.2); }
-.mame-label { font-size: 11px; font-weight: 700; color: var(--sub); text-align: center; line-height: 1.3; }
+.mame-label { font-size: 12.5px; font-weight: 700; color: var(--sub); text-align: center; line-height: 1.3; }
 .radial {
 	position: relative;
 	width: 168px;
@@ -258,20 +258,20 @@
 	pointer-events: none;
 }
 .radial-num__n {
-	font-size: 28px;
+	font-size: 30px;
 	font-weight: 800;
 	font-variant-numeric: tabular-nums;
 	line-height: 1;
 	color: var(--ink);
 	animation: radial-num var(--dur-fast) var(--ease-out);
 }
-.radial-num__d { margin-top: 2px; font-size: 12px; font-weight: 700; color: var(--sub); font-variant-numeric: tabular-nums; }
+.radial-num__d { margin-top: 2px; font-size: 13.5px; font-weight: 700; color: var(--sub); font-variant-numeric: tabular-nums; }
 .study-demo summary { cursor: pointer; font-weight: 700; color: var(--sub); }
 .study-demo__card { margin-top: 10px; }
 .study-demo__note { margin-top: 8px; }
 
 .ending-swap { margin-bottom: 12px; }
-.ending-swap__title { font-size: 13px; font-weight: 700; color: var(--sub); margin-bottom: 6px; }
+.ending-swap__title { font-size: 14.5px; font-weight: 700; color: var(--sub); margin-bottom: 6px; }
 .ending-swap__word { margin: 0 0 10px; font-size: 32px; font-weight: 800; line-height: 1.2; }
 .ending-swap__end { display: inline-block; color: var(--accent); }
 .ending-swap__forms { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -281,7 +281,7 @@
 	color: var(--sub);
 	border-radius: 999px;
 	padding: 6px 12px;
-	font: 700 13px/1 inherit;
+	font: 700 14.5px/1 inherit;
 	cursor: pointer;
 }
 .ending-swap__forms button.on { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
@@ -417,7 +417,7 @@
 	background: var(--card, #fffdf9);
 	color: var(--ink, #2c2420);
 	box-shadow: 0 10px 24px color-mix(in srgb, var(--ink) 16%, transparent);
-	font-size: 12.5px;
+	font-size: 14px;
 	font-weight: 600;
 	line-height: 1.45;
 	text-align: left;

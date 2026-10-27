@@ -136,7 +136,7 @@ function MemoryCardFront({
 			<div
 				className={japanese ? "big jp" : face?.missing ? "meta" : "big"}
 				data-fc-face={face?.side ?? "jp"}
-				style={!face?.missing && text.length > 22 ? { fontSize: 20 } : undefined}
+				style={!face?.missing && text.length > 22 ? { fontSize: 22.5 } : undefined}
 			>
 				{text}
 			</div>
@@ -157,19 +157,19 @@ function MemoryCardBack({
 	return (
 		<div className="backside review-flip" style={{ textAlign: "center" }}>
 			{cur.kind ? <div className="review-k">{memoryKindLabel(cur.kind)}</div> : null}
-			<div className="jp review-flip-ruby" style={{ fontWeight: 700, fontSize: "22px" }}>
+			<div className="jp review-flip-ruby" style={{ fontWeight: 700, fontSize: "24px" }}>
 				{cur.jpHtml ? <RubyHtml html={cur.jpHtml} /> : cur.jp} <SayButton text={cur.jp} />
 			</div>
 			{cur.reading ? (
 				<div className="review-reading jp">{staggerReading ? <KanaStagger text={cur.reading} /> : cur.reading}</div>
 			) : null}
 			{cur.cn ? (
-				<div className="jp review-flip-ruby" style={{ fontSize: "18px", marginTop: "10px" }}>
+				<div className="jp review-flip-ruby" style={{ fontSize: "20px", marginTop: "10px" }}>
 					{cur.cnHtml ? <RubyHtml html={cur.cnHtml} /> : cur.cn}
 				</div>
 			) : null}
 			{cur.en ? (
-				<div className="meta" style={{ fontSize: "14px" }}>
+				<div className="meta" style={{ fontSize: "16px" }}>
 					{cur.en}
 				</div>
 			) : null}

@@ -342,7 +342,7 @@ function TopicDetail({ slug }: { slug: string }) {
 							front={
 								<>
 									<div className="review-k">{subLabel.get(cur.subtopic)}</div>
-									<div className="big jp" style={cur.jp.length > 10 ? { fontSize: 22 } : undefined}>
+									<div className="big jp" style={cur.jp.length > 10 ? { fontSize: 24 } : undefined}>
 										{cur.jp}
 									</div>
 									{chip(cur)}
@@ -352,14 +352,14 @@ function TopicDetail({ slug }: { slug: string }) {
 							back={
 								<div className="backside review-flip" style={{ textAlign: "center" }}>
 									<div className="review-k">{subLabel.get(cur.subtopic)}</div>
-									<div className="jp" style={{ fontWeight: 700, fontSize: "22px" }}>
+									<div className="jp" style={{ fontWeight: 700, fontSize: "24px" }}>
 										{cur.jp} <SayButton text={cur.jp} />
 									</div>
 									<div className="review-reading jp">
 										<KanaStagger text={cur.kana} />
 									</div>
-									<div style={{ fontSize: "18px", marginTop: "10px" }}>{cur.zh}</div>
-									{cur.en ? <div className="meta" style={{ fontSize: "14px" }}>{cur.en}</div> : null}
+									<div style={{ fontSize: "20px", marginTop: "10px" }}>{cur.zh}</div>
+									{cur.en ? <div className="meta" style={{ fontSize: "16px" }}>{cur.en}</div> : null}
 									<div className="ex fcard-ex">
 										<div className="fcard-ex-label">{lx("例句", "Example")}</div>
 										{cur.scene ? <div className="topic-item__scene">🎬 {cur.scene}</div> : null}

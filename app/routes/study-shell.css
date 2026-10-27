@@ -2,31 +2,31 @@
 .study-reading-app{max-width:none;margin:0;padding:0}.reader-page--embedded{background:transparent}.reader-page--embedded .reader-header,.reader-page--embedded .reader-outline{display:none}.reader-page--embedded .reader-layout{display:block;width:100%;max-width:none;padding:0}.reader-page--embedded .reader-main{max-width:var(--study-col,760px);margin:0 auto;padding:14px}.reader-page--embedded .reader-studybar{top:98px;margin-inline:-2px}
 @media (min-width:900px){.reader-page--embedded .reader-main{max-width:var(--study-col,1080px);padding:18px 24px}.reader-page--embedded .reader-studybar{top:50px;margin-inline:-2px}}
 
-.trial-context{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:center;gap:9px;padding:7px 14px;background:#1b1e23;color:#f2efe9;font-size:12.5px}
-.trial-context span{padding:2px 7px;border-radius:999px;background:#c0392b;color:#fff;font-size:11px;font-weight:700;letter-spacing:.08em}
+.trial-context{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:center;gap:9px;padding:7px 14px;background:#1b1e23;color:#f2efe9;font-size:14px}
+.trial-context span{padding:2px 7px;border-radius:999px;background:#c0392b;color:#fff;font-size:12.5px;font-weight:700;letter-spacing:.08em}
 .trial-context b{font-weight:600}
 .trial-context a{color:#f4a59b;text-decoration:underline}
 .trial-context~.topbar{top:35px}
 .trial-lock-card,.trial-week-lock{margin:18px 0;border:1px solid var(--line);border-radius:var(--radius);background:var(--card);box-shadow:var(--shadow);padding:24px}
 .trial-lock-card{text-align:center;padding:44px 24px}
-.trial-lock-card__eyebrow{color:var(--accent);font-size:11px;letter-spacing:.14em;font-weight:800}
-.trial-lock-card h2{margin:9px 0;font-size:21px}
-.trial-lock-card p{margin:0 auto 18px;max-width:440px;color:var(--sub);font-size:14px;line-height:1.8}
-.trial-lock-card a,.trial-week-lock a{display:inline-block;color:#fff;background:var(--accent);padding:8px 14px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none}
+.trial-lock-card__eyebrow{color:var(--accent);font-size:12.5px;letter-spacing:.14em;font-weight:800}
+.trial-lock-card h2{margin:9px 0;font-size:23px}
+.trial-lock-card p{margin:0 auto 18px;max-width:440px;color:var(--sub);font-size:16px;line-height:1.8}
+.trial-lock-card a,.trial-week-lock a{display:inline-block;color:#fff;background:var(--accent);padding:8px 14px;border-radius:8px;font-size:14.5px;font-weight:700;text-decoration:none}
 .trial-week-lock{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:0;background:var(--accent-soft)}
-.trial-week-lock span{color:var(--sub);font-size:13px;flex:1}
+.trial-week-lock span{color:var(--sub);font-size:14.5px;flex:1}
 .trial-week-lock a{padding:6px 11px}
 .usage-page{max-width:var(--study-col,720px);margin:0 auto;padding:8px 0 28px}
-.usage-lead{margin:0 0 12px;color:var(--sub);font-size:13px;line-height:1.7}
+.usage-lead{margin:0 0 12px;color:var(--sub);font-size:14.5px;line-height:1.7}
 .usage-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
 .usage-stat,.usage-day{border:1px solid var(--line);border-radius:12px;background:var(--card)}
 .usage-stat{padding:14px 16px}
-.usage-stat span,.usage-day span{color:var(--sub);font-size:12px}
-.usage-stat b{display:block;margin-top:4px;font-size:22px}
+.usage-stat span,.usage-day span{color:var(--sub);font-size:13.5px}
+.usage-stat b{display:block;margin-top:4px;font-size:24px}
 .usage-days{display:grid;gap:6px}
 .usage-day{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 12px}
 .usage-day.today{border-color:var(--accent)}
-.usage-day b{font-size:15px}
+.usage-day b{font-size:17px}
 
 /* 汉字记忆卡：词性小标签 */
 .kpos {
@@ -35,7 +35,7 @@
 	padding: 0 6px;
 	border: 1px solid var(--line, rgba(127, 127, 127, 0.35));
 	border-radius: 999px;
-	font-size: 11px;
+	font-size: 12.5px;
 	line-height: 18px;
 	font-weight: 500;
 	vertical-align: middle;
