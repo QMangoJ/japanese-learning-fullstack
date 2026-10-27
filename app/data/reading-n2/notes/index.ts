@@ -4,7 +4,13 @@ import type { DayNotes } from "./types";
 export type { DayNotes, SentenceNote } from "./types";
 
 const loaders: Record<string, () => Promise<DayNotes>> = {
+	"2-1": () => import("./w2d1").then((m) => m.notes),
+	"2-2": () => import("./w2d2").then((m) => m.notes),
+	"2-3": () => import("./w2d3").then((m) => m.notes),
+	"2-4": () => import("./w2d4").then((m) => m.notes),
+	"2-5": () => import("./w2d5").then((m) => m.notes),
 	"2-6": () => import("./w2d6").then((m) => m.notes),
+	"2-7": () => import("./w2d7").then((m) => m.notes),
 };
 
 export function hasN2ReadingNotes(week: number, day: number): boolean {

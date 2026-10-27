@@ -80,7 +80,6 @@ for (const file of readdirSync(join(dir, "src")).filter((f) => /^w\d+d\d+\.txt$/
 	const progress = new Map<string, string>();
 	for (const note of notes) {
 		if (!note.cn) throw new Error(`${file}: missing translation for ${note.jp}`);
-		if (!note.structure.length) throw new Error(`${file}: missing structure for ${note.jp}`);
 		const s = norm(note.jp);
 		const block = blocks.find((b) => {
 			const rest = progress.get(b) ?? norm(b);

@@ -145,14 +145,16 @@ function SentenceNotes({ text }: { text: string }) {
 						<Jp text={item.jp} />
 					</p>
 					<p className="rb-sn__cn">{item.cn}</p>
-					<div className="rb-sn__block">
-						<div className="rb-sn__label">句子结构</div>
-						{item.structure.map((line, lineIndex) => (
-							<div className="rb-sn__struct" key={lineIndex} style={{ paddingLeft: `${line.depth * 1.2}em` }}>
-								{line.text}
-							</div>
-						))}
-					</div>
+					{item.structure.length > 0 && (
+						<div className="rb-sn__block">
+							<div className="rb-sn__label">句子结构</div>
+							{item.structure.map((line, lineIndex) => (
+								<div className="rb-sn__struct" key={lineIndex} style={{ paddingLeft: `${line.depth * 1.2}em` }}>
+									{line.text}
+								</div>
+							))}
+						</div>
+					)}
 					{item.grammar.length > 0 && (
 						<div className="rb-sn__block">
 							<div className="rb-sn__label">语法</div>
