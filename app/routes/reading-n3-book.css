@@ -120,7 +120,7 @@ html.theme-dark .rb {
 }
 
 .rb-bar.is-stuck .rb-bar__id b {
-	font-size: 15px;
+	font-size: 17px;
 }
 
 /* Embedded in the study shell: park under that shell's own sticky topbar
@@ -138,14 +138,14 @@ html.theme-dark .rb {
 }
 
 .rb-bar__id span {
-	font-size: 12px;
+	font-size: 13.5px;
 	letter-spacing: 0.16em;
 	color: var(--rb-ink-soft);
 	font-family: system-ui, sans-serif;
 }
 
 .rb-bar__id b {
-	font-size: 17px;
+	font-size: 19px;
 	font-weight: 600;
 }
 
@@ -158,7 +158,7 @@ html.theme-dark .rb {
 .rb-toggles button,
 .rb-back {
 	font-family: system-ui, -apple-system, "PingFang SC", sans-serif;
-	font-size: 13px;
+	font-size: 14.5px;
 	padding: 7px 14px;
 	border-radius: 999px;
 	border: 1px solid var(--rb-rule);
@@ -198,7 +198,7 @@ html.theme-dark .rb-toggles button[aria-pressed="true"] {
 }
 
 .rb-cover span {
-	font-size: 12px;
+	font-size: 13.5px;
 	letter-spacing: 0.34em;
 	color: var(--rb-ink-soft);
 	font-family: system-ui, sans-serif;
@@ -206,7 +206,7 @@ html.theme-dark .rb-toggles button[aria-pressed="true"] {
 
 .rb-cover h1 {
 	margin: 10px 0 6px;
-	font-size: 30px;
+	font-size: 32px;
 	font-weight: 700;
 	letter-spacing: 0.06em;
 }
@@ -214,12 +214,12 @@ html.theme-dark .rb-toggles button[aria-pressed="true"] {
 .rb-cover p {
 	margin: 0;
 	color: var(--rb-ink-soft);
-	font-size: 14px;
+	font-size: 16px;
 }
 
 .rb-cover__meta {
 	margin-top: 16px;
-	font-size: 12px;
+	font-size: 13.5px;
 	font-family: system-ui, sans-serif;
 	color: var(--rb-ink-soft);
 }
@@ -247,28 +247,28 @@ html.theme-dark .rb-toggles button[aria-pressed="true"] {
 }
 
 .rb-week__head b {
-	font-size: 18px;
+	font-size: 20px;
 	letter-spacing: 0.08em;
 	white-space: nowrap;
 }
 
 .rb-week__head p {
 	margin: 0;
-	font-size: 17px;
+	font-size: 19px;
 	flex: 1;
 	min-width: 0;
 }
 
 .rb-week__head small {
 	display: block;
-	font-size: 11px;
+	font-size: 12.5px;
 	opacity: 0.75;
 	font-family: system-ui, sans-serif;
 	letter-spacing: 0.04em;
 }
 
 .rb-week__count {
-	font-size: 12px;
+	font-size: 13.5px;
 	font-family: system-ui, sans-serif;
 	opacity: 0.8;
 	white-space: nowrap;
@@ -307,19 +307,19 @@ html.theme-dark .rb-toggles button[aria-pressed="true"] {
 }
 
 .rb-day span {
-	font-size: 11px;
+	font-size: 12.5px;
 	letter-spacing: 0.12em;
 	color: var(--rb-ink-soft);
 	font-family: system-ui, sans-serif;
 }
 
 .rb-day b {
-	font-size: 15px;
+	font-size: 17px;
 	font-weight: 600;
 }
 
 .rb-day small {
-	font-size: 11px;
+	font-size: 12.5px;
 	color: var(--rb-ink-soft);
 	font-family: system-ui, sans-serif;
 }
@@ -340,7 +340,7 @@ html.theme-dark .rb-toggles button[aria-pressed="true"] {
 	gap: 8px;
 	background: var(--rb-rule-strong);
 	color: var(--rb-paper);
-	font-size: 13px;
+	font-size: 14.5px;
 	font-weight: 600;
 	padding: 4px 16px;
 	border-radius: 999px;
@@ -349,7 +349,7 @@ html.theme-dark .rb-toggles button[aria-pressed="true"] {
 }
 
 .rb-instruction {
-	font-size: 15px;
+	font-size: 17px;
 	margin: 0 0 4px;
 	font-weight: 600;
 }
@@ -362,7 +362,7 @@ html.theme-dark .rb-toggles button[aria-pressed="true"] {
 }
 
 .rb-instruction-cn {
-	font-size: 13px;
+	font-size: 14.5px;
 	color: var(--rb-cn);
 	background: var(--rb-cn-bg);
 	padding: 6px 10px;
@@ -376,7 +376,7 @@ html.theme-dark .rb-toggles button[aria-pressed="true"] {
 	display: flex;
 	align-items: baseline;
 	gap: 10px;
-	font-size: 20px;
+	font-size: 22.5px;
 	font-weight: 700;
 	margin: 0 0 4px;
 	color: var(--rb-accent);
@@ -384,11 +384,11 @@ html.theme-dark .rb-toggles button[aria-pressed="true"] {
 
 .rb-point__title::before {
 	content: "✿";
-	font-size: 17px;
+	font-size: 19px;
 }
 
 .rb-point__title-en {
-	font-size: 11px;
+	font-size: 12.5px;
 	color: var(--rb-ink-soft);
 	font-family: system-ui, sans-serif;
 	margin: 0 0 14px;
@@ -412,7 +412,7 @@ html.theme-dark .rb-toggles button[aria-pressed="true"] {
 }
 
 .rb-figure figcaption {
-	font-size: 12px;
+	font-size: 13.5px;
 	color: var(--rb-ink-soft);
 	font-family: system-ui, "PingFang SC", sans-serif;
 	line-height: 1.7;
@@ -421,7 +421,7 @@ html.theme-dark .rb-toggles button[aria-pressed="true"] {
 .rb-tip {
 	display: flex;
 	gap: 10px;
-	font-size: 14px;
+	font-size: 16px;
 	margin-bottom: 10px;
 }
 
@@ -440,7 +440,7 @@ html.theme-dark .rb-toggles button[aria-pressed="true"] {
 }
 
 .rb-express__label {
-	font-size: 11px;
+	font-size: 12.5px;
 	letter-spacing: 0.1em;
 	color: var(--rb-ink-soft);
 	font-family: system-ui, sans-serif;
@@ -460,7 +460,7 @@ html.theme-dark .rb-toggles button[aria-pressed="true"] {
 	gap: 4px 8px;
 	padding: 5px 0;
 	border-bottom: 1px dotted var(--rb-rule);
-	font-size: 14px;
+	font-size: 16px;
 }
 
 .rb-express__row b {
@@ -475,19 +475,19 @@ html.theme-dark .rb-toggles button[aria-pressed="true"] {
 
 .rb-express__row i {
 	font-style: normal;
-	font-size: 12px;
+	font-size: 13.5px;
 	color: var(--rb-ink-soft);
 }
 
 .rb-express__row span {
-	font-size: 12.5px;
+	font-size: 14px;
 	color: var(--rb-cn);
 	font-family: system-ui, "PingFang SC", sans-serif;
 	width: 100%;
 }
 
 .rb-note-star {
-	font-size: 13px;
+	font-size: 14.5px;
 	color: var(--rb-ink-soft);
 	border-left: 3px solid var(--rb-mark);
 	padding-left: 12px;
@@ -518,7 +518,7 @@ html.theme-dark .rb-toggles button[aria-pressed="true"] {
 }
 
 .rb-b-title b {
-	font-size: 22px;
+	font-size: 24px;
 	font-weight: 700;
 	letter-spacing: 0.06em;
 	display: block;
@@ -526,19 +526,19 @@ html.theme-dark .rb-toggles button[aria-pressed="true"] {
 
 .rb-b-title em {
 	font-style: normal;
-	font-size: 15px;
+	font-size: 17px;
 	display: block;
 	margin-top: 4px;
 }
 
 .rb-b-heading {
-	font-size: 16px;
+	font-size: 18px;
 	font-weight: 700;
 	margin: 16px 0 8px;
 }
 
 .rb-b-para {
-	font-size: 15.5px;
+	font-size: 17.5px;
 	margin: 0 0 12px;
 	text-align: justify;
 }
@@ -548,14 +548,14 @@ html.theme-dark .rb-toggles button[aria-pressed="true"] {
 }
 
 .rb-b-line {
-	font-size: 15.5px;
+	font-size: 17.5px;
 	margin: 0 0 8px;
 }
 
 .rb-b-speech {
 	display: flex;
 	gap: 4px;
-	font-size: 15.5px;
+	font-size: 17.5px;
 	margin: 0 0 10px;
 	align-items: baseline;
 }
@@ -578,7 +578,7 @@ html.theme-dark .rb-toggles button[aria-pressed="true"] {
 .rb-b-list li {
 	display: flex;
 	gap: 8px;
-	font-size: 15.5px;
+	font-size: 17.5px;
 	margin-bottom: 8px;
 }
 
@@ -588,7 +588,7 @@ html.theme-dark .rb-toggles button[aria-pressed="true"] {
 }
 
 .rb-b-note {
-	font-size: 14px;
+	font-size: 16px;
 	margin: 12px 0;
 	padding: 8px 12px;
 	background: var(--rb-shade);
@@ -597,7 +597,7 @@ html.theme-dark .rb-toggles button[aria-pressed="true"] {
 
 .rb-b-source {
 	text-align: right;
-	font-size: 13px;
+	font-size: 14.5px;
 	color: var(--rb-ink-soft);
 	margin: 12px 0 0;
 }
@@ -606,7 +606,7 @@ html.theme-dark .rb-toggles button[aria-pressed="true"] {
 	width: 100%;
 	border-collapse: collapse;
 	margin: 0 0 14px;
-	font-size: 14.5px;
+	font-size: 16.5px;
 }
 
 .rb-table td {
@@ -629,7 +629,7 @@ html.theme-dark .rb-toggles button[aria-pressed="true"] {
 
 .rb-cn {
 	display: block;
-	font-size: 12.5px;
+	font-size: 14px;
 	color: var(--rb-cn);
 	font-family: system-ui, "PingFang SC", sans-serif;
 	line-height: 1.7;
@@ -648,7 +648,7 @@ html.theme-dark .rb-toggles button[aria-pressed="true"] {
 	margin: 14px 0 0;
 	padding: 12px 0 0;
 	border-top: 1px dotted var(--rb-rule);
-	font-size: 12.5px;
+	font-size: 14px;
 	color: var(--rb-ink-soft);
 }
 
@@ -665,7 +665,7 @@ html.theme-dark .rb-toggles button[aria-pressed="true"] {
 	margin-top: 14px;
 	padding-top: 10px;
 	border-top: 1px dotted var(--rb-rule);
-	font-size: 12px;
+	font-size: 13.5px;
 	color: var(--rb-ink-soft);
 	font-family: system-ui, sans-serif;
 }
@@ -684,7 +684,7 @@ html.theme-dark .rb-toggles button[aria-pressed="true"] {
 	display: flex;
 	gap: 12px;
 	align-items: baseline;
-	font-size: 16px;
+	font-size: 18px;
 	font-weight: 600;
 	margin-bottom: 4px;
 }
@@ -694,7 +694,7 @@ html.theme-dark .rb-toggles button[aria-pressed="true"] {
 	border: 1.5px solid var(--rb-rule-strong);
 	border-radius: 3px;
 	padding: 1px 9px;
-	font-size: 13px;
+	font-size: 14.5px;
 	font-family: system-ui, sans-serif;
 }
 
@@ -719,7 +719,7 @@ html.theme-dark .rb-toggles button[aria-pressed="true"] {
 	cursor: pointer;
 	text-align: left;
 	font-family: inherit;
-	font-size: 15px;
+	font-size: 17px;
 	color: inherit;
 	transition: 0.15s ease;
 	line-height: 1.8;
@@ -737,7 +737,7 @@ html.theme-dark .rb-toggles button[aria-pressed="true"] {
 	border: 1px solid var(--rb-rule-strong);
 	display: grid;
 	place-items: center;
-	font-size: 12px;
+	font-size: 13.5px;
 	font-family: system-ui, sans-serif;
 	margin-top: 3px;
 }
@@ -771,7 +771,7 @@ html.theme-dark .rb-toggles button[aria-pressed="true"] {
 
 .rb-choice__note {
 	display: block;
-	font-size: 12px;
+	font-size: 13.5px;
 	color: var(--rb-ink-soft);
 	font-family: system-ui, "PingFang SC", sans-serif;
 	margin-top: 5px;
@@ -788,7 +788,7 @@ html.theme-dark .rb-toggles button[aria-pressed="true"] {
 
 .rb-q__actions button {
 	font-family: system-ui, sans-serif;
-	font-size: 13px;
+	font-size: 14.5px;
 	padding: 6px 14px;
 	border-radius: 999px;
 	border: 1px solid var(--rb-rule);
@@ -809,7 +809,7 @@ html.theme-dark .rb-toggles button[aria-pressed="true"] {
 	background: var(--rb-paper);
 	border: 1px solid var(--rb-accent);
 	font-family: system-ui, "PingFang SC", sans-serif;
-	font-size: 13.5px;
+	font-size: 15px;
 	line-height: 1.85;
 }
 
@@ -820,7 +820,7 @@ html.theme-dark .rb-toggles button[aria-pressed="true"] {
 .rb-answer__src {
 	display: block;
 	margin-top: 8px;
-	font-size: 11.5px;
+	font-size: 13px;
 	color: var(--rb-ink-soft);
 }
 
@@ -847,7 +847,7 @@ html.theme-dark .rb-toggles button[aria-pressed="true"] {
 	cursor: pointer;
 	text-align: left;
 	font-family: inherit;
-	font-size: 15px;
+	font-size: 17px;
 	color: inherit;
 	line-height: 1.8;
 }
@@ -860,7 +860,7 @@ html.theme-dark .rb-toggles button[aria-pressed="true"] {
 	border-radius: 3px;
 	display: grid;
 	place-items: center;
-	font-size: 13px;
+	font-size: 14.5px;
 	margin-top: 4px;
 }
 
@@ -895,13 +895,13 @@ html.theme-dark .rb-toggles button[aria-pressed="true"] {
 }
 
 .rb-vocab b {
-	font-size: 16px;
+	font-size: 18px;
 	font-weight: 600;
 	display: block;
 }
 
 .rb-vocab .kana {
-	font-size: 12px;
+	font-size: 13.5px;
 	color: var(--rb-mark);
 	font-family: system-ui, sans-serif;
 	display: block;
@@ -910,7 +910,7 @@ html.theme-dark .rb-toggles button[aria-pressed="true"] {
 
 .rb-vocab p {
 	margin: 0;
-	font-size: 13px;
+	font-size: 14.5px;
 	color: var(--rb-ink-soft);
 	font-family: system-ui, "PingFang SC", sans-serif;
 	line-height: 1.7;
@@ -918,7 +918,7 @@ html.theme-dark .rb-toggles button[aria-pressed="true"] {
 
 .rb-vocab .pos {
 	display: inline-block;
-	font-size: 10.5px;
+	font-size: 12px;
 	border: 1px solid var(--rb-rule);
 	border-radius: 3px;
 	padding: 0 5px;
@@ -944,12 +944,12 @@ html.theme-dark .rb-toggles button[aria-pressed="true"] {
 
 .rb-grammar h4 {
 	margin: 0 0 4px;
-	font-size: 16px;
+	font-size: 18px;
 	font-weight: 700;
 }
 
 .rb-grammar .form {
-	font-size: 12px;
+	font-size: 13.5px;
 	color: var(--rb-mark);
 	font-family: system-ui, sans-serif;
 	margin: 0 0 6px;
@@ -957,7 +957,7 @@ html.theme-dark .rb-toggles button[aria-pressed="true"] {
 
 .rb-grammar .meaning {
 	margin: 0;
-	font-size: 13.5px;
+	font-size: 15px;
 	font-family: system-ui, "PingFang SC", sans-serif;
 	color: var(--rb-ink-soft);
 	line-height: 1.85;
@@ -968,12 +968,12 @@ html.theme-dark .rb-toggles button[aria-pressed="true"] {
 	padding: 8px 11px;
 	background: var(--rb-shade);
 	border-radius: 6px;
-	font-size: 14.5px;
+	font-size: 16.5px;
 }
 
 .rb-grammar .note {
 	margin: 7px 0 0;
-	font-size: 12.5px;
+	font-size: 14px;
 	color: var(--rb-mark);
 	font-family: system-ui, "PingFang SC", sans-serif;
 }
@@ -1011,20 +1011,20 @@ html.theme-dark .rb-toggles button[aria-pressed="true"] {
 }
 
 .rb-nav small {
-	font-size: 11px;
+	font-size: 12.5px;
 	color: var(--rb-ink-soft);
 	font-family: system-ui, sans-serif;
 	letter-spacing: 0.1em;
 }
 
 .rb-nav b {
-	font-size: 14px;
+	font-size: 16px;
 	font-weight: 600;
 }
 
 .rb-pageref {
 	text-align: center;
-	font-size: 11px;
+	font-size: 12.5px;
 	color: var(--rb-ink-soft);
 	font-family: system-ui, sans-serif;
 	letter-spacing: 0.08em;
@@ -1058,7 +1058,7 @@ html.theme-dark .rb-toggles button[aria-pressed="true"] {
 	.rb-toggles button,
 	.rb-back {
 		padding: 6px 11px;
-		font-size: 12px;
+		font-size: 13.5px;
 	}
 
 	.rb-nav {

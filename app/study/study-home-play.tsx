@@ -170,7 +170,7 @@ function DemoCard() {
 				}
 				back={
 					<div className="backside" style={{ textAlign: "center" }}>
-						<div className="jp" style={{ fontWeight: 700, fontSize: 22 }}>
+						<div className="jp" style={{ fontWeight: 700, fontSize: 24 }}>
 							食べる
 						</div>
 						<div className="review-reading jp">たべる</div>
