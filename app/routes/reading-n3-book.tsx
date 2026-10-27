@@ -1,7 +1,8 @@
-import { Fragment, useEffect, useMemo, useRef, useState } from "react";
+import { createContext, Fragment, useContext, useEffect, useMemo, useRef, useState } from "react";
 
 import * as readingN2 from "../data/reading-n2";
 import * as readingN3 from "../data/reading-n3";
+import { loadN2ReadingNotes, type DayNotes, type SentenceNote } from "../data/reading-n2/notes";
 import {
 	type Block,
 	type Choice,
@@ -18,6 +19,7 @@ import { addMistake, isFav, LANG, lx, navTo, registerFavMeta, toggleFav } from "
 import { readingWrongNote } from "../study/exam-answers";
 import { CardsLaunch } from "../study/memory-cards";
 import "./reading-n3-book.css";
+import "./reading-sentence-notes.css";
 
 /* ------------------------------------------------------------------ *
  * Furigana
@@ -119,6 +121,90 @@ function MaterialTable({ rows, showCn }: { rows: TableCell[][]; showCn: boolean 
 	);
 }
 
+/* ------------------------------------------------------------------ *
+ * Per-sentence explanations (N2 読解; news-learning style)
+ * ------------------------------------------------------------------ */
+
+const NotesContext = createContext<{ notes?: DayNotes; open: boolean }>({ open: false });
+
+function LevelBadge({ lv }: { lv?: string }) {
+	if (!lv) return null;
+	return <span className={`rb-sn__lv rb-sn__lv--${lv.toLowerCase()}`}>{lv}</span>;
+}
+
+function SentenceNotes({ text }: { text: string }) {
+	const { notes, open } = useContext(NotesContext);
+	const items: SentenceNote[] | undefined = notes?.[plain(text)];
+	if (!items?.length) return null;
+	return (
+		<details className="rb-sn" open={open} key={open ? "open" : "closed"}>
+			<summary>逐句讲解 · {items.length} 句</summary>
+			{items.map((item, index) => (
+				<div className="rb-sn__item" key={index}>
+					<p className="rb-sn__jp">
+						<Jp text={item.jp} />
+					</p>
+					<p className="rb-sn__cn">{item.cn}</p>
+					<div className="rb-sn__block">
+						<div className="rb-sn__label">句子结构</div>
+						{item.structure.map((line, lineIndex) => (
+							<div className="rb-sn__struct" key={lineIndex} style={{ paddingLeft: `${line.depth * 1.2}em` }}>
+								{line.text}
+							</div>
+						))}
+					</div>
+					{item.grammar.length > 0 && (
+						<div className="rb-sn__block">
+							<div className="rb-sn__label">语法</div>
+							{item.grammar.map((g, gIndex) => (
+								<div className="rb-sn__g" key={gIndex}>
+									<div className="rb-sn__g-head">
+										<span className="rb-sn__pattern">{g.pattern}</span>
+										<LevelBadge lv={g.lv} />
+									</div>
+									<div className="rb-sn__row">
+										<span>接续</span>
+										<span>{g.form}</span>
+									</div>
+									<div className="rb-sn__row">
+										<span>意思</span>
+										<span>{g.meaning}</span>
+									</div>
+									<div className="rb-sn__row">
+										<span>本句</span>
+										<span>{g.here}</span>
+									</div>
+									{g.similar && (
+										<div className="rb-sn__row">
+											<span>辨析</span>
+											<span>{g.similar}</span>
+										</div>
+									)}
+								</div>
+							))}
+						</div>
+					)}
+					{item.words.length > 0 && (
+						<div className="rb-sn__block">
+							<div className="rb-sn__label">生词</div>
+							<ul className="rb-sn__words">
+								{item.words.map((w, wIndex) => (
+									<li key={wIndex}>
+										<b>{w.jp}</b>
+										{w.kana && <i>{w.kana}</i>}
+										<span>{w.cn}</span>
+										<LevelBadge lv={w.lv} />
+									</li>
+								))}
+							</ul>
+						</div>
+					)}
+				</div>
+			))}
+		</details>
+	);
+}
+
 function Blocks({ blocks, showCn }: { blocks: Block[]; showCn: boolean }) {
 	return (
 		<>
@@ -126,55 +212,70 @@ function Blocks({ blocks, showCn }: { blocks: Block[]; showCn: boolean }) {
 				switch (block.type) {
 					case "title":
 						return (
-							<div className="rb-b-title" key={index}>
-								<b>
-									<Jp text={block.jp} />
-								</b>
-								{block.sub && (
-									<em>
-										<Jp text={block.sub.jp} />
-									</em>
-								)}
-								<Gloss cn={block.cn} en={block.en} show={showCn} />
-								{block.sub && <Gloss cn={block.sub.cn} en={block.sub.en} show={showCn} />}
-							</div>
+							<Fragment key={index}>
+								<div className="rb-b-title">
+									<b>
+										<Jp text={block.jp} />
+									</b>
+									{block.sub && (
+										<em>
+											<Jp text={block.sub.jp} />
+										</em>
+									)}
+									<Gloss cn={block.cn} en={block.en} show={showCn} />
+									{block.sub && <Gloss cn={block.sub.cn} en={block.sub.en} show={showCn} />}
+								</div>
+								<SentenceNotes text={block.jp} />
+							</Fragment>
 						);
 					case "heading":
 						return (
-							<h4 className="rb-b-heading" key={index}>
-								<Jp text={block.jp} />
-								<Gloss cn={block.cn} en={block.en} show={showCn} />
-							</h4>
+							<Fragment key={index}>
+								<h4 className="rb-b-heading">
+									<Jp text={block.jp} />
+									<Gloss cn={block.cn} en={block.en} show={showCn} />
+								</h4>
+								<SentenceNotes text={block.jp} />
+							</Fragment>
 						);
 					case "paragraph":
 						return (
-							<p className={block.indent ? "rb-b-para rb-b-para--indent" : "rb-b-para"} key={index}>
-								<Jp text={block.jp} />
-								<Gloss cn={block.cn} en={block.en} show={showCn} block />
-							</p>
+							<Fragment key={index}>
+								<p className={block.indent ? "rb-b-para rb-b-para--indent" : "rb-b-para"}>
+									<Jp text={block.jp} />
+									<Gloss cn={block.cn} en={block.en} show={showCn} block />
+								</p>
+								<SentenceNotes text={block.jp} />
+							</Fragment>
 						);
 					case "line":
 						return (
-							<p className="rb-b-line" style={{ textAlign: block.align ?? "left" }} key={index}>
-								<Jp text={block.jp} />
-								<Gloss cn={block.cn} en={block.en} show={showCn} />
-							</p>
+							<Fragment key={index}>
+								<p className="rb-b-line" style={{ textAlign: block.align ?? "left" }}>
+									<Jp text={block.jp} />
+									<Gloss cn={block.cn} en={block.en} show={showCn} />
+								</p>
+								<SentenceNotes text={block.jp} />
+							</Fragment>
 						);
 					case "speech":
 						return (
-							<p className="rb-b-speech" key={index}>
-								<span className="rb-b-speech__who">
-									<Jp text={block.speaker} />
-								</span>
-								<span>
-									<Jp text={block.jp} />
-									<Gloss
-										cn={`${block.speakerCn}：${block.cn}`}
-										en={`${block.speakerEn || block.speakerCn}: ${block.en || block.cn}`}
-										show={showCn}
-									/>
-								</span>
-							</p>
+							<Fragment key={index}>
+								<p className="rb-b-speech">
+									<span className="rb-b-speech__who">
+										<Jp text={block.speaker} />
+									</span>
+									<span>
+										<Jp text={block.jp} />
+										<Gloss
+											cn={`${block.speakerCn}：${block.cn}`}
+											en={`${block.speakerEn || block.speakerCn}: ${block.en || block.cn}`}
+											show={showCn}
+										/>
+									</span>
+								</p>
+								<SentenceNotes text={block.jp} />
+							</Fragment>
 						);
 					case "list":
 						return (
@@ -185,6 +286,7 @@ function Blocks({ blocks, showCn }: { blocks: Block[]; showCn: boolean }) {
 										<span>
 											<Jp text={item.jp} />
 											<Gloss cn={item.cn} en={item.en} show={showCn} />
+											<SentenceNotes text={item.jp} />
 										</span>
 									</li>
 								))}
@@ -194,17 +296,23 @@ function Blocks({ blocks, showCn }: { blocks: Block[]; showCn: boolean }) {
 						return <MaterialTable rows={block.rows} showCn={showCn} key={index} />;
 					case "note":
 						return (
-							<p className="rb-b-note" key={index}>
-								<Jp text={block.jp} />
-								<Gloss cn={block.cn} en={block.en} show={showCn} />
-							</p>
+							<Fragment key={index}>
+								<p className="rb-b-note">
+									<Jp text={block.jp} />
+									<Gloss cn={block.cn} en={block.en} show={showCn} />
+								</p>
+								<SentenceNotes text={block.jp} />
+							</Fragment>
 						);
 					case "source":
 						return (
-							<p className="rb-b-source" key={index}>
-								<Jp text={block.jp} />
-								<Gloss cn={block.cn} en={block.en} show={showCn} />
-							</p>
+							<Fragment key={index}>
+								<p className="rb-b-source">
+									<Jp text={block.jp} />
+									<Gloss cn={block.cn} en={block.en} show={showCn} />
+								</p>
+								<SentenceNotes text={block.jp} />
+							</Fragment>
 						);
 					case "figure":
 						return (
@@ -499,8 +607,23 @@ function DayView({
 	showGrammar: boolean;
 	module?: "reading" | "n2reading";
 }) {
+	const [notes, setNotes] = useState<DayNotes | undefined>();
+	useEffect(() => {
+		if (module !== "n2reading") return;
+		let alive = true;
+		loadN2ReadingNotes(data.week, data.day)
+			?.then((loaded) => {
+				if (alive) setNotes(loaded);
+			})
+			.catch(() => {});
+		return () => {
+			alive = false;
+		};
+	}, [module, data.week, data.day]);
+	const notesValue = useMemo(() => ({ notes, open: showGrammar }), [notes, showGrammar]);
+
 	return (
-		<>
+		<NotesContext.Provider value={notesValue}>
 			{data.point && (
 				<section className="rb-sheet">
 					<span className="rb-sheet__tag">ポイント</span>
@@ -728,7 +851,7 @@ function DayView({
 			<p className="rb-pageref">
 				原书 P.{data.printedPages.join(" – P.")}　·　第{data.week}週 {data.day}日目
 			</p>
-		</>
+		</NotesContext.Provider>
 	);
 }
 

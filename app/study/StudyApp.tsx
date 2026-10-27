@@ -105,6 +105,7 @@ import "../routes/kanji-exam.css";
 import "../routes/listening-n3.css";
 import "../routes/reading-n3.css";
 import "../routes/reading-n3-book.css";
+import "../routes/reading-sentence-notes.css";
 
 const LazyListeningN1Content = lazy(() =>
 	import("../routes/listening-n1").then((module) => ({ default: module.ListeningN1Content })),
