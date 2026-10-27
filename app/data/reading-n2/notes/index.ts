@@ -18,6 +18,13 @@ const loaders: Record<string, () => Promise<DayNotes>> = {
 	"3-5": () => import("./w3d5").then((m) => m.notes),
 	"3-6": () => import("./w3d6").then((m) => m.notes),
 	"3-7": () => import("./w3d7").then((m) => m.notes),
+	"5-1": () => import("./w5d1").then((m) => m.notes),
+	"5-2": () => import("./w5d2").then((m) => m.notes),
+	"5-3": () => import("./w5d3").then((m) => m.notes),
+	"5-4": () => import("./w5d4").then((m) => m.notes),
+	"5-5": () => import("./w5d5").then((m) => m.notes),
+	"5-6": () => import("./w5d6").then((m) => m.notes),
+	"5-7": () => import("./w5d7").then((m) => m.notes),
 };
 
 export function hasN2ReadingNotes(week: number, day: number): boolean {
