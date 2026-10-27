@@ -19,7 +19,7 @@
 	background: var(--rb-page);
 	min-height: 100%;
 	font-family: "Hiragino Mincho ProN", "Yu Mincho", "Songti SC", "Noto Serif JP", serif;
-	line-height: 1.9;
+	line-height: 2.05;
 }
 
 html.theme-dark .rb {
@@ -60,11 +60,12 @@ html.theme-dark .rb {
 }
 
 .rb rt {
-	font-size: 0.62em;
+	font-size: 0.75em;
+	line-height: 1;
 	font-weight: 400;
 	color: var(--rb-ink-soft);
 	letter-spacing: 0.02em;
-	transform: translateY(0.18em);
+	transform: translateY(0.1em);
 }
 
 .rb--no-furigana rt {
