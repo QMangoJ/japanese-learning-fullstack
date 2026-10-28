@@ -4,6 +4,7 @@ import { RubyHtml, SayButton } from "../routes/study-common";
 import { KanaStagger, StudyFlip } from "./study-flip";
 import { CountPair } from "./tick-text";
 import type { SwipeGrade } from "./swipe-grade";
+import { applyResumeOrder, loadResumePos, resumeIndex, saveResume, type ResumePos } from "./cards-resume";
 import { getDisplayVersion, lx, navTo, noRuby, openModuleCards, subscribeDisplay, toggleDisplay } from "./store";
 import {
 	FLASHCARD_MASTERY_KEY,
@@ -222,6 +223,16 @@ export function cardScopeSummary(weeks: CardScopeWeek[], week: number, day: numb
 	return parts;
 }
 
+/** 「上次看到」: shown once after reopening 记忆卡 on a remembered card; gone after the next move. */
+export function ResumeHint({ scope, n }: { scope: string[]; n: number }) {
+	const where = scope.filter(Boolean).join(" · ") || lx("全部", "All");
+	return (
+		<div className="meta fc-resume" data-fc-resume="1" style={{ fontSize: 13, textAlign: "center", margin: "2px 0 6px" }}>
+			{lx(`上次看到：${where} 第 ${n} 张`, `Last time: ${where}, card ${n}`)}
+		</div>
+	);
+}
+
 /** Survives deck remounts (week/day changes remount MemoryCards) for this page session. */
 let fcFiltersOpen = false;
 
@@ -337,6 +348,7 @@ export function MemoryCards({
 	translationPending = false,
 	plainFlip = false,
 	recallPrompt = true,
+	resume,
 }: {
 	deckId: string;
 	items: MemoryCardItem[];
@@ -355,6 +367,8 @@ export function MemoryCards({
 	plainFlip?: boolean;
 	/** Front can show Chinese or English so the flip reveals the Japanese. On unless a deck opts out. */
 	recallPrompt?: boolean;
+	/** Remember and restore the position (index, order, filters) for this module/week/day. */
+	resume?: { module: string; week: number; day: number };
 }) {
 	useSyncExternalStore(subscribeDisplay, getDisplayVersion, () => 0);
 	const syncFlashcards = storageKey === FLASHCARD_MASTERY_KEY;
@@ -371,12 +385,21 @@ export function MemoryCards({
 		[syncFlashcards, storageKey, masteryVersion],
 	);
 	const mastery = syncFlashcards ? flashMastery : localMastery;
-	const [kind, setKind] = useState("all");
-	const [skill, setSkill] = useState<SkillFilter>(defaultSkill);
-	const [idx, setIdx] = useState(0);
+	const [saved] = useState<ResumePos | null>(() => (resume ? loadResumePos(resume.module, resume.week, resume.day) : null));
+	const [kind, setKind] = useState(() => saved?.kind || "all");
+	const [skill, setSkill] = useState<SkillFilter>(() =>
+		saved?.skill === "known" || saved?.skill === "fuzzy" || saved?.skill === "blank" ? saved.skill : defaultSkill,
+	);
+	const [idx, setIdx] = useState(() => saved?.idx || 0);
 	const [flipped, setFlipped] = useState(false);
-	const [order, setOrder] = useState<number[] | null>(null);
-	const [prompt, setPrompt] = useState<PromptSide>("jp");
+	/** Shuffled card ids (null = book order). Ids, not indices, so a saved order survives data changes. */
+	const [order, setOrder] = useState<string[] | null>(() => saved?.order || null);
+	const [prompt, setPrompt] = useState<PromptSide>(() =>
+		saved?.prompt === "cn" || saved?.prompt === "en" ? saved.prompt : "jp",
+	);
+	/** Until the deck first has cards, the saved position is not resolved and nothing is written. */
+	const [restored, setRestored] = useState(!saved);
+	const [hintIdx, setHintIdx] = useState<number | null>(null);
 
 	const derivedKinds = useMemo(() => {
 		if (kindOptions) return kindOptions;
@@ -406,13 +429,30 @@ export function MemoryCards({
 		return counts;
 	}, [items, kind, mastery, deckId]);
 
-	const deck = useMemo(() => {
-		if (!order) return filtered;
-		return order.map((i) => filtered[i]).filter(Boolean);
-	}, [filtered, order]);
+	const deck = useMemo(() => (order ? applyResumeOrder(filtered, order, (item) => item.id) : filtered), [filtered, order]);
 
 	const safeIdx = deck.length ? Math.min(idx, deck.length - 1) : 0;
 	const cur = deck[safeIdx];
+
+	useEffect(() => {
+		if (restored || !deck.length) return;
+		const next = resumeIndex(deck, saved, (item) => item.id);
+		setIdx(next);
+		setRestored(true);
+		if (next > 0) setHintIdx(Math.min(next, deck.length - 1));
+	}, [restored, deck, saved]);
+
+	useEffect(() => {
+		if (!resume || !restored) return;
+		saveResume(resume.module, resume.week, resume.day, {
+			idx: safeIdx,
+			cardId: cur?.id,
+			order: order || undefined,
+			kind,
+			skill,
+			prompt,
+		});
+	}, [resume?.module, resume?.week, resume?.day, restored, safeIdx, cur?.id, order, kind, skill, prompt]);
 	const level = cur ? levelOf(cur) : "known";
 	const hasCn = useMemo(
 		() => items.some((item) => Boolean(item.cn?.trim() || item.translation?.trim())),
@@ -596,6 +636,7 @@ export function MemoryCards({
 					</div>
 				) : null}
 			</FcFilters>
+			{hintIdx != null && hintIdx === safeIdx ? <ResumeHint scope={headerSummary || []} n={safeIdx + 1} /> : null}
 			<Fragment key={cur ? (plainFlip ? `${deckId}-${kind}-${skill}-${safeIdx}` : `${deckId}-${kind}-${skill}-${cur.id}`) : `${deckId}-done`}>{card}</Fragment>
 			<div className="fc-actions" data-fc-actions="1">
 				{cur ? (
@@ -637,7 +678,7 @@ export function MemoryCards({
 						type="button"
 						data-fc="shuffle"
 						onClick={() => {
-							setOrder(shuffleOrder(filtered.length));
+							setOrder(shuffleOrder(filtered.length).map((i) => filtered[i].id));
 							setIdx(0);
 							setFlipped(false);
 						}}

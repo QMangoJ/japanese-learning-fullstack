@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState, useSyncExternalStore } from "react";
 
+import { loadResumeScope, saveResume } from "./cards-resume";
 import { CardsScopeFilter, MemoryCards, cardScopeSummary, type MemoryCardItem } from "./memory-cards";
 import {
 	cardsFromKanjiWeeks,
@@ -25,11 +26,31 @@ import {
 	subscribe,
 } from "./store";
 
+/**
+ * Week/day to open on. A lesson's own 「用记忆卡背这些词」 link (openModuleCards) wins;
+ * otherwise reopen the scope remembered from last time, if it still exists.
+ */
+export function initialCardsScope(module: string, weeks: { n: number; days?: { day: number }[] }[]) {
+	const explicit = moduleCardsScopeNow();
+	if (explicit.week || explicit.day) return explicit;
+	const saved = loadResumeScope(module);
+	if (!saved || !saved.week) return { week: 0, day: 0 };
+	const wk = weeks.find((item) => item.n === saved.week);
+	if (!wk) return { week: 0, day: 0 };
+	const day = saved.day && (wk.days || []).some((item) => item.day === saved.day) ? saved.day : 0;
+	return { week: saved.week, day };
+}
+
 export function ModuleCardsPage() {
 	useSyncExternalStore(subscribe, getVersion, () => 0);
 	useSyncExternalStore(subscribeN2KanjiLater, n2KanjiLaterLoaded, () => false);
-	const [week, setWeek] = useState(() => moduleCardsScopeNow().week);
-	const [day, setDay] = useState(() => moduleCardsScopeNow().day);
+	const [scope] = useState(() => initialCardsScope(MODULE, cur().weeks || []));
+	const [week, setWeek] = useState(scope.week);
+	const [day, setDay] = useState(scope.day);
+
+	useEffect(() => {
+		saveResume(MODULE, week, day);
+	}, [MODULE, week, day]);
 	const [listeningItems, setListeningItems] = useState<MemoryCardItem[] | null>(null);
 	const [listeningError, setListeningError] = useState("");
 
@@ -97,6 +118,7 @@ export function ModuleCardsPage() {
 			key={`${MODULE}-${week}-${day}`}
 			deckId={MODULE}
 			items={items}
+			resume={{ module: MODULE, week, day }}
 			headerSummary={cardScopeSummary(weeks, week, day, chapterScale)}
 			header={
 				<CardsScopeFilter
