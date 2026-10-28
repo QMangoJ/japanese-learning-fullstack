@@ -474,6 +474,24 @@ nav.bottom button.on{color:var(--accent);font-weight:700}
 .fc-btns button{flex:1 1 auto;min-width:92px;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:8px 16px;font-size:17px;cursor:pointer;white-space:nowrap}
 .fc-btns button.primary{background:var(--accent);border-color:var(--accent);color:#fff}
 .fc-prog{color:var(--sub);font-size:14.5px}
+/* 记忆卡：手机上筛选折叠成一行摘要；评分/翻页按钮吸在底栏上方，不用滑动就能点到 */
+.fc-filters,.fc-filters-body,.fc-filters-bar{display:contents}
+.fc-filters-toggle{display:none}
+.fc-actions{position:sticky;bottom:0;z-index:14;display:flex;flex-direction:column;align-items:center;gap:8px;width:100%;max-width:520px;padding:8px 0;background:var(--bg);box-shadow:0 -10px 14px -12px rgba(0,0,0,.28)}
+.fc-actions .fc-btns{width:100%}
+@media (max-width:899px){
+  .fc-actions{bottom:calc(var(--bottom-nav-height) + env(safe-area-inset-bottom))}
+  .fc-actions .fc-btns button{padding:7px 12px}
+  .fc-filters{display:flex;flex-direction:column;align-items:center;gap:10px;width:100%;max-width:520px}
+  .fc-filters-body{display:flex;flex-direction:column;align-items:center;gap:10px;width:100%}
+  .fc-filters:not(.is-open) .fc-filters-body{display:none}
+  .fc-filters-bar{order:-1;display:flex;align-items:center;gap:10px;width:100%}
+  .fc-filters-toggle{display:flex;flex:1;min-width:0;align-items:center;gap:8px;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:6px 14px;font-size:15px;cursor:pointer;text-align:left}
+  .fc-filters-sum{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .fc-filters-caret{flex:none;color:var(--sub);transition:transform .15s}
+  .fc-filters.is-open .fc-filters-caret{transform:rotate(180deg)}
+  .fc-filters-bar .fc-prog{flex:none}
+}
 .review-wrap{display:flex;flex-direction:column;gap:16px;padding-bottom:12px}
 .review-lead{margin:0;color:var(--sub);font-size:16px;line-height:1.55}
 .review-sync{color:var(--sub);font-size:13.5px}

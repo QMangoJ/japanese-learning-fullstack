@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState, useSyncExternalStore } from "react";
 
-import { CardsScopeFilter, MemoryCards, type MemoryCardItem } from "./memory-cards";
+import { CardsScopeFilter, MemoryCards, cardScopeSummary, type MemoryCardItem } from "./memory-cards";
 import {
 	cardsFromKanjiWeeks,
 	cardsFromReadingWeeks,
@@ -97,6 +97,7 @@ export function ModuleCardsPage() {
 			key={`${MODULE}-${week}-${day}`}
 			deckId={MODULE}
 			items={items}
+			headerSummary={cardScopeSummary(weeks, week, day, chapterScale)}
 			header={
 				<CardsScopeFilter
 					weeks={weeks}

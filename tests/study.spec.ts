@@ -1158,6 +1158,8 @@ test.describe("study interactions", () => {
 
 		const card = page.locator(".fc-wrap .fcard").first();
 		await expect(card).toBeVisible();
+		const filtersToggle = page.locator("[data-fc-filters-toggle]");
+		if (await filtersToggle.isVisible()) await filtersToggle.click();
 		await expect(page.getByRole("button", { name: /全部熟练度|All levels/ })).toBeVisible();
 		await expect(page.locator(".fc-wrap").getByRole("button", { name: /注音|Readings/ })).toBeVisible();
 		await expect(page.getByRole("button", { name: /^完全没印象$/ })).toBeVisible();

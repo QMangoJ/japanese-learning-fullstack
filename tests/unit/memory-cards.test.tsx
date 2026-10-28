@@ -2,7 +2,7 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { beforeEach, describe, expect, it } from "vitest";
 
-import { CardsLaunch, MemoryCards, type MemoryCardItem } from "../../app/study/memory-cards";
+import { CardsLaunch, MemoryCards, cardScopeSummary, type MemoryCardItem } from "../../app/study/memory-cards";
 import { ModuleCardsPage } from "../../app/study/ModuleCardsPage";
 import {
 	annotateText,
@@ -57,6 +57,21 @@ beforeEach(() => {
 });
 
 describe("MemoryCards", () => {
+	it("folds filters into a summary row and keeps grade and paging buttons in the bottom action bar", async () => {
+		const user = userEvent.setup();
+		render(<MemoryCards deckId="test" items={sample} headerSummary={cardScopeSummary([{ n: 1 }, { n: 2 }], 2, 5, false)} />);
+		const toggle = document.querySelector<HTMLButtonElement>("[data-fc-filters-toggle]")!;
+		expect(toggle.getAttribute("aria-expanded")).toBe("false");
+		expect(toggle.textContent).toContain("第2週 · 5日目 · 看日语");
+		await user.click(toggle);
+		expect(toggle.getAttribute("aria-expanded")).toBe("true");
+		expect(document.querySelector("[data-fc-filters]")?.getAttribute("data-fc-filters")).toBe("open");
+		await user.click(toggle);
+		const actions = document.querySelector("[data-fc-actions]")!;
+		expect(actions.querySelector(".review-skill")).not.toBeNull();
+		expect(actions.querySelector("[data-fc='next']")).not.toBeNull();
+	});
+
 	it("flips to show reading, translation, and an example, then marks a card as mastered", async () => {
 		const user = userEvent.setup();
 		render(<MemoryCards deckId="test" items={sample} />);
