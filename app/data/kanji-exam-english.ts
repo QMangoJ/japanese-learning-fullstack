@@ -5,6 +5,7 @@ const batchEnglish: Record<string, { title: string; subtitle: string }> = {
 	"school-kanji-2026-08-21": { title: "School Kanji · Chapter 2", subtitle: "Checkout · Inside the store · 24 hours" },
 	"school-kanji-chapter-3-2026-08-22": { title: "School Kanji · Chapter 3", subtitle: "Luggage · Address · Prefectures" },
 	"school-kanji-chapter-4-2026-08-22": { title: "School Kanji · Chapter 4", subtitle: "Dating · Wedding anniversary · Work" },
+	"school-kanji-chapter-7-2026-10-28": { title: "School Kanji · Chapter 7", subtitle: "Seasons · Weather · Travel" },
 };
 
 const lessonEnglish: Record<string, string> = {
@@ -17,6 +18,9 @@ const lessonEnglish: Record<string, string> = {
 	"ch4-1-date": "Chapter 4-1 · Dating",
 	"ch4-2-anniversary": "Chapter 4-2 · Wedding anniversary",
 	"ch4-3-work": "Chapter 4-3 · Work",
+	"ch7-1-seasons": "Chapter 7-1 · Seasons",
+	"ch7-2-weather": "Chapter 7-2 · Weather",
+	"ch7-3-travel": "Chapter 7-3 · Travel",
 };
 
 const kanjiMeaning: Record<string, string> = {
@@ -30,6 +34,7 @@ const kanjiMeaning: Record<string, string> = {
 	毎: "every", 週: "week", 映: "reflect; project", 画: "picture; stroke", 館: "large or public building; hall", 公: "public", 園: "garden; park",
 	夫: "husband", 妻: "wife", 特: "special", 思: "think", 料: "fee; material", 理: "reason; logic", 有: "have; exist",
 	会: "meet; association", 社: "company; shrine", 働: "work", 作: "make", 工: "craft; construction", 場: "place", 始: "begin", 終: "end",
+	春: "spring", 夏: "summer", 秋: "autumn", 冬: "winter", 空: "sky; empty", 星: "star", 雲: "cloud", 去: "leave; past", 天: "heaven; sky", 晴: "clear up; fine weather", 雪: "snow", 風: "wind; style", 強: "strong", 弱: "weak", 暑: "hot (weather)", 寒: "cold", 旅: "travel; journey", 持: "hold; have", 世: "world; generation; era", 界: "boundary; world", 写: "copy; photograph", 真: "true; genuine", 船: "ship; boat", 春夏秋冬: "the four seasons", 晴天: "fine weather", 強風: "strong wind", 強弱: "strength and weakness", 世界: "world", 写真: "photograph",
 };
 
 const wordMeaning: Record<string, string> = {
@@ -54,6 +59,7 @@ const wordMeaning: Record<string, string> = {
 	料金: "fee; charge", 食料: "food supplies", 給料: "salary", 料理: "cooking; cuisine", 理系: "science and engineering track", 有名: "famous", 有力: "valuable; promising (information or a lead)", 有料: "paid; fee-charging",
 	会って: "meet", 入会: "join; enroll", 会話: "conversation", 会社: "company", 社長: "company president", 社会人: "working adult; member of society", 働きながら: "while working", 労働: "labor; work", 作りました: "made", 作家: "author; writer", 作物: "crops",
 	工学部: "faculty of engineering", スキー場: "ski resort", 人工: "artificial; man-made", 工場: "factory", 場: "place; occasion", 本場: "home; place of origin", 始まります: "begin", 年始: "beginning of the year", 始業式: "school-term opening ceremony", 終わって: "finish; be finished", 終電: "last train",
+	春: "spring", 新春: "New Year; early spring", 青春時だい: "one's youth", 夏: "summer", 夏日: "summer day (high of 25°C or above)", 秋: "autumn", 秋分の日: "Autumnal Equinox Day", 冬休み: "winter vacation", "ま冬": "midwinter", 冬き: "winter (season)", 空き家: "vacant house", 空: "sky", 空手: "karate", 上空: "the sky above", 夜空: "night sky", 星: "star", 雲: "cloud", 雨雲: "rain cloud", 去年: "last year", "か去": "the past", "しょう去": "deletion; erasure", 天気: "weather", 天気よほう: "weather forecast", 晴れる: "clear up", 雨天: "rainy weather", 天使: "angel", "かい晴": "clear, cloudless weather", 寒い: "cold", 雪: "snow", 新雪: "fresh snow", 台風: "typhoon", 風: "wind", 風車: "windmill", 洋風: "Western-style", 強まって: "grow stronger", 強い: "strong", 強火: "high heat", 弱って: "weaken; become frail", 弱まって: "weaken; let up", 暑かった: "was hot", "ひ暑地": "summer resort", 暑中見まい: "midsummer greeting card", "ぼう寒グッズ": "cold-weather gear", 一人旅: "traveling alone", 旅行: "travel; trip", 旅館: "Japanese-style inn", 持ちましょう: "let me carry it", 旅行中: "while traveling", 所持金: "money on hand", 世の中: "the world; society", 出世: "getting ahead; promotion", 世界一しゅう: "trip around the world", "げん界": "limit", "た界": "pass away", 写って: "appear (in a photo)", 写真: "photograph", 真空パック: "vacuum pack", 長持ち: "keep for a long time; last", 真じつ: "truth", 真ん中: "the very middle", 船: "ship; boat", 船長: "captain", 客船: "passenger ship",
 };
 
 export function englishBatchLabel(batch: KanjiExamBatch) {
