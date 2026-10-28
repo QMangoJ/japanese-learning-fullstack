@@ -4,7 +4,7 @@ import { JITA_TEARU_EXAMPLES } from "../data/common-jita-tearu";
 import { dueEntry, getDueVersion, grammarDueId, rememberFail, rememberPass, subscribeDue } from "../study/due-review";
 import { EndingSwap } from "../study/ending-swap";
 import { StudyHomePlay } from "../study/study-home-play";
-import { CardsScopeFilter, useDeckArrowKeys } from "../study/memory-cards";
+import { CardsScopeFilter, FcFilters, cardScopeSummary, useDeckArrowKeys } from "../study/memory-cards";
 import { CountPair } from "../study/tick-text";
 import { KanaStagger, StudyFlip } from "../study/study-flip";
 import type { SwipeGrade } from "../study/swipe-grade";
@@ -1939,56 +1939,65 @@ export function CardsPage() {
 
 	return (
 		<div className="fc-wrap">
-			<CardsScopeFilter
-				weeks={currentBundle().weeks || []}
-				week={fc.week}
-				day={fc.day}
-				chapter={chapterScale}
-				dayHasCards={(w, d) => cardsDays(w).includes(d)}
-				onWeek={(n) => {
-					setCardsWeek(n);
-					bump();
-				}}
-				onDay={(n) => {
-					setCardsDay(n);
-					bump();
-				}}
-			/>
-			{promptOptions.length > 1 ? (
-				<div className="fc-filter" data-fc-prompt="1">
-					{promptOptions.map((option) => (
-						<button
-							key={option.value}
-							type="button"
-							className={promptSide === option.value ? "on" : ""}
-							aria-pressed={promptSide === option.value}
-							onClick={() => {
-								if (option.value === prompt) return;
-								setPrompt(option.value);
-								showCardFront();
-								bump();
-							}}
-						>
-							{option.label}
-						</button>
-					))}
-				</div>
-			) : null}
-			<div className="fc-prog">{fc.deck.length ? <CountPair current={Math.min(fc.idx + 1, fc.deck.length)} total={fc.deck.length} /> : ""}</div>
+			<FcFilters
+				summary={[
+					...cardScopeSummary(currentBundle().weeks || [], fc.week, fc.day, chapterScale),
+					promptOptions.length > 1 ? promptOptions.find((option) => option.value === promptSide)?.label || "" : "",
+				]}
+				progress={fc.deck.length ? <CountPair current={Math.min(fc.idx + 1, fc.deck.length)} total={fc.deck.length} /> : ""}
+			>
+				<CardsScopeFilter
+					weeks={currentBundle().weeks || []}
+					week={fc.week}
+					day={fc.day}
+					chapter={chapterScale}
+					dayHasCards={(w, d) => cardsDays(w).includes(d)}
+					onWeek={(n) => {
+						setCardsWeek(n);
+						bump();
+					}}
+					onDay={(n) => {
+						setCardsDay(n);
+						bump();
+					}}
+				/>
+				{promptOptions.length > 1 ? (
+					<div className="fc-filter" data-fc-prompt="1">
+						{promptOptions.map((option) => (
+							<button
+								key={option.value}
+								type="button"
+								className={promptSide === option.value ? "on" : ""}
+								aria-pressed={promptSide === option.value}
+								onClick={() => {
+									if (option.value === prompt) return;
+									setPrompt(option.value);
+									showCardFront();
+									bump();
+								}}
+							>
+								{option.label}
+							</button>
+						))}
+					</div>
+				) : null}
+			</FcFilters>
 			<Fragment key={cur ? `${kind}-${fc.idx}` : "done"}>{card}</Fragment>
-			{kind === "gram" && cur?.p?.pattern ? (
-				<GrammarDueButtons pattern={String(cur.p.pattern)} reading={cur.p.reading} usageCn={cur.p.usage_cn} usageEn={cur.p.usage_en} week={cur.w} day={cur.d} />
-			) : null}
-			<div className="fc-btns">
-				<button data-fc="prev" onClick={act(prevCard)}>
-					‹ {lx("上一张", "Prev")}
-				</button>
-				<button className="primary" data-fc="next" onClick={act(nextCard)}>
-					{lx("下一张", "Next")} ›
-				</button>
-				<button data-fc="shuffle" onClick={act(shuffleCards)}>
-					{lx("重新洗牌", "Shuffle")}
-				</button>
+			<div className="fc-actions" data-fc-actions="1">
+				{kind === "gram" && cur?.p?.pattern ? (
+					<GrammarDueButtons pattern={String(cur.p.pattern)} reading={cur.p.reading} usageCn={cur.p.usage_cn} usageEn={cur.p.usage_en} week={cur.w} day={cur.d} />
+				) : null}
+				<div className="fc-btns">
+					<button data-fc="prev" onClick={act(prevCard)}>
+						‹ {lx("上一张", "Prev")}
+					</button>
+					<button className="primary" data-fc="next" onClick={act(nextCard)}>
+						{lx("下一张", "Next")} ›
+					</button>
+					<button data-fc="shuffle" onClick={act(shuffleCards)}>
+						{lx("重新洗牌", "Shuffle")}
+					</button>
+				</div>
 			</div>
 		</div>
 	);

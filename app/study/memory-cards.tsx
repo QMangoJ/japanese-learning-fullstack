@@ -213,6 +213,51 @@ export function CardsLaunch({ label, week, day }: { label?: string; week?: numbe
 
 export type CardScopeWeek = { n: number; days?: { day: number }[] };
 
+/** Short labels for the current week/day scope, shown in the collapsed filter row. */
+export function cardScopeSummary(weeks: CardScopeWeek[], week: number, day: number, chapter: boolean): string[] {
+	const parts: string[] = [];
+	if (week) parts.push(chapter ? lx(`第${week}章`, `Ch. ${week}`) : lx(`第${week}週`, `Week ${week}`));
+	else if (weeks.length > 1) parts.push(chapter ? lx("全部章", "All chapters") : lx("全部周", "All weeks"));
+	if (day) parts.push(chapter ? lx(`第${day}节`, `Sec. ${day}`) : lx(`${day}日目`, `Day ${day}`));
+	return parts;
+}
+
+/** Survives deck remounts (week/day changes remount MemoryCards) for this page session. */
+let fcFiltersOpen = false;
+
+/**
+ * Filter chips plus the card counter. On phones the chips fold into one summary row
+ * that expands on tap; on wide screens the wrapper is display:contents, so the layout is unchanged.
+ */
+export function FcFilters({ summary, progress, children }: { summary: string[]; progress: ReactNode; children: ReactNode }) {
+	const [open, setOpen] = useState(() => fcFiltersOpen);
+	const label = summary.filter(Boolean).join(" · ") || lx("筛选", "Filters");
+	return (
+		<div className={open ? "fc-filters is-open" : "fc-filters"} data-fc-filters={open ? "open" : "closed"}>
+			<div className="fc-filters-body">{children}</div>
+			<div className="fc-filters-bar">
+				<button
+					type="button"
+					className="fc-filters-toggle"
+					data-fc-filters-toggle="1"
+					aria-expanded={open}
+					aria-label={open ? lx("收起筛选", "Hide filters") : lx("展开筛选", "Show filters")}
+					onClick={() => {
+						fcFiltersOpen = !open;
+						setOpen(!open);
+					}}
+				>
+					<span className="fc-filters-sum">{label}</span>
+					<span className="fc-filters-caret" aria-hidden="true">
+						▾
+					</span>
+				</button>
+				<div className="fc-prog">{progress}</div>
+			</div>
+		</div>
+	);
+}
+
 export function CardsScopeFilter({
 	weeks,
 	week,
@@ -283,6 +328,7 @@ export function MemoryCards({
 	storageKey = FLASHCARD_MASTERY_KEY,
 	crumb,
 	header,
+	headerSummary,
 	kindOptions,
 	hint,
 	emptyUnknown,
@@ -297,6 +343,8 @@ export function MemoryCards({
 	storageKey?: string;
 	crumb?: ReactNode;
 	header?: ReactNode;
+	/** Labels for what `header` selects (week/day), for the collapsed filter row. */
+	headerSummary?: string[];
 	kindOptions?: MemoryKindOption[];
 	hint?: string;
 	emptyUnknown?: string;
@@ -484,105 +532,119 @@ export function MemoryCards({
 	return (
 		<div className="fc-wrap">
 			{crumb}
-			{header}
-			{derivedKinds.length ? (
-				<div className="fc-filter">
-					{derivedKinds.map((option) => (
-						<button
-							key={option.value}
-							type="button"
-							className={kind === option.value ? "on" : ""}
-							onClick={() => resetDeck(option.value, skill)}
-						>
-							{option.label}
+			<FcFilters
+				summary={[
+					...(headerSummary || []),
+					derivedKinds.length && kind !== "all"
+						? derivedKinds.find((option) => option.value === kind)?.label || ""
+						: "",
+					skill !== "all" ? levelLabel(skill) : "",
+					noRuby ? lx("无注音", "No readings") : "",
+					showPrompt ? promptOptions.find((option) => option.value === promptSide)?.label || "" : "",
+				]}
+				progress={deck.length ? <CountPair current={safeIdx + 1} total={deck.length} /> : ""}
+			>
+				{header}
+				{derivedKinds.length ? (
+					<div className="fc-filter">
+						{derivedKinds.map((option) => (
+							<button
+								key={option.value}
+								type="button"
+								className={kind === option.value ? "on" : ""}
+								onClick={() => resetDeck(option.value, skill)}
+							>
+								{option.label}
+							</button>
+						))}
+					</div>
+				) : null}
+				<div className="fc-filter" data-fc-levels="1">
+					{(
+						[
+							["all", lx("全部熟练度", "All levels"), levelCounts.known + levelCounts.fuzzy + levelCounts.blank],
+							["known", levelLabel("known"), levelCounts.known],
+							["fuzzy", levelLabel("fuzzy"), levelCounts.fuzzy],
+							["blank", levelLabel("blank"), levelCounts.blank],
+						] as const
+					).map(([value, label, count]) => (
+						<button key={value} type="button" className={skill === value ? "on" : ""} onClick={() => resetDeck(kind, value)}>
+							{label} {count}
 						</button>
 					))}
-				</div>
-			) : null}
-			<div className="fc-filter" data-fc-levels="1">
-				{(
-					[
-						["all", lx("全部熟练度", "All levels"), levelCounts.known + levelCounts.fuzzy + levelCounts.blank],
-						["known", levelLabel("known"), levelCounts.known],
-						["fuzzy", levelLabel("fuzzy"), levelCounts.fuzzy],
-						["blank", levelLabel("blank"), levelCounts.blank],
-					] as const
-				).map(([value, label, count]) => (
-					<button key={value} type="button" className={skill === value ? "on" : ""} onClick={() => resetDeck(kind, value)}>
-						{label} {count}
+					<button type="button" className={!noRuby ? "on" : ""} aria-pressed={!noRuby} onClick={() => toggleDisplay("ruby")}>
+						{lx("注音", "Readings")}
 					</button>
-				))}
-				<button type="button" className={!noRuby ? "on" : ""} aria-pressed={!noRuby} onClick={() => toggleDisplay("ruby")}>
-					{lx("注音", "Readings")}
-				</button>
-			</div>
-			{showPrompt ? (
-				<div className="fc-filter" data-fc-prompt="1">
-					{promptOptions.map((option) => (
-						<button
-							key={option.value}
-							type="button"
-							className={promptSide === option.value ? "on" : ""}
-							aria-pressed={promptSide === option.value}
-							onClick={() => {
-								if (option.value === prompt) return;
-								setPrompt(option.value);
-								setFlipped(false);
-							}}
-						>
-							{option.label}
-						</button>
-					))}
 				</div>
-			) : null}
-			<div className="fc-prog">{deck.length ? <CountPair current={safeIdx + 1} total={deck.length} /> : ""}</div>
+				{showPrompt ? (
+					<div className="fc-filter" data-fc-prompt="1">
+						{promptOptions.map((option) => (
+							<button
+								key={option.value}
+								type="button"
+								className={promptSide === option.value ? "on" : ""}
+								aria-pressed={promptSide === option.value}
+								onClick={() => {
+									if (option.value === prompt) return;
+									setPrompt(option.value);
+									setFlipped(false);
+								}}
+							>
+								{option.label}
+							</button>
+						))}
+					</div>
+				) : null}
+			</FcFilters>
 			<Fragment key={cur ? (plainFlip ? `${deckId}-${kind}-${skill}-${safeIdx}` : `${deckId}-${kind}-${skill}-${cur.id}`) : `${deckId}-done`}>{card}</Fragment>
-			{cur ? (
-				<div className="review-skill">
-					<button type="button" className={level === "blank" ? "on" : ""} onClick={() => applyLevel("blank")}>
-						{levelLabel("blank")}
+			<div className="fc-actions" data-fc-actions="1">
+				{cur ? (
+					<div className="review-skill">
+						<button type="button" className={level === "blank" ? "on" : ""} onClick={() => applyLevel("blank")}>
+							{levelLabel("blank")}
+						</button>
+						<button type="button" className={level === "fuzzy" ? "on" : ""} onClick={() => applyLevel("fuzzy")}>
+							{levelLabel("fuzzy")}
+						</button>
+						<button type="button" className={level === "known" ? "on known" : ""} onClick={() => applyLevel("known")}>
+							{levelLabel("known")}
+						</button>
+					</div>
+				) : null}
+				<div className="fc-btns">
+					<button
+						type="button"
+						data-fc="prev"
+						onClick={() => {
+							setIdx((n) => Math.max(0, n - 1));
+							setFlipped(false);
+						}}
+					>
+						‹ {lx("上一张", "Prev")}
 					</button>
-					<button type="button" className={level === "fuzzy" ? "on" : ""} onClick={() => applyLevel("fuzzy")}>
-						{levelLabel("fuzzy")}
+					<button
+						type="button"
+						className="primary"
+						data-fc="next"
+						onClick={() => {
+							setIdx((n) => n + 1);
+							setFlipped(false);
+						}}
+					>
+						{lx("下一张", "Next")} ›
 					</button>
-					<button type="button" className={level === "known" ? "on known" : ""} onClick={() => applyLevel("known")}>
-						{levelLabel("known")}
+					<button
+						type="button"
+						data-fc="shuffle"
+						onClick={() => {
+							setOrder(shuffleOrder(filtered.length));
+							setIdx(0);
+							setFlipped(false);
+						}}
+					>
+						{lx("重新洗牌", "Shuffle")}
 					</button>
 				</div>
-			) : null}
-			<div className="fc-btns">
-				<button
-					type="button"
-					data-fc="prev"
-					onClick={() => {
-						setIdx((n) => Math.max(0, n - 1));
-						setFlipped(false);
-					}}
-				>
-					‹ {lx("上一张", "Prev")}
-				</button>
-				<button
-					type="button"
-					className="primary"
-					data-fc="next"
-					onClick={() => {
-						setIdx((n) => n + 1);
-						setFlipped(false);
-					}}
-				>
-					{lx("下一张", "Next")} ›
-				</button>
-				<button
-					type="button"
-					data-fc="shuffle"
-					onClick={() => {
-						setOrder(shuffleOrder(filtered.length));
-						setIdx(0);
-						setFlipped(false);
-					}}
-				>
-					{lx("重新洗牌", "Shuffle")}
-				</button>
 			</div>
 		</div>
 	);
