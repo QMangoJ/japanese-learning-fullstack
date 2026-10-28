@@ -42,9 +42,16 @@ describe("kanji exam question bank", () => {
 			"学校汉字 · 第2章",
 			"学校汉字 · 第3章",
 			"学校汉字 · 第4章",
+			"学校汉字 · 第7章",
 		]);
 		expect(KANJI_EXAM_BATCHES[1].lessons.flatMap((lesson) => lesson.pages)).toEqual([65, 66, 67, 68, 71, 72, 73, 74, 77, 78, 79, 80]);
 		expect(KANJI_EXAM_BATCHES[2].lessons.flatMap((lesson) => lesson.pages)).toEqual([87, 88, 89, 90, 93, 94, 95, 96, 99, 100, 101, 102]);
+		const chapter7 = KANJI_EXAM_BATCHES[3];
+		expect(chapter7.lessons.map((lesson) => lesson.title)).toEqual(["7章-1 きせつ", "7章-2 天気", "7章-3 旅行"]);
+		expect(chapter7.lessons.flatMap((lesson) => lesson.pages)).toEqual([155, 156, 157, 158, 161, 162, 163, 164, 167, 168, 169, 170]);
+		expect(chapter7.lessons.flatMap((lesson) => lesson.kanji).join("")).toBe("春夏秋冬空星雲去天晴雪風強弱暑寒旅持世界写真船");
+		expect(questionsForMode(chapter7, "reading")).toHaveLength(71);
+		expect(questionsForMode(chapter7, "writing")).toHaveLength(84);
 		for (const batch of KANJI_EXAM_BATCHES.slice(1)) {
 			expect(batch.lessons).toHaveLength(3);
 			expect(questionsForMode(batch, "reading").length).toBeGreaterThan(50);
