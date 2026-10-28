@@ -4,7 +4,7 @@ import { JITA_TEARU_EXAMPLES } from "../data/common-jita-tearu";
 import { dueEntry, getDueVersion, grammarDueId, rememberFail, rememberPass, subscribeDue } from "../study/due-review";
 import { EndingSwap } from "../study/ending-swap";
 import { StudyHomePlay } from "../study/study-home-play";
-import { CardsScopeFilter, FcFilters, cardScopeSummary, useDeckArrowKeys } from "../study/memory-cards";
+import { CardsScopeFilter, FcFilters, ResumeHint, cardScopeSummary, useDeckArrowKeys } from "../study/memory-cards";
 import { CountPair } from "../study/tick-text";
 import { KanaStagger, StudyFlip } from "../study/study-flip";
 import type { SwipeGrade } from "../study/swipe-grade";
@@ -15,6 +15,7 @@ import {
 	cardsDays,
 	cardsState,
 	cur as currentBundle,
+	fcResumedAt,
 	clearFavs,
 	clearSearchHistory,
 	closeFavStudyCards,
@@ -1982,6 +1983,12 @@ export function CardsPage() {
 					</div>
 				) : null}
 			</FcFilters>
+			{(() => {
+				const at = fcResumedAt();
+				return at && cur && at.week === fc.week && at.day === fc.day && at.idx === fc.idx ? (
+					<ResumeHint scope={cardScopeSummary(currentBundle().weeks || [], fc.week, fc.day, chapterScale)} n={fc.idx + 1} />
+				) : null;
+			})()}
 			<Fragment key={cur ? `${kind}-${fc.idx}` : "done"}>{card}</Fragment>
 			<div className="fc-actions" data-fc-actions="1">
 				{kind === "gram" && cur?.p?.pattern ? (

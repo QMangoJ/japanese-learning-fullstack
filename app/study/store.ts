@@ -7,6 +7,7 @@ import { forgetDue, hydrateDue, kickDueSync, mistakeDueDraft, mistakeDueId, note
 import { canAttemptSync, noteSyncResult, resetSyncPolicyForTests } from "./kv-sync-policy";
 import { hydrateMastery, kickMasterySync, noteMasterySignedOut, pullMasteryFromServer, pushMasteryNow, resetMasteryForTests } from "./memory-mastery";
 import { refreshUsageAccount } from "./usage-time";
+import { applyResumeOrder, loadResumePos, loadResumeScope, resumeIndex, saveResume } from "./cards-resume";
 import { pushToast } from "./toast";
 
 export type ModuleKey =
@@ -497,6 +498,7 @@ export function setModule(m: ModuleKey) {
 	MODULE = m;
 	lsSet("module", m);
 	fc = { week: 0, day: 0, deck: [], idx: 0, flipped: false };
+	fcResumed = null;
 	showingFavFc = false;
 	deriveLT();
 	emit();
@@ -1014,13 +1016,16 @@ function collectDeck(week: number, day = 0) {
 	return deck;
 }
 
-function buildDeck(week: number, day = 0) {
-	const deck = collectDeck(week, day);
+function shuffled<T>(deck: T[]): T[] {
 	for (let i = deck.length - 1; i > 0; i--) {
 		const j = Math.floor(Math.random() * (i + 1));
 		[deck[i], deck[j]] = [deck[j], deck[i]];
 	}
 	return deck;
+}
+
+function buildDeck(week: number, day = 0) {
+	return shuffled(collectDeck(week, day));
 }
 
 /** Days of `week` that actually have flashcards in the current module (e.g. skips the day-7 test). */
@@ -1407,12 +1412,14 @@ export function setCardsWeek(week: number) {
 	fc.deck = buildDeck(week, 0);
 	fc.idx = 0;
 	fc.flipped = false;
+	persistFc();
 }
 export function setCardsDay(day: number) {
 	fc.day = day;
 	fc.deck = buildDeck(fc.week, day);
 	fc.idx = 0;
 	fc.flipped = false;
+	persistFc();
 }
 export function flipCard() {
 	fc.flipped = !fc.flipped;
@@ -1424,18 +1431,21 @@ export function nextCard() {
 	if (fc.idx < fc.deck.length) {
 		fc.idx++;
 		fc.flipped = false;
+		persistFc();
 	}
 }
 export function prevCard() {
 	if (fc.idx > 0) {
 		fc.idx--;
 		fc.flipped = false;
+		persistFc();
 	}
 }
 export function shuffleCards() {
 	fc.deck = buildDeck(fc.week, fc.day);
 	fc.idx = 0;
 	fc.flipped = false;
+	persistFc();
 }
 
 export function setMistakeType(type: string) {
@@ -1798,6 +1808,7 @@ export function resetStudyStateForTests() {
 	studyHideJapanese = false;
 	studyHideTranslation = false;
 	fc = { week: 0, day: 0, deck: [], idx: 0, flipped: false };
+	fcResumed = null;
 	G = { weeks: [] };
 	V = { weeks: [] };
 	K = { weeks: [] };
@@ -2213,12 +2224,50 @@ export function homeIntro() {
 	);
 }
 
+/** Stable id of a legacy 记忆卡 card, used to remember the shuffle order and the current card. */
+export function fcCardId(card: any): string {
+	if (!card) return "";
+	if (card.p) return `g:${card.w}-${card.d}-${card.p.pattern ?? card.i}`;
+	if (card.k) return `k:${card.w}-${card.d}-${card.k.char}`;
+	return `v:${card.w}-${card.d}-${card.v?.jp ?? ""}`;
+}
+
+/** Where 记忆卡 reopened after a restore, for the 「上次看到」 hint. Cleared on module change. */
+let fcResumed: { week: number; day: number; idx: number } | null = null;
+export function fcResumedAt() {
+	return fcResumed;
+}
+
+function persistFc() {
+	if (!fc.deck.length) return;
+	saveResume(MODULE, fc.week, fc.day, {
+		idx: fc.idx,
+		cardId: fc.deck[fc.idx] ? fcCardId(fc.deck[fc.idx]) : undefined,
+		order: fc.deck.map(fcCardId),
+	});
+}
+
 export function ensureCardsDeck() {
-	if (!fc.deck.length) {
-		fc.deck = buildDeck(fc.week, fc.day);
-		fc.idx = 0;
-		fc.flipped = false;
+	if (fc.deck.length) return;
+	fc.flipped = false;
+	const saved = loadResumeScope(MODULE);
+	const weeks: any[] = cur().weeks || [];
+	if (saved) {
+		const week = saved.week && weeks.some((w: any) => w.n === saved.week) ? saved.week : 0;
+		const day = week && saved.day && cardsDays(week).includes(saved.day) ? saved.day : 0;
+		const pos = loadResumePos(MODULE, week, day);
+		const base = collectDeck(week, day);
+		if (base.length) {
+			fc.week = week;
+			fc.day = day;
+			fc.deck = pos?.order?.length ? applyResumeOrder(shuffled(base), pos.order, fcCardId) : shuffled(base);
+			fc.idx = resumeIndex(fc.deck, pos, fcCardId);
+			fcResumed = fc.idx > 0 && fc.idx < fc.deck.length ? { week, day, idx: fc.idx } : null;
+			return;
+		}
 	}
+	fc.deck = buildDeck(fc.week, fc.day);
+	fc.idx = 0;
 }
 
 export function setCtMode(mode: "family" | "week") {
