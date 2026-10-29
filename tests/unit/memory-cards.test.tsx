@@ -85,6 +85,12 @@ describe("MemoryCards", () => {
 		expect(screen.getByText("ここで禁煙です。")).toBeInTheDocument();
 		await user.click(screen.getByRole("button", { name: /^完全没印象$/ }));
 		expect(document.querySelector(".review-skill button.on")?.textContent).toBe("完全没印象");
+		expect(document.querySelector(".review-reading")?.textContent).toBe("きんし");
+		await user.click(screen.getByText("prohibition"));
+		expect(document.querySelector(".review-reading")).toBeNull();
+		await user.click(screen.getByRole("button", { name: /^模糊$/ }));
+		expect(document.querySelector(".review-reading")).toBeNull();
+		await user.click(screen.getByRole("button", { name: /^完全没印象$/ }));
 		expect(screen.getByText("禁止")).toBeInTheDocument();
 		await user.click(screen.getByRole("button", { name: /^记住了 / }));
 		expect(screen.queryByText("禁止")).not.toBeInTheDocument();

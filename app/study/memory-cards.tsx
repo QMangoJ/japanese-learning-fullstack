@@ -494,15 +494,20 @@ export function MemoryCards({
 		if (!cur) return false;
 		const next = setCardLevel(storageKey, mastery, deckId, cur.id, nextLevel);
 		if (storageKey !== FLASHCARD_MASTERY_KEY) setLocalMastery(next);
-		setFlipped(false);
-		return skill !== "all" && nextLevel !== skill;
+		// Keep the current face: changing a card's level must not flip it. Only reset when it leaves the filtered deck.
+		const leaves = skill !== "all" && nextLevel !== skill;
+		if (leaves) setFlipped(false);
+		return leaves;
 	};
 
 	const swipe = (grade: SwipeGrade) => {
 		if (!cur) return;
 		const nextLevel: CardLevel = grade === "pass" ? "known" : grade === "fuzzy" ? "fuzzy" : "blank";
 		const leaves = applyLevel(nextLevel);
-		if (!leaves) setIdx((n) => n + 1);
+		if (!leaves) {
+			setIdx((n) => n + 1);
+			setFlipped(false);
+		}
 	};
 
 	let card: ReactNode;
