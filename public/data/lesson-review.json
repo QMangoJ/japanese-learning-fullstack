@@ -3,6 +3,286 @@
 	"fetchedAt": "2026-10-26T23:20:57.000Z",
 	"days": [
 		{
+			"id": "2026-10-30",
+			"date": "2026-10-30",
+			"title": "2026-10-30",
+			"source": "Danielさん",
+			"items": [
+				{
+					"jp": "良いって言ってくれて良かった",
+					"kind": "sentence",
+					"jp_r": "<ruby>良<rt>よ</rt></ruby>いって<ruby>言<rt>い</rt></ruby>ってくれて<ruby>良<rt>よ</rt></ruby>かった",
+					"cn": "她说可以，太好了（〜てくれて良かった：对方为我做了某事，我很庆幸）",
+					"en": "I'm glad that she said okay.",
+					"example": "先生が良いって言ってくれて良かった。",
+					"exampleCn": "老师说可以，真是太好了。",
+					"exampleEn": "I'm glad the teacher said it was okay.",
+					"example_r": "<ruby>先生<rt>せんせい</rt></ruby>が<ruby>良<rt>よ</rt></ruby>いって<ruby>言<rt>い</rt></ruby>ってくれて<ruby>良<rt>よ</rt></ruby>かった。"
+				},
+				{
+					"jp": "言って／ゆって＝言う",
+					"kind": "sentence",
+					"jp_r": "<ruby>言<rt>い</rt></ruby>って／ゆって＝<ruby>言<rt>い</rt></ruby>う",
+					"cn": "口语里「言って」常读成「ゆって」，意思不变，都是「说」",
+					"en": "In casual speech 言って is often pronounced ゆって.",
+					"example": "彼女、明日来るってゆってたよ。",
+					"exampleCn": "她说过明天会来哦。",
+					"exampleEn": "She said she's coming tomorrow.",
+					"example_r": "<ruby>彼女<rt>かのじょ</rt></ruby>、<ruby>明日<rt>あした</rt></ruby><ruby>来<rt>く</rt></ruby>るってゆってたよ。"
+				},
+				{
+					"jp": "委員長",
+					"kind": "word",
+					"jp_r": "<ruby>委員長<rt>いいんちょう</rt></ruby>",
+					"cn": "班长、委员长（いいんちょう，N2）",
+					"en": "class president; committee chair",
+					"example": "彼はクラスの委員長です。",
+					"exampleCn": "他是班里的班长。",
+					"exampleEn": "He is the class president.",
+					"example_r": "<ruby>彼<rt>かれ</rt></ruby>はクラスの<ruby>委員長<rt>いいんちょう</rt></ruby>です。"
+				},
+				{
+					"jp": "気に入らなかった",
+					"kind": "sentence",
+					"jp_r": "<ruby>気<rt>き</rt></ruby>に<ruby>入<rt>はい</rt></ruby>らなかった",
+					"cn": "不喜欢、看不上（気に入る 的否定过去式）",
+					"en": "didn't like it",
+					"example": "そのデザインはあまり気に入らなかった。",
+					"exampleCn": "那个设计我不太喜欢。",
+					"exampleEn": "I didn't really like that design.",
+					"example_r": "そのデザインはあまり<ruby>気<rt>き</rt></ruby>に<ruby>入<rt>はい</rt></ruby>らなかった。"
+				},
+				{
+					"jp": "生徒会",
+					"kind": "word",
+					"jp_r": "<ruby>生徒会<rt>せいとかい</rt></ruby>",
+					"cn": "学生会（せいとかい，N2）",
+					"en": "student council",
+					"example": "大学の生徒会に入っていました。",
+					"exampleCn": "我以前在大学学生会。",
+					"exampleEn": "I was on the student council at university.",
+					"example_r": "<ruby>大学<rt>だいがく</rt></ruby>の<ruby>生徒会<rt>せいとかい</rt></ruby>に<ruby>入<rt>はい</rt></ruby>っていました。"
+				},
+				{
+					"jp": "専攻",
+					"kind": "word",
+					"jp_r": "<ruby>専攻<rt>せんこう</rt></ruby>",
+					"cn": "专业（せんこう，N2）",
+					"en": "major (field of study)",
+					"example": "大学での専攻は何ですか。",
+					"exampleCn": "你大学的专业是什么？",
+					"exampleEn": "What was your major at university?",
+					"example_r": "<ruby>大学<rt>だいがく</rt></ruby>での<ruby>専攻<rt>せんこう</rt></ruby>は<ruby>何<rt>なん</rt></ruby>ですか。"
+				},
+				{
+					"jp": "決まってないといけない",
+					"kind": "sentence",
+					"jp_r": "<ruby>決<rt>き</rt></ruby>まってないといけない",
+					"cn": "必须已经定下来（〜ていないといけない：必须处于……状态）",
+					"en": "It has to be decided already.",
+					"example": "出発の前に日程が決まってないといけない。",
+					"exampleCn": "出发之前日程必须已经定好。",
+					"exampleEn": "The schedule has to be set before we leave.",
+					"example_r": "<ruby>出発<rt>しゅっぱつ</rt></ruby>の<ruby>前<rt>まえ</rt></ruby>に<ruby>日程<rt>にってい</rt></ruby>が<ruby>決<rt>き</rt></ruby>まってないといけない。"
+				},
+				{
+					"jp": "意地悪",
+					"kind": "word",
+					"jp_r": "<ruby>意地悪<rt>いじわる</rt></ruby>",
+					"cn": "坏心眼、故意刁难（いじわる，N2）",
+					"en": "mean; spiteful",
+					"example": "そんな意地悪なことを言わないで。",
+					"exampleCn": "别说那么刁难人的话。",
+					"exampleEn": "Don't say such mean things.",
+					"example_r": "そんな<ruby>意地悪<rt>いじわる</rt></ruby>なことを<ruby>言<rt>い</rt></ruby>わないで。"
+				},
+				{
+					"jp": "砂遊び",
+					"kind": "word",
+					"jp_r": "<ruby>砂遊<rt>すなあそ</rt></ruby>び",
+					"cn": "玩沙子（すなあそび）",
+					"en": "playing in the sand",
+					"example": "子どもたちが公園で砂遊びをしている。",
+					"exampleCn": "孩子们在公园里玩沙子。",
+					"exampleEn": "The children are playing in the sand at the park.",
+					"example_r": "<ruby>子<rt>こ</rt></ruby>どもたちが<ruby>公園<rt>こうえん</rt></ruby>で<ruby>砂遊<rt>すなあそ</rt></ruby>びをしている。"
+				},
+				{
+					"jp": "罪を犯さない",
+					"kind": "sentence",
+					"jp_r": "<ruby>罪<rt>つみ</rt></ruby>を<ruby>犯<rt>おか</rt></ruby>さない",
+					"cn": "不犯罪（罪 つみ：罪；犯す おかす：犯，N2）",
+					"en": "not commit a crime",
+					"example": "二度と罪を犯さないと約束した。",
+					"exampleCn": "他发誓再也不犯罪了。",
+					"exampleEn": "He promised never to commit a crime again.",
+					"example_r": "<ruby>二度<rt>にど</rt></ruby>と<ruby>罪<rt>つみ</rt></ruby>を<ruby>犯<rt>おか</rt></ruby>さないと<ruby>約束<rt>やくそく</rt></ruby>した。"
+				},
+				{
+					"jp": "老けた",
+					"kind": "word",
+					"jp_r": "<ruby>老<rt>ふ</rt></ruby>けた",
+					"cn": "显老了、变老（老ける ふける，N2；多指外表）",
+					"en": "looks older; has aged",
+					"example": "久しぶりに会ったら、少し老けたね。",
+					"exampleCn": "好久没见，你看起来有点老了呢。",
+					"exampleEn": "It's been a while — you've aged a bit.",
+					"example_r": "<ruby>久<rt>ひさ</rt></ruby>しぶりに<ruby>会<rt>あ</rt></ruby>ったら、<ruby>少<rt>すこ</rt></ruby>し<ruby>老<rt>ふ</rt></ruby>けたね。"
+				},
+				{
+					"jp": "歳を取った",
+					"kind": "sentence",
+					"jp_r": "<ruby>歳<rt>とし</rt></ruby>を<ruby>取<rt>と</rt></ruby>った",
+					"cn": "上年纪了（比「老けた」中性，指年龄增长）",
+					"en": "got older",
+					"example": "歳を取ったので、夜更かしがつらくなった。",
+					"exampleCn": "上了年纪，熬夜变得很吃力。",
+					"exampleEn": "I've gotten older, so staying up late is hard now.",
+					"example_r": "<ruby>歳<rt>とし</rt></ruby>を<ruby>取<rt>と</rt></ruby>ったので、<ruby>夜更<rt>よふ</rt></ruby>かしがつらくなった。"
+				},
+				{
+					"jp": "河豚",
+					"kind": "word",
+					"jp_r": "<ruby>河豚<rt>ふぐ</rt></ruby>",
+					"cn": "河豚（ふぐ；平时多写假名 ふぐ）",
+					"en": "pufferfish (fugu)",
+					"example": "冬は河豚料理がおいしい季節です。",
+					"exampleCn": "冬天是河豚料理好吃的季节。",
+					"exampleEn": "Winter is the season when fugu dishes are good.",
+					"example_r": "<ruby>冬<rt>ふゆ</rt></ruby>は<ruby>河豚<rt>ふぐ</rt></ruby><ruby>料理<rt>りょうり</rt></ruby>がおいしい<ruby>季節<rt>きせつ</rt></ruby>です。"
+				},
+				{
+					"jp": "サボる",
+					"kind": "word",
+					"cn": "偷懒、翘（课/班）（口语）",
+					"en": "to skip; to slack off",
+					"example": "授業をサボってはいけません。",
+					"exampleCn": "不能翘课。",
+					"exampleEn": "You shouldn't skip class.",
+					"example_r": "<ruby>授業<rt>じゅぎょう</rt></ruby>をサボってはいけません。"
+				},
+				{
+					"jp": "皮を剥いた",
+					"kind": "sentence",
+					"jp_r": "<ruby>皮<rt>かわ</rt></ruby>を<ruby>剥<rt>む</rt></ruby>いた",
+					"cn": "剥了皮（剥く むく，N2）",
+					"en": "peeled (the skin)",
+					"example": "りんごの皮を剥いた。",
+					"exampleCn": "我把苹果皮剥了。",
+					"exampleEn": "I peeled the apple.",
+					"example_r": "りんごの<ruby>皮<rt>かわ</rt></ruby>を<ruby>剥<rt>む</rt></ruby>いた。"
+				},
+				{
+					"jp": "梨",
+					"kind": "word",
+					"jp_r": "<ruby>梨<rt>なし</rt></ruby>",
+					"cn": "梨（なし）",
+					"en": "pear",
+					"example": "この梨はとても甘い。",
+					"exampleCn": "这个梨非常甜。",
+					"exampleEn": "This pear is very sweet.",
+					"example_r": "この<ruby>梨<rt>なし</rt></ruby>はとても<ruby>甘<rt>あま</rt></ruby>い。"
+				},
+				{
+					"jp": "桃",
+					"kind": "word",
+					"jp_r": "<ruby>桃<rt>もも</rt></ruby>",
+					"cn": "桃子（もも）",
+					"en": "peach",
+					"example": "夏になると桃が食べたくなる。",
+					"exampleCn": "一到夏天就想吃桃子。",
+					"exampleEn": "When summer comes, I want peaches.",
+					"example_r": "<ruby>夏<rt>なつ</rt></ruby>になると<ruby>桃<rt>もも</rt></ruby>が<ruby>食<rt>た</rt></ruby>べたくなる。"
+				},
+				{
+					"jp": "砕けた言い方",
+					"kind": "word",
+					"jp_r": "<ruby>砕<rt>くだ</rt></ruby>けた<ruby>言<rt>い</rt></ruby>い<ruby>方<rt>かた</rt></ruby>",
+					"cn": "随意的说法、口语说法（砕ける くだける，N1）",
+					"en": "casual way of saying it",
+					"example": "友達には砕けた言い方で大丈夫です。",
+					"exampleCn": "对朋友用随意的说法就行。",
+					"exampleEn": "Casual phrasing is fine with friends.",
+					"example_r": "<ruby>友達<rt>ともだち</rt></ruby>には<ruby>砕<rt>くだ</rt></ruby>けた<ruby>言<rt>い</rt></ruby>い<ruby>方<rt>かた</rt></ruby>で<ruby>大丈夫<rt>だいじょうぶ</rt></ruby>です。"
+				},
+				{
+					"jp": "硬い言い方",
+					"kind": "word",
+					"jp_r": "<ruby>硬<rt>かた</rt></ruby>い<ruby>言<rt>い</rt></ruby>い<ruby>方<rt>かた</rt></ruby>",
+					"cn": "生硬、正式的说法",
+					"en": "stiff / formal way of saying it",
+					"example": "メールだと少し硬い言い方になります。",
+					"exampleCn": "写邮件的话说法会比较正式。",
+					"exampleEn": "In email the phrasing gets a bit formal.",
+					"example_r": "メールだと<ruby>少<rt>すこ</rt></ruby>し<ruby>硬<rt>かた</rt></ruby>い<ruby>言<rt>い</rt></ruby>い<ruby>方<rt>かた</rt></ruby>になります。"
+				},
+				{
+					"jp": "ぴったり",
+					"kind": "word",
+					"cn": "正合适、刚刚好",
+					"en": "exactly; perfectly fitting",
+					"example": "この靴はサイズがぴったりだ。",
+					"exampleCn": "这双鞋尺码正合适。",
+					"exampleEn": "These shoes fit perfectly.",
+					"example_r": "この<ruby>靴<rt>くつ</rt></ruby>はサイズがぴったりだ。"
+				},
+				{
+					"jp": "勝ち負けはない",
+					"kind": "sentence",
+					"jp_r": "<ruby>勝<rt>か</rt></ruby>ち<ruby>負<rt>ま</rt></ruby>けはない",
+					"cn": "没有输赢（勝ち負け かちまけ：胜负）",
+					"en": "There's no winning or losing.",
+					"example": "趣味に勝ち負けはない。",
+					"exampleCn": "兴趣爱好没有输赢之分。",
+					"exampleEn": "Hobbies have no winners or losers.",
+					"example_r": "<ruby>趣味<rt>しゅみ</rt></ruby>に<ruby>勝<rt>か</rt></ruby>ち<ruby>負<rt>ま</rt></ruby>けはない。"
+				},
+				{
+					"jp": "ビジョン",
+					"kind": "word",
+					"cn": "愿景、构想（vision）",
+					"en": "vision",
+					"example": "会社の将来のビジョンを話した。",
+					"exampleCn": "谈了公司将来的愿景。",
+					"exampleEn": "We talked about the company's future vision.",
+					"example_r": "<ruby>会社<rt>かいしゃ</rt></ruby>の<ruby>将来<rt>しょうらい</rt></ruby>のビジョンを<ruby>話<rt>はな</rt></ruby>した。"
+				},
+				{
+					"jp": "ガレットのお店",
+					"kind": "word",
+					"jp_r": "ガレットのお<ruby>店<rt>みせ</rt></ruby>",
+					"cn": "可丽饼（galette）店，布列塔尼风格的荞麦薄饼店（Bretagne crêperie）",
+					"en": "galette shop (Breton crêperie)",
+					"example": "近くにおいしいガレットのお店があります。",
+					"exampleCn": "附近有一家好吃的法式荞麦薄饼店。",
+					"exampleEn": "There's a good galette shop nearby.",
+					"example_r": "<ruby>近<rt>ちか</rt></ruby>くにおいしいガレットのお<ruby>店<rt>みせ</rt></ruby>があります。"
+				},
+				{
+					"jp": "偽物",
+					"kind": "word",
+					"jp_r": "<ruby>偽物<rt>にせもの</rt></ruby>",
+					"cn": "假货、仿冒品（にせもの，N2）",
+					"en": "fake; counterfeit",
+					"example": "このブランドバッグは偽物だった。",
+					"exampleCn": "这个名牌包是假货。",
+					"exampleEn": "This brand-name bag was a fake.",
+					"example_r": "このブランドバッグは<ruby>偽物<rt>にせもの</rt></ruby>だった。"
+				},
+				{
+					"jp": "植物",
+					"kind": "word",
+					"jp_r": "<ruby>植物<rt>しょくぶつ</rt></ruby>",
+					"cn": "植物（しょくぶつ，N3）",
+					"en": "plant",
+					"example": "部屋に植物を置くと落ち着く。",
+					"exampleCn": "在房间里放植物会让人平静。",
+					"exampleEn": "Having plants in the room is calming.",
+					"example_r": "<ruby>部屋<rt>へや</rt></ruby>に<ruby>植物<rt>しょくぶつ</rt></ruby>を<ruby>置<rt>お</rt></ruby>くと<ruby>落<rt>お</rt></ruby>ち<ruby>着<rt>つ</rt></ruby>く。"
+				}
+			]
+		},
+		{
 			"id": "2026-10-26",
 			"date": "2026-10-26",
 			"title": "2026-10-26",

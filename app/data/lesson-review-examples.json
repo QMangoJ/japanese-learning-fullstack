@@ -6053,5 +6053,173 @@
 		"example": "母の誕生日にクリスチャン・ディオールの香水を贈りました。",
 		"exampleCn": "我在妈妈生日时送了迪奥的香水。",
 		"exampleEn": "I gave my mother a Christian Dior perfume for her birthday."
+	},
+	"良いって言ってくれて良かった": {
+		"cn": "她说可以，太好了（〜てくれて良かった：对方为我做了某事，我很庆幸）",
+		"en": "I'm glad that she said okay.",
+		"example": "先生が良いって言ってくれて良かった。",
+		"exampleCn": "老师说可以，真是太好了。",
+		"exampleEn": "I'm glad the teacher said it was okay."
+	},
+	"言って／ゆって＝言う": {
+		"cn": "口语里「言って」常读成「ゆって」，意思不变，都是「说」",
+		"en": "In casual speech 言って is often pronounced ゆって.",
+		"example": "彼女、明日来るってゆってたよ。",
+		"exampleCn": "她说过明天会来哦。",
+		"exampleEn": "She said she's coming tomorrow."
+	},
+	"委員長": {
+		"cn": "班长、委员长（いいんちょう，N2）",
+		"en": "class president; committee chair",
+		"example": "彼はクラスの委員長です。",
+		"exampleCn": "他是班里的班长。",
+		"exampleEn": "He is the class president."
+	},
+	"気に入らなかった": {
+		"cn": "不喜欢、看不上（気に入る 的否定过去式）",
+		"en": "didn't like it",
+		"example": "そのデザインはあまり気に入らなかった。",
+		"exampleCn": "那个设计我不太喜欢。",
+		"exampleEn": "I didn't really like that design."
+	},
+	"生徒会": {
+		"cn": "学生会（せいとかい，N2）",
+		"en": "student council",
+		"example": "大学の生徒会に入っていました。",
+		"exampleCn": "我以前在大学学生会。",
+		"exampleEn": "I was on the student council at university."
+	},
+	"決まってないといけない": {
+		"cn": "必须已经定下来（〜ていないといけない：必须处于……状态）",
+		"en": "It has to be decided already.",
+		"example": "出発の前に日程が決まってないといけない。",
+		"exampleCn": "出发之前日程必须已经定好。",
+		"exampleEn": "The schedule has to be set before we leave."
+	},
+	"意地悪": {
+		"cn": "坏心眼、故意刁难（いじわる，N2）",
+		"en": "mean; spiteful",
+		"example": "そんな意地悪なことを言わないで。",
+		"exampleCn": "别说那么刁难人的话。",
+		"exampleEn": "Don't say such mean things."
+	},
+	"砂遊び": {
+		"cn": "玩沙子（すなあそび）",
+		"en": "playing in the sand",
+		"example": "子どもたちが公園で砂遊びをしている。",
+		"exampleCn": "孩子们在公园里玩沙子。",
+		"exampleEn": "The children are playing in the sand at the park."
+	},
+	"罪を犯さない": {
+		"cn": "不犯罪（罪 つみ：罪；犯す おかす：犯，N2）",
+		"en": "not commit a crime",
+		"example": "二度と罪を犯さないと約束した。",
+		"exampleCn": "他发誓再也不犯罪了。",
+		"exampleEn": "He promised never to commit a crime again."
+	},
+	"老けた": {
+		"cn": "显老了、变老（老ける ふける，N2；多指外表）",
+		"en": "looks older; has aged",
+		"example": "久しぶりに会ったら、少し老けたね。",
+		"exampleCn": "好久没见，你看起来有点老了呢。",
+		"exampleEn": "It's been a while — you've aged a bit."
+	},
+	"歳を取った": {
+		"cn": "上年纪了（比「老けた」中性，指年龄增长）",
+		"en": "got older",
+		"example": "歳を取ったので、夜更かしがつらくなった。",
+		"exampleCn": "上了年纪，熬夜变得很吃力。",
+		"exampleEn": "I've gotten older, so staying up late is hard now."
+	},
+	"河豚": {
+		"cn": "河豚（ふぐ；平时多写假名 ふぐ）",
+		"en": "pufferfish (fugu)",
+		"example": "冬は河豚料理がおいしい季節です。",
+		"exampleCn": "冬天是河豚料理好吃的季节。",
+		"exampleEn": "Winter is the season when fugu dishes are good."
+	},
+	"サボる": {
+		"cn": "偷懒、翘（课/班）（口语）",
+		"en": "to skip; to slack off",
+		"example": "授業をサボってはいけません。",
+		"exampleCn": "不能翘课。",
+		"exampleEn": "You shouldn't skip class."
+	},
+	"皮を剥いた": {
+		"cn": "剥了皮（剥く むく，N2）",
+		"en": "peeled (the skin)",
+		"example": "りんごの皮を剥いた。",
+		"exampleCn": "我把苹果皮剥了。",
+		"exampleEn": "I peeled the apple."
+	},
+	"梨": {
+		"cn": "梨（なし）",
+		"en": "pear",
+		"example": "この梨はとても甘い。",
+		"exampleCn": "这个梨非常甜。",
+		"exampleEn": "This pear is very sweet."
+	},
+	"桃": {
+		"cn": "桃子（もも）",
+		"en": "peach",
+		"example": "夏になると桃が食べたくなる。",
+		"exampleCn": "一到夏天就想吃桃子。",
+		"exampleEn": "When summer comes, I want peaches."
+	},
+	"砕けた言い方": {
+		"cn": "随意的说法、口语说法（砕ける くだける，N1）",
+		"en": "casual way of saying it",
+		"example": "友達には砕けた言い方で大丈夫です。",
+		"exampleCn": "对朋友用随意的说法就行。",
+		"exampleEn": "Casual phrasing is fine with friends."
+	},
+	"硬い言い方": {
+		"cn": "生硬、正式的说法",
+		"en": "stiff / formal way of saying it",
+		"example": "メールだと少し硬い言い方になります。",
+		"exampleCn": "写邮件的话说法会比较正式。",
+		"exampleEn": "In email the phrasing gets a bit formal."
+	},
+	"ぴったり": {
+		"cn": "正合适、刚刚好",
+		"en": "exactly; perfectly fitting",
+		"example": "この靴はサイズがぴったりだ。",
+		"exampleCn": "这双鞋尺码正合适。",
+		"exampleEn": "These shoes fit perfectly."
+	},
+	"勝ち負けはない": {
+		"cn": "没有输赢（勝ち負け かちまけ：胜负）",
+		"en": "There's no winning or losing.",
+		"example": "趣味に勝ち負けはない。",
+		"exampleCn": "兴趣爱好没有输赢之分。",
+		"exampleEn": "Hobbies have no winners or losers."
+	},
+	"ビジョン": {
+		"cn": "愿景、构想（vision）",
+		"en": "vision",
+		"example": "会社の将来のビジョンを話した。",
+		"exampleCn": "谈了公司将来的愿景。",
+		"exampleEn": "We talked about the company's future vision."
+	},
+	"ガレットのお店": {
+		"cn": "可丽饼（galette）店，布列塔尼风格的荞麦薄饼店（Bretagne crêperie）",
+		"en": "galette shop (Breton crêperie)",
+		"example": "近くにおいしいガレットのお店があります。",
+		"exampleCn": "附近有一家好吃的法式荞麦薄饼店。",
+		"exampleEn": "There's a good galette shop nearby."
+	},
+	"偽物": {
+		"cn": "假货、仿冒品（にせもの，N2）",
+		"en": "fake; counterfeit",
+		"example": "このブランドバッグは偽物だった。",
+		"exampleCn": "这个名牌包是假货。",
+		"exampleEn": "This brand-name bag was a fake."
+	},
+	"植物": {
+		"cn": "植物（しょくぶつ，N3）",
+		"en": "plant",
+		"example": "部屋に植物を置くと落ち着く。",
+		"exampleCn": "在房间里放植物会让人平静。",
+		"exampleEn": "Having plants in the room is calming."
 	}
 }
