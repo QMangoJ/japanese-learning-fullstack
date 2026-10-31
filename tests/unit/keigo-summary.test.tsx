@@ -14,6 +14,7 @@ describe("keigo summary", () => {
 			"kenjo",
 			"teinei",
 			"uchi",
+			"business",
 			"mistakes",
 		]);
 		const sonkei = keigo.sections.find((section) => section.id === "sonkei");

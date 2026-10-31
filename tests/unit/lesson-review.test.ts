@@ -604,14 +604,14 @@ describe("scheduled google doc sync", () => {
 		const fetcher = vi.fn(async (url: string) => {
 			const body = String(url).includes(LESSON_REVIEW_DOCS[1].id)
 				? "2026.10.22\nお金を稼ぐ\n"
-				: "2026.10.30\n新しい行\n2026.10.26\nコツがいります\n(もうしあげる)\n";
+				: "2026.11.02\n新しい行\n2026.10.26\nコツがいります\n(もうしあげる)\n";
 			return new Response(body, { status: 200 });
 		});
 		const result = await syncLessonReview({ FAVORITES_KV: kv as unknown as KVNamespace }, fetcher as unknown as typeof fetch);
 		expect(result.ok).toBe(true);
 		const stored = JSON.parse(kv.map.get(LESSON_REVIEW_KV_KEY) || "{}");
 		expect(stored.days.find((day: { id: string }) => day.id === "2026-10-26")).toEqual(seedDay);
-		expect(stored.days.find((day: { id: string }) => day.id === "2026-10-30")?.items[0].jp).toBe("新しい行");
+		expect(stored.days.find((day: { id: string }) => day.id === "2026-11-02")?.items[0].jp).toBe("新しい行");
 		expect(stored.days.length).toBe(seedJson.days.length + 1);
 	});
 

@@ -44,6 +44,8 @@
         ["专用词", "<ruby>見<rt>み</rt></ruby>る", "ご<ruby>覧<rt>らん</rt></ruby>になる"],
         ["专用词", "<ruby>着<rt>き</rt></ruby>る", "お<ruby>召<rt>め</rt></ruby>しになる"],
         ["专用词", "くれる", "くださる"],
+        ["专用词", "<ruby>会<rt>あ</rt></ruby>う", "お<ruby>会<rt>あ</rt></ruby>いになる"],
+        ["专用词", "<ruby>聞<rt>き</rt></ruby>く", "お<ruby>聞<rt>き</rt></ruby>きになる"],
         ["专用词", "<ruby>知<rt>し</rt></ruby>っている", "ご<ruby>存<rt>ぞん</rt></ruby>じだ"],
         ["专用词", "<ruby>来<rt>く</rt></ruby>る（客人到）", "<ruby>見<rt>み</rt></ruby>える／お<ruby>見<rt>み</rt></ruby>えになる"],
         ["专用词", "<ruby>寝<rt>ね</rt></ruby>る", "お<ruby>休<rt>やす</rt></ruby>みになる"]
@@ -74,11 +76,13 @@
         ["<ruby>食<rt>た</rt></ruby>べる・<ruby>飲<rt>の</rt></ruby>む・もらう", "いただく", "自谦地吃喝，或从对方得到"],
         ["<ruby>見<rt>み</rt></ruby>る", "<ruby>拝見<rt>はいけん</rt></ruby>する", "看对方的东西"],
         ["<ruby>聞<rt>き</rt></ruby>く・<ruby>訪<rt>たず</rt></ruby>ねる", "<ruby>伺<rt>うかが</rt></ruby>う", "问对方、拜访对方"],
+        ["<ruby>聞<rt>き</rt></ruby>く（讲话・演讲）", "<ruby>拝聴<rt>はいちょう</rt></ruby>する", "恭听对方讲话（N1）"],
         ["<ruby>思<rt>おも</rt></ruby>う・<ruby>知<rt>し</rt></ruby>る", "<ruby>存<rt>ぞん</rt></ruby>じる", "郑重地想或知道"],
         ["人を<ruby>知<rt>し</rt></ruby>る", "<ruby>存<rt>ぞん</rt></ruby>じ<ruby>上<rt>あ</rt></ruby>げる", "认识对方或上级"],
         ["あげる", "さしあげる", "给对方"],
         ["<ruby>会<rt>あ</rt></ruby>う", "お<ruby>目<rt>め</rt></ruby>にかかる", "见对方"],
-        ["<ruby>見<rt>み</rt></ruby>せる", "お<ruby>目<rt>め</rt></ruby>にかける", "给对方看"]
+        ["<ruby>見<rt>み</rt></ruby>せる", "お<ruby>目<rt>め</rt></ruby>にかける", "给对方看"],
+        ["する（对方允许）", "させていただく", "对方允许、自己受益时用；只是礼貌地做用いたす"]
       ],
       "note_cn": "授受也跟着换：对方给你是「てくださる」，你请对方做是「ていただく」，你为对方做是「てさしあげる」。お〜する不能用来描述对方的动作。お〜申し上げる常见于致词、邮件、书信，口语较少；不要理解成「为您做」的てあげる。例：社長に代わってご挨拶申し上げます／ご健康をお祈り申し上げます。お〜いただく例：こちらにご記入いただけますか／本日はご来場いただき、ありがとうございます。お〜願う例：もう一度お調べ願います／ご案内願えませんか。广播常用：この番組はご覧のスポンサーの提供でお送りします。",
       "note_en": "Giving and receiving change too: てくださる, ていただく, てさしあげる. お〜する cannot describe the other person's action. お〜申し上げる is common in speeches and formal mail, not everyday speech, and is not てあげる. Examples: ご挨拶申し上げます, ご記入いただけますか, お調べ願います, and お送りします on air."
@@ -133,6 +137,29 @@
       ],
       "note_cn": "给客人说到自己的部长：部长はただ今席を外しております。不要说部长がいらっしゃいます。",
       "note_en": "About your manager to a visitor: 部長はただ今席を外しております. Do not say 部長がいらっしゃいます."
+    },
+    {
+      "id": "business",
+      "title_html": "ビジネス<ruby>敬語<rt>けいご</rt></ruby>",
+      "title_cn": "商务敬语",
+      "title_en": "Business keigo",
+      "rule_cn": "10/26 课上的商务说法。请求先用缓冲语（恐れ入りますが），再用「お／ご〜いただけますか／いただけますでしょうか」；拒绝用あいにく＋〜いたしかねます，比できません委婉；道歉用申し訳ございません；报告进度用〜見込みです；说自己的想法用〜と存じます（思う的谦让）。",
+      "rule_en": "Business phrases from the 10/26 class: cushion words before requests, お／ご〜いただけますか for asking, あいにく and 〜いたしかねます for declining, 申し訳ございません for apologizing, 〜見込みです for progress, and 〜と存じます for your own view.",
+      "heads": ["场面", "说法", "意思"],
+      "rows": [
+        ["请对方确认", "こちらをご<ruby>確認<rt>かくにん</rt></ruby>いただけますか。", "能请您确认一下这个吗？"],
+        ["请求（缓冲语）", "<ruby>恐<rt>おそ</rt></ruby>れ<ruby>入<rt>い</rt></ruby>りますが、<ruby>明日<rt>あした</rt></ruby>までにお<ruby>送<rt>おく</rt></ruby>りいただけますでしょうか。", "不好意思，能麻烦您明天之前发给我吗？"],
+        ["请对方稍等", "<ruby>少々<rt>しょうしょう</rt></ruby>お<ruby>待<rt>ま</rt></ruby>ちいただけますか。", "能请您稍等一下吗？"],
+        ["礼貌拒绝", "<ruby>申<rt>もう</rt></ruby>し<ruby>訳<rt>わけ</rt></ruby>ございませんが、<ruby>対応<rt>たいおう</rt></ruby>いたしかねます。", "非常抱歉，我们无法处理（〜かねる：难以）"],
+        ["没时间", "あいにく<ruby>本日<rt>ほんじつ</rt></ruby>は<ruby>都合<rt>つごう</rt></ruby>がつきません。", "不巧今天抽不出时间"],
+        ["婉拒提案", "<ruby>今回<rt>こんかい</rt></ruby>は<ruby>見送<rt>みおく</rt></ruby>らせていただきたいと<ruby>存<rt>ぞん</rt></ruby>じます。", "这次我们想先不采用"],
+        ["回复晚了", "ご<ruby>連絡<rt>れんらく</rt></ruby>が<ruby>遅<rt>おそ</rt></ruby>くなり、<ruby>申<rt>もう</rt></ruby>し<ruby>訳<rt>わけ</rt></ruby>ございません。", "这么晚才联系您，非常抱歉"],
+        ["迟到道歉", "<ruby>遅<rt>おく</rt></ruby>れてしまい、<ruby>大変<rt>たいへん</rt></ruby><ruby>申<rt>もう</rt></ruby>し<ruby>訳<rt>わけ</rt></ruby>ございません。", "迟到了，实在非常抱歉"],
+        ["承认错误", "<ruby>私<rt>わたし</rt></ruby>の<ruby>確認不足<rt>かくにんぶそく</rt></ruby>で、<ruby>誤<rt>あやま</rt></ruby>りがございました。", "由于我确认不够，出现了错误"],
+        ["报告进度", "<ruby>現在<rt>げんざい</rt></ruby><ruby>対応中<rt>たいおうちゅう</rt></ruby>で、もう<ruby>少々<rt>しょうしょう</rt></ruby>お<ruby>時間<rt>じかん</rt></ruby>をいただく<ruby>見込<rt>みこ</rt></ruby>みです。", "正在处理，预计还需要一点时间"]
+      ],
+      "note_cn": "常用词：恐れ入りますが＝请求前的缓冲语（クッション言葉）；あいにく＝不巧；〜いたしかねます＝难以（〜かねる 的谦让）；〜と存じます＝我认为；〜見込みです＝预计。",
+      "note_en": "Key words: 恐れ入りますが (cushion), あいにく (unfortunately), 〜いたしかねます (unable to), 〜と存じます (I believe), 〜見込みです (expected)."
     },
     {
       "id": "mistakes",
