@@ -443,7 +443,7 @@ export function KanjiExamPage() {
 					<h2>{lx("随机试题", "Randomized questions")}</h2>
 					<button
 						type="button"
-						className={showAllAnswers ? "on" : ""}
+						className={`kanji-exam-answers-fab${showAllAnswers ? " on" : ""}`}
 						aria-pressed={showAllAnswers}
 						onClick={() => setShowAllAnswers((current) => !current)}
 					>

@@ -206,3 +206,8 @@ html.theme-dark .kanji-exam-english-toggle.on,html.theme-dark .kanji-exam-englis
 	.kanji-exam-history__wrong{padding-left:0}
 	.kanji-exam-english-toggle small{max-width:180px}
 }
+
+/* 「显示全部答案」悬浮开关：与专题词汇「只看汉字」悬浮按钮同款，固定在右下角，位于底栏和交卷栏上方。 */
+.kanji-exam-question-group__head button.kanji-exam-answers-fab{position:fixed;right:calc(16px + env(safe-area-inset-right));bottom:calc(var(--bottom-nav-height, 64px) + env(safe-area-inset-bottom) + 88px);z-index:35;display:inline-flex;align-items:center;min-height:48px;padding:0 16px;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--accent);box-shadow:var(--shadow);font:inherit;font-size:15px;font-weight:800;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.kanji-exam-question-group__head button.kanji-exam-answers-fab.on{border-color:var(--accent);background:var(--accent);color:#fff}
+.kanji-exam-question-group__head button.kanji-exam-answers-fab:active{transform:scale(.96)}
