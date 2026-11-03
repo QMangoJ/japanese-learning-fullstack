@@ -4,7 +4,7 @@ import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import { dueEntry, resetDueForTests } from "../../app/study/due-review";
-import { TopicsPage } from "../../app/study/TopicsPage";
+import { TopicsPage, resetTopicFuzzyForTests, topicCardStatus } from "../../app/study/TopicsPage";
 import { topicDueId } from "../../app/study/topic-vocab";
 
 const DIR = join(process.cwd(), "public/data/topics");
@@ -55,5 +55,48 @@ describe("TopicsPage", () => {
 		fireEvent.click(container.querySelector('[data-grade="pass"]')!);
 		expect(screen.getByText("2 / 121")).toBeInTheDocument();
 		expect(dueEntry(topicDueId("japan-investing", "inv-001"))).toMatchObject({ step: 2 });
+	});
+});
+
+describe("TopicsPage recite mode", () => {
+	afterEach(() => localStorage.clear());
+	it("hides readings/meanings/examples, persists, and reveals one card on tap", async () => {
+		const { container, unmount } = render(<TopicsPage slug="japan-investing" />);
+		await screen.findByText("証券口座");
+		expect(container.querySelectorAll(".topic-item__kana").length).toBe(121);
+		fireEvent.click(container.querySelector("[data-recite-toggle]")!);
+		expect(container.querySelectorAll(".topic-item.is-hidden")).toHaveLength(121);
+		expect(container.querySelectorAll(".topic-item__kana")).toHaveLength(121);
+		expect(container.querySelectorAll('.topic-item__body[aria-hidden="true"]')).toHaveLength(121);
+		expect(container.querySelectorAll(".topic-item__jp")).toHaveLength(121);
+		expect(localStorage.getItem("topic-recite-mode")).toBe("1");
+		fireEvent.click(container.querySelector(".topic-item")!);
+		expect(container.querySelectorAll(".topic-item.is-hidden")).toHaveLength(120);
+		unmount();
+		const again = render(<TopicsPage slug="japan-investing" />);
+		await screen.findByText("証券口座");
+		expect(again.container.querySelectorAll(".topic-item.is-hidden")).toHaveLength(121);
+		fireEvent.click(again.container.querySelector("[data-recite-toggle]")!);
+		expect(again.container.querySelectorAll(".topic-item.is-hidden")).toHaveLength(0);
+		expect(localStorage.getItem("topic-recite-mode")).toBe("0");
+	});
+});
+
+describe("TopicsPage 模糊 grade", () => {
+	afterEach(() => {
+		localStorage.clear();
+		resetTopicFuzzyForTests();
+	});
+	it("records 模糊 as fuzzy (not 不会) and 不会 as unknown", async () => {
+		const { container } = render(<TopicsPage slug="japan-investing" />);
+		await screen.findByText("証券口座");
+		fireEvent.click(screen.getByRole("tab", { name: /闪卡自测/ }));
+		fireEvent.click(container.querySelector('[data-grade="fuzzy"]')!);
+		fireEvent.click(container.querySelector('[data-grade="fail"]')!);
+		expect(topicCardStatus("japan-investing", "inv-001").status).toBe("fuzzy");
+		expect(topicCardStatus("japan-investing", "inv-002").status).toBe("unknown");
+		fireEvent.click(screen.getByRole("tab", { name: /单词表/ }));
+		expect(container.querySelector('[data-card="inv-001"] .topic-st')!.textContent).toBe("模糊");
+		expect(container.querySelector('[data-card="inv-002"] .topic-st')!.textContent).toBe("不会");
 	});
 });

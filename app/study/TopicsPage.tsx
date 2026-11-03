@@ -7,9 +7,10 @@ import { CountPair } from "./tick-text";
 import type { SwipeGrade } from "./swipe-grade";
 import { jstToday } from "./lesson-review";
 import { LANG, lx, navTo } from "./store";
+import "../styles/topic-recite.css";
 import { isTopicFile, isTopicIndex, topicDueId, type TopicCard, type TopicFile, type TopicIndex } from "./topic-vocab";
 
-type Status = "new" | "unknown" | "learning";
+type Status = "new" | "unknown" | "fuzzy" | "learning";
 type OnlyFilter = "all" | "unknown" | "due";
 type View = "list" | "cards" | "board";
 
@@ -36,14 +37,45 @@ function useDueTick() {
 	return useSyncExternalStore(subscribeDue, getDueVersion, () => 0);
 }
 
+/** 「模糊」和「不会」一样明天再复习，但要单独记下来才能显示成「模糊」。只存在本机 localStorage。 */
+export const TOPIC_FUZZY_KEY = "topic-fuzzy-ids";
+let fuzzyIds: Set<string> | null = null;
+function fuzzySet(): Set<string> {
+	if (!fuzzyIds) {
+		fuzzyIds = new Set();
+		try {
+			const raw = typeof localStorage !== "undefined" ? localStorage.getItem(TOPIC_FUZZY_KEY) : null;
+			const list: unknown = raw ? JSON.parse(raw) : [];
+			if (Array.isArray(list)) for (const id of list) if (typeof id === "string") fuzzyIds.add(id);
+		} catch {
+			/* ignore */
+		}
+	}
+	return fuzzyIds;
+}
+function setFuzzy(id: string, on: boolean) {
+	const set = fuzzySet();
+	if (on) set.add(id);
+	else set.delete(id);
+	try {
+		localStorage.setItem(TOPIC_FUZZY_KEY, JSON.stringify([...set]));
+	} catch {
+		/* ignore */
+	}
+}
+export function resetTopicFuzzyForTests() {
+	fuzzyIds = null;
+}
+
 /** 不会 = 最近一次标的是「不会」（复习队列 step 0）；学习中 = 之后答对过，正在间隔复习。 */
 export function topicCardStatus(slug: string, cardId: string): { status: Status; due: boolean } {
 	const entry = dueEntry(topicDueId(slug, cardId));
 	if (!entry || entry.deleted) return { status: "new", due: false };
-	return { status: entry.step === 0 ? "unknown" : "learning", due: entry.due <= jstToday() };
+	const status: Status = entry.step === 0 ? (fuzzySet().has(entry.id) ? "fuzzy" : "unknown") : "learning";
+	return { status, due: entry.due <= jstToday() };
 }
 
-export function gradeTopicCard(topic: Pick<TopicFile, "slug">, card: TopicCard, pass: boolean) {
+export function gradeTopicCard(topic: Pick<TopicFile, "slug">, card: TopicCard, pass: boolean, fuzzy = false) {
 	const draft: DueDraft = {
 		id: topicDueId(topic.slug, card.id),
 		kind: "topic",
@@ -52,6 +84,7 @@ export function gradeTopicCard(topic: Pick<TopicFile, "slug">, card: TopicCard, 
 		cn: [card.zh, card.example_jp, card.example_zh].join("\n"),
 		en: card.en || "",
 	};
+	setFuzzy(draft.id, !pass && fuzzy);
 	if (pass) rememberKnown(draft);
 	else rememberFail(draft);
 }
@@ -112,6 +145,32 @@ function TopicList() {
 	);
 }
 
+export const TOPIC_RECITE_KEY = "topic-recite-mode";
+
+function readRecite(): boolean {
+	try {
+		return typeof localStorage !== "undefined" && localStorage.getItem(TOPIC_RECITE_KEY) === "1";
+	} catch {
+		return false;
+	}
+}
+
+/** 背诵模式：单词表只显示汉字表记，读音/意思/例句隐藏；选择存在 localStorage。 */
+function useReciteMode(): [boolean, () => void] {
+	const [on, setOn] = useState(readRecite);
+	const toggle = () =>
+		setOn((v) => {
+			const next = !v;
+			try {
+				localStorage.setItem(TOPIC_RECITE_KEY, next ? "1" : "0");
+			} catch {
+				/* ignore */
+			}
+			return next;
+		});
+	return [on, toggle];
+}
+
 function shuffle<T>(list: T[]): T[] {
 	const out = [...list];
 	for (let i = out.length - 1; i > 0; i--) {
@@ -132,6 +191,9 @@ function TopicDetail({ slug }: { slug: string }) {
 	const [deckIds, setDeckIds] = useState<string[]>([]);
 	const [idx, setIdx] = useState(0);
 	const [flipped, setFlipped] = useState(false);
+	const [recite, toggleRecite] = useReciteMode();
+	const [revealed, setRevealed] = useState<Set<string>>(() => new Set());
+	useEffect(() => setRevealed(new Set()), [recite, slug]);
 
 	useEffect(() => {
 		let off = false;
@@ -192,8 +254,8 @@ function TopicDetail({ slug }: { slug: string }) {
 	const deck = deckIds.map((id) => byId.get(id)).filter((c): c is TopicCard => Boolean(c));
 	const cur = deck[idx];
 
-	const grade = (card: TopicCard, pass: boolean, advance: boolean) => {
-		gradeTopicCard(topic, card, pass);
+	const grade = (card: TopicCard, pass: boolean, advance: boolean, fuzzy = false) => {
+		gradeTopicCard(topic, card, pass, fuzzy);
 		if (advance) {
 			setIdx((n) => n + 1);
 			setFlipped(false);
@@ -203,6 +265,7 @@ function TopicDetail({ slug }: { slug: string }) {
 	const chip = (card: TopicCard) => {
 		const st = status(card);
 		if (st.status === "unknown") return <span className="topic-st unknown">{lx("不会", "Don't know")}</span>;
+		if (st.status === "fuzzy") return <span className="topic-st fuzzy">{lx("模糊", "Unsure")}</span>;
 		if (st.due) return <span className="topic-st due">{lx("今天复习", "Due")}</span>;
 		if (st.status === "learning") return <span className="topic-st learning">{lx("复习中", "Learning")}</span>;
 		return null;
@@ -278,14 +341,22 @@ function TopicDetail({ slug }: { slug: string }) {
 					<ul className="topic-list">
 						{filtered.map((card) => {
 							const st = status(card);
+							const hidden = recite && !revealed.has(card.id);
 							return (
-								<li key={card.id} className="topic-item" data-card={card.id}>
+								<li
+									key={card.id}
+									className={hidden ? "topic-item is-hidden" : "topic-item"}
+									data-card={card.id}
+									onClick={hidden ? () => setRevealed((prev) => new Set(prev).add(card.id)) : undefined}
+									title={hidden ? lx("点一下显示这个词", "Tap to reveal") : undefined}
+								>
 									<div className="topic-item__top">
 										<span className="topic-item__jp jp">{card.jp}</span>
-										<span className="topic-item__kana jp">{card.kana}</span>
-										<SayButton text={card.jp} />
+										<span className="topic-item__kana jp" aria-hidden={hidden || undefined}>{card.kana}</span>
+										<span className="topic-item__say" aria-hidden={hidden || undefined}><SayButton text={card.jp} /></span>
 										{chip(card)}
 									</div>
+									<div className="topic-item__body" aria-hidden={hidden || undefined}>
 									<div className="topic-item__zh">{LANG === "en" && card.en ? card.en : card.zh}</div>
 									<div className="topic-item__ex">
 										{card.scene ? <div className="topic-item__scene">🎬 {card.scene}</div> : null}
@@ -296,7 +367,8 @@ function TopicDetail({ slug }: { slug: string }) {
 										<div className="cn">{card.example_zh}</div>
 									</div>
 									{card.note ? <div className="topic-item__note">💡 {card.note}</div> : null}
-									<div className="topic-item__foot">
+									</div>
+									<div className="topic-item__foot" onClick={(e) => e.stopPropagation()}>
 										<span className="topic-item__chips">
 											<span className="review-day__chip">{subLabel.get(card.subtopic)}</span>
 											{card.level ? <span className="review-day__chip">{card.level}</span> : null}
@@ -337,8 +409,8 @@ function TopicDetail({ slug }: { slug: string }) {
 							key={cur.id}
 							flipped={flipped}
 							onFlip={() => setFlipped((value) => !value)}
-							onGrade={(swipeGrade: SwipeGrade) => grade(cur, swipeGrade === "pass", true)}
-							onSwipe={(swipeGrade: SwipeGrade) => grade(cur, swipeGrade === "pass", true)}
+							onGrade={(swipeGrade: SwipeGrade) => grade(cur, swipeGrade === "pass", true, swipeGrade === "fuzzy")}
+							onSwipe={(swipeGrade: SwipeGrade) => grade(cur, swipeGrade === "pass", true, swipeGrade === "fuzzy")}
 							front={
 								<>
 									<div className="review-k">{subLabel.get(cur.subtopic)}</div>
@@ -379,7 +451,7 @@ function TopicDetail({ slug }: { slug: string }) {
 							<button type="button" data-grade="fail" onClick={() => grade(cur, false, true)}>
 								{lx("不会", "Don't know")}
 							</button>
-							<button type="button" data-grade="fuzzy" onClick={() => grade(cur, false, true)}>
+							<button type="button" data-grade="fuzzy" onClick={() => grade(cur, false, true, true)}>
 								{lx("模糊", "Unsure")}
 							</button>
 							<button type="button" data-grade="pass" onClick={() => grade(cur, true, true)}>
@@ -420,6 +492,19 @@ function TopicDetail({ slug }: { slug: string }) {
 					</div>
 				</div>
 			)}
+			{view === "list" ? (
+				<button
+					type="button"
+					className={recite ? "topic-recite-fab on" : "topic-recite-fab"}
+					aria-pressed={recite}
+					data-recite-toggle
+					onClick={toggleRecite}
+					title={recite ? lx("显示读音、意思和例句", "Show readings, meanings and examples") : lx("背诵模式：只显示汉字", "Recite mode: kanji only")}
+				>
+					<span aria-hidden="true">{recite ? "👁" : "🙈"}</span>
+					<span className="topic-recite-fab__t">{recite ? lx("显示全部", "Show all") : lx("只看汉字", "Kanji only")}</span>
+				</button>
+			) : null}
 		</div>
 	);
 }
