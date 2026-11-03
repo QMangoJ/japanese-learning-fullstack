@@ -352,12 +352,11 @@ function TopicDetail({ slug }: { slug: string }) {
 								>
 									<div className="topic-item__top">
 										<span className="topic-item__jp jp">{card.jp}</span>
-										{hidden ? null : <span className="topic-item__kana jp">{card.kana}</span>}
-										{hidden ? null : <SayButton text={card.jp} />}
+										<span className="topic-item__kana jp" aria-hidden={hidden || undefined}>{card.kana}</span>
+										<span className="topic-item__say" aria-hidden={hidden || undefined}><SayButton text={card.jp} /></span>
 										{chip(card)}
 									</div>
-									{hidden ? null : (
-										<>
+									<div className="topic-item__body" aria-hidden={hidden || undefined}>
 									<div className="topic-item__zh">{LANG === "en" && card.en ? card.en : card.zh}</div>
 									<div className="topic-item__ex">
 										{card.scene ? <div className="topic-item__scene">🎬 {card.scene}</div> : null}
@@ -368,8 +367,7 @@ function TopicDetail({ slug }: { slug: string }) {
 										<div className="cn">{card.example_zh}</div>
 									</div>
 									{card.note ? <div className="topic-item__note">💡 {card.note}</div> : null}
-										</>
-									)}
+									</div>
 									<div className="topic-item__foot" onClick={(e) => e.stopPropagation()}>
 										<span className="topic-item__chips">
 											<span className="review-day__chip">{subLabel.get(card.subtopic)}</span>
