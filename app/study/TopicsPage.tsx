@@ -10,7 +10,7 @@ import { LANG, lx, navTo } from "./store";
 import "../styles/topic-recite.css";
 import { isTopicFile, isTopicIndex, topicDueId, type TopicCard, type TopicFile, type TopicIndex } from "./topic-vocab";
 
-type Status = "new" | "unknown" | "learning";
+type Status = "new" | "unknown" | "fuzzy" | "learning";
 type OnlyFilter = "all" | "unknown" | "due";
 type View = "list" | "cards" | "board";
 
@@ -37,14 +37,45 @@ function useDueTick() {
 	return useSyncExternalStore(subscribeDue, getDueVersion, () => 0);
 }
 
+/** 「模糊」和「不会」一样明天再复习，但要单独记下来才能显示成「模糊」。只存在本机 localStorage。 */
+export const TOPIC_FUZZY_KEY = "topic-fuzzy-ids";
+let fuzzyIds: Set<string> | null = null;
+function fuzzySet(): Set<string> {
+	if (!fuzzyIds) {
+		fuzzyIds = new Set();
+		try {
+			const raw = typeof localStorage !== "undefined" ? localStorage.getItem(TOPIC_FUZZY_KEY) : null;
+			const list: unknown = raw ? JSON.parse(raw) : [];
+			if (Array.isArray(list)) for (const id of list) if (typeof id === "string") fuzzyIds.add(id);
+		} catch {
+			/* ignore */
+		}
+	}
+	return fuzzyIds;
+}
+function setFuzzy(id: string, on: boolean) {
+	const set = fuzzySet();
+	if (on) set.add(id);
+	else set.delete(id);
+	try {
+		localStorage.setItem(TOPIC_FUZZY_KEY, JSON.stringify([...set]));
+	} catch {
+		/* ignore */
+	}
+}
+export function resetTopicFuzzyForTests() {
+	fuzzyIds = null;
+}
+
 /** 不会 = 最近一次标的是「不会」（复习队列 step 0）；学习中 = 之后答对过，正在间隔复习。 */
 export function topicCardStatus(slug: string, cardId: string): { status: Status; due: boolean } {
 	const entry = dueEntry(topicDueId(slug, cardId));
 	if (!entry || entry.deleted) return { status: "new", due: false };
-	return { status: entry.step === 0 ? "unknown" : "learning", due: entry.due <= jstToday() };
+	const status: Status = entry.step === 0 ? (fuzzySet().has(entry.id) ? "fuzzy" : "unknown") : "learning";
+	return { status, due: entry.due <= jstToday() };
 }
 
-export function gradeTopicCard(topic: Pick<TopicFile, "slug">, card: TopicCard, pass: boolean) {
+export function gradeTopicCard(topic: Pick<TopicFile, "slug">, card: TopicCard, pass: boolean, fuzzy = false) {
 	const draft: DueDraft = {
 		id: topicDueId(topic.slug, card.id),
 		kind: "topic",
@@ -53,6 +84,7 @@ export function gradeTopicCard(topic: Pick<TopicFile, "slug">, card: TopicCard, 
 		cn: [card.zh, card.example_jp, card.example_zh].join("\n"),
 		en: card.en || "",
 	};
+	setFuzzy(draft.id, !pass && fuzzy);
 	if (pass) rememberKnown(draft);
 	else rememberFail(draft);
 }
@@ -222,8 +254,8 @@ function TopicDetail({ slug }: { slug: string }) {
 	const deck = deckIds.map((id) => byId.get(id)).filter((c): c is TopicCard => Boolean(c));
 	const cur = deck[idx];
 
-	const grade = (card: TopicCard, pass: boolean, advance: boolean) => {
-		gradeTopicCard(topic, card, pass);
+	const grade = (card: TopicCard, pass: boolean, advance: boolean, fuzzy = false) => {
+		gradeTopicCard(topic, card, pass, fuzzy);
 		if (advance) {
 			setIdx((n) => n + 1);
 			setFlipped(false);
@@ -233,6 +265,7 @@ function TopicDetail({ slug }: { slug: string }) {
 	const chip = (card: TopicCard) => {
 		const st = status(card);
 		if (st.status === "unknown") return <span className="topic-st unknown">{lx("不会", "Don't know")}</span>;
+		if (st.status === "fuzzy") return <span className="topic-st fuzzy">{lx("模糊", "Unsure")}</span>;
 		if (st.due) return <span className="topic-st due">{lx("今天复习", "Due")}</span>;
 		if (st.status === "learning") return <span className="topic-st learning">{lx("复习中", "Learning")}</span>;
 		return null;
@@ -378,8 +411,8 @@ function TopicDetail({ slug }: { slug: string }) {
 							key={cur.id}
 							flipped={flipped}
 							onFlip={() => setFlipped((value) => !value)}
-							onGrade={(swipeGrade: SwipeGrade) => grade(cur, swipeGrade === "pass", true)}
-							onSwipe={(swipeGrade: SwipeGrade) => grade(cur, swipeGrade === "pass", true)}
+							onGrade={(swipeGrade: SwipeGrade) => grade(cur, swipeGrade === "pass", true, swipeGrade === "fuzzy")}
+							onSwipe={(swipeGrade: SwipeGrade) => grade(cur, swipeGrade === "pass", true, swipeGrade === "fuzzy")}
 							front={
 								<>
 									<div className="review-k">{subLabel.get(cur.subtopic)}</div>
@@ -420,7 +453,7 @@ function TopicDetail({ slug }: { slug: string }) {
 							<button type="button" data-grade="fail" onClick={() => grade(cur, false, true)}>
 								{lx("不会", "Don't know")}
 							</button>
-							<button type="button" data-grade="fuzzy" onClick={() => grade(cur, false, true)}>
+							<button type="button" data-grade="fuzzy" onClick={() => grade(cur, false, true, true)}>
 								{lx("模糊", "Unsure")}
 							</button>
 							<button type="button" data-grade="pass" onClick={() => grade(cur, true, true)}>

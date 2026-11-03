@@ -30,3 +30,4 @@
 .topic-item.is-hidden { cursor: pointer; }
 .topic-item.is-hidden .topic-item__jp { font-size: 1.25em; }
 .topic-wrap:has(.topic-recite-fab) .topic-list { padding-bottom: 72px; }
+.topic-st.fuzzy { background: var(--blue-soft); color: var(--blue); }
