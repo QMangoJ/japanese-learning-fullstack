@@ -1,0 +1,32 @@
+/* 专题词汇「只看汉字」背诵模式：右下角悬浮开关，贴在底栏上方，避开居中的 toast。 */
+.topic-recite-fab {
+	position: fixed;
+	right: calc(16px + env(safe-area-inset-right));
+	bottom: calc(var(--bottom-nav-height, 64px) + env(safe-area-inset-bottom) + 20px);
+	z-index: 35;
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	min-height: 48px;
+	padding: 0 16px;
+	border: 1px solid var(--line);
+	border-radius: 999px;
+	background: var(--card);
+	color: var(--accent);
+	box-shadow: var(--shadow);
+	font: inherit;
+	font-size: 15px;
+	font-weight: 800;
+	cursor: pointer;
+	touch-action: manipulation;
+	-webkit-tap-highlight-color: transparent;
+}
+.topic-recite-fab.on {
+	border-color: var(--accent);
+	background: var(--accent);
+	color: #fff;
+}
+.topic-recite-fab:active { transform: scale(.96); }
+.topic-item.is-hidden { cursor: pointer; }
+.topic-item.is-hidden .topic-item__jp { font-size: 1.25em; }
+.topic-wrap:has(.topic-recite-fab) .topic-list { padding-bottom: 72px; }

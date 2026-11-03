@@ -57,3 +57,26 @@ describe("TopicsPage", () => {
 		expect(dueEntry(topicDueId("japan-investing", "inv-001"))).toMatchObject({ step: 2 });
 	});
 });
+
+describe("TopicsPage recite mode", () => {
+	afterEach(() => localStorage.clear());
+	it("hides readings/meanings/examples, persists, and reveals one card on tap", async () => {
+		const { container, unmount } = render(<TopicsPage slug="japan-investing" />);
+		await screen.findByText("証券口座");
+		expect(container.querySelectorAll(".topic-item__kana").length).toBe(121);
+		fireEvent.click(container.querySelector("[data-recite-toggle]")!);
+		expect(container.querySelectorAll(".topic-item__kana")).toHaveLength(0);
+		expect(container.querySelectorAll(".topic-item__ex")).toHaveLength(0);
+		expect(container.querySelectorAll(".topic-item__jp")).toHaveLength(121);
+		expect(localStorage.getItem("topic-recite-mode")).toBe("1");
+		fireEvent.click(container.querySelector(".topic-item")!);
+		expect(container.querySelectorAll(".topic-item__kana")).toHaveLength(1);
+		unmount();
+		const again = render(<TopicsPage slug="japan-investing" />);
+		await screen.findByText("証券口座");
+		expect(again.container.querySelectorAll(".topic-item__kana")).toHaveLength(0);
+		fireEvent.click(again.container.querySelector("[data-recite-toggle]")!);
+		expect(again.container.querySelectorAll(".topic-item__kana")).toHaveLength(121);
+		expect(localStorage.getItem("topic-recite-mode")).toBe("0");
+	});
+});
