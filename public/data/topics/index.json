@@ -79,6 +79,21 @@
 				"套餐",
 				"菜单用词"
 			]
+		},
+		{
+			"slug": "job-interview",
+			"title_zh": "日语面试",
+			"title_ja": "転職面接の日本語",
+			"count": 76,
+			"title_en": "Job interview Japanese",
+			"subtopics": [
+				"面试开场・结束",
+				"面试官的提问",
+				"经历和自我PR",
+				"转职理由和条件",
+				"逆質問",
+				"补充：前端面试表达"
+			]
 		}
 	]
 }
