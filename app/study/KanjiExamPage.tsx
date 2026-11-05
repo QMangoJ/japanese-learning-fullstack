@@ -16,6 +16,7 @@ import {
 	englishSupportForQuestion,
 } from "../data/kanji-exam-english";
 import { chineseMeaningForQuestion } from "../data/kanji-exam-chinese";
+import { vocabForLesson } from "../data/kanji-exam-vocab";
 import { Hanamaru } from "./answer-feedback";
 import { TickText } from "./tick-text";
 import { LANG, lx } from "./store";
@@ -353,6 +354,33 @@ export function KanjiExamPage() {
 						<div className="kanji-exam-library__row" key={lesson.id}>
 							<div><strong>{interfaceEnglish ? englishLessonLabel(lesson.id, lesson.title) : lesson.title}</strong><small>p.{lesson.pages.join(" / ")}</small></div>
 							<p>{lesson.kanji.map((kanji) => <span key={kanji}>{kanji}</span>)}</p>
+						</div>
+					))}
+				</section>
+
+				<section className="kanji-exam-library kanji-exam-vocab">
+					<div className="kanji-exam-section-title">
+						<div><span>04</span><h2>{lx("汉字词表", "Kanji word list")}</h2></div>
+						<small>{lx("每个汉字配上课本里的词和读音，先看词表再自测", "Each kanji with its textbook words and readings — review the list, then take the test")}</small>
+					</div>
+					{batch.lessons.map((lesson) => (
+						<div className="kanji-exam-vocab__lesson" key={lesson.id}>
+							<h3>{interfaceEnglish ? englishLessonLabel(lesson.id, lesson.title) : lesson.title}</h3>
+							<div className="kanji-exam-vocab__grid">
+								{vocabForLesson(lesson).map((entry) => (
+									<div className="kanji-exam-vocab__entry" key={entry.kanji}>
+										<strong lang="ja">{entry.kanji}</strong>
+										<ul>
+											{entry.words.map((item) => (
+												<li key={item.word} lang="ja">
+													<span>{item.word}</span>
+													<small>{item.reading}</small>
+												</li>
+											))}
+										</ul>
+									</div>
+								))}
+							</div>
 						</div>
 					))}
 				</section>

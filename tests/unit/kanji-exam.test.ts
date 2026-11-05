@@ -43,6 +43,7 @@ describe("kanji exam question bank", () => {
 			"学校汉字 · 第3章",
 			"学校汉字 · 第4章",
 			"学校汉字 · 第7章",
+			"学校汉字 · 第8章",
 		]);
 		expect(KANJI_EXAM_BATCHES[1].lessons.flatMap((lesson) => lesson.pages)).toEqual([65, 66, 67, 68, 71, 72, 73, 74, 77, 78, 79, 80]);
 		expect(KANJI_EXAM_BATCHES[2].lessons.flatMap((lesson) => lesson.pages)).toEqual([87, 88, 89, 90, 93, 94, 95, 96, 99, 100, 101, 102]);
@@ -52,6 +53,12 @@ describe("kanji exam question bank", () => {
 		expect(chapter7.lessons.flatMap((lesson) => lesson.kanji).join("")).toBe("春夏秋冬空星雲去天晴雪風強弱暑寒旅持世界写真船");
 		expect(questionsForMode(chapter7, "reading")).toHaveLength(71);
 		expect(questionsForMode(chapter7, "writing")).toHaveLength(84);
+		const chapter8 = KANJI_EXAM_BATCHES[4];
+		expect(chapter8.lessons.map((lesson) => lesson.title)).toEqual(["8章-1 勉強", "8章-2 テスト", "8章-3 図書館"]);
+		expect(chapter8.lessons.flatMap((lesson) => lesson.pages)).toEqual([177, 178, 179, 180, 183, 184, 185, 186, 189, 190, 191, 192]);
+		expect(chapter8.lessons.flatMap((lesson) => lesson.kanji).join("")).toBe("勉漢宿題質問教室試験答考正丸不同貸借返冊図歴史");
+		expect(questionsForMode(chapter8, "reading")).toHaveLength(61);
+		expect(questionsForMode(chapter8, "writing")).toHaveLength(87);
 		for (const batch of KANJI_EXAM_BATCHES.slice(1)) {
 			expect(batch.lessons).toHaveLength(3);
 			expect(questionsForMode(batch, "reading").length).toBeGreaterThan(50);

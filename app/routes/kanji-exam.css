@@ -211,3 +211,17 @@ html.theme-dark .kanji-exam-english-toggle.on,html.theme-dark .kanji-exam-englis
 .kanji-exam-question-group__head button.kanji-exam-answers-fab{position:fixed;right:calc(16px + env(safe-area-inset-right));bottom:calc(var(--bottom-nav-height, 64px) + env(safe-area-inset-bottom) + 88px);z-index:35;display:inline-flex;align-items:center;min-height:48px;padding:0 16px;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--accent);box-shadow:var(--shadow);font:inherit;font-size:15px;font-weight:800;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
 .kanji-exam-question-group__head button.kanji-exam-answers-fab.on{border-color:var(--accent);background:var(--accent);color:#fff}
 .kanji-exam-question-group__head button.kanji-exam-answers-fab:active{transform:scale(.96)}
+
+/* 汉字词表：每个汉字配课本里的词与读音，配合自测前复习。 */
+.kanji-exam-vocab__lesson{padding:14px 0 4px;border-top:1px dashed var(--line)}
+.kanji-exam-vocab__lesson:first-of-type{border-top:0}
+.kanji-exam-vocab__lesson h3{margin:0 0 12px;font-size:15.5px}
+.kanji-exam-vocab__grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
+.kanji-exam-vocab__entry{display:flex;gap:12px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--bg)}
+.kanji-exam-vocab__entry>strong{flex:none;display:grid;place-items:center;width:46px;height:46px;border-radius:10px;background:var(--card);font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:29px}
+.kanji-exam-vocab__entry ul{margin:0;padding:3px 0 0;list-style:none}
+.kanji-exam-vocab__entry li{display:flex;align-items:baseline;gap:8px;padding:2.5px 0;font-size:15.5px;line-height:1.35}
+.kanji-exam-vocab__entry li small{color:var(--sub);font-size:12.5px}
+@media(max-width:420px){
+	.kanji-exam-vocab__grid{grid-template-columns:1fr}
+}

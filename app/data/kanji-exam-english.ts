@@ -6,6 +6,7 @@ const batchEnglish: Record<string, { title: string; subtitle: string }> = {
 	"school-kanji-chapter-3-2026-08-22": { title: "School Kanji · Chapter 3", subtitle: "Luggage · Address · Prefectures" },
 	"school-kanji-chapter-4-2026-08-22": { title: "School Kanji · Chapter 4", subtitle: "Dating · Wedding anniversary · Work" },
 	"school-kanji-chapter-7-2026-10-28": { title: "School Kanji · Chapter 7", subtitle: "Seasons · Weather · Travel" },
+	"school-kanji-chapter-8-2026-11-05": { title: "School Kanji · Chapter 8", subtitle: "Study · Tests · Library" },
 };
 
 const lessonEnglish: Record<string, string> = {
@@ -21,6 +22,9 @@ const lessonEnglish: Record<string, string> = {
 	"ch7-1-seasons": "Chapter 7-1 · Seasons",
 	"ch7-2-weather": "Chapter 7-2 · Weather",
 	"ch7-3-travel": "Chapter 7-3 · Travel",
+	"ch8-1-study": "Chapter 8-1 · Study",
+	"ch8-2-test": "Chapter 8-2 · Tests",
+	"ch8-3-library": "Chapter 8-3 · Library",
 };
 
 const kanjiMeaning: Record<string, string> = {
@@ -35,6 +39,9 @@ const kanjiMeaning: Record<string, string> = {
 	夫: "husband", 妻: "wife", 特: "special", 思: "think", 料: "fee; material", 理: "reason; logic", 有: "have; exist",
 	会: "meet; association", 社: "company; shrine", 働: "work", 作: "make", 工: "craft; construction", 場: "place", 始: "begin", 終: "end",
 	春: "spring", 夏: "summer", 秋: "autumn", 冬: "winter", 空: "sky; empty", 星: "star", 雲: "cloud", 去: "leave; past", 天: "heaven; sky", 晴: "clear up; fine weather", 雪: "snow", 風: "wind; style", 強: "strong", 弱: "weak", 暑: "hot (weather)", 寒: "cold", 旅: "travel; journey", 持: "hold; have", 世: "world; generation; era", 界: "boundary; world", 写: "copy; photograph", 真: "true; genuine", 船: "ship; boat", 春夏秋冬: "the four seasons", 晴天: "fine weather", 強風: "strong wind", 強弱: "strength and weakness", 世界: "world", 写真: "photograph",
+	勉: "endeavor; study hard", 漢: "China; kanji", 宿: "lodging; inn", 題: "title; topic", 質: "quality; nature", 問: "ask; question", 教: "teach; education", 室: "room",
+	試: "try; test", 験: "test; experience", 答: "answer", 考: "think; consider", 正: "correct; right", 丸: "round; circle", 不: "not; un-", 同: "same",
+	貸: "lend", 借: "borrow", 返: "return; give back", 冊: "counter for books", 図: "diagram; drawing", 歴: "history; career", 史: "history",
 };
 
 const wordMeaning: Record<string, string> = {
@@ -60,6 +67,9 @@ const wordMeaning: Record<string, string> = {
 	会って: "meet", 入会: "join; enroll", 会話: "conversation", 会社: "company", 社長: "company president", 社会人: "working adult; member of society", 働きながら: "while working", 労働: "labor; work", 作りました: "made", 作家: "author; writer", 作物: "crops",
 	工学部: "faculty of engineering", スキー場: "ski resort", 人工: "artificial; man-made", 工場: "factory", 場: "place; occasion", 本場: "home; place of origin", 始まります: "begin", 年始: "beginning of the year", 始業式: "school-term opening ceremony", 終わって: "finish; be finished", 終電: "last train",
 	春: "spring", 新春: "New Year; early spring", 青春時だい: "one's youth", 夏: "summer", 夏日: "summer day (high of 25°C or above)", 秋: "autumn", 秋分の日: "Autumnal Equinox Day", 冬休み: "winter vacation", "ま冬": "midwinter", 冬き: "winter (season)", 空き家: "vacant house", 空: "sky", 空手: "karate", 上空: "the sky above", 夜空: "night sky", 星: "star", 雲: "cloud", 雨雲: "rain cloud", 去年: "last year", "か去": "the past", "しょう去": "deletion; erasure", 天気: "weather", 天気よほう: "weather forecast", 晴れる: "clear up", 雨天: "rainy weather", 天使: "angel", "かい晴": "clear, cloudless weather", 寒い: "cold", 雪: "snow", 新雪: "fresh snow", 台風: "typhoon", 風: "wind", 風車: "windmill", 洋風: "Western-style", 強まって: "grow stronger", 強い: "strong", 強火: "high heat", 弱って: "weaken; become frail", 弱まって: "weaken; let up", 暑かった: "was hot", "ひ暑地": "summer resort", 暑中見まい: "midsummer greeting card", "ぼう寒グッズ": "cold-weather gear", 一人旅: "traveling alone", 旅行: "travel; trip", 旅館: "Japanese-style inn", 持ちましょう: "let me carry it", 旅行中: "while traveling", 所持金: "money on hand", 世の中: "the world; society", 出世: "getting ahead; promotion", 世界一しゅう: "trip around the world", "げん界": "limit", "た界": "pass away", 写って: "appear (in a photo)", 写真: "photograph", 真空パック: "vacuum pack", 長持ち: "keep for a long time; last", 真じつ: "truth", 真ん中: "the very middle", 船: "ship; boat", 船長: "captain", 客船: "passenger ship",
+	勉強: "study", 勉強家: "hardworking student; studious person", "きん勉": "diligent; hardworking", 漢字: "kanji; Chinese characters", 漢方薬: "Chinese herbal medicine", 宿題: "homework", 宿: "inn; lodging", "宿はく": "lodging; staying the night", 題名: "title", 話題: "topic of conversation", 問題: "problem; question", 質問: "question", 質: "quality; nature", 問い: "question; inquiry", "ほう問": "visit", 問い合わせ: "inquiry", 教えて: "teach; tell", 教わり: "be taught; learn from someone", 教育問題: "education issues", 教室: "classroom", 室内: "indoors; inside the room",
+	試みる: "try; attempt", 試す: "try out; test", 試験: "exam; test", 試食: "tasting; sampling food", 試合: "match; game", 体験: "experience", 答えて: "answer", 答え: "answer", "かい答用紙": "answer sheet", 考えて: "think; consider", 参考: "reference", 正しい: "correct; right", 丸: "circle; round", "正かく": "accurate; correct", 丸くて: "round", 丸めて: "roll into a ball; scrunch up", "ほう丸なげ": "shot put", 不便: "inconvenient", 不安: "anxiety; unease", 不足: "shortage; lack", 同じ: "same", 同時: "at the same time",
+	貸しました: "lent", "ちん貸": "rental; leasing", 貸し借り: "lending and borrowing", 借りました: "borrowed", 借金: "debt; loan", "ふり返りました": "looked back; turned around", 返しました: "returned (something)", "返じ": "reply; answer", 三冊: "three books; three volumes", 短冊: "narrow strip of paper for poems or wishes", 地図: "map", 図: "diagram; figure", 図書館: "library", 歴史: "history", "歴だい": "successive generations; ages past", 学歴: "educational background", 世界史: "world history", "アメリカ史": "American history",
 };
 
 export function englishBatchLabel(batch: KanjiExamBatch) {
