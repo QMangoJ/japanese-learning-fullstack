@@ -112,6 +112,25 @@ function TopicList() {
 	);
 }
 
+/** 例句下方标注：敬语对照（敬语形←普通形＋类别）和例句语法讲解，没有的专题不显示。 */
+function KeigoGrammar({ card }: { card: TopicCard }) {
+	if (!card.keigo && !card.grammar) return null;
+	return (
+		<>
+			{card.keigo ? (
+				<div className="topic-item__keigo">
+					🎩 {lx("敬语", "Keigo")}：<span className="jp">{card.keigo}</span>
+				</div>
+			) : null}
+			{card.grammar ? (
+				<div className="topic-item__grammar">
+					🧩 {lx("语法", "Grammar")}：{card.grammar}
+				</div>
+			) : null}
+		</>
+	);
+}
+
 function shuffle<T>(list: T[]): T[] {
 	const out = [...list];
 	for (let i = out.length - 1; i > 0; i--) {
@@ -295,6 +314,7 @@ function TopicDetail({ slug }: { slug: string }) {
 										{card.example_kana ? <div className="review-reading jp">{card.example_kana}</div> : null}
 										<div className="cn">{card.example_zh}</div>
 									</div>
+									<KeigoGrammar card={card} />
 									{card.note ? <div className="topic-item__note">💡 {card.note}</div> : null}
 									<div className="topic-item__foot">
 										<span className="topic-item__chips">
@@ -369,6 +389,7 @@ function TopicDetail({ slug }: { slug: string }) {
 										{cur.example_kana ? <div className="review-reading jp">{cur.example_kana}</div> : null}
 										<div className="cn">{cur.example_zh}</div>
 									</div>
+									<KeigoGrammar card={cur} />
 									{cur.note ? <div className="topic-item__note">💡 {cur.note}</div> : null}
 								</div>
 							}

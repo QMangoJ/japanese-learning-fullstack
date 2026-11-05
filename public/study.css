@@ -901,6 +901,8 @@ body.hide-cn .vcn,body.hide-cn .cn{visibility:hidden}
 .topic-item__ex{font-size:16px;line-height:1.6;border-left:3px solid var(--line);padding-left:10px}
 .topic-item__ex .cn{color:var(--sub)}
 .topic-item__note{font-size:14.5px;color:var(--sub);line-height:1.5}
+.topic-item__keigo{font-size:14.5px;line-height:1.55;border-left:3px solid var(--amber);padding-left:10px}
+.topic-item__grammar{font-size:14.5px;line-height:1.55;border-left:3px solid var(--accent);padding-left:10px}
 .topic-item__scene{font-size:14px;color:var(--sub);margin-bottom:2px}
 .topic-item__chips{display:flex;gap:6px;flex-wrap:wrap;min-width:0}
 .topic-item__foot{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}

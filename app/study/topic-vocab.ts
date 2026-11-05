@@ -34,6 +34,10 @@ export type TopicCard = {
 	/** 例句的使用场景（可选），例如「朋友从试衣间出来时」。 */
 	scene?: string;
 	note?: string;
+	/** 例句里的敬语标注（可选）：每个敬语词写成「敬语形←普通形（尊敬語／謙譲語／丁重語／丁寧語／美化語）」，多个用「；」分隔。 */
+	keigo?: string;
+	/** 例句的语法讲解（可选，中文，一句话讲清句子的主要句型和关键点）。 */
+	grammar?: string;
 };
 
 export type TopicFile = {
@@ -80,6 +84,8 @@ const CARD_KEYS = new Set([
 	"level",
 	"scene",
 	"note",
+	"keigo",
+	"grammar",
 ]);
 
 function isRecord(value: unknown): value is Record<string, unknown> {
@@ -109,7 +115,7 @@ export function validateTopicCard(card: unknown, subtopics: Set<string>, where: 
 	for (const key of ["jp", "kana", "zh", "example_jp", "example_zh", "subtopic"] as const) {
 		if (!text(card[key], true)) errors.push(`${where}: ${key} is required (non-empty, trimmed string)`);
 	}
-	for (const key of ["en", "example_en", "example_kana", "example_ruby", "level", "scene", "note"] as const) {
+	for (const key of ["en", "example_en", "example_kana", "example_ruby", "level", "scene", "note", "keigo", "grammar"] as const) {
 		if (!text(card[key], false)) errors.push(`${where}: ${key} must be a trimmed string when present`);
 	}
 	if (typeof card.kana === "string" && card.kana && !KANA.test(card.kana)) errors.push(`${where}: kana must be kana only ("${card.kana}")`);
@@ -281,6 +287,13 @@ const HEADER_ALIASES: Record<string, keyof TopicCard> = {
 	备注: "note",
 	说明: "note",
 	补充: "note",
+	keigo: "keigo",
+	敬语: "keigo",
+	敬語: "keigo",
+	grammar: "grammar",
+	语法: "grammar",
+	语法讲解: "grammar",
+	文法: "grammar",
 };
 
 export function headerKey(raw: string): keyof TopicCard | null {
@@ -506,7 +519,7 @@ export function mergeTopicCards(
 	return { cards: out, added, updated, removed };
 }
 
-const ORDER: (keyof TopicCard)[] = ["id", "jp", "kana", "zh", "en", "subtopic", "level", "scene", "example_jp", "example_ruby", "example_kana", "example_zh", "example_en", "note"];
+const ORDER: (keyof TopicCard)[] = ["id", "jp", "kana", "zh", "en", "subtopic", "level", "scene", "example_jp", "example_ruby", "example_kana", "example_zh", "example_en", "note", "keigo", "grammar"];
 
 function orderCard(card: TopicCard): TopicCard {
 	const out: Record<string, string> = {};
