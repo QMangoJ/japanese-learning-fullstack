@@ -1,6 +1,7 @@
 import { KANJI_EXAM_CHAPTER_3, KANJI_EXAM_CHAPTER_4 } from "./kanji-exam-ch34";
 import { KANJI_EXAM_CHAPTER_7 } from "./kanji-exam-ch7";
 import { KANJI_EXAM_CHAPTER_8 } from "./kanji-exam-ch8";
+import { KANJI_EXAM_CHAPTER_9 } from "./kanji-exam-ch9";
 import { writingCompleteWord, writingWordKey } from "./kanji-exam-words";
 
 export type KanjiExamMode = "reading" | "writing" | "mixed";
@@ -256,6 +257,7 @@ export const KANJI_EXAM_BATCHES: KanjiExamBatch[] = [
 	KANJI_EXAM_CHAPTER_4,
 	KANJI_EXAM_CHAPTER_7,
 	KANJI_EXAM_CHAPTER_8,
+	KANJI_EXAM_CHAPTER_9,
 ];
 
 export function shuffleKanjiExamQuestions<T>(questions: readonly T[], random: () => number = Math.random): T[] {

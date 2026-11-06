@@ -37,6 +37,27 @@ describe("kanji exam word list", () => {
 		}
 	});
 
+	it("lists the textbook words for chapter 9 from the book only", () => {
+		const chapter9 = KANJI_EXAM_BATCHES.find((batch) => batch.title.includes("第9章"))!;
+		const sports = vocabForLesson(chapter9.lessons[0]);
+		expect(sports.find((entry) => entry.kanji === "歩")?.words.map(({ word, reading }) => ({ word, reading }))).toEqual([
+			{ word: "万歩計", reading: "まんぽけい" },
+			{ word: "歩行者", reading: "ほこうしゃ" },
+			{ word: "歩道", reading: "ほどう" },
+			{ word: "歩く", reading: "あるく" },
+			{ word: "散歩", reading: "さんぽ" },
+			{ word: "歩行者天国", reading: "ほこうしゃてんごく" },
+		]);
+		const resort = vocabForLesson(chapter9.lessons[1]);
+		expect(resort.find((entry) => entry.kanji === "然")?.words.map((item) => item.word)).toEqual([
+			"自然", "全然", "天然水", "天然記念物", "当然",
+		]);
+		const countryside = vocabForLesson(chapter9.lessons[2]);
+		expect(countryside.find((entry) => entry.kanji === "里")?.words.map((item) => item.word)).toEqual([
+			"ふる里", "人里", "一里", "里帰り",
+		]);
+	});
+
 	it("lists the textbook words for chapter 8 from the book only", () => {
 		const chapter8 = KANJI_EXAM_BATCHES.find((batch) => batch.title.includes("第8章"))!;
 		const study = vocabForLesson(chapter8.lessons[0]);

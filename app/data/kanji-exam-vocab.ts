@@ -52,6 +52,39 @@ const explicitVocab: Record<string, KanjiVocabEntry[]> = {
 		{ kanji: "歴", words: [{ word: "歴史", reading: "れきし" }, { word: "歴代", reading: "れきだい" }, { word: "履歴書", reading: "りれきしょ" }, { word: "学歴", reading: "がくれき" }] },
 		{ kanji: "史", words: [{ word: "歴史", reading: "れきし" }, { word: "日本史", reading: "にほんし" }, { word: "世界史", reading: "せかいし" }, { word: "東洋史", reading: "とうようし" }, { word: "西洋史", reading: "せいようし" }, { word: "史学", reading: "しがく" }] },
 	],
+	// Chapter 9 word lists, likewise from the textbook exercises in Daniel's
+	// photos (『漢字マスターN4 改訂版』9章). Words are only the ones printed
+	// in the book; inflected reading targets are listed in dictionary form.
+	"ch9-1-sports": [
+		{ kanji: "運", words: [{ word: "運ぶ", reading: "はこぶ" }, { word: "運転", reading: "うんてん" }, { word: "運動", reading: "うんどう" }, { word: "運転手", reading: "うんてんしゅ" }, { word: "運がいい", reading: "うんがいい" }] },
+		{ kanji: "動", words: [{ word: "運動", reading: "うんどう" }, { word: "動物園", reading: "どうぶつえん" }, { word: "動く", reading: "うごく" }, { word: "動かす", reading: "うごかす" }, { word: "動物", reading: "どうぶつ" }, { word: "動作", reading: "どうさ" }] },
+		{ kanji: "練", words: [{ word: "練習", reading: "れんしゅう" }, { word: "避難訓練", reading: "ひなんくんれん" }, { word: "訓練", reading: "くんれん" }, { word: "練る", reading: "ねる" }] },
+		{ kanji: "習", words: [{ word: "習う", reading: "ならう" }, { word: "復習", reading: "ふくしゅう" }, { word: "習慣", reading: "しゅうかん" }, { word: "学習", reading: "がくしゅう" }, { word: "習字", reading: "しゅうじ" }, { word: "予習", reading: "よしゅう" }] },
+		{ kanji: "走", words: [{ word: "走る", reading: "はしる" }, { word: "競走", reading: "きょうそう" }, { word: "走者", reading: "そうしゃ" }] },
+		{ kanji: "歩", words: [{ word: "万歩計", reading: "まんぽけい" }, { word: "歩行者", reading: "ほこうしゃ" }, { word: "歩道", reading: "ほどう" }, { word: "歩く", reading: "あるく" }, { word: "散歩", reading: "さんぽ" }, { word: "歩行者天国", reading: "ほこうしゃてんごく" }] },
+		{ kanji: "泳", words: [{ word: "泳ぐ", reading: "およぐ" }, { word: "泳ぎ", reading: "およぎ" }, { word: "水泳", reading: "すいえい" }, { word: "水泳大会", reading: "すいえいたいかい" }, { word: "平泳ぎ", reading: "ひらおよぎ" }] },
+		{ kanji: "才", words: [{ word: "才能", reading: "さいのう" }, { word: "天才", reading: "てんさい" }, { word: "才女", reading: "さいじょ" }] },
+	],
+	"ch9-2-resort": [
+		{ kanji: "自", words: [{ word: "自分", reading: "じぶん" }, { word: "自然", reading: "しぜん" }, { word: "自宅", reading: "じたく" }, { word: "自信", reading: "じしん" }, { word: "自動車", reading: "じどうしゃ" }, { word: "自習", reading: "じしゅう" }, { word: "自力", reading: "じりき" }] },
+		{ kanji: "然", words: [{ word: "自然", reading: "しぜん" }, { word: "全然", reading: "ぜんぜん" }, { word: "天然水", reading: "てんねんすい" }, { word: "天然記念物", reading: "てんねんきねんぶつ" }, { word: "当然", reading: "とうぜん" }] },
+		{ kanji: "草", words: [{ word: "草", reading: "くさ" }, { word: "草花", reading: "くさばな" }, { word: "草原", reading: "そうげん" }, { word: "海草", reading: "かいそう" }] },
+		{ kanji: "原", words: [{ word: "草原", reading: "そうげん" }, { word: "原作", reading: "げんさく" }, { word: "原因", reading: "げんいん" }, { word: "原料", reading: "げんりょう" }, { word: "高原", reading: "こうげん" }] },
+		{ kanji: "湖", words: [{ word: "湖", reading: "みずうみ" }, { word: "琵琶湖", reading: "びわこ" }, { word: "山中湖", reading: "やまなかこ" }, { word: "湖上", reading: "こじょう" }, { word: "湖水", reading: "こすい" }] },
+		{ kanji: "谷", words: [{ word: "谷", reading: "たに" }, { word: "渓谷", reading: "けいこく" }, { word: "谷間", reading: "たにま" }, { word: "谷川", reading: "たにがわ" }] },
+		{ kanji: "海", words: [{ word: "海", reading: "うみ" }, { word: "海外旅行", reading: "かいがいりょこう" }, { word: "海辺", reading: "うみべ" }, { word: "海草", reading: "かいそう" }, { word: "日本海", reading: "にほんかい" }] },
+		{ kanji: "辺", words: [{ word: "海辺", reading: "うみべ" }, { word: "辺り", reading: "あたり" }, { word: "辺", reading: "へん" }, { word: "川辺", reading: "かわべ" }, { word: "この辺", reading: "このへん" }, { word: "近辺", reading: "きんぺん" }] },
+	],
+	"ch9-3-countryside": [
+		{ kanji: "里", words: [{ word: "ふる里", reading: "ふるさと" }, { word: "人里", reading: "ひとざと" }, { word: "一里", reading: "いちり" }, { word: "里帰り", reading: "さとがえり" }] },
+		{ kanji: "野", words: [{ word: "野原", reading: "のはら" }, { word: "野球", reading: "やきゅう" }, { word: "野山", reading: "のやま" }, { word: "野菜", reading: "やさい" }] },
+		{ kanji: "緑", words: [{ word: "緑色", reading: "みどりいろ" }, { word: "緑", reading: "みどり" }, { word: "緑茶", reading: "りょくちゃ" }, { word: "新緑", reading: "しんりょく" }] },
+		{ kanji: "池", words: [{ word: "池", reading: "いけ" }, { word: "電池", reading: "でんち" }, { word: "小池さん", reading: "こいけさん" }, { word: "貯水池", reading: "ちょすいち" }] },
+		{ kanji: "鳥", words: [{ word: "鳥", reading: "とり" }, { word: "白鳥", reading: "はくちょう" }, { word: "小鳥", reading: "ことり" }] },
+		{ kanji: "羽", words: [{ word: "羽", reading: "はね" }, { word: "羽田空港", reading: "はねだくうこう" }] },
+		{ kanji: "馬", words: [{ word: "馬", reading: "うま" }, { word: "竹馬", reading: "たけうま" }, { word: "馬車", reading: "ばしゃ" }, { word: "乗馬", reading: "じょうば" }] },
+		{ kanji: "鳴", words: [{ word: "悲鳴", reading: "ひめい" }, { word: "鳴く", reading: "なく" }, { word: "鳴る", reading: "なる" }, { word: "鳴らす", reading: "ならす" }] },
+	],
 };
 
 // Mixed textbook forms (a kana syllable printed in place of an untaught kanji,

@@ -7,6 +7,7 @@ const batchEnglish: Record<string, { title: string; subtitle: string }> = {
 	"school-kanji-chapter-4-2026-08-22": { title: "School Kanji · Chapter 4", subtitle: "Dating · Wedding anniversary · Work" },
 	"school-kanji-chapter-7-2026-10-28": { title: "School Kanji · Chapter 7", subtitle: "Seasons · Weather · Travel" },
 	"school-kanji-chapter-8-2026-11-05": { title: "School Kanji · Chapter 8", subtitle: "Study · Tests · Library" },
+	"school-kanji-chapter-9-2026-11-06": { title: "School Kanji · Chapter 9", subtitle: "Sports · Resort · Countryside" },
 };
 
 const lessonEnglish: Record<string, string> = {
@@ -25,6 +26,9 @@ const lessonEnglish: Record<string, string> = {
 	"ch8-1-study": "Chapter 8-1 · Study",
 	"ch8-2-test": "Chapter 8-2 · Tests",
 	"ch8-3-library": "Chapter 8-3 · Library",
+	"ch9-1-sports": "Chapter 9-1 · Sports",
+	"ch9-2-resort": "Chapter 9-2 · Resort",
+	"ch9-3-countryside": "Chapter 9-3 · Countryside",
 };
 
 const kanjiMeaning: Record<string, string> = {
@@ -42,6 +46,9 @@ const kanjiMeaning: Record<string, string> = {
 	勉: "endeavor; study hard", 漢: "China; kanji", 宿: "lodging; inn", 題: "title; topic", 質: "quality; nature", 問: "ask; question", 教: "teach; education", 室: "room",
 	試: "try; test", 験: "test; experience", 答: "answer", 考: "think; consider", 正: "correct; right", 丸: "round; circle", 不: "not; un-", 同: "same",
 	貸: "lend", 借: "borrow", 返: "return; give back", 冊: "counter for books", 図: "diagram; drawing", 歴: "history; career", 史: "history",
+	運: "carry; luck", 動: "move", 練: "practice; train", 習: "learn", 走: "run", 歩: "walk", 泳: "swim", 才: "talent",
+	草: "grass", 原: "plain; origin", 自: "self", 然: "in that way; -like", 湖: "lake", 谷: "valley", 海: "sea", 辺: "area; vicinity",
+	里: "village; hometown", 野: "field; wild", 緑: "green", 池: "pond", 鳥: "bird", 羽: "feather; wing", 馬: "horse", 鳴: "cry; sound; ring",
 };
 
 const wordMeaning: Record<string, string> = {
@@ -70,6 +77,17 @@ const wordMeaning: Record<string, string> = {
 	勉強: "study", 勉強家: "hardworking student; studious person", "きん勉": "diligent; hardworking", 漢字: "kanji; Chinese characters", 漢方薬: "Chinese herbal medicine", 宿題: "homework", 宿: "inn; lodging", "宿はく": "lodging; staying the night", 題名: "title", 話題: "topic of conversation", 問題: "problem; question", 質問: "question", 質: "quality; nature", 問い: "question; inquiry", "ほう問": "visit", 問い合わせ: "inquiry", 教えて: "teach; tell", 教わり: "be taught; learn from someone", 教育問題: "education issues", 教室: "classroom", 室内: "indoors; inside the room",
 	試みる: "try; attempt", 試す: "try out; test", 試験: "exam; test", 試食: "tasting; sampling food", 試合: "match; game", 体験: "experience", 答えて: "answer", 答え: "answer", "かい答用紙": "answer sheet", 考えて: "think; consider", 参考: "reference", 正しい: "correct; right", 丸: "circle; round", "正かく": "accurate; correct", 丸くて: "round", 丸めて: "roll into a ball; scrunch up", "ほう丸なげ": "shot put", 不便: "inconvenient", 不安: "anxiety; unease", 不足: "shortage; lack", 同じ: "same", 同時: "at the same time",
 	貸しました: "lent", "ちん貸": "rental; leasing", 貸し借り: "lending and borrowing", 借りました: "borrowed", 借金: "debt; loan", "ふり返りました": "looked back; turned around", 返しました: "returned (something)", "返じ": "reply; answer", 三冊: "three books; three volumes", 短冊: "narrow strip of paper for poems or wishes", 地図: "map", 図: "diagram; figure", 図書館: "library", 歴史: "history", "歴だい": "successive generations; ages past", 学歴: "educational background", 世界史: "world history", "アメリカ史": "American history",
+	運んで: "carry; transport", "運てん": "driving", 運動: "exercise; sports", 動物園: "zoo", 動かないで: "do not move", 練習: "practice", "ひなんくん練": "evacuation drill", 習い: "learned; was taught", "ふく習": "review", "習かん": "habit; custom",
+	走り: "run", "きょう走": "race", 万歩計: "pedometer", "歩行しゃ": "pedestrian", 歩道: "sidewalk", 歩き: "walk", "さん歩": "walk; stroll",
+	泳ぎ: "swimming", 泳ぐ: "swim", 水泳大会: "swimming meet", "才のう": "talent; ability", 天才: "genius",
+	自分: "oneself", 自然: "nature", 自宅: "one's own home", "ぜん然": "not at all; completely", "自しん": "confidence", 天然水: "natural water; mineral water",
+	草: "grass", 草花: "flowering plants; wild flowers and grasses", 草原: "grassland; prairie", 高原: "plateau; highlands", 原料: "raw material",
+	湖: "lake", "びわ湖": "Lake Biwa", 山中湖: "Lake Yamanaka", 湖上: "on the lake", 谷: "valley", "けい谷": "gorge; ravine",
+	海: "sea; ocean", 海外旅行: "trip abroad; overseas travel", 海辺: "seashore; beach", 辺り: "vicinity; neighborhood", 辺: "area; vicinity",
+	"ふる里": "hometown; birthplace", 人里: "inhabited place; village", 一里: "one ri (about 4 km)", 野原: "field; plain", "野きゅう": "baseball",
+	緑色: "green (color)", 緑: "green; greenery", 緑茶: "green tea", 池: "pond", 電池: "battery",
+	鳥: "bird", 白鳥: "swan", 小鳥: "small bird", 羽: "feather; wing", "羽田空こう": "Haneda Airport",
+	馬: "horse", "ひ鳴": "scream; shriek", 鳴く: "cry; sing (of birds); call", 鳴って: "rang; sounded", 鳴らし: "ring; sound (something)",
 };
 
 export function englishBatchLabel(batch: KanjiExamBatch) {
