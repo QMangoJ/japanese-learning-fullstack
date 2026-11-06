@@ -22,10 +22,25 @@ describe("kanji exam word list", () => {
 		}
 	});
 
+	it("annotates every listed word with a Chinese gloss, part of speech and example", () => {
+		for (const batch of KANJI_EXAM_BATCHES) {
+			for (const lesson of batch.lessons) {
+				for (const entry of vocabForLesson(lesson)) {
+					for (const item of entry.words) {
+						expect(item.meaningZh?.trim(), `${lesson.id} ${item.word}`).toBeTruthy();
+						expect(item.pos?.trim(), `${lesson.id} ${item.word}`).toBeTruthy();
+						expect(item.example?.trim(), `${lesson.id} ${item.word}`).toBeTruthy();
+						expect(item.example, `${lesson.id} ${item.word}`).toMatch(/。$/);
+					}
+				}
+			}
+		}
+	});
+
 	it("lists the textbook words for chapter 8 from the book only", () => {
 		const chapter8 = KANJI_EXAM_BATCHES.find((batch) => batch.title.includes("第8章"))!;
 		const study = vocabForLesson(chapter8.lessons[0]);
-		expect(study.find((entry) => entry.kanji === "漢")?.words).toEqual([
+		expect(study.find((entry) => entry.kanji === "漢")?.words.map(({ word, reading }) => ({ word, reading }))).toEqual([
 			{ word: "漢字", reading: "かんじ" },
 			{ word: "漢数字", reading: "かんすうじ" },
 			{ word: "漢和辞典", reading: "かんわじてん" },

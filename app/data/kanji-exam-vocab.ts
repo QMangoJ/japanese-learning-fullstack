@@ -3,10 +3,16 @@ import {
 	filledKanjiExamForm,
 	type KanjiExamLesson,
 } from "./kanji-exam";
+import { KANJI_VOCAB_NOTES } from "./kanji-exam-vocab-notes";
 
 export type KanjiVocabWord = {
 	word: string;
 	reading: string;
+	// Study notes for the word list only (never shown in the quiz itself):
+	// Chinese gloss, part of speech, and one short example sentence.
+	meaningZh?: string;
+	pos?: string;
+	example?: string;
 };
 
 export type KanjiVocabEntry = {
@@ -82,6 +88,12 @@ function derivedVocab(lesson: KanjiExamLesson): KanjiVocabEntry[] {
 	}));
 }
 
+function withNote(item: KanjiVocabWord): KanjiVocabWord {
+	const note = KANJI_VOCAB_NOTES[item.word];
+	return note ? { ...item, meaningZh: note.meaningZh, pos: note.pos, example: note.example } : item;
+}
+
 export function vocabForLesson(lesson: KanjiExamLesson): KanjiVocabEntry[] {
-	return explicitVocab[lesson.id] || derivedVocab(lesson);
+	const entries = explicitVocab[lesson.id] || derivedVocab(lesson);
+	return entries.map((entry) => ({ ...entry, words: entry.words.map(withNote) }));
 }

@@ -220,8 +220,11 @@ html.theme-dark .kanji-exam-english-toggle.on,html.theme-dark .kanji-exam-englis
 .kanji-exam-vocab__entry{display:flex;gap:12px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--bg)}
 .kanji-exam-vocab__entry>strong{flex:none;display:grid;place-items:center;width:46px;height:46px;border-radius:10px;background:var(--card);font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:29px}
 .kanji-exam-vocab__entry ul{margin:0;padding:3px 0 0;list-style:none}
-.kanji-exam-vocab__entry li{display:flex;align-items:baseline;gap:8px;padding:2.5px 0;font-size:15.5px;line-height:1.35}
+.kanji-exam-vocab__entry li{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px;padding:2.5px 0;font-size:15.5px;line-height:1.35}
 .kanji-exam-vocab__entry li small{color:var(--sub);font-size:12.5px}
+.kanji-exam-vocab__pos{font-style:normal;font-size:11px;line-height:1.5;color:var(--sub);border:1px solid var(--line);border-radius:999px;padding:0 6px;white-space:nowrap}
+.kanji-exam-vocab__gloss{color:var(--sub);font-size:13.5px}
+.kanji-exam-vocab__example{flex:0 0 100%;margin:1px 0 3px;color:var(--sub);font-size:13px;line-height:1.45}
 @media(max-width:420px){
 	.kanji-exam-vocab__grid{grid-template-columns:1fr}
 }

@@ -375,6 +375,9 @@ export function KanjiExamPage() {
 												<li key={item.word} lang="ja">
 													<span>{item.word}</span>
 													<small>{item.reading}</small>
+													{item.pos ? <em className="kanji-exam-vocab__pos">{item.pos}</em> : null}
+													{item.meaningZh ? <span className="kanji-exam-vocab__gloss" lang="zh">{item.meaningZh}</span> : null}
+													{item.example ? <p className="kanji-exam-vocab__example">{item.example}</p> : null}
 												</li>
 											))}
 										</ul>
