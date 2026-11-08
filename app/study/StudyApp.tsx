@@ -22,6 +22,7 @@ import { PointerTiltRoot } from "./pointer-tilt";
 import { ToastStack } from "./toast-stack";
 import { getDueVersion, subscribeDue } from "./due-review";
 import { formatReviewDate, jstToday, parseReviewRoute, reviewDateFromId } from "./lesson-review";
+import { parseItListeningRoute } from "./it-listening";
 import { parseTopicsRoute } from "./topic-route";
 import {
 	ACCOUNT,
@@ -121,6 +122,9 @@ const LazyReadingN3Content = lazy(() =>
 );
 const LazyKanjiExamPage = lazy(() =>
 	import("./KanjiExamPage").then((module) => ({ default: module.KanjiExamPage })),
+);
+const LazyItListeningPage = lazy(() =>
+	import("./ItListeningPage").then((module) => ({ default: module.ItListeningPage })),
 );
 const LazyReviewPage = lazy(() =>
 	import("./ReviewPage").then((module) => ({ default: module.ReviewPage })),
@@ -561,6 +565,7 @@ function Sidebar({ routeKey, onLevel }: { routeKey: string; onLevel: (lv: LevelK
 				{row("#/wearing", "👕", lx("穿衣穿戴", "Wearing"), null, h === "#/wearing")}
 				{row("#/numbers", "🔢", lx("数字", "Numbers"), null, h === "#/numbers")}
 				{row("#/kanji-exam", "🈶", lx("汉字自测", "Kanji Self-test"), null, h === "#/kanji-exam")}
+				{row("#/it-listening", "💻", lx("IT 听力", "IT Listening"), null, h.startsWith("#/it-listening"))}
 			</div>
 			<div className="side-foot">
 				{row("#/usage", "⏱️", lx("使用时间", "Study time"), null, h === "#/usage")}
@@ -648,6 +653,14 @@ function Sheet({
 								<span className="ic">🙏</span>
 								{lx("敬语总结", "Keigo summary")}
 							</button>
+							<span className="sheet-item" style={{ visibility: "hidden" }} />
+						</div>
+						<div className="sheet-row">
+							<button className="sheet-item" onClick={() => { onClose(); navTo("#/it-listening"); }}>
+								<span className="ic">💻</span>
+								{lx("IT 听力", "IT Listening")}
+							</button>
+							<span className="sheet-item" style={{ visibility: "hidden" }} />
 							<span className="sheet-item" style={{ visibility: "hidden" }} />
 						</div>
 						<div className="sheet-row">
@@ -896,6 +909,8 @@ function viewMeta(key: string): { nav: string; title: string; back: boolean } {
 	}
 	const topics = parseTopicsRoute(key);
 	if (topics) return { nav: "common", title: lx("专题词汇", "Topic vocabulary"), back: Boolean(topics.slug) };
+	const itl = parseItListeningRoute(key);
+	if (itl) return { nav: "common", title: lx("IT 听力", "IT Listening"), back: Boolean(itl.id) };
 	if (key === "#/kanji-exam") return { nav: "common", title: lx("汉字自测", "Kanji Self-test"), back: false };
 	if (key === "#/favs")
 		return {
@@ -1074,11 +1089,12 @@ export function StudyApp() {
 	const day = parseDayRoute(routeKey);
 	const reviewRoute = parseReviewRoute(routeKey);
 	const topicsRoute = parseTopicsRoute(routeKey);
+	const itlRoute = parseItListeningRoute(routeKey);
 	const commonPages = ["#/search", "#/cards", "#/kanji-exam", "#/favs", "#/mistakes", "#/usage", "#/ref", "#/katsuyou", "#/henkei", "#/verb-summary", "#/keigo", "#/kougo", "#/jita", "#/wearing", "#/numbers", "#/review"];
-	const isCommon = commonPages.includes(routeKey) || routeKey === "#/" || Boolean(reviewRoute) || Boolean(topicsRoute);
+	const isCommon = commonPages.includes(routeKey) || routeKey === "#/" || Boolean(reviewRoute) || Boolean(topicsRoute) || Boolean(itlRoute);
 	if (routeKey === "#/cards") ensureCardsDeck();
 
-	const commonRefPage = ["#/usage", "#/ref", "#/katsuyou", "#/henkei", "#/verb-summary", "#/keigo", "#/kougo", "#/jita", "#/wearing", "#/numbers", "#/review"].includes(routeKey) || Boolean(reviewRoute) || Boolean(topicsRoute);
+	const commonRefPage = ["#/usage", "#/ref", "#/katsuyou", "#/henkei", "#/verb-summary", "#/keigo", "#/kougo", "#/jita", "#/wearing", "#/numbers", "#/review"].includes(routeKey) || Boolean(reviewRoute) || Boolean(topicsRoute) || Boolean(itlRoute);
 	const waitingN2 = isN2() && MODULE !== "n2listening" && MODULE !== "n2reading" && !n2Loaded && !commonRefPage;
 	const waitingN4 = isN4() && !n4Loaded && !commonRefPage;
 	const waitingN1 = isN1() && MODULE !== "n1listening" && !n1Loaded && !commonRefPage;
@@ -1155,6 +1171,7 @@ export function StudyApp() {
 	else if (routeKey === "#/numbers") body = DATA.common?.numbers ? <NumbersPage data={DATA.common} /> : <div className="empty">通用参考数据加载中，请稍候…</div>;
 	else if (reviewRoute) body = <LazyReviewPage dateId={reviewRoute.id} />;
 	else if (topicsRoute) body = <LazyTopicsPage slug={topicsRoute.slug} />;
+	else if (itlRoute) body = <LazyItListeningPage articleId={itlRoute.id} />;
 	else body = <HomePage data={homeData} />;
 
 	const showCommon = isCommon && !day && routeKey !== "#/contrast";
@@ -1175,12 +1192,12 @@ export function StudyApp() {
 			<Header
 				title={meta.title}
 				showBack={meta.back}
-				backLabel={day ? lx("目录", "Catalog") : reviewRoute?.id ? lx("日期", "Dates") : topicsRoute?.slug ? lx("专题", "Topics") : lx("返回", "Back")}
-				showLevel={!commonPages.includes(routeKey) && !reviewRoute && !topicsRoute}
+				backLabel={day ? lx("目录", "Catalog") : reviewRoute?.id ? lx("日期", "Dates") : topicsRoute?.slug ? lx("专题", "Topics") : itlRoute?.id ? lx("文章", "Articles") : lx("返回", "Back")}
+				showLevel={!commonPages.includes(routeKey) && !reviewRoute && !topicsRoute && !itlRoute}
 				showTypebar={routeKey === "#/" || Boolean(day)}
 				showReading={LEVEL === "n3" || LEVEL === "n2"}
 				showListening={LEVEL === "n3" || LEVEL === "n2" || LEVEL === "n1"}
-				onBack={() => (day ? navTo("#/") : reviewRoute?.id ? navTo("#/review") : topicsRoute?.slug ? navTo("#/topics") : history.length > 1 ? navigate(-1) : navTo("#/"))}
+				onBack={() => (day ? navTo("#/") : reviewRoute?.id ? navTo("#/review") : topicsRoute?.slug ? navTo("#/topics") : itlRoute?.id ? navTo("#/it-listening") : history.length > 1 ? navigate(-1) : navTo("#/"))}
 				onOpenLevel={() => setSheet("level")}
 			/>
 			<Sidebar routeKey={routeKey} onLevel={pickLevel} />
