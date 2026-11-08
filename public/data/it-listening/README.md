@@ -40,7 +40,13 @@ public/data/it-listening/
       "speaker": "リー",               // 说话人（原文标注，如 リー / ユーザー）
       "jp": "では、次に売上データを追加してみましょうか。",   // 日文原句（逐句）
       "zh": "那么，接下来试着添加一下销售数据吧。",          // 中文翻译，必填
-      "grammar": "…",                  // 可选：该句的语法/敬语要点（简洁，N2 水准）。纯应答句可省略，不要注水
+      "grammarPoints": [               // 语法层标准（2026-11-08 起，news-learning 体例）：每句至少 1 条，不得整句空白
+        { "level": "N2",                 // JLPT 级别
+          "name": "「〜てもらいます」安排分工（非请求）",   // 语法点名（可带类别前缀，如「謙譲語：〜」）
+          "explanationZh": "…" }         // 中文解析：接续/构成 + 在本句的含义/作用 + 场景/敬语/注意，2~4 句，news 的 explanationZh 深度
+      ],
+      "structure": "…",                // 可选：整句结构拆解（news 的 keySentences.structureZh），成分＋中文 gloss 以「＋」连接；只给结构复杂的长句
+      "grammar": "…",                  // 旧式单段语法注（升级前的文章在用，新文章不再写）
       "vocab": [                       // 可选：该句值得记的生词，不要注水
         { "w": "売上データ", "r": "うりあげデータ", "pos": "名词", "zh": "销售数据" }
       ]
@@ -48,6 +54,16 @@ public/data/it-listening/
   ]
 }
 ```
+
+## 语法层标准（news-learning 体例，2026-11-08 Daniel 定）
+
+逐句语法解析按阅读项目 news-learning 的做法（其 enrich 数据的 grammarPoints / keySentences）：
+
+- 每句至少 1 条 `grammarPoints`，逐条列出：`level`（JLPT 级别）+ `name`（语法点名）+ `explanationZh`（接续/构成 → 本句含义 → 场景/敬语/易混点，写满 2~4 句，不要一句话带过）。
+- 敬语（尊敬/自谦/丁重）、词汇搭配、语用功能（应答、留半句、确认节奏）都算语法点，单独成条。
+- 结构复杂的长句另给 `structure`（句干拆解）；news 的 `keySentences.notesZh`（语用讲解）并入该句最后一条 grammarPoint 的 explanationZh 末尾，不另设字段。
+- 纯应答句（「はい。」「そうです。」等）给极简语用注（它在对话里的功能），不留空白。
+- news 的 `reading`（整句假名读音）不映射：本模块有朗读按钮，且教材页原文自带 furigana。
 
 ## 原文来源
 

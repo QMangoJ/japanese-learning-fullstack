@@ -17,11 +17,25 @@ export type ItListeningVocab = {
 	zh: string;
 };
 
+export type ItListeningGrammarPoint = {
+	/** JLPT 级别（N5..N1），沿用 news-learning 的 grammarPoints 体例。 */
+	level?: string;
+	/** 语法点名，如「〜てもらいます」安排分工（非请求）。 */
+	name: string;
+	/** 中文解析：接续/构成 + 在本句的含义 + 场景/注意（news 的 explanationZh 深度）。 */
+	explanationZh: string;
+};
+
 export type ItListeningSentence = {
 	speaker?: string;
 	jp: string;
 	zh: string;
+	/** 旧式单段语法注（Unit 14 语法层升级前的文章在用），渲染保留兼容。 */
 	grammar?: string;
+	/** 新式逐句语法点（news-learning 体例）：每句至少一条，纯应答句给极简语用注。 */
+	grammarPoints?: ItListeningGrammarPoint[];
+	/** 整句结构拆解（news 的 keySentences.structureZh）：成分＋中文 gloss。 */
+	structure?: string;
 	vocab?: ItListeningVocab[];
 };
 

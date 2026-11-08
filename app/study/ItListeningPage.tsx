@@ -187,6 +187,25 @@ function ItListeningDetail({ id }: { id: string }) {
 						</div>
 						<p className="itl-jp">{s.jp}</p>
 						<p className="itl-zh">{s.zh}</p>
+						{s.structure ? (
+							<p className="itl-structure">
+								<b>{lx("结构", "Structure")}</b>
+								{s.structure}
+							</p>
+						) : null}
+						{s.grammarPoints && s.grammarPoints.length ? (
+							<div className="itl-gps">
+								{s.grammarPoints.map((g, j) => (
+									<div className="itl-gp" key={j}>
+										<div className="itl-gp-head">
+											{g.level ? <span className="itl-gp-level">{g.level}</span> : null}
+											<span className="itl-gp-name">{g.name}</span>
+										</div>
+										<p className="itl-gp-text">{g.explanationZh}</p>
+									</div>
+								))}
+							</div>
+						) : null}
 						{s.grammar ? (
 							<p className="itl-grammar">
 								<b>{lx("语法", "Grammar")}</b>

@@ -44,6 +44,14 @@
 .itl-zh{margin:4px 0 0;color:var(--sub);font-size:15px;line-height:1.6}
 .itl-grammar{margin:10px 0 0;padding:9px 12px;border-radius:10px;background:var(--bg);font-size:14px;line-height:1.65}
 .itl-grammar b{display:inline-block;margin-right:8px;padding:1px 8px;border-radius:6px;background:var(--accent-soft);color:var(--accent);font-size:12px}
+.itl-structure{margin:10px 0 0;padding:9px 12px;border-radius:10px;background:var(--bg);font-size:14px;line-height:1.65}
+.itl-structure b{display:inline-block;margin-right:8px;padding:1px 8px;border-radius:6px;background:var(--accent-soft);color:var(--accent);font-size:12px}
+.itl-gps{display:grid;gap:8px;margin:10px 0 0}
+.itl-gp{padding:9px 12px;border-radius:10px;background:var(--bg)}
+.itl-gp-head{display:flex;align-items:center;gap:8px;margin-bottom:2px}
+.itl-gp-level{padding:0 7px;border-radius:5px;background:var(--accent);color:#fff;font-size:11.5px;font-weight:800;line-height:1.7}
+.itl-gp-name{font-size:14px;font-weight:800}
+.itl-gp-text{margin:0;font-size:14px;line-height:1.7}
 .itl-vocab{display:flex;flex-wrap:wrap;gap:6px 14px;margin:10px 0 0;padding:0;list-style:none}
 .itl-vocab li{display:flex;align-items:baseline;gap:6px;font-size:14px}
 .itl-vocab b{font-size:15px}
