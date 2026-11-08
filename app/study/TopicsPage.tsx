@@ -6,7 +6,7 @@ import { KanaStagger, StudyFlip } from "./study-flip";
 import { CountPair } from "./tick-text";
 import type { SwipeGrade } from "./swipe-grade";
 import { jstToday } from "./lesson-review";
-import { LANG, lx, navTo } from "./store";
+import { LANG, lx, navTo, openTopicSub, takeTopicSubPreset } from "./store";
 import { isTopicFile, isTopicIndex, topicDueId, type TopicCard, type TopicFile, type TopicIndex } from "./topic-vocab";
 
 type Status = "new" | "unknown" | "learning";
@@ -16,20 +16,22 @@ type View = "list" | "cards" | "board";
 /** 有专用「看板」页面的专题：默认打开看板，「单词表」由看板代替，闪卡复习仍用通用格式。 */
 const BOARD_SLUGS = new Set(["cafe-menu"]);
 
-/** 专题知识分组（与侧边栏信息架构一致）：工作面试 / 生活 / 通用；未列出的 slug 一律归通用。 */
-const TOPIC_GROUP_OF: Record<string, "work" | "life"> = {
+/** 专题知识分组（与侧边栏信息架构一致）：工作面试 / 生活 / 投资理财 / 通用；未列出的 slug 一律归通用。 */
+const TOPIC_GROUP_OF: Record<string, "work" | "life" | "invest"> = {
 	"job-interview": "work",
 	frontend: "work",
 	"bank-atm": "life",
 	"clothes-shopping": "life",
 	"cafe-menu": "life",
+	"japan-investing": "invest",
 };
 const TOPIC_GROUPS = [
 	{ key: "work", zh: "工作面试", en: "Work & interviews" },
 	{ key: "life", zh: "生活", en: "Daily life" },
+	{ key: "invest", zh: "投资理财", en: "Investing & finance" },
 	{ key: "general", zh: "通用", en: "General" },
 ] as const;
-function topicGroupOf(slug: string): "work" | "life" | "general" {
+function topicGroupOf(slug: string): "work" | "life" | "invest" | "general" {
 	return TOPIC_GROUP_OF[slug] ?? "general";
 }
 const LazyCafeMenuBoard = lazy(() => import("./CafeMenuBoard").then((module) => ({ default: module.CafeMenuBoard })));
@@ -112,23 +114,35 @@ function TopicList() {
 						<div key={g.key} className="topic-group">
 							<h3 className="topic-group-h">{lx(g.zh, g.en)}</h3>
 							{items.map((t) => (
-					<button key={t.slug} type="button" className="review-day topic-card" data-topic={t.slug} onClick={() => navTo(`#/topics/${t.slug}`)}>
-						<span className="d">
-							{lx(`${t.count} 个词`, `${t.count} cards`)}
-						</span>
-						<span className="t">{lx(t.title_zh, t.title_en || t.title_zh)}</span>
-						<span className="tc jp">{t.title_ja}</span>
-						{t.subtopics?.length ? (
-							<span className="review-day__stats">
-								{t.subtopics.slice(0, 4).map((s) => (
-									<span key={s} className="review-day__chip">
-										{s}
-									</span>
-								))}
-								{t.subtopics.length > 4 ? <span className="review-day__chip">+{t.subtopics.length - 4}</span> : null}
-							</span>
-						) : null}
-					</button>
+								<div key={t.slug}>
+									<button type="button" className="review-day topic-card" data-topic={t.slug} onClick={() => navTo(`#/topics/${t.slug}`)}>
+										<span className="d">
+											{lx(`${t.count} 个词`, `${t.count} cards`)}
+										</span>
+										<span className="t">{lx(t.title_zh, t.title_en || t.title_zh)}</span>
+										<span className="tc jp">{t.title_ja}</span>
+										{t.subtopics?.length ? (
+											<span className="review-day__stats">
+												{t.subtopics.slice(0, 4).map((s) => (
+													<span key={s} className="review-day__chip">
+														{s}
+													</span>
+												))}
+												{t.subtopics.length > 4 ? <span className="review-day__chip">+{t.subtopics.length - 4}</span> : null}
+											</span>
+										) : null}
+									</button>
+									{g.key === "invest" && t.subtopics?.length ? (
+										<div className="topic-submods" aria-label={lx("子模块", "Submodules")}>
+											<span className="topic-submods-h">{lx("子模块", "Submodules")}</span>
+											{t.subtopics.map((s) => (
+												<button key={s} type="button" className="review-day__chip topic-submod" data-submod={s} onClick={() => openTopicSub(t.slug, s)}>
+													{s}
+												</button>
+											))}
+										</div>
+									) : null}
+								</div>
 							))}
 						</div>
 					);
@@ -182,6 +196,8 @@ function TopicDetail({ slug }: { slug: string }) {
 		let off = false;
 		setTopic(null);
 		setError(false);
+		// 子模块入口（目录/侧边栏）带来的预选子主题；普通进入则回到「全部」。
+		setSub(takeTopicSubPreset(slug) ?? "all");
 		loadJson(`/data/topics/${slug}.json`)
 			.then((data) => {
 				if (off) return;
@@ -193,6 +209,12 @@ function TopicDetail({ slug }: { slug: string }) {
 			off = true;
 		};
 	}, [slug]);
+
+	// 本页已打开时再点子模块入口（路由不变、[slug] 效果不重跑）：每次渲染后顺带消费一次预选。
+	useEffect(() => {
+		const preset = takeTopicSubPreset(slug);
+		if (preset) setSub(preset);
+	});
 
 	const subLabel = useMemo(() => new Map((topic?.subtopics || []).map((s) => [s.zh, lx(s.zh, s.en || s.zh)])), [topic]);
 	const status = (card: TopicCard) => topicCardStatus(slug, card.id);

@@ -394,8 +394,25 @@ export function openModuleCards(week: number, day: number) {
 	navImpl("#/cards");
 }
 
+/** 子模块入口：专题详情下次打开时预选的子主题筛选。普通 navTo 进专题会清掉它。 */
+let topicSubPreset: { slug: string; sub: string } | null = null;
+
+/** Open a topic with one subtopic （子模块） preselected, e.g. 投资理财 → 股票. */
+export function openTopicSub(slug: string, sub: string) {
+	topicSubPreset = { slug, sub };
+	navImpl(`#/topics/${slug}`);
+}
+
+export function takeTopicSubPreset(slug: string): string | null {
+	if (!topicSubPreset || topicSubPreset.slug !== slug) return null;
+	const sub = topicSubPreset.sub;
+	topicSubPreset = null;
+	return sub;
+}
+
 export function navTo(key: string) {
 	if (key === "#/cards") moduleCardsScope = { week: 0, day: 0 };
+	if (key.startsWith("#/topics")) topicSubPreset = null;
 	navImpl(key);
 }
 

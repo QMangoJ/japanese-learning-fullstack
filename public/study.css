@@ -127,6 +127,10 @@ html.theme-dark .lvchip{color:#1c1a16;box-shadow:0 1px 3px rgba(0,0,0,.4)}
 .sheet-sub{font-size:13px;font-weight:700;color:var(--sub);margin:14px 0 6px}
 .topic-group-h{margin:16px 0 8px;font-size:15.5px;font-weight:800;color:var(--ink)}
 .topic-group:first-child .topic-group-h{margin-top:2px}
+.topic-submods{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:8px 2px 2px}
+.topic-submods-h{font-size:12.5px;font-weight:700;color:var(--sub);margin-right:2px}
+button.topic-submod{font-size:13px;cursor:pointer}
+button.topic-submod:hover{border-color:var(--accent);color:var(--accent)}
 .side-seg{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;border:1px solid var(--line);border-radius:9px;padding:3px}
 .side-seg button{border:none;background:none;color:var(--sub);border-radius:6px;padding:5px 0;font-size:14.5px;font-weight:800;cursor:pointer}
 .side-seg button.on{background:var(--blue);color:#fff}
@@ -137,6 +141,8 @@ html.theme-dark .lvchip{color:#1c1a16;box-shadow:0 1px 3px rgba(0,0,0,.4)}
 .side-item:hover{background:var(--bg)}
 .side-item.on{background:var(--blue-soft);color:var(--blue);font-weight:700}
 .side-item.on .ct{color:var(--blue)}
+.side-subitem{padding-left:24px;font-size:13.5px;color:var(--sub);min-height:30px}
+.side-subitem .ic{width:11px;font-size:10.5px}
 .side-foot{margin-top:auto;display:flex;flex-direction:column;gap:2px;padding-top:12px;border-top:1px solid var(--line)}
 /* 翻页钮悬浮在两侧：不占正文高度，滚到哪儿都能翻。
    手机贴在底栏上方，桌面贴在目录右侧和窗口右缘，都只放小圆钮。
