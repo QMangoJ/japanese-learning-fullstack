@@ -175,9 +175,19 @@ function channelSections(articles: ItListeningIndexEntry[]): ChannelSection[] {
 	return out;
 }
 
+const ITL_TAB_KEY = "itl-channel-tab";
+
 function ItListeningList() {
 	const [index, setIndex] = useState<ItListeningIndex | null>(null);
 	const [error, setError] = useState(false);
+	// 记住上次选中的频道 Tab（设备本地）；默认主频道 まいにち日本語勉強。
+	const [tab, setTab] = useState<string>(() => {
+		try {
+			return localStorage.getItem(ITL_TAB_KEY) || "mainichi";
+		} catch {
+			return "mainichi";
+		}
+	});
 
 	useEffect(() => {
 		let alive = true;
@@ -192,6 +202,18 @@ function ItListeningList() {
 			alive = false;
 		};
 	}, []);
+
+	const sections = useMemo(() => (index ? channelSections(index.articles) : []), [index]);
+	const active = sections.find((s) => s.key === tab) ?? sections[0];
+
+	const pickTab = (key: string) => {
+		setTab(key);
+		try {
+			localStorage.setItem(ITL_TAB_KEY, key);
+		} catch {
+			/* 记忆失败不影响切换 */
+		}
+	};
 
 	return (
 		<div className="itl-page">
@@ -210,50 +232,59 @@ function ItListeningList() {
 
 			{error ? (
 				<div className="itl-empty">{lx("文章列表加载失败，请稍后重试。", "Failed to load the article list.")}</div>
-			) : !index ? (
+			) : !index || !active ? (
 				<div className="itl-empty">{lx("加载中…", "Loading…")}</div>
 			) : (
-				channelSections(index.articles).map((sec) => (
-					<section className="itl-chsec" key={sec.key}>
-						<header className="itl-ch-head">
-							<h2 className="itl-ch-name">{sec.name}</h2>
-							<span className="itl-ch-count">{lx(`共 ${sec.articles.length} 篇`, `${sec.articles.length} lessons`)}</span>
-							<p className="itl-ch-note">
-								{sec.note}
-								{sec.channelUrl ? (
-									<>
-										{" · "}
-										<a className="itl-ch-link" href={sec.channelUrl} target="_blank" rel="noreferrer">
-											▶ {lx("频道主页", "Channel")} ↗
-										</a>
-									</>
-								) : null}
-							</p>
-						</header>
-						<div className="itl-list">
-							{sec.articles.map((a) => (
-								<article className="itl-card" key={a.id}>
-									<button className="itl-card-main" onClick={() => navTo(`#/it-listening/${a.id}`)}>
-										<span className="itl-card-series">
-											{a.series_zh ?? ""}
-											{a.unit ? ` · Unit ${a.unit}` : ""}
-											{a.track ? ` · ${a.track}` : ""}
-										</span>
-										<strong>{a.title_zh}</strong>
-										<span className="itl-card-ja">{a.title_ja}</span>
-										<span className="itl-card-meta">
-											{a.source} · {lx(`${a.sentenceCount} 句`, `${a.sentenceCount} sentences`)}
-											{a.durationSec ? ` · ${fmtDuration(a.durationSec)}` : ""}
-										</span>
-									</button>
-									<a className="itl-card-yt" href={a.youtube} target="_blank" rel="noreferrer">
-										▶ YouTube
-									</a>
-								</article>
-							))}
-						</div>
-					</section>
-				))
+				<>
+					<div className="itl-tabs" role="tablist" aria-label={lx("来源频道", "Source channel")}>
+						{sections.map((sec) => (
+							<button
+								key={sec.key}
+								type="button"
+								role="tab"
+								aria-selected={sec.key === active.key}
+								className={`itl-tab${sec.key === active.key ? " on" : ""}`}
+								onClick={() => pickTab(sec.key)}
+							>
+								{sec.name}
+								<span className="itl-tab-n">{sec.articles.length}</span>
+							</button>
+						))}
+					</div>
+					<p className="itl-ch-note">
+						{active.note}
+						{active.channelUrl ? (
+							<>
+								{" · "}
+								<a className="itl-ch-link" href={active.channelUrl} target="_blank" rel="noreferrer">
+									▶ {lx("频道主页", "Channel")} ↗
+								</a>
+							</>
+						) : null}
+					</p>
+					<div className="itl-list">
+						{active.articles.map((a) => (
+							<article className="itl-card" key={a.id}>
+								<button className="itl-card-main" onClick={() => navTo(`#/it-listening/${a.id}`)}>
+									<span className="itl-card-series">
+										{a.series_zh ?? ""}
+										{a.unit ? ` · Unit ${a.unit}` : ""}
+										{a.track ? ` · ${a.track}` : ""}
+									</span>
+									<strong>{a.title_zh}</strong>
+									<span className="itl-card-ja">{a.title_ja}</span>
+									<span className="itl-card-meta">
+										{a.source} · {lx(`${a.sentenceCount} 句`, `${a.sentenceCount} sentences`)}
+										{a.durationSec ? ` · ${fmtDuration(a.durationSec)}` : ""}
+									</span>
+								</button>
+								<a className="itl-card-yt" href={a.youtube} target="_blank" rel="noreferrer">
+									▶ YouTube
+								</a>
+							</article>
+						))}
+					</div>
+				</>
 			)}
 		</div>
 	);
