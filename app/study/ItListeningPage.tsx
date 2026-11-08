@@ -4,10 +4,12 @@ import { SayButton } from "../routes/study-common";
 import {
 	isItListeningArticle,
 	isItListeningIndex,
+	isMistakeWordsFile,
 	parseRubyMarkup,
 	type ItListeningArticle,
 	type ItListeningIndex,
 	type ItListeningRubySegment,
+	type MistakeWordsFile,
 } from "./it-listening";
 import { lx, navTo } from "./store";
 import "../routes/it-listening.css";
@@ -58,7 +60,79 @@ function fmtDuration(sec?: number): string {
 }
 
 export function ItListeningPage({ articleId }: { articleId?: string }) {
+	if (articleId === "mistakes") return <MistakeWords />;
 	return articleId ? <ItListeningDetail id={articleId} /> : <ItListeningList />;
+}
+
+/** 错词本：精听错词（带错法备注）+ 来源篇目生词的合并清单，数据在 mistake-words.json。 */
+function MistakeWords() {
+	const [file, setFile] = useState<MistakeWordsFile | null>(null);
+	const [error, setError] = useState(false);
+
+	useEffect(() => {
+		let alive = true;
+		loadJson("/data/it-listening/mistake-words.json")
+			.then((v) => {
+				if (!alive) return;
+				if (isMistakeWordsFile(v)) setFile(v);
+				else setError(true);
+			})
+			.catch(() => alive && setError(true));
+		return () => {
+			alive = false;
+		};
+	}, []);
+
+	return (
+		<div className="itl-page">
+			<section className="itl-hero">
+				<div>
+					<span className="itl-eyebrow">MISTAKE WORDS</span>
+					<h1>{lx("错词本", "Mistake Words")}</h1>
+					<p>
+						{file?.note_zh ??
+							lx("精听时没听出、听错的词，加上来源篇目的生词，合并去重后的一本清单。", "Words missed in dictation plus the source article's vocabulary, merged and deduped.")}
+					</p>
+				</div>
+			</section>
+
+			{error ? (
+				<div className="itl-empty">{lx("错词本加载失败，请稍后重试。", "Failed to load the mistake-word list.")}</div>
+			) : !file ? (
+				<div className="itl-empty">{lx("加载中…", "Loading…")}</div>
+			) : (
+				<>
+					<p className="itl-mw-count">
+						{lx(
+							`共 ${file.entries.length} 词 · 其中精听错词 ${file.entries.filter((e) => e.missed).length} 词`,
+							`${file.entries.length} words · ${file.entries.filter((e) => e.missed).length} missed in dictation`,
+						)}
+					</p>
+					<ul className="itl-mw-list">
+						{file.entries.map((e) => (
+							<li key={e.w} className="itl-mw-row">
+								<div className="itl-mw-top">
+									<b className="itl-mw-w">{e.w}</b>
+									<span className="itl-mw-r">{e.r}</span>
+									{e.pos ? <span className="itl-v-pos">{e.pos}</span> : null}
+									{e.missed ? <span className="itl-mw-badge">{lx("错", "missed")}</span> : null}
+									<SayButton text={e.w} />
+								</div>
+								<div className="itl-mw-zh">
+									{e.zh}
+									{e.origin ? <span className="itl-v-from">← {e.origin}</span> : null}
+								</div>
+								{e.note ? <p className="itl-mw-note">{e.note}</p> : null}
+								<div className="itl-mw-meta">
+									{lx("来源", "Source")}：{e.source} · {lx("添加", "Added")}：{e.added}
+								</div>
+							</li>
+						))}
+					</ul>
+				</>
+			)}
+		</div>
+	);
 }
 
 function ItListeningList() {
@@ -88,6 +162,11 @@ function ItListeningList() {
 					<p>{lx("《しごとの日本語 IT業務編》听力原文逐句精学：原文 + 翻译 + 语法 + 生词，点开文章可边听视频边对照。", "Sentence-by-sentence study of the IT-business listening tracks: text, translation, grammar and vocabulary.")}</p>
 				</div>
 			</section>
+
+			<button className="itl-mw-banner" onClick={() => navTo("#/it-listening/mistakes")}>
+				<span className="itl-mw-banner-t">📕 {lx("错词本", "Mistake Words")}</span>
+				<span className="itl-mw-banner-sub">{lx("精听错词 + 篇目生词的合并清单", "Dictation misses merged with article vocabulary")}</span>
+			</button>
 
 			{error ? (
 				<div className="itl-empty">{lx("文章列表加载失败，请稍后重试。", "Failed to load the article list.")}</div>

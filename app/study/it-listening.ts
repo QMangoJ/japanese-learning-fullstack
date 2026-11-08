@@ -77,6 +77,37 @@ export type ItListeningArticle = ItListeningIndexEntry & {
 
 export type ItListeningIndex = { version: 1; articles: ItListeningIndexEntry[] };
 
+/** 错词本条目（public/data/it-listening/mistake-words.json）：精听错词 + 篇目生词的合并清单。 */
+export type MistakeWord = {
+	w: string;
+	r: string;
+	pos?: string;
+	zh: string;
+	/** 外来语来源（可选）：「<来源语言中文名> <原词>」，与生词 origin 同规格。 */
+	origin?: string;
+	/** 出错类型/备注：精听时没听出/听错的词写当时的错法。 */
+	note?: string;
+	/** true = 精听错词（页面标「错」徽标）。 */
+	missed?: boolean;
+	/** 来源篇目，如 "Unit 14"。 */
+	source: string;
+	/** 添加日期 YYYY-MM-DD，真实存入数据并在页面显示。 */
+	added: string;
+};
+
+export type MistakeWordsFile = { version: 1; title_zh: string; note_zh?: string; entries: MistakeWord[] };
+
+export function isMistakeWordsFile(v: unknown): v is MistakeWordsFile {
+	if (typeof v !== "object" || v === null) return false;
+	const f = v as MistakeWordsFile;
+	return (
+		Array.isArray(f.entries) &&
+		f.entries.every(
+			(e) => e && typeof e.w === "string" && typeof e.r === "string" && typeof e.zh === "string" && typeof e.added === "string",
+		)
+	);
+}
+
 /**
  * 解说文本（grammarPoints 的 name / explanationZh、structure）里的轻量 ruby 标记：
  * 日语汉字片段写成 {漢字|よみ}，渲染时解析成 <ruby>；没有标记的文本原样返回一段。

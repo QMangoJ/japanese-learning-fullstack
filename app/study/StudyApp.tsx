@@ -559,6 +559,7 @@ function Sidebar({ routeKey, onLevel }: { routeKey: string; onLevel: (lv: LevelK
 				</div>
 				<div className="side-sub">{lx("工作面试", "Work & interviews")}</div>
 				{row("#/it-listening", "💻", lx("IT 听力", "IT Listening"), null, h.startsWith("#/it-listening"))}
+				{row("#/it-listening/mistakes", "📕", lx("错词本", "Mistake Words"), null, h === "#/it-listening/mistakes")}
 				{row("#/topics/job-interview", "🎤", lx("日语面试", "Job interview"), null, h === "#/topics/job-interview")}
 				{row("#/topics/frontend", "🖥️", lx("前端工程师", "Frontend engineer"), null, h === "#/topics/frontend")}
 				{row("#/keigo", "🙏", lx("敬语总结", "Keigo summary"), null, h === "#/keigo")}
