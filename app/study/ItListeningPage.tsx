@@ -8,6 +8,7 @@ import {
 	parseRubyMarkup,
 	type ItListeningArticle,
 	type ItListeningIndex,
+	type ItListeningIndexEntry,
 	type ItListeningRubySegment,
 	type MistakeWordsFile,
 } from "./it-listening";
@@ -135,6 +136,45 @@ function MistakeWords() {
 	);
 }
 
+type ChannelSection = {
+	key: string;
+	name: string;
+	note: string;
+	channelUrl?: string;
+	articles: ItListeningIndexEntry[];
+};
+
+/** 按来源频道分组：归属以数据 channelUrl 为准（source 文本兜底），区内保留 index 原序（系列/单元排序不变）。 */
+function channelSections(articles: ItListeningIndexEntry[]): ChannelSection[] {
+	const defs: (ChannelSection & { test: (a: ItListeningIndexEntry) => boolean })[] = [
+		{
+			key: "mainichi",
+			name: "まいにち日本語勉強（IT業務編）",
+			note: lx("视频来源频道：まいにち日本語勉強 · 教材《IT業務編》——「場面で覚える」「ウォームアップ」モデル会話", "Source channel: まいにち日本語勉強 — IT業務編 textbook model conversations"),
+			channelUrl: "https://www.youtube.com/@mainichi.nihongo.benkyo",
+			articles: [],
+			test: (a) => (a.channelUrl ?? "").includes("mainichi.nihongo.benkyo") || a.source.includes("まいにち"),
+		},
+		{
+			key: "huong",
+			name: "HuongTLU",
+			note: lx("视频来源频道：HuongTLU · IT 沟通会话系列 + 教材「聞き取り」脚本", "Source channel: HuongTLU — IT communication conversations + textbook listening scripts"),
+			channelUrl: "https://www.youtube.com/@HuongTLU",
+			articles: [],
+			test: (a) => (a.channelUrl ?? "").includes("HuongTLU") || a.source.includes("Huong"),
+		},
+	];
+	const other: ItListeningIndexEntry[] = [];
+	for (const a of articles) {
+		const sec = defs.find((d) => d.test(a));
+		if (sec) sec.articles.push(a);
+		else other.push(a);
+	}
+	const out: ChannelSection[] = defs.filter((d) => d.articles.length).map(({ test: _t, ...rest }) => rest);
+	if (other.length) out.push({ key: "other", name: lx("其他来源", "Other sources"), note: lx("未标注频道的文章", "Articles without a channel tag"), articles: other });
+	return out;
+}
+
 function ItListeningList() {
 	const [index, setIndex] = useState<ItListeningIndex | null>(null);
 	const [error, setError] = useState(false);
@@ -173,28 +213,47 @@ function ItListeningList() {
 			) : !index ? (
 				<div className="itl-empty">{lx("加载中…", "Loading…")}</div>
 			) : (
-				<div className="itl-list">
-					{index.articles.map((a) => (
-						<article className="itl-card" key={a.id}>
-							<button className="itl-card-main" onClick={() => navTo(`#/it-listening/${a.id}`)}>
-								<span className="itl-card-series">
-									{a.series_zh ?? ""}
-									{a.unit ? ` · Unit ${a.unit}` : ""}
-									{a.track ? ` · ${a.track}` : ""}
-								</span>
-								<strong>{a.title_zh}</strong>
-								<span className="itl-card-ja">{a.title_ja}</span>
-								<span className="itl-card-meta">
-									{a.source} · {lx(`${a.sentenceCount} 句`, `${a.sentenceCount} sentences`)}
-									{a.durationSec ? ` · ${fmtDuration(a.durationSec)}` : ""}
-								</span>
-							</button>
-							<a className="itl-card-yt" href={a.youtube} target="_blank" rel="noreferrer">
-								▶ YouTube
-							</a>
-						</article>
-					))}
-				</div>
+				channelSections(index.articles).map((sec) => (
+					<section className="itl-chsec" key={sec.key}>
+						<header className="itl-ch-head">
+							<h2 className="itl-ch-name">{sec.name}</h2>
+							<span className="itl-ch-count">{lx(`共 ${sec.articles.length} 篇`, `${sec.articles.length} lessons`)}</span>
+							<p className="itl-ch-note">
+								{sec.note}
+								{sec.channelUrl ? (
+									<>
+										{" · "}
+										<a className="itl-ch-link" href={sec.channelUrl} target="_blank" rel="noreferrer">
+											▶ {lx("频道主页", "Channel")} ↗
+										</a>
+									</>
+								) : null}
+							</p>
+						</header>
+						<div className="itl-list">
+							{sec.articles.map((a) => (
+								<article className="itl-card" key={a.id}>
+									<button className="itl-card-main" onClick={() => navTo(`#/it-listening/${a.id}`)}>
+										<span className="itl-card-series">
+											{a.series_zh ?? ""}
+											{a.unit ? ` · Unit ${a.unit}` : ""}
+											{a.track ? ` · ${a.track}` : ""}
+										</span>
+										<strong>{a.title_zh}</strong>
+										<span className="itl-card-ja">{a.title_ja}</span>
+										<span className="itl-card-meta">
+											{a.source} · {lx(`${a.sentenceCount} 句`, `${a.sentenceCount} sentences`)}
+											{a.durationSec ? ` · ${fmtDuration(a.durationSec)}` : ""}
+										</span>
+									</button>
+									<a className="itl-card-yt" href={a.youtube} target="_blank" rel="noreferrer">
+										▶ YouTube
+									</a>
+								</article>
+							))}
+						</div>
+					</section>
+				))
 			)}
 		</div>
 	);
