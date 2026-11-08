@@ -15,6 +15,9 @@ export type ItListeningVocab = {
 	r: string;
 	pos?: string;
 	zh: string;
+	/** 外来语来源（可选）：「<来源语言中文名> <原词>」，如 "英语 user"、"德语 Arbeit"。
+	 * 仅当词为外来语且来源明确时才填；和制英语、来源不确定的一律不填。 */
+	origin?: string;
 };
 
 export type ItListeningGrammarPoint = {
@@ -35,6 +38,9 @@ export type ItListeningRubySegment = {
 
 export type ItListeningSentence = {
 	speaker?: string;
+	/** 说话人名字的注音分段（可选）：与 ruby 同结构，片段 t 拼接 == speaker。
+	 * 名字含汉字时给（如 大沢→おおさわ）；纯片假名名字（リー 等）不给。 */
+	speakerRuby?: ItListeningRubySegment[];
 	jp: string;
 	/** 注音分段（可选）：各片段 t 依次拼接应与 jp 完全一致；渲染时带 r 的片段以 ruby 呈现。 */
 	ruby?: ItListeningRubySegment[];
@@ -70,6 +76,25 @@ export type ItListeningArticle = ItListeningIndexEntry & {
 };
 
 export type ItListeningIndex = { version: 1; articles: ItListeningIndexEntry[] };
+
+/**
+ * 解说文本（grammarPoints 的 name / explanationZh、structure）里的轻量 ruby 标记：
+ * 日语汉字片段写成 {漢字|よみ}，渲染时解析成 <ruby>；没有标记的文本原样返回一段。
+ * 例："「{持参|じさん}する」は「{持|も}って{行|い}く」の鄭重語"。
+ */
+export function parseRubyMarkup(text: string): ItListeningRubySegment[] {
+	const segs: ItListeningRubySegment[] = [];
+	const re = /\{([^{}|]+)\|([^{}]+)\}/g;
+	let last = 0;
+	let m: RegExpExecArray | null;
+	while ((m = re.exec(text)) !== null) {
+		if (m.index > last) segs.push({ t: text.slice(last, m.index) });
+		segs.push({ t: m[1], r: m[2] });
+		last = m.index + m[0].length;
+	}
+	if (last < text.length) segs.push({ t: text.slice(last) });
+	return segs.length ? segs : [{ t: text }];
+}
 
 /** "#/it-listening" → { id: undefined }；"#/it-listening/<id>" → { id }；其他 → null。 */
 export function parseItListeningRoute(key: string): { id?: string } | null {

@@ -60,6 +60,11 @@
 .itl-v-r{color:var(--sub);font-size:13px}
 .itl-v-pos{padding:0 6px;border:1px solid var(--line);border-radius:5px;color:var(--sub);font-size:11.5px}
 .itl-v-zh{color:var(--ink)}
+.itl-v-from{color:var(--sub);font-size:12.5px;font-style:italic}
+.itl-gp-text rt,.itl-gp-name rt,.itl-structure rt{font-size:.5em;font-weight:400;color:var(--sub);letter-spacing:.02em}
+.itl-gp-text:has(ruby),.itl-structure:has(ruby){line-height:1.9}
+.itl-speaker rt{font-size:.58em;font-weight:600;color:inherit;opacity:.75;letter-spacing:.02em}
+.itl-speaker:has(ruby){line-height:1.9}
 
 @media (max-width:640px){
 	.itl-hero{padding:20px}

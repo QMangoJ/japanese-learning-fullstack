@@ -4,8 +4,10 @@ import { SayButton } from "../routes/study-common";
 import {
 	isItListeningArticle,
 	isItListeningIndex,
+	parseRubyMarkup,
 	type ItListeningArticle,
 	type ItListeningIndex,
+	type ItListeningRubySegment,
 } from "./it-listening";
 import { lx, navTo } from "./store";
 import "../routes/it-listening.css";
@@ -23,6 +25,29 @@ function loadJson(url: string): Promise<unknown> {
 		cache.set(url, p);
 	}
 	return p;
+}
+
+/** ruby 分段渲染：带 r 的片段以 <ruby> 呈现，其余原样文本。 */
+function RubySegments({ segs }: { segs: ItListeningRubySegment[] }) {
+	return (
+		<>
+			{segs.map((seg, k) =>
+				seg.r ? (
+					<ruby key={k}>
+						{seg.t}
+						<rt>{seg.r}</rt>
+					</ruby>
+				) : (
+					<span key={k}>{seg.t}</span>
+				),
+			)}
+		</>
+	);
+}
+
+/** 解说文本渲染：先把 {漢字|よみ} 轻量标记解析成 ruby 分段再渲染。 */
+function RubyMarkup({ text }: { text: string }) {
+	return <RubySegments segs={parseRubyMarkup(text)} />;
 }
 
 function fmtDuration(sec?: number): string {
@@ -181,29 +206,18 @@ function ItListeningDetail({ id }: { id: string }) {
 						<div className="itl-s-top">
 							<span className="itl-s-no">{i + 1}</span>
 							{s.speaker ? (
-								<span className={`itl-speaker sp${speakerClass.get(s.speaker) ?? 0}`}>{s.speaker}</span>
+								<span className={`itl-speaker sp${speakerClass.get(s.speaker) ?? 0}`}>
+									{s.speakerRuby && s.speakerRuby.length ? <RubySegments segs={s.speakerRuby} /> : s.speaker}
+								</span>
 							) : null}
 							<SayButton text={s.jp} />
 						</div>
-						<p className="itl-jp">
-							{s.ruby && s.ruby.length
-								? s.ruby.map((seg, k) =>
-										seg.r ? (
-											<ruby key={k}>
-												{seg.t}
-												<rt>{seg.r}</rt>
-											</ruby>
-										) : (
-											<span key={k}>{seg.t}</span>
-										),
-									)
-								: s.jp}
-						</p>
+						<p className="itl-jp">{s.ruby && s.ruby.length ? <RubySegments segs={s.ruby} /> : s.jp}</p>
 						<p className="itl-zh">{s.zh}</p>
 						{s.structure ? (
 							<p className="itl-structure">
 								<b>{lx("结构", "Structure")}</b>
-								{s.structure}
+								<RubyMarkup text={s.structure} />
 							</p>
 						) : null}
 						{s.grammarPoints && s.grammarPoints.length ? (
@@ -212,9 +226,13 @@ function ItListeningDetail({ id }: { id: string }) {
 									<div className="itl-gp" key={j}>
 										<div className="itl-gp-head">
 											{g.level ? <span className="itl-gp-level">{g.level}</span> : null}
-											<span className="itl-gp-name">{g.name}</span>
+											<span className="itl-gp-name">
+												<RubyMarkup text={g.name} />
+											</span>
 										</div>
-										<p className="itl-gp-text">{g.explanationZh}</p>
+										<p className="itl-gp-text">
+											<RubyMarkup text={g.explanationZh} />
+										</p>
 									</div>
 								))}
 							</div>
@@ -233,6 +251,7 @@ function ItListeningDetail({ id }: { id: string }) {
 										<span className="itl-v-r">{v.r}</span>
 										{v.pos ? <span className="itl-v-pos">{v.pos}</span> : null}
 										<span className="itl-v-zh">{v.zh}</span>
+										{v.origin ? <span className="itl-v-from">← {v.origin}</span> : null}
 									</li>
 								))}
 							</ul>
