@@ -159,7 +159,7 @@ function ItListeningList() {
 				<div>
 					<span className="itl-eyebrow">IT BUSINESS LISTENING</span>
 					<h1>{lx("IT 听力", "IT Listening")}</h1>
-					<p>{lx("《しごとの日本語 IT業務編》听力原文逐句精学：原文 + 翻译 + 语法 + 生词，点开文章可边听视频边对照。", "Sentence-by-sentence study of the IT-business listening tracks: text, translation, grammar and vocabulary.")}</p>
+					<p>{lx("日语 IT 职场听力原文逐句精学：原文 + 翻译 + 语法 + 生词，点开文章可边听视频边对照。", "Sentence-by-sentence study of Japanese IT workplace listening: text, translation, grammar and vocabulary.")}</p>
 				</div>
 			</section>
 
