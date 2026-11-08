@@ -516,7 +516,9 @@ function Sidebar({ routeKey, onLevel }: { routeKey: string; onLevel: (lv: LevelK
 		<aside className="side" id="side">
 			<div className="side-brand">日本語上手</div>
 			<div className="side-sec">
-				<div className="side-h">{lx("级别", "Level")}</div>
+				<div className="side-h major">
+					{lx("基础知识", "Foundations")} <span className="n">· {lx("按级别", "By level")}</span>
+				</div>
 				<div className="side-seg">
 					{LEVEL_LIST.map(([lv, name]) => (
 						<button key={lv} className={lv === LEVEL ? "on" : ""} onClick={() => onLevel(lv)}>
@@ -526,7 +528,7 @@ function Sidebar({ routeKey, onLevel }: { routeKey: string; onLevel: (lv: LevelK
 				</div>
 			</div>
 			<div className="side-sec">
-				<div className="side-h">
+				<div className="side-sub">
 					{LV} {lx("内容", "Content")}
 				</div>
 				{types.map(([ty, ic, label]) => (
@@ -543,29 +545,38 @@ function Sidebar({ routeKey, onLevel }: { routeKey: string; onLevel: (lv: LevelK
 				))}
 			</div>
 			<div className="side-sec">
-				<div className="side-h">{lx("本模块", "This module")}</div>
+				<div className="side-sub">{lx("本模块", "This module")}</div>
 				{row("#/cards", "🗂️", lx("记忆卡", "Flashcards"), null, h === "#/cards")}
 				{isGram() && hasContrast(MODULE)
 					? row("#/contrast", "🔀", `${LV} ${lx("辨析", "Contrast")}`, null, h === "#/contrast")
 					: null}
+				{row("#/review", "🗓️", lx("课堂复习", "Lesson review"), null, h.startsWith("#/review"))}
+				{row("#/kanji-exam", "🈶", lx("汉字自测", "Kanji Self-test"), null, h === "#/kanji-exam")}
 			</div>
 			<div className="side-sec">
-				<div className="side-h">
-					{lx("通用知识", "General reference")} <span className="n">· {lx("不分级别", "All levels")}</span>
+				<div className="side-h major">
+					{lx("专题知识", "Topics")} <span className="n">· {lx("不分级别", "All levels")}</span>
 				</div>
-				{row("#/review", "🗓️", lx("课堂复习", "Lesson review"), null, h.startsWith("#/review"))}
-				{row("#/topics", "🏷️", lx("专题词汇", "Topic vocabulary"), null, h.startsWith("#/topics"))}
+				<div className="side-sub">{lx("工作面试", "Work & interviews")}</div>
+				{row("#/it-listening", "💻", lx("IT 听力", "IT Listening"), null, h.startsWith("#/it-listening"))}
+				{row("#/topics/job-interview", "🎤", lx("日语面试", "Job interview"), null, h === "#/topics/job-interview")}
+				{row("#/topics/frontend", "🖥️", lx("前端工程师", "Frontend engineer"), null, h === "#/topics/frontend")}
+				{row("#/keigo", "🙏", lx("敬语总结", "Keigo summary"), null, h === "#/keigo")}
+				<div className="side-sub">{lx("生活", "Daily life")}</div>
+				{row("#/topics/bank-atm", "🏧", lx("银行 ATM", "Bank ATM"), null, h === "#/topics/bank-atm")}
+				{row("#/topics/clothes-shopping", "🛍️", lx("逛街买衣服", "Clothes shopping"), null, h === "#/topics/clothes-shopping")}
+				{row("#/topics/cafe-menu", "☕", lx("咖啡店菜单", "Cafe menu"), null, h === "#/topics/cafe-menu")}
+				{row("#/wearing", "👕", lx("穿衣穿戴", "Wearing"), null, h === "#/wearing")}
+				{row("#/kougo", "💬", lx("口语", "Casual"), null, h === "#/kougo")}
+				<div className="side-sub">{lx("通用", "General")}</div>
+				{row("#/topics", "🏷️", lx("专题词汇总览", "All topic vocabulary"), null, h === "#/topics")}
+				{row("#/topics/japan-investing", "📈", lx("日本投资理财", "Investing in Japan"), null, h === "#/topics/japan-investing")}
 				{row("#/ref", "📖", lx("接续表", "Connections"), null, h === "#/ref")}
 				{row("#/katsuyou", "🔄", lx("活用", "Conjugation"), null, h === "#/katsuyou")}
 				{row("#/henkei", "✍️", lx("变形口诀", "Verb mnemonics"), null, h === "#/henkei")}
 				{row("#/verb-summary", "🔤", lx("变形总结", "Verb summary"), null, h === "#/verb-summary")}
-				{row("#/keigo", "🙏", lx("敬语总结", "Keigo summary"), null, h === "#/keigo")}
-				{row("#/kougo", "💬", lx("口语", "Casual"), null, h === "#/kougo")}
 				{row("#/jita", "↔️", lx("自他动词", "Verb pairs"), null, h === "#/jita")}
-				{row("#/wearing", "👕", lx("穿衣穿戴", "Wearing"), null, h === "#/wearing")}
 				{row("#/numbers", "🔢", lx("数字", "Numbers"), null, h === "#/numbers")}
-				{row("#/kanji-exam", "🈶", lx("汉字自测", "Kanji Self-test"), null, h === "#/kanji-exam")}
-				{row("#/it-listening", "💻", lx("IT 听力", "IT Listening"), null, h.startsWith("#/it-listening"))}
 			</div>
 			<div className="side-foot">
 				{row("#/usage", "⏱️", lx("使用时间", "Study time"), null, h === "#/usage")}
@@ -613,24 +624,60 @@ function Sheet({
 				) : (
 					<>
 						<div className="sheet-h">
-							{lx("通用知识", "General reference")}
-							<span className="sub">{lx("不分级别", "All levels")}</span>
+							{lx("基础知识", "Foundations")}
+							<span className="sub">{lx("按级别", "By level")}</span>
 						</div>
 						<div className="sheet-row">
 							<button className="sheet-item sheet-item--feature" onClick={() => { onClose(); navTo("#/review"); }}>
 								<span className="ic">🗓️</span>
 								{lx("课堂复习", "Lesson review")}
 							</button>
-							<button className="sheet-item sheet-item--feature" data-sheet="topics" onClick={() => { onClose(); navTo("#/topics"); }}>
-								<span className="ic">🏷️</span>
-								{lx("专题词汇", "Topic vocabulary")}
+							<button className="sheet-item sheet-item--feature" onClick={() => { onClose(); navTo("#/kanji-exam"); }}>
+								<span className="ic">🈶</span>
+								{lx("汉字自测", "Kanji Self-test")}
 							</button>
 							<button className="sheet-item sheet-item--feature" data-sheet="usage" onClick={() => { onClose(); navTo("#/usage"); }}>
 								<span className="ic">⏱️</span>
 								{lx("使用时间", "Study time")}
 							</button>
 						</div>
+						<div className="sheet-h">
+							{lx("专题知识", "Topics")}
+							<span className="sub">{lx("不分级别", "All levels")}</span>
+						</div>
+						<div className="sheet-sub">{lx("工作面试", "Work & interviews")}</div>
 						<div className="sheet-row">
+							<button className="sheet-item" onClick={() => { onClose(); navTo("#/it-listening"); }}>
+								<span className="ic">💻</span>
+								{lx("IT 听力", "IT Listening")}
+							</button>
+							<button className="sheet-item" onClick={() => { onClose(); navTo("#/topics/job-interview"); }}>
+								<span className="ic">🎤</span>
+								{lx("日语面试", "Job interview")}
+							</button>
+							<button className="sheet-item" onClick={() => { onClose(); navTo("#/keigo"); }}>
+								<span className="ic">🙏</span>
+								{lx("敬语总结", "Keigo summary")}
+							</button>
+						</div>
+						<div className="sheet-sub">{lx("生活", "Daily life")}</div>
+						<div className="sheet-row">
+							<button className="sheet-item" onClick={() => { onClose(); navTo("#/wearing"); }}>
+								<span className="ic">👕</span>
+								{lx("穿衣穿戴", "Wearing")}
+							</button>
+							<button className="sheet-item" onClick={() => { onClose(); navTo("#/kougo"); }}>
+								<span className="ic">💬</span>
+								{lx("口语", "Casual")}
+							</button>
+							<span className="sheet-item" style={{ visibility: "hidden" }} />
+						</div>
+						<div className="sheet-sub">{lx("通用", "General")}</div>
+						<div className="sheet-row">
+							<button className="sheet-item" data-sheet="topics" onClick={() => { onClose(); navTo("#/topics"); }}>
+								<span className="ic">🏷️</span>
+								{lx("专题词汇总览", "All topic vocabulary")}
+							</button>
 							<button className="sheet-item" onClick={() => { onClose(); navTo("#/ref"); }}>
 								<span className="ic">📖</span>
 								{lx("接续表", "Connections")}
@@ -639,53 +686,27 @@ function Sheet({
 								<span className="ic">🔄</span>
 								{lx("活用", "Conjugation")}
 							</button>
+						</div>
+						<div className="sheet-row">
 							<button className="sheet-item" onClick={() => { onClose(); navTo("#/henkei"); }}>
 								<span className="ic">✍️</span>
 								{lx("变形口诀", "Verb mnemonics")}
 							</button>
-						</div>
-						<div className="sheet-row">
 							<button className="sheet-item" onClick={() => { onClose(); navTo("#/verb-summary"); }}>
 								<span className="ic">🔤</span>
 								{lx("变形总结", "Verb summary")}
-							</button>
-							<button className="sheet-item" onClick={() => { onClose(); navTo("#/keigo"); }}>
-								<span className="ic">🙏</span>
-								{lx("敬语总结", "Keigo summary")}
-							</button>
-							<span className="sheet-item" style={{ visibility: "hidden" }} />
-						</div>
-						<div className="sheet-row">
-							<button className="sheet-item" onClick={() => { onClose(); navTo("#/it-listening"); }}>
-								<span className="ic">💻</span>
-								{lx("IT 听力", "IT Listening")}
-							</button>
-							<span className="sheet-item" style={{ visibility: "hidden" }} />
-							<span className="sheet-item" style={{ visibility: "hidden" }} />
-						</div>
-						<div className="sheet-row">
-							<button className="sheet-item" onClick={() => { onClose(); navTo("#/kougo"); }}>
-								<span className="ic">💬</span>
-								{lx("口语", "Casual")}
 							</button>
 							<button className="sheet-item" onClick={() => { onClose(); navTo("#/jita"); }}>
 								<span className="ic">↔️</span>
 								{lx("自他动词", "Verb pairs")}
 							</button>
+						</div>
+						<div className="sheet-row">
 							<button className="sheet-item" onClick={() => { onClose(); navTo("#/numbers"); }}>
 								<span className="ic">🔢</span>
 								{lx("数字", "Numbers")}
 							</button>
-						</div>
-						<div className="sheet-row">
-							<button className="sheet-item" onClick={() => { onClose(); navTo("#/kanji-exam"); }}>
-								<span className="ic">🈶</span>
-								{lx("汉字自测", "Kanji Self-test")}
-							</button>
-							<button className="sheet-item" onClick={() => { onClose(); navTo("#/wearing"); }}>
-								<span className="ic">👕</span>
-								{lx("穿衣穿戴", "Wearing")}
-							</button>
+							<span className="sheet-item" style={{ visibility: "hidden" }} />
 							<span className="sheet-item" style={{ visibility: "hidden" }} />
 						</div>
 						<div className="sheet-h">

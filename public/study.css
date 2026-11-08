@@ -122,6 +122,11 @@ html.theme-dark .lvchip{color:#1c1a16;box-shadow:0 1px 3px rgba(0,0,0,.4)}
 .side-sec{display:flex;flex-direction:column;gap:2px}
 .side-h{font-size:12px;letter-spacing:.1em;color:var(--sub);padding:0 8px 4px;display:flex;align-items:baseline;gap:6px}
 .side-h .n{letter-spacing:0;text-transform:none}
+.side-h.major{font-size:13.5px;font-weight:800;color:var(--ink);letter-spacing:.14em}
+.side-sub{font-size:11.5px;font-weight:700;color:var(--sub);letter-spacing:.06em;padding:8px 8px 2px}
+.sheet-sub{font-size:13px;font-weight:700;color:var(--sub);margin:14px 0 6px}
+.topic-group-h{margin:16px 0 8px;font-size:15.5px;font-weight:800;color:var(--ink)}
+.topic-group:first-child .topic-group-h{margin-top:2px}
 .side-seg{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;border:1px solid var(--line);border-radius:9px;padding:3px}
 .side-seg button{border:none;background:none;color:var(--sub);border-radius:6px;padding:5px 0;font-size:14.5px;font-weight:800;cursor:pointer}
 .side-seg button.on{background:var(--blue);color:#fff}

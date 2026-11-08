@@ -15,6 +15,23 @@ type View = "list" | "cards" | "board";
 
 /** 有专用「看板」页面的专题：默认打开看板，「单词表」由看板代替，闪卡复习仍用通用格式。 */
 const BOARD_SLUGS = new Set(["cafe-menu"]);
+
+/** 专题知识分组（与侧边栏信息架构一致）：工作面试 / 生活 / 通用；未列出的 slug 一律归通用。 */
+const TOPIC_GROUP_OF: Record<string, "work" | "life"> = {
+	"job-interview": "work",
+	frontend: "work",
+	"bank-atm": "life",
+	"clothes-shopping": "life",
+	"cafe-menu": "life",
+};
+const TOPIC_GROUPS = [
+	{ key: "work", zh: "工作面试", en: "Work & interviews" },
+	{ key: "life", zh: "生活", en: "Daily life" },
+	{ key: "general", zh: "通用", en: "General" },
+] as const;
+function topicGroupOf(slug: string): "work" | "life" | "general" {
+	return TOPIC_GROUP_OF[slug] ?? "general";
+}
 const LazyCafeMenuBoard = lazy(() => import("./CafeMenuBoard").then((module) => ({ default: module.CafeMenuBoard })));
 
 const cache = new Map<string, Promise<unknown>>();
@@ -88,7 +105,13 @@ function TopicList() {
 				)}
 			</p>
 			<div className="review-list">
-				{index.topics.map((t) => (
+				{TOPIC_GROUPS.map((g) => {
+					const items = index.topics.filter((t) => topicGroupOf(t.slug) === g.key);
+					if (!items.length) return null;
+					return (
+						<div key={g.key} className="topic-group">
+							<h3 className="topic-group-h">{lx(g.zh, g.en)}</h3>
+							{items.map((t) => (
 					<button key={t.slug} type="button" className="review-day topic-card" data-topic={t.slug} onClick={() => navTo(`#/topics/${t.slug}`)}>
 						<span className="d">
 							{lx(`${t.count} 个词`, `${t.count} cards`)}
@@ -106,7 +129,10 @@ function TopicList() {
 							</span>
 						) : null}
 					</button>
-				))}
+							))}
+						</div>
+					);
+				})}
 			</div>
 		</div>
 	);
