@@ -185,7 +185,20 @@ function ItListeningDetail({ id }: { id: string }) {
 							) : null}
 							<SayButton text={s.jp} />
 						</div>
-						<p className="itl-jp">{s.jp}</p>
+						<p className="itl-jp">
+							{s.ruby && s.ruby.length
+								? s.ruby.map((seg, k) =>
+										seg.r ? (
+											<ruby key={k}>
+												{seg.t}
+												<rt>{seg.r}</rt>
+											</ruby>
+										) : (
+											<span key={k}>{seg.t}</span>
+										),
+									)
+								: s.jp}
+						</p>
 						<p className="itl-zh">{s.zh}</p>
 						{s.structure ? (
 							<p className="itl-structure">

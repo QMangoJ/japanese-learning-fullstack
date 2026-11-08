@@ -41,6 +41,8 @@
 .itl-speaker.sp0{background:#e3ecff;color:#274b8f}
 .itl-speaker.sp1{background:#fdeeda;color:#8f5a1d}
 .itl-jp{margin:0;font-size:17.5px;line-height:1.65}
+.itl-jp:has(ruby){line-height:2.1}
+.itl-jp rt{font-size:.52em;font-weight:400;color:var(--sub);letter-spacing:.02em}
 .itl-zh{margin:4px 0 0;color:var(--sub);font-size:15px;line-height:1.6}
 .itl-grammar{margin:10px 0 0;padding:9px 12px;border-radius:10px;background:var(--bg);font-size:14px;line-height:1.65}
 .itl-grammar b{display:inline-block;margin-right:8px;padding:1px 8px;border-radius:6px;background:var(--accent-soft);color:var(--accent);font-size:12px}

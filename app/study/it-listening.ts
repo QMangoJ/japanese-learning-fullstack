@@ -26,9 +26,18 @@ export type ItListeningGrammarPoint = {
 	explanationZh: string;
 };
 
+export type ItListeningRubySegment = {
+	/** 片段文本；带 r 的片段应是汉字串，纯假名/标点片段不带 r。 */
+	t: string;
+	/** 该片段（汉字）的读音，假名书写；无读音的片段省略此字段。 */
+	r?: string;
+};
+
 export type ItListeningSentence = {
 	speaker?: string;
 	jp: string;
+	/** 注音分段（可选）：各片段 t 依次拼接应与 jp 完全一致；渲染时带 r 的片段以 ruby 呈现。 */
+	ruby?: ItListeningRubySegment[];
 	zh: string;
 	/** 旧式单段语法注（Unit 14 语法层升级前的文章在用），渲染保留兼容。 */
 	grammar?: string;
