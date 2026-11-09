@@ -164,20 +164,6 @@ function TopicCardGroups({ index }: { index: TopicIndex }) {
 	);
 }
 
-/** 首页「专题知识」区块：外层直接按分类平铺全部专题卡片，不必再先进专题词汇总览页。加载失败时静默省略，不拖垮首页。 */
-export function TopicHomeSection() {
-	useDueTick();
-	const { index, error } = useTopicIndex();
-	if (error || !index) return null;
-	return (
-		<section className="topic-home" aria-label={lx("专题知识", "Topics")}>
-			<h2 className="topic-home-h">
-				{lx("专题知识", "Topics")} <span className="n">· {lx("不分级别", "All levels")}</span>
-			</h2>
-			<TopicCardGroups index={index} />
-		</section>
-	);
-}
 
 /** 例句下方标注：敬语对照（敬语形←普通形＋类别）和例句语法讲解，没有的专题不显示。 */
 function KeigoGrammar({ card }: { card: TopicCard }) {

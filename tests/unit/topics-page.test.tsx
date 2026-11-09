@@ -4,7 +4,9 @@ import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import { dueEntry, resetDueForTests } from "../../app/study/due-review";
-import { TopicHomeSection, TopicsPage } from "../../app/study/TopicsPage";
+import { setNavImpl } from "../../app/study/store";
+import { Sheet } from "../../app/study/StudyApp";
+import { TopicsPage } from "../../app/study/TopicsPage";
 import { topicDueId } from "../../app/study/topic-vocab";
 
 const DIR = join(process.cwd(), "public/data/topics");
@@ -31,16 +33,32 @@ describe("TopicsPage", () => {
 		expect(screen.getByText("逛街买衣服")).toBeInTheDocument();
 	});
 
-	it("home section tiles every topic card under its group heading", async () => {
-		const { container } = render(<TopicHomeSection />);
-		expect(await screen.findByText("前端工程师")).toBeInTheDocument();
-		const heads = [...container.querySelectorAll(".topic-group-h")].map((h) => h.textContent);
-		expect(heads).toEqual(["工作面试", "生活", "投资理财"]);
-		for (const slug of ["job-interview", "frontend", "bank-atm", "clothes-shopping", "cafe-menu", "japan-investing"]) {
-			expect(container.querySelector(`[data-topic="${slug}"]`)).not.toBeNull();
-		}
-		expect(screen.getByText("89 个词")).toBeInTheDocument();
-		expect(container.querySelector('[data-submod="股票"]')).not.toBeNull();
+	it("common sheet tiles every topic under its group and links to its detail page", () => {
+		const navs: string[] = [];
+		setNavImpl((key) => navs.push(key));
+		const { container } = render(<Sheet kind="common" onClose={() => {}} onLevel={() => {}} />);
+		const subs = [...container.querySelectorAll(".sheet-sub")].map((e) => e.textContent);
+		expect(subs).toEqual(["工作面试", "生活", "投资理财", "通用"]);
+		const walk = [...container.querySelectorAll(".sheet-sub, .sheet-item")].map((e) => e.textContent ?? "");
+		const at = (label: string) => walk.findIndex((t) => t.includes(label));
+		expect(at("前端工程师")).toBeGreaterThan(at("工作面试"));
+		expect(at("前端工程师")).toBeLessThan(at("生活"));
+		expect(at("银行 ATM")).toBeGreaterThan(at("生活"));
+		expect(at("逛街买衣服")).toBeGreaterThan(at("生活"));
+		expect(at("咖啡店菜单")).toBeGreaterThan(at("生活"));
+		expect(at("咖啡店菜单")).toBeLessThan(at("投资理财"));
+		const go = (label: string, route: string) => {
+			navs.length = 0;
+			fireEvent.click(screen.getByText(label));
+			expect(navs).toEqual([route]);
+		};
+		go("前端工程师", "#/topics/frontend");
+		go("银行 ATM", "#/topics/bank-atm");
+		go("逛街买衣服", "#/topics/clothes-shopping");
+		go("咖啡店菜单", "#/topics/cafe-menu");
+		go("日语面试", "#/topics/job-interview");
+		go("日本投资理财", "#/topics/japan-investing");
+		setNavImpl(() => {});
 	});
 
 	it("filters by subtopic, marks a word as 不会 and shows only those", async () => {

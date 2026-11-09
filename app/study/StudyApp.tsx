@@ -133,9 +133,6 @@ const LazyReviewPage = lazy(() =>
 const LazyTopicsPage = lazy(() =>
 	import("./TopicsPage").then((module) => ({ default: module.TopicsPage })),
 );
-const LazyTopicHomeSection = lazy(() =>
-	import("./TopicsPage").then((module) => ({ default: module.TopicHomeSection })),
-);
 const LazyVerbSummaryPage = lazy(() =>
 	import("./VerbSummaryPage").then((module) => ({ default: module.VerbSummaryPage })),
 );
@@ -612,7 +609,7 @@ function Sidebar({ routeKey, onLevel }: { routeKey: string; onLevel: (lv: LevelK
 	);
 }
 
-function Sheet({
+export function Sheet({
 	kind,
 	onClose,
 	onLevel,
@@ -679,12 +676,34 @@ function Sheet({
 								<span className="ic">🎤</span>
 								{lx("日语面试", "Job interview")}
 							</button>
+							<button className="sheet-item" onClick={() => { onClose(); navTo("#/topics/frontend"); }}>
+								<span className="ic">🖥️</span>
+								{lx("前端工程师", "Frontend engineer")}
+							</button>
+						</div>
+						<div className="sheet-row">
 							<button className="sheet-item" onClick={() => { onClose(); navTo("#/keigo"); }}>
 								<span className="ic">🙏</span>
 								{lx("敬语总结", "Keigo summary")}
 							</button>
+							<span className="sheet-item" style={{ visibility: "hidden" }} />
+							<span className="sheet-item" style={{ visibility: "hidden" }} />
 						</div>
 						<div className="sheet-sub">{lx("生活", "Daily life")}</div>
+						<div className="sheet-row">
+							<button className="sheet-item" onClick={() => { onClose(); navTo("#/topics/bank-atm"); }}>
+								<span className="ic">🏧</span>
+								{lx("银行 ATM", "Bank ATM")}
+							</button>
+							<button className="sheet-item" onClick={() => { onClose(); navTo("#/topics/clothes-shopping"); }}>
+								<span className="ic">🛍️</span>
+								{lx("逛街买衣服", "Clothes shopping")}
+							</button>
+							<button className="sheet-item" onClick={() => { onClose(); navTo("#/topics/cafe-menu"); }}>
+								<span className="ic">☕</span>
+								{lx("咖啡店菜单", "Cafe menu")}
+							</button>
+						</div>
 						<div className="sheet-row">
 							<button className="sheet-item" onClick={() => { onClose(); navTo("#/wearing"); }}>
 								<span className="ic">👕</span>
@@ -1206,12 +1225,7 @@ export function StudyApp() {
 				</section>
 			</>
 		) : (
-			<>
-				<HomePage data={homeData} />
-				<Suspense fallback={null}>
-					<LazyTopicHomeSection />
-				</Suspense>
-			</>
+			<HomePage data={homeData} />
 		);
 	else if (routeKey === "#/search") body = <SearchPage />;
 	else if (routeKey === "#/usage") body = <UsagePage />;
