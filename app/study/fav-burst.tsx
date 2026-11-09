@@ -48,18 +48,26 @@ function dipAnimation(el: HTMLElement) {
 }
 
 function burst(el: HTMLElement) {
+	// Overlay nodes live on <body> with viewport (fixed) coordinates: nodes
+	// appended inside the button itself are wiped when React re-renders the
+	// button's children on the favorite toggle.
 	const size = parseFloat(getComputedStyle(el).fontSize) || 19;
+	const rect = el.getBoundingClientRect();
+	const cx = `${(rect.left + rect.width / 2).toFixed(1)}px`;
+	const cy = `${(rect.top + rect.height / 2).toFixed(1)}px`;
 	const ring = document.createElement("span");
 	ring.className = "fav-burst-ring";
 	ring.style.width = ring.style.height = `${(size * 1.05).toFixed(1)}px`;
-	el.appendChild(ring);
+	ring.style.left = cx;
+	ring.style.top = cy;
+	document.body.appendChild(ring);
 	ring
 		.animate(
 			[
 				{ transform: "translate(-50%, -50%) scale(1)", opacity: 0.5 },
 				{ transform: "translate(-50%, -50%) scale(2.3)", opacity: 0 },
 			],
-			{ duration: 500, delay: 80, easing: "ease-out" },
+			{ duration: 500, delay: 80, easing: "ease-out", fill: "backwards" },
 		)
 		.finished.catch(() => {})
 		.finally(() => ring.remove());
@@ -68,7 +76,9 @@ function burst(el: HTMLElement) {
 		const dot = document.createElement("span");
 		dot.className = "fav-burst-dot";
 		dot.style.backgroundColor = PARTICLE_COLORS[i % PARTICLE_COLORS.length];
-		el.appendChild(dot);
+		dot.style.left = cx;
+		dot.style.top = cy;
+		document.body.appendChild(dot);
 		const r0 = size * 0.85;
 		const r1 = size * 1.3;
 		dot.animate(
@@ -76,7 +86,7 @@ function burst(el: HTMLElement) {
 				{ transform: `translate(-50%, -50%) translate(${Math.cos(angle) * r0}px, ${Math.sin(angle) * r0}px) scale(1)`, opacity: 1 },
 				{ transform: `translate(-50%, -50%) translate(${Math.cos(angle) * r1}px, ${Math.sin(angle) * r1}px) scale(0.5)`, opacity: 0 },
 			],
-			{ duration: 500, delay: 80, easing: "ease-out" },
+			{ duration: 500, delay: 80, easing: "ease-out", fill: "backwards" },
 		)
 			.finished.catch(() => {})
 			.finally(() => dot.remove());

@@ -571,8 +571,8 @@ body.hide-cn .vcn,body.hide-cn .cn{visibility:hidden}
    ring and particles themselves are WAAPI-driven in app/study/fav-burst.tsx. */
 .starb,.exam-fav-btn{position:relative}
 .starb:active,.exam-fav-btn:active{transform:scale(.78);transition:transform .1s ease-out}
-.fav-burst-ring{position:absolute;left:50%;top:50%;border:2px solid #f23d5c;border-radius:50%;pointer-events:none;z-index:2}
-.fav-burst-dot{position:absolute;left:50%;top:50%;width:5px;height:5px;border-radius:50%;pointer-events:none;z-index:2}
+.fav-burst-ring{position:fixed;border:2px solid #f23d5c;border-radius:50%;pointer-events:none;z-index:90}
+.fav-burst-dot{position:fixed;width:5px;height:5px;border-radius:50%;pointer-events:none;z-index:90}
 @media (prefers-reduced-motion: reduce){.starb:active,.exam-fav-btn:active{transform:none;transition:none}}
 @media (max-width:480px){
   .exam-qline{grid-template-columns:auto minmax(0,1fr)}
