@@ -1,6 +1,13 @@
 import { useSyncExternalStore } from "react";
 
-import { lx } from "./store";
+import { Theme } from "@astryxdesign/core/theme";
+import { Card } from "@astryxdesign/core/Card";
+import { Text } from "@astryxdesign/core/Text";
+import { VStack } from "@astryxdesign/core/VStack";
+import { neutralTheme } from "@astryxdesign/theme-neutral/built";
+
+import { lx, THEME } from "./store";
+import "./astryx.css";
 import { jstDayKey, subscribeUsage, usageSnapshot, type UsageSnapshot } from "./usage-time";
 
 const SERVER_SNAPSHOT: UsageSnapshot = { days: {}, signedIn: false, synced: false, kind: "account" };
@@ -39,16 +46,30 @@ export function UsagePage() {
 				)}
 			</p>
 			<p className="usage-lead">{status}</p>
-			<div className="usage-stats">
-				<div className="usage-stat">
-					<span>{lx("今天", "Today")}</span>
-					<b>{durationLabel(snap.days[today] || 0)}</b>
+			<Theme theme={neutralTheme} mode={THEME === "dark" ? "dark" : "light"}>
+				<div className="astryx-scope usage-stats">
+					<Card padding={3}>
+						<VStack gap={1}>
+							<Text type="supporting" color="secondary">
+								{lx("今天", "Today")}
+							</Text>
+							<Text type="body" size="xl" weight="bold">
+								{durationLabel(snap.days[today] || 0)}
+							</Text>
+						</VStack>
+					</Card>
+					<Card padding={3}>
+						<VStack gap={1}>
+							<Text type="supporting" color="secondary">
+								{lx("累计", "Total")}
+							</Text>
+							<Text type="body" size="xl" weight="bold">
+								{durationLabel(total)}
+							</Text>
+						</VStack>
+					</Card>
 				</div>
-				<div className="usage-stat">
-					<span>{lx("累计", "Total")}</span>
-					<b>{durationLabel(total)}</b>
-				</div>
-			</div>
+			</Theme>
 			{days.length ? (
 				<div className="usage-days">
 					{days.map(([day, sec]) => (

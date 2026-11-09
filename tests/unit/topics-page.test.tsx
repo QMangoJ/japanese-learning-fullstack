@@ -5,7 +5,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import { dueEntry, resetDueForTests } from "../../app/study/due-review";
 import { setNavImpl } from "../../app/study/store";
-import { Sheet } from "../../app/study/StudyApp";
+import { Sheet } from "../../app/study/Sheet";
 import { TopicsPage } from "../../app/study/TopicsPage";
 import { topicDueId } from "../../app/study/topic-vocab";
 

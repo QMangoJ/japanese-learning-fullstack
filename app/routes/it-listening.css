@@ -10,11 +10,11 @@
 
 .itl-empty{margin-top:18px;padding:26px;border:1px solid var(--line);border-radius:14px;background:var(--card);color:var(--sub);text-align:center}
 
-.itl-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
-.itl-tab{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--card);color:var(--sub);border-radius:999px;padding:7px 16px;font-size:15px;font-weight:700;cursor:pointer;line-height:1.25}
-.itl-tab.on{background:var(--accent);border-color:var(--accent);color:#fff}
+/* Channel tabs are Astryx TabList (see ItListeningPage); only the count chip
+   and the wrapper spacing stay in app CSS. */
+.itl-tabs-scope{margin-top:20px}
 .itl-tab-n{font-size:12.5px;font-weight:800;padding:1px 8px;border-radius:999px;background:var(--bg);color:var(--accent)}
-.itl-tab.on .itl-tab-n{background:rgba(255,255,255,.22);color:#fff}
+[aria-selected="true"] .itl-tab-n{background:var(--accent);color:#fff}
 .itl-ch-note{margin:10px 0 0;padding:0 2px;color:var(--sub);font-size:13.5px;line-height:1.55}
 .itl-ch-link{color:#c4302b;font-weight:700;text-decoration:none;white-space:nowrap}
 .itl-ch-link:hover{text-decoration:underline}

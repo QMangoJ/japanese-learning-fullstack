@@ -50,7 +50,9 @@ async function openStudyNav(page: Page, nav: "search" | "mistakes" | "favs" | "c
 	}
 	if (nav === "cards" || nav === "ref" || nav === "review") {
 		await page.locator('.bottom button[data-nav="common"]').click();
-		await page.getByRole("button", { name: sideLabels[nav] }).click();
+		// Sheet tiles are Astryx ClickableCards: the accessible button is a 1x1
+		// visually-hidden proxy, so locate the tile itself by its hook class.
+		await page.locator(".sheet-item", { hasText: sideLabels[nav] }).first().click();
 		return;
 	}
 	await page.locator(`.bottom button[data-nav="${nav}"]`).click();

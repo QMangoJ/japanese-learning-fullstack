@@ -43,8 +43,8 @@ html.theme-switching *:not(img):not(svg):not(video):not(canvas){
 .account-wrap{position:relative;flex:none}
 .account-btn{flex:none;width:32px;height:32px;border-radius:999px;border:1px solid var(--line);padding:0;overflow:hidden;background:var(--blue-soft);color:var(--blue);cursor:pointer;font-size:14.5px;font-weight:800;display:flex;align-items:center;justify-content:center}
 .account-btn img{width:100%;height:100%;object-fit:cover;display:block}
-.account-mask{position:fixed;inset:0;z-index:29;background:transparent;border:0;padding:0;margin:0}
-.account-pop{position:absolute;right:0;top:calc(100% + 8px);z-index:30;width:228px;background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);padding:12px}
+/* Account popover surface is Astryx Popover now (app/study/AccountPop.tsx);
+   the .account-pop__* content rules below style what goes inside it. */
 .account-pop__name{font-size:16px;font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .account-pop__email{font-size:13.5px;color:var(--sub);margin-top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .account-pop__hint{font-size:13.5px;color:var(--sub);margin:8px 0 10px;line-height:1.45}

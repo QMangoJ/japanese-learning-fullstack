@@ -19,10 +19,9 @@
 .usage-page{max-width:var(--study-col,720px);margin:0 auto;padding:8px 0 28px}
 .usage-lead{margin:0 0 12px;color:var(--sub);font-size:14.5px;line-height:1.7}
 .usage-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
-.usage-stat,.usage-day{border:1px solid var(--line);border-radius:12px;background:var(--card)}
-.usage-stat{padding:14px 16px}
-.usage-stat span,.usage-day span{color:var(--sub);font-size:13.5px}
-.usage-stat b{display:block;margin-top:4px;font-size:24px}
+/* Stat blocks are Astryx Cards now (see UsagePage); day rows stay app CSS. */
+.usage-day{border:1px solid var(--line);border-radius:12px;background:var(--card)}
+.usage-day span{color:var(--sub);font-size:13.5px}
 .usage-days{display:grid;gap:6px}
 .usage-day{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 12px}
 .usage-day.today{border-color:var(--accent)}

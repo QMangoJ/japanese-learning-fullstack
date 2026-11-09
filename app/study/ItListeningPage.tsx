@@ -12,8 +12,13 @@ import {
 	type ItListeningRubySegment,
 	type MistakeWordsFile,
 } from "./it-listening";
+import { Theme } from "@astryxdesign/core/theme";
+import { Tab, TabList } from "@astryxdesign/core/TabList";
+import { neutralTheme } from "@astryxdesign/theme-neutral/built";
+
 import { toggleItlDone, useItlDone } from "./itl-done";
-import { lx, navTo } from "./store";
+import { lx, navTo, THEME } from "./store";
+import "./astryx.css";
 import "../routes/it-listening.css";
 
 const cache = new Map<string, Promise<unknown>>();
@@ -238,21 +243,20 @@ function ItListeningList() {
 				<div className="itl-empty">{lx("加载中…", "Loading…")}</div>
 			) : (
 				<>
-					<div className="itl-tabs" role="tablist" aria-label={lx("来源频道", "Source channel")}>
-						{sections.map((sec) => (
-							<button
-								key={sec.key}
-								type="button"
-								role="tab"
-								aria-selected={sec.key === active.key}
-								className={`itl-tab${sec.key === active.key ? " on" : ""}`}
-								onClick={() => pickTab(sec.key)}
-							>
-								{sec.name}
-								<span className="itl-tab-n">{sec.articles.length}</span>
-							</button>
-						))}
-					</div>
+					<Theme theme={neutralTheme} mode={THEME === "dark" ? "dark" : "light"}>
+						<div className="astryx-scope itl-tabs-scope">
+							<TabList value={active.key} onChange={pickTab} role="tablist" aria-label={lx("来源频道", "Source channel")} size="lg">
+								{sections.map((sec) => (
+									<Tab
+										key={sec.key}
+										value={sec.key}
+										label={sec.name}
+										endContent={<span className="itl-tab-n">{sec.articles.length}</span>}
+									/>
+								))}
+							</TabList>
+						</div>
+					</Theme>
 					<p className="itl-ch-note">
 						{active.note}
 						{active.channelUrl ? (
