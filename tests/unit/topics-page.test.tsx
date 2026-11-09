@@ -4,7 +4,7 @@ import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import { dueEntry, resetDueForTests } from "../../app/study/due-review";
-import { TopicsPage } from "../../app/study/TopicsPage";
+import { TopicHomeSection, TopicsPage } from "../../app/study/TopicsPage";
 import { topicDueId } from "../../app/study/topic-vocab";
 
 const DIR = join(process.cwd(), "public/data/topics");
@@ -29,6 +29,18 @@ describe("TopicsPage", () => {
 		expect(screen.getByText("银行 ATM 取钱")).toBeInTheDocument();
 		expect(screen.getByText("前端工程师")).toBeInTheDocument();
 		expect(screen.getByText("逛街买衣服")).toBeInTheDocument();
+	});
+
+	it("home section tiles every topic card under its group heading", async () => {
+		const { container } = render(<TopicHomeSection />);
+		expect(await screen.findByText("前端工程师")).toBeInTheDocument();
+		const heads = [...container.querySelectorAll(".topic-group-h")].map((h) => h.textContent);
+		expect(heads).toEqual(["工作面试", "生活", "投资理财"]);
+		for (const slug of ["job-interview", "frontend", "bank-atm", "clothes-shopping", "cafe-menu", "japan-investing"]) {
+			expect(container.querySelector(`[data-topic="${slug}"]`)).not.toBeNull();
+		}
+		expect(screen.getByText("89 个词")).toBeInTheDocument();
+		expect(container.querySelector('[data-submod="股票"]')).not.toBeNull();
 	});
 
 	it("filters by subtopic, marks a word as 不会 and shows only those", async () => {

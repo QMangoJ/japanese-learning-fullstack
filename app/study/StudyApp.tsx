@@ -133,6 +133,9 @@ const LazyReviewPage = lazy(() =>
 const LazyTopicsPage = lazy(() =>
 	import("./TopicsPage").then((module) => ({ default: module.TopicsPage })),
 );
+const LazyTopicHomeSection = lazy(() =>
+	import("./TopicsPage").then((module) => ({ default: module.TopicHomeSection })),
+);
 const LazyVerbSummaryPage = lazy(() =>
 	import("./VerbSummaryPage").then((module) => ({ default: module.VerbSummaryPage })),
 );
@@ -1203,7 +1206,12 @@ export function StudyApp() {
 				</section>
 			</>
 		) : (
-			<HomePage data={homeData} />
+			<>
+				<HomePage data={homeData} />
+				<Suspense fallback={null}>
+					<LazyTopicHomeSection />
+				</Suspense>
+			</>
 		);
 	else if (routeKey === "#/search") body = <SearchPage />;
 	else if (routeKey === "#/usage") body = <UsagePage />;

@@ -79,8 +79,7 @@ export function TopicsPage({ slug }: { slug: string | null }) {
 	return slug ? <TopicDetail slug={slug} /> : <TopicList />;
 }
 
-function TopicList() {
-	useDueTick();
+function useTopicIndex(): { index: TopicIndex | null; error: boolean } {
 	const [index, setIndex] = useState<TopicIndex | null>(null);
 	const [error, setError] = useState(false);
 	useEffect(() => {
@@ -96,6 +95,12 @@ function TopicList() {
 			off = true;
 		};
 	}, []);
+	return { index, error };
+}
+
+function TopicList() {
+	useDueTick();
+	const { index, error } = useTopicIndex();
 	if (error) return <div className="empty">{lx("专题目录加载失败，请稍后重试。", "Topic list failed to load. Please try again.")}</div>;
 	if (!index) return <div className="empty">{lx("专题加载中…", "Loading topics…")}</div>;
 	return (
@@ -106,49 +111,71 @@ function TopicList() {
 					"Study words and phrases by field. Cards marked “Don't know” come back tomorrow under the topic’s Due today filter; cards marked “Got it” return after 3, 7, 14, and 30 days.",
 				)}
 			</p>
-			<div className="review-list">
-				{TOPIC_GROUPS.map((g) => {
-					const items = index.topics.filter((t) => topicGroupOf(t.slug) === g.key);
-					if (!items.length) return null;
-					return (
-						<div key={g.key} className="topic-group">
-							<h3 className="topic-group-h">{lx(g.zh, g.en)}</h3>
-							{items.map((t) => (
-								<div key={t.slug}>
-									<button type="button" className="review-day topic-card" data-topic={t.slug} onClick={() => navTo(`#/topics/${t.slug}`)}>
-										<span className="d">
-											{lx(`${t.count} 个词`, `${t.count} cards`)}
-										</span>
-										<span className="t">{lx(t.title_zh, t.title_en || t.title_zh)}</span>
-										<span className="tc jp">{t.title_ja}</span>
-										{t.subtopics?.length ? (
-											<span className="review-day__stats">
-												{t.subtopics.slice(0, 4).map((s) => (
-													<span key={s} className="review-day__chip">
-														{s}
-													</span>
-												))}
-												{t.subtopics.length > 4 ? <span className="review-day__chip">+{t.subtopics.length - 4}</span> : null}
-											</span>
-										) : null}
-									</button>
-									{g.key === "invest" && t.subtopics?.length ? (
-										<div className="topic-submods" aria-label={lx("子模块", "Submodules")}>
-											<span className="topic-submods-h">{lx("子模块", "Submodules")}</span>
-											{t.subtopics.map((s) => (
-												<button key={s} type="button" className="review-day__chip topic-submod" data-submod={s} onClick={() => openTopicSub(t.slug, s)}>
-													{s}
-												</button>
-											))}
-										</div>
-									) : null}
-								</div>
-							))}
-						</div>
-					);
-				})}
-			</div>
+			<TopicCardGroups index={index} />
 		</div>
+	);
+}
+
+/** 专题卡片分组渲染：总览页（#/topics）与首页「专题知识」区块共用这一套，避免两处实现走偏。 */
+function TopicCardGroups({ index }: { index: TopicIndex }) {
+	return (
+		<div className="review-list">
+			{TOPIC_GROUPS.map((g) => {
+				const items = index.topics.filter((t) => topicGroupOf(t.slug) === g.key);
+				if (!items.length) return null;
+				return (
+					<div key={g.key} className="topic-group">
+						<h3 className="topic-group-h">{lx(g.zh, g.en)}</h3>
+						{items.map((t) => (
+							<div key={t.slug}>
+								<button type="button" className="review-day topic-card" data-topic={t.slug} onClick={() => navTo(`#/topics/${t.slug}`)}>
+									<span className="d">
+										{lx(`${t.count} 个词`, `${t.count} cards`)}
+									</span>
+									<span className="t">{lx(t.title_zh, t.title_en || t.title_zh)}</span>
+									<span className="tc jp">{t.title_ja}</span>
+									{t.subtopics?.length ? (
+										<span className="review-day__stats">
+											{t.subtopics.slice(0, 4).map((s) => (
+												<span key={s} className="review-day__chip">
+													{s}
+												</span>
+											))}
+											{t.subtopics.length > 4 ? <span className="review-day__chip">+{t.subtopics.length - 4}</span> : null}
+										</span>
+									) : null}
+								</button>
+								{g.key === "invest" && t.subtopics?.length ? (
+									<div className="topic-submods" aria-label={lx("子模块", "Submodules")}>
+										<span className="topic-submods-h">{lx("子模块", "Submodules")}</span>
+										{t.subtopics.map((s) => (
+											<button key={s} type="button" className="review-day__chip topic-submod" data-submod={s} onClick={() => openTopicSub(t.slug, s)}>
+												{s}
+											</button>
+										))}
+									</div>
+								) : null}
+							</div>
+						))}
+					</div>
+				);
+			})}
+		</div>
+	);
+}
+
+/** 首页「专题知识」区块：外层直接按分类平铺全部专题卡片，不必再先进专题词汇总览页。加载失败时静默省略，不拖垮首页。 */
+export function TopicHomeSection() {
+	useDueTick();
+	const { index, error } = useTopicIndex();
+	if (error || !index) return null;
+	return (
+		<section className="topic-home" aria-label={lx("专题知识", "Topics")}>
+			<h2 className="topic-home-h">
+				{lx("专题知识", "Topics")} <span className="n">· {lx("不分级别", "All levels")}</span>
+			</h2>
+			<TopicCardGroups index={index} />
+		</section>
 	);
 }
 
