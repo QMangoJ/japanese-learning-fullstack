@@ -50,7 +50,9 @@ async function openStudyNav(page: Page, nav: "search" | "mistakes" | "favs" | "c
 	}
 	if (nav === "cards" || nav === "ref" || nav === "review") {
 		await page.locator('.bottom button[data-nav="common"]').click();
-		await page.getByRole("button", { name: sideLabels[nav] }).click();
+		// Sheet tiles are Astryx ClickableCards: the accessible button is a 1x1
+		// visually-hidden proxy, so locate the tile itself by its hook class.
+		await page.locator(".sheet-item", { hasText: sideLabels[nav] }).first().click();
 		return;
 	}
 	await page.locator(`.bottom button[data-nav="${nav}"]`).click();
@@ -215,7 +217,7 @@ test.describe("study navigation", () => {
 		if (await sideN2.isVisible()) await sideN2.click();
 		else {
 			await page.locator("#lvChip").click();
-			await page.getByRole("button", { name: /^N2/ }).click();
+			await page.locator(".sheet-item", { hasText: "N2" }).click();
 		}
 		await pickType(page, "vocab");
 		await expect(page.locator(".week-card").first()).toBeVisible({ timeout: 20_000 });
@@ -327,7 +329,7 @@ test.describe("study navigation", () => {
 		if (await henkei.isVisible()) await henkei.click();
 		else {
 			await page.locator('.bottom button[data-nav="common"]').click();
-			await page.getByRole("button", { name: /变形口诀|Verb mnemonics/ }).click();
+			await page.locator(".sheet-item", { hasText: /变形口诀|Verb mnemonics/ }).first().click();
 		}
 		await expect(page.locator("#title")).toContainText(/变形口诀|Verb mnemonics/);
 		await expect(page.getByRole("heading", { name: "五段動詞のテ形・タ形（音便）" })).toBeVisible();
@@ -340,7 +342,7 @@ test.describe("study navigation", () => {
 		if (await side.isVisible()) await side.click();
 		else {
 			await page.locator('.bottom button[data-nav="common"]').click();
-			await page.getByRole("button", { name: /变形总结|Verb summary/ }).click();
+			await page.locator(".sheet-item", { hasText: /变形总结|Verb summary/ }).first().click();
 		}
 		await expect(page.locator("#title")).toContainText(/动词变形总结|Verb form summary/);
 		await expect(page.locator(".verb-sum-group rt", { hasText: "ごだん" }).first()).toBeVisible();
@@ -392,7 +394,7 @@ test.describe("study navigation", () => {
 		if (await side.isVisible()) await side.click();
 		else {
 			await page.locator('.bottom button[data-nav="common"]').click();
-			await page.getByRole("button", { name: /敬语总结|Keigo summary/ }).click();
+			await page.locator(".sheet-item", { hasText: /敬语总结|Keigo summary/ }).first().click();
 		}
 		await expect(page.locator("#title")).toContainText(/敬语总结|Keigo summary/);
 		await expect(page.locator(".verb-sum-form rt", { hasText: "そんけい" }).first()).toBeVisible();
@@ -442,7 +444,7 @@ test.describe("study navigation", () => {
 		if (await side.isVisible()) await side.click();
 		else {
 			await page.locator('.bottom button[data-nav="common"]').click();
-			await page.getByRole("button", { name: /汉字自测|Kanji Self-test/ }).click();
+			await page.locator(".sheet-item", { hasText: /汉字自测|Kanji Self-test/ }).first().click();
 		}
 
 		await page.getByRole("button", { name: /10题|10 questions/ }).click();
@@ -478,7 +480,7 @@ test.describe("study navigation", () => {
 		if (await side.isVisible()) await side.click();
 		else {
 			await page.locator('.bottom button[data-nav="common"]').click();
-			await page.getByRole("button", { name: /汉字自测|Kanji Self-test/ }).click();
+			await page.locator(".sheet-item", { hasText: /汉字自测|Kanji Self-test/ }).first().click();
 		}
 
 		const attempt = page.locator(".kanji-exam-history details").first();
@@ -507,7 +509,7 @@ test.describe("study navigation", () => {
 		if (await side.isVisible()) await side.click();
 		else {
 			await page.locator('.bottom button[data-nav="common"]').click();
-			await page.getByRole("button", { name: /汉字自测|Kanji Self-test/ }).click();
+			await page.locator(".sheet-item", { hasText: /汉字自测|Kanji Self-test/ }).first().click();
 		}
 		await page.getByRole("button", { name: /10题|10 questions/ }).click();
 		await page.getByRole("button", { name: /开始随机练习|Start randomized practice/ }).click();
@@ -539,7 +541,7 @@ test.describe("study navigation", () => {
 		if (await side.isVisible()) await side.click();
 		else {
 			await page.locator('.bottom button[data-nav="common"]').click();
-			await page.getByRole("button", { name: /自他动词|Verb pairs/ }).click();
+			await page.locator(".sheet-item", { hasText: /自他动词|Verb pairs/ }).first().click();
 		}
 		await expect(page.locator("#title")).toContainText(/自动词|他动词|自動詞|Transitive/);
 		await expect(page.getByText("他动词 · てあります").first()).toBeVisible();
@@ -595,7 +597,7 @@ test.describe("study navigation", () => {
 		if (await side.isVisible()) await side.click();
 		else {
 			await page.locator('.bottom button[data-nav="common"]').click();
-			await page.getByRole("button", { name: /穿衣穿戴|Wearing/ }).click();
+			await page.locator(".sheet-item", { hasText: /穿衣穿戴|Wearing/ }).first().click();
 		}
 		await expect(page.locator("#title")).toContainText(/穿衣穿戴|Clothes & Accessories/);
 		await expect(page.locator(".wearing-card")).toHaveCount(9);
@@ -616,7 +618,7 @@ test.describe("study navigation", () => {
 		if (await side.isVisible()) await side.click();
 		else {
 			await page.locator('.bottom button[data-nav="common"]').click();
-			await page.getByRole("button", { name: /专题词汇|Topics/ }).click();
+			await page.locator(".sheet-item", { hasText: /专题词汇|Topics/ }).first().click();
 		}
 		await expect(page.locator("#title")).toContainText(/专题词汇|Topic vocabulary/);
 		await expect(page.locator("[data-topic='japan-investing']")).toBeVisible();
@@ -643,7 +645,7 @@ test.describe("study navigation", () => {
 		if (await side.isVisible()) await side.click();
 		else {
 			await page.locator('.bottom button[data-nav="common"]').click();
-			await page.getByRole("button", { name: /口语|Casual/ }).click();
+			await page.locator(".sheet-item", { hasText: /口语|Casual/ }).first().click();
 		}
 		await expect(page.locator("#title")).toContainText(/口语|Spoken|縮約|缩约/);
 		await expect(page.getByText("〜ちゃった / 〜じゃった")).toBeVisible();
@@ -857,7 +859,7 @@ test.describe("study navigation", () => {
 			await waitForStudy(page);
 			if (module === "verb pairs") {
 				await page.locator('.bottom button[data-nav="common"]').click();
-				await page.getByRole("button", { name: /自他动词|Verb pairs/ }).click();
+				await page.locator(".sheet-item", { hasText: /自他动词|Verb pairs/ }).first().click();
 				await expect(page.locator(".jita-pair").first()).toBeVisible();
 			} else {
 				if (module === "N2 listening") {

@@ -43,8 +43,8 @@ html.theme-switching *:not(img):not(svg):not(video):not(canvas){
 .account-wrap{position:relative;flex:none}
 .account-btn{flex:none;width:32px;height:32px;border-radius:999px;border:1px solid var(--line);padding:0;overflow:hidden;background:var(--blue-soft);color:var(--blue);cursor:pointer;font-size:14.5px;font-weight:800;display:flex;align-items:center;justify-content:center}
 .account-btn img{width:100%;height:100%;object-fit:cover;display:block}
-.account-mask{position:fixed;inset:0;z-index:29;background:transparent;border:0;padding:0;margin:0}
-.account-pop{position:absolute;right:0;top:calc(100% + 8px);z-index:30;width:228px;background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);padding:12px}
+/* Account popover surface is Astryx Popover now (app/study/AccountPop.tsx);
+   the .account-pop__* content rules below style what goes inside it. */
 .account-pop__name{font-size:16px;font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .account-pop__email{font-size:13.5px;color:var(--sub);margin-top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .account-pop__hint{font-size:13.5px;color:var(--sub);margin:8px 0 10px;line-height:1.45}
@@ -100,21 +100,8 @@ html.theme-dark .lvchip{color:#1c1a16;box-shadow:0 1px 3px rgba(0,0,0,.4)}
   .langbar button{padding-left:8px;padding-right:8px}
 }
 .typebar button.on{background:var(--accent);border-color:var(--accent);color:#fff}
-/* 通用底部弹层：级别选择和「通用知识」共用这一套 */
-.sheet-mask{position:fixed;inset:0;z-index:40;background:rgba(0,0,0,.42)}
-.sheet{position:fixed;left:0;right:0;bottom:0;z-index:41;background:var(--card);border-top:1px solid var(--line);
-  border-radius:16px 16px 0 0;box-shadow:0 -6px 24px rgba(0,0,0,.18);
-  padding:8px 14px calc(14px + env(safe-area-inset-bottom));max-height:76vh;overflow-y:auto}
-.sheet-grip{width:36px;height:4px;border-radius:3px;background:var(--line);margin:2px auto 10px}
-.sheet-h{display:flex;align-items:baseline;gap:8px;font-size:16px;font-weight:700;margin-bottom:10px}
-.sheet-h .sub{font-size:13.5px;font-weight:400;color:var(--sub)}
-.sheet-row{display:flex;gap:8px;margin-bottom:8px}
-.sheet-item{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px 6px;cursor:pointer;color:var(--ink);font-size:15px;min-height:60px;justify-content:center}
-.sheet-item .ic{font-size:22.5px;line-height:1}
-.sheet-item .sub{font-size:12.5px;color:var(--sub)}
-.sheet-item.on{border-color:var(--blue);background:var(--blue-soft);color:var(--blue);font-weight:700}
-.sheet-item.scoped{border-style:dashed}
-.sheet-item--feature{min-height:72px;font-size:17px;font-weight:800;padding:14px 10px;gap:5px}
+/* 底部弹层（级别选择 / 通用知识）在 astryx-spike 分支改用 Astryx 组件 + StyleX 实现
+ * （app/study/StudyApp.tsx 的 Sheet + sheetStyles）；.sheet-* 类名仅作测试钩子，不再带样式。 */
 /* 侧栏只在桌面出现：手机上这些入口在底栏和「通用」弹层里，
    桌面有横向空间，就按 UI 稿把它们摊平成一列常驻目录，不用再点开弹层。 */
 .side{display:none}
@@ -122,16 +109,29 @@ html.theme-dark .lvchip{color:#1c1a16;box-shadow:0 1px 3px rgba(0,0,0,.4)}
 .side-sec{display:flex;flex-direction:column;gap:2px}
 .side-h{font-size:12px;letter-spacing:.1em;color:var(--sub);padding:0 8px 4px;display:flex;align-items:baseline;gap:6px}
 .side-h .n{letter-spacing:0;text-transform:none}
+.side-h.major{font-size:13.5px;font-weight:800;color:var(--ink);letter-spacing:.14em}
+.side-sub{font-size:11.5px;font-weight:700;color:var(--sub);letter-spacing:.06em;padding:8px 8px 2px}
+.topic-group-h{margin:16px 0 8px;font-size:15.5px;font-weight:800;color:var(--ink)}
+.topic-group:first-child .topic-group-h{margin-top:2px}
+.topic-submods{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:8px 2px 2px}
+.topic-submods-h{font-size:12.5px;font-weight:700;color:var(--sub);margin-right:2px}
+button.topic-submod{font-size:13px;cursor:pointer}
+button.topic-submod:hover{border-color:var(--accent);color:var(--accent)}
 .side-seg{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;border:1px solid var(--line);border-radius:9px;padding:3px}
 .side-seg button{border:none;background:none;color:var(--sub);border-radius:6px;padding:5px 0;font-size:14.5px;font-weight:800;cursor:pointer}
 .side-seg button.on{background:var(--blue);color:#fff}
 .side-item{display:flex;align-items:center;gap:8px;border:none;background:none;color:var(--ink);font-size:15px;
   padding:7px 8px;border-radius:7px;cursor:pointer;text-align:left;width:100%;min-height:34px}
 .side-item .ic{flex:none;width:17px;text-align:center}
-.side-item .ct{margin-left:auto;font-size:12.5px;color:var(--sub);flex:none}
+.side-item .ct{margin-left:auto;font-size:12.5px;color:var(--sub);flex:none;position:relative;animation:ct-in .2s cubic-bezier(.23,1,.32,1)}
+.ct-ripple{position:absolute;left:50%;top:50%;width:22px;height:22px;border:2px solid var(--blue);border-radius:50%;pointer-events:none}
+@keyframes ct-in{from{transform:scale(0)}to{transform:scale(1)}}
+@media (prefers-reduced-motion: reduce){.side-item .ct{animation:none}}
 .side-item:hover{background:var(--bg)}
 .side-item.on{background:var(--blue-soft);color:var(--blue);font-weight:700}
 .side-item.on .ct{color:var(--blue)}
+.side-subitem{padding-left:24px;font-size:13.5px;color:var(--sub);min-height:30px}
+.side-subitem .ic{width:11px;font-size:10.5px}
 .side-foot{margin-top:auto;display:flex;flex-direction:column;gap:2px;padding-top:12px;border-top:1px solid var(--line)}
 /* 翻页钮悬浮在两侧：不占正文高度，滚到哪儿都能翻。
    手机贴在底栏上方，桌面贴在目录右侧和窗口右缘，都只放小圆钮。
@@ -567,6 +567,13 @@ body.hide-cn .vcn,body.hide-cn .cn{visibility:hidden}
 .exam-fav-btn{display:inline-flex;align-items:center;justify-content:center;min-height:30px;border:1px solid var(--amber);border-radius:999px;padding:4px 10px;background:var(--card);color:var(--amber);font:700 14px/1 inherit;white-space:nowrap;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
 .exam-fav-btn.on{background:var(--amber-soft)}
 .exam-fav-btn:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+/* Motion Prompt #166: press squeeze (0.78x) on favorite buttons; the pop,
+   ring and particles themselves are WAAPI-driven in app/study/fav-burst.tsx. */
+.starb,.exam-fav-btn{position:relative}
+.starb:active,.exam-fav-btn:active{transform:scale(.78);transition:transform .1s ease-out}
+.fav-burst-ring{position:fixed;border:2px solid #f23d5c;border-radius:50%;pointer-events:none;z-index:90}
+.fav-burst-dot{position:fixed;width:5px;height:5px;border-radius:50%;pointer-events:none;z-index:90}
+@media (prefers-reduced-motion: reduce){.starb:active,.exam-fav-btn:active{transform:none;transition:none}}
 @media (max-width:480px){
   .exam-qline{grid-template-columns:auto minmax(0,1fr)}
   .exam-fav-btn{grid-column:2;justify-self:start;margin-top:6px;min-height:34px;padding:5px 11px}
@@ -897,6 +904,7 @@ body.hide-cn .vcn,body.hide-cn .cn{visibility:hidden}
 .topic-item__top{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
 .topic-item__jp{font-size:21.5px;font-weight:700}
 .topic-item__kana{color:var(--sub);font-size:16px}
+.topic-item__jp rt{font-weight:400;color:var(--sub)}
 .topic-item__zh{font-size:17px;font-weight:600}
 .topic-item__ex{font-size:16px;line-height:1.6;border-left:3px solid var(--line);padding-left:10px}
 .topic-item__ex .cn{color:var(--sub)}

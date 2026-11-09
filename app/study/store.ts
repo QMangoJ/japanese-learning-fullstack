@@ -6,6 +6,7 @@ import { listeningBundle, listeningN1Bundle, listeningN2Bundle, readingBundle, r
 import { forgetDue, hydrateDue, kickDueSync, mistakeDueDraft, mistakeDueId, noteDueSignedOut, pullDueFromServer, pushDueNow, rememberFail, resetDueForTests } from "./due-review";
 import { canAttemptSync, noteSyncResult, resetSyncPolicyForTests } from "./kv-sync-policy";
 import { hydrateMastery, kickMasterySync, noteMasterySignedOut, pullMasteryFromServer, pushMasteryNow, resetMasteryForTests } from "./memory-mastery";
+import { hydrateItlDone, kickItlDoneSync, noteItlDoneSignedOut, pullItlDoneFromServer, pushItlDoneNow } from "./itl-done";
 import { refreshUsageAccount } from "./usage-time";
 import { applyResumeOrder, loadResumePos, loadResumeScope, resumeIndex, saveResume } from "./cards-resume";
 import { pushToast } from "./toast";
@@ -394,8 +395,25 @@ export function openModuleCards(week: number, day: number) {
 	navImpl("#/cards");
 }
 
+/** 子模块入口：专题详情下次打开时预选的子主题筛选。普通 navTo 进专题会清掉它。 */
+let topicSubPreset: { slug: string; sub: string } | null = null;
+
+/** Open a topic with one subtopic （子模块） preselected, e.g. 投资理财 → 股票. */
+export function openTopicSub(slug: string, sub: string) {
+	topicSubPreset = { slug, sub };
+	navImpl(`#/topics/${slug}`);
+}
+
+export function takeTopicSubPreset(slug: string): string | null {
+	if (!topicSubPreset || topicSubPreset.slug !== slug) return null;
+	const sub = topicSubPreset.sub;
+	topicSubPreset = null;
+	return sub;
+}
+
 export function navTo(key: string) {
 	if (key === "#/cards") moduleCardsScope = { week: 0, day: 0 };
+	if (key.startsWith("#/topics")) topicSubPreset = null;
 	navImpl(key);
 }
 
@@ -1895,6 +1913,7 @@ export function hydrateFromStorage() {
 	MISTAKES = cleanMistakes(lsJson("mistakes", []));
 	hydrateDue();
 	hydrateMastery();
+	hydrateItlDone();
 	noRuby = lsGet("noruby", "0") === "1";
 	hideJp = lsGet("hidejp", "0") === "1";
 	hideCn = lsGet("hidecn", "0") === "1";
@@ -2169,14 +2188,16 @@ export async function bootAccount() {
 		_mistakesPendingPush = false;
 		noteDueSignedOut();
 		noteMasterySignedOut();
+		noteItlDoneSignedOut();
 		return;
 	}
 	await pullFavsFromServer();
 	await pullMistakesFromServer();
 	await pullDueFromServer(ACCOUNT.id);
 	await pullMasteryFromServer(ACCOUNT.id);
+	await pullItlDoneFromServer(ACCOUNT.id);
 	lsSet("accountId", ACCOUNT.id);
-	await Promise.all([pushFavsNow(), pushMistakesNow(), pushDueNow(), pushMasteryNow()]);
+	await Promise.all([pushFavsNow(), pushMistakesNow(), pushDueNow(), pushMasteryNow(), pushItlDoneNow()]);
 }
 
 export function attachResync() {
@@ -2186,6 +2207,7 @@ export function attachResync() {
 		if (!_mistakesPendingPush) void resyncMistakes();
 		kickDueSync();
 		kickMasterySync();
+		kickItlDoneSync();
 	};
 	const onVis = () => {
 		if (document.visibilityState === "visible") resyncAll();

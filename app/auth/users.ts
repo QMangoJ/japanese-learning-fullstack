@@ -46,6 +46,10 @@ export function masteryKey(userId: string): string {
 	return `mastery:${userId}`;
 }
 
+export function itlDoneKey(userId: string): string {
+	return `itl-done:${userId}`;
+}
+
 export function usageKey(userId: string): string {
 	return `usage:${userId}`;
 }

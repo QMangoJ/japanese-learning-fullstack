@@ -14,15 +14,20 @@
 		"publish": true
 	},
 	"dependencies": {
+		"@astryxdesign/core": "^0.7.11",
+		"@astryxdesign/theme-neutral": "^0.7.11",
+		"@stylexjs/stylex": "^0.19.1",
 		"isbot": "5.1.32",
 		"react": "19.2.8",
 		"react-dom": "19.2.8",
 		"react-router": "7.18.3"
 	},
 	"devDependencies": {
+		"@astryxdesign/cli": "^0.7.11",
 		"@cloudflare/vite-plugin": "1.54.4",
 		"@playwright/test": "^1.62.1",
 		"@react-router/dev": "7.18.3",
+		"@stylexjs/unplugin": "^0.19.1",
 		"@tailwindcss/vite": "4.1.17",
 		"@testing-library/jest-dom": "^7.0.1",
 		"@testing-library/react": "^16.3.2",
@@ -41,6 +46,7 @@
 	},
 	"private": true,
 	"scripts": {
+		"astryx": "node node_modules/@astryxdesign/cli/clients/cli/bin/astryx.mjs",
 		"build": "react-router build",
 		"cf-typegen": "wrangler types && react-router typegen",
 		"check": "tsc && react-router build && wrangler deploy --dry-run",

@@ -1,6 +1,5 @@
 import { Activity, Component, lazy, Suspense, useEffect, useLayoutEffect, useRef, useState, useSyncExternalStore, type ErrorInfo, type ReactNode } from "react";
 import { useLocation, useNavigate } from "react-router";
-
 import {
 	CardsPage,
 	FavFcPage,
@@ -17,8 +16,8 @@ import {
 	WearingPage,
 } from "../routes/study-common";
 import { ContrastPage, DayNav, DayPage, parseDayRoute } from "./days";
-import { UsagePage } from "./UsagePage";
 import { PointerTiltRoot } from "./pointer-tilt";
+import { FavBurstRoot } from "./fav-burst";
 import { ToastStack } from "./toast-stack";
 import { getDueVersion, subscribeDue } from "./due-review";
 import { formatReviewDate, jstToday, parseReviewRoute, reviewDateFromId } from "./lesson-review";
@@ -78,6 +77,7 @@ import {
 	n1Loaded,
 	n4Loaded,
 	navTo,
+	openTopicSub,
 	noRuby,
 	pathToKey,
 	readingSearchError,
@@ -100,6 +100,7 @@ import {
 	type TypeKey,
 } from "./store";
 import { selectionPopoverPosition } from "./selection-popover-position";
+import { prefersReducedMotion } from "./motion-pref";
 // Keep the styles for lazy study modules in the shell so WebKit never paints
 // their content before the asynchronously discovered CSS has applied.
 import "../routes/kanji-exam.css";
@@ -141,6 +142,21 @@ const LazyKeigoSummaryPage = lazy(() =>
 const LazyModuleCardsPage = lazy(() =>
 	import("./ModuleCardsPage").then((module) => ({ default: module.ModuleCardsPage })),
 );
+
+// The Sheet is the only Astryx surface in the shell; it opens on demand from
+// the bottom nav / level button, so Astryx + StyleX ship in their own chunk
+// and stay out of the initial /study bundle (see scripts/check-client-bundle-size).
+const LazyUsagePage = lazy(() => import("./UsagePage").then((module) => ({ default: module.UsagePage })));
+const LazyAccountMenu = lazy(() => import("./AccountPop").then((module) => ({ default: module.AccountMenu })));
+
+function preloadAccountMenu() {
+	void import("./AccountPop");
+}
+const LazySheet = lazy(() => import("./Sheet").then((module) => ({ default: module.Sheet })));
+
+function preloadSheet() {
+	void import("./Sheet");
+}
 
 function StudyLoading() {
 	return <div className="empty">{lx("内容加载中…", "Loading content…")}</div>;
@@ -336,15 +352,6 @@ function Header({
 
 function AccountChip() {
 	useStudyTick();
-	const [open, setOpen] = useState(false);
-	useEffect(() => {
-		if (!open) return;
-		const onKey = (e: KeyboardEvent) => {
-			if (e.key === "Escape") setOpen(false);
-		};
-		document.addEventListener("keydown", onKey);
-		return () => document.removeEventListener("keydown", onKey);
-	}, [open]);
 	if (!accountReady || !authConfigured) return null;
 	if (!ACCOUNT) {
 		return (
@@ -358,34 +365,17 @@ function AccountChip() {
 	}
 	const initial = (ACCOUNT.name || ACCOUNT.email || "?").slice(0, 1).toUpperCase();
 	return (
-		<div className="account-wrap" id="accountMenu">
-			<button
-				type="button"
-				className="account-btn"
-				id="accountBtn"
-				aria-haspopup="menu"
-				aria-expanded={open}
-				aria-label={ACCOUNT.name || ACCOUNT.email || lx("账号", "Account")}
-				onClick={() => setOpen((v) => !v)}
-			>
-				{ACCOUNT.picture ? <img src={ACCOUNT.picture} alt="" referrerPolicy="no-referrer" /> : <span>{initial}</span>}
-			</button>
-			{open ? (
-				<>
-					<button type="button" className="account-mask" aria-label={lx("关闭", "Close")} onClick={() => setOpen(false)} />
-					<div className="account-pop" role="menu">
-						<div className="account-pop__name">{ACCOUNT.name || ACCOUNT.email}</div>
-						{ACCOUNT.email ? <div className="account-pop__email">{ACCOUNT.email}</div> : null}
-						<div className="account-pop__hint">
-							{lx("收藏和错题已同步到此账号。", "Favorites and notes sync to this account.")}
-						</div>
-						<a className="account-pop__out" href="/auth/logout" role="menuitem">
-							{lx("退出登录", "Sign out")}
-						</a>
-					</div>
-				</>
-			) : null}
-		</div>
+		<Suspense
+			fallback={
+				<div className="account-wrap">
+					<span className="account-btn" aria-hidden="true">
+						{ACCOUNT.picture ? <img src={ACCOUNT.picture} alt="" referrerPolicy="no-referrer" /> : <span>{initial}</span>}
+					</span>
+				</div>
+			}
+		>
+			<LazyAccountMenu />
+		</Suspense>
 	);
 }
 
@@ -490,6 +480,42 @@ function weeksOf(ty: TypeKey) {
 	return lx(w + "周", w + " weeks");
 }
 
+/** Sidebar count badge. Motion Prompt #071: when the number grows it pops
+ * 1.3 -> 1 over 0.3 s with a ripple ring (0.5 s); first appearance scales in
+ * via the .ct CSS animation. Reduced motion: static. */
+function CtBadge({ value }: { value: string | number }) {
+	const ref = useRef<HTMLSpanElement>(null);
+	const prev = useRef(value);
+	useEffect(() => {
+		const el = ref.current;
+		const was = prev.current;
+		prev.current = value;
+		if (!el || prefersReducedMotion()) return;
+		const n = Number(value);
+		const before = Number(was);
+		if (!Number.isFinite(n) || !Number.isFinite(before) || n <= before) return;
+		el.animate([{ transform: "scale(1.3)" }, { transform: "scale(1)" }], { duration: 300, easing: "cubic-bezier(.23,1,.32,1)" });
+		const ring = document.createElement("span");
+		ring.className = "ct-ripple";
+		el.appendChild(ring);
+		ring
+			.animate(
+				[
+					{ transform: "translate(-50%,-50%) scale(1)", opacity: 0.5 },
+					{ transform: "translate(-50%,-50%) scale(2.33)", opacity: 0 },
+				],
+				{ duration: 500, easing: "ease-out" },
+			)
+			.finished.catch(() => {})
+			.finally(() => ring.remove());
+	}, [value]);
+	return (
+		<span className="ct" ref={ref}>
+			{value}
+		</span>
+	);
+}
+
 function Sidebar({ routeKey, onLevel }: { routeKey: string; onLevel: (lv: LevelKey) => void }) {
 	const h = routeKey;
 	const LV = LEVEL.toUpperCase();
@@ -509,14 +535,28 @@ function Sidebar({ routeKey, onLevel }: { routeKey: string; onLevel: (lv: LevelK
 		>
 			<span className="ic">{ic}</span>
 			{label}
-			{count != null && count !== "" ? <span className="ct">{count}</span> : null}
+			{count != null && count !== "" ? <CtBadge value={count} /> : null}
 		</button>
 	);
+	// 投资理财的子模块 = japan-investing 数据的 subtopics（zh 须与 public/data/topics/japan-investing.json 逐字一致，改数据时同步这里）
+	const investSubs: [string, string][] = [
+		["开户・本人确认", "Account opening & ID"],
+		["账户・税制（NISA等）", "Accounts & tax (NISA etc.)"],
+		["下单・交易", "Orders & trading"],
+		["股票", "Stocks"],
+		["投资信托・基金", "Mutual funds"],
+		["债券・其他商品", "Bonds & other products"],
+		["收益・成本", "Returns & costs"],
+		["汇率・外国证券", "FX & foreign securities"],
+		["风险・策略", "Risk & strategy"],
+	];
 	return (
 		<aside className="side" id="side">
 			<div className="side-brand">日本語上手</div>
 			<div className="side-sec">
-				<div className="side-h">{lx("级别", "Level")}</div>
+				<div className="side-h major">
+					{lx("基础知识", "Foundations")} <span className="n">· {lx("按级别", "By level")}</span>
+				</div>
 				<div className="side-seg">
 					{LEVEL_LIST.map(([lv, name]) => (
 						<button key={lv} className={lv === LEVEL ? "on" : ""} onClick={() => onLevel(lv)}>
@@ -526,7 +566,7 @@ function Sidebar({ routeKey, onLevel }: { routeKey: string; onLevel: (lv: LevelK
 				</div>
 			</div>
 			<div className="side-sec">
-				<div className="side-h">
+				<div className="side-sub">
 					{LV} {lx("内容", "Content")}
 				</div>
 				{types.map(([ty, ic, label]) => (
@@ -543,29 +583,46 @@ function Sidebar({ routeKey, onLevel }: { routeKey: string; onLevel: (lv: LevelK
 				))}
 			</div>
 			<div className="side-sec">
-				<div className="side-h">{lx("本模块", "This module")}</div>
+				<div className="side-sub">{lx("本模块", "This module")}</div>
 				{row("#/cards", "🗂️", lx("记忆卡", "Flashcards"), null, h === "#/cards")}
 				{isGram() && hasContrast(MODULE)
 					? row("#/contrast", "🔀", `${LV} ${lx("辨析", "Contrast")}`, null, h === "#/contrast")
 					: null}
+				{row("#/review", "🗓️", lx("课堂复习", "Lesson review"), null, h.startsWith("#/review"))}
+				{row("#/kanji-exam", "🈶", lx("汉字自测", "Kanji Self-test"), null, h === "#/kanji-exam")}
 			</div>
 			<div className="side-sec">
-				<div className="side-h">
-					{lx("通用知识", "General reference")} <span className="n">· {lx("不分级别", "All levels")}</span>
+				<div className="side-h major">
+					{lx("专题知识", "Topics")} <span className="n">· {lx("不分级别", "All levels")}</span>
 				</div>
-				{row("#/review", "🗓️", lx("课堂复习", "Lesson review"), null, h.startsWith("#/review"))}
-				{row("#/topics", "🏷️", lx("专题词汇", "Topic vocabulary"), null, h.startsWith("#/topics"))}
+				<div className="side-sub">{lx("工作面试", "Work & interviews")}</div>
+				{row("#/it-listening", "💻", lx("IT 听力", "IT Listening"), null, h.startsWith("#/it-listening"))}
+				{row("#/it-listening/mistakes", "📕", lx("错词本", "Mistake Words"), null, h === "#/it-listening/mistakes")}
+				{row("#/topics/job-interview", "🎤", lx("日语面试", "Job interview"), null, h === "#/topics/job-interview")}
+				{row("#/topics/frontend", "🖥️", lx("前端工程师", "Frontend engineer"), null, h === "#/topics/frontend")}
+				{row("#/keigo", "🙏", lx("敬语总结", "Keigo summary"), null, h === "#/keigo")}
+				<div className="side-sub">{lx("生活", "Daily life")}</div>
+				{row("#/topics/bank-atm", "🏧", lx("银行 ATM", "Bank ATM"), null, h === "#/topics/bank-atm")}
+				{row("#/topics/clothes-shopping", "🛍️", lx("逛街买衣服", "Clothes shopping"), null, h === "#/topics/clothes-shopping")}
+				{row("#/topics/cafe-menu", "☕", lx("咖啡店菜单", "Cafe menu"), null, h === "#/topics/cafe-menu")}
+				{row("#/wearing", "👕", lx("穿衣穿戴", "Wearing"), null, h === "#/wearing")}
+				{row("#/kougo", "💬", lx("口语", "Casual"), null, h === "#/kougo")}
+				<div className="side-sub">{lx("投资理财", "Investing & finance")}</div>
+				{row("#/topics/japan-investing", "📈", lx("日本投资理财", "Investing in Japan"), null, h === "#/topics/japan-investing")}
+				{investSubs.map(([zh, en]) => (
+					<button key={zh} className="side-item side-subitem" onClick={() => openTopicSub("japan-investing", zh)}>
+						<span className="ic">▸</span>
+						{lx(zh, en)}
+					</button>
+				))}
+				<div className="side-sub">{lx("通用", "General")}</div>
+				{row("#/topics", "🏷️", lx("专题词汇总览", "All topic vocabulary"), null, h === "#/topics")}
 				{row("#/ref", "📖", lx("接续表", "Connections"), null, h === "#/ref")}
 				{row("#/katsuyou", "🔄", lx("活用", "Conjugation"), null, h === "#/katsuyou")}
 				{row("#/henkei", "✍️", lx("变形口诀", "Verb mnemonics"), null, h === "#/henkei")}
 				{row("#/verb-summary", "🔤", lx("变形总结", "Verb summary"), null, h === "#/verb-summary")}
-				{row("#/keigo", "🙏", lx("敬语总结", "Keigo summary"), null, h === "#/keigo")}
-				{row("#/kougo", "💬", lx("口语", "Casual"), null, h === "#/kougo")}
 				{row("#/jita", "↔️", lx("自他动词", "Verb pairs"), null, h === "#/jita")}
-				{row("#/wearing", "👕", lx("穿衣穿戴", "Wearing"), null, h === "#/wearing")}
 				{row("#/numbers", "🔢", lx("数字", "Numbers"), null, h === "#/numbers")}
-				{row("#/kanji-exam", "🈶", lx("汉字自测", "Kanji Self-test"), null, h === "#/kanji-exam")}
-				{row("#/it-listening", "💻", lx("IT 听力", "IT Listening"), null, h.startsWith("#/it-listening"))}
 			</div>
 			<div className="side-foot">
 				{row("#/usage", "⏱️", lx("使用时间", "Study time"), null, h === "#/usage")}
@@ -574,143 +631,6 @@ function Sidebar({ routeKey, onLevel }: { routeKey: string; onLevel: (lv: LevelK
 				{row("#/favs", "⭐", lx("收藏", "Favorites"), favCount || "", h === "#/favs")}
 			</div>
 		</aside>
-	);
-}
-
-function Sheet({
-	kind,
-	onClose,
-	onLevel,
-}: {
-	kind: "level" | "common" | null;
-	onClose: () => void;
-	onLevel: (lv: LevelKey) => void;
-}) {
-	if (!kind) return null;
-	const levelSubs: Record<string, [string, string]> = { 基础: ["基础", "Foundation"], 进阶: ["进阶", "Intermediate"], 高阶: ["高阶", "Advanced"], 顶级: ["顶级", "Expert"] };
-	return (
-		<>
-			<div className="sheet-mask" id="sheetMask" onClick={onClose} />
-			<div className="sheet" id="sheet" role="dialog" aria-modal="true">
-				<div className="sheet-grip" />
-				{kind === "level" ? (
-					<>
-						<div className="sheet-h">
-							{lx("选择级别", "Choose a level")}
-							<span className="sub">
-								{lx("当前", "Current")} · {modLabel()}
-							</span>
-						</div>
-						<div className="sheet-row">
-							{LEVEL_LIST.map(([lv, name, sub]) => (
-								<button key={lv} className={`sheet-item ${lv === LEVEL ? "on" : ""}`} onClick={() => onLevel(lv)}>
-									<span className="ic">{name}</span>
-									<span className="sub">{lx(...levelSubs[sub])}</span>
-								</button>
-							))}
-						</div>
-					</>
-				) : (
-					<>
-						<div className="sheet-h">
-							{lx("通用知识", "General reference")}
-							<span className="sub">{lx("不分级别", "All levels")}</span>
-						</div>
-						<div className="sheet-row">
-							<button className="sheet-item sheet-item--feature" onClick={() => { onClose(); navTo("#/review"); }}>
-								<span className="ic">🗓️</span>
-								{lx("课堂复习", "Lesson review")}
-							</button>
-							<button className="sheet-item sheet-item--feature" data-sheet="topics" onClick={() => { onClose(); navTo("#/topics"); }}>
-								<span className="ic">🏷️</span>
-								{lx("专题词汇", "Topic vocabulary")}
-							</button>
-							<button className="sheet-item sheet-item--feature" data-sheet="usage" onClick={() => { onClose(); navTo("#/usage"); }}>
-								<span className="ic">⏱️</span>
-								{lx("使用时间", "Study time")}
-							</button>
-						</div>
-						<div className="sheet-row">
-							<button className="sheet-item" onClick={() => { onClose(); navTo("#/ref"); }}>
-								<span className="ic">📖</span>
-								{lx("接续表", "Connections")}
-							</button>
-							<button className="sheet-item" onClick={() => { onClose(); navTo("#/katsuyou"); }}>
-								<span className="ic">🔄</span>
-								{lx("活用", "Conjugation")}
-							</button>
-							<button className="sheet-item" onClick={() => { onClose(); navTo("#/henkei"); }}>
-								<span className="ic">✍️</span>
-								{lx("变形口诀", "Verb mnemonics")}
-							</button>
-						</div>
-						<div className="sheet-row">
-							<button className="sheet-item" onClick={() => { onClose(); navTo("#/verb-summary"); }}>
-								<span className="ic">🔤</span>
-								{lx("变形总结", "Verb summary")}
-							</button>
-							<button className="sheet-item" onClick={() => { onClose(); navTo("#/keigo"); }}>
-								<span className="ic">🙏</span>
-								{lx("敬语总结", "Keigo summary")}
-							</button>
-							<span className="sheet-item" style={{ visibility: "hidden" }} />
-						</div>
-						<div className="sheet-row">
-							<button className="sheet-item" onClick={() => { onClose(); navTo("#/it-listening"); }}>
-								<span className="ic">💻</span>
-								{lx("IT 听力", "IT Listening")}
-							</button>
-							<span className="sheet-item" style={{ visibility: "hidden" }} />
-							<span className="sheet-item" style={{ visibility: "hidden" }} />
-						</div>
-						<div className="sheet-row">
-							<button className="sheet-item" onClick={() => { onClose(); navTo("#/kougo"); }}>
-								<span className="ic">💬</span>
-								{lx("口语", "Casual")}
-							</button>
-							<button className="sheet-item" onClick={() => { onClose(); navTo("#/jita"); }}>
-								<span className="ic">↔️</span>
-								{lx("自他动词", "Verb pairs")}
-							</button>
-							<button className="sheet-item" onClick={() => { onClose(); navTo("#/numbers"); }}>
-								<span className="ic">🔢</span>
-								{lx("数字", "Numbers")}
-							</button>
-						</div>
-						<div className="sheet-row">
-							<button className="sheet-item" onClick={() => { onClose(); navTo("#/kanji-exam"); }}>
-								<span className="ic">🈶</span>
-								{lx("汉字自测", "Kanji Self-test")}
-							</button>
-							<button className="sheet-item" onClick={() => { onClose(); navTo("#/wearing"); }}>
-								<span className="ic">👕</span>
-								{lx("穿衣穿戴", "Wearing")}
-							</button>
-							<span className="sheet-item" style={{ visibility: "hidden" }} />
-						</div>
-						<div className="sheet-h">
-							{lx("本模块", "This module")}
-							<span className="sub">{modLabel()}</span>
-						</div>
-						<div className="sheet-row">
-							<button className="sheet-item scoped" onClick={() => { onClose(); navTo("#/cards"); }}>
-								<span className="ic">🗂️</span>
-								{lx("记忆卡", "Flashcards")}
-							</button>
-							{isGram() && hasContrast(MODULE) ? (
-								<button className="sheet-item scoped" onClick={() => { onClose(); navTo("#/contrast"); }}>
-									<span className="ic">🔀</span>
-									{LEVEL.toUpperCase()} {lx("辨析", "Contrast")}
-								</button>
-							) : (
-								<span className="sheet-item" style={{ visibility: "hidden" }} />
-							)}
-							<span className="sheet-item" style={{ visibility: "hidden" }} />
-						</div>
-					</>
-				)}
-			</div>
-		</>
 	);
 }
 
@@ -975,6 +895,15 @@ export function StudyApp() {
 		});
 		setBooted(true);
 		bootStudyData();
+		if (typeof window !== "undefined") {
+			const ric = (window as { requestIdleCallback?: (cb: () => void, opts?: { timeout: number }) => void }).requestIdleCallback;
+			const preloadAstryx = () => {
+				preloadSheet();
+				preloadAccountMenu();
+			};
+			if (ric) ric(preloadAstryx, { timeout: 3000 });
+			else window.setTimeout(preloadAstryx, 2500);
+		}
 		return attachResync();
 	}, []);
 
@@ -1155,7 +1084,7 @@ export function StudyApp() {
 			<HomePage data={homeData} />
 		);
 	else if (routeKey === "#/search") body = <SearchPage />;
-	else if (routeKey === "#/usage") body = <UsagePage />;
+	else if (routeKey === "#/usage") body = <LazyUsagePage />;
 	else if (routeKey === "#/cards") body = isGram() ? <CardsPage /> : <LazyModuleCardsPage />;
 	else if (routeKey === "#/kanji-exam") body = <LazyKanjiExamPage />;
 	else if (routeKey === "#/favs") body = showingFavFc ? <FavFcPage data={favFcPayload()} /> : <FavsPage data={favsPayload()} />;
@@ -1217,9 +1146,14 @@ export function StudyApp() {
 				</main>
 			) : null}
 			<BottomNav active={meta.nav} onCommon={() => setSheet("common")} />
-			<Sheet kind={sheet} onClose={() => setSheet(null)} onLevel={pickLevel} />
+			{sheet ? (
+				<Suspense fallback={null}>
+					<LazySheet kind={sheet} onClose={() => setSheet(null)} onLevel={pickLevel} />
+				</Suspense>
+			) : null}
 			<SelectionPopover routeKey={routeKey} />
 			<PointerTiltRoot />
+			<FavBurstRoot />
 			<ToastStack />
 			<LoginPromptDialog />
 			<GuestLoginSuggest />
