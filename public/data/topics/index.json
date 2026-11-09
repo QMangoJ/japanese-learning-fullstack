@@ -95,6 +95,21 @@
 				"逆質問",
 				"补充：前端面试表达"
 			]
+		},
+		{
+			"slug": "kanji-journey",
+			"title_zh": "《漢字的旅程》发表稿",
+			"title_ja": "『漢字の旅程』発表原稿",
+			"count": 30,
+			"title_en": "The Journey of Kanji — Presentation Script",
+			"subtopics": [
+				"开场",
+				"最古老的汉字",
+				"字形的变化",
+				"来到日本",
+				"结尾",
+				"来宾问答"
+			]
 		}
 	]
 }
