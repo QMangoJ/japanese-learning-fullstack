@@ -6,6 +6,7 @@ import { listeningBundle, listeningN1Bundle, listeningN2Bundle, readingBundle, r
 import { forgetDue, hydrateDue, kickDueSync, mistakeDueDraft, mistakeDueId, noteDueSignedOut, pullDueFromServer, pushDueNow, rememberFail, resetDueForTests } from "./due-review";
 import { canAttemptSync, noteSyncResult, resetSyncPolicyForTests } from "./kv-sync-policy";
 import { hydrateMastery, kickMasterySync, noteMasterySignedOut, pullMasteryFromServer, pushMasteryNow, resetMasteryForTests } from "./memory-mastery";
+import { hydrateItlDone, kickItlDoneSync, noteItlDoneSignedOut, pullItlDoneFromServer, pushItlDoneNow } from "./itl-done";
 import { refreshUsageAccount } from "./usage-time";
 import { applyResumeOrder, loadResumePos, loadResumeScope, resumeIndex, saveResume } from "./cards-resume";
 import { pushToast } from "./toast";
@@ -1912,6 +1913,7 @@ export function hydrateFromStorage() {
 	MISTAKES = cleanMistakes(lsJson("mistakes", []));
 	hydrateDue();
 	hydrateMastery();
+	hydrateItlDone();
 	noRuby = lsGet("noruby", "0") === "1";
 	hideJp = lsGet("hidejp", "0") === "1";
 	hideCn = lsGet("hidecn", "0") === "1";
@@ -2186,14 +2188,16 @@ export async function bootAccount() {
 		_mistakesPendingPush = false;
 		noteDueSignedOut();
 		noteMasterySignedOut();
+		noteItlDoneSignedOut();
 		return;
 	}
 	await pullFavsFromServer();
 	await pullMistakesFromServer();
 	await pullDueFromServer(ACCOUNT.id);
 	await pullMasteryFromServer(ACCOUNT.id);
+	await pullItlDoneFromServer(ACCOUNT.id);
 	lsSet("accountId", ACCOUNT.id);
-	await Promise.all([pushFavsNow(), pushMistakesNow(), pushDueNow(), pushMasteryNow()]);
+	await Promise.all([pushFavsNow(), pushMistakesNow(), pushDueNow(), pushMasteryNow(), pushItlDoneNow()]);
 }
 
 export function attachResync() {
@@ -2203,6 +2207,7 @@ export function attachResync() {
 		if (!_mistakesPendingPush) void resyncMistakes();
 		kickDueSync();
 		kickMasterySync();
+		kickItlDoneSync();
 	};
 	const onVis = () => {
 		if (document.visibilityState === "visible") resyncAll();

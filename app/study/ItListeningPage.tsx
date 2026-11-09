@@ -12,6 +12,7 @@ import {
 	type ItListeningRubySegment,
 	type MistakeWordsFile,
 } from "./it-listening";
+import { toggleItlDone, useItlDone } from "./itl-done";
 import { lx, navTo } from "./store";
 import "../routes/it-listening.css";
 
@@ -178,6 +179,7 @@ function channelSections(articles: ItListeningIndexEntry[]): ChannelSection[] {
 const ITL_TAB_KEY = "itl-channel-tab";
 
 function ItListeningList() {
+	const { doneIds } = useItlDone();
 	const [index, setIndex] = useState<ItListeningIndex | null>(null);
 	const [error, setError] = useState(false);
 	// 记住上次选中的频道 Tab（设备本地）；默认主频道 まいにち日本語勉強。
@@ -271,7 +273,10 @@ function ItListeningList() {
 										{a.unit ? ` · Unit ${a.unit}` : ""}
 										{a.track ? ` · ${a.track}` : ""}
 									</span>
-									<strong>{a.title_zh}</strong>
+									<strong>
+										{a.title_zh}
+										{doneIds.has(a.id) ? <span className="itl-done-badge">✓ {lx("学完", "Done")}</span> : null}
+									</strong>
 									<span className="itl-card-ja">{a.title_ja}</span>
 									<span className="itl-card-meta">
 										{a.source} · {lx(`${a.sentenceCount} 句`, `${a.sentenceCount} sentences`)}
@@ -291,6 +296,8 @@ function ItListeningList() {
 }
 
 function ItListeningDetail({ id }: { id: string }) {
+	const { doneIds } = useItlDone();
+	const done = doneIds.has(id);
 	const [article, setArticle] = useState<ItListeningArticle | null>(null);
 	const [error, setError] = useState(false);
 
@@ -350,6 +357,9 @@ function ItListeningDetail({ id }: { id: string }) {
 					{lx("来源", "Source")}：{article.source}
 					{article.durationSec ? ` · ${fmtDuration(article.durationSec)}` : ""} · {lx(`${article.sentences.length} 句`, `${article.sentences.length} sentences`)}
 				</p>
+				<button type="button" className={`itl-done-btn${done ? " on" : ""}`} aria-pressed={done} onClick={() => toggleItlDone(id)}>
+					{done ? lx("✓ 已学完（点此取消）", "✓ Finished (tap to undo)") : lx("学完这篇 ✓", "Mark this article as finished ✓")}
+				</button>
 			</header>
 
 			<section className="itl-player">

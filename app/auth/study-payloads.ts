@@ -65,6 +65,18 @@ export function isMasteryPayload(value: unknown) {
 	});
 }
 
+const MAX_ITL_DONE = 500;
+
+export function isItlDonePayload(value: unknown) {
+	if (!Array.isArray(value) || value.length > MAX_ITL_DONE) return false;
+	return value.every((item) => {
+		if (!isRecord(item)) return false;
+		if (typeof item.articleId !== "string" || !isSafeId(item.articleId) || !isString(item.articleId, MAX_ID_LENGTH, false)) return false;
+		if (typeof item.done !== "boolean") return false;
+		return isFiniteNumber(item.ts);
+	});
+}
+
 const DUE_KINDS = new Set(["grammar", "mistake", "listening", "topic"]);
 const DUE_DATE = /^\d{4}-\d{2}-\d{2}$/;
 
