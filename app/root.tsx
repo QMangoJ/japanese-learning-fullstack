@@ -49,6 +49,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
 				<meta name="apple-mobile-web-app-title" content="日本語上手" />
 				<Meta />
 				<Links />
+				{/* StyleX (astryx-spike): in dev the unplugin serves the collected
+				 * StyleX sheet from this URL; in production it is appended to the
+				 * root CSS asset instead, so this link exists only in dev. */}
+				{import.meta.env.DEV ? <link rel="stylesheet" href="/virtual:stylex.css" /> : null}
 			</head>
 			<body>
 				{children}

@@ -1,0 +1,43 @@
+/* Astryx spike (branch astryx-spike): official Vite setup for @astryxdesign/core.
+ * Import order maps to the layer cascade: reset -> component styles -> theme.
+ * Only the study Sheet uses Astryx for now, but CSS is global by nature; the
+ * app's own unlayered stylesheets (public/study.css, app/app.css) outrank
+ * these layered rules wherever both target the same element. */
+@import "@astryxdesign/core/reset.css";
+@import "@astryxdesign/core/astryx.css";
+@import "@astryxdesign/theme-neutral/theme.css";
+
+/* Theme alignment: re-point the neutral theme's tokens at the study app's own
+ * palette variables (public/study.css :root / html.theme-dark), so Astryx
+ * components inside .astryx-scope wear the app's warm colors — vermilion
+ * accent, teal selection — instead of Meta's neutral grays, and follow the
+ * app's light/dark switch for free. This wrapper sits INSIDE the Astryx
+ * <Theme> root, so these custom properties win for everything below it. */
+.astryx-scope {
+	--color-background-body: var(--bg);
+	--color-background-surface: var(--card);
+	--color-background-card: var(--bg);
+	--color-background-popover: var(--card);
+	--color-background-muted: var(--bg);
+	--color-text-primary: var(--ink);
+	--color-text-secondary: var(--sub);
+	--color-text-disabled: var(--sub);
+	--color-border: var(--line);
+	--color-border-emphasized: color-mix(in srgb, var(--sub) 45%, transparent);
+	--color-accent: var(--accent);
+	--color-accent-muted: var(--accent-soft);
+	--color-text-accent: var(--accent);
+	/* App "selected" state is teal (--blue), not the theme's info blue. */
+	--color-info: var(--blue);
+	--color-info-muted: var(--blue-soft);
+	--color-text-info: var(--blue);
+	--color-border-info: var(--blue);
+	--color-background-teal: var(--blue-soft);
+	--color-border-teal: var(--blue);
+	--color-text-teal: var(--blue);
+	--radius-container: 16px;
+	--radius-element: 12px;
+	--radius-inner: 10px;
+	--font-family-body: "Hiragino Maru Gothic ProN", "M PLUS Rounded 1c", "Hiragino Sans", "Yu Gothic", "PingFang SC", -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+	--font-family-heading: "Hiragino Maru Gothic ProN", "M PLUS Rounded 1c", "Hiragino Sans", "Yu Gothic", "PingFang SC", -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+}

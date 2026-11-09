@@ -1,8 +1,11 @@
 import tsconfigPaths from "vite-tsconfig-paths";
+import stylex from "@stylexjs/unplugin";
 import { defineConfig } from "vitest/config";
 
 export default defineConfig({
-	plugins: [tsconfigPaths()],
+	// Astryx spike: components under test use stylex.create(), which throws at
+	// runtime unless compiled — run the same StyleX transform as the app build.
+	plugins: [stylex.vite(), tsconfigPaths()],
 	esbuild: { jsx: "automatic" },
 	test: {
 		environment: "jsdom",
