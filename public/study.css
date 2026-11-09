@@ -123,7 +123,10 @@ button.topic-submod:hover{border-color:var(--accent);color:var(--accent)}
 .side-item{display:flex;align-items:center;gap:8px;border:none;background:none;color:var(--ink);font-size:15px;
   padding:7px 8px;border-radius:7px;cursor:pointer;text-align:left;width:100%;min-height:34px}
 .side-item .ic{flex:none;width:17px;text-align:center}
-.side-item .ct{margin-left:auto;font-size:12.5px;color:var(--sub);flex:none}
+.side-item .ct{margin-left:auto;font-size:12.5px;color:var(--sub);flex:none;position:relative;animation:ct-in .2s cubic-bezier(.23,1,.32,1)}
+.ct-ripple{position:absolute;left:50%;top:50%;width:22px;height:22px;border:2px solid var(--blue);border-radius:50%;pointer-events:none}
+@keyframes ct-in{from{transform:scale(0)}to{transform:scale(1)}}
+@media (prefers-reduced-motion: reduce){.side-item .ct{animation:none}}
 .side-item:hover{background:var(--bg)}
 .side-item.on{background:var(--blue-soft);color:var(--blue);font-weight:700}
 .side-item.on .ct{color:var(--blue)}
@@ -564,6 +567,13 @@ body.hide-cn .vcn,body.hide-cn .cn{visibility:hidden}
 .exam-fav-btn{display:inline-flex;align-items:center;justify-content:center;min-height:30px;border:1px solid var(--amber);border-radius:999px;padding:4px 10px;background:var(--card);color:var(--amber);font:700 14px/1 inherit;white-space:nowrap;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
 .exam-fav-btn.on{background:var(--amber-soft)}
 .exam-fav-btn:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+/* Motion Prompt #166: press squeeze (0.78x) on favorite buttons; the pop,
+   ring and particles themselves are WAAPI-driven in app/study/fav-burst.tsx. */
+.starb,.exam-fav-btn{position:relative}
+.starb:active,.exam-fav-btn:active{transform:scale(.78);transition:transform .1s ease-out}
+.fav-burst-ring{position:absolute;left:50%;top:50%;border:2px solid #f23d5c;border-radius:50%;pointer-events:none;z-index:2}
+.fav-burst-dot{position:absolute;left:50%;top:50%;width:5px;height:5px;border-radius:50%;pointer-events:none;z-index:2}
+@media (prefers-reduced-motion: reduce){.starb:active,.exam-fav-btn:active{transform:none;transition:none}}
 @media (max-width:480px){
   .exam-qline{grid-template-columns:auto minmax(0,1fr)}
   .exam-fav-btn{grid-column:2;justify-self:start;margin-top:6px;min-height:34px;padding:5px 11px}

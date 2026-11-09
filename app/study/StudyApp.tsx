@@ -17,6 +17,7 @@ import {
 } from "../routes/study-common";
 import { ContrastPage, DayNav, DayPage, parseDayRoute } from "./days";
 import { PointerTiltRoot } from "./pointer-tilt";
+import { FavBurstRoot } from "./fav-burst";
 import { ToastStack } from "./toast-stack";
 import { getDueVersion, subscribeDue } from "./due-review";
 import { formatReviewDate, jstToday, parseReviewRoute, reviewDateFromId } from "./lesson-review";
@@ -99,6 +100,7 @@ import {
 	type TypeKey,
 } from "./store";
 import { selectionPopoverPosition } from "./selection-popover-position";
+import { prefersReducedMotion } from "./motion-pref";
 // Keep the styles for lazy study modules in the shell so WebKit never paints
 // their content before the asynchronously discovered CSS has applied.
 import "../routes/kanji-exam.css";
@@ -478,6 +480,42 @@ function weeksOf(ty: TypeKey) {
 	return lx(w + "周", w + " weeks");
 }
 
+/** Sidebar count badge. Motion Prompt #071: when the number grows it pops
+ * 1.3 -> 1 over 0.3 s with a ripple ring (0.5 s); first appearance scales in
+ * via the .ct CSS animation. Reduced motion: static. */
+function CtBadge({ value }: { value: string | number }) {
+	const ref = useRef<HTMLSpanElement>(null);
+	const prev = useRef(value);
+	useEffect(() => {
+		const el = ref.current;
+		const was = prev.current;
+		prev.current = value;
+		if (!el || prefersReducedMotion()) return;
+		const n = Number(value);
+		const before = Number(was);
+		if (!Number.isFinite(n) || !Number.isFinite(before) || n <= before) return;
+		el.animate([{ transform: "scale(1.3)" }, { transform: "scale(1)" }], { duration: 300, easing: "cubic-bezier(.23,1,.32,1)" });
+		const ring = document.createElement("span");
+		ring.className = "ct-ripple";
+		el.appendChild(ring);
+		ring
+			.animate(
+				[
+					{ transform: "translate(-50%,-50%) scale(1)", opacity: 0.5 },
+					{ transform: "translate(-50%,-50%) scale(2.33)", opacity: 0 },
+				],
+				{ duration: 500, easing: "ease-out" },
+			)
+			.finished.catch(() => {})
+			.finally(() => ring.remove());
+	}, [value]);
+	return (
+		<span className="ct" ref={ref}>
+			{value}
+		</span>
+	);
+}
+
 function Sidebar({ routeKey, onLevel }: { routeKey: string; onLevel: (lv: LevelKey) => void }) {
 	const h = routeKey;
 	const LV = LEVEL.toUpperCase();
@@ -497,7 +535,7 @@ function Sidebar({ routeKey, onLevel }: { routeKey: string; onLevel: (lv: LevelK
 		>
 			<span className="ic">{ic}</span>
 			{label}
-			{count != null && count !== "" ? <span className="ct">{count}</span> : null}
+			{count != null && count !== "" ? <CtBadge value={count} /> : null}
 		</button>
 	);
 	// 投资理财的子模块 = japan-investing 数据的 subtopics（zh 须与 public/data/topics/japan-investing.json 逐字一致，改数据时同步这里）
@@ -1115,6 +1153,7 @@ export function StudyApp() {
 			) : null}
 			<SelectionPopover routeKey={routeKey} />
 			<PointerTiltRoot />
+			<FavBurstRoot />
 			<ToastStack />
 			<LoginPromptDialog />
 			<GuestLoginSuggest />
