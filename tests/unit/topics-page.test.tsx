@@ -75,6 +75,52 @@ describe("TopicsPage", () => {
 		await waitFor(() => expect(container.querySelectorAll(".topic-item")).toHaveLength(1));
 	});
 
+	it("puts readings as ruby over kanji only on kanji-journey script cards", async () => {
+		const { container } = render(<TopicsPage slug="kanji-journey" />);
+		await waitFor(() => expect(container.querySelector('[data-card="kj-002"]')).not.toBeNull());
+		const head = (id: string) => container.querySelector(`[data-card="${id}"] .topic-item__top`)!;
+		const rubyBase = (r: Element) =>
+			[...r.childNodes]
+				.filter((n) => n.nodeType === 3)
+				.map((n) => n.textContent)
+				.join("");
+		// 正文句（kj-002）：复用分段注音渲染主句——ruby 只罩汉字，假名部分在 ruby 外，主区没有整行 kana。
+		const top = head("kj-002");
+		expect(top.querySelector(".topic-item__kana")).toBeNull();
+		const rubies = [...top.querySelectorAll(".topic-item__jp ruby")];
+		expect(rubies.map(rubyBase)).toEqual(["中国", "来"]);
+		expect(rubies.map((r) => r.querySelector("rt")?.textContent)).toEqual(["ちゅうごく", "き"]);
+		expect(top.querySelector(".topic-item__jp")?.textContent).toContain("から");
+		// 全假名开场句（kj-001）：没有汉字就不需要注音，也不摆 kana 行。
+		const plain = head("kj-001");
+		expect(plain.querySelector("ruby")).toBeNull();
+		expect(plain.querySelector(".topic-item__kana")).toBeNull();
+		// 问句卡（kj-024）：例句是回答、主句没有分段 → 保留整行 kana 兜底。
+		const qa = head("kj-024");
+		expect(qa.querySelector(".topic-item__jp ruby")).toBeNull();
+		expect(qa.querySelector(".topic-item__kana")?.textContent).toBe("この どうがは じぶんで つくったんですか");
+	});
+
+	it("renders word cards as whole-word ruby without a kana row", async () => {
+		const { container } = render(<TopicsPage slug="japan-investing" />);
+		await screen.findByText("証券口座");
+		const item = container.querySelector('[data-card="inv-001"]')!;
+		const top = item.querySelector(".topic-item__top")!;
+		expect(top.querySelector(".topic-item__kana")).toBeNull();
+		const ruby = top.querySelector(".topic-item__jp ruby")!;
+		expect(ruby).not.toBeNull();
+		expect(ruby.querySelector("rt")?.textContent).toBe("しょうけんこうざ");
+	});
+
+	it("keeps the kana row as fallback for sentence cards without ruby segments (bo-001)", async () => {
+		const { container } = render(<TopicsPage slug="bank-atm" />);
+		await screen.findByText("口座開設をしたいのですが。");
+		const item = container.querySelector('[data-card="bo-001"]')!;
+		const top = item.querySelector(".topic-item__top")!;
+		expect(top.querySelector(".topic-item__jp ruby")).toBeNull();
+		expect(top.querySelector(".topic-item__kana")?.textContent).toBe("こうざかいせつをしたいのですが");
+	});
+
 	it("runs a flashcard self-test", async () => {
 		const { container } = render(<TopicsPage slug="japan-investing" />);
 		await screen.findByText("証券口座");

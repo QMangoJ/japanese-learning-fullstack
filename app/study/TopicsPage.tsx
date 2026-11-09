@@ -7,7 +7,7 @@ import { CountPair } from "./tick-text";
 import type { SwipeGrade } from "./swipe-grade";
 import { jstToday } from "./lesson-review";
 import { LANG, lx, navTo, openTopicSub, takeTopicSubPreset } from "./store";
-import { isTopicFile, isTopicIndex, topicDueId, type TopicCard, type TopicFile, type TopicIndex } from "./topic-vocab";
+import { isTopicFile, isTopicIndex, stripRuby, topicDueId, type TopicCard, type TopicFile, type TopicIndex } from "./topic-vocab";
 
 type Status = "new" | "unknown" | "learning";
 type OnlyFilter = "all" | "unknown" | "due";
@@ -164,6 +164,44 @@ function TopicCardGroups({ index }: { index: TopicIndex }) {
 	);
 }
 
+
+const KANJI_RE = /[\u3400-\u9fff\u3005々〆ヶ]/;
+/** 整句判定：有句末标点，或以句末谓语形式（敬语体居多）结尾。数据里不少整句不带「。」，只看标点会漏。 */
+const SENTENCE_RE = /[。！？!?]|(です|ます|ください|でしょうか|しょうか|いただけます|いたします|いただきます|ございます|でした|ました|ません|おります|なります|あります|ですか|ますか)$/;
+
+/**
+ * 列表视图卡片主区的注音呈现（Daniel 定的规矩：读音标在汉字上面，不是汉字不注音）：
+ * 1) 例句的 ruby 分段正好就是主句本身（发表稿这类句子卡）→ 复用分段渲染主句；
+ * 2) 单词/短语卡 → 整词 ruby（带送假名的词是近似呈现，接受）；
+ * 3) 没有分段的整句卡 → 保留整行 kana 兜底（整词 ruby 会把整句读音罩成一团），读音不丢；
+ * 主句里没有汉字时无需注音，也不显示 kana 行。走 1/2 的卡主区不再单独摆 kana 行。
+ */
+function TopicItemHead({ card }: { card: TopicCard }) {
+	if (card.example_ruby && stripRuby(card.example_ruby) === card.jp) {
+		return (
+			<span className="topic-item__jp jp">
+				<RubyHtml html={card.example_ruby} />
+			</span>
+		);
+	}
+	if (!KANJI_RE.test(card.jp)) return <span className="topic-item__jp jp">{card.jp}</span>;
+	if (SENTENCE_RE.test(card.jp)) {
+		return (
+			<>
+				<span className="topic-item__jp jp">{card.jp}</span>
+				<span className="topic-item__kana jp">{card.kana}</span>
+			</>
+		);
+	}
+	return (
+		<span className="topic-item__jp jp">
+			<ruby>
+				{card.jp}
+				<rt>{card.kana}</rt>
+			</ruby>
+		</span>
+	);
+}
 
 /** 例句下方标注：敬语对照（敬语形←普通形＋类别）和例句语法讲解，没有的专题不显示。 */
 function KeigoGrammar({ card }: { card: TopicCard }) {
@@ -361,8 +399,7 @@ function TopicDetail({ slug }: { slug: string }) {
 							return (
 								<li key={card.id} className="topic-item" data-card={card.id}>
 									<div className="topic-item__top">
-										<span className="topic-item__jp jp">{card.jp}</span>
-										<span className="topic-item__kana jp">{card.kana}</span>
+										<TopicItemHead card={card} />
 										<SayButton text={card.jp} />
 										{chip(card)}
 									</div>

@@ -908,6 +908,7 @@ body.hide-cn .vcn,body.hide-cn .cn{visibility:hidden}
 .topic-item__top{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
 .topic-item__jp{font-size:21.5px;font-weight:700}
 .topic-item__kana{color:var(--sub);font-size:16px}
+.topic-item__jp rt{font-weight:400;color:var(--sub)}
 .topic-item__zh{font-size:17px;font-weight:600}
 .topic-item__ex{font-size:16px;line-height:1.6;border-left:3px solid var(--line);padding-left:10px}
 .topic-item__ex .cn{color:var(--sub)}
