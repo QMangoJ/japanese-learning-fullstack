@@ -1,15 +1,16 @@
 /**
- * 《漢字的旅程》阅读文章（会話発表②发表稿）。
+ * 《漢字的旅程》阅读文章（日语版视频 full_ja_v6 的暂停讲解备忘录）。
  *
- * 2026-11-10 按 Daniel 的要求从「专题词汇」闪卡改成 IT 听力式的阅读文章：
- * 一篇稿子按原稿顺序读下来——正文 23 句分五节、每句带注音分段 + 中文译文 + 逐句朗读，
- * 之后是「来宾问答」6 组问答对，文末一条救命句小注。
+ * 正文按备忘录分成 8 段：开场、第 1–6 段、结尾。日文原句与备忘录逐字一致
+ * （读音括号改成 ruby 分段，只给汉字注音，词间空格保留）。
+ * 第 1–6 段在句子上方标大约时码（pause_zh）和旁白最后一句（cue_ja）；
+ * 「开始播放 / 继续播放」一类舞台提示折进 pause_zh，不进句子。
+ * 来宾问答 6 组与文末救命句不在备忘录里，保持原样。
+ * Q6 回答里的「〇週間」是留给 Daniel 按实际填的占位，不要替他编数字。
  *
  * 数据：public/data/reading/kanji-journey.json（结构见 public/data/reading/README.md）。
  * 它仍挂在专题目录里（public/data/topics/index.json 中 kind: "reading" 的条目），
  * 路由沿用 #/topics/kanji-journey，由 TopicsPage 分流到 KanjiJourneyPage 渲染。
- * 日文原句与原稿 ~/workspace/user/kanji-journey-script.md 逐字一致（迁移时逐句核对过），
- * Q6 回答里的「〇週間」是留给 Daniel 按实际填的占位，不要替他编数字。
  */
 
 import type { ItListeningRubySegment } from "./it-listening";
@@ -30,6 +31,10 @@ export type KjSection = {
 	zh: string;
 	ja?: string;
 	en?: string;
+	/** 暂停提示：大约时码，或「播放前 / 片尾播完后」。舞台提示（开始播放、继续播放）折进这里，不进句子。 */
+	pause_zh?: string;
+	/** 视频旁白的最后一句，显示在该段句子上方，用来对上暂停点。 */
+	cue_ja?: string;
 	sentences: (KjSentence & { id: string })[];
 };
 
@@ -58,8 +63,9 @@ const KANJI_RE = /[\u3400-\u9fff\u3005々〆ヶ]/;
 
 /**
  * 阅读数据校验（与 tests/unit/kanji-journey-reading.test.ts 共用口径）：
- * 结构完整；每句注音分段拼接 == 原句；带读音的片段必须是汉字串、
+ * 结构完整；每句注音分段拼接 == 原句；带读音的片段必须含汉字、
  * 含汉字的片段必须有读音（站内注音规矩：只给汉字注音、读音不许漏）。
+ * pause_zh / cue_ja 可选，出现时必须是非空字符串。
  */
 export function validateKanjiJourneyArticle(data: unknown): string[] {
 	const errors: string[] = [];
@@ -104,6 +110,12 @@ export function validateKanjiJourneyArticle(data: unknown): string[] {
 			if (!isRec(sec) || typeof sec.zh !== "string" || !sec.zh) {
 				errors.push(`sections[${i}]: zh is required`);
 				return;
+			}
+			if ("pause_zh" in sec && (typeof sec.pause_zh !== "string" || !sec.pause_zh.trim())) {
+				errors.push(`sections[${i}]: pause_zh must be a non-empty string when present`);
+			}
+			if ("cue_ja" in sec && (typeof sec.cue_ja !== "string" || !sec.cue_ja.trim())) {
+				errors.push(`sections[${i}]: cue_ja must be a non-empty string when present`);
 			}
 			if (!Array.isArray(sec.sentences) || !sec.sentences.length) {
 				errors.push(`sections[${i}]: sentences must be a non-empty array`);

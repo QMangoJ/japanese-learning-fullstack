@@ -55,7 +55,7 @@ export type TopicFile = {
 export type TopicIndexEntry = {
 	slug: string;
 	/** 条目形态：缺省 "vocab" = 专题词汇闪卡（数据在 topics/<slug>.json）；
-	 * "reading" = 阅读文章型（如《漢字的旅程》发表稿，数据在 public/data/reading/<slug>.json，
+	 * "reading" = 阅读文章型（如《漢字的旅程》v6 暂停讲解，数据在 public/data/reading/<slug>.json，
 	 * count 为正文句数，详情页渲染文章页而不是闪卡）。 */
 	kind?: "vocab" | "reading";
 	title_zh: string;
