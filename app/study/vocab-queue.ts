@@ -12,7 +12,12 @@ import { jstToday } from "./lesson-review";
  *   step 0 ──know──▶ 1 ──know──▶ 2 ──know──▶ 3 ──know──▶ 4 ──know──▶ 5
  *   interval after a "know":        3d        7d        14d       30d       60d
  *   "fuzzy" keeps the step and comes back sooner (1/1/3/7/14/30d by step).
- *   "again" resets to step 0 and is due tomorrow (and re-shown once today).
+ *   "again" resets to step 0 and is due tomorrow.
+ *   Both "again" and "fuzzy" are re-shown once more in today's session (at
+ *   most one re-show per card per day); the re-show grade is the day's final
+ *   result. Words already graded today can also be re-tested singly from the
+ *   「今日已过」list — the retest grade likewise overwrites today's result and
+ *   never double-counts the daily quota (done is a per-word set).
  *
  * Daily quota is 50, 雷打不动: due reviews first (most overdue first, then
  * priority tier), new words fill the rest in priority order. If more than 50
@@ -59,6 +64,10 @@ export type VocabPlan = {
 	review: number;
 	/** How many were new words. */
 	fresh: number;
+	/** Today's latest grade per word id (for the「今日已过」list and retests). */
+	grades?: Record<string, VocabGrade>;
+	/** Word ids already re-shown once today (again/fuzzy) — persisted so a page reload keeps the once-per-day cap. */
+	reshown?: string[];
 };
 
 export type VocabQueueData = {
@@ -162,6 +171,8 @@ function cleanState(value: unknown): VocabWordState | null {
 	return { s: item.s, due: item.due, ts: item.ts };
 }
 
+const VOCAB_GRADES: readonly string[] = ["again", "fuzzy", "know"];
+
 function cleanPlan(value: unknown): VocabPlan | null {
 	if (!value || typeof value !== "object" || Array.isArray(value)) return null;
 	const item = value as Record<string, unknown>;
@@ -170,7 +181,21 @@ function cleanPlan(value: unknown): VocabPlan | null {
 	const ids = item.ids.filter((id): id is string => typeof id === "string" && id.length > 0 && id.length <= 200);
 	const done = item.done.filter((id): id is string => typeof id === "string" && ids.includes(id));
 	if (typeof item.review !== "number" || typeof item.fresh !== "number") return null;
-	return { date: item.date, ids, done: [...new Set(done)], review: item.review, fresh: item.fresh };
+	const plan: VocabPlan = { date: item.date, ids, done: [...new Set(done)], review: item.review, fresh: item.fresh };
+	if (item.grades && typeof item.grades === "object" && !Array.isArray(item.grades)) {
+		const grades: Record<string, VocabGrade> = {};
+		for (const [id, grade] of Object.entries(item.grades as Record<string, unknown>)) {
+			if (ids.includes(id) && typeof grade === "string" && VOCAB_GRADES.includes(grade)) {
+				grades[id] = grade as VocabGrade;
+			}
+		}
+		if (Object.keys(grades).length) plan.grades = grades;
+	}
+	if (Array.isArray(item.reshown)) {
+		const reshown = item.reshown.filter((id): id is string => typeof id === "string" && ids.includes(id));
+		if (reshown.length) plan.reshown = [...new Set(reshown)];
+	}
+	return plan;
 }
 
 export function cleanVocabQueueData(value: unknown): VocabQueueData {
@@ -202,7 +227,16 @@ export function mergeVocabQueueData(local: VocabQueueData, server: VocabQueueDat
 	else if (server.plan.date > local.plan.date) plan = server.plan;
 	else {
 		const done = [...new Set([...local.plan.done, ...server.plan.done])].filter((id) => local.plan!.ids.includes(id));
-		plan = { ...local.plan, done };
+		const grades = { ...(server.plan.grades ?? {}), ...(local.plan.grades ?? {}) };
+		const reshown = [...new Set([...(server.plan.reshown ?? []), ...(local.plan.reshown ?? [])])].filter((id) =>
+			local.plan!.ids.includes(id),
+		);
+		plan = {
+			...local.plan,
+			done,
+			...(Object.keys(grades).length ? { grades } : {}),
+			...(reshown.length ? { reshown } : {}),
+		};
 	}
 	return { v: 1, states, plan };
 }
@@ -238,6 +272,16 @@ export function vocabQueueData(): VocabQueueData {
 	return data;
 }
 
+/**
+ * True once the initial server pull (or the signed-out note) has settled.
+ * The queue page must not build today's plan before this — otherwise a stale
+ * local snapshot would mint a fresh plan and clobber the server-side one
+ * (progress, plan order, re-show state) that should have been restored.
+ */
+export function vocabQueueReady() {
+	return ready;
+}
+
 export function vocabWordsCache(): VocabWord[] | null {
 	return wordsCache;
 }
@@ -247,8 +291,8 @@ export function ensureVocabWords(): Promise<VocabWord[]> {
 	if (wordsCache) return Promise.resolve(wordsCache);
 	if (!wordsPromise) {
 		wordsPromise = fetch("/data/vocab-queue.json", { credentials: "same-origin" })
-			.then((res) => (res.ok ? res.json() : { words: [] }))
-			.then((payload: { words?: VocabWord[] }) => {
+			.then((res) => (res.ok ? (res.json() as Promise<{ words?: VocabWord[] }>) : { words: [] }))
+			.then((payload) => {
 				wordsCache = Array.isArray(payload?.words) ? payload.words : [];
 				emitVocabQueue();
 				return wordsCache;
@@ -273,6 +317,23 @@ function commit() {
 	dirty = true;
 	writeLocal();
 	emitVocabQueue();
+	scheduleVocabQueuePush();
+}
+
+let pushTimer: ReturnType<typeof setTimeout> | null = null;
+
+/**
+ * The server is the source of truth for progress: every mutation schedules an
+ * immediate push (short debounce) instead of waiting for the next app open.
+ * When signed out or before the first pull settles, pushVocabQueueNow no-ops
+ * and the change stays local-only, as with the app's other sync modules.
+ */
+function scheduleVocabQueuePush() {
+	if (pushTimer) clearTimeout(pushTimer);
+	pushTimer = setTimeout(() => {
+		pushTimer = null;
+		void pushVocabQueueNow();
+	}, 800);
 }
 
 export function hydrateVocabQueue() {
@@ -294,13 +355,33 @@ export function todayPlan(words: VocabWord[], today = jstToday()): VocabPlan {
 	return plan;
 }
 
-/** Grade one word; marks it done in today's plan unless `markDone` is false (first "again" re-show). */
+/**
+ * Same-day re-show decision: a card graded "again" or "fuzzy" is shown once
+ * more later in today's session; any card re-shows at most once per day, so
+ * re-shows never stack into a loop. The re-show grade overwrites today's
+ * result (it is applied on top of the intermediate state via gradeWordState).
+ */
+export function shouldReshowToday(grade: VocabGrade, alreadyReshown: boolean): boolean {
+	return (grade === "again" || grade === "fuzzy") && !alreadyReshown;
+}
+
+/** Grade one word; marks it done in today's plan unless `markDone` is false (first "again"/"fuzzy" re-show — that call also records the word in plan.reshown so the once-per-day re-show cap survives reloads). */
 export function applyVocabGrade(id: string, grade: VocabGrade, markDone = true, today = jstToday()) {
 	const next = gradeWordState(data.states[id], grade, today);
 	const states = { ...data.states, [id]: next };
 	let plan = data.plan;
-	if (plan && plan.date === today && plan.ids.includes(id) && markDone && !plan.done.includes(id)) {
-		plan = { ...plan, done: [...plan.done, id] };
+	if (plan && plan.date === today && plan.ids.includes(id)) {
+		const done = markDone && !plan.done.includes(id) ? [...plan.done, id] : plan.done;
+		const reshown =
+			!markDone && !(plan.reshown ?? []).includes(id) ? [...(plan.reshown ?? []), id] : plan.reshown;
+		if (done !== plan.done || reshown !== plan.reshown || plan.grades?.[id] !== grade) {
+			plan = {
+				...plan,
+				done,
+				grades: { ...(plan.grades ?? {}), [id]: grade },
+				...(reshown ? { reshown } : {}),
+			};
+		}
 	}
 	data = { ...data, states, plan };
 	commit();
@@ -395,4 +476,8 @@ export function resetVocabQueueForTests() {
 	resyncing = false;
 	wordsCache = null;
 	wordsPromise = null;
+	if (pushTimer) {
+		clearTimeout(pushTimer);
+		pushTimer = null;
+	}
 }

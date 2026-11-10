@@ -103,7 +103,7 @@ export function isVocabQueuePayload(value: unknown) {
 	if (!Array.isArray(plan.ids) || plan.ids.length > 500) return false;
 	if (!plan.ids.every((id) => typeof id === "string" && isSafeId(id) && isString(id, 200, false))) return false;
 	if (!Array.isArray(plan.done) || plan.done.length > plan.ids.length) return false;
-	if (!plan.done.every((id) => typeof id === "string" && plan.ids.includes(id))) return false;
+	if (!plan.done.every((id) => typeof id === "string" && (plan.ids as unknown[]).includes(id))) return false;
 	if (typeof plan.review !== "number" || !Number.isInteger(plan.review) || plan.review < 0) return false;
 	if (typeof plan.fresh !== "number" || !Number.isInteger(plan.fresh) || plan.fresh < 0) return false;
 	return true;

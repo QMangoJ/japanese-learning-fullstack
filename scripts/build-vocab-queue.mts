@@ -9,8 +9,10 @@
  * Sources, in priority order (Daniel, 2026-11-11):
  *   tier 1  work:        topics frontend → job-interview
  *   tier 2  IT listening mistake-words (public/data/it-listening/mistake-words.json)
- *   tier 3  classroom:   lesson-review.json word items from the「Danielさん」doc
- *                        (the Preply doc's 327 words are NOT queued — candidate only)
+ *   tier 3  classroom:   lesson-review.json word items from the「Danielさん」doc,
+ *                        then the「Preply すみれ先生」doc (Daniel approved adding
+ *                        it 2026-11-11; label「课堂复习・Preply」, queued after
+ *                        the Danielさん items)
  *   tier 4  collected:   app favourites → personal mistakes book → 番番词书 (140)
  *   tier 5  N2 decks:    n2vocab (1258) → n2kanji (657, kanji+example-word cards)
  *
@@ -253,16 +255,30 @@ function classroomWords() {
 	const data = readJson<{ days: { source: string; items: Record<string, unknown>[] }[] }>(
 		join(ROOT, "public", "data", "lesson-review.json"),
 	);
+	// Danielさん doc first (its tier-3 order is unchanged from the first build),
+	// then the Preply すみれ先生 doc appended after it in the same tier.
+	classroomDocWords(data, "Danielさん", "课堂复习", "classroom", "课堂复习", "lesson-review:");
+	classroomDocWords(data, "Preply すみれ先生", "课堂复习・Preply", "classroomPreply", "课堂复习（Preply）", "lesson-review:preply:");
+}
+
+function classroomDocWords(
+	data: { days: { source: string; items: Record<string, unknown>[] }[] },
+	daySource: string,
+	src: string,
+	srcKey: string,
+	pendingSource: string,
+	refPrefix: string,
+) {
 	for (const day of data.days ?? []) {
-		if (day.source !== "Danielさん") continue;
+		if (day.source !== daySource) continue;
 		for (const item of day.items ?? []) {
 			if (item.kind !== "word") continue;
 			const jp = String(item.jp ?? "").trim();
 			if (!jp || jp.length > 40) continue;
 			if ((!item.cn && !item.en) || jp.startsWith("（")) {
 				pending.push({
-					source: "课堂复习",
-					ref: `lesson-review:${jp}`,
+					source: pendingSource,
+					ref: `${refPrefix}${jp}`,
 					excerpt: jp.slice(0, 80),
 					reason: "课堂文档条目词面/释义缺失（文档原文如此，疑似表格列错位）",
 				});
@@ -277,8 +293,8 @@ function classroomWords() {
 				ex: typeof item.example === "string" ? item.example : undefined,
 				exZh: typeof item.exampleCn === "string" ? item.exampleCn : undefined,
 				tier: 3,
-				src: "课堂复习",
-				srcKey: "classroom",
+				src,
+				srcKey,
 			});
 		}
 	}
@@ -555,6 +571,17 @@ function n2Kanji() {
 
 // ---------- merge & emit ----------
 
+// Id pins: word ids key the per-user SRS state in KV, so a word that already
+// shipped keeps its id across rebuilds — even when a newly added source wins
+// its entry and the content-derived hash (word + reading) would change.
+const pinByKey = new Map<string, string>();
+try {
+	const prev = readJson<{ words: { w: string; id: string }[] }>(join(ROOT, "public", "data", "vocab-queue.json"));
+	for (const w of prev.words ?? []) pinByKey.set(normKey(w.w), w.id);
+} catch {
+	/* no previous payload — first build */
+}
+
 buildIndex();
 topicWords("frontend.json", "前端专题", "frontend");
 topicWords("job-interview.json", "面试专题", "interview");
@@ -588,14 +615,24 @@ for (const c of candidates) {
 	if (!w.en && c.en) w.en = c.en;
 	if (!w.ex && c.ex) w.ex = c.ex;
 	if (!w.exZh && c.exZh) w.exZh = c.exZh;
-	if (!w.src.split("・").includes(c.src)) w.src = `${w.src}・${c.src}`;
+	// Merge label segments (labels may themselves contain「・」, e.g.「课堂复习・Preply」).
+	const labelSegs = w.src.split("・");
+	for (const seg of c.src.split("・")) if (!labelSegs.includes(seg)) labelSegs.push(seg);
+	w.src = labelSegs.join("・");
 	// Refresh the id when the reading was filled in by the loser (id = hash of word+reading).
 	w.id = wordId(w.w, w.r);
 }
 
-const words = [...byKey.values()]
-	.map((e) => e.word)
-	.sort((a, b) => a.tier - b.tier || a.ord - b.ord || a.id.localeCompare(b.id));
+const words = [...byKey.values()].map((e) => e.word);
+{
+	const usedIds = new Set<string>();
+	for (const w of words) {
+		const pinned = pinByKey.get(normKey(w.w));
+		if (pinned && !usedIds.has(pinned)) w.id = pinned;
+		usedIds.add(w.id);
+	}
+}
+words.sort((a, b) => a.tier - b.tier || a.ord - b.ord || a.id.localeCompare(b.id));
 
 const payload = {
 	version: 1,
@@ -615,7 +652,7 @@ const pendingLines = [
 	"没有一条被默默丢弃，也没有一条被硬编释义。确认后可人工补进词表或直接删除。",
 	"",
 ];
-for (const source of ["错词本", "收藏", "课堂复习"]) {
+for (const source of ["错词本", "收藏", "课堂复习", "课堂复习（Preply）"]) {
 	const rows = pending.filter((p) => p.source === source);
 	if (!rows.length) continue;
 	pendingLines.push(`## ${source}（${rows.length} 条）`, "");

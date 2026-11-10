@@ -4,10 +4,16 @@ import { describe, expect, it } from "vitest";
 import { isVocabQueuePayload } from "../../app/auth/study-payloads";
 import {
 	addIsoDays,
+	applyVocabGrade,
 	buildDailyPlan,
 	cleanVocabQueueData,
 	gradeWordState,
 	mergeVocabQueueData,
+	resetVocabQueueForTests,
+	shouldReshowToday,
+	todayPlan,
+	vocabQueueData,
+	type VocabPlan,
 	type VocabWord,
 } from "../../app/study/vocab-queue";
 
@@ -168,6 +174,116 @@ describe("built word list (public/data/vocab-queue.json)", () => {
 		for (const banned of ["汉字自测", "银行・ATM", "银行ATM", "衣服购物", "咖啡店菜单", "口语", "投资理财", "日本投资理财"]) {
 			expect(labels.has(banned)).toBe(false);
 		}
+	});
+});
+
+describe("vocab queue same-day re-show (again + fuzzy, once per day)", () => {
+	it("decides re-shows: again/fuzzy once, know never, never twice", () => {
+		expect(shouldReshowToday("again", false)).toBe(true);
+		expect(shouldReshowToday("fuzzy", false)).toBe(true);
+		expect(shouldReshowToday("know", false)).toBe(false);
+		expect(shouldReshowToday("again", true)).toBe(false);
+		expect(shouldReshowToday("fuzzy", true)).toBe(false);
+	});
+
+	it("fuzzy first grade is not done yet, records the re-show, and the re-show grade is the day's final result", () => {
+		resetVocabQueueForTests();
+		const plan = todayPlan([word("a", 1, 1)], TODAY);
+		expect(plan.ids).toEqual(["a"]);
+		applyVocabGrade("a", "fuzzy", false, TODAY);
+		let data = vocabQueueData();
+		expect(data.plan?.done).toEqual([]);
+		expect(data.plan?.reshown).toEqual(["a"]);
+		expect(data.plan?.grades?.a).toBe("fuzzy");
+		expect(data.states.a).toMatchObject({ s: 0, due: "2026-11-12" });
+		// Re-show graded know: overwrites today's result; done contains the word once.
+		applyVocabGrade("a", "know", true, TODAY);
+		data = vocabQueueData();
+		expect(data.plan?.done).toEqual(["a"]);
+		expect(data.plan?.grades?.a).toBe("know");
+		expect(data.states.a).toMatchObject({ s: 1, due: "2026-11-14" });
+	});
+
+	it("fuzzy re-show graded again resets to step 0; again's own re-show path is unchanged", () => {
+		resetVocabQueueForTests();
+		todayPlan([word("a", 1, 1), word("b", 1, 2)], TODAY);
+		applyVocabGrade("a", "fuzzy", false, TODAY);
+		applyVocabGrade("a", "again", true, TODAY);
+		expect(vocabQueueData().states.a).toMatchObject({ s: 0, due: "2026-11-12" });
+		applyVocabGrade("b", "again", false, TODAY);
+		expect(vocabQueueData().plan?.done).toEqual(["a"]);
+		expect(vocabQueueData().plan?.reshown).toEqual(["a", "b"]);
+		applyVocabGrade("b", "fuzzy", true, TODAY);
+		const data = vocabQueueData();
+		expect(data.plan?.done).toEqual(["a", "b"]);
+		expect(data.plan?.grades?.b).toBe("fuzzy");
+		expect(data.states.b).toMatchObject({ s: 0, due: "2026-11-12" });
+	});
+});
+
+describe("vocab queue retest of today's graded words", () => {
+	it("overwrites the day's grade and SRS state without double-counting done", () => {
+		resetVocabQueueForTests();
+		todayPlan([word("a", 1, 1)], TODAY);
+		applyVocabGrade("a", "know", true, TODAY);
+		expect(vocabQueueData().states.a).toMatchObject({ s: 1, due: "2026-11-14" });
+		// Retest later the same day: the retest grade is the day's final result.
+		applyVocabGrade("a", "again", true, TODAY);
+		const data = vocabQueueData();
+		expect(data.plan?.done).toEqual(["a"]);
+		expect(data.plan?.grades?.a).toBe("again");
+		expect(data.states.a).toMatchObject({ s: 0, due: "2026-11-12" });
+	});
+});
+
+describe("vocab queue server-side plan recovery", () => {
+	it("restores the server's plan untouched when local has none", () => {
+		const serverPlan: VocabPlan = {
+			date: TODAY,
+			ids: ["a", "b", "c"],
+			done: ["a"],
+			review: 1,
+			fresh: 2,
+			grades: { a: "know" },
+			reshown: ["b"],
+		};
+		const merged = mergeVocabQueueData({ v: 1, states: {}, plan: null }, { v: 1, states: {}, plan: serverPlan });
+		expect(merged.plan).toEqual(serverPlan);
+	});
+
+	it("unions same-day progress from both sides: done, grades and reshown", () => {
+		const local = {
+			v: 1 as const,
+			states: {},
+			plan: { date: TODAY, ids: ["a", "b"], done: ["a"], review: 0, fresh: 2, grades: { a: "fuzzy" as const }, reshown: ["a"] },
+		};
+		const server = {
+			v: 1 as const,
+			states: {},
+			plan: { date: TODAY, ids: ["a", "b"], done: ["b"], review: 0, fresh: 2, grades: { b: "know" as const }, reshown: ["b"] },
+		};
+		const merged = mergeVocabQueueData(local, server);
+		expect(merged.plan?.done.sort()).toEqual(["a", "b"]);
+		expect(merged.plan?.grades).toEqual({ a: "fuzzy", b: "know" });
+		expect(merged.plan?.reshown?.sort()).toEqual(["a", "b"]);
+	});
+
+	it("round-trips grades/reshown through the cleaner and drops junk entries", () => {
+		const cleaned = cleanVocabQueueData({
+			v: 1,
+			states: {},
+			plan: {
+				date: TODAY,
+				ids: ["a", "b"],
+				done: ["a"],
+				review: 0,
+				fresh: 2,
+				grades: { a: "know", b: "nope", ghost: "fuzzy" },
+				reshown: ["b", "ghost", "b"],
+			},
+		});
+		expect(cleaned.plan?.grades).toEqual({ a: "know" });
+		expect(cleaned.plan?.reshown).toEqual(["b"]);
 	});
 });
 
