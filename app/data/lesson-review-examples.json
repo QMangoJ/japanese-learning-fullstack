@@ -6221,5 +6221,285 @@
 		"example": "部屋に植物を置くと落ち着く。",
 		"exampleCn": "在房间里放植物会让人平静。",
 		"exampleEn": "Having plants in the room is calming."
+	},
+	"仕事の日本語": {
+		"cn": "工作场合用的日语、商务日语（仕事 しごと）",
+		"en": "Japanese used at work",
+		"example": "来月から仕事の日本語を勉強します。",
+		"exampleCn": "我从下个月开始学工作用的日语。",
+		"exampleEn": "Starting next month I'll study Japanese for work."
+	},
+	"げつ・すい・きん・にち": {
+		"cn": "星期一、星期三、星期五、星期日（月・水・金・日 的词首读音：げつ・すい・きん・にち）",
+		"en": "Mon, Wed, Fri, and Sun (the first mora of 月・水・金・日)",
+		"example": "げつ・すい・きん・にちは、月・水・金・日のことです。",
+		"exampleCn": "「げつ・すい・きん・にち」就是星期一、三、五、日。",
+		"exampleEn": "げつ・すい・きん・にち means Monday, Wednesday, Friday, and Sunday."
+	},
+	"40しゅうねん": {
+		"cn": "40周年（笔记写成了平假名「しゅうねん」，汉字是「周年」，しゅうねん，N2）",
+		"en": "40th anniversary",
+		"example": "今年は創立40周年です。",
+		"exampleCn": "今年是创立40周年。",
+		"exampleEn": "This year is the 40th anniversary of its founding."
+	},
+	"かたち": {
+		"cn": "形状、样子（汉字写作「形」，训读 かたち；音读是 けい）",
+		"en": "shape; form",
+		"example": "この箱のかたちは四角です。",
+		"exampleCn": "这个箱子的形状是方形。",
+		"exampleEn": "This box is square."
+	},
+	"表意文字": {
+		"cn": "表意文字（ひょういもじ，N1）。汉字这类字，字形本身带有意思。",
+		"en": "logogram; ideograph",
+		"example": "漢字は表意文字です。",
+		"exampleCn": "汉字是表意文字。",
+		"exampleEn": "Kanji are logograms."
+	},
+	"成り立ち": {
+		"cn": "由来、形成的过程（なりたち，N2）",
+		"en": "origin; how something came to be",
+		"example": "この漢字の成り立ちを調べました。",
+		"exampleCn": "我查了这个汉字的由来。",
+		"exampleEn": "I looked up how this kanji was formed."
+	},
+	"震える": {
+		"cn": "发抖、颤抖（ふるえる，N3）",
+		"en": "to tremble; to shiver",
+		"example": "寒くて手が震える。",
+		"exampleCn": "冷得手在发抖。",
+		"exampleEn": "My hands are shaking from the cold."
+	},
+	"体調による": {
+		"cn": "要看身体状况（体調 たいちょう，N3）",
+		"en": "it depends on your physical condition",
+		"example": "走れるかどうかは体調によります。",
+		"exampleCn": "能不能走，要看当天的身体状况。",
+		"exampleEn": "Whether I can walk depends on how I feel."
+	},
+	"その日による": {
+		"cn": "要看当天的情况",
+		"en": "it depends on the day",
+		"example": "行けるかどうかは、その日によります。",
+		"exampleCn": "能不能去，要看当天。",
+		"exampleEn": "Whether I can go depends on the day."
+	},
+	"お腹が減らない時は食べない": {
+		"cn": "肚子不饿的时候就不吃",
+		"en": "I don't eat when I'm not hungry.",
+		"example": "お腹が減らない時は食べないようにしています。",
+		"exampleCn": "我尽量在肚子不饿的时候不吃东西。",
+		"exampleEn": "I try not to eat when I'm not hungry."
+	},
+	"清潔": {
+		"cn": "清洁、干净（せいけつ，N3）",
+		"en": "clean; hygienic",
+		"example": "台所を清潔に保ってください。",
+		"exampleCn": "请保持厨房干净。",
+		"exampleEn": "Please keep the kitchen clean."
+	},
+	"おもてなし": {
+		"cn": "款待、待客之道（おもてなし，N2）",
+		"en": "hospitality",
+		"example": "日本のおもてなしは有名です。",
+		"exampleCn": "日本的待客之道很有名。",
+		"exampleEn": "Japanese hospitality is famous."
+	},
+	"節約する": {
+		"cn": "节约、节省（せつやく，N3）",
+		"en": "to save; to economize",
+		"example": "電気代を節約する。",
+		"exampleCn": "节省电费。",
+		"exampleEn": "Save on the electricity bill."
+	},
+	"憧れ": {
+		"cn": "憧憬、向往（あこがれ，N2）",
+		"en": "longing; something you admire",
+		"example": "子供の頃の憧れはパイロットでした。",
+		"exampleCn": "我小时候向往的是当飞行员。",
+		"exampleEn": "When I was a child I dreamed of being a pilot."
+	},
+	"真似できない": {
+		"cn": "学不来、模仿不了（真似 まね，N3）",
+		"en": "can't imitate it",
+		"example": "彼の優しさは真似できない。",
+		"exampleCn": "他的温柔是学不来的。",
+		"exampleEn": "I can't imitate his kindness."
+	},
+	"河合芳子": {
+		"cn": "人名：河合芳子（かわい よしこ）",
+		"en": "a person's name: Kawai Yoshiko",
+		"example": "河合芳子さんは日本語を勉強しています。",
+		"exampleCn": "河合芳子在学日语。",
+		"exampleEn": "Kawai Yoshiko is studying Japanese."
+	},
+	"小森": {
+		"cn": "姓氏：小森（こもり）",
+		"en": "a surname: Komori",
+		"example": "小森さんに聞いてみます。",
+		"exampleCn": "我去问问小森。",
+		"exampleEn": "I'll ask Komori."
+	},
+	"なにがあったっけ": {
+		"cn": "发生什么事来着？（「っけ」用来回想，或跟对方确认）",
+		"en": "What was it that happened again?",
+		"example": "昨日、なにがあったっけ。",
+		"exampleCn": "昨天发生什么来着。",
+		"exampleEn": "What happened yesterday again?"
+	},
+	"トレーニングをしてる": {
+		"cn": "在做训练、在健身",
+		"en": "training",
+		"example": "毎朝ジムでトレーニングをしてる。",
+		"exampleCn": "我每天早上在健身房训练。",
+		"exampleEn": "I train at the gym every morning."
+	},
+	"綺麗でいっぱい人がいます": {
+		"cn": "很漂亮，人很多（老师改成下一句更自然）",
+		"en": "It's beautiful and there are lots of people.",
+		"example": "駅の前は綺麗で、人がいっぱいいます。",
+		"exampleCn": "车站前面很漂亮，人也很多。",
+		"exampleEn": "It's beautiful in front of the station, and there are lots of people."
+	},
+	"綺麗でいっぱい人がいる街です": {
+		"cn": "是一个漂亮、人很多的城市",
+		"en": "It's a beautiful city with lots of people.",
+		"example": "京都は綺麗で、人がいっぱいいる街です。",
+		"exampleCn": "京都是一座漂亮、人很多的城市。",
+		"exampleEn": "Kyoto is a beautiful city with lots of people."
+	},
+	"亡くなる・亡くなりました": {
+		"cn": "去世・去世了（「死ぬ」的委婉说法）",
+		"en": "past away",
+		"example": "祖父は去年亡くなりました。",
+		"exampleCn": "祖父去年去世了。",
+		"exampleEn": "My grandfather passed away last year."
+	},
+	"夜遅くうちに帰らないと思います": {
+		"cn": "我想晚上不会很晚才回家（更自然的说法是「夜遅くうちには帰らない」）",
+		"en": "I don't think I'll get home late at night.",
+		"example": "今日は夜遅くうちに帰らないと思います。",
+		"exampleCn": "我想今天不会很晚才回家。",
+		"exampleEn": "I don't think I'll get home late tonight."
+	},
+	"いった/ゆった I said 言う": {
+		"cn": "说了（ゆった 是 言った 的口语发音，原形 言う）",
+		"en": "said (ゆった is a casual pronunciation of 言った)",
+		"example": "昨日そうゆったよ。",
+		"exampleCn": "我昨天是这么说的哦。",
+		"exampleEn": "I said that yesterday."
+	},
+	"人はいろいろなことを経験することによって、性格が変わります": {
+		"cn": "人会因为经历各种事情而改变性格",
+		"en": "People's personalities change by experiencing many things.",
+		"example": "人は失敗を経験することによって、成長します。",
+		"exampleCn": "人会因为经历失败而成长。",
+		"exampleEn": "People grow by experiencing failure."
+	},
+	"わたしの趣味はジムにいくことです": {
+		"cn": "我的爱好是去健身房（「いく」是「行く」的口语写法）",
+		"en": "My hobby is going to the gym.",
+		"example": "わたしの趣味は本を読むことです。",
+		"exampleCn": "我的爱好是读书。",
+		"exampleEn": "My hobby is reading books."
+	},
+	"アプリの故障が起きた時、": {
+		"cn": "应用出故障的时候，（笔记里这句没有写完）",
+		"en": "When the app broke down,",
+		"example": "アプリの故障が起きた時、再起動してください。",
+		"exampleCn": "应用出故障的时候，请重新启动。",
+		"exampleEn": "When the app breaks down, please restart it."
+	},
+	"前は、とてもせっかちな性格でした": {
+		"cn": "以前我是个很急性子的人",
+		"en": "I used to be very impatient.",
+		"example": "前は、とてもせっかちな性格でしたが、今は落ち着きました。",
+		"exampleCn": "以前我很急性子，现在沉稳了。",
+		"exampleEn": "I used to be very impatient, but now I've calmed down."
+	},
+	"今は冷静な性格になりました": {
+		"cn": "现在变得很冷静了",
+		"en": "Now I've become a calm person.",
+		"example": "彼は今は冷静な性格になりました。",
+		"exampleCn": "他现在变得很冷静了。",
+		"exampleEn": "He has become a calm person now."
+	},
+	"馎饦锅": {
+		"cn": "馎饦锅（中文旧称，指面条锅，接近乌冬；不是日语单词）",
+		"en": "a Chinese name for a noodle hot pot, close to udon (not a Japanese word)",
+		"example": "先生はうどんを「馎饦锅」と中国語で書きました。",
+		"exampleCn": "老师用中文把乌冬写成了「馎饦锅」。",
+		"exampleEn": "The teacher wrote udon in Chinese as 馎饦锅."
+	},
+	"まだ予約しいてません": {
+		"cn": "还没有预约（笔记写成「しいてません」，正确是「していません」）",
+		"en": "I haven't made a reservation yet.",
+		"example": "ホテルはまだ予約していません。",
+		"exampleCn": "酒店还没有预约。",
+		"exampleEn": "I haven't booked the hotel yet."
+	},
+	"寝るのが遅かった": {
+		"cn": "睡得晚了",
+		"en": "I went to bed late.",
+		"example": "昨日は寝るのが遅かったです。",
+		"exampleCn": "昨天睡得很晚。",
+		"exampleEn": "I went to bed late yesterday."
+	},
+	"理由は": {
+		"cn": "理由是",
+		"en": "the reason is",
+		"example": "遅れた理由は電車です。",
+		"exampleCn": "迟到的理由是电车。",
+		"exampleEn": "The reason I was late is the train."
+	},
+	"犬を飼ったことがありません": {
+		"cn": "没养过狗（飼う かう，N3）",
+		"en": "I have never had a dog.",
+		"example": "子供の時、犬を飼ったことがありません。",
+		"exampleCn": "我小时候没养过狗。",
+		"exampleEn": "I never had a dog as a child."
+	},
+	"犬を買うのが難しい": {
+		"cn": "买狗很难（笔记写成「買う」；想说养狗时应该用「飼う」）",
+		"en": "It's hard to buy a dog. (For keeping a pet, the word is 飼う.)",
+		"example": "アパートでは犬を飼うのが難しいです。",
+		"exampleCn": "住公寓的话，养狗很难。",
+		"exampleEn": "It's hard to keep a dog in an apartment."
+	},
+	"散歩に行かないといけな": {
+		"cn": "必须去散步（句子在「な」处被截断，完整是「散歩に行かないといけない」）",
+		"en": "I have to go for a walk (the note is cut off before い).",
+		"example": "犬がいるので、散歩に行かないといけない。",
+		"exampleCn": "因为养了狗，必须去散步。",
+		"exampleEn": "I have a dog, so I have to go for a walk."
+	},
+	"雪人": {
+		"cn": "雪人（中文；日语是「雪だるま」）",
+		"en": "snowman (Chinese; Japanese is 雪だるま)",
+		"example": "公園で雪だるまを作りました。",
+		"exampleCn": "我们在公园堆了雪人。",
+		"exampleEn": "We made a snowman in the park."
+	},
+	"お年寄りがいたら席を譲りましょう": {
+		"cn": "如果有老人，就把座位让出来吧（お年寄り おとしより，譲る ゆずる，N3）",
+		"en": "If an elderly person is there, let's offer them a seat.",
+		"example": "電車でお年寄りがいたら席を譲りましょう。",
+		"exampleCn": "在电车上如果有老人，就把座位让出来吧。",
+		"exampleEn": "On the train, if an elderly person is there, let's give up our seat."
+	},
+	"3天": {
+		"cn": "三天（笔记里的中文，日语是「三日（みっか）」或「3日間（みっかかん）」）",
+		"en": "three days (written in Chinese in the note)",
+		"example": "旅行は三日でした。",
+		"exampleCn": "旅行是三天。",
+		"exampleEn": "The trip was three days."
+	},
+	"問題ようしの": {
+		"cn": "试卷的……（「ようし」是「用紙」的平假名，正确写法是「問題用紙の」，ようし，N3）",
+		"en": "of the question sheet (ようし is 用紙)",
+		"example": "問題用紙の名前を書いてください。",
+		"exampleCn": "请在试卷上写上名字。",
+		"exampleEn": "Please write your name on the question sheet."
 	}
 }
