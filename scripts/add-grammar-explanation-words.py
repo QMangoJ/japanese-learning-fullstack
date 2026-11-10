@@ -23,7 +23,7 @@ JOBS = [
 	(DATA / "n4grammar.40e138ccdb.json", DATA / "n4-grammar-daily-explanations.json", DATA / "n4-grammar-explanations.json"),
 ]
 VOCAB_BOOKS = [
-	DATA / "vocab.856eb48e32.json",
+	DATA / "vocab.f1c5816cd9.json",
 	DATA / "n2vocab.90123e4b43.json",
 	DATA / "n4vocab.026f711eb7.json",
 	DATA / "kanji.94a6d6a8d1.json",

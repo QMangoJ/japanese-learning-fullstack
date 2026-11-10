@@ -156,7 +156,9 @@ export function dailyChoiceQuiz(
 	answer: string | null | undefined,
 	infoType?: string,
 ): DailyChoiceQuiz | null {
-	if (sectionType !== "choice" || infoType === "order") return null;
+	// Grammar uses "choice"; vocab and kanji multiple choice uses "select".
+	// Order items stay a static row.
+	if ((sectionType !== "choice" && sectionType !== "select") || infoType === "order") return null;
 	const raw = String(answer ?? "").trim();
 	if (!raw) return null;
 	if (/→/u.test(raw) && !MARK_RE.test(raw)) return null;

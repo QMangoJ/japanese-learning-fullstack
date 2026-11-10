@@ -2,7 +2,7 @@ import { readFile, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 
 const root = resolve(import.meta.dirname, "..");
-const vocabPath = resolve(root, "public/data/vocab.856eb48e32.json");
+const vocabPath = resolve(root, "public/data/vocab.f1c5816cd9.json");
 const kanjiPath = resolve(root, "public/data/kanji.94a6d6a8d1.json");
 const outputPath = resolve(root, "public/data/n3-vocab-kanji-daily-translations.json");
 

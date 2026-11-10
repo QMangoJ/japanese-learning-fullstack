@@ -9,7 +9,7 @@ from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "public/data/grammar.d15be04258.json"
-VOCAB_SOURCE = ROOT / "public/data/vocab.856eb48e32.json"
+VOCAB_SOURCE = ROOT / "public/data/vocab.f1c5816cd9.json"
 OUTPUT = ROOT / "public/data/n3-grammar-explanations.json"
 MODEL_ROOT = ROOT / "tmp/nllb-ja-zh"
 

@@ -3,7 +3,7 @@ import { Fragment, lazy, Suspense, useEffect, useRef, useState, useSyncExternalS
 
 import { ConnBlock, Fmt, Rr, RubyHtml, SayButton } from "../routes/study-common";
 import { CardsLaunch } from "./memory-cards";
-import { getKanjiWordUsage, kanjiWordSurface } from "./kanji-word-usage";
+import { getKanjiWordUsage, getReviewedKanjiWordUsage, kanjiWordSurface } from "./kanji-word-usage";
 import { getN2KanjiWordUsage, loadN2KanjiUsageLater, n2KanjiLaterLoaded, subscribeN2KanjiLater } from "./n2-kanji-word-usage";
 import { AnswerFeedback } from "./answer-feedback";
 import { GlossPopover, rubyReading } from "./gloss-popover";
@@ -429,14 +429,14 @@ function notePhraseTranslations(nt: any): { jp: string; html?: string; cn: strin
 
 /** N2 语法「◆」说明的中文。整条翻译，不按「／」拆开。 */
 function noteTip(nt: any): string | null {
-	if (MODULE !== "n2grammar" || LANG === "en" || nt.type !== "◆") return null;
-	const cn = G2.breakdowns?.tips?.[nt.text];
+	if (!isGram() || LANG === "en" || nt.type !== "◆") return null;
+	const cn = grammarBundle().breakdowns?.tips?.[nt.text];
 	return typeof cn === "string" && cn.trim() ? cn : null;
 }
 
 function grammarBreakdownFor(w: number, d: number, n: number): GrammarBreakdownData | undefined {
-	if (MODULE !== "n2grammar" || LANG === "en") return undefined;
-	return G2.breakdowns?.questions?.[`w${w}d${d}`]?.[n];
+	if (!isGram() || LANG === "en") return undefined;
+	return grammarBundle().breakdowns?.questions?.[`w${w}d${d}`]?.[n];
 }
 
 /** 完整句下方：语法拆解（本题语法点在前）＋ 句子结构 ＋ N3+ 生词。 */
@@ -477,8 +477,8 @@ type CompositionPrompt = { cn: string; jp: string; use: string; words: GrammarGl
 
 /** N2 语法「造句练习」（public/data/n2-grammar-composition.json，中文界面才显示）。 */
 function compositionFor(w: number, d: number, i: number): CompositionPrompt[] | undefined {
-	if (MODULE !== "n2grammar" || LANG === "en") return undefined;
-	const list = G2.composition?.points?.[`w${w}d${d}`]?.[i];
+	if (!isGram() || LANG === "en") return undefined;
+	const list = grammarBundle().composition?.points?.[`w${w}d${d}`]?.[i];
 	return Array.isArray(list) && list.length ? list : undefined;
 }
 
@@ -596,6 +596,12 @@ function DailyExercisePanels({ info, item, day, w, d }: { info: any; item: any; 
 					<div className="an-trans">
 						<b>{lx("原句翻译：", "Sentence translation: ")}</b>
 						{lx(info.translation, info.translation_en)}
+					</div>
+				) : null}
+				{lx(info.reason, info.reason_en) ? (
+					<div className="an-trans">
+						<b>{lx("解析：", "Why: ")}</b>
+						{lx(info.reason, info.reason_en)}
 					</div>
 				) : null}
 				{breakdown ? <GrammarBreakdown data={breakdown} /> : null}
@@ -931,6 +937,64 @@ function glossMeaning(item: { cn?: string; en?: string }) {
 	return LANG === "en" ? item.en || item.cn || "" : item.cn || "";
 }
 
+/** Kana reading of a headword that contains kanji. Stays visible when furigana is hidden. */
+export function vocabReadingText(item: { jp?: string; jp_r?: string; reading?: string }) {
+	const jp = String(item.jp || "");
+	if (!/[一-龯]/.test(jp)) return "";
+	const fromRuby = rubyReading(item.jp_r)
+		.replace(/^[⇔→※◆\s　]+/u, "")
+		.replace(/[（(][^）)]*[）)]/g, "")
+		.replace(/\s+/g, "")
+		.trim();
+	if (fromRuby && /[ぁ-んァ-ン]/.test(fromRuby) && fromRuby !== jp) return fromRuby;
+	const reading = String(item.reading || "").trim();
+	if (reading && /[ぁ-んァ-ン]/.test(reading) && reading !== jp) return reading;
+	return "";
+}
+
+function VocabReading({ item }: { item: { jp?: string; jp_r?: string; reading?: string } }) {
+	const text = vocabReadingText(item);
+	if (!text) return null;
+	return <div className="vreading jp">{text}</div>;
+}
+
+function grammarBundle() {
+	if (MODULE === "n1grammar") return G1;
+	if (MODULE === "n2grammar") return G2;
+	if (MODULE === "n4grammar") return G4;
+	return G;
+}
+
+function PracticeQuiz({
+	sec,
+	it,
+	answer,
+	infoType,
+	scope,
+	w,
+	d,
+}: {
+	sec: any;
+	it: any;
+	answer?: string;
+	infoType?: string;
+	scope: string;
+	w: number;
+	d: number;
+}) {
+	const quiz = dailyChoiceQuiz(sec.type, it, answer, infoType);
+	if (!quiz) return <OptsRow item={it} />;
+	return (
+		<QuizOpts
+			questionId={`${scope}:${w}-${d}:${it.n}`}
+			item={{ ...it, opts: quiz.opts, opts_r: quiz.opts_r, _correct: quiz.accept[0] }}
+			correct={quiz.accept[0]}
+			accept={quiz.accept}
+			onWrong={(picked) => logWrong({ ...it, opts: quiz.opts, _correct: quiz.accept[0] }, picked)}
+		/>
+	);
+}
+
 function grammarPeek(p: any) {
 	const ex = (p.examples || [])[0];
 	if (!ex) return "";
@@ -961,16 +1025,17 @@ function VocabLabel({
 
 function GrammarPoint({ p, w, d, i }: { p: any; w: number; d: number; i: number }) {
 	const pid = `${MODULE}#${w}-${d}#${i}`;
+	const reading = p.reading || vocabReadingText({ jp: p.pattern, jp_r: p.pattern_r, reading: p.reading });
 	return (
 		<div className="point tilt-card" id={`pt-${w}-${d}-${i}`}>
 			<h3 className="jp">
-				<GlossPopover reading={p.reading} meaning={glossMeaning({ cn: p.usage_cn, en: p.usage_en })} example={grammarPeek(p)}>
+				<GlossPopover reading={reading} meaning={glossMeaning({ cn: p.usage_cn, en: p.usage_en })} example={grammarPeek(p)}>
 					<Rr o={p} f="pattern" />
 				</GlossPopover>
 			</h3>
 			<StarBtn id={pid} snap={{ module: MODULE, hash: `#/day/${w}-${d}/p${i}`, w, d, jp: p.pattern, cn: p.usage_cn || "" }} />
 			<SayButton text={p.pattern} />
-			{p.reading ? <div className="reading jp">{p.reading}</div> : null}
+			{reading ? <div className="reading jp">{reading}</div> : null}
 			<ConnBlock connection={p.connection} lang={LANG} />
 			{p.usage_jp ? <div className="usage jp">{p.usage_jp}</div> : null}
 			{LANG !== "en" && p.usage_cn ? (
@@ -1228,8 +1293,8 @@ function DayGrammar({ day, w, d, scrollP }: { day: any; w: number; d: number; sc
 			</>
 		);
 	}
-	const dailyBook = MODULE === "n2grammar" ? G2 : MODULE === "n4grammar" ? G4 : G;
-	const dailyItems = (MODULE === "grammar" || MODULE === "n2grammar" || MODULE === "n4grammar") && dailyBook.daily_explanations && dailyBook.daily_explanations[`w${w}d${d}`];
+	const dailyBook = grammarBundle();
+	const dailyItems = isGram() && dailyBook.daily_explanations && dailyBook.daily_explanations[`w${w}d${d}`];
 	const explanationByNumber = new Map<any, any>(((dailyItems && dailyItems.items) || []).map((item: any) => [item.n, item]));
 	const practiceAnswers = parsePracticeAnswers(day.exercises?.answers, day.exercises?.sections);
 	return (
@@ -1456,6 +1521,7 @@ function DayVocab({ day, w, d, scrollTok }: { day: any; w: number; d: number; sc
 											<StarBtn id={vid} snap={{ module: mod, hash: `#/day/${w}-${d}`, w, d, jp: it.jp, cn: it.cn || it.en || "" }} />
 										</div>
 										<div className="vmn">
+											<VocabReading item={it} />
 											{LANG !== "en" && it.cn ? <span className="vcn">{it.cn}</span> : null}
 											{it.en ? <span className="ven">{it.en}</span> : null}
 											{it.rel ? <span className="vrel jp">{it.rel_r ? <RubyHtml html={it.rel_r} /> : it.rel}</span> : null}
@@ -1495,7 +1561,7 @@ function DayVocab({ day, w, d, scrollTok }: { day: any; w: number; d: number; sc
 												{it.slot ? <span className="meta">　→ {it.slot}</span> : null}
 											</span>
 										</div>
-										<OptsRow item={it} />
+										<PracticeQuiz sec={sec} it={it} answer={practiceAnswers.get(String(it.n))} scope="vocab" w={w} d={d} />
 										<DailyTranslationOnly info={translationByNumber.get(it.n)} module="vocab" w={w} d={d} item={it} />
 <PracticeAnswer raw={practiceAnswers.get(String(it.n))} item={it} box={sec.box} translation={(() => { const t: any = translationByNumber.get(it.n); return t ? lx(t.translation, t.translation_en) : undefined; })()} panelId={`practice-vocab-${w}-${d}-${it.n}-answer`} />
 									</div>
@@ -1736,7 +1802,7 @@ function DayKanji({ day, w, d, scrollTok }: { day: any; w: number; d: number; sc
 						<div className="kwords">
 							{(k.words || []).map((wd: any, wi: number) => {
 								const kid = `${MODULE}#${w}-${d}#${ki}#${wi}`;
-								const usage = MODULE === "kanji" ? getKanjiWordUsage(wd) : MODULE === "n2kanji" ? getN2KanjiWordUsage(wd) : null;
+								const usage = MODULE === "kanji" ? getKanjiWordUsage(wd) : MODULE === "n2kanji" ? getN2KanjiWordUsage(wd) : getReviewedKanjiWordUsage(wd);
 								const usageWord = usage?.focus || (usage ? kanjiWordSurface(wd) : "");
 								const usageReading = usage?.focusReading || wd.reading;
 								return (
@@ -1747,7 +1813,9 @@ function DayKanji({ day, w, d, scrollTok }: { day: any; w: number; d: number; sc
 											<StarBtn id={kid} snap={{ module: MODULE, hash: `#/day/${w}-${d}`, w, d, jp: wd.jp, cn: wd.cn || wd.en || "" }} />
 										</div>
 										<div className="vmn">
+											<VocabReading item={wd} />
 											{LANG !== "en" && wd.cn ? <span className="vcn">{wd.cn}</span> : null}
+											{wd.pos && !usage ? <span className="kanji-word-pos">{wd.pos}</span> : null}
 											{wd.en ? <span className="ven">{wd.en}</span> : null}
 										{wd.changed ? <span className="meta">{lx("● 读音有变化", "● reading changes")}</span> : null}
 										{wd.note ? (
@@ -1798,6 +1866,15 @@ function DayKanji({ day, w, d, scrollTok }: { day: any; w: number; d: number; sc
 								<div className="meta jp" style={{ margin: "4px 0 8px" }}>
 									{romanN(si)}　{lx(sec.instruction, sec.instruction_en)}
 								</div>
+								{sec.box ? (
+									<div className="opts">
+										{sec.box.map((x: string, bi: number) => (
+											<span className="jp" key={bi}>
+												{x}
+											</span>
+										))}
+									</div>
+								) : null}
 								{(sec.items || []).map((it: any) => (
 									<div className="q daily-q" key={it.n}>
 										<div className="daily-qline">
@@ -1806,7 +1883,7 @@ function DayKanji({ day, w, d, scrollTok }: { day: any; w: number; d: number; sc
 												<Rr o={it} f="q" />
 											</span>
 										</div>
-										<OptsRow item={it} />
+										<PracticeQuiz sec={sec} it={it} answer={practiceAnswers.get(String(it.n))} scope="kanji" w={w} d={d} />
 										<DailyTranslationOnly info={translationByNumber.get(it.n)} module="kanji" w={w} d={d} item={it} />
 <PracticeAnswer raw={practiceAnswers.get(String(it.n))} item={it} box={sec.box} translation={(() => { const t: any = translationByNumber.get(it.n); return t ? lx(t.translation, t.translation_en) : undefined; })()} panelId={`practice-kanji-${w}-${d}-${it.n}-answer`} />
 									</div>
@@ -1858,8 +1935,10 @@ function KanjiColumn({ column, notes, w, d }: { column: any; notes?: any[]; w: n
 										<StarBtn id={`${MODULE}#${w}-${d}#c${ki}#${wi}`} snap={{ module: MODULE, hash: `#/day/${w}-${d}`, w, d, jp: wd.jp, cn: wd.cn || wd.en || "" }} />
 									</div>
 									<div className="vmn">
+										<VocabReading item={wd} />
 										{LANG !== "en" && wd.cn ? <span className="vcn">{wd.cn}</span> : null}
 										{wd.en ? <span className="ven">{wd.en}</span> : null}
+										{wd.pos ? <span className="kanji-word-pos">{wd.pos}</span> : null}
 										{wd.note ? (
 											<div className="meta jp">
 												<Rr o={wd} f="note" />

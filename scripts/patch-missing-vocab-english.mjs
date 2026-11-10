@@ -99,7 +99,7 @@ async function patchFile(path) {
 }
 
 const files = [
-	resolve(root, "public/data/vocab.856eb48e32.json"),
+	resolve(root, "public/data/vocab.f1c5816cd9.json"),
 	resolve(root, "public/data/n4vocab.026f711eb7.json"),
 ];
 
