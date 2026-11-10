@@ -364,6 +364,7 @@ export let fc: { week: number; day: number; deck: any[]; idx: number; flipped: b
 };
 
 let searchIndex: any[] | null = null;
+let minnaSearch: { module: string; bookId?: string; w: number; d: number; i: number; key: string; reading: string; extra: string; sub: string; dayTitle: string }[] | null = null;
 let readingSearchPromise: Promise<void> | null = null;
 let jaVoice: SpeechSynthesisVoice | null = null;
 let _favSyncing = false;
@@ -1208,6 +1209,7 @@ function buildIndex() {
 				dayTitle: w.title,
 			});
 		}
+	for (const row of minnaSearch || []) searchIndex!.push(row);
 	return searchIndex;
 }
 
@@ -1300,12 +1302,13 @@ export function bootReadingSearch() {
 	if (readingSearchLoaded) return Promise.resolve();
 	if (readingSearchPromise) return readingSearchPromise;
 	readingSearchError = "";
-	readingSearchPromise = Promise.all([import("../data/reading-n3"), import("../data/reading-n2")])
-		.then(([n3, n2]) => {
+	readingSearchPromise = Promise.all([import("../data/reading-n3"), import("../data/reading-n2"), import("../data/minna-grammar")])
+		.then(([n3, n2, minna]) => {
 			R = fullReadingBundle(n3.readingWeeks);
 			R2 = fullReadingBundle(n2.readingWeeks);
 			DATA.reading = R;
 			DATA.n2reading = R2;
+			minnaSearch = minna.minnaSearchRecords();
 			searchIndex = null;
 			readingSearchLoaded = true;
 			readingSearchError = "";
@@ -1334,7 +1337,7 @@ export function setReadingSearchLoadedForTests(loaded: boolean) {
 export type SearchCategory = "all" | "grammar" | "kanji" | "vocab" | "mistakes";
 
 export function searchCategoryForModule(module: string): Exclude<SearchCategory, "all"> | "other" {
-	if (module === "grammar" || module === "n2grammar" || module === "n4grammar" || module === "n1grammar") return "grammar";
+	if (module === "grammar" || module === "n2grammar" || module === "n4grammar" || module === "n1grammar" || module === "minna") return "grammar";
 	if (module === "kanji" || module === "n2kanji" || module === "n4kanji" || module === "n1kanji") return "kanji";
 	if (module === "vocab" || module === "n2vocab" || module === "n4vocab" || module === "n1vocab") return "vocab";
 	if (module === "mistakes") return "mistakes";
@@ -1392,6 +1395,11 @@ export function activeMistakeCount() {
 export function openSearchHit(hit: any, keyword?: string) {
 	if (!hit) return;
 	if (keyword) saveSearchHistory(keyword);
+	if (hit.module === "minna") {
+		const book = typeof hit.bookId === "string" ? hit.bookId : "shokyu-2";
+		navTo(`#/minna/${book}/${hit.w}/p${hit.i ?? 0}`);
+		return;
+	}
 	if (hit.module === "mistakes") {
 		setMistakeFilter(hit.mistakeType || "all");
 		setMistakeLevelFilter("all");
@@ -1808,6 +1816,7 @@ export function resetStudyStateForTests() {
 	favFlip = false;
 	showingFavFc = false;
 	searchIndex = null;
+	minnaSearch = null;
 	readingSearchLoaded = false;
 	readingSearchError = "";
 	readingSearchPromise = null;

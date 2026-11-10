@@ -22,6 +22,7 @@ import { ToastStack } from "./toast-stack";
 import { getDueVersion, subscribeDue } from "./due-review";
 import { formatReviewDate, jstToday, parseReviewRoute, reviewDateFromId } from "./lesson-review";
 import { parseItListeningRoute } from "./it-listening";
+import { minnaHash, parseMinnaRoute } from "./minna-route";
 import { parseTopicsRoute } from "./topic-route";
 import {
 	ACCOUNT,
@@ -137,6 +138,9 @@ const LazyVerbSummaryPage = lazy(() =>
 );
 const LazyKeigoSummaryPage = lazy(() =>
 	import("./KeigoSummaryPage").then((module) => ({ default: module.KeigoSummaryPage })),
+);
+const LazyMinnaGrammarPage = lazy(() =>
+	import("./MinnaGrammarPage").then((module) => ({ default: module.MinnaGrammarPage })),
 );
 const LazyModuleCardsPage = lazy(() =>
 	import("./ModuleCardsPage").then((module) => ({ default: module.ModuleCardsPage })),
@@ -551,6 +555,7 @@ function Sidebar({ routeKey, onLevel }: { routeKey: string; onLevel: (lv: LevelK
 						</button>
 					))}
 				</div>
+				{row("#/minna", "📕", lx("大家的日本语", "Minna no Nihongo"), null, h.startsWith("#/minna"))}
 			</div>
 			<div className="side-sec">
 				<div className="side-sub">
@@ -824,6 +829,7 @@ function viewMeta(key: string): { nav: string; title: string; back: boolean } {
 	if (key === "#/henkei") return { nav: "common", title: lx("变形口诀", "Verb mnemonics"), back: true };
 	if (key === "#/verb-summary") return { nav: "common", title: lx("动词变形总结", "Verb form summary"), back: true };
 	if (key === "#/keigo") return { nav: "common", title: lx("敬语总结", "Keigo summary"), back: true };
+	if (parseMinnaRoute(key)) return { nav: "common", title: lx("大家的日本语", "Minna no Nihongo"), back: true };
 	if (key === "#/kougo") return { nav: "common", title: lx("口语缩约 · 口語の縮約", "Spoken Contractions"), back: true };
 	if (key === "#/jita") return { nav: "common", title: lx("自动词和他动词 · 自動詞と他動詞", "Transitive & Intransitive Verbs"), back: true };
 	if (key === "#/wearing") return { nav: "common", title: lx("穿衣穿戴 · 衣服と身につける物", "Clothes & Accessories"), back: true };
@@ -999,11 +1005,12 @@ export function StudyApp() {
 	const reviewRoute = parseReviewRoute(routeKey);
 	const topicsRoute = parseTopicsRoute(routeKey);
 	const itlRoute = parseItListeningRoute(routeKey);
+	const minnaRoute = parseMinnaRoute(routeKey);
 	const commonPages = ["#/search", "#/cards", "#/kanji-exam", "#/favs", "#/mistakes", "#/usage", "#/ref", "#/katsuyou", "#/henkei", "#/verb-summary", "#/keigo", "#/kougo", "#/jita", "#/wearing", "#/numbers", "#/review"];
-	const isCommon = commonPages.includes(routeKey) || routeKey === "#/" || Boolean(reviewRoute) || Boolean(topicsRoute) || Boolean(itlRoute);
+	const isCommon = commonPages.includes(routeKey) || routeKey === "#/" || Boolean(reviewRoute) || Boolean(topicsRoute) || Boolean(itlRoute) || Boolean(minnaRoute);
 	if (routeKey === "#/cards") ensureCardsDeck();
 
-	const commonRefPage = ["#/usage", "#/ref", "#/katsuyou", "#/henkei", "#/verb-summary", "#/keigo", "#/kougo", "#/jita", "#/wearing", "#/numbers", "#/review"].includes(routeKey) || Boolean(reviewRoute) || Boolean(topicsRoute) || Boolean(itlRoute);
+	const commonRefPage = ["#/usage", "#/ref", "#/katsuyou", "#/henkei", "#/verb-summary", "#/keigo", "#/kougo", "#/jita", "#/wearing", "#/numbers", "#/review"].includes(routeKey) || Boolean(reviewRoute) || Boolean(topicsRoute) || Boolean(itlRoute) || Boolean(minnaRoute);
 	const waitingN2 = isN2() && MODULE !== "n2listening" && MODULE !== "n2reading" && !n2Loaded && !commonRefPage;
 	const waitingN4 = isN4() && !n4Loaded && !commonRefPage;
 	const waitingN1 = isN1() && MODULE !== "n1listening" && !n1Loaded && !commonRefPage;
@@ -1074,6 +1081,7 @@ export function StudyApp() {
 	else if (routeKey === "#/henkei") body = DATA.common?.henkei ? <HenkeiPage data={DATA.common} /> : <div className="empty">通用参考数据加载中，请稍候…</div>;
 	else if (routeKey === "#/verb-summary") body = <LazyVerbSummaryPage />;
 	else if (routeKey === "#/keigo") body = <LazyKeigoSummaryPage />;
+	else if (minnaRoute) body = <LazyMinnaGrammarPage bookId={minnaRoute.bookId} lesson={minnaRoute.lesson} point={minnaRoute.point} />;
 	else if (routeKey === "#/kougo") body = DATA.common?.kougo ? <KougoPage data={DATA.common} /> : <div className="empty">通用参考数据加载中，请稍候…</div>;
 	else if (routeKey === "#/jita") body = DATA.common?.jita ? <JitaPage data={DATA.common} /> : <div className="empty">通用参考数据加载中，请稍候…</div>;
 	else if (routeKey === "#/wearing") body = DATA.common?.wearing ? <WearingPage data={DATA.common} /> : <div className="empty">通用参考数据加载中，请稍候…</div>;
@@ -1101,12 +1109,12 @@ export function StudyApp() {
 			<Header
 				title={meta.title}
 				showBack={meta.back}
-				backLabel={day ? lx("目录", "Catalog") : reviewRoute?.id ? lx("日期", "Dates") : topicsRoute?.slug ? lx("专题", "Topics") : itlRoute?.id ? lx("文章", "Articles") : lx("返回", "Back")}
-				showLevel={!commonPages.includes(routeKey) && !reviewRoute && !topicsRoute && !itlRoute}
+				backLabel={day ? lx("目录", "Catalog") : reviewRoute?.id ? lx("日期", "Dates") : topicsRoute?.slug ? lx("专题", "Topics") : itlRoute?.id ? lx("文章", "Articles") : minnaRoute?.lesson != null ? lx("课表", "Lessons") : lx("返回", "Back")}
+				showLevel={!commonPages.includes(routeKey) && !reviewRoute && !topicsRoute && !itlRoute && !minnaRoute}
 				showTypebar={routeKey === "#/" || Boolean(day)}
 				showReading={LEVEL === "n3" || LEVEL === "n2"}
 				showListening={LEVEL === "n3" || LEVEL === "n2" || LEVEL === "n1"}
-				onBack={() => (day ? navTo("#/") : reviewRoute?.id ? navTo("#/review") : topicsRoute?.slug ? navTo("#/topics") : itlRoute?.id ? navTo("#/it-listening") : history.length > 1 ? navigate(-1) : navTo("#/"))}
+				onBack={() => (day ? navTo("#/") : reviewRoute?.id ? navTo("#/review") : topicsRoute?.slug ? navTo("#/topics") : itlRoute?.id ? navTo("#/it-listening") : minnaRoute?.lesson != null ? navTo(minnaHash(minnaRoute.bookId)) : history.length > 1 ? navigate(-1) : navTo("#/"))}
 				onOpenLevel={() => setSheet("level")}
 			/>
 			<Sidebar routeKey={routeKey} onLevel={pickLevel} />

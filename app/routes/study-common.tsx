@@ -965,6 +965,7 @@ const MODULE_TAG: Record<string, [string, string]> = {
 	listening: ["l", "N3听解"],
 	n2listening: ["l2", "N2听解"],
 	n1listening: ["l1", "N1听解"],
+	minna: ["mn", "大家的日本语"],
 	mistakes: ["m", "错题本"],
 };
 
@@ -1093,10 +1094,12 @@ export function SearchPage() {
 								<div className="where">
 									{e.module === "mistakes"
 										? <>{lx(...(SEARCH_MISTAKE_TYPE[e.mistakeType || "q"] || ["错题", "Mistake"]))} · {lx(...(SEARCH_MISTAKE_LEVEL[e.mistakeLevel || "new"] || ["不熟", "New"]))}{e.ts ? ` · ${new Date(e.ts).toLocaleDateString()}` : ""}</>
+										: e.module === "minna"
+										? lx(`大家的日本语 · 第${e.w}课`, `Minna no Nihongo · Lesson ${e.w}`)
 										: isListening(e.module)
 										? lx(`第${e.w}章 ${e.d}节`, `Ch. ${e.w} §${e.d}`)
 										: lx(`第${e.w}週 ${e.d}日目`, `Week ${e.w} Day ${e.d}`)}{" "}
-									{e.module === "mistakes" ? null : <> · <span className="jp">{e.dayTitle}</span></>}
+									{e.module === "mistakes" || e.module === "minna" ? null : <> · <span className="jp">{e.dayTitle}</span></>}
 								</div>
 							</div>
 						);
