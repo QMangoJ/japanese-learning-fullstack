@@ -6,13 +6,14 @@ import { validateKanjiJourneyArticle, type KanjiJourneyArticle } from "../../app
 
 /**
  * 《漢字的旅程》阅读数据（public/data/reading/kanji-journey.json）：
- * 正文是 v6 暂停讲解备忘录的 8 段（开场、第 1–6 段、结尾），
+ * 正文是 v8 暂停讲解备忘录的 7 段（开场、第 1–5 段、结尾），
  * 日文与备忘录逐字一致（读音括号换成 ruby，只给汉字注音）。
+ * v8 去掉造字方法一段；留下的句子仍用原来的 id（kj-007..kj-009 空着）。
  * 来宾问答 6 组、救命句、Q6 的「〇週間」占位不在备忘录里，保持原样。
  */
 const article: KanjiJourneyArticle = JSON.parse(readFileSync(join(process.cwd(), "public/data/reading/kanji-journey.json"), "utf8"));
 
-/** 备忘录里的 23 句。括号里是读音，转成站点 ruby 后不应再出现在 jp 里。 */
+/** 备忘录里的 20 句。括号里是读音，转成站点 ruby 后不应再出现在 jp 里。 */
 const MEMO: { raw: string; zh: string }[] = [
 		{
 			"raw": "みなさん、こんにちは。中国(ちゅうごく)から 来(き)た ダニエルです。",
@@ -37,18 +38,6 @@ const MEMO: { raw: string; zh: string }[] = [
 		{
 			"raw": "骨(ほね)は 硬(かた)いので、まるい 線(せん)は 難(むずか)しいです。だから「日(ひ)」は 四角(しかく)く なりました。",
 			"zh": "骨头很硬，圆的线很难刻，所以「日」变成了方形。"
-		},
-		{
-			"raw": "漢字(かんじ)の 作(つく)り方(かた)は、大(おお)きく 四(よっ)つ あります。",
-			"zh": "汉字的造法大体有四种。"
-		},
-		{
-			"raw": "「山(やま)」は 山(やま)の 形(かたち)です。「休(やす)む」は、「人(ひと)」と「木(き)」を 合(あ)わせた 字(じ)です。",
-			"zh": "「山」就是山的形状。「休」是把「人」和「木」合在一起的字。"
-		},
-		{
-			"raw": "今(いま)の 漢字(かんじ)の 多(おお)くは、意味(いみ)の ところと、読(よ)み方(かた)の ところが あります。",
-			"zh": "现在的汉字，很多都有表示意思的部分，也有表示读音的部分。"
 		},
 		{
 			"raw": "「馬(うま)」は、昔(むかし)は 馬(うま)の 絵(え)でした。",
@@ -132,34 +121,42 @@ describe("kanji-journey reading article", () => {
 		expect(errors.some((e) => e.includes("cue_ja"))).toBe(true);
 	});
 
-	it("is the v6 pause-and-explain memo: 8 sections, 23 sentences kj-001..kj-023", () => {
-		expect(article.title_zh).toContain("v6");
-		expect(article.description_zh).toContain("v6");
+	it("is the v8 pause-and-explain memo: 7 sections, 20 sentences, 6:01 video", () => {
+		expect(article.title_zh).toContain("v8");
+		expect(article.title_zh).toContain("6:01");
+		expect(article.description_zh).toContain("v8");
+		expect(article.description_zh).toContain("6:01");
+		expect(article.description_zh).toContain("full_ja_v8");
 		expect(article.description_zh).toContain("暂停");
-		expect(`${article.title_zh}${article.description_zh}${article.title_en ?? ""}${article.description_en ?? ""}`).not.toMatch(/金印|铁剑|鉄剣/);
+		expect(article.title_en).toContain("v8");
+		expect(article.title_en).toContain("6:01");
+		expect(article.description_en).toContain("v8");
+		expect(article.description_en).toContain("6:01");
+		expect(`${article.title_zh}${article.description_zh}${article.title_en ?? ""}${article.description_en ?? ""}`).not.toMatch(/金印|铁剑|鉄剣|v6|full_ja_v6/);
 		expect(article.sections.map((s) => s.zh)).toEqual([
 			"开场",
 			"第 1 段　甲骨文是怎样来的",
-			"第 2 段　汉字是怎样造出来的",
-			"第 3 段　字形的变化，以「馬」为例",
-			"第 4 段　汉字传到日本",
-			"第 5 段　日本怎样写出自己的字",
-			"第 6 段　日本自己造字，新词又传回中国",
+			"第 2 段　字形的变化，以「馬」为例",
+			"第 3 段　汉字传到日本",
+			"第 4 段　日本怎样写出自己的字",
+			"第 5 段　日本自己造字，新词又传回中国",
 			"结尾",
 		]);
 		expect(article.sections.map((s) => s.ja)).toEqual([
 			"はじめに",
 			"甲骨文字はどうやってできたか",
-			"漢字はどうやって作られたか",
 			"「馬」で見る字形の変化",
 			"漢字が日本に伝わる",
 			"日本が自分の文字を書く",
 			"日本で生まれた言葉が中国へ戻る",
 			"おわりに",
 		]);
-		expect(article.sections.map((s) => s.sentences.length)).toEqual([3, 3, 3, 4, 2, 3, 3, 2]);
+		expect(article.sections.map((s) => s.sentences.length)).toEqual([3, 3, 4, 2, 3, 3, 2]);
 		const ids = article.sections.flatMap((s) => s.sentences.map((x) => x.id));
-		expect(ids).toEqual(Array.from({ length: 23 }, (_, i) => `kj-${String(i + 1).padStart(3, "0")}`));
+		expect(ids).toEqual([
+			...Array.from({ length: 6 }, (_, i) => `kj-${String(i + 1).padStart(3, "0")}`),
+			...Array.from({ length: 14 }, (_, i) => `kj-${String(i + 10).padStart(3, "0")}`),
+		]);
 	});
 
 	it("matches the memo once reading parentheses become kanji-only ruby", () => {
@@ -178,29 +175,33 @@ describe("kanji-journey reading article", () => {
 		expect(body).not.toContain("ぜひ動画を見てください");
 		expect(body).not.toContain("继续播放");
 		expect(body).not.toContain("开始播放");
+		expect(body).not.toContain("作り方");
+		expect(body).not.toContain("汉字的造法");
+		expect(body).not.toContain("形声");
 	});
 
-	it("marks each pause section with the timecode and the narration's last line", () => {
+	it("marks each pause section with the v8 timecode and the narration's last line", () => {
 		expect(article.sections[0].pause_zh).toBe("播放前 · 讲完后开始播放");
 		expect(article.sections[0].cue_ja).toBeUndefined();
-		expect(article.sections.slice(1, 7).map((s) => s.pause_zh)).toEqual([
+		expect(article.sections.slice(1, 6).map((s) => s.pause_zh)).toEqual([
 			"约 1:31 · 讲完后继续播放",
-			"约 2:16 · 讲完后继续播放",
-			"约 4:05 · 讲完后继续播放",
-			"约 4:39（万叶假名开始前） · 讲完后继续播放",
-			"约 5:35 · 讲完后继续播放",
-			"约 6:06（常用汉字开始前） · 讲完后继续播放到片尾",
+			"约 3:20 · 讲完后继续播放",
+			"约 3:55（万叶假名开始前） · 讲完后继续播放",
+			"约 4:51 · 讲完后继续播放",
+			"约 5:21（常用汉字开始前） · 讲完后继续播放到片尾",
 		]);
-		expect(article.sections.slice(1, 7).map((s) => s.cue_ja)).toEqual([
+		expect(article.sections.slice(1, 6).map((s) => s.cue_ja)).toEqual([
 			"そこで甲骨文字の「日」は、四角く、まっすぐな線で刻まれました。",
-			"今の漢字の多くは、この形声文字です。",
 			"一番古い形から、太陽や月、山や水の姿が、見えてきませんか。",
 			"日本の人々は、漢字を借りて、自分たちの言葉を書き表すようになりました。",
 			"「イ」。",
 			"こうした言葉は、新しい意味で、中国にも伝わり、今も使われています。",
 		]);
-		expect(article.sections[7].pause_zh).toBe("片尾播完后");
-		expect(article.sections[7].cue_ja).toBeUndefined();
+		expect(article.sections[6].pause_zh).toBe("片尾播完后");
+		expect(article.sections[6].cue_ja).toBeUndefined();
+		const pauses = article.sections.map((s) => `${s.pause_zh ?? ""}\n${s.cue_ja ?? ""}`).join("\n");
+		expect(pauses).not.toMatch(/2:16|4:05|4:39|5:35|6:06/);
+		expect(pauses).not.toContain("形声文字");
 	});
 
 	it("keeps 6 Q&A pairs kj-024..kj-029 and the rescue phrase kj-030", () => {
@@ -217,12 +218,14 @@ describe("kanji-journey reading article", () => {
 
 	it("stays registered in the topics index as a reading entry whose count is the body sentence count", () => {
 		const index = JSON.parse(readFileSync(join(process.cwd(), "public/data/topics/index.json"), "utf8")) as {
-			topics: { slug: string; kind?: string; count: number; title_zh: string }[];
+			topics: { slug: string; kind?: string; count: number; title_zh: string; subtopics?: string[] }[];
 		};
 		const entry = index.topics.find((t) => t.slug === "kanji-journey");
 		expect(entry?.kind).toBe("reading");
 		expect(entry?.count).toBe(article.sections.reduce((n, s) => n + s.sentences.length, 0));
-		expect(entry?.title_zh).toContain("v6");
-		expect(entry?.title_zh).not.toMatch(/金印|铁剑/);
+		expect(entry?.title_zh).toContain("v8");
+		expect(entry?.title_zh).toContain("6:01");
+		expect(entry?.title_zh).not.toMatch(/v6|金印|铁剑/);
+		expect(entry?.subtopics).toEqual([...article.sections.map((s) => s.zh), "来宾问答"]);
 	});
 });
