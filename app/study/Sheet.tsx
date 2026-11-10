@@ -211,6 +211,7 @@ export function Sheet({
 							<SheetSectionHead title={lx("基础知识", "Foundations")} sub={lx("按级别", "By level")} />
 							<Grid columns={3} gap={2} xstyle={sheetStyles.grid}>
 								<SheetTile feature icon="🗓️" label={lx("课堂复习", "Lesson review")} onGo={go("#/review")} />
+								<SheetTile feature icon="📚" label={lx("单词队列", "Vocab queue")} onGo={go("#/vocab-queue")} />
 								<SheetTile feature icon="🈶" label={lx("汉字自测", "Kanji Self-test")} onGo={go("#/kanji-exam")} />
 								<SheetTile feature icon="⏱️" label={lx("使用时间", "Study time")} onGo={go("#/usage")} dataSheet="usage" />
 								<SheetTile feature icon="📕" label={lx("大家的日本语", "Minna no Nihongo")} onGo={go("#/minna")} dataSheet="minna" />

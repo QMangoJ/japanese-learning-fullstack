@@ -42,6 +42,10 @@ export function dueKey(userId: string): string {
 	return `due:${userId}`;
 }
 
+export function vocabQueueKey(userId: string): string {
+	return `vocab-queue:${userId}`;
+}
+
 export function masteryKey(userId: string): string {
 	return `mastery:${userId}`;
 }

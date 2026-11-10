@@ -80,6 +80,35 @@ export function isItlDonePayload(value: unknown) {
 const DUE_KINDS = new Set(["grammar", "mistake", "listening", "topic"]);
 const DUE_DATE = /^\d{4}-\d{2}-\d{2}$/;
 
+const VOCAB_QUEUE_MAX_STATES = 8_000;
+const VOCAB_QUEUE_DATE = /^\d{4}-\d{2}-\d{2}$/;
+
+/** Unified vocab queue state: { v:1, states: {id: {s, due, ts}}, plan: {date, ids, done, review, fresh} | null }. */
+export function isVocabQueuePayload(value: unknown) {
+	if (!isRecord(value)) return false;
+	if (value.v !== 1) return false;
+	if (!isRecord(value.states)) return false;
+	const stateEntries = Object.entries(value.states);
+	if (stateEntries.length > VOCAB_QUEUE_MAX_STATES) return false;
+	for (const [id, state] of stateEntries) {
+		if (!isSafeId(id) || !isString(id, 200, false) || !isRecord(state)) return false;
+		if (typeof state.s !== "number" || !Number.isInteger(state.s) || state.s < 0 || state.s > 5) return false;
+		if (typeof state.due !== "string" || !VOCAB_QUEUE_DATE.test(state.due)) return false;
+		if (!isFiniteNumber(state.ts)) return false;
+	}
+	if (value.plan === null) return true;
+	if (!isRecord(value.plan)) return false;
+	const plan = value.plan;
+	if (typeof plan.date !== "string" || !VOCAB_QUEUE_DATE.test(plan.date)) return false;
+	if (!Array.isArray(plan.ids) || plan.ids.length > 500) return false;
+	if (!plan.ids.every((id) => typeof id === "string" && isSafeId(id) && isString(id, 200, false))) return false;
+	if (!Array.isArray(plan.done) || plan.done.length > plan.ids.length) return false;
+	if (!plan.done.every((id) => typeof id === "string" && plan.ids.includes(id))) return false;
+	if (typeof plan.review !== "number" || !Number.isInteger(plan.review) || plan.review < 0) return false;
+	if (typeof plan.fresh !== "number" || !Number.isInteger(plan.fresh) || plan.fresh < 0) return false;
+	return true;
+}
+
 export function isDueReviewPayload(value: unknown) {
 	if (!Array.isArray(value) || value.length > MAX_ITEMS) return false;
 	return value.every((item) => {

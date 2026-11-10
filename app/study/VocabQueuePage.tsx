@@ -1,0 +1,201 @@
+import { useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
+
+import { StudyFlip } from "./study-flip";
+import type { SwipeGrade } from "./swipe-grade";
+import { lx, navTo } from "./store";
+import { jstToday } from "./lesson-review";
+import {
+	applyVocabGrade,
+	dueWordCount,
+	ensureVocabWords,
+	getVocabQueueVersion,
+	subscribeVocabQueue,
+	todayPlan,
+	vocabQueueData,
+	vocabWordsCache,
+	type VocabGrade,
+	type VocabWord,
+} from "./vocab-queue";
+
+function useVocabTick() {
+	return useSyncExternalStore(subscribeVocabQueue, getVocabQueueVersion, () => 0);
+}
+
+const GRADE_LABEL: Record<VocabGrade, [string, string]> = {
+	again: ["不认识", "Don't know"],
+	fuzzy: ["模糊", "Fuzzy"],
+	know: ["认识", "Know"],
+};
+
+function toVocabGrade(grade: SwipeGrade): VocabGrade {
+	return grade === "pass" ? "know" : grade === "fail" ? "again" : "fuzzy";
+}
+
+function srcCounts(words: VocabWord[]): [string, number][] {
+	const counts = new Map<string, number>();
+	for (const word of words) {
+		for (const label of word.src.split("・")) counts.set(label, (counts.get(label) ?? 0) + 1);
+	}
+	return [...counts.entries()].sort((a, b) => b[1] - a[1]);
+}
+
+export function VocabQueuePage() {
+	useVocabTick();
+	const [loaded, setLoaded] = useState(false);
+	const [queue, setQueue] = useState<string[] | null>(null);
+	const [flipped, setFlipped] = useState(false);
+	const reshownRef = useRef<Set<string>>(new Set());
+	const planDateRef = useRef<string | null>(null);
+
+	useEffect(() => {
+		let alive = true;
+		void ensureVocabWords().then(() => {
+			if (alive) setLoaded(true);
+		});
+		return () => {
+			alive = false;
+		};
+	}, []);
+
+	const words = vocabWordsCache();
+	const today = jstToday();
+
+	// Build (or reuse) today's plan once the word list is available.
+	useEffect(() => {
+		if (words && words.length) todayPlan(words, today);
+	}, [words, today]);
+
+	const data = vocabQueueData();
+	const plan = data.plan && data.plan.date === today ? data.plan : null;
+
+	// Session queue = today's plan minus what's already done (per stored plan).
+	useEffect(() => {
+		if (!plan) return;
+		if (planDateRef.current === plan.date && queue !== null) return;
+		planDateRef.current = plan.date;
+		setQueue(plan.ids.filter((id) => !plan.done.includes(id)));
+	}, [plan, queue]);
+
+	const byId = useMemo(() => new Map((words ?? []).map((word) => [word.id, word])), [words]);
+	const current = queue && queue.length ? byId.get(queue[0]) : undefined;
+	const doneCount = plan ? plan.done.length : 0;
+	const total = plan ? plan.ids.length : 0;
+
+	const grade = (vocabGrade: VocabGrade) => {
+		if (!queue || !queue.length) return;
+		const id = queue[0];
+		setFlipped(false);
+		if (vocabGrade === "again" && !reshownRef.current.has(id)) {
+			// First "again" today: schedule normally but show the card once more at the end.
+			reshownRef.current.add(id);
+			applyVocabGrade(id, "again", false, today);
+			setQueue([...queue.slice(1), id]);
+			return;
+		}
+		applyVocabGrade(id, vocabGrade, true, today);
+		setQueue(queue.slice(1));
+	};
+
+	if (!loaded || !words) return <div className="empty">{lx("词表加载中…", "Loading word list…")}</div>;
+	if (!words.length) return <div className="empty">{lx("词表是空的。", "The word list is empty.")}</div>;
+	if (!plan || queue === null) return <div className="empty">{lx("正在准备今日任务…", "Preparing today's session…")}</div>;
+
+	const overdueExtra = Math.max(0, dueWordCount(words, data.states, today) - plan.review);
+	const studied = Object.keys(data.states).length;
+	const mastered = Object.values(data.states).filter((s) => s.s >= 4).length;
+	const finished = queue.length === 0;
+
+	return (
+		<div className="fc-wrap vq-wrap">
+			<div className="vq-head">
+				<div className="vq-progress-row">
+					<b>
+						{lx("今日进度", "Today")} {doneCount}/{total}
+					</b>
+					<span className="vq-comp">
+						{lx("到期复习", "Reviews")} {plan.review} · {lx("新词", "New")} {plan.fresh}
+						{overdueExtra > 0 ? ` · ${lx("另有", "+")} ${overdueExtra} ${lx("个到期词顺延", "due words deferred")}` : ""}
+					</span>
+				</div>
+				<div className="vq-bar" role="progressbar" aria-valuenow={doneCount} aria-valuemax={total}>
+					<div className="vq-bar-fill" style={{ width: total ? `${Math.round((doneCount / total) * 100)}%` : "0%" }} />
+				</div>
+			</div>
+
+			{finished ? (
+				<div className="vq-done">
+					<div className="vq-done-emoji">🎉</div>
+					<h2>{lx("今日达标", "Done for today")}</h2>
+					<p>
+						{lx(`今天的 ${total} 个词已全部过完：到期复习 ${plan.review} 个、新词 ${plan.fresh} 个。`, `All ${total} words finished: ${plan.review} reviews and ${plan.fresh} new words.`)}
+					</p>
+					<button type="button" className="vq-home-btn" onClick={() => navTo("#/")}>
+						{lx("回到首页", "Back to home")}
+					</button>
+				</div>
+			) : current ? (
+				<>
+					<StudyFlip
+						key={current.id}
+						flipped={flipped}
+						onFlip={() => setFlipped((value) => !value)}
+						onGrade={(g: SwipeGrade) => grade(toVocabGrade(g))}
+						onSwipe={(g: SwipeGrade) => grade(toVocabGrade(g))}
+						front={
+							<>
+								<span className="vq-chip">{current.src.split("・")[0]}</span>
+								<div className="big vq-word">{current.w}</div>
+								<div className="hint">{lx("点按翻面 · 右滑认识 / 左滑不认识 / 上滑模糊", "Tap to flip · swipe right = know, left = again, up = fuzzy")}</div>
+							</>
+						}
+						back={
+							<div className="backside">
+								<span className="vq-chip">{current.src}</span>
+								{current.r ? <div className="vq-reading">{current.r}</div> : null}
+								<div className="vq-zh">{current.zh}</div>
+								{current.en ? <div className="vq-en">{current.en}</div> : null}
+								{current.ex ? (
+									<div className="fcard-ex">
+										<div className="fcard-ex-label">{lx("例句", "Example")}</div>
+										<div>{current.ex}</div>
+										{current.exZh ? <div className="vq-ex-zh">{current.exZh}</div> : null}
+									</div>
+								) : null}
+							</div>
+						}
+					/>
+					<div className="fc-actions">
+						<div className="review-skill">
+							{(Object.keys(GRADE_LABEL) as VocabGrade[]).map((g) => (
+								<button key={g} type="button" className={g === "know" ? "known" : ""} onClick={() => grade(g)}>
+									{lx(...GRADE_LABEL[g])}
+								</button>
+							))}
+						</div>
+					</div>
+				</>
+			) : (
+				<div className="empty">
+					<p>{lx("这张卡已不在词表里。", "This card is no longer in the word list.")}</p>
+					<button type="button" className="vq-home-btn" onClick={() => setQueue(queue.slice(1))}>
+						{lx("跳过", "Skip")}
+					</button>
+				</div>
+			)}
+
+			<div className="vq-overview">
+				<h3>{lx("队列总览", "Queue overview")}</h3>
+				<p>
+					{lx(`全队列 ${words.length} 词 · 已学 ${studied} · 熟练（阶梯 4+）${mastered}`, `${words.length} words in queue · ${studied} studied · ${mastered} mastered (step 4+)`)}
+				</p>
+				<div className="vq-sources">
+					{srcCounts(words).map(([label, n]) => (
+						<span key={label} className="vq-src-count">
+							{label} {n}
+						</span>
+					))}
+				</div>
+			</div>
+		</div>
+	);
+}

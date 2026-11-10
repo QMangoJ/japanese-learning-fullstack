@@ -20,6 +20,8 @@ import { PointerTiltRoot } from "./pointer-tilt";
 import { FavBurstRoot } from "./fav-burst";
 import { ToastStack } from "./toast-stack";
 import { getDueVersion, subscribeDue } from "./due-review";
+import { getVocabQueueVersion, subscribeVocabQueue, vocabQueueData, vocabWordsCache } from "./vocab-queue";
+import { VocabQueueTodayCard } from "./VocabQueueTodayCard";
 import { formatReviewDate, jstToday, parseReviewRoute, reviewDateFromId } from "./lesson-review";
 import { parseEnListeningRoute } from "./en-listening";
 import { parseItListeningRoute } from "./it-listening";
@@ -134,6 +136,9 @@ const LazyEnListeningPage = lazy(() =>
 const LazyReviewPage = lazy(() =>
 	import("./ReviewPage").then((module) => ({ default: module.ReviewPage })),
 );
+const LazyVocabQueuePage = lazy(() =>
+	import("./VocabQueuePage").then((module) => ({ default: module.VocabQueuePage })),
+);
 const LazyTopicsPage = lazy(() =>
 	import("./TopicsPage").then((module) => ({ default: module.TopicsPage })),
 );
@@ -175,6 +180,10 @@ function useStudyTick() {
 
 function useDueTick() {
 	useSyncExternalStore(subscribeDue, getDueVersion, () => 0);
+}
+
+function useVocabQueueTick() {
+	useSyncExternalStore(subscribeVocabQueue, getVocabQueueVersion, () => 0);
 }
 
 class StudyPageErrorBoundary extends Component<{ resetKey: string; children: ReactNode }, { error: Error | null }> {
@@ -535,6 +544,10 @@ function Sidebar({ routeKey, onLevel }: { routeKey: string; onLevel: (lv: LevelK
 		...(LEVEL === "n3" || LEVEL === "n2" || LEVEL === "n1" ? ([["listening", "🎧", lx("听解", "Listening")]] as [TypeKey, string, string][]) : []),
 	];
 	const favCount = Object.keys(FAV).length;
+	useVocabQueueTick();
+	const vqPlan = vocabQueueData().plan;
+	const vqRemaining =
+		vocabWordsCache() && vqPlan && vqPlan.date === jstToday() ? vqPlan.ids.length - vqPlan.done.length : 0;
 	const row = (go: string, ic: string, label: string, count: string | number | null, on: boolean) => (
 		<button
 			className={`side-item ${on ? "on" : ""}`}
@@ -585,6 +598,7 @@ function Sidebar({ routeKey, onLevel }: { routeKey: string; onLevel: (lv: LevelK
 					? row("#/contrast", "🔀", `${LV} ${lx("辨析", "Contrast")}`, null, h === "#/contrast")
 					: null}
 				{row("#/review", "🗓️", lx("课堂复习", "Lesson review"), null, h.startsWith("#/review"))}
+				{row("#/vocab-queue", "📚", lx("单词队列", "Vocab queue"), vqRemaining || "", h === "#/vocab-queue")}
 				{row("#/kanji-exam", "🈶", lx("汉字自测", "Kanji Self-test"), null, h === "#/kanji-exam")}
 			</div>
 			<div className="side-sec">
@@ -633,7 +647,7 @@ function BottomNav({ active, onCommon }: { active: string; onCommon: () => void 
 			onClick={() => {
 				if (nav === "common") onCommon();
 				else if (nav === "favs" || nav === "mistakes") goAccountPage(nav === "favs" ? "#/favs" : "#/mistakes");
-				else navTo({ home: "#/", search: "#/search" }[nav] || "#/");
+				else navTo({ home: "#/", search: "#/search", vocab: "#/vocab-queue" }[nav] || "#/");
 			}}
 		>
 			<span className="ic">{ic}</span>
@@ -643,6 +657,7 @@ function BottomNav({ active, onCommon }: { active: string; onCommon: () => void 
 	return (
 		<nav className="bottom">
 			{item("home", "📚", "知识库", "Library")}
+			{item("vocab", "🔤", "背单词", "Words")}
 			{item("search", "🔍", "搜索", "Search")}
 			{item("mistakes", "📝", "错题本", "Notes")}
 			{item("common", "📐", "通用", "General")}
@@ -815,6 +830,7 @@ function viewMeta(key: string): { nav: string; title: string; back: boolean } {
 	if (key === "#/search") return { nav: "search", title: lx("搜索", "Search"), back: false };
 	if (key === "#/usage") return { nav: "common", title: lx("使用时间", "Study time"), back: false };
 	if (key === "#/cards") return { nav: "common", title: `${lx("记忆卡", "Flashcards")} · ${modLabel()}`, back: false };
+	if (key === "#/vocab-queue") return { nav: "vocab", title: lx("背单词 · 单词队列", "Vocabulary Queue"), back: false };
 	const review = parseReviewRoute(key);
 	if (review) {
 		if (!review.id) return { nav: "common", title: lx("课堂复习", "Lesson review"), back: true };
@@ -874,6 +890,7 @@ function RetainedDay({ day }: { day: ReturnType<typeof parseDayRoute> }) {
 export function StudyApp() {
 	useStudyTick();
 	useDueTick();
+	useVocabQueueTick();
 	const location = useLocation();
 	const navigate = useNavigate();
 	const [booted, setBooted] = useState(false);
@@ -1022,7 +1039,7 @@ export function StudyApp() {
 	const itlRoute = parseItListeningRoute(routeKey);
 	const enlRoute = parseEnListeningRoute(routeKey);
 	const minnaRoute = parseMinnaRoute(routeKey);
-	const commonPages = ["#/search", "#/cards", "#/kanji-exam", "#/favs", "#/mistakes", "#/usage", "#/ref", "#/katsuyou", "#/henkei", "#/verb-summary", "#/keigo", "#/kougo", "#/jita", "#/wearing", "#/numbers", "#/review"];
+	const commonPages = ["#/search", "#/cards", "#/vocab-queue", "#/kanji-exam", "#/favs", "#/mistakes", "#/usage", "#/ref", "#/katsuyou", "#/henkei", "#/verb-summary", "#/keigo", "#/kougo", "#/jita", "#/wearing", "#/numbers", "#/review"];
 	const isCommon = commonPages.includes(routeKey) || routeKey === "#/" || Boolean(reviewRoute) || Boolean(topicsRoute) || Boolean(itlRoute) || Boolean(enlRoute) || Boolean(minnaRoute);
 	if (routeKey === "#/cards") ensureCardsDeck();
 
@@ -1084,11 +1101,15 @@ export function StudyApp() {
 				</section>
 			</>
 		) : (
-			<HomePage data={homeData} />
+			<>
+				<VocabQueueTodayCard />
+				<HomePage data={homeData} />
+			</>
 		);
 	else if (routeKey === "#/search") body = <SearchPage />;
 	else if (routeKey === "#/usage") body = <LazyUsagePage />;
 	else if (routeKey === "#/cards") body = isGram() ? <CardsPage /> : <LazyModuleCardsPage />;
+	else if (routeKey === "#/vocab-queue") body = <LazyVocabQueuePage />;
 	else if (routeKey === "#/kanji-exam") body = <LazyKanjiExamPage />;
 	else if (routeKey === "#/favs") body = showingFavFc ? <FavFcPage data={favFcPayload()} /> : <FavsPage data={favsPayload()} />;
 	else if (routeKey === "#/mistakes") body = <MistakesPage data={mistakesPayload()} />;

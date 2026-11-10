@@ -101,7 +101,8 @@
 		"typegen": "react-router typegen",
 		"typecheck": "npm run typegen && tsc -b",
 		"mistakes:pending": "node --experimental-strip-types scripts/mistakes-pending.mts",
-		"mistakes:write": "node --experimental-strip-types scripts/mistakes-write.mts"
+		"mistakes:write": "node --experimental-strip-types scripts/mistakes-write.mts",
+		"generate:vocab-queue": "node --experimental-strip-types scripts/build-vocab-queue.mts"
 	},
 	"type": "module"
 }
