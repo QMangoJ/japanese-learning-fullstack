@@ -579,7 +579,7 @@ body.hide-cn .vcn,body.hide-cn .cn{visibility:hidden}
   .exam-qline{grid-template-columns:auto minmax(0,1fr)}
   .exam-fav-btn{grid-column:2;justify-self:start;margin-top:6px;min-height:34px;padding:5px 11px}
 }
-.selection-popover{position:fixed;z-index:80;width:min(286px,calc(100vw - 24px));box-sizing:border-box;background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:0 14px 34px rgba(29,24,31,.2);padding:11px;animation:selection-popover-in .16s ease-out}
+.selection-popover{position:fixed;z-index:80;width:min(286px,calc(100vw - 24px));box-sizing:border-box;background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:0 14px 34px rgba(29,24,31,.2);padding:11px;animation:selection-popover-in .06s ease-out}
 .selection-popover[hidden]{display:none}
 .selection-popover__title{font-size:14.5px;font-weight:800;color:var(--ink);margin-bottom:5px}
 .selection-popover__text{font-size:16px;line-height:1.45;max-height:42px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--sub);margin-bottom:9px}
@@ -590,7 +590,7 @@ body.hide-cn .vcn,body.hide-cn .cn{visibility:hidden}
 .selection-popover__actions button{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:8px;padding:6px 12px;font:700 14.5px/1 inherit;cursor:pointer}
 .selection-popover__actions button.primary{background:var(--accent);border-color:var(--accent);color:#fff}
 .selection-popover__actions button:disabled{opacity:.7;cursor:default}
-@keyframes selection-popover-in{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
+@keyframes selection-popover-in{from{opacity:.35;transform:translateY(2px)}to{opacity:1;transform:translateY(0)}}
 .fav-actions{display:flex;gap:8px;margin:4px 0 12px;flex-wrap:wrap}
 .fav-actions button{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:6px 14px;font-size:16px;cursor:pointer}
 .fav-actions button.primary{background:var(--accent);border-color:var(--accent);color:#fff}

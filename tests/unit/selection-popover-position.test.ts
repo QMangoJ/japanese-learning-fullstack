@@ -9,8 +9,8 @@ describe("selection popover positioning", () => {
 		const desktop = selectionPopoverPosition({ rect, viewportWidth: 390, viewportHeight: 844, mobile: false });
 		const mobile = selectionPopoverPosition({ rect, viewportWidth: 390, viewportHeight: 844, mobile: true });
 
-		expect(desktop.top).toBe(250);
-		expect(mobile.top).toBe(194);
+		expect(desktop.top).toBe(178);
+		expect(mobile.top).toBe(122);
 		expect(desktop.top - mobile.top).toBe(56);
 	});
 

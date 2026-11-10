@@ -696,6 +696,13 @@ function SelectionPopover({ routeKey }: { routeKey: string }) {
 			if (timer) clearTimeout(timer);
 			timer = setTimeout(maybeShow, 48);
 		};
+		// Pointer released: the selection is final, so show immediately instead of
+		// waiting out the selectionchange debounce (maybeShow defers one frame).
+		const queueNow = (event?: Event) => {
+			if ((event?.target as Element | null)?.closest?.("#selectionPopover")) return;
+			if (timer) clearTimeout(timer);
+			maybeShow();
+		};
 		const onPointerDown = (e: PointerEvent) => {
 			if (!(e.target as Element).closest?.("#selectionPopover")) hide();
 		};
@@ -704,18 +711,18 @@ function SelectionPopover({ routeKey }: { routeKey: string }) {
 			else if (e.shiftKey || e.key === "ArrowLeft" || e.key === "ArrowRight") queue();
 		};
 		document.addEventListener("selectionchange", queue);
-		document.addEventListener("pointerup", queue, true);
-		document.addEventListener("mouseup", queue, true);
-		document.addEventListener("touchend", queue, true);
+		document.addEventListener("pointerup", queueNow, true);
+		document.addEventListener("mouseup", queueNow, true);
+		document.addEventListener("touchend", queueNow, true);
 		document.addEventListener("keyup", onKey);
 		document.addEventListener("pointerdown", onPointerDown, true);
 		window.addEventListener("scroll", hide, { passive: true });
 		return () => {
 			if (timer) clearTimeout(timer);
 			document.removeEventListener("selectionchange", queue);
-			document.removeEventListener("pointerup", queue, true);
-			document.removeEventListener("mouseup", queue, true);
-			document.removeEventListener("touchend", queue, true);
+			document.removeEventListener("pointerup", queueNow, true);
+			document.removeEventListener("mouseup", queueNow, true);
+			document.removeEventListener("touchend", queueNow, true);
 			document.removeEventListener("keyup", onKey);
 			document.removeEventListener("pointerdown", onPointerDown, true);
 			window.removeEventListener("scroll", hide);

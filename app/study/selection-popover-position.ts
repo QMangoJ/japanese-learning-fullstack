@@ -16,7 +16,9 @@ export function selectionPopoverPosition({
 	viewportHeight,
 	mobile,
 	width = 286,
-	height = 160,
+	// Matches the rendered panel height (title + text + two-row type chips +
+	// actions ≈ 230px); underestimating it lets the panel overlap the selection.
+	height = 232,
 	padding = 12,
 }: SelectionPopoverPositionOptions) {
 	const left = Math.max(padding, Math.min(viewportWidth - width - padding, rect.left + (rect.width - width) / 2));
