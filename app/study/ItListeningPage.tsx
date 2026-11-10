@@ -376,10 +376,16 @@ function ItListeningDetail({ id }: { id: string }) {
 
 	useEffect(() => {
 		const onMsg = (ev: MessageEvent) => {
-			if (typeof ev.data !== "string" || !ev.data.includes("onStateChange")) return;
+			if (typeof ev.data !== "string" || (!ev.data.includes("onStateChange") && !ev.data.includes("infoDelivery"))) return;
 			try {
-				const d = JSON.parse(ev.data) as { event?: string; info?: number };
-				if (d.event === "onStateChange" && typeof d.info === "number") setYtPlaying(d.info === 1);
+				const d = JSON.parse(ev.data) as { event?: string; info?: number | { playerState?: number } };
+				// 两种回传形状：onStateChange 的 info 是数字状态；listening 握手后状态走 infoDelivery 的 info.playerState。
+				// 状态码：1 播放中 / 2 已暂停 / 0 结束 / 5 已定位未播。
+				let st: number | undefined;
+				if (typeof d.info === "number") st = d.info;
+				else if (d.info && typeof d.info.playerState === "number") st = d.info.playerState;
+				if (st === 1) setYtPlaying(true);
+				else if (st === 2 || st === 0 || st === 5) setYtPlaying(false);
 			} catch {
 				/* 非播放器消息，忽略 */
 			}
@@ -392,11 +398,17 @@ function ItListeningDetail({ id }: { id: string }) {
 		iframeRef.current?.contentWindow?.postMessage(JSON.stringify({ event: "command", func, args: [] }), "*");
 	};
 	const subscribeYtState = () => {
-		iframeRef.current?.contentWindow?.postMessage(
-			JSON.stringify({ event: "command", func: "addEventListener", args: ["onStateChange"] }),
-			"*",
-		);
+		const win = iframeRef.current?.contentWindow;
+		if (!win) return;
+		// listening 握手：不加载 API 脚本时靠它订阅状态回传（infoDelivery）。
+		win.postMessage(JSON.stringify({ event: "listening", id: "itl-player", channel: "widget" }), "*");
+		win.postMessage(JSON.stringify({ event: "command", func: "addEventListener", args: ["onStateChange"] }), "*");
 	};
+
+	// 悬浮窗出现时再补一次订阅（防 load 时机太早握手没赶上）。
+	useEffect(() => {
+		if (floating) subscribeYtState();
+	}, [floating]);
 	const toggleYtPlay = () => {
 		if (ytPlaying) {
 			ytCommand("pauseVideo");
@@ -536,6 +548,32 @@ function ItListeningDetail({ id }: { id: string }) {
 									</li>
 								))}
 							</ul>
+						) : null}
+						{s.modelAnswer ? (
+							<div className="itl-model">
+								<span className="itl-model-label">{lx("回答例（Daniel 版）", "Sample answer (Daniel's version)")}</span>
+								<p className="itl-model-jp">
+									{s.modelAnswer.ruby && s.modelAnswer.ruby.length ? <RubySegments segs={s.modelAnswer.ruby} /> : s.modelAnswer.jp}
+								</p>
+								<p className="itl-model-zh">{s.modelAnswer.zh}</p>
+								{s.modelAnswer.points ? (
+									<div className="itl-points">
+										<span className="itl-points-label">{lx("答题要点", "How to answer")}</span>
+										<p>
+											<b>{lx("面试官在看什么", "What they assess")}</b>
+											{s.modelAnswer.points.intent}
+										</p>
+										<p>
+											<b>{lx("推荐结构", "Structure")}</b>
+											{s.modelAnswer.points.structure}
+										</p>
+										<p>
+											<b>{lx("雷区", "Pitfalls")}</b>
+											{s.modelAnswer.points.pitfalls}
+										</p>
+									</div>
+								) : null}
+							</div>
 						) : null}
 					</li>
 				))}

@@ -52,6 +52,26 @@ export type ItListeningSentence = {
 	/** 整句结构拆解（news 的 keySentences.structureZh）：成分＋中文 gloss。 */
 	structure?: string;
 	vocab?: ItListeningVocab[];
+	/** 回答例（可选，目前仅 real-wp-online-mock 的面试官问题句带）：按学习者本人情况写的示范回答。 */
+	modelAnswer?: ItListeningModelAnswer;
+};
+
+export type ItListeningModelAnswer = {
+	jp: string;
+	/** 注音分段：各片段 t 依次拼接应与 jp 完全一致（与句子 ruby 同规则）。 */
+	ruby?: ItListeningRubySegment[];
+	zh: string;
+	/** 答题要点（中文元指导）：面试官在看什么 / 推荐结构 / 雷区。 */
+	points?: ItListeningAnswerPoints;
+};
+
+export type ItListeningAnswerPoints = {
+	/** 面试官在看什么：这道题在日本企业面试里的真实意图/评价点。 */
+	intent: string;
+	/** 推荐结构：先结论还是先经历、长度感等。 */
+	structure: string;
+	/** 雷区：日本语境下容易踩的答法与更稳妥的方向。 */
+	pitfalls: string;
 };
 
 export type ItListeningIndexEntry = {
