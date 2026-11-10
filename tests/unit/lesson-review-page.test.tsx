@@ -5,6 +5,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { ReviewPage } from "../../app/study/ReviewPage";
 import { resetStudyStateForTests, setNavImpl } from "../../app/study/store";
 import type { LessonReviewPayload } from "../../app/study/lesson-review";
+import seed from "../../public/data/lesson-review.json";
 
 const payload: LessonReviewPayload = {
 	source: "test",
@@ -142,6 +143,49 @@ describe("ReviewPage", () => {
 		await user.click(screen.getByRole("button", { name: "看日语" }));
 		expect(screen.getByText("練習すれば練習するほど、日本語が上手になる")).toBeInTheDocument();
 		expect(screen.queryByText("越练越好")).not.toBeInTheDocument();
+	});
+
+	it("flips the 11月2日 deck and shows Chinese, English, and an example on every card", async () => {
+		const user = userEvent.setup();
+		setNavImpl(() => {});
+		const november = (seed as LessonReviewPayload).days.find((day) => day.id === "2026-11-02");
+		expect(november?.items).toHaveLength(14);
+		vi.stubGlobal(
+			"fetch",
+			vi.fn(async (url: string) => {
+				if (String(url).includes("/api/review")) {
+					const bare = {
+						source: "kv",
+						fetchedAt: "2099-01-01T00:00:00.000Z",
+						days: [
+							{
+								id: "2026-11-02",
+								date: "2026-11-02",
+								title: "2026-11-02",
+								source: "Danielさん",
+								items: november?.items.map((item) => ({ jp: item.jp, kind: item.kind })) ?? [],
+							},
+						],
+					};
+					return new Response(JSON.stringify(bare), { status: 200, headers: { "content-type": "application/json" } });
+				}
+				return new Response(JSON.stringify(seed), { status: 200, headers: { "content-type": "application/json" } });
+			}),
+		);
+		render(<ReviewPage dateId="2026-11-02" />);
+		expect(await screen.findByText("げつ・すい・きん・にち")).toBeInTheDocument();
+		expect(screen.getByText("1 / 14")).toBeInTheDocument();
+		for (const item of november?.items ?? []) {
+			expect(screen.getByText(item.jp)).toBeInTheDocument();
+			await user.click(screen.getByText("回想中/英文，点击翻面"));
+			const back = document.querySelector(".backside")?.textContent || "";
+			expect(back).toContain(item.cn);
+			expect(back).toContain(item.en);
+			expect(document.querySelector(".fcard-ex-label")?.textContent).toBe("例句");
+			expect(document.querySelector(".fcard-ex .cn")?.textContent).toBe(item.exampleCn);
+			const next = screen.queryByRole("button", { name: /下一张|Next/ });
+			if (next && !next.hasAttribute("disabled")) await user.click(next);
+		}
 	});
 
 	it("marks a card as mastered and hides it from the to-review deck", async () => {

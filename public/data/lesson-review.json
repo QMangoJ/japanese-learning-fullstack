@@ -1,13 +1,212 @@
 {
 	"source": "https://docs.google.com/document/d/12NwKtAV_HFUeOheYvXGMsJl5G2xIcdb4WG_axC23xrU/edit\nhttps://docs.google.com/document/d/1oEZYQYz3Kb3q5bRqNJgdD0TNxUHVEX2PGvLoCju_Cdc/edit",
-	"fetchedAt": "2026-10-26T23:20:57.000Z",
+	"fetchedAt": "2026-11-10T03:00:00.000Z",
 	"days": [
+		{
+			"id": "2026-11-20",
+			"date": "2026-11-20",
+			"title": "2026-11-20",
+			"source": "Danielさん",
+			"items": [
+				{
+					"jp": "仕事の日本語",
+					"kind": "word",
+					"jp_r": "<ruby>仕事<rt>しごと</rt></ruby>の<ruby>日本語<rt>にほんご</rt></ruby>",
+					"cn": "工作场合用的日语、商务日语（仕事 しごと）",
+					"en": "Japanese used at work",
+					"example": "来月から仕事の日本語を勉強します。",
+					"exampleCn": "我从下个月开始学工作用的日语。",
+					"exampleEn": "Starting next month I'll study Japanese for work.",
+					"example_r": "<ruby>来月<rt>らいげつ</rt></ruby>から<ruby>仕事<rt>しごと</rt></ruby>の<ruby>日本語<rt>にほんご</rt></ruby>を<ruby>勉強<rt>べんきょう</rt></ruby>します。"
+				}
+			]
+		},
+		{
+			"id": "2026-11-02",
+			"date": "2026-11-02",
+			"title": "2026-11-02",
+			"source": "Danielさん",
+			"items": [
+				{
+					"jp": "げつ・すい・きん・にち",
+					"kind": "word",
+					"cn": "星期一、星期三、星期五、星期日（月・水・金・日 的词首读音：げつ・すい・きん・にち）",
+					"en": "Mon, Wed, Fri, and Sun (the first mora of 月・水・金・日)",
+					"example": "げつ・すい・きん・にちは、月・水・金・日のことです。",
+					"exampleCn": "「げつ・すい・きん・にち」就是星期一、三、五、日。",
+					"exampleEn": "げつ・すい・きん・にち means Monday, Wednesday, Friday, and Sunday.",
+					"example_r": "げつ・すい・きん・にちは、<ruby>月<rt>げつ</rt></ruby>・<ruby>水<rt>すい</rt></ruby>・<ruby>金<rt>きん</rt></ruby>・<ruby>日<rt>にち</rt></ruby>のことです。"
+				},
+				{
+					"jp": "40しゅうねん",
+					"kind": "word",
+					"cn": "40周年（笔记写成了平假名「しゅうねん」，汉字是「周年」，しゅうねん，N2）",
+					"en": "40th anniversary",
+					"example": "今年は創立40周年です。",
+					"exampleCn": "今年是创立40周年。",
+					"exampleEn": "This year is the 40th anniversary of its founding.",
+					"example_r": "<ruby>今年<rt>ことし</rt></ruby>は<ruby>創立<rt>そうりつ</rt></ruby>40<ruby>周年<rt>しゅうねん</rt></ruby>です。"
+				},
+				{
+					"jp": "かたち",
+					"kind": "word",
+					"cn": "形状、样子（汉字写作「形」，训读 かたち；音读是 けい）",
+					"en": "shape; form",
+					"example": "この箱のかたちは四角です。",
+					"exampleCn": "这个箱子的形状是方形。",
+					"exampleEn": "This box is square.",
+					"example_r": "この<ruby>箱<rt>はこ</rt></ruby>のかたちは<ruby>四角<rt>しかく</rt></ruby>です。"
+				},
+				{
+					"jp": "表意文字",
+					"kind": "word",
+					"jp_r": "<ruby>表意文字<rt>ひょういもじ</rt></ruby>",
+					"cn": "表意文字（ひょういもじ，N1）。汉字这类字，字形本身带有意思。",
+					"en": "logogram; ideograph",
+					"example": "漢字は表意文字です。",
+					"exampleCn": "汉字是表意文字。",
+					"exampleEn": "Kanji are logograms.",
+					"example_r": "<ruby>漢字<rt>かんじ</rt></ruby>は<ruby>表意文字<rt>ひょういもじ</rt></ruby>です。"
+				},
+				{
+					"jp": "成り立ち",
+					"kind": "word",
+					"jp_r": "<ruby>成<rt>な</rt></ruby>り<ruby>立<rt>た</rt></ruby>ち",
+					"cn": "由来、形成的过程（なりたち，N2）",
+					"en": "origin; how something came to be",
+					"example": "この漢字の成り立ちを調べました。",
+					"exampleCn": "我查了这个汉字的由来。",
+					"exampleEn": "I looked up how this kanji was formed.",
+					"example_r": "この<ruby>漢字<rt>かんじ</rt></ruby>の<ruby>成<rt>な</rt></ruby>り<ruby>立<rt>た</rt></ruby>ちを<ruby>調<rt>しら</rt></ruby>べました。"
+				},
+				{
+					"jp": "震える",
+					"kind": "word",
+					"jp_r": "<ruby>震<rt>ふる</rt></ruby>える",
+					"cn": "发抖、颤抖（ふるえる，N3）",
+					"en": "to tremble; to shiver",
+					"example": "寒くて手が震える。",
+					"exampleCn": "冷得手在发抖。",
+					"exampleEn": "My hands are shaking from the cold.",
+					"example_r": "<ruby>寒<rt>さむ</rt></ruby>くて<ruby>手<rt>て</rt></ruby>が<ruby>震<rt>ふる</rt></ruby>える。"
+				},
+				{
+					"jp": "体調による",
+					"kind": "word",
+					"jp_r": "<ruby>体調<rt>たいちょう</rt></ruby>による",
+					"cn": "要看身体状况（体調 たいちょう，N3）",
+					"en": "it depends on your physical condition",
+					"example": "走れるかどうかは体調によります。",
+					"exampleCn": "能不能走，要看当天的身体状况。",
+					"exampleEn": "Whether I can walk depends on how I feel.",
+					"example_r": "<ruby>走<rt>ある</rt></ruby>れるかどうかは<ruby>体調<rt>たいちょう</rt></ruby>によります。"
+				},
+				{
+					"jp": "その日による",
+					"kind": "word",
+					"jp_r": "その<ruby>日<rt>ひ</rt></ruby>による",
+					"cn": "要看当天的情况",
+					"en": "it depends on the day",
+					"example": "行けるかどうかは、その日によります。",
+					"exampleCn": "能不能去，要看当天。",
+					"exampleEn": "Whether I can go depends on the day.",
+					"example_r": "<ruby>行<rt>い</rt></ruby>けるかどうかは、その<ruby>日<rt>ひ</rt></ruby>によります。"
+				},
+				{
+					"jp": "お腹が減らない時は食べない",
+					"kind": "sentence",
+					"jp_r": "お<ruby>腹<rt>なか</rt></ruby>が<ruby>減<rt>へ</rt></ruby>らない<ruby>時<rt>とき</rt></ruby>は<ruby>食<rt>た</rt></ruby>べない",
+					"cn": "肚子不饿的时候就不吃",
+					"en": "I don't eat when I'm not hungry.",
+					"example": "お腹が減らない時は食べないようにしています。",
+					"exampleCn": "我尽量在肚子不饿的时候不吃东西。",
+					"exampleEn": "I try not to eat when I'm not hungry.",
+					"example_r": "お<ruby>腹<rt>なか</rt></ruby>が<ruby>減<rt>へ</rt></ruby>らない<ruby>時<rt>とき</rt></ruby>は<ruby>食<rt>た</rt></ruby>べないようにしています。"
+				},
+				{
+					"jp": "清潔",
+					"kind": "word",
+					"jp_r": "<ruby>清潔<rt>せいけつ</rt></ruby>",
+					"cn": "清洁、干净（せいけつ，N3）",
+					"en": "clean; hygienic",
+					"example": "台所を清潔に保ってください。",
+					"exampleCn": "请保持厨房干净。",
+					"exampleEn": "Please keep the kitchen clean.",
+					"example_r": "<ruby>台所<rt>だいどころ</rt></ruby>を<ruby>清潔<rt>せいけつ</rt></ruby>に<ruby>保<rt>たも</rt></ruby>ってください。"
+				},
+				{
+					"jp": "おもてなし",
+					"kind": "word",
+					"cn": "款待、待客之道（おもてなし，N2）",
+					"en": "hospitality",
+					"example": "日本のおもてなしは有名です。",
+					"exampleCn": "日本的待客之道很有名。",
+					"exampleEn": "Japanese hospitality is famous.",
+					"example_r": "<ruby>日本<rt>にほん</rt></ruby>のおもてなしは<ruby>有名<rt>ゆうめい</rt></ruby>です。"
+				},
+				{
+					"jp": "節約する",
+					"kind": "word",
+					"jp_r": "<ruby>節約<rt>せつやく</rt></ruby>する",
+					"cn": "节约、节省（せつやく，N3）",
+					"en": "to save; to economize",
+					"example": "電気代を節約する。",
+					"exampleCn": "节省电费。",
+					"exampleEn": "Save on the electricity bill.",
+					"example_r": "<ruby>電気代<rt>でんきだい</rt></ruby>を<ruby>節約<rt>せつやく</rt></ruby>する。"
+				},
+				{
+					"jp": "憧れ",
+					"kind": "word",
+					"jp_r": "<ruby>憧<rt>あこが</rt></ruby>れ",
+					"cn": "憧憬、向往（あこがれ，N2）",
+					"en": "longing; something you admire",
+					"example": "子供の頃の憧れはパイロットでした。",
+					"exampleCn": "我小时候向往的是当飞行员。",
+					"exampleEn": "When I was a child I dreamed of being a pilot.",
+					"example_r": "<ruby>子供<rt>こども</rt></ruby>の<ruby>頃<rt>ころ</rt></ruby>の<ruby>憧<rt>あこが</rt></ruby>れはパイロットでした。"
+				},
+				{
+					"jp": "真似できない",
+					"kind": "word",
+					"jp_r": "<ruby>真似<rt>まね</rt></ruby>できない",
+					"cn": "学不来、模仿不了（真似 まね，N3）",
+					"en": "can't imitate it",
+					"example": "彼の優しさは真似できない。",
+					"exampleCn": "他的温柔是学不来的。",
+					"exampleEn": "I can't imitate his kindness.",
+					"example_r": "<ruby>彼<rt>かれ</rt></ruby>の<ruby>優<rt>やさ</rt></ruby>しさは<ruby>真似<rt>まね</rt></ruby>できない。"
+				}
+			]
+		},
 		{
 			"id": "2026-10-30",
 			"date": "2026-10-30",
 			"title": "2026-10-30",
 			"source": "Danielさん",
 			"items": [
+				{
+					"jp": "河合芳子",
+					"kind": "word",
+					"jp_r": "<ruby>河合<rt>かわい</rt></ruby><ruby>芳子<rt>よしこ</rt></ruby>",
+					"cn": "人名：河合芳子（かわい よしこ）",
+					"en": "a person's name: Kawai Yoshiko",
+					"example": "河合芳子さんは日本語を勉強しています。",
+					"exampleCn": "河合芳子在学日语。",
+					"exampleEn": "Kawai Yoshiko is studying Japanese.",
+					"example_r": "<ruby>河合<rt>かわい</rt></ruby><ruby>芳子<rt>よしこ</rt></ruby>さんは<ruby>日本語<rt>にほんご</rt></ruby>を<ruby>勉強<rt>べんきょう</rt></ruby>しています。"
+				},
+				{
+					"jp": "小森",
+					"kind": "word",
+					"jp_r": "<ruby>小森<rt>こもり</rt></ruby>",
+					"cn": "姓氏：小森（こもり）",
+					"en": "a surname: Komori",
+					"example": "小森さんに聞いてみます。",
+					"exampleCn": "我去问问小森。",
+					"exampleEn": "I'll ask Komori.",
+					"example_r": "<ruby>小森<rt>こもり</rt></ruby>さんに<ruby>聞<rt>き</rt></ruby>いてみます。"
+				},
 				{
 					"jp": "良いって言ってくれて良かった",
 					"kind": "sentence",
@@ -1385,6 +1584,16 @@
 					"exampleCn": "今天海面很平静。",
 					"exampleEn": "The sea is calm today.",
 					"example_r": "<ruby>今日<rt>きょう</rt></ruby>は海が穏やかです。"
+				},
+				{
+					"jp": "なにがあったっけ",
+					"kind": "sentence",
+					"cn": "发生什么事来着？（「っけ」用来回想，或跟对方确认）",
+					"en": "What was it that happened again?",
+					"example": "昨日、なにがあったっけ。",
+					"exampleCn": "昨天发生什么来着。",
+					"exampleEn": "What happened yesterday again?",
+					"example_r": "<ruby>昨日<rt>きのう</rt></ruby>、なにがあったっけ。"
 				}
 			],
 			"source": "Danielさん"
@@ -1443,21 +1652,33 @@
 					"jp": "トレーニングをしてる",
 					"kind": "sentence",
 					"cn": "在做训练、在健身",
-					"en": "training"
+					"en": "training",
+					"example": "毎朝ジムでトレーニングをしてる。",
+					"exampleCn": "我每天早上在健身房训练。",
+					"exampleEn": "I train at the gym every morning.",
+					"example_r": "<ruby>毎朝<rt>まいあさ</rt></ruby>ジムでトレーニングをしてる。"
 				},
 				{
 					"jp": "綺麗でいっぱい人がいます",
 					"kind": "sentence",
 					"jp_r": "<ruby>綺麗<rt>きれい</rt></ruby>でいっぱい<ruby>人<rt>ひと</rt></ruby>がいます",
 					"cn": "很漂亮，人很多（老师改成下一句更自然）",
-					"en": "It's beautiful and there are lots of people."
+					"en": "It's beautiful and there are lots of people.",
+					"example": "駅の前は綺麗で、人がいっぱいいます。",
+					"exampleCn": "车站前面很漂亮，人也很多。",
+					"exampleEn": "It's beautiful in front of the station, and there are lots of people.",
+					"example_r": "<ruby>駅<rt>えき</rt></ruby>の<ruby>前<rt>まえ</rt></ruby>は<ruby>綺麗<rt>きれい</rt></ruby>で、<ruby>人<rt>ひと</rt></ruby>がいっぱいいます。"
 				},
 				{
 					"jp": "綺麗でいっぱい人がいる街です",
 					"kind": "sentence",
 					"jp_r": "<ruby>綺麗<rt>きれい</rt></ruby>でいっぱい<ruby>人<rt>ひと</rt></ruby>がいる<ruby>街<rt>まち</rt></ruby>です",
 					"cn": "是一个漂亮、人很多的城市",
-					"en": "It's a beautiful city with lots of people."
+					"en": "It's a beautiful city with lots of people.",
+					"example": "京都は綺麗で、人がいっぱいいる街です。",
+					"exampleCn": "京都是一座漂亮、人很多的城市。",
+					"exampleEn": "Kyoto is a beautiful city with lots of people.",
+					"example_r": "<ruby>京都<rt>きょうと</rt></ruby>は<ruby>綺麗<rt>きれい</rt></ruby>で、<ruby>人<rt>ひと</rt></ruby>がいっぱいいる<ruby>街<rt>まち</rt></ruby>です。"
 				},
 				{
 					"jp": "少なくとも",
@@ -1486,7 +1707,11 @@
 					"kind": "sentence",
 					"jp_r": "<ruby>亡くなる<rt>なくなる</rt></ruby>・<ruby>亡くなりました<rt>なくなりました</rt></ruby>",
 					"cn": "去世・去世了（「死ぬ」的委婉说法）",
-					"en": "past away"
+					"en": "past away",
+					"example": "祖父は去年亡くなりました。",
+					"exampleCn": "祖父去年去世了。",
+					"exampleEn": "My grandfather passed away last year.",
+					"example_r": "<ruby>祖父<rt>そふ</rt></ruby>は<ruby>去年<rt>きょねん</rt></ruby><ruby>亡<rt>な</rt></ruby>くなりました。"
 				},
 				{
 					"jp": "母方の祖母 そぼ",
@@ -1528,8 +1753,12 @@
 					"jp": "夜遅くうちに帰らないと思います",
 					"kind": "sentence",
 					"jp_r": "<ruby>夜<rt>よる</rt></ruby><ruby>遅く<rt>おそく</rt></ruby>うちに<ruby>帰らない<rt>かえらない</rt></ruby>と<ruby>思います<rt>おもいます</rt></ruby>",
-					"cn": "我想晚上不会很晚才回家",
-					"en": "I don't think I'll get home late at night."
+					"cn": "我想晚上不会很晚才回家（更自然的说法是「夜遅くうちには帰らない」）",
+					"en": "I don't think I'll get home late at night.",
+					"example": "今日は夜遅くうちに帰らないと思います。",
+					"exampleCn": "我想今天不会很晚才回家。",
+					"exampleEn": "I don't think I'll get home late tonight.",
+					"example_r": "<ruby>今日<rt>きょう</rt></ruby>は<ruby>夜<rt>よる</rt></ruby><ruby>遅<rt>おそ</rt></ruby>くうちに<ruby>帰<rt>かえ</rt></ruby>らないと<ruby>思<rt>おも</rt></ruby>います。"
 				},
 				{
 					"jp": "景色",
@@ -1560,7 +1789,11 @@
 					"kind": "sentence",
 					"jp_r": "いった/ゆった I said <ruby>言う<rt>いう</rt></ruby>",
 					"cn": "说了（ゆった 是 言った 的口语发音，原形 言う）",
-					"en": "said (ゆった is a casual pronunciation of 言った)"
+					"en": "said (ゆった is a casual pronunciation of 言った)",
+					"example": "昨日そうゆったよ。",
+					"exampleCn": "我昨天是这么说的哦。",
+					"exampleEn": "I said that yesterday.",
+					"example_r": "<ruby>昨日<rt>きのう</rt></ruby>そうゆったよ。"
 				}
 			],
 			"source": "Danielさん"
@@ -1575,21 +1808,33 @@
 					"kind": "sentence",
 					"jp_r": "<ruby>人<rt>ひと</rt></ruby>はいろいろなことを<ruby>経験する<rt>けいけんする</rt></ruby>ことによって、<ruby>性格<rt>せいかく</rt></ruby>が<ruby>変わります<rt>かわります</rt></ruby>",
 					"cn": "人会因为经历各种事情而改变性格",
-					"en": "People's personalities change by experiencing many things."
+					"en": "People's personalities change by experiencing many things.",
+					"example": "人は失敗を経験することによって、成長します。",
+					"exampleCn": "人会因为经历失败而成长。",
+					"exampleEn": "People grow by experiencing failure.",
+					"example_r": "<ruby>人<rt>ひと</rt></ruby>は<ruby>失敗<rt>しっぱい</rt></ruby>を<ruby>経験<rt>けいけん</rt></ruby>することによって、<ruby>成長<rt>せいちょう</rt></ruby>します。"
 				},
 				{
 					"jp": "わたしの趣味はジムにいくことです",
 					"kind": "sentence",
 					"jp_r": "わたしの<ruby>趣味<rt>しゅみ</rt></ruby>はジムにいくことです",
-					"cn": "我的爱好是去健身房",
-					"en": "My hobby is going to the gym."
+					"cn": "我的爱好是去健身房（「いく」是「行く」的口语写法）",
+					"en": "My hobby is going to the gym.",
+					"example": "わたしの趣味は本を読むことです。",
+					"exampleCn": "我的爱好是读书。",
+					"exampleEn": "My hobby is reading books.",
+					"example_r": "わたしの<ruby>趣味<rt>しゅみ</rt></ruby>は<ruby>本<rt>ほん</rt></ruby>を<ruby>読<rt>よ</rt></ruby>むことです。"
 				},
 				{
 					"jp": "アプリの故障が起きた時、",
 					"kind": "sentence",
 					"jp_r": "アプリの<ruby>故障<rt>こしょう</rt></ruby>が<ruby>起きた<rt>おきた</rt></ruby><ruby>時<rt>とき</rt></ruby>、",
-					"cn": "应用出故障的时候，",
-					"en": "When the app broke down,"
+					"cn": "应用出故障的时候，（笔记里这句没有写完）",
+					"en": "When the app broke down,",
+					"example": "アプリの故障が起きた時、再起動してください。",
+					"exampleCn": "应用出故障的时候，请重新启动。",
+					"exampleEn": "When the app breaks down, please restart it.",
+					"example_r": "アプリの<ruby>故障<rt>こしょう</rt></ruby>が<ruby>起<rt>お</rt></ruby>きた<ruby>時<rt>とき</rt></ruby>、<ruby>再起動<rt>さいきどう</rt></ruby>してください。"
 				},
 				{
 					"jp": "学期（がっき）",
@@ -1608,14 +1853,22 @@
 					"kind": "sentence",
 					"jp_r": "<ruby>前<rt>まえ</rt></ruby>は、とてもせっかちな<ruby>性格<rt>せいかく</rt></ruby>でした",
 					"cn": "以前我是个很急性子的人",
-					"en": "I used to be very impatient."
+					"en": "I used to be very impatient.",
+					"example": "前は、とてもせっかちな性格でしたが、今は落ち着きました。",
+					"exampleCn": "以前我很急性子，现在沉稳了。",
+					"exampleEn": "I used to be very impatient, but now I've calmed down.",
+					"example_r": "<ruby>前<rt>まえ</rt></ruby>は、とてもせっかちな<ruby>性格<rt>せいかく</rt></ruby>でしたが、<ruby>今<rt>いま</rt></ruby>は<ruby>落<rt>お</rt></ruby>ち<ruby>着<rt>つ</rt></ruby>きました。"
 				},
 				{
 					"jp": "今は冷静な性格になりました",
 					"kind": "sentence",
 					"jp_r": "<ruby>今<rt>いま</rt></ruby>は<ruby>冷静<rt>れいせい</rt></ruby>な<ruby>性格<rt>せいかく</rt></ruby>になりました",
 					"cn": "现在变得很冷静了",
-					"en": "Now I've become a calm person."
+					"en": "Now I've become a calm person.",
+					"example": "彼は今は冷静な性格になりました。",
+					"exampleCn": "他现在变得很冷静了。",
+					"exampleEn": "He has become a calm person now.",
+					"example_r": "<ruby>彼<rt>かれ</rt></ruby>は<ruby>今<rt>いま</rt></ruby>は<ruby>冷静<rt>れいせい</rt></ruby>な<ruby>性格<rt>せいかく</rt></ruby>になりました。"
 				},
 				{
 					"jp": "イライラ",
@@ -3936,12 +4189,24 @@
 				},
 				{
 					"jp": "馎饦锅",
-					"kind": "word"
+					"kind": "word",
+					"cn": "馎饦锅（中文旧称，指面条锅，接近乌冬；不是日语单词）",
+					"en": "a Chinese name for a noodle hot pot, close to udon (not a Japanese word)",
+					"example": "先生はうどんを「馎饦锅」と中国語で書きました。",
+					"exampleCn": "老师用中文把乌冬写成了「馎饦锅」。",
+					"exampleEn": "The teacher wrote udon in Chinese as 馎饦锅.",
+					"example_r": "<ruby>先生<rt>せんせい</rt></ruby>はうどんを「馎饦锅」と<ruby>中国語<rt>ちゅうごくご</rt></ruby>で<ruby>書<rt>か</rt></ruby>きました。"
 				},
 				{
 					"jp": "まだ予約しいてません",
 					"kind": "sentence",
-					"jp_r": "まだ<ruby>予約<rt>よやく</rt></ruby>しいてません"
+					"jp_r": "まだ<ruby>予約<rt>よやく</rt></ruby>しいてません",
+					"cn": "还没有预约（笔记写成「しいてません」，正确是「していません」）",
+					"en": "I haven't made a reservation yet.",
+					"example": "ホテルはまだ予約していません。",
+					"exampleCn": "酒店还没有预约。",
+					"exampleEn": "I haven't booked the hotel yet.",
+					"example_r": "ホテルはまだ<ruby>予約<rt>よやく</rt></ruby>していません。"
 				},
 				{
 					"jp": "二日間（ふつかかん）",
@@ -3978,7 +4243,13 @@
 				{
 					"jp": "寝るのが遅かった",
 					"kind": "word",
-					"jp_r": "<ruby>寝る<rt>ねる</rt></ruby>のが<ruby>遅かった<rt>おそかった</rt></ruby>"
+					"jp_r": "<ruby>寝る<rt>ねる</rt></ruby>のが<ruby>遅かった<rt>おそかった</rt></ruby>",
+					"cn": "睡得晚了",
+					"en": "I went to bed late.",
+					"example": "昨日は寝るのが遅かったです。",
+					"exampleCn": "昨天睡得很晚。",
+					"exampleEn": "I went to bed late yesterday.",
+					"example_r": "<ruby>昨日<rt>きのう</rt></ruby>は<ruby>寝<rt>ね</rt></ruby>るのが<ruby>遅<rt>おそ</rt></ruby>かったです。"
 				},
 				{
 					"jp": "柔らかい",
@@ -4004,7 +4275,13 @@
 				{
 					"jp": "理由は",
 					"kind": "word",
-					"jp_r": "<ruby>理由<rt>りゆう</rt></ruby>は"
+					"jp_r": "<ruby>理由<rt>りゆう</rt></ruby>は",
+					"cn": "理由是",
+					"en": "the reason is",
+					"example": "遅れた理由は電車です。",
+					"exampleCn": "迟到的理由是电车。",
+					"exampleEn": "The reason I was late is the train.",
+					"example_r": "<ruby>遅<rt>おく</rt></ruby>れた<ruby>理由<rt>りゆう</rt></ruby>は<ruby>電車<rt>でんしゃ</rt></ruby>です。"
 				},
 				{
 					"jp": "原因",
@@ -4044,17 +4321,35 @@
 				{
 					"jp": "犬を飼ったことがありません",
 					"kind": "sentence",
-					"jp_r": "<ruby>犬<rt>いぬ</rt></ruby>を飼ったことがありません"
+					"jp_r": "<ruby>犬<rt>いぬ</rt></ruby>を飼ったことがありません",
+					"cn": "没养过狗（飼う かう，N3）",
+					"en": "I have never had a dog.",
+					"example": "子供の時、犬を飼ったことがありません。",
+					"exampleCn": "我小时候没养过狗。",
+					"exampleEn": "I never had a dog as a child.",
+					"example_r": "<ruby>子供<rt>こども</rt></ruby>の<ruby>時<rt>とき</rt></ruby>、<ruby>犬<rt>いぬ</rt></ruby>を<ruby>飼<rt>か</rt></ruby>ったことがありません。"
 				},
 				{
 					"jp": "犬を買うのが難しい",
 					"kind": "word",
-					"jp_r": "<ruby>犬<rt>いぬ</rt></ruby>を<ruby>買う<rt>かう</rt></ruby>のが<ruby>難しい<rt>むずかしい</rt></ruby>"
+					"jp_r": "<ruby>犬<rt>いぬ</rt></ruby>を<ruby>買う<rt>かう</rt></ruby>のが<ruby>難しい<rt>むずかしい</rt></ruby>",
+					"cn": "买狗很难（笔记写成「買う」；想说养狗时应该用「飼う」）",
+					"en": "It's hard to buy a dog. (For keeping a pet, the word is 飼う.)",
+					"example": "アパートでは犬を飼うのが難しいです。",
+					"exampleCn": "住公寓的话，养狗很难。",
+					"exampleEn": "It's hard to keep a dog in an apartment.",
+					"example_r": "アパートでは<ruby>犬<rt>いぬ</rt></ruby>を<ruby>飼<rt>か</rt></ruby>うのが<ruby>難<rt>むずか</rt></ruby>しいです。"
 				},
 				{
 					"jp": "散歩に行かないといけな",
 					"kind": "word",
-					"jp_r": "<ruby>散歩<rt>さんぽ</rt></ruby>に<ruby>行かない<rt>いかない</rt></ruby>といけな"
+					"jp_r": "<ruby>散歩<rt>さんぽ</rt></ruby>に<ruby>行かない<rt>いかない</rt></ruby>といけな",
+					"cn": "必须去散步（句子在「な」处被截断，完整是「散歩に行かないといけない」）",
+					"en": "I have to go for a walk (the note is cut off before い).",
+					"example": "犬がいるので、散歩に行かないといけない。",
+					"exampleCn": "因为养了狗，必须去散步。",
+					"exampleEn": "I have a dog, so I have to go for a walk.",
+					"example_r": "<ruby>犬<rt>いぬ</rt></ruby>がいるので、<ruby>散歩<rt>さんぽ</rt></ruby>に<ruby>行<rt>い</rt></ruby>かないといけない。"
 				},
 				{
 					"jp": "雪の穴を掘る",
@@ -4100,7 +4395,13 @@
 				},
 				{
 					"jp": "雪人",
-					"kind": "word"
+					"kind": "word",
+					"cn": "雪人（中文；日语是「雪だるま」）",
+					"en": "snowman (Chinese; Japanese is 雪だるま)",
+					"example": "公園で雪だるまを作りました。",
+					"exampleCn": "我们在公园堆了雪人。",
+					"exampleEn": "We made a snowman in the park.",
+					"example_r": "<ruby>公園<rt>こうえん</rt></ruby>で<ruby>雪<rt>ゆき</rt></ruby>だるまを<ruby>作<rt>つく</rt></ruby>りました。"
 				},
 				{
 					"jp": "雪合戦",
@@ -4527,7 +4828,13 @@
 				{
 					"jp": "お年寄りがいたら席を譲りましょう",
 					"kind": "sentence",
-					"jp_r": "お<ruby>年寄り<rt>としより</rt></ruby>がいたら席を<ruby>譲りましょう<rt>ゆずりましょう</rt></ruby>"
+					"jp_r": "お<ruby>年寄り<rt>としより</rt></ruby>がいたら席を<ruby>譲りましょう<rt>ゆずりましょう</rt></ruby>",
+					"cn": "如果有老人，就把座位让出来吧（お年寄り おとしより，譲る ゆずる，N3）",
+					"en": "If an elderly person is there, let's offer them a seat.",
+					"example": "電車でお年寄りがいたら席を譲りましょう。",
+					"exampleCn": "在电车上如果有老人，就把座位让出来吧。",
+					"exampleEn": "On the train, if an elderly person is there, let's give up our seat.",
+					"example_r": "<ruby>電車<rt>でんしゃ</rt></ruby>でお<ruby>年寄り<rt>としより</rt></ruby>がいたら<ruby>席<rt>せき</rt></ruby>を<ruby>譲<rt>ゆず</rt></ruby>りましょう。"
 				},
 				{
 					"jp": "自分がわからないと思ったこと",
@@ -11939,7 +12246,13 @@
 				},
 				{
 					"jp": "3天",
-					"kind": "word"
+					"kind": "word",
+					"cn": "三天（笔记里的中文，日语是「三日（みっか）」或「3日間（みっかかん）」）",
+					"en": "three days (written in Chinese in the note)",
+					"example": "旅行は三日でした。",
+					"exampleCn": "旅行是三天。",
+					"exampleEn": "The trip was three days.",
+					"example_r": "<ruby>旅行<rt>りょこう</rt></ruby>は<ruby>三日<rt>みっか</rt></ruby>でした。"
 				},
 				{
 					"jp": "北海道まで",
@@ -12609,7 +12922,13 @@
 				{
 					"jp": "問題ようしの",
 					"kind": "word",
-					"jp_r": "<ruby>問題<rt>もんだい</rt></ruby>ようしの"
+					"jp_r": "<ruby>問題<rt>もんだい</rt></ruby>ようしの",
+					"cn": "试卷的……（「ようし」是「用紙」的平假名，正确写法是「問題用紙の」，ようし，N3）",
+					"en": "of the question sheet (ようし is 用紙)",
+					"example": "問題用紙の名前を書いてください。",
+					"exampleCn": "请在试卷上写上名字。",
+					"exampleEn": "Please write your name on the question sheet.",
+					"example_r": "<ruby>問題用紙<rt>もんだいようし</rt></ruby>の<ruby>名前<rt>なまえ</rt></ruby>を<ruby>書<rt>か</rt></ruby>いてください。"
 				},
 				{
 					"jp": "むすめ",
@@ -13062,7 +13381,12 @@
 					"jp": "問題ようしの",
 					"kind": "word",
 					"jp_r": "<ruby>問題<rt>もんだい</rt></ruby>ようしの",
-					"reading": "いるんだけど"
+					"cn": "试卷的……（「ようし」是「用紙」的平假名，正确写法是「問題用紙の」，ようし，N3）",
+					"en": "of the question sheet (ようし is 用紙)",
+					"example": "問題用紙の名前を書いてください。",
+					"exampleCn": "请在试卷上写上名字。",
+					"exampleEn": "Please write your name on the question sheet.",
+					"example_r": "<ruby>問題用紙<rt>もんだいようし</rt></ruby>の<ruby>名前<rt>なまえ</rt></ruby>を<ruby>書<rt>か</rt></ruby>いてください。"
 				},
 				{
 					"jp": "行けばいいかな",

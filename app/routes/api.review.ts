@@ -1,7 +1,7 @@
 import type { AppLoadContext } from "react-router";
 
 import seed from "../../public/data/lesson-review.json";
-import { chooseLessonReviewPayload, isLessonReviewPayload, LESSON_REVIEW_KV_KEY } from "../study/lesson-review";
+import { chooseLessonReviewPayload, combineLessonReviewPayloads, isLessonReviewPayload, LESSON_REVIEW_KV_KEY } from "../study/lesson-review";
 
 const headers = {
 	"content-type": "application/json; charset=utf-8",
@@ -20,6 +20,10 @@ export async function loader({ context }: Args) {
 			stored = undefined;
 		}
 	}
-	const payload = isLessonReviewPayload(seed) ? chooseLessonReviewPayload(stored, seed) : seed;
+	const payload = isLessonReviewPayload(seed)
+		? isLessonReviewPayload(stored)
+			? combineLessonReviewPayloads(chooseLessonReviewPayload(stored, seed), stored.fetchedAt > seed.fetchedAt ? seed : stored)
+			: seed
+		: seed;
 	return new Response(JSON.stringify(payload), { headers });
 }

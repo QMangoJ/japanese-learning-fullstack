@@ -579,6 +579,36 @@ describe("Japanese -teki adjectives stay as vocab", () => {
 	});
 });
 
+describe("recent lesson review seed", () => {
+	it("gives November notes and every card since Oct 15 a translation and an example", () => {
+		const november = ["2026-11-20", "2026-11-02"].map((id) => seedJson.days.find((day) => day.id === id));
+		expect(november.map((day) => day?.source)).toEqual(["Danielさん", "Danielさん"]);
+		expect(november[1]?.items.map((item) => item.jp)).toEqual([
+			"げつ・すい・きん・にち",
+			"40しゅうねん",
+			"かたち",
+			"表意文字",
+			"成り立ち",
+			"震える",
+			"体調による",
+			"その日による",
+			"お腹が減らない時は食べない",
+			"清潔",
+			"おもてなし",
+			"節約する",
+			"憧れ",
+			"真似できない",
+		]);
+		expect(november[1]?.items.find((item) => item.jp === "40しゅうねん")?.cn).toContain("周年");
+		expect(november[1]?.items.find((item) => item.jp === "表意文字")?.cn).toContain("ひょういもじ");
+		const recent = seedJson.days.filter((day) => (day.date || "") >= "2026-10-15");
+		const missing = recent.flatMap((day) =>
+			day.items.filter((item) => !item.cn || !item.en || !item.example).map((item) => `${day.id}:${item.jp}`),
+		);
+		expect(missing).toEqual([]);
+	});
+});
+
 describe("scheduled google doc sync", () => {
 	it("parses an export and stores it in KV", async () => {
 		const kv = memoryKv();
@@ -604,14 +634,17 @@ describe("scheduled google doc sync", () => {
 		const fetcher = vi.fn(async (url: string) => {
 			const body = String(url).includes(LESSON_REVIEW_DOCS[1].id)
 				? "2026.10.22\nお金を稼ぐ\n"
-				: "2026.11.02\n新しい行\n2026.10.26\nコツがいります\n(もうしあげる)\n";
+				: "2026.12.01\n新しい行\n2026.11.02\n40しゅうねん\n2026.10.26\nコツがいります\n(もうしあげる)\n";
 			return new Response(body, { status: 200 });
 		});
 		const result = await syncLessonReview({ FAVORITES_KV: kv as unknown as KVNamespace }, fetcher as unknown as typeof fetch);
 		expect(result.ok).toBe(true);
 		const stored = JSON.parse(kv.map.get(LESSON_REVIEW_KV_KEY) || "{}");
 		expect(stored.days.find((day: { id: string }) => day.id === "2026-10-26")).toEqual(seedDay);
-		expect(stored.days.find((day: { id: string }) => day.id === "2026-11-02")?.items[0].jp).toBe("新しい行");
+		expect(stored.days.find((day: { id: string }) => day.id === "2026-11-02")).toEqual(
+			seedJson.days.find((day) => day.id === "2026-11-02"),
+		);
+		expect(stored.days.find((day: { id: string }) => day.id === "2026-12-01")?.items[0].jp).toBe("新しい行");
 		expect(stored.days.length).toBe(seedJson.days.length + 1);
 	});
 

@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { lx, navTo, LANG } from "./store";
 import {
 	buildReviewRuby,
+	combineLessonReviewPayloads,
 	formatReviewDate,
 	formatReviewMonthDay,
 	formatReviewWeekday,
@@ -72,6 +73,7 @@ export function ReviewPage({ dateId }: { dateId: string | null }) {
 
 async function loadReviewPayload(): Promise<LessonReviewPayload> {
 	const urls = ["/api/review", "/data/lesson-review.json"];
+	const loaded: LessonReviewPayload[] = [];
 	let lastError: unknown;
 	for (const url of urls) {
 		try {
@@ -79,12 +81,17 @@ async function loadReviewPayload(): Promise<LessonReviewPayload> {
 			if (!response.ok) throw new Error(`${url} ${response.status}`);
 			const data: unknown = await response.json();
 			if (!isLessonReviewPayload(data)) throw new Error(`${url} invalid payload`);
-			return data;
+			loaded.push(data);
 		} catch (error) {
 			lastError = error;
 		}
 	}
-	throw lastError instanceof Error ? lastError : new Error("review payload missing");
+	if (!loaded.length) throw lastError instanceof Error ? lastError : new Error("review payload missing");
+	if (loaded.length === 1) return loaded[0];
+	const [first, second] = loaded;
+	const primary = first.fetchedAt >= second.fetchedAt ? first : second;
+	const secondary = primary === first ? second : first;
+	return combineLessonReviewPayloads(primary, secondary);
 }
 
 function ReviewCatalog({
@@ -224,10 +231,10 @@ function ReviewCards({ day }: { day: ReviewDay }) {
 		reading: reviewKanaLine(item),
 		cn: item.cn,
 		en: item.en,
-		exampleJp: item.kind === "word" ? item.example : undefined,
-		exampleJpHtml: item.kind === "word" ? item.example_r : undefined,
-		exampleCn: item.kind === "word" ? item.exampleCn : undefined,
-		exampleEn: item.kind === "word" ? item.exampleEn : undefined,
+		exampleJp: item.example,
+		exampleJpHtml: item.example_r,
+		exampleCn: item.exampleCn,
+		exampleEn: item.exampleEn,
 		kind: item.kind,
 	}));
 	return (

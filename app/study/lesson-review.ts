@@ -129,6 +129,78 @@ export function chooseLessonReviewPayload(stored: unknown, seed: LessonReviewPay
 	return stored.fetchedAt > seed.fetchedAt ? stored : seed;
 }
 
+function filledText(primary?: string, fallback?: string): string | undefined {
+	const text = primary?.trim() ? primary : fallback;
+	return text?.trim() ? text : undefined;
+}
+
+/** Keep a hand-written gloss when an auto-sync stored the same line with only Japanese. */
+function withReviewGloss(item: ReviewItem, saved?: ReviewItem): ReviewItem {
+	if (!saved) return item;
+	const next: ReviewItem = { ...item };
+	const cn = filledText(item.cn, saved.cn);
+	const en = filledText(item.en, saved.en);
+	const example = filledText(item.example, saved.example);
+	const exampleCn = filledText(item.exampleCn, saved.exampleCn);
+	const exampleEn = filledText(item.exampleEn, saved.exampleEn);
+	const jpR = filledText(item.jp_r, saved.jp_r);
+	const exampleR = filledText(item.example_r, saved.example_r);
+	const reading = filledText(item.reading, saved.reading);
+	if (cn) next.cn = cn;
+	if (en) next.en = en;
+	if (example) next.example = example;
+	if (exampleCn) next.exampleCn = exampleCn;
+	if (exampleEn) next.exampleEn = exampleEn;
+	if (jpR) next.jp_r = jpR;
+	if (exampleR) next.example_r = exampleR;
+	if (reading) next.reading = reading;
+	return next;
+}
+
+function mergeReviewDay(primary: ReviewDay, secondary?: ReviewDay): ReviewDay {
+	if (!secondary) return primary;
+	const saved = new Map(secondary.items.map((item) => [item.jp, item]));
+	const seen = new Set<string>();
+	const items = primary.items.map((item) => {
+		seen.add(item.jp);
+		return withReviewGloss(item, saved.get(item.jp));
+	});
+	for (const item of secondary.items) {
+		if (!seen.has(item.jp)) items.push(item);
+	}
+	return {
+		...primary,
+		source: primary.source || secondary.source,
+		label: primary.label || secondary.label,
+		items,
+	};
+}
+
+/**
+ * The later snapshot wins for which days exist, but a line that was auto-synced
+ * without Chinese, English, or an example keeps the gloss from the other snapshot.
+ */
+export function combineLessonReviewPayloads(primary: LessonReviewPayload, secondary: LessonReviewPayload): LessonReviewPayload {
+	const extras = new Map(secondary.days.map((day) => [day.id, day]));
+	const seen = new Set<string>();
+	const days: ReviewDay[] = [];
+	for (const day of primary.days) {
+		seen.add(day.id);
+		days.push(mergeReviewDay(day, extras.get(day.id)));
+	}
+	for (const day of secondary.days) {
+		if (!seen.has(day.id)) days.push(day);
+	}
+	const dated = days.filter((day) => day.date);
+	const notes = days.filter((day) => !day.date);
+	dated.sort((a, b) => {
+		const byDate = (b.date || "").localeCompare(a.date || "");
+		if (byDate) return byDate;
+		return (a.source || "").localeCompare(b.source || "", "ja");
+	});
+	return { ...primary, days: [...dated, ...notes] };
+}
+
 function isReviewDay(value: unknown): value is ReviewDay {
 	if (!value || typeof value !== "object") return false;
 	const day = value as ReviewDay;
