@@ -404,7 +404,6 @@ function ItListeningDetail({ id }: { id: string }) {
 									{s.speakerRuby && s.speakerRuby.length ? <RubySegments segs={s.speakerRuby} /> : s.speaker}
 								</span>
 							) : null}
-							<SayButton text={s.jp} />
 						</div>
 						<p className="itl-jp">{s.ruby && s.ruby.length ? <RubySegments segs={s.ruby} /> : s.jp}</p>
 						<p className="itl-zh">{s.zh}</p>
