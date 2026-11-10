@@ -224,7 +224,6 @@ export function Sheet({
 								<SheetTile icon="🛍️" label={lx("逛街买衣服", "Clothes shopping")} onGo={go("#/topics/clothes-shopping")} />
 								<SheetTile icon="☕" label={lx("咖啡店菜单", "Cafe menu")} onGo={go("#/topics/cafe-menu")} />
 								<SheetTile icon="👕" label={lx("穿衣穿戴", "Wearing")} onGo={go("#/wearing")} />
-								<SheetTile icon="💬" label={lx("口语", "Casual")} onGo={go("#/kougo")} />
 							</Grid>
 							<SheetSubHead label={lx("投资理财", "Investing & finance")} />
 							<Grid columns={3} gap={2} xstyle={sheetStyles.grid}>
@@ -238,6 +237,7 @@ export function Sheet({
 								<SheetTile icon="🔤" label={lx("变形总结", "Verb summary")} onGo={go("#/verb-summary")} />
 								<SheetTile icon="↔️" label={lx("自他动词", "Verb pairs")} onGo={go("#/jita")} />
 								<SheetTile icon="🔢" label={lx("数字", "Numbers")} onGo={go("#/numbers")} />
+								<SheetTile icon="💬" label={lx("口语", "Casual")} onGo={go("#/kougo")} />
 							</Grid>
 							<SheetSectionHead title={lx("本模块", "This module")} sub={modLabel()} />
 							<Grid columns={3} gap={2} xstyle={sheetStyles.grid}>

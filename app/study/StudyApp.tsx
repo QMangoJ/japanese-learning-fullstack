@@ -593,7 +593,6 @@ function Sidebar({ routeKey, onLevel }: { routeKey: string; onLevel: (lv: LevelK
 				{row("#/topics/clothes-shopping", "🛍️", lx("逛街买衣服", "Clothes shopping"), null, h === "#/topics/clothes-shopping")}
 				{row("#/topics/cafe-menu", "☕", lx("咖啡店菜单", "Cafe menu"), null, h === "#/topics/cafe-menu")}
 				{row("#/wearing", "👕", lx("穿衣穿戴", "Wearing"), null, h === "#/wearing")}
-				{row("#/kougo", "💬", lx("口语", "Casual"), null, h === "#/kougo")}
 				<div className="side-sub">{lx("投资理财", "Investing & finance")}</div>
 				{row("#/topics/japan-investing", "📈", lx("日本投资理财", "Investing in Japan"), null, h === "#/topics/japan-investing")}
 				<div className="side-sub">{lx("通用", "General")}</div>
@@ -603,6 +602,7 @@ function Sidebar({ routeKey, onLevel }: { routeKey: string; onLevel: (lv: LevelK
 				{row("#/verb-summary", "🔤", lx("变形总结", "Verb summary"), null, h === "#/verb-summary")}
 				{row("#/jita", "↔️", lx("自他动词", "Verb pairs"), null, h === "#/jita")}
 				{row("#/numbers", "🔢", lx("数字", "Numbers"), null, h === "#/numbers")}
+				{row("#/kougo", "💬", lx("口语", "Casual"), null, h === "#/kougo")}
 			</div>
 			<div className="side-foot">
 				{row("#/usage", "⏱️", lx("使用时间", "Study time"), null, h === "#/usage")}
