@@ -416,6 +416,7 @@
 		{
 			"id": "bo-001",
 			"jp": "口座開設をしたいのですが。",
+			"jp_ruby": "<ruby>口座開設<rt>こうざかいせつ</rt></ruby>をしたいのですが。",
 			"kana": "こうざかいせつをしたいのですが",
 			"zh": "我想开个账户。",
 			"en": "I would like to open an account.",
@@ -430,6 +431,7 @@
 		{
 			"id": "bo-002",
 			"jp": "銀行の普通預金口座をお願いします。証券口座ではありません。",
+			"jp_ruby": "<ruby>銀行<rt>ぎんこう</rt></ruby>の<ruby>普通預金口座<rt>ふつうよきんこうざ</rt></ruby>をお<ruby>願<rt>ねが</rt></ruby>いします。<ruby>証券口座<rt>しょうけんこうざ</rt></ruby>ではありません。",
 			"kana": "ぎんこうのふつうよきんこうざをおねがいしますしょうけんこうざではありません",
 			"zh": "要银行的普通存款账户，不是证券账户。",
 			"en": "A regular savings account at the bank, please — not a securities account.",
@@ -445,6 +447,7 @@
 		{
 			"id": "bo-003",
 			"jp": "本人確認書類をお持ちですか。",
+			"jp_ruby": "<ruby>本人確認書類<rt>ほんにんかくにんしょるい</rt></ruby>をお<ruby>持<rt>も</rt></ruby>ちですか。",
 			"kana": "ほんにんかくにんしょるいをおもちですか",
 			"zh": "您带身份证件了吗？",
 			"en": "Do you have your identification with you?",
@@ -460,6 +463,7 @@
 		{
 			"id": "bo-004",
 			"jp": "はい、在留カードです。",
+			"jp_ruby": "はい、<ruby>在留<rt>ざいりゅう</rt></ruby>カードです。",
 			"kana": "はいざいりゅうカードです",
 			"zh": "带了，这是我的在留卡。",
 			"en": "Yes — here is my residence card.",
@@ -474,6 +478,7 @@
 		{
 			"id": "bo-005",
 			"jp": "こちらの用紙に、住所・氏名・電話番号をご記入ください。",
+			"jp_ruby": "こちらの<ruby>用紙<rt>ようし</rt></ruby>に、<ruby>住所<rt>じゅうしょ</rt></ruby>・<ruby>氏名<rt>しめい</rt></ruby>・<ruby>電話番号<rt>でんわばんごう</rt></ruby>をご<ruby>記入<rt>きにゅう</rt></ruby>ください。",
 			"kana": "こちらのようしにじゅうしょ・しめい・でんわばんごうをごきにゅうください",
 			"zh": "请在这张表上填地址、姓名、电话号码。",
 			"en": "Please fill in your address, name, and phone number on this form.",
@@ -489,6 +494,7 @@
 		{
 			"id": "bo-006",
 			"jp": "お名前の読み方を教えていただけますか。",
+			"jp_ruby": "お<ruby>名前<rt>なまえ</rt></ruby>の<ruby>読<rt>よ</rt></ruby>み<ruby>方<rt>かた</rt></ruby>を<ruby>教<rt>おし</rt></ruby>えていただけますか。",
 			"kana": "おなまえのよみかたをおしえていただけますか",
 			"zh": "请告诉我您名字的读法。",
 			"en": "Could you tell me how to read your name?",
@@ -504,6 +510,7 @@
 		{
 			"id": "bo-007",
 			"jp": "ジー・デンハオです。カタカナで「ジー デンハオ」と書きます。",
+			"jp_ruby": "ジー・デンハオです。カタカナで「ジー デンハオ」と<ruby>書<rt>か</rt></ruby>きます。",
 			"kana": "ジー・デンハオですカタカナでジーデンハオとかきます",
 			"zh": "我叫 JI DENGHAO，用片假名写成「ジー デンハオ」。",
 			"en": "It is Ji Denghao — written in katakana as Ji Denghao.",
@@ -518,6 +525,7 @@
 		{
 			"id": "bo-008",
 			"jp": "ご職業は。",
+			"jp_ruby": "ご<ruby>職業<rt>しょくぎょう</rt></ruby>は。",
 			"kana": "ごしょくぎょうは",
 			"zh": "您的职业是？",
 			"en": "What is your occupation?",
@@ -533,6 +541,7 @@
 		{
 			"id": "bo-009",
 			"jp": "留学生です。東京の日本語学校に通っています。",
+			"jp_ruby": "<ruby>留学生<rt>りゅうがくせい</rt></ruby>です。<ruby>東京<rt>とうきょう</rt></ruby>の<ruby>日本語学校<rt>にほんごがっこう</rt></ruby>に<ruby>通<rt>かよ</rt></ruby>っています。",
 			"kana": "りゅうがくせいですとうきょうのにほんごがっこうにかよっています",
 			"zh": "我是留学生，在东京的日语学校上学。",
 			"en": "I am an international student attending a Japanese language school in Tokyo.",
@@ -547,6 +556,7 @@
 		{
 			"id": "bo-010",
 			"jp": "口座開設の目的を教えてください。",
+			"jp_ruby": "<ruby>口座開設<rt>こうざかいせつ</rt></ruby>の<ruby>目的<rt>もくてき</rt></ruby>を<ruby>教<rt>おし</rt></ruby>えてください。",
 			"kana": "こうざかいせつのもくてきをおしえてください",
 			"zh": "请问开户的目的是？",
 			"en": "Please tell me the purpose of opening the account.",
@@ -562,6 +572,7 @@
 		{
 			"id": "bo-011",
 			"jp": "生活費のためです。中国から送金を受ける予定もあります。",
+			"jp_ruby": "<ruby>生活費<rt>せいかつひ</rt></ruby>のためです。<ruby>中国<rt>ちゅうごく</rt></ruby>から<ruby>送金<rt>そうきん</rt></ruby>を<ruby>受<rt>う</rt></ruby>ける<ruby>予定<rt>よてい</rt></ruby>もあります。",
 			"kana": "せいかつひのためですちゅうごくからそうきんをうけるよていもあります",
 			"zh": "为了生活费。另外打算接收从中国汇来的款。",
 			"en": "It is for living expenses. I also plan to receive money sent from China.",
@@ -576,6 +587,7 @@
 		{
 			"id": "bo-012",
 			"jp": "暗証番号は、4桁の数字を決めてください。誕生日など、推測されやすい番号は避けてください。",
+			"jp_ruby": "<ruby>暗証番号<rt>あんしょうばんごう</rt></ruby>は、<ruby>4桁<rt>よんけた</rt></ruby>の<ruby>数字<rt>すうじ</rt></ruby>を<ruby>決<rt>き</rt></ruby>めてください。<ruby>誕生日<rt>たんじょうび</rt></ruby>など、<ruby>推測<rt>すいそく</rt></ruby>されやすい<ruby>番号<rt>ばんごう</rt></ruby>は<ruby>避<rt>さ</rt></ruby>けてください。",
 			"kana": "あんしょうばんごうはよんけたのすうじをきめてくださいたんじょうびなどすいそくされやすいばんごうはさけてください",
 			"zh": "请定一个 4 位数字密码。避开生日这类容易被猜到的号码。",
 			"en": "Please choose a four-digit PIN, and avoid numbers that are easy to guess, such as your birthday.",
@@ -591,6 +603,7 @@
 		{
 			"id": "bo-013",
 			"jp": "キャッシュカードのデザインは、こちらから選べます。",
+			"jp_ruby": "キャッシュカードのデザインは、こちらから<ruby>選<rt>えら</rt></ruby>べます。",
 			"kana": "キャッシュカードのデザインはこちらからえらべます",
 			"zh": "现金卡的样子可以从这几个里选。",
 			"en": "You can choose your cash card design from these.",
@@ -598,13 +611,14 @@
 			"scene": "窗口对话・职员",
 			"example_jp": "Oliveのご案内をしてもよろしいですか。アプリで残高確認や振込ができます。",
 			"example_zh": "可以给您介绍一下 Olive 吗？用 App 可以查余额、转账。",
-			"example_ruby": "Oliveのご<ruby>案内<rt>あんない</rt></ruby>をしてもよろしいですか。アプリで<ruby>残高確認<rt>ざんだかかくにん</rt></ruby>や<ruby>振込<rt>ふりこみ</rt></ruby>ができます。",
+			"example_ruby": "<ruby>Olive<rt>オリーブ</rt></ruby>のご<ruby>案内<rt>あんない</rt></ruby>をしてもよろしいですか。アプリで<ruby>残高確認<rt>ざんだかかくにん</rt></ruby>や<ruby>振込<rt>ふりこみ</rt></ruby>ができます。",
 			"example_kana": "オリーブの ごあんないを しても よろしいですか。アプリで ざんだかかくにんや ふりこみが できます。",
 			"example_en": "May I introduce Olive? You can check your balance and make transfers in the app."
 		},
 		{
 			"id": "bo-014",
 			"jp": "Oliveのご案内をしてもよろしいですか。アプリで残高確認や振込ができます。",
+			"jp_ruby": "<ruby>Olive<rt>オリーブ</rt></ruby>のご<ruby>案内<rt>あんない</rt></ruby>をしてもよろしいですか。アプリで<ruby>残高確認<rt>ざんだかかくにん</rt></ruby>や<ruby>振込<rt>ふりこみ</rt></ruby>ができます。",
 			"kana": "オリーブのごあんないをしてもよろしいですかアプリでざんだかかくにんやふりこみができます",
 			"zh": "可以给您介绍一下 Olive 吗？用 App 可以查余额、转账。",
 			"en": "May I introduce Olive? You can check your balance and make transfers in the app.",
@@ -620,6 +634,7 @@
 		{
 			"id": "bo-015",
 			"jp": "口座番号は今日分かりますか。",
+			"jp_ruby": "<ruby>口座番号<rt>こうざばんごう</rt></ruby>は<ruby>今日<rt>きょう</rt></ruby><ruby>分<rt>わ</rt></ruby>かりますか。",
 			"kana": "こうざばんごうはきょうわかりますか",
 			"zh": "账号今天就能知道吗？",
 			"en": "Will I find out my account number today?",
@@ -627,13 +642,14 @@
 			"scene": "窗口对话・自己说",
 			"example_jp": "キャッシュカードは、1〜2週間ほどでご自宅に郵送いたします。",
 			"example_zh": "现金卡会在 1〜2 周内寄到您家。",
-			"example_ruby": "キャッシュカードは、1〜2<ruby>週間<rt>しゅうかん</rt></ruby>ほどでご<ruby>自宅<rt>じたく</rt></ruby>に<ruby>郵送<rt>ゆうそう</rt></ruby>いたします。",
+			"example_ruby": "キャッシュカードは、<ruby>1〜2週間<rt>いちにしゅうかん</rt></ruby>ほどでご<ruby>自宅<rt>じたく</rt></ruby>に<ruby>郵送<rt>ゆうそう</rt></ruby>いたします。",
 			"example_kana": "キャッシュカードは、いちにしゅうかんほどで ごじたくに ゆうそういたします。",
 			"example_en": "Your cash card will be mailed to your home in about one to two weeks."
 		},
 		{
 			"id": "bo-016",
 			"jp": "キャッシュカードは、1〜2週間ほどでご自宅に郵送いたします。",
+			"jp_ruby": "キャッシュカードは、<ruby>1〜2週間<rt>いちにしゅうかん</rt></ruby>ほどでご<ruby>自宅<rt>じたく</rt></ruby>に<ruby>郵送<rt>ゆうそう</rt></ruby>いたします。",
 			"kana": "キャッシュカードはいちにしゅうかんほどでごじたくにゆうそういたします",
 			"zh": "现金卡会在 1〜2 周内寄到您家。",
 			"en": "Your cash card will be mailed to your home in about one to two weeks.",
@@ -649,6 +665,7 @@
 		{
 			"id": "bo-017",
 			"jp": "以上で手続きは完了です。何かご不明な点はありますか。",
+			"jp_ruby": "<ruby>以上<rt>いじょう</rt></ruby>で<ruby>手続<rt>てつづ</rt></ruby>きは<ruby>完了<rt>かんりょう</rt></ruby>です。<ruby>何<rt>なに</rt></ruby>かご<ruby>不明<rt>ふめい</rt></ruby>な<ruby>点<rt>てん</rt></ruby>はありますか。",
 			"kana": "いじょうでてつづきはかんりょうですなにかごふめいなてんはありますか",
 			"zh": "手续办完了。还有什么不清楚的吗？",
 			"en": "That completes the procedure. Is there anything that is unclear?",
@@ -656,7 +673,7 @@
 			"scene": "窗口对话・职员",
 			"example_jp": "キャッシュカードは、1〜2週間ほどでご自宅に郵送いたします。",
 			"example_zh": "现金卡会在 1〜2 周内寄到您家。",
-			"example_ruby": "キャッシュカードは、1〜2<ruby>週間<rt>しゅうかん</rt></ruby>ほどでご<ruby>自宅<rt>じたく</rt></ruby>に<ruby>郵送<rt>ゆうそう</rt></ruby>いたします。",
+			"example_ruby": "キャッシュカードは、<ruby>1〜2週間<rt>いちにしゅうかん</rt></ruby>ほどでご<ruby>自宅<rt>じたく</rt></ruby>に<ruby>郵送<rt>ゆうそう</rt></ruby>いたします。",
 			"example_kana": "キャッシュカードは、いちにしゅうかんほどで ごじたくに ゆうそういたします。",
 			"example_en": "Your cash card will be mailed to your home in about one to two weeks.",
 			"note": "听力重点：职员常说得快，先听熟。"
@@ -735,7 +752,7 @@
 			"subtopic": "银行开户",
 			"example_jp": "キャッシュカードは、1〜2週間ほどでご自宅に郵送いたします。",
 			"example_zh": "现金卡会在 1〜2 周内寄到您家。",
-			"example_ruby": "キャッシュカードは、1〜2<ruby>週間<rt>しゅうかん</rt></ruby>ほどでご<ruby>自宅<rt>じたく</rt></ruby>に<ruby>郵送<rt>ゆうそう</rt></ruby>いたします。",
+			"example_ruby": "キャッシュカードは、<ruby>1〜2週間<rt>いちにしゅうかん</rt></ruby>ほどでご<ruby>自宅<rt>じたく</rt></ruby>に<ruby>郵送<rt>ゆうそう</rt></ruby>いたします。",
 			"example_kana": "キャッシュカードは、いちにしゅうかんほどで ごじたくに ゆうそういたします。",
 			"example_en": "Your cash card will be mailed to your home in about one to two weeks."
 		},
@@ -748,7 +765,7 @@
 			"subtopic": "银行开户",
 			"example_jp": "Oliveのご案内をしてもよろしいですか。アプリで残高確認や振込ができます。",
 			"example_zh": "可以给您介绍一下 Olive 吗？用 App 可以查余额、转账。",
-			"example_ruby": "Oliveのご<ruby>案内<rt>あんない</rt></ruby>をしてもよろしいですか。アプリで<ruby>残高確認<rt>ざんだかかくにん</rt></ruby>や<ruby>振込<rt>ふりこみ</rt></ruby>ができます。",
+			"example_ruby": "<ruby>Olive<rt>オリーブ</rt></ruby>のご<ruby>案内<rt>あんない</rt></ruby>をしてもよろしいですか。アプリで<ruby>残高確認<rt>ざんだかかくにん</rt></ruby>や<ruby>振込<rt>ふりこみ</rt></ruby>ができます。",
 			"example_kana": "オリーブの ごあんないを しても よろしいですか。アプリで ざんだかかくにんや ふりこみが できます。",
 			"example_en": "May I introduce Olive? You can check your balance and make transfers in the app."
 		},

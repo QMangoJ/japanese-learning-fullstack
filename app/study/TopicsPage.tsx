@@ -2,12 +2,12 @@ import { Suspense, lazy, useEffect, useMemo, useState, useSyncExternalStore } fr
 
 import { RubyHtml, SayButton } from "../routes/study-common";
 import { dueEntry, getDueVersion, rememberFail, rememberKnown, subscribeDue, type DueDraft } from "./due-review";
-import { KanaStagger, StudyFlip } from "./study-flip";
+import { StudyFlip } from "./study-flip";
 import { CountPair } from "./tick-text";
 import type { SwipeGrade } from "./swipe-grade";
 import { jstToday } from "./lesson-review";
 import { LANG, lx, navTo, openTopicSub, takeTopicSubPreset } from "./store";
-import { isTopicFile, isTopicIndex, stripRuby, topicDueId, type TopicCard, type TopicFile, type TopicIndex } from "./topic-vocab";
+import { isTopicFile, isTopicIndex, stripRuby, topicDueId, topicTextHasKanji, topicTextIsSentence, type TopicCard, type TopicFile, type TopicIndex } from "./topic-vocab";
 
 type Status = "new" | "unknown" | "learning";
 type OnlyFilter = "all" | "unknown" | "due";
@@ -176,18 +176,23 @@ function TopicCardGroups({ index }: { index: TopicIndex }) {
 }
 
 
-const KANJI_RE = /[\u3400-\u9fff\u3005々〆ヶ]/;
-/** 整句判定：有句末标点，或以句末谓语形式（敬语体居多）结尾。数据里不少整句不带「。」，只看标点会漏。 */
-const SENTENCE_RE = /[。！？!?]|(です|ます|ください|でしょうか|しょうか|いただけます|いたします|いただきます|ございます|でした|ました|ません|おります|なります|あります|ですか|ますか)$/;
-
 /**
- * 列表视图卡片主区的注音呈现（Daniel 定的规矩：读音标在汉字上面，不是汉字不注音）：
- * 1) 例句的 ruby 分段正好就是主句本身（发表稿这类句子卡）→ 复用分段渲染主句；
- * 2) 单词/短语卡 → 整词 ruby（带送假名的词是近似呈现，接受）；
- * 3) 没有分段的整句卡 → 保留整行 kana 兜底（整词 ruby 会把整句读音罩成一团），读音不丢；
- * 主句里没有汉字时无需注音，也不显示 kana 行。走 1/2 的卡主区不再单独摆 kana 行。
+ * 卡片主区的注音呈现（Daniel 2026-11-10 定的默认规矩：日语句子默认汉字加 ruby，
+ * 有 ruby 就没有整行假名；不是汉字不注音）。列表视图与闪卡背面共用：
+ * 1) 主句有 jp_ruby 分段 → 按分段渲染（整句卡一律走这里，数据校验保证整句卡必有分段）；
+ * 2) 例句的 ruby 分段正好就是主句本身（发表稿这类句子卡）→ 复用分段渲染主句；
+ * 3) 单词/短语卡 → 整词 ruby（带送假名的词是近似呈现，接受）；
+ * 主句里没有汉字时无需注音，也不显示 kana 行。
+ * 兜底分支（整句却没有分段）只为防坏数据把读音弄丢而留，check-topic-vocab 会先把这种数据拦下。
  */
 function TopicItemHead({ card }: { card: TopicCard }) {
+	if (card.jp_ruby) {
+		return (
+			<span className="topic-item__jp jp">
+				<RubyHtml html={card.jp_ruby} />
+			</span>
+		);
+	}
 	if (card.example_ruby && stripRuby(card.example_ruby) === card.jp) {
 		return (
 			<span className="topic-item__jp jp">
@@ -195,8 +200,8 @@ function TopicItemHead({ card }: { card: TopicCard }) {
 			</span>
 		);
 	}
-	if (!KANJI_RE.test(card.jp)) return <span className="topic-item__jp jp">{card.jp}</span>;
-	if (SENTENCE_RE.test(card.jp)) {
+	if (!topicTextHasKanji(card.jp)) return <span className="topic-item__jp jp">{card.jp}</span>;
+	if (topicTextIsSentence(card.jp)) {
 		return (
 			<>
 				<span className="topic-item__jp jp">{card.jp}</span>
@@ -420,7 +425,7 @@ function TopicDetail({ slug }: { slug: string }) {
 										<div className="jp">
 											{card.example_ruby ? <RubyHtml html={card.example_ruby} /> : card.example_jp} <SayButton text={card.example_jp} />
 										</div>
-										{card.example_kana ? <div className="review-reading jp">{card.example_kana}</div> : null}
+										{!card.example_ruby && card.example_kana ? <div className="review-reading jp">{card.example_kana}</div> : null}
 										<div className="cn">{card.example_zh}</div>
 									</div>
 									<KeigoGrammar card={card} />
@@ -482,10 +487,7 @@ function TopicDetail({ slug }: { slug: string }) {
 								<div className="backside review-flip" style={{ textAlign: "center" }}>
 									<div className="review-k">{subLabel.get(cur.subtopic)}</div>
 									<div className="jp" style={{ fontWeight: 700, fontSize: "24px" }}>
-										{cur.jp} <SayButton text={cur.jp} />
-									</div>
-									<div className="review-reading jp">
-										<KanaStagger text={cur.kana} />
+										<TopicItemHead card={cur} /> <SayButton text={cur.jp} />
 									</div>
 									<div style={{ fontSize: "20px", marginTop: "10px" }}>{cur.zh}</div>
 									{cur.en ? <div className="meta" style={{ fontSize: "16px" }}>{cur.en}</div> : null}
@@ -495,7 +497,7 @@ function TopicDetail({ slug }: { slug: string }) {
 										<div className="jp">
 											{cur.example_ruby ? <RubyHtml html={cur.example_ruby} /> : cur.example_jp} <SayButton text={cur.example_jp} />
 										</div>
-										{cur.example_kana ? <div className="review-reading jp">{cur.example_kana}</div> : null}
+										{!cur.example_ruby && cur.example_kana ? <div className="review-reading jp">{cur.example_kana}</div> : null}
 										<div className="cn">{cur.example_zh}</div>
 									</div>
 									<KeigoGrammar card={cur} />

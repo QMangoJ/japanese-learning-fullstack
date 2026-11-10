@@ -155,13 +155,25 @@ describe("TopicsPage", () => {
 		expect(ruby.querySelector("rt")?.textContent).toBe("しょうけんこうざ");
 	});
 
-	it("keeps the kana row as fallback for sentence cards without ruby segments (bo-001)", async () => {
+	it("renders sentence cards with ruby segments and no kana row (bo-001 / bo-002)", async () => {
+		// Daniel 2026-11-10 定的默认规矩：日语句子默认汉字加 ruby，有 ruby 就没有整行假名。
+		// 原先这条断言的是「无分段整句卡保留整行 kana 兜底」，数据补齐分段后按新规矩改。
 		const { container } = render(<TopicsPage slug="bank-atm" />);
-		await screen.findByText("口座開設をしたいのですが。");
+		// 注音把整句拆成了多个文本节点，等卡片元素出现即可，不能再用整句 findByText。
+		await waitFor(() => expect(container.querySelector('[data-card="bo-001"]')).not.toBeNull());
 		const item = container.querySelector('[data-card="bo-001"]')!;
 		const top = item.querySelector(".topic-item__top")!;
-		expect(top.querySelector(".topic-item__jp ruby")).toBeNull();
-		expect(top.querySelector(".topic-item__kana")?.textContent).toBe("こうざかいせつをしたいのですが");
+		expect(top.querySelector(".topic-item__kana")).toBeNull();
+		const rubies = [...top.querySelectorAll(".topic-item__jp ruby")];
+		expect(rubies.map((r) => r.childNodes[0]?.textContent)).toEqual(["口座開設"]);
+		expect(rubies.map((r) => r.querySelector("rt")?.textContent)).toEqual(["こうざかいせつ"]);
+		// 截图里被点名的第二句：普通預金口座・証券口座都要有分段注音，例句区有 ruby 时不再挂整行假名。
+		const item2 = container.querySelector('[data-card="bo-002"]')!;
+		const top2 = item2.querySelector(".topic-item__top")!;
+		expect(top2.querySelector(".topic-item__kana")).toBeNull();
+		const rt2 = [...top2.querySelectorAll(".topic-item__jp ruby rt")].map((rt) => rt.textContent);
+		expect(rt2).toEqual(["ぎんこう", "ふつうよきんこうざ", "ねが", "しょうけんこうざ"]);
+		expect(item2.querySelector(".topic-item__ex .review-reading")).toBeNull();
 	});
 
 	it("runs a flashcard self-test", async () => {

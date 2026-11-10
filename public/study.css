@@ -905,6 +905,7 @@ body.hide-cn .vcn,body.hide-cn .cn{visibility:hidden}
 .topic-item{border:1px solid var(--line);border-radius:12px;background:var(--card);padding:12px 14px;display:flex;flex-direction:column;gap:6px;min-width:0}
 .topic-item__top{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
 .topic-item__jp{font-size:21.5px;font-weight:700}
+.review-flip .topic-item__jp{font-size:inherit}
 .topic-item__kana{color:var(--sub);font-size:16px}
 .topic-item__jp rt{font-weight:400;color:var(--sub)}
 .topic-item__zh{font-size:17px;font-weight:600}

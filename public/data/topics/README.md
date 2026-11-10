@@ -31,13 +31,17 @@ public/data/topics/
     {
       "id": "inv-001",                 // 专题内唯一且稳定。复习进度按 topic:<slug>:<id> 记，改内容不要改 id
       "jp": "証券口座",                 // 必填
+      "jp_ruby": "<ruby>証券口座<rt>しょうけんこうざ</rt></ruby>", // 主句注音分段：只允许 ruby/rt，去掉注音后必须等于 jp，
+                                       // 各段读音拼起来（只取假名）必须和 kana 逐字一致。
+                                       // 主句是整句（含汉字）时必填——句子默认汉字加 ruby，渲染不再显示整行 kana
       "kana": "しょうけんこうざ",        // 必填，只能是假名
       "zh": "证券账户",                 // 必填
       "subtopic": "开户・本人确认",       // 必填
       "example_jp": "…",               // 必填
       "example_zh": "…",               // 必填
       "en": "…", "example_en": "…",    // 可选
-      "example_kana": "…",             // 可选：例句整句假名
+      "example_kana": "…",             // 可选：例句整句假名。给了它就必须同时给 example_ruby，且注音读音拼起来要和它逐字一致
+                                       //（渲染时有 example_ruby 就不再显示这行整行假名，避免重复）
       "example_ruby": "<ruby>口座<rt>こうざ</rt></ruby>を…", // 可选：只允许 ruby/rt，去掉注音后必须等于 example_jp
       "level": "…", "note": "…",       // 可选；level 会显示成小标签（如 N3）
       "scene": "…",                    // 可选：例句的使用场景，显示在例句上方

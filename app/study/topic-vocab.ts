@@ -19,6 +19,10 @@ export type TopicCard = {
 	/** 专题内唯一且稳定的 id（复习进度按它记），例如 "fin-001"。改动卡片内容时不要改 id。 */
 	id: string;
 	jp: string;
+	/** 主句注音分段，只允许 <ruby>漢字<rt>かな</rt></ruby>；去掉注音后必须等于 jp，
+	 * 各段读音拼起来（只取假名）必须和 kana 逐字一致。整句卡（主句含汉字且是整句）必填，
+	 * 渲染时主句一律走它，不再显示整行 kana（Daniel 2026-11-10 定的默认规矩）。 */
+	jp_ruby?: string;
 	kana: string;
 	zh: string;
 	en?: string;
@@ -76,6 +80,7 @@ const MAX_TEXT = 1_000;
 const CARD_KEYS = new Set([
 	"id",
 	"jp",
+	"jp_ruby",
 	"kana",
 	"zh",
 	"en",
@@ -111,6 +116,30 @@ export function isRubySubset(html: string): boolean {
 	return !/[<>]/.test(html.replace(RUBY_ONLY, ""));
 }
 
+/** ruby 标注拼出的读音：ruby 段取 rt、其余取原文，再只保留假名字符
+ * （标点、拉丁字母、数字、空格不算读音——整行 kana 本来就不含它们）。 */
+export function rubyReading(html: string): string {
+	return html.replace(RUBY_ONLY, "$2").replace(/[^\u3040-\u30ff]/g, "");
+}
+
+/** 一串文本里的假名序列（与 rubyReading 同口径，供和 kana / example_kana 逐字比对）。 */
+export function kanaSequence(text: string): string {
+	return text.replace(/[^\u3040-\u30ff]/g, "");
+}
+
+const KANJI_CHAR = /[\u3400-\u9fff\u3005々〆ヶ]/;
+/** 整句判定：有句末标点，或以句末谓语形式（敬语体居多）结尾。数据里不少整句不带「。」，只看标点会漏。
+ * 与 TopicsPage 的主句呈现判定共用同一套，避免校验和渲染各说各话。 */
+const SENTENCE_TAIL = /[。！？!?]|(です|ます|ください|でしょうか|しょうか|いただけます|いたします|いただきます|ございます|でした|ました|ません|おります|なります|あります|ですか|ますか)$/;
+
+export function topicTextHasKanji(text: string): boolean {
+	return KANJI_CHAR.test(text);
+}
+
+export function topicTextIsSentence(text: string): boolean {
+	return SENTENCE_TAIL.test(text);
+}
+
 export function validateTopicCard(card: unknown, subtopics: Set<string>, where: string): string[] {
 	const errors: string[] = [];
 	if (!isRecord(card)) return [`${where}: card must be an object`];
@@ -119,7 +148,7 @@ export function validateTopicCard(card: unknown, subtopics: Set<string>, where: 
 	for (const key of ["jp", "kana", "zh", "example_jp", "example_zh", "subtopic"] as const) {
 		if (!text(card[key], true)) errors.push(`${where}: ${key} is required (non-empty, trimmed string)`);
 	}
-	for (const key of ["en", "example_en", "example_kana", "example_ruby", "level", "scene", "note", "keigo", "grammar"] as const) {
+	for (const key of ["en", "example_en", "example_kana", "example_ruby", "jp_ruby", "level", "scene", "note", "keigo", "grammar"] as const) {
 		if (!text(card[key], false)) errors.push(`${where}: ${key} must be a trimmed string when present`);
 	}
 	if (typeof card.kana === "string" && card.kana && !KANA.test(card.kana)) errors.push(`${where}: kana must be kana only ("${card.kana}")`);
@@ -130,6 +159,34 @@ export function validateTopicCard(card: unknown, subtopics: Set<string>, where: 
 	if (typeof card.example_ruby === "string") {
 		if (!isRubySubset(card.example_ruby)) errors.push(`${where}: example_ruby may only contain <ruby>…<rt>…</rt></ruby>`);
 		else if (stripRuby(card.example_ruby) !== card.example_jp) errors.push(`${where}: example_ruby without readings must equal example_jp`);
+	}
+	if (typeof card.jp_ruby === "string") {
+		if (!isRubySubset(card.jp_ruby)) errors.push(`${where}: jp_ruby may only contain <ruby>…<rt>…</rt></ruby>`);
+		else if (stripRuby(card.jp_ruby) !== card.jp) errors.push(`${where}: jp_ruby without readings must equal jp`);
+		else if (typeof card.kana === "string" && rubyReading(card.jp_ruby) !== kanaSequence(card.kana)) {
+			errors.push(`${where}: jp_ruby readings must add up to kana ("${rubyReading(card.jp_ruby)}" !== "${kanaSequence(card.kana)}")`);
+		}
+	}
+	// 整句卡必须带分段注音（Daniel 2026-11-10 定的默认规矩：日语句子默认汉字加 ruby，
+	// 有 ruby 就没有整行假名）。分段可以是 jp_ruby，也可以是「例句 ruby 正好就是主句本身」的发表稿式复用。
+	if (typeof card.jp === "string" && topicTextHasKanji(card.jp) && topicTextIsSentence(card.jp)) {
+		const segmented =
+			typeof card.jp_ruby === "string" ||
+			(typeof card.example_ruby === "string" && stripRuby(card.example_ruby) === card.jp);
+		if (!segmented) errors.push(`${where}: sentence cards must carry jp_ruby segments (ruby on kanji, no whole-line kana fallback)`);
+	}
+	// 例句给了整行假名就必须同时给注音分段，且两者读音要对得上：渲染层有 ruby 时不再显示整行假名，
+	// 只剩假名、没有分段的例句会退回「光汉字 + 整行假名」的旧形态，数据层先拦住。
+	if (typeof card.example_kana === "string" && card.example_kana) {
+		if (typeof card.example_ruby !== "string") {
+			errors.push(`${where}: example_kana requires example_ruby segments`);
+		} else if (
+			isRubySubset(card.example_ruby) &&
+			stripRuby(card.example_ruby) === card.example_jp &&
+			rubyReading(card.example_ruby) !== kanaSequence(card.example_kana)
+		) {
+			errors.push(`${where}: example_ruby readings must add up to example_kana`);
+		}
 	}
 	return errors;
 }
@@ -229,6 +286,8 @@ export function topicDueId(slug: string, cardId: string) {
 const HEADER_ALIASES: Record<string, keyof TopicCard> = {
 	id: "id",
 	jp: "jp",
+	jp_ruby: "jp_ruby",
+	主句注音: "jp_ruby",
 	japanese: "jp",
 	日语: "jp",
 	日本語: "jp",
@@ -524,7 +583,7 @@ export function mergeTopicCards(
 	return { cards: out, added, updated, removed };
 }
 
-const ORDER: (keyof TopicCard)[] = ["id", "jp", "kana", "zh", "en", "subtopic", "level", "scene", "example_jp", "example_ruby", "example_kana", "example_zh", "example_en", "note", "keigo", "grammar"];
+const ORDER: (keyof TopicCard)[] = ["id", "jp", "jp_ruby", "kana", "zh", "en", "subtopic", "level", "scene", "example_jp", "example_ruby", "example_kana", "example_zh", "example_en", "note", "keigo", "grammar"];
 
 function orderCard(card: TopicCard): TopicCard {
 	const out: Record<string, string> = {};
