@@ -223,4 +223,32 @@ describe("grammar daily practice options", () => {
 		expect(document.querySelector(".daily-q .opt-btn")).toBeNull();
 		expect(document.querySelectorAll(".daily-q .opts span")).toHaveLength(2);
 	});
+
+	it("makes a vocab multiple-choice drill clickable once the answer key is known", async () => {
+		const user = userEvent.setup();
+		setModule("vocab");
+		V.weeks = [{
+			n: 9,
+			days: [{
+				day: 1,
+				title: "词汇",
+				sections: [{ items: [{ jp: "電車", jp_r: "<ruby>電車<rt>でんしゃ</rt></ruby>", cn: "电车" }] }],
+				exercises: {
+					answers: "①2",
+					sections: [{
+						type: "select",
+						instruction: "選びなさい",
+						items: [{ n: 1, q: "次の電車に（　）。", opts: ["乗る", "降る"] }],
+					}],
+				},
+			}],
+		}];
+		V.daily_translations = {};
+		render(<DayPage w={9} d={1} token={null} />);
+		expect(document.querySelector(".vreading")?.textContent).toBe("でんしゃ");
+		const q = screen.getByText(/次の電車/).closest(".daily-q") as HTMLElement;
+		await user.click(within(q).getByRole("button", { name: "1 乗る" }));
+		expect(within(q).getByText("✗ 答错了")).toBeInTheDocument();
+		expect(mistakesPayload().list[0].text).toContain("正确答案：降る");
+	});
 });

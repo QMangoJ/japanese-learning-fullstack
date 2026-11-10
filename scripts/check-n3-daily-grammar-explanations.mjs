@@ -53,7 +53,7 @@ assert.deepEqual(explanations.w4d2.items[4].pointIndexes, [3], "w4d2 #5 must lin
 assert.match(grammar.weeks[3].days[1].points[3].connection, /かわって／かわり/, "w4d2 p3 must expose the tested にかわり form");
 assert.match(store, /n3-grammar-daily-explanations\.json/, "runtime must load the generated explanations");
 assert.match(days, /DailyExercisePanels/, "runtime must render the daily translation and analysis controls");
-assert.match(days, /MODULE === "n2grammar" \? G2 : MODULE === "n4grammar" \? G4 : G/, "each level must read its own daily_explanations book");
-assert.match(days, /MODULE === "grammar" \|\| MODULE === "n2grammar" \|\| MODULE === "n4grammar"/, "daily grammar panels must be gated to grammar modules");
+assert.match(days, /function grammarBundle\(\)/, "each level must read its own daily_explanations book");
+assert.match(days, /isGram\(\) && dailyBook\.daily_explanations/, "daily grammar panels must cover every grammar level");
 
 console.log(`Validated ${dayCount} days and ${itemCount} daily grammar explanations.`);

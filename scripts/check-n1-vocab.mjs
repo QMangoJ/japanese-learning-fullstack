@@ -61,7 +61,7 @@ for (const w of book.weeks) {
 			for (const it of s.items) {
 				words++;
 				assert.ok(it.jp, `w${w.n}d${d.day} word text`);
-				if (!/^[⇔→]/.test(it.jp)) assert.ok(it.cn, `w${w.n}d${d.day} ${it.jp} needs Chinese`);
+				assert.ok(it.cn, `w${w.n}d${d.day} ${it.jp} needs Chinese`);
 			}
 		const [choice, fill] = d.exercises.sections;
 		assert.equal(choice.items.length, 6, `w${w.n}d${d.day} 練習Ⅰ`);

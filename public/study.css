@@ -387,6 +387,8 @@ main{max-width:var(--study-col);margin:0 auto;padding:14px}
 .vrow{display:flex;gap:10px;padding:8px 0;border-top:1px dashed var(--line);align-items:flex-start}
 .vrow:first-child{border-top:0}
 .vjp{flex:0 0 42%;min-width:0;font-size:18px;font-weight:600;word-break:break-word}
+.vreading{color:var(--sub);font-size:13px;font-weight:500;line-height:1.45;margin-top:1px}
+body.hide-jp .vreading{visibility:hidden}
 .vmn{flex:1;min-width:0}
 .vcn{color:var(--ink);word-break:break-word}
 .ven{color:var(--sub);font-size:14px;display:block}
@@ -835,6 +837,7 @@ body.hide-cn .vcn,body.hide-cn .cn{visibility:hidden}
   .opts > span:not(.opt-ripples):not(.opt-label):not(.opt-ripple):not(.tick-text):not(.gloss-anchor):not(.gloss-pop),.opt-btn{font-size:17px}
   .passage{font-size:18px}
   .vjp{font-size:19.5px}
+  .vreading{font-size:15px}
   .ven,.vrel{font-size:16px}
   .vnote{font-size:15px}
   .fillin-pat{font-size:18px}

@@ -28,7 +28,7 @@ except ImportError as error:  # pragma: no cover - generation-time dependency
 ROOT = Path(__file__).resolve().parents[1]
 DATA_FILES = (
 	"public/data/grammar.d15be04258.json",
-	"public/data/vocab.856eb48e32.json",
+	"public/data/vocab.f1c5816cd9.json",
 	"public/data/kanji.94a6d6a8d1.json",
 	"public/data/n4grammar.40e138ccdb.json",
 	"public/data/n4vocab.026f711eb7.json",

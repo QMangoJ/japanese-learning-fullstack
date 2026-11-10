@@ -1,0 +1,4994 @@
+{
+ "w1d1": {
+  "items": [
+   {
+    "n": 1,
+    "type": "choice",
+    "answer": "a",
+    "completed": "その国で生活してこそ文化がわかるというものだ。",
+    "translation": "只有真正在那个国家生活，才谈得上了解它的文化。",
+    "translation_en": "You come to understand a culture only once you have lived in that country.",
+    "reason": "「て形＋こそ」是“只有做到了才……”。「したこそ」接续不成立。",
+    "reason_en": "て-form + こそ means “only once you have…”. したこそ is not a valid connection.",
+    "choices": [
+     {
+      "a": "してこそ",
+      "b": "したこそ"
+     }
+    ]
+   },
+   {
+    "n": 2,
+    "type": "choice",
+    "answer": "a",
+    "completed": "程度の違いこそあれ、悪いことをしたのは皆同じだ。",
+    "translation": "程度虽有差别，但做了坏事这一点大家都一样。",
+    "translation_en": "The degree may differ, but everyone did something wrong just the same.",
+    "reason": "「こそあれ」先承认有差别，再强调后面的共同点。",
+    "reason_en": "こそあれ grants a difference, then stresses what is still the same.",
+    "choices": [
+     {
+      "a": "あれ",
+      "b": "すれ"
+     }
+    ]
+   },
+   {
+    "n": 3,
+    "type": "choice",
+    "answer": "a",
+    "completed": "彼は字こそ汚いが、いい文章を書く。",
+    "translation": "他字是难看，可文章写得好。",
+    "translation_en": "His handwriting is poor, but he writes well.",
+    "reason": "「こそ…が」只承认这一点（字难看），后半转折。",
+    "reason_en": "こそ…が concedes just this one point, then contrasts.",
+    "choices": [
+     {
+      "a": "こそ",
+      "b": "こそすれ"
+     }
+    ]
+   },
+   {
+    "n": 4,
+    "type": "choice",
+    "answer": "b",
+    "completed": "ここは、不便でこそあれ、緑が多くていいところだ。",
+    "translation": "这里虽然不方便，可绿很多，是个好地方。",
+    "translation_en": "It is inconvenient, but there is lots of greenery and it is a nice place.",
+    "reason": "な形容词要用「词干＋でこそあれ」。「不便なこそ」接不上。",
+    "reason_en": "A na-adjective takes でこそあれ. 不便なこそ does not connect.",
+    "choices": [
+     {
+      "a": "不便な",
+      "b": "不便で"
+     }
+    ]
+   },
+   {
+    "n": 5,
+    "type": "choice",
+    "answer": "b",
+    "completed": "文章は理解されてこそ意味がある。",
+    "translation": "文章被人理解了才有意义。",
+    "translation_en": "A piece of writing means something only once it is understood.",
+    "reason": "「されてこそ」才是「される」的て形＋こそ。「こそされて」把こそ放错了位置。",
+    "reason_en": "されてこそ is the て-form of される plus こそ. こそされて misplaces こそ.",
+    "choices": [
+     {
+      "a": "こそされて",
+      "b": "されてこそ"
+     }
+    ]
+   },
+   {
+    "n": 6,
+    "type": "order",
+    "answer": "3→2→1→4",
+    "completed": "君のやったことは、ほめられこそすれ非難されるものではない。",
+    "translation": "你做的事只会受到称赞，绝不会被责备。",
+    "translation_en": "What you did can only be praised, never blamed.",
+    "reason": "排成「ほめられこそすれ、非難されるものではない」：只会受赞，绝不会被批评。",
+    "reason_en": "The order is ほめられこそすれ…ものではない: only praise, never blame."
+   },
+   {
+    "n": 7,
+    "type": "order",
+    "answer": "1→2→4→3",
+    "completed": "その２つの製品は名前こそ違うが中身に大きな違いはない。",
+    "translation": "这两件产品名字虽然不同，内容并没有太大差别。",
+    "translation_en": "These two products have different names, but the contents are not very different.",
+    "reason": "「名前こそ違うが」只承认名字不同，后面说实质一样。",
+    "reason_en": "名前こそ違うが concedes only the name."
+   }
+  ]
+ },
+ "w1d2": {
+  "items": [
+   {
+    "n": 1,
+    "type": "choice",
+    "answer": "a",
+    "completed": "たぶん行けないと思うので、私はいないものとして話を進めてください。",
+    "translation": "我大概去不了，请当作我不在，把事情往下谈。",
+    "translation_en": "I probably cannot go, so please carry on as if I were not there.",
+    "reason": "「ないものとして」是“姑且当作没有／不在”来处理。",
+    "reason_en": "ないものとして means treat it as if it were not the case.",
+    "choices": [
+     {
+      "a": "ものとして",
+      "b": "人として"
+     }
+    ]
+   },
+   {
+    "n": 2,
+    "type": "choice",
+    "answer": "b",
+    "completed": "愛する人が病気で苦しむのを見るくらいなら、自分が病気になったほうがいい。",
+    "translation": "与其看着所爱的人因病受苦，不如自己生病。",
+    "translation_en": "I would rather fall ill myself than watch someone I love suffer.",
+    "reason": "「くらいなら、…ほうがいい」是“与其……不如……”。",
+    "reason_en": "くらいなら…ほうがいい means “better to… than to…”.",
+    "choices": [
+     {
+      "a": "見ないほうがましだ",
+      "b": "自分が病気になったほうがいい"
+     }
+    ]
+   },
+   {
+    "n": 3,
+    "type": "choice",
+    "answer": "a",
+    "completed": "転勤でそんな田舎に行かされるくらいなら、会社を辞めたほうがいい。",
+    "translation": "与其被调动到那种乡下，不如辞职。",
+    "translation_en": "I would rather quit than be transferred to a place that rural.",
+    "reason": "同样是「くらいなら、…ほうがいい」：宁可辞职也不接受那种调动。",
+    "reason_en": "Same pattern: quitting is preferable to that transfer.",
+    "choices": [
+     {
+      "a": "くらいなら",
+      "b": "ものだから"
+     }
+    ]
+   },
+   {
+    "n": 4,
+    "type": "choice",
+    "answer": "b",
+    "completed": "ぼくが買える家は、これぐらいのものだ。",
+    "translation": "我买得起的房子，也就是这种程度了。",
+    "translation_en": "A house I can afford is about this level.",
+    "reason": "「これぐらいのものだ」把程度往低了说：不过如此。",
+    "reason_en": "これぐらいのものだ plays the level down: nothing more than this.",
+    "choices": [
+     {
+      "a": "ぐらいにしたものだ",
+      "b": "ぐらいのものだ"
+     }
+    ]
+   },
+   {
+    "n": 5,
+    "type": "choice",
+    "answer": "b",
+    "completed": "契約の期限が来た場合には、新たに契約書を交わすものとする。",
+    "translation": "合同到期时，应当另行签订新合同。",
+    "translation_en": "When a contract expires, a new one shall be concluded.",
+    "reason": "「ものとする」是规定、视为“应当如此”。「ものになる」是“成为那样”，不用于规章。",
+    "reason_en": "ものとする states a rule. ものになる does not.",
+    "choices": [
+     {
+      "a": "ものになる",
+      "b": "ものとする"
+     }
+    ]
+   },
+   {
+    "n": 6,
+    "type": "order",
+    "answer": "2→4→1→3",
+    "completed": "昨日授業で教えたことはわかったものとして次に進みます。",
+    "translation": "昨天课上讲的内容就当作大家懂了，接着往下讲。",
+    "translation_en": "We will proceed on the assumption that you understood yesterday’s lesson.",
+    "reason": "「わかったものとして」把“已经懂了”当作前提继续。",
+    "reason_en": "わかったものとして takes “you understood” as the premise and moves on."
+   },
+   {
+    "n": 7,
+    "type": "order",
+    "answer": "1→4→3→2",
+    "completed": "そんなことをさせられるくらいなら参加しないほうがましだ。",
+    "translation": "与其被人逼着做那种事，还不如不参加。",
+    "translation_en": "I would rather not take part than be made to do something like that.",
+    "reason": "「させられるくらいなら、…ほうがましだ」：与其被迫做，不参加还好一点。",
+    "reason_en": "くらいなら…ほうがましだ: not joining is the lesser evil."
+   }
+  ]
+ },
+ "w1d3": {
+  "items": [
+   {
+    "n": 1,
+    "type": "choice",
+    "answer": "a",
+    "completed": "お互いが助け合うことなしに、人間は生きていけない。",
+    "translation": "人如果不互相帮助，就活不下去。",
+    "translation_en": "People cannot live without helping one another.",
+    "reason": "「ことなしに」是“如果不……就……”，后半多接否定。",
+    "reason_en": "ことなしに means “without doing…”, usually followed by a negative.",
+    "choices": [
+     {
+      "a": "なしに",
+      "b": "だから"
+     }
+    ]
+   },
+   {
+    "n": 2,
+    "type": "choice",
+    "answer": "b",
+    "completed": "明るい彼女のことだから、どこへ行ってもすぐ友達ができるだろう。",
+    "translation": "以她那么开朗的性子，到哪儿都能很快交到朋友吧。",
+    "translation_en": "Someone as cheerful as her will make friends quickly anywhere.",
+    "reason": "「彼女のことだから」是凭对她的了解所作的判断。",
+    "reason_en": "のことだから judges from what you know of that person.",
+    "choices": [
+     {
+      "a": "にして",
+      "b": "だから"
+     }
+    ]
+   },
+   {
+    "n": 3,
+    "type": "choice",
+    "answer": "a",
+    "completed": "兄が書いたレポートを、自分が書いたことにして提出した。",
+    "translation": "他把哥哥写的报告当作自己写的交了上去。",
+    "translation_en": "He submitted the report his brother wrote as if he had written it.",
+    "reason": "「ことにして」是“权且当成／假装成”某一事实。",
+    "reason_en": "ことにして means to treat or pretend that something is the case.",
+    "choices": [
+     {
+      "a": "書いたことにして",
+      "b": "書くことなしに"
+     }
+    ]
+   },
+   {
+    "n": 4,
+    "type": "choice",
+    "answer": "a",
+    "completed": "道に迷うことのないように、前もって地図で場所を確かめておいた。",
+    "translation": "为了不迷路，我事先用地图确认了地点。",
+    "translation_en": "So as not to get lost, I checked the place on a map beforehand.",
+    "reason": "「ことのないように」表示“为了不要发生……”。",
+    "reason_en": "ことのないように means “so that … will not happen”.",
+    "choices": [
+     {
+      "a": "迷うことのないように",
+      "b": "迷うことなしに"
+     }
+    ]
+   },
+   {
+    "n": 5,
+    "type": "choice",
+    "answer": "a",
+    "completed": "彼女は今まで苦労することなしに生きてきた。",
+    "translation": "她至今一直没吃过苦就活过来了。",
+    "translation_en": "She has lived until now without ever having a hard time.",
+    "reason": "「したことなしに」是“不曾……就……”。「する」是现在形，和“至今”的经历不合。",
+    "reason_en": "したことなしに fits a past experience. The plain する does not.",
+    "choices": [
+     {
+      "a": "する",
+      "b": "した"
+     }
+    ]
+   },
+   {
+    "n": 6,
+    "type": "order",
+    "answer": "3→2→4→1",
+    "completed": "ケチで有名な彼のことだから百円だって貸してくれないだろう。",
+    "translation": "他出了名地小气，就算一百日元大概也不会借给你。",
+    "translation_en": "He is famously stingy, so he probably would not lend you even 100 yen.",
+    "reason": "「彼のことだから」凭对他的了解下判断：小气到一百日元也不借。",
+    "reason_en": "のことだから bases the guess on what everyone knows about him."
+   },
+   {
+    "n": 7,
+    "type": "order",
+    "answer": "2→1→3→4",
+    "completed": "その２つの関連性を証明することなしに解決するのは困難だ。",
+    "translation": "不证明那两者的关联，就很难解决。",
+    "translation_en": "It is hard to solve this without proving how the two are related.",
+    "reason": "「ことなしに」：缺少“证明”这一步，解决就困难。",
+    "reason_en": "ことなしに: without that proof, a solution is difficult."
+   }
+  ]
+ },
+ "w1d4": {
+  "items": [
+   {
+    "n": 1,
+    "type": "choice",
+    "answer": "b",
+    "completed": "新しいロケットの完成が待たれます。",
+    "translation": "大家都在等新火箭完成。",
+    "translation_en": "The completion of the new rocket is eagerly awaited.",
+    "reason": "「待たれる」是自发的被动：人们自然地盼着。",
+    "reason_en": "待たれる is the spontaneous passive: people naturally look forward to it.",
+    "choices": [
+     {
+      "a": "待たされます",
+      "b": "待たれます"
+     }
+    ]
+   },
+   {
+    "n": 2,
+    "type": "choice",
+    "answer": "a",
+    "completed": "彼は社会人として必要とされている知識に欠ける。",
+    "translation": "他缺少作为社会人应有的知识。",
+    "translation_en": "He lacks the knowledge expected of a working adult.",
+    "reason": "「必要とされている」是“被（社会）认为有必要”。",
+    "reason_en": "必要とされている is what is regarded as necessary.",
+    "choices": [
+     {
+      "a": "とされている",
+      "b": "にしている"
+     }
+    ]
+   },
+   {
+    "n": 3,
+    "type": "choice",
+    "answer": "a",
+    "completed": "我々の世代の人間に言わせれば、彼の行動は普通ではない。",
+    "translation": "要让我们这一代人来说，他的行为并不寻常。",
+    "translation_en": "If you ask people of our generation, his behavior is not normal.",
+    "reason": "「に言わせれば」是“若由某人来说／依某人的看法”。",
+    "reason_en": "に言わせれば introduces whose view is being given.",
+    "choices": [
+     {
+      "a": "言わせれば",
+      "b": "言われれば"
+     }
+    ]
+   },
+   {
+    "n": 4,
+    "type": "choice",
+    "answer": "b",
+    "completed": "それは、死について真剣に考えさせられる映画だった。",
+    "translation": "那是一部让人认真思考死亡的电影。",
+    "translation_en": "It was a film that made you think seriously about death.",
+    "reason": "「考えさせられる」是使役被动：不由得被逼着去想。",
+    "reason_en": "考えさせられる is causative-passive: you are made to think.",
+    "choices": [
+     {
+      "a": "考えされる",
+      "b": "考えさせられる"
+     }
+    ]
+   },
+   {
+    "n": 5,
+    "type": "choice",
+    "answer": "b",
+    "completed": "この新薬は、効果はあるが、副作用が強いとされている。",
+    "translation": "这种新药有效，但据说副作用很强。",
+    "translation_en": "This new drug works, but it is said to have strong side effects.",
+    "reason": "「とされている」是“一般认为、被看作”。「ことにされている」是“被规定成”，这里是传闻评价，不是规章。",
+    "reason_en": "とされている means “is considered”. ことにされている would mean it is officially set that way.",
+    "choices": [
+     {
+      "a": "ことにされている",
+      "b": "とされている"
+     }
+    ]
+   },
+   {
+    "n": 6,
+    "type": "order",
+    "answer": "3→1→2→4",
+    "completed": "若者の海外移住が増加していることでその国の将来が案じられているそうだ。",
+    "translation": "听说年轻人移居海外的人在增加，那个国家的将来令人担忧。",
+    "translation_en": "Young people moving abroad are said to be increasing, and that country’s future is a worry.",
+    "reason": "「案じられている」是“被人担忧着”，和「増加している」一起说明现状。",
+    "reason_en": "案じられている is the spontaneous passive: the future is worried about."
+   },
+   {
+    "n": 7,
+    "type": "order",
+    "answer": "3→2→4→1",
+    "completed": "彼の言葉からはやる気がないように感じられたが私に言わせればそんなのはただの甘えだ。",
+    "translation": "从他的话里能感到没什么干劲，可要让我说，那不过是撒娇。",
+    "translation_en": "His words made him sound unmotivated, but if you ask me that is just being spoiled.",
+    "reason": "「私に言わせれば」引出说话人自己的判断，和前面的感觉相对。",
+    "reason_en": "私に言わせれば marks the speaker’s own judgment against the earlier impression."
+   }
+  ]
+ },
+ "w1d5": {
+  "items": [
+   {
+    "n": 1,
+    "type": "choice",
+    "answer": "a",
+    "completed": "もし車を買い換えるとすれば、次はドイツの車がほしい。",
+    "translation": "如果要换车的话，下一辆我想要德国车。",
+    "translation_en": "If I were to replace my car, I would want a German one next.",
+    "reason": "「とすれば」是“假如如此的话”。",
+    "reason_en": "とすれば sets up a hypothetical.",
+    "choices": [
+     {
+      "a": "とすれば",
+      "b": "とみると"
+     }
+    ]
+   },
+   {
+    "n": 2,
+    "type": "choice",
+    "answer": "b",
+    "completed": "彼女は苦労したとみえて、実際の年齢より老けて見える。",
+    "translation": "她看来吃过苦，显得比实际年龄老。",
+    "translation_en": "She seems to have had a hard life; she looks older than she is.",
+    "reason": "「とみえて」是根据外观所作的推测：看来是吃过苦。",
+    "reason_en": "とみえて is an inference from how she looks.",
+    "choices": [
+     {
+      "a": "として",
+      "b": "とみえて"
+     }
+    ]
+   },
+   {
+    "n": 3,
+    "type": "choice",
+    "answer": "a",
+    "completed": "彼女の普段の成績から、合格は間違いないとみられている。",
+    "translation": "从她平时的成绩来看，人们认为她肯定能考上。",
+    "translation_en": "Judging from her usual grades, she is seen as certain to pass.",
+    "reason": "「とみられている」是“被大家看作”。",
+    "reason_en": "とみられている means the public regards it that way.",
+    "choices": [
+     {
+      "a": "みられている",
+      "b": "みえている"
+     }
+    ]
+   },
+   {
+    "n": 4,
+    "type": "choice",
+    "answer": "a",
+    "completed": "彼は、女性が地方出身だとみるとすぐに声をかける。",
+    "translation": "他一看对方是地方出身的女性，马上就搭话。",
+    "translation_en": "As soon as he sees that a woman is from the countryside, he speaks to her.",
+    "reason": "「だとみると」是“一看出是……就”。",
+    "reason_en": "だとみると means “the moment he takes someone for…”.",
+    "choices": [
+     {
+      "a": "とみると",
+      "b": "とすれば"
+     }
+    ]
+   },
+   {
+    "n": 5,
+    "type": "choice",
+    "answer": "a",
+    "completed": "彼が犯人だとすると、犯罪を犯した動機は何だろう。",
+    "translation": "假如他是犯人，犯罪动机又是什么呢。",
+    "translation_en": "If he is the culprit, what was the motive?",
+    "reason": "「だとすると」是假设“如果是这样”。「だとみえて」是推测外观，不能用来设这个假设。",
+    "reason_en": "だとすると is the hypothesis. だとみえて would only guess from appearances.",
+    "choices": [
+     {
+      "a": "だとすると",
+      "b": "だとみえて"
+     }
+    ]
+   },
+   {
+    "n": 6,
+    "type": "order",
+    "answer": "3→4→1→2",
+    "completed": "景気は回復しつつあるとみられているが実感している人は少ないと思う。",
+    "translation": "景气被认为正在恢复，但我觉得实际有感受的人很少。",
+    "translation_en": "The economy is seen as recovering, but I think few people actually feel it.",
+    "reason": "「とみられている」表示外界的看法，和后半“实际感受”相对。",
+    "reason_en": "とみられている is the outside view, set against what people actually feel."
+   },
+   {
+    "n": 7,
+    "type": "order",
+    "answer": "2→4→1→3",
+    "completed": "インフルエンザが治ったとみえてもウイルスはまだ残っている場合があるので、しばらくは薬を続けてください。",
+    "translation": "即使流感看起来好了，病毒有时还在，所以请再继续吃一阵药。",
+    "translation_en": "Even if the flu seems gone, the virus can remain, so keep taking the medicine for a while.",
+    "reason": "「治ったとみえても」是“即便看上去像是好了”。",
+    "reason_en": "とみえても: even when it looks as if it has cleared."
+   }
+  ]
+ },
+ "w1d6": {
+  "items": [
+   {
+    "n": 1,
+    "type": "choice",
+    "answer": "b",
+    "completed": "どんなに走ったところで、絶対に間に合わないだろう。",
+    "translation": "无论怎么跑，绝对也来不及了吧。",
+    "translation_en": "No matter how fast you run, you will never make it.",
+    "reason": "「たところで」接在过去形后，表示“即便做了也（没用）”。",
+    "reason_en": "たところで means “even if you did…”, with a useless result.",
+    "choices": [
+     {
+      "a": "走るところを",
+      "b": "走ったところで"
+     }
+    ]
+   },
+   {
+    "n": 2,
+    "type": "choice",
+    "answer": "a",
+    "completed": "お忙しいところをお集まりいただき、ありがとうございます。",
+    "translation": "百忙之中还请各位聚集，非常感谢。",
+    "translation_en": "Thank you for gathering when you are so busy.",
+    "reason": "「お忙しいところを」是“在您正忙的时候还……”，后面常接感谢或请求。",
+    "reason_en": "ところを marks an inconvenient moment, often before thanks.",
+    "choices": [
+     {
+      "a": "ところを",
+      "b": "ところで"
+     }
+    ]
+   },
+   {
+    "n": 3,
+    "type": "choice",
+    "answer": "a",
+    "completed": "「CDは月にどのくらい買うの。」「だいたい5枚というところだね。」",
+    "translation": "“你一个月大概买多少张CD？”“差不多五张吧。”",
+    "translation_en": "“About how many CDs do you buy a month?” “Around five.”",
+    "reason": "「というところだ」表示大致的数量或程度。",
+    "reason_en": "というところだ gives a rough figure.",
+    "choices": [
+     {
+      "a": "というところだ",
+      "b": "ところだ"
+     }
+    ]
+   },
+   {
+    "n": 4,
+    "type": "choice",
+    "answer": "b",
+    "completed": "彼の借金は、休みなく毎日働いたところで、返せるような額ではない。",
+    "translation": "他的债，就算每天不停地干活，也不是还得起的数目。",
+    "translation_en": "His debt is not an amount he could repay even by working every day without a break.",
+    "reason": "「働いたところで」同样是“即便做了也……”。",
+    "reason_en": "たところで again: even that effort would not be enough.",
+    "choices": [
+     {
+      "a": "ところを",
+      "b": "ところで"
+     }
+    ]
+   },
+   {
+    "n": 5,
+    "type": "choice",
+    "answer": "b",
+    "completed": "あの頑固な父にタバコをやめさせようとしたって、無駄だよ。",
+    "translation": "想让那么固执的父亲戒烟，也是白费。",
+    "translation_en": "Trying to make that stubborn father quit smoking is pointless.",
+    "reason": "「ようとしたって」是「ようとしても」的口语：即便打算让他戒也没用。「にしたって」接的不是这个意志形。",
+    "reason_en": "ようとしたって is the spoken ようとしても. にしたって does not follow the volitional.",
+    "choices": [
+     {
+      "a": "にしたって",
+      "b": "としたって"
+     }
+    ]
+   },
+   {
+    "n": 6,
+    "type": "order",
+    "answer": "3→2→1→4",
+    "completed": "どんなにやったことを後悔したところで過去を変えることはできない。",
+    "translation": "无论多么后悔做过的事，也改变不了过去。",
+    "translation_en": "However much you regret what you did, you cannot change the past.",
+    "reason": "「たところで」强调后悔也于事无补。",
+    "reason_en": "たところで: regret does not change the past."
+   },
+   {
+    "n": 7,
+    "type": "order",
+    "answer": "2→3→1→4",
+    "completed": "トイレはもちろんキッチンもついていて、この車はまさに走る家といったところです。",
+    "translation": "厕所自不必说，连厨房都有，这辆车简直就是会跑的家。",
+    "translation_en": "It even has a kitchen, not just a toilet — this car is practically a house that drives.",
+    "reason": "「といったところだ」这里用来给事物定位：差不多就是“会跑的家”。",
+    "reason_en": "といったところだ labels what it amounts to."
+   }
+  ]
+ },
+ "w2d1": {
+  "items": [
+   {
+    "n": 1,
+    "type": "choice",
+    "answer": "b",
+    "completed": "彼ったら、家に帰るなり、パソコンの前に座るんだから……。",
+    "translation": "他这个人，一回到家就坐到电脑前。",
+    "translation_en": "That guy sits down at the computer the moment he gets home.",
+    "reason": "「帰るなり」是“一……马上就”。",
+    "reason_en": "なり means “the moment…, immediately”.",
+    "choices": [
+     {
+      "a": "帰った",
+      "b": "帰る"
+     }
+    ]
+   },
+   {
+    "n": 2,
+    "type": "choice",
+    "answer": "a",
+    "completed": "私は素人だが、この詩を自分なりに解釈してみた。",
+    "translation": "我是外行，但试着用自己的方式解释了这首诗。",
+    "translation_en": "I am an amateur, but I tried to interpret the poem in my own way.",
+    "reason": "「なりに」是“以与之相称的方式、就自己的水平”。",
+    "reason_en": "なりに means in a way that fits that person or level.",
+    "choices": [
+     {
+      "a": "なりに",
+      "b": "なりして"
+     }
+    ]
+   },
+   {
+    "n": 3,
+    "type": "choice",
+    "answer": "a",
+    "completed": "顔色が悪いですよ。座るなり横になるなり、楽にしてください。",
+    "translation": "你脸色不好。坐下也好、躺下也好，请放松。",
+    "translation_en": "You look pale. Sit or lie down — make yourself comfortable.",
+    "reason": "「なり…なり」列举“或者……或者……都行”。",
+    "reason_en": "なり…なり lists acceptable alternatives.",
+    "choices": [
+     {
+      "a": "座るなり横になるなり",
+      "b": "座りつつ横になりつつ"
+     }
+    ]
+   },
+   {
+    "n": 4,
+    "type": "choice",
+    "answer": "b",
+    "completed": "窓を開けたとたん、変な虫が入ってきた。",
+    "translation": "一开窗，就飞进来一只怪虫子。",
+    "translation_en": "The moment I opened the window, a strange insect came in.",
+    "reason": "「たとたん」是“刚一……就（发生了意外的事）”。",
+    "reason_en": "たとたん is “the instant…”, often something unexpected.",
+    "choices": [
+     {
+      "a": "なり",
+      "b": "とたん"
+     }
+    ]
+   },
+   {
+    "n": 5,
+    "type": "choice",
+    "answer": "a",
+    "completed": "最終電車に乗り遅れても、タクシーに乗るなり歩くなりして必ず家に帰ってきなさい。",
+    "translation": "就算错过末班电车，也要打车或者走着，一定要回家。",
+    "translation_en": "Even if you miss the last train, take a taxi or walk, but get home.",
+    "reason": "「乗るなり歩くなり」是“打车也好走路也好”。",
+    "reason_en": "なり…なり: taxi or walking, either is fine.",
+    "choices": [
+     {
+      "a": "乗るなり歩くなり",
+      "b": "乗らないなら乗らないなり"
+     }
+    ]
+   },
+   {
+    "n": 6,
+    "type": "order",
+    "answer": "1→4→3→2",
+    "completed": "高得点を狙うならそれなりの準備が必要だ。",
+    "translation": "要想拿高分，就得做与之相称的准备。",
+    "translation_en": "If you aim for a high score, you need preparation to match.",
+    "reason": "「それなりの」是“与那个目标相称的”。",
+    "reason_en": "それなりの means preparation fitting that aim."
+   },
+   {
+    "n": 7,
+    "type": "order",
+    "answer": "2→4→1→3",
+    "completed": "雑用なりなんなり必要ならお申し付けください。",
+    "translation": "杂务也好别的也好，如果需要请尽管吩咐。",
+    "translation_en": "Errands or whatever else — just say if you need something.",
+    "reason": "「なりなんなり」是“……也好什么也好”的随意列举。",
+    "reason_en": "なりなんなり is a casual “or whatever else”."
+   }
+  ]
+ },
+ "w2d2": {
+  "items": [
+   {
+    "n": 1,
+    "type": "choice",
+    "answer": "a",
+    "completed": "彼は、朝だろうが夜中だろうがかまわず電話をかけてくる。",
+    "translation": "他不管是早上还是半夜，都毫无顾忌地打电话来。",
+    "translation_en": "He calls without caring whether it is morning or the middle of the night.",
+    "reason": "「だろうが…だろうが」是“无论是……还是……”。",
+    "reason_en": "だろうが…だろうが means “whether… or…”.",
+    "choices": [
+     {
+      "a": "朝だろうが夜中だろうが",
+      "b": "朝だろう夜中だろう"
+     }
+    ]
+   },
+   {
+    "n": 2,
+    "type": "choice",
+    "answer": "a",
+    "completed": "この部屋でどんなに騒ごうとも、外からは何も聞こえません。",
+    "translation": "这房间里无论怎么吵，外面都听不见。",
+    "translation_en": "No matter how much noise you make in this room, nothing is heard outside.",
+    "reason": "「ようとも」是“即使……也”。",
+    "reason_en": "ようとも means “even if…”.",
+    "choices": [
+     {
+      "a": "騒ごうとも",
+      "b": "騒ぐであれ"
+     }
+    ]
+   },
+   {
+    "n": 3,
+    "type": "choice",
+    "answer": "a",
+    "completed": "たとえ雨であろうと雪であろうと、明日の試合は予定どおり行います。",
+    "translation": "哪怕下雨或下雪，明天的比赛也照计划进行。",
+    "translation_en": "Whether it rains or snows, tomorrow’s match will go ahead as planned.",
+    "reason": "「であろうと…であろうと」是书面的“无论……还是……”。",
+    "reason_en": "であろうと…であろうと is the written “whether… or…”.",
+    "choices": [
+     {
+      "a": "雨であろうと雪であろうと",
+      "b": "雨が降るが雪が降るが"
+     }
+    ]
+   },
+   {
+    "n": 4,
+    "type": "choice",
+    "answer": "b",
+    "completed": "どの大学であれ、進学先が決まってほっとした。",
+    "translation": "无论是哪所大学，升学去向定下来就松了口气。",
+    "translation_en": "Whichever university it is, I was relieved once the destination was set.",
+    "reason": "「であれ」是“无论是……”。",
+    "reason_en": "であれ means “whatever / whichever”.",
+    "choices": [
+     {
+      "a": "であると",
+      "b": "であれ"
+     }
+    ]
+   },
+   {
+    "n": 5,
+    "type": "choice",
+    "answer": "b",
+    "completed": "何をしようと君の自由だが、他人に迷惑をかけることは許されない。",
+    "translation": "你想做什么是你的自由，但不能给别人添麻烦。",
+    "translation_en": "You are free to do what you like, but you may not trouble others.",
+    "reason": "「しようと」是“即使想做……也”，后半给出限制。",
+    "reason_en": "しようと grants the freedom, then the second clause limits it.",
+    "choices": [
+     {
+      "a": "何だろうが",
+      "b": "何をしようと"
+     }
+    ]
+   },
+   {
+    "n": 6,
+    "type": "order",
+    "answer": "3→2→1→4",
+    "completed": "あの夫婦がどうなろうが知ったことではないが、子どもはかわいそうだと思う。",
+    "translation": "那对夫妻变成什么样我不管，但我觉得孩子可怜。",
+    "translation_en": "I do not care what happens to that couple, but I feel sorry for the child.",
+    "reason": "「どうなろうが」是“无论变成什么样（都与我无关）”。",
+    "reason_en": "どうなろうが dismisses whatever becomes of them."
+   },
+   {
+    "n": 7,
+    "type": "order",
+    "answer": "3→1→4→2",
+    "completed": "故意なかろうとであろうと人を傷つけたことには変わりはない。",
+    "translation": "不管是不是故意，伤到人这一点是不会变的。",
+    "translation_en": "Whether or not it was intentional, the fact that someone was hurt does not change.",
+    "reason": "「なかろうと…であろうと」覆盖“不是故意”和“是故意”两种情况。",
+    "reason_en": "なかろうと…であろうと covers both “not intentional” and “intentional”."
+   }
+  ]
+ },
+ "w2d3": {
+  "items": [
+   {
+    "n": 1,
+    "type": "choice",
+    "answer": "a",
+    "completed": "あなたが反対しようとしまいと私は一人で行くつもりです。",
+    "translation": "你反不反对，我都打算一个人去。",
+    "translation_en": "Whether you object or not, I intend to go alone.",
+    "reason": "「ようとしまいと」是“做或不做都……”。",
+    "reason_en": "ようとしまいと means whether you do it or not.",
+    "choices": [
+     {
+      "a": "しようとしまいと",
+      "b": "しようかするまいか"
+     }
+    ]
+   },
+   {
+    "n": 2,
+    "type": "choice",
+    "answer": "b",
+    "completed": "大学院へ行こうか行くまいか悩んだ末、いい仕事が見つかったので就職することにした。",
+    "translation": "读不读研究生犹豫到最后，因为找到了好工作，决定就业。",
+    "translation_en": "After agonizing over graduate school, I found a good job and decided to work.",
+    "reason": "「ようか…まいか」是“做还是不做”的犹豫。",
+    "reason_en": "ようか…まいか is the hesitation “shall I or not”.",
+    "choices": [
+     {
+      "a": "行こうと行くまいと",
+      "b": "行こうか行くまいか"
+     }
+    ]
+   },
+   {
+    "n": 3,
+    "type": "choice",
+    "answer": "a",
+    "completed": "来週の会合に来るにしろ来ないにしろ、必ず資料に目を通してください。",
+    "translation": "下周的会来也好不来也好，请务必先看资料。",
+    "translation_en": "Whether or not you come to next week’s meeting, please read the materials.",
+    "reason": "「にしろ…にしろ」是“无论是……还是……”。",
+    "reason_en": "にしろ…にしろ means “whether… or…”.",
+    "choices": [
+     {
+      "a": "来るにしろ来ないにしろ",
+      "b": "来るというか来ないというか"
+     }
+    ]
+   },
+   {
+    "n": 4,
+    "type": "choice",
+    "answer": "a",
+    "completed": "欠席するにせよ連絡はしてください。",
+    "translation": "即便缺席，也请联系一声。",
+    "translation_en": "Even if you are absent, please let us know.",
+    "reason": "「にせよ」是“即便……也”。",
+    "reason_en": "にせよ means “even if…”.",
+    "choices": [
+     {
+      "a": "するにせよ",
+      "b": "しようにしろ"
+     }
+    ]
+   },
+   {
+    "n": 5,
+    "type": "choice",
+    "answer": "b",
+    "completed": "それは、面白いというか、珍しいというか、とにかく変わったものだ。",
+    "translation": "那东西说有趣也好、说稀奇也好，总之很特别。",
+    "translation_en": "Interesting, or odd — either way, it is unusual.",
+    "reason": "「というか…というか」是“说是……还是说是……”，用来不好归类。",
+    "reason_en": "というか…というか gropes for how to describe something.",
+    "choices": [
+     {
+      "a": "面白かろうと、珍しかろうと",
+      "b": "面白いというか、珍しいというか"
+     }
+    ]
+   },
+   {
+    "n": 6,
+    "type": "order",
+    "answer": "1→4→2→3",
+    "completed": "その新聞記者は、記事を掲載しようかすまいか悩んだあげく、掲載をやめた。",
+    "translation": "那位记者犹豫要不要刊登，最后还是不登了。",
+    "translation_en": "The reporter agonized over publishing the article and in the end did not.",
+    "reason": "「ようか…まいか悩んだあげく」是犹豫之后的结果。",
+    "reason_en": "ようか…まいか plus あげく: the result after wavering."
+   },
+   {
+    "n": 7,
+    "type": "order",
+    "answer": "1→4→2→3",
+    "completed": "もう社会人だから何をするにせよ自分の行動に責任を持たなければいけない。",
+    "translation": "既然已经是社会人，无论做什么都必须对自己的行为负责。",
+    "translation_en": "Now that you are an adult, you must take responsibility whatever you do.",
+    "reason": "「何をするにせよ」是“无论做什么都……”。",
+    "reason_en": "何をするにせよ means “whatever you do”."
+   }
+  ]
+ },
+ "w2d4": {
+  "items": [
+   {
+    "n": 1,
+    "type": "choice",
+    "answer": "a",
+    "completed": "彼女はまだ若いけれど、経験といい能力といい申し分のない女性だ。",
+    "translation": "她还年轻，可论经验和能力都无可挑剔。",
+    "translation_en": "She is still young, but both her experience and her ability are impeccable.",
+    "reason": "「といい…といい」是“无论从……还是从……来看”。",
+    "reason_en": "といい…といい evaluates from both angles.",
+    "choices": [
+     {
+      "a": "経験といい能力といい",
+      "b": "経験だの能力だの"
+     }
+    ]
+   },
+   {
+    "n": 2,
+    "type": "choice",
+    "answer": "b",
+    "completed": "猫に顔といわず手といわず引っかかれてしまった。",
+    "translation": "被猫抓了，脸也好手也好都没放过。",
+    "translation_en": "The cat scratched me all over, face and hands alike.",
+    "reason": "「といわず…といわず」是“不论……还是……都”。",
+    "reason_en": "といわず…といわず means both places, without exception.",
+    "choices": [
+     {
+      "a": "顔なり手なり",
+      "b": "顔といわず手といわず"
+     }
+    ]
+   },
+   {
+    "n": 3,
+    "type": "choice",
+    "answer": "a",
+    "completed": "こんなつまらない商品を、売るほうも売るほうなら買うほうも買うほうだ。",
+    "translation": "这么无聊的商品，卖的一方离谱，买的一方也离谱。",
+    "translation_en": "Such a worthless product — the sellers are as bad as the buyers.",
+    "reason": "「ほうも…ほうなら、ほうも…ほうだ」两边一起批评。",
+    "reason_en": "The repeated ほうなら…ほうだ criticizes both sides.",
+    "choices": [
+     {
+      "a": "なら",
+      "b": "だろうが"
+     }
+    ]
+   },
+   {
+    "n": 4,
+    "type": "choice",
+    "answer": "a",
+    "completed": "彼は、ガムだのあめだの何かしら口に入れている。",
+    "translation": "他嘴里总塞着口香糖啦糖果啦什么的。",
+    "translation_en": "He always has gum or candy or something in his mouth.",
+    "reason": "「だの…だの」随意列举例子。",
+    "reason_en": "だの…だの lists examples casually.",
+    "choices": [
+     {
+      "a": "ガムだのあめだの",
+      "b": "ガムなりあめなり"
+     }
+    ]
+   },
+   {
+    "n": 5,
+    "type": "choice",
+    "answer": "a",
+    "completed": "A「あの人、田中さんのお母さんだよね。派手だね。」B「娘が娘なら母親も母親だね。」",
+    "translation": "A“那是田中的妈妈吧。真显眼。”B“女儿那样，妈妈也那样。”",
+    "translation_en": "A: “That’s Tanaka’s mother, isn’t she? Flashy.” B: “Like daughter, like mother.”",
+    "reason": "「娘が娘なら母親も母親」是“有其女必有其母”这类成对评价。",
+    "reason_en": "AがAならBもBだ pairs the two as being alike.",
+    "choices": [
+     {
+      "a": "娘が娘なら母親も母親だね",
+      "b": "娘といい母親といい親子なんだね"
+     }
+    ]
+   },
+   {
+    "n": 6,
+    "type": "order",
+    "answer": "3→2→4→1",
+    "completed": "姉がデザインが古いだの色が気に入らないだのといってくれたバッグをずっと使っている。",
+    "translation": "姐姐嫌设计旧、嫌颜色不喜欢，可她送的包我一直在用。",
+    "translation_en": "My sister complains the design is old and she dislikes the color, but I still use the bag she gave me.",
+    "reason": "「だの…だのといって」把抱怨的内容一一列举。",
+    "reason_en": "だの…だのといって lists the complaints."
+   },
+   {
+    "n": 7,
+    "type": "order",
+    "answer": "2→4→3→1",
+    "completed": "彼は学校の成績といい容姿といいパッとしないから女の子に全然もてない。",
+    "translation": "他成绩也好、长相也好都不出众，所以完全不受女生欢迎。",
+    "translation_en": "Neither his grades nor his looks stand out, so girls are not interested in him at all.",
+    "reason": "「といい…といい」从成绩和长相两方面说都不行。",
+    "reason_en": "といい…といい covers both grades and looks."
+   }
+  ]
+ },
+ "w2d5": {
+  "items": [
+   {
+    "n": 1,
+    "type": "choice",
+    "answer": "b",
+    "completed": "今朝から雪が降ってはやみ、降ってはやみを繰り返している。",
+    "translation": "从早上起雪下一阵停一阵。",
+    "translation_en": "Since this morning the snow has kept starting and stopping.",
+    "reason": "「ては…、ては」表示动作反复交替。",
+    "reason_en": "ては…ては repeats two alternating actions.",
+    "choices": [
+     {
+      "a": "降るならやみ、降るならやみ",
+      "b": "降ってはやみ、降ってはやみ"
+     }
+    ]
+   },
+   {
+    "n": 2,
+    "type": "choice",
+    "answer": "b",
+    "completed": "彼と私は、学生時代、抜きつ抜かれつ成績を争ったものだ。",
+    "translation": "学生时代他和我成绩上你追我赶。",
+    "translation_en": "In our student days he and I kept overtaking each other in the rankings.",
+    "reason": "「つ…つ」是两个相对动作反复：超过又被超过。",
+    "reason_en": "The つ…つ pair is two opposing actions in turn.",
+    "choices": [
+     {
+      "a": "抜こうが抜かれまいが",
+      "b": "抜きつ抜かれつ"
+     }
+    ]
+   },
+   {
+    "n": 3,
+    "type": "choice",
+    "answer": "a",
+    "completed": "若いころは、お酒を飲んでは踊ったものだ。",
+    "translation": "年轻时常常喝了酒就跳舞。",
+    "translation_en": "When I was young I would drink and then dance.",
+    "reason": "「ては」这里是“一……就……”的反复习惯。",
+    "reason_en": "ては here is a repeated habit: drink, then dance.",
+    "choices": [
+     {
+      "a": "飲んでは",
+      "b": "飲もうとして"
+     }
+    ]
+   },
+   {
+    "n": 4,
+    "type": "choice",
+    "answer": "b",
+    "completed": "学んだことを覚えては忘れ、覚えては忘れを繰り返している。",
+    "translation": "学过的东西记住又忘掉，记住又忘掉。",
+    "translation_en": "I keep remembering what I studied and then forgetting it.",
+    "reason": "「ては…ては」表示记住和忘记反复。",
+    "reason_en": "ては…ては: remembering and forgetting over and over.",
+    "choices": [
+     {
+      "a": "覚えるし忘れ、覚えるし忘れ",
+      "b": "覚えては忘れ、覚えては忘れ"
+     }
+    ]
+   },
+   {
+    "n": 5,
+    "type": "choice",
+    "answer": "a",
+    "completed": "遅刻したと言っても、電車の事故では仕方がない。",
+    "translation": "虽说迟到了，可电车出了事故也没办法。",
+    "translation_en": "You were late, but there is nothing to be done about a train accident.",
+    "reason": "「ては」接在「事故だ」后：既然发生了事故，就无法责备。",
+    "reason_en": "ては after 事故だ: given that accident, it cannot be helped.",
+    "choices": [
+     {
+      "a": "では",
+      "b": "ならでは"
+     }
+    ]
+   },
+   {
+    "n": 6,
+    "type": "order",
+    "answer": "4→1→3→2",
+    "completed": "この作文、ひどいね。間違いがこんなに多くては少しぐらい直してもよくならないよ。",
+    "translation": "这篇作文太差了。错这么多，改一点也好不了。",
+    "translation_en": "This composition is awful. With this many mistakes, fixing a few will not help.",
+    "reason": "「多くては」是“既然多到这个地步，（改一点）也没用”。",
+    "reason_en": "多くては: given how many there are, a small fix will not do."
+   },
+   {
+    "n": 7,
+    "type": "order",
+    "answer": "1→3→4→2",
+    "completed": "バーゲン会場は、押しつ押されつの大混雑で息苦しくなるほどだった。",
+    "translation": "打折会场推来挤去，挤得人喘不过气。",
+    "translation_en": "The sale was such a crush of pushing both ways that it was hard to breathe.",
+    "reason": "「押しつ押されつ」是“互相推挤”的反复。",
+    "reason_en": "押しつ押されつ is pushing and being pushed."
+   }
+  ]
+ },
+ "w2d6": {
+  "items": [
+   {
+    "n": 1,
+    "type": "choice",
+    "answer": "a",
+    "completed": "仕事がないので毎日友達と遊んでいる。暇なのやら忙しいのやら。",
+    "translation": "没有工作，每天和朋友玩。也不知道是闲还是忙。",
+    "translation_en": "I have no job and play with friends every day. Am I free, or busy?",
+    "reason": "「のやら…のやら」是说不清是哪种状态。",
+    "reason_en": "のやら…のやら means you cannot tell which it is.",
+    "choices": [
+     {
+      "a": "暇なのやら忙しいのやら",
+      "b": "暇とも忙しいとも"
+     }
+    ]
+   },
+   {
+    "n": 2,
+    "type": "choice",
+    "answer": "b",
+    "completed": "ペットはいたらいたで大変だけれど、ペットのいない生活は考えられない。",
+    "translation": "养宠物是麻烦，可没有宠物的生活也无法想象。",
+    "translation_en": "A pet is a lot of work, but I cannot imagine life without one.",
+    "reason": "「いたらいたで」是“有是有（也有麻烦），可是……”。",
+    "reason_en": "たら…たで concedes the downside and still wants it.",
+    "choices": [
+     {
+      "a": "いるともいないとも言えなくて",
+      "b": "いたらいたで"
+     }
+    ]
+   },
+   {
+    "n": 3,
+    "type": "choice",
+    "answer": "b",
+    "completed": "会社が倒産しそうだ。どうなることやら……。",
+    "translation": "公司好像要倒闭。不知会变成什么样。",
+    "translation_en": "The company seems about to fail. Who knows what will happen.",
+    "reason": "「ことやら」表示结果难以预料，带担心。",
+    "reason_en": "ことやら shows an uncertain, worrying outcome.",
+    "choices": [
+     {
+      "a": "何する",
+      "b": "どうなる"
+     }
+    ]
+   },
+   {
+    "n": 4,
+    "type": "choice",
+    "answer": "a",
+    "completed": "彼はおとなしいとも消極的だとも言えるが、とにかく口数が少ない。",
+    "translation": "他可以说老实，也可以说消极，总之话很少。",
+    "translation_en": "You could call him quiet or passive; either way he says little.",
+    "reason": "「とも…とも言える」两边都能说得通。",
+    "reason_en": "とも…とも言える: both descriptions fit.",
+    "choices": [
+     {
+      "a": "おとなしいとも消極的だとも",
+      "b": "おとなしいのやら消極的なのやらと"
+     }
+    ]
+   },
+   {
+    "n": 5,
+    "type": "choice",
+    "answer": "a",
+    "completed": "いやならいやで、はっきり言ってください。",
+    "translation": "不愿意的话就明说。",
+    "translation_en": "If you do not want to, say so plainly.",
+    "reason": "「いやならいやで」是“如果不愿意，就按不愿意来处理（请直说）”。",
+    "reason_en": "なら…で: if that is the case, act on it plainly.",
+    "choices": [
+     {
+      "a": "いやならいやで",
+      "b": "いやともいやじゃないとも"
+     }
+    ]
+   },
+   {
+    "n": 6,
+    "type": "order",
+    "answer": "4→1→2→3",
+    "completed": "「ピザ屋のチラシ、どこにある？捨てたら捨てたでいいのだけど。」",
+    "translation": "“披萨店的传单在哪？扔掉了也就算了。”",
+    "translation_en": "“Where is the pizza flyer? If you threw it away, that is fine.”",
+    "reason": "「捨てたら捨てたでいい」是“扔了就扔了，也没关系”。",
+    "reason_en": "たら…たでいい accepts the result if it already happened."
+   },
+   {
+    "n": 7,
+    "type": "order",
+    "answer": "2→1→4→3",
+    "completed": "この仕事は、いつになったら終わることやら見当もつかない。",
+    "translation": "这工作不知何时才能做完，完全看不出头绪。",
+    "translation_en": "I have no idea when this job will ever end.",
+    "reason": "「ことやら」表示完成的时候无法预料。",
+    "reason_en": "ことやら: there is no telling when it ends."
+   }
+  ]
+ },
+ "w3d1": {
+  "items": [
+   {
+    "n": 1,
+    "type": "choice",
+    "answer": "a",
+    "completed": "来たくなければ来なくてもいい。ただ君が損をするまでだ。",
+    "translation": "不想来可以不来。只不过你会吃亏而已。",
+    "translation_en": "You need not come if you do not want to. You will only be the one who loses out.",
+    "reason": "「までだ」是“大不了只是……而已”。",
+    "reason_en": "までだ means “it only comes to…”.",
+    "choices": [
+     {
+      "a": "する",
+      "b": "しない"
+     }
+    ]
+   },
+   {
+    "n": 2,
+    "type": "choice",
+    "answer": "a",
+    "completed": "親が出るまでもなく、子どもたちだけでその問題を解決した。",
+    "translation": "用不着父母出面，孩子们自己就把问题解决了。",
+    "translation_en": "The children solved it themselves; the parents did not even need to step in.",
+    "reason": "「までもなく」是“用不着做到……那种程度”。",
+    "reason_en": "までもなく means there is no need to go that far.",
+    "choices": [
+     {
+      "a": "までもなく",
+      "b": "までも"
+     }
+    ]
+   },
+   {
+    "n": 3,
+    "type": "choice",
+    "answer": "b",
+    "completed": "あの人とは話はしないまでも、挨拶ぐらいはしますよ。",
+    "translation": "和他虽然谈不上聊天，打招呼还是会打的。",
+    "translation_en": "I may not talk with him, but I do at least say hello.",
+    "reason": "「ないまでも」是“即便做不到……，至少……”。",
+    "reason_en": "ないまでも: even if not that much, at least…",
+    "choices": [
+     {
+      "a": "までもなく",
+      "b": "までも"
+     }
+    ]
+   },
+   {
+    "n": 4,
+    "type": "choice",
+    "answer": "a",
+    "completed": "いくらお金を稼いでも死んでしまえばそれまでだ。",
+    "translation": "无论赚多少钱，死了也就到头了。",
+    "translation_en": "However much money you make, once you die that is the end of it.",
+    "reason": "「それまでだ」是“到此为止、一切归零”。",
+    "reason_en": "それまでだ means that is the end of it.",
+    "choices": [
+     {
+      "a": "それまでだ",
+      "b": "それまでもない"
+     }
+    ]
+   },
+   {
+    "n": 5,
+    "type": "choice",
+    "answer": "b",
+    "completed": "これくらいの故障、修理を頼むまでもない。僕が直してあげるよ。",
+    "translation": "这么点故障，用不着请人修。我来给你弄好。",
+    "translation_en": "A fault this small does not need a repairman. I will fix it.",
+    "reason": "「までもない」是“犯不上、不必”。",
+    "reason_en": "までもない means it is not worth going that far.",
+    "choices": [
+     {
+      "a": "までのことだ",
+      "b": "までもない"
+     }
+    ]
+   },
+   {
+    "n": 6,
+    "type": "order",
+    "answer": "2→1→4→3",
+    "completed": "上手になりたければ、ひたすら練習するまでのことだ。",
+    "translation": "想变好的话，只有一个办法：拼命练。",
+    "translation_en": "If you want to get good, all you can do is practice hard.",
+    "reason": "「までのことだ」是“不过就是……而已／只须如此”。",
+    "reason_en": "までのことだ reduces it to one simple course."
+   },
+   {
+    "n": 7,
+    "type": "order",
+    "answer": "3→2→4→1",
+    "completed": "彼の行為は、法律を持ち出すまでもなく犯罪と言えるだろう。",
+    "translation": "他的行为用不着搬出法律，也可以说是犯罪吧。",
+    "translation_en": "His act can be called a crime without even bringing the law into it.",
+    "reason": "「までもなく」：不必抬出法律就已经够得上犯罪。",
+    "reason_en": "までもなく: no need to invoke the law."
+   }
+  ]
+ },
+ "w3d2": {
+  "items": [
+   {
+    "n": 1,
+    "type": "choice",
+    "answer": "a",
+    "completed": "応援していたチームが試合に負けてしまって残念な限りだ。",
+    "translation": "我支持的队输了比赛，遗憾极了。",
+    "translation_en": "The team I supported lost, and I could not be more disappointed.",
+    "reason": "「限りだ」接在感情词后，表示程度到了极点。",
+    "reason_en": "限りだ after a feeling means “extremely”.",
+    "choices": [
+     {
+      "a": "な限りだ",
+      "b": "に限る"
+     }
+    ]
+   },
+   {
+    "n": 2,
+    "type": "choice",
+    "answer": "a",
+    "completed": "新築の家を買った。今月を限りにこのマンションともお別れだ。",
+    "translation": "买了新房。从这个月起就要和这套公寓告别了。",
+    "translation_en": "I bought a new house. This month is the last I will see of this apartment.",
+    "reason": "「を限りに」是“以……为最后一次”。",
+    "reason_en": "を限りに means “ending with…”.",
+    "choices": [
+     {
+      "a": "を限りに",
+      "b": "に限り"
+     }
+    ]
+   },
+   {
+    "n": 3,
+    "type": "choice",
+    "answer": "a",
+    "completed": "風邪をひいたときは、薬など飲むよりゆっくり寝るに限る。",
+    "translation": "感冒的时候，与其吃药，不如好好睡一觉。",
+    "translation_en": "When you have a cold, sleeping is better than taking medicine.",
+    "reason": "「に限る」是“最好莫过于……”。",
+    "reason_en": "に限る means nothing beats this.",
+    "choices": [
+     {
+      "a": "に限る",
+      "b": "限りだ"
+     }
+    ]
+   },
+   {
+    "n": 4,
+    "type": "choice",
+    "answer": "b",
+    "completed": "朝の電車が混んでいるのは、今日に限ったことではない。",
+    "translation": "早班电车拥挤，并不是只有今天才这样。",
+    "translation_en": "Crowded morning trains are not something that happens only today.",
+    "reason": "「に限ったことではない」是“并不只限于……”。",
+    "reason_en": "に限ったことではない: it is not limited to this case.",
+    "choices": [
+     {
+      "a": "限る",
+      "b": "限った"
+     }
+    ]
+   },
+   {
+    "n": 5,
+    "type": "choice",
+    "answer": "b",
+    "completed": "宝くじに当たったなんて、なんともうらやましい限りだ。",
+    "translation": "中了彩票，真是羡慕得不得了。",
+    "translation_en": "Winning the lottery — I could not be more envious.",
+    "reason": "「うらやましい限りだ」把羡慕说到极点。",
+    "reason_en": "限りだ pushes the envy to the limit.",
+    "choices": [
+     {
+      "a": "限ったことではない",
+      "b": "限りだ"
+     }
+    ]
+   },
+   {
+    "n": 6,
+    "type": "order",
+    "answer": "3→4→1→2",
+    "completed": "そのドラマは、視聴率が伸びず10回目を限りに打ち切られることになった。",
+    "translation": "那部剧收视率上不去，到第十集就停播了。",
+    "translation_en": "The drama’s ratings never rose, and it was cancelled with the tenth episode.",
+    "reason": "「を限りに」：以第十集为最后。",
+    "reason_en": "を限りに: the tenth episode is the last."
+   },
+   {
+    "n": 7,
+    "type": "order",
+    "answer": "2→4→3→1",
+    "completed": "漢字が書けなくなったのは、最近に限ったことではなくコンピューターを使うようになってからずっとだ。",
+    "translation": "写不出汉字并不是最近才有的事，从开始用电脑起就一直这样。",
+    "translation_en": "Forgetting how to write kanji is not recent; it has been so ever since I started using a computer.",
+    "reason": "「に限ったことではなく」否定“只是最近”。",
+    "reason_en": "に限ったことではなく denies that it is only recent."
+   }
+  ]
+ },
+ "w3d3": {
+  "items": [
+   {
+    "n": 1,
+    "type": "choice",
+    "answer": "a",
+    "completed": "近所の人の話では、昨夜あの家でだれかが亡くなったとのことだ。",
+    "translation": "听邻居说，昨晚那家有人去世了。",
+    "translation_en": "According to a neighbor, someone in that house died last night.",
+    "reason": "「とのことだ」转述听来的消息。",
+    "reason_en": "とのことだ reports hearsay.",
+    "choices": [
+     {
+      "a": "とのことだ",
+      "b": "というらしい"
+     }
+    ]
+   },
+   {
+    "n": 2,
+    "type": "choice",
+    "answer": "b",
+    "completed": "入社したばかりとはいえ、もう少しまともな挨拶ができないのだろうか。",
+    "translation": "虽说刚进公司，招呼能不能打得像样一点。",
+    "translation_en": "You only just joined, but could you at least manage a proper greeting?",
+    "reason": "「とはいえ」是“虽说……可是”。",
+    "reason_en": "とはいえ means “that said”.",
+    "choices": [
+     {
+      "a": "とは",
+      "b": "とはいえ"
+     }
+    ]
+   },
+   {
+    "n": 3,
+    "type": "choice",
+    "answer": "a",
+    "completed": "親といえども、子どもをしかるのに暴力はいけない。",
+    "translation": "即便是父母，责骂孩子也不该动粗。",
+    "translation_en": "Even parents should not use violence when scolding a child.",
+    "reason": "「といえども」是“即便是……也”。",
+    "reason_en": "といえども means “even…”.",
+    "choices": [
+     {
+      "a": "といえども",
+      "b": "に限り"
+     }
+    ]
+   },
+   {
+    "n": 4,
+    "type": "choice",
+    "answer": "a",
+    "completed": "鈴木さんから、今日は風邪で休むとの電話がありました。",
+    "translation": "铃木打来电话，说今天感冒请假。",
+    "translation_en": "There was a call from Suzuki saying he will be off today with a cold.",
+    "reason": "「との」在这里是转述电话的内容。",
+    "reason_en": "との marks the reported content of the call.",
+    "choices": [
+     {
+      "a": "との",
+      "b": "とはいう"
+     }
+    ]
+   },
+   {
+    "n": 5,
+    "type": "choice",
+    "answer": "a",
+    "completed": "あんなに女らしく美しく見える人が、実は男だったとは……。",
+    "translation": "看起来那么有女人味、那么美的人，竟然是男的。",
+    "translation_en": "Someone who looks so feminine and beautiful turned out to be a man.",
+    "reason": "「とは」表示出乎意料的事实：“竟然是……”。",
+    "reason_en": "とは here marks a surprising fact.",
+    "choices": [
+     {
+      "a": "とは",
+      "b": "とはいえ"
+     }
+    ]
+   },
+   {
+    "n": 6,
+    "type": "order",
+    "answer": "1→4→3→2",
+    "completed": "知らなかったこととはいえ失礼なことをしてしまい、大変申し訳ありませんでした。",
+    "translation": "虽说当时不知道，但还是做了失礼的事，非常抱歉。",
+    "translation_en": "I did not know, but I was still rude. I am very sorry.",
+    "reason": "「とはいえ」先承认不知道，道歉仍然成立。",
+    "reason_en": "とはいえ: not knowing does not cancel the apology."
+   },
+   {
+    "n": 7,
+    "type": "order",
+    "answer": "2→4→1→3",
+    "completed": "生活のため休日といえども休まずに働かなくてはならない。",
+    "translation": "为了生活，即便是休息日也得不休息地干活。",
+    "translation_en": "To make a living I have to work even on days off.",
+    "reason": "「といえども」：连休息日也不例外。",
+    "reason_en": "といえども: even a day off is no exception."
+   }
+  ]
+ },
+ "w3d4": {
+  "items": [
+   {
+    "n": 1,
+    "type": "choice",
+    "answer": "a",
+    "completed": "あの先生は僕が何を尋ねても、いつも誠意をもって答えてくれる。",
+    "translation": "那位老师无论我问什么，总是诚恳地回答。",
+    "translation_en": "Whatever I ask, that teacher always answers sincerely.",
+    "reason": "「をもって」表示手段或态度：以诚意。",
+    "reason_en": "をもって marks the means: with sincerity.",
+    "choices": [
+     {
+      "a": "をもって",
+      "b": "をもちまして"
+     }
+    ]
+   },
+   {
+    "n": 2,
+    "type": "choice",
+    "answer": "b",
+    "completed": "私の父は定年退職してからというもの、一日中テレビばかり見ている。",
+    "translation": "我父亲退休之后，整天就知道看电视。",
+    "translation_en": "Ever since my father retired, he watches television all day.",
+    "reason": "「てからというもの」强调从那以后情况就一直如此。",
+    "reason_en": "てからというもの: ever since then, and continuously.",
+    "choices": [
+     {
+      "a": "を皮切りに",
+      "b": "してからというもの"
+     }
+    ]
+   },
+   {
+    "n": 3,
+    "type": "choice",
+    "answer": "a",
+    "completed": "当選者の発表は、商品の発送をもって代えさせていただきます。",
+    "translation": "中奖名单的公布，以寄出奖品来代替。",
+    "translation_en": "Announcement of the winners will be replaced by sending the prizes.",
+    "reason": "「をもって代える」是“以……来代替”。",
+    "reason_en": "をもって代える means to substitute one thing for another.",
+    "choices": [
+     {
+      "a": "をもって",
+      "b": "を皮切りに"
+     }
+    ]
+   },
+   {
+    "n": 4,
+    "type": "choice",
+    "answer": "a",
+    "completed": "一人暮らしを始めてからというもの、まともな食事をしたことがない。",
+    "translation": "开始一个人生活之后，就没好好吃过一顿饭。",
+    "translation_en": "Ever since I started living alone, I have not had a proper meal.",
+    "reason": "「てからというもの」同样是“自那以后一直”。",
+    "reason_en": "てからというもの again: ever since living alone.",
+    "choices": [
+     {
+      "a": "というもの",
+      "b": "といえども"
+     }
+    ]
+   },
+   {
+    "n": 5,
+    "type": "choice",
+    "answer": "a",
+    "completed": "昨日の会議では、彼の発言を皮切りに反対意見が次々と出た。",
+    "translation": "昨天的会上，以他的发言为开端，反对意见一个接一个。",
+    "translation_en": "At yesterday’s meeting his remark set off a string of objections.",
+    "reason": "「を皮切りに」是“以……为开端”。",
+    "reason_en": "を皮切りに means starting with…",
+    "choices": [
+     {
+      "a": "を皮切りに",
+      "b": "というもの"
+     }
+    ]
+   },
+   {
+    "n": 6,
+    "type": "order",
+    "answer": "1→3→4→2",
+    "completed": "あの歌手は人気が出てからというもの態度が大きくなっているようだ。",
+    "translation": "那位歌手走红之后，态度好像变得傲慢了。",
+    "translation_en": "Ever since that singer became popular, their attitude seems to have grown big.",
+    "reason": "「てからというもの」：走红之后一直是这种态度。",
+    "reason_en": "てからというもの: ever since becoming popular."
+   },
+   {
+    "n": 7,
+    "type": "order",
+    "answer": "2→3→4→1",
+    "completed": "最新技術をもってすればその開発も難しくないだろう。",
+    "translation": "凭借最新技术，那项开发大概也不难。",
+    "translation_en": "With the latest technology, that development should not be hard.",
+    "reason": "「をもってすれば」是“若使用……的话就能”。",
+    "reason_en": "をもってすれば: if one uses that means."
+   }
+  ]
+ },
+ "w3d5": {
+  "items": [
+   {
+    "n": 1,
+    "type": "choice",
+    "answer": "b",
+    "completed": "あの人はいつも電車に乗り込むが早いか、席を確保しようとする。",
+    "translation": "那个人总是一挤上电车就想占座位。",
+    "translation_en": "He always tries to grab a seat the moment he boards the train.",
+    "reason": "「が早いか」是“刚一……就立刻”。",
+    "reason_en": "が早いか means the instant…",
+    "choices": [
+     {
+      "a": "が最後",
+      "b": "が早いか"
+     }
+    ]
+   },
+   {
+    "n": 2,
+    "type": "choice",
+    "answer": "a",
+    "completed": "彼女は家に入るや、いきなりトイレに駆け込んだ。",
+    "translation": "她一进家门，就一下子冲进了厕所。",
+    "translation_en": "The moment she entered the house, she rushed to the toilet.",
+    "reason": "「や」是“一……就”，比「や否や」更短。",
+    "reason_en": "や is “as soon as”.",
+    "choices": [
+     {
+      "a": "入る",
+      "b": "入った"
+     }
+    ]
+   },
+   {
+    "n": 3,
+    "type": "choice",
+    "answer": "a",
+    "completed": "やっと富士山の頂上に着いたと思いきや、まだ8合目だった。",
+    "translation": "以为终于到了富士山山顶，结果才到八合目。",
+    "translation_en": "I thought I had finally reached the summit of Mt. Fuji, but it was only the eighth station.",
+    "reason": "「と思いきや」是“原以为……结果却”。",
+    "reason_en": "と思いきや: you expect one thing and get the opposite.",
+    "choices": [
+     {
+      "a": "と思いきや",
+      "b": "が早いか"
+     }
+    ]
+   },
+   {
+    "n": 4,
+    "type": "choice",
+    "answer": "b",
+    "completed": "119番の通報を受けるが早いか、救急車は出動した。",
+    "translation": "一接到119报警，救护车就出动了。",
+    "translation_en": "The ambulance set out the moment the 119 call came in.",
+    "reason": "「が早いか」：接到通报立刻出发。",
+    "reason_en": "が早いか: departure follows the call at once.",
+    "choices": [
+     {
+      "a": "が最後",
+      "b": "が早いか"
+     }
+    ]
+   },
+   {
+    "n": 5,
+    "type": "choice",
+    "answer": "a",
+    "completed": "彼は普段はとてもおとなしいが、ひとたび怒ったら最後暴れて手がつけられなくなる。",
+    "translation": "他平时很安静，可一旦发起火来就闹得不可收拾。",
+    "translation_en": "He is usually very quiet, but once he gets angry there is no stopping him.",
+    "reason": "「たら最後」是“一旦……就完了／就停不下来”。",
+    "reason_en": "たら最後: once it happens, there is no going back.",
+    "choices": [
+     {
+      "a": "怒ったら最後",
+      "b": "怒るが早いか"
+     }
+    ]
+   },
+   {
+    "n": 6,
+    "type": "order",
+    "answer": "2→1→4→3",
+    "completed": "年賀状の最後の1枚を書き終わったかと思いきやまだ、20枚も残っていた。",
+    "translation": "以为贺年卡最后一张写完了，结果还剩二十张。",
+    "translation_en": "I thought I had finished the last New Year card, but twenty were still left.",
+    "reason": "「かと思いきや」同样是预期落空。",
+    "reason_en": "かと思いきや reverses the expectation."
+   },
+   {
+    "n": 7,
+    "type": "order",
+    "answer": "1→3→4→2",
+    "completed": "彼のブログは、更新するや反響が相次ぐ。",
+    "translation": "他的博客一更新，反响就接连而来。",
+    "translation_en": "The moment he updates his blog, reactions pour in.",
+    "reason": "「するや」是“一……就”。",
+    "reason_en": "や means as soon as he updates."
+   }
+  ]
+ },
+ "w3d6": {
+  "items": [
+   {
+    "n": 1,
+    "type": "choice",
+    "answer": "a",
+    "completed": "食べるそばから次の料理がどんどん運ばれて、ゆっくり味わえなかった。",
+    "translation": "刚吃完下一道菜就端上来，没法慢慢品味。",
+    "translation_en": "The next dish arrived as soon as I ate, so I could not savor anything.",
+    "reason": "「そばから」是“刚……就（紧接着）”。",
+    "reason_en": "そばから means right after, one thing after another.",
+    "choices": [
+     {
+      "a": "そばから",
+      "b": "かたわら"
+     }
+    ]
+   },
+   {
+    "n": 2,
+    "type": "choice",
+    "answer": "b",
+    "completed": "今日は先日のご報告かたがた、部下の紹介に参りました。",
+    "translation": "今天来一是报告前几天的事，二是介绍部下。",
+    "translation_en": "I came both to report on the other day and to introduce my subordinate.",
+    "reason": "「かたがた」是做一件事顺便兼做另一件。",
+    "reason_en": "かたがた does one errand and another together.",
+    "choices": [
+     {
+      "a": "かたわら",
+      "b": "かたがた"
+     }
+    ]
+   },
+   {
+    "n": 3,
+    "type": "choice",
+    "answer": "a",
+    "completed": "散歩がてら立ち寄った美術館は、とてもすいていた。",
+    "translation": "散步顺道去的美术馆非常空。",
+    "translation_en": "The museum I dropped into while out for a walk was very empty.",
+    "reason": "「がてら」是“在做某事的途中顺便”。",
+    "reason_en": "がてら means while doing something else.",
+    "choices": [
+     {
+      "a": "がてら",
+      "b": "のそばから"
+     }
+    ]
+   },
+   {
+    "n": 4,
+    "type": "choice",
+    "answer": "a",
+    "completed": "その小説家は執筆のかたわら、趣味でピアノを弾いている。",
+    "translation": "那位小说家写稿之余，把弹琴当爱好。",
+    "translation_en": "Alongside writing, the novelist plays the piano as a hobby.",
+    "reason": "「のかたわら」是“一边做主业，一边……”。",
+    "reason_en": "のかたわら is a side activity beside the main one.",
+    "choices": [
+     {
+      "a": "のかたわら",
+      "b": "がてら"
+     }
+    ]
+   },
+   {
+    "n": 5,
+    "type": "choice",
+    "answer": "a",
+    "completed": "その商品は、並べるそばから飛ぶように売れていった。",
+    "translation": "那商品刚摆上就卖得飞快。",
+    "translation_en": "The goods sold out almost as fast as they were put on the shelf.",
+    "reason": "「そばから」：刚摆上就卖掉。",
+    "reason_en": "そばから: sold the moment they were displayed.",
+    "choices": [
+     {
+      "a": "そばから",
+      "b": "かたわら"
+     }
+    ]
+   },
+   {
+    "n": 6,
+    "type": "order",
+    "answer": "2→4→1→3",
+    "completed": "忘年会の下見がてら飲みに行った居酒屋は、あまりよくなかった。",
+    "translation": "为忘年会踩点顺便去喝的那家居酒屋，并不怎么样。",
+    "translation_en": "The izakaya we drank at while scouting for the year-end party was not very good.",
+    "reason": "「がてら」：踩点顺便去喝。",
+    "reason_en": "がてら: drinking while checking the place."
+   },
+   {
+    "n": 7,
+    "type": "order",
+    "answer": "2→3→1→4",
+    "completed": "本日は先日のお詫びかたがたお伺いした次第です。",
+    "translation": "今天特来拜访，一并就前几天的事致歉。",
+    "translation_en": "I have come both to apologize for the other day and to pay my respects.",
+    "reason": "「かたがた」把致歉和拜访合在一次。",
+    "reason_en": "かたがた combines the apology with the visit."
+   }
+  ]
+ },
+ "w4d1": {
+  "items": [
+   {
+    "n": 1,
+    "type": "choice",
+    "answer": "a",
+    "completed": "何を買うともなく、デパートの中をぶらぶらしていたら、友人に会った。",
+    "translation": "也没想买什么，在百货店里闲逛，碰到了朋友。",
+    "translation_en": "I was wandering the department store without meaning to buy anything, and ran into a friend.",
+    "reason": "「ともなく」是“并无明确目的地／并无特定打算”。",
+    "reason_en": "ともなく means without a particular aim.",
+    "choices": [
+     {
+      "a": "ともなく",
+      "b": "ことなしに"
+     }
+    ]
+   },
+   {
+    "n": 2,
+    "type": "choice",
+    "answer": "a",
+    "completed": "黙っていればいいものを、つい余計なことを言ってしまった。",
+    "translation": "沉默就好了，却忍不住说了多余的话。",
+    "translation_en": "I should have kept quiet, but I went and said too much.",
+    "reason": "「ばいいものを」是“要是……就好了（可偏偏没有）”。",
+    "reason_en": "ばいいものを regrets that the better choice was not taken.",
+    "choices": [
+     {
+      "a": "ものを",
+      "b": "ことを"
+     }
+    ]
+   },
+   {
+    "n": 3,
+    "type": "choice",
+    "answer": "b",
+    "completed": "健康な体なくしてはどんなにお金があっても幸せとは言えない。",
+    "translation": "没有健康的身体，钱再多也不能说幸福。",
+    "translation_en": "Without a healthy body, no amount of money makes you happy.",
+    "reason": "「なくしては」是“如果没有……就（不能）”。",
+    "reason_en": "なくしては: if you are without it, the result fails.",
+    "choices": [
+     {
+      "a": "なくしてに",
+      "b": "なくしては"
+     }
+    ]
+   },
+   {
+    "n": 4,
+    "type": "choice",
+    "answer": "a",
+    "completed": "この小説は涙なしに読むことができない。",
+    "translation": "这本小说没法不流泪地读完。",
+    "translation_en": "You cannot read this novel without tears.",
+    "reason": "「なしに」是“不带……地”，后接不可能。",
+    "reason_en": "なしに: without tears, which turns out to be impossible.",
+    "choices": [
+     {
+      "a": "なしに",
+      "b": "なくで"
+     }
+    ]
+   },
+   {
+    "n": 5,
+    "type": "choice",
+    "answer": "b",
+    "completed": "駅を降りたら、どこからともなくおいしそうないい匂いがしてきた。",
+    "translation": "一下电车，不知从哪儿飘来好闻的香味。",
+    "translation_en": "When I left the station, a delicious smell came from somewhere.",
+    "reason": "「どこからともなく」是“不知从何处”。",
+    "reason_en": "ともなく with どこから: from no place you can name.",
+    "choices": [
+     {
+      "a": "なくして",
+      "b": "ともなく"
+     }
+    ]
+   },
+   {
+    "n": 6,
+    "type": "order",
+    "answer": "4→3→1→2",
+    "completed": "どこからともなく聞こえてくるピアノの音が気になって勉強に集中できない。",
+    "translation": "不知从哪儿传来的钢琴声让我静不下心学习。",
+    "translation_en": "Piano music from somewhere keeps me from concentrating.",
+    "reason": "「どこからともなく」同样是来源不明。",
+    "reason_en": "どこからともなく: the source is unknown."
+   },
+   {
+    "n": 7,
+    "type": "order",
+    "answer": "4→2→3→1",
+    "completed": "五分早く家を出ればよかったものをのんびりしていて電車に乗り遅れてしまった。",
+    "translation": "要是早五分钟出门就好了，磨蹭结果没赶上电车。",
+    "translation_en": "If only I had left five minutes earlier; I dawdled and missed the train.",
+    "reason": "「ばよかったものを」后悔没早出门。",
+    "reason_en": "ばよかったものを regrets not leaving earlier."
+   }
+  ]
+ },
+ "w4d2": {
+  "items": [
+   {
+    "n": 1,
+    "type": "choice",
+    "answer": "b",
+    "completed": "彼はとてもいい人だ。でも結婚となると、ちょっと頼りない気がする。",
+    "translation": "他是个很好的人。可一说到结婚，就觉得有点靠不住。",
+    "translation_en": "He is a very good person. But when it comes to marriage, he seems a bit unreliable.",
+    "reason": "「となると」是“一旦话题落到……上”。",
+    "reason_en": "となると shifts to the specific case of marriage.",
+    "choices": [
+     {
+      "a": "ともなく",
+      "b": "となると"
+     }
+    ]
+   },
+   {
+    "n": 2,
+    "type": "choice",
+    "answer": "a",
+    "completed": "親たる者は、子どもが悪いことをしたときに、きちんとしかるべきだ。",
+    "translation": "做父母的，孩子做了坏事就该好好训。",
+    "translation_en": "A parent should scold a child properly when the child does wrong.",
+    "reason": "「たる者」是“身为……的人就应该”。",
+    "reason_en": "たる者 is the duty of someone in that position.",
+    "choices": [
+     {
+      "a": "たる",
+      "b": "にたる"
+     }
+    ]
+   },
+   {
+    "n": 3,
+    "type": "choice",
+    "answer": "a",
+    "completed": "あのような一流レストランともなると、男性はネクタイが必要だ。",
+    "translation": "到了那种一流餐厅，男士就需要打领带。",
+    "translation_en": "At a first-class restaurant like that, men need a tie.",
+    "reason": "「ともなると」是“一旦到了那种程度就……”。",
+    "reason_en": "ともなると: once it reaches that level.",
+    "choices": [
+     {
+      "a": "ともなる",
+      "b": "ともあろう"
+     }
+    ]
+   },
+   {
+    "n": 4,
+    "type": "choice",
+    "answer": "a",
+    "completed": "結婚なんてとんでもない。私は男の人と話したことすらないのです。",
+    "translation": "结婚根本谈不上。我连和男人说过话都没有。",
+    "translation_en": "Marriage is out of the question. I have not even spoken with a man.",
+    "reason": "「すらない」是“连……都没有”，比「ない」更强调极端。",
+    "reason_en": "すらない is “not even”.",
+    "choices": [
+     {
+      "a": "すら",
+      "b": "にすら"
+     }
+    ]
+   },
+   {
+    "n": 5,
+    "type": "choice",
+    "answer": "a",
+    "completed": "盗みが悪いことであるのは、小さい子どもですら知っている。",
+    "translation": "偷窃是坏事，连小孩子都知道。",
+    "translation_en": "Even a small child knows that stealing is wrong.",
+    "reason": "「ですら」是“就连……也”。",
+    "reason_en": "ですら means even that person.",
+    "choices": [
+     {
+      "a": "ですら",
+      "b": "ともなると"
+     }
+    ]
+   },
+   {
+    "n": 6,
+    "type": "order",
+    "answer": "4→2→3→1",
+    "completed": "若い私たちですらつらいのだから老人にはこの暑さは厳しいだろう。",
+    "translation": "连年轻的我们都难受，这酷热对老人大概更难熬。",
+    "translation_en": "Even we young people suffer, so this heat must be hard on the elderly.",
+    "reason": "「ですら」把“年轻人”当作尚且如此的一方。",
+    "reason_en": "ですら: even the young find it hard."
+   },
+   {
+    "n": 7,
+    "type": "order",
+    "answer": "2→4→3→1",
+    "completed": "内科の医者ともあろう者が、栄養のことを気にかけないのは理解できない。",
+    "translation": "身为内科医生，却不在意营养，让人无法理解。",
+    "translation_en": "It is hard to understand a physician who does not care about nutrition.",
+    "reason": "「ともあろう者」是“身为那样身份的人竟然……”。",
+    "reason_en": "ともあろう者 criticizes someone of that standing."
+   }
+  ]
+ },
+ "w4d3": {
+  "items": [
+   {
+    "n": 1,
+    "type": "choice",
+    "answer": "b",
+    "completed": "旅行をしている間ずっと、ごちそうずくめで、少し太ってしまいました。",
+    "translation": "旅行期间一直被好吃的招待，稍微胖了一点。",
+    "translation_en": "I was treated to food the whole trip and put on a little weight.",
+    "reason": "「ずくめ」是“清一色、净是”。",
+    "reason_en": "ずくめ means nothing but that thing.",
+    "choices": [
+     {
+      "a": "まみれ",
+      "b": "ずくめ"
+     }
+    ]
+   },
+   {
+    "n": 2,
+    "type": "choice",
+    "answer": "a",
+    "completed": "初めてのスキーでは転んでばかりで、雪まみれになってしまった。",
+    "translation": "第一次滑雪净是摔，弄得满身是雪。",
+    "translation_en": "On my first ski trip I did nothing but fall and got covered in snow.",
+    "reason": "「まみれ」是“沾满、浑身都是”。",
+    "reason_en": "まみれ means covered in.",
+    "choices": [
+     {
+      "a": "まみれ",
+      "b": "ずくめ"
+     }
+    ]
+   },
+   {
+    "n": 3,
+    "type": "choice",
+    "answer": "b",
+    "completed": "その企業が会社ぐるみで脱税をしていたのが発覚した。",
+    "translation": "那家企业被发现全公司上下一起逃税。",
+    "translation_en": "It came out that the whole company was evading taxes together.",
+    "reason": "「ぐるみ」是“整个集体一起”。",
+    "reason_en": "ぐるみ means the whole group together.",
+    "choices": [
+     {
+      "a": "ずくめ",
+      "b": "ぐるみ"
+     }
+    ]
+   },
+   {
+    "n": 4,
+    "type": "choice",
+    "answer": "b",
+    "completed": "カラスは人間並みの知能があるといわれています。",
+    "translation": "据说乌鸦有和人类相当的智力。",
+    "translation_en": "Crows are said to have intelligence on a par with humans.",
+    "reason": "「並み」是“与……相当的程度”。",
+    "reason_en": "並み means on the level of.",
+    "choices": [
+     {
+      "a": "ぐるみ",
+      "b": "並み"
+     }
+    ]
+   },
+   {
+    "n": 5,
+    "type": "choice",
+    "answer": "a",
+    "completed": "夏の海岸で砂まみれになって遊んだ。",
+    "translation": "在夏天的海边玩得满身是沙。",
+    "translation_en": "I played on the summer beach and got covered in sand.",
+    "reason": "「砂まみれ」是浑身沾满沙子。",
+    "reason_en": "まみれ: covered in sand.",
+    "choices": [
+     {
+      "a": "まみれ",
+      "b": "ぐるみ"
+     }
+    ]
+   },
+   {
+    "n": 6,
+    "type": "order",
+    "answer": "4→1→2→3",
+    "completed": "彼は借金まみれになったあげく破産してしまった。",
+    "translation": "他一身债务，最后破产了。",
+    "translation_en": "He ended up buried in debt and went bankrupt.",
+    "reason": "「まみれ」这里是被债务缠满。",
+    "reason_en": "まみれ: buried in debt."
+   },
+   {
+    "n": 7,
+    "type": "order",
+    "answer": "2→1→3→4",
+    "completed": "彼女は女優としては十人並みの容姿をしている。",
+    "translation": "作为女演员，她的相貌属于中等。",
+    "translation_en": "As an actress her looks are about average.",
+    "reason": "「並み」是普通、中等水平，不是特别出众。",
+    "reason_en": "並み here is merely average."
+   }
+  ]
+ },
+ "w4d4": {
+  "items": [
+   {
+    "n": 1,
+    "type": "choice",
+    "answer": "a",
+    "completed": "僕の幸せは家族あってのものだ。みんな病気をせず元気でいてほしい。",
+    "translation": "我的幸福是因为有家人。希望大家都不得病、健健康康的。",
+    "translation_en": "My happiness exists because I have a family. I want everyone healthy.",
+    "reason": "「あってのもの」是“正因为有……才成立”。",
+    "reason_en": "あってのもの: it exists only because of that.",
+    "choices": [
+     {
+      "a": "あっての",
+      "b": "にあっての"
+     }
+    ]
+   },
+   {
+    "n": 2,
+    "type": "choice",
+    "answer": "a",
+    "completed": "父は、たとえ日曜であっても、仕事とあればどこへでも行く。",
+    "translation": "父亲哪怕是星期天，只要是工作，去哪儿都去。",
+    "translation_en": "Even on Sunday, if it is work, my father will go anywhere.",
+    "reason": "「とあれば」是“如果是……的话就（不惜）”。",
+    "reason_en": "とあれば: if it is for that, he will do it.",
+    "choices": [
+     {
+      "a": "とあれば",
+      "b": "にあって"
+     }
+    ]
+   },
+   {
+    "n": 3,
+    "type": "choice",
+    "answer": "a",
+    "completed": "事業の成功は、皆さんの協力あってのものと感謝しています。",
+    "translation": "事业能成功，是因为有大家的协助，我很感谢。",
+    "translation_en": "The business succeeded thanks to everyone’s help, and I am grateful.",
+    "reason": "「あってのもの」：成功是因为有协助才有的。",
+    "reason_en": "あってのもの: success exists because of the help.",
+    "choices": [
+     {
+      "a": "あっての",
+      "b": "とあっての"
+     }
+    ]
+   },
+   {
+    "n": 4,
+    "type": "choice",
+    "answer": "a",
+    "completed": "決勝戦とあって、その試合の入場券はすぐに売り切れた。",
+    "translation": "因为是决赛，那场比赛的票马上就卖光了。",
+    "translation_en": "It was the final, so the tickets sold out at once.",
+    "reason": "「とあって」说明原因：既然是决赛，所以票紧。",
+    "reason_en": "とあって gives the special reason.",
+    "choices": [
+     {
+      "a": "とあって",
+      "b": "にあって"
+     }
+    ]
+   },
+   {
+    "n": 5,
+    "type": "choice",
+    "answer": "b",
+    "completed": "情報が氾濫する時代にあって、必要なものを選択するのは難しい。",
+    "translation": "在信息泛滥的时代，很难选出自己需要的。",
+    "translation_en": "In an age flooded with information, choosing what you need is hard.",
+    "reason": "「にあって」是“处于某种状况之中”。",
+    "reason_en": "にあって sets the situation you are in.",
+    "choices": [
+     {
+      "a": "あって",
+      "b": "にあって"
+     }
+    ]
+   },
+   {
+    "n": 6,
+    "type": "order",
+    "answer": "1→4→2→3",
+    "completed": "我が子のためとあればどんな苦労も我慢できるものだ。",
+    "translation": "只要是为了自己的孩子，什么苦都能忍。",
+    "translation_en": "If it is for my own child, I can bear any hardship.",
+    "reason": "「とあれば」：若是为了孩子就愿意承受。",
+    "reason_en": "とあれば: if it is for that purpose."
+   },
+   {
+    "n": 7,
+    "type": "order",
+    "answer": "2→4→1→3",
+    "completed": "困難な状況にあってもあきらめないで努力をする彼には頭が下がる。",
+    "translation": "即便处境困难也不放弃、继续努力的他，令人佩服。",
+    "translation_en": "I take my hat off to him for keeping at it even in a hard situation.",
+    "reason": "「にあっても」是“即便处于……之中也”。",
+    "reason_en": "にあっても: even while in that situation."
+   }
+  ]
+ },
+ "w4d5": {
+  "items": [
+   {
+    "n": 1,
+    "type": "choice",
+    "answer": "a",
+    "completed": "「鈴木」なんていう名前、この町に千からあるんだよ。どうやって彼を探すんだよ。",
+    "translation": "叫“铃木”的，这个镇上有上千个。怎么找他。",
+    "translation_en": "There are a thousand Suzukis in this town. How am I supposed to find him?",
+    "reason": "「からある」接在数量后，强调“多达、不下于”。",
+    "reason_en": "からある stresses “as many as”.",
+    "choices": [
+     {
+      "a": "ある",
+      "b": "ない"
+     }
+    ]
+   },
+   {
+    "n": 2,
+    "type": "choice",
+    "answer": "b",
+    "completed": "300枚からあるCDの置き場に困っている。",
+    "translation": "三百张不止的CD，没地方放了。",
+    "translation_en": "I have nowhere to put upwards of 300 CDs.",
+    "reason": "「からある」同样强调数量之多。",
+    "reason_en": "からある: no fewer than 300.",
+    "choices": [
+     {
+      "a": "からする",
+      "b": "からある"
+     }
+    ]
+   },
+   {
+    "n": 3,
+    "type": "choice",
+    "answer": "a",
+    "completed": "お米一粒たりとも粗末にするなと、よく祖母から言われた。",
+    "translation": "祖母常说，哪怕一粒米也不许糟蹋。",
+    "translation_en": "My grandmother often said not to waste even a single grain of rice.",
+    "reason": "「たりとも…な」是“哪怕一点点也不许”。",
+    "reason_en": "たりとも…な: not even the smallest amount.",
+    "choices": [
+     {
+      "a": "たりとも",
+      "b": "からある"
+     }
+    ]
+   },
+   {
+    "n": 4,
+    "type": "choice",
+    "answer": "a",
+    "completed": "桜の木の下で酒を飲んで歌を歌う。日本ならではのお花見の風景だ。",
+    "translation": "在樱花树下喝酒唱歌。这是唯有日本才有的赏花光景。",
+    "translation_en": "Drinking and singing under the cherries. A blossom-viewing scene you only get in Japan.",
+    "reason": "「ならでは」是“唯有……才有”。",
+    "reason_en": "ならでは means unique to.",
+    "choices": [
+     {
+      "a": "ならではの",
+      "b": "ならでもの"
+     }
+    ]
+   },
+   {
+    "n": 5,
+    "type": "choice",
+    "answer": "b",
+    "completed": "その若者と話してみて、多少なりとも共感できることがあった。",
+    "translation": "和那个年轻人谈谈，多少有些能共鸣的地方。",
+    "translation_en": "Talking with that young person, there was at least some common ground.",
+    "reason": "「なりとも」是“哪怕多少、哪怕一点点”。",
+    "reason_en": "なりとも means even a little.",
+    "choices": [
+     {
+      "a": "だけとも",
+      "b": "なりとも"
+     }
+    ]
+   },
+   {
+    "n": 6,
+    "type": "order",
+    "answer": "1→3→2→4",
+    "completed": "新作の映画の見どころはコンピューターグラフィックならではの迫力のある映像です。",
+    "translation": "新片的看点，是只有电脑图像才有的有冲击力的画面。",
+    "translation_en": "The highlight is powerful images you only get from computer graphics.",
+    "reason": "「ならではの」：唯有CG才有的魄力。",
+    "reason_en": "ならではの: a force only CG can give."
+   },
+   {
+    "n": 7,
+    "type": "order",
+    "answer": "4→2→1→3",
+    "completed": "その犬は飼い主の行くところはどこへなりともついていくそうだ。",
+    "translation": "那条狗无论主人去哪儿都跟着。",
+    "translation_en": "That dog follows its owner wherever they go.",
+    "reason": "「なりとも」这里和「どこへ」搭配，是“无论哪里”。",
+    "reason_en": "どこへなりとも: to wherever it may be."
+   }
+  ]
+ },
+ "w4d6": {
+  "items": [
+   {
+    "n": 1,
+    "type": "choice",
+    "answer": "b",
+    "completed": "お金と時間をかければ、私にだってそれはできないものでもない。",
+    "translation": "只要肯花金钱和时间，连我也不见得做不到。",
+    "translation_en": "If I spend money and time, even I am not incapable of it.",
+    "reason": "「ないものでもない」是委婉的肯定：也不是不能。",
+    "reason_en": "ないものでもない is a soft “it is not impossible”.",
+    "choices": [
+     {
+      "a": "ものか",
+      "b": "ものでもない"
+     }
+    ]
+   },
+   {
+    "n": 2,
+    "type": "choice",
+    "answer": "a",
+    "completed": "字がきれいに書ける方法はないものだろうか。",
+    "translation": "有没有什么办法能把字写漂亮呢。",
+    "translation_en": "Isn’t there some way to write characters neatly?",
+    "reason": "「ないものだろうか」是希望出现某种办法。",
+    "reason_en": "ないものだろうか wishes there were a way.",
+    "choices": [
+     {
+      "a": "ないもの",
+      "b": "ないこと"
+     }
+    ]
+   },
+   {
+    "n": 3,
+    "type": "choice",
+    "answer": "a",
+    "completed": "彼女が腹を立てるのもわからなくはないが、そんなに怒らなくてもいいだろう。",
+    "translation": "她生气也不是不能理解，可也不必气成那样吧。",
+    "translation_en": "I can see why she is angry, but she need not be that angry.",
+    "reason": "「なくはない」是“并非没有（可以理解的地方）”。",
+    "reason_en": "なくはない: it is not that there is no reason.",
+    "choices": [
+     {
+      "a": "わからなくはない",
+      "b": "わからないものだ"
+     }
+    ]
+   },
+   {
+    "n": 4,
+    "type": "choice",
+    "answer": "b",
+    "completed": "彼女の声の大きいのはもう少しどうにかならないものだろうか。",
+    "translation": "她嗓门那么大，就不能想想办法吗。",
+    "translation_en": "Her voice is so loud — can’t something be done about it?",
+    "reason": "「どうにかならないものだろうか」是“就不能有个办法吗”。",
+    "reason_en": "ならないものだろうか asks if nothing can be done.",
+    "choices": [
+     {
+      "a": "なくもない",
+      "b": "ならない"
+     }
+    ]
+   },
+   {
+    "n": 5,
+    "type": "choice",
+    "answer": "b",
+    "completed": "彼の練習量は、ほかの選手と比べものにならないくらい多い。",
+    "translation": "他的练习量多到没法和其他选手比。",
+    "translation_en": "His amount of practice is beyond comparison with the other athletes.",
+    "reason": "「比べものにならない」是“根本不能相提并论”。",
+    "reason_en": "比べものにならない: not in the same league.",
+    "choices": [
+     {
+      "a": "比べることにならない",
+      "b": "比べものにならない"
+     }
+    ]
+   },
+   {
+    "n": 6,
+    "type": "order",
+    "answer": "2→3→1→4",
+    "completed": "このパソコンは高いが性能がいいので、値引き率によっては買わないものでもない。",
+    "translation": "这台电脑贵，但性能好，看折扣幅度也不是不能买。",
+    "translation_en": "It is expensive but capable, so depending on the discount it is not impossible to buy.",
+    "reason": "「ないものでもない」：并非完全不能买。",
+    "reason_en": "ないものでもない: buying is not out of the question."
+   },
+   {
+    "n": 7,
+    "type": "order",
+    "answer": "4→1→3→2",
+    "completed": "これは、ほかのとは比べものにならないほど品質がいいですよ。",
+    "translation": "这个品质好到没法和其他的比。",
+    "translation_en": "The quality is so good it cannot be compared with the others.",
+    "reason": "「比べものにならないほど」强调好到无法比较。",
+    "reason_en": "比べものにならないほど: incomparably good."
+   }
+  ]
+ },
+ "w5d1": {
+  "items": [
+   {
+    "n": 1,
+    "type": "choice",
+    "answer": "b",
+    "completed": "帰りが遅くなってしまった。父にしかられないではすまないだろう。",
+    "translation": "回去晚了。免不了要被父亲骂吧。",
+    "translation_en": "I got home late. I will not get away without a scolding from my father.",
+    "reason": "「ないではすまない」是“不这样做就过不去”。",
+    "reason_en": "ないではすまない: you cannot get by without it.",
+    "choices": [
+     {
+      "a": "おかない",
+      "b": "すまない"
+     }
+    ]
+   },
+   {
+    "n": 2,
+    "type": "choice",
+    "answer": "a",
+    "completed": "その劇は見る者全員に感動を与えずにはおかないほどすばらしかった。",
+    "translation": "那出戏精彩到不可能不打动每一个观众。",
+    "translation_en": "The play was so good it could not fail to move everyone who saw it.",
+    "reason": "「ずにはおかない」是“必然会引起……”。",
+    "reason_en": "ずにはおかない: it inevitably causes that effect.",
+    "choices": [
+     {
+      "a": "与えずにはおかない",
+      "b": "与えるだけではすまない"
+     }
+    ]
+   },
+   {
+    "n": 3,
+    "type": "choice",
+    "answer": "b",
+    "completed": "それは法に触れる行為です。知らなかったではすまないですよ。",
+    "translation": "那是触法的行为。不知道也不能就这么算了。",
+    "translation_en": "That act breaks the law. Not knowing is no excuse.",
+    "reason": "「ではすまない」是“不能以……了事”。",
+    "reason_en": "ではすまない: you cannot settle it with that excuse.",
+    "choices": [
+     {
+      "a": "ではおかない",
+      "b": "ではすまない"
+     }
+    ]
+   },
+   {
+    "n": 4,
+    "type": "choice",
+    "answer": "a",
+    "completed": "父が脳梗塞で倒れて入院したが、手術せずにすんでよかった。",
+    "translation": "父亲脑梗倒下住了院，幸好不用做手术。",
+    "translation_en": "Father collapsed with a stroke and was hospitalized, but luckily he did not need surgery.",
+    "reason": "「せずにすむ」是“不必做也能了结”，这里是庆幸。",
+    "reason_en": "ずにすむ means you were spared having to do it.",
+    "choices": [
+     {
+      "a": "すんで",
+      "b": "すまなくて"
+     }
+    ]
+   },
+   {
+    "n": 5,
+    "type": "choice",
+    "answer": "b",
+    "completed": "税金は払いたくないが、払わずにはすまない。",
+    "translation": "税是不想交，可不能不交。",
+    "translation_en": "I do not want to pay taxes, but I cannot get away with not paying.",
+    "reason": "「ずにはすまない」：不交就过不了关。",
+    "reason_en": "ずにはすまない: not paying is not an option.",
+    "choices": [
+     {
+      "a": "ではすまない",
+      "b": "にはすまない"
+     }
+    ]
+   },
+   {
+    "n": 6,
+    "type": "order",
+    "answer": "3→2→4→1",
+    "completed": "知らなかったとはいえ迷惑をかけたのだから謝らずにすまないだろう。",
+    "translation": "虽说不知道，可既然添了麻烦，不道歉是过不去的吧。",
+    "translation_en": "You may not have known, but you caused trouble, so you cannot skip the apology.",
+    "reason": "「ずにはすまない」：道歉是免不了的。",
+    "reason_en": "ずにはすまない: an apology is unavoidable."
+   },
+   {
+    "n": 7,
+    "type": "order",
+    "answer": "4→2→3→1",
+    "completed": "学校側は危険性が高いバイク通学を禁止せずにはおかないだろう。",
+    "translation": "校方对危险性很高的骑摩托上学，不可能不禁止吧。",
+    "translation_en": "The school can hardly avoid banning the dangerous practice of commuting by motorbike.",
+    "reason": "「せずにはおかない」是“必然会加以禁止”。",
+    "reason_en": "せずにはおかない: they are bound to ban it."
+   }
+  ]
+ },
+ "w5d2": {
+  "items": [
+   {
+    "n": 1,
+    "type": "choice",
+    "answer": "a",
+    "completed": "最終電車が行ってしまって、タクシーに乗ろうにもお金が足りなかった。",
+    "translation": "末班电车走了，想打车钱又不够。",
+    "translation_en": "The last train had gone, and I did not even have enough money to take a taxi.",
+    "reason": "「ようにも」是“想做也（做不成）”。",
+    "reason_en": "ようにも: you want to, but cannot.",
+    "choices": [
+     {
+      "a": "乗ろうにも",
+      "b": "乗りようがなく"
+     }
+    ]
+   },
+   {
+    "n": 2,
+    "type": "choice",
+    "answer": "a",
+    "completed": "できる限りやさしく言葉の意味を教えた。もうこれ以上、説明のしようがない。",
+    "translation": "我尽量用简单的话讲了词义。再往下就没法解释了。",
+    "translation_en": "I explained the meaning as simply as I could. I cannot explain it any further.",
+    "reason": "「しようがない」是“没有办法再做”。",
+    "reason_en": "しようがない: there is no way left to do it.",
+    "choices": [
+     {
+      "a": "のしようが",
+      "b": "しそうも"
+     }
+    ]
+   },
+   {
+    "n": 3,
+    "type": "choice",
+    "answer": "b",
+    "completed": "この雨はしばらくやみそうもない。",
+    "translation": "这雨一时半会儿不像会停。",
+    "translation_en": "This rain does not look like it will stop for a while.",
+    "reason": "「そうもない」是“不像会……”。",
+    "reason_en": "そうもない: it does not look likely.",
+    "choices": [
+     {
+      "a": "がない",
+      "b": "もない"
+     }
+    ]
+   },
+   {
+    "n": 4,
+    "type": "choice",
+    "answer": "a",
+    "completed": "台風で川の水があふれ、橋を渡ろうにも渡れない。",
+    "translation": "台风让河水漫出来，想过桥也过不去。",
+    "translation_en": "The typhoon flooded the river, and the bridge cannot be crossed even if you try.",
+    "reason": "「ようにも…ない」是想做也做不到。",
+    "reason_en": "ようにも…ない: you try and still cannot.",
+    "choices": [
+     {
+      "a": "渡れない",
+      "b": "渡れようがない"
+     }
+    ]
+   },
+   {
+    "n": 5,
+    "type": "choice",
+    "answer": "a",
+    "completed": "飛び出してきた自転車を避けようがなく、ひいてしまった。",
+    "translation": "自行车突然冲出来，想躲也躲不开，撞上了。",
+    "translation_en": "A bicycle shot out and there was no way to avoid hitting it.",
+    "reason": "「ようがない」是“毫无办法避免”。",
+    "reason_en": "ようがない: no possible way.",
+    "choices": [
+     {
+      "a": "避けようが",
+      "b": "避けそうも"
+     }
+    ]
+   },
+   {
+    "n": 6,
+    "type": "order",
+    "answer": "4→2→3→1",
+    "completed": "あの人とは、いくら話し合ったとしてもわかり合えそうにないと思う。",
+    "translation": "和那个人无论怎么谈，我觉得也不像能互相理解。",
+    "translation_en": "However much we talk, I do not think we will ever understand each other.",
+    "reason": "「そうにない」是“不像会”。",
+    "reason_en": "そうにない: it does not seem it will happen."
+   },
+   {
+    "n": 7,
+    "type": "order",
+    "answer": "3→4→2→1",
+    "completed": "彼女のこの異常な痛がりようは普通ではないから、救急車を呼んだほうがいいよ。",
+    "translation": "她疼成这样不正常，还是叫救护车好。",
+    "translation_en": "The way she is hurting is not normal; you should call an ambulance.",
+    "reason": "「よう」这里是样子、程度：疼的样子异常。",
+    "reason_en": "よう here is the manner: how abnormally she shows pain."
+   }
+  ]
+ },
+ "w5d3": {
+  "items": [
+   {
+    "n": 1,
+    "type": "choice",
+    "answer": "a",
+    "completed": "最近のテレビ番組ときたらコマーシャルが多すぎる。",
+    "translation": "最近的电视节目，广告也太多了。",
+    "translation_en": "TV shows these days — there are far too many commercials.",
+    "reason": "「ときたら」带责备或不耐烦地提出话题。",
+    "reason_en": "ときたら brings up a topic with irritation.",
+    "choices": [
+     {
+      "a": "ときたら",
+      "b": "としたら"
+     }
+    ]
+   },
+   {
+    "n": 2,
+    "type": "choice",
+    "answer": "b",
+    "completed": "グラフに示したごとく、わが社の営業成績は伸びています。",
+    "translation": "如图表所示，本公司的业绩在增长。",
+    "translation_en": "As the graph shows, our sales results are growing.",
+    "reason": "「ごとく」是书面的“如同”。",
+    "reason_en": "ごとく is the written “just as”.",
+    "choices": [
+     {
+      "a": "ごとき",
+      "b": "ごとく"
+     }
+    ]
+   },
+   {
+    "n": 3,
+    "type": "choice",
+    "answer": "b",
+    "completed": "その難問が小学生ごときに解けるわけがない。",
+    "translation": "那种难题，小学生之类怎么可能解得开。",
+    "translation_en": "There is no way a mere elementary-school kid could solve a problem that hard.",
+    "reason": "「ごときに」轻视对方：“区区……”。",
+    "reason_en": "ごときに looks down on the person.",
+    "choices": [
+     {
+      "a": "ときたら",
+      "b": "ごときに"
+     }
+    ]
+   },
+   {
+    "n": 4,
+    "type": "choice",
+    "answer": "b",
+    "completed": "酒好きの父ときたら、毎晩ひどく酔っ払って帰ってくるので困る。",
+    "translation": "说到爱喝酒的父亲，每晚喝得大醉才回来，真头疼。",
+    "translation_en": "My father and drink — he comes home dead drunk every night, and it is a problem.",
+    "reason": "「ときたら」同样是又无奈又抱怨地提起。",
+    "reason_en": "ときたら complains about the person.",
+    "choices": [
+     {
+      "a": "のごとく",
+      "b": "ときたら"
+     }
+    ]
+   },
+   {
+    "n": 5,
+    "type": "choice",
+    "answer": "a",
+    "completed": "子どものけんかごときに警察を呼ぶとは、大げさだ。",
+    "translation": "小孩子吵架还叫警察，也太夸张了。",
+    "translation_en": "Calling the police over a children’s fight is overdoing it.",
+    "reason": "「ごときに」把孩子吵架说得很轻。",
+    "reason_en": "ごときに belittles a children’s quarrel.",
+    "choices": [
+     {
+      "a": "ごとき",
+      "b": "ごとく"
+     }
+    ]
+   },
+   {
+    "n": 6,
+    "type": "order",
+    "answer": "2→3→4→1",
+    "completed": "その大統領夫人は、派手好きで湯水のごとくお金を使ったそうだ。",
+    "translation": "听说那位总统夫人爱铺张，花钱如流水。",
+    "translation_en": "The president’s wife loved show and spent money like water.",
+    "reason": "「ごとく」是“如同流水一样”。",
+    "reason_en": "ごとく: like water."
+   },
+   {
+    "n": 7,
+    "type": "order",
+    "answer": "1→2→4→3",
+    "completed": "彼女は美人の上にお金持ちときているからみんなにうらやましがられるのは当然だろう。",
+    "translation": "她又漂亮又有钱，被人羡慕是当然的吧。",
+    "translation_en": "On top of being beautiful she is rich, so of course everyone envies her.",
+    "reason": "「ときているから」是“又加上……，所以”。",
+    "reason_en": "ときているから adds a further reason."
+   }
+  ]
+ },
+ "w5d4": {
+  "items": [
+   {
+    "n": 1,
+    "type": "choice",
+    "answer": "b",
+    "completed": "親として情けないことだが、今にいたるまで娘の非行に気づかなかった。",
+    "translation": "作为父母很惭愧，直到现在才发现女儿行为不端。",
+    "translation_en": "It is shameful as a parent, but I never noticed my daughter’s delinquency until now.",
+    "reason": "「にいたるまで」是“一直到……为止”。",
+    "reason_en": "にいたるまで: right up until now.",
+    "choices": [
+     {
+      "a": "いたっては",
+      "b": "いたるまで"
+     }
+    ]
+   },
+   {
+    "n": 2,
+    "type": "choice",
+    "answer": "a",
+    "completed": "理由のいかんによらず、試験開始後の入室は認めません。",
+    "translation": "不论理由如何，开考后不准入场。",
+    "translation_en": "Whatever the reason, you may not enter after the exam has started.",
+    "reason": "「いかんによらず」是“不论……如何”。",
+    "reason_en": "いかんによらず: regardless of.",
+    "choices": [
+     {
+      "a": "よらず",
+      "b": "いたるまで"
+     }
+    ]
+   },
+   {
+    "n": 3,
+    "type": "choice",
+    "answer": "a",
+    "completed": "次の試験の成績いかんでは、進級もできなくなるので頑張るように。",
+    "translation": "看下次考试的成绩，有可能升不了级，要努力。",
+    "translation_en": "Depending on the next exam, you may not advance, so work hard.",
+    "reason": "「いかんでは」是“视……而定，有可能”。",
+    "reason_en": "いかんでは: depending on it, it may happen.",
+    "choices": [
+     {
+      "a": "では",
+      "b": "によらず"
+     }
+    ]
+   },
+   {
+    "n": 4,
+    "type": "choice",
+    "answer": "a",
+    "completed": "今度の面接の結果いかんで、合格か不合格かが決まる。",
+    "translation": "这次面试的结果将决定及格还是不及格。",
+    "translation_en": "The result of this interview will decide pass or fail.",
+    "reason": "「いかんで」是“由……来决定”。",
+    "reason_en": "いかんで: it is decided by that.",
+    "choices": [
+     {
+      "a": "いかんで",
+      "b": "にもかかわらず"
+     }
+    ]
+   },
+   {
+    "n": 5,
+    "type": "choice",
+    "answer": "b",
+    "completed": "昨夜のホテル火災は大惨事に至らずに済んだ。",
+    "translation": "昨晚的酒店火灾没有发展到大惨剧，算是过去了。",
+    "translation_en": "Last night’s hotel fire ended without becoming a major disaster.",
+    "reason": "「に至らず」是“没有发展到……的地步”。",
+    "reason_en": "に至らず: it did not reach that point.",
+    "choices": [
+     {
+      "a": "至って",
+      "b": "至らずに"
+     }
+    ]
+   },
+   {
+    "n": 6,
+    "type": "order",
+    "answer": "3→2→4→1",
+    "completed": "高層マンションの建設は住民の反対で計画段階のまま今日に至っている。",
+    "translation": "高层公寓的建设因居民反对，至今仍停在计划阶段。",
+    "translation_en": "Because residents objected, the tower plan is still only a plan to this day.",
+    "reason": "「に至っている」是“一直持续到现在这种状态”。",
+    "reason_en": "に至っている: the situation has continued until now."
+   },
+   {
+    "n": 7,
+    "type": "order",
+    "answer": "2→3→1→4",
+    "completed": "弁護士から、A社が努力のかいなく倒産に至った経緯についての説明があった。",
+    "translation": "律师说明了A公司努力未果、终于倒闭的经过。",
+    "translation_en": "The lawyer explained how company A’s efforts failed and it went bankrupt.",
+    "reason": "「に至った」是“终于落到……的结果”。",
+    "reason_en": "に至った: it ended up at that result."
+   }
+  ]
+ },
+ "w5d5": {
+  "items": [
+   {
+    "n": 1,
+    "type": "choice",
+    "answer": "a",
+    "completed": "その歌手の人気は日本だけにとどまらず、アジアの国々にも広まった。",
+    "translation": "那位歌手的人气不只停在日本，还传到了亚洲各国。",
+    "translation_en": "The singer’s popularity did not stop at Japan; it spread across Asia.",
+    "reason": "「にとどまらず」是“不限于……还”。",
+    "reason_en": "にとどまらず: not limited to, and also…",
+    "choices": [
+     {
+      "a": "にとどまらず",
+      "b": "によらずに"
+     }
+    ]
+   },
+   {
+    "n": 2,
+    "type": "choice",
+    "answer": "b",
+    "completed": "昨日は休日と久しぶりの晴天があいまって、遊園地はとても混んでいた。",
+    "translation": "昨天又是假日又难得放晴，游乐园非常挤。",
+    "translation_en": "Yesterday a holiday and rare clear weather together made the amusement park packed.",
+    "reason": "「とあいまって」是两个因素叠在一起。",
+    "reason_en": "とあいまって: two factors combine.",
+    "choices": [
+     {
+      "a": "にとどまらず",
+      "b": "あいまって"
+     }
+    ]
+   },
+   {
+    "n": 3,
+    "type": "choice",
+    "answer": "a",
+    "completed": "株の暴落はその年だけにとどまらず年が明けても続いた。",
+    "translation": "股价暴跌不只是那年，过了年还在继续。",
+    "translation_en": "The stock crash did not stop that year; it continued into the new year.",
+    "reason": "「にとどまらず」：不限于那一年。",
+    "reason_en": "にとどまらず: not only that year.",
+    "choices": [
+     {
+      "a": "とどまらず",
+      "b": "よらず"
+     }
+    ]
+   },
+   {
+    "n": 4,
+    "type": "choice",
+    "answer": "b",
+    "completed": "あの映画は主題歌の人気と相まって大ヒットした。",
+    "translation": "那部电影加上主题曲走红，成了大热门。",
+    "translation_en": "The film became a huge hit, helped by the popularity of its theme song.",
+    "reason": "「と相まって」是与另一因素相辅相成。",
+    "reason_en": "と相まって: together with another factor.",
+    "choices": [
+     {
+      "a": "とどまらず",
+      "b": "相まって"
+     }
+    ]
+   },
+   {
+    "n": 5,
+    "type": "choice",
+    "answer": "a",
+    "completed": "駅前のそば屋は、古くてみすぼらしい外観によらずおいしいと評判だ。",
+    "translation": "车站前的荞麦面店外表又旧又寒酸，味道却出了名地好。",
+    "translation_en": "The soba shop by the station looks old and shabby, but it is famous for being good.",
+    "reason": "「によらず」是“并不因为外表（就不好）”。",
+    "reason_en": "によらず: not according to the shabby look.",
+    "choices": [
+     {
+      "a": "によらず",
+      "b": "でよらず"
+     }
+    ]
+   },
+   {
+    "n": 6,
+    "type": "order",
+    "answer": "4→3→2→1",
+    "completed": "消費税のアップと不景気が相まって落ち込んだ個人消費の回復は困難だと言われている。",
+    "translation": "据说消费税上调加上不景气，下滑的个人消费很难恢复。",
+    "translation_en": "The tax rise together with the recession is said to make a recovery in spending hard.",
+    "reason": "「と相まって」：两个不利因素叠在一起。",
+    "reason_en": "と相まって combines the two negative factors."
+   },
+   {
+    "n": 7,
+    "type": "order",
+    "answer": "2→3→4→1",
+    "completed": "ボーナスがなしになるにとどまらず給料までカットされることになり、ショックだ。",
+    "translation": "不光没有奖金，连工资都要被砍，太受打击了。",
+    "translation_en": "Not only is the bonus gone, even the salary will be cut. It is a shock.",
+    "reason": "「にとどまらず」：不止奖金，还波及工资。",
+    "reason_en": "にとどまらず: it does not stop at the bonus."
+   }
+  ]
+ },
+ "w5d6": {
+  "items": [
+   {
+    "n": 1,
+    "type": "choice",
+    "answer": "a",
+    "completed": "妻は職場に復帰すべく、1歳になる子どもの預け先を探している。",
+    "translation": "妻子为了回到职场，正在找一岁孩子的托儿处。",
+    "translation_en": "My wife is looking for care for our one-year-old so she can return to work.",
+    "reason": "「べく」是“为了要做到……”。",
+    "reason_en": "べく means in order to.",
+    "choices": [
+     {
+      "a": "すべく",
+      "b": "すべからず"
+     }
+    ]
+   },
+   {
+    "n": 2,
+    "type": "choice",
+    "answer": "b",
+    "completed": "人殺しの道具を作るなど許すべからざることだ。",
+    "translation": "制造杀人的工具之类，是不可允许的。",
+    "translation_en": "Making tools for killing is something that must not be allowed.",
+    "reason": "「べからざる」是书面的“不该、不可”。",
+    "reason_en": "べからざる is the written “must not”.",
+    "choices": [
+     {
+      "a": "べからず",
+      "b": "べからざる"
+     }
+    ]
+   },
+   {
+    "n": 3,
+    "type": "choice",
+    "answer": "b",
+    "completed": "「芝生に入るべからず。」という立て札が立ててあった。",
+    "translation": "立着一块牌子，写着“禁止进入草坪”。",
+    "translation_en": "There was a sign saying “Do not enter the lawn.”",
+    "reason": "「べからず」是告示上的禁止。",
+    "reason_en": "べからず is the prohibition on signs.",
+    "choices": [
+     {
+      "a": "べきだ",
+      "b": "べからず"
+     }
+    ]
+   },
+   {
+    "n": 4,
+    "type": "choice",
+    "answer": "a",
+    "completed": "戦争での体験は、だれにとっても忘るべからざる悲惨な出来事だ。",
+    "translation": "战争中的经历，对谁都是不该忘记的悲惨事情。",
+    "translation_en": "The wartime experience is a tragedy no one should forget.",
+    "reason": "「べからざる」是“不应被忘记的”。",
+    "reason_en": "べからざる: that must not be forgotten.",
+    "choices": [
+     {
+      "a": "べからざる",
+      "b": "べく"
+     }
+    ]
+   },
+   {
+    "n": 5,
+    "type": "choice",
+    "answer": "b",
+    "completed": "日本語能力試験のN1に合格するべく日夜勉強をしています。",
+    "translation": "为了考上日语能力考试N1，我日夜在学。",
+    "translation_en": "I study day and night in order to pass JLPT N1.",
+    "reason": "「べく」表示目的。",
+    "reason_en": "べく states the purpose.",
+    "choices": [
+     {
+      "a": "べくもなく",
+      "b": "べく"
+     }
+    ]
+   },
+   {
+    "n": 6,
+    "type": "order",
+    "answer": "1→3→2→4",
+    "completed": "今、夏なのに雪が降るといったあるべからざる現象が起こっている地域がある。",
+    "translation": "现在明明是夏天却下雪，有的地方正发生着不该有的现象。",
+    "translation_en": "Snow in summer — some regions are seeing something that should not happen.",
+    "reason": "「あるべからざる」是“不该发生的”。",
+    "reason_en": "あるべからざる: something that ought not to exist."
+   },
+   {
+    "n": 7,
+    "type": "order",
+    "answer": "3→4→1→2",
+    "completed": "弁護士になるべく懸命に続けた努力が実り、試験に合格した。",
+    "translation": "为了当律师而拼命坚持的努力有了结果，考试通过了。",
+    "translation_en": "The effort kept up in order to become a lawyer paid off, and the exam was passed.",
+    "reason": "「べく」：以成为律师为目的而持续的努力。",
+    "reason_en": "べく: the effort aimed at becoming a lawyer."
+   }
+  ]
+ },
+ "w6d1": {
+  "items": [
+   {
+    "n": 1,
+    "type": "choice",
+    "answer": "a",
+    "completed": "去年の夏も雨が少なかったけれど、今年の水不足は去年にもまして深刻だ。",
+    "translation": "去年夏天雨也少，可今年的缺水比去年更严重。",
+    "translation_en": "Last summer had little rain too, but this year’s water shortage is worse.",
+    "reason": "「にもまして」是“比……更”。",
+    "reason_en": "にもまして means even more than.",
+    "choices": [
+     {
+      "a": "にもまして",
+      "b": "に即して"
+     }
+    ]
+   },
+   {
+    "n": 2,
+    "type": "choice",
+    "answer": "a",
+    "completed": "CDの発売に先駆けて、そのアーチストのコンサートが開かれた。",
+    "translation": "在CD发售之前，先开了那位艺人的演唱会。",
+    "translation_en": "A concert by that artist was held ahead of the CD release.",
+    "reason": "「に先駆けて」是“赶在……之前”。",
+    "reason_en": "に先駆けて means ahead of.",
+    "choices": [
+     {
+      "a": "先駆けて",
+      "b": "即して"
+     }
+    ]
+   },
+   {
+    "n": 3,
+    "type": "choice",
+    "answer": "b",
+    "completed": "音楽祭でのあの女性歌手の衣装は前回にもまして派手になっていた。",
+    "translation": "音乐节上那位女歌手的服装比上次更华丽了。",
+    "translation_en": "At the festival that singer’s costume was even flashier than last time.",
+    "reason": "「にもまして」：比上一次更。",
+    "reason_en": "にもまして: even more than the previous time.",
+    "choices": [
+     {
+      "a": "に先駆けて",
+      "b": "にもまして"
+     }
+    ]
+   },
+   {
+    "n": 4,
+    "type": "choice",
+    "answer": "a",
+    "completed": "友人の息子の優秀なのにひきかえ、なんとうちの子の出来の悪いことか。",
+    "translation": "朋友的儿子那么优秀，反观我家孩子怎么这么不行。",
+    "translation_en": "My friend’s son is outstanding; by contrast, how poorly my own child does.",
+    "reason": "「にひきかえ」是“与……相反”。",
+    "reason_en": "にひきかえ contrasts the two.",
+    "choices": [
+     {
+      "a": "にひきかえ",
+      "b": "にもまして"
+     }
+    ]
+   },
+   {
+    "n": 5,
+    "type": "choice",
+    "answer": "b",
+    "completed": "時代にそくした考え方をしないと若者には受け入れられない。",
+    "translation": "不跟上时代的想法，就不会被年轻人接受。",
+    "translation_en": "If your thinking does not fit the times, young people will not accept it.",
+    "reason": "「にそくした」是“符合、贴合”。",
+    "reason_en": "にそくした means in line with.",
+    "choices": [
+     {
+      "a": "にひきかえた",
+      "b": "にそくした"
+     }
+    ]
+   },
+   {
+    "n": 6,
+    "type": "order",
+    "answer": "4→1→2→3",
+    "completed": "これは全国発売に先駆けて当店のみの先行発売でお届けする商品です。",
+    "translation": "这是赶在全国发售之前，只在本店先行发售的商品。",
+    "translation_en": "This item goes on sale here ahead of the nationwide release.",
+    "reason": "「に先駆けて」：先于全国发售。",
+    "reason_en": "に先駆けて: before the national release."
+   },
+   {
+    "n": 7,
+    "type": "order",
+    "answer": "4→2→3→1",
+    "completed": "しっかり者の兄にひきかえ弟のほうはいいかげんで困る。",
+    "translation": "哥哥很靠谱，弟弟却吊儿郎当，让人发愁。",
+    "translation_en": "The older brother is reliable; the younger one, by contrast, is careless.",
+    "reason": "「にひきかえ」拿哥哥和弟弟对比。",
+    "reason_en": "にひきかえ sets the brother against the younger one."
+   }
+  ]
+ },
+ "w6d2": {
+  "items": [
+   {
+    "n": 1,
+    "type": "choice",
+    "answer": "b",
+    "completed": "忙しかったので、あとでお昼を食べようと思っていたが、結局、食べずじまいで、夕食の時間になった。",
+    "translation": "太忙了，本想过会儿吃午饭，结果一直没吃，到了晚饭时间。",
+    "translation_en": "I was busy and meant to eat lunch later, but I never did, and it was dinner time.",
+    "reason": "「ずじまい」是“最终没能做成”。",
+    "reason_en": "ずじまい means it ended without happening.",
+    "choices": [
+     {
+      "a": "まま",
+      "b": "じまい"
+     }
+    ]
+   },
+   {
+    "n": 2,
+    "type": "choice",
+    "answer": "a",
+    "completed": "感想を思うままにアンケートに書いてください。",
+    "translation": "请把感想照实写在问卷上。",
+    "translation_en": "Please write your impressions on the questionnaire just as you feel them.",
+    "reason": "「思うままに」是“照自己所想、不受限制”。",
+    "reason_en": "ままに means just as you think.",
+    "choices": [
+     {
+      "a": "ままに",
+      "b": "つもりで"
+     }
+    ]
+   },
+   {
+    "n": 3,
+    "type": "choice",
+    "answer": "a",
+    "completed": "彼は目が見えずともすばらしい演奏をして、観客に感動を与えた。",
+    "translation": "他虽然看不见，却演奏得很精彩，打动了观众。",
+    "translation_en": "Though he cannot see, he played wonderfully and moved the audience.",
+    "reason": "「ずとも」是“即使不……也”。",
+    "reason_en": "ずとも means even without.",
+    "choices": [
+     {
+      "a": "とも",
+      "b": "じまいで"
+     }
+    ]
+   },
+   {
+    "n": 4,
+    "type": "choice",
+    "answer": "b",
+    "completed": "店員に勧められるままに、高いテレビを買ってしまった。",
+    "translation": "店员一推荐，我就照单买了台很贵的电视。",
+    "translation_en": "I bought an expensive television just as the clerk recommended.",
+    "reason": "「れるままに」是“任由对方……就照做了”。",
+    "reason_en": "ままに: he went along with the recommendation.",
+    "choices": [
+     {
+      "a": "つもりで",
+      "b": "ままに"
+     }
+    ]
+   },
+   {
+    "n": 5,
+    "type": "choice",
+    "answer": "a",
+    "completed": "待ち合わせ場所を間違えたらしく、結局彼女とは会えずじまいだった。",
+    "translation": "好像把见面地点搞错了，结果一直没见着她。",
+    "translation_en": "I seem to have got the meeting place wrong, and in the end I never saw her.",
+    "reason": "「ずじまい」：最终没有见成。",
+    "reason_en": "ずじまい: it ended without meeting.",
+    "choices": [
+     {
+      "a": "会えず",
+      "b": "会えない"
+     }
+    ]
+   },
+   {
+    "n": 6,
+    "type": "order",
+    "answer": "4→2→3→1",
+    "completed": "検査の結果を医師にもう少し詳しく聞こうと思いながらも看護師に促されるまま診察室を後にした。",
+    "translation": "本想再向医生问细一点检查结果，却被护士催着离开了诊室。",
+    "translation_en": "I meant to ask the doctor more, but left the room as the nurse urged me.",
+    "reason": "「ながらも」想问却没问成，「促されるまま」是顺着催促离开。",
+    "reason_en": "ながらも is the unfulfilled wish; まま follows the urging."
+   },
+   {
+    "n": 7,
+    "type": "order",
+    "answer": "4→1→2→3",
+    "completed": "今日こそは早く帰るつもりでいたのに誘われるまま飲みに来てしまった。",
+    "translation": "今天本想早点回去，却被人一邀就来喝酒了。",
+    "translation_en": "I meant to go home early today, but I came drinking as soon as I was invited.",
+    "reason": "「誘われるまま」是“被邀请了就顺着去了”。",
+    "reason_en": "まま: he went along with the invitation."
+   }
+  ]
+ },
+ "w6d3": {
+  "items": [
+   {
+    "n": 1,
+    "type": "choice",
+    "answer": "a",
+    "completed": "人は外見より中身が重要であると思いながらも、つい外見のよさに目を奪われてしまう。",
+    "translation": "明明觉得人内在比外表重要，却还是会被好看的外表吸引。",
+    "translation_en": "I think character matters more than looks, and yet looks still catch my eye.",
+    "reason": "「ながらも」是“虽然……却”。",
+    "reason_en": "ながらも: although, and yet.",
+    "choices": [
+     {
+      "a": "思いながらも",
+      "b": "思いながらに"
+     }
+    ]
+   },
+   {
+    "n": 2,
+    "type": "choice",
+    "answer": "b",
+    "completed": "この映画は話の内容もさることながら映像の美しさも評判がいい。",
+    "translation": "这部电影故事内容自不必说，画面之美也很受好评。",
+    "translation_en": "The story is praised, and the beauty of the images is too.",
+    "reason": "「もさることながら」是“……自不必说，……也”。",
+    "reason_en": "もさることながら: not only that, but also.",
+    "choices": [
+     {
+      "a": "の手前",
+      "b": "もさることながら"
+     }
+    ]
+   },
+   {
+    "n": 3,
+    "type": "choice",
+    "answer": "a",
+    "completed": "彼は転びそうになりながらも急斜面をスキーで滑り降りた。",
+    "translation": "他虽然差点摔倒，还是滑下了陡坡。",
+    "translation_en": "He nearly fell, but still skied down the steep slope.",
+    "reason": "「ながらも」：尽管快摔倒了仍然滑下去。",
+    "reason_en": "ながらも: despite nearly falling.",
+    "choices": [
+     {
+      "a": "ながらも",
+      "b": "ながらに"
+     }
+    ]
+   },
+   {
+    "n": 4,
+    "type": "choice",
+    "answer": "a",
+    "completed": "約束した手前、たとえ雪が降っても行かないわけにはいかない。",
+    "translation": "既然约好了，即便下雪也不得不去。",
+    "translation_en": "Having promised, I have to go even if it snows.",
+    "reason": "「手前」是顾及已经说出的承诺，所以不能反悔。",
+    "reason_en": "手前: having committed yourself, you cannot back out.",
+    "choices": [
+     {
+      "a": "手前",
+      "b": "ながらに"
+     }
+    ]
+   },
+   {
+    "n": 5,
+    "type": "choice",
+    "answer": "a",
+    "completed": "8歳になる息子が子どもながらに一生懸命お金を貯めて買ってくれた誕生日プレゼントは、一生の宝物だ。",
+    "translation": "八岁的儿子还是个孩子，却拼命攒钱给我买了生日礼物，那是一生的宝贝。",
+    "translation_en": "My eight-year-old saved hard, child though he is, and the present is a treasure for life.",
+    "reason": "「ながらに」是“虽然还是孩子，却……”。",
+    "reason_en": "ながらに: even while still a child.",
+    "choices": [
+     {
+      "a": "ながらに",
+      "b": "の手前"
+     }
+    ]
+   },
+   {
+    "n": 6,
+    "type": "order",
+    "answer": "4→2→1→3",
+    "completed": "日本チームは苦戦しながらもかろうじて銅メダルを手に入れることができた。",
+    "translation": "日本队虽然打得很苦，还是勉强拿到了铜牌。",
+    "translation_en": "Japan struggled, but just managed to take the bronze.",
+    "reason": "「しながらも」是“虽然苦战却仍然”。",
+    "reason_en": "ながらも: despite the hard fight."
+   },
+   {
+    "n": 7,
+    "type": "order",
+    "answer": "3→1→2→4",
+    "completed": "彼のスピーチは、内容もさることながら表現力や迫力があり聞く者を感動させずにはおかなかった。",
+    "translation": "他的演讲内容自不必说，表现力和魄力也必然打动听众。",
+    "translation_en": "Not only the content but the delivery was bound to move the listeners.",
+    "reason": "「もさることながら」先肯定内容，再强调表现力。",
+    "reason_en": "もさることながら adds force of delivery on top of content."
+   }
+  ]
+ },
+ "w6d4": {
+  "items": [
+   {
+    "n": 1,
+    "type": "choice",
+    "answer": "a",
+    "completed": "心を込めて作った料理なのに、子どもたちはまずいとばかりに顔をゆがめた。",
+    "translation": "用心做的菜，孩子们却一脸难吃地皱起了脸。",
+    "translation_en": "I cooked with care, but the children grimaced as if it tasted bad.",
+    "reason": "「とばかりに」是“简直就像在说……似的”。",
+    "reason_en": "とばかりに: as if to say.",
+    "choices": [
+     {
+      "a": "とばかりに",
+      "b": "ばかりか"
+     }
+    ]
+   },
+   {
+    "n": 2,
+    "type": "choice",
+    "answer": "b",
+    "completed": "うちの犬は僕を見ると飛びつかんばかりの勢いで走ってきた。",
+    "translation": "我家的狗一看见我就几乎要扑上来似的跑过来。",
+    "translation_en": "Our dog runs at me as if it is about to jump up the moment it sees me.",
+    "reason": "「んばかり」是“几乎要……的样子”。",
+    "reason_en": "んばかり: on the verge of.",
+    "choices": [
+     {
+      "a": "飛びついたと",
+      "b": "飛びつかん"
+     }
+    ]
+   },
+   {
+    "n": 3,
+    "type": "choice",
+    "answer": "a",
+    "completed": "彼女は疲れたとばかりに、部屋に入るなりベッドに倒れ込んだ。",
+    "translation": "她一副累坏了的样子，进门就倒在床上。",
+    "translation_en": "As if to say she was exhausted, she fell onto the bed the moment she entered.",
+    "reason": "「とばかりに」把疲惫表现得像一句话。",
+    "reason_en": "とばかりに acts out the feeling of exhaustion.",
+    "choices": [
+     {
+      "a": "とばかりに",
+      "b": "ゆえに"
+     }
+    ]
+   },
+   {
+    "n": 4,
+    "type": "choice",
+    "answer": "a",
+    "completed": "彼は技術を極めんがために夜も眠らずに努力している。",
+    "translation": "他为了把技术练到极致，夜里也不睡地努力。",
+    "translation_en": "He works through the night in order to perfect his skill.",
+    "reason": "「んがために」是书面的“为了要……”。",
+    "reason_en": "んがために is the written “in order to”.",
+    "choices": [
+     {
+      "a": "がために",
+      "b": "ばかりに"
+     }
+    ]
+   },
+   {
+    "n": 5,
+    "type": "choice",
+    "answer": "a",
+    "completed": "その病気に関する人々の知識のなさゆえに、彼らは迫害された。",
+    "translation": "正因为人们对那种病缺乏了解，他们才受到迫害。",
+    "translation_en": "They were persecuted precisely because people knew so little about the disease.",
+    "reason": "「ゆえに」是“因为”，偏书面。",
+    "reason_en": "ゆえに is a written “because”.",
+    "choices": [
+     {
+      "a": "ゆえに",
+      "b": "とばかりに"
+     }
+    ]
+   },
+   {
+    "n": 6,
+    "type": "order",
+    "answer": "4→1→3→2",
+    "completed": "その国のあふれんばかりの笑顔に満ちた子どもたちに接し、私の人生観は変わった。",
+    "translation": "接触到那个国家满是笑容的孩子们，我的人生观变了。",
+    "translation_en": "Meeting children there who were all smiles changed how I see life.",
+    "reason": "「んばかりの」形容笑容多到快要溢出来。",
+    "reason_en": "んばかりの: smiles on the point of overflowing."
+   },
+   {
+    "n": 7,
+    "type": "order",
+    "answer": "1→3→4→2",
+    "completed": "彼は重い罪を犯したが、事件当時、判断力が未熟とされる未成年者であったがゆえ、社会に復帰することができた。",
+    "translation": "他犯了重罪，但事发时还是判断力不成熟的未成年人，所以得以回归社会。",
+    "translation_en": "He committed a serious crime, but because he was still a minor he could return to society.",
+    "reason": "「がゆえ」说明“正因为是未成年人”这一原因。",
+    "reason_en": "がゆえ gives the reason: precisely because he was a minor."
+   }
+  ]
+ },
+ "w6d5": {
+  "items": [
+   {
+    "n": 1,
+    "type": "choice",
+    "answer": "a",
+    "completed": "この仕事をおいて、彼にふさわしい仕事はほかにないでしょう。",
+    "translation": "除了这份工作，大概没有更适合他的了。",
+    "translation_en": "Aside from this job, there is probably no work that suits him better.",
+    "reason": "「をおいて」是“除了……之外（没有）”。",
+    "reason_en": "をおいて means aside from, there is no other.",
+    "choices": [
+     {
+      "a": "をおいて",
+      "b": "をよそに"
+     }
+    ]
+   },
+   {
+    "n": 2,
+    "type": "choice",
+    "answer": "b",
+    "completed": "彼女は自分の失敗をよそに、他人の批判ばかりしている。",
+    "translation": "她对自己的失败置若罔闻，净批评别人。",
+    "translation_en": "She ignores her own failures and only criticizes others.",
+    "reason": "「をよそに」是“把……丢在一边、不管”。",
+    "reason_en": "をよそに means ignoring that.",
+    "choices": [
+     {
+      "a": "をおいて",
+      "b": "をよそに"
+     }
+    ]
+   },
+   {
+    "n": 3,
+    "type": "choice",
+    "answer": "a",
+    "completed": "観光をかねてオーストラリアへ研修に行った。",
+    "translation": "兼着观光，去澳大利亚进修了。",
+    "translation_en": "I went to Australia for training and sightseeing at the same time.",
+    "reason": "「をかねて」是“兼做”。",
+    "reason_en": "をかねて combines two purposes.",
+    "choices": [
+     {
+      "a": "かねて",
+      "b": "経て"
+     }
+    ]
+   },
+   {
+    "n": 4,
+    "type": "choice",
+    "answer": "b",
+    "completed": "近隣の住民の反対をよそに、高層マンションが建設されてしまった。",
+    "translation": "不顾附近居民反对，高层公寓还是盖起来了。",
+    "translation_en": "The tower was built in spite of the neighbors’ opposition.",
+    "reason": "「をよそに」：把反对丢在一边。",
+    "reason_en": "をよそに ignores the opposition.",
+    "choices": [
+     {
+      "a": "経て",
+      "b": "よそに"
+     }
+    ]
+   },
+   {
+    "n": 5,
+    "type": "choice",
+    "answer": "a",
+    "completed": "彼女は結婚、出産を経て、また競技に復活した。",
+    "translation": "她经过结婚、生子，又回到了赛场。",
+    "translation_en": "She returned to competition after marriage and childbirth.",
+    "reason": "「を経て」是“经过……之后”。",
+    "reason_en": "を経て means after going through.",
+    "choices": [
+     {
+      "a": "経て",
+      "b": "かねて"
+     }
+    ]
+   },
+   {
+    "n": 6,
+    "type": "order",
+    "answer": "2→4→3→1",
+    "completed": "その企業は不景気による他社の業績の低迷をよそに、売り上げを伸ばしている。",
+    "translation": "那家企业不管不景气造成其他公司业绩低迷，自己的销售额却在增长。",
+    "translation_en": "While other firms slump in the recession, that company is growing sales anyway.",
+    "reason": "「をよそに」：对别家的低迷毫不在意。",
+    "reason_en": "をよそに: paying no mind to the others’ slump."
+   },
+   {
+    "n": 7,
+    "type": "order",
+    "answer": "4→1→3→2",
+    "completed": "今年の年賀状は、引っ越しの報告も兼ねていたゆえに、例年より多い数になった。",
+    "translation": "今年的贺年卡因为兼着报告搬家，比往年多。",
+    "translation_en": "This year’s cards also reported the move, so there were more than usual.",
+    "reason": "「も兼ねていたゆえに」：正因为兼了搬家报告，数量才多。",
+    "reason_en": "兼ねる plus ゆえに: because they also served as the moving notice."
+   }
+  ]
+ },
+ "w6d6": {
+  "items": [
+   {
+    "n": 1,
+    "type": "choice",
+    "answer": "a",
+    "completed": "その大地震を機に、各地で地震対策が見直されている。",
+    "translation": "以那场大地震为契机，各地都在重新审视抗震对策。",
+    "translation_en": "That earthquake prompted a review of earthquake measures everywhere.",
+    "reason": "「を機に」是“以……为契机”。",
+    "reason_en": "を機に marks the turning point.",
+    "choices": [
+     {
+      "a": "を機に",
+      "b": "の折に"
+     }
+    ]
+   },
+   {
+    "n": 2,
+    "type": "choice",
+    "answer": "a",
+    "completed": "お近くにお越しの折には、是非お立ち寄りください。",
+    "translation": "您到附近来的时候，请一定顺道来坐坐。",
+    "translation_en": "If you are ever nearby, please do drop in.",
+    "reason": "「の折には」是“在……的时候”，用于邀请。",
+    "reason_en": "の折には is “on the occasion of”.",
+    "choices": [
+     {
+      "a": "の折に",
+      "b": "を前提として"
+     }
+    ]
+   },
+   {
+    "n": 3,
+    "type": "choice",
+    "answer": "b",
+    "completed": "今までの意見を踏まえて、この案を採用するかの決定を出したいと思います。",
+    "translation": "我想在迄今的意见之上，决定是否采用这个方案。",
+    "translation_en": "Taking the opinions so far into account, I want to decide whether to adopt this plan.",
+    "reason": "「を踏まえて」是“在……的基础上”。",
+    "reason_en": "を踏まえて means based on.",
+    "choices": [
+     {
+      "a": "境に",
+      "b": "踏まえて"
+     }
+    ]
+   },
+   {
+    "n": 4,
+    "type": "choice",
+    "answer": "a",
+    "completed": "結婚を前提として彼女は会社を退職した。",
+    "translation": "她以结婚为前提辞去了工作。",
+    "translation_en": "She left her job on the premise of getting married.",
+    "reason": "「を前提として」是“以……为前提”。",
+    "reason_en": "を前提として sets the assumption.",
+    "choices": [
+     {
+      "a": "前提として",
+      "b": "機に"
+     }
+    ]
+   },
+   {
+    "n": 5,
+    "type": "choice",
+    "answer": "a",
+    "completed": "人は40歳を境に急に老化が進むそうです。",
+    "translation": "据说人一过四十岁，衰老就会突然加快。",
+    "translation_en": "People say aging speeds up once you pass forty.",
+    "reason": "「を境に」是“以……为界”。",
+    "reason_en": "を境に marks the dividing line.",
+    "choices": [
+     {
+      "a": "境に",
+      "b": "踏まえて"
+     }
+    ]
+   },
+   {
+    "n": 6,
+    "type": "order",
+    "answer": "4→2→3→1",
+    "completed": "彼は、子どもが生まれたのを境にこれまでの生活態度を改め、まじめに働くようになった。",
+    "translation": "孩子出生之后，他改掉了以往的生活态度，开始认真工作。",
+    "translation_en": "After the child was born he changed his ways and started working seriously.",
+    "reason": "「を境に」：以孩子出生为界，前后不同。",
+    "reason_en": "を境に: the birth is the dividing line."
+   },
+   {
+    "n": 7,
+    "type": "order",
+    "answer": "2→4→1→3",
+    "completed": "この自転車は身長160センチ以上の人の使用を前提として作られています。",
+    "translation": "这辆自行车是以身高160厘米以上的人为使用前提制造的。",
+    "translation_en": "This bicycle is made on the assumption that the rider is at least 160 cm tall.",
+    "reason": "「を前提として」说明设计时假定的使用者。",
+    "reason_en": "を前提として states the assumed user."
+   }
+  ]
+ },
+ "w7d1": {
+  "items": [
+   {
+    "n": 1,
+    "type": "choice",
+    "answer": "b",
+    "completed": "家に変なにおいがこもったので、窓という窓を全部開けた。",
+    "translation": "家里闷着一股怪味，就把所有的窗都打开了。",
+    "translation_en": "A strange smell filled the house, so I opened every single window.",
+    "reason": "「という」重复同一名词，表示“所有的、无一例外”。",
+    "reason_en": "という repeats the noun: every single one.",
+    "choices": [
+     {
+      "a": "に",
+      "b": "という"
+     }
+    ]
+   },
+   {
+    "n": 2,
+    "type": "choice",
+    "answer": "a",
+    "completed": "1回や2回の練習でギターは弾けるようにならないよ。",
+    "translation": "练一两次吉他是弹不会的。",
+    "translation_en": "You will not learn guitar with just one or two practices.",
+    "reason": "「や」连接小数量：仅仅一两次。",
+    "reason_en": "や links small numbers: merely one or two.",
+    "choices": [
+     {
+      "a": "1回や2回の",
+      "b": "1回や2回も"
+     }
+    ]
+   },
+   {
+    "n": 3,
+    "type": "choice",
+    "answer": "a",
+    "completed": "彼は努力に努力を重ねて、念願の弁護士になった。",
+    "translation": "他努力了又努力，终于当上了梦寐以求的律师。",
+    "translation_en": "He piled effort on effort and finally became the lawyer he had hoped to be.",
+    "reason": "「に…を重ねて」是同一行为反复累积。",
+    "reason_en": "に…を重ねる piles the same effort up.",
+    "choices": [
+     {
+      "a": "努力に努力",
+      "b": "努力するに努力"
+     }
+    ]
+   },
+   {
+    "n": 4,
+    "type": "choice",
+    "answer": "b",
+    "completed": "娘はおなかがすいていたらしく、食べに食べていた。",
+    "translation": "女儿好像饿了，一个劲地吃。",
+    "translation_en": "My daughter must have been hungry; she ate and ate.",
+    "reason": "「に…」重复动词，表示拼命地做。",
+    "reason_en": "The repeated verb means doing it intensely.",
+    "choices": [
+     {
+      "a": "食べる",
+      "b": "食べ"
+     }
+    ]
+   },
+   {
+    "n": 5,
+    "type": "choice",
+    "answer": "b",
+    "completed": "私は朝食はいつもコーヒーにパンです。",
+    "translation": "我的早餐总是咖啡加面包。",
+    "translation_en": "My breakfast is always coffee and bread.",
+    "reason": "「に」这里是搭配：咖啡配面包。",
+    "reason_en": "に pairs the two foods.",
+    "choices": [
+     {
+      "a": "で",
+      "b": "に"
+     }
+    ]
+   },
+   {
+    "n": 6,
+    "type": "order",
+    "answer": "3→1→4→2",
+    "completed": "彼は練習に練習を重ねてついにピアニストになった。",
+    "translation": "他练习了又练习，终于成了钢琴家。",
+    "translation_en": "He practiced and practiced and finally became a pianist.",
+    "reason": "「に…を重ねて」：练习不断累积。",
+    "reason_en": "に…を重ねる: practice piled on practice."
+   },
+   {
+    "n": 7,
+    "type": "order",
+    "answer": "4→1→3→2",
+    "completed": "彼女は学校の規則をよそに爪という爪すべてを真っ赤に塗っていた。",
+    "translation": "她不顾校规，把每根指甲都涂得通红。",
+    "translation_en": "Ignoring the school rules, she painted every one of her nails bright red.",
+    "reason": "「をよそに」是不管校规；「爪という爪」是每一根指甲。",
+    "reason_en": "をよそに ignores the rules; という means every nail."
+   }
+  ]
+ },
+ "w7d2": {
+  "items": [
+   {
+    "n": 1,
+    "type": "choice",
+    "answer": "a",
+    "completed": "まだ検討中のこととて、はっきりとしたお返事はできません。",
+    "translation": "还在讨论中，所以没法给您明确答复。",
+    "translation_en": "It is still under discussion, so I cannot give you a clear answer.",
+    "reason": "「のこととて」是“因为是……（请见谅）”。",
+    "reason_en": "のこととて explains and asks for understanding.",
+    "choices": [
+     {
+      "a": "こととて",
+      "b": "だに"
+     }
+    ]
+   },
+   {
+    "n": 2,
+    "type": "choice",
+    "answer": "a",
+    "completed": "あんな大きい会社の倒産は、誰もが想像だにしなかった。",
+    "translation": "那么大的公司倒闭，谁也没想到。",
+    "translation_en": "Nobody even imagined a company that large would fail.",
+    "reason": "「だに」是“连……都（没有）”，强调程度。",
+    "reason_en": "だに means not even.",
+    "choices": [
+     {
+      "a": "だに",
+      "b": "にして"
+     }
+    ]
+   },
+   {
+    "n": 3,
+    "type": "choice",
+    "answer": "a",
+    "completed": "これほどの安売りは、現金取引にして初めて可能になることだ。",
+    "translation": "这么便宜，只有现金交易才做得到。",
+    "translation_en": "A sale this cheap is possible only as a cash deal.",
+    "reason": "「にして初めて」是“唯有采取这种方式才第一次可能”。",
+    "reason_en": "にして初めて: only when it is done this way.",
+    "choices": [
+     {
+      "a": "にして",
+      "b": "だに"
+     }
+    ]
+   },
+   {
+    "n": 4,
+    "type": "choice",
+    "answer": "b",
+    "completed": "彼は、授業に遅れてきたのに謝りもしないで席に着いた。",
+    "translation": "他上课迟到了，连句对不起都没说就坐下了。",
+    "translation_en": "He was late to class and sat down without even apologizing.",
+    "reason": "「もしない」是“连……都不做”。",
+    "reason_en": "もしない: not even that.",
+    "choices": [
+     {
+      "a": "はしないで",
+      "b": "もしないで"
+     }
+    ]
+   },
+   {
+    "n": 5,
+    "type": "choice",
+    "answer": "b",
+    "completed": "外国人と結婚するなんて、夢だに思わなかった。",
+    "translation": "和外国人结婚，连做梦都没想过。",
+    "translation_en": "Marrying a foreigner was not even a dream I had.",
+    "reason": "「だに…ない」是“连……都没有”。",
+    "reason_en": "だに…ない: not even in a dream.",
+    "choices": [
+     {
+      "a": "にして",
+      "b": "だに"
+     }
+    ]
+   },
+   {
+    "n": 6,
+    "type": "order",
+    "answer": "1→4→3→2",
+    "completed": "その女優さんは、彼女に声をかけたファンに見向きもしないで行ってしまった。",
+    "translation": "那位女演员对跟她打招呼的粉丝看都不看就走了。",
+    "translation_en": "The actress walked off without even a glance at the fan who spoke to her.",
+    "reason": "「もしない」：连看都不看。",
+    "reason_en": "もしない: not even a look."
+   },
+   {
+    "n": 7,
+    "type": "order",
+    "answer": "1→4→2→3",
+    "completed": "彼女はまだ初心者のこととて多少の失敗は大目に見てやってください。",
+    "translation": "她还是初学，多少有点失误请多包涵。",
+    "translation_en": "She is still a beginner, so please overlook a few mistakes.",
+    "reason": "「のこととて」因为是初学者，请求宽容。",
+    "reason_en": "のこととて asks for leniency because she is a beginner."
+   }
+  ]
+ },
+ "w7d3": {
+  "items": [
+   {
+    "n": 1,
+    "type": "choice",
+    "answer": "b",
+    "completed": "彼は中学生になったとたん、大人びたことを言うようになった。",
+    "translation": "他一上中学，说话就变得老成了。",
+    "translation_en": "The moment he became a junior-high student, he started sounding grown-up.",
+    "reason": "「びた」是“带有……的样子”。",
+    "reason_en": "びる means to take on that quality.",
+    "choices": [
+     {
+      "a": "めいた",
+      "b": "びた"
+     }
+    ]
+   },
+   {
+    "n": 2,
+    "type": "choice",
+    "answer": "a",
+    "completed": "若者ぶって薄着などするから風邪をひくんですよ。",
+    "translation": "装年轻穿得那么少，所以才感冒。",
+    "translation_en": "You dress too lightly trying to look young, and that is why you catch cold.",
+    "reason": "「ぶって」是“故意装出……的样子”。",
+    "reason_en": "ぶる means to pose as.",
+    "choices": [
+     {
+      "a": "若者ぶって",
+      "b": "若者めいて"
+     }
+    ]
+   },
+   {
+    "n": 3,
+    "type": "choice",
+    "answer": "a",
+    "completed": "親切ぶって近づいてくる人には気をつけてください。",
+    "translation": "对装出热心来接近你的人要小心。",
+    "translation_en": "Be careful of people who approach you pretending to be kind.",
+    "reason": "「ぶって」：装作亲切。",
+    "reason_en": "ぶって: putting on a show of kindness.",
+    "choices": [
+     {
+      "a": "ぶって",
+      "b": "びて"
+     }
+    ]
+   },
+   {
+    "n": 4,
+    "type": "choice",
+    "answer": "a",
+    "completed": "犯行現場には謎めいた言葉が書かれていた。",
+    "translation": "作案现场写着带点谜样的字。",
+    "translation_en": "Mysterious-looking words were written at the crime scene.",
+    "reason": "「めいた」是“带有……气息的”。",
+    "reason_en": "めく means having a touch of.",
+    "choices": [
+     {
+      "a": "めいた",
+      "b": "びた"
+     }
+    ]
+   },
+   {
+    "n": 5,
+    "type": "choice",
+    "answer": "a",
+    "completed": "選手の活躍ぶりがテレビで紹介されていた。",
+    "translation": "电视介绍了选手活跃的样子。",
+    "translation_en": "The players’ fine performances were shown on television.",
+    "reason": "「ぶり」是某种样子、状态。",
+    "reason_en": "ぶり is the manner of doing.",
+    "choices": [
+     {
+      "a": "ぶり",
+      "b": "ぷり"
+     }
+    ]
+   },
+   {
+    "n": 6,
+    "type": "order",
+    "answer": "2→1→4→3",
+    "completed": "彼は常連ぶってその店の話をしていたが、実は一度も行ったことがなかったらしい。",
+    "translation": "他装成熟客在讲那家店，其实好像一次都没去过。",
+    "translation_en": "He talked about the shop like a regular, but it seems he had never been.",
+    "reason": "「ぶって」是装出常客的样子。",
+    "reason_en": "ぶって: posing as a regular."
+   },
+   {
+    "n": 7,
+    "type": "order",
+    "answer": "2→3→4→1",
+    "completed": "その記事に対する反論めいたメールが大量に出版社に届いた。",
+    "translation": "出版社收到大量像是反驳那篇报道的邮件。",
+    "translation_en": "The publisher got a flood of mail that sounded like rebuttals of the article.",
+    "reason": "「めいた」是“带有反驳意味的”。",
+    "reason_en": "めいた: something with the air of a rebuttal."
+   }
+  ]
+ },
+ "w7d4": {
+  "items": [
+   {
+    "n": 1,
+    "type": "choice",
+    "answer": "a",
+    "completed": "電車の中で酔っ払いが聞くにたえない言葉を大声で言っていた。",
+    "translation": "电车里有个醉汉大声说着不堪入耳的话。",
+    "translation_en": "On the train a drunk was shouting words too awful to listen to.",
+    "reason": "「にたえない」是“不忍、不堪”。",
+    "reason_en": "にたえない: unbearable to listen to.",
+    "choices": [
+     {
+      "a": "にたえない",
+      "b": "にたりない"
+     }
+    ]
+   },
+   {
+    "n": 2,
+    "type": "choice",
+    "answer": "b",
+    "completed": "学生生活のいい思い出は、信頼するにたる教師に出会えたということだ。",
+    "translation": "学生生活的美好回忆，是遇到了值得信赖的老师。",
+    "translation_en": "The good memory of student life is meeting a teacher worth trusting.",
+    "reason": "「にたる」是“值得……”。",
+    "reason_en": "にたる means worthy of.",
+    "choices": [
+     {
+      "a": "たる",
+      "b": "にたる"
+     }
+    ]
+   },
+   {
+    "n": 3,
+    "type": "choice",
+    "answer": "a",
+    "completed": "このシャツは毎日の洗濯にたえる素材で作られています。",
+    "translation": "这件衬衫是用经得起每天洗的面料做的。",
+    "translation_en": "This shirt is made of fabric that stands up to daily washing.",
+    "reason": "「にたえる」是“经得起、耐受”。",
+    "reason_en": "にたえる means it can withstand.",
+    "choices": [
+     {
+      "a": "にたえる",
+      "b": "にたる"
+     }
+    ]
+   },
+   {
+    "n": 4,
+    "type": "choice",
+    "answer": "b",
+    "completed": "交通事故の現場写真は、見るにたえないものばかりだ。",
+    "translation": "交通事故现场的照片，尽是不忍卒看的画面。",
+    "translation_en": "The accident photos are all too awful to look at.",
+    "reason": "「にたえない」：看不下去。",
+    "reason_en": "にたえない: too much to look at.",
+    "choices": [
+     {
+      "a": "たえる",
+      "b": "たえない"
+     }
+    ]
+   },
+   {
+    "n": 5,
+    "type": "choice",
+    "answer": "a",
+    "completed": "この本は子どもたちに推薦するに足るいい内容だ。",
+    "translation": "这本书内容好，值得推荐给孩子们。",
+    "translation_en": "This book is good enough to recommend to children.",
+    "reason": "「に足る」是“足以、值得”。",
+    "reason_en": "に足る means sufficient, worth doing.",
+    "choices": [
+     {
+      "a": "に足る",
+      "b": "に足りない"
+     }
+    ]
+   },
+   {
+    "n": 6,
+    "type": "order",
+    "answer": "1→3→4→2",
+    "completed": "信ずるに足る情報なくしてはっきりしたことは言えない。",
+    "translation": "没有值得相信的信息，就说不出明确的话。",
+    "translation_en": "Without information worth believing, nothing definite can be said.",
+    "reason": "「に足る」：值得信赖的信息。",
+    "reason_en": "に足る: information that is worth trusting."
+   },
+   {
+    "n": 7,
+    "type": "order",
+    "answer": "1→2→4→3",
+    "completed": "彼女の演技は失敗続きのとても見るにたえないものだった。",
+    "translation": "她的演技接连失败，实在不忍卒看。",
+    "translation_en": "Her acting was one failure after another, too painful to watch.",
+    "reason": "「にたえない」：看不下去。",
+    "reason_en": "にたえない: unbearable to watch."
+   }
+  ]
+ },
+ "w7d5": {
+  "items": [
+   {
+    "n": 1,
+    "type": "choice",
+    "answer": "a",
+    "completed": "最近の若い女の子は爪を黒や緑に塗っていたりして、見苦しいといったらありゃしない。",
+    "translation": "最近的年轻女孩把指甲涂成黑的绿的，难看死了。",
+    "translation_en": "Girls these days paint their nails black or green — it is unbearably ugly.",
+    "reason": "「といったらありゃしない」把不好的程度说到极点。",
+    "reason_en": "といったらありゃしない pushes a bad quality to the limit.",
+    "choices": [
+     {
+      "a": "といったらありゃしない",
+      "b": "といったりやしない"
+     }
+    ]
+   },
+   {
+    "n": 2,
+    "type": "choice",
+    "answer": "b",
+    "completed": "昨日のパーティーでの彼の態度は失礼といったらなかった。",
+    "translation": "昨天晚会上他的态度无礼到了极点。",
+    "translation_en": "His manner at yesterday’s party was as rude as could be.",
+    "reason": "「といったらなかった」同样是程度极端。",
+    "reason_en": "といったらなかった: extremely rude.",
+    "choices": [
+     {
+      "a": "というと",
+      "b": "といったら"
+     }
+    ]
+   },
+   {
+    "n": 3,
+    "type": "choice",
+    "answer": "a",
+    "completed": "自分の子がこんな罪を犯すとは、情けないといったらない。",
+    "translation": "自己的孩子会犯下这种罪，可悲到了极点。",
+    "translation_en": "That my own child would commit such a crime is as pathetic as it gets.",
+    "reason": "「といったらない」把“可悲”说到极点。",
+    "reason_en": "といったらない: nothing is more pathetic.",
+    "choices": [
+     {
+      "a": "情けないといったらない",
+      "b": "情けなくもなんともない"
+     }
+    ]
+   },
+   {
+    "n": 4,
+    "type": "choice",
+    "answer": "a",
+    "completed": "何度誘われたって、僕はそんなところに行きやしないよ。",
+    "translation": "无论被邀请多少次，那种地方我才不去。",
+    "translation_en": "No matter how often I am invited, I am not going to a place like that.",
+    "reason": "「やしない」是强烈的否定：“才不会”。",
+    "reason_en": "やしない is an emphatic “I will not”.",
+    "choices": [
+     {
+      "a": "行きやしない",
+      "b": "行くったらない"
+     }
+    ]
+   },
+   {
+    "n": 5,
+    "type": "choice",
+    "answer": "a",
+    "completed": "夏までに10キロやせてみせる。",
+    "translation": "到夏天我要瘦下十公斤给你看。",
+    "translation_en": "I will show you — I will lose ten kilos by summer.",
+    "reason": "「てみせる」是下决心做给别人看。",
+    "reason_en": "てみせる is a determined “I’ll show you”.",
+    "choices": [
+     {
+      "a": "やせてみせる",
+      "b": "やせるといったらありゃしない"
+     }
+    ]
+   },
+   {
+    "n": 6,
+    "type": "order",
+    "answer": "3→1→2→4",
+    "completed": "それを知って相当ショックだったらしく彼のあわてようといったらなかった。",
+    "translation": "他知道后似乎受了很大打击，慌张的样子简直没法说。",
+    "translation_en": "The news hit him hard; you should have seen how flustered he was.",
+    "reason": "「といったらなかった」形容慌张到了极点。",
+    "reason_en": "といったらなかった: his panic was extreme."
+   },
+   {
+    "n": 7,
+    "type": "order",
+    "answer": "3→2→1→4",
+    "completed": "先日の試合は、負けても惜しくもなんともないくらい点に開きがあった。",
+    "translation": "前几天的比赛比分拉开了，输了也谈不上可惜。",
+    "translation_en": "The score was so wide that losing was not even regrettable.",
+    "reason": "「もなんともない」是“一点也不（可惜）”。",
+    "reason_en": "もなんともない: not … in the least."
+   }
+  ]
+ },
+ "w7d6": {
+  "items": [
+   {
+    "n": 1,
+    "type": "choice",
+    "answer": "a",
+    "completed": "面接の結果は電話で連絡しますので、こちらに来るには及びません。",
+    "translation": "面试结果会电话联系，不必特意过来。",
+    "translation_en": "We will phone the interview result, so you need not come here.",
+    "reason": "「には及びません」是“不必、用不着”。",
+    "reason_en": "には及びません means there is no need.",
+    "choices": [
+     {
+      "a": "来る",
+      "b": "来ない"
+     }
+    ]
+   },
+   {
+    "n": 2,
+    "type": "choice",
+    "answer": "a",
+    "completed": "この交通事故に関しては歩行者側の不注意と言わざるをえない。",
+    "translation": "这次交通事故，不得不说是行人一方不注意。",
+    "translation_en": "As for this accident, one has to say it was the pedestrian’s carelessness.",
+    "reason": "「ざるをえない」是“不得不”。",
+    "reason_en": "ざるをえない: cannot help but.",
+    "choices": [
+     {
+      "a": "言わざるを",
+      "b": "言わずを"
+     }
+    ]
+   },
+   {
+    "n": 3,
+    "type": "choice",
+    "answer": "a",
+    "completed": "その映画では、主人公が見えざる敵と戦う姿が印象的だった。",
+    "translation": "那部电影里，主人公和看不见的敌人战斗的样子令人印象深刻。",
+    "translation_en": "In that film, the hero fighting an unseen enemy stays with you.",
+    "reason": "「ざる」是古语否定：看不见的敌人。",
+    "reason_en": "ざる is the old negative: an enemy that is not seen.",
+    "choices": [
+     {
+      "a": "見えざる",
+      "b": "見ざるをえない"
+     }
+    ]
+   },
+   {
+    "n": 4,
+    "type": "choice",
+    "answer": "b",
+    "completed": "京都にはおよばないが、この町にもお寺がたくさんあります。",
+    "translation": "比不上京都，这个镇上寺庙也很多。",
+    "translation_en": "It does not match Kyoto, but this town has many temples too.",
+    "reason": "「にはおよばない」是“及不上、比不上”。",
+    "reason_en": "にはおよばない: it does not come up to.",
+    "choices": [
+     {
+      "a": "およばず",
+      "b": "およばない"
+     }
+    ]
+   },
+   {
+    "n": 5,
+    "type": "choice",
+    "answer": "b",
+    "completed": "彼の言うことは間違っていないので、納得せざるを得ないだろう。",
+    "translation": "他说的没错，所以大概不得不接受。",
+    "translation_en": "What he says is not wrong, so you will probably have to accept it.",
+    "reason": "「ざるを得ない」是“不得不”。",
+    "reason_en": "ざるを得ない: you have no choice but to accept.",
+    "choices": [
+     {
+      "a": "しざる",
+      "b": "せざる"
+     }
+    ]
+   },
+   {
+    "n": 6,
+    "type": "order",
+    "answer": "4→2→1→3",
+    "completed": "レオナルド・ダ・ビンチは、絵画や彫刻は言うにおよばず哲学や思想、自然科学の分野においても後世に多くの影響を残した。",
+    "translation": "达·芬奇在绘画和雕塑上自不必说，在哲学思想和自然科学上也给后世留下很多影响。",
+    "translation_en": "Da Vinci left a mark not only in painting and sculpture but also in philosophy and science.",
+    "reason": "「は言うにおよばず」是“……自不必说，连……也”。",
+    "reason_en": "言うにおよばず: needless to say, and also."
+   },
+   {
+    "n": 7,
+    "type": "order",
+    "answer": "4→1→3→2",
+    "completed": "私は、自分の意に反しながらも決定したことに納得せざるを得なかった。",
+    "translation": "虽然违背自己的意愿，已经决定的事我也不得不接受。",
+    "translation_en": "It went against my wishes, but I had to accept what had been decided.",
+    "reason": "「ざるを得なかった」是过去的“不得不”。",
+    "reason_en": "ざるを得なかった: there was no choice."
+   }
+  ]
+ },
+ "w8d1": {
+  "items": [
+   {
+    "n": 1,
+    "type": "choice",
+    "answer": "a",
+    "completed": "幼稚園のころの友達の、名前はおろか顔さえ忘れてしまった。",
+    "translation": "幼儿园时的朋友，别说名字，连脸都忘了。",
+    "translation_en": "I have forgotten not only the names of my kindergarten friends but even their faces.",
+    "reason": "「はおろか」是“别说……连……也”。",
+    "reason_en": "はおろか: not just A, but even B.",
+    "choices": [
+     {
+      "a": "はおろか",
+      "b": "どうあれ"
+     }
+    ]
+   },
+   {
+    "n": 2,
+    "type": "choice",
+    "answer": "a",
+    "completed": "昔ならいざしらず、今そんな迷信を信じる人はいないだろう。",
+    "translation": "从前也许还说得通，现在没人会信那种迷信了吧。",
+    "translation_en": "It might have been different long ago, but nobody believes that superstition now.",
+    "reason": "「ならいざしらず」是“以前的事另当别论”。",
+    "reason_en": "ならいざしらず sets the past aside.",
+    "choices": [
+     {
+      "a": "ならいざしらず",
+      "b": "はおろか"
+     }
+    ]
+   },
+   {
+    "n": 3,
+    "type": "choice",
+    "answer": "a",
+    "completed": "仕事の話はさておき、今日は思いきり楽しみましょうよ。",
+    "translation": "工作的事先放一放，今天尽情玩吧。",
+    "translation_en": "Never mind work talk — let’s enjoy ourselves today.",
+    "reason": "「はさておき」是“暂且不提”。",
+    "reason_en": "はさておき sets a topic aside.",
+    "choices": [
+     {
+      "a": "はさておき",
+      "b": "はいざ知らず"
+     }
+    ]
+   },
+   {
+    "n": 4,
+    "type": "choice",
+    "answer": "b",
+    "completed": "近所に泥棒が入り、現金はおろか、冷蔵庫の中のものまで盗まれたそうだ。",
+    "translation": "听说附近进了小偷，别说现金，连冰箱里的东西都被偷了。",
+    "translation_en": "A thief got in nearby; not only the cash but even the food in the fridge was taken.",
+    "reason": "「はおろか」：现金自不必说，连冰箱里的也没了。",
+    "reason_en": "はおろか: cash, and even the fridge.",
+    "choices": [
+     {
+      "a": "はさておき",
+      "b": "はおろか"
+     }
+    ]
+   },
+   {
+    "n": 5,
+    "type": "choice",
+    "answer": "b",
+    "completed": "どんな理由であれ、入会金の返金は認められません。",
+    "translation": "无论什么理由，入会费都不予退还。",
+    "translation_en": "Whatever the reason, the membership fee will not be refunded.",
+    "reason": "「であれ」是“无论是什么样的……”。",
+    "reason_en": "であれ: whatever the reason.",
+    "choices": [
+     {
+      "a": "であろうか",
+      "b": "であれ"
+     }
+    ]
+   },
+   {
+    "n": 6,
+    "type": "order",
+    "answer": "4→1→3→2",
+    "completed": "最近の大学生の中には、論文はおろかレポートの書き方すら知らない者がいる。",
+    "translation": "最近有的大学生别说论文，连报告怎么写都不知道。",
+    "translation_en": "Some students these days do not even know how to write a short report, let alone a thesis.",
+    "reason": "「はおろか…すら」一层比一层更基本的事都不会。",
+    "reason_en": "はおろか…すら: not even the more basic skill."
+   },
+   {
+    "n": 7,
+    "type": "order",
+    "answer": "3→2→1→4",
+    "completed": "難しい問題はさておきすぐに解決できそうなものから手をつけよう。",
+    "translation": "难的问题先放一边，从看上去马上能解决的开始动手吧。",
+    "translation_en": "Set the hard problems aside and start with the ones that look solvable.",
+    "reason": "「はさておき」：难题暂且不谈。",
+    "reason_en": "はさておき leaves the hard ones for later."
+   }
+  ]
+ },
+ "w8d2": {
+  "items": [
+   {
+    "n": 1,
+    "type": "choice",
+    "answer": "a",
+    "completed": "状況から判断して、彼が犯人であることは想像にかたくない。",
+    "translation": "从状况判断，不难想象他就是犯人。",
+    "translation_en": "Judging from the situation, it is not hard to imagine that he is the culprit.",
+    "reason": "「にかたくない」是“不难……”。",
+    "reason_en": "にかたくない: it is not hard to.",
+    "choices": [
+     {
+      "a": "かたくない",
+      "b": "あたらない"
+     }
+    ]
+   },
+   {
+    "n": 2,
+    "type": "choice",
+    "answer": "b",
+    "completed": "課長が会社を辞めたとしても、驚くにはあたらない。",
+    "translation": "即便科长辞职了，也没什么好惊讶的。",
+    "translation_en": "Even if the section chief quits, it is not something to be surprised at.",
+    "reason": "「にはあたらない」是“犯不上、不必”。",
+    "reason_en": "にはあたらない: there is no call for it.",
+    "choices": [
+     {
+      "a": "かたくない",
+      "b": "あたらない"
+     }
+    ]
+   },
+   {
+    "n": 3,
+    "type": "choice",
+    "answer": "a",
+    "completed": "彼は裁判で無罪を主張しているが、彼のやったことは殺人でなくてなんだろう。",
+    "translation": "他在法庭上主张无罪，可他做的事不是杀人又是什么。",
+    "translation_en": "He claims innocence in court, but what he did is nothing if not murder.",
+    "reason": "「でなくてなんだろう」是反问：不是这个又是什么。",
+    "reason_en": "でなくてなんだろう: what else could it be.",
+    "choices": [
+     {
+      "a": "なくて",
+      "b": "なしで"
+     }
+    ]
+   },
+   {
+    "n": 4,
+    "type": "choice",
+    "answer": "b",
+    "completed": "母が死んで10年以上たつのに、父はまだ母を愛してやまない。",
+    "translation": "母亲去世十多年了，父亲仍然深深爱着她。",
+    "translation_en": "More than ten years after Mother died, Father still loves her deeply.",
+    "reason": "「てやまない」是“一直……不已”。",
+    "reason_en": "てやまない: the feeling does not stop.",
+    "choices": [
+     {
+      "a": "愛し",
+      "b": "愛して"
+     }
+    ]
+   },
+   {
+    "n": 5,
+    "type": "choice",
+    "answer": "a",
+    "completed": "両親を亡くした彼女の気持ちは察するにかたくない。",
+    "translation": "不难体察失去双亲的她的心情。",
+    "translation_en": "It is not hard to imagine how she feels after losing both parents.",
+    "reason": "「にかたくない」：不难体察。",
+    "reason_en": "にかたくない: not hard to sense.",
+    "choices": [
+     {
+      "a": "かたくない",
+      "b": "あたらない"
+     }
+    ]
+   },
+   {
+    "n": 6,
+    "type": "order",
+    "answer": "2→1→3→4",
+    "completed": "5分ぐらい遅れたからといって怒るにはあたらないだろう。",
+    "translation": "只晚了五分钟左右，犯不上生气吧。",
+    "translation_en": "Being about five minutes late is hardly something to get angry about.",
+    "reason": "「にはあたらない」：不必为这点事生气。",
+    "reason_en": "にはあたらない: no need to be angry."
+   },
+   {
+    "n": 7,
+    "type": "order",
+    "answer": "3→1→4→2",
+    "completed": "子どものために病気になるまで働くとは、親の愛でなくてなんだろう。",
+    "translation": "为了孩子甚至工作到生病，这不是父母的爱又是什么。",
+    "translation_en": "Working until you fall ill for your child — what is that if not a parent’s love?",
+    "reason": "「でなくてなんだろう」用反问肯定这就是爱。",
+    "reason_en": "でなくてなんだろう affirms that this is love."
+   }
+  ]
+ },
+ "w8d3": {
+  "items": [
+   {
+    "n": 1,
+    "type": "choice",
+    "answer": "a",
+    "completed": "勝ち負けは気にしないと言っても、やはり勝つに越したことはない。",
+    "translation": "即便说不在乎输赢，还是赢了更好。",
+    "translation_en": "Even if you say you do not care who wins, winning is still better.",
+    "reason": "「に越したことはない」是“再好不过、越……越好”。",
+    "reason_en": "に越したことはない: nothing is better than.",
+    "choices": [
+     {
+      "a": "勝つに",
+      "b": "勝てば"
+     }
+    ]
+   },
+   {
+    "n": 2,
+    "type": "choice",
+    "answer": "a",
+    "completed": "欲を言えばきりがないから、このマンションに決めよう。",
+    "translation": "欲望说起来没完，就决定买这套公寓吧。",
+    "translation_en": "If you start on what you want there is no end, so let’s take this apartment.",
+    "reason": "「ときりがない」是“一……就没完”。",
+    "reason_en": "ときりがない: once you start, there is no end.",
+    "choices": [
+     {
+      "a": "きりが",
+      "b": "きりも"
+     }
+    ]
+   },
+   {
+    "n": 3,
+    "type": "choice",
+    "answer": "b",
+    "completed": "性能が同じなら、価格が安いに越したことはない。",
+    "translation": "性能一样的话，价格便宜再好不过。",
+    "translation_en": "If the performance is the same, cheaper is always better.",
+    "reason": "「に越したことはない」：越便宜越好。",
+    "reason_en": "に越したことはない: the cheaper the better.",
+    "choices": [
+     {
+      "a": "安いと",
+      "b": "安いに"
+     }
+    ]
+   },
+   {
+    "n": 4,
+    "type": "choice",
+    "answer": "a",
+    "completed": "この場所なら、喫煙しても差し支えありません。",
+    "translation": "这个地方吸烟也没有关系。",
+    "translation_en": "There is no problem with smoking in this place.",
+    "reason": "「差し支えない」是“不妨、没有妨碍”。",
+    "reason_en": "差し支えない means it is all right.",
+    "choices": [
+     {
+      "a": "差し支えありません",
+      "b": "差し支えません"
+     }
+    ]
+   },
+   {
+    "n": 5,
+    "type": "choice",
+    "answer": "b",
+    "completed": "不満を言うときりがないけれど、今の会社を辞めるわけにはいかない。",
+    "translation": "抱怨起来没完，可也不能辞掉现在的公司。",
+    "translation_en": "I could complain forever, but I cannot quit this company.",
+    "reason": "「ときりがない」：不满一说就没尽头。",
+    "reason_en": "ときりがない: the complaints never end.",
+    "choices": [
+     {
+      "a": "差し支えない",
+      "b": "きりがない"
+     }
+    ]
+   },
+   {
+    "n": 6,
+    "type": "order",
+    "answer": "2→1→4→3",
+    "completed": "資格を持っていると就職に有利だ。持っていれば持っているに越したことはないから取れるなら取っておこう。",
+    "translation": "有资格对找工作有利。能拿的话还是拿了好，能考就考吧。",
+    "translation_en": "A qualification helps you get a job. Better to have it if you can, so take it if you can.",
+    "reason": "「に越したことはない」：有总比没有好。",
+    "reason_en": "に越したことはない: better to have it."
+   },
+   {
+    "n": 7,
+    "type": "order",
+    "answer": "2→4→3→1",
+    "completed": "経験がなくても差し支えないというので応募したところ、ほかの応募者は全員経験者だった。",
+    "translation": "说没有经验也没关系，我就去应聘了，结果其他应聘者全是有经验的。",
+    "translation_en": "They said no experience was fine, so I applied — and everyone else had experience.",
+    "reason": "「差し支えない」：没有经验也不碍事。",
+    "reason_en": "差し支えない: lack of experience is acceptable."
+   }
+  ]
+ },
+ "w8d4": {
+  "items": [
+   {
+    "n": 1,
+    "type": "choice",
+    "answer": "a",
+    "completed": "政治家の汚職を見るにつけ怒りを禁じ得ない。",
+    "translation": "每看到政治家贪污，就禁不住愤怒。",
+    "translation_en": "Whenever I see politicians’ corruption, I cannot hold back my anger.",
+    "reason": "「につけ」是“每当……就”；「禁じ得ない」是“禁不住”。",
+    "reason_en": "につけ is “whenever”; 禁じ得ない cannot be suppressed.",
+    "choices": [
+     {
+      "a": "禁じ得ない",
+      "b": "余儀なくされた"
+     }
+    ]
+   },
+   {
+    "n": 2,
+    "type": "choice",
+    "answer": "b",
+    "completed": "昨日の彼らのコンサートでは、興奮のあまり気を失う少女が出るしまつだった。",
+    "translation": "昨天他们的演唱会上，甚至有女孩激动得昏了过去。",
+    "translation_en": "At their concert yesterday, things got so heated that a girl fainted.",
+    "reason": "「しまつだ」是把事情说成落到了糟糕的地步。",
+    "reason_en": "しまつだ: it came to that extreme.",
+    "choices": [
+     {
+      "a": "きらいがあった",
+      "b": "しまつだった"
+     }
+    ]
+   },
+   {
+    "n": 3,
+    "type": "choice",
+    "answer": "a",
+    "completed": "彼女は大げさに言うきらいがあるから、そのつもりで聞くように。",
+    "translation": "她有把话说得很夸张的倾向，你听的时候留心一点。",
+    "translation_en": "She tends to exaggerate, so listen with that in mind.",
+    "reason": "「きらいがある」是“有……的倾向”，多指不太好的倾向。",
+    "reason_en": "きらいがある is a tendency, often an undesirable one.",
+    "choices": [
+     {
+      "a": "きらいがある",
+      "b": "始末だ"
+     }
+    ]
+   },
+   {
+    "n": 4,
+    "type": "choice",
+    "answer": "a",
+    "completed": "すぐ治るけがだと言われたのに無理をしたため、手術を余儀なくされた。",
+    "translation": "说是很快能好的伤，因为硬撑，结果不得不做手术。",
+    "translation_en": "They said the injury would heal quickly, but forcing it meant surgery.",
+    "reason": "「を余儀なくされた」是“被迫不得不”。",
+    "reason_en": "を余儀なくされる: forced into it.",
+    "choices": [
+     {
+      "a": "を余儀なくされた",
+      "b": "を禁じえなかった"
+     }
+    ]
+   },
+   {
+    "n": 5,
+    "type": "choice",
+    "answer": "a",
+    "completed": "うちの娘は、ダイエットのしすぎで病気になり、入院する始末だ。",
+    "translation": "我家女儿节食过度病了，落到住院的地步。",
+    "translation_en": "Our daughter dieted so hard she got sick and ended up in hospital.",
+    "reason": "「始末だ」是结果糟到这种地步。",
+    "reason_en": "始末だ: it ended up this badly.",
+    "choices": [
+     {
+      "a": "入院する",
+      "b": "入院した"
+     }
+    ]
+   },
+   {
+    "n": 6,
+    "type": "order",
+    "answer": "2→3→1→4",
+    "completed": "田中さんは慎重すぎて積極性に欠けるきらいがあると指摘された。",
+    "translation": "田中被指出过于慎重，有缺乏积极性的倾向。",
+    "translation_en": "Tanaka was told he is too cautious and tends to lack initiative.",
+    "reason": "「きらいがある」：有这种（消极的）倾向。",
+    "reason_en": "きらいがある names the tendency."
+   },
+   {
+    "n": 7,
+    "type": "order",
+    "answer": "3→4→1→2",
+    "completed": "彼は、遅刻してきたくせに早退したいと言い出す始末でやる気があるのか疑問である。",
+    "translation": "他迟到了却还说想早退，让人怀疑他到底有没有干劲。",
+    "translation_en": "He arrived late and then asked to leave early. You wonder if he is motivated at all.",
+    "reason": "「始末で」把这种行为说成落到了不像话的地步。",
+    "reason_en": "始末で: behavior that has come to this."
+   }
+  ]
+ },
+ "w8d5": {
+  "items": [
+   {
+    "n": 1,
+    "type": "choice",
+    "answer": "a",
+    "completed": "私は貧乏極まりない環境で育ったので、外食などしたことがなかった。",
+    "translation": "我在穷到极点的环境里长大，从来没有在外面吃过饭。",
+    "translation_en": "I grew up in the poorest of circumstances and never ate out.",
+    "reason": "「極まりない」是“……到了极点”。",
+    "reason_en": "極まりない: extremely.",
+    "choices": [
+     {
+      "a": "極まりない",
+      "b": "の極み"
+     }
+    ]
+   },
+   {
+    "n": 2,
+    "type": "choice",
+    "answer": "b",
+    "completed": "戦争が長く続くその地域の人々の生活は、悲惨極まりない。",
+    "translation": "战争持续的那个地区，人们的生活悲惨到了极点。",
+    "translation_en": "Life for people in that long war zone is miserable in the extreme.",
+    "reason": "「極まりない」把悲惨说到极点。",
+    "reason_en": "極まりない: as miserable as can be.",
+    "choices": [
+     {
+      "a": "極みだ",
+      "b": "極まりない"
+     }
+    ]
+   },
+   {
+    "n": 3,
+    "type": "choice",
+    "answer": "a",
+    "completed": "その映画の残酷極まるシーンはカットされた。",
+    "translation": "那部电影极其残酷的场面被剪掉了。",
+    "translation_en": "The film’s extremely cruel scene was cut.",
+    "reason": "「極まる」是“极其”。",
+    "reason_en": "極まる means utterly.",
+    "choices": [
+     {
+      "a": "極まる",
+      "b": "の至りの"
+     }
+    ]
+   },
+   {
+    "n": 4,
+    "type": "choice",
+    "answer": "a",
+    "completed": "あなたのような大スターとお会いできるなんて感激の至りです。",
+    "translation": "能见到您这样的大明星，感激之至。",
+    "translation_en": "Meeting a great star like you is an honor beyond words.",
+    "reason": "「の至り」是“……之至”。",
+    "reason_en": "の至り: the height of that feeling.",
+    "choices": [
+     {
+      "a": "至り",
+      "b": "極まり"
+     }
+    ]
+   },
+   {
+    "n": 5,
+    "type": "choice",
+    "answer": "a",
+    "completed": "あなたにとっては日常的なことかもしれませんが、私にとってはそれは贅沢の極みです。",
+    "translation": "对您也许是日常，对我却是奢侈到了极点。",
+    "translation_en": "It may be ordinary for you, but for me it is the height of luxury.",
+    "reason": "「の極み」是“……的极致”。",
+    "reason_en": "の極み: the ultimate degree.",
+    "choices": [
+     {
+      "a": "の極み",
+      "b": "の極まり"
+     }
+    ]
+   },
+   {
+    "n": 6,
+    "type": "order",
+    "answer": "2→4→1→3",
+    "completed": "ガソリンスタンドでタバコを吸うなど危険極まりない行為だ。",
+    "translation": "在加油站抽烟，是危险到极点的行为。",
+    "translation_en": "Smoking at a gas station is an extremely dangerous thing to do.",
+    "reason": "「極まりない」：危险之至。",
+    "reason_en": "極まりない: dangerous in the extreme."
+   },
+   {
+    "n": 7,
+    "type": "order",
+    "answer": "1→2→4→3",
+    "completed": "私の研究がそのような評価を受けたということは感激の至りです。",
+    "translation": "我的研究得到那样的评价，真是感激之至。",
+    "translation_en": "That my research was rated so highly is a deep honor.",
+    "reason": "「の至り」：感激到了极点。",
+    "reason_en": "の至り: the height of gratitude."
+   }
+  ]
+ },
+ "w8d6": {
+  "items": [
+   {
+    "n": 1,
+    "type": "choice",
+    "answer": "b",
+    "completed": "昨日見た報道番組では、この世にあるまじき光景が次々と流された。",
+    "translation": "昨天的新闻节目里，一个接一个播出这世上不该有的景象。",
+    "translation_en": "Yesterday’s news showed scene after scene that should not exist in this world.",
+    "reason": "「にあるまじき」是“身为……不该有的”。",
+    "reason_en": "にあるまじき: unbecoming, that should not be.",
+    "choices": [
+     {
+      "a": "あるまい",
+      "b": "あるまじき"
+     }
+    ]
+   },
+   {
+    "n": 2,
+    "type": "choice",
+    "answer": "a",
+    "completed": "野菜が体にいいのはわかるが、馬じゃあるまいしこんなにたくさんは食べられない。",
+    "translation": "我知道蔬菜对身体好，可我又不是马，吃不了这么多。",
+    "translation_en": "I know vegetables are good for you, but I am not a horse — I cannot eat this many.",
+    "reason": "「じゃあるまいし」是“又不是……（所以不该这样）”。",
+    "reason_en": "じゃあるまいし: it is not as if you were…",
+    "choices": [
+     {
+      "a": "馬じゃあるまいし",
+      "b": "馬にはあるまいし"
+     }
+    ]
+   },
+   {
+    "n": 3,
+    "type": "choice",
+    "answer": "b",
+    "completed": "彼女は足の痛みをものともせずにマラソンを走り抜いた。",
+    "translation": "她不顾脚痛，把马拉松跑完了。",
+    "translation_en": "She ran the marathon through, making nothing of the pain in her feet.",
+    "reason": "「をものともせず」是“不把……当回事、不顾”。",
+    "reason_en": "をものともせず means in spite of.",
+    "choices": [
+     {
+      "a": "にあるまじき",
+      "b": "をものともせずに"
+     }
+    ]
+   },
+   {
+    "n": 4,
+    "type": "choice",
+    "answer": "a",
+    "completed": "弱い者をだまして金を取るなど、人間にあるまじき行為だ。",
+    "translation": "欺骗弱者骗钱，是人不应有的行为。",
+    "translation_en": "Tricking the weak out of money is something a human being should not do.",
+    "reason": "「にあるまじき」：作为人不该有。",
+    "reason_en": "にあるまじき: unbecoming of a person.",
+    "choices": [
+     {
+      "a": "あるまじき",
+      "b": "あるまいし"
+     }
+    ]
+   },
+   {
+    "n": 5,
+    "type": "choice",
+    "answer": "b",
+    "completed": "人は、多かれ少なかれ悩みはあるものです。",
+    "translation": "人多少都会有烦恼。",
+    "translation_en": "Everyone has worries, more or less.",
+    "reason": "「多かれ少なかれ」是“或多或少”。",
+    "reason_en": "多かれ少なかれ: more or less.",
+    "choices": [
+     {
+      "a": "多くにつけ少なくにつけ",
+      "b": "多かれ少なかれ"
+     }
+    ]
+   },
+   {
+    "n": 6,
+    "type": "order",
+    "answer": "1→3→2→4",
+    "completed": "それを食べたからといって死ぬわけじゃあるまいし、吐き出すなんて大げさすぎるよ。",
+    "translation": "吃了那个又不会死，吐出来也太夸张了。",
+    "translation_en": "It is not as if eating that would kill you. Spitting it out is overdoing it.",
+    "reason": "「わけじゃあるまいし」是“又不是会……”。",
+    "reason_en": "じゃあるまいし: it is not as if."
+   },
+   {
+    "n": 7,
+    "type": "order",
+    "answer": "4→3→1→2",
+    "completed": "子どもはいいにつけ悪いにつけ大人を見習いながら成長している",
+    "translation": "孩子无论好事坏事，都是看着大人学着长大的。",
+    "translation_en": "For better or worse, children grow by copying adults.",
+    "reason": "「につけ…につけ」是“无论是……还是……”。",
+    "reason_en": "につけ…につけ: whether good or bad."
+   }
+  ]
+ }
+}

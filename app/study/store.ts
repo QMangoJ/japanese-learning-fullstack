@@ -174,7 +174,7 @@ export const FAV_MOD_LABEL: Record<string, string> = {
 export const DATA_FILES: Record<string, string> = {
 	grammar: "grammar.d15be04258.json",
 	kanji: "kanji.94a6d6a8d1.json",
-	vocab: "vocab.856eb48e32.json",
+	vocab: "vocab.f1c5816cd9.json",
 	n2grammar: "n2grammar.4e6157570a.json",
 	n2vocab: "n2vocab.90123e4b43.json",
 	n2kanji: "n2kanji.29f929e8a8.json",
@@ -182,7 +182,7 @@ export const DATA_FILES: Record<string, string> = {
 	n4vocab: "n4vocab.026f711eb7.json",
 	n4kanji: "n4kanji.55810b32d6.json",
 	n1grammar: "n1grammar.c2d6c00681.json",
-	n1vocab: "n1vocab.41d7ac89a7.json",
+	n1vocab: "n1vocab.89b4e20c4a.json",
 	n1kanji: "n1kanji.ed64b5136d.json",
 	common: "common.aa13cae172.json",
 };
@@ -2040,9 +2040,12 @@ async function bootN4() {
 
 async function bootN1() {
 	try {
-		const [g1, n1ExamExplanations, v1, n1VocabDaily, n1VocabExam, k1, n1KanjiDaily, n1KanjiExam]: any[] = await Promise.all([
+		const [g1, n1ExamExplanations, n1DailyExplanations, v1, n1VocabDaily, n1VocabExam, k1, n1KanjiDaily, n1KanjiExam]: any[] = await Promise.all([
 			fetch("/data/" + DATA_FILES.n1grammar).then((r) => r.json()),
 			fetch("/data/n1-grammar-explanations.json")
+				.then((r) => (r.ok ? r.json() : {}))
+				.catch(() => ({})),
+			fetch("/data/n1-grammar-daily-explanations.json")
 				.then((r) => (r.ok ? r.json() : {}))
 				.catch(() => ({})),
 			fetch("/data/" + DATA_FILES.n1vocab)
@@ -2065,6 +2068,7 @@ async function bootN1() {
 				.catch(() => ({})),
 		]);
 		g1.besatsu = n1ExamExplanations || {};
+		g1.daily_explanations = n1DailyExplanations || {};
 		v1.daily_translations = (n1VocabDaily && n1VocabDaily.vocab) || {};
 		attachWeekendKaisetsu(v1, n1VocabExam);
 		k1.daily_translations = (n1KanjiDaily && n1KanjiDaily.kanji) || {};

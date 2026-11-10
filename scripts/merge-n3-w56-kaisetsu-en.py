@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "public/data"
 
 JOBS = [
-	(DATA / "vocab.856eb48e32.json", DATA / "n3-vocab-w56-kaisetsu-en.json"),
+	(DATA / "vocab.f1c5816cd9.json", DATA / "n3-vocab-w56-kaisetsu-en.json"),
 	(DATA / "kanji.94a6d6a8d1.json", DATA / "n3-kanji-w56-kaisetsu-en.json"),
 ]
 

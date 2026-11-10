@@ -18,7 +18,7 @@ function missing(book) {
 	return holes;
 }
 
-const n3 = JSON.parse(await readFile(resolve(root, "public/data/vocab.856eb48e32.json"), "utf8"));
+const n3 = JSON.parse(await readFile(resolve(root, "public/data/vocab.f1c5816cd9.json"), "utf8"));
 const n4 = JSON.parse(await readFile(resolve(root, "public/data/n4vocab.026f711eb7.json"), "utf8"));
 const n3Holes = missing(n3);
 const n4Holes = missing(n4);

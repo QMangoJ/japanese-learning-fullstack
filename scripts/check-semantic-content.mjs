@@ -4,7 +4,7 @@ import { resolve } from "node:path";
 const root = resolve(import.meta.dirname, "..");
 const jsonFiles = [
 	"public/data/grammar.d15be04258.json",
-	"public/data/vocab.856eb48e32.json",
+	"public/data/vocab.f1c5816cd9.json",
 	"public/data/kanji.94a6d6a8d1.json",
 	"public/data/n4grammar.40e138ccdb.json",
 	"public/data/n4vocab.026f711eb7.json",
@@ -13,7 +13,7 @@ const jsonFiles = [
 	"public/data/n2vocab.90123e4b43.json",
 	"public/data/n2kanji.29f929e8a8.json",
 	"public/data/n1grammar.c2d6c00681.json",
-	"public/data/n1vocab.41d7ac89a7.json",
+	"public/data/n1vocab.89b4e20c4a.json",
 	"public/data/n1kanji.ed64b5136d.json",
 	"public/data/common.aa13cae172.json",
 	"public/data/n3-grammar-daily-explanations.json",
