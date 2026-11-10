@@ -99,18 +99,17 @@
 		{
 			"slug": "kanji-journey",
 			"kind": "reading",
-			"title_zh": "《漢字的旅程》v6 暂停讲解",
-			"title_ja": "『漢字の旅程』一時停止の解説",
-			"count": 23,
-			"title_en": "The Journey of Kanji — v6 pause-and-explain",
+			"title_zh": "《漢字的旅程》v8 暂停讲解（6:01）",
+			"title_ja": "『漢字の旅程』v8 一時停止の解説",
+			"count": 20,
+			"title_en": "The Journey of Kanji — v8 pause-and-explain (6:01)",
 			"subtopics": [
 				"开场",
 				"第 1 段　甲骨文是怎样来的",
-				"第 2 段　汉字是怎样造出来的",
-				"第 3 段　字形的变化，以「馬」为例",
-				"第 4 段　汉字传到日本",
-				"第 5 段　日本怎样写出自己的字",
-				"第 6 段　日本自己造字，新词又传回中国",
+				"第 2 段　字形的变化，以「馬」为例",
+				"第 3 段　汉字传到日本",
+				"第 4 段　日本怎样写出自己的字",
+				"第 5 段　日本自己造字，新词又传回中国",
 				"结尾",
 				"来宾问答"
 			]

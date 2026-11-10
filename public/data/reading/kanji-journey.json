@@ -1,11 +1,11 @@
 {
 	"version": 1,
 	"slug": "kanji-journey",
-	"title_zh": "《漢字的旅程》v6 暂停讲解",
-	"title_ja": "『漢字の旅程』一時停止の解説",
-	"title_en": "The Journey of Kanji — v6 pause-and-explain",
-	"description_zh": "日语版视频 full_ja_v6 的暂停讲解备忘录：播放前开场，六处暂停各用自己的话讲两三句，片尾后收束。每段上面标了大约时码和旁白最后一句。文末仍附来宾问答和救命句。",
-	"description_en": "Pause-and-explain memo for the Japanese v6 video: an opening before playback, six pauses where you explain in your own words, and a closing after the credits. Each pause is marked with an approximate timecode and the narration's last line. Guest Q&A and the rescue sentence stay at the end.",
+	"title_zh": "《漢字的旅程》v8 暂停讲解（6:01）",
+	"title_ja": "『漢字の旅程』v8 一時停止の解説",
+	"title_en": "The Journey of Kanji — v8 pause-and-explain (6:01)",
+	"description_zh": "日语版视频 full_ja_v8（6:01）的暂停讲解备忘录：播放前开场，五处暂停各用自己的话讲两三句，片尾后收束。每段上面标了大约时码和旁白最后一句。文末仍附来宾问答和救命句。",
+	"description_en": "Pause-and-explain memo for the Japanese v8 video (6:01): an opening before playback, five pauses where you explain in your own words, and a closing after the credits. Each pause is marked with an approximate timecode and the narration's last line. Guest Q&A and the rescue sentence stay at the end.",
 	"sections": [
 		{
 			"zh": "开场",
@@ -299,179 +299,10 @@
 			]
 		},
 		{
-			"zh": "第 2 段　汉字是怎样造出来的",
-			"ja": "漢字はどうやって作られたか",
-			"en": "How kanji are made",
-			"pause_zh": "约 2:16 · 讲完后继续播放",
-			"cue_ja": "今の漢字の多くは、この形声文字です。",
-			"sentences": [
-				{
-					"id": "kj-007",
-					"jp": "漢字の 作り方は、大きく 四つ あります。",
-					"ruby": [
-						{
-							"t": "漢字",
-							"r": "かんじ"
-						},
-						{
-							"t": "の "
-						},
-						{
-							"t": "作",
-							"r": "つく"
-						},
-						{
-							"t": "り"
-						},
-						{
-							"t": "方",
-							"r": "かた"
-						},
-						{
-							"t": "は、"
-						},
-						{
-							"t": "大",
-							"r": "おお"
-						},
-						{
-							"t": "きく "
-						},
-						{
-							"t": "四",
-							"r": "よっ"
-						},
-						{
-							"t": "つ あります。"
-						}
-					],
-					"zh": "汉字的造法大体有四种。",
-					"en": "There are roughly four ways to make kanji."
-				},
-				{
-					"id": "kj-008",
-					"jp": "「山」は 山の 形です。「休む」は、「人」と「木」を 合わせた 字です。",
-					"ruby": [
-						{
-							"t": "「"
-						},
-						{
-							"t": "山",
-							"r": "やま"
-						},
-						{
-							"t": "」は "
-						},
-						{
-							"t": "山",
-							"r": "やま"
-						},
-						{
-							"t": "の "
-						},
-						{
-							"t": "形",
-							"r": "かたち"
-						},
-						{
-							"t": "です。「"
-						},
-						{
-							"t": "休",
-							"r": "やす"
-						},
-						{
-							"t": "む」は、「"
-						},
-						{
-							"t": "人",
-							"r": "ひと"
-						},
-						{
-							"t": "」と「"
-						},
-						{
-							"t": "木",
-							"r": "き"
-						},
-						{
-							"t": "」を "
-						},
-						{
-							"t": "合",
-							"r": "あ"
-						},
-						{
-							"t": "わせた "
-						},
-						{
-							"t": "字",
-							"r": "じ"
-						},
-						{
-							"t": "です。"
-						}
-					],
-					"zh": "「山」就是山的形状。「休」是把「人」和「木」合在一起的字。",
-					"en": "「山」 is the shape of a mountain. 「休」 puts 「人」 and 「木」 together."
-				},
-				{
-					"id": "kj-009",
-					"jp": "今の 漢字の 多くは、意味の ところと、読み方の ところが あります。",
-					"ruby": [
-						{
-							"t": "今",
-							"r": "いま"
-						},
-						{
-							"t": "の "
-						},
-						{
-							"t": "漢字",
-							"r": "かんじ"
-						},
-						{
-							"t": "の "
-						},
-						{
-							"t": "多",
-							"r": "おお"
-						},
-						{
-							"t": "くは、"
-						},
-						{
-							"t": "意味",
-							"r": "いみ"
-						},
-						{
-							"t": "の ところと、"
-						},
-						{
-							"t": "読",
-							"r": "よ"
-						},
-						{
-							"t": "み"
-						},
-						{
-							"t": "方",
-							"r": "かた"
-						},
-						{
-							"t": "の ところが あります。"
-						}
-					],
-					"zh": "现在的汉字，很多都有表示意思的部分，也有表示读音的部分。",
-					"en": "Most kanji today have a part for the meaning and a part for the reading."
-				}
-			]
-		},
-		{
-			"zh": "第 3 段　字形的变化，以「馬」为例",
+			"zh": "第 2 段　字形的变化，以「馬」为例",
 			"ja": "「馬」で見る字形の変化",
 			"en": "How shapes change, with 馬 as an example",
-			"pause_zh": "约 4:05 · 讲完后继续播放",
+			"pause_zh": "约 3:20 · 讲完后继续播放",
 			"cue_ja": "一番古い形から、太陽や月、山や水の姿が、見えてきませんか。",
 			"sentences": [
 				{
@@ -648,10 +479,10 @@
 			]
 		},
 		{
-			"zh": "第 4 段　汉字传到日本",
+			"zh": "第 3 段　汉字传到日本",
 			"ja": "漢字が日本に伝わる",
 			"en": "Kanji come to Japan",
-			"pause_zh": "约 4:39（万叶假名开始前） · 讲完后继续播放",
+			"pause_zh": "约 3:55（万叶假名开始前） · 讲完后继续播放",
 			"cue_ja": "日本の人々は、漢字を借りて、自分たちの言葉を書き表すようになりました。",
 			"sentences": [
 				{
@@ -725,10 +556,10 @@
 			]
 		},
 		{
-			"zh": "第 5 段　日本怎样写出自己的字",
+			"zh": "第 4 段　日本怎样写出自己的字",
 			"ja": "日本が自分の文字を書く",
 			"en": "How Japan came to write its own words",
-			"pause_zh": "约 5:35 · 讲完后继续播放",
+			"pause_zh": "约 4:51 · 讲完后继续播放",
 			"cue_ja": "「イ」。",
 			"sentences": [
 				{
@@ -876,10 +707,10 @@
 			]
 		},
 		{
-			"zh": "第 6 段　日本自己造字，新词又传回中国",
+			"zh": "第 5 段　日本自己造字，新词又传回中国",
 			"ja": "日本で生まれた言葉が中国へ戻る",
 			"en": "Words coined in Japan travel back to China",
-			"pause_zh": "约 6:06（常用汉字开始前） · 讲完后继续播放到片尾",
+			"pause_zh": "约 5:21（常用汉字开始前） · 讲完后继续播放到片尾",
 			"cue_ja": "こうした言葉は、新しい意味で、中国にも伝わり、今も使われています。",
 			"sentences": [
 				{

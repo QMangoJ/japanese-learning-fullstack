@@ -80,37 +80,38 @@ describe("TopicsPage", () => {
 
 	it("renders kanji-journey as a reading article (IT-listening form), not flashcards", async () => {
 		const { container } = render(<TopicsPage slug="kanji-journey" />);
-		await screen.findByText("《漢字的旅程》v6 暂停讲解");
+		await screen.findByText("《漢字的旅程》v8 暂停讲解（6:01）");
 		// 旧闪卡形态消失：没有专题卡片列表、没有子主题筛选。
 		expect(container.querySelector(".topic-item")).toBeNull();
 		expect(container.querySelector(".topic-subs")).toBeNull();
-		// 八段正文（开场、六处暂停、结尾）+ 来宾问答节。
+		// 七段正文（开场、五处暂停、结尾）+ 来宾问答节。
 		const heads = [...container.querySelectorAll(".kj-section-h")].map((h) => h.childNodes[0]?.textContent);
 		expect(heads).toEqual([
 			"开场",
 			"第 1 段　甲骨文是怎样来的",
-			"第 2 段　汉字是怎样造出来的",
-			"第 3 段　字形的变化，以「馬」为例",
-			"第 4 段　汉字传到日本",
-			"第 5 段　日本怎样写出自己的字",
-			"第 6 段　日本自己造字，新词又传回中国",
+			"第 2 段　字形的变化，以「馬」为例",
+			"第 3 段　汉字传到日本",
+			"第 4 段　日本怎样写出自己的字",
+			"第 5 段　日本自己造字，新词又传回中国",
 			"结尾",
 			"来宾问答",
 		]);
-		// 正文 23 句；问答 6 问 6 答；救命句 1 条。本页不带朗读按钮，正文句首也不带连续序号。
+		// 正文 20 句；问答 6 问 6 答；救命句 1 条。本页不带朗读按钮，正文句首也不带连续序号。
 		// 全页不应出现 .sayb / .itl-s-no；问答的 Q 编号是问题标识，保留。
 		const sections = [...container.querySelectorAll(".kj-section")];
-		const bodyRows = sections.slice(0, 8).flatMap((s) => [...s.querySelectorAll(".itl-sentence")]);
-		expect(bodyRows).toHaveLength(23);
+		const bodyRows = sections.slice(0, 7).flatMap((s) => [...s.querySelectorAll(".itl-sentence")]);
+		expect(bodyRows).toHaveLength(20);
 		expect(container.querySelectorAll(".itl-s-no")).toHaveLength(0);
 		expect(bodyRows.every((r) => r.querySelector(".itl-s-top") === null)).toBe(true);
 		expect([...container.querySelectorAll(".kj-qa .kj-chip")].map((c) => c.textContent)).toEqual([
 			"Q1", "A", "Q2", "A", "Q3", "A", "Q4", "A", "Q5", "A", "Q6", "A",
 		]);
 		expect(container.querySelectorAll(".kj-qa")).toHaveLength(6);
-		expect(container.querySelectorAll(".itl-sentence")).toHaveLength(23 + 12 + 1);
+		expect(container.querySelectorAll(".itl-sentence")).toHaveLength(20 + 12 + 1);
 		expect(container.querySelectorAll(".sayb")).toHaveLength(0);
-		expect(container.querySelector(".itl-head-meta")?.textContent).toContain("v6 暂停讲解");
+		expect(container.querySelector(".itl-eyebrow")?.textContent).toBe("V8 PAUSE MEMO");
+		expect(container.querySelector(".itl-head-meta")?.textContent).toContain("v8 暂停讲解");
+		expect(container.querySelector(".itl-head-meta")?.textContent).toContain("6:01");
 		// 第 1 句的注音：ruby 只罩汉字（中国/来），读音对，假名和空格在 ruby 外。
 		const rubyBase = (r: Element) =>
 			[...r.childNodes]
@@ -121,13 +122,19 @@ describe("TopicsPage", () => {
 		const rubies = [...first.querySelectorAll(".itl-jp ruby")];
 		expect(rubies.map(rubyBase)).toEqual(["中国", "来"]);
 		expect(rubies.map((r) => r.querySelector("rt")?.textContent)).toEqual(["ちゅうごく", "き"]);
-		// 六处暂停的时码和旁白最后一句在句子上方；舞台提示不进句子。
+		// 五处暂停的时码和旁白最后一句在句子上方；舞台提示不进句子。造字段和旧时码不留。
 		const pauses = [...container.querySelectorAll(".kj-pause")];
-		expect(pauses).toHaveLength(8);
+		expect(pauses).toHaveLength(7);
 		expect(pauses[1].textContent).toContain("约 1:31");
 		expect(pauses[1].textContent).toContain("そこで甲骨文字の「日」は、四角く、まっすぐな線で刻まれました。");
-		expect(pauses[5].textContent).toContain("「イ」。");
+		expect(pauses[2].textContent).toContain("约 3:20");
+		expect(pauses[3].textContent).toContain("约 3:55（万叶假名开始前）");
+		expect(pauses[4].textContent).toContain("约 4:51");
+		expect(pauses[4].textContent).toContain("「イ」。");
+		expect(pauses[5].textContent).toContain("约 5:21（常用汉字开始前）");
 		expect(pauses[0].textContent).not.toContain("旁白最后一句");
+		const pageText = container.textContent ?? "";
+		expect(pageText).not.toMatch(/2:16|4:05|4:39|5:35|6:06|汉字是怎样造出来的|形声文字/);
 		// 问句同样带注音（Q3 甲骨文字）；Q6 的「〇週間」占位原样保留，不许被填上数字。
 		// textContent 会把 ruby 读音插进句中，比对时先剥掉 <rt> 只留正文。
 		const baseText = (el: Element) => {

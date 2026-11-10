@@ -7,9 +7,9 @@ import "../routes/it-listening.css";
 import "../routes/kanji-journey.css";
 
 /**
- * 《漢字的旅程》阅读页：v6 日语版视频的暂停讲解备忘录，形态沿用 IT 听力文章页。
- * 正文八段（开场、六处暂停、结尾），每句「注音原句 + 中文译文」；
- * 第 1–6 段在句子上方用小注标暂停时码和旁白最后一句。
+ * 《漢字的旅程》阅读页：v8 日语版视频（6:01）的暂停讲解备忘录，形态沿用 IT 听力文章页。
+ * 正文七段（开场、五处暂停、结尾），每句「注音原句 + 中文译文」；
+ * 第 1–5 段在句子上方用小注标暂停时码和旁白最后一句。
  * 正文后是「来宾问答」，文末一条救命句。本页不带朗读按钮，正文句首也不带连续序号
  * （样式收口在 kanji-journey.css 的 .kj-page 作用域内，不影响 IT 听力页；
  * 问答的 Q1–Q6 / A 标识是问题编号，保留）。
@@ -101,11 +101,11 @@ export function KanjiJourneyPage() {
 	return (
 		<div className="itl-page kj-page">
 			<header className="itl-head">
-				<span className="itl-eyebrow">V6 PAUSE MEMO</span>
+				<span className="itl-eyebrow">V8 PAUSE MEMO</span>
 				<h1>{lx(article.title_zh, article.title_en || article.title_zh)}</h1>
 				<p className="itl-head-ja">{article.title_ja}</p>
 				<p className="itl-head-meta">
-					{lx(`v6 暂停讲解 · 正文 ${bodyCount} 句 · 来宾问答 ${article.qa.length} 组`, `v6 pause-and-explain · ${bodyCount} sentences · ${article.qa.length} Q&A pairs`)}
+					{lx(`v8 暂停讲解 · 6:01 · 正文 ${bodyCount} 句 · 来宾问答 ${article.qa.length} 组`, `v8 pause-and-explain · 6:01 · ${bodyCount} sentences · ${article.qa.length} Q&A pairs`)}
 				</p>
 			</header>
 
