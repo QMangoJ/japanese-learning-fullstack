@@ -13,8 +13,11 @@ public/data/it-listening/
 ```jsonc
 {
   "id": "unit15-operation-demo",      // kebab-case，和文件名一致，网址是 /study/#/it-listening/<id>
-  "title_zh": "「场景会话」Unit 15：操作演示",
-  "title_ja": "「場面で覚える」Unit 15：オペレーションデモ",
+  "title_zh": "【IT業務編ー仕事の日本語】「場面で覚える」：Unit１５：オペレーションデモ",  // = 视频原标题（见下方标题口径）
+  "title_ja": "【IT業務編ー仕事の日本語】「場面で覚える」：Unit１５：オペレーションデモ",
+  "textbookTitle_zh": "「场景会话」Unit 15：操作演示",   // 旧教材单元标题（副标题行展示）
+  "textbookTitle_ja": "「場面で覚える」Unit 15：オペレーションデモ",
+  "videoTitle": "【IT業務編ー仕事の日本語】「場面で覚える」：Unit１５：オペレーションデモ",  // oEmbed 取回的视频原标题（无后缀）
   "series_zh": "场景会话",             // 系列分组（列表页按系列排序/标注）
   "series_ja": "場面で覚える",
   "unit": 15,
@@ -27,6 +30,12 @@ public/data/it-listening/
   "sentenceCount": 30
 }
 ```
+
+## 标题口径（2026-11-10 Daniel 定）
+
+- `title_zh` / `title_ja` **直接用来源 YouTube 视频的原标题**（oEmbed 取回，逐字、不翻译不改写），方便按视频对上文章；原始标题另存 `videoTitle`（不带后缀）。
+- 一个视频拆出多篇文章时（同 videoId 多篇），标题 = 视频原标题 + ` — ` + 旧教材标题里从「Unit」起的区分段（如 ` — Unit 2 聞き取り練習スクリプト`，冒号转空格；zh/ja 各取本语言旧标题的区分段），保证同名视频的多篇可区分；单篇独占的视频不加后缀。
+- 迁移前的教材单元标题不丢：存 `textbookTitle_zh` / `textbookTitle_ja`，列表卡片与详情页以副标题行显示。
 
 ## `<id>.json`
 

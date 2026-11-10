@@ -56,8 +56,12 @@ export type ItListeningSentence = {
 
 export type ItListeningIndexEntry = {
 	id: string;
+	/** 文章标题 = 来源视频原标题（多篇同视频时带「 — Unit N 区分段」后缀消歧）。 */
 	title_zh: string;
 	title_ja: string;
+	/** 旧教材单元标题（迁移前 title_zh/title_ja 的原值）：列表/详情页以副标题行保留。 */
+	textbookTitle_zh?: string;
+	textbookTitle_ja?: string;
 	series_zh?: string;
 	series_ja?: string;
 	unit?: number;
