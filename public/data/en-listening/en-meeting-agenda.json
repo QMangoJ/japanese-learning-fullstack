@@ -1,0 +1,145 @@
+{
+  "id": "en-meeting-agenda",
+  "title_zh": "Setting an agenda – 20 – English at Work sets the meeting agenda",
+  "title_en": "Setting an agenda – 20 – English at Work sets the meeting agenda",
+  "videoTitle": "Setting an agenda – 20 – English at Work sets the meeting agenda",
+  "textbookTitle_zh": "老板迟到了，先把议程念出来",
+  "series_zh": "商务日常",
+  "source": "BBC Learning English（YouTube）",
+  "channelUrl": "https://www.youtube.com/@bbclearningenglish",
+  "youtube": "https://www.youtube.com/watch?v=9iO29NsoYWw",
+  "videoId": "9iO29NsoYWw",
+  "startSec": 0,
+  "endSec": 220,
+  "durationSec": 220,
+  "sentenceCount": 17,
+  "note_zh": "整集 3:40。BBC《English at Work》第 20 集，演员真人配音，字幕即官方台词。",
+  "sentences": [
+    {
+      "speaker": "Narrator",
+      "en": "An office meeting has been scheduled, but Paul is running late. He's asked Anna to take charge and start the meeting without him.",
+      "zh": "办公室会议排好了，可是 Paul 要迟到。他让 Anna 先开始，不要等他。",
+      "vocab": [
+        {
+          "w": "running late",
+          "zh": "要迟到了"
+        },
+        {
+          "w": "take charge",
+          "zh": "先负责起来"
+        }
+      ]
+    },
+    {
+      "speaker": "Denise",
+      "en": "Here you go, Anna. It's a print-out of the agenda for the meeting.",
+      "zh": "给，Anna。这是会议议程的打印件。",
+      "vocab": [
+        {
+          "w": "agenda",
+          "zh": "议程"
+        }
+      ]
+    },
+    {
+      "speaker": "Anna",
+      "en": "Thank you. Oh dear, I'm not sure I know the right words to start meetings.",
+      "zh": "谢谢。哎呀，我不太确定开会该用什么词起头。"
+    },
+    {
+      "speaker": "Narrator",
+      "en": "You can say: Thank you for coming. There are five items on the agenda today.",
+      "zh": "你可以这样说：谢谢大家来。今天议程上有五项。",
+      "note": "Thank you for coming. There are … items on the agenda. 开会第一句。"
+    },
+    {
+      "speaker": "Anna",
+      "en": "Items?",
+      "zh": "Items 是什么？"
+    },
+    {
+      "speaker": "Narrator",
+      "en": "It's a way of saying things. Then you list them: firstly, secondly, after that, and then, finally.",
+      "zh": "就是「事项」。然后按 firstly、secondly、after that、and then、finally 往下数。"
+    },
+    {
+      "speaker": "Narrator",
+      "en": "At the end there is often any other business — anything that wasn't listed, but that people want to talk about. When it's time to finish, say: Let's wrap up.",
+      "zh": "最后常有 any other business，就是议程上没有、但有人想谈的事。要结束时说 Let's wrap up。",
+      "vocab": [
+        {
+          "w": "any other business",
+          "zh": "其他事项"
+        },
+        {
+          "w": "wrap up",
+          "zh": "收尾、结束"
+        }
+      ],
+      "note": "Let's wrap up. 比 the meeting is over 顺口。"
+    },
+    {
+      "speaker": "Anna",
+      "en": "Thank you for coming. Paul will be here soon, but he asked me to start. There are four items on the agenda today.",
+      "zh": "谢谢大家来。Paul 马上到，他让我先开始。今天议程上有四项。"
+    },
+    {
+      "speaker": "Anna",
+      "en": "Firstly, the stock management systems. Secondly, plans for a team-building activity. After that, the colour of our new apples, and finally any other business, before we wrap up.",
+      "zh": "第一，库存管理系统。第二，团建活动的计划。然后是新苹果的颜色，最后是其他事项，然后我们就结束。",
+      "vocab": [
+        {
+          "w": "stock",
+          "zh": "库存"
+        }
+      ]
+    },
+    {
+      "speaker": "Paul",
+      "en": "Oh, hello everyone. Sorry I'm late.",
+      "zh": "大家好。抱歉我迟到了。"
+    },
+    {
+      "speaker": "Anna",
+      "en": "I'd just opened the meeting.",
+      "zh": "我刚把会开起来。"
+    },
+    {
+      "speaker": "Paul",
+      "en": "Remind me what the first item on the agenda is.",
+      "zh": "提醒我一下，议程第一项是什么。"
+    },
+    {
+      "speaker": "Anna",
+      "en": "Stock.",
+      "zh": "库存。"
+    },
+    {
+      "speaker": "Paul",
+      "en": "Ah yes, stock management systems. We need to start developing a good stock management system so we can meet the huge demand I'm expecting. Anna, I'd like you to lead on that.",
+      "zh": "对，库存管理系统。我们得开始做一套好用的库存系统，才能接住我预期的大需求。Anna，这项你来牵头。",
+      "note": "I'd like you to lead on that. 会上把一件事交给某人负责。"
+    },
+    {
+      "speaker": "Anna",
+      "en": "Me? You want me to be in charge of the stock management systems?",
+      "zh": "我？你要我负责库存管理系统？"
+    },
+    {
+      "speaker": "Paul",
+      "en": "Anna's had some excellent ideas already, and I think she'll do a great job. For these new fruits, stock control will be key.",
+      "zh": "Anna 已经有几个很好的想法，我觉得她能做好。对这些新水果，库存控制是关键。",
+      "vocab": [
+        {
+          "w": "stock control",
+          "zh": "库存控制"
+        }
+      ]
+    },
+    {
+      "speaker": "Narrator",
+      "en": "She opened the meeting well. Thank you for coming. There are four items on the agenda. Firstly, secondly, after that, and finally, any other business, and then we can wrap up.",
+      "zh": "她把会开得很好。谢谢来、今天四项、第一第二然后最后、其他事项、然后结束。"
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "id": "en-rn-postmortem",
+  "title_zh": "The day I broke React Native - Nicola Corti | React Native EU 2023",
+  "title_en": "The day I broke React Native - Nicola Corti | React Native EU 2023",
+  "videoTitle": "The day I broke React Native - Nicola Corti | React Native EU 2023",
+  "textbookTitle_zh": "事故复盘：一次发布把大家的 Android 构建弄坏了",
+  "series_zh": "技术与面试",
+  "source": "Callstack（YouTube）",
+  "channelUrl": "https://www.youtube.com/@CallstackEngineers",
+  "youtube": "https://www.youtube.com/watch?v=Rers6rpuGTo",
+  "videoId": "Rers6rpuGTo",
+  "startSec": 0,
+  "endSec": 270,
+  "durationSec": 270,
+  "sentenceCount": 13,
+  "note_zh": "节选 0:00–4:30。WhoBuilt 把「我们决定改放到 Maven Central」标在约 4:05，这里多留一点把这句话说完。Nicola Corti 在 React Native EU 2023 的现场讲述，按英文字幕整理。",
+  "sentences": [
+    {
+      "speaker": "Nicola",
+      "en": "Hi — now you can hear me? Hi everyone. Today I want to tell you a story.",
+      "zh": "喂，现在听得见我吗？大家好。今天我想讲一个故事。"
+    },
+    {
+      "speaker": "Nicola",
+      "en": "I was in Seattle, at the Starbucks Reserve Roastery. There are only six or seven of them. I sat down with a coffee, opened my laptop, and started checking GitHub issues and Discord.",
+      "zh": "我当时在西雅图的 Starbucks Reserve Roastery。这种店全世界只有六七家。我坐下喝咖啡，打开电脑，开始看 GitHub 的 issue 和 Discord。"
+    },
+    {
+      "speaker": "Nicola",
+      "en": "A lot of people were writing to me that something odd was going on. Users reported that their Android builds were not working at all.",
+      "zh": "很多人来找我，说事情不太对。用户报告他们的 Android 构建完全编不过。",
+      "vocab": [
+        {
+          "w": "build",
+          "zh": "构建"
+        }
+      ]
+    },
+    {
+      "speaker": "Nicola",
+      "en": "People would run the React Native Android build. One minute ago it was fine, and one minute later it was not.",
+      "zh": "大家跑 React Native 的 Android 构建。一分钟前还是好的，一分钟后就不行了。"
+    },
+    {
+      "speaker": "Nicola",
+      "en": "That is quite bad for developer experience. You want builds that are reproducible. If my code compiles, how come it doesn't compile one minute later?",
+      "zh": "这对开发体验很糟。构建应该是可复现的。我的代码能编过，怎么一分钟后就不能编了？",
+      "vocab": [
+        {
+          "w": "reproducible",
+          "zh": "可复现的"
+        }
+      ],
+      "note": "How come…? 比 why 更口语，带一点「这说不通」。"
+    },
+    {
+      "speaker": "Nicola",
+      "en": "In the error, on older React Native versions, people could not find a version: 0.71.0-rc.0.",
+      "zh": "报错里，旧版本的 React Native 找不到一个版本：0.71.0 的 rc.0。"
+    },
+    {
+      "speaker": "Nicola",
+      "en": "I had a flight back to London in two or three hours. That's when I realized: we broke React Native.",
+      "zh": "我两三个小时后要飞回伦敦。就是那时候我意识到：是我们把 React Native 弄坏了。"
+    },
+    {
+      "speaker": "Nicola",
+      "en": "My name is Nicola Corti. I work as an Android engineer on the React Native team. Today I'm going to tell the story of the day I broke React Native.",
+      "zh": "我是 Nicola Corti，React Native 团队的 Android 工程师。今天就讲我弄坏 React Native 的那一天。"
+    },
+    {
+      "speaker": "Nicola",
+      "en": "I'll walk through what happened, why it happened, and how we fixed it. The build failures were Android-only, but the lessons go beyond Android.",
+      "zh": "我会按顺序讲发生了什么、为什么、我们怎么修好的。构建失败只在 Android 上，但教训不限于 Android。",
+      "note": "what happened, why, how we fixed it：事故复盘的三步，面试里讲故障也可以照这个顺序。"
+    },
+    {
+      "speaker": "Nicola",
+      "en": "Inside Meta and in the broader community there is a group we call the release crew. They make the new React Native releases.",
+      "zh": "Meta 内部和更大的社区里，有一组人叫 release crew。他们负责发 React Native 的新版本。",
+      "vocab": [
+        {
+          "w": "release",
+          "zh": "发布"
+        }
+      ]
+    },
+    {
+      "speaker": "Nicola",
+      "en": "That day we started the 0.71 release. We cut a branch and published the first release candidate, rc.0. We knew that first rc was a test release, not production-ready.",
+      "zh": "那天我们开始发 0.71。切了分支，发出第一个候选版 rc.0。我们知道第一个 rc 是试发，不能当生产版本。",
+      "vocab": [
+        {
+          "w": "release candidate",
+          "zh": "候选发布版"
+        }
+      ]
+    },
+    {
+      "speaker": "Nicola",
+      "en": "One change was the underlying cause. RFC 508 was about taking React Native artifacts out of the npm package. The npm package was getting too big, and we could not publish it anymore.",
+      "zh": "有一处改动是根因。RFC 508 是把 React Native 的构建产物移出 npm 包。npm 包太大，我们已经发不出去了。",
+      "vocab": [
+        {
+          "w": "root cause",
+          "zh": "根因"
+        }
+      ]
+    },
+    {
+      "speaker": "Nicola",
+      "en": "We had to find an alternative for our Android libraries, and we decided to move to Maven Central.",
+      "zh": "Android 的库必须找别的地方放，于是我们决定改放到 Maven Central。"
+    }
+  ]
+}

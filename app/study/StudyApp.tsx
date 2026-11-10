@@ -21,6 +21,7 @@ import { FavBurstRoot } from "./fav-burst";
 import { ToastStack } from "./toast-stack";
 import { getDueVersion, subscribeDue } from "./due-review";
 import { formatReviewDate, jstToday, parseReviewRoute, reviewDateFromId } from "./lesson-review";
+import { parseEnListeningRoute } from "./en-listening";
 import { parseItListeningRoute } from "./it-listening";
 import { minnaHash, parseMinnaRoute } from "./minna-route";
 import { parseTopicsRoute } from "./topic-route";
@@ -126,6 +127,9 @@ const LazyKanjiExamPage = lazy(() =>
 );
 const LazyItListeningPage = lazy(() =>
 	import("./ItListeningPage").then((module) => ({ default: module.ItListeningPage })),
+);
+const LazyEnListeningPage = lazy(() =>
+	import("./EnListeningPage").then((module) => ({ default: module.EnListeningPage })),
 );
 const LazyReviewPage = lazy(() =>
 	import("./ReviewPage").then((module) => ({ default: module.ReviewPage })),
@@ -589,6 +593,7 @@ function Sidebar({ routeKey, onLevel }: { routeKey: string; onLevel: (lv: LevelK
 				</div>
 				<div className="side-sub">{lx("工作面试", "Work & interviews")}</div>
 				{row("#/it-listening", "💻", lx("IT 听力", "IT Listening"), null, h.startsWith("#/it-listening"))}
+				{row("#/en-listening", "🎧", lx("英语听力", "English listening"), null, h.startsWith("#/en-listening"))}
 				{row("#/it-listening/mistakes", "📕", lx("错词本", "Mistake Words"), null, h === "#/it-listening/mistakes")}
 				{row("#/topics/job-interview", "🎤", lx("日语面试", "Job interview"), null, h === "#/topics/job-interview")}
 				{row("#/topics/frontend", "🖥️", lx("前端工程师", "Frontend engineer"), null, h === "#/topics/frontend")}
@@ -817,6 +822,8 @@ function viewMeta(key: string): { nav: string; title: string; back: boolean } {
 	if (topics) return { nav: "common", title: lx("专题词汇", "Topic vocabulary"), back: Boolean(topics.slug) };
 	const itl = parseItListeningRoute(key);
 	if (itl) return { nav: "common", title: lx("IT 听力", "IT Listening"), back: Boolean(itl.id) };
+	const enl = parseEnListeningRoute(key);
+	if (enl) return { nav: "common", title: lx("英语听力", "English listening"), back: Boolean(enl.id) };
 	if (key === "#/kanji-exam") return { nav: "common", title: lx("汉字自测", "Kanji Self-test"), back: false };
 	if (key === "#/favs")
 		return {
@@ -1006,12 +1013,13 @@ export function StudyApp() {
 	const reviewRoute = parseReviewRoute(routeKey);
 	const topicsRoute = parseTopicsRoute(routeKey);
 	const itlRoute = parseItListeningRoute(routeKey);
+	const enlRoute = parseEnListeningRoute(routeKey);
 	const minnaRoute = parseMinnaRoute(routeKey);
 	const commonPages = ["#/search", "#/cards", "#/kanji-exam", "#/favs", "#/mistakes", "#/usage", "#/ref", "#/katsuyou", "#/henkei", "#/verb-summary", "#/keigo", "#/kougo", "#/jita", "#/wearing", "#/numbers", "#/review"];
-	const isCommon = commonPages.includes(routeKey) || routeKey === "#/" || Boolean(reviewRoute) || Boolean(topicsRoute) || Boolean(itlRoute) || Boolean(minnaRoute);
+	const isCommon = commonPages.includes(routeKey) || routeKey === "#/" || Boolean(reviewRoute) || Boolean(topicsRoute) || Boolean(itlRoute) || Boolean(enlRoute) || Boolean(minnaRoute);
 	if (routeKey === "#/cards") ensureCardsDeck();
 
-	const commonRefPage = ["#/usage", "#/ref", "#/katsuyou", "#/henkei", "#/verb-summary", "#/keigo", "#/kougo", "#/jita", "#/wearing", "#/numbers", "#/review"].includes(routeKey) || Boolean(reviewRoute) || Boolean(topicsRoute) || Boolean(itlRoute) || Boolean(minnaRoute);
+	const commonRefPage = ["#/usage", "#/ref", "#/katsuyou", "#/henkei", "#/verb-summary", "#/keigo", "#/kougo", "#/jita", "#/wearing", "#/numbers", "#/review"].includes(routeKey) || Boolean(reviewRoute) || Boolean(topicsRoute) || Boolean(itlRoute) || Boolean(enlRoute) || Boolean(minnaRoute);
 	const waitingN2 = isN2() && MODULE !== "n2listening" && MODULE !== "n2reading" && !n2Loaded && !commonRefPage;
 	const waitingN4 = isN4() && !n4Loaded && !commonRefPage;
 	const waitingN1 = isN1() && MODULE !== "n1listening" && !n1Loaded && !commonRefPage;
@@ -1090,6 +1098,7 @@ export function StudyApp() {
 	else if (reviewRoute) body = <LazyReviewPage dateId={reviewRoute.id} />;
 	else if (topicsRoute) body = <LazyTopicsPage slug={topicsRoute.slug} />;
 	else if (itlRoute) body = <LazyItListeningPage articleId={itlRoute.id} />;
+	else if (enlRoute) body = <LazyEnListeningPage articleId={enlRoute.id} />;
 	else body = <HomePage data={homeData} />;
 
 	const showCommon = isCommon && !day && routeKey !== "#/contrast";
@@ -1110,12 +1119,12 @@ export function StudyApp() {
 			<Header
 				title={meta.title}
 				showBack={meta.back}
-				backLabel={day ? lx("目录", "Catalog") : reviewRoute?.id ? lx("日期", "Dates") : topicsRoute?.slug ? lx("专题", "Topics") : itlRoute?.id ? lx("文章", "Articles") : minnaRoute?.lesson != null ? lx("课表", "Lessons") : lx("返回", "Back")}
-				showLevel={!commonPages.includes(routeKey) && !reviewRoute && !topicsRoute && !itlRoute && !minnaRoute}
+				backLabel={day ? lx("目录", "Catalog") : reviewRoute?.id ? lx("日期", "Dates") : topicsRoute?.slug ? lx("专题", "Topics") : itlRoute?.id || enlRoute?.id ? lx("文章", "Articles") : minnaRoute?.lesson != null ? lx("课表", "Lessons") : lx("返回", "Back")}
+				showLevel={!commonPages.includes(routeKey) && !reviewRoute && !topicsRoute && !itlRoute && !enlRoute && !minnaRoute}
 				showTypebar={routeKey === "#/" || Boolean(day)}
 				showReading={LEVEL === "n3" || LEVEL === "n2"}
 				showListening={LEVEL === "n3" || LEVEL === "n2" || LEVEL === "n1"}
-				onBack={() => (day ? navTo("#/") : reviewRoute?.id ? navTo("#/review") : topicsRoute?.slug ? navTo("#/topics") : itlRoute?.id ? navTo("#/it-listening") : minnaRoute?.lesson != null ? navTo(minnaHash(minnaRoute.bookId)) : history.length > 1 ? navigate(-1) : navTo("#/"))}
+				onBack={() => (day ? navTo("#/") : reviewRoute?.id ? navTo("#/review") : topicsRoute?.slug ? navTo("#/topics") : itlRoute?.id ? navTo("#/it-listening") : enlRoute?.id ? navTo("#/en-listening") : minnaRoute?.lesson != null ? navTo(minnaHash(minnaRoute.bookId)) : history.length > 1 ? navigate(-1) : navTo("#/"))}
 				onOpenLevel={() => setSheet("level")}
 			/>
 			<Sidebar routeKey={routeKey} onLevel={pickLevel} />
