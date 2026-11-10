@@ -154,6 +154,16 @@ type ChannelSection = {
 function channelSections(articles: ItListeningIndexEntry[]): ChannelSection[] {
 	const defs: (ChannelSection & { test: (a: ItListeningIndexEntry) => boolean })[] = [
 		{
+			key: "workplace",
+			name: lx("真实职场·面试", "Real workplace & interviews"),
+			note: lx(
+				"公开视频里的职场会话：中途面试、在线模拟面试、朝会报连相、代码评审、和客户对齐需求。逐句对照翻译和语法。",
+				"Workplace conversations from public videos: mid-career and online mock interviews, stand-up reporting, code review, and client checks.",
+			),
+			articles: [],
+			test: (a) => a.series_zh === "真实职场·面试",
+		},
+		{
 			key: "mainichi",
 			name: "まいにち日本語勉強（IT業務編）",
 			note: lx("视频来源频道：まいにち日本語勉強 · 教材《IT業務編》——「場面で覚える」「ウォームアップ」モデル会話", "Source channel: まいにち日本語勉強 — IT業務編 textbook model conversations"),
