@@ -9,6 +9,7 @@ import {
 	type ItListeningArticle,
 	type ItListeningIndex,
 	type ItListeningIndexEntry,
+	type ItListeningPatternExample,
 	type ItListeningRubySegment,
 	type MistakeWordsFile,
 } from "./it-listening";
@@ -57,6 +58,17 @@ function RubySegments({ segs }: { segs: ItListeningRubySegment[] }) {
 /** 解说文本渲染：先把 {漢字|よみ} 轻量标记解析成 ruby 分段再渲染。 */
 function RubyMarkup({ text }: { text: string }) {
 	return <RubySegments segs={parseRubyMarkup(text)} />;
+}
+
+/** 文末小结的例句卡：日语（带注音）+ 中译 + 出处标注（本篇原句 / 通用例句明确区分）。 */
+function PatternExample({ ex }: { ex: ItListeningPatternExample }) {
+	return (
+		<div className="itl-pat-ex">
+			<p className="itl-pat-ex-jp">{ex.ruby && ex.ruby.length ? <RubySegments segs={ex.ruby} /> : ex.jp}</p>
+			<p className="itl-pat-ex-zh">{ex.zh}</p>
+			<span className={`itl-pat-src${ex.origin === "general" ? " gen" : ""}`}>{ex.ref}</span>
+		</div>
+	);
 }
 
 function fmtDuration(sec?: number): string {
@@ -578,6 +590,49 @@ function ItListeningDetail({ id }: { id: string }) {
 					</li>
 				))}
 			</ol>
+
+			{article.patterns ? (
+				<section className="itl-patterns">
+					<h2 className="itl-patterns-title">{article.patterns.title}</h2>
+					{article.patterns.intro ? <p className="itl-patterns-intro">{article.patterns.intro}</p> : null}
+					{article.patterns.groups.map((g, gi) => (
+						<div className="itl-pat-group" key={gi}>
+							<h3 className="itl-pat-heading">{g.heading}</h3>
+							{g.body.map((p, pi) => (
+								<p className="itl-pat-body" key={pi}>
+									{p}
+								</p>
+							))}
+							{g.examples && g.examples.length ? (
+								<div className="itl-pat-examples">
+									{g.examples.map((ex, ei) => (
+										<PatternExample ex={ex} key={ei} />
+									))}
+								</div>
+							) : null}
+							{g.entries && g.entries.length
+								? g.entries.map((e, ei) => (
+										<div className="itl-pat-entry" key={ei}>
+											<p className="itl-pat-form">{e.form}</p>
+											<p className="itl-pat-usage">{e.usage}</p>
+											<div className="itl-pat-examples">
+												{e.examples.map((ex, xi) => (
+													<PatternExample ex={ex} key={xi} />
+												))}
+											</div>
+										</div>
+									))
+								: null}
+							{g.tip ? (
+								<p className="itl-pat-tip">
+									<b>{lx("借用提示", "Borrow this move")}</b>
+									{g.tip}
+								</p>
+							) : null}
+						</div>
+					))}
+				</section>
+			) : null}
 		</div>
 	);
 }

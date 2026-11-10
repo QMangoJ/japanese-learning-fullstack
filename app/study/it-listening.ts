@@ -74,6 +74,45 @@ export type ItListeningAnswerPoints = {
 	pitfalls: string;
 };
 
+/** 文末小结区块的例句：origin=article 必须是本篇某句原文的子串（不许伪造原句）；
+ * origin=general 是通用例句，数据与页面上都会明确标注「通用例句」。 */
+export type ItListeningPatternExample = {
+	jp: string;
+	/** 注音分段：各片段 t 依次拼接应与 jp 完全一致（与句子 ruby 同规则）。 */
+	ruby?: ItListeningRubySegment[];
+	zh: string;
+	origin: "article" | "general";
+	/** 出处/语境（中文），如「本篇原句 · 确认志望动机时」「通用例句（本篇未出现此用法）」。 */
+	ref: string;
+};
+
+/** 「ということ 家族」这类句型家族的一个成员：句型 + 一句话用法 + 例句。 */
+export type ItListeningPatternEntry = {
+	form: string;
+	usage: string;
+	examples: ItListeningPatternExample[];
+};
+
+export type ItListeningPatternGroup = {
+	/** 小标题（中文）。 */
+	heading: string;
+	/** 说明段落（中文）：句型骨架、作用等，一条一段。 */
+	body: string[];
+	/** 给学习者的借用提示（中文，可选）。 */
+	tip?: string;
+	/** 例句直接挂在组下（复述句型组用）。 */
+	examples?: ItListeningPatternExample[];
+	/** 家族成员清单（家族组用）。 */
+	entries?: ItListeningPatternEntry[];
+};
+
+/** 文章末尾的小结区块（可选，目前仅 real-wp-online-mock 带）：把全文反复出现的话术模式收成一页。 */
+export type ItListeningPatterns = {
+	title: string;
+	intro?: string;
+	groups: ItListeningPatternGroup[];
+};
+
 export type ItListeningIndexEntry = {
 	id: string;
 	/** 文章标题 = 来源视频原标题（多篇同视频时带「 — Unit N 区分段」后缀消歧）。 */
@@ -100,6 +139,8 @@ export type ItListeningIndexEntry = {
 export type ItListeningArticle = ItListeningIndexEntry & {
 	note_zh?: string;
 	sentences: ItListeningSentence[];
+	/** 文末话术模式小结（可选）。 */
+	patterns?: ItListeningPatterns;
 };
 
 export type ItListeningIndex = { version: 1; articles: ItListeningIndexEntry[] };

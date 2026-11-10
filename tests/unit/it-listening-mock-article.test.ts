@@ -5,9 +5,10 @@ import { describe, expect, it } from "vitest";
 import type { ItListeningArticle } from "../../app/study/it-listening";
 
 /**
- * real-wp-online-mock 样板篇的数据口径（2026-11-10 五件套）：
+ * real-wp-online-mock 样板篇的数据口径（2026-11-10 五件套 + 文末小结）：
  * ① 第 14 句改文（いただいております）；②③ 讲解深化（全句 structure、grammar 详解）；
- * ⑤ 18 个面试官问题句挂 modelAnswer。其它文章不适用本口径，不在此断言。
+ * ⑤ 18 个面试官问题句挂 modelAnswer；⑥ 文末「面试官话术模式」小结（patterns）。
+ * 其它文章不适用本口径，不在此断言。
  */
 const article = JSON.parse(
 	readFileSync(join(process.cwd(), "public/data/it-listening/real-wp-online-mock.json"), "utf8"),
@@ -74,5 +75,51 @@ describe("it-listening real-wp-online-mock (sample article)", () => {
 				covered.set(c, (covered.get(c) ?? 0) - 1);
 			}
 		});
+	});
+
+	it("ends with the interviewer-patterns summary: real quotes for group 1, marked general examples where the article lacks a usage", () => {
+		const p = article.patterns;
+		expect(p?.title).toBe("面试官话术模式");
+		expect(p?.groups).toHaveLength(2);
+		if (!p) return;
+		const [g1, g2] = p.groups;
+		// 第一组：复述确认句型——骨架/四作用在 body 里、借用提示在 tip 里，例句必须全是本篇原句
+		expect(g1.body.join("")).toContain("ということですね");
+		expect(g1.tip && g1.tip.length).toBeTruthy();
+		expect(g1.examples?.length).toBeGreaterThanOrEqual(3);
+		// 第二组：ということ 家族四成员齐全
+		expect(g2.entries?.map((e) => e.form)).toEqual(["〜ということですね", "〜ということでしょうか", "〜ということは", "〜というのも"]);
+
+		const allExamples = [
+			...(g1.examples ?? []),
+			...(g2.entries ?? []).flatMap((e) => e.examples),
+		];
+		expect(allExamples.length).toBeGreaterThanOrEqual(7);
+		for (const e of allExamples) {
+			expect(e.zh.length).toBeGreaterThan(0);
+			// ruby 分段拼接 == 例句原文，汉字全覆盖（同 modelAnswer 口径）
+			const segs = e.ruby ?? [];
+			expect(segs.map((g) => g.t).join("")).toBe(e.jp);
+			const covered = new Map<string, number>();
+			for (const g of segs) if (g.r) for (const c of g.t) covered.set(c, (covered.get(c) ?? 0) + 1);
+			for (const c of e.jp) {
+				if (!KANJI.test(c)) continue;
+				expect(covered.get(c) ?? 0, `kanji ${c} in pattern example`).toBeGreaterThan(0);
+				covered.set(c, (covered.get(c) ?? 0) - 1);
+			}
+			if (e.origin === "article") {
+				// 本篇原句：必须是某句原文的子串，不许伪造
+				expect(article.sentences.some((s) => s.jp.includes(e.jp)), `quoted as article original: ${e.jp}`).toBe(true);
+				expect(e.ref.startsWith("本篇原句")).toBe(true);
+			} else {
+				// 通用例句：必须明确标注，不许伪装成本篇原句
+				expect(e.ref).toContain("通用例句");
+				expect(article.sentences.some((s) => s.jp.includes(e.jp))).toBe(false);
+			}
+		}
+		for (const ent of g2.entries ?? []) {
+			expect(ent.usage.length).toBeGreaterThanOrEqual(20);
+			expect(ent.examples.length).toBeGreaterThanOrEqual(1);
+		}
 	});
 });

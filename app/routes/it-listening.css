@@ -79,6 +79,28 @@
 .itl-points-label{display:inline-block;margin-bottom:4px;padding:1px 9px;border:1px solid var(--accent);border-radius:999px;color:var(--accent);background:transparent;font-size:11.5px;font-weight:900;letter-spacing:.02em}
 .itl-points p{margin:5px 0 0;font-size:13.5px;line-height:1.7}
 .itl-points p b{margin-right:6px;color:var(--accent);font-weight:900;white-space:nowrap}
+
+/* 文末小结「面试官话术模式」：与句子卡区分开的总结区块（patterns 字段驱动，仅样板篇有） */
+.itl-patterns{margin-top:22px;padding:18px;border:1.5px solid var(--accent);border-radius:14px;background:var(--card);box-shadow:var(--shadow)}
+.itl-patterns-title{margin:0;font-size:19px;line-height:1.35;color:var(--accent)}
+.itl-patterns-intro{margin:8px 0 0;color:var(--sub);font-size:14px;line-height:1.7}
+.itl-pat-group{margin-top:16px;padding-top:14px;border-top:1px dashed var(--line)}
+.itl-pat-heading{margin:0 0 6px;font-size:16px;line-height:1.4}
+.itl-pat-body{margin:6px 0 0;font-size:14px;line-height:1.75}
+.itl-pat-body b{color:var(--accent);font-weight:900}
+.itl-pat-examples{display:grid;gap:8px;margin-top:10px}
+.itl-pat-ex{padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--bg)}
+.itl-pat-ex-jp{margin:0;font-size:15.5px;line-height:1.65}
+.itl-pat-ex-jp:has(ruby){line-height:2}
+.itl-pat-ex-jp rt{font-size:.52em;font-weight:400;color:var(--sub);letter-spacing:.02em}
+.itl-pat-ex-zh{margin:4px 0 0;color:var(--sub);font-size:13.5px;line-height:1.6}
+.itl-pat-src{display:inline-block;margin-top:7px;padding:1px 9px;border:1px solid var(--accent);border-radius:999px;color:var(--accent);font-size:11.5px;font-weight:800;letter-spacing:.02em}
+.itl-pat-src.gen{border-style:dashed;border-color:var(--sub);color:var(--sub)}
+.itl-pat-entry{margin-top:14px}
+.itl-pat-form{display:inline-block;margin:0;padding:3px 12px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-size:14.5px;font-weight:900}
+.itl-pat-usage{margin:7px 0 0;font-size:14px;line-height:1.7}
+.itl-pat-tip{margin:12px 0 0;padding:10px 12px;border-radius:10px;background:var(--accent-soft);font-size:13.5px;line-height:1.7}
+.itl-pat-tip b{margin-right:6px;color:var(--accent);font-weight:900;white-space:nowrap}
 .itl-yt-open{display:inline-flex;margin-top:10px;padding:9px 16px;border-radius:999px;background:#c4302b;color:#fff;font-size:14.5px;font-weight:800;text-decoration:none}
 .itl-yt-open:hover{filter:brightness(1.08)}
 
