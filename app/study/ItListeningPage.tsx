@@ -157,8 +157,8 @@ function channelSections(articles: ItListeningIndexEntry[]): ChannelSection[] {
 			key: "workplace",
 			name: lx("真实职场·面试", "Real workplace & interviews"),
 			note: lx(
-				"公开视频里的职场会话：中途面试、在线模拟面试、朝会报连相、代码评审、和客户对齐需求。逐句对照翻译和语法。",
-				"Workplace conversations from public videos: mid-career and online mock interviews, stand-up reporting, code review, and client checks.",
+				"真人职场：前端工程师对谈、海外团队的故障联络、漏洞应对、中途面试官看材料、工程师模拟面试。逐句对照翻译和语法。",
+				"Real people at work: a frontend panel, an outage across time zones, patching vulnerabilities, and engineer interviews.",
 			),
 			articles: [],
 			test: (a) => a.series_zh === "真实职场·面试",
