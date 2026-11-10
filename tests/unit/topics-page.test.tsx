@@ -10,12 +10,15 @@ import { TopicsPage } from "../../app/study/TopicsPage";
 import { topicDueId } from "../../app/study/topic-vocab";
 
 const DIR = join(process.cwd(), "public/data/topics");
+const READING_DIR = join(process.cwd(), "public/data/reading");
 const realFetch = globalThis.fetch;
 
 beforeEach(() => {
 	resetDueForTests();
 	globalThis.fetch = vi.fn(async (url: string | URL | Request) => {
-		const name = String(url).replace("/data/topics/", "");
+		const u = String(url);
+		if (u.includes("/data/reading/")) return new Response(readFileSync(join(READING_DIR, u.split("/data/reading/")[1]), "utf8"), { status: 200 });
+		const name = u.replace("/data/topics/", "");
 		return new Response(readFileSync(join(DIR, name), "utf8"), { status: 200 });
 	}) as typeof fetch;
 });
@@ -75,30 +78,46 @@ describe("TopicsPage", () => {
 		await waitFor(() => expect(container.querySelectorAll(".topic-item")).toHaveLength(1));
 	});
 
-	it("puts readings as ruby over kanji only on kanji-journey script cards", async () => {
+	it("renders kanji-journey as a reading article (IT-listening form), not flashcards", async () => {
 		const { container } = render(<TopicsPage slug="kanji-journey" />);
-		await waitFor(() => expect(container.querySelector('[data-card="kj-002"]')).not.toBeNull());
-		const head = (id: string) => container.querySelector(`[data-card="${id}"] .topic-item__top`)!;
+		await screen.findByText("《漢字的旅程》");
+		// 旧闪卡形态消失：没有专题卡片列表、没有子主题筛选。
+		expect(container.querySelector(".topic-item")).toBeNull();
+		expect(container.querySelector(".topic-subs")).toBeNull();
+		// 五节正文 + 来宾问答节，顺序与原稿一致。
+		const heads = [...container.querySelectorAll(".kj-section-h")].map((h) => h.childNodes[0]?.textContent);
+		expect(heads).toEqual(["开场", "最古老的汉字", "字形的变化", "来到日本", "结尾", "来宾问答"]);
+		// 正文 23 句连续编号 1..23；问答 6 问 6 答；救命句 1 条。每句都有朗读按钮。
+		const sections = [...container.querySelectorAll(".kj-section")];
+		const bodyRows = sections.slice(0, 5).flatMap((s) => [...s.querySelectorAll(".itl-sentence")]);
+		expect(bodyRows).toHaveLength(23);
+		expect(bodyRows.map((r) => r.querySelector(".itl-s-no")?.textContent)).toEqual(Array.from({ length: 23 }, (_, i) => String(i + 1)));
+		expect(container.querySelectorAll(".kj-qa")).toHaveLength(6);
+		expect(container.querySelectorAll(".itl-sentence")).toHaveLength(23 + 12 + 1);
+		expect(container.querySelectorAll(".sayb")).toHaveLength(23 + 12 + 1);
+		// 第 2 句的注音：ruby 只罩汉字（中国/来），读音对，假名在 ruby 外。
+		const second = bodyRows[1];
 		const rubyBase = (r: Element) =>
 			[...r.childNodes]
 				.filter((n) => n.nodeType === 3)
 				.map((n) => n.textContent)
 				.join("");
-		// 正文句（kj-002）：复用分段注音渲染主句——ruby 只罩汉字，假名部分在 ruby 外，主区没有整行 kana。
-		const top = head("kj-002");
-		expect(top.querySelector(".topic-item__kana")).toBeNull();
-		const rubies = [...top.querySelectorAll(".topic-item__jp ruby")];
+		const rubies = [...second.querySelectorAll(".itl-jp ruby")];
 		expect(rubies.map(rubyBase)).toEqual(["中国", "来"]);
 		expect(rubies.map((r) => r.querySelector("rt")?.textContent)).toEqual(["ちゅうごく", "き"]);
-		expect(top.querySelector(".topic-item__jp")?.textContent).toContain("から");
-		// 全假名开场句（kj-001）：没有汉字就不需要注音，也不摆 kana 行。
-		const plain = head("kj-001");
-		expect(plain.querySelector("ruby")).toBeNull();
-		expect(plain.querySelector(".topic-item__kana")).toBeNull();
-		// 问句卡（kj-024）：例句是回答、主句没有分段 → 保留整行 kana 兜底。
-		const qa = head("kj-024");
-		expect(qa.querySelector(".topic-item__jp ruby")).toBeNull();
-		expect(qa.querySelector(".topic-item__kana")?.textContent).toBe("この どうがは じぶんで つくったんですか");
+		expect(second.querySelector(".itl-jp")?.textContent).toContain("から");
+		// 问句同样带注音（Q3 甲骨文字）；Q6 的「〇週間」占位原样保留，不许被填上数字。
+		// textContent 会把 ruby 读音插进句中，比对时先剥掉 <rt> 只留正文。
+		const baseText = (el: Element) => {
+			const clone = el.cloneNode(true) as Element;
+			clone.querySelectorAll("rt").forEach((rt) => rt.remove());
+			return clone.textContent;
+		};
+		const qaPairs = [...container.querySelectorAll(".kj-qa")];
+		expect(baseText(qaPairs[2].querySelector(".itl-jp")!)).toBe("甲骨文字はいつ見つかりましたか。");
+		expect(baseText(qaPairs[5].querySelector(".kj-qa-a .itl-jp")!)).toBe("〇週間ぐらいかかりました。");
+		// 救命句在文末小注区。
+		expect(baseText(container.querySelector(".kj-rescue .itl-jp")!)).toBe("すみません、もう一度お願いします。");
 	});
 
 	it("renders word cards as whole-word ruby without a kana row", async () => {

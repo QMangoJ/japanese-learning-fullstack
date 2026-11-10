@@ -16,6 +16,10 @@ type View = "list" | "cards" | "board";
 /** 有专用「看板」页面的专题：默认打开看板，「单词表」由看板代替，闪卡复习仍用通用格式。 */
 const BOARD_SLUGS = new Set(["cafe-menu"]);
 
+/** 阅读文章型专题（index 里 kind: "reading"）：详情不是闪卡，而是一篇 IT 听力式的阅读文章。 */
+const READING_SLUGS = new Set(["kanji-journey"]);
+const LazyKanjiJourneyPage = lazy(() => import("./KanjiJourneyPage").then((module) => ({ default: module.KanjiJourneyPage })));
+
 /** 专题知识分组（与侧边栏信息架构一致）：工作面试 / 生活 / 投资理财 / 通用；未列出的 slug 一律归通用。 */
 const TOPIC_GROUP_OF: Record<string, "work" | "life" | "invest"> = {
 	"job-interview": "work",
@@ -76,6 +80,13 @@ export function gradeTopicCard(topic: Pick<TopicFile, "slug">, card: TopicCard, 
 }
 
 export function TopicsPage({ slug }: { slug: string | null }) {
+	if (slug && READING_SLUGS.has(slug)) {
+		return (
+			<Suspense fallback={<div className="empty">{lx("文章加载中…", "Loading article…")}</div>}>
+				<LazyKanjiJourneyPage />
+			</Suspense>
+		);
+	}
 	return slug ? <TopicDetail slug={slug} /> : <TopicList />;
 }
 
@@ -130,7 +141,7 @@ function TopicCardGroups({ index }: { index: TopicIndex }) {
 							<div key={t.slug}>
 								<button type="button" className="review-day topic-card" data-topic={t.slug} onClick={() => navTo(`#/topics/${t.slug}`)}>
 									<span className="d">
-										{lx(`${t.count} 个词`, `${t.count} cards`)}
+										{t.kind === "reading" ? lx(`阅读 · ${t.count} 句`, `Reading · ${t.count} sentences`) : lx(`${t.count} 个词`, `${t.count} cards`)}
 									</span>
 									<span className="t">{lx(t.title_zh, t.title_en || t.title_zh)}</span>
 									<span className="tc jp">{t.title_ja}</span>

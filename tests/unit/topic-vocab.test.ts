@@ -241,8 +241,9 @@ describe("topic vocabulary review", () => {
 
 describe("topic example furigana", () => {
 	const dir = join(process.cwd(), "public/data/topics");
-	const index = JSON.parse(readFileSync(join(dir, "index.json"), "utf8")) as { topics: { slug: string }[] };
-	for (const { slug } of index.topics) {
+	const index = JSON.parse(readFileSync(join(dir, "index.json"), "utf8")) as { topics: { slug: string; kind?: string }[] };
+	// kind: "reading" 的条目是阅读文章型，没有专题卡片文件，其注音由 kanji-journey-reading.test.ts 校验。
+	for (const { slug } of index.topics.filter((t) => t.kind !== "reading")) {
 		it(`${slug}: every example with kanji has ruby readings over all its kanji`, () => {
 			const topic: TopicFile = JSON.parse(readFileSync(join(dir, `${slug}.json`), "utf8"));
 			for (const card of topic.cards) {

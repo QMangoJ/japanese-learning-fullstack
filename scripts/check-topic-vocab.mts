@@ -4,6 +4,9 @@
  *   node --experimental-strip-types scripts/check-topic-vocab.mts
  *
  * 规则见 app/study/topic-vocab.ts 与 public/data/topics/README.md。index 的 count / 标题 / 子主题必须和专题文件一致。
+ * 例外：index 里 kind: "reading" 的条目是阅读文章型（数据在 public/data/reading/<slug>.json，
+ * 结构与校验见 app/study/kanji-journey.ts 和 tests/unit/kanji-journey-reading.test.ts），
+ * 本目录里没有它的卡片文件，这里只校验 index 条目本身，不做文件一致性比对。
  */
 import { readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
@@ -27,6 +30,7 @@ export function checkTopicDir(dir: string): string[] {
 		if (!listed.has(slug)) errors.push(`${file}: not listed in index.json`);
 	}
 	for (const entry of index.topics) {
+		if (entry.kind === "reading") continue;
 		let topic: TopicFile;
 		try {
 			topic = JSON.parse(readFileSync(join(dir, `${entry.slug}.json`), "utf8"));
@@ -53,5 +57,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
 		process.exit(1);
 	}
 	const index: TopicIndex = JSON.parse(readFileSync(join(dir, "index.json"), "utf8"));
-	console.log(`✓ ${index.topics.length} topic(s): ${index.topics.map((t) => `${t.slug} (${t.count})`).join(", ")}`);
+	console.log(
+		`✓ ${index.topics.length} topic(s): ${index.topics.map((t) => `${t.slug} (${t.count}${t.kind === "reading" ? " sentences, reading" : ""})`).join(", ")}`,
+	);
 }

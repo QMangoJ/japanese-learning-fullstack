@@ -2,6 +2,12 @@
 
 学习区「专题词汇」(`/study/topics`) 读这里的文件。每个专题一个 JSON，`index.json` 是目录。
 
+例外：《漢字的旅程》（`kanji-journey`）在 2026-11-10 改成了 IT 听力式的阅读文章，
+数据迁到了 `public/data/reading/kanji-journey.json`（见该目录的 README）。它在
+`index.json` 里保留条目并标 `"kind": "reading"`（`count` = 正文句数），总览页照常
+在通用组列出、路由仍是 `#/topics/kanji-journey`，但本目录里没有它的卡片文件，
+`check-topic-vocab` 对它只校验 index 条目本身。
+
 ```
 public/data/topics/
   index.json            { "version": 1, "topics": [ { slug, title_zh, title_ja, title_en?, count, subtopics } ] }

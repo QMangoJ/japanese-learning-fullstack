@@ -54,6 +54,10 @@ export type TopicFile = {
 
 export type TopicIndexEntry = {
 	slug: string;
+	/** 条目形态：缺省 "vocab" = 专题词汇闪卡（数据在 topics/<slug>.json）；
+	 * "reading" = 阅读文章型（如《漢字的旅程》发表稿，数据在 public/data/reading/<slug>.json，
+	 * count 为正文句数，详情页渲染文章页而不是闪卡）。 */
+	kind?: "vocab" | "reading";
 	title_zh: string;
 	title_ja: string;
 	title_en?: string;
@@ -189,6 +193,7 @@ export function validateTopicIndex(data: unknown): string[] {
 		if (typeof t.slug !== "string" || !TOPIC_SLUG.test(t.slug)) errors.push(`${where}: slug must be kebab-case`);
 		else if (slugs.has(t.slug)) errors.push(`${where}: duplicate slug ${t.slug}`);
 		else slugs.add(t.slug);
+		if (t.kind !== undefined && t.kind !== "vocab" && t.kind !== "reading") errors.push(`${where}: kind must be "vocab" or "reading" when present`);
 		if (!text(t.title_zh, true) || !text(t.title_ja, true) || !text(t.title_en, false)) errors.push(`${where}: title_zh / title_ja are required`);
 		if (typeof t.count !== "number" || !Number.isInteger(t.count) || t.count < 0) errors.push(`${where}: count must be a non-negative integer`);
 		if (t.subtopics !== undefined && !(Array.isArray(t.subtopics) && t.subtopics.every((s) => typeof s === "string"))) {
