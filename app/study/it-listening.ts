@@ -66,6 +66,9 @@ export type ItListeningIndexEntry = {
 	channelUrl?: string;
 	youtube: string;
 	videoId: string;
+	/** 来源 YouTube 视频的真实标题（oEmbed 取回）：同一视频拆出的多篇文章共享同一标题，
+	 * 列表/详情页展示用，方便按视频对上文章。 */
+	videoTitle?: string;
 	durationSec?: number;
 	sentenceCount: number;
 };

@@ -150,6 +150,20 @@ type ChannelSection = {
 	articles: ItListeningIndexEntry[];
 };
 
+/** 同一视频拆出的文章数（按 videoId 计数），供标题消歧用。 */
+function countByVideo(articles: ItListeningIndexEntry[]): Map<string, number> {
+	const m = new Map<string, number>();
+	for (const a of articles) m.set(a.videoId, (m.get(a.videoId) ?? 0) + 1);
+	return m;
+}
+
+/** 文章主标题 = 来源 YouTube 视频原标题（Daniel 定：按视频对上号）；
+ * 同一视频拆出多篇时以（Unit N）后缀消歧；无 videoTitle 时回退教材单元标题。 */
+function displayTitle(a: ItListeningIndexEntry, counts: Map<string, number>): string {
+	if (!a.videoTitle) return a.title_zh;
+	return (counts.get(a.videoId) ?? 0) > 1 && a.unit ? `${a.videoTitle}（Unit ${a.unit}）` : a.videoTitle;
+}
+
 /** 按来源频道分组：归属以数据 channelUrl 为准（source 文本兜底），区内保留 index 原序（系列/单元排序不变）。 */
 function channelSections(articles: ItListeningIndexEntry[]): ChannelSection[] {
 	const defs: (ChannelSection & { test: (a: ItListeningIndexEntry) => boolean })[] = [
@@ -211,6 +225,7 @@ function ItListeningList() {
 	}, []);
 
 	const sections = useMemo(() => (index ? channelSections(index.articles) : []), [index]);
+	const videoCounts = useMemo(() => (index ? countByVideo(index.articles) : new Map<string, number>()), [index]);
 	const active = sections.find((s) => s.key === tab) ?? sections[0];
 
 	const pickTab = (key: string) => {
@@ -278,9 +293,10 @@ function ItListeningList() {
 										{a.track ? ` · ${a.track}` : ""}
 									</span>
 									<strong>
-										{a.title_zh}
+										{displayTitle(a, videoCounts)}
 										{doneIds.has(a.id) ? <span className="itl-done-badge">✓ {lx("学完", "Done")}</span> : null}
 									</strong>
+									<span className="itl-card-sub">{a.title_zh}</span>
 									<span className="itl-card-ja">{a.title_ja}</span>
 									<span className="itl-card-meta">
 										{a.source} · {lx(`${a.sentenceCount} 句`, `${a.sentenceCount} sentences`)}
@@ -303,6 +319,7 @@ function ItListeningDetail({ id }: { id: string }) {
 	const { doneIds } = useItlDone();
 	const done = doneIds.has(id);
 	const [article, setArticle] = useState<ItListeningArticle | null>(null);
+	const [videoCounts, setVideoCounts] = useState<Map<string, number>>(new Map());
 	const [error, setError] = useState(false);
 
 	useEffect(() => {
@@ -316,6 +333,12 @@ function ItListeningDetail({ id }: { id: string }) {
 				else setError(true);
 			})
 			.catch(() => alive && setError(true));
+		// 标题消歧需要全量计数（同一视频拆几篇），与列表页同一口径。
+		loadJson("/data/it-listening/index.json")
+			.then((v) => {
+				if (alive && isItListeningIndex(v)) setVideoCounts(countByVideo(v.articles));
+			})
+			.catch(() => {});
 		return () => {
 			alive = false;
 		};
@@ -355,8 +378,8 @@ function ItListeningDetail({ id }: { id: string }) {
 					{article.unit ? ` · Unit ${article.unit}` : ""}
 					{article.track ? ` · ${article.track}` : ""}
 				</span>
-				<h1>{article.title_zh}</h1>
-				<p className="itl-head-ja">{article.title_ja}</p>
+				<h1>{displayTitle(article, videoCounts)}</h1>
+				<p className="itl-head-ja">{article.videoTitle ? `${article.title_zh} · ${article.title_ja}` : article.title_ja}</p>
 				<p className="itl-head-meta">
 					{lx("来源", "Source")}：{article.source}
 					{article.durationSec ? ` · ${fmtDuration(article.durationSec)}` : ""} · {lx(`${article.sentences.length} 句`, `${article.sentences.length} sentences`)}
