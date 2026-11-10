@@ -97,11 +97,16 @@ describe("TopicsPage", () => {
 			"结尾",
 			"来宾问答",
 		]);
-		// 正文 23 句连续编号 1..23；问答 6 问 6 答；救命句 1 条。本页不带朗读按钮，全页不应出现 .sayb。
+		// 正文 23 句；问答 6 问 6 答；救命句 1 条。本页不带朗读按钮，正文句首也不带连续序号。
+		// 全页不应出现 .sayb / .itl-s-no；问答的 Q 编号是问题标识，保留。
 		const sections = [...container.querySelectorAll(".kj-section")];
 		const bodyRows = sections.slice(0, 8).flatMap((s) => [...s.querySelectorAll(".itl-sentence")]);
 		expect(bodyRows).toHaveLength(23);
-		expect(bodyRows.map((r) => r.querySelector(".itl-s-no")?.textContent)).toEqual(Array.from({ length: 23 }, (_, i) => String(i + 1)));
+		expect(container.querySelectorAll(".itl-s-no")).toHaveLength(0);
+		expect(bodyRows.every((r) => r.querySelector(".itl-s-top") === null)).toBe(true);
+		expect([...container.querySelectorAll(".kj-qa .kj-chip")].map((c) => c.textContent)).toEqual([
+			"Q1", "A", "Q2", "A", "Q3", "A", "Q4", "A", "Q5", "A", "Q6", "A",
+		]);
 		expect(container.querySelectorAll(".kj-qa")).toHaveLength(6);
 		expect(container.querySelectorAll(".itl-sentence")).toHaveLength(23 + 12 + 1);
 		expect(container.querySelectorAll(".sayb")).toHaveLength(0);

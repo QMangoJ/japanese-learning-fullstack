@@ -8,10 +8,11 @@ import "../routes/kanji-journey.css";
 
 /**
  * 《漢字的旅程》阅读页：v6 日语版视频的暂停讲解备忘录，形态沿用 IT 听力文章页。
- * 正文八段（开场、六处暂停、结尾），每句「注音原句 + 中文译文」，连续编号；
+ * 正文八段（开场、六处暂停、结尾），每句「注音原句 + 中文译文」；
  * 第 1–6 段在句子上方用小注标暂停时码和旁白最后一句。
- * 正文后是「来宾问答」，文末一条救命句。本页不带朗读按钮
- * （样式收口在 kanji-journey.css 的 .kj-page 作用域内，不影响 IT 听力页）。
+ * 正文后是「来宾问答」，文末一条救命句。本页不带朗读按钮，正文句首也不带连续序号
+ * （样式收口在 kanji-journey.css 的 .kj-page 作用域内，不影响 IT 听力页；
+ * 问答的 Q1–Q6 / A 标识是问题编号，保留）。
  * 不接 IT 听力的「学完」同步，也不做本地已读标记。
  */
 
@@ -48,13 +49,12 @@ function RubySegments({ segs }: { segs: ItListeningRubySegment[] }) {
 	);
 }
 
-function SentenceLine({ s, no, chip }: { s: KjSentence; no?: number; chip?: string }) {
+function SentenceLine({ s, chip }: { s: KjSentence; chip?: string }) {
 	return (
 		<li className="itl-sentence">
-			{chip || no ? (
+			{chip ? (
 				<div className="itl-s-top">
-					{chip ? <span className="kj-chip">{chip}</span> : null}
-					{no ? <span className="itl-s-no">{no}</span> : null}
+					<span className="kj-chip">{chip}</span>
 				</div>
 			) : null}
 			<p className="itl-jp">{s.ruby && s.ruby.length ? <RubySegments segs={s.ruby} /> : s.jp}</p>
@@ -97,7 +97,6 @@ export function KanjiJourneyPage() {
 	}
 
 	const bodyCount = article.sections.reduce((n, s) => n + s.sentences.length, 0);
-	let running = 0;
 
 	return (
 		<div className="itl-page kj-page">
@@ -130,11 +129,9 @@ export function KanjiJourneyPage() {
 						</p>
 					) : null}
 					<ol className="itl-sentences">
-						{sec.sentences.map((s) => {
-							running += 1;
-							const no = running;
-							return <SentenceLine key={s.id} s={s} no={no} />;
-						})}
+						{sec.sentences.map((s) => (
+							<SentenceLine key={s.id} s={s} />
+						))}
 					</ol>
 				</section>
 			))}
