@@ -176,6 +176,16 @@ function channelSections(articles: ItListeningIndexEntry[]): ChannelSection[] {
 			test: (a) => a.series_zh === "真实职场·面试",
 		},
 		{
+			key: "life",
+			name: lx("真实生活", "Real life in Japan"),
+			note: lx(
+				"真实生活场景：在银行柜台开户的完整对话——要带什么证件、没印章怎么办、借记卡和信用卡怎么选。逐句对照翻译和语法。",
+				"Real-life scenes: opening a bank account at the counter — what to bring, signing without a seal, and choosing a card.",
+			),
+			articles: [],
+			test: (a) => a.series_zh === "真实生活",
+		},
+		{
 			key: "mainichi",
 			name: "まいにち日本語勉強（IT業務編）",
 			note: lx("视频来源频道：まいにち日本語勉強 · 教材《IT業務編》——「場面で覚える」「ウォームアップ」モデル会話", "Source channel: まいにち日本語勉強 — IT業務編 textbook model conversations"),
