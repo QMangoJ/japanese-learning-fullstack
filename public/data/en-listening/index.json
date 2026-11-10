@@ -1,0 +1,289 @@
+{
+  "version": 1,
+  "official": [
+    {
+      "label_zh": "IIBC 官方样题（含听力音频）",
+      "url": "https://www.iibc-global.org/toeic/test/lr/about/format/sample01.html",
+      "note_zh": "TOEIC L&R 各部分样题。点播放听官方录音，不要把音频下载进别的站点。"
+    },
+    {
+      "label_zh": "IIBC 英文说明：题型和样题入口",
+      "url": "https://www.iibc-global.org/english/toeic/test/lr/about/format.html",
+      "note_zh": "英文页说明 Part 1–7。样题音频链到日文样题页。"
+    },
+    {
+      "label_zh": "ETS 备考页（手册和样卷）",
+      "url": "https://www.ets.org/toeic/test-takers/prepare.html",
+      "note_zh": "ETS 给考生的官方备考入口，含 Examinee Handbook 和 Sample Tests。"
+    },
+    {
+      "label_zh": "ETS 样卷 PDF（试卷，不含听力文件）",
+      "url": "https://www.ets.org/pdfs/toeic/toeic-listening-reading-sample-test.pdf",
+      "note_zh": "这是纸试卷。听力请到 IIBC 样题页听，不要把 ETS 的录音拷出来。"
+    }
+  ],
+  "plan": [
+    {
+      "date": "2026-11-11",
+      "id": "en-behavioral-intro",
+      "pass": "new"
+    },
+    {
+      "date": "2026-11-12",
+      "id": "en-sysdesign-requirements",
+      "pass": "new"
+    },
+    {
+      "date": "2026-11-13",
+      "id": "en-frontend-interview",
+      "pass": "new"
+    },
+    {
+      "date": "2026-11-14",
+      "id": "en-code-review",
+      "pass": "new"
+    },
+    {
+      "date": "2026-11-15",
+      "id": "en-rn-postmortem",
+      "pass": "new"
+    },
+    {
+      "date": "2026-11-16",
+      "id": "en-phone-manner",
+      "pass": "new"
+    },
+    {
+      "date": "2026-11-17",
+      "id": "en-meeting-agenda",
+      "pass": "new"
+    },
+    {
+      "date": "2026-11-18",
+      "id": "en-phone-messages",
+      "pass": "new"
+    },
+    {
+      "date": "2026-11-19",
+      "id": "en-conference-call",
+      "pass": "new"
+    },
+    {
+      "date": "2026-11-20",
+      "id": "en-presentation-open",
+      "pass": "new"
+    },
+    {
+      "date": "2026-11-21",
+      "id": "en-behavioral-intro",
+      "pass": "review"
+    },
+    {
+      "date": "2026-11-22",
+      "id": "en-sysdesign-requirements",
+      "pass": "review"
+    },
+    {
+      "date": "2026-11-23",
+      "id": "en-frontend-interview",
+      "pass": "review"
+    },
+    {
+      "date": "2026-11-24",
+      "id": "en-code-review",
+      "pass": "review"
+    },
+    {
+      "date": "2026-11-25",
+      "id": "en-rn-postmortem",
+      "pass": "review"
+    },
+    {
+      "date": "2026-11-26",
+      "id": "en-phone-manner",
+      "pass": "review"
+    },
+    {
+      "date": "2026-11-27",
+      "id": "en-meeting-agenda",
+      "pass": "review"
+    },
+    {
+      "date": "2026-11-28",
+      "id": "en-phone-messages",
+      "pass": "review"
+    },
+    {
+      "date": "2026-11-29",
+      "id": "en-conference-call",
+      "pass": "review"
+    },
+    {
+      "date": "2026-11-30",
+      "id": "en-presentation-open",
+      "pass": "review"
+    }
+  ],
+  "articles": [
+    {
+      "id": "en-behavioral-intro",
+      "title_zh": "Behavioral Interview: Interview with a FAANG Engineer",
+      "title_en": "Behavioral Interview: Interview with a FAANG Engineer",
+      "videoTitle": "Behavioral Interview: Interview with a FAANG Engineer",
+      "textbookTitle_zh": "行为面试开场：用两三分钟介绍自己",
+      "series_zh": "技术与面试",
+      "source": "interviewing.io（YouTube）",
+      "channelUrl": "https://www.youtube.com/@interviewingio",
+      "youtube": "https://www.youtube.com/watch?v=AK0JgiFJmSY",
+      "videoId": "AK0JgiFJmSY",
+      "startSec": 0,
+      "endSec": 349,
+      "durationSec": 349,
+      "sentenceCount": 19
+    },
+    {
+      "id": "en-sysdesign-requirements",
+      "title_zh": "System Design Interview: Design YouTube",
+      "title_en": "System Design Interview: Design YouTube",
+      "videoTitle": "System Design Interview: Design YouTube",
+      "textbookTitle_zh": "系统设计：先写用户能做什么，再写系统要保证什么",
+      "series_zh": "技术与面试",
+      "source": "Hello Interview（YouTube）",
+      "channelUrl": "https://www.youtube.com/@hello_interview",
+      "youtube": "https://www.youtube.com/watch?v=IUrQ5_g3XKs&t=217s",
+      "videoId": "IUrQ5_g3XKs",
+      "startSec": 217,
+      "endSec": 485,
+      "durationSec": 268,
+      "sentenceCount": 14
+    },
+    {
+      "id": "en-frontend-interview",
+      "title_zh": "Code, make mistakes, get community feedback & improve | RNEU 2023 Interview with Mathieu Acthernoene",
+      "title_en": "Code, make mistakes, get community feedback & improve | RNEU 2023 Interview with Mathieu Acthernoene",
+      "videoTitle": "Code, make mistakes, get community feedback & improve | RNEU 2023 Interview with Mathieu Acthernoene",
+      "textbookTitle_zh": "前端短访：这个库不模块化，改一点、听反馈、再改",
+      "series_zh": "技术与面试",
+      "source": "Callstack（YouTube）",
+      "channelUrl": "https://www.youtube.com/@CallstackEngineers",
+      "youtube": "https://www.youtube.com/watch?v=lmb5hLNymKg",
+      "videoId": "lmb5hLNymKg",
+      "startSec": 0,
+      "endSec": 300,
+      "durationSec": 300,
+      "sentenceCount": 18
+    },
+    {
+      "id": "en-code-review",
+      "title_zh": "🚀 Space Reviewers 👾 Episode 2 - Django - Include ModelForm and its Meta options in reference docs",
+      "title_en": "🚀 Space Reviewers 👾 Episode 2 - Django - Include ModelForm and its Meta options in reference docs",
+      "videoTitle": "🚀 Space Reviewers 👾 Episode 2 - Django - Include ModelForm and its Meta options in reference docs",
+      "textbookTitle_zh": "代码评审：两个人一起看一则文档改动",
+      "series_zh": "技术与面试",
+      "source": "Djangonaut Space（YouTube）",
+      "channelUrl": "https://www.youtube.com/@djangonautspace",
+      "youtube": "https://www.youtube.com/watch?v=J8kio5fY1Pw",
+      "videoId": "J8kio5fY1Pw",
+      "startSec": 0,
+      "endSec": 331,
+      "durationSec": 331,
+      "sentenceCount": 11
+    },
+    {
+      "id": "en-rn-postmortem",
+      "title_zh": "The day I broke React Native - Nicola Corti | React Native EU 2023",
+      "title_en": "The day I broke React Native - Nicola Corti | React Native EU 2023",
+      "videoTitle": "The day I broke React Native - Nicola Corti | React Native EU 2023",
+      "textbookTitle_zh": "事故复盘：一次发布把大家的 Android 构建弄坏了",
+      "series_zh": "技术与面试",
+      "source": "Callstack（YouTube）",
+      "channelUrl": "https://www.youtube.com/@CallstackEngineers",
+      "youtube": "https://www.youtube.com/watch?v=Rers6rpuGTo",
+      "videoId": "Rers6rpuGTo",
+      "startSec": 0,
+      "endSec": 270,
+      "durationSec": 270,
+      "sentenceCount": 13
+    },
+    {
+      "id": "en-phone-manner",
+      "title_zh": "Talking on the phone – 15 – English at Work has the top tips for you",
+      "title_en": "Talking on the phone – 15 – English at Work has the top tips for you",
+      "videoTitle": "Talking on the phone – 15 – English at Work has the top tips for you",
+      "textbookTitle_zh": "办公室电话：报上公司名，对方不在就留口信",
+      "series_zh": "商务日常",
+      "source": "BBC Learning English（YouTube）",
+      "channelUrl": "https://www.youtube.com/@bbclearningenglish",
+      "youtube": "https://www.youtube.com/watch?v=yzPX6zmaBdg",
+      "videoId": "yzPX6zmaBdg",
+      "startSec": 0,
+      "endSec": 311,
+      "durationSec": 311,
+      "sentenceCount": 30
+    },
+    {
+      "id": "en-meeting-agenda",
+      "title_zh": "Setting an agenda – 20 – English at Work sets the meeting agenda",
+      "title_en": "Setting an agenda – 20 – English at Work sets the meeting agenda",
+      "videoTitle": "Setting an agenda – 20 – English at Work sets the meeting agenda",
+      "textbookTitle_zh": "老板迟到了，先把议程念出来",
+      "series_zh": "商务日常",
+      "source": "BBC Learning English（YouTube）",
+      "channelUrl": "https://www.youtube.com/@bbclearningenglish",
+      "youtube": "https://www.youtube.com/watch?v=9iO29NsoYWw",
+      "videoId": "9iO29NsoYWw",
+      "startSec": 0,
+      "endSec": 220,
+      "durationSec": 220,
+      "sentenceCount": 17
+    },
+    {
+      "id": "en-phone-messages",
+      "title_zh": "Taking telephone messages - 53 - English at Work helps you note it down",
+      "title_en": "Taking telephone messages - 53 - English at Work helps you note it down",
+      "videoTitle": "Taking telephone messages - 53 - English at Work helps you note it down",
+      "textbookTitle_zh": "忙的时候接电话：记下名字、号码和什么时候回",
+      "series_zh": "商务日常",
+      "source": "BBC Learning English（YouTube）",
+      "channelUrl": "https://www.youtube.com/@bbclearningenglish",
+      "youtube": "https://www.youtube.com/watch?v=Qo6VHK5n_LU",
+      "videoId": "Qo6VHK5n_LU",
+      "startSec": 0,
+      "endSec": 297,
+      "durationSec": 297,
+      "sentenceCount": 24
+    },
+    {
+      "id": "en-conference-call",
+      "title_zh": "A Conference Call in Real Life",
+      "title_en": "A Conference Call in Real Life",
+      "videoTitle": "A Conference Call in Real Life",
+      "textbookTitle_zh": "电话会议：谁进来了、谁掉线了、谁在静音",
+      "series_zh": "商务日常",
+      "source": "Best,（YouTube）",
+      "channelUrl": "https://www.youtube.com/@best.comma.d",
+      "youtube": "https://www.youtube.com/watch?v=DYu_bGbZiiQ",
+      "videoId": "DYu_bGbZiiQ",
+      "startSec": 0,
+      "endSec": 240,
+      "durationSec": 240,
+      "sentenceCount": 34
+    },
+    {
+      "id": "en-presentation-open",
+      "title_zh": "Opening a presentation – 12 – English at Work helps you start the right way",
+      "title_en": "Opening a presentation – 12 – English at Work helps you start the right way",
+      "videoTitle": "Opening a presentation – 12 – English at Work helps you start the right way",
+      "textbookTitle_zh": "产品介绍的开头：先说今天讲三块什么",
+      "series_zh": "商务日常",
+      "source": "BBC Learning English（YouTube）",
+      "channelUrl": "https://www.youtube.com/@bbclearningenglish",
+      "youtube": "https://www.youtube.com/watch?v=1afHeCHquf0",
+      "videoId": "1afHeCHquf0",
+      "startSec": 0,
+      "endSec": 238,
+      "durationSec": 238,
+      "sentenceCount": 15
+    }
+  ]
+}

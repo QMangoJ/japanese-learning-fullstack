@@ -1,0 +1,154 @@
+{
+  "id": "en-phone-messages",
+  "title_zh": "Taking telephone messages - 53 - English at Work helps you note it down",
+  "title_en": "Taking telephone messages - 53 - English at Work helps you note it down",
+  "videoTitle": "Taking telephone messages - 53 - English at Work helps you note it down",
+  "textbookTitle_zh": "忙的时候接电话：记下名字、号码和什么时候回",
+  "series_zh": "商务日常",
+  "source": "BBC Learning English（YouTube）",
+  "channelUrl": "https://www.youtube.com/@bbclearningenglish",
+  "youtube": "https://www.youtube.com/watch?v=Qo6VHK5n_LU",
+  "videoId": "Qo6VHK5n_LU",
+  "startSec": 0,
+  "endSec": 297,
+  "durationSec": 297,
+  "sentenceCount": 24,
+  "note_zh": "整集 4:57。BBC《English at Work》第 53 集，演员真人配音，字幕即官方台词。",
+  "sentences": [
+    {
+      "speaker": "Paul",
+      "en": "Will someone answer that phone?",
+      "zh": "谁去接一下电话？"
+    },
+    {
+      "speaker": "Narrator",
+      "en": "The office has become chaotic since Denise left, just when things are getting busy.",
+      "zh": "Denise 一走，办公室就乱了，偏偏事情又忙起来。"
+    },
+    {
+      "speaker": "Tom",
+      "en": "Hello. Yes? It is. We're very busy, so call back later. Bye.",
+      "zh": "喂。对，是。我们很忙，你过会儿再打。再见。"
+    },
+    {
+      "speaker": "Anna",
+      "en": "That was a bit rude, Tom.",
+      "zh": "Tom，这有点无礼。"
+    },
+    {
+      "speaker": "Tom",
+      "en": "Well, we're too busy to be nice.",
+      "zh": "我们忙得没工夫客气。"
+    },
+    {
+      "speaker": "Narrator",
+      "en": "Even when you are busy, it's important to be polite on the phone. It could be a potential customer.",
+      "zh": "再忙，电话上也要客气。说不定是潜在客户。",
+      "vocab": [
+        {
+          "w": "potential customer",
+          "zh": "潜在客户"
+        }
+      ]
+    },
+    {
+      "speaker": "Narrator",
+      "en": "You could say: We're a bit busy at the moment. Could I take your name and number, and we'll call you back? When would be a convenient time to call you?",
+      "zh": "你可以这样说：我们这会儿有点忙。我能记下你的名字和号码，再打给你吗？什么时候打给你方便？",
+      "note": "When would be a convenient time to call you? 约回拨时间，不要只说我们很忙。"
+    },
+    {
+      "speaker": "Narrator",
+      "en": "If they want a particular person, say: Could I take a message, and I'll make sure he or she calls you back?",
+      "zh": "如果他们要找某个具体的人：我能记个口信，让他回你吗？"
+    },
+    {
+      "speaker": "Paul",
+      "en": "Anna, could you get that, please? I've got a mouthful of biscuit.",
+      "zh": "Anna，你接一下好吗？我嘴里塞着饼干。"
+    },
+    {
+      "speaker": "Anna",
+      "en": "Hello? Tip Top Trading. Yes, that's right, but things are a bit busy at the moment. Could I take your name and number, and I'll call you back as soon as I can?",
+      "zh": "你好，Tip Top Trading。对，是这里，不过我们这会儿有点忙。我能记下你的名字和号码，尽快打回去吗？"
+    },
+    {
+      "speaker": "Anna",
+      "en": "Has anyone got a pen?",
+      "zh": "谁有笔？"
+    },
+    {
+      "speaker": "Tom",
+      "en": "I think we've run out. Denise usually orders them. Here, use my souvenir pen.",
+      "zh": "好像用完了。通常是 Denise 订的。给，用我这支纪念笔。"
+    },
+    {
+      "speaker": "Anna",
+      "en": "There's no paper to write it on.",
+      "zh": "没有纸可以写。"
+    },
+    {
+      "speaker": "Tom",
+      "en": "Write it on my hand.",
+      "zh": "写在我手上。"
+    },
+    {
+      "speaker": "Anna",
+      "en": "Hold still. 7-4-9-0-5-6-8. Thanks for your patience. When is a good time to call you back? Okay, three o'clock. I'll call you then. Goodbye.",
+      "zh": "别动。7490568。谢谢你等。什么时候回你方便？好，三点。我那时打给你。再见。",
+      "note": "Thanks for your patience. 让对方等了之后用。"
+    },
+    {
+      "speaker": "Anna",
+      "en": "Hello, Tip Top Trading, Anna speaking. I see. He doesn't seem to be here at the moment. Can I take a message, and I'll get him to call you back?",
+      "zh": "你好，Tip Top Trading，我是 Anna。明白。他这会儿好像不在。我能记个口信，让他回你吗？"
+    },
+    {
+      "speaker": "Anna",
+      "en": "Tom, I need your other hand. The message is: call Bob about the lemons, on 8-0-9-5-2-4. I'll pass that on.",
+      "zh": "Tom，我得用你另一只手。口信是：打给 Bob，谈柠檬的事，号码 809524。我会转告。",
+      "note": "I'll pass that on. 我来转达。"
+    },
+    {
+      "speaker": "Tom",
+      "en": "It's been crazy here since Denise left. We've even run out of teabags.",
+      "zh": "Denise 走了以后这儿忙疯了。茶包都没了。"
+    },
+    {
+      "speaker": "Paul",
+      "en": "Has that invoice for Tutti Fruity been sent out yet?",
+      "zh": "给 Tutti Fruity 的那张发票发出去了吗？",
+      "vocab": [
+        {
+          "w": "invoice",
+          "zh": "发票"
+        }
+      ]
+    },
+    {
+      "speaker": "Tom",
+      "en": "I don't know. Denise usually sends out the paperwork.",
+      "zh": "我不知道。文件通常是 Denise 发的。"
+    },
+    {
+      "speaker": "Anna",
+      "en": "Ah, there you are, Tom. I need to give Paul that message I wrote on your hand.",
+      "zh": "你回来了，Tom。我得把写在你手上的口信告诉 Paul。"
+    },
+    {
+      "speaker": "Tom",
+      "en": "It's a bit tricky. I went to the toilet and then I washed my hands.",
+      "zh": "有点麻烦。我去了洗手间，然后洗了手。"
+    },
+    {
+      "speaker": "Anna",
+      "en": "Oh no, you've washed the messages off. We can't carry on like this.",
+      "zh": "完了，口信被你洗掉了。不能再这样下去。"
+    },
+    {
+      "speaker": "Narrator",
+      "en": "However hectic things get, remain professional when you answer the phone. We're a bit busy. Could I take your name and number? When would be a convenient time? Could I take a message?",
+      "zh": "不管多乱，接电话要保持专业。我们有点忙；我记下名字和号码；什么时候方便；我记个口信。"
+    }
+  ]
+}

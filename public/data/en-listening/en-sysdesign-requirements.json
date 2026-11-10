@@ -1,0 +1,169 @@
+{
+  "id": "en-sysdesign-requirements",
+  "title_zh": "System Design Interview: Design YouTube",
+  "title_en": "System Design Interview: Design YouTube",
+  "videoTitle": "System Design Interview: Design YouTube",
+  "textbookTitle_zh": "系统设计：先写用户能做什么，再写系统要保证什么",
+  "series_zh": "技术与面试",
+  "source": "Hello Interview（YouTube）",
+  "channelUrl": "https://www.youtube.com/@hello_interview",
+  "youtube": "https://www.youtube.com/watch?v=IUrQ5_g3XKs&t=217s",
+  "videoId": "IUrQ5_g3XKs",
+  "startSec": 217,
+  "endSec": 485,
+  "durationSec": 268,
+  "sentenceCount": 14,
+  "note_zh": "节选 3:37–8:05，视频描述里的 Requirements 一章，下一章 API 从 8:05 开始。说话人是前 Meta 工程师 Evan，按该视频的英文字幕整理。",
+  "sentences": [
+    {
+      "speaker": "Evan",
+      "en": "Let's get started on our functional requirements. These are the \"users should be able to\" statements — the features of the system.",
+      "zh": "先写功能需求。就是那些「用户应该能够……」的句子，也就是系统的功能。",
+      "vocab": [
+        {
+          "w": "functional requirements",
+          "zh": "功能需求"
+        }
+      ],
+      "note": "users should be able to… 功能需求就用这个句型一条一条写。"
+    },
+    {
+      "speaker": "Evan",
+      "en": "For YouTube, users should be able to upload videos. And users should be able to watch or stream videos. Those are the two main requirements from the user's perspective.",
+      "zh": "对 YouTube 来说，用户要能上传视频，还要能看、能拉流。从用户这边看，主要就是这两条。",
+      "vocab": [
+        {
+          "w": "stream",
+          "zh": "拉流播放"
+        }
+      ]
+    },
+    {
+      "speaker": "Evan",
+      "en": "Before the non-functional requirements, ask the interviewer about scale, if they haven't already told you.",
+      "zh": "写非功能需求之前，如果面试官还没说规模，你要先问。",
+      "vocab": [
+        {
+          "w": "scale",
+          "zh": "规模"
+        },
+        {
+          "w": "non-functional requirements",
+          "zh": "非功能需求"
+        }
+      ]
+    },
+    {
+      "speaker": "Evan",
+      "en": "If I were the interviewer, I would say about one million uploads every day, about one hundred million daily active users, and a max video size of 256 gigabytes, or twelve hours.",
+      "zh": "如果我是面试官，我会说每天大约一百万次上传，大约一亿日活，单个视频最大 256 GB，或十二小时。",
+      "vocab": [
+        {
+          "w": "daily active users",
+          "zh": "日活用户"
+        }
+      ]
+    },
+    {
+      "speaker": "Evan",
+      "en": "For non-functional requirements, the first thing we consider is the CAP theorem. In a distributed system, partition tolerance is a given.",
+      "zh": "非功能需求里，先考虑 CAP。分布式系统里，分区容错是默认要有的。",
+      "vocab": [
+        {
+          "w": "CAP theorem",
+          "zh": "CAP 定理"
+        },
+        {
+          "w": "partition tolerance",
+          "zh": "分区容错"
+        }
+      ]
+    },
+    {
+      "speaker": "Evan",
+      "en": "Do we prioritize availability or consistency? If I upload a video in Germany, does a user in the United States have to see it instantly?",
+      "zh": "我们优先可用性，还是优先一致性？我在德国传了一个视频，美国的用户是不是必须马上看见？",
+      "vocab": [
+        {
+          "w": "availability",
+          "zh": "可用性"
+        },
+        {
+          "w": "consistency",
+          "zh": "一致性"
+        }
+      ]
+    },
+    {
+      "speaker": "Evan",
+      "en": "No. It can take seconds, minutes, even hours to show up. So we prioritize availability over consistency. Uploads can be eventually consistent.",
+      "zh": "不用。晚几秒、几分钟，甚至几小时出现都可以。所以可用性优先于一致性。上传可以是最终一致。",
+      "vocab": [
+        {
+          "w": "eventually consistent",
+          "zh": "最终一致"
+        }
+      ],
+      "note": "prioritize A over B：两件都想要时，明确哪一件让路。"
+    },
+    {
+      "speaker": "Evan",
+      "en": "It's far more important that users can watch the videos that are already there, even if a new upload takes a minute to propagate.",
+      "zh": "更要紧的是，用户能看已经在站上的视频，哪怕新上传的要过一分钟才传到所有人。",
+      "vocab": [
+        {
+          "w": "propagate",
+          "zh": "传播、同步到各处"
+        }
+      ]
+    },
+    {
+      "speaker": "Evan",
+      "en": "256 gigabytes is a ton. We should call out that we need to support uploading and streaming large videos.",
+      "zh": "256 GB 非常大。要单独写出来：上传和播放都得扛得住这种大文件。"
+    },
+    {
+      "speaker": "Evan",
+      "en": "We also want low-latency streaming. When I click watch, I should see pixels pretty quickly. Let's say 500 milliseconds.",
+      "zh": "还要低延迟的播放。我一点播放，画面要很快出来。目标就定 500 毫秒。",
+      "vocab": [
+        {
+          "w": "latency",
+          "zh": "延迟"
+        }
+      ]
+    },
+    {
+      "speaker": "Evan",
+      "en": "That should still be true on a bad connection. Even on a weak link, I want pixels on the screen as soon as possible.",
+      "zh": "弱网也得成立。网很差的时候，我也想尽快看见画面。"
+    },
+    {
+      "speaker": "Evan",
+      "en": "And scalability: one million uploads a day, and on the order of one hundred million views.",
+      "zh": "还有可扩展性：每天一百万次上传，播放量是一亿这个量级。",
+      "vocab": [
+        {
+          "w": "scalability",
+          "zh": "可扩展性"
+        }
+      ]
+    },
+    {
+      "speaker": "Evan",
+      "en": "At the end of a real system-design interview, look back and ask: did I meet the functional requirements, and does the system satisfy the non-functional ones?",
+      "zh": "真正的系统设计面试收到尾声时，要回头看：功能需求满足了吗？非功能需求系统扛得住吗？"
+    },
+    {
+      "speaker": "Evan",
+      "en": "With the requirements in place, it's time to move on to the core entities and the API.",
+      "zh": "需求定了，接下来就是核心实体和 API。",
+      "vocab": [
+        {
+          "w": "core entities",
+          "zh": "核心实体"
+        }
+      ]
+    }
+  ]
+}

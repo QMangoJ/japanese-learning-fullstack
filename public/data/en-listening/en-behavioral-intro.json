@@ -1,0 +1,178 @@
+{
+  "id": "en-behavioral-intro",
+  "title_zh": "Behavioral Interview: Interview with a FAANG Engineer",
+  "title_en": "Behavioral Interview: Interview with a FAANG Engineer",
+  "videoTitle": "Behavioral Interview: Interview with a FAANG Engineer",
+  "textbookTitle_zh": "行为面试开场：用两三分钟介绍自己",
+  "series_zh": "技术与面试",
+  "source": "interviewing.io（YouTube）",
+  "channelUrl": "https://www.youtube.com/@interviewingio",
+  "youtube": "https://www.youtube.com/watch?v=AK0JgiFJmSY",
+  "videoId": "AK0JgiFJmSY",
+  "startSec": 0,
+  "endSec": 349,
+  "durationSec": 349,
+  "sentenceCount": 19,
+  "note_zh": "节选 0:00–5:49。视频章节把「Tell me about yourself」放在 1:19，技术决策那一题从 5:49 开始，这段在那一题入口停住。英文按 interviewing.io 的英文字幕整理，口头的 um 已收进句子，没有另配语音。",
+  "sentences": [
+    {
+      "speaker": "Interviewer",
+      "en": "This is a behavioral interview. We have about an hour.",
+      "zh": "这是一场行为面试。我们大概有一个小时。",
+      "vocab": [
+        {
+          "w": "behavioral interview",
+          "zh": "行为面试"
+        }
+      ]
+    },
+    {
+      "speaker": "Interviewer",
+      "en": "One way is that you bring questions you want to discuss, and we use the time that's left for mock questions I ask.",
+      "zh": "一种走法是你带想讨论的问题，剩下的时间我来出模拟题。",
+      "vocab": [
+        {
+          "w": "mock question",
+          "zh": "模拟题"
+        }
+      ]
+    },
+    {
+      "speaker": "Interviewer",
+      "en": "The other way, which I've done more often, is that I start with a mock question, you answer, and then we analyze that answer together.",
+      "zh": "另一种我更常用：我先出一道模拟题，你答，然后我们一起拆这道回答。",
+      "note": "analyze that answer together：答完不是结束，面试官会当场讲哪里该改。"
+    },
+    {
+      "speaker": "Candidate",
+      "en": "Yeah, we can do the second one. That sounds good.",
+      "zh": "好，我们用第二种。听起来不错。"
+    },
+    {
+      "speaker": "Interviewer",
+      "en": "Before that, every interview asks you to tell me about yourself. Let's start there. I'll take notes for the review at the end.",
+      "zh": "在那之前，每场面试都会让你介绍自己。我们先从这儿开始。我会记笔记，最后写进反馈。",
+      "note": "Tell me about yourself. 自我介绍，不是把简历从头念到尾。"
+    },
+    {
+      "speaker": "Interviewer",
+      "en": "Tell me about yourself in two to three minutes, as an engineer or as an engineering leader.",
+      "zh": "用两三分钟介绍你自己，站在工程师或技术负责人的位置上讲。",
+      "vocab": [
+        {
+          "w": "engineering leader",
+          "zh": "技术负责人"
+        }
+      ]
+    },
+    {
+      "speaker": "Candidate",
+      "en": "I have six years of experience as a software engineer. I've been doing full-stack mobile development, focused on product engineering, and I also have some background in machine learning.",
+      "zh": "我做软件工程师六年了。一直在做全栈的移动端开发，重心在产品工程，机器学习也有一些背景。",
+      "vocab": [
+        {
+          "w": "full-stack",
+          "zh": "全栈"
+        },
+        {
+          "w": "product engineering",
+          "zh": "产品向的工程开发"
+        }
+      ]
+    },
+    {
+      "speaker": "Candidate",
+      "en": "I've been a tech lead on projects and workstreams, up to about five engineers, plus cross-functional partners.",
+      "zh": "我在一些项目和工作流上当过技术负责人，团队最多大概五个工程师，另外还有跨职能的搭档。",
+      "vocab": [
+        {
+          "w": "tech lead",
+          "zh": "技术负责人"
+        },
+        {
+          "w": "cross-functional",
+          "zh": "跨职能的"
+        }
+      ]
+    },
+    {
+      "speaker": "Candidate",
+      "en": "Right now I'm tech-leading the reliability work — bugs and crashes — and on the product side I've led information-architecture work around engagement and the UI.",
+      "zh": "眼下我在带可靠性这边，处理缺陷和崩溃；产品这边我带过信息架构，跟互动和界面有关。",
+      "vocab": [
+        {
+          "w": "reliability",
+          "zh": "可靠性"
+        },
+        {
+          "w": "information architecture",
+          "zh": "信息架构"
+        }
+      ]
+    },
+    {
+      "speaker": "Interviewer",
+      "en": "So as a full-stack developer you also did mobile development and machine-learning model development. Is that correct?",
+      "zh": "所以你作为全栈，也做过移动端，也做过机器学习模型。是这样吗？"
+    },
+    {
+      "speaker": "Candidate",
+      "en": "Yes, that's correct.",
+      "zh": "对，是这样。"
+    },
+    {
+      "speaker": "Interviewer",
+      "en": "What are you looking for in your next role?",
+      "zh": "你下一份工作想找什么？",
+      "note": "What are you looking for in your next role? 问的是下一步，不是重复刚才的经历。"
+    },
+    {
+      "speaker": "Candidate",
+      "en": "I'd like to keep doing full-stack development, and grow on both the technical side and the mentorship side.",
+      "zh": "我想继续做全栈，同时在技术和带人这两边往上长。",
+      "vocab": [
+        {
+          "w": "mentorship",
+          "zh": "带人、指导别人"
+        }
+      ]
+    },
+    {
+      "speaker": "Candidate",
+      "en": "I've had room to challenge myself, and I'd like to try different companies and different tech stacks. I like being challenged and seeing new things.",
+      "zh": "我一直有机会逼自己一把。我想试试不同的公司和不同的技术栈。我就喜欢被推着走、看见新东西。",
+      "vocab": [
+        {
+          "w": "tech stack",
+          "zh": "技术栈"
+        }
+      ]
+    },
+    {
+      "speaker": "Interviewer",
+      "en": "The interviews you're practicing for — are those forty-five minutes, or an hour? And are the companies startups or large public companies?",
+      "zh": "你在准备的面试是四十五分钟还是一小时？公司是创业公司，还是大的上市公司？"
+    },
+    {
+      "speaker": "Candidate",
+      "en": "Some are forty-five minutes, some are an hour. I have one pretty big company, two mid-size companies, and a startup.",
+      "zh": "有的四十五分钟，有的一小时。一家比较大，两家中型，还有一家创业公司。"
+    },
+    {
+      "speaker": "Interviewer",
+      "en": "For tell me about yourself, go in time order. Touch the older jobs for five or ten seconds each, and spend more time on the most recent one.",
+      "zh": "介绍自己按时间来。早的每段只点五到十秒，最近这一段多讲一点。",
+      "note": "in time order：从早到近，不要一上来就陷进最近一个项目的细节。"
+    },
+    {
+      "speaker": "Interviewer",
+      "en": "Say the team size, the company size, your role, what you learned, or one project you delivered, then move on. Save the detail for the actual behavioral questions.",
+      "zh": "讲团队多大、公司多大、你的角色、你学到什么，或者交付过的一个项目，然后就往下走。细节留给后面的行为题。"
+    },
+    {
+      "speaker": "Interviewer",
+      "en": "It's also good to say what you're looking for next. More or less, what you said is fine. We'll move on to mock question number one.",
+      "zh": "最后补一句你下一步想要什么，也很好。你刚才讲的大体可以用。我们进入第一道模拟题。"
+    }
+  ]
+}

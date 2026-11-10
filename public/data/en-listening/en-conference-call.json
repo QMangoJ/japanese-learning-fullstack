@@ -1,0 +1,237 @@
+{
+  "id": "en-conference-call",
+  "title_zh": "A Conference Call in Real Life",
+  "title_en": "A Conference Call in Real Life",
+  "videoTitle": "A Conference Call in Real Life",
+  "textbookTitle_zh": "电话会议：谁进来了、谁掉线了、谁在静音",
+  "series_zh": "商务日常",
+  "source": "Best,（YouTube）",
+  "channelUrl": "https://www.youtube.com/@best.comma.d",
+  "youtube": "https://www.youtube.com/watch?v=DYu_bGbZiiQ",
+  "videoId": "DYu_bGbZiiQ",
+  "startSec": 0,
+  "endSec": 240,
+  "durationSec": 240,
+  "sentenceCount": 34,
+  "note_zh": "整段约 4 分钟。Tripp 和 Tyler 2014 年的真人短剧，演一通对不上的电话会议。英文按该视频的英文字幕整理；线路吵到听不清的几个词没有硬补。",
+  "sentences": [
+    {
+      "speaker": "System",
+      "en": "Tripp Crosby has joined the meeting. Beth has joined the meeting.",
+      "zh": "Tripp Crosby 加入了会议。Beth 加入了会议。"
+    },
+    {
+      "speaker": "Tripp",
+      "en": "Hello? Tyler?",
+      "zh": "喂？Tyler？"
+    },
+    {
+      "speaker": "Beth",
+      "en": "No, this is Beth, from ICS.",
+      "zh": "不是，我是 ICS 的 Beth。"
+    },
+    {
+      "speaker": "Tripp",
+      "en": "Oh, hey Beth. How are you doing?",
+      "zh": "哦，Beth。你怎么样？"
+    },
+    {
+      "speaker": "Beth",
+      "en": "Yeah, good. Making it, you know.",
+      "zh": "还行，对付着过。"
+    },
+    {
+      "speaker": "System",
+      "en": "Tyler has joined the meeting.",
+      "zh": "Tyler 加入了会议。"
+    },
+    {
+      "speaker": "Tripp",
+      "en": "All right. This is Tripp. Who's here? Tyler's here. Beth's here. The purpose of today's meeting is to discuss the—",
+      "zh": "好。我是 Tripp。谁在？Tyler 在，Beth 在。今天会议的目的是讨论——",
+      "note": "The purpose of today's meeting is to discuss… 电话会议报目的，经常被打断。"
+    },
+    {
+      "speaker": "Tyler",
+      "en": "Yeah, I'll be able to do it in like thirty minutes.",
+      "zh": "行，我大概三十分钟能做完。"
+    },
+    {
+      "speaker": "System",
+      "en": "John has joined the meeting.",
+      "zh": "John 加入了会议。"
+    },
+    {
+      "speaker": "Tripp",
+      "en": "Hi, John. I was just trying to go over the purpose of today's meeting, which is to discuss the delivery of—",
+      "zh": "John 你好。我正在说今天的目的，是讨论交付——"
+    },
+    {
+      "speaker": "System",
+      "en": "Tyler has joined the meeting.",
+      "zh": "Tyler 又加入了会议。"
+    },
+    {
+      "speaker": "Tyler",
+      "en": "Sorry guys, I got cut off. Is Paul here? I sent him an invite.",
+      "zh": "抱歉，我掉线了。Paul 在吗？我给他发了邀请。",
+      "vocab": [
+        {
+          "w": "cut off",
+          "zh": "断线"
+        }
+      ]
+    },
+    {
+      "speaker": "Tripp",
+      "en": "Put in your access code.",
+      "zh": "输入你的接入码。"
+    },
+    {
+      "speaker": "Tyler",
+      "en": "No, no, that's your PIN number. It should be a nine-digit number. Try pressing the pound key.",
+      "zh": "不，那是你的 PIN。应该是九位数。试着按一下井号键。"
+    },
+    {
+      "speaker": "System",
+      "en": "Paul has joined the meeting.",
+      "zh": "Paul 加入了会议。"
+    },
+    {
+      "speaker": "Tripp",
+      "en": "Any questions before we move on?",
+      "zh": "继续之前还有问题吗？",
+      "note": "Any questions before we move on? 电话会议上往下翻页之前问一句。"
+    },
+    {
+      "speaker": "Beth",
+      "en": "Yes, this is Beth. What's our best plan of attack for the second quarter?",
+      "zh": "有，我是 Beth。第二季度我们最好的打法是什么？",
+      "vocab": [
+        {
+          "w": "plan of attack",
+          "zh": "打法、行动方案"
+        }
+      ]
+    },
+    {
+      "speaker": "John",
+      "en": "I think what we should do is diversify, because—",
+      "zh": "我觉得我们应该把业务分散开，因为——"
+    },
+    {
+      "speaker": "Beth",
+      "en": "Well, it actually depends on how you look at it.",
+      "zh": "这其实要看你怎么看。"
+    },
+    {
+      "speaker": "Tripp",
+      "en": "That's a great graph, John. Tyler?",
+      "zh": "这张图很好，John。Tyler？"
+    },
+    {
+      "speaker": "Tyler",
+      "en": "My main concern with the projections was that they're insufficient. They're not even taking into account the— did we lose Tyler again?",
+      "zh": "我主要担心那些预测不够。它们连……都没算进去。Tyler 又掉了吗？",
+      "vocab": [
+        {
+          "w": "projection",
+          "zh": "预测数字"
+        },
+        {
+          "w": "insufficient",
+          "zh": "不够"
+        }
+      ]
+    },
+    {
+      "speaker": "Tripp",
+      "en": "Hello? John, are you guys taking distributions?",
+      "zh": "喂？John，你们在做利润分配吗？"
+    },
+    {
+      "speaker": "John",
+      "en": "My bad. I was on mute. Let me start over. I've prepared a presentation. I'm sharing it with all of you. You should be able to see it on your screen right now.",
+      "zh": "我的错，我静音了。我重来。我准备了一份演示，正在共享。你们现在屏幕上应该能看到。",
+      "note": "I was on mute. Let me start over. 电话会议上最常补的一句。"
+    },
+    {
+      "speaker": "Beth",
+      "en": "Got it.",
+      "zh": "看到了。"
+    },
+    {
+      "speaker": "Tyler",
+      "en": "I don't see a link anywhere. It says I need to download a plug-in. We are all using Macs, I'm assuming?",
+      "zh": "我哪儿都看不到链接。它说要下一个插件。我们都是苹果电脑吧？"
+    },
+    {
+      "speaker": "Tripp",
+      "en": "Finances are looking great. Paul, do you have any comments on staffing?",
+      "zh": "财务看起来很好。Paul，人员方面你有什么意见？",
+      "vocab": [
+        {
+          "w": "staffing",
+          "zh": "人员配置"
+        }
+      ]
+    },
+    {
+      "speaker": "Paul",
+      "en": "I was thinking, if we get a few more contractor types in— hold on. Rex, get down!",
+      "zh": "我在想，如果我们再进几个外包——等等。Rex，下去！"
+    },
+    {
+      "speaker": "Tripp",
+      "en": "I just want to go over a couple of details as we move into the next section. We've got three new departments coming on. By the end of Q3 I need detailed evaluations each month.",
+      "zh": "进入下一部分之前，我想过几个细节。有三个新部门要进来。到第三季度末，我需要你们每个月给详细评估。",
+      "vocab": [
+        {
+          "w": "Q3",
+          "zh": "第三季度"
+        },
+        {
+          "w": "evaluation",
+          "zh": "评估"
+        }
+      ]
+    },
+    {
+      "speaker": "Tyler",
+      "en": "Sorry guys, I'm driving through a dead spot.",
+      "zh": "抱歉，我正开车经过没信号的地方。"
+    },
+    {
+      "speaker": "Tripp",
+      "en": "That's it. Beth, you'll send out a recap email. That could have taken the place of this whole meeting, correct?",
+      "zh": "就这样。Beth，你发一封复述邮件。这封邮件本来就能代替整场会，对吧？",
+      "vocab": [
+        {
+          "w": "recap",
+          "zh": "复述、纪要"
+        }
+      ],
+      "note": "send out a recap email：会后把决定写成邮件。"
+    },
+    {
+      "speaker": "Beth",
+      "en": "Yup. Always do.",
+      "zh": "对，我一直这么做。"
+    },
+    {
+      "speaker": "Tripp",
+      "en": "Thanks for doing that, Beth. Dave, you've been here the whole time?",
+      "zh": "谢谢，Beth。Dave，你全程都在？"
+    },
+    {
+      "speaker": "Dave",
+      "en": "Yeah.",
+      "zh": "在。"
+    },
+    {
+      "speaker": "Tripp",
+      "en": "Well, thanks everyone, once again.",
+      "zh": "那好，再次谢谢大家。"
+    }
+  ]
+}

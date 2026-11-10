@@ -1,0 +1,138 @@
+{
+  "id": "en-frontend-interview",
+  "title_zh": "Code, make mistakes, get community feedback & improve | RNEU 2023 Interview with Mathieu Acthernoene",
+  "title_en": "Code, make mistakes, get community feedback & improve | RNEU 2023 Interview with Mathieu Acthernoene",
+  "videoTitle": "Code, make mistakes, get community feedback & improve | RNEU 2023 Interview with Mathieu Acthernoene",
+  "textbookTitle_zh": "前端短访：这个库不模块化，改一点、听反馈、再改",
+  "series_zh": "技术与面试",
+  "source": "Callstack（YouTube）",
+  "channelUrl": "https://www.youtube.com/@CallstackEngineers",
+  "youtube": "https://www.youtube.com/watch?v=lmb5hLNymKg",
+  "videoId": "lmb5hLNymKg",
+  "startSec": 0,
+  "endSec": 300,
+  "durationSec": 300,
+  "sentenceCount": 18,
+  "note_zh": "整段约 5 分钟，React Native EU 2023 现场短访。名字按视频标题核对：主持人 Wookash，嘉宾 Mathieu Acthernoene。自动字幕里的 Matthew、graph C 已改成现场的说法。",
+  "sentences": [
+    {
+      "speaker": "Wookash",
+      "en": "Hello everyone, I'm Wookash. We're recording from React Native EU 2023. I'm here with Mathieu Acthernoene from Swan.",
+      "zh": "大家好，我是 Wookash。我们在 React Native EU 2023 现场。旁边是 Swan 的 Mathieu Acthernoene。"
+    },
+    {
+      "speaker": "Wookash",
+      "en": "Mathieu, can you introduce yourself — what do you do, and what was your talk about?",
+      "zh": "Mathieu，介绍一下你自己：你做什么，这场演讲讲什么？"
+    },
+    {
+      "speaker": "Mathieu",
+      "en": "I work at Swan, a company in Paris. We do banking as a service: accounts, credit cards, and transfers, through a GraphQL API. I'm a lead front-end developer.",
+      "zh": "我在巴黎的 Swan。我们做银行即服务：账户、信用卡、转账，通过 GraphQL API。我是前端负责人。",
+      "vocab": [
+        {
+          "w": "banking as a service",
+          "zh": "银行即服务"
+        },
+        {
+          "w": "lead front-end developer",
+          "zh": "前端负责人"
+        }
+      ]
+    },
+    {
+      "speaker": "Mathieu",
+      "en": "I'm here mostly because I contribute a lot in open source, including React Native Permissions. The talk was about that library.",
+      "zh": "我来主要是因为开源贡献比较多，其中包括 React Native Permissions。演讲讲的就是这个库。"
+    },
+    {
+      "speaker": "Wookash",
+      "en": "What was the talk about?",
+      "zh": "演讲具体讲什么？"
+    },
+    {
+      "speaker": "Mathieu",
+      "en": "React Native libraries, the packages, are often not modular. The talk was about making them modular, on iOS in particular.",
+      "zh": "React Native 的库、那些包，常常不够模块化。演讲就是讲怎么把它们拆模块，尤其是 iOS。",
+      "vocab": [
+        {
+          "w": "modular",
+          "zh": "模块化的"
+        }
+      ]
+    },
+    {
+      "speaker": "Wookash",
+      "en": "What is the key takeaway you want people to think about at home?",
+      "zh": "你希望大家回家还想着的那一点是什么？",
+      "note": "key takeaway：一场谈话里希望对方记住的那一句。"
+    },
+    {
+      "speaker": "Mathieu",
+      "en": "Not the solution. The solution is quite simple today. The reflection before it was not that simple.",
+      "zh": "不是那个解法。解法今天看起来很简单。之前那串思考并不简单。"
+    },
+    {
+      "speaker": "Mathieu",
+      "en": "It's an iterative process. It's okay to make mistakes. You try something, it doesn't work, you get feedback from the community, and you try to improve it.",
+      "zh": "这是个反复来的过程。犯错没关系。你试一件事，不成，社区给你反馈，你再改。",
+      "vocab": [
+        {
+          "w": "iterative",
+          "zh": "一轮一轮改的"
+        },
+        {
+          "w": "feedback",
+          "zh": "反馈"
+        }
+      ],
+      "note": "It's okay to make mistakes. 面试里讲复盘，可以用这句把「失败」说成过程。"
+    },
+    {
+      "speaker": "Wookash",
+      "en": "You showed the problem from around 2019, including community feedback, and then fixing one thing at a time.",
+      "zh": "你把 2019 年前后的问题拿出来，连社区的反馈一起，然后一次只修一件。"
+    },
+    {
+      "speaker": "Mathieu",
+      "en": "Exactly. You fix one thing, get feedback, improve, and improve. The solution looks stable and easy only after those steps.",
+      "zh": "对。修一件，听反馈，再改进。走完这些步，解法看起来才稳定、才简单。"
+    },
+    {
+      "speaker": "Wookash",
+      "en": "Zooming out from your talk, what's your impression of React Native EU 2023?",
+      "zh": "从你的演讲拉开来看，你觉得今年的 React Native EU 怎么样？"
+    },
+    {
+      "speaker": "Mathieu",
+      "en": "Really great. There are a lot of impressive people here. If I had to describe it in one sentence: everyone is just so friendly.",
+      "zh": "真的很好。这儿厉害的人很多。非要一句的话：大家都特别友善。"
+    },
+    {
+      "speaker": "Wookash",
+      "en": "Do you see value in coming to conferences?",
+      "zh": "你觉得跑来参会值吗？"
+    },
+    {
+      "speaker": "Mathieu",
+      "en": "Yes. The talks matter, but the best part is reaching the people who maintain the library and speaking human to human.",
+      "zh": "值。演讲重要，但最好的是找到维护这个库的人，面对面讲。",
+      "note": "human to human：对着维护者本人说，别只在工单里打转。"
+    },
+    {
+      "speaker": "Mathieu",
+      "en": "On GitHub you sometimes don't have the context. Someone had a bad day and closes your issue, and you're frustrated. In person you explain the issue and they respond, because we're human.",
+      "zh": "在 GitHub 上你经常缺上下文。对方那天不顺，把你的 issue 关了，你就窝火。见面时你把问题讲清楚，对方会回应，因为大家都是人。"
+    },
+    {
+      "speaker": "Wookash",
+      "en": "Thank you so much for your talk, and for this short interview.",
+      "zh": "谢谢你的演讲，也谢谢这段短访。"
+    },
+    {
+      "speaker": "Mathieu",
+      "en": "Yeah, thanks.",
+      "zh": "谢谢。"
+    }
+  ]
+}

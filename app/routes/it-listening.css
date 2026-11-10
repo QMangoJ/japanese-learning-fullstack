@@ -115,10 +115,23 @@
 .itl-speaker rt{font-size:.58em;font-weight:600;color:inherit;opacity:.75;letter-spacing:.02em}
 .itl-speaker:has(ruby){line-height:1.9}
 
+.enl-links{display:grid;gap:8px;margin-top:14px}
+.enl-links a{display:block;padding:12px 14px;border:1px solid var(--line);border-radius:14px;background:var(--card);box-shadow:var(--shadow);color:var(--ink);text-decoration:none}
+.enl-links a:hover{border-color:var(--accent)}
+.enl-links b{display:block;font-size:15px}
+.enl-links span{display:block;margin-top:3px;color:var(--sub);font-size:13px;line-height:1.5}
+.enl-plan{margin:14px 0 0;padding:0;list-style:none;display:grid;gap:6px}
+.enl-plan li{display:grid;grid-template-columns:7.2em 3.2em 1fr;gap:8px;align-items:baseline;padding:8px 12px;border:1px solid var(--line);border-radius:10px;background:var(--card);font-size:14px}
+.enl-plan li.on{border-color:var(--accent)}
+.enl-plan button{padding:0;border:0;background:none;color:inherit;font:inherit;text-align:left;cursor:pointer}
+.enl-plan button:hover{color:var(--accent)}
+.enl-plan .tag{color:var(--sub);font-size:12.5px}
+
 @media (max-width:640px){
 	.itl-hero{padding:20px}
 	.itl-hero h1{font-size:22px}
 	.itl-card{flex-direction:column}
 	.itl-card-yt{align-self:flex-end}
 	.itl-jp{font-size:16.5px}
+	.enl-plan li{grid-template-columns:6.4em 2.8em 1fr}
 }

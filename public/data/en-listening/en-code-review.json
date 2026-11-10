@@ -1,0 +1,106 @@
+{
+  "id": "en-code-review",
+  "title_zh": "🚀 Space Reviewers 👾 Episode 2 - Django - Include ModelForm and its Meta options in reference docs",
+  "title_en": "🚀 Space Reviewers 👾 Episode 2 - Django - Include ModelForm and its Meta options in reference docs",
+  "videoTitle": "🚀 Space Reviewers 👾 Episode 2 - Django - Include ModelForm and its Meta options in reference docs",
+  "textbookTitle_zh": "代码评审：两个人一起看一则文档改动",
+  "series_zh": "技术与面试",
+  "source": "Djangonaut Space（YouTube）",
+  "channelUrl": "https://www.youtube.com/@djangonautspace",
+  "youtube": "https://www.youtube.com/watch?v=J8kio5fY1Pw",
+  "videoId": "J8kio5fY1Pw",
+  "startSec": 0,
+  "endSec": 331,
+  "durationSec": 331,
+  "sentenceCount": 11,
+  "note_zh": "节选 0:00–5:31，Djangonaut Space 的 Space Reviewers 第 2 集开头。Raffaella 和 Tim 在看 Django 的一则文档工单。英文按带时间轴的字幕整理，名字和 Diátaxis 已按他们的说法改正。",
+  "sentences": [
+    {
+      "speaker": "Raffaella",
+      "en": "Everyone, thank you for joining us. We are Raffaella and Tim, and welcome to Space Reviewers.",
+      "zh": "大家好，谢谢加入。我们是 Raffaella 和 Tim，欢迎来到 Space Reviewers。"
+    },
+    {
+      "speaker": "Raffaella",
+      "en": "Tim and I have different experience, but neither of us is an expert in the Django codebase. The goal is to show that everyone is capable of a useful code review, regardless of experience.",
+      "zh": "Tim 和我经历不同，但我们都不是 Django 代码库的专家。这个节目就是要说明：不管经验多少，每个人都能做出有用的代码评审。",
+      "vocab": [
+        {
+          "w": "code review",
+          "zh": "代码评审"
+        }
+      ]
+    },
+    {
+      "speaker": "Raffaella",
+      "en": "We have chosen a pull request, and we are going to review it live. We pick one we are more familiar with, and we learn together.",
+      "zh": "我们选了一个拉取请求，现在当面评审。挑我们更熟的，然后一起学。",
+      "vocab": [
+        {
+          "w": "pull request",
+          "zh": "拉取请求，PR"
+        }
+      ]
+    },
+    {
+      "speaker": "Tim",
+      "en": "There's a link on the Djangonaut Space repository where you can suggest a pull request for us to review, and a link to join the call.",
+      "zh": "Djangonaut Space 的仓库上有个链接，你可以提议让我们评哪一个 PR，也可以从链接进这场通话。"
+    },
+    {
+      "speaker": "Tim",
+      "en": "We're operating under the Djangonaut Space code of conduct. Please be respectful.",
+      "zh": "我们按 Djangonaut Space 的行为准则来。请彼此尊重。",
+      "vocab": [
+        {
+          "w": "code of conduct",
+          "zh": "行为准则"
+        }
+      ]
+    },
+    {
+      "speaker": "Tim",
+      "en": "This is episode two. Open ticket 35831. There's a short summary on the page, about five comments, and a link to the pull request.",
+      "zh": "这是第二集。打开工单 35831。页面上有一段短摘要，大约五条评论，还有拉取请求的链接。"
+    },
+    {
+      "speaker": "Tim",
+      "en": "The issue is: include ModelForm and its Meta options in the reference docs.",
+      "zh": "要解决的是：把 ModelForm 和它的 Meta 选项写进参考文档。",
+      "vocab": [
+        {
+          "w": "reference docs",
+          "zh": "参考文档"
+        }
+      ]
+    },
+    {
+      "speaker": "Tim",
+      "en": "Some of that documentation already exists, but it appears to be in topic form. The reporter wants it as reference documentation. This ticket is fairly short, which helps.",
+      "zh": "有些文档已经有了，但更像专题说明。提工单的人希望它变成参考文档。这张工单不长，看起来好办一些。"
+    },
+    {
+      "speaker": "Tim",
+      "en": "Django's docs follow Diátaxis: tutorials, how-to guides, explanation, and reference. Explanation is what Django calls topics.",
+      "zh": "Django 的文档按 Diátaxis 来分：教程、操作指南、解释、参考。解释这一类，Django 叫 topics。",
+      "vocab": [
+        {
+          "w": "how-to guide",
+          "zh": "操作指南"
+        }
+      ],
+      "note": "Diátaxis 把文档分成四种，评审时先问这段该放哪一种。"
+    },
+    {
+      "speaker": "Raffaella",
+      "en": "I had some trouble with the English. If it's okay, I'll try to summarize what they talked about, and you tell me if I misread it.",
+      "zh": "英文我读得有点吃力。如果可以，我试着概括他们在讨论什么，你告诉我有没有读错。",
+      "note": "If it's okay, I'll try to summarize… 评审里不确定时，先概括，再请对方纠正。"
+    },
+    {
+      "speaker": "Tim",
+      "en": "Yeah, for sure.",
+      "zh": "当然可以。"
+    }
+  ]
+}

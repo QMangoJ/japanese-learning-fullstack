@@ -1,0 +1,192 @@
+{
+  "id": "en-phone-manner",
+  "title_zh": "Talking on the phone – 15 – English at Work has the top tips for you",
+  "title_en": "Talking on the phone – 15 – English at Work has the top tips for you",
+  "videoTitle": "Talking on the phone – 15 – English at Work has the top tips for you",
+  "textbookTitle_zh": "办公室电话：报上公司名，对方不在就留口信",
+  "series_zh": "商务日常",
+  "source": "BBC Learning English（YouTube）",
+  "channelUrl": "https://www.youtube.com/@bbclearningenglish",
+  "youtube": "https://www.youtube.com/watch?v=yzPX6zmaBdg",
+  "videoId": "yzPX6zmaBdg",
+  "startSec": 0,
+  "endSec": 311,
+  "durationSec": 311,
+  "sentenceCount": 30,
+  "note_zh": "整集 5:11。BBC Learning English《English at Work》第 15 集，演员真人配音，字幕即官方台词。片尾旁白把句型又念了一遍。",
+  "sentences": [
+    {
+      "speaker": "Anna",
+      "en": "Yes?",
+      "zh": "喂？"
+    },
+    {
+      "speaker": "Denise",
+      "en": "Stop! That's all wrong. I'm going to call you again. This time, you don't say yes when you answer. It's rude.",
+      "zh": "停！这样完全不对。我再打一次。接电话不要说 yes，这很无礼。"
+    },
+    {
+      "speaker": "Narrator",
+      "en": "Here we are in the middle of a telephone training session with Denise and Anna.",
+      "zh": "我们正在看 Denise 给 Anna 做电话训练。"
+    },
+    {
+      "speaker": "Denise",
+      "en": "Call me and I'll show you how it's done. Hello? Tip Top Trading.",
+      "zh": "你打给我，我示范。你好，Tip Top Trading。",
+      "note": "Hello? 加上公司名，比单说 yes 像在办公。"
+    },
+    {
+      "speaker": "Anna",
+      "en": "Wow, that's good.",
+      "zh": "哇，这样好多了。"
+    },
+    {
+      "speaker": "Denise",
+      "en": "And you can say your name. Hello? Tip Top Trading. Denise speaking. Try it.",
+      "zh": "还可以报自己的名字。你好，Tip Top Trading，我是 Denise。你试。",
+      "note": "Denise speaking. 接起电话报自己是谁。"
+    },
+    {
+      "speaker": "Anna",
+      "en": "Hello? Tip Top Trading. Denise speaking.",
+      "zh": "你好，Tip Top Trading，我是 Denise。"
+    },
+    {
+      "speaker": "Denise",
+      "en": "No! Say Anna speaking.",
+      "zh": "不对！说你是 Anna。"
+    },
+    {
+      "speaker": "Anna",
+      "en": "Oh, sorry, I'm so stressed by all this. Hello, Anna speaking.",
+      "zh": "对不起，我被这些搞得好紧张。你好，我是 Anna。"
+    },
+    {
+      "speaker": "Denise",
+      "en": "You sound like you're sitting on a pineapple. Listen: Hello? Denise speaking.",
+      "zh": "你听起来像坐在菠萝上。听我的：你好，我是 Denise。"
+    },
+    {
+      "speaker": "Anna",
+      "en": "Hello? Anna speaking.",
+      "zh": "你好，我是 Anna。"
+    },
+    {
+      "speaker": "Denise",
+      "en": "Good. When they introduce themselves, say: Hello Mrs Smith, how can I help you? If you know them, you might say: Hello Mrs Smith, how are you?",
+      "zh": "好。对方报了名字，你说：Smith 太太你好，我能帮你什么？如果认识，可以说：Smith 太太你好，你好吗？",
+      "note": "How can I help you? 接起商务电话后的第一句。"
+    },
+    {
+      "speaker": "Anna",
+      "en": "What if Mrs Smith wants to speak to Tom, but he's not there?",
+      "zh": "如果 Smith 太太要找 Tom，可是他不在呢？"
+    },
+    {
+      "speaker": "Denise",
+      "en": "You say: I'm really sorry, he's not available at the moment. Can I take a message? Or: I'm afraid he's busy. Shall I ask him to call you back?",
+      "zh": "你说：真抱歉，他这会儿不在。我能记下口信吗？或者：他正忙。要我让他回你电话吗？",
+      "vocab": [
+        {
+          "w": "take a message",
+          "zh": "记下口信"
+        }
+      ],
+      "note": "I'm afraid… 比 he's busy 婉转，后面通常跟着替代办法。"
+    },
+    {
+      "speaker": "Denise",
+      "en": "To end a conversation, you can say: Thank you for calling. Goodbye.",
+      "zh": "结束时可以说：谢谢来电，再见。"
+    },
+    {
+      "speaker": "Anna",
+      "en": "Hello? Tip Top Trading.",
+      "zh": "你好，Tip Top Trading。"
+    },
+    {
+      "speaker": "Denise",
+      "en": "Hello, this is Mrs Smith.",
+      "zh": "你好，我是 Smith 太太。"
+    },
+    {
+      "speaker": "Anna",
+      "en": "Hello Mrs Smith, how can I help you?",
+      "zh": "Smith 太太你好，我能帮你什么？"
+    },
+    {
+      "speaker": "Denise",
+      "en": "I'd like to speak to Tom, please.",
+      "zh": "请找 Tom。"
+    },
+    {
+      "speaker": "Anna",
+      "en": "I'm really sorry, he's not available at the moment. Can I take a message?",
+      "zh": "真抱歉，他这会儿不在。我能记下口信吗？"
+    },
+    {
+      "speaker": "Denise",
+      "en": "That's okay. I'll try again later.",
+      "zh": "没关系，我过会儿再打。"
+    },
+    {
+      "speaker": "Anna",
+      "en": "Thank you for calling. Goodbye.",
+      "zh": "谢谢来电，再见。"
+    },
+    {
+      "speaker": "Denise",
+      "en": "Excellent! Oh — I didn't call. That's a real call.",
+      "zh": "很好！等等，这通不是我打的。是真来电。"
+    },
+    {
+      "speaker": "Anna",
+      "en": "Hello? Tip Top Trading. This is Anna speaking.",
+      "zh": "你好，Tip Top Trading，我是 Anna。"
+    },
+    {
+      "speaker": "Mr Lime",
+      "en": "Hello Anna, this is Seb Lime, from Citrus Ventures. Call me Seb. Your Imperial Lemon is fantastic, and I was wondering if you'd like to do lunch with me sometime.",
+      "zh": "Anna 你好，我是 Citrus Ventures 的 Seb Lime。叫我 Seb 就行。你们的 Imperial Lemon 非常好。不知道你哪天愿不愿意一起吃午饭。",
+      "note": "I was wondering if… 提一个不太好直接说的请求。"
+    },
+    {
+      "speaker": "Anna",
+      "en": "Would you like to discuss the Imperial Lemon?",
+      "zh": "你是想谈 Imperial Lemon 吗？"
+    },
+    {
+      "speaker": "Mr Lime",
+      "en": "Forget the lemons. The reason I want to see you is more of a personal nature.",
+      "zh": "别提柠檬了。我想见你，是私人的事。",
+      "vocab": [
+        {
+          "w": "personal",
+          "zh": "私人的"
+        }
+      ]
+    },
+    {
+      "speaker": "Anna",
+      "en": "Personnel? Can I call you back? I'm afraid I'm a bit busy at the moment.",
+      "zh": "人事？我能过会儿打给你吗？我这会儿有点忙。"
+    },
+    {
+      "speaker": "Denise",
+      "en": "He means a personal nature, not personnel.",
+      "zh": "他是说私人的事，不是人事部门。"
+    },
+    {
+      "speaker": "Narrator",
+      "en": "Anna had an excellent phone manner. Let's hear those phrases again. Hello? Tip Top Trading. This is Anna speaking. How can I help you? Can I take a message? Shall I ask him to call you back? Thank you for calling. Goodbye.",
+      "zh": "Anna 的电话礼数已经很好。我们再听一遍这些句子：报公司、报自己、问能帮什么、留口信、约回电话、谢谢来电再见。",
+      "vocab": [
+        {
+          "w": "phone manner",
+          "zh": "打电话的礼数"
+        }
+      ]
+    }
+  ]
+}

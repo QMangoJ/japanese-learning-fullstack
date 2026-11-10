@@ -219,6 +219,7 @@ export function Sheet({
 							<SheetSubHead label={lx("工作面试", "Work & interviews")} />
 							<Grid columns={3} gap={2} xstyle={sheetStyles.grid}>
 								<SheetTile icon="💻" label={lx("IT 听力", "IT Listening")} onGo={go("#/it-listening")} />
+								<SheetTile icon="🎧" label={lx("英语听力", "English listening")} onGo={go("#/en-listening")} />
 								<SheetTile icon="🎤" label={lx("日语面试", "Job interview")} onGo={go("#/topics/job-interview")} />
 								<SheetTile icon="🖥️" label={lx("前端工程师", "Frontend engineer")} onGo={go("#/topics/frontend")} />
 								<SheetTile icon="🙏" label={lx("敬语总结", "Keigo summary")} onGo={go("#/keigo")} />
