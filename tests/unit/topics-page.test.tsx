@@ -87,14 +87,14 @@ describe("TopicsPage", () => {
 		// 五节正文 + 来宾问答节，顺序与原稿一致。
 		const heads = [...container.querySelectorAll(".kj-section-h")].map((h) => h.childNodes[0]?.textContent);
 		expect(heads).toEqual(["开场", "最古老的汉字", "字形的变化", "来到日本", "结尾", "来宾问答"]);
-		// 正文 23 句连续编号 1..23；问答 6 问 6 答；救命句 1 条。每句都有朗读按钮。
+		// 正文 23 句连续编号 1..23；问答 6 问 6 答；救命句 1 条。本页已去掉朗读按钮（Daniel 2026-11-10），全页不应出现 .sayb。
 		const sections = [...container.querySelectorAll(".kj-section")];
 		const bodyRows = sections.slice(0, 5).flatMap((s) => [...s.querySelectorAll(".itl-sentence")]);
 		expect(bodyRows).toHaveLength(23);
 		expect(bodyRows.map((r) => r.querySelector(".itl-s-no")?.textContent)).toEqual(Array.from({ length: 23 }, (_, i) => String(i + 1)));
 		expect(container.querySelectorAll(".kj-qa")).toHaveLength(6);
 		expect(container.querySelectorAll(".itl-sentence")).toHaveLength(23 + 12 + 1);
-		expect(container.querySelectorAll(".sayb")).toHaveLength(23 + 12 + 1);
+		expect(container.querySelectorAll(".sayb")).toHaveLength(0);
 		// 第 2 句的注音：ruby 只罩汉字（中国/来），读音对，假名在 ruby 外。
 		const second = bodyRows[1];
 		const rubyBase = (r: Element) =>
