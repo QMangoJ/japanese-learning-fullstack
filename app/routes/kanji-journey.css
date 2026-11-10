@@ -17,6 +17,10 @@
 .kj-section{margin-top:18px}
 .kj-section-h{display:flex;align-items:baseline;gap:10px;margin:0 0 8px;font-size:17.5px;line-height:1.35}
 .kj-section-ja{color:var(--sub);font-size:14px;font-weight:500}
+.kj-pause{margin:0 0 8px;padding:7px 10px;border:1px dashed var(--line);border-radius:10px;background:var(--bg);color:var(--sub);font-size:13px;line-height:1.55}
+.kj-pause-when{display:block;font-weight:700}
+.kj-pause-cue{display:block;margin-top:2px}
+.kj-pause-label{margin-right:6px;font-weight:700}
 
 .kj-qa-list{display:grid;gap:12px}
 .kj-qa-a{margin-top:5px;margin-left:26px}

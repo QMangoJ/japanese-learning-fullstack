@@ -7,13 +7,13 @@ import "../routes/it-listening.css";
 import "../routes/kanji-journey.css";
 
 /**
- * 《漢字的旅程》阅读页：IT 听力文章页的形态——一篇发表稿按原稿顺序读下来。
- * 正文分五节，每句「注音原句 + 中文译文」；正文后是
- * 「来宾问答」问答对，文末一条救命句小注。按 Daniel 要求本页不带朗读按钮、
- * 正文句首也不带连续序号（2026-11-10 去掉喇叭与序号、收紧排版提高信息密度，
- * 样式收口在 kanji-journey.css 的 .kj-page 作用域内，不影响 IT 听力页；
- * 问答的 Q1–Q6 / A 标识是问题编号，保留）。不接 IT 听力的「学完」同步，
- * 也不做本地已读标记（这是一篇发表稿，不是听力练习）。
+ * 《漢字的旅程》阅读页：v6 日语版视频的暂停讲解备忘录，形态沿用 IT 听力文章页。
+ * 正文八段（开场、六处暂停、结尾），每句「注音原句 + 中文译文」；
+ * 第 1–6 段在句子上方用小注标暂停时码和旁白最后一句。
+ * 正文后是「来宾问答」，文末一条救命句。本页不带朗读按钮，正文句首也不带连续序号
+ * （样式收口在 kanji-journey.css 的 .kj-page 作用域内，不影响 IT 听力页；
+ * 问答的 Q1–Q6 / A 标识是问题编号，保留）。
+ * 不接 IT 听力的「学完」同步，也不做本地已读标记。
  */
 
 const cache = new Map<string, Promise<unknown>>();
@@ -101,11 +101,11 @@ export function KanjiJourneyPage() {
 	return (
 		<div className="itl-page kj-page">
 			<header className="itl-head">
-				<span className="itl-eyebrow">PRESENTATION SCRIPT</span>
+				<span className="itl-eyebrow">V6 PAUSE MEMO</span>
 				<h1>{lx(article.title_zh, article.title_en || article.title_zh)}</h1>
 				<p className="itl-head-ja">{article.title_ja}</p>
 				<p className="itl-head-meta">
-					{lx(`会話発表②讲解稿 · 正文 ${bodyCount} 句 · 来宾问答 ${article.qa.length} 组`, `Class presentation script · ${bodyCount} sentences · ${article.qa.length} Q&A pairs`)}
+					{lx(`v6 暂停讲解 · 正文 ${bodyCount} 句 · 来宾问答 ${article.qa.length} 组`, `v6 pause-and-explain · ${bodyCount} sentences · ${article.qa.length} Q&A pairs`)}
 				</p>
 			</header>
 
@@ -117,6 +117,17 @@ export function KanjiJourneyPage() {
 						{lx(sec.zh, sec.en || sec.zh)}
 						{sec.ja ? <span className="kj-section-ja jp">{sec.ja}</span> : null}
 					</h2>
+					{sec.pause_zh || sec.cue_ja ? (
+						<p className="kj-pause">
+							{sec.pause_zh ? <span className="kj-pause-when">{sec.pause_zh}</span> : null}
+							{sec.cue_ja ? (
+								<span className="kj-pause-cue jp">
+									<span className="kj-pause-label">{lx("旁白最后一句", "Last narration line")}</span>
+									{sec.cue_ja}
+								</span>
+							) : null}
+						</p>
+					) : null}
 					<ol className="itl-sentences">
 						{sec.sentences.map((s) => (
 							<SentenceLine key={s.id} s={s} />
