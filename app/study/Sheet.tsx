@@ -232,7 +232,6 @@ export function Sheet({
 							</Grid>
 							<SheetSubHead label={lx("通用", "General")} />
 							<Grid columns={3} gap={2} xstyle={sheetStyles.grid}>
-								<SheetTile icon="🏷️" label={lx("专题词汇总览", "All topic vocabulary")} onGo={go("#/topics")} dataSheet="topics" />
 								<SheetTile icon="📖" label={lx("接续表", "Connections")} onGo={go("#/ref")} />
 								<SheetTile icon="🔄" label={lx("活用", "Conjugation")} onGo={go("#/katsuyou")} />
 								<SheetTile icon="✍️" label={lx("变形口诀", "Verb mnemonics")} onGo={go("#/henkei")} />

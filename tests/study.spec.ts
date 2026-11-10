@@ -614,12 +614,22 @@ test.describe("study navigation", () => {
 
 	test("opens topic vocabulary for investing, ATM, frontend work, and clothes shopping", async ({ page }) => {
 		await waitForStudy(page);
-		const side = page.locator("#side .side-item", { hasText: /专题词汇|Topics/ });
-		if (await side.isVisible()) await side.click();
-		else {
+		// 导航瘦身后：投资理财子项不再进侧边栏/Sheet，总览入口也已撤下；
+		// 进投资理财专题后用页内子主题筛选，总览经详情页的返回按钮到达。
+		const side = page.locator("#side .side-item", { hasText: /日本投资理财|Investing in Japan/ });
+		if (await side.isVisible()) {
+			await expect(page.locator("#side .side-subitem")).toHaveCount(0);
+			await expect(page.locator("#side .side-item", { hasText: /专题词汇总览|All topic vocabulary/ })).toHaveCount(0);
+			await side.click();
+		} else {
 			await page.locator('.bottom button[data-nav="common"]').click();
-			await page.locator(".sheet-item", { hasText: /专题词汇|Topics/ }).first().click();
+			await expect(page.locator(".sheet-item", { hasText: /专题词汇总览|All topic vocabulary/ })).toHaveCount(0);
+			await page.locator(".sheet-item", { hasText: /日本投资理财|Investing in Japan/ }).first().click();
 		}
+		await expect(page.locator(".topic-subs [data-subtopic]")).toHaveCount(9);
+		await page.locator(".topic-subs [data-subtopic='股票']").click();
+		await expect(page.locator(".topic-list .topic-item")).toHaveCount(14);
+		await page.getByRole("button", { name: /专题|Topics/ }).first().click();
 		await expect(page.locator("#title")).toContainText(/专题词汇|Topic vocabulary/);
 		await expect(page.locator("[data-topic='japan-investing']")).toBeVisible();
 		await page.locator("[data-topic='bank-atm']").click();

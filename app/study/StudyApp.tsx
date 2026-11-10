@@ -77,7 +77,6 @@ import {
 	n1Loaded,
 	n4Loaded,
 	navTo,
-	openTopicSub,
 	noRuby,
 	pathToKey,
 	readingSearchError,
@@ -538,18 +537,6 @@ function Sidebar({ routeKey, onLevel }: { routeKey: string; onLevel: (lv: LevelK
 			{count != null && count !== "" ? <CtBadge value={count} /> : null}
 		</button>
 	);
-	// 投资理财的子模块 = japan-investing 数据的 subtopics（zh 须与 public/data/topics/japan-investing.json 逐字一致，改数据时同步这里）
-	const investSubs: [string, string][] = [
-		["开户・本人确认", "Account opening & ID"],
-		["账户・税制（NISA等）", "Accounts & tax (NISA etc.)"],
-		["下单・交易", "Orders & trading"],
-		["股票", "Stocks"],
-		["投资信托・基金", "Mutual funds"],
-		["债券・其他商品", "Bonds & other products"],
-		["收益・成本", "Returns & costs"],
-		["汇率・外国证券", "FX & foreign securities"],
-		["风险・策略", "Risk & strategy"],
-	];
 	return (
 		<aside className="side" id="side">
 			<div className="side-brand">日本語上手</div>
@@ -609,14 +596,7 @@ function Sidebar({ routeKey, onLevel }: { routeKey: string; onLevel: (lv: LevelK
 				{row("#/kougo", "💬", lx("口语", "Casual"), null, h === "#/kougo")}
 				<div className="side-sub">{lx("投资理财", "Investing & finance")}</div>
 				{row("#/topics/japan-investing", "📈", lx("日本投资理财", "Investing in Japan"), null, h === "#/topics/japan-investing")}
-				{investSubs.map(([zh, en]) => (
-					<button key={zh} className="side-item side-subitem" onClick={() => openTopicSub("japan-investing", zh)}>
-						<span className="ic">▸</span>
-						{lx(zh, en)}
-					</button>
-				))}
 				<div className="side-sub">{lx("通用", "General")}</div>
-				{row("#/topics", "🏷️", lx("专题词汇总览", "All topic vocabulary"), null, h === "#/topics")}
 				{row("#/ref", "📖", lx("接续表", "Connections"), null, h === "#/ref")}
 				{row("#/katsuyou", "🔄", lx("活用", "Conjugation"), null, h === "#/katsuyou")}
 				{row("#/henkei", "✍️", lx("变形口诀", "Verb mnemonics"), null, h === "#/henkei")}

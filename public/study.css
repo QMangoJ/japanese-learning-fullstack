@@ -130,8 +130,6 @@ button.topic-submod:hover{border-color:var(--accent);color:var(--accent)}
 .side-item:hover{background:var(--bg)}
 .side-item.on{background:var(--blue-soft);color:var(--blue);font-weight:700}
 .side-item.on .ct{color:var(--blue)}
-.side-subitem{padding-left:24px;font-size:13.5px;color:var(--sub);min-height:30px}
-.side-subitem .ic{width:11px;font-size:10.5px}
 .side-foot{margin-top:auto;display:flex;flex-direction:column;gap:2px;padding-top:12px;border-top:1px solid var(--line)}
 /* 翻页钮悬浮在两侧：不占正文高度，滚到哪儿都能翻。
    手机贴在底栏上方，桌面贴在目录右侧和窗口右缘，都只放小圆钮。
