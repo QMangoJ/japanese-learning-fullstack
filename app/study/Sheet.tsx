@@ -201,6 +201,10 @@ export function Sheet({
 									</SelectableCard>
 								))}
 							</Grid>
+							<SheetSubHead label={lx("教材", "Course book")} />
+							<Grid columns={2} gap={2} xstyle={sheetStyles.grid}>
+								<SheetTile icon="📕" label={lx("大家的日本语", "Minna no Nihongo")} onGo={go("#/minna")} dataSheet="minna" />
+							</Grid>
 						</>
 					) : (
 						<>
@@ -209,6 +213,7 @@ export function Sheet({
 								<SheetTile feature icon="🗓️" label={lx("课堂复习", "Lesson review")} onGo={go("#/review")} />
 								<SheetTile feature icon="🈶" label={lx("汉字自测", "Kanji Self-test")} onGo={go("#/kanji-exam")} />
 								<SheetTile feature icon="⏱️" label={lx("使用时间", "Study time")} onGo={go("#/usage")} dataSheet="usage" />
+								<SheetTile feature icon="📕" label={lx("大家的日本语", "Minna no Nihongo")} onGo={go("#/minna")} dataSheet="minna" />
 							</Grid>
 							<SheetSectionHead title={lx("专题知识", "Topics")} sub={lx("不分级别", "All levels")} />
 							<SheetSubHead label={lx("工作面试", "Work & interviews")} />
