@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 import { SayButton } from "../routes/study-common";
 import {
@@ -343,6 +343,70 @@ function ItListeningDetail({ id }: { id: string }) {
 		return map;
 	}, [article]);
 
+	// 视频悬浮：播放器滚出可视区后，同一个 iframe 实例缩成角落小窗（不重挂载、不断播），
+	// 带播放/暂停（YouTube IFrame API 命令）与关闭钮；关掉后本次滚动内不再悬浮，
+	// 滚回顶部让播放器重新入镜时重置。
+	const playerSlotRef = useRef<HTMLDivElement | null>(null);
+	const iframeRef = useRef<HTMLIFrameElement | null>(null);
+	const [playerOut, setPlayerOut] = useState(false);
+	const [floatDismissed, setFloatDismissed] = useState(false);
+	const [ytPlaying, setYtPlaying] = useState<boolean | null>(null);
+	const floating = playerOut && !floatDismissed;
+
+	useEffect(() => {
+		setFloatDismissed(false);
+		setYtPlaying(null);
+	}, [id]);
+
+	useEffect(() => {
+		const el = playerSlotRef.current;
+		if (!el || typeof IntersectionObserver === "undefined") return;
+		const io = new IntersectionObserver(
+			(entries) => {
+				for (const e of entries) {
+					setPlayerOut(!e.isIntersecting);
+					if (e.isIntersecting) setFloatDismissed(false);
+				}
+			},
+			{ threshold: 0.05 },
+		);
+		io.observe(el);
+		return () => io.disconnect();
+	}, [article?.videoId]);
+
+	useEffect(() => {
+		const onMsg = (ev: MessageEvent) => {
+			if (typeof ev.data !== "string" || !ev.data.includes("onStateChange")) return;
+			try {
+				const d = JSON.parse(ev.data) as { event?: string; info?: number };
+				if (d.event === "onStateChange" && typeof d.info === "number") setYtPlaying(d.info === 1);
+			} catch {
+				/* 非播放器消息，忽略 */
+			}
+		};
+		window.addEventListener("message", onMsg);
+		return () => window.removeEventListener("message", onMsg);
+	}, []);
+
+	const ytCommand = (func: string) => {
+		iframeRef.current?.contentWindow?.postMessage(JSON.stringify({ event: "command", func, args: [] }), "*");
+	};
+	const subscribeYtState = () => {
+		iframeRef.current?.contentWindow?.postMessage(
+			JSON.stringify({ event: "command", func: "addEventListener", args: ["onStateChange"] }),
+			"*",
+		);
+	};
+	const toggleYtPlay = () => {
+		if (ytPlaying) {
+			ytCommand("pauseVideo");
+			setYtPlaying(false);
+		} else {
+			ytCommand("playVideo");
+			setYtPlaying(true);
+		}
+	};
+
 	if (error) {
 		return (
 			<div className="itl-page">
@@ -378,14 +442,38 @@ function ItListeningDetail({ id }: { id: string }) {
 			</header>
 
 			<section className="itl-player">
-				<div className="itl-embed">
-					<iframe
-						src={`https://www.youtube.com/embed/${article.videoId}`}
-						title={article.title_ja}
-						loading="lazy"
-						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-						allowFullScreen
-					/>
+				<div className="itl-player-slot" ref={playerSlotRef}>
+					<div className={`itl-embed${floating ? " itl-embed--float" : ""}`}>
+						<iframe
+							ref={iframeRef}
+							src={`https://www.youtube.com/embed/${article.videoId}?enablejsapi=1&playsinline=1`}
+							title={article.title_ja}
+							loading="lazy"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+							allowFullScreen
+							onLoad={subscribeYtState}
+						/>
+						{floating ? (
+							<>
+								<button
+									type="button"
+									className="itl-float-btn itl-float-toggle"
+									onClick={toggleYtPlay}
+									aria-label={ytPlaying ? lx("暂停", "Pause") : lx("播放", "Play")}
+								>
+									{ytPlaying ? "⏸" : "▶"}
+								</button>
+								<button
+									type="button"
+									className="itl-float-btn itl-float-close"
+									onClick={() => setFloatDismissed(true)}
+									aria-label={lx("关闭悬浮窗", "Close floating player")}
+								>
+									✕
+								</button>
+							</>
+						) : null}
+					</div>
 				</div>
 				<a className="itl-yt-open" href={article.youtube} target="_blank" rel="noreferrer">
 					▶ {lx("在 YouTube 打开原视频", "Open the original video on YouTube")} ↗
