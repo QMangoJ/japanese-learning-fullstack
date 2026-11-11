@@ -40,6 +40,10 @@ export function VocabQueueTodayCard() {
 	const done = plan.done.length;
 	const total = plan.ids.length;
 	const remaining = total - done;
+	// 「再来 20」extras are reported apart — the card's counts stay the daily baseline.
+	const extraSuffix = plan.extra
+		? lx(` · 额外 +${plan.extra.done.length}/${plan.extra.ids.length}`, ` · extra +${plan.extra.done.length}/${plan.extra.ids.length}`)
+		: "";
 	return (
 		<section className="vq-today-card">
 			<div className="vq-today-main">
@@ -49,8 +53,8 @@ export function VocabQueueTodayCard() {
 						? lx(
 								`已完成 ${done}/${total} · 到期复习 ${plan.review} + 新词 ${plan.fresh} · 还剩 ${remaining} 个`,
 								`${done}/${total} done · ${plan.review} reviews + ${plan.fresh} new · ${remaining} to go`,
-							)
-						: lx(`今日 ${total} 个已全部完成 🎉`, `All ${total} words done today 🎉`)}
+							) + extraSuffix
+						: lx(`今日 ${total} 个已全部完成 🎉`, `All ${total} words done today 🎉`) + extraSuffix}
 				</div>
 				<div className="vq-bar">
 					<div className="vq-bar-fill" style={{ width: total ? `${Math.round((done / total) * 100)}%` : "0%" }} />

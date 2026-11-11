@@ -5,9 +5,12 @@ import type { SwipeGrade } from "./swipe-grade";
 import { lx, navTo } from "./store";
 import { jstToday } from "./lesson-review";
 import {
+	addExtraBatch,
 	applyVocabGrade,
-	dueWordCount,
+	countExtraCandidates,
+	deferredDueCount,
 	ensureVocabWords,
+	EXTRA_BATCH_SIZE,
 	getVocabQueueVersion,
 	shouldReshowToday,
 	subscribeVocabQueue,
@@ -130,15 +133,17 @@ export function VocabQueuePage() {
 	const data = vocabQueueData();
 	const plan = data.plan && data.plan.date === today ? data.plan : null;
 
-	// Session queue = today's plan minus what's already done (per stored plan).
-	// Cards still awaiting their same-day re-show (again/fuzzy, not yet done)
-	// go to the end again, so a reload mid-session continues seamlessly.
+	// Session queue = today's plan (baseline + extra batches) minus what's
+	// already done (per stored plan). Cards still awaiting their same-day
+	// re-show (again/fuzzy, not yet done) go to the end again, so a reload
+	// mid-session — extra batches included — continues seamlessly.
 	useEffect(() => {
 		if (!plan || !isReady) return;
 		if (planDateRef.current === plan.date && queue !== null) return;
 		planDateRef.current = plan.date;
 		for (const id of plan.reshown ?? []) reshownRef.current.add(id);
-		const pending = plan.ids.filter((id) => !plan.done.includes(id));
+		const doneSet = new Set([...plan.done, ...(plan.extra?.done ?? [])]);
+		const pending = [...plan.ids, ...(plan.extra?.ids ?? [])].filter((id) => !doneSet.has(id));
 		const awaitingReshow = pending.filter((id) => (plan.reshown ?? []).includes(id));
 		setQueue([...pending.filter((id) => !awaitingReshow.includes(id)), ...awaitingReshow]);
 	}, [plan, queue, isReady]);
@@ -147,6 +152,14 @@ export function VocabQueuePage() {
 	const current = queue && queue.length ? byId.get(queue[0]) : undefined;
 	const doneCount = plan ? plan.done.length : 0;
 	const total = plan ? plan.ids.length : 0;
+	const extraDone = plan?.extra?.done.length ?? 0;
+	const extraTotal = plan?.extra?.ids.length ?? 0;
+
+	const onAddExtra = () => {
+		if (!words) return;
+		const added = addExtraBatch(words, today);
+		if (added.length) setQueue((q) => [...(q ?? []), ...added]);
+	};
 
 	const grade = (vocabGrade: VocabGrade) => {
 		if (!queue || !queue.length) return;
@@ -178,7 +191,8 @@ export function VocabQueuePage() {
 	if (!words.length) return <div className="empty">{lx("词表是空的。", "The word list is empty.")}</div>;
 	if (!isReady || !plan || queue === null) return <div className="empty">{lx("正在准备今日任务…", "Preparing today's session…")}</div>;
 
-	const overdueExtra = Math.max(0, dueWordCount(words, data.states, today) - plan.review);
+	const overdueExtra = deferredDueCount(words, data.states, plan, today);
+	const extraAvail = countExtraCandidates(words, data.states, plan, today);
 	const studied = Object.keys(data.states).length;
 	const mastered = Object.values(data.states).filter((s) => s.s >= 4).length;
 	const finished = queue.length === 0;
@@ -193,11 +207,22 @@ export function VocabQueuePage() {
 					<span className="vq-comp">
 						{lx("到期复习", "Reviews")} {plan.review} · {lx("新词", "New")} {plan.fresh}
 						{overdueExtra > 0 ? ` · ${lx("另有", "+")} ${overdueExtra} ${lx("个到期词顺延", "due words deferred")}` : ""}
+						{extraTotal > 0 ? ` · ${lx("额外", "Extra")} +${extraDone}` : ""}
 					</span>
 				</div>
 				<div className="vq-bar" role="progressbar" aria-valuenow={doneCount} aria-valuemax={total}>
 					<div className="vq-bar-fill" style={{ width: total ? `${Math.round((doneCount / total) * 100)}%` : "0%" }} />
 				</div>
+				{extraTotal > 0 ? (
+					<div className="vq-extra-progress">
+						<span>
+							{lx("额外进度", "Extra")} +{extraDone}/{extraTotal}
+						</span>
+						<div className="vq-bar vq-bar-extra" role="progressbar" aria-valuenow={extraDone} aria-valuemax={extraTotal}>
+							<div className="vq-bar-fill" style={{ width: `${Math.round((extraDone / extraTotal) * 100)}%` }} />
+						</div>
+					</div>
+				) : null}
 			</div>
 
 			{retestWord ? (
@@ -228,10 +253,29 @@ export function VocabQueuePage() {
 					<h2>{lx("今日达标", "Done for today")}</h2>
 					<p>
 						{lx(`今天的 ${total} 个词已全部过完：到期复习 ${plan.review} 个、新词 ${plan.fresh} 个。`, `All ${total} words finished: ${plan.review} reviews and ${plan.fresh} new words.`)}
+						{extraTotal > 0
+							? lx(` 额外批次已完成 +${extraDone} 个。`, ` Extra batches done: +${extraDone}.`)
+							: ""}
 					</p>
-					<button type="button" className="vq-home-btn" onClick={() => navTo("#/")}>
-						{lx("回到首页", "Back to home")}
-					</button>
+					{extraAvail.total > 0 ? (
+						<div className="vq-done-actions">
+							<button type="button" className="vq-home-btn" onClick={onAddExtra}>
+								{lx(`再来 ${Math.min(EXTRA_BATCH_SIZE, extraAvail.total)}`, `${Math.min(EXTRA_BATCH_SIZE, extraAvail.total)} more`)}
+							</button>
+							<button type="button" className="vq-home-btn ghost" onClick={() => navTo("#/")}>
+								{lx("回到首页", "Back to home")}
+							</button>
+						</div>
+					) : (
+						<>
+							{extraTotal > 0 ? (
+								<p className="vq-extra-none">{lx("没有更多词了——到期的和新词都已排完。", "No more words — every due and new word is scheduled.")}</p>
+							) : null}
+							<button type="button" className="vq-home-btn" onClick={() => navTo("#/")}>
+								{lx("回到首页", "Back to home")}
+							</button>
+						</>
+					)}
 				</div>
 			) : current ? (
 				<VocabFlipCard
@@ -249,18 +293,19 @@ export function VocabQueuePage() {
 				</div>
 			)}
 
-			{plan.done.length > 0 ? (
+			{doneCount + extraDone > 0 ? (
 				<div className="vq-passed">
 					<button type="button" className="vq-passed-toggle" onClick={() => setShowPassed((value) => !value)}>
-						{lx(`今天已过 ${plan.done.length} 词`, `${plan.done.length} graded today`)}
+						{lx(`今天已过 ${doneCount + extraDone} 词`, `${doneCount + extraDone} graded today`)}
 						<span>{showPassed ? "▾" : "▸"}</span>
 					</button>
 					{showPassed ? (
 						<div className="vq-passed-list">
-							{plan.done.map((id) => {
+							{[...plan.done, ...(plan.extra?.done ?? [])].map((id) => {
 								const word = byId.get(id);
 								if (!word) return null;
 								const g = plan.grades?.[id];
+								const isExtra = plan.extra?.done.includes(id) ?? false;
 								return (
 									<button
 										key={id}
@@ -272,6 +317,7 @@ export function VocabQueuePage() {
 										}}
 									>
 										<span className="vq-passed-word">{word.w}</span>
+										{isExtra ? <span className="vq-extra-tag">{lx("额外", "Extra")}</span> : null}
 										{g ? <span className={`vq-grade-chip vq-grade-${g}`}>{lx(...GRADE_LABEL[g])}</span> : null}
 										<span className="vq-passed-retest">{lx("重测", "Retest")}</span>
 									</button>

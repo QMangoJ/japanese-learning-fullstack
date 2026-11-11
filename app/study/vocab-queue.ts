@@ -22,6 +22,10 @@ import { jstToday } from "./lesson-review";
  * Daily quota is 50, 雷打不动: due reviews first (most overdue first, then
  * priority tier), new words fill the rest in priority order. If more than 50
  * reviews are due, today's plan is the 50 most overdue and the rest stay due.
+ * After the quota is met,「再来 20」appends extra batches (plan.extra) in the
+ * same order — deferred due reviews first, then new words — graded with the
+ * exact same SRS/re-show rules, but tracked apart so the 50-count stays pure.
+ * Extra batches persist inside the same server-side plan.
  *
  * State syncs through /api/vocab-queue under its own KV key (vocab-queue:<uid>);
  * it never touches the due-review / mastery / mistakes payloads.
@@ -56,6 +60,18 @@ export type VocabWordState = {
 	ts: number;
 };
 
+/** One or more「再来 20」batches appended after the daily quota is met. Kept apart from the plan's own ids/done/review/fresh so the baseline 50-count is never polluted; grades/reshown stay plan-global, so extra words follow the same same-day re-show and overwrite rules. */
+export type VocabPlanExtra = {
+	/** Extra word ids, in the order the batches were added. */
+	ids: string[];
+	/** Extra ids completed (subset of ids). */
+	done: string[];
+	/** Of the extra ids, how many were due reviews when their batch was built. */
+	review: number;
+	/** Of the extra ids, how many were new words. */
+	fresh: number;
+};
+
 export type VocabPlan = {
 	date: string;
 	ids: string[];
@@ -64,10 +80,12 @@ export type VocabPlan = {
 	review: number;
 	/** How many were new words. */
 	fresh: number;
-	/** Today's latest grade per word id (for the「今日已过」list and retests). */
+	/** Today's latest grade per word id (for the「今日已过」list and retests). Covers baseline and extra ids alike. */
 	grades?: Record<string, VocabGrade>;
-	/** Word ids already re-shown once today (again/fuzzy) — persisted so a page reload keeps the once-per-day cap. */
+	/** Word ids already re-shown once today (again/fuzzy) — persisted so a page reload keeps the once-per-day cap. Covers baseline and extra ids alike. */
 	reshown?: string[];
+	/** Optional「再来 20」extra batches (see VocabPlanExtra). */
+	extra?: VocabPlanExtra;
 };
 
 export type VocabQueueData = {
@@ -77,6 +95,8 @@ export type VocabQueueData = {
 };
 
 export const DAILY_QUOTA = 50;
+/** Size of one「再来 20」extra batch, added on demand after the daily quota is met. */
+export const EXTRA_BATCH_SIZE = 20;
 export const VOCAB_QUEUE_STORAGE_KEY = "jl-vocab-queue-v1";
 export const VOCAB_QUEUE_ENDPOINT = "/api/vocab-queue";
 const MAX_STEP = 5;
@@ -160,6 +180,79 @@ export function dueWordCount(words: VocabWord[], states: Record<string, VocabWor
 	}).length;
 }
 
+/** Due words that today's plan (baseline + extra batches) did NOT take — the true「顺延」remainder. */
+export function deferredDueCount(
+	words: VocabWord[],
+	states: Record<string, VocabWordState>,
+	plan: VocabPlan,
+	today: string,
+): number {
+	const taken = new Set([...plan.ids, ...(plan.extra?.ids ?? [])]);
+	return words.filter((word) => {
+		const state = states[word.id];
+		return state && state.due <= today && !taken.has(word.id);
+	}).length;
+}
+
+/**
+ * Candidates for a「再来 20」batch, in the same order the daily plan uses:
+ * due reviews first (most overdue, then priority), new words after — minus
+ * everything already in today's plan (baseline or earlier extra batches).
+ */
+function extraCandidates(
+	words: VocabWord[],
+	states: Record<string, VocabWordState>,
+	plan: VocabPlan,
+	today: string,
+): { due: VocabWord[]; fresh: VocabWord[] } {
+	const taken = new Set([...plan.ids, ...(plan.extra?.ids ?? [])]);
+	const due = words
+		.filter((word) => {
+			const state = states[word.id];
+			return state && state.due <= today && !taken.has(word.id);
+		})
+		.sort((a, b) => {
+			const da = states[a.id].due;
+			const db = states[b.id].due;
+			return da.localeCompare(db) || compareWords(a, b);
+		});
+	const fresh = words.filter((word) => !states[word.id] && !taken.has(word.id)).sort(compareWords);
+	return { due, fresh };
+}
+
+/** How many words a「再来 20」click could still pull today (deferred due + untouched new). */
+export function countExtraCandidates(
+	words: VocabWord[],
+	states: Record<string, VocabWordState>,
+	plan: VocabPlan,
+	today: string,
+): { due: number; fresh: number; total: number } {
+	const { due, fresh } = extraCandidates(words, states, plan, today);
+	return { due: due.length, fresh: fresh.length, total: due.length + fresh.length };
+}
+
+/**
+ * Build one extra batch of up to `count` words (deferred due reviews first,
+ * then new words in priority order). Returns null when nothing is left.
+ */
+export function buildExtraBatch(
+	words: VocabWord[],
+	states: Record<string, VocabWordState>,
+	plan: VocabPlan,
+	today: string,
+	count = EXTRA_BATCH_SIZE,
+): { ids: string[]; review: number; fresh: number } | null {
+	const { due, fresh } = extraCandidates(words, states, plan, today);
+	const reviewPart = due.slice(0, count);
+	const freshPart = fresh.slice(0, count - reviewPart.length);
+	if (!reviewPart.length && !freshPart.length) return null;
+	return {
+		ids: [...reviewPart, ...freshPart].map((word) => word.id),
+		review: reviewPart.length,
+		fresh: freshPart.length,
+	};
+}
+
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
 
 function cleanState(value: unknown): VocabWordState | null {
@@ -173,6 +266,24 @@ function cleanState(value: unknown): VocabWordState | null {
 
 const VOCAB_GRADES: readonly string[] = ["again", "fuzzy", "know"];
 
+function cleanExtra(value: unknown, baseIds: string[]): VocabPlanExtra | null {
+	if (!value || typeof value !== "object" || Array.isArray(value)) return null;
+	const item = value as Record<string, unknown>;
+	if (!Array.isArray(item.ids) || !Array.isArray(item.done)) return null;
+	if (typeof item.review !== "number" || typeof item.fresh !== "number") return null;
+	// Extra ids must be strings, unique, and disjoint from the baseline ids.
+	const ids = [
+		...new Set(
+			item.ids.filter(
+				(id): id is string => typeof id === "string" && id.length > 0 && id.length <= 200 && !baseIds.includes(id),
+			),
+		),
+	];
+	if (!ids.length) return null;
+	const done = item.done.filter((id): id is string => typeof id === "string" && ids.includes(id));
+	return { ids, done: [...new Set(done)], review: item.review, fresh: item.fresh };
+}
+
 function cleanPlan(value: unknown): VocabPlan | null {
 	if (!value || typeof value !== "object" || Array.isArray(value)) return null;
 	const item = value as Record<string, unknown>;
@@ -182,17 +293,21 @@ function cleanPlan(value: unknown): VocabPlan | null {
 	const done = item.done.filter((id): id is string => typeof id === "string" && ids.includes(id));
 	if (typeof item.review !== "number" || typeof item.fresh !== "number") return null;
 	const plan: VocabPlan = { date: item.date, ids, done: [...new Set(done)], review: item.review, fresh: item.fresh };
+	const extra = cleanExtra(item.extra, ids);
+	if (extra) plan.extra = extra;
+	// grades/reshown cover baseline and extra ids alike.
+	const known = extra ? [...ids, ...extra.ids] : ids;
 	if (item.grades && typeof item.grades === "object" && !Array.isArray(item.grades)) {
 		const grades: Record<string, VocabGrade> = {};
 		for (const [id, grade] of Object.entries(item.grades as Record<string, unknown>)) {
-			if (ids.includes(id) && typeof grade === "string" && VOCAB_GRADES.includes(grade)) {
+			if (known.includes(id) && typeof grade === "string" && VOCAB_GRADES.includes(grade)) {
 				grades[id] = grade as VocabGrade;
 			}
 		}
 		if (Object.keys(grades).length) plan.grades = grades;
 	}
 	if (Array.isArray(item.reshown)) {
-		const reshown = item.reshown.filter((id): id is string => typeof id === "string" && ids.includes(id));
+		const reshown = item.reshown.filter((id): id is string => typeof id === "string" && known.includes(id));
 		if (reshown.length) plan.reshown = [...new Set(reshown)];
 	}
 	return plan;
@@ -213,6 +328,20 @@ export function cleanVocabQueueData(value: unknown): VocabQueueData {
 	return { v: 1, states, plan: cleanPlan(raw.plan) };
 }
 
+/**
+ * Merge two same-day extra blocks: the longer one (more batches appended) is
+ * the base, its done set unioned with the other side's. Concurrent divergent
+ * batches on two devices degrade to the bigger block — the dropped words'
+ * SRS states still merge per-word, so nothing corrupts.
+ */
+function mergeExtra(local?: VocabPlanExtra, server?: VocabPlanExtra): VocabPlanExtra | undefined {
+	if (!local) return server;
+	if (!server) return local;
+	const [main, other] = local.ids.length >= server.ids.length ? [local, server] : [server, local];
+	const done = [...new Set([...main.done, ...other.done])].filter((id) => main.ids.includes(id));
+	return { ...main, done };
+}
+
 /** Merge two snapshots: per-word the newer ts wins; the later day's plan wins, same-day plans merge done sets. */
 export function mergeVocabQueueData(local: VocabQueueData, server: VocabQueueData): VocabQueueData {
 	const states: Record<string, VocabWordState> = { ...server.states };
@@ -227,15 +356,18 @@ export function mergeVocabQueueData(local: VocabQueueData, server: VocabQueueDat
 	else if (server.plan.date > local.plan.date) plan = server.plan;
 	else {
 		const done = [...new Set([...local.plan.done, ...server.plan.done])].filter((id) => local.plan!.ids.includes(id));
+		const extra = mergeExtra(local.plan.extra, server.plan.extra);
+		const known = [...local.plan.ids, ...(extra?.ids ?? [])];
 		const grades = { ...(server.plan.grades ?? {}), ...(local.plan.grades ?? {}) };
 		const reshown = [...new Set([...(server.plan.reshown ?? []), ...(local.plan.reshown ?? [])])].filter((id) =>
-			local.plan!.ids.includes(id),
+			known.includes(id),
 		);
 		plan = {
 			...local.plan,
 			done,
 			...(Object.keys(grades).length ? { grades } : {}),
 			...(reshown.length ? { reshown } : {}),
+			...(extra ? { extra } : {}),
 		};
 	}
 	return { v: 1, states, plan };
@@ -365,22 +497,55 @@ export function shouldReshowToday(grade: VocabGrade, alreadyReshown: boolean): b
 	return (grade === "again" || grade === "fuzzy") && !alreadyReshown;
 }
 
-/** Grade one word; marks it done in today's plan unless `markDone` is false (first "again"/"fuzzy" re-show — that call also records the word in plan.reshown so the once-per-day re-show cap survives reloads). */
+/**
+ * Append one「再来 20」extra batch to today's plan (deferred due reviews first,
+ * then new words in priority order) and persist it with the plan. Returns the
+ * added word ids, or [] when today's plan is missing/stale or the word source
+ * is exhausted. The baseline ids/done/review/fresh are never touched.
+ */
+export function addExtraBatch(words: VocabWord[], today = jstToday()): string[] {
+	if (!data.plan || data.plan.date !== today) return [];
+	const batch = buildExtraBatch(words, data.states, data.plan, today);
+	if (!batch) return [];
+	const prev = data.plan.extra ?? { ids: [], done: [], review: 0, fresh: 0 };
+	const extra: VocabPlanExtra = {
+		ids: [...prev.ids, ...batch.ids],
+		done: prev.done,
+		review: prev.review + batch.review,
+		fresh: prev.fresh + batch.fresh,
+	};
+	data = { ...data, plan: { ...data.plan, extra } };
+	commit();
+	return batch.ids;
+}
+
+/** Grade one word; marks it done in today's plan unless `markDone` is false (first "again"/"fuzzy" re-show — that call also records the word in plan.reshown so the once-per-day re-show cap survives reloads). Extra-batch words are graded exactly the same; their done marks land in plan.extra.done so the baseline count is untouched. */
 export function applyVocabGrade(id: string, grade: VocabGrade, markDone = true, today = jstToday()) {
 	const next = gradeWordState(data.states[id], grade, today);
 	const states = { ...data.states, [id]: next };
 	let plan = data.plan;
-	if (plan && plan.date === today && plan.ids.includes(id)) {
-		const done = markDone && !plan.done.includes(id) ? [...plan.done, id] : plan.done;
-		const reshown =
-			!markDone && !(plan.reshown ?? []).includes(id) ? [...(plan.reshown ?? []), id] : plan.reshown;
-		if (done !== plan.done || reshown !== plan.reshown || plan.grades?.[id] !== grade) {
-			plan = {
-				...plan,
-				done,
-				grades: { ...(plan.grades ?? {}), [id]: grade },
-				...(reshown ? { reshown } : {}),
-			};
+	if (plan && plan.date === today) {
+		const inBase = plan.ids.includes(id);
+		const inExtra = plan.extra?.ids.includes(id) ?? false;
+		if (inBase || inExtra) {
+			const done = inBase && markDone && !plan.done.includes(id) ? [...plan.done, id] : plan.done;
+			const extra =
+				inExtra && plan.extra
+					? markDone && !plan.extra.done.includes(id)
+						? { ...plan.extra, done: [...plan.extra.done, id] }
+						: plan.extra
+					: plan.extra;
+			const reshown =
+				!markDone && !(plan.reshown ?? []).includes(id) ? [...(plan.reshown ?? []), id] : plan.reshown;
+			if (done !== plan.done || extra !== plan.extra || reshown !== plan.reshown || plan.grades?.[id] !== grade) {
+				plan = {
+					...plan,
+					done,
+					...(extra ? { extra } : {}),
+					grades: { ...(plan.grades ?? {}), [id]: grade },
+					...(reshown ? { reshown } : {}),
+				};
+			}
 		}
 	}
 	data = { ...data, states, plan };

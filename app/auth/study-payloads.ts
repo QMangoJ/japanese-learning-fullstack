@@ -106,6 +106,17 @@ export function isVocabQueuePayload(value: unknown) {
 	if (!plan.done.every((id) => typeof id === "string" && (plan.ids as unknown[]).includes(id))) return false;
 	if (typeof plan.review !== "number" || !Number.isInteger(plan.review) || plan.review < 0) return false;
 	if (typeof plan.fresh !== "number" || !Number.isInteger(plan.fresh) || plan.fresh < 0) return false;
+	if (plan.extra !== undefined) {
+		// 「再来 20」extra batches ride inside the same plan payload.
+		if (!isRecord(plan.extra)) return false;
+		const extra = plan.extra;
+		if (!Array.isArray(extra.ids) || extra.ids.length > 5_000) return false;
+		if (!extra.ids.every((id) => typeof id === "string" && isSafeId(id) && isString(id, 200, false))) return false;
+		if (!Array.isArray(extra.done) || extra.done.length > extra.ids.length) return false;
+		if (!extra.done.every((id) => typeof id === "string" && (extra.ids as unknown[]).includes(id))) return false;
+		if (typeof extra.review !== "number" || !Number.isInteger(extra.review) || extra.review < 0) return false;
+		if (typeof extra.fresh !== "number" || !Number.isInteger(extra.fresh) || extra.fresh < 0) return false;
+	}
 	return true;
 }
 

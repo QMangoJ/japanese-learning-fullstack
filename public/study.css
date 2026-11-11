@@ -1041,6 +1041,12 @@ body.hide-cn .vcn,body.hide-cn .cn{visibility:hidden}
 .vq-done h2{margin:10px 0 6px}
 .vq-done p{color:var(--sub);margin:0 0 18px}
 .vq-home-btn{border:none;background:var(--accent);color:#fff;border-radius:12px;padding:11px 22px;font-size:16px;font-weight:700;cursor:pointer}
+.vq-home-btn.ghost{background:transparent;color:var(--accent);border:1px solid var(--accent)}
+.vq-extra-progress{display:flex;align-items:center;gap:10px;margin-top:8px;font-size:13px;color:var(--sub)}
+.vq-bar-extra{flex:1;margin-top:0}
+.vq-done-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.vq-extra-none{font-size:14px}
+.vq-extra-tag{flex:none;font-size:11.5px;font-weight:700;color:var(--accent);border:1px solid var(--accent);border-radius:99px;padding:1px 8px}
 .vq-overview{width:100%;max-width:520px;margin-top:22px;border-top:1px solid var(--line);padding-top:14px}
 .vq-overview h3{margin:0 0 6px;font-size:15.5px}
 .vq-overview p{color:var(--sub);font-size:13.5px;margin:0 0 10px}
