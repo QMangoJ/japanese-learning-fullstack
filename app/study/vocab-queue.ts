@@ -138,6 +138,58 @@ export function compareWords(a: VocabWord, b: VocabWord): number {
 	return a.tier - b.tier || a.ord - b.ord || a.id.localeCompare(b.id);
 }
 
+function kataToHira(text: string): string {
+	return text.replace(/[ァ-ヶ]/g, (c) => String.fromCharCode(c.charCodeAt(0) - 0x60));
+}
+
+function isKanaSurface(text: string): boolean {
+	if (!text) return false;
+	return [...text].every((c) => {
+		const code = c.codePointAt(0) ?? 0;
+		return (code >= 0x3040 && code <= 0x30ff) || c === "・";
+	});
+}
+
+/**
+ * Same-word guard for plan building. The built word list is deduped at
+ * build time, but if a notation twin ever slips through （わすれる spelled
+ * in kana vs 忘れる in kanji — two ids, one word), a day's served set must
+ * still never contain both spellings. Kana-only words key by their kana
+ * form; kanji words register their reading's kana form, so whichever twin
+ * is picked first blocks the other. Homophones （直す / 治す — both kanji
+ * words sharing a reading) are NOT blocked: only kana twins consult the
+ * reading key.
+ */
+function makeTwinGuard() {
+	const ids = new Set<string>();
+	/** Kana forms of kana-only words already taken. */
+	const kanaWordForms = new Set<string>();
+	/** Kana forms of the readings of kanji words already taken. */
+	const readingForms = new Set<string>();
+	const register = (word: VocabWord) => {
+		ids.add(word.id);
+		if (isKanaSurface(word.w)) kanaWordForms.add(kataToHira(word.w));
+		else if (word.r) readingForms.add(kataToHira(word.r));
+	};
+	return {
+		/** Register a word that is already served (e.g. in today's plan) without blocking it. */
+		seed(word: VocabWord) {
+			register(word);
+		},
+		tryTake(word: VocabWord): boolean {
+			if (ids.has(word.id)) return false;
+			if (isKanaSurface(word.w)) {
+				const form = kataToHira(word.w);
+				if (kanaWordForms.has(form) || readingForms.has(form)) return false;
+			} else if (word.r && kanaWordForms.has(kataToHira(word.r))) {
+				return false;
+			}
+			register(word);
+			return true;
+		},
+	};
+}
+
 /**
  * Build today's plan of exactly `quota` cards (fewer only when the queue runs
  * out): due reviews first — most overdue, then priority — new words after.
@@ -158,11 +210,17 @@ export function buildDailyPlan(
 			const db = states[b.id].due;
 			return da.localeCompare(db) || compareWords(a, b);
 		});
-	const reviewPart = due.slice(0, quota);
-	const freshPart = words
-		.filter((word) => !states[word.id])
-		.sort(compareWords)
-		.slice(0, quota - reviewPart.length);
+	const guard = makeTwinGuard();
+	const reviewPart: VocabWord[] = [];
+	for (const word of due) {
+		if (reviewPart.length >= quota) break;
+		if (guard.tryTake(word)) reviewPart.push(word);
+	}
+	const freshPart: VocabWord[] = [];
+	for (const word of words.filter((w) => !states[w.id]).sort(compareWords)) {
+		if (reviewPart.length + freshPart.length >= quota) break;
+		if (guard.tryTake(word)) freshPart.push(word);
+	}
 	return {
 		date: today,
 		ids: [...reviewPart, ...freshPart].map((word) => word.id),
@@ -206,6 +264,14 @@ function extraCandidates(
 	today: string,
 ): { due: VocabWord[]; fresh: VocabWord[] } {
 	const taken = new Set([...plan.ids, ...(plan.extra?.ids ?? [])]);
+	// Seed the twin guard with everything already in today's plan so an extra
+	// batch can never add the other spelling of a word served today.
+	const guard = makeTwinGuard();
+	const byId = new Map(words.map((word) => [word.id, word]));
+	for (const id of taken) {
+		const word = byId.get(id);
+		if (word) guard.seed(word);
+	}
 	const due = words
 		.filter((word) => {
 			const state = states[word.id];
@@ -215,8 +281,12 @@ function extraCandidates(
 			const da = states[a.id].due;
 			const db = states[b.id].due;
 			return da.localeCompare(db) || compareWords(a, b);
-		});
-	const fresh = words.filter((word) => !states[word.id] && !taken.has(word.id)).sort(compareWords);
+		})
+		.filter((word) => guard.tryTake(word));
+	const fresh = words
+		.filter((word) => !states[word.id] && !taken.has(word.id))
+		.sort(compareWords)
+		.filter((word) => guard.tryTake(word));
 	return { due, fresh };
 }
 
@@ -289,7 +359,10 @@ function cleanPlan(value: unknown): VocabPlan | null {
 	const item = value as Record<string, unknown>;
 	if (typeof item.date !== "string" || !DATE_RE.test(item.date)) return null;
 	if (!Array.isArray(item.ids) || !Array.isArray(item.done)) return null;
-	const ids = item.ids.filter((id): id is string => typeof id === "string" && id.length > 0 && id.length <= 200);
+	// A stored plan must never serve the same id twice — dedupe defensively.
+	const ids = [
+		...new Set(item.ids.filter((id): id is string => typeof id === "string" && id.length > 0 && id.length <= 200)),
+	];
 	const done = item.done.filter((id): id is string => typeof id === "string" && ids.includes(id));
 	if (typeof item.review !== "number" || typeof item.fresh !== "number") return null;
 	const plan: VocabPlan = { date: item.date, ids, done: [...new Set(done)], review: item.review, fresh: item.fresh };
@@ -311,6 +384,79 @@ function cleanPlan(value: unknown): VocabPlan | null {
 		if (reshown.length) plan.reshown = [...new Set(reshown)];
 	}
 	return plan;
+}
+
+/** Resolve an id through the alias chain (dropped duplicate → survivor). */
+function resolveVocabAlias(aliases: Record<string, string>, id: string): string {
+	let cur = id;
+	const seen = new Set<string>();
+	while (aliases[cur] && !seen.has(cur)) {
+		seen.add(cur);
+		cur = aliases[cur];
+	}
+	return cur;
+}
+
+/**
+ * Fold data stored under dropped duplicate ids into their survivors. The
+ * built word list carries `aliases` (old id → surviving id) for every word
+ * a rebuild merged away; without this, SRS progress recorded under the old
+ * id would be orphaned and the word would restart from step 0 under its
+ * surviving id. When both ids carry a state, the most advanced progress
+ * wins (higher ladder step, then the fresher record) — nothing is wiped.
+ * Plan ids/done/grades/reshown/extra are remapped and deduped likewise.
+ * Returns the input unchanged when no stored id is aliased.
+ */
+export function applyVocabAliases(dataIn: VocabQueueData, aliases: Record<string, string>): VocabQueueData {
+	if (!aliases || !Object.keys(aliases).length) return dataIn;
+	const plan = dataIn.plan;
+	const planIds = plan
+		? [
+				...plan.ids,
+				...plan.done,
+				...(plan.extra?.ids ?? []),
+				...(plan.extra?.done ?? []),
+				...(plan.reshown ?? []),
+				...Object.keys(plan.grades ?? {}),
+			]
+		: [];
+	const touched =
+		Object.keys(dataIn.states).some((id) => resolveVocabAlias(aliases, id) !== id) ||
+		planIds.some((id) => resolveVocabAlias(aliases, id) !== id);
+	if (!touched) return dataIn;
+	const states: Record<string, VocabWordState> = {};
+	for (const [id, state] of Object.entries(dataIn.states)) {
+		const target = resolveVocabAlias(aliases, id);
+		const prev = states[target];
+		if (!prev || state.s > prev.s || (state.s === prev.s && state.ts > prev.ts)) states[target] = state;
+	}
+	let nextPlan = plan;
+	if (plan) {
+		const mapIds = (ids: string[]) => [...new Set(ids.map((id) => resolveVocabAlias(aliases, id)))];
+		const baseIds = mapIds(plan.ids);
+		const grades: Record<string, VocabGrade> = {};
+		for (const [id, grade] of Object.entries(plan.grades ?? {})) {
+			const target = resolveVocabAlias(aliases, id);
+			if (!(target in grades)) grades[target] = grade;
+		}
+		nextPlan = {
+			...plan,
+			ids: baseIds,
+			done: mapIds(plan.done).filter((id) => baseIds.includes(id)),
+			...(Object.keys(grades).length ? { grades } : {}),
+			...(plan.reshown ? { reshown: mapIds(plan.reshown) } : {}),
+			...(plan.extra
+				? {
+						extra: {
+							...plan.extra,
+							ids: mapIds(plan.extra.ids).filter((id) => !baseIds.includes(id)),
+							done: mapIds(plan.extra.done).filter((id) => !baseIds.includes(id)),
+						},
+					}
+				: {}),
+		};
+	}
+	return { v: 1, states, plan: nextPlan };
 }
 
 export function cleanVocabQueueData(value: unknown): VocabQueueData {
@@ -385,6 +531,20 @@ let pushing = false;
 let resyncing = false;
 let wordsCache: VocabWord[] | null = null;
 let wordsPromise: Promise<VocabWord[]> | null = null;
+/** Dropped-duplicate id → survivor id, from the built word list (see applyVocabAliases). */
+let aliasMap: Record<string, string> = {};
+let aliasesApplied = false;
+
+/** One-shot migration of stored state/plan onto surviving ids, once the word list (and its aliases) is known. */
+function applyAliasesIfNeeded() {
+	if (aliasesApplied || !Object.keys(aliasMap).length) return;
+	aliasesApplied = true;
+	const next = applyVocabAliases(data, aliasMap);
+	if (next !== data) {
+		data = next;
+		commit();
+	}
+}
 
 export function subscribeVocabQueue(listener: () => void) {
 	listeners.add(listener);
@@ -423,9 +583,22 @@ export function ensureVocabWords(): Promise<VocabWord[]> {
 	if (wordsCache) return Promise.resolve(wordsCache);
 	if (!wordsPromise) {
 		wordsPromise = fetch("/data/vocab-queue.json", { credentials: "same-origin" })
-			.then((res) => (res.ok ? (res.json() as Promise<{ words?: VocabWord[] }>) : { words: [] }))
+			.then((res) =>
+				res.ok
+					? (res.json() as Promise<{ words?: VocabWord[]; aliases?: Record<string, string> }>)
+					: { words: [] as VocabWord[] },
+			)
 			.then((payload) => {
 				wordsCache = Array.isArray(payload?.words) ? payload.words : [];
+				if (payload?.aliases && typeof payload.aliases === "object" && !Array.isArray(payload.aliases)) {
+					aliasMap = Object.fromEntries(
+						Object.entries(payload.aliases).filter(
+							([from, to]) => typeof from === "string" && typeof to === "string" && from !== to,
+						),
+					);
+					aliasesApplied = false;
+				}
+				applyAliasesIfNeeded();
 				emitVocabQueue();
 				return wordsCache;
 			})
@@ -480,6 +653,7 @@ export function hydrateVocabQueue() {
 
 /** Return today's plan, building (and persisting) a fresh one when the stored plan is for another day. */
 export function todayPlan(words: VocabWord[], today = jstToday()): VocabPlan {
+	applyAliasesIfNeeded();
 	if (data.plan && data.plan.date === today) return data.plan;
 	const plan = buildDailyPlan(words, data.states, today);
 	data = { ...data, plan };
@@ -504,6 +678,7 @@ export function shouldReshowToday(grade: VocabGrade, alreadyReshown: boolean): b
  * is exhausted. The baseline ids/done/review/fresh are never touched.
  */
 export function addExtraBatch(words: VocabWord[], today = jstToday()): string[] {
+	applyAliasesIfNeeded();
 	if (!data.plan || data.plan.date !== today) return [];
 	const batch = buildExtraBatch(words, data.states, data.plan, today);
 	if (!batch) return [];
@@ -641,6 +816,8 @@ export function resetVocabQueueForTests() {
 	resyncing = false;
 	wordsCache = null;
 	wordsPromise = null;
+	aliasMap = {};
+	aliasesApplied = false;
 	if (pushTimer) {
 		clearTimeout(pushTimer);
 		pushTimer = null;

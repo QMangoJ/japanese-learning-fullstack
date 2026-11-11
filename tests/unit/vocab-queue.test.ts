@@ -5,6 +5,7 @@ import { isVocabQueuePayload } from "../../app/auth/study-payloads";
 import {
 	addExtraBatch,
 	addIsoDays,
+	applyVocabAliases,
 	applyVocabGrade,
 	buildDailyPlan,
 	buildExtraBatch,
@@ -148,6 +149,7 @@ describe("built word list (public/data/vocab-queue.json)", () => {
 	const payload = JSON.parse(readFileSync("public/data/vocab-queue.json", "utf8")) as {
 		quota: number;
 		words: VocabWord[];
+		aliases?: Record<string, string>;
 	};
 	const norm = (w: string) =>
 		w
@@ -165,6 +167,39 @@ describe("built word list (public/data/vocab-queue.json)", () => {
 		expect(keys.size).toBe(payload.words.length);
 	});
 
+	it("has no notation twins: a kana-spelled entry never duplicates a kanji entry with the same reading", () => {
+		const kataToHira = (s: string) => s.replace(/[ァ-ヶ]/g, (c) => String.fromCharCode(c.charCodeAt(0) - 0x60));
+		const isKana = (s: string) => s.length > 0 && [...s].every((c) => {
+			const code = c.codePointAt(0) ?? 0;
+			return (code >= 0x3040 && code <= 0x30ff) || c === "・";
+		});
+		// Pairs that must stay separate: ambiguous headwords （なおす = 直す/治す）,
+		// a known bad reading in the source docs （ドレス r=ね）, different words
+		// as taught （のる vs 乗る=乘坐）, different forms （やめた vs やめちゃった）,
+		// and single-kanji study cards read ソウ vs the kana word そう.
+		const allowed = new Set(["なおす", "ね", "のる", "やめた", "そう"]);
+		const byReading = new Map<string, VocabWord[]>();
+		for (const w of payload.words) {
+			if (!w.r) continue;
+			const key = kataToHira(w.r);
+			byReading.set(key, [...(byReading.get(key) ?? []), w]);
+		}
+		for (const w of payload.words) {
+			if (!isKana(w.w) || w.w.length < 2 || allowed.has(w.w)) continue;
+			for (const other of byReading.get(kataToHira(w.w)) ?? []) {
+				expect(other.w, `${w.w} duplicates ${other.w}`).toBe(w.w);
+			}
+		}
+	});
+
+	it("aliases every dropped id at a surviving word and never aliases a live word", () => {
+		const ids = new Set(payload.words.map((w) => w.id));
+		for (const [from, to] of Object.entries(payload.aliases ?? {})) {
+			expect(ids.has(from), `alias source ${from} is still a live word`).toBe(false);
+			expect(ids.has(to), `alias target ${to} is not a live word`).toBe(true);
+		}
+	});
+
 	it("keeps every word glossed and tiered 1..5, quota 50", () => {
 		expect(payload.quota).toBe(50);
 		for (const w of payload.words) {
@@ -179,6 +214,65 @@ describe("built word list (public/data/vocab-queue.json)", () => {
 		for (const banned of ["汉字自测", "银行・ATM", "银行ATM", "衣服购物", "咖啡店菜单", "口语", "投资理财", "日本投资理财"]) {
 			expect(labels.has(banned)).toBe(false);
 		}
+	});
+});
+
+describe("vocab queue dedup guards", () => {
+	const kanaTwin: VocabWord = { id: "kana", w: "わすれる", r: "わすれる", zh: "忘记", tier: 3, src: "课堂复习", ord: 1 };
+	const kanjiTwin: VocabWord = { id: "kanji", w: "忘れる", r: "わすれる", zh: "忘记", tier: 3, src: "课堂复习・Preply", ord: 2 };
+
+	it("never serves both spellings of a notation twin in one day's plan", () => {
+		// kana twin is a due review, kanji twin is fresh — only one may be served.
+		const states = { kana: { s: 1, due: "2026-11-10", ts: 1 } };
+		const plan = buildDailyPlan([kanaTwin, kanjiTwin], states, TODAY);
+		expect(plan.ids).toEqual(["kana"]);
+		// and the other way round: kanji due, kana fresh.
+		const states2 = { kanji: { s: 1, due: "2026-11-10", ts: 1 } };
+		const plan2 = buildDailyPlan([kanaTwin, kanjiTwin], states2, TODAY);
+		expect(plan2.ids).toEqual(["kanji"]);
+	});
+
+	it("does not block homophones: two kanji words sharing a reading can both be served", () => {
+		const naosu1: VocabWord = { id: "naosu1", w: "直す", r: "なおす", zh: "修理", tier: 3, src: "课堂复习", ord: 1 };
+		const naosu2: VocabWord = { id: "naosu2", w: "治す", r: "なおす", zh: "治好", tier: 3, src: "课堂复习", ord: 2 };
+		const plan = buildDailyPlan([naosu1, naosu2], {}, TODAY);
+		expect(plan.ids.sort()).toEqual(["naosu1", "naosu2"]);
+	});
+
+	it("an extra batch never adds the other spelling of a word already in today's plan", () => {
+		const plan: VocabPlan = { date: TODAY, ids: ["kanji"], done: [], review: 0, fresh: 1 };
+		expect(buildExtraBatch([kanaTwin, kanjiTwin], {}, plan, TODAY)).toBeNull();
+		expect(countExtraCandidates([kanaTwin, kanjiTwin], {}, plan, TODAY).total).toBe(0);
+	});
+
+	it("cleans a stored plan with duplicate ids down to one serving per id", () => {
+		const cleaned = cleanVocabQueueData({
+			v: 1,
+			states: {},
+			plan: { date: TODAY, ids: ["a", "a", "b"], done: ["a", "a"], review: 1, fresh: 1 },
+		});
+		expect(cleaned.plan?.ids).toEqual(["a", "b"]);
+		expect(cleaned.plan?.done).toEqual(["a"]);
+	});
+
+	it("folds SRS state from a dropped duplicate id into the survivor, keeping the most advanced progress", () => {
+		const data = cleanVocabQueueData({
+			v: 1,
+			states: {
+				kana: { s: 3, due: "2026-11-20", ts: 100 },
+				kanji: { s: 1, due: "2026-11-12", ts: 200 },
+				other: { s: 0, due: "2026-11-11", ts: 50 },
+			},
+			plan: { date: TODAY, ids: ["kana", "kanji"], done: ["kana"], review: 1, fresh: 1 },
+		});
+		const migrated = applyVocabAliases(data, { kana: "kanji" });
+		expect(migrated.states.kana).toBeUndefined();
+		expect(migrated.states.kanji).toEqual({ s: 3, due: "2026-11-20", ts: 100 });
+		expect(migrated.states.other).toEqual({ s: 0, due: "2026-11-11", ts: 50 });
+		expect(migrated.plan?.ids).toEqual(["kanji"]);
+		expect(migrated.plan?.done).toEqual(["kanji"]);
+		// No alias hits → the input is returned untouched.
+		expect(applyVocabAliases(data, { ghost: "kanji" })).toBe(data);
 	});
 });
 

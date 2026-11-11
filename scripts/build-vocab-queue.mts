@@ -21,7 +21,10 @@
  *
  * Cross-source duplicates collapse to one entry: the higher-priority source
  * wins, missing reading/gloss fields are filled from the loser, and source
- * labels merge. Word ids are a stable hash of (normalized word + reading) so
+ * labels merge. A second pass merges notation twins — the same word spelled
+ * in kana in one source and kanji in another （わすれる / 忘れる) — and emits
+ * the dropped ids as `aliases` so their SRS state migrates to the survivor.
+ * Word ids are a stable hash of (normalized word + reading) so
  * SRS state survives rebuilds. Mistakes that cannot be normalized honestly
  * (no gloss source, extraction failed, not a word item at all) are NOT
  * silently dropped: they land in docs/vocab-queue-pending.md with a reason.
@@ -83,10 +86,30 @@ function isKana(text: string): boolean {
 
 /** Dedupe key: trimmed, first synonym segment, no trailing （な）/ leading 〜. */
 export function normKey(word: string): string {
-	let key = String(word || "").replace(/\s+/g, " ").trim();
+	let key = String(word || "");
+	// Reading annotations printed inside the surface — 選択（せんたく）,
+	// 場合(ばあい)による — are the reading, not part of the word itself.
+	key = key.replace(/[（(][ぁ-ゖァ-ヶー・\s]+[）)]/g, "");
+	key = key.replace(/\s+/g, " ").trim();
 	key = key.split(/[／/]/)[0].trim();
 	key = key.replace(/^[〜～・]+/, "").replace(/[（(]な[）)]$/, "").replace(/。$/, "").trim();
+	// Japanese headwords carry no spaces; doc surfaces jam word + reading
+	// together with spaces (地元 じもと, おしゃれ な) — spaces are not content.
+	key = key.replace(/\s+/g, "");
 	return key;
+}
+
+/** Katakana → hiragana (readings mix both for katakana words: メモをとる). */
+export function kataToHira(text: string): string {
+	return text.replace(/[ァ-ヶ]/g, (c) => String.fromCharCode(c.charCodeAt(0) - 0x60));
+}
+
+function isKanaSurface(text: string): boolean {
+	if (!text) return false;
+	return [...text].every((c) => {
+		const code = c.codePointAt(0) ?? 0;
+		return (code >= 0x3040 && code <= 0x30ff) || c === "・";
+	});
 }
 
 function wordId(word: string, reading: string): string {
@@ -575,9 +598,19 @@ function n2Kanji() {
 // shipped keeps its id across rebuilds — even when a newly added source wins
 // its entry and the content-derived hash (word + reading) would change.
 const pinByKey = new Map<string, string>();
+const prevIdsByKey = new Map<string, string[]>();
+let prevAliases: Record<string, string> = {};
 try {
-	const prev = readJson<{ words: { w: string; id: string }[] }>(join(ROOT, "public", "data", "vocab-queue.json"));
-	for (const w of prev.words ?? []) pinByKey.set(normKey(w.w), w.id);
+	const prev = readJson<{ words: { w: string; id: string }[]; aliases?: Record<string, string> }>(
+		join(ROOT, "public", "data", "vocab-queue.json"),
+	);
+	for (const w of prev.words ?? []) {
+		pinByKey.set(normKey(w.w), w.id);
+		const list = prevIdsByKey.get(normKey(w.w)) ?? [];
+		list.push(w.id);
+		prevIdsByKey.set(normKey(w.w), list);
+	}
+	if (prev.aliases && typeof prev.aliases === "object") prevAliases = prev.aliases;
 } catch {
 	/* no previous payload — first build */
 }
@@ -632,13 +665,145 @@ const words = [...byKey.values()].map((e) => e.word);
 		usedIds.add(w.id);
 	}
 }
+
+// ---------- notation-twin merge ----------
+// The surface-key merge above cannot see that a kana-spelled entry and a
+// kanji-spelled entry are the same word （わすれる in the Danielさん doc vs
+// 忘れる in the Preply doc): their surfaces differ, so both used to ship and
+// the daily plan could serve the same word twice under two ids. A kana-only
+// entry whose reading matches exactly one kanji-bearing headword (modulo
+// annotation / appended-reading surface variants of that same headword),
+// with a compatible Chinese gloss, IS that word — merge it in. Ambiguous
+// cases stay separate on purpose: なおす could be 直す or 治す (two distinct
+// headwords share the reading), and unrelated glosses （のる "参与商量" vs
+// 乗る "乘坐") are different words as taught. Dropped ids are emitted as
+// `aliases` so the client folds their SRS state into the survivor instead
+// of orphaning progress.
+function glossChars(zh: string): Set<string> {
+	return new Set([...String(zh || "")].filter((c) => /[\u4e00-\u9fff]/.test(c)));
+}
+function glossCompatible(a: string, b: string): boolean {
+	if (!a || !b) return true;
+	const ca = glossChars(a);
+	for (const c of glossChars(b)) if (ca.has(c)) return true;
+	return false;
+}
+/** Surface key with a trailing appended reading removed （地元じもと → 地元）. */
+function displayKey(w: FinalWord): string {
+	const nk = normKey(w.w);
+	if (w.r) {
+		const hira = kataToHira(nk);
+		const hr = kataToHira(w.r);
+		if (hr && hira.length > hr.length && hira.endsWith(hr)) return nk.slice(0, nk.length - hr.length);
+	}
+	return nk;
+}
+function surfaceScore(w: FinalWord): number[] {
+	const nk = normKey(w.w);
+	return [
+		/[「」[\]［］]/.test(w.w) ? 1 : 0, // annotation junk glued onto the surface
+		isKanaSurface(nk) ? 1 : 0, // prefer the kanji-bearing display form
+		nk === displayKey(w) ? 0 : 1, // prefer the clean headword over word+reading jams
+		w.tier,
+		w.ord,
+	];
+}
+
+const aliases: Record<string, string> = { ...prevAliases };
+let twinMerged = 0;
+{
+	const byReading = new Map<string, FinalWord[]>();
+	for (const w of words) {
+		if (!w.r || isKanaSurface(normKey(w.w))) continue;
+		const key = kataToHira(w.r);
+		const list = byReading.get(key) ?? [];
+		list.push(w);
+		byReading.set(key, list);
+	}
+	const dropped = new Set<FinalWord>();
+	for (const k of [...words]) {
+		if (dropped.has(k)) continue;
+		const nk = normKey(k.w);
+		if (!isKanaSurface(nk) || nk.length < 2) continue;
+		const cands = (byReading.get(kataToHira(nk)) ?? []).filter((j) => j !== k && !dropped.has(j));
+		if (!cands.length) continue;
+		if (new Set(cands.map(displayKey)).size !== 1) continue; // ambiguous headword (直す/治す)
+		const cluster = [k, ...cands].sort((a, b) => {
+			const sa = surfaceScore(a);
+			const sb = surfaceScore(b);
+			for (let i = 0; i < sa.length; i++) if (sa[i] !== sb[i]) return sa[i] - sb[i];
+			return 0;
+		});
+		const survivor = cluster[0];
+		if (!glossCompatible(k.zh, survivor.zh)) continue;
+		for (const loser of cluster.slice(1)) {
+			if (!survivor.r && loser.r) survivor.r = loser.r;
+			if (loser.zh && loser.zh !== survivor.zh) {
+				const segs = survivor.zh ? survivor.zh.split(/[；;]/).map((s) => s.trim()).filter(Boolean) : [];
+				for (const seg of loser.zh.split(/[；;]/).map((s) => s.trim()).filter(Boolean)) {
+					if (!segs.includes(seg)) segs.push(seg);
+				}
+				survivor.zh = segs.join("；");
+			}
+			if (!survivor.en && loser.en) survivor.en = loser.en;
+			if (!survivor.ex && loser.ex) survivor.ex = loser.ex;
+			if (!survivor.exZh && loser.exZh) survivor.exZh = loser.exZh;
+			const labelSegs = survivor.src.split("・");
+			for (const seg of loser.src.split("・")) if (!labelSegs.includes(seg)) labelSegs.push(seg);
+			survivor.src = labelSegs.join("・");
+			aliases[loser.id] = survivor.id;
+			dropped.add(loser);
+			twinMerged += 1;
+		}
+	}
+	for (let i = words.length - 1; i >= 0; i--) if (dropped.has(words[i])) words.splice(i, 1);
+}
+{
+	// Alias completion: EVERY id the previous payload shipped that no longer
+	// exists must point at the entry that absorbed it — the same-key survivor
+	// for surface merges (a key can have held two shipped ids when a normKey
+	// rule change unifies them and only one pin survives), or the twin
+	// survivor via a sibling id from the same key. Then prune / resolve:
+	// follow chains, drop entries whose source is a live word again or whose
+	// target no longer exists.
+	const finalByKey = new Map<string, FinalWord>();
+	for (const w of words) finalByKey.set(normKey(w.w), w);
+	const liveIds = new Set(words.map((w) => w.id));
+	for (const [key, oldIds] of prevIdsByKey) {
+		const target = finalByKey.get(key);
+		for (const oldId of oldIds) {
+			if (liveIds.has(oldId) || aliases[oldId]) continue;
+			if (target) {
+				aliases[oldId] = target.id;
+				continue;
+			}
+			const sibling = oldIds.find((id) => aliases[id]);
+			if (sibling) aliases[oldId] = aliases[sibling];
+		}
+	}
+	const resolveAlias = (id: string): string => {
+		let cur = id;
+		const seen = new Set<string>();
+		while (aliases[cur] && !seen.has(cur)) {
+			seen.add(cur);
+			cur = aliases[cur];
+		}
+		return cur;
+	};
+	for (const src of Object.keys(aliases)) {
+		const target = resolveAlias(src);
+		if (src === target || liveIds.has(src) || !liveIds.has(target)) delete aliases[src];
+		else aliases[src] = target;
+	}
+}
 words.sort((a, b) => a.tier - b.tier || a.ord - b.ord || a.id.localeCompare(b.id));
 
 const payload = {
 	version: 1,
 	generatedAt: new Date().toISOString(),
 	quota: 50,
-	counts: { ...counts, total: words.length, mergedTotal, pending: pending.length },
+	counts: { ...counts, total: words.length, mergedTotal, twinMerged, pending: pending.length },
+	aliases,
 	words,
 };
 writeFileSync(join(ROOT, "public", "data", "vocab-queue.json"), `${JSON.stringify(payload, null, 1)}\n`);
