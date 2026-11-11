@@ -176,6 +176,16 @@ function channelSections(articles: ItListeningIndexEntry[]): ChannelSection[] {
 			test: (a) => a.series_zh === "真实职场·面试",
 		},
 		{
+			key: "zadankai",
+			name: lx("企业座谈·会议", "Company talks & meetings"),
+			note: lx(
+				"真实企业的座谈与研讨会：LINE 前端工程师座谈会（ログミー人工全文）、LayerX 销售×工程师座谈、Hatena 团队开发研讨会。多人真实讨论、有来回有即兴，逐句对照翻译和语法。",
+				"Real company talks: LINE frontend-engineer panels (full human transcripts via logmi), a LayerX sales × engineering talk, and Hatena's team-development seminar.",
+			),
+			articles: [],
+			test: (a) => a.series_zh === "真实职场·座谈",
+		},
+		{
 			key: "life",
 			name: lx("真实生活", "Real life in Japan"),
 			note: lx(
