@@ -186,6 +186,17 @@ function channelSections(articles: ItListeningIndexEntry[]): ChannelSection[] {
 			test: (a) => a.series_zh === "真实生活",
 		},
 		{
+			key: "yurucom",
+			name: "ゆるコンピュータ科学ラジオ",
+			note: lx(
+				"视频来源频道：ゆるコンピュータ科学ラジオ · 两位主持人闲聊式的计算机科学播客——把删除、内存、网络这些底层原理讲成人话。逐句对照翻译和语法。",
+				"Source channel: ゆるコンピュータ科学ラジオ — a laid-back computer-science podcast that explains low-level ideas (deletion, memory, networks) in plain words.",
+			),
+			channelUrl: "https://www.youtube.com/@yurucom",
+			articles: [],
+			test: (a) => (a.channelUrl ?? "").includes("yurucom") || a.source.includes("ゆるコンピュータ"),
+		},
+		{
 			key: "mainichi",
 			name: "まいにち日本語勉強（IT業務編）",
 			note: lx("视频来源频道：まいにち日本語勉強 · 教材《IT業務編》——「場面で覚える」「ウォームアップ」モデル会話", "Source channel: まいにち日本語勉強 — IT業務編 textbook model conversations"),
