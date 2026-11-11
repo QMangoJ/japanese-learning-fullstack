@@ -246,6 +246,7 @@ export function Sheet({
 								<SheetTile icon="🔢" label={lx("数字", "Numbers")} onGo={go("#/numbers")} />
 								<SheetTile icon="💬" label={lx("口语", "Casual")} onGo={go("#/kougo")} />
 								<SheetTile icon="📜" label={lx("漢字的旅程", "Journey of Kanji")} onGo={go("#/topics/kanji-journey")} />
+								<SheetTile icon="💭" label={lx("「気」相关的表达", "Expressions with 気")} onGo={go("#/topics/ki-expressions")} />
 							</Grid>
 							<SheetSectionHead title={lx("本模块", "This module")} sub={modLabel()} />
 							<Grid columns={3} gap={2} xstyle={sheetStyles.grid}>

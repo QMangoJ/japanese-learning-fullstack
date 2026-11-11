@@ -113,6 +113,21 @@
 				"结尾",
 				"来宾问答"
 			]
+		},
+		{
+			"slug": "ki-expressions",
+			"title_zh": "「気」相关的表达",
+			"title_ja": "「気」の表現",
+			"count": 28,
+			"title_en": "Expressions with 気",
+			"subtopics": [
+				"心情・感觉",
+				"注意・意识",
+				"关心・体贴",
+				"意志・心思",
+				"身体・状态",
+				"社交固定句"
+			]
 		}
 	]
 }
