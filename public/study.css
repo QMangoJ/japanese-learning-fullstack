@@ -424,7 +424,13 @@ body.hide-jp .vreading{visibility:hidden}
 	.kanji-word-usage-copy{flex:1 1 calc(100% - 62px)}
 	.kanji-word-example-translation{font-size:13.5px}
 }
-nav.bottom{position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--card);border-top:1px solid var(--line);display:flex;padding:0 env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
+/* iOS Safari/WebKit can paint a plain fixed bar with the document during
+   scroll and leave it displaced from the viewport edge (seen on iPhone:
+   bar floating mid-screen with content below it). Pin the bar's own height
+   (content + safe-area) instead of deriving it from the buttons, and promote
+   the bar to its own compositor layer with translateZ(0) so WebKit tracks it
+   against the viewport rather than repainting it with the scrolled document. */
+nav.bottom{position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--card);border-top:1px solid var(--line);display:flex;height:calc(var(--bottom-nav-height) + env(safe-area-inset-bottom));padding:0 env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);transform:translateZ(0);-webkit-transform:translateZ(0)}
 nav.bottom button{flex:1;min-height:var(--bottom-nav-height);border:none;background:none;color:var(--sub);font-size:13px;padding:7px 0 6px;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px}
 nav.bottom button .ic{font-size:21.5px;line-height:1.2}
 nav.bottom button.on{color:var(--accent);font-weight:700}
