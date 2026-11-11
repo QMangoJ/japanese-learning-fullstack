@@ -52,7 +52,7 @@ describe("topic vocabulary data", () => {
 
 	it("adds ATM withdrawal, frontend work, and clothes shopping beside the investing list", () => {
 		const index = JSON.parse(readFileSync(join(DIR, "index.json"), "utf8")) as { topics: { slug: string }[] };
-		expect(index.topics.map((topic) => topic.slug)).toEqual(["japan-investing", "bank-atm", "frontend", "clothes-shopping", "cafe-menu", "job-interview", "kanji-journey"]);
+		expect(index.topics.map((topic) => topic.slug)).toEqual(["japan-investing", "bank-atm", "frontend", "clothes-shopping", "cafe-menu", "job-interview", "kanji-journey", "ki-expressions"]);
 		const load = (slug: string): TopicFile => JSON.parse(readFileSync(join(DIR, `${slug}.json`), "utf8"));
 		const atm = load("bank-atm");
 		const frontend = load("frontend");
