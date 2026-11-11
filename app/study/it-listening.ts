@@ -127,8 +127,9 @@ export type ItListeningIndexEntry = {
 	track?: string;
 	source: string;
 	channelUrl?: string;
-	youtube: string;
-	videoId: string;
+	/** 来源视频链接与 ID。実体験（本人柜台实战句等）无视频来源的文章不带这两个字段，页面据此不渲染播放器。 */
+	youtube?: string;
+	videoId?: string;
 	/** 来源 YouTube 视频的真实标题（oEmbed 取回）：同一视频拆出的多篇文章共享同一标题，
 	 * 列表/详情页展示用，方便按视频对上文章。 */
 	videoTitle?: string;
@@ -206,7 +207,10 @@ export function parseItListeningRoute(key: string): { id?: string } | null {
 export function isItListeningIndex(v: unknown): v is ItListeningIndex {
 	if (typeof v !== "object" || v === null) return false;
 	const idx = v as ItListeningIndex;
-	return Array.isArray(idx.articles) && idx.articles.every((a) => a && typeof a.id === "string" && typeof a.youtube === "string");
+	return (
+		Array.isArray(idx.articles) &&
+		idx.articles.every((a) => a && typeof a.id === "string" && (a.youtube === undefined || typeof a.youtube === "string"))
+	);
 }
 
 export function isItListeningArticle(v: unknown): v is ItListeningArticle {

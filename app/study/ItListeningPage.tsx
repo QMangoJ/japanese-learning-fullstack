@@ -320,9 +320,11 @@ function ItListeningList() {
 										{a.durationSec ? ` · ${fmtDuration(a.durationSec)}` : ""}
 									</span>
 								</button>
-								<a className="itl-card-yt" href={a.youtube} target="_blank" rel="noreferrer">
-									▶ YouTube
-								</a>
+								{a.youtube ? (
+									<a className="itl-card-yt" href={a.youtube} target="_blank" rel="noreferrer">
+										▶ YouTube
+									</a>
+								) : null}
 							</article>
 						))}
 					</div>
@@ -475,8 +477,9 @@ function ItListeningDetail({ id }: { id: string }) {
 				</button>
 			</header>
 
-			<section className="itl-player">
-				<div className="itl-player-slot" ref={playerSlotRef}>
+			{article.videoId ? (
+				<section className="itl-player">
+					<div className="itl-player-slot" ref={playerSlotRef}>
 					<div className={`itl-embed${floating ? " itl-embed--float" : ""}`}>
 						<iframe
 							ref={iframeRef}
@@ -509,10 +512,11 @@ function ItListeningDetail({ id }: { id: string }) {
 						) : null}
 					</div>
 				</div>
-				<a className="itl-yt-open" href={article.youtube} target="_blank" rel="noreferrer">
-					▶ {lx("在 YouTube 打开原视频", "Open the original video on YouTube")} ↗
-				</a>
-			</section>
+					<a className="itl-yt-open" href={article.youtube} target="_blank" rel="noreferrer">
+						▶ {lx("在 YouTube 打开原视频", "Open the original video on YouTube")} ↗
+					</a>
+				</section>
+			) : null}
 
 			{article.note_zh ? <p className="itl-note">{article.note_zh}</p> : null}
 
