@@ -488,7 +488,17 @@ function mergeExtra(local?: VocabPlanExtra, server?: VocabPlanExtra): VocabPlanE
 	return { ...main, done };
 }
 
-/** Merge two snapshots: per-word the newer ts wins; the later day's plan wins, same-day plans merge done sets. */
+/**
+ * Merge two snapshots: per-word the newer ts wins; the later day's plan wins.
+ * Same-day plans take the SERVER plan as the base (it is the source of truth)
+ * and union the day's progress (done / grades / reshown) onto it, keeping only
+ * entries for ids the merged plan actually serves. A device that minted its
+ * own plan from a stale snapshot — e.g. an empty one, whose deterministic
+ * build yields the queue's first batch — must converge to the server's list
+ * instead of keeping its ids and winning every later merge; progress it made
+ * on local-only ids is not lost, because the per-word states above still
+ * merge by ts.
+ */
 export function mergeVocabQueueData(local: VocabQueueData, server: VocabQueueData): VocabQueueData {
 	const states: Record<string, VocabWordState> = { ...server.states };
 	for (const [id, state] of Object.entries(local.states)) {
@@ -501,16 +511,30 @@ export function mergeVocabQueueData(local: VocabQueueData, server: VocabQueueDat
 	else if (local.plan.date > server.plan.date) plan = local.plan;
 	else if (server.plan.date > local.plan.date) plan = server.plan;
 	else {
-		const done = [...new Set([...local.plan.done, ...server.plan.done])].filter((id) => local.plan!.ids.includes(id));
-		const extra = mergeExtra(local.plan.extra, server.plan.extra);
-		const known = [...local.plan.ids, ...(extra?.ids ?? [])];
-		const grades = { ...(server.plan.grades ?? {}), ...(local.plan.grades ?? {}) };
+		// Extra blocks merge as before (longer block is the base, done unioned),
+		// then align to the server-based plan: extra ids must stay disjoint from
+		// the baseline ids — a local extra batch built against a divergent local
+		// plan can name words the server's baseline already serves.
+		let extra = mergeExtra(local.plan.extra, server.plan.extra);
+		if (extra) {
+			const ids = extra.ids.filter((id) => !server.plan!.ids.includes(id));
+			extra = ids.length ? { ...extra, ids, done: extra.done.filter((id) => ids.includes(id)) } : undefined;
+		}
+		const known = [...server.plan.ids, ...(extra?.ids ?? [])];
+		const done = [...new Set([...local.plan.done, ...server.plan.done])].filter((id) => server.plan!.ids.includes(id));
+		const grades: Record<string, VocabGrade> = {};
+		for (const [id, grade] of Object.entries({ ...(server.plan.grades ?? {}), ...(local.plan.grades ?? {}) })) {
+			if (known.includes(id)) grades[id] = grade;
+		}
 		const reshown = [...new Set([...(server.plan.reshown ?? []), ...(local.plan.reshown ?? [])])].filter((id) =>
 			known.includes(id),
 		);
 		plan = {
-			...local.plan,
+			date: server.plan.date,
+			ids: server.plan.ids,
 			done,
+			review: server.plan.review,
+			fresh: server.plan.fresh,
 			...(Object.keys(grades).length ? { grades } : {}),
 			...(reshown.length ? { reshown } : {}),
 			...(extra ? { extra } : {}),

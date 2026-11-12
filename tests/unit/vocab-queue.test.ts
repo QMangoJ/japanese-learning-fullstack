@@ -367,6 +367,89 @@ describe("vocab queue server-side plan recovery", () => {
 		expect(merged.plan?.reshown?.sort()).toEqual(["a", "b"]);
 	});
 
+	it("takes the server plan's ids when same-day plans diverge, unioning progress onto them", () => {
+		const local = {
+			v: 1 as const,
+			states: { ghost: { s: 1, due: "2026-11-14", ts: 200 } },
+			plan: {
+				date: TODAY,
+				ids: ["ghost", "a"],
+				done: ["ghost", "a"],
+				review: 0,
+				fresh: 2,
+				grades: { ghost: "know" as const, a: "fuzzy" as const },
+				reshown: ["ghost"],
+			},
+		};
+		const server = {
+			v: 1 as const,
+			states: {},
+			plan: { date: TODAY, ids: ["a", "b"], done: ["b"], review: 1, fresh: 1, grades: { b: "know" as const }, reshown: ["b"] },
+		};
+		const merged = mergeVocabQueueData(local, server);
+		expect(merged.plan?.ids).toEqual(["a", "b"]);
+		expect(merged.plan?.review).toBe(1);
+		expect(merged.plan?.fresh).toBe(1);
+		// Done unions, but only for ids the merged (server) plan serves.
+		expect(merged.plan?.done.sort()).toEqual(["a", "b"]);
+		expect(merged.plan?.grades).toEqual({ a: "fuzzy", b: "know" });
+		expect(merged.plan?.reshown).toEqual(["b"]);
+		// The local-only word leaves the plan, but its SRS state survives the merge.
+		expect(merged.states.ghost).toMatchObject({ s: 1, due: "2026-11-14" });
+	});
+
+	it("converges a plan minted from an empty local snapshot to the server's plan", () => {
+		const words = [word("a", 1, 1), word("b", 1, 2), word("c", 1, 3), word("d", 1, 4)];
+		// Empty states mint the deterministic first batch — yesterday's words on a stale device.
+		const minted = buildDailyPlan(words, {}, TODAY, 3);
+		expect(minted.ids).toEqual(["a", "b", "c"]);
+		const local = { v: 1 as const, states: {}, plan: { ...minted, done: ["a"] } };
+		const server = {
+			v: 1 as const,
+			states: {},
+			plan: { date: TODAY, ids: ["b", "c", "d"], done: ["b"], review: 1, fresh: 2 },
+		};
+		const merged = mergeVocabQueueData(local, server);
+		expect(merged.plan?.ids).toEqual(["b", "c", "d"]);
+		expect(merged.plan?.done).toEqual(["b"]);
+		expect(merged.plan?.review).toBe(1);
+		expect(merged.plan?.fresh).toBe(2);
+	});
+
+	it("keeps the later day's plan wholesale, whichever side holds it", () => {
+		const older = { date: "2026-11-10", ids: ["a"], done: ["a"], review: 0, fresh: 1 };
+		const newer = { date: TODAY, ids: ["b"], done: [] as string[], review: 0, fresh: 1 };
+		expect(mergeVocabQueueData({ v: 1, states: {}, plan: older }, { v: 1, states: {}, plan: newer }).plan).toEqual(newer);
+		expect(mergeVocabQueueData({ v: 1, states: {}, plan: newer }, { v: 1, states: {}, plan: older }).plan).toEqual(newer);
+		expect(mergeVocabQueueData({ v: 1, states: {}, plan: newer }, { v: 1, states: {}, plan: null }).plan).toEqual(newer);
+	});
+
+	it("aligns a merged extra block to the server plan: extra ids never collide with the baseline", () => {
+		const local = {
+			v: 1 as const,
+			states: {},
+			plan: {
+				date: TODAY,
+				ids: ["a"],
+				done: [] as string[],
+				review: 0,
+				fresh: 1,
+				grades: { b: "know" as const, x: "fuzzy" as const },
+				extra: { ids: ["b", "x"], done: ["b", "x"], review: 1, fresh: 1 },
+			},
+		};
+		const server = {
+			v: 1 as const,
+			states: {},
+			plan: { date: TODAY, ids: ["a", "b"], done: [] as string[], review: 1, fresh: 1 },
+		};
+		const merged = mergeVocabQueueData(local, server);
+		// "b" is served by the server baseline, so it leaves the extra block;
+		// its grade survives because grades cover baseline and extra ids alike.
+		expect(merged.plan?.extra).toEqual({ ids: ["x"], done: ["x"], review: 1, fresh: 1 });
+		expect(merged.plan?.grades).toEqual({ b: "know", x: "fuzzy" });
+	});
+
 	it("round-trips grades/reshown through the cleaner and drops junk entries", () => {
 		const cleaned = cleanVocabQueueData({
 			v: 1,
