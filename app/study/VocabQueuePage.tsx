@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
 
 import { StudyFlip } from "./study-flip";
+import { RubyHtml } from "../routes/study-common";
 import type { SwipeGrade } from "./swipe-grade";
 import { lx, navTo } from "./store";
 import { jstToday } from "./lesson-review";
@@ -73,6 +74,30 @@ function VocabFlipCard({
 								<div className="fcard-ex-label">{lx("例句", "Example")}</div>
 								<div>{word.ex}</div>
 								{word.exZh ? <div className="vq-ex-zh">{word.exZh}</div> : null}
+							</div>
+						) : null}
+						{word.breakdown ? (
+							<div className="fcard-ex vq-breakdown">
+								<div className="fcard-ex-label">{lx("语法拆解", "Breakdown")}</div>
+								<div className="vq-bd-lines">
+									{word.breakdown.lines.map((line, i) => (
+										<div key={i} className="vq-bd-line">
+											<span className="vq-bd-seg jp">{line.ruby ? <RubyHtml html={line.ruby} /> : line.seg}</span>
+											<span className="vq-bd-form">{line.form}</span>
+											<span className="vq-bd-role">{line.role}</span>
+										</div>
+									))}
+								</div>
+								{word.breakdown.keigo ? (
+									<div className="vq-bd-keigo">
+										<span className="vq-bd-keigo-label">🎩 {lx("敬语", "Keigo")}</span>
+										<span className="vq-bd-seg jp">
+											{word.breakdown.keigo.ruby ? <RubyHtml html={word.breakdown.keigo.ruby} /> : word.breakdown.keigo.seg}
+										</span>
+										<span className="vq-bd-keigo-type">{word.breakdown.keigo.type}</span>
+										<span className="vq-bd-keigo-plain">← {word.breakdown.keigo.plain}</span>
+									</div>
+								) : null}
 							</div>
 						) : null}
 					</div>

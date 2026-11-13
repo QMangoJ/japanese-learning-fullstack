@@ -1,7 +1,9 @@
 import { readFileSync } from "node:fs";
+import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 
 import { isVocabQueuePayload } from "../../app/auth/study-payloads";
+import { isQueueSentenceType, isRubySubset, kanaSequence, rubyReading, stripRuby } from "../../app/study/topic-vocab";
 import {
 	addExtraBatch,
 	addIsoDays,
@@ -670,5 +672,87 @@ describe("vocab queue payload validator", () => {
 		expect(isVocabQueuePayload({ v: 1, states: { "w:abc": { s: 7, due: "2026-11-12", ts: 1 } }, plan: null })).toBe(false);
 		expect(isVocabQueuePayload({ v: 1, states: {}, plan: { date: TODAY, ids: ["a"], done: ["b"], review: 0, fresh: 1 } })).toBe(false);
 		expect(isVocabQueuePayload("nope")).toBe(false);
+	});
+});
+
+describe("vocab queue sentence-type breakdowns", () => {
+	it("classifies sentence-type entries apart from plain words", () => {
+		// whole sentences (polite predicate tail)
+		expect(isQueueSentenceType("これにて終了とさせていただきます")).toBe(true);
+		expect(isQueueSentenceType("本日はよろしくお願いいたします")).toBe(true);
+		expect(isQueueSentenceType("ご質問はございますか")).toBe(true);
+		// 〜 patterns
+		expect(isQueueSentenceType("〜てもよろしいでしょうか")).toBe(true);
+		expect(isQueueSentenceType("〜に携わる")).toBe(true);
+		// conditional / connective fragments
+		expect(isQueueSentenceType("差し支えなければ")).toBe(true);
+		expect(isQueueSentenceType("早速ですが")).toBe(true);
+		expect(isQueueSentenceType("ご縁があれば")).toBe(true);
+		// clause phrases (internal particle + plain predicate)
+		expect(isQueueSentenceType("音声が途切れる")).toBe(true);
+		expect(isQueueSentenceType("関係者と調整する")).toBe(true);
+		expect(isQueueSentenceType("マニュアルに沿って対応する")).toBe(true);
+		// plain words and word-like phrases stay out
+		expect(isQueueSentenceType("仕様")).toBe(false);
+		expect(isQueueSentenceType("履歴書")).toBe(false);
+		expect(isQueueSentenceType("克服する")).toBe(false);
+		expect(isQueueSentenceType("エスカレーションする")).toBe(false);
+		expect(isQueueSentenceType("長所と短所")).toBe(false);
+		expect(isQueueSentenceType("チームの雰囲気")).toBe(false);
+		expect(isQueueSentenceType("")).toBe(false);
+	});
+
+	it("ships a valid breakdown on every tier-1 sentence-type entry and nowhere else in tier 1", () => {
+		const root = process.cwd();
+		const payload = JSON.parse(readFileSync(join(root, "public/data/vocab-queue.json"), "utf8")) as {
+			words: VocabWord[];
+			breakdowns?: { sentenceTypeTotal: number; covered: number };
+		};
+		const bySurface = new Map(payload.words.map((w) => [w.w, w]));
+		// Coverage: every sentence-type card in the tier-1 topic files has a
+		// breakdown on its queue entry (the build asserts this too; the shipped
+		// artifact is re-checked here so a stale JSON cannot slip through).
+		for (const file of ["frontend.json", "job-interview.json", "ki-expressions.json"]) {
+			const topic = JSON.parse(readFileSync(join(root, "public/data/topics", file), "utf8")) as {
+				cards: { jp: string }[];
+			};
+			for (const card of topic.cards) {
+				if (!isQueueSentenceType(card.jp)) continue;
+				const entry = bySurface.get(card.jp);
+				expect(entry, `${file}: ${card.jp} missing from queue`).toBeTruthy();
+				expect(entry?.breakdown, `${file}: ${card.jp} has no breakdown`).toBeTruthy();
+			}
+		}
+		const covered = payload.words.filter((w) => w.breakdown);
+		expect(covered.length).toBeGreaterThan(0);
+		expect(payload.breakdowns?.covered).toBe(covered.length);
+		expect(payload.breakdowns?.sentenceTypeTotal).toBe(payload.words.filter((w) => isQueueSentenceType(w.w)).length);
+		const kanji = /[\u3400-\u9fff\u3005々〆ヶ]/;
+		for (const word of covered) {
+			const bd = word.breakdown!;
+			// Segments concatenate back to the exact headword, readings to the
+			// entry reading (the topic jp_ruby concatenation discipline).
+			expect(bd.lines.map((l) => l.seg).join("")).toBe(word.w);
+			expect(bd.lines.map((l) => kanaSequence(l.reading)).join("")).toBe(kanaSequence(word.r));
+			for (const line of bd.lines) {
+				expect(line.form.trim()).not.toBe("");
+				expect(line.role.trim()).not.toBe("");
+				if (line.ruby) {
+					expect(isRubySubset(line.ruby)).toBe(true);
+					expect(stripRuby(line.ruby)).toBe(line.seg);
+					expect(rubyReading(line.ruby)).toBe(kanaSequence(line.reading));
+				} else {
+					expect(kanji.test(line.seg)).toBe(false);
+				}
+			}
+			if (bd.keigo) {
+				expect(word.w.includes(bd.keigo.seg)).toBe(true);
+				expect(["尊敬語", "謙譲語", "丁寧語"]).toContain(bd.keigo.type);
+				expect(bd.keigo.plain.trim()).not.toBe("");
+			}
+		}
+		// The entry Daniel screenshotted on 2026-11-13 carries its breakdown.
+		const trigger = bySurface.get("これにて終了とさせていただきます");
+		expect(trigger?.breakdown?.keigo).toMatchObject({ type: "謙譲語", plain: "終了します" });
 	});
 });

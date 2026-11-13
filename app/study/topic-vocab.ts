@@ -140,6 +140,24 @@ export function topicTextIsSentence(text: string): boolean {
 	return SENTENCE_TAIL.test(text);
 }
 
+/** 单词队列的「句子型条目」判定（Daniel 2026-11-13：句子型条目的队列卡背面要带
+ * 语法拆解）：在整句判定之上放宽到句型与从句短语——含 〜 的句型、以条件／接续
+ * 片段结尾（なければ・あれば・ですが）、或带内部格助詞＋句尾谓语的从句短语
+ * （関係者と調整する / 音声が途切れる）。build-vocab-queue.mts 的拆解覆盖断言
+ * 与单测共用这一套口径，避免构建和测试各说各话。 */
+const QUEUE_SENTENCE_FRAG_TAIL = /(なければ|あれば|のですが|ですが)$/;
+const QUEUE_CLAUSE_PARTICLE = /[をにがはとへ](?=.+)/;
+const QUEUE_CLAUSE_TAIL = /(する|した|して|いる|おる|なる|ある|思う|組む|挙げる|れる|られる|きる|げる|める|対応する|調整する)$/;
+
+export function isQueueSentenceType(text: string): boolean {
+	if (!text) return false;
+	if (topicTextIsSentence(text)) return true;
+	if (/[〜～]/.test(text)) return true;
+	if (QUEUE_SENTENCE_FRAG_TAIL.test(text)) return true;
+	if (text.length >= 6 && QUEUE_CLAUSE_PARTICLE.test(text) && QUEUE_CLAUSE_TAIL.test(text)) return true;
+	return false;
+}
+
 export function validateTopicCard(card: unknown, subtopics: Set<string>, where: string): string[] {
 	const errors: string[] = [];
 	if (!isRecord(card)) return [`${where}: card must be an object`];

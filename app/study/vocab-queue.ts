@@ -50,6 +50,27 @@ export type VocabWord = {
 	ord: number;
 	ex?: string;
 	exZh?: string;
+	/** Grammar breakdown for sentence-type entries (built by scripts/build-vocab-queue.mts). */
+	breakdown?: VocabBreakdown;
+};
+
+/** One fragment of a sentence-type entry's grammar breakdown: the fragment,
+ * its form & connection, and what it does in this sentence. */
+export type VocabBreakdownLine = {
+	seg: string;
+	/** The fragment's reading (kana). */
+	reading: string;
+	/** <ruby> markup for the fragment, present when it contains kanji. */
+	ruby?: string;
+	form: string;
+	role: string;
+};
+
+export type VocabBreakdown = {
+	lines: VocabBreakdownLine[];
+	/** Keigo point: the keigo segment in the headword, its type
+	 * （尊敬語 / 謙譲語 / 丁寧語） and the corresponding plain form. */
+	keigo?: { seg: string; reading: string; ruby?: string; type: string; plain: string };
 };
 
 export type VocabWordState = {

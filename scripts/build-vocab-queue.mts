@@ -38,6 +38,7 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { mistakeStudyParts, mistakeTranslationSource } from "../app/study/mistake-translations.ts";
+import { isQueueSentenceType, isRubySubset, kanaSequence, rubyReading, stripRuby } from "../app/study/topic-vocab.ts";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const INPUTS = join(ROOT, "scripts", "vocab-queue-inputs");
@@ -49,7 +50,28 @@ type RawWord = {
 	en?: string;
 	ex?: string;
 	exZh?: string;
+	breakdown?: Breakdown;
 };
+
+/** Grammar breakdown for sentence-type entries (Daniel 2026-11-13): the card
+ * back shows the sentence taken apart — one line per fragment
+ * (segment | form & connection | what it does in this sentence), plus at most
+ * one keigo point (keigo segment | type | plain form). Authored in
+ * scripts/vocab-queue-inputs/breakdowns.json, keyed by headword surface. */
+type BreakdownLine = { seg: string; reading: string; ruby?: string; form: string; role: string };
+type Breakdown = {
+	lines: BreakdownLine[];
+	keigo?: { seg: string; reading: string; ruby?: string; type: string; plain: string };
+};
+
+/** A queue entry is "sentence-type" (a whole sentence / sentence pattern /
+ * clause phrase, as opposed to a single word) per isQueueSentenceType in
+ * app/study/topic-vocab.ts (shared with the unit tests): sentence tail,
+ * 〜 pattern, conditional/connective fragment, or a clause phrase with an
+ * internal case particle and a plain predicate tail.
+ * Only tier-1 topic entries (work sources) are required to carry a breakdown
+ * in this round; sentence-type entries from other sources are counted in the
+ * payload stats as future work. */
 
 type Candidate = RawWord & { tier: number; src: string; ord: number; srcKey: string };
 type Pending = { source: string; ref: string; excerpt: string; reason: string };
@@ -247,11 +269,16 @@ function push(c: Omit<Candidate, "ord">) {
 	candidates.push({ ...c, ord: nextOrd(c.tier) });
 }
 
+/** Tier-1 (work topic) surfaces that are sentence-type and therefore must
+ * ship a grammar breakdown (coverage is asserted before emit). */
+const requiredBreakdowns = new Set<string>();
+
 function topicWords(file: string, src: string, srcKey: string) {
 	const topic = readJson<{ cards: Record<string, unknown>[] }>(join(ROOT, "public", "data", "topics", file));
 	for (const card of topic.cards ?? []) {
 		const jp = String(card.jp ?? "").trim();
 		if (!jp) continue;
+		if (isQueueSentenceType(jp)) requiredBreakdowns.add(jp);
 		push({
 			w: jp,
 			r: String(card.kana ?? "") || rubyToReading(card.jp_ruby as string),
@@ -802,11 +829,90 @@ let twinMerged = 0;
 }
 words.sort((a, b) => a.tier - b.tier || a.ord - b.ord || a.id.localeCompare(b.id));
 
+// ---------- grammar breakdowns (sentence-type entries) ----------
+// Authored data: scripts/vocab-queue-inputs/breakdowns.json, keyed by the
+// headword surface. Hard rules (build fails rather than shipping bad data):
+//  - every tier-1 sentence-type surface has a breakdown, and every breakdown
+//    key IS a tier-1 sentence-type surface (no orphans, no gaps);
+//  - the lines' segments concatenate back to the exact headword;
+//  - the lines' readings concatenate to the entry's whole reading;
+//  - a segment containing kanji must carry <ruby> markup whose visible text
+//    is the segment and whose readings add up to the segment reading (the
+//    same concatenation discipline as topic jp_ruby); kana-only segments
+//    carry no ruby;
+//  - the keigo point (when present) names a substring of the headword, one
+//    of 尊敬語 / 謙譲語 / 丁寧語， with its plain form.
+const KANJI_CHAR = /[\u3400-\u9fff\u3005々〆ヶ]/;
+const KANA_ONLY = /^[ぁ-ゖァ-ヶー・]+$/;
+const KEIGO_TYPES = new Set(["尊敬語", "謙譲語", "丁寧語"]);
+
+function checkBreakdownSegment(seg: string, reading: string, ruby: string | undefined, where: string) {
+	if (!seg) throw new Error(`${where}: empty segment`);
+	if (!KANA_ONLY.test(reading)) throw new Error(`${where}: reading must be kana only ("${reading}")`);
+	if (ruby !== undefined) {
+		if (!isRubySubset(ruby)) throw new Error(`${where}: ruby may only contain <ruby>…<rt>…</rt></ruby>`);
+		if (stripRuby(ruby) !== seg) throw new Error(`${where}: ruby without readings must equal segment ("${stripRuby(ruby)}" !== "${seg}")`);
+		if (rubyReading(ruby) !== kanaSequence(reading)) {
+			throw new Error(`${where}: ruby readings must add up to segment reading ("${rubyReading(ruby)}" !== "${kanaSequence(reading)}")`);
+		}
+	} else if (KANJI_CHAR.test(seg)) {
+		throw new Error(`${where}: segment contains kanji but carries no ruby ("${seg}")`);
+	}
+}
+
+function validateBreakdown(surface: string, bd: Breakdown, wordReading: string) {
+	const where = `breakdown "${surface}"`;
+	if (!bd || !Array.isArray(bd.lines) || bd.lines.length < 2) throw new Error(`${where}: needs at least 2 lines`);
+	const joined = bd.lines.map((l) => l.seg).join("");
+	if (joined !== surface) throw new Error(`${where}: segments must concatenate to the headword ("${joined}" !== "${surface}")`);
+	for (const [i, line] of bd.lines.entries()) {
+		checkBreakdownSegment(line.seg, line.reading, line.ruby, `${where} line ${i + 1}`);
+		if (!line.form?.trim() || !line.role?.trim()) throw new Error(`${where} line ${i + 1}: form and role are required`);
+	}
+	if (wordReading) {
+		const joinedReading = bd.lines.map((l) => kanaSequence(l.reading)).join("");
+		if (joinedReading !== kanaSequence(wordReading)) {
+			throw new Error(`${where}: line readings must add up to the entry reading ("${joinedReading}" !== "${kanaSequence(wordReading)}")`);
+		}
+	}
+	if (bd.keigo) {
+		const k = bd.keigo;
+		if (!surface.includes(k.seg)) throw new Error(`${where}: keigo segment "${k.seg}" is not part of the headword`);
+		if (!KEIGO_TYPES.has(k.type)) throw new Error(`${where}: keigo type must be 尊敬語 / 謙譲語 / 丁寧語 ("${k.type}")`);
+		if (!k.plain?.trim()) throw new Error(`${where}: keigo plain form is required`);
+		checkBreakdownSegment(k.seg, k.reading, k.ruby, `${where} keigo`);
+	}
+}
+
+let breakdownMap: Record<string, Breakdown> = {};
+try {
+	breakdownMap = readJson<Record<string, Breakdown>>(join(INPUTS, "breakdowns.json"));
+} catch {
+	/* no authored breakdowns yet — the coverage assertion below will fail loudly */
+}
+for (const key of Object.keys(breakdownMap)) {
+	if (!requiredBreakdowns.has(key)) throw new Error(`breakdown orphan: "${key}" is not a tier-1 sentence-type entry`);
+}
+let breakdownCovered = 0;
+for (const w of words) {
+	const bd = breakdownMap[w.w];
+	if (!bd) continue;
+	validateBreakdown(w.w, bd, w.r);
+	w.breakdown = bd;
+	breakdownCovered += 1;
+}
+for (const surface of requiredBreakdowns) {
+	if (!breakdownMap[surface]) throw new Error(`missing breakdown for sentence-type entry: ${surface}`);
+	if (!words.some((w) => w.w === surface && w.breakdown)) throw new Error(`breakdown authored but not attached: ${surface}`);
+}
+const sentenceTypeTotal = words.filter((w) => isQueueSentenceType(w.w)).length;
+
 const payload = {
 	version: 1,
 	generatedAt: new Date().toISOString(),
 	quota: 50,
 	counts: { ...counts, total: words.length, mergedTotal, twinMerged, pending: pending.length },
+	breakdowns: { sentenceTypeTotal, covered: breakdownCovered },
 	aliases,
 	words,
 };
@@ -831,4 +937,5 @@ for (const source of ["错词本", "收藏", "课堂复习", "课堂复习（Pre
 writeFileSync(join(ROOT, "docs", "vocab-queue-pending.md"), pendingLines.join("\n"));
 
 console.log(JSON.stringify(payload.counts, null, 1));
+console.log(`breakdowns: ${breakdownCovered} covered of ${sentenceTypeTotal} sentence-type entries`);
 console.log(`total words: ${words.length}, pending: ${pending.length}`);
