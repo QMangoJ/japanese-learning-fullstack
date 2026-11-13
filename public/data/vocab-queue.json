@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-13T07:08:39.193Z",
+ "generatedAt": "2026-11-13T07:10:52.953Z",
  "quota": 50,
  "counts": {
   "frontend": {
@@ -69,7 +69,7 @@
  },
  "exampleBreakdowns": {
   "sentenceExTotal": 1162,
-  "covered": 213
+  "covered": 245
  },
  "aliases": {
   "w:3bc83be523a0": "w:8871acaf1b2a",
@@ -7914,7 +7914,44 @@
    "exZh": "感觉要下雨。",
    "tier": 1,
    "src": "「気」专题",
-   "ord": 166
+   "ord": 166,
+   "exampleBreakdown": {
+    "lines": [
+     {
+      "form": "名詞 雨＋格助詞 が",
+      "reading": "あめが",
+      "role": "主语：雨",
+      "ruby": "<ruby>雨<rt>あめ</rt></ruby>が",
+      "seg": "雨が"
+     },
+     {
+      "form": "自動詞 降る",
+      "reading": "ふる",
+      "role": "修饰気：下（雨）",
+      "ruby": "<ruby>降<rt>ふ</rt></ruby>る",
+      "seg": "降る"
+     },
+     {
+      "form": "名詞 気",
+      "reading": "き",
+      "role": "感觉的「気」",
+      "ruby": "<ruby>気<rt>き</rt></ruby>",
+      "seg": "気"
+     },
+     {
+      "form": "格助詞 が",
+      "reading": "が",
+      "role": "主语标记",
+      "seg": "が"
+     },
+     {
+      "form": "サ変動詞 する＋句号",
+      "reading": "する",
+      "role": "「気がする」成套：感觉会……",
+      "seg": "する。"
+     }
+    ]
+   }
   },
   {
    "id": "w:6a4aa010eb22",
@@ -7926,7 +7963,31 @@
    "exZh": "今天心情（身体）感觉很好。",
    "tier": 1,
    "src": "「気」专题",
-   "ord": 167
+   "ord": 167,
+   "exampleBreakdown": {
+    "lines": [
+     {
+      "form": "名詞 今日＋係助詞 は",
+      "reading": "きょうは",
+      "role": "话题：今天",
+      "ruby": "<ruby>今日<rt>きょう</rt></ruby>は",
+      "seg": "今日は"
+     },
+     {
+      "form": "名詞 気分＋格助詞 が",
+      "reading": "きぶんが",
+      "role": "主语：心情",
+      "ruby": "<ruby>気分<rt>きぶん</rt></ruby>が",
+      "seg": "気分が"
+     },
+     {
+      "form": "形容詞 いい＋です＋句号",
+      "reading": "いいです",
+      "role": "收尾：好",
+      "seg": "いいです。"
+     }
+    ]
+   }
   },
   {
    "id": "w:62031944f71f",
@@ -7938,7 +7999,45 @@
    "exZh": "有点不舒服，我休息一下。",
    "tier": 1,
    "src": "「気」专题",
-   "ord": 168
+   "ord": 168,
+   "exampleBreakdown": {
+    "lines": [
+     {
+      "form": "副詞 少し",
+      "reading": "すこし",
+      "role": "有点",
+      "ruby": "<ruby>少<rt>すこ</rt></ruby>し",
+      "seg": "少し"
+     },
+     {
+      "form": "名詞 気分＋格助詞 が",
+      "reading": "きぶんが",
+      "role": "主语：身体状态、心情",
+      "ruby": "<ruby>気分<rt>きぶん</rt></ruby>が",
+      "seg": "気分が"
+     },
+     {
+      "form": "形容詞 悪い",
+      "reading": "わるい",
+      "role": "不舒服",
+      "ruby": "<ruby>悪<rt>わる</rt></ruby>い",
+      "seg": "悪い"
+     },
+     {
+      "form": "接続助詞 ので＋読点",
+      "reading": "ので",
+      "role": "所以",
+      "seg": "ので、"
+     },
+     {
+      "form": "自動詞 休む 的丁寧形＋句号",
+      "reading": "やすみます",
+      "role": "收尾：我休息一下",
+      "ruby": "<ruby>休<rt>やす</rt></ruby>みます。",
+      "seg": "休みます。"
+     }
+    ]
+   }
   },
   {
    "id": "w:3160336bce07",
@@ -7950,7 +8049,32 @@
    "exZh": "星期一总是心情沉重。",
    "tier": 1,
    "src": "「気」专题",
-   "ord": 169
+   "ord": 169,
+   "exampleBreakdown": {
+    "lines": [
+     {
+      "form": "名詞 月曜日＋係助詞 は",
+      "reading": "げつようびは",
+      "role": "话题：周一",
+      "ruby": "<ruby>月曜日<rt>げつようび</rt></ruby>は",
+      "seg": "月曜日は"
+     },
+     {
+      "form": "名詞 気＋格助詞 が",
+      "reading": "きが",
+      "role": "主语：心情",
+      "ruby": "<ruby>気<rt>き</rt></ruby>が",
+      "seg": "気が"
+     },
+     {
+      "form": "形容詞 重い＋です＋句号",
+      "reading": "おもいです",
+      "role": "「気が重い」：心情沉重",
+      "ruby": "<ruby>重<rt>おも</rt></ruby>いです。",
+      "seg": "重いです。"
+     }
+    ]
+   }
   },
   {
    "id": "w:ebc0b9b1904d",
@@ -8023,7 +8147,38 @@
    "exZh": "不道歉心里过不去。",
    "tier": 1,
    "src": "「気」专题",
-   "ord": 171
+   "ord": 171,
+   "exampleBreakdown": {
+    "lines": [
+     {
+      "form": "他動詞 謝る 的否定形",
+      "reading": "あやまらない",
+      "role": "如果不道歉",
+      "ruby": "<ruby>謝<rt>あやま</rt></ruby>らない",
+      "seg": "謝らない"
+     },
+     {
+      "form": "格助詞 と（条件）",
+      "reading": "と",
+      "role": "不……的话就",
+      "seg": "と"
+     },
+     {
+      "form": "名詞 気＋格助詞 が",
+      "reading": "きが",
+      "role": "主语：心里那口气",
+      "ruby": "<ruby>気<rt>き</rt></ruby>が",
+      "seg": "気が"
+     },
+     {
+      "form": "自動詞 済む 的否定形＋句号",
+      "reading": "すまない",
+      "role": "「気が済む」的否定：心里过不去",
+      "ruby": "<ruby>済<rt>す</rt></ruby>まない。",
+      "seg": "済まない。"
+     }
+    ]
+   }
   },
   {
    "id": "w:70d54a20ea84",
@@ -8035,7 +8190,32 @@
    "exZh": "我注意到出错了。",
    "tier": 1,
    "src": "「気」专题",
-   "ord": 172
+   "ord": 172,
+   "exampleBreakdown": {
+    "lines": [
+     {
+      "form": "名詞 間違い＋格助詞 に",
+      "reading": "まちがいに",
+      "role": "察觉对象：错误",
+      "ruby": "<ruby>間違<rt>まちが</rt></ruby>いに",
+      "seg": "間違いに"
+     },
+     {
+      "form": "名詞 気＋格助詞 が",
+      "reading": "きが",
+      "role": "主语：心、注意力",
+      "ruby": "<ruby>気<rt>き</rt></ruby>が",
+      "seg": "気が"
+     },
+     {
+      "form": "自動詞 付く 的丁寧過去形＋句号",
+      "reading": "つきました",
+      "role": "「気が付く」成套：注意到",
+      "ruby": "<ruby>付<rt>つ</rt></ruby>きました。",
+      "seg": "付きました。"
+     }
+    ]
+   }
   },
   {
    "id": "w:1cd7fe817be0",
@@ -8047,7 +8227,32 @@
    "exZh": "我很在意面试的结果。",
    "tier": 1,
    "src": "「気」专题・课堂复习・Preply",
-   "ord": 173
+   "ord": 173,
+   "exampleBreakdown": {
+    "lines": [
+     {
+      "form": "名詞 面接＋格助詞 の",
+      "reading": "めんせつの",
+      "role": "限定：面试的",
+      "ruby": "<ruby>面接<rt>めんせつ</rt></ruby>の",
+      "seg": "面接の"
+     },
+     {
+      "form": "名詞 結果＋格助詞 が",
+      "reading": "けっかが",
+      "role": "主语：结果",
+      "ruby": "<ruby>結果<rt>けっか</rt></ruby>が",
+      "seg": "結果が"
+     },
+     {
+      "form": "名詞 気＋格助詞 に＋自動詞 なる 的丁寧形＋句号",
+      "reading": "きになります",
+      "role": "「気になる」成套：在意、挂心",
+      "ruby": "<ruby>気<rt>き</rt></ruby>になります。",
+      "seg": "気になります。"
+     }
+    ]
+   }
   },
   {
    "id": "w:22bb434aa535",
@@ -8059,7 +8264,32 @@
    "exZh": "在意别人的眼光。",
    "tier": 1,
    "src": "「気」专题",
-   "ord": 174
+   "ord": 174,
+   "exampleBreakdown": {
+    "lines": [
+     {
+      "form": "名詞 他人＋格助詞 の",
+      "reading": "たにんの",
+      "role": "限定：别人的",
+      "ruby": "<ruby>他人<rt>たにん</rt></ruby>の",
+      "seg": "他人の"
+     },
+     {
+      "form": "名詞 目＋格助詞 を",
+      "reading": "めを",
+      "role": "对象：目光",
+      "ruby": "<ruby>目<rt>め</rt></ruby>を",
+      "seg": "目を"
+     },
+     {
+      "form": "名詞 気＋格助詞 に＋サ変動詞 する＋句号",
+      "reading": "きにする",
+      "role": "「気にする」成套：在意",
+      "ruby": "<ruby>気<rt>き</rt></ruby>にする。",
+      "seg": "気にする。"
+     }
+    ]
+   }
   },
   {
    "id": "w:d0e407254a08",
@@ -8071,7 +8301,31 @@
    "exZh": "别为我的事费心。",
    "tier": 1,
    "src": "「気」专题",
-   "ord": 175
+   "ord": 175,
+   "exampleBreakdown": {
+    "lines": [
+     {
+      "form": "名詞 私＋格助詞 の＋名詞 こと＋係助詞 は",
+      "reading": "わたしのことは",
+      "role": "话题：我的事",
+      "ruby": "<ruby>私<rt>わたし</rt></ruby>のことは",
+      "seg": "私のことは"
+     },
+     {
+      "form": "名詞 気＋格助詞 に＋サ変動詞 する 的否定命令形",
+      "reading": "きにしないで",
+      "role": "别放在心上",
+      "ruby": "<ruby>気<rt>き</rt></ruby>にしないで",
+      "seg": "気にしないで"
+     },
+     {
+      "form": "補助動詞 ください＋句号",
+      "reading": "ください",
+      "role": "收尾请求：请别管我",
+      "seg": "ください。"
+     }
+    ]
+   }
   },
   {
    "id": "w:7152929a26cd",
@@ -8083,7 +8337,32 @@
    "exZh": "我会把那句话记在心里。",
    "tier": 1,
    "src": "「気」专题",
-   "ord": 176
+   "ord": 176,
+   "exampleBreakdown": {
+    "lines": [
+     {
+      "form": "指示語 その＋名詞 言葉＋格助詞 を",
+      "reading": "そのことばを",
+      "role": "对象：那句话",
+      "ruby": "その<ruby>言葉<rt>ことば</rt></ruby>を",
+      "seg": "その言葉を"
+     },
+     {
+      "form": "名詞 気＋格助詞 に",
+      "reading": "きに",
+      "role": "落点：心里",
+      "ruby": "<ruby>気<rt>き</rt></ruby>に",
+      "seg": "気に"
+     },
+     {
+      "form": "他動詞 留める＋〜ておく 的丁寧形＋句号",
+      "reading": "とめておきます",
+      "role": "「気に留める」：记在心上",
+      "ruby": "<ruby>留<rt>と</rt></ruby>めておきます。",
+      "seg": "留めておきます。"
+     }
+    ]
+   }
   },
   {
    "id": "w:b092caaf0178",
@@ -8095,7 +8374,32 @@
    "exZh": "对前辈很照顾（顾及感受）。",
    "tier": 1,
    "src": "「気」专题",
-   "ord": 177
+   "ord": 177,
+   "exampleBreakdown": {
+    "lines": [
+     {
+      "form": "名詞 先輩＋格助詞 に",
+      "reading": "せんぱいに",
+      "role": "对象：前辈",
+      "ruby": "<ruby>先輩<rt>せんぱい</rt></ruby>に",
+      "seg": "先輩に"
+     },
+     {
+      "form": "名詞 気＋格助詞 を",
+      "reading": "きを",
+      "role": "对象：心思",
+      "ruby": "<ruby>気<rt>き</rt></ruby>を",
+      "seg": "気を"
+     },
+     {
+      "form": "他動詞 使う 的丁寧形＋句号",
+      "reading": "つかいます",
+      "role": "「気を使う」：照顾对方感受、费心",
+      "ruby": "<ruby>使<rt>つか</rt></ruby>います。",
+      "seg": "使います。"
+     }
+    ]
+   }
   },
   {
    "id": "w:c24406ea643c",
@@ -8107,7 +8411,32 @@
    "exZh": "连细节都照顾到。",
    "tier": 1,
    "src": "「気」专题",
-   "ord": 178
+   "ord": 178,
+   "exampleBreakdown": {
+    "lines": [
+     {
+      "form": "形容詞 細かい＋名詞 ところ＋格助詞 まで",
+      "reading": "こまかいところまで",
+      "role": "范围：到细节处",
+      "ruby": "<ruby>細<rt>こま</rt></ruby>かいところまで",
+      "seg": "細かいところまで"
+     },
+     {
+      "form": "名詞 気＋格助詞 を",
+      "reading": "きを",
+      "role": "对象：注意力",
+      "ruby": "<ruby>気<rt>き</rt></ruby>を",
+      "seg": "気を"
+     },
+     {
+      "form": "他動詞 配る 的丁寧形＋句号",
+      "reading": "くばります",
+      "role": "「気を配る」：周到地留意",
+      "ruby": "<ruby>配<rt>くば</rt></ruby>ります。",
+      "seg": "配ります。"
+     }
+    ]
+   }
   },
   {
    "id": "w:b650802f36bd",
@@ -8119,7 +8448,24 @@
    "exZh": "谢谢您的体贴关照。",
    "tier": 1,
    "src": "「気」专题",
-   "ord": 179
+   "ord": 179,
+   "exampleBreakdown": {
+    "lines": [
+     {
+      "form": "名詞 お気遣い",
+      "reading": "おきづかい",
+      "role": "对象的事情：您的费心（敬称）",
+      "ruby": "お<ruby>気遣<rt>きづか</rt></ruby>い",
+      "seg": "お気遣い"
+     },
+     {
+      "form": "感謝の固定表現＋句号",
+      "reading": "ありがとうございます",
+      "role": "收尾：谢谢您的关心",
+      "seg": "ありがとうございます。"
+     }
+    ]
+   }
   },
   {
    "id": "w:92f9c52bca41",
@@ -8131,7 +8477,31 @@
    "exZh": "请您别放在心上。",
    "tier": 1,
    "src": "「気」专题",
-   "ord": 180
+   "ord": 180,
+   "exampleBreakdown": {
+    "keigo": {
+     "plain": "気にせず",
+     "reading": "おきになさらず",
+     "ruby": "お<ruby>気<rt>き</rt></ruby>になさらず",
+     "seg": "お気になさらず",
+     "type": "尊敬語"
+    },
+    "lines": [
+     {
+      "form": "副詞 どうぞ",
+      "reading": "どうぞ",
+      "role": "请——客气开场",
+      "seg": "どうぞ"
+     },
+     {
+      "form": "尊敬語 お気になさる 的否定形＋句号",
+      "reading": "おきになさらず",
+      "role": "收尾：请不要介意",
+      "ruby": "お<ruby>気<rt>き</rt></ruby>になさらず。",
+      "seg": "お気になさらず。"
+     }
+    ]
+   }
   },
   {
    "id": "w:3eadb4a878f9",
@@ -8143,7 +8513,32 @@
    "exZh": "今天提不起干劲。",
    "tier": 1,
    "src": "「気」专题",
-   "ord": 181
+   "ord": 181,
+   "exampleBreakdown": {
+    "lines": [
+     {
+      "form": "名詞 今日＋係助詞 は",
+      "reading": "きょうは",
+      "role": "话题：今天",
+      "ruby": "<ruby>今日<rt>きょう</rt></ruby>は",
+      "seg": "今日は"
+     },
+     {
+      "form": "名詞 やる気＋格助詞 が",
+      "reading": "やるきが",
+      "role": "主语：干劲",
+      "ruby": "やる<ruby>気<rt>き</rt></ruby>が",
+      "seg": "やる気が"
+     },
+     {
+      "form": "一段動詞 出る 的丁寧否定形＋句号",
+      "reading": "でません",
+      "role": "收尾：提不起劲",
+      "ruby": "<ruby>出<rt>で</rt></ruby>ません。",
+      "seg": "出ません。"
+     }
+    ]
+   }
   },
   {
    "id": "w:018b92fdcb11",
@@ -8155,7 +8550,31 @@
    "exZh": "有跳槽的意向。",
    "tier": 1,
    "src": "「気」专题",
-   "ord": 182
+   "ord": 182,
+   "exampleBreakdown": {
+    "lines": [
+     {
+      "form": "名詞 転職＋格助詞 に",
+      "reading": "てんしょくに",
+      "role": "对象：换工作（有想法）",
+      "ruby": "<ruby>転職<rt>てんしょく</rt></ruby>に",
+      "seg": "転職に"
+     },
+     {
+      "form": "名詞 気＋格助詞 が",
+      "reading": "きが",
+      "role": "主语：心思、意向",
+      "ruby": "<ruby>気<rt>き</rt></ruby>が",
+      "seg": "気が"
+     },
+     {
+      "form": "動詞 ある 的丁寧形＋句号",
+      "reading": "あります",
+      "role": "「気がある」：有那个意思",
+      "seg": "あります。"
+     }
+    ]
+   }
   },
   {
    "id": "w:9799edd0cee4",
@@ -8167,7 +8586,32 @@
    "exZh": "中途改变了主意。",
    "tier": 1,
    "src": "「気」专题",
-   "ord": 183
+   "ord": 183,
+   "exampleBreakdown": {
+    "lines": [
+     {
+      "form": "名詞 途中＋格助詞 で",
+      "reading": "とちゅうで",
+      "role": "中途",
+      "ruby": "<ruby>途中<rt>とちゅう</rt></ruby>で",
+      "seg": "途中で"
+     },
+     {
+      "form": "名詞 気＋格助詞 が",
+      "reading": "きが",
+      "role": "主语：想法",
+      "ruby": "<ruby>気<rt>き</rt></ruby>が",
+      "seg": "気が"
+     },
+     {
+      "form": "自動詞 変わる 的丁寧過去形＋句号",
+      "reading": "かわりました",
+      "role": "「気が変わる」：改主意了",
+      "ruby": "<ruby>変<rt>か</rt></ruby>わりました。",
+      "seg": "変わりました。"
+     }
+    ]
+   }
   },
   {
    "id": "w:411077a924ae",
@@ -8179,7 +8623,32 @@
    "exZh": "那份工作我不太想做。",
    "tier": 1,
    "src": "「気」专题",
-   "ord": 184
+   "ord": 184,
+   "exampleBreakdown": {
+    "lines": [
+     {
+      "form": "指示語 その＋名詞 仕事＋係助詞 は",
+      "reading": "そのしごとは",
+      "role": "话题：那份工作",
+      "ruby": "その<ruby>仕事<rt>しごと</rt></ruby>は",
+      "seg": "その仕事は"
+     },
+     {
+      "form": "名詞 気＋格助詞 が",
+      "reading": "きが",
+      "role": "主语：意愿",
+      "ruby": "<ruby>気<rt>き</rt></ruby>が",
+      "seg": "気が"
+     },
+     {
+      "form": "五段動詞 進む 的丁寧否定形＋句号",
+      "reading": "すすみません",
+      "role": "「気が進まない」：不乐意做",
+      "ruby": "<ruby>進<rt>すす</rt></ruby>みません。",
+      "seg": "進みません。"
+     }
+    ]
+   }
   },
   {
    "id": "w:50531fa9ab08",
@@ -8191,7 +8660,32 @@
    "exZh": "噪音让我分心。",
    "tier": 1,
    "src": "「気」专题",
-   "ord": 185
+   "ord": 185,
+   "exampleBreakdown": {
+    "lines": [
+     {
+      "form": "名詞 音＋格助詞 で",
+      "reading": "おとで",
+      "role": "原因：因为声音",
+      "ruby": "<ruby>音<rt>おと</rt></ruby>で",
+      "seg": "音で"
+     },
+     {
+      "form": "名詞 気＋格助詞 が",
+      "reading": "きが",
+      "role": "主语：注意力",
+      "ruby": "<ruby>気<rt>き</rt></ruby>が",
+      "seg": "気が"
+     },
+     {
+      "form": "自動詞 散る 的丁寧形＋句号",
+      "reading": "ちります",
+      "role": "「気が散る」：分心",
+      "ruby": "<ruby>散<rt>ち</rt></ruby>ります。",
+      "seg": "散ります。"
+     }
+    ]
+   }
   },
   {
    "id": "w:56f36bdf4233",
@@ -8203,7 +8697,38 @@
    "exZh": "振作起来，再来一次。",
    "tier": 1,
    "src": "「気」专题",
-   "ord": 186
+   "ord": 186,
+   "exampleBreakdown": {
+    "lines": [
+     {
+      "form": "名詞 気＋格助詞 を",
+      "reading": "きを",
+      "role": "对象：心态",
+      "ruby": "<ruby>気<rt>き</rt></ruby>を",
+      "seg": "気を"
+     },
+     {
+      "form": "複合動詞 取り直す 的て形＋読点",
+      "reading": "とりなおして",
+      "role": "「気を取り直す」：重整心情",
+      "ruby": "<ruby>取<rt>と</rt></ruby>り<ruby>直<rt>なお</rt></ruby>して、",
+      "seg": "取り直して、"
+     },
+     {
+      "form": "副詞 もう一度",
+      "reading": "もういちど",
+      "role": "再一次",
+      "ruby": "もう<ruby>一度<rt>いちど</rt></ruby>",
+      "seg": "もう一度"
+     },
+     {
+      "form": "他動詞 やる 的丁寧形＋句号",
+      "reading": "やります",
+      "role": "收尾：重做",
+      "seg": "やります。"
+     }
+    ]
+   }
   },
   {
    "id": "w:a2f30ea0a8f2",
@@ -8215,7 +8740,32 @@
    "exZh": "热得晕了过去。",
    "tier": 1,
    "src": "「気」专题",
-   "ord": 187
+   "ord": 187,
+   "exampleBreakdown": {
+    "lines": [
+     {
+      "form": "名詞 暑さ＋格助詞 で",
+      "reading": "あつさで",
+      "role": "原因：因为热",
+      "ruby": "<ruby>暑<rt>あつ</rt></ruby>さで",
+      "seg": "暑さで"
+     },
+     {
+      "form": "名詞 気＋格助詞 を",
+      "reading": "きを",
+      "role": "对象：意识",
+      "ruby": "<ruby>気<rt>き</rt></ruby>を",
+      "seg": "気を"
+     },
+     {
+      "form": "自動詞 失う 的丁寧過去形＋句号",
+      "reading": "うしないました",
+      "role": "「気を失う」：晕过去了",
+      "ruby": "<ruby>失<rt>うしな</rt></ruby>いました。",
+      "seg": "失いました。"
+     }
+    ]
+   }
   },
   {
    "id": "w:2b90751d9066",
@@ -8227,7 +8777,25 @@
    "exZh": "孩子很有精神。",
    "tier": 1,
    "src": "「気」专题",
-   "ord": 188
+   "ord": 188,
+   "exampleBreakdown": {
+    "lines": [
+     {
+      "form": "名詞 子ども＋係助詞 は",
+      "reading": "こどもは",
+      "role": "话题：孩子",
+      "ruby": "<ruby>子<rt>こ</rt></ruby>どもは",
+      "seg": "子どもは"
+     },
+     {
+      "form": "名詞・形容動詞 元気＋です＋句号",
+      "reading": "げんきです",
+      "role": "收尾：很有精神",
+      "ruby": "<ruby>元気<rt>げんき</rt></ruby>です。",
+      "seg": "元気です。"
+     }
+    ]
+   }
   },
   {
    "id": "w:795617ec4d49",
@@ -8239,7 +8807,25 @@
    "exZh": "因病请假了。",
    "tier": 1,
    "src": "「気」专题",
-   "ord": 189
+   "ord": 189,
+   "exampleBreakdown": {
+    "lines": [
+     {
+      "form": "名詞 病気＋格助詞 で",
+      "reading": "びょうきで",
+      "role": "原因：因为生病",
+      "ruby": "<ruby>病気<rt>びょうき</rt></ruby>で",
+      "seg": "病気で"
+     },
+     {
+      "form": "自動詞 休む 的丁寧過去形＋句号",
+      "reading": "やすみました",
+      "role": "收尾：请假休息了",
+      "ruby": "<ruby>休<rt>やす</rt></ruby>みました。",
+      "seg": "休みました。"
+     }
+    ]
+   }
   },
   {
    "id": "w:aa93663c6b08",
@@ -8251,7 +8837,25 @@
    "exZh": "吓得差点晕过去。",
    "tier": 1,
    "src": "「気」专题",
-   "ord": 190
+   "ord": 190,
+   "exampleBreakdown": {
+    "lines": [
+     {
+      "form": "自動詞 驚く 的て形",
+      "reading": "おどろいて",
+      "role": "因为吃惊",
+      "ruby": "<ruby>驚<rt>おどろ</rt></ruby>いて",
+      "seg": "驚いて"
+     },
+     {
+      "form": "名詞 気絶＋サ変動詞 する＋推量 そう＋でした＋句号",
+      "reading": "きぜつしそうでした",
+      "role": "收尾：差点晕过去",
+      "ruby": "<ruby>気絶<rt>きぜつ</rt></ruby>しそうでした。",
+      "seg": "気絶しそうでした。"
+     }
+    ]
+   }
   },
   {
    "id": "w:c70d2d03adf4",
@@ -8317,7 +8921,44 @@
    "exZh": "天黑了，回去路上小心。",
    "tier": 1,
    "src": "「気」专题",
-   "ord": 192
+   "ord": 192,
+   "exampleBreakdown": {
+    "lines": [
+     {
+      "form": "形容詞 暗い",
+      "reading": "くらい",
+      "role": "因为天黑",
+      "ruby": "<ruby>暗<rt>くら</rt></ruby>い",
+      "seg": "暗い"
+     },
+     {
+      "form": "接続助詞 ので＋読点",
+      "reading": "ので",
+      "role": "所以",
+      "seg": "ので、"
+     },
+     {
+      "form": "名詞 気＋格助詞 を",
+      "reading": "きを",
+      "role": "对象：心、注意",
+      "ruby": "<ruby>気<rt>き</rt></ruby>を",
+      "seg": "気を"
+     },
+     {
+      "form": "他動詞 付ける 的て形",
+      "reading": "つけて",
+      "role": "「気をつける」：小心",
+      "seg": "つけて"
+     },
+     {
+      "form": "自動詞 帰る＋〜てください＋句号",
+      "reading": "かえってください",
+      "role": "收尾叮嘱：请小心回去",
+      "ruby": "<ruby>帰<rt>かえ</rt></ruby>ってください。",
+      "seg": "帰ってください。"
+     }
+    ]
+   }
   },
   {
    "id": "w:a29ecf9521d1",
@@ -8329,7 +8970,24 @@
    "exZh": "那真是太可怜了（真过意不去）。",
    "tier": 1,
    "src": "「気」专题",
-   "ord": 193
+   "ord": 193,
+   "exampleBreakdown": {
+    "lines": [
+     {
+      "form": "指示語 それ＋係助詞 は",
+      "reading": "それは",
+      "role": "话题：那件事",
+      "seg": "それは"
+     },
+     {
+      "form": "名詞 お気の毒＋終助詞 ですね＋句号",
+      "reading": "おきのどくですね",
+      "role": "「気の毒」：真可怜、真不凑巧（同情说法）",
+      "ruby": "お<ruby>気<rt>き</rt></ruby>の<ruby>毒<rt>どく</rt></ruby>ですね。",
+      "seg": "お気の毒ですね。"
+     }
+    ]
+   }
   },
   {
    "id": "w:03a7c4ac42cf",
@@ -8492,7 +9150,32 @@
    "exZh": "读了用法说明。",
    "tier": 2,
    "src": "IT听力错词本・课堂复习",
-   "ord": 17
+   "ord": 17,
+   "exampleBreakdown": {
+    "lines": [
+     {
+      "form": "名詞 使い方＋格助詞 の",
+      "reading": "つかいかたの",
+      "role": "限定：使用方法的",
+      "ruby": "<ruby>使<rt>つか</rt></ruby>い<ruby>方<rt>かた</rt></ruby>の",
+      "seg": "使い方の"
+     },
+     {
+      "form": "名詞 説明＋格助詞 を",
+      "reading": "せつめいを",
+      "role": "对象：说明",
+      "ruby": "<ruby>説明<rt>せつめい</rt></ruby>を",
+      "seg": "説明を"
+     },
+     {
+      "form": "他動詞 読む 的丁寧過去形＋句号",
+      "reading": "よみました",
+      "role": "收尾：读过了",
+      "ruby": "<ruby>読<rt>よ</rt></ruby>みました。",
+      "seg": "読みました。"
+     }
+    ]
+   }
   },
   {
    "id": "w:8544036289ea",
@@ -8558,7 +9241,31 @@
    "exZh": "实际做起来很难。",
    "tier": 2,
    "src": "IT听力错词本・课堂复习",
-   "ord": 24
+   "ord": 24,
+   "exampleBreakdown": {
+    "lines": [
+     {
+      "form": "副詞 実際に",
+      "reading": "じっさいに",
+      "role": "实际上",
+      "ruby": "<ruby>実際<rt>じっさい</rt></ruby>に",
+      "seg": "実際に"
+     },
+     {
+      "form": "他動詞 やる＋補助動詞 みる＋格助詞 と（条件）",
+      "reading": "やってみると",
+      "role": "真做一下的话",
+      "seg": "やってみると"
+     },
+     {
+      "form": "形容詞 難しかった＋です＋句号",
+      "reading": "むずかしかったです",
+      "role": "收尾：很难",
+      "ruby": "<ruby>難<rt>むずか</rt></ruby>しかったです。",
+      "seg": "難しかったです。"
+     }
+    ]
+   }
   },
   {
    "id": "w:73b1ada3f56b",
@@ -8651,7 +9358,32 @@
    "exZh": "正在调查事故原因。",
    "tier": 2,
    "src": "IT听力错词本・课堂复习・Preply",
-   "ord": 34
+   "ord": 34,
+   "exampleBreakdown": {
+    "lines": [
+     {
+      "form": "名詞 事故＋格助詞 の",
+      "reading": "じこの",
+      "role": "限定：事故的",
+      "ruby": "<ruby>事故<rt>じこ</rt></ruby>の",
+      "seg": "事故の"
+     },
+     {
+      "form": "名詞 原因＋格助詞 を",
+      "reading": "げんいんを",
+      "role": "对象：原因",
+      "ruby": "<ruby>原因<rt>げんいん</rt></ruby>を",
+      "seg": "原因を"
+     },
+     {
+      "form": "他動詞 調べる＋〜ている 的丁寧形＋句号",
+      "reading": "しらべています",
+      "role": "收尾：正在查",
+      "ruby": "<ruby>調<rt>しら</rt></ruby>べています。",
+      "seg": "調べています。"
+     }
+    ]
+   }
   },
   {
    "id": "w:0fdc4af2a50a",
@@ -21622,7 +22354,25 @@
    "exZh": "冰开始融化。",
    "tier": 4,
    "src": "收藏・错词本",
-   "ord": 10
+   "ord": 10,
+   "exampleBreakdown": {
+    "lines": [
+     {
+      "form": "名詞 氷＋格助詞 が",
+      "reading": "こおりが",
+      "role": "主语：冰",
+      "ruby": "<ruby>氷<rt>こおり</rt></ruby>が",
+      "seg": "氷が"
+     },
+     {
+      "form": "自動詞 溶ける＋複合動詞 始める 的過去形＋句号",
+      "reading": "とけはじめた",
+      "role": "收尾：开始化了",
+      "ruby": "<ruby>溶<rt>と</rt></ruby>け<ruby>始<rt>はじ</rt></ruby>めた。",
+      "seg": "溶け始めた。"
+     }
+    ]
+   }
   },
   {
    "id": "w:33644a10ca07",
@@ -22038,7 +22788,32 @@
    "exZh": "吃太多对身体不好。",
    "tier": 4,
    "src": "收藏・课堂复习",
-   "ord": 44
+   "ord": 44,
+   "exampleBreakdown": {
+    "lines": [
+     {
+      "form": "一段動詞 食べる＋過ぎる のは（話題化）",
+      "reading": "たべすぎるのは",
+      "role": "话题：吃太多这件事",
+      "ruby": "<ruby>食<rt>た</rt></ruby>べすぎるのは",
+      "seg": "食べすぎるのは"
+     },
+     {
+      "form": "名詞 体＋格助詞 に",
+      "reading": "からだに",
+      "role": "对象：对身体",
+      "ruby": "<ruby>体<rt>からだ</rt></ruby>に",
+      "seg": "体に"
+     },
+     {
+      "form": "形容詞 悪い＋です＋句号",
+      "reading": "わるいです",
+      "role": "收尾：不好",
+      "ruby": "<ruby>悪<rt>わる</rt></ruby>いです。",
+      "seg": "悪いです。"
+     }
+    ]
+   }
   },
   {
    "id": "w:f894a207fb91",
@@ -28397,7 +29172,36 @@
    "exZh": "重要的地方我会记下来。",
    "tier": 5,
    "src": "N2词汇・课堂复习",
-   "ord": 230
+   "ord": 230,
+   "exampleBreakdown": {
+    "lines": [
+     {
+      "form": "形容詞 大事な（連体形）",
+      "reading": "だいじな",
+      "role": "修饰ところ：重要的",
+      "ruby": "<ruby>大事<rt>だいじ</rt></ruby>な",
+      "seg": "大事な"
+     },
+     {
+      "form": "名詞 ところ＋係助詞 は",
+      "reading": "ところは",
+      "role": "话题：地方、部分",
+      "seg": "ところは"
+     },
+     {
+      "form": "名詞（外来語）メモ＋格助詞 を",
+      "reading": "メモを",
+      "role": "对象：笔记",
+      "seg": "メモを"
+     },
+     {
+      "form": "他動詞 取る 的丁寧形＋句号",
+      "reading": "とります",
+      "role": "「メモを取る」：记下来",
+      "seg": "とります。"
+     }
+    ]
+   }
   },
   {
    "id": "w:c0cf4c3769cc",
