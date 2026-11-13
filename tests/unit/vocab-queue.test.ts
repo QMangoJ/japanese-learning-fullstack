@@ -727,13 +727,20 @@ describe("vocab queue sentence-type breakdowns", () => {
 		expect(covered.length).toBeGreaterThan(0);
 		expect(payload.breakdowns?.covered).toBe(covered.length);
 		expect(payload.breakdowns?.sentenceTypeTotal).toBe(payload.words.filter((w) => isQueueSentenceType(w.w)).length);
+		// Round 2 (2026-11-13): coverage is complete — every sentence-type
+		// entry in the whole queue ships a breakdown.
+		expect(covered.length).toBe(payload.breakdowns?.sentenceTypeTotal);
 		const kanji = /[\u3400-\u9fff\u3005々〆ヶ]/;
 		for (const word of covered) {
 			const bd = word.breakdown!;
 			// Segments concatenate back to the exact headword, readings to the
 			// entry reading (the topic jp_ruby concatenation discipline).
+			// Entries whose stored reading is empty (a few lesson-review rows)
+			// skip the reading check, mirroring the build's discipline.
 			expect(bd.lines.map((l) => l.seg).join("")).toBe(word.w);
-			expect(bd.lines.map((l) => kanaSequence(l.reading)).join("")).toBe(kanaSequence(word.r));
+			if (kanaSequence(word.r)) {
+				expect(bd.lines.map((l) => kanaSequence(l.reading)).join("")).toBe(kanaSequence(word.r));
+			}
 			for (const line of bd.lines) {
 				expect(line.form.trim()).not.toBe("");
 				expect(line.role.trim()).not.toBe("");
