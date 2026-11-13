@@ -38,7 +38,7 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { mistakeStudyParts, mistakeTranslationSource } from "../app/study/mistake-translations.ts";
-import { isQueueSentenceType, isRubySubset, kanaSequence, rubyReading, stripRuby } from "../app/study/topic-vocab.ts";
+import { isQueueSentenceType, isRubySubset, kanaSequence, rubyReading, stripRuby, topicTextIsSentence } from "../app/study/topic-vocab.ts";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const INPUTS = join(ROOT, "scripts", "vocab-queue-inputs");
@@ -51,6 +51,7 @@ type RawWord = {
 	ex?: string;
 	exZh?: string;
 	breakdown?: Breakdown;
+	exampleBreakdown?: Breakdown;
 };
 
 /** Grammar breakdown for sentence-type entries (Daniel 2026-11-13): the card
@@ -69,9 +70,13 @@ type Breakdown = {
  * app/study/topic-vocab.ts (shared with the unit tests): sentence tail,
  * 〜 pattern, conditional/connective fragment, or a clause phrase with an
  * internal case particle and a plain predicate tail.
- * Only tier-1 topic entries (work sources) are required to carry a breakdown
- * in this round; sentence-type entries from other sources are counted in the
- * payload stats as future work. */
+ * EVERY sentence-type entry ships a breakdown (Daniel 2026-11-13, second
+ * round: the first round covered the 24 tier-1 topic entries; the remaining
+ * 340 from N2词汇 / 课堂复习 / 错词本 / 收藏 / IT听力错词本 followed).
+ * Entries whose example is itself a complete sentence may also carry an
+ * exampleBreakdown — the same fragment format applied to the example text,
+ * authored in scripts/vocab-queue-inputs/example-breakdowns.json, keyed by
+ * headword surface like breakdowns.json. */
 
 type Candidate = RawWord & { tier: number; src: string; ord: number; srcKey: string };
 type Pending = { source: string; ref: string; excerpt: string; reason: string };
@@ -269,16 +274,21 @@ function push(c: Omit<Candidate, "ord">) {
 	candidates.push({ ...c, ord: nextOrd(c.tier) });
 }
 
-/** Tier-1 (work topic) surfaces that are sentence-type and therefore must
- * ship a grammar breakdown (coverage is asserted before emit). */
-const requiredBreakdowns = new Set<string>();
+/** Example-sentence readings published by topic cards (example_kana /
+ * example_ruby), keyed by the example text. The queue payload carries no
+ * whole-example reading, so this map is the cross-check for authored
+ * exampleBreakdown line readings on topic-sourced entries. */
+const exampleReadingByText = new Map<string, string>();
 
 function topicWords(file: string, src: string, srcKey: string) {
 	const topic = readJson<{ cards: Record<string, unknown>[] }>(join(ROOT, "public", "data", "topics", file));
 	for (const card of topic.cards ?? []) {
 		const jp = String(card.jp ?? "").trim();
 		if (!jp) continue;
-		if (isQueueSentenceType(jp)) requiredBreakdowns.add(jp);
+		if (typeof card.example_jp === "string" && card.example_jp) {
+			const exReading = String(card.example_kana ?? "") || rubyToReading(card.example_ruby as string);
+			if (exReading) exampleReadingByText.set(card.example_jp, exReading);
+		}
 		push({
 			w: jp,
 			r: String(card.kana ?? "") || rubyToReading(card.jp_ruby as string),
@@ -832,8 +842,8 @@ words.sort((a, b) => a.tier - b.tier || a.ord - b.ord || a.id.localeCompare(b.id
 // ---------- grammar breakdowns (sentence-type entries) ----------
 // Authored data: scripts/vocab-queue-inputs/breakdowns.json, keyed by the
 // headword surface. Hard rules (build fails rather than shipping bad data):
-//  - every tier-1 sentence-type surface has a breakdown, and every breakdown
-//    key IS a tier-1 sentence-type surface (no orphans, no gaps);
+//  - every sentence-type surface has a breakdown, and every breakdown
+//    key IS a sentence-type surface (no orphans, no gaps);
 //  - the lines' segments concatenate back to the exact headword;
 //  - the lines' readings concatenate to the entry's whole reading;
 //  - a segment containing kanji must carry <ruby> markup whose visible text
@@ -890,8 +900,9 @@ try {
 } catch {
 	/* no authored breakdowns yet — the coverage assertion below will fail loudly */
 }
+const sentenceSurfaces = new Set(words.filter((w) => isQueueSentenceType(w.w)).map((w) => w.w));
 for (const key of Object.keys(breakdownMap)) {
-	if (!requiredBreakdowns.has(key)) throw new Error(`breakdown orphan: "${key}" is not a tier-1 sentence-type entry`);
+	if (!sentenceSurfaces.has(key)) throw new Error(`breakdown orphan: "${key}" is not a sentence-type entry`);
 }
 let breakdownCovered = 0;
 for (const w of words) {
@@ -901,11 +912,87 @@ for (const w of words) {
 	w.breakdown = bd;
 	breakdownCovered += 1;
 }
-for (const surface of requiredBreakdowns) {
+for (const surface of sentenceSurfaces) {
 	if (!breakdownMap[surface]) throw new Error(`missing breakdown for sentence-type entry: ${surface}`);
 	if (!words.some((w) => w.w === surface && w.breakdown)) throw new Error(`breakdown authored but not attached: ${surface}`);
 }
-const sentenceTypeTotal = words.filter((w) => isQueueSentenceType(w.w)).length;
+const sentenceTypeTotal = sentenceSurfaces.size;
+
+// ---------- example-sentence breakdowns ----------
+// Authored data: scripts/vocab-queue-inputs/example-breakdowns.json =
+// { coverage: string[], entries: { [headword surface]: Breakdown } }.
+// Same fragment format as headword breakdowns, applied to the entry's
+// example sentence. Hard rules:
+//  - every key is a queue entry whose example is a complete sentence
+//    (topicTextIsSentence) — no orphans, no stale keys;
+//  - the lines' segments concatenate back to the exact example text, with
+//    the same per-segment ruby discipline as headword breakdowns;
+//  - when the source publishes the example's reading (topic cards:
+//    example_kana / example_ruby), the line readings must add up to it —
+//    the queue payload itself carries no whole-example reading to check
+//    against for the other sources;
+//  - coverage is rolled out in batches and declared in the data file:
+//    "sentenceType" (sentence-type entries), "tier1" (work topic entries)
+//    and "src:<primary source label>" tokens switch on the matching
+//    missing-breakdown assertion, so a batch and its assertion always land
+//    together.
+function validateExampleBreakdown(surface: string, word: { ex?: string }, bd: Breakdown) {
+	const where = `example breakdown "${surface}"`;
+	const ex = word.ex ?? "";
+	if (!bd || !Array.isArray(bd.lines) || bd.lines.length < 2) throw new Error(`${where}: needs at least 2 lines`);
+	const joined = bd.lines.map((l) => l.seg).join("");
+	if (joined !== ex) throw new Error(`${where}: segments must concatenate to the example ("${joined}" !== "${ex}")`);
+	for (const [i, line] of bd.lines.entries()) {
+		checkBreakdownSegment(line.seg, line.reading, line.ruby, `${where} line ${i + 1}`);
+		if (!line.form?.trim() || !line.role?.trim()) throw new Error(`${where} line ${i + 1}: form and role are required`);
+	}
+	const knownReading = exampleReadingByText.get(ex);
+	if (knownReading) {
+		const joinedReading = bd.lines.map((l) => kanaSequence(l.reading)).join("");
+		if (joinedReading !== kanaSequence(knownReading)) {
+			throw new Error(`${where}: line readings must add up to the published example reading ("${joinedReading}" !== "${kanaSequence(knownReading)}")`);
+		}
+	}
+	if (bd.keigo) {
+		const k = bd.keigo;
+		if (!ex.includes(k.seg)) throw new Error(`${where}: keigo segment "${k.seg}" is not part of the example`);
+		if (!KEIGO_TYPES.has(k.type)) throw new Error(`${where}: keigo type must be 尊敬語 / 謙譲語 / 丁寧語 ("${k.type}")`);
+		if (!k.plain?.trim()) throw new Error(`${where}: keigo plain form is required`);
+		checkBreakdownSegment(k.seg, k.reading, k.ruby, `${where} keigo`);
+	}
+}
+
+let exampleBreakdownFile: { coverage?: string[]; entries?: Record<string, Breakdown> } = {};
+try {
+	exampleBreakdownFile = readJson(join(INPUTS, "example-breakdowns.json"));
+} catch {
+	/* no authored example breakdowns yet */
+}
+const exampleBreakdownMap = exampleBreakdownFile.entries ?? {};
+const exampleCoverage = new Set(exampleBreakdownFile.coverage ?? []);
+const wordBySurface = new Map(words.map((w) => [w.w, w]));
+for (const key of Object.keys(exampleBreakdownMap)) {
+	const word = wordBySurface.get(key);
+	if (!word) throw new Error(`example breakdown orphan: "${key}" is not a queue entry`);
+	if (!word.ex || !topicTextIsSentence(word.ex)) throw new Error(`example breakdown orphan: "${key}" has no complete-sentence example`);
+}
+let exampleBreakdownCovered = 0;
+for (const w of words) {
+	const bd = exampleBreakdownMap[w.w];
+	if (!bd) continue;
+	validateExampleBreakdown(w.w, w, bd);
+	w.exampleBreakdown = bd;
+	exampleBreakdownCovered += 1;
+}
+for (const w of words) {
+	if (!w.ex || !topicTextIsSentence(w.ex)) continue;
+	const required =
+		(exampleCoverage.has("sentenceType") && isQueueSentenceType(w.w)) ||
+		(exampleCoverage.has("tier1") && w.tier === 1) ||
+		exampleCoverage.has(`src:${w.src.split("・")[0]}`);
+	if (required && !w.exampleBreakdown) throw new Error(`missing example breakdown for entry: ${w.w}`);
+}
+const sentenceExTotal = words.filter((w) => w.ex && topicTextIsSentence(w.ex)).length;
 
 const payload = {
 	version: 1,
@@ -913,6 +1000,7 @@ const payload = {
 	quota: 50,
 	counts: { ...counts, total: words.length, mergedTotal, twinMerged, pending: pending.length },
 	breakdowns: { sentenceTypeTotal, covered: breakdownCovered },
+	exampleBreakdowns: { sentenceExTotal, covered: exampleBreakdownCovered },
 	aliases,
 	words,
 };
@@ -938,4 +1026,5 @@ writeFileSync(join(ROOT, "docs", "vocab-queue-pending.md"), pendingLines.join("\
 
 console.log(JSON.stringify(payload.counts, null, 1));
 console.log(`breakdowns: ${breakdownCovered} covered of ${sentenceTypeTotal} sentence-type entries`);
+console.log(`example breakdowns: ${exampleBreakdownCovered} covered of ${sentenceExTotal} complete-sentence examples`);
 console.log(`total words: ${words.length}, pending: ${pending.length}`);

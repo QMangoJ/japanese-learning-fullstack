@@ -52,6 +52,8 @@ export type VocabWord = {
 	exZh?: string;
 	/** Grammar breakdown for sentence-type entries (built by scripts/build-vocab-queue.mts). */
 	breakdown?: VocabBreakdown;
+	/** Grammar breakdown of the example sentence, same format as breakdown. */
+	exampleBreakdown?: VocabBreakdown;
 };
 
 /** One fragment of a sentence-type entry's grammar breakdown: the fragment,

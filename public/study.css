@@ -1043,6 +1043,7 @@ body.hide-cn .vcn,body.hide-cn .cn{visibility:hidden}
 .vq-en{color:var(--sub);font-size:14.5px;margin-top:4px;overflow-wrap:anywhere}
 .vq-ex-zh{color:var(--sub);font-size:14px;margin-top:2px}
 .vq-breakdown{border-top:1px dashed var(--line);padding-top:10px}
+.vq-ex-breakdown{border-top:1px dashed var(--line);margin-top:10px;padding-top:8px}
 .vq-bd-lines{display:flex;flex-direction:column;gap:5px}
 .vq-bd-line{display:flex;flex-wrap:wrap;gap:4px 8px;align-items:baseline;font-size:13.5px;line-height:1.55}
 .vq-bd-seg{font-weight:700;color:var(--ink);overflow-wrap:anywhere}

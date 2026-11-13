@@ -19,6 +19,7 @@ import {
 	vocabQueueData,
 	vocabQueueReady,
 	vocabWordsCache,
+	type VocabBreakdown,
 	type VocabGrade,
 	type VocabWord,
 } from "./vocab-queue";
@@ -35,6 +36,32 @@ const GRADE_LABEL: Record<VocabGrade, [string, string]> = {
 
 function toVocabGrade(grade: SwipeGrade): VocabGrade {
 	return grade === "pass" ? "know" : grade === "fail" ? "again" : "fuzzy";
+}
+
+/** Fragment lines + optional keigo point of a grammar breakdown — shared by
+ * the headword「语法拆解」block and the example「例句解析」block. */
+function BreakdownLines({ bd }: { bd: VocabBreakdown }) {
+	return (
+		<>
+			<div className="vq-bd-lines">
+				{bd.lines.map((line, i) => (
+					<div key={i} className="vq-bd-line">
+						<span className="vq-bd-seg jp">{line.ruby ? <RubyHtml html={line.ruby} /> : line.seg}</span>
+						<span className="vq-bd-form">{line.form}</span>
+						<span className="vq-bd-role">{line.role}</span>
+					</div>
+				))}
+			</div>
+			{bd.keigo ? (
+				<div className="vq-bd-keigo">
+					<span className="vq-bd-keigo-label">🎩 {lx("敬语", "Keigo")}</span>
+					<span className="vq-bd-seg jp">{bd.keigo.ruby ? <RubyHtml html={bd.keigo.ruby} /> : bd.keigo.seg}</span>
+					<span className="vq-bd-keigo-type">{bd.keigo.type}</span>
+					<span className="vq-bd-keigo-plain">← {bd.keigo.plain}</span>
+				</div>
+			) : null}
+		</>
+	);
 }
 
 function VocabFlipCard({
@@ -74,30 +101,18 @@ function VocabFlipCard({
 								<div className="fcard-ex-label">{lx("例句", "Example")}</div>
 								<div>{word.ex}</div>
 								{word.exZh ? <div className="vq-ex-zh">{word.exZh}</div> : null}
+								{word.exampleBreakdown ? (
+									<div className="vq-ex-breakdown">
+										<div className="fcard-ex-label">{lx("例句解析", "Example breakdown")}</div>
+										<BreakdownLines bd={word.exampleBreakdown} />
+									</div>
+								) : null}
 							</div>
 						) : null}
 						{word.breakdown ? (
 							<div className="fcard-ex vq-breakdown">
 								<div className="fcard-ex-label">{lx("语法拆解", "Breakdown")}</div>
-								<div className="vq-bd-lines">
-									{word.breakdown.lines.map((line, i) => (
-										<div key={i} className="vq-bd-line">
-											<span className="vq-bd-seg jp">{line.ruby ? <RubyHtml html={line.ruby} /> : line.seg}</span>
-											<span className="vq-bd-form">{line.form}</span>
-											<span className="vq-bd-role">{line.role}</span>
-										</div>
-									))}
-								</div>
-								{word.breakdown.keigo ? (
-									<div className="vq-bd-keigo">
-										<span className="vq-bd-keigo-label">🎩 {lx("敬语", "Keigo")}</span>
-										<span className="vq-bd-seg jp">
-											{word.breakdown.keigo.ruby ? <RubyHtml html={word.breakdown.keigo.ruby} /> : word.breakdown.keigo.seg}
-										</span>
-										<span className="vq-bd-keigo-type">{word.breakdown.keigo.type}</span>
-										<span className="vq-bd-keigo-plain">← {word.breakdown.keigo.plain}</span>
-									</div>
-								) : null}
+								<BreakdownLines bd={word.breakdown} />
 							</div>
 						) : null}
 					</div>
