@@ -12,8 +12,9 @@ import {
 } from "./vocab-queue";
 
 /**
- * Home-page entry for the unified vocab queue: today's 50 at a glance
- * (due reviews + new words), progress, and a jump into the session.
+ * Home-page entry for the unified vocab queue: today's two batches at a
+ * glance (all due reviews + 50 new words, counted apart), progress, and a
+ * jump into the session.
  * Kept separate from VocabQueuePage so the session page stays lazy.
  */
 export function VocabQueueTodayCard() {

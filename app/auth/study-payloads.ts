@@ -100,7 +100,11 @@ export function isVocabQueuePayload(value: unknown) {
 	if (!isRecord(value.plan)) return false;
 	const plan = value.plan;
 	if (typeof plan.date !== "string" || !VOCAB_QUEUE_DATE.test(plan.date)) return false;
-	if (!Array.isArray(plan.ids) || plan.ids.length > 500) return false;
+	// Since the 2026-11-14 regime (reviews uncapped + 50 new), a plan may
+	// legitimately serve every studied word at once — cap at the states cap.
+	if (!Array.isArray(plan.ids) || plan.ids.length > VOCAB_QUEUE_MAX_STATES) return false;
+	// Plan-regime marker: absent (old regime) or 2 (current) only.
+	if (plan.pv !== undefined && plan.pv !== 2) return false;
 	if (!plan.ids.every((id) => typeof id === "string" && isSafeId(id) && isString(id, 200, false))) return false;
 	if (!Array.isArray(plan.done) || plan.done.length > plan.ids.length) return false;
 	if (!plan.done.every((id) => typeof id === "string" && (plan.ids as unknown[]).includes(id))) return false;

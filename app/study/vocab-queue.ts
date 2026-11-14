@@ -19,13 +19,19 @@ import { jstToday } from "./lesson-review";
  *   「今日已过」list — the retest grade likewise overwrites today's result and
  *   never double-counts the daily quota (done is a per-word set).
  *
- * Daily quota is 50, 雷打不动: due reviews first (most overdue first, then
- * priority tier), new words fill the rest in priority order. If more than 50
- * reviews are due, today's plan is the 50 most overdue and the rest stay due.
- * After the quota is met,「再来 20」appends extra batches (plan.extra) in the
- * same order — deferred due reviews first, then new words — graded with the
- * exact same SRS/re-show rules, but tracked apart so the 50-count stays pure.
- * Extra batches persist inside the same server-side plan.
+ * Daily plan (Daniel's ruling, 2026-11-13): TWO separate batches — ALL due
+ * reviews (most overdue first, then priority tier; never capped and never
+ * eating the new-word quota) plus exactly 50 new words in priority order.
+ * The batches are counted apart (复习 x/N, 新词 y/50); the day is complete
+ * when both are. Reviews are served first, new words after. After both
+ * batches are met, 「再来 20」appends extra batches of NEW words only
+ * (plan.extra), graded with the exact same SRS/re-show rules but tracked
+ * apart so the batch counts stay pure. Extra batches persist inside the
+ * same server-side plan.
+ *
+ * Plans carry a regime marker (plan.pv). A same-day plan minted under the
+ * old shared-50 regime (no marker) is rebuilt in place on sight — see
+ * upgradeSameDayPlan — keeping everything already graded today.
  *
  * State syncs through /api/vocab-queue under its own KV key (vocab-queue:<uid>);
  * it never touches the due-review / mastery / mistakes payloads.
@@ -83,25 +89,31 @@ export type VocabWordState = {
 	ts: number;
 };
 
-/** One or more「再来 20」batches appended after the daily quota is met. Kept apart from the plan's own ids/done/review/fresh so the baseline 50-count is never polluted; grades/reshown stay plan-global, so extra words follow the same same-day re-show and overwrite rules. */
+/** One or more「再来 20」batches appended after the day's two batches are met. Kept apart from the plan's own ids/done/review/fresh so the batch counts are never polluted; grades/reshown stay plan-global, so extra words follow the same same-day re-show and overwrite rules. New batches are new words only (reviews are never deferred under the current regime); the review count only survives on blocks minted before 2026-11-14. */
 export type VocabPlanExtra = {
 	/** Extra word ids, in the order the batches were added. */
 	ids: string[];
 	/** Extra ids completed (subset of ids). */
 	done: string[];
-	/** Of the extra ids, how many were due reviews when their batch was built. */
+	/** Of the extra ids, how many were due reviews when their batch was built (0 for batches minted under the current regime). */
 	review: number;
 	/** Of the extra ids, how many were new words. */
 	fresh: number;
 };
 
+/** Plan-regime marker stored on VocabPlan.pv: 2 = 「复习全上 + 新词另算 50」 (separate batches). Absent = the old shared-50 regime. */
+export const PLAN_PV = 2;
+
 export type VocabPlan = {
+	/** Regime marker (see PLAN_PV). Same-day plans without it are migrated on sight. */
+	pv?: number;
 	date: string;
+	/** Review batch first (all due words), then the new-word batch — session order. */
 	ids: string[];
 	done: string[];
-	/** How many of today's ids were due reviews when the plan was built. */
+	/** How many of today's ids are the review batch (the first `review` ids). */
 	review: number;
-	/** How many were new words. */
+	/** How many are the new-word batch (the remaining ids; capped at the daily new-word quota). */
 	fresh: number;
 	/** Today's latest grade per word id (for the「今日已过」list and retests). Covers baseline and extra ids alike. */
 	grades?: Record<string, VocabGrade>;
@@ -117,8 +129,9 @@ export type VocabQueueData = {
 	plan: VocabPlan | null;
 };
 
+/** Daily NEW-word quota, 雷打不动 — due reviews ride on top of it, uncounted (see the plan-regime note at the top of this file). */
 export const DAILY_QUOTA = 50;
-/** Size of one「再来 20」extra batch, added on demand after the daily quota is met. */
+/** Size of one「再来 20」extra batch, added on demand after the day's batches are met. */
 export const EXTRA_BATCH_SIZE = 20;
 export const VOCAB_QUEUE_STORAGE_KEY = "jl-vocab-queue-v1";
 export const VOCAB_QUEUE_ENDPOINT = "/api/vocab-queue";
@@ -213,17 +226,9 @@ function makeTwinGuard() {
 	};
 }
 
-/**
- * Build today's plan of exactly `quota` cards (fewer only when the queue runs
- * out): due reviews first — most overdue, then priority — new words after.
- */
-export function buildDailyPlan(
-	words: VocabWord[],
-	states: Record<string, VocabWordState>,
-	today: string,
-	quota = DAILY_QUOTA,
-): VocabPlan {
-	const due = words
+/** All words due today (or overdue), most overdue first, then priority. */
+function sortedDueWords(words: VocabWord[], states: Record<string, VocabWordState>, today: string): VocabWord[] {
+	return words
 		.filter((word) => {
 			const state = states[word.id];
 			return state && state.due <= today;
@@ -233,23 +238,138 @@ export function buildDailyPlan(
 			const db = states[b.id].due;
 			return da.localeCompare(db) || compareWords(a, b);
 		});
+}
+
+/** Untouched (never-studied) words in priority order. */
+function sortedFreshWords(words: VocabWord[], states: Record<string, VocabWordState>): VocabWord[] {
+	return words.filter((word) => !states[word.id]).sort(compareWords);
+}
+
+/**
+ * Build today's plan as two separate batches: the review batch takes EVERY
+ * due word (uncapped), then the new-word batch takes up to `quota` untouched
+ * words in priority order. `quota` counts new words only.
+ */
+export function buildDailyPlan(
+	words: VocabWord[],
+	states: Record<string, VocabWordState>,
+	today: string,
+	quota = DAILY_QUOTA,
+): VocabPlan {
 	const guard = makeTwinGuard();
 	const reviewPart: VocabWord[] = [];
-	for (const word of due) {
-		if (reviewPart.length >= quota) break;
+	for (const word of sortedDueWords(words, states, today)) {
 		if (guard.tryTake(word)) reviewPart.push(word);
 	}
 	const freshPart: VocabWord[] = [];
-	for (const word of words.filter((w) => !states[w.id]).sort(compareWords)) {
-		if (reviewPart.length + freshPart.length >= quota) break;
+	for (const word of sortedFreshWords(words, states)) {
+		if (freshPart.length >= quota) break;
 		if (guard.tryTake(word)) freshPart.push(word);
 	}
 	return {
+		pv: PLAN_PV,
 		date: today,
 		ids: [...reviewPart, ...freshPart].map((word) => word.id),
 		done: [],
 		review: reviewPart.length,
 		fresh: freshPart.length,
+	};
+}
+
+/** Per-batch progress of a plan: the review batch is the first `review` ids, the new-word batch the rest; extra batches count apart, as before. */
+export function planBatchProgress(plan: VocabPlan): {
+	reviewDone: number;
+	reviewTotal: number;
+	freshDone: number;
+	freshTotal: number;
+} {
+	const done = new Set(plan.done);
+	const reviewIds = plan.ids.slice(0, plan.review);
+	const freshIds = plan.ids.slice(plan.review);
+	return {
+		reviewDone: reviewIds.filter((id) => done.has(id)).length,
+		reviewTotal: reviewIds.length,
+		freshDone: freshIds.filter((id) => done.has(id)).length,
+		freshTotal: freshIds.length,
+	};
+}
+
+/**
+ * Rebuild a same-day plan minted under the old shared-50 regime (no pv
+ * marker) under the current regime, in place:
+ *  - the review batch grows to ALL words due today; review words already
+ *    graded today (their states moved past today) stay in the batch, so
+ *    today's done tally carries over untouched;
+ *  - the new-word batch keeps every word the old plan already served and
+ *    tops up to the quota with untouched words in priority order; new words
+ *    already graded today count toward the batch's progress;
+ *  - done / grades / reshown / extra carry over (the new baseline is a
+ *    superset of the old one, so extra blocks stay disjoint).
+ * Returns the plan unchanged when it already carries the current marker.
+ */
+export function upgradeSameDayPlan(
+	words: VocabWord[],
+	states: Record<string, VocabWordState>,
+	plan: VocabPlan,
+	today: string,
+	quota = DAILY_QUOTA,
+): VocabPlan {
+	if (plan.pv === PLAN_PV || plan.date !== today) return plan;
+	const byId = new Map(words.map((word) => [word.id, word]));
+	const oldReviewIds = plan.ids.slice(0, plan.review);
+	const oldFreshIds = plan.ids.slice(plan.review);
+	const touchedToday = new Set([...plan.done, ...Object.keys(plan.grades ?? {}), ...(plan.reshown ?? [])]);
+
+	const guard = makeTwinGuard();
+	// Register everything the old plan already serves today (baseline + extra)
+	// so the rebuilt batches can never add the other spelling of a served word.
+	for (const id of [...plan.ids, ...(plan.extra?.ids ?? [])]) {
+		const word = byId.get(id);
+		if (word) guard.seed(word);
+	}
+
+	// Review batch: every due word first (most overdue first). Words the old
+	// plan already serves were seeded into the guard above, so tryTake would
+	// refuse them — old review words go in directly, the rest pass the guard.
+	const oldReviewSet = new Set(oldReviewIds);
+	const reviewIds: string[] = [];
+	for (const word of sortedDueWords(words, states, today)) {
+		if (oldReviewSet.has(word.id) || guard.tryTake(word)) reviewIds.push(word.id);
+	}
+	// …then old review words that already left the due set by being graded
+	// today — history wins over the twin guard, they belong to today's batch.
+	for (const id of oldReviewIds) {
+		if (reviewIds.includes(id) || !touchedToday.has(id)) continue;
+		const word = byId.get(id);
+		if (word) guard.seed(word);
+		reviewIds.push(id);
+	}
+
+	// New-word batch: keep the old batch whole, then top up to the quota.
+	const freshIds: string[] = [...oldFreshIds];
+	for (const word of sortedFreshWords(words, states)) {
+		if (freshIds.length >= quota) break;
+		if (freshIds.includes(word.id)) continue;
+		if (guard.tryTake(word)) freshIds.push(word.id);
+	}
+
+	const ids = [...reviewIds, ...freshIds];
+	const known = [...ids, ...(plan.extra?.ids ?? [])];
+	const grades: Record<string, VocabGrade> = {};
+	for (const [id, grade] of Object.entries(plan.grades ?? {})) {
+		if (known.includes(id)) grades[id] = grade;
+	}
+	const reshown = (plan.reshown ?? []).filter((id) => known.includes(id));
+	return {
+		pv: PLAN_PV,
+		date: plan.date,
+		ids,
+		done: plan.done.filter((id) => ids.includes(id)),
+		review: reviewIds.length,
+		fresh: freshIds.length,
+		...(Object.keys(grades).length ? { grades } : {}),
+		...(reshown.length ? { reshown } : {}),
+		...(plan.extra ? { extra: plan.extra } : {}),
 	};
 }
 
@@ -261,31 +381,13 @@ export function dueWordCount(words: VocabWord[], states: Record<string, VocabWor
 	}).length;
 }
 
-/** Due words that today's plan (baseline + extra batches) did NOT take — the true「顺延」remainder. */
-export function deferredDueCount(
-	words: VocabWord[],
-	states: Record<string, VocabWordState>,
-	plan: VocabPlan,
-	today: string,
-): number {
-	const taken = new Set([...plan.ids, ...(plan.extra?.ids ?? [])]);
-	return words.filter((word) => {
-		const state = states[word.id];
-		return state && state.due <= today && !taken.has(word.id);
-	}).length;
-}
-
 /**
- * Candidates for a「再来 20」batch, in the same order the daily plan uses:
- * due reviews first (most overdue, then priority), new words after — minus
+ * Candidates for a「再来 20」batch: NEW words only, in priority order, minus
  * everything already in today's plan (baseline or earlier extra batches).
+ * Due reviews are never candidates — under the current regime the review
+ * batch already serves every due word, so there is nothing to defer.
  */
-function extraCandidates(
-	words: VocabWord[],
-	states: Record<string, VocabWordState>,
-	plan: VocabPlan,
-	today: string,
-): { due: VocabWord[]; fresh: VocabWord[] } {
+function extraCandidates(words: VocabWord[], states: Record<string, VocabWordState>, plan: VocabPlan): VocabWord[] {
 	const taken = new Set([...plan.ids, ...(plan.extra?.ids ?? [])]);
 	// Seed the twin guard with everything already in today's plan so an extra
 	// batch can never add the other spelling of a word served today.
@@ -295,55 +397,34 @@ function extraCandidates(
 		const word = byId.get(id);
 		if (word) guard.seed(word);
 	}
-	const due = words
-		.filter((word) => {
-			const state = states[word.id];
-			return state && state.due <= today && !taken.has(word.id);
-		})
-		.sort((a, b) => {
-			const da = states[a.id].due;
-			const db = states[b.id].due;
-			return da.localeCompare(db) || compareWords(a, b);
-		})
+	return sortedFreshWords(words, states)
+		.filter((word) => !taken.has(word.id))
 		.filter((word) => guard.tryTake(word));
-	const fresh = words
-		.filter((word) => !states[word.id] && !taken.has(word.id))
-		.sort(compareWords)
-		.filter((word) => guard.tryTake(word));
-	return { due, fresh };
 }
 
-/** How many words a「再来 20」click could still pull today (deferred due + untouched new). */
+/** How many new words a「再来 20」click could still pull today. */
 export function countExtraCandidates(
 	words: VocabWord[],
 	states: Record<string, VocabWordState>,
 	plan: VocabPlan,
-	today: string,
-): { due: number; fresh: number; total: number } {
-	const { due, fresh } = extraCandidates(words, states, plan, today);
-	return { due: due.length, fresh: fresh.length, total: due.length + fresh.length };
+): { fresh: number; total: number } {
+	const fresh = extraCandidates(words, states, plan);
+	return { fresh: fresh.length, total: fresh.length };
 }
 
 /**
- * Build one extra batch of up to `count` words (deferred due reviews first,
- * then new words in priority order). Returns null when nothing is left.
+ * Build one extra batch of up to `count` NEW words (priority order).
+ * Returns null when no untouched word is left.
  */
 export function buildExtraBatch(
 	words: VocabWord[],
 	states: Record<string, VocabWordState>,
 	plan: VocabPlan,
-	today: string,
 	count = EXTRA_BATCH_SIZE,
 ): { ids: string[]; review: number; fresh: number } | null {
-	const { due, fresh } = extraCandidates(words, states, plan, today);
-	const reviewPart = due.slice(0, count);
-	const freshPart = fresh.slice(0, count - reviewPart.length);
-	if (!reviewPart.length && !freshPart.length) return null;
-	return {
-		ids: [...reviewPart, ...freshPart].map((word) => word.id),
-		review: reviewPart.length,
-		fresh: freshPart.length,
-	};
+	const freshPart = extraCandidates(words, states, plan).slice(0, count);
+	if (!freshPart.length) return null;
+	return { ids: freshPart.map((word) => word.id), review: 0, fresh: freshPart.length };
 }
 
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
@@ -388,7 +469,14 @@ function cleanPlan(value: unknown): VocabPlan | null {
 	];
 	const done = item.done.filter((id): id is string => typeof id === "string" && ids.includes(id));
 	if (typeof item.review !== "number" || typeof item.fresh !== "number") return null;
-	const plan: VocabPlan = { date: item.date, ids, done: [...new Set(done)], review: item.review, fresh: item.fresh };
+	const plan: VocabPlan = {
+		...(item.pv === PLAN_PV ? { pv: PLAN_PV } : {}),
+		date: item.date,
+		ids,
+		done: [...new Set(done)],
+		review: item.review,
+		fresh: item.fresh,
+	};
 	const extra = cleanExtra(item.extra, ids);
 	if (extra) plan.extra = extra;
 	// grades/reshown cover baseline and extra ids alike.
@@ -553,6 +641,10 @@ export function mergeVocabQueueData(local: VocabQueueData, server: VocabQueueDat
 			known.includes(id),
 		);
 		plan = {
+			// The regime marker rides with the base (server) plan: if the
+			// server plan is old-regime, the merged plan is too, and
+			// todayPlan migrates it — with the unioned progress — on sight.
+			...(server.plan.pv === PLAN_PV ? { pv: PLAN_PV } : {}),
 			date: server.plan.date,
 			ids: server.plan.ids,
 			done,
@@ -698,10 +790,21 @@ export function hydrateVocabQueue() {
 	emitVocabQueue();
 }
 
-/** Return today's plan, building (and persisting) a fresh one when the stored plan is for another day. */
+/**
+ * Return today's plan, building (and persisting) a fresh one when the stored
+ * plan is for another day. A same-day plan minted under the old shared-50
+ * regime is first rebuilt under the current regime (upgradeSameDayPlan) and
+ * persisted, so every device converges to the new batches on its next pull.
+ */
 export function todayPlan(words: VocabWord[], today = jstToday()): VocabPlan {
 	applyAliasesIfNeeded();
-	if (data.plan && data.plan.date === today) return data.plan;
+	if (data.plan && data.plan.date === today) {
+		if (data.plan.pv === PLAN_PV) return data.plan;
+		const plan = upgradeSameDayPlan(words, data.states, data.plan, today);
+		data = { ...data, plan };
+		commit();
+		return plan;
+	}
 	const plan = buildDailyPlan(words, data.states, today);
 	data = { ...data, plan };
 	commit();
@@ -719,15 +822,15 @@ export function shouldReshowToday(grade: VocabGrade, alreadyReshown: boolean): b
 }
 
 /**
- * Append one「再来 20」extra batch to today's plan (deferred due reviews first,
- * then new words in priority order) and persist it with the plan. Returns the
- * added word ids, or [] when today's plan is missing/stale or the word source
- * is exhausted. The baseline ids/done/review/fresh are never touched.
+ * Append one「再来 20」extra batch of NEW words to today's plan and persist
+ * it with the plan. Returns the added word ids, or [] when today's plan is
+ * missing/stale or the new-word source is exhausted. The baseline
+ * ids/done/review/fresh are never touched.
  */
 export function addExtraBatch(words: VocabWord[], today = jstToday()): string[] {
 	applyAliasesIfNeeded();
 	if (!data.plan || data.plan.date !== today) return [];
-	const batch = buildExtraBatch(words, data.states, data.plan, today);
+	const batch = buildExtraBatch(words, data.states, data.plan);
 	if (!batch) return [];
 	const prev = data.plan.extra ?? { ids: [], done: [], review: 0, fresh: 0 };
 	const extra: VocabPlanExtra = {

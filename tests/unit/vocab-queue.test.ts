@@ -13,13 +13,15 @@ import {
 	buildExtraBatch,
 	cleanVocabQueueData,
 	countExtraCandidates,
-	deferredDueCount,
 	EXTRA_BATCH_SIZE,
 	gradeWordState,
 	mergeVocabQueueData,
+	PLAN_PV,
+	planBatchProgress,
 	resetVocabQueueForTests,
 	shouldReshowToday,
 	todayPlan,
+	upgradeSameDayPlan,
 	vocabQueueData,
 	type VocabPlan,
 	type VocabWord,
@@ -62,7 +64,7 @@ describe("vocab queue SRS ladder", () => {
 	});
 });
 
-describe("vocab queue daily plan (50, reviews first)", () => {
+describe("vocab queue daily plan (reviews all + 50 new)", () => {
 	const words: VocabWord[] = [
 		...Array.from({ length: 30 }, (_, i) => word(`due-${i}`, 3, i + 1)),
 		...Array.from({ length: 80 }, (_, i) => word(`new-${i}`, i < 40 ? 1 : 5, i + 1)),
@@ -71,18 +73,20 @@ describe("vocab queue daily plan (50, reviews first)", () => {
 		Array.from({ length: 30 }, (_, i) => [`due-${i}`, { s: 1, due: i < 10 ? "2026-11-09" : TODAY, ts: 1 }]),
 	);
 
-	it("fills the plan with all 30 due reviews, then new words in priority order up to 50", () => {
+	it("serves ALL 30 due reviews, then 50 new words in priority order — two separate batches", () => {
 		const plan = buildDailyPlan(words, states, TODAY);
-		expect(plan.ids).toHaveLength(50);
+		expect(plan.pv).toBe(PLAN_PV);
 		expect(plan.review).toBe(30);
-		expect(plan.fresh).toBe(20);
-		// Most overdue first.
+		expect(plan.fresh).toBe(50);
+		expect(plan.ids).toHaveLength(80);
+		// Review batch first, most overdue first.
 		expect(plan.ids.slice(0, 10)).toEqual(Array.from({ length: 10 }, (_, i) => `due-${i}`));
-		// Fresh words fill by tier: the 20 fresh slots are tier-1 words, in source order.
-		expect(plan.ids.slice(30)).toEqual(Array.from({ length: 20 }, (_, i) => `new-${i}`));
+		expect(plan.ids.slice(0, 30).every((id) => id.startsWith("due-"))).toBe(true);
+		// New-word batch: 50 by tier — the 40 tier-1 words, then 10 tier-5, in source order.
+		expect(plan.ids.slice(30)).toEqual(Array.from({ length: 50 }, (_, i) => `new-${i}`));
 	});
 
-	it("caps the plan at 50 when more than 50 reviews are due; the rest stay due", () => {
+	it("never caps the review batch: 70 due reviews are all served, new words still get their own 50", () => {
 		const manyDue = Object.fromEntries(
 			words.slice(0, 30).map((w) => [w.id, { s: 2, due: "2026-11-01", ts: 1 }]),
 		);
@@ -92,14 +96,27 @@ describe("vocab queue daily plan (50, reviews first)", () => {
 			...Object.fromEntries(extra.map((w) => [w.id, { s: 1, due: "2026-11-05", ts: 1 }])),
 		};
 		const plan = buildDailyPlan([...words, ...extra], allStates, TODAY);
-		expect(plan.ids).toHaveLength(50);
-		expect(plan.review).toBe(50);
-		expect(plan.fresh).toBe(0);
-		// Oldest due dates come first: all 30 from 11-01, then 20 of the 11-05 batch.
-		expect(plan.ids.filter((id) => id.startsWith("due2-"))).toHaveLength(20);
+		expect(plan.review).toBe(70);
+		expect(plan.fresh).toBe(50);
+		expect(plan.ids).toHaveLength(120);
+		// Oldest due dates first within the review batch: all 30 from 11-01, then the 11-05 batch.
+		expect(plan.ids.slice(0, 30).every((id) => id.startsWith("due-"))).toBe(true);
+		expect(plan.ids.slice(30, 70).every((id) => id.startsWith("due2-"))).toBe(true);
 	});
 
-	it("returns fewer than 50 when the queue runs out", () => {
+	it("counts the two batches independently of each other", () => {
+		const plan: VocabPlan = {
+			pv: PLAN_PV,
+			date: TODAY,
+			ids: ["r-0", "r-1", "r-2", "f-0", "f-1"],
+			done: ["r-0", "r-2", "f-1"],
+			review: 3,
+			fresh: 2,
+		};
+		expect(planBatchProgress(plan)).toEqual({ reviewDone: 2, reviewTotal: 3, freshDone: 1, freshTotal: 2 });
+	});
+
+	it("returns fewer than 50 new words when the queue runs out", () => {
 		const plan = buildDailyPlan([word("a", 1, 1), word("b", 1, 2)], {}, TODAY);
 		expect(plan.ids).toEqual(["a", "b"]);
 		expect(plan.fresh).toBe(2);
@@ -108,6 +125,108 @@ describe("vocab queue daily plan (50, reviews first)", () => {
 	it("does not re-plan words that are studied but not yet due", () => {
 		const plan = buildDailyPlan([word("a", 1, 1)], { a: { s: 2, due: "2026-12-01", ts: 1 } }, TODAY);
 		expect(plan.ids).toEqual([]);
+	});
+});
+
+describe("vocab queue plan-regime migration (old shared-50 → reviews all + 50 new)", () => {
+	// 30 words due today; the old regime's plan took 8 of them plus 42 new
+	// words into a shared 50. Two reviews and three new words are already
+	// graded (their states moved to 2026-11-14); one new word awaits re-show.
+	const words: VocabWord[] = [
+		...Array.from({ length: 30 }, (_, i) => word(`d-${i}`, 3, i + 1)),
+		...Array.from({ length: 80 }, (_, i) => word(`f-${i}`, 1, i + 1)),
+	];
+	const states: Record<string, { s: number; due: string; ts: number }> = {
+		...Object.fromEntries(Array.from({ length: 30 }, (_, i) => [`d-${i}`, { s: 1, due: "2026-11-09", ts: 1 }])),
+		"d-0": { s: 1, due: "2026-11-14", ts: 100 },
+		"d-1": { s: 1, due: "2026-11-14", ts: 100 },
+		"f-0": { s: 1, due: "2026-11-14", ts: 100 },
+		"f-1": { s: 1, due: "2026-11-14", ts: 100 },
+		"f-2": { s: 1, due: "2026-11-14", ts: 100 },
+		"f-3": { s: 0, due: "2026-11-12", ts: 100 },
+	};
+	const oldPlan: VocabPlan = {
+		date: TODAY,
+		ids: [
+			...Array.from({ length: 8 }, (_, i) => `d-${i}`),
+			...Array.from({ length: 42 }, (_, i) => `f-${i}`),
+		],
+		done: ["d-0", "d-1", "f-0", "f-1", "f-2"],
+		review: 8,
+		fresh: 42,
+		grades: { "d-0": "know", "d-1": "know", "f-0": "know", "f-1": "know", "f-2": "know", "f-3": "fuzzy" },
+		reshown: ["f-3"],
+	};
+
+	it("rebuilds the review batch to ALL due words and the new-word batch to a full 50, keeping today's progress", () => {
+		const plan = upgradeSameDayPlan(words, states, oldPlan, TODAY);
+		expect(plan.pv).toBe(PLAN_PV);
+		expect(plan.date).toBe(TODAY);
+		// Review batch: the 28 still-due words plus the 2 already graded today.
+		expect(plan.review).toBe(30);
+		expect(new Set(plan.ids.slice(0, 30))).toEqual(new Set(Array.from({ length: 30 }, (_, i) => `d-${i}`)));
+		// New-word batch: the old 42 kept whole, topped up with the next 8.
+		expect(plan.fresh).toBe(50);
+		expect(plan.ids.slice(30)).toEqual(Array.from({ length: 50 }, (_, i) => `f-${i}`));
+		expect(plan.ids).toHaveLength(80);
+		// Nothing graded today is re-served or lost: done/grades/reshown carry.
+		expect(plan.done).toEqual(["d-0", "d-1", "f-0", "f-1", "f-2"]);
+		expect(plan.grades).toEqual(oldPlan.grades);
+		expect(plan.reshown).toEqual(["f-3"]);
+		// Per-batch progress carries: 2 reviews done, 3 new words done.
+		expect(planBatchProgress(plan)).toEqual({ reviewDone: 2, reviewTotal: 30, freshDone: 3, freshTotal: 50 });
+	});
+
+	it("is a no-op for plans already on the current regime or for another day", () => {
+		const current: VocabPlan = { pv: PLAN_PV, date: TODAY, ids: ["a"], done: [], review: 0, fresh: 1 };
+		expect(upgradeSameDayPlan(words, states, current, TODAY)).toBe(current);
+		const yesterday: VocabPlan = { date: "2026-11-10", ids: ["a"], done: [], review: 0, fresh: 1 };
+		expect(upgradeSameDayPlan(words, states, yesterday, TODAY)).toBe(yesterday);
+	});
+
+	it("round-trips the regime marker through the cleaner and accepts it in payload validation", () => {
+		const cleaned = cleanVocabQueueData({
+			v: 1,
+			states: {},
+			plan: { pv: PLAN_PV, date: TODAY, ids: ["a"], done: [], review: 0, fresh: 1 },
+		});
+		expect(cleaned.plan?.pv).toBe(PLAN_PV);
+		const legacy = cleanVocabQueueData({
+			v: 1,
+			states: {},
+			plan: { date: TODAY, ids: ["a"], done: [], review: 0, fresh: 1 },
+		});
+		expect(legacy.plan?.pv).toBeUndefined();
+		const base = { v: 1, states: {}, plan: { date: TODAY, ids: ["a"], done: [], review: 0, fresh: 1 } };
+		expect(isVocabQueuePayload({ ...base, plan: { ...base.plan, pv: 2 } })).toBe(true);
+		expect(isVocabQueuePayload(base)).toBe(true);
+		expect(isVocabQueuePayload({ ...base, plan: { ...base.plan, pv: 1 } })).toBe(false);
+		expect(isVocabQueuePayload({ ...base, plan: { ...base.plan, pv: 3 } })).toBe(false);
+	});
+
+	it("propagates the marker through the same-day merge from the server plan", () => {
+		const local = {
+			v: 1 as const,
+			states: {},
+			plan: { date: TODAY, ids: ["a", "b"], done: ["a"], review: 1, fresh: 1, grades: { a: "know" as const } },
+		};
+		const server = {
+			v: 1 as const,
+			states: {},
+			plan: { pv: PLAN_PV, date: TODAY, ids: ["a", "b", "c"], done: ["b"], review: 1, fresh: 2 },
+		};
+		const merged = mergeVocabQueueData(local, server);
+		expect(merged.plan?.pv).toBe(PLAN_PV);
+		expect(merged.plan?.ids).toEqual(["a", "b", "c"]);
+		expect(merged.plan?.done.sort()).toEqual(["a", "b"]);
+		// And the reverse: an old-regime server plan stays unmarked after the
+		// merge, so todayPlan migrates it (with the unioned progress) on sight.
+		const reverse = mergeVocabQueueData(
+			{ v: 1, states: {}, plan: { pv: PLAN_PV, date: TODAY, ids: ["a"], done: ["a"], review: 0, fresh: 1 } },
+			{ v: 1, states: {}, plan: { date: TODAY, ids: ["a"], done: [] as string[], review: 0, fresh: 1 } },
+		);
+		expect(reverse.plan?.pv).toBeUndefined();
+		expect(reverse.plan?.done).toEqual(["a"]);
 	});
 });
 
@@ -243,8 +362,8 @@ describe("vocab queue dedup guards", () => {
 
 	it("an extra batch never adds the other spelling of a word already in today's plan", () => {
 		const plan: VocabPlan = { date: TODAY, ids: ["kanji"], done: [], review: 0, fresh: 1 };
-		expect(buildExtraBatch([kanaTwin, kanjiTwin], {}, plan, TODAY)).toBeNull();
-		expect(countExtraCandidates([kanaTwin, kanjiTwin], {}, plan, TODAY).total).toBe(0);
+		expect(buildExtraBatch([kanaTwin, kanjiTwin], {}, plan)).toBeNull();
+		expect(countExtraCandidates([kanaTwin, kanjiTwin], {}, plan).total).toBe(0);
 	});
 
 	it("cleans a stored plan with duplicate ids down to one serving per id", () => {
@@ -481,7 +600,7 @@ describe("vocab queue「再来 20」extra batches", () => {
 		...(extra ? { extra } : {}),
 	});
 
-	it("takes deferred due reviews first (most overdue), then new words in priority order", () => {
+	it("takes new words only, in priority order — due reviews are never extra candidates", () => {
 		const words = [
 			word("in-plan", 1, 1),
 			word("due-newer", 3, 2),
@@ -496,23 +615,24 @@ describe("vocab queue「再来 20」extra batches", () => {
 			"due-older": { s: 2, due: "2026-11-01", ts: 1 },
 			"not-due": { s: 2, due: "2026-12-01", ts: 1 },
 		};
-		const batch = buildExtraBatch(words, states, planOf(["in-plan"]), TODAY);
-		// In-plan and not-yet-due words are never candidates.
-		expect(batch).toEqual({ ids: ["due-older", "due-newer", "fresh-early", "fresh-late"], review: 2, fresh: 2 });
+		const batch = buildExtraBatch(words, states, planOf(["in-plan"]));
+		// Due and not-yet-due words are never candidates: reviews live in the
+		// plan's own review batch, never deferred into extras.
+		expect(batch).toEqual({ ids: ["fresh-early", "fresh-late"], review: 0, fresh: 2 });
 		expect(EXTRA_BATCH_SIZE).toBe(20);
 	});
 
 	it("respects the batch size and never repeats earlier extra batches", () => {
 		const words = Array.from({ length: 30 }, (_, i) => word(`w-${i}`, 1, i + 1));
-		const states = Object.fromEntries(words.map((w) => [w.id, { s: 1, due: "2026-11-09", ts: 1 }]));
-		const plan = planOf([], { ids: ["w-0", "w-1"], done: ["w-0"], review: 2, fresh: 0 });
-		const batch = buildExtraBatch(words, states, plan, TODAY, 5);
+		const plan = planOf([], { ids: ["w-0", "w-1"], done: ["w-0"], review: 0, fresh: 2 });
+		const batch = buildExtraBatch(words, {}, plan, 5);
 		expect(batch?.ids).toEqual(["w-2", "w-3", "w-4", "w-5", "w-6"]);
-		expect(batch?.review).toBe(5);
-		expect(countExtraCandidates(words, states, plan, TODAY).total).toBe(28);
+		expect(batch?.review).toBe(0);
+		expect(batch?.fresh).toBe(5);
+		expect(countExtraCandidates(words, {}, plan).total).toBe(28);
 	});
 
-	it("returns null when exhausted, and counts deferred due words exactly", () => {
+	it("returns null when no new word is left, however many reviews are still due", () => {
 		const words = [word("a", 1, 1), word("b", 1, 2), word("c", 1, 3), word("d", 1, 4)];
 		const states = {
 			a: { s: 1, due: TODAY, ts: 1 },
@@ -521,11 +641,10 @@ describe("vocab queue「再来 20」extra batches", () => {
 			d: { s: 1, due: "2026-12-01", ts: 1 },
 		};
 		const plan = planOf(["a"], { ids: ["c"], done: [], review: 1, fresh: 0 });
-		// Only b is due and untaken; d is not due yet, nothing is new.
-		expect(deferredDueCount(words, states, plan, TODAY)).toBe(1);
-		expect(buildExtraBatch(words, states, plan, TODAY)?.ids).toEqual(["b"]);
-		expect(buildExtraBatch(words, states, { ...plan, extra: { ids: ["c", "b"], done: [], review: 2, fresh: 0 } }, TODAY)).toBeNull();
-		expect(countExtraCandidates(words, states, { ...plan, extra: { ids: ["c", "b"], done: [], review: 2, fresh: 0 } }, TODAY).total).toBe(0);
+		// b is due and untaken by the baseline, d is not due yet, nothing is new:
+		// under the current regime there is simply nothing an extra batch can add.
+		expect(buildExtraBatch(words, states, plan)).toBeNull();
+		expect(countExtraCandidates(words, states, plan).total).toBe(0);
 	});
 
 	it("appends batches to plan.extra without touching the baseline 50-count, and stops at exhaustion", () => {
@@ -547,21 +666,18 @@ describe("vocab queue「再来 20」extra batches", () => {
 		expect(vocabQueueData().plan?.extra?.ids).toEqual(first);
 	});
 
-	it("picks up the due reviews the daily 50 deferred, before any new word", () => {
-		resetVocabQueueForTests();
+	it("the plan itself serves every due review now; extra batches then add only new words", () => {
 		const dueWords = Array.from({ length: 55 }, (_, i) => word(`due-${i}`, 1, i + 1));
-		const freshWords = [word("new-0", 1, 100)];
-		// Grade all 55 on 2026-11-01 (know → due 2026-11-04): all overdue today.
-		for (const w of dueWords) applyVocabGrade(w.id, "know", true, "2026-11-01");
-		const plan = todayPlan([...dueWords, ...freshWords], TODAY);
-		expect(plan.review).toBe(50);
-		expect(plan.fresh).toBe(0);
-		const added = addExtraBatch([...dueWords, ...freshWords], TODAY);
-		// The 5 deferred reviews come first; the batch then fills up with new words.
-		expect(added).toEqual([...dueWords.map((w) => w.id).filter((id) => !plan.ids.includes(id)), "new-0"]);
-		expect(vocabQueueData().plan?.extra).toMatchObject({ review: 5, fresh: 1 });
-		// Nothing remains afterwards.
-		expect(addExtraBatch([...dueWords, ...freshWords], TODAY)).toEqual([]);
+		const freshWords = Array.from({ length: 56 }, (_, i) => word(`new-${i}`, 1, 100 + i));
+		const states = Object.fromEntries(dueWords.map((w) => [w.id, { s: 1, due: "2026-11-04", ts: 1 }]));
+		const all = [...dueWords, ...freshWords];
+		const plan = buildDailyPlan(all, states, TODAY);
+		// No deferral anymore: all 55 reviews are in the plan's own review batch.
+		expect(plan.review).toBe(55);
+		expect(plan.fresh).toBe(50);
+		const batch = buildExtraBatch(all, states, plan);
+		// The 6 leftover NEW words — and nothing else — form the extra batch.
+		expect(batch).toEqual({ ids: freshWords.slice(50).map((w) => w.id), review: 0, fresh: 6 });
 	});
 
 	it("grades extra words with full SRS weight into extra.done; re-show-once applies to extras too", () => {

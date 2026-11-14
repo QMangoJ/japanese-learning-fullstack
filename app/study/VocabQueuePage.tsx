@@ -9,10 +9,10 @@ import {
 	addExtraBatch,
 	applyVocabGrade,
 	countExtraCandidates,
-	deferredDueCount,
 	ensureVocabWords,
 	EXTRA_BATCH_SIZE,
 	getVocabQueueVersion,
+	planBatchProgress,
 	shouldReshowToday,
 	subscribeVocabQueue,
 	todayPlan,
@@ -192,6 +192,10 @@ export function VocabQueuePage() {
 	const current = queue && queue.length ? byId.get(queue[0]) : undefined;
 	const doneCount = plan ? plan.done.length : 0;
 	const total = plan ? plan.ids.length : 0;
+	// The two batches are counted apart: 复习 x/N and 新词 y/50.
+	const batch = plan
+		? planBatchProgress(plan)
+		: { reviewDone: 0, reviewTotal: 0, freshDone: 0, freshTotal: 0 };
 	const extraDone = plan?.extra?.done.length ?? 0;
 	const extraTotal = plan?.extra?.ids.length ?? 0;
 
@@ -231,8 +235,7 @@ export function VocabQueuePage() {
 	if (!words.length) return <div className="empty">{lx("词表是空的。", "The word list is empty.")}</div>;
 	if (!isReady || !plan || queue === null) return <div className="empty">{lx("正在准备今日任务…", "Preparing today's session…")}</div>;
 
-	const overdueExtra = deferredDueCount(words, data.states, plan, today);
-	const extraAvail = countExtraCandidates(words, data.states, plan, today);
+	const extraAvail = countExtraCandidates(words, data.states, plan);
 	const studied = Object.keys(data.states).length;
 	const mastered = Object.values(data.states).filter((s) => s.s >= 4).length;
 	const finished = queue.length === 0;
@@ -244,14 +247,43 @@ export function VocabQueuePage() {
 					<b>
 						{lx("今日进度", "Today")} {doneCount}/{total}
 					</b>
-					<span className="vq-comp">
-						{lx("到期复习", "Reviews")} {plan.review} · {lx("新词", "New")} {plan.fresh}
-						{overdueExtra > 0 ? ` · ${lx("另有", "+")} ${overdueExtra} ${lx("个到期词顺延", "due words deferred")}` : ""}
-						{extraTotal > 0 ? ` · ${lx("额外", "Extra")} +${extraDone}` : ""}
-					</span>
+					{extraTotal > 0 ? (
+						<span className="vq-comp">
+							{lx("额外", "Extra")} +{extraDone}/{extraTotal}
+						</span>
+					) : null}
 				</div>
-				<div className="vq-bar" role="progressbar" aria-valuenow={doneCount} aria-valuemax={total}>
-					<div className="vq-bar-fill" style={{ width: total ? `${Math.round((doneCount / total) * 100)}%` : "0%" }} />
+				<div className="vq-batch-progress">
+					<span className="vq-batch-label">
+						{lx("到期复习", "Reviews")} {batch.reviewDone}/{batch.reviewTotal}
+					</span>
+					<div
+						className="vq-bar vq-bar-batch"
+						role="progressbar"
+						aria-valuenow={batch.reviewDone}
+						aria-valuemax={batch.reviewTotal}
+					>
+						<div
+							className="vq-bar-fill"
+							style={{ width: batch.reviewTotal ? `${Math.round((batch.reviewDone / batch.reviewTotal) * 100)}%` : "0%" }}
+						/>
+					</div>
+				</div>
+				<div className="vq-batch-progress">
+					<span className="vq-batch-label">
+						{lx("新词", "New words")} {batch.freshDone}/{batch.freshTotal}
+					</span>
+					<div
+						className="vq-bar vq-bar-batch"
+						role="progressbar"
+						aria-valuenow={batch.freshDone}
+						aria-valuemax={batch.freshTotal}
+					>
+						<div
+							className="vq-bar-fill"
+							style={{ width: batch.freshTotal ? `${Math.round((batch.freshDone / batch.freshTotal) * 100)}%` : "0%" }}
+						/>
+					</div>
 				</div>
 				{extraTotal > 0 ? (
 					<div className="vq-extra-progress">
@@ -309,7 +341,7 @@ export function VocabQueuePage() {
 					) : (
 						<>
 							{extraTotal > 0 ? (
-								<p className="vq-extra-none">{lx("没有更多词了——到期的和新词都已排完。", "No more words — every due and new word is scheduled.")}</p>
+								<p className="vq-extra-none">{lx("没有更多词了——新词都已排完。", "No more words — every new word is scheduled.")}</p>
 							) : null}
 							<button type="button" className="vq-home-btn" onClick={() => navTo("#/")}>
 								{lx("回到首页", "Back to home")}
