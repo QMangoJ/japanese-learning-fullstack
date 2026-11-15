@@ -7,10 +7,14 @@
  *  from KV, plus the transcribed 番番词书 TSV.)
  *
  * Sources, in priority order (Daniel, 2026-11-11):
- *   tier 1  work:        topics frontend → job-interview → ki-expressions
+ *   tier 1  work:        topics frontend → job-interview → ki-expressions → fitness
  *                        (「気」专题 2026-11-11: built at Daniel's request from his
  *                        気-expression summary in the 日语学习 chat; he approved
  *                        flowing its words into the queue the same day)
+ *                        (健身专题 2026-11-15: built at Daniel's request in the
+ *                        日语学习 chat — concise gym set: moves/machines, training
+ *                        terms, trainer talk, body feelings; flows into the queue
+ *                        the same way)
  *   tier 2  IT listening mistake-words (public/data/it-listening/mistake-words.json)
  *   tier 3  classroom:   lesson-review.json word items from the「Danielさん」doc,
  *                        then the「Preply すみれ先生」doc (Daniel approved adding
@@ -659,6 +663,7 @@ buildIndex();
 topicWords("frontend.json", "前端专题", "frontend");
 topicWords("job-interview.json", "面试专题", "interview");
 topicWords("ki-expressions.json", "「気」专题", "kiExpressions");
+topicWords("fitness.json", "健身专题", "fitness");
 itlMistakeWords();
 classroomWords();
 favourites();

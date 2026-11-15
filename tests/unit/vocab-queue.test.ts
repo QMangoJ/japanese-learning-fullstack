@@ -828,7 +828,7 @@ describe("vocab queue sentence-type breakdowns", () => {
 		// Coverage: every sentence-type card in the tier-1 topic files has a
 		// breakdown on its queue entry (the build asserts this too; the shipped
 		// artifact is re-checked here so a stale JSON cannot slip through).
-		for (const file of ["frontend.json", "job-interview.json", "ki-expressions.json"]) {
+		for (const file of ["frontend.json", "job-interview.json", "ki-expressions.json", "fitness.json"]) {
 			const topic = JSON.parse(readFileSync(join(root, "public/data/topics", file), "utf8")) as {
 				cards: { jp: string }[];
 			};

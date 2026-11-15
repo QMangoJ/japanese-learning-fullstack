@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-13T07:21:54.199Z",
+ "generatedAt": "2026-11-15T03:14:23.501Z",
  "quota": 50,
  "counts": {
   "frontend": {
@@ -18,6 +18,11 @@
    "added": 28,
    "merged": 0
   },
+  "fitness": {
+   "gross": 21,
+   "added": 21,
+   "merged": 0
+  },
   "itlMistakes": {
    "gross": 39,
    "added": 37,
@@ -25,8 +30,8 @@
   },
   "classroom": {
    "gross": 697,
-   "added": 682,
-   "merged": 15
+   "added": 681,
+   "merged": 16
   },
   "classroomPreply": {
    "gross": 310,
@@ -58,18 +63,18 @@
    "added": 624,
    "merged": 33
   },
-  "total": 3279,
-  "mergedTotal": 190,
+  "total": 3299,
+  "mergedTotal": 191,
   "twinMerged": 31,
   "pending": 134
  },
  "breakdowns": {
-  "sentenceTypeTotal": 364,
-  "covered": 364
+  "sentenceTypeTotal": 367,
+  "covered": 367
  },
  "exampleBreakdowns": {
-  "sentenceExTotal": 1162,
-  "covered": 633
+  "sentenceExTotal": 1182,
+  "covered": 654
  },
  "aliases": {
   "w:3bc83be523a0": "w:8871acaf1b2a",
@@ -8985,6 +8990,814 @@
       "role": "「気の毒」：真可怜、真不凑巧（同情说法）",
       "ruby": "お<ruby>気<rt>き</rt></ruby>の<ruby>毒<rt>どく</rt></ruby>ですね。",
       "seg": "お気の毒ですね。"
+     }
+    ]
+   }
+  },
+  {
+   "id": "w:65dc40e71f64",
+   "w": "ベンチプレス",
+   "r": "べんちぷれす",
+   "zh": "卧推",
+   "en": "bench press",
+   "ex": "ベンチプレスを三セットしました。",
+   "exZh": "卧推做了三组。",
+   "tier": 1,
+   "src": "健身专题",
+   "ord": 194,
+   "exampleBreakdown": {
+    "lines": [
+     {
+      "seg": "ベンチプレスを",
+      "reading": "ベンチプレスを",
+      "form": "名詞（外来語）ベンチプレス＋格助詞 を",
+      "role": "宾语：卧推这个动作"
+     },
+     {
+      "seg": "三セット",
+      "reading": "さんセット",
+      "form": "数詞 三＋助数詞 セット",
+      "role": "数量：三组",
+      "ruby": "<ruby>三<rt>さん</rt></ruby>セット"
+     },
+     {
+      "seg": "しました。",
+      "reading": "しました",
+      "form": "サ変動詞 する 的丁寧過去形＋句号",
+      "role": "收尾：做了"
+     }
+    ]
+   }
+  },
+  {
+   "id": "w:8b63abcf6634",
+   "w": "スクワット",
+   "r": "すくわっと",
+   "zh": "深蹲",
+   "en": "squat",
+   "ex": "軽いスクワットから始めます。",
+   "exZh": "先从轻量深蹲开始。",
+   "tier": 1,
+   "src": "健身专题",
+   "ord": 195,
+   "exampleBreakdown": {
+    "lines": [
+     {
+      "seg": "軽い",
+      "reading": "かるい",
+      "form": "形容詞 軽い",
+      "role": "修饰：轻量的",
+      "ruby": "<ruby>軽<rt>かる</rt></ruby>い"
+     },
+     {
+      "seg": "スクワットから",
+      "reading": "スクワットから",
+      "form": "名詞 スクワット＋格助詞 から",
+      "role": "起点：从深蹲开始"
+     },
+     {
+      "seg": "始めます。",
+      "reading": "はじめます",
+      "form": "一段動詞 始める 的丁寧形＋句号",
+      "role": "收尾：开始",
+      "ruby": "<ruby>始<rt>はじ</rt></ruby>めます。"
+     }
+    ]
+   }
+  },
+  {
+   "id": "w:2d0fc64dab4c",
+   "w": "ダンベル",
+   "r": "だんべる",
+   "zh": "哑铃",
+   "en": "dumbbell",
+   "ex": "ダンベルは五キロです。",
+   "exZh": "哑铃是五公斤的。",
+   "tier": 1,
+   "src": "健身专题",
+   "ord": 196,
+   "exampleBreakdown": {
+    "lines": [
+     {
+      "seg": "ダンベルは",
+      "reading": "ダンベルは",
+      "form": "名詞 ダンベル＋係助詞 は",
+      "role": "话题：哑铃"
+     },
+     {
+      "seg": "五キロ",
+      "reading": "ごキロ",
+      "form": "数詞 五＋単位 キロ",
+      "role": "重量：五公斤",
+      "ruby": "<ruby>五<rt>ご</rt></ruby>キロ"
+     },
+     {
+      "seg": "です。",
+      "reading": "です",
+      "form": "丁寧断定＋句号",
+      "role": "收尾：是"
+     }
+    ]
+   }
+  },
+  {
+   "id": "w:bce45c4f20c7",
+   "w": "バーベル",
+   "r": "ばーべる",
+   "zh": "杠铃",
+   "en": "barbell",
+   "ex": "バーベルを使います。",
+   "exZh": "用杠铃练。",
+   "tier": 1,
+   "src": "健身专题",
+   "ord": 197,
+   "exampleBreakdown": {
+    "lines": [
+     {
+      "seg": "バーベルを",
+      "reading": "バーベルを",
+      "form": "名詞 バーベル＋格助詞 を",
+      "role": "宾语：杠铃"
+     },
+     {
+      "seg": "使います。",
+      "reading": "つかいます",
+      "form": "五段動詞 使う 的丁寧形＋句号",
+      "role": "收尾：使用",
+      "ruby": "<ruby>使<rt>つか</rt></ruby>います。"
+     }
+    ]
+   }
+  },
+  {
+   "id": "w:21fca040b9d2",
+   "w": "ランニングマシン",
+   "r": "らんにんぐましん",
+   "zh": "跑步机",
+   "en": "treadmill",
+   "ex": "最後にランニングマシンで走ります。",
+   "exZh": "最后在跑步机上跑一会儿。",
+   "tier": 1,
+   "src": "健身专题",
+   "ord": 198,
+   "exampleBreakdown": {
+    "lines": [
+     {
+      "seg": "最後に",
+      "reading": "さいごに",
+      "form": "名詞 最後＋格助詞 に",
+      "role": "顺序：最后",
+      "ruby": "<ruby>最後<rt>さいご</rt></ruby>に"
+     },
+     {
+      "seg": "ランニングマシンで",
+      "reading": "ランニングマシンで",
+      "form": "名詞 ランニングマシン＋格助詞 で",
+      "role": "场所：在跑步机上"
+     },
+     {
+      "seg": "走ります。",
+      "reading": "はしります",
+      "form": "五段動詞 走る 的丁寧形＋句号",
+      "role": "收尾：跑",
+      "ruby": "<ruby>走<rt>はし</rt></ruby>ります。"
+     }
+    ]
+   }
+  },
+  {
+   "id": "w:ed72d14b8143",
+   "w": "筋トレ",
+   "r": "きんとれ",
+   "zh": "肌肉训练，健身",
+   "en": "strength training",
+   "ex": "週に三回、筋トレをします。",
+   "exZh": "一周健身三次。",
+   "tier": 1,
+   "src": "健身专题",
+   "ord": 199,
+   "exampleBreakdown": {
+    "lines": [
+     {
+      "seg": "週に",
+      "reading": "しゅうに",
+      "form": "名詞 週＋格助詞 に",
+      "role": "频率：一周",
+      "ruby": "<ruby>週<rt>しゅう</rt></ruby>に"
+     },
+     {
+      "seg": "三回、",
+      "reading": "さんかい",
+      "form": "数詞 三＋助数詞 回",
+      "role": "次数：三次",
+      "ruby": "<ruby>三回<rt>さんかい</rt></ruby>、"
+     },
+     {
+      "seg": "筋トレを",
+      "reading": "きんトレを",
+      "form": "名詞 筋トレ＋格助詞 を",
+      "role": "宾语：健身",
+      "ruby": "<ruby>筋<rt>きん</rt></ruby>トレを"
+     },
+     {
+      "seg": "します。",
+      "reading": "します",
+      "form": "サ変動詞 する 的丁寧形＋句号",
+      "role": "收尾：做"
+     }
+    ]
+   }
+  },
+  {
+   "id": "w:dc8d3fe48118",
+   "w": "セット",
+   "r": "せっと",
+   "zh": "组（训练组数）",
+   "en": "set",
+   "ex": "十回三セットやります。",
+   "exZh": "十次一组，做三组。",
+   "tier": 1,
+   "src": "健身专题",
+   "ord": 200,
+   "exampleBreakdown": {
+    "lines": [
+     {
+      "seg": "十回",
+      "reading": "じゅっかい",
+      "form": "数詞 十＋助数詞 回",
+      "role": "次数：十次",
+      "ruby": "<ruby>十回<rt>じゅっかい</rt></ruby>"
+     },
+     {
+      "seg": "三セット",
+      "reading": "さんセット",
+      "form": "数詞 三＋助数詞 セット",
+      "role": "组数：三组",
+      "ruby": "<ruby>三<rt>さん</rt></ruby>セット"
+     },
+     {
+      "seg": "やります。",
+      "reading": "やります",
+      "form": "五段動詞 やる 的丁寧形＋句号",
+      "role": "收尾：做"
+     }
+    ]
+   }
+  },
+  {
+   "id": "w:d363feebc592",
+   "w": "回数",
+   "r": "かいすう",
+   "zh": "次数",
+   "en": "reps; number of times",
+   "ex": "回数を数えてください。",
+   "exZh": "请帮我数次数。",
+   "tier": 1,
+   "src": "健身专题",
+   "ord": 201,
+   "exampleBreakdown": {
+    "lines": [
+     {
+      "seg": "回数を",
+      "reading": "かいすうを",
+      "form": "名詞 回数＋格助詞 を",
+      "role": "宾语：次数",
+      "ruby": "<ruby>回数<rt>かいすう</rt></ruby>を"
+     },
+     {
+      "seg": "数えて",
+      "reading": "かぞえて",
+      "form": "五段動詞 数える 的て形",
+      "role": "动作：数",
+      "ruby": "<ruby>数<rt>かぞ</rt></ruby>えて"
+     },
+     {
+      "seg": "ください。",
+      "reading": "ください",
+      "form": "補助動詞 〜てください＋句号",
+      "role": "请求收尾：请"
+     }
+    ]
+   }
+  },
+  {
+   "id": "w:242f1ca1bf01",
+   "w": "フォーム",
+   "r": "ふぉーむ",
+   "zh": "动作姿势",
+   "en": "form",
+   "ex": "フォームが大事です。",
+   "exZh": "动作姿势最重要。",
+   "tier": 1,
+   "src": "健身专题",
+   "ord": 202,
+   "exampleBreakdown": {
+    "lines": [
+     {
+      "seg": "フォームが",
+      "reading": "フォームが",
+      "form": "名詞 フォーム＋格助詞 が",
+      "role": "主语：姿势"
+     },
+     {
+      "seg": "大事です。",
+      "reading": "だいじです",
+      "form": "な形容詞 大事＋丁寧断定＋句号",
+      "role": "收尾：重要",
+      "ruby": "<ruby>大事<rt>だいじ</rt></ruby>です。"
+     }
+    ]
+   }
+  },
+  {
+   "id": "w:bd9e7992b1f9",
+   "w": "追い込む",
+   "r": "おいこむ",
+   "zh": "练到力竭，把（某部位）练到位",
+   "en": "to push (a muscle) hard",
+   "ex": "今日は脚を追い込みます。",
+   "exZh": "今天把腿练到位。",
+   "tier": 1,
+   "src": "健身专题",
+   "ord": 203,
+   "exampleBreakdown": {
+    "lines": [
+     {
+      "seg": "今日は",
+      "reading": "きょうは",
+      "form": "名詞 今日＋係助詞 は",
+      "role": "话题：今天",
+      "ruby": "<ruby>今日<rt>きょう</rt></ruby>は"
+     },
+     {
+      "seg": "脚を",
+      "reading": "あしを",
+      "form": "名詞 脚＋格助詞 を",
+      "role": "宾语：腿",
+      "ruby": "<ruby>脚<rt>あし</rt></ruby>を"
+     },
+     {
+      "seg": "追い込みます。",
+      "reading": "おいこみます",
+      "form": "五段動詞 追い込む 的丁寧形＋句号",
+      "role": "收尾：练到位",
+      "ruby": "<ruby>追<rt>お</rt></ruby>い<ruby>込<rt>こ</rt></ruby>みます。"
+     }
+    ]
+   }
+  },
+  {
+   "id": "w:48408a3d1e7b",
+   "w": "軽くする",
+   "r": "かるくする",
+   "zh": "减轻（重量）",
+   "en": "to lighten (the weight)",
+   "ex": "腰のために軽くします。",
+   "exZh": "为了护腰，重量减轻一点。",
+   "tier": 1,
+   "src": "健身专题",
+   "ord": 204,
+   "exampleBreakdown": {
+    "lines": [
+     {
+      "seg": "腰のために",
+      "reading": "こしのために",
+      "form": "名詞 腰＋〜のために",
+      "role": "目的：为了护腰",
+      "ruby": "<ruby>腰<rt>こし</rt></ruby>のために"
+     },
+     {
+      "seg": "軽くします。",
+      "reading": "かるくします",
+      "form": "形容詞 軽い 的連用形＋サ変動詞 する 的丁寧形＋句号",
+      "role": "收尾：减轻",
+      "ruby": "<ruby>軽<rt>かる</rt></ruby>くします。"
+     }
+    ]
+   }
+  },
+  {
+   "id": "w:4a55faea330e",
+   "w": "重くする",
+   "r": "おもくする",
+   "zh": "加重",
+   "en": "to make (the weight) heavier",
+   "ex": "今日は少し重くします。",
+   "exZh": "今天稍微加重一点。",
+   "tier": 1,
+   "src": "健身专题",
+   "ord": 205,
+   "exampleBreakdown": {
+    "lines": [
+     {
+      "seg": "今日は",
+      "reading": "きょうは",
+      "form": "名詞 今日＋係助詞 は",
+      "role": "话题：今天",
+      "ruby": "<ruby>今日<rt>きょう</rt></ruby>は"
+     },
+     {
+      "seg": "少し",
+      "reading": "すこし",
+      "form": "副詞 少し",
+      "role": "程度：稍微",
+      "ruby": "<ruby>少<rt>すこ</rt></ruby>し"
+     },
+     {
+      "seg": "重くします。",
+      "reading": "おもくします",
+      "form": "形容詞 重い 的連用形＋サ変動詞 する 的丁寧形＋句号",
+      "role": "收尾：加重",
+      "ruby": "<ruby>重<rt>おも</rt></ruby>くします。"
+     }
+    ]
+   }
+  },
+  {
+   "id": "w:215505b899e2",
+   "w": "フォームを見てください",
+   "r": "ふぉーむをみてください",
+   "zh": "请帮我看一下动作姿势",
+   "en": "Please check my form.",
+   "ex": "すみません、フォームを見てください。",
+   "exZh": "不好意思，请帮我看一下姿势。",
+   "tier": 1,
+   "src": "健身专题",
+   "ord": 206,
+   "breakdown": {
+    "lines": [
+     {
+      "seg": "フォームを",
+      "reading": "ふぉーむを",
+      "form": "名詞「フォーム」（动作姿势）＋を（宾格）",
+      "role": "请求的对象：自己的动作姿势"
+     },
+     {
+      "seg": "見て",
+      "reading": "みて",
+      "ruby": "<ruby>見<rt>み</rt></ruby>て",
+      "form": "五段動詞「見る」的て形",
+      "role": "动作本体：看、检查"
+     },
+     {
+      "seg": "ください",
+      "reading": "ください",
+      "form": "補助動詞（〜てください，请求形）",
+      "role": "请求收尾：请……"
+     }
+    ]
+   },
+   "exampleBreakdown": {
+    "lines": [
+     {
+      "seg": "すみません、",
+      "reading": "すみません",
+      "form": "丁寧表現 すみません",
+      "role": "开场：不好意思"
+     },
+     {
+      "seg": "フォームを",
+      "reading": "フォームを",
+      "form": "名詞 フォーム＋格助詞 を",
+      "role": "宾语：姿势"
+     },
+     {
+      "seg": "見て",
+      "reading": "みて",
+      "form": "五段動詞 見る 的て形",
+      "role": "动作：看",
+      "ruby": "<ruby>見<rt>み</rt></ruby>て"
+     },
+     {
+      "seg": "ください。",
+      "reading": "ください",
+      "form": "補助動詞 〜てください＋句号",
+      "role": "请求收尾：请"
+     }
+    ]
+   }
+  },
+  {
+   "id": "w:2bc2fbe7fdce",
+   "w": "補助をお願いします",
+   "r": "ほじょをおねがいします",
+   "zh": "请帮我辅助（保护）",
+   "en": "Please spot me.",
+   "ex": "重いので、補助をお願いします。",
+   "exZh": "有点重，请帮我保护一下。",
+   "tier": 1,
+   "src": "健身专题",
+   "ord": 207,
+   "breakdown": {
+    "lines": [
+     {
+      "seg": "補助を",
+      "reading": "ほじょを",
+      "ruby": "<ruby>補助<rt>ほじょ</rt></ruby>を",
+      "form": "名詞「補助」（辅助・保护）＋を（宾格）",
+      "role": "请求的对象：请对方做的事"
+     },
+     {
+      "seg": "お願いします",
+      "reading": "おねがいします",
+      "ruby": "お<ruby>願<rt>ねが</rt></ruby>いします",
+      "form": "「願う」的礼貌请求固定形（お＋連用形＋します）",
+      "role": "礼貌收尾：拜托了"
+     }
+    ]
+   },
+   "exampleBreakdown": {
+    "lines": [
+     {
+      "seg": "重いので、",
+      "reading": "おもいので",
+      "form": "形容詞 重い＋接助詞 ので",
+      "role": "原因：因为重",
+      "ruby": "<ruby>重<rt>おも</rt></ruby>いので、"
+     },
+     {
+      "seg": "補助を",
+      "reading": "ほじょを",
+      "form": "名詞 補助＋格助詞 を",
+      "role": "宾语：辅助・保护",
+      "ruby": "<ruby>補助<rt>ほじょ</rt></ruby>を"
+     },
+     {
+      "seg": "お願いします。",
+      "reading": "おねがいします",
+      "form": "「願う」的礼貌请求固定形＋句号",
+      "role": "收尾：拜托了",
+      "ruby": "お<ruby>願<rt>ねが</rt></ruby>いします。"
+     }
+    ]
+   }
+  },
+  {
+   "id": "w:b74cc4471006",
+   "w": "もう限界です",
+   "r": "もうげんかいです",
+   "zh": "我到极限了",
+   "en": "I'm at my limit.",
+   "ex": "もう限界です。少し休みます。",
+   "exZh": "到极限了，我休息一下。",
+   "tier": 1,
+   "src": "健身专题",
+   "ord": 208,
+   "breakdown": {
+    "lines": [
+     {
+      "seg": "もう",
+      "reading": "もう",
+      "form": "副詞「もう」（已经）",
+      "role": "程度前提：已经到头了"
+     },
+     {
+      "seg": "限界",
+      "reading": "げんかい",
+      "ruby": "<ruby>限界<rt>げんかい</rt></ruby>",
+      "form": "名詞「限界」（极限）",
+      "role": "状态本体：体力・力量的上限"
+     },
+     {
+      "seg": "です",
+      "reading": "です",
+      "form": "丁寧断定",
+      "role": "礼貌收尾：向教练报告自己的状态"
+     }
+    ]
+   },
+   "exampleBreakdown": {
+    "lines": [
+     {
+      "seg": "もう",
+      "reading": "もう",
+      "form": "副詞 もう",
+      "role": "程度：已经"
+     },
+     {
+      "seg": "限界です。",
+      "reading": "げんかいです",
+      "form": "名詞 限界＋丁寧断定＋句号",
+      "role": "状态：到极限了",
+      "ruby": "<ruby>限界<rt>げんかい</rt></ruby>です。"
+     },
+     {
+      "seg": "少し",
+      "reading": "すこし",
+      "form": "副詞 少し",
+      "role": "程度：稍微",
+      "ruby": "<ruby>少<rt>すこ</rt></ruby>し"
+     },
+     {
+      "seg": "休みます。",
+      "reading": "やすみます",
+      "form": "五段動詞 休む 的丁寧形＋句号",
+      "role": "收尾：休息",
+      "ruby": "<ruby>休<rt>やす</rt></ruby>みます。"
+     }
+    ]
+   }
+  },
+  {
+   "id": "w:514655ffea13",
+   "w": "効く",
+   "r": "きく",
+   "zh": "练到了（目标肌肉），有效",
+   "en": "to hit (the target muscle)",
+   "ex": "背中に効いています。",
+   "exZh": "背练到了。",
+   "tier": 1,
+   "src": "健身专题",
+   "ord": 209,
+   "exampleBreakdown": {
+    "lines": [
+     {
+      "seg": "背中に",
+      "reading": "せなかに",
+      "form": "名詞 背中＋格助詞 に",
+      "role": "对象：背",
+      "ruby": "<ruby>背中<rt>せなか</rt></ruby>に"
+     },
+     {
+      "seg": "効いています。",
+      "reading": "きいています",
+      "form": "五段動詞 効く 的て形＋います（持续）＋句号",
+      "role": "收尾：正在起作用，练到了",
+      "ruby": "<ruby>効<rt>き</rt></ruby>いています。"
+     }
+    ]
+   }
+  },
+  {
+   "id": "w:04500fe648e7",
+   "w": "あと一回",
+   "r": "あといっかい",
+   "zh": "再来一次",
+   "en": "one more rep",
+   "ex": "あと一回で終わりです。",
+   "exZh": "再来一次就结束了。",
+   "tier": 1,
+   "src": "健身专题",
+   "ord": 210,
+   "exampleBreakdown": {
+    "lines": [
+     {
+      "seg": "あと一回で",
+      "reading": "あといっかいで",
+      "form": "副詞 あと＋数詞 一回＋格助詞 で",
+      "role": "剩余量：再一次",
+      "ruby": "あと<ruby>一回<rt>いっかい</rt></ruby>で"
+     },
+     {
+      "seg": "終わりです。",
+      "reading": "おわりです",
+      "form": "名詞 終わり＋丁寧断定＋句号",
+      "role": "收尾：就结束",
+      "ruby": "<ruby>終<rt>お</rt></ruby>わりです。"
+     }
+    ]
+   }
+  },
+  {
+   "id": "w:5c0f66ff84ff",
+   "w": "筋肉痛",
+   "r": "きんにくつう",
+   "zh": "肌肉酸痛",
+   "en": "muscle soreness",
+   "ex": "翌日、筋肉痛になりました。",
+   "exZh": "第二天肌肉酸痛了。",
+   "tier": 1,
+   "src": "健身专题",
+   "ord": 211,
+   "exampleBreakdown": {
+    "lines": [
+     {
+      "seg": "翌日、",
+      "reading": "よくじつ",
+      "form": "名詞 翌日",
+      "role": "时间：第二天",
+      "ruby": "<ruby>翌日<rt>よくじつ</rt></ruby>、"
+     },
+     {
+      "seg": "筋肉痛に",
+      "reading": "きんにくつうに",
+      "form": "名詞 筋肉痛＋格助詞 に",
+      "role": "变化的结果：肌肉酸痛",
+      "ruby": "<ruby>筋肉痛<rt>きんにくつう</rt></ruby>に"
+     },
+     {
+      "seg": "なりました。",
+      "reading": "なりました",
+      "form": "五段動詞 なる 的丁寧過去形＋句号",
+      "role": "收尾：变成了"
+     }
+    ]
+   }
+  },
+  {
+   "id": "w:2686d733b120",
+   "w": "筋肉がつる",
+   "r": "きんにくがつる",
+   "zh": "肌肉抽筋",
+   "en": "to get a muscle cramp",
+   "ex": "脚の筋肉がつりました。",
+   "exZh": "腿抽筋了。",
+   "tier": 1,
+   "src": "健身专题",
+   "ord": 212,
+   "exampleBreakdown": {
+    "lines": [
+     {
+      "seg": "脚の",
+      "reading": "あしの",
+      "form": "名詞 脚＋格助詞 の",
+      "role": "限定：腿的",
+      "ruby": "<ruby>脚<rt>あし</rt></ruby>の"
+     },
+     {
+      "seg": "筋肉が",
+      "reading": "きんにくが",
+      "form": "名詞 筋肉＋格助詞 が",
+      "role": "主语：肌肉",
+      "ruby": "<ruby>筋肉<rt>きんにく</rt></ruby>が"
+     },
+     {
+      "seg": "つりました。",
+      "reading": "つりました",
+      "form": "五段動詞 つる 的丁寧過去形＋句号",
+      "role": "收尾：抽筋了"
+     }
+    ]
+   }
+  },
+  {
+   "id": "w:6d368b6b4930",
+   "w": "息が上がる",
+   "r": "いきがあがる",
+   "zh": "喘气，气喘吁吁",
+   "en": "to get out of breath",
+   "ex": "階段で息が上がります。",
+   "exZh": "爬楼梯就会喘。",
+   "tier": 1,
+   "src": "健身专题",
+   "ord": 213,
+   "exampleBreakdown": {
+    "lines": [
+     {
+      "seg": "階段で",
+      "reading": "かいだんで",
+      "form": "名詞 階段＋格助詞 で",
+      "role": "场所：在楼梯上",
+      "ruby": "<ruby>階段<rt>かいだん</rt></ruby>で"
+     },
+     {
+      "seg": "息が",
+      "reading": "いきが",
+      "form": "名詞 息＋格助詞 が",
+      "role": "主语：呼吸",
+      "ruby": "<ruby>息<rt>いき</rt></ruby>が"
+     },
+     {
+      "seg": "上がります。",
+      "reading": "あがります",
+      "form": "五段動詞 上がる 的丁寧形＋句号",
+      "role": "收尾：喘起来",
+      "ruby": "<ruby>上<rt>あ</rt></ruby>がります。"
+     }
+    ]
+   }
+  },
+  {
+   "id": "w:8d370277d3cb",
+   "w": "汗をかく",
+   "r": "あせをかく",
+   "zh": "出汗",
+   "en": "to sweat",
+   "ex": "たくさん汗をかきました。",
+   "exZh": "出了很多汗。",
+   "tier": 1,
+   "src": "健身专题・课堂复习・N2词汇",
+   "ord": 214,
+   "exampleBreakdown": {
+    "lines": [
+     {
+      "seg": "たくさん",
+      "reading": "たくさん",
+      "form": "副詞 たくさん",
+      "role": "程度：很多"
+     },
+     {
+      "seg": "汗を",
+      "reading": "あせを",
+      "form": "名詞 汗＋格助詞 を",
+      "role": "宾语：汗",
+      "ruby": "<ruby>汗<rt>あせ</rt></ruby>を"
+     },
+     {
+      "seg": "かきました。",
+      "reading": "かきました",
+      "form": "五段動詞 かく 的丁寧過去形＋句号",
+      "role": "收尾：出了（汗）"
      }
     ]
    }
@@ -24271,18 +25084,6 @@
    "tier": 3,
    "src": "课堂复习",
    "ord": 509
-  },
-  {
-   "id": "w:8d370277d3cb",
-   "w": "汗(あせ)をかく",
-   "r": "あせをかく",
-   "zh": "出汗",
-   "en": "to sweat",
-   "ex": "夏は少し歩くだけで汗をかきます。",
-   "exZh": "夏天稍微走一走就会出汗。",
-   "tier": 3,
-   "src": "课堂复习・N2词汇",
-   "ord": 510
   },
   {
    "id": "w:a41053362b0b",

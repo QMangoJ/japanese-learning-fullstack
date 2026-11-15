@@ -629,6 +629,7 @@ function Sidebar({ routeKey, onLevel }: { routeKey: string; onLevel: (lv: LevelK
 				{row("#/kougo", "💬", lx("口语", "Casual"), null, h === "#/kougo")}
 				{row("#/topics/kanji-journey", "📜", lx("漢字的旅程", "Journey of Kanji"), null, h === "#/topics/kanji-journey")}
 				{row("#/topics/ki-expressions", "💭", lx("「気」相关的表达", "Expressions with 気"), null, h === "#/topics/ki-expressions")}
+				{row("#/topics/fitness", "🏋️", lx("健身", "Fitness"), null, h === "#/topics/fitness")}
 			</div>
 			<div className="side-foot">
 				{row("#/usage", "⏱️", lx("使用时间", "Study time"), null, h === "#/usage")}
