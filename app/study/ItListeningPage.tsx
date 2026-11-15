@@ -411,6 +411,9 @@ function ItListeningDetail({ id }: { id: string }) {
 	const ytTimeAtRef = useRef(0);
 	const ytDurationRef = useRef<number | undefined>(undefined);
 	const ytPlayingRef = useRef<boolean | null>(null);
+	// 最近一次原始播放状态码（1 播放 / 2 暂停 / 3 缓冲 / 0 结束 / 5 已定位）：seek 估算只在
+	// 状态恰为 1 时才加流逝时间，缓冲/暂停期间采样值就是准的，避免高估。
+	const ytStateRef = useRef<number | null>(null);
 
 	useEffect(() => {
 		setFloatDismissed(false);
@@ -419,6 +422,7 @@ function ItListeningDetail({ id }: { id: string }) {
 		ytTimeAtRef.current = 0;
 		ytDurationRef.current = undefined;
 		ytPlayingRef.current = null;
+		ytStateRef.current = null;
 	}, [id]);
 
 	useEffect(() => {
@@ -456,6 +460,7 @@ function ItListeningDetail({ id }: { id: string }) {
 				let st: number | undefined;
 				if (typeof d.info === "number") st = d.info;
 				else if (d.info && typeof d.info === "object" && typeof d.info.playerState === "number") st = d.info.playerState;
+				if (typeof st === "number") ytStateRef.current = st;
 				if (st === 1) {
 					setYtPlaying(true);
 					ytPlayingRef.current = true;
@@ -487,7 +492,8 @@ function ItListeningDetail({ id }: { id: string }) {
 		if (floating) subscribeYtState();
 	}, [floating]);
 	const toggleYtPlay = () => {
-		if (ytPlaying) {
+		// 以 ref 镜像为准（与播放器回传状态同步），键盘 handler 闭包里也不会读到过期状态。
+		if (ytPlayingRef.current) {
 			ytCommand("pauseVideo");
 			setYtPlaying(false);
 			ytPlayingRef.current = false;
@@ -500,8 +506,11 @@ function ItListeningDetail({ id }: { id: string }) {
 
 	// 键盘 ←/→ 快退/快进 2 秒：seekTo 本身不改变播放/暂停状态，暂停时同样生效。
 	// 悬浮小窗与内嵌是同一个 iframe 实例，本监听天然同时覆盖两种形态。
+	// 基点 = 最近一次 infoDelivery 采样；仅在播放器确实处于播放状态（state 1）时才补上
+	// 采样后流逝的时间——裸 getCurrentTime 命令没有回传（实测），这已是该协议下最实时的当前值，
+	// 暂停/缓冲时采样值本身即精确值。
 	const seekYtBy = (delta: number) => {
-		const base = ytPlayingRef.current && ytTimeAtRef.current ? ytTimeRef.current + (Date.now() - ytTimeAtRef.current) / 1000 : ytTimeRef.current;
+		const base = ytStateRef.current === 1 && ytTimeAtRef.current ? ytTimeRef.current + (Date.now() - ytTimeAtRef.current) / 1000 : ytTimeRef.current;
 		const target = itlSeekTarget(base, delta, ytDurationRef.current ?? article?.durationSec ?? undefined);
 		ytCommand("seekTo", [target, true]);
 		ytTimeRef.current = target;
@@ -511,20 +520,59 @@ function ItListeningDetail({ id }: { id: string }) {
 	useEffect(() => {
 		if (!article?.videoId) return;
 		const onKey = (e: KeyboardEvent) => {
-			if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
+			const isArrow = e.key === "ArrowLeft" || e.key === "ArrowRight";
+			const isSpace = e.key === " " || e.code === "Space";
+			if (!isArrow && !isSpace) return;
 			if (e.metaKey || e.ctrlKey || e.altKey) return;
 			const t = e.target as HTMLElement | null;
 			if (t) {
 				const tag = t.tagName;
 				// 输入区/可编辑区/滑杆上不拦截（与听解页既有约定一致）。
 				if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT" || t.isContentEditable || t.getAttribute("role") === "slider") return;
+				// 空格在按钮/链接等可交互元素上执行原生激活（点按钮、开链接），不抢来切播放。
+				if (isSpace && (tag === "BUTTON" || tag === "A" || t.getAttribute("role") === "button" || t.getAttribute("role") === "link" || t.getAttribute("role") === "checkbox" || t.getAttribute("role") === "switch" || t.getAttribute("role") === "tab")) return;
 			}
 			e.preventDefault();
-			seekYtBy(e.key === "ArrowLeft" ? -2 : 2);
+			if (isArrow) {
+				seekYtBy(e.key === "ArrowLeft" ? -2 : 2);
+			} else if (!e.repeat) {
+				// 空格切换播放/暂停；长按连发只切一次，避免来回闪烁。
+				toggleYtPlay();
+			}
 		};
 		document.addEventListener("keydown", onKey);
 		return () => document.removeEventListener("keydown", onKey);
 	}, [article?.videoId, article?.durationSec]);
+
+	// 焦点收回：用户点视频后，键盘焦点会进跨域 iframe，页面 keydown 根本收不到键，
+	// YouTube 原生快捷键随即接管（→ 一次跳 10 秒，实测）。一旦检测到焦点进了本播放器
+	// iframe，略等其内部点击（播放/暂停）落地后，把焦点还给页面上的播放器槽位，
+	// 之后的 ←/→/空格都走页面 handler。全屏时不收回，避免干扰全屏内的原生操作。
+	useEffect(() => {
+		if (!article?.videoId) return;
+		let timer: number | undefined;
+		const reclaim = () => {
+			const frame = iframeRef.current;
+			if (!frame || document.activeElement !== frame) return;
+			if (document.fullscreenElement === frame) return;
+			frame.blur();
+			playerSlotRef.current?.focus({ preventScroll: true });
+		};
+		const schedule = () => {
+			window.clearTimeout(timer);
+			timer = window.setTimeout(reclaim, 120);
+		};
+		const onFocusIn = (e: FocusEvent) => {
+			if (e.target === iframeRef.current) schedule();
+		};
+		window.addEventListener("blur", schedule);
+		document.addEventListener("focusin", onFocusIn);
+		return () => {
+			window.removeEventListener("blur", schedule);
+			document.removeEventListener("focusin", onFocusIn);
+			window.clearTimeout(timer);
+		};
+	}, [article?.videoId]);
 
 	if (error) {
 		return (
@@ -562,7 +610,7 @@ function ItListeningDetail({ id }: { id: string }) {
 
 			{article.videoId ? (
 				<section className="itl-player">
-					<div className="itl-player-slot" ref={playerSlotRef}>
+					<div className="itl-player-slot" ref={playerSlotRef} tabIndex={-1}>
 					<div className={`itl-embed${floating ? " itl-embed--float" : ""}`}>
 						<iframe
 							ref={iframeRef}
@@ -598,7 +646,7 @@ function ItListeningDetail({ id }: { id: string }) {
 					<a className="itl-yt-open" href={article.youtube} target="_blank" rel="noreferrer">
 						▶ {lx("在 YouTube 打开原视频", "Open the original video on YouTube")} ↗
 					</a>
-					<p className="itl-key-hint">{lx("键盘 ← 快退 2 秒 · → 快进 2 秒", "Keyboard: ← back 2s · → forward 2s")}</p>
+					<p className="itl-key-hint">{lx("键盘 ← 快退 2 秒 · → 快进 2 秒 · 空格 播放/暂停", "Keyboard: ← back 2s · → forward 2s · Space play/pause")}</p>
 				</section>
 			) : null}
 
