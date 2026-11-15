@@ -1,0 +1,271 @@
+import type { ReadingDay } from "../reading-n3/types";
+
+// 第2週 3日目 どんな気持ち？ — printed pages 34–35
+export const w2d3: ReadingDay = {
+	week: 2,
+	day: 3,
+	label: "どんな気持ち？",
+	labelEn: "What feelings?",
+	printedPages: [34, 35],
+	answerSource: "book",
+
+	point: {
+		title: "{表情|ひょうじょう}や{感情|かんじょう}を{表|あらわ}す{言葉|ことば}を{見|み}つけ{出|だ}そう！",
+		titleCn: "找出描述表情或感情的词语！",
+		titleEn: "Find the words that describe expressions and feelings!",
+		figure: {
+			alt: "「だれの気持ち？」という円の中で「常識」「自分」にバツが付いている絵と、「注意这些词！」と言う眼鏡の猫、「あなたって、一見、かしこそうに見えるんだけどね……」と言う猫のイラスト",
+			cn: "「这是谁的心情？」的圆圈里「常识」「自己」被打了叉的图，和一只说「注意这些词！」的戴眼镜的猫、一只说「你这个人，乍一看显得挺聪明的呢……」的猫的插图",
+			en: "A circle asking “Whose feelings?” with “common sense” and “yourself” crossed out, a bespectacled cat saying “Watch these words!”, and a cat saying “You do look clever at first glance, though…”",
+		},
+		tips: [
+			{
+				jp: "「{表面|ひょうめん}」「{外見|がいけん}」「{一見|いっけん}」などの{言葉|ことば}に{注意|ちゅうい}する。{実|じつ}は{心|こころ}の{中|なか}で{思|おも}っていることが{違|ちが}うという{合図|あいず}。",
+				cn: "注意“表面”“外见”“一见”这些词。它们是其实心里想得不一样的信号。",
+				en: "Watch words like “surface”, “appearance”, and “at first glance”. They signal that what the person actually thinks inside is different.",
+			},
+			{
+				jp: "「{内心|ないしん}」「{本心|ほんしん}」などの{言葉|ことば}に{注意|ちゅうい}する。{外|そと}に{表|あらわ}れる{様子|ようす}と{反対|はんたい}の{状態|じょうたい}を{表|あらわ}す。",
+				cn: "注意“内心”“本心”这些词。它们表示对外表现出相反的状况。",
+				en: "Watch words like “inner heart” and “true feelings”. They express a state opposite to what shows on the outside.",
+			},
+			{
+				jp: "{常識|じょうしき}だけで{判断|はんだん}しない。{読|よ}み{手|て}の{個人的|こじんてき}な{感情|かんじょう}を{入|い}れてはいけない。",
+				cn: "不要仅凭常识下判断。不能加入读者个人的感受。",
+				en: "Do not judge by common sense alone. Do not bring in your own personal feelings as a reader.",
+			},
+		],
+		expressions: [
+			{ jp: "表面・外見・一見", cn: "其实心里想得不一样", en: "what they think inside is actually different" },
+			{ jp: "内心・本心", cn: "对外表现出相反的状况", en: "a state opposite to the outward appearance" },
+		],
+		notes: [
+			{
+				jp: "あなたって、{一見|いっけん}、かしこそうに{見|み}えるんだけどね……",
+				cn: "你这个人，乍一看显得挺聪明的呢……",
+				en: "You do look clever at first glance, though…",
+			},
+		],
+	},
+
+	mondai: {
+		instruction: "{次|つぎ}の{文章|ぶんしょう}を{読|よ}んで、{問|と}いに{答|こた}えなさい。",
+		instructionCn: "阅读下面的文章，回答问题。",
+		instructionEn: "Read each text below and answer its question. (Answers are in the separate booklet, p. 3.)",
+		blocks: [
+			{ type: "heading", jp: "1", cn: "第 1 题", en: "Exercise 1" },
+			{
+				type: "paragraph",
+				jp: "{彼|かれ}は、{娘|むすめ}が{留学|りゅうがく}をあきらめずにいることを{知|し}って、ため{息|いき}をついた。",
+				cn: "他得知女儿还没有放弃留学，便叹了口气。",
+				en: "When he learned that his daughter had not given up on studying abroad, he let out a sigh.",
+				indent: true,
+			},
+			{ type: "heading", jp: "2", cn: "第 2 题", en: "Exercise 2" },
+			{
+				type: "paragraph",
+				jp: "{彼女|かのじょ}は、{上司|じょうし}にどんな{命令|めいれい}をされようとも、{嫌|いや}な{顔一|かおひと}つせず{従|したが}った*。しかも{表面的|ひょうめんてき}には{楽|たの}しそうに{仕事|しごと}していたので、{同僚|どうりょう}の{絵里子|えりこ}を{除|のぞ}いてだれも、{彼女|かのじょ}の{本心|ほんしん}はわからなかった。",
+				cn: "不论上司发出什么命令，她都毫无怨言地服从。而且表面上她工作得很开心，所以除了同事绘里子，谁也不知道她的真心。",
+				en: "Whatever orders her boss gave her, she followed them without a single displeased look. Moreover, on the surface she seemed to enjoy her work, so apart from her colleague Eriko, nobody knew her true feelings.",
+				indent: true,
+			},
+			{ type: "heading", jp: "3", cn: "第 3 题", en: "Exercise 3" },
+			{
+				type: "paragraph",
+				jp: "あるボランティアの{人|ひと}の{話|はなし}では、{最初|さいしょ}は{涙|なみだ}を{流|なが}して{感謝|かんしゃ}されたことであっても、{時間|じかん}がたつにつれ、ボランティアを{受|う}ける{側|がわ}にとってそうされることが{当|あ}たり{前|まえ}となり、{最後|さいご}には{手伝|てつだ}っている{側|がわ}がむっとするようなことがよくあるそうだ*。そのような{経験|けいけん}がボランティアの{長続|ながつづ}きを{妨|さまた}げているのだという。",
+				cn: "听一位志愿者说，哪怕起初对方感激得流泪，随着时间推移，被帮助的一方渐渐把受助当成理所当然，最后甚至常出现帮忙的人反而满腹怨气的情况。据说正是这样的经历妨碍了志愿活动的长久坚持。",
+				en: "According to one volunteer, even when people are at first grateful to the point of tears, as time passes the help comes to be taken for granted by those receiving it, and in the end there are often cases where the helpers themselves end up annoyed. Such experiences, they say, are what prevent volunteering from lasting.",
+				indent: true,
+			},
+			{ type: "heading", jp: "4", cn: "第 4 题", en: "Exercise 4" },
+			{
+				type: "paragraph",
+				jp: "{人間|にんげん}には、わからないことや{知|し}らないことがあって{当然|とうぜん}である。ただ{私|わたし}のわからないことや{知|し}らないことは、{世間|せけん}では{常識的|じょうしきてき}なことが{多|おお}いように{思|おも}う。だから、それがみんなが{知|し}っていることだということがわかると、つい、わかったふりをしてしまう**。どうして「わからない」「{知|し}らない」と{言|い}えないのか。{自尊心|じそんしん}（注1）が{強|つよ}いからというより、{物事|ものごと}に{対|たい}してあまりにも{鈍感|どんかん}（注2）である{自分|じぶん}をさらけ{出|だ}したくないのである***。{素直|すなお}になりたいものである。",
+				cn: "人有不懂、不知道的事情是理所当然的。只是我不懂、不知道的，多半是世人眼中的常识。所以一旦发现那是大家都知道的事，就会不由得装作自己也懂。为什么说不出“我不懂”“我不知道”呢？与其说是因为自尊心强，不如说是不想暴露对事物过于迟钝的自己。真想变得坦率啊。",
+				en: "It is natural for people to have things they do not understand or do not know. It is just that the things I do not understand or know are, I feel, mostly common sense to the world. So when I realise it is something everyone knows, I end up pretending I know it too. Why can I not say “I don't understand” or “I don't know”? Rather than strong pride, it is that I do not want to expose how dull I am about things. I do wish I could be honest.",
+				indent: true,
+			},
+		],
+		footnotes: [
+			{ marker: "注1", term: "自尊心", jp: "じそんしん", cn: "自尊心：觉得自己了不起的心情、自尊", en: "pride: the feeling of thinking oneself great; self-esteem" },
+			{ marker: "注2", term: "鈍感", jp: "どんかん", cn: "迟钝：感觉或对事物的感受迟缓", en: "dullness: being slow in sensation and in feeling about things" },
+		],
+		pageNotes: [
+			{ jp: "* She faithfully followed her boss' orders, no matter what they were.", cn: "不论上司发出什么命令，她都毫无怨言地服从。", en: "She faithfully followed her boss' orders, no matter what they were." },
+			{ jp: "* in time, there are cases when volunteers become annoyed", cn: "最后倒是出现不少热心帮忙的人却满腹怨气的情况", en: "in time, there are cases when volunteers become annoyed" },
+			{ jp: "** when it seems that everyone else knows about something, I often pretend that I know it as well", cn: "一旦知道这是大家都懂的事情时，便装作自己也懂了", en: "when it seems that everyone else knows about something, I often pretend that I know it as well" },
+			{ jp: "*** I hesitate to openly show that I am so indifferent to things around me", cn: "是不想把对事物过于迟钝的自己暴露出来", en: "I hesitate to openly show that I am so indifferent to things around me" },
+		],
+		questions: [
+			{
+				label: "問1",
+				jp: "{彼|かれ}の{気持|きも}ちは{次|つぎ}のどちらに{近|ちか}いか。",
+				cn: "他的心情更接近下面哪一个？",
+				en: "Which of the following is closer to his feelings?",
+				choices: [
+					{ jp: "うれしい", cn: "高兴", en: "glad" },
+					{ jp: "うれしくない", cn: "不高兴", en: "not glad" },
+				],
+				answer: 2,
+				explanation: "线索是「ため息をついた」。别册点明：事情不如意的时候，人们常常叹气。女儿不放弃留学这件事并不合他的意，所以他的心情是不高兴，而不是高兴。不要凭“女儿有志气是好事”的常识替他判断——本周要点正是不要仅凭常识下结论。",
+				explanationEn: "The clue is “he sighed”. The booklet notes that people sigh when things do not go as they wish. His daughter's not giving up on studying abroad is not what he wants, so he is not glad. Do not let the common-sense thought “a determined daughter is a good thing” decide for him — that is exactly what this week's point warns against.",
+				choiceNotes: [
+					"叹气不是高兴的表现。",
+					"正解。「ため息」＝事情不如意时的反应。",
+				],
+				choiceNotesEn: [
+					"A sigh is not a sign of gladness.",
+					"Correct. A sigh is the reaction when things go against one's wishes.",
+				],
+			},
+			{
+				label: "問2",
+				jp: "{彼女|かのじょ}の{本心|ほんしん}とは、ここではどのようなことか。",
+				cn: "这里所说的她的真心，是指什么？",
+				en: "What do her “true feelings” refer to here?",
+				choices: [
+					{ jp: "{仕事|しごと}を{嫌|いや}だと{思|おも}っている。", cn: "觉得工作讨厌。", en: "She thinks the work is unpleasant." },
+					{ jp: "{仕事|しごと}を{楽|たの}しいと{思|おも}っている。", cn: "觉得工作开心。", en: "She thinks the work is enjoyable." },
+				],
+				answer: 1,
+				explanation: "信号词是「表面的には楽しそうに」——别册原话：“表面上看很开心”，实际恰恰相反。她连讨厌的表情都不露一个地服从命令，开心只是表面；本心是觉得工作讨厌，只是谁也看不出来（只有绘里子除外）。",
+				explanationEn: "The signal phrase is “on the surface she seemed to enjoy it” — the booklet says it directly: superficially happy means the opposite in reality. She obeys without a single displeased look; the enjoyment is only on the surface. Her true feeling is that the work is unpleasant, and nobody (except Eriko) could see it.",
+				choiceNotes: [
+					"正解。「表面的には楽しそう」的反面就是本心。",
+					"这是表面，不是本心。",
+				],
+				choiceNotesEn: [
+					"Correct. The opposite of “seemed to enjoy it on the surface” is her true feeling.",
+					"That is the surface, not the true feeling.",
+				],
+			},
+			{
+				label: "問3",
+				jp: "この{場合|ばあい}のボランティアをする{人|ひと}たちの{気持|きも}ちは{次|つぎ}のどれに{近|ちか}いか。",
+				cn: "这种情况下，做志愿者的人们的心情更接近哪一个？",
+				en: "In this case, which is closest to the volunteers' feelings?",
+				choices: [
+					{ jp: "{嫌|いや}なこともあるが、ボランティアをすることは{自分|じぶん}にとって{大切|たいせつ}だ。", cn: "虽然也有不愉快的事，但做志愿者对自己很重要。", en: "There are unpleasant things, but volunteering matters to me." },
+					{ jp: "ボランティアといっても、{相手|あいて}に{嫌|いや}がられることが{多|おお}く、{悲|かな}しい。", cn: "说是做志愿者，却常常被对方讨厌，很悲伤。", en: "Though it is volunteering, I am often disliked by the other side, and it is sad." },
+					{ jp: "{結局嫌|けっきょくいや}な{気持|きも}ちにさせられることが{多|おお}く、ボランティアをやめたくなる。", cn: "结果常常被弄得心情不快，想退出志愿活动。", en: "In the end I am often made to feel bad, and I want to quit volunteering." },
+					{ jp: "{自分|じぶん}にはボランティアの{仕事|しごと}は{向|む}いていないと{思|おも}う。", cn: "觉得自己不适合做志愿者的工作。", en: "I think I am not suited to volunteer work." },
+				],
+				answer: 3,
+				explanation: "文中的感情词是「むっとする」（心生不快）——别册提示：感到不快的正是做志愿者的人。加上结论「そのような経験がボランティアの長続きを妨げている」：这种经历让人难以坚持下去，即常常被弄得心情不快、想退出。对方并没有“讨厌”他们（2 的说法过头），文中也没有说他们觉得志愿活动对自己重要（1）或自认不适合（4）。",
+				explanationEn: "The feeling word in the text is “motto suru” (to feel annoyed) — the booklet points out it is the volunteers who feel it. And the conclusion is that such experiences “prevent volunteering from lasting”: they are often made to feel bad and want to quit. The recipients do not “dislike” them (2 overstates it), and the text never says volunteering is precious to them (1) or that they feel unsuited to it (4).",
+				choiceNotes: [
+					"文中没有“对自己重要”的表述。",
+					"被帮助者是把帮助当成理所当然，并非讨厌志愿者。",
+					"正解。「むっとする」＋「長続きを妨げている」＝被弄得不快、难以坚持。",
+					"文中没有谈到适不适合。",
+				],
+				choiceNotesEn: [
+					"The text never says it matters to them personally.",
+					"The recipients take help for granted; they do not dislike the volunteers.",
+					"Correct. “Annoyed” plus “prevents it from lasting” means being made to feel bad and wanting to quit.",
+					"Suitability is never mentioned.",
+				],
+			},
+			{
+				label: "問4",
+				jp: "{筆者|ひっしゃ}がいちばん{言|い}いたい{気持|きも}ちは{次|つぎ}のどれか。",
+				cn: "作者最想表达的心情是哪一个？",
+				en: "Which feeling does the author most want to express?",
+				choices: [
+					{ jp: "{常識的|じょうしきてき}なことは{知|し}っておきたい。", cn: "想知道常识性的东西。", en: "I want to know the common-sense things." },
+					{ jp: "{他人|たにん}に{自分|じぶん}がわからないということを{知|し}られたくない。", cn: "不想让别人知道自己不懂。", en: "I do not want others to know that I do not understand." },
+					{ jp: "わからないことは「わからない」と{言|い}いたい。", cn: "想对不懂的事情说出“我不懂”。", en: "I want to say “I don't know” about the things I don't know." },
+					{ jp: "{物事|ものごと}に{対|たい}して{敏感|びんかん}でありたい。", cn: "想对事物敏感一些。", en: "I want to be more sensitive about things." },
+				],
+				answer: 3,
+				explanation: "抓住最后一句——别册提示注意结尾的「素直になりたい」：作者的愿望是变得坦率，也就是不懂的时候能直说“不懂”。2 是他现在的毛病（不想暴露），不是他想表达的心情；1、4 都不是文章落点。",
+				explanationEn: "Hold on to the final sentence — the booklet points to “I want to be honest (sunao)”. His wish is to be straightforward: to say “I don't know” when he doesn't. Choice 2 is his current failing (not wanting to be found out), not the feeling he wants to express; 1 and 4 are not where the text lands.",
+				choiceNotes: [
+					"他苦恼的不是不知道常识，而是说不出口。",
+					"这是他现在的心理，不是他的愿望。",
+					"正解。「素直になりたい」＝想坦率地说出“不懂”。",
+					"文中没有把敏感当作目标。",
+				],
+				choiceNotesEn: [
+					"His problem is not lacking common sense but being unable to say so.",
+					"That is his current state, not his wish.",
+					"Correct. “I want to be honest” means saying “I don't know” plainly.",
+					"Sensitivity is never set up as the goal.",
+				],
+			},
+		],
+	},
+
+	vocab: [
+		{ jp: "ため息", kana: "ためいき", cn: "叹气", en: "sigh", pos: "名詞・動詞" },
+		{ jp: "留学", kana: "りゅうがく", cn: "留学", en: "studying abroad", pos: "名詞・動詞" },
+		{ jp: "上司", kana: "じょうし", cn: "上司", en: "boss; superior", pos: "名詞" },
+		{ jp: "命令", kana: "めいれい", cn: "命令", en: "order; command", pos: "名詞・動詞" },
+		{ jp: "従う", kana: "したがう", cn: "服从、遵从", en: "to obey; to follow", pos: "動詞" },
+		{ jp: "表面的", kana: "ひょうめんてき", cn: "表面上的", en: "superficial; on the surface", pos: "な形" },
+		{ jp: "本心", kana: "ほんしん", cn: "真心、本心", en: "true feelings; real intention", pos: "名詞" },
+		{ jp: "同僚", kana: "どうりょう", cn: "同事", en: "colleague", pos: "名詞" },
+		{ jp: "除く", kana: "のぞく", cn: "除……之外", en: "to exclude; except", pos: "動詞" },
+		{ jp: "涙", kana: "なみだ", cn: "眼泪", en: "tears", pos: "名詞" },
+		{ jp: "感謝", kana: "かんしゃ", cn: "感谢", en: "gratitude; thanks", pos: "名詞・動詞" },
+		{ jp: "当たり前", kana: "あたりまえ", cn: "理所当然", en: "taken for granted; natural", pos: "名詞・な形" },
+		{ jp: "むっとする", kana: "むっとする", cn: "心生不快、愠怒", en: "to feel offended; to get annoyed", pos: "表現" },
+		{ jp: "長続き", kana: "ながつづき", cn: "长久持续", en: "lasting long", pos: "名詞・動詞" },
+		{ jp: "妨げる", kana: "さまたげる", cn: "妨碍", en: "to hinder; to obstruct", pos: "動詞" },
+		{ jp: "世間", kana: "せけん", cn: "世人、社会", en: "the world; society", pos: "名詞" },
+		{ jp: "常識的", kana: "じょうしきてき", cn: "常识性的", en: "common-sense", pos: "な形" },
+		{ jp: "ふりをする", kana: "ふりをする", cn: "装作、假装", en: "to pretend", pos: "表現" },
+		{ jp: "自尊心", kana: "じそんしん", cn: "自尊心", en: "pride; self-esteem", pos: "名詞" },
+		{ jp: "鈍感", kana: "どんかん", cn: "迟钝", en: "dull; insensitive", pos: "名詞・な形" },
+		{ jp: "さらけ出す", kana: "さらけだす", cn: "暴露、坦露", en: "to expose; to lay bare", pos: "動詞" },
+		{ jp: "素直", kana: "すなお", cn: "坦率、老实", en: "honest; straightforward", pos: "な形" },
+		{ jp: "敏感", kana: "びんかん", cn: "敏感", en: "sensitive", pos: "名詞・な形" },
+	],
+
+	grammar: [
+		{
+			pattern: "〜をされようとも、〜",
+			formation: "動詞意向量＋とも",
+			meaning: "“无论被怎样……，也……”：どんな命令をされようとも＝不管被下达什么命令。她连一个讨厌的表情都不露——但那是服从的样子，不是本心。",
+			meaningEn: "“No matter what … is done to me…”: whatever orders she was given. Not showing a single displeased look is obedience, not her true feeling.",
+			example: {
+				jp: "{上司|じょうし}にどんな{命令|めいれい}をされようとも、{嫌|いや}な{顔一|かおひと}つせず{従|したが}った。",
+				cn: "不论上司发出什么命令，她都毫无怨言地服从。",
+				en: "Whatever orders her boss gave, she followed them without a single displeased look.",
+			},
+		},
+		{
+			pattern: "表面的には〜そうに",
+			formation: "表面的には＋様態",
+			meaning: "本周的信号词：「表面的には楽しそう」出现时，紧接着要找她的本心——通常与表面相反。文中的「本心はわからなかった」正是让你反推。",
+			meaningEn: "This week's signal: when “on the surface she seemed…” appears, look for the true feeling — usually the opposite. “Nobody knew her true feelings” invites exactly that inference.",
+			example: {
+				jp: "{表面的|ひょうめんてき}には{楽|たの}しそうに{仕事|しごと}していたので、だれも、{彼女|かのじょ}の{本心|ほんしん}はわからなかった。",
+				cn: "表面上她工作得很开心，所以谁也不知道她的真心。",
+				en: "On the surface she seemed to enjoy her work, so nobody knew her true feelings.",
+			},
+		},
+		{
+			pattern: "〜につれ",
+			formation: "動詞辞書形＋につれ",
+			meaning: "随着……：時間がたつにつれ＝随着时间流逝。表示一方的变化带动另一方的变化。",
+			meaningEn: "as…: “as time passed”. One change proceeds in step with another.",
+			example: {
+				jp: "{時間|じかん}がたつにつれ、ボランティアを{受|う}ける{側|がわ}にとってそうされることが{当|あ}たり{前|まえ}となり、{最後|さいご}には{手伝|てつだ}っている{側|がわ}がむっとするようなことがよくある。",
+				cn: "随着时间推移，被帮助的一方渐渐把受助当成理所当然，最后甚至常出现帮忙的人反而满腹怨气的情况。",
+				en: "As time passes, those receiving help come to take it for granted, and in the end the helpers often end up annoyed.",
+			},
+		},
+		{
+			pattern: "〜からというより、〜",
+			formation: "文＋からというより＋文",
+			meaning: "与其说是因为……，不如说……：作者否定“自尊心强”这个表面原因，给出更深的原因——不想暴露自己迟钝。读心情题时，这种自我修正的句子往往就是落点。",
+			meaningEn: "“Rather than because…, it is that…”: the author rejects the surface reason (pride) and gives the deeper one — not wanting to expose his own dullness. Such self-corrections usually mark the point of the passage.",
+			example: {
+				jp: "{自尊心|じそんしん}が{強|つよ}いからというより、{物事|ものごと}に{対|たい}してあまりにも{鈍感|どんかん}である{自分|じぶん}をさらけ{出|だ}したくないのである。",
+				cn: "与其说是因为自尊心强，不如说是不想暴露对事物过于迟钝的自己。",
+				en: "Rather than strong pride, it is that I do not want to expose how dull I am about things.",
+			},
+		},
+	],
+};
