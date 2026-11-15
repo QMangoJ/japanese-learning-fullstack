@@ -54,9 +54,11 @@ export const readingN2CatalogDays = makeDays([
 export const readingN1CatalogWeeks: readonly ReadingCatalogWeek[] = [
 	{ week: 1, title: "注意する言葉はどれ？", titleCn: "注意哪些词语？", titleEn: "Which words should you watch out for?", printedStart: 11 },
 	{ week: 2, title: "いつ・だれ・何のこと？", titleCn: "什么时候、谁、什么事？", titleEn: "When, who, and what is it about?", printedStart: 29 },
+	{ week: 3, title: "答えは文章の中にある！", titleCn: "答案就在文章里！", titleEn: "The answers are in the text!", printedStart: 47 },
 ];
 
 export const readingN1CatalogDays = makeDays([
 	["（ ）の中に入るのは？", "意見を言いたいときの疑問文", "否定「ない」に注意！", "長文によく使われる表現", "文と文とをつなぐ言葉 接続詞・接続詞的表現①", "文と文とをつなぐ言葉 接続詞・接続詞的表現②", "実戦問題"],
 	["それはだれのこと？", "それはいつのこと？", "どんな気持ち？", "「これ」「それ」①", "「これ」「それ」②", "「これ」「それ」③", "実戦問題"],
+	["答えは書いてある！", "結論を探せ！", "何を言いたいの？①", "何を言いたいの？②", "文の骨組み", "省略", "実戦問題"],
 ]);
