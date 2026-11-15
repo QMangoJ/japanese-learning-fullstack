@@ -2,6 +2,8 @@ import { listeningN1CatalogWeeks } from "../data/listening-n1-catalog";
 import { listeningN2BookChapters } from "../data/listening-n2-book";
 import { listeningBookChapters } from "../data/listening-n3-book";
 import {
+	readingN1CatalogDays,
+	readingN1CatalogWeeks,
 	readingN2CatalogDays,
 	readingN2CatalogWeeks,
 	readingN3CatalogDays,
@@ -55,6 +57,10 @@ export function listeningBundle() {
 
 export function readingN2Bundle() {
 	return readingCatalogBundle(readingN2CatalogWeeks, readingN2CatalogDays);
+}
+
+export function readingN1Bundle() {
+	return readingCatalogBundle(readingN1CatalogWeeks, readingN1CatalogDays);
 }
 
 export function listeningN2Bundle() {

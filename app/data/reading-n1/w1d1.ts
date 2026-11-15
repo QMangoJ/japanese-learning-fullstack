@@ -1,0 +1,276 @@
+import type { ReadingDay } from "../reading-n3/types";
+
+// 第1週 1日目 （ ）の中に入るのは？ — printed pages 12–13
+export const w1d1: ReadingDay = {
+	week: 1,
+	day: 1,
+	label: "（ ）の中に入るのは？",
+	labelEn: "What goes in the ( )?",
+	printedPages: [12, 13],
+	answerSource: "book",
+
+	point: {
+		title: "（　）の{位置|いち}が{違|ちが}うと、{解|と}き{方|かた}も{違|ちが}う！",
+		titleCn: "（ ）的位置不同，解题思路也不一样！",
+		titleEn: "Where the ( ) sits changes how you solve it!",
+		figure: {
+			alt: "「ボクの場合は…」と考える黒猫と、「ダメ！自分の考えや感情を入れてはいけないよ！」と言う猫先生のイラスト",
+			cn: "一只想着「我的情况是……」的黑猫，和一只说「不行！不能把自己的想法和感情掺进去！」的猫老师的插图",
+			en: "A black cat thinking “In my case…” and a teacher cat saying “No! You mustn't bring in your own thoughts or feelings!”",
+		},
+		tips: [
+			{
+				jp: "（　）の{前後|ぜんご}の{文|ぶん}の{関係|かんけい}をよく{比|くら}べる。",
+				cn: "好好比较（ ）前后文的关系。",
+				en: "Compare carefully how the sentences before and after the ( ) relate to each other.",
+			},
+			{
+				jp: "{主語|しゅご}を{見|み}つける。{次|つぎ}に、その{主語|しゅご}について{述|の}べた{文|ぶん}を{探|さが}す。ふつう、この{二|ふた}つの{文|ぶん}はほぼ{同|おな}じ{意味|いみ}になる。",
+				cn: "找主语。接着找描述这一主语的句子。一般情况下，这两句话的意思会差不多。",
+				en: "Find the subject. Then find the sentence that describes that subject. The two sentences usually mean almost the same thing.",
+			},
+			{
+				jp: "いくつかの（　）の{前|まえ}には、{同|おな}じ{内容|ないよう}について{述|の}べた{言葉|ことば}が{必|かなら}ずある。{意味|いみ}が{反対|はんたい}の{言葉|ことば}を{見|み}つけ{出|だ}す。（　）が{主語|しゅご}の{部分|ぶぶん}にある{場合|ばあい}は、{前|まえ}の{文|ぶん}で{同|おな}じ{使|つか}い{方|かた}で{出|で}てきた{言葉|ことば}を{選|えら}ぶ。",
+				cn: "这几个（ ）前面一定有针对同一个内容的话语。找出其中意思相对的用词。如果（ ）出现在主语部分，那就选择前面一句相同用法中出现过的那个词语。",
+				en: "Before several of the ( ) there is always a statement about the same content. Find the word with the opposite meaning. If the ( ) is in the subject, choose the word that appeared earlier in the same usage.",
+			},
+		],
+		expressions: [
+			{ jp: "………（　）………。", cn: "（ ）在句中：比较前后文的关系", en: "( ) in mid-sentence: compare what comes before and after" },
+			{ jp: "………………（　）。", cn: "（ ）在句末：找主语，再找描述该主语的句子", en: "( ) at the end: find the subject, then the sentence describing it" },
+			{ jp: "……（　）……（　）………（　）……。", cn: "多个（ ）：前面一定有针对同一内容的话语", en: "several ( ): an earlier statement on the same content always exists" },
+		],
+		notes: [
+			{
+				jp: "ダメ！{自分|じぶん}の{考|かんが}えや{感情|かんじょう}を{入|い}れてはいけないよ！",
+				cn: "不行！不能把自己的想法和感情掺进去！",
+				en: "No! You mustn't bring in your own thoughts or feelings!",
+			},
+		],
+	},
+
+	mondai: {
+		instruction: "{次|つぎ}の{文章|ぶんしょう}を{読|よ}んで、{問|と}いに{答|こた}えなさい。",
+		instructionCn: "阅读下面的文章，回答问题。",
+		instructionEn: "Read each text below and answer its question. (Answers are in the separate booklet, p. 2.)",
+		blocks: [
+			{ type: "heading", jp: "1", cn: "第 1 题", en: "Exercise 1" },
+			{
+				type: "paragraph",
+				jp: "{抗生物質|こうせいぶっしつ}（注）の{開発|かいはつ}によって、{人類|じんるい}は{伝染病|でんせんびょう}を（　）かのような{錯覚|さっかく}を{起|お}こしている*。",
+				cn: "由于抗生素的开发，人类产生了一种似乎已经（ ）了传染病的错觉。",
+				en: "Thanks to the development of antibiotics, humankind is under the illusion that it has somehow ( ) infectious diseases.",
+				indent: true,
+			},
+			{ type: "heading", jp: "2", cn: "第 2 题", en: "Exercise 2" },
+			{
+				type: "paragraph",
+				jp: "（{前略|ぜんりゃく}）かつて{私|わたし}たちの{国|くに}では、{花|はな}の{美|うつく}しさというように、{抽象観念|ちゅうしょうかんねん}によって{美|うつく}しいものをとらえようとする{言|い}い{方|かた}も{乏|とぼ}しく**、したがってそのような{考|かんが}え{方|かた}もほとんどなかった。（　）、というようなことばや{考|かんが}え{方|かた}を{私|わたし}たちに{教|おし}えてくれたのは、やはり{西欧舶来|せいおうはくらい}（注）のことばであり、その{翻訳語|ほんやくご}だったのである。",
+				cn: "（前略）从前在我们国家，像“花的美”这样用抽象观念来把握美的事物的说法也很少，因此那样的思维方式也几乎没有。（ ）——教给我们这类词语和思维方式的，果然还是西欧舶来的词语，也就是翻译词。",
+				en: "(Omitted above) In our country in the past, expressions that tried to grasp beautiful things through abstract concepts — like “the beauty of flowers” — were also scarce, and so such ways of thinking hardly existed either. What taught us words and ways of thinking such as ( ) was, after all, words imported from the West — translated words.",
+				indent: true,
+			},
+			{
+				type: "source",
+				jp: "（柳父章『翻訳語成立事情』岩波書店）",
+				cn: "（柳父章《翻译词成立事情》岩波书店）",
+				en: "(Akira Yanagibu, “The Making of Translated Words”, Iwanami Shoten)",
+			},
+			{ type: "heading", jp: "3", cn: "第 3 题", en: "Exercise 3" },
+			{
+				type: "paragraph",
+				jp: "{昔|むかし}は、{子|こ}どもは{親|おや}を{尊敬|そんけい}し、{親|おや}は{子|こ}どもに{命令|めいれい}し、{子|こ}どもが{命令|めいれい}されて{動|うご}くことは{当然|とうぜん}の{日常|にちじょう}であった。（　）、{現在|げんざい}は{対等|たいとう}な{立場|たちば}で{親子関係|おやこかんけい}が{築|きず}かれる{世|よ}の{中|なか}となった*。そして、それが{愛|あい}の{形|かたち}であると{理解|りかい}している{者|もの}が{大半|たいはん}であるが、{好|この}ましくない{状態|じょうたい}であると{嘆|なげ}く（注）{者|もの}も{多|おお}くいるのである。",
+				cn: "从前，孩子尊敬父母，父母命令孩子，孩子听命行事是理所当然的日常。（ ），如今变成了在对等立场上建立亲子关系的社会。而且，多数人认为这正是爱的应有形态，但也有不少人叹息这并非理想状态。",
+				en: "In the past, children respected their parents, parents gave orders to their children, and it was an everyday given that children moved when ordered. ( ), nowadays we live in a world where parent-child relationships are built on an equal footing. And while most people understand that this is the proper form of love, many also lament that it is not a desirable state.",
+				indent: true,
+			},
+			{ type: "heading", jp: "4", cn: "第 4 题", en: "Exercise 4" },
+			{
+				type: "paragraph",
+				jp: "{人|ひと}の{脳|のう}は{大|おお}きく、{論理|ろんり}や{言語|げんご}を{処理|しょり}する{左脳|さのう}と、{情緒|じょうちょ}（注1）{的|てき}な{感情|かんじょう}を{処理|しょり}する{右脳|うのう}に{分|わ}けられる。したがって{音楽家|おんがくか}や{画家|がか}などは{右脳|うのう}が、{学者|がくしゃ}や{作家|さっか}などは{左脳|さのう}が{発達|はったつ}していると{考|かんが}えられる。{一般的|いっぱんてき}に、{人|ひと}は{毎日|まいにち}の{生活|せいかつ}では{言葉|ことば}を{話|はな}したり{仕事|しごと}を{論理的|ろんりてき}に{処理|しょり}したりすることが{多|おお}い**ため、（　A　）をよく{使|つか}うが、そんなときは{音楽|おんがく}を{聴|き}いたりして（　B　）を{使|つか}うようにすると、{脳|のう}の{血液循環|けつえきじゅんかん}（注2）がよくなり、{同時|どうじ}に（　C　）は{休息|きゅうそく}ができるのである。",
+				cn: "人的大脑大体分为处理逻辑和语言的左脑，以及处理情绪性感情的右脑。因此，音乐家、画家等被认为右脑发达，学者、作家等被认为左脑发达。一般来说，人们在日常生活中多是说话，或逻辑性地处理工作，因此经常使用（ A ）；这种时候如果听听音乐、使用（ B ），大脑的血液循环就会变好，同时（ C ）也能得到休息。",
+				en: "The human brain is broadly divided into the left brain, which processes logic and language, and the right brain, which processes emotional feelings. Accordingly, musicians and painters are thought to have a developed right brain, and scholars and writers a developed left brain. In general, in everyday life people mostly talk and handle work logically, so they often use ( A ); if at such times they listen to music and use ( B ), the blood circulation in the brain improves, and at the same time ( C ) can rest.",
+				indent: true,
+			},
+		],
+		footnotes: [
+			{ marker: "注", term: "抗生物質", jp: "こうせいぶっしつ", cn: "抗生素：预防传染病等的药物的一种", en: "antibiotics: a kind of medicine that prevents infectious diseases and the like" },
+			{ marker: "注", term: "西欧舶来", jp: "せいおうはくらい", cn: "西欧舶来：从西方来的（东西）", en: "imported from Western Europe: something that came from the West" },
+			{ marker: "注", term: "嘆く", jp: "なげく", cn: "叹息：觉得非常遗憾", en: "to lament: to think something deeply regrettable" },
+			{ marker: "注1", term: "情緒", jp: "じょうちょ", cn: "情绪：喜、悲、怒等感情", en: "emotion: feelings such as joy, sadness, and anger" },
+			{ marker: "注2", term: "血液循環", jp: "けつえきじゅんかん", cn: "血液循环：血液的流动、周转", en: "blood circulation: the flow and circulation of the blood" },
+		],
+		pageNotes: [
+			{ jp: "* have an illusion that the problem has been overcome", cn: "产生了似乎已经克服（传染病）的错觉", en: "have an illusion that the problem has been overcome" },
+			{ jp: "** there were very few expressions for describing beautiful things in the abstract", cn: "缺乏用抽象观念描写美丽事物的表达方式", en: "there were very few expressions for describing beautiful things in the abstract" },
+			{ jp: "* nowadays parents and children have more equal relationships", cn: "现在的社会潮流已经变成在平等的立场上建立父母与子女的关系", en: "nowadays parents and children have more equal relationships" },
+			{ jp: "** generally, people tend to talk and work rationally", cn: "一般来说，人们在日常生活中说话或逻辑性地处理工作的情况较多", en: "generally, people tend to talk and work rationally" },
+		],
+		questions: [
+			{
+				label: "問1",
+				jp: "（　）の{中|なか}に{入|はい}る{適当|てきとう}な{言葉|ことば}はどちらか。",
+				cn: "填入（ ）的恰当词语是哪一个？",
+				en: "Which word appropriately fills the ( )?",
+				choices: [
+					{ jp: "{克服|こくふく}した", cn: "克服了", en: "overcame" },
+					{ jp: "{広|ひろ}めた", cn: "扩散了", en: "spread" },
+				],
+				answer: 1,
+				explanation: "「〜かのような錯覚」是「仿佛已经……了的错觉」：人类以为传染病已经被战胜了。别册提示：「克服する」＝打ち勝つ（战胜）。选项2「広めた」是把传染病扩散开来，与错觉的内容正好相反。",
+				explanationEn: "“…ka no yō na sakkaku” is the illusion that something has already happened: humankind believes infectious diseases have been defeated. The booklet glosses 克服する as “to defeat”. Choice 2, “spread”, is the opposite of what the illusion describes.",
+				choiceNotes: [
+					"正解。「伝染病を克服した」＝战胜了传染病，与页脚注 * 的英文 “overcome” 一致。",
+					"「広めた」是（把传染病）扩散了，意思反了。",
+				],
+				choiceNotesEn: [
+					"Correct. “Overcame infectious diseases”, matching footnote *.",
+					"“Spread” reverses the meaning.",
+				],
+			},
+			{
+				label: "問2",
+				jp: "この{文章|ぶんしょう}の（　）の{部分|ぶぶん}には、どんな{内容|ないよう}の{表現|ひょうげん}を{入|い}れることができるか。",
+				cn: "这篇文章的（ ）处可以填入哪种内容的表达？",
+				en: "What kind of expression can be put into the ( ) of this text?",
+				choices: [
+					{ jp: "{花|はな}の{美|うつく}しさ", cn: "花的美", en: "the beauty of flowers" },
+					{ jp: "{抽象観念|ちゅうしょうかんねん}", cn: "抽象观念", en: "abstract concepts" },
+				],
+				answer: 1,
+				explanation: "空格后是「というようなことばや考え方を私たちに教えてくれたのは、西欧舶来のことばであり、その翻訳語だった」——要填回前文出现过的具体说法。第一句举出的例子正是「花の美しさ」：作者的主张是，连这种说法本身都是翻译语教给日本人的。选项2「抽象観念」只是第一句里的概括说法，不与「というようなことば」呼应。",
+				explanationEn: "The blank is followed by “…words and ways of thinking such as this were taught to us by words imported from the West, that is, by translated words”, so it must pick up a concrete expression from earlier in the text. The example given in the first sentence is “the beauty of flowers” — the author's point is that even this expression was taught by translation. “Abstract concepts” is only the general category and does not answer “words such as…”.",
+				choiceNotes: [
+					"正解。回扣第一句的例子「花の美しさというように」。",
+					"「抽象観念」在文中是说明用的概括词，不是被举例的「ことば」本身。",
+				],
+				choiceNotesEn: [
+					"Correct. It echoes the first sentence's example.",
+					"“Abstract concepts” is the explanatory category, not the quoted expression.",
+				],
+			},
+			{
+				label: "問3",
+				jp: "（　）の{中|なか}に{入|はい}る{適当|てきとう}な{言葉|ことば}はどれか。",
+				cn: "填入（ ）的恰当词语是哪一个？",
+				en: "Which expression appropriately fills the ( )?",
+				choices: [
+					{ jp: "このような{上下関係|じょうげかんけい}は{変|か}わりようはないが", cn: "虽然这种上下关系不可能改变", en: "although such a hierarchical relationship could never change" },
+					{ jp: "このような{上下関係|じょうげかんけい}がいつのまにか{変化|へんか}し", cn: "这种上下关系不知不觉间发生了变化", en: "such a hierarchical relationship changed before anyone noticed, and" },
+					{ jp: "このような{親子関係|おやこかんけい}が{目覚|めざ}ましい{進歩|しんぽ}を{遂|と}げ", cn: "这种亲子关系取得了惊人的进步", en: "such a parent-child relationship made remarkable progress, and" },
+					{ jp: "このような{親子関係|おやこかんけい}の{認識|にんしき}が{逆転|ぎゃくてん}し", cn: "对这种亲子关系的认识发生了逆转", en: "the perception of such a parent-child relationship was reversed, and" },
+				],
+				answer: 2,
+				explanation: "空格后接「現在は対等な立場で親子関係が築かれる世の中となった」：上下关系变成了对等关系。别册提示：是「上下関係」变成「対等な関係」，即变成平等的关系，不是「進歩」，也不是「逆転」。选项1与后文矛盾，3、4正是别册排除的说法，只有选项2的「変化し」能顺接。",
+				explanationEn: "What follows is “nowadays parent-child relationships are built on an equal footing”: the hierarchy turned into an equal relationship. The booklet notes this is a change into an equal — literally “same-rank” — relationship, not “progress” and not “reversal”. Choice 1 contradicts the sequel, choices 3 and 4 are exactly the wordings the booklet rules out, and only choice 2's “changed” leads into the next clause.",
+				choiceNotes: [
+					"「変わりようはないが」说关系不会变，与后文「となった」矛盾。",
+					"正解。「変化し、現在は対等な立場で…となった」衔接自然。",
+					"别册明确排除「進歩」：原文没有评价新关系是进步。",
+					"别册明确排除「逆転」：不是上下颠倒，而是变成对等。",
+				],
+				choiceNotesEn: [
+					"“Could never change” contradicts what follows.",
+					"Correct. “Changed, and now…” flows naturally.",
+					"The booklet rules out “progress”; the text makes no such value judgement.",
+					"The booklet rules out “reversal”; the ranks were levelled, not flipped.",
+				],
+			},
+			{
+				label: "問4",
+				jp: "（A）〜（C）には、「{右脳|うのう}」か「{左脳|さのう}」が{入|はい}る。その{組|く}み{合|あ}わせとして{最|もっと}も{適当|てきとう}なものはどれか。",
+				cn: "（A）～（C）中填入「右脑」或「左脑」。组合最恰当的是哪一个？",
+				en: "(A)–(C) each take either “right brain” or “left brain”. Which combination is most appropriate?",
+				choices: [
+					{ jp: "A {左脳|さのう}　B {右脳|うのう}　C {左脳|さのう}", cn: "A 左脑　B 右脑　C 左脑", en: "A left brain, B right brain, C left brain" },
+					{ jp: "A {右脳|うのう}　B {左脳|さのう}　C {右脳|うのう}", cn: "A 右脑　B 左脑　C 右脑", en: "A right brain, B left brain, C right brain" },
+					{ jp: "A {左脳|さのう}　B {左脳|さのう}　C {右脳|うのう}", cn: "A 左脑　B 左脑　C 右脑", en: "A left brain, B left brain, C right brain" },
+					{ jp: "A {右脳|うのう}　B {右脳|うのう}　C {左脳|さのう}", cn: "A 右脑　B 右脑　C 左脑", en: "A right brain, B right brain, C left brain" },
+				],
+				answer: 1,
+				explanation: "日常生活里说话、逻辑地处理工作用的是左脑，所以 A＝左脳；听音乐用右脑，B＝右脳；血液循环变好后得到休息的，是刚才一直在工作的左脑，C＝左脳。别册提示：从「音楽家は右脳が発達している」这一句出发想，马上就能明白。",
+				explanationEn: "Everyday talking and logical work use the left brain, so A = left; listening to music uses the right brain, so B = right; and the one that rests once circulation improves is the left brain that had been working, so C = left. The booklet notes this is immediately clear if you start from the remark that musicians have a developed right brain.",
+				choiceNotes: [
+					"正解。A 左（语言・逻辑）→ B 右（音乐）→ C 左（休息的是左脑）。",
+					"A 不是右脑：说话和逻辑处理是左脑的工作。",
+					"B 不是左脑：听音乐时用的是右脑。",
+					"A、B 都反了。",
+				],
+				choiceNotesEn: [
+					"Correct. A left (language/logic) → B right (music) → C left (the left brain rests).",
+					"A is not the right brain: speech and logic belong to the left.",
+					"B is not the left brain: music engages the right.",
+					"Both A and B are reversed.",
+				],
+			},
+		],
+	},
+
+	vocab: [
+		{ jp: "抗生物質", kana: "こうせいぶっしつ", cn: "抗生素", en: "antibiotics", pos: "名詞" },
+		{ jp: "伝染病", kana: "でんせんびょう", cn: "传染病", en: "infectious disease", pos: "名詞" },
+		{ jp: "克服", kana: "こくふく", cn: "克服、战胜", en: "overcoming; defeating", pos: "名詞・動詞" },
+		{ jp: "錯覚", kana: "さっかく", cn: "错觉", en: "illusion; misconception", pos: "名詞・動詞" },
+		{ jp: "抽象観念", kana: "ちゅうしょうかんねん", cn: "抽象观念", en: "abstract concept", pos: "名詞" },
+		{ jp: "乏しい", kana: "とぼしい", cn: "缺乏、稀少", en: "scarce; lacking", pos: "い形" },
+		{ jp: "舶来", kana: "はくらい", cn: "外来、进口（的）", en: "imported (from abroad)", pos: "名詞" },
+		{ jp: "翻訳語", kana: "ほんやくご", cn: "翻译词、译词", en: "translated word; loan translation", pos: "名詞" },
+		{ jp: "尊敬", kana: "そんけい", cn: "尊敬", en: "respect", pos: "名詞・動詞" },
+		{ jp: "命令", kana: "めいれい", cn: "命令", en: "order; command", pos: "名詞・動詞" },
+		{ jp: "対等", kana: "たいとう", cn: "对等、平等", en: "equal footing; equality", pos: "名詞・な形" },
+		{ jp: "築く", kana: "きずく", cn: "建立、构筑", en: "to build; to establish", pos: "動詞" },
+		{ jp: "嘆く", kana: "なげく", cn: "叹息、悲叹", en: "to lament; to grieve", pos: "動詞" },
+		{ jp: "論理", kana: "ろんり", cn: "逻辑", en: "logic", pos: "名詞" },
+		{ jp: "情緒", kana: "じょうちょ", cn: "情绪", en: "emotion; feelings", pos: "名詞" },
+		{ jp: "血液循環", kana: "けつえきじゅんかん", cn: "血液循环", en: "blood circulation", pos: "名詞" },
+		{ jp: "休息", kana: "きゅうそく", cn: "休息", en: "rest", pos: "名詞・動詞" },
+		{ jp: "発達", kana: "はったつ", cn: "发达、发展", en: "development", pos: "名詞・動詞" },
+	],
+
+	grammar: [
+		{
+			pattern: "〜かのような",
+			formation: "文の普通形＋かのような＋名詞",
+			meaning: "仿佛……似的。表示与事实不同、只是那样感觉的比喻。第1题「伝染病を克服したかのような錯覚」＝误以为已经战胜了传染病的错觉。",
+			meaningEn: "as if…; gives an impression contrary to fact. In exercise 1, “the illusion that (we) had overcome infectious diseases”.",
+			example: {
+				jp: "{伝染病|でんせんびょう}を{克服|こくふく}したかのような{錯覚|さっかく}を{起|お}こしている。",
+				cn: "产生了仿佛已经战胜了传染病的错觉。",
+				en: "People are under the illusion that infectious diseases have been overcome.",
+			},
+		},
+		{
+			pattern: "〜によって",
+			formation: "名詞＋によって",
+			meaning: "由于、靠……。表示原因或手段。第1题「抗生物質の開発によって」是原因；第2题「抽象観念によって美しいものをとらえる」是手段。",
+			meaningEn: "by / through / because of. Marks a cause or a means: cause in exercise 1, means in exercise 2.",
+			example: {
+				jp: "{抗生物質|こうせいぶっしつ}の{開発|かいはつ}によって、{人類|じんるい}は{伝染病|でんせんびょう}を{克服|こくふく}したかのような{錯覚|さっかく}を{起|お}こしている。",
+				cn: "由于抗生素的开发，人类产生了仿佛已经战胜传染病的错觉。",
+				en: "Thanks to the development of antibiotics, humankind is under the illusion that it has overcome infectious diseases.",
+			},
+		},
+		{
+			pattern: "〜も乏しく、したがって",
+			formation: "文＋も乏しい／したがって＋文",
+			meaning: "「乏しい」是缺乏、很少；「したがって」是由此得出结论的接续词：因为连说法都少，所以那样的思维方式也几乎没有。",
+			meaningEn: "“scarce too, and therefore…”: because even the expressions were scarce, such ways of thinking hardly existed either.",
+			example: {
+				jp: "{言|い}い{方|かた}も{乏|とぼ}しく、したがってそのような{考|かんが}え{方|かた}もほとんどなかった。",
+				cn: "说法也很少，因此那样的思维方式也几乎没有。",
+				en: "Such expressions were scarce too, and therefore such ways of thinking hardly existed.",
+			},
+		},
+		{
+			pattern: "〜であると理解している者が大半であるが",
+			formation: "文＋であると理解している者＋が大半／〜であるが（逆接）",
+			meaning: "「大半」是大多数；文末的「〜が」在这里是转折：多数人那样理解，但也有不少人叹息。读长文时注意「が」到底是顺接还是逆接。",
+			meaningEn: "“most people understand that…, but…”: the clause-final が is adversative — most people see it as the proper form of love, yet many lament it.",
+			example: {
+				jp: "それが{愛|あい}の{形|かたち}であると{理解|りかい}している{者|もの}が{大半|たいはん}であるが、{好|この}ましくない{状態|じょうたい}であると{嘆|なげ}く{者|もの}も{多|おお}くいる。",
+				cn: "多数人认为这正是爱的应有形态，但也有不少人叹息这并非理想状态。",
+				en: "Most people understand that this is the proper form of love, but many also lament that it is not a desirable state.",
+			},
+		},
+	],
+};

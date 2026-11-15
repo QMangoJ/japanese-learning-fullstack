@@ -553,7 +553,7 @@ export function readingGlossesLoaded(): boolean {
 /** Load the N3 / N2 reading questions' Chinese into the lookup (they live in a lazy chunk). */
 export function loadReadingGlosses(): Promise<void> {
 	if (!readingGlossLoad) {
-		readingGlossLoad = Promise.all([import("../data/reading-n3"), import("../data/reading-n2")])
+		readingGlossLoad = Promise.all([import("../data/reading-n3"), import("../data/reading-n2"), import("../data/reading-n1")])
 			.then(([n3, n2]) => {
 				glossIndexFromReadingDays(n3.readingDays, readingGlossIndex);
 				glossIndexFromReadingDays(n2.readingDays, readingGlossIndex);

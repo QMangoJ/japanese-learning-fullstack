@@ -474,9 +474,9 @@ function AuthBanner() {
 }
 
 function goType(ty: TypeKey) {
-	if (ty === "reading" && LEVEL !== "n3" && LEVEL !== "n2") return;
+	if (ty === "reading" && LEVEL !== "n3" && LEVEL !== "n2" && LEVEL !== "n1") return;
 	if (ty === "listening" && LEVEL !== "n3" && LEVEL !== "n2" && LEVEL !== "n1") return;
-	if (LEVEL === "n1" && ty !== "grammar" && ty !== "vocab" && ty !== "kanji" && ty !== "listening") return;
+	if (LEVEL === "n1" && ty !== "grammar" && ty !== "vocab" && ty !== "kanji" && ty !== "listening" && ty !== "reading") return;
 	const nextMod = moduleFrom(LEVEL, ty);
 	const here = typeof window !== "undefined" ? pathToKey(window.location.pathname) : "#/";
 	const day = parseDayRoute(here);
@@ -540,7 +540,7 @@ function Sidebar({ routeKey, onLevel }: { routeKey: string; onLevel: (lv: LevelK
 		["grammar", "📘", lx("语法", "Grammar")],
 		["vocab", "📗", lx("词汇", "Vocabulary")],
 		["kanji", "📙", lx("汉字", "Kanji")],
-		...(LEVEL === "n3" || LEVEL === "n2" ? ([["reading", "📕", lx("读解", "Reading")]] as [TypeKey, string, string][]) : []),
+		...(LEVEL === "n3" || LEVEL === "n2" || LEVEL === "n1" ? ([["reading", "📕", lx("读解", "Reading")]] as [TypeKey, string, string][]) : []),
 		...(LEVEL === "n3" || LEVEL === "n2" || LEVEL === "n1" ? ([["listening", "🎧", lx("听解", "Listening")]] as [TypeKey, string, string][]) : []),
 	];
 	const favCount = Object.keys(FAV).length;
@@ -935,7 +935,7 @@ export function StudyApp() {
 
 	useEffect(() => {
 		const mode = new URLSearchParams(location.search).get("module");
-		if (mode === "reading" || mode === "n2reading" || mode === "listening" || mode === "n2listening" || mode === "n1listening") {
+		if (mode === "reading" || mode === "n2reading" || mode === "n1reading" || mode === "listening" || mode === "n2listening" || mode === "n1listening") {
 			setModule(mode);
 			window.history.replaceState({}, "", location.pathname + (isTrial ? "?trial=1" : ""));
 			navTo(entryHash(mode));
@@ -1048,7 +1048,7 @@ export function StudyApp() {
 	const commonRefPage = ["#/usage", "#/ref", "#/katsuyou", "#/henkei", "#/verb-summary", "#/keigo", "#/kougo", "#/jita", "#/wearing", "#/numbers", "#/review"].includes(routeKey) || Boolean(reviewRoute) || Boolean(topicsRoute) || Boolean(itlRoute) || Boolean(enlRoute) || Boolean(minnaRoute);
 	const waitingN2 = isN2() && MODULE !== "n2listening" && MODULE !== "n2reading" && !n2Loaded && !commonRefPage;
 	const waitingN4 = isN4() && !n4Loaded && !commonRefPage;
-	const waitingN1 = isN1() && MODULE !== "n1listening" && !n1Loaded && !commonRefPage;
+	const waitingN1 = isN1() && MODULE !== "n1listening" && MODULE !== "n1reading" && !n1Loaded && !commonRefPage;
 	const waitingSearch = routeKey === "#/search" && (!n2Loaded || !readingSearchLoaded) && !readingSearchError;
 	const weekLocked = isTrial && day && (LEVEL !== "n3" || day.w !== 1);
 	const homeLocked = isTrial && LEVEL !== "n3";
@@ -1079,7 +1079,7 @@ export function StudyApp() {
 		body = (
 			<>
 				{isReading() ? (
-					<LazyReadingN3Content week={day.w} day={day.d} embedded book={MODULE === "n2reading" ? "n2" : "n3"} />
+					<LazyReadingN3Content week={day.w} day={day.d} embedded book={MODULE === "n2reading" ? "n2" : MODULE === "n1reading" ? "n1" : "n3"} />
 				) : MODULE === "n2listening" ? (
 					<LazyListeningN2Content chapter={day.w} section={day.d} embedded />
 				) : MODULE === "n1listening" ? (

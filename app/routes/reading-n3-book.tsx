@@ -1,5 +1,6 @@
 import { createContext, Fragment, useContext, useEffect, useMemo, useRef, useState } from "react";
 
+import * as readingN1 from "../data/reading-n1";
 import * as readingN2 from "../data/reading-n2";
 import * as readingN3 from "../data/reading-n3";
 import { loadN2ReadingNotes, type DayNotes, type SentenceNote } from "../data/reading-n2/notes";
@@ -12,7 +13,7 @@ import {
 	type TableCell,
 } from "../data/reading-n3";
 
-const readingBooks = { n3: readingN3, n2: readingN2 } as const;
+const readingBooks = { n3: readingN3, n2: readingN2, n1: readingN1 } as const;
 type ReadingBookKey = keyof typeof readingBooks;
 import { AnswerFeedback } from "../study/answer-feedback";
 import { addMistake, isFav, LANG, lx, navTo, registerFavMeta, toggleFav } from "../study/store";
@@ -352,7 +353,7 @@ function QuestionCard({
 	answerSource: ReadingDay["answerSource"];
 	week: number;
 	day: number;
-	module?: "reading" | "n2reading";
+	module?: "reading" | "n2reading" | "n1reading";
 }) {
 	const [picked, setPicked] = useState<number | null>(null);
 	const [revealed, setRevealed] = useState(false);
@@ -607,7 +608,7 @@ function DayView({
 	data: ReadingDay;
 	showCn: boolean;
 	showGrammar: boolean;
-	module?: "reading" | "n2reading";
+	module?: "reading" | "n2reading" | "n1reading";
 }) {
 	const [notes, setNotes] = useState<DayNotes | undefined>();
 	useEffect(() => {
@@ -879,7 +880,7 @@ export function ReadingN3Content({
 	const sentinelRef = useRef<HTMLDivElement | null>(null);
 
 	const pack = readingBooks[book];
-	const module = book === "n2" ? "n2reading" : "reading";
+	const module = book === "n2" ? "n2reading" : book === "n1" ? "n1reading" : "reading";
 	const data = pack.findDay(week, day);
 
 	useEffect(() => {
@@ -927,7 +928,7 @@ export function ReadingN3Content({
 							</>
 						) : (
 							<>
-								<span>{book === "n2" ? "N2　読解" : "N3　読解"}</span>
+								<span>{book === "n2" ? "N2　読解" : book === "n1" ? "N1　読解" : "N3　読解"}</span>
 								<b>未找到这一课</b>
 							</>
 						)}
