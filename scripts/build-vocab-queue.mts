@@ -674,6 +674,25 @@ for (let i = candidates.length - 1; i >= 0; i--) {
 	if (candidates[i].srcKey === "minna" && (candidates[i].w === "〜屋" || candidates[i].w === "測ります、量ります")) candidates.splice(i, 1);
 }
 if (counts.minna) counts.minna.gross -= 2;
+// 26–50課の追加分も同じ扱い（专题には残す）：読みが1モーラの接尾語（〜個＝こ、
+// 〜機＝き、〜後＝ご、〜位＝い）、2行に分割できない国際〜・〜か〜、そして第37課の
+// 〜中（じゅう）と normKey が衝突し既存エントリの同一性を奪う 〜中（ちゅう）。
+const MINNA_QUEUE_EXCLUDED_PAIRS: [string, string][] = [
+	["〜中", "ちゅう"],
+	["〜個", "こ"],
+	["〜機", "き"],
+	["〜後", "ご"],
+	["〜位", "い"],
+	["国際〜", "こくさい"],
+	["〜か〜", "か"],
+	// 第34課の「いかがですか。」は错词本の既存エントリ「いかがですか」（句点なし、
+	// 拆解もそのキーで登録済み）と normKey が衝突し同一性を奪うため、队列からは外す。
+	["いかがですか。", "いかがですか"],
+];
+for (let i = candidates.length - 1; i >= 0; i--) {
+	if (candidates[i].srcKey === "minna" && MINNA_QUEUE_EXCLUDED_PAIRS.some(([w, r]) => candidates[i].w === w && candidates[i].r === r)) candidates.splice(i, 1);
+}
+if (counts.minna) counts.minna.gross -= MINNA_QUEUE_EXCLUDED_PAIRS.length;
 itlMistakeWords();
 classroomWords();
 favourites();

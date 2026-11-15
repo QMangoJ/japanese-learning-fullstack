@@ -248,7 +248,7 @@ export function Sheet({
 								<SheetTile icon="📜" label={lx("漢字的旅程", "Journey of Kanji")} onGo={go("#/topics/kanji-journey")} />
 								<SheetTile icon="💭" label={lx("「気」相关的表达", "Expressions with 気")} onGo={go("#/topics/ki-expressions")} />
 								<SheetTile icon="🏋️" label={lx("健身", "Fitness")} onGo={go("#/topics/fitness")} />
-								<SheetTile icon="📚" label={lx("初级II生词（35–42课）", "Minna II Vocab (L35–42)")} onGo={go("#/topics/minna2-35-42")} />
+								<SheetTile icon="📚" label={lx("初级II生词（26–50课）", "Minna II Vocab (L26–50)")} onGo={go("#/topics/minna2-35-42")} />
 							</Grid>
 							<SheetSectionHead title={lx("本模块", "This module")} sub={modLabel()} />
 							<Grid columns={3} gap={2} xstyle={sheetStyles.grid}>

@@ -630,7 +630,7 @@ function Sidebar({ routeKey, onLevel }: { routeKey: string; onLevel: (lv: LevelK
 				{row("#/topics/kanji-journey", "📜", lx("漢字的旅程", "Journey of Kanji"), null, h === "#/topics/kanji-journey")}
 				{row("#/topics/ki-expressions", "💭", lx("「気」相关的表达", "Expressions with 気"), null, h === "#/topics/ki-expressions")}
 				{row("#/topics/fitness", "🏋️", lx("健身", "Fitness"), null, h === "#/topics/fitness")}
-				{row("#/topics/minna2-35-42", "📚", lx("初级II生词（35–42课）", "Minna II Vocab (L35–42)"), null, h === "#/topics/minna2-35-42")}
+				{row("#/topics/minna2-35-42", "📚", lx("初级II生词（26–50课）", "Minna II Vocab (L26–50)"), null, h === "#/topics/minna2-35-42")}
 			</div>
 			<div className="side-foot">
 				{row("#/usage", "⏱️", lx("使用时间", "Study time"), null, h === "#/usage")}

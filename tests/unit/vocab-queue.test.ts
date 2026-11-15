@@ -302,7 +302,17 @@ describe("built word list (public/data/vocab-queue.json)", () => {
 		// "to fit"; やかん "kettle" vs 夜間 "nighttime"), different forms
 		// （やめた vs やめちゃった）,
 		// and single-kanji study cards read ソウ vs the kana word そう.
-		const allowed = new Set(["なおす", "ね", "のる", "やめた", "そう", "あいます", "やかん"]);
+		// つけます [醤油を] "dip" (Minna L34, taught in kana) vs 付けます
+		// [丸を] "mark" are different senses as taught, like なおす.
+		// とります "rob, steal" (taught in kana) vs 取ります [休みを] "take
+		// (leave)" vs 撮ります "film" — three senses of とる as taught.
+		// つきます [嘘を〜] "tell (a lie)" vs 付きます "be attached" and
+		// おります (いる's humble) vs 折ります "fold" are different verbs.
+		// へん and しろ are ambiguous headwords （変/辺, 白/城 share a reading).
+		// たまに: the lesson-review source data mis-reads 雪合戦/チャーハン
+		// as たまに (their jp_r carries たまに — a table misalignment in the
+		// Preply doc data, pre-existing); たまに itself has no kanji twin.
+		const allowed = new Set(["なおす", "ね", "のる", "やめた", "そう", "あいます", "やかん", "つけます", "とります", "つきます", "おります", "へん", "しろ", "たまに"]);
 		const byReading = new Map<string, VocabWord[]>();
 		for (const w of payload.words) {
 			if (!w.r) continue;
