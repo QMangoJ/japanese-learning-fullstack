@@ -8,6 +8,11 @@ import { Sheet } from "../../app/study/Sheet";
 import { bootReadingSearch, openSearchHit, resetStudyStateForTests, searchCategoryForModule, searchHits, setNavImpl } from "../../app/study/store";
 
 const POINTS: Record<number, string[]> = {
+	35: ["l35-ba", "l35-kereba-nara", "l35-ba-ii", "l35-nara", "l35-ba-hodo"],
+	36: ["l36-youni-mokuteki", "l36-youni-narimashita", "l36-youni-shiteimasu", "l36-youni-shitekudasai"],
+	37: ["l37-ukemi", "l37-mochimono", "l37-mono", "l37-zairyou"],
+	38: ["l38-no-wa", "l38-no-ga", "l38-no-wo", "l38-no-wo-shitteimasu", "l38-kyouchou"],
+	39: ["l39-te", "l39-de", "l39-node"],
 	40: ["l40-ka", "l40-kadouka", "l40-temimasu"],
 	41: ["l41-itadakimasu", "l41-kudasaimasu", "l41-yarimasu", "l41-te-itadakimasu", "l41-te-kudasaimasu", "l41-te-yarimasu", "l41-kudasaimasenka"],
 	42: ["l42-tameni", "l42-noni-use", "l42-kakarimasu"],
@@ -36,13 +41,13 @@ const TEXTBOOK_LINES = [
 ];
 
 describe("minna no nihongo grammar", () => {
-	it("keeps shokyu II lessons 40-50 and leaves room for chukyu", () => {
+	it("keeps shokyu II lessons 35-50 and leaves room for chukyu", () => {
 		expect(validateMinnaCatalog(MINNA_BOOKS)).toEqual([]);
 		expect(MINNA_BOOKS.map((book) => book.id)).toEqual(["shokyu-2"]);
 		const book = MINNA_BOOKS[0];
 		expect(book.stage).toBe("shokyu");
 		expect(book.edition).toBe(2);
-		expect(book.lessons.map((lesson) => lesson.number)).toEqual([40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50]);
+		expect(book.lessons.map((lesson) => lesson.number)).toEqual([35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50]);
 		for (const lesson of book.lessons) {
 			expect(lesson.points.map((point) => point.id)).toEqual(POINTS[lesson.number]);
 		}

@@ -1,7 +1,7 @@
 /**
  * みんなの日本語 语法讲解。
  *
- * 现在只收初級II 第2版第40–50课（初級到第50课结束）。
+ * 现在只收初級II 第2版第35–50课（初級到第50课结束）。
  * 中級以后追加：再 push 一本 `stage: "chukyu"` 的 MinnaBook，课号用那一册自己的课序。
  * 文型划分对照公开课次表（たのすけ「26～50課の学習項目」、みんなでNihonGO、
  * 日本の言葉と文化 的初級2文型一覧）。例句是复习用的原创句，不是教材原文。
@@ -168,6 +168,500 @@ const shokyu2: MinnaBook = {
 	titleJa: "みんなの日本語 初級II",
 	titleEn: "Minna no Nihongo Shokyu II",
 	lessons: [
+		{
+			number: 35,
+			titleZh: "假定条件・求建议",
+			titleEn: "Hypothetical conditions, asking for advice",
+			goalZh: "能说实现某事所需的假定条件；也能在某种条件下给出判断，或向人求指示、建议。",
+			goalEn: "State a hypothetical condition needed for something to happen, give a judgment under a condition, and ask for advice or instructions.",
+			points: [
+				{
+					id: "l35-ba",
+					pattern: "V{条件形|じょうけんけい}（ば）、〜",
+					reading: "じょうけんけい ば",
+					connection: "条件形的做法：1组动词把词尾う段改成え段＋ば（書く→書けば、急ぐ→急げば）；2组去掉る＋れば（食べる→食べれば）；3组 する→すれば、来る→くれば。否定是ない形＋ければ（なければ）。「ば」前面是条件，后面是结果、判断或建议；后面不能是已经确定的过去事实，那时用「たら」。",
+					zh: "「ば」表示假定条件：只要前项成立，后项就成立。常用来讲规律、给建议、做判断。",
+					en: "The ば conditional states a hypothetical condition: if the first part holds, the second follows. It suits general truths, judgments, and advice.",
+					examples: [
+						{
+							jp: "{地下鉄|ちかてつ}に{乗|の}れば、{新宿|しんじゅく}まで15{分|ふん}で{行|い}けます。",
+							zh: "坐地铁的话，15分钟就能到新宿。",
+							en: "If you take the subway, you can get to Shinjuku in 15 minutes.",
+						},
+						{
+							jp: "{毎晩|まいばん}{復習|ふくしゅう}すれば、{試験|しけん}の{前|まえ}に{慌|あわ}てません。",
+							zh: "每天晚上复习的话，考试前就不会慌。",
+							en: "If you review every evening, you will not panic before the exam.",
+							glosses: [{ surface: "慌", reading: "あわ", zh: "慌张（慌てる）" }],
+						},
+					],
+				},
+				{
+					id: "l35-kereba-nara",
+					pattern: "イAければ／ナA・Nなら、〜",
+					reading: "ければ なら",
+					connection: "い形容词去掉い＋ければ（安い→安ければ），否定是「くなければ」。な形容词和名词直接＋なら（静かなら、学生なら），否定是「じゃなければ／でなければ」。",
+					zh: "形容词和名词不直接接「ば」：i形容词用「ければ」，na形容词和名词用「なら」。",
+					en: "Adjectives and nouns do not take ば directly: i-adjectives use ければ, and na-adjectives and nouns use なら.",
+					examples: [
+						{
+							jp: "{値段|ねだん}が{安|やす}ければ、もう{一台|いちだい}{買|か}います。",
+							zh: "如果价格便宜，我就再买一台。",
+							en: "If the price is low, I will buy one more.",
+						},
+						{
+							jp: "{明日|あした}が{休|やす}みなら、{一緒|いっしょ}に{映画|えいが}を{見|み}に{行|い}きませんか。",
+							zh: "如果明天休息，要不要一起去看电影？",
+							en: "If tomorrow is a day off, shall we go see a movie together?",
+						},
+					],
+				},
+				{
+					id: "l35-ba-ii",
+					pattern: "〜んですが、{疑問詞|ぎもんし}＋Vばいいですか",
+					reading: "ぎもんし ばいいですか",
+					connection: "问「该怎么做才好」时用。先用「〜んですが」铺垫自己的情况，再问「どこで／何を／どう＋动词条件形＋いいですか」。",
+					zh: "想请人告诉自己该做什么、怎么做时，用疑问词加条件形再加「いいですか」。",
+					en: "To ask what you should do, put a question word before the conditional and add いいですか.",
+					examples: [
+						{
+							jp: "{傘|かさ}を{忘|わす}れたんですが、どこで{買|か}えばいいですか。",
+							zh: "我把伞忘带了，请问在哪儿买好？",
+							en: "I forgot my umbrella — where should I buy one?",
+						},
+						{
+							jp: "{熱|ねつ}が{下|さ}がらないんですが、どんな{薬|くすり}を{飲|の}めばいいですか。",
+							zh: "烧一直退不下来，该吃什么药好？",
+							en: "My fever will not go down — what medicine should I take?",
+						},
+					],
+				},
+				{
+					id: "l35-nara",
+					pattern: "Nなら、〜",
+					reading: "なら",
+					connection: "接在名词后面，先接住对方的话题，再给出自己的建议、信息或判断。话题是场所、食物、店名等时特别常用。和假定条件的「なら」不同，这里重点在「说到……的话」。",
+					zh: "「名词＋なら」是先接过话题再说话：说到这个，我的建议是……。给人推荐、提供信息时很自然。",
+					en: "Noun plus なら picks up the topic and adds your recommendation or information: if it is X you are after, then...",
+					examples: [
+						{
+							jp: "{安|やす}いホテルなら、{駅前|えきまえ}のビジネスホテルがいいですよ。",
+							zh: "要说便宜的酒店，车站前的商务酒店不错。",
+							en: "If you want a cheap hotel, the business hotel in front of the station is good.",
+						},
+						{
+							jp: "{静|しず}かなカフェなら、{図書館|としょかん}の{隣|となり}の{店|みせ}がおすすめです。",
+							zh: "要说安静的咖啡馆，图书馆旁边的那家值得推荐。",
+							en: "For a quiet café, I recommend the one next to the library.",
+						},
+					],
+				},
+				{
+					id: "l35-ba-hodo",
+					pattern: "〜ば〜ほど／〜なら〜なほど",
+					reading: "ば ほど なら なほど",
+					connection: "同一个词重复两次：动词和い形容词用「ば」形＋原形＋ほど（読めば読むほど、安ければ安いほど）；な形容词用「なら」＋「な」＋ほど（静かなら静かなほど）。表示程度随着前项一起变化。",
+					zh: "「越……越……」：前项程度越高，后项越是如此。动词、i形容词用「ば～ほど」，na形容词用「なら～なほど」。",
+					en: "The more the first part, the more the second: verbs and i-adjectives use ば…ほど, na-adjectives use なら…なほど.",
+					examples: [
+						{
+							jp: "{日本語|にほんご}は{話|はな}せば{話|はな}すほど{上手|じょうず}になります。",
+							zh: "日语越说越熟练。",
+							en: "The more you speak Japanese, the better you get.",
+						},
+						{
+							jp: "{説明|せつめい}は{短|みじか}ければ{短|みじか}いほど{分|わ}かりやすいです。",
+							zh: "说明越短越容易懂。",
+							en: "The shorter the explanation, the easier it is to follow.",
+						},
+					],
+				},
+			],
+		},
+		{
+			number: 36,
+			titleZh: "目标・变化・努力",
+			titleEn: "Goals, changes, and steady effort",
+			goalZh: "能说到达目标和努力目标；也能说人的能力、事物的状况发生了变化。",
+			goalEn: "State goals you aim to reach and describe changes in ability or circumstances.",
+			points: [
+				{
+					id: "l36-youni-mokuteki",
+					pattern: "V{辞書形|じしょけい}／ない{形|けい}＋ように、〜",
+					reading: "じしょけい ないけい ように",
+					connection: "目的放在前面，后面是为此采取的行动。前面多是自己不能直接控制的结果：可能形、ない形、見える／聞こえる等；主体也可以不同（子どもが風邪を引かないように、窓を閉めた）。同主体、意志动作的目的才可以换成「ために」。",
+					zh: "「ように」说目的：为了达到某个状态而做后面的事。目标常是自己控制不了的结果，比如不迟到、不生病、能看懂。",
+					en: "ように states a purpose aimed at a state you cannot directly will into being, such as not being late or being able to read.",
+					examples: [
+						{
+							jp: "{電車|でんしゃ}に{遅|おく}れないように、{早|はや}めに{家|いえ}を{出|で}ました。",
+							zh: "为了不赶不上电车，我提早出了门。",
+							en: "I left home early so as not to miss the train.",
+						},
+						{
+							jp: "{漢字|かんじ}が{読|よ}めるように、{毎日|まいにち}{少|すこ}しずつ{覚|おぼ}えています。",
+							zh: "为了能读汉字，我每天一点一点地记。",
+							en: "I memorize a little every day so that I can read kanji.",
+						},
+					],
+				},
+				{
+					id: "l36-youni-narimashita",
+					pattern: "V{辞書形|じしょけい}＋ようになりました／Vない＋なくなりました",
+					reading: "ようになりました なくなりました",
+					connection: "表示和以前比，能力或状态变了。肯定用「辞书形＋ようになりました」；否定用ない形去掉い＋なくなりました（飲まない→飲まなくなりました）。",
+					zh: "以前做不到、现在做得到了，用「ようになりました」；以前会、现在不再了，用「なくなりました」。",
+					en: "ようになりました marks a new ability or state; なくなりました marks one that has gone away.",
+					examples: [
+						{
+							jp: "{半年|はんとし}{勉強|べんきょう}して、{日本語|にほんご}で{電話|でんわ}できるようになりました。",
+							zh: "学了半年，现在能用日语打电话了。",
+							en: "After six months of study, I can now make phone calls in Japanese.",
+						},
+						{
+							jp: "{引|ひ}っ{越|こ}してから、{夜|よる}の{騒音|そうおん}が{気|き}にならなくなりました。",
+							zh: "搬家以后，夜里的噪音不再让我在意了。",
+							en: "Since moving, the nighttime noise no longer bothers me.",
+							glosses: [
+								{ surface: "騒音", reading: "そうおん", zh: "噪音" },
+							],
+						},
+					],
+				},
+				{
+					id: "l36-youni-shiteimasu",
+					pattern: "V{辞書形|じしょけい}／ない{形|けい}＋ようにしています",
+					reading: "じしょけい ないけい ようにしています",
+					connection: "自己有意识地持续努力保持某个习惯。和「ようになりました」（已经变了的结果）不同，这里强调现在还在坚持。否定目标用「ない形＋ようにしています」。",
+					zh: "「ようにしています」是自己定下规矩并一直坚持：为了健康早睡、为了省钱不乱买东西。",
+					en: "ようにしています describes a rule you keep for yourself on purpose, an ongoing effort rather than a finished change.",
+					examples: [
+						{
+							jp: "{健康|けんこう}のために、{毎晩|まいばん}11{時|じ}までに{寝|ね}るようにしています。",
+							zh: "为了健康，我坚持每晚11点前睡觉。",
+							en: "For my health, I make a point of getting to bed by eleven.",
+						},
+						{
+							jp: "{無駄|むだ}な{物|もの}を{買|か}わないように、リストを{作|つく}ってから{買|か}い{物|もの}しています。",
+							zh: "为了不买多余的东西，我先列清单再购物。",
+							en: "I make a list before shopping so I do not buy things I do not need.",
+							glosses: [{ surface: "無駄", reading: "むだ", zh: "多余、浪费" }],
+						},
+					],
+				},
+				{
+					id: "l36-youni-shitekudasai",
+					pattern: "V{辞書形|じしょけい}／ない{形|けい}＋ようにしてください",
+					reading: "じしょけい ないけい ようにしてください",
+					connection: "对别人提出持续性的要求或提醒，语气像交代规矩，工作场合和告示里常见。否定用「ない形＋ようにしてください」。",
+					zh: "请对方以后一直注意某件事时用「ようにしてください」，像交代规矩，比一次性的「てください」更正式。",
+					en: "ようにしてください asks someone to keep doing (or not doing) something as a standing rule.",
+					examples: [
+						{
+							jp: "{会議|かいぎ}の{前|まえ}に、{資料|しりょう}を{共有|きょうゆう}フォルダに{入|い}れるようにしてください。",
+							zh: "开会前，请把资料放进共享文件夹。",
+							en: "Please put the materials in the shared folder before meetings.",
+							glosses: [
+								{ surface: "資料", reading: "しりょう", zh: "资料" },
+								{ surface: "共有", reading: "きょうゆう", zh: "共享" },
+							],
+						},
+						{
+							jp: "{廊下|ろうか}では{走|はし}らないようにしてください。",
+							zh: "请不要在走廊里跑。",
+							en: "Please do not run in the corridor.",
+							glosses: [{ surface: "廊下", reading: "ろうか", zh: "走廊" }],
+						},
+					],
+				},
+			],
+		},
+		{
+			number: 37,
+			titleZh: "被动句",
+			titleEn: "The passive voice",
+			goalZh: "能从说话人的视角讲自己受到的行为和受困扰的经历；也能用被动句说明事物的状况和事实。",
+			goalEn: "Talk from your own viewpoint about things done to you, and describe facts and situations with the passive.",
+			points: [
+				{
+					id: "l37-ukemi",
+					pattern: "{人|ひと}は{人|ひと}にV{受身形|うけみけい}",
+					reading: "うけみけい",
+					connection: "受身形的做法：1组う段→あ段＋れる（怒る→怒られる、言う→言われる）；2组る→られる（褒める→褒められる）；3组する→される、来る→来（こ）られる。直接受身里，我是动作的直接对象，行为人用「に」。",
+					zh: "被动句把「我受到的动作」放在前面说。被老师批评、被上司提问，都用这个形。",
+					en: "The passive puts the person affected first; the doer is marked with に.",
+					examples: [
+						{
+							jp: "{会議中|かいぎちゅう}に{部長|ぶちょう}に{質問|しつもん}されて、うまく{答|こた}えられませんでした。",
+							zh: "开会时被部长提问，我没能答好。",
+							en: "I was asked a question by the department head during the meeting and could not answer well.",
+							glosses: [
+								{ surface: "部長", reading: "ぶちょう", zh: "部长" },
+								{ surface: "質問", reading: "しつもん", zh: "提问" },
+							],
+						},
+						{
+							jp: "{駅|えき}で{知|し}らない{人|ひと}に{声|こえ}をかけられて、{少|すこ}し{驚|おどろ}きました。",
+							zh: "在车站被陌生人搭话，吓了一跳。",
+							en: "A stranger spoke to me at the station and it startled me a little.",
+							glosses: [{ surface: "驚", reading: "おどろ", zh: "吃惊（驚く）" }],
+						},
+					],
+				},
+				{
+					id: "l37-mochimono",
+					pattern: "{人|ひと}は{人|ひと}に{物|もの}をV{受身形|うけみけい}",
+					reading: "うけみけい",
+					connection: "东西还是我的，但被别人动了：所有者作主语，东西用「を」，多半带受困扰的语气。行为人用「に」；身体部位等用「を」保留（足を踏まれる）。",
+					zh: "自己的东西被人碰了、拿了，用这个句型：我（所有者）被谁把东西怎么样了。常常表示受了影响。",
+					en: "When someone does something to your belongings, you stay the subject and the thing keeps を.",
+					examples: [
+						{
+							jp: "{電車|でんしゃ}の{中|なか}で、{隣|となり}の{人|ひと}に{足|あし}を{踏|ふ}まれました。",
+							zh: "在电车里被旁边的人踩了脚。",
+							en: "Someone next to me stepped on my foot in the train.",
+							glosses: [{ surface: "踏", reading: "ふ", zh: "踩（踏む）" }],
+						},
+						{
+							jp: "{弟|おとうと}にパソコンを{壊|こわ}されて、レポートが{書|か}けませんでした。",
+							zh: "弟弟把我的电脑弄坏了，报告没写成。",
+							en: "My younger brother broke my computer, so I could not write the report.",
+							glosses: [{ surface: "壊", reading: "こわ", zh: "弄坏（壊す）" }],
+						},
+					],
+				},
+				{
+					id: "l37-mono",
+					pattern: "{物|もの}が／は{人|ひと}・{団体|だんたい}によってV{受身形|うけみけい}",
+					reading: "うけみけい",
+					connection: "事物作主语时，行为人不重要或众所周知，常省略；要特别点出创造者、发现者时用「によって」。历史事实、建筑、作品的说明里最常见。",
+					zh: "介绍建筑、作品、发明时，主语是事物本身；做出它的人或团体用「によって」点出来。",
+					en: "With things as the subject, the doer is often omitted; によって names the creator or discoverer when that matters.",
+					examples: [
+						{
+							jp: "この{橋|はし}は1923{年|ねん}に{建|た}てられました。",
+							zh: "这座桥建于1923年。",
+							en: "This bridge was built in 1923.",
+						},
+						{
+							jp: "この{絵|え}は{有名|ゆうめい}な{画家|がか}によって{描|か}かれました。",
+							zh: "这幅画是位著名画家画的。",
+							en: "This painting was drawn by a famous painter.",
+							glosses: [{ surface: "画家", reading: "がか", zh: "画家" }],
+						},
+					],
+				},
+				{
+					id: "l37-zairyou",
+					pattern: "{原料|げんりょう}から／{材料|ざいりょう}で＋{作|つく}られています",
+					reading: "げんりょう ざいりょう つくられています",
+					connection: "原料是加工后看不出原形的东西（ぶどう→ワイン），用「から作られています」；材料是还能看出原形的东西（木→机），用「で作られています」。「〜られています」表示一直如此的事实。",
+					zh: "说某物是用什么做成的：原料用「から」，材料用「で」；「作られています」是长期事实。",
+					en: "から marks an ingredient transformed beyond recognition; で marks a visible material. られています states a standing fact.",
+					examples: [
+						{
+							jp: "ワインはぶどうから{作|つく}られています。",
+							zh: "葡萄酒是用葡萄酿成的。",
+							en: "Wine is made from grapes.",
+						},
+						{
+							jp: "この{机|つくえ}は{古|ふる}い{木|き}で{作|つく}られています。",
+							zh: "这张桌子是用旧木头做的。",
+							en: "This desk is made of old wood.",
+						},
+					],
+				},
+			],
+		},
+		{
+			number: 38,
+			titleZh: "名词化・强调",
+			titleEn: "Nominalizing with no: impressions, emphasis",
+			goalZh: "能对行为说感想、评价、喜好和擅长与否；能说忘了做该做的事；能确认对方知不知道某条信息；能强调想传达的内容。",
+			goalEn: "Give impressions and likes about actions, say you forgot to do something, check whether someone knows a fact, and emphasize your point.",
+			points: [
+				{
+					id: "l38-no-wa",
+					pattern: "V{辞書形|じしょけい}＋のは＋{形容詞|けいようし}です",
+					reading: "じしょけい のは けいようし",
+					connection: "「の」把动作变成名词，感想、评价放后面：のは楽しいです／大変です／大事です。评价、喜好里用「が」的形容词（好き、上手等）不放这里，看下一条。",
+					zh: "想对「做某事」本身发表感想时，用「のは＋形容词」：一个人旅行是开心的，记住汉字是难的。",
+					en: "のは turns the action into a topic you can evaluate: traveling alone is fun; getting up early is tough.",
+					examples: [
+						{
+							jp: "{一人|ひとり}で{旅行|りょこう}するのは{自由|じゆう}で{楽|たの}しいです。",
+							zh: "一个人旅行自由又开心。",
+							en: "Traveling alone is free and fun.",
+							glosses: [{ surface: "自由", reading: "じゆう", zh: "自由" }],
+						},
+						{
+							jp: "{朝|あさ}{早|はや}く{起|お}きるのは{大変|たいへん}ですが、{気持|きも}ちがいいです。",
+							zh: "早起很辛苦，但感觉很好。",
+							en: "Getting up early is tough, but it feels good.",
+							glosses: [{ surface: "大変", reading: "たいへん", zh: "辛苦、费劲" }],
+						},
+					],
+				},
+				{
+					id: "l38-no-ga",
+					pattern: "V{辞書形|じしょけい}＋のが＋{形容詞|けいようし}です",
+					reading: "じしょけい のが けいようし",
+					connection: "喜好、擅长、速度类形容词（好き／嫌い／上手／下手／速い／遅い）用「のが」。和「のは」的区别：のは是对整件事的感想、评价；のが多是对习惯、能力的描述。",
+					zh: "说喜欢做某事、擅长做某事时，用「のが」：我喜欢做饭，他游泳很快。",
+					en: "のが goes with adjectives of liking, skill, and speed: 好き, 上手, 下手, 速い.",
+					examples: [
+						{
+							jp: "{私|わたし}は{料理|りょうり}をするのが{好|す}きです。",
+							zh: "我喜欢做饭。",
+							en: "I like cooking.",
+						},
+						{
+							jp: "{彼|かれ}は{泳|およ}ぐのが{速|はや}いです。",
+							zh: "他游泳很快。",
+							en: "He is a fast swimmer.",
+						},
+					],
+				},
+				{
+					id: "l38-no-wo",
+					pattern: "V{辞書形|じしょけい}＋のを{忘|わす}れました",
+					reading: "じしょけい のを わすれました",
+					connection: "该做的事忘了做：把「做某事」用「の」名词化后作「忘れる」的宾语。注意区别：把东西忘在某处是「傘を忘れました」，忘做某事是「のを忘れました」。",
+					zh: "忘了做某事，用「のを忘れました」。忘带东西是「傘を忘れました」，两件事别混。",
+					en: "のを忘れました means you forgot to do something; を忘れました alone means you left an object behind.",
+					examples: [
+						{
+							jp: "{先生|せんせい}にメールを{送|おく}るのを{忘|わす}れました。",
+							zh: "我忘了给老师发邮件。",
+							en: "I forgot to email the teacher.",
+						},
+						{
+							jp: "{電気|でんき}を{消|け}すのを{忘|わす}れて、{出|で}かけてしまいました。",
+							zh: "忘了关灯就出门了。",
+							en: "I went out forgetting to turn off the lights.",
+						},
+					],
+				},
+				{
+					id: "l38-no-wo-shitteimasu",
+					pattern: "{普通形|ふつうけい}＋のを{知|し}っていますか",
+					reading: "ふつうけい のを しっていますか",
+					connection: "确认对方是否知道某个事实：事实用普通形短句＋「の」。回答不知道要说「いいえ、知りません」，不用「知っていません」。陈述句也可以用「のを知っています／知りませんでした」。",
+					zh: "问别人知不知道某件事，用「～のを知っていますか」。回答不知道要说「知りません」，这是固定说法。",
+					en: "Ask whether someone knows a fact with のを知っていますか; the negative answer is 知りません.",
+					examples: [
+						{
+							jp: "{来月|らいげつ}から{電車|でんしゃ}の{料金|りょうきん}が{上|あ}がるのを{知|し}っていますか。",
+							zh: "你知道下个月起电车要涨价吗？",
+							en: "Do you know that train fares go up next month?",
+							glosses: [{ surface: "料金", reading: "りょうきん", zh: "费用、票价" }],
+						},
+						{
+							jp: "{彼女|かのじょ}が{来年|らいねん}{結婚|けっこん}するのを{知|し}りませんでした。",
+							zh: "我之前不知道她明年要结婚。",
+							en: "I did not know she is getting married next year.",
+							glosses: [{ surface: "結婚", reading: "けっこん", zh: "结婚" }],
+						},
+					],
+				},
+				{
+					id: "l38-kyouchou",
+					pattern: "{普通形|ふつうけい}＋のは＋〜です（{強調|きょうちょう}）",
+					reading: "ふつうけい のは きょうちょう",
+					connection: "把想强调的部分放到「のは」的后面：是谁、何时、在哪里做了什么，强调点一目了然。な形容词和名词要用「なのは」（静かなのは、学生なのは）。",
+					zh: "想强调「是谁、在哪儿、什么时候」时，把强调的部分放进「のは～です」：做这个蛋糕的是我妹妹。",
+					en: "The のは…です frame spotlights one element — who, when, or where — by placing it after のは.",
+					examples: [
+						{
+							jp: "このケーキを{作|つく}ったのは{妹|いもうと}です。",
+							zh: "做这个蛋糕的是我妹妹。",
+							en: "It was my younger sister who made this cake.",
+						},
+						{
+							jp: "{私|わたし}が{日本|にほん}へ{来|き}たのは3{年前|ねんまえ}です。",
+							zh: "我来日本是三年前。",
+							en: "It was three years ago that I came to Japan.",
+						},
+					],
+				},
+			],
+		},
+		{
+			number: 39,
+			titleZh: "原因・理由",
+			titleEn: "Causes and polite reasons",
+			goalZh: "能说明因为某个原因产生了某种感情或事态；也能礼貌地陈述理由、辩解和说明情况。",
+			goalEn: "Explain how a cause led to a feeling or situation, and give reasons and explanations politely.",
+			points: [
+				{
+					id: "l39-te",
+					pattern: "Vて／Vなくて、イAくて、〜",
+					reading: "て なくて くて",
+					connection: "て形在这里不是「然后」，而是原因。前项多是自然发生、自己控制不了的事；后项多是感情、状态或已经发生的结果，后项不能是命令、请求或意志表达。",
+					zh: "「て」也能表原因：因为前项，后项（多半是感情或结果）发生了。后面不能接请求或命令。",
+					en: "て can give a cause, usually for a feeling or a result that already happened; requests and commands cannot follow.",
+					examples: [
+						{
+							jp: "{事故|じこ}で{電車|でんしゃ}が{止|と}まって、{会議|かいぎ}に{遅|おく}れました。",
+							zh: "因为事故电车停了，我开会迟到了。",
+							en: "The train stopped because of an accident, and I was late for the meeting.",
+							glosses: [{ surface: "事故", reading: "じこ", zh: "事故" }],
+						},
+						{
+							jp: "{試験|しけん}に{合格|ごうかく}して、とてもうれしかったです。",
+							zh: "考试合格了，非常高兴。",
+							en: "I passed the exam and was very happy.",
+							glosses: [{ surface: "合格", reading: "ごうかく", zh: "合格、通过" }],
+						},
+					],
+				},
+				{
+					id: "l39-de",
+					pattern: "ナAで／Nで、〜",
+					reading: "で",
+					connection: "な形容词和名词的原因形式是「で」（有名で、雨で、病気で）。和动词て形、i形容词くて并列，是同一组表原因的接续。后项同样多为已发生的结果。",
+					zh: "名词和na形容词的原因形式是「で」：因为下雨、因为有名、因为生病。",
+					en: "Nouns and na-adjectives use で for cause: because of rain, because it is famous, because of illness.",
+					examples: [
+						{
+							jp: "{台風|たいふう}で、{飛行機|ひこうき}が{欠航|けっこう}になりました。",
+							zh: "因为台风，航班取消了。",
+							en: "The flight was canceled because of the typhoon.",
+							glosses: [
+								{ surface: "台風", reading: "たいふう", zh: "台风" },
+								{ surface: "欠航", reading: "けっこう", zh: "航班取消" },
+							],
+						},
+						{
+							jp: "この{町|まち}は{温泉|おんせん}で{有名|ゆうめい}です。",
+							zh: "这座小镇以温泉出名。",
+							en: "This town is famous for its hot springs.",
+							glosses: [{ surface: "温泉", reading: "おんせん", zh: "温泉" }],
+						},
+					],
+				},
+				{
+					id: "l39-node",
+					pattern: "{普通形|ふつうけい}＋ので、〜",
+					reading: "ふつうけい ので",
+					connection: "礼貌地讲理由的形式。な形容词、名词用「なので」（静かなので、雨なので）。后项可以是请求、建议、意志（て形表原因时不行）。说明情况、委婉辩解时比「から」更柔和、客观。",
+					zh: "「ので」是礼貌、客观的理由说法，后面可以接请求和打算。说明情况、委婉辩解时比「から」更合适。",
+					en: "ので gives a reason politely and objectively, and unlike the て cause it can precede requests and intentions; na-adjectives and nouns take なので.",
+					examples: [
+						{
+							jp: "{明日|あした}は{朝|あさ}{早|はや}いので、{今夜|こんや}は{早|はや}く{寝|ね}ます。",
+							zh: "明天要早起，所以今晚早点睡。",
+							en: "Tomorrow starts early, so I will go to bed early tonight.",
+						},
+						{
+							jp: "{電車|でんしゃ}が{遅|おく}れたので、{申|もう}し{訳|わけ}ありませんが、10{分|ふん}ほど{遅|おく}れます。",
+							zh: "电车晚点了，非常抱歉，我要迟到10分钟左右。",
+							en: "The train was delayed, so I am sorry, but I will be about ten minutes late.",
+						},
+					],
+				},
+			],
+		},
 		{
 			number: 40,
 			titleZh: "嵌入疑问・试着做",
