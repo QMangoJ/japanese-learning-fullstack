@@ -71,6 +71,14 @@ function PatternExample({ ex }: { ex: ItListeningPatternExample }) {
 	);
 }
 
+/** 键盘 seek 的目标时间：±delta 秒，下限 0，有总时长时上限为总时长。 */
+export function itlSeekTarget(current: number, delta: number, duration?: number): number {
+	let target = current + delta;
+	if (target < 0) target = 0;
+	if (duration && target > duration) target = duration;
+	return target;
+}
+
 function fmtDuration(sec?: number): string {
 	if (!sec) return "";
 	const m = Math.floor(sec / 60);
@@ -397,6 +405,11 @@ function ItListeningDetail({ id }: { id: string }) {
 	const [floatDismissed, setFloatDismissed] = useState(false);
 	const [ytPlaying, setYtPlaying] = useState<boolean | null>(null);
 	const floating = playerOut && !floatDismissed;
+	// 键盘 seek 用：最近一次 getCurrentTime 采样值 + 采样时刻 + 播放状态镜像。
+	// 当前时间靠「采样值 + 播放中流逝时间」本地估算，按键时不必等回传。
+	const ytTimeRef = useRef(0);
+	const ytTimeAtRef = useRef(0);
+	const ytPlayingRef = useRef<boolean | null>(null);
 
 	useEffect(() => {
 		setFloatDismissed(false);
@@ -424,13 +437,23 @@ function ItListeningDetail({ id }: { id: string }) {
 			if (typeof ev.data !== "string" || (!ev.data.includes("onStateChange") && !ev.data.includes("infoDelivery"))) return;
 			try {
 				const d = JSON.parse(ev.data) as { event?: string; info?: number | { playerState?: number } };
+				// getCurrentTime 的回传走 infoDelivery 且 info 是秒数（可带小数）：记为时间采样，不当状态码。
+				if (d.event === "infoDelivery" && typeof d.info === "number") {
+					ytTimeRef.current = d.info;
+					ytTimeAtRef.current = Date.now();
+				}
 				// 两种回传形状：onStateChange 的 info 是数字状态；listening 握手后状态走 infoDelivery 的 info.playerState。
 				// 状态码：1 播放中 / 2 已暂停 / 0 结束 / 5 已定位未播。
 				let st: number | undefined;
-				if (typeof d.info === "number") st = d.info;
-				else if (d.info && typeof d.info.playerState === "number") st = d.info.playerState;
-				if (st === 1) setYtPlaying(true);
-				else if (st === 2 || st === 0 || st === 5) setYtPlaying(false);
+				if (typeof d.info === "number" && d.event !== "infoDelivery") st = d.info;
+				else if (d.info && typeof d.info === "object" && typeof d.info.playerState === "number") st = d.info.playerState;
+				if (st === 1) {
+					setYtPlaying(true);
+					ytPlayingRef.current = true;
+				} else if (st === 2 || st === 0 || st === 5) {
+					setYtPlaying(false);
+					ytPlayingRef.current = false;
+				}
 			} catch {
 				/* 非播放器消息，忽略 */
 			}
@@ -439,8 +462,8 @@ function ItListeningDetail({ id }: { id: string }) {
 		return () => window.removeEventListener("message", onMsg);
 	}, []);
 
-	const ytCommand = (func: string) => {
-		iframeRef.current?.contentWindow?.postMessage(JSON.stringify({ event: "command", func, args: [] }), "*");
+	const ytCommand = (func: string, args: unknown[] = []) => {
+		iframeRef.current?.contentWindow?.postMessage(JSON.stringify({ event: "command", func, args }), "*");
 	};
 	const subscribeYtState = () => {
 		const win = iframeRef.current?.contentWindow;
@@ -448,6 +471,7 @@ function ItListeningDetail({ id }: { id: string }) {
 		// listening 握手：不加载 API 脚本时靠它订阅状态回传（infoDelivery）。
 		win.postMessage(JSON.stringify({ event: "listening", id: "itl-player", channel: "widget" }), "*");
 		win.postMessage(JSON.stringify({ event: "command", func: "addEventListener", args: ["onStateChange"] }), "*");
+		ytCommand("getCurrentTime");
 	};
 
 	// 悬浮窗出现时再补一次订阅（防 load 时机太早握手没赶上）。
@@ -458,11 +482,50 @@ function ItListeningDetail({ id }: { id: string }) {
 		if (ytPlaying) {
 			ytCommand("pauseVideo");
 			setYtPlaying(false);
+			ytPlayingRef.current = false;
 		} else {
 			ytCommand("playVideo");
 			setYtPlaying(true);
+			ytPlayingRef.current = true;
 		}
 	};
+
+	// 键盘 ←/→ 快退/快进 2 秒：seekTo 本身不改变播放/暂停状态，暂停时同样生效。
+	// 悬浮小窗与内嵌是同一个 iframe 实例，本监听天然同时覆盖两种形态。
+	const seekYtBy = (delta: number) => {
+		const base = ytPlayingRef.current && ytTimeAtRef.current ? ytTimeRef.current + (Date.now() - ytTimeAtRef.current) / 1000 : ytTimeRef.current;
+		const target = itlSeekTarget(base, delta, article?.durationSec ?? undefined);
+		ytCommand("seekTo", [target, true]);
+		ytTimeRef.current = target;
+		ytTimeAtRef.current = Date.now();
+	};
+
+	useEffect(() => {
+		if (!article?.videoId) return;
+		const onKey = (e: KeyboardEvent) => {
+			if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
+			if (e.metaKey || e.ctrlKey || e.altKey) return;
+			const t = e.target as HTMLElement | null;
+			if (t) {
+				const tag = t.tagName;
+				// 输入区/可编辑区/滑杆上不拦截（与听解页既有约定一致）。
+				if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT" || t.isContentEditable || t.getAttribute("role") === "slider") return;
+			}
+			e.preventDefault();
+			seekYtBy(e.key === "ArrowLeft" ? -2 : 2);
+		};
+		document.addEventListener("keydown", onKey);
+		return () => document.removeEventListener("keydown", onKey);
+	}, [article?.videoId, article?.durationSec]);
+
+	// 播放中每 5 秒向播放器校准一次当前时间，防止长播后本地估算漂移。
+	useEffect(() => {
+		if (!article?.videoId) return;
+		const iv = window.setInterval(() => {
+			if (ytPlayingRef.current) ytCommand("getCurrentTime");
+		}, 5000);
+		return () => window.clearInterval(iv);
+	}, [article?.videoId]);
 
 	if (error) {
 		return (
@@ -536,6 +599,7 @@ function ItListeningDetail({ id }: { id: string }) {
 					<a className="itl-yt-open" href={article.youtube} target="_blank" rel="noreferrer">
 						▶ {lx("在 YouTube 打开原视频", "Open the original video on YouTube")} ↗
 					</a>
+					<p className="itl-key-hint">{lx("键盘 ← 快退 2 秒 · → 快进 2 秒", "Keyboard: ← back 2s · → forward 2s")}</p>
 				</section>
 			) : null}
 
