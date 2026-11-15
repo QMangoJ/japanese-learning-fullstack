@@ -10,7 +10,7 @@ import { lx, THEME } from "./store";
 import "./astryx.css";
 import { jstDayKey, subscribeUsage, usageSnapshot, type UsageSnapshot } from "./usage-time";
 
-const SERVER_SNAPSHOT: UsageSnapshot = { days: {}, signedIn: false, synced: false, kind: "account" };
+const SERVER_SNAPSHOT: UsageSnapshot = { days: {}, signedIn: false, synced: false, persisted: true, kind: "account" };
 
 function durationLabel(seconds: number): string {
 	const total = Math.max(0, Math.floor(seconds));
@@ -32,11 +32,13 @@ export function UsagePage() {
 	const today = jstDayKey(Date.now());
 	const days = Object.entries(snap.days).sort((a, b) => (a[0] < b[0] ? 1 : -1));
 	const total = days.reduce((sum, [, sec]) => sum + sec, 0);
-	const status = !snap.signedIn
-		? lx("先记在这台设备上。登录后写入账号，换一台设备也能看到。", "Stored on this device until you sign in.")
-		: snap.synced
-			? lx("已记在账号里，按天永久保存。", "Saved to your account. Days are kept permanently.")
-			: lx("已登录。网络恢复后会补传到账号。", "Signed in. Time will upload when the network is back.");
+	const status = !snap.persisted
+		? lx("这台设备无法把时间存到本地，已改为联网时直接记到账号；离线时请尽量保持页面打开。", "This device can't store time locally, so it is saved to your account while online. Keep the page open when offline.")
+		: !snap.signedIn
+			? lx("先记在这台设备上。登录后写入账号，换一台设备也能看到。", "Stored on this device until you sign in.")
+			: snap.synced
+				? lx("已记在账号里，按天永久保存。", "Saved to your account. Days are kept permanently.")
+				: lx("已登录。网络恢复后会补传到账号。", "Signed in. Time will upload when the network is back.");
 	return (
 		<section className="usage-page">
 			<p className="usage-lead">

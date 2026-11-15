@@ -16,6 +16,7 @@ export type UsageSnapshot = {
 	days: DayMap;
 	signedIn: boolean;
 	synced: boolean;
+	persisted: boolean;
 	kind: UsageKind;
 };
 
@@ -152,7 +153,7 @@ export function usageEndpoint(kind: UsageKind): string {
 	return "/api/usage";
 }
 
-const EMPTY_SNAPSHOT: UsageSnapshot = { days: {}, signedIn: false, synced: false, kind: "account" };
+const EMPTY_SNAPSHOT: UsageSnapshot = { days: {}, signedIn: false, synced: false, persisted: true, kind: "account" };
 
 let kind: UsageKind = "account";
 let remote: DayMap = {};
@@ -167,8 +168,12 @@ let snapshot: UsageSnapshot = EMPTY_SNAPSHOT;
 let timer = 0;
 let started = 0;
 let syncing: Promise<void> | null = null;
-// Study time is kept locally during the session and uploaded once per page open (KV write budget).
-let syncedThisPage = false;
+// Sync is no longer one-shot per page open: a session uploads its accrued time while it runs
+// (see the tick check) and again when the page is hidden, so a session's time reaches the account
+// even if the page is later discarded or its local storage is lost before the next page open.
+let lastSyncOkAt = 0;
+let persistOk = true;
+let ticksSinceSyncCheck = 0;
 const listeners = new Set<() => void>();
 const tabId = `t${Math.random().toString(36).slice(2)}`;
 
@@ -192,13 +197,18 @@ function loadLocal(): LocalUsage {
 	}
 }
 
-function saveLocal() {
-	if (typeof localStorage === "undefined") return;
+function saveLocal(): boolean {
+	if (typeof localStorage === "undefined") return persistOk;
 	try {
 		localStorage.setItem(LOCAL_KEY, JSON.stringify(local));
+		persistOk = true;
 	} catch {
-		/* Private mode can refuse the write. The in-memory day still updates. */
+		/* Private mode or a full storage quota can refuse the write. The in-memory day still
+		   updates; the failure is surfaced via the snapshot and the sync cadence shortens so
+		   the server copy becomes the durable one. */
+		persistOk = false;
 	}
+	return persistOk;
 }
 
 function daysWithOpenSegment(now: number): DayMap {
@@ -209,7 +219,7 @@ function daysWithOpenSegment(now: number): DayMap {
 }
 
 function publish(now = Date.now()) {
-	snapshot = { days: combineDays(remote, remoteMine, daysWithOpenSegment(now)), signedIn, synced: lastSyncOk, kind };
+	snapshot = { days: combineDays(remote, remoteMine, daysWithOpenSegment(now)), signedIn, synced: lastSyncOk, persisted: persistOk, kind };
 	for (const listener of listeners) listener();
 }
 
@@ -277,10 +287,19 @@ function tick() {
 		segmentStart = active ? now : null;
 	}
 	publish(now);
+	// Bounded in-session sync: at most a cheap need-check every 60 ticks (every 15 while local
+	// persistence is failing, when the server copy is the only durable one). doSync itself
+	// decides whether any network traffic is warranted.
+	ticksSinceSyncCheck += 1;
+	if (ticksSinceSyncCheck >= (persistOk ? 60 : 15)) {
+		ticksSinceSyncCheck = 0;
+		void syncNow();
+	}
 }
 
 function onPageHide() {
 	if (!audioPlaying) closeSegment();
+	flushUpload();
 }
 
 function credentials(): RequestCredentials {
@@ -313,23 +332,36 @@ function readRemote(body: { days?: unknown; mine?: unknown }) {
 }
 
 // A `lite` POST answers with the posted days only; fold them into what the GET returned.
+// Per-day values only ever grow (the server keeps the max per device), so merging with max
+// can never make the displayed totals regress within a session.
 function mergeRemote(body: { days?: unknown; mine?: unknown }) {
-	remote = { ...remote, ...sanitizeDays(body.days) };
-	remoteMine = { ...remoteMine, ...sanitizeDays(body.mine) };
+	const days = sanitizeDays(body.days);
+	const mine = sanitizeDays(body.mine);
+	for (const [day, sec] of Object.entries(days)) remote[day] = Math.max(remote[day] || 0, sec);
+	for (const [day, sec] of Object.entries(mine)) remoteMine[day] = Math.max(remoteMine[day] || 0, sec);
 }
 
-async function doSync() {
+const SYNC_GET_FRESH_MS = 5 * 60_000;
+
+/** Absolute per-day totals the server is behind on for this device. */
+function pendingTotals(): DayMap {
+	const totals: DayMap = {};
+	for (const [day, sec] of Object.entries(local.days)) if (sec > (remoteMine[day] || 0)) totals[day] = sec;
+	return totals;
+}
+
+async function doSync(force = false) {
 	if (kind === "account" && !signedIn) return;
 	if (typeof fetch === "undefined" || !local.device) return;
-	if (syncedThisPage) return;
 	const policyKey = `usage:${kind}`;
+	// Non-forced runs (tick / foreground return) only touch the network when there is something
+	// to upload or the server copy is stale; the failure cooldown still gates every attempt.
+	if (!force && !Object.keys(pendingTotals()).length && Date.now() - lastSyncOkAt < SYNC_GET_FRESH_MS) return;
 	if (!canAttemptSync(policyKey)) return;
-	syncedThisPage = true;
 	const endpoint = withDevice(usageEndpoint(kind));
 	try {
 		const got = await fetch(endpoint, { credentials: credentials(), cache: "no-store" });
 		if (got.status === 401) {
-			syncedThisPage = false;
 			signedIn = false;
 			lastSyncOk = false;
 			publish();
@@ -343,8 +375,7 @@ async function doSync() {
 		}
 		readRemote((await got.json()) as { days?: unknown; mine?: unknown });
 		// Upload absolute totals for days the server is behind on. The server keeps the max per device, so this is safe to repeat.
-		const totals: DayMap = {};
-		for (const [day, sec] of Object.entries(local.days)) if (sec > (remoteMine[day] || 0)) totals[day] = sec;
+		const totals = pendingTotals();
 		if (Object.keys(totals).length && claimLock()) {
 			const posted = await fetch(`${endpoint}&lite=1`, {
 				method: "POST",
@@ -361,6 +392,7 @@ async function doSync() {
 			mergeRemote((await posted.json()) as { days?: unknown; mine?: unknown });
 		} else noteSyncResult(policyKey, got.status);
 		lastSyncOk = true;
+		lastSyncOkAt = Date.now();
 	} catch {
 		noteSyncResult(policyKey, 0);
 		lastSyncOk = false;
@@ -368,12 +400,48 @@ async function doSync() {
 	publish();
 }
 
-function syncNow() {
+function syncNow(force = false) {
 	if (syncing) return syncing;
-	syncing = doSync().finally(() => {
+	syncing = doSync(force).finally(() => {
 		syncing = null;
 	});
 	return syncing;
+}
+
+/**
+ * Last-chance upload when the page is being hidden or unloaded: POST any totals the server is
+ * behind on with keepalive so the browser finishes the request while the page goes away. This
+ * is what saves a session's time when iOS later discards the page (or its storage) before the
+ * next page open. The server merge is max-per-device, so racing a normal sync is harmless.
+ */
+function flushUpload() {
+	if (typeof fetch === "undefined" || !local.device) return;
+	if (kind === "account" && !signedIn) return;
+	const totals = pendingTotals();
+	if (!Object.keys(totals).length) return;
+	if (!claimLock()) return;
+	const policyKey = `usage:${kind}`;
+	const endpoint = withDevice(usageEndpoint(kind));
+	try {
+		void fetch(`${endpoint}&lite=1`, {
+			method: "POST",
+			credentials: credentials(),
+			headers: { "content-type": "application/json" },
+			body: JSON.stringify({ device: local.device, totals }),
+			keepalive: true,
+		})
+			.then(async (res) => {
+				noteSyncResult(policyKey, res.status);
+				if (!res.ok) return;
+				mergeRemote((await res.json()) as { days?: unknown; mine?: unknown });
+				lastSyncOk = true;
+				lastSyncOkAt = Date.now();
+				publish();
+			})
+			.catch(() => noteSyncResult(policyKey, 0));
+	} catch {
+		/* The page is going away; the next successful sync reconciles from local state. */
+	}
 }
 
 function onActivity() {
@@ -384,8 +452,15 @@ function onActivity() {
 
 function onVisibility() {
 	const now = Date.now();
-	if (typeof document !== "undefined" && document.hidden && !audioPlaying) closeSegment(now);
-	else if (counting(now) && segmentStart == null) segmentStart = now;
+	if (typeof document !== "undefined" && document.hidden) {
+		if (!audioPlaying) closeSegment(now);
+		flushUpload();
+		return;
+	}
+	if (counting(now) && segmentStart == null) segmentStart = now;
+	// Returning to the app is the natural moment to heal a sync that failed earlier in the
+	// session (e.g. a network blip at page open); doSync gates itself on need and cooldown.
+	void syncNow();
 }
 
 function onStorage(event: StorageEvent) {
@@ -420,10 +495,10 @@ export function refreshUsageAccount(signedInNow?: boolean) {
 			remoteMine = {};
 		}
 		publish();
-		if (signedIn) void syncNow();
+		if (signedIn) void syncNow(true);
 		return;
 	}
-	void refreshAccount().then(() => syncNow());
+	void refreshAccount().then(() => syncNow(true));
 }
 
 function startTimer() {
@@ -454,7 +529,7 @@ export function startUsageTracker(nextKind: UsageKind = "account"): () => void {
 			document.addEventListener("visibilitychange", onVisibility);
 			window.addEventListener("pagehide", onPageHide);
 			window.addEventListener("storage", onStorage);
-			void refreshAccount().then(() => syncNow());
+			void refreshAccount().then(() => syncNow(true));
 			if (counting(Date.now())) segmentStart = Date.now();
 			publish();
 		}

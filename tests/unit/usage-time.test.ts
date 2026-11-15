@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import { applySecurityHeaders } from "../../workers/security-headers";
 import { isUsageRequest, withUsageCors } from "../../workers/usage-cors";
@@ -182,5 +182,151 @@ describe("per-day records", () => {
 	it("combines remote with live local without double counting", () => {
 		expect(combineDays({ "2026-10-14": 150 }, { "2026-10-14": 100 }, { "2026-10-14": 120, "2026-10-15": 5 })).toEqual({ "2026-10-14": 170, "2026-10-15": 5 });
 		expect(parseUsageReport({ device: "BAD", totals: {} })).toBeNull();
+	});
+});
+
+describe("sync failure cooldown", () => {
+	it("retries a network error after a short floor but keeps server rejections on the long cooldown", async () => {
+		const { canAttemptSync, noteSyncResult, resetSyncPolicyForTests } = await import("../../app/study/kv-sync-policy");
+		const t0 = Date.parse("2026-11-15T03:00:00.000Z");
+		resetSyncPolicyForTests();
+		noteSyncResult("usage:account", 0, t0); // network error: never reached the server
+		expect(canAttemptSync("usage:account", t0 + 30_000)).toBe(false);
+		expect(canAttemptSync("usage:account", t0 + 61_000)).toBe(true);
+		resetSyncPolicyForTests();
+		noteSyncResult("usage:account", 500, t0); // server rejection: may have cost KV quota
+		expect(canAttemptSync("usage:account", t0 + 30 * 60_000)).toBe(false);
+		expect(canAttemptSync("usage:account", t0 + 61 * 60_000)).toBe(true);
+		noteSyncResult("usage:account", 200, t0 + 62 * 60_000); // a success clears the failure
+		expect(canAttemptSync("usage:account", t0 + 62 * 60_000)).toBe(true);
+		resetSyncPolicyForTests();
+		// A caller that notes the HTTP status and then notes a network error for the same
+		// attempt (throw-into-catch bookkeeping) must not downgrade the server rejection.
+		noteSyncResult("usage:account", 503, t0);
+		noteSyncResult("usage:account", 0, t0 + 100);
+		expect(canAttemptSync("usage:account", t0 + 30 * 60_000)).toBe(false);
+		expect(canAttemptSync("usage:account", t0 + 61 * 60_000)).toBe(true);
+		resetSyncPolicyForTests();
+	});
+});
+
+describe("usage tracker runtime", () => {
+	let stop: (() => void) | null = null;
+
+	beforeEach(() => {
+		vi.useFakeTimers();
+		localStorage.clear();
+	});
+
+	afterEach(() => {
+		stop?.();
+		stop = null;
+		vi.unstubAllGlobals();
+		vi.useRealTimers();
+		vi.resetModules();
+		localStorage.clear();
+	});
+
+	function jsonResponse(body: unknown, status = 200) {
+		return new Response(JSON.stringify(body), { status, headers: { "content-type": "application/json" } });
+	}
+
+	function sumDays(days: Record<string, number>): number {
+		return Object.values(days).reduce((a, b) => a + b, 0);
+	}
+
+	it("accrues the whole session while the user keeps scrolling (the reported afternoon scenario)", async () => {
+		// Signed out, so sync is a no-op and only the counting core is exercised.
+		vi.stubGlobal("fetch", vi.fn(async () => jsonResponse({ error: "unauthorized" }, 401)));
+		const mod = await import("../../app/study/usage-time");
+		stop = mod.startUsageTracker("account");
+		// Two hours of studying: the 1s tick runs throughout, the user scrolls every ~4s.
+		for (let s = 0; s < 2 * 60 * 60; s++) {
+			vi.advanceTimersByTime(1000);
+			if (s % 4 === 0) document.dispatchEvent(new Event("scroll"));
+		}
+		expect(sumDays(mod.usageSnapshot().days)).toBeGreaterThanOrEqual(7000);
+		const stored = JSON.parse(localStorage.getItem("usage-time-v1") || "{}") as { days?: Record<string, number> };
+		expect(sumDays(stored.days || {})).toBeGreaterThanOrEqual(7000);
+	});
+
+	it("uploads accrued time during the session, without waiting for the next page open", async () => {
+		const posts: { totals: Record<string, number> }[] = [];
+		vi.stubGlobal("fetch", vi.fn(async (url: string, init?: RequestInit) => {
+			if (url.includes("/api/me")) return jsonResponse({ user: { id: "g_test" } });
+			if (init?.method === "POST") {
+				const body = JSON.parse(String(init.body)) as { totals: Record<string, number> };
+				posts.push(body);
+				return jsonResponse({ days: body.totals, mine: body.totals });
+			}
+			return jsonResponse({ days: {}, mine: {} });
+		}));
+		const mod = await import("../../app/study/usage-time");
+		stop = mod.startUsageTracker("account");
+		await vi.advanceTimersByTimeAsync(1000); // sign-in + initial sync settle
+		for (let s = 0; s < 390; s++) {
+			await vi.advanceTimersByTimeAsync(1000);
+			if (s % 4 === 0) document.dispatchEvent(new Event("scroll"));
+		}
+		expect(posts.length).toBeGreaterThanOrEqual(1);
+		const maxPosted = Math.max(...posts.map((p) => sumDays(p.totals)));
+		expect(maxPosted).toBeGreaterThanOrEqual(300);
+		expect(mod.usageSnapshot().synced).toBe(true);
+	});
+
+	it("heals a transient network failure without a page reopen and merges the server days", async () => {
+		let usageGets = 0;
+		vi.stubGlobal("fetch", vi.fn(async (url: string, init?: RequestInit) => {
+			if (url.includes("/api/me")) return jsonResponse({ user: { id: "g_test" } });
+			if (init?.method === "POST") {
+				const body = JSON.parse(String(init.body)) as { totals: Record<string, number> };
+				return jsonResponse({ days: body.totals, mine: body.totals });
+			}
+			usageGets += 1;
+			if (usageGets === 1) throw new Error("network down"); // the page-open sync hits a radio blip
+			const mod0 = await import("../../app/study/usage-time");
+			return jsonResponse({ days: { [mod0.jstDayKey(Date.now())]: 500 }, mine: {} });
+		}));
+		const mod = await import("../../app/study/usage-time");
+		stop = mod.startUsageTracker("account");
+		await vi.advanceTimersByTimeAsync(1000);
+		expect(mod.usageSnapshot().synced).toBe(false);
+		// A minute later the user is still studying and the app comes back to the foreground:
+		// the session must re-sync on its own (network errors retry after the short floor).
+		for (let s = 0; s < 65; s++) {
+			await vi.advanceTimersByTimeAsync(1000);
+			if (s % 4 === 0) document.dispatchEvent(new Event("scroll"));
+		}
+		document.dispatchEvent(new Event("visibilitychange"));
+		await vi.advanceTimersByTimeAsync(1000);
+		expect(mod.usageSnapshot().synced).toBe(true);
+		expect(sumDays(mod.usageSnapshot().days)).toBeGreaterThanOrEqual(500);
+	});
+
+	it("flushes pending totals with keepalive when the page is hidden/unloaded", async () => {
+		const posts: { keepalive: boolean; totals: Record<string, number> }[] = [];
+		vi.stubGlobal("fetch", vi.fn(async (url: string, init?: RequestInit & { keepalive?: boolean }) => {
+			if (url.includes("/api/me")) return jsonResponse({ user: { id: "g_test" } });
+			if (init?.method === "POST") {
+				const body = JSON.parse(String(init.body)) as { totals: Record<string, number> };
+				posts.push({ keepalive: Boolean(init.keepalive), totals: body.totals });
+				return jsonResponse({ days: body.totals, mine: body.totals });
+			}
+			return jsonResponse({ days: {}, mine: {} });
+		}));
+		const mod = await import("../../app/study/usage-time");
+		stop = mod.startUsageTracker("account");
+		await vi.advanceTimersByTimeAsync(1000);
+		for (let s = 0; s < 45; s++) {
+			await vi.advanceTimersByTimeAsync(1000);
+			if (s % 4 === 0) document.dispatchEvent(new Event("scroll"));
+		}
+		const before = posts.length;
+		window.dispatchEvent(new Event("pagehide"));
+		await vi.advanceTimersByTimeAsync(100);
+		const flushed = posts.slice(before);
+		expect(flushed.length).toBeGreaterThanOrEqual(1);
+		expect(flushed[0].keepalive).toBe(true);
+		expect(sumDays(flushed[0].totals)).toBeGreaterThanOrEqual(30);
 	});
 });
