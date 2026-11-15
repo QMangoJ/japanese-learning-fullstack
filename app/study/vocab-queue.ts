@@ -56,6 +56,9 @@ export type VocabWord = {
 	ord: number;
 	ex?: string;
 	exZh?: string;
+	/** Segmented ruby for the example sentence (built by scripts/build-vocab-queue.mts):
+	 * segments concatenate to ex; ruby markup only ever sits on kanji. */
+	exRuby?: VocabExRubySeg[];
 	/** Grammar breakdown for sentence-type entries (built by scripts/build-vocab-queue.mts). */
 	breakdown?: VocabBreakdown;
 	/** Grammar breakdown of the example sentence, same format as breakdown. */
@@ -72,6 +75,14 @@ export type VocabBreakdownLine = {
 	ruby?: string;
 	form: string;
 	role: string;
+};
+
+/** One segment of an example sentence's ruby annotation: the surface text,
+ * its reading, and <ruby> markup when the segment contains kanji. */
+export type VocabExRubySeg = {
+	seg: string;
+	reading: string;
+	ruby?: string;
 };
 
 export type VocabBreakdown = {

@@ -54,9 +54,16 @@ type RawWord = {
 	en?: string;
 	ex?: string;
 	exZh?: string;
+	exRuby?: ExRubySeg[];
 	breakdown?: Breakdown;
 	exampleBreakdown?: Breakdown;
 };
+
+/** One segment of an example sentence's ruby annotation — same shape as a
+ * breakdown line minus the grammar commentary: surface segment, its reading,
+ * and <ruby> markup when the segment contains kanji. Segments concatenate
+ * back to the example text exactly. */
+type ExRubySeg = { seg: string; reading: string; ruby?: string };
 
 /** Grammar breakdown for sentence-type entries (Daniel 2026-11-13): the card
  * back shows the sentence taken apart — one line per fragment
@@ -284,6 +291,13 @@ function push(c: Omit<Candidate, "ord">) {
  * exampleBreakdown line readings on topic-sourced entries. */
 const exampleReadingByText = new Map<string, string>();
 
+/** Full <ruby> markup published for an example text, keyed by the text
+ * itself: topic cards (example_ruby), lesson-review items (example_r) and
+ * N2-kanji example words (jp_r). The exRuby derivation below parses this
+ * markup into segments; a text whose markup leaves any kanji unannotated
+ * is rejected, never guessed at. */
+const exampleRubyHtmlByText = new Map<string, string>();
+
 function topicWords(file: string, src: string, srcKey: string) {
 	const topic = readJson<{ cards: Record<string, unknown>[] }>(join(ROOT, "public", "data", "topics", file));
 	for (const card of topic.cards ?? []) {
@@ -292,6 +306,9 @@ function topicWords(file: string, src: string, srcKey: string) {
 		if (typeof card.example_jp === "string" && card.example_jp) {
 			const exReading = String(card.example_kana ?? "") || rubyToReading(card.example_ruby as string);
 			if (exReading) exampleReadingByText.set(card.example_jp, exReading);
+			if (typeof card.example_ruby === "string" && card.example_ruby) {
+				exampleRubyHtmlByText.set(card.example_jp, card.example_ruby);
+			}
 		}
 		push({
 			w: jp,
@@ -326,6 +343,15 @@ function classroomWords() {
 	// then the Preply すみれ先生 doc appended after it in the same tier.
 	classroomDocWords(data, "Danielさん", "课堂复习", "classroom", "课堂复习", "lesson-review:");
 	classroomDocWords(data, "Preply すみれ先生", "课堂复习・Preply", "classroomPreply", "课堂复习（Preply）", "lesson-review:preply:");
+	// Lesson-review items publish full ruby markup for their examples
+	// (example_r) — register it for the exRuby derivation, keyed by text.
+	for (const day of data.days ?? []) {
+		for (const item of day.items ?? []) {
+			if (typeof item.example === "string" && item.example && typeof item.example_r === "string" && item.example_r) {
+				exampleRubyHtmlByText.set(item.example, item.example_r);
+			}
+		}
+	}
 }
 
 function classroomDocWords(
@@ -616,6 +642,14 @@ function n2Kanji() {
 				const char = String(entry.char ?? "").trim();
 				if (!char) continue;
 				const words = (entry.words as Record<string, unknown>[]) ?? [];
+				// N2-kanji example words publish their own ruby markup (jp_r);
+				// a queue entry's ex is exactly such a word — register it for
+				// the exRuby derivation, keyed by the word text.
+				for (const w of words) {
+					if (typeof w.jp === "string" && w.jp && typeof w.jp_r === "string" && w.jp_r) {
+						exampleRubyHtmlByText.set(w.jp, w.jp_r);
+					}
+				}
 				const zh = words
 					.slice(0, 3)
 					.map((w) => `${String(w.jp ?? "")}：${String(w.cn ?? "")}`)
@@ -1028,6 +1062,123 @@ for (const w of words) {
 }
 const sentenceExTotal = words.filter((w) => w.ex && topicTextIsSentence(w.ex)).length;
 
+// ---------- example ruby (exRuby) ----------
+// Daniel's standing rule: every Japanese sentence in the app carries ruby on
+// its kanji — but the card back used to print the example as plain text.
+// exRuby closes that gap with VERIFIED segmentations only, derived from
+// (1) the authored exampleBreakdown lines, or (2) ruby markup a source
+// publishes for the exact example text (topic example_ruby / lesson-review
+// example_r / N2-kanji jp_r), parsed back into segments. Anything else
+// stays plain and is listed in docs/vocab-queue-pending.md with the reason;
+// readings are never fabricated.
+const KANJI_RE = /[㐀-鿿々]/;
+function parseRubyHtmlToSegs(markup: string): ExRubySeg[] | null {
+	const segs: ExRubySeg[] = [];
+	const re = /<ruby>(.*?)<rt>(.*?)<\/rt><\/ruby>/g;
+	let last = 0;
+	let m: RegExpExecArray | null;
+	let pendingPrefix = "";
+	const pushPlain = (chunk: string): boolean => {
+		const text = chunk.replace(/<[^>]+>/g, "");
+		if (!text) return true;
+		if (KANJI_RE.test(text)) return false; // kanji the markup left unannotated
+		const prev = segs[segs.length - 1];
+		if (!prev) {
+			pendingPrefix += text;
+			return true;
+		}
+		if (!kanaSequence(text)) {
+			// Pure punctuation rides on the previous segment; on a ruby
+			// segment it joins the markup string too (the breakdown-line
+			// format), so stripRuby(ruby) still equals the segment.
+			prev.seg += text;
+			if (prev.ruby) prev.ruby += text;
+			return true;
+		}
+		if (!prev.ruby) {
+			prev.seg += text;
+			prev.reading += kanaSequence(text);
+		} else segs.push({ seg: text, reading: kanaSequence(text) });
+		return true;
+	};
+	const flushPrefix = (): boolean => {
+		if (!pendingPrefix) return true;
+		if (!kanaSequence(pendingPrefix)) return false; // leading punctuation: cannot segment honestly
+		segs.push({ seg: pendingPrefix, reading: kanaSequence(pendingPrefix) });
+		pendingPrefix = "";
+		return true;
+	};
+	while ((m = re.exec(markup))) {
+		if (!pushPlain(markup.slice(last, m.index))) return null;
+		const base = m[1].replace(/<[^>]+>/g, "");
+		if (!base || !m[2]) return null;
+		if (!KANA_ONLY.test(m[2])) return null; // e.g. rt "ご/お" lists alternatives — not a single verified reading
+		let segText = base;
+		let segRuby = m[0];
+		if (pendingPrefix && !kanaSequence(pendingPrefix)) {
+			// A no-kana prefix (digits, symbols) cannot stand as its own
+			// segment — it rides into the ruby segment, markup included,
+			// exactly like the plain text inside a breakdown line's ruby.
+			segText = pendingPrefix + base;
+			segRuby = pendingPrefix + m[0];
+			pendingPrefix = "";
+		} else if (!flushPrefix()) return null;
+		segs.push({ seg: segText, reading: m[2], ruby: segRuby });
+		last = m.index + m[0].length;
+	}
+	if (!pushPlain(markup.slice(last))) return null;
+	if (!flushPrefix()) return null;
+	if (!segs.some((s) => s.ruby)) return null;
+	if (segs.map((s) => s.seg).join("") !== stripRuby(markup)) return null;
+	if (kanaSequence(segs.map((s) => s.reading).join("")) !== rubyReading(markup)) return null;
+	return segs;
+}
+
+let exRubyCovered = 0;
+let exRubyNoKanji = 0;
+const exRubyMissing: { w: string; src: string; ex: string; reason: string }[] = [];
+for (const w of words) {
+	if (!w.ex) continue;
+	if (!KANJI_RE.test(w.ex)) {
+		exRubyNoKanji += 1; // all-kana example: no kanji to annotate
+		continue;
+	}
+	if (w.exampleBreakdown) {
+		w.exRuby = w.exampleBreakdown.lines.map((l) => {
+			const seg: ExRubySeg = { seg: l.seg, reading: l.reading };
+			if (l.ruby) seg.ruby = l.ruby;
+			return seg;
+		});
+	} else {
+		const markup = exampleRubyHtmlByText.get(w.ex);
+		if (!markup) {
+			exRubyMissing.push({ w: w.w, src: w.src, ex: w.ex, reason: "无分段注音来源（来源未发布该例句的注音标记）" });
+			continue;
+		}
+		const segs = parseRubyHtmlToSegs(markup);
+		if (!segs) {
+			exRubyMissing.push({ w: w.w, src: w.src, ex: w.ex, reason: "来源注音含未标注汉字或拼接不一致，未采用" });
+			continue;
+		}
+		w.exRuby = segs;
+	}
+	// Hard invariants for anything that ships — same segment discipline the
+	// breakdown validators enforce (kana-sequence comparison, ruby base must
+	// equal its segment, no kanji without ruby):
+	const joined = w.exRuby.map((s) => s.seg).join("");
+	if (joined !== w.ex) throw new Error(`exRuby "${w.w}": segments must concatenate to the example ("${joined}" !== "${w.ex}")`);
+	for (const [i, s] of w.exRuby.entries()) {
+		checkBreakdownSegment(s.seg, s.reading, s.ruby, `exRuby "${w.w}" segment ${i + 1}`);
+	}
+	const knownReading = exampleReadingByText.get(w.ex);
+	if (knownReading && kanaSequence(w.exRuby.map((s) => s.reading).join("")) !== kanaSequence(knownReading)) {
+		throw new Error(`exRuby "${w.w}": segment readings must add up to the published example reading`);
+	}
+	exRubyCovered += 1;
+}
+const exTotal = words.filter((w) => w.ex).length;
+const exWithKanjiTotal = exTotal - exRubyNoKanji;
+
 const payload = {
 	version: 1,
 	generatedAt: new Date().toISOString(),
@@ -1035,6 +1186,7 @@ const payload = {
 	counts: { ...counts, total: words.length, mergedTotal, twinMerged, pending: pending.length },
 	breakdowns: { sentenceTypeTotal, covered: breakdownCovered },
 	exampleBreakdowns: { sentenceExTotal, covered: exampleBreakdownCovered },
+	exRuby: { exTotal, withKanji: exWithKanjiTotal, covered: exRubyCovered, noKanji: exRubyNoKanji, missing: exRubyMissing.length },
 	aliases,
 	words,
 };
@@ -1056,9 +1208,20 @@ for (const source of ["错词本", "收藏", "课堂复习", "课堂复习（Pre
 	for (const p of rows) pendingLines.push(`- \`${p.ref}\` ${p.excerpt} —— ${p.reason}`);
 	pendingLines.push("");
 }
+if (exRubyMissing.length) {
+	pendingLines.push(
+		`## 例句注音未覆盖（${exRubyMissing.length} 条）`,
+		"",
+		"以下条目已正常入队，但例句没有可验证的分段注音来源，卡背例句暂时纯文本显示。没有一条被硬编读音。",
+		"",
+	);
+	for (const miss of exRubyMissing) pendingLines.push(`- \`${miss.w}\`（${miss.src}）${miss.ex} —— ${miss.reason}`);
+	pendingLines.push("");
+}
 writeFileSync(join(ROOT, "docs", "vocab-queue-pending.md"), pendingLines.join("\n"));
 
 console.log(JSON.stringify(payload.counts, null, 1));
 console.log(`breakdowns: ${breakdownCovered} covered of ${sentenceTypeTotal} sentence-type entries`);
 console.log(`example breakdowns: ${exampleBreakdownCovered} covered of ${sentenceExTotal} complete-sentence examples`);
+console.log(`example ruby: ${exRubyCovered} covered of ${exWithKanjiTotal} examples with kanji (${exTotal} with ex, ${exRubyNoKanji} all-kana, ${exRubyMissing.length} missing)`);
 console.log(`total words: ${words.length}, pending: ${pending.length}`);

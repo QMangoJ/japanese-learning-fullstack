@@ -67,6 +67,21 @@ function BreakdownLines({ bd }: { bd: VocabBreakdown }) {
 	);
 }
 
+/** Example sentence with segmented ruby when the built word list carries it
+ * (word.exRuby): ruby segments render through RubyHtml so the reading sits
+ * above the kanji only; plain segments render as text. Falls back to the
+ * plain sentence when no verified segmentation exists. */
+function ExampleSentence({ word }: { word: VocabWord }) {
+	if (!word.exRuby || word.exRuby.length === 0) return <div>{word.ex}</div>;
+	return (
+		<div>
+			{word.exRuby.map((s, i) =>
+				s.ruby ? <RubyHtml key={i} html={s.ruby} /> : <span key={i}>{s.seg}</span>,
+			)}
+		</div>
+	);
+}
+
 function VocabFlipCard({
 	word,
 	flipped,
@@ -102,7 +117,7 @@ function VocabFlipCard({
 						{word.ex ? (
 							<div className="fcard-ex">
 								<div className="fcard-ex-label">{lx("例句", "Example")}</div>
-								<div>{word.ex}</div>
+								<ExampleSentence word={word} />
 								{word.exZh ? <div className="vq-ex-zh">{word.exZh}</div> : null}
 								{word.exampleBreakdown ? (
 									<div className="vq-ex-breakdown">

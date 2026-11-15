@@ -350,6 +350,36 @@ describe("built word list (public/data/vocab-queue.json)", () => {
 			expect(labels.has(banned)).toBe(false);
 		}
 	});
+
+	it("carries verified example ruby (exRuby) whose segments rebuild the example exactly", () => {
+		const meta = (payload as { exRuby?: { exTotal: number; withKanji: number; covered: number; noKanji: number; missing: number } }).exRuby;
+		expect(meta).toBeTruthy();
+		const withEx = payload.words.filter((w) => w.ex);
+		const covered = payload.words.filter((w) => w.exRuby);
+		expect(meta!.exTotal).toBe(withEx.length);
+		expect(meta!.covered).toBe(covered.length);
+		expect(meta!.covered + meta!.missing).toBe(meta!.withKanji);
+		expect(meta!.withKanji + meta!.noKanji).toBe(meta!.exTotal);
+		const kanji = /[㐀-鿿々]/;
+		for (const w of covered) {
+			expect(w.exRuby!.map((s) => s.seg).join(""), w.w).toBe(w.ex);
+			for (const s of w.exRuby!) {
+				if (s.ruby) {
+					// ruby markup stripped of readings must reproduce the segment
+					expect(s.ruby.replace(/<ruby>(.*?)<rt>.*?<\/rt><\/ruby>/g, "$1"), w.w).toBe(s.seg);
+				} else {
+					expect(kanji.test(s.seg), `${w.w}: ${s.seg}`).toBe(false);
+				}
+			}
+		}
+		// Spot coverage across the three derivation sources: authored example
+		// breakdowns, topic cards (Minna), lesson-review markup (classroom)
+		// and N2-kanji example words.
+		for (const label of ["みんなの日本語专题", "课堂复习", "N2汉字", "前端专题"]) {
+			const hit = payload.words.find((w) => w.src.split("・")[0] === label && w.exRuby);
+			expect(hit, label).toBeTruthy();
+		}
+	});
 });
 
 describe("vocab queue dedup guards", () => {
