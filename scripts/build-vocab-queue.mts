@@ -7,7 +7,7 @@
  *  from KV, plus the transcribed 番番词书 TSV.)
  *
  * Sources, in priority order (Daniel, 2026-11-11):
- *   tier 1  work:        topics frontend → job-interview → ki-expressions → fitness
+ *   tier 1  work:        topics frontend → job-interview → ki-expressions → fitness → minna2-35-42
  *                        (「気」专题 2026-11-11: built at Daniel's request from his
  *                        気-expression summary in the 日语学习 chat; he approved
  *                        flowing its words into the queue the same day)
@@ -664,6 +664,16 @@ topicWords("frontend.json", "前端专题", "frontend");
 topicWords("job-interview.json", "面试专题", "interview");
 topicWords("ki-expressions.json", "「気」专题", "kiExpressions");
 topicWords("fitness.json", "健身专题", "fitness");
+topicWords("minna2-35-42.json", "みんなの日本語专题", "minna");
+// 例外：「〜屋」と「測ります、量ります」は队列に入れない。专题卡片としては残る。
+// 句型拆解の硬性ルール（2行以上に分割し、各行の読みの合計が词条の読みと一致する）
+// では、読みが1モーラしかない接尾語パターン（〜屋＝や）と、2つの表記が1つの
+// 読みを共有する条目（測ります、量ります＝はかります）はどう切っても満たせない。
+// この2件はキューの外に置き、专题の暗記カードで学ぶ。
+for (let i = candidates.length - 1; i >= 0; i--) {
+	if (candidates[i].srcKey === "minna" && (candidates[i].w === "〜屋" || candidates[i].w === "測ります、量ります")) candidates.splice(i, 1);
+}
+if (counts.minna) counts.minna.gross -= 2;
 itlMistakeWords();
 classroomWords();
 favourites();

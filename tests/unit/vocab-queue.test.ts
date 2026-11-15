@@ -296,9 +296,11 @@ describe("built word list (public/data/vocab-queue.json)", () => {
 		});
 		// Pairs that must stay separate: ambiguous headwords （なおす = 直す/治す）,
 		// a known bad reading in the source docs （ドレス r=ね）, different words
-		// as taught （のる vs 乗る=乘坐）, different forms （やめた vs やめちゃった）,
+		// as taught （のる vs 乗る=乘坐； あいます [事故に〜] = 遭う vs 合います
+		// "to fit"; やかん "kettle" vs 夜間 "nighttime"), different forms
+		// （やめた vs やめちゃった）,
 		// and single-kanji study cards read ソウ vs the kana word そう.
-		const allowed = new Set(["なおす", "ね", "のる", "やめた", "そう"]);
+		const allowed = new Set(["なおす", "ね", "のる", "やめた", "そう", "あいます", "やかん"]);
 		const byReading = new Map<string, VocabWord[]>();
 		for (const w of payload.words) {
 			if (!w.r) continue;
