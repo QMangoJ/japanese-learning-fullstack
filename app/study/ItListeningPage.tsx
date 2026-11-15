@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState, type MouseEvent as ReactMouseEvent } from "react";
 
 import { SayButton } from "../routes/study-common";
 import {
@@ -77,6 +77,17 @@ export function itlSeekTarget(current: number, delta: number, duration?: number)
 	if (target < 0) target = 0;
 	if (duration && target > duration) target = duration;
 	return target;
+}
+
+/** 跟随高亮的当前句：返回满足 startSec <= t 的最后一句下标；
+ * t 早于第一句返回 -1（还没开始）。缺 startSec 的句子不参与判定（线性扫描，篇幅小、轮询便宜）。 */
+export function itlActiveIndex(starts: readonly (number | undefined)[], t: number): number {
+	let ans = -1;
+	for (let i = 0; i < starts.length; i++) {
+		const v = starts[i];
+		if (typeof v === "number" && v <= t) ans = i;
+	}
+	return ans;
 }
 
 function fmtDuration(sec?: number): string {
@@ -415,6 +426,19 @@ function ItListeningDetail({ id }: { id: string }) {
 	// 状态恰为 1 时才加流逝时间，缓冲/暂停期间采样值就是准的，避免高估。
 	const ytStateRef = useRef<number | null>(null);
 
+	// 跟随高亮（仅带 startSec 的文章，如 LINE 座談会 7 篇）：当前句下标 + 跟随开关 +
+	// 用户手动滚动后的暂停标记（不跟用户抢滚动；按播放/点句子/点开关恢复）。
+	const starts = useMemo(() => article?.sentences.map((s) => s.startSec), [article]);
+	const hasTimes = !!starts && starts.some((v) => typeof v === "number");
+	const [activeIdx, setActiveIdx] = useState(-1);
+	const [followOn, setFollowOn] = useState(true);
+	const [followSuspended, setFollowSuspended] = useState(false);
+	const activeIdxRef = useRef(-1);
+	const followOnRef = useRef(true);
+	const followSuspendedRef = useRef(false);
+	const sentenceRefs = useRef<(HTMLLIElement | null)[]>([]);
+	const programmaticScrollAtRef = useRef(0);
+
 	useEffect(() => {
 		setFloatDismissed(false);
 		setYtPlaying(null);
@@ -423,6 +447,13 @@ function ItListeningDetail({ id }: { id: string }) {
 		ytDurationRef.current = undefined;
 		ytPlayingRef.current = null;
 		ytStateRef.current = null;
+		activeIdxRef.current = -1;
+		setActiveIdx(-1);
+		followOnRef.current = true;
+		setFollowOn(true);
+		followSuspendedRef.current = false;
+		setFollowSuspended(false);
+		sentenceRefs.current = [];
 	}, [id]);
 
 	useEffect(() => {
@@ -460,7 +491,14 @@ function ItListeningDetail({ id }: { id: string }) {
 				let st: number | undefined;
 				if (typeof d.info === "number") st = d.info;
 				else if (d.info && typeof d.info === "object" && typeof d.info.playerState === "number") st = d.info.playerState;
-				if (typeof st === "number") ytStateRef.current = st;
+				if (typeof st === "number") {
+					// 从「暂停(2)」恢复播放(1) = 用户按了播放：恢复跟随滚动（手动滚动暂停过的话）。
+					if (st === 1 && ytStateRef.current === 2 && followSuspendedRef.current) {
+						followSuspendedRef.current = false;
+						setFollowSuspended(false);
+					}
+					ytStateRef.current = st;
+				}
 				if (st === 1) {
 					setYtPlaying(true);
 					ytPlayingRef.current = true;
@@ -501,6 +539,106 @@ function ItListeningDetail({ id }: { id: string }) {
 			ytCommand("playVideo");
 			setYtPlaying(true);
 			ytPlayingRef.current = true;
+			// 按播放 = 恢复跟随（手动滚动暂停过的话）。
+			if (followSuspendedRef.current) {
+				followSuspendedRef.current = false;
+				setFollowSuspended(false);
+			}
+		}
+	};
+
+	// 当前播放时间的最佳估算：与 seekYtBy 同一口径（采样值 + 播放中流逝时间）。
+	const estimateNow = () =>
+		ytStateRef.current === 1 && ytTimeAtRef.current ? ytTimeRef.current + (Date.now() - ytTimeAtRef.current) / 1000 : ytTimeRef.current;
+
+	// 把第 i 句滚到视口中部：已在中部带宽（28%–72%）内就不动，避免每句都滚造成抖动。
+	const scrollToSentence = (i: number) => {
+		const el = sentenceRefs.current[i];
+		if (!el) return;
+		const rect = el.getBoundingClientRect();
+		const vh = window.innerHeight;
+		const center = rect.top + rect.height / 2;
+		if (center < vh * 0.28 || center > vh * 0.72) {
+			programmaticScrollAtRef.current = Date.now();
+			el.scrollIntoView({ block: "center", behavior: "smooth" });
+		}
+	};
+
+	// 跟随轮询：250ms 估算一次当前时间，当前句变化时更新高亮（跟随有效时顺带滚动）。
+	useEffect(() => {
+		if (!hasTimes || !article?.videoId || !starts) return;
+		const timer = window.setInterval(() => {
+			const idx = itlActiveIndex(starts, estimateNow());
+			if (idx !== activeIdxRef.current) {
+				activeIdxRef.current = idx;
+				setActiveIdx(idx);
+				if (idx >= 0 && followOnRef.current && !followSuspendedRef.current) scrollToSentence(idx);
+			}
+		}, 250);
+		return () => window.clearInterval(timer);
+	}, [hasTimes, article?.videoId, starts]);
+
+	// 用户手动滚动（滚轮/触摸/滚动键/拖滚动条）→ 暂停跟随，不跟用户抢。
+	// 程序滚动（scrollIntoView）后 900ms 内的 scroll 事件不算手动。
+	useEffect(() => {
+		if (!hasTimes) return;
+		const suspend = () => {
+			if (followOnRef.current && !followSuspendedRef.current) {
+				followSuspendedRef.current = true;
+				setFollowSuspended(true);
+			}
+		};
+		const onScroll = () => {
+			if (Date.now() - programmaticScrollAtRef.current > 900) suspend();
+		};
+		const onKey = (e: KeyboardEvent) => {
+			if (e.key === "PageDown" || e.key === "PageUp" || e.key === "Home" || e.key === "End") suspend();
+		};
+		window.addEventListener("wheel", suspend, { passive: true });
+		window.addEventListener("touchmove", suspend, { passive: true });
+		window.addEventListener("scroll", onScroll, { passive: true });
+		window.addEventListener("keydown", onKey);
+		return () => {
+			window.removeEventListener("wheel", suspend);
+			window.removeEventListener("touchmove", suspend);
+			window.removeEventListener("scroll", onScroll);
+			window.removeEventListener("keydown", onKey);
+		};
+	}, [hasTimes]);
+
+	// 点任意带时间的句子 → 视频跳到该句开头（精听刚需）；选词（收藏浮层）与点按钮/链接时不跳。
+	const onSentenceClick = (e: ReactMouseEvent, i: number) => {
+		const t = e.target as HTMLElement | null;
+		if (t?.closest("button, a, input, textarea, select")) return;
+		const sel = window.getSelection();
+		if (sel && !sel.isCollapsed && sel.toString().trim()) return;
+		const sec = article?.sentences[i]?.startSec;
+		if (typeof sec !== "number") return;
+		ytCommand("seekTo", [sec, true]);
+		ytTimeRef.current = sec;
+		ytTimeAtRef.current = Date.now();
+		activeIdxRef.current = i;
+		setActiveIdx(i);
+		if (followSuspendedRef.current) {
+			followSuspendedRef.current = false;
+			setFollowSuspended(false);
+		}
+	};
+
+	const onFollowToggle = () => {
+		if (!followOnRef.current) {
+			followOnRef.current = true;
+			setFollowOn(true);
+			followSuspendedRef.current = false;
+			setFollowSuspended(false);
+			if (activeIdxRef.current >= 0) scrollToSentence(activeIdxRef.current);
+		} else if (followSuspendedRef.current) {
+			followSuspendedRef.current = false;
+			setFollowSuspended(false);
+			if (activeIdxRef.current >= 0) scrollToSentence(activeIdxRef.current);
+		} else {
+			followOnRef.current = false;
+			setFollowOn(false);
 		}
 	};
 
@@ -510,8 +648,7 @@ function ItListeningDetail({ id }: { id: string }) {
 	// 采样后流逝的时间——裸 getCurrentTime 命令没有回传（实测），这已是该协议下最实时的当前值，
 	// 暂停/缓冲时采样值本身即精确值。
 	const seekYtBy = (delta: number) => {
-		const base = ytStateRef.current === 1 && ytTimeAtRef.current ? ytTimeRef.current + (Date.now() - ytTimeAtRef.current) / 1000 : ytTimeRef.current;
-		const target = itlSeekTarget(base, delta, ytDurationRef.current ?? article?.durationSec ?? undefined);
+		const target = itlSeekTarget(estimateNow(), delta, ytDurationRef.current ?? article?.durationSec ?? undefined);
 		ytCommand("seekTo", [target, true]);
 		ytTimeRef.current = target;
 		ytTimeAtRef.current = Date.now();
@@ -646,7 +783,24 @@ function ItListeningDetail({ id }: { id: string }) {
 					<a className="itl-yt-open" href={article.youtube} target="_blank" rel="noreferrer">
 						▶ {lx("在 YouTube 打开原视频", "Open the original video on YouTube")} ↗
 					</a>
-					<p className="itl-key-hint">{lx("键盘 ← 快退 2 秒 · → 快进 2 秒 · 空格 播放/暂停", "Keyboard: ← back 2s · → forward 2s · Space play/pause")}</p>
+					<p className="itl-key-hint">
+						{lx("键盘 ← 快退 2 秒 · → 快进 2 秒 · 空格 播放/暂停", "Keyboard: ← back 2s · → forward 2s · Space play/pause")}
+						{hasTimes ? lx(" · 点句子跳到该句", " · Tap a sentence to jump to it") : ""}
+					</p>
+					{hasTimes ? (
+						<button
+							type="button"
+							className={`itl-follow-btn${followOn && !followSuspended ? " on" : ""}`}
+							aria-pressed={followOn && !followSuspended}
+							onClick={onFollowToggle}
+						>
+							{followOn
+								? followSuspended
+									? lx("跟随高亮已暂停 · 点此恢复", "Follow paused · tap to resume")
+									: lx("跟随高亮：开", "Follow highlight: on")
+								: lx("跟随高亮：关", "Follow highlight: off")}
+						</button>
+					) : null}
 				</section>
 			) : null}
 
@@ -654,7 +808,15 @@ function ItListeningDetail({ id }: { id: string }) {
 
 			<ol className="itl-sentences">
 				{article.sentences.map((s, i) => (
-					<li className="itl-sentence" key={i}>
+					<li
+						className={`itl-sentence${i === activeIdx ? " itl-sentence--active" : ""}`}
+						key={i}
+						ref={(el) => {
+							sentenceRefs.current[i] = el;
+						}}
+						onClick={typeof s.startSec === "number" ? (e) => onSentenceClick(e, i) : undefined}
+						title={typeof s.startSec === "number" ? lx("点此跳到这句", "Jump to this sentence") : undefined}
+					>
 						<div className="itl-s-top">
 							<span className="itl-s-no">{i + 1}</span>
 							{s.speaker ? (

@@ -109,7 +109,11 @@
 .itl-note{margin:0 0 14px;padding:10px 14px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--sub);font-size:13.5px;line-height:1.6}
 
 .itl-sentences{display:grid;gap:12px;margin:0;padding:0;list-style:none}
-.itl-sentence{padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:var(--card);box-shadow:var(--shadow)}
+.itl-sentence{padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:var(--card);box-shadow:var(--shadow);transition:background-color .45s ease,border-color .45s ease}
+.itl-sentence--active{background:var(--accent-soft);border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}
+.itl-follow-btn{margin:8px 0 0;padding:7px 14px;border:1.5px solid var(--line);border-radius:999px;background:var(--card);color:var(--sub);font-size:13px;font-weight:800;cursor:pointer;vertical-align:middle}
+.itl-follow-btn.on{border-color:var(--accent);color:var(--accent)}
+@media (prefers-reduced-motion: reduce){.itl-sentence{transition:none}}
 .itl-s-top{display:flex;align-items:center;gap:8px;margin-bottom:6px}
 .itl-s-no{display:grid;place-items:center;min-width:24px;height:24px;padding:0 6px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-size:12.5px;font-weight:900}
 .itl-speaker{padding:2px 9px;border-radius:999px;font-size:12.5px;font-weight:800}

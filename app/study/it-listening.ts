@@ -54,6 +54,9 @@ export type ItListeningSentence = {
 	vocab?: ItListeningVocab[];
 	/** 回答例（可选，目前仅 real-wp-online-mock 的面试官问题句带）：按学习者本人情况写的示范回答。 */
 	modelAnswer?: ItListeningModelAnswer;
+	/** 本句在视频中的起始秒（可选，视频绝对时间）：与字幕轨逐词对齐得到的文章才有，
+	 * 用于跟随高亮与点句跳转。同篇内单调不减。 */
+	startSec?: number;
 };
 
 export type ItListeningModelAnswer = {
