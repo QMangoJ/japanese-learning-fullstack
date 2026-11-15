@@ -492,8 +492,10 @@ function ItListeningDetail({ id }: { id: string }) {
 				if (typeof d.info === "number") st = d.info;
 				else if (d.info && typeof d.info === "object" && typeof d.info.playerState === "number") st = d.info.playerState;
 				if (typeof st === "number") {
-					// 从「暂停(2)」恢复播放(1) = 用户按了播放：恢复跟随滚动（手动滚动暂停过的话）。
-					if (st === 1 && ytStateRef.current === 2 && followSuspendedRef.current) {
+					// 进入播放(1) 且此前是暂停(2)/已定位未播(5)/还没开始(null) = 用户按了播放：
+					// 恢复跟随滚动（手动滚动暂停过的话）。缓冲(3)→播放不算按播放，不在此列，
+					// 免得用户在缓冲间隙手动滚动后又被抢回去。
+					if (st === 1 && (ytStateRef.current === 2 || ytStateRef.current === 5 || ytStateRef.current === null) && followSuspendedRef.current) {
 						followSuspendedRef.current = false;
 						setFollowSuspended(false);
 					}
@@ -578,8 +580,11 @@ function ItListeningDetail({ id }: { id: string }) {
 		return () => window.clearInterval(timer);
 	}, [hasTimes, article?.videoId, starts]);
 
-	// 用户手动滚动（滚轮/触摸/滚动键/拖滚动条）→ 暂停跟随，不跟用户抢。
-	// 程序滚动（scrollIntoView）后 900ms 内的 scroll 事件不算手动。
+	// 用户手动滚动（滚轮/触摸/滚动键/按住指针拖动）→ 暂停跟随，不跟用户抢。
+	// 裸 scroll 事件不能当手动：浏览器滚动锚定、合成滚动、布局位移都会触发它——
+	// 线上实测播放前一次 13px 的非手势滚动就把跟随误挂起了一整场（按钮全程
+	// 「已暂停」）。所以 scroll 只在指针按住期间（拖滚动条/触摸拖动）才算手动，
+	// 且程序滚动（scrollIntoView）后 900ms 内的不算。
 	useEffect(() => {
 		if (!hasTimes) return;
 		const suspend = () => {
@@ -588,19 +593,32 @@ function ItListeningDetail({ id }: { id: string }) {
 				setFollowSuspended(true);
 			}
 		};
+		let pointerDown = false;
+		const onPointerDown = () => {
+			pointerDown = true;
+		};
+		const onPointerUp = () => {
+			pointerDown = false;
+		};
 		const onScroll = () => {
-			if (Date.now() - programmaticScrollAtRef.current > 900) suspend();
+			if (pointerDown && Date.now() - programmaticScrollAtRef.current > 900) suspend();
 		};
 		const onKey = (e: KeyboardEvent) => {
 			if (e.key === "PageDown" || e.key === "PageUp" || e.key === "Home" || e.key === "End") suspend();
 		};
 		window.addEventListener("wheel", suspend, { passive: true });
 		window.addEventListener("touchmove", suspend, { passive: true });
+		window.addEventListener("pointerdown", onPointerDown);
+		window.addEventListener("pointerup", onPointerUp);
+		window.addEventListener("pointercancel", onPointerUp);
 		window.addEventListener("scroll", onScroll, { passive: true });
 		window.addEventListener("keydown", onKey);
 		return () => {
 			window.removeEventListener("wheel", suspend);
 			window.removeEventListener("touchmove", suspend);
+			window.removeEventListener("pointerdown", onPointerDown);
+			window.removeEventListener("pointerup", onPointerUp);
+			window.removeEventListener("pointercancel", onPointerUp);
 			window.removeEventListener("scroll", onScroll);
 			window.removeEventListener("keydown", onKey);
 		};
