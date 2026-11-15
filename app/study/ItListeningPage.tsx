@@ -405,15 +405,20 @@ function ItListeningDetail({ id }: { id: string }) {
 	const [floatDismissed, setFloatDismissed] = useState(false);
 	const [ytPlaying, setYtPlaying] = useState<boolean | null>(null);
 	const floating = playerOut && !floatDismissed;
-	// 键盘 seek 用：最近一次 getCurrentTime 采样值 + 采样时刻 + 播放状态镜像。
+	// 键盘 seek 用：最近一次 infoDelivery 采样（currentTime/duration）+ 采样时刻 + 播放状态镜像。
 	// 当前时间靠「采样值 + 播放中流逝时间」本地估算，按键时不必等回传。
 	const ytTimeRef = useRef(0);
 	const ytTimeAtRef = useRef(0);
+	const ytDurationRef = useRef<number | undefined>(undefined);
 	const ytPlayingRef = useRef<boolean | null>(null);
 
 	useEffect(() => {
 		setFloatDismissed(false);
 		setYtPlaying(null);
+		ytTimeRef.current = 0;
+		ytTimeAtRef.current = 0;
+		ytDurationRef.current = undefined;
+		ytPlayingRef.current = null;
 	}, [id]);
 
 	useEffect(() => {
@@ -436,16 +441,20 @@ function ItListeningDetail({ id }: { id: string }) {
 		const onMsg = (ev: MessageEvent) => {
 			if (typeof ev.data !== "string" || (!ev.data.includes("onStateChange") && !ev.data.includes("infoDelivery"))) return;
 			try {
-				const d = JSON.parse(ev.data) as { event?: string; info?: number | { playerState?: number } };
-				// getCurrentTime 的回传走 infoDelivery 且 info 是秒数（可带小数）：记为时间采样，不当状态码。
-				if (d.event === "infoDelivery" && typeof d.info === "number") {
-					ytTimeRef.current = d.info;
-					ytTimeAtRef.current = Date.now();
+				const d = JSON.parse(ev.data) as { event?: string; info?: number | { playerState?: number; currentTime?: number; duration?: number } };
+				// infoDelivery 的对象 info 带 playerState/currentTime/duration（状态变化与播放中都会送达）：
+				// currentTime/duration 记为 seek 用的采样；裸 getCurrentTime 命令没有单独回传，不能靠它。
+				if (d.info && typeof d.info === "object") {
+					if (typeof d.info.currentTime === "number") {
+						ytTimeRef.current = d.info.currentTime;
+						ytTimeAtRef.current = Date.now();
+					}
+					if (typeof d.info.duration === "number" && d.info.duration > 0) ytDurationRef.current = d.info.duration;
 				}
 				// 两种回传形状：onStateChange 的 info 是数字状态；listening 握手后状态走 infoDelivery 的 info.playerState。
 				// 状态码：1 播放中 / 2 已暂停 / 0 结束 / 5 已定位未播。
 				let st: number | undefined;
-				if (typeof d.info === "number" && d.event !== "infoDelivery") st = d.info;
+				if (typeof d.info === "number") st = d.info;
 				else if (d.info && typeof d.info === "object" && typeof d.info.playerState === "number") st = d.info.playerState;
 				if (st === 1) {
 					setYtPlaying(true);
@@ -471,7 +480,6 @@ function ItListeningDetail({ id }: { id: string }) {
 		// listening 握手：不加载 API 脚本时靠它订阅状态回传（infoDelivery）。
 		win.postMessage(JSON.stringify({ event: "listening", id: "itl-player", channel: "widget" }), "*");
 		win.postMessage(JSON.stringify({ event: "command", func: "addEventListener", args: ["onStateChange"] }), "*");
-		ytCommand("getCurrentTime");
 	};
 
 	// 悬浮窗出现时再补一次订阅（防 load 时机太早握手没赶上）。
@@ -494,7 +502,7 @@ function ItListeningDetail({ id }: { id: string }) {
 	// 悬浮小窗与内嵌是同一个 iframe 实例，本监听天然同时覆盖两种形态。
 	const seekYtBy = (delta: number) => {
 		const base = ytPlayingRef.current && ytTimeAtRef.current ? ytTimeRef.current + (Date.now() - ytTimeAtRef.current) / 1000 : ytTimeRef.current;
-		const target = itlSeekTarget(base, delta, article?.durationSec ?? undefined);
+		const target = itlSeekTarget(base, delta, ytDurationRef.current ?? article?.durationSec ?? undefined);
 		ytCommand("seekTo", [target, true]);
 		ytTimeRef.current = target;
 		ytTimeAtRef.current = Date.now();
@@ -517,15 +525,6 @@ function ItListeningDetail({ id }: { id: string }) {
 		document.addEventListener("keydown", onKey);
 		return () => document.removeEventListener("keydown", onKey);
 	}, [article?.videoId, article?.durationSec]);
-
-	// 播放中每 5 秒向播放器校准一次当前时间，防止长播后本地估算漂移。
-	useEffect(() => {
-		if (!article?.videoId) return;
-		const iv = window.setInterval(() => {
-			if (ytPlayingRef.current) ytCommand("getCurrentTime");
-		}, 5000);
-		return () => window.clearInterval(iv);
-	}, [article?.videoId]);
 
 	if (error) {
 		return (
