@@ -19,7 +19,9 @@ import {
 	PLAN_PV,
 	planBatchProgress,
 	resetVocabQueueForTests,
+	revertVocabGrade,
 	shouldReshowToday,
+	snapshotVocabGrade,
 	todayPlan,
 	upgradeSameDayPlan,
 	vocabQueueData,
@@ -455,6 +457,115 @@ describe("vocab queue retest of today's graded words", () => {
 		expect(data.plan?.done).toEqual(["a"]);
 		expect(data.plan?.grades?.a).toBe("again");
 		expect(data.states.a).toMatchObject({ s: 0, due: "2026-11-12" });
+	});
+});
+
+describe("vocab queue「上一个」grade annulment", () => {
+	it("annuls a grade completely and the re-grade counts the word once", () => {
+		resetVocabQueueForTests();
+		todayPlan([word("a", 1, 1)], TODAY);
+		const snap = snapshotVocabGrade("a");
+		applyVocabGrade("a", "know", true, TODAY);
+		expect(vocabQueueData().plan?.done).toEqual(["a"]);
+		expect(planBatchProgress(vocabQueueData().plan!).freshDone).toBe(1);
+		revertVocabGrade(snap, TODAY);
+		let data = vocabQueueData();
+		expect(data.states.a).toBeUndefined();
+		expect(data.plan?.done).toEqual([]);
+		expect(data.plan?.grades?.a).toBeUndefined();
+		expect(planBatchProgress(data.plan!).freshDone).toBe(0);
+		// Re-grade from the restored state: the new grade is the day's result,
+		// the word still counts exactly once.
+		applyVocabGrade("a", "again", true, TODAY);
+		data = vocabQueueData();
+		expect(data.plan?.done).toEqual(["a"]);
+		expect(data.plan?.grades?.a).toBe("again");
+		expect(data.states.a).toMatchObject({ s: 0, due: "2026-11-12" });
+		expect(planBatchProgress(data.plan!).freshDone).toBe(1);
+	});
+
+	it("annuls a re-show grade: the re-show mark and intermediate state are rolled back", () => {
+		resetVocabQueueForTests();
+		todayPlan([word("a", 1, 1)], TODAY);
+		const snap = snapshotVocabGrade("a");
+		applyVocabGrade("a", "fuzzy", false, TODAY);
+		expect(vocabQueueData().plan?.reshown).toEqual(["a"]);
+		revertVocabGrade(snap, TODAY);
+		const data = vocabQueueData();
+		expect(data.states.a).toBeUndefined();
+		expect(data.plan?.reshown ?? []).toEqual([]);
+		expect(data.plan?.grades?.a).toBeUndefined();
+		// The card can re-show again afterwards — the annulled grade never happened.
+		applyVocabGrade("a", "fuzzy", false, TODAY);
+		expect(vocabQueueData().plan?.reshown).toEqual(["a"]);
+	});
+
+	it("annuls the final grade of a re-shown card back to its intermediate state", () => {
+		resetVocabQueueForTests();
+		todayPlan([word("a", 1, 1)], TODAY);
+		applyVocabGrade("a", "fuzzy", false, TODAY); // intermediate: step 0, due tomorrow, reshown
+		const snap = snapshotVocabGrade("a");
+		applyVocabGrade("a", "know", true, TODAY); // re-show grade counts
+		expect(vocabQueueData().states.a).toMatchObject({ s: 1, due: "2026-11-14" });
+		revertVocabGrade(snap, TODAY);
+		const data = vocabQueueData();
+		expect(data.states.a).toMatchObject({ s: 0, due: "2026-11-12" });
+		expect(data.plan?.done).toEqual([]);
+		expect(data.plan?.grades?.a).toBe("fuzzy");
+		expect(data.plan?.reshown).toEqual(["a"]);
+	});
+
+	it("annuls a retest overwrite: the original grade and state come back, done untouched", () => {
+		resetVocabQueueForTests();
+		todayPlan([word("a", 1, 1)], TODAY);
+		applyVocabGrade("a", "know", true, TODAY);
+		const snap = snapshotVocabGrade("a");
+		applyVocabGrade("a", "again", true, TODAY); // retest overwrite
+		expect(vocabQueueData().states.a).toMatchObject({ s: 0, due: "2026-11-12" });
+		revertVocabGrade(snap, TODAY);
+		const data = vocabQueueData();
+		expect(data.states.a).toMatchObject({ s: 1, due: "2026-11-14" });
+		expect(data.plan?.done).toEqual(["a"]);
+		expect(data.plan?.grades?.a).toBe("know");
+	});
+
+	it("supports consecutive step-backs across several cards", () => {
+		resetVocabQueueForTests();
+		todayPlan([word("a", 1, 1), word("b", 1, 2), word("c", 1, 3)], TODAY);
+		const snaps = ["a", "b", "c"].map((id) => {
+			const snap = snapshotVocabGrade(id);
+			applyVocabGrade(id, "know", true, TODAY);
+			return snap;
+		});
+		expect(vocabQueueData().plan?.done).toEqual(["a", "b", "c"]);
+		revertVocabGrade(snaps[2], TODAY);
+		revertVocabGrade(snaps[1], TODAY);
+		let data = vocabQueueData();
+		expect(data.plan?.done).toEqual(["a"]);
+		expect(data.states.b).toBeUndefined();
+		expect(data.states.c).toBeUndefined();
+		expect(data.states.a).toMatchObject({ s: 1 });
+		revertVocabGrade(snaps[0], TODAY);
+		data = vocabQueueData();
+		expect(data.plan?.done).toEqual([]);
+		expect(Object.keys(data.states)).toEqual([]);
+	});
+
+	it("annuls an extra-batch grade into extra.done, leaving the baseline count untouched", () => {
+		resetVocabQueueForTests();
+		const words = Array.from({ length: 55 }, (_, i) => word(`w${i}`, 1, i + 1));
+		todayPlan(words, TODAY);
+		const added = addExtraBatch(words, TODAY);
+		expect(added.length).toBe(5);
+		const target = added[0];
+		const snap = snapshotVocabGrade(target);
+		applyVocabGrade(target, "know", true, TODAY);
+		expect(vocabQueueData().plan?.extra?.done).toEqual([target]);
+		revertVocabGrade(snap, TODAY);
+		const data = vocabQueueData();
+		expect(data.plan?.extra?.done).toEqual([]);
+		expect(data.plan?.done).toEqual([]);
+		expect(data.states[target]).toBeUndefined();
 	});
 });
 

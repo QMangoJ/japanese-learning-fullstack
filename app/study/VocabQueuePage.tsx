@@ -13,7 +13,9 @@ import {
 	EXTRA_BATCH_SIZE,
 	getVocabQueueVersion,
 	planBatchProgress,
+	revertVocabGrade,
 	shouldReshowToday,
+	snapshotVocabGrade,
 	subscribeVocabQueue,
 	todayPlan,
 	vocabQueueData,
@@ -21,6 +23,7 @@ import {
 	vocabWordsCache,
 	type VocabBreakdown,
 	type VocabGrade,
+	type VocabGradeSnapshot,
 	type VocabWord,
 } from "./vocab-queue";
 
@@ -139,6 +142,13 @@ function srcCounts(words: VocabWord[]): [string, number][] {
 	return [...counts.entries()].sort((a, b) => b[1] - a[1]);
 }
 
+/** One graded card the「上一个」button can step back to: the pre-grade snapshot
+ * (annulled in the store on step-back) plus, for session grades, the session
+ * queue as it was just before the grade — restoring it puts the card back in
+ * front. Retest grades leave the session queue alone, so theirs is null and
+ * stepping back simply re-opens the card in the retest view. */
+type PrevEntry = { snap: VocabGradeSnapshot; queueBefore: string[] | null };
+
 export function VocabQueuePage() {
 	useVocabTick();
 	const [loaded, setLoaded] = useState(false);
@@ -146,6 +156,7 @@ export function VocabQueuePage() {
 	const [flipped, setFlipped] = useState(false);
 	const [retestId, setRetestId] = useState<string | null>(null);
 	const [showPassed, setShowPassed] = useState(false);
+	const [history, setHistory] = useState<PrevEntry[]>([]);
 	const reshownRef = useRef<Set<string>>(new Set());
 	const planDateRef = useRef<string | null>(null);
 
@@ -209,26 +220,50 @@ export function VocabQueuePage() {
 		if (!queue || !queue.length) return;
 		const id = queue[0];
 		setFlipped(false);
+		// Record the pre-grade snapshot + queue before anything changes, so
+		// 「上一个」 can annul this grade exactly and bring the card back.
+		const entry: PrevEntry = { snap: snapshotVocabGrade(id), queueBefore: [...queue] };
 		if (shouldReshowToday(vocabGrade, reshownRef.current.has(id))) {
 			// First "again"/"fuzzy" today: grade now (not done yet) and show the
 			// card once more at the end of the session; the re-show grade counts.
 			reshownRef.current.add(id);
 			applyVocabGrade(id, vocabGrade, false, today);
 			setQueue([...queue.slice(1), id]);
-			return;
+		} else {
+			applyVocabGrade(id, vocabGrade, true, today);
+			setQueue(queue.slice(1));
 		}
-		applyVocabGrade(id, vocabGrade, true, today);
-		setQueue(queue.slice(1));
+		setHistory((h) => [...h, entry]);
 	};
 
 	const retestWord = retestId ? byId.get(retestId) : undefined;
 	const gradeRetest = (vocabGrade: VocabGrade) => {
 		if (!retestId) return;
 		setFlipped(false);
+		const entry: PrevEntry = { snap: snapshotVocabGrade(retestId), queueBefore: null };
 		// Retest overwrites today's grade/state; the word is already in done,
 		// so the 今日 n/50 count does not change.
 		applyVocabGrade(retestId, vocabGrade, true, today);
 		setRetestId(null);
+		setHistory((h) => [...h, entry]);
+	};
+
+	/** Step back to the most recently graded card: annul its grade in the
+	 * store (state + today's marks restored, so re-grading replaces it and
+	 * never double-counts) and put the card back in front of the user. */
+	const goPrev = () => {
+		const entry = history[history.length - 1];
+		if (!entry) return;
+		setHistory(history.slice(0, -1));
+		setFlipped(false);
+		revertVocabGrade(entry.snap, today);
+		reshownRef.current = new Set(vocabQueueData().plan?.reshown ?? []);
+		if (entry.queueBefore) {
+			setRetestId(null);
+			setQueue(entry.queueBefore);
+		} else {
+			setRetestId(entry.snap.id);
+		}
 	};
 
 	if (!loaded || !words) return <div className="empty">{lx("词表加载中…", "Loading word list…")}</div>;
@@ -364,6 +399,14 @@ export function VocabQueuePage() {
 					</button>
 				</div>
 			)}
+
+			{history.length ? (
+				<div className="vq-prev-row">
+					<button type="button" className="vq-prev-btn" onClick={goPrev}>
+						← {lx("上一个", "Previous")}
+					</button>
+				</div>
+			) : null}
 
 			{doneCount + extraDone > 0 ? (
 				<div className="vq-passed">

@@ -877,6 +877,91 @@ export function applyVocabGrade(id: string, grade: VocabGrade, markDone = true, 
 	commit();
 }
 
+/** Everything one grade is about to change, captured BEFORE the grade lands. The queue page's「上一个」button keeps one snapshot per grade so the grade can be annulled exactly — an SRS transition is not invertible from the resulting state alone (the step it came from is lost), so the pre-grade values have to be recorded up front. */
+export type VocabGradeSnapshot = {
+	id: string;
+	/** SRS state before the grade; undefined = the word had never been studied. */
+	prevState?: VocabWordState;
+	/** Today's recorded grade before this grade (a re-show intermediate or an earlier final), if any. */
+	prevGrade?: VocabGrade;
+	/** Whether the word was already in the baseline done set before the grade (retest case). */
+	wasDone: boolean;
+	/** Whether the word was already in the extra-batch done set before the grade. */
+	wasExtraDone: boolean;
+	/** Whether the word was already in today's re-shown set before the grade. */
+	wasReshown: boolean;
+};
+
+/** Snapshot the pre-grade values for one word (see VocabGradeSnapshot). */
+export function snapshotVocabGrade(id: string): VocabGradeSnapshot {
+	const plan = data.plan;
+	return {
+		id,
+		prevState: data.states[id],
+		prevGrade: plan?.grades?.[id],
+		wasDone: plan?.done.includes(id) ?? false,
+		wasExtraDone: plan?.extra?.done.includes(id) ?? false,
+		wasReshown: (plan?.reshown ?? []).includes(id),
+	};
+}
+
+/**
+ * Annul one grade: restore the word's SRS state and today's plan marks
+ * (done / extra done / grades / reshown) to the snapshot taken just before
+ * it. The word can then be graded again from the restored state, so the
+ * re-grade replaces the annulled one outright — progress counts the word
+ * once, with the new grade as the day's result. Mirrors applyVocabGrade's
+ * plan-membership guard; the state restore itself is unconditional, like
+ * the grade's own state write.
+ */
+export function revertVocabGrade(snap: VocabGradeSnapshot, today = jstToday()) {
+	const states = { ...data.states };
+	if (snap.prevState) states[snap.id] = snap.prevState;
+	else delete states[snap.id];
+	let plan = data.plan;
+	if (plan && plan.date === today) {
+		const inBase = plan.ids.includes(snap.id);
+		const inExtra = plan.extra?.ids.includes(snap.id) ?? false;
+		if (inBase || inExtra) {
+			const done = inBase
+				? snap.wasDone
+					? plan.done.includes(snap.id)
+						? plan.done
+						: [...plan.done, snap.id]
+					: plan.done.filter((id) => id !== snap.id)
+				: plan.done;
+			const extra =
+				inExtra && plan.extra
+					? {
+							...plan.extra,
+							done: snap.wasExtraDone
+								? plan.extra.done.includes(snap.id)
+									? plan.extra.done
+									: [...plan.extra.done, snap.id]
+								: plan.extra.done.filter((id) => id !== snap.id),
+						}
+					: plan.extra;
+			const grades: Record<string, VocabGrade> = { ...(plan.grades ?? {}) };
+			if (snap.prevGrade) grades[snap.id] = snap.prevGrade;
+			else delete grades[snap.id];
+			const reshown = snap.wasReshown
+				? (plan.reshown ?? []).includes(snap.id)
+					? (plan.reshown ?? [])
+					: [...(plan.reshown ?? []), snap.id]
+				: (plan.reshown ?? []).filter((id) => id !== snap.id);
+			const next: VocabPlan = { ...plan, done };
+			if (extra) next.extra = extra;
+			if (Object.keys(grades).length) next.grades = grades;
+			else delete next.grades;
+			if (reshown.length) next.reshown = reshown;
+			else delete next.reshown;
+			plan = next;
+		}
+	}
+	data = { ...data, states, plan };
+	commit();
+}
+
 export function noteVocabQueueSignedOut() {
 	signedIn = false;
 	ready = true;

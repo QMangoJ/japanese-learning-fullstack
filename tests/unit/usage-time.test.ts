@@ -250,28 +250,48 @@ describe("usage tracker runtime", () => {
 		expect(sumDays(stored.days || {})).toBeGreaterThanOrEqual(7000);
 	});
 
-	it("uploads accrued time during the session, without waiting for the next page open", async () => {
-		const posts: { totals: Record<string, number> }[] = [];
-		vi.stubGlobal("fetch", vi.fn(async (url: string, init?: RequestInit) => {
+	it("keeps server traffic to page show/hide: nothing uploads while the session runs, hide flushes, foreground return syncs", async () => {
+		const posts: { keepalive: boolean; totals: Record<string, number> }[] = [];
+		vi.stubGlobal("fetch", vi.fn(async (url: string, init?: RequestInit & { keepalive?: boolean }) => {
 			if (url.includes("/api/me")) return jsonResponse({ user: { id: "g_test" } });
 			if (init?.method === "POST") {
 				const body = JSON.parse(String(init.body)) as { totals: Record<string, number> };
-				posts.push(body);
+				posts.push({ keepalive: Boolean(init.keepalive), totals: body.totals });
 				return jsonResponse({ days: body.totals, mine: body.totals });
 			}
 			return jsonResponse({ days: {}, mine: {} });
 		}));
 		const mod = await import("../../app/study/usage-time");
 		stop = mod.startUsageTracker("account");
-		await vi.advanceTimersByTimeAsync(1000); // sign-in + initial sync settle
+		await vi.advanceTimersByTimeAsync(1000); // sign-in + initial (page-open) sync settle
+		// Six-plus minutes of studying with regular scrolling: local accrual and local
+		// persistence keep up, but the server hears nothing — uploads ride visibility
+		// transitions only, to stay inside the KV write budget.
 		for (let s = 0; s < 390; s++) {
 			await vi.advanceTimersByTimeAsync(1000);
 			if (s % 4 === 0) document.dispatchEvent(new Event("scroll"));
 		}
-		expect(posts.length).toBeGreaterThanOrEqual(1);
-		const maxPosted = Math.max(...posts.map((p) => sumDays(p.totals)));
-		expect(maxPosted).toBeGreaterThanOrEqual(300);
+		expect(posts.length).toBe(0);
+		expect(sumDays(mod.usageSnapshot().days)).toBeGreaterThanOrEqual(300);
+		const stored = JSON.parse(localStorage.getItem("usage-time-v1") || "{}") as { days?: Record<string, number> };
+		expect(sumDays(stored.days || {})).toBeGreaterThanOrEqual(300);
+		// Hiding the page flushes the accrued totals with keepalive.
+		window.dispatchEvent(new Event("pagehide"));
+		await vi.advanceTimersByTimeAsync(100);
+		expect(posts.length).toBe(1);
+		expect(posts[0].keepalive).toBe(true);
+		expect(sumDays(posts[0].totals)).toBeGreaterThanOrEqual(300);
 		expect(mod.usageSnapshot().synced).toBe(true);
+		// More studying, then returning to the foreground syncs the new totals.
+		for (let s = 0; s < 130; s++) {
+			await vi.advanceTimersByTimeAsync(1000);
+			if (s % 4 === 0) document.dispatchEvent(new Event("scroll"));
+		}
+		expect(posts.length).toBe(1);
+		document.dispatchEvent(new Event("visibilitychange"));
+		await vi.advanceTimersByTimeAsync(1000);
+		expect(posts.length).toBe(2);
+		expect(sumDays(posts[1].totals)).toBeGreaterThanOrEqual(450);
 	});
 
 	it("heals a transient network failure without a page reopen and merges the server days", async () => {

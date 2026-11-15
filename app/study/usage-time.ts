@@ -168,12 +168,13 @@ let snapshot: UsageSnapshot = EMPTY_SNAPSHOT;
 let timer = 0;
 let started = 0;
 let syncing: Promise<void> | null = null;
-// Sync is no longer one-shot per page open: a session uploads its accrued time while it runs
-// (see the tick check) and again when the page is hidden, so a session's time reaches the account
-// even if the page is later discarded or its local storage is lost before the next page open.
+// Sync cadence (Daniel's ruling, 2026-11-15): local persistence stays high-frequency —
+// accrued seconds are committed to local storage every few seconds — but the server is
+// only touched when the page is shown (open / return to foreground) or hidden (the
+// keepalive flush below). There is deliberately no periodic in-session upload: visibility
+// transitions are frequent enough on mobile, and each avoided upload saves KV writes.
 let lastSyncOkAt = 0;
 let persistOk = true;
-let ticksSinceSyncCheck = 0;
 const listeners = new Set<() => void>();
 const tabId = `t${Math.random().toString(36).slice(2)}`;
 
@@ -204,8 +205,8 @@ function saveLocal(): boolean {
 		persistOk = true;
 	} catch {
 		/* Private mode or a full storage quota can refuse the write. The in-memory day still
-		   updates; the failure is surfaced via the snapshot and the sync cadence shortens so
-		   the server copy becomes the durable one. */
+		   updates and the failure is surfaced via the snapshot; the accrued totals live in
+		   memory, so the hide/show flush still carries them to the account. */
 		persistOk = false;
 	}
 	return persistOk;
@@ -287,14 +288,6 @@ function tick() {
 		segmentStart = active ? now : null;
 	}
 	publish(now);
-	// Bounded in-session sync: at most a cheap need-check every 60 ticks (every 15 while local
-	// persistence is failing, when the server copy is the only durable one). doSync itself
-	// decides whether any network traffic is warranted.
-	ticksSinceSyncCheck += 1;
-	if (ticksSinceSyncCheck >= (persistOk ? 60 : 15)) {
-		ticksSinceSyncCheck = 0;
-		void syncNow();
-	}
 }
 
 function onPageHide() {
@@ -354,7 +347,7 @@ async function doSync(force = false) {
 	if (kind === "account" && !signedIn) return;
 	if (typeof fetch === "undefined" || !local.device) return;
 	const policyKey = `usage:${kind}`;
-	// Non-forced runs (tick / foreground return) only touch the network when there is something
+	// Non-forced runs (foreground return) only touch the network when there is something
 	// to upload or the server copy is stale; the failure cooldown still gates every attempt.
 	if (!force && !Object.keys(pendingTotals()).length && Date.now() - lastSyncOkAt < SYNC_GET_FRESH_MS) return;
 	if (!canAttemptSync(policyKey)) return;
