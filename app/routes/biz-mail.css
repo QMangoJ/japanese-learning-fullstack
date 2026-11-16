@@ -1,0 +1,41 @@
+/* 商务邮件背诵（#/biz-mail）：沿用 IT 听力的卡片/句子样式（it-listening.css），这里只放新增部分。 */
+.bm-hero{background:linear-gradient(130deg,#2b2a4a 0%,#3b3a6b 62%,#4f4c8a 100%)}
+.bm-hero .itl-eyebrow{color:#c9c6ff}
+.bm-card-scene{color:var(--sub);font-weight:500}
+.bm-toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0 0 12px}
+.bm-toolbar .itl-follow-btn{margin:0}
+.bm-progress{color:var(--sub);font-size:13px;font-weight:700}
+.bm-recite-hint{margin:-4px 0 12px;color:var(--sub);font-size:13.5px}
+.bm-card{margin:0 0 16px;padding:16px 18px;border:1px solid var(--line);border-radius:14px;background:var(--card);box-shadow:var(--shadow)}
+.bm-h2{margin:0 0 10px;font-size:18px;line-height:1.35}
+.bm-h2--out{margin:6px 0 8px}
+.bm-letter p{margin:0 0 10px;font-size:16.5px;line-height:2.15}
+.bm-letter p:last-child{margin-bottom:0}
+.bm-letter rt{font-size:.52em;font-weight:400;color:var(--sub)}
+.bm-legend{margin:0 0 10px;color:var(--sub);font-size:13.5px;line-height:1.8}
+.bm-notes{display:grid;gap:5px;margin:10px 0 0;padding:9px 12px 9px 26px;border-radius:10px;background:var(--bg);font-size:14px;line-height:1.7}
+.bm-added-note{list-style:none;margin-left:-14px;color:var(--sub);font-size:12.5px}
+.bm-tag{display:inline-grid;place-items:center;min-width:20px;height:20px;margin:0 3px;padding:0 4px;border-radius:5px;color:#fff;font-size:12px;font-weight:900;line-height:1;vertical-align:1px}
+.bm-tag--son{background:#c0573a}
+.bm-tag--ken{background:#3a6fc0}
+.bm-tag--tei{background:#4a8f5a}
+.bm-why p{margin:0 0 8px;font-size:14.5px;line-height:1.8}
+.bm-why p:last-child{margin-bottom:0}
+.bm-why b{color:var(--accent)}
+.bm-vocab{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:6px 18px;margin:0;padding:0;list-style:none}
+.bm-vocab li{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 8px;padding:5px 0;border-bottom:1px dashed var(--line);font-size:14px}
+.bm-vocab b{font-size:15.5px}
+.bm-added{padding:0 6px;border-radius:5px;background:var(--accent-soft);color:var(--accent);font-size:11.5px;font-weight:800}
+.bm-patterns{display:grid;gap:8px;margin:10px 0 0;padding:0;list-style:none}
+.bm-patterns li{display:grid;gap:2px;padding:9px 12px;border-radius:10px;background:var(--bg);font-size:14px;line-height:1.7}
+.bm-patterns b{font-size:15px}
+.bm-ex-title{margin-top:18px}
+.bm-scene{color:var(--accent);font-size:12.5px;font-weight:800}
+.bm-credit{margin:16px 0 0;color:var(--sub);font-size:12.5px;line-height:1.6}
+.bm-zh-cue{margin:0 0 8px;color:var(--ink);font-size:15.5px}
+.bm-mask{display:block;width:100%;min-height:52px;padding:10px 12px;border:1.5px dashed var(--line);border-radius:10px;background:var(--bg);color:var(--sub);text-align:left;cursor:pointer}
+.bm-mask:hover{border-color:var(--accent);color:var(--accent)}
+.bm-mask--open{border-style:solid;color:var(--ink)}
+.bm-mask .itl-jp{display:block}
+.bm-mask-label{font-size:14px;font-weight:800}
+.bm-page .itl-sentences{margin-bottom:16px}

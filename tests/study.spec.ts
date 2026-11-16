@@ -388,6 +388,31 @@ test.describe("study navigation", () => {
 		);
 	});
 
+	test("opens a business email and recites it with the Japanese hidden", async ({ page }) => {
+		await waitForStudy(page);
+		const side = page.locator("#side .side-item", { hasText: /商务邮件背诵|Business emails/ });
+		if (await side.isVisible()) await side.click();
+		else {
+			await page.locator('.bottom button[data-nav="common"]').click();
+			await page.locator(".sheet-item", { hasText: /商务邮件背诵|Business emails/ }).first().click();
+		}
+		await expect(page.locator("#title")).toContainText(/商务邮件背诵|Business emails/);
+		await page.locator(".itl-card-main").first().click();
+		await expect(page.locator(".bm-full rt", { hasText: "あいこ" }).first()).toBeVisible();
+		await expect(page.locator(".bm-tag--son").first()).toBeVisible();
+		await expect(page.locator(".bm-why")).toContainText("关键看这个动作是谁做的");
+		expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(
+			await page.evaluate(() => document.documentElement.clientWidth),
+		);
+		await page.getByRole("button", { name: /背诵模式/ }).click();
+		await expect(page.locator(".bm-full")).toHaveCount(0);
+		const masks = page.locator(".bm-mask", { hasText: "点击显示原文" });
+		await expect(masks).toHaveCount(10);
+		await masks.nth(1).click();
+		await expect(page.locator(".bm-mask--open")).toContainText("ありがとうございます");
+		await expect(masks).toHaveCount(9);
+	});
+
 	test("opens the keigo summary", async ({ page }) => {
 		await waitForStudy(page);
 		const side = page.locator("#side .side-item", { hasText: /敬语总结|Keigo summary/ });
