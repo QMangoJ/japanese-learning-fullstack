@@ -109,7 +109,7 @@ function VocabFlipCard({
 					</>
 				}
 				back={
-					<div className="backside">
+					<div className="backside vq-back">
 						<span className="vq-chip">{word.src}</span>
 						{word.r ? <div className="vq-reading">{word.r}</div> : null}
 						<div className="vq-zh">{word.zh}</div>
