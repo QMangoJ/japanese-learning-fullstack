@@ -4,11 +4,13 @@ import { SayButton } from "../routes/study-common";
 import {
 	isItListeningArticle,
 	isItListeningIndex,
+	isItListeningMemorizeFile,
 	isMistakeWordsFile,
 	parseRubyMarkup,
 	type ItListeningArticle,
 	type ItListeningIndex,
 	type ItListeningIndexEntry,
+	type ItListeningMemorizeFile,
 	type ItListeningPatternExample,
 	type ItListeningRubySegment,
 	type MistakeWordsFile,
@@ -97,9 +99,86 @@ function fmtDuration(sec?: number): string {
 	return `${m}:${String(s).padStart(2, "0")}`;
 }
 
-export function ItListeningPage({ articleId }: { articleId?: string }) {
+export function ItListeningPage({ articleId, memorize }: { articleId?: string; memorize?: boolean }) {
 	if (articleId === "mistakes") return <MistakeWords />;
+	if (memorize && articleId) return <MemorizeList id={articleId} />;
 	return articleId ? <ItListeningDetail id={articleId} /> : <ItListeningList />;
+}
+
+/** 背诵清单视图（#/it-listening/<id>/memorize）：数据 memorize-<id>.json 驱动，
+ * 从文章定稿挑出的可套用表达，按场景分组；日文大字、读音按词组断开紧随其后。 */
+function MemorizeList({ id }: { id: string }) {
+	const [file, setFile] = useState<ItListeningMemorizeFile | null>(null);
+	const [error, setError] = useState(false);
+
+	useEffect(() => {
+		let alive = true;
+		loadJson(`/data/it-listening/memorize-${id}.json`)
+			.then((v) => {
+				if (!alive) return;
+				if (isItListeningMemorizeFile(v) && v.articleId === id) setFile(v);
+				else setError(true);
+			})
+			.catch(() => alive && setError(true));
+		return () => {
+			alive = false;
+		};
+	}, [id]);
+
+	let n = 0;
+	return (
+		<div className="itl-page">
+			<header className="itl-head">
+				<button type="button" className="itl-memo-back" onClick={() => navTo(`#/it-listening/${id}`)}>
+					← {lx("返回文章", "Back to the article")}
+				</button>
+				<h1>{file?.title_zh ?? lx("背诵清单", "Memorization list")}</h1>
+				{file ? (
+					<p className="itl-head-meta">
+						{lx(
+							`共 ${file.groups.reduce((a, g) => a + g.items.length, 0)} 条 · ${file.groups.length} 组`,
+							`${file.groups.reduce((a, g) => a + g.items.length, 0)} items · ${file.groups.length} groups`,
+						)}
+					</p>
+				) : null}
+				{file?.note_zh ? <p className="itl-head-ja">{file.note_zh}</p> : null}
+			</header>
+
+			{error ? (
+				<div className="itl-empty">{lx("这篇文章还没有背诵清单。", "This article has no memorization list yet.")}</div>
+			) : !file ? (
+				<div className="itl-empty">{lx("加载中…", "Loading…")}</div>
+			) : (
+				file.groups.map((g) => (
+					<section className="itl-memo-group" key={g.title}>
+						<h2 className="itl-memo-group-title">{g.title}</h2>
+						<ol className="itl-memo-list">
+							{g.items.map((it) => {
+								n += 1;
+								return (
+									<li className="itl-memo-item" key={it.sentenceRef}>
+										<div className="itl-memo-top">
+											<span className="itl-s-no">{n}</span>
+											<span className="itl-memo-ref">
+												{lx("原句", "Sentence")} #{it.sentenceRef}
+											</span>
+										</div>
+										<p className="itl-memo-jp">{it.jp}</p>
+										<p className="itl-memo-reading">{it.reading}</p>
+										<p className="itl-memo-zh">{it.zh}</p>
+										<p className="itl-memo-use">
+											<b>{lx("用在哪", "Use it for")}</b>
+											{it.use}
+										</p>
+									</li>
+								);
+							})}
+						</ol>
+					</section>
+				))
+			)}
+		</div>
+	);
 }
 
 /** 错词本：精听错词（带错法备注）+ 来源篇目生词的合并清单，数据在 mistake-words.json。 */
@@ -391,6 +470,23 @@ function ItListeningDetail({ id }: { id: string }) {
 				else setError(true);
 			})
 			.catch(() => alive && setError(true));
+		return () => {
+			alive = false;
+		};
+	}, [id]);
+
+	// 背诵清单入口（数据驱动）：memorize-<id>.json 存在且校验通过才显示，多数文章没有。
+	const [memo, setMemo] = useState<ItListeningMemorizeFile | null>(null);
+	useEffect(() => {
+		let alive = true;
+		setMemo(null);
+		loadJson(`/data/it-listening/memorize-${id}.json`)
+			.then((v) => {
+				if (alive && isItListeningMemorizeFile(v) && v.articleId === id) setMemo(v);
+			})
+			.catch(() => {
+				/* 没有清单文件是常态，静默即可 */
+			});
 		return () => {
 			alive = false;
 		};
@@ -761,6 +857,11 @@ function ItListeningDetail({ id }: { id: string }) {
 				<button type="button" className={`itl-done-btn${done ? " on" : ""}`} aria-pressed={done} onClick={() => toggleItlDone(id)}>
 					{done ? lx("✓ 已学完（点此取消）", "✓ Finished (tap to undo)") : lx("学完这篇 ✓", "Mark this article as finished ✓")}
 				</button>
+				{memo ? (
+					<button type="button" className="itl-memo-btn" onClick={() => navTo(`#/it-listening/${id}/memorize`)}>
+						📖 {lx("背诵清单", "Memorization list")} · {memo.groups.reduce((a, g) => a + g.items.length, 0)} {lx("条", "items")}
+					</button>
+				) : null}
 			</header>
 
 			{article.videoId ? (

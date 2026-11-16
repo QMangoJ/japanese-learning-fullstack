@@ -6,7 +6,8 @@
  *   <id>.json         一篇文章（目录字段 + sentences）
  * 结构说明见 public/data/it-listening/README.md。
  *
- * 路由：#/it-listening（列表）与 #/it-listening/<id>（详情），
+ * 路由：#/it-listening（列表）、#/it-listening/<id>（详情）、
+ * #/it-listening/<id>/memorize（背诵清单，数据文件 memorize-<id>.json 存在才有），
  * 与专题词汇的 #/topics/<slug> 同一套哈希路由惯例。
  */
 
@@ -169,6 +170,57 @@ export type MistakeWord = {
 
 export type MistakeWordsFile = { version: 1; title_zh: string; note_zh?: string; entries: MistakeWord[] };
 
+/** 背诵清单条目：jp/zh 必须与文章定稿对应句逐字一致（构建测试硬校验）。 */
+export type ItListeningMemorizeItem = {
+	/** 原句编号：文章 sentences 的 1 起下标。 */
+	sentenceRef: number;
+	jp: string;
+	/** 整行读音（文章 ruby 分段拼成），按词组以半角空格断开，方便断词跟读。 */
+	reading: string;
+	zh: string;
+	/** 用在哪：使用场景一句话（中文）。 */
+	use: string;
+};
+
+export type ItListeningMemorizeGroup = { title: string; items: ItListeningMemorizeItem[] };
+
+/** 背诵清单（public/data/it-listening/memorize-<文章id>.json，可选、数据驱动）：
+ * 从文章定稿里挑出的可直接套用的表达，按场景分组。只有存在该文件的文章才显示入口。 */
+export type ItListeningMemorizeFile = {
+	version: 1;
+	articleId: string;
+	title_zh: string;
+	note_zh?: string;
+	groups: ItListeningMemorizeGroup[];
+};
+
+export function isItListeningMemorizeFile(v: unknown): v is ItListeningMemorizeFile {
+	if (typeof v !== "object" || v === null) return false;
+	const f = v as ItListeningMemorizeFile;
+	return (
+		typeof f.articleId === "string" &&
+		typeof f.title_zh === "string" &&
+		Array.isArray(f.groups) &&
+		f.groups.length > 0 &&
+		f.groups.every(
+			(g) =>
+				g &&
+				typeof g.title === "string" &&
+				Array.isArray(g.items) &&
+				g.items.length > 0 &&
+				g.items.every(
+					(it) =>
+						it &&
+						typeof it.sentenceRef === "number" &&
+						typeof it.jp === "string" &&
+						typeof it.reading === "string" &&
+						typeof it.zh === "string" &&
+						typeof it.use === "string",
+				),
+		)
+	);
+}
+
 export function isMistakeWordsFile(v: unknown): v is MistakeWordsFile {
 	if (typeof v !== "object" || v === null) return false;
 	const f = v as MistakeWordsFile;
@@ -199,9 +251,12 @@ export function parseRubyMarkup(text: string): ItListeningRubySegment[] {
 	return segs.length ? segs : [{ t: text }];
 }
 
-/** "#/it-listening" → { id: undefined }；"#/it-listening/<id>" → { id }；其他 → null。 */
-export function parseItListeningRoute(key: string): { id?: string } | null {
+/** "#/it-listening" → {}；"#/it-listening/<id>" → { id }；
+ * "#/it-listening/<id>/memorize" → { id, memorize: true }（背诵清单视图）；其他 → null。 */
+export function parseItListeningRoute(key: string): { id?: string; memorize?: boolean } | null {
 	if (key === "#/it-listening") return {};
+	const mm = key.match(/^#\/it-listening\/([a-z0-9][a-z0-9-]*)\/memorize$/);
+	if (mm) return { id: mm[1], memorize: true };
 	const m = key.match(/^#\/it-listening\/([a-z0-9][a-z0-9-]*)$/);
 	if (m) return { id: m[1] };
 	return null;

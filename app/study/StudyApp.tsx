@@ -1133,7 +1133,7 @@ export function StudyApp() {
 	else if (routeKey === "#/numbers") body = DATA.common?.numbers ? <NumbersPage data={DATA.common} /> : <div className="empty">通用参考数据加载中，请稍候…</div>;
 	else if (reviewRoute) body = <LazyReviewPage dateId={reviewRoute.id} />;
 	else if (topicsRoute) body = <LazyTopicsPage slug={topicsRoute.slug} />;
-	else if (itlRoute) body = <LazyItListeningPage articleId={itlRoute.id} />;
+	else if (itlRoute) body = <LazyItListeningPage articleId={itlRoute.id} memorize={itlRoute.memorize} />;
 	else if (enlRoute) body = <LazyEnListeningPage articleId={enlRoute.id} />;
 	else body = <HomePage data={homeData} />;
 
@@ -1160,7 +1160,7 @@ export function StudyApp() {
 				showTypebar={routeKey === "#/" || Boolean(day)}
 				showReading={LEVEL === "n3" || LEVEL === "n2"}
 				showListening={LEVEL === "n3" || LEVEL === "n2" || LEVEL === "n1"}
-				onBack={() => (day ? navTo("#/") : reviewRoute?.id ? navTo("#/review") : topicsRoute?.slug ? navTo("#/topics") : itlRoute?.id ? navTo("#/it-listening") : enlRoute?.id ? navTo("#/en-listening") : minnaRoute?.lesson != null ? navTo(minnaHash(minnaRoute.bookId)) : history.length > 1 ? navigate(-1) : navTo("#/"))}
+				onBack={() => (day ? navTo("#/") : reviewRoute?.id ? navTo("#/review") : topicsRoute?.slug ? navTo("#/topics") : itlRoute?.id ? navTo(itlRoute.memorize ? `#/it-listening/${itlRoute.id}` : "#/it-listening") : enlRoute?.id ? navTo("#/en-listening") : minnaRoute?.lesson != null ? navTo(minnaHash(minnaRoute.bookId)) : history.length > 1 ? navigate(-1) : navTo("#/"))}
 				onOpenLevel={() => setSheet("level")}
 			/>
 			<Sidebar routeKey={routeKey} onLevel={pickLevel} />

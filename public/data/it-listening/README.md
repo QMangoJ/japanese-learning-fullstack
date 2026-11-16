@@ -6,6 +6,9 @@
 public/data/it-listening/
   index.json              { "version": 1, "articles": [ {目录条目} ] }
   <id>.json               一篇文章（下面的结构）
+  memorize-<id>.json      背诵清单（可选，{ "version": 1, "articleId", "title_zh", "groups": [{ "title", "items": [{ "sentenceRef", "jp", "reading", "zh", "use" }] }] }）：
+                          从文章定稿逐字摘出的可套用表达，文章页有入口、路由 #/it-listening/<id>/memorize；
+                          jp/zh 必须与对应句逐字一致、reading 去空格后 == 该句 ruby 拼接（tests/unit/it-listening-memorize.test.ts 硬校验）
 ```
 
 ## 目录条目（index.json）

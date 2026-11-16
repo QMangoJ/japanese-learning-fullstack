@@ -108,6 +108,25 @@
 
 .itl-note{margin:0 0 14px;padding:10px 14px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--sub);font-size:13.5px;line-height:1.6}
 
+/* 背诵清单：文章页头部的入口钮（与学完钮同排同规格，数据文件存在才渲染） */
+.itl-memo-btn{margin-top:12px;margin-left:10px;padding:9px 20px;border:1.5px solid var(--line);border-radius:999px;background:var(--card);color:var(--ink);font-size:15px;font-weight:800;cursor:pointer}
+.itl-memo-btn:hover{background:var(--bg);border-color:var(--accent);color:var(--accent)}
+
+/* 背诵清单视图：日文大字 → 读音（词组空格、主题色保证可读）→ 中文 → 用在哪小字 */
+.itl-memo-back{margin-bottom:10px;padding:7px 14px;border:1.5px solid var(--line);border-radius:999px;background:var(--card);color:var(--ink);font-size:14px;font-weight:800;cursor:pointer}
+.itl-memo-back:hover{background:var(--bg)}
+.itl-memo-group{margin-top:24px}
+.itl-memo-group-title{margin:0;font-size:18.5px;line-height:1.4;color:var(--accent)}
+.itl-memo-list{display:grid;gap:12px;margin:12px 0 0;padding:0;list-style:none}
+.itl-memo-item{padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:var(--card);box-shadow:var(--shadow)}
+.itl-memo-top{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.itl-memo-ref{color:var(--sub);font-size:12.5px;font-weight:700}
+.itl-memo-jp{margin:0;font-size:19px;line-height:1.75;font-weight:600}
+.itl-memo-reading{margin:5px 0 0;font-size:16px;line-height:1.75;color:var(--accent)}
+.itl-memo-zh{margin:5px 0 0;font-size:15.5px;line-height:1.65}
+.itl-memo-use{margin:9px 0 0;color:var(--sub);font-size:13.5px;line-height:1.6}
+.itl-memo-use b{margin-right:6px;color:var(--accent);font-weight:900;white-space:nowrap}
+
 .itl-sentences{display:grid;gap:12px;margin:0;padding:0;list-style:none}
 .itl-sentence{padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:var(--card);box-shadow:var(--shadow);transition:background-color .45s ease,border-color .45s ease}
 .itl-sentence--active{background:var(--accent-soft);border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}

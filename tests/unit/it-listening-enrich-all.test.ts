@@ -12,7 +12,7 @@ import type { ItListeningArticle } from "../../app/study/it-listening";
  */
 const dir = join(process.cwd(), "public/data/it-listening");
 const files = readdirSync(dir).filter(
-	(f) => f.endsWith(".json") && f !== "index.json" && f !== "mistake-words.json",
+	(f) => f.endsWith(".json") && f !== "index.json" && f !== "mistake-words.json" && !f.startsWith("memorize-"),
 );
 const LEVELS = new Set(["N1", "N2", "N3", "N4", "N5"]);
 
