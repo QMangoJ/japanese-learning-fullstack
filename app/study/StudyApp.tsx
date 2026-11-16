@@ -709,20 +709,25 @@ function SelectionPopover({ routeKey }: { routeKey: string }) {
 				);
 			});
 		};
-		const queue = (event?: Event) => {
+		// 2026-11-16 Daniel 定：选区稳定后延迟 1 秒再显示，避免调整选区时浮层乱闪。
+		// selectionchange 每变一次就重置计时；选区塌陷（点空白/取消选择）直接取消计时。
+		const scheduleShow = (event?: Event) => {
 			if ((event?.target as Element | null)?.closest?.("#selectionPopover")) return;
 			if (timer) clearTimeout(timer);
-			timer = setTimeout(maybeShow, 48);
+			const sel = document.getSelection();
+			if (!sel || sel.isCollapsed || !sel.toString().trim()) return;
+			timer = setTimeout(maybeShow, 1000);
 		};
-		// Pointer released: the selection is final, so show immediately instead of
-		// waiting out the selectionchange debounce (maybeShow defers one frame).
-		const queueNow = (event?: Event) => {
-			if ((event?.target as Element | null)?.closest?.("#selectionPopover")) return;
-			if (timer) clearTimeout(timer);
-			maybeShow();
-		};
+		const queue = scheduleShow;
+		// Pointer released: the selection is final — start the same 1s timer from here
+		// (a later selectionchange simply re-arms it).
+		const queueNow = scheduleShow;
 		const onPointerDown = (e: PointerEvent) => {
-			if (!(e.target as Element).closest?.("#selectionPopover")) hide();
+			if (!(e.target as Element).closest?.("#selectionPopover")) {
+				// 点浮层以外的任意区域：关掉已显示的浮层，也取消还没到点的待显示计时。
+				if (timer) clearTimeout(timer);
+				hide();
+			}
 		};
 		const onKey = (e: KeyboardEvent) => {
 			if (e.key === "Escape") hide();
