@@ -92,6 +92,30 @@ export function itlActiveIndex(starts: readonly (number | undefined)[], t: numbe
 	return ans;
 }
 
+export interface ItlFollowState {
+	/** 用户手动滚动后挂起（跟随关不掉滚动抢夺时不滚动）。 */
+	suspended: boolean;
+	/** 点句跳转后的一次性宽限：下一次手动滚动只挂起到当前句播完，
+	 * 播放推进到下一句时自动恢复跟随（点句 = “带我去这句并继续跟”，
+	 * 不是“停在这句”。宽限在第一次句切换时消耗掉，之后的手动滚动仍按常规则挂起）。 */
+	resumeOnAdvance: boolean;
+}
+
+/** 播放推进到新句时的跟随决策（轮询用，纯函数便于单测）：
+ * 跟随关着 → 什么都不做；已挂起且在点句宽限内 → 恢复并滚动，同时消耗宽限；
+ * 已挂起且无宽限 → 保持挂起不滚动；未挂起 → 正常滚动并消耗宽限。 */
+export function itlFollowOnSentenceChange(
+	state: ItlFollowState,
+	followOn: boolean,
+): { state: ItlFollowState; shouldScroll: boolean } {
+	if (!followOn) return { state, shouldScroll: false };
+	if (state.suspended) {
+		if (state.resumeOnAdvance) return { state: { suspended: false, resumeOnAdvance: false }, shouldScroll: true };
+		return { state, shouldScroll: false };
+	}
+	return { state: { suspended: false, resumeOnAdvance: false }, shouldScroll: true };
+}
+
 function fmtDuration(sec?: number): string {
 	if (!sec) return "";
 	const m = Math.floor(sec / 60);
@@ -533,7 +557,15 @@ function ItListeningDetail({ id }: { id: string }) {
 	const followOnRef = useRef(true);
 	const followSuspendedRef = useRef(false);
 	const sentenceRefs = useRef<(HTMLLIElement | null)[]>([]);
-	const programmaticScrollAtRef = useRef(0);
+	// 程序滚动进行中（scrollIntoView 平滑滚动未结束）：此期间的 scroll 事件
+	// 绝不能当成手动滚动挂起跟随。用 scrollend 事件清标志（长距离平滑滚动
+	// 可能跑 1 秒以上，固定 900ms 窗口盖不住）；2 秒定时器只是 scrollend
+	// 万一没触发时的兜底，不是判断窗口。
+	const programmaticScrollingRef = useRef(false);
+	const programmaticScrollEndTimerRef = useRef<number | null>(null);
+	// 点句跳转后的宽限（见 itlFollowOnSentenceChange）：点句后第一次手动滚动
+	// 只挂起到当前句播完，下一句开始时自动恢复跟随。
+	const followResumeOnAdvanceRef = useRef(false);
 
 	useEffect(() => {
 		setFloatDismissed(false);
@@ -549,6 +581,7 @@ function ItListeningDetail({ id }: { id: string }) {
 		setFollowOn(true);
 		followSuspendedRef.current = false;
 		setFollowSuspended(false);
+		followResumeOnAdvanceRef.current = false;
 		sentenceRefs.current = [];
 	}, [id]);
 
@@ -657,7 +690,16 @@ function ItListeningDetail({ id }: { id: string }) {
 		const vh = window.innerHeight;
 		const center = rect.top + rect.height / 2;
 		if (center < vh * 0.28 || center > vh * 0.72) {
-			programmaticScrollAtRef.current = Date.now();
+			programmaticScrollingRef.current = true;
+			if (programmaticScrollEndTimerRef.current !== null) {
+				window.clearTimeout(programmaticScrollEndTimerRef.current);
+			}
+			// 兜底：scrollend 正常会先清标志；万一没触发，2 秒后强制清，
+			// 避免一次程序滚动把之后的手动滚动判定永久堵死。
+			programmaticScrollEndTimerRef.current = window.setTimeout(() => {
+				programmaticScrollingRef.current = false;
+				programmaticScrollEndTimerRef.current = null;
+			}, 2000);
 			el.scrollIntoView({ block: "center", behavior: "smooth" });
 		}
 	};
@@ -670,7 +712,16 @@ function ItListeningDetail({ id }: { id: string }) {
 			if (idx !== activeIdxRef.current) {
 				activeIdxRef.current = idx;
 				setActiveIdx(idx);
-				if (idx >= 0 && followOnRef.current && !followSuspendedRef.current) scrollToSentence(idx);
+				if (idx >= 0) {
+					const next = itlFollowOnSentenceChange(
+						{ suspended: followSuspendedRef.current, resumeOnAdvance: followResumeOnAdvanceRef.current },
+						followOnRef.current,
+					);
+					followSuspendedRef.current = next.state.suspended;
+					followResumeOnAdvanceRef.current = next.state.resumeOnAdvance;
+					setFollowSuspended(next.state.suspended);
+					if (next.shouldScroll) scrollToSentence(idx);
+				}
 			}
 		}, 250);
 		return () => window.clearInterval(timer);
@@ -679,11 +730,15 @@ function ItListeningDetail({ id }: { id: string }) {
 	// 用户手动滚动（滚轮/触摸/滚动键/按住指针拖动）→ 暂停跟随，不跟用户抢。
 	// 裸 scroll 事件不能当手动：浏览器滚动锚定、合成滚动、布局位移都会触发它——
 	// 线上实测播放前一次 13px 的非手势滚动就把跟随误挂起了一整场（按钮全程
-	// 「已暂停」）。所以 scroll 只在指针按住期间（拖滚动条/触摸拖动）才算手动，
-	// 且程序滚动（scrollIntoView）后 900ms 内的不算。
+	// 「已暂停」）。所以 scroll 只在指针按住期间（拖滚动条/触摸拖动）才算手动。
+	// 程序滚动进行中（programmaticScrollingRef）时，任何来源的滚动事件都不挂起：
+	// 长距离平滑滚动可能跑 1 秒以上，固定时间窗口盖不住——点句跳转后正好在
+	// 一次跟随滚动飞行途中按住指针，就会把刚恢复的跟随又挂起，且播放中
+	// 没有任何恢复路径（seek 是 1→3→1，状态恢复特意排除了 3→1）。
 	useEffect(() => {
 		if (!hasTimes) return;
 		const suspend = () => {
+			if (programmaticScrollingRef.current) return;
 			if (followOnRef.current && !followSuspendedRef.current) {
 				followSuspendedRef.current = true;
 				setFollowSuspended(true);
@@ -697,7 +752,14 @@ function ItListeningDetail({ id }: { id: string }) {
 			pointerDown = false;
 		};
 		const onScroll = () => {
-			if (pointerDown && Date.now() - programmaticScrollAtRef.current > 900) suspend();
+			if (pointerDown) suspend();
+		};
+		const onScrollEnd = () => {
+			programmaticScrollingRef.current = false;
+			if (programmaticScrollEndTimerRef.current !== null) {
+				window.clearTimeout(programmaticScrollEndTimerRef.current);
+				programmaticScrollEndTimerRef.current = null;
+			}
 		};
 		const onKey = (e: KeyboardEvent) => {
 			if (e.key === "PageDown" || e.key === "PageUp" || e.key === "Home" || e.key === "End") suspend();
@@ -708,6 +770,7 @@ function ItListeningDetail({ id }: { id: string }) {
 		window.addEventListener("pointerup", onPointerUp);
 		window.addEventListener("pointercancel", onPointerUp);
 		window.addEventListener("scroll", onScroll, { passive: true });
+		window.addEventListener("scrollend", onScrollEnd);
 		window.addEventListener("keydown", onKey);
 		return () => {
 			window.removeEventListener("wheel", suspend);
@@ -716,6 +779,7 @@ function ItListeningDetail({ id }: { id: string }) {
 			window.removeEventListener("pointerup", onPointerUp);
 			window.removeEventListener("pointercancel", onPointerUp);
 			window.removeEventListener("scroll", onScroll);
+			window.removeEventListener("scrollend", onScrollEnd);
 			window.removeEventListener("keydown", onKey);
 		};
 	}, [hasTimes]);
@@ -737,6 +801,11 @@ function ItListeningDetail({ id }: { id: string }) {
 			followSuspendedRef.current = false;
 			setFollowSuspended(false);
 		}
+		// 点句 = “带我去这句并继续跟”：跳过去之后用户很可能先滚一点读这句
+		// 下面高大的语法/生词卡——那次手动滚动只挂起到当前句播完，播放推进
+		// 到下一句时跟随自动恢复（见 itlFollowOnSentenceChange）。不设宽限的话，
+		// 播放中没有任何恢复路径，跟随会在这次滚动后永久停住。
+		followResumeOnAdvanceRef.current = true;
 	};
 
 	const onFollowToggle = () => {
@@ -745,14 +814,17 @@ function ItListeningDetail({ id }: { id: string }) {
 			setFollowOn(true);
 			followSuspendedRef.current = false;
 			setFollowSuspended(false);
+			followResumeOnAdvanceRef.current = false;
 			if (activeIdxRef.current >= 0) scrollToSentence(activeIdxRef.current);
 		} else if (followSuspendedRef.current) {
 			followSuspendedRef.current = false;
 			setFollowSuspended(false);
+			followResumeOnAdvanceRef.current = false;
 			if (activeIdxRef.current >= 0) scrollToSentence(activeIdxRef.current);
 		} else {
 			followOnRef.current = false;
 			setFollowOn(false);
+			followResumeOnAdvanceRef.current = false;
 		}
 	};
 
