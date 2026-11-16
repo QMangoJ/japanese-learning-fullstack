@@ -8,7 +8,11 @@ import { chineseMeaningForQuestion } from "../../app/data/kanji-exam-chinese";
 import { KanjiExamPage } from "../../app/study/KanjiExamPage";
 
 describe("KanjiExamPage answers", () => {
-	beforeEach(() => localStorage.clear());
+	beforeEach(() => {
+		localStorage.clear();
+		// These cover the original school bank, now the 「原学校汉字」 group.
+		localStorage.setItem("jp-kanji-exam-group-v1", "school-legacy");
+	});
 	afterEach(() => vi.restoreAllMocks());
 
 	it.each(["0", "1"])("shows meanings on every result with practice support set to %s", async (preference) => {

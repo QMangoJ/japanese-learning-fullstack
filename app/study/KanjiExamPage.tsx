@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { Suspense, lazy, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 
 import {
 	KANJI_EXAM_BATCHES,
@@ -18,11 +18,18 @@ import {
 import { chineseMeaningForQuestion } from "../data/kanji-exam-chinese";
 import { vocabForLesson } from "../data/kanji-exam-vocab";
 import { Hanamaru } from "./answer-feedback";
+import { MarkedPrompt } from "./kanji-exam-marked";
+import { KANJI_MASTER_SUMMARY } from "../data/kanji-master-n2";
 import { TickText } from "./tick-text";
 import { LANG, lx } from "./store";
 import "../routes/kanji-exam.css";
 
+const LazyKanjiMasterExam = lazy(() =>
+	import("./KanjiMasterExam").then((module) => ({ default: module.KanjiMasterExam })),
+);
+
 const HISTORY_KEY = "jp-kanji-exam-history-v1";
+const GROUP_KEY = "jp-kanji-exam-group-v1";
 const ENGLISH_SUPPORT_KEY = "jp-kanji-exam-english-support-v1";
 
 type AttemptHistory = {
@@ -75,18 +82,6 @@ function readEnglishSupport(): boolean | null {
 
 function storeEnglishSupport(value: boolean) {
 	if (typeof window !== "undefined") localStorage.setItem(ENGLISH_SUPPORT_KEY, value ? "1" : "0");
-}
-
-function MarkedPrompt({ question }: { question: Pick<KanjiExamQuestion, "prompt" | "target"> }) {
-	const index = question.prompt.indexOf(question.target);
-	if (index < 0) return <>{question.prompt}</>;
-	return (
-		<>
-			{question.prompt.slice(0, index)}
-			<mark>{question.target}</mark>
-			{question.prompt.slice(index + question.target.length)}
-		</>
-	);
 }
 
 function FilledKanji({ question }: { question: Pick<KanjiExamQuestion, "kind" | "prompt" | "target" | "answer"> }) {
@@ -161,7 +156,74 @@ function modeLabel(mode: KanjiExamMode) {
 	return lx(modeMeta[mode].cn, modeMeta[mode].en);
 }
 
+export type KanjiExamGroupId = "kanji-master-n2" | "school-legacy";
+
+function readGroup(): KanjiExamGroupId | null {
+	if (typeof window === "undefined") return null;
+	const value = localStorage.getItem(GROUP_KEY);
+	return value === "kanji-master-n2" || value === "school-legacy" ? value : null;
+}
+
+function KanjiExamGroupPicker({ group, onChange }: { group: KanjiExamGroupId; onChange: (group: KanjiExamGroupId) => void }) {
+	const legacyCount = KANJI_EXAM_BATCHES.reduce((sum, batch) => sum + questionsForMode(batch, "mixed").length, 0);
+	const groups: { id: KanjiExamGroupId; title: string; subtitle: string; meta: string }[] = [
+		{
+			id: "kanji-master-n2",
+			title: lx("漢字マスター N2（学校教材）", "Kanji Master N2 (school textbook)"),
+			subtitle: lx("基本編・挑戦編，按 編 → 章 → 课 练习", "基本編 / 挑戦編, by part → chapter → lesson"),
+			meta: lx(
+				`${KANJI_MASTER_SUMMARY.chapters}章 · ${KANJI_MASTER_SUMMARY.lessons}课 · ${KANJI_MASTER_SUMMARY.kanji}字 · ${KANJI_MASTER_SUMMARY.questions}题`,
+				`${KANJI_MASTER_SUMMARY.chapters} ch · ${KANJI_MASTER_SUMMARY.lessons} lessons · ${KANJI_MASTER_SUMMARY.kanji} kanji · ${KANJI_MASTER_SUMMARY.questions} q`,
+			),
+		},
+		{
+			id: "school-legacy",
+			title: lx("原学校汉字", "Original school kanji"),
+			subtitle: lx("之前导入的学校汉字题库（原样保留）", "The previously imported school sets, unchanged"),
+			meta: lx(`${KANJI_EXAM_BATCHES.length}个题库 · ${legacyCount}题`, `${KANJI_EXAM_BATCHES.length} sets · ${legacyCount} q`),
+		},
+	];
+	return (
+		<section className="kanji-exam-panel kanji-exam-groups">
+			<div className="kanji-exam-section-title">
+				<div><span>组</span><h2>{lx("选择题组", "Choose a group")}</h2></div>
+			</div>
+			<div className="kanji-exam-batches" role="radiogroup" aria-label={lx("选择题组", "Choose a group")}>
+				{groups.map((item) => (
+					<button key={item.id} role="radio" aria-checked={item.id === group} className={item.id === group ? "on" : ""} onClick={() => onChange(item.id)}>
+						<span className="kanji-exam-batch-check">{item.id === group ? "✓" : ""}</span>
+						<strong>{item.title}</strong>
+						<span>{item.subtitle}</span>
+						<small>{item.meta}</small>
+					</button>
+				))}
+			</div>
+		</section>
+	);
+}
+
+/** 汉字自测: pick a group first, then that group's own flow. */
 export function KanjiExamPage() {
+	const [group, setGroup] = useState<KanjiExamGroupId>("kanji-master-n2");
+	useEffect(() => {
+		const stored = readGroup();
+		if (stored) setGroup(stored);
+	}, []);
+	const choose = (next: KanjiExamGroupId) => {
+		setGroup(next);
+		if (typeof window !== "undefined") localStorage.setItem(GROUP_KEY, next);
+	};
+	const picker = <KanjiExamGroupPicker group={group} onChange={choose} />;
+	if (group === "school-legacy") return <SchoolKanjiExam groupPicker={picker} />;
+	return (
+		<Suspense fallback={<div className="kanji-exam-page">{picker}<p className="kanji-master-status">{lx("正在加载…", "Loading…")}</p></div>}>
+			<LazyKanjiMasterExam groupPicker={picker} />
+		</Suspense>
+	);
+}
+
+/** 原学校汉字: the original question bank and flow, unchanged. */
+function SchoolKanjiExam({ groupPicker }: { groupPicker?: ReactNode }) {
 	const interfaceEnglish = lx("cn", "en") === "en";
 	const [batchId, setBatchId] = useState(KANJI_EXAM_BATCHES[0]?.id || "");
 	const [mode, setMode] = useState<KanjiExamMode>("mixed");
@@ -283,6 +345,7 @@ export function KanjiExamPage() {
 						<h1>{lx("汉字自测", "Kanji Self-test")}</h1>
 					</div>
 				</section>
+				{groupPicker}
 
 				<section className="kanji-exam-panel">
 					<div className="kanji-exam-section-title">

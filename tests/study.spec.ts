@@ -446,6 +446,7 @@ test.describe("study navigation", () => {
 			await page.locator('.bottom button[data-nav="common"]').click();
 			await page.locator(".sheet-item", { hasText: /汉字自测|Kanji Self-test/ }).first().click();
 		}
+		await page.getByRole("radio", { name: /原学校汉字|Original school kanji/ }).click();
 
 		await page.getByRole("button", { name: /10题|10 questions/ }).click();
 		await page.getByRole("button", { name: /开始随机练习|Start randomized practice/ }).click();
@@ -482,6 +483,7 @@ test.describe("study navigation", () => {
 			await page.locator('.bottom button[data-nav="common"]').click();
 			await page.locator(".sheet-item", { hasText: /汉字自测|Kanji Self-test/ }).first().click();
 		}
+		await page.getByRole("radio", { name: /原学校汉字|Original school kanji/ }).click();
 
 		const attempt = page.locator(".kanji-exam-history details").first();
 		await attempt.locator("summary").click();
@@ -511,6 +513,7 @@ test.describe("study navigation", () => {
 			await page.locator('.bottom button[data-nav="common"]').click();
 			await page.locator(".sheet-item", { hasText: /汉字自测|Kanji Self-test/ }).first().click();
 		}
+		await page.getByRole("radio", { name: /原学校汉字|Original school kanji/ }).click();
 		await page.getByRole("button", { name: /10题|10 questions/ }).click();
 		await page.getByRole("button", { name: /开始随机练习|Start randomized practice/ }).click();
 		await expect(page.locator(".kanji-exam-english-support")).toHaveCount(0);
@@ -532,6 +535,30 @@ test.describe("study navigation", () => {
 		expect(await page.locator('.kanji-exam-history .kanji-exam-review-meaning [lang="en"]').allTextContents()).toEqual(meanings);
 		expect(await page.locator('.kanji-exam-history .kanji-exam-review-meaning [lang="zh-Hans"]').allTextContents()).toEqual(chineseMeanings);
 		expect(await page.evaluate(() => localStorage.getItem("jp-kanji-exam-english-support-v1"))).toBe("0");
+		expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(await page.evaluate(() => document.documentElement.clientWidth));
+	});
+
+	test("practises a 漢字マスター N2 lesson and keeps the old bank as its own group", async ({ page }) => {
+		await waitForStudy(page);
+		const side = page.locator("#side .side-item", { hasText: /汉字自测|Kanji Self-test/ });
+		if (await side.isVisible()) await side.click();
+		else {
+			await page.locator('.bottom button[data-nav="common"]').click();
+			await page.locator(".sheet-item", { hasText: /汉字自测|Kanji Self-test/ }).first().click();
+		}
+		await expect(page.getByRole("radio", { name: /漢字マスター N2/ })).toHaveAttribute("aria-checked", "true");
+		await page.getByRole("button", { name: /^挑戦編（/ }).click();
+		await page.getByRole("button", { name: /^13 健康-2$/ }).click();
+		await page.getByRole("button", { name: /^3 診察/ }).click();
+		await page.getByRole("button", { name: /^10题|^10 questions/ }).click();
+		await page.getByRole("button", { name: /开始随机练习|Start randomized practice/ }).click();
+		await expect(page.locator(".kanji-exam-question")).toHaveCount(10);
+		await page.getByRole("button", { name: /显示全部答案|Show all answers/ }).click();
+		await expect(page.locator(".kanji-exam-correction.answer-key")).toHaveCount(10);
+		expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(await page.evaluate(() => document.documentElement.clientWidth));
+		await page.getByRole("button", { name: /返回题库|Back to sets/ }).click();
+		await page.getByRole("radio", { name: /原学校汉字|Original school kanji/ }).click();
+		await expect(page.getByRole("button", { name: /学校汉字 · 第2章|School Kanji/ }).first()).toBeVisible();
 		expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(await page.evaluate(() => document.documentElement.clientWidth));
 	});
 

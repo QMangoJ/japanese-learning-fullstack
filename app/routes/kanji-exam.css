@@ -228,3 +228,22 @@ html.theme-dark .kanji-exam-english-toggle.on,html.theme-dark .kanji-exam-englis
 @media(max-width:420px){
 	.kanji-exam-vocab__grid{grid-template-columns:1fr}
 }
+
+/* 漢字マスター N2 group */
+.kanji-exam-groups .kanji-exam-section-title>div>span{font-size:13.5px}
+.kanji-master-scopes{grid-template-columns:repeat(3,1fr)}
+.kanji-master-scopes button{min-height:132px}
+.kanji-master-picker+.kanji-master-picker,.kanji-master-picker+.kanji-exam-count-picker{margin-top:10px}
+.kanji-master-status{margin:0;color:var(--sub);font-size:14.5px;line-height:1.6}
+.kanji-exam-start:disabled{opacity:.5;cursor:not-allowed}
+.kanji-master-choices{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-bottom:4px}
+.kanji-master-choices button{display:flex;align-items:center;gap:6px;min-height:42px;padding:8px 10px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:16px;text-align:left;cursor:pointer}
+.kanji-master-choices button b{flex:none;color:var(--sub);font-family:inherit;font-size:13.5px}
+.kanji-master-choices button.on{border-color:var(--accent);background:var(--accent-soft);box-shadow:0 0 0 1px color-mix(in srgb,var(--accent) 25%,transparent)}
+.kanji-master-choices button:disabled{cursor:default}
+.kanji-master-choices button:disabled:not(.on){opacity:.6}
+@media(max-width:680px){
+	.kanji-master-scopes{grid-template-columns:1fr}
+	.kanji-master-scopes button{min-height:0}
+	.kanji-master-choices{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
