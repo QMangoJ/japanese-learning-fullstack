@@ -10,7 +10,7 @@ const LOCK_KEY = "usage-time-lock";
 const IDLE_SLICE_MS = 60_000;
 
 export type DayMap = Record<string, number>;
-export type UsageKind = "account" | "shadowing" | "reading";
+export type UsageKind = "account" | "shadowing" | "reading" | "cs" | "kanji";
 
 export type UsageSnapshot = {
 	days: DayMap;
@@ -148,9 +148,8 @@ export function combineDays(remote: DayMap, mine: DayMap, local: DayMap): DayMap
 }
 
 export function usageEndpoint(kind: UsageKind): string {
-	if (kind === "shadowing") return `${USAGE_ENDPOINT}?app=shadowing`;
-	if (kind === "reading") return `${USAGE_ENDPOINT}?app=reading`;
-	return "/api/usage";
+	if (kind === "account") return "/api/usage";
+	return `${USAGE_ENDPOINT}?app=${kind}`;
 }
 
 const EMPTY_SNAPSHOT: UsageSnapshot = { days: {}, signedIn: false, synced: false, persisted: true, kind: "account" };

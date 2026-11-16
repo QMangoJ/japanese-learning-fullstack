@@ -25,14 +25,19 @@ const headers = {
 
 type Args = { request: Request; context: AppLoadContext };
 
+// Anonymous per-app usage (no login): shadowing/reading are the original two;
+// cs and kanji joined 2026-11-17 so Daniel's own sites report their own usage
+// time to the same endpoint instead of being measured by ActivityWatch.
+const PUBLIC_APPS = ["shadowing", "reading", "cs", "kanji"] as const;
+
 function publicApp(request: Request): Exclude<UsageKind, "account"> | "account" | "invalid" {
 	const app = new URL(request.url).searchParams.get("app");
 	if (!app) return "account";
-	if (app === "shadowing" || app === "reading") return app;
+	if ((PUBLIC_APPS as readonly string[]).includes(app)) return app as Exclude<UsageKind, "account">;
 	return "invalid";
 }
 
-function storageKey(app: "account" | "shadowing" | "reading", userId: string): string {
+function storageKey(app: UsageKind, userId: string): string {
 	return app === "account" ? usageKey(userId) : usageAppKey(app);
 }
 
@@ -44,7 +49,7 @@ async function readDays(kv: KVNamespace, key: string) {
 
 // One KV record per Asia/Tokyo day: usage-day:<owner>:<YYYY-MM-DD>. The record (per-device absolute
 // totals) is stored as value and as metadata so a single list() returns the whole history.
-function dayPrefix(app: "account" | "shadowing" | "reading", userId: string): string {
+function dayPrefix(app: UsageKind, userId: string): string {
 	return app === "account" ? `usage-day:u:${userId}:` : `usage-day:app:${app}:`;
 }
 
@@ -65,7 +70,7 @@ function asRecord(value: unknown): DayRecord | null {
 	return { devices };
 }
 
-async function readHistory(kv: KVNamespace, app: "account" | "shadowing" | "reading", userId: string, device: string | null) {
+async function readHistory(kv: KVNamespace, app: UsageKind, userId: string, device: string | null) {
 	const prefix = dayPrefix(app, userId);
 	const records: Record<string, DayRecord> = {};
 	let cursor: string | undefined;

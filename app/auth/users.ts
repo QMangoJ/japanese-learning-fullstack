@@ -58,7 +58,7 @@ export function usageKey(userId: string): string {
 	return `usage:${userId}`;
 }
 
-export function usageAppKey(app: "shadowing" | "reading"): string {
+export function usageAppKey(app: "shadowing" | "reading" | "cs" | "kanji"): string {
 	return `usage-app:${app}`;
 }
 
