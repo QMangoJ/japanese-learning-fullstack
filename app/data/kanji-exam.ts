@@ -17,6 +17,12 @@ export type KanjiExamQuestion = {
 	target: string;
 	answer: string;
 	accepted?: string[];
+	/**
+	 * Character offset of `target` inside `prompt`, only needed when the target
+	 * is not its first occurrence (e.g. 「彼女の演技ははえて見えた」 where the blank
+	 * is the second 「は」). Without it the first occurrence is used.
+	 */
+	targetIndex?: number;
 };
 
 export type KanjiExamLesson = {
@@ -290,17 +296,28 @@ export function isKanjiExamAnswerCorrect(question: KanjiExamQuestion, value: str
 	);
 }
 
+/**
+ * Where the question's target sits in its prompt. An explicit `targetIndex` wins
+ * when it really points at the target; otherwise the first occurrence is used.
+ * Returns -1 when the target is not in the prompt.
+ */
+export function kanjiExamTargetIndex(question: Pick<KanjiExamQuestion, "prompt" | "target" | "targetIndex">): number {
+	const { prompt, target, targetIndex } = question;
+	if (typeof targetIndex === "number" && targetIndex >= 0 && prompt.startsWith(target, targetIndex)) return targetIndex;
+	return prompt.indexOf(target);
+}
+
 export function filledKanjiExamForm(
-	question: Pick<KanjiExamQuestion, "kind" | "prompt" | "target" | "answer">,
+	question: Pick<KanjiExamQuestion, "kind" | "prompt" | "target" | "answer" | "targetIndex">,
 ): string {
 	if (question.kind === "reading") return question.target;
-	const index = question.prompt.indexOf(question.target);
+	const index = kanjiExamTargetIndex(question);
 	if (index < 0) return question.answer;
 	return question.prompt.slice(0, index) + question.answer + question.prompt.slice(index + question.target.length);
 }
 
 export function completeKanjiWord(
-	question: Pick<KanjiExamQuestion, "kind" | "prompt" | "target" | "answer">,
+	question: Pick<KanjiExamQuestion, "kind" | "prompt" | "target" | "answer" | "targetIndex">,
 ): string {
 	if (question.kind === "reading") return question.target;
 	return writingCompleteWord[writingWordKey(question.prompt, question.answer)] || filledKanjiExamForm(question);
