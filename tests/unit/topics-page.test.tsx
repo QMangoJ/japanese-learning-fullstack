@@ -36,6 +36,26 @@ describe("TopicsPage", () => {
 		expect(screen.getByText("逛街买衣服")).toBeInTheDocument();
 	});
 
+	it("orders topic cards work-first and life-last (Daniel 2026-11-17)", async () => {
+		const { container } = render(<TopicsPage slug={null} />);
+		await screen.findByText("日本投资理财日语");
+		const order = [...container.querySelectorAll("[data-topic]")].map((e) => e.getAttribute("data-topic"));
+		expect(order).toEqual([
+			"frontend",
+			"job-interview",
+			"japan-investing",
+			"minna2-35-42",
+			"ki-expressions",
+			"kanji-journey",
+			"bank-atm",
+			"clothes-shopping",
+			"cafe-menu",
+			"fitness",
+		]);
+		const groups = [...container.querySelectorAll(".topic-group-h")].map((e) => e.textContent);
+		expect(groups).toEqual(["工作面试", "投资理财", "通用", "生活"]);
+	});
+
 	it("common sheet tiles every topic under its group and links to its detail page", () => {
 		const navs: string[] = [];
 		setNavImpl((key) => navs.push(key));

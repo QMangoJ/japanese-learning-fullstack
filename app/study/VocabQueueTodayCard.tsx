@@ -18,9 +18,13 @@ import {
  * Kept separate from VocabQueuePage so the session page stays lazy.
  */
 export function VocabQueueTodayCard() {
-	useSyncExternalStore(subscribeVocabQueue, getVocabQueueVersion, () => 0);
+	const version = useSyncExternalStore(subscribeVocabQueue, getVocabQueueVersion, () => 0);
 	const [, setLoaded] = useState(false);
 
+	// Re-run whenever the queue store settles a change: on first mount the
+	// server pull is usually still in flight and todayPlan (gated on a
+	// verified pull) correctly refuses to mint — the pull's emit bumps the
+	// version, and this effect then mints from the verified states.
 	useEffect(() => {
 		let alive = true;
 		void ensureVocabWords().then((words) => {
@@ -31,7 +35,7 @@ export function VocabQueueTodayCard() {
 		return () => {
 			alive = false;
 		};
-	}, []);
+	}, [version]);
 
 	const words = vocabWordsCache();
 	const plan = vocabQueueData().plan;

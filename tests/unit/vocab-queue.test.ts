@@ -1,8 +1,9 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
-import { describe, expect, it } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import { isVocabQueuePayload } from "../../app/auth/study-payloads";
+import { resetSyncPolicyForTests } from "../../app/study/kv-sync-policy";
 import { isQueueSentenceType, isRubySubset, kanaSequence, rubyReading, stripRuby } from "../../app/study/topic-vocab";
 import {
 	addExtraBatch,
@@ -15,15 +16,20 @@ import {
 	countExtraCandidates,
 	EXTRA_BATCH_SIZE,
 	gradeWordState,
+	hydrateVocabQueue,
 	mergeVocabQueueData,
 	PLAN_PV,
 	planBatchProgress,
+	pullVocabQueueFromServer,
+	pushVocabQueueNow,
 	resetVocabQueueForTests,
 	revertVocabGrade,
 	shouldReshowToday,
 	snapshotVocabGrade,
 	todayPlan,
 	upgradeSameDayPlan,
+	VOCAB_QUEUE_STORAGE_KEY,
+	vocabQueueCanMint,
 	vocabQueueData,
 	type VocabPlan,
 	type VocabWord,
@@ -1030,5 +1036,152 @@ describe("vocab queue sentence-type breakdowns", () => {
 		// The entry Daniel screenshotted on 2026-11-13 carries its breakdown.
 		const trigger = bySurface.get("これにて終了とさせていただきます");
 		expect(trigger?.breakdown?.keigo).toMatchObject({ type: "謙譲語", plain: "終了します" });
+	});
+});
+
+describe("vocab queue stale-snapshot plan guard (2026-11-17 incident)", () => {
+	// Yesterday Daniel completed his whole plan (reviews + 50 new) on the
+	// server. This device's localStorage still held the snapshot from BEFORE
+	// that session: yesterday's new words had no state, and a word graded
+	// yesterday still carried its old due date. The home-page card minted
+	// today's plan from that snapshot before the boot pull reached this
+	// module, reproducing yesterday's batches verbatim.
+	const YDAY = "2026-11-16";
+	const DAY = "2026-11-17";
+	const words: VocabWord[] = [
+		word("graded-yday", 1, 1),
+		word("fresh-yday-1", 1, 2),
+		word("fresh-yday-2", 1, 3),
+		word("fresh-yday-3", 1, 4),
+		word("rev-old", 3, 1),
+		...Array.from({ length: 60 }, (_, i) => word(`new-${i + 1}`, 5, i + 1)),
+	];
+	// The server's truth this morning: graded-yday was graded yesterday
+	// (due next week), the fresh-yday words were learned yesterday, rev-old
+	// is genuinely due today.
+	const serverBlob = {
+		v: 1,
+		states: {
+			"graded-yday": { s: 2, due: "2026-11-23", ts: 9000 },
+			"fresh-yday-1": { s: 1, due: "2026-11-19", ts: 8000 },
+			"fresh-yday-2": { s: 1, due: "2026-11-19", ts: 8000 },
+			"fresh-yday-3": { s: 1, due: "2026-11-19", ts: 8000 },
+			"rev-old": { s: 1, due: DAY, ts: 100 },
+		},
+		plan: { pv: PLAN_PV, date: YDAY, ids: ["graded-yday"], done: ["graded-yday"], review: 0, fresh: 1 },
+	};
+	// The stale local snapshot: graded-yday still due yesterday, the
+	// fresh-yday words unknown, plan from the day before yesterday.
+	const staleBlob = {
+		v: 1,
+		states: {
+			"graded-yday": { s: 1, due: YDAY, ts: 100 },
+			"rev-old": { s: 1, due: DAY, ts: 50 },
+		},
+		plan: { pv: PLAN_PV, date: "2026-11-15", ids: ["graded-yday"], done: [] as string[], review: 1, fresh: 0 },
+	};
+
+	beforeEach(() => {
+		resetVocabQueueForTests();
+		resetSyncPolicyForTests();
+		localStorage.clear();
+	});
+	afterEach(() => {
+		vi.unstubAllGlobals();
+		resetVocabQueueForTests();
+		resetSyncPolicyForTests();
+		localStorage.clear();
+	});
+
+	it("never mints a new-day plan from an unverified stale snapshot; after a fresh pull the plan matches the server's states", async () => {
+		localStorage.setItem(VOCAB_QUEUE_STORAGE_KEY, JSON.stringify(staleBlob));
+		hydrateVocabQueue();
+		expect(vocabQueueData().plan?.date).toBe("2026-11-15");
+
+		// Signed in, but the pull fails (offline): minting must stay blocked —
+		// a settled-but-failed pull is not a verified snapshot.
+		vi.stubGlobal(
+			"fetch",
+			vi.fn(async () => {
+				throw new Error("offline");
+			}),
+		);
+		await pullVocabQueueFromServer("uid");
+		expect(vocabQueueCanMint(DAY)).toBe(false);
+		const refused = todayPlan(words, DAY);
+		expect(refused.date).toBe("2026-11-15");
+		expect(vocabQueueData().plan?.date).toBe("2026-11-15");
+		// Nothing was persisted either: the stored plan is still the stale one.
+		const stored = JSON.parse(localStorage.getItem(VOCAB_QUEUE_STORAGE_KEY)!) as { plan: { date: string } };
+		expect(stored.plan.date).toBe("2026-11-15");
+
+		// The pull lands: states converge to the server's truth, minting opens.
+		vi.stubGlobal(
+			"fetch",
+			vi.fn(async () => new Response(JSON.stringify(serverBlob), { status: 200 })),
+		);
+		await pullVocabQueueFromServer("uid");
+		expect(vocabQueueCanMint(DAY)).toBe(true);
+
+		const plan = todayPlan(words, DAY);
+		const states = vocabQueueData().states;
+		expect(plan.date).toBe(DAY);
+		// Review batch: only the word truly due today — the word graded
+		// yesterday (due 2026-11-23) must NOT come back as a review.
+		expect(plan.review).toBe(1);
+		expect(plan.ids.slice(0, plan.review)).toEqual(["rev-old"]);
+		// Fresh batch: 50 genuinely untouched words — yesterday's new words
+		// (they have states now) must NOT be served again as "new".
+		expect(plan.fresh).toBe(50);
+		const freshIds = plan.ids.slice(plan.review);
+		expect(freshIds).toEqual(Array.from({ length: 50 }, (_, i) => `new-${i + 1}`));
+		for (const id of plan.ids.slice(0, plan.review)) expect(states[id].due <= DAY).toBe(true);
+		for (const id of freshIds) expect(states[id]).toBeUndefined();
+		expect(plan.ids).not.toContain("graded-yday");
+		expect(plan.ids).not.toContain("fresh-yday-1");
+	});
+
+	it("push merges with the server blob first, so a stale client cannot roll back newer states", async () => {
+		const planV = { pv: PLAN_PV, date: DAY, ids: ["x", "y"], done: [] as string[], review: 0, fresh: 2 };
+		let serverNow: unknown = {
+			v: 1,
+			states: { x: { s: 1, due: "2026-11-19", ts: 1000 }, y: { s: 1, due: "2026-11-19", ts: 1000 } },
+			plan: planV,
+		};
+		const putBodies: string[] = [];
+		vi.stubGlobal(
+			"fetch",
+			vi.fn(async (_input: RequestInfo | URL, init?: RequestInit) => {
+				if (init?.method === "PUT") {
+					putBodies.push(String(init.body));
+					return new Response(JSON.stringify({ ok: true }), { status: 200 });
+				}
+				return new Response(JSON.stringify(serverNow), { status: 200 });
+			}),
+		);
+		await pullVocabQueueFromServer("uid");
+
+		// A local grade lands (dirty), and meanwhile another device grades x
+		// further — the server's x record is now newer than this client's.
+		applyVocabGrade("y", "know", true, DAY);
+		serverNow = {
+			v: 1,
+			states: { x: { s: 3, due: "2026-12-17", ts: 5000 }, y: { s: 1, due: "2026-11-19", ts: 1000 } },
+			plan: planV,
+		};
+
+		expect(await pushVocabQueueNow()).toBe(true);
+		expect(putBodies).toHaveLength(1);
+		const sent = JSON.parse(putBodies[0]) as {
+			states: Record<string, { s: number; due: string; ts: number }>;
+			plan: { done: string[] } | null;
+		};
+		// No rollback: the other device's newer x state survives the push…
+		expect(sent.states.x).toMatchObject({ s: 3, due: "2026-12-17", ts: 5000 });
+		// …while this client's own grade of y (know from step 1 → step 2, +7d) is in.
+		expect(sent.states.y).toMatchObject({ s: 2, due: "2026-11-24" });
+		expect(sent.plan?.done).toEqual(["y"]);
+		// And the merged blob is adopted locally.
+		expect(vocabQueueData().states.x.ts).toBe(5000);
 	});
 });

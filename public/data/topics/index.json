@@ -2,38 +2,6 @@
 	"version": 1,
 	"topics": [
 		{
-			"slug": "japan-investing",
-			"title_zh": "日本投资理财日语",
-			"title_ja": "投資・資産運用の日本語",
-			"count": 121,
-			"title_en": "Investing & Personal Finance Japanese",
-			"subtopics": [
-				"开户・本人确认",
-				"账户・税制（NISA等）",
-				"下单・交易",
-				"股票",
-				"投资信托・基金",
-				"债券・其他商品",
-				"收益・成本",
-				"汇率・外国证券",
-				"风险・策略"
-			]
-		},
-		{
-			"slug": "bank-atm",
-			"title_zh": "银行 ATM 取钱",
-			"title_ja": "ATMでお金を引き出す",
-			"count": 64,
-			"title_en": "Withdrawing cash at an ATM",
-			"subtopics": [
-				"画面上的按钮",
-				"插卡和确认",
-				"账户和金额",
-				"还款和转账",
-				"银行开户"
-			]
-		},
-		{
 			"slug": "frontend",
 			"title_zh": "前端工程师",
 			"title_ja": "フロントエンドの仕事",
@@ -48,37 +16,6 @@
 				"测试",
 				"沟通和汇报",
 				"面试"
-			]
-		},
-		{
-			"slug": "clothes-shopping",
-			"title_zh": "逛街买衣服",
-			"title_ja": "服を買いに行く",
-			"count": 122,
-			"title_en": "Shopping for clothes",
-			"subtopics": [
-				"进店和试穿",
-				"合不合身",
-				"价格和结账",
-				"评价衣服",
-				"和朋友逛街",
-				"和店员交流"
-			]
-		},
-		{
-			"slug": "cafe-menu",
-			"title_zh": "咖啡店菜单",
-			"title_ja": "カフェのメニュー",
-			"count": 39,
-			"title_en": "Café menu",
-			"subtopics": [
-				"咖啡",
-				"茶",
-				"其他饮料",
-				"浮冰淇淋",
-				"甜点",
-				"套餐",
-				"菜单用词"
 			]
 		},
 		{
@@ -97,49 +34,21 @@
 			]
 		},
 		{
-			"slug": "kanji-journey",
-			"kind": "reading",
-			"title_zh": "《漢字的旅程》v8 暂停讲解（6:01）",
-			"title_ja": "『漢字の旅程』v8 一時停止の解説",
-			"count": 20,
-			"title_en": "The Journey of Kanji — v8 pause-and-explain (6:01)",
+			"slug": "japan-investing",
+			"title_zh": "日本投资理财日语",
+			"title_ja": "投資・資産運用の日本語",
+			"count": 121,
+			"title_en": "Investing & Personal Finance Japanese",
 			"subtopics": [
-				"开场",
-				"第 1 段　甲骨文是怎样来的",
-				"第 2 段　字形的变化，以「馬」为例",
-				"第 3 段　汉字传到日本",
-				"第 4 段　日本怎样写出自己的字",
-				"第 5 段　日本自己造字，新词又传回中国",
-				"结尾",
-				"来宾问答"
-			]
-		},
-		{
-			"slug": "ki-expressions",
-			"title_zh": "「気」相关的表达",
-			"title_ja": "「気」の表現",
-			"count": 28,
-			"title_en": "Expressions with 気",
-			"subtopics": [
-				"心情・感觉",
-				"注意・意识",
-				"关心・体贴",
-				"意志・心思",
-				"身体・状态",
-				"社交固定句"
-			]
-		},
-		{
-			"slug": "fitness",
-			"title_zh": "健身",
-			"title_ja": "フィットネス・筋トレ",
-			"count": 21,
-			"title_en": "Fitness",
-			"subtopics": [
-				"动作・器械",
-				"训练的说法",
-				"和教练沟通",
-				"身体感受"
+				"开户・本人确认",
+				"账户・税制（NISA等）",
+				"下单・交易",
+				"股票",
+				"投资信托・基金",
+				"债券・其他商品",
+				"收益・成本",
+				"汇率・外国证券",
+				"风险・策略"
 			]
 		},
 		{
@@ -174,6 +83,97 @@
 				"第48課",
 				"第49課",
 				"第50課"
+			]
+		},
+		{
+			"slug": "ki-expressions",
+			"title_zh": "「気」相关的表达",
+			"title_ja": "「気」の表現",
+			"count": 28,
+			"title_en": "Expressions with 気",
+			"subtopics": [
+				"心情・感觉",
+				"注意・意识",
+				"关心・体贴",
+				"意志・心思",
+				"身体・状态",
+				"社交固定句"
+			]
+		},
+		{
+			"slug": "kanji-journey",
+			"kind": "reading",
+			"title_zh": "《漢字的旅程》v8 暂停讲解（6:01）",
+			"title_ja": "『漢字の旅程』v8 一時停止の解説",
+			"count": 20,
+			"title_en": "The Journey of Kanji — v8 pause-and-explain (6:01)",
+			"subtopics": [
+				"开场",
+				"第 1 段　甲骨文是怎样来的",
+				"第 2 段　字形的变化，以「馬」为例",
+				"第 3 段　汉字传到日本",
+				"第 4 段　日本怎样写出自己的字",
+				"第 5 段　日本自己造字，新词又传回中国",
+				"结尾",
+				"来宾问答"
+			]
+		},
+		{
+			"slug": "bank-atm",
+			"title_zh": "银行 ATM 取钱",
+			"title_ja": "ATMでお金を引き出す",
+			"count": 64,
+			"title_en": "Withdrawing cash at an ATM",
+			"subtopics": [
+				"画面上的按钮",
+				"插卡和确认",
+				"账户和金额",
+				"还款和转账",
+				"银行开户"
+			]
+		},
+		{
+			"slug": "clothes-shopping",
+			"title_zh": "逛街买衣服",
+			"title_ja": "服を買いに行く",
+			"count": 122,
+			"title_en": "Shopping for clothes",
+			"subtopics": [
+				"进店和试穿",
+				"合不合身",
+				"价格和结账",
+				"评价衣服",
+				"和朋友逛街",
+				"和店员交流"
+			]
+		},
+		{
+			"slug": "cafe-menu",
+			"title_zh": "咖啡店菜单",
+			"title_ja": "カフェのメニュー",
+			"count": 39,
+			"title_en": "Café menu",
+			"subtopics": [
+				"咖啡",
+				"茶",
+				"其他饮料",
+				"浮冰淇淋",
+				"甜点",
+				"套餐",
+				"菜单用词"
+			]
+		},
+		{
+			"slug": "fitness",
+			"title_zh": "健身",
+			"title_ja": "フィットネス・筋トレ",
+			"count": 21,
+			"title_en": "Fitness",
+			"subtopics": [
+				"动作・器械",
+				"训练的说法",
+				"和教练沟通",
+				"身体感受"
 			]
 		}
 	]

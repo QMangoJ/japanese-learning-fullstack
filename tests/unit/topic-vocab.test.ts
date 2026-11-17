@@ -52,7 +52,8 @@ describe("topic vocabulary data", () => {
 
 	it("adds ATM withdrawal, frontend work, and clothes shopping beside the investing list", () => {
 		const index = JSON.parse(readFileSync(join(DIR, "index.json"), "utf8")) as { topics: { slug: string }[] };
-		expect(index.topics.map((topic) => topic.slug)).toEqual(["japan-investing", "bank-atm", "frontend", "clothes-shopping", "cafe-menu", "job-interview", "kanji-journey", "ki-expressions", "fitness", "minna2-35-42"]);
+		// Display order set by Daniel 2026-11-17: work/interview topics first, life topics last.
+		expect(index.topics.map((topic) => topic.slug)).toEqual(["frontend", "job-interview", "japan-investing", "minna2-35-42", "ki-expressions", "kanji-journey", "bank-atm", "clothes-shopping", "cafe-menu", "fitness"]);
 		const load = (slug: string): TopicFile => JSON.parse(readFileSync(join(DIR, `${slug}.json`), "utf8"));
 		const atm = load("bank-atm");
 		const frontend = load("frontend");

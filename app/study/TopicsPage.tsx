@@ -20,20 +20,27 @@ const BOARD_SLUGS = new Set(["cafe-menu"]);
 const READING_SLUGS = new Set(["kanji-journey"]);
 const LazyKanjiJourneyPage = lazy(() => import("./KanjiJourneyPage").then((module) => ({ default: module.KanjiJourneyPage })));
 
-/** 专题知识分组（与侧边栏信息架构一致）：工作面试 / 生活 / 投资理财 / 通用；未列出的 slug 一律归通用。 */
+/**
+ * 专题知识分组与展示顺序（Daniel 2026-11-17 定）：工作面试最前、生活最后；
+ * 组内顺序由 index.json 的条目顺序决定。合起来的展示序列为：
+ * frontend → job-interview → japan-investing → minna2-35-42 → ki-expressions
+ * → kanji-journey → bank-atm → clothes-shopping → cafe-menu → fitness。
+ * 未列出的 slug 一律归通用；fitness 归生活组（垫底）。
+ */
 const TOPIC_GROUP_OF: Record<string, "work" | "life" | "invest"> = {
 	"job-interview": "work",
 	frontend: "work",
 	"bank-atm": "life",
 	"clothes-shopping": "life",
 	"cafe-menu": "life",
+	fitness: "life",
 	"japan-investing": "invest",
 };
 const TOPIC_GROUPS = [
 	{ key: "work", zh: "工作面试", en: "Work & interviews" },
-	{ key: "life", zh: "生活", en: "Daily life" },
 	{ key: "invest", zh: "投资理财", en: "Investing & finance" },
 	{ key: "general", zh: "通用", en: "General" },
+	{ key: "life", zh: "生活", en: "Daily life" },
 ] as const;
 function topicGroupOf(slug: string): "work" | "life" | "invest" | "general" {
 	return TOPIC_GROUP_OF[slug] ?? "general";

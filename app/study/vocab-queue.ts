@@ -675,6 +675,10 @@ const listeners = new Set<() => void>();
 let version = 0;
 let data: VocabQueueData = { v: 1, states: {}, plan: null };
 let signedIn = false;
+/** True once the app has told us there is no account (noteVocabQueueSignedOut): local state is the only truth there is, so plan minting may proceed from it. Distinct from "auth not resolved yet" (both flags false at boot). */
+let signedOut = false;
+/** JST day (YYYY-MM-DD) of the last SUCCESSFUL server pull this session (initial pull, resync, or the read half of a push); null = no verified server state yet. */
+let lastPullDay: string | null = null;
 let ready = false;
 let dirty = false;
 let pushing = false;
@@ -722,6 +726,27 @@ export function vocabQueueData(): VocabQueueData {
  */
 export function vocabQueueReady() {
 	return ready;
+}
+
+/**
+ * Whether a NEW daily plan may be minted from the in-memory states.
+ *
+ * Minting is deterministic over `states`, so minting from a stale snapshot
+ * resurrects yesterday's batches: words studied yesterday (on any device)
+ * come back as "new", and words graded yesterday reappear as "due" — and
+ * because mergeVocabQueueData lets the later-dated plan win, the bogus plan
+ * then displaces the server's plan on the next push (2026-11-17 incident:
+ * the home-page card minted before bootAccount's pull chain reached this
+ * module, off a localStorage snapshot from before yesterday's session).
+ *
+ * So: signed-out (local-only) clients may always mint; signed-in clients
+ * only when the server blob was pulled successfully TODAY (an app left open
+ * overnight, or a pull that failed, must wait for a fresh pull — showing
+ * yesterday's plan or an empty state beats minting a wrong one).
+ */
+export function vocabQueueCanMint(today: string): boolean {
+	if (signedOut) return true;
+	return signedIn && lastPullDay === today;
 }
 
 export function vocabWordsCache(): VocabWord[] | null {
@@ -806,15 +831,27 @@ export function hydrateVocabQueue() {
  * plan is for another day. A same-day plan minted under the old shared-50
  * regime is first rebuilt under the current regime (upgradeSameDayPlan) and
  * persisted, so every device converges to the new batches on its next pull.
+ *
+ * Both the build and the same-day upgrade are gated on vocabQueueCanMint:
+ * with an unverified (possibly stale) snapshot the stored plan is returned
+ * untouched instead — never persisted over, never rebuilt — until a fresh
+ * server pull lands and the caller retries.
  */
 export function todayPlan(words: VocabWord[], today = jstToday()): VocabPlan {
 	applyAliasesIfNeeded();
 	if (data.plan && data.plan.date === today) {
 		if (data.plan.pv === PLAN_PV) return data.plan;
+		if (!vocabQueueCanMint(today)) return data.plan;
 		const plan = upgradeSameDayPlan(words, data.states, data.plan, today);
 		data = { ...data, plan };
 		commit();
 		return plan;
+	}
+	if (!vocabQueueCanMint(today)) {
+		// Refuse to mint from an unverified snapshot. Return the stored plan
+		// as-is (callers key on its date), or an unpersisted empty plan when
+		// there is none — nothing is written, locally or to the server.
+		return data.plan ?? { pv: PLAN_PV, date: today, ids: [], done: [], review: 0, fresh: 0 };
 	}
 	const plan = buildDailyPlan(words, data.states, today);
 	data = { ...data, plan };
@@ -975,12 +1012,14 @@ export function revertVocabGrade(snap: VocabGradeSnapshot, today = jstToday()) {
 
 export function noteVocabQueueSignedOut() {
 	signedIn = false;
+	signedOut = true;
 	ready = true;
 	emitVocabQueue();
 }
 
 export async function pullVocabQueueFromServer(_accountId: string) {
 	signedIn = true;
+	signedOut = false;
 	let pulled = false;
 	try {
 		const res = await fetch(VOCAB_QUEUE_ENDPOINT, { cache: "no-store", credentials: "same-origin" });
@@ -992,6 +1031,7 @@ export async function pullVocabQueueFromServer(_accountId: string) {
 			writeLocal();
 			dirty = JSON.stringify(merged) !== JSON.stringify(server);
 			pulled = true;
+			lastPullDay = jstToday();
 		}
 	} catch {
 		/* offline */
@@ -1002,22 +1042,51 @@ export async function pullVocabQueueFromServer(_accountId: string) {
 	}
 }
 
+/**
+ * Push the local blob — but never as a blind overwrite. The API route stores
+ * the PUT body verbatim, so a client holding a stale snapshot would roll the
+ * server's states back (words graded on another device losing their newer
+ * records). Instead: GET the server blob first, merge it with the local one
+ * (per-word newer ts wins; same-day plans converge to the server's ids with
+ * progress unioned), and PUT the merged result. A failed GET aborts the push
+ * outright — unverified state is never written.
+ */
 export async function pushVocabQueueNow() {
 	if (!signedIn || !ready || !dirty) return false;
 	if (pushing) return false;
 	if (!canAttemptSync(VOCAB_QUEUE_ENDPOINT)) return false;
 	pushing = true;
-	const snapshot = JSON.stringify(data);
+	const snapshot = data;
 	try {
+		const getRes = await fetch(VOCAB_QUEUE_ENDPOINT, { cache: "no-store", credentials: "same-origin" });
+		noteSyncResult(VOCAB_QUEUE_ENDPOINT, getRes.status);
+		if (!getRes.ok) throw new Error(`vocab queue sync read failed: ${getRes.status}`);
+		const server = cleanVocabQueueData(await getRes.json());
+		// The read half of this push is a successful pull of the server blob.
+		lastPullDay = jstToday();
+		const merged = mergeVocabQueueData(snapshot, server);
 		const response = await fetch(VOCAB_QUEUE_ENDPOINT, {
 			method: "PUT",
 			headers: { "content-type": "application/json" },
 			credentials: "same-origin",
-			body: snapshot,
+			body: JSON.stringify(merged),
 		});
 		noteSyncResult(VOCAB_QUEUE_ENDPOINT, response.status);
 		if (!response.ok) throw new Error(`vocab queue sync failed: ${response.status}`);
-		if (JSON.stringify(data) === snapshot) dirty = false;
+		if (data === snapshot) {
+			// Nothing changed locally during the flight: adopt the merged blob
+			// (it may carry newer server-side states) as the local truth.
+			const changed = JSON.stringify(merged) !== JSON.stringify(data);
+			data = merged;
+			writeLocal();
+			dirty = false;
+			if (changed) emitVocabQueue();
+		} else {
+			// Local state moved on while we were writing; push again so the
+			// newer mutations get their own merge round.
+			dirty = true;
+			scheduleVocabQueuePush();
+		}
 		return true;
 	} catch {
 		noteSyncResult(VOCAB_QUEUE_ENDPOINT, 0);
@@ -1040,6 +1109,7 @@ export async function resyncVocabQueue() {
 		data = merged;
 		writeLocal();
 		dirty = JSON.stringify(merged) !== JSON.stringify(server);
+		lastPullDay = jstToday();
 		if (changed) emitVocabQueue();
 	} catch {
 		/* ignore */
@@ -1050,12 +1120,21 @@ export async function resyncVocabQueue() {
 
 export function kickVocabQueueSync() {
 	if (!signedIn || !ready) return;
+	// When there is local state to upload, push (its read-merge also refreshes
+	// the verified-pull day, unblocking plan minting after an overnight stay);
+	// otherwise a plain read-only resync suffices.
 	if (!dirty) void resyncVocabQueue();
+	else void pushVocabQueueNow();
 }
 
 export function resetVocabQueueForTests() {
 	data = { v: 1, states: {}, plan: null };
 	signedIn = false;
+	// Store unit tests run the module as a local-only client (no server), so
+	// minting is ungated there; tests for the signed-in guard drive
+	// pullVocabQueueFromServer with a stubbed fetch instead.
+	signedOut = true;
+	lastPullDay = null;
 	ready = false;
 	dirty = false;
 	pushing = false;

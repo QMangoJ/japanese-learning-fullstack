@@ -18,6 +18,7 @@ import {
 	snapshotVocabGrade,
 	subscribeVocabQueue,
 	todayPlan,
+	vocabQueueCanMint,
 	vocabQueueData,
 	vocabQueueReady,
 	vocabWordsCache,
@@ -188,13 +189,17 @@ export function VocabQueuePage() {
 	const words = vocabWordsCache();
 	const today = jstToday();
 	const isReady = vocabQueueReady();
+	const canMint = vocabQueueCanMint(today);
 
 	// Build (or reuse) today's plan once the word list is available AND the
-	// initial server pull has settled — the server-side plan (progress, order,
+	// server pull has settled — the server-side plan (progress, order,
 	// re-show state) is restored as-is; only then may a fresh plan be minted.
+	// canMint additionally requires that pull to have SUCCEEDED today: a
+	// failed pull leaves ready set but the local snapshot unverified, and
+	// todayPlan would refuse to mint from it anyway.
 	useEffect(() => {
-		if (words && words.length && isReady) todayPlan(words, today);
-	}, [words, today, isReady]);
+		if (words && words.length && isReady && canMint) todayPlan(words, today);
+	}, [words, today, isReady, canMint]);
 
 	const data = vocabQueueData();
 	const plan = data.plan && data.plan.date === today ? data.plan : null;
