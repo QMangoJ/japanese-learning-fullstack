@@ -154,6 +154,14 @@ function isKanaSurface(text: string): boolean {
 	});
 }
 
+function isKatakanaSurface(text: string): boolean {
+	if (!text) return false;
+	return [...text].every((c) => {
+		const code = c.codePointAt(0) ?? 0;
+		return (code >= 0x30a0 && code <= 0x30ff) || c === "・";
+	});
+}
+
 function wordId(word: string, reading: string): string {
 	return `w:${sha256(`${normKey(word)}|${reading || ""}`).slice(0, 12)}`;
 }
@@ -332,7 +340,21 @@ function itlMistakeWords() {
 	for (const e of data.entries ?? []) {
 		const w = String(e.w ?? "").trim();
 		if (!w) continue;
-		push({ w, r: String(e.r ?? ""), zh: String(e.zh ?? ""), tier: 2, src: "IT听力错词本", srcKey: "itlMistakes" });
+		// Entries harvested from an article's vocab may carry that article's
+		// sentence as ex/exZh (2026-11-17, LINE座談会 batch). Entries for words
+		// already queued via another source deliberately carry none, so the
+		// existing entry's example and its authored breakdown stay untouched —
+		// the merge below only fills fields the winner does not have.
+		push({
+			w,
+			r: String(e.r ?? ""),
+			zh: String(e.zh ?? ""),
+			ex: typeof e.ex === "string" ? e.ex : undefined,
+			exZh: typeof e.exZh === "string" ? e.exZh : undefined,
+			tier: 2,
+			src: "IT听力错词本",
+			srcKey: "itlMistakes",
+		});
 	}
 }
 
@@ -796,7 +818,13 @@ let twinMerged = 0;
 {
 	const byReading = new Map<string, FinalWord[]>();
 	for (const w of words) {
-		if (!w.r || isKanaSurface(normKey(w.w))) continue;
+		if (!w.r) continue;
+		// Kana-spelled entries are merge targets only when their spelling is a
+		// distinct notation of the word: kanji-bearing headwords, and katakana
+		// spellings (リズム is the same word as the hiragana-spelled りずむ —
+		// a katakana/hiragana twin pair merges exactly like a kana/kanji one).
+		const nk0 = normKey(w.w);
+		if (isKanaSurface(nk0) && !isKatakanaSurface(nk0)) continue;
 		const key = kataToHira(w.r);
 		const list = byReading.get(key) ?? [];
 		list.push(w);
