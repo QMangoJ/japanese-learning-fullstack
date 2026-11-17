@@ -6,15 +6,9 @@
  *  scripts/fetch-vocab-queue-inputs.py — favourites / mistakes / study aids
  *  from KV, plus the transcribed 番番词书 TSV.)
  *
- * Sources, in priority order (Daniel, 2026-11-11):
- *   tier 1  work:        topics frontend → job-interview → ki-expressions → fitness → minna2-35-42
- *                        (「気」专题 2026-11-11: built at Daniel's request from his
- *                        気-expression summary in the 日语学习 chat; he approved
- *                        flowing its words into the queue the same day)
- *                        (健身专题 2026-11-15: built at Daniel's request in the
- *                        日语学习 chat — concise gym set: moves/machines, training
- *                        terms, trainer talk, body feelings; flows into the queue
- *                        the same way)
+ * The queue has exactly FIVE source groups, in this order — nothing else
+ * may be added (Daniel, ruled 2026-11-17):
+ *   tier 1  work topics: frontend → job-interview
  *   tier 2  IT listening mistake-words (public/data/it-listening/mistake-words.json)
  *   tier 3  classroom:   lesson-review.json word items from the「Danielさん」doc,
  *                        then the「Preply すみれ先生」doc (Daniel approved adding
@@ -23,8 +17,15 @@
  *   tier 4  collected:   app favourites → personal mistakes book → 番番词书 (140)
  *   tier 5  N2 decks:    n2vocab (1258) → n2kanji (657, kanji+example-word cards)
  *
- * Explicitly excluded (Daniel 2026-11-11): 漢字マスターN4 kanji-exam word list,
- * life topics (bank-atm / clothes-shopping / cafe-menu / 口语）, japan-investing.
+ * Explicitly excluded: 漢字マスターN4 kanji-exam word list, life topics
+ * (bank-atm / clothes-shopping / cafe-menu / 口语）, japan-investing, and —
+ * since 2026-11-17 — the minna2-35-42, fitness and ki-expressions topics.
+ * Those three were folded into tier 1 when the queue was first built
+ * without Daniel's approval (minna alone flooded the daily new-word batch
+ * and starved tier 2); Daniel ruled their words stay out of the queue
+ * entirely. The topics remain browsable in the topics area, and a word
+ * that also appears in one of the five queued sources still enters
+ * through that source.
  *
  * Cross-source duplicates collapse to one entry: the higher-priority source
  * wins, missing reading/gloss fields are filled from the loser, and source
@@ -696,37 +697,9 @@ try {
 buildIndex();
 topicWords("frontend.json", "前端专题", "frontend");
 topicWords("job-interview.json", "面试专题", "interview");
-topicWords("ki-expressions.json", "「気」专题", "kiExpressions");
-topicWords("fitness.json", "健身专题", "fitness");
-topicWords("minna2-35-42.json", "みんなの日本語专题", "minna");
-// 例外：「〜屋」と「測ります、量ります」は队列に入れない。专题卡片としては残る。
-// 句型拆解の硬性ルール（2行以上に分割し、各行の読みの合計が词条の読みと一致する）
-// では、読みが1モーラしかない接尾語パターン（〜屋＝や）と、2つの表記が1つの
-// 読みを共有する条目（測ります、量ります＝はかります）はどう切っても満たせない。
-// この2件はキューの外に置き、专题の暗記カードで学ぶ。
-for (let i = candidates.length - 1; i >= 0; i--) {
-	if (candidates[i].srcKey === "minna" && (candidates[i].w === "〜屋" || candidates[i].w === "測ります、量ります")) candidates.splice(i, 1);
-}
-if (counts.minna) counts.minna.gross -= 2;
-// 26–50課の追加分も同じ扱い（专题には残す）：読みが1モーラの接尾語（〜個＝こ、
-// 〜機＝き、〜後＝ご、〜位＝い）、2行に分割できない国際〜・〜か〜、そして第37課の
-// 〜中（じゅう）と normKey が衝突し既存エントリの同一性を奪う 〜中（ちゅう）。
-const MINNA_QUEUE_EXCLUDED_PAIRS: [string, string][] = [
-	["〜中", "ちゅう"],
-	["〜個", "こ"],
-	["〜機", "き"],
-	["〜後", "ご"],
-	["〜位", "い"],
-	["国際〜", "こくさい"],
-	["〜か〜", "か"],
-	// 第34課の「いかがですか。」は错词本の既存エントリ「いかがですか」（句点なし、
-	// 拆解もそのキーで登録済み）と normKey が衝突し同一性を奪うため、队列からは外す。
-	["いかがですか。", "いかがですか"],
-];
-for (let i = candidates.length - 1; i >= 0; i--) {
-	if (candidates[i].srcKey === "minna" && MINNA_QUEUE_EXCLUDED_PAIRS.some(([w, r]) => candidates[i].w === w && candidates[i].r === r)) candidates.splice(i, 1);
-}
-if (counts.minna) counts.minna.gross -= MINNA_QUEUE_EXCLUDED_PAIRS.length;
+// The minna2-35-42 / fitness / ki-expressions topics are NOT queue sources
+// (Daniel 2026-11-17 — see the header note). Their cards remain browsable
+// as topics; buildIndex above still harvests them for reading/gloss lookup.
 itlMistakeWords();
 classroomWords();
 favourites();

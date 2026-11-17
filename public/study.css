@@ -1070,8 +1070,12 @@ body.hide-cn .vcn,body.hide-cn .cn{visibility:hidden}
 .vq-overview{width:100%;max-width:520px;margin-top:22px;border-top:1px solid var(--line);padding-top:14px}
 .vq-overview h3{margin:0 0 6px;font-size:15.5px}
 .vq-overview p{color:var(--sub);font-size:13.5px;margin:0 0 10px}
-.vq-sources{display:flex;flex-wrap:wrap;gap:6px}
-.vq-src-count{font-size:12.5px;color:var(--sub);border:1px solid var(--line);border-radius:99px;padding:2px 10px}
+.vq-sources{display:flex;flex-direction:column;gap:10px}
+.vq-src-row{display:flex;flex-direction:column;gap:4px}
+.vq-src-line{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.vq-src-label{font-weight:600;font-size:13.5px}
+.vq-src-nums{color:var(--sub);font-size:12.5px}
+.vq-src-bar{margin-top:0;height:6px}
 .vq-retest-head{width:100%;max-width:520px;display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
 .vq-retest-head b{font-size:16px}
 .vq-retest-cancel{border:1px solid var(--line);background:var(--card);color:var(--sub);border-radius:99px;padding:5px 14px;font-size:13.5px;cursor:pointer}

@@ -150,12 +150,38 @@ function VocabFlipCard({
 	);
 }
 
-function srcCounts(words: VocabWord[]): [string, number][] {
-	const counts = new Map<string, number>();
+/** Display order for the queue overview: queue priority (the five source
+ * groups in build order; Preply rides right after its parent 课堂复习）. */
+const SRC_PRIORITY = ["前端专题", "面试专题", "IT听力错词本", "课堂复习", "Preply", "收藏", "错词本", "番番词书", "N2词汇", "N2汉字"];
+
+/** Per-source progress for the queue overview. Counting follows the same
+ * rule the overview has always used — a merged word counts once under EACH
+ * of its source labels — and adds, per label, how many of those words have
+ * an SRS state (已学） and how many sit at ladder step 4+ (熟练）, the same
+ * definitions as the overview header line. Rows are ordered by queue
+ * priority; any label outside the known list falls to the end by size. */
+function srcProgress(
+	words: VocabWord[],
+	states: Record<string, VocabWordState>,
+): { label: string; total: number; studied: number; mastered: number }[] {
+	const rows = new Map<string, { label: string; total: number; studied: number; mastered: number }>();
 	for (const word of words) {
-		for (const label of word.src.split("・")) counts.set(label, (counts.get(label) ?? 0) + 1);
+		const state = states[word.id];
+		for (const label of word.src.split("・")) {
+			const row = rows.get(label) ?? { label, total: 0, studied: 0, mastered: 0 };
+			row.total += 1;
+			if (state) {
+				row.studied += 1;
+				if (state.s >= 4) row.mastered += 1;
+			}
+			rows.set(label, row);
+		}
 	}
-	return [...counts.entries()].sort((a, b) => b[1] - a[1]);
+	const rank = (label: string) => {
+		const i = SRC_PRIORITY.indexOf(label);
+		return i === -1 ? SRC_PRIORITY.length : i;
+	};
+	return [...rows.values()].sort((a, b) => rank(a.label) - rank(b.label) || b.total - a.total);
 }
 
 /** One graded card the「上一个」button can step back to: the pre-grade snapshot
@@ -469,10 +495,19 @@ export function VocabQueuePage() {
 					{lx(`全队列 ${words.length} 词 · 已学 ${studied} · 熟练（阶梯 4+）${mastered}`, `${words.length} words in queue · ${studied} studied · ${mastered} mastered (step 4+)`)}
 				</p>
 				<div className="vq-sources">
-					{srcCounts(words).map(([label, n]) => (
-						<span key={label} className="vq-src-count">
-							{label} {n}
-						</span>
+					{srcProgress(words, data.states).map(({ label, total, studied, mastered }) => (
+						<div key={label} className="vq-src-row">
+							<div className="vq-src-line">
+								<span className="vq-src-label">{label}</span>
+								<span className="vq-src-nums">
+									{lx(`已学 ${studied} / 共 ${total}`, `Studied ${studied} / ${total}`)}
+									{mastered > 0 ? lx(` · 熟练 ${mastered}`, ` · mastered ${mastered}`) : ""}
+								</span>
+							</div>
+							<div className="vq-bar vq-src-bar" role="progressbar" aria-valuenow={studied} aria-valuemax={total}>
+								<div className="vq-bar-fill" style={{ width: `${total ? Math.round((studied / total) * 100) : 0}%` }} />
+							</div>
+						</div>
 					))}
 				</div>
 			</div>

@@ -350,9 +350,9 @@ describe("built word list (public/data/vocab-queue.json)", () => {
 		}
 	});
 
-	it("excludes the sources Daniel removed (kanji-exam list, life topics, investing)", () => {
+	it("excludes the sources Daniel removed (kanji-exam list, life topics, investing, minna/fitness/ki topics)", () => {
 		const labels = new Set(payload.words.flatMap((w) => w.src.split("・")));
-		for (const banned of ["汉字自测", "银行・ATM", "银行ATM", "衣服购物", "咖啡店菜单", "口语", "投资理财", "日本投资理财"]) {
+		for (const banned of ["汉字自测", "银行・ATM", "银行ATM", "衣服购物", "咖啡店菜单", "口语", "投资理财", "日本投资理财", "みんなの日本語专题", "健身专题", "「気」专题"]) {
 			expect(labels.has(banned)).toBe(false);
 		}
 	});
@@ -379,9 +379,9 @@ describe("built word list (public/data/vocab-queue.json)", () => {
 			}
 		}
 		// Spot coverage across the three derivation sources: authored example
-		// breakdowns, topic cards (Minna), lesson-review markup (classroom)
-		// and N2-kanji example words.
-		for (const label of ["みんなの日本語专题", "课堂复习", "N2汉字", "前端专题"]) {
+		// breakdowns, topic cards (interview topic), lesson-review markup
+		// (classroom) and N2-kanji example words.
+		for (const label of ["面试专题", "课堂复习", "N2汉字", "前端专题"]) {
 			const hit = payload.words.find((w) => w.src.split("・")[0] === label && w.exRuby);
 			expect(hit, label).toBeTruthy();
 		}
@@ -987,7 +987,7 @@ describe("vocab queue sentence-type breakdowns", () => {
 		// Coverage: every sentence-type card in the tier-1 topic files has a
 		// breakdown on its queue entry (the build asserts this too; the shipped
 		// artifact is re-checked here so a stale JSON cannot slip through).
-		for (const file of ["frontend.json", "job-interview.json", "ki-expressions.json", "fitness.json"]) {
+		for (const file of ["frontend.json", "job-interview.json"]) {
 			const topic = JSON.parse(readFileSync(join(root, "public/data/topics", file), "utf8")) as {
 				cards: { jp: string }[];
 			};
