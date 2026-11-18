@@ -25,6 +25,7 @@ import { VocabQueueTodayCard } from "./VocabQueueTodayCard";
 import { formatReviewDate, jstToday, parseReviewRoute, reviewDateFromId } from "./lesson-review";
 import { parseEnListeningRoute } from "./en-listening";
 import { parseItListeningRoute } from "./it-listening";
+import { parseBizMailRoute } from "./biz-mail";
 import { minnaHash, parseMinnaRoute } from "./minna-route";
 import { parseTopicsRoute } from "./topic-route";
 import {
@@ -133,6 +134,7 @@ const LazyKanjiExamPage = lazy(() =>
 const LazyItListeningPage = lazy(() =>
 	import("./ItListeningPage").then((module) => ({ default: module.ItListeningPage })),
 );
+const LazyBizMailPage = lazy(() => import("./BizMailPage").then((module) => ({ default: module.BizMailPage })));
 const LazyEnListeningPage = lazy(() =>
 	import("./EnListeningPage").then((module) => ({ default: module.EnListeningPage })),
 );
@@ -616,6 +618,7 @@ function Sidebar({ routeKey, onLevel }: { routeKey: string; onLevel: (lv: LevelK
 				{row("#/topics/job-interview", "🎤", lx("日语面试", "Job interview"), null, h === "#/topics/job-interview")}
 				{row("#/topics/frontend", "🖥️", lx("前端工程师", "Frontend engineer"), null, h === "#/topics/frontend")}
 				{row("#/keigo", "🙏", lx("敬语总结", "Keigo summary"), null, h === "#/keigo")}
+				{row("#/biz-mail", "✉️", lx("商务邮件背诵", "Business emails"), null, h.startsWith("#/biz-mail"))}
 				<div className="side-sub">{lx("生活", "Daily life")}</div>
 				{row("#/topics/bank-atm", "🏧", lx("银行 ATM", "Bank ATM"), null, h === "#/topics/bank-atm")}
 				{row("#/topics/clothes-shopping", "🛍️", lx("逛街买衣服", "Clothes shopping"), null, h === "#/topics/clothes-shopping")}
@@ -909,6 +912,8 @@ function viewMeta(key: string): { nav: string; title: string; back: boolean } {
 	if (topics) return { nav: "common", title: lx("专题词汇", "Topic vocabulary"), back: Boolean(topics.slug) };
 	const itl = parseItListeningRoute(key);
 	if (itl) return { nav: "common", title: lx("IT 听力", "IT Listening"), back: Boolean(itl.id) };
+	const biz = parseBizMailRoute(key);
+	if (biz) return { nav: "common", title: lx("商务邮件背诵", "Business emails"), back: Boolean(biz.id) };
 	const enl = parseEnListeningRoute(key);
 	if (enl) return { nav: "common", title: lx("英语听力", "English listening"), back: Boolean(enl.id) };
 	if (key === "#/kanji-exam") return { nav: "common", title: lx("汉字自测", "Kanji Self-test"), back: false };
@@ -1106,12 +1111,13 @@ export function StudyApp() {
 	const topicsRoute = parseTopicsRoute(routeKey);
 	const itlRoute = parseItListeningRoute(routeKey);
 	const enlRoute = parseEnListeningRoute(routeKey);
+	const bizRoute = parseBizMailRoute(routeKey);
 	const minnaRoute = parseMinnaRoute(routeKey);
 	const commonPages = ["#/search", "#/cards", "#/vocab-queue", "#/kanji-exam", "#/favs", "#/mistakes", "#/usage", "#/feature-usage", "#/ref", "#/katsuyou", "#/henkei", "#/verb-summary", "#/keigo", "#/kougo", "#/jita", "#/wearing", "#/numbers", "#/review"];
-	const isCommon = commonPages.includes(routeKey) || routeKey === "#/" || Boolean(reviewRoute) || Boolean(topicsRoute) || Boolean(itlRoute) || Boolean(enlRoute) || Boolean(minnaRoute);
+	const isCommon = commonPages.includes(routeKey) || routeKey === "#/" || Boolean(reviewRoute) || Boolean(topicsRoute) || Boolean(itlRoute) || Boolean(enlRoute) || Boolean(bizRoute) || Boolean(minnaRoute);
 	if (routeKey === "#/cards") ensureCardsDeck();
 
-	const commonRefPage = ["#/usage", "#/feature-usage", "#/ref", "#/katsuyou", "#/henkei", "#/verb-summary", "#/keigo", "#/kougo", "#/jita", "#/wearing", "#/numbers", "#/review"].includes(routeKey) || Boolean(reviewRoute) || Boolean(topicsRoute) || Boolean(itlRoute) || Boolean(enlRoute) || Boolean(minnaRoute);
+	const commonRefPage = ["#/usage", "#/feature-usage", "#/ref", "#/katsuyou", "#/henkei", "#/verb-summary", "#/keigo", "#/kougo", "#/jita", "#/wearing", "#/numbers", "#/review"].includes(routeKey) || Boolean(reviewRoute) || Boolean(topicsRoute) || Boolean(itlRoute) || Boolean(enlRoute) || Boolean(bizRoute) || Boolean(minnaRoute);
 	const waitingN2 = isN2() && MODULE !== "n2listening" && MODULE !== "n2reading" && !n2Loaded && !commonRefPage;
 	const waitingN4 = isN4() && !n4Loaded && !commonRefPage;
 	const waitingN1 = isN1() && MODULE !== "n1listening" && MODULE !== "n1reading" && !n1Loaded && !commonRefPage;
@@ -1196,6 +1202,7 @@ export function StudyApp() {
 	else if (topicsRoute) body = <LazyTopicsPage slug={topicsRoute.slug} />;
 	else if (itlRoute) body = <LazyItListeningPage articleId={itlRoute.id} memorize={itlRoute.memorize} />;
 	else if (enlRoute) body = <LazyEnListeningPage articleId={enlRoute.id} />;
+	else if (bizRoute) body = <LazyBizMailPage mailId={bizRoute.id} />;
 	else body = <HomePage data={homeData} />;
 
 	const showCommon = isCommon && !day && routeKey !== "#/contrast";
@@ -1216,12 +1223,12 @@ export function StudyApp() {
 			<Header
 				title={meta.title}
 				showBack={meta.back}
-				backLabel={day ? lx("目录", "Catalog") : reviewRoute?.id ? lx("日期", "Dates") : topicsRoute?.slug ? lx("专题", "Topics") : itlRoute?.id || enlRoute?.id ? lx("文章", "Articles") : minnaRoute?.lesson != null ? lx("课表", "Lessons") : lx("返回", "Back")}
-				showLevel={!commonPages.includes(routeKey) && !reviewRoute && !topicsRoute && !itlRoute && !enlRoute && !minnaRoute}
+				backLabel={day ? lx("目录", "Catalog") : reviewRoute?.id ? lx("日期", "Dates") : topicsRoute?.slug ? lx("专题", "Topics") : itlRoute?.id || enlRoute?.id ? lx("文章", "Articles") : bizRoute?.id ? lx("邮件", "Emails") : minnaRoute?.lesson != null ? lx("课表", "Lessons") : lx("返回", "Back")}
+				showLevel={!commonPages.includes(routeKey) && !reviewRoute && !topicsRoute && !itlRoute && !enlRoute && !bizRoute && !minnaRoute}
 				showTypebar={routeKey === "#/" || Boolean(day)}
 				showReading={LEVEL === "n3" || LEVEL === "n2"}
 				showListening={LEVEL === "n3" || LEVEL === "n2" || LEVEL === "n1"}
-				onBack={() => (day ? navTo("#/") : reviewRoute?.id ? navTo("#/review") : topicsRoute?.slug ? navTo("#/topics") : itlRoute?.id ? navTo(itlRoute.memorize ? `#/it-listening/${itlRoute.id}` : "#/it-listening") : enlRoute?.id ? navTo("#/en-listening") : minnaRoute?.lesson != null ? navTo(minnaHash(minnaRoute.bookId)) : history.length > 1 ? navigate(-1) : navTo("#/"))}
+				onBack={() => (day ? navTo("#/") : reviewRoute?.id ? navTo("#/review") : topicsRoute?.slug ? navTo("#/topics") : itlRoute?.id ? navTo(itlRoute.memorize ? `#/it-listening/${itlRoute.id}` : "#/it-listening") : enlRoute?.id ? navTo("#/en-listening") : bizRoute?.id ? navTo("#/biz-mail") : minnaRoute?.lesson != null ? navTo(minnaHash(minnaRoute.bookId)) : history.length > 1 ? navigate(-1) : navTo("#/"))}
 				onOpenLevel={() => setSheet("level")}
 			/>
 			<Sidebar routeKey={routeKey} onLevel={pickLevel} />

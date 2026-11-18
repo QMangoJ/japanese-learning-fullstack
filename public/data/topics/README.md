@@ -92,10 +92,15 @@ npm run import:topic -- --topic <slug> [--title-zh … --title-ja … --title-en
 
 ```bash
 # 先把文档下载为 .docx（Google Docs：文件 → 下载 → Microsoft Word），覆盖 scripts/topic-sources/japan-investing.docx
-npm run import:topic -- --topic japan-investing --expect 121 \
+npm run import:topic -- --topic japan-investing --expect 170 \
   scripts/topic-sources/japan-investing.docx scripts/topic-sources/japan-investing-extra.tsv \
-  scripts/topic-sources/japan-investing-overrides.tsv
+  scripts/topic-sources/japan-investing-overrides.tsv scripts/topic-sources/japan-investing-security.tsv
 ```
+
+「账户安全・防诈骗」组（49 个，2026-11-18）来自 Daniel 发的一张券商信息泄露・防诈骗信息图（情報漏洩、不正アクセス、
+なりすまし、パスキー、二段階認証、〜おそれがある 等），放在 `scripts/topic-sources/japan-investing-security.tsv`，
+当时用 merge 导入（`--mode merge --id-prefix inv --expect 170`，id 为 inv-122〜inv-170）。上面的整套重导命令已经包含它，
+用 replace 重导时不要漏掉这个文件，否则这组会被删掉。
 
 ### 逛街买衣服（clothes-shopping）
 

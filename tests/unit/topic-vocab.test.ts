@@ -26,10 +26,10 @@ describe("topic vocabulary data", () => {
 		expect(checkTopicDir(DIR)).toEqual([]);
 	});
 
-	it("ships the 日本投资理财日语 word list: 117 doc entries in 9 groups plus 4 extras", () => {
+	it("ships the 日本投资理财日语 word list: 117 doc entries in 9 groups plus 4 extras and 49 account-security words", () => {
 		const topic: TopicFile = JSON.parse(readFileSync(join(DIR, "japan-investing.json"), "utf8"));
 		const count = (zh: string) => topic.cards.filter((c) => c.subtopic === zh).length;
-		expect(topic.cards).toHaveLength(121);
+		expect(topic.cards).toHaveLength(170);
 		expect(topic.subtopics.map((s) => [s.zh, count(s.zh)])).toEqual([
 			["开户・本人确认", 10],
 			["账户・税制（NISA等）", 15],
@@ -40,6 +40,7 @@ describe("topic vocabulary data", () => {
 			["收益・成本", 15],
 			["汇率・外国证券", 14],
 			["风险・策略", 12],
+			["账户安全・防诈骗", 49],
 		]);
 		for (const card of topic.cards) {
 			for (const key of ["id", "jp", "kana", "zh", "subtopic", "example_jp", "example_zh"] as const) expect(card[key], `${card.id}.${key}`).toBeTruthy();

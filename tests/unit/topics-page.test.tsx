@@ -30,7 +30,7 @@ describe("TopicsPage", () => {
 	it("lists topics from index.json", async () => {
 		render(<TopicsPage slug={null} />);
 		expect(await screen.findByText("日本投资理财日语")).toBeInTheDocument();
-		expect(screen.getByText("121 个词")).toBeInTheDocument();
+		expect(screen.getByText("170 个词")).toBeInTheDocument();
 		expect(screen.getByText("银行 ATM 取钱")).toBeInTheDocument();
 		expect(screen.getByText("前端工程师")).toBeInTheDocument();
 		expect(screen.getByText("逛街买衣服")).toBeInTheDocument();
@@ -87,7 +87,7 @@ describe("TopicsPage", () => {
 	it("filters by subtopic, marks a word as 不会 and shows only those", async () => {
 		const { container } = render(<TopicsPage slug="japan-investing" />);
 		await screen.findByText("証券口座");
-		expect(container.querySelectorAll(".topic-item")).toHaveLength(121);
+		expect(container.querySelectorAll(".topic-item")).toHaveLength(170);
 		fireEvent.click(container.querySelector('[data-subtopic="股票"]')!);
 		expect(container.querySelectorAll(".topic-item")).toHaveLength(14);
 		const first = container.querySelector(".topic-item")!;
@@ -207,11 +207,11 @@ describe("TopicsPage", () => {
 		const { container } = render(<TopicsPage slug="japan-investing" />);
 		await screen.findByText("証券口座");
 		fireEvent.click(screen.getByRole("tab", { name: /闪卡自测/ }));
-		expect(screen.getByText("1 / 121")).toBeInTheDocument();
+		expect(screen.getByText("1 / 170")).toBeInTheDocument();
 		fireEvent.click(container.querySelector(".fcard")!);
 		expect(screen.getByText("しょうけんこうざ")).toBeInTheDocument();
 		fireEvent.click(container.querySelector('[data-grade="pass"]')!);
-		expect(screen.getByText("2 / 121")).toBeInTheDocument();
+		expect(screen.getByText("2 / 170")).toBeInTheDocument();
 		expect(dueEntry(topicDueId("japan-investing", "inv-001"))).toMatchObject({ step: 2 });
 	});
 });

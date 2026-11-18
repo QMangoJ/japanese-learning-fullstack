@@ -225,6 +225,7 @@ export function Sheet({
 								<SheetTile icon="🎤" label={lx("日语面试", "Job interview")} onGo={go("#/topics/job-interview")} />
 								<SheetTile icon="🖥️" label={lx("前端工程师", "Frontend engineer")} onGo={go("#/topics/frontend")} />
 								<SheetTile icon="🙏" label={lx("敬语总结", "Keigo summary")} onGo={go("#/keigo")} />
+								<SheetTile icon="✉️" label={lx("商务邮件背诵", "Business emails")} onGo={go("#/biz-mail")} />
 							</Grid>
 							<SheetSubHead label={lx("生活", "Daily life")} />
 							<Grid columns={3} gap={2} xstyle={sheetStyles.grid}>
