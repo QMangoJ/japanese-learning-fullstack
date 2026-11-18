@@ -24,7 +24,7 @@ const LazyKanjiJourneyPage = lazy(() => import("./KanjiJourneyPage").then((modul
  * 专题知识分组与展示顺序（Daniel 2026-11-17 定）：工作面试最前、生活最后；
  * 组内顺序由 index.json 的条目顺序决定。合起来的展示序列为：
  * frontend → job-interview → japan-investing → minna2-35-42 → ki-expressions
- * → kanji-journey → bank-atm → clothes-shopping → cafe-menu → fitness。
+ * → kanji-journey → bank-atm → clothes-shopping → cafe-menu → post-delivery → fitness。
  * 未列出的 slug 一律归通用；fitness 归生活组（垫底）。
  */
 const TOPIC_GROUP_OF: Record<string, "work" | "life" | "invest"> = {
@@ -33,6 +33,7 @@ const TOPIC_GROUP_OF: Record<string, "work" | "life" | "invest"> = {
 	"bank-atm": "life",
 	"clothes-shopping": "life",
 	"cafe-menu": "life",
+	"post-delivery": "life",
 	fitness: "life",
 	"japan-investing": "invest",
 };

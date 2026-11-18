@@ -232,6 +232,7 @@ export function Sheet({
 								<SheetTile icon="🏧" label={lx("银行 ATM", "Bank ATM")} onGo={go("#/topics/bank-atm")} />
 								<SheetTile icon="🛍️" label={lx("逛街买衣服", "Clothes shopping")} onGo={go("#/topics/clothes-shopping")} />
 								<SheetTile icon="☕" label={lx("咖啡店菜单", "Cafe menu")} onGo={go("#/topics/cafe-menu")} />
+								<SheetTile icon="📦" label={lx("邮局・快递", "Post & delivery")} onGo={go("#/topics/post-delivery")} />
 								<SheetTile icon="👕" label={lx("穿衣穿戴", "Wearing")} onGo={go("#/wearing")} />
 							</Grid>
 							<SheetSubHead label={lx("投资理财", "Investing & finance")} />

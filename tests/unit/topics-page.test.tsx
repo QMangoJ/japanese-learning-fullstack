@@ -50,6 +50,7 @@ describe("TopicsPage", () => {
 			"bank-atm",
 			"clothes-shopping",
 			"cafe-menu",
+			"post-delivery",
 			"fitness",
 		]);
 		const groups = [...container.querySelectorAll(".topic-group-h")].map((e) => e.textContent);

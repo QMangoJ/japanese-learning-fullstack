@@ -165,6 +165,18 @@
 			]
 		},
 		{
+			"slug": "post-delivery",
+			"title_zh": "邮局・快递",
+			"title_ja": "郵便・配達",
+			"count": 27,
+			"title_en": "Post & delivery",
+			"subtopics": [
+				"邮局手续",
+				"再配达和签收",
+				"寄包裹"
+			]
+		},
+		{
 			"slug": "fitness",
 			"title_zh": "健身",
 			"title_ja": "フィットネス・筋トレ",

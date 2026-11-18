@@ -623,6 +623,7 @@ function Sidebar({ routeKey, onLevel }: { routeKey: string; onLevel: (lv: LevelK
 				{row("#/topics/bank-atm", "🏧", lx("银行 ATM", "Bank ATM"), null, h === "#/topics/bank-atm")}
 				{row("#/topics/clothes-shopping", "🛍️", lx("逛街买衣服", "Clothes shopping"), null, h === "#/topics/clothes-shopping")}
 				{row("#/topics/cafe-menu", "☕", lx("咖啡店菜单", "Cafe menu"), null, h === "#/topics/cafe-menu")}
+				{row("#/topics/post-delivery", "📦", lx("邮局・快递", "Post & delivery"), null, h === "#/topics/post-delivery")}
 				{row("#/wearing", "👕", lx("穿衣穿戴", "Wearing"), null, h === "#/wearing")}
 				<div className="side-sub">{lx("投资理财", "Investing & finance")}</div>
 				{row("#/topics/japan-investing", "📈", lx("日本投资理财", "Investing in Japan"), null, h === "#/topics/japan-investing")}
