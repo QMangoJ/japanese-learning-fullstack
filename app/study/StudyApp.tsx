@@ -680,6 +680,10 @@ function SelectionPopover({ routeKey }: { routeKey: string }) {
 
 	useEffect(() => {
 		let timer: ReturnType<typeof setTimeout> | null = null;
+		// 点浮层外关闭后，选区往往还活着（点句子跳播等场景不会塌陷选区），
+		// pointerup/selectionchange 会把同一个选区重新排队显示——浮层看起来「关不掉」。
+		// 记住被关掉的选区文本：同一选区不再弹；选区塌陷或换了新选区才重置。
+		let dismissedText = "";
 		const hide = () => setState(null);
 		const normalize = (t: string) => String(t || "").replace(/\s+/g, " ").trim();
 		const inApp = (sel: Selection | null) => {
@@ -694,6 +698,7 @@ function SelectionPopover({ routeKey }: { routeKey: string }) {
 			requestAnimationFrame(() => {
 				const sel = document.getSelection();
 				const text = normalize(sel ? sel.toString() : "");
+				if (text && text === dismissedText) return;
 				if (!text || !inApp(sel)) {
 					setState((cur) => (interactingRef.current || cur?.saved ? cur : null));
 					return;
@@ -720,7 +725,13 @@ function SelectionPopover({ routeKey }: { routeKey: string }) {
 			if ((event?.target as Element | null)?.closest?.("#selectionPopover")) return;
 			if (timer) clearTimeout(timer);
 			const sel = document.getSelection();
-			if (!sel || sel.isCollapsed || !sel.toString().trim()) return;
+			const text = normalize(sel ? sel.toString() : "");
+			if (!sel || sel.isCollapsed || !text) {
+				// 选区塌陷 = 上一段选择结束，被关掉的选区不再受抑制。
+				dismissedText = "";
+				return;
+			}
+			if (text === dismissedText) return;
 			timer = setTimeout(maybeShow, 1000);
 		};
 		const queue = scheduleShow;
@@ -730,7 +741,9 @@ function SelectionPopover({ routeKey }: { routeKey: string }) {
 		const onPointerDown = (e: PointerEvent) => {
 			if (!(e.target as Element).closest?.("#selectionPopover")) {
 				// 点浮层以外的任意区域：关掉已显示的浮层，也取消还没到点的待显示计时。
+				// 同时记下当前选区：抬手后的事件不许把同一个选区再弹回来。
 				if (timer) clearTimeout(timer);
+				dismissedText = normalize(document.getSelection()?.toString() ?? "");
 				hide();
 			}
 		};
