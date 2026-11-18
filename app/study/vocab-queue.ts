@@ -581,6 +581,65 @@ export function applyVocabAliases(dataIn: VocabQueueData, aliases: Record<string
 	return { v: 1, states, plan: nextPlan };
 }
 
+/**
+ * Drop plan entries that name words the current built list no longer
+ * carries. Aliases only cover words a rebuild MERGED into a survivor; a
+ * word removed outright (a source group leaving the queue) gets no alias,
+ * and a plan minted by a client still holding the older list — then synced
+ * to the server, whose plan every other client restores verbatim — would
+ * otherwise serve cards the current list cannot render, dead-ending the
+ * session on the "no longer in the word list" fallback (2026-11-18: the
+ * five-source rebuild dropped the みんな・「気」・健身 words, and a stale-list
+ * plan carried 70 of them into the day). The review / fresh split is
+ * recomputed from the surviving segments so every progress total counts
+ * only words that exist. SRS states are left untouched: a removed word's
+ * record stays put in case the word ever returns to the queue. Returns the
+ * input unchanged when every plan id resolves.
+ */
+export function reconcilePlanWithWordList(dataIn: VocabQueueData, words: VocabWord[]): VocabQueueData {
+	const plan = dataIn.plan;
+	if (!plan || !words.length) return dataIn;
+	const live = new Set(words.map((word) => word.id));
+	const allIds = [...plan.ids, ...(plan.extra?.ids ?? [])];
+	if (allIds.every((id) => live.has(id))) return dataIn;
+	const reviewIds = plan.ids.slice(0, plan.review).filter((id) => live.has(id));
+	const freshIds = plan.ids.slice(plan.review).filter((id) => live.has(id));
+	const ids = [...reviewIds, ...freshIds];
+	let extra: VocabPlanExtra | undefined;
+	if (plan.extra) {
+		const extraIds = plan.extra.ids.filter((id) => live.has(id) && !ids.includes(id));
+		if (extraIds.length) {
+			const review = Math.min(plan.extra.review, extraIds.length);
+			extra = {
+				ids: extraIds,
+				done: plan.extra.done.filter((id) => extraIds.includes(id)),
+				review,
+				fresh: extraIds.length - review,
+			};
+		}
+	}
+	const known = extra ? [...ids, ...extra.ids] : ids;
+	const grades: Record<string, VocabGrade> = {};
+	for (const [id, grade] of Object.entries(plan.grades ?? {})) {
+		if (known.includes(id)) grades[id] = grade;
+	}
+	const reshown = (plan.reshown ?? []).filter((id) => known.includes(id));
+	const nextPlan: VocabPlan = {
+		...plan,
+		ids,
+		done: plan.done.filter((id) => ids.includes(id)),
+		review: reviewIds.length,
+		fresh: freshIds.length,
+	};
+	if (extra) nextPlan.extra = extra;
+	else delete nextPlan.extra;
+	if (Object.keys(grades).length) nextPlan.grades = grades;
+	else delete nextPlan.grades;
+	if (reshown.length) nextPlan.reshown = reshown;
+	else delete nextPlan.reshown;
+	return { v: 1, states: dataIn.states, plan: nextPlan };
+}
+
 export function cleanVocabQueueData(value: unknown): VocabQueueData {
 	const empty: VocabQueueData = { v: 1, states: {}, plan: null };
 	if (!value || typeof value !== "object" || Array.isArray(value)) return empty;
@@ -700,6 +759,15 @@ function applyAliasesIfNeeded() {
 	}
 }
 
+/** Drop stored-plan entries the word list no longer carries (see reconcilePlanWithWordList), persisting the cleaned plan. Not one-shot: a later pull can reintroduce a stale device's plan, so this runs whenever fresh data meets the known list. */
+function applyReconcileIfNeeded(words: VocabWord[]) {
+	const next = reconcilePlanWithWordList(data, words);
+	if (next !== data) {
+		data = next;
+		commit();
+	}
+}
+
 export function subscribeVocabQueue(listener: () => void) {
 	listeners.add(listener);
 	return () => listeners.delete(listener);
@@ -774,6 +842,7 @@ export function ensureVocabWords(): Promise<VocabWord[]> {
 					aliasesApplied = false;
 				}
 				applyAliasesIfNeeded();
+				applyReconcileIfNeeded(wordsCache);
 				emitVocabQueue();
 				return wordsCache;
 			})
@@ -839,6 +908,7 @@ export function hydrateVocabQueue() {
  */
 export function todayPlan(words: VocabWord[], today = jstToday()): VocabPlan {
 	applyAliasesIfNeeded();
+	applyReconcileIfNeeded(words);
 	if (data.plan && data.plan.date === today) {
 		if (data.plan.pv === PLAN_PV) return data.plan;
 		if (!vocabQueueCanMint(today)) return data.plan;
@@ -1026,7 +1096,7 @@ export async function pullVocabQueueFromServer(_accountId: string) {
 		if (res.ok) {
 			const payload: unknown = await res.json();
 			const server = cleanVocabQueueData(payload);
-			const merged = mergeVocabQueueData(data, server);
+			const merged = reconcilePlanWithWordList(mergeVocabQueueData(data, server), wordsCache ?? []);
 			data = merged;
 			writeLocal();
 			dirty = JSON.stringify(merged) !== JSON.stringify(server);
@@ -1064,7 +1134,7 @@ export async function pushVocabQueueNow() {
 		const server = cleanVocabQueueData(await getRes.json());
 		// The read half of this push is a successful pull of the server blob.
 		lastPullDay = jstToday();
-		const merged = mergeVocabQueueData(snapshot, server);
+		const merged = reconcilePlanWithWordList(mergeVocabQueueData(snapshot, server), wordsCache ?? []);
 		const response = await fetch(VOCAB_QUEUE_ENDPOINT, {
 			method: "PUT",
 			headers: { "content-type": "application/json" },
@@ -1104,7 +1174,7 @@ export async function resyncVocabQueue() {
 		if (!res.ok) return;
 		const payload: unknown = await res.json();
 		const server = cleanVocabQueueData(payload);
-		const merged = mergeVocabQueueData(data, server);
+		const merged = reconcilePlanWithWordList(mergeVocabQueueData(data, server), wordsCache ?? []);
 		const changed = JSON.stringify(merged) !== JSON.stringify(data);
 		data = merged;
 		writeLocal();

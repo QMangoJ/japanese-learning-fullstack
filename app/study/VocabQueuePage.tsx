@@ -27,6 +27,7 @@ import {
 	type VocabGrade,
 	type VocabGradeSnapshot,
 	type VocabWord,
+	type VocabWordState,
 } from "./vocab-queue";
 
 function useVocabTick() {
@@ -241,10 +242,17 @@ export function VocabQueuePage() {
 		planDateRef.current = plan.date;
 		for (const id of plan.reshown ?? []) reshownRef.current.add(id);
 		const doneSet = new Set([...plan.done, ...(plan.extra?.done ?? [])]);
-		const pending = [...plan.ids, ...(plan.extra?.ids ?? [])].filter((id) => !doneSet.has(id));
+		// Last line of defence: the session only ever serves ids the loaded
+		// word list can render. The store reconciles the stored plan against
+		// the list (reconcilePlanWithWordList), but a plan restored in the
+		// same commit cycle must not dead-end the session before that lands.
+		const liveIds = words && words.length ? new Set(words.map((word) => word.id)) : null;
+		const pending = [...plan.ids, ...(plan.extra?.ids ?? [])].filter(
+			(id) => !doneSet.has(id) && (!liveIds || liveIds.has(id)),
+		);
 		const awaitingReshow = pending.filter((id) => (plan.reshown ?? []).includes(id));
 		setQueue([...pending.filter((id) => !awaitingReshow.includes(id)), ...awaitingReshow]);
-	}, [plan, queue, isReady]);
+	}, [plan, queue, isReady, words]);
 
 	const byId = useMemo(() => new Map((words ?? []).map((word) => [word.id, word])), [words]);
 	const current = queue && queue.length ? byId.get(queue[0]) : undefined;

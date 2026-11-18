@@ -22,6 +22,7 @@ import {
 	planBatchProgress,
 	pullVocabQueueFromServer,
 	pushVocabQueueNow,
+	reconcilePlanWithWordList,
 	resetVocabQueueForTests,
 	revertVocabGrade,
 	shouldReshowToday,
@@ -444,6 +445,77 @@ describe("vocab queue dedup guards", () => {
 		expect(migrated.plan?.done).toEqual(["kanji"]);
 		// No alias hits → the input is returned untouched.
 		expect(applyVocabAliases(data, { ghost: "kanji" })).toBe(data);
+	});
+});
+
+describe("vocab queue plan reconciliation with the word list (2026-11-18 phantom cards)", () => {
+	const words = [word("a", 1, 0), word("b", 1, 1), word("c", 1, 2), word("d", 1, 3), word("e", 1, 4)];
+
+	it("returns the input untouched when every plan id resolves, and for a null plan", () => {
+		const data = cleanVocabQueueData({
+			v: 1,
+			states: {},
+			plan: { date: TODAY, ids: ["a", "b"], done: ["a"], review: 1, fresh: 1 },
+		});
+		expect(reconcilePlanWithWordList(data, words)).toBe(data);
+		const noPlan = cleanVocabQueueData({ v: 1, states: {}, plan: null });
+		expect(reconcilePlanWithWordList(noPlan, words)).toBe(noPlan);
+	});
+
+	it("drops ids the list no longer carries and recomputes the review/fresh split", () => {
+		const data = cleanVocabQueueData({
+			v: 1,
+			states: { ghost1: { s: 1, due: TODAY, ts: 10 }, a: { s: 1, due: TODAY, ts: 11 } },
+			plan: {
+				pv: PLAN_PV,
+				date: TODAY,
+				// Review batch = first 3 (a, ghost1, b); fresh batch = ghost2, c.
+				ids: ["a", "ghost1", "b", "ghost2", "c"],
+				done: ["a"],
+				review: 3,
+				fresh: 2,
+				grades: { a: "know", ghost1: "fuzzy" },
+				reshown: ["ghost1", "b"],
+				extra: { ids: ["d", "ghost3"], done: ["ghost3"], review: 0, fresh: 2 },
+			},
+		});
+		const next = reconcilePlanWithWordList(data, words);
+		expect(next.plan?.ids).toEqual(["a", "b", "c"]);
+		expect(next.plan?.review).toBe(2);
+		expect(next.plan?.fresh).toBe(1);
+		// Today's graded progress on surviving words carries over untouched.
+		expect(next.plan?.done).toEqual(["a"]);
+		expect(next.plan?.grades).toEqual({ a: "know" });
+		expect(next.plan?.reshown).toEqual(["b"]);
+		expect(next.plan?.extra).toEqual({ ids: ["d"], done: [], review: 0, fresh: 1 });
+		// Batch progress counts only words that exist: 1/2 reviews, 0/1 new.
+		expect(planBatchProgress(next.plan!)).toEqual({
+			reviewDone: 1,
+			reviewTotal: 2,
+			freshDone: 0,
+			freshTotal: 1,
+		});
+		// SRS states are NOT touched — a removed word's record survives.
+		expect(next.states.ghost1).toEqual({ s: 1, due: TODAY, ts: 10 });
+		expect(next).not.toBe(data);
+	});
+
+	it("drops the extra block when none of its ids survive", () => {
+		const data = cleanVocabQueueData({
+			v: 1,
+			states: {},
+			plan: {
+				date: TODAY,
+				ids: ["a"],
+				done: [],
+				review: 1,
+				fresh: 0,
+				extra: { ids: ["ghost9"], done: [], review: 0, fresh: 1 },
+			},
+		});
+		const next = reconcilePlanWithWordList(data, words);
+		expect(next.plan?.ids).toEqual(["a"]);
+		expect(next.plan?.extra).toBeUndefined();
 	});
 });
 
