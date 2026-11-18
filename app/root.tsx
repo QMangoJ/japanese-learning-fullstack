@@ -11,6 +11,7 @@ import { useEffect, useState } from "react";
 import type { Route } from "./+types/root";
 import "./app.css";
 import { startUsageTracker } from "./study/usage-time";
+import { startFeatureUsage } from "./study/feature-usage";
 
 let reloadedForServiceWorkerUpdate = false;
 
@@ -82,6 +83,8 @@ export default function App() {
 	}, []);
 
 	useEffect(() => startUsageTracker("account"), []);
+
+	useEffect(() => startFeatureUsage(), []);
 
 	useEffect(() => {
 		setOnline(navigator.onLine);

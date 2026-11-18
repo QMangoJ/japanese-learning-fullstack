@@ -1,6 +1,7 @@
 import { useEffect, useId, useRef, useState, type ReactNode, type PointerEvent as ReactPointerEvent, type FocusEvent as ReactFocusEvent } from "react";
 
 import { fineHover } from "./motion-pref";
+import { trackFeature } from "./feature-usage";
 
 /** Readings already stored as ruby, with the kana standing in for each kanji run. */
 export function rubyReading(html?: string) {
@@ -65,6 +66,8 @@ export function GlossPopover({
 		// A mouse on a hovering device already opened the bubble. Touch toggles.
 		const last = anchorRef.current?.dataset.pointer || "";
 		if (fineHover() && last !== "touch") return;
+		// 功能埋点： only deliberate opens count (tap / keyboard), not mouse hover.
+		if (!open) trackFeature("lookup", "open");
 		setOpen((value) => !value);
 	};
 
@@ -114,6 +117,7 @@ export function GlossPopover({
 			onKeyDown={(event) => {
 				if (event.key !== "Enter" && event.key !== " ") return;
 				event.preventDefault();
+				if (!open) trackFeature("lookup", "open");
 				setOpen((value) => !value);
 			}}
 		>

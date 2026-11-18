@@ -11,6 +11,7 @@ export default [
 	route("api/mastery", "routes/api.mastery.ts"),
 	route("api/itl-done", "routes/api.itl-done.ts"),
 	route("api/usage", "routes/api.usage.ts"),
+	route("api/feature-usage", "routes/api.feature-usage.ts"),
 	route("api/mistake-translations", "routes/api.mistake-translations.ts"),
 	route("api/mistake-study", "routes/api.mistake-study.ts"),
 	route("api/me", "routes/api.me.ts"),

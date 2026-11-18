@@ -1,6 +1,7 @@
 import { useEffect, useState, useSyncExternalStore } from "react";
 
 import { lx, navTo } from "./store";
+import { trackFeature } from "./feature-usage";
 import { jstToday } from "./lesson-review";
 import {
 	ensureVocabWords,
@@ -65,7 +66,14 @@ export function VocabQueueTodayCard() {
 					<div className="vq-bar-fill" style={{ width: total ? `${Math.round((done / total) * 100)}%` : "0%" }} />
 				</div>
 			</div>
-			<button type="button" className="vq-today-btn" onClick={() => navTo("#/vocab-queue")}>
+			<button
+				type="button"
+				className="vq-today-btn"
+				onClick={() => {
+					trackFeature("home", "today");
+					navTo("#/vocab-queue");
+				}}
+			>
 				{remaining > 0 ? (done > 0 ? lx("继续", "Continue") : lx("开始", "Start")) : lx("回顾", "Review")}
 			</button>
 		</section>

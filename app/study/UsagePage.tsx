@@ -6,7 +6,7 @@ import { Text } from "@astryxdesign/core/Text";
 import { VStack } from "@astryxdesign/core/VStack";
 import { neutralTheme } from "@astryxdesign/theme-neutral/built";
 
-import { lx, THEME } from "./store";
+import { lx, navTo, THEME } from "./store";
 import "./astryx.css";
 import { jstDayKey, subscribeUsage, usageSnapshot, type UsageSnapshot } from "./usage-time";
 
@@ -72,6 +72,9 @@ export function UsagePage() {
 					</Card>
 				</div>
 			</Theme>
+			<button type="button" className="fu-link" onClick={() => navTo("#/feature-usage")}>
+				{lx("📊 想看哪些功能用得最多？去「功能使用」看排行 →", "📊 See which features you use most →")}
+			</button>
 			{days.length ? (
 				<div className="usage-days">
 					{days.map(([day, sec]) => (

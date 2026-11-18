@@ -20,6 +20,7 @@ import { Tab, TabList } from "@astryxdesign/core/TabList";
 import { neutralTheme } from "@astryxdesign/theme-neutral/built";
 
 import { toggleItlDone, useItlDone } from "./itl-done";
+import { trackFeature } from "./feature-usage";
 import { lx, navTo, THEME } from "./store";
 import "./astryx.css";
 import "../routes/it-listening.css";
@@ -545,6 +546,8 @@ function ItListeningDetail({ id }: { id: string }) {
 	// 最近一次原始播放状态码（1 播放 / 2 暂停 / 3 缓冲 / 0 结束 / 5 已定位）：seek 估算只在
 	// 状态恰为 1 时才加流逝时间，缓冲/暂停期间采样值就是准的，避免高估。
 	const ytStateRef = useRef<number | null>(null);
+	// 功能埋点： 当前这轮播放是否已记过一次 play（见 onMsg 里的状态处理）。
+	const playCountedRef = useRef(false);
 
 	// 跟随高亮（仅带 startSec 的文章，如 LINE 座談会 7 篇）：当前句下标 + 跟随开关 +
 	// 用户手动滚动后的暂停标记（不跟用户抢滚动；按播放/点句子/点开关恢复）。
@@ -575,6 +578,7 @@ function ItListeningDetail({ id }: { id: string }) {
 		ytDurationRef.current = undefined;
 		ytPlayingRef.current = null;
 		ytStateRef.current = null;
+		playCountedRef.current = false;
 		activeIdxRef.current = -1;
 		setActiveIdx(-1);
 		followOnRef.current = true;
@@ -621,6 +625,13 @@ function ItListeningDetail({ id }: { id: string }) {
 				if (typeof d.info === "number") st = d.info;
 				else if (d.info && typeof d.info === "object" && typeof d.info.playerState === "number") st = d.info.playerState;
 				if (typeof st === "number") {
+					// 功能埋点： 一次「按下播放」只记一次。缓冲(3)不解除标记，
+					// 所以 暂停→缓冲→播放 仍是一次；暂停/结束/已定位会解除标记。
+					if (st === 1 && !playCountedRef.current) {
+						playCountedRef.current = true;
+						trackFeature("it-listening", "play");
+					}
+					if (st === 2 || st === 0 || st === 5) playCountedRef.current = false;
 					// 进入播放(1) 且此前是暂停(2)/已定位未播(5)/还没开始(null) = 用户按了播放：
 					// 恢复跟随滚动（手动滚动暂停过的话）。缓冲(3)→播放不算按播放，不在此列，
 					// 免得用户在缓冲间隙手动滚动后又被抢回去。
@@ -792,6 +803,7 @@ function ItListeningDetail({ id }: { id: string }) {
 		if (sel && !sel.isCollapsed && sel.toString().trim()) return;
 		const sec = article?.sentences[i]?.startSec;
 		if (typeof sec !== "number") return;
+		trackFeature("it-listening", "seek");
 		ytCommand("seekTo", [sec, true]);
 		ytTimeRef.current = sec;
 		ytTimeAtRef.current = Date.now();

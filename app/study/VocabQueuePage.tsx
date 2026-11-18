@@ -4,6 +4,7 @@ import { StudyFlip } from "./study-flip";
 import { RubyHtml } from "../routes/study-common";
 import type { SwipeGrade } from "./swipe-grade";
 import { lx, navTo } from "./store";
+import { trackFeature } from "./feature-usage";
 import { jstToday } from "./lesson-review";
 import {
 	addExtraBatch,
@@ -259,11 +260,24 @@ export function VocabQueuePage() {
 	const onAddExtra = () => {
 		if (!words) return;
 		const added = addExtraBatch(words, today);
-		if (added.length) setQueue((q) => [...(q ?? []), ...added]);
+		if (added.length) {
+			trackFeature("vocab-queue", "extra");
+			setQueue((q) => [...(q ?? []), ...added]);
+		}
 	};
+
+	// 功能埋点： a session counts once per plan day, when its queue first exists.
+	const startTrackedRef = useRef<string | null>(null);
+	useEffect(() => {
+		if (!plan || queue === null) return;
+		if (startTrackedRef.current === plan.date) return;
+		startTrackedRef.current = plan.date;
+		trackFeature("vocab-queue", "start");
+	}, [plan, queue]);
 
 	const grade = (vocabGrade: VocabGrade) => {
 		if (!queue || !queue.length) return;
+		trackFeature("vocab-queue", "grade");
 		const id = queue[0];
 		setFlipped(false);
 		// Record the pre-grade snapshot + queue before anything changes, so
@@ -285,6 +299,7 @@ export function VocabQueuePage() {
 	const retestWord = retestId ? byId.get(retestId) : undefined;
 	const gradeRetest = (vocabGrade: VocabGrade) => {
 		if (!retestId) return;
+		trackFeature("vocab-queue", "grade");
 		setFlipped(false);
 		const entry: PrevEntry = { snap: snapshotVocabGrade(retestId), queueBefore: null };
 		// Retest overwrites today's grade/state; the word is already in done,

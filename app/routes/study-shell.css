@@ -27,6 +27,23 @@
 .usage-day.today{border-color:var(--accent)}
 .usage-day b{font-size:17px}
 
+/* 功能使用（埋点排行）：入口互链 + 周期切换 + 排行行 */
+.fu-link{display:block;width:100%;margin:0 0 14px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--card);color:var(--ink,#1c2430);font-size:15px;font-weight:600;text-align:left;cursor:pointer}
+.fu-link:active{border-color:var(--accent)}
+.fu-seg{display:flex;gap:6px;margin:2px 0 14px}
+.fu-seg button{flex:1;padding:9px 0;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--sub);font-size:14.5px;font-weight:600;cursor:pointer}
+.fu-seg button.on{border-color:var(--accent);background:var(--accent);color:#fff}
+.fu-list{display:grid;gap:8px}
+.fu-row{border:1px solid var(--line);border-radius:12px;background:var(--card);padding:11px 13px}
+.fu-row-head{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.fu-name{font-size:16px;font-weight:700}
+.fu-ic{margin-right:7px}
+.fu-row-head b{font-size:17px;white-space:nowrap}
+.fu-bar{height:8px;border-radius:99px;background:var(--accent-soft);margin:9px 0 8px;overflow:hidden}
+.fu-bar-fill{height:100%;border-radius:99px;background:var(--accent)}
+.fu-actions{display:flex;flex-wrap:wrap;gap:5px}
+.fu-chip{font-size:13px;color:var(--sub);border:1px solid var(--line);border-radius:999px;padding:2px 9px}
+
 /* 汉字记忆卡：词性小标签 */
 .kpos {
 	display: inline-block;

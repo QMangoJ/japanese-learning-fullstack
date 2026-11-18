@@ -66,6 +66,8 @@ import {
 	homeScale,
 	hydrateFromStorage,
 	isGram,
+	isKanji,
+	isVocab,
 	isListening,
 	isN2,
 	isN1,
@@ -103,6 +105,7 @@ import {
 	type TypeKey,
 } from "./store";
 import { selectionPopoverPosition } from "./selection-popover-position";
+import { trackFeature } from "./feature-usage";
 import { prefersReducedMotion } from "./motion-pref";
 // Keep the styles for lazy study modules in the shell so WebKit never paints
 // their content before the asynchronously discovered CSS has applied.
@@ -159,6 +162,7 @@ const LazyModuleCardsPage = lazy(() =>
 // the bottom nav / level button, so Astryx + StyleX ship in their own chunk
 // and stay out of the initial /study bundle (see scripts/check-client-bundle-size).
 const LazyUsagePage = lazy(() => import("./UsagePage").then((module) => ({ default: module.UsagePage })));
+const LazyFeatureUsagePage = lazy(() => import("./FeatureUsagePage").then((module) => ({ default: module.FeatureUsagePage })));
 const LazyAccountMenu = lazy(() => import("./AccountPop").then((module) => ({ default: module.AccountMenu })));
 
 function preloadAccountMenu() {
@@ -634,6 +638,7 @@ function Sidebar({ routeKey, onLevel }: { routeKey: string; onLevel: (lv: LevelK
 			</div>
 			<div className="side-foot">
 				{row("#/usage", "⏱️", lx("使用时间", "Study time"), null, h === "#/usage")}
+				{row("#/feature-usage", "📊", lx("功能使用", "Feature use"), null, h === "#/feature-usage")}
 				{row("#/search", "🔍", lx("搜索", "Search"), null, h === "#/search")}
 				{row("#/mistakes", "📝", lx("错题本", "Mistakes"), activeMistakeCount() || "", h === "#/mistakes")}
 				{row("#/favs", "⭐", lx("收藏", "Favorites"), favCount || "", h === "#/favs")}
@@ -834,9 +839,47 @@ function TrialLock() {
 	);
 }
 
+/** 功能埋点： route -> [feature, action]. Stats pages themselves are not counted. */
+function featureForRoute(key: string): [string, string] | null {
+	if (key === "#/search") return ["search", "open"];
+	if (key === "#/cards") return ["cards", "open"];
+	if (key === "#/vocab-queue") return ["vocab-queue", "open"];
+	if (key === "#/kanji-exam") return ["kanji-exam", "open"];
+	if (key === "#/favs") return ["favs", "open"];
+	if (key === "#/mistakes") return ["mistakes", "open"];
+	if (key === "#/keigo") return ["keigo", "open"];
+	if (["#/ref", "#/katsuyou", "#/henkei", "#/verb-summary", "#/kougo", "#/jita", "#/wearing", "#/numbers", "#/contrast"].includes(key))
+		return ["reference", "open"];
+	const itl = parseItListeningRoute(key);
+	if (itl) {
+		if (itl.memorize) return ["memorize", "open"];
+		if (itl.id === "mistakes") return ["itl-mistakes", "open"];
+		if (itl.id) return ["it-listening", "article"];
+		return ["it-listening", "open"];
+	}
+	const enl = parseEnListeningRoute(key);
+	if (enl) return enl.id ? ["en-listening", "article"] : ["en-listening", "open"];
+	const topics = parseTopicsRoute(key);
+	if (topics) return topics.slug ? ["topics", "topic"] : ["topics", "open"];
+	const review = parseReviewRoute(key);
+	if (review) return review.id ? ["review", "lesson"] : ["review", "open"];
+	if (parseMinnaRoute(key)) return ["grammar", "minna"];
+	const day = parseDayRoute(key);
+	if (day) {
+		if (isReading()) return ["reading", "open"];
+		if (isListening()) return ["listening", "open"];
+		if (isKanji()) return ["kanji", "open"];
+		if (isGram()) return ["grammar", "open"];
+		if (isVocab()) return ["vocab", "open"];
+		return ["vocab", "open"];
+	}
+	return null;
+}
+
 function viewMeta(key: string): { nav: string; title: string; back: boolean } {
 	if (key === "#/search") return { nav: "search", title: lx("搜索", "Search"), back: false };
 	if (key === "#/usage") return { nav: "common", title: lx("使用时间", "Study time"), back: false };
+	if (key === "#/feature-usage") return { nav: "common", title: lx("功能使用", "Feature use"), back: false };
 	if (key === "#/cards") return { nav: "common", title: `${lx("记忆卡", "Flashcards")} · ${modLabel()}`, back: false };
 	if (key === "#/vocab-queue") return { nav: "vocab", title: lx("背单词 · 单词队列", "Vocabulary Queue"), back: false };
 	const review = parseReviewRoute(key);
@@ -989,6 +1032,10 @@ export function StudyApp() {
 	}, [location.pathname, sheet, MODULE]);
 
 	const routeKey = pathToKey(location.pathname);
+	useEffect(() => {
+		const hit = featureForRoute(routeKey);
+		if (hit) trackFeature(hit[0], hit[1]);
+	}, [routeKey]);
 	if (routeKey !== "#/favs") closeFavFc();
 	const viewKey = MODULE + "|" + routeKey;
 	useLayoutEffect(() => {
@@ -1047,11 +1094,11 @@ export function StudyApp() {
 	const itlRoute = parseItListeningRoute(routeKey);
 	const enlRoute = parseEnListeningRoute(routeKey);
 	const minnaRoute = parseMinnaRoute(routeKey);
-	const commonPages = ["#/search", "#/cards", "#/vocab-queue", "#/kanji-exam", "#/favs", "#/mistakes", "#/usage", "#/ref", "#/katsuyou", "#/henkei", "#/verb-summary", "#/keigo", "#/kougo", "#/jita", "#/wearing", "#/numbers", "#/review"];
+	const commonPages = ["#/search", "#/cards", "#/vocab-queue", "#/kanji-exam", "#/favs", "#/mistakes", "#/usage", "#/feature-usage", "#/ref", "#/katsuyou", "#/henkei", "#/verb-summary", "#/keigo", "#/kougo", "#/jita", "#/wearing", "#/numbers", "#/review"];
 	const isCommon = commonPages.includes(routeKey) || routeKey === "#/" || Boolean(reviewRoute) || Boolean(topicsRoute) || Boolean(itlRoute) || Boolean(enlRoute) || Boolean(minnaRoute);
 	if (routeKey === "#/cards") ensureCardsDeck();
 
-	const commonRefPage = ["#/usage", "#/ref", "#/katsuyou", "#/henkei", "#/verb-summary", "#/keigo", "#/kougo", "#/jita", "#/wearing", "#/numbers", "#/review"].includes(routeKey) || Boolean(reviewRoute) || Boolean(topicsRoute) || Boolean(itlRoute) || Boolean(enlRoute) || Boolean(minnaRoute);
+	const commonRefPage = ["#/usage", "#/feature-usage", "#/ref", "#/katsuyou", "#/henkei", "#/verb-summary", "#/keigo", "#/kougo", "#/jita", "#/wearing", "#/numbers", "#/review"].includes(routeKey) || Boolean(reviewRoute) || Boolean(topicsRoute) || Boolean(itlRoute) || Boolean(enlRoute) || Boolean(minnaRoute);
 	const waitingN2 = isN2() && MODULE !== "n2listening" && MODULE !== "n2reading" && !n2Loaded && !commonRefPage;
 	const waitingN4 = isN4() && !n4Loaded && !commonRefPage;
 	const waitingN1 = isN1() && MODULE !== "n1listening" && MODULE !== "n1reading" && !n1Loaded && !commonRefPage;
@@ -1116,6 +1163,7 @@ export function StudyApp() {
 		);
 	else if (routeKey === "#/search") body = <SearchPage />;
 	else if (routeKey === "#/usage") body = <LazyUsagePage />;
+	else if (routeKey === "#/feature-usage") body = <LazyFeatureUsagePage />;
 	else if (routeKey === "#/cards") body = isGram() ? <CardsPage /> : <LazyModuleCardsPage />;
 	else if (routeKey === "#/vocab-queue") body = <LazyVocabQueuePage />;
 	else if (routeKey === "#/kanji-exam") body = <LazyKanjiExamPage />;

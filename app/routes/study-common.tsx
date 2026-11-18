@@ -2,6 +2,7 @@ import { Fragment, Suspense, lazy, useEffect, useReducer, useRef, useState, useS
 
 import { JITA_TEARU_EXAMPLES } from "../data/common-jita-tearu";
 import { dueEntry, getDueVersion, grammarDueId, rememberFail, rememberPass, subscribeDue } from "../study/due-review";
+import { trackFeature } from "../study/feature-usage";
 import { EndingSwap } from "../study/ending-swap";
 import { StudyHomePlay } from "../study/study-home-play";
 import { CardsScopeFilter, FcFilters, ResumeHint, cardScopeSummary, useDeckArrowKeys } from "../study/memory-cards";
@@ -1009,7 +1010,10 @@ export function SearchPage() {
 		{ key: "mistakes", cn: "错题本", en: "Mistakes", icon: "📝" },
 	];
 
-	const openHit = (hit: Hit) => openSearchHit(hit, kw);
+	const openHit = (hit: Hit) => {
+		trackFeature("search", "result");
+		openSearchHit(hit, kw);
+	};
 
 	return (
 		<>
@@ -1024,6 +1028,7 @@ export function SearchPage() {
 					onChange={(event) => setKeyword(event.currentTarget.value)}
 					onKeyDown={(event) => {
 						if (event.key === "Enter" && keyword.trim()) {
+							trackFeature("search", "query");
 							saveSearchHistory(keyword.trim());
 							setHistory(getSearchHistory());
 						}
