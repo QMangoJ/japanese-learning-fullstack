@@ -593,18 +593,33 @@ export function applyVocabAliases(dataIn: VocabQueueData, aliases: Record<string
  * plan carried 70 of them into the day). The review / fresh split is
  * recomputed from the surviving segments so every progress total counts
  * only words that exist. SRS states are left untouched: a removed word's
- * record stays put in case the word ever returns to the queue. Returns the
- * input unchanged when every plan id resolves.
+ * record stays put in case the word ever returns to the queue.
+ *
+ * Filtering alone would shrink the day's batches below the standing rules
+ * (reviews uncapped, new words a fixed DAILY_QUOTA), so for TODAY's plan
+ * under the current regime the batches are then made whole again, the way
+ * upgradeSameDayPlan rebuilds an old-regime plan: the review batch regains
+ * every due word it is missing, and the new-word batch is rebuilt as the
+ * words already graded today (they stay, in their served order) plus
+ * untouched words in strict priority order until the quota is met.
+ * Ungraded survivors of the old batch are NOT kept out of order — they
+ * compete in the untouched pool by priority like everyone else, and the
+ * ones below the cut fall back to the pool (they carry no state, so
+ * nothing is lost). Returns the input unchanged when nothing had to move.
  */
-export function reconcilePlanWithWordList(dataIn: VocabQueueData, words: VocabWord[]): VocabQueueData {
+export function reconcilePlanWithWordList(
+	dataIn: VocabQueueData,
+	words: VocabWord[],
+	today = jstToday(),
+): VocabQueueData {
 	const plan = dataIn.plan;
 	if (!plan || !words.length) return dataIn;
 	const live = new Set(words.map((word) => word.id));
 	const allIds = [...plan.ids, ...(plan.extra?.ids ?? [])];
-	if (allIds.every((id) => live.has(id))) return dataIn;
-	const reviewIds = plan.ids.slice(0, plan.review).filter((id) => live.has(id));
-	const freshIds = plan.ids.slice(plan.review).filter((id) => live.has(id));
-	const ids = [...reviewIds, ...freshIds];
+	const filtered = !allIds.every((id) => live.has(id));
+	let reviewIds = plan.ids.slice(0, plan.review).filter((id) => live.has(id));
+	let freshIds = plan.ids.slice(plan.review).filter((id) => live.has(id));
+	let ids = [...reviewIds, ...freshIds];
 	let extra: VocabPlanExtra | undefined;
 	if (plan.extra) {
 		const extraIds = plan.extra.ids.filter((id) => live.has(id) && !ids.includes(id));
@@ -624,10 +639,64 @@ export function reconcilePlanWithWordList(dataIn: VocabQueueData, words: VocabWo
 		if (known.includes(id)) grades[id] = grade;
 	}
 	const reshown = (plan.reshown ?? []).filter((id) => known.includes(id));
+	const done = plan.done.filter((id) => ids.includes(id));
+
+	// Make today's batches whole again after a shrink (see the doc above).
+	let topped = false;
+	if (plan.date === today && plan.pv === PLAN_PV) {
+		const states = dataIn.states;
+		const byId = new Map(words.map((word) => [word.id, word]));
+		const touched = new Set([...done, ...Object.keys(grades), ...reshown]);
+		// Fresh words already graded today stay in the batch whatever
+		// happens; seed the twin guard with everything else already served
+		// (review batch, extra batches, those kept fresh words) so a refill
+		// can never add the other spelling of a word the day already has.
+		// Ungraded fresh survivors are deliberately NOT seeded: they
+		// re-enter through the untouched pool, in priority order.
+		const keptFresh = freshIds.filter((id) => touched.has(id));
+		const guard = makeTwinGuard();
+		for (const id of [...reviewIds, ...(extra?.ids ?? []), ...keptFresh]) {
+			const word = byId.get(id);
+			if (word) guard.seed(word);
+		}
+		// Review batch: every due word the plan is missing joins it (due
+		// order). Words graded today already left the due set, so they are
+		// never re-added; the survivors above keep their places.
+		const served = new Set([...reviewIds, ...freshIds, ...(extra?.ids ?? [])]);
+		for (const word of sortedDueWords(words, states, today)) {
+			if (served.has(word.id) || touched.has(word.id)) continue;
+			if (guard.tryTake(word)) {
+				reviewIds = [...reviewIds, word.id];
+				served.add(word.id);
+				topped = true;
+			}
+		}
+		// New-word batch: graded-today words first (served order), then
+		// untouched words in strict priority order up to the quota.
+		if (freshIds.length < DAILY_QUOTA) {
+			const rebuilt = [...keptFresh];
+			const excluded = new Set([...reviewIds, ...(extra?.ids ?? []), ...keptFresh, ...touched]);
+			for (const word of sortedFreshWords(words, states)) {
+				if (rebuilt.length >= DAILY_QUOTA) break;
+				if (excluded.has(word.id)) continue;
+				if (guard.tryTake(word)) {
+					rebuilt.push(word.id);
+					excluded.add(word.id);
+				}
+			}
+			if (rebuilt.length !== freshIds.length || rebuilt.some((id, i) => id !== freshIds[i])) {
+				freshIds = rebuilt;
+				topped = true;
+			}
+		}
+		ids = [...reviewIds, ...freshIds];
+	}
+
+	if (!filtered && !topped) return dataIn;
 	const nextPlan: VocabPlan = {
 		...plan,
 		ids,
-		done: plan.done.filter((id) => ids.includes(id)),
+		done,
 		review: reviewIds.length,
 		fresh: freshIds.length,
 	};

@@ -517,6 +517,97 @@ describe("vocab queue plan reconciliation with the word list (2026-11-18 phantom
 		expect(next.plan?.ids).toEqual(["a"]);
 		expect(next.plan?.extra).toBeUndefined();
 	});
+
+	it("tops a shrunken fresh batch back up to the quota in priority order, keeping graded fresh words", () => {
+		const pool = Array.from({ length: 60 }, (_, i) => word(`pool-${i}`, 1, i + 1));
+		const all = [word("due-a", 2, 1), word("graded-f", 4, 1), word("stale-f", 9, 99), ...pool];
+		const data = cleanVocabQueueData({
+			v: 1,
+			states: {
+				"due-a": { s: 2, due: TODAY, ts: 10 },
+				"graded-f": { s: 1, due: "2026-11-14", ts: 20 },
+			},
+			plan: {
+				pv: PLAN_PV,
+				date: TODAY,
+				// Review batch = due-a; fresh batch = graded-f (done) + stale-f
+				// (ungraded leftover, lowest priority in the list).
+				ids: ["due-a", "graded-f", "stale-f"],
+				done: ["graded-f"],
+				review: 1,
+				fresh: 2,
+				grades: { "graded-f": "know" },
+			},
+		});
+		const next = reconcilePlanWithWordList(data, all, TODAY);
+		expect(next.plan?.review).toBe(1);
+		expect(next.plan?.fresh).toBe(50);
+		expect(next.plan?.ids).toHaveLength(51);
+		// The graded fresh word keeps its place at the head of the batch…
+		expect(next.plan?.ids[1]).toBe("graded-f");
+		// …followed by the untouched pool in strict priority order.
+		expect(next.plan?.ids.slice(2)).toEqual(pool.slice(0, 49).map((w) => w.id));
+		// The ungraded low-priority survivor fell back to the pool.
+		expect(next.plan?.ids).not.toContain("stale-f");
+		expect(next.plan?.done).toEqual(["graded-f"]);
+		expect(next.plan?.grades).toEqual({ "graded-f": "know" });
+		expect(planBatchProgress(next.plan!)).toEqual({
+			reviewDone: 0,
+			reviewTotal: 1,
+			freshDone: 1,
+			freshTotal: 50,
+		});
+	});
+
+	it("adds due words the review batch is missing, without touching graded progress", () => {
+		const all = [word("due-a", 2, 1), word("due-b", 2, 2), word("kept-f", 3, 1)];
+		const data = cleanVocabQueueData({
+			v: 1,
+			states: {
+				"due-a": { s: 1, due: TODAY, ts: 10 },
+				"due-b": { s: 3, due: "2026-11-10", ts: 11 },
+				"kept-f": { s: 1, due: "2026-11-14", ts: 12 },
+			},
+			plan: {
+				pv: PLAN_PV,
+				date: TODAY,
+				ids: ["due-a", "kept-f"],
+				done: ["kept-f"],
+				review: 1,
+				fresh: 1,
+				grades: { "kept-f": "know" },
+			},
+		});
+		const next = reconcilePlanWithWordList(data, all, TODAY);
+		expect(next.plan?.ids).toEqual(["due-a", "due-b", "kept-f"]);
+		expect(next.plan?.review).toBe(2);
+		expect(next.plan?.fresh).toBe(1);
+		expect(next.plan?.done).toEqual(["kept-f"]);
+		expect(planBatchProgress(next.plan!)).toEqual({
+			reviewDone: 0,
+			reviewTotal: 2,
+			freshDone: 1,
+			freshTotal: 1,
+		});
+	});
+
+	it("returns the input untouched when today's batches are already whole", () => {
+		const pool = Array.from({ length: 50 }, (_, i) => word(`pool-${i}`, 1, i + 1));
+		const all = [word("due-a", 2, 1), ...pool];
+		const data = cleanVocabQueueData({
+			v: 1,
+			states: { "due-a": { s: 2, due: TODAY, ts: 10 } },
+			plan: {
+				pv: PLAN_PV,
+				date: TODAY,
+				ids: ["due-a", ...pool.map((w) => w.id)],
+				done: [],
+				review: 1,
+				fresh: 50,
+			},
+		});
+		expect(reconcilePlanWithWordList(data, all, TODAY)).toBe(data);
+	});
 });
 
 describe("vocab queue same-day re-show (again + fuzzy, once per day)", () => {
