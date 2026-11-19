@@ -24,13 +24,13 @@ function expectSide(side: InterviewQaSide) {
 }
 
 describe("it-listening interview-qa （背诵区）", () => {
-	it("has 7 groups and 19 items with the expected status mix", () => {
-		expect(file.groups).toHaveLength(7);
+	it("has 8 groups and 20 items with the expected status mix", () => {
+		expect(file.groups).toHaveLength(8);
 		const items = file.groups.flatMap((g) => g.items);
-		expect(items).toHaveLength(19);
+		expect(items).toHaveLength(20);
 		const counts: Record<string, number> = {};
 		for (const it of items) counts[it.status] = (counts[it.status] ?? 0) + 1;
-		expect(counts).toEqual({ final: 11, template: 5, draft: 2, undecided: 1 });
+		expect(counts).toEqual({ final: 12, template: 5, draft: 2, undecided: 1 });
 	});
 
 	it("every question and answer carries consistent ruby and a Chinese gloss", () => {
@@ -47,9 +47,9 @@ describe("it-listening interview-qa （背诵区）", () => {
 			}
 	});
 
-	it("only the why-Japan item has a follow-up; the transfer item stays undecided", () => {
+	it("the why-Japan and AI items have follow-ups; the transfer item stays undecided", () => {
 		const items = file.groups.flatMap((g) => g.items);
-		expect(items.filter((i) => i.followUp)).toHaveLength(1);
+		expect(items.filter((i) => i.followUp)).toHaveLength(2);
 		expect(items.find((i) => i.status === "undecided")?.label).toContain("転勤");
 	});
 });
