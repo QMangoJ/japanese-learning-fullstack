@@ -221,6 +221,71 @@ export function isItListeningMemorizeFile(v: unknown): v is ItListeningMemorizeF
 	);
 }
 
+/** 面试问答背诵区的一面（问题或回答）：日文 + 注音分段（与句子 ruby 同规则）。 */
+export type InterviewQaSide = {
+	jp: string;
+	ruby?: ItListeningRubySegment[];
+};
+
+export type InterviewQaStatus = "final" | "template" | "draft" | "undecided";
+
+/** 背诵区条目：模拟面试的一个问题 + 按学习者本人情况写的回答（可选一段追问）。 */
+export type InterviewQaItem = {
+	/** 中文短名，如「自我介绍」。 */
+	label: string;
+	/** 定稿可直接背 / 模板需替换方括号 / 草稿方向已定 / 口径未定先别背。 */
+	status: InterviewQaStatus;
+	q: InterviewQaSide;
+	a: InterviewQaSide & { zh: string };
+	/** 答题结构一句话（中文，可选）：背诵时先想结构再开口。 */
+	structure?: string;
+	/** 中文小注（可选）：模板替换提示、口径未定警告等。 */
+	note?: string;
+	/** 追问（可选，目前仅「为什么来日本」带「喜欢日本哪里」）。 */
+	followUp?: { q: InterviewQaSide; a: InterviewQaSide & { zh: string } };
+};
+
+/** 面试问答背诵区（public/data/it-listening/interview-qa.json）：
+ * 模拟面试 18 问的回答例 +「为什么来日本」，按面试流程分组，专门背诵用。 */
+export type InterviewQaFile = {
+	version: 1;
+	title_zh: string;
+	note_zh?: string;
+	groups: { title: string; items: InterviewQaItem[] }[];
+};
+
+export function isInterviewQaFile(v: unknown): v is InterviewQaFile {
+	if (typeof v !== "object" || v === null) return false;
+	const f = v as InterviewQaFile;
+	const side = (s: unknown): boolean => {
+		if (typeof s !== "object" || s === null) return false;
+		const x = s as InterviewQaSide;
+		return typeof x.jp === "string" && (x.ruby === undefined || Array.isArray(x.ruby));
+	};
+	return (
+		typeof f.title_zh === "string" &&
+		Array.isArray(f.groups) &&
+		f.groups.length > 0 &&
+		f.groups.every(
+			(g) =>
+				g &&
+				typeof g.title === "string" &&
+				Array.isArray(g.items) &&
+				g.items.length > 0 &&
+				g.items.every(
+					(it) =>
+						it &&
+						typeof it.label === "string" &&
+						["final", "template", "draft", "undecided"].includes(it.status) &&
+						side(it.q) &&
+						side(it.a) &&
+						typeof (it.a as { zh?: unknown }).zh === "string" &&
+						(it.followUp === undefined || (side(it.followUp.q) && side(it.followUp.a))),
+				),
+		)
+	);
+}
+
 export function isMistakeWordsFile(v: unknown): v is MistakeWordsFile {
 	if (typeof v !== "object" || v === null) return false;
 	const f = v as MistakeWordsFile;

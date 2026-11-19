@@ -199,3 +199,30 @@
 	.itl-jp{font-size:16.5px}
 	.enl-plan li{grid-template-columns:6.4em 2.8em 1fr}
 }
+
+/* 面试问答背诵区（#/it-listening/interview-qa） */
+.itl-qa-label{font-weight:800;font-size:14.5px}
+.itl-qa-badge{padding:1px 8px;border-radius:999px;font-size:11.5px;font-weight:800}
+.itl-qa-badge.final{background:#e2f2e4;color:#256b2e}
+.itl-qa-badge.template{background:#fdf0d5;color:#8a5a12}
+.itl-qa-badge.draft{background:#e8eaee;color:#5a6270}
+.itl-qa-badge.undecided{background:#fbe3e3;color:#9c2b2b}
+.itl-qa-q{margin:0;font-size:17.5px;line-height:1.65;font-weight:600}
+.itl-qa-q:has(ruby){line-height:2.1}
+.itl-qa-q rt{font-size:.52em;font-weight:400;color:var(--sub);letter-spacing:.02em}
+.itl-qa-reveal{margin-top:10px;width:100%;padding:11px;border:1.5px dashed var(--line);border-radius:10px;background:var(--bg);color:var(--accent);font-size:14.5px;font-weight:800;cursor:pointer}
+.itl-qa-reveal:hover{border-color:var(--accent)}
+.itl-qa-a{margin-top:10px;border-top:1px solid var(--line);padding-top:10px}
+.itl-qa-ajp{margin:0;font-size:17px;line-height:1.7}
+.itl-qa-ajp:has(ruby){line-height:2.15}
+.itl-qa-ajp rt{font-size:.52em;font-weight:400;color:var(--sub);letter-spacing:.02em}
+.itl-qa-azh{margin:5px 0 0;color:var(--sub);font-size:14.5px;line-height:1.65}
+.itl-qa-struct{margin:9px 0 0;padding:9px 12px;border-radius:10px;background:var(--bg);font-size:13.5px;line-height:1.65}
+.itl-qa-struct b{display:inline-block;margin-right:8px;padding:1px 8px;border-radius:6px;background:var(--accent-soft);color:var(--accent);font-size:12px}
+.itl-qa-note{margin:8px 0 0;color:var(--sub);font-size:13px;font-weight:700;line-height:1.6}
+.itl-qa-toggle{margin-top:10px;padding:6px 14px;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--sub);font-size:12.5px;font-weight:800;cursor:pointer}
+.itl-qa-follow{margin-top:12px;padding:10px 12px;border-radius:10px;background:var(--bg)}
+.itl-qa-follow-tag{display:inline-block;margin-bottom:4px;font-size:12px;font-weight:900;color:var(--accent)}
+.itl-qa-controls{display:flex;margin-bottom:4px}
+.itl-qa-allbtn{padding:7px 14px;border:1.5px solid var(--line);border-radius:999px;background:var(--card);color:var(--sub);font-size:13px;font-weight:800;cursor:pointer}
+.itl-qa-allbtn:hover{border-color:var(--accent);color:var(--accent)}

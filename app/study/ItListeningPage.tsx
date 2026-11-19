@@ -2,11 +2,14 @@ import { useEffect, useMemo, useRef, useState, type MouseEvent as ReactMouseEven
 
 import { SayButton } from "../routes/study-common";
 import {
+	isInterviewQaFile,
 	isItListeningArticle,
 	isItListeningIndex,
 	isItListeningMemorizeFile,
 	isMistakeWordsFile,
 	parseRubyMarkup,
+	type InterviewQaFile,
+	type InterviewQaItem,
 	type ItListeningArticle,
 	type ItListeningIndex,
 	type ItListeningIndexEntry,
@@ -126,6 +129,7 @@ function fmtDuration(sec?: number): string {
 
 export function ItListeningPage({ articleId, memorize }: { articleId?: string; memorize?: boolean }) {
 	if (articleId === "mistakes") return <MistakeWords />;
+	if (articleId === "interview-qa") return <InterviewQa />;
 	if (memorize && articleId) return <MemorizeList id={articleId} />;
 	return articleId ? <ItListeningDetail id={articleId} /> : <ItListeningList />;
 }
@@ -201,6 +205,158 @@ function MemorizeList({ id }: { id: string }) {
 						</ol>
 					</section>
 				))
+			)}
+		</div>
+	);
+}
+
+const QA_STATUS_META: Record<InterviewQaItem["status"], { zh: string; en: string }> = {
+	final: { zh: "定稿", en: "Final" },
+	template: { zh: "模板", en: "Template" },
+	draft: { zh: "草稿", en: "Draft" },
+	undecided: { zh: "口径未定", en: "Undecided" },
+};
+
+/** 面试问答背诵区（#/it-listening/interview-qa）：模拟面试 18 问 +「为什么来日本」的定稿问答，
+ * 数据 interview-qa.json 驱动。先看问题自己说一遍，再点开答案对照；点按即时切换、无翻卡动画。 */
+function InterviewQa() {
+	const [file, setFile] = useState<InterviewQaFile | null>(null);
+	const [error, setError] = useState(false);
+	const [open, setOpen] = useState<ReadonlySet<number>>(new Set());
+	const [showAll, setShowAll] = useState(false);
+
+	useEffect(() => {
+		let alive = true;
+		loadJson("/data/it-listening/interview-qa.json")
+			.then((v) => {
+				if (!alive) return;
+				if (isInterviewQaFile(v)) setFile(v);
+				else setError(true);
+			})
+			.catch(() => alive && setError(true));
+		return () => {
+			alive = false;
+		};
+	}, []);
+
+	const total = file ? file.groups.reduce((a, g) => a + g.items.length, 0) : 0;
+	const anyOpen = showAll || open.size > 0;
+	const toggleOne = (num: number) => {
+		if (showAll) {
+			setShowAll(false);
+			setOpen(new Set(Array.from({ length: total }, (_, i) => i + 1).filter((x) => x !== num)));
+			return;
+		}
+		setOpen((prev) => {
+			const s = new Set(prev);
+			if (s.has(num)) s.delete(num);
+			else s.add(num);
+			return s;
+		});
+	};
+	const toggleAll = () => {
+		if (anyOpen) {
+			setShowAll(false);
+			setOpen(new Set());
+		} else setShowAll(true);
+	};
+
+	let n = 0;
+	return (
+		<div className="itl-page">
+			<header className="itl-head">
+				<button type="button" className="itl-memo-back" onClick={() => navTo("#/it-listening")}>
+					← {lx("返回 IT 听力", "Back to IT Listening")}
+				</button>
+				<h1>{file?.title_zh ?? lx("面试问答背诵区", "Interview Q&A Drills")}</h1>
+				{file ? (
+					<p className="itl-head-meta">
+						{lx(`共 ${total} 题 · ${file.groups.length} 组`, `${total} Q&As · ${file.groups.length} groups`)}
+					</p>
+				) : null}
+				{file?.note_zh ? <p className="itl-head-ja">{file.note_zh}</p> : null}
+			</header>
+
+			{error ? (
+				<div className="itl-empty">{lx("背诵区加载失败，请稍后重试。", "Failed to load the Q&A drills.")}</div>
+			) : !file ? (
+				<div className="itl-empty">{lx("加载中…", "Loading…")}</div>
+			) : (
+				<>
+					<div className="itl-qa-controls">
+						<button type="button" className="itl-qa-allbtn" onClick={toggleAll}>
+							{anyOpen ? lx("收起全部答案", "Hide all answers") : lx("展开全部答案", "Show all answers")}
+						</button>
+					</div>
+					{file.groups.map((g) => (
+						<section className="itl-memo-group" key={g.title}>
+							<h2 className="itl-memo-group-title">{g.title}</h2>
+							<ol className="itl-memo-list">
+								{g.items.map((it) => {
+									n += 1;
+									const num = n;
+									const st = QA_STATUS_META[it.status];
+									const opened = showAll || open.has(num);
+									return (
+										<li className="itl-memo-item" key={it.label}>
+											<div className="itl-memo-top">
+												<span className="itl-s-no">{num}</span>
+												<span className="itl-qa-label">{it.label}</span>
+												<span className={`itl-qa-badge ${it.status}`}>{lx(st.zh, st.en)}</span>
+												<SayButton text={it.q.jp} />
+											</div>
+											<p className="itl-qa-q">
+												{it.q.ruby && it.q.ruby.length ? <RubySegments segs={it.q.ruby} /> : it.q.jp}
+											</p>
+											{opened ? (
+												<div className="itl-qa-a">
+													<p className="itl-qa-ajp">
+														{it.a.ruby && it.a.ruby.length ? <RubySegments segs={it.a.ruby} /> : it.a.jp}
+													</p>
+													<p className="itl-qa-azh">{it.a.zh}</p>
+													{it.structure ? (
+														<p className="itl-qa-struct">
+															<b>{lx("结构", "Structure")}</b>
+															{it.structure}
+														</p>
+													) : null}
+													{it.note ? <p className="itl-qa-note">{it.note}</p> : null}
+													{it.followUp ? (
+														<div className="itl-qa-follow">
+															<span className="itl-qa-follow-tag">{lx("追问", "Follow-up")}</span>
+															<p className="itl-qa-q">
+																{it.followUp.q.ruby && it.followUp.q.ruby.length ? (
+																	<RubySegments segs={it.followUp.q.ruby} />
+																) : (
+																	it.followUp.q.jp
+																)}
+															</p>
+															<p className="itl-qa-ajp">
+																{it.followUp.a.ruby && it.followUp.a.ruby.length ? (
+																	<RubySegments segs={it.followUp.a.ruby} />
+																) : (
+																	it.followUp.a.jp
+																)}
+															</p>
+															<p className="itl-qa-azh">{it.followUp.a.zh}</p>
+														</div>
+													) : null}
+													<button type="button" className="itl-qa-toggle" onClick={() => toggleOne(num)}>
+														{lx("收起答案", "Hide answer")}
+													</button>
+												</div>
+											) : (
+												<button type="button" className="itl-qa-reveal" onClick={() => toggleOne(num)}>
+													{lx("先自己说一遍，点这里看答案", "Say it first — tap to reveal the answer")}
+												</button>
+											)}
+										</li>
+									);
+								})}
+							</ol>
+						</section>
+					))}
+				</>
 			)}
 		</div>
 	);
@@ -411,6 +567,11 @@ function ItListeningList() {
 			<button className="itl-mw-banner" onClick={() => navTo("#/it-listening/mistakes")}>
 				<span className="itl-mw-banner-t">📕 {lx("错词本", "Mistake Words")}</span>
 				<span className="itl-mw-banner-sub">{lx("精听错词 + 篇目生词的合并清单", "Dictation misses merged with article vocabulary")}</span>
+			</button>
+
+			<button className="itl-mw-banner" onClick={() => navTo("#/it-listening/interview-qa")}>
+				<span className="itl-mw-banner-t">🎤 {lx("面试问答背诵区", "Interview Q&A Drills")}</span>
+				<span className="itl-mw-banner-sub">{lx("模拟面试 18 问定稿回答 + 为什么来日本，带注音背诵", "18 mock-interview answers + Why Japan, with readings for memorization")}</span>
 			</button>
 
 			{error ? (
@@ -944,6 +1105,11 @@ function ItListeningDetail({ id }: { id: string }) {
 				{memo ? (
 					<button type="button" className="itl-memo-btn" onClick={() => navTo(`#/it-listening/${id}/memorize`)}>
 						📖 {lx("背诵清单", "Memorization list")} · {memo.groups.reduce((a, g) => a + g.items.length, 0)} {lx("条", "items")}
+					</button>
+				) : null}
+				{id === "real-wp-online-mock" ? (
+					<button type="button" className="itl-memo-btn" onClick={() => navTo("#/it-listening/interview-qa")}>
+						🎤 {lx("面试问答背诵区", "Interview Q&A Drills")} · 19 {lx("题", "Q&As")}
 					</button>
 				) : null}
 			</header>
