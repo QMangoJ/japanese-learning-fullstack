@@ -239,6 +239,8 @@ export type InterviewQaItem = {
 	a: InterviewQaSide & { zh: string };
 	/** 答题结构一句话（中文，可选）：背诵时先想结构再开口。 */
 	structure?: string;
+	/** 答题要点（可选）：出题意图与避坑（中文），与 structure 一起在答案展开后成组显示。 */
+	points?: { intent: string; pitfalls: string };
 	/** 中文小注（可选）：模板替换提示、口径未定警告等。 */
 	note?: string;
 	/** 追问（可选，目前仅「为什么来日本」带「喜欢日本哪里」）。 */

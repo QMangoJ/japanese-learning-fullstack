@@ -314,11 +314,27 @@ function InterviewQa() {
 														{it.a.ruby && it.a.ruby.length ? <RubySegments segs={it.a.ruby} /> : it.a.jp}
 													</p>
 													<p className="itl-qa-azh">{it.a.zh}</p>
-													{it.structure ? (
-														<p className="itl-qa-struct">
-															<b>{lx("结构", "Structure")}</b>
-															{it.structure}
-														</p>
+													{(it.points || it.structure) ? (
+														<div className="itl-qa-points">
+															{it.points?.intent ? (
+																<p>
+																	<b>{lx("出题意图", "Intent")}</b>
+																	{it.points.intent}
+																</p>
+															) : null}
+															{it.structure ? (
+																<p>
+																	<b>{lx("结构", "Structure")}</b>
+																	{it.structure}
+																</p>
+															) : null}
+															{it.points?.pitfalls ? (
+																<p className="warn">
+																	<b>{lx("避坑", "Watch out")}</b>
+																	{it.points.pitfalls}
+																</p>
+															) : null}
+														</div>
 													) : null}
 													{it.note ? <p className="itl-qa-note">{it.note}</p> : null}
 													{it.followUp ? (

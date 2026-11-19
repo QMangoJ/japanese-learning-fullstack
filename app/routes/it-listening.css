@@ -219,6 +219,10 @@
 .itl-qa-azh{margin:5px 0 0;color:var(--sub);font-size:14.5px;line-height:1.65}
 .itl-qa-struct{margin:9px 0 0;padding:9px 12px;border-radius:10px;background:var(--bg);font-size:13.5px;line-height:1.65}
 .itl-qa-struct b{display:inline-block;margin-right:8px;padding:1px 8px;border-radius:6px;background:var(--accent-soft);color:var(--accent);font-size:12px}
+.itl-qa-points{margin:9px 0 0;padding:9px 12px;border-radius:10px;background:var(--bg);font-size:13.5px;line-height:1.65;display:flex;flex-direction:column;gap:6px}
+.itl-qa-points p{margin:0}
+.itl-qa-points b{display:inline-block;margin-right:8px;padding:1px 8px;border-radius:6px;background:var(--accent-soft);color:var(--accent);font-size:12px}
+.itl-qa-points p.warn b{background:#fbe3e3;color:#9c2b2b}
 .itl-qa-note{margin:8px 0 0;color:var(--sub);font-size:13px;font-weight:700;line-height:1.6}
 .itl-qa-toggle{margin-top:10px;padding:6px 14px;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--sub);font-size:12.5px;font-weight:800;cursor:pointer}
 .itl-qa-follow{margin-top:12px;padding:10px 12px;border-radius:10px;background:var(--bg)}
