@@ -9,7 +9,8 @@ import { validateKanjiJourneyArticle, type KanjiJourneyArticle } from "../../app
  * 正文是 v8 暂停讲解备忘录的 7 段（开场、第 1–5 段、结尾），
  * 日文与备忘录逐字一致（读音括号换成 ruby，只给汉字注音）。
  * v8 去掉造字方法一段；留下的句子仍用原来的 id（kj-007..kj-009 空着）。
- * 来宾问答 6 组、救命句、Q6 的「〇週間」占位不在备忘录里，保持原样。
+ * 来宾问答原 6 组、救命句、Q6 的「〇週間」占位不在备忘录里，保持原样；
+ * 其后追加 2 组补充问答（kj-031 国字「腺」「鱈」，kj-032「経済」「社会」旧词新义）。
  */
 const article: KanjiJourneyArticle = JSON.parse(readFileSync(join(process.cwd(), "public/data/reading/kanji-journey.json"), "utf8"));
 
@@ -204,8 +205,8 @@ describe("kanji-journey reading article", () => {
 		expect(pauses).not.toContain("形声文字");
 	});
 
-	it("keeps 6 Q&A pairs kj-024..kj-029 and the rescue phrase kj-030", () => {
-		expect(article.qa.map((p) => p.id)).toEqual(["kj-024", "kj-025", "kj-026", "kj-027", "kj-028", "kj-029"]);
+	it("keeps the 6 original Q&A pairs kj-024..kj-029, then the 2 added notes, and the rescue phrase kj-030", () => {
+		expect(article.qa.map((p) => p.id)).toEqual(["kj-024", "kj-025", "kj-026", "kj-027", "kj-028", "kj-029", "kj-031", "kj-032"]);
 		expect(article.rescue.id).toBe("kj-030");
 		expect(article.rescue.jp).toBe("すみません、もう一度お願いします。");
 	});
@@ -214,6 +215,35 @@ describe("kanji-journey reading article", () => {
 		const q6 = article.qa[5];
 		expect(q6.answer.jp).toBe("〇週間ぐらいかかりました。");
 		expect(q6.note_zh).toContain("按实际回答");
+	});
+
+	it("explains 腺 and 鱈 as kokuji with the attested dates, not a late-17th-century first use of 鱈", () => {
+		const kokuji = article.qa.find((p) => p.id === "kj-031")!;
+		expect(kokuji.answer.jp).toContain("国字");
+		expect(kokuji.answer.jp).toContain("腺");
+		expect(kokuji.answer.jp).toContain("鱈");
+		const note = kokuji.note_zh ?? "";
+		// 腺：宇田川玄真为译荷兰语 klier 所造，1805 年《医範提綱》。
+		expect(note).toContain("宇田川玄真");
+		expect(note).toContain("klier");
+		expect(note).toContain("1805");
+		expect(note).toContain("医範提綱");
+		// 鱈：室町（15 世纪）已用；1697《本朝食鑑》是说明「日本所造」的文献，不是最早用例。
+		expect(note).toContain("室町");
+		expect(note).toContain("本朝食鑑");
+		expect(note).toContain("鳕");
+		expect(note).not.toMatch(/最早见于.{0,10}17/);
+	});
+
+	it("says 経済/社会 are old Chinese words given modern meanings in Japan, not words Japan coined from nothing", () => {
+		const keizai = article.qa.find((p) => p.id === "kj-032")!;
+		expect(keizai.question.jp).toContain("経済");
+		const note = keizai.note_zh ?? "";
+		expect(note).toContain("经世济民");
+		expect(note).toContain("近思录");
+		expect(note).toContain("economy");
+		expect(note).toContain("society");
+		expect(note).toContain("不是日本凭空造的词");
 	});
 
 	it("stays registered in the topics index as a reading entry whose count is the body sentence count", () => {

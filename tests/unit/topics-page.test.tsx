@@ -117,7 +117,7 @@ describe("TopicsPage", () => {
 			"结尾",
 			"来宾问答",
 		]);
-		// 正文 20 句；问答 6 问 6 答；救命句 1 条。本页不带朗读按钮，正文句首也不带连续序号。
+		// 正文 20 句；问答 8 问 8 答（原 6 组 + 国字、旧词新义 2 组）；救命句 1 条。本页不带朗读按钮，正文句首也不带连续序号。
 		// 全页不应出现 .sayb / .itl-s-no；问答的 Q 编号是问题标识，保留。
 		const sections = [...container.querySelectorAll(".kj-section")];
 		const bodyRows = sections.slice(0, 7).flatMap((s) => [...s.querySelectorAll(".itl-sentence")]);
@@ -125,10 +125,10 @@ describe("TopicsPage", () => {
 		expect(container.querySelectorAll(".itl-s-no")).toHaveLength(0);
 		expect(bodyRows.every((r) => r.querySelector(".itl-s-top") === null)).toBe(true);
 		expect([...container.querySelectorAll(".kj-qa .kj-chip")].map((c) => c.textContent)).toEqual([
-			"Q1", "A", "Q2", "A", "Q3", "A", "Q4", "A", "Q5", "A", "Q6", "A",
+			"Q1", "A", "Q2", "A", "Q3", "A", "Q4", "A", "Q5", "A", "Q6", "A", "Q7", "A", "Q8", "A",
 		]);
-		expect(container.querySelectorAll(".kj-qa")).toHaveLength(6);
-		expect(container.querySelectorAll(".itl-sentence")).toHaveLength(20 + 12 + 1);
+		expect(container.querySelectorAll(".kj-qa")).toHaveLength(8);
+		expect(container.querySelectorAll(".itl-sentence")).toHaveLength(20 + 16 + 1);
 		expect(container.querySelectorAll(".sayb")).toHaveLength(0);
 		expect(container.querySelector(".itl-eyebrow")?.textContent).toBe("V8 PAUSE MEMO");
 		expect(container.querySelector(".itl-head-meta")?.textContent).toContain("v8 暂停讲解");
