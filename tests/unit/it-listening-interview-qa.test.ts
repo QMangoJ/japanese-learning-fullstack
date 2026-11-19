@@ -30,7 +30,7 @@ describe("it-listening interview-qa （背诵区）", () => {
 		expect(items).toHaveLength(19);
 		const counts: Record<string, number> = {};
 		for (const it of items) counts[it.status] = (counts[it.status] ?? 0) + 1;
-		expect(counts).toEqual({ final: 9, template: 5, draft: 4, undecided: 1 });
+		expect(counts).toEqual({ final: 11, template: 5, draft: 2, undecided: 1 });
 	});
 
 	it("every question and answer carries consistent ruby and a Chinese gloss", () => {
