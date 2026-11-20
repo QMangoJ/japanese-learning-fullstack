@@ -122,14 +122,15 @@
 			"slug": "bank-atm",
 			"title_zh": "银行 ATM 取钱",
 			"title_ja": "ATMでお金を引き出す",
-			"count": 64,
+			"count": 104,
 			"title_en": "Withdrawing cash at an ATM",
 			"subtopics": [
 				"画面上的按钮",
 				"插卡和确认",
 				"账户和金额",
 				"还款和转账",
-				"银行开户"
+				"银行开户",
+				"银行优惠活动"
 			]
 		},
 		{
