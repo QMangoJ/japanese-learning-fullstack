@@ -77,6 +77,20 @@ export function isItlDonePayload(value: unknown) {
 	});
 }
 
+const MAX_NU_OVERRIDES = 400;
+const NU_OVERRIDE_ID = /^\d{1,2}-\d{1,2}-\d{1,3}$/;
+const NU_OVERRIDE_CODES = new Set(["e", "c", "s", "f", ""]);
+
+export function isNuOverridesPayload(value: unknown) {
+	if (!Array.isArray(value) || value.length > MAX_NU_OVERRIDES) return false;
+	return value.every((item) => {
+		if (!isRecord(item)) return false;
+		if (typeof item.id !== "string" || !NU_OVERRIDE_ID.test(item.id)) return false;
+		if (typeof item.code !== "string" || !NU_OVERRIDE_CODES.has(item.code)) return false;
+		return isFiniteNumber(item.ts);
+	});
+}
+
 const DUE_KINDS = new Set(["grammar", "mistake", "listening", "topic"]);
 const DUE_DATE = /^\d{4}-\d{2}-\d{2}$/;
 

@@ -190,11 +190,23 @@ main{max-width:var(--study-col);margin:0 auto;padding:14px}
 .point h3{margin:0;font-size:19.5px;background:linear-gradient(transparent 62%,var(--accent-soft) 62%);display:inline;padding:0 2px;text-decoration:underline;text-decoration-color:var(--accent);text-decoration-thickness:2px;text-underline-offset:2px}
 .ex .jp u,.dialog u{text-decoration:underline;text-decoration-color:var(--accent);text-decoration-thickness:2px;text-underline-offset:2px;font-weight:600}
 .point .reading{color:var(--sub);font-size:14px;margin:2px 0 6px}
-.nu-chip{display:inline-block;margin-left:8px;padding:2px 9px;border-radius:999px;font-size:12px;font-weight:700;line-height:1.55;vertical-align:middle;white-space:nowrap;border:1px solid transparent}
+.nu-wrap{position:relative;display:inline-block;margin-left:8px}
+.nu-chip{display:inline-block;padding:2px 9px;border-radius:999px;font-size:12px;font-weight:700;line-height:1.55;vertical-align:middle;white-space:nowrap;border:1px solid transparent;cursor:pointer;appearance:none;font-family:inherit}
 .nu-chip.nu-e{background:var(--accent);color:var(--bg)}
 .nu-chip.nu-c{background:var(--accent-soft);color:var(--accent)}
 .nu-chip.nu-s{background:transparent;border-color:var(--sub);color:var(--sub)}
 .nu-chip.nu-f{background:transparent;border-color:var(--line);color:var(--sub);opacity:.85}
+.nu-chip .nu-caret{font-size:9px;margin-left:4px;opacity:.65}
+.nu-chip.nu-edited::after{content:"";display:inline-block;width:5px;height:5px;margin-left:5px;border-radius:50%;background:currentColor;vertical-align:2px}
+.nu-menu{position:absolute;top:calc(100% + 6px);left:0;z-index:80;display:flex;flex-direction:column;gap:2px;min-width:180px;padding:6px;background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:0 12px 32px rgb(0 0 0/.20)}
+.nu-opt{display:flex;align-items:center;gap:8px;width:100%;padding:7px 9px;border:0;border-radius:8px;background:none;color:var(--ink);font-size:13.5px;font-family:inherit;text-align:left;cursor:pointer;white-space:nowrap}
+.nu-opt:hover{background:var(--accent-soft)}
+.nu-opt .nu-check{width:14px;flex:none;color:var(--accent);font-weight:700;text-align:center}
+.nu-opt .nu-dot{width:10px;height:10px;flex:none;border-radius:50%;border:1px solid var(--sub)}
+.nu-opt .nu-dot.nu-e{background:var(--accent);border-color:var(--accent)}
+.nu-opt .nu-dot.nu-c{background:var(--accent-soft);border-color:var(--accent)}
+.nu-opt .nu-dot.nu-f{border-color:var(--line)}
+.nu-opt.nu-reset{color:var(--sub);border-top:1px solid var(--line);border-radius:0 0 8px 8px;margin-top:2px;padding-top:9px}
 .conn{background:var(--blue-soft);color:var(--blue);border-radius:8px;padding:7px 10px;font-size:15px;margin:6px 0}
 .conn-label{font-size:12.5px;font-weight:700;letter-spacing:.08em;opacity:.75;display:block;margin-bottom:4px}
 /* 一条接続里「／」是并列的候选、「＋」是前后接的连接点。原来全挤在一行文字里，

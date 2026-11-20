@@ -11,6 +11,7 @@ import { OptButton } from "./opt-button";
 import { TickText } from "./tick-text";
 import { ExerciseReset, ExerciseSession, useQuestionProgress } from "./exercise-progress";
 import { N2_NATIVE_USAGE } from "../data/n2-native-usage";
+import { setNuOverride, useNuOverrides } from "./nu-overrides";
 const GrammarSummary = lazy(() => import("./grammar-summary").then(module => ({ default: module.GrammarSummary })));
 const N2GrammarSummary = lazy(() => import("./n2-grammar-summary").then(module => ({ default: module.N2GrammarSummary })));
 import {
@@ -1033,6 +1034,68 @@ const NU_LABEL: Record<string, readonly [string, string]> = {
 	f: ["偏正式／书面", "More formal / written"],
 };
 
+/** 可编辑的常用度标记：点开选档位，改过的带小圆点，可「恢复默认」。改动存本机并同步账号。 */
+function NuChip({ w, d, i, def }: { w: number; d: number; i: number; def: string }) {
+	const overrides = useNuOverrides();
+	const [open, setOpen] = useState(false);
+	const wrapRef = useRef<HTMLSpanElement>(null);
+	const key = `${w}-${d}-${i}`;
+	const cur = overrides[key] ?? def;
+	const edited = overrides[key] !== undefined && overrides[key] !== def;
+	useEffect(() => {
+		if (!open) return;
+		const onDown = (e: PointerEvent) => {
+			if (wrapRef.current && !wrapRef.current.contains(e.target as Node)) setOpen(false);
+		};
+		const onKey = (e: KeyboardEvent) => {
+			if (e.key === "Escape") setOpen(false);
+		};
+		document.addEventListener("pointerdown", onDown);
+		document.addEventListener("keydown", onKey);
+		return () => {
+			document.removeEventListener("pointerdown", onDown);
+			document.removeEventListener("keydown", onKey);
+		};
+	}, [open ]);
+	const pick = (code: string | null) => {
+		setNuOverride(key, code);
+		setOpen(false);
+	};
+	const langIdx = LANG === "en" ? 1 : 0;
+	return (
+		<span className="nu-wrap" ref={wrapRef}>
+			<button
+				type="button"
+				className={`nu-chip nu-${cur}${edited ? " nu-edited" : ""}`}
+				aria-haspopup="menu"
+				aria-expanded={open}
+				aria-label={lx("修改常用度标记", "Edit usage marker")}
+				onClick={() => setOpen(!open)}
+			>
+				{NU_LABEL[cur][langIdx]}
+				<span className="nu-caret" aria-hidden="true">▾</span>
+			</button>
+			{open ? (
+				<span className="nu-menu" role="menu">
+					{Object.entries(NU_LABEL).map(([code, label]) => (
+						<button key={code} type="button" role="menuitemradio" aria-checked={cur === code} className="nu-opt" onClick={() => pick(code)}>
+							<span className="nu-check">{cur === code ? "✓" : ""}</span>
+							<span className={`nu-dot nu-${code}`} aria-hidden="true" />
+							{label[langIdx]}
+						</button>
+					))}
+					{overrides[key] !== undefined ? (
+						<button type="button" className="nu-opt nu-reset" onClick={() => pick(null)}>
+							<span className="nu-check" />
+							{lx("恢复默认", "Reset to default")}
+						</button>
+					) : null}
+				</span>
+			) : null}
+		</span>
+	);
+}
+
 function GrammarPoint({ p, w, d, i }: { p: any; w: number; d: number; i: number }) {
 	const pid = `${MODULE}#${w}-${d}#${i}`;
 	const reading = p.reading || vocabReadingText({ jp: p.pattern, jp_r: p.pattern_r, reading: p.reading });
@@ -1046,7 +1109,7 @@ function GrammarPoint({ p, w, d, i }: { p: any; w: number; d: number; i: number 
 			</h3>
 			<StarBtn id={pid} snap={{ module: MODULE, hash: `#/day/${w}-${d}/p${i}`, w, d, jp: p.pattern, cn: p.usage_cn || "" }} />
 			<SayButton text={p.pattern} />
-			{nu && NU_LABEL[nu] ? <span className={`nu-chip nu-${nu}`}>{NU_LABEL[nu][LANG === "en" ? 1 : 0]}</span> : null}
+			{nu ? <NuChip w={w} d={d} i={i} def={nu} /> : null}
 			{reading ? <div className="reading jp">{reading}</div> : null}
 			<ConnBlock connection={p.connection} lang={LANG} />
 			{p.usage_jp ? <div className="usage jp">{p.usage_jp}</div> : null}

@@ -10,6 +10,7 @@ export default [
 	route("api/vocab-queue", "routes/api.vocab-queue.ts"),
 	route("api/mastery", "routes/api.mastery.ts"),
 	route("api/itl-done", "routes/api.itl-done.ts"),
+	route("api/nu-overrides", "routes/api.nu-overrides.ts"),
 	route("api/usage", "routes/api.usage.ts"),
 	route("api/feature-usage", "routes/api.feature-usage.ts"),
 	route("api/mistake-translations", "routes/api.mistake-translations.ts"),

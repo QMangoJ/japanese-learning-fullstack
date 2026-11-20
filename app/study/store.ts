@@ -7,6 +7,7 @@ import { forgetDue, hydrateDue, kickDueSync, mistakeDueDraft, mistakeDueId, note
 import { canAttemptSync, noteSyncResult, resetSyncPolicyForTests } from "./kv-sync-policy";
 import { hydrateMastery, kickMasterySync, noteMasterySignedOut, pullMasteryFromServer, pushMasteryNow, resetMasteryForTests } from "./memory-mastery";
 import { hydrateItlDone, kickItlDoneSync, noteItlDoneSignedOut, pullItlDoneFromServer, pushItlDoneNow } from "./itl-done";
+import { hydrateNuOverrides, kickNuOverridesSync, noteNuOverridesSignedOut, pullNuOverridesFromServer, pushNuOverridesNow } from "./nu-overrides";
 import { hydrateVocabQueue, kickVocabQueueSync, noteVocabQueueSignedOut, pullVocabQueueFromServer, pushVocabQueueNow } from "./vocab-queue";
 import { refreshUsageAccount } from "./usage-time";
 import { applyResumeOrder, loadResumePos, loadResumeScope, resumeIndex, saveResume } from "./cards-resume";
@@ -1940,6 +1941,7 @@ export function hydrateFromStorage() {
 	hydrateDue();
 	hydrateMastery();
 	hydrateItlDone();
+	hydrateNuOverrides();
 	hydrateVocabQueue();
 	noRuby = lsGet("noruby", "0") === "1";
 	hideJp = lsGet("hidejp", "0") === "1";
@@ -2220,6 +2222,7 @@ export async function bootAccount() {
 		noteDueSignedOut();
 		noteMasterySignedOut();
 		noteItlDoneSignedOut();
+		noteNuOverridesSignedOut();
 		noteVocabQueueSignedOut();
 		return;
 	}
@@ -2228,9 +2231,10 @@ export async function bootAccount() {
 	await pullDueFromServer(ACCOUNT.id);
 	await pullMasteryFromServer(ACCOUNT.id);
 	await pullItlDoneFromServer(ACCOUNT.id);
+	await pullNuOverridesFromServer(ACCOUNT.id);
 	await pullVocabQueueFromServer(ACCOUNT.id);
 	lsSet("accountId", ACCOUNT.id);
-	await Promise.all([pushFavsNow(), pushMistakesNow(), pushDueNow(), pushMasteryNow(), pushItlDoneNow(), pushVocabQueueNow()]);
+	await Promise.all([pushFavsNow(), pushMistakesNow(), pushDueNow(), pushMasteryNow(), pushItlDoneNow(), pushNuOverridesNow(), pushVocabQueueNow()]);
 }
 
 export function attachResync() {
@@ -2241,6 +2245,7 @@ export function attachResync() {
 		kickDueSync();
 		kickMasterySync();
 		kickItlDoneSync();
+		kickNuOverridesSync();
 		kickVocabQueueSync();
 	};
 	const onVis = () => {

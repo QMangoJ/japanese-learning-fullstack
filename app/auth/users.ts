@@ -54,6 +54,10 @@ export function itlDoneKey(userId: string): string {
 	return `itl-done:${userId}`;
 }
 
+export function nuOverridesKey(userId: string): string {
+	return `nu-overrides:${userId}`;
+}
+
 export function usageKey(userId: string): string {
 	return `usage:${userId}`;
 }
