@@ -10,6 +10,7 @@ import { GlossPopover, rubyReading } from "./gloss-popover";
 import { OptButton } from "./opt-button";
 import { TickText } from "./tick-text";
 import { ExerciseReset, ExerciseSession, useQuestionProgress } from "./exercise-progress";
+import { N2_NATIVE_USAGE } from "../data/n2-native-usage";
 const GrammarSummary = lazy(() => import("./grammar-summary").then(module => ({ default: module.GrammarSummary })));
 const N2GrammarSummary = lazy(() => import("./n2-grammar-summary").then(module => ({ default: module.N2GrammarSummary })));
 import {
@@ -1023,9 +1024,19 @@ function VocabLabel({
 	);
 }
 
+/** N2 语法点的常用度标记：评级来自每日语法总结（n2-daily-summaries）里已写好的 usage，
+ * 经 scripts/gen-n2-native-usage.mjs 按「周-日+课内序号」对齐到每个语法点。 */
+const NU_LABEL: Record<string, readonly [string, string]> = {
+	e: ["口语 · 很常用", "Spoken · very common"],
+	c: ["日常 · 常用", "Everyday · common"],
+	s: ["特定场景常用", "Common in specific contexts"],
+	f: ["偏正式／书面", "More formal / written"],
+};
+
 function GrammarPoint({ p, w, d, i }: { p: any; w: number; d: number; i: number }) {
 	const pid = `${MODULE}#${w}-${d}#${i}`;
 	const reading = p.reading || vocabReadingText({ jp: p.pattern, jp_r: p.pattern_r, reading: p.reading });
+	const nu = MODULE === "n2grammar" ? N2_NATIVE_USAGE[`${w}-${d}`]?.[i] : undefined;
 	return (
 		<div className="point tilt-card" id={`pt-${w}-${d}-${i}`}>
 			<h3 className="jp">
@@ -1035,6 +1046,7 @@ function GrammarPoint({ p, w, d, i }: { p: any; w: number; d: number; i: number 
 			</h3>
 			<StarBtn id={pid} snap={{ module: MODULE, hash: `#/day/${w}-${d}/p${i}`, w, d, jp: p.pattern, cn: p.usage_cn || "" }} />
 			<SayButton text={p.pattern} />
+			{nu && NU_LABEL[nu] ? <span className={`nu-chip nu-${nu}`}>{NU_LABEL[nu][LANG === "en" ? 1 : 0]}</span> : null}
 			{reading ? <div className="reading jp">{reading}</div> : null}
 			<ConnBlock connection={p.connection} lang={LANG} />
 			{p.usage_jp ? <div className="usage jp">{p.usage_jp}</div> : null}
