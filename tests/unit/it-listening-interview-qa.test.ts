@@ -24,13 +24,13 @@ function expectSide(side: InterviewQaSide) {
 }
 
 describe("it-listening interview-qa （背诵区）", () => {
-	it("has 8 groups and 20 items with the expected status mix", () => {
+	it("has 8 groups and 21 items with the expected status mix", () => {
 		expect(file.groups).toHaveLength(8);
 		const items = file.groups.flatMap((g) => g.items);
-		expect(items).toHaveLength(20);
+		expect(items).toHaveLength(21);
 		const counts: Record<string, number> = {};
 		for (const it of items) counts[it.status] = (counts[it.status] ?? 0) + 1;
-		expect(counts).toEqual({ final: 12, template: 5, draft: 2, undecided: 1 });
+		expect(counts).toEqual({ final: 13, template: 5, draft: 2, undecided: 1 });
 	});
 
 	it("every question and answer carries consistent ruby and a Chinese gloss", () => {
